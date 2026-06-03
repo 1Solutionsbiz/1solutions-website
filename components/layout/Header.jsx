@@ -57,14 +57,14 @@ export default function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
+        <nav className="hidden lg:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
           {/* Services Dropdown */}
           <div
             className="relative"
             onMouseEnter={() => setServicesOpen(true)}
             onMouseLeave={() => setServicesOpen(false)}
           >
-            <button className="flex items-center gap-1.5 px-4 py-2 text-[14.5px] font-semibold text-gray-800 hover:text-[#114171] transition-colors">
+            <button className="flex items-center gap-1.5 px-0 py-2 text-[14px] font-medium text-gray-900 hover:text-blue-900 transition-colors">
               Services
               <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
                 <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
@@ -84,7 +84,7 @@ export default function Header() {
                         {items.map(item => (
                           <li key={item.href}>
                             <Link href={item.href}
-                              className="block text-[13.5px] text-gray-600 hover:text-[#114171] hover:bg-blue-50 px-2 py-1 rounded-md transition-colors">
+                              className="block text-[13.5px] text-gray-600 hover:text-blue-900 hover:bg-blue-50 px-2 py-1 rounded-md transition-colors">
                               {item.label}
                             </Link>
                           </li>
@@ -99,12 +99,12 @@ export default function Header() {
 
           {[
             { label: 'Industries', href: '/industries' },
-            { label: 'Work', href: '/case-studies' },
-            { label: 'About', href: '/about' },
-            { label: 'Blog', href: '/blog' },
+            { label: 'Success Stories', href: '/case-studies' },
+            { label: 'Insights', href: '/blog' },
+            { label: 'About Us', href: '/about' },
           ].map(link => (
             <Link key={link.href} href={link.href}
-              className="px-4 py-2 text-[14.5px] font-semibold text-gray-800 hover:text-[#114171] transition-colors">
+              className="px-0 py-2 text-[14px] font-medium text-gray-900 hover:text-blue-900 transition-colors">
               {link.label}
             </Link>
           ))}
@@ -113,15 +113,8 @@ export default function Header() {
         {/* CTAs */}
         <div className="hidden lg:flex items-center gap-3">
           <Link href="/contact"
-            className="text-[14px] font-semibold text-[#114171] px-4 py-2 rounded-md hover:bg-blue-50 transition-colors">
-            Get a Proposal
-          </Link>
-          <Link href="/contact"
-            className="flex items-center gap-2 text-[14px] font-bold text-[#114171] px-5 py-2.5 rounded-md border-[1.5px] border-[#114171] hover:bg-[#114171] hover:text-white transition-all">
-            Contact Us
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+            className="flex items-center gap-2 text-[14px] font-semibold text-white px-5 py-[10px] rounded-full bg-blue-900 hover:bg-gradient-to-r hover:from-amber-400 hover:to-blue-900 transition-all shadow-lg hover:shadow-xl">
+            Contact Us →
           </Link>
         </div>
 
@@ -156,10 +149,10 @@ export default function Header() {
                 ))}
               </div>
             ))}
-            <Link href="/about" className="py-3 font-semibold text-gray-800" onClick={() => setMobileOpen(false)}>About</Link>
-            <Link href="/blog" className="py-3 font-semibold text-gray-800" onClick={() => setMobileOpen(false)}>Blog</Link>
+            <Link href="/about" className="py-3 font-semibold text-gray-800" onClick={() => setMobileOpen(false)}>About Us</Link>
+            <Link href="/blog" className="py-3 font-semibold text-gray-800" onClick={() => setMobileOpen(false)}>Insights</Link>
             <Link href="/contact"
-              className="mt-4 text-center py-3 font-bold text-white bg-[#114171] rounded-lg"
+              className="mt-4 text-center py-3 font-bold text-white bg-blue-900 rounded-full"
               onClick={() => setMobileOpen(false)}>
               Contact Us →
             </Link>
