@@ -111,9 +111,27 @@ export default function Header() {
         </nav>
 
         {/* CTAs */}
-        <div className="hidden lg:flex items-center gap-3">
-          <Link href="/contact"
-            className="flex items-center gap-2 text-[14px] font-semibold text-white px-5 py-[10px] rounded-full bg-blue-900 hover:bg-gradient-to-r hover:from-amber-400 hover:to-blue-900 transition-all shadow-lg hover:shadow-xl">
+        <div className="hidden lg:flex items-center gap-3 ml-auto">
+          <style>{`
+            .contact-btn {
+              display: inline-block;
+              padding: 10px 20px;
+              background-color: #0F3460;
+              color: white;
+              font-weight: 500;
+              font-size: 14px;
+              border-radius: 20px;
+              text-decoration: none;
+              transition: all 0.3s ease;
+              box-shadow: 0 4px 15px rgba(15, 52, 96, 0.2);
+              white-space: nowrap;
+            }
+            .contact-btn:hover {
+              background: linear-gradient(90deg, #F59E0B 0%, #0F3460 100%);
+              box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
+            }
+          `}</style>
+          <Link href="/contact" className="contact-btn">
             Contact Us →
           </Link>
         </div>
@@ -151,8 +169,22 @@ export default function Header() {
             ))}
             <Link href="/about" className="py-3 font-semibold text-gray-800" onClick={() => setMobileOpen(false)}>About Us</Link>
             <Link href="/blog" className="py-3 font-semibold text-gray-800" onClick={() => setMobileOpen(false)}>Insights</Link>
+            <style>{`
+              .contact-btn-mobile {
+                display: block;
+                text-align: center;
+                padding: 10px 20px;
+                margin-top: 16px;
+                background-color: #0F3460;
+                color: white;
+                font-weight: 500;
+                font-size: 14px;
+                border-radius: 20px;
+                text-decoration: none;
+              }
+            `}</style>
             <Link href="/contact"
-              className="mt-4 text-center py-3 font-bold text-white bg-blue-900 rounded-full"
+              className="contact-btn-mobile"
               onClick={() => setMobileOpen(false)}>
               Contact Us →
             </Link>
