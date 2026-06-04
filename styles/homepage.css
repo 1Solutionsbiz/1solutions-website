@@ -1450,11 +1450,11 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            font-family: 'Inter'
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             box-shadow: 0 4px 6px rgba(15, 52, 96, 0.07), 0 10px 30px rgba(15, 52, 96, 0.1);
             border: 1px solid rgba(229, 231, 235, 0.5);
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            animation: slideUpStats 0.6s ease backwards;, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            animation: slideUpStats 0.6s ease backwards;
         }
 
         .stat-card:hover {
