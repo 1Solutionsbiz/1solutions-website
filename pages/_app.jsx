@@ -1,20 +1,20 @@
-import Header from '../components/layout/Header';
-import Footer from '../components/layout/Footer';
-import '../styles/layout.css';
+import BlogHeader from '../components/blog/BlogHeader';
+import BlogFooter from '../components/blog/BlogFooter';
 import '../styles/blog.css';
 
 /**
  * Pages Router _app — wraps all blog/search pages.
- * App Router (app/) handles the homepage separately via app/layout.jsx.
+ * Uses dedicated BlogHeader/BlogFooter — fully self-contained,
+ * no Tailwind CSS conflicts with the App Router homepage.
  */
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <Header />
+      <BlogHeader />
       <main style={{ minHeight: '70vh' }}>
         <Component {...pageProps} />
       </main>
-      <Footer />
+      <BlogFooter />
     </>
   );
 }
