@@ -1,6 +1,5 @@
-import '../styles/layout.css'
-import '../styles/homepage.css'
 import '../styles/globals.css'
+import '../styles/blog.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 
@@ -25,7 +24,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Header />
-        <main>{children}</main>
+        <main className="pt-[68px]">{children}</main>
         <Footer />
       </body>
     </html>
