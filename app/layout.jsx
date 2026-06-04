@@ -1,5 +1,4 @@
 import '../styles/globals.css'
-import '../styles/blog.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 
