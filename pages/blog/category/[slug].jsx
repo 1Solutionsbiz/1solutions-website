@@ -72,11 +72,16 @@ export default function CategoryPage({ category, posts, pageInfo, allCategories,
 }
 
 export async function getStaticPaths() {
-  const slugs = await getAllCategorySlugs();
-  return {
-    paths:    slugs.map((slug) => ({ params: { slug } })),
-    fallback: 'blocking',
-  };
+  try {
+    const slugs = await getAllCategorySlugs();
+    return {
+      paths:    slugs.map((slug) => ({ params: { slug } })),
+      fallback: 'blocking',
+    };
+  } catch (err) {
+    console.error('getStaticPaths category error:', err);
+    return { paths: [], fallback: 'blocking' };
+  }
 }
 
 export async function getStaticProps({ params }) {

@@ -282,11 +282,17 @@ export default function SinglePost({ post, relatedPosts }) {
 }
 
 export async function getStaticPaths() {
-  const slugs = await getAllPostSlugs();
-  return {
-    paths:    slugs.map((slug) => ({ params: { slug } })),
-    fallback: 'blocking', // SSR on first request, then cached
-  };
+  try {
+    const slugs = await getAllPostSlugs();
+    return {
+      paths:    slugs.map((slug) => ({ params: { slug } })),
+      fallback: 'blocking',
+    };
+  } catch (err) {
+    console.error('getStaticPaths [slug] error:', err);
+    // Don't pre-build any paths at build time — generate on demand
+    return { paths: [], fallback: 'blocking' };
+  }
 }
 
 export async function getStaticProps({ params }) {
