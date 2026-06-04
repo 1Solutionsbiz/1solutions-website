@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { formatDate, stripHtml, getCategoryColor } from '../../lib/graphql';
+import { formatDate, stripHtml, getCategoryColor, getReadingTime } from '../../lib/graphql';
 
 export default function BlogCard({ post }) {
   const cat     = post.categories?.nodes?.[0];
@@ -56,9 +56,7 @@ export default function BlogCard({ post }) {
           </div>
           <div className="blog-meta-right">
             <span className="blog-date">{formatDate(post.date)}</span>
-            {post.readingTime && (
-              <span className="blog-read-time">{post.readingTime}</span>
-            )}
+            <span className="blog-read-time">{getReadingTime(post.excerpt)}</span>
           </div>
         </div>
       </div>
