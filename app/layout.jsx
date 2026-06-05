@@ -1,4 +1,5 @@
 import '../styles/globals.css'
+import '../styles/layout.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 
