@@ -40,6 +40,17 @@ export default function BlogCard({ post }) {
 
         {excerpt && <p className="blog-description">{excerpt.slice(0, 120)}…</p>}
 
+        {/* Tags */}
+        {post.tags?.nodes?.length > 0 && (
+          <div className="blog-card-tags">
+            {post.tags.nodes.slice(0, 3).map((tag) => (
+              <Link key={tag.slug} href={`/blog/tag/${tag.slug}`} className="blog-card-tag">
+                #{tag.name}
+              </Link>
+            ))}
+          </div>
+        )}
+
         <div className="blog-footer">
           <div className="blog-author">
             {post.author?.node?.avatar?.url && (
