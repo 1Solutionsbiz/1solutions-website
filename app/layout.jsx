@@ -1,7 +1,7 @@
 import '../styles/globals.css'
-import '../styles/layout.css'
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
+import '../styles/blog.css'
+import Header from '@/components/blog/BlogHeader'
+import Footer from '@/components/blog/BlogFooter'
 
 export const metadata = {
   metadataBase: new URL('https://www.1solutions.biz'),
@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Header />
-        <main className="pt-[68px]">{children}</main>
+        <main style={{ paddingTop: '68px' }}>{children}</main>
         <Footer />
       </body>
     </html>
