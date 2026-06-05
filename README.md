@@ -34,3 +34,4 @@ lib/           → WordPress API helpers
 styles/        → Global CSS + design tokens
 public/images/ → Logo files
 ```
+# Blog tags update
