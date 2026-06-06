@@ -257,7 +257,8 @@ body {
 .author-meta-name { font-size: 14px; font-weight: 600; color: var(--primary); text-decoration: none; }
 .author-meta-name:hover { text-decoration: underline; }
 .meta-date, .meta-read-time { font-size: 13px; color: var(--text-light); }
-.article-share { display: flex; gap: 7px; margin-left: auto; }
+.article-share { display: flex; gap: 7px; align-items: center; }
+.article-share::before { content: '•'; color: var(--border); margin-right: 10px; font-size: 16px; }
 .share-btn { display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; border: 1px solid var(--border); border-radius: 6px; color: var(--text-light); text-decoration: none; background: none; cursor: pointer; transition: all 0.2s; }
 .share-btn:hover { transform: translateY(-2px); }
 .share-linkedin:hover { border-color: #0077b5; color: #0077b5; }
