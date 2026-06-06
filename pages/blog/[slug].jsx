@@ -8,13 +8,26 @@ import {
 } from '../../lib/graphql';
 import BlogCard from '../../components/blog/BlogCard';
 
-// Author LinkedIn URLs mapping
+// Author social links mapping (update here)
 const AUTHOR_LINKEDIN = {
   'atul@1solutions.biz': 'https://linkedin.com/in/atulchaudhary',
   'Atul Chaudhary': 'https://linkedin.com/in/atulchaudhary',
   'ritika@1solutions.biz': 'https://linkedin.com/company/1solutions',
   'Ritika': 'https://linkedin.com/company/1solutions',
-  // Add more authors as needed
+};
+
+const AUTHOR_EMAIL = {
+  'atul@1solutions.biz': 'atul@1solutions.biz',
+  'Atul Chaudhary': 'atul@1solutions.biz',
+  'ritika@1solutions.biz': 'ritika@1solutions.biz',
+  'Ritika': 'ritika@1solutions.biz',
+};
+
+const AUTHOR_WEBSITE = {
+  'atul@1solutions.biz': 'https://www.1solutions.biz',
+  'Atul Chaudhary': 'https://www.1solutions.biz',
+  'ritika@1solutions.biz': 'https://www.1solutions.biz',
+  'Ritika': 'https://www.1solutions.biz',
 };
 
 export default function SinglePost({ post, relatedPosts }) {
@@ -260,15 +273,15 @@ export default function SinglePost({ post, relatedPosts }) {
                   {post.author.node.description && (
                     <p className="author-bio">{post.author.node.description}</p>
                   )}
-                  {(post.author.node.url || post.author.node.email || AUTHOR_LINKEDIN[post.author.node.name]) && (
+                  {(AUTHOR_WEBSITE[post.author.node.name] || AUTHOR_EMAIL[post.author.node.name] || AUTHOR_LINKEDIN[post.author.node.name]) && (
                     <div className="author-social-links">
-                      {post.author.node.url && (
-                        <a href={post.author.node.url} className="author-social-link" target="_blank" rel="noopener noreferrer" aria-label="Website">
+                      {AUTHOR_WEBSITE[post.author.node.name] && (
+                        <a href={AUTHOR_WEBSITE[post.author.node.name]} className="author-social-link" target="_blank" rel="noopener noreferrer" aria-label="Website">
                           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                         </a>
                       )}
-                      {post.author.node.email && (
-                        <a href={`mailto:${post.author.node.email}`} className="author-social-link" aria-label="Email">
+                      {AUTHOR_EMAIL[post.author.node.name] && (
+                        <a href={`mailto:${AUTHOR_EMAIL[post.author.node.name]}`} className="author-social-link" aria-label="Email">
                           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                         </a>
                       )}
