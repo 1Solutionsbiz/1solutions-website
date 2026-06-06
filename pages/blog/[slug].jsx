@@ -10,10 +10,10 @@ import BlogCard from '../../components/blog/BlogCard';
 
 // Author social links mapping (update here)
 const AUTHOR_LINKEDIN = {
-  'atul@1solutions.biz': 'https://linkedin.com/in/atulchaudhary',
-  'Atul Chaudhary': 'https://linkedin.com/in/atulchaudhary',
-  'ritika@1solutions.biz': 'https://linkedin.com/company/1solutions',
-  'Ritika': 'https://linkedin.com/company/1solutions',
+  'atul@1solutions.biz': 'https://www.linkedin.com/in/atulchaudhary01/',
+  'Atul Chaudhary': 'https://www.linkedin.com/in/atulchaudhary01/',
+  'ritika@1solutions.biz': 'https://www.linkedin.com/company/1solutions',
+  'Ritika': 'https://www.linkedin.com/company/1solutions',
 };
 
 const AUTHOR_EMAIL = {
