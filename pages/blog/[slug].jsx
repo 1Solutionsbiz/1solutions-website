@@ -4,9 +4,18 @@ import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import {
   getPostBySlug, getAllPostSlugs, getRelatedPosts,
-  formatDate, stripHtml, getCategoryColor
+  formatDate, stripHtml, getCategoryColor, getReadingTime
 } from '../../lib/graphql';
 import BlogCard from '../../components/blog/BlogCard';
+
+// Author LinkedIn URLs mapping
+const AUTHOR_LINKEDIN = {
+  'atul@1solutions.biz': 'https://linkedin.com/in/atulchaudhary',
+  'Atul Chaudhary': 'https://linkedin.com/in/atulchaudhary',
+  'ritika@1solutions.biz': 'https://linkedin.com/company/1solutions',
+  'Ritika': 'https://linkedin.com/company/1solutions',
+  // Add more authors as needed
+};
 
 export default function SinglePost({ post, relatedPosts }) {
   const tocRef     = useRef(null);
@@ -251,11 +260,23 @@ export default function SinglePost({ post, relatedPosts }) {
                   {post.author.node.description && (
                     <p className="author-bio">{post.author.node.description}</p>
                   )}
-                  {post.author.node.url && (
+                  {(post.author.node.url || post.author.node.email || AUTHOR_LINKEDIN[post.author.node.name]) && (
                     <div className="author-social-links">
-                      <a href={post.author.node.url} className="author-social-link" target="_blank" rel="noopener noreferrer" aria-label="Website">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                      </a>
+                      {post.author.node.url && (
+                        <a href={post.author.node.url} className="author-social-link" target="_blank" rel="noopener noreferrer" aria-label="Website">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        </a>
+                      )}
+                      {post.author.node.email && (
+                        <a href={`mailto:${post.author.node.email}`} className="author-social-link" aria-label="Email">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        </a>
+                      )}
+                      {AUTHOR_LINKEDIN[post.author.node.name] && (
+                        <a href={AUTHOR_LINKEDIN[post.author.node.name]} className="author-social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.722-2.004 1.418-.103.25-.129.599-.129.948v5.439h-3.554s.043-8.811 0-9.726h3.554v1.375c.427-.659 1.191-1.597 2.898-1.597 2.117 0 3.704 1.384 3.704 4.362v5.586zM5.337 9.433c-1.144 0-1.915-.748-1.915-1.686 0-.955.768-1.686 1.959-1.686 1.19 0 1.916.73 1.916 1.686 0 .938-.726 1.686-1.96 1.686zm1.6 11.019H3.738V9.726h3.199v10.726zM22.224 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.224 0z"/></svg>
+                        </a>
+                      )}
                     </div>
                   )}
                 </div>
@@ -299,6 +320,9 @@ export async function getStaticProps({ params }) {
   try {
     const post = await getPostBySlug(params.slug);
     if (!post) return { notFound: true };
+
+    // Calculate reading time from content
+    post.readingTime = getReadingTime(post.content);
 
     const primaryCatSlug = post.categories?.nodes?.[0]?.slug;
     const related = primaryCatSlug
