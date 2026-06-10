@@ -45,7 +45,7 @@ export default function SinglePost({ post, relatedPosts }) {
     const content = contentRef.current;
     if (!toc || !content) return;
 
-    const headings = content.querySelectorAll('h2, h3');
+    const headings = content.querySelectorAll('h2');
     toc.innerHTML  = '';
 
     headings.forEach((h, i) => {
@@ -54,7 +54,7 @@ export default function SinglePost({ post, relatedPosts }) {
       const a       = document.createElement('a');
       a.href        = `#${h.id}`;
       a.textContent = h.textContent;
-      a.className   = h.tagName === 'H3' ? 'toc-h3' : 'toc-h2';
+      a.className   = 'toc-h2';
 
       a.addEventListener('click', (e) => {
         e.preventDefault();
