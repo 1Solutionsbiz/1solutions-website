@@ -130,44 +130,6 @@ export default function SinglePost({ post, relatedPosts }) {
       <div className="single-post-wrapper">
         <div className="single-post-layout">
 
-          {/* ── SIDEBAR ── */}
-          <aside className="post-sidebar" id="post-sidebar">
-
-            {/* TOC */}
-            <div className="toc-widget">
-              <div className="toc-header">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-                TABLE OF CONTENTS
-              </div>
-              <nav className="toc-list" ref={tocRef} aria-label="Table of contents" />
-            </div>
-
-            {/* Newsletter */}
-            <div className="sidebar-newsletter">
-              <div className="newsletter-icon">✉</div>
-              <h4>Weekly Insights</h4>
-              <p>Get the latest in web development, SEO, and digital marketing — every Tuesday.</p>
-              <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
-                <input type="email" placeholder="Your email address" required />
-                <button type="submit" className="newsletter-btn">Subscribe →</button>
-              </form>
-            </div>
-
-            {/* CTA */}
-            <div className="sidebar-cta">
-              <div className="sidebar-cta-badge">1Solutions</div>
-              <h4>Ready to Grow Your Business Online?</h4>
-              <p>16+ years building digital products and driving measurable growth worldwide.</p>
-              <ul className="sidebar-cta-features">
-                <li>✓ Web Development</li>
-                <li>✓ SEO &amp; Digital Marketing</li>
-                <li>✓ Dedicated Resource Teams</li>
-              </ul>
-              <Link href="/#contact" className="sidebar-cta-btn">Book Free Consultation →</Link>
-            </div>
-
-          </aside>
-
           {/* ── ARTICLE ── */}
           <main className="post-article" id="main-content">
 
@@ -312,6 +274,11 @@ export default function SinglePost({ post, relatedPosts }) {
                           </Link>
                         )}
                         <h4><Link href={`/blog/${rp.slug}`}>{rp.title}</Link></h4>
+                        {rp.excerpt && (
+                          <p className="related-card-excerpt">
+                            {stripHtml(rp.excerpt).slice(0, 90).trim()}{stripHtml(rp.excerpt).length > 90 ? '…' : ''}
+                          </p>
+                        )}
                         <div className="related-card-footer">
                           {rp.author?.node && (
                             <div className="related-card-author">
@@ -339,6 +306,45 @@ export default function SinglePost({ post, relatedPosts }) {
             )}
 
           </main>
+
+          {/* ── SIDEBAR ── */}
+          <aside className="post-sidebar" id="post-sidebar">
+
+            {/* TOC */}
+            <div className="toc-widget">
+              <div className="toc-header">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                TABLE OF CONTENTS
+              </div>
+              <nav className="toc-list" ref={tocRef} aria-label="Table of contents" />
+            </div>
+
+            {/* Newsletter */}
+            <div className="sidebar-newsletter">
+              <div className="newsletter-icon">✉</div>
+              <h4>Weekly Insights</h4>
+              <p>Get the latest in web development, SEO, and digital marketing — every Tuesday.</p>
+              <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
+                <input type="email" placeholder="Your email address" required />
+                <button type="submit" className="newsletter-btn">Subscribe →</button>
+              </form>
+            </div>
+
+            {/* CTA */}
+            <div className="sidebar-cta">
+              <div className="sidebar-cta-badge">1Solutions</div>
+              <h4>Ready to Grow Your Business Online?</h4>
+              <p>16+ years building digital products and driving measurable growth worldwide.</p>
+              <ul className="sidebar-cta-features">
+                <li>✓ Web Development</li>
+                <li>✓ SEO &amp; Digital Marketing</li>
+                <li>✓ Dedicated Resource Teams</li>
+              </ul>
+              <Link href="/#contact" className="sidebar-cta-btn">Book Free Consultation →</Link>
+            </div>
+
+          </aside>
+
         </div>
       </div>
     </>
