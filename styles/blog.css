@@ -128,10 +128,10 @@ body {
 .no-posts p  { color: var(--text-light); margin-bottom: 28px; }
 
 /* ── BLOG HERO ───────────────────────────────────────────── */
-.blog-hero { padding: 90px 40px 70px; background: url('/images/BG-1Solutions.png') center center / cover no-repeat; text-align: center; border-bottom: 1px solid var(--border); }
+.blog-hero { padding: 90px 40px 70px; background: linear-gradient(135deg,#0a1e46 0%,#114171 50%,#0d5c2e 100%); text-align: center; border-bottom: 1px solid var(--border); }
 .blog-hero-container { max-width: 860px; margin: 0 auto; padding: 0 50px; }
-.blog-hero h1 { font-size: clamp(32px,6vw,60px); font-weight: 900; line-height: 1.1; margin-bottom: 16px; letter-spacing: -1px; background: linear-gradient(90deg,var(--primary),var(--orange) 45%,var(--green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.blog-hero p  { font-size: 17px; color: var(--text-light); max-width: 580px; margin: 0 auto 32px; line-height: 1.7; }
+.blog-hero h1 { font-size: clamp(32px,6vw,60px); font-weight: 900; line-height: 1.1; margin-bottom: 16px; letter-spacing: -1px; color: white; }
+.blog-hero p  { font-size: 17px; color: rgba(255,255,255,0.75); max-width: 580px; margin: 0 auto 0; line-height: 1.7; }
 .blog-hero-filters { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
 
 /* ── BLOG CONTAINER ──────────────────────────────────────── */
@@ -225,8 +225,9 @@ body {
 
 /* Sidebar Newsletter */
 .sidebar-newsletter { background: linear-gradient(135deg,#0a2a1a,#0d3d24); border-radius: 14px; padding: 22px; color: white; box-shadow: 0 4px 16px rgba(68,151,61,0.2); }
-.newsletter-icon { font-size: 24px; margin-bottom: 10px; }
-.sidebar-newsletter h4 { font-size: 15px; font-weight: 700; color: white; margin-bottom: 6px; }
+.newsletter-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.newsletter-icon { font-size: 20px; line-height: 1; flex-shrink: 0; }
+.sidebar-newsletter h4 { font-size: 15px; font-weight: 700; color: white; margin: 0; }
 .sidebar-newsletter p  { font-size: 13px; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 14px; }
 .newsletter-form { display: flex; flex-direction: column; gap: 8px; }
 .newsletter-form input { padding: 10px 13px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); border-radius: 7px; font-size: 13px; outline: none; font-family: inherit; color: white; transition: border-color 0.2s; }

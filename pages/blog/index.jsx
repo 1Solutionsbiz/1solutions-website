@@ -25,14 +25,6 @@ export default function BlogIndex({ featuredPost, posts, pageInfo, categories, c
         <div className="blog-hero-container">
           <h1>Insights &amp; Resources</h1>
           <p>Expert articles on web development, digital marketing, SEO, and emerging technology — helping your business stay ahead.</p>
-          <div className="blog-hero-filters">
-            <Link href="/blog" className="filter-btn active">All Topics</Link>
-            {categories.map((cat) => (
-              <Link key={cat.slug} href={`/blog/category/${cat.slug}`} className="filter-btn">
-                {cat.name}
-              </Link>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -76,19 +68,6 @@ export default function BlogIndex({ featuredPost, posts, pageInfo, categories, c
             </div>
           </article>
         )}
-
-        {/* ── FILTERS ── */}
-        <div className="filters-section">
-          <p className="filters-label">Browse by Topic</p>
-          <div className="filters">
-            <Link href="/blog" className="filter-btn active">All</Link>
-            {categories.map((cat) => (
-              <Link key={cat.slug} href={`/blog/category/${cat.slug}`} className="filter-btn">
-                {cat.name}
-              </Link>
-            ))}
-          </div>
-        </div>
 
         {/* ── BLOG GRID ── */}
         {posts.length > 0 ? (

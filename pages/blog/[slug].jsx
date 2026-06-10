@@ -268,11 +268,6 @@ export default function SinglePost({ post, relatedPosts }) {
                     const rpColor = rpCat ? getCategoryColor(rpCat.slug) : 'cat-blue';
                     return (
                       <article key={rp.slug} className="related-card">
-                        {rpCat && (
-                          <Link href={`/blog/category/${rpCat.slug}`} className={`related-card-cat ${rpColor}`}>
-                            {rpCat.name}
-                          </Link>
-                        )}
                         <h4><Link href={`/blog/${rp.slug}`}>{rp.title}</Link></h4>
                         {rp.excerpt && (
                           <p className="related-card-excerpt">
@@ -321,8 +316,10 @@ export default function SinglePost({ post, relatedPosts }) {
 
             {/* Newsletter */}
             <div className="sidebar-newsletter">
-              <div className="newsletter-icon">✉</div>
-              <h4>Weekly Insights</h4>
+              <div className="newsletter-header">
+                <div className="newsletter-icon">✉</div>
+                <h4>Weekly Insights</h4>
+              </div>
               <p>Get the latest in web development, SEO, and digital marketing — every Tuesday.</p>
               <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
                 <input type="email" placeholder="Your email address" required />
