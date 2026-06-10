@@ -33,9 +33,9 @@ export default async function handler(req) {
     const displayTitle = title.length > 110 ? title.slice(0, 107) + '…' : title;
 
     // Dynamic font size based on length
-    let fontSize = 62;
-    if (displayTitle.length > 80) fontSize = 46;
-    else if (displayTitle.length > 55) fontSize = 54;
+    let fontSize = 58;
+    if (displayTitle.length > 80) fontSize = 42;
+    else if (displayTitle.length > 55) fontSize = 50;
 
     // Fetch Inter Bold font only
     const fontRes = await fetch(
