@@ -377,11 +377,10 @@ export async function getStaticProps({ params }) {
     const relatedRaw = primaryCatSlug
       ? await getRelatedPosts(primaryCatSlug, params.slug, 3)
       : [];
-    const related = relatedRaw.map((rp) => ({
-      ...rp,
-      readingTime: rp.content ? getReadingTime(rp.content) : null,
-      content: undefined, // strip heavy content from props
-    }));
+    const related = relatedRaw.map((rp) => {
+      const { content, ...rest } = rp;
+      return { ...rest, readingTime: content ? getReadingTime(content) : null };
+    });
 
     return {
       props:      { post, relatedPosts: related },
