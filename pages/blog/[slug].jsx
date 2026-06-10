@@ -45,7 +45,7 @@ export default function SinglePost({ post, relatedPosts }) {
     const content = contentRef.current;
     if (!toc || !content) return;
 
-    const headings = content.querySelectorAll('h2');
+    const headings = content.querySelectorAll('h2, h3');
     toc.innerHTML  = '';
 
     headings.forEach((h, i) => {
@@ -54,7 +54,7 @@ export default function SinglePost({ post, relatedPosts }) {
       const a       = document.createElement('a');
       a.href        = `#${h.id}`;
       a.textContent = h.textContent;
-      a.className   = 'toc-h2';
+      a.className   = h.tagName === 'H3' ? 'toc-h3' : 'toc-h2';
 
       a.addEventListener('click', (e) => {
         e.preventDefault();
@@ -301,9 +301,21 @@ export default function SinglePost({ post, relatedPosts }) {
               <section className="related-articles" aria-label="Related articles">
                 <h3 className="related-title">Related Articles</h3>
                 <div className="related-grid">
-                  {relatedPosts.map((rp) => (
-                    <BlogCard key={rp.slug} post={rp} />
-                  ))}
+                  {relatedPosts.map((rp) => {
+                    const rpCat  = rp.categories?.nodes?.[0];
+                    const rpColor = rpCat ? getCategoryColor(rpCat.slug) : 'cat-blue';
+                    return (
+                      <article key={rp.slug} className="related-card">
+                        {rpCat && (
+                          <Link href={`/blog/category/${rpCat.slug}`} className={`related-card-cat ${rpColor}`}>
+                            {rpCat.name}
+                          </Link>
+                        )}
+                        <h4><Link href={`/blog/${rp.slug}`}>{rp.title}</Link></h4>
+                        <div className="related-card-meta">{formatDate(rp.date)}{rp.readingTime ? ` · ${rp.readingTime}` : ''}</div>
+                      </article>
+                    );
+                  })}
                 </div>
               </section>
             )}
