@@ -312,7 +312,25 @@ export default function SinglePost({ post, relatedPosts }) {
                           </Link>
                         )}
                         <h4><Link href={`/blog/${rp.slug}`}>{rp.title}</Link></h4>
-                        <div className="related-card-meta">{formatDate(rp.date)}{rp.readingTime ? ` · ${rp.readingTime}` : ''}</div>
+                        <div className="related-card-footer">
+                          {rp.author?.node && (
+                            <div className="related-card-author">
+                              {rp.author.node.avatar?.url && (
+                                <Image
+                                  src={rp.author.node.avatar.url}
+                                  alt={rp.author.node.name}
+                                  width={20}
+                                  height={20}
+                                  className="related-author-avatar"
+                                />
+                              )}
+                              <span className="related-author-name">{rp.author.node.name}</span>
+                            </div>
+                          )}
+                          <div className="related-card-meta">
+                            {formatDate(rp.date)}{rp.readingTime ? ` · ${rp.readingTime}` : ''}
+                          </div>
+                        </div>
                       </article>
                     );
                   })}
@@ -350,9 +368,14 @@ export async function getStaticProps({ params }) {
     post.readingTime = getReadingTime(post.content);
 
     const primaryCatSlug = post.categories?.nodes?.[0]?.slug;
-    const related = primaryCatSlug
+    const relatedRaw = primaryCatSlug
       ? await getRelatedPosts(primaryCatSlug, params.slug, 3)
       : [];
+    const related = relatedRaw.map((rp) => ({
+      ...rp,
+      readingTime: rp.content ? getReadingTime(rp.content) : null,
+      content: undefined, // strip heavy content from props
+    }));
 
     return {
       props:      { post, relatedPosts: related },
