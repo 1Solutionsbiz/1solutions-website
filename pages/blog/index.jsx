@@ -40,7 +40,7 @@ export default function BlogIndex({ featuredPost, posts, pageInfo, categories, c
                   alt={feat.featuredImage.node.altText || feat.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  style={{ objectFit: 'cover' }}
+                  style={{ objectFit: 'contain' }}
                   priority
                 />
               ) : (
