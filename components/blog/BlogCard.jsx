@@ -44,7 +44,7 @@ export default function BlogCard({ post }) {
         {post.tags?.nodes?.length > 0 && (
           <div className="blog-card-tags">
             {post.tags.nodes.slice(0, 3).map((tag) => (
-              <Link key={tag.slug} href={`/blog/tag/${tag.slug}`} className="blog-card-tag">
+              <Link key={tag.slug} href={`/tag/${tag.slug}`} className="blog-card-tag">
                 #{tag.name}
               </Link>
             ))}

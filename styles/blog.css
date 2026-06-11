@@ -631,3 +631,100 @@ body {
 @media (max-width: 480px) {
   .bf-right { grid-template-columns: 1fr; }
 }
+
+/* ── Author Archive Page ──────────────────────────────────── */
+.author-archive-hero {
+  background: linear-gradient(135deg, rgba(254,243,199,0.5) 0%, rgba(233,212,255,0.3) 100%);
+  padding: 60px 40px 56px;
+  border-bottom: 1px solid var(--border);
+}
+.author-archive-container {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 36px;
+}
+.author-archive-avatar-wrap { flex-shrink: 0; }
+.author-archive-avatar { display: block; }
+.author-archive-avatar-placeholder {
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-size: 48px;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  border: 4px solid var(--orange);
+}
+.author-archive-info { flex: 1; }
+.author-archive-badge {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.author-archive-name {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+.author-archive-bio {
+  color: var(--text-light);
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0 0 20px;
+  max-width: 560px;
+}
+.author-archive-socials {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.author-social-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.author-social-pill:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: rgba(17,65,113,0.04);
+}
+
+.author-posts-header {
+  padding: 32px 0 16px;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 32px;
+}
+.author-posts-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0;
+}
+
+/* Author archive mobile */
+@media (max-width: 600px) {
+  .author-archive-hero { padding: 40px 20px 36px; }
+  .author-archive-container { flex-direction: column; align-items: center; text-align: center; gap: 20px; }
+  .author-archive-avatar-placeholder { width: 90px; height: 90px; font-size: 36px; }
+  .author-archive-bio { max-width: 100%; }
+  .author-archive-socials { justify-content: center; }
+}

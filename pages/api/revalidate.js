@@ -25,6 +25,10 @@ export default async function handler(req, res) {
       paths.push('/blog');
     } else if (type === 'category' && slug) {
       paths.push(`/${slug}`);
+    } else if (type === 'tag' && slug) {
+      paths.push(`/tag/${slug}`);
+    } else if (type === 'author' && slug) {
+      paths.push(`/author/${slug}`);
     }
 
     await Promise.all(paths.map((p) => res.revalidate(p)));

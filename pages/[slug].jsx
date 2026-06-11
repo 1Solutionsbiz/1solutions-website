@@ -237,7 +237,11 @@ function SinglePost({ post, relatedPosts }) {
                       style={{ borderRadius: '50%' }}
                     />
                   )}
-                  <span className="author-meta-name">{post.author?.node?.name}</span>
+                  {post.author?.node?.slug ? (
+                    <Link href={`/author/${post.author.node.slug}`} className="author-meta-name">{post.author.node.name}</Link>
+                  ) : (
+                    <span className="author-meta-name">{post.author?.node?.name}</span>
+                  )}
                 </div>
                 <time className="meta-date" dateTime={post.date}>{formatDate(post.date)}</time>
                 {post.readingTime && <span className="meta-read-time">⏱ {post.readingTime}</span>}
@@ -280,7 +284,7 @@ function SinglePost({ post, relatedPosts }) {
               <div className="article-tags">
                 <span className="tags-label">Tags:</span>
                 {post.tags.nodes.map((tag) => (
-                  <Link key={tag.slug} href={`/blog/tag/${tag.slug}`} className="article-tag-link">
+                  <Link key={tag.slug} href={`/tag/${tag.slug}`} className="article-tag-link">
                     #{tag.name}
                   </Link>
                 ))}
@@ -302,7 +306,11 @@ function SinglePost({ post, relatedPosts }) {
                   )}
                 </div>
                 <div className="author-box-content">
-                  <h4>{post.author.node.name}</h4>
+                  <h4>
+                    {post.author.node.slug ? (
+                      <Link href={`/author/${post.author.node.slug}`}>{post.author.node.name}</Link>
+                    ) : post.author.node.name}
+                  </h4>
                   {post.author.node.description && (
                     <p className="author-bio">{post.author.node.description}</p>
                   )}
