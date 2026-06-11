@@ -14,6 +14,18 @@ const nextConfig = {
     ],
   },
 
+  async redirects() {
+    return [
+      // Redirect old /blog/[slug] post URLs to /[slug] (301 permanent for SEO)
+      // Note: only matches single-segment paths — /blog/category/x, /blog/tag/x etc are unaffected
+      {
+        source: '/blog/:slug',
+        destination: '/:slug',
+        permanent: true,
+      },
+    ];
+  },
+
   async rewrites() {
     return [
       {

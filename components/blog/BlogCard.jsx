@@ -10,7 +10,7 @@ export default function BlogCard({ post }) {
 
   return (
     <article className="blog-card">
-      <Link href={`/blog/${post.slug}`} className="blog-card-image-link" tabIndex={-1} aria-hidden>
+      <Link href={`/${post.slug}`} className="blog-card-image-link" tabIndex={-1} aria-hidden>
         <div className="blog-card-image">
           {thumb ? (
             <Image
@@ -35,7 +35,7 @@ export default function BlogCard({ post }) {
         )}
 
         <h3>
-          <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+          <Link href={`/${post.slug}`}>{post.title}</Link>
         </h3>
 
         {excerpt && <p className="blog-description">{excerpt.slice(0, 120)}…</p>}

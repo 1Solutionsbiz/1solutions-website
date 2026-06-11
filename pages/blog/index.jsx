@@ -54,7 +54,7 @@ export default function BlogIndex({ featuredPost, posts, pageInfo, categories, c
                   {featCat.name}
                 </Link>
               )}
-              <h2><Link href={`/blog/${feat.slug}`}>{feat.title}</Link></h2>
+              <h2><Link href={`/${feat.slug}`}>{feat.title}</Link></h2>
               <div className="featured-meta">
                 <span>{formatDate(feat.date)}</span>
                 {feat.readingTime && <span>{feat.readingTime}</span>}
@@ -62,7 +62,7 @@ export default function BlogIndex({ featuredPost, posts, pageInfo, categories, c
               <p className="featured-description">
                 {stripHtml(feat.excerpt).slice(0, 180)}…
               </p>
-              <Link href={`/blog/${feat.slug}`} className="read-more-btn">
+              <Link href={`/${feat.slug}`} className="read-more-btn">
                 Read Article →
               </Link>
             </div>

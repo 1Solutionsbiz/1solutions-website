@@ -21,7 +21,7 @@ export default async function handler(req, res) {
     const paths = [];
 
     if (type === 'post' && slug) {
-      paths.push(`/blog/${slug}`);
+      paths.push(`/${slug}`);
       paths.push('/blog');
     } else if (type === 'category' && slug) {
       paths.push(`/blog/category/${slug}`);
