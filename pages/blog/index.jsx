@@ -50,7 +50,7 @@ export default function BlogIndex({ featuredPost, posts, pageInfo, categories, c
 
             <div className="featured-content">
               {featCat && (
-                <Link href={`/blog/category/${featCat.slug}`} className={`featured-badge ${featColor}`}>
+                <Link href={`/${featCat.slug}`} className={`featured-badge ${featColor}`}>
                   {featCat.name}
                 </Link>
               )}

@@ -29,7 +29,7 @@ export default function BlogCard({ post }) {
 
       <div className="blog-card-content">
         {cat && (
-          <Link href={`/blog/category/${cat.slug}`} className={`blog-tag ${color}`}>
+          <Link href={`/${cat.slug}`} className={`blog-tag ${color}`}>
             {cat.name}
           </Link>
         )}

@@ -24,7 +24,7 @@ export default async function handler(req, res) {
       paths.push(`/${slug}`);
       paths.push('/blog');
     } else if (type === 'category' && slug) {
-      paths.push(`/blog/category/${slug}`);
+      paths.push(`/${slug}`);
     }
 
     await Promise.all(paths.map((p) => res.revalidate(p)));

@@ -23,6 +23,12 @@ const nextConfig = {
         destination: '/:slug',
         permanent: true,
       },
+      // Redirect old /blog/category/[slug] to /[slug]
+      {
+        source: '/blog/category/:slug',
+        destination: '/:slug',
+        permanent: true,
+      },
     ];
   },
 

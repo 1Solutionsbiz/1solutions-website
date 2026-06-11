@@ -31,7 +31,7 @@ export default function TagArchive({ tag, posts, pageInfo, categories }) {
           <div className="filters">
             <Link href="/blog" className="filter-btn">All</Link>
             {categories.map((cat) => (
-              <Link key={cat.slug} href={`/blog/category/${cat.slug}`} className="filter-btn">
+              <Link key={cat.slug} href={`/${cat.slug}`} className="filter-btn">
                 {cat.name}
               </Link>
             ))}
