@@ -570,7 +570,7 @@ export default function WordPressDevelopmentCompany() {
               <p className="wp-engage-desc">Client satisfaction is our top priority. We offer flexible engagement models so you can choose the approach that best fits your project, timeline, and budget — with full transparency at every step.</p>
               <div className="wp-engage-img-wrap">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/bg-2.jpg" alt="Partner With 1Solutions" />
+                <img src="/images/Partner-with-us.jpg" alt="Partner With 1Solutions" />
               </div>
             </div>
             <div className="wp-engage-right">
