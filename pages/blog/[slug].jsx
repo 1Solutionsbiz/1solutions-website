@@ -268,6 +268,18 @@ export default function SinglePost({ post, relatedPosts }) {
                     const rpColor = rpCat ? getCategoryColor(rpCat.slug) : 'cat-blue';
                     return (
                       <article key={rp.slug} className="related-card">
+                        {rp.featuredImage?.node && (
+                          <Link href={`/blog/${rp.slug}`} className="related-card-img-wrap">
+                            <Image
+                              src={rp.featuredImage.node.sourceUrl}
+                              alt={rp.featuredImage.node.altText || rp.title}
+                              width={400}
+                              height={200}
+                              className="related-card-img"
+                            />
+                          </Link>
+                        )}
+                        <div className="related-card-body">
                         <h4><Link href={`/blog/${rp.slug}`}>{rp.title}</Link></h4>
                         {rp.excerpt && (
                           <p className="related-card-excerpt">
@@ -292,6 +304,7 @@ export default function SinglePost({ post, relatedPosts }) {
                           <div className="related-card-meta">
                             {formatDate(rp.date)}{rp.readingTime ? ` · ${rp.readingTime}` : ''}
                           </div>
+                        </div>
                         </div>
                       </article>
                     );
