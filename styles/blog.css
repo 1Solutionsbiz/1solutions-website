@@ -310,16 +310,16 @@ body {
 .article-tag-link:hover { border-color: var(--primary); color: var(--primary); }
 
 /* Author box */
-.author-box { display: flex; flex-direction: column; gap: 16px; align-items: center; text-align: center; background: var(--light-gray); border-radius: 14px; padding: 24px; margin-bottom: 44px; width: 100%; box-sizing: border-box; }
+.author-box { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; text-align: left; background: var(--light-gray); border-radius: 14px; padding: 24px; margin-bottom: 44px; width: 100%; box-sizing: border-box; }
 .author-box-avatar { flex-shrink: 0; }
 .author-box-content { width: 100%; box-sizing: border-box; }
-.author-avatar-lg { border-radius: 50%; object-fit: cover; width: 70px; height: 70px; display: block; margin: 0 auto; }
+.author-avatar-lg { border-radius: 50%; object-fit: cover; width: 70px; height: 70px; display: block; }
 .author-box-content h4 { font-size: 16px; font-weight: 700; color: var(--primary); margin: 0 0 4px 0; }
 .author-box-content h4 a { color: inherit; text-decoration: none; }
 .author-box-content h4 a:hover { color: var(--orange); }
 .author-role { font-size: 13px; color: var(--orange); font-weight: 600; margin-bottom: 8px; }
 .author-bio  { font-size: 14px; color: var(--text-light); line-height: 1.7; margin: 8px 0 12px 0; word-wrap: break-word; overflow-wrap: break-word; width: 100% !important; max-width: none !important; display: block; }
-.author-social-links { display: flex; gap: 12px; align-items: center; margin-top: 12px; justify-content: center; }
+.author-social-links { display: flex; gap: 12px; align-items: center; margin-top: 12px; justify-content: flex-start; }
 .author-social-link { display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border: 1px solid var(--border); border-radius: 8px; color: var(--text-light); text-decoration: none; transition: all 0.2s; flex-shrink: 0; }
 .author-social-link:hover { border-color: var(--primary); color: var(--primary); background: var(--white); }
 
@@ -393,7 +393,9 @@ body {
   .article-share { margin-left: 0; width: 100%; justify-content: flex-start; }
   .article-content { font-size: 15px; }
   .article-content pre { padding: 14px; font-size: 13px; }
-  .author-box { padding: 20px; }
+  .author-box { padding: 20px; align-items: center; text-align: center; }
+  .author-avatar-lg { margin: 0 auto; }
+  .author-social-links { justify-content: center; }
   .post-nav { grid-template-columns: 1fr; }
   .post-nav-next .post-nav-link { text-align: left; }
   .related-grid { grid-template-columns: 1fr; }
