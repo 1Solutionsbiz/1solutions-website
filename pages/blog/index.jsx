@@ -38,9 +38,9 @@ export default function BlogIndex({ featuredPost, posts, pageInfo, categories, c
                 <Image
                   src={feat.featuredImage.node.sourceUrl}
                   alt={feat.featuredImage.node.altText || feat.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  style={{ objectFit: 'contain' }}
+                  width={800}
+                  height={600}
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
                   priority
                 />
               ) : (
