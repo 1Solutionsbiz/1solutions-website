@@ -494,7 +494,7 @@ export default function WordPressDevelopmentCompany() {
             <div className="wp-process-image-col">
               <div className="wp-process-img-wrap">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/banner-1sol.jpg" alt="1Solutions WordPress development team" loading="lazy" />
+                <img src="/images/office.png" alt="1Solutions WordPress development team" />
               </div>
             </div>
           </div>
