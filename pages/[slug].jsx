@@ -5,8 +5,8 @@ import { useEffect, useRef } from 'react';
 import {
   getPostBySlug, getAllPostSlugs, getRelatedPosts,
   formatDate, stripHtml, getCategoryColor, getReadingTime
-} from '../../lib/graphql';
-import BlogCard from '../../components/blog/BlogCard';
+} from '../lib/graphql';
+import BlogCard from '../components/blog/BlogCard';
 
 // Author social links mapping (update here)
 const AUTHOR_LINKEDIN = {
