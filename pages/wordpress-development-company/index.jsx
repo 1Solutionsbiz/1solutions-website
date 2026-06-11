@@ -202,8 +202,8 @@ export default function WordPressDevelopmentCompany() {
           .wp-engage-left { position:sticky;top:100px;display:flex;flex-direction:column; }
           .wp-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#F59E0B 45%,#7C3AED 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
           .wp-engage-desc { font-size:15px;color:#3A507A;line-height:1.75;margin:0 0 32px; }
-          .wp-engage-img-wrap { border-radius:14px;overflow:hidden;box-shadow:0 16px 48px rgba(15,52,96,0.15);flex:1;min-height:0; }
-          .wp-engage-img-wrap img { width:100%;height:100%;object-fit:cover;display:block; }
+          .wp-engage-img-wrap { border-radius:14px;overflow:hidden;box-shadow:0 16px 48px rgba(15,52,96,0.15);flex:1;min-height:300px; }
+          .wp-engage-img-wrap img { width:100%;height:100%;min-height:300px;object-fit:cover;display:block; }
           .wp-engage-right { display:flex;flex-direction:column;gap:16px; }
           .wp-ecard { background:rgba(255,255,255,0.50);border:1px solid rgba(15,52,96,0.12);border-radius:14px;padding:26px 28px;transition:background 0.3s,border-color 0.3s,transform 0.3s; }
           .wp-ecard:hover { background:rgba(15,52,96,0.06);border-color:rgba(254,151,0,0.45);transform:translateX(4px); }
@@ -570,7 +570,7 @@ export default function WordPressDevelopmentCompany() {
               <p className="wp-engage-desc">Client satisfaction is our top priority. We offer flexible engagement models so you can choose the approach that best fits your project, timeline, and budget — with full transparency at every step.</p>
               <div className="wp-engage-img-wrap">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/bg-2.jpg" alt="Partner With 1Solutions" loading="lazy" />
+                <img src="/images/bg-2.jpg" alt="Partner With 1Solutions" />
               </div>
             </div>
             <div className="wp-engage-right">
