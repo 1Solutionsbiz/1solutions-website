@@ -297,32 +297,74 @@ export default function WordPressDevelopmentCompany() {
             .wp-services-grid { grid-template-columns:repeat(2,1fr); }
             .wp-why-grid { grid-template-columns:repeat(2,1fr); }
             .wp-portfolio-grid { grid-template-columns:repeat(2,1fr); }
+            .wp-portfolio-wrap { padding:32px 28px 40px; }
             .wp-engage-inner { grid-template-columns:1fr; }
+            .wp-engage-left { position:static; }
             .wp-process-inner { grid-template-columns:1fr; }
             .wp-process-image-col { display:none; }
           }
           @media (max-width:768px) {
-            .wp-hero-content { padding:40px 24px 28px; }
-            .wp-hero-content h1 { font-size:32px;letter-spacing:-0.5px; }
-            .wp-hero-stats { grid-template-columns:1fr 1fr; }
+            .wp-page { overflow-x:hidden; }
+            .wp-hero-content { padding:36px 20px 24px; }
+            .wp-hero-content h1 { font-size:28px;letter-spacing:-0.3px; }
+            .wp-hero-content p { font-size:15px; }
+            .wp-hero-stats { grid-template-columns:1fr 1fr;max-width:100%; }
+            .wp-stat-col { padding:14px 12px; }
             .wp-stat-col:nth-child(2) { border-right:none; }
             .wp-stat-col:nth-child(3) { border-top:1px solid rgba(15,52,96,0.10); }
             .wp-stat-col:nth-child(4) { border-top:1px solid rgba(15,52,96,0.10);border-right:none; }
-            .wp-clients-bar { padding:16px 24px 40px; }
-            .wp-clients-logos { gap:24px; }
-            .wp-services-section,.wp-portfolio-section,.wp-process-section,.wp-testi-section,.wp-why-section,.wp-engage-section,.wp-contact-section,.wp-faq-section,.wp-related-section { padding-left:24px;padding-right:24px; }
-            .wp-services-grid { grid-template-columns:1fr 1fr; }
-            .wp-why-grid { grid-template-columns:1fr; }
+            .wp-stat-value { font-size:22px; }
+            .wp-clients-bar { padding:16px 20px 36px;gap:12px; }
+            .wp-clients-logos { gap:16px; }
+            .wp-client-logo { height:20px; }
+            .wp-services-section { padding:48px 20px 40px; }
+            .wp-portfolio-section { padding:48px 16px; }
+            .wp-portfolio-wrap { padding:24px 20px 32px;border-radius:16px; }
+            .wp-portfolio-header { flex-direction:column;align-items:flex-start;gap:14px; }
+            .wp-portfolio-title { font-size:26px; }
+            .wp-process-section { padding:60px 20px; }
+            .wp-process-top { margin-bottom:36px; }
+            .wp-testi-section { padding:60px 20px; }
+            .wp-why-section { padding:60px 20px; }
+            .wp-why-grid { grid-template-columns:1fr;margin-top:40px; }
+            .wp-why-card { padding:24px 20px; }
+            .wp-engage-section { padding:60px 20px; }
+            .wp-contact-section { padding:48px 16px; }
+            .wp-contact-container { grid-template-columns:1fr; }
+            .wp-contact-left { padding:28px 20px; }
+            .wp-contact-right { padding:0 20px 28px; }
+            .wp-contact-title { font-size:28px; }
+            .wp-faq-section { padding:60px 20px; }
+            .wp-faq-question { padding:18px 20px; }
+            .wp-faq-question span { font-size:14px; }
+            .wp-faq-item.open .wp-faq-answer { padding:12px 20px 18px; }
+            .wp-faq-answer { padding:0 20px; }
+            .wp-related-section { padding:60px 20px; }
+            .wp-services-grid { grid-template-columns:1fr 1fr;gap:10px; }
             .wp-testi-grid { grid-template-columns:1fr; }
             .wp-portfolio-grid { grid-template-columns:1fr; }
-            .wp-contact-container { grid-template-columns:1fr; }
-            .wp-section-title,.wp-engage-title,.wp-process-main-title,.wp-portfolio-title,.wp-related-title,.wp-contact-title { font-size:36px; }
-            .wp-testi-stats { flex-wrap:wrap;gap:20px; }
+            .wp-section-title,.wp-engage-title,.wp-process-main-title,.wp-related-title { font-size:30px; }
+            .wp-testi-stats { flex-wrap:wrap;gap:16px;padding:24px 20px; }
+            .wp-tstat-divider { display:none; }
             .wp-form-row { grid-template-columns:1fr; }
+            .wp-stats-grid { grid-template-columns:1fr 1fr 1fr; }
+            .wp-stat-number { font-size:28px; }
           }
           @media (max-width:480px) {
-            .wp-hero-content h1 { font-size:28px; }
-            .wp-section-title,.wp-engage-title,.wp-process-main-title,.wp-portfolio-title,.wp-related-title,.wp-contact-title { font-size:28px; }
+            .wp-hero-content h1 { font-size:24px; }
+            .wp-section-title,.wp-engage-title,.wp-process-main-title,.wp-related-title { font-size:26px; }
+            .wp-services-grid { grid-template-columns:1fr; }
+            .wp-service-card { padding:20px 18px 18px; }
+            .wp-card-num { font-size:52px; }
+            .wp-process-main-title { font-size:24px; }
+            .wp-pstep-title { font-size:18px; }
+            .wp-portfolio-title { font-size:22px; }
+            .wp-contact-title { font-size:24px; }
+            .wp-engage-title { font-size:26px; }
+            .wp-tcard { padding:24px 20px; }
+            .wp-ecard { padding:20px; }
+            .wp-ecard-features { grid-template-columns:1fr; }
+            .wp-merged-box { padding:18px; }
           }
         `}</style>
       </Head>
