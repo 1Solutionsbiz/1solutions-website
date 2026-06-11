@@ -80,7 +80,7 @@ export default function WordPressDevelopmentCompany() {
           .wp-hero-block::after { content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.18) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px); }
           .wp-hero-content { position:relative;z-index:2;text-align:center;max-width:860px;margin:0 auto;padding:56px 40px 40px; }
           .wp-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:18px; }
-          .wp-hero-content h1 { font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(90deg,#0F3460 0%,#F59E0B 50%,#7C3AED 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+          .wp-hero-content h1 { font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
           .wp-hero-content p { font-size:16px;color:#3A507A;line-height:1.65;max-width:620px;margin:0 auto 28px; }
           .wp-btn-hero { display:inline-block;padding:14px 40px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1); }
           .wp-btn-hero:hover { background:rgba(255,255,255,0.85);border-color:rgba(245,158,11,0.6);box-shadow:0 12px 36px rgba(15,52,96,0.15),0 0 0 2px rgba(245,158,11,0.22),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px);color:#0F3460; }
@@ -101,7 +101,7 @@ export default function WordPressDevelopmentCompany() {
 
           /* Sections shared */
           .wp-section-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:12px;display:block; }
-          .wp-section-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#F59E0B 45%,#7C3AED 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin-bottom:10px; }
+          .wp-section-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin-bottom:10px; }
           .wp-section-desc { font-size:15px;color:#4A6080;line-height:1.7;max-width:680px;margin-bottom:36px; }
           .wp-section-sub { font-size:16px;color:#4A6080;margin:0; }
 
@@ -126,7 +126,7 @@ export default function WordPressDevelopmentCompany() {
           .wp-portfolio-section { background:transparent;padding:70px 40px;position:relative;z-index:1; }
           .wp-portfolio-wrap { max-width:1280px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);border-radius:24px;padding:44px 44px 50px;box-shadow:0 8px 40px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,0.95); }
           .wp-portfolio-header { display:flex;align-items:center;justify-content:space-between;margin-bottom:36px;gap:24px; }
-          .wp-portfolio-title { font-size:40px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#F59E0B 45%,#7C3AED 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0; }
+          .wp-portfolio-title { font-size:40px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0; }
           .wp-btn-portfolio-cta { display:inline-block;padding:13px 26px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap;transition:all 0.3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1); }
           .wp-btn-portfolio-cta:hover { background:rgba(255,255,255,0.85);border-color:rgba(245,158,11,0.6);transform:translateY(-2px);color:#0F3460; }
           .wp-portfolio-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:24px; }
@@ -143,7 +143,7 @@ export default function WordPressDevelopmentCompany() {
           .wp-process-section { background:transparent;padding:80px 40px;position:relative;z-index:1; }
           .wp-process-top { max-width:1280px;margin:0 auto 56px; }
           .wp-process-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D97706;margin:0 0 14px; }
-          .wp-process-main-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#F59E0B 45%,#7C3AED 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
+          .wp-process-main-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
           .wp-process-main-desc { font-size:15px;color:#4A6080;line-height:1.7;margin:0; }
           .wp-process-divider { border:none;border-top:1px solid rgba(15,52,96,0.15);margin:36px 0 0;width:100%; }
           .wp-process-inner { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:minmax(0,55%) minmax(0,45%);gap:80px;align-items:start; }
@@ -200,7 +200,7 @@ export default function WordPressDevelopmentCompany() {
           .wp-engage-section { background:rgba(219,234,254,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-top:1px solid rgba(255,255,255,0.80);border-bottom:1px solid rgba(255,255,255,0.80);box-shadow:inset 0 1px 0 rgba(255,255,255,0.90);padding:80px 40px;position:relative;z-index:1; }
           .wp-engage-inner { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:stretch; }
           .wp-engage-left { position:sticky;top:100px;display:flex;flex-direction:column; }
-          .wp-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#F59E0B 45%,#7C3AED 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
+          .wp-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
           .wp-engage-desc { font-size:15px;color:#3A507A;line-height:1.75;margin:0 0 32px; }
           .wp-engage-img-wrap { border-radius:14px;overflow:hidden;box-shadow:0 16px 48px rgba(15,52,96,0.15);flex:1;min-height:300px; }
           .wp-engage-img-wrap img { width:100%;height:100%;min-height:300px;object-fit:cover;display:block; }
@@ -220,7 +220,7 @@ export default function WordPressDevelopmentCompany() {
           .wp-contact-section { padding:70px 40px;background:transparent;position:relative;z-index:1; }
           .wp-contact-container { max-width:1440px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);box-shadow:0 8px 40px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,0.95);border:1px solid rgba(15,52,96,0.12);border-radius:20px;overflow:hidden;display:grid;grid-template-columns:1fr 1.15fr;align-items:stretch; }
           .wp-contact-left { padding:40px 30px 40px 40px; }
-          .wp-contact-title { font-size:48px;font-weight:900;line-height:1.2;margin:0 0 16px;background:linear-gradient(90deg,#0F3460 0%,#F59E0B 45%,#7C3AED 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent; }
+          .wp-contact-title { font-size:48px;font-weight:900;line-height:1.2;margin:0 0 16px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent; }
           .wp-contact-desc { font-size:14px;color:#4A6080;line-height:1.6;margin:0 0 24px; }
           .wp-merged-box { background:rgba(255,255,255,0.60);border:1px solid rgba(15,52,96,0.12);border-radius:14px;padding:24px;backdrop-filter:blur(10px);display:flex;flex-direction:column;gap:20px; }
           .wp-benefit-item { display:flex;gap:10px;align-items:flex-start; }
@@ -253,23 +253,31 @@ export default function WordPressDevelopmentCompany() {
           .wp-submit-btn:hover { background:rgba(15,52,96,0.95);border-color:rgba(245,158,11,0.6);transform:translateY(-2px); }
 
           /* FAQ */
-          .wp-faq-section { padding:80px 40px;background:rgba(224,242,254,0.30);border-top:1px solid rgba(255,255,255,0.80);position:relative;z-index:1; }
-          .wp-faq-inner { max-width:900px;margin:0 auto; }
-          .wp-faq-list { margin-top:48px;display:flex;flex-direction:column;gap:14px; }
-          .wp-faq-item { background:rgba(255,255,255,0.50);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.85);border-radius:16px;box-shadow:0 4px 20px rgba(15,52,96,0.07),inset 0 1px 0 rgba(255,255,255,0.95);overflow:hidden;transition:box-shadow 0.25s,border-color 0.25s; }
-          .wp-faq-item.open { box-shadow:0 8px 32px rgba(15,52,96,0.12),inset 0 1px 0 rgba(255,255,255,1);border-color:rgba(245,158,11,0.35); }
-          .wp-faq-question { width:100%;background:none;border:none;padding:22px 28px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;text-align:left;gap:16px;font-family:inherit; }
-          .wp-faq-question span { font-size:16px;font-weight:600;color:#0F1F40;line-height:1.4; }
-          .wp-faq-icon { width:32px;height:32px;border-radius:50%;background:rgba(15,52,96,0.07);border:1px solid rgba(15,52,96,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px;color:#0F3460;font-weight:300;line-height:1;transition:all 0.3s; }
-          .wp-faq-item.open .wp-faq-icon { background:rgba(245,158,11,0.15);border-color:rgba(245,158,11,0.45);color:#D97706;transform:rotate(45deg); }
-          .wp-faq-answer { overflow:hidden;transition:max-height 0.35s ease,padding 0.25s ease;padding:0 28px;font-size:15px;color:#3A507A;line-height:1.8;max-height:0; }
-          .wp-faq-item.open .wp-faq-answer { max-height:400px;padding:16px 28px 22px;border-top:1px solid rgba(15,52,96,0.08); }
+          .wp-faq-section { padding:80px 40px;background:#fff;border-top:1px solid #e5e7eb;position:relative;z-index:1; }
+          .wp-faq-inner { max-width:960px;margin:0 auto; }
+          .wp-faq-heading { font-size:40px;font-weight:800;color:#111827;line-height:1.2;margin:0 0 48px;letter-spacing:-0.5px; }
+          .wp-faq-list { display:flex;flex-direction:column; }
+          .wp-faq-item { border-top:1px solid #e5e7eb;position:relative;transition:border-color 0.2s; }
+          .wp-faq-item:last-child { border-bottom:1px solid #e5e7eb; }
+          .wp-faq-item.open { border-top-color:#D97706; }
+          .wp-faq-item.open::before { content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#D97706; }
+          .wp-faq-question { width:100%;background:none;border:none;padding:22px 22px 22px 60px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;text-align:left;gap:16px;font-family:inherit;position:relative; }
+          .wp-faq-q-badge { position:absolute;left:16px;top:50%;transform:translateY(-50%);width:28px;height:28px;background:#e5e7eb;color:#374151;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:4px;flex-shrink:0;transition:background 0.2s,color 0.2s; }
+          .wp-faq-item.open .wp-faq-q-badge { background:#D97706;color:#fff; }
+          .wp-faq-question span { font-size:16px;font-weight:600;color:#111827;line-height:1.45; }
+          .wp-faq-item.open .wp-faq-question span { color:#D97706; }
+          .wp-faq-chevron { width:24px;height:24px;flex-shrink:0;color:#9ca3af;transition:transform 0.3s; }
+          .wp-faq-item.open .wp-faq-chevron { transform:rotate(180deg);color:#D97706; }
+          .wp-faq-answer-wrap { overflow:hidden;transition:max-height 0.35s ease;max-height:0; }
+          .wp-faq-item.open .wp-faq-answer-wrap { max-height:400px; }
+          .wp-faq-answer { padding:0 22px 22px 60px;font-size:15px;color:#4b5563;line-height:1.8; }
+          .wp-faq-a-badge { display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:#111827;color:#fff;font-size:12px;font-weight:700;border-radius:4px;margin-right:12px;flex-shrink:0;vertical-align:middle; }
 
           /* Related */
           .wp-related-section { background:rgba(237,233,254,0.45);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,0.80);box-shadow:inset 0 1px 0 rgba(255,255,255,0.90);padding:80px 40px; }
           .wp-related-inner { max-width:1280px;margin:0 auto;text-align:center; }
           .wp-related-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A6080;margin:0 0 14px;display:block; }
-          .wp-related-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#F59E0B 45%,#7C3AED 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
+          .wp-related-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
           .wp-related-sub { font-size:15px;color:#0F1F40;line-height:1.7;margin:0 auto;max-width:680px; }
           .wp-related-divider { border:none;border-top:1px solid rgba(15,52,96,0.12);margin:40px 0; }
           .wp-related-tags { display:flex;flex-wrap:wrap;justify-content:center;gap:12px; }
@@ -335,10 +343,11 @@ export default function WordPressDevelopmentCompany() {
             .wp-contact-right { padding:0 20px 28px; }
             .wp-contact-title { font-size:28px; }
             .wp-faq-section { padding:60px 20px; }
-            .wp-faq-question { padding:18px 20px; }
+            .wp-faq-heading { font-size:28px; }
+            .wp-faq-question { padding:18px 18px 18px 52px; }
             .wp-faq-question span { font-size:14px; }
-            .wp-faq-item.open .wp-faq-answer { padding:12px 20px 18px; }
-            .wp-faq-answer { padding:0 20px; }
+            .wp-faq-answer { padding:0 18px 18px 52px;font-size:14px; }
+            .wp-faq-q-badge { left:14px; }
             .wp-related-section { padding:60px 20px; }
             .wp-services-grid { grid-template-columns:1fr 1fr;gap:10px; }
             .wp-testi-grid { grid-template-columns:1fr; }
@@ -674,22 +683,18 @@ export default function WordPressDevelopmentCompany() {
         {/* ── FAQ ── */}
         <section className="wp-faq-section" id="faq">
           <div className="wp-faq-inner">
-            <div style={{ textAlign:'center' }}>
-              <span className="wp-section-eyebrow">FAQs</span>
-              <h2 className="wp-section-title">Frequently Asked Questions</h2>
-              <p className="wp-section-sub" style={{ maxWidth:640,margin:'0 auto' }}>
-                Everything you need to know about our WordPress development services. Can't find your answer?{' '}
-                <Link href="#contact" style={{ color:'#D97706',textDecoration:'none',fontWeight:600 }}>Talk to us directly.</Link>
-              </p>
-            </div>
+            <h2 className="wp-faq-heading">Frequently Asked Questions</h2>
             <div className="wp-faq-list">
               {FAQS.map((faq, i) => (
                 <div className={`wp-faq-item${openFaq===i?' open':''}`} key={i}>
                   <button className="wp-faq-question" onClick={() => setOpenFaq(openFaq===i ? -1 : i)}>
+                    <div className="wp-faq-q-badge">Q</div>
                     <span>{faq.q}</span>
-                    <div className="wp-faq-icon">+</div>
+                    <svg className="wp-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="6 9 12 15 18 9"/></svg>
                   </button>
-                  <div className="wp-faq-answer">{faq.a}</div>
+                  <div className="wp-faq-answer-wrap">
+                    <div className="wp-faq-answer"><span className="wp-faq-a-badge">A</span>{faq.a}</div>
+                  </div>
                 </div>
               ))}
             </div>
