@@ -552,11 +552,11 @@ export default function WordPressDevelopmentCompany() {
             transform:translateX(0);
           }
 
-          /* Mobile background fix — background-attachment:fixed broken on iOS */
-          @media (max-width:768px) {
+          /* Mobile background fix — background-attachment:fixed is broken on iOS Safari AND Chrome for iOS */
+          @media (max-width:900px) {
             .wp-page {
-              background-attachment: scroll;
-              background: linear-gradient(160deg, #dbeafe 0%, #ede9fe 30%, #e0f2fe 55%, #fef3c7 78%, #fce7f3 100%);
+              background-attachment: scroll !important;
+              background: linear-gradient(160deg, #dbeafe 0%, #ede9fe 30%, #e0f2fe 55%, #fef3c7 78%, #fce7f3 100%) !important;
             }
           }
 
@@ -620,7 +620,10 @@ export default function WordPressDevelopmentCompany() {
             .wp-testi-grid { grid-template-columns:1fr; }
             .wp-portfolio-grid { grid-template-columns:1fr; }
             .wp-section-title,.wp-engage-title,.wp-process-main-title,.wp-related-title { font-size:30px; }
-            .wp-testi-stats { flex-wrap:wrap;gap:16px;padding:24px 20px; }
+            .wp-testi-stats { flex-wrap:wrap;gap:0;padding:24px 20px; }
+            .wp-tstat { flex:0 0 50%;width:50%;padding:12px 8px;border-bottom:1px solid rgba(15,52,96,0.10); }
+            .wp-tstat:nth-child(odd) { border-right:1px solid rgba(15,52,96,0.10); }
+            .wp-tstat:nth-last-child(-n+2) { border-bottom:none; }
             .wp-tstat-divider { display:none; }
             .wp-form-row { grid-template-columns:1fr; }
             .wp-stats-grid { grid-template-columns:1fr 1fr 1fr; }
