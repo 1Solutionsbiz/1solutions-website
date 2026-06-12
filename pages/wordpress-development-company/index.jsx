@@ -371,7 +371,7 @@ export default function WordPressDevelopmentCompany() {
           .wp-efeat-check { color:#D97706;font-size:12px;flex-shrink:0; }
 
           /* Contact */
-          .wp-contact-section { padding:70px 40px;background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);position:relative;z-index:1; }
+          .wp-contact-section { padding:70px 40px;background:transparent;position:relative;z-index:1; }
           .wp-contact-container { max-width:1440px;margin:0 auto;background:linear-gradient(135deg,rgba(254,243,199,0.65) 0%,rgba(255,255,255,0.85) 50%,rgba(219,234,254,0.60) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 8px 40px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.88);border-radius:24px;overflow:hidden;display:grid;grid-template-columns:1fr 1.15fr;align-items:stretch; }
           .wp-contact-left { padding:40px 30px 40px 40px; }
           .wp-contact-title { font-size:48px;font-weight:900;line-height:1.2;margin:0 0 16px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent; }
