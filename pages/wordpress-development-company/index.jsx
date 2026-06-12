@@ -661,7 +661,7 @@ export default function WordPressDevelopmentCompany() {
         <div className="wp-hero-block">
           <div className="wp-hero-content">
             <span className="wp-eyebrow">A World-Class WordPress Development Company</span>
-            <h1>WordPress Development Services — Drive Growth With Custom Website Solutions</h1>
+            <h1>WordPress Development Services to Drive Growth</h1>
             <p>Build high-performing, secure, and SEO-optimized websites with 1Solutions' WordPress Development Services. Our dedicated development teams deliver customized, responsive sites and provide ongoing maintenance to drive long-term success.</p>
             <Link href="#contact" className="wp-btn-hero wp-btn-hero-shimmer">Get a Free Consultation Now</Link>
           </div>
