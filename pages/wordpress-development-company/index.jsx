@@ -84,9 +84,11 @@ export default function WordPressDevelopmentCompany() {
   const [visibleSteps, setVisibleSteps] = useState([]);
   const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
+  const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const stepRefs = useRef([]);
   const statsRef = useRef(null);
   const sectionRefs = useRef({});
+  const whyGridRef = useRef(null);
 
   // Scroll-reveal for process steps
   useEffect(() => {
@@ -115,6 +117,24 @@ export default function WordPressDevelopmentCompany() {
       { threshold: 0.5 }
     );
     obs.observe(statsRef.current);
+    return () => obs.disconnect();
+  }, []);
+
+  // Why cards staggered reveal
+  useEffect(() => {
+    if (!whyGridRef.current) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          WHY.forEach((_, i) => {
+            setTimeout(() => setVisibleWhyCards(prev => prev.includes(i) ? prev : [...prev, i]), i * 100);
+          });
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    obs.observe(whyGridRef.current);
     return () => obs.disconnect();
   }, []);
 
@@ -431,6 +451,17 @@ export default function WordPressDevelopmentCompany() {
             transform:translateY(0);
           }
 
+          /* Why cards staggered reveal */
+          .wp-why-card {
+            opacity:0;
+            transform:translateY(20px);
+            transition:opacity 0.5s ease, transform 0.5s ease, background 0.25s;
+          }
+          .wp-why-card.wp-card-visible {
+            opacity:1;
+            transform:translateY(0);
+          }
+
           /* Responsive */
           @media (max-width:1024px) {
             .wp-hero-content h1 { font-size:40px; }
@@ -694,9 +725,9 @@ export default function WordPressDevelopmentCompany() {
               <h2 className="wp-section-title">Why Businesses Choose Us Over Other Agencies</h2>
               <p className="wp-section-sub" style={{ maxWidth:680,margin:'0 auto' }}>We don't just build websites — we build growth engines. Here's what sets us apart from freelancers and generic agencies.</p>
             </div>
-            <div className="wp-why-grid">
-              {WHY.map(w => (
-                <div className="wp-why-card" key={w.title}>
+            <div className="wp-why-grid" ref={whyGridRef}>
+              {WHY.map((w, i) => (
+                <div className={`wp-why-card${visibleWhyCards.includes(i) ? ' wp-card-visible' : ''}`} key={w.title}>
                   <div className="wp-why-card-header">
                     <div className="wp-why-icon">{w.icon}</div>
                     <h3>{w.title}</h3>
