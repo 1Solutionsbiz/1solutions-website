@@ -257,7 +257,7 @@ export default function WordPressDevelopmentCompany() {
           .wp-section-sub { font-size:16px;color:#4A6080;margin:0; }
 
           /* Services */
-          .wp-services-section { background:#ffffff;padding:72px 40px 60px;position:relative;z-index:1;border-top:4px solid #0F3460;box-shadow:0 -8px 40px rgba(15,52,96,0.10); }
+          .wp-services-section { background:#ffffff;padding:72px 40px 60px;position:relative;z-index:2;box-shadow:0 -20px 60px rgba(15,52,96,0.18),0 -4px 16px rgba(15,52,96,0.10); }
           .wp-services-inner { max-width:1280px;margin:0 auto; }
           .wp-services-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:14px; }
           .wp-service-card { background:#f8fafd;border:1px solid rgba(15,52,96,0.10);border-radius:20px;padding:26px 22px 22px;position:relative;overflow:hidden;box-shadow:0 2px 12px rgba(15,52,96,0.06);transition:transform 0.22s,box-shadow 0.22s,background 0.22s,border-color 0.22s;cursor:default; }
