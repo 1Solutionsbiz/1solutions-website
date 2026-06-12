@@ -42,24 +42,96 @@ const WHY = [
   { icon:<svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>, title:'Long-Term Partnership', desc:'97% client retention rate. We don\'t disappear after launch — maintenance plans, support retainers, and growth partnerships keep us invested in your success.' },
 ];
 
+// Count-up hook
+function useCountUp(target, duration = 1800, start = false) {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    if (!start) return;
+    const numTarget = parseInt(target.replace(/\D/g, ''), 10);
+    if (!numTarget) return;
+    let startTime = null;
+    const step = (ts) => {
+      if (!startTime) startTime = ts;
+      const progress = Math.min((ts - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      setCount(Math.floor(eased * numTarget));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [start, target, duration]);
+  return count;
+}
+
+// Individual stat with count-up
+function AnimatedStat({ label, val, started }) {
+  const num = useCountUp(val, 1800, started);
+  const suffix = val.replace(/[\d,]/g, ''); // e.g. '+' or '%'
+  const hasComma = val.includes(',');
+  const display = started
+    ? (hasComma ? num.toLocaleString() : num) + suffix
+    : val;
+  return (
+    <div className="wp-stat-col" key={label}>
+      <div className="wp-stat-label">{label}</div>
+      <div className="wp-stat-value">{display}</div>
+    </div>
+  );
+}
+
 export default function WordPressDevelopmentCompany() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleSteps, setVisibleSteps] = useState([]);
+  const [statsStarted, setStatsStarted] = useState(false);
+  const [visibleSections, setVisibleSections] = useState(new Set());
   const stepRefs = useRef([]);
+  const statsRef = useRef(null);
+  const sectionRefs = useRef({});
 
+  // Scroll-reveal for process steps
   useEffect(() => {
     const observers = stepRefs.current.map((el, i) => {
       if (!el) return null;
       const obs = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
-            // stagger: each step waits 150ms more than the previous
             setTimeout(() => setVisibleSteps(prev => prev.includes(i) ? prev : [...prev, i]), i * 150);
             obs.disconnect();
           }
         },
         { threshold: 0.25 }
+      );
+      obs.observe(el);
+      return obs;
+    });
+    return () => observers.forEach(o => o && o.disconnect());
+  }, []);
+
+  // Count-up trigger when stats enter viewport
+  useEffect(() => {
+    if (!statsRef.current) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setStatsStarted(true); obs.disconnect(); } },
+      { threshold: 0.5 }
+    );
+    obs.observe(statsRef.current);
+    return () => obs.disconnect();
+  }, []);
+
+  // Section heading fade-up
+  useEffect(() => {
+    const keys = Object.keys(sectionRefs.current);
+    const observers = keys.map(key => {
+      const el = sectionRefs.current[key];
+      if (!el) return null;
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisibleSections(prev => new Set([...prev, key]));
+            obs.disconnect();
+          }
+        },
+        { threshold: 0.15 }
       );
       obs.observe(el);
       return obs;
@@ -323,6 +395,42 @@ export default function WordPressDevelopmentCompany() {
           .wp-rtag-emerald { background:rgba(16,185,129,0.10);border-color:rgba(16,185,129,0.28);color:#065F46; }
           .wp-rtag-sky     { background:rgba(14,165,233,0.10);border-color:rgba(14,165,233,0.28);color:#0369A1; }
 
+          /* CTA shimmer */
+          @keyframes wp-shimmer {
+            0% { background-position:-200% center; }
+            100% { background-position:200% center; }
+          }
+          .wp-btn-hero {
+            background-size:200% auto;
+          }
+          .wp-btn-hero-shimmer {
+            position:relative;
+            overflow:hidden;
+          }
+          .wp-btn-hero-shimmer::after {
+            content:'';
+            position:absolute;
+            top:0;left:-100%;width:60%;height:100%;
+            background:linear-gradient(120deg,transparent 0%,rgba(255,255,255,0.55) 50%,transparent 100%);
+            animation:wp-shimmer-sweep 3s ease-in-out infinite;
+            pointer-events:none;
+          }
+          @keyframes wp-shimmer-sweep {
+            0% { left:-100%; }
+            40%,100% { left:150%; }
+          }
+
+          /* Section fade-up */
+          .wp-section-reveal {
+            opacity:0;
+            transform:translateY(24px);
+            transition:opacity 0.6s ease, transform 0.6s ease;
+          }
+          .wp-section-reveal.wp-revealed {
+            opacity:1;
+            transform:translateY(0);
+          }
+
           /* Responsive */
           @media (max-width:1024px) {
             .wp-hero-content h1 { font-size:40px; }
@@ -414,16 +522,12 @@ export default function WordPressDevelopmentCompany() {
             <span className="wp-eyebrow">A World-Class WordPress Development Company</span>
             <h1>WordPress Development Services — Drive Growth With Custom Website Solutions</h1>
             <p>Build high-performing, secure, and SEO-optimized websites with 1Solutions' WordPress Development Services. Our dedicated development teams deliver customized, responsive sites and provide ongoing maintenance to drive long-term success.</p>
-            <Link href="#contact" className="wp-btn-hero">Get a Free Consultation Now</Link>
+            <Link href="#contact" className="wp-btn-hero wp-btn-hero-shimmer">Get a Free Consultation Now</Link>
           </div>
 
-          <div className="wp-hero-stats">
+          <div className="wp-hero-stats" ref={statsRef}>
             {[['Clients Served','500+'],['WordPress Experts','50+'],['Projects Delivered','1,200+'],['Years in Business','15+']].map(([label,val]) => (
-              <div className="wp-stat-col" key={label}>
-                <div className="wp-stat-label">{label}</div>
-                <div className="wp-stat-value">{val}</div>
-              </div>
-            ))}
+              <AnimatedStat key={label} label={label} val={val} started={statsStarted} />
           </div>
 
           <div className="wp-clients-bar">
@@ -447,9 +551,11 @@ export default function WordPressDevelopmentCompany() {
         {/* ── SERVICES ── */}
         <section className="wp-services-section">
           <div className="wp-services-inner">
+            <div className={`wp-section-reveal${visibleSections.has('services') ? ' wp-revealed' : ''}`} ref={el => { sectionRefs.current['services'] = el; }}>
             <span className="wp-section-eyebrow">Our Services</span>
             <h2 className="wp-section-title">WordPress Development Services We Offer</h2>
             <p className="wp-section-desc">From custom builds to ongoing support, our WordPress experts deliver end-to-end solutions — designed for performance, security, and long-term growth.</p>
+            </div>
             <div className="wp-services-grid">
               {visibleServices.map(s => (
                 <div key={s.n} className={`wp-service-card${s.featured?' featured':''}`}>
@@ -471,7 +577,7 @@ export default function WordPressDevelopmentCompany() {
         <section className="wp-portfolio-section" id="portfolio">
           <div className="wp-portfolio-wrap">
             <div className="wp-portfolio-header">
-              <h2 className="wp-portfolio-title">500+ WordPress Web Development<br/>Projects Completed</h2>
+              <h2 className={`wp-portfolio-title wp-section-reveal${visibleSections.has('portfolio') ? ' wp-revealed' : ''}`} ref={el => { sectionRefs.current['portfolio'] = el; }}>500+ WordPress Web Development<br/>Projects Completed</h2>
               <Link href="#contact" className="wp-btn-portfolio-cta">Browse Our Portfolio</Link>
             </div>
             <div className="wp-portfolio-grid">
@@ -499,9 +605,11 @@ export default function WordPressDevelopmentCompany() {
         {/* ── PROCESS ── */}
         <section className="wp-process-section">
           <div className="wp-process-top">
+            <div className={`wp-section-reveal${visibleSections.has('process') ? ' wp-revealed' : ''}`} ref={el => { sectionRefs.current['process'] = el; }}>
             <p className="wp-process-eyebrow">PARTNERSHIP THAT WORKS</p>
             <h2 className="wp-process-main-title">How We Deliver WordPress Development Services</h2>
             <p className="wp-process-main-desc">Our WordPress development experts, with 15+ years of experience serving clients across the US, Canada, and Australia, develop and deploy tailored solutions to meet your business needs and unique industry demands for sustainable results and long-term success.</p>
+            </div>
             <hr className="wp-process-divider" />
           </div>
           <div className="wp-process-inner">
@@ -540,7 +648,7 @@ export default function WordPressDevelopmentCompany() {
         {/* ── TESTIMONIALS ── */}
         <section className="wp-testi-section">
           <div className="wp-testi-inner">
-            <div className="wp-section-header-center">
+            <div className={`wp-section-header-center wp-section-reveal${visibleSections.has('testi') ? ' wp-revealed' : ''}`} ref={el => { sectionRefs.current['testi'] = el; }}>
               <span className="wp-section-eyebrow">Client Reviews</span>
               <h2 className="wp-section-title">Know What Our Customers Say</h2>
               <p className="wp-section-sub">Trusted by businesses across the US, Canada, Australia and beyond for 15+ years.</p>
@@ -581,7 +689,7 @@ export default function WordPressDevelopmentCompany() {
         {/* ── WHY US ── */}
         <section className="wp-why-section">
           <div className="wp-why-inner">
-            <div style={{ textAlign:'center',marginBottom:0 }}>
+            <div className={`wp-section-reveal${visibleSections.has('why') ? ' wp-revealed' : ''}`} ref={el => { sectionRefs.current['why'] = el; }} style={{ textAlign:'center',marginBottom:0 }}>
               <span className="wp-section-eyebrow">Why 1Solutions</span>
               <h2 className="wp-section-title">Why Businesses Choose Us Over Other Agencies</h2>
               <p className="wp-section-sub" style={{ maxWidth:680,margin:'0 auto' }}>We don't just build websites — we build growth engines. Here's what sets us apart from freelancers and generic agencies.</p>
@@ -604,9 +712,11 @@ export default function WordPressDevelopmentCompany() {
         <section className="wp-engage-section">
           <div className="wp-engage-inner">
             <div className="wp-engage-left">
+              <div className={`wp-section-reveal${visibleSections.has('engage') ? ' wp-revealed' : ''}`} ref={el => { sectionRefs.current['engage'] = el; }}>
               <span className="wp-section-eyebrow">Engagement Models</span>
               <h2 className="wp-engage-title">Flexible Engagement Models Built Around You</h2>
               <p className="wp-engage-desc">Client satisfaction is our top priority. We offer flexible engagement models so you can choose the approach that best fits your project, timeline, and budget — with full transparency at every step.</p>
+              </div>
               <div className="wp-engage-img-wrap">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/images/Partner-with-us.jpg" alt="Partner With 1Solutions" />
