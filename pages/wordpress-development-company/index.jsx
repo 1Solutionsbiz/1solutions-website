@@ -374,7 +374,8 @@ export default function WordPressDevelopmentCompany() {
           .wp-contact-section { padding:70px 40px;background:linear-gradient(135deg,rgba(254,243,199,0.70) 0%,rgba(255,255,255,0.60) 40%,rgba(219,234,254,0.65) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.80); }
           .wp-contact-header { max-width:1440px;margin:0 auto 36px; }
           .wp-contact-container { max-width:1440px;margin:0 auto;background:none;border:none;box-shadow:none;border-radius:0;overflow:visible;display:grid;grid-template-columns:1fr 1.15fr;align-items:start;gap:32px; }
-          .wp-contact-left { padding:0; }
+          .wp-contact-left { padding:0;align-self:start; }
+          .wp-contact-right { align-self:start; }
           .wp-contact-title { font-size:48px;font-weight:900;line-height:1.2;margin:0 0 16px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent; }
           .wp-contact-desc { font-size:14px;color:#4A6080;line-height:1.6;margin:0 0 24px; }
           .wp-merged-box { background:linear-gradient(135deg,rgba(255,255,255,0.70) 0%,rgba(219,234,254,0.35) 100%);border:1px solid rgba(255,255,255,0.90);border-radius:14px;padding:24px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,1);display:flex;flex-direction:column;gap:20px; }
@@ -386,7 +387,7 @@ export default function WordPressDevelopmentCompany() {
           .wp-stats-grid { display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px; }
           .wp-stat-number { font-size:40px;font-weight:900;color:#0F3460;line-height:1;display:inline-block;margin-bottom:4px; }
           .wp-stat-text { font-size:13px;color:#4A6080;line-height:1.4;font-weight:500; }
-          .wp-contact-right { position:relative;padding:0;display:flex;align-items:stretch; }
+          .wp-contact-right { position:relative;padding:0;display:flex;align-items:flex-start; }
           .wp-form-box { background:linear-gradient(135deg,rgba(255,255,255,0.88) 0%,rgba(237,233,254,0.25) 50%,rgba(255,255,255,0.84) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.92);border-radius:20px;padding:36px;width:100%;box-shadow:0 8px 40px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1); }
           .wp-form-box h3 { font-size:26px;font-weight:700;margin:0 0 28px;color:#0F1F40;letter-spacing:-0.5px; }
           .wp-contact-form { display:flex;flex-direction:column;gap:16px; }
