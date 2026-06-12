@@ -233,7 +233,7 @@ export default function WordPressDevelopmentCompany() {
           .wp-ecard:hover { background:rgba(15,52,96,0.06);border-color:rgba(254,151,0,0.45);transform:translateX(4px); }
           .wp-ecard-header { display:flex;align-items:center;gap:14px;margin-bottom:10px; }
           .wp-ecard-icon { width:44px;height:44px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
-          .wp-ecard-icon svg { width:28px;height:28px;fill:#D97706; }
+          .wp-ecard-icon svg { width:26px;height:26px;stroke:#D97706;fill:none; }
           .wp-ecard-title { font-size:18px;font-weight:700;color:#0F3460;margin:0; }
           .wp-ecard-desc { font-size:14px;color:#3A507A;line-height:1.65;margin:0 0 16px; }
           .wp-ecard-features { display:grid;grid-template-columns:1fr 1fr;gap:8px 16px; }
@@ -614,15 +614,19 @@ export default function WordPressDevelopmentCompany() {
             </div>
             <div className="wp-engage-right">
               {[
-                { title:'Dedicated Team', desc:'Hire a full-time dedicated WordPress team for long-term projects. We deploy a project manager and certified developers who work exclusively on your product.', features:['Cost-effective Approach','Less Administrative Overhead','Quick-paced Development','Timely Reporting'] },
-                { title:'Fixed-Price', desc:'Ideal for well-defined projects with a clear scope. We agree on deliverables, timeline, and cost upfront — no surprises, no hidden fees.', features:['Complete Budget Control','Ease of Management','No Hidden Costs','On-time Delivery'] },
-                { title:'Time & Material', desc:'Perfect for evolving projects where requirements change. Pay only for the hours worked with full visibility into progress and spend.', features:['Maximum Flexibility','Reduced Risk','Iterative Development','On-time Product Delivery'] },
-                { title:'Offshore Development', desc:'Leverage our New Delhi-based team for significant cost savings without compromising quality. Expert developers, US/AU timezone overlap available.', features:['Access to Expert Talent','Shared Responsibility','Managed Team','Cost-Efficient'] },
+                { title:'Dedicated Team', desc:'Hire a full-time dedicated WordPress team for long-term projects. We deploy a project manager and certified developers who work exclusively on your product.', features:['Cost-effective Approach','Less Administrative Overhead','Quick-paced Development','Timely Reporting'],
+                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> },
+                { title:'Fixed-Price', desc:'Ideal for well-defined projects with a clear scope. We agree on deliverables, timeline, and cost upfront — no surprises, no hidden fees.', features:['Complete Budget Control','Ease of Management','No Hidden Costs','On-time Delivery'],
+                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> },
+                { title:'Time & Material', desc:'Perfect for evolving projects where requirements change. Pay only for the hours worked with full visibility into progress and spend.', features:['Maximum Flexibility','Reduced Risk','Iterative Development','On-time Product Delivery'],
+                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> },
+                { title:'Offshore Development', desc:'Leverage our New Delhi-based team for significant cost savings without compromising quality. Expert developers, US/AU timezone overlap available.', features:['Access to Expert Talent','Shared Responsibility','Managed Team','Cost-Efficient'],
+                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> },
               ].map(e => (
                 <div className="wp-ecard" key={e.title}>
                   <div className="wp-ecard-header">
                     <div className="wp-ecard-icon">
-                      <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                      {e.icon}
                     </div>
                     <h3 className="wp-ecard-title">{e.title}</h3>
                   </div>
