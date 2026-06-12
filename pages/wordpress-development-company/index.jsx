@@ -371,9 +371,10 @@ export default function WordPressDevelopmentCompany() {
           .wp-efeat-check { color:#D97706;font-size:12px;flex-shrink:0; }
 
           /* Contact */
-          .wp-contact-section { padding:70px 40px;background:transparent;position:relative;z-index:1; }
-          .wp-contact-container { max-width:1440px;margin:0 auto;background:linear-gradient(135deg,rgba(254,243,199,0.65) 0%,rgba(255,255,255,0.85) 50%,rgba(219,234,254,0.60) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 8px 40px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,0.95);border:1px solid rgba(255,255,255,0.88);border-radius:24px;overflow:hidden;display:grid;grid-template-columns:1fr 1.15fr;align-items:stretch; }
-          .wp-contact-left { padding:40px 30px 40px 40px; }
+          .wp-contact-section { padding:70px 40px;background:linear-gradient(135deg,rgba(254,243,199,0.70) 0%,rgba(255,255,255,0.60) 40%,rgba(219,234,254,0.65) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.80); }
+          .wp-contact-header { max-width:1440px;margin:0 auto 36px; }
+          .wp-contact-container { max-width:1440px;margin:0 auto;background:none;border:none;box-shadow:none;border-radius:0;overflow:visible;display:grid;grid-template-columns:1fr 1.15fr;align-items:start;gap:32px; }
+          .wp-contact-left { padding:0; }
           .wp-contact-title { font-size:48px;font-weight:900;line-height:1.2;margin:0 0 16px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent; }
           .wp-contact-desc { font-size:14px;color:#4A6080;line-height:1.6;margin:0 0 24px; }
           .wp-merged-box { background:linear-gradient(135deg,rgba(255,255,255,0.70) 0%,rgba(219,234,254,0.35) 100%);border:1px solid rgba(255,255,255,0.90);border-radius:14px;padding:24px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,1);display:flex;flex-direction:column;gap:20px; }
@@ -385,8 +386,8 @@ export default function WordPressDevelopmentCompany() {
           .wp-stats-grid { display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px; }
           .wp-stat-number { font-size:40px;font-weight:900;color:#0F3460;line-height:1;display:inline-block;margin-bottom:4px; }
           .wp-stat-text { font-size:13px;color:#4A6080;line-height:1.4;font-weight:500; }
-          .wp-contact-right { position:relative;padding:40px;display:flex;align-items:center; }
-          .wp-form-box { background:linear-gradient(135deg,rgba(255,255,255,0.82) 0%,rgba(237,233,254,0.30) 50%,rgba(255,255,255,0.78) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.92);border-radius:16px;padding:36px;width:100%;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,1); }
+          .wp-contact-right { position:relative;padding:0;display:flex;align-items:stretch; }
+          .wp-form-box { background:linear-gradient(135deg,rgba(255,255,255,0.88) 0%,rgba(237,233,254,0.25) 50%,rgba(255,255,255,0.84) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.92);border-radius:20px;padding:36px;width:100%;box-shadow:0 8px 40px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1); }
           .wp-form-box h3 { font-size:26px;font-weight:700;margin:0 0 28px;color:#0F1F40;letter-spacing:-0.5px; }
           .wp-contact-form { display:flex;flex-direction:column;gap:16px; }
           .wp-form-row { display:grid;grid-template-columns:1fr 1fr;gap:14px; }
@@ -603,9 +604,10 @@ export default function WordPressDevelopmentCompany() {
             .wp-why-card { padding:24px 20px; }
             .wp-engage-section { padding:60px 20px; }
             .wp-contact-section { padding:48px 16px; }
-            .wp-contact-container { grid-template-columns:1fr; }
-            .wp-contact-left { padding:28px 20px; }
-            .wp-contact-right { padding:0 20px 28px; }
+            .wp-contact-header { margin-bottom:24px; }
+            .wp-contact-container { grid-template-columns:1fr;gap:20px; }
+            .wp-contact-left { padding:0; }
+            .wp-contact-right { padding:0; }
             .wp-contact-title { font-size:28px; }
             .wp-faq-section { padding:60px 20px; }
             .wp-faq-heading { font-size:26px; }
@@ -903,10 +905,12 @@ export default function WordPressDevelopmentCompany() {
 
         {/* ── CONTACT ── */}
         <section className="wp-contact-section" id="contact">
+          <div className="wp-contact-header">
+            <h2 className="wp-contact-title">Let's Build Something<br/>Great Together</h2>
+            <p className="wp-contact-desc">Tell us about your project and we'll get back to you within 24 hours with a tailored plan.</p>
+          </div>
           <div className="wp-contact-container">
             <div className="wp-contact-left">
-              <h2 className="wp-contact-title">Let's Build Something<br/>Great Together</h2>
-              <p className="wp-contact-desc">Tell us about your project and we'll get back to you within 24 hours with a tailored plan.</p>
               <div className="wp-merged-box">
                 <div>
                   {[
