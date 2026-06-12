@@ -560,6 +560,7 @@ export default function WordPressDevelopmentCompany() {
           <div className="wp-hero-stats" ref={statsRef}>
             {[['Clients Served','500+'],['WordPress Experts','50+'],['Projects Delivered','1,200+'],['Years in Business','15+']].map(([label,val]) => (
               <AnimatedStat key={label} label={label} val={val} started={statsStarted} />
+            ))}
           </div>
 
           <div className="wp-clients-bar">
