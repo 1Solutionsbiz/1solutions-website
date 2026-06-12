@@ -5,6 +5,9 @@ const nextConfig = {
   typescript: { ignoreBuildErrors: true },
 
   images: {
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     remotePatterns: [
       { protocol: 'https', hostname: 'midnightblue-lyrebird-831822.hostingersite.com' },
       { protocol: 'https', hostname: 'www.1solutions.biz' },
