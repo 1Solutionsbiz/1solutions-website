@@ -387,7 +387,7 @@ export default function WordPressDevelopmentCompany() {
           .wp-stats-grid { display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px; }
           .wp-stat-number { font-size:40px;font-weight:900;color:#0F3460;line-height:1;display:inline-block;margin-bottom:4px; }
           .wp-stat-text { font-size:13px;color:#4A6080;line-height:1.4;font-weight:500; }
-          .wp-contact-right { position:relative;padding:0;display:flex;align-items:flex-start; }
+          .wp-contact-right { position:relative;padding:0;display:block;vertical-align:top; }
           .wp-form-box { background:linear-gradient(135deg,rgba(255,255,255,0.88) 0%,rgba(237,233,254,0.25) 50%,rgba(255,255,255,0.84) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.92);border-radius:20px;padding:36px;width:100%;box-shadow:0 8px 40px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1); }
           .wp-form-box h3 { font-size:26px;font-weight:700;margin:0 0 28px;color:#0F1F40;letter-spacing:-0.5px; }
           .wp-contact-form { display:flex;flex-direction:column;gap:16px; }
