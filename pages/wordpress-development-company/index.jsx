@@ -339,11 +339,11 @@ export default function WordPressDevelopmentCompany() {
           .wp-tstat-divider { width:1px;height:40px;background:rgba(15,52,96,0.15); }
 
           /* Why */
-          .wp-why-section { padding:80px 40px;background:transparent;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08);position:relative;z-index:1; }
+          .wp-why-section { padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08);position:relative;z-index:1; }
           .wp-why-inner { max-width:1280px;margin:0 auto; }
-          .wp-why-grid { display:grid;grid-template-columns:repeat(4,1fr);margin-top:56px;border-top:1px solid rgba(15,52,96,0.07);border-left:1px solid rgba(15,52,96,0.07); }
-          .wp-why-card { background:rgba(255,255,255,0.72);border-right:1px solid rgba(15,52,96,0.07);border-bottom:1px solid rgba(15,52,96,0.07);padding:36px 32px;text-align:left;transition:background 0.25s; }
-          .wp-why-card:hover { background:rgba(255,255,255,0.95); }
+          .wp-why-grid { display:grid;grid-template-columns:repeat(4,1fr);margin-top:56px;gap:16px; }
+          .wp-why-card { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:32px 28px;text-align:left;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95);transition:transform 0.25s,box-shadow 0.25s,border-color 0.25s; }
+          .wp-why-card:hover { transform:translateY(-6px);border-color:rgba(217,119,6,0.40);box-shadow:0 16px 48px rgba(15,52,96,0.14),inset 0 1px 0 rgba(255,255,255,1); }
           .wp-why-card-header { display:flex;align-items:center;gap:12px;margin-bottom:10px; }
           .wp-why-icon { width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
           .wp-why-icon svg { width:28px;height:28px;fill:#D97706; }
