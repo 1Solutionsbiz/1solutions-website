@@ -1,23 +1,30 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { getPosts, getFeaturedPost, getCategories, formatDate, stripHtml, getCategoryColor } from '../../lib/graphql';
+import {
+  getPosts, getFeaturedPost, getTotalPostCount,
+  formatDate, stripHtml, getCategoryColor,
+} from '../../lib/graphql';
 import BlogCard from '../../components/blog/BlogCard';
 import Pagination from '../../components/blog/Pagination';
 
-export default function BlogIndex({ featuredPost, posts, pageInfo, categories, currentAfter }) {
-  const feat     = featuredPost;
-  const featCat  = feat?.categories?.nodes?.[0];
+const PER_PAGE = 9;
+
+export default function BlogIndex({ featuredPost, posts, totalPages }) {
+  const feat      = featuredPost;
+  const featCat   = feat?.categories?.nodes?.[0];
   const featColor = featCat ? getCategoryColor(featCat.slug) : 'cat-orange';
+  const siteUrl   = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.1solutions.biz';
 
   return (
     <>
       <Head>
-        <title>Blog & Resources | 1Solutions — Web Development & Digital Marketing</title>
+        <title>Blog &amp; Resources | 1Solutions — Web Development &amp; Digital Marketing</title>
         <meta name="description" content="Expert articles on web development, digital marketing, SEO, AI, and e-commerce. 460+ articles from 1Solutions." />
         <meta property="og:title" content="Blog | 1Solutions" />
         <meta property="og:description" content="Expert insights on web development, SEO, and digital marketing." />
-        <link rel="canonical" href={`${process.env.NEXT_PUBLIC_SITE_URL}/blog`} />
+        <link rel="canonical" href={`${siteUrl}/blog`} />
+        {totalPages > 1 && <link rel="next" href={`${siteUrl}/blog/page/2`} />}
       </Head>
 
       {/* ── BLOG HERO ── */}
@@ -31,7 +38,7 @@ export default function BlogIndex({ featuredPost, posts, pageInfo, categories, c
       <div className="blog-container">
 
         {/* ── FEATURED POST ── */}
-        {feat && !currentAfter && (
+        {feat && (
           <article className="featured-article">
             <div className="featured-image">
               {feat.featuredImage?.node ? (
@@ -77,11 +84,7 @@ export default function BlogIndex({ featuredPost, posts, pageInfo, categories, c
                 <BlogCard key={post.slug} post={post} />
               ))}
             </div>
-            <Pagination
-              pageInfo={pageInfo}
-              baseUrl="/blog"
-              currentCursor={currentAfter}
-            />
+            <Pagination currentPage={1} totalPages={totalPages} baseUrl="/blog" />
           </>
         ) : (
           <div className="no-posts">
@@ -95,32 +98,35 @@ export default function BlogIndex({ featuredPost, posts, pageInfo, categories, c
   );
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps() {
   try {
-    const [featured, postsData, categories] = await Promise.all([
+    const [featured, postsData, total] = await Promise.all([
       getFeaturedPost(),
-      getPosts({ first: 9 }),
-      getCategories({ first: 10 }),
+      getPosts({ first: PER_PAGE }),
+      getTotalPostCount(),
     ]);
 
-    // Remove featured post from the grid on page 1
-    const allNodes = postsData.nodes || [];
+    // Remove featured post from the grid so it doesn't duplicate
+    const allNodes  = postsData.nodes || [];
     const gridPosts = featured
       ? allNodes.filter((p) => p.slug !== featured.slug)
       : allNodes;
 
+    const totalPages = Math.ceil((total || allNodes.length) / PER_PAGE);
+
     return {
       props: {
-        featuredPost:  featured || null,
-        posts:         gridPosts,
-        pageInfo:      postsData.pageInfo || null,
-        categories:    categories || [],
-        currentAfter:  null,
+        featuredPost: featured || null,
+        posts:        gridPosts,
+        totalPages:   totalPages || 1,
       },
-      revalidate: 3600, // ISR — regenerate every hour
+      revalidate: 3600,
     };
   } catch (err) {
     console.error('Blog index error:', err);
-    return { props: { featuredPost: null, posts: [], pageInfo: null, categories: [], currentAfter: null }, revalidate: 60 };
+    return {
+      props: { featuredPost: null, posts: [], totalPages: 1 },
+      revalidate: 60,
+    };
   }
 }
