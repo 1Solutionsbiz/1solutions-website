@@ -552,6 +552,14 @@ export default function WordPressDevelopmentCompany() {
             transform:translateX(0);
           }
 
+          /* Mobile background fix — background-attachment:fixed broken on iOS */
+          @media (max-width:768px) {
+            .wp-page {
+              background-attachment: scroll;
+              background: linear-gradient(160deg, #dbeafe 0%, #ede9fe 30%, #e0f2fe 55%, #fef3c7 78%, #fce7f3 100%);
+            }
+          }
+
           /* Responsive */
           @media (max-width:1024px) {
             .wp-hero-content h1 { font-size:40px; }
@@ -586,7 +594,11 @@ export default function WordPressDevelopmentCompany() {
             .wp-process-section { padding:60px 20px; }
             .wp-process-top { margin-bottom:36px; }
             .wp-testi-section { padding:60px 20px; }
+            .wp-testi-section .wp-section-header-center { text-align:left; }
+            .wp-testi-section .wp-section-header-center .wp-section-desc { margin-left:0; }
             .wp-why-section { padding:60px 20px; }
+            .wp-why-section .wp-section-header-center { text-align:left; }
+            .wp-why-section .wp-section-header-center .wp-section-desc { margin-left:0; }
             .wp-why-grid { grid-template-columns:1fr;margin-top:40px; }
             .wp-why-card { padding:24px 20px; }
             .wp-engage-section { padding:60px 20px; }
