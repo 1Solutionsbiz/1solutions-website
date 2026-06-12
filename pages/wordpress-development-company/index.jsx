@@ -351,7 +351,7 @@ export default function WordPressDevelopmentCompany() {
           .wp-why-card p { font-size:13px;color:#4A6080;line-height:1.7;margin:0; }
 
           /* Engagement */
-          .wp-engage-section { background:rgba(219,234,254,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-top:1px solid rgba(255,255,255,0.80);border-bottom:1px solid rgba(255,255,255,0.80);box-shadow:inset 0 1px 0 rgba(255,255,255,0.90);padding:80px 40px;position:relative;z-index:1; }
+          .wp-engage-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08);padding:80px 40px;position:relative;z-index:1; }
           .wp-engage-inner { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:stretch; }
           .wp-engage-left { position:sticky;top:100px;display:flex;flex-direction:column; }
           .wp-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
@@ -359,8 +359,8 @@ export default function WordPressDevelopmentCompany() {
           .wp-engage-img-wrap { border-radius:14px;overflow:hidden;box-shadow:0 16px 48px rgba(15,52,96,0.15);flex:1;min-height:300px; }
           .wp-engage-img-wrap img { width:100%;height:100%;min-height:300px;object-fit:cover;display:block; }
           .wp-engage-right { display:flex;flex-direction:column;gap:16px; }
-          .wp-ecard { background:rgba(255,255,255,0.50);border:1px solid rgba(15,52,96,0.12);border-radius:14px;padding:26px 28px;transition:background 0.3s,border-color 0.3s,transform 0.3s; }
-          .wp-ecard:hover { background:rgba(15,52,96,0.06);border-color:rgba(254,151,0,0.45);transform:translateX(4px); }
+          .wp-ecard { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:14px;padding:26px 28px;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95);transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s; }
+          .wp-ecard:hover { border-color:rgba(217,119,6,0.45);box-shadow:0 16px 48px rgba(15,52,96,0.14),inset 0 1px 0 rgba(255,255,255,1);transform:translateX(4px); }
           .wp-ecard-header { display:flex;align-items:center;gap:14px;margin-bottom:10px; }
           .wp-ecard-icon { width:44px;height:44px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
           .wp-ecard-icon svg { width:26px;height:26px;stroke:#D97706;fill:none; }
