@@ -407,25 +407,24 @@ export default function WordPressDevelopmentCompany() {
           .wp-submit-btn:hover { background:rgba(15,52,96,0.95);border-color:rgba(245,158,11,0.6);transform:translateY(-2px); }
 
           /* FAQ */
-          .wp-faq-section { padding:80px 40px;background:#fff;border-top:1px solid #e5e7eb;position:relative;z-index:1; }
+          .wp-faq-section { padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);position:relative;z-index:1; }
           .wp-faq-inner { max-width:1280px;margin:0 auto; }
-          .wp-faq-heading { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 48px; }
-          .wp-faq-list { display:flex;flex-direction:column; }
-          .wp-faq-item { border-top:1px solid #e5e7eb;position:relative;transition:border-color 0.2s; }
-          .wp-faq-item:last-child { border-bottom:1px solid #e5e7eb; }
-          .wp-faq-item.open { border-top-color:#D97706; }
-          .wp-faq-item.open::before { content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#D97706; }
+          .wp-faq-heading { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 36px; }
+          .wp-faq-list { display:flex;flex-direction:column;gap:12px; }
+          .wp-faq-item { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:16px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(15,52,96,0.07),inset 0 1px 0 rgba(255,255,255,0.95);transition:border-color 0.2s,box-shadow 0.2s; }
+          .wp-faq-item.open { border-color:rgba(217,119,6,0.40);box-shadow:0 8px 32px rgba(15,52,96,0.12),inset 0 1px 0 rgba(255,255,255,1); }
+          .wp-faq-item.open::before { content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#D97706;border-radius:3px 0 0 3px; }
           .wp-faq-question { width:100%;background:none;border:none;padding:22px 22px 22px 60px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;text-align:left;gap:16px;font-family:inherit;position:relative; }
-          .wp-faq-q-badge { position:absolute;left:16px;top:50%;transform:translateY(-50%);width:28px;height:28px;background:#e5e7eb;color:#374151;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:4px;flex-shrink:0;transition:background 0.2s,color 0.2s; }
+          .wp-faq-q-badge { position:absolute;left:16px;top:50%;transform:translateY(-50%);width:28px;height:28px;background:rgba(15,52,96,0.10);color:#374151;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:6px;flex-shrink:0;transition:background 0.2s,color 0.2s; }
           .wp-faq-item.open .wp-faq-q-badge { background:#D97706;color:#fff; }
-          .wp-faq-question span { font-size:16px;font-weight:600;color:#111827;line-height:1.45; }
+          .wp-faq-question span { font-size:16px;font-weight:600;color:#0F1F40;line-height:1.45; }
           .wp-faq-item.open .wp-faq-question span { color:#D97706; }
           .wp-faq-chevron { width:24px;height:24px;flex-shrink:0;color:#9ca3af;transition:transform 0.3s; }
           .wp-faq-item.open .wp-faq-chevron { transform:rotate(180deg);color:#D97706; }
           .wp-faq-answer-wrap { overflow:hidden;transition:max-height 0.35s ease;max-height:0; }
           .wp-faq-item.open .wp-faq-answer-wrap { max-height:400px; }
           .wp-faq-answer { padding:0 22px 22px 60px;font-size:15px;color:#4b5563;line-height:1.8; }
-          .wp-faq-a-badge { display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:#111827;color:#fff;font-size:12px;font-weight:700;border-radius:4px;margin-right:12px;flex-shrink:0;vertical-align:middle; }
+          .wp-faq-a-badge { display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:#0F3460;color:#fff;font-size:12px;font-weight:700;border-radius:6px;margin-right:12px;flex-shrink:0;vertical-align:middle; }
 
           /* Related */
           .wp-related-section { background:rgba(237,233,254,0.45);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,0.80);box-shadow:inset 0 1px 0 rgba(255,255,255,0.90);padding:80px 40px; }
