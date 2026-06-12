@@ -191,9 +191,10 @@ export default function WordPressDevelopmentCompany() {
           .wp-why-grid { display:grid;grid-template-columns:repeat(4,1fr);margin-top:56px;border-top:1px solid rgba(15,52,96,0.07);border-left:1px solid rgba(15,52,96,0.07); }
           .wp-why-card { background:rgba(255,255,255,0.72);border-right:1px solid rgba(15,52,96,0.07);border-bottom:1px solid rgba(15,52,96,0.07);padding:36px 32px;text-align:left;transition:background 0.25s; }
           .wp-why-card:hover { background:rgba(255,255,255,0.95); }
-          .wp-why-icon { width:40px;height:40px;border-radius:8px;background:rgba(254,151,0,0.15);display:flex;align-items:center;justify-content:center;margin:0 0 16px;flex-shrink:0; }
+          .wp-why-card-header { display:flex;align-items:center;gap:12px;margin-bottom:10px; }
+          .wp-why-icon { width:40px;height:40px;border-radius:8px;background:rgba(254,151,0,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0; }
           .wp-why-icon svg { width:20px;height:20px;fill:#D97706; }
-          .wp-why-card h3 { font-size:15px;font-weight:700;color:#0F1F40;margin-bottom:10px;line-height:1.35; }
+          .wp-why-card h3 { font-size:15px;font-weight:700;color:#0F1F40;margin:0;line-height:1.35; }
           .wp-why-card p { font-size:13px;color:#4A6080;line-height:1.7;margin:0; }
 
           /* Engagement */
@@ -254,8 +255,8 @@ export default function WordPressDevelopmentCompany() {
 
           /* FAQ */
           .wp-faq-section { padding:80px 40px;background:#fff;border-top:1px solid #e5e7eb;position:relative;z-index:1; }
-          .wp-faq-inner { max-width:960px;margin:0 auto; }
-          .wp-faq-heading { font-size:40px;font-weight:800;color:#111827;line-height:1.2;margin:0 0 48px;letter-spacing:-0.5px; }
+          .wp-faq-inner { max-width:1280px;margin:0 auto; }
+          .wp-faq-heading { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 48px; }
           .wp-faq-list { display:flex;flex-direction:column; }
           .wp-faq-item { border-top:1px solid #e5e7eb;position:relative;transition:border-color 0.2s; }
           .wp-faq-item:last-child { border-bottom:1px solid #e5e7eb; }
@@ -343,7 +344,7 @@ export default function WordPressDevelopmentCompany() {
             .wp-contact-right { padding:0 20px 28px; }
             .wp-contact-title { font-size:28px; }
             .wp-faq-section { padding:60px 20px; }
-            .wp-faq-heading { font-size:28px; }
+            .wp-faq-heading { font-size:26px; }
             .wp-faq-question { padding:18px 18px 18px 52px; }
             .wp-faq-question span { font-size:14px; }
             .wp-faq-answer { padding:0 18px 18px 52px;font-size:14px; }
@@ -561,8 +562,10 @@ export default function WordPressDevelopmentCompany() {
             <div className="wp-why-grid">
               {WHY.map(w => (
                 <div className="wp-why-card" key={w.title}>
-                  <div className="wp-why-icon">{w.icon}</div>
-                  <h3>{w.title}</h3>
+                  <div className="wp-why-card-header">
+                    <div className="wp-why-icon">{w.icon}</div>
+                    <h3>{w.title}</h3>
+                  </div>
                   <p>{w.desc}</p>
                 </div>
               ))}
