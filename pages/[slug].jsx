@@ -265,8 +265,8 @@ function SinglePost({ post, relatedPosts }) {
                 <Image
                   src={post.featuredImage.node.sourceUrl}
                   alt={post.featuredImage.node.altText || post.title}
-                  width={1200} height={480}
-                  style={{ width: '100%', height: '480px', objectFit: 'cover' }}
+                  width={1200} height={630}
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
                   priority
                 />
               </div>
@@ -352,8 +352,9 @@ function SinglePost({ post, relatedPosts }) {
                             <Image
                               src={rp.featuredImage.node.sourceUrl}
                               alt={rp.featuredImage.node.altText || rp.title}
-                              width={400}
-                              height={200}
+                              width={800}
+                              height={400}
+                              sizes="(max-width: 768px) 100vw, 33vw"
                               className="related-card-img"
                             />
                           </Link>
