@@ -85,10 +85,14 @@ export default function WordPressDevelopmentCompany() {
   const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
+  const [visibleTestiCards, setVisibleTestiCards] = useState([]);
+  const [visibleECards, setVisibleECards] = useState([]);
   const stepRefs = useRef([]);
   const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const whyGridRef = useRef(null);
+  const testiGridRef = useRef(null);
+  const eCardsRef = useRef(null);
 
   // Scroll-reveal for process steps
   useEffect(() => {
@@ -135,6 +139,38 @@ export default function WordPressDevelopmentCompany() {
       { threshold: 0.1 }
     );
     obs.observe(whyGridRef.current);
+    return () => obs.disconnect();
+  }, []);
+
+  // Testimonial cards staggered reveal
+  useEffect(() => {
+    if (!testiGridRef.current) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          [0,1,2].forEach(i => setTimeout(() => setVisibleTestiCards(p => p.includes(i)?p:[...p,i]), i * 150));
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    obs.observe(testiGridRef.current);
+    return () => obs.disconnect();
+  }, []);
+
+  // Engagement cards staggered slide-in
+  useEffect(() => {
+    if (!eCardsRef.current) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          [0,1,2,3].forEach(i => setTimeout(() => setVisibleECards(p => p.includes(i)?p:[...p,i]), i * 130));
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    obs.observe(eCardsRef.current);
     return () => obs.disconnect();
   }, []);
 
@@ -210,7 +246,7 @@ export default function WordPressDevelopmentCompany() {
           /* Clients */
           .wp-clients-bar { position:relative;z-index:2;padding:20px 40px 60px;max-width:1440px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px; }
           .wp-clients-label { font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6A80A0; }
-          .wp-clients-logos { display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap; }
+          .wp-clients-logos { width:100%;overflow:hidden; }
           .wp-client-logo { height:26px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(100%);opacity:0.5;transition:opacity 0.25s,filter 0.25s; }
           .wp-client-logo:hover { opacity:0.85;filter:grayscale(0%); }
 
@@ -263,7 +299,7 @@ export default function WordPressDevelopmentCompany() {
           .wp-process-divider { border:none;border-top:1px solid rgba(15,52,96,0.15);margin:36px 0 0;width:100%; }
           .wp-process-inner { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:minmax(0,55%) minmax(0,45%);gap:80px;align-items:start; }
           .wp-process-steps { display:flex;flex-direction:column; }
-          .wp-pstep { display:grid;grid-template-columns:60px 1fr;gap:0 20px;opacity:0;transform:translateY(32px);transition:opacity 0.55s ease,transform 0.55s ease; }
+          .wp-pstep { display:grid;grid-template-columns:60px 1fr;gap:0 20px;opacity:0;transform:translateY(52px);transition:opacity 0.65s cubic-bezier(0.22,1,0.36,1),transform 0.65s cubic-bezier(0.22,1,0.36,1); }
           .wp-pstep.visible { opacity:1;transform:translateY(0); }
           .wp-pstep-left { display:flex;flex-direction:column;align-items:center; }
           .wp-pstep-circle { width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,0.65);backdrop-filter:blur(8px);border:2px solid rgba(15,52,96,0.18);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:#0F3460;flex-shrink:0;transition:background 0.3s,border-color 0.3s; }
@@ -416,14 +452,7 @@ export default function WordPressDevelopmentCompany() {
           .wp-rtag-emerald { background:rgba(16,185,129,0.10);border-color:rgba(16,185,129,0.28);color:#065F46; }
           .wp-rtag-sky     { background:rgba(14,165,233,0.10);border-color:rgba(14,165,233,0.28);color:#0369A1; }
 
-          /* CTA shimmer */
-          @keyframes wp-shimmer {
-            0% { background-position:-200% center; }
-            100% { background-position:200% center; }
-          }
-          .wp-btn-hero {
-            background-size:200% auto;
-          }
+          /* CTA shimmer — wider, brighter sweep */
           .wp-btn-hero-shimmer {
             position:relative;
             overflow:hidden;
@@ -431,21 +460,21 @@ export default function WordPressDevelopmentCompany() {
           .wp-btn-hero-shimmer::after {
             content:'';
             position:absolute;
-            top:0;left:-100%;width:60%;height:100%;
-            background:linear-gradient(120deg,transparent 0%,rgba(255,255,255,0.55) 50%,transparent 100%);
-            animation:wp-shimmer-sweep 3s ease-in-out infinite;
+            top:-10%;left:-120%;width:80%;height:120%;
+            background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,0.75) 45%,rgba(255,255,255,0.9) 50%,rgba(255,255,255,0.75) 55%,transparent 100%);
+            animation:wp-shimmer-sweep 2.5s ease-in-out infinite;
             pointer-events:none;
           }
           @keyframes wp-shimmer-sweep {
-            0% { left:-100%; }
-            40%,100% { left:150%; }
+            0% { left:-120%; }
+            35%,100% { left:160%; }
           }
 
-          /* Section fade-up */
+          /* Section fade-up — bigger lift */
           .wp-section-reveal {
             opacity:0;
-            transform:translateY(24px);
-            transition:opacity 0.6s ease, transform 0.6s ease;
+            transform:translateY(48px);
+            transition:opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
           }
           .wp-section-reveal.wp-revealed {
             opacity:1;
@@ -455,12 +484,72 @@ export default function WordPressDevelopmentCompany() {
           /* Why cards staggered reveal */
           .wp-why-card {
             opacity:0;
-            transform:translateY(20px);
-            transition:opacity 0.5s ease, transform 0.5s ease, background 0.25s;
+            transform:translateY(36px) scale(0.97);
+            transition:opacity 0.55s cubic-bezier(0.22,1,0.36,1), transform 0.55s cubic-bezier(0.22,1,0.36,1), background 0.25s;
           }
           .wp-why-card.wp-card-visible {
             opacity:1;
+            transform:translateY(0) scale(1);
+          }
+
+          /* Service card — orange left border slide */
+          .wp-service-card {
+            position:relative;
+          }
+          .wp-service-card::before {
+            content:'';
+            position:absolute;
+            left:0;top:12%;height:76%;width:3px;
+            background:linear-gradient(180deg,#D97706,#f59e0b);
+            border-radius:0 2px 2px 0;
+            transform:scaleY(0);
+            transform-origin:top center;
+            transition:transform 0.3s cubic-bezier(0.22,1,0.36,1);
+          }
+          .wp-service-card:hover::before {
+            transform:scaleY(1);
+          }
+
+          /* Client logo marquee */
+          .wp-clients-logos {
+            overflow:hidden;
+            width:100%;
+          }
+          .wp-logos-track {
+            display:flex;
+            align-items:center;
+            gap:60px;
+            width:max-content;
+            animation:wp-marquee 28s linear infinite;
+          }
+          .wp-logos-track:hover {
+            animation-play-state:paused;
+          }
+          @keyframes wp-marquee {
+            0% { transform:translateX(0); }
+            100% { transform:translateX(-50%); }
+          }
+
+          /* Testimonial cards staggered reveal */
+          .wp-tcard {
+            opacity:0;
+            transform:translateY(44px);
+            transition:opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s, border-color 0.3s;
+          }
+          .wp-tcard.wp-tcard-visible {
+            opacity:1;
             transform:translateY(0);
+          }
+
+          /* Engagement cards staggered slide-in from right */
+          .wp-ecard {
+            opacity:0;
+            transform:translateX(40px);
+            transition:opacity 0.55s cubic-bezier(0.22,1,0.36,1), transform 0.55s cubic-bezier(0.22,1,0.36,1), background 0.3s, border-color 0.3s;
+          }
+          .wp-ecard.wp-ecard-visible {
+            opacity:1;
+            transform:translateX(0);
           }
 
           /* Responsive */
@@ -566,17 +655,27 @@ export default function WordPressDevelopmentCompany() {
           <div className="wp-clients-bar">
             <span className="wp-clients-label">Trusted by Leading Brands</span>
             <div className="wp-clients-logos">
-              {[
-                ['/logo/Indian_Express_Logo_full.png','Indian Express'],
-                ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],
-                ['/logo/Uniphore.jpg','Uniphore'],
-                ['/logo/ICCoLogo.png','ICC'],
-                ['/logo/Honor_Logo_(2020).svg.png','Honor'],
-                ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],
-              ].map(([src,alt]) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img key={alt} src={src} alt={alt} className="wp-client-logo" />
-              ))}
+              <div className="wp-logos-track">
+                {/* first set */}
+                {[
+                  ['/logo/Indian_Express_Logo_full.png','Indian Express'],
+                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],
+                  ['/logo/Uniphore.jpg','Uniphore'],
+                  ['/logo/ICCoLogo.png','ICC'],
+                  ['/logo/Honor_Logo_(2020).svg.png','Honor'],
+                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],
+                  /* duplicate for seamless loop */
+                  ['/logo/Indian_Express_Logo_full.png','Indian Express2'],
+                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon2'],
+                  ['/logo/Uniphore.jpg','Uniphore2'],
+                  ['/logo/ICCoLogo.png','ICC2'],
+                  ['/logo/Honor_Logo_(2020).svg.png','Honor2'],
+                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv2'],
+                ].map(([src,alt]) => (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img key={alt} src={src} alt={alt.replace(/\d+$/,'')} className="wp-client-logo" />
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -686,13 +785,13 @@ export default function WordPressDevelopmentCompany() {
               <h2 className="wp-section-title">Know What Our Customers Say</h2>
               <p className="wp-section-sub">Trusted by businesses across the US, Canada, Australia and beyond for 15+ years.</p>
             </div>
-            <div className="wp-testi-grid">
+            <div className="wp-testi-grid" ref={testiGridRef}>
               {[
                 { initials:'JM', bg:'linear-gradient(135deg,#0F3460,#1a5595)', text:'"1Solutions transformed our outdated website into a high-converting WooCommerce store. Sales increased by 40% within three months of launch. Absolutely outstanding work."', name:'James Mitchell', role:'CEO, RetailEdge — USA', featured:false },
                 { initials:'SR', bg:'linear-gradient(135deg,#FE9700,#f59e0b)', text:'"Professional, fast, and incredibly detail-oriented. They built our entire WordPress site from scratch with custom plugins and it works flawlessly. Best development partner we\'ve ever had."', name:'Sarah Reynolds', role:'Founder, GreenLeaf Co. — Australia', featured:true },
                 { initials:'DL', bg:'linear-gradient(135deg,#7C3AED,#a855f7)', text:'"We\'ve worked with 1Solutions on four projects over three years. Consistent quality, on-time delivery, and excellent communication. They truly understand our business goals."', name:'Daniel Lowe', role:'CTO, NorthTech — Canada', featured:false },
-              ].map(t => (
-                <div className={`wp-tcard${t.featured?' featured':''}`} key={t.name}>
+              ].map((t,i) => (
+                <div className={`wp-tcard${t.featured?' featured':''}${visibleTestiCards.includes(i)?' wp-tcard-visible':''}`} key={t.name}>
                   <div className="wp-tcard-stars">★★★★★</div>
                   <p className="wp-tcard-text">{t.text}</p>
                   <div className="wp-tcard-author">
@@ -755,7 +854,7 @@ export default function WordPressDevelopmentCompany() {
                 <img src="/images/Partner-with-us.jpg" alt="Partner With 1Solutions" />
               </div>
             </div>
-            <div className="wp-engage-right">
+            <div className="wp-engage-right" ref={eCardsRef}>
               {[
                 { title:'Dedicated Team', desc:'Hire a full-time dedicated WordPress team for long-term projects. We deploy a project manager and certified developers who work exclusively on your product.', features:['Cost-effective Approach','Less Administrative Overhead','Quick-paced Development','Timely Reporting'],
                   icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> },
@@ -765,8 +864,8 @@ export default function WordPressDevelopmentCompany() {
                   icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> },
                 { title:'Offshore Development', desc:'Leverage our New Delhi-based team for significant cost savings without compromising quality. Expert developers, US/AU timezone overlap available.', features:['Access to Expert Talent','Shared Responsibility','Managed Team','Cost-Efficient'],
                   icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> },
-              ].map(e => (
-                <div className="wp-ecard" key={e.title}>
+              ].map((e,i) => (
+                <div className={`wp-ecard${visibleECards.includes(i)?' wp-ecard-visible':''}`} key={e.title}>
                   <div className="wp-ecard-header">
                     <div className="wp-ecard-icon">
                       {e.icon}
