@@ -352,8 +352,7 @@ function SinglePost({ post, relatedPosts }) {
                             <Image
                               src={rp.featuredImage.node.sourceUrl}
                               alt={rp.featuredImage.node.altText || rp.title}
-                              width={800}
-                              height={400}
+                              fill
                               sizes="(max-width: 768px) 100vw, 33vw"
                               className="related-card-img"
                             />

@@ -338,8 +338,8 @@ body {
 .related-grid  { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
 .related-card  { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; transition: all 0.25s; background: white; display: flex; flex-direction: column; }
 .related-card:hover { border-color: var(--orange); box-shadow: 0 6px 20px rgba(254,151,0,0.1); transform: translateY(-3px); }
-.related-card-img-wrap { display: block; overflow: hidden; }
-.related-card-img { width: 100%; height: auto; display: block; transition: transform 0.3s; }
+.related-card-img-wrap { display: block; position: relative; width: 100%; aspect-ratio: 16/9; overflow: hidden; }
+.related-card-img { object-fit: cover; transition: transform 0.3s; }
 .related-card:hover .related-card-img { transform: scale(1.04); }
 .related-card-body { padding: 14px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
 .related-card-cat { display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; padding: 3px 9px; border-radius: 4px; }
