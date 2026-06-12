@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -45,6 +45,27 @@ const WHY = [
 export default function WordPressDevelopmentCompany() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
+  const [visibleSteps, setVisibleSteps] = useState([]);
+  const stepRefs = useRef([]);
+
+  useEffect(() => {
+    const observers = stepRefs.current.map((el, i) => {
+      if (!el) return null;
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            // stagger: each step waits 150ms more than the previous
+            setTimeout(() => setVisibleSteps(prev => prev.includes(i) ? prev : [...prev, i]), i * 150);
+            obs.disconnect();
+          }
+        },
+        { threshold: 0.25 }
+      );
+      obs.observe(el);
+      return obs;
+    });
+    return () => observers.forEach(o => o && o.disconnect());
+  }, []);
 
   const visibleServices = showAll ? SERVICES : SERVICES.slice(0, 8);
 
@@ -149,7 +170,8 @@ export default function WordPressDevelopmentCompany() {
           .wp-process-divider { border:none;border-top:1px solid rgba(15,52,96,0.15);margin:36px 0 0;width:100%; }
           .wp-process-inner { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:minmax(0,55%) minmax(0,45%);gap:80px;align-items:start; }
           .wp-process-steps { display:flex;flex-direction:column; }
-          .wp-pstep { display:grid;grid-template-columns:60px 1fr;gap:0 20px; }
+          .wp-pstep { display:grid;grid-template-columns:60px 1fr;gap:0 20px;opacity:0;transform:translateY(32px);transition:opacity 0.55s ease,transform 0.55s ease; }
+          .wp-pstep.visible { opacity:1;transform:translateY(0); }
           .wp-pstep-left { display:flex;flex-direction:column;align-items:center; }
           .wp-pstep-circle { width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,0.65);backdrop-filter:blur(8px);border:2px solid rgba(15,52,96,0.18);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:#0F3460;flex-shrink:0;transition:background 0.3s,border-color 0.3s; }
           .wp-pstep:hover .wp-pstep-circle { background:rgba(245,158,11,0.2);border-color:#D97706;color:#D97706; }
@@ -490,7 +512,11 @@ export default function WordPressDevelopmentCompany() {
                 ['Develop','Once your solution is defined, our expert WordPress developers get to work — building custom themes, plugins, WooCommerce stores, and integrations with a clear timeline and regular updates.'],
                 ['Deploy','Partnering with you, we handle QA testing, performance audits, and a smooth deployment to your live environment — with ongoing support and maintenance to keep your site growing.'],
               ].map(([title, desc], i) => (
-                <div className="wp-pstep" key={title}>
+                <div
+                  className={`wp-pstep${visibleSteps.includes(i) ? ' visible' : ''}`}
+                  key={title}
+                  ref={el => { stepRefs.current[i] = el; }}
+                >
                   <div className="wp-pstep-left">
                     <div className="wp-pstep-circle">{i+1}</div>
                     {i < 3 && <div className="wp-pstep-arrow" />}
