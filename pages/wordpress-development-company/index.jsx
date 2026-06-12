@@ -180,6 +180,7 @@ export default function WordPressDevelopmentCompany() {
             line-height: 1.6;
             position: relative;
             overflow-x: hidden;
+            overflow-y: clip;
           }
           .wp-page *, .wp-page *::before, .wp-page *::after { box-sizing: border-box; }
 
