@@ -87,7 +87,7 @@ export default function WordPressDevelopmentCompany() {
             color: #0F1F40;
             line-height: 1.6;
             position: relative;
-            overflow: hidden;
+            overflow-x: hidden;
           }
           .wp-page *, .wp-page *::before, .wp-page *::after { box-sizing: border-box; }
 
@@ -647,17 +647,14 @@ export default function WordPressDevelopmentCompany() {
               <div className="wp-merged-box">
                 <div>
                   {[
-                    { d:'M7 11V7a5 5 0 0 1 10 0v4', extra:'<rect x="3" y="11" width="18" height="11" rx="2"></rect>', text:'Your project details are confidential. We respect your privacy.' },
-                    { d:'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2', extra:'<circle cx="12" cy="7" r="4"></circle>', text:'A real expert reviews your requirements — not automated responses.' },
-                    { d:'M12 6 L12 12 L16 14', extra:'<circle cx="12" cy="12" r="10"></circle>', text:'Quick response within 24 business hours.' },
-                    { d:'M20 6 L9 17 L4 12', extra:'', text:'No obligation to proceed. Let\'s just talk.' },
+                    { icon: <svg className="wp-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>, text:'Your project details are confidential. We respect your privacy.' },
+                    { icon: <svg className="wp-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>, text:'A real expert reviews your requirements — not automated responses.' },
+                    { icon: <svg className="wp-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>, text:'Quick response within 24 business hours.' },
+                    { icon: <svg className="wp-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>, text:"No obligation to proceed. Let's just talk." },
                   ].map((b,i) => (
                     <div className="wp-benefit-item" key={i} style={{ marginBottom: i < 3 ? 14 : 0 }}>
                       <div className="wp-benefit-icon-wrap">
-                        <svg className="wp-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-                          <path d={b.d} />
-                          {b.extra && <path d={b.extra.replace(/<[^>]+d="([^"]+)".*>/,'$1')} />}
-                        </svg>
+                        {b.icon}
                       </div>
                       <p>{b.text}</p>
                     </div>
