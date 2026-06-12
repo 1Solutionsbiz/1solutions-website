@@ -257,11 +257,12 @@ export default function WordPressDevelopmentCompany() {
           .wp-section-sub { font-size:16px;color:#4A6080;margin:0; }
 
           /* Services */
-          .wp-services-section { background:#ffffff;padding:72px 40px 60px;position:relative;z-index:2;box-shadow:0 -20px 60px rgba(15,52,96,0.18),0 -4px 16px rgba(15,52,96,0.10); }
+          .wp-services-section { background:#f8fafd;padding:72px 40px 60px;position:relative;z-index:2;box-shadow:0 -20px 60px rgba(15,52,96,0.18),0 -4px 16px rgba(15,52,96,0.10); }
           .wp-services-inner { max-width:1280px;margin:0 auto; }
           .wp-services-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:14px; }
-          .wp-service-card { background:#f8fafd;border:1px solid rgba(15,52,96,0.10);border-radius:20px;padding:26px 22px 22px;position:relative;overflow:hidden;box-shadow:0 2px 12px rgba(15,52,96,0.06);transition:transform 0.22s,box-shadow 0.22s,background 0.22s,border-color 0.22s;cursor:default; }
-          .wp-service-card:hover { transform:translateY(-6px);background:#ffffff;border-color:rgba(217,119,6,0.45);box-shadow:0 16px 48px rgba(15,52,96,0.14); }
+          .wp-service-card { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:26px 22px 22px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95);transition:transform 0.22s,box-shadow 0.22s,border-color 0.22s;cursor:default; }
+          .wp-service-card:hover { transform:translateY(-6px);border-color:rgba(217,119,6,0.45);box-shadow:0 16px 48px rgba(15,52,96,0.14),inset 0 1px 0 rgba(255,255,255,1); }
+          .wp-service-card.featured { background:linear-gradient(135deg,rgba(254,243,199,0.50) 0%,rgba(255,255,255,0.85) 55%,rgba(219,234,254,0.45) 100%);border-color:rgba(217,119,6,0.25);box-shadow:0 6px 32px rgba(217,119,6,0.10),inset 0 1px 0 rgba(255,255,255,1); }
           .wp-service-card:hover .wp-card-num { color:#D97706;opacity:0.12; }
           .wp-service-card:hover h3 { color:#D97706; }
           .wp-card-num { position:absolute;top:8px;right:14px;font-size:72px;font-weight:900;line-height:1;color:#0F3460;opacity:0.055;pointer-events:none;letter-spacing:-4px;user-select:none; }
