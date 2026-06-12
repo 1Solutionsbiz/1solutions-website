@@ -372,9 +372,10 @@ export default function WordPressDevelopmentCompany() {
 
           /* Contact */
           .wp-contact-section { padding:70px 40px;background:linear-gradient(135deg,rgba(254,243,199,0.70) 0%,rgba(255,255,255,0.60) 40%,rgba(219,234,254,0.65) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.80); }
-          .wp-contact-header { max-width:1440px;margin:0 auto 36px; }
           .wp-contact-container { max-width:1440px;margin:0 auto;background:none;border:none;box-shadow:none;border-radius:0;overflow:visible;display:grid;grid-template-columns:1fr 1.15fr;align-items:start;gap:32px; }
           .wp-contact-left { padding:0;align-self:start; }
+          .wp-contact-title { margin-bottom:12px; }
+          .wp-contact-desc { margin-bottom:24px; }
           .wp-contact-right { align-self:start; }
           .wp-contact-title { font-size:48px;font-weight:900;line-height:1.2;margin:0 0 16px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent; }
           .wp-contact-desc { font-size:14px;color:#4A6080;line-height:1.6;margin:0 0 24px; }
@@ -605,7 +606,6 @@ export default function WordPressDevelopmentCompany() {
             .wp-why-card { padding:24px 20px; }
             .wp-engage-section { padding:60px 20px; }
             .wp-contact-section { padding:48px 16px; }
-            .wp-contact-header { margin-bottom:24px; }
             .wp-contact-container { grid-template-columns:1fr;gap:20px; }
             .wp-contact-left { padding:0; }
             .wp-contact-right { padding:0; }
@@ -906,12 +906,10 @@ export default function WordPressDevelopmentCompany() {
 
         {/* ── CONTACT ── */}
         <section className="wp-contact-section" id="contact">
-          <div className="wp-contact-header">
-            <h2 className="wp-contact-title">Let's Build Something<br/>Great Together</h2>
-            <p className="wp-contact-desc">Tell us about your project and we'll get back to you within 24 hours with a tailored plan.</p>
-          </div>
           <div className="wp-contact-container">
             <div className="wp-contact-left">
+              <h2 className="wp-contact-title">Let's Build Something<br/>Great Together</h2>
+              <p className="wp-contact-desc">Tell us about your project and we'll get back to you within 24 hours with a tailored plan.</p>
               <div className="wp-merged-box">
                 <div>
                   {[
