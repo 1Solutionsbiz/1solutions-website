@@ -430,7 +430,7 @@ export default function WordPressDevelopmentCompany() {
           .wp-faq-a-badge { display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:#0F3460;color:#fff;font-size:12px;font-weight:700;border-radius:6px;margin-right:12px;flex-shrink:0;vertical-align:middle; }
 
           /* Related */
-          .wp-related-section { background:rgba(237,233,254,0.45);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,0.80);box-shadow:inset 0 1px 0 rgba(255,255,255,0.90);padding:80px 40px; }
+          .wp-related-section { background:rgba(237,233,254,0.18);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,0.60);padding:80px 40px; }
           .wp-related-inner { max-width:1280px;margin:0 auto;text-align:center; }
           .wp-related-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A6080;margin:0 0 14px;display:block; }
           .wp-related-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
@@ -617,8 +617,8 @@ export default function WordPressDevelopmentCompany() {
             .wp-faq-answer { padding:0 18px 18px 52px;font-size:14px; }
             .wp-faq-q-badge { left:14px; }
             .wp-related-section { padding:60px 20px; }
-            .wp-related-tags { justify-content:center; }
-            .wp-rtag { width:100%;text-align:center; }
+            .wp-related-tags { justify-content:center;gap:8px; }
+            .wp-rtag { padding:9px 16px;font-size:13px; }
             .wp-services-grid { grid-template-columns:1fr 1fr;gap:10px; }
             .wp-testi-grid { grid-template-columns:1fr; }
             .wp-portfolio-grid { grid-template-columns:1fr; }
