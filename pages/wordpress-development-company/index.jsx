@@ -614,6 +614,8 @@ export default function WordPressDevelopmentCompany() {
             .wp-faq-answer { padding:0 18px 18px 52px;font-size:14px; }
             .wp-faq-q-badge { left:14px; }
             .wp-related-section { padding:60px 20px; }
+            .wp-related-tags { justify-content:flex-start; }
+            .wp-rtag { flex:1 1 calc(50% - 6px);min-width:0;text-align:center;padding:11px 12px; }
             .wp-services-grid { grid-template-columns:1fr 1fr;gap:10px; }
             .wp-testi-grid { grid-template-columns:1fr; }
             .wp-portfolio-grid { grid-template-columns:1fr; }
