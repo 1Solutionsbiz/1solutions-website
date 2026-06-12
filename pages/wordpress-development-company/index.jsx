@@ -317,21 +317,21 @@ export default function WordPressDevelopmentCompany() {
           .wp-process-img-wrap img { width:100%;height:100%;object-fit:cover;display:block; }
 
           /* Testimonials */
-          .wp-testi-section { background:rgba(254,243,199,0.30);border-top:1px solid rgba(255,255,255,0.80);border-bottom:1px solid rgba(255,255,255,0.80);padding:80px 40px;position:relative;z-index:1; }
+          .wp-testi-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08);padding:80px 40px;position:relative;z-index:1; }
           .wp-testi-inner { max-width:1280px;margin:0 auto; }
           .wp-section-header-center { text-align:center;margin-bottom:52px; }
           .wp-testi-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:52px; }
-          .wp-tcard { background:rgba(255,255,255,0.45);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(15,52,96,0.12);border-radius:20px;padding:32px 28px;box-shadow:0 8px 32px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.9);display:flex;flex-direction:column;gap:16px;transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s; }
-          .wp-tcard:hover { transform:translateY(-4px);border-color:rgba(217,119,6,0.45);box-shadow:0 12px 40px rgba(15,52,96,0.15); }
-          .wp-tcard.featured { background:rgba(254,243,199,0.60);border-color:rgba(255,255,255,0.90);box-shadow:0 8px 32px rgba(217,119,6,0.12),inset 0 1px 0 rgba(255,255,255,1); }
+          .wp-tcard { background:#ffffff;border:1px solid rgba(15,52,96,0.10);border-radius:20px;padding:32px 28px;box-shadow:0 2px 12px rgba(15,52,96,0.06);display:flex;flex-direction:column;gap:16px;transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s; }
+          .wp-tcard:hover { transform:translateY(-4px);border-color:rgba(217,119,6,0.35);box-shadow:0 12px 40px rgba(15,52,96,0.12); }
+          .wp-tcard.featured { background:#ffffff;border-color:rgba(15,52,96,0.15);box-shadow:0 4px 24px rgba(15,52,96,0.10); }
           .wp-tcard-stars { font-size:18px;color:#D97706;letter-spacing:2px; }
-          .wp-tcard-text { font-size:15px;line-height:1.75;color:#2A3F6F;margin:0;flex:1; }
-          .wp-tcard.featured .wp-tcard-text { color:#0F1F40; }
+          .wp-tcard-text { font-size:15px;line-height:1.75;color:#374151;margin:0;flex:1; }
+          .wp-tcard.featured .wp-tcard-text { color:#1f2937; }
           .wp-tcard-author { display:flex;align-items:center;gap:12px;margin-top:4px; }
-          .wp-tcard-avatar { width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#0F3460;flex-shrink:0; }
+          .wp-tcard-avatar { width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#ffffff;flex-shrink:0; }
           .wp-tcard-name { font-size:14px;font-weight:700;color:#0F3460; }
-          .wp-tcard-role { font-size:12px;color:#4A6080; }
-          .wp-testi-stats { display:flex;align-items:center;justify-content:center;gap:0;background:linear-gradient(135deg,#fef9f0 0%,#f5f0ff 100%);border-radius:16px;padding:32px 40px;border:1px solid rgba(15,52,96,0.08); }
+          .wp-tcard-role { font-size:12px;color:#6b7280; }
+          .wp-testi-stats { display:flex;align-items:center;justify-content:center;gap:0;background:#ffffff;border-radius:16px;padding:32px 40px;border:1px solid rgba(15,52,96,0.10);box-shadow:0 2px 12px rgba(15,52,96,0.06); }
           .wp-tstat { display:flex;flex-direction:column;align-items:center;gap:4px;flex:1; }
           .wp-tstat-num { font-size:28px;font-weight:800;color:#0F3460; }
           .wp-tstat-label { font-size:13px;color:#4A6080;font-weight:500; }
@@ -787,9 +787,9 @@ export default function WordPressDevelopmentCompany() {
             </div>
             <div className="wp-testi-grid" ref={testiGridRef}>
               {[
-                { initials:'JM', bg:'linear-gradient(135deg,#0F3460,#1a5595)', text:'"1Solutions transformed our outdated website into a high-converting WooCommerce store. Sales increased by 40% within three months of launch. Absolutely outstanding work."', name:'James Mitchell', role:'CEO, RetailEdge — USA', featured:false },
-                { initials:'SR', bg:'linear-gradient(135deg,#FE9700,#f59e0b)', text:'"Professional, fast, and incredibly detail-oriented. They built our entire WordPress site from scratch with custom plugins and it works flawlessly. Best development partner we\'ve ever had."', name:'Sarah Reynolds', role:'Founder, GreenLeaf Co. — Australia', featured:true },
-                { initials:'DL', bg:'linear-gradient(135deg,#7C3AED,#a855f7)', text:'"We\'ve worked with 1Solutions on four projects over three years. Consistent quality, on-time delivery, and excellent communication. They truly understand our business goals."', name:'Daniel Lowe', role:'CTO, NorthTech — Canada', featured:false },
+                { initials:'JM', bg:'#1a4a7a', text:'"1Solutions transformed our outdated website into a high-converting WooCommerce store. Sales increased by 40% within three months of launch. Absolutely outstanding work."', name:'James Mitchell', role:'CEO, RetailEdge — USA', featured:false },
+                { initials:'SR', bg:'#0F3460', text:'"Professional, fast, and incredibly detail-oriented. They built our entire WordPress site from scratch with custom plugins and it works flawlessly. Best development partner we\'ve ever had."', name:'Sarah Reynolds', role:'Founder, GreenLeaf Co. — Australia', featured:true },
+                { initials:'DL', bg:'#2d5a8e', text:'"We\'ve worked with 1Solutions on four projects over three years. Consistent quality, on-time delivery, and excellent communication. They truly understand our business goals."', name:'Daniel Lowe', role:'CTO, NorthTech — Canada', featured:false },
               ].map((t,i) => (
                 <div className={`wp-tcard${t.featured?' featured':''}${visibleTestiCards.includes(i)?' wp-tcard-visible':''}`} key={t.name}>
                   <div className="wp-tcard-stars">★★★★★</div>
