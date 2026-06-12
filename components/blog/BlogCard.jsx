@@ -10,7 +10,7 @@ export default function BlogCard({ post }) {
 
   return (
     <article className="blog-card">
-      <Link href={`/blog/${post.slug}`} className="blog-card-image-link" tabIndex={-1} aria-hidden>
+      <Link href={`/${post.slug}`} className="blog-card-image-link" tabIndex={-1} aria-hidden>
         <div className="blog-card-image">
           {thumb ? (
             <Image
@@ -29,13 +29,13 @@ export default function BlogCard({ post }) {
 
       <div className="blog-card-content">
         {cat && (
-          <Link href={`/blog/category/${cat.slug}`} className={`blog-tag ${color}`}>
+          <Link href={`/${cat.slug}`} className={`blog-tag ${color}`}>
             {cat.name}
           </Link>
         )}
 
         <h3>
-          <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+          <Link href={`/${post.slug}`}>{post.title}</Link>
         </h3>
 
         {excerpt && <p className="blog-description">{excerpt.slice(0, 120)}…</p>}
@@ -44,7 +44,7 @@ export default function BlogCard({ post }) {
         {post.tags?.nodes?.length > 0 && (
           <div className="blog-card-tags">
             {post.tags.nodes.slice(0, 3).map((tag) => (
-              <Link key={tag.slug} href={`/blog/tag/${tag.slug}`} className="blog-card-tag">
+              <Link key={tag.slug} href={`/tag/${tag.slug}`} className="blog-card-tag">
                 #{tag.name}
               </Link>
             ))}

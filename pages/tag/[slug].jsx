@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { getTagWithPosts, getCategories, formatDate, stripHtml } from '../../../lib/graphql';
-import BlogCard from '../../../components/blog/BlogCard';
-import Pagination from '../../../components/blog/Pagination';
+import { getTagWithPosts, getCategories } from '../../lib/graphql';
+import BlogCard from '../../components/blog/BlogCard';
+import Pagination from '../../components/blog/Pagination';
 
 export default function TagArchive({ tag, posts, pageInfo, categories }) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.1solutions.biz';
@@ -11,23 +11,26 @@ export default function TagArchive({ tag, posts, pageInfo, categories }) {
     <>
       <Head>
         <title>{tag.name} - Blog | 1Solutions</title>
-        <meta name="description" content={`Articles tagged with ${tag.name}`} />
-        <link rel="canonical" href={`${siteUrl}/blog/tag/${tag.slug}`} />
+        <meta name="description" content={`Articles tagged with ${tag.name} from 1Solutions — ${tag.count} posts.`} />
+        <link rel="canonical" href={`${siteUrl}/tag/${tag.slug}`} />
       </Head>
 
       {/* ── TAG HERO ── */}
       <section className="archive-hero tag-hero">
         <div className="archive-hero-container">
-          <span className="archive-hero-badge">Tag</span>
+          <span className="archive-hero-badge cat-blue">Tag</span>
           <h1 className="archive-title">#{tag.name}</h1>
-          <p className="archive-description">{tag.count} article{tag.count !== 1 ? 's' : ''}</p>
+          {tag.description && <p className="archive-description">{tag.description}</p>}
+          <div className="archive-hero-meta">
+            <span className="archive-count">{tag.count} article{tag.count !== 1 ? 's' : ''}</span>
+          </div>
         </div>
       </section>
 
-      <div className="blog-container">
-        {/* ── FILTERS ── */}
-        <div className="filters-section">
-          <p className="filters-label">Browse by Topic</p>
+      {/* Related Topics */}
+      <div className="archive-filters-bar">
+        <div className="archive-filters-inner">
+          <span className="filters-label">Browse by Topic:</span>
           <div className="filters">
             <Link href="/blog" className="filter-btn">All</Link>
             {categories.map((cat) => (
@@ -37,8 +40,9 @@ export default function TagArchive({ tag, posts, pageInfo, categories }) {
             ))}
           </div>
         </div>
+      </div>
 
-        {/* ── BLOG GRID ── */}
+      <div className="blog-container">
         {posts.length > 0 ? (
           <>
             <div className="blog-grid">
@@ -48,7 +52,7 @@ export default function TagArchive({ tag, posts, pageInfo, categories }) {
             </div>
             <Pagination
               pageInfo={pageInfo}
-              baseUrl={`/blog/tag/${tag.slug}`}
+              baseUrl={`/tag/${tag.slug}`}
             />
           </>
         ) : (
@@ -64,7 +68,7 @@ export default function TagArchive({ tag, posts, pageInfo, categories }) {
 
 export async function getStaticPaths() {
   return {
-    paths: [],
+    paths:    [],
     fallback: 'blocking',
   };
 }
@@ -76,16 +80,12 @@ export async function getStaticProps({ params }) {
       getCategories({ first: 10 }),
     ]);
 
-    if (!tag) {
-      return { notFound: true };
-    }
-
-    const posts = tag.posts?.nodes || [];
+    if (!tag) return { notFound: true };
 
     return {
       props: {
         tag,
-        posts,
+        posts:    tag.posts?.nodes || [],
         pageInfo: tag.posts?.pageInfo || null,
         categories: categories || [],
       },

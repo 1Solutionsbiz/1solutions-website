@@ -4,9 +4,11 @@ import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import {
   getPostBySlug, getAllPostSlugs, getRelatedPosts,
+  getCategoryWithPosts, getAllCategorySlugs, getCategories,
   formatDate, stripHtml, getCategoryColor, getReadingTime
-} from '../../lib/graphql';
-import BlogCard from '../../components/blog/BlogCard';
+} from '../lib/graphql';
+import BlogCard from '../components/blog/BlogCard';
+import Pagination from '../components/blog/Pagination';
 
 // Author social links mapping (update here)
 const AUTHOR_LINKEDIN = {
@@ -30,14 +32,83 @@ const AUTHOR_WEBSITE = {
   'Ritika': 'https://www.1solutions.biz',
 };
 
-export default function SinglePost({ post, relatedPosts }) {
+// ── CATEGORY PAGE COMPONENT ──────────────────────────────────────────────────
+function CategoryPage({ category, posts, pageInfo, allCategories, currentAfter }) {
+  const color   = getCategoryColor(category.slug);
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.1solutions.biz';
+
+  return (
+    <>
+      <Head>
+        <title>{category.name} Articles | 1Solutions Blog</title>
+        <meta name="description" content={category.description || `Browse all ${category.name} articles from 1Solutions — ${category.count} posts.`} />
+        <link rel="canonical" href={`${siteUrl}/${category.slug}`} />
+      </Head>
+
+      {/* Category Hero */}
+      <section className="archive-hero category-hero">
+        <div className="archive-hero-container">
+          <div className={`archive-hero-badge ${color}`}>Category</div>
+          <h1>{category.name}</h1>
+          {category.description && <p>{category.description}</p>}
+          <div className="archive-hero-meta">
+            <span className="archive-count">{category.count} Articles</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Categories */}
+      <div className="archive-filters-bar">
+        <div className="archive-filters-inner">
+          <span className="filters-label">Related Topics:</span>
+          <div className="filters">
+            <Link href="/blog" className="filter-btn">All</Link>
+            {allCategories
+              .filter((c) => c.slug !== category.slug)
+              .slice(0, 8)
+              .map((c) => (
+                <Link key={c.slug} href={`/${c.slug}`} className="filter-btn">
+                  {c.name}
+                </Link>
+              ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="blog-container">
+        {posts.length > 0 ? (
+          <>
+            <div className="blog-grid">
+              {posts.map((post) => (
+                <BlogCard key={post.slug} post={post} />
+              ))}
+            </div>
+            <Pagination
+              pageInfo={pageInfo}
+              baseUrl={`/${category.slug}`}
+              currentCursor={currentAfter}
+            />
+          </>
+        ) : (
+          <div className="no-posts">
+            <h2>No articles in this category yet.</h2>
+            <Link href="/blog" className="read-more-btn">← All Articles</Link>
+          </div>
+        )}
+      </div>
+    </>
+  );
+}
+
+// ── SINGLE POST COMPONENT ────────────────────────────────────────────────────
+function SinglePost({ post, relatedPosts }) {
   const tocRef     = useRef(null);
   const contentRef = useRef(null);
 
   const cat      = post.categories?.nodes?.[0];
   const catColor = cat ? getCategoryColor(cat.slug) : 'cat-orange';
   const siteUrl  = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.1solutions.biz';
-  const postUrl  = `${siteUrl}/blog/${post.slug}`;
+  const postUrl  = `${siteUrl}/${post.slug}`;
 
   // Auto-generate TOC from h2/h3 in article content
   useEffect(() => {
@@ -130,44 +201,6 @@ export default function SinglePost({ post, relatedPosts }) {
       <div className="single-post-wrapper">
         <div className="single-post-layout">
 
-          {/* ── SIDEBAR ── */}
-          <aside className="post-sidebar" id="post-sidebar">
-
-            {/* TOC */}
-            <div className="toc-widget">
-              <div className="toc-header">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-                TABLE OF CONTENTS
-              </div>
-              <nav className="toc-list" ref={tocRef} aria-label="Table of contents" />
-            </div>
-
-            {/* Newsletter */}
-            <div className="sidebar-newsletter">
-              <div className="newsletter-icon">✉</div>
-              <h4>Weekly Insights</h4>
-              <p>Get the latest in web development, SEO, and digital marketing — every Tuesday.</p>
-              <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
-                <input type="email" placeholder="Your email address" required />
-                <button type="submit" className="newsletter-btn">Subscribe →</button>
-              </form>
-            </div>
-
-            {/* CTA */}
-            <div className="sidebar-cta">
-              <div className="sidebar-cta-badge">1Solutions</div>
-              <h4>Ready to Grow Your Business Online?</h4>
-              <p>16+ years building digital products and driving measurable growth worldwide.</p>
-              <ul className="sidebar-cta-features">
-                <li>✓ Web Development</li>
-                <li>✓ SEO &amp; Digital Marketing</li>
-                <li>✓ Dedicated Resource Teams</li>
-              </ul>
-              <Link href="/#contact" className="sidebar-cta-btn">Book Free Consultation →</Link>
-            </div>
-
-          </aside>
-
           {/* ── ARTICLE ── */}
           <main className="post-article" id="main-content">
 
@@ -180,7 +213,7 @@ export default function SinglePost({ post, relatedPosts }) {
               <Link href="/">Home</Link>
               <span>/</span>
               <Link href="/blog">Blog</Link>
-              {cat && (<><span>/</span><Link href={`/blog/category/${cat.slug}`}>{cat.name}</Link></>)}
+              {cat && (<><span>/</span><Link href={`/${cat.slug}`}>{cat.name}</Link></>)}
               <span>/</span>
               <span className="breadcrumb-current">{post.title}</span>
             </nav>
@@ -188,7 +221,7 @@ export default function SinglePost({ post, relatedPosts }) {
             {/* Header */}
             <header className="article-header">
               {cat && (
-                <Link href={`/blog/category/${cat.slug}`} className={`article-category-badge ${catColor}`}>
+                <Link href={`/${cat.slug}`} className={`article-category-badge ${catColor}`}>
                   {cat.name}
                 </Link>
               )}
@@ -204,7 +237,11 @@ export default function SinglePost({ post, relatedPosts }) {
                       style={{ borderRadius: '50%' }}
                     />
                   )}
-                  <span className="author-meta-name">{post.author?.node?.name}</span>
+                  {post.author?.node?.slug ? (
+                    <Link href={`/author/${post.author.node.slug}`} className="author-meta-name">{post.author.node.name}</Link>
+                  ) : (
+                    <span className="author-meta-name">{post.author?.node?.name}</span>
+                  )}
                 </div>
                 <time className="meta-date" dateTime={post.date}>{formatDate(post.date)}</time>
                 {post.readingTime && <span className="meta-read-time">⏱ {post.readingTime}</span>}
@@ -228,8 +265,8 @@ export default function SinglePost({ post, relatedPosts }) {
                 <Image
                   src={post.featuredImage.node.sourceUrl}
                   alt={post.featuredImage.node.altText || post.title}
-                  width={1200} height={480}
-                  style={{ width: '100%', height: '480px', objectFit: 'cover' }}
+                  width={1200} height={630}
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
                   priority
                 />
               </div>
@@ -247,7 +284,7 @@ export default function SinglePost({ post, relatedPosts }) {
               <div className="article-tags">
                 <span className="tags-label">Tags:</span>
                 {post.tags.nodes.map((tag) => (
-                  <Link key={tag.slug} href={`/blog/tag/${tag.slug}`} className="article-tag-link">
+                  <Link key={tag.slug} href={`/tag/${tag.slug}`} className="article-tag-link">
                     #{tag.name}
                   </Link>
                 ))}
@@ -269,7 +306,11 @@ export default function SinglePost({ post, relatedPosts }) {
                   )}
                 </div>
                 <div className="author-box-content">
-                  <h4>{post.author.node.name}</h4>
+                  <h4>
+                    {post.author.node.slug ? (
+                      <Link href={`/author/${post.author.node.slug}`}>{post.author.node.name}</Link>
+                    ) : post.author.node.name}
+                  </h4>
                   {post.author.node.description && (
                     <p className="author-bio">{post.author.node.description}</p>
                   )}
@@ -301,53 +342,182 @@ export default function SinglePost({ post, relatedPosts }) {
               <section className="related-articles" aria-label="Related articles">
                 <h3 className="related-title">Related Articles</h3>
                 <div className="related-grid">
-                  {relatedPosts.map((rp) => (
-                    <BlogCard key={rp.slug} post={rp} />
-                  ))}
+                  {relatedPosts.map((rp) => {
+                    const rpCat  = rp.categories?.nodes?.[0];
+                    const rpColor = rpCat ? getCategoryColor(rpCat.slug) : 'cat-blue';
+                    return (
+                      <article key={rp.slug} className="related-card">
+                        {rp.featuredImage?.node && (
+                          <Link href={`/${rp.slug}`} className="related-card-img-wrap">
+                            <Image
+                              src={rp.featuredImage.node.sourceUrl}
+                              alt={rp.featuredImage.node.altText || rp.title}
+                              fill
+                              sizes="(max-width: 768px) 100vw, 33vw"
+                              className="related-card-img"
+                            />
+                          </Link>
+                        )}
+                        <div className="related-card-body">
+                        <h4><Link href={`/${rp.slug}`}>{rp.title}</Link></h4>
+                        {rp.excerpt && (
+                          <p className="related-card-excerpt">
+                            {stripHtml(rp.excerpt).slice(0, 90).trim()}{stripHtml(rp.excerpt).length > 90 ? '…' : ''}
+                          </p>
+                        )}
+                        <div className="related-card-footer">
+                          {rp.author?.node && (
+                            <div className="related-card-author">
+                              {rp.author.node.avatar?.url && (
+                                <Image
+                                  src={rp.author.node.avatar.url}
+                                  alt={rp.author.node.name}
+                                  width={20}
+                                  height={20}
+                                  className="related-author-avatar"
+                                />
+                              )}
+                              <span className="related-author-name">{rp.author.node.name}</span>
+                            </div>
+                          )}
+                          <div className="related-card-meta">
+                            {formatDate(rp.date)}{rp.readingTime ? ` · ${rp.readingTime}` : ''}
+                          </div>
+                        </div>
+                        </div>
+                      </article>
+                    );
+                  })}
                 </div>
               </section>
             )}
 
           </main>
+
+          {/* ── SIDEBAR ── */}
+          <aside className="post-sidebar" id="post-sidebar">
+
+            {/* TOC */}
+            <div className="toc-widget">
+              <div className="toc-header">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                TABLE OF CONTENTS
+              </div>
+              <nav className="toc-list" ref={tocRef} aria-label="Table of contents" />
+            </div>
+
+            {/* Newsletter */}
+            <div className="sidebar-newsletter">
+              <div className="newsletter-header">
+                <div className="newsletter-icon">✉</div>
+                <h4>Weekly Insights</h4>
+              </div>
+              <p>Get the latest in web development, SEO, and digital marketing — every Tuesday.</p>
+              <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
+                <input type="email" placeholder="Your email address" required />
+                <button type="submit" className="newsletter-btn">Subscribe →</button>
+              </form>
+            </div>
+
+            {/* CTA */}
+            <div className="sidebar-cta">
+              <div className="sidebar-cta-badge">1Solutions</div>
+              <h4>Ready to Grow Your Business Online?</h4>
+              <p>16+ years building digital products and driving measurable growth worldwide.</p>
+              <ul className="sidebar-cta-features">
+                <li>✓ Web Development</li>
+                <li>✓ SEO &amp; Digital Marketing</li>
+                <li>✓ Dedicated Resource Teams</li>
+              </ul>
+              <Link href="/#contact" className="sidebar-cta-btn">Book Free Consultation →</Link>
+            </div>
+
+          </aside>
+
         </div>
       </div>
     </>
   );
 }
 
+// ── UNIFIED PAGE COMPONENT ───────────────────────────────────────────────────
+export default function SlugPage(props) {
+  if (props.pageType === 'category') {
+    return <CategoryPage {...props} />;
+  }
+  return <SinglePost {...props} />;
+}
+
+// ── getStaticPaths ───────────────────────────────────────────────────────────
 export async function getStaticPaths() {
   try {
-    const slugs = await getAllPostSlugs();
+    const [postSlugs, categorySlugs] = await Promise.all([
+      getAllPostSlugs(),
+      getAllCategorySlugs(),
+    ]);
+
+    // Merge; posts take priority — deduplicate by keeping post slugs
+    const postSet = new Set(postSlugs);
+    const allSlugs = [
+      ...postSlugs,
+      ...categorySlugs.filter((s) => !postSet.has(s)),
+    ];
+
     return {
-      paths:    slugs.map((slug) => ({ params: { slug } })),
+      paths:    allSlugs.map((slug) => ({ params: { slug } })),
       fallback: 'blocking',
     };
   } catch (err) {
     console.error('getStaticPaths [slug] error:', err);
-    // Don't pre-build any paths at build time — generate on demand
     return { paths: [], fallback: 'blocking' };
   }
 }
 
+// ── getStaticProps ───────────────────────────────────────────────────────────
 export async function getStaticProps({ params }) {
   try {
+    // Try as a blog post first
     const post = await getPostBySlug(params.slug);
-    if (!post) return { notFound: true };
 
-    // Calculate reading time from content
-    post.readingTime = getReadingTime(post.content);
+    if (post) {
+      post.readingTime = getReadingTime(post.content);
 
-    const primaryCatSlug = post.categories?.nodes?.[0]?.slug;
-    const related = primaryCatSlug
-      ? await getRelatedPosts(primaryCatSlug, params.slug, 3)
-      : [];
+      const primaryCatSlug = post.categories?.nodes?.[0]?.slug;
+      const relatedRaw = primaryCatSlug
+        ? await getRelatedPosts(primaryCatSlug, params.slug, 3)
+        : [];
+      const related = relatedRaw.map((rp) => {
+        const { content, ...rest } = rp;
+        return { ...rest, readingTime: content ? getReadingTime(content) : null };
+      });
+
+      return {
+        props:      { pageType: 'post', post, relatedPosts: related },
+        revalidate: 3600,
+      };
+    }
+
+    // Try as a category
+    const [category, allCategories] = await Promise.all([
+      getCategoryWithPosts(params.slug, { first: 9 }),
+      getCategories({ first: 12 }),
+    ]);
+
+    if (!category) return { notFound: true };
 
     return {
-      props:      { post, relatedPosts: related },
+      props: {
+        pageType:     'category',
+        category,
+        posts:        category.posts?.nodes || [],
+        pageInfo:     category.posts?.pageInfo || null,
+        allCategories,
+        currentAfter: null,
+      },
       revalidate: 3600,
     };
   } catch (err) {
-    console.error('Single post error:', err);
+    console.error('SlugPage error:', err);
     return { notFound: true };
   }
 }

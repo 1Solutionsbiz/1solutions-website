@@ -14,7 +14,7 @@ export default function BlogPreview({ posts }) {
   const gridPosts = posts?.length ? posts.slice(0, 6).map(p => ({
     mins: '8',
     title: p.title?.rendered?.replace(/<[^>]+>/g, '') || p.title,
-    href: `/blog/${p.slug}`,
+    href: `/${p.slug}`,
   })) : staticPosts.map(p => ({ ...p, href: '/blog' }))
 
   return (
