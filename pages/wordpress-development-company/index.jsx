@@ -257,11 +257,11 @@ export default function WordPressDevelopmentCompany() {
           .wp-section-sub { font-size:16px;color:#4A6080;margin:0; }
 
           /* Services */
-          .wp-services-section { background:rgba(237,233,254,0.20);padding:68px 40px 56px;position:relative;z-index:1; }
+          .wp-services-section { background:#ffffff;padding:72px 40px 60px;position:relative;z-index:1;border-top:4px solid #0F3460;box-shadow:0 -8px 40px rgba(15,52,96,0.10); }
           .wp-services-inner { max-width:1280px;margin:0 auto; }
           .wp-services-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:14px; }
-          .wp-service-card { background:rgba(255,255,255,0.45);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.80);border-radius:20px;padding:26px 22px 22px;position:relative;overflow:hidden;box-shadow:0 8px 32px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,0.9);transition:transform 0.22s,box-shadow 0.22s,background 0.22s,border-color 0.22s;cursor:default; }
-          .wp-service-card:hover { transform:translateY(-4px);background:rgba(15,52,96,0.12);border-color:rgba(217,119,6,0.5);box-shadow:0 12px 40px rgba(15,52,96,0.18); }
+          .wp-service-card { background:#f8fafd;border:1px solid rgba(15,52,96,0.10);border-radius:20px;padding:26px 22px 22px;position:relative;overflow:hidden;box-shadow:0 2px 12px rgba(15,52,96,0.06);transition:transform 0.22s,box-shadow 0.22s,background 0.22s,border-color 0.22s;cursor:default; }
+          .wp-service-card:hover { transform:translateY(-6px);background:#ffffff;border-color:rgba(217,119,6,0.45);box-shadow:0 16px 48px rgba(15,52,96,0.14); }
           .wp-service-card:hover .wp-card-num { color:#D97706;opacity:0.12; }
           .wp-service-card:hover h3 { color:#D97706; }
           .wp-card-num { position:absolute;top:8px;right:14px;font-size:72px;font-weight:900;line-height:1;color:#0F3460;opacity:0.055;pointer-events:none;letter-spacing:-4px;user-select:none; }
@@ -270,8 +270,8 @@ export default function WordPressDevelopmentCompany() {
           .wp-service-card.featured { background:rgba(255,255,255,0.60);border-color:rgba(15,52,96,0.12);box-shadow:0 4px 24px rgba(15,52,96,0.08); }
           .wp-service-card.featured:hover { background:rgba(255,255,255,0.75);border-color:rgba(217,119,6,0.45);box-shadow:0 12px 40px rgba(15,52,96,0.18); }
           .wp-services-footer { text-align:center;margin-top:20px; }
-          .wp-btn-show-more { display:inline-block;background:rgba(255,255,255,0.50);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1.5px solid rgba(255,255,255,0.80);color:#0F3460;padding:10px 32px;border-radius:20px;font-weight:600;font-size:14px;cursor:pointer;transition:all 0.2s;box-shadow:0 4px 16px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95);font-family:inherit; }
-          .wp-btn-show-more:hover { background:rgba(255,255,255,0.80);border-color:rgba(245,158,11,0.55);box-shadow:0 8px 28px rgba(15,52,96,0.12),0 0 0 2px rgba(245,158,11,0.20);transform:translateY(-2px);color:#0F3460; }
+          .wp-btn-show-more { display:inline-block;background:#ffffff;border:1.5px solid rgba(15,52,96,0.20);color:#0F3460;padding:10px 32px;border-radius:20px;font-weight:600;font-size:14px;cursor:pointer;transition:all 0.2s;box-shadow:0 2px 10px rgba(15,52,96,0.08);font-family:inherit; }
+          .wp-btn-show-more:hover { background:#0F3460;border-color:#0F3460;color:#ffffff;box-shadow:0 8px 28px rgba(15,52,96,0.20);transform:translateY(-2px); }
 
           /* Portfolio */
           .wp-portfolio-section { background:transparent;padding:70px 40px;position:relative;z-index:1; }
