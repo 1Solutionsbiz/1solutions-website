@@ -617,8 +617,8 @@ export default function WordPressDevelopmentCompany() {
             .wp-faq-answer { padding:0 18px 18px 52px;font-size:14px; }
             .wp-faq-q-badge { left:14px; }
             .wp-related-section { padding:60px 20px; }
-            .wp-related-tags { justify-content:flex-start; }
-            .wp-rtag { flex:1 1 calc(50% - 6px);min-width:0;text-align:center;padding:11px 12px; }
+            .wp-related-tags { justify-content:center; }
+            .wp-rtag { width:100%;text-align:center; }
             .wp-services-grid { grid-template-columns:1fr 1fr;gap:10px; }
             .wp-testi-grid { grid-template-columns:1fr; }
             .wp-portfolio-grid { grid-template-columns:1fr; }
@@ -661,7 +661,7 @@ export default function WordPressDevelopmentCompany() {
         <div className="wp-hero-block">
           <div className="wp-hero-content">
             <span className="wp-eyebrow">A World-Class WordPress Development Company</span>
-            <h1>WordPress Development Services to Drive Growth</h1>
+            <h1>WordPress Development Services — Drive Growth With Custom Website Solutions</h1>
             <p>Build high-performing, secure, and SEO-optimized websites with 1Solutions' WordPress Development Services. Our dedicated development teams deliver customized, responsive sites and provide ongoing maintenance to drive long-term success.</p>
             <Link href="#contact" className="wp-btn-hero wp-btn-hero-shimmer">Get a Free Consultation Now</Link>
           </div>
