@@ -321,9 +321,9 @@ export default function WordPressDevelopmentCompany() {
           .wp-testi-inner { max-width:1280px;margin:0 auto; }
           .wp-section-header-center { text-align:center;margin-bottom:52px; }
           .wp-testi-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:52px; }
-          .wp-tcard { background:#ffffff;border:1px solid rgba(15,52,96,0.10);border-radius:20px;padding:32px 28px;box-shadow:0 2px 12px rgba(15,52,96,0.06);display:flex;flex-direction:column;gap:16px;transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s; }
-          .wp-tcard:hover { transform:translateY(-4px);border-color:rgba(217,119,6,0.35);box-shadow:0 12px 40px rgba(15,52,96,0.12); }
-          .wp-tcard.featured { background:#ffffff;border-color:rgba(15,52,96,0.15);box-shadow:0 4px 24px rgba(15,52,96,0.10); }
+          .wp-tcard { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:32px 28px;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95);display:flex;flex-direction:column;gap:16px;transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s; }
+          .wp-tcard:hover { transform:translateY(-6px);border-color:rgba(217,119,6,0.40);box-shadow:0 16px 48px rgba(15,52,96,0.14),inset 0 1px 0 rgba(255,255,255,1); }
+          .wp-tcard.featured { background:linear-gradient(135deg,rgba(254,243,199,0.50) 0%,rgba(255,255,255,0.85) 55%,rgba(219,234,254,0.45) 100%);border-color:rgba(217,119,6,0.25);box-shadow:0 6px 32px rgba(217,119,6,0.10),inset 0 1px 0 rgba(255,255,255,1); }
           .wp-tcard-stars { font-size:18px;color:#D97706;letter-spacing:2px; }
           .wp-tcard-text { font-size:15px;line-height:1.75;color:#374151;margin:0;flex:1; }
           .wp-tcard.featured .wp-tcard-text { color:#1f2937; }
@@ -331,7 +331,7 @@ export default function WordPressDevelopmentCompany() {
           .wp-tcard-avatar { width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#ffffff;flex-shrink:0; }
           .wp-tcard-name { font-size:14px;font-weight:700;color:#0F3460; }
           .wp-tcard-role { font-size:12px;color:#6b7280; }
-          .wp-testi-stats { display:flex;align-items:center;justify-content:center;gap:0;background:#ffffff;border-radius:16px;padding:32px 40px;border:1px solid rgba(15,52,96,0.10);box-shadow:0 2px 12px rgba(15,52,96,0.06); }
+          .wp-testi-stats { display:flex;align-items:center;justify-content:center;gap:0;background:linear-gradient(135deg,rgba(219,234,254,0.50) 0%,rgba(255,255,255,0.75) 50%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:16px;padding:32px 40px;border:1px solid rgba(255,255,255,0.85);box-shadow:0 4px 20px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
           .wp-tstat { display:flex;flex-direction:column;align-items:center;gap:4px;flex:1; }
           .wp-tstat-num { font-size:28px;font-weight:800;color:#0F3460; }
           .wp-tstat-label { font-size:13px;color:#4A6080;font-weight:500; }
