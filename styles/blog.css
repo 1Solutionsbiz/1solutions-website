@@ -488,7 +488,7 @@ body {
 .bh-hamburger.bh-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 .bh-mobile {
   display: none; position: fixed;
-  top: 68px; left: 0; right: 0; bottom: 0;
+  top: 104px; left: 0; right: 0; bottom: 0;
   background: #ffffff; z-index: 999;
   padding: 16px 24px; overflow-y: auto;
   flex-direction: column; gap: 0;
@@ -511,6 +511,41 @@ body {
 .bh-mobile .bh-mob-cta:hover { background: linear-gradient(90deg,#FE9700,#114171); }
 
 /* ══════════════════════════════════════════════════════════════
+   TOP CONTACT BAR (bh-topbar)
+   ══════════════════════════════════════════════════════════════ */
+.bh-topbar {
+  background: #0F1F40;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0;
+  padding: 7px 40px;
+  font-size: 12.5px;
+  position: relative;
+  z-index: 1001;
+}
+.bh-topbar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255,255,255,0.72);
+  text-decoration: none;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: color 0.2s, background 0.2s;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+.bh-topbar-link:hover { color: #D97706; background: rgba(255,255,255,0.06); }
+.bh-topbar-link svg { width: 13px; height: 13px; fill: currentColor; flex-shrink: 0; }
+.bh-topbar-sep {
+  display: inline-block;
+  width: 1px; height: 14px;
+  background: rgba(255,255,255,0.15);
+  margin: 0 8px;
+}
+
+/* ══════════════════════════════════════════════════════════════
    MEGA MENU (bh-mega-*)
    ══════════════════════════════════════════════════════════════ */
 
@@ -530,10 +565,10 @@ body {
 .bh-services-caret { transition: transform 0.2s; flex-shrink: 0; }
 .bh-services-caret.bh-caret-up { transform: rotate(180deg); }
 
-/* Mega panel — fixed, always below the sticky header */
+/* Mega panel — fixed, always below the sticky header + topbar */
 .bh-mega {
   position: fixed;
-  top: 68px; left: 0; right: 0;
+  top: 104px; left: 0; right: 0;
   z-index: 997;
   background: #fff;
   border-top: 2px solid #e5e7eb;
@@ -653,6 +688,154 @@ body {
   transition: background 0.15s, color 0.15s;
 }
 .bh-mob-svc-link:hover { background: #f0f7ff; color: #114171 !important; }
+
+/* ══════════════════════════════════════════════════════════════
+   INDUSTRIES MEGA MENU (bh-ind-*)
+   ══════════════════════════════════════════════════════════════ */
+
+/* Industries trigger button — reuses .bh-services-btn styles */
+.bh-ind-btn {
+  background: none; border: none; cursor: pointer; font-family: inherit;
+  font-size: 14px; font-weight: 500; color: #1f2937;
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 8px 0; transition: color 0.2s;
+}
+.bh-ind-btn:hover,
+.bh-ind-btn.bh-ind-btn-on { color: #114171; }
+
+/* Panel */
+.bh-ind-mega {
+  position: fixed;
+  top: 104px; left: 0; right: 0;
+  z-index: 997;
+  background: #fff;
+  border-top: 2px solid #e5e7eb;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.13);
+  animation: bh-mega-drop 0.18s ease;
+}
+
+/* Header bar inside the panel */
+.bh-ind-head {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 32px 14px;
+  border-bottom: 1px solid #f1f5f9;
+}
+.bh-ind-head-title {
+  display: block;
+  font-size: 13px; font-weight: 700; color: #0F1F40; margin-bottom: 2px;
+}
+.bh-ind-head-sub {
+  display: block;
+  font-size: 11.5px; color: #9ca3af;
+}
+.bh-ind-head-link {
+  font-size: 13px; font-weight: 600; color: #114171;
+  text-decoration: none; white-space: nowrap; transition: color 0.2s;
+}
+.bh-ind-head-link:hover { color: #D97706; text-decoration: underline; }
+
+/* 4-column grid of industry cards */
+.bh-ind-grid {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  padding: 10px 20px;
+}
+.bh-ind-card {
+  display: flex; align-items: center; gap: 12px;
+  padding: 11px 12px; border-radius: 10px;
+  text-decoration: none !important;
+  transition: background 0.15s, transform 0.15s;
+  cursor: pointer;
+}
+.bh-ind-card:hover { background: #f0f7ff; transform: translateX(3px); }
+.bh-ind-icon {
+  width: 38px; height: 38px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: transform 0.15s;
+}
+.bh-ind-card:hover .bh-ind-icon { transform: scale(1.1); }
+.bh-ind-name {
+  display: block; font-size: 13px; font-weight: 600;
+  color: #0F1F40; line-height: 1.3; margin-bottom: 1px;
+  transition: color 0.15s;
+}
+.bh-ind-card:hover .bh-ind-name { color: #114171; }
+.bh-ind-desc {
+  display: block; font-size: 11px; color: #9ca3af; line-height: 1.4;
+}
+
+/* Footer bar inside the panel */
+.bh-ind-footer {
+  border-top: 1px solid #f1f5f9;
+  background: #fafbfc;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 11px 52px;
+}
+.bh-ind-footer-text { font-size: 12px; color: #9ca3af; }
+.bh-ind-footer-cta {
+  font-size: 13px; font-weight: 700; color: #114171;
+  text-decoration: none; transition: color 0.2s;
+}
+.bh-ind-footer-cta:hover { color: #D97706; text-decoration: underline; }
+
+/* Mobile industries accordion */
+.bh-mob-ind-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2px; padding: 8px 0 16px;
+}
+.bh-mob-ind-link {
+  display: flex !important; align-items: center; gap: 8px;
+  padding: 7px 10px !important;
+  font-size: 13.5px !important;
+  color: #374151 !important;
+  border-bottom: none !important;
+  border-radius: 6px;
+  text-decoration: none !important;
+  transition: background 0.15s, color 0.15s;
+}
+.bh-mob-ind-link:hover { background: #f0f7ff; color: #114171 !important; }
+.bh-mob-ind-dot {
+  width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0;
+}
+
+/* Mobile contact info bar */
+.bh-mob-contact {
+  display: flex; flex-direction: column; gap: 2px;
+  padding: 14px 0 4px;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 4px;
+}
+.bh-mob-contact-link {
+  display: flex !important; align-items: center; gap: 8px;
+  padding: 8px 0 !important;
+  font-size: 13.5px !important;
+  color: #374151 !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  transition: color 0.2s;
+}
+.bh-mob-contact-link:hover { color: #D97706 !important; }
+
+/* Responsive overrides for top bar + industries panel */
+@media (max-width: 768px) {
+  .bh-topbar { padding: 6px 20px; justify-content: center; gap: 0; }
+  .bh-topbar-sep { margin: 0 6px; }
+  .bh-topbar-link { font-size: 11px; }
+  .bh-ind-grid { grid-template-columns: repeat(2, 1fr); }
+  .bh-ind-head { padding: 12px 20px; }
+  .bh-ind-footer { padding: 10px 20px; }
+  .bh-mob-ind-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .bh-topbar { flex-direction: column; gap: 2px; padding: 6px 16px; }
+  .bh-topbar-sep { display: none; }
+  .bh-mobile { top: 128px; }
+  .bh-ind-mega { top: 128px; }
+  .bh-mega { top: 128px; }
+}
 
 /* ══════════════════════════════════════════════════════════════
    BLOG FOOTER (bf-*) — LIGHT VERSION matching index.html
