@@ -484,7 +484,7 @@ export default function SEOServices() {
                 { title: 'No Lock-In Contracts', desc: 'Month-to-month engagements. We earn your business every month through results.' },
                 { title: 'Dedicated Senior Strategist', desc: 'Your account is managed by a senior SEO professional — not a junior or an AI bot.' },
                 { title: 'Full Transparency', desc: 'Monthly reports with real data — rankings, traffic, conversions, and what we did to get there.' },
-                { title: 'US/Canada/Australia Market Expertise', desc: 'We understand English-language search behavior, Google's local algorithms, and your competitive landscape.' },
+                { title: "US/Canada/Australia Market Expertise", desc: "We understand English-language search behavior, Google's local algorithms, and your competitive landscape." },
                 { title: 'White-Hat Only', desc: 'Zero tolerance for black-hat tactics. Our strategies are built to last through algorithm updates.' },
                 { title: '15+ Years of Proven Experience', desc: 'We\'ve been doing SEO since 2008 — before Google Penguin, Panda, and Core Web Vitals existed.' },
               ].map((item, i) => (
