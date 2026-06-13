@@ -1,7 +1,5 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import BlogHeader from '../../components/blog/BlogHeader';
-import Footer from '../../components/layout/Footer';
 
 export default function CaseStudies() {
   return (
@@ -13,8 +11,6 @@ export default function CaseStudies() {
         <link rel="canonical" href="https://www.1solutions.biz/case-studies" />
       </Head>
 
-      <BlogHeader />
-
       {/* ── HERO ── */}
       <section style={{
         background: '#0A1628',
@@ -25,29 +21,17 @@ export default function CaseStudies() {
         display: 'flex',
         alignItems: 'center',
       }}>
-        {/* Orange diagonal shape top-right (mirroring SparxIT red blob) */}
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          right: 0,
-          width: 0,
-          height: 0,
-          borderStyle: 'solid',
-          borderWidth: '0 340px 340px 0',
-          borderColor: 'transparent rgba(254,151,0,0.18) transparent transparent',
-          pointerEvents: 'none',
-        }} />
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          right: 0,
-          width: 0,
-          height: 0,
-          borderStyle: 'solid',
-          borderWidth: '0 200px 200px 0',
-          borderColor: 'transparent rgba(254,151,0,0.28) transparent transparent',
-          pointerEvents: 'none',
-        }} />
+        {/* Orange diagonal shape top-right */}
+        <svg
+          aria-hidden="true"
+          style={{ position: 'absolute', top: 0, right: 0, width: 380, height: 380, pointerEvents: 'none' }}
+          viewBox="0 0 380 380"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <polygon points="380,0 0,0 380,380" fill="#FE9700" fillOpacity="0.18" />
+          <polygon points="380,0 180,0 380,180" fill="#FE9700" fillOpacity="0.22" />
+        </svg>
 
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 40px', position: 'relative', zIndex: 1 }}>
           <p style={{ color: '#FE9700', fontSize: '0.82rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 24 }}>
@@ -282,7 +266,6 @@ export default function CaseStudies() {
         </div>
       </section>
 
-      <Footer />
     </>
   );
 }
