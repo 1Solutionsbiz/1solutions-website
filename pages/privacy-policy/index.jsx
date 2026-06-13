@@ -244,7 +244,7 @@ export default function PrivacyPolicy() {
                 <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
                 Cookie Policy
               </Link>
-              <Link href="/privacy-policy/refund-policy/" className="pp-related-link">
+              <Link href="/refund-policy/" className="pp-related-link">
                 <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
                 Refund Policy
               </Link>

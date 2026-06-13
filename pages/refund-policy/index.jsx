@@ -129,7 +129,7 @@ export default function RefundPolicy() {
       <Head>
         <title>Refund Policy | 1Solutions</title>
         <meta name="description" content="1Solutions Refund Policy — when refunds apply, how to request one, and what to expect from cancelled or disputed projects." />
-        <link rel="canonical" href="https://www.1solutions.biz/privacy-policy/refund-policy/" />
+        <link rel="canonical" href="https://www.1solutions.biz/refund-policy/" />
         <style>{`
           .rp-page { font-family:'Inter',sans-serif; color:#1a1a2e; background:#f8fafc; }
           .rp-hero { background:linear-gradient(135deg,#fef3c7 0%,#fce7f3 30%,#dbeafe 60%,#ede9fe 100%); padding:80px 24px 60px; position:relative; overflow:hidden; }
@@ -183,7 +183,6 @@ export default function RefundPolicy() {
           <div className="rp-hero-inner">
             <nav className="rp-breadcrumb" aria-label="Breadcrumb">
               <Link href="/">Home</Link><span style={{color:'#d1d5db'}}>›</span>
-              <Link href="/privacy-policy/">Privacy Policy</Link><span style={{color:'#d1d5db'}}>›</span>
               <span>Refund Policy</span>
             </nav>
             <h1>Refund Policy</h1>

@@ -161,7 +161,7 @@ export default function WorkCulture() {
       <Head>
         <title>Work Culture | 1Solutions — How We Work & Who We Are</title>
         <meta name="description" content="1Solutions Work Culture — our values, communication standards, DEI commitments, leave policy, and code of conduct for our team in New Delhi." />
-        <link rel="canonical" href="https://www.1solutions.biz/privacy-policy/work-culture/" />
+        <link rel="canonical" href="https://www.1solutions.biz/work-culture/" />
         <style>{`
           .wc-page { font-family:'Inter',sans-serif; color:#1a1a2e; background:#f8fafc; }
           .wc-hero { background:linear-gradient(135deg,#f0fdf4 0%,#dbeafe 30%,#ede9fe 60%,#fef3c7 100%); padding:80px 24px 60px; position:relative; overflow:hidden; }
@@ -221,7 +221,6 @@ export default function WorkCulture() {
           <div className="wc-hero-inner">
             <nav className="wc-breadcrumb" aria-label="Breadcrumb">
               <Link href="/">Home</Link><span style={{color:'#d1d5db'}}>›</span>
-              <Link href="/privacy-policy/">Policies</Link><span style={{color:'#d1d5db'}}>›</span>
               <span>Work Culture</span>
             </nav>
             <h1>Work Culture</h1>
