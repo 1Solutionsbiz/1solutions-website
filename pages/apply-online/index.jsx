@@ -1,9 +1,14 @@
 'use client';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const POSITIONS = [
+  { title: 'Full Stack Developer', exp: '1–3 yrs', type: 'Full-time', tag: 'Open' },
+  { title: 'Social Media Manager', exp: '2–3 yrs', type: 'Full-time', tag: 'Open' },
+  { title: 'Business Development Manager', exp: '3–5 yrs', type: 'Full-time', tag: 'Urgent' },
+  { title: 'Digital Marketing Trainee', exp: 'Fresher', type: 'Full-time', tag: 'Fresher' },
   { title: 'Senior WordPress Developer', exp: '3–6 yrs', type: 'Full-time', tag: 'Urgent' },
   { title: 'Laravel / PHP Developer', exp: '2–5 yrs', type: 'Full-time', tag: 'Open' },
   { title: 'React / Next.js Developer', exp: '2–5 yrs', type: 'Full-time', tag: 'Open' },
@@ -75,11 +80,25 @@ const INITIAL_FORM = {
 };
 
 export default function ApplyOnline() {
+  const router = useRouter();
   const [form, setForm] = useState(INITIAL_FORM);
   const [status, setStatus] = useState('idle'); // idle | loading | success | error
   const [errorMsg, setErrorMsg] = useState('');
   const [selectedPosition, setSelectedPosition] = useState(null);
   const formRef = useRef(null);
+
+  // Pre-fill position from ?position= query param (linked from /open-positions/)
+  useEffect(() => {
+    if (!router.isReady) return;
+    const qpos = router.query.position;
+    if (qpos) {
+      const match = POSITION_NAMES.find(
+        (p) => p.toLowerCase() === decodeURIComponent(qpos).toLowerCase()
+      ) || decodeURIComponent(qpos);
+      setSelectedPosition(match);
+      setForm((prev) => ({ ...prev, position: match }));
+    }
+  }, [router.isReady, router.query.position]);
 
   function handleChange(e) {
     const { name, value, type, checked } = e.target;
