@@ -241,27 +241,23 @@ export default function Portfolio() {
           .pf-page { font-family: 'Inter', sans-serif; color: #1a1a2e; background: #f8fafc; }
 
           /* ── Hero ── */
-          .pf-hero { background: linear-gradient(135deg,#0F1F40 0%,#114171 40%,#1a3a6e 100%); padding: 90px 24px 70px; position: relative; overflow: hidden; }
-          .pf-hero-orb { position: absolute; border-radius: 50%; filter: blur(90px); pointer-events: none; }
-          .pf-hero-orb-1 { width: 600px; height: 600px; background: rgba(99,102,241,0.18); top: -200px; right: -150px; }
-          .pf-hero-orb-2 { width: 400px; height: 400px; background: rgba(16,185,129,0.12); bottom: -120px; left: -80px; }
-          .pf-hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; text-align: center; }
-          .pf-hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 100px; padding: 6px 16px; font-size: .8rem; font-weight: 600; color: rgba(255,255,255,0.85); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 22px; }
-          .pf-hero h1 { font-size: clamp(2.4rem,5vw,3.8rem); font-weight: 800; line-height: 1.1; letter-spacing: -.03em; color: #fff; margin-bottom: 18px; }
-          .pf-hero h1 span { background: linear-gradient(90deg,#34d399,#60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-          .pf-hero-sub { font-size: 1.05rem; line-height: 1.7; color: rgba(255,255,255,0.72); max-width: 560px; margin: 0 auto 44px; }
-          .pf-stats { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
-          .pf-stat { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 18px 28px; text-align: center; min-width: 120px; }
-          .pf-stat-val { font-size: 1.7rem; font-weight: 800; color: #fff; line-height: 1; }
-          .pf-stat-label { font-size: .76rem; color: rgba(255,255,255,0.6); margin-top: 4px; font-weight: 500; text-transform: uppercase; letter-spacing: .05em; }
+          .pf-hero { background: linear-gradient(135deg,rgba(254,243,199,0.55) 0%,rgba(219,234,254,0.35) 100%); padding: 90px 24px 70px; position: relative; overflow: hidden; text-align: center; }
+          .pf-hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+          .pf-hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(254,151,0,0.1); border: 1px solid rgba(254,151,0,0.25); border-radius: 100px; padding: 6px 16px; font-size: .8rem; font-weight: 600; color: #92400e; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 22px; }
+          .pf-hero h1 { font-size: clamp(2.2rem,5vw,3.8rem); font-weight: 900; line-height: 1.1; letter-spacing: -.03em; margin-bottom: 18px; background: linear-gradient(90deg,#0F3460 0%,#F59E0B 45%,#7C3AED 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+          .pf-hero-sub { font-size: 1.05rem; line-height: 1.7; color: #6b7280; max-width: 600px; margin: 0 auto 44px; }
+          .pf-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 40px; max-width: 800px; margin: 0 auto; padding: 40px 0; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb; }
+          .pf-stat { text-align: center; }
+          .pf-stat-val { font-size: 2rem; font-weight: 900; color: #114171; line-height: 1; }
+          .pf-stat-label { font-size: .76rem; color: #6b7280; margin-top: 6px; font-weight: 500; }
 
           /* ── Filter tabs ── */
           .pf-filter-bar { background: #fff; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 50; }
           .pf-filter-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; }
           .pf-filter-inner::-webkit-scrollbar { display: none; }
           .pf-filter-btn { flex-shrink: 0; padding: 16px 20px; font-size: .88rem; font-weight: 600; color: #6b7280; border: none; background: none; cursor: pointer; border-bottom: 2.5px solid transparent; transition: color .18s, border-color .18s; white-space: nowrap; }
-          .pf-filter-btn:hover { color: #114171; }
-          .pf-filter-btn.active { color: #114171; border-bottom-color: #114171; }
+          .pf-filter-btn:hover { color: #FE9700; }
+          .pf-filter-btn.active { color: #114171; border-bottom-color: #FE9700; }
 
           /* ── Grid ── */
           .pf-section { max-width: 1200px; margin: 0 auto; padding: 56px 24px 80px; }
@@ -272,7 +268,7 @@ export default function Portfolio() {
           /* ── Cards ── */
           .pf-card { background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid #e5e7eb; transition: box-shadow .25s, transform .25s, opacity .4s, translate .4s; opacity: 0; translate: 0 20px; }
           .pf-card-in { opacity: 1; translate: 0 0; }
-          .pf-card:hover { box-shadow: 0 12px 40px rgba(17,65,113,0.12); transform: translateY(-4px); }
+          .pf-card:hover { box-shadow: 0 12px 40px rgba(17,65,113,0.12), 0 0 0 2px rgba(254,151,0,0.2); transform: translateY(-4px); }
           .pf-thumb { height: 200px; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
           .pf-thumb-icon { font-size: 3.5rem; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.25)); }
           .pf-featured-badge { position: absolute; top: 12px; left: 12px; background: rgba(255,255,255,0.22); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.35); color: #fff; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; padding: 4px 10px; border-radius: 100px; }
@@ -282,33 +278,40 @@ export default function Portfolio() {
           .pf-card-title { font-size: 1.05rem; font-weight: 700; color: #0F1F40; margin-bottom: 10px; line-height: 1.3; }
           .pf-card-desc { font-size: .87rem; line-height: 1.6; color: #4b5563; margin-bottom: 16px; }
           .pf-tech-row { display: flex; flex-wrap: wrap; gap: 6px; }
-          .pf-tech-pill { font-size: .74rem; font-weight: 600; color: #374151; background: #f3f4f6; border-radius: 100px; padding: 3px 10px; }
+          .pf-tech-pill { font-size: .74rem; font-weight: 600; color: #92400e; background: #fff7ed; border: 1px solid #fed7aa; border-radius: 100px; padding: 3px 10px; }
 
           /* ── Empty state ── */
           .pf-empty { text-align: center; padding: 80px 24px; color: #9ca3af; font-size: .95rem; }
 
           /* ── CTA ── */
-          .pf-cta { background: linear-gradient(135deg,#0F1F40 0%,#114171 100%); padding: 80px 24px; text-align: center; position: relative; overflow: hidden; }
-          .pf-cta-orb { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; }
-          .pf-cta-orb-1 { width: 500px; height: 500px; background: rgba(99,102,241,0.14); top: -150px; right: -100px; }
-          .pf-cta-orb-2 { width: 350px; height: 350px; background: rgba(16,185,129,0.1); bottom: -100px; left: -60px; }
-          .pf-cta-inner { max-width: 640px; margin: 0 auto; position: relative; z-index: 1; }
-          .pf-cta h2 { font-size: clamp(1.8rem,3.5vw,2.6rem); font-weight: 800; color: #fff; line-height: 1.18; letter-spacing: -.02em; margin-bottom: 16px; }
-          .pf-cta h2 span { background: linear-gradient(90deg,#34d399,#60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-          .pf-cta p { font-size: 1rem; color: rgba(255,255,255,0.72); line-height: 1.68; margin-bottom: 36px; }
-          .pf-cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-          .pf-btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 100px; font-size: .95rem; font-weight: 700; text-decoration: none; transition: all .2s; }
-          .pf-btn-white { background: #fff; color: #114171; }
-          .pf-btn-white:hover { background: #e0eaf7; }
-          .pf-btn-outline { background: rgba(255,255,255,0.08); color: #fff; border: 1.5px solid rgba(255,255,255,0.25); }
-          .pf-btn-outline:hover { background: rgba(255,255,255,0.14); }
+          .pf-cta { padding: 80px 40px; background: linear-gradient(135deg,rgba(254,243,199,0.70) 0%,rgba(255,255,255,0.60) 40%,rgba(219,234,254,0.65) 100%); border-top: 1px solid rgba(255,255,255,0.80); position: relative; z-index: 1; }
+          .pf-cta-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.15fr; gap: 48px; align-items: start; }
+          .pf-cta-title { font-size: clamp(2rem,3.5vw,3rem); font-weight: 900; line-height: 1.15; margin: 0 0 14px; background: linear-gradient(90deg,#0F3460 0%,#D97706 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+          .pf-cta-desc { font-size: 14px; color: #4A6080; line-height: 1.7; margin: 0 0 28px; }
+          .pf-merged-box { background: linear-gradient(135deg,rgba(255,255,255,0.70) 0%,rgba(219,234,254,0.35) 100%); border: 1px solid rgba(255,255,255,0.90); border-radius: 14px; padding: 24px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: inset 0 1px 0 rgba(255,255,255,1); display: flex; flex-direction: column; gap: 20px; }
+          .pf-benefit-item { display: flex; gap: 10px; align-items: flex-start; }
+          .pf-benefit-icon { width: 20px; height: 20px; color: #D97706; flex-shrink: 0; margin-top: 1px; }
+          .pf-benefit-item p { font-size: 13px; color: #4A6080; margin: 0; line-height: 1.5; }
+          .pf-cta-stats { padding-top: 24px; border-top: 1px solid rgba(15,52,96,0.12); display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+          .pf-cta-stat-num { font-size: 2.2rem; font-weight: 900; color: #0F3460; line-height: 1; display: block; }
+          .pf-cta-stat-lbl { font-size: 12px; color: #4A6080; font-weight: 500; }
+          .pf-form-box { background: linear-gradient(135deg,rgba(255,255,255,0.88) 0%,rgba(237,233,254,0.25) 50%,rgba(255,255,255,0.84) 100%); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.92); border-radius: 20px; padding: 36px; box-shadow: 0 8px 40px rgba(15,52,96,0.10), inset 0 1px 0 rgba(255,255,255,1); }
+          .pf-form-box h3 { font-size: 22px; font-weight: 700; color: #0F1F40; margin: 0 0 24px; }
+          .pf-form { display: flex; flex-direction: column; gap: 14px; }
+          .pf-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+          .pf-form-group { display: flex; flex-direction: column; gap: 5px; }
+          .pf-form-group label { font-size: 11px; font-weight: 600; color: #0F1F40; text-transform: uppercase; letter-spacing: .04em; }
+          .pf-form-group input, .pf-form-group select, .pf-form-group textarea { padding: 10px 14px; border: 1px solid rgba(15,52,96,0.15); border-radius: 6px; font-size: 13px; font-family: inherit; color: #0F1F40; background: rgba(255,255,255,0.55); transition: border-color .2s, background .2s; outline: none; }
+          .pf-form-group input:focus, .pf-form-group select:focus, .pf-form-group textarea:focus { border-color: #D97706; background: rgba(255,255,255,0.9); box-shadow: 0 0 0 3px rgba(217,119,6,0.12); }
+          .pf-submit { padding: 13px 28px; background: rgba(15,52,96,0.85); backdrop-filter: blur(16px); border: 1.5px solid rgba(255,255,255,0.30); color: #fff; border-radius: 50px; font-weight: 700; font-size: 15px; cursor: pointer; font-family: inherit; width: 100%; transition: all .3s; box-shadow: 0 6px 24px rgba(15,52,96,0.25), inset 0 1px 0 rgba(255,255,255,0.15); margin-top: 4px; }
+          .pf-submit:hover { background: rgba(15,52,96,0.95); border-color: rgba(245,158,11,0.6); transform: translateY(-2px); }
+          @media(max-width:900px){ .pf-cta-container { grid-template-columns: 1fr; } .pf-cta { padding: 60px 24px; } }
 
           @media(max-width:640px){
             .pf-hero { padding: 70px 20px 52px; }
             .pf-grid { grid-template-columns: 1fr; }
             .pf-section { padding: 40px 20px 60px; }
-            .pf-stats { gap: 8px; }
-            .pf-stat { padding: 14px 18px; min-width: 100px; }
+            .pf-stats { grid-template-columns: repeat(2,1fr); gap: 24px; }
           }
         `}</style>
       </Head>
@@ -317,16 +320,14 @@ export default function Portfolio() {
 
         {/* Hero */}
         <div className="pf-hero">
-          <div className="pf-hero-orb pf-hero-orb-1" />
-          <div className="pf-hero-orb pf-hero-orb-2" />
           <div className="pf-hero-inner">
             <div className="pf-hero-eyebrow">
               <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
               Our Portfolio
             </div>
-            <h1>Work That <span>Speaks</span> For Itself</h1>
+            <h1>500+ Projects. One Proven Partner.</h1>
             <p className="pf-hero-sub">
-              500+ projects across web development, eCommerce, digital marketing, and mobile — delivered to clients in the US, Canada, and Australia over 15+ years.
+              Web development, eCommerce, digital marketing, and mobile — delivered to clients in the US, Canada, and Australia over 15+ years.
             </p>
             <div className="pf-stats">
               {stats.map(s => (
@@ -373,20 +374,71 @@ export default function Portfolio() {
         </div>
 
         {/* CTA */}
-        <div className="pf-cta">
-          <div className="pf-cta-orb pf-cta-orb-1" />
-          <div className="pf-cta-orb pf-cta-orb-2" />
-          <div className="pf-cta-inner">
-            <h2>Ready to Build <span>Something Great?</span></h2>
-            <p>
-              Whether you need a high-performance website, a scalable eCommerce store, or a digital marketing strategy — we have done it before, and we will do it for you.
-            </p>
-            <div className="pf-cta-btns">
-              <Link href="/contact/" className="pf-btn pf-btn-white">Start Your Project</Link>
-              <Link href="/who-we-are/" className="pf-btn pf-btn-outline">About 1Solutions</Link>
+        <section className="pf-cta">
+          <div className="pf-cta-container">
+            {/* Left */}
+            <div>
+              <h2 className="pf-cta-title">Let&apos;s Build Something<br/>Great Together</h2>
+              <p className="pf-cta-desc">Tell us about your project and we&apos;ll get back to you within 24 hours with a tailored plan.</p>
+              <div className="pf-merged-box">
+                <div style={{display:'flex',flexDirection:'column',gap:14}}>
+                  {[
+                    { text: 'Your project details are confidential. We respect your privacy.', path: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' },
+                    { text: 'A real expert reviews your requirements — no automated responses.', path: 'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z' },
+                    { text: 'Quick response within 24 business hours.', path: 'M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zM12 6v6l4 2' },
+                    { text: 'No obligation to proceed. Let\'s just talk.', path: 'M20 6L9 17l-5-5' },
+                  ].map((b, i) => (
+                    <div key={i} className="pf-benefit-item">
+                      <svg className="pf-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                        <path d={b.path}/>
+                      </svg>
+                      <p>{b.text}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="pf-cta-stats">
+                  {[['500+','Projects Delivered'],['15+','Years Experience'],['97%','Client Retention']].map(([num,lbl]) => (
+                    <div key={lbl}>
+                      <span className="pf-cta-stat-num">{num}</span>
+                      <span className="pf-cta-stat-lbl">{lbl}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            {/* Right — form */}
+            <div className="pf-form-box">
+              <h3>Start Your Project</h3>
+              <form className="pf-form" onSubmit={e => e.preventDefault()}>
+                <div className="pf-form-row">
+                  <div className="pf-form-group"><label>Full Name</label><input type="text" placeholder="Your full name" /></div>
+                  <div className="pf-form-group"><label>Business Email</label><input type="email" placeholder="you@company.com" /></div>
+                </div>
+                <div className="pf-form-row">
+                  <div className="pf-form-group"><label>Phone</label><input type="tel" placeholder="+1 000 000 0000" /></div>
+                  <div className="pf-form-group"><label>Company</label><input type="text" placeholder="Company name" /></div>
+                </div>
+                <div className="pf-form-group">
+                  <label>Service Needed</label>
+                  <select>
+                    <option value="">Select a service…</option>
+                    <option>Web Development</option>
+                    <option>eCommerce Development</option>
+                    <option>Digital Marketing / SEO</option>
+                    <option>Mobile App Development</option>
+                    <option>UI/UX Design</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div className="pf-form-group">
+                  <label>Message</label>
+                  <textarea rows={4} placeholder="Tell us about your project…" />
+                </div>
+                <button type="submit" className="pf-submit">Send Message →</button>
+              </form>
             </div>
           </div>
-        </div>
+        </section>
 
       </div>
     </>
