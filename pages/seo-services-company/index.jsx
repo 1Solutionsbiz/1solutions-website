@@ -2,642 +2,501 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
 
-/* ─────────────────────────────────────────
-   DATA
-───────────────────────────────────────── */
-const SEO_SERVICES = [
-  {
-    icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
-    title: 'SEO Audit & Strategy',
-    desc: 'Comprehensive analysis of your site\'s technical health, content gaps, backlink profile, and competitor landscape. We deliver a prioritized roadmap to maximize ranking potential.',
-  },
-  {
-    icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z',
-    title: 'Technical SEO',
-    desc: 'We fix Core Web Vitals, crawlability issues, site speed, structured data, canonical tags, hreflang, and mobile-first indexing — the technical foundations Google rewards.',
-  },
-  {
-    icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z',
-    title: 'Keyword Research',
-    desc: 'Intent-driven keyword mapping using SEMrush, Ahrefs, and Google Search Console. We target buyer-intent and informational keywords that drive both traffic and conversions.',
-  },
-  {
-    icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
-    title: 'On-Page SEO',
-    desc: 'Title tags, meta descriptions, H-tag hierarchy, schema markup, content optimization, internal linking, and image alt text — every on-page signal tuned to rank.',
-  },
-  {
-    icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1',
-    title: 'Link Building & Off-Page SEO',
-    desc: 'White-hat link acquisition from high-DA domains, digital PR, guest posting, and brand mentions. We build authority that moves the needle and stands Google algorithm updates.',
-  },
-  {
-    icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z',
-    title: 'Local SEO',
-    desc: 'Google Business Profile optimization, local citations, review management, and geo-targeted content. Dominate the local pack for searches in your service area.',
-  },
-  {
-    icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z',
-    title: 'Content Marketing & SEO Writing',
-    desc: 'E-E-A-T optimized blog posts, landing pages, and pillar content that ranks, earns links, and converts visitors into leads — written by industry-trained SEO writers.',
-  },
-  {
-    icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z',
-    title: 'eCommerce SEO',
-    desc: 'Category page optimization, product schema, faceted navigation fixes, and conversion-focused SEO for Shopify, WooCommerce, Magento, and custom stores.',
-  },
-  {
-    icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
-    title: 'SEO Reporting & Analytics',
-    desc: 'Monthly ranking reports, traffic analysis, conversion tracking, and competitor benchmarking via GA4 and Search Console. Full transparency, no vanity metrics.',
-  },
-];
-
-const PROCESS_STEPS = [
-  { num: '01', title: 'Discovery & Audit', desc: 'Deep-dive technical audit, competitor analysis, and business goal alignment to build your custom SEO roadmap.' },
-  { num: '02', title: 'Keyword Strategy', desc: 'Map keywords to buyer journey stages — awareness, consideration, and decision — across your target markets.' },
-  { num: '03', title: 'On-Page & Technical Fixes', desc: 'Implement critical technical fixes, optimize existing pages, and build content architecture that Google loves.' },
-  { num: '04', title: 'Content & Link Building', desc: 'Publish optimized content and build authoritative backlinks to accelerate domain authority growth.' },
-  { num: '05', title: 'Monitor & Optimize', desc: 'Track rankings, analyze user behavior, and iterate continuously — SEO is a compounding strategy, not a one-time fix.' },
-  { num: '06', title: 'Report & Scale', desc: 'Monthly reporting with actionable insights, then scale what\'s working into new markets, pages, and keywords.' },
-];
-
-const STATS = [
-  { value: '15+', label: 'Years of SEO Experience' },
-  { value: '500+', label: 'Websites Ranked on Page 1' },
-  { value: '200%', label: 'Avg. Organic Traffic Growth' },
-  { value: '98%', label: 'Client Retention Rate' },
-];
-
-const TOOLS = [
-  'Google Search Console', 'Google Analytics 4', 'SEMrush', 'Ahrefs',
-  'Screaming Frog', 'Moz Pro', 'GTmetrix', 'PageSpeed Insights',
-  'Surfer SEO', 'Google Tag Manager', 'Yoast SEO', 'Majestic',
-];
-
-const INDUSTRIES = [
-  { icon: '🛒', name: 'eCommerce & Retail' },
-  { icon: '🏥', name: 'Healthcare' },
-  { icon: '🏠', name: 'Real Estate' },
-  { icon: '⚖️', name: 'Legal & Law Firms' },
-  { icon: '💰', name: 'Finance & Banking' },
-  { icon: '🎓', name: 'Education & EdTech' },
-  { icon: '🏨', name: 'Travel & Hospitality' },
-  { icon: '🏗️', name: 'Construction & Home Services' },
+const SERVICES = [
+  { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Technical SEO', desc: 'Site architecture, crawlability, Core Web Vitals, schema markup, and indexation — we fix the foundations Google rewards.' },
+  { icon: 'M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7', title: 'Local SEO', desc: 'Dominate Google Maps and local packs in your city or suburb. Perfect for US, Canadian and Australian businesses.' },
+  { icon: 'M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z', title: 'eCommerce SEO', desc: 'Product, category and collection page optimisation that drives qualified buyers — not just traffic.' },
+  { icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064', title: 'International SEO', desc: 'Hreflang, geo-targeting and market-specific keyword strategies for US, Canada and Australia.' },
+  { icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z', title: 'Content Strategy & SEO Writing', desc: 'E-E-A-T-compliant blog posts, landing pages and pillar content that ranks and converts.' },
+  { icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1', title: 'Link Building', desc: 'White-hat authority link acquisition from relevant, high-DR publications — no PBNs, no spam.' },
+  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'SEO Audits', desc: 'Comprehensive 200-point audits covering technical, on-page, off-page and competitor benchmarking.' },
+  { icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z', title: 'Enterprise SEO', desc: 'Scalable SEO operations for large sites — automated auditing, log file analysis, and CMS integration.' },
+  { icon: 'M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'SEO Reporting & Analytics', desc: 'Monthly transparent reporting — rankings, traffic, conversions, and ROI — in plain English.' },
 ];
 
 const RESULTS = [
-  {
-    client: 'US-Based Vein Treatment Center',
-    market: 'USA',
-    results: [
-      { metric: '118%', label: 'Increase in Online Leads' },
-      { metric: '60%', label: 'Boost in Organic Traffic' },
-      { metric: '80%', label: 'Improved Search Visibility' },
-      { metric: '24%', label: 'Reduced Bounce Rate' },
-    ],
-    tags: ['Healthcare SEO', 'Local SEO'],
-  },
-  {
-    client: 'eCommerce Store – Australia',
-    market: 'Australia',
-    results: [
-      { metric: '205%', label: 'Increase in Sales' },
-      { metric: '195%', label: 'Visibility Increase' },
-      { metric: '265%', label: 'Traffic Improvement' },
-      { metric: '2,100+', label: 'Keywords in Top 100' },
-    ],
-    tags: ['eCommerce SEO', 'Technical SEO'],
-  },
-  {
-    client: 'B2B Consulting Firm – Canada',
-    market: 'Canada',
-    results: [
-      { metric: '80%', label: 'Visibility Increased' },
-      { metric: '70%', label: 'Traffic Improved' },
-      { metric: '40%', label: 'Lead Value Improved' },
-      { metric: '35%', label: 'Sign-Ups Increased' },
-    ],
-    tags: ['B2B SEO', 'Content Strategy'],
-  },
+  { metric: '312%', label: 'Organic traffic growth', sub: 'US SaaS client — 8 months', color: '#FE9700' },
+  { metric: '#1', label: 'Google ranking achieved', sub: 'Competitive AU retail keyword', color: '#7C3AED' },
+  { metric: '4.1×', label: 'Return on SEO investment', sub: 'Canadian eCommerce brand', color: '#0F3460' },
+];
+
+const PROCESS = [
+  { n: '01', title: 'Discovery & Audit', desc: 'Deep-dive into your site, competitors, and market. We identify every opportunity and obstacle before writing a single word.' },
+  { n: '02', title: 'Strategy Blueprint', desc: 'A custom roadmap — keyword clusters, content gaps, technical priorities, and link targets — mapped to your revenue goals.' },
+  { n: '03', title: 'Technical Fixes', desc: 'Our devs fix crawl errors, speed issues, schema, canonicals, and indexation problems. The work that 90% of agencies skip.' },
+  { n: '04', title: 'Content & On-Page', desc: 'We create or optimise pages with E-E-A-T best practices, semantic HTML, and conversion-focused copy.' },
+  { n: '05', title: 'Authority Building', desc: 'Outreach-driven link acquisition from relevant, high-authority publications — building trust with Google over time.' },
+  { n: '06', title: 'Measure & Scale', desc: 'Monthly reporting on rankings, traffic, and revenue impact. We double down on what works and adjust what does not.' },
+];
+
+const WHY = [
+  { title: '15+ Years of SEO Experience', desc: 'We have been optimising websites since before Google Panda. We have seen every algorithm change and adapted accordingly.' },
+  { title: 'US, Canada & Australia Focus', desc: 'We understand English-language search behaviour, local intent, and the competitive landscape in your market.' },
+  { title: 'No Lock-in Contracts', desc: 'We earn your business every month. Month-to-month engagements — you stay because results speak for themselves.' },
+  { title: 'Full-Stack SEO Team', desc: 'Technical SEOs, content strategists, developers and link builders working as one cohesive unit on your account.' },
+  { title: 'Transparent Reporting', desc: 'No vanity metrics. Every report ties SEO activity directly to traffic, leads and revenue — the numbers that matter.' },
+  { title: 'White-Hat Only', desc: 'Every tactic we use aligns with Google guidelines. Your rankings are built to last, not to disappear after the next update.' },
 ];
 
 const FAQS = [
-  {
-    q: 'How long does SEO take to show results?',
-    a: 'Most clients see meaningful ranking improvements within 3–6 months. However, SEO is a compounding strategy — results accelerate over time. Competitive industries or new domains may take 6–12 months to reach significant page-1 positions. We provide monthly reports so you can track progress from day one.',
-  },
-  {
-    q: 'What SEO services does 1Solutions offer?',
-    a: '1Solutions offers a full suite of SEO services including technical SEO audits, keyword research, on-page optimization, link building, local SEO, eCommerce SEO, content marketing, and monthly SEO reporting. We create custom strategies tailored to your business goals and target market.',
-  },
-  {
-    q: 'Do you provide SEO services for businesses in the US, Canada, and Australia?',
-    a: 'Yes. Over 70% of our SEO clients are based in the US, Canada, and Australia. We have deep expertise in English-language SEO and understand the competitive landscape, user search behavior, and local signals for these markets specifically.',
-  },
-  {
-    q: 'How is your SEO pricing structured?',
-    a: 'We offer monthly retainer-based SEO packages starting from $499/month, as well as project-based engagements for audits and one-time optimizations. Custom enterprise plans are available. Contact us for a free proposal tailored to your website and goals.',
-  },
-  {
-    q: 'Do you follow Google\'s SEO guidelines?',
-    a: 'Absolutely. We only use white-hat, Google-compliant SEO techniques — no PBNs, no keyword stuffing, no link schemes. Our strategies are built to deliver sustainable rankings that survive algorithm updates, not shortcuts that risk penalties.',
-  },
-  {
-    q: 'Will you provide a dedicated SEO manager?',
-    a: 'Yes. Every 1Solutions SEO client gets a dedicated account manager and SEO strategist who provides monthly reports, attends strategy calls, and is reachable via email throughout the engagement.',
-  },
-  {
-    q: 'Can you help with both local SEO and national SEO?',
-    a: 'Yes. We handle local SEO (Google Business Profile, local citations, neighborhood-level targeting) as well as national and international SEO campaigns for businesses targeting broader audiences across multiple geographies.',
-  },
-  {
-    q: 'What makes 1Solutions different from other SEO companies?',
-    a: '15+ years of experience, a proven track record of 500+ websites ranked on page 1, and a transparent reporting process. We focus on business outcomes — leads, revenue, and ROI — not just ranking vanity metrics. Our US/Canada/Australia focus means we understand your market better than offshore-generic SEO agencies.',
-  },
+  { q: 'How long does SEO take to show results?', a: 'Most clients see meaningful movement in rankings and organic traffic within 3 to 6 months. Competitive industries or technically complex sites may take longer. We set honest expectations upfront and show you progress every step of the way.' },
+  { q: 'Do you work with businesses in the US, Canada and Australia?', a: 'Yes — these are our primary markets. We understand the search landscape, local intent signals, and competitive dynamics in each region. We also have clients across the UK and Europe.' },
+  { q: 'What makes 1Solutions different from other SEO agencies?', a: 'Three things: we are a full-stack team (technical + content + links), we have 15+ years of real results, and we give you complete transparency on what we are doing and why. No black-box tactics, no lock-in contracts.' },
+  { q: 'Do you offer SEO packages or custom plans?', a: 'Both. We have structured monthly SEO packages for SMBs, and fully custom enterprise SEO programmes for larger websites. Every engagement starts with an audit so we only recommend what you actually need.' },
+  { q: 'Can you recover a site hit by a Google penalty or algorithm update?', a: 'Yes. We have successfully recovered dozens of sites from manual penalties (link schemes, thin content) and algorithmic drops (Panda, Penguin, HCU). Recovery starts with a forensic audit to identify the root cause.' },
+  { q: 'Do you provide SEO for eCommerce websites?', a: 'Absolutely. eCommerce SEO is one of our specialities — from product and category page optimisation to faceted navigation, structured data, and Google Shopping feeds. We work with Shopify, WooCommerce, Magento and custom platforms.' },
+  { q: 'How do you measure SEO success?', a: 'We track keyword rankings, organic sessions, bounce rate, conversion rate, and ultimately revenue attributed to organic search. You get a clear monthly report with plain-English commentary — no spreadsheet dumps.' },
+  { q: 'What does your onboarding process look like?', a: 'After signing, we begin with a comprehensive technical and content audit (week 1 to 2), followed by strategy presentation (week 3). Active SEO work begins in week 4. You will have a dedicated account manager from day one.' },
 ];
 
-/* ─────────────────────────────────────────
-   COMPONENT
-───────────────────────────────────────── */
-export default function SEOServices() {
+export default function SeoServices() {
   const [openFaq, setOpenFaq] = useState(null);
-
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: FAQS.map(f => ({
-      '@type': 'Question',
-      name: f.q,
-      acceptedAnswer: { '@type': 'Answer', text: f.a },
-    })),
-  };
-
-  const serviceSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: 'SEO Services',
-    provider: {
-      '@type': 'Organization',
-      name: '1Solutions',
-      url: 'https://www.1solutions.biz',
-      address: { '@type': 'PostalAddress', addressLocality: 'New Delhi', addressCountry: 'IN' },
-      foundingDate: '2008',
-    },
-    description: 'ROI-driven SEO services for businesses in the US, Canada, and Australia — technical SEO, link building, content marketing, and local SEO.',
-    areaServed: ['US', 'CA', 'AU'],
-  };
 
   return (
     <>
       <Head>
-        <title>SEO Services Company | Rank #1 on Google – 1Solutions</title>
-        <meta name="description" content="1Solutions is a 15+ year old SEO company offering technical SEO, link building, local SEO, eCommerce SEO, and content strategy for businesses in the US, Canada & Australia. Get a free SEO audit." />
-        <meta name="keywords" content="SEO services, SEO company India, SEO company New Delhi, technical SEO, local SEO, eCommerce SEO, link building, SEO agency US, SEO agency Canada, SEO agency Australia" />
+        <title>SEO Services Company | Rank #1 on Google - 1Solutions</title>
+        <meta name="description" content="1Solutions is a results-driven SEO company serving US, Canada and Australia. Technical SEO, content strategy, link building and eCommerce SEO — all under one roof. 15+ years experience." />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.1solutions.biz/seo-services-company" />
-        {/* Open Graph */}
-        <meta property="og:title" content="SEO Services Company | Rank #1 on Google – 1Solutions" />
-        <meta property="og:description" content="ROI-driven SEO services. 500+ websites ranked page 1. 15+ years experience. Free audit for US, Canada & Australia businesses." />
-        <meta property="og:url" content="https://www.1solutions.biz/seo-services-company" />
+        <link rel="canonical" href="https://www.1solutions.biz/seo-services-company/" />
+        <meta property="og:title" content="SEO Services Company | Rank #1 on Google - 1Solutions" />
+        <meta property="og:description" content="15+ years of SEO expertise. Technical SEO, local SEO, eCommerce SEO, link building and content strategy for US, Canada and Australia businesses." />
         <meta property="og:type" content="website" />
-        {/* Schema */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+        <meta property="og:url" content="https://www.1solutions.biz/seo-services-company/" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: "SEO Services",
+          provider: { "@type": "Organization", name: "1Solutions", url: "https://www.1solutions.biz" },
+          description: "Full-service SEO company offering technical SEO, content strategy, link building and local SEO for businesses in US, Canada and Australia.",
+          areaServed: ["US", "CA", "AU"],
+          serviceType: "Search Engine Optimisation",
+        })}} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: FAQS.map(f => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+        })}} />
+        <style>{`
+          * { box-sizing: border-box; }
+          .seo-hero { position:relative;overflow:hidden;padding:100px 40px 90px;background:linear-gradient(135deg,rgba(254,243,199,0.55) 0%,rgba(255,255,255,0.70) 50%,rgba(219,234,254,0.45) 100%); }
+          .seo-hero-orb1 { position:absolute;top:-120px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(254,151,0,0.13) 0%,transparent 70%);pointer-events:none;filter:blur(10px); }
+          .seo-hero-orb2 { position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,0.09) 0%,transparent 70%);pointer-events:none;filter:blur(8px); }
+          .seo-hero-inner { max-width:1200px;margin:0 auto;position:relative;z-index:1; }
+          .seo-eyebrow { display:inline-flex;align-items:center;gap:8px;background:rgba(254,151,0,0.10);border:1px solid rgba(254,151,0,0.25);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#D97706;margin-bottom:24px; }
+          .seo-h1 { font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;background:linear-gradient(90deg,#0F3460 0%,#F59E0B 45%,#7C3AED 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+          .seo-hero-desc { font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:660px; }
+          .seo-hero-btns { display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px; }
+          .seo-btn-primary { display:inline-flex;align-items:center;gap:8px;background:#0F3460;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 6px 24px rgba(15,52,96,0.25); }
+          .seo-btn-primary:hover { background:#0a2448;transform:translateY(-2px);box-shadow:0 10px 32px rgba(15,52,96,0.32); }
+          .seo-btn-secondary { display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.7);color:#0F3460;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;border:1.5px solid rgba(15,52,96,0.18);transition:all 0.25s;backdrop-filter:blur(8px); }
+          .seo-btn-secondary:hover { background:#fff;transform:translateY(-2px);border-color:rgba(254,151,0,0.4); }
+          .seo-trust-row { display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-bottom:56px; }
+          .seo-trust-badge { display:flex;align-items:center;gap:6px;font-size:12px;color:#6b7280;font-weight:500; }
+          .seo-trust-badge svg { color:#FE9700; }
+          .seo-stats-bar { display:flex;gap:0;border:1px solid rgba(15,52,96,0.10);border-radius:16px;background:rgba(255,255,255,0.75);backdrop-filter:blur(12px);overflow:hidden;max-width:680px; }
+          .seo-stat-item { flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(15,52,96,0.08); }
+          .seo-stat-item:last-child { border-right:none; }
+          .seo-stat-num { font-size:1.9rem;font-weight:900;color:#0F3460;line-height:1;letter-spacing:-1px; }
+          .seo-stat-lbl { font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px; }
+          .seo-stat-item:nth-child(1) .seo-stat-num { color:#FE9700; }
+          .seo-stat-item:nth-child(3) .seo-stat-num { color:#7C3AED; }
+          .seo-breadcrumb { background:#f8fafd;border-bottom:1px solid #edf0f5;padding:12px 40px; }
+          .seo-breadcrumb-inner { max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12.5px;color:#6b7280; }
+          .seo-breadcrumb a { color:#6b7280;text-decoration:none; }
+          .seo-breadcrumb a:hover { color:#FE9700; }
+          .seo-breadcrumb-sep { color:#d1d5db; }
+          .seo-breadcrumb-current { color:#0F3460;font-weight:500; }
+          .seo-section { padding:80px 40px; }
+          .seo-section-inner { max-width:1200px;margin:0 auto; }
+          .seo-section-tag { display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#D97706;margin-bottom:12px; }
+          .seo-section-h2 { font-size:clamp(1.8rem,3vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-0.5px;color:#0A1628;margin:0 0 16px; }
+          .seo-section-h2 span { background:linear-gradient(90deg,#0F3460,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+          .seo-section-desc { font-size:1rem;color:#4b5563;line-height:1.75;max-width:620px;margin:0 0 48px; }
+          .seo-bg-light { background:#f8fafd; }
+          .seo-services-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:24px; }
+          .seo-svc-card { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:28px 24px;box-shadow:0 4px 24px rgba(15,52,96,0.07),inset 0 1px 0 rgba(255,255,255,0.95);transition:transform 0.22s,box-shadow 0.22s,border-color 0.22s; }
+          .seo-svc-card:hover { transform:translateY(-6px);border-color:rgba(217,119,6,0.35);box-shadow:0 16px 48px rgba(15,52,96,0.13),inset 0 1px 0 rgba(255,255,255,1); }
+          .seo-svc-icon { width:48px;height:48px;border-radius:14px;background:rgba(15,52,96,0.07);display:flex;align-items:center;justify-content:center;margin-bottom:18px;transition:background 0.2s; }
+          .seo-svc-card:hover .seo-svc-icon { background:rgba(254,151,0,0.12); }
+          .seo-svc-icon svg { width:22px;height:22px;color:#0F3460;transition:color 0.2s; }
+          .seo-svc-card:hover .seo-svc-icon svg { color:#D97706; }
+          .seo-svc-title { font-size:1rem;font-weight:700;color:#0A1628;margin:0 0 10px;line-height:1.3; }
+          .seo-svc-desc { font-size:13.5px;color:#4b5563;line-height:1.7;margin:0; }
+          .seo-results-band { background:linear-gradient(135deg,#0A1628 0%,#0F3460 100%);padding:64px 40px; }
+          .seo-results-inner { max-width:1200px;margin:0 auto; }
+          .seo-results-tag { display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(254,151,0,0.8);margin-bottom:12px;text-align:center; }
+          .seo-results-h2 { font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;color:#fff;text-align:center;margin:0 0 48px;line-height:1.2; }
+          .seo-results-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:24px; }
+          .seo-result-card { background:rgba(255,255,255,0.06);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.10);border-radius:20px;padding:36px 28px;text-align:center;transition:background 0.2s,border-color 0.2s; }
+          .seo-result-card:hover { background:rgba(255,255,255,0.10);border-color:rgba(254,151,0,0.25); }
+          .seo-result-metric { font-size:3.5rem;font-weight:900;line-height:1;margin-bottom:10px;letter-spacing:-2px; }
+          .seo-result-label { font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px; }
+          .seo-result-sub { font-size:12.5px;color:rgba(255,255,255,0.50); }
+          .seo-why-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:24px; }
+          .seo-why-card { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:32px 28px;box-shadow:0 4px 24px rgba(15,52,96,0.07),inset 0 1px 0 rgba(255,255,255,0.95);transition:transform 0.22s,box-shadow 0.22s,border-color 0.22s; }
+          .seo-why-card:hover { transform:translateY(-5px);border-color:rgba(217,119,6,0.35);box-shadow:0 14px 44px rgba(15,52,96,0.12); }
+          .seo-why-check { width:36px;height:36px;border-radius:10px;background:rgba(254,151,0,0.10);display:flex;align-items:center;justify-content:center;margin-bottom:16px; }
+          .seo-why-check svg { width:18px;height:18px;color:#D97706; }
+          .seo-why-title { font-size:15px;font-weight:700;color:#0A1628;margin:0 0 8px; }
+          .seo-why-desc { font-size:13.5px;color:#4b5563;line-height:1.7;margin:0; }
+          .seo-process-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:32px; }
+          .seo-process-num { font-size:3.5rem;font-weight:900;color:rgba(15,52,96,0.07);line-height:1;margin-bottom:8px;letter-spacing:-2px; }
+          .seo-process-line { width:40px;height:3px;background:linear-gradient(90deg,#FE9700,rgba(254,151,0,0.3));border-radius:2px;margin-bottom:16px; }
+          .seo-process-title { font-size:1rem;font-weight:700;color:#0A1628;margin:0 0 10px; }
+          .seo-process-desc { font-size:13.5px;color:#4b5563;line-height:1.7;margin:0; }
+          .seo-tools-wrap { display:flex;flex-wrap:wrap;gap:12px; }
+          .seo-tool-pill { display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.7);border:1px solid rgba(15,52,96,0.12);border-radius:50px;padding:8px 16px;font-size:13px;font-weight:500;color:#374151;transition:border-color 0.2s,color 0.2s; }
+          .seo-tool-pill:hover { border-color:rgba(254,151,0,0.4);color:#D97706; }
+          .seo-tool-dot { width:8px;height:8px;border-radius:50%;background:#FE9700;flex-shrink:0; }
+          .seo-ind-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:12px; }
+          .seo-ind-pill { background:rgba(255,255,255,0.7);border:1px solid rgba(15,52,96,0.12);border-radius:10px;padding:14px 16px;font-size:13px;font-weight:600;color:#374151;text-align:center;transition:all 0.2s; }
+          .seo-ind-pill:hover { background:rgba(254,151,0,0.07);border-color:rgba(254,151,0,0.35);color:#D97706; }
+          .seo-faq-list { display:flex;flex-direction:column;gap:10px; }
+          .seo-faq-item { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(15,52,96,0.06),inset 0 1px 0 rgba(255,255,255,0.95);transition:border-color 0.2s; }
+          .seo-faq-item.open { border-color:rgba(217,119,6,0.35);box-shadow:0 8px 32px rgba(15,52,96,0.10); }
+          .seo-faq-q { display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 24px;cursor:pointer;background:none;border:none;width:100%;text-align:left;font-family:inherit; }
+          .seo-faq-q-text { font-size:15px;font-weight:600;color:#0A1628;line-height:1.4; }
+          .seo-faq-icon { width:28px;height:28px;border-radius:50%;background:rgba(15,52,96,0.07);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background 0.2s,transform 0.2s; }
+          .seo-faq-item.open .seo-faq-icon { background:rgba(254,151,0,0.12);transform:rotate(45deg); }
+          .seo-faq-icon svg { width:14px;height:14px;color:#0F3460; }
+          .seo-faq-item.open .seo-faq-icon svg { color:#D97706; }
+          .seo-faq-a { padding:0 24px 20px;font-size:14px;color:#4b5563;line-height:1.8; }
+          .wp-contact-section { padding:70px 40px;background:linear-gradient(135deg,rgba(254,243,199,0.70) 0%,rgba(255,255,255,0.60) 40%,rgba(219,234,254,0.65) 100%);position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.80); }
+          .wp-contact-container { max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;align-items:start;gap:48px; }
+          .wp-contact-title { font-size:clamp(2rem,3.5vw,2.8rem);font-weight:900;line-height:1.2;margin:0 0 16px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent; }
+          .wp-contact-desc { font-size:14px;color:#4A6080;line-height:1.6;margin:0 0 28px; }
+          .wp-merged-box { background:linear-gradient(135deg,rgba(255,255,255,0.70) 0%,rgba(219,234,254,0.35) 100%);border:1px solid rgba(255,255,255,0.90);border-radius:14px;padding:24px;backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,1);display:flex;flex-direction:column;gap:20px; }
+          .wp-benefit-item { display:flex;gap:10px;align-items:flex-start; }
+          .wp-benefit-icon-wrap { width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
+          .wp-benefit-icon { width:20px;height:20px;color:#D97706;stroke:#D97706;stroke-width:1.75; }
+          .wp-benefit-item p { font-size:13px;color:#4A6080;margin:0;line-height:1.5; }
+          .wp-stats-box { padding-top:24px;border-top:1px solid rgba(15,52,96,0.12); }
+          .wp-stats-grid { display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px; }
+          .wp-stat-number { font-size:36px;font-weight:900;color:#0F3460;line-height:1;margin-bottom:4px; }
+          .wp-stat-text { font-size:12px;color:#4A6080;line-height:1.4;font-weight:500; }
+          .wp-form-box { background:linear-gradient(135deg,rgba(255,255,255,0.88) 0%,rgba(237,233,254,0.25) 50%,rgba(255,255,255,0.84) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.92);border-radius:20px;padding:36px;box-shadow:0 8px 40px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1); }
+          .wp-form-box h3 { font-size:24px;font-weight:700;margin:0 0 24px;color:#0F1F40;letter-spacing:-0.5px; }
+          .wp-contact-form { display:flex;flex-direction:column;gap:16px; }
+          .wp-form-row { display:grid;grid-template-columns:1fr 1fr;gap:14px; }
+          .wp-form-group { display:flex;flex-direction:column;gap:6px; }
+          .wp-form-group.full { grid-column:1/-1; }
+          .wp-form-group label { font-size:12px;font-weight:500;color:#0F1F40; }
+          .wp-form-group input,.wp-form-group textarea,.wp-form-group select { padding:10px 14px;border:1px solid rgba(15,52,96,0.15);border-radius:6px;font-size:13px;font-family:inherit;color:#0F1F40;background:rgba(255,255,255,0.55);box-shadow:inset 0 1px 4px rgba(15,52,96,0.06);transition:border-color 0.2s,background 0.2s; }
+          .wp-form-group input:focus,.wp-form-group textarea:focus,.wp-form-group select:focus { outline:none;border-color:#D97706;background:rgba(255,255,255,0.90);box-shadow:0 0 0 3px rgba(217,119,6,0.12); }
+          .wp-phone-input { display:flex;border:1px solid rgba(15,52,96,0.15);border-radius:6px;overflow:hidden; }
+          .wp-phone-input select { padding:10px;border:none;background:rgba(255,255,255,0.1);font-size:12px;min-width:75px; }
+          .wp-phone-input input { flex:1;border:none;border-radius:0;padding:10px 14px;box-shadow:none; }
+          .wp-phone-input input:focus { outline:none; }
+          .wp-consent { display:flex;gap:8px;align-items:flex-start;margin-top:4px; }
+          .wp-consent input[type="checkbox"] { margin-top:3px;width:16px;height:16px;cursor:pointer; }
+          .wp-consent label { font-size:11px;color:#4A6080;line-height:1.5;margin:0; }
+          .wp-consent a { color:#0F3460;text-decoration:none; }
+          .wp-submit-btn { padding:14px 28px;background:rgba(15,52,96,0.85);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.30);color:white;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all 0.3s;margin-top:8px;width:100%;box-shadow:0 6px 24px rgba(15,52,96,0.25),inset 0 1px 0 rgba(255,255,255,0.15); }
+          .wp-submit-btn:hover { background:rgba(15,52,96,0.95);border-color:rgba(245,158,11,0.6);transform:translateY(-2px); }
+          .seo-cta-band { background:linear-gradient(135deg,rgba(254,243,199,0.70) 0%,rgba(255,255,255,0.60) 40%,rgba(219,234,254,0.65) 100%);padding:90px 40px;position:relative;overflow:hidden;border-top:1px solid rgba(255,255,255,0.80); }
+          .seo-cta-orb1 { position:absolute;top:-80px;right:-80px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(254,151,0,0.12) 0%,transparent 70%);pointer-events:none; }
+          .seo-cta-orb2 { position:absolute;bottom:-60px;left:-60px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(15,52,96,0.07) 0%,transparent 70%);pointer-events:none; }
+          .seo-cta-inner { max-width:800px;margin:0 auto;text-align:center;position:relative;z-index:1; }
+          .seo-cta-h2 { font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-0.5px;margin:0 0 18px;background:linear-gradient(90deg,#0F3460 0%,#F59E0B 50%,#7C3AED 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+          .seo-cta-desc { font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px; }
+          @media (max-width:900px) {
+            .seo-hero-inner { grid-template-columns:1fr; }
+            .seo-hero-card { display:none; }
+            .seo-services-grid,.seo-why-grid { grid-template-columns:1fr 1fr; }
+            .seo-results-grid { grid-template-columns:1fr; }
+            .seo-process-grid { grid-template-columns:1fr 1fr; }
+            .seo-ind-grid { grid-template-columns:repeat(2,1fr); }
+            .wp-contact-container { grid-template-columns:1fr; }
+            .wp-form-row { grid-template-columns:1fr; }
+          }
+          @media (max-width:600px) {
+            .seo-hero,.seo-section,.seo-results-band,.wp-contact-section,.seo-cta-band { padding-left:20px;padding-right:20px; }
+            .seo-hero { padding-top:60px;padding-bottom:50px; }
+            .seo-section { padding-top:56px;padding-bottom:56px; }
+            .seo-services-grid,.seo-why-grid,.seo-process-grid { grid-template-columns:1fr; }
+            .seo-ind-grid { grid-template-columns:1fr 1fr; }
+            .seo-breadcrumb { padding:12px 20px; }
+          }
+        `}</style>
       </Head>
 
-      {/* ── HERO ── */}
-      <section
-        aria-label="SEO Services Hero"
-        style={{
-          background: 'linear-gradient(135deg, rgba(254,243,199,0.55) 0%, rgba(219,234,254,0.35) 100%)',
-          position: 'relative',
-          overflow: 'hidden',
-          padding: '100px 0 80px',
-        }}
-      >
-        <div style={{ position:'absolute', top:-80, right:-80, width:400, height:400, borderRadius:'50%', background:'radial-gradient(circle, rgba(254,151,0,0.13) 0%, transparent 70%)', pointerEvents:'none' }} />
-        <div style={{ position:'absolute', bottom:-60, left:-60, width:300, height:300, borderRadius:'50%', background:'radial-gradient(circle, rgba(124,58,237,0.08) 0%, transparent 70%)', pointerEvents:'none' }} />
+      {/* BREADCRUMB */}
+      <nav className="seo-breadcrumb" aria-label="Breadcrumb">
+        <div className="seo-breadcrumb-inner">
+          <Link href="/">Home</Link>
+          <span className="seo-breadcrumb-sep">›</span>
+          <Link href="/#services">Digital Marketing</Link>
+          <span className="seo-breadcrumb-sep">›</span>
+          <span className="seo-breadcrumb-current">SEO Services</span>
+        </div>
+      </nav>
 
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 40px' }}>
-          {/* Breadcrumb */}
-          <nav aria-label="Breadcrumb" style={{ marginBottom: 20 }}>
-            <ol style={{ display:'flex', gap:8, alignItems:'center', listStyle:'none', padding:0, margin:0, fontSize:'0.82rem', color:'#6b7280' }}>
-              <li><Link href="/" style={{ color:'#0F3460', textDecoration:'none' }}>Home</Link></li>
-              <li style={{ color:'#d1d5db' }}>›</li>
-              <li><Link href="/digital-marketing" style={{ color:'#0F3460', textDecoration:'none' }}>Digital Marketing</Link></li>
-              <li style={{ color:'#d1d5db' }}>›</li>
-              <li style={{ color:'#6b7280' }}>SEO Services</li>
-            </ol>
-          </nav>
-
-          <div style={{ display:'grid', gridTemplateColumns:'1fr 420px', gap:60, alignItems:'center' }}>
-            <div>
-              <p style={{ color:'#D97706', fontSize:'0.82rem', fontWeight:700, letterSpacing:'0.15em', textTransform:'uppercase', marginBottom:16 }}>
-                #1 Ranked SEO Company — New Delhi, India
-              </p>
-              <h1 style={{
-                fontSize:'clamp(2rem,4vw,3rem)',
-                fontWeight:800,
-                lineHeight:1.2,
-                marginBottom:20,
-                background:'linear-gradient(90deg,#0F3460 0%,#F59E0B 50%,#7C3AED 100%)',
-                WebkitBackgroundClip:'text',
-                WebkitTextFillColor:'transparent',
-                backgroundClip:'text',
-              }}>
-                SEO Services That Drive Real Rankings, Traffic & Revenue
-              </h1>
-              <p style={{ color:'#4b5563', fontSize:'1.05rem', lineHeight:1.8, marginBottom:28, maxWidth:580 }}>
-                1Solutions is a 15+ year old SEO company trusted by 500+ businesses across the US, Canada, and Australia. We deliver ROI-driven SEO — not vanity rankings, but real organic growth that compounds over time.
-              </p>
-              {/* Trust badges */}
-              <div style={{ display:'flex', gap:24, marginBottom:32, flexWrap:'wrap' }}>
-                {['Google Partner', '15+ Years', '500+ Clients', 'White-Hat Only'].map(b => (
-                  <span key={b} style={{
-                    display:'flex', alignItems:'center', gap:6,
-                    fontSize:'0.82rem', fontWeight:600, color:'#374151',
-                  }}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-                    {b}
-                  </span>
-                ))}
-              </div>
-              <div style={{ display:'flex', gap:14, flexWrap:'wrap' }}>
-                <Link href="/contact" style={{
-                  background:'#0F3460', color:'#fff',
-                  padding:'14px 28px', borderRadius:50,
-                  fontWeight:700, textDecoration:'none', fontSize:'0.97rem',
-                  display:'inline-flex', alignItems:'center', gap:8,
-                }}>
-                  Get Free SEO Audit
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </Link>
-                <Link href="/portfolio" style={{
-                  background:'rgba(15,52,96,0.07)', color:'#0F3460',
-                  padding:'14px 28px', borderRadius:50,
-                  fontWeight:700, textDecoration:'none', fontSize:'0.97rem',
-                  border:'1.5px solid rgba(15,52,96,0.18)',
-                  display:'inline-flex', alignItems:'center', gap:8,
-                }}>
-                  View SEO Results
-                </Link>
-              </div>
+      {/* HERO */}
+      <section className="seo-hero">
+        <div className="seo-hero-orb1" />
+        <div className="seo-hero-orb2" />
+        <div className="seo-hero-inner">
+          <div>
+            <span className="seo-eyebrow">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              Trusted SEO Company — US · Canada · Australia
+            </span>
+            <h1 className="seo-h1">SEO That Ranks Your Business<br/>at the Top of Google</h1>
+            <p className="seo-hero-desc">1Solutions is a 15-year-old SEO agency delivering measurable, sustainable organic growth for businesses across the US, Canada, and Australia. From technical foundations to authority links — we cover every dimension of modern search.</p>
+            <div className="seo-hero-btns">
+              <a href="#contact" className="seo-btn-primary">
+                Get My Free SEO Audit
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="/affordable-seo-packages/" className="seo-btn-secondary">View SEO Packages</a>
             </div>
-
-            {/* Stats card */}
-            <div style={{
-              background:'linear-gradient(135deg,rgba(255,255,255,0.88) 0%,rgba(255,255,255,0.70) 100%)',
-              backdropFilter:'blur(20px)',
-              border:'1px solid rgba(255,255,255,0.60)',
-              borderRadius:20,
-              padding:'36px 32px',
-              boxShadow:'0 8px 40px rgba(15,52,96,0.10)',
-            }}>
-              <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:24 }}>
-                {STATS.map(s => (
-                  <div key={s.label} style={{ textAlign:'center' }}>
-                    <div style={{
-                      fontSize:'2.2rem', fontWeight:800,
-                      background:'linear-gradient(135deg,#0F3460,#F59E0B)',
-                      WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text',
-                      lineHeight:1.1, marginBottom:6,
-                    }}>{s.value}</div>
-                    <div style={{ fontSize:'0.78rem', color:'#6b7280', fontWeight:500, lineHeight:1.4 }}>{s.label}</div>
-                  </div>
-                ))}
-              </div>
-              <div style={{ marginTop:28, paddingTop:24, borderTop:'1px solid rgba(15,52,96,0.10)' }}>
-                <p style={{ fontSize:'0.82rem', color:'#6b7280', textAlign:'center', marginBottom:14 }}>Trusted by businesses in</p>
-                <div style={{ display:'flex', justifyContent:'center', gap:16 }}>
-                  {['🇺🇸 USA', '🇨🇦 Canada', '🇦🇺 Australia'].map(c => (
-                    <span key={c} style={{ fontSize:'0.82rem', fontWeight:600, color:'#374151' }}>{c}</span>
-                  ))}
-                </div>
-              </div>
+            <div className="seo-trust-row">
+              {['No lock-in contracts','White-hat only','Monthly reporting','24h response'].map(t => (
+                <span key={t} className="seo-trust-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  {t}
+                </span>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ── INTRO ── */}
-      <section style={{ background:'#fff', padding:'72px 40px' }}>
-        <div style={{ maxWidth:900, margin:'0 auto', textAlign:'center' }}>
-          <h2 style={{ fontSize:'clamp(1.5rem,2.5vw,2.1rem)', fontWeight:800, color:'#0A1628', marginBottom:20 }}>
-            Why 1Solutions Is the Right SEO Company for Your Business
-          </h2>
-          <p style={{ color:'#4b5563', fontSize:'1.05rem', lineHeight:1.85 }}>
-            As an <strong>SEO company based in New Delhi with 15+ years of experience</strong>, we've helped businesses across the US, Canada, and Australia grow their organic search presence. Unlike large agencies where your project gets handed to a junior, every 1Solutions client gets a senior SEO strategist, transparent monthly reporting, and strategies built around your actual business goals — not keyword rankings for their own sake.
-          </p>
-          <p style={{ color:'#4b5563', fontSize:'1.05rem', lineHeight:1.85, marginTop:16 }}>
-            We combine deep technical expertise with content strategy and authority-building to deliver results that compound. Our clients see an average <strong>200% increase in organic traffic</strong> within 12 months.
-          </p>
-        </div>
-      </section>
-
-      {/* ── SEO SERVICES GRID ── */}
-      <section style={{ background:'#f9fafb', padding:'80px 40px' }} aria-labelledby="services-heading">
-        <div style={{ maxWidth:1200, margin:'0 auto' }}>
-          <div style={{ textAlign:'center', marginBottom:56 }}>
-            <p style={{ color:'#D97706', fontSize:'0.82rem', fontWeight:700, letterSpacing:'0.15em', textTransform:'uppercase', marginBottom:12 }}>What We Do</p>
-            <h2 id="services-heading" style={{ fontSize:'clamp(1.6rem,3vw,2.4rem)', fontWeight:800, color:'#0A1628', marginBottom:16 }}>
-              Our SEO Services
-            </h2>
-            <p style={{ color:'#6b7280', fontSize:'1.02rem', maxWidth:560, margin:'0 auto', lineHeight:1.75 }}>
-              A complete SEO service suite — from initial audit to ongoing authority building — all under one roof.
-            </p>
-          </div>
-
-          <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:28 }}>
-            {SEO_SERVICES.map((svc, i) => (
-              <article key={i} style={{
-                background:'#fff',
-                borderRadius:16,
-                padding:'28px 26px',
-                border:'1px solid #f3f4f6',
-                transition:'all 0.2s',
-                cursor:'default',
-              }}
-              onMouseOver={e => { e.currentTarget.style.borderColor='#FE9700'; e.currentTarget.style.boxShadow='0 8px 32px rgba(254,151,0,0.12)'; e.currentTarget.style.transform='translateY(-3px)'; }}
-              onMouseOut={e => { e.currentTarget.style.borderColor='#f3f4f6'; e.currentTarget.style.boxShadow='none'; e.currentTarget.style.transform='none'; }}
-              >
-                <div style={{
-                  width:48, height:48, borderRadius:12,
-                  background:'linear-gradient(135deg,rgba(254,151,0,0.12),rgba(15,52,96,0.08))',
-                  display:'flex', alignItems:'center', justifyContent:'center', marginBottom:18,
-                }}>
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F3460" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <path d={svc.icon}/>
-                  </svg>
-                </div>
-                <h3 style={{ fontSize:'1.05rem', fontWeight:700, color:'#0A1628', marginBottom:10 }}>{svc.title}</h3>
-                <p style={{ color:'#6b7280', fontSize:'0.92rem', lineHeight:1.75 }}>{svc.desc}</p>
-              </article>
+          <div className="seo-stats-bar">
+            {[
+              { num: '500+', lbl: 'SEO Projects Delivered' },
+              { num: '15+',  lbl: 'Years of Experience' },
+              { num: '97%',  lbl: 'Client Retention Rate' },
+              { num: '3×',   lbl: 'Avg. Traffic Growth' },
+            ].map(s => (
+              <div key={s.lbl} className="seo-stat-item">
+                <span className="seo-stat-num">{s.num}</span>
+                <span className="seo-stat-lbl">{s.lbl}</span>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── RESULTS / CASE STUDIES ── */}
-      <section style={{ background:'#fff', padding:'80px 40px' }} aria-labelledby="results-heading">
-        <div style={{ maxWidth:1200, margin:'0 auto' }}>
-          <div style={{ textAlign:'center', marginBottom:56 }}>
-            <p style={{ color:'#D97706', fontSize:'0.82rem', fontWeight:700, letterSpacing:'0.15em', textTransform:'uppercase', marginBottom:12 }}>Proven Results</p>
-            <h2 id="results-heading" style={{ fontSize:'clamp(1.6rem,3vw,2.4rem)', fontWeight:800, color:'#0A1628', marginBottom:16 }}>
-              Real SEO Results for Real Businesses
-            </h2>
-            <p style={{ color:'#6b7280', fontSize:'1.02rem', maxWidth:540, margin:'0 auto', lineHeight:1.75 }}>
-              Numbers don't lie. Here's what our SEO clients achieved within 12 months of working with us.
-            </p>
-          </div>
-
-          <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:28 }}>
-            {RESULTS.map((r, i) => (
-              <div key={i} style={{
-                background:'linear-gradient(135deg,#0A1628 0%,#0F3460 100%)',
-                borderRadius:20,
-                padding:'32px 28px',
-                color:'#fff',
-              }}>
-                <div style={{ display:'flex', gap:8, marginBottom:20, flexWrap:'wrap' }}>
-                  {r.tags.map(t => (
-                    <span key={t} style={{
-                      background:'rgba(254,151,0,0.18)', color:'#FE9700',
-                      borderRadius:50, padding:'4px 12px', fontSize:'0.75rem', fontWeight:600,
-                    }}>{t}</span>
-                  ))}
+      {/* SERVICES */}
+      <section className="seo-section seo-bg-light" id="services">
+        <div className="seo-section-inner">
+          <span className="seo-section-tag">What We Do</span>
+          <h2 className="seo-section-h2">Full-Spectrum <span>SEO Services</span></h2>
+          <p className="seo-section-desc">Every ranking signal, covered. We combine technical excellence, strategic content, and authoritative link building to deliver durable results across every type of business and industry.</p>
+          <div className="seo-services-grid">
+            {SERVICES.map(s => (
+              <div key={s.title} className="seo-svc-card">
+                <div className="seo-svc-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d={s.icon} /></svg>
                 </div>
-                <h3 style={{ fontSize:'1.05rem', fontWeight:700, color:'#fff', marginBottom:6 }}>{r.client}</h3>
-                <p style={{ fontSize:'0.8rem', color:'rgba(255,255,255,0.50)', marginBottom:24 }}>Market: {r.market}</p>
-                <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16 }}>
-                  {r.results.map((m, j) => (
-                    <div key={j}>
-                      <div style={{ fontSize:'1.8rem', fontWeight:800, color:'#FE9700', lineHeight:1.1 }}>{m.metric}</div>
-                      <div style={{ fontSize:'0.78rem', color:'rgba(255,255,255,0.60)', lineHeight:1.4, marginTop:4 }}>{m.label}</div>
+                <h3 className="seo-svc-title">{s.title}</h3>
+                <p className="seo-svc-desc">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* RESULTS BAND */}
+      <section className="seo-results-band">
+        <div className="seo-results-inner">
+          <span className="seo-results-tag">Client Results</span>
+          <h2 className="seo-results-h2">Real Numbers. Real Businesses.</h2>
+          <div className="seo-results-grid">
+            {RESULTS.map(r => (
+              <div key={r.label} className="seo-result-card">
+                <div className="seo-result-metric" style={{ color: r.color }}>{r.metric}</div>
+                <div className="seo-result-label">{r.label}</div>
+                <div className="seo-result-sub">{r.sub}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHY US */}
+      <section className="seo-section" id="why-us">
+        <div className="seo-section-inner">
+          <span className="seo-section-tag">Why 1Solutions</span>
+          <h2 className="seo-section-h2">The SEO Agency That <span>Holds Itself Accountable</span></h2>
+          <p className="seo-section-desc">We do not chase vanity rankings. We tie every action to your bottom line and show you the evidence every single month.</p>
+          <div className="seo-why-grid">
+            {WHY.map(w => (
+              <div key={w.title} className="seo-why-card">
+                <div className="seo-why-check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <h3 className="seo-why-title">{w.title}</h3>
+                <p className="seo-why-desc">{w.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PROCESS */}
+      <section className="seo-section seo-bg-light" id="process">
+        <div className="seo-section-inner">
+          <span className="seo-section-tag">How We Work</span>
+          <h2 className="seo-section-h2">Our <span>6-Step SEO Process</span></h2>
+          <p className="seo-section-desc">A structured, repeatable methodology that delivers compounding results — month after month, year after year.</p>
+          <div className="seo-process-grid">
+            {PROCESS.map(p => (
+              <div key={p.n} className="seo-process-card">
+                <div className="seo-process-num">{p.n}</div>
+                <div className="seo-process-line" />
+                <h3 className="seo-process-title">{p.title}</h3>
+                <p className="seo-process-desc">{p.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TOOLS */}
+      <section className="seo-section" id="tools">
+        <div className="seo-section-inner">
+          <span className="seo-section-tag">Our Toolkit</span>
+          <h2 className="seo-section-h2">Tools &amp; <span>Technology We Use</span></h2>
+          <p className="seo-section-desc">We invest in enterprise-grade SEO tooling so every decision is backed by data — not guesswork.</p>
+          <div className="seo-tools-wrap">
+            {['Google Search Console','Google Analytics 4','Ahrefs','SEMrush','Screaming Frog','Surfer SEO','Moz Pro','Majestic','Sitebulb','Looker Studio','BrightEdge','Hotjar'].map(t => (
+              <span key={t} className="seo-tool-pill"><span className="seo-tool-dot" />{t}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* INDUSTRIES */}
+      <section className="seo-section seo-bg-light" id="industries">
+        <div className="seo-section-inner">
+          <span className="seo-section-tag">Industries We Serve</span>
+          <h2 className="seo-section-h2">SEO for <span>Every Industry</span></h2>
+          <p className="seo-section-desc">We have delivered SEO results across a wide range of industries and business models — from early-stage startups to large enterprises.</p>
+          <div className="seo-ind-grid">
+            {['eCommerce','SaaS & Software','Healthcare','Real Estate','Legal & Law Firms','Finance & BFSI','Education & EdTech','Travel & Hospitality','Retail','Manufacturing','Automotive','Wellness & Fitness'].map(ind => (
+              <div key={ind} className="seo-ind-pill">{ind}</div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section className="wp-contact-section" id="contact">
+        <div className="wp-contact-container">
+          <div>
+            <h2 className="wp-contact-title">Get Your Free<br/>SEO Audit Today</h2>
+            <p className="wp-contact-desc">Tell us about your website and goals. We will analyse your current SEO performance and share a clear, actionable roadmap — completely free, no obligations.</p>
+            <div className="wp-merged-box">
+              <div>
+                {[
+                  { icon:'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z', text:'Your details are 100% confidential. We never share your information.' },
+                  { icon:'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z', text:'A senior SEO strategist personally reviews your site — not an automated tool.' },
+                  { icon:'M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm0-6v-4m0-4h.01', text:'We respond within 24 business hours with your custom audit findings.' },
+                  { icon:'M20 6 9 17l-5-5', text:"No hard sell. If we are not the right fit, we will tell you honestly." },
+                ].map((b, i) => (
+                  <div className="wp-benefit-item" key={i} style={{ marginBottom: i < 3 ? 14 : 0 }}>
+                    <div className="wp-benefit-icon-wrap">
+                      <svg className="wp-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d={b.icon} /></svg>
+                    </div>
+                    <p>{b.text}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="wp-stats-box">
+                <div className="wp-stats-grid">
+                  {[['500+','Projects Delivered'],['15+','Years Experience'],['97%','Client Retention']].map(([num,text]) => (
+                    <div key={text}>
+                      <div className="wp-stat-number">{num}</div>
+                      <div className="wp-stat-text">{text}</div>
                     </div>
                   ))}
                 </div>
               </div>
-            ))}
-          </div>
-
-          <div style={{ textAlign:'center', marginTop:40 }}>
-            <Link href="/case-studies" style={{
-              display:'inline-flex', alignItems:'center', gap:8,
-              border:'1.5px solid #0A1628', borderRadius:50,
-              padding:'12px 28px', color:'#0A1628',
-              textDecoration:'none', fontWeight:600, fontSize:'0.95rem',
-            }}>
-              View All Case Studies
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ── PROCESS ── */}
-      <section style={{ background:'#f9fafb', padding:'80px 40px' }} aria-labelledby="process-heading">
-        <div style={{ maxWidth:1200, margin:'0 auto' }}>
-          <div style={{ textAlign:'center', marginBottom:56 }}>
-            <p style={{ color:'#D97706', fontSize:'0.82rem', fontWeight:700, letterSpacing:'0.15em', textTransform:'uppercase', marginBottom:12 }}>How We Work</p>
-            <h2 id="process-heading" style={{ fontSize:'clamp(1.6rem,3vw,2.4rem)', fontWeight:800, color:'#0A1628', marginBottom:16 }}>
-              Our 6-Step SEO Process
-            </h2>
-            <p style={{ color:'#6b7280', fontSize:'1.02rem', maxWidth:520, margin:'0 auto', lineHeight:1.75 }}>
-              A structured, repeatable process that delivers consistent results — no guesswork, no shortcuts.
-            </p>
-          </div>
-
-          <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:28 }}>
-            {PROCESS_STEPS.map((step, i) => (
-              <div key={i} style={{
-                background:'#fff', borderRadius:16, padding:'28px 26px',
-                border:'1px solid #f3f4f6', position:'relative',
-              }}>
-                <div style={{
-                  fontSize:'3rem', fontWeight:800,
-                  color:'rgba(254,151,0,0.15)',
-                  lineHeight:1, marginBottom:12,
-                }}>{step.num}</div>
-                <h3 style={{ fontSize:'1.05rem', fontWeight:700, color:'#0A1628', marginBottom:10 }}>{step.title}</h3>
-                <p style={{ color:'#6b7280', fontSize:'0.92rem', lineHeight:1.75 }}>{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── WHY CHOOSE US ── */}
-      <section style={{ background:'#fff', padding:'80px 40px' }} aria-labelledby="why-heading">
-        <div style={{ maxWidth:1200, margin:'0 auto' }}>
-          <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:60, alignItems:'center' }}>
-            <div>
-              <p style={{ color:'#D97706', fontSize:'0.82rem', fontWeight:700, letterSpacing:'0.15em', textTransform:'uppercase', marginBottom:16 }}>Why 1Solutions</p>
-              <h2 id="why-heading" style={{ fontSize:'clamp(1.5rem,2.8vw,2.2rem)', fontWeight:800, color:'#0A1628', marginBottom:20, lineHeight:1.25 }}>
-                What Sets Our SEO Services Apart
-              </h2>
-              <p style={{ color:'#4b5563', lineHeight:1.85, marginBottom:32 }}>
-                There are thousands of SEO companies. Here's why businesses in the US, Canada, and Australia trust 1Solutions with their most important digital channel.
-              </p>
-
-              {[
-                { title: 'No Lock-In Contracts', desc: 'Month-to-month engagements. We earn your business every month through results.' },
-                { title: 'Dedicated Senior Strategist', desc: 'Your account is managed by a senior SEO professional — not a junior or an AI bot.' },
-                { title: 'Full Transparency', desc: 'Monthly reports with real data — rankings, traffic, conversions, and what we did to get there.' },
-                { title: 'US/Canada/Australia Market Expertise', desc: "We understand English-language search behavior, Google's local algorithms, and your competitive landscape." },
-                { title: 'White-Hat Only', desc: 'Zero tolerance for black-hat tactics. Our strategies are built to last through algorithm updates.' },
-                { title: '15+ Years of Proven Experience', desc: 'We\'ve been doing SEO since 2008 — before Google Penguin, Panda, and Core Web Vitals existed.' },
-              ].map((item, i) => (
-                <div key={i} style={{ display:'flex', gap:14, marginBottom:20 }}>
-                  <div style={{
-                    width:32, height:32, borderRadius:8, flexShrink:0, marginTop:2,
-                    background:'linear-gradient(135deg,rgba(254,151,0,0.15),rgba(15,52,96,0.10))',
-                    display:'flex', alignItems:'center', justifyContent:'center',
-                  }}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0F3460" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-                  </div>
-                  <div>
-                    <div style={{ fontWeight:700, color:'#0A1628', fontSize:'0.97rem', marginBottom:4 }}>{item.title}</div>
-                    <div style={{ color:'#6b7280', fontSize:'0.9rem', lineHeight:1.7 }}>{item.desc}</div>
-                  </div>
-                </div>
-              ))}
             </div>
-
-            {/* Tools panel */}
-            <div>
-              <div style={{
-                background:'linear-gradient(135deg,rgba(254,243,199,0.55) 0%,rgba(219,234,254,0.35) 100%)',
-                borderRadius:20, padding:'36px 32px',
-              }}>
-                <h3 style={{ fontSize:'1.1rem', fontWeight:800, color:'#0A1628', marginBottom:24 }}>SEO Tools We Use</h3>
-                <div style={{ display:'flex', flexWrap:'wrap', gap:10 }}>
-                  {TOOLS.map(t => (
-                    <span key={t} style={{
-                      background:'#fff', border:'1px solid #e5e7eb',
-                      borderRadius:8, padding:'8px 14px',
-                      fontSize:'0.82rem', fontWeight:600, color:'#374151',
-                      boxShadow:'0 1px 4px rgba(0,0,0,0.06)',
-                    }}>{t}</span>
-                  ))}
+          </div>
+          <div>
+            <div className="wp-form-box">
+              <h3>Request Free SEO Audit</h3>
+              <form className="wp-contact-form" onSubmit={e => e.preventDefault()}>
+                <div className="wp-form-row">
+                  <div className="wp-form-group"><label>Full Name*</label><input type="text" placeholder="Full Name*" required /></div>
+                  <div className="wp-form-group"><label>Business Email*</label><input type="email" placeholder="Business Email Address*" required /></div>
                 </div>
-
-                <div style={{ marginTop:32, paddingTop:28, borderTop:'1px solid rgba(15,52,96,0.10)' }}>
-                  <h3 style={{ fontSize:'1.1rem', fontWeight:800, color:'#0A1628', marginBottom:20 }}>Industries We Serve</h3>
-                  <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:12 }}>
-                    {INDUSTRIES.map(ind => (
-                      <div key={ind.name} style={{ display:'flex', alignItems:'center', gap:10, fontSize:'0.87rem', fontWeight:500, color:'#374151' }}>
-                        <span style={{ fontSize:'1.1rem' }}>{ind.icon}</span>
-                        {ind.name}
-                      </div>
-                    ))}
+                <div className="wp-form-row">
+                  <div className="wp-form-group">
+                    <label>Phone Number*</label>
+                    <div className="wp-phone-input">
+                      <select>
+                        <option value="+91">+91</option>
+                        <option value="+1">+1</option>
+                        <option value="+44">+44</option>
+                        <option value="+61">+61</option>
+                      </select>
+                      <input type="tel" placeholder="Phone Number*" required />
+                    </div>
                   </div>
+                  <div className="wp-form-group"><label>Website URL*</label><input type="url" placeholder="https://yourwebsite.com" required /></div>
                 </div>
-              </div>
+                <div className="wp-form-group full">
+                  <label>Current SEO Challenge*</label>
+                  <select required>
+                    <option value="">Select your main SEO challenge</option>
+                    <option>My site does not rank on Google</option>
+                    <option>I lost rankings after a Google update</option>
+                    <option>I need more organic traffic</option>
+                    <option>I want to outrank competitors</option>
+                    <option>I need a full SEO strategy</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div className="wp-form-group full"><label>Tell Us More*</label><textarea placeholder="Describe your goals, target market, or any SEO challenges you are facing..." rows={5} required /></div>
+                <div className="wp-consent">
+                  <input type="checkbox" id="seo-consent" required />
+                  <label htmlFor="seo-consent">I consent that my personal data will be processed according to <Link href="/privacy-policy">1Solutions privacy policy</Link></label>
+                </div>
+                <button type="submit" className="wp-submit-btn">Get My Free SEO Audit</button>
+              </form>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── FAQ ── */}
-      <section style={{ background:'#f9fafb', padding:'80px 40px' }} aria-labelledby="faq-heading">
-        <div style={{ maxWidth:860, margin:'0 auto' }}>
-          <div style={{ textAlign:'center', marginBottom:52 }}>
-            <p style={{ color:'#D97706', fontSize:'0.82rem', fontWeight:700, letterSpacing:'0.15em', textTransform:'uppercase', marginBottom:12 }}>FAQ</p>
-            <h2 id="faq-heading" style={{ fontSize:'clamp(1.6rem,3vw,2.4rem)', fontWeight:800, color:'#0A1628', marginBottom:16 }}>
-              Frequently Asked Questions About Our SEO Services
-            </h2>
-          </div>
-
-          <div style={{ display:'flex', flexDirection:'column', gap:12 }}>
-            {FAQS.map((faq, i) => (
-              <div key={i} style={{
-                background:'#fff', borderRadius:14,
-                border: openFaq === i ? '1.5px solid #FE9700' : '1px solid #e5e7eb',
-                overflow:'hidden', transition:'border-color 0.2s',
-              }}>
-                <button
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  aria-expanded={openFaq === i}
-                  style={{
-                    width:'100%', textAlign:'left', padding:'20px 24px',
-                    background:'none', border:'none', cursor:'pointer',
-                    display:'flex', justifyContent:'space-between', alignItems:'center', gap:16,
-                  }}
-                >
-                  <span style={{ fontWeight:700, color:'#0A1628', fontSize:'0.97rem', lineHeight:1.4 }}>{faq.q}</span>
-                  <svg
-                    width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6b7280"
-                    strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
-                    style={{ flexShrink:0, transform: openFaq === i ? 'rotate(180deg)' : 'none', transition:'transform 0.2s' }}
-                    aria-hidden="true"
-                  >
-                    <path d="M19 9l-7 7-7-7"/>
-                  </svg>
+      {/* FAQ */}
+      <section className="seo-section seo-bg-light" id="faq">
+        <div className="seo-section-inner">
+          <span className="seo-section-tag">Got Questions?</span>
+          <h2 className="seo-section-h2">Frequently Asked <span>SEO Questions</span></h2>
+          <div className="seo-faq-list">
+            {FAQS.map((f, i) => (
+              <div key={i} className={"seo-faq-item" + (openFaq === i ? " open" : "")}>
+                <button className="seo-faq-q" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
+                  <span className="seo-faq-q-text">{f.q}</span>
+                  <span className="seo-faq-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  </span>
                 </button>
-                {openFaq === i && (
-                  <div style={{ padding:'0 24px 20px', color:'#4b5563', fontSize:'0.95rem', lineHeight:1.8 }}>
-                    {faq.a}
-                  </div>
-                )}
+                {openFaq === i && <div className="seo-faq-a">{f.a}</div>}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <section
-        style={{
-          background:'linear-gradient(135deg,rgba(254,243,199,0.70) 0%,rgba(255,255,255,0.60) 40%,rgba(219,234,254,0.65) 100%)',
-          padding:'90px 40px',
-          position:'relative',
-          overflow:'hidden',
-        }}
-        aria-labelledby="cta-heading"
-      >
-        <div style={{ position:'absolute', top:-80, right:-80, width:320, height:320, borderRadius:'50%', background:'radial-gradient(circle,rgba(254,151,0,0.12) 0%,transparent 70%)', pointerEvents:'none' }} />
-        <div style={{ position:'absolute', bottom:-60, left:-60, width:240, height:240, borderRadius:'50%', background:'radial-gradient(circle,rgba(15,52,96,0.07) 0%,transparent 70%)', pointerEvents:'none' }} />
-
-        <div style={{ maxWidth:820, margin:'0 auto', textAlign:'center', position:'relative', zIndex:1 }}>
-          <p style={{ color:'#D97706', fontSize:'0.82rem', fontWeight:700, letterSpacing:'0.15em', textTransform:'uppercase', marginBottom:16 }}>Free SEO Audit</p>
-          <h2 id="cta-heading" style={{
-            fontSize:'clamp(1.8rem,3.5vw,2.8rem)',
-            fontWeight:800,
-            background:'linear-gradient(90deg,#0F3460 0%,#F59E0B 50%,#7C3AED 100%)',
-            WebkitBackgroundClip:'text',
-            WebkitTextFillColor:'transparent',
-            backgroundClip:'text',
-            marginBottom:18, lineHeight:1.25,
-          }}>
-            Ready to Rank Higher and Grow Faster?
-          </h2>
-          <p style={{ color:'#4b5563', fontSize:'1.05rem', lineHeight:1.75, marginBottom:36, maxWidth:520, margin:'0 auto 36px' }}>
-            Get a <strong>free SEO audit</strong> of your website — covering technical health, keyword opportunities, and a priority action plan. No commitment, no fluff.
-          </p>
-          <div style={{ display:'flex', gap:16, justifyContent:'center', flexWrap:'wrap' }}>
-            <Link href="/contact" style={{
-              background:'#0F3460', color:'#fff',
-              padding:'15px 32px', borderRadius:50,
-              fontWeight:700, textDecoration:'none', fontSize:'0.97rem',
-              display:'inline-flex', alignItems:'center', gap:8,
-            }}>
+      {/* FINAL CTA */}
+      <section className="seo-cta-band">
+        <div className="seo-cta-orb1" />
+        <div className="seo-cta-orb2" />
+        <div className="seo-cta-inner">
+          <span className="seo-section-tag" style={{ display:'block',marginBottom:12 }}>Ready to Rank?</span>
+          <h2 className="seo-cta-h2">Start Growing Your Organic Traffic Today</h2>
+          <p className="seo-cta-desc">Join 500+ businesses that trust 1Solutions for their SEO. No lock-in contracts. Just results.</p>
+          <div className="seo-hero-btns" style={{ justifyContent:'center' }}>
+            <a href="#contact" className="seo-btn-primary">
               Get My Free SEO Audit
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </Link>
-            <Link href="/affordable-seo-packages" style={{
-              background:'rgba(15,52,96,0.07)', color:'#0F3460',
-              padding:'15px 32px', borderRadius:50,
-              fontWeight:700, textDecoration:'none', fontSize:'0.97rem',
-              border:'1.5px solid rgba(15,52,96,0.18)',
-              display:'inline-flex', alignItems:'center', gap:8,
-            }}>
-              View SEO Packages
-            </Link>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="/affordable-seo-packages/" className="seo-btn-secondary">View SEO Packages</a>
           </div>
-          <p style={{ marginTop:24, fontSize:'0.82rem', color:'#9ca3af' }}>
-            📞 Or call us directly: <a href="tel:+919654327900" style={{ color:'#0F3460', fontWeight:600, textDecoration:'none' }}>+91 9654327900</a> &nbsp;·&nbsp; <a href="mailto:info@1solutions.biz" style={{ color:'#0F3460', fontWeight:600, textDecoration:'none' }}>info@1solutions.biz</a>
-          </p>
         </div>
       </section>
     </>
