@@ -195,11 +195,11 @@ export default function SEOServices() {
         <meta name="description" content="1Solutions is a 15+ year old SEO company offering technical SEO, link building, local SEO, eCommerce SEO, and content strategy for businesses in the US, Canada & Australia. Get a free SEO audit." />
         <meta name="keywords" content="SEO services, SEO company India, SEO company New Delhi, technical SEO, local SEO, eCommerce SEO, link building, SEO agency US, SEO agency Canada, SEO agency Australia" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.1solutions.biz/seo-services-company" />
+        <link rel="canonical" href="https://www.1solutions.biz/seo-services" />
         {/* Open Graph */}
         <meta property="og:title" content="SEO Services Company | Rank #1 on Google – 1Solutions" />
         <meta property="og:description" content="ROI-driven SEO services. 500+ websites ranked page 1. 15+ years experience. Free audit for US, Canada & Australia businesses." />
-        <meta property="og:url" content="https://www.1solutions.biz/seo-services-company" />
+        <meta property="og:url" content="https://www.1solutions.biz/seo-services" />
         <meta property="og:type" content="website" />
         {/* Schema */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
