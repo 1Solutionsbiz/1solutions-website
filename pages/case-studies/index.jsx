@@ -1,7 +1,5 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import BlogHeader from '../../components/blog/BlogHeader';
-import Footer from '../../components/layout/Footer';
 
 export default function CaseStudies() {
   return (
@@ -13,57 +11,38 @@ export default function CaseStudies() {
         <link rel="canonical" href="https://www.1solutions.biz/case-studies" />
       </Head>
 
-      <BlogHeader />
-
       {/* ── HERO ── */}
       <section style={{
-        background: '#0A1628',
+        background: 'linear-gradient(135deg, rgba(254,243,199,0.55) 0%, rgba(219,234,254,0.35) 100%)',
         position: 'relative',
         overflow: 'hidden',
-        padding: '120px 0 90px',
+        padding: '100px 0 80px',
         minHeight: '420px',
         display: 'flex',
         alignItems: 'center',
       }}>
-        {/* Orange diagonal shape top-right (mirroring SparxIT red blob) */}
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          right: 0,
-          width: 0,
-          height: 0,
-          borderStyle: 'solid',
-          borderWidth: '0 340px 340px 0',
-          borderColor: 'transparent rgba(254,151,0,0.18) transparent transparent',
-          pointerEvents: 'none',
-        }} />
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          right: 0,
-          width: 0,
-          height: 0,
-          borderStyle: 'solid',
-          borderWidth: '0 200px 200px 0',
-          borderColor: 'transparent rgba(254,151,0,0.28) transparent transparent',
-          pointerEvents: 'none',
-        }} />
+        {/* Decorative orbs */}
+        <div style={{ position:'absolute', top:-80, right:-80, width:400, height:400, borderRadius:'50%', background:'radial-gradient(circle, rgba(254,151,0,0.13) 0%, transparent 70%)', pointerEvents:'none' }} />
+        <div style={{ position:'absolute', bottom:-60, left:-60, width:300, height:300, borderRadius:'50%', background:'radial-gradient(circle, rgba(124,58,237,0.08) 0%, transparent 70%)', pointerEvents:'none' }} />
 
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 40px', position: 'relative', zIndex: 1 }}>
-          <p style={{ color: '#FE9700', fontSize: '0.82rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 24 }}>
+          <p style={{ color: '#D97706', fontSize: '0.82rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 20 }}>
             Our Work
           </p>
           <h1 style={{
-            color: '#fff',
             fontSize: 'clamp(2rem, 4vw, 3.25rem)',
             fontWeight: 800,
             lineHeight: 1.2,
-            maxWidth: 700,
-            marginBottom: 28,
+            maxWidth: 720,
+            marginBottom: 24,
+            background: 'linear-gradient(90deg, #0F3460 0%, #F59E0B 45%, #7C3AED 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
           }}>
             See how we've helped brands evolve and thrive in this ever-changing world
           </h1>
-          <p style={{ color: 'rgba(255,255,255,0.60)', fontSize: '1.05rem', maxWidth: 540, marginBottom: 40, lineHeight: 1.75 }}>
+          <p style={{ color: '#4b5563', fontSize: '1.05rem', maxWidth: 540, marginBottom: 40, lineHeight: 1.75 }}>
             15+ years of delivering measurable results for clients across US, Canada, Australia and beyond.
           </p>
 
@@ -72,12 +51,12 @@ export default function CaseStudies() {
             display: 'inline-flex',
             alignItems: 'center',
             gap: 14,
-            background: 'rgba(255,255,255,0.07)',
+            background: 'rgba(15,52,96,0.07)',
             backdropFilter: 'blur(12px)',
-            border: '1.5px solid rgba(255,255,255,0.15)',
+            border: '1.5px solid rgba(15,52,96,0.18)',
             borderRadius: 50,
             padding: '12px 24px 12px 14px',
-            color: '#fff',
+            color: '#0F3460',
             textDecoration: 'none',
             fontSize: '0.95rem',
             fontWeight: 600,
@@ -92,7 +71,7 @@ export default function CaseStudies() {
                 <span key={i} style={{
                   width: 32, height: 32, borderRadius: '50%',
                   background: av.bg,
-                  border: '2.5px solid #0A1628',
+                  border: '2.5px solid #fff',
                   marginLeft: i === 0 ? 0 : -10,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontSize: '0.65rem', fontWeight: 800, color: '#fff',
@@ -282,7 +261,6 @@ export default function CaseStudies() {
         </div>
       </section>
 
-      <Footer />
     </>
   );
 }
