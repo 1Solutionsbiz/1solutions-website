@@ -706,90 +706,110 @@ body {
   animation: bh-mega-drop 0.18s ease;
 }
 
+/* No outer padding — columns control their own */
 .bh-svc-inner {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 240px 200px 1fr;
-  min-height: 300px;
-  padding: 0 40px;
+  grid-template-columns: 260px 220px 1fr;
+  min-height: 320px;
 }
 
 .bh-svc-col-heading {
   font-size: 10px; font-weight: 700; letter-spacing: 0.13em;
-  color: #9ca3af; text-transform: uppercase; margin: 0 0 10px;
+  color: #9ca3af; text-transform: uppercase; margin: 0 0 8px;
 }
 
-/* ── Column 1: Pillars ── */
+/* ── Column 1: Pillars — light grey bg like SparxIT ── */
 .bh-svc-pillars {
-  padding: 24px 16px 20px 0;
+  background: #f5f6f8;        /* subtle off-white/grey, same as SparxIT left col */
+  padding: 24px 16px 20px 40px;
   display: flex; flex-direction: column;
-  border-right: 1px solid #f0f0f0;
+  border-right: 1px solid #eaecef;
 }
 
 .bh-svc-pillar {
-  display: flex; align-items: center; gap: 10px;
+  display: flex; align-items: center; gap: 12px;
   width: 100%; background: none; border: none; cursor: pointer;
-  font-family: inherit; font-size: 13.5px; font-weight: 500; color: #374151;
-  padding: 10px 12px; border-radius: 8px; text-align: left;
+  font-family: inherit; font-size: 14px; font-weight: 500; color: #374151;
+  padding: 13px 14px; border-radius: 8px; text-align: left;
+  line-height: 1.5;            /* more line height as seen in SparxIT */
   transition: background 0.15s, color 0.15s;
 }
-.bh-svc-pillar:hover { background: rgba(254,151,0,0.06); color: #1f2937; }
+.bh-svc-pillar:hover { background: rgba(254,151,0,0.07); color: #1f2937; }
 .bh-svc-pillar.bh-svc-pillar-on {
-  background: rgba(254,151,0,0.08);
+  background: #fff;
   color: #1f2937;
   border-left: 3px solid #FE9700;
-  padding-left: 9px;
+  padding-left: 11px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
 .bh-svc-pillar.bh-svc-pillar-on .bh-ind-icon-wrap { background: rgba(254,151,0,0.15); color: #D97706; }
-.bh-svc-pillar-label { flex: 1; line-height: 1.3; }
+.bh-svc-pillar-label { flex: 1; line-height: 1.4; }
 .bh-svc-pillar-arrow { opacity: 0; transition: opacity 0.15s; flex-shrink: 0; color: #FE9700; }
 .bh-svc-pillar:hover .bh-svc-pillar-arrow,
 .bh-svc-pillar.bh-svc-pillar-on .bh-svc-pillar-arrow { opacity: 1; }
 
-.bh-svc-view-all { margin-top: auto; padding-top: 14px; border-top: 1px solid #f3f4f6; }
+.bh-svc-view-all { margin-top: auto; padding-top: 14px; border-top: 1px solid #e5e7eb; }
 .bh-svc-view-all a { font-size: 12.5px; font-weight: 600; color: #FE9700; text-decoration: none; }
 .bh-svc-view-all a:hover { text-decoration: underline; }
 
-/* ── Column 2: Sub-categories ── */
+/* ── Column 2: Sub-categories — plain text links with dividers ── */
 .bh-svc-subcats {
-  padding: 24px 16px 20px 20px;
+  background: #fff;
+  padding: 24px 0 20px 0;
   display: flex; flex-direction: column;
-  border-right: 1px solid #f0f0f0;
+  border-right: 1px solid #eaecef;
 }
+.bh-svc-subcats .bh-svc-col-heading { padding: 0 20px; }
 
 .bh-svc-subcat {
   display: flex; align-items: center; justify-content: space-between; gap: 8px;
   width: 100%; background: none; border: none; cursor: pointer;
-  font-family: inherit; font-size: 13px; font-weight: 500; color: #4b5563;
-  padding: 10px 12px; border-radius: 8px; text-align: left;
-  transition: background 0.15s, color 0.15s;
+  font-family: inherit; font-size: 13.5px; font-weight: 400; color: #4b5563;
+  padding: 13px 20px; text-align: left;
+  border-bottom: 1px solid #f3f4f6;
+  transition: color 0.15s, background 0.15s;
+  white-space: nowrap;          /* keep on single line like SparxIT */
 }
-.bh-svc-subcat:hover { background: rgba(254,151,0,0.06); color: #1f2937; }
+.bh-svc-subcat:last-child { border-bottom: none; }
+.bh-svc-subcat:hover { background: rgba(254,151,0,0.05); color: #1f2937; }
 .bh-svc-subcat.bh-svc-subcat-on {
-  background: rgba(254,151,0,0.08);
-  color: #D97706; font-weight: 600;
+  color: #FE9700; font-weight: 600;
+  background: rgba(254,151,0,0.04);
 }
 
-/* ── Column 3: Services 2-col grid ── */
-.bh-svc-grid-col { padding: 24px 0 20px 24px; }
+/* ── Column 3: Services 2-col grid — bigger titles, 2-line desc ── */
+.bh-svc-grid-col {
+  background: #fff;
+  padding: 24px 40px 20px 28px;
+}
 
 .bh-svc-grid-2col {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2px 12px;
+  gap: 0 16px;
 }
 
 .bh-svc-item {
   display: flex; flex-direction: column;
-  padding: 10px 12px; border-radius: 8px;
+  padding: 14px 12px; border-radius: 8px;
   text-decoration: none; transition: background 0.15s;
-  border-left: 2px solid transparent;
+  border-bottom: 1px solid #f9f9f9;
 }
-.bh-svc-item:hover { background: rgba(254,151,0,0.06); border-left-color: #FE9700; }
-.bh-svc-item .bh-ind-name { font-size: 13px; font-weight: 600; color: #1f2937; margin-bottom: 2px; }
+.bh-svc-item:hover { background: rgba(254,151,0,0.05); }
+/* Bigger title like SparxIT — ~15px, bold, good line-height */
+.bh-svc-item .bh-ind-name {
+  font-size: 15px; font-weight: 600; color: #1f2937;
+  margin-bottom: 5px; line-height: 1.4;
+}
 .bh-svc-item:hover .bh-ind-name { color: #D97706; }
-.bh-svc-item .bh-ind-desc { font-size: 11.5px; color: #6b7280; line-height: 1.4; }
+/* 2-line description */
+.bh-svc-item .bh-ind-desc {
+  font-size: 12.5px; color: #6b7280; line-height: 1.6;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
 /* Mobile sub-category label */
 .bh-mob-subcat-label {
