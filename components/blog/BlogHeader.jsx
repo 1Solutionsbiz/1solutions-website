@@ -125,6 +125,95 @@ const SVC_PILLARS = [
       },
     ],
   },
+  {
+    id: 'hire',
+    label: 'Hire On Demand',
+    icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z',
+    subcats: [
+      {
+        id: 'hire-app', label: 'Hire App Developer',
+        services: [
+          { name: 'iOS Developer',         desc: 'Expert iOS devs building user-centric Swift & Objective-C apps.',         href: '/hire-ios-developer/' },
+          { name: 'Android Developer',     desc: 'Skilled Android devs crafting high-quality apps for any device.',         href: '/hire-android-developer/' },
+          { name: 'App Developer',         desc: 'Experienced app developers who bring your mobile ideas to life.',         href: '/hire-app-developer/' },
+          { name: 'Swift Developer',       desc: 'Swift specialists for fast, modern & secure iOS development.',            href: '/hire-swift-developer/' },
+          { name: 'React Native Developer',desc: 'Cross-platform experts building performant apps with React Native.',      href: '/hire-react-native-developer/' },
+          { name: 'Flutter Developer',     desc: 'Flutter pros delivering stunning native-like apps on every platform.',    href: '/hire-flutter-developer/' },
+          { name: 'PWA Developer',         desc: 'PWA specialists delivering app-like web experiences on any device.',      href: '/hire-pwa-developer/' },
+        ],
+      },
+      {
+        id: 'hire-js', label: 'Hire JS Developer',
+        services: [
+          { name: 'Node.js Developer',     desc: 'Node.js experts building scalable, event-driven backend systems.',       href: '/hire-nodejs-developer/' },
+          { name: 'React.js Developer',    desc: 'React specialists creating fast, dynamic & interactive UIs.',            href: '/hire-reactjs-developer/' },
+          { name: 'Angular Developer',     desc: 'Angular engineers building robust enterprise-grade web apps.',           href: '/hire-angularjs-developer/' },
+          { name: 'JavaScript Developer',  desc: 'Versatile JS developers proficient across the full stack.',             href: '/hire-javascript-developer/' },
+        ],
+      },
+      {
+        id: 'hire-design', label: 'Hire UI/UX Designer',
+        services: [
+          { name: 'Web Designer',          desc: 'Creative designers crafting visually stunning digital experiences.',     href: '/hire-web-designer/' },
+          { name: 'UI/UX Designer',        desc: 'User experience experts delivering intuitive, conversion-focused design.',href: '/hire-ui-ux-designer/' },
+        ],
+      },
+      {
+        id: 'hire-fullstack', label: 'Hire Full Stack Developer',
+        services: [
+          { name: 'MERN Stack Developer',  desc: 'Full-stack MERN specialists for end-to-end modern web solutions.',      href: '/hire-mern-stack-developer/' },
+          { name: 'MEAN Stack Developer',  desc: 'MEAN stack experts for versatile, scalable web applications.',          href: '/hire-mean-stack-developer/' },
+          { name: 'Full Stack Developer',  desc: 'Versatile full-stack devs covering your entire project needs.',         href: '/hire-full-stack-developer/' },
+        ],
+      },
+      {
+        id: 'offshore', label: 'Offshore Development',
+        services: [
+          { name: 'Offshore Developer',    desc: 'Top-tier offshore developers for global projects at competitive rates.', href: '/offshore-development-company/' },
+          { name: 'Team Outsourcing',      desc: 'Dedicated outsourced teams aligned with your processes and goals.',     href: '/it-outsourcing-services/' },
+          { name: 'Staff Augmentation',    desc: 'Scale your team instantly with vetted, on-demand developers.',          href: '/it-staff-augmentation-services/' },
+          { name: 'Virtual CTO',           desc: 'Strategic technology leadership without the full-time commitment.',     href: '/virtual-cto-services/' },
+          { name: 'Cost Optimization',     desc: 'Significant development savings with smart resource planning.',         href: '/software-development-cost-optimization/' },
+        ],
+      },
+      {
+        id: 'hire-web', label: 'Hire Web Developer',
+        services: [
+          { name: 'Shopify Developer',     desc: 'Shopify experts building high-converting custom online stores.',        href: '/hire-shopify-developer/' },
+          { name: 'WordPress Developer',   desc: 'WordPress specialists for flexible, SEO-ready websites.',              href: '/hire-wordpress-developer/' },
+          { name: 'Magento Developer',     desc: 'Magento pros delivering robust, feature-rich eCommerce platforms.',    href: '/hire-magento-developer/' },
+          { name: 'PrestaShop Developer',  desc: 'PrestaShop devs building tailored, scalable online storefronts.',      href: '/hire-prestashop-developer/' },
+          { name: 'Drupal Developer',      desc: 'Drupal specialists for powerful CMS and content-driven platforms.',    href: '/hire-drupal-developer/' },
+          { name: 'PHP Developer',         desc: 'PHP veterans building dynamic, high-performance web applications.',    href: '/hire-php-developer/' },
+          { name: 'Python Developer',      desc: 'Python experts creating clean, maintainable & scalable web apps.',     href: '/hire-python-developer/' },
+          { name: 'Web Developer',         desc: 'Top-tier web talent matched to your stack and project requirements.',  href: '/hire-web-developer/' },
+        ],
+      },
+      {
+        id: 'hire-trending', label: 'Hire Trending Developer',
+        services: [
+          { name: 'AR Developer',          desc: 'AR specialists creating immersive augmented reality apps and games.',   href: '/hire-ar-developer/' },
+          { name: 'VR Developer',          desc: 'VR engineers building phenomenal virtual reality experiences.',        href: '/hire-vr-developer/' },
+          { name: 'ML Developer',          desc: 'Machine learning engineers building intelligent, data-driven models.',  href: '/hire-ml-developer/' },
+          { name: 'Salesforce Developer',  desc: 'Salesforce experts customising CRM platforms for maximum ROI.',        href: '/hire-salesforce-developer/' },
+          { name: 'Data Scientist',        desc: 'Data scientists extracting actionable insights from complex datasets.', href: '/hire-data-scientist/' },
+          { name: 'Trending Tech Expert',  desc: 'Pioneers in AR/VR, ML, AI & next-gen technology stacks.',            href: '/hire-trending-developer/' },
+        ],
+      },
+      {
+        id: 'hire-blockchain', label: 'Hire Blockchain Developer',
+        services: [
+          { name: 'Blockchain Developer',  desc: 'Blockchain engineers building secure, decentralised smart solutions.',  href: '/hire-blockchain-developer/' },
+        ],
+      },
+      {
+        id: 'hire-ai', label: 'Hire AI Developer',
+        services: [
+          { name: 'AI Developer',          desc: 'Top AI talent driving your next tech breakthrough with cutting-edge ML.',href: '/hire-ai-developer/' },
+        ],
+      },
+    ],
+  },
 ];
 
 /* ── Industries mega menu data ───────────────────────────────────── */
