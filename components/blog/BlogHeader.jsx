@@ -3,61 +3,126 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-/* ── Services mega menu data ─────────────────────────────────────── */
-const MEGA = [
+/* ── Services mega menu — 3-column SparxIT structure ────────────── */
+const SVC_PILLARS = [
   {
-    id: 'web', label: 'Web Development', color: '#0ea5e9',
-    services: [
-      { name: 'Python Development',     desc: 'Django & Flask web applications',   href: '/python-development-services/' },
-      { name: 'Laravel Development',    desc: 'Robust PHP Laravel solutions',      href: '/laravel-development-company/' },
-      { name: 'CodeIgniter Development',desc: 'Lightweight PHP web apps',          href: '/codeigniter-development-company/' },
-      { name: 'Drupal Development',     desc: 'Enterprise CMS platforms',          href: '/drupal-development-company/' },
-      { name: 'WordPress Development',  desc: 'Custom themes, plugins & sites',    href: '/#services' },
-      { name: 'PHP Development',        desc: 'Bespoke PHP web applications',      href: '/#services' },
+    id: 'web',
+    label: 'Web & App Development',
+    icon: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
+    subcats: [
+      {
+        id: 'web-dev', label: 'Web Development',
+        services: [
+          { name: 'WordPress Development',   desc: 'Custom themes, plugins & CMS',       href: '/wordpress-development-company/' },
+          { name: 'Laravel Development',     desc: 'Robust PHP Laravel solutions',        href: '/laravel-development-company/' },
+          { name: 'Python Development',      desc: 'Django & Flask web applications',     href: '/python-development-services/' },
+          { name: 'PHP Development',         desc: 'Bespoke PHP web applications',        href: '/#services' },
+          { name: 'CodeIgniter Development', desc: 'Lightweight PHP web apps',            href: '/codeigniter-development-company/' },
+          { name: 'Drupal Development',      desc: 'Enterprise CMS platforms',            href: '/drupal-development-company/' },
+        ],
+      },
+      {
+        id: 'mobile', label: 'Mobile App Development',
+        services: [
+          { name: 'iOS App Development',     desc: 'Native Swift & Xcode apps',           href: '/#services' },
+          { name: 'Android Development',     desc: 'Native Kotlin applications',           href: '/#services' },
+          { name: 'React Native',            desc: 'Cross-platform mobile apps',           href: '/#services' },
+          { name: 'Flutter Development',     desc: 'Beautiful cross-platform UIs',         href: '/#services' },
+          { name: 'App UI/UX Design',        desc: 'Intuitive mobile experiences',         href: '/#services' },
+          { name: 'App Maintenance',         desc: 'Ongoing updates & support',            href: '/#services' },
+        ],
+      },
+      {
+        id: 'design', label: 'UI/UX Design',
+        services: [
+          { name: 'Website Design',          desc: 'Conversion-focused web design',        href: '/#services' },
+          { name: 'Mobile App Design',       desc: 'iOS & Android UI design',              href: '/#services' },
+          { name: 'Brand Identity',          desc: 'Logo, colours & typography systems',   href: '/#services' },
+          { name: 'Design Systems',          desc: 'Scalable component libraries',         href: '/#services' },
+          { name: 'Prototyping',             desc: 'Interactive wireframes & flows',       href: '/#services' },
+          { name: 'UX Research',             desc: 'User testing & journey mapping',       href: '/#services' },
+        ],
+      },
     ],
   },
   {
-    id: 'ecommerce', label: 'eCommerce', color: '#f59e0b',
-    services: [
-      { name: 'eCommerce Development',  desc: 'End-to-end online store builds',    href: '/ecommerce-website-development/' },
-      { name: 'Magento Development',    desc: 'Enterprise Magento 2 solutions',    href: '/magento-development-company/' },
-      { name: 'WooCommerce Development',desc: 'WordPress-powered online stores',   href: '/woocommerce-development-company/' },
-      { name: 'OpenCart Development',   desc: 'Scalable OpenCart storefronts',     href: '/opencart-development-company/' },
-      { name: 'Shopify Development',    desc: 'Custom Shopify stores & apps',      href: '/#services' },
-      { name: 'B2B eCommerce',          desc: 'Wholesale & trade portal solutions',href: '/#services' },
+    id: 'marketing',
+    label: 'Digital Marketing & SEO',
+    icon: 'M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
+    subcats: [
+      {
+        id: 'seo', label: 'SEO Services',
+        services: [
+          { name: 'SEO Services',            desc: 'Full-service search optimisation',     href: '/seo-services-company/' },
+          { name: 'Technical SEO',           desc: 'Site speed, crawlability & schema',    href: '/seo-services-company/' },
+          { name: 'Local SEO',               desc: 'Dominate local search results',        href: '/seo-services-company/' },
+          { name: 'eCommerce SEO',           desc: 'Product & category page rankings',     href: '/seo-services-company/' },
+          { name: 'SEO Audit',               desc: 'Comprehensive site health check',      href: '/seo-services-company/' },
+          { name: 'SEO Packages',            desc: 'Affordable monthly SEO plans',         href: '/affordable-seo-packages/' },
+        ],
+      },
+      {
+        id: 'paid', label: 'Paid Advertising',
+        services: [
+          { name: 'Google Ads (PPC)',        desc: 'Search & display campaign management', href: '/#services' },
+          { name: 'Meta Ads',                desc: 'Facebook & Instagram advertising',     href: '/#services' },
+          { name: 'LinkedIn Ads',            desc: 'B2B lead generation campaigns',        href: '/#services' },
+          { name: 'Google Shopping',         desc: 'eCommerce product listing ads',        href: '/#services' },
+          { name: 'Remarketing',             desc: 'Retarget and convert lost visitors',   href: '/#services' },
+          { name: 'PPC Audit',               desc: 'Optimise your existing ad spend',      href: '/#services' },
+        ],
+      },
+      {
+        id: 'content', label: 'Content & Social',
+        services: [
+          { name: 'Content Marketing',       desc: 'SEO content that ranks & converts',   href: '/#services' },
+          { name: 'Social Media Marketing',  desc: 'Brand growth on social platforms',    href: '/#services' },
+          { name: 'Email Marketing',         desc: 'Automated drip campaigns',            href: '/#services' },
+          { name: 'Analytics & CRO',         desc: 'Data-driven growth optimisation',     href: '/#services' },
+          { name: 'Reputation Management',   desc: 'Monitor & protect your brand online', href: '/#services' },
+          { name: 'Video Marketing',         desc: 'YouTube & short-form video strategy', href: '/#services' },
+        ],
+      },
     ],
   },
   {
-    id: 'marketing', label: 'Digital Marketing', color: '#10b981',
-    services: [
-      { name: 'SEO Packages',           desc: 'Affordable monthly SEO plans',      href: '/affordable-seo-packages/' },
-      { name: 'PPC Advertising',        desc: 'Google & Meta Ads management',      href: '/#services' },
-      { name: 'Social Media Marketing', desc: 'Brand growth on social platforms',  href: '/#services' },
-      { name: 'Content Marketing',      desc: 'SEO content that ranks & converts', href: '/#services' },
-      { name: 'Email Marketing',        desc: 'Automated drip campaigns',          href: '/#services' },
-      { name: 'Analytics & CRO',        desc: 'Data-driven growth optimisation',   href: '/#services' },
-    ],
-  },
-  {
-    id: 'mobile', label: 'Mobile Apps', color: '#8b5cf6',
-    services: [
-      { name: 'iOS App Development',    desc: 'Native Swift & Xcode apps',         href: '/#services' },
-      { name: 'Android App Development',desc: 'Native Kotlin applications',        href: '/#services' },
-      { name: 'React Native',           desc: 'Cross-platform mobile apps',        href: '/#services' },
-      { name: 'Flutter Development',    desc: 'Beautiful cross-platform UIs',      href: '/#services' },
-      { name: 'App UI/UX Design',       desc: 'Intuitive mobile experiences',      href: '/#services' },
-      { name: 'App Maintenance',        desc: 'Ongoing updates & support',         href: '/#services' },
-    ],
-  },
-  {
-    id: 'design', label: 'UI/UX Design', color: '#ec4899',
-    services: [
-      { name: 'Website Design',         desc: 'Conversion-focused web design',     href: '/#services' },
-      { name: 'Mobile App Design',      desc: 'iOS & Android UI design',           href: '/#services' },
-      { name: 'Brand Identity',         desc: 'Logo, colours & typography systems',href: '/#services' },
-      { name: 'Design Systems',         desc: 'Scalable component libraries',      href: '/#services' },
-      { name: 'Prototyping',            desc: 'Interactive wireframes & flows',    href: '/#services' },
-      { name: 'UX Research',            desc: 'User testing & journey mapping',    href: '/#services' },
+    id: 'ecommerce',
+    label: 'eCommerce Solutions',
+    icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z',
+    subcats: [
+      {
+        id: 'platforms', label: 'Platform Development',
+        services: [
+          { name: 'Shopify Development',     desc: 'Custom Shopify stores & apps',         href: '/#services' },
+          { name: 'WooCommerce Development', desc: 'WordPress-powered online stores',      href: '/woocommerce-development-company/' },
+          { name: 'Magento Development',     desc: 'Enterprise Magento 2 solutions',       href: '/magento-development-company/' },
+          { name: 'OpenCart Development',    desc: 'Scalable OpenCart storefronts',        href: '/opencart-development-company/' },
+          { name: 'eCommerce Development',   desc: 'Custom end-to-end store builds',       href: '/ecommerce-website-development-services/' },
+          { name: 'B2B eCommerce',           desc: 'Wholesale & trade portal solutions',   href: '/#services' },
+        ],
+      },
+      {
+        id: 'store-opt', label: 'Store Optimization',
+        services: [
+          { name: 'Conversion Rate Optimization', desc: 'Turn visitors into buyers',       href: '/#services' },
+          { name: 'Site Speed Optimization', desc: 'Faster stores, better conversions',    href: '/#services' },
+          { name: 'Product Page SEO',        desc: 'Rank product pages on Google',         href: '/#services' },
+          { name: 'Checkout Optimization',   desc: 'Reduce cart abandonment',              href: '/#services' },
+          { name: 'UX Audit',                desc: 'Identify and fix friction points',     href: '/#services' },
+          { name: 'A/B Testing',             desc: 'Data-driven design experiments',       href: '/#services' },
+        ],
+      },
+      {
+        id: 'ecom-mkt', label: 'eCommerce Marketing',
+        services: [
+          { name: 'Google Shopping Ads',     desc: 'Product listing campaign management',  href: '/#services' },
+          { name: 'Amazon Marketing',        desc: 'Amazon SEO & sponsored ads',           href: '/#services' },
+          { name: 'eCommerce SEO',           desc: 'Organic traffic for your store',       href: '/seo-services-company/' },
+          { name: 'Email Automation',        desc: 'Cart recovery & lifecycle emails',     href: '/#services' },
+          { name: 'Social Commerce',         desc: 'Sell on Instagram & Facebook',         href: '/#services' },
+          { name: 'Influencer Marketing',    desc: 'Build brand trust at scale',           href: '/#services' },
+        ],
+      },
     ],
   },
 ];
@@ -97,7 +162,8 @@ export default function BlogHeader() {
   const [open,            setOpen]            = useState(false);
   const [scrolled,        setScrolled]        = useState(false);
   const [megaOpen,        setMegaOpen]        = useState(false);
-  const [activeCategory,  setActiveCategory]  = useState('web');
+  const [activePillar,    setActivePillar]    = useState('web');
+  const [activeSubcat,    setActiveSubcat]    = useState('web-dev');
   const [indOpen,          setIndOpen]          = useState(false);
   const [aboutOpen,        setAboutOpen]        = useState(false);
   const [mobServicesOpen,  setMobServicesOpen]  = useState(false);
@@ -143,7 +209,8 @@ export default function BlogHeader() {
   const openAbout       = () => { clearTimeout(aboutCloseTimer.current); setAboutOpen(true); setMegaOpen(false); setIndOpen(false); };
   const delayCloseAbout = () => { aboutCloseTimer.current = setTimeout(() => setAboutOpen(false), 160); };
 
-  const activeCat = MEGA.find(c => c.id === activeCategory) || MEGA[0];
+  const activePillarData = SVC_PILLARS.find(p => p.id === activePillar) || SVC_PILLARS[0];
+  const activeSubcatData = activePillarData.subcats.find(s => s.id === activeSubcat) || activePillarData.subcats[0];
 
   return (
     <>
@@ -241,54 +308,96 @@ export default function BlogHeader() {
 
         </div>
 
-        {/* ── SERVICES MEGA PANEL ── */}
+        {/* ── SERVICES MEGA PANEL (3-column SparxIT style) ── */}
         {megaOpen && (
           <div
-            className="bh-mega"
+            className="bh-svc-mega"
             onMouseEnter={openMega}
             onMouseLeave={delayClose}
             role="dialog"
             aria-label="Services mega menu"
           >
-            <div className="bh-mega-inner">
-              <div className="bh-mega-left">
-                <p className="bh-mega-left-heading">Our Services</p>
-                {MEGA.map(cat => (
+            <div className="bh-svc-inner">
+
+              {/* Column 1: Pillars */}
+              <div className="bh-svc-pillars">
+                <p className="bh-svc-col-heading">SERVICE PILLARS</p>
+                {SVC_PILLARS.map(pillar => (
                   <button
-                    key={cat.id}
-                    className={`bh-mega-cat${activeCategory === cat.id ? ' bh-mega-cat-on' : ''}`}
-                    style={activeCategory === cat.id ? { borderLeftColor: cat.color } : {}}
-                    onMouseEnter={() => setActiveCategory(cat.id)}
-                    onClick={() => setActiveCategory(cat.id)}
+                    key={pillar.id}
+                    className={`bh-svc-pillar${activePillar === pillar.id ? ' bh-svc-pillar-on' : ''}`}
+                    onMouseEnter={() => {
+                      setActivePillar(pillar.id);
+                      setActiveSubcat(pillar.subcats[0].id);
+                    }}
+                    onClick={() => {
+                      setActivePillar(pillar.id);
+                      setActiveSubcat(pillar.subcats[0].id);
+                    }}
                   >
-                    <span className="bh-mega-cat-dot" style={{ background: activeCategory === cat.id ? cat.color : 'rgba(255,255,255,0.18)' }} />
-                    <span className="bh-mega-cat-name">{cat.label}</span>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" width="12" height="12" aria-hidden="true">
+                    <span className="bh-ind-icon-wrap" style={{ flexShrink: 0 }}>
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <path d={pillar.icon} />
+                      </svg>
+                    </span>
+                    <span className="bh-svc-pillar-label">{pillar.label}</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" width="12" height="12" className="bh-svc-pillar-arrow" aria-hidden="true">
                       <path d="M9 18l6-6-6-6"/>
                     </svg>
                   </button>
                 ))}
-                <div className="bh-mega-all">
+                <div className="bh-svc-view-all">
                   <Link href="/#services" onClick={close}>View all services →</Link>
                 </div>
               </div>
-              <div className="bh-mega-right">
-                <p className="bh-mega-right-heading" style={{ color: activeCat.color }}>{activeCat.label}</p>
-                <div className="bh-mega-grid">
-                  {activeCat.services.map(svc => (
-                    <Link key={svc.name} href={svc.href} className="bh-mega-svc" onClick={close}>
-                      <span className="bh-mega-svc-dot" style={{ background: activeCat.color }} />
-                      <span>
-                        <span className="bh-mega-svc-name">{svc.name}</span>
-                        <span className="bh-mega-svc-desc">{svc.desc}</span>
-                      </span>
+
+              {/* Column 2: Sub-categories */}
+              <div className="bh-svc-subcats">
+                <p className="bh-svc-col-heading">{activePillarData.label.toUpperCase()}</p>
+                {activePillarData.subcats.map(sub => (
+                  <button
+                    key={sub.id}
+                    className={`bh-svc-subcat${activeSubcat === sub.id ? ' bh-svc-subcat-on' : ''}`}
+                    onMouseEnter={() => setActiveSubcat(sub.id)}
+                    onClick={() => setActiveSubcat(sub.id)}
+                  >
+                    {sub.label}
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" width="11" height="11" aria-hidden="true">
+                      <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                  </button>
+                ))}
+              </div>
+
+              {/* Column 3: Services grid (2 cols) */}
+              <div className="bh-svc-grid-col">
+                <p className="bh-svc-col-heading">{activeSubcatData.label.toUpperCase()}</p>
+                <div className="bh-svc-grid-2col">
+                  {activeSubcatData.services.map(svc => (
+                    <Link key={svc.name} href={svc.href} className="bh-svc-item" onClick={close}>
+                      <span className="bh-ind-name">{svc.name}</span>
+                      <span className="bh-ind-desc">{svc.desc}</span>
                     </Link>
                   ))}
                 </div>
-                <div className="bh-mega-footer">
-                  <span>Not sure which service fits your needs?</span>
-                  <Link href="/contact" className="bh-mega-footer-cta" onClick={close}>Talk to our team →</Link>
-                </div>
+              </div>
+
+            </div>
+            <div className="bh-ind-footer">
+              <div className="bh-ind-footer-left">
+                <span className="bh-ind-footer-text">Not sure which service fits your needs?</span>
+                <Link href="/contact" className="bh-ind-footer-cta" onClick={close}>Talk to our team →</Link>
+              </div>
+              <div className="bh-ind-footer-right">
+                <a href="mailto:info@1solutions.biz" className="bh-ind-footer-contact">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                  info@1solutions.biz
+                </a>
+                <span className="bh-ind-footer-sep" />
+                <a href="tel:+919654327900" className="bh-ind-footer-contact">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                  +91 9654327900
+                </a>
               </div>
             </div>
           </div>
@@ -400,11 +509,16 @@ export default function BlogHeader() {
           </button>
           {mobServicesOpen && (
             <div className="bh-mob-svc-panel">
-              {MEGA.map(cat => (
-                <div key={cat.id} className="bh-mob-cat">
-                  <span className="bh-mob-cat-label" style={{ color: cat.color }}>{cat.label}</span>
-                  {cat.services.map(svc => (
-                    <Link key={svc.name} href={svc.href} className="bh-mob-svc-link" onClick={close}>{svc.name}</Link>
+              {SVC_PILLARS.map(pillar => (
+                <div key={pillar.id} className="bh-mob-cat">
+                  <span className="bh-mob-cat-label" style={{ color: '#FE9700' }}>{pillar.label}</span>
+                  {pillar.subcats.map(sub => (
+                    <div key={sub.id}>
+                      <span className="bh-mob-subcat-label">{sub.label}</span>
+                      {sub.services.map(svc => (
+                        <Link key={svc.name} href={svc.href} className="bh-mob-svc-link" onClick={close}>{svc.name}</Link>
+                      ))}
+                    </div>
                   ))}
                 </div>
               ))}
