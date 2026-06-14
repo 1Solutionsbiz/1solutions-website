@@ -82,29 +82,25 @@ export default function SeoServices() {
           .seo-hero { position:relative;overflow:hidden;padding:100px 40px 90px;background:linear-gradient(135deg,rgba(254,243,199,0.55) 0%,rgba(255,255,255,0.70) 50%,rgba(219,234,254,0.45) 100%); }
           .seo-hero-orb1 { position:absolute;top:-120px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(254,151,0,0.13) 0%,transparent 70%);pointer-events:none;filter:blur(10px); }
           .seo-hero-orb2 { position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,0.09) 0%,transparent 70%);pointer-events:none;filter:blur(8px); }
-          .seo-hero-inner { max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 400px;gap:60px;align-items:center;position:relative;z-index:1; }
+          .seo-hero-inner { max-width:1200px;margin:0 auto;position:relative;z-index:1; }
           .seo-eyebrow { display:inline-flex;align-items:center;gap:8px;background:rgba(254,151,0,0.10);border:1px solid rgba(254,151,0,0.25);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#D97706;margin-bottom:24px; }
-          .seo-h1 { font-size:clamp(2.2rem,4vw,3.4rem);font-weight:900;line-height:1.15;letter-spacing:-1.5px;margin:0 0 22px;background:linear-gradient(90deg,#0F3460 0%,#F59E0B 50%,#7C3AED 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .seo-hero-desc { font-size:1.05rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:560px; }
+          .seo-h1 { font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;background:linear-gradient(90deg,#0F3460 0%,#F59E0B 45%,#7C3AED 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+          .seo-hero-desc { font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:660px; }
           .seo-hero-btns { display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px; }
           .seo-btn-primary { display:inline-flex;align-items:center;gap:8px;background:#0F3460;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 6px 24px rgba(15,52,96,0.25); }
           .seo-btn-primary:hover { background:#0a2448;transform:translateY(-2px);box-shadow:0 10px 32px rgba(15,52,96,0.32); }
           .seo-btn-secondary { display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.7);color:#0F3460;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;border:1.5px solid rgba(15,52,96,0.18);transition:all 0.25s;backdrop-filter:blur(8px); }
           .seo-btn-secondary:hover { background:#fff;transform:translateY(-2px);border-color:rgba(254,151,0,0.4); }
-          .seo-trust-row { display:flex;flex-wrap:wrap;gap:20px;align-items:center; }
+          .seo-trust-row { display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-bottom:56px; }
           .seo-trust-badge { display:flex;align-items:center;gap:6px;font-size:12px;color:#6b7280;font-weight:500; }
           .seo-trust-badge svg { color:#FE9700; }
-          .seo-hero-card { background:linear-gradient(135deg,rgba(255,255,255,0.88) 0%,rgba(237,233,254,0.25) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.92);border-radius:24px;padding:36px;box-shadow:0 8px 48px rgba(15,52,96,0.12),inset 0 1px 0 rgba(255,255,255,1); }
-          .seo-hero-card-title { font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#9ca3af;margin:0 0 24px; }
-          .seo-stat-grid { display:grid;grid-template-columns:1fr 1fr;gap:24px 20px; }
-          .seo-stat-item { display:flex;flex-direction:column;gap:4px; }
-          .seo-stat-num { font-size:2.2rem;font-weight:900;color:#0F3460;line-height:1;letter-spacing:-1px; }
-          .seo-stat-lbl { font-size:12px;color:#6b7280;font-weight:500;line-height:1.4; }
+          .seo-stats-bar { display:flex;gap:0;border:1px solid rgba(15,52,96,0.10);border-radius:16px;background:rgba(255,255,255,0.75);backdrop-filter:blur(12px);overflow:hidden;max-width:680px; }
+          .seo-stat-item { flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(15,52,96,0.08); }
+          .seo-stat-item:last-child { border-right:none; }
+          .seo-stat-num { font-size:1.9rem;font-weight:900;color:#0F3460;line-height:1;letter-spacing:-1px; }
+          .seo-stat-lbl { font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px; }
           .seo-stat-item:nth-child(1) .seo-stat-num { color:#FE9700; }
           .seo-stat-item:nth-child(3) .seo-stat-num { color:#7C3AED; }
-          .seo-hero-divider { border:none;border-top:1px solid rgba(15,52,96,0.08);margin:24px 0; }
-          .seo-hero-note { font-size:12.5px;color:#6b7280;line-height:1.6;margin:0; }
-          .seo-hero-note strong { color:#0F3460; }
           .seo-breadcrumb { background:#f8fafd;border-bottom:1px solid #edf0f5;padding:12px 40px; }
           .seo-breadcrumb-inner { max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12.5px;color:#6b7280; }
           .seo-breadcrumb a { color:#6b7280;text-decoration:none; }
@@ -264,23 +260,18 @@ export default function SeoServices() {
               ))}
             </div>
           </div>
-          <div className="seo-hero-card">
-            <p className="seo-hero-card-title">Proven Track Record</p>
-            <div className="seo-stat-grid">
-              {[
-                { num: '500+', lbl: 'SEO Projects Delivered' },
-                { num: '15+',  lbl: 'Years of SEO Experience' },
-                { num: '97%',  lbl: 'Client Retention Rate' },
-                { num: '3x',   lbl: 'Avg. Traffic Growth in 6 Mo.' },
-              ].map(s => (
-                <div key={s.lbl} className="seo-stat-item">
-                  <span className="seo-stat-num">{s.num}</span>
-                  <span className="seo-stat-lbl">{s.lbl}</span>
-                </div>
-              ))}
-            </div>
-            <hr className="seo-hero-divider" />
-            <p className="seo-hero-note"><strong>Serving clients across</strong> the US, Canada &amp; Australia with market-specific SEO strategies built for English-language search.</p>
+          <div className="seo-stats-bar">
+            {[
+              { num: '500+', lbl: 'SEO Projects Delivered' },
+              { num: '15+',  lbl: 'Years of Experience' },
+              { num: '97%',  lbl: 'Client Retention Rate' },
+              { num: '3×',   lbl: 'Avg. Traffic Growth' },
+            ].map(s => (
+              <div key={s.lbl} className="seo-stat-item">
+                <span className="seo-stat-num">{s.num}</span>
+                <span className="seo-stat-lbl">{s.lbl}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
