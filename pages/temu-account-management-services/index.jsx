@@ -108,9 +108,19 @@ const steps = [
   { n: '06', title: 'Monthly Reporting', desc: 'GMV performance, ranking position, return rate, and ad ROI report with next-month growth roadmap.' },
 ];
 
+const FAQS = [
+  { q: "What seller model is best for a new Temu seller?", a: "Temu has two main models: consignment (Temu sets prices, handles fulfilment, owns the customer relationship) and marketplace (seller sets prices, handles shipping). For most sellers new to the US market, we recommend starting with the consignment model to test product demand without fulfilment complexity, then transitioning to the marketplace model for SKUs where you can maintain pricing control and margin." },
+  { q: "How does Temu search ranking work and how do you improve it?", a: "Temu search is primarily driven by GMV (gross merchandise value) — high-velocity, competitively priced products rank higher. Secondary factors include listing quality (images, title, attribute completeness), customer ratings, and fulfilment speed. We improve ranking by identifying your highest-potential SKUs, launching with competitive pricing and Temu Ads to build initial velocity, then sustaining momentum with ongoing optimisation." },
+  { q: "Can you help us prepare product listings that comply with US safety requirements?", a: "Yes. Products sold to US consumers through Temu must comply with CPSC (Consumer Product Safety Commission) regulations and relevant ASTM standards for applicable categories. We review your product catalogue for compliance gaps, recommend certification requirements, and rewrite product descriptions to include required safety information and accurate specifications." },
+  { q: "How long before we see GMV growth on Temu?", a: "Initial GMV typically starts within 2 to 4 weeks of listing launch once Temu Ads are active and initial pricing is competitive. Organic ranking growth, driven by sales velocity accumulation, typically shows meaningful improvement at the 6 to 8 week mark. Most clients see 3 to 5 times their initial monthly GMV within 90 days when we manage the full optimisation and ad strategy." },
+  { q: "What do you charge and how is the fee structured?", a: "Our Temu management fee is a flat monthly retainer covering account management, listing optimisation, and ad management. We do not take a percentage of revenue. Pricing depends on catalogue size and ad spend level; contact us for a custom quote based on your specific catalogue and growth goals." },
+  { q: "Do you manage both the consignment and marketplace models simultaneously?", a: "Yes. Many sellers run a hybrid approach where top-selling SKUs stay on consignment while new products or margin-sensitive SKUs are managed on the marketplace model. We manage both models within the same account engagement and advise on SKU-level model selection based on your cost structure and pricing competitiveness." },
+];
+
 export default function TemuAccountManagement() {
   const [form, setForm] = useState({ name: '', email: '', company: '', revenue: 'Under $10K/mo', message: '' });
   const [sent, setSent] = useState(false);
+  const [openFaq, setOpenFaq] = useState(null);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -257,6 +267,41 @@ export default function TemuAccountManagement() {
           .temu-stats-bar { grid-template-columns: repeat(2, 1fr); }
           .temu-process-grid { grid-template-columns: 1fr; }
         }
+        /* ── FAQ ── */
+        .temu-faq-sec { padding:80px 24px;background:#f8fafd;border-top:1px solid rgba(${ACCENT_RGB},0.08); }
+        .temu-faq-inner { max-width:1200px;margin:0 auto; }
+        .temu-faq-h { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,${ACCENT} 0%,${ACCENT_MID} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 36px;line-height:1.15; }
+        .temu-faq-list { display:flex;flex-direction:column;gap:12px; }
+        .temu-faq-item { background:linear-gradient(135deg,rgba(${ACCENT_RGB},0.06) 0%,rgba(255,255,255,0.85) 60%,rgba(${ACCENT_RGB},0.04) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(${ACCENT_RGB},0.07);transition:border-color 0.2s;position:relative; }
+        .temu-faq-item.open { border-color:rgba(${ACCENT_RGB},0.30); }
+        .temu-faq-item.open::before { content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:${ACCENT};border-radius:3px 0 0 3px; }
+        .temu-faq-btn { width:100%;background:none;border:none;padding:22px 22px 22px 60px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;text-align:left;gap:16px;font-family:inherit;position:relative; }
+        .temu-faq-q-badge { position:absolute;left:16px;top:50%;transform:translateY(-50%);width:28px;height:28px;background:rgba(${ACCENT_RGB},0.10);color:#374151;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:6px;flex-shrink:0;transition:background 0.2s,color 0.2s; }
+        .temu-faq-item.open .temu-faq-q-badge { background:${ACCENT};color:#fff; }
+        .temu-faq-btn span { font-size:15px;font-weight:600;color:#0F1F40;line-height:1.45; }
+        .temu-faq-item.open .temu-faq-btn span { color:${ACCENT}; }
+        .temu-faq-chev { width:24px;height:24px;flex-shrink:0;color:#9ca3af;transition:transform 0.3s; }
+        .temu-faq-item.open .temu-faq-chev { transform:rotate(180deg);color:${ACCENT}; }
+        .temu-faq-ans-wrap { overflow:hidden;max-height:0;transition:max-height 0.35s ease; }
+        .temu-faq-item.open .temu-faq-ans-wrap { max-height:500px; }
+        .temu-faq-ans { padding:0 22px 22px 60px;font-size:15px;color:#4b5563;line-height:1.8; }
+        .temu-faq-a-badge { display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:${ACCENT};color:#fff;font-size:12px;font-weight:700;border-radius:6px;margin-right:12px;flex-shrink:0;vertical-align:middle; }
+        /* ── Related Services ── */
+        .temu-rel-sec { background:rgba(${ACCENT_RGB},0.04);border-top:1px solid rgba(${ACCENT_RGB},0.08);padding:80px 24px; }
+        .temu-rel-inner { max-width:1200px;margin:0 auto;text-align:center; }
+        .temu-rel-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A6080;margin:0 0 14px;display:block; }
+        .temu-rel-h { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,${ACCENT} 0%,${ACCENT_MID} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 16px;line-height:1.15; }
+        .temu-rel-sub { font-size:15px;color:#0F1F40;line-height:1.7;margin:0 auto;max-width:680px; }
+        .temu-rel-div { border:none;border-top:1px solid rgba(${ACCENT_RGB},0.12);margin:40px 0; }
+        .temu-rel-tags { display:flex;flex-wrap:wrap;justify-content:center;gap:12px; }
+        .temu-rtag { display:inline-flex;align-items:center;padding:8px 16px;border-radius:50px;font-size:13px;font-weight:600;text-decoration:none;border:1.5px solid;transition:all 0.2s; }
+        .temu-rtag:hover { transform:translateY(-2px); }
+        .temu-rtag-a { background:rgba(${ACCENT_RGB},0.08);color:${ACCENT};border-color:rgba(${ACCENT_RGB},0.25); }
+        .temu-rtag-b { background:rgba(79,70,229,0.07);color:#4338ca;border-color:rgba(79,70,229,0.22); }
+        .temu-rtag-c { background:rgba(5,150,105,0.07);color:#047857;border-color:rgba(5,150,105,0.22); }
+        .temu-rtag-d { background:rgba(217,119,6,0.07);color:#b45309;border-color:rgba(217,119,6,0.22); }
+        .temu-rtag-e { background:rgba(219,39,119,0.07);color:#be185d;border-color:rgba(219,39,119,0.22); }
+        .temu-rtag-f { background:rgba(8,145,178,0.07);color:#0e7490;border-color:rgba(8,145,178,0.22); }
       `}</style>
 
       <div className="temu-page">
@@ -473,6 +518,51 @@ export default function TemuAccountManagement() {
                   </form>
                 )}
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="temu-faq-sec" id="faq">
+          <div className="temu-faq-inner">
+            <h2 className="temu-faq-h">Frequently Asked Questions</h2>
+            <div className="temu-faq-list">
+              {FAQS.map((faq, i) => (
+                <div key={i} className={'temu-faq-item' + (openFaq === i ? ' open' : '')}>
+                  <button className="temu-faq-btn" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
+                    <div className="temu-faq-q-badge">Q</div>
+                    <span>{faq.q}</span>
+                    <svg className="temu-faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="6 9 12 15 18 9"/></svg>
+                  </button>
+                  <div className="temu-faq-ans-wrap">
+                    <div className="temu-faq-ans"><span className="temu-faq-a-badge">A</span>{faq.a}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Related Services */}
+        <section className="temu-rel-sec">
+          <div className="temu-rel-inner">
+            <span className="temu-rel-eyebrow">PLATFORM RELATED OFFERINGS</span>
+            <h2 className="temu-rel-h">Explore Related Services and Technologies</h2>
+            <p className="temu-rel-sub">Pair our Temu marketplace expertise with complementary services to build a complete eCommerce growth strategy across platforms.</p>
+            <hr className="temu-rel-div" />
+            <div className="temu-rel-tags">
+              <Link href="/amazon-account-management-services/" className="temu-rtag temu-rtag-a">Amazon Management</Link>
+              <Link href="/ebay-account-management-services/" className="temu-rtag temu-rtag-b">eBay Management</Link>
+              <Link href="/ecommerce-seo-services/" className="temu-rtag temu-rtag-c">eCommerce SEO</Link>
+              <Link href="/google-shopping-management/" className="temu-rtag temu-rtag-d">Google Shopping Ads</Link>
+              <Link href="/social-media-marketing-services/" className="temu-rtag temu-rtag-e">Social Commerce</Link>
+              <Link href="/email-marketing-services/" className="temu-rtag temu-rtag-f">Email Automation</Link>
+              <Link href="/woocommerce-development-company/" className="temu-rtag temu-rtag-a">WooCommerce Development</Link>
+              <Link href="/ecommerce-website-development-services/" className="temu-rtag temu-rtag-b">eCommerce Development</Link>
+              <Link href="/walmart-account-management-services/" className="temu-rtag temu-rtag-c">Walmart Marketplace</Link>
+              <Link href="/flipkart-account-management-services/" className="temu-rtag temu-rtag-d">Flipkart Management</Link>
+              <Link href="/magento-development-company/" className="temu-rtag temu-rtag-e">Magento Development</Link>
+              <Link href="/amazon-fba-shipment-reconciliation-services/" className="temu-rtag temu-rtag-f">Amazon FBA Reconciliation</Link>
             </div>
           </div>
         </section>

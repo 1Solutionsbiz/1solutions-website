@@ -109,9 +109,19 @@ const stats = [
 
 const trust = ['Walmart Seller Center experts', 'WFS certified setup', 'No lock-in contracts', 'Dedicated account manager'];
 
+const FAQS = [
+  { q: 'How is Walmart Marketplace different from Amazon for sellers?', a: "Walmart's Polaris search algorithm prioritises price competitiveness, item quality score, and fulfilment speed differently than Amazon's A9. Walmart has a smaller but highly price-conscious buyer base, lower seller competition, and significantly lower advertising costs. The key difference is that Walmart's marketplace is newer and growing fast, which creates real first-mover advantage for sellers who move now." },
+  { q: 'What is Walmart Fulfillment Services (WFS) and do I need it?', a: 'WFS is Walmart\'s equivalent of Amazon FBA — you send inventory to Walmart\'s fulfilment centres and they handle storage, picking, packing, and delivery. WFS listings display a "Fulfilled by Walmart" badge which significantly increases conversion rate and search ranking. We strongly recommend WFS for any seller with eligible products as it is one of the single biggest ranking levers on the platform.' },
+  { q: 'How long does Walmart seller onboarding take?', a: 'The Walmart Seller Center application and approval process typically takes 2 to 4 weeks. Once approved, item setup and the first listings can go live within 1 to 2 weeks depending on catalogue size and data readiness. WFS onboarding adds another 1 to 2 weeks for the inbound shipment setup and item eligibility review.' },
+  { q: 'Can you manage Walmart Connect advertising alongside organic optimisation?', a: "Yes. We manage both organic listing optimisation (item quality score, Polaris SEO, WFS) and Walmart Connect advertising (Sponsored Products, Display) as an integrated programme. The two strategies compound — organic ranking reduces your reliance on paid visibility while advertising accelerates ranking for new items that haven't yet built organic history." },
+  { q: 'Do you handle Walmart category approvals for restricted categories?', a: 'Yes. Some Walmart categories require additional approval including certain electronics, health products, and grocery items. We manage the category approval application process, prepare the required documentation, and follow up with your Walmart account representative until approval is granted.' },
+  { q: 'What revenue growth can I realistically expect in the first 6 months?', a: 'Most of our Walmart sellers achieve 3 to 5 times their initial monthly revenue within 6 months, particularly when WFS and Walmart Connect are used together. Sellers starting from scratch typically reach $50K to $100K per month within 6 to 9 months depending on category, catalogue size, and pricing competitiveness.' },
+];
+
 export default function WalmartAccountManagement() {
   const [form, setForm] = useState({ name: '', email: '', company: '', revenue: 'Under $10K/mo', message: '' });
   const [sent, setSent] = useState(false);
+  const [openFaq, setOpenFaq] = useState(null);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -228,6 +238,40 @@ export default function WalmartAccountManagement() {
           .wlmt-cta-btn:hover{transform:translateY(-2px);opacity:0.95;}
           @media(max-width:900px){.wlmt-grid3,.wlmt-grid4{grid-template-columns:1fr 1fr;}.wlmt-grid2{grid-template-columns:1fr;}.wlmt-contact-grid{grid-template-columns:1fr;}.wlmt-res-grid{grid-template-columns:1fr 1fr;}}
           @media(max-width:600px){.wlmt-hero,.wlmt-sec,.wlmt-results,.wlmt-cta,.wlmt-contact-sec{padding-left:20px;padding-right:20px;}.wlmt-hero{padding-top:60px;padding-bottom:50px;}.wlmt-grid3,.wlmt-grid4,.wlmt-grid2,.wlmt-res-grid{grid-template-columns:1fr;}.wlmt-bc{padding:12px 20px;}.wlmt-field-row{grid-template-columns:1fr;}.wlmt-form-wrap{padding:24px 20px;}}
+          /* ── FAQ ── */
+          .wlmt-faq-sec { padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(0,38,90,0.08); }
+          .wlmt-faq-h { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,#00265a 0%,#1a5aab 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 36px;line-height:1.15; }
+          .wlmt-faq-list { display:flex;flex-direction:column;gap:12px; }
+          .wlmt-faq-item { background:linear-gradient(135deg,rgba(0,38,90,0.06) 0%,rgba(255,255,255,0.85) 60%,rgba(0,38,90,0.04) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,38,90,0.07);transition:border-color 0.2s;position:relative; }
+          .wlmt-faq-item.open { border-color:rgba(0,38,90,0.30); }
+          .wlmt-faq-item.open::before { content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#00265a;border-radius:3px 0 0 3px; }
+          .wlmt-faq-btn { width:100%;background:none;border:none;padding:22px 22px 22px 60px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;text-align:left;gap:16px;font-family:inherit;position:relative; }
+          .wlmt-faq-q-badge { position:absolute;left:16px;top:50%;transform:translateY(-50%);width:28px;height:28px;background:rgba(0,38,90,0.10);color:#374151;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:6px;flex-shrink:0;transition:background 0.2s,color 0.2s; }
+          .wlmt-faq-item.open .wlmt-faq-q-badge { background:#00265a;color:#fff; }
+          .wlmt-faq-btn span { font-size:15px;font-weight:600;color:#0F1F40;line-height:1.45; }
+          .wlmt-faq-item.open .wlmt-faq-btn span { color:#00265a; }
+          .wlmt-faq-chev { width:24px;height:24px;flex-shrink:0;color:#9ca3af;transition:transform 0.3s; }
+          .wlmt-faq-item.open .wlmt-faq-chev { transform:rotate(180deg);color:#00265a; }
+          .wlmt-faq-ans-wrap { overflow:hidden;max-height:0;transition:max-height 0.35s ease; }
+          .wlmt-faq-item.open .wlmt-faq-ans-wrap { max-height:500px; }
+          .wlmt-faq-ans { padding:0 22px 22px 60px;font-size:15px;color:#4b5563;line-height:1.8; }
+          .wlmt-faq-a-badge { display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:#00265a;color:#fff;font-size:12px;font-weight:700;border-radius:6px;margin-right:12px;flex-shrink:0;vertical-align:middle; }
+          /* ── Related Services ── */
+          .wlmt-rel-sec { background:rgba(0,38,90,0.04);border-top:1px solid rgba(0,38,90,0.08);padding:80px 40px; }
+          .wlmt-rel-inner { max-width:1200px;margin:0 auto;text-align:center; }
+          .wlmt-rel-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A6080;margin:0 0 14px;display:block; }
+          .wlmt-rel-h { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,#00265a 0%,#1a5aab 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 16px;line-height:1.15; }
+          .wlmt-rel-sub { font-size:15px;color:#0F1F40;line-height:1.7;margin:0 auto;max-width:680px; }
+          .wlmt-rel-div { border:none;border-top:1px solid rgba(0,38,90,0.12);margin:40px 0; }
+          .wlmt-rel-tags { display:flex;flex-wrap:wrap;justify-content:center;gap:12px; }
+          .wlmt-rtag { display:inline-flex;align-items:center;padding:8px 16px;border-radius:50px;font-size:13px;font-weight:600;text-decoration:none;border:1.5px solid;transition:all 0.2s; }
+          .wlmt-rtag:hover { transform:translateY(-2px); }
+          .wlmt-rtag-a { background:rgba(0,38,90,0.08);color:#00265a;border-color:rgba(0,38,90,0.25); }
+          .wlmt-rtag-b { background:rgba(79,70,229,0.07);color:#4338ca;border-color:rgba(79,70,229,0.22); }
+          .wlmt-rtag-c { background:rgba(5,150,105,0.07);color:#047857;border-color:rgba(5,150,105,0.22); }
+          .wlmt-rtag-d { background:rgba(217,119,6,0.07);color:#b45309;border-color:rgba(217,119,6,0.22); }
+          .wlmt-rtag-e { background:rgba(219,39,119,0.07);color:#be185d;border-color:rgba(219,39,119,0.22); }
+          .wlmt-rtag-f { background:rgba(8,145,178,0.07);color:#0e7490;border-color:rgba(8,145,178,0.22); }
         `}</style>
       </Head>
 
@@ -464,6 +508,51 @@ export default function WalmartAccountManagement() {
                 </form>
               )}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="wlmt-faq-sec" id="faq">
+        <div className="wlmt-inner">
+          <h2 className="wlmt-faq-h">Frequently Asked Questions</h2>
+          <div className="wlmt-faq-list">
+            {FAQS.map((faq, i) => (
+              <div key={i} className={'wlmt-faq-item' + (openFaq === i ? ' open' : '')}>
+                <button className="wlmt-faq-btn" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
+                  <div className="wlmt-faq-q-badge">Q</div>
+                  <span>{faq.q}</span>
+                  <svg className="wlmt-faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div className="wlmt-faq-ans-wrap">
+                  <div className="wlmt-faq-ans"><span className="wlmt-faq-a-badge">A</span>{faq.a}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related Services */}
+      <section className="wlmt-rel-sec">
+        <div className="wlmt-rel-inner">
+          <span className="wlmt-rel-eyebrow">PLATFORM RELATED OFFERINGS</span>
+          <h2 className="wlmt-rel-h">Explore Related Services and Technologies</h2>
+          <p className="wlmt-rel-sub">Pair our Walmart Marketplace expertise with complementary services to build a complete multichannel eCommerce strategy.</p>
+          <hr className="wlmt-rel-div" />
+          <div className="wlmt-rel-tags">
+            <Link href="/amazon-account-management-services/" className="wlmt-rtag wlmt-rtag-a">Amazon Management</Link>
+            <Link href="/ecommerce-seo-services/" className="wlmt-rtag wlmt-rtag-b">eCommerce SEO</Link>
+            <Link href="/woocommerce-development-company/" className="wlmt-rtag wlmt-rtag-c">WooCommerce Development</Link>
+            <Link href="/google-shopping-management/" className="wlmt-rtag wlmt-rtag-d">Google Shopping Ads</Link>
+            <Link href="/email-marketing-services/" className="wlmt-rtag wlmt-rtag-e">Email Automation</Link>
+            <Link href="/social-media-marketing-services/" className="wlmt-rtag wlmt-rtag-f">Social Commerce</Link>
+            <Link href="/amazon-fba-shipment-reconciliation-services/" className="wlmt-rtag wlmt-rtag-a">Amazon FBA Reconciliation</Link>
+            <Link href="/ebay-account-management-services/" className="wlmt-rtag wlmt-rtag-b">eBay Management</Link>
+            <Link href="/magento-development-company/" className="wlmt-rtag wlmt-rtag-c">Magento Development</Link>
+            <Link href="/ecommerce-website-development-services/" className="wlmt-rtag wlmt-rtag-d">eCommerce Development</Link>
+            <Link href="/home-depot-account-management-services/" className="wlmt-rtag wlmt-rtag-e">Home Depot Marketplace</Link>
+            <Link href="/etsy-account-management-services/" className="wlmt-rtag wlmt-rtag-f">Etsy Shop Management</Link>
           </div>
         </div>
       </section>

@@ -108,9 +108,19 @@ const steps = [
   { n: '06', title: 'Recovery Report', desc: 'Detailed monthly report showing all filed claims, approved reimbursements, pending cases, and total recovered amount.' },
 ];
 
+const FAQS = [
+  { q: "How do you access my Amazon Seller Central data?", a: "We use secondary user permissions within your Seller Central account — you grant us specific permissions (inventory, reports, cases) and can revoke access at any time. We never request your primary login credentials. The access level we need is limited to reading reports, submitting support cases, and viewing inventory data." },
+  { q: "What types of FBA reimbursements can you recover?", a: "We file claims for the full range of FBA reimbursement categories: inventory lost in transit to Amazon fulfilment centres, inventory damaged at fulfilment centres, customer returns not restocked correctly, units destroyed without authorisation, inbound shipment quantity discrepancies, and customer refunds issued without inventory being returned. Most sellers have unclaimed reimbursements across multiple categories." },
+  { q: "How much can I expect to recover?", a: "Most FBA sellers with 6 or more months of history recover 1 to 3 percent of their annual FBA revenue in our first audit. For a seller doing $500K per year in FBA, that is typically $5,000 to $15,000 recovered. The exact amount depends on how long since the last reconciliation and how many inbound shipment discrepancies have accumulated." },
+  { q: "How long does the reconciliation process take?", a: "Initial audit and claim filing typically takes 5 to 10 business days depending on the volume of historical data. Amazon response time on claims varies: straightforward inventory discrepancy claims are typically resolved within 2 to 4 weeks. Complex cases requiring escalation can take 6 to 12 weeks." },
+  { q: "Do I need to do anything during the process?", a: "Very little. We handle the full process from data pull through claim submission and follow-up. You may need to provide documentation such as your original inbound shipment packing lists if Amazon disputes a claim, but most claims are resolved using data we pull from your Seller Central reports directly." },
+  { q: "What are the time limits for filing FBA reimbursement claims?", a: "Amazon has a 9-month lookback window for most claim types — claims older than 9 months from the incident date are no longer eligible. This is why regular reconciliation is important. Some claim types such as overcharge fees have different windows. We file all eligible claims as quickly as possible after the audit to avoid approaching these deadlines." },
+];
+
 export default function FBAReconciliation() {
   const [form, setForm] = useState({ name: '', email: '', company: '', revenue: 'Under $10K/mo', message: '' });
   const [sent, setSent] = useState(false);
+  const [openFaq, setOpenFaq] = useState(null);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -247,6 +257,41 @@ export default function FBAReconciliation() {
           .fbar-services-grid { grid-template-columns: 1fr; }
           .fbar-process-grid { grid-template-columns: 1fr; }
         }
+        /* ── FAQ ── */
+        .fbar-faq-sec { padding:80px 24px;background:#f8fafd;border-top:1px solid rgba(${ACCENT_RGB},0.08); }
+        .fbar-faq-inner { max-width:1200px;margin:0 auto; }
+        .fbar-faq-h { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,${ACCENT} 0%,${ACCENT_MID} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 36px;line-height:1.15; }
+        .fbar-faq-list { display:flex;flex-direction:column;gap:12px; }
+        .fbar-faq-item { background:linear-gradient(135deg,rgba(${ACCENT_RGB},0.06) 0%,rgba(255,255,255,0.85) 60%,rgba(${ACCENT_RGB},0.04) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(${ACCENT_RGB},0.07);transition:border-color 0.2s;position:relative; }
+        .fbar-faq-item.open { border-color:rgba(${ACCENT_RGB},0.30); }
+        .fbar-faq-item.open::before { content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:${ACCENT};border-radius:3px 0 0 3px; }
+        .fbar-faq-btn { width:100%;background:none;border:none;padding:22px 22px 22px 60px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;text-align:left;gap:16px;font-family:inherit;position:relative; }
+        .fbar-faq-q-badge { position:absolute;left:16px;top:50%;transform:translateY(-50%);width:28px;height:28px;background:rgba(${ACCENT_RGB},0.10);color:#374151;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:6px;flex-shrink:0;transition:background 0.2s,color 0.2s; }
+        .fbar-faq-item.open .fbar-faq-q-badge { background:${ACCENT};color:#fff; }
+        .fbar-faq-btn span { font-size:15px;font-weight:600;color:#0F1F40;line-height:1.45; }
+        .fbar-faq-item.open .fbar-faq-btn span { color:${ACCENT}; }
+        .fbar-faq-chev { width:24px;height:24px;flex-shrink:0;color:#9ca3af;transition:transform 0.3s; }
+        .fbar-faq-item.open .fbar-faq-chev { transform:rotate(180deg);color:${ACCENT}; }
+        .fbar-faq-ans-wrap { overflow:hidden;max-height:0;transition:max-height 0.35s ease; }
+        .fbar-faq-item.open .fbar-faq-ans-wrap { max-height:500px; }
+        .fbar-faq-ans { padding:0 22px 22px 60px;font-size:15px;color:#4b5563;line-height:1.8; }
+        .fbar-faq-a-badge { display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:${ACCENT};color:#fff;font-size:12px;font-weight:700;border-radius:6px;margin-right:12px;flex-shrink:0;vertical-align:middle; }
+        /* ── Related Services ── */
+        .fbar-rel-sec { background:rgba(${ACCENT_RGB},0.04);border-top:1px solid rgba(${ACCENT_RGB},0.08);padding:80px 24px; }
+        .fbar-rel-inner { max-width:1200px;margin:0 auto;text-align:center; }
+        .fbar-rel-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A6080;margin:0 0 14px;display:block; }
+        .fbar-rel-h { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,${ACCENT} 0%,${ACCENT_MID} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 16px;line-height:1.15; }
+        .fbar-rel-sub { font-size:15px;color:#0F1F40;line-height:1.7;margin:0 auto;max-width:680px; }
+        .fbar-rel-div { border:none;border-top:1px solid rgba(${ACCENT_RGB},0.12);margin:40px 0; }
+        .fbar-rel-tags { display:flex;flex-wrap:wrap;justify-content:center;gap:12px; }
+        .fbar-rtag { display:inline-flex;align-items:center;padding:8px 16px;border-radius:50px;font-size:13px;font-weight:600;text-decoration:none;border:1.5px solid;transition:all 0.2s; }
+        .fbar-rtag:hover { transform:translateY(-2px); }
+        .fbar-rtag-a { background:rgba(${ACCENT_RGB},0.08);color:${ACCENT};border-color:rgba(${ACCENT_RGB},0.25); }
+        .fbar-rtag-b { background:rgba(79,70,229,0.07);color:#4338ca;border-color:rgba(79,70,229,0.22); }
+        .fbar-rtag-c { background:rgba(5,150,105,0.07);color:#047857;border-color:rgba(5,150,105,0.22); }
+        .fbar-rtag-d { background:rgba(217,119,6,0.07);color:#b45309;border-color:rgba(217,119,6,0.22); }
+        .fbar-rtag-e { background:rgba(219,39,119,0.07);color:#be185d;border-color:rgba(219,39,119,0.22); }
+        .fbar-rtag-f { background:rgba(8,145,178,0.07);color:#0e7490;border-color:rgba(8,145,178,0.22); }
       `}</style>
 
       <div className="fbar-page">
@@ -455,6 +500,51 @@ export default function FBAReconciliation() {
                   </form>
                 )}
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="fbar-faq-sec" id="faq">
+          <div className="fbar-faq-inner">
+            <h2 className="fbar-faq-h">Frequently Asked Questions</h2>
+            <div className="fbar-faq-list">
+              {FAQS.map((faq, i) => (
+                <div key={i} className={'fbar-faq-item' + (openFaq === i ? ' open' : '')}>
+                  <button className="fbar-faq-btn" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
+                    <div className="fbar-faq-q-badge">Q</div>
+                    <span>{faq.q}</span>
+                    <svg className="fbar-faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="6 9 12 15 18 9"/></svg>
+                  </button>
+                  <div className="fbar-faq-ans-wrap">
+                    <div className="fbar-faq-ans"><span className="fbar-faq-a-badge">A</span>{faq.a}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Related Services */}
+        <section className="fbar-rel-sec">
+          <div className="fbar-rel-inner">
+            <span className="fbar-rel-eyebrow">PLATFORM RELATED OFFERINGS</span>
+            <h2 className="fbar-rel-h">Explore Related Services and Technologies</h2>
+            <p className="fbar-rel-sub">Pair our FBA reconciliation expertise with complementary services that protect and grow your Amazon revenue.</p>
+            <hr className="fbar-rel-div" />
+            <div className="fbar-rel-tags">
+              <Link href="/amazon-account-management-services/" className="fbar-rtag fbar-rtag-a">Amazon Management</Link>
+              <Link href="/walmart-account-management-services/" className="fbar-rtag fbar-rtag-b">Walmart Marketplace</Link>
+              <Link href="/ebay-account-management-services/" className="fbar-rtag fbar-rtag-c">eBay Management</Link>
+              <Link href="/ecommerce-seo-services/" className="fbar-rtag fbar-rtag-d">eCommerce SEO</Link>
+              <Link href="/google-shopping-management/" className="fbar-rtag fbar-rtag-e">Google Shopping Ads</Link>
+              <Link href="/email-marketing-services/" className="fbar-rtag fbar-rtag-f">Email Automation</Link>
+              <Link href="/woocommerce-development-company/" className="fbar-rtag fbar-rtag-a">WooCommerce Development</Link>
+              <Link href="/social-media-marketing-services/" className="fbar-rtag fbar-rtag-b">Social Commerce</Link>
+              <Link href="/magento-development-company/" className="fbar-rtag fbar-rtag-c">Magento Development</Link>
+              <Link href="/ecommerce-website-development-services/" className="fbar-rtag fbar-rtag-d">eCommerce Development</Link>
+              <Link href="/etsy-account-management-services/" className="fbar-rtag fbar-rtag-e">Etsy Shop Management</Link>
+              <Link href="/flipkart-account-management-services/" className="fbar-rtag fbar-rtag-f">Flipkart Management</Link>
             </div>
           </div>
         </section>

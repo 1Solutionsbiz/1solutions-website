@@ -109,9 +109,19 @@ const stats = [
 
 const trust = ['Wayfair Partner Home experts', 'CastleGate certified setup', 'No lock-in contracts', 'Dedicated account manager'];
 
+const FAQS = [
+  { q: 'How do I become an approved Wayfair supplier?', a: 'Wayfair supplier applications are submitted through the Partner Home portal. The review process evaluates your product catalogue, pricing, fulfilment capability, and product data quality. Having professional product photography, complete attribute data, and a clear fulfilment model (dropship or CastleGate) significantly improves approval speed. We manage the full application and onboarding process for new suppliers.' },
+  { q: 'What is CastleGate and do I need it to succeed on Wayfair?', a: "CastleGate is Wayfair's fulfilment network — you send inventory to Wayfair's warehouses and they handle delivery to customers, typically within 2 days. CastleGate listings receive significantly higher search ranking and conversion rates due to the faster delivery promise. While not mandatory, we strongly recommend CastleGate for your top-selling SKUs as it is one of the most powerful ranking levers on the platform." },
+  { q: 'Why are my Wayfair products not appearing in search?', a: 'The most common causes are incomplete product attributes (missing dimensions, weight, or required category-specific fields), pricing that falls outside the acceptable range for the category, item quality score below the minimum threshold, or fulfilment speed that does not meet Wayfair standards. We diagnose the exact suppression reason for each product and fix it systematically.' },
+  { q: 'How does Wayfair pricing work and can you help with pricing strategy?', a: "Wayfair uses a retail model where you set your MSRP and Wayfair adds their margin. However, Wayfair's algorithm strongly weights pricing competitiveness and they may request margin adjustments to run promotions. We help you set a pricing structure that maintains your profitability while remaining competitive within Wayfair's algorithm and eligible for promotional placements." },
+  { q: 'What causes high return rates on Wayfair and how do you fix them?', a: 'High return rates on Wayfair are almost always caused by one of three things: inaccurate product dimensions that cause size mismatch surprises, insufficient photography that misrepresents colour or finish, or material descriptions that do not match customer expectations. We audit every return reason you receive and implement specific content fixes that address the root cause SKU by SKU.' },
+  { q: 'How long does Wayfair supplier onboarding and the first sale take?', a: 'The supplier application and approval process typically takes 3 to 6 weeks. Once approved, product data upload and review takes an additional 2 to 3 weeks before items are live in search. CastleGate onboarding for the first shipment adds another 2 weeks. Most new Wayfair suppliers see their first sales within 8 to 10 weeks of engagement start when we manage the full onboarding process.' },
+];
+
 export default function WayfairAccountManagement() {
   const [form, setForm] = useState({ name: '', email: '', company: '', revenue: 'Under $10K/mo', message: '' });
   const [sent, setSent] = useState(false);
+  const [openFaq, setOpenFaq] = useState(null);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -228,6 +238,40 @@ export default function WayfairAccountManagement() {
           .wayf-cta-btn:hover{transform:translateY(-2px);opacity:0.95;}
           @media(max-width:900px){.wayf-grid3,.wayf-grid4{grid-template-columns:1fr 1fr;}.wayf-grid2{grid-template-columns:1fr;}.wayf-contact-grid{grid-template-columns:1fr;}.wayf-res-grid{grid-template-columns:1fr 1fr;}}
           @media(max-width:600px){.wayf-hero,.wayf-sec,.wayf-results,.wayf-cta,.wayf-contact-sec{padding-left:20px;padding-right:20px;}.wayf-hero{padding-top:60px;padding-bottom:50px;}.wayf-grid3,.wayf-grid4,.wayf-grid2,.wayf-res-grid{grid-template-columns:1fr;}.wayf-bc{padding:12px 20px;}.wayf-field-row{grid-template-columns:1fr;}.wayf-form-wrap{padding:24px 20px;}}
+          /* ── FAQ ── */
+          .wayf-faq-sec { padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(53,0,66,0.08); }
+          .wayf-faq-h { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,#350042 0%,#6b1a8c 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 36px;line-height:1.15; }
+          .wayf-faq-list { display:flex;flex-direction:column;gap:12px; }
+          .wayf-faq-item { background:linear-gradient(135deg,rgba(53,0,66,0.06) 0%,rgba(255,255,255,0.85) 60%,rgba(53,0,66,0.04) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(53,0,66,0.07);transition:border-color 0.2s;position:relative; }
+          .wayf-faq-item.open { border-color:rgba(53,0,66,0.30); }
+          .wayf-faq-item.open::before { content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#350042;border-radius:3px 0 0 3px; }
+          .wayf-faq-btn { width:100%;background:none;border:none;padding:22px 22px 22px 60px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;text-align:left;gap:16px;font-family:inherit;position:relative; }
+          .wayf-faq-q-badge { position:absolute;left:16px;top:50%;transform:translateY(-50%);width:28px;height:28px;background:rgba(53,0,66,0.10);color:#374151;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:6px;flex-shrink:0;transition:background 0.2s,color 0.2s; }
+          .wayf-faq-item.open .wayf-faq-q-badge { background:#350042;color:#fff; }
+          .wayf-faq-btn span { font-size:15px;font-weight:600;color:#0F1F40;line-height:1.45; }
+          .wayf-faq-item.open .wayf-faq-btn span { color:#350042; }
+          .wayf-faq-chev { width:24px;height:24px;flex-shrink:0;color:#9ca3af;transition:transform 0.3s; }
+          .wayf-faq-item.open .wayf-faq-chev { transform:rotate(180deg);color:#350042; }
+          .wayf-faq-ans-wrap { overflow:hidden;max-height:0;transition:max-height 0.35s ease; }
+          .wayf-faq-item.open .wayf-faq-ans-wrap { max-height:500px; }
+          .wayf-faq-ans { padding:0 22px 22px 60px;font-size:15px;color:#4b5563;line-height:1.8; }
+          .wayf-faq-a-badge { display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:#350042;color:#fff;font-size:12px;font-weight:700;border-radius:6px;margin-right:12px;flex-shrink:0;vertical-align:middle; }
+          /* ── Related Services ── */
+          .wayf-rel-sec { background:rgba(53,0,66,0.04);border-top:1px solid rgba(53,0,66,0.08);padding:80px 40px; }
+          .wayf-rel-inner { max-width:1200px;margin:0 auto;text-align:center; }
+          .wayf-rel-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A6080;margin:0 0 14px;display:block; }
+          .wayf-rel-h { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,#350042 0%,#6b1a8c 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 16px;line-height:1.15; }
+          .wayf-rel-sub { font-size:15px;color:#0F1F40;line-height:1.7;margin:0 auto;max-width:680px; }
+          .wayf-rel-div { border:none;border-top:1px solid rgba(53,0,66,0.12);margin:40px 0; }
+          .wayf-rel-tags { display:flex;flex-wrap:wrap;justify-content:center;gap:12px; }
+          .wayf-rtag { display:inline-flex;align-items:center;padding:8px 16px;border-radius:50px;font-size:13px;font-weight:600;text-decoration:none;border:1.5px solid;transition:all 0.2s; }
+          .wayf-rtag:hover { transform:translateY(-2px); }
+          .wayf-rtag-a { background:rgba(53,0,66,0.08);color:#350042;border-color:rgba(53,0,66,0.25); }
+          .wayf-rtag-b { background:rgba(79,70,229,0.07);color:#4338ca;border-color:rgba(79,70,229,0.22); }
+          .wayf-rtag-c { background:rgba(5,150,105,0.07);color:#047857;border-color:rgba(5,150,105,0.22); }
+          .wayf-rtag-d { background:rgba(217,119,6,0.07);color:#b45309;border-color:rgba(217,119,6,0.22); }
+          .wayf-rtag-e { background:rgba(219,39,119,0.07);color:#be185d;border-color:rgba(219,39,119,0.22); }
+          .wayf-rtag-f { background:rgba(8,145,178,0.07);color:#0e7490;border-color:rgba(8,145,178,0.22); }
         `}</style>
       </Head>
 
@@ -464,6 +508,51 @@ export default function WayfairAccountManagement() {
                 </form>
               )}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="wayf-faq-sec" id="faq">
+        <div className="wayf-inner">
+          <h2 className="wayf-faq-h">Frequently Asked Questions</h2>
+          <div className="wayf-faq-list">
+            {FAQS.map((faq, i) => (
+              <div key={i} className={'wayf-faq-item' + (openFaq === i ? ' open' : '')}>
+                <button className="wayf-faq-btn" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
+                  <div className="wayf-faq-q-badge">Q</div>
+                  <span>{faq.q}</span>
+                  <svg className="wayf-faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div className="wayf-faq-ans-wrap">
+                  <div className="wayf-faq-ans"><span className="wayf-faq-a-badge">A</span>{faq.a}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related Services */}
+      <section className="wayf-rel-sec">
+        <div className="wayf-rel-inner">
+          <span className="wayf-rel-eyebrow">PLATFORM RELATED OFFERINGS</span>
+          <h2 className="wayf-rel-h">Explore Related Services and Technologies</h2>
+          <p className="wayf-rel-sub">Pair our Wayfair supplier management expertise with services that strengthen your home and furniture brand across channels.</p>
+          <hr className="wayf-rel-div" />
+          <div className="wayf-rel-tags">
+            <Link href="/amazon-account-management-services/" className="wayf-rtag wayf-rtag-a">Amazon Management</Link>
+            <Link href="/walmart-account-management-services/" className="wayf-rtag wayf-rtag-b">Walmart Marketplace</Link>
+            <Link href="/home-depot-account-management-services/" className="wayf-rtag wayf-rtag-c">Home Depot Marketplace</Link>
+            <Link href="/houzz-product-listing-services/" className="wayf-rtag wayf-rtag-d">Houzz Listings</Link>
+            <Link href="/ecommerce-seo-services/" className="wayf-rtag wayf-rtag-e">eCommerce SEO</Link>
+            <Link href="/ecommerce-website-development-services/" className="wayf-rtag wayf-rtag-f">eCommerce Development</Link>
+            <Link href="/social-media-marketing-services/" className="wayf-rtag wayf-rtag-a">Social Commerce</Link>
+            <Link href="/email-marketing-services/" className="wayf-rtag wayf-rtag-b">Email Automation</Link>
+            <Link href="/woocommerce-development-company/" className="wayf-rtag wayf-rtag-c">WooCommerce Development</Link>
+            <Link href="/magento-development-company/" className="wayf-rtag wayf-rtag-d">Magento Development</Link>
+            <Link href="/google-shopping-management/" className="wayf-rtag wayf-rtag-e">Google Shopping Ads</Link>
+            <Link href="/ebay-account-management-services/" className="wayf-rtag wayf-rtag-f">eBay Management</Link>
           </div>
         </div>
       </section>

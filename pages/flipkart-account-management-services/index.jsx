@@ -108,9 +108,19 @@ const steps = [
   { n: '06', title: 'Monthly Review', desc: 'Performance report covering GMV, F-Assured status, return rate, keyword rankings, and ad ROI with next-month roadmap.' },
 ];
 
+const FAQS = [
+  { q: "What is F-Assured and why does it matter for Flipkart sellers?", a: "F-Assured is Flipkart's quality certification badge — it signals to buyers that the seller meets Flipkart's standards for authentic products, accurate descriptions, and reliable fulfilment. F-Assured listings receive significantly higher visibility in search, a trust badge that increases conversion rate, and eligibility for special promotional placements. Getting and maintaining F-Assured status is one of the highest-impact actions for a Flipkart seller." },
+  { q: "How is Flipkart SEO different from Amazon SEO?", a: "Flipkart search ranking is driven by a combination of listing quality score (title keyword relevance, correct attributes, image quality), price competitiveness, seller rating, and fulfilment speed. Unlike Amazon where backend keywords play a major role, Flipkart prioritises product title relevance and attribute completeness more heavily. Getting every attribute field filled correctly is critical and often overlooked by sellers." },
+  { q: "Can you help with Flipkart Ads (Flipkart Sponsored Products)?", a: "Yes. We manage Flipkart Product Ads including keyword targeting, bid strategy, campaign structure, and ongoing optimisation. Flipkart advertising is particularly effective for new listings that need visibility before organic ranking builds, and for seasonal sales periods like Big Billion Days and End of Season Sales where ad competition is high." },
+  { q: "How does Flipkart Fulfillment by Flipkart (FBF) work and should I use it?", a: "FBF is Flipkart's equivalent of Amazon FBA — you send inventory to Flipkart warehouses and they handle storage, packing, and next-day or same-day delivery. FBF is one of the fastest paths to F-Assured eligibility, and it dramatically improves delivery speed scores which directly affect search ranking. We recommend FBF for your top 20 percent of SKUs as a starting point." },
+  { q: "What seller categories are most competitive on Flipkart?", a: "Fashion, mobile phones, electronics, and home appliances are the most competitive categories on Flipkart with established national brands dominating paid and organic visibility. The biggest opportunities for mid-size sellers are in home furnishings, kitchen appliances, beauty, and personal care — categories where Flipkart has grown significantly and where private label brands can compete effectively on quality differentiation rather than just price." },
+  { q: "How long before a new Flipkart seller account starts generating significant revenue?", a: "With a well-structured launch — correct listing setup, F-Assured fast-track, and initial Flipkart Ads investment — most new sellers see their first meaningful orders within 2 to 4 weeks. Reaching consistent monthly revenue of INR 5 to 10 lakh per month typically takes 3 to 5 months depending on category, pricing, and catalogue size." },
+];
+
 export default function FlipkartAccountManagement() {
   const [form, setForm] = useState({ name: '', email: '', company: '', revenue: 'Under $10K/mo', message: '' });
   const [sent, setSent] = useState(false);
+  const [openFaq, setOpenFaq] = useState(null);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -247,6 +257,41 @@ export default function FlipkartAccountManagement() {
           .flpk-services-grid { grid-template-columns: 1fr; }
           .flpk-process-grid { grid-template-columns: 1fr; }
         }
+        /* ── FAQ ── */
+        .flpk-faq-sec { padding:80px 24px;background:#f8fafd;border-top:1px solid rgba(${ACCENT_RGB},0.08); }
+        .flpk-faq-inner { max-width:1200px;margin:0 auto; }
+        .flpk-faq-h { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,${ACCENT} 0%,${ACCENT_MID} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 36px;line-height:1.15; }
+        .flpk-faq-list { display:flex;flex-direction:column;gap:12px; }
+        .flpk-faq-item { background:linear-gradient(135deg,rgba(${ACCENT_RGB},0.06) 0%,rgba(255,255,255,0.85) 60%,rgba(${ACCENT_RGB},0.04) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(${ACCENT_RGB},0.07);transition:border-color 0.2s;position:relative; }
+        .flpk-faq-item.open { border-color:rgba(${ACCENT_RGB},0.30); }
+        .flpk-faq-item.open::before { content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:${ACCENT};border-radius:3px 0 0 3px; }
+        .flpk-faq-btn { width:100%;background:none;border:none;padding:22px 22px 22px 60px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;text-align:left;gap:16px;font-family:inherit;position:relative; }
+        .flpk-faq-q-badge { position:absolute;left:16px;top:50%;transform:translateY(-50%);width:28px;height:28px;background:rgba(${ACCENT_RGB},0.10);color:#374151;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:6px;flex-shrink:0;transition:background 0.2s,color 0.2s; }
+        .flpk-faq-item.open .flpk-faq-q-badge { background:${ACCENT};color:#fff; }
+        .flpk-faq-btn span { font-size:15px;font-weight:600;color:#0F1F40;line-height:1.45; }
+        .flpk-faq-item.open .flpk-faq-btn span { color:${ACCENT}; }
+        .flpk-faq-chev { width:24px;height:24px;flex-shrink:0;color:#9ca3af;transition:transform 0.3s; }
+        .flpk-faq-item.open .flpk-faq-chev { transform:rotate(180deg);color:${ACCENT}; }
+        .flpk-faq-ans-wrap { overflow:hidden;max-height:0;transition:max-height 0.35s ease; }
+        .flpk-faq-item.open .flpk-faq-ans-wrap { max-height:500px; }
+        .flpk-faq-ans { padding:0 22px 22px 60px;font-size:15px;color:#4b5563;line-height:1.8; }
+        .flpk-faq-a-badge { display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:${ACCENT};color:#fff;font-size:12px;font-weight:700;border-radius:6px;margin-right:12px;flex-shrink:0;vertical-align:middle; }
+        /* ── Related Services ── */
+        .flpk-rel-sec { background:rgba(${ACCENT_RGB},0.04);border-top:1px solid rgba(${ACCENT_RGB},0.08);padding:80px 24px; }
+        .flpk-rel-inner { max-width:1200px;margin:0 auto;text-align:center; }
+        .flpk-rel-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A6080;margin:0 0 14px;display:block; }
+        .flpk-rel-h { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,${ACCENT} 0%,${ACCENT_MID} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 16px;line-height:1.15; }
+        .flpk-rel-sub { font-size:15px;color:#0F1F40;line-height:1.7;margin:0 auto;max-width:680px; }
+        .flpk-rel-div { border:none;border-top:1px solid rgba(${ACCENT_RGB},0.12);margin:40px 0; }
+        .flpk-rel-tags { display:flex;flex-wrap:wrap;justify-content:center;gap:12px; }
+        .flpk-rtag { display:inline-flex;align-items:center;padding:8px 16px;border-radius:50px;font-size:13px;font-weight:600;text-decoration:none;border:1.5px solid;transition:all 0.2s; }
+        .flpk-rtag:hover { transform:translateY(-2px); }
+        .flpk-rtag-a { background:rgba(${ACCENT_RGB},0.08);color:${ACCENT};border-color:rgba(${ACCENT_RGB},0.25); }
+        .flpk-rtag-b { background:rgba(79,70,229,0.07);color:#4338ca;border-color:rgba(79,70,229,0.22); }
+        .flpk-rtag-c { background:rgba(5,150,105,0.07);color:#047857;border-color:rgba(5,150,105,0.22); }
+        .flpk-rtag-d { background:rgba(217,119,6,0.07);color:#b45309;border-color:rgba(217,119,6,0.22); }
+        .flpk-rtag-e { background:rgba(219,39,119,0.07);color:#be185d;border-color:rgba(219,39,119,0.22); }
+        .flpk-rtag-f { background:rgba(8,145,178,0.07);color:#0e7490;border-color:rgba(8,145,178,0.22); }
       `}</style>
 
       <div className="flpk-page">
@@ -455,6 +500,51 @@ export default function FlipkartAccountManagement() {
                   </form>
                 )}
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="flpk-faq-sec" id="faq">
+          <div className="flpk-faq-inner">
+            <h2 className="flpk-faq-h">Frequently Asked Questions</h2>
+            <div className="flpk-faq-list">
+              {FAQS.map((faq, i) => (
+                <div key={i} className={'flpk-faq-item' + (openFaq === i ? ' open' : '')}>
+                  <button className="flpk-faq-btn" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
+                    <div className="flpk-faq-q-badge">Q</div>
+                    <span>{faq.q}</span>
+                    <svg className="flpk-faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="6 9 12 15 18 9"/></svg>
+                  </button>
+                  <div className="flpk-faq-ans-wrap">
+                    <div className="flpk-faq-ans"><span className="flpk-faq-a-badge">A</span>{faq.a}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Related Services */}
+        <section className="flpk-rel-sec">
+          <div className="flpk-rel-inner">
+            <span className="flpk-rel-eyebrow">PLATFORM RELATED OFFERINGS</span>
+            <h2 className="flpk-rel-h">Explore Related Services and Technologies</h2>
+            <p className="flpk-rel-sub">Pair our Flipkart management expertise with complementary services to build a profitable omnichannel eCommerce presence.</p>
+            <hr className="flpk-rel-div" />
+            <div className="flpk-rel-tags">
+              <Link href="/amazon-account-management-services/" className="flpk-rtag flpk-rtag-a">Amazon Management</Link>
+              <Link href="/ecommerce-seo-services/" className="flpk-rtag flpk-rtag-b">eCommerce SEO</Link>
+              <Link href="/social-media-marketing-services/" className="flpk-rtag flpk-rtag-c">Social Commerce</Link>
+              <Link href="/google-shopping-management/" className="flpk-rtag flpk-rtag-d">Google Shopping Ads</Link>
+              <Link href="/email-marketing-services/" className="flpk-rtag flpk-rtag-e">Email Automation</Link>
+              <Link href="/woocommerce-development-company/" className="flpk-rtag flpk-rtag-f">WooCommerce Development</Link>
+              <Link href="/walmart-account-management-services/" className="flpk-rtag flpk-rtag-a">Walmart Marketplace</Link>
+              <Link href="/ebay-account-management-services/" className="flpk-rtag flpk-rtag-b">eBay Management</Link>
+              <Link href="/magento-development-company/" className="flpk-rtag flpk-rtag-c">Magento Development</Link>
+              <Link href="/ecommerce-website-development-services/" className="flpk-rtag flpk-rtag-d">eCommerce Development</Link>
+              <Link href="/amazon-fba-shipment-reconciliation-services/" className="flpk-rtag flpk-rtag-e">Amazon FBA Reconciliation</Link>
+              <Link href="/temu-account-management-services/" className="flpk-rtag flpk-rtag-f">Temu Marketplace</Link>
             </div>
           </div>
         </section>

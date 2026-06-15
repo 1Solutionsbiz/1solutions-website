@@ -112,9 +112,20 @@ const stats = [
 
 const trust = ['Seller Central certified', 'White-hat only', 'No lock-in contracts', 'Dedicated account manager'];
 
+const FAQS = [
+  { q: 'How long before we see results from Amazon account management?', a: 'PPC improvements are typically visible within 2 to 4 weeks as we restructure campaigns and refine bid strategy. Organic listing ranking improvements take 6 to 12 weeks as Amazon indexes the updated content and the conversion rate data accumulates. Most clients see measurable revenue growth within the first 60 days of our engagement.' },
+  { q: 'Do you manage Amazon accounts for sellers in the US, UK, Canada, and Australia?', a: 'Yes. We manage Amazon Seller Central accounts across all major Amazon marketplaces including amazon.com, amazon.co.uk, amazon.ca, amazon.com.au, and amazon.de. Our team understands the nuances of each marketplace including VAT requirements, local compliance, and category-specific rules.' },
+  { q: 'What account health issues can you resolve?', a: 'We handle the full spectrum of account health issues: listing suppression due to restricted products or policy violations, A-to-Z claim management, late shipment rate reduction, order defect rate improvement, counterfeit or IP infringement complaints, and full account suspension appeals. We have successfully reinstated dozens of suspended accounts.' },
+  { q: 'How do you reduce ACoS in Amazon PPC without sacrificing sales volume?', a: 'We start with a full campaign structure audit, then implement proper keyword match type tiering, aggressive negative keyword builds, and bid adjustments based on time-of-day, device, and placement data. We typically achieve 30 to 50 percent ACoS reductions within 90 days while maintaining or growing total sales volume.' },
+  { q: 'Can you help recover a suspended Amazon seller account?', a: 'Yes. Account reinstatement is one of our most requested services. We draft the Plan of Action (POA), gather the necessary supporting documentation, submit the appeal through the correct Seller Central channel, and follow up with the appropriate Amazon team until a resolution is reached. Our reinstatement success rate exceeds 80 percent.' },
+  { q: 'What level of Seller Central access do you need?', a: 'We work with the minimum access level required for the scope of work. For most engagements, we request user permissions as a secondary user within your Seller Central account, which you can revoke at any time. We never ask for your primary account credentials and we operate under strict data security protocols.' },
+  { q: 'Do you offer Amazon FBA reconciliation alongside account management?', a: 'Yes. We offer Amazon FBA Shipment Reconciliation as a standalone and add-on service. Most FBA sellers are owed 1 to 3 percent of their annual FBA revenue in unrecovered reimbursements for lost, damaged, or miscounted inventory. We identify every eligible claim and file on your behalf.' },
+];
+
 export default function AmazonAccountManagement() {
   const [form, setForm] = useState({ name: '', email: '', company: '', revenue: 'Under $10K/mo', message: '' });
   const [sent, setSent] = useState(false);
+  const [openFaq, setOpenFaq] = useState(null);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -231,6 +242,40 @@ export default function AmazonAccountManagement() {
           .amzn-cta-btn:hover{transform:translateY(-2px);opacity:0.95;}
           @media(max-width:900px){.amzn-grid3,.amzn-grid4{grid-template-columns:1fr 1fr;}.amzn-grid2{grid-template-columns:1fr;}.amzn-contact-grid{grid-template-columns:1fr;}.amzn-res-grid{grid-template-columns:1fr 1fr;}}
           @media(max-width:600px){.amzn-hero,.amzn-sec,.amzn-results,.amzn-cta,.amzn-contact-sec{padding-left:20px;padding-right:20px;}.amzn-hero{padding-top:60px;padding-bottom:50px;}.amzn-grid3,.amzn-grid4,.amzn-grid2,.amzn-res-grid{grid-template-columns:1fr;}.amzn-bc{padding:12px 20px;}.amzn-field-row{grid-template-columns:1fr;}.amzn-form-wrap{padding:24px 20px;}}
+          /* ── FAQ ── */
+          .amzn-faq-sec { padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(107,58,0,0.08); }
+          .amzn-faq-h { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,#6b3a00 0%,#c87941 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 36px;line-height:1.15; }
+          .amzn-faq-list { display:flex;flex-direction:column;gap:12px; }
+          .amzn-faq-item { background:linear-gradient(135deg,rgba(107,58,0,0.06) 0%,rgba(255,255,255,0.85) 60%,rgba(107,58,0,0.04) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(107,58,0,0.07);transition:border-color 0.2s;position:relative; }
+          .amzn-faq-item.open { border-color:rgba(107,58,0,0.30); }
+          .amzn-faq-item.open::before { content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#6b3a00;border-radius:3px 0 0 3px; }
+          .amzn-faq-btn { width:100%;background:none;border:none;padding:22px 22px 22px 60px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;text-align:left;gap:16px;font-family:inherit;position:relative; }
+          .amzn-faq-q-badge { position:absolute;left:16px;top:50%;transform:translateY(-50%);width:28px;height:28px;background:rgba(107,58,0,0.10);color:#374151;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:6px;flex-shrink:0;transition:background 0.2s,color 0.2s; }
+          .amzn-faq-item.open .amzn-faq-q-badge { background:#6b3a00;color:#fff; }
+          .amzn-faq-btn span { font-size:15px;font-weight:600;color:#0F1F40;line-height:1.45; }
+          .amzn-faq-item.open .amzn-faq-btn span { color:#6b3a00; }
+          .amzn-faq-chev { width:24px;height:24px;flex-shrink:0;color:#9ca3af;transition:transform 0.3s; }
+          .amzn-faq-item.open .amzn-faq-chev { transform:rotate(180deg);color:#6b3a00; }
+          .amzn-faq-ans-wrap { overflow:hidden;max-height:0;transition:max-height 0.35s ease; }
+          .amzn-faq-item.open .amzn-faq-ans-wrap { max-height:500px; }
+          .amzn-faq-ans { padding:0 22px 22px 60px;font-size:15px;color:#4b5563;line-height:1.8; }
+          .amzn-faq-a-badge { display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:#6b3a00;color:#fff;font-size:12px;font-weight:700;border-radius:6px;margin-right:12px;flex-shrink:0;vertical-align:middle; }
+          /* ── Related Services ── */
+          .amzn-rel-sec { background:rgba(107,58,0,0.04);border-top:1px solid rgba(107,58,0,0.08);padding:80px 40px; }
+          .amzn-rel-inner { max-width:1200px;margin:0 auto;text-align:center; }
+          .amzn-rel-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A6080;margin:0 0 14px;display:block; }
+          .amzn-rel-h { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,#6b3a00 0%,#c87941 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 16px;line-height:1.15; }
+          .amzn-rel-sub { font-size:15px;color:#0F1F40;line-height:1.7;margin:0 auto;max-width:680px; }
+          .amzn-rel-div { border:none;border-top:1px solid rgba(107,58,0,0.12);margin:40px 0; }
+          .amzn-rel-tags { display:flex;flex-wrap:wrap;justify-content:center;gap:12px; }
+          .amzn-rtag { display:inline-flex;align-items:center;padding:8px 16px;border-radius:50px;font-size:13px;font-weight:600;text-decoration:none;border:1.5px solid;transition:all 0.2s; }
+          .amzn-rtag:hover { transform:translateY(-2px); }
+          .amzn-rtag-a { background:rgba(107,58,0,0.08);color:#6b3a00;border-color:rgba(107,58,0,0.25); }
+          .amzn-rtag-b { background:rgba(79,70,229,0.07);color:#4338ca;border-color:rgba(79,70,229,0.22); }
+          .amzn-rtag-c { background:rgba(5,150,105,0.07);color:#047857;border-color:rgba(5,150,105,0.22); }
+          .amzn-rtag-d { background:rgba(217,119,6,0.07);color:#b45309;border-color:rgba(217,119,6,0.22); }
+          .amzn-rtag-e { background:rgba(219,39,119,0.07);color:#be185d;border-color:rgba(219,39,119,0.22); }
+          .amzn-rtag-f { background:rgba(8,145,178,0.07);color:#0e7490;border-color:rgba(8,145,178,0.22); }
         `}</style>
       </Head>
 
@@ -467,6 +512,51 @@ export default function AmazonAccountManagement() {
                 </form>
               )}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="amzn-faq-sec" id="faq">
+        <div className="amzn-inner">
+          <h2 className="amzn-faq-h">Frequently Asked Questions</h2>
+          <div className="amzn-faq-list">
+            {FAQS.map((faq, i) => (
+              <div key={i} className={'amzn-faq-item' + (openFaq === i ? ' open' : '')}>
+                <button className="amzn-faq-btn" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
+                  <div className="amzn-faq-q-badge">Q</div>
+                  <span>{faq.q}</span>
+                  <svg className="amzn-faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div className="amzn-faq-ans-wrap">
+                  <div className="amzn-faq-ans"><span className="amzn-faq-a-badge">A</span>{faq.a}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related Services */}
+      <section className="amzn-rel-sec">
+        <div className="amzn-rel-inner">
+          <span className="amzn-rel-eyebrow">PLATFORM RELATED OFFERINGS</span>
+          <h2 className="amzn-rel-h">Explore Related Services and Technologies</h2>
+          <p className="amzn-rel-sub">Pair our Amazon expertise with complementary services to build a full-stack eCommerce operation that grows faster and more profitably.</p>
+          <hr className="amzn-rel-div" />
+          <div className="amzn-rel-tags">
+            <Link href="/amazon-fba-shipment-reconciliation-services/" className="amzn-rtag amzn-rtag-a">Amazon FBA Reconciliation</Link>
+            <Link href="/ecommerce-seo-services/" className="amzn-rtag amzn-rtag-b">eCommerce SEO</Link>
+            <Link href="/walmart-account-management-services/" className="amzn-rtag amzn-rtag-c">Walmart Marketplace</Link>
+            <Link href="/google-shopping-management/" className="amzn-rtag amzn-rtag-d">Google Shopping Ads</Link>
+            <Link href="/woocommerce-development-company/" className="amzn-rtag amzn-rtag-e">WooCommerce Development</Link>
+            <Link href="/email-marketing-services/" className="amzn-rtag amzn-rtag-f">Email Automation</Link>
+            <Link href="/ebay-account-management-services/" className="amzn-rtag amzn-rtag-a">eBay Management</Link>
+            <Link href="/social-media-marketing-services/" className="amzn-rtag amzn-rtag-b">Social Commerce</Link>
+            <Link href="/magento-development-company/" className="amzn-rtag amzn-rtag-c">Magento Development</Link>
+            <Link href="/ecommerce-website-development-services/" className="amzn-rtag amzn-rtag-d">eCommerce Development</Link>
+            <Link href="/etsy-account-management-services/" className="amzn-rtag amzn-rtag-e">Etsy Shop Management</Link>
+            <Link href="/flipkart-account-management-services/" className="amzn-rtag amzn-rtag-f">Flipkart Management</Link>
           </div>
         </div>
       </section>

@@ -108,9 +108,19 @@ const steps = [
   { n: '06', title: 'Monthly Performance Review', desc: 'Sales by SKU, search ranking, chargeback report, ad ROI, and next-month optimisation roadmap.' },
 ];
 
+const FAQS = [
+  { q: "How do I become a Home Depot Marketplace supplier?", a: "Home Depot Marketplace suppliers are approved through the Home Depot supplier portal. The application requires product catalogue information, compliance certifications, and fulfilment capability (DSV or dropship). Home Depot reviews applications against their category needs and vendor standards, which can take 4 to 8 weeks. We manage the full application and onboarding process." },
+  { q: "What is DSV and how does it work for Home Depot suppliers?", a: "DSV stands for Direct Ship Vendor — the Home Depot model where you ship orders directly to customers without inventory going through Home Depot distribution. Orders are transmitted via EDI or API, you ship with Home Depot branded or approved packaging, and tracking is uploaded back through the vendor portal. DSV compliance requirements are strict and non-compliance triggers chargebacks. We set up and manage your full DSV operation." },
+  { q: "Why are my Home Depot products not ranking in search?", a: "The most common causes are incomplete product attributes (Home Depot requires very specific data fields by category), pricing outside the acceptable range for the category, low conversion rate from poor imagery, or insufficient review count. We audit every suppressed or low-ranking product and identify the exact gap that is preventing visibility." },
+  { q: "How do Home Depot chargebacks work and how do you prevent them?", a: "Home Depot issues chargebacks to DSV suppliers for compliance failures including late shipments (outside the SLA window), missing or incorrect tracking uploads, packaging non-compliance, and incorrect pricing. Chargebacks are automatic and can add up quickly. We implement order management processes and SLA monitoring to prevent chargebacks before they happen, and dispute incorrect chargebacks on your behalf." },
+  { q: "What is HDMN and how does Home Depot advertising work?", a: "HDMN (Home Depot Media Network) is Home Depot's advertising platform for suppliers. It offers Sponsored Product placements on HomeDepot.com search results and product pages. HDMN is most effective for products that already have competitive pricing and good imagery — advertising amplifies existing performance, it does not fix a broken listing. We manage campaign strategy, keyword builds, and ongoing bid optimisation." },
+  { q: "What product categories sell best on Home Depot Marketplace?", a: "Home Depot Marketplace is strongest in home improvement, tools, building materials, storage, outdoor furniture, lighting, and appliances. The best opportunities for sellers are in sub-categories where the online selection is still limited — decorative hardware, specialty lighting, niche power tool accessories, and storage solutions for specific use cases tend to offer less competition with good search volume." },
+];
+
 export default function HomeDepotAccountManagement() {
   const [form, setForm] = useState({ name: '', email: '', company: '', revenue: 'Under $10K/mo', message: '' });
   const [sent, setSent] = useState(false);
+  const [openFaq, setOpenFaq] = useState(null);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -247,6 +257,41 @@ export default function HomeDepotAccountManagement() {
           .hdep-services-grid { grid-template-columns: 1fr; }
           .hdep-process-grid { grid-template-columns: 1fr; }
         }
+        /* ── FAQ ── */
+        .hdep-faq-sec { padding:80px 24px;background:#f8fafd;border-top:1px solid rgba(${ACCENT_RGB},0.08); }
+        .hdep-faq-inner { max-width:1200px;margin:0 auto; }
+        .hdep-faq-h { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,${ACCENT} 0%,${ACCENT_MID} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 36px;line-height:1.15; }
+        .hdep-faq-list { display:flex;flex-direction:column;gap:12px; }
+        .hdep-faq-item { background:linear-gradient(135deg,rgba(${ACCENT_RGB},0.06) 0%,rgba(255,255,255,0.85) 60%,rgba(${ACCENT_RGB},0.04) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(${ACCENT_RGB},0.07);transition:border-color 0.2s;position:relative; }
+        .hdep-faq-item.open { border-color:rgba(${ACCENT_RGB},0.30); }
+        .hdep-faq-item.open::before { content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:${ACCENT};border-radius:3px 0 0 3px; }
+        .hdep-faq-btn { width:100%;background:none;border:none;padding:22px 22px 22px 60px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;text-align:left;gap:16px;font-family:inherit;position:relative; }
+        .hdep-faq-q-badge { position:absolute;left:16px;top:50%;transform:translateY(-50%);width:28px;height:28px;background:rgba(${ACCENT_RGB},0.10);color:#374151;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:6px;flex-shrink:0;transition:background 0.2s,color 0.2s; }
+        .hdep-faq-item.open .hdep-faq-q-badge { background:${ACCENT};color:#fff; }
+        .hdep-faq-btn span { font-size:15px;font-weight:600;color:#0F1F40;line-height:1.45; }
+        .hdep-faq-item.open .hdep-faq-btn span { color:${ACCENT}; }
+        .hdep-faq-chev { width:24px;height:24px;flex-shrink:0;color:#9ca3af;transition:transform 0.3s; }
+        .hdep-faq-item.open .hdep-faq-chev { transform:rotate(180deg);color:${ACCENT}; }
+        .hdep-faq-ans-wrap { overflow:hidden;max-height:0;transition:max-height 0.35s ease; }
+        .hdep-faq-item.open .hdep-faq-ans-wrap { max-height:500px; }
+        .hdep-faq-ans { padding:0 22px 22px 60px;font-size:15px;color:#4b5563;line-height:1.8; }
+        .hdep-faq-a-badge { display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:${ACCENT};color:#fff;font-size:12px;font-weight:700;border-radius:6px;margin-right:12px;flex-shrink:0;vertical-align:middle; }
+        /* ── Related Services ── */
+        .hdep-rel-sec { background:rgba(${ACCENT_RGB},0.04);border-top:1px solid rgba(${ACCENT_RGB},0.08);padding:80px 24px; }
+        .hdep-rel-inner { max-width:1200px;margin:0 auto;text-align:center; }
+        .hdep-rel-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A6080;margin:0 0 14px;display:block; }
+        .hdep-rel-h { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,${ACCENT} 0%,${ACCENT_MID} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 16px;line-height:1.15; }
+        .hdep-rel-sub { font-size:15px;color:#0F1F40;line-height:1.7;margin:0 auto;max-width:680px; }
+        .hdep-rel-div { border:none;border-top:1px solid rgba(${ACCENT_RGB},0.12);margin:40px 0; }
+        .hdep-rel-tags { display:flex;flex-wrap:wrap;justify-content:center;gap:12px; }
+        .hdep-rtag { display:inline-flex;align-items:center;padding:8px 16px;border-radius:50px;font-size:13px;font-weight:600;text-decoration:none;border:1.5px solid;transition:all 0.2s; }
+        .hdep-rtag:hover { transform:translateY(-2px); }
+        .hdep-rtag-a { background:rgba(${ACCENT_RGB},0.08);color:${ACCENT};border-color:rgba(${ACCENT_RGB},0.25); }
+        .hdep-rtag-b { background:rgba(79,70,229,0.07);color:#4338ca;border-color:rgba(79,70,229,0.22); }
+        .hdep-rtag-c { background:rgba(5,150,105,0.07);color:#047857;border-color:rgba(5,150,105,0.22); }
+        .hdep-rtag-d { background:rgba(217,119,6,0.07);color:#b45309;border-color:rgba(217,119,6,0.22); }
+        .hdep-rtag-e { background:rgba(219,39,119,0.07);color:#be185d;border-color:rgba(219,39,119,0.22); }
+        .hdep-rtag-f { background:rgba(8,145,178,0.07);color:#0e7490;border-color:rgba(8,145,178,0.22); }
       `}</style>
 
       <div className="hdep-page">
@@ -455,6 +500,51 @@ export default function HomeDepotAccountManagement() {
                   </form>
                 )}
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="hdep-faq-sec" id="faq">
+          <div className="hdep-faq-inner">
+            <h2 className="hdep-faq-h">Frequently Asked Questions</h2>
+            <div className="hdep-faq-list">
+              {FAQS.map((faq, i) => (
+                <div key={i} className={'hdep-faq-item' + (openFaq === i ? ' open' : '')}>
+                  <button className="hdep-faq-btn" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
+                    <div className="hdep-faq-q-badge">Q</div>
+                    <span>{faq.q}</span>
+                    <svg className="hdep-faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="6 9 12 15 18 9"/></svg>
+                  </button>
+                  <div className="hdep-faq-ans-wrap">
+                    <div className="hdep-faq-ans"><span className="hdep-faq-a-badge">A</span>{faq.a}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Related Services */}
+        <section className="hdep-rel-sec">
+          <div className="hdep-rel-inner">
+            <span className="hdep-rel-eyebrow">PLATFORM RELATED OFFERINGS</span>
+            <h2 className="hdep-rel-h">Explore Related Services and Technologies</h2>
+            <p className="hdep-rel-sub">Pair our Home Depot Marketplace expertise with complementary services that grow your home improvement brand across channels.</p>
+            <hr className="hdep-rel-div" />
+            <div className="hdep-rel-tags">
+              <Link href="/wayfair-account-management-services/" className="hdep-rtag hdep-rtag-a">Wayfair Supplier</Link>
+              <Link href="/amazon-account-management-services/" className="hdep-rtag hdep-rtag-b">Amazon Management</Link>
+              <Link href="/walmart-account-management-services/" className="hdep-rtag hdep-rtag-c">Walmart Marketplace</Link>
+              <Link href="/ecommerce-seo-services/" className="hdep-rtag hdep-rtag-d">eCommerce SEO</Link>
+              <Link href="/ecommerce-website-development-services/" className="hdep-rtag hdep-rtag-e">eCommerce Development</Link>
+              <Link href="/social-media-marketing-services/" className="hdep-rtag hdep-rtag-f">Social Commerce</Link>
+              <Link href="/email-marketing-services/" className="hdep-rtag hdep-rtag-a">Email Automation</Link>
+              <Link href="/woocommerce-development-company/" className="hdep-rtag hdep-rtag-b">WooCommerce Development</Link>
+              <Link href="/houzz-product-listing-services/" className="hdep-rtag hdep-rtag-c">Houzz Listings</Link>
+              <Link href="/google-shopping-management/" className="hdep-rtag hdep-rtag-d">Google Shopping Ads</Link>
+              <Link href="/magento-development-company/" className="hdep-rtag hdep-rtag-e">Magento Development</Link>
+              <Link href="/ebay-account-management-services/" className="hdep-rtag hdep-rtag-f">eBay Management</Link>
             </div>
           </div>
         </section>

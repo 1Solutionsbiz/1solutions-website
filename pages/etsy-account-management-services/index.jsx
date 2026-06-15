@@ -109,9 +109,19 @@ const stats = [
 
 const trust = ['Etsy SEO specialists', 'Star Seller strategy experts', 'No lock-in contracts', 'Dedicated account manager'];
 
+const FAQS = [
+  { q: 'How is Etsy SEO different from Google SEO?', a: "Etsy's Aleph algorithm uses listing tags, titles, and attributes as its primary ranking signals — very different from Google's link-based authority model. On Etsy, the right 13 tags and a keyword-rich title can move a listing from page 10 to page 1 within weeks. Etsy SEO is highly tag-specific, buyer-intent driven, and changes seasonally, requiring ongoing optimisation rather than a one-time fix." },
+  { q: 'What exactly does Star Seller status require?', a: 'Star Seller requires three metrics to all be met simultaneously over a rolling 3-month window: a message response rate of 95 percent or higher (first message responded to within 24 hours), an on-time shipping and tracking rate of 95 percent or higher, and an average review rating of 4.8 stars or above. All three must be maintained consistently — failing any single metric removes the badge.' },
+  { q: 'How much should I spend on Etsy Ads and how do I know if they are working?', a: 'We typically recommend starting Etsy Ads at $3 to $5 per day per shop and scaling based on ROAS (Return on Ad Spend). Etsy Ads work best when focused on your highest-converting listings rather than promoting your full catalogue. We monitor revenue per click, listing conversion rate, and ROAS weekly, and shift budget toward listings that demonstrate positive ad profitability.' },
+  { q: 'Can you help with both physical handmade product shops and digital download shops?', a: 'Yes. Physical product and digital download shops require very different strategies on Etsy. Physical shops focus on photography quality, shipping speed for Star Seller, and seasonal inventory planning. Digital shops focus on thumbnail design for click-through, instant delivery, and volume-based keyword coverage across a large catalogue of variations. We tailor our approach to your specific shop type.' },
+  { q: 'How long does it take to improve Etsy search ranking after optimisation?', a: "Etsy's algorithm typically takes 4 to 8 weeks to fully index and re-rank optimised listings. You will usually see click-through rate improvements within 2 to 3 weeks as better titles attract more relevant search impressions. Full ranking improvement — including conversion rate data feeding back into Etsy's ranking — typically stabilises at the 8 to 12 week mark." },
+  { q: 'Do you manage Etsy shop sections, collections, and seasonal planning?', a: 'Yes. Shop section organisation is an underrated ranking factor on Etsy — well-organised sections improve the buyer experience and help Etsy understand your shop taxonomy, which feeds into category and collection page ranking. We also plan seasonal content calendars so your shop is ready with holiday-specific listings, photography, and Etsy Ads budgets 6 to 8 weeks before peak seasons.' },
+];
+
 export default function EtsyAccountManagement() {
   const [form, setForm] = useState({ name: '', email: '', company: '', revenue: 'Under $10K/mo', message: '' });
   const [sent, setSent] = useState(false);
+  const [openFaq, setOpenFaq] = useState(null);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -228,6 +238,40 @@ export default function EtsyAccountManagement() {
           .etsy-cta-btn:hover{transform:translateY(-2px);opacity:0.95;}
           @media(max-width:900px){.etsy-grid3,.etsy-grid4{grid-template-columns:1fr 1fr;}.etsy-grid2{grid-template-columns:1fr;}.etsy-contact-grid{grid-template-columns:1fr;}.etsy-res-grid{grid-template-columns:1fr 1fr;}}
           @media(max-width:600px){.etsy-hero,.etsy-sec,.etsy-results,.etsy-cta,.etsy-contact-sec{padding-left:20px;padding-right:20px;}.etsy-hero{padding-top:60px;padding-bottom:50px;}.etsy-grid3,.etsy-grid4,.etsy-grid2,.etsy-res-grid{grid-template-columns:1fr;}.etsy-bc{padding:12px 20px;}.etsy-field-row{grid-template-columns:1fr;}.etsy-form-wrap{padding:24px 20px;}}
+          /* ── FAQ ── */
+          .etsy-faq-sec { padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(120,50,0,0.08); }
+          .etsy-faq-h { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,#783200 0%,#c85a00 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 36px;line-height:1.15; }
+          .etsy-faq-list { display:flex;flex-direction:column;gap:12px; }
+          .etsy-faq-item { background:linear-gradient(135deg,rgba(120,50,0,0.06) 0%,rgba(255,255,255,0.85) 60%,rgba(120,50,0,0.04) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(120,50,0,0.07);transition:border-color 0.2s;position:relative; }
+          .etsy-faq-item.open { border-color:rgba(120,50,0,0.30); }
+          .etsy-faq-item.open::before { content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#783200;border-radius:3px 0 0 3px; }
+          .etsy-faq-btn { width:100%;background:none;border:none;padding:22px 22px 22px 60px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;text-align:left;gap:16px;font-family:inherit;position:relative; }
+          .etsy-faq-q-badge { position:absolute;left:16px;top:50%;transform:translateY(-50%);width:28px;height:28px;background:rgba(120,50,0,0.10);color:#374151;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:6px;flex-shrink:0;transition:background 0.2s,color 0.2s; }
+          .etsy-faq-item.open .etsy-faq-q-badge { background:#783200;color:#fff; }
+          .etsy-faq-btn span { font-size:15px;font-weight:600;color:#0F1F40;line-height:1.45; }
+          .etsy-faq-item.open .etsy-faq-btn span { color:#783200; }
+          .etsy-faq-chev { width:24px;height:24px;flex-shrink:0;color:#9ca3af;transition:transform 0.3s; }
+          .etsy-faq-item.open .etsy-faq-chev { transform:rotate(180deg);color:#783200; }
+          .etsy-faq-ans-wrap { overflow:hidden;max-height:0;transition:max-height 0.35s ease; }
+          .etsy-faq-item.open .etsy-faq-ans-wrap { max-height:500px; }
+          .etsy-faq-ans { padding:0 22px 22px 60px;font-size:15px;color:#4b5563;line-height:1.8; }
+          .etsy-faq-a-badge { display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:#783200;color:#fff;font-size:12px;font-weight:700;border-radius:6px;margin-right:12px;flex-shrink:0;vertical-align:middle; }
+          /* ── Related Services ── */
+          .etsy-rel-sec { background:rgba(120,50,0,0.04);border-top:1px solid rgba(120,50,0,0.08);padding:80px 40px; }
+          .etsy-rel-inner { max-width:1200px;margin:0 auto;text-align:center; }
+          .etsy-rel-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A6080;margin:0 0 14px;display:block; }
+          .etsy-rel-h { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,#783200 0%,#c85a00 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 16px;line-height:1.15; }
+          .etsy-rel-sub { font-size:15px;color:#0F1F40;line-height:1.7;margin:0 auto;max-width:680px; }
+          .etsy-rel-div { border:none;border-top:1px solid rgba(120,50,0,0.12);margin:40px 0; }
+          .etsy-rel-tags { display:flex;flex-wrap:wrap;justify-content:center;gap:12px; }
+          .etsy-rtag { display:inline-flex;align-items:center;padding:8px 16px;border-radius:50px;font-size:13px;font-weight:600;text-decoration:none;border:1.5px solid;transition:all 0.2s; }
+          .etsy-rtag:hover { transform:translateY(-2px); }
+          .etsy-rtag-a { background:rgba(120,50,0,0.08);color:#783200;border-color:rgba(120,50,0,0.25); }
+          .etsy-rtag-b { background:rgba(79,70,229,0.07);color:#4338ca;border-color:rgba(79,70,229,0.22); }
+          .etsy-rtag-c { background:rgba(5,150,105,0.07);color:#047857;border-color:rgba(5,150,105,0.22); }
+          .etsy-rtag-d { background:rgba(217,119,6,0.07);color:#b45309;border-color:rgba(217,119,6,0.22); }
+          .etsy-rtag-e { background:rgba(219,39,119,0.07);color:#be185d;border-color:rgba(219,39,119,0.22); }
+          .etsy-rtag-f { background:rgba(8,145,178,0.07);color:#0e7490;border-color:rgba(8,145,178,0.22); }
         `}</style>
       </Head>
 
@@ -464,6 +508,51 @@ export default function EtsyAccountManagement() {
                 </form>
               )}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="etsy-faq-sec" id="faq">
+        <div className="etsy-inner">
+          <h2 className="etsy-faq-h">Frequently Asked Questions</h2>
+          <div className="etsy-faq-list">
+            {FAQS.map((faq, i) => (
+              <div key={i} className={'etsy-faq-item' + (openFaq === i ? ' open' : '')}>
+                <button className="etsy-faq-btn" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
+                  <div className="etsy-faq-q-badge">Q</div>
+                  <span>{faq.q}</span>
+                  <svg className="etsy-faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div className="etsy-faq-ans-wrap">
+                  <div className="etsy-faq-ans"><span className="etsy-faq-a-badge">A</span>{faq.a}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related Services */}
+      <section className="etsy-rel-sec">
+        <div className="etsy-rel-inner">
+          <span className="etsy-rel-eyebrow">PLATFORM RELATED OFFERINGS</span>
+          <h2 className="etsy-rel-h">Explore Related Services and Technologies</h2>
+          <p className="etsy-rel-sub">Pair our Etsy shop management expertise with services that help your handmade brand grow beyond the platform.</p>
+          <hr className="etsy-rel-div" />
+          <div className="etsy-rel-tags">
+            <Link href="/amazon-account-management-services/" className="etsy-rtag etsy-rtag-a">Amazon Management</Link>
+            <Link href="/walmart-account-management-services/" className="etsy-rtag etsy-rtag-b">Walmart Marketplace</Link>
+            <Link href="/ebay-account-management-services/" className="etsy-rtag etsy-rtag-c">eBay Management</Link>
+            <Link href="/ecommerce-seo-services/" className="etsy-rtag etsy-rtag-d">eCommerce SEO</Link>
+            <Link href="/social-media-marketing-services/" className="etsy-rtag etsy-rtag-e">Social Commerce</Link>
+            <Link href="/email-marketing-services/" className="etsy-rtag etsy-rtag-f">Email Automation</Link>
+            <Link href="/woocommerce-development-company/" className="etsy-rtag etsy-rtag-a">WooCommerce Development</Link>
+            <Link href="/google-shopping-management/" className="etsy-rtag etsy-rtag-b">Google Shopping Ads</Link>
+            <Link href="/ecommerce-website-development-services/" className="etsy-rtag etsy-rtag-c">eCommerce Development</Link>
+            <Link href="/magento-development-company/" className="etsy-rtag etsy-rtag-d">Magento Development</Link>
+            <Link href="/wayfair-account-management-services/" className="etsy-rtag etsy-rtag-e">Wayfair Supplier</Link>
+            <Link href="/flipkart-account-management-services/" className="etsy-rtag etsy-rtag-f">Flipkart Management</Link>
           </div>
         </div>
       </section>

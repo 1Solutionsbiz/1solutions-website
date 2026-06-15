@@ -109,9 +109,19 @@ const stats = [
 
 const trust = ['Cassini SEO specialists', 'TRS status experts', 'No lock-in contracts', 'Dedicated account manager'];
 
+const FAQS = [
+  { q: 'What is the Cassini algorithm and how does it affect my eBay listings?', a: "Cassini is eBay's search engine. It ranks listings based on a combination of listing quality (title keywords, item specifics, description completeness), seller performance metrics (feedback score, defect rate, late shipment rate), pricing competitiveness, and conversion rate. Sellers who optimise only for keywords while ignoring seller performance consistently see their listings buried despite good content." },
+  { q: 'What are the requirements for Top Rated Seller status?', a: 'To achieve Top Rated Seller status, you need a minimum of 100 transactions and $1,000 in sales in the past 12 months, a defect rate below 0.5 percent, a late shipment rate below 3 percent, and cases closed without seller resolution below 0.3 percent. TRS status provides a 10 percent final value fee discount and the gold TRS badge in search results, which measurably increases click-through rate.' },
+  { q: 'How do eBay Promoted Listings work and are they worth it?', a: 'eBay Promoted Listings Standard is a pay-on-sale advertising format — you only pay a percentage of the sale price when a buyer clicks your promoted listing and purchases within 30 days. There is no cost per click. This makes it one of the most cost-effective marketplace advertising formats available, and we recommend it for most eBay sellers as part of a balanced organic and paid strategy.' },
+  { q: 'Can you help with international eBay selling through the Global Shipping Program?', a: 'Yes. The Global Shipping Program (GSP) allows you to sell to buyers in 100+ countries by shipping to one UK facility, with eBay handling the international forwarding and customs. We set up GSP on your eligible listings, optimise titles for international search, and manage the additional customer service complexity that comes with cross-border transactions.' },
+  { q: 'My eBay account is below standard — can you help recover it?', a: 'Yes. We have helped dozens of eBay sellers recover from Below Standard status. Our recovery plan typically involves identifying the root cause of the performance failure, implementing operational fixes to prevent recurrence, and a controlled strategy to build transaction volume and positive feedback to lift the performance metrics within eBay\'s evaluation window.' },
+  { q: 'Do you manage eBay Stores and all listing formats?', a: "Yes. We manage eBay Stores at all subscription tiers (Basic, Premium, Anchor, Enterprise), including store category structure, promotional marketing, Markdown Manager, and the Store Newsletter. We also manage both fixed price (Buy It Now) and auction format listings, and advise on which format maximises sell-through rate for different product types." },
+];
+
 export default function EbayAccountManagement() {
   const [form, setForm] = useState({ name: '', email: '', company: '', revenue: 'Under $10K/mo', message: '' });
   const [sent, setSent] = useState(false);
+  const [openFaq, setOpenFaq] = useState(null);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -228,6 +238,40 @@ export default function EbayAccountManagement() {
           .ebay-cta-btn:hover{transform:translateY(-2px);opacity:0.95;}
           @media(max-width:900px){.ebay-grid3,.ebay-grid4{grid-template-columns:1fr 1fr;}.ebay-grid2{grid-template-columns:1fr;}.ebay-contact-grid{grid-template-columns:1fr;}.ebay-res-grid{grid-template-columns:1fr 1fr;}}
           @media(max-width:600px){.ebay-hero,.ebay-sec,.ebay-results,.ebay-cta,.ebay-contact-sec{padding-left:20px;padding-right:20px;}.ebay-hero{padding-top:60px;padding-bottom:50px;}.ebay-grid3,.ebay-grid4,.ebay-grid2,.ebay-res-grid{grid-template-columns:1fr;}.ebay-bc{padding:12px 20px;}.ebay-field-row{grid-template-columns:1fr;}.ebay-form-wrap{padding:24px 20px;}}
+          /* ── FAQ ── */
+          .ebay-faq-sec { padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(122,0,0,0.08); }
+          .ebay-faq-h { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,#7a0000 0%,#c41a1a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 36px;line-height:1.15; }
+          .ebay-faq-list { display:flex;flex-direction:column;gap:12px; }
+          .ebay-faq-item { background:linear-gradient(135deg,rgba(122,0,0,0.06) 0%,rgba(255,255,255,0.85) 60%,rgba(122,0,0,0.04) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(122,0,0,0.07);transition:border-color 0.2s;position:relative; }
+          .ebay-faq-item.open { border-color:rgba(122,0,0,0.30); }
+          .ebay-faq-item.open::before { content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#7a0000;border-radius:3px 0 0 3px; }
+          .ebay-faq-btn { width:100%;background:none;border:none;padding:22px 22px 22px 60px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;text-align:left;gap:16px;font-family:inherit;position:relative; }
+          .ebay-faq-q-badge { position:absolute;left:16px;top:50%;transform:translateY(-50%);width:28px;height:28px;background:rgba(122,0,0,0.10);color:#374151;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:6px;flex-shrink:0;transition:background 0.2s,color 0.2s; }
+          .ebay-faq-item.open .ebay-faq-q-badge { background:#7a0000;color:#fff; }
+          .ebay-faq-btn span { font-size:15px;font-weight:600;color:#0F1F40;line-height:1.45; }
+          .ebay-faq-item.open .ebay-faq-btn span { color:#7a0000; }
+          .ebay-faq-chev { width:24px;height:24px;flex-shrink:0;color:#9ca3af;transition:transform 0.3s; }
+          .ebay-faq-item.open .ebay-faq-chev { transform:rotate(180deg);color:#7a0000; }
+          .ebay-faq-ans-wrap { overflow:hidden;max-height:0;transition:max-height 0.35s ease; }
+          .ebay-faq-item.open .ebay-faq-ans-wrap { max-height:500px; }
+          .ebay-faq-ans { padding:0 22px 22px 60px;font-size:15px;color:#4b5563;line-height:1.8; }
+          .ebay-faq-a-badge { display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:#7a0000;color:#fff;font-size:12px;font-weight:700;border-radius:6px;margin-right:12px;flex-shrink:0;vertical-align:middle; }
+          /* ── Related Services ── */
+          .ebay-rel-sec { background:rgba(122,0,0,0.04);border-top:1px solid rgba(122,0,0,0.08);padding:80px 40px; }
+          .ebay-rel-inner { max-width:1200px;margin:0 auto;text-align:center; }
+          .ebay-rel-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A6080;margin:0 0 14px;display:block; }
+          .ebay-rel-h { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,#7a0000 0%,#c41a1a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 16px;line-height:1.15; }
+          .ebay-rel-sub { font-size:15px;color:#0F1F40;line-height:1.7;margin:0 auto;max-width:680px; }
+          .ebay-rel-div { border:none;border-top:1px solid rgba(122,0,0,0.12);margin:40px 0; }
+          .ebay-rel-tags { display:flex;flex-wrap:wrap;justify-content:center;gap:12px; }
+          .ebay-rtag { display:inline-flex;align-items:center;padding:8px 16px;border-radius:50px;font-size:13px;font-weight:600;text-decoration:none;border:1.5px solid;transition:all 0.2s; }
+          .ebay-rtag:hover { transform:translateY(-2px); }
+          .ebay-rtag-a { background:rgba(122,0,0,0.08);color:#7a0000;border-color:rgba(122,0,0,0.25); }
+          .ebay-rtag-b { background:rgba(79,70,229,0.07);color:#4338ca;border-color:rgba(79,70,229,0.22); }
+          .ebay-rtag-c { background:rgba(5,150,105,0.07);color:#047857;border-color:rgba(5,150,105,0.22); }
+          .ebay-rtag-d { background:rgba(217,119,6,0.07);color:#b45309;border-color:rgba(217,119,6,0.22); }
+          .ebay-rtag-e { background:rgba(219,39,119,0.07);color:#be185d;border-color:rgba(219,39,119,0.22); }
+          .ebay-rtag-f { background:rgba(8,145,178,0.07);color:#0e7490;border-color:rgba(8,145,178,0.22); }
         `}</style>
       </Head>
 
@@ -464,6 +508,51 @@ export default function EbayAccountManagement() {
                 </form>
               )}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="ebay-faq-sec" id="faq">
+        <div className="ebay-inner">
+          <h2 className="ebay-faq-h">Frequently Asked Questions</h2>
+          <div className="ebay-faq-list">
+            {FAQS.map((faq, i) => (
+              <div key={i} className={'ebay-faq-item' + (openFaq === i ? ' open' : '')}>
+                <button className="ebay-faq-btn" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
+                  <div className="ebay-faq-q-badge">Q</div>
+                  <span>{faq.q}</span>
+                  <svg className="ebay-faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div className="ebay-faq-ans-wrap">
+                  <div className="ebay-faq-ans"><span className="ebay-faq-a-badge">A</span>{faq.a}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related Services */}
+      <section className="ebay-rel-sec">
+        <div className="ebay-rel-inner">
+          <span className="ebay-rel-eyebrow">PLATFORM RELATED OFFERINGS</span>
+          <h2 className="ebay-rel-h">Explore Related Services and Technologies</h2>
+          <p className="ebay-rel-sub">Pair our eBay management expertise with complementary services to build a profitable multichannel selling operation.</p>
+          <hr className="ebay-rel-div" />
+          <div className="ebay-rel-tags">
+            <Link href="/amazon-account-management-services/" className="ebay-rtag ebay-rtag-a">Amazon Management</Link>
+            <Link href="/walmart-account-management-services/" className="ebay-rtag ebay-rtag-b">Walmart Marketplace</Link>
+            <Link href="/ecommerce-seo-services/" className="ebay-rtag ebay-rtag-c">eCommerce SEO</Link>
+            <Link href="/google-shopping-management/" className="ebay-rtag ebay-rtag-d">Google Shopping Ads</Link>
+            <Link href="/email-marketing-services/" className="ebay-rtag ebay-rtag-e">Email Automation</Link>
+            <Link href="/social-media-marketing-services/" className="ebay-rtag ebay-rtag-f">Social Commerce</Link>
+            <Link href="/woocommerce-development-company/" className="ebay-rtag ebay-rtag-a">WooCommerce Development</Link>
+            <Link href="/amazon-fba-shipment-reconciliation-services/" className="ebay-rtag ebay-rtag-b">Amazon FBA Reconciliation</Link>
+            <Link href="/etsy-account-management-services/" className="ebay-rtag ebay-rtag-c">Etsy Shop Management</Link>
+            <Link href="/magento-development-company/" className="ebay-rtag ebay-rtag-d">Magento Development</Link>
+            <Link href="/ecommerce-website-development-services/" className="ebay-rtag ebay-rtag-e">eCommerce Development</Link>
+            <Link href="/flipkart-account-management-services/" className="ebay-rtag ebay-rtag-f">Flipkart Management</Link>
           </div>
         </div>
       </section>

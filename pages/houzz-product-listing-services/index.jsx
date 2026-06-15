@@ -108,9 +108,19 @@ const steps = [
   { n: '06', title: 'Monthly Reporting', desc: 'Revenue by product, professional enquiry volume, ad ROI, and product discovery data with next-month roadmap.' },
 ];
 
+const FAQS = [
+  { q: "Who shops on Houzz and how is the audience different from Amazon or Wayfair?", a: "Houzz is used by a combination of interior designers and architects (who buy on behalf of clients), design-conscious homeowners planning renovation projects, and trade professionals sourcing products for installation. Unlike Amazon (impulse purchase) or Wayfair (price-driven discovery), Houzz buyers are in a high-consideration purchase mode — they spend weeks researching before buying, making photography, specification depth, and brand storytelling critical." },
+  { q: "What types of products work best on Houzz?", a: "Houzz is strongest for home furniture (particularly sofas, beds, dining tables), decorative lighting, wall art and decor, bathroom vanities and fittings, kitchen hardware, outdoor furniture, and architectural products like tiles, flooring, and windows. Products with strong visual appeal, professional photography, and a clear design story perform best. Mass-produced commodity items without visual differentiation rarely succeed." },
+  { q: "How do Houzz Sponsored Product ads work?", a: "Houzz Sponsored Products appear at the top and throughout search results for room type, style, and product category queries. Unlike Google Shopping, Houzz ads target buyers specifically browsing for home products, which means higher purchase intent than typical display advertising. We build campaigns based on room type targeting (living room, bedroom, kitchen), style targeting (mid-century modern, industrial, Scandinavian), and specific search keywords." },
+  { q: "What is Houzz Pro and how does it help reach design professionals?", a: "Houzz Pro is the platform for interior designers, architects, and home contractors. These professionals use Houzz Pro to find products, create mood boards, and make trade purchases. Having a strong presence within trade-oriented discovery paths — including trade pricing, specification sheets, and direct enquiry capability — significantly increases orders from design professionals who typically buy in higher quantities." },
+  { q: "How long does it take to set up and start receiving orders on Houzz?", a: "For an existing brand with product photography ready, we can have your Houzz presence built, optimised, and live within 3 to 4 weeks. For brands that need photography coordination or are new to the platform, 6 to 8 weeks is more realistic. Sponsored Product campaigns go live the same week listings are published. Most clients see their first organic orders within 4 to 6 weeks of an optimised listing launch." },
+  { q: "Do you write the product descriptions and specifications, or do I need to provide them?", a: "We write all product descriptions, specification tables, and marketing copy from your existing product data (PDFs, datasheets, brand guidelines, sample listings). If your product data is incomplete, we guide you on exactly what information we need to write compelling copy. Professional specification depth — dimensions, materials, finishes, lead times, certifications — is one of the most important factors for Houzz search ranking and buyer confidence." },
+];
+
 export default function HouzzProductListingServices() {
   const [form, setForm] = useState({ name: '', email: '', company: '', revenue: 'Under $10K/mo', message: '' });
   const [sent, setSent] = useState(false);
+  const [openFaq, setOpenFaq] = useState(null);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -247,6 +257,41 @@ export default function HouzzProductListingServices() {
           .houz-services-grid { grid-template-columns: 1fr; }
           .houz-process-grid { grid-template-columns: 1fr; }
         }
+        /* ── FAQ ── */
+        .houz-faq-sec { padding:80px 24px;background:#f8fafd;border-top:1px solid rgba(${ACCENT_RGB},0.08); }
+        .houz-faq-inner { max-width:1200px;margin:0 auto; }
+        .houz-faq-h { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,${ACCENT} 0%,${ACCENT_MID} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 36px;line-height:1.15; }
+        .houz-faq-list { display:flex;flex-direction:column;gap:12px; }
+        .houz-faq-item { background:linear-gradient(135deg,rgba(${ACCENT_RGB},0.06) 0%,rgba(255,255,255,0.85) 60%,rgba(${ACCENT_RGB},0.04) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(${ACCENT_RGB},0.07);transition:border-color 0.2s;position:relative; }
+        .houz-faq-item.open { border-color:rgba(${ACCENT_RGB},0.30); }
+        .houz-faq-item.open::before { content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:${ACCENT};border-radius:3px 0 0 3px; }
+        .houz-faq-btn { width:100%;background:none;border:none;padding:22px 22px 22px 60px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;text-align:left;gap:16px;font-family:inherit;position:relative; }
+        .houz-faq-q-badge { position:absolute;left:16px;top:50%;transform:translateY(-50%);width:28px;height:28px;background:rgba(${ACCENT_RGB},0.10);color:#374151;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:6px;flex-shrink:0;transition:background 0.2s,color 0.2s; }
+        .houz-faq-item.open .houz-faq-q-badge { background:${ACCENT};color:#fff; }
+        .houz-faq-btn span { font-size:15px;font-weight:600;color:#0F1F40;line-height:1.45; }
+        .houz-faq-item.open .houz-faq-btn span { color:${ACCENT}; }
+        .houz-faq-chev { width:24px;height:24px;flex-shrink:0;color:#9ca3af;transition:transform 0.3s; }
+        .houz-faq-item.open .houz-faq-chev { transform:rotate(180deg);color:${ACCENT}; }
+        .houz-faq-ans-wrap { overflow:hidden;max-height:0;transition:max-height 0.35s ease; }
+        .houz-faq-item.open .houz-faq-ans-wrap { max-height:500px; }
+        .houz-faq-ans { padding:0 22px 22px 60px;font-size:15px;color:#4b5563;line-height:1.8; }
+        .houz-faq-a-badge { display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:${ACCENT};color:#fff;font-size:12px;font-weight:700;border-radius:6px;margin-right:12px;flex-shrink:0;vertical-align:middle; }
+        /* ── Related Services ── */
+        .houz-rel-sec { background:rgba(${ACCENT_RGB},0.04);border-top:1px solid rgba(${ACCENT_RGB},0.08);padding:80px 24px; }
+        .houz-rel-inner { max-width:1200px;margin:0 auto;text-align:center; }
+        .houz-rel-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A6080;margin:0 0 14px;display:block; }
+        .houz-rel-h { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,${ACCENT} 0%,${ACCENT_MID} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 16px;line-height:1.15; }
+        .houz-rel-sub { font-size:15px;color:#0F1F40;line-height:1.7;margin:0 auto;max-width:680px; }
+        .houz-rel-div { border:none;border-top:1px solid rgba(${ACCENT_RGB},0.12);margin:40px 0; }
+        .houz-rel-tags { display:flex;flex-wrap:wrap;justify-content:center;gap:12px; }
+        .houz-rtag { display:inline-flex;align-items:center;padding:8px 16px;border-radius:50px;font-size:13px;font-weight:600;text-decoration:none;border:1.5px solid;transition:all 0.2s; }
+        .houz-rtag:hover { transform:translateY(-2px); }
+        .houz-rtag-a { background:rgba(${ACCENT_RGB},0.08);color:${ACCENT};border-color:rgba(${ACCENT_RGB},0.25); }
+        .houz-rtag-b { background:rgba(79,70,229,0.07);color:#4338ca;border-color:rgba(79,70,229,0.22); }
+        .houz-rtag-c { background:rgba(5,150,105,0.07);color:#047857;border-color:rgba(5,150,105,0.22); }
+        .houz-rtag-d { background:rgba(217,119,6,0.07);color:#b45309;border-color:rgba(217,119,6,0.22); }
+        .houz-rtag-e { background:rgba(219,39,119,0.07);color:#be185d;border-color:rgba(219,39,119,0.22); }
+        .houz-rtag-f { background:rgba(8,145,178,0.07);color:#0e7490;border-color:rgba(8,145,178,0.22); }
       `}</style>
 
       <div className="houz-page">
@@ -455,6 +500,51 @@ export default function HouzzProductListingServices() {
                   </form>
                 )}
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="houz-faq-sec" id="faq">
+          <div className="houz-faq-inner">
+            <h2 className="houz-faq-h">Frequently Asked Questions</h2>
+            <div className="houz-faq-list">
+              {FAQS.map((faq, i) => (
+                <div key={i} className={'houz-faq-item' + (openFaq === i ? ' open' : '')}>
+                  <button className="houz-faq-btn" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
+                    <div className="houz-faq-q-badge">Q</div>
+                    <span>{faq.q}</span>
+                    <svg className="houz-faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="6 9 12 15 18 9"/></svg>
+                  </button>
+                  <div className="houz-faq-ans-wrap">
+                    <div className="houz-faq-ans"><span className="houz-faq-a-badge">A</span>{faq.a}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Related Services */}
+        <section className="houz-rel-sec">
+          <div className="houz-rel-inner">
+            <span className="houz-rel-eyebrow">PLATFORM RELATED OFFERINGS</span>
+            <h2 className="houz-rel-h">Explore Related Services and Technologies</h2>
+            <p className="houz-rel-sub">Pair our Houzz listing expertise with complementary services that grow your home design brand across retail and digital channels.</p>
+            <hr className="houz-rel-div" />
+            <div className="houz-rel-tags">
+              <Link href="/wayfair-account-management-services/" className="houz-rtag houz-rtag-a">Wayfair Supplier</Link>
+              <Link href="/home-depot-account-management-services/" className="houz-rtag houz-rtag-b">Home Depot Marketplace</Link>
+              <Link href="/amazon-account-management-services/" className="houz-rtag houz-rtag-c">Amazon Management</Link>
+              <Link href="/ecommerce-seo-services/" className="houz-rtag houz-rtag-d">eCommerce SEO</Link>
+              <Link href="/social-media-marketing-services/" className="houz-rtag houz-rtag-e">Social Commerce</Link>
+              <Link href="/email-marketing-services/" className="houz-rtag houz-rtag-f">Email Automation</Link>
+              <Link href="/ecommerce-website-development-services/" className="houz-rtag houz-rtag-a">eCommerce Development</Link>
+              <Link href="/woocommerce-development-company/" className="houz-rtag houz-rtag-b">WooCommerce Development</Link>
+              <Link href="/google-shopping-management/" className="houz-rtag houz-rtag-c">Google Shopping Ads</Link>
+              <Link href="/magento-development-company/" className="houz-rtag houz-rtag-d">Magento Development</Link>
+              <Link href="/walmart-account-management-services/" className="houz-rtag houz-rtag-e">Walmart Marketplace</Link>
+              <Link href="/ebay-account-management-services/" className="houz-rtag houz-rtag-f">eBay Management</Link>
             </div>
           </div>
         </section>
