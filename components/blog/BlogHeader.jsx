@@ -19,15 +19,17 @@ const SVC_PILLARS = [
           { name: 'PHP Development',         desc: 'Bespoke PHP web applications',        href: '/#services' },
           { name: 'CodeIgniter Development', desc: 'Lightweight PHP web apps',            href: '/codeigniter-development-company/' },
           { name: 'Drupal Development',      desc: 'Enterprise CMS platforms',            href: '/drupal-development-company/' },
+          { name: 'Next.js Development',     desc: 'Fast, SEO-optimised React apps',      href: '/nextjs-development-services/' },
+          { name: 'Joomla Development',      desc: 'Flexible Joomla CMS solutions',       href: '/joomla-development-company/' },
         ],
       },
       {
         id: 'mobile', label: 'Mobile App Development',
         services: [
-          { name: 'iOS App Development',     desc: 'Native Swift & Xcode apps',           href: '/#services' },
-          { name: 'Android Development',     desc: 'Native Kotlin applications',           href: '/#services' },
+          { name: 'iOS App Development',     desc: 'Native Swift & Xcode apps',           href: '/ios-app-development-company/' },
+          { name: 'Android Development',     desc: 'Native Kotlin applications',           href: '/android-application-development-company/' },
           { name: 'React Native',            desc: 'Cross-platform mobile apps',           href: '/#services' },
-          { name: 'Flutter Development',     desc: 'Beautiful cross-platform UIs',         href: '/#services' },
+          { name: 'Flutter Development',     desc: 'Beautiful cross-platform UIs',         href: '/flutter-app-development-services/' },
           { name: 'App UI/UX Design',        desc: 'Intuitive mobile experiences',         href: '/#services' },
           { name: 'App Maintenance',         desc: 'Ongoing updates & support',            href: '/#services' },
         ],
@@ -53,7 +55,7 @@ const SVC_PILLARS = [
       {
         id: 'seo', label: 'SEO Services',
         services: [
-          { name: 'SEO Services',            desc: 'Full-service search optimisation',     href: '/seo-services-company/' },
+          { name: 'SEO Services',            desc: 'Full-service search optimisation',     href: '/seo-services/' },
           { name: 'Technical SEO',           desc: 'Site speed, crawlability & schema',    href: '/seo-services-company/' },
           { name: 'Local SEO',               desc: 'Dominate local search results',        href: '/seo-services-company/' },
           { name: 'eCommerce SEO',           desc: 'Product & category page rankings',     href: '/seo-services-company/' },
@@ -93,7 +95,7 @@ const SVC_PILLARS = [
       {
         id: 'platforms', label: 'Platform Development',
         services: [
-          { name: 'Shopify Development',     desc: 'Custom Shopify stores & apps',         href: '/#services' },
+          { name: 'Shopify Development',     desc: 'Custom Shopify stores & apps',         href: '/shopify-store-development/' },
           { name: 'WooCommerce Development', desc: 'WordPress-powered online stores',      href: '/woocommerce-development-company/' },
           { name: 'Magento Development',     desc: 'Enterprise Magento 2 solutions',       href: '/magento-development-company/' },
           { name: 'OpenCart Development',    desc: 'Scalable OpenCart storefronts',        href: '/opencart-development-company/' },
@@ -210,6 +212,36 @@ const SVC_PILLARS = [
         id: 'hire-ai', label: 'Hire AI Developer',
         services: [
           { name: 'AI Developer',          desc: 'Top AI talent driving your next tech breakthrough with cutting-edge ML.',href: '/hire-ai-developer/' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'enterprise',
+    label: 'Cloud & Enterprise',
+    icon: 'M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z',
+    subcats: [
+      {
+        id: 'cloud', label: 'Cloud & DevOps',
+        services: [
+          { name: 'Cloud Migration',          desc: 'Seamless migration to AWS, GCP & Azure.',              href: '/cloud-migration-services/' },
+          { name: 'Cloud-Native Development', desc: 'Microservices, containers & Kubernetes solutions.',     href: '/cloud-native-services/' },
+          { name: 'DevOps Services',          desc: 'CI/CD pipelines & infrastructure automation.',          href: '/devops-services-company/' },
+        ],
+      },
+      {
+        id: 'enterprise-apps', label: 'Enterprise Applications',
+        services: [
+          { name: 'CRM Development',          desc: 'Custom CRM systems for customer relationship management.', href: '/crm-application-development-company/' },
+          { name: 'ERP Development',          desc: 'Integrated ERP solutions for business automation.',     href: '/erp-application-development-company/' },
+          { name: 'TIBCO Development',        desc: 'TIBCO integration & middleware development services.',   href: '/tibco-development-services/' },
+        ],
+      },
+      {
+        id: 'support', label: 'Support & Maintenance',
+        services: [
+          { name: 'Website Maintenance',      desc: 'Ongoing support, updates & performance monitoring.',    href: '/website-support-maintenance-services/' },
+          { name: 'WordPress Maintenance',    desc: 'Dedicated WordPress support & maintenance plans.',      href: '/wordpress-support-and-maintenance-services/' },
         ],
       },
     ],
@@ -364,8 +396,9 @@ export default function BlogHeader() {
                 </button>
               </li>
 
-              <li><Link href="/portfolio"  onClick={close}>Portfolio</Link></li>
-              <li><Link href="/blog"       onClick={close}>Insights</Link></li>
+              <li><Link href="/portfolio"    onClick={close}>Portfolio</Link></li>
+              <li><Link href="/case-studies" onClick={close}>Case Studies</Link></li>
+              <li><Link href="/blog"         onClick={close}>Insights</Link></li>
 
               {/* ── About Us ── */}
               <li className="bh-services-item" onMouseEnter={openAbout} onMouseLeave={delayCloseAbout}>
@@ -636,8 +669,9 @@ export default function BlogHeader() {
           )}
         </div>
 
-        <Link href="/portfolio"  onClick={close}>Portfolio</Link>
-        <Link href="/blog"       onClick={close}>Insights</Link>
+        <Link href="/portfolio"    onClick={close}>Portfolio</Link>
+        <Link href="/case-studies" onClick={close}>Case Studies</Link>
+        <Link href="/blog"         onClick={close}>Insights</Link>
 
         {/* About Us accordion */}
         <div className="bh-mob-services">
