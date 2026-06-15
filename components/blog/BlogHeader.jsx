@@ -57,9 +57,9 @@ const SVC_PILLARS = [
         services: [
           { name: 'SEO Services',            desc: 'Full-service search optimisation',     href: '/seo-services-company/' },
           { name: 'Technical SEO',           desc: 'Site speed, crawlability & schema',    href: '/seo-services-company/' },
-          { name: 'Local SEO',               desc: 'Dominate local search results',        href: '/seo-services-company/' },
-          { name: 'eCommerce SEO',           desc: 'Product & category page rankings',     href: '/seo-services-company/' },
-          { name: 'SEO Audit',               desc: 'Comprehensive site health check',      href: '/seo-services-company/' },
+          { name: 'Local SEO',               desc: 'Dominate local search results',        href: '/local-seo-services/' },
+          { name: 'eCommerce SEO',           desc: 'Product & category page rankings',     href: '/ecommerce-seo-services/' },
+          { name: 'SEO Audit',               desc: 'Comprehensive site health check',      href: '/seo-audit-services/' },
           { name: 'SEO Packages',            desc: 'Affordable monthly SEO plans',         href: '/affordable-seo-packages/' },
         ],
       },
