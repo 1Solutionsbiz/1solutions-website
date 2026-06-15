@@ -8,60 +8,99 @@ const services = [
     label: 'Digital Transformation',
     headline: 'Digital Transformation',
     desc: 'Digitize and automate complex workflows with our responsive software solutions. Modernity, experience, scalability, security, performance — all check.',
-    tags: ['React','Next.js','Node.js','.NET','Vue.js','Angular'],
+    tags: ['React', 'Next.js', 'Node.js', '.NET', 'Vue.js', 'Angular'],
     cta: 'Elevate Digital Transformation Journey →',
     href: '/digital-transformation',
     image: 'https://picsum.photos/500/400?random=1',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: 22, height: 22, flexShrink: 0 }}>
+        <rect x="2" y="3" width="20" height="14" rx="2" />
+        <line x1="2" y1="17" x2="22" y2="17" />
+        <rect x="9" y="20" width="6" height="2" fill="currentColor" stroke="none" />
+      </svg>
+    ),
   },
   {
     id: 'ecommerce',
     label: 'eCommerce Development',
     headline: 'eCommerce Development',
-    desc: 'Having developed eCommerce for hundreds of businesses including Fortune 500, 1Solutions offers strong capability in the domain.',
-    tags: ['Shopify','WooCommerce','Magento','Headless','PWA','BigCommerce'],
+    desc: "Having developed eCommerce for hundreds of businesses including Fortune 500, 1Solutions offers strong capability in the domain.",
+    tags: ['Shopify', 'WooCommerce', 'Magento', 'Headless', 'PWA', 'BigCommerce'],
     cta: 'Boost Your Online Store →',
     href: '/ecommerce-development',
     image: 'https://picsum.photos/500/400?random=2',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: 22, height: 22, flexShrink: 0 }}>
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <path d="M16 10a4 4 0 01-8 0" />
+      </svg>
+    ),
   },
   {
     id: 'cloud',
     label: 'Cloud & DevOps',
     headline: 'Cloud & DevOps',
     desc: 'Migrate to the cloud, modernize infrastructure, and automate deployments. We help you scale reliably while cutting operational costs.',
-    tags: ['AWS','Azure','GCP','Docker','Kubernetes','CI/CD'],
+    tags: ['AWS', 'Azure', 'GCP', 'Docker', 'Kubernetes', 'CI/CD'],
     cta: 'Modernize Your Infrastructure →',
     href: '/cloud-devops',
     image: 'https://picsum.photos/500/400?random=3',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: 22, height: 22, flexShrink: 0 }}>
+        <path d="M20 10.5c0-1.7-1.4-3-3-3-.4-2.2-2.3-3.8-4.5-3.8-2.5 0-4.6 2-4.6 4.5 0 .3 0 .5.1.8C6.3 9.5 5.1 11 5.1 12.8c0 2.2 1.8 4 4 4h10c2.2 0 4-1.8 4-4z" />
+      </svg>
+    ),
   },
   {
     id: 'ai',
     label: 'Artificial Intelligence',
     headline: 'Artificial Intelligence',
     desc: 'Automate decisions, maximize user experiences, and access deeper business insights with custom-trained AI models.',
-    tags: ['Machine Learning','LLMs','ChatGPT','Python','TensorFlow','NLP'],
+    tags: ['Machine Learning', 'LLMs', 'ChatGPT', 'Python', 'TensorFlow', 'NLP'],
     cta: 'Explore AI Solutions →',
     href: '/artificial-intelligence',
     image: 'https://picsum.photos/500/400?random=4',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: 22, height: 22, flexShrink: 0 }}>
+        <circle cx="12" cy="12" r="10" />
+        <circle cx="9" cy="10" r="1.5" fill="currentColor" stroke="none" />
+        <circle cx="15" cy="10" r="1.5" fill="currentColor" stroke="none" />
+        <path d="M8 14c1 2 2.5 3 4 3s3-1 4-3" strokeLinecap="round" />
+      </svg>
+    ),
   },
   {
     id: 'marketing',
     label: 'Digital Marketing',
     headline: 'Digital Marketing',
     desc: 'Data-driven SEO, PPC, and content strategies that deliver measurable growth. We maximise your ROI across every digital channel.',
-    tags: ['SEO','Google Ads','Meta Ads','Analytics','Content','Email'],
+    tags: ['SEO', 'Google Ads', 'Meta Ads', 'Analytics', 'Content', 'Email'],
     cta: 'Grow Your Digital Presence →',
     href: '/digital-marketing',
     image: 'https://picsum.photos/500/400?random=5',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: 22, height: 22, flexShrink: 0 }}>
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
   },
   {
     id: 'hiring',
     label: 'Hire On Demand',
     headline: 'Hire On Demand',
     desc: 'Hire vetted developers, designers, and marketers who work as a seamless extension of your team. Full-time or part-time, no lock-in.',
-    tags: ['Developers','Designers','SEO Experts','QA Engineers','PMs'],
+    tags: ['Developers', 'Designers', 'SEO Experts', 'QA Engineers', 'PMs'],
     cta: 'Build Your Dream Team →',
     href: '/hire-dedicated-developers',
     image: 'https://picsum.photos/500/400?random=6',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: 22, height: 22, flexShrink: 0 }}>
+        <circle cx="12" cy="8" r="3" />
+        <path d="M5 20c0-4 3-6 7-6s7 2 7 6" strokeLinecap="round" />
+        <path d="M18 10h4m-2-2v4" strokeLinecap="round" />
+      </svg>
+    ),
   },
 ]
 
@@ -70,69 +109,96 @@ export default function Services() {
   const current = services.find(s => s.id === active)
 
   return (
-    <section id="services" style={{ padding: '80px 40px', background: '#fff' }}>
+    <section id="services" style={{
+      padding: '80px 40px',
+      background: 'linear-gradient(135deg, #fdfcff 0%, #f9f8ff 50%, #f6f8ff 100%)',
+    }}>
       <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
 
-        {/* Header */}
-        <h2 style={{ fontSize: 'clamp(28px,3.5vw,42px)', fontWeight: 900, color: '#0F3460', marginBottom: '16px', textAlign: 'center' }}>
+        <h2 style={{
+          fontSize: 'clamp(32px,3.5vw,48px)', fontWeight: 900, marginBottom: '20px',
+          textAlign: 'center', letterSpacing: '-0.5px',
+          background: 'linear-gradient(90deg, #0F3460 0%, #F59E0B 45%, #7C3AED 100%)',
+          WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text', color: 'transparent',
+        }}>
           Our Core Technology Services
         </h2>
-        <p style={{ fontSize: '16px', color: '#6b7280', textAlign: 'center', maxWidth: '700px', margin: '0 auto 48px', lineHeight: 1.7 }}>
+        <p style={{
+          fontSize: '16px', color: '#6b7280', textAlign: 'center',
+          maxWidth: '700px', margin: '0 auto 60px', lineHeight: 1.8,
+        }}>
           From strengthening your digital presence to automating your workflow we offer technology services for end-to-end digital transformation.
         </p>
 
-        {/* Grid: Tabs | Image + Detail */}
-        <div style={{ display: 'grid', gridTemplateColumns: '260px 1fr', gap: '0', border: '1px solid #e5e7eb', borderRadius: '16px', overflow: 'hidden' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '280px 1fr', gap: '56px', alignItems: 'flex-start' }}>
 
-          {/* Tabs */}
-          <div style={{ borderRight: '1px solid #e5e7eb', background: '#f9fafb' }}>
-            {services.map((s) => (
-              <button key={s.id} onClick={() => setActive(s.id)}
-                style={{
-                  display: 'flex', alignItems: 'center', gap: '10px', width: '100%',
-                  padding: '16px 20px', border: 'none', cursor: 'pointer', textAlign: 'left',
-                  fontSize: '14px', fontWeight: active === s.id ? 700 : 500,
-                  background: active === s.id ? '#0F3460' : 'transparent',
-                  color: active === s.id ? '#fff' : '#374151',
-                  borderBottom: '1px solid #e5e7eb',
-                  transition: 'all 0.15s',
-                }}>
+          {/* Left tabs */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            {services.map(s => (
+              <button key={s.id} onClick={() => setActive(s.id)} style={{
+                display: 'flex', alignItems: 'center', gap: '10px',
+                padding: '18px 24px', borderRadius: '20px', cursor: 'pointer',
+                textAlign: 'left', fontSize: '15px', fontWeight: 700,
+                transition: 'all 0.3s', width: '100%', boxSizing: 'border-box',
+                ...(active === s.id ? {
+                  background: '#0F3460', color: '#fff',
+                  border: '2px solid #0F3460',
+                  boxShadow: '0 6px 16px rgba(15, 52, 96, 0.2)',
+                } : {
+                  background: 'linear-gradient(white, white) padding-box, linear-gradient(90deg, #FE9700 0%, #114171 100%) border-box',
+                  border: '2px solid transparent', color: '#0F3460',
+                }),
+              }}>
+                {s.icon}
                 {s.label}
               </button>
             ))}
           </div>
 
-          {/* Right: Image + Detail */}
-          <div style={{ display: 'grid', gridTemplateRows: 'auto 1fr' }}>
-            {/* Image */}
-            <div style={{ height: '220px', overflow: 'hidden' }}>
-              <img src={current.image} alt={current.headline}
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          {/* Right: image + content card */}
+          <div style={{
+            display: 'flex', flexDirection: 'row', gap: '32px', padding: '48px',
+            background: '#fff', border: '1px solid rgba(229, 231, 235, 0.7)',
+            borderRadius: '24px', boxShadow: '0 12px 48px rgba(0, 0, 0, 0.12)',
+            alignItems: 'stretch',
+          }}>
+            <div style={{
+              borderRadius: '20px', overflow: 'hidden',
+              width: '350px', minWidth: '350px', minHeight: '320px',
+            }}>
+              <img
+                src={current.image}
+                alt={current.headline}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
             </div>
 
-            {/* Detail */}
-            <div style={{ padding: '32px 40px' }}>
-              <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#0F3460', marginBottom: '12px' }}>
+            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
+              <h3 style={{ fontSize: '26px', fontWeight: 800, color: '#0F3460', marginBottom: '12px', letterSpacing: '-0.3px' }}>
                 {current.headline}
               </h3>
-              <p style={{ fontSize: '15px', color: '#6b7280', lineHeight: 1.7, marginBottom: '20px' }}>
+              <p style={{ fontSize: '15px', color: '#6b7280', lineHeight: 1.7, marginBottom: '24px' }}>
                 {current.desc}
               </p>
-              <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#9ca3af', marginBottom: '10px' }}>
+              <div style={{ fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: '#374151', marginBottom: '16px' }}>
                 Key Technologies
               </div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '28px' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '32px' }}>
                 {current.tags.map(tag => (
                   <span key={tag} style={{
-                    padding: '4px 12px', borderRadius: '20px', fontSize: '12px', fontWeight: 600,
-                    background: '#f3f4f6', color: '#374151', border: '1px solid #e5e7eb',
+                    padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: 600,
+                    background: 'rgba(15, 52, 96, 0.06)', color: '#0F3460',
+                    border: '1px solid rgba(15, 52, 96, 0.1)',
                   }}>{tag}</span>
                 ))}
               </div>
               <Link href={current.href} style={{
-                display: 'inline-block', padding: '12px 24px', borderRadius: '8px',
-                background: '#0F3460', color: '#fff', fontWeight: 600, fontSize: '14px',
-                textDecoration: 'none', transition: 'background 0.2s',
+                display: 'inline-flex', alignItems: 'center', gap: '6px',
+                padding: '14px 32px', borderRadius: '24px', fontSize: '15px', fontWeight: 600,
+                textDecoration: 'none', width: 'fit-content', transition: 'all 0.3s',
+                background: 'linear-gradient(white, white) padding-box, linear-gradient(90deg, #FE9700 0%, #114171 100%) border-box',
+                border: '2px solid transparent', color: '#0F3460',
               }}>
                 {current.cta}
               </Link>
