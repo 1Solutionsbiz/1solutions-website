@@ -56,113 +56,160 @@ const statGridPos = [
   { gridColumn: '3', gridRow: '2' },
 ]
 
+const navBtnStyle = {
+  width: '48px', height: '48px',
+  display: 'flex', alignItems: 'center', justifyContent: 'center',
+  border: '2px solid transparent',
+  background: 'linear-gradient(white, white) padding-box, linear-gradient(90deg, #FE9700 0%, #114171 100%) border-box',
+  borderRadius: '12px',
+  cursor: 'pointer', fontSize: '20px', color: '#0F3460',
+  transition: 'all 0.3s',
+}
+
 export default function WhyUs() {
   const [active, setActive] = useState(0)
   const story = stories[active]
 
   return (
     <>
-      {/* Success Stories */}
+      {/* ── Success Stories ── */}
       <section id="success-stories" style={{
         padding: '80px 40px',
         background: 'linear-gradient(135deg, rgba(254, 243, 199, 0.5) 0%, rgba(233, 212, 255, 0.3) 100%)',
       }}>
         <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center', marginBottom: '48px' }}>
-            <h2 style={{
-              fontSize: 'clamp(28px,3.5vw,48px)', fontWeight: 900, margin: 0, lineHeight: 1.2,
-              background: 'linear-gradient(90deg, #0F3460 0%, #F59E0B 45%, #7C3AED 100%)',
-              WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text', color: 'transparent',
-            }}>
-              Real Brand Stories To Inspire You
-            </h2>
+          {/* Header: two-column */}
+          <div style={{
+            display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px',
+            alignItems: 'center', marginBottom: '60px',
+          }}>
             <div>
-              <p style={{ color: '#6b7280', marginBottom: '20px', fontSize: '15px', lineHeight: 1.7, margin: '0 0 20px' }}>
+              <h2 style={{
+                fontSize: 'clamp(28px,3.5vw,48px)', fontWeight: 900, margin: '0 0 16px',
+                lineHeight: 1.2,
+                background: 'linear-gradient(90deg, #0F3460 0%, #F59E0B 45%, #7C3AED 100%)',
+                WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text', color: 'transparent',
+              }}>
+                Real Brand Stories To Inspire You
+              </h2>
+            </div>
+            <div>
+              <p style={{ color: '#6b7280', marginBottom: '20px', fontSize: '16px', lineHeight: 1.7, margin: '0 0 24px' }}>
                 Catch us innovating with cutting-edge projects that redefine industry standards.
               </p>
               <Link href="/case-studies" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '8px',
-                padding: '12px 28px', borderRadius: '24px', fontSize: '14px', fontWeight: 600,
-                textDecoration: 'none', color: '#fff', background: '#0F3460',
+                padding: '14px 32px', borderRadius: '24px', fontSize: '15px', fontWeight: 500,
+                textDecoration: 'none', color: '#fff', background: '#0F3460', width: 'fit-content',
+                transition: 'all 0.3s',
               }}>
                 Explore Case Studies
               </Link>
             </div>
           </div>
 
-          {/* Card */}
+          {/* Story card — outer card: amber border, cream bg */}
           <div style={{
             display: 'grid', gridTemplateColumns: '40% 60%',
+            alignItems: 'center',
             border: '2px solid #FE9700', borderRadius: '40px',
-            overflow: 'hidden', minHeight: '500px', background: '#FFFBF7',
+            overflow: 'hidden', height: '550px', background: '#FFFBF7',
           }}>
-            <div style={{ padding: '48px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '0' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '24px' }}>
+            {/* Left: white floating card inside the 40% column */}
+            <div style={{
+              display: 'flex', flexDirection: 'column', gap: '12px',
+              justifyContent: 'flex-start',
+              padding: '40px 40px 40px 60px',
+              margin: '20px 0 20px 30px',
+              background: '#fff',
+              borderRadius: '24px',
+              overflowY: 'auto',
+              height: 'calc(100% - 40px)',
+              boxSizing: 'border-box',
+            }}>
+              {/* Company header */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                 <div style={{
-                  width: '56px', height: '56px', borderRadius: '8px', background: '#0F3460',
-                  color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  width: '56px', height: '56px', borderRadius: '8px',
+                  background: '#0F3460', color: '#fff',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontWeight: 700, fontSize: '18px', flexShrink: 0,
                 }}>
                   {story.initials}
                 </div>
                 <div>
-                  <div style={{ fontWeight: 700, color: '#111827', fontSize: '16px', marginBottom: '3px' }}>{story.company}</div>
+                  <div style={{ fontWeight: 700, color: '#111827', fontSize: '18px', margin: '0 0 4px' }}>{story.company}</div>
                   <div style={{ color: '#9ca3af', fontSize: '13px', fontWeight: 500 }}>{story.industry}</div>
                 </div>
               </div>
 
+              {/* Metrics */}
               <div style={{
                 display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px',
-                padding: '16px 0', borderTop: '1px solid #e5e7eb', borderBottom: '1px solid #e5e7eb',
-                marginBottom: '20px',
+                padding: '16px 0',
+                borderTop: '1px solid #e5e7eb', borderBottom: '1px solid #e5e7eb',
               }}>
                 {story.metrics.map(m => (
                   <div key={m.label}>
-                    <div style={{ fontSize: '26px', fontWeight: 900, color: '#0F3460', lineHeight: 1, marginBottom: '4px' }}>{m.value}</div>
+                    <div style={{ fontSize: '24px', fontWeight: 900, color: '#0F3460', lineHeight: 1, marginBottom: '4px' }}>{m.value}</div>
                     <div style={{ fontSize: '12px', color: '#9ca3af', fontWeight: 500 }}>{m.label}</div>
                   </div>
                 ))}
               </div>
 
-              <p style={{ fontSize: '13px', color: '#6b7280', lineHeight: 1.6, margin: '0 0 20px' }}>{story.desc}</p>
+              {/* Description */}
+              <p style={{ fontSize: '13px', color: '#6b7280', lineHeight: 1.6, margin: 0 }}>{story.desc}</p>
 
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '24px' }}>
+              {/* Tags */}
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', paddingTop: '4px' }}>
                 {story.tags.map((t, ti) => (
                   <span key={t} style={{
-                    padding: '6px 14px', borderRadius: '20px', fontSize: '12px', fontWeight: 600,
+                    padding: '8px 16px', borderRadius: '20px', fontSize: '12px', fontWeight: 600,
                     color: '#fff', background: tagGradients[ti] || tagGradients[0],
                   }}>{t}</span>
                 ))}
               </div>
 
-              <Link href="/case-studies" style={{ color: '#0F3460', fontWeight: 700, fontSize: '13px', textDecoration: 'none' }}>
+              {/* Link */}
+              <Link href="/case-studies" style={{
+                color: '#0F3460', fontWeight: 700, fontSize: '13px', textDecoration: 'none',
+                display: 'inline-flex', alignItems: 'center', gap: '4px', width: 'fit-content',
+              }}>
                 Read Full Case Study →
               </Link>
             </div>
 
-            <div>
-              <img src={story.img} alt={story.company} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: '0 38px 38px 0' }} />
+            {/* Right: inset image with margin + border-radius */}
+            <div style={{
+              margin: '20px', borderRadius: '24px',
+              overflow: 'hidden', height: 'calc(100% - 40px)',
+              flexShrink: 0, position: 'relative',
+            }}>
+              <img
+                src={story.img}
+                alt={story.company}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
             </div>
           </div>
 
-          <div style={{ display: 'flex', gap: '16px', marginTop: '24px', justifyContent: 'center' }}>
-            <button onClick={() => setActive((active - 1 + stories.length) % stories.length)} style={{
-              width: '48px', height: '48px', borderRadius: '50%', border: '2px solid #FE9700',
-              background: 'transparent', cursor: 'pointer', fontSize: '20px', color: '#FE9700',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-            }}>&#8592;</button>
-            <button onClick={() => setActive((active + 1) % stories.length)} style={{
-              width: '48px', height: '48px', borderRadius: '50%', border: '2px solid #FE9700',
-              background: 'transparent', cursor: 'pointer', fontSize: '20px', color: '#FE9700',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-            }}>&#8594;</button>
+          {/* Nav: gradient-border rounded-square buttons */}
+          <div style={{ display: 'flex', gap: '24px', marginTop: '24px', justifyContent: 'center' }}>
+            <button
+              onClick={() => setActive((active - 1 + stories.length) % stories.length)}
+              style={navBtnStyle}
+            >&#8592;</button>
+            <button
+              onClick={() => setActive((active + 1) % stories.length)}
+              style={navBtnStyle}
+            >&#8594;</button>
           </div>
         </div>
       </section>
 
-      {/* Growth Story */}
+      {/* ── Growth Story ── */}
       <section id="growth-story" style={{ padding: '100px 40px', background: '#fff' }}>
         <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
 
