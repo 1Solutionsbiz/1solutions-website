@@ -350,23 +350,6 @@ export default function BlogHeader() {
 
   return (
     <>
-      {/* ── TOP CONTACT BAR ── */}
-      <div className="bh-topbar">
-        <a href="mailto:info@1solutions.biz" className="bh-topbar-link">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-          </svg>
-          info@1solutions.biz
-        </a>
-        <span className="bh-topbar-sep" aria-hidden="true" />
-        <a href="tel:+919654327900" className="bh-topbar-link">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-          </svg>
-          +91 9654327900
-        </a>
-      </div>
-
       {/* ── MAIN HEADER ── */}
       <header className={`bh-header${scrolled ? ' bh-scrolled' : ''}`}>
         <div className="bh-inner">
@@ -375,8 +358,8 @@ export default function BlogHeader() {
             <Image
               src="/images/1solutions-logo.png"
               alt="1Solutions Logo"
-              width={180} height={50} priority
-              style={{ height: '50px', width: 'auto', maxWidth: '180px' }}
+              width={216} height={60} priority
+              style={{ height: '60px', width: 'auto', maxWidth: '216px' }}
             />
           </Link>
 
