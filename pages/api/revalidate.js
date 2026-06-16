@@ -13,7 +13,7 @@ export default async function handler(req, res) {
 
   const { secret, slug, type } = req.body;
 
-  if (secret !== process.env.REVALIDATION_SECRET) {
+  if (secret !== process.env.REVALIDATE_SECRET) {
     return res.status(401).json({ message: 'Invalid secret' });
   }
 
