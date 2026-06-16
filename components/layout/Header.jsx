@@ -3,6 +3,17 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
+const industryLinks = [
+  { label: 'Education',    href: '/elearning-software-development-services' },
+  { label: 'Real Estate',  href: '/real-estate-software-development' },
+  { label: 'Manufacturing',href: '/manufacturing-software-development-services' },
+  { label: 'Travel',       href: '/travel-and-tourism-software-solutions' },
+  { label: 'Social Media', href: '/social-media-app-development-company' },
+  { label: 'Wellness',     href: '/wellness-software-development' },
+  { label: 'Agriculture',  href: '/agriculture-software-development' },
+  { label: 'Automotive',   href: '/automotive-software-solutions' },
+];
+
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled,   setScrolled]   = useState(false);
@@ -45,7 +56,16 @@ export default function Header() {
           <nav>
             <ul className="header-nav">
               <li><Link href="/#services"        className="nav-link">Services</Link></li>
-              <li><Link href="/#industries"       className="nav-link">Industries</Link></li>
+              <li className="nav-dropdown-wrap">
+                <Link href="/#industries" className="nav-link nav-dropdown-trigger">Industries ▾</Link>
+                <ul className="nav-dropdown">
+                  {industryLinks.map(({ label, href }) => (
+                    <li key={href}>
+                      <Link href={href} className="nav-dropdown-link" onClick={close}>{label}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </li>
               <li><Link href="/#success-stories"  className="nav-link">Success Stories</Link></li>
               <li><Link href="/blog"              className="nav-link">Insights</Link></li>
               <li><Link href="/#about"            className="nav-link">About Us</Link></li>
@@ -74,6 +94,11 @@ export default function Header() {
       <nav className={`mobile-nav${mobileOpen ? ' active' : ''}`} aria-hidden={!mobileOpen}>
         <Link href="/#services"       onClick={close}>Services</Link>
         <Link href="/#industries"     onClick={close}>Industries</Link>
+        <div className="mobile-industry-links">
+          {industryLinks.map(({ label, href }) => (
+            <Link key={href} href={href} className="mobile-industry-link" onClick={close}>{label}</Link>
+          ))}
+        </div>
         <Link href="/#success-stories" onClick={close}>Success Stories</Link>
         <Link href="/blog"            onClick={close}>Insights</Link>
         <Link href="/#about"          onClick={close}>About Us</Link>
