@@ -1,10 +1,22 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 
 const CATEGORIES = ['All', 'Web Development', 'eCommerce', 'Digital Marketing', 'Mobile App', 'UI/UX Design'];
 
 const PROJECTS = [
+  {
+    id: 0,
+    title: 'AI+ Store — Shopify eCommerce',
+    category: 'eCommerce',
+    industry: 'Consumer Electronics',
+    tech: ['Shopify', 'Liquid', 'UI/UX Design'],
+    desc: 'Full-featured Shopify store for AI+ SmartPhones — a consumer electronics brand selling Nova series 5G smartphones, NovaPods, and NovaWatches across India.',
+    image: '/images/portfolio/aiplusstore.jpg',
+    url: 'https://aiplusstore.com/',
+    featured: true,
+  },
   {
     id: 1,
     title: 'HealthPlus Patient Portal',
@@ -193,8 +205,14 @@ function ProjectCard({ project, index }) {
       className={`pf-card${visible ? ' pf-card-in' : ''}`}
       style={{ transitionDelay: `${(index % 4) * 60}ms` }}
     >
-      <div className="pf-thumb" style={{ background: project.gradient }}>
-        <span className="pf-thumb-icon">{project.icon}</span>
+      <div className="pf-thumb" style={project.image ? {} : { background: project.gradient }}>
+        {project.image ? (
+          <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9', overflow: 'hidden' }}>
+            <Image src={project.image} alt={project.title} fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
+          </div>
+        ) : (
+          <span className="pf-thumb-icon">{project.icon}</span>
+        )}
         {project.featured && <span className="pf-featured-badge">Featured</span>}
         <span className="pf-cat-badge">{project.category}</span>
       </div>
@@ -205,6 +223,11 @@ function ProjectCard({ project, index }) {
         <div className="pf-tech-row">
           {project.tech.map(t => <span key={t} className="pf-tech-pill">{t}</span>)}
         </div>
+        {project.url && (
+          <a href={project.url} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginTop: '10px', fontSize: '13px', color: '#114171', fontWeight: 600, textDecoration: 'none' }}>
+            Visit Site →
+          </a>
+        )}
       </div>
     </div>
   );
