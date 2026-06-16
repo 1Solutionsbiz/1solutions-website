@@ -92,7 +92,7 @@ const services = [
     desc: 'Hire vetted developers, designers, and marketers who work as a seamless extension of your team. Full-time or part-time, no lock-in.',
     tags: ['Developers', 'Designers', 'SEO Experts', 'QA Engineers', 'PMs'],
     cta: 'Build Your Dream Team →',
-    href: '/hire-dedicated-developers',
+    href: '/hire-dedicated-resources',
     image: 'https://picsum.photos/500/400?random=6',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: 22, height: 22, flexShrink: 0 }}>
