@@ -1,38 +1,53 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import { useRouter } from 'next/router';
 import BlogCard from '../../components/blog/BlogCard';
 
 export default function SearchPage() {
-  const [query,   setQuery]   = useState('');
-  const [results, setResults] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+  const [query,    setQuery]    = useState('');
+  const [results,  setResults]  = useState([]);
+  const [loading,  setLoading]  = useState(false);
   const [searched, setSearched] = useState(false);
 
-  const handleSearch = async (e) => {
-    e.preventDefault();
-    if (!query.trim()) return;
-
+  const runSearch = useCallback(async (q) => {
+    if (!q || q.trim().length < 2) return;
     setLoading(true);
     setSearched(true);
-
     try {
-      const res  = await fetch(`/api/search?q=${encodeURIComponent(query.trim())}`);
+      const res  = await fetch(`/api/search?q=${encodeURIComponent(q.trim())}`);
       const data = await res.json();
       setResults(data.posts || []);
-    } catch (err) {
-      console.error('Search error:', err);
+    } catch {
       setResults([]);
     } finally {
       setLoading(false);
     }
+  }, []);
+
+  // Auto-search when URL contains ?q=
+  useEffect(() => {
+    if (!router.isReady) return;
+    const q = router.query.q ? String(router.query.q) : '';
+    if (q) {
+      setQuery(q);
+      runSearch(q);
+    }
+  }, [router.isReady, router.query.q, runSearch]);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (!query.trim()) return;
+    router.replace(`/search?q=${encodeURIComponent(query.trim())}`, undefined, { shallow: true });
+    runSearch(query.trim());
   };
 
   return (
     <>
       <Head>
-        <title>Search | 1Solutions Blog</title>
-        <meta name="description" content="Search 460+ articles on web development, SEO, digital marketing, and more." />
+        <title>{query ? `"${query}" — Search | 1Solutions Blog` : 'Search | 1Solutions Blog'}</title>
+        <meta name="description" content="Search 2,400+ articles on web development, SEO, digital marketing, and more." />
         <meta name="robots" content="noindex" />
       </Head>
 
@@ -40,7 +55,7 @@ export default function SearchPage() {
         <div className="archive-hero-container">
           <div className="archive-hero-badge cat-blue">Search</div>
           <h1>Search Articles</h1>
-          <p>Browse 460+ expert articles on web development, SEO, digital marketing, and more.</p>
+          <p>Browse 2,400+ expert articles on web development, SEO, digital marketing, and more.</p>
 
           <form onSubmit={handleSearch} className="search-form" role="search">
             <input
@@ -79,7 +94,7 @@ export default function SearchPage() {
         {searched && !loading && results.length === 0 && (
           <div className="no-posts">
             <h2>No articles found.</h2>
-            <p>Try a different keyword, or browse by topic below.</p>
+            <p>Try a different keyword, or browse all articles below.</p>
             <Link href="/blog" className="read-more-btn">← All Articles</Link>
           </div>
         )}
@@ -90,19 +105,20 @@ export default function SearchPage() {
           display: flex;
           gap: 12px;
           margin-top: 32px;
-          max-width: 560px;
+          max-width: 600px;
           margin-left: auto;
           margin-right: auto;
         }
         .search-input {
           flex: 1;
           padding: 14px 20px;
-          border: 1px solid var(--border);
+          border: 2px solid var(--border);
           border-radius: 8px;
           font-size: 16px;
           outline: none;
           font-family: inherit;
           transition: border-color 0.2s;
+          background: white;
         }
         .search-input:focus { border-color: var(--primary); }
         .search-btn {
