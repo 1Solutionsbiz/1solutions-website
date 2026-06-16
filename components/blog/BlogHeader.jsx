@@ -77,12 +77,12 @@ const SVC_PILLARS = [
       {
         id: 'content', label: 'Content & Social',
         services: [
-          { name: 'Content Marketing',       desc: 'SEO content that ranks & converts',   href: '/#services' },
-          { name: 'Social Media Marketing',  desc: 'Brand growth on social platforms',    href: '/#services' },
-          { name: 'Email Marketing',         desc: 'Automated drip campaigns',            href: '/#services' },
-          { name: 'Analytics & CRO',         desc: 'Data-driven growth optimisation',     href: '/#services' },
-          { name: 'Reputation Management',   desc: 'Monitor & protect your brand online', href: '/#services' },
-          { name: 'Video Marketing',         desc: 'YouTube & short-form video strategy', href: '/#services' },
+          { name: 'Content Marketing',       desc: 'SEO content that ranks & converts',   href: '/content-marketing-services/' },
+          { name: 'Social Media Marketing',  desc: 'Brand growth on social platforms',    href: '/social-media-marketing-services/' },
+          { name: 'Email Marketing',         desc: 'Automated drip campaigns',            href: '/email-marketing-services/' },
+          { name: 'Analytics & CRO',         desc: 'Data-driven growth optimisation',     href: '/analytics-cro-services/' },
+          { name: 'Reputation Management',   desc: 'Monitor & protect your brand online', href: '/reputation-management-services/' },
+          { name: 'Video Marketing',         desc: 'YouTube & short-form video strategy', href: '/video-marketing-services/' },
         ],
       },
     ],
