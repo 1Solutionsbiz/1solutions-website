@@ -37,12 +37,12 @@ const SVC_PILLARS = [
       {
         id: 'design', label: 'UI/UX Design',
         services: [
-          { name: 'Website Design',          desc: 'Conversion-focused web design',        href: '/#services' },
-          { name: 'Mobile App Design',       desc: 'iOS & Android UI design',              href: '/#services' },
-          { name: 'Brand Identity',          desc: 'Logo, colours & typography systems',   href: '/#services' },
-          { name: 'Design Systems',          desc: 'Scalable component libraries',         href: '/#services' },
-          { name: 'Prototyping',             desc: 'Interactive wireframes & flows',       href: '/#services' },
-          { name: 'UX Research',             desc: 'User testing & journey mapping',       href: '/#services' },
+          { name: 'Website Design',          desc: 'Conversion-focused web design',        href: '/website-design/' },
+          { name: 'Mobile App Design',       desc: 'iOS & Android UI design',              href: '/mobile-app-design/' },
+          { name: 'Brand Identity',          desc: 'Logo, colours & typography systems',   href: '/brand-identity/' },
+          { name: 'Design Systems',          desc: 'Scalable component libraries',         href: '/design-systems/' },
+          { name: 'Prototyping',             desc: 'Interactive wireframes & flows',       href: '/prototyping-services/' },
+          { name: 'UX Research',             desc: 'User testing & journey mapping',       href: '/ux-research/' },
         ],
       },
     ],
