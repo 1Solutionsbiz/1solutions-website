@@ -179,7 +179,8 @@ export default function BlogFooter() {
               <Link href="/privacy-policy">Compliance</Link>
             </nav>
             <p className="bf-legal-text" style={{ marginTop: '12px' }}>
-              Registered office: 47, Vijay Block, Laxmi Nagar,<br />
+              Registered office:<br />
+              47, Vijay Block, Laxmi Nagar,<br />
               New Delhi – 110092, India.<br />
               <a href="mailto:info@1solutions.biz">info@1solutions.biz</a><br />
               <a href="tel:+919654327900">+91 9654327900</a>
