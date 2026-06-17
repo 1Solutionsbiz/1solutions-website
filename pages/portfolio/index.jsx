@@ -153,8 +153,7 @@ const PROJECTS = [
     industry: 'Renewable Energy',
     tech: ['WordPress', 'Custom Theme', 'UI/UX Design'],
     desc: 'Solar solutions website for Freyr Energy — an MNRE-empanelled rooftop solar installer serving 18,000+ customers across India with residential, commercial, and institutional installations since 2014.',
-    gradient: 'linear-gradient(135deg,#f59e0b 0%,#16a34a 100%)',
-    icon: '☀️',
+    image: '/images/portfolio/freyrenergy.png',
     featured: false,
   },
   {
