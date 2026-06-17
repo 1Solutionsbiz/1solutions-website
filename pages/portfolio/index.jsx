@@ -84,6 +84,17 @@ const PROJECTS = [
     featured: false,
   },
   {
+    id: 'comtradesol',
+    title: 'Comtradesol — Financial Advisory',
+    category: 'Web Development',
+    industry: 'Financial Services',
+    tech: ['WordPress', 'Custom Theme', 'UI/UX Design'],
+    desc: 'Corporate website for Comtradesol Advisory Services — a Gurgaon-based firm offering trade finance, debt syndication, equity advisory, and credit rating solutions across 15+ sectors.',
+    image: '/images/portfolio/comtradesol.jpg',
+    url: 'https://www.comtradesol.com/',
+    featured: false,
+  },
+  {
     id: 1,
     title: 'HealthPlus Patient Portal',
     category: 'Web Development',
