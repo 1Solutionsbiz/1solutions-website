@@ -155,6 +155,9 @@ export default function BlogFooter() {
             <p className="bf-legal-text">
               1Solutions is a full service web development and digital marketing company helping businesses build, grow, and scale their online presence through innovative technology and results driven marketing solutions.
             </p>
+            <p className="bf-legal-text">
+              Service offerings, features, support plans, pricing, and terms may be modified at our discretion without prior notice.
+            </p>
             <div className="bf-trust-badges">
               {TRUST_BADGES.map(b => (
                 <a
