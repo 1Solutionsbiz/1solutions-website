@@ -90,113 +90,63 @@ export default function CaseStudies() {
       {/* ── CASE STUDY ITEMS ── */}
       <div style={{ background: '#fff' }}>
 
-        {/* ── 01 ── Large: text left, image right */}
+        {/* ── 01 ── Comtradesol */}
         <section style={{
           maxWidth: 1200,
           margin: '0 auto',
-          padding: '80px 40px 0',
+          padding: '80px 40px 100px',
           display: 'grid',
-          gridTemplateColumns: '280px 1fr',
+          gridTemplateColumns: '300px 1fr',
           gap: 60,
           alignItems: 'flex-start',
         }}>
           <div>
             <div style={{ fontSize: '3rem', fontWeight: 800, color: '#e5e7eb', lineHeight: 1, marginBottom: 4 }}>01</div>
             <h2 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2.1rem)', fontWeight: 800, color: '#0A1628', marginBottom: 16, lineHeight: 1.2 }}>
-              RetailMax India
+              Comtradesol Advisory Services
             </h2>
-            <p style={{ color: '#6b7280', lineHeight: 1.8, marginBottom: 32, fontSize: '0.94rem' }}>
-              Devising a seamless, powerful eCommerce experience that unified online and in-store journeys, boosting conversion rate by 3.2× and reducing cart abandonment by 40%.
+            <p style={{ color: '#6b7280', lineHeight: 1.8, marginBottom: 24, fontSize: '0.94rem' }}>
+              Built a professional corporate website on custom WordPress for a Gurgaon-based financial advisory firm. We also set up and actively managed their LinkedIn company profile to build brand authority and reach.
             </p>
-            <CsButton href="/case-studies/retailmax" />
+            <p style={{ color: '#4b5563', lineHeight: 1.8, marginBottom: 28, fontSize: '0.9rem', fontWeight: 500 }}>
+              Services delivered — Financial Advisory, Structured Financing, Trade Financing, Debt Advisory, Equity Advisory, and Credit Rating.
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 32 }}>
+              {[
+                { icon: '🌐', label: 'Custom WordPress Development' },
+                { icon: '💼', label: 'LinkedIn Profile Management' },
+                { icon: '🎨', label: 'UI/UX Design' },
+              ].map(s => (
+                <div key={s.label} style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: '0.88rem', color: '#374151' }}>
+                  <span>{s.icon}</span>
+                  <span>{s.label}</span>
+                </div>
+              ))}
+            </div>
+            <a href="https://www.comtradesol.com/" target="_blank" rel="noopener noreferrer" style={{
+              display: 'inline-flex', alignItems: 'center', gap: 8,
+              border: '1.5px solid #0A1628', borderRadius: 50,
+              padding: '10px 22px', color: '#0A1628', textDecoration: 'none',
+              fontWeight: 600, fontSize: '0.92rem',
+            }}>
+              Visit Website
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
           </div>
           <div>
             <img
-              src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&q=80"
-              alt="RetailMax eCommerce platform"
-              style={{ width: '100%', borderRadius: 16, display: 'block', aspectRatio: '16/9', objectFit: 'cover' }}
+              src="/images/portfolio/comtradesol.webp"
+              alt="Comtradesol Advisory Services website"
+              style={{ width: '100%', borderRadius: 16, display: 'block', aspectRatio: '16/9', objectFit: 'cover', boxShadow: '0 8px 40px rgba(15,52,96,0.12)' }}
             />
-            <div style={{ display: 'flex', gap: 10, marginTop: 16 }}>
-              <PillTag label="eCommerce" />
-              <PillTag label="Digital Transformation" />
+            <div style={{ display: 'flex', gap: 10, marginTop: 16, flexWrap: 'wrap' }}>
+              <PillTag label="WordPress Development" />
+              <PillTag label="LinkedIn Marketing" />
+              <PillTag label="Financial Services" />
             </div>
           </div>
         </section>
 
-        <Divider />
-
-        {/* ── 02 ── Large: title+desc left | "View Details" top-right | two images full-width below */}
-        <section style={{ maxWidth: 1200, margin: '0 auto', padding: '80px 40px 0' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 40, marginBottom: 32 }}>
-            <div style={{ flex: 1 }}>
-              <div style={{ fontSize: '3rem', fontWeight: 800, color: '#e5e7eb', lineHeight: 1, marginBottom: 4 }}>02</div>
-              <h2 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2.1rem)', fontWeight: 800, color: '#0A1628', marginBottom: 16, lineHeight: 1.2 }}>
-                HealthFirst Portal
-              </h2>
-              <p style={{ color: '#6b7280', lineHeight: 1.8, fontSize: '0.94rem', maxWidth: 520 }}>
-                Building a HIPAA-compliant patient engagement portal with telehealth, appointment scheduling, and real-time health records — accessible on any device.
-              </p>
-            </div>
-            <div style={{ flexShrink: 0, paddingTop: 56 }}>
-              <CsButton href="/case-studies/healthfirst" />
-            </div>
-          </div>
-          {/* Two images side-by-side */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
-            <img
-              src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=700&q=80"
-              alt="HealthFirst web portal"
-              style={{ width: '100%', borderRadius: 14, display: 'block', aspectRatio: '4/3', objectFit: 'cover' }}
-            />
-            <img
-              src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=700&q=80"
-              alt="HealthFirst mobile app"
-              style={{ width: '100%', borderRadius: 14, display: 'block', aspectRatio: '4/3', objectFit: 'cover' }}
-            />
-          </div>
-          <div style={{ display: 'flex', gap: 10, marginTop: 16 }}>
-            <PillTag label="Web App" />
-            <PillTag label="Mobile App" />
-          </div>
-        </section>
-
-        <Divider />
-
-        {/* ── 03 / 04 / 05 ── 3-column smaller grid */}
-        <section style={{ maxWidth: 1200, margin: '0 auto', padding: '80px 40px 100px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 36 }}>
-            {[
-              {
-                num: '03', title: 'EduPath LMS', tags: ['EdTech', 'SaaS'], href: '/case-studies/edupath',
-                img: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&q=80', imgAlt: 'EduPath LMS',
-              },
-              {
-                num: '04', title: 'WellnessOne App', tags: ['Healthcare', 'Mobile'], href: '/case-studies/wellnessone',
-                img: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80', imgAlt: 'WellnessOne App',
-              },
-              {
-                num: '05', title: 'FleetTrack Pro', tags: ['Logistics', 'IoT'], href: '/case-studies/fleettrack',
-                img: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80', imgAlt: 'FleetTrack Pro',
-              },
-            ].map(item => (
-              <div key={item.num}>
-                <img
-                  src={item.img}
-                  alt={item.imgAlt}
-                  style={{ width: '100%', borderRadius: 14, display: 'block', aspectRatio: '4/3', objectFit: 'cover', marginBottom: 18 }}
-                />
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 10 }}>
-                  <span style={{ fontSize: '1.3rem', fontWeight: 800, color: '#e5e7eb' }}>{item.num}</span>
-                  <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0A1628', margin: 0 }}>{item.title}</h3>
-                </div>
-                <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 16 }}>
-                  {item.tags.map(t => <PillTag key={t} label={t} />)}
-                </div>
-                <SmCsButton href={item.href} />
-              </div>
-            ))}
-          </div>
-        </section>
       </div>
 
       {/* ── CTA ── */}
@@ -266,34 +216,6 @@ export default function CaseStudies() {
 }
 
 /* ── Shared sub-components ── */
-function CsButton({ href }) {
-  return (
-    <a href={href} style={{
-      display: 'inline-flex', alignItems: 'center', gap: 8,
-      border: '1.5px solid #0A1628', borderRadius: 50,
-      padding: '10px 22px', color: '#0A1628', textDecoration: 'none',
-      fontWeight: 600, fontSize: '0.92rem',
-    }}>
-      View Details
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
-  );
-}
-
-function SmCsButton({ href }) {
-  return (
-    <a href={href} style={{
-      display: 'inline-flex', alignItems: 'center', gap: 6,
-      border: '1.5px solid #0A1628', borderRadius: 50,
-      padding: '8px 18px', color: '#0A1628', textDecoration: 'none',
-      fontWeight: 600, fontSize: '0.85rem',
-    }}>
-      View Details
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
-  );
-}
-
 function PillTag({ label }) {
   return (
     <span style={{
