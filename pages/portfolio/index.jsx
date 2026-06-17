@@ -173,8 +173,7 @@ const PROJECTS = [
     industry: 'Corporate Services',
     tech: ['WordPress', 'Custom Theme', 'UI/UX Design'],
     desc: 'Boutique fiduciary services website for Adiuvo Trustees, Cyprus — offering company formation, trust and fund structures, bank account opening, and immigration services to 700+ international clients across Cyprus, UK, and UAE.',
-    gradient: 'linear-gradient(135deg,#1e3a5f 0%,#2d6a9f 100%)',
-    icon: '🏛️',
+    image: '/images/portfolio/adiuvo.png',
     featured: false,
   },
   {
