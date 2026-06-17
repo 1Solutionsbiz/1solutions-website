@@ -1041,9 +1041,9 @@ body {
 .bf-footer {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 14px;
-  background: #fff;
+  background: #f5f5f5;
   color: #3c3c3c;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid #ddd;
 }
 
 /* Shared inner max-width container */
@@ -1056,7 +1056,8 @@ body {
 /* ── Link columns section ── */
 .bf-cols-wrap {
   padding: 40px 0;
-  border-bottom: 1px solid #e8e8e8;
+  background: #f5f5f5;
+  border-bottom: 1px solid #ddd;
 }
 .bf-cols-wrap .bf-inner {
   display: grid;
@@ -1081,15 +1082,16 @@ body {
 }
 .bf-col a:hover { color: #114171; text-decoration: underline; }
 
-/* ── Social + sitemap strip ── */
+/* ── Sitemap + social strip ── */
 .bf-search-strip {
-  background: #fff;
-  border-bottom: 1px solid #e8e8e8;
-  padding: 18px 0;
+  background: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  padding: 14px 0;
 }
 .bf-search-inner {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 24px;
 }
 .bf-social-row {
@@ -1117,14 +1119,14 @@ body {
 
 /* ── Bottom brand section ── */
 .bf-brand-section {
-  background: #f5f5f5;
-  border-top: 1px solid #e0e0e0;
+  background: #ebebeb;
+  border-top: 1px solid #ddd;
   padding: 32px 0;
 }
 .bf-brand-inner {
   display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 48px;
+  grid-template-columns: 200px 1fr 200px;
+  gap: 40px;
   align-items: flex-start;
 }
 .bf-brand-left { flex-shrink: 0; }
@@ -1141,60 +1143,58 @@ body {
   transition: color 0.15s;
 }
 .bf-brand-nav a:hover { text-decoration: underline; color: #114171; }
-.bf-brand-right {
+
+/* Middle column */
+.bf-brand-middle {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.bf-brand-top-row {
+
+/* Right column */
+.bf-brand-right {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  flex-wrap: wrap;
-  margin-bottom: 4px;
+  flex-direction: column;
+  gap: 14px;
 }
-.bf-service-logos {
-  display: flex;
-  gap: 28px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.bf-service-logo {
-  font-size: 17px;
-  font-weight: 700;
-  text-decoration: none;
-  letter-spacing: -0.3px;
-  transition: opacity 0.15s;
-}
-.bf-service-logo:hover { opacity: 0.7; }
 .bf-legal-links {
   display: flex;
-  gap: 0;
-  flex-shrink: 0;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 6px;
 }
 .bf-legal-links a {
   font-size: 12px;
   color: #555;
   text-decoration: none;
-  padding: 0 12px;
-  border-right: 1px solid #ccc;
-  line-height: 1;
-  white-space: nowrap;
+  line-height: 1.4;
   transition: color 0.15s;
 }
-.bf-legal-links a:first-child { padding-left: 0; }
-.bf-legal-links a:last-child { border-right: none; }
 .bf-legal-links a:hover { color: #114171; text-decoration: underline; }
+.bf-service-logos {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 4px;
+  border-top: 1px solid #d4d4d4;
+}
+.bf-service-logo {
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: -0.2px;
+  transition: opacity 0.15s;
+  line-height: 1.3;
+}
+.bf-service-logo:hover { opacity: 0.7; }
 .bf-copyright {
   font-size: 12px;
-  color: #666;
+  font-weight: 600;
+  color: #444;
   margin: 0;
 }
 .bf-legal-text {
   font-size: 11px;
-  color: #888;
+  color: #777;
   line-height: 1.65;
   margin: 0;
 }
@@ -1228,13 +1228,14 @@ body {
   .bh-header { padding: 0 20px; }
   /* Footer */
   .bf-inner { padding: 0 24px; }
-  .bf-brand-inner { grid-template-columns: 1fr; gap: 24px; }
-  .bf-brand-top-row { flex-direction: column; align-items: flex-start; }
+  .bf-brand-inner { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .bf-brand-left { grid-column: 1 / -1; }
 }
 @media (max-width: 480px) {
   .bf-inner { padding: 0 16px; }
   .bf-cols-wrap .bf-inner { grid-template-columns: 1fr; }
-  .bf-service-logos { gap: 16px; }
+  .bf-brand-inner { grid-template-columns: 1fr; }
+  .bf-brand-left { grid-column: auto; }
   /* Fix mobile nav position — no topbar is rendered so header is always 76px */
   .bh-mobile { top: 76px; }
   .bh-ind-mega { top: 76px; }

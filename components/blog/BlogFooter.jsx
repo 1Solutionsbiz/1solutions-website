@@ -111,9 +111,10 @@ export default function BlogFooter() {
         </div>
       </div>
 
-      {/* ── SOCIAL + SITEMAP STRIP ── */}
+      {/* ── SITEMAP (left) + SOCIAL ICONS (right) STRIP ── */}
       <div className="bf-search-strip">
         <div className="bf-inner bf-search-inner">
+          <Link href="/sitemap" className="bf-sitemap-link">Sitemap</Link>
           <div className="bf-social-row">
             {SOCIAL.map(s => (
               <a key={s.label} href={s.href} className="bf-social-icon" target="_blank" rel="noopener noreferrer" aria-label={s.label}>
@@ -121,15 +122,14 @@ export default function BlogFooter() {
               </a>
             ))}
           </div>
-          <Link href="/sitemap" className="bf-sitemap-link">Sitemap</Link>
         </div>
       </div>
 
-      {/* ── BOTTOM BRAND SECTION ── */}
+      {/* ── BOTTOM BRAND SECTION — 3 columns ── */}
       <div className="bf-brand-section">
         <div className="bf-inner bf-brand-inner">
 
-          {/* Left: logo + nav */}
+          {/* Col 1: logo + nav links */}
           <div className="bf-brand-left">
             <Link href="/">
               <Image
@@ -146,24 +146,8 @@ export default function BlogFooter() {
             </nav>
           </div>
 
-          {/* Right: service brands + copyright + legal */}
-          <div className="bf-brand-right">
-            <div className="bf-brand-top-row">
-              <div className="bf-service-logos">
-                {SERVICE_BRANDS.map(b => (
-                  <Link key={b.name} href={b.href} className="bf-service-logo" style={{ color: b.color }}>
-                    {b.label}
-                  </Link>
-                ))}
-              </div>
-              <nav className="bf-legal-links">
-                <Link href="/terms-of-use">Legal</Link>
-                <Link href="/privacy-policy">Privacy</Link>
-                <Link href="/cookie-policy">Security</Link>
-                <Link href="/privacy-policy">Compliance</Link>
-              </nav>
-            </div>
-
+          {/* Col 2 (middle): copyright + legal text */}
+          <div className="bf-brand-middle">
             <p className="bf-copyright">
               &copy; {new Date().getFullYear()} 1Solutions. All rights reserved.
             </p>
@@ -171,10 +155,27 @@ export default function BlogFooter() {
               1Solutions is a registered web development and digital marketing company. Web Development, SEO, Digital Marketing, and Cloud are registered service offerings of 1Solutions Digital Pvt. Ltd. Terms and conditions, features, support, pricing, and service options are subject to change without notice.
             </p>
             <p className="bf-legal-text">
-              Registered office: 47, Vijay Block, Laxmi Nagar, New Delhi – 110092, India. &nbsp;
-              <a href="mailto:info@1solutions.biz">info@1solutions.biz</a> &nbsp;|&nbsp;
+              Registered office: 47, Vijay Block, Laxmi Nagar, New Delhi – 110092, India.{' '}
+              <a href="mailto:info@1solutions.biz">info@1solutions.biz</a>{' '}|{' '}
               <a href="tel:+919654327900">+91 9654327900</a>
             </p>
+          </div>
+
+          {/* Col 3 (right): legal links + service logos below */}
+          <div className="bf-brand-right">
+            <nav className="bf-legal-links">
+              <Link href="/terms-of-use">Legal</Link>
+              <Link href="/privacy-policy">Privacy</Link>
+              <Link href="/cookie-policy">Security</Link>
+              <Link href="/privacy-policy">Compliance</Link>
+            </nav>
+            <div className="bf-service-logos">
+              {SERVICE_BRANDS.map(b => (
+                <Link key={b.name} href={b.href} className="bf-service-logo" style={{ color: b.color }}>
+                  {b.label}
+                </Link>
+              ))}
+            </div>
           </div>
 
         </div>
