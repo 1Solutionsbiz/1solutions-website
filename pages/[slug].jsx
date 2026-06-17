@@ -220,13 +220,13 @@ function SinglePost({ post, relatedPosts }) {
 
             {/* Header */}
             <header className="article-header">
-              {cat && (
-                <Link href={`/${cat.slug}`} className={`article-category-badge ${catColor}`}>
-                  {cat.name}
-                </Link>
-              )}
               <h1 className="article-title">{post.title}</h1>
               <div className="article-meta">
+                {cat && (
+                  <Link href={`/${cat.slug}`} className={`article-category-badge ${catColor}`}>
+                    {cat.name}
+                  </Link>
+                )}
                 <div className="article-author-meta">
                   {post.author?.node?.avatar?.url && (
                     <Image
