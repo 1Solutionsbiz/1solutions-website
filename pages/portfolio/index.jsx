@@ -127,6 +127,16 @@ const PROJECTS = [
     featured: false,
   },
   {
+    id: 'explorehonor',
+    title: 'Explore HONOR — Smartphone Store',
+    category: 'eCommerce',
+    industry: 'Consumer Electronics',
+    tech: ['Shopify', 'Liquid', 'UI/UX Design'],
+    desc: 'Official Shopify eCommerce store for HONOR India — showcasing the full lineup of smartphones, accessories, audio and wearables, and laptops, with no-cost EMI options and a dedicated service centre portal.',
+    image: '/images/portfolio/explorehonor.webp',
+    featured: false,
+  },
+  {
     id: 'creativeinterior',
     title: 'Creative Interior & Decor',
     category: 'Web Development',
