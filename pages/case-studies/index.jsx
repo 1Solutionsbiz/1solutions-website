@@ -147,6 +147,65 @@ export default function CaseStudies() {
           </div>
         </section>
 
+        <Divider />
+
+        {/* ── 02 ── RNG Foundation */}
+        <section style={{
+          maxWidth: 1200,
+          margin: '0 auto',
+          padding: '80px 40px 100px',
+          display: 'grid',
+          gridTemplateColumns: '1fr 300px',
+          gap: 60,
+          alignItems: 'flex-start',
+        }}>
+          <div>
+            <img
+              src="/images/portfolio/rngfoundation.webp"
+              alt="Ramnath Goenka Excellence in Journalism Awards website"
+              style={{ width: '100%', borderRadius: 16, display: 'block', aspectRatio: '16/9', objectFit: 'cover', boxShadow: '0 8px 40px rgba(15,52,96,0.12)' }}
+            />
+            <div style={{ display: 'flex', gap: 10, marginTop: 16, flexWrap: 'wrap' }}>
+              <PillTag label="Custom Development" />
+              <PillTag label="Laravel CRM" />
+              <PillTag label="Media & Journalism" />
+            </div>
+          </div>
+          <div>
+            <div style={{ fontSize: '3rem', fontWeight: 800, color: '#e5e7eb', lineHeight: 1, marginBottom: 4 }}>02</div>
+            <h2 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2.1rem)', fontWeight: 800, color: '#0A1628', marginBottom: 16, lineHeight: 1.2 }}>
+              Ramnath Goenka Excellence in Journalism Awards
+            </h2>
+            <p style={{ color: '#6b7280', lineHeight: 1.8, marginBottom: 24, fontSize: '0.94rem' }}>
+              Delivered a fully custom-built awards portal for the Indian Express Group's most prestigious journalism awards — including a bespoke CRM in Laravel to manage nominations, jury evaluations, and winner announcements across 14 categories.
+            </p>
+            <p style={{ color: '#4b5563', lineHeight: 1.8, marginBottom: 28, fontSize: '0.9rem', fontWeight: 500 }}>
+              The platform handles end-to-end awards administration with EY as knowledge partner, processing RBI data-backed evaluations for India's top print, digital, and broadcast journalists.
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 32 }}>
+              {[
+                { icon: '⚙️', label: 'Custom Web Development' },
+                { icon: '🗄️', label: 'Custom CRM in Laravel' },
+                { icon: '🎨', label: 'UI/UX Design' },
+              ].map(s => (
+                <div key={s.label} style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: '0.88rem', color: '#374151' }}>
+                  <span>{s.icon}</span>
+                  <span>{s.label}</span>
+                </div>
+              ))}
+            </div>
+            <a href="https://rngfoundation.com/awards/" target="_blank" rel="noopener noreferrer" style={{
+              display: 'inline-flex', alignItems: 'center', gap: 8,
+              border: '1.5px solid #0A1628', borderRadius: 50,
+              padding: '10px 22px', color: '#0A1628', textDecoration: 'none',
+              fontWeight: 600, fontSize: '0.92rem',
+            }}>
+              Visit Website
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </section>
+
       </div>
 
       {/* ── CTA ── */}
