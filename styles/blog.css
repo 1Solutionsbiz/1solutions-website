@@ -602,7 +602,7 @@ body {
 /* Mega panel — fixed, always below the sticky header + topbar */
 .bh-mega {
   position: fixed;
-  top: 104px; left: 0; right: 0;
+  top: 76px; left: 0; right: 0;
   z-index: 997;
   background: #fff;
   border-top: 2px solid #e5e7eb;
@@ -730,7 +730,7 @@ body {
 /* Full-width panel — same white style as Industries/About menus */
 .bh-svc-mega {
   position: fixed;
-  top: 104px; left: 0; right: 0;
+  top: 76px; left: 0; right: 0;
   z-index: 997;
   background: #ffffff;
   -webkit-backdrop-filter: blur(24px);
@@ -858,7 +858,7 @@ body {
 /* Full-width panel — pure white, subtle frosted shadow */
 .bh-ind-mega {
   position: fixed;
-  top: 104px; left: 0; right: 0;
+  top: 76px; left: 0; right: 0;
   z-index: 997;
   background: #ffffff;
   -webkit-backdrop-filter: blur(24px);
@@ -928,7 +928,7 @@ body {
   background: #fef9f0;
   border-top: 1px solid #fde68a;
   min-height: 60px;
-  padding: 0 calc((100% - 1200px) / 2 + 40px);
+  padding: 0 max(20px, calc((100% - 1200px) / 2 + 40px));
   gap: 0;
 }
 .bh-ind-footer-left {
@@ -1032,9 +1032,6 @@ body {
 @media (max-width: 480px) {
   .bh-topbar { flex-direction: column; gap: 2px; padding: 6px 16px; }
   .bh-topbar-sep { display: none; }
-  .bh-mobile { top: 128px; }
-  .bh-ind-mega { top: 128px; }
-  .bh-mega { top: 128px; }
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -1140,12 +1137,27 @@ body {
 .bf-legal-links a:hover { color: #114171; }
 
 /* ── Responsive ── */
-@media (max-width: 1024px) {
-  .bf-right { grid-template-columns: repeat(2,1fr); }
+@media (max-width: 1280px) {
+  /* Tighten nav gap on smaller desktops */
+  .bh-nav { gap: 24px; }
 }
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
+  /* Switch to hamburger on tablets — nav items overflow below ~1100px */
   .bh-inner nav, .bh-cta-wrap { display: none; }
   .bh-hamburger { display: flex; }
+  .bh-header { padding: 0 20px; }
+}
+@media (max-width: 1024px) {
+  .bf-right { grid-template-columns: repeat(2,1fr); }
+  /* Reduce blog padding on tablets */
+  .blog-container { padding: 56px 28px; }
+  .single-post-wrapper { padding: 40px 28px; }
+  .featured-article { padding: 36px; gap: 36px; margin-bottom: 56px; }
+  .blog-hero { padding: 56px 28px 48px; }
+  .archive-hero { padding: 56px 28px 48px; }
+  .author-archive-hero { padding: 48px 28px 44px; }
+}
+@media (max-width: 768px) {
   .bh-header { padding: 0 20px; }
   .bf-top-section { padding: 40px 0; }
   .bf-container { padding: 0 20px; }
@@ -1158,6 +1170,11 @@ body {
 }
 @media (max-width: 480px) {
   .bf-right { grid-template-columns: 1fr; }
+  /* Fix mobile nav position — no topbar is rendered so header is always 76px */
+  .bh-mobile { top: 76px; }
+  .bh-ind-mega { top: 76px; }
+  .bh-svc-mega { top: 76px; }
+  .bh-mega { top: 76px; }
 }
 
 /* ── Author Archive Page ──────────────────────────────────── */
