@@ -276,7 +276,7 @@ body {
 .breadcrumb { display: flex; align-items: center; gap: 7px; font-size: 13px; margin-bottom: 20px; color: var(--text-light); flex-wrap: wrap; }
 .breadcrumb a { color: var(--primary); text-decoration: none; font-weight: 500; }
 .breadcrumb a:hover { text-decoration: underline; }
-.breadcrumb-current { color: var(--text-light); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 240px; }
+.breadcrumb-current { color: var(--text-light); }
 
 /* Article header */
 .article-header { margin-bottom: 28px; }
