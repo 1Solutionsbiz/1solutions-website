@@ -149,7 +149,7 @@ export default function BlogFooter() {
           </div>
         </div>
         <div className="bf-inner">
-          <Link href="/sitemap.xml" className="bf-sitemap-link">Sitemap</Link>
+          <Link href="/sitemap" className="bf-sitemap-link">Sitemap</Link>
         </div>
       </div>
 
