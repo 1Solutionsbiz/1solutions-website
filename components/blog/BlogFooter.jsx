@@ -53,11 +53,12 @@ const COLS = [
   },
 ];
 
-const SERVICE_BRANDS = [
-  { name: 'wordpress',  label: 'WordPress',  color: '#21759B', href: '/wordpress-development-company' },
-  { name: 'seo',        label: 'SEO',        color: '#34A853', href: '/seo-services-company' },
-  { name: 'ecommerce',  label: 'eCommerce',  color: '#FF6900', href: '/ecommerce-website-development-services' },
-  { name: 'cloud',      label: 'Cloud',      color: '#0077C5', href: '/devops-services-company' },
+const TRUST_BADGES = [
+  { src: '/images/dmca.png',            alt: 'DMCA Protected',        href: 'https://www.dmca.com' },
+  { src: '/images/iso-9001.png',        alt: 'ISO 9001:2015 Certified', href: '/who-we-are' },
+  { src: '/images/msme.png',            alt: 'MSME Registered',       href: '/who-we-are' },
+  { src: '/images/trustpilot.svg',      alt: 'Trustpilot',            href: 'https://www.trustpilot.com' },
+  { src: '/images/google-business.svg', alt: 'Google Business',       href: 'https://business.google.com' },
 ];
 
 const BOTTOM_NAV = [
@@ -161,7 +162,7 @@ export default function BlogFooter() {
             </p>
           </div>
 
-          {/* Col 3 (right): legal links + service logos below */}
+          {/* Col 3 (right): legal links + trust badge logos below */}
           <div className="bf-brand-right">
             <nav className="bf-legal-links">
               <Link href="/terms-of-use">Legal</Link>
@@ -169,11 +170,17 @@ export default function BlogFooter() {
               <Link href="/cookie-policy">Security</Link>
               <Link href="/privacy-policy">Compliance</Link>
             </nav>
-            <div className="bf-service-logos">
-              {SERVICE_BRANDS.map(b => (
-                <Link key={b.name} href={b.href} className="bf-service-logo" style={{ color: b.color }}>
-                  {b.label}
-                </Link>
+            <div className="bf-trust-badges">
+              {TRUST_BADGES.map(b => (
+                <a
+                  key={b.alt}
+                  href={b.href}
+                  target={b.href.startsWith('http') ? '_blank' : undefined}
+                  rel={b.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  className="bf-badge-link"
+                >
+                  <Image src={b.src} alt={b.alt} width={100} height={36} style={{ height: '32px', width: 'auto', objectFit: 'contain' }} />
+                </a>
               ))}
             </div>
           </div>
