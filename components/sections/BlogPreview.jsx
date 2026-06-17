@@ -19,7 +19,25 @@ export default function BlogPreview({ posts }) {
     : staticPosts.map(p => ({ ...p, href: '/blog' }))
 
   return (
-    <section id="insights" style={{ padding: '80px 40px', background: '#fafafa' }}>
+    <>
+    <style>{`
+      .blog-prev-section { padding: 80px 40px; }
+      .blog-prev-outer { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+      .blog-prev-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+      @media (max-width: 900px) {
+        .blog-prev-section { padding: 56px 24px; }
+        .blog-prev-outer { grid-template-columns: 1fr; }
+        .blog-prev-inner { grid-template-columns: repeat(3,1fr); }
+      }
+      @media (max-width: 600px) {
+        .blog-prev-section { padding: 48px 16px; }
+        .blog-prev-inner { grid-template-columns: repeat(2,1fr); }
+      }
+      @media (max-width: 400px) {
+        .blog-prev-inner { grid-template-columns: 1fr; }
+      }
+    `}</style>
+    <section id="insights" className="blog-prev-section" style={{ background: '#fafafa' }}>
       <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
 
         <h2 style={{
@@ -38,7 +56,7 @@ export default function BlogPreview({ posts }) {
           Stay informed with our latest blogs — valuable knowledge and trends to empower your business decisions.
         </p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '28px' }}>
+        <div className="blog-prev-outer">
 
           {/* Featured post */}
           <div style={{
@@ -87,7 +105,7 @@ export default function BlogPreview({ posts }) {
           </div>
 
           {/* Article grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+          <div className="blog-prev-inner">
             {gridPosts.map((post, i) => (
               <div key={i} style={{
                 borderRadius: '14px',
@@ -136,5 +154,6 @@ export default function BlogPreview({ posts }) {
         </div>
       </div>
     </section>
+    </>
   )
 }

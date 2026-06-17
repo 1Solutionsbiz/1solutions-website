@@ -72,18 +72,45 @@ export default function WhyUs() {
 
   return (
     <>
+      <style>{`
+        .whyus-sec { padding: 80px 40px; }
+        .whyus-header { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 60px; }
+        .whyus-story-card { display: grid; grid-template-columns: 40% 60%; align-items: center; border: 2px solid #FE9700; border-radius: 40px; overflow: hidden; height: 550px; background: #FFFBF7; }
+        .whyus-story-left { display: flex; flex-direction: column; gap: 12px; justify-content: flex-start; padding: 40px 40px 40px 60px; margin: 20px 0 20px 30px; background: #fff; border-radius: 24px; overflow-y: auto; height: calc(100% - 40px); box-sizing: border-box; }
+        .whyus-story-right { margin: 20px; border-radius: 24px; overflow: hidden; height: calc(100% - 40px); flex-shrink: 0; position: relative; }
+        .whyus-growth-sec { padding: 100px 40px; }
+        .whyus-growth-header { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: flex-start; }
+        .whyus-stats-grid { display: grid; grid-template-columns: repeat(3,1fr); grid-template-rows: auto auto; gap: 32px; margin-top: 60px; padding-top: 40px; border-top: 2px solid rgba(15,52,96,0.12); }
+        @media (max-width: 900px) {
+          .whyus-sec { padding: 56px 24px; }
+          .whyus-header { grid-template-columns: 1fr; gap: 24px; margin-bottom: 36px; }
+          .whyus-story-card { grid-template-columns: 1fr; height: auto; border-radius: 24px; }
+          .whyus-story-left { margin: 16px; padding: 24px; height: auto; overflow-y: visible; }
+          .whyus-story-right { height: 260px; }
+          .whyus-growth-sec { padding: 64px 24px; }
+          .whyus-growth-header { grid-template-columns: 1fr; gap: 16px; }
+          .whyus-stats-grid { gap: 20px; }
+          .whyus-stat-item { grid-column: auto !important; grid-row: auto !important; min-height: auto !important; padding: 32px 28px !important; }
+        }
+        @media (max-width: 600px) {
+          .whyus-sec { padding: 48px 16px; }
+          .whyus-story-right { height: 200px; }
+          .whyus-stats-grid { grid-template-columns: 1fr 1fr; }
+          .whyus-stat-item { padding: 24px 20px !important; }
+          .whyus-stat-value { font-size: 44px !important; }
+        }
+        @media (max-width: 400px) {
+          .whyus-stats-grid { grid-template-columns: 1fr; }
+        }
+      `}</style>
       {/* ── Success Stories ── */}
-      <section id="success-stories" style={{
-        padding: '80px 40px',
+      <section id="success-stories" className="whyus-sec" style={{
         background: 'linear-gradient(135deg, rgba(254, 243, 199, 0.5) 0%, rgba(233, 212, 255, 0.3) 100%)',
       }}>
         <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
 
           {/* Header: two-column */}
-          <div style={{
-            display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px',
-            alignItems: 'center', marginBottom: '60px',
-          }}>
+          <div className="whyus-header">
             <div>
               <h2 style={{
                 fontSize: 'clamp(28px,3.5vw,48px)', fontWeight: 900, margin: '0 0 16px',
@@ -111,24 +138,9 @@ export default function WhyUs() {
           </div>
 
           {/* Story card — outer card: amber border, cream bg */}
-          <div style={{
-            display: 'grid', gridTemplateColumns: '40% 60%',
-            alignItems: 'center',
-            border: '2px solid #FE9700', borderRadius: '40px',
-            overflow: 'hidden', height: '550px', background: '#FFFBF7',
-          }}>
+          <div className="whyus-story-card">
             {/* Left: white floating card inside the 40% column */}
-            <div style={{
-              display: 'flex', flexDirection: 'column', gap: '12px',
-              justifyContent: 'flex-start',
-              padding: '40px 40px 40px 60px',
-              margin: '20px 0 20px 30px',
-              background: '#fff',
-              borderRadius: '24px',
-              overflowY: 'auto',
-              height: 'calc(100% - 40px)',
-              boxSizing: 'border-box',
-            }}>
+            <div className="whyus-story-left">
               {/* Company header */}
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                 <div style={{
@@ -182,11 +194,7 @@ export default function WhyUs() {
             </div>
 
             {/* Right: inset image with margin + border-radius */}
-            <div style={{
-              margin: '20px', borderRadius: '24px',
-              overflow: 'hidden', height: 'calc(100% - 40px)',
-              flexShrink: 0, position: 'relative',
-            }}>
+            <div className="whyus-story-right">
               <img
                 src={story.img}
                 alt={story.company}
@@ -210,10 +218,10 @@ export default function WhyUs() {
       </section>
 
       {/* ── Growth Story ── */}
-      <section id="growth-story" style={{ padding: '100px 40px', background: '#fff' }}>
+      <section id="growth-story" className="whyus-growth-sec" style={{ background: '#fff' }}>
         <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'flex-start' }}>
+          <div className="whyus-growth-header">
             <h2 style={{
               fontSize: 'clamp(36px,4vw,56px)', fontWeight: 900, lineHeight: 1.1,
               letterSpacing: '-0.5px', margin: 0,
@@ -228,16 +236,11 @@ export default function WhyUs() {
             </p>
           </div>
 
-          <div style={{
-            display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
-            gridTemplateRows: 'auto auto', gap: '32px',
-            marginTop: '60px', paddingTop: '40px',
-            borderTop: '2px solid rgba(15, 52, 96, 0.12)',
-          }}>
+          <div className="whyus-stats-grid">
             {growthStats.map((s, i) => {
               const isLarge = i === 0 || i === 4
               return (
-                <div key={i} style={{
+                <div key={i} className="whyus-stat-item" style={{
                   ...statGridPos[i],
                   background: statBgs[i],
                   borderRadius: '20px',
@@ -256,7 +259,7 @@ export default function WhyUs() {
                     e.currentTarget.style.boxShadow = 'none'
                   }}
                 >
-                  <div style={{
+                  <div className="whyus-stat-value" style={{
                     fontSize: isLarge ? '64px' : '50px', fontWeight: 900, color: '#114171',
                     marginBottom: '16px', lineHeight: 1,
                   }}>

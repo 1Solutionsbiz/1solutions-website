@@ -27,7 +27,20 @@ export default function Industries() {
   }
 
   return (
-    <section id="industries" style={{ padding: '80px 40px', background: '#fff' }}>
+    <>
+    <style>{`
+      .ind-section { padding: 80px 40px; }
+      .ind-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
+      @media (max-width: 900px) {
+        .ind-section { padding: 56px 24px; }
+        .ind-grid { grid-template-columns: repeat(2,1fr); }
+      }
+      @media (max-width: 480px) {
+        .ind-section { padding: 48px 16px; }
+        .ind-grid { grid-template-columns: repeat(2,1fr); gap: 14px; }
+      }
+    `}</style>
+    <section id="industries" className="ind-section" style={{ background: '#fff' }}>
       <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
 
         <h2 style={{
@@ -46,7 +59,7 @@ export default function Industries() {
           From healthcare to fintech, we deliver tailored digital solutions that drive growth and efficiency across every sector.
         </p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '24px' }}>
+        <div className="ind-grid">
           {industries.map((ind) => (
             <div
               key={ind.name}
@@ -107,5 +120,6 @@ export default function Industries() {
         </div>
       </div>
     </section>
+    </>
   )
 }

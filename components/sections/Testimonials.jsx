@@ -26,8 +26,20 @@ export default function Testimonials() {
   const [activeDot, setActiveDot] = useState(0)
 
   return (
-    <section id="testimonials" style={{
-      padding: '80px 40px',
+    <>
+    <style>{`
+      .testi-section { padding: 80px 40px; }
+      .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 32px; margin-bottom: 40px; }
+      @media (max-width: 900px) {
+        .testi-section { padding: 56px 24px; }
+        .testi-grid { grid-template-columns: repeat(2,1fr); }
+      }
+      @media (max-width: 600px) {
+        .testi-section { padding: 48px 16px; }
+        .testi-grid { grid-template-columns: 1fr; }
+      }
+    `}</style>
+    <section id="testimonials" className="testi-section" style={{
       background: [
         'radial-gradient(ellipse 1000px 700px at 50% 50%, rgba(6, 182, 212, 0.06) 0%, transparent 70%)',
         'radial-gradient(ellipse 600px 400px at 50% 40%, rgba(124, 58, 237, 0.04) 0%, transparent 60%)',
@@ -51,7 +63,7 @@ export default function Testimonials() {
           Real feedback from teams we&apos;ve partnered with. See why leading companies trust 1Solutions.
         </p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px', marginBottom: '40px' }}>
+        <div className="testi-grid">
           {testimonials.map((t, i) => (
             <div key={i}
               style={{
@@ -123,5 +135,6 @@ export default function Testimonials() {
         </div>
       </div>
     </section>
+    </>
   )
 }

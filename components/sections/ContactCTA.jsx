@@ -1,13 +1,25 @@
 export default function ContactCTA() {
   return (
-    <section id="contact" style={{ padding: '70px 40px', background: '#fff' }}>
+    <>
+    <style>{`
+      .cta-section { padding: 70px 40px; }
+      .cta-grid { display: grid; grid-template-columns: 1fr 1.15fr; align-items: stretch; }
+      .cta-form-rows { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+      @media (max-width: 900px) {
+        .cta-section { padding: 56px 24px; }
+        .cta-grid { grid-template-columns: 1fr; }
+      }
+      @media (max-width: 480px) {
+        .cta-section { padding: 40px 16px; }
+        .cta-form-rows { grid-template-columns: 1fr; }
+      }
+    `}</style>
+    <section id="contact" className="cta-section" style={{ background: '#fff' }}>
       <div style={{
         maxWidth: '1440px', margin: '0 auto',
         background: 'linear-gradient(135deg, #FFFBF7 0%, #FFF5ED 50%, #FFEDE0 100%)',
         borderRadius: '16px', overflow: 'hidden',
-        display: 'grid', gridTemplateColumns: '1fr 1.15fr',
-        alignItems: 'stretch',
-      }}>
+      }} className="cta-grid">
 
         {/* Left */}
         <div style={{ padding: '40px 30px 40px 40px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
@@ -76,7 +88,7 @@ export default function ContactCTA() {
               Contact Us
             </h3>
             <form style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
+              <div className="cta-form-rows">
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                   <label style={labelStyle}>Full Name*</label>
                   <input type="text" placeholder="Full Name*" required style={inputStyle} />
@@ -87,7 +99,7 @@ export default function ContactCTA() {
                 </div>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
+              <div className="cta-form-rows">
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                   <label style={labelStyle}>Phone Number*</label>
                   <div style={{ display: 'flex', border: '1px solid #e5e7eb', borderRadius: '6px', overflow: 'hidden' }}>
@@ -132,6 +144,7 @@ export default function ContactCTA() {
 
       </div>
     </section>
+    </>
   )
 }
 

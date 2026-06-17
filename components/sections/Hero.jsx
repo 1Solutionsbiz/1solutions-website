@@ -49,15 +49,32 @@ export default function Hero() {
           will-change: transform;
           animation: heroMarquee 32s linear infinite;
         }
+        .hero-metrics {
+          display: grid;
+          grid-template-columns: repeat(4,1fr);
+          gap: 40px;
+          margin-top: 44px;
+          margin-bottom: 44px;
+          padding: 44px 0;
+          border-top: 1px solid rgba(15,52,96,0.1);
+          border-bottom: 1px solid rgba(15,52,96,0.1);
+        }
         @media (prefers-reduced-motion: reduce) {
           .hero-fade-1,.hero-fade-2,.hero-fade-3,.hero-fade-4 {
             animation: none !important; opacity: 1 !important;
           }
           .hero-logos-track { animation: none !important; }
         }
+        @media (max-width: 768px) {
+          .hero-section { padding: 64px 20px 56px !important; }
+          .hero-metrics { grid-template-columns: repeat(2,1fr); gap: 24px; padding: 32px 0; }
+        }
+        @media (max-width: 480px) {
+          .hero-section { padding: 56px 16px 48px !important; }
+        }
       `}</style>
 
-      <section style={{
+      <section className="hero-section" style={{
         background: 'linear-gradient(135deg, rgba(254,243,199,0.5) 0%, rgba(233,212,255,0.3) 100%)',
         padding: '100px 40px 80px',
         textAlign: 'center',
@@ -103,11 +120,7 @@ export default function Hero() {
           </p>
 
           {/* Metrics */}
-          <div className="hero-fade-3" style={{
-            display: 'grid', gridTemplateColumns: 'repeat(4,1fr)',
-            gap: '40px', marginTop: '44px', marginBottom: '44px', padding: '44px 0',
-            borderTop: '1px solid rgba(15,52,96,0.1)', borderBottom: '1px solid rgba(15,52,96,0.1)',
-          }}>
+          <div className="hero-fade-3 hero-metrics">
             {metrics.map((m) => (
               <div key={m.label} style={{ textAlign: 'center' }}>
                 <div style={{

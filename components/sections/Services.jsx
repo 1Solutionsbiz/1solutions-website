@@ -109,8 +109,28 @@ export default function Services() {
   const current = services.find(s => s.id === active)
 
   return (
-    <section id="services" style={{
-      padding: '80px 40px',
+    <>
+    <style>{`
+      .svc-section { padding: 80px 40px; }
+      .svc-layout { display: grid; grid-template-columns: 280px 1fr; gap: 56px; align-items: flex-start; }
+      .svc-card { display: flex; flex-direction: row; gap: 32px; padding: 48px; align-items: stretch; }
+      .svc-img-wrap { border-radius: 20px; overflow: hidden; width: 350px; min-width: 350px; min-height: 320px; }
+      @media (max-width: 1024px) {
+        .svc-img-wrap { width: 260px; min-width: 260px; }
+      }
+      @media (max-width: 768px) {
+        .svc-section { padding: 56px 20px; }
+        .svc-layout { grid-template-columns: 1fr; gap: 24px; }
+        .svc-tabs { display: grid !important; grid-template-columns: repeat(2,1fr); gap: 10px !important; }
+        .svc-card { flex-direction: column; padding: 28px; gap: 24px; }
+        .svc-img-wrap { width: 100%; min-width: 0; min-height: 220px; }
+      }
+      @media (max-width: 480px) {
+        .svc-tabs { grid-template-columns: 1fr !important; }
+        .svc-card { padding: 20px; }
+      }
+    `}</style>
+    <section id="services" className="svc-section" style={{
       background: 'linear-gradient(135deg, #fdfcff 0%, #f9f8ff 50%, #f6f8ff 100%)',
     }}>
       <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
@@ -131,10 +151,10 @@ export default function Services() {
           From strengthening your digital presence to automating your workflow we offer technology services for end-to-end digital transformation.
         </p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '280px 1fr', gap: '56px', alignItems: 'flex-start' }}>
+        <div className="svc-layout">
 
           {/* Left tabs */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          <div className="svc-tabs" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             {services.map(s => (
               <button key={s.id} onClick={() => setActive(s.id)} style={{
                 display: 'flex', alignItems: 'center', gap: '10px',
@@ -157,16 +177,11 @@ export default function Services() {
           </div>
 
           {/* Right: image + content card */}
-          <div style={{
-            display: 'flex', flexDirection: 'row', gap: '32px', padding: '48px',
+          <div className="svc-card" style={{
             background: '#fff', border: '1px solid rgba(229, 231, 235, 0.7)',
             borderRadius: '24px', boxShadow: '0 12px 48px rgba(0, 0, 0, 0.12)',
-            alignItems: 'stretch',
           }}>
-            <div style={{
-              borderRadius: '20px', overflow: 'hidden',
-              width: '350px', minWidth: '350px', minHeight: '320px',
-            }}>
+            <div className="svc-img-wrap">
               <img
                 src={current.image}
                 alt={current.headline}
@@ -208,5 +223,6 @@ export default function Services() {
         </div>
       </div>
     </section>
+    </>
   )
 }
