@@ -127,6 +127,16 @@ const PROJECTS = [
     featured: false,
   },
   {
+    id: 'recreator',
+    title: 'Recreator — Hemp Clothing Store',
+    category: 'eCommerce',
+    industry: 'Sustainable Fashion',
+    tech: ['WooCommerce', 'WordPress', 'UI/UX Design'],
+    desc: 'Eco-conscious WooCommerce store for a US hemp clothing brand — selling men\'s and women\'s sustainable apparel, accessories, and fleece, with an educational journal on hemp fiber and sustainability.',
+    image: '/images/portfolio/recreator.png',
+    featured: false,
+  },
+  {
     id: 'skinlasercentre',
     title: 'Skin Laser Centre — Dermatology Clinic',
     category: 'Web Development',
