@@ -127,6 +127,17 @@ const PROJECTS = [
     featured: false,
   },
   {
+    id: 'mountsystems',
+    title: 'Mount Systems — IT & Security Solutions',
+    category: 'Web Development',
+    industry: 'IT & Security',
+    tech: ['WordPress', 'Custom Theme', 'UI/UX Design'],
+    desc: 'Corporate website for Mount Systems — a complete IT and security solutions provider offering end-to-end technology and security services to businesses.',
+    image: '/images/portfolio/mountsystems.png',
+    url: 'https://www.mount-systems.com.ki/',
+    featured: false,
+  },
+  {
     id: 'charlespuma',
     title: 'Charles Puma — Fine Art Gallery',
     category: 'Web Development',
