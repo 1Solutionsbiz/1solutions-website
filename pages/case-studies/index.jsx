@@ -90,13 +90,13 @@ export default function CaseStudies() {
       {/* ── CASE STUDY ITEMS ── */}
       <div style={{ background: '#fff' }}>
 
-        {/* ── 01 ── Comtradesol */}
+        {/* ── 01 ── Comtradesol: text left, image right */}
         <section style={{
           maxWidth: 1200,
           margin: '0 auto',
-          padding: '80px 40px 100px',
+          padding: '80px 40px 0',
           display: 'grid',
-          gridTemplateColumns: '300px 1fr',
+          gridTemplateColumns: '280px 1fr',
           gap: 60,
           alignItems: 'flex-start',
         }}>
@@ -106,38 +106,19 @@ export default function CaseStudies() {
               Comtradesol Advisory Services
             </h2>
             <p style={{ color: '#6b7280', lineHeight: 1.8, marginBottom: 24, fontSize: '0.94rem' }}>
-              Built a professional corporate website on custom WordPress for a Gurgaon-based financial advisory firm. We also set up and actively managed their LinkedIn company profile to build brand authority and reach.
+              Built a professional corporate website on custom WordPress for a Gurgaon-based financial advisory firm, covering Trade Financing, Debt Advisory, Equity Advisory, and Credit Rating. We also set up and actively managed their LinkedIn company profile to build brand authority and reach.
             </p>
-            <p style={{ color: '#4b5563', lineHeight: 1.8, marginBottom: 28, fontSize: '0.9rem', fontWeight: 500 }}>
-              Services delivered — Financial Advisory, Structured Financing, Trade Financing, Debt Advisory, Equity Advisory, and Credit Rating.
-            </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 32 }}>
-              {[
-                { icon: '🌐', label: 'Custom WordPress Development' },
-                { icon: '💼', label: 'LinkedIn Profile Management' },
-                { icon: '🎨', label: 'UI/UX Design' },
-              ].map(s => (
-                <div key={s.label} style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: '0.88rem', color: '#374151' }}>
-                  <span>{s.icon}</span>
-                  <span>{s.label}</span>
-                </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 32 }}>
+              {['Custom WordPress Development', 'LinkedIn Profile Management', 'UI/UX Design'].map(s => (
+                <div key={s} style={{ fontSize: '0.86rem', color: '#374151' }}>— {s}</div>
               ))}
             </div>
-            <a href="https://www.comtradesol.com/" target="_blank" rel="noopener noreferrer" style={{
-              display: 'inline-flex', alignItems: 'center', gap: 8,
-              border: '1.5px solid #0A1628', borderRadius: 50,
-              padding: '10px 22px', color: '#0A1628', textDecoration: 'none',
-              fontWeight: 600, fontSize: '0.92rem',
-            }}>
-              Visit Website
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
           </div>
           <div>
             <img
               src="/images/portfolio/comtradesol.webp"
               alt="Comtradesol Advisory Services website"
-              style={{ width: '100%', borderRadius: 16, display: 'block', aspectRatio: '16/9', objectFit: 'cover', boxShadow: '0 8px 40px rgba(15,52,96,0.12)' }}
+              style={{ width: '100%', borderRadius: 16, display: 'block', aspectRatio: '16/9', objectFit: 'cover' }}
             />
             <div style={{ display: 'flex', gap: 10, marginTop: 16, flexWrap: 'wrap' }}>
               <PillTag label="WordPress Development" />
@@ -149,62 +130,46 @@ export default function CaseStudies() {
 
         <Divider />
 
-        {/* ── 02 ── RNG Foundation */}
-        <section style={{
-          maxWidth: 1200,
-          margin: '0 auto',
-          padding: '80px 40px 100px',
-          display: 'grid',
-          gridTemplateColumns: '1fr 300px',
-          gap: 60,
-          alignItems: 'flex-start',
-        }}>
-          <div>
-            <img
-              src="/images/portfolio/rngfoundation.webp"
-              alt="Ramnath Goenka Excellence in Journalism Awards website"
-              style={{ width: '100%', borderRadius: 16, display: 'block', aspectRatio: '16/9', objectFit: 'cover', boxShadow: '0 8px 40px rgba(15,52,96,0.12)' }}
-            />
-            <div style={{ display: 'flex', gap: 10, marginTop: 16, flexWrap: 'wrap' }}>
-              <PillTag label="Custom Development" />
-              <PillTag label="Laravel CRM" />
-              <PillTag label="Media & Journalism" />
+        {/* ── 02 ── RNG Foundation: title+desc+button top, big image below */}
+        <section style={{ maxWidth: 1200, margin: '0 auto', padding: '80px 40px 0' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 40, marginBottom: 32 }}>
+            <div style={{ flex: 1 }}>
+              <div style={{ fontSize: '3rem', fontWeight: 800, color: '#e5e7eb', lineHeight: 1, marginBottom: 4 }}>02</div>
+              <h2 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2.1rem)', fontWeight: 800, color: '#0A1628', marginBottom: 16, lineHeight: 1.2 }}>
+                Ramnath Goenka Excellence in Journalism Awards
+              </h2>
+              <p style={{ color: '#6b7280', lineHeight: 1.8, fontSize: '0.94rem', maxWidth: 620 }}>
+                Delivered a fully custom-built awards portal for the Indian Express Group's most prestigious journalism honours — including a bespoke CRM in Laravel to manage nominations, jury evaluations, and winner announcements across 14 categories, with EY as knowledge partner.
+              </p>
+            </div>
+            <div style={{ flexShrink: 0, paddingTop: 56 }}>
+              <a href="https://rngfoundation.com/awards/" target="_blank" rel="noopener noreferrer" style={{
+                display: 'inline-flex', alignItems: 'center', gap: 8,
+                border: '1.5px solid #0A1628', borderRadius: 50,
+                padding: '10px 22px', color: '#0A1628', textDecoration: 'none',
+                fontWeight: 600, fontSize: '0.92rem',
+              }}>
+                Visit Website
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
             </div>
           </div>
-          <div>
-            <div style={{ fontSize: '3rem', fontWeight: 800, color: '#e5e7eb', lineHeight: 1, marginBottom: 4 }}>02</div>
-            <h2 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2.1rem)', fontWeight: 800, color: '#0A1628', marginBottom: 16, lineHeight: 1.2 }}>
-              Ramnath Goenka Excellence in Journalism Awards
-            </h2>
-            <p style={{ color: '#6b7280', lineHeight: 1.8, marginBottom: 24, fontSize: '0.94rem' }}>
-              Delivered a fully custom-built awards portal for the Indian Express Group's most prestigious journalism awards — including a bespoke CRM in Laravel to manage nominations, jury evaluations, and winner announcements across 14 categories.
-            </p>
-            <p style={{ color: '#4b5563', lineHeight: 1.8, marginBottom: 28, fontSize: '0.9rem', fontWeight: 500 }}>
-              The platform handles end-to-end awards administration with EY as knowledge partner, processing RBI data-backed evaluations for India's top print, digital, and broadcast journalists.
-            </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 32 }}>
-              {[
-                { icon: '⚙️', label: 'Custom Web Development' },
-                { icon: '🗄️', label: 'Custom CRM in Laravel' },
-                { icon: '🎨', label: 'UI/UX Design' },
-              ].map(s => (
-                <div key={s.label} style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: '0.88rem', color: '#374151' }}>
-                  <span>{s.icon}</span>
-                  <span>{s.label}</span>
-                </div>
-              ))}
-            </div>
-            <a href="https://rngfoundation.com/awards/" target="_blank" rel="noopener noreferrer" style={{
-              display: 'inline-flex', alignItems: 'center', gap: 8,
-              border: '1.5px solid #0A1628', borderRadius: 50,
-              padding: '10px 22px', color: '#0A1628', textDecoration: 'none',
-              fontWeight: 600, fontSize: '0.92rem',
-            }}>
-              Visit Website
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
+          <img
+            src="/images/portfolio/rngfoundation.webp"
+            alt="Ramnath Goenka Excellence in Journalism Awards website"
+            style={{ width: '100%', borderRadius: 16, display: 'block', aspectRatio: '16/9', objectFit: 'cover' }}
+          />
+          <div style={{ display: 'flex', gap: 10, marginTop: 16, flexWrap: 'wrap' }}>
+            <PillTag label="Custom Development" />
+            <PillTag label="Laravel CRM" />
+            <PillTag label="Media & Journalism" />
           </div>
         </section>
+
+        <Divider />
+
+        {/* ── spacer for future case studies ── */}
+        <section style={{ maxWidth: 1200, margin: '0 auto', padding: '80px 40px 100px' }} />
 
       </div>
 
@@ -275,6 +240,34 @@ export default function CaseStudies() {
 }
 
 /* ── Shared sub-components ── */
+function CsButton({ href }) {
+  return (
+    <a href={href} style={{
+      display: 'inline-flex', alignItems: 'center', gap: 8,
+      border: '1.5px solid #0A1628', borderRadius: 50,
+      padding: '10px 22px', color: '#0A1628', textDecoration: 'none',
+      fontWeight: 600, fontSize: '0.92rem',
+    }}>
+      View Details
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  );
+}
+
+function SmCsButton({ href }) {
+  return (
+    <a href={href} style={{
+      display: 'inline-flex', alignItems: 'center', gap: 6,
+      border: '1.5px solid #0A1628', borderRadius: 50,
+      padding: '8px 18px', color: '#0A1628', textDecoration: 'none',
+      fontWeight: 600, fontSize: '0.85rem',
+    }}>
+      View Details
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  );
+}
+
 function PillTag({ label }) {
   return (
     <span style={{
