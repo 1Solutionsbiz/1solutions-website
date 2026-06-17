@@ -1,8 +1,6 @@
 'use client';
-import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 
 const COLS = [
   {
@@ -94,14 +92,6 @@ const SOCIAL = [
 ];
 
 export default function BlogFooter() {
-  const [query, setQuery] = useState('');
-  const router = useRouter();
-
-  const handleSearch = (e) => {
-    e.preventDefault();
-    if (query.trim()) router.push(`/search?q=${encodeURIComponent(query.trim())}`);
-  };
-
   return (
     <footer className="bf-footer">
 
@@ -121,25 +111,9 @@ export default function BlogFooter() {
         </div>
       </div>
 
-      {/* ── SEARCH + SOCIAL STRIP ── */}
+      {/* ── SOCIAL + SITEMAP STRIP ── */}
       <div className="bf-search-strip">
         <div className="bf-inner bf-search-inner">
-          <form onSubmit={handleSearch} className="bf-search-form" role="search">
-            <input
-              type="search"
-              value={query}
-              onChange={e => setQuery(e.target.value)}
-              placeholder="Search this site"
-              aria-label="Search this site"
-              className="bf-search-input"
-            />
-            <button type="submit" className="bf-search-btn" aria-label="Search">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
-                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-              </svg>
-            </button>
-          </form>
-
           <div className="bf-social-row">
             {SOCIAL.map(s => (
               <a key={s.label} href={s.href} className="bf-social-icon" target="_blank" rel="noopener noreferrer" aria-label={s.label}>
@@ -147,8 +121,6 @@ export default function BlogFooter() {
               </a>
             ))}
           </div>
-        </div>
-        <div className="bf-inner">
           <Link href="/sitemap" className="bf-sitemap-link">Sitemap</Link>
         </div>
       </div>
