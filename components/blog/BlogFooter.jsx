@@ -147,7 +147,7 @@ export default function BlogFooter() {
             </nav>
           </div>
 
-          {/* Col 2 (middle): copyright + legal text */}
+          {/* Col 2 (middle): copyright + legal text + badge logos in one row */}
           <div className="bf-brand-middle">
             <p className="bf-copyright">
               &copy; {new Date().getFullYear()} 1Solutions. All rights reserved.
@@ -155,21 +155,6 @@ export default function BlogFooter() {
             <p className="bf-legal-text">
               1Solutions is a registered web development and digital marketing company. Web Development, SEO, Digital Marketing, and Cloud are registered service offerings of 1Solutions Digital Pvt. Ltd. Terms and conditions, features, support, pricing, and service options are subject to change without notice.
             </p>
-            <p className="bf-legal-text">
-              Registered office: 47, Vijay Block, Laxmi Nagar, New Delhi – 110092, India.{' '}
-              <a href="mailto:info@1solutions.biz">info@1solutions.biz</a>{' '}|{' '}
-              <a href="tel:+919654327900">+91 9654327900</a>
-            </p>
-          </div>
-
-          {/* Col 3 (right): legal links + trust badge logos below */}
-          <div className="bf-brand-right">
-            <nav className="bf-legal-links">
-              <Link href="/terms-of-use">Legal</Link>
-              <Link href="/privacy-policy">Privacy</Link>
-              <Link href="/cookie-policy">Security</Link>
-              <Link href="/privacy-policy">Compliance</Link>
-            </nav>
             <div className="bf-trust-badges">
               {TRUST_BADGES.map(b => (
                 <a
@@ -179,10 +164,26 @@ export default function BlogFooter() {
                   rel={b.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   className="bf-badge-link"
                 >
-                  <Image src={b.src} alt={b.alt} width={100} height={36} style={{ height: '32px', width: 'auto', objectFit: 'contain' }} />
+                  <Image src={b.src} alt={b.alt} width={100} height={36} style={{ height: '30px', width: 'auto', objectFit: 'contain' }} />
                 </a>
               ))}
             </div>
+          </div>
+
+          {/* Col 3 (right): legal links + registered office below */}
+          <div className="bf-brand-right">
+            <nav className="bf-legal-links">
+              <Link href="/terms-of-use">Legal</Link>
+              <Link href="/privacy-policy">Privacy</Link>
+              <Link href="/cookie-policy">Security</Link>
+              <Link href="/privacy-policy">Compliance</Link>
+            </nav>
+            <p className="bf-legal-text" style={{ marginTop: '12px' }}>
+              Registered office: 47, Vijay Block, Laxmi Nagar,<br />
+              New Delhi – 110092, India.<br />
+              <a href="mailto:info@1solutions.biz">info@1solutions.biz</a><br />
+              <a href="tel:+919654327900">+91 9654327900</a>
+            </p>
           </div>
 
         </div>
