@@ -127,6 +127,16 @@ const PROJECTS = [
     featured: false,
   },
   {
+    id: 'throneportapotties',
+    title: 'Throne Porta Potties — Sanitation Rentals',
+    category: 'Web Development',
+    industry: 'Sanitation & Events',
+    tech: ['WordPress', 'Custom Theme', 'UI/UX Design'],
+    desc: 'Service website for a porta potty rental company — showcasing sanitation solutions for construction sites, events, and outdoor projects with a focus on clean, reliable, and on-time delivery.',
+    image: '/images/portfolio/throneportapotties.png',
+    featured: false,
+  },
+  {
     id: 'recreator',
     title: 'Recreator — Hemp Clothing Store',
     category: 'eCommerce',
