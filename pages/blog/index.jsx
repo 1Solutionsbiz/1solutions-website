@@ -12,7 +12,7 @@ import Pagination from '../../components/blog/Pagination';
 
 const PER_PAGE = 9;
 
-export default function BlogIndex({ featuredPost, posts, totalPages }) {
+export default function BlogIndex({ featuredPost, posts, totalPages, totalPosts }) {
   const feat      = featuredPost;
   const featCat   = feat?.categories?.nodes?.[0];
   const featColor = featCat ? getCategoryColor(featCat.slug) : 'cat-orange';
@@ -46,7 +46,7 @@ export default function BlogIndex({ featuredPost, posts, totalPages }) {
               type="search"
               value={searchQ}
               onChange={(e) => setSearchQ(e.target.value)}
-              placeholder="Search 2,400+ articles…"
+              placeholder={`Search ${totalPosts > 0 ? totalPosts.toLocaleString() + '+' : ''} articles…`}
               aria-label="Search articles"
               className="blog-hero-search-input"
             />
@@ -143,8 +143,9 @@ export async function getStaticProps() {
         featuredPost: featured || null,
         posts:        gridPosts,
         totalPages:   totalPages || 1,
+        totalPosts:   total || 0,
       },
-      revalidate: 3600,
+      revalidate: 300,
     };
   } catch (err) {
     console.error('Blog index error:', err);

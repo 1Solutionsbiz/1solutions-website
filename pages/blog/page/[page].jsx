@@ -94,7 +94,7 @@ export async function getStaticProps({ params }) {
         currentPage: page,
         totalPages,
       },
-      revalidate: 3600,
+      revalidate: 300,
     };
   } catch (err) {
     console.error('BlogPage error:', err);
