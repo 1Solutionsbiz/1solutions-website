@@ -127,6 +127,17 @@ const PROJECTS = [
     featured: false,
   },
   {
+    id: 'skinlasercentre',
+    title: 'Skin Laser Centre — Dermatology Clinic',
+    category: 'Web Development',
+    industry: 'Healthcare',
+    tech: ['WordPress', 'Custom Theme', 'UI/UX Design'],
+    desc: "Clinical website for Dr. Paul's Skin Laser Centre, Delhi — a 23-year-old dermatology practice specialising in vitiligo, acne, hair transplants, and advanced laser treatments including Q-Switched and CO2 lasers.",
+    image: '/images/portfolio/skinlasercentre.png',
+    url: 'https://skinlasercentre.com/',
+    featured: false,
+  },
+  {
     id: 'smefutures',
     title: 'SME Futures — Business Media Platform',
     category: 'Web Development',
