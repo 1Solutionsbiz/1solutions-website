@@ -415,11 +415,6 @@ export default function BlogHeader() {
           </nav>
 
           <div className="bh-cta-wrap">
-            <Link href="/search" className="bh-search-icon" aria-label="Search articles" onClick={close}>
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden="true">
-                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-              </svg>
-            </Link>
             <Link href="/contact" className="bh-cta" onClick={close}>Contact Us →</Link>
           </div>
 
@@ -711,12 +706,6 @@ export default function BlogHeader() {
           </a>
         </div>
 
-        <Link href="/search" className="bh-mob-search-link" onClick={close}>
-          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden="true">
-            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-          </svg>
-          Search Articles
-        </Link>
         <Link href="/contact" className="bh-mob-cta" onClick={close}>Contact Us →</Link>
       </nav>
     </>
