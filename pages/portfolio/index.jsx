@@ -387,11 +387,6 @@ function ProjectCard({ project, index }) {
         <div className="pf-tech-row">
           {project.tech.map(t => <span key={t} className="pf-tech-pill">{t}</span>)}
         </div>
-        {project.url && (
-          <a href={project.url} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginTop: '10px', fontSize: '13px', color: '#114171', fontWeight: 600, textDecoration: 'none' }}>
-            Visit Site →
-          </a>
-        )}
       </div>
     </div>
   );
