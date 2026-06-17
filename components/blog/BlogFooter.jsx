@@ -153,7 +153,7 @@ export default function BlogFooter() {
               &copy; {new Date().getFullYear()} 1Solutions. All rights reserved.
             </p>
             <p className="bf-legal-text">
-              1Solutions is a registered web development and digital marketing company. Web Development, SEO, Digital Marketing, and Cloud are registered service offerings of 1Solutions Digital Pvt. Ltd. Terms and conditions, features, support, pricing, and service options are subject to change without notice.
+              1Solutions is a full service web development and digital marketing company helping businesses build, grow, and scale their online presence through innovative technology and results driven marketing solutions.
             </p>
             <div className="bf-trust-badges">
               {TRUST_BADGES.map(b => (
