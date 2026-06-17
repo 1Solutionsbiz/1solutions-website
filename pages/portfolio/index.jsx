@@ -127,6 +127,16 @@ const PROJECTS = [
     featured: false,
   },
   {
+    id: 'creativeinterior',
+    title: 'Creative Interior & Decor',
+    category: 'Web Development',
+    industry: 'Interior Design',
+    tech: ['WordPress', 'Custom Theme', 'UI/UX Design'],
+    desc: 'Business website for a Delhi-based interior design firm offering residential, commercial, and office design with turnkey project execution — featuring 3D visualisations, transparent pricing, and a 100% satisfaction guarantee.',
+    image: '/images/portfolio/creativeinterior.jpeg',
+    featured: false,
+  },
+  {
     id: 'expetize',
     title: 'Expetize — Email Verification Tool',
     category: 'Web Development',
