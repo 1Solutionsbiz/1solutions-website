@@ -127,6 +127,17 @@ const PROJECTS = [
     featured: false,
   },
   {
+    id: 'smefutures',
+    title: 'SME Futures — Business Media Platform',
+    category: 'Web Development',
+    industry: 'Business & Finance',
+    tech: ['WordPress', 'Custom Theme', 'UI/UX Design'],
+    desc: 'Editorial and resource platform for small and medium enterprises — covering business news, growth strategies, funding, and industry insights for SME owners and entrepreneurs.',
+    image: '/images/portfolio/smefutures.png',
+    url: 'https://smefutures.com/',
+    featured: false,
+  },
+  {
     id: 'mountsystems',
     title: 'Mount Systems — IT & Security Solutions',
     category: 'Web Development',
