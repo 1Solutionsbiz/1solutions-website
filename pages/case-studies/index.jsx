@@ -1,6 +1,15 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
+const TAG_COLORS = [
+  { bg: '#FFF3E0', color: '#C05600', border: '#FDE68A' },
+  { bg: '#EDE9FE', color: '#6D28D9', border: '#DDD6FE' },
+  { bg: '#ECFDF5', color: '#047857', border: '#A7F3D0' },
+  { bg: '#EFF6FF', color: '#1D4ED8', border: '#BFDBFE' },
+  { bg: '#FDF2F8', color: '#BE185D', border: '#FBCFE8' },
+  { bg: '#F0FDFA', color: '#0F766E', border: '#99F6E4' },
+];
+
 const CASE_STUDIES = [
   {
     num: '01',
@@ -174,12 +183,11 @@ export default function CaseStudies() {
           }
           .cs-tag {
             font-size: 0.8rem;
-            color: #6b7280;
-            font-weight: 500;
-            background: #f9fafb;
-            border: 1px solid #e5e7eb;
-            border-radius: 4px;
-            padding: 4px 10px;
+            font-weight: 600;
+            border-radius: 20px;
+            padding: 4px 12px;
+            border-width: 1px;
+            border-style: solid;
           }
           .cs-link {
             display: inline-flex;
@@ -366,9 +374,18 @@ export default function CaseStudies() {
               <p className="cs-subtitle">{cs.subtitle}</p>
               <p className="cs-desc">{cs.desc}</p>
               <div className="cs-tags">
-                {cs.tags.map(tag => (
-                  <span key={tag} className="cs-tag">{tag}</span>
-                ))}
+                {cs.tags.map((tag, ti) => {
+                  const c = TAG_COLORS[ti % TAG_COLORS.length];
+                  return (
+                    <span
+                      key={tag}
+                      className="cs-tag"
+                      style={{ background: c.bg, color: c.color, borderColor: c.border }}
+                    >
+                      {tag}
+                    </span>
+                  );
+                })}
               </div>
               {cs.url && (
                 <a
