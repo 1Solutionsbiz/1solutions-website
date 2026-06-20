@@ -5,6 +5,15 @@ import { useState, useEffect, useRef } from 'react';
 
 const CATEGORIES = ['All', 'Web Development', 'eCommerce', 'Digital Marketing', 'Mobile App', 'UI/UX Design'];
 
+const TAG_COLORS = [
+  { bg: '#FFF3E0', color: '#C05600', border: '#FDE68A' },
+  { bg: '#EDE9FE', color: '#6D28D9', border: '#DDD6FE' },
+  { bg: '#ECFDF5', color: '#047857', border: '#A7F3D0' },
+  { bg: '#EFF6FF', color: '#1D4ED8', border: '#BFDBFE' },
+  { bg: '#FDF2F8', color: '#BE185D', border: '#FBCFE8' },
+  { bg: '#F0FDFA', color: '#0F766E', border: '#99F6E4' },
+];
+
 const PROJECTS = [
   {
     id: 0,
@@ -450,7 +459,14 @@ function ProjectCard({ project, index }) {
         <h3 className="pf-card-title">{project.title}</h3>
         <p className="pf-card-desc">{project.desc}</p>
         <div className="pf-tech-row">
-          {project.tech.map(t => <span key={t} className="pf-tech-pill">{t}</span>)}
+          {project.tech.map((t, ti) => {
+            const c = TAG_COLORS[ti % TAG_COLORS.length];
+            return (
+              <span key={t} className="pf-tech-pill" style={{ background: c.bg, color: c.color, borderColor: c.border }}>
+                {t}
+              </span>
+            );
+          })}
         </div>
       </div>
     </div>
@@ -525,7 +541,7 @@ export default function Portfolio() {
           .pf-card-title { font-size: 1.05rem; font-weight: 700; color: #0F1F40; margin-bottom: 10px; line-height: 1.3; }
           .pf-card-desc { font-size: .87rem; line-height: 1.6; color: #4b5563; margin-bottom: 16px; }
           .pf-tech-row { display: flex; flex-wrap: wrap; gap: 6px; }
-          .pf-tech-pill { font-size: .74rem; font-weight: 600; color: #92400e; background: #fff7ed; border: 1px solid #fed7aa; border-radius: 100px; padding: 3px 10px; }
+          .pf-tech-pill { font-size: .74rem; font-weight: 600; border-radius: 100px; padding: 3px 10px; border-width: 1px; border-style: solid; }
 
           /* ── Empty state ── */
           .pf-empty { text-align: center; padding: 80px 24px; color: #9ca3af; font-size: .95rem; }
