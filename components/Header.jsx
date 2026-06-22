@@ -27,6 +27,20 @@ const SERVICES_MENU = [
         title: null,
         links: [
           { label: 'WordPress Development', href: '/wordpress-development-company' },
+          { label: 'PHP Development', href: '/php-development-services' },
+        ],
+      },
+    ],
+  },
+  {
+    group: 'Mobile Development',
+    sections: [
+      {
+        title: null,
+        links: [
+          { label: 'React Native / Cross-Platform', href: '/react-native-app-development' },
+          { label: 'App UI/UX Design', href: '/app-ui-ux-design' },
+          { label: 'App Maintenance', href: '/app-maintenance-services' },
         ],
       },
     ],
