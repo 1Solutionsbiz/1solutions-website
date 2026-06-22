@@ -70,6 +70,12 @@ const SECTIONS = [
         { label: 'Prototyping Services', href: '/prototyping-services' },
         { label: 'UX Research',          href: '/ux-research' },
       ],
+      [
+        { label: 'Logo Design Services',    href: '/logo-design-services' },
+        { label: 'Landing Page Design',     href: '/landing-page-design-services' },
+        { label: 'Infographics Design',     href: '/infographics-design' },
+        { label: 'Facebook Page Design',    href: '/facebook-page-designing' },
+      ],
     ],
   },
   {
@@ -121,6 +127,12 @@ const SECTIONS = [
         { label: 'Content Marketing',             href: '/content-marketing-services' },
         { label: 'Email Marketing',               href: '/email-marketing-services' },
         { label: 'Video Marketing',               href: '/video-marketing-services' },
+      ],
+      [
+        { label: 'Facebook Management',           href: '/facebook-management-services' },
+        { label: 'Instagram Marketing',           href: '/instagram-marketing-services' },
+        { label: 'Content & Copywriting',         href: '/content-copywriting-services' },
+        { label: 'Ecommerce Marketing',           href: '/ecommerce-marketing-services' },
       ],
     ],
   },
