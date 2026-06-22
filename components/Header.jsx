@@ -7,6 +7,12 @@ const SERVICES_MENU = [
     group: 'Ecommerce Solutions',
     sections: [
       {
+        title: 'Platform Development',
+        links: [
+          { label: 'B2B eCommerce', href: '/b2b-ecommerce' },
+        ],
+      },
+      {
         title: 'Ecommerce Marketing',
         links: [
           { label: 'Influencer Marketing', href: '/influencer-marketing' },
