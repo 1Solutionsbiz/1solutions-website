@@ -39,6 +39,17 @@ const nextConfig = {
 
   async redirects() {
     return [
+      // Rename: /hire-ui-ux-designer → /hire-dedicated-ui-ux-designer
+      {
+        source: '/hire-ui-ux-designer',
+        destination: '/hire-dedicated-ui-ux-designer',
+        permanent: true,
+      },
+      {
+        source: '/hire-ui-ux-designer/',
+        destination: '/hire-dedicated-ui-ux-designer/',
+        permanent: true,
+      },
       // Redirect old /blog/[slug] post URLs to /[slug] (301 permanent for SEO)
       // Note: only matches single-segment paths — /blog/category/x, /blog/tag/x etc are unaffected
       {
