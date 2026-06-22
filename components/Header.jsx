@@ -45,6 +45,19 @@ const SERVICES_MENU = [
       },
     ],
   },
+  {
+    group: 'SEO',
+    sections: [
+      {
+        title: null,
+        links: [
+          { label: 'SEO Services', href: '/seo-services-company' },
+          { label: 'Local SEO', href: '/local-seo-services/' },
+          { label: 'SEO Audit', href: '/seo-audit-services/' },
+        ],
+      },
+    ],
+  },
 ];
 
 const Header = () => {
