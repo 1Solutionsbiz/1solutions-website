@@ -16,6 +16,8 @@ const STATIC_PAGES = [
   { url: '/search',                              priority: '0.4', changefreq: 'monthly' },
 
   // Web & App Development
+  { url: '/web-development-services',            priority: '0.9', changefreq: 'monthly' },
+  { url: '/nodejs-development-services',         priority: '0.8', changefreq: 'monthly' },
   { url: '/wordpress-development-company',       priority: '0.9', changefreq: 'monthly' },
   { url: '/nextjs-development-services',         priority: '0.8', changefreq: 'monthly' },
   { url: '/laravel-development-company',         priority: '0.8', changefreq: 'monthly' },
@@ -54,6 +56,7 @@ const STATIC_PAGES = [
   { url: '/infographics-design',                 priority: '0.6', changefreq: 'monthly' },
   { url: '/facebook-page-designing',             priority: '0.6', changefreq: 'monthly' },
   { url: '/app-ui-ux-design',                    priority: '0.7', changefreq: 'monthly' },
+  { url: '/graphic-design-services',             priority: '0.8', changefreq: 'monthly' },
   { url: '/home-services-website-design',        priority: '0.8', changefreq: 'monthly' },
 
   // Cloud, DevOps & IT
@@ -106,6 +109,7 @@ const STATIC_PAGES = [
   { url: '/influencer-marketing',                priority: '0.7', changefreq: 'monthly' },
   { url: '/content-marketing-services',          priority: '0.8', changefreq: 'monthly' },
   { url: '/email-marketing-services',            priority: '0.8', changefreq: 'monthly' },
+  { url: '/affiliate-marketing-services',        priority: '0.8', changefreq: 'monthly' },
   { url: '/html-email-development-services',     priority: '0.8', changefreq: 'monthly' },
   { url: '/klaviyo-email-marketing-agency',      priority: '0.8', changefreq: 'monthly' },
   { url: '/video-marketing-services',            priority: '0.7', changefreq: 'monthly' },
@@ -140,6 +144,7 @@ const STATIC_PAGES = [
   { url: '/seo-company-delhi',                   priority: '0.7', changefreq: 'monthly' },
   { url: '/seo-company-toronto',                 priority: '0.7', changefreq: 'monthly' },
   { url: '/seo-company-vancouver',               priority: '0.7', changefreq: 'monthly' },
+  { url: '/seo-services-jacksonville',           priority: '0.7', changefreq: 'monthly' },
 
   // eCommerce & Marketplace
   { url: '/amazon-account-management-services',  priority: '0.8', changefreq: 'monthly' },

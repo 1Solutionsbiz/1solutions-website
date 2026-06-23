@@ -27,8 +27,10 @@ const SECTIONS = [
     heading: 'Web & App Development',
     columns: [
       [
+        { label: 'Web Development',               href: '/web-development-services' },
         { label: 'WordPress Development',        href: '/wordpress-development-company' },
         { label: 'Next.js Development',          href: '/nextjs-development-services' },
+        { label: 'Node.js Development',          href: '/nodejs-development-services' },
         { label: 'Laravel Development',          href: '/laravel-development-company' },
         { label: 'Python Development',           href: '/python-development-services' },
         { label: 'CodeIgniter Development',      href: '/codeigniter-development-company' },
@@ -72,6 +74,7 @@ const SECTIONS = [
         { label: 'UX Research',          href: '/ux-research' },
       ],
       [
+        { label: 'Graphic Design Services', href: '/graphic-design-services' },
         { label: 'Logo Design Services',    href: '/logo-design-services' },
         { label: 'Landing Page Design',     href: '/landing-page-design-services' },
         { label: 'Infographics Design',     href: '/infographics-design' },
@@ -141,6 +144,7 @@ const SECTIONS = [
         { label: 'Email Marketing',               href: '/email-marketing-services' },
         { label: 'HTML Email Development',        href: '/html-email-development-services' },
         { label: 'Klaviyo Email Marketing',       href: '/klaviyo-email-marketing-agency' },
+        { label: 'Affiliate Marketing',           href: '/affiliate-marketing-services' },
         { label: 'Video Marketing',               href: '/video-marketing-services' },
       ],
       [
@@ -188,6 +192,7 @@ const SECTIONS = [
       ],
       [
         { label: 'SEO Company Vancouver',    href: '/seo-company-vancouver' },
+        { label: 'SEO Services Jacksonville', href: '/seo-services-jacksonville' },
       ],
     ],
   },
