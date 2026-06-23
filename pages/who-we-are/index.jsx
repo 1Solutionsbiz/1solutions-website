@@ -1051,19 +1051,23 @@ export default function WhoWeAre() {
                 <p className="au-eyebrow">Our Story</p>
                 <h2 className="au-heading">Built on a single principle: great work speaks for itself.</h2>
                 <p>
-                  In 2008, 1Solutions was founded in New Delhi with a straightforward thesis: world-class web development
-                  shouldn&apos;t require a US zip code or a Fortune 500 budget. What it requires is talent, process, and
-                  a genuine commitment to the client&apos;s success.
+                  1Solutions started in 2008 in a small office in New Delhi&apos;s Laxmi Nagar — a neighbourhood
+                  better known for its bustling markets than its tech startups. The founding team had one conviction:
+                  that geography shouldn&apos;t determine access to quality digital services, and that businesses in
+                  the US, Canada, and Australia deserved a development partner who treated their goals as seriously
+                  as they did.
                 </p>
                 <p>
-                  That thesis has been validated by 500+ clients across the United States, Canada, and Australia —
-                  businesses who hired us once, got results, and never looked elsewhere again.
-                  Our 97% client retention rate isn&apos;t a marketing claim. It&apos;s a daily practice.
+                  Sixteen years later, that conviction has been put to the test more than 500 times — across
+                  e-commerce stores, enterprise platforms, SaaS products, and full-scale marketing campaigns.
+                  Clients come to us for a project. They stay because of the relationship. A 97% retention rate
+                  is what happens when you treat every engagement as a long-term partnership, not a one-off transaction.
                 </p>
                 <p>
-                  We&apos;ve scaled from a small studio to a 50+ person team spanning web development, digital
-                  marketing, UI/UX design, and cloud engineering — all under one roof, all working toward a
-                  single client outcome at a time.
+                  Today, 1Solutions is a 50+ person team working across web development, digital marketing,
+                  UI/UX design, and cloud engineering. No outsourcing. No hand-offs to junior teams. The people
+                  who scope your project are the people who build it — and they&apos;re accountable for every
+                  line that ships.
                 </p>
               </div>
               <div ref={statsRef}>
