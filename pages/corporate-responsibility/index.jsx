@@ -72,13 +72,6 @@ const PILLARS = [
   },
 ];
 
-const IMPACT_STATS = [
-  { stat: '500+', label: 'Students mentored since 2015' },
-  { stat: '30+', label: 'NGOs supported pro-bono' },
-  { stat: '100%', label: 'Paperless operations' },
-  { stat: '15+', label: 'Years of ethical practice' },
-];
-
 const CERTIFICATIONS = [
   { name: 'ISO 9001:2015', desc: 'Quality Management System', href: '/who-we-are' },
   { name: 'MSME Registered', desc: 'Ministry of MSME, Govt. of India', href: '/who-we-are' },
@@ -144,37 +137,6 @@ export default function CorporateResponsibility() {
             max-width: 620px;
             margin: 0 auto;
             line-height: 1.7;
-          }
-
-          /* Impact stats bar */
-          .csr-stats {
-            background: #fff;
-            border-bottom: 1px solid #e8ecf0;
-          }
-          .csr-stats-inner {
-            max-width: 960px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-          }
-          .csr-stat {
-            padding: 28px 20px;
-            text-align: center;
-            border-right: 1px solid #e8ecf0;
-          }
-          .csr-stat:last-child { border-right: none; }
-          .csr-stat-num {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: #114171;
-            display: block;
-            line-height: 1;
-            margin-bottom: 6px;
-          }
-          .csr-stat-label {
-            font-size: 0.8rem;
-            color: #6b7280;
-            font-weight: 500;
           }
 
           /* Page layout */
@@ -380,8 +342,7 @@ export default function CorporateResponsibility() {
 
           @media (max-width: 900px) {
             .csr-mission { grid-template-columns: 1fr; gap: 32px; }
-            .csr-stats-inner { grid-template-columns: repeat(2, 1fr); }
-            .csr-stat:nth-child(2) { border-right: none; }
+
             .csr-certs-grid { grid-template-columns: 1fr; }
             .csr-pillar { grid-template-columns: 1fr; gap: 16px; }
           }
@@ -406,18 +367,6 @@ export default function CorporateResponsibility() {
           <p>We believe businesses have a responsibility that extends beyond their clients. Here's how 1Solutions gives back to the community, the environment, and the next generation of tech talent.</p>
         </div>
       </section>
-
-      {/* Impact stats */}
-      <div className="csr-stats">
-        <div className="csr-stats-inner">
-          {IMPACT_STATS.map(({ stat, label }) => (
-            <div key={label} className="csr-stat">
-              <span className="csr-stat-num">{stat}</span>
-              <span className="csr-stat-label">{label}</span>
-            </div>
-          ))}
-        </div>
-      </div>
 
       <div className="csr-page">
 
