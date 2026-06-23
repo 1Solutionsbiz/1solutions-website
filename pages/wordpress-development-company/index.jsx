@@ -730,15 +730,15 @@ export default function WordPressDevelopmentCompany() {
           <div className="wp-portfolio-wrap">
             <div className="wp-portfolio-header">
               <h2 className={`wp-portfolio-title wp-section-reveal${visibleSections.has('portfolio') ? ' wp-revealed' : ''}`} ref={el => { sectionRefs.current['portfolio'] = el; }}>500+ WordPress Web Development<br/>Projects Completed</h2>
-              <Link href="#contact" className="wp-btn-portfolio-cta">Browse Our Portfolio</Link>
+              <Link href="/portfolio" className="wp-btn-portfolio-cta">Browse Our Portfolio</Link>
             </div>
             <div className="wp-portfolio-grid">
               {[
-                { img:'https://placehold.co/800x500/0F3460/ffffff?text=FashionHub+Pro', name:'FashionHub Pro', tech:'Retail / HTML, PHP, WordPress, WooCommerce', cats:'E-Commerce / B2C / Wishlist / Product Catalog' },
-                { img:'https://placehold.co/800x500/114171/FE9700?text=TechCorp+Solutions', name:'TechCorp Solutions', tech:'Corporate / HTML, PHP, WordPress, ACF', cats:'B2B / Lead Generation / Blog / Portfolio' },
-                { img:'https://placehold.co/800x500/7C3AED/ffffff?text=LuxeStore+Global', name:'LuxeStore Global', tech:'E-Commerce / WordPress, WooCommerce, WPML, Stripe', cats:'Multi-currency / Multi-language / Subscriptions' },
+                { img:'/images/portfolio/comtradesol.webp', name:'Comtradesol — Financial Advisory', tech:'Financial Services / WordPress, Custom Theme, UI/UX Design', cats:'Corporate Website / Trade Finance / Debt Syndication', url:'https://www.comtradesol.com/' },
+                { img:'/images/portfolio/charlespuma.webp', name:'Charles Puma — Fine Art Gallery', tech:'Art & Culture / WordPress, Custom Theme, UI/UX Design', cats:'Art Gallery / Multi-location / Exhibitions / Limited Editions', url:'https://www.charlespuma.com/' },
+                { img:'/images/portfolio/mountsystems.png', name:'Mount Systems — IT & Security Solutions', tech:'IT & Security / WordPress, Custom Theme, UI/UX Design', cats:'Corporate Website / IT Services / Security Solutions', url:'https://www.mount-systems.com.ki/' },
               ].map(p => (
-                <div className="wp-pcard" key={p.name}>
+                <a className="wp-pcard" key={p.name} href={p.url} target="_blank" rel="noopener noreferrer" style={{textDecoration:'none',color:'inherit'}}>
                   <div className="wp-pcard-thumb">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={p.img} alt={p.name} loading="lazy" />
@@ -748,7 +748,7 @@ export default function WordPressDevelopmentCompany() {
                     <div className="wp-pcard-tech">{p.tech}</div>
                     <div className="wp-pcard-cats">{p.cats}</div>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
