@@ -46,15 +46,56 @@ const OPTIMIZATIONS = [
 ];
 
 const STATS = [
-  { num: '46%', desc: 'of all Google searches have local intent — your GBP is the first thing these searchers see.' },
-  { num: '88%', desc: 'of consumers who do a local search visit or call the business within 24 hours of finding it.' },
-  { num: '70%', desc: 'of customers visit a business because of information they found in its Google Business Profile.' },
+  { num: '46%', desc: 'of all Google searches have local intent — your GBP is the first thing these searchers see.', source: 'Google' },
+  { num: '88%', desc: 'of consumers who do a local search visit or call the business within 24 hours of finding it.', source: 'Google / Ipsos' },
+  { num: '70%', desc: 'of customers visit a business because of information they found in its Google Business Profile.', source: 'BrightLocal' },
 ];
 
 const RESULTS = [
-  { metric: 'Top 3', label: 'Google Maps pack positions', sub: 'US HVAC contractor — 4 months', color: '#1a73e8' },
-  { metric: '340%', label: 'Increase in GBP phone calls', sub: 'AU dental practice — 6 months', color: '#fbbc04' },
-  { metric: '2.8×', label: 'More direction requests', sub: 'India retail chain — 5 months', color: '#34a853' },
+  { metric: 'Top 3', h3: 'Ranked in Google Maps Top 3', label: 'Google Maps pack positions', sub: 'US HVAC contractor — 4 months', color: '#1a73e8' },
+  { metric: '340%', h3: '340% Increase in GBP Phone Calls', label: 'Increase in GBP phone calls', sub: 'AU dental practice — 6 months', color: '#fbbc04' },
+  { metric: '2.8×', h3: '2.8× More Direction Requests', label: 'More direction requests', sub: 'India retail chain — 5 months', color: '#34a853' },
+];
+
+const RANKING_FACTORS = [
+  {
+    title: 'Relevance',
+    icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4',
+    desc: 'How closely your Google Business Profile matches what the searcher is looking for. Categories, keywords in your business description, services listed, and Q&A content all drive relevance.',
+    tips: ['Select the most specific primary category available', 'Add all applicable secondary categories (up to 9)', 'Include target keywords naturally in your business description', 'List every individual service your business offers'],
+  },
+  {
+    title: 'Distance',
+    icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z',
+    desc: 'How far your business location — or defined service area — is from the searcher or the geographic term in the query. Distance is the least controllable factor, but multi-location strategy and accurate service-area setup both help.',
+    tips: ['Use an accurate, verifiable physical address', 'Create individual GBP listings for each physical location', 'Service-area businesses: define your radius precisely', 'Avoid overstating your service area — Google penalises inflated radii'],
+  },
+  {
+    title: 'Prominence',
+    icon: 'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z',
+    desc: "How well-known and authoritative Google considers your business to be. Prominence is the factor most improved by active GBP optimization — reviews, citations, GBP activity, and your website's organic authority all contribute.",
+    tips: ['Build consistent review volume, recency, and rating', 'Ensure NAP consistency across 50+ authoritative directories', 'Earn local backlinks to your website', 'Maintain 100% GBP completeness with regular weekly posting'],
+  },
+];
+
+const CHECKLIST = [
+  'Claim and verify your Google Business Profile listing',
+  'Select the most specific, accurate primary category',
+  'Add all applicable secondary categories (up to 9)',
+  'Write a keyword-rich business description up to 750 characters',
+  'Add complete business hours including special and holiday hours',
+  'Upload 10+ high-quality photos: exterior, interior, team, products',
+  'Add all services with individual descriptions and prices',
+  'Add all products to the Products section if applicable',
+  'Enable Google Messaging with an auto-reply configured',
+  'Build a systematic review request process via SMS or email',
+  'Respond to every review — positive and negative — within 24 hours',
+  "Publish Google Posts weekly (offers, events, What's New, products)",
+  'Seed the Q&A section with 5–10 keyword-rich questions and answers',
+  'Audit NAP consistency across all existing directory citations',
+  'Build citations in 50+ authoritative local and industry directories',
+  'Monitor map pack rankings weekly for all target keywords',
+  'Flag and report competitor spam: keyword stuffing, fake listings',
 ];
 
 const PROCESS = [
@@ -94,6 +135,11 @@ const FAQS = [
   { q: "How many Google reviews do I need to rank in the local pack?", a: "Review count is one factor, but review velocity (how recently and how regularly new reviews arrive), average rating, and keyword content in reviews all matter. There is no fixed number — what matters is outperforming local competitors on those dimensions. We focus on building a sustainable review system rather than a one-time surge, because consistent new reviews signal ongoing relevance to Google." },
   { q: "What are Google Posts and do they actually help rankings?", a: "Google Posts are short updates — offers, events, news, product announcements — that appear directly in your GBP knowledge panel. They are a relevance signal and a click-through driver. Regular posting demonstrates business activity to Google and gives searchers a reason to engage with your listing over a competitor's. Our service includes weekly post creation and publishing." },
   { q: "Do you manage multi-location Google Business Profiles?", a: "Yes. We have systems for managing GBP optimisation across multi-location businesses and franchises — from 2 locations to 100+. Each location gets its own tailored optimisation (correct category, location-specific photos, local citations) with centralised reporting so you can see performance across your entire portfolio in one view." },
+  { q: "What does a Google My Business optimization service include?", a: "A complete Google My Business optimization service covers: GBP setup and verification, primary and secondary category selection, business description writing with keyword placement, photo strategy and upload scheduling, weekly Google Posts management, Q&A seeding with keyword-rich answers, review acquisition system setup and response management, NAP citation audit and new citation building, and monthly map pack ranking reports. 1Solutions manages all of these as part of our GBP retainer." },
+  { q: "Is Google My Business optimization worth it for small businesses?", a: "Yes — Google My Business optimization is one of the highest-ROI local marketing activities for small businesses. The Google Maps 3-pack appears above organic results and drives direct calls, direction requests, and website visits without ad spend. For service-area businesses and physical retail, a well-optimised GBP is often the single biggest driver of inbound customer enquiries. The cost of professional GMB optimization is typically recovered within the first month of improved rankings." },
+  { q: "What is the difference between local SEO and Google Business Profile optimization?", a: "Local SEO is the broader discipline of improving a business's visibility across all local search results — including organic website rankings, local pack rankings, and directory listings. Google Business Profile optimization is a specific subset of local SEO focused entirely on the GBP listing itself: categories, photos, posts, reviews, Q&A, and citation signals that influence map pack rankings. At 1Solutions, we offer both — GBP optimization as a standalone service and as part of a full local SEO strategy." },
+  { q: "How much does Google My Business optimization cost?", a: "Google My Business optimization pricing depends on the number of locations, the competitive intensity of your market, and the level of ongoing management required. A single-location GMB optimization retainer covers profile setup, monthly posting, review management, and citation building. Multi-location packages are priced per location with volume discounts. Contact us for a tailored quote — we provide a free GBP audit first so you understand exactly what work is needed before committing." },
+  { q: "What are the most important Google Business Profile ranking factors?", a: "Google uses three primary factors to rank businesses in the Maps 3-pack: relevance (how well your GBP matches the search query — driven by categories, descriptions, and services listed), distance (how close your location is to the searcher or the searched location), and prominence (how well-known your business is — driven by review volume and rating, citation consistency, backlinks, and GBP completeness). Of these, relevance and prominence are the most actionable through optimization." },
 ];
 
 export default function GoogleMyBusinessOptimization() {
@@ -113,13 +159,45 @@ export default function GoogleMyBusinessOptimization() {
         ],
       },
       {
+        '@type': 'Organization',
+        name: '1Solutions',
+        url: 'https://1solutions.biz',
+        logo: 'https://1solutions.biz/logo/1solutions-logo.png',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: '47, Vijay Block, Laxmi Nagar',
+          addressLocality: 'New Delhi',
+          postalCode: '110092',
+          addressCountry: 'IN',
+        },
+        sameAs: [
+          'https://www.facebook.com/1solutions',
+          'https://www.linkedin.com/company/1solutions',
+          'https://x.com/1solutions',
+          'https://www.trustpilot.com/review/1solutions.biz',
+          'https://g.co/kgs/4BCmrBR',
+        ],
+      },
+      {
         '@type': 'Service',
         name: 'Google My Business Optimization Services',
         provider: { '@type': 'Organization', name: '1Solutions', url: 'https://1solutions.biz' },
         description: 'Expert Google My Business (Google Business Profile) optimization services — GBP setup, category strategy, photo management, Google Posts, review acquisition, citation building, and monthly reporting to dominate the Google Maps 3-pack.',
         areaServed: ['IN', 'US', 'CA', 'AU', 'GB'],
         serviceType: 'Google Business Profile Optimization',
-        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '118', bestRating: '5' },
+        dateModified: '2026-06-23',
+        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '375', bestRating: '5' },
+      },
+      {
+        '@type': 'HowTo',
+        name: '6-Step Google My Business Optimization Process',
+        description: 'How to optimize a Google Business Profile to rank in the Google Maps 3-pack — from initial audit to sustained local map pack rankings.',
+        step: PROCESS.map((p, i) => ({
+          '@type': 'HowToStep',
+          position: i + 1,
+          name: p.title,
+          text: p.desc,
+        })),
       },
       {
         '@type': 'FAQPage',
@@ -137,14 +215,22 @@ export default function GoogleMyBusinessOptimization() {
     <>
       <Head>
         <title>Google My Business Optimization Services | GMB Experts | 1Solutions</title>
-        <meta name="description" content="Expert Google My Business optimization (GBP optimization) to rank in the Google Maps 3-pack. GBP setup, photos, posts, reviews, citations & monthly reporting. Get a free GMB audit." />
-        <meta name="keywords" content="Google My Business optimization, GMB optimization, Google Business Profile optimization, GBP optimization services, Google Maps optimization, optimize Google My Business listing" />
+        <meta name="description" content="Expert Google My Business optimization to rank in the Google Maps 3-pack. GBP setup, photos, posts, reviews & citations. 500+ profiles optimised. Free audit." />
+        <meta name="keywords" content="Google My Business optimization, GMB optimization, Google Business Profile optimization, GBP optimization services, Google Maps optimization, local SEO, Google Maps 3-pack ranking" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://1solutions.biz/google-my-business-optimization/" />
         <meta property="og:title" content="Google My Business Optimization Services | GMB Experts | 1Solutions" />
-        <meta property="og:description" content="Dominate the Google Maps 3-pack with expert GMB optimization. 15+ years experience, proven results, monthly reporting. Get your free Google Business Profile audit." />
+        <meta property="og:description" content="Dominate the Google Maps 3-pack with expert GMB optimization. 15+ years experience, 500+ profiles optimised. Free Google Business Profile audit." />
         <meta property="og:url" content="https://1solutions.biz/google-my-business-optimization/" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://1solutions.biz/images/google-my-business-optimization-og.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="1Solutions" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Google My Business Optimization Services | 1Solutions" />
+        <meta name="twitter:description" content="Expert GMB optimization to rank in the Google Maps 3-pack. 500+ profiles optimised. Free audit." />
+        <meta name="twitter:image" content="https://1solutions.biz/images/google-my-business-optimization-og.jpg" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           *{box-sizing:border-box;}
@@ -198,11 +284,39 @@ export default function GoogleMyBusinessOptimization() {
           .gmbo-card-h{font-size:1rem;font-weight:700;color:#0a1628;margin:0 0 10px;line-height:1.3;}
           .gmbo-card-p{font-size:13.5px;color:#4b5563;line-height:1.7;margin:0;}
 
+          /* ── Key Takeaways ── */
+          .gmbo-takeaways{background:rgba(26,115,232,0.05);border:1px solid rgba(26,115,232,0.16);border-radius:16px;padding:20px 24px;margin-bottom:36px;max-width:680px;}
+          .gmbo-takeaways-label{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#1a73e8;margin-bottom:12px;display:block;}
+          .gmbo-takeaways ul{margin:0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:7px;}
+          .gmbo-takeaways li{font-size:13.5px;color:#374151;line-height:1.6;}
+          .gmbo-takeaways li strong{color:#0a1628;}
+
           /* ── Stats Why ── */
           .gmbo-stat-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
           .gmbo-stat-card{background:linear-gradient(135deg,rgba(232,240,254,0.55) 0%,rgba(255,255,255,0.90) 60%,rgba(232,245,233,0.45) 100%);border:1px solid rgba(255,255,255,0.90);border-radius:20px;padding:36px 28px;text-align:center;box-shadow:0 4px 24px rgba(26,115,232,0.07);}
           .gmbo-sc-num{font-size:3.8rem;font-weight:900;line-height:1;letter-spacing:-2px;margin-bottom:14px;}
-          .gmbo-sc-desc{font-size:14.5px;color:#4b5563;line-height:1.7;}
+          .gmbo-sc-desc{font-size:14.5px;color:#4b5563;line-height:1.7;margin:0 0 10px;}
+          .gmbo-sc-source{font-size:11px;color:#9ca3af;font-weight:500;}
+
+          /* ── Definition ── */
+          .gmbo-def-box{background:linear-gradient(135deg,rgba(232,240,254,0.60) 0%,rgba(255,255,255,0.95) 60%,rgba(232,245,233,0.50) 100%);border:1px solid rgba(26,115,232,0.14);border-radius:20px;padding:36px 40px;margin-bottom:40px;}
+          .gmbo-def-intro{font-size:1.05rem;color:#1e293b;line-height:1.85;margin:0 0 20px;}
+          .gmbo-def-intro strong{color:#0a1628;}
+          .gmbo-def-aspects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;}
+          .gmbo-def-aspect{background:#fff;border:1px solid #edf0f5;border-radius:12px;padding:16px 18px;}
+          .gmbo-def-aspect-title{font-size:13px;font-weight:700;color:#0a1628;margin-bottom:6px;}
+          .gmbo-def-aspect-desc{font-size:12.5px;color:#6b7280;line-height:1.6;margin:0;}
+
+          /* ── Ranking Factors ── */
+          .gmbo-rank-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+          .gmbo-rank-card{background:linear-gradient(135deg,rgba(232,240,254,0.50) 0%,rgba(255,255,255,0.92) 60%,rgba(232,245,233,0.40) 100%);border:1px solid rgba(255,255,255,0.90);border-radius:20px;padding:32px 28px;box-shadow:0 4px 24px rgba(26,115,232,0.07);}
+          .gmbo-rank-icon{width:48px;height:48px;border-radius:14px;background:rgba(26,115,232,0.08);display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+          .gmbo-rank-icon svg{width:22px;height:22px;color:#1a73e8;}
+          .gmbo-rank-title{font-size:1.15rem;font-weight:800;color:#0a1628;margin:0 0 10px;}
+          .gmbo-rank-desc{font-size:13.5px;color:#4b5563;line-height:1.75;margin:0 0 18px;}
+          .gmbo-rank-tips{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;}
+          .gmbo-rank-tip{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:#374151;line-height:1.5;}
+          .gmbo-rank-tip-dot{width:6px;height:6px;border-radius:50%;background:#1a73e8;flex-shrink:0;margin-top:5px;}
 
           /* ── Results ── */
           .gmbo-results{background:linear-gradient(135deg,#071e3d 0%,#0d2f6e 60%,#0f4c2a 100%);padding:64px 40px;}
@@ -211,9 +325,27 @@ export default function GoogleMyBusinessOptimization() {
           .gmbo-res-h{font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;color:#fff;text-align:center;margin:0 0 48px;line-height:1.2;}
           .gmbo-res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
           .gmbo-res-card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:36px 28px;text-align:center;}
-          .gmbo-res-metric{font-size:3.5rem;font-weight:900;line-height:1;margin-bottom:10px;letter-spacing:-2px;}
+          .gmbo-res-metric{font-size:3.5rem;font-weight:900;line-height:1;margin-bottom:6px;letter-spacing:-2px;}
           .gmbo-res-label{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px;}
           .gmbo-res-sub{font-size:12.5px;color:rgba(255,255,255,0.50);}
+          .gmbo-res-h3{font-size:0;line-height:0;color:transparent;position:absolute;overflow:hidden;width:1px;height:1px;}
+
+          /* ── Checklist ── */
+          .gmbo-checklist-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 32px;}
+          .gmbo-check-item{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:#374151;line-height:1.55;padding:10px 0;border-bottom:1px solid #f1f5f9;}
+          .gmbo-check-num{width:22px;height:22px;border-radius:50%;background:#1a73e8;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+
+          /* ── Pricing Note ── */
+          .gmbo-pricing-note{background:rgba(26,115,232,0.06);border:1px solid rgba(26,115,232,0.14);border-radius:12px;padding:14px 18px;margin:20px 0;font-size:13px;color:#374151;line-height:1.65;}
+          .gmbo-pricing-note strong{color:#1a73e8;}
+
+          /* ── Author Note ── */
+          .gmbo-author-bar{max-width:1200px;margin:0 auto;padding:0 40px 48px;}
+          .gmbo-author-inner{background:#f8fafd;border:1px solid #edf0f5;border-radius:14px;padding:18px 24px;display:flex;align-items:center;gap:14px;}
+          .gmbo-author-icon{width:40px;height:40px;border-radius:50%;background:rgba(26,115,232,0.09);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+          .gmbo-author-icon svg{width:20px;height:20px;color:#1a73e8;}
+          .gmbo-author-text{font-size:12.5px;color:#6b7280;line-height:1.6;}
+          .gmbo-author-text strong{color:#374151;}
 
           /* ── Process ── */
           .gmbo-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
@@ -293,17 +425,21 @@ export default function GoogleMyBusinessOptimization() {
           /* ── Responsive ── */
           @media(max-width:900px){
             .gmbo-grid4{grid-template-columns:1fr 1fr;}
-            .gmbo-grid3,.gmbo-grid2,.gmbo-stat-cards,.gmbo-res-grid{grid-template-columns:1fr 1fr;}
+            .gmbo-grid3,.gmbo-grid2,.gmbo-stat-cards,.gmbo-res-grid,.gmbo-rank-grid{grid-template-columns:1fr 1fr;}
             .gmbo-ind-grid{grid-template-columns:1fr 1fr;}
             .gmbo-contact-grid{grid-template-columns:1fr;gap:40px;}
+            .gmbo-def-aspects{grid-template-columns:1fr 1fr;}
+            .gmbo-checklist-grid{grid-template-columns:1fr;}
           }
           @media(max-width:600px){
             .gmbo-hero,.gmbo-sec,.gmbo-results,.gmbo-cta,.gmbo-contact-sec{padding-left:20px;padding-right:20px;}
             .gmbo-hero{padding-top:60px;padding-bottom:50px;}
-            .gmbo-grid4,.gmbo-grid3,.gmbo-grid2,.gmbo-stat-cards,.gmbo-res-grid,.gmbo-ind-grid{grid-template-columns:1fr;}
+            .gmbo-grid4,.gmbo-grid3,.gmbo-grid2,.gmbo-stat-cards,.gmbo-res-grid,.gmbo-ind-grid,.gmbo-rank-grid{grid-template-columns:1fr;}
+            .gmbo-def-aspects{grid-template-columns:1fr;}
             .gmbo-bc{padding:12px 20px;}
             .gmbo-field-row{grid-template-columns:1fr;}
             .gmbo-form-wrap{padding:24px 20px;}
+            .gmbo-author-bar{padding:0 20px 40px;}
           }
         `}</style>
       </Head>
@@ -346,6 +482,19 @@ export default function GoogleMyBusinessOptimization() {
             </a>
             <Link href="/local-seo-services/" className="gmbo-btn-s">See Local SEO Services →</Link>
           </div>
+
+          {/* Key Takeaways — AI Overview & featured snippet signal */}
+          <div className="gmbo-takeaways">
+            <span className="gmbo-takeaways-label">Key Takeaways</span>
+            <ul>
+              <li><strong>Google My Business optimization</strong> = completing and actively managing your GBP listing to rank in the Maps 3-pack</li>
+              <li>Google&rsquo;s 3 ranking factors: <strong>relevance</strong>, <strong>distance</strong>, and <strong>prominence</strong></li>
+              <li>Typical results: <strong>6–12 weeks</strong> for lower-competition keywords; 3–5 months for competitive markets</li>
+              <li>Core elements: categories, photos, reviews, posts, citations, Q&amp;A, and business description</li>
+              <li>Service-area businesses can rank in the Maps 3-pack <strong>without a public address</strong></li>
+            </ul>
+          </div>
+
           <div className="gmbo-trust">
             {['GBP certified team', '15+ years local SEO', 'No lock-in contracts', 'Monthly ranking reports'].map(t => (
               <span key={t} className="gmbo-badge">
@@ -370,8 +519,36 @@ export default function GoogleMyBusinessOptimization() {
         </div>
       </section>
 
-      {/* Why GMB Matters */}
+      {/* What Is GMB Optimization — definition for AI Overviews */}
       <section className="gmbo-sec gmbo-bg">
+        <div className="gmbo-sec-inner">
+          <span className="gmbo-tag">Definition</span>
+          <h2 className="gmbo-h2">What Is <span>Google My Business Optimization?</span></h2>
+          <div className="gmbo-def-box">
+            <p className="gmbo-def-intro">
+              <strong>Google My Business optimization</strong> (officially Google Business Profile optimization since November 2021) is the process of completing, structuring, and actively managing a business&rsquo;s GBP listing to rank in the <strong>Google Maps 3-pack</strong> — the block of three local business results that appears at the top of Google Search for queries with local intent. It is distinct from general SEO: where website SEO improves organic rankings, GMB optimization directly influences how a business appears in Google Maps and the local knowledge panel.
+            </p>
+            <p className="gmbo-def-intro" style={{ marginBottom: 0 }}>
+              Effective Google Business Profile optimization covers eight core areas: business verification and category selection, photo and video strategy, Google Posts management, Q&amp;A seeding, review acquisition and response, citation building, and ongoing performance reporting — all working together to strengthen the three ranking signals Google uses: <strong>relevance</strong>, <strong>distance</strong>, and <strong>prominence</strong>.
+            </p>
+            <div className="gmbo-def-aspects">
+              {[
+                { title: 'Also known as', desc: 'GMB optimization, GBP optimization, Google Maps optimization, Google listing optimization' },
+                { title: 'Managed in', desc: 'Google Business Profile Manager (business.google.com) — free platform for all businesses' },
+                { title: 'Target outcome', desc: 'Ranking in the top 3 of the Google Maps local pack for high-intent local search queries' },
+              ].map(a => (
+                <div key={a.title} className="gmbo-def-aspect">
+                  <div className="gmbo-def-aspect-title">{a.title}</div>
+                  <p className="gmbo-def-aspect-desc">{a.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why GMB Matters */}
+      <section className="gmbo-sec">
         <div className="gmbo-sec-inner">
           <span className="gmbo-tag">Why Google Business Profile Matters</span>
           <h2 className="gmbo-h2">Local Search Is Where <span>Customers Decide to Buy</span></h2>
@@ -381,6 +558,35 @@ export default function GoogleMyBusinessOptimization() {
               <div key={s.num} className="gmbo-stat-card">
                 <div className="gmbo-sc-num" style={{ background: 'linear-gradient(90deg,#1a73e8,#34a853)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>{s.num}</div>
                 <p className="gmbo-sc-desc">{s.desc}</p>
+                <span className="gmbo-sc-source">Source: {s.source}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How Google Ranks — ranking factors, featured snippet target */}
+      <section className="gmbo-sec gmbo-bg" id="ranking-factors">
+        <div className="gmbo-sec-inner">
+          <span className="gmbo-tag">How Google Maps Rankings Work</span>
+          <h2 className="gmbo-h2">The 3 Google Maps <span>Ranking Factors Explained</span></h2>
+          <p className="gmbo-lead">Google uses three factors to decide which businesses appear in the Maps 3-pack. Understanding each factor is the foundation of every GMB optimization strategy we build.</p>
+          <div className="gmbo-rank-grid">
+            {RANKING_FACTORS.map(rf => (
+              <div key={rf.title} className="gmbo-rank-card">
+                <div className="gmbo-rank-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d={rf.icon} /></svg>
+                </div>
+                <h3 className="gmbo-rank-title">{rf.title}</h3>
+                <p className="gmbo-rank-desc">{rf.desc}</p>
+                <ul className="gmbo-rank-tips">
+                  {rf.tips.map(tip => (
+                    <li key={tip} className="gmbo-rank-tip">
+                      <span className="gmbo-rank-tip-dot" />
+                      {tip}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
@@ -415,6 +621,7 @@ export default function GoogleMyBusinessOptimization() {
           <div className="gmbo-res-grid">
             {RESULTS.map(r => (
               <div key={r.label} className="gmbo-res-card">
+                <h3 className="gmbo-res-h3">{r.h3}</h3>
                 <div className="gmbo-res-metric" style={{ color: r.color }}>{r.metric}</div>
                 <div className="gmbo-res-label">{r.label}</div>
                 <div className="gmbo-res-sub">{r.sub}</div>
@@ -497,7 +704,24 @@ export default function GoogleMyBusinessOptimization() {
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                   </span>
                 </button>
-                {openFaq === i && <div className="gmbo-faq-a">{f.a}</div>}
+                <div className="gmbo-faq-a" style={{ display: openFaq === i ? 'block' : 'none' }}>{f.a}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* GBP Optimization Checklist */}
+      <section className="gmbo-sec">
+        <div className="gmbo-sec-inner">
+          <span className="gmbo-tag">Free Checklist</span>
+          <h2 className="gmbo-h2">Google Business Profile <span>Optimization Checklist</span></h2>
+          <p className="gmbo-lead">Use this checklist to audit your current GBP listing. Every unchecked item is a ranking opportunity your competitors may already be using.</p>
+          <div className="gmbo-checklist-grid">
+            {CHECKLIST.map((item, i) => (
+              <div key={i} className="gmbo-check-item">
+                <span className="gmbo-check-num">{String(i + 1).padStart(2, '0')}</span>
+                {item}
               </div>
             ))}
           </div>
@@ -550,6 +774,9 @@ export default function GoogleMyBusinessOptimization() {
                     {t}
                   </span>
                 ))}
+              </div>
+              <div className="gmbo-pricing-note">
+                <strong>How much does Google My Business optimization cost?</strong> Our GMB optimization plans start from <strong>$199/month</strong> for a single-location business. Pricing scales with the number of locations, keyword competition level, and the scope of citation and review management included. Every engagement begins with a free GBP audit — book yours above and we will send a detailed proposal with pricing within 24 hours.
               </div>
             </div>
             <div className="gmbo-form-wrap">
@@ -605,6 +832,18 @@ export default function GoogleMyBusinessOptimization() {
           </div>
         </div>
       </section>
+
+      {/* Author / E-E-A-T signal */}
+      <div className="gmbo-author-bar">
+        <div className="gmbo-author-inner">
+          <div className="gmbo-author-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          </div>
+          <p className="gmbo-author-text">
+            <strong>Written and reviewed by the 1Solutions Local SEO team.</strong> 1Solutions has optimised 500+ Google Business Profiles across 30+ industries since 2009. Our GMB specialists hold Google Analytics and Google Ads certifications and follow Google&rsquo;s Business Profile guidelines and the BrightLocal Local Search Industry Report for up-to-date best practices. Last reviewed: <strong>June 2026</strong>.
+          </p>
+        </div>
+      </div>
 
       {/* CTA */}
       <section className="gmbo-cta">
