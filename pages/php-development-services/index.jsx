@@ -286,7 +286,7 @@ export default function PhpDevelopmentServices() {
             <h1 className="php-hero-h1">PHP Development Services for Custom Web Applications &amp; APIs</h1>
             <p className="php-hero-sub">Custom PHP and Laravel applications built clean, secure, and documented — for startups, SMEs, and enterprises across the US, Canada, and Australia.</p>
             <div className="php-hero-btns">
-              <Link href="/contact" className="php-btn-primary">
+              <Link href="/contact-us" className="php-btn-primary">
                 Start a PHP Project
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </Link>
@@ -390,7 +390,7 @@ export default function PhpDevelopmentServices() {
             <h2 className="php-cta-title">Ready to Build Something Solid in PHP?</h2>
             <p className="php-cta-sub">Book a free discovery call. We&rsquo;ll review your requirements, recommend the right PHP framework and architecture, and give you a no-obligation project outline.</p>
             <div className="php-cta-btns">
-              <Link href="/contact" className="php-btn-primary">
+              <Link href="/contact-us" className="php-btn-primary">
                 Book a Free Discovery Call
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </Link>

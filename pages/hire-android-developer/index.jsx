@@ -160,7 +160,7 @@ export default function HireAndroidDeveloper() {
         <h1>Hire Android Developers<br/>Built for Your Product</h1>
         <p>Pre-vetted Kotlin &amp; Java experts available for dedicated, part-time, or hourly engagements. Matched within 48 hours — onboarded in 7 days.</p>
         <div className="had-hero-btns">
-          <Link href="/contact" className="had-btn-primary">Hire an Android Developer →</Link>
+          <Link href="/contact-us" className="had-btn-primary">Hire an Android Developer →</Link>
           <Link href="/portfolio" className="had-btn-outline">View Portfolio</Link>
         </div>
       </section>
@@ -262,7 +262,7 @@ export default function HireAndroidDeveloper() {
         <div className="had-wrap">
           <h2>Ready to Hire Your Android Developer?</h2>
           <p>Share your requirements and we will match you with the right developer within 48 hours — no commitment required.</p>
-          <Link href="/contact" className="had-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us" className="had-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

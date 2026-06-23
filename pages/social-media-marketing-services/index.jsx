@@ -146,8 +146,8 @@ export default function SocialMediaMarketingServices() {
           <h1 className="smkt-h1">Social Media Marketing That Builds Real Brand Authority</h1>
           <p className="smkt-p">1Solutions manages organic social media marketing that builds genuine audience relationships, establishes brand authority, and converts followers into customers — across every platform where your audience spends time.</p>
           <div className="smkt-btns">
-            <Link href="/contact" className="smkt-bp">Get a Free Social Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-            <Link href="/contact" className="smkt-bs">Discuss Your Social Strategy</Link>
+            <Link href="/contact-us" className="smkt-bp">Get a Free Social Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+            <Link href="/contact-us" className="smkt-bs">Discuss Your Social Strategy</Link>
           </div>
           <div className="smkt-tr">{['Platform-native content','Brand voice documented','Community management included','Monthly reporting'].map(t=><span key={t} className="smkt-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={ACCENT} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>{t}</span>)}</div>
           <div className="smkt-sbar">{[{num:'4.8×',lbl:'Follower Growth'},{num:'15+',lbl:'Years Experience'},{num:'68%',lbl:'Reach Increase'},{num:'5',lbl:'Platforms Managed'}].map(s=><div key={s.lbl} className="smkt-si"><span className="smkt-sn">{s.num}</span><span className="smkt-sl">{s.lbl}</span></div>)}</div>
@@ -186,8 +186,8 @@ export default function SocialMediaMarketingServices() {
         <h2 className="smkt-cth">Get a Free Social Media Audit</h2>
         <p className="smkt-ctp">We will review your current social profiles, content performance, and audience quality — and share a platform-specific strategy for building genuine brand authority and inbound leads.</p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
-          <Link href="/contact" className="smkt-bp">Request Free Social Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-          <Link href="/contact" className="smkt-bs">Talk to a Social Media Specialist</Link>
+          <Link href="/contact-us" className="smkt-bp">Request Free Social Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+          <Link href="/contact-us" className="smkt-bs">Talk to a Social Media Specialist</Link>
         </div>
       </div></section>
     </>

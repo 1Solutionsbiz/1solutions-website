@@ -143,7 +143,7 @@ export default function InfluencerMarketing() {
           areaServed: ['US', 'CA', 'AU'],
         },
         serviceType: 'Influencer Marketing',
-        url: 'https://www.1solutions.biz/influencer-marketing',
+        url: 'https://www.1solutions.biz/influencer-marketing-services/',
       },
       {
         '@type': 'FAQPage',
@@ -162,12 +162,12 @@ export default function InfluencerMarketing() {
         <title>Influencer Marketing Services | Ecommerce Influencer Agency | 1Solutions</title>
         <meta name="description" content="Result-driven influencer marketing services for ecommerce brands. Expert creator vetting, campaign management & ROI tracking across Instagram, TikTok & YouTube. Serving US, Canada & Australia." />
         <meta name="keywords" content="influencer marketing services, influencer marketing agency, ecommerce influencer marketing, instagram influencer marketing, tiktok influencer marketing, micro influencer marketing" />
-        <link rel="canonical" href="https://www.1solutions.biz/influencer-marketing" />
+        <link rel="canonical" href="https://www.1solutions.biz/influencer-marketing-services/" />
         <meta name="robots" content="index, follow" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Influencer Marketing Services for Ecommerce | 1Solutions" />
         <meta property="og:description" content="End-to-end influencer marketing campaigns that drive real ecommerce growth. Strategy, creator discovery, execution & transparent ROI reporting." />
-        <meta property="og:url" content="https://www.1solutions.biz/influencer-marketing" />
+        <meta property="og:url" content="https://www.1solutions.biz/influencer-marketing-services/" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Influencer Marketing Services | 1Solutions" />
         <meta name="twitter:description" content="Ecommerce influencer marketing — strategy to ROI. Instagram, TikTok, YouTube. US, Canada & Australia." />
@@ -701,7 +701,7 @@ export default function InfluencerMarketing() {
               We connect ecommerce brands with the right creators — not just the biggest ones. Data-backed influencer campaigns on Instagram, TikTok, YouTube, and more, built for measurable ROI.
             </p>
             <div className="im-hero-btns">
-              <Link href="/contact" className="im-btn-primary">
+              <Link href="/contact-us" className="im-btn-primary">
                 Get a Free Strategy Call
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </Link>
@@ -863,7 +863,7 @@ export default function InfluencerMarketing() {
               Book a free 30-minute strategy call. We&rsquo;ll review your brand, recommend the right creator tier and platform mix, and give you a no-obligation campaign outline.
             </p>
             <div className="im-cta-btns">
-              <Link href="/contact" className="im-btn-primary">
+              <Link href="/contact-us" className="im-btn-primary">
                 Book a Free Strategy Call
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </Link>

@@ -150,7 +150,7 @@ export default function HireReactJSDeveloper() {
         <h1>Hire React.js Developers<br/>React 18, Next.js &amp; TypeScript Experts</h1>
         <p>Pre-vetted React engineers who build fast, accessible, and maintainable frontends — Server Components, streaming SSR, and green Core Web Vitals as standard. Profiles in 48 hours.</p>
         <div className="hrjs-hero-btns">
-          <Link href="/contact" className="hrjs-btn-primary">Hire a React.js Developer →</Link>
+          <Link href="/contact-us" className="hrjs-btn-primary">Hire a React.js Developer →</Link>
           <Link href="/portfolio" className="hrjs-btn-outline">View Portfolio</Link>
         </div>
       </section>
@@ -201,7 +201,7 @@ export default function HireReactJSDeveloper() {
         <div className="hrjs-wrap">
           <h2>Ready to Hire Your React.js Developer?</h2>
           <p>Share your requirements and receive matched React specialist profiles within 48 hours — no commitment required.</p>
-          <Link href="/contact" className="hrjs-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us" className="hrjs-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

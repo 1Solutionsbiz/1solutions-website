@@ -9,7 +9,7 @@ const STATIC_PAGES = [
   { url: '/case-studies',                        priority: '0.8', changefreq: 'monthly' },
   { url: '/open-positions',                      priority: '0.6', changefreq: 'weekly' },
   { url: '/apply-online',                        priority: '0.5', changefreq: 'monthly' },
-  { url: '/contact',                             priority: '0.9', changefreq: 'monthly' },
+  { url: '/contact-us',                           priority: '0.9', changefreq: 'monthly' },
   { url: '/book-consultation',                   priority: '0.8', changefreq: 'monthly' },
   { url: '/blog',                                priority: '0.9', changefreq: 'daily' },
   { url: '/sitemap',                             priority: '0.5', changefreq: 'monthly' },
@@ -106,7 +106,7 @@ const STATIC_PAGES = [
   { url: '/social-media-marketing-services',     priority: '0.8', changefreq: 'monthly' },
   { url: '/linkedin-ads-management',             priority: '0.7', changefreq: 'monthly' },
   { url: '/meta-ads-management',                 priority: '0.7', changefreq: 'monthly' },
-  { url: '/influencer-marketing',                priority: '0.7', changefreq: 'monthly' },
+  { url: '/influencer-marketing-services',        priority: '0.7', changefreq: 'monthly' },
   { url: '/content-marketing-services',          priority: '0.8', changefreq: 'monthly' },
   { url: '/email-marketing-services',            priority: '0.8', changefreq: 'monthly' },
   { url: '/affiliate-marketing-services',        priority: '0.8', changefreq: 'monthly' },
@@ -210,6 +210,7 @@ const STATIC_PAGES = [
   { url: '/hire-trending-developer',             priority: '0.6', changefreq: 'monthly' },
   { url: '/hire-nextjs-developers',              priority: '0.8', changefreq: 'monthly' },
   { url: '/hire-dedicated-graphic-designer',     priority: '0.8', changefreq: 'monthly' },
+  { url: '/hire-laravel-developer',              priority: '0.8', changefreq: 'monthly' },
 
   // Legal
   { url: '/privacy-policy',                      priority: '0.3', changefreq: 'yearly' },

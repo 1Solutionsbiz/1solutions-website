@@ -146,8 +146,8 @@ export default function VideoMarketingServices() {
           <h1 className="vmkt-h1">Video Marketing That Builds Authority and Drives Conversions</h1>
           <p className="vmkt-p">1Solutions builds video marketing programs that grow YouTube channels, rank in search, dominate short-form feeds, and convert viewers into customers — with strategy, scripts, SEO, and YouTube Ads working together.</p>
           <div className="vmkt-btns">
-            <Link href="/contact" className="vmkt-bp">Get a Free Video Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-            <Link href="/contact" className="vmkt-bs">Discuss Your Video Strategy</Link>
+            <Link href="/contact-us" className="vmkt-bp">Get a Free Video Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+            <Link href="/contact-us" className="vmkt-bs">Discuss Your Video Strategy</Link>
           </div>
           <div className="vmkt-tr">{['Scripts included','YouTube SEO optimised','YouTube Ads integration','Cross-platform distribution'].map(t=><span key={t} className="vmkt-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={ACCENT} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>{t}</span>)}</div>
           <div className="vmkt-sbar">{[{num:'2.8M',lbl:'Views in 90 Days'},{num:'3.1×',lbl:'Traffic from Video'},{num:'58%',lbl:'Lower CPV'},{num:'15+',lbl:'Years Experience'}].map(s=><div key={s.lbl} className="vmkt-si"><span className="vmkt-sn">{s.num}</span><span className="vmkt-sl">{s.lbl}</span></div>)}</div>
@@ -186,8 +186,8 @@ export default function VideoMarketingServices() {
         <h2 className="vmkt-cth">Get a Free Video Marketing Audit</h2>
         <p className="vmkt-ctp">We will review your YouTube channel or video presence, identify content and SEO gaps, and share a video strategy roadmap — completely free.</p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
-          <Link href="/contact" className="vmkt-bp">Request Free Video Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-          <Link href="/contact" className="vmkt-bs">Talk to a Video Specialist</Link>
+          <Link href="/contact-us" className="vmkt-bp">Request Free Video Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+          <Link href="/contact-us" className="vmkt-bs">Talk to a Video Specialist</Link>
         </div>
       </div></section>
     </>

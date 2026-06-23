@@ -158,7 +158,7 @@ export default function HireDrupalDeveloper() {
         <h1>Hire Drupal Developers<br/>for Enterprise CMS Builds</h1>
         <p>Pre-vetted Drupal 9 &amp; 10 specialists for module development, migrations, headless builds, and enterprise platform work. Profiles in 48 hours.</p>
         <div className="hdd-hero-btns">
-          <Link href="/contact" className="hdd-btn-primary">Hire a Drupal Developer →</Link>
+          <Link href="/contact-us" className="hdd-btn-primary">Hire a Drupal Developer →</Link>
           <Link href="/portfolio" className="hdd-btn-outline">View Portfolio</Link>
         </div>
       </section>
@@ -253,7 +253,7 @@ export default function HireDrupalDeveloper() {
         <div className="hdd-wrap">
           <h2>Ready to Hire Your Drupal Developer?</h2>
           <p>Share your requirements and we will match you with a pre-screened Drupal specialist within 48 hours.</p>
-          <Link href="/contact" className="hdd-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us" className="hdd-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

@@ -167,7 +167,7 @@ export default function SeoServicesJacksonville() {
         <h1>SEO Services Jacksonville, FL — Rank Higher &amp; Grow Your Jacksonville Business</h1>
         <p>We help Jacksonville businesses dominate Google search results — local SEO, technical optimisation, content strategy, and link building that drives real enquiries and sales. 15+ years of SEO expertise, 300+ businesses ranked.</p>
         <div className="jax-hero-btns">
-          <Link href="/contact" className="jax-btn-primary">Get a Free Jacksonville SEO Audit →</Link>
+          <Link href="/contact-us" className="jax-btn-primary">Get a Free Jacksonville SEO Audit →</Link>
           <Link href="/local-seo-packages" className="jax-btn-outline">View SEO Packages</Link>
         </div>
       </section>
@@ -218,7 +218,7 @@ export default function SeoServicesJacksonville() {
         <div className="jax-wrap">
           <h2>Ready to Dominate Jacksonville Search Results?</h2>
           <p>Get a free Jacksonville SEO audit — we'll review your rankings, identify your biggest opportunities, and deliver an action plan within 48 hours.</p>
-          <Link href="/contact" className="jax-btn-primary">Get Your Free Jacksonville SEO Audit →</Link>
+          <Link href="/contact-us" className="jax-btn-primary">Get Your Free Jacksonville SEO Audit →</Link>
         </div>
       </section>
     </>

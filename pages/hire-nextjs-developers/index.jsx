@@ -150,7 +150,7 @@ export default function HireNextJsDevelopers() {
         <h1>Hire Next.js Developers<br/>App Router, Server Components &amp; Vercel Experts</h1>
         <p>Pre-vetted Next.js engineers who build fast, scalable, and SEO-optimised full-stack applications — App Router, React Server Components, streaming SSR, and edge-deployed. Profiles in 48 hours.</p>
         <div className="hnjs-hero-btns">
-          <Link href="/contact" className="hnjs-btn-primary">Hire a Next.js Developer →</Link>
+          <Link href="/contact-us" className="hnjs-btn-primary">Hire a Next.js Developer →</Link>
           <Link href="/portfolio" className="hnjs-btn-outline">View Portfolio</Link>
         </div>
       </section>
@@ -201,7 +201,7 @@ export default function HireNextJsDevelopers() {
         <div className="hnjs-wrap">
           <h2>Ready to Hire Your Next.js Developer?</h2>
           <p>Share your App Router, data layer, and deployment requirements — receive matched Next.js specialist profiles within 48 hours.</p>
-          <Link href="/contact" className="hnjs-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us" className="hnjs-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

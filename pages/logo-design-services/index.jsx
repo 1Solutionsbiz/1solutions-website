@@ -150,7 +150,7 @@ export default function LogoDesignServices() {
             <h1 className="logo-h1">Professional Logo Design Services — Brands That Get Remembered</h1>
             <p className="logo-sub">Custom logo design built on brand strategy — not templates. 500+ logos designed across all industries, with full IP ownership and every format you need delivered on completion.</p>
             <div className="logo-btns">
-              <Link href="/contact" className="logo-btn-p">Start Your Logo Project <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="logo-btn-p">Start Your Logo Project <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/app-ui-ux-design" className="logo-btn-s">UI/UX Design Services</Link>
             </div>
             <div className="logo-stats">{STATS.map(s => <div key={s.label} className="logo-stat"><div className="logo-stat-l">{s.label}</div><div className="logo-stat-v">{s.val}</div></div>)}</div>
@@ -186,7 +186,7 @@ export default function LogoDesignServices() {
             <h2 className="logo-cta-t">Start Your Logo Design Project</h2>
             <p className="logo-cta-s">Tell us about your business and brand goals — we&rsquo;ll send you a tailored quote and timeline within 24 hours.</p>
             <div className="logo-cta-btns">
-              <Link href="/contact" className="logo-btn-p">Get a Logo Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="logo-btn-p">Get a Logo Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/app-ui-ux-design" className="logo-btn-s">UI/UX Design Services</Link>
             </div>
           </div>

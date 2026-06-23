@@ -307,7 +307,7 @@ export default function LawFirmSeoServices() {
           <h2 className="lwseo-cta-h">Get Your Free Law Firm SEO Audit</h2>
           <p className="lwseo-cta-p">We will audit your website, GBP, legal directory presence, and competitor keyword landscape — and deliver a prioritised plan for growing your consultation requests from organic search. Free, no obligation.</p>
           <div style={{ display:'flex', gap:14, justifyContent:'center', flexWrap:'wrap' }}>
-            <Link href="/contact" className="lwseo-btn-p">
+            <Link href="/contact-us" className="lwseo-btn-p">
               Request Free Audit
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </Link>

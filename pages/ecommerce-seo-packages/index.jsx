@@ -231,7 +231,7 @@ export default function EcommerceSeoPackages() {
             <h1 className="ecseop-h1">Ecommerce SEO Packages — Grow Organic Revenue from Your Online Store</h1>
             <p className="ecseop-sub">Specialist ecommerce SEO packages for Shopify, WooCommerce, and Magento stores — product page optimisation, technical SEO, content, and link building in one coordinated plan.</p>
             <div className="ecseop-btns">
-              <Link href="/contact" className="ecseop-btn-p">Talk to an Ecommerce SEO Specialist <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="ecseop-btn-p">Talk to an Ecommerce SEO Specialist <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/ecommerce-seo-services" className="ecseop-btn-s">Ecommerce SEO Overview</Link>
             </div>
             <div className="ecseop-stats">{STATS.map(s => <div key={s.label} className="ecseop-stat"><div className="ecseop-stat-l">{s.label}</div><div className="ecseop-stat-v">{s.val}</div></div>)}</div>
@@ -266,7 +266,7 @@ export default function EcommerceSeoPackages() {
                   </div>
                   <div className="ecseop-billed">{isYearly ? 'Billed annually' : 'Billed monthly'}</div>
                   <div className="ecseop-save-line">{isYearly ? `Save $${plan.yearlySave.toLocaleString()} per year` : ' '}</div>
-                  <Link href="/contact" className="ecseop-cta-card">Get Started →</Link>
+                  <Link href="/contact-us" className="ecseop-cta-card">Get Started →</Link>
                   <div className="ecseop-divider"/>
                   <ul className="ecseop-feat-list">
                     {plan.features.map(f => <li key={f}>{CHECK}<span>{f}</span></li>)}
@@ -300,7 +300,7 @@ export default function EcommerceSeoPackages() {
             <h2 className="ecseop-cta-t">Get a Free Ecommerce SEO Audit</h2>
             <p className="ecseop-cta-s">We&rsquo;ll review your store&rsquo;s current SEO health, identify your biggest growth opportunities, and recommend the right package for your revenue targets — for free.</p>
             <div className="ecseop-btns">
-              <Link href="/contact" className="ecseop-btn-p">Request a Free SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="ecseop-btn-p">Request a Free SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/local-seo-packages" className="ecseop-btn-s">Local SEO Packages</Link>
             </div>
           </div>

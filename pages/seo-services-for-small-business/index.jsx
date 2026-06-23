@@ -149,7 +149,7 @@ export default function SeoServicesForSmallBusiness() {
             <h1 className="smbbiz-h1">SEO Services for Small Business — Grow Organically Without Wasting Budget</h1>
             <p className="smbbiz-sub">Affordable SEO services designed specifically for small businesses — local SEO, on-page optimisation, content creation, and link building prioritised for maximum impact on a realistic budget. No jargon, no lock-in contracts.</p>
             <div className="smbbiz-btns">
-              <Link href="/contact" className="smbbiz-btn-p">Get a Free Small Business SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="smbbiz-btn-p">Get a Free Small Business SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/local-seo-packages" className="smbbiz-btn-s">View Local SEO Packages</Link>
             </div>
             <div className="smbbiz-stats">{STATS.map(s => <div key={s.label} className="smbbiz-stat"><div className="smbbiz-stat-l">{s.label}</div><div className="smbbiz-stat-v">{s.val}</div></div>)}</div>
@@ -182,7 +182,7 @@ export default function SeoServicesForSmallBusiness() {
             <h2 className="smbbiz-cta-t">Get a Free Small Business SEO Audit</h2>
             <p className="smbbiz-cta-s">We&rsquo;ll review your website, your Google Business Profile, and your local competitors — then recommend the most cost-effective SEO strategy for your budget and goals.</p>
             <div className="smbbiz-btns">
-              <Link href="/contact" className="smbbiz-btn-p">Request a Free SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="smbbiz-btn-p">Request a Free SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/affordable-seo-packages" className="smbbiz-btn-s">Affordable SEO Packages</Link>
             </div>
           </div>

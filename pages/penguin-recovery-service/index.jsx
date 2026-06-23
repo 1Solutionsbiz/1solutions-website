@@ -149,7 +149,7 @@ export default function PenguinRecoveryService() {
             <h1 className="peng-h1">Google Penguin Recovery Service — Toxic Link Audit &amp; Disavow</h1>
             <p className="peng-sub">Specialist Penguin and Link Spam Update recovery — comprehensive toxic backlink audit, conservative disavow file preparation, link removal outreach, and clean authority link building to restore your organic rankings.</p>
             <div className="peng-btns">
-              <Link href="/contact" className="peng-btn-p">Get a Free Backlink Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="peng-btn-p">Get a Free Backlink Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/google-penalty-recovery-services" className="peng-btn-s">All Penalty Recovery Services</Link>
             </div>
             <div className="peng-stats">{STATS.map(s => <div key={s.label} className="peng-stat"><div className="peng-stat-l">{s.label}</div><div className="peng-stat-v">{s.val}</div></div>)}</div>
@@ -182,7 +182,7 @@ export default function PenguinRecoveryService() {
             <h2 className="peng-cta-t">Get a Free Backlink Profile Audit</h2>
             <p className="peng-cta-s">Share your domain — we&rsquo;ll pull your full backlink profile, identify the toxic links, and outline a recovery plan including disavow strategy and clean link building.</p>
             <div className="peng-btns">
-              <Link href="/contact" className="peng-btn-p">Request a Free Backlink Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="peng-btn-p">Request a Free Backlink Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/link-building-packages" className="peng-btn-s">Link Building Packages</Link>
             </div>
           </div>

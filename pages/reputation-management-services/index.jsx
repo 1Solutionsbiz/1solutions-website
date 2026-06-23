@@ -146,8 +146,8 @@ export default function ReputationManagementServices() {
           <h1 className="repm-h1">Reputation Management That Protects and Builds Your Brand Online</h1>
           <p className="repm-p">1Solutions manages your online reputation across every platform — monitoring brand mentions in real time, building positive review volume, suppressing negative content from search results, and deploying crisis responses that protect your business when it matters most.</p>
           <div className="repm-btns">
-            <Link href="/contact" className="repm-bp">Get a Free Reputation Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-            <Link href="/contact" className="repm-bs">Discuss Your Reputation</Link>
+            <Link href="/contact-us" className="repm-bp">Get a Free Reputation Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+            <Link href="/contact-us" className="repm-bs">Discuss Your Reputation</Link>
           </div>
           <div className="repm-tr">{['Real-time monitoring','White-hat methods only','Confidential engagement','Crisis protocol included'].map(t=><span key={t} className="repm-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={ACCENT} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>{t}</span>)}</div>
           <div className="repm-sbar">{[{num:'4.6★',lbl:'Rating Rebuilt'},{num:'89%',lbl:'Positive Sentiment'},{num:'3',lbl:'Page-1 Suppressions'},{num:'15+',lbl:'Years Experience'}].map(s=><div key={s.lbl} className="repm-si"><span className="repm-sn">{s.num}</span><span className="repm-sl">{s.lbl}</span></div>)}</div>
@@ -186,8 +186,8 @@ export default function ReputationManagementServices() {
         <h2 className="repm-cth">Get a Free Reputation Audit</h2>
         <p className="repm-ctp">We will review your current online reputation — Google search results, review platform scores, and social sentiment — and share a clear strategy for protection and improvement.</p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
-          <Link href="/contact" className="repm-bp">Request Free Reputation Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-          <Link href="/contact" className="repm-bs">Talk to a Reputation Specialist</Link>
+          <Link href="/contact-us" className="repm-bp">Request Free Reputation Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+          <Link href="/contact-us" className="repm-bs">Talk to a Reputation Specialist</Link>
         </div>
       </div></section>
     </>

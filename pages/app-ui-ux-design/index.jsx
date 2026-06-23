@@ -285,7 +285,7 @@ export default function AppUiUxDesign() {
             <h1 className="ux-hero-h1">App UI/UX Design Services That Turn Users Into Loyal Customers</h1>
             <p className="ux-hero-sub">Research-driven mobile app design for iOS and Android — from user flows and wireframes to pixel-perfect UI, prototypes, and design systems. Built for engagement, retention, and conversion.</p>
             <div className="ux-hero-btns">
-              <Link href="/contact" className="ux-btn-primary">
+              <Link href="/contact-us" className="ux-btn-primary">
                 Start a Design Project
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </Link>
@@ -389,7 +389,7 @@ export default function AppUiUxDesign() {
             <h2 className="ux-cta-title">Ready to Design an App Your Users Actually Love?</h2>
             <p className="ux-cta-sub">Book a free 30-minute design consultation. We&rsquo;ll review your app concept, identify the highest UX risks, and outline a design approach — no obligation.</p>
             <div className="ux-cta-btns">
-              <Link href="/contact" className="ux-btn-primary">
+              <Link href="/contact-us" className="ux-btn-primary">
                 Book a Free Design Consultation
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </Link>

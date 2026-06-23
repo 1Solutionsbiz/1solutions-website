@@ -150,7 +150,7 @@ export default function HireSwiftDeveloper() {
         <h1>Hire Swift Developers<br/>Native iOS &amp; Apple Platform Specialists</h1>
         <p>Pre-vetted Swift engineers who build polished, performant iOS apps using SwiftUI, UIKit, and the full Apple SDK. Profiles in 48 hours.</p>
         <div className="hswft-hero-btns">
-          <Link href="/contact" className="hswft-btn-primary">Hire a Swift Developer →</Link>
+          <Link href="/contact-us" className="hswft-btn-primary">Hire a Swift Developer →</Link>
           <Link href="/portfolio" className="hswft-btn-outline">View Portfolio</Link>
         </div>
       </section>
@@ -201,7 +201,7 @@ export default function HireSwiftDeveloper() {
         <div className="hswft-wrap">
           <h2>Ready to Hire Your Swift Developer?</h2>
           <p>Share your iOS requirements and receive matched Swift specialist profiles within 48 hours — no commitment required.</p>
-          <Link href="/contact" className="hswft-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us" className="hswft-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

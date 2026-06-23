@@ -211,7 +211,7 @@ export default function LocalSeoPackages() {
             <h1 className="lseopkg-h1">Local SEO Packages — Rank Higher in Google Maps & Local Search</h1>
             <p className="lseopkg-sub">Transparent local SEO pricing for single and multi-location businesses — Google Business Profile management, citation building, review strategies, and local link building in one monthly plan.</p>
             <div className="lseopkg-btns">
-              <Link href="/contact" className="lseopkg-btn-p">Talk to a Local SEO Specialist <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="lseopkg-btn-p">Talk to a Local SEO Specialist <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/local-seo-services" className="lseopkg-btn-s">Local SEO Overview</Link>
             </div>
             <div className="lseopkg-stats">{STATS.map(s => <div key={s.label} className="lseopkg-stat"><div className="lseopkg-stat-l">{s.label}</div><div className="lseopkg-stat-v">{s.val}</div></div>)}</div>
@@ -243,7 +243,7 @@ export default function LocalSeoPackages() {
                   </div>
                   <div className="lseopkg-billed">{isYearly ? 'Billed annually' : 'Billed monthly'}</div>
                   <div className="lseopkg-save-line">{isYearly ? `Save $${plan.yearlySave.toLocaleString()} per year` : ' '}</div>
-                  <Link href="/contact" className="lseopkg-cta-card">Get Started →</Link>
+                  <Link href="/contact-us" className="lseopkg-cta-card">Get Started →</Link>
                   <div className="lseopkg-divider"/>
                   <ul className="lseopkg-feat-list">
                     {plan.features.map(f => <li key={f}>{CHECK}<span>{f}</span></li>)}
@@ -274,7 +274,7 @@ export default function LocalSeoPackages() {
             <h2 className="lseopkg-cta-t">Get a Free Local SEO Audit</h2>
             <p className="lseopkg-cta-s">We&rsquo;ll review your Google Business Profile health, citation consistency, review profile, and local ranking positions — and recommend the right package for your market.</p>
             <div className="lseopkg-btns">
-              <Link href="/contact" className="lseopkg-btn-p">Request a Free Local SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="lseopkg-btn-p">Request a Free Local SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/link-building-packages" className="lseopkg-btn-s">Link Building Packages</Link>
             </div>
           </div>

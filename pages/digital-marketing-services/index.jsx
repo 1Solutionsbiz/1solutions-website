@@ -149,7 +149,7 @@ export default function DigitalMarketingServices() {
             <h1 className="dmhub-h1">Digital Marketing Services — <span>Measurable Growth</span> Across Every Channel</h1>
             <p className="dmhub-sub">A full-service digital marketing agency with 15+ years of experience — SEO, Google Ads, social media marketing, content, email, ecommerce, and Amazon marketing across 600+ clients in 40+ industries.</p>
             <div className="dmhub-btns">
-              <Link href="/contact" className="dmhub-btn-p">Get a Free Digital Marketing Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="dmhub-btn-p">Get a Free Digital Marketing Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/free-45-day-seo-trial" className="dmhub-btn-s">Try SEO Free for 45 Days</Link>
             </div>
             <div className="dmhub-stats">{STATS.map(s => <div key={s.label} className="dmhub-stat"><div className="dmhub-stat-l">{s.label}</div><div className="dmhub-stat-v">{s.val}</div></div>)}</div>
@@ -181,7 +181,7 @@ export default function DigitalMarketingServices() {
             <h2 className="dmhub-cta-t">Ready to Grow Through Digital Marketing?</h2>
             <p className="dmhub-cta-s">Tell us your goals, your budget, and your timeline — we&rsquo;ll recommend the right digital marketing mix and show you exactly what we would do.</p>
             <div className="dmhub-btns">
-              <Link href="/contact" className="dmhub-btn-p">Get a Free Digital Marketing Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="dmhub-btn-p">Get a Free Digital Marketing Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/free-45-day-seo-trial" className="dmhub-btn-s">Try SEO Free — 45 Days</Link>
             </div>
           </div>

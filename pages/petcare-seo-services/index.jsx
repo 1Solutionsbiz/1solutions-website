@@ -307,7 +307,7 @@ export default function PetcareSeoServices() {
           <h2 className="ptseo-cta-h">Get Your Free Pet Care SEO Audit</h2>
           <p className="ptseo-cta-p">We will audit your GBP, website, citations, and competitor landscape — and deliver a prioritised action plan for growing your appointments and bookings from local search. Free, no obligation.</p>
           <div style={{ display:'flex', gap:14, justifyContent:'center', flexWrap:'wrap' }}>
-            <Link href="/contact" className="ptseo-btn-p">
+            <Link href="/contact-us" className="ptseo-btn-p">
               Request Free Audit
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </Link>

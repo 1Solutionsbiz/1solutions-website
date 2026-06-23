@@ -301,7 +301,7 @@ export default function EcommerceSeoServices() {
           <h2 className="eseo-cta-h">Get Your Free eCommerce SEO Audit</h2>
           <p className="eseo-cta-p">We will crawl your store, identify your biggest revenue-impacting SEO issues, and share a prioritised action plan — completely free, no obligations.</p>
           <div style={{ display:'flex', gap:14, justifyContent:'center', flexWrap:'wrap' }}>
-            <Link href="/contact" className="eseo-btn-p">
+            <Link href="/contact-us" className="eseo-btn-p">
               Request Free Audit
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </Link>

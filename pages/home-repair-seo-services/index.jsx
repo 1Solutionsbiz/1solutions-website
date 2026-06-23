@@ -307,7 +307,7 @@ export default function HomeRepairSeoServices() {
           <h2 className="hrseo-cta-h">Get Your Free Home Repair SEO Audit</h2>
           <p className="hrseo-cta-p">We will audit your GBP, website, citations, and competitor landscape — and deliver a prioritised action plan for growing your booked jobs from local search. Free, with no obligation.</p>
           <div style={{ display:'flex', gap:14, justifyContent:'center', flexWrap:'wrap' }}>
-            <Link href="/contact" className="hrseo-btn-p">
+            <Link href="/contact-us" className="hrseo-btn-p">
               Request Free Audit
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </Link>

@@ -146,8 +146,8 @@ export default function ContentMarketingServices() {
           <h1 className="cmkt-h1">Content Marketing That Ranks on Google and Converts Readers Into Leads</h1>
           <p className="cmkt-p">1Solutions produces SEO-first content that builds topical authority, drives sustainable organic traffic, and converts readers into leads — written by human specialists who understand your industry.</p>
           <div className="cmkt-btns">
-            <Link href="/contact" className="cmkt-bp">Get a Free Content Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-            <Link href="/contact" className="cmkt-bs">Discuss Your Content Strategy</Link>
+            <Link href="/contact-us" className="cmkt-bp">Get a Free Content Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+            <Link href="/contact-us" className="cmkt-bs">Discuss Your Content Strategy</Link>
           </div>
           <div className="cmkt-tr">{['Human writers only','SEO-first approach','Content audit included','No AI-generated filler'].map(t=><span key={t} className="cmkt-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={ACCENT} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>{t}</span>)}</div>
           <div className="cmkt-sbar">{[{num:'380%',lbl:'Avg Traffic Growth'},{num:'15+',lbl:'Years Experience'},{num:'62',lbl:'Top-3 Rankings'},{num:'4.1×',lbl:'Lead Growth'}].map(s=><div key={s.lbl} className="cmkt-si"><span className="cmkt-sn">{s.num}</span><span className="cmkt-sl">{s.lbl}</span></div>)}</div>
@@ -186,8 +186,8 @@ export default function ContentMarketingServices() {
         <h2 className="cmkt-cth">Get a Free Content Audit</h2>
         <p className="cmkt-ctp">We will review your existing content, identify keyword gaps and optimisation opportunities, and share a content strategy roadmap — completely free.</p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
-          <Link href="/contact" className="cmkt-bp">Request Free Content Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-          <Link href="/contact" className="cmkt-bs">Talk to a Content Strategist</Link>
+          <Link href="/contact-us" className="cmkt-bp">Request Free Content Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+          <Link href="/contact-us" className="cmkt-bs">Talk to a Content Strategist</Link>
         </div>
       </div></section>
     </>

@@ -141,7 +141,7 @@ export default function Hero() {
             display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '64px',
           }}>
             <Link
-              href="/contact"
+              href="/contact-us"
               onMouseEnter={() => setPriHov(true)}
               onMouseLeave={() => setPriHov(false)}
               style={{

@@ -152,7 +152,7 @@ export default function ShopifyMigrationServices() {
         <h1>Shopify Migration Services<br/>Move to Shopify Without Losing SEO or Data</h1>
         <p>We migrate WooCommerce, Magento, BigCommerce, PrestaShop, and custom-built stores to Shopify with zero data loss, full URL redirect mapping, and ranking preservation. 15+ years of e-commerce migration experience across US, Canada, and Australia.</p>
         <div className="sms-hero-btns">
-          <Link href="/contact" className="sms-btn-primary">Get a Free Migration Audit →</Link>
+          <Link href="/contact-us" className="sms-btn-primary">Get a Free Migration Audit →</Link>
           <Link href="/portfolio" className="sms-btn-outline">View Portfolio</Link>
         </div>
       </section>
@@ -203,7 +203,7 @@ export default function ShopifyMigrationServices() {
         <div className="sms-wrap">
           <h2>Ready to Migrate to Shopify?</h2>
           <p>Get a free migration audit — we'll review your current platform, map your data, and deliver a no-obligation plan within 48 hours.</p>
-          <Link href="/contact" className="sms-btn-primary">Get Your Free Migration Audit →</Link>
+          <Link href="/contact-us" className="sms-btn-primary">Get Your Free Migration Audit →</Link>
         </div>
       </section>
     </>

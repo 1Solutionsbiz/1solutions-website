@@ -339,7 +339,7 @@ export default function CaseStudies() {
           <p className="cs-hero-sub">
             15+ years of delivering measurable results for clients across US, Canada, Australia and beyond.
           </p>
-          <a href="/contact" className="cs-hero-cta">
+          <a href="/contact-us" className="cs-hero-cta">
             <span className="cs-hero-avatars">
               {[
                 { initials: 'AT', bg: '#FE9700' },
@@ -424,7 +424,7 @@ export default function CaseStudies() {
             Let&rsquo;s discuss your project and craft a strategy that delivers real, measurable results for your business.
           </p>
           <div className="cs-cta-btns">
-            <Link href="/contact" className="cs-btn-primary">
+            <Link href="/contact-us" className="cs-btn-primary">
               Start a Project
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </Link>

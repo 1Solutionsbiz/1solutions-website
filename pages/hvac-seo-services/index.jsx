@@ -149,7 +149,7 @@ export default function HvacSeoServices() {
             <h1 className="hvacseo-h1">HVAC SEO Services — More Leads, More Calls, More Jobs</h1>
             <p className="hvacseo-sub">SEO and digital marketing built specifically for HVAC companies — local map pack dominance, emergency call campaigns, seasonal marketing, and review generation that generates consistent high-quality HVAC leads.</p>
             <div className="hvacseo-btns">
-              <Link href="/contact" className="hvacseo-btn-p">Get a Free HVAC Marketing Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="hvacseo-btn-p">Get a Free HVAC Marketing Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/local-seo-services" className="hvacseo-btn-s">Local SEO Services</Link>
             </div>
             <div className="hvacseo-stats">{STATS.map(s => <div key={s.label} className="hvacseo-stat"><div className="hvacseo-stat-l">{s.label}</div><div className="hvacseo-stat-v">{s.val}</div></div>)}</div>
@@ -182,7 +182,7 @@ export default function HvacSeoServices() {
             <h2 className="hvacseo-cta-t">Get a Free HVAC Marketing Audit</h2>
             <p className="hvacseo-cta-s">We&rsquo;ll audit your Google Business Profile, local rankings, competitor positioning, and current lead volume — then show you the fastest path to more HVAC calls.</p>
             <div className="hvacseo-btns">
-              <Link href="/contact" className="hvacseo-btn-p">Request a Free HVAC Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="hvacseo-btn-p">Request a Free HVAC Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/lawn-care-marketing-services" className="hvacseo-btn-s">Lawn Care Marketing</Link>
             </div>
           </div>

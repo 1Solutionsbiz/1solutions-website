@@ -146,8 +146,8 @@ export default function AnalyticsCroServices() {
           <h1 className="acro-h1">Analytics & CRO That Turns More of Your Existing Traffic Into Revenue</h1>
           <p className="acro-p">1Solutions implements accurate analytics, identifies conversion bottlenecks, and runs data-driven A/B tests that systematically improve your conversion rate — so every traffic source delivers more revenue without more spend.</p>
           <div className="acro-btns">
-            <Link href="/contact" className="acro-bp">Get a Free Analytics Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-            <Link href="/contact" className="acro-bs">Discuss Your CRO Strategy</Link>
+            <Link href="/contact-us" className="acro-bp">Get a Free Analytics Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+            <Link href="/contact-us" className="acro-bs">Discuss Your CRO Strategy</Link>
           </div>
           <div className="acro-tr">{['GA4 specialists','Testing-first culture','No vanity metrics','Integrated with all channels'].map(t=><span key={t} className="acro-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={ACCENT} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>{t}</span>)}</div>
           <div className="acro-sbar">{[{num:'74%',lbl:'Checkout Uplift'},{num:'2.4×',lbl:'Lead Form Growth'},{num:'41%',lbl:'Bounce Rate Reduction'},{num:'15+',lbl:'Years Experience'}].map(s=><div key={s.lbl} className="acro-si"><span className="acro-sn">{s.num}</span><span className="acro-sl">{s.lbl}</span></div>)}</div>
@@ -186,8 +186,8 @@ export default function AnalyticsCroServices() {
         <h2 className="acro-cth">Get a Free Analytics & CRO Audit</h2>
         <p className="acro-ctp">We will review your GA4 setup, identify tracking gaps, analyse your conversion funnel, and share the highest-impact CRO opportunities for your website — completely free.</p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
-          <Link href="/contact" className="acro-bp">Request Free CRO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-          <Link href="/contact" className="acro-bs">Talk to a CRO Specialist</Link>
+          <Link href="/contact-us" className="acro-bp">Request Free CRO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+          <Link href="/contact-us" className="acro-bs">Talk to a CRO Specialist</Link>
         </div>
       </div></section>
     </>

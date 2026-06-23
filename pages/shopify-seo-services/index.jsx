@@ -154,7 +154,7 @@ export default function ShopifySeoServices() {
             <h1 className="shseo-h1">Shopify SEO Services That Drive Organic Revenue</h1>
             <p className="shseo-sub">Fix Shopify&rsquo;s duplicate URL issues, optimise every product and collection page, and build the domain authority your store needs to outrank competitors on high-intent keywords.</p>
             <div className="shseo-btns">
-              <Link href="/contact" className="shseo-btn-p">Get a Free Shopify SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="shseo-btn-p">Get a Free Shopify SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/shopify-store-development" className="shseo-btn-s">Shopify Development</Link>
             </div>
             <div className="shseo-stats">{STATS.map(s => <div key={s.label} className="shseo-stat"><div className="shseo-stat-l">{s.label}</div><div className="shseo-stat-v">{s.val}</div></div>)}</div>
@@ -190,7 +190,7 @@ export default function ShopifySeoServices() {
             <h2 className="shseo-cta-t">Get Your Free Shopify SEO Audit</h2>
             <p className="shseo-cta-s">We&rsquo;ll audit your store&rsquo;s technical health, duplicate URL issues, product page optimisation, and keyword gaps — free, with a clear action plan.</p>
             <div className="shseo-cta-btns">
-              <Link href="/contact" className="shseo-btn-p">Get Free Shopify SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="shseo-btn-p">Get Free Shopify SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/ecommerce-seo-services" className="shseo-btn-s">Ecommerce SEO Services</Link>
             </div>
           </div>

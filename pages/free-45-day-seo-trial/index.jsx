@@ -136,7 +136,7 @@ export default function Free45DaySeoTrial() {
             <h1 className="f45-h1">Try Our SEO — <span>45 Days Free.</span><br/>Results First, Then Decide.</h1>
             <p className="f45-sub">A full SEO audit, keyword research, competitor analysis, and 5 on-page optimisations implemented on your live site — completely free for 45 days. No payment, no contract, no catch.</p>
             <div className="f45-btns">
-              <Link href="/contact" className="f45-btn-p">Apply for the Free Trial <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="f45-btn-p">Apply for the Free Trial <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/seo-services-company" className="f45-btn-s">See Full SEO Services</Link>
             </div>
             <div className="f45-stats">{STATS.map(s => <div key={s.label} className="f45-stat"><div className="f45-stat-l">{s.label}</div><div className="f45-stat-v">{s.val}</div></div>)}</div>
@@ -166,7 +166,7 @@ export default function Free45DaySeoTrial() {
             <h2 className="f45-cta-t">Ready to see what SEO can do for your site?</h2>
             <p className="f45-cta-s">Apply for the free 45-day trial. We review every application and respond within 48 hours. Limited to 5–8 new trials per month.</p>
             <div className="f45-btns">
-              <Link href="/contact" className="f45-btn-p">Apply for Your Free Trial Now <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="f45-btn-p">Apply for Your Free Trial Now <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/affordable-seo-packages" className="f45-btn-s">View SEO Packages</Link>
             </div>
           </div>

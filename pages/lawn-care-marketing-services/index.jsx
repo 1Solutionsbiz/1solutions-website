@@ -149,7 +149,7 @@ export default function LawnCareMarketingServices() {
             <h1 className="lcmkt-h1">Lawn Care Marketing Services — More Customers, More Route Density</h1>
             <p className="lcmkt-sub">Digital marketing built specifically for lawn care, landscaping, and garden maintenance businesses — local SEO, Google Ads, review generation, and seasonal campaigns that fill your schedule and build recurring customer revenue.</p>
             <div className="lcmkt-btns">
-              <Link href="/contact" className="lcmkt-btn-p">Get a Free Lawn Care Marketing Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="lcmkt-btn-p">Get a Free Lawn Care Marketing Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/local-seo-services" className="lcmkt-btn-s">Local SEO Services</Link>
             </div>
             <div className="lcmkt-stats">{STATS.map(s => <div key={s.label} className="lcmkt-stat"><div className="lcmkt-stat-l">{s.label}</div><div className="lcmkt-stat-v">{s.val}</div></div>)}</div>
@@ -182,7 +182,7 @@ export default function LawnCareMarketingServices() {
             <h2 className="lcmkt-cta-t">Get a Free Lawn Care Marketing Audit</h2>
             <p className="lcmkt-cta-s">We&rsquo;ll audit your local search visibility, Google Business Profile, competitor positioning, and ad opportunities — then recommend the marketing mix most likely to generate ROI for your operation.</p>
             <div className="lcmkt-btns">
-              <Link href="/contact" className="lcmkt-btn-p">Request a Free Marketing Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="lcmkt-btn-p">Request a Free Marketing Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/hvac-seo-services" className="lcmkt-btn-s">HVAC SEO Services</Link>
             </div>
           </div>

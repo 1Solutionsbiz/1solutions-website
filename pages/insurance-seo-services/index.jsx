@@ -307,7 +307,7 @@ export default function InsuranceSeoServices() {
           <h2 className="inseo-cta-h">Get Your Free Insurance Agency SEO Audit</h2>
           <p className="inseo-cta-p">We will audit your website, GBP, product page coverage, and citation profile — and deliver a prioritised action plan for growing your organic quote requests. Free, no obligation.</p>
           <div style={{ display:'flex', gap:14, justifyContent:'center', flexWrap:'wrap' }}>
-            <Link href="/contact" className="inseo-btn-p">
+            <Link href="/contact-us" className="inseo-btn-p">
               Request Free Audit
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </Link>

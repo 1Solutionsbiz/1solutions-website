@@ -153,7 +153,7 @@ export default function ManagedSeoServices() {
             <h1 className="mnseo-h1">Managed SEO Services — Dedicated SEO Partnership That Grows Your Traffic</h1>
             <p className="mnseo-sub">Monthly managed SEO with a dedicated account manager — technical maintenance, content, link building, and clear reporting. One retainer, everything covered, no chasing separate agencies.</p>
             <div className="mnseo-btns">
-              <Link href="/contact" className="mnseo-btn-p">Start Managed SEO <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="mnseo-btn-p">Start Managed SEO <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/seo-audit-services" className="mnseo-btn-s">SEO Audit First</Link>
             </div>
             <div className="mnseo-stats">{STATS.map(s => <div key={s.label} className="mnseo-stat"><div className="mnseo-stat-l">{s.label}</div><div className="mnseo-stat-v">{s.val}</div></div>)}</div>
@@ -189,7 +189,7 @@ export default function ManagedSeoServices() {
             <h2 className="mnseo-cta-t">Start Your Managed SEO Partnership</h2>
             <p className="mnseo-cta-s">Free strategy call — we&rsquo;ll review your current SEO, assess your competition, and recommend the right retainer level for your goals.</p>
             <div className="mnseo-cta-btns">
-              <Link href="/contact" className="mnseo-btn-p">Book a Strategy Call <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="mnseo-btn-p">Book a Strategy Call <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/seo-services-company" className="mnseo-btn-s">SEO Services Overview</Link>
             </div>
           </div>

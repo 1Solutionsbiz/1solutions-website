@@ -153,7 +153,7 @@ export default function WixSeoServices() {
             <h1 className="wixs-h1">Wix SEO Services That Get Your Website Ranking on Google</h1>
             <p className="wixs-sub">Technical setup, on-page optimisation, local SEO, and content strategy — specialist SEO for Wix websites that drives real organic traffic, not just impressions.</p>
             <div className="wixs-btns">
-              <Link href="/contact" className="wixs-btn-p">Get a Free Wix SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="wixs-btn-p">Get a Free Wix SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/local-seo-services/" className="wixs-btn-s">Local SEO Services</Link>
             </div>
             <div className="wixs-stats">{STATS.map(s => <div key={s.label} className="wixs-stat"><div className="wixs-stat-l">{s.label}</div><div className="wixs-stat-v">{s.val}</div></div>)}</div>
@@ -189,7 +189,7 @@ export default function WixSeoServices() {
             <h2 className="wixs-cta-t">Get Your Free Wix SEO Audit</h2>
             <p className="wixs-cta-s">We&rsquo;ll review your Wix site&rsquo;s technical setup, on-page quality, local signals, and keyword rankings — and send you a prioritised action plan free.</p>
             <div className="wixs-cta-btns">
-              <Link href="/contact" className="wixs-btn-p">Get Free Wix SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="wixs-btn-p">Get Free Wix SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/affordable-seo-packages" className="wixs-btn-s">View SEO Packages</Link>
             </div>
           </div>

@@ -307,7 +307,7 @@ export default function DentalSeoServices() {
           <h2 className="dnseo-cta-h">Get Your Free Dental Practice SEO Audit</h2>
           <p className="dnseo-cta-p">We will audit your GBP, treatment pages, citation profile, and competitor landscape — and deliver a prioritised action plan for growing new patient bookings from organic search. Free, no obligation.</p>
           <div style={{ display:'flex', gap:14, justifyContent:'center', flexWrap:'wrap' }}>
-            <Link href="/contact" className="dnseo-btn-p">
+            <Link href="/contact-us" className="dnseo-btn-p">
               Request Free Audit
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </Link>

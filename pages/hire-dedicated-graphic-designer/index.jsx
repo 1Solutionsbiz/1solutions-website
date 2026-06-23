@@ -151,7 +151,7 @@ export default function HireDedicatedGraphicDesigner() {
         <h1>Hire Dedicated Graphic Designers<br/>Brand, Print &amp; Digital Design Experts</h1>
         <p>Pre-vetted graphic designers who create compelling brand identities, marketing collateral, social media graphics, packaging, and print materials. Not freelancers — dedicated professionals who become part of your team. Profiles in 48 hours.</p>
         <div className="hgd-hero-btns">
-          <Link href="/contact" className="hgd-btn-primary">Hire a Graphic Designer →</Link>
+          <Link href="/contact-us" className="hgd-btn-primary">Hire a Graphic Designer →</Link>
           <Link href="/portfolio" className="hgd-btn-outline">View Portfolio</Link>
         </div>
       </section>
@@ -202,7 +202,7 @@ export default function HireDedicatedGraphicDesigner() {
         <div className="hgd-wrap">
           <h2>Ready to Hire Your Dedicated Graphic Designer?</h2>
           <p>Share your design brief and receive matched graphic designer profiles with portfolios within 48 hours — no commitment required.</p>
-          <Link href="/contact" className="hgd-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us" className="hgd-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

@@ -149,7 +149,7 @@ export default function SeoTrainingLaxmiNagar() {
             <h1 className="seotln-h1">SEO Training in Laxmi Nagar — Professional SEO Course by Practitioners</h1>
             <p className="seotln-sub">Professional SEO training in Laxmi Nagar, Delhi — taught by working SEO professionals, not academics. Small batches of 8–12 students, live project work, SEO tools training, and 30-day post-course mentorship.</p>
             <div className="seotln-btns">
-              <Link href="/contact" className="seotln-btn-p">Enquire About Next Batch <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="seotln-btn-p">Enquire About Next Batch <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/seo-services-company" className="seotln-btn-s">SEO Services</Link>
             </div>
             <div className="seotln-stats">{STATS.map(s => <div key={s.label} className="seotln-stat"><div className="seotln-stat-l">{s.label}</div><div className="seotln-stat-v">{s.val}</div></div>)}</div>
@@ -182,7 +182,7 @@ export default function SeoTrainingLaxmiNagar() {
             <h2 className="seotln-cta-t">Enquire About the Next SEO Batch in Laxmi Nagar</h2>
             <p className="seotln-cta-s">Contact us to get current batch timings, fees, and seat availability. New batches start monthly — seats are limited to 8–12 students per batch.</p>
             <div className="seotln-btns">
-              <Link href="/contact" className="seotln-btn-p">Enquire About Next Batch <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="seotln-btn-p">Enquire About Next Batch <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/free-45-day-seo-trial" className="seotln-btn-s">Try Our 45-Day Free SEO Trial</Link>
             </div>
           </div>

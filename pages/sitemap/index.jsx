@@ -16,7 +16,7 @@ const SECTIONS = [
       [
         { label: 'Open Positions',       href: '/open-positions' },
         { label: 'Apply Online',         href: '/apply-online' },
-        { label: 'Contact Us',           href: '/contact' },
+        { label: 'Contact Us',           href: '/contact-us' },
         { label: 'Book a Consultation',  href: '/book-consultation' },
         { label: 'Blog',                 href: '/blog' },
       ],
@@ -291,6 +291,7 @@ const SECTIONS = [
         { label: 'Hire Trending Developer',       href: '/hire-trending-developer' },
         { label: 'Hire Next.js Developers',       href: '/hire-nextjs-developers' },
         { label: 'Hire Dedicated Graphic Designer', href: '/hire-dedicated-graphic-designer' },
+        { label: 'Hire Laravel Developer',          href: '/hire-laravel-developer' },
       ],
     ],
   },

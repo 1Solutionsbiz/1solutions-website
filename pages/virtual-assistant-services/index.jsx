@@ -151,8 +151,8 @@ export default function VirtualAssistantServices() {
         <h1>Virtual Assistant Services<br/>Dedicated VAs for Business, E-Commerce &amp; Admin</h1>
         <p>Hire pre-vetted, dedicated virtual assistants trained in business admin, e-commerce operations, customer support, social media, and research. Full-time or part-time, your VA starts within 7 days — saving you 20+ hours a week.</p>
         <div className="vas-hero-btns">
-          <Link href="/contact" className="vas-btn-primary">Hire a Virtual Assistant →</Link>
-          <Link href="/contact" className="vas-btn-outline">Learn More</Link>
+          <Link href="/contact-us" className="vas-btn-primary">Hire a Virtual Assistant →</Link>
+          <Link href="/contact-us" className="vas-btn-outline">Learn More</Link>
         </div>
       </section>
       <section className="vas-sec" ref={skR}>
@@ -202,7 +202,7 @@ export default function VirtualAssistantServices() {
         <div className="vas-wrap">
           <h2>Ready to Hire Your Dedicated Virtual Assistant?</h2>
           <p>Submit your brief and receive 2–3 matched VA profiles within 48 hours — full-time, part-time, or hourly. No long-term contracts.</p>
-          <Link href="/contact" className="vas-btn-primary">Hire a Virtual Assistant →</Link>
+          <Link href="/contact-us" className="vas-btn-primary">Hire a Virtual Assistant →</Link>
         </div>
       </section>
     </>

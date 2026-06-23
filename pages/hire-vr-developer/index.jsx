@@ -150,7 +150,7 @@ export default function HireVrDeveloper() {
         <h1>Hire VR Developers<br/>Unity, Unreal &amp; Meta Quest Specialists</h1>
         <p>Pre-vetted XR engineers who build immersive VR/AR experiences for Meta Quest, Apple Vision Pro, HTC Vive, and WebXR — with 90fps performance as standard. Profiles in 48 hours.</p>
         <div className="hvrd-hero-btns">
-          <Link href="/contact" className="hvrd-btn-primary">Hire a VR Developer →</Link>
+          <Link href="/contact-us" className="hvrd-btn-primary">Hire a VR Developer →</Link>
           <Link href="/portfolio" className="hvrd-btn-outline">View Portfolio</Link>
         </div>
       </section>
@@ -201,7 +201,7 @@ export default function HireVrDeveloper() {
         <div className="hvrd-wrap">
           <h2>Ready to Hire Your VR Developer?</h2>
           <p>Share your XR vision and receive matched VR developer profiles with demo links within 48 hours — no commitment required.</p>
-          <Link href="/contact" className="hvrd-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us" className="hvrd-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

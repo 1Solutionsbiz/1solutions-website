@@ -151,7 +151,7 @@ export default function HireDedicatedUiUxDesigner() {
         <h1>Hire Dedicated UI/UX Designers<br/>Figma &amp; User Research Specialists</h1>
         <p>Pre-vetted designers who combine rigorous user research with conversion-focused visual design — building products people actually enjoy using. Profiles in 48 hours.</p>
         <div className="huiux-hero-btns">
-          <Link href="/contact" className="huiux-btn-primary">Hire a UI/UX Designer →</Link>
+          <Link href="/contact-us" className="huiux-btn-primary">Hire a UI/UX Designer →</Link>
           <Link href="/portfolio" className="huiux-btn-outline">View Portfolio</Link>
         </div>
       </section>
@@ -202,7 +202,7 @@ export default function HireDedicatedUiUxDesigner() {
         <div className="huiux-wrap">
           <h2>Ready to Hire Your Dedicated UI/UX Designer?</h2>
           <p>Share your product goals and receive matched designer profiles with portfolios within 48 hours — no commitment required.</p>
-          <Link href="/contact" className="huiux-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us" className="huiux-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

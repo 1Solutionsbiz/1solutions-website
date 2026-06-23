@@ -702,7 +702,7 @@ export default function B2BEcommerce() {
               Custom wholesale portals, tiered pricing engines, ERP integrations, and buyer self-service platforms built for manufacturers, wholesalers, and distributors across the US, Canada, and Australia.
             </p>
             <div className="b2b-hero-btns">
-              <Link href="/contact" className="b2b-btn-primary">
+              <Link href="/contact-us" className="b2b-btn-primary">
                 Get a Free Discovery Call
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </Link>
@@ -864,7 +864,7 @@ export default function B2BEcommerce() {
               Book a free 30-minute discovery call. We&rsquo;ll map your buyer workflows, identify the right platform, and give you a no-obligation project outline with timeline and cost range.
             </p>
             <div className="b2b-cta-btns">
-              <Link href="/contact" className="b2b-btn-primary">
+              <Link href="/contact-us" className="b2b-btn-primary">
                 Book a Free Discovery Call
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </Link>

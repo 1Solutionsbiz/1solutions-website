@@ -15,7 +15,7 @@ const SERVICES_MENU = [
       {
         title: 'Ecommerce Marketing',
         links: [
-          { label: 'Influencer Marketing', href: '/influencer-marketing' },
+          { label: 'Influencer Marketing', href: '/influencer-marketing-services' },
         ],
       },
     ],

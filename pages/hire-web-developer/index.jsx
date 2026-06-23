@@ -151,7 +151,7 @@ export default function HireWebDeveloper() {
         <h1>Hire Web Developers<br/>Full-Stack React, Node.js &amp; PHP Experts</h1>
         <p>Pre-vetted web developers who build scalable, secure, and high-performance web applications — from solo developers to full squads. Profiles in 48 hours.</p>
         <div className="hwdev-hero-btns">
-          <Link href="/contact" className="hwdev-btn-primary">Hire a Web Developer →</Link>
+          <Link href="/contact-us" className="hwdev-btn-primary">Hire a Web Developer →</Link>
           <Link href="/portfolio" className="hwdev-btn-outline">View Portfolio</Link>
         </div>
       </section>
@@ -202,7 +202,7 @@ export default function HireWebDeveloper() {
         <div className="hwdev-wrap">
           <h2>Ready to Hire Your Web Developer?</h2>
           <p>Share your project requirements and receive matched web developer profiles within 48 hours — no commitment required.</p>
-          <Link href="/contact" className="hwdev-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us" className="hwdev-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

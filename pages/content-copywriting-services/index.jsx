@@ -150,7 +150,7 @@ export default function ContentCopywritingServices() {
             <h1 className="ccw-h1">Content &amp; Copywriting Services — Words That Rank, Engage, and Convert</h1>
             <p className="ccw-sub">Human-written website copy, SEO blog content, email sequences, ad copy, and product descriptions — all produced by specialist copywriters who understand your audience, your sector, and your goals.</p>
             <div className="ccw-btns">
-              <Link href="/contact" className="ccw-btn-p">Get a Copywriting Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="ccw-btn-p">Get a Copywriting Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/seo-services-company" className="ccw-btn-s">SEO Services</Link>
             </div>
             <div className="ccw-stats">{STATS.map(s => <div key={s.label} className="ccw-stat"><div className="ccw-stat-l">{s.label}</div><div className="ccw-stat-v">{s.val}</div></div>)}</div>
@@ -186,7 +186,7 @@ export default function ContentCopywritingServices() {
             <h2 className="ccw-cta-t">Start Your Content &amp; Copywriting Project</h2>
             <p className="ccw-cta-s">Share your content brief — type of content, audience, goals, and any examples you like — and we&rsquo;ll confirm writer match, timeline, and pricing within one business day.</p>
             <div className="ccw-cta-btns">
-              <Link href="/contact" className="ccw-btn-p">Get a Copywriting Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="ccw-btn-p">Get a Copywriting Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/infographics-design" className="ccw-btn-s">Infographics Design</Link>
             </div>
           </div>

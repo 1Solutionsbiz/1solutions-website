@@ -153,7 +153,7 @@ export default function OpencartSeoServices() {
             <h1 className="ocseo-h1">OpenCart SEO Services That Grow Your Store&rsquo;s Organic Traffic</h1>
             <p className="ocseo-sub">Fix URL structure issues, resolve duplicate content, and optimise product and category pages — platform-specialist SEO for OpenCart stores that drives measurable organic revenue growth.</p>
             <div className="ocseo-btns">
-              <Link href="/contact" className="ocseo-btn-p">Get a Free OpenCart SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="ocseo-btn-p">Get a Free OpenCart SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/opencart-development-company" className="ocseo-btn-s">OpenCart Development</Link>
             </div>
             <div className="ocseo-stats">{STATS.map(s => <div key={s.label} className="ocseo-stat"><div className="ocseo-stat-l">{s.label}</div><div className="ocseo-stat-v">{s.val}</div></div>)}</div>
@@ -189,7 +189,7 @@ export default function OpencartSeoServices() {
             <h2 className="ocseo-cta-t">Get Your Free OpenCart SEO Audit</h2>
             <p className="ocseo-cta-s">We&rsquo;ll audit your URL structure, duplicate content, page speed, and keyword gaps — and send you a prioritised action plan, completely free.</p>
             <div className="ocseo-cta-btns">
-              <Link href="/contact" className="ocseo-btn-p">Get Free OpenCart SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="ocseo-btn-p">Get Free OpenCart SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/ecommerce-seo-services" className="ocseo-btn-s">Ecommerce SEO Services</Link>
             </div>
           </div>

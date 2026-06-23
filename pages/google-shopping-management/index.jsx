@@ -146,8 +146,8 @@ export default function GoogleShoppingManagement() {
           <h1 className="gsho-h1">Google Shopping Ads That Put Your Products in Front of Ready-to-Buy Customers</h1>
           <p className="gsho-p">1Solutions manages Google Shopping campaigns that drive eCommerce revenue — with feed-first optimisation, granular campaign structures, and ROAS-focused bidding that converts browsers into buyers.</p>
           <div className="gsho-btns">
-            <Link href="/contact" className="gsho-bp">Get a Free Feed Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-            <Link href="/contact" className="gsho-bs">Discuss Your Shopping Campaigns</Link>
+            <Link href="/contact-us" className="gsho-bp">Get a Free Feed Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+            <Link href="/contact-us" className="gsho-bs">Discuss Your Shopping Campaigns</Link>
           </div>
           <div className="gsho-tr">{['Feed-first optimisation','Flat management fee','You own your account','ROAS-focused bidding'].map(t=><span key={t} className="gsho-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={ACCENT} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>{t}</span>)}</div>
           <div className="gsho-sbar">{[{num:'300+',lbl:'eCommerce Clients'},{num:'15+',lbl:'Years Experience'},{num:'4.6×',lbl:'Avg ROAS'},{num:'96%',lbl:'Retention Rate'}].map(s=><div key={s.lbl} className="gsho-si"><span className="gsho-sn">{s.num}</span><span className="gsho-sl">{s.lbl}</span></div>)}</div>
@@ -186,8 +186,8 @@ export default function GoogleShoppingManagement() {
         <h2 className="gsho-cth">Get a Free Google Shopping Feed Audit</h2>
         <p className="gsho-ctp">We will review your product feed, Merchant Center account, and existing Shopping campaigns — identifying where ROAS is being lost and what to fix first.</p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
-          <Link href="/contact" className="gsho-bp">Request Free Shopping Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-          <Link href="/contact" className="gsho-bs">Talk to a Shopping Specialist</Link>
+          <Link href="/contact-us" className="gsho-bp">Request Free Shopping Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+          <Link href="/contact-us" className="gsho-bs">Talk to a Shopping Specialist</Link>
         </div>
       </div></section>
     </>

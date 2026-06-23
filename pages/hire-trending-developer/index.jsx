@@ -150,7 +150,7 @@ export default function HireTrendingDeveloper() {
         <h1>Hire Trending Technology Developers<br/>AI, Web3, Rust &amp; Edge Specialists</h1>
         <p>Pre-vetted engineers who have shipped production projects with Generative AI, LLM integration, Web3, WebAssembly, and edge computing — not just followed the hype. Profiles in 48 hours.</p>
         <div className="htrd-hero-btns">
-          <Link href="/contact" className="htrd-btn-primary">Hire a Specialist Developer →</Link>
+          <Link href="/contact-us" className="htrd-btn-primary">Hire a Specialist Developer →</Link>
           <Link href="/portfolio" className="htrd-btn-outline">View Portfolio</Link>
         </div>
       </section>
@@ -201,7 +201,7 @@ export default function HireTrendingDeveloper() {
         <div className="htrd-wrap">
           <h2>Ready to Hire Your Specialist Developer?</h2>
           <p>Share the technology and use case — we will match you with a practitioner who has shipped it in production. Profiles in 48 hours.</p>
-          <Link href="/contact" className="htrd-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us" className="htrd-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

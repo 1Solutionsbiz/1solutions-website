@@ -149,7 +149,7 @@ export default function AmazonSeoServices() {
             <h1 className="amazseo-h1">Amazon SEO Services — Rank Higher, Sell More on Amazon</h1>
             <p className="amazseo-sub">Product listing optimisation, keyword research, A+ Content, Sponsored Ads management, and Brand Store design — everything needed to dominate Amazon search results and convert browsers into buyers.</p>
             <div className="amazseo-btns">
-              <Link href="/contact" className="amazseo-btn-p">Get an Amazon SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="amazseo-btn-p">Get an Amazon SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/amazon-account-management-services" className="amazseo-btn-s">Amazon Account Management</Link>
             </div>
             <div className="amazseo-stats">{STATS.map(s => <div key={s.label} className="amazseo-stat"><div className="amazseo-stat-l">{s.label}</div><div className="amazseo-stat-v">{s.val}</div></div>)}</div>
@@ -182,7 +182,7 @@ export default function AmazonSeoServices() {
             <h2 className="amazseo-cta-t">Get a Free Amazon Listing Audit</h2>
             <p className="amazseo-cta-s">Share your ASIN or storefront link — we&rsquo;ll audit your keyword indexing, content quality, and competitor gap, and show you exactly what&rsquo;s holding your rankings back.</p>
             <div className="amazseo-btns">
-              <Link href="/contact" className="amazseo-btn-p">Request a Free Amazon Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="amazseo-btn-p">Request a Free Amazon Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/ecommerce-seo-services" className="amazseo-btn-s">Ecommerce SEO Services</Link>
             </div>
           </div>

@@ -151,7 +151,7 @@ export default function HtmlEmailDevelopmentServices() {
         <h1>HTML Email Development Services<br/>Pixel-Perfect Emails That Render Everywhere</h1>
         <p>We build responsive HTML email templates that render flawlessly across Gmail, Outlook, Apple Mail, and 90+ email clients. From campaign templates to full transactional email suites — hand-coded, tested, and ready to deploy.</p>
         <div className="hem-hero-btns">
-          <Link href="/contact" className="hem-btn-primary">Get a Free Email Template Quote →</Link>
+          <Link href="/contact-us" className="hem-btn-primary">Get a Free Email Template Quote →</Link>
           <Link href="/portfolio" className="hem-btn-outline">View Portfolio</Link>
         </div>
       </section>
@@ -202,7 +202,7 @@ export default function HtmlEmailDevelopmentServices() {
         <div className="hem-wrap">
           <h2>Ready to Build HTML Emails That Actually Render?</h2>
           <p>Tell us your ESP, send volume, and template needs — we'll quote within 24 hours and deliver your first template in under a week.</p>
-          <Link href="/contact" className="hem-btn-primary">Get a Free Template Quote →</Link>
+          <Link href="/contact-us" className="hem-btn-primary">Get a Free Template Quote →</Link>
         </div>
       </section>
     </>

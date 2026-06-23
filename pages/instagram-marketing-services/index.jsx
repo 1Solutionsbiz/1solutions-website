@@ -150,7 +150,7 @@ export default function InstagramMarketingServices() {
             <h1 className="igm-h1">Instagram Marketing Services — Reels, Growth & Sales for Your Brand</h1>
             <p className="igm-sub">Content strategy, Reels production, Instagram Ads, Shopping integration, and community management — everything your Instagram needs to grow an engaged audience and drive real business results.</p>
             <div className="igm-btns">
-              <Link href="/contact" className="igm-btn-p">Get an Instagram Marketing Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="igm-btn-p">Get an Instagram Marketing Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/facebook-management-services" className="igm-btn-s">Facebook Management</Link>
             </div>
             <div className="igm-stats">{STATS.map(s => <div key={s.label} className="igm-stat"><div className="igm-stat-l">{s.label}</div><div className="igm-stat-v">{s.val}</div></div>)}</div>
@@ -186,7 +186,7 @@ export default function InstagramMarketingServices() {
             <h2 className="igm-cta-t">Start Your Instagram Marketing Strategy</h2>
             <p className="igm-cta-s">We&rsquo;ll audit your current Instagram profile and competitor landscape — and build a strategy around the content formats and tactics that will grow your specific audience.</p>
             <div className="igm-cta-btns">
-              <Link href="/contact" className="igm-btn-p">Get an Instagram Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="igm-btn-p">Get an Instagram Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/social-media-marketing-services" className="igm-btn-s">Social Media Overview</Link>
             </div>
           </div>

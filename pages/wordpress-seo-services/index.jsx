@@ -157,7 +157,7 @@ export default function WordPressSeoServices() {
             <h1 className="wpseo-h1">WordPress SEO Services That Grow Organic Traffic</h1>
             <p className="wpseo-sub">Technical audits, plugin configuration, Core Web Vitals optimisation, and content strategy — specialist WordPress SEO that fixes the platform-specific issues holding your site back.</p>
             <div className="wpseo-btns">
-              <Link href="/contact" className="wpseo-btn-p">Get a Free WordPress SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="wpseo-btn-p">Get a Free WordPress SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/wordpress-development-company" className="wpseo-btn-s">WordPress Development</Link>
             </div>
             <div className="wpseo-stats">{STATS.map(s => <div key={s.label} className="wpseo-stat"><div className="wpseo-stat-l">{s.label}</div><div className="wpseo-stat-v">{s.val}</div></div>)}</div>
@@ -193,7 +193,7 @@ export default function WordPressSeoServices() {
             <h2 className="wpseo-cta-t">Get Your Free WordPress SEO Audit</h2>
             <p className="wpseo-cta-s">We&rsquo;ll review your WordPress site&rsquo;s technical health, plugin setup, Core Web Vitals, and keyword rankings — and send you a priority action plan free.</p>
             <div className="wpseo-cta-btns">
-              <Link href="/contact" className="wpseo-btn-p">Get Free WordPress SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="wpseo-btn-p">Get Free WordPress SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/affordable-seo-packages" className="wpseo-btn-s">View SEO Packages</Link>
             </div>
           </div>

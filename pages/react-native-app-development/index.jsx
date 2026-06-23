@@ -466,7 +466,7 @@ export default function ReactNativeAppDevelopment() {
               One codebase, two platforms, native performance. We build custom React Native apps for startups and established businesses across the US, Canada, and Australia — from concept to App Store launch.
             </p>
             <div className="rn-hero-btns">
-              <Link href="/contact" className="rn-btn-primary">
+              <Link href="/contact-us" className="rn-btn-primary">
                 Get a Free App Consultation
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </Link>
@@ -602,7 +602,7 @@ export default function ReactNativeAppDevelopment() {
               Book a free consultation call. We&rsquo;ll review your app idea, scope the core features, and give you a ballpark cost and timeline — no obligation.
             </p>
             <div className="rn-cta-btns">
-              <Link href="/contact" className="rn-btn-primary">
+              <Link href="/contact-us" className="rn-btn-primary">
                 Book a Free Consultation
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </Link>

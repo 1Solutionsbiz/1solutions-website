@@ -155,7 +155,7 @@ export default function HirePHPDeveloper() {
         <h1>Hire PHP Developers<br/>Laravel, Symfony &amp; WordPress Experts</h1>
         <p>Pre-vetted PHP 8.x engineers for web applications, APIs, and CMS platforms. Clean code, tested, and production-ready. Profiles in 48 hours.</p>
         <div className="hphp-hero-btns">
-          <Link href="/contact" className="hphp-btn-primary">Hire a PHP Developer →</Link>
+          <Link href="/contact-us" className="hphp-btn-primary">Hire a PHP Developer →</Link>
           <Link href="/portfolio" className="hphp-btn-outline">View Portfolio</Link>
         </div>
       </section>
@@ -245,7 +245,7 @@ export default function HirePHPDeveloper() {
         <div className="hphp-wrap">
           <h2>Ready to Hire Your PHP Developer?</h2>
           <p>Share your requirements and receive matched PHP specialist profiles within 48 hours — no commitment required.</p>
-          <Link href="/contact" className="hphp-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us" className="hphp-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

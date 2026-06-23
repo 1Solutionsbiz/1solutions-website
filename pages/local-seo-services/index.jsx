@@ -288,7 +288,7 @@ export default function LocalSeoServices() {
             <h1 className="lseo-hero-h1">Rank in the Google Maps Pack and Dominate Local Search</h1>
             <p className="lseo-hero-sub">GBP optimisation, citation building, review strategy, and geo-targeted location pages that drive real foot traffic, calls, and direction requests — not just rankings.</p>
             <div className="lseo-hero-btns">
-              <Link href="/contact" className="lseo-btn-primary">
+              <Link href="/contact-us" className="lseo-btn-primary">
                 Get a Free Local SEO Audit
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </Link>
@@ -397,7 +397,7 @@ export default function LocalSeoServices() {
             <h2 className="lseo-cta-title">Get Your Free Local SEO Audit</h2>
             <p className="lseo-cta-sub">We&rsquo;ll review your Google Business Profile, local rankings, citation health, and competitor map pack positions — and share a clear action plan, completely free.</p>
             <div className="lseo-cta-btns">
-              <Link href="/contact" className="lseo-btn-primary">
+              <Link href="/contact-us" className="lseo-btn-primary">
                 Request Free Local SEO Audit
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </Link>

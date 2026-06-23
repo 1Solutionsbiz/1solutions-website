@@ -151,7 +151,7 @@ export default function WebDevelopmentServices() {
         <h1>Web Development Services<br/>Custom Websites, Web Apps &amp; E-Commerce</h1>
         <p>We design and build custom websites, web applications, e-commerce stores, and SaaS platforms that perform under real-world traffic and convert visitors into customers. 15+ years, 1,200+ projects delivered for businesses across the US, Canada, and Australia.</p>
         <div className="wds-hero-btns">
-          <Link href="/contact" className="wds-btn-primary">Get a Free Web Development Quote →</Link>
+          <Link href="/contact-us" className="wds-btn-primary">Get a Free Web Development Quote →</Link>
           <Link href="/portfolio" className="wds-btn-outline">View Portfolio</Link>
         </div>
       </section>
@@ -202,7 +202,7 @@ export default function WebDevelopmentServices() {
         <div className="wds-wrap">
           <h2>Ready to Build Your Website or Web Application?</h2>
           <p>Tell us about your project and we'll deliver a detailed proposal with timeline and fixed price within 48 hours — no commitment required.</p>
-          <Link href="/contact" className="wds-btn-primary">Get a Free Web Development Quote →</Link>
+          <Link href="/contact-us" className="wds-btn-primary">Get a Free Web Development Quote →</Link>
         </div>
       </section>
     </>

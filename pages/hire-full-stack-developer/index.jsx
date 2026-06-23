@@ -158,7 +158,7 @@ export default function HireFullStackDeveloper() {
         <h1>Hire Full Stack Developers<br/>Who Own the Whole Product</h1>
         <p>Pre-vetted MERN, MEAN, Django, and Next.js engineers who deliver from database schema to pixel-perfect UI. Profiles in 48 hours.</p>
         <div className="hfsd-hero-btns">
-          <Link href="/contact" className="hfsd-btn-primary">Hire a Full Stack Developer →</Link>
+          <Link href="/contact-us" className="hfsd-btn-primary">Hire a Full Stack Developer →</Link>
           <Link href="/portfolio" className="hfsd-btn-outline">View Portfolio</Link>
         </div>
       </section>
@@ -253,7 +253,7 @@ export default function HireFullStackDeveloper() {
         <div className="hfsd-wrap">
           <h2>Ready to Hire Your Full Stack Developer?</h2>
           <p>Share your requirements and receive matched developer profiles within 48 hours — no commitment required to view CVs.</p>
-          <Link href="/contact" className="hfsd-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us" className="hfsd-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

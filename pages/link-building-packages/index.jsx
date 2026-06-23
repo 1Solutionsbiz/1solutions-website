@@ -211,7 +211,7 @@ export default function LinkBuildingPackages() {
             <h1 className="lbp-h1">Link Building Packages — High-DA Backlinks Through Manual Outreach</h1>
             <p className="lbp-sub">White-hat link building packages with transparent monthly pricing — guest posts, niche edits, and digital PR from DR40+ to DR60+ niche-relevant websites. Every link reported, every placement tracked.</p>
             <div className="lbp-btns">
-              <Link href="/contact" className="lbp-btn-p">Talk to a Link Building Specialist <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="lbp-btn-p">Talk to a Link Building Specialist <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/seo-services-company" className="lbp-btn-s">SEO Services Overview</Link>
             </div>
             <div className="lbp-stats">{STATS.map(s => <div key={s.label} className="lbp-stat"><div className="lbp-stat-l">{s.label}</div><div className="lbp-stat-v">{s.val}</div></div>)}</div>
@@ -243,7 +243,7 @@ export default function LinkBuildingPackages() {
                   </div>
                   <div className="lbp-billed">{isYearly ? 'Billed annually' : 'Billed monthly'}</div>
                   <div className="lbp-save-line">{isYearly ? `Save $${plan.yearlySave.toLocaleString()} per year` : ' '}</div>
-                  <Link href="/contact" className="lbp-cta-card">Get Started →</Link>
+                  <Link href="/contact-us" className="lbp-cta-card">Get Started →</Link>
                   <div className="lbp-divider"/>
                   <ul className="lbp-feat-list">
                     {plan.features.map(f => <li key={f}>{CHECK}<span>{f}</span></li>)}
@@ -274,7 +274,7 @@ export default function LinkBuildingPackages() {
             <h2 className="lbp-cta-t">Get a Free Backlink Gap Analysis</h2>
             <p className="lbp-cta-s">Share your domain and top competitors — we&rsquo;ll analyse the backlink gap and recommend exactly how many links per month are needed to close it.</p>
             <div className="lbp-btns">
-              <Link href="/contact" className="lbp-btn-p">Request a Free Backlink Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="lbp-btn-p">Request a Free Backlink Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/ecommerce-seo-packages" className="lbp-btn-s">Ecommerce SEO Packages</Link>
             </div>
           </div>

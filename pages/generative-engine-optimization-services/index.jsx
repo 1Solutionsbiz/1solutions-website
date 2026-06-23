@@ -153,7 +153,7 @@ export default function GenerativeEngineOptimizationServices() {
             <h1 className="geo-h1">Generative Engine Optimisation — Get Cited in AI Search Answers</h1>
             <p className="geo-sub">Optimise your content for citation in Google AI Overviews, ChatGPT Search, Perplexity, and Gemini — the new frontier of search visibility where being cited replaces being ranked.</p>
             <div className="geo-btns">
-              <Link href="/contact" className="geo-btn-p">Start Your GEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="geo-btn-p">Start Your GEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/answer-engine-optimization-services" className="geo-btn-s">Answer Engine Optimisation</Link>
             </div>
             <div className="geo-stats">{STATS.map(s => <div key={s.label} className="geo-stat"><div className="geo-stat-l">{s.label}</div><div className="geo-stat-v">{s.val}</div></div>)}</div>
@@ -189,7 +189,7 @@ export default function GenerativeEngineOptimizationServices() {
             <h2 className="geo-cta-t">Start Your Generative Engine Optimisation Strategy</h2>
             <p className="geo-cta-s">We&rsquo;ll audit your current AI visibility, identify where competitors are cited instead of you, and build a content strategy that earns citations across Google, ChatGPT, and Perplexity.</p>
             <div className="geo-cta-btns">
-              <Link href="/contact" className="geo-btn-p">Start GEO Strategy <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="geo-btn-p">Start GEO Strategy <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/seo-services-company" className="geo-btn-s">SEO Services Overview</Link>
             </div>
           </div>

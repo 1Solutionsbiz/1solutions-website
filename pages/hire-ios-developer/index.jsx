@@ -159,7 +159,7 @@ export default function HireIOSDeveloper() {
         <h1>Hire iOS Developers<br/>Native Swift Expertise</h1>
         <p>Pre-vetted Swift and SwiftUI engineers for iPhone, iPad, Apple Watch, and tvOS. Beautiful apps, flawless App Store submissions. Profiles in 48 hours.</p>
         <div className="hios-hero-btns">
-          <Link href="/contact" className="hios-btn-primary">Hire an iOS Developer →</Link>
+          <Link href="/contact-us" className="hios-btn-primary">Hire an iOS Developer →</Link>
           <Link href="/portfolio" className="hios-btn-outline">View Portfolio</Link>
         </div>
       </section>
@@ -254,7 +254,7 @@ export default function HireIOSDeveloper() {
         <div className="hios-wrap">
           <h2>Ready to Hire Your iOS Developer?</h2>
           <p>Share your requirements and receive matched iOS specialist profiles within 48 hours — no commitment required.</p>
-          <Link href="/contact" className="hios-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us" className="hios-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

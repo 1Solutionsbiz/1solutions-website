@@ -147,8 +147,8 @@ export default function PpcManagementServices() {
           <h1 className="gppc-h1">Google Ads Management That<br/>Turns Budget Into Revenue</h1>
           <p className="gppc-p">1Solutions manages Google Ads campaigns that drive qualified leads and sales — not just clicks. Search, Shopping, Display, YouTube, and Performance Max, all optimised weekly for your CPA and ROAS targets.</p>
           <div className="gppc-btns">
-            <Link href="/contact" className="gppc-bp">Get a Free PPC Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-            <Link href="/contact" className="gppc-bs">Discuss Your Campaigns</Link>
+            <Link href="/contact-us" className="gppc-bp">Get a Free PPC Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+            <Link href="/contact-us" className="gppc-bs">Discuss Your Campaigns</Link>
           </div>
           <div className="gppc-tr">{['Flat management fee','You own your account','No long-term lock-in','Weekly optimisation'].map(t=><span key={t} className="gppc-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={ACCENT} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>{t}</span>)}</div>
           <div className="gppc-sbar">{[{num:'400+',lbl:'PPC Clients'},{num:'15+',lbl:'Years Experience'},{num:'3.8×',lbl:'Avg ROAS'},{num:'97%',lbl:'Retention Rate'}].map(s=><div key={s.lbl} className="gppc-si"><span className="gppc-sn">{s.num}</span><span className="gppc-sl">{s.lbl}</span></div>)}</div>
@@ -187,8 +187,8 @@ export default function PpcManagementServices() {
         <h2 className="gppc-cth">Get a Free Google Ads Audit</h2>
         <p className="gppc-ctp">We will review your campaigns, identify wasted spend, and share a clear plan for improving ROAS and reducing CPA — completely free.</p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
-          <Link href="/contact" className="gppc-bp">Request Free PPC Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-          <Link href="/contact" className="gppc-bs">Talk to a PPC Specialist</Link>
+          <Link href="/contact-us" className="gppc-bp">Request Free PPC Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+          <Link href="/contact-us" className="gppc-bs">Talk to a PPC Specialist</Link>
         </div>
       </div></section>
     </>

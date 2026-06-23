@@ -156,7 +156,7 @@ export default function HirePrestaShopDeveloper() {
         <h1>Hire PrestaShop Developers<br/>Custom Modules &amp; Store Builds</h1>
         <p>Pre-vetted PrestaShop 1.7 &amp; 8 specialists for custom module development, theme builds, platform migrations, and multi-store setups. Profiles in 48 hours.</p>
         <div className="hpres-hero-btns">
-          <Link href="/contact" className="hpres-btn-primary">Hire a PrestaShop Developer →</Link>
+          <Link href="/contact-us" className="hpres-btn-primary">Hire a PrestaShop Developer →</Link>
           <Link href="/portfolio" className="hpres-btn-outline">View Portfolio</Link>
         </div>
       </section>
@@ -246,7 +246,7 @@ export default function HirePrestaShopDeveloper() {
         <div className="hpres-wrap">
           <h2>Ready to Hire Your PrestaShop Developer?</h2>
           <p>Share your store requirements and receive matched PrestaShop specialist profiles within 48 hours.</p>
-          <Link href="/contact" className="hpres-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us" className="hpres-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

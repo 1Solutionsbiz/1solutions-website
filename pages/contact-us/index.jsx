@@ -125,7 +125,7 @@ export default function ContactPage() {
           name="description"
           content="Get in touch with 1Solutions. Tell us about your project and we'll respond within 24 hours with a tailored plan. Serving clients in the US, Canada, and Australia."
         />
-        <link rel="canonical" href="https://www.1solutions.biz/contact/" />
+        <link rel="canonical" href="https://www.1solutions.biz/contact-us/" />
         <style>{`
           /* ─── Base ─── */
           .co-page {

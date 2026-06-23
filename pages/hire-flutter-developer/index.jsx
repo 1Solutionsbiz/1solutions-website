@@ -159,7 +159,7 @@ export default function HireFlutterDeveloper() {
         <h1>Hire Flutter Developers<br/>One Codebase, Every Platform</h1>
         <p>Pre-vetted Dart &amp; Flutter 3.x experts delivering iOS, Android, web, and desktop apps from a single high-performance codebase. Profiles in 48 hours.</p>
         <div className="hflut-hero-btns">
-          <Link href="/contact" className="hflut-btn-primary">Hire a Flutter Developer →</Link>
+          <Link href="/contact-us" className="hflut-btn-primary">Hire a Flutter Developer →</Link>
           <Link href="/portfolio" className="hflut-btn-outline">View Portfolio</Link>
         </div>
       </section>
@@ -254,7 +254,7 @@ export default function HireFlutterDeveloper() {
         <div className="hflut-wrap">
           <h2>Ready to Hire Your Flutter Developer?</h2>
           <p>Share your requirements and receive matched Flutter specialist profiles within 48 hours — no commitment required.</p>
-          <Link href="/contact" className="hflut-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us" className="hflut-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

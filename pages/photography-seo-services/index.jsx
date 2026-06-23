@@ -149,7 +149,7 @@ export default function PhotographySeoServices() {
             <h1 className="phseo-h1">Photography SEO Services — Rank Higher &amp; Book More Clients from Google</h1>
             <p className="phseo-sub">SEO services built specifically for photographers — local search optimisation, portfolio page SEO, image optimisation, and content strategy to generate consistent enquiries from organic search.</p>
             <div className="phseo-btns">
-              <Link href="/contact" className="phseo-btn-p">Get a Free Photography SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="phseo-btn-p">Get a Free Photography SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/local-seo-services" className="phseo-btn-s">Local SEO Services</Link>
             </div>
             <div className="phseo-stats">{STATS.map(s => <div key={s.label} className="phseo-stat"><div className="phseo-stat-l">{s.label}</div><div className="phseo-stat-v">{s.val}</div></div>)}</div>
@@ -182,7 +182,7 @@ export default function PhotographySeoServices() {
             <h2 className="phseo-cta-t">Get a Free Photography Website SEO Audit</h2>
             <p className="phseo-cta-s">We&rsquo;ll audit your website, your Google Business Profile, and your local keyword rankings — and show you exactly what to fix to generate more organic enquiries.</p>
             <div className="phseo-btns">
-              <Link href="/contact" className="phseo-btn-p">Request a Free Photography SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="phseo-btn-p">Request a Free Photography SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/local-seo-packages" className="phseo-btn-s">Local SEO Packages</Link>
             </div>
           </div>

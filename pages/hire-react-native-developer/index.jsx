@@ -155,7 +155,7 @@ export default function HireReactNativeDeveloper() {
         <h1>Hire React Native Developers<br/>iOS &amp; Android from One Codebase</h1>
         <p>Pre-vetted React Native engineers with native module experience — shipping polished cross-platform apps to the App Store and Google Play. Profiles in 48 hours.</p>
         <div className="hrnd-hero-btns">
-          <Link href="/contact" className="hrnd-btn-primary">Hire a React Native Developer →</Link>
+          <Link href="/contact-us" className="hrnd-btn-primary">Hire a React Native Developer →</Link>
           <Link href="/portfolio" className="hrnd-btn-outline">View Portfolio</Link>
         </div>
       </section>
@@ -206,7 +206,7 @@ export default function HireReactNativeDeveloper() {
         <div className="hrnd-wrap">
           <h2>Ready to Hire Your React Native Developer?</h2>
           <p>Share your requirements and receive matched React Native specialist profiles within 48 hours — no commitment required.</p>
-          <Link href="/contact" className="hrnd-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us" className="hrnd-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

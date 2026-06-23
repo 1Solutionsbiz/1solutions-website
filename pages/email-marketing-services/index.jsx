@@ -146,8 +146,8 @@ export default function EmailMarketingServices() {
           <h1 className="emkt-h1">Email Marketing That Nurtures Leads and Drives Repeat Revenue</h1>
           <p className="emkt-p">1Solutions builds email marketing programs that work while you sleep — automated welcome sequences, cart recovery flows, and nurture campaigns that turn subscribers into customers and customers into loyal advocates.</p>
           <div className="emkt-btns">
-            <Link href="/contact" className="emkt-bp">Get a Free Email Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-            <Link href="/contact" className="emkt-bs">Discuss Your Email Program</Link>
+            <Link href="/contact-us" className="emkt-bp">Get a Free Email Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+            <Link href="/contact-us" className="emkt-bs">Discuss Your Email Program</Link>
           </div>
           <div className="emkt-tr">{['Revenue-attributed reporting','GDPR compliant','Platform agnostic','Deliverability managed'].map(t=><span key={t} className="emkt-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={ACCENT} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>{t}</span>)}</div>
           <div className="emkt-sbar">{[{num:'28%',lbl:'Revenue from Email'},{num:'52%',lbl:'Welcome Open Rate'},{num:'3.9×',lbl:'Cart Recovery'},{num:'15+',lbl:'Years Experience'}].map(s=><div key={s.lbl} className="emkt-si"><span className="emkt-sn">{s.num}</span><span className="emkt-sl">{s.lbl}</span></div>)}</div>
@@ -186,8 +186,8 @@ export default function EmailMarketingServices() {
         <h2 className="emkt-cth">Get a Free Email Marketing Audit</h2>
         <p className="emkt-ctp">We will review your current email program, deliverability health, automation flows, and list segmentation — and share a revenue roadmap for your email channel.</p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
-          <Link href="/contact" className="emkt-bp">Request Free Email Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-          <Link href="/contact" className="emkt-bs">Talk to an Email Specialist</Link>
+          <Link href="/contact-us" className="emkt-bp">Request Free Email Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+          <Link href="/contact-us" className="emkt-bs">Talk to an Email Specialist</Link>
         </div>
       </div></section>
     </>

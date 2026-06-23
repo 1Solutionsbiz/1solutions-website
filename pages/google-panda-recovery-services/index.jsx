@@ -150,7 +150,7 @@ export default function GooglePandaRecoveryServices() {
             <h1 className="panda-h1">Google Panda Recovery Services — Fix Thin Content &amp; Restore Lost Rankings</h1>
             <p className="panda-sub">Specialist Google Panda and Helpful Content Update recovery — content quality audits, E-E-A-T content rewriting, consolidation strategy, and thin content removal to recover your organic traffic after a content quality penalty.</p>
             <div className="panda-btns">
-              <Link href="/contact" className="panda-btn-p">Get a Free Content Quality Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="panda-btn-p">Get a Free Content Quality Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/google-penalty-recovery-services" className="panda-btn-s">All Penalty Recovery Services</Link>
             </div>
             <div className="panda-stats">{STATS.map(s => <div key={s.label} className="panda-stat"><div className="panda-stat-l">{s.label}</div><div className="panda-stat-v">{s.val}</div></div>)}</div>
@@ -183,7 +183,7 @@ export default function GooglePandaRecoveryServices() {
             <h2 className="panda-cta-t">Get a Free Content Quality Diagnosis</h2>
             <p className="panda-cta-s">Share your domain and traffic drop date — we&rsquo;ll identify exactly which Panda or Helpful Content Update hit you, audit your content quality, and outline a recovery plan.</p>
             <div className="panda-btns">
-              <Link href="/contact" className="panda-btn-p">Request a Free Content Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="panda-btn-p">Request a Free Content Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/content-copywriting-services" className="panda-btn-s">Content Writing Services</Link>
             </div>
           </div>

@@ -307,7 +307,7 @@ export default function RestaurantsSeoServices() {
           <h2 className="rtseo-cta-h">Get Your Free Restaurant SEO Audit</h2>
           <p className="rtseo-cta-p">We will audit your GBP, website, review profile, and competitor landscape — and deliver a prioritised action plan for growing your reservations and orders from local search. Free, no obligation.</p>
           <div style={{ display:'flex', gap:14, justifyContent:'center', flexWrap:'wrap' }}>
-            <Link href="/contact" className="rtseo-btn-p">
+            <Link href="/contact-us" className="rtseo-btn-p">
               Request Free Audit
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </Link>

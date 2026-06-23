@@ -155,7 +155,7 @@ export default function MagentoSeoServices() {
             <h1 className="mgseo-h1">Magento SEO Services for Large Ecommerce Catalogues</h1>
             <p className="mgseo-sub">Fix layered navigation, resolve duplicate content, and drive organic revenue growth on Magento 2 and Adobe Commerce — with platform-native technical expertise and scalable processes.</p>
             <div className="mgseo-btns">
-              <Link href="/contact" className="mgseo-btn-p">Get a Free Magento SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="mgseo-btn-p">Get a Free Magento SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/magento-development-company" className="mgseo-btn-s">Magento Development</Link>
             </div>
             <div className="mgseo-stats">{STATS.map(s => <div key={s.label} className="mgseo-stat"><div className="mgseo-stat-l">{s.label}</div><div className="mgseo-stat-v">{s.val}</div></div>)}</div>
@@ -191,7 +191,7 @@ export default function MagentoSeoServices() {
             <h2 className="mgseo-cta-t">Get Your Free Magento SEO Audit</h2>
             <p className="mgseo-cta-s">We&rsquo;ll audit your layered navigation, duplicate content issues, page speed, and organic keyword gaps — free, with a prioritised action plan.</p>
             <div className="mgseo-cta-btns">
-              <Link href="/contact" className="mgseo-btn-p">Get Free Magento SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="mgseo-btn-p">Get Free Magento SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/ecommerce-seo-services" className="mgseo-btn-s">Ecommerce SEO Services</Link>
             </div>
           </div>

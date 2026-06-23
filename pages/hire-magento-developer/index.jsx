@@ -159,7 +159,7 @@ export default function HireMagentoDeveloper() {
         <h1>Hire Magento Developers<br/>Enterprise eCommerce Expertise</h1>
         <p>Pre-vetted Magento 2 and Adobe Commerce specialists for custom modules, platform migrations, PWA storefronts, and ERP integrations. Profiles in 48 hours.</p>
         <div className="hmag-hero-btns">
-          <Link href="/contact" className="hmag-btn-primary">Hire a Magento Developer →</Link>
+          <Link href="/contact-us" className="hmag-btn-primary">Hire a Magento Developer →</Link>
           <Link href="/portfolio" className="hmag-btn-outline">View Portfolio</Link>
         </div>
       </section>
@@ -254,7 +254,7 @@ export default function HireMagentoDeveloper() {
         <div className="hmag-wrap">
           <h2>Ready to Hire Your Magento Developer?</h2>
           <p>Share your requirements and receive matched Magento specialist profiles within 48 hours — no commitment required to view CVs.</p>
-          <Link href="/contact" className="hmag-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us" className="hmag-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

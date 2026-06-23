@@ -150,7 +150,7 @@ export default function LandingPageDesignServices() {
             <h1 className="lpd-h1">Landing Page Design Services — Pages Built to Convert, Not Just Impress</h1>
             <p className="lpd-sub">Conversion-first landing page design with integrated copywriting — for PPC campaigns, lead generation, sales, and events. 400+ pages built with an average +35% conversion rate lift.</p>
             <div className="lpd-btns">
-              <Link href="/contact" className="lpd-btn-p">Get a Landing Page Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="lpd-btn-p">Get a Landing Page Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/conversion-rate-optimization-services" className="lpd-btn-s">CRO Services</Link>
             </div>
             <div className="lpd-stats">{STATS.map(s => <div key={s.label} className="lpd-stat"><div className="lpd-stat-l">{s.label}</div><div className="lpd-stat-v">{s.val}</div></div>)}</div>
@@ -186,7 +186,7 @@ export default function LandingPageDesignServices() {
             <h2 className="lpd-cta-t">Get Your Landing Page Designed</h2>
             <p className="lpd-cta-s">Tell us about your campaign goal, traffic source, and audience — we&rsquo;ll send you a tailored quote and timeline within 24 hours.</p>
             <div className="lpd-cta-btns">
-              <Link href="/contact" className="lpd-btn-p">Get a Landing Page Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="lpd-btn-p">Get a Landing Page Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/conversion-rate-optimization-services" className="lpd-btn-s">CRO Services</Link>
             </div>
           </div>

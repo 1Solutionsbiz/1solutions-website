@@ -146,8 +146,8 @@ export default function RemarketingServices() {
           <h1 className="remk-h1">Remarketing Campaigns That Turn Lost Visitors Into Customers</h1>
           <p className="remk-p">1Solutions manages cross-channel remarketing campaigns that re-engage the 97% of visitors who leave without converting — with audience-specific creative, dynamic product ads, and funnel-stage sequencing.</p>
           <div className="remk-btns">
-            <Link href="/contact" className="remk-bp">Get a Free Remarketing Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-            <Link href="/contact" className="remk-bs">Discuss Your Retargeting Strategy</Link>
+            <Link href="/contact-us" className="remk-bp">Get a Free Remarketing Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+            <Link href="/contact-us" className="remk-bs">Discuss Your Retargeting Strategy</Link>
           </div>
           <div className="remk-tr">{['Cross-channel coverage','Dynamic product ads','Privacy-compliant setup','Flat management fee'].map(t=><span key={t} className="remk-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={ACCENT} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>{t}</span>)}</div>
           <div className="remk-sbar">{[{num:'5.2×',lbl:'Cart Recovery ROAS'},{num:'44%',lbl:'Lower CPA'},{num:'4',lbl:'Channels Covered'},{num:'97%',lbl:'Visitor Recovery Focus'}].map(s=><div key={s.lbl} className="remk-si"><span className="remk-sn">{s.num}</span><span className="remk-sl">{s.lbl}</span></div>)}</div>
@@ -186,8 +186,8 @@ export default function RemarketingServices() {
         <h2 className="remk-cth">Get a Free Remarketing Audit</h2>
         <p className="remk-ctp">We will review your current remarketing setup, identify missed audience segments, and share a cross-channel strategy for converting more of the traffic you are already paying for.</p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
-          <Link href="/contact" className="remk-bp">Request Free Remarketing Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-          <Link href="/contact" className="remk-bs">Talk to a Retargeting Specialist</Link>
+          <Link href="/contact-us" className="remk-bp">Request Free Remarketing Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+          <Link href="/contact-us" className="remk-bs">Talk to a Retargeting Specialist</Link>
         </div>
       </div></section>
     </>

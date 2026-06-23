@@ -155,7 +155,7 @@ export default function HireMEANStackDeveloper() {
         <h1>Hire MEAN Stack Developers<br/>MongoDB · Express · Angular · Node.js</h1>
         <p>Pre-vetted engineers who own the full MEAN stack — from MongoDB schemas to Angular UI — and ship production-grade apps with TypeScript throughout. Profiles in 48 hours.</p>
         <div className="hmean-hero-btns">
-          <Link href="/contact" className="hmean-btn-primary">Hire a MEAN Stack Developer →</Link>
+          <Link href="/contact-us" className="hmean-btn-primary">Hire a MEAN Stack Developer →</Link>
           <Link href="/portfolio" className="hmean-btn-outline">View Portfolio</Link>
         </div>
       </section>
@@ -245,7 +245,7 @@ export default function HireMEANStackDeveloper() {
         <div className="hmean-wrap">
           <h2>Ready to Hire Your MEAN Stack Developer?</h2>
           <p>Share your requirements and receive matched developer profiles within 48 hours — no commitment required.</p>
-          <Link href="/contact" className="hmean-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us" className="hmean-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

@@ -158,7 +158,7 @@ export default function HireAppDeveloper() {
         <h1>Hire Mobile App Developers<br/>Across Every Platform</h1>
         <p>iOS, Android, Flutter, and React Native experts — pre-vetted, available immediately, and matched to your requirements in 48 hours.</p>
         <div className="hapd-hero-btns">
-          <Link href="/contact" className="hapd-btn-primary">Hire an App Developer →</Link>
+          <Link href="/contact-us" className="hapd-btn-primary">Hire an App Developer →</Link>
           <Link href="/portfolio" className="hapd-btn-outline">View Portfolio</Link>
         </div>
       </section>
@@ -253,7 +253,7 @@ export default function HireAppDeveloper() {
         <div className="hapd-wrap">
           <h2>Ready to Hire Your App Developer?</h2>
           <p>Share your requirements and receive matched developer profiles within 48 hours — no commitment required to view profiles.</p>
-          <Link href="/contact" className="hapd-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us" className="hapd-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

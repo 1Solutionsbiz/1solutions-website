@@ -307,7 +307,7 @@ export default function PlumbingSeoServices() {
           <h2 className="plseo-cta-h">Get Your Free Plumbing SEO Audit</h2>
           <p className="plseo-cta-p">We will audit your GBP, website, and local citations — identify the gaps between you and your map pack competitors — and deliver a prioritised action plan. Free, with no obligation.</p>
           <div style={{ display:'flex', gap:14, justifyContent:'center', flexWrap:'wrap' }}>
-            <Link href="/contact" className="plseo-btn-p">
+            <Link href="/contact-us" className="plseo-btn-p">
               Request Free Audit
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </Link>

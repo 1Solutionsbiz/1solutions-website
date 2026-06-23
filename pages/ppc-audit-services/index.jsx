@@ -146,8 +146,8 @@ export default function PpcAuditServices() {
           <h1 className="ppca-h1">PPC Audit That Finds Where Your Ad Budget Is Being Wasted</h1>
           <p className="ppca-p">1Solutions delivers a comprehensive 100-point PPC audit covering Google Ads and Meta Ads — identifying wasted spend, tracking errors, audience gaps, and structural issues that are costing you ROAS right now.</p>
           <div className="ppca-btns">
-            <Link href="/contact" className="ppca-bp">Request a PPC Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-            <Link href="/contact" className="ppca-bs">Ask About the Audit</Link>
+            <Link href="/contact-us" className="ppca-bp">Request a PPC Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+            <Link href="/contact-us" className="ppca-bs">Ask About the Audit</Link>
           </div>
           <div className="ppca-tr">{['100-point framework','Delivered in 5 days','Read-only access only','No obligation to proceed'].map(t=><span key={t} className="ppca-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={ACCENT} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>{t}</span>)}</div>
           <div className="ppca-sbar">{[{num:'500+',lbl:'Accounts Audited'},{num:'15+',lbl:'Years Experience'},{num:'41%',lbl:'Avg Waste Found'},{num:'5',lbl:'Day Delivery'}].map(s=><div key={s.lbl} className="ppca-si"><span className="ppca-sn">{s.num}</span><span className="ppca-sl">{s.lbl}</span></div>)}</div>
@@ -186,8 +186,8 @@ export default function PpcAuditServices() {
         <h2 className="ppca-cth">Request a PPC Audit — Delivered in 5 Days</h2>
         <p className="ppca-ctp">We will review your Google Ads and Meta Ads accounts across 100 checkpoints — and deliver a prioritised action plan with specific fixes your team can implement immediately.</p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
-          <Link href="/contact" className="ppca-bp">Request PPC Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-          <Link href="/contact" className="ppca-bs">Talk to a PPC Specialist</Link>
+          <Link href="/contact-us" className="ppca-bp">Request PPC Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+          <Link href="/contact-us" className="ppca-bs">Talk to a PPC Specialist</Link>
         </div>
       </div></section>
     </>

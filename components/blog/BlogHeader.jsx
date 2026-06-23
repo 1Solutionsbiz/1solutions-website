@@ -415,7 +415,7 @@ export default function BlogHeader() {
           </nav>
 
           <div className="bh-cta-wrap">
-            <Link href="/contact" className="bh-cta" onClick={close}>Contact Us →</Link>
+            <Link href="/contact-us" className="bh-cta" onClick={close}>Contact Us →</Link>
           </div>
 
           <button
@@ -506,7 +506,7 @@ export default function BlogHeader() {
             <div className="bh-ind-footer">
               <div className="bh-ind-footer-left">
                 <span className="bh-ind-footer-text">Not sure which service fits your needs?</span>
-                <Link href="/contact" className="bh-ind-footer-cta" onClick={close}>Talk to our team →</Link>
+                <Link href="/contact-us" className="bh-ind-footer-cta" onClick={close}>Talk to our team →</Link>
               </div>
               <div className="bh-ind-footer-right">
                 <a href="mailto:info@1solutions.biz" className="bh-ind-footer-contact">
@@ -552,7 +552,7 @@ export default function BlogHeader() {
             <div className="bh-ind-footer">
               <div className="bh-ind-footer-left">
                 <span className="bh-ind-footer-text">Ready to get started?</span>
-                <Link href="/contact" className="bh-ind-footer-cta" onClick={close}>Let&apos;s Talk →</Link>
+                <Link href="/contact-us" className="bh-ind-footer-cta" onClick={close}>Let&apos;s Talk →</Link>
               </div>
               <div className="bh-ind-footer-right">
                 <a href="mailto:info@1solutions.biz" className="bh-ind-footer-contact">
@@ -597,7 +597,7 @@ export default function BlogHeader() {
             <div className="bh-ind-footer">
               <div className="bh-ind-footer-left">
                 <span className="bh-ind-footer-text">Ready to get started?</span>
-                <Link href="/contact" className="bh-ind-footer-cta" onClick={close}>Let&apos;s Talk →</Link>
+                <Link href="/contact-us" className="bh-ind-footer-cta" onClick={close}>Let&apos;s Talk →</Link>
               </div>
               <div className="bh-ind-footer-right">
                 <a href="mailto:info@1solutions.biz" className="bh-ind-footer-contact">
@@ -706,7 +706,7 @@ export default function BlogHeader() {
           </a>
         </div>
 
-        <Link href="/contact" className="bh-mob-cta" onClick={close}>Contact Us →</Link>
+        <Link href="/contact-us" className="bh-mob-cta" onClick={close}>Contact Us →</Link>
       </nav>
     </>
   );

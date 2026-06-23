@@ -316,7 +316,7 @@ export default function HireDedicatedResources() {
           <span className="hdr-badge">&#10003; Month-to-Month Flexibility</span>
         </div>
         <div className="hdr-hero-btns">
-          <Link href="/contact" className="hdr-btn-primary">Hire a Resource Now →</Link>
+          <Link href="/contact-us" className="hdr-btn-primary">Hire a Resource Now →</Link>
           <Link href="/portfolio" className="hdr-btn-outline">View Our Work</Link>
         </div>
       </section>
@@ -464,7 +464,7 @@ export default function HireDedicatedResources() {
           <h2>Ready to Hire Your Dedicated Team?</h2>
           <p>Share your requirements and receive matched professional profiles within 48 hours — no commitment required to start the conversation.</p>
           <div className="hdr-cta-btns">
-            <Link href="/contact" className="hdr-btn-amber">Get Matched Profiles →</Link>
+            <Link href="/contact-us" className="hdr-btn-amber">Get Matched Profiles →</Link>
             <Link href="/who-we-are" className="hdr-btn-white">About 1Solutions</Link>
           </div>
         </div>

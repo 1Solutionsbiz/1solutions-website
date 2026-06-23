@@ -151,7 +151,7 @@ export default function KlaviyoEmailMarketingAgency() {
         <h1>Klaviyo Email Marketing Agency<br/>Flows, Campaigns &amp; SMS That Drive E-Commerce Revenue</h1>
         <p>We set up and optimise Klaviyo for DTC and e-commerce brands — from welcome series and abandoned cart flows to post-purchase sequences and SMS campaigns. Certified Klaviyo partners with 15+ years of e-commerce experience.</p>
         <div className="kla-hero-btns">
-          <Link href="/contact" className="kla-btn-primary">Get a Free Klaviyo Audit →</Link>
+          <Link href="/contact-us" className="kla-btn-primary">Get a Free Klaviyo Audit →</Link>
           <Link href="/portfolio" className="kla-btn-outline">View Portfolio</Link>
         </div>
       </section>
@@ -202,7 +202,7 @@ export default function KlaviyoEmailMarketingAgency() {
         <div className="kla-wrap">
           <h2>Ready to Turn Email Into Your Top Revenue Channel?</h2>
           <p>Get a free Klaviyo audit — we&apos;ll review your account, identify revenue gaps, and deliver a prioritised optimisation plan within 48 hours.</p>
-          <Link href="/contact" className="kla-btn-primary">Get Your Free Klaviyo Audit →</Link>
+          <Link href="/contact-us" className="kla-btn-primary">Get Your Free Klaviyo Audit →</Link>
         </div>
       </section>
     </>

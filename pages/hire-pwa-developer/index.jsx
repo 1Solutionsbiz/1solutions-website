@@ -155,7 +155,7 @@ export default function HirePWADeveloper() {
         <h1>Hire PWA Developers<br/>App-Like Experiences on the Web</h1>
         <p>Pre-vetted Progressive Web App specialists — offline-first architecture, Web Push, home screen install, and Lighthouse 100 targets. Profiles in 48 hours.</p>
         <div className="hpwa-hero-btns">
-          <Link href="/contact" className="hpwa-btn-primary">Hire a PWA Developer →</Link>
+          <Link href="/contact-us" className="hpwa-btn-primary">Hire a PWA Developer →</Link>
           <Link href="/portfolio" className="hpwa-btn-outline">View Portfolio</Link>
         </div>
       </section>
@@ -245,7 +245,7 @@ export default function HirePWADeveloper() {
         <div className="hpwa-wrap">
           <h2>Ready to Hire Your PWA Developer?</h2>
           <p>Share your requirements and receive matched PWA specialist profiles within 48 hours — no commitment required.</p>
-          <Link href="/contact" className="hpwa-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us" className="hpwa-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

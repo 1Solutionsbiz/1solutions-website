@@ -150,7 +150,7 @@ export default function EcommerceMarketingServices() {
             <h1 className="ecmkt-h1">Ecommerce Marketing Services — More Traffic, More Revenue, More Repeat Customers</h1>
             <p className="ecmkt-sub">Full-service ecommerce marketing — SEO, Google Shopping, paid social, email automation, and CRO — all coordinated by one team with a single focus: growing your online store revenue.</p>
             <div className="ecmkt-btns">
-              <Link href="/contact" className="ecmkt-btn-p">Get an Ecommerce Marketing Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="ecmkt-btn-p">Get an Ecommerce Marketing Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/conversion-rate-optimization-services" className="ecmkt-btn-s">CRO Services</Link>
             </div>
             <div className="ecmkt-stats">{STATS.map(s => <div key={s.label} className="ecmkt-stat"><div className="ecmkt-stat-l">{s.label}</div><div className="ecmkt-stat-v">{s.val}</div></div>)}</div>
@@ -186,7 +186,7 @@ export default function EcommerceMarketingServices() {
             <h2 className="ecmkt-cta-t">Start Your Ecommerce Marketing Partnership</h2>
             <p className="ecmkt-cta-s">We&rsquo;ll audit your current ecommerce performance, identify the highest-ROI growth opportunities, and build a multi-channel strategy around your revenue targets.</p>
             <div className="ecmkt-cta-btns">
-              <Link href="/contact" className="ecmkt-btn-p">Get an Ecommerce Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="ecmkt-btn-p">Get an Ecommerce Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/seo-services-company" className="ecmkt-btn-s">SEO Services</Link>
             </div>
           </div>

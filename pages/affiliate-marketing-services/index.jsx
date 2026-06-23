@@ -161,8 +161,8 @@ export default function AffiliateMarketingServices() {
         <h1>Affiliate Marketing Services — Build a Performance-Based Revenue Channel</h1>
         <p>We set up and manage affiliate programs that drive sales on pure performance — you only pay for results. From programme architecture and affiliate recruitment to compliance and payout management, we run every part of your affiliate channel.</p>
         <div className="aff-hero-btns">
-          <Link href="/contact" className="aff-btn-primary">Get a Free Affiliate Audit →</Link>
-          <Link href="/contact" className="aff-btn-outline">Learn More</Link>
+          <Link href="/contact-us" className="aff-btn-primary">Get a Free Affiliate Audit →</Link>
+          <Link href="/contact-us" className="aff-btn-outline">Learn More</Link>
         </div>
       </section>
       <section className="aff-sec" ref={skR}>
@@ -212,7 +212,7 @@ export default function AffiliateMarketingServices() {
         <div className="aff-wrap">
           <h2>Ready to Build Your Affiliate Channel?</h2>
           <p>Get a free affiliate program audit — we'll review your current setup (or design one from scratch) and deliver a launch plan within 48 hours.</p>
-          <Link href="/contact" className="aff-btn-primary">Get a Free Affiliate Audit →</Link>
+          <Link href="/contact-us" className="aff-btn-primary">Get a Free Affiliate Audit →</Link>
         </div>
       </section>
     </>

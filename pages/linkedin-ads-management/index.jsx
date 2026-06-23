@@ -146,8 +146,8 @@ export default function LinkedinAdsManagement() {
           <h1 className="lkdn-h1">LinkedIn Ads That Fill Your B2B Pipeline</h1>
           <p className="lkdn-p">1Solutions manages LinkedIn advertising campaigns that reach the exact decision-makers your sales team wants to talk to — by job title, company, seniority, and industry — and convert them into qualified leads.</p>
           <div className="lkdn-btns">
-            <Link href="/contact" className="lkdn-bp">Get a Free LinkedIn Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-            <Link href="/contact" className="lkdn-bs">Discuss Your B2B Campaigns</Link>
+            <Link href="/contact-us" className="lkdn-bp">Get a Free LinkedIn Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+            <Link href="/contact-us" className="lkdn-bs">Discuss Your B2B Campaigns</Link>
           </div>
           <div className="lkdn-tr">{['Flat management fee','You own your account','CRM integration included','Weekly optimisation'].map(t=><span key={t} className="lkdn-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={ACCENT} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>{t}</span>)}</div>
           <div className="lkdn-sbar">{[{num:'200+',lbl:'B2B Clients'},{num:'15+',lbl:'Years Experience'},{num:'58%',lbl:'Lower CPL'},{num:'3.4×',lbl:'Pipeline Growth'}].map(s=><div key={s.lbl} className="lkdn-si"><span className="lkdn-sn">{s.num}</span><span className="lkdn-sl">{s.lbl}</span></div>)}</div>
@@ -186,8 +186,8 @@ export default function LinkedinAdsManagement() {
         <h2 className="lkdn-cth">Get a Free LinkedIn Ads Audit</h2>
         <p className="lkdn-ctp">We will review your LinkedIn campaigns (or help you build from scratch), identify audience and creative gaps, and share a clear plan for reducing cost per MQL — completely free.</p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
-          <Link href="/contact" className="lkdn-bp">Request Free LinkedIn Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-          <Link href="/contact" className="lkdn-bs">Talk to a LinkedIn Specialist</Link>
+          <Link href="/contact-us" className="lkdn-bp">Request Free LinkedIn Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+          <Link href="/contact-us" className="lkdn-bs">Talk to a LinkedIn Specialist</Link>
         </div>
       </div></section>
     </>

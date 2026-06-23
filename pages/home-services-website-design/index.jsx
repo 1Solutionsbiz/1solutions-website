@@ -151,7 +151,7 @@ export default function HomeServicesWebsiteDesign() {
         <h1>Home Services Website Design<br/>Websites Built to Book Jobs and Generate Calls</h1>
         <p>We design and build professional websites for HVAC, plumbing, landscaping, roofing, cleaning, and other home service businesses — optimised for local SEO, click-to-call, and online booking to turn visitors into paying customers.</p>
         <div className="hsd-hero-btns">
-          <Link href="/contact" className="hsd-btn-primary">Get a Free Website Quote →</Link>
+          <Link href="/contact-us" className="hsd-btn-primary">Get a Free Website Quote →</Link>
           <Link href="/portfolio" className="hsd-btn-outline">View Portfolio</Link>
         </div>
       </section>
@@ -202,7 +202,7 @@ export default function HomeServicesWebsiteDesign() {
         <div className="hsd-wrap">
           <h2>Ready to Get a Website That Books More Jobs?</h2>
           <p>Tell us about your home service business and we&apos;ll deliver a fixed-price proposal within 24 hours — no contracts, no hourly billing.</p>
-          <Link href="/contact" className="hsd-btn-primary">Get a Free Website Quote →</Link>
+          <Link href="/contact-us" className="hsd-btn-primary">Get a Free Website Quote →</Link>
         </div>
       </section>
     </>

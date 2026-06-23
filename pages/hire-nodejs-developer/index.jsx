@@ -155,7 +155,7 @@ export default function HireNodeJSDeveloper() {
         <h1>Hire Node.js Developers<br/>Scalable Backends, Built Right</h1>
         <p>Pre-vetted Express and NestJS engineers for high-throughput APIs, microservices, real-time systems, and serverless architectures. Profiles in 48 hours.</p>
         <div className="hnjs-hero-btns">
-          <Link href="/contact" className="hnjs-btn-primary">Hire a Node.js Developer →</Link>
+          <Link href="/contact-us" className="hnjs-btn-primary">Hire a Node.js Developer →</Link>
           <Link href="/portfolio" className="hnjs-btn-outline">View Portfolio</Link>
         </div>
       </section>
@@ -245,7 +245,7 @@ export default function HireNodeJSDeveloper() {
         <div className="hnjs-wrap">
           <h2>Ready to Hire Your Node.js Developer?</h2>
           <p>Share your API requirements and receive matched Node.js specialist profiles within 48 hours — no commitment required.</p>
-          <Link href="/contact" className="hnjs-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us" className="hnjs-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

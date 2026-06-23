@@ -153,7 +153,7 @@ export default function VoiceSearchOptimizationServices() {
             <h1 className="vseo-h1">Voice Search Optimisation Services — Rank for What People Say, Not Just Type</h1>
             <p className="vseo-sub">Featured snippet capture, conversational content, FAQ schema, and local voice SEO — optimising your presence for Google Assistant, Alexa, Siri, and Cortana voice queries.</p>
             <div className="vseo-btns">
-              <Link href="/contact" className="vseo-btn-p">Start Voice SEO <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="vseo-btn-p">Start Voice SEO <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/local-seo-services" className="vseo-btn-s">Local SEO Services</Link>
             </div>
             <div className="vseo-stats">{STATS.map(s => <div key={s.label} className="vseo-stat"><div className="vseo-stat-l">{s.label}</div><div className="vseo-stat-v">{s.val}</div></div>)}</div>
@@ -189,7 +189,7 @@ export default function VoiceSearchOptimizationServices() {
             <h2 className="vseo-cta-t">Start Your Voice Search SEO Strategy</h2>
             <p className="vseo-cta-s">We&rsquo;ll identify your most valuable voice search opportunities, map featured snippet targets, and build the conversational content strategy that earns spoken search visibility.</p>
             <div className="vseo-cta-btns">
-              <Link href="/contact" className="vseo-btn-p">Start Voice SEO Strategy <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="vseo-btn-p">Start Voice SEO Strategy <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/seo-services-company" className="vseo-btn-s">SEO Services Overview</Link>
             </div>
           </div>

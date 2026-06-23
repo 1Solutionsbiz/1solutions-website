@@ -452,7 +452,7 @@ export default function AppMaintenanceServices() {
               Proactive maintenance plans for mobile and web apps — bug fixing, OS compatibility, security patching, performance monitoring, and App Store compliance. Built for businesses that can&rsquo;t afford downtime.
             </p>
             <div className="am-hero-btns">
-              <Link href="/contact" className="am-btn-primary">
+              <Link href="/contact-us" className="am-btn-primary">
                 Get a Maintenance Plan
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </Link>
@@ -574,7 +574,7 @@ export default function AppMaintenanceServices() {
               Get a free app health audit — we&rsquo;ll review your current app, identify risks, and recommend the right maintenance plan for your needs. No commitment required.
             </p>
             <div className="am-cta-btns">
-              <Link href="/contact" className="am-btn-primary">
+              <Link href="/contact-us" className="am-btn-primary">
                 Get a Free App Audit
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </Link>

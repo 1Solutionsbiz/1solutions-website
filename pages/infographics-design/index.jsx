@@ -150,7 +150,7 @@ export default function InfographicsDesign() {
             <h1 className="infog-h1">Infographics Design Services — Data That Gets Shared</h1>
             <p className="infog-sub">Professional infographic design for content marketing, link building, social media, and corporate communications — 1,000+ infographics designed that earn shares, backlinks, and attention.</p>
             <div className="infog-btns">
-              <Link href="/contact" className="infog-btn-p">Get an Infographic Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="infog-btn-p">Get an Infographic Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/content-copywriting-services" className="infog-btn-s">Content &amp; Copywriting</Link>
             </div>
             <div className="infog-stats">{STATS.map(s => <div key={s.label} className="infog-stat"><div className="infog-stat-l">{s.label}</div><div className="infog-stat-v">{s.val}</div></div>)}</div>
@@ -186,7 +186,7 @@ export default function InfographicsDesign() {
             <h2 className="infog-cta-t">Get Your Infographic Designed</h2>
             <p className="infog-cta-s">Tell us what data or topic you want to visualise — we&rsquo;ll send you a quote and timeline within 24 hours.</p>
             <div className="infog-cta-btns">
-              <Link href="/contact" className="infog-btn-p">Get an Infographic Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="infog-btn-p">Get an Infographic Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/content-copywriting-services" className="infog-btn-s">Content &amp; Copywriting</Link>
             </div>
           </div>

@@ -153,7 +153,7 @@ export default function WoocommerceSeoServices() {
             <h1 className="wcseo-h1">WooCommerce SEO Services That Drive Organic Revenue</h1>
             <p className="wcseo-sub">Fix faceted navigation, resolve duplicate content, and optimise every product and category page — specialist WooCommerce SEO that connects organic rankings directly to your store&rsquo;s revenue.</p>
             <div className="wcseo-btns">
-              <Link href="/contact" className="wcseo-btn-p">Get a Free WooCommerce SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="wcseo-btn-p">Get a Free WooCommerce SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/woocommerce-development-company" className="wcseo-btn-s">WooCommerce Development</Link>
             </div>
             <div className="wcseo-stats">{STATS.map(s => <div key={s.label} className="wcseo-stat"><div className="wcseo-stat-l">{s.label}</div><div className="wcseo-stat-v">{s.val}</div></div>)}</div>
@@ -189,7 +189,7 @@ export default function WoocommerceSeoServices() {
             <h2 className="wcseo-cta-t">Get Your Free WooCommerce SEO Audit</h2>
             <p className="wcseo-cta-s">We&rsquo;ll audit your store&rsquo;s faceted navigation, duplicate content, product page quality, and keyword gaps — free, with a prioritised action plan.</p>
             <div className="wcseo-cta-btns">
-              <Link href="/contact" className="wcseo-btn-p">Get Free WooCommerce SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/contact-us" className="wcseo-btn-p">Get Free WooCommerce SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/ecommerce-seo-services" className="wcseo-btn-s">Ecommerce SEO Services</Link>
             </div>
           </div>

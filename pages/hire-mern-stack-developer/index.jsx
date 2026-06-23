@@ -155,7 +155,7 @@ export default function HireMERNStackDeveloper() {
         <h1>Hire MERN Stack Developers<br/>MongoDB · Express · React · Node.js</h1>
         <p>Pre-vetted engineers who build full-stack JavaScript products from database to React UI — with Next.js, TypeScript, and real-time capabilities. Profiles in 48 hours.</p>
         <div className="hmern-hero-btns">
-          <Link href="/contact" className="hmern-btn-primary">Hire a MERN Stack Developer →</Link>
+          <Link href="/contact-us" className="hmern-btn-primary">Hire a MERN Stack Developer →</Link>
           <Link href="/portfolio" className="hmern-btn-outline">View Portfolio</Link>
         </div>
       </section>
@@ -245,7 +245,7 @@ export default function HireMERNStackDeveloper() {
         <div className="hmern-wrap">
           <h2>Ready to Hire Your MERN Stack Developer?</h2>
           <p>Share your stack and requirements — receive matched developer profiles within 48 hours, no commitment required.</p>
-          <Link href="/contact" className="hmern-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us" className="hmern-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>
