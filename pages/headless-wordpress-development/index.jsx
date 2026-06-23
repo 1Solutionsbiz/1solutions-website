@@ -4,41 +4,41 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const SERVICES = [
-  { n:'01', title:'WordPress as Headless CMS', desc:'Decouple your WordPress CMS from the presentation layer — use the familiar WP admin for content while serving it via API to any frontend.', featured:false },
-  { n:'02', title:'Next.js + WPGraphQL Development', desc:'The gold-standard headless stack — WordPress powers content, WPGraphQL exposes a typed API, and Next.js renders blazing-fast pages with ISR and SSG.', featured:true },
+  { n:'01', title:'WordPress as Headless CMS', desc:'Decouple your WordPress CMS from the presentation layer. Use the familiar WP admin for content while serving it via API to any frontend framework.', featured:false },
+  { n:'02', title:'Next.js + WPGraphQL Development', desc:'The gold-standard headless stack. WordPress powers content, WPGraphQL exposes a typed API, and Next.js renders blazing-fast pages with ISR and SSG.', featured:true },
   { n:'03', title:'WordPress REST API Development', desc:'Custom WordPress REST API endpoints, authentication, and data transformations to connect WordPress content with web and mobile applications.', featured:false },
-  { n:'04', title:'Custom WPGraphQL Schema', desc:'Extend WPGraphQL with custom post types, ACF fields, and bespoke resolvers so your frontend queries exactly the data it needs — nothing more.', featured:false },
+  { n:'04', title:'Custom WPGraphQL Schema', desc:'Extend WPGraphQL with custom post types, ACF fields, and bespoke resolvers so your frontend queries exactly the data it needs, nothing more.', featured:false },
   { n:'05', title:'Headless WooCommerce', desc:'Decouple WooCommerce for blazing-fast storefronts. We build headless commerce experiences using WooCommerce as the backend and Next.js or React as the frontend.', featured:false },
-  { n:'06', title:'Static Site Generation & ISR', desc:'Generate static pages from WordPress content at build time with Incremental Static Regeneration — sub-second load times and perfect Core Web Vitals scores.', featured:false },
+  { n:'06', title:'Static Site Generation and ISR', desc:'Generate static pages from WordPress content at build time with Incremental Static Regeneration, delivering sub-second load times and perfect Core Web Vitals scores.', featured:false },
   { n:'07', title:'Headless WordPress Migration', desc:'Migrate your existing WordPress site to a headless architecture without losing content, SEO rankings, or URLs. We handle the full transition with minimal downtime.', featured:false },
-  { n:'08', title:'React & Vue Frontend Development', desc:'Bespoke frontend UIs built with React, Next.js, or Vue — consuming WordPress content via GraphQL or REST, with pixel-perfect design and smooth animations.', featured:false },
-  { n:'09', title:'Vercel & Edge Deployment', desc:'Deploy your headless WordPress frontend on Vercel, Netlify, or AWS CloudFront for global CDN delivery, automatic preview environments, and zero-config CI/CD.', featured:false },
-  { n:'10', title:'Preview Mode & Live Editing', desc:'Real-time content preview for editors — draft posts, live preview, and instant feedback loops so your content team can work confidently in WordPress.', featured:false },
-  { n:'11', title:'Headless Multisite Architecture', desc:'Manage content across multiple brands, regions, or micro-sites from a single WordPress Multisite installation, served to separate headless frontends.', featured:false },
-  { n:'12', title:'Ongoing Support & Maintenance', desc:'Dedicated post-launch support covering WPGraphQL updates, dependency management, performance monitoring, and SLA-backed response times.', featured:false },
+  { n:'08', title:'React and Vue Frontend Development', desc:'Bespoke frontend UIs built with React, Next.js, or Vue, consuming WordPress content via GraphQL or REST with pixel-perfect design and smooth animations.', featured:false },
+  { n:'09', title:'Vercel and Edge Deployment', desc:'Deploy your headless WordPress frontend on Vercel, Netlify, or AWS CloudFront for global CDN delivery, automatic preview environments, and zero-config CI/CD.', featured:false },
+  { n:'10', title:'Preview Mode and Live Editing', desc:'Real-time content preview for editors: draft posts, live preview, and instant feedback loops so your content team can work confidently in WordPress.', featured:false },
+  { n:'11', title:'Headless Multisite Architecture', desc:'Manage content across multiple brands, regions, or microsites from a single WordPress Multisite installation, served to separate headless frontends.', featured:false },
+  { n:'12', title:'Ongoing Support and Maintenance', desc:'Dedicated post-launch support covering WPGraphQL updates, dependency management, performance monitoring, and SLA-backed response times.', featured:false },
 ];
 
 const FAQS = [
-  { q:'What is headless WordPress development?', a:'Headless WordPress separates the CMS backend (WordPress) from the frontend presentation layer. WordPress manages content via its familiar dashboard, but instead of rendering pages itself, it exposes content through REST API or WPGraphQL. A modern JavaScript framework — typically Next.js or React — fetches that data and renders the frontend. The result is a faster, more secure, and infinitely flexible website that still gives editors the WordPress admin experience they know.' },
-  { q:'What frontend frameworks do you use with headless WordPress?', a:'Our primary recommendation is Next.js paired with WPGraphQL — this combination delivers the best balance of developer experience, performance, and SEO capability. We also work with React (SPA and SSR), Gatsby, Astro, and Vue depending on project requirements. For eCommerce, we use Next.js with headless WooCommerce via the WooCommerce Store API or GraphQL.' },
-  { q:'Is headless WordPress better than traditional WordPress?', a:'Headless is better for performance-critical applications, enterprise platforms, and projects requiring omnichannel content delivery (web, mobile app, digital signage, etc.). Traditional WordPress is better for content-heavy sites where editorial flexibility and plugin ecosystem breadth matter most. We help you evaluate which approach fits your specific goals — there is no one-size-fits-all answer, and we will never recommend headless just for its own sake.' },
+  { q:'What is headless WordPress development?', a:'Headless WordPress separates the CMS backend from the frontend presentation layer. WordPress manages content via its familiar dashboard, but instead of rendering pages itself, it exposes content through REST API or WPGraphQL. A modern JavaScript framework, typically Next.js or React, fetches that data and renders the frontend. The result is a faster, more secure, and highly flexible website that still gives editors the WordPress admin experience they know.' },
+  { q:'What frontend frameworks do you use with headless WordPress?', a:'Our primary recommendation is Next.js paired with WPGraphQL. This combination delivers the best balance of developer experience, performance, and SEO capability. We also work with React (SPA and SSR), Gatsby, Astro, and Vue depending on project requirements. For eCommerce, we use Next.js with headless WooCommerce via the WooCommerce Store API or GraphQL.' },
+  { q:'Is headless WordPress better than traditional WordPress?', a:'Headless is better for performance-critical applications, enterprise platforms, and projects requiring omnichannel content delivery (web, mobile app, digital signage, etc.). Traditional WordPress is better for content-heavy sites where editorial flexibility and plugin ecosystem breadth matter most. We help you evaluate which approach fits your specific goals. There is no one-size-fits-all answer, and we will never recommend headless just for its own sake.' },
   { q:'How much does headless WordPress development cost?', a:'Headless WordPress projects typically start from $5,000 for a basic business site migration and range up to $30,000+ for complex headless WooCommerce stores, enterprise platforms, or multi-site architectures. The cost depends on frontend complexity, number of content types, integrations, and performance requirements. We provide a detailed fixed-price quote after a free discovery call.' },
-  { q:'How long does a headless WordPress project take?', a:'A standard headless WordPress build typically takes 6–10 weeks from kick-off to launch. Complex headless WooCommerce stores or enterprise multisite architectures can take 12–20 weeks. We share a detailed project timeline at the proposal stage and provide weekly progress updates via Slack and Loom.' },
-  { q:'Can I still edit content in the WordPress admin with a headless setup?', a:'Yes — this is one of the biggest advantages of headless WordPress. Your content editors continue to use the same familiar WordPress dashboard, Gutenberg editor, and ACF fields they already know. The only change is on the frontend — they will not notice a difference in their day-to-day workflow, but your website visitors will experience a dramatically faster, more modern site.' },
+  { q:'How long does a headless WordPress project take?', a:'A standard headless WordPress build typically takes 6 to 10 weeks from kick-off to launch. Complex headless WooCommerce stores or enterprise multisite architectures can take 12 to 20 weeks. We share a detailed project timeline at the proposal stage and provide weekly progress updates via Slack and Loom.' },
+  { q:'Can I still edit content in the WordPress admin with a headless setup?', a:'Yes, this is one of the biggest advantages of headless WordPress. Your content editors continue to use the same familiar WordPress dashboard, Gutenberg editor, and ACF fields they already know. The only change is on the frontend. Editors will not notice a difference in their day-to-day workflow, but your website visitors will experience a dramatically faster, more modern site.' },
   { q:'Do you support WooCommerce in headless architectures?', a:'Yes. We build headless WooCommerce storefronts using the WooCommerce REST API or the WooCommerce GraphQL extension. Your product catalogue, cart, checkout, and customer accounts are managed in WooCommerce, while the storefront is a fast Next.js application. This approach delivers significantly better performance than a traditional WooCommerce theme while retaining the full power of WooCommerce as a commerce engine.' },
-  { q:'What is WPGraphQL and why should I use it over the REST API?', a:'WPGraphQL is a WordPress plugin that adds a fully-typed GraphQL API to WordPress. Compared to the REST API, GraphQL lets your frontend request exactly the fields it needs in a single query — eliminating over-fetching and under-fetching. It supports custom post types, ACF fields, and complex relational queries out of the box. For Next.js frontends, WPGraphQL is significantly more efficient and developer-friendly than the REST API.' },
-  { q:'Will a headless WordPress site rank well on Google?', a:'Yes — when built correctly, headless WordPress sites rank extremely well. Since Next.js supports server-side rendering (SSR) and static site generation (SSG), Google can index your pages just as effectively as a traditional site. We build every headless frontend with Core Web Vitals optimisation, schema markup, semantic HTML, canonical tags, and XML sitemaps — all the technical SEO foundations that drive rankings.' },
+  { q:'What is WPGraphQL and why should I use it over the REST API?', a:'WPGraphQL is a WordPress plugin that adds a fully-typed GraphQL API to WordPress. Compared to the REST API, GraphQL lets your frontend request exactly the fields it needs in a single query, eliminating over-fetching and under-fetching. It supports custom post types, ACF fields, and complex relational queries out of the box. For Next.js frontends, WPGraphQL is significantly more efficient and developer-friendly than the REST API.' },
+  { q:'Will a headless WordPress site rank well on Google?', a:'Yes, when built correctly, headless WordPress sites rank extremely well. Since Next.js supports server-side rendering (SSR) and static site generation (SSG), Google can index your pages just as effectively as a traditional site. We build every headless frontend with Core Web Vitals optimisation, schema markup, semantic HTML, canonical tags, and XML sitemaps, covering all the technical SEO foundations that drive rankings.' },
 ];
 
 const WHY = [
-  { icon:<svg viewBox="0 0 24 24"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V17H7v2h10v-2h-4v-1.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>, title:'15+ Years of WordPress Expertise', desc:'We have been building WordPress solutions since 2008 and headless architectures since Next.js launched. That depth of experience means fewer surprises and faster delivery.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>, title:'US, Canada & Australia Focused', desc:'We understand the performance expectations, compliance requirements, and UX standards of English-speaking western markets. Every headless build is tuned for your audience.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>, title:'On-Time, On-Budget Delivery', desc:'Our structured 4D process (Discover → Define → Develop → Deploy) ensures headless projects are scoped correctly and delivered without cost overruns or scope creep.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>, title:'Performance-Obsessed', desc:'We build headless WordPress frontends that score 90+ on Google PageSpeed. Core Web Vitals, image optimisation, edge caching, and ISR are built in from day one — not added later.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>, title:'Full-Stack Capability', desc:'Design, WPGraphQL API development, Next.js frontend, WooCommerce headless, Vercel deployment, and ongoing SEO — all under one roof. No handoffs, no finger-pointing.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>, title:'Dedicated Point of Contact', desc:'No ticket queues. You get a dedicated project manager and a lead developer who communicate daily, understand your goals, and keep your project moving.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg>, title:'SEO Built Into Every Build', desc:'Server-side rendering, schema markup, Core Web Vitals, and canonical tags are built into every headless frontend we ship — rankings are never sacrificed for speed.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>, title:'Long-Term Partnership', desc:'97% client retention rate. We don\'t disappear after launch — maintenance plans, support retainers, and growth partnerships keep us invested in your success.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V17H7v2h10v-2h-4v-1.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>, title:'15+ Years of WordPress Expertise', desc:'We have been building WordPress solutions since 2008 and headless architectures since Next.js launched. That depth of experience means fewer surprises and faster delivery on every project.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>, title:'Global Client Experience', desc:'We understand the performance expectations, compliance requirements, and UX standards of English-speaking western markets. Every headless build is tuned to meet your audience\'s expectations.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>, title:'On-Time, On-Budget Delivery', desc:'Our structured 4D process (Discover, Define, Develop, Deploy) ensures headless projects are scoped correctly and delivered without cost overruns or scope creep.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>, title:'Performance-Obsessed', desc:'We build headless WordPress frontends that score 90+ on Google PageSpeed. Core Web Vitals, image optimisation, edge caching, and ISR are built in from day one, not added later.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>, title:'Full-Stack Capability', desc:'Design, WPGraphQL API development, Next.js frontend, WooCommerce headless, Vercel deployment, and ongoing SEO, all under one roof. No handoffs, no finger-pointing.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>, title:'Dedicated Point of Contact', desc:'No ticket queues. You get a dedicated project manager and a lead developer who communicate daily, understand your goals, and keep your project moving forward.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg>, title:'SEO Built Into Every Build', desc:'Server-side rendering, schema markup, Core Web Vitals, and canonical tags are built into every headless frontend we ship. Rankings are never sacrificed for speed.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>, title:'Long-Term Partnership', desc:'97% client retention rate. We don\'t disappear after launch. Our maintenance plans, support retainers, and growth partnerships keep us invested in your success.' },
 ];
 
 function useCountUp(target, duration = 1800, start = false) {
@@ -211,17 +211,17 @@ export default function HeadlessWordPressDevelopment() {
   return (
     <>
       <Head>
-        <title>Headless WordPress Development Company | WPGraphQL & Next.js Experts | 1Solutions</title>
-        <meta name="description" content="1Solutions is a leading headless WordPress development company. We build blazing-fast decoupled WordPress websites using Next.js, WPGraphQL, and React — serving clients in US, Canada & Australia." />
+        <title>Headless WordPress Development Company | WPGraphQL and Next.js Experts | 1Solutions</title>
+        <meta name="description" content="1Solutions is a leading headless WordPress development company. We build blazing-fast decoupled WordPress websites using Next.js, WPGraphQL, and React for clients worldwide." />
         <meta name="keywords" content="headless wordpress development, headless wordpress development company, headless CMS wordpress, decoupled wordpress, wordpress next.js development, wpgraphql development, headless wordpress agency" />
         <link rel="canonical" href="https://www.1solutions.biz/headless-wordpress-development/" />
-        <meta property="og:title" content="Headless WordPress Development Company | WPGraphQL & Next.js | 1Solutions" />
-        <meta property="og:description" content="Build blazing-fast, SEO-optimized headless WordPress websites with 1Solutions. Expert Next.js + WPGraphQL development for US, Canada & Australia." />
+        <meta property="og:title" content="Headless WordPress Development Company | WPGraphQL and Next.js | 1Solutions" />
+        <meta property="og:description" content="Build blazing-fast, SEO-optimized headless WordPress websites with 1Solutions. Expert Next.js and WPGraphQL development for global clients." />
         <meta property="og:url" content="https://www.1solutions.biz/headless-wordpress-development/" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Headless WordPress Development | 1Solutions" />
-        <meta name="twitter:description" content="Expert headless WordPress development using Next.js & WPGraphQL. Blazing fast, fully SEO-optimized decoupled CMS solutions." />
+        <meta name="twitter:description" content="Expert headless WordPress development using Next.js and WPGraphQL. Blazing fast, fully SEO-optimized decoupled CMS solutions." />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
         <style>{`
@@ -262,10 +262,13 @@ export default function HeadlessWordPressDevelopment() {
           .hwp-stat-label { font-size:12px;color:#4A6080;font-weight:500;margin-bottom:6px; }
           .hwp-stat-value { font-size:26px;font-weight:900;color:#D97706;letter-spacing:-0.5px;line-height:1; }
 
-          /* Clients */
+          /* Client logo marquee */
           .hwp-clients-bar { position:relative;z-index:2;padding:20px 40px 60px;max-width:1440px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px; }
           .hwp-clients-label { font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6A80A0; }
           .hwp-clients-logos { width:100%;overflow:hidden; }
+          .hwp-logos-track { display:flex;align-items:center;gap:60px;width:max-content;animation:hwp-marquee 28s linear infinite; }
+          .hwp-logos-track:hover { animation-play-state:paused; }
+          @keyframes hwp-marquee { 0%{transform:translateX(0);} 100%{transform:translateX(-50%);} }
           .hwp-client-logo { height:26px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(100%);opacity:0.5;transition:opacity 0.25s,filter 0.25s; }
           .hwp-client-logo:hover { opacity:0.85;filter:grayscale(0%); }
 
@@ -371,13 +374,12 @@ export default function HeadlessWordPressDevelopment() {
 
           /* Engagement */
           .hwp-engage-section { background:rgba(237,233,254,0.35);border-top:1px solid rgba(76,29,149,0.08);padding:80px 40px;position:relative;z-index:1; }
-          .hwp-engage-inner { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:minmax(0,40%) minmax(0,60%);gap:60px;align-items:start; }
+          .hwp-engage-inner { max-width:1280px;margin:0 auto; }
+          .hwp-engage-header { text-align:center;margin-bottom:48px; }
           .hwp-engage-title { font-size:40px;font-weight:900;line-height:1.15;letter-spacing:-0.8px;background:linear-gradient(90deg,#4C1D95 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
-          .hwp-engage-desc { font-size:15px;color:#4A6080;line-height:1.75;margin:0 0 32px; }
-          .hwp-engage-img-wrap { border-radius:16px;overflow:hidden;box-shadow:0 16px 48px rgba(76,29,149,0.12);aspect-ratio:4/3;background:#ede9fe; }
-          .hwp-engage-img-wrap img { width:100%;height:100%;object-fit:cover;display:block; }
-          .hwp-engage-right { display:grid;grid-template-columns:1fr 1fr;gap:18px; }
-          .hwp-ecard { background:rgba(255,255,255,0.60);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:26px 22px;box-shadow:0 4px 20px rgba(76,29,149,0.07),inset 0 1px 0 rgba(255,255,255,0.95);opacity:0;transform:translateY(40px);transition:opacity 0.6s cubic-bezier(0.22,1,0.36,1),transform 0.6s cubic-bezier(0.22,1,0.36,1),box-shadow 0.22s,border-color 0.22s; }
+          .hwp-engage-desc { font-size:15px;color:#4A6080;line-height:1.75;margin:0 auto;max-width:600px; }
+          .hwp-engage-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:20px; }
+          .hwp-ecard { background:rgba(255,255,255,0.60);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:28px 24px;box-shadow:0 4px 20px rgba(76,29,149,0.07),inset 0 1px 0 rgba(255,255,255,0.95);opacity:0;transform:translateY(40px);transition:opacity 0.6s cubic-bezier(0.22,1,0.36,1),transform 0.6s cubic-bezier(0.22,1,0.36,1),box-shadow 0.22s,border-color 0.22s; }
           .hwp-ecard.hwp-ecard-visible { opacity:1;transform:translateY(0); }
           .hwp-ecard:hover { transform:translateY(-5px);border-color:rgba(217,119,6,0.35);box-shadow:0 12px 36px rgba(76,29,149,0.12),inset 0 1px 0 rgba(255,255,255,1); }
           .hwp-ecard-header { display:flex;align-items:center;gap:12px;margin-bottom:10px; }
@@ -472,8 +474,7 @@ export default function HeadlessWordPressDevelopment() {
           @media (max-width:1024px) {
             .hwp-portfolio-grid { grid-template-columns:repeat(2,1fr); }
             .hwp-portfolio-wrap { padding:32px 28px 40px; }
-            .hwp-engage-inner { grid-template-columns:1fr; }
-            .hwp-engage-img-wrap { max-width:480px; }
+            .hwp-engage-grid { grid-template-columns:1fr; }
             .hwp-process-inner { grid-template-columns:1fr; }
             .hwp-process-image-col { display:none; }
             .hwp-contact-container { grid-template-columns:1fr; }
@@ -482,7 +483,6 @@ export default function HeadlessWordPressDevelopment() {
             .hwp-services-grid { grid-template-columns:repeat(2,1fr); }
             .hwp-why-grid { grid-template-columns:repeat(2,1fr); }
             .hwp-testi-grid { grid-template-columns:1fr; }
-            .hwp-engage-right { grid-template-columns:1fr; }
           }
           @media (max-width:768px) {
             .hwp-portfolio-section { padding:48px 16px; }
@@ -497,12 +497,15 @@ export default function HeadlessWordPressDevelopment() {
             .hwp-section-title,.hwp-engage-title,.hwp-process-main-title,.hwp-related-title { font-size:30px; }
             .hwp-form-row { grid-template-columns:1fr; }
             .hwp-contact-section { padding:52px 20px; }
+            .hwp-clients-bar { padding:16px 20px 36px;gap:12px; }
+            .hwp-client-logo { height:20px; }
           }
           @media (max-width:540px) {
             .hwp-portfolio-grid { grid-template-columns:1fr; }
             .hwp-hero-stats { grid-template-columns:repeat(2,1fr); }
             .hwp-services-grid { grid-template-columns:1fr; }
             .hwp-why-grid { grid-template-columns:1fr; }
+            .hwp-engage-grid { grid-template-columns:1fr; }
             .hwp-section-title,.hwp-engage-title,.hwp-process-main-title,.hwp-related-title { font-size:26px; }
             .hwp-faq-heading { font-size:28px; }
             .hwp-portfolio-title { font-size:22px; }
@@ -520,7 +523,7 @@ export default function HeadlessWordPressDevelopment() {
           <div className="hwp-hero-content">
             <span className="hwp-eyebrow">Headless CMS · WPGraphQL · Next.js · React</span>
             <h1>Headless WordPress<br/>Development Company</h1>
-            <p>We build lightning-fast, fully decoupled WordPress websites using Next.js and WPGraphQL — delivering 90+ PageSpeed scores, perfect Core Web Vitals, and unlimited frontend flexibility for businesses across the US, Canada, and Australia.</p>
+            <p>We build lightning-fast, fully decoupled WordPress websites using Next.js and WPGraphQL, delivering 90+ PageSpeed scores, perfect Core Web Vitals, and unlimited frontend flexibility for businesses worldwide.</p>
             <Link href="#contact" className="hwp-btn-hero hwp-btn-hero-shimmer">Get a Free Consultation Now</Link>
           </div>
           <div className="hwp-hero-stats" ref={statsRef}>
@@ -531,6 +534,30 @@ export default function HeadlessWordPressDevelopment() {
               { label:'Years Experience', val:'15+' },
             ].map(s => <AnimatedStat key={s.label} label={s.label} val={s.val} started={statsStarted} />)}
           </div>
+          <div className="hwp-clients-bar">
+            <span className="hwp-clients-label">Trusted by Leading Brands</span>
+            <div className="hwp-clients-logos">
+              <div className="hwp-logos-track">
+                {[
+                  ['/logo/Indian_Express_Logo_full.png','Indian Express'],
+                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],
+                  ['/logo/Uniphore.jpg','Uniphore'],
+                  ['/logo/ICCoLogo.png','ICC'],
+                  ['/logo/Honor_Logo_(2020).svg.png','Honor'],
+                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],
+                  ['/logo/Indian_Express_Logo_full.png','Indian Express2'],
+                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon2'],
+                  ['/logo/Uniphore.jpg','Uniphore2'],
+                  ['/logo/ICCoLogo.png','ICC2'],
+                  ['/logo/Honor_Logo_(2020).svg.png','Honor2'],
+                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv2'],
+                ].map(([src,alt]) => (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img key={alt} src={src} alt={alt.replace(/\d+$/,'')} className="hwp-client-logo" />
+                ))}
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* ── SERVICES ── */}
@@ -539,7 +566,7 @@ export default function HeadlessWordPressDevelopment() {
             <div className={`hwp-section-reveal${visibleSections.has('services') ? ' hwp-revealed' : ''}`} ref={el => { sectionRefs.current['services'] = el; }}>
               <span className="hwp-section-eyebrow">What We Build</span>
               <h2 className="hwp-section-title">Headless WordPress Development Services</h2>
-              <p className="hwp-section-desc">From decoupled CMS architecture and WPGraphQL API development to blazing-fast Next.js frontends and headless WooCommerce stores — we cover every layer of your headless stack.</p>
+              <p className="hwp-section-desc">From decoupled CMS architecture and WPGraphQL API development to blazing-fast Next.js frontends and headless WooCommerce stores. We cover every layer of your headless stack.</p>
             </div>
             <div className="hwp-services-grid">
               {visibleServices.map(s => (
@@ -553,7 +580,7 @@ export default function HeadlessWordPressDevelopment() {
             {SERVICES.length > 8 && (
               <div className="hwp-services-footer">
                 <button className="hwp-btn-show-more" onClick={() => setShowAll(v => !v)}>
-                  {showAll ? 'Show Less ↑' : `Show All ${SERVICES.length} Services ↓`}
+                  {showAll ? 'Show Less' : `Show All ${SERVICES.length} Services`}
                 </button>
               </div>
             )}
@@ -569,9 +596,9 @@ export default function HeadlessWordPressDevelopment() {
             </div>
             <div className="hwp-portfolio-grid">
               {[
-                { img:'/images/portfolio/comtradesol.webp', name:'Comtradesol — Financial Advisory', tech:'Financial Services / WordPress, WPGraphQL, Next.js', cats:'Headless CMS / Corporate Website / Financial', url:'https://www.comtradesol.com/' },
-                { img:'/images/portfolio/mountsystems.png', name:'Mount Systems — IT & Security', tech:'IT & Security / WordPress, Custom Theme, UI/UX Design', cats:'Corporate Website / IT Services / Security Solutions', url:'https://www.mount-systems.com.ki/' },
-                { img:'/images/portfolio/charlespuma.webp', name:'Charles Puma — Fine Art Gallery', tech:'Art & Culture / WordPress, Custom Theme, UI/UX Design', cats:'Art Gallery / Multi-location / Portfolio', url:'https://www.charlespuma.com/' },
+                { img:'/images/portfolio/comtradesol.webp', name:'Comtradesol Financial Advisory', tech:'Financial Services / WordPress, WPGraphQL, Next.js', cats:'Headless CMS / Corporate Website / Financial', url:'https://www.comtradesol.com/' },
+                { img:'/images/portfolio/mountsystems.png', name:'Mount Systems IT and Security', tech:'IT and Security / WordPress, Custom Theme, UI/UX Design', cats:'Corporate Website / IT Services / Security Solutions', url:'https://www.mount-systems.com.ki/' },
+                { img:'/images/portfolio/charlespuma.webp', name:'Charles Puma Fine Art Gallery', tech:'Art and Culture / WordPress, Custom Theme, UI/UX Design', cats:'Art Gallery / Multi-location / Portfolio', url:'https://www.charlespuma.com/' },
               ].map(p => (
                 <a className="hwp-pcard" key={p.name} href={p.url} target="_blank" rel="noopener noreferrer" style={{textDecoration:'none',color:'inherit'}}>
                   <div className="hwp-pcard-thumb">
@@ -602,10 +629,10 @@ export default function HeadlessWordPressDevelopment() {
           <div className="hwp-process-inner">
             <div className="hwp-process-steps">
               {[
-                ['Discover', 'We audit your existing WordPress setup, content model, and performance goals — identifying the ideal headless architecture, frontend framework, and API strategy for your specific use case.'],
-                ['Define', 'We design the WPGraphQL schema, content types, and frontend component architecture — mapping every content relationship and defining the data fetching strategy (SSG, ISR, or SSR) before writing a line of code.'],
-                ['Develop', 'Our engineers build and configure WPGraphQL, develop the Next.js frontend, wire preview mode for editors, and integrate third-party services — with full progress visibility via GitHub and weekly Loom updates.'],
-                ['Deploy', 'We deploy to Vercel or your preferred edge platform, configure CDN caching and ISR revalidation, run Lighthouse audits, and hand over documentation and editorial training — ensuring your team is ready for launch.'],
+                ['Discover', 'We audit your existing WordPress setup, content model, and performance goals, identifying the ideal headless architecture, frontend framework, and API strategy for your specific use case.'],
+                ['Define', 'We design the WPGraphQL schema, content types, and frontend component architecture, mapping every content relationship and defining the data fetching strategy (SSG, ISR, or SSR) before writing a line of code.'],
+                ['Develop', 'Our engineers build and configure WPGraphQL, develop the Next.js frontend, wire preview mode for editors, and integrate third-party services, with full progress visibility via GitHub and weekly Loom updates.'],
+                ['Deploy', 'We deploy to Vercel or your preferred edge platform, configure CDN caching and ISR revalidation, run Lighthouse audits, and hand over documentation and editorial training, ensuring your team is ready for launch.'],
               ].map(([title, desc], i) => (
                 <div className={`hwp-pstep${visibleSteps.includes(i) ? ' visible' : ''}`} key={title} ref={el => { stepRefs.current[i] = el; }}>
                   <div className="hwp-pstep-left">
@@ -634,13 +661,13 @@ export default function HeadlessWordPressDevelopment() {
             <div className={`hwp-section-header-center hwp-section-reveal${visibleSections.has('testi') ? ' hwp-revealed' : ''}`} ref={el => { sectionRefs.current['testi'] = el; }}>
               <span className="hwp-section-eyebrow">Client Reviews</span>
               <h2 className="hwp-section-title">What Our Clients Say</h2>
-              <p className="hwp-section-sub">Trusted by businesses across the US, Canada, Australia, and beyond for 15+ years.</p>
+              <p className="hwp-section-sub">Trusted by businesses worldwide for 15+ years of consistent delivery.</p>
             </div>
             <div className="hwp-testi-grid" ref={testiGridRef}>
               {[
-                { name:'Michael R.', role:'CTO, Tech Startup — Austin, TX', quote:'The team at 1Solutions delivered our headless WordPress + Next.js rebuild three weeks ahead of schedule. Our PageSpeed score went from 42 to 96 overnight. Outstanding technical depth.', featured:true },
-                { name:'Sarah K.', role:'Marketing Director — Toronto, Canada', quote:'We needed our WordPress content team to keep using the WP admin while moving to a modern frontend. 1Solutions nailed the WPGraphQL setup — our editors barely noticed the change.', featured:false },
-                { name:'James T.', role:'Founder, eCommerce Brand — Sydney, AU', quote:'Headless WooCommerce was intimidating. The 1Solutions team made the architecture clear, the migration painless, and the performance improvements were dramatic. Highly recommend.', featured:false },
+                { name:'Michael R.', role:'CTO, Tech Startup, Austin TX', quote:'The team at 1Solutions delivered our headless WordPress and Next.js rebuild three weeks ahead of schedule. Our PageSpeed score went from 42 to 96 overnight. Outstanding technical depth.', featured:true },
+                { name:'Sarah K.', role:'Marketing Director, Toronto', quote:'We needed our WordPress content team to keep using the WP admin while moving to a modern frontend. 1Solutions nailed the WPGraphQL setup and our editors barely noticed the change.', featured:false },
+                { name:'James T.', role:'Founder, eCommerce Brand, Sydney', quote:'Headless WooCommerce was intimidating. The 1Solutions team made the architecture clear, the migration painless, and the performance improvements were dramatic. Highly recommend.', featured:false },
               ].map((t, i) => (
                 <div className={`hwp-tcard${t.featured?' featured':''}${visibleTestiCards.includes(i)?' hwp-tcard-visible':''}`} key={t.name}>
                   <div className="hwp-tcard-stars">{[...Array(5)].map((_,j) => <span key={j} className="hwp-tcard-star">★</span>)}</div>
@@ -661,7 +688,7 @@ export default function HeadlessWordPressDevelopment() {
             <div className={`hwp-section-reveal${visibleSections.has('why') ? ' hwp-revealed' : ''}`} ref={el => { sectionRefs.current['why'] = el; }} style={{ textAlign:'center',marginBottom:0 }}>
               <span className="hwp-section-eyebrow">Why 1Solutions</span>
               <h2 className="hwp-section-title">Why Choose Us for Headless WordPress</h2>
-              <p className="hwp-section-sub" style={{ maxWidth:680,margin:'0 auto' }}>We don't just add a Next.js layer on top of WordPress — we architect headless solutions that are performant, maintainable, and built to scale with your business.</p>
+              <p className="hwp-section-sub" style={{ maxWidth:680,margin:'0 auto' }}>We don't just add a Next.js layer on top of WordPress. We architect headless solutions that are performant, maintainable, and built to scale with your business.</p>
             </div>
             <div className="hwp-why-grid" ref={whyGridRef}>
               {WHY.map((w, i) => (
@@ -680,26 +707,20 @@ export default function HeadlessWordPressDevelopment() {
         {/* ── ENGAGEMENT MODELS ── */}
         <section className="hwp-engage-section">
           <div className="hwp-engage-inner">
-            <div className="hwp-engage-left">
-              <div className={`hwp-section-reveal${visibleSections.has('engage') ? ' hwp-revealed' : ''}`} ref={el => { sectionRefs.current['engage'] = el; }}>
-                <span className="hwp-section-eyebrow">Engagement Models</span>
-                <h2 className="hwp-engage-title">Flexible Engagement Models Built Around You</h2>
-                <p className="hwp-engage-desc">We offer flexible engagement models so you can choose the approach that best fits your headless WordPress project, timeline, and budget — with full transparency at every step.</p>
-              </div>
-              <div className="hwp-engage-img-wrap">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/Partner-with-us.jpg" alt="Partner with 1Solutions" />
-              </div>
+            <div className={`hwp-engage-header hwp-section-reveal${visibleSections.has('engage') ? ' hwp-revealed' : ''}`} ref={el => { sectionRefs.current['engage'] = el; }}>
+              <span className="hwp-section-eyebrow">Engagement Models</span>
+              <h2 className="hwp-engage-title">Choose How You Work With Us</h2>
+              <p className="hwp-engage-desc">We offer flexible engagement models so you can choose the approach that best fits your headless WordPress project, timeline, and budget, with full transparency at every step.</p>
             </div>
-            <div className="hwp-engage-right" ref={eCardsRef}>
+            <div className="hwp-engage-grid" ref={eCardsRef}>
               {[
-                { title:'Dedicated Team', desc:'A full-time dedicated headless development team — a project manager, Next.js developer, and WPGraphQL specialist — working exclusively on your project.', features:['Cost-effective Approach','Less Admin Overhead','Quick-paced Development','Timely Reporting'],
+                { title:'Dedicated Team', desc:'A full-time dedicated headless development team including a project manager, Next.js developer, and WPGraphQL specialist working exclusively on your project.', features:['Cost-effective Approach','Less Admin Overhead','Quick-paced Development','Timely Reporting'],
                   icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> },
-                { title:'Fixed-Price Project', desc:'Ideal for well-defined headless WordPress builds with clear scope. We agree on deliverables, timeline, and cost upfront — no surprises, no hidden fees.', features:['Complete Budget Control','Ease of Management','No Hidden Costs','On-time Delivery'],
+                { title:'Fixed-Price Project', desc:'Ideal for well-defined headless WordPress builds with clear scope. We agree on deliverables, timeline, and cost upfront, with no surprises and no hidden fees.', features:['Complete Budget Control','Ease of Management','No Hidden Costs','On-time Delivery'],
                   icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> },
-                { title:'Time & Material', desc:'Perfect for evolving projects where requirements change. Pay only for hours worked with full visibility into progress and spend via weekly reports.', features:['Maximum Flexibility','Reduced Risk','Iterative Development','Transparent Billing'],
+                { title:'Time and Material', desc:'Perfect for evolving projects where requirements change. Pay only for hours worked with full visibility into progress and spend via weekly reports.', features:['Maximum Flexibility','Reduced Risk','Iterative Development','Transparent Billing'],
                   icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> },
-                { title:'Ongoing Retainer', desc:'Monthly retainer for continuous improvements, new features, performance monitoring, and WPGraphQL maintenance — ideal for growing platforms that need a reliable tech partner.', features:['Priority Support','Monthly Reporting','Dedicated Capacity','Proactive Monitoring'],
+                { title:'Ongoing Retainer', desc:'Monthly retainer for continuous improvements, new features, performance monitoring, and WPGraphQL maintenance. Ideal for growing platforms that need a reliable tech partner.', features:['Priority Support','Monthly Reporting','Dedicated Capacity','Proactive Monitoring'],
                   icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> },
               ].map((e,i) => (
                 <div className={`hwp-ecard${visibleECards.includes(i)?' hwp-ecard-visible':''}`} key={e.title}>
@@ -762,10 +783,10 @@ export default function HeadlessWordPressDevelopment() {
                       <label>Phone Number*</label>
                       <div className="hwp-phone-input">
                         <select>
-                          <option value="+91">🇮🇳 +91</option>
-                          <option value="+1">🇺🇸 +1</option>
-                          <option value="+44">🇬🇧 +44</option>
-                          <option value="+61">🇦🇺 +61</option>
+                          <option value="+91">+91</option>
+                          <option value="+1">+1</option>
+                          <option value="+44">+44</option>
+                          <option value="+61">+61</option>
                         </select>
                         <input type="tel" placeholder="Phone Number*" required />
                       </div>
@@ -809,7 +830,7 @@ export default function HeadlessWordPressDevelopment() {
         <section className="hwp-related-section">
           <div className="hwp-related-inner">
             <span className="hwp-related-eyebrow">RELATED OFFERINGS</span>
-            <h2 className="hwp-related-title">Explore Related Services &amp; Technologies</h2>
+            <h2 className="hwp-related-title">Explore Related Services and Technologies</h2>
             <p className="hwp-related-sub">Pair headless WordPress with our broader development and marketing services to build a complete digital platform.</p>
             <hr className="hwp-related-divider" />
             <div className="hwp-related-tags">
@@ -817,7 +838,7 @@ export default function HeadlessWordPressDevelopment() {
                 ['WordPress Development',          'violet',  '/wordpress-development-company'],
                 ['Next.js Development',             'blue',    '/nextjs-development-services'],
                 ['WooCommerce Development',         'green',   '/woocommerce-development-company'],
-                ['WordPress Maintenance & Support', 'teal',    '/wordpress-support-and-maintenance-services'],
+                ['WordPress Maintenance and Support', 'teal',  '/wordpress-support-and-maintenance-services'],
                 ['WordPress SEO Services',          'rose',    '/wordpress-seo-services'],
                 ['E-Commerce Development',          'amber',   '/ecommerce-website-development-services'],
                 ['UI/UX Design Services',           'indigo',  '/website-design'],
