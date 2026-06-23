@@ -84,31 +84,37 @@ const SERVICES = [
   {
     icon: '🌐',
     title: 'Web Development',
+    href: '/web-development-services',
     items: ['WordPress', 'Laravel', 'Django & Python', 'React / Next.js', 'Drupal', 'Custom PHP'],
   },
   {
     icon: '🛒',
     title: 'E-Commerce',
+    href: '/ecommerce-website-development-services',
     items: ['WooCommerce', 'Shopify', 'Magento', 'OpenCart', 'Custom Storefronts', 'Payment Integration'],
   },
   {
     icon: '📈',
     title: 'Digital Marketing',
+    href: '/digital-marketing-services',
     items: ['Technical SEO', 'PPC Management', 'Content Strategy', 'Social Media', 'Email Campaigns', 'Analytics & CRO'],
   },
   {
     icon: '🎨',
     title: 'UI/UX Design',
+    href: '/website-design',
     items: ['Wireframing', 'Prototyping', 'Brand Identity', 'Design Systems', 'User Research', 'Accessibility Audits'],
   },
   {
     icon: '☁️',
     title: 'Cloud & DevOps',
+    href: '/devops-services-company',
     items: ['AWS', 'Google Cloud', 'CI/CD Pipelines', 'Docker & Kubernetes', 'Server Optimization', 'Security Hardening'],
   },
   {
     icon: '📡',
     title: 'Mobile & APIs',
+    href: '/android-application-development-company',
     items: ['React Native', 'Progressive Web Apps', 'REST APIs', 'GraphQL', 'Third-party Integration', 'Headless CMS'],
   },
 ];
@@ -1167,7 +1173,7 @@ export default function WhoWeAre() {
             </div>
             <div className="au-services-grid">
               {SERVICES.map((s, i) => (
-                <div key={i} className="au-service-card">
+                <Link key={i} href={s.href} className="au-service-card" style={{ textDecoration: 'none' }}>
                   <div className="au-service-icon">{s.icon}</div>
                   <div className="au-service-title">{s.title}</div>
                   <ul className="au-service-items">
@@ -1175,61 +1181,7 @@ export default function WhoWeAre() {
                       <li key={j}>{item}</li>
                     ))}
                   </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── Industries ── */}
-        <section
-          className="au-section"
-          style={{ background: 'linear-gradient(135deg, #dbeafe 0%, #ede9fe 25%, #e0f2fe 50%, #fef3c7 75%, #fce7f3 100%)' }}
-        >
-          <div className="au-container">
-            <div style={{ textAlign: 'center', maxWidth: 580, margin: '0 auto' }}>
-              <p className="au-eyebrow">Industries We Serve</p>
-              <h2 className="au-heading">Deep expertise across the sectors that matter.</h2>
-              <p className="au-lead" style={{ margin: '0 auto' }}>
-                15 years of cross-industry work means we bring pattern recognition — not just technical skills —
-                to every engagement.
-              </p>
-            </div>
-            <div className="au-industries-grid">
-              {INDUSTRIES.map((ind, i) => (
-                <div key={i} className="au-industry-card">
-                  <div className="au-industry-icon">{ind.icon}</div>
-                  <div className="au-industry-name">{ind.name}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── Clients Logo Wall ── */}
-        <section className="au-section au-clients-section">
-          <div className="au-container">
-            <div className="au-clients-head">
-              <p className="au-eyebrow">Trusted By</p>
-              <h2 className="au-heading">Companies that chose us and stayed.</h2>
-              <p className="au-lead" style={{ margin: '0 auto' }}>
-                From globally recognized enterprises to high-growth startups — 1Solutions has earned the
-                trust of brands that expect results and measure everything.
-              </p>
-            </div>
-            <div className="au-clients-grid">
-              {CLIENTS.map((c, i) => (
-                <div key={i} className="au-client-cell">
-                  <div className="au-client-img-wrap">
-                    <Image
-                      src={c.logo}
-                      alt={c.name}
-                      fill
-                      sizes="130px"
-                      style={{ objectFit: 'contain' }}
-                    />
-                  </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -1258,48 +1210,6 @@ export default function WhoWeAre() {
                   <div className="au-why-desc">{w.desc}</div>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── Global Presence ── */}
-        <section
-          className="au-section"
-          style={{ background: 'linear-gradient(135deg, #dbeafe 0%, #ede9fe 25%, #e0f2fe 50%, #fef3c7 75%, #fce7f3 100%)' }}
-        >
-          <div className="au-container">
-            <div className="au-global-grid">
-              <div
-                ref={globalRef}
-                className={`au-global-copy${globalVisible ? ' au-visible' : ''}`}
-              >
-                <p className="au-eyebrow">Where We Work</p>
-                <h2 className="au-heading">Headquartered in New Delhi. Outcomes delivered globally.</h2>
-                <p>
-                  Our team is based in New Delhi, one of the world&apos;s largest technology talent hubs.
-                  We run overlapping shifts to provide responsive coverage during US Eastern, Pacific,
-                  Australian, and Canadian business hours — so you&apos;re never waiting until tomorrow morning.
-                </p>
-                <p>
-                  No outsourcing, no subcontracting. Every project is delivered by the same team you met
-                  on day one, using the same processes and quality standards we&apos;ve refined over 15 years.
-                </p>
-              </div>
-              <div className="au-location-grid">
-                {[
-                  { flag: '🇮🇳', city: 'New Delhi, India', role: 'Headquarters & Development Hub', tz: 'GMT +5:30' },
-                  { flag: '🇺🇸', city: 'United States', role: 'Primary Client Market', tz: 'EST / PST' },
-                  { flag: '🇨🇦', city: 'Canada', role: 'Active Client Base', tz: 'EST / PST' },
-                  { flag: '🇦🇺', city: 'Australia', role: 'Active Client Base', tz: 'AEST / AEDT' },
-                ].map((loc, i) => (
-                  <div key={i} className="au-location-card">
-                    <div className="au-location-flag">{loc.flag}</div>
-                    <div className="au-location-city">{loc.city}</div>
-                    <div className="au-location-role">{loc.role}</div>
-                    <div className="au-location-tz">{loc.tz}</div>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </section>
