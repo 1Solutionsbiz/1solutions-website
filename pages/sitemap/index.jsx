@@ -33,6 +33,7 @@ const SECTIONS = [
       [
         { label: 'Web Development',               href: '/web-development-services' },
         { label: 'WordPress Development',        href: '/wordpress-development-company' },
+        { label: 'Headless WordPress Development', href: '/headless-wordpress-development' },
         { label: 'Next.js Development',          href: '/nextjs-development-services' },
         { label: 'Node.js Development',          href: '/nodejs-development-services' },
         { label: 'Laravel Development',          href: '/laravel-development-company' },

@@ -1007,7 +1007,7 @@ export default function WordPressDevelopmentCompany() {
                 ['E-Commerce Website Development',   'amber',   '/ecommerce-website-development-services'],
                 ['WordPress Maintenance & Support',  'green',   '/wordpress-support-and-maintenance-services'],
                 ['SEO for WordPress',                'rose',    '/wordpress-seo-services'],
-                ['Headless WordPress Development',   'sky',     '/nextjs-development-services'],
+                ['Headless WordPress Development',   'sky',     '/headless-wordpress-development'],
                 ['Responsive Web Design',            'cyan',    '/website-design'],
                 ['UI/UX Design Services',            'fuchsia', '/website-design'],
                 ['PHP Development',                  'slate',   '/php-development-services'],

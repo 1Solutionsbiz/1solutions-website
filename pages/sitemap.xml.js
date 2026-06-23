@@ -23,6 +23,7 @@ const STATIC_PAGES = [
   { url: '/web-development-services',            priority: '0.9', changefreq: 'monthly' },
   { url: '/nodejs-development-services',         priority: '0.8', changefreq: 'monthly' },
   { url: '/wordpress-development-company',       priority: '0.9', changefreq: 'monthly' },
+  { url: '/headless-wordpress-development',      priority: '0.9', changefreq: 'monthly' },
   { url: '/nextjs-development-services',         priority: '0.8', changefreq: 'monthly' },
   { url: '/laravel-development-company',         priority: '0.8', changefreq: 'monthly' },
   { url: '/python-development-services',         priority: '0.8', changefreq: 'monthly' },

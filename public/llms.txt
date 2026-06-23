@@ -7,6 +7,7 @@
 - [SEO Services](https://www.1solutions.biz/seo-services-company): Full-service search engine optimisation including on-page, technical SEO, and link building.
 - [Digital Marketing Services](https://www.1solutions.biz/digital-marketing-services): End-to-end digital marketing covering SEO, PPC, social media, content, and more.
 - [WordPress Development Company](https://www.1solutions.biz/wordpress-development-company): Custom WordPress website design, development, and maintenance.
+- [Headless WordPress Development](https://www.1solutions.biz/headless-wordpress-development): Decoupled WordPress development using Next.js, WPGraphQL, and React for blazing-fast frontends.
 - [Ecommerce Marketing Services](https://www.1solutions.biz/ecommerce-marketing-services): SEO and marketing for online stores across Shopify, WooCommerce, and Magento.
 - [Amazon SEO Services](https://www.1solutions.biz/amazon-seo-services): Amazon listing optimisation, A+ content, keyword research, and PPC management.
 - [Content & Copywriting Services](https://www.1solutions.biz/content-copywriting-services): SEO-optimised blog posts, landing pages, product descriptions, and web copy.
