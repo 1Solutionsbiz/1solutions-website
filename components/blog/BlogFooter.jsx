@@ -134,7 +134,7 @@ export default function BlogFooter() {
           <div className="bf-brand-left">
             <Link href="/">
               <Image
-                src="/images/1solutions-logo.png"
+                src="/images/1solutions-logo-white.png"
                 alt="1Solutions"
                 width={140} height={38}
                 style={{ height: '38px', width: 'auto', display: 'block', marginBottom: '20px' }}
