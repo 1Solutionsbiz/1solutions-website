@@ -72,11 +72,6 @@ const PILLARS = [
   },
 ];
 
-const CERTIFICATIONS = [
-  { name: 'ISO 9001:2015', desc: 'Quality Management System', href: '/who-we-are' },
-  { name: 'MSME Registered', desc: 'Ministry of MSME, Govt. of India', href: '/who-we-are' },
-  { name: 'DMCA Protected', desc: 'Content & IP protection', href: 'https://www.dmca.com' },
-];
 
 export default function CorporateResponsibility() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.1solutions.biz';
@@ -411,19 +406,6 @@ export default function CorporateResponsibility() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Certifications */}
-        <div className="csr-certs">
-          <h2>Recognised Certifications & Registrations</h2>
-          <div className="csr-certs-grid">
-            {CERTIFICATIONS.map((c) => (
-              <a key={c.name} href={c.href} className="csr-cert-card" target={c.href.startsWith('http') ? '_blank' : undefined} rel={c.href.startsWith('http') ? 'noopener noreferrer' : undefined}>
-                <span className="csr-cert-name">{c.name}</span>
-                <span className="csr-cert-desc">{c.desc}</span>
-              </a>
-            ))}
-          </div>
         </div>
 
         {/* CTA */}
