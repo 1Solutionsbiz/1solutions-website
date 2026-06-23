@@ -676,7 +676,6 @@ export default function WordPressDevelopmentCompany() {
             <span className="wp-clients-label">Trusted by Leading Brands</span>
             <div className="wp-clients-logos">
               <div className="wp-logos-track">
-                {/* first set */}
                 {[
                   ['/logo/Indian_Express_Logo_full.png','Indian Express'],
                   ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],
@@ -684,6 +683,12 @@ export default function WordPressDevelopmentCompany() {
                   ['/logo/ICCoLogo.png','ICC'],
                   ['/logo/Honor_Logo_(2020).svg.png','Honor'],
                   ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],
+                  ['/logo/amarujala-print-logo_60e03f7d5b4a8.webp','Amar Ujala'],
+                  ['/logo/Nuance-Symbol-500x281.png','Nuance'],
+                  ['/logo/PHDCCI-Logo-2024.png','PHD Chamber'],
+                  ['/logo/Wilson-logo.svg.png','Wilson'],
+                  ['/logo/977be174b7bcc8708254a2163b534cbe_fgraphic.png','Client'],
+                  ['/logo/india-madeaismartphone2-1747658691.webp','India Made'],
                   /* duplicate for seamless loop */
                   ['/logo/Indian_Express_Logo_full.png','Indian Express2'],
                   ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon2'],
@@ -691,6 +696,12 @@ export default function WordPressDevelopmentCompany() {
                   ['/logo/ICCoLogo.png','ICC2'],
                   ['/logo/Honor_Logo_(2020).svg.png','Honor2'],
                   ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv2'],
+                  ['/logo/amarujala-print-logo_60e03f7d5b4a8.webp','Amar Ujala2'],
+                  ['/logo/Nuance-Symbol-500x281.png','Nuance2'],
+                  ['/logo/PHDCCI-Logo-2024.png','PHD Chamber2'],
+                  ['/logo/Wilson-logo.svg.png','Wilson2'],
+                  ['/logo/977be174b7bcc8708254a2163b534cbe_fgraphic.png','Client2'],
+                  ['/logo/india-madeaismartphone2-1747658691.webp','India Made2'],
                 ].map(([src,alt]) => (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img key={alt} src={src} alt={alt.replace(/\d+$/,'')} className="wp-client-logo" />
