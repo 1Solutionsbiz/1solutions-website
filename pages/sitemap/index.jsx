@@ -16,6 +16,8 @@ const SECTIONS = [
       [
         { label: 'Open Positions',       href: '/open-positions' },
         { label: 'Apply Online',         href: '/apply-online' },
+        { label: 'Corporate Responsibility', href: '/corporate-responsibility' },
+        { label: 'Partner with Us',      href: '/partner-with-us' },
         { label: 'Write for Us',         href: '/write-for-us' },
         { label: 'Contact Us',           href: '/contact-us' },
         { label: 'Book a Consultation',  href: '/book-consultation' },

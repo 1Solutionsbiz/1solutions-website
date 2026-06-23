@@ -8,8 +8,8 @@ const COLS = [
     links: [
       ['Who We Are',          '/who-we-are'],
       ['Work Culture',        '/work-culture'],
-      ['Corporate Responsibility', '/who-we-are'],
-      ['Partner with Us',     '/contact-us'],
+      ['Corporate Responsibility', '/corporate-responsibility'],
+      ['Partner with Us',     '/partner-with-us'],
       ['Write for Us',        '/write-for-us'],
       ['Contact Us',          '/contact-us'],
     ],

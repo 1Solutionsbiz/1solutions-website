@@ -11,6 +11,8 @@ const STATIC_PAGES = [
   { url: '/apply-online',                        priority: '0.5', changefreq: 'monthly' },
   { url: '/contact-us',                           priority: '0.9', changefreq: 'monthly' },
   { url: '/write-for-us',                        priority: '0.7', changefreq: 'monthly' },
+  { url: '/corporate-responsibility',            priority: '0.6', changefreq: 'monthly' },
+  { url: '/partner-with-us',                     priority: '0.7', changefreq: 'monthly' },
   { url: '/book-consultation',                   priority: '0.8', changefreq: 'monthly' },
   { url: '/blog',                                priority: '0.9', changefreq: 'daily' },
   { url: '/sitemap',                             priority: '0.5', changefreq: 'monthly' },

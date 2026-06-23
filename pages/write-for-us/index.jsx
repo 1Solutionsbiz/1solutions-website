@@ -95,12 +95,6 @@ const GUIDELINES = [
   },
 ];
 
-const WHAT_YOU_GET = [
-  { stat: 'Do-follow', label: 'Author bio backlink' },
-  { stat: '460+', label: 'Monthly blog readers' },
-  { stat: '24 hrs', label: 'Review turnaround' },
-  { stat: 'Lifetime', label: 'Article stays live' },
-];
 
 const INITIAL = {
   name: '', email: '', website: '', title: '',
@@ -204,39 +198,6 @@ export default function WriteForUs() {
             transition: background 0.2s;
           }
           .wfu-hero-cta:hover { background: #e08800; }
-
-          /* Stats bar */
-          .wfu-stats {
-            background: #fff;
-            border-bottom: 1px solid #e8ecf0;
-            padding: 0;
-          }
-          .wfu-stats-inner {
-            max-width: 900px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            divide-x: 1px solid #e8ecf0;
-          }
-          .wfu-stat-item {
-            padding: 28px 20px;
-            text-align: center;
-            border-right: 1px solid #e8ecf0;
-          }
-          .wfu-stat-item:last-child { border-right: none; }
-          .wfu-stat-num {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: #114171;
-            display: block;
-            line-height: 1;
-            margin-bottom: 6px;
-          }
-          .wfu-stat-label {
-            font-size: 0.8rem;
-            color: #6b7280;
-            font-weight: 500;
-          }
 
           /* Main layout */
           .wfu-page {
@@ -550,18 +511,6 @@ export default function WriteForUs() {
           <a href="#submit" className="wfu-hero-cta">Submit Your Pitch →</a>
         </div>
       </section>
-
-      {/* Stats bar */}
-      <div className="wfu-stats">
-        <div className="wfu-stats-inner">
-          {WHAT_YOU_GET.map(({ stat, label }) => (
-            <div key={label} className="wfu-stat-item">
-              <span className="wfu-stat-num">{stat}</span>
-              <span className="wfu-stat-label">{label}</span>
-            </div>
-          ))}
-        </div>
-      </div>
 
       <div className="wfu-page">
 
