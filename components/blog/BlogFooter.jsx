@@ -58,7 +58,7 @@ const TRUST_BADGES = [
   { src: '/images/iso-9001.png',        alt: 'ISO 9001:2015 Certified', href: '/who-we-are' },
   { src: '/images/msme.png',            alt: 'MSME Registered',         href: '/who-we-are' },
   { src: '/images/trustpilot.svg',      alt: 'Trustpilot',              href: 'https://www.trustpilot.com/review/1solutions.biz', nofollow: true },
-  { src: '/images/google-business.svg', alt: 'Google Business Profile', href: 'https://g.co/kgs/4BCmrBR', nofollow: true },
+  { src: '/images/gmb.png',             alt: 'Google Business Profile', href: 'https://g.co/kgs/4BCmrBR', nofollow: true },
 ];
 
 const BOTTOM_NAV = [
