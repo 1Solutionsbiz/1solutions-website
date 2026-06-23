@@ -283,7 +283,7 @@ export default function ShopifyStoreDevelopment() {
           .shopify-pcard-cats { font-size:13px;font-weight:700;color:#D97706; }
 
           /* Process */
-          .shopify-process-section { background:transparent;padding:80px 40px;position:relative;z-index:1; }
+          .shopify-process-section { background:#f0fdf4;border-top:1px solid rgba(6,95,70,0.08);border-bottom:1px solid rgba(6,95,70,0.08);padding:80px 40px;position:relative;z-index:1; }
           .shopify-process-top { max-width:1280px;margin:0 auto 56px; }
           .shopify-process-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D97706;margin:0 0 14px; }
           .shopify-process-main-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#065F46 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
