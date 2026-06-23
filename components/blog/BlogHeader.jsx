@@ -55,12 +55,16 @@ const SVC_PILLARS = [
       {
         id: 'seo', label: 'SEO Services',
         services: [
-          { name: 'SEO Services',            desc: 'Full-service search optimisation',     href: '/seo-services/' },
-          { name: 'Technical SEO',           desc: 'Site speed, crawlability & schema',    href: '/seo-services-company/' },
-          { name: 'Local SEO',               desc: 'Dominate local search results',        href: '/seo-services-company/' },
-          { name: 'eCommerce SEO',           desc: 'Product & category page rankings',     href: '/seo-services-company/' },
-          { name: 'SEO Audit',               desc: 'Comprehensive site health check',      href: '/seo-services-company/' },
+          { name: 'SEO Services',            desc: 'Full-service search optimisation',     href: '/seo-services-company/' },
+          { name: 'Technical SEO',           desc: 'Site speed, crawlability & schema',    href: '/technical-seo-optimization/' },
+          { name: 'Local SEO',               desc: 'Dominate local search results',        href: '/local-seo-services/' },
+          { name: 'eCommerce SEO',           desc: 'Product & category page rankings',     href: '/ecommerce-seo-services/' },
+          { name: 'SEO Audit',               desc: 'Comprehensive site health check',      href: '/seo-audit-services/' },
           { name: 'SEO Packages',            desc: 'Affordable monthly SEO plans',         href: '/affordable-seo-packages/' },
+          { name: 'Local SEO Packages',      desc: 'Monthly local SEO pricing plans',      href: '/local-seo-packages/' },
+          { name: 'eCommerce SEO Packages',  desc: 'Monthly ecommerce SEO pricing plans',  href: '/ecommerce-seo-packages/' },
+          { name: 'Link Building Services',  desc: 'Guest posts, niche edits & digital PR', href: '/link-building-services/' },
+          { name: 'Link Building Packages',  desc: 'Monthly backlink plans & pricing',     href: '/link-building-packages/' },
         ],
       },
       {
