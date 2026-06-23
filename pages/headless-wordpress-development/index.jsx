@@ -373,23 +373,37 @@ export default function HeadlessWordPressDevelopment() {
           .hwp-why-card p { font-size:13px;color:#4A6080;line-height:1.65;margin:0; }
 
           /* Engagement */
-          .hwp-engage-section { background:rgba(237,233,254,0.35);border-top:1px solid rgba(76,29,149,0.08);padding:80px 40px;position:relative;z-index:1; }
+          .hwp-engage-section { padding:80px 40px;position:relative;z-index:1; }
           .hwp-engage-inner { max-width:1280px;margin:0 auto; }
-          .hwp-engage-header { text-align:center;margin-bottom:48px; }
           .hwp-engage-title { font-size:40px;font-weight:900;line-height:1.15;letter-spacing:-0.8px;background:linear-gradient(90deg,#4C1D95 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
-          .hwp-engage-desc { font-size:15px;color:#4A6080;line-height:1.75;margin:0 auto;max-width:600px; }
-          .hwp-engage-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:20px; }
-          .hwp-ecard { background:rgba(255,255,255,0.60);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:28px 24px;box-shadow:0 4px 20px rgba(76,29,149,0.07),inset 0 1px 0 rgba(255,255,255,0.95);opacity:0;transform:translateY(40px);transition:opacity 0.6s cubic-bezier(0.22,1,0.36,1),transform 0.6s cubic-bezier(0.22,1,0.36,1),box-shadow 0.22s,border-color 0.22s; }
-          .hwp-ecard.hwp-ecard-visible { opacity:1;transform:translateY(0); }
-          .hwp-ecard:hover { transform:translateY(-5px);border-color:rgba(217,119,6,0.35);box-shadow:0 12px 36px rgba(76,29,149,0.12),inset 0 1px 0 rgba(255,255,255,1); }
-          .hwp-ecard-header { display:flex;align-items:center;gap:12px;margin-bottom:10px; }
-          .hwp-ecard-icon { width:36px;height:36px;flex-shrink:0;color:#4C1D95;background:rgba(237,233,254,0.70);border-radius:10px;border:1px solid rgba(76,29,149,0.14);display:flex;align-items:center;justify-content:center;padding:7px; }
-          .hwp-ecard-icon svg { width:20px;height:20px; }
-          .hwp-ecard-title { font-size:15px;font-weight:700;color:#0F1F40;margin:0; }
-          .hwp-ecard-desc { font-size:13px;color:#4A6080;line-height:1.65;margin:0 0 14px; }
-          .hwp-ecard-features { display:flex;flex-direction:column;gap:6px; }
-          .hwp-efeat { display:flex;align-items:center;gap:8px;font-size:12px;color:#3A507A; }
-          .hwp-efeat-check { color:#4C1D95;font-size:11px;font-weight:700;flex-shrink:0; }
+          .hwp-engage-desc { font-size:15px;color:#4A6080;line-height:1.75;max-width:680px; }
+          .hwp-eng-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px; }
+          .hwp-eng-card { background:linear-gradient(135deg,rgba(237,233,254,0.50) 0%,rgba(255,255,255,0.85) 55%,rgba(254,252,232,0.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:24px;padding:32px 28px;box-shadow:0 4px 24px rgba(76,29,149,0.08),inset 0 1px 0 rgba(255,255,255,0.95);opacity:0;transform:translateY(44px);transition:opacity 0.65s cubic-bezier(0.22,1,0.36,1),transform 0.65s cubic-bezier(0.22,1,0.36,1),border-color 0.2s,box-shadow 0.25s; }
+          .hwp-eng-card.hwp-eng-ev { opacity:1;transform:translateY(0); }
+          .hwp-eng-card.hwp-eng-ev:hover { border-color:rgba(76,29,149,0.25);box-shadow:0 16px 48px rgba(76,29,149,0.14); }
+          .hwp-eng-card.feat { background:linear-gradient(135deg,rgba(254,243,199,0.52) 0%,rgba(255,255,255,0.87) 55%,rgba(237,233,254,0.45) 100%);border-color:rgba(217,119,6,0.28);box-shadow:0 8px 32px rgba(217,119,6,0.12),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-8px); }
+          .hwp-eng-card.feat.hwp-eng-ev { transform:translateY(-8px); }
+          .hwp-eng-card.feat.hwp-eng-ev:hover { transform:translateY(-12px); }
+          .hwp-eng-badge { display:inline-block;font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:5px 12px;border-radius:100px;border:1px solid;margin-bottom:18px; }
+          .hwp-eng-icon { width:48px;height:48px;background:rgba(76,29,149,0.07);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;transition:background 0.2s; }
+          .hwp-eng-card.hwp-eng-ev:hover .hwp-eng-icon { background:rgba(76,29,149,0.14); }
+          .hwp-eng-card.feat .hwp-eng-icon { background:rgba(217,119,6,0.10); }
+          .hwp-eng-icon svg { fill:#4C1D95;transition:fill 0.2s; }
+          .hwp-eng-card.feat .hwp-eng-icon svg { fill:#D97706; }
+          .hwp-eng-name { font-size:22px;font-weight:900;color:#4C1D95;margin:0 0 6px;letter-spacing:-0.3px; }
+          .hwp-eng-headline { font-size:13px;font-weight:600;color:#D97706;margin-bottom:12px; }
+          .hwp-eng-desc { font-size:14px;color:#4A6080;line-height:1.7;margin-bottom:18px; }
+          .hwp-eng-list-label { font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#6A80A0;margin-bottom:8px; }
+          .hwp-eng-list { list-style:none;padding:0;margin:0 0 18px;display:flex;flex-direction:column;gap:7px; }
+          .hwp-eng-list li { display:flex;align-items:flex-start;gap:8px;font-size:13px;color:#374151;line-height:1.5; }
+          .hwp-eng-list li::before { content:'✓';font-weight:800;color:#4C1D95;flex-shrink:0;margin-top:1px; }
+          .hwp-eng-process { font-size:12px;color:#6A80A0;padding-top:14px;border-top:1px solid rgba(76,29,149,0.08); }
+          .hwp-eng-process strong { color:#4C1D95; }
+          .hwp-eng-timeline { display:inline-block;font-size:11px;font-weight:600;color:#D97706;margin-top:6px; }
+          .hwp-eng-cta { display:block;margin-top:18px;padding:11px;border-radius:50px;font-size:13px;font-weight:700;text-align:center;text-decoration:none;transition:all 0.22s;background:rgba(76,29,149,0.09);color:#4C1D95;border:1.5px solid rgba(76,29,149,0.18); }
+          .hwp-eng-cta:hover { background:#4C1D95;color:#fff; }
+          .hwp-eng-card.feat .hwp-eng-cta { background:#7C3AED;color:#fff;border-color:#7C3AED; }
+          .hwp-eng-card.feat .hwp-eng-cta:hover { background:#4C1D95;border-color:#4C1D95; }
 
           /* Contact */
           .hwp-contact-section { background:linear-gradient(135deg,#4C1D95 0%,#312E81 60%,#1E1B4B 100%);padding:80px 40px;position:relative;z-index:2;overflow:hidden; }
@@ -707,31 +721,57 @@ export default function HeadlessWordPressDevelopment() {
         {/* ── ENGAGEMENT MODELS ── */}
         <section className="hwp-engage-section">
           <div className="hwp-engage-inner">
-            <div className={`hwp-engage-header hwp-section-reveal${visibleSections.has('engage') ? ' hwp-revealed' : ''}`} ref={el => { sectionRefs.current['engage'] = el; }}>
-              <span className="hwp-section-eyebrow">Engagement Models</span>
-              <h2 className="hwp-engage-title">Choose How You Work With Us</h2>
-              <p className="hwp-engage-desc">We offer flexible engagement models so you can choose the approach that best fits your headless WordPress project, timeline, and budget, with full transparency at every step.</p>
+            <div className={`hwp-section-reveal${visibleSections.has('engage') ? ' hwp-revealed' : ''}`} ref={el => { sectionRefs.current['engage'] = el; }}>
+              <span className="hwp-section-eyebrow">How to Hire</span>
+              <h2 className="hwp-engage-title">Engagement Models for Headless WordPress</h2>
+              <p className="hwp-engage-desc">Hire a dedicated headless developer for an ongoing roadmap, engage on a fixed-price project for a complete decoupled build, or take out a monthly retainer for ongoing improvements and support, whichever matches your project and budget.</p>
             </div>
-            <div className="hwp-engage-grid" ref={eCardsRef}>
+            <div className="hwp-eng-grid" ref={eCardsRef}>
               {[
-                { title:'Dedicated Team', desc:'A full-time dedicated headless development team including a project manager, Next.js developer, and WPGraphQL specialist working exclusively on your project.', features:['Cost-effective Approach','Less Admin Overhead','Quick-paced Development','Timely Reporting'],
-                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> },
-                { title:'Fixed-Price Project', desc:'Ideal for well-defined headless WordPress builds with clear scope. We agree on deliverables, timeline, and cost upfront, with no surprises and no hidden fees.', features:['Complete Budget Control','Ease of Management','No Hidden Costs','On-time Delivery'],
-                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> },
-                { title:'Time and Material', desc:'Perfect for evolving projects where requirements change. Pay only for hours worked with full visibility into progress and spend via weekly reports.', features:['Maximum Flexibility','Reduced Risk','Iterative Development','Transparent Billing'],
-                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> },
-                { title:'Ongoing Retainer', desc:'Monthly retainer for continuous improvements, new features, performance monitoring, and WPGraphQL maintenance. Ideal for growing platforms that need a reliable tech partner.', features:['Priority Support','Monthly Reporting','Dedicated Capacity','Proactive Monitoring'],
-                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> },
-              ].map((e,i) => (
-                <div className={`hwp-ecard${visibleECards.includes(i)?' hwp-ecard-visible':''}`} key={e.title}>
-                  <div className="hwp-ecard-header">
-                    <div className="hwp-ecard-icon">{e.icon}</div>
-                    <h3 className="hwp-ecard-title">{e.title}</h3>
-                  </div>
-                  <p className="hwp-ecard-desc">{e.desc}</p>
-                  <div className="hwp-ecard-features">
-                    {e.features.map(f => <div className="hwp-efeat" key={f}><span className="hwp-efeat-check">✔</span>{f}</div>)}
-                  </div>
+                {
+                  id:'dedicated', feat:true,
+                  badge:'Most Popular', badgeColor:'#D97706',
+                  iconPath:'M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z',
+                  name:'Dedicated Developer',
+                  headline:'A full-time headless WordPress developer working exclusively on your project.',
+                  desc:'A dedicated Next.js and WPGraphQL developer working as an extension of your team. Full access to your codebase, Vercel deployments, and WordPress admin. Significantly lower cost than a local agency retainer or a full-time in-house hire.',
+                  bestFor:['Ongoing headless WordPress roadmap','Agencies needing a white-label Next.js developer','Performance-critical platforms needing continuous work','Replacing an expensive local agency at lower cost'],
+                  process:'Discovery, developer matching, sprint delivery, ongoing roadmap',
+                  timeline:'Developer available within 5 to 7 business days',
+                },
+                {
+                  id:'fixed', feat:false,
+                  badge:'Defined Scope', badgeColor:'#7C3AED',
+                  iconPath:'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z',
+                  name:'Fixed-Price Project',
+                  headline:'Agreed price, agreed scope, delivered on a fixed schedule.',
+                  desc:'Best for a well-defined headless WordPress build with a clear specification. Fixed price covering WPGraphQL setup, Next.js frontend, Vercel deployment, and launch. No scope creep, no surprise invoices.',
+                  bestFor:['New headless WordPress build from scratch','Traditional WordPress to headless migration','Headless WooCommerce storefront build','One-time performance and architecture overhaul'],
+                  process:'Detailed spec, fixed quote, milestone delivery, UAT, launch',
+                  timeline:'Best for 6 to 20 week projects',
+                },
+                {
+                  id:'retainer', feat:false,
+                  badge:'Flexible Ongoing', badgeColor:'#a855f7',
+                  iconPath:'M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z',
+                  name:'Monthly Retainer',
+                  headline:'Monthly headless dev hours for ongoing changes and improvements.',
+                  desc:'A monthly bank of Next.js and WPGraphQL developer hours for feature additions, content model changes, performance work, dependency updates, and emergency support, without a full dedicated team. Transparent hours reporting each month.',
+                  bestFor:['Live headless sites needing regular feature work','WPGraphQL schema updates and ACF changes','Core Web Vitals and performance monitoring','Flexible support without a full-time commitment'],
+                  process:'Monthly hours bank, ticket-based prioritisation, hours report, rolling rollover',
+                  timeline:'Start within 3 to 5 business days',
+                },
+              ].map((m, i) => (
+                <div key={m.id} className={`hwp-eng-card${m.feat ? ' feat' : ''}${visibleECards.includes(i) ? ' hwp-eng-ev' : ''}`} style={{ transitionDelay:`${i * 100}ms` }}>
+                  <span className="hwp-eng-badge" style={{ color:m.badgeColor, borderColor:m.badgeColor+'44', background:m.badgeColor+'14' }}>{m.badge}</span>
+                  <div className="hwp-eng-icon"><svg viewBox="0 0 24 24" width="26" height="26"><path d={m.iconPath} /></svg></div>
+                  <div className="hwp-eng-name">{m.name}</div>
+                  <div className="hwp-eng-headline">{m.headline}</div>
+                  <div className="hwp-eng-desc">{m.desc}</div>
+                  <div className="hwp-eng-list-label">Best for</div>
+                  <ul className="hwp-eng-list">{m.bestFor.map(b => <li key={b}>{b}</li>)}</ul>
+                  <div className="hwp-eng-process"><strong>Process:</strong> {m.process}<br /><span className="hwp-eng-timeline">{m.timeline}</span></div>
+                  <Link href="#contact" className="hwp-eng-cta">Get a free estimate</Link>
                 </div>
               ))}
             </div>
