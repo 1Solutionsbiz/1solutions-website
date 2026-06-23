@@ -9,8 +9,9 @@ const COLS = [
       ['Who We Are',          '/who-we-are'],
       ['Work Culture',        '/work-culture'],
       ['Corporate Responsibility', '/who-we-are'],
-      ['Partner with Us',     '/contact'],
-      ['Contact Us',          '/contact'],
+      ['Partner with Us',     '/contact-us'],
+      ['Write for Us',        '/write-for-us'],
+      ['Contact Us',          '/contact-us'],
     ],
   },
   {
