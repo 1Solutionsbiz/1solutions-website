@@ -180,10 +180,6 @@ export default function BlogFooter() {
 
           {/* Col 3 (right): legal links + registered office below */}
           <div className="bf-brand-right">
-            <nav className="bf-legal-links">
-              <Link href="/privacy-policy">Privacy</Link>
-              <Link href="/cookie-policy">Cookie Policy</Link>
-            </nav>
             <p className="bf-legal-text" style={{ marginTop: '12px' }}>
               Registered office:<br />
               47, Vijay Block, Laxmi Nagar,<br />
