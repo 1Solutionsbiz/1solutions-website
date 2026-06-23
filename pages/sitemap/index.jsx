@@ -18,6 +18,7 @@ const SECTIONS = [
         { label: 'Apply Online',         href: '/apply-online' },
         { label: 'Corporate Responsibility', href: '/corporate-responsibility' },
         { label: 'Partner with Us',      href: '/partner-with-us' },
+        { label: 'Refund Policy',         href: '/refund-policy' },
         { label: 'Write for Us',         href: '/write-for-us' },
         { label: 'Contact Us',           href: '/contact-us' },
         { label: 'Book a Consultation',  href: '/book-consultation' },

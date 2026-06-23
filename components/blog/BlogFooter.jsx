@@ -65,6 +65,9 @@ const TRUST_BADGES = [
 
 const BOTTOM_NAV = [
   ['Terms and Conditions', '/terms-of-use'],
+  ['Privacy Policy',       '/privacy-policy'],
+  ['Cookie Policy',        '/cookie-policy'],
+  ['Refund Policy',        '/refund-policy'],
 ];
 
 const SOCIAL = [

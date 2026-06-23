@@ -100,46 +100,47 @@ export default function CorporateResponsibility() {
         <style>{`
           /* ── Corporate Responsibility — prefix: csr- ── */
           .csr-hero {
-            background: linear-gradient(135deg, #0a2540 0%, #114171 55%, #1a5fa8 100%);
+            background: linear-gradient(135deg, #dbeafe 0%, #d1fae5 30%, #e0f2fe 60%, #fef3c7 100%);
             padding: 80px 24px 72px;
             text-align: center;
             position: relative;
             overflow: hidden;
           }
-          .csr-hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse at 70% 50%, rgba(68,151,61,0.15) 0%, transparent 60%);
-          }
+          .csr-orb { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; }
+          .csr-orb-1 { width: 500px; height: 500px; background: rgba(68,151,61,0.08); top: -120px; right: -100px; }
+          .csr-orb-2 { width: 350px; height: 350px; background: rgba(17,65,113,0.07); bottom: -60px; left: -60px; }
           .csr-hero-inner {
             position: relative;
+            z-index: 1;
             max-width: 760px;
             margin: 0 auto;
           }
           .csr-tag {
             display: inline-block;
-            background: rgba(68,151,61,0.18);
-            color: #6ee07a;
+            background: rgba(68,151,61,0.10);
+            color: #166534;
             font-size: 12px;
             font-weight: 700;
             letter-spacing: 0.12em;
             text-transform: uppercase;
             padding: 6px 16px;
             border-radius: 50px;
-            border: 1px solid rgba(68,151,61,0.35);
+            border: 1px solid rgba(68,151,61,0.20);
             margin-bottom: 20px;
           }
           .csr-hero h1 {
             font-size: clamp(2rem, 5vw, 3.2rem);
-            font-weight: 800;
-            color: #fff;
+            font-weight: 900;
+            background: linear-gradient(90deg, #0F3460 0%, #16a34a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin: 0 0 18px;
             line-height: 1.15;
           }
           .csr-hero p {
             font-size: 1.1rem;
-            color: rgba(255,255,255,0.75);
+            color: #3A507A;
             max-width: 620px;
             margin: 0 auto;
             line-height: 1.7;
@@ -397,6 +398,8 @@ export default function CorporateResponsibility() {
 
       {/* Hero */}
       <section className="csr-hero">
+        <div className="csr-orb csr-orb-1" />
+        <div className="csr-orb csr-orb-2" />
         <div className="csr-hero-inner">
           <span className="csr-tag">Corporate Responsibility</span>
           <h1>Technology with a Purpose</h1>

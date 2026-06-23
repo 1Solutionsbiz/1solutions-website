@@ -162,7 +162,7 @@ export default function CookiePolicy() {
           .cp-orb-1 { width: 500px; height: 500px; background: rgba(17,65,113,0.07); top: -120px; right: -100px; }
           .cp-orb-2 { width: 350px; height: 350px; background: rgba(254,151,0,0.09); bottom: -60px; left: -60px; }
           .cp-hero-inner {
-            max-width: 820px;
+            max-width: 1100px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
@@ -203,7 +203,7 @@ export default function CookiePolicy() {
 
           /* ─── Layout ─── */
           .cp-body {
-            max-width: 820px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 56px 24px 80px;
             display: grid;

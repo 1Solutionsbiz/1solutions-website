@@ -136,14 +136,14 @@ export default function RefundPolicy() {
           .rp-orb { position:absolute; border-radius:50%; filter:blur(80px); pointer-events:none; }
           .rp-orb-1 { width:500px; height:500px; background:rgba(254,151,0,0.08); top:-120px; right:-100px; }
           .rp-orb-2 { width:350px; height:350px; background:rgba(17,65,113,0.08); bottom:-60px; left:-60px; }
-          .rp-hero-inner { max-width:820px; margin:0 auto; position:relative; z-index:1; }
+          .rp-hero-inner { max-width:1100px; margin:0 auto; position:relative; z-index:1; }
           .rp-breadcrumb { display:flex; align-items:center; gap:6px; font-size:.82rem; color:#6b7280; margin-bottom:20px; flex-wrap:wrap; }
           .rp-breadcrumb a { color:#114171; text-decoration:none; font-weight:500; }
           .rp-breadcrumb a:hover { text-decoration:underline; }
           .rp-hero h1 { font-size:clamp(2rem,4vw,3rem); font-weight:800; line-height:1.14; letter-spacing:-.025em; color:#0F1F40; margin:0 0 14px; }
           .rp-hero-meta { font-size:.88rem; color:#6b7280; display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
           .rp-hero-meta span { display:flex; align-items:center; gap:6px; }
-          .rp-body { max-width:820px; margin:0 auto; padding:56px 24px 80px; display:grid; grid-template-columns:220px 1fr; gap:48px; align-items:start; }
+          .rp-body { max-width:1100px; margin:0 auto; padding:56px 24px 80px; display:grid; grid-template-columns:220px 1fr; gap:48px; align-items:start; }
           .rp-toc { position:sticky; top:100px; }
           .rp-toc-title { font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:#9ca3af; margin-bottom:14px; }
           .rp-toc-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2px; }

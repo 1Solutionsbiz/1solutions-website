@@ -142,62 +142,72 @@ export default function WriteForUs() {
         <style>{`
           /* ── Write For Us page — prefix: wfu- ── */
           .wfu-hero {
-            background: linear-gradient(135deg, #0a2540 0%, #114171 60%, #1a5fa8 100%);
+            background: linear-gradient(135deg, #dbeafe 0%, #ede9fe 30%, #e0f2fe 60%, #fef3c7 100%);
             padding: 80px 24px 72px;
             text-align: center;
             position: relative;
             overflow: hidden;
           }
-          .wfu-hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-          }
+          .wfu-orb { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; }
+          .wfu-orb-1 { width: 500px; height: 500px; background: rgba(17,65,113,0.07); top: -120px; right: -100px; }
+          .wfu-orb-2 { width: 350px; height: 350px; background: rgba(254,151,0,0.09); bottom: -60px; left: -60px; }
           .wfu-hero-inner {
             position: relative;
+            z-index: 1;
             max-width: 760px;
             margin: 0 auto;
           }
           .wfu-hero-tag {
             display: inline-block;
-            background: rgba(254,151,0,0.18);
-            color: #FE9700;
+            background: rgba(17,65,113,0.08);
+            color: #114171;
             font-size: 12px;
             font-weight: 700;
             letter-spacing: 0.12em;
             text-transform: uppercase;
             padding: 6px 16px;
             border-radius: 50px;
-            border: 1px solid rgba(254,151,0,0.35);
+            border: 1px solid rgba(17,65,113,0.15);
             margin-bottom: 20px;
           }
           .wfu-hero h1 {
             font-size: clamp(2rem, 5vw, 3.2rem);
-            font-weight: 800;
-            color: #fff;
+            font-weight: 900;
+            background: linear-gradient(90deg, #0F3460 0%, #D97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin: 0 0 18px;
             line-height: 1.15;
           }
           .wfu-hero p {
             font-size: 1.1rem;
-            color: rgba(255,255,255,0.75);
+            color: #3A507A;
             max-width: 600px;
             margin: 0 auto 32px;
             line-height: 1.7;
           }
           .wfu-hero-cta {
             display: inline-block;
-            background: #FE9700;
-            color: #fff;
+            background: rgba(255,255,255,0.55);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1.5px solid rgba(255,255,255,0.85);
+            border-radius: 50px;
+            color: #0F3460;
             font-weight: 700;
             font-size: 0.95rem;
             padding: 14px 32px;
-            border-radius: 8px;
             text-decoration: none;
-            transition: background 0.2s;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(15,52,96,0.10);
           }
-          .wfu-hero-cta:hover { background: #e08800; }
+          .wfu-hero-cta:hover {
+            background: rgba(255,255,255,0.85);
+            border-color: rgba(245,158,11,0.6);
+            box-shadow: 0 12px 36px rgba(15,52,96,0.15), 0 0 0 2px rgba(245,158,11,0.22);
+            transform: translateY(-3px);
+          }
 
           /* Main layout */
           .wfu-page {
@@ -504,6 +514,8 @@ export default function WriteForUs() {
 
       {/* Hero */}
       <section className="wfu-hero">
+        <div className="wfu-orb wfu-orb-1" />
+        <div className="wfu-orb wfu-orb-2" />
         <div className="wfu-hero-inner">
           <span className="wfu-hero-tag">Guest Contributions</span>
           <h1>Write for Us</h1>

@@ -115,62 +115,72 @@ export default function PartnerWithUs() {
         <style>{`
           /* ── Partner with Us — prefix: pwu- ── */
           .pwu-hero {
-            background: linear-gradient(135deg, #0a2540 0%, #114171 55%, #1a5fa8 100%);
+            background: linear-gradient(135deg, #dbeafe 0%, #ede9fe 30%, #fef3c7 60%, #fce7f3 100%);
             padding: 80px 24px 72px;
             text-align: center;
             position: relative;
             overflow: hidden;
           }
-          .pwu-hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse at 30% 60%, rgba(254,151,0,0.12) 0%, transparent 55%);
-          }
+          .pwu-orb { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; }
+          .pwu-orb-1 { width: 500px; height: 500px; background: rgba(254,151,0,0.08); top: -120px; right: -100px; }
+          .pwu-orb-2 { width: 350px; height: 350px; background: rgba(17,65,113,0.07); bottom: -60px; left: -60px; }
           .pwu-hero-inner {
             position: relative;
+            z-index: 1;
             max-width: 760px;
             margin: 0 auto;
           }
           .pwu-tag {
             display: inline-block;
-            background: rgba(254,151,0,0.18);
-            color: #FE9700;
+            background: rgba(254,151,0,0.12);
+            color: #92400e;
             font-size: 12px;
             font-weight: 700;
             letter-spacing: 0.12em;
             text-transform: uppercase;
             padding: 6px 16px;
             border-radius: 50px;
-            border: 1px solid rgba(254,151,0,0.35);
+            border: 1px solid rgba(254,151,0,0.25);
             margin-bottom: 20px;
           }
           .pwu-hero h1 {
             font-size: clamp(2rem, 5vw, 3.2rem);
-            font-weight: 800;
-            color: #fff;
+            font-weight: 900;
+            background: linear-gradient(90deg, #0F3460 0%, #D97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin: 0 0 18px;
             line-height: 1.15;
           }
           .pwu-hero p {
             font-size: 1.1rem;
-            color: rgba(255,255,255,0.75);
+            color: #3A507A;
             max-width: 600px;
             margin: 0 auto 32px;
             line-height: 1.7;
           }
           .pwu-hero-cta {
             display: inline-block;
-            background: #FE9700;
-            color: #fff;
+            background: rgba(255,255,255,0.55);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1.5px solid rgba(255,255,255,0.85);
+            border-radius: 50px;
+            color: #0F3460;
             font-weight: 700;
             font-size: 0.95rem;
             padding: 14px 32px;
-            border-radius: 8px;
             text-decoration: none;
-            transition: background 0.2s;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(15,52,96,0.10);
           }
-          .pwu-hero-cta:hover { background: #e08800; }
+          .pwu-hero-cta:hover {
+            background: rgba(255,255,255,0.85);
+            border-color: rgba(245,158,11,0.6);
+            box-shadow: 0 12px 36px rgba(15,52,96,0.15), 0 0 0 2px rgba(245,158,11,0.22);
+            transform: translateY(-3px);
+          }
 
           /* Page */
           .pwu-page {
@@ -459,6 +469,8 @@ export default function PartnerWithUs() {
 
       {/* Hero */}
       <section className="pwu-hero">
+        <div className="pwu-orb pwu-orb-1" />
+        <div className="pwu-orb pwu-orb-2" />
         <div className="pwu-hero-inner">
           <span className="pwu-tag">Partnerships</span>
           <h1>Grow Together with 1Solutions</h1>

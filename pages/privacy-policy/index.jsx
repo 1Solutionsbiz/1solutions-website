@@ -176,14 +176,14 @@ export default function PrivacyPolicy() {
           .pp-orb { position:absolute; border-radius:50%; filter:blur(80px); pointer-events:none; }
           .pp-orb-1 { width:500px; height:500px; background:rgba(17,65,113,0.07); top:-120px; right:-100px; }
           .pp-orb-2 { width:350px; height:350px; background:rgba(124,58,237,0.09); bottom:-60px; left:-60px; }
-          .pp-hero-inner { max-width:820px; margin:0 auto; position:relative; z-index:1; }
+          .pp-hero-inner { max-width:1100px; margin:0 auto; position:relative; z-index:1; }
           .pp-breadcrumb { display:flex; align-items:center; gap:6px; font-size:.82rem; color:#6b7280; margin-bottom:20px; flex-wrap:wrap; }
           .pp-breadcrumb a { color:#114171; text-decoration:none; font-weight:500; }
           .pp-breadcrumb a:hover { text-decoration:underline; }
           .pp-hero h1 { font-size:clamp(2rem,4vw,3rem); font-weight:800; line-height:1.14; letter-spacing:-.025em; color:#0F1F40; margin:0 0 14px; }
           .pp-hero-meta { font-size:.88rem; color:#6b7280; display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
           .pp-hero-meta span { display:flex; align-items:center; gap:6px; }
-          .pp-body { max-width:820px; margin:0 auto; padding:56px 24px 80px; display:grid; grid-template-columns:220px 1fr; gap:48px; align-items:start; }
+          .pp-body { max-width:1100px; margin:0 auto; padding:56px 24px 80px; display:grid; grid-template-columns:220px 1fr; gap:48px; align-items:start; }
           .pp-toc { position:sticky; top:100px; }
           .pp-toc-title { font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:#9ca3af; margin-bottom:14px; }
           .pp-toc-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2px; }
