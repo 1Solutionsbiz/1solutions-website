@@ -11,6 +11,7 @@ const COLS = [
       ['Corporate Responsibility', '/corporate-responsibility'],
       ['Partner with Us',     '/partner-with-us'],
       ['Write for Us',        '/write-for-us'],
+      ['Join Our Team',       '/open-positions'],
       ['Contact Us',          '/contact-us'],
     ],
   },
@@ -63,10 +64,6 @@ const TRUST_BADGES = [
 ];
 
 const BOTTOM_NAV = [
-  ['About 1Solutions', '/who-we-are'],
-  ['Join Our Team',    '/open-positions'],
-  ['Press Room',       '/blog'],
-  ['Accessibility',    '/who-we-are'],
   ['Terms and Conditions', '/terms-of-use'],
 ];
 
@@ -181,10 +178,8 @@ export default function BlogFooter() {
           {/* Col 3 (right): legal links + registered office below */}
           <div className="bf-brand-right">
             <nav className="bf-legal-links">
-              <Link href="/terms-of-use">Legal</Link>
               <Link href="/privacy-policy">Privacy</Link>
-              <Link href="/cookie-policy">Security</Link>
-              <Link href="/privacy-policy">Compliance</Link>
+              <Link href="/cookie-policy">Cookie Policy</Link>
             </nav>
             <p className="bf-legal-text" style={{ marginTop: '12px' }}>
               Registered office:<br />
