@@ -112,10 +112,14 @@ export default function BlogFooter() {
         </div>
       </div>
 
-      {/* ── SITEMAP (left) + SOCIAL ICONS (right) STRIP ── */}
+      {/* ── SITEMAP (left) + RATING (center) + SOCIAL ICONS (right) STRIP ── */}
       <div className="bf-search-strip">
         <div className="bf-inner bf-search-inner">
           <Link href="/sitemap" className="bf-sitemap-link">Sitemap</Link>
+          <div className="bf-rating-badge">
+            <span className="bf-rating-stars">★★★★★</span>
+            <span className="bf-rating-text">Rated 5/5 by 375 clients</span>
+          </div>
           <div className="bf-social-row">
             {SOCIAL.map(s => (
               <a key={s.label} href={s.href} className="bf-social-icon" target="_blank" rel="noopener noreferrer" aria-label={s.label}>

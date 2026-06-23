@@ -1161,6 +1161,24 @@ body {
   justify-content: space-between;
   gap: 24px;
 }
+.bf-rating-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.bf-rating-stars {
+  color: #FFD700;
+  font-size: 18px;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+.bf-rating-text {
+  color: rgba(255,255,255,0.85);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
 .bf-social-row {
   display: flex;
   gap: 18px;
