@@ -1003,13 +1003,17 @@ export default function WordPressDevelopmentCompany() {
             <hr className="wp-related-divider" />
             <div className="wp-related-tags">
               {[
-                ['WooCommerce Development','blue'],['Custom Plugin Development','violet'],['WordPress Theme Development','teal'],
-                ['E-Commerce Website Development','amber'],['WordPress Migration Services','indigo'],['Headless WordPress Development','sky'],
-                ['WordPress Maintenance & Support','green'],['SEO for WordPress','rose'],['WordPress Speed Optimization','orange'],
-                ['Responsive Web Design','cyan'],['UI/UX Design Services','fuchsia'],['PHP Development','slate'],
-                ['Website Redesign Services','lime'],['Digital Marketing Services','emerald'],['WordPress Security Hardening','pink'],
-              ].map(([label,color]) => (
-                <Link href="#contact" className={`wp-rtag wp-rtag-${color}`} key={label}>{label}</Link>
+                ['WooCommerce Development',          'blue',    '/woocommerce-development-company'],
+                ['E-Commerce Website Development',   'amber',   '/ecommerce-website-development-services'],
+                ['WordPress Maintenance & Support',  'green',   '/wordpress-support-and-maintenance-services'],
+                ['SEO for WordPress',                'rose',    '/wordpress-seo-services'],
+                ['Headless WordPress Development',   'sky',     '/nextjs-development-services'],
+                ['Responsive Web Design',            'cyan',    '/website-design'],
+                ['UI/UX Design Services',            'fuchsia', '/website-design'],
+                ['PHP Development',                  'slate',   '/php-development-services'],
+                ['Digital Marketing Services',       'emerald', '/digital-marketing-services'],
+              ].map(([label,color,href]) => (
+                <Link href={href} className={`wp-rtag wp-rtag-${color}`} key={label}>{label}</Link>
               ))}
             </div>
           </div>
