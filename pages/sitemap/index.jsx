@@ -119,6 +119,7 @@ const SECTIONS = [
         { label: 'Local SEO Packages',            href: '/local-seo-packages' },
         { label: 'eCommerce SEO',                 href: '/ecommerce-seo-services' },
         { label: 'Ecommerce SEO Packages',        href: '/ecommerce-seo-packages' },
+        { label: 'Link Building Services',        href: '/link-building-services' },
         { label: 'Link Building Packages',        href: '/link-building-packages' },
         { label: 'Amazon SEO Services',           href: '/amazon-seo-services' },
         { label: 'SEO for Small Business',        href: '/seo-services-for-small-business' },

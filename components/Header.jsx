@@ -54,6 +54,8 @@ const SERVICES_MENU = [
           { label: 'SEO Services', href: '/seo-services-company' },
           { label: 'Local SEO', href: '/local-seo-services/' },
           { label: 'SEO Audit', href: '/seo-audit-services/' },
+          { label: 'Link Building Services', href: '/link-building-services' },
+          { label: 'Link Building Packages', href: '/link-building-packages' },
         ],
       },
     ],

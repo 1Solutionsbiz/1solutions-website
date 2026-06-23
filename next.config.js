@@ -52,8 +52,6 @@ const nextConfig = {
       { source: '/social-media-marketing-services-company/', destination: '/social-media-marketing-services/', permanent: true },
       { source: '/google-penguin-recovery-services',         destination: '/penguin-recovery-service',         permanent: true },
       { source: '/google-penguin-recovery-services/',        destination: '/penguin-recovery-service/',        permanent: true },
-      { source: '/link-building-services',                   destination: '/link-building-packages',           permanent: true },
-      { source: '/link-building-services/',                  destination: '/link-building-packages/',          permanent: true },
       { source: '/seo-copywriting-services',                 destination: '/content-copywriting-services',     permanent: true },
       { source: '/seo-copywriting-services/',                destination: '/content-copywriting-services/',    permanent: true },
       { source: '/shopify-development-services',             destination: '/shopify-store-development',        permanent: true },

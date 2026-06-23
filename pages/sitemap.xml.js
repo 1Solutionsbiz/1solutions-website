@@ -81,6 +81,7 @@ const STATIC_PAGES = [
   { url: '/local-seo-packages',                  priority: '0.8', changefreq: 'monthly' },
   { url: '/ecommerce-seo-services',              priority: '0.8', changefreq: 'monthly' },
   { url: '/ecommerce-seo-packages',              priority: '0.8', changefreq: 'monthly' },
+  { url: '/link-building-services',              priority: '0.9', changefreq: 'monthly' },
   { url: '/link-building-packages',              priority: '0.8', changefreq: 'monthly' },
   { url: '/amazon-seo-services',                 priority: '0.8', changefreq: 'monthly' },
   { url: '/seo-services-for-small-business',     priority: '0.8', changefreq: 'monthly' },
