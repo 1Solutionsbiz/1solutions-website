@@ -1286,6 +1286,12 @@ body {
 }
 .bf-legal-text a { color: rgba(255,255,255,0.70); text-decoration: none; }
 .bf-legal-text a:hover { text-decoration: underline; color: #fff; }
+.bf-contact-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: rgba(255,255,255,0.60);
+}
 
 /* ── Responsive ── */
 @media (max-width: 1280px) {

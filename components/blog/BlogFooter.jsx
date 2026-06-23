@@ -178,15 +178,29 @@ export default function BlogFooter() {
             </div>
           </div>
 
-          {/* Col 3 (right): legal links + registered office below */}
+          {/* Col 3 (right): registered office */}
           <div className="bf-brand-right">
-            <p className="bf-legal-text" style={{ marginTop: '12px' }}>
-              Registered office:<br />
-              47, Vijay Block, Laxmi Nagar,<br />
-              New Delhi – 110092, India.<br />
-              <a href="mailto:info@1solutions.biz">info@1solutions.biz</a><br />
-              <a href="tel:+919654327900">+91 9654327900</a>
-            </p>
+            <div className="bf-contact-row">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" style={{flexShrink:0,marginTop:'2px'}}>
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+              </svg>
+              <p className="bf-legal-text">
+                47, Vijay Block, Laxmi Nagar,<br />
+                New Delhi – 110092, India.
+              </p>
+            </div>
+            <div className="bf-contact-row" style={{marginTop:'10px'}}>
+              <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" style={{flexShrink:0,marginTop:'1px'}}>
+                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+              <a href="mailto:info@1solutions.biz" className="bf-legal-text" style={{textDecoration:'none'}}>info@1solutions.biz</a>
+            </div>
+            <div className="bf-contact-row" style={{marginTop:'8px'}}>
+              <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" style={{flexShrink:0,marginTop:'1px'}}>
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+              </svg>
+              <a href="tel:+919654327900" className="bf-legal-text" style={{textDecoration:'none'}}>+91 9654327900</a>
+            </div>
           </div>
 
         </div>
