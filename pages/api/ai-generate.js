@@ -25,7 +25,7 @@ export default async function handler(req, res) {
 
   if (!prompt) return res.status(400).json({ error: 'prompt is required' });
 
-  const expectedSecret = process.env.REVALIDATE_SECRET;
+  const expectedSecret = process.env.AI_GENERATE_SECRET;
   if (!expectedSecret || secret !== expectedSecret) {
     return res.status(403).json({ error: 'Unauthorized' });
   }
