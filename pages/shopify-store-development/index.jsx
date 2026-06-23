@@ -616,15 +616,15 @@ export default function ShopifyStoreDevelopment() {
           <div className="shopify-portfolio-wrap">
             <div className="shopify-portfolio-header">
               <h2 className={`shopify-portfolio-title shopify-section-reveal${visibleSections.has('portfolio') ? ' shopify-revealed' : ''}`} ref={el => { sectionRefs.current['portfolio'] = el; }}>200+ Shopify Stores<br/>Designed &amp; Developed</h2>
-              <Link href="#contact" className="shopify-btn-portfolio-cta">Browse Our Portfolio</Link>
+              <Link href="/portfolio" className="shopify-btn-portfolio-cta">Browse Our Portfolio</Link>
             </div>
             <div className="shopify-portfolio-grid">
               {[
-                { img:'https://placehold.co/800x500/065F46/ffffff?text=LuxeWear+Store', name:'LuxeWear Store', tech:'Fashion / Shopify, Custom Theme, Klaviyo', cats:'E-Commerce / B2C / Subscriptions / Wishlist' },
-                { img:'https://placehold.co/800x500/D97706/ffffff?text=GreenLeaf+Organics', name:'GreenLeaf Organics', tech:'Health & Wellness / Shopify Plus, Recharge, Yotpo', cats:'DTC / Subscriptions / Loyalty / Multi-currency' },
-                { img:'https://placehold.co/800x500/1D4ED8/ffffff?text=TechGadgets+Pro', name:'TechGadgets Pro', tech:'Electronics / Shopify, Custom App, ShipStation', cats:'B2B / B2C / Dropshipping / ERP Integration' },
+                { img:'/images/portfolio/aiplusstore.jpg', name:'AI+ Store — Shopify eCommerce', tech:'Consumer Electronics / Shopify, Liquid, UI/UX Design', cats:'eCommerce / Smartphones / Product Catalogue / DTC', url:'https://aiplusstore.com/' },
+                { img:'/images/portfolio/keiyura.jpg', name:'Keiyura — Artisanal Jewellery', tech:'Fashion & Jewellery / Shopify, Liquid, UI/UX Design', cats:'eCommerce / Handcrafted / Lookbook / Collections', url:'https://keiyura.com/' },
+                { img:'/images/portfolio/305aerosupplies.jpg', name:'305 Aero Supplies', tech:'Electronics & IT / Shopify, Liquid, eCommerce', cats:'eCommerce / Hardware / Software / IT Solutions', url:'https://305aerosupplies.com/' },
               ].map(p => (
-                <div className="shopify-pcard" key={p.name}>
+                <a className="shopify-pcard" key={p.name} href={p.url} target="_blank" rel="noopener noreferrer" style={{textDecoration:'none',color:'inherit'}}>
                   <div className="shopify-pcard-thumb">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={p.img} alt={p.name} loading="lazy" />
@@ -634,7 +634,7 @@ export default function ShopifyStoreDevelopment() {
                     <div className="shopify-pcard-tech">{p.tech}</div>
                     <div className="shopify-pcard-cats">{p.cats}</div>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
@@ -885,13 +885,23 @@ export default function ShopifyStoreDevelopment() {
             <hr className="shopify-related-divider" />
             <div className="shopify-related-tags">
               {[
-                ['Shopify Theme Development','green'],['Shopify App Development','blue'],['Shopify Plus Development','violet'],
-                ['WooCommerce to Shopify Migration','amber'],['E-Commerce SEO Services','teal'],['Shopify Speed Optimization','orange'],
-                ['Shopify CRO Services','rose'],['Payment Gateway Integration','indigo'],['Shopify Dropshipping Setup','sky'],
-                ['Headless Shopify (Hydrogen)','emerald'],['UI/UX Design for E-Commerce','cyan'],['Digital Marketing Services','slate'],
-                ['Email Marketing & Klaviyo','green'],['ERP & CRM Integration','blue'],['WordPress Development Services','indigo'],
-              ].map(([label,color]) => (
-                <Link href="#contact" className={`shopify-rtag shopify-rtag-${color}`} key={label}>{label}</Link>
+                ['Shopify Theme Development',       'green',   '/shopify-store-development'],
+                ['Shopify App Development',          'blue',    '/ecommerce-website-development-services'],
+                ['Shopify Plus Development',         'violet',  '/shopify-store-development'],
+                ['WooCommerce to Shopify Migration', 'amber',   '/ecommerce-website-development-services'],
+                ['E-Commerce SEO Services',          'teal',    '/seo-services-company'],
+                ['Shopify Speed Optimization',       'orange',  '/shopify-store-development'],
+                ['Shopify CRO Services',             'rose',    '/ppc-management-services'],
+                ['Payment Gateway Integration',      'indigo',  '/ecommerce-website-development-services'],
+                ['Shopify Dropshipping Setup',       'sky',     '/ecommerce-website-development-services'],
+                ['Headless Shopify (Hydrogen)',      'emerald', '/nextjs-development-services'],
+                ['UI/UX Design for E-Commerce',     'cyan',    '/website-design'],
+                ['Digital Marketing Services',       'slate',   '/digital-marketing-services'],
+                ['Email Marketing & Klaviyo',        'green',   '/email-marketing-services'],
+                ['ERP & CRM Integration',            'blue',    '/erp-application-development-company'],
+                ['WordPress Development Services',   'indigo',  '/wordpress-development-company'],
+              ].map(([label,color,href]) => (
+                <Link href={href} className={`shopify-rtag shopify-rtag-${color}`} key={label}>{label}</Link>
               ))}
             </div>
           </div>
