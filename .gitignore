@@ -17,3 +17,7 @@ Thumbs.db
 
 # Vercel
 .vercel
+
+# Claude Code worktrees
+.claude/
+.claire/
