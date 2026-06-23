@@ -126,7 +126,7 @@ export async function getStaticProps() {
   try {
     const [featured, postsData, total] = await Promise.all([
       getFeaturedPost(),
-      getPosts({ first: PER_PAGE }),
+      getPosts({ first: PER_PAGE + 1 }),
       getTotalPostCount(),
     ]);
 
