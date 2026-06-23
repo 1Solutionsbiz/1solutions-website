@@ -898,21 +898,14 @@ export default function ShopifyStoreDevelopment() {
             <hr className="shopify-related-divider" />
             <div className="shopify-related-tags">
               {[
-                ['Shopify Theme Development',       'green',   '/shopify-store-development'],
-                ['Shopify App Development',          'blue',    '/ecommerce-website-development-services'],
-                ['Shopify Plus Development',         'violet',  '/shopify-store-development'],
-                ['WooCommerce to Shopify Migration', 'amber',   '/ecommerce-website-development-services'],
-                ['E-Commerce SEO Services',          'teal',    '/seo-services-company'],
-                ['Shopify Speed Optimization',       'orange',  '/shopify-store-development'],
-                ['Shopify CRO Services',             'rose',    '/ppc-management-services'],
-                ['Payment Gateway Integration',      'indigo',  '/ecommerce-website-development-services'],
-                ['Shopify Dropshipping Setup',       'sky',     '/ecommerce-website-development-services'],
-                ['Headless Shopify (Hydrogen)',      'emerald', '/nextjs-development-services'],
-                ['UI/UX Design for E-Commerce',     'cyan',    '/website-design'],
-                ['Digital Marketing Services',       'slate',   '/digital-marketing-services'],
-                ['Email Marketing & Klaviyo',        'green',   '/email-marketing-services'],
-                ['ERP & CRM Integration',            'blue',    '/erp-application-development-company'],
-                ['WordPress Development Services',   'indigo',  '/wordpress-development-company'],
+                ['WooCommerce to Shopify Migration', 'amber',  '/shopify-migration-services'],
+                ['E-Commerce SEO Services',          'teal',   '/ecommerce-seo-services'],
+                ['Shopify CRO Services',             'rose',   '/conversion-rate-optimization-services'],
+                ['UI/UX Design for E-Commerce',      'cyan',   '/website-design'],
+                ['Digital Marketing Services',       'slate',  '/digital-marketing-services'],
+                ['Email Marketing & Klaviyo',        'green',  '/klaviyo-email-marketing-agency'],
+                ['ERP & CRM Integration',            'blue',   '/erp-application-development-company'],
+                ['WordPress Development Services',   'indigo', '/wordpress-development-company'],
               ].map(([label,color,href]) => (
                 <Link href={href} className={`shopify-rtag shopify-rtag-${color}`} key={label}>{label}</Link>
               ))}
