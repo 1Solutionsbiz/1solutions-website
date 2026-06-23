@@ -986,17 +986,13 @@ export default function WhoWeAre() {
           <div className="au-orb au-hero-orb1" />
           <div className="au-orb au-hero-orb2" />
           <div className="au-hero-inner">
-            <div className="au-hero-eyebrow">
-              <span className="au-hero-eyebrow-dot" />
-              New Delhi &rarr; United States &rarr; Canada &rarr; Australia
-            </div>
             <h1>
               We help ambitious businesses build{' '}
               <span className="au-gradient-text">digital products</span>{' '}
               that compete at the highest level.
             </h1>
             <p className="au-hero-sub">
-              1Solutions is a web development and digital marketing agency founded in 2008.
+              1Solutions is a web development and digital marketing agency founded in 2010.
               For 15+ years, we&apos;ve been the trusted technology partner for startups, scale-ups,
               and enterprise teams who need world-class work — at a fraction of what local agencies charge.
             </p>
@@ -1006,7 +1002,7 @@ export default function WhoWeAre() {
             </div>
             <div className="au-hero-chips">
               <div className="au-hero-chip">
-                <strong>2008</strong>Founded
+                <strong>2010</strong>Founded
               </div>
               <div className="au-hero-chip">
                 <strong>500+</strong>Clients Served
@@ -1057,23 +1053,15 @@ export default function WhoWeAre() {
                 <p className="au-eyebrow">Our Story</p>
                 <h2 className="au-heading">Built on a single principle: great work speaks for itself.</h2>
                 <p>
-                  1Solutions started in 2008 in a small office in New Delhi&apos;s Laxmi Nagar — a neighbourhood
-                  better known for its bustling markets than its tech startups. The founding team had one conviction:
-                  that geography shouldn&apos;t determine access to quality digital services, and that businesses in
-                  the US, Canada, and Australia deserved a development partner who treated their goals as seriously
-                  as they did.
+                  Founded in 2008, 1Solutions has grown from a small New Delhi startup into a trusted digital
+                  partner for businesses across the US, Canada, and Australia. Over the past 16+ years, we have
+                  successfully delivered 500+ projects spanning web development, eCommerce, digital marketing,
+                  UI/UX design, and cloud solutions.
                 </p>
                 <p>
-                  Sixteen years later, that conviction has been put to the test more than 500 times — across
-                  e-commerce stores, enterprise platforms, SaaS products, and full-scale marketing campaigns.
-                  Clients come to us for a project. They stay because of the relationship. A 97% retention rate
-                  is what happens when you treat every engagement as a long-term partnership, not a one-off transaction.
-                </p>
-                <p>
-                  Today, 1Solutions is a 50+ person team working across web development, digital marketing,
-                  UI/UX design, and cloud engineering. No outsourcing. No hand-offs to junior teams. The people
-                  who scope your project are the people who build it — and they&apos;re accountable for every
-                  line that ships.
+                  Today, our team of 50+ professionals is committed to building high-performing digital experiences
+                  that drive measurable business growth. With a 97% client retention rate, we take pride in
+                  fostering long-term partnerships through transparency, accountability, and consistent results.
                 </p>
               </div>
               <div ref={statsRef}>
@@ -1101,7 +1089,7 @@ export default function WhoWeAre() {
           <div className="au-office-text">
             <blockquote className="au-office-quote">
               &ldquo;We don&apos;t just write code. We take ownership of outcomes.&rdquo;
-              <cite>1Solutions &mdash; New Delhi, India &bull; Est. 2008</cite>
+              <cite>1Solutions &mdash; New Delhi, India &bull; Est. 2010</cite>
             </blockquote>
           </div>
         </div>
