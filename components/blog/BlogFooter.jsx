@@ -54,11 +54,11 @@ const COLS = [
 ];
 
 const TRUST_BADGES = [
-  { src: '/images/dmca.png',            alt: 'DMCA Protected',        href: 'https://www.dmca.com' },
+  { src: '/images/dmca.png',            alt: 'DMCA Protected',          href: 'https://www.dmca.com' },
   { src: '/images/iso-9001.png',        alt: 'ISO 9001:2015 Certified', href: '/who-we-are' },
-  { src: '/images/msme.png',            alt: 'MSME Registered',       href: '/who-we-are' },
-  { src: '/images/trustpilot.svg',      alt: 'Trustpilot',            href: 'https://www.trustpilot.com' },
-  { src: '/images/google-business.svg', alt: 'Google Business',       href: 'https://business.google.com' },
+  { src: '/images/msme.png',            alt: 'MSME Registered',         href: '/who-we-are' },
+  { src: '/images/trustpilot.svg',      alt: 'Trustpilot',              href: 'https://www.trustpilot.com/review/1solutions.biz', nofollow: true },
+  { src: '/images/google-business.svg', alt: 'Google Business Profile', href: 'https://g.co/kgs/4BCmrBR', nofollow: true },
 ];
 
 const BOTTOM_NAV = [
@@ -164,7 +164,7 @@ export default function BlogFooter() {
                   key={b.alt}
                   href={b.href}
                   target={b.href.startsWith('http') ? '_blank' : undefined}
-                  rel={b.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  rel={b.href.startsWith('http') ? `noopener noreferrer${b.nofollow ? ' nofollow' : ''}` : undefined}
                   className="bf-badge-link"
                 >
                   <Image src={b.src} alt={b.alt} width={100} height={36} style={{ height: '30px', width: 'auto', objectFit: 'contain' }} />
