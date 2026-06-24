@@ -690,7 +690,7 @@ export default function ShopifyStoreDevelopment() {
             <div className="shopify-process-image-col">
               <div className="shopify-process-img-wrap">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/Shopify-Store-Development.png" alt="1Solutions Shopify development team" />
+                <img src="/images/Shopify-Store-Development.jpg" alt="1Solutions Shopify development team" />
               </div>
             </div>
           </div>
