@@ -7,12 +7,12 @@ const inter = Inter({ subsets: ['latin'], display: 'swap' });
 
 export default function App({ Component, pageProps }) {
   return (
-    <div className={inter.className}>
+    <>
       <BlogHeader />
-      <main style={{ minHeight: '70vh' }}>
+      <main className={inter.className} style={{ minHeight: '70vh' }}>
         <Component {...pageProps} />
       </main>
       <BlogFooter />
-    </div>
+    </>
   );
 }
