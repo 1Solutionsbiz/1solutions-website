@@ -2,6 +2,38 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 
+function useCountUp(target, duration = 1800, start = false) {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    if (!start) return;
+    const numTarget = parseInt(target.replace(/\D/g, ''), 10);
+    if (!numTarget) return;
+    let startTime = null;
+    const step = (ts) => {
+      if (!startTime) startTime = ts;
+      const progress = Math.min((ts - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(eased * numTarget));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [start, target, duration]);
+  return count;
+}
+
+function AnimatedStat({ label, val, started }) {
+  const num = useCountUp(val, 1800, started);
+  const suffix = val.replace(/[\d,]/g, '');
+  const hasComma = val.includes(',');
+  const display = started ? (hasComma ? num.toLocaleString() : num) + suffix : val;
+  return (
+    <div className="seo-stat">
+      <div className="seo-stat-l">{label}</div>
+      <div className="seo-stat-v">{display}</div>
+    </div>
+  );
+}
+
 const SERVICES = [
   { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Technical SEO', desc: 'Site architecture, crawlability, Core Web Vitals, schema markup, and indexation — we fix the foundations Google rewards.' },
   { icon: 'M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7', title: 'Local SEO', desc: 'Dominate Google Maps and local packs in your city or suburb. Perfect for US, Canadian and Australian businesses.' },
@@ -77,7 +109,9 @@ const STATS_HERO = [
 export default function SeoServices() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleSections, setVisibleSections] = useState(new Set());
+  const [statsStarted, setStatsStarted] = useState(false);
   const sectionRefs = useRef({});
+  const statsRef = useRef(null);
 
   useEffect(() => {
     const keys = Object.keys(sectionRefs.current);
@@ -97,6 +131,16 @@ export default function SeoServices() {
       return obs;
     });
     return () => observers.forEach(o => o && o.disconnect());
+  }, []);
+
+  useEffect(() => {
+    if (!statsRef.current) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setStatsStarted(true); obs.disconnect(); } },
+      { threshold: 0.5 }
+    );
+    obs.observe(statsRef.current);
+    return () => obs.disconnect();
   }, []);
 
   const jsonLd = {
@@ -174,35 +218,34 @@ export default function SeoServices() {
           .seo-orb3 { position:fixed;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(20,184,166,0.18) 0%,transparent 70%);top:45%;left:-150px;transform:translateY(-50%);pointer-events:none;z-index:0;filter:blur(20px); }
 
           /* ── HERO ── */
-          .seo-hero { position:relative;overflow:hidden;padding:0 40px;z-index:1; }
+          .seo-hero { position:relative;overflow:hidden;z-index:1; }
           .seo-hero::before { content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.12) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px); }
           .seo-hero::after { content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.18) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px); }
-          .seo-hero-content { position:relative;z-index:2;text-align:center;max-width:860px;margin:0 auto;padding:56px 0 40px; }
-          .seo-bc { display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500; }
-          .seo-bc a { color:#6b7280;text-decoration:none; } .seo-bc a:hover { color:#D97706; } .seo-bc-sep { color:#d1d5db; }
+          .seo-hero-content { position:relative;z-index:2;text-align:center;max-width:860px;margin:0 auto;padding:56px 40px 40px; }
           .seo-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:18px; }
           .seo-h1 { font-size:clamp(2rem,5vw,3.4rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
           .seo-hero-sub { font-size:16px;color:#3A507A;line-height:1.65;max-width:640px;margin:0 auto 28px; }
 
-          /* ── KEY TAKEAWAYS ── */
-          .seo-kt { background:rgba(255,255,255,0.50);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:16px;padding:20px 28px;max-width:740px;margin:0 auto 32px;text-align:left;box-shadow:0 4px 20px rgba(15,52,96,0.07),inset 0 1px 0 rgba(255,255,255,0.95); }
-          .seo-kt-t { font-size:11px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#D97706;margin-bottom:12px; }
-          .seo-kt-list { list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px; }
-          .seo-kt-list li { display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#374151;line-height:1.5; }
-          .seo-kt-list li::before { content:'✓';color:#D97706;font-weight:700;flex-shrink:0;margin-top:1px; }
-
           /* ── HERO BUTTON ── */
-          .seo-btn-hero { display:inline-block;padding:14px 40px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1);margin-bottom:20px;margin-right:12px; }
+          .seo-btn-hero { position:relative;overflow:hidden;display:inline-block;padding:14px 40px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1);margin-bottom:32px; }
           .seo-btn-hero:hover { background:rgba(255,255,255,0.85);border-color:rgba(245,158,11,0.6);box-shadow:0 12px 36px rgba(15,52,96,0.15),0 0 0 2px rgba(245,158,11,0.22),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px);color:#0F3460; }
-          .seo-btn-outline { display:inline-block;padding:14px 32px;background:transparent;border:1.5px solid rgba(15,52,96,0.25);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;margin-bottom:20px; }
-          .seo-btn-outline:hover { border-color:rgba(217,119,6,0.5);color:#D97706;transform:translateY(-2px); }
-          .seo-trust-row { display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:48px; }
-          .seo-trust-badge { display:flex;align-items:center;gap:6px;font-size:12px;color:#4A6080;font-weight:500; }
-          .seo-trust-badge svg { color:#D97706; }
+          .seo-btn-hero::after { content:'';position:absolute;top:-10%;left:-120%;width:80%;height:120%;background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,0.75) 45%,rgba(255,255,255,0.9) 50%,rgba(255,255,255,0.75) 55%,transparent 100%);animation:seo-shimmer 2.5s ease-in-out infinite;pointer-events:none; }
+          @keyframes seo-shimmer { 0% { left:-120%; } 35%,100% { left:160%; } }
+
+          /* ── CLIENTS BAR ── */
+          .seo-clients-bar { position:relative;z-index:2;padding:20px 40px 60px;max-width:1440px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px; }
+          .seo-clients-label { font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6A80A0; }
+          .seo-clients-logos { width:100%;overflow:hidden; }
+          .seo-logos-track { display:flex;align-items:center;gap:60px;width:max-content;animation:seo-marquee 28s linear infinite; }
+          .seo-logos-track:hover { animation-play-state:paused; }
+          @keyframes seo-marquee { 0% { transform:translateX(0); } 100% { transform:translateX(-50%); } }
+          .seo-client-logo { height:26px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(100%);opacity:0.5;transition:opacity 0.25s,filter 0.25s; }
+          .seo-client-logo:hover { opacity:0.85;filter:grayscale(0%); }
 
           /* ── STATS BAR ── */
           .seo-stats { position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
-          .seo-stat { padding:18px 20px;text-align:center;border-right:1px solid rgba(15,52,96,0.10); } .seo-stat:last-child { border-right:none; }
+          .seo-stat { padding:18px 20px;text-align:center;border-right:1px solid rgba(15,52,96,0.10); }
+          .seo-stat:last-child { border-right:none; }
           .seo-stat-l { font-size:12px;color:#4A6080;font-weight:500;margin-bottom:6px; }
           .seo-stat-v { font-size:26px;font-weight:900;color:#D97706;letter-spacing:-0.5px;line-height:1; }
 
@@ -371,10 +414,11 @@ export default function SeoServices() {
             .seo-ind-grid { grid-template-columns:repeat(3,1fr); }
           }
           @media(max-width:768px) {
-            .seo-hero,.seo-sec,.seo-results,.seo-contact,.seo-cta,.seo-author-bar { padding-left:24px;padding-right:24px; }
-            .seo-hero-content { padding:40px 0 28px; }
+            .seo-sec,.seo-results,.seo-contact,.seo-cta,.seo-author-bar { padding-left:24px;padding-right:24px; }
+            .seo-hero-content { padding:36px 20px 24px; }
             .seo-h1 { font-size:clamp(1.7rem,6vw,2.4rem); }
-            .seo-stats { grid-template-columns:repeat(2,1fr); }
+            .seo-clients-bar { padding:16px 20px 36px;gap:12px; }
+            .seo-stats { grid-template-columns:repeat(2,1fr);max-width:100%; }
             .seo-stat:nth-child(2) { border-right:none; }
             .seo-stat:nth-child(3) { border-top:1px solid rgba(15,52,96,0.10); }
             .seo-stat:nth-child(4) { border-top:1px solid rgba(15,52,96,0.10);border-right:none; }
@@ -396,46 +440,57 @@ export default function SeoServices() {
         <div className="seo-orb1"/><div className="seo-orb2"/><div className="seo-orb3"/>
 
         {/* ── HERO ── */}
-        <section className="seo-hero">
+        <div className="seo-hero">
           <div className="seo-hero-content">
-            <nav className="seo-bc" aria-label="Breadcrumb">
-              <Link href="/">Home</Link><span className="seo-bc-sep">/</span>
-              <span style={{color:'#D97706'}}>SEO Services Company</span>
-            </nav>
             <span className="seo-eyebrow">Trusted SEO Company — US · Canada · Australia</span>
             <h1 className="seo-h1">SEO Services That Rank Your Business at the Top of Google</h1>
             <p className="seo-hero-sub">1Solutions is a 15-year-old SEO agency delivering measurable, sustainable organic growth for businesses across the US, Canada, and Australia. From technical foundations to authority links — we cover every dimension of modern search.</p>
-            <div className="seo-kt">
-              <div className="seo-kt-t">Key Takeaways</div>
-              <ul className="seo-kt-list">
-                <li>68% of all online experiences begin with a search engine — SEO is your highest-reach customer acquisition channel</li>
-                <li>We cover all 9 SEO dimensions: technical, local, eCommerce, international, content, link building, audits, enterprise, and reporting</li>
-                <li>15+ years, 500+ projects, 97% client retention — no lock-in contracts, white-hat only</li>
-                <li>Every engagement starts with a free 200-point SEO audit — no commitment required</li>
-              </ul>
-            </div>
-            <div style={{marginBottom:16}}>
-              <a href="#contact" className="seo-btn-hero">Get My Free SEO Audit →</a>
-              <a href="/affordable-seo-packages/" className="seo-btn-outline">View SEO Packages</a>
-            </div>
-            <div className="seo-trust-row">
-              {['No lock-in contracts','White-hat only','Monthly reporting','24h response'].map(t => (
-                <span key={t} className="seo-trust-badge">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  {t}
-                </span>
-              ))}
-            </div>
+            <a href="#contact" className="seo-btn-hero">Get a Free SEO Audit Now</a>
           </div>
-          <div className="seo-stats">
-            {STATS_HERO.map(s => (
-              <div key={s.lbl} className="seo-stat">
-                <div className="seo-stat-l">{s.lbl}</div>
-                <div className="seo-stat-v">{s.num}</div>
-              </div>
+
+          <div className="seo-stats" ref={statsRef}>
+            {[['SEO Projects Delivered','500+'],['Years of Experience','15+'],['Client Retention Rate','97%'],['Avg. Traffic Growth','3×']].map(([label,val]) => (
+              <AnimatedStat key={label} label={label} val={val} started={statsStarted} />
             ))}
           </div>
-        </section>
+
+          <div className="seo-clients-bar">
+            <span className="seo-clients-label">Trusted by Leading Brands</span>
+            <div className="seo-clients-logos">
+              <div className="seo-logos-track">
+                {[
+                  ['/logo/Indian_Express_Logo_full.png','Indian Express'],
+                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],
+                  ['/logo/Uniphore.jpg','Uniphore'],
+                  ['/logo/ICCoLogo.png','ICC'],
+                  ['/logo/Honor_Logo_(2020).svg.png','Honor'],
+                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],
+                  ['/logo/amarujala-print-logo_60e03f7d5b4a8.webp','Amar Ujala'],
+                  ['/logo/Nuance-Symbol-500x281.png','Nuance'],
+                  ['/logo/PHDCCI-Logo-2024.png','PHD Chamber'],
+                  ['/logo/Wilson-logo.svg.png','Wilson'],
+                  ['/logo/977be174b7bcc8708254a2163b534cbe_fgraphic.png','Client'],
+                  ['/logo/india-madeaismartphone2-1747658691.webp','India Made'],
+                  ['/logo/Indian_Express_Logo_full.png','Indian Express2'],
+                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon2'],
+                  ['/logo/Uniphore.jpg','Uniphore2'],
+                  ['/logo/ICCoLogo.png','ICC2'],
+                  ['/logo/Honor_Logo_(2020).svg.png','Honor2'],
+                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv2'],
+                  ['/logo/amarujala-print-logo_60e03f7d5b4a8.webp','Amar Ujala2'],
+                  ['/logo/Nuance-Symbol-500x281.png','Nuance2'],
+                  ['/logo/PHDCCI-Logo-2024.png','PHD Chamber2'],
+                  ['/logo/Wilson-logo.svg.png','Wilson2'],
+                  ['/logo/977be174b7bcc8708254a2163b534cbe_fgraphic.png','Client2'],
+                  ['/logo/india-madeaismartphone2-1747658691.webp','India Made2'],
+                ].map(([src, alt]) => (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img key={alt} src={src} alt={alt.replace(/\d+$/, '')} className="seo-client-logo" />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* ── DEFINITION ── */}
         <section className="seo-sec seo-white">
