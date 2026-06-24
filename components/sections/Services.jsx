@@ -11,7 +11,7 @@ const services = [
     tags: ['React', 'Next.js', 'Node.js', '.NET', 'Vue.js', 'Angular'],
     cta: 'Elevate Digital Transformation Journey →',
     href: '/digital-transformation',
-    image: 'https://picsum.photos/500/400?random=1',
+    image: '/images/service-digital-transformation.png',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: 22, height: 22, flexShrink: 0 }}>
         <rect x="2" y="3" width="20" height="14" rx="2" />
@@ -28,7 +28,7 @@ const services = [
     tags: ['Shopify', 'WooCommerce', 'Magento', 'Headless', 'PWA', 'BigCommerce'],
     cta: 'Boost Your Online Store →',
     href: '/ecommerce-development',
-    image: 'https://picsum.photos/500/400?random=2',
+    image: '/images/service-ecommerce-development.png',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: 22, height: 22, flexShrink: 0 }}>
         <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
@@ -45,7 +45,7 @@ const services = [
     tags: ['AWS', 'Azure', 'GCP', 'Docker', 'Kubernetes', 'CI/CD'],
     cta: 'Modernize Your Infrastructure →',
     href: '/cloud-devops',
-    image: 'https://picsum.photos/500/400?random=3',
+    image: '/images/service-cloud-devops.png',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: 22, height: 22, flexShrink: 0 }}>
         <path d="M20 10.5c0-1.7-1.4-3-3-3-.4-2.2-2.3-3.8-4.5-3.8-2.5 0-4.6 2-4.6 4.5 0 .3 0 .5.1.8C6.3 9.5 5.1 11 5.1 12.8c0 2.2 1.8 4 4 4h10c2.2 0 4-1.8 4-4z" />
@@ -60,7 +60,7 @@ const services = [
     tags: ['Machine Learning', 'LLMs', 'ChatGPT', 'Python', 'TensorFlow', 'NLP'],
     cta: 'Explore AI Solutions →',
     href: '/artificial-intelligence',
-    image: 'https://picsum.photos/500/400?random=4',
+    image: '/images/service-artificial-intelligence.png',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: 22, height: 22, flexShrink: 0 }}>
         <circle cx="12" cy="12" r="10" />
@@ -78,7 +78,7 @@ const services = [
     tags: ['SEO', 'Google Ads', 'Meta Ads', 'Analytics', 'Content', 'Email'],
     cta: 'Grow Your Digital Presence →',
     href: '/digital-marketing',
-    image: 'https://picsum.photos/500/400?random=5',
+    image: '/images/service-digital-marketing.png',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: 22, height: 22, flexShrink: 0 }}>
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" strokeLinecap="round" strokeLinejoin="round" />
@@ -93,7 +93,7 @@ const services = [
     tags: ['Developers', 'Designers', 'SEO Experts', 'QA Engineers', 'PMs'],
     cta: 'Build Your Dream Team →',
     href: '/hire-dedicated-resources',
-    image: 'https://picsum.photos/500/400?random=6',
+    image: '/images/service-hire-on-demand.png',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: 22, height: 22, flexShrink: 0 }}>
         <circle cx="12" cy="8" r="3" />
