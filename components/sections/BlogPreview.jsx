@@ -81,17 +81,8 @@ export default function BlogPreview({ posts }) {
               border: '1px solid rgba(229,231,235,0.8)',
               boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
               display: 'flex', flexDirection: 'column',
-              height: '100%', transition: 'box-shadow 0.3s, transform 0.3s',
-            }}
-              onMouseEnter={e => {
-                e.currentTarget.style.boxShadow = '0 12px 40px rgba(0,0,0,0.12)'
-                e.currentTarget.style.transform = 'translateY(-3px)'
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.boxShadow = '0 4px 24px rgba(0,0,0,0.06)'
-                e.currentTarget.style.transform = 'translateY(0)'
-              }}
-            >
+              height: '100%',
+            }}>
               <div style={{ position: 'relative', height: '260px', flexShrink: 0, background: '#e5e7eb' }}>
                 {featuredImage && (
                   <img
@@ -144,17 +135,8 @@ export default function BlogPreview({ posts }) {
                   background: '#fff',
                   boxShadow: '0 2px 10px rgba(0,0,0,0.04)',
                   display: 'flex', flexDirection: 'column', gap: '10px',
-                  height: '100%', transition: 'box-shadow 0.3s, transform 0.3s',
-                }}
-                  onMouseEnter={e => {
-                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.10)'
-                    e.currentTarget.style.transform = 'translateY(-2px)'
-                  }}
-                  onMouseLeave={e => {
-                    e.currentTarget.style.boxShadow = '0 2px 10px rgba(0,0,0,0.04)'
-                    e.currentTarget.style.transform = 'translateY(0)'
-                  }}
-                >
+                  height: '100%',
+                }}>
                   <span style={{
                     fontSize: '11px', fontWeight: 700, color: '#FE9700',
                     background: 'rgba(254,151,0,0.1)',
