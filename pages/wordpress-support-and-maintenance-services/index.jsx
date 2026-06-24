@@ -226,11 +226,13 @@ function useCountUp(target, duration = 1800, start = false) {
 }
 
 function StatItem({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');
+  const canAnimate = started && !val.includes('.');
+  const num = useCountUp(val, 1800, canAnimate);
+  const suffix = val.replace(/^[\d,.]+/, '');
+  const display = (canAnimate && num > 0) ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val;
   return (
     <div className="wm-stat-col">
-      <div className="wm-stat-val">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div>
+      <div className="wm-stat-val">{display}</div>
       <div className="wm-stat-label">{label}</div>
     </div>
   );
@@ -255,7 +257,7 @@ export default function WordPressMaintenance() {
   const stackGridRef = useRef(null);
 
   useEffect(() => {
-    if (!statsRef.current) return;
+    if (!statsRef.current || window.innerWidth <= 768) return;
     const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStatsStarted(true); obs.disconnect(); } }, { threshold: 0.4 });
     obs.observe(statsRef.current);
     return () => obs.disconnect();
