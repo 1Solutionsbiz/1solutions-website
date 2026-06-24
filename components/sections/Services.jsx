@@ -104,55 +104,20 @@ const services = [
   },
 ]
 
-const TAG_PALETTES = {
-  web: [
-    { bg: 'rgba(79,70,229,0.1)',   color: '#4338CA', border: 'rgba(79,70,229,0.22)' },
-    { bg: 'rgba(99,102,241,0.12)', color: '#4F46E5', border: 'rgba(99,102,241,0.25)' },
-    { bg: 'rgba(67,56,202,0.1)',   color: '#3730A3', border: 'rgba(67,56,202,0.22)' },
-    { bg: 'rgba(55,48,163,0.1)',   color: '#312E81', border: 'rgba(55,48,163,0.2)' },
-    { bg: 'rgba(129,140,248,0.15)',color: '#4338CA', border: 'rgba(129,140,248,0.3)' },
-    { bg: 'rgba(165,180,252,0.18)',color: '#3730A3', border: 'rgba(165,180,252,0.35)' },
-  ],
-  ecommerce: [
-    { bg: 'rgba(245,158,11,0.1)',  color: '#B45309', border: 'rgba(245,158,11,0.25)' },
-    { bg: 'rgba(254,151,0,0.12)',  color: '#C05621', border: 'rgba(254,151,0,0.25)' },
-    { bg: 'rgba(251,146,60,0.12)', color: '#C2410C', border: 'rgba(251,146,60,0.25)' },
-    { bg: 'rgba(249,115,22,0.1)',  color: '#B45309', border: 'rgba(249,115,22,0.2)' },
-    { bg: 'rgba(251,191,36,0.15)', color: '#92400E', border: 'rgba(251,191,36,0.3)' },
-    { bg: 'rgba(252,211,77,0.18)', color: '#78350F', border: 'rgba(252,211,77,0.35)' },
-  ],
-  cloud: [
-    { bg: 'rgba(6,182,212,0.1)',   color: '#0E7490', border: 'rgba(6,182,212,0.25)' },
-    { bg: 'rgba(20,184,166,0.1)',  color: '#0F766E', border: 'rgba(20,184,166,0.25)' },
-    { bg: 'rgba(34,211,238,0.12)', color: '#164E63', border: 'rgba(34,211,238,0.25)' },
-    { bg: 'rgba(14,165,233,0.1)',  color: '#075985', border: 'rgba(14,165,233,0.2)' },
-    { bg: 'rgba(56,189,248,0.12)', color: '#0369A1', border: 'rgba(56,189,248,0.25)' },
-    { bg: 'rgba(103,232,249,0.15)',color: '#0E7490', border: 'rgba(103,232,249,0.3)' },
-  ],
-  ai: [
-    { bg: 'rgba(124,58,237,0.1)',  color: '#6D28D9', border: 'rgba(124,58,237,0.22)' },
-    { bg: 'rgba(139,92,246,0.12)', color: '#7C3AED', border: 'rgba(139,92,246,0.25)' },
-    { bg: 'rgba(167,139,250,0.15)',color: '#5B21B6', border: 'rgba(167,139,250,0.3)' },
-    { bg: 'rgba(196,181,253,0.18)',color: '#4C1D95', border: 'rgba(196,181,253,0.35)' },
-    { bg: 'rgba(216,180,254,0.2)', color: '#6D28D9', border: 'rgba(216,180,254,0.35)' },
-    { bg: 'rgba(109,40,217,0.1)',  color: '#4C1D95', border: 'rgba(109,40,217,0.2)' },
-  ],
-  marketing: [
-    { bg: 'rgba(16,185,129,0.1)',  color: '#047857', border: 'rgba(16,185,129,0.22)' },
-    { bg: 'rgba(5,150,105,0.1)',   color: '#065F46', border: 'rgba(5,150,105,0.22)' },
-    { bg: 'rgba(52,211,153,0.12)', color: '#065F46', border: 'rgba(52,211,153,0.25)' },
-    { bg: 'rgba(110,231,183,0.15)',color: '#047857', border: 'rgba(110,231,183,0.3)' },
-    { bg: 'rgba(167,243,208,0.18)',color: '#064E3B', border: 'rgba(167,243,208,0.35)' },
-    { bg: 'rgba(4,120,87,0.1)',    color: '#022C22', border: 'rgba(4,120,87,0.2)' },
-  ],
-  hiring: [
-    { bg: 'rgba(244,63,94,0.1)',   color: '#BE123C', border: 'rgba(244,63,94,0.22)' },
-    { bg: 'rgba(251,113,133,0.12)',color: '#9F1239', border: 'rgba(251,113,133,0.25)' },
-    { bg: 'rgba(253,164,175,0.15)',color: '#881337', border: 'rgba(253,164,175,0.3)' },
-    { bg: 'rgba(236,72,153,0.1)',  color: '#9D174D', border: 'rgba(236,72,153,0.22)' },
-    { bg: 'rgba(249,168,212,0.15)',color: '#831843', border: 'rgba(249,168,212,0.3)' },
-  ],
-}
+const TAG_COLORS = [
+  { bg: 'rgba(79,70,229,0.11)',   color: '#4338CA', border: 'rgba(79,70,229,0.28)' },   // indigo
+  { bg: 'rgba(245,158,11,0.12)',  color: '#B45309', border: 'rgba(245,158,11,0.3)' },   // amber
+  { bg: 'rgba(16,185,129,0.11)',  color: '#047857', border: 'rgba(16,185,129,0.28)' },  // emerald
+  { bg: 'rgba(239,68,68,0.1)',    color: '#B91C1C', border: 'rgba(239,68,68,0.26)' },   // red
+  { bg: 'rgba(6,182,212,0.11)',   color: '#0E7490', border: 'rgba(6,182,212,0.28)' },   // cyan
+  { bg: 'rgba(124,58,237,0.11)',  color: '#6D28D9', border: 'rgba(124,58,237,0.28)' },  // violet
+  { bg: 'rgba(249,115,22,0.11)',  color: '#C2410C', border: 'rgba(249,115,22,0.28)' },  // orange
+  { bg: 'rgba(59,130,246,0.11)',  color: '#1D4ED8', border: 'rgba(59,130,246,0.28)' },  // blue
+  { bg: 'rgba(236,72,153,0.11)',  color: '#9D174D', border: 'rgba(236,72,153,0.28)' },  // pink
+  { bg: 'rgba(20,184,166,0.11)',  color: '#0F766E', border: 'rgba(20,184,166,0.28)' },  // teal
+  { bg: 'rgba(234,179,8,0.12)',   color: '#854D0E', border: 'rgba(234,179,8,0.3)' },    // yellow
+  { bg: 'rgba(99,102,241,0.11)',  color: '#4F46E5', border: 'rgba(99,102,241,0.28)' },  // indigo-light
+]
 
 export default function Services() {
   const [active, setActive] = useState('web')
@@ -251,8 +216,7 @@ export default function Services() {
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '32px' }}>
                 {current.tags.map((tag, idx) => {
-                  const palette = TAG_PALETTES[current.id] || []
-                  const c = palette[idx % palette.length] || { bg: 'rgba(15,52,96,0.06)', color: '#0F3460', border: 'rgba(15,52,96,0.1)' }
+                  const c = TAG_COLORS[idx % TAG_COLORS.length]
                   return (
                     <span key={tag} style={{
                       padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: 600,
