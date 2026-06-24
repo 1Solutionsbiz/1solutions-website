@@ -31,14 +31,18 @@ const SCHEMA = {
     {
       '@type': 'FAQPage',
       mainEntity: [
-        { '@type': 'Question', name: 'What is included in WordPress maintenance?', acceptedAnswer: { '@type': 'Answer', text: 'WordPress maintenance covers: WordPress core updates (major and minor versions) applied to a staging clone and tested before production deployment; plugin and theme updates with compatibility testing; daily automated backups (files + database) stored off-site with monthly restore testing; 24/7 uptime monitoring; weekly malware scanning and WAF rule updates; SSL certificate management; broken link scanning and repair; Core Web Vitals and PageSpeed monitoring; monthly maintenance reports; and a set number of developer hours each month for content updates, design changes, and minor fixes. WooCommerce maintenance plans also include payment gateway testing after updates.' } },
-        { '@type': 'Question', name: 'How often should WordPress be updated?', acceptedAnswer: { '@type': 'Answer', text: 'WordPress releases minor security and maintenance updates every few weeks. Major WordPress versions release two to three times per year. Plugins and themes release updates continuously — a typical WordPress installation has 15–30 active plugins, each with their own release cycle. Security patches for critical vulnerabilities should be applied within 48 hours of disclosure. Our maintenance service monitors all these update streams and applies updates on a regular schedule — minor/security updates within 48 hours, major version updates after a 2–4 week compatibility assessment period on staging.' } },
-        { '@type': 'Question', name: 'Can you fix a hacked WordPress website?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We provide WordPress malware removal and hack recovery — diagnosing the infection (file-level malware, database injections, backdoors, phishing pages, SEO spam), removing all malware from the file system and database, restoring from a clean backup where necessary, patching the exploited vulnerability (most commonly an outdated plugin or weak admin credentials), hardening the WordPress installation against recurrence, and providing a written incident report detailing the attack vector and remediation. For clients on our maintenance retainer, malware removal is covered within the plan.' } },
-        { '@type': 'Question', name: 'Do you support WooCommerce websites?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. WooCommerce maintenance requires extra care beyond standard WordPress maintenance. WooCommerce core and extension updates can break payment gateways, checkout flows, and product display. Our WooCommerce maintenance includes: WooCommerce core and all premium extension updates; payment gateway functionality testing after every update; checkout flow regression testing; order notification email testing; product catalogue integrity checks; stock and inventory monitoring; WooCommerce Subscriptions and Memberships support if applicable; and priority emergency response for checkout or payment failures during trading hours.' } },
-        { '@type': 'Question', name: 'What WordPress security hardening do you apply?', acceptedAnswer: { '@type': 'Answer', text: 'Our WordPress security hardening covers: Wordfence or equivalent WAF installation and configuration; brute-force login protection and login URL change; two-factor authentication (2FA) for administrator accounts; file permission hardening (755 for directories, 644 for files, 600 for wp-config.php); disabling XML-RPC if not required; removing WordPress version number from source; disabling file editing from admin (DISALLOW_FILE_EDIT); security response headers (Content-Security-Policy, X-Frame-Options, X-Content-Type-Options); and regular security audits of user roles and inactive admin accounts. For managed WordPress hosting (WPEngine, Kinsta, Flywheel), we also configure hosting-level security features.' } },
-        { '@type': 'Question', name: 'Do you update plugins even if they might break the site?', acceptedAnswer: { '@type': 'Answer', text: 'We never apply updates directly to the production site without testing. Every plugin, theme, or WordPress core update is applied first to a password-protected staging clone of your site. We perform visual regression checks across key pages (homepage, key landing pages, contact forms, checkout if applicable) and functional tests of critical features before promoting the update to production. If an update causes a conflict or visual regression on staging, we investigate the root cause and resolve it or defer the update pending a compatible plugin version — and we communicate this to you in your monthly report.' } },
-        { '@type': 'Question', name: 'How do you handle WordPress emergencies?', acceptedAnswer: { '@type': 'Answer', text: 'All maintenance retainer clients have a dedicated emergency contact. When a WordPress site goes down, gets hacked, or develops a critical error, you contact us through our priority support channel and we respond within the SLA of your plan (2-hour for Enterprise, 4-hour for Professional, next-business-day for Essential with 4-hour emergency escalation available). We investigate, resolve, and follow up with a written incident report. Common WordPress emergencies we handle: white screen of death, fatal PHP errors from plugin conflicts, payment gateway failures, hosting migration issues, SSL certificate lapses, and post-hack recovery.' } },
-        { '@type': 'Question', name: 'Can you take over maintenance from another agency?', acceptedAnswer: { '@type': 'Answer', text: "Yes. We take over WordPress maintenance from any previous agency, developer, or in-house team. We start with a comprehensive WordPress audit — WordPress core version, all plugin and theme versions, security configuration, backup setup, user roles and inactive accounts, codebase quality review for any custom code, and performance baseline (PageSpeed / Core Web Vitals). You receive a written audit report before the retainer begins. There are no lock-in periods — we work on a rolling monthly basis and provide a clean handover if you ever need to transition away." } },
+        { '@type': 'Question', name: 'What is WordPress website maintenance?', acceptedAnswer: { '@type': 'Answer', text: 'WordPress website maintenance is the ongoing process of keeping your WordPress site secure, updated, backed up, and performing well. It includes applying WordPress core and plugin security patches promptly; testing all updates on a staging site before deploying to production; running daily automated backups stored off-site; monitoring uptime 24/7; scanning for malware and security vulnerabilities; managing SSL certificates; monitoring Core Web Vitals; repairing broken links; and providing developer hours for minor content and design changes each month.' } },
+        { '@type': 'Question', name: 'What is included in WordPress maintenance?', acceptedAnswer: { '@type': 'Answer', text: 'WordPress maintenance covers: WordPress core and plugin/theme updates tested on staging before production; daily automated backups with off-site storage (AWS S3 or Backblaze B2); 24/7 uptime monitoring; weekly malware scanning and WAF rule updates; SSL certificate management; broken link scanning and repair; Core Web Vitals monitoring; monthly maintenance reports; and monthly developer hours for content updates and minor fixes. WooCommerce maintenance plans also include payment gateway testing and checkout regression testing after every update.' } },
+        { '@type': 'Question', name: 'What happens if I don\'t maintain my WordPress website?', acceptedAnswer: { '@type': 'Answer', text: 'An unmaintained WordPress website accumulates serious risks: outdated plugins and themes are the most common attack vector for WordPress hacks; unpatched vulnerabilities can be exploited within hours of public disclosure; plugin conflicts cause PHP fatal errors and white screen of death events; performance degrades over time; backups may not be running; and SEO rankings decline as page speed drops and broken links accumulate. The cost of emergency hack recovery and data restoration far exceeds the cost of a monthly maintenance retainer.' } },
+        { '@type': 'Question', name: 'How much does WordPress maintenance cost?', acceptedAnswer: { '@type': 'Answer', text: 'WordPress maintenance costs vary by scope. Basic plans covering core and plugin updates, backups, uptime monitoring, and security scanning start from around $99-$149/month for small brochure sites. Mid-tier plans with WooCommerce support, priority emergency SLA, Core Web Vitals monitoring, and 8 developer hours per month range from $249-$499/month. Enterprise plans with a dedicated engineer, 2-hour SLA, and 20+ developer hours are custom-priced. Contact us for a free WordPress health audit and tailored quote.' } },
+        { '@type': 'Question', name: 'How often should WordPress be updated?', acceptedAnswer: { '@type': 'Answer', text: 'WordPress minor security patches should be applied within 48 hours of release. Plugin updates should be assessed and applied monthly (or sooner for security patches). Major WordPress version updates should be assessed on a staging clone over 2-4 weeks before production. A typical WordPress installation has 15-30 active plugins, each with its own update cadence. Our maintenance service manages all these update streams on your behalf.' } },
+        { '@type': 'Question', name: 'Can you fix a hacked WordPress website?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We provide WordPress malware removal and hack recovery — scanning files and database for injected code, backdoors, phishing pages and SEO spam, removing all malware, restoring from clean backup where needed, patching the exploited vulnerability, hardening against recurrence, and providing a written incident report. For clients on our maintenance retainer, malware removal is covered within the plan at no additional cost.' } },
+        { '@type': 'Question', name: 'Do you support WooCommerce websites?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. WooCommerce maintenance is a speciality. WooCommerce core and extension updates can break checkout flows and payment gateways. Our WooCommerce maintenance includes: payment gateway testing after every update; checkout flow regression testing; order notification email verification; and priority emergency response for checkout and payment failures on Professional and Enterprise plans.' } },
+        { '@type': 'Question', name: 'Do you update plugins even if they might break the site?', acceptedAnswer: { '@type': 'Answer', text: 'We never apply updates directly to the production site. Every update goes to a staging clone first where we check for visual regressions and test critical functionality. If an update causes a conflict on staging, we investigate the root cause, resolve it or defer the update, and communicate this in your monthly report. Your live site only receives tested, verified updates.' } },
+        { '@type': 'Question', name: 'What WordPress security hardening do you apply?', acceptedAnswer: { '@type': 'Answer', text: 'Our WordPress security hardening covers: Wordfence or Sucuri WAF installation; brute-force login protection and login URL change; 2FA for admin accounts; file permission hardening (600 for wp-config.php); disabling XML-RPC; removing WordPress version disclosure; DISALLOW_FILE_EDIT; security response headers (CSP, X-Frame-Options, HSTS); regular user role audits; and hosting-level security configuration for managed WordPress hosts.' } },
+        { '@type': 'Question', name: 'How do you handle WordPress emergencies?', acceptedAnswer: { '@type': 'Answer', text: 'All retainer clients have a dedicated emergency contact. We respond within the SLA of your plan: 2-hour for Enterprise, 4-hour for Professional, next-business-day for Essential. Common emergencies: white screen of death, fatal PHP errors from plugin conflicts, hacked sites, WooCommerce payment failures, site outages, and SSL lapses. We investigate, resolve, and follow up with a written incident report.' } },
+        { '@type': 'Question', name: 'Can you take over WordPress maintenance from another agency?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We take over from any previous developer or agency. We begin with a comprehensive WordPress audit covering core version, plugin and theme inventory with vulnerability check, security configuration, backup setup, and performance baseline. You receive a written audit report before the retainer begins. We operate on monthly rolling contracts with no lock-in and provide a clean handover document if you ever transition away.' } },
+        { '@type': 'Question', name: 'What is a WordPress care plan?', acceptedAnswer: { '@type': 'Answer', text: 'A WordPress care plan is a monthly subscription service that handles all ongoing maintenance tasks your WordPress site requires — updates, backups, security, monitoring, and developer support. Instead of managing these tasks yourself or hiring a developer ad hoc when problems occur, a care plan provides proactive, structured maintenance on a predictable monthly cost, with an included pool of developer hours for minor changes each month.' } },
       ],
     },
   ],
@@ -58,8 +62,8 @@ const SERVICES = [
 ];
 
 const TECH_STACK = [
-  { group: 'WordPress Core', color: '#059669', items: ['WordPress 6.x (latest)', 'PHP 8.x', 'MySQL / MariaDB', 'WooCommerce 9.x', 'Gutenberg / Block Editor', 'WordPress REST API'] },
-  { group: 'Security', color: '#0f766e', items: ['Wordfence Security', 'Sucuri WAF', 'iThemes Security', 'Malware Removal', '2FA (WP 2FA)', 'CVE Monitoring'] },
+  { group: 'WordPress Core', color: '#114171', items: ['WordPress 6.x (latest)', 'PHP 8.x', 'MySQL / MariaDB', 'WooCommerce 9.x', 'Gutenberg / Block Editor', 'WordPress REST API'] },
+  { group: 'Security', color: '#114171', items: ['Wordfence Security', 'Sucuri WAF', 'iThemes Security', 'Malware Removal', '2FA (WP 2FA)', 'CVE Monitoring'] },
   { group: 'Backup & Recovery', color: '#D97706', items: ['UpdraftPlus', 'BackupBuddy', 'ManageWP Backups', 'AWS S3 / Backblaze B2', 'Daily Automated Backups', 'Restore Testing'] },
   { group: 'Performance', color: '#f97316', items: ['WP Rocket', 'LiteSpeed Cache', 'Cloudflare CDN', 'Redis Object Cache', 'WebP Image Optimisation', 'GZIP / Brotli'] },
   { group: 'Page Builders', color: '#6366f1', items: ['Elementor', 'Divi / Extra', 'Gutenberg / FSE', 'WPBakery', 'Beaver Builder', 'Bricks Builder'] },
@@ -86,7 +90,7 @@ const ENGAGEMENT_MODELS = [
     id: 'professional',
     name: 'WordPress Professional',
     badge: 'Most Popular',
-    badgeColor: '#059669',
+    badgeColor: '#114171',
     icon: 'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z',
     headline: 'Priority support, WooCommerce coverage, and more dev hours.',
     desc: 'Everything in Essential plus: 4-hour emergency SLA, WooCommerce update and checkout testing, weekly malware scans, Cloudflare CDN and caching configuration, Core Web Vitals monitoring, Google Search Console integration, up to 8 developer hours per month, and a dedicated account manager.',
@@ -124,7 +128,7 @@ const TESTIMONIALS = [
   },
   {
     text: "We have a high-volume WooCommerce store and had a critical payment failure after a plugin update that cost us several hours of sales. After engaging 1Solutions for WooCommerce maintenance, every update goes through staging with checkout testing first. We have had zero update-related payment failures in 18 months. Their 4-hour emergency SLA also gives us genuine confidence during peak trading.",
-    name: 'Jason W.', role: 'eCommerce Director, Retail Brand (AU)', init: 'JW', bg: '#14532d', feat: true,
+    name: 'Jason W.', role: 'eCommerce Director, Retail Brand (AU)', init: 'JW', bg: '#0F3460', feat: true,
   },
   {
     text: "We have six WordPress sites across three brands and 1Solutions maintains all of them under one retainer. One account manager, one monthly invoice, one report covering all sites. The consistency and attention to detail across all six has been excellent for two years. The quarterly strategy calls help us plan what to build next on each site.",
@@ -144,14 +148,36 @@ const WHY_CARDS = [
 ];
 
 const FAQS = [
-  { q: 'What is included in WordPress maintenance?', a: 'WordPress maintenance covers: WordPress core and plugin/theme updates tested on staging before production; daily automated backups with off-site storage; 24/7 uptime monitoring; weekly malware scanning and WAF updates; SSL certificate management; broken link scanning and repair; Core Web Vitals monitoring; monthly maintenance reports; and monthly developer hours for content updates and minor fixes. WooCommerce plans include payment gateway testing after every update.' },
-  { q: 'How often should WordPress be updated?', a: 'WordPress minor security patches should be applied within 48 hours of release. Plugin updates should be assessed and applied monthly (or sooner for security patches). Major WordPress version updates should be assessed on a staging clone over 2–4 weeks before production. Our maintenance service manages all these update streams on your behalf so you never have to think about it.' },
-  { q: 'Can you fix a hacked WordPress website?', a: 'Yes. We provide WordPress malware removal and hack recovery — scanning files and database for injected code, backdoors, phishing pages and SEO spam, removing all malware, restoring from clean backup where needed, patching the exploited vulnerability (most commonly an outdated plugin), hardening against recurrence, and providing a written incident report. For retainer clients, malware removal is covered within the plan.' },
-  { q: 'Do you support WooCommerce websites?', a: 'Yes. WooCommerce maintenance is a speciality. WooCommerce core and extension updates can break checkout flows and payment gateways. Our WooCommerce maintenance includes payment gateway testing, checkout regression testing, and order notification email verification after every update. We have Priority emergency response for checkout and payment failures on Professional and Enterprise plans.' },
-  { q: 'Do you update plugins even if they might break the site?', a: 'We never apply updates directly to the production site. Every update goes to a staging clone first where we check for visual regressions and test critical functionality. If an update causes a conflict on staging, we investigate the root cause, resolve it or defer the update, and communicate this in your monthly report. Your live site only receives tested, verified updates.' },
-  { q: 'What WordPress security hardening do you apply?', a: 'Our WordPress hardening covers: Wordfence WAF; brute-force login protection and login URL change; 2FA for admin accounts; file permission hardening (600 for wp-config.php); disabling XML-RPC; removing WordPress version disclosure; DISALLOW_FILE_EDIT; security response headers (CSP, X-Frame-Options, HSTS); regular user role audits; and hosting-level security configuration for managed WordPress hosts (WPEngine, Kinsta, etc.).' },
-  { q: 'How do you handle WordPress emergencies?', a: 'All retainer clients have a dedicated emergency contact. We respond within the SLA of your plan: 2-hour for Enterprise, 4-hour for Professional, next-business-day for Essential (with priority escalation available). Common emergencies: white screen of death, fatal PHP errors from plugin conflicts, hacked sites, WooCommerce payment failures, site outages, and SSL lapses. We investigate, resolve, and follow up with a written incident report.' },
-  { q: 'Can you take over WordPress maintenance from another agency?', a: "Yes. We take over from any previous developer or agency. We start with a WordPress audit — core version, plugin and theme inventory, security configuration, backup setup, codebase quality review. You receive a written audit report before the retainer begins. We operate on monthly rolling contracts with no lock-in and provide a clean handover document if you ever transition away." } ,
+  { q: 'What is WordPress website maintenance?', a: 'WordPress website maintenance is the ongoing process of keeping your WordPress site secure, updated, backed up, and performing well. It includes: applying WordPress core and plugin security patches promptly; testing all updates on a staging site before deploying to production; running daily automated backups stored off-site; monitoring uptime 24/7; scanning for malware and security vulnerabilities; managing SSL certificates and domain renewals; monitoring Core Web Vitals; repairing broken links; and providing developer hours for minor content and design changes. Without regular WordPress maintenance, sites accumulate unpatched vulnerabilities, outdated plugins, and degraded performance — the root cause of most WordPress hacks and outages.' },
+  { q: 'What is included in WordPress maintenance?', a: 'WordPress maintenance covers: WordPress core and plugin/theme updates tested on staging before production; daily automated backups with off-site storage (AWS S3 or Backblaze B2); 24/7 uptime monitoring; weekly malware scanning and WAF rule updates; SSL certificate management; broken link scanning and repair; Core Web Vitals monitoring; monthly maintenance reports; and monthly developer hours for content updates and minor fixes. WooCommerce maintenance plans also include payment gateway testing and checkout regression testing after every update.' },
+  { q: 'How often should WordPress be updated?', a: 'WordPress minor security patches should be applied within 48 hours of release — the window between a vulnerability disclosure and mass exploitation can be measured in hours. Plugin updates should be assessed and applied monthly, or sooner for security patches. Major WordPress version updates (released 2–3 times per year) should be assessed on a staging clone over 2–4 weeks before production. A typical WordPress installation has 15–30 active plugins, each with its own update cadence. Our WordPress maintenance service monitors all these update streams on your behalf so you never have to think about it.' },
+  { q: 'What happens if I don\'t maintain my WordPress website?', a: 'An unmaintained WordPress website accumulates serious risks over time. Outdated plugins and themes are the most common attack vector — responsible for the majority of WordPress hacks. An unpatched critical vulnerability can be exploited within hours of public disclosure. Beyond security, outdated plugins cause plugin conflicts, PHP fatal errors, and white screen of death events as your hosting provider upgrades PHP versions. Performance degrades as caches become stale, images unoptimised, and database tables bloated. Backups may not be running, meaning a hack or server failure could result in permanent data loss. SEO rankings also suffer as page speed declines and broken links accumulate.' },
+  { q: 'How much does WordPress maintenance cost?', a: 'WordPress maintenance costs vary by plan scope. Basic WordPress maintenance covering core and plugin updates, backups, uptime monitoring, and security scanning typically starts from $99–$149/month for smaller brochure sites. Mid-tier plans covering WooCommerce maintenance, priority emergency SLA, Core Web Vitals monitoring, and 8 developer hours per month range from $249–$499/month. Enterprise plans with a dedicated WordPress engineer, 2-hour emergency SLA, multi-site management, and 20+ developer hours per month are custom-priced. Contact us for a quote tailored to your site — every engagement starts with a free WordPress health audit.' },
+  { q: 'What is a WordPress care plan?', a: 'A WordPress care plan (also called a WordPress maintenance retainer or WordPress support plan) is a monthly subscription service that handles all the ongoing maintenance tasks your WordPress site requires — updates, backups, security, monitoring, and developer support. Instead of managing these tasks yourself or hiring a developer ad hoc when problems occur, a care plan provides proactive, structured maintenance on a predictable monthly cost. A good WordPress care plan includes staging-first updates, daily backups, malware monitoring, uptime alerts, and a pool of developer hours for minor changes each month.' },
+  { q: 'Do I need WordPress maintenance if my site is small?', a: 'Yes — all WordPress sites need maintenance regardless of size. A small brochure site has the same exposure to WordPress core vulnerabilities, plugin security flaws, and hosting environment changes as a large eCommerce site. In fact, smaller sites are often more vulnerable because they are less monitored. The essential maintenance tasks — security patches applied within 48 hours, daily backups, uptime monitoring, and malware scanning — apply equally to a 5-page business site and a 500-page WooCommerce store. Our WordPress Essential plan is designed exactly for smaller sites that need security and updates without a full-scale retainer.' },
+  { q: 'Can you fix a hacked WordPress website?', a: 'Yes. We provide WordPress malware removal and hack recovery — scanning files and database for injected code, backdoors, phishing pages and SEO spam, removing all malware, restoring from clean backup where needed, patching the exploited vulnerability (most commonly an outdated plugin), hardening against recurrence, and providing a written incident report detailing the attack vector and remediation steps. For clients on our maintenance retainer, malware removal is covered within the plan at no additional cost.' },
+  { q: 'How long does it take to clean a hacked WordPress site?', a: 'Most WordPress malware removal engagements are completed within 4–12 hours of our receiving access. The timeline depends on the type of infection: file-level malware injections and database injections typically resolve in under 4 hours. More complex compromises involving backdoors hidden across multiple plugin files, or SEO spam poisoning thousands of database entries, may require 8–24 hours. We provide a written incident report after every malware removal engagement covering the infection type, affected files, remediation steps, and hardening measures applied.' },
+  { q: 'Do you support WooCommerce websites?', a: 'Yes. WooCommerce maintenance is a speciality. WooCommerce core and extension updates can break checkout flows, payment gateways, and product display in ways that standard visual checks miss. Our WooCommerce maintenance includes: WooCommerce core and premium extension updates; payment gateway functionality testing (Stripe, PayPal, etc.) after every update; checkout flow regression testing; order notification email verification; product catalogue integrity checks; and priority emergency response for checkout and payment failures on Professional and Enterprise plans.' },
+  { q: 'Do you support WooCommerce Subscriptions and Memberships?', a: 'Yes. WooCommerce Subscriptions and WooCommerce Memberships add complexity to the update cycle — their renewal billing, member content access, and subscription management features must be tested after every WooCommerce core and extension update. Our WooCommerce maintenance process includes specific test cases for subscription renewal flows, membership access checks, and payment gateway token retention after updates. These are covered in our Professional and Enterprise maintenance plans.' },
+  { q: 'Do you update plugins even if they might break the site?', a: 'We never apply updates directly to the production site. Every plugin, theme, or WordPress core update is applied to a staging clone first where we check for visual regressions and test critical functionality (forms, checkout, login, custom features). If an update causes a conflict on staging, we investigate the root cause, resolve it or defer the update, and communicate this in your monthly report. Your live site only receives tested, verified updates.' },
+  { q: 'What is a WordPress staging site?', a: 'A WordPress staging site is a private, password-protected clone of your live WordPress site — identical in content, theme, and plugins — used to test updates, new plugins, design changes, and code changes before deploying them to the production site your visitors see. All our maintenance clients have a staging environment configured as part of onboarding. Every update we apply goes to staging first. If an update causes any issue on staging, it never reaches your live site.' },
+  { q: 'What WordPress security hardening do you apply?', a: 'Our WordPress security hardening covers: Wordfence or Sucuri WAF installation and configuration; brute-force login protection and login URL change; two-factor authentication (2FA) for all administrator accounts; file permission hardening (755 directories, 644 files, 600 for wp-config.php); disabling XML-RPC where not required; removing WordPress version disclosure from source; DISALLOW_FILE_EDIT in wp-config; security response headers (Content-Security-Policy, X-Frame-Options, X-Content-Type-Options, HSTS); regular user role and inactive admin account audits; and hosting-level security configuration for managed WordPress hosts (WPEngine, Kinsta, Flywheel).' },
+  { q: 'How do you monitor WordPress uptime?', a: 'We use UptimeRobot, Better Uptime, or equivalent monitoring services configured with 1–5 minute check intervals. When your site returns a non-200 status code or exceeds a response time threshold, our team receives immediate alerts via email, Slack, and SMS. For Enterprise plans, we also monitor from multiple geographic locations to detect regional CDN or DNS issues. Monthly maintenance reports include uptime statistics, average response time, and any downtime incidents with root cause analysis.' },
+  { q: 'What is Core Web Vitals monitoring?', a: 'Core Web Vitals are Google\'s three page experience metrics: Largest Contentful Paint (LCP — loading performance), Interaction to Next Paint (INP — interactivity), and Cumulative Layout Shift (CLS — visual stability). Google uses Core Web Vitals as a ranking signal. Our WordPress maintenance plans include monthly Core Web Vitals tracking via Google Search Console and PageSpeed Insights, with trend reporting and recommendations. If a plugin update or new content causes a Core Web Vitals regression, we identify and resolve it within your monthly developer hours.' },
+  { q: 'Can you help with WordPress performance optimization?', a: 'Yes. WordPress performance optimisation is included in our maintenance plans at varying levels. All plans include caching configuration (WP Rocket, LiteSpeed Cache, or W3 Total Cache) and CDN setup via Cloudflare. Professional and Enterprise plans include Redis object caching, image optimisation with WebP conversion, GZIP/Brotli compression, database cleanup and optimisation, and Core Web Vitals-focused performance work within your monthly developer hours. We track PageSpeed scores monthly and flag regressions.' },
+  { q: 'How do you handle WordPress emergencies?', a: 'All maintenance retainer clients have a dedicated emergency contact. We respond within the SLA of your plan: 2-hour for Enterprise, 4-hour for Professional, next-business-day for Essential (with priority escalation available for urgent issues). Common WordPress emergencies we handle: white screen of death, fatal PHP errors from plugin conflicts, hacked sites, WooCommerce payment gateway failures, site outages from hosting issues, SSL certificate lapses, and post-migration breakages. We investigate, resolve, and follow up with a written incident report.' },
+  { q: 'Can you maintain WordPress on any hosting?', a: 'Yes. We maintain WordPress on all major hosting platforms — cPanel and Plesk shared hosting (SiteGround, Bluehost, HostGator, Hostinger), managed WordPress hosting (WPEngine, Kinsta, Flywheel, Pressable), cloud-based hosting (Cloudways, AWS, DigitalOcean, Google Cloud), and dedicated servers. Each hosting environment has different access patterns (cPanel, SFTP, SSH, hosting dashboard APIs) and different caching and security tools available. Our onboarding process captures your hosting environment details and configures our maintenance workflow accordingly.' },
+  { q: 'What page builders do you support?', a: 'We maintain WordPress sites built with all major page builders: Elementor, Divi, WPBakery Page Builder, Beaver Builder, Bricks Builder, Oxygen, and Gutenberg (WordPress Block Editor / Full Site Editing). Page builder plugin updates are treated with particular care in our maintenance workflow — they touch every page on your site and must be tested thoroughly on staging before production deployment. We also support sites built with custom themes and custom Gutenberg blocks.' },
+  { q: 'Do you maintain WordPress multisite networks?', a: 'Yes. WordPress Multisite maintenance is available on our Enterprise plan. Multisite networks require coordinated update management — WordPress core and network-activated plugins must be updated network-wide and tested across representative sub-sites, not just the main site. We maintain multisite networks for media groups, franchise organisations, agencies, and education institutions managing multiple brand sites under a single WordPress installation.' },
+  { q: 'Do you provide a monthly WordPress maintenance report?', a: 'Yes. Every maintenance client receives a monthly report by the 5th business day of the following month. The report covers: all WordPress core, plugin, and theme updates applied (with version before and after and changelog notes); security scan results; uptime statistics; Core Web Vitals trends (LCP, INP, CLS); backup status and last restore test date; broken links found and repaired; developer hours used and remaining; any incidents during the month with root cause and resolution; and recommendations for the coming month. Professional and Enterprise clients also receive a monthly call with their account manager.' },
+  { q: 'What is the SLA for emergency WordPress support?', a: 'Emergency response SLAs by plan: Enterprise — 2-hour initial response, 24/7 coverage including weekends; Professional — 4-hour initial response during business hours (Monday–Friday), with same-day escalation available for checkout or payment emergencies on WooCommerce sites; Essential — next-business-day response with a 4-hour priority escalation option available as a one-off add-on. All SLAs refer to initial contact and triage, not full resolution — resolution time depends on the nature of the emergency. We follow up every incident with a written report.' },
+  { q: 'Can you take over WordPress maintenance from another agency?', a: 'Yes. We take over from any previous developer, agency, or in-house team. We begin with a comprehensive WordPress audit: core version and update history, full plugin and theme inventory with WPScan vulnerability check, security configuration review, backup setup assessment, hosting environment review, codebase quality review for custom code, and PageSpeed/Core Web Vitals baseline. You receive a written audit report before the retainer begins. We operate on monthly rolling contracts with no lock-in, and provide a clean handover document if you ever transition away.' },
+  { q: 'What is the difference between WordPress support and WordPress maintenance?', a: 'WordPress maintenance is proactive — regular, scheduled tasks (updates, backups, security scanning, monitoring) performed to prevent problems before they occur. WordPress support is reactive — help when something goes wrong (a plugin breaks, the site goes down, it gets hacked). Our plans combine both: structured monthly maintenance that reduces the frequency of support events, plus included emergency support when incidents do occur. Most WordPress problems are preventable with proper maintenance.' },
+  { q: 'Do you manage WordPress hosting?', a: 'We do not sell or resell hosting, but we fully manage your WordPress hosting configuration as part of our maintenance service. This includes: PHP version compatibility management; disk space and error log monitoring; server-level caching configuration for managed hosts (WPEngine, Kinsta); Cloudflare configuration; SSL certificate management; cron job monitoring; and database optimisation. For clients who want us to recommend a hosting provider, we typically suggest WPEngine or Kinsta for business sites and high-traffic WooCommerce stores.' },
+  { q: 'What if a plugin update breaks my site?', a: 'Because all our updates go to staging first, a plugin update that would break your site is caught before it ever reaches production. If a conflict or visual regression appears on staging, we investigate the root cause — typically a theme/plugin conflict, PHP compatibility issue, or a breaking change in the plugin\'s new version — and either resolve it, roll back the update pending a compatible version, or contact the plugin developer if required. We communicate this in your monthly report. Your live site always remains stable.' },
+  { q: 'How do I get started with a WordPress maintenance plan?', a: 'Getting started takes three steps. First, fill in our contact form with your WordPress site URL and a brief description of what you need — we respond within one business day. Second, we carry out a free WordPress health audit (core version, plugin vulnerability check, security configuration, backup status, PageSpeed baseline) and send you a written report with our recommended plan. Third, you approve the plan, we complete secure access onboarding, set up staging and monitoring tools, and your maintenance retainer begins — typically within 2–3 business days of sign-off.' },
+  { q: 'What makes 1Solutions different from other WordPress maintenance services?', a: 'Several things distinguish our WordPress maintenance: 15+ years of WordPress experience across 150+ maintained sites; a genuine staging-first workflow (not just claimed — we will show you the staging environment during onboarding); WooCommerce checkout testing on every update, not just visual checks; security patches applied within 48 hours of CVE disclosure; transparent monthly reports that name every plugin updated, not vague "maintenance performed" summaries; emergency response covered in every plan (not billed as separate call-out fees); and month-to-month rolling contracts with no lock-in. We also maintain multi-site portfolios under a single retainer — useful for agencies, franchise groups, and media companies.' },
+  { q: 'Do you offer white-label WordPress maintenance for agencies?', a: 'Yes. We provide white-label WordPress maintenance for digital agencies — maintaining your clients\' WordPress and WooCommerce sites under your agency brand, with reports using your logo, communication via your branded portal or email, and all client-facing documentation white-labelled. Agencies consolidate multiple client sites under a single retainer with a custom per-site rate. Our Professional plan is popular with agencies who want a 4-hour emergency SLA and 8 developer hours per client site per month.' },
 ];
 
 function useCountUp(target, duration = 1800, start = false) {
@@ -236,19 +262,19 @@ export default function WordPressMaintenance() {
   return (
     <>
       <Head>
-        <title>WordPress Support & Maintenance Services | WooCommerce, Security & Updates | 1Solutions</title>
-        <meta name="description" content="Expert WordPress maintenance — core and plugin updates tested on staging, malware removal, WooCommerce support, daily backups, uptime monitoring, performance, and emergency support. 15+ years." />
+        <title>WordPress Maintenance Services | Support, Security & WooCommerce | 1Solutions</title>
+        <meta name="description" content="Professional WordPress maintenance services — plugin and core updates tested on staging before production, security hardening, malware removal, WooCommerce support, daily backups, 24/7 uptime monitoring, and emergency WordPress support. 15+ years, worldwide." />
         <link rel="canonical" href="https://www.1solutions.biz/wordpress-support-and-maintenance-services/" />
-        <meta property="og:title" content="WordPress Support & Maintenance Services | 1Solutions" />
-        <meta property="og:description" content="Monthly WordPress maintenance — plugin updates tested on staging, malware removal and security hardening, WooCommerce support, daily backups, uptime monitoring, and emergency support." />
+        <meta property="og:title" content="WordPress Maintenance Services | Support, Security & WooCommerce | 1Solutions" />
+        <meta property="og:description" content="Professional WordPress maintenance services — plugin and core updates tested on staging, security hardening, malware removal, WooCommerce support, daily backups, uptime monitoring, and 24/7 emergency support." />
         <meta property="og:url" content="https://www.1solutions.biz/wordpress-support-and-maintenance-services/" />
         <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
         <style>{`
-          .wm-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:linear-gradient(135deg,#f0fdf4 0%,#dcfce7 20%,#f0f9ff 50%,#fef3c7 75%,#fdf4ff 100%);color:#0F1F40;line-height:1.6;position:relative;overflow-x:hidden}
+          .wm-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:linear-gradient(135deg,#EEF3FB 0%,#dbeafe 20%,#ede9fe 50%,#EEF3FB 75%,#f0f4ff 100%);color:#0F1F40;line-height:1.6;position:relative;overflow-x:hidden}
           .wm-page *,.wm-page *::before,.wm-page *::after{box-sizing:border-box}
           .wm-orb{position:absolute;border-radius:50%;pointer-events:none;z-index:0;filter:blur(20px)}
-          .wm-orb-1{width:880px;height:880px;background:radial-gradient(circle,rgba(5,150,105,.20) 0%,rgba(16,185,129,.08) 40%,transparent 70%);top:-280px;right:-260px}
+          .wm-orb-1{width:880px;height:880px;background:radial-gradient(circle,rgba(17,65,113,.20) 0%,rgba(17,65,113,.08) 40%,transparent 70%);top:-280px;right:-260px}
           .wm-orb-2{width:780px;height:780px;background:radial-gradient(circle,rgba(217,119,6,.22) 0%,rgba(245,158,11,.10) 40%,transparent 70%);bottom:0;left:-230px}
           .wm-orb-3{width:550px;height:550px;background:radial-gradient(circle,rgba(99,102,241,.14) 0%,transparent 70%);top:42%;left:-120px;transform:translateY(-50%)}
           .wm-breadcrumb{position:relative;z-index:2;padding:16px 40px 0;max-width:1440px;margin:0 auto}
@@ -260,20 +286,20 @@ export default function WordPressMaintenance() {
           .wm-breadcrumb a:hover{text-decoration:underline}
           .wm-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
           .wm-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
-          .wm-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(90deg,#0F3460 0%,#059669 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .wm-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(90deg,#114171 0%,#FE9700 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .wm-hero-desc{font-size:16px;color:#3A507A;line-height:1.65;max-width:740px;margin:0 auto 24px}
           .wm-trust-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
           .wm-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07)}
-          .wm-badge-dot{width:7px;height:7px;border-radius:50%;background:#059669;flex-shrink:0}
+          .wm-badge-dot{width:7px;height:7px;border-radius:50%;background:#FE9700;flex-shrink:0}
           .wm-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .wm-btn-primary{display:inline-block;padding:14px 36px;background:#059669;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(5,150,105,.28)}
+          .wm-btn-primary{display:inline-block;padding:14px 36px;background:#114171;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(17,65,113,.28)}
           .wm-btn-primary:hover{background:#0F3460;transform:translateY(-2px)}
           .wm-btn-ghost{display:inline-block;padding:14px 36px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .wm-btn-ghost:hover{background:rgba(255,255,255,.85);border-color:rgba(5,150,105,.5);transform:translateY(-2px)}
+          .wm-btn-ghost:hover{background:rgba(255,255,255,.85);border-color:rgba(17,65,113,.5);transform:translateY(-2px)}
           .wm-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:28px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
           .wm-stat-col{padding:18px 16px;text-align:center;border-right:1px solid rgba(15,52,96,.10)}
           .wm-stat-col:last-child{border-right:none}
-          .wm-stat-val{font-size:28px;font-weight:900;color:#059669;letter-spacing:-.5px;line-height:1}
+          .wm-stat-val{font-size:28px;font-weight:900;color:#114171;letter-spacing:-.5px;line-height:1}
           .wm-stat-label{font-size:11px;color:#4A6080;font-weight:500;margin-top:5px}
           .wm-logos{position:relative;z-index:2;padding:24px 40px 52px;display:flex;flex-direction:column;align-items:center;gap:14px}
           .wm-logos-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6A80A0}
@@ -291,40 +317,40 @@ export default function WordPressMaintenance() {
           .wm-inner{max-width:1300px;margin:0 auto}
           .wm-svc-section{background:transparent;padding:72px 40px 60px;position:relative;z-index:1}
           .wm-svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
-          .wm-svc-card{background:linear-gradient(135deg,rgba(240,253,244,.50) 0%,rgba(255,255,255,.85) 55%,rgba(253,244,255,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:20px;padding:26px 22px 22px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95);opacity:0;transform:translateY(36px);transition:opacity .6s cubic-bezier(0.22,1,.36,1),transform .6s cubic-bezier(0.22,1,.36,1),border-color .2s,box-shadow .2s}
+          .wm-svc-card{background:linear-gradient(135deg,rgba(238,243,251,.50) 0%,rgba(255,255,255,.85) 55%,rgba(253,244,255,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:20px;padding:26px 22px 22px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95);opacity:0;transform:translateY(36px);transition:opacity .6s cubic-bezier(0.22,1,.36,1),transform .6s cubic-bezier(0.22,1,.36,1),border-color .2s,box-shadow .2s}
           .wm-svc-card.wm-cv{opacity:1;transform:translateY(0)}
-          .wm-svc-card.wm-cv:hover{transform:translateY(-6px);border-color:rgba(5,150,105,.30);box-shadow:0 16px 48px rgba(15,52,96,.14)}
-          .wm-svc-card.feat{border-color:rgba(5,150,105,.20)}
+          .wm-svc-card.wm-cv:hover{transform:translateY(-6px);border-color:rgba(17,65,113,.30);box-shadow:0 16px 48px rgba(15,52,96,.14)}
+          .wm-svc-card.feat{border-color:rgba(17,65,113,.20)}
           .wm-svc-num{position:absolute;top:8px;right:14px;font-size:72px;font-weight:900;line-height:1;color:#0F3460;opacity:.055;pointer-events:none;letter-spacing:-4px;user-select:none}
           .wm-svc-card h3{font-size:16px;font-weight:700;color:#0F1F40;margin:0 0 8px;position:relative;z-index:1}
           .wm-svc-card p{font-size:13px;color:#4A6080;line-height:1.65;margin:0;position:relative;z-index:1}
-          .wm-svc-card::before{content:'';position:absolute;left:0;top:12%;height:76%;width:3px;background:linear-gradient(180deg,#059669,#34d399);border-radius:0 2px 2px 0;transform:scaleY(0);transform-origin:top center;transition:transform .3s cubic-bezier(0.22,1,.36,1)}
+          .wm-svc-card::before{content:'';position:absolute;left:0;top:12%;height:76%;width:3px;background:linear-gradient(180deg,#114171,#FE9700);border-radius:0 2px 2px 0;transform:scaleY(0);transform-origin:top center;transition:transform .3s cubic-bezier(0.22,1,.36,1)}
           .wm-svc-card.wm-cv:hover::before{transform:scaleY(1)}
           .wm-svc-more{text-align:center;margin-top:22px}
           .wm-btn-more{display:inline-block;background:#fff;border:1.5px solid rgba(15,52,96,.18);color:#0F3460;padding:10px 30px;border-radius:20px;font-weight:600;font-size:14px;cursor:pointer;transition:all .2s;font-family:inherit}
           .wm-btn-more:hover{background:#0F3460;border-color:#0F3460;color:#fff;transform:translateY(-2px)}
           .wm-stack-section{background:#f8fafd;border-top:1px solid rgba(15,52,96,.08);border-bottom:1px solid rgba(15,52,96,.08);padding:72px 40px;position:relative;z-index:1}
           .wm-stack-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
-          .wm-stack-card{background:linear-gradient(135deg,rgba(240,253,244,.50) 0%,rgba(255,255,255,.85) 55%,rgba(253,244,255,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:20px;padding:22px 20px;box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95);opacity:0;transform:translateY(32px);transition:opacity .55s cubic-bezier(0.22,1,.36,1),transform .55s cubic-bezier(0.22,1,.36,1),border-color .2s}
+          .wm-stack-card{background:linear-gradient(135deg,rgba(238,243,251,.50) 0%,rgba(255,255,255,.85) 55%,rgba(253,244,255,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:20px;padding:22px 20px;box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95);opacity:0;transform:translateY(32px);transition:opacity .55s cubic-bezier(0.22,1,.36,1),transform .55s cubic-bezier(0.22,1,.36,1),border-color .2s}
           .wm-stack-card.wm-sv{opacity:1;transform:translateY(0)}
-          .wm-stack-card.wm-sv:hover{border-color:rgba(5,150,105,.25);box-shadow:0 14px 40px rgba(15,52,96,.12)}
+          .wm-stack-card.wm-sv:hover{border-color:rgba(17,65,113,.25);box-shadow:0 14px 40px rgba(15,52,96,.12)}
           .wm-stack-group{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid}
           .wm-stack-pills{display:flex;flex-wrap:wrap;gap:6px}
           .wm-pill{display:inline-block;font-size:11.5px;font-weight:500;padding:4px 10px;border-radius:100px;border:1px solid}
           .wm-eng-section{padding:80px 40px;position:relative;z-index:1}
           .wm-eng-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
-          .wm-eng-card{background:linear-gradient(135deg,rgba(240,253,244,.50) 0%,rgba(255,255,255,.85) 55%,rgba(253,244,255,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:24px;padding:32px 28px;box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95);opacity:0;transform:translateY(44px);transition:opacity .65s cubic-bezier(0.22,1,.36,1),transform .65s cubic-bezier(0.22,1,.36,1),border-color .2s,box-shadow .25s}
+          .wm-eng-card{background:linear-gradient(135deg,rgba(238,243,251,.50) 0%,rgba(255,255,255,.85) 55%,rgba(253,244,255,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:24px;padding:32px 28px;box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95);opacity:0;transform:translateY(44px);transition:opacity .65s cubic-bezier(0.22,1,.36,1),transform .65s cubic-bezier(0.22,1,.36,1),border-color .2s,box-shadow .25s}
           .wm-eng-card.wm-ev{opacity:1;transform:translateY(0)}
-          .wm-eng-card.wm-ev:hover{border-color:rgba(5,150,105,.25);box-shadow:0 16px 48px rgba(15,52,96,.14)}
-          .wm-eng-card.feat{background:linear-gradient(135deg,rgba(254,243,199,.52) 0%,rgba(255,255,255,.87) 55%,rgba(240,253,244,.45) 100%);border-color:rgba(217,119,6,.28);box-shadow:0 8px 32px rgba(217,119,6,.12),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-8px)}
+          .wm-eng-card.wm-ev:hover{border-color:rgba(17,65,113,.25);box-shadow:0 16px 48px rgba(15,52,96,.14)}
+          .wm-eng-card.feat{background:linear-gradient(135deg,rgba(254,243,199,.52) 0%,rgba(255,255,255,.87) 55%,rgba(238,243,251,.45) 100%);border-color:rgba(217,119,6,.28);box-shadow:0 8px 32px rgba(217,119,6,.12),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-8px)}
           .wm-eng-card.feat.wm-ev{transform:translateY(-8px)}
           .wm-eng-card.feat.wm-ev:hover{transform:translateY(-12px)}
           .wm-eng-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:5px 12px;border-radius:100px;border:1px solid;margin-bottom:18px}
           .wm-eng-icon{width:48px;height:48px;background:rgba(15,52,96,.07);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;transition:background .2s}
-          .wm-eng-card.wm-ev:hover .wm-eng-icon{background:rgba(5,150,105,.10)}
-          .wm-eng-card.feat .wm-eng-icon{background:rgba(217,119,6,.10)}
+          .wm-eng-card.wm-ev:hover .wm-eng-icon{background:rgba(17,65,113,.10)}
+          .wm-eng-card.feat .wm-eng-icon{background:rgba(254,151,0,.10)}
           .wm-eng-icon svg{fill:#0F3460;transition:fill .2s}
-          .wm-eng-card.wm-ev:hover .wm-eng-icon svg{fill:#059669}
+          .wm-eng-card.wm-ev:hover .wm-eng-icon svg{fill:#114171}
           .wm-eng-card.feat .wm-eng-icon svg{fill:#D97706}
           .wm-eng-name{font-size:22px;font-weight:900;color:#0F3460;margin:0 0 6px;letter-spacing:-.3px}
           .wm-eng-headline{font-size:13px;font-weight:600;color:#D97706;margin-bottom:12px}
@@ -332,13 +358,13 @@ export default function WordPressMaintenance() {
           .wm-eng-list-label{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#6A80A0;margin-bottom:8px}
           .wm-eng-list{list-style:none;padding:0;margin:0 0 18px;display:flex;flex-direction:column;gap:7px}
           .wm-eng-list li{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:#374151;line-height:1.5}
-          .wm-eng-list li::before{content:'✓';font-weight:800;color:#059669;flex-shrink:0;margin-top:1px}
+          .wm-eng-list li::before{content:'✓';font-weight:800;color:#114171;flex-shrink:0;margin-top:1px}
           .wm-eng-process{font-size:12px;color:#6A80A0;padding-top:14px;border-top:1px solid rgba(15,52,96,.08)}
           .wm-eng-process strong{color:#0F3460}
           .wm-eng-timeline{display:inline-block;font-size:11px;font-weight:600;color:#D97706;margin-top:6px}
-          .wm-eng-cta{display:block;margin-top:18px;padding:11px;border-radius:50px;font-size:13px;font-weight:700;text-align:center;text-decoration:none;transition:all .22s;background:rgba(15,52,96,.09);color:#0F3460;border:1.5px solid rgba(15,52,96,.18)}
-          .wm-eng-cta:hover{background:#0F3460;color:#fff}
-          .wm-eng-card.feat .wm-eng-cta{background:#059669;color:#fff;border-color:#059669}
+          .wm-eng-cta{display:block;margin-top:18px;padding:11px;border-radius:50px;font-size:13px;font-weight:700;text-align:center;text-decoration:none;transition:all .22s;background:rgba(17,65,113,.09);color:#114171;border:1.5px solid rgba(17,65,113,.18)}
+          .wm-eng-cta:hover{background:#114171;color:#fff}
+          .wm-eng-card.feat .wm-eng-cta{background:#114171;color:#fff;border-color:#114171}
           .wm-eng-card.feat .wm-eng-cta:hover{background:#0F3460;border-color:#0F3460}
           .wm-process-section{background:#f8fafd;border-top:1px solid rgba(15,52,96,.08);border-bottom:1px solid rgba(15,52,96,.08);padding:80px 40px;position:relative;z-index:1}
           .wm-psteps{display:flex;flex-direction:column;margin-top:52px}
@@ -346,7 +372,7 @@ export default function WordPressMaintenance() {
           .wm-pstep.wm-pv{opacity:1;transform:translateY(0)}
           .wm-pstep-l{display:flex;flex-direction:column;align-items:center}
           .wm-pstep-circle{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.65);backdrop-filter:blur(8px);border:2px solid rgba(15,52,96,.18);display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:800;color:#0F3460;flex-shrink:0;transition:background .3s,border-color .3s}
-          .wm-pstep.wm-pv:hover .wm-pstep-circle{background:rgba(5,150,105,.10);border-color:#059669;color:#059669}
+          .wm-pstep.wm-pv:hover .wm-pstep-circle{background:rgba(17,65,113,.10);border-color:#114171;color:#114171}
           .wm-pstep-connector{flex:1;display:flex;flex-direction:column;align-items:center;padding:6px 0;min-height:42px}
           .wm-pstep-connector::before{content:'';width:2px;flex:1;background:#0F3460;opacity:.22}
           .wm-pstep-connector::after{content:'';border-left:6px solid transparent;border-right:6px solid transparent;border-top:8px solid #0F3460;opacity:.40}
@@ -358,8 +384,8 @@ export default function WordPressMaintenance() {
           .wm-testi{background:transparent;padding:80px 40px;position:relative;z-index:1}
           .wm-center-head{text-align:center;margin-bottom:48px}
           .wm-tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:44px}
-          .wm-tcard{background:linear-gradient(135deg,rgba(240,253,244,.50) 0%,rgba(255,255,255,.85) 55%,rgba(253,244,255,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:20px;padding:28px 24px;display:flex;flex-direction:column;gap:12px;box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95);opacity:0;transform:translateY(40px);transition:opacity .6s cubic-bezier(0.22,1,.36,1),transform .6s cubic-bezier(0.22,1,.36,1),box-shadow .3s}
-          .wm-tcard.feat{background:linear-gradient(135deg,rgba(254,243,199,.52) 0%,rgba(255,255,255,.87) 55%,rgba(240,253,244,.42) 100%);border-color:rgba(217,119,6,.22)}
+          .wm-tcard{background:linear-gradient(135deg,rgba(238,243,251,.50) 0%,rgba(255,255,255,.85) 55%,rgba(253,244,255,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:20px;padding:28px 24px;display:flex;flex-direction:column;gap:12px;box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95);opacity:0;transform:translateY(40px);transition:opacity .6s cubic-bezier(0.22,1,.36,1),transform .6s cubic-bezier(0.22,1,.36,1),box-shadow .3s}
+          .wm-tcard.feat{background:linear-gradient(135deg,rgba(254,243,199,.52) 0%,rgba(255,255,255,.87) 55%,rgba(238,243,251,.42) 100%);border-color:rgba(217,119,6,.22)}
           .wm-tcard.wm-tv{opacity:1;transform:translateY(0)}
           .wm-tcard.wm-tv:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(15,52,96,.14)}
           .wm-stars{font-size:16px;color:#D97706;letter-spacing:2px}
@@ -370,21 +396,21 @@ export default function WordPressMaintenance() {
           .wm-trole{font-size:12px;color:#6b7280}
           .wm-why-section{background:#f8fafd;border-top:1px solid rgba(15,52,96,.08);border-bottom:1px solid rgba(15,52,96,.08);padding:80px 40px;position:relative;z-index:1}
           .wm-why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
-          .wm-wcard{background:linear-gradient(135deg,rgba(240,253,244,.50) 0%,rgba(255,255,255,.85) 55%,rgba(253,244,255,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:20px;padding:26px 22px;box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95);opacity:0;transform:translateY(32px) scale(.97);transition:opacity .55s cubic-bezier(0.22,1,.36,1),transform .55s cubic-bezier(0.22,1,.36,1),border-color .2s}
+          .wm-wcard{background:linear-gradient(135deg,rgba(238,243,251,.50) 0%,rgba(255,255,255,.85) 55%,rgba(253,244,255,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:20px;padding:26px 22px;box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95);opacity:0;transform:translateY(32px) scale(.97);transition:opacity .55s cubic-bezier(0.22,1,.36,1),transform .55s cubic-bezier(0.22,1,.36,1),border-color .2s}
           .wm-wcard.wm-wv{opacity:1;transform:translateY(0) scale(1)}
-          .wm-wcard.wm-wv:hover{transform:translateY(-5px) scale(1);border-color:rgba(5,150,105,.25);box-shadow:0 14px 40px rgba(15,52,96,.12)}
-          .wm-wcard-dot{width:10px;height:10px;border-radius:50%;background:#059669;margin-bottom:12px}
+          .wm-wcard.wm-wv:hover{transform:translateY(-5px) scale(1);border-color:rgba(17,65,113,.25);box-shadow:0 14px 40px rgba(15,52,96,.12)}
+          .wm-wcard-dot{width:10px;height:10px;border-radius:50%;background:#FE9700;margin-bottom:12px}
           .wm-wcard h3{font-size:14px;font-weight:700;color:#0F1F40;margin:0 0 8px;line-height:1.35}
           .wm-wcard p{font-size:13px;color:#4A6080;line-height:1.65;margin:0}
-          .wm-contact{padding:70px 40px;background:linear-gradient(135deg,rgba(240,253,244,.55) 0%,rgba(255,255,255,.60) 40%,rgba(253,244,255,.55) 100%);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.80);position:relative;z-index:1}
+          .wm-contact{padding:70px 40px;background:linear-gradient(135deg,rgba(238,243,251,.55) 0%,rgba(255,255,255,.60) 40%,rgba(238,243,251,.55) 100%);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.80);position:relative;z-index:1}
           .wm-contact-grid{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;gap:32px;align-items:start}
-          .wm-ctitle{font-size:42px;font-weight:900;line-height:1.18;margin:0 0 14px;background:linear-gradient(90deg,#0F3460 0%,#059669 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .wm-ctitle{font-size:42px;font-weight:900;line-height:1.18;margin:0 0 14px;background:linear-gradient(90deg,#0F3460 0%,#FE9700 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .wm-cdesc{font-size:14px;color:#4A6080;line-height:1.6;margin:0 0 22px}
           .wm-cbenefits{background:rgba(255,255,255,.70);border:1px solid rgba(255,255,255,.90);border-radius:14px;padding:22px;backdrop-filter:blur(12px);display:flex;flex-direction:column;gap:14px}
           .wm-cbenefit{display:flex;gap:10px;align-items:flex-start}
-          .wm-cbenefit-icon{flex-shrink:0;color:#059669;font-weight:800;font-size:16px;margin-top:1px}
+          .wm-cbenefit-icon{flex-shrink:0;color:#114171;font-weight:800;font-size:16px;margin-top:1px}
           .wm-cbenefit p{font-size:13px;color:#4A6080;margin:0;line-height:1.55}
-          .wm-form-box{background:linear-gradient(135deg,rgba(255,255,255,.88) 0%,rgba(240,253,244,.18) 50%,rgba(255,255,255,.84) 100%);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.92);border-radius:20px;padding:34px;box-shadow:0 8px 40px rgba(15,52,96,.10),inset 0 1px 0 rgba(255,255,255,1)}
+          .wm-form-box{background:linear-gradient(135deg,rgba(255,255,255,.88) 0%,rgba(238,243,251,.18) 50%,rgba(255,255,255,.84) 100%);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.92);border-radius:20px;padding:34px;box-shadow:0 8px 40px rgba(15,52,96,.10),inset 0 1px 0 rgba(255,255,255,1)}
           .wm-form-box h3{font-size:22px;font-weight:700;color:#0F1F40;margin:0 0 22px;letter-spacing:-.3px}
           .wm-form{display:flex;flex-direction:column;gap:13px}
           .wm-frow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -392,31 +418,31 @@ export default function WordPressMaintenance() {
           .wm-fg.full{grid-column:1/-1}
           .wm-fg label{font-size:12px;font-weight:500;color:#0F1F40}
           .wm-fg input,.wm-fg textarea,.wm-fg select{padding:10px 13px;border:1px solid rgba(15,52,96,.14);border-radius:6px;font-size:13px;font-family:inherit;color:#0F1F40;background:rgba(255,255,255,.55);transition:border-color .2s}
-          .wm-fg input:focus,.wm-fg textarea:focus,.wm-fg select:focus{outline:none;border-color:#059669;box-shadow:0 0 0 3px rgba(5,150,105,.10)}
+          .wm-fg input:focus,.wm-fg textarea:focus,.wm-fg select:focus{outline:none;border-color:#114171;box-shadow:0 0 0 3px rgba(17,65,113,.10)}
           .wm-consent{display:flex;gap:8px;align-items:flex-start}
           .wm-consent input{margin-top:3px;width:15px;height:15px}
           .wm-consent label{font-size:11px;color:#4A6080;line-height:1.5}
           .wm-consent a{color:#0F3460}
-          .wm-submit{width:100%;padding:14px;background:#059669;border:none;color:#fff;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all .25s;box-shadow:0 6px 24px rgba(5,150,105,.26)}
+          .wm-submit{width:100%;padding:14px;background:#114171;border:none;color:#fff;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all .25s;box-shadow:0 6px 24px rgba(17,65,113,.26)}
           .wm-submit:hover{background:#0F3460;transform:translateY(-2px);box-shadow:0 10px 30px rgba(15,52,96,.28)}
           .wm-faq{padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(15,52,96,.08);position:relative;z-index:1}
           .wm-faq h2{font-size:46px;font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
           .wm-faq-sub{font-size:15px;color:#4A6080;margin:0 0 36px}
           .wm-faq-list{display:flex;flex-direction:column;gap:10px}
-          .wm-fitem{background:linear-gradient(135deg,rgba(240,253,244,.50) 0%,rgba(255,255,255,.85) 55%,rgba(253,244,255,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(15,52,96,.06);transition:border-color .2s}
-          .wm-fitem.open{border-color:rgba(5,150,105,.30)}
-          .wm-fitem.open::before{content:'';display:block;height:3px;background:linear-gradient(90deg,#059669,#34d399);border-radius:3px 3px 0 0}
+          .wm-fitem{background:linear-gradient(135deg,rgba(238,243,251,.50) 0%,rgba(255,255,255,.85) 55%,rgba(253,244,255,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(15,52,96,.06);transition:border-color .2s}
+          .wm-fitem.open{border-color:rgba(17,65,113,.30)}
+          .wm-fitem.open::before{content:'';display:block;height:3px;background:linear-gradient(90deg,#114171,#FE9700);border-radius:3px 3px 0 0}
           .wm-fq{width:100%;background:none;border:none;padding:20px 20px 20px 58px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;text-align:left;gap:14px;font-family:inherit;position:relative}
           .wm-fq-badge{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:26px;height:26px;background:rgba(15,52,96,.08);color:#374151;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:6px;transition:background .2s,color .2s}
-          .wm-fitem.open .wm-fq-badge{background:#059669;color:#fff}
+          .wm-fitem.open .wm-fq-badge{background:#114171;color:#fff}
           .wm-fq span{font-size:15px;font-weight:600;color:#0F1F40;line-height:1.4}
-          .wm-fitem.open .wm-fq span{color:#14532d}
+          .wm-fitem.open .wm-fq span{color:#114171}
           .wm-fchev{width:22px;height:22px;flex-shrink:0;color:#9ca3af;transition:transform .3s}
-          .wm-fitem.open .wm-fchev{transform:rotate(180deg);color:#059669}
-          .wm-fanswer-wrap{overflow:hidden;transition:max-height .35s ease;max-height:0}
-          .wm-fitem.open .wm-fanswer-wrap{max-height:500px}
+          .wm-fitem.open .wm-fchev{transform:rotate(180deg);color:#114171}
+          .wm-fanswer-wrap{overflow:hidden;transition:max-height .5s ease;max-height:0}
+          .wm-fitem.open .wm-fanswer-wrap{max-height:900px}
           .wm-fanswer{padding:0 20px 20px 58px;font-size:14px;color:#4b5563;line-height:1.8}
-          .wm-related{padding:80px 40px;background:rgba(240,253,244,.14);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.60)}
+          .wm-related{padding:80px 40px;background:rgba(238,243,251,.14);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.60)}
           .wm-related-inner{max-width:1300px;margin:0 auto;text-align:center}
           .wm-related h2{font-size:34px;font-weight:900;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 12px}
           .wm-related-sub{font-size:14px;color:#4A6080;margin:0 auto;max-width:560px}
@@ -428,10 +454,34 @@ export default function WordPressMaintenance() {
           .wm-rtag-violet{background:rgba(139,92,246,.09);border-color:rgba(139,92,246,.28);color:#6D28D9}
           .wm-rtag-amber{background:rgba(245,158,11,.11);border-color:rgba(245,158,11,.32);color:#B45309}
           .wm-rtag-teal{background:rgba(20,184,166,.09);border-color:rgba(20,184,166,.28);color:#0F766E}
-          .wm-rtag-green{background:rgba(5,150,105,.09);border-color:rgba(5,150,105,.28);color:#065f46}
+          .wm-rtag-green{background:rgba(17,65,113,.09);border-color:rgba(17,65,113,.28);color:#114171}
           .wm-rtag-rose{background:rgba(225,29,72,.09);border-color:rgba(225,29,72,.28);color:#9f1239}
+          .wm-what-section{background:#EEF3FB;border-top:1px solid rgba(17,65,113,.08);border-bottom:1px solid rgba(17,65,113,.08);padding:72px 40px;position:relative;z-index:1}
+          .wm-what-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+          .wm-what-text h2{font-size:38px;font-weight:900;line-height:1.15;letter-spacing:-.8px;background:linear-gradient(90deg,#114171 0%,#FE9700 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 16px}
+          .wm-what-text p{font-size:15px;color:#4A6080;line-height:1.75;margin:0 0 20px}
+          .wm-what-text h3{font-size:20px;font-weight:700;color:#114171;margin:24px 0 12px}
+          .wm-what-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+          .wm-what-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#374151;line-height:1.6}
+          .wm-what-list li::before{content:'✓';color:#114171;font-weight:800;flex-shrink:0;margin-top:1px}
+          .wm-risk-box{background:rgba(255,255,255,.70);border:1px solid rgba(17,65,113,.12);border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:16px}
+          .wm-risk-box h3{font-size:18px;font-weight:700;color:#114171;margin:0 0 4px}
+          .wm-risk-item{display:flex;gap:12px;align-items:flex-start}
+          .wm-risk-icon{width:32px;height:32px;border-radius:8px;background:rgba(254,151,0,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
+          .wm-risk-item p{font-size:13px;color:#4A6080;line-height:1.6;margin:0}
+          .wm-risk-item strong{display:block;font-size:13px;color:#0F1F40;font-weight:600;margin-bottom:2px}
+          .wm-cmp-section{background:transparent;padding:72px 40px;position:relative;z-index:1}
+          .wm-cmp-table{width:100%;border-collapse:collapse;margin-top:32px;font-size:14px}
+          .wm-cmp-table th{background:#114171;color:#fff;padding:14px 18px;text-align:left;font-weight:700;font-size:13px}
+          .wm-cmp-table th:first-child{border-radius:10px 0 0 0}
+          .wm-cmp-table th:last-child{border-radius:0 10px 0 0}
+          .wm-cmp-table td{padding:12px 18px;border-bottom:1px solid rgba(17,65,113,.08);color:#374151;vertical-align:top}
+          .wm-cmp-table tr:nth-child(even) td{background:rgba(238,243,251,.40)}
+          .wm-cmp-table td:first-child{font-weight:600;color:#0F1F40}
+          .wm-cmp-check{color:#114171;font-weight:800}
+          .wm-cmp-dash{color:#9ca3af}
           @media(max-width:1024px){.wm-hero h1,.wm-s-title,.wm-faq h2{font-size:36px}.wm-svc-grid{grid-template-columns:repeat(2,1fr)}.wm-stack-grid{grid-template-columns:repeat(2,1fr)}.wm-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.wm-eng-card.feat{transform:none}.wm-eng-card.feat.wm-ev{transform:none}.wm-eng-card.feat.wm-ev:hover{transform:translateY(-4px)}.wm-why-grid{grid-template-columns:repeat(2,1fr)}.wm-tgrid{grid-template-columns:1fr}.wm-contact-grid{grid-template-columns:1fr}}
-          @media(max-width:768px){.wm-breadcrumb{padding:12px 20px 0}.wm-hero{padding:28px 20px 20px}.wm-hero h1{font-size:26px;letter-spacing:-.3px}.wm-stats{grid-template-columns:1fr 1fr}.wm-stat-col:nth-child(2){border-right:none}.wm-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.wm-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.wm-logos{padding:16px 20px 28px}.wm-svc-section,.wm-stack-section,.wm-eng-section,.wm-process-section,.wm-testi,.wm-why-section,.wm-faq,.wm-related{padding:52px 20px}.wm-contact{padding:48px 20px}.wm-svc-grid,.wm-stack-grid,.wm-why-grid{grid-template-columns:1fr}.wm-frow{grid-template-columns:1fr}.wm-ctitle{font-size:28px}.wm-s-title{font-size:28px}}
+          @media(max-width:768px){.wm-breadcrumb{padding:12px 20px 0}.wm-hero{padding:28px 20px 20px}.wm-hero h1{font-size:26px;letter-spacing:-.3px}.wm-stats{grid-template-columns:1fr 1fr}.wm-stat-col:nth-child(2){border-right:none}.wm-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.wm-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.wm-logos{padding:16px 20px 28px}.wm-svc-section,.wm-stack-section,.wm-eng-section,.wm-process-section,.wm-testi,.wm-why-section,.wm-faq,.wm-related,.wm-what-section,.wm-cmp-section{padding:52px 20px}.wm-contact{padding:48px 20px}.wm-svc-grid,.wm-stack-grid,.wm-why-grid{grid-template-columns:1fr}.wm-frow{grid-template-columns:1fr}.wm-ctitle{font-size:28px}.wm-s-title{font-size:28px}.wm-what-inner{grid-template-columns:1fr}.wm-what-text h2{font-size:26px}.wm-cmp-table{font-size:12px}.wm-cmp-table th,.wm-cmp-table td{padding:10px 10px}}
         `}</style>
       </Head>
 
@@ -452,9 +502,9 @@ export default function WordPressMaintenance() {
         </nav>
 
         <section className="wm-hero">
-          <span className="wm-eyebrow">WordPress Support & Maintenance Services</span>
-          <h1>WordPress Maintenance — Staging-First Updates, Security & WooCommerce Support</h1>
-          <p className="wm-hero-desc">Expert WordPress maintenance retainers — all plugin and core updates tested on staging before production, malware removal and security hardening, WooCommerce checkout testing, daily backups, 24/7 uptime monitoring, and emergency support. 15+ years of WordPress expertise.</p>
+          <span className="wm-eyebrow">WordPress Maintenance & Support Services</span>
+          <h1>WordPress Maintenance Services — Secure, Updated & Fully Supported</h1>
+          <p className="wm-hero-desc">Professional WordPress maintenance services for businesses worldwide — all plugin and core updates tested on a staging site before production, security hardening and malware removal, WooCommerce checkout testing, daily off-site backups, 24/7 uptime monitoring, and emergency WordPress support. 15+ years, 150+ sites maintained.</p>
           <div className="wm-trust-row">
             {['150+ WordPress Sites Maintained','WooCommerce Specialists','Updates on Staging First','Malware Removal Included','15+ Years Experience'].map(b => (
               <div className="wm-badge" key={b}><span className="wm-badge-dot" />{b}</div>
@@ -483,6 +533,44 @@ export default function WordPressMaintenance() {
             </div>
           </div>
         </div>
+
+        <section className="wm-what-section" aria-labelledby="wm-what-heading">
+          <div className="wm-what-inner">
+            <div className="wm-what-text">
+              <h2 id="wm-what-heading">What Is WordPress Website Maintenance?</h2>
+              <p>WordPress website maintenance is the ongoing process of keeping your WordPress site secure, updated, backed up, and performing well. WordPress powers 43% of all websites on the internet — and its popularity makes it the most targeted CMS by attackers. Outdated plugins and themes are responsible for the majority of WordPress hacks.</p>
+              <p>A managed WordPress maintenance service handles every recurring task so your team never has to think about updates, backups, or security scans:</p>
+              <ul className="wm-what-list">
+                <li>WordPress core and plugin security patches applied within 48 hours of disclosure</li>
+                <li>All updates tested on a private staging site before going to your live production site</li>
+                <li>Daily automated backups stored off-site, with monthly restore testing</li>
+                <li>24/7 uptime monitoring with immediate alerts on any downtime</li>
+                <li>Weekly malware scanning and WAF rule updates</li>
+                <li>Core Web Vitals and PageSpeed tracking — Google ranking signals</li>
+                <li>SSL certificate and domain expiry monitoring</li>
+                <li>Monthly developer hours for content updates and minor design changes</li>
+              </ul>
+              <h3>Why WordPress Sites Need Regular Maintenance</h3>
+              <p>According to Sucuri&#39;s annual Hacked Website Report, the vast majority of compromised WordPress sites were running outdated software at the time of the attack. The window between a vulnerability being disclosed and mass exploitation beginning can be as short as a few hours — making prompt patching essential for any business website.</p>
+            </div>
+            <div className="wm-risk-box">
+              <h3>What Happens Without WordPress Maintenance</h3>
+              {[
+                ['⚠️', 'Security breaches', 'Outdated plugins and themes are the #1 attack vector for WordPress hacks — malware, SEO spam, and phishing pages injected into your site.'],
+                ['💥', 'Plugin conflicts & white screens', 'WordPress and PHP version upgrades change the environment. Untested plugin updates frequently cause fatal errors and white screens of death.'],
+                ['📉', 'SEO ranking drops', 'Broken links, declining Core Web Vitals scores, and crawl errors from unmonitored sites compound into measurable organic traffic loss over months.'],
+                ['🔒', 'Data loss risk', 'Without daily off-site backups and restore testing, a server failure or post-hack recovery may result in permanent loss of site content and database.'],
+                ['🛒', 'WooCommerce checkout failures', 'WooCommerce plugin updates can silently break payment gateways and checkout flows — costing hours of lost revenue before the issue is caught.'],
+                ['⏱️', 'Emergency costs', 'Ad-hoc emergency developer rates for hacked sites or broken updates cost far more than a monthly maintenance retainer.'],
+              ].map(([icon, title, desc]) => (
+                <div className="wm-risk-item" key={title}>
+                  <div className="wm-risk-icon">{icon}</div>
+                  <p><strong>{title}</strong>{desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         <section className="wm-svc-section" aria-labelledby="wm-svc-heading">
           <div className="wm-inner">
@@ -552,6 +640,55 @@ export default function WordPressMaintenance() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="wm-cmp-section" aria-label="WordPress Maintenance Plan Comparison">
+          <div className="wm-inner">
+            <div className="wm-center-head">
+              <span className="wm-s-eyebrow">Plan Comparison</span>
+              <h2 className="wm-s-title">WordPress Maintenance Plans at a Glance</h2>
+              <p className="wm-s-desc">Compare what is included in each WordPress care plan to find the right level of support for your business.</p>
+            </div>
+            <table className="wm-cmp-table">
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Essential</th>
+                  <th>Professional</th>
+                  <th>Enterprise</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ['WordPress core & plugin updates (staging-first)', '✓', '✓', '✓'],
+                  ['Daily off-site backups + monthly restore testing', '✓', '✓', '✓'],
+                  ['24/7 uptime monitoring', '✓', '✓', '✓'],
+                  ['Malware removal (included in plan)', '✓', '✓', '✓'],
+                  ['SSL certificate management', '✓', '✓', '✓'],
+                  ['Monthly maintenance report', '✓', '✓', '✓'],
+                  ['Monthly developer hours', '4 hrs', '8 hrs', '20 hrs'],
+                  ['Emergency response SLA', 'Next day', '4-hour', '2-hour (24/7)'],
+                  ['WooCommerce update & checkout testing', '—', '✓', '✓'],
+                  ['Core Web Vitals monitoring', '—', '✓', '✓'],
+                  ['Google Search Console integration', '—', '✓', '✓'],
+                  ['Dedicated account manager', '—', '✓', '✓'],
+                  ['Monthly account call', '—', '✓', '✓'],
+                  ['Multi-site management', '—', '—', '✓'],
+                  ['Dedicated WordPress engineer', '—', '—', '✓'],
+                  ['Annual penetration testing', '—', '—', '✓'],
+                  ['Custom plugin maintenance', '—', '—', '✓'],
+                  ['Quarterly strategy calls', '—', '—', '✓'],
+                ].map(([feat, ess, pro, ent]) => (
+                  <tr key={feat}>
+                    <td>{feat}</td>
+                    {[ess, pro, ent].map((v, i) => (
+                      <td key={i} className={v === '✓' ? 'wm-cmp-check' : v === '—' ? 'wm-cmp-dash' : ''}>{v}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </section>
 
@@ -708,7 +845,7 @@ export default function WordPressMaintenance() {
             <p className="wm-related-sub">We also build WordPress and WooCommerce websites, and maintain other CMS platforms for businesses worldwide.</p>
             <hr />
             <div className="wm-rtags">
-              {[['/website-support-maintenance-services/','Website Maintenance (All CMS)','wm-rtag-teal'],['/wordpress-development-company/','WordPress Development','wm-rtag-blue'],['/woocommerce-development-company/','WooCommerce Development','wm-rtag-violet'],['/hire-wordpress-developer/','Hire WordPress Developer','wm-rtag-blue'],['/joomla-development-company/','Joomla Development','wm-rtag-rose'],['/magento-development-company/','Magento Development','wm-rtag-amber'],['/website-design-and-development/','Website Design & Development','wm-rtag-teal'],['/seo-services/','SEO Services','wm-rtag-green'],['/php-development-company/','PHP Development','wm-rtag-rose'],['/cms-development-company/','CMS Development','wm-rtag-amber']].map(([href, label, cls]) => (
+              {[['/wordpress-development-company','WordPress Development','wm-rtag-blue'],['/woocommerce-development-company','WooCommerce Development','wm-rtag-violet'],['/hire-wordpress-developer','Hire WordPress Developer','wm-rtag-blue'],['/magento-development-company','Magento Development','wm-rtag-amber'],['/website-design','Website Design','wm-rtag-teal'],['/seo-services-company','SEO Services','wm-rtag-green'],['/digital-marketing-services','Digital Marketing','wm-rtag-rose'],['/php-development-company','PHP Development','wm-rtag-rose'],['/shopify-store-development','Shopify Development','wm-rtag-amber'],['/headless-wordpress-development','Headless WordPress','wm-rtag-violet']].map(([href, label, cls]) => (
                 <Link key={href} href={href} className={`wm-rtag ${cls}`}>{label}</Link>
               ))}
             </div>
