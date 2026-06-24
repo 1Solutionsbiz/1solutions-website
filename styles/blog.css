@@ -651,7 +651,7 @@ body {
    ══════════════════════════════════════════════════════════════ */
 
 /* Allow the panel to visually overflow the sticky header */
-.bh-header { position: relative; overflow: visible; }
+.bh-header { overflow: visible; }
 
 /* Services nav trigger */
 .bh-services-item { list-style: none; }
