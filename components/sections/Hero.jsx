@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 const metrics = [
   { value: '500+', label: 'Projects Delivered' },
@@ -24,13 +24,50 @@ const clientLogos = [
 
 const doubled = [...clientLogos, ...clientLogos]
 
+const PARTICLES = [
+  { x: 12, y: 18, size: 7,  color: 'rgba(99,130,255,0.55)',  dur: 8,  delay: 0   },
+  { x: 28, y: 72, size: 5,  color: 'rgba(251,146,60,0.60)',  dur: 11, delay: 2   },
+  { x: 55, y: 10, size: 9,  color: 'rgba(20,184,166,0.50)',  dur: 9,  delay: 1   },
+  { x: 78, y: 82, size: 5,  color: 'rgba(139,92,246,0.55)',  dur: 13, delay: 3   },
+  { x: 88, y: 28, size: 8,  color: 'rgba(245,158,11,0.55)',  dur: 10, delay: 0.5 },
+  { x: 18, y: 88, size: 4,  color: 'rgba(99,130,255,0.45)',  dur: 12, delay: 4   },
+  { x: 68, y: 52, size: 6,  color: 'rgba(251,146,60,0.50)',  dur: 7,  delay: 1.5 },
+  { x: 92, y: 65, size: 5,  color: 'rgba(20,184,166,0.45)',  dur: 14, delay: 2.5 },
+  { x: 42, y: 38, size: 4,  color: 'rgba(245,158,11,0.60)',  dur: 9,  delay: 3.5 },
+  { x: 8,  y: 52, size: 8,  color: 'rgba(139,92,246,0.50)',  dur: 11, delay: 0.8 },
+  { x: 72, y: 22, size: 4,  color: 'rgba(99,130,255,0.55)',  dur: 15, delay: 1.2 },
+  { x: 48, y: 92, size: 7,  color: 'rgba(251,146,60,0.45)',  dur: 10, delay: 4.5 },
+  { x: 35, y: 58, size: 3,  color: 'rgba(20,184,166,0.55)',  dur: 8,  delay: 2.2 },
+  { x: 62, y: 76, size: 6,  color: 'rgba(245,158,11,0.50)',  dur: 12, delay: 0.3 },
+]
+
 export default function Hero() {
   const [priHov, setPriHov] = useState(false)
   const [secHov, setSecHov] = useState(false)
+  const [mouse, setMouse] = useState({ x: 0.5, y: 0.5 })
+  const heroRef = useRef(null)
+
+  useEffect(() => {
+    const el = heroRef.current
+    if (!el) return
+    const onMove = (e) => {
+      const r = el.getBoundingClientRect()
+      setMouse({
+        x: Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)),
+        y: Math.max(0, Math.min(1, (e.clientY - r.top) / r.height)),
+      })
+    }
+    el.addEventListener('mousemove', onMove)
+    return () => el.removeEventListener('mousemove', onMove)
+  }, [])
 
   return (
     <>
       <style>{`
+        @keyframes heroParticleFloat {
+          0%, 100% { transform: translateY(0) scale(1); opacity: 0.65; }
+          50%       { transform: translateY(-22px) scale(1.15); opacity: 1; }
+        }
         @keyframes heroFadeUp {
           from { opacity: 0; transform: translateY(28px); }
           to   { opacity: 1; transform: translateY(0); }
@@ -76,34 +113,62 @@ export default function Hero() {
         }
       `}</style>
 
-      <section className="hero-section" style={{
+      <section ref={heroRef} className="hero-section" style={{
         background: 'linear-gradient(135deg, #dbeafe 0%, #ede9fe 25%, #e0f2fe 50%, #fef3c7 75%, #fce7f3 100%)',
         padding: '100px 40px 80px',
         textAlign: 'center',
         position: 'relative',
         overflow: 'hidden',
       }}>
-        {/* Orb 1 — blue-purple, top-right */}
+        {/* Orb 1 — blue-purple, top-right, parallax depth 1 */}
         <div style={{
           position: 'absolute', top: '-300px', right: '-300px',
           width: '900px', height: '900px', borderRadius: '50%', pointerEvents: 'none',
           background: 'radial-gradient(circle, rgba(99,130,255,0.35) 0%, rgba(139,92,246,0.15) 40%, transparent 70%)',
           filter: 'blur(20px)',
+          transform: `translate(${(mouse.x - 0.5) * -60}px, ${(mouse.y - 0.5) * -40}px)`,
+          transition: 'transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94)',
         }} />
-        {/* Orb 2 — amber-orange, bottom-left */}
+        {/* Orb 2 — amber-orange, bottom-left, parallax depth 2 */}
         <div style={{
           position: 'absolute', bottom: '-200px', left: '-250px',
           width: '800px', height: '800px', borderRadius: '50%', pointerEvents: 'none',
           background: 'radial-gradient(circle, rgba(251,146,60,0.30) 0%, rgba(245,158,11,0.15) 40%, transparent 70%)',
           filter: 'blur(20px)',
+          transform: `translate(${(mouse.x - 0.5) * 45}px, ${(mouse.y - 0.5) * 35}px)`,
+          transition: 'transform 1s cubic-bezier(0.25,0.46,0.45,0.94)',
         }} />
-        {/* Orb 3 — teal, mid-left */}
+        {/* Orb 3 — teal, mid-left, parallax depth 3 */}
         <div style={{
-          position: 'absolute', top: '50%', left: '-150px', transform: 'translateY(-50%)',
+          position: 'absolute', top: '50%', left: '-150px',
           width: '600px', height: '600px', borderRadius: '50%', pointerEvents: 'none',
           background: 'radial-gradient(circle, rgba(20,184,166,0.20) 0%, transparent 70%)',
           filter: 'blur(20px)',
+          transform: `translateY(-50%) translate(${(mouse.x - 0.5) * -30}px, ${(mouse.y - 0.5) * 55}px)`,
+          transition: 'transform 1.2s cubic-bezier(0.25,0.46,0.45,0.94)',
         }} />
+
+        {/* Cursor spotlight */}
+        <div style={{
+          position: 'absolute', pointerEvents: 'none', zIndex: 0,
+          width: '500px', height: '500px', borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(255,255,255,0.18) 0%, transparent 65%)',
+          left: `calc(${mouse.x * 100}% - 250px)`,
+          top: `calc(${mouse.y * 100}% - 250px)`,
+          transition: 'left 0.12s ease-out, top 0.12s ease-out',
+        }} />
+
+        {/* Floating particles */}
+        {PARTICLES.map((p, i) => (
+          <div key={i} style={{
+            position: 'absolute', pointerEvents: 'none', zIndex: 0,
+            left: `${p.x}%`, top: `${p.y}%`,
+            width: `${p.size}px`, height: `${p.size}px`,
+            borderRadius: '50%',
+            background: p.color,
+            animation: `heroParticleFloat ${p.dur}s ease-in-out ${p.delay}s infinite`,
+          }} />
+        ))}
 
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
