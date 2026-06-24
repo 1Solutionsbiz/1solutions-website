@@ -15,7 +15,7 @@ export const metadata = {
 }
 
 export default async function HomePage() {
-  const posts = await getPosts({ perPage: 3 }).catch(() => [])
+  const posts = await getPosts({ perPage: 7 }).catch(() => [])
 
   return (
     <>

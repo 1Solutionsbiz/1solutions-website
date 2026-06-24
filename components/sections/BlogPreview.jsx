@@ -9,11 +9,26 @@ const staticPosts = [
   { mins: '11', title: 'Mobile App Development Trends 2026: What to Expect and Implement' },
 ]
 
+function cleanHtml(str) {
+  return (str || '').replace(/<[^>]+>/g, '').trim()
+}
+
 export default function BlogPreview({ posts }) {
-  const gridPosts = posts?.length
-    ? posts.slice(0, 6).map(p => ({
+  // ── Featured post (left card) — uses posts[0] when available ──
+  const fp = posts?.[0] || null
+  const featuredTitle    = fp ? cleanHtml(fp.title?.rendered) : staticPosts[0].title
+  const featuredImage    = fp?._embedded?.['wp:featuredmedia']?.[0]?.source_url || null
+  const featuredExcerpt  = fp
+    ? cleanHtml(fp.excerpt?.rendered).slice(0, 160).trimEnd() + '…'
+    : 'A comprehensive breakdown of what it takes to build modern, high-performance digital solutions for today\'s businesses.'
+  const featuredHref     = fp ? `/${fp.slug}` : '/blog'
+  const featuredCategory = fp?._embedded?.['wp:term']?.[0]?.[0]?.name || 'Blog'
+
+  // ── Grid posts (right side) — uses posts[1..6] or static fallback ──
+  const gridPosts = posts?.length > 1
+    ? posts.slice(1, 7).map(p => ({
         mins: '8',
-        title: p.title?.rendered?.replace(/<[^>]+>/g, '') || p.title,
+        title: cleanHtml(p.title?.rendered),
         href: `/${p.slug}`,
       }))
     : staticPosts.map(p => ({ ...p, href: '/blog' }))
@@ -58,84 +73,110 @@ export default function BlogPreview({ posts }) {
 
         <div className="blog-prev-outer">
 
-          {/* Featured post */}
-          <div style={{
-            borderRadius: '20px', overflow: 'hidden',
-            background: '#fff',
-            border: '1px solid rgba(229,231,235,0.8)',
-            boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
-            display: 'flex', flexDirection: 'column',
-          }}>
-            <div style={{ position: 'relative', height: '260px', flexShrink: 0 }}>
-              <img
-                src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=700&h=400&fit=crop"
-                alt="GreenTech Software"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-              />
-              <div style={{
-                position: 'absolute', inset: 0,
-                background: 'linear-gradient(transparent 40%, rgba(15,52,96,0.65) 100%)',
-              }} />
-              <span style={{
-                position: 'absolute', top: '16px', left: '16px',
-                background: '#FE9700', color: '#fff',
-                padding: '4px 14px', borderRadius: '20px',
-                fontSize: '11px', fontWeight: 700, letterSpacing: '0.3px',
-              }}>
-                11 min read
-              </span>
-            </div>
-            <div style={{ padding: '28px', display: 'flex', flexDirection: 'column', gap: '16px', flexGrow: 1 }}>
-              <h3 style={{
-                fontSize: '20px', fontWeight: 800, color: '#111827',
-                margin: 0, lineHeight: 1.45, flexGrow: 1,
-              }}>
-                GreenTech Software Development: The Complete Guide to Building Sustainable Digital Solutions
-              </h3>
-              <p style={{ fontSize: '14px', color: '#6b7280', margin: 0, lineHeight: 1.6 }}>
-                Explore how sustainable software practices are reshaping the tech industry and what your business can do to lead the charge.
-              </p>
-              <Link href="/blog" style={{
-                color: '#FE9700', fontWeight: 700, fontSize: '14px',
-                textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px',
-              }}>
-                Read more →
-              </Link>
-            </div>
-          </div>
-
-          {/* Article grid */}
-          <div className="blog-prev-inner">
-            {gridPosts.map((post, i) => (
-              <div key={i} style={{
-                borderRadius: '14px',
-                border: '1px solid rgba(229,231,235,0.8)',
-                padding: '20px',
-                background: '#fff',
-                boxShadow: '0 2px 10px rgba(0,0,0,0.04)',
-                display: 'flex', flexDirection: 'column', gap: '10px',
-              }}>
+          {/* ── Featured post ── */}
+          <Link href={featuredHref} style={{ textDecoration: 'none', color: 'inherit' }}>
+            <div style={{
+              borderRadius: '20px', overflow: 'hidden',
+              background: '#fff',
+              border: '1px solid rgba(229,231,235,0.8)',
+              boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
+              display: 'flex', flexDirection: 'column',
+              height: '100%', transition: 'box-shadow 0.3s, transform 0.3s',
+            }}
+              onMouseEnter={e => {
+                e.currentTarget.style.boxShadow = '0 12px 40px rgba(0,0,0,0.12)'
+                e.currentTarget.style.transform = 'translateY(-3px)'
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.boxShadow = '0 4px 24px rgba(0,0,0,0.06)'
+                e.currentTarget.style.transform = 'translateY(0)'
+              }}
+            >
+              <div style={{ position: 'relative', height: '260px', flexShrink: 0, background: '#e5e7eb' }}>
+                {featuredImage && (
+                  <img
+                    src={featuredImage}
+                    alt={featuredTitle}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  />
+                )}
+                <div style={{
+                  position: 'absolute', inset: 0,
+                  background: 'linear-gradient(transparent 40%, rgba(15,52,96,0.65) 100%)',
+                }} />
                 <span style={{
-                  fontSize: '11px', fontWeight: 700, color: '#FE9700',
-                  background: 'rgba(254,151,0,0.1)',
-                  padding: '3px 10px', borderRadius: '20px',
-                  display: 'inline-block', width: 'fit-content',
+                  position: 'absolute', top: '16px', left: '16px',
+                  background: '#FE9700', color: '#fff',
+                  padding: '4px 14px', borderRadius: '20px',
+                  fontSize: '11px', fontWeight: 700, letterSpacing: '0.3px',
                 }}>
-                  {post.mins} min read
+                  {featuredCategory}
                 </span>
+              </div>
+              <div style={{ padding: '28px', display: 'flex', flexDirection: 'column', gap: '16px', flexGrow: 1 }}>
                 <h3 style={{
-                  fontSize: '13px', fontWeight: 700, color: '#111827',
-                  margin: 0, lineHeight: 1.55, flexGrow: 1,
+                  fontSize: '20px', fontWeight: 800, color: '#111827',
+                  margin: 0, lineHeight: 1.45, flexGrow: 1,
                 }}>
-                  {post.title}
+                  {featuredTitle}
                 </h3>
-                <Link href={post.href} style={{
-                  color: '#0F3460', fontWeight: 600, fontSize: '12px',
-                  textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px',
+                <p style={{ fontSize: '14px', color: '#6b7280', margin: 0, lineHeight: 1.6 }}>
+                  {featuredExcerpt}
+                </p>
+                <span style={{
+                  color: '#FE9700', fontWeight: 700, fontSize: '14px',
+                  display: 'inline-flex', alignItems: 'center', gap: '6px',
                 }}>
                   Read more →
-                </Link>
+                </span>
               </div>
+            </div>
+          </Link>
+
+          {/* ── Article grid ── */}
+          <div className="blog-prev-inner">
+            {gridPosts.map((post, i) => (
+              <Link key={i} href={post.href} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <div style={{
+                  borderRadius: '14px',
+                  border: '1px solid rgba(229,231,235,0.8)',
+                  padding: '20px',
+                  background: '#fff',
+                  boxShadow: '0 2px 10px rgba(0,0,0,0.04)',
+                  display: 'flex', flexDirection: 'column', gap: '10px',
+                  height: '100%', transition: 'box-shadow 0.3s, transform 0.3s',
+                }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.10)'
+                    e.currentTarget.style.transform = 'translateY(-2px)'
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.boxShadow = '0 2px 10px rgba(0,0,0,0.04)'
+                    e.currentTarget.style.transform = 'translateY(0)'
+                  }}
+                >
+                  <span style={{
+                    fontSize: '11px', fontWeight: 700, color: '#FE9700',
+                    background: 'rgba(254,151,0,0.1)',
+                    padding: '3px 10px', borderRadius: '20px',
+                    display: 'inline-block', width: 'fit-content',
+                  }}>
+                    {post.mins} min read
+                  </span>
+                  <h3 style={{
+                    fontSize: '13px', fontWeight: 700, color: '#111827',
+                    margin: 0, lineHeight: 1.55, flexGrow: 1,
+                  }}>
+                    {post.title}
+                  </h3>
+                  <span style={{
+                    color: '#0F3460', fontWeight: 600, fontSize: '12px',
+                    display: 'inline-flex', alignItems: 'center', gap: '4px',
+                  }}>
+                    Read more →
+                  </span>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
