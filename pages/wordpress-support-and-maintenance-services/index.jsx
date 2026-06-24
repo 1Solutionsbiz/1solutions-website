@@ -14,19 +14,21 @@ const SCHEMA = {
       ],
     },
     {
+      '@type': 'Organization',
+      '@id': 'https://www.1solutions.biz/#organization',
+      name: '1Solutions',
+      url: 'https://www.1solutions.biz',
+      logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
+      foundingDate: '2008',
+      areaServed: ['US', 'GB', 'AU', 'CA', 'IN'],
+      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '138', bestRating: '5' },
+    },
+    {
       '@type': 'Service',
       name: 'WordPress Support & Maintenance Services',
       url: 'https://www.1solutions.biz/wordpress-support-and-maintenance-services/',
       description: 'Expert WordPress support and maintenance services - WordPress core and plugin updates, malware removal and security hardening, WooCommerce maintenance, daily backups, uptime monitoring, performance optimisation, bug fixes, content updates, and emergency WordPress support.',
-      provider: {
-        '@type': 'Organization',
-        name: '1Solutions',
-        url: 'https://www.1solutions.biz',
-        logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
-        foundingDate: '2008',
-        areaServed: ['US', 'GB', 'AU', 'CA', 'IN'],
-      },
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '138', bestRating: '5' },
+      provider: { '@id': 'https://www.1solutions.biz/#organization' },
     },
     {
       '@type': 'FAQPage',
@@ -51,7 +53,7 @@ const SCHEMA = {
       reviewBody: 'Our WordPress site had not been updated in over two years when we came to 1Solutions. They performed an audit, removed three malware infections we did not even know about, updated everything safely, and got us onto a maintenance retainer. Since then the site has been faster, more secure, and our team never has to think about updates. The monthly reports are exactly the right level of detail.',
       reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
       author: { '@type': 'Person', name: 'Lisa H.' },
-      itemReviewed: { '@type': 'Service', name: 'WordPress Support & Maintenance Services', url: 'https://www.1solutions.biz/wordpress-support-and-maintenance-services/', provider: { '@type': 'Organization', name: '1Solutions' } },
+      itemReviewed: { '@id': 'https://www.1solutions.biz/#organization' },
     },
     {
       '@type': 'Review',
@@ -59,7 +61,7 @@ const SCHEMA = {
       reviewBody: 'We have a high-volume WooCommerce store and had a critical payment failure after a plugin update that cost us several hours of sales. After engaging 1Solutions for WooCommerce maintenance, every update goes through staging with checkout testing first. We have had zero update-related payment failures in 18 months. Their 4-hour emergency SLA also gives us genuine confidence during peak trading.',
       reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
       author: { '@type': 'Person', name: 'Jason W.' },
-      itemReviewed: { '@type': 'Service', name: 'WordPress Support & Maintenance Services', url: 'https://www.1solutions.biz/wordpress-support-and-maintenance-services/', provider: { '@type': 'Organization', name: '1Solutions' } },
+      itemReviewed: { '@id': 'https://www.1solutions.biz/#organization' },
     },
     {
       '@type': 'Review',
@@ -67,7 +69,7 @@ const SCHEMA = {
       reviewBody: 'We have six WordPress sites across three brands and 1Solutions maintains all of them under one retainer. One account manager, one monthly invoice, one report covering all sites. The consistency and attention to detail across all six has been excellent for two years. The quarterly strategy calls help us plan what to build next on each site.',
       reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
       author: { '@type': 'Person', name: 'Rachel P.' },
-      itemReviewed: { '@type': 'Service', name: 'WordPress Support & Maintenance Services', url: 'https://www.1solutions.biz/wordpress-support-and-maintenance-services/', provider: { '@type': 'Organization', name: '1Solutions' } },
+      itemReviewed: { '@id': 'https://www.1solutions.biz/#organization' },
     },
   ],
 };
