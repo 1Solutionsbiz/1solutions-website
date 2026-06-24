@@ -485,7 +485,7 @@ export default function WordPressMaintenance() {
           .wm-rtag-green{background:rgba(17,65,113,.09);border-color:rgba(17,65,113,.28);color:#114171}
           .wm-rtag-rose{background:rgba(225,29,72,.09);border-color:rgba(225,29,72,.28);color:#9f1239}
           .wm-what-section{background:#EEF3FB;border-top:1px solid rgba(17,65,113,.08);border-bottom:1px solid rgba(17,65,113,.08);padding:72px 40px;position:relative;z-index:1}
-          .wm-what-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+          .wm-what-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
           .wm-what-text h2{font-size:38px;font-weight:900;line-height:1.15;letter-spacing:-.8px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 16px}
           .wm-what-text p{font-size:15px;color:#4A6080;line-height:1.75;margin:0 0 20px}
           .wm-what-text h3{font-size:20px;font-weight:700;color:#114171;margin:24px 0 12px}
@@ -497,7 +497,7 @@ export default function WordPressMaintenance() {
           .wm-risk-item{display:flex;gap:12px;align-items:flex-start}
           .wm-risk-icon{width:36px;height:36px;border-radius:8px;background:rgba(217,119,6,.14);display:flex;align-items:center;justify-content:center;flex-shrink:0}
           .wm-risk-icon svg{width:18px;height:18px;fill:#D97706}
-          .wm-why-highlight{max-width:1100px;margin:44px auto 0;background:linear-gradient(135deg,rgba(254,243,199,.60) 0%,rgba(255,255,255,.80) 100%);border:1px solid rgba(217,119,6,.22);border-left:4px solid #D97706;border-radius:0 14px 14px 0;padding:28px 36px;backdrop-filter:blur(10px)}
+          .wm-why-highlight{max-width:1300px;margin:44px auto 0;background:linear-gradient(135deg,rgba(254,243,199,.60) 0%,rgba(255,255,255,.80) 100%);border:1px solid rgba(217,119,6,.22);border-left:4px solid #D97706;border-radius:0 14px 14px 0;padding:28px 36px;backdrop-filter:blur(10px)}
           .wm-why-highlight h3{font-size:20px;font-weight:800;color:#0F3460;margin:0 0 10px}
           .wm-why-highlight p{font-size:15px;color:#4A6080;line-height:1.75;margin:0}
           .wm-risk-item p{font-size:13px;color:#4A6080;line-height:1.6;margin:0}
