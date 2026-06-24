@@ -24,29 +24,14 @@ const clientLogos = [
 
 const doubled = [...clientLogos, ...clientLogos]
 
-const PARTICLES = [
-  { x: 12, y: 18, size: 7,  color: 'rgba(99,130,255,0.55)',  dur: 8,  delay: 0   },
-  { x: 28, y: 72, size: 5,  color: 'rgba(251,146,60,0.60)',  dur: 11, delay: 2   },
-  { x: 55, y: 10, size: 9,  color: 'rgba(20,184,166,0.50)',  dur: 9,  delay: 1   },
-  { x: 78, y: 82, size: 5,  color: 'rgba(139,92,246,0.55)',  dur: 13, delay: 3   },
-  { x: 88, y: 28, size: 8,  color: 'rgba(245,158,11,0.55)',  dur: 10, delay: 0.5 },
-  { x: 18, y: 88, size: 4,  color: 'rgba(99,130,255,0.45)',  dur: 12, delay: 4   },
-  { x: 68, y: 52, size: 6,  color: 'rgba(251,146,60,0.50)',  dur: 7,  delay: 1.5 },
-  { x: 92, y: 65, size: 5,  color: 'rgba(20,184,166,0.45)',  dur: 14, delay: 2.5 },
-  { x: 42, y: 38, size: 4,  color: 'rgba(245,158,11,0.60)',  dur: 9,  delay: 3.5 },
-  { x: 8,  y: 52, size: 8,  color: 'rgba(139,92,246,0.50)',  dur: 11, delay: 0.8 },
-  { x: 72, y: 22, size: 4,  color: 'rgba(99,130,255,0.55)',  dur: 15, delay: 1.2 },
-  { x: 48, y: 92, size: 7,  color: 'rgba(251,146,60,0.45)',  dur: 10, delay: 4.5 },
-  { x: 35, y: 58, size: 3,  color: 'rgba(20,184,166,0.55)',  dur: 8,  delay: 2.2 },
-  { x: 62, y: 76, size: 6,  color: 'rgba(245,158,11,0.50)',  dur: 12, delay: 0.3 },
-]
-
 export default function Hero() {
   const [priHov, setPriHov] = useState(false)
   const [secHov, setSecHov] = useState(false)
   const [mouse, setMouse] = useState({ x: 0.5, y: 0.5 })
   const heroRef = useRef(null)
+  const canvasRef = useRef(null)
 
+  // Orb parallax mouse tracking
   useEffect(() => {
     const el = heroRef.current
     if (!el) return
@@ -61,13 +46,108 @@ export default function Hero() {
     return () => el.removeEventListener('mousemove', onMove)
   }, [])
 
+  // Canvas particle network
+  useEffect(() => {
+    const canvas = canvasRef.current
+    const section = heroRef.current
+    if (!canvas || !section) return
+    const ctx = canvas.getContext('2d')
+
+    const resize = () => {
+      canvas.width = section.offsetWidth
+      canvas.height = section.offsetHeight
+    }
+    resize()
+
+    const PALETTE = [
+      [99, 130, 255], [251, 146, 60], [20, 184, 166],
+      [139, 92, 246], [245, 158, 11], [59, 130, 246],
+    ]
+
+    const pts = Array.from({ length: 65 }, () => {
+      const [cr, cg, cb] = PALETTE[Math.floor(Math.random() * PALETTE.length)]
+      return {
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.55,
+        vy: (Math.random() - 0.5) * 0.55,
+        rad: Math.random() * 2.5 + 1.8,
+        cr, cg, cb,
+      }
+    })
+
+    let mx = canvas.width / 2, my = canvas.height / 2
+    const LINK = 140
+
+    const onMove = (e) => {
+      const rect = section.getBoundingClientRect()
+      mx = e.clientX - rect.left
+      my = e.clientY - rect.top
+    }
+    section.addEventListener('mousemove', onMove)
+
+    let raf
+    const draw = () => {
+      const w = canvas.width, h = canvas.height
+      ctx.clearRect(0, 0, w, h)
+
+      for (const p of pts) {
+        // Mouse repulsion
+        const dx = p.x - mx, dy = p.y - my
+        const d = Math.sqrt(dx * dx + dy * dy)
+        if (d < 130 && d > 0) {
+          const f = ((130 - d) / 130) * 0.18
+          p.vx += (dx / d) * f
+          p.vy += (dy / d) * f
+        }
+        // Dampen + cap speed
+        p.vx *= 0.97; p.vy *= 0.97
+        const spd = Math.sqrt(p.vx * p.vx + p.vy * p.vy)
+        if (spd > 2.2) { p.vx = p.vx / spd * 2.2; p.vy = p.vy / spd * 2.2 }
+        // Move + bounce
+        p.x += p.vx; p.y += p.vy
+        if (p.x < 0) { p.x = 0; p.vx *= -1 }
+        if (p.x > w) { p.x = w; p.vx *= -1 }
+        if (p.y < 0) { p.y = 0; p.vy *= -1 }
+        if (p.y > h) { p.y = h; p.vy *= -1 }
+        // Draw dot
+        ctx.beginPath()
+        ctx.arc(p.x, p.y, p.rad, 0, Math.PI * 2)
+        ctx.fillStyle = `rgba(${p.cr},${p.cg},${p.cb},0.85)`
+        ctx.fill()
+      }
+
+      // Draw connecting lines
+      for (let i = 0; i < pts.length; i++) {
+        for (let j = i + 1; j < pts.length; j++) {
+          const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y
+          const d = Math.sqrt(dx * dx + dy * dy)
+          if (d < LINK) {
+            ctx.beginPath()
+            ctx.moveTo(pts[i].x, pts[i].y)
+            ctx.lineTo(pts[j].x, pts[j].y)
+            ctx.strokeStyle = `rgba(80,110,210,${(1 - d / LINK) * 0.22})`
+            ctx.lineWidth = 0.9
+            ctx.stroke()
+          }
+        }
+      }
+
+      raf = requestAnimationFrame(draw)
+    }
+    draw()
+
+    window.addEventListener('resize', resize)
+    return () => {
+      cancelAnimationFrame(raf)
+      section.removeEventListener('mousemove', onMove)
+      window.removeEventListener('resize', resize)
+    }
+  }, [])
+
   return (
     <>
       <style>{`
-        @keyframes heroParticleFloat {
-          0%, 100% { transform: translateY(0) scale(1); opacity: 0.65; }
-          50%       { transform: translateY(-22px) scale(1.15); opacity: 1; }
-        }
         @keyframes heroFadeUp {
           from { opacity: 0; transform: translateY(28px); }
           to   { opacity: 1; transform: translateY(0); }
@@ -158,17 +238,12 @@ export default function Hero() {
           transition: 'left 0.12s ease-out, top 0.12s ease-out',
         }} />
 
-        {/* Floating particles */}
-        {PARTICLES.map((p, i) => (
-          <div key={i} style={{
-            position: 'absolute', pointerEvents: 'none', zIndex: 0,
-            left: `${p.x}%`, top: `${p.y}%`,
-            width: `${p.size}px`, height: `${p.size}px`,
-            borderRadius: '50%',
-            background: p.color,
-            animation: `heroParticleFloat ${p.dur}s ease-in-out ${p.delay}s infinite`,
-          }} />
-        ))}
+        {/* Particle network canvas */}
+        <canvas ref={canvasRef} style={{
+          position: 'absolute', inset: 0,
+          width: '100%', height: '100%',
+          pointerEvents: 'none', zIndex: 0,
+        }} />
 
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
