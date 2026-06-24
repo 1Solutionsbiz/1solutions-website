@@ -1,7 +1,10 @@
+import { Inter } from 'next/font/google'
 import '../styles/globals.css'
 import '../styles/blog.css'
 import Header from '@/components/blog/BlogHeader'
 import Footer from '@/components/blog/BlogFooter'
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' })
 
 export const metadata = {
   metadataBase: new URL('https://www.1solutions.biz'),
@@ -21,7 +24,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.variable}>
       <body>
         <Header />
         <main>{children}</main>

@@ -304,7 +304,7 @@ export default function WordPressMaintenance() {
         <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
         <style>{`
-          .wm-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:linear-gradient(135deg,#dbeafe 0%,#ede9fe 25%,#e0f2fe 50%,#fef3c7 75%,#fce7f3 100%);color:#0F1F40;line-height:1.6;position:relative;overflow-x:hidden}
+          .wm-page{font-family:inherit;background:linear-gradient(135deg,#dbeafe 0%,#ede9fe 25%,#e0f2fe 50%,#fef3c7 75%,#fce7f3 100%);color:#0F1F40;line-height:1.6;position:relative;overflow-x:hidden}
           @media(max-width:900px){.wm-page{background:linear-gradient(160deg,#dbeafe 0%,#ede9fe 30%,#e0f2fe 55%,#fef3c7 78%,#fce7f3 100%) !important}}
           .wm-page *,.wm-page *::before,.wm-page *::after{box-sizing:border-box}
           .wm-orb{position:absolute;border-radius:50%;pointer-events:none;z-index:0;filter:blur(20px)}
