@@ -45,6 +45,30 @@ const SCHEMA = {
         { '@type': 'Question', name: 'What is a WordPress care plan?', acceptedAnswer: { '@type': 'Answer', text: 'A WordPress care plan is a monthly subscription service that handles all ongoing maintenance tasks your WordPress site requires - updates, backups, security, monitoring, and developer support. Instead of managing these tasks yourself or hiring a developer ad hoc when problems occur, a care plan provides proactive, structured maintenance on a predictable monthly cost, with an included pool of developer hours for minor changes each month.' } },
       ],
     },
+    {
+      '@type': 'Review',
+      datePublished: '2024-03-15',
+      reviewBody: 'Our WordPress site had not been updated in over two years when we came to 1Solutions. They performed an audit, removed three malware infections we did not even know about, updated everything safely, and got us onto a maintenance retainer. Since then the site has been faster, more secure, and our team never has to think about updates. The monthly reports are exactly the right level of detail.',
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      author: { '@type': 'Person', name: 'Lisa H.' },
+      itemReviewed: { '@type': 'Service', name: 'WordPress Support & Maintenance Services', url: 'https://www.1solutions.biz/wordpress-support-and-maintenance-services/', provider: { '@type': 'Organization', name: '1Solutions' } },
+    },
+    {
+      '@type': 'Review',
+      datePublished: '2023-11-20',
+      reviewBody: 'We have a high-volume WooCommerce store and had a critical payment failure after a plugin update that cost us several hours of sales. After engaging 1Solutions for WooCommerce maintenance, every update goes through staging with checkout testing first. We have had zero update-related payment failures in 18 months. Their 4-hour emergency SLA also gives us genuine confidence during peak trading.',
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      author: { '@type': 'Person', name: 'Jason W.' },
+      itemReviewed: { '@type': 'Service', name: 'WordPress Support & Maintenance Services', url: 'https://www.1solutions.biz/wordpress-support-and-maintenance-services/', provider: { '@type': 'Organization', name: '1Solutions' } },
+    },
+    {
+      '@type': 'Review',
+      datePublished: '2024-08-10',
+      reviewBody: 'We have six WordPress sites across three brands and 1Solutions maintains all of them under one retainer. One account manager, one monthly invoice, one report covering all sites. The consistency and attention to detail across all six has been excellent for two years. The quarterly strategy calls help us plan what to build next on each site.',
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      author: { '@type': 'Person', name: 'Rachel P.' },
+      itemReviewed: { '@type': 'Service', name: 'WordPress Support & Maintenance Services', url: 'https://www.1solutions.biz/wordpress-support-and-maintenance-services/', provider: { '@type': 'Organization', name: '1Solutions' } },
+    },
   ],
 };
 
@@ -736,12 +760,12 @@ export default function WordPressMaintenance() {
             </div>
             <div className="wm-tgrid" ref={testiGridRef}>
               {TESTIMONIALS.map((t, i) => (
-                <div key={i} className={`wm-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' wm-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }} itemScope itemType="https://schema.org/Review">
+                <div key={i} className={`wm-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' wm-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}>
                   <div className="wm-stars" aria-label="5 out of 5 stars">★★★★★</div>
-                  <p className="wm-ttext" itemProp="reviewBody">{t.text}</p>
+                  <p className="wm-ttext">{t.text}</p>
                   <div className="wm-tauthor">
                     <div className="wm-tavatar" style={{ background: t.bg }}>{t.init}</div>
-                    <div><div className="wm-tname" itemProp="author">{t.name}</div><div className="wm-trole">{t.role}</div></div>
+                    <div><div className="wm-tname">{t.name}</div><div className="wm-trole">{t.role}</div></div>
                   </div>
                 </div>
               ))}
