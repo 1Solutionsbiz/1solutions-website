@@ -29,6 +29,17 @@ const FAQS = [
   { q:'Will my WordPress website be optimised for search engines (SEO)?', a:'Yes — SEO is built into our development process, not bolted on after. Every site we deliver includes proper heading structure, schema markup, Open Graph tags, sitemap, robots.txt, Core Web Vitals optimisation, and Yoast or RankMath configuration. We also offer ongoing SEO services if you need content strategy, link building, or technical SEO audits.' },
   { q:'What makes 1Solutions different from freelancers or other agencies?', a:'Three things: accountability, consistency, and depth. Unlike freelancers, we offer a dedicated team — designers, developers, and a project manager — so your project doesn\'t stall when one person is unavailable. Unlike large agencies, we keep engagements personal with a single point of contact. And unlike generic offshore firms, we specialise specifically in WordPress and understand western market expectations from 16+ years of focused experience.' },
   { q:'Do you offer headless WordPress development?', a:'Yes. We build headless WordPress setups using WordPress as a CMS (via REST API or WPGraphQL) paired with a modern frontend framework like Next.js or React. This approach delivers faster page loads, better security, and greater design flexibility while keeping content management familiar through the WordPress dashboard. Ideal for performance-critical applications and enterprise sites.' },
+  { q:'What is a WordPress development company?', a:'A WordPress development company is a specialised agency that designs, builds, and maintains websites using the WordPress CMS. Unlike freelancers or general web agencies, a dedicated WordPress development firm employs full-stack WordPress engineers, UX designers, and project managers focused on the complete WordPress ecosystem — including custom themes, plugin engineering, WooCommerce, REST API integrations, and headless WordPress with Next.js.' },
+  { q:'Is WordPress suitable for enterprise-level websites?', a:'Absolutely. WordPress powers enterprise sites for BBC America, The New York Times, and Sony Music. For enterprise use, we configure WordPress with multisite networks, custom REST APIs, headless architecture with Next.js, advanced role-based access control, SSO authentication, Redis caching, and enterprise hosting on Kinsta or WP Engine — meeting the demands of high-traffic, mission-critical applications.' },
+  { q:'What is the difference between WordPress.com and WordPress.org?', a:'WordPress.org is the self-hosted, open-source platform where you own the software, can install any plugin, and have full control — this is what professional developers use. WordPress.com is a hosted subscription service with major limitations on plugins, themes, and customisation. All 1Solutions projects are built on WordPress.org (self-hosted) for maximum flexibility, performance, and ownership.' },
+  { q:'How much does WooCommerce development cost?', a:'A standard WooCommerce store with a custom theme, up to 50 products, and standard payment integration starts from $3,500–$5,000. Complex stores with custom checkout flows, multi-currency, B2B wholesale pricing, or product configurators range from $8,000–$25,000+. We scope each project individually and provide a fixed-price quote after a free discovery call.' },
+  { q:'Can you build a completely custom WordPress theme from scratch?', a:'Yes — custom theme development is one of our core specialities. We design and build themes using HTML5, CSS, PHP, and JavaScript with full Gutenberg block support, ACF integration, and responsive design across all devices. We never use off-the-shelf themes like Avada or Divi unless a client specifically requests it; custom-built themes are faster, more secure, and easier to maintain.' },
+  { q:'How do you ensure my WordPress website is secure?', a:'Security is built into our process. Every site we deliver includes SSL setup, WordPress security hardening (brute-force protection, file permission hardening), a web application firewall (Sucuri or Cloudflare), malware scanning, login protection with two-factor authentication, and automated daily backups with offsite storage. Ongoing maintenance plans include weekly security scans and immediate malware removal.' },
+  { q:'Do you offer WordPress multisite network development?', a:'Yes. WordPress Multisite lets you run multiple sites from a single installation, sharing themes, plugins, and user bases. We set up multisite networks for enterprises managing multiple brands, universities with department subsites, and franchise businesses. We handle subdomain vs subdirectory configuration, domain mapping, and network-wide plugin management.' },
+  { q:'How do you integrate third-party APIs and tools with WordPress?', a:'We integrate WordPress with virtually any third-party platform via REST APIs, webhooks, and dedicated plugins. Common integrations include Salesforce, HubSpot, and Zoho CRMs; Stripe, PayPal, and Authorize.net payment gateways; Mailchimp, Klaviyo, and ActiveCampaign email platforms; Google Analytics and Search Console; and ERP systems. We build custom PHP integrations when no plugin solution exists.' },
+  { q:'What WordPress page builders do you work with?', a:'We work with all major page builders including Elementor Pro, Divi, WPBakery, Beaver Builder, and the native Gutenberg block editor. Our preferred approach for new projects is custom Gutenberg block development, which delivers better performance and maintainability than drag-and-drop builders. However, we are experienced with all major builders and will work with whichever you prefer.' },
+  { q:'What happens after you launch my WordPress website?', a:'Launch is just the beginning. After going live, we provide a 30-day post-launch support period covering bug fixes and minor adjustments at no extra charge. Beyond that, we offer WordPress maintenance plans from $99/month covering updates, backups, security monitoring, and performance checks. Many clients continue with us on a development retainer for ongoing features, SEO work, and growth initiatives.' },
+  { q:'How do I get started with a WordPress development project?', a:'The process is simple: (1) Fill in the contact form on this page. (2) We schedule a free 30-minute discovery call. (3) Within 48 hours, we share a detailed proposal with scope, timeline, and fixed-price quote. (4) Once approved, we kick off with our Discover phase. There is no obligation after the discovery call — it is completely free.' },
 ];
 
 const WHY = [
@@ -40,6 +51,28 @@ const WHY = [
   { icon:<svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>, title:'Dedicated Point of Contact', desc:'No ticket queues. You get a dedicated project manager who speaks your language, understands your goals, and keeps you updated daily.' },
   { icon:<svg viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg>, title:'Full-Stack Capability', desc:'Design, development, WooCommerce, API integrations, SEO, speed optimisation — all under one roof. No outsourcing. No finger-pointing.' },
   { icon:<svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>, title:'Long-Term Partnership', desc:'97% client retention rate. We don\'t disappear after launch — maintenance plans, support retainers, and growth partnerships keep us invested in your success.' },
+];
+
+/* ─── Technology Stack ──────────────────────────── */
+const TECH_STACK = [
+  { group:'CMS & E-Commerce',           items:['WordPress 6.x','WooCommerce','Gutenberg Blocks','WPGraphQL','ACF Pro','Elementor Pro'] },
+  { group:'Frontend Frameworks',         items:['Next.js','React','Gatsby','Alpine.js','Tailwind CSS','GSAP'] },
+  { group:'Languages & Databases',       items:['PHP 8.x','JavaScript (ES6+)','TypeScript','MySQL','MariaDB','REST API'] },
+  { group:'Hosting & Cloud',             items:['Kinsta','WP Engine','Cloudflare','AWS','DigitalOcean','Vercel'] },
+  { group:'Performance & Security',      items:['Redis Cache','Cloudflare CDN','Sucuri WAF','Wordfence','SSL/TLS','PageSpeed'] },
+  { group:'SEO & Analytics',             items:['Yoast SEO','RankMath','Schema.org','Google Analytics 4','GTmetrix','Core Web Vitals'] },
+];
+
+/* ─── Industries ────────────────────────────────── */
+const INDUSTRIES = [
+  { icon:'🛒', title:'eCommerce & Retail',       desc:'High-converting WooCommerce stores with custom checkout, multi-currency, and advanced inventory for D2C and B2B brands.' },
+  { icon:'🏥', title:'Healthcare & Wellness',    desc:'HIPAA-aware WordPress sites for clinics, telehealth platforms, fitness brands, and healthcare service providers.' },
+  { icon:'🏦', title:'Financial Services',       desc:'Secure, compliance-ready sites for financial advisors, fintech startups, trading platforms, and insurance providers.' },
+  { icon:'🎓', title:'Education & eLearning',    desc:'LMS-integrated platforms with LearnDash, course management, and membership subscriptions for online education providers.' },
+  { icon:'🏠', title:'Real Estate & Property',   desc:'MLS and IDX-integrated property portals, agent directories, and lead generation sites for real estate agencies.' },
+  { icon:'🚀', title:'SaaS & Technology',        desc:'Product marketing sites, developer documentation hubs, and feature landing pages for B2B and B2C software companies.' },
+  { icon:'📰', title:'Media & Publishing',       desc:'High-traffic editorial platforms, multisite networks, and content monetisation sites for publishers and digital media brands.' },
+  { icon:'⚖️', title:'Professional Services',    desc:'Authority-building websites for law firms, consulting agencies, accounting practices, and B2B service providers.' },
 ];
 
 // Count-up hook
@@ -200,13 +233,34 @@ export default function WordPressDevelopmentCompany() {
   return (
     <>
       <Head>
-        <title>WordPress Development Company | Expert WordPress Development Services | 1Solutions</title>
-        <meta name="description" content="1Solutions is a leading WordPress development company with 15+ years experience. We deliver custom WordPress websites, WooCommerce stores, and headless WordPress solutions for US, Canada & Australia." />
-        <meta name="keywords" content="wordpress development company, wordpress development services, custom wordpress development, woocommerce development, wordpress agency" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context":"https://schema.org",
+          "@graph":[
+            {"@type":"Organization","@id":"https://www.1solutions.biz/#organization","name":"1Solutions","url":"https://www.1solutions.biz","foundingDate":"2008","description":"WordPress development company with 15+ years experience delivering custom WordPress websites, WooCommerce stores, and enterprise solutions for US, Canada, and Australia.","areaServed":[{"@type":"Country","name":"United States"},{"@type":"Country","name":"Canada"},{"@type":"Country","name":"Australia"},{"@type":"Country","name":"United Kingdom"}]},
+            {"@type":"WebPage","@id":"https://www.1solutions.biz/wordpress-development-company/","url":"https://www.1solutions.biz/wordpress-development-company/","name":"WordPress Development Company | Custom WordPress Development | 1Solutions","description":"Hire 1Solutions — a dedicated WordPress development company since 2008. 500+ projects. Custom WordPress, WooCommerce, headless WordPress for US, Canada & Australia.","inLanguage":"en-US","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.1solutions.biz/"},{"@type":"ListItem","position":2,"name":"WordPress Development Company","item":"https://www.1solutions.biz/wordpress-development-company/"}]}},
+            {"@type":"ProfessionalService","name":"WordPress Development Services by 1Solutions","provider":{"@id":"https://www.1solutions.biz/#organization"},"serviceType":"WordPress Development","url":"https://www.1solutions.biz/wordpress-development-company/","areaServed":["United States","Canada","Australia","United Kingdom"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"WordPress Development Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Custom WordPress Development"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"WooCommerce Development"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Headless WordPress Development"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"WordPress Theme Development"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Custom WordPress Plugin Development"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"WordPress Migration"}}]}},
+            {"@type":"FAQPage","mainEntity":[
+              {"@type":"Question","name":"How much does custom WordPress development cost?","acceptedAnswer":{"@type":"Answer","text":"Custom WordPress websites start from $2,000 for simple business sites and range up to $15,000+ for complex WooCommerce stores or enterprise builds. Cost depends on design complexity, number of pages, functionality, and integrations."}},
+              {"@type":"Question","name":"What is a WordPress development company?","acceptedAnswer":{"@type":"Answer","text":"A WordPress development company is a specialised agency that designs, builds, and maintains websites using the WordPress CMS. It employs full-stack WordPress engineers, UX designers, and project managers focused on custom themes, plugins, WooCommerce, REST API integrations, and headless WordPress with Next.js."}},
+              {"@type":"Question","name":"Is WordPress suitable for enterprise websites?","acceptedAnswer":{"@type":"Answer","text":"Yes. WordPress powers enterprise sites for BBC America, The New York Times, and Sony Music. For enterprise use cases it can be configured with multisite networks, custom REST APIs, headless architecture, advanced access control, Redis caching, and enterprise hosting."}},
+              {"@type":"Question","name":"What is headless WordPress development?","acceptedAnswer":{"@type":"Answer","text":"Headless WordPress decouples the WordPress backend from the frontend. Content is served via REST API or WPGraphQL to a Next.js or React frontend, delivering 3x faster page loads, 98+ Lighthouse scores, and better security while keeping the familiar WordPress admin for editors."}}
+            ]}
+          ]
+        }) }} />
+        <title>WordPress Development Company | Custom WordPress Development | 1Solutions</title>
+        <meta name="description" content="Hire 1Solutions — a dedicated WordPress development company since 2008. 500+ projects delivered. Custom WordPress, WooCommerce, headless WordPress &amp; enterprise solutions for US, Canada &amp; Australia. Free consultation." />
+        <meta name="keywords" content="wordpress development company, custom wordpress development, wordpress development services, woocommerce development, wordpress developers, headless wordpress, wordpress agency" />
         <link rel="canonical" href="https://www.1solutions.biz/wordpress-development-company/" />
-        <meta property="og:title" content="WordPress Development Company | 1Solutions" />
-        <meta property="og:description" content="Build high-performing, secure, and SEO-optimized websites with 1Solutions' WordPress Development Services." />
+        <meta property="og:title" content="WordPress Development Company | Custom WordPress Development | 1Solutions" />
+        <meta property="og:description" content="Expert WordPress development company since 2008. 500+ projects, 50+ WordPress specialists. Custom builds, WooCommerce, headless WordPress for US, Canada &amp; Australia." />
         <meta property="og:url" content="https://www.1solutions.biz/wordpress-development-company/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.1solutions.biz/BG-1Solutions.png" />
+        <meta property="og:site_name" content="1Solutions" />
+        <meta property="og:locale" content="en_US" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="WordPress Development Company | 1Solutions" />
+        <meta name="twitter:description" content="Expert WordPress development company since 2008. 500+ projects delivered for US, Canada &amp; Australia." />
         <style>{`
           .wp-page {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -648,6 +702,79 @@ export default function WordPressDevelopmentCompany() {
             .wp-ecard-features { grid-template-columns:1fr; }
             .wp-merged-box { padding:18px; }
           }
+
+          /* ── Definition Block ── */
+          .wp-def-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);padding:80px 40px;position:relative;z-index:2; }
+          .wp-def-inner { max-width:1280px;margin:0 auto; }
+          .wp-def-block { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:24px;padding:44px;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
+          .wp-def-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:12px; }
+          .wp-def-title { font-size:34px;font-weight:900;color:#0F3460;margin-bottom:18px;line-height:1.2;letter-spacing:-0.5px; }
+          .wp-def-body { font-size:16px;color:#374151;line-height:1.8;margin-bottom:14px;max-width:960px; }
+          .wp-def-facts { display:grid;grid-template-columns:repeat(3,1fr);gap:24px;border-top:1px solid rgba(15,52,96,0.10);padding-top:28px;margin-top:28px; }
+          .wp-def-fact { display:flex;flex-direction:column;gap:6px; }
+          .wp-def-fact-num { font-size:28px;font-weight:900;color:#D97706;line-height:1; }
+          .wp-def-fact-label { font-size:13px;color:#4A6080;line-height:1.5; }
+
+          /* ── Technology Stack ── */
+          .wp-tech-section { padding:80px 40px;background:transparent;position:relative;z-index:1; }
+          .wp-tech-inner { max-width:1280px;margin:0 auto; }
+          .wp-tech-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px; }
+          .wp-tech-group { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:16px;padding:28px 24px;box-shadow:0 4px 20px rgba(15,52,96,0.07),inset 0 1px 0 rgba(255,255,255,0.95); }
+          .wp-tech-group-title { font-size:12px;font-weight:700;color:#D97706;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px; }
+          .wp-tech-tags { display:flex;flex-wrap:wrap;gap:8px; }
+          .wp-tech-tag { padding:5px 12px;background:rgba(15,52,96,0.07);border:1px solid rgba(15,52,96,0.12);border-radius:20px;font-size:12px;font-weight:600;color:#374151; }
+
+          /* ── Industries ── */
+          .wp-industries-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);padding:80px 40px;position:relative;z-index:1; }
+          .wp-industries-inner { max-width:1280px;margin:0 auto; }
+          .wp-industry-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px; }
+          .wp-industry-card { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:16px;padding:26px 22px;box-shadow:0 4px 16px rgba(15,52,96,0.07),inset 0 1px 0 rgba(255,255,255,0.95);transition:transform 0.22s,border-color 0.22s,box-shadow 0.22s;cursor:default; }
+          .wp-industry-card:hover { transform:translateY(-4px);border-color:rgba(217,119,6,0.35);box-shadow:0 12px 36px rgba(15,52,96,0.12); }
+          .wp-industry-icon { font-size:28px;margin-bottom:12px;line-height:1; }
+          .wp-industry-card h3 { font-size:15px;font-weight:700;color:#0F3460;margin-bottom:8px;line-height:1.3; }
+          .wp-industry-card p { font-size:13px;color:#4A6080;line-height:1.6; }
+
+          /* ── Comparison Table ── */
+          .wp-compare-section { padding:80px 40px;background:transparent;position:relative;z-index:1; }
+          .wp-compare-inner { max-width:1280px;margin:0 auto; }
+          .wp-compare-wrap { margin-top:44px;overflow-x:auto;width:100%;-webkit-overflow-scrolling:touch; }
+          .wp-compare-table { width:100%;border-collapse:separate;border-spacing:0;min-width:580px; }
+          .wp-compare-table thead tr th { padding:16px 24px;text-align:left;font-size:14px;font-weight:700;background:#0F3460;color:#fff; }
+          .wp-compare-table thead tr th:first-child { border-radius:12px 0 0 0; }
+          .wp-compare-table thead tr th:last-child { border-radius:0 12px 0 0; }
+          .wp-compare-th-hl { background:linear-gradient(135deg,#1a4d80,#0F3460) !important;border-top:3px solid #D97706 !important;color:#fde68a !important; }
+          .wp-compare-table tbody tr td { padding:13px 24px;font-size:14px;color:#374151;border-bottom:1px solid rgba(15,52,96,0.08);background:rgba(255,255,255,0.65);vertical-align:middle; }
+          .wp-compare-table tbody tr td:first-child { font-weight:600;color:#0F3460;background:rgba(255,255,255,0.80); }
+          .wp-compare-table tbody tr td:nth-child(2) { background:rgba(254,243,199,0.35);font-weight:500;color:#0F3460; }
+          .wp-compare-table tbody tr:last-child td:first-child { border-radius:0 0 0 12px; }
+          .wp-compare-table tbody tr:last-child td:last-child { border-radius:0 0 12px 0; }
+          .wp-compare-table tbody tr:hover td { background:rgba(219,234,254,0.40); }
+          .wp-compare-table tbody tr:hover td:nth-child(2) { background:rgba(254,243,199,0.55); }
+
+          /* ── Responsive — new sections ── */
+          @media (max-width:1024px) {
+            .wp-tech-grid { grid-template-columns:repeat(2,1fr); }
+            .wp-industry-grid { grid-template-columns:repeat(2,1fr); }
+          }
+          @media (max-width:768px) {
+            .wp-def-section { padding:60px 20px; }
+            .wp-def-block { padding:28px 20px; }
+            .wp-def-title { font-size:24px; }
+            .wp-def-body { font-size:15px; }
+            .wp-def-facts { grid-template-columns:1fr 1fr;gap:16px; }
+            .wp-def-fact-num { font-size:22px; }
+            .wp-tech-section { padding:60px 20px; }
+            .wp-tech-grid { grid-template-columns:1fr 1fr;gap:12px;margin-top:32px; }
+            .wp-industries-section { padding:60px 20px; }
+            .wp-industry-grid { grid-template-columns:1fr 1fr;gap:12px;margin-top:32px; }
+            .wp-compare-section { padding:60px 20px; }
+            .wp-compare-table thead tr th,.wp-compare-table tbody tr td { padding:11px 14px;font-size:13px; }
+          }
+          @media (max-width:480px) {
+            .wp-def-facts { grid-template-columns:1fr; }
+            .wp-tech-grid { grid-template-columns:1fr; }
+            .wp-industry-grid { grid-template-columns:1fr; }
+          }
         `}</style>
       </Head>
 
@@ -660,10 +787,10 @@ export default function WordPressDevelopmentCompany() {
         {/* ── HERO ── */}
         <div className="wp-hero-block">
           <div className="wp-hero-content">
-            <span className="wp-eyebrow">A World-Class WordPress Development Company</span>
-            <h1>WordPress Development Services — Drive Growth With Custom Website Solutions</h1>
-            <p>Build high-performing, secure, and SEO-optimized websites with 1Solutions' WordPress Development Services. Our dedicated development teams deliver customized, responsive sites and provide ongoing maintenance to drive long-term success.</p>
-            <Link href="#contact" className="wp-btn-hero wp-btn-hero-shimmer">Get a Free Consultation Now</Link>
+            <span className="wp-eyebrow">Expert WordPress Development Company · Since 2008</span>
+            <h1>WordPress Development Company — Custom Builds, WooCommerce &amp; Enterprise Solutions</h1>
+            <p>Build high-performing, secure, and SEO-optimized websites with 1Solutions. Our dedicated WordPress development team delivers custom sites, WooCommerce stores, and headless WordPress solutions — on time, on budget, for clients in the US, Canada, and Australia.</p>
+            <Link href="#contact" className="wp-btn-hero wp-btn-hero-shimmer">Get a Free Consultation</Link>
           </div>
 
           <div className="wp-hero-stats" ref={statsRef}>
@@ -710,6 +837,30 @@ export default function WordPressDevelopmentCompany() {
             </div>
           </div>
         </div>
+
+        {/* ── DEFINITION BLOCK ── */}
+        <section className="wp-def-section">
+          <div className="wp-def-inner">
+            <div className={`wp-def-block wp-section-reveal${visibleSections.has('def') ? ' wp-revealed' : ''}`} ref={el => { sectionRefs.current['def'] = el; }}>
+              <span className="wp-def-eyebrow">Definition</span>
+              <h2 className="wp-def-title">What Is a WordPress Development Company?</h2>
+              <p className="wp-def-body">
+                A <strong>WordPress development company</strong> is a specialised agency that designs, builds, and maintains websites and web applications using the WordPress content management system (CMS). Unlike freelancers or general web agencies, a dedicated WordPress development firm employs full-stack WordPress engineers, UX designers, and project managers who focus exclusively on the WordPress ecosystem — including custom theme development, plugin engineering, WooCommerce e-commerce, REST API integrations, and headless WordPress with Next.js.
+              </p>
+              <p className="wp-def-body">
+                WordPress powers <strong>43% of all websites</strong> on the internet — from small business sites to enterprise platforms used by BBC America, The New York Times, and Sony Music. A professional WordPress development company brings the specialised skills needed to build performant, secure, and scalable WordPress sites that grow with your business.
+              </p>
+              <div className="wp-def-facts">
+                {[['43%','of all websites globally run on WordPress'],['60,000+','plugins in the WordPress ecosystem'],['$2K – $50K+','typical custom WordPress development range']].map(([num, label]) => (
+                  <div className="wp-def-fact" key={label}>
+                    <span className="wp-def-fact-num">{num}</span>
+                    <span className="wp-def-fact-label">{label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* ── SERVICES ── */}
         <section className="wp-services-section">
@@ -804,6 +955,91 @@ export default function WordPressDevelopmentCompany() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/images/office.png" alt="1Solutions WordPress development team" />
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── TECHNOLOGY STACK ── */}
+        <section className="wp-tech-section">
+          <div className="wp-tech-inner">
+            <div className={`wp-section-reveal${visibleSections.has('tech') ? ' wp-revealed' : ''}`} ref={el => { sectionRefs.current['tech'] = el; }}>
+              <span className="wp-section-eyebrow">Technology Stack</span>
+              <h2 className="wp-section-title">WordPress Technologies We Work With</h2>
+              <p className="wp-section-desc">Our team stays current with the full WordPress technology landscape — from core development to cutting-edge headless architecture and performance tooling.</p>
+            </div>
+            <div className="wp-tech-grid">
+              {TECH_STACK.map(group => (
+                <div className="wp-tech-group" key={group.group}>
+                  <div className="wp-tech-group-title">{group.group}</div>
+                  <div className="wp-tech-tags">
+                    {group.items.map(item => (
+                      <span className="wp-tech-tag" key={item}>{item}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── INDUSTRIES ── */}
+        <section className="wp-industries-section">
+          <div className="wp-industries-inner">
+            <div className={`wp-section-reveal${visibleSections.has('industries') ? ' wp-revealed' : ''}`} ref={el => { sectionRefs.current['industries'] = el; }}>
+              <span className="wp-section-eyebrow">Industries We Serve</span>
+              <h2 className="wp-section-title">WordPress Development Across Industries</h2>
+              <p className="wp-section-desc">We have delivered WordPress solutions for businesses across 8+ verticals — bringing domain-specific knowledge to every project we take on.</p>
+            </div>
+            <div className="wp-industry-grid">
+              {INDUSTRIES.map(ind => (
+                <div className="wp-industry-card" key={ind.title}>
+                  <div className="wp-industry-icon">{ind.icon}</div>
+                  <h3>{ind.title}</h3>
+                  <p>{ind.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── COMPARISON TABLE ── */}
+        <section className="wp-compare-section">
+          <div className="wp-compare-inner">
+            <div className={`wp-section-reveal${visibleSections.has('compare') ? ' wp-revealed' : ''}`} ref={el => { sectionRefs.current['compare'] = el; }}>
+              <span className="wp-section-eyebrow">Why Choose Us</span>
+              <h2 className="wp-section-title">1Solutions vs Freelancers vs Large Agencies</h2>
+              <p className="wp-section-desc">See how our dedicated WordPress development team compares against the alternatives — so you can make an informed decision.</p>
+            </div>
+            <div className="wp-compare-wrap">
+              <table className="wp-compare-table">
+                <thead>
+                  <tr>
+                    <th>Feature</th>
+                    <th className="wp-compare-th-hl">1Solutions</th>
+                    <th>Freelancer</th>
+                    <th>Large Agency</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['WordPress Specialisation','Dedicated focus — 15+ years','Often generalist','One of many services'],
+                    ['Team Depth','50+ WordPress specialists','Single developer','100+ but siloed'],
+                    ['Pricing','Transparent, mid-market','Low upfront, hidden extras','Premium retainer'],
+                    ['Communication','Direct PM + developer access','Depends on individual','Via account manager'],
+                    ['Availability','Business hours + emergency cover','Single point of failure','Ticket system'],
+                    ['Quality Control','Staged QA + code review','Self-reviewed','Process-heavy, slow'],
+                    ['Timeline Reliability','SLA-backed delivery dates','Variable, often delayed','Bureaucratic delays'],
+                    ['Post-Launch Support','Plans from $99/mo','Limited, often extra charge','Expensive retainers'],
+                  ].map(([feature, us, freelancer, agency]) => (
+                    <tr key={feature}>
+                      <td>{feature}</td>
+                      <td>{us}</td>
+                      <td>{freelancer}</td>
+                      <td>{agency}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </section>
@@ -987,7 +1223,7 @@ export default function WordPressDevelopmentCompany() {
         {/* ── FAQ ── */}
         <section className="wp-faq-section" id="faq">
           <div className="wp-faq-inner">
-            <h2 className="wp-faq-heading">Frequently Asked Questions</h2>
+            <h2 className="wp-faq-heading">WordPress Development — Frequently Asked Questions</h2>
             <div className="wp-faq-list">
               {FAQS.map((faq, i) => (
                 <div className={`wp-faq-item${openFaq===i?' open':''}`} key={i}>
