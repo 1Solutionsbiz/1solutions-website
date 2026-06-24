@@ -52,12 +52,14 @@ export default function Hero() {
         .hero-metrics {
           display: grid;
           grid-template-columns: repeat(4,1fr);
-          gap: 40px;
           margin-top: 44px;
           margin-bottom: 44px;
-          padding: 44px 0;
-          border-top: 1px solid rgba(15,52,96,0.1);
-          border-bottom: 1px solid rgba(15,52,96,0.1);
+          background: rgba(255,255,255,0.45);
+          backdrop-filter: blur(24px);
+          -webkit-backdrop-filter: blur(24px);
+          border: 1px solid rgba(255,255,255,0.85);
+          border-radius: 16px;
+          box-shadow: 0 4px 24px rgba(15,52,96,0.08), inset 0 1px 0 rgba(255,255,255,0.95);
         }
         @media (prefers-reduced-motion: reduce) {
           .hero-fade-1,.hero-fade-2,.hero-fade-3,.hero-fade-4 {
@@ -67,7 +69,7 @@ export default function Hero() {
         }
         @media (max-width: 768px) {
           .hero-section { padding: 64px 20px 56px !important; }
-          .hero-metrics { grid-template-columns: repeat(2,1fr); gap: 24px; padding: 32px 0; }
+          .hero-metrics { grid-template-columns: repeat(2,1fr); }
         }
         @media (max-width: 480px) {
           .hero-section { padding: 56px 16px 48px !important; }
@@ -75,22 +77,32 @@ export default function Hero() {
       `}</style>
 
       <section className="hero-section" style={{
-        background: 'linear-gradient(135deg, rgba(254,243,199,0.5) 0%, rgba(233,212,255,0.3) 100%)',
+        background: 'linear-gradient(135deg, #dbeafe 0%, #ede9fe 25%, #e0f2fe 50%, #fef3c7 75%, #fce7f3 100%)',
         padding: '100px 40px 80px',
         textAlign: 'center',
         position: 'relative',
         overflow: 'hidden',
       }}>
-        {/* Subtle background blobs */}
+        {/* Orb 1 — blue-purple, top-right */}
         <div style={{
-          position: 'absolute', top: '-120px', right: '-120px',
-          width: '600px', height: '600px', borderRadius: '50%', pointerEvents: 'none',
-          background: 'radial-gradient(circle, rgba(124,58,237,0.07) 0%, transparent 70%)',
+          position: 'absolute', top: '-300px', right: '-300px',
+          width: '900px', height: '900px', borderRadius: '50%', pointerEvents: 'none',
+          background: 'radial-gradient(circle, rgba(99,130,255,0.35) 0%, rgba(139,92,246,0.15) 40%, transparent 70%)',
+          filter: 'blur(20px)',
         }} />
+        {/* Orb 2 — amber-orange, bottom-left */}
         <div style={{
-          position: 'absolute', bottom: '-80px', left: '-80px',
-          width: '500px', height: '500px', borderRadius: '50%', pointerEvents: 'none',
-          background: 'radial-gradient(circle, rgba(254,151,0,0.07) 0%, transparent 70%)',
+          position: 'absolute', bottom: '-200px', left: '-250px',
+          width: '800px', height: '800px', borderRadius: '50%', pointerEvents: 'none',
+          background: 'radial-gradient(circle, rgba(251,146,60,0.30) 0%, rgba(245,158,11,0.15) 40%, transparent 70%)',
+          filter: 'blur(20px)',
+        }} />
+        {/* Orb 3 — teal, mid-left */}
+        <div style={{
+          position: 'absolute', top: '50%', left: '-150px', transform: 'translateY(-50%)',
+          width: '600px', height: '600px', borderRadius: '50%', pointerEvents: 'none',
+          background: 'radial-gradient(circle, rgba(20,184,166,0.20) 0%, transparent 70%)',
+          filter: 'blur(20px)',
         }} />
 
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
@@ -102,7 +114,7 @@ export default function Hero() {
             lineHeight: 1.1,
             marginBottom: '24px',
             letterSpacing: '-1.5px',
-            background: 'linear-gradient(90deg, #0F3460 0%, #F59E0B 45%, #7C3AED 100%)',
+            background: 'linear-gradient(90deg, #0F3460 0%, #D97706 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
@@ -112,7 +124,7 @@ export default function Hero() {
 
           {/* Subheading */}
           <p className="hero-fade-2" style={{
-            fontSize: '18px', color: '#6b7280', marginBottom: '0',
+            fontSize: '18px', color: '#3A507A', marginBottom: '0',
             maxWidth: '680px', margin: '0 auto', lineHeight: 1.8,
           }}>
             Tired of juggling multiple agencies? We combine strategy, design, development, and marketing
@@ -121,15 +133,19 @@ export default function Hero() {
 
           {/* Metrics */}
           <div className="hero-fade-3 hero-metrics">
-            {metrics.map((m) => (
-              <div key={m.label} style={{ textAlign: 'center' }}>
+            {metrics.map((m, i) => (
+              <div key={m.label} style={{
+                textAlign: 'center',
+                padding: '24px 20px',
+                borderRight: i < metrics.length - 1 ? '1px solid rgba(15,52,96,0.10)' : 'none',
+              }}>
                 <div style={{
-                  fontSize: '42px', fontWeight: 900, color: '#114171',
-                  marginBottom: '8px', lineHeight: 1, letterSpacing: '-1px',
+                  fontSize: '36px', fontWeight: 900, color: '#D97706',
+                  marginBottom: '6px', lineHeight: 1, letterSpacing: '-1px',
                 }}>
                   {m.value}
                 </div>
-                <div style={{ fontSize: '13px', color: '#6b7280', fontWeight: 600, lineHeight: 1.5, letterSpacing: '0.3px' }}>
+                <div style={{ fontSize: '12px', color: '#4A6080', fontWeight: 600, lineHeight: 1.5, letterSpacing: '0.3px' }}>
                   {m.label}
                 </div>
               </div>
@@ -203,12 +219,12 @@ export default function Hero() {
             <div style={{ overflow: 'hidden', position: 'relative' }}>
               <div style={{
                 position: 'absolute', left: 0, top: 0, bottom: 0, width: '120px', zIndex: 1,
-                background: 'linear-gradient(to right, rgba(254,252,249,1), transparent)',
+                background: 'linear-gradient(to right, #dbeafe, transparent)',
                 pointerEvents: 'none',
               }} />
               <div style={{
                 position: 'absolute', right: 0, top: 0, bottom: 0, width: '120px', zIndex: 1,
-                background: 'linear-gradient(to left, rgba(249,247,255,1), transparent)',
+                background: 'linear-gradient(to left, #fce7f3, transparent)',
                 pointerEvents: 'none',
               }} />
               <div className="hero-logos-track">
