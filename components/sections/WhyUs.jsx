@@ -54,10 +54,19 @@ const stories = [
   },
 ]
 
-const tagGradients = [
-  'linear-gradient(135deg, #F59E0B 0%, #FF8C42 100%)',
-  'linear-gradient(135deg, #06B6D4 0%, #0891B2 100%)',
-  'linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%)',
+const TAG_COLORS = [
+  { bg: 'rgba(79,70,229,0.11)',   color: '#4338CA', border: 'rgba(79,70,229,0.28)' },
+  { bg: 'rgba(245,158,11,0.12)',  color: '#B45309', border: 'rgba(245,158,11,0.3)' },
+  { bg: 'rgba(16,185,129,0.11)',  color: '#047857', border: 'rgba(16,185,129,0.28)' },
+  { bg: 'rgba(239,68,68,0.1)',    color: '#B91C1C', border: 'rgba(239,68,68,0.26)' },
+  { bg: 'rgba(6,182,212,0.11)',   color: '#0E7490', border: 'rgba(6,182,212,0.28)' },
+  { bg: 'rgba(124,58,237,0.11)',  color: '#6D28D9', border: 'rgba(124,58,237,0.28)' },
+  { bg: 'rgba(249,115,22,0.11)',  color: '#C2410C', border: 'rgba(249,115,22,0.28)' },
+  { bg: 'rgba(59,130,246,0.11)',  color: '#1D4ED8', border: 'rgba(59,130,246,0.28)' },
+  { bg: 'rgba(236,72,153,0.11)',  color: '#9D174D', border: 'rgba(236,72,153,0.28)' },
+  { bg: 'rgba(20,184,166,0.11)',  color: '#0F766E', border: 'rgba(20,184,166,0.28)' },
+  { bg: 'rgba(234,179,8,0.12)',   color: '#854D0E', border: 'rgba(234,179,8,0.3)' },
+  { bg: 'rgba(99,102,241,0.11)',  color: '#4F46E5', border: 'rgba(99,102,241,0.28)' },
 ]
 
 const growthStats = [
@@ -204,12 +213,15 @@ export default function WhyUs() {
 
               {/* Tags */}
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', paddingTop: '4px' }}>
-                {story.tags.map((t, ti) => (
-                  <span key={t} style={{
-                    padding: '8px 16px', borderRadius: '20px', fontSize: '12px', fontWeight: 600,
-                    color: '#fff', background: tagGradients[ti] || tagGradients[0],
-                  }}>{t}</span>
-                ))}
+                {story.tags.map((t, ti) => {
+                  const c = TAG_COLORS[ti % TAG_COLORS.length]
+                  return (
+                    <span key={t} style={{
+                      padding: '8px 16px', borderRadius: '20px', fontSize: '12px', fontWeight: 600,
+                      background: c.bg, color: c.color, border: `1px solid ${c.border}`,
+                    }}>{t}</span>
+                  )
+                })}
               </div>
 
               {/* Link */}
