@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -308,13 +309,6 @@ export default function WordPressMaintenance() {
           .wm-orb-1{width:900px;height:900px;background:radial-gradient(circle,rgba(99,130,255,0.30) 0%,rgba(139,92,246,0.12) 40%,transparent 70%);top:-300px;right:-300px}
           .wm-orb-2{width:780px;height:780px;background:radial-gradient(circle,rgba(217,119,6,.22) 0%,rgba(245,158,11,.10) 40%,transparent 70%);bottom:0;left:-230px}
           .wm-orb-3{width:550px;height:550px;background:radial-gradient(circle,rgba(99,102,241,.14) 0%,transparent 70%);top:42%;left:-120px;transform:translateY(-50%)}
-          .wm-breadcrumb{position:relative;z-index:2;padding:16px 40px 0;max-width:1440px;margin:0 auto}
-          .wm-breadcrumb ol{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0;font-size:13px;color:#6A80A0}
-          .wm-breadcrumb li{display:flex;align-items:center;gap:6px}
-          .wm-breadcrumb li::after{content:'/';opacity:.45}
-          .wm-breadcrumb li:last-child::after{display:none}
-          .wm-breadcrumb a{color:#0F3460;text-decoration:none}
-          .wm-breadcrumb a:hover{text-decoration:underline}
           .wm-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
           .wm-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
           .wm-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -518,7 +512,7 @@ export default function WordPressMaintenance() {
           .wm-cmp-dash{color:#9ca3af}
           @media(max-width:1280px){.wm-stack-grid{grid-template-columns:repeat(3,1fr)}.wm-why-grid{grid-template-columns:repeat(3,1fr)}}
           @media(max-width:1024px){.wm-page{overflow-x:hidden}.wm-hero h1{font-size:36px}.wm-s-title{font-size:34px;letter-spacing:-.5px}.wm-faq h2{font-size:34px}.wm-ctitle{font-size:34px}.wm-what-text h2{font-size:30px}.wm-svc-grid{grid-template-columns:repeat(2,1fr)}.wm-stack-grid{grid-template-columns:repeat(2,1fr)}.wm-eng-grid{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}.wm-eng-card.feat{transform:none}.wm-eng-card.feat.wm-ev{transform:none}.wm-eng-card.feat.wm-ev:hover{transform:translateY(-4px)}.wm-why-grid{grid-template-columns:repeat(2,1fr)}.wm-tgrid{grid-template-columns:repeat(2,1fr)}.wm-contact-grid{grid-template-columns:1fr}.wm-cmp-table{font-size:13px}}
-          @media(max-width:768px){.wm-breadcrumb{padding:12px 20px 0}.wm-hero{padding:28px 20px 20px}.wm-hero h1{font-size:26px;letter-spacing:-.3px}.wm-hero-desc{font-size:14px}.wm-ctas{flex-direction:column;align-items:center;gap:10px}.wm-btn-primary,.wm-btn-ghost{width:100%;max-width:320px;text-align:center;padding:13px 24px}.wm-stats{grid-template-columns:1fr 1fr}.wm-stat-col:nth-child(2){border-right:none}.wm-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.wm-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.wm-logos{padding:16px 20px 28px}.wm-svc-section,.wm-stack-section,.wm-eng-section,.wm-process-section,.wm-testi,.wm-why-section,.wm-faq,.wm-related,.wm-what-section,.wm-cmp-section{padding:52px 20px}.wm-contact{padding:44px 20px}.wm-s-title{font-size:26px;letter-spacing:-.4px}.wm-s-eyebrow{font-size:10px}.wm-s-desc{font-size:14px}.wm-ctitle{font-size:26px}.wm-faq h2{font-size:26px}.wm-faq-sub{font-size:13px}.wm-svc-grid{grid-template-columns:1fr}.wm-stack-grid{grid-template-columns:repeat(2,1fr);gap:12px}.wm-eng-grid{max-width:100%}.wm-why-grid{grid-template-columns:repeat(2,1fr);gap:12px}.wm-tgrid{grid-template-columns:1fr;gap:16px}.wm-what-inner{grid-template-columns:1fr;gap:28px}.wm-what-text h2{font-size:24px}.wm-what-text p{font-size:14px}.wm-why-highlight{padding:20px 20px 20px 24px;margin-top:28px}.wm-why-highlight h3{font-size:17px}.wm-why-highlight p{font-size:14px}.wm-cmp-section .wm-inner{overflow-x:auto;-webkit-overflow-scrolling:touch}.wm-cmp-table{min-width:540px;font-size:12px}.wm-cmp-table th,.wm-cmp-table td{padding:10px 12px}.wm-pstep-title{font-size:17px}.wm-pstep-desc{font-size:14px}.wm-frow{grid-template-columns:1fr}.wm-form-box{padding:24px 20px}.wm-contact-grid{gap:28px}.wm-fq{padding:16px 16px 16px 50px}.wm-fq-badge{left:12px;width:24px;height:24px;font-size:10px}.wm-fq span{font-size:14px}.wm-fanswer{padding:0 16px 16px 50px;font-size:13px}.wm-rtag{padding:8px 14px;font-size:13px}}
+          @media(max-width:768px){.wm-hero{padding:28px 20px 20px}.wm-hero h1{font-size:26px;letter-spacing:-.3px}.wm-hero-desc{font-size:14px}.wm-ctas{flex-direction:column;align-items:center;gap:10px}.wm-btn-primary,.wm-btn-ghost{width:100%;max-width:320px;text-align:center;padding:13px 24px}.wm-stats{grid-template-columns:1fr 1fr}.wm-stat-col:nth-child(2){border-right:none}.wm-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.wm-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.wm-logos{padding:16px 20px 28px}.wm-svc-section,.wm-stack-section,.wm-eng-section,.wm-process-section,.wm-testi,.wm-why-section,.wm-faq,.wm-related,.wm-what-section,.wm-cmp-section{padding:52px 20px}.wm-contact{padding:44px 20px}.wm-s-title{font-size:26px;letter-spacing:-.4px}.wm-s-eyebrow{font-size:10px}.wm-s-desc{font-size:14px}.wm-ctitle{font-size:26px}.wm-faq h2{font-size:26px}.wm-faq-sub{font-size:13px}.wm-svc-grid{grid-template-columns:1fr}.wm-stack-grid{grid-template-columns:repeat(2,1fr);gap:12px}.wm-eng-grid{max-width:100%}.wm-why-grid{grid-template-columns:repeat(2,1fr);gap:12px}.wm-tgrid{grid-template-columns:1fr;gap:16px}.wm-what-inner{grid-template-columns:1fr;gap:28px}.wm-what-text h2{font-size:24px}.wm-what-text p{font-size:14px}.wm-why-highlight{padding:20px 20px 20px 24px;margin-top:28px}.wm-why-highlight h3{font-size:17px}.wm-why-highlight p{font-size:14px}.wm-cmp-section .wm-inner{overflow-x:auto;-webkit-overflow-scrolling:touch}.wm-cmp-table{min-width:540px;font-size:12px}.wm-cmp-table th,.wm-cmp-table td{padding:10px 12px}.wm-pstep-title{font-size:17px}.wm-pstep-desc{font-size:14px}.wm-frow{grid-template-columns:1fr}.wm-form-box{padding:24px 20px}.wm-contact-grid{gap:28px}.wm-fq{padding:16px 16px 16px 50px}.wm-fq-badge{left:12px;width:24px;height:24px;font-size:10px}.wm-fq span{font-size:14px}.wm-fanswer{padding:0 16px 16px 50px;font-size:13px}.wm-rtag{padding:8px 14px;font-size:13px}}
           @media(max-width:480px){.wm-hero h1{font-size:22px}.wm-hero-desc{font-size:13px}.wm-badge{font-size:10px;padding:4px 8px;gap:5px}.wm-badge-dot{width:6px;height:6px}.wm-btn-primary,.wm-btn-ghost{font-size:14px;padding:12px 20px}.wm-stat-val{font-size:20px}.wm-stat-label{font-size:10px}.wm-stat-col{padding:14px 10px}.wm-s-title{font-size:20px}.wm-faq h2{font-size:20px}.wm-ctitle{font-size:20px}.wm-what-text h2{font-size:20px}.wm-stack-grid{grid-template-columns:1fr}.wm-why-grid{grid-template-columns:1fr}.wm-svc-card h3{font-size:15px}.wm-svc-card p{font-size:12px}.wm-eng-card{padding:24px 20px}.wm-pstep{grid-template-columns:48px 1fr;gap:0 14px}.wm-pstep-circle{width:44px;height:44px;font-size:16px}.wm-pstep-title{font-size:16px}.wm-pstep-desc{font-size:13px}.wm-fq{padding:14px 14px 14px 46px}.wm-fq-badge{left:10px;width:22px;height:22px;font-size:9px}.wm-fq span{font-size:13px}.wm-fanswer{padding:0 14px 14px 46px;font-size:12px}.wm-form-box{padding:18px 14px}.wm-form-box h3{font-size:18px}.wm-wcard h3{font-size:13px}.wm-wcard p{font-size:12px}}
           @media(max-width:360px){.wm-hero h1{font-size:19px}.wm-s-title{font-size:18px}.wm-faq h2{font-size:18px}.wm-ctitle{font-size:18px}.wm-stat-col{padding:12px 8px}.wm-stat-val{font-size:18px}.wm-btn-primary,.wm-btn-ghost{font-size:13px;padding:11px 16px}.wm-pstep{grid-template-columns:44px 1fr;gap:0 10px}.wm-pstep-circle{width:40px;height:40px;font-size:14px}}
           @media(max-width:1024px){.wm-orb{display:none}}
@@ -529,18 +523,7 @@ export default function WordPressMaintenance() {
       <div className="wm-page">
         <div className="wm-orb wm-orb-1" /><div className="wm-orb wm-orb-2" /><div className="wm-orb wm-orb-3" />
 
-        <nav className="wm-breadcrumb" aria-label="Breadcrumb">
-          <ol itemScope itemType="https://schema.org/BreadcrumbList">
-            <li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement">
-              <Link href="/" itemProp="item"><span itemProp="name">Home</span></Link>
-              <meta itemProp="position" content="1" />
-            </li>
-            <li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement">
-              <span itemProp="name">WordPress Support & Maintenance Services</span>
-              <meta itemProp="position" content="2" />
-            </li>
-          </ol>
-        </nav>
+
 
         <section className="wm-hero">
           <span className="wm-eyebrow">WordPress Maintenance & Support Services</span>
@@ -568,8 +551,7 @@ export default function WordPressMaintenance() {
           <div className="wm-logos-wrap">
             <div className="wm-logos-track">
               {[['/logo/Indian_Express_Logo_full.png','Indian Express'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],['/logo/Uniphore.jpg','Uniphore'],['/logo/ICCoLogo.png','ICC'],['/logo/Honor_Logo_(2020).svg.png','Honor'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],['/logo/Indian_Express_Logo_full.png','Indian Express 2'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon 2'],['/logo/Uniphore.jpg','Uniphore 2'],['/logo/ICCoLogo.png','ICC 2'],['/logo/Honor_Logo_(2020).svg.png','Honor 2'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv 2']].map(([src, alt]) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img key={alt} src={src} alt={alt.replace(/ \d$/, '')} className="wm-clogo" />
+                <Image key={alt} src={src} alt={alt.replace(/ \d$/, '')} width={110} height={24} className="wm-clogo" style={{ width: 'auto', height: '24px', maxWidth: '110px' }} />
               ))}
             </div>
           </div>
