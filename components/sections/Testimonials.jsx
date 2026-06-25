@@ -80,13 +80,13 @@ const row2 = [...testimonials.slice(5),    ...testimonials.slice(5)]
 function TestiCard({ t }) {
   return (
     <div style={{
-      width: '320px', flexShrink: 0,
+      width: '440px', flexShrink: 0,
       background: '#fff',
       border: '1px solid rgba(15,52,96,0.08)',
-      borderRadius: '20px',
-      padding: '28px',
+      borderRadius: '16px',
+      padding: '20px 24px',
       boxShadow: '0 2px 16px rgba(0,0,0,0.05)',
-      display: 'flex', flexDirection: 'column', gap: '18px',
+      display: 'flex', flexDirection: 'column', gap: '12px',
       userSelect: 'none',
     }}>
       {/* Stars */}
@@ -154,12 +154,12 @@ export default function Testimonials() {
       `}</style>
 
       <section id="testimonials" style={{
-        padding: '100px 0',
+        padding: '72px 0',
         background: 'linear-gradient(135deg, #faf8ff 0%, #f7f4ff 50%, #f3f8ff 100%)',
         overflow: 'hidden',
       }}>
         {/* Header */}
-        <div style={{ textAlign: 'center', padding: '0 40px', marginBottom: '64px' }}>
+        <div style={{ textAlign: 'center', padding: '0 40px', marginBottom: '44px' }}>
           <h2 style={{ fontSize: 'clamp(32px,3.5vw,48px)', fontWeight: 900, marginBottom: '16px' }}>
             <AuroraText>What Our Clients Say</AuroraText>
           </h2>
@@ -169,7 +169,7 @@ export default function Testimonials() {
         </div>
 
         {/* Row 1 — scrolls left */}
-        <div className="testi-row" style={{ marginBottom: '20px', position: 'relative' }}>
+        <div className="testi-row" style={{ marginBottom: '16px', position: 'relative' }}>
           <div style={{
             position: 'absolute', left: 0, top: 0, bottom: 0, width: '160px', zIndex: 1,
             background: 'linear-gradient(to right, #faf8ff, transparent)', pointerEvents: 'none',
