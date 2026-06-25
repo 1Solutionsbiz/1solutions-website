@@ -188,17 +188,16 @@ function Custom404() {
                 <span className="p4-card-arrow">›</span>
               </Link>
 
-              <Link href="/portfolio" className="p4-card">
+              <Link href="/contact-us" className="p4-card">
                 <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
                   <div className="p4-card-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                      <circle cx="12" cy="12" r="9" fill="white" />
-                      <circle cx="12" cy="12" r="3.5" fill="#bfc3cc" />
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" fill="white" stroke="white" strokeWidth="1.5" />
                     </svg>
                   </div>
                   <div style={{ textAlign: 'left' }}>
-                    <div style={{ fontSize: '15px', fontWeight: 600, color: '#1a1a1a', lineHeight: 1.2 }}>Showcase</div>
-                    <div style={{ fontSize: '12px', color: '#888888', marginTop: '3px' }}>Where we walk the walk</div>
+                    <div style={{ fontSize: '15px', fontWeight: 600, color: '#1a1a1a', lineHeight: 1.2 }}>Contact Us</div>
+                    <div style={{ fontSize: '12px', color: '#888888', marginTop: '3px' }}>We&apos;d love to hear from you</div>
                   </div>
                 </div>
                 <span className="p4-card-arrow">›</span>
