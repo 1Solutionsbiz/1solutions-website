@@ -210,7 +210,7 @@ export default function Services() {
         <div className="svc-layout">
 
           {/* ── Left: tab list ── */}
-          <div className="svc-tabs" style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'flex-start' }}>
+          <div className="svc-tabs" style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'flex-start', overflow: 'visible' }}>
             {services.map((s, i) => {
               const isActive = active === s.id
               return (
@@ -228,8 +228,10 @@ export default function Services() {
                     animationDelay: `${i * 0.07}s`,
                     background: isActive ? '#fff' : 'transparent',
                     boxShadow: isActive ? '0 2px 18px rgba(0,0,0,0.09)' : 'none',
-                    transition: 'background 0.25s ease, box-shadow 0.25s ease',
-                    width: 'fit-content',
+                    transition: 'background 0.25s ease, box-shadow 0.25s ease, width 0.25s ease',
+                    width: isActive ? '130%' : 'fit-content',
+                    position: isActive ? 'relative' : 'static',
+                    zIndex: isActive ? 3 : 1,
                   }}
                 >
                   {/* Icon circle */}
@@ -299,13 +301,16 @@ export default function Services() {
               position: 'relative', zIndex: 1,
               borderRadius: '24px', overflow: 'hidden',
               background: current.grad,
-              display: 'flex', alignItems: 'flex-end', justifyContent: 'center',
-              minHeight: '460px', padding: '32px 24px 0',
+              minHeight: '460px',
             }}>
               <img
                 src={current.image}
                 alt={current.headline}
-                style={{ width: '100%', maxWidth: '340px', objectFit: 'contain', display: 'block' }}
+                style={{
+                  position: 'absolute', top: 0, left: 0,
+                  width: '100%', height: '100%',
+                  objectFit: 'cover', display: 'block',
+                }}
               />
             </div>
           </div>
@@ -319,12 +324,6 @@ export default function Services() {
               animation: 'svcPanelIn 0.42s cubic-bezier(0.22,1,0.36,1) 0.06s both',
             }}
           >
-            <p style={{
-              fontSize: '11px', fontWeight: 700, color: '#9ca3af',
-              letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px',
-            }}>
-              1Solutions
-            </p>
             <h3 style={{
               fontSize: 'clamp(28px,2.8vw,40px)', fontWeight: 800,
               color: '#111827', lineHeight: 1.2, marginBottom: '20px',
