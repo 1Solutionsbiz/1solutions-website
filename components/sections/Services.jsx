@@ -162,8 +162,12 @@ export default function Services() {
         from { opacity: 0; transform: translateX(-18px); }
         to   { opacity: 1; transform: translateX(0); }
       }
+      @keyframes svcPanelIn {
+        0%   { opacity: 0; transform: translateY(28px) scale(0.97); }
+        100% { opacity: 1; transform: translateY(0) scale(1); }
+      }
       @media (prefers-reduced-motion: reduce) {
-        .svc-tab-item, .svc-tag-item { animation: none !important; opacity: 1 !important; transform: none !important; }
+        .svc-tab-item, .svc-tag-item, .svc-panel { animation: none !important; opacity: 1 !important; transform: none !important; }
       }
       .svc-section  { padding: 80px 40px; }
       .svc-layout   { display: grid; grid-template-columns: 260px 1fr 1.35fr; gap: 48px; align-items: center; }
@@ -245,23 +249,57 @@ export default function Services() {
             })}
           </div>
 
-          {/* ── Center: image with gradient background ── */}
-          <div style={{
-            borderRadius: '24px', overflow: 'hidden',
-            background: current.grad,
-            display: 'flex', alignItems: 'flex-end', justifyContent: 'center',
-            minHeight: '460px', padding: '32px 24px 0',
-          }}>
+          {/* ── Center: image with Backlight glow ── */}
+          <div
+            key={`img-${active}`}
+            className="svc-panel"
+            style={{
+              borderRadius: '24px', overflow: 'hidden',
+              background: current.grad,
+              display: 'flex', alignItems: 'flex-end', justifyContent: 'center',
+              minHeight: '460px', padding: '32px 24px 0',
+              position: 'relative',
+              animation: 'svcPanelIn 0.42s cubic-bezier(0.22,1,0.36,1) both',
+            }}
+          >
+            {/* Backlight: blurred duplicate image creates natural color glow */}
             <img
-              key={active}
+              src={current.image}
+              alt=""
+              aria-hidden="true"
+              style={{
+                position: 'absolute',
+                bottom: '-4%', left: '50%',
+                transform: 'translateX(-50%) scale(0.88)',
+                width: '80%', maxWidth: '300px',
+                objectFit: 'contain',
+                filter: 'blur(40px)',
+                opacity: 0.75,
+                zIndex: 0,
+                pointerEvents: 'none',
+              }}
+            />
+            {/* Actual image */}
+            <img
               src={current.image}
               alt={current.headline}
-              style={{ width: '100%', maxWidth: '340px', objectFit: 'contain', display: 'block' }}
+              style={{
+                position: 'relative', zIndex: 1,
+                width: '100%', maxWidth: '340px',
+                objectFit: 'contain', display: 'block',
+              }}
             />
           </div>
 
           {/* ── Right: content ── */}
-          <div style={{ padding: '16px 0' }}>
+          <div
+            key={`content-${active}`}
+            className="svc-panel"
+            style={{
+              padding: '16px 0',
+              animation: 'svcPanelIn 0.42s cubic-bezier(0.22,1,0.36,1) 0.06s both',
+            }}
+          >
             <p style={{
               fontSize: '11px', fontWeight: 700, color: '#9ca3af',
               letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px',
