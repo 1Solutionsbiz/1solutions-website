@@ -197,7 +197,7 @@ export default function Services() {
       }
     `}</style>
     <section ref={sectionRef} id="services" className="svc-section" style={{
-      background: 'linear-gradient(135deg, #fdfcff 0%, #f9f8ff 50%, #f6f8ff 100%)',
+      background: 'linear-gradient(135deg, #edf2f8 0%, #e8edf4 50%, #eaeff6 100%)',
       position: 'relative', overflow: 'hidden',
     }}>
       {/* Light Rays */}
