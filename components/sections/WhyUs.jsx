@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import AuroraText from '../ui/AuroraText'
 
@@ -78,12 +78,12 @@ const growthStats = [
   { value: '50+', text: 'Expertise in cutting-edge technologies.' },
 ]
 
-const statBgs = [
-  'linear-gradient(135deg, rgba(254, 151, 0, 0.08) 0%, rgba(245, 158, 11, 0.04) 100%)',
-  'linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(99, 102, 241, 0.04) 100%)',
-  'linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, rgba(168, 85, 247, 0.04) 100%)',
-  'linear-gradient(135deg, rgba(34, 197, 94, 0.08) 0%, rgba(74, 222, 128, 0.04) 100%)',
-  'linear-gradient(135deg, rgba(168, 85, 247, 0.08) 0%, rgba(124, 58, 237, 0.04) 100%)',
+const statImages = [
+  '/images/bg-1.jpg',
+  '/images/service-digital-transformation.png',
+  '/images/office.png',
+  '/images/Partner-with-us.jpg',
+  '/images/bg-2.jpg',
 ]
 
 const statGridPos = [
@@ -107,6 +107,28 @@ const navBtnStyle = {
 export default function WhyUs() {
   const [active, setActive] = useState(0)
   const story = stories[active]
+
+  // Blur-fade for growth stats
+  const [growthInView, setGrowthInView] = useState(false)
+  const growthRef = useRef(null)
+  useEffect(() => {
+    const el = growthRef.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) setGrowthInView(true) },
+      { threshold: 0.08 }
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
+
+  const blurFade = (delay) => ({
+    opacity:    growthInView ? 1 : 0,
+    filter:     growthInView ? 'blur(0px)' : 'blur(14px)',
+    transform:  growthInView ? 'translateY(0)' : 'translateY(28px)',
+    transition: 'opacity 0.65s ease, filter 0.65s ease, transform 0.65s ease',
+    transitionDelay: `${delay}s`,
+  })
 
   return (
     <>
@@ -139,6 +161,9 @@ export default function WhyUs() {
         }
         @media (max-width: 400px) {
           .whyus-stats-grid { grid-template-columns: 1fr; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .whyus-stat-item { transition: none !important; opacity: 1 !important; filter: none !important; transform: none !important; }
         }
       `}</style>
       {/* ── Success Stories ── */}
@@ -253,7 +278,7 @@ export default function WhyUs() {
       </section>
 
       {/* ── Growth Story ── */}
-      <section id="growth-story" className="whyus-growth-sec" style={{ background: '#fff' }}>
+      <section ref={growthRef} id="growth-story" className="whyus-growth-sec" style={{ background: '#fff' }}>
         <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
 
           <div className="whyus-growth-header">
@@ -269,37 +294,55 @@ export default function WhyUs() {
             {growthStats.map((s, i) => {
               const isLarge = i === 0 || i === 4
               return (
-                <div key={i} className="whyus-stat-item" style={{
-                  ...statGridPos[i],
-                  background: statBgs[i],
-                  borderRadius: '20px',
-                  padding: isLarge ? '56px' : '40px 36px',
-                  minHeight: isLarge ? '240px' : '180px',
-                  border: '1px solid rgba(15, 52, 96, 0.05)',
-                  display: 'flex', flexDirection: 'column', justifyContent: 'center',
-                  boxSizing: 'border-box', transition: 'transform 0.3s, box-shadow 0.3s',
-                }}
-                  onMouseEnter={e => {
-                    e.currentTarget.style.transform = isLarge ? 'translateY(-8px)' : 'translateY(-4px) scale(1.01)'
-                    e.currentTarget.style.boxShadow = '0 20px 50px rgba(0, 0, 0, 0.1)'
-                  }}
-                  onMouseLeave={e => {
-                    e.currentTarget.style.transform = 'none'
-                    e.currentTarget.style.boxShadow = 'none'
-                  }}
-                >
-                  <div className="whyus-stat-value" style={{
-                    fontSize: isLarge ? '64px' : '50px', fontWeight: 900, color: '#114171',
-                    marginBottom: '16px', lineHeight: 1,
-                  }}>
-                    {s.value}
+                /* Outer: grid position + blur-fade entrance */
+                <div key={i} className="whyus-stat-item" style={{ ...statGridPos[i], ...blurFade(0.1 + i * 0.13) }}>
+                  {/* Inner: image bg + overlay + hover */}
+                  <div
+                    style={{
+                      position: 'relative', overflow: 'hidden',
+                      borderRadius: '20px',
+                      minHeight: isLarge ? '240px' : '180px',
+                      display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
+                      boxSizing: 'border-box',
+                      transition: 'transform 0.3s, box-shadow 0.3s',
+                      cursor: 'default',
+                    }}
+                    onMouseEnter={e => {
+                      e.currentTarget.style.transform = isLarge ? 'translateY(-8px)' : 'translateY(-4px) scale(1.01)'
+                      e.currentTarget.style.boxShadow = '0 24px 56px rgba(0,0,0,0.28)'
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.transform = 'none'
+                      e.currentTarget.style.boxShadow = 'none'
+                    }}
+                  >
+                    {/* Background image */}
+                    <img
+                      src={statImages[i]} alt="" aria-hidden="true"
+                      style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }}
+                    />
+                    {/* Dark gradient overlay */}
+                    <div style={{
+                      position: 'absolute', inset: 0,
+                      background: 'linear-gradient(160deg, rgba(8,20,55,0.72) 0%, rgba(15,52,96,0.88) 100%)',
+                      zIndex: 1,
+                    }} />
+                    {/* Content */}
+                    <div style={{ position: 'relative', zIndex: 2, padding: isLarge ? '48px 56px' : '32px 36px' }}>
+                      <div className="whyus-stat-value" style={{
+                        fontSize: isLarge ? '68px' : '52px', fontWeight: 900, color: '#FE9700',
+                        marginBottom: '12px', lineHeight: 1, letterSpacing: '-1px',
+                      }}>
+                        {s.value}
+                      </div>
+                      <p style={{
+                        fontSize: isLarge ? '17px' : '14px', color: 'rgba(255,255,255,0.85)',
+                        lineHeight: 1.7, margin: 0, fontWeight: 500,
+                      }}>
+                        {s.text}
+                      </p>
+                    </div>
                   </div>
-                  <p style={{
-                    fontSize: isLarge ? '18px' : '15px', color: '#374151',
-                    lineHeight: 1.8, margin: 0, fontWeight: 500,
-                  }}>
-                    {s.text}
-                  </p>
                 </div>
               )
             })}
