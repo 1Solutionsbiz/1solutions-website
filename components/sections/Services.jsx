@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import AuroraText from '../ui/AuroraText'
 
@@ -134,12 +134,48 @@ export default function Services() {
   const [active, setActive] = useState('web')
   const current = services.find(s => s.id === active)
 
+  // Animated list — sidebar tabs slide in on first scroll into view
+  const [tabsVisible, setTabsVisible] = useState(false)
+  const sectionRef = useRef(null)
+  useEffect(() => {
+    const el = sectionRef.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) setTabsVisible(true) },
+      { threshold: 0.1 }
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
+
+  // Animated list — tags pop in one-by-one whenever active service changes
+  const [visibleTags, setVisibleTags] = useState(current.tags)
+  useEffect(() => {
+    setVisibleTags([])
+    const timers = current.tags.map((tag, i) =>
+      setTimeout(() => setVisibleTags(prev => [...prev, tag]), i * 130)
+    )
+    return () => timers.forEach(clearTimeout)
+  }, [active])
+
   return (
     <>
     <style>{`
       @keyframes lightRayPulse {
         0%, 100% { opacity: 0; }
         50%       { opacity: 1; }
+      }
+      @keyframes animListItem {
+        0%   { opacity: 0; transform: translateY(-14px) scale(0.93); }
+        60%  { transform: translateY(3px) scale(1.02); }
+        100% { opacity: 1; transform: translateY(0) scale(1); }
+      }
+      @keyframes tabSlideIn {
+        0%   { opacity: 0; transform: translateX(-20px); }
+        100% { opacity: 1; transform: translateX(0); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .svc-tab-item, .svc-tag-item { animation: none !important; opacity: 1 !important; transform: none !important; }
       }
       .svc-section { padding: 80px 40px; }
       .svc-layout { display: grid; grid-template-columns: 280px 1fr; gap: 56px; align-items: flex-start; }
@@ -160,7 +196,7 @@ export default function Services() {
         .svc-card { padding: 20px; }
       }
     `}</style>
-    <section id="services" className="svc-section" style={{
+    <section ref={sectionRef} id="services" className="svc-section" style={{
       background: 'linear-gradient(135deg, #fdfcff 0%, #f9f8ff 50%, #f6f8ff 100%)',
       position: 'relative', overflow: 'hidden',
     }}>
@@ -198,23 +234,31 @@ export default function Services() {
 
         <div className="svc-layout">
 
-          {/* Left tabs */}
+          {/* Left tabs — slide in one-by-one on scroll */}
           <div className="svc-tabs" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            {services.map(s => (
-              <button key={s.id} onClick={() => setActive(s.id)} style={{
-                display: 'flex', alignItems: 'center', gap: '10px',
-                padding: '18px 24px', borderRadius: '20px', cursor: 'pointer',
-                textAlign: 'left', fontSize: '15px', fontWeight: 700,
-                transition: 'all 0.3s', width: '100%', boxSizing: 'border-box',
-                ...(active === s.id ? {
-                  background: '#0F3460', color: '#fff',
-                  border: '2px solid #0F3460',
-                  boxShadow: '0 6px 16px rgba(15, 52, 96, 0.2)',
-                } : {
-                  background: 'linear-gradient(white, white) padding-box, linear-gradient(90deg, #FE9700 0%, #114171 100%) border-box',
-                  border: '2px solid transparent', color: '#0F3460',
-                }),
-              }}>
+            {services.map((s, i) => (
+              <button
+                key={s.id}
+                className="svc-tab-item"
+                onClick={() => setActive(s.id)}
+                style={{
+                  display: 'flex', alignItems: 'center', gap: '10px',
+                  padding: '18px 24px', borderRadius: '20px', cursor: 'pointer',
+                  textAlign: 'left', fontSize: '15px', fontWeight: 700,
+                  transition: 'all 0.3s', width: '100%', boxSizing: 'border-box',
+                  opacity: tabsVisible ? 1 : 0,
+                  animation: tabsVisible ? `tabSlideIn 0.45s ease both` : 'none',
+                  animationDelay: `${i * 0.08}s`,
+                  ...(active === s.id ? {
+                    background: '#0F3460', color: '#fff',
+                    border: '2px solid #0F3460',
+                    boxShadow: '0 6px 16px rgba(15, 52, 96, 0.2)',
+                  } : {
+                    background: 'linear-gradient(white, white) padding-box, linear-gradient(90deg, #FE9700 0%, #114171 100%) border-box',
+                    border: '2px solid transparent', color: '#0F3460',
+                  }),
+                }}
+              >
                 {s.icon}
                 {s.label}
               </button>
@@ -244,14 +288,22 @@ export default function Services() {
               <div style={{ fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', color: '#374151', marginBottom: '16px' }}>
                 Key Technologies
               </div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '32px' }}>
-                {current.tags.map((tag, idx) => {
+              {/* Tags — animate in one-by-one on service switch */}
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '32px', minHeight: '36px' }}>
+                {visibleTags.map((tag, idx) => {
                   const c = TAG_COLORS[idx % TAG_COLORS.length]
                   return (
-                    <span key={tag} style={{
-                      padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: 600,
-                      background: c.bg, color: c.color, border: `1px solid ${c.border}`,
-                    }}>{tag}</span>
+                    <span
+                      key={`${active}-${tag}`}
+                      className="svc-tag-item"
+                      style={{
+                        padding: '6px 14px', borderRadius: '20px', fontSize: '13px', fontWeight: 600,
+                        background: c.bg, color: c.color, border: `1px solid ${c.border}`,
+                        animation: 'animListItem 0.35s ease both',
+                      }}
+                    >
+                      {tag}
+                    </span>
                   )
                 })}
               </div>
