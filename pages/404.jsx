@@ -45,7 +45,7 @@ function Custom404() {
         .p4-main {
           display: flex;
           justify-content: center;
-          padding: 56px 20px 64px;
+          padding: 48px 20px 40px;
         }
         .p4-inner {
           max-width: 700px;
@@ -86,6 +86,7 @@ function Custom404() {
         }
 
         /* ── Nav cards ── */
+        .p4-cards > a { flex: 1; }
         .p4-card {
           background: white;
           border-radius: 18px;
@@ -129,7 +130,7 @@ function Custom404() {
           .p4-main { padding: 36px 16px 48px !important; }
           .p4-deco-cloud { font-size: 30px !important; top: -14px !important; left: -18px !important; }
           .p4-deco-heart { font-size: 24px !important; bottom: -12px !important; right: 10px !important; }
-          .p4-cards { gap: 10px !important; }
+          .p4-cards { gap: 10px !important; flex-direction: column !important; }
           .p4-card  { padding: 14px 16px !important; }
           .p4-card-icon { width: 40px !important; height: 40px !important; }
         }
@@ -188,24 +189,12 @@ function Custom404() {
               </h1>
             </div>
 
-            <p style={{
-              fontSize: '14px',
-              color: '#888888',
-              lineHeight: 1.7,
-              maxWidth: '470px',
-              margin: '0 auto 28px',
-            }}>
-              Grab a 30-minute <span className="p4-tag">chat</span> to explore your ideas, scope, and
-              vision. We&apos;ll find common ground, sync and <span className="p4-tag">define</span> a
-              clear roadmap.
-            </p>
-
             {/* Navigation cards */}
             <div
               className="p4-cards"
               style={{
-                display: 'flex', flexDirection: 'column',
-                gap: '12px', maxWidth: '460px', width: '100%',
+                display: 'flex', flexDirection: 'row',
+                gap: '16px', width: '100%', maxWidth: '600px',
                 marginTop: '32px',
               }}
             >
