@@ -279,19 +279,17 @@ export default function Services() {
               animation: 'svcPanelIn 0.42s cubic-bezier(0.22,1,0.36,1) both',
             }}
           >
-            {/* Backlight — lives OUTSIDE overflow:hidden so it spills around the card */}
-            <img
-              src={current.image}
-              alt=""
+            {/* Backlight — accent-color glow blob below the card */}
+            <div
               aria-hidden="true"
               style={{
                 position: 'absolute',
-                bottom: '0', left: '50%',
-                transform: 'translateX(-50%) scale(0.8)',
-                width: '85%',
-                objectFit: 'contain',
-                filter: 'blur(48px)',
-                opacity: 0.7,
+                bottom: '-30px', left: '8%', right: '8%',
+                height: '160px',
+                background: current.accent,
+                borderRadius: '50%',
+                filter: 'blur(55px)',
+                opacity: 0.5,
                 zIndex: 0,
                 pointerEvents: 'none',
               }}
