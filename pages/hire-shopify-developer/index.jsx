@@ -248,24 +248,47 @@ export default function HireShopifyDeveloper() {
           .sh-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#111827;line-height:1.6;position:relative;overflow-x:hidden}
           .sh-page *,.sh-page *::before,.sh-page *::after{box-sizing:border-box}
           .sh-orb-1,.sh-orb-2,.sh-orb-3{display:none}
-          .sh-breadcrumb{position:relative;z-index:2;padding:16px 40px 0;max-width:1440px;margin:0 auto}
-          .sh-breadcrumb ol{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0;font-size:13px;color:#9ca3af}
+          .sh-hero-wrap{background:linear-gradient(150deg,#07102a 0%,#0c1c44 30%,#122f6a 60%,#1a4a8c 100%)}
+          .sh-breadcrumb{position:relative;z-index:2;padding:20px 80px 0;max-width:1380px;margin:0 auto}
+          .sh-breadcrumb ol{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0;font-size:13px;color:rgba(255,255,255,.40)}
           .sh-breadcrumb li{display:flex;align-items:center;gap:6px}
           .sh-breadcrumb li::after{content:'/';opacity:.45}
           .sh-breadcrumb li:last-child::after{display:none}
-          .sh-breadcrumb a{color:#6b7280;text-decoration:none}
-          .sh-breadcrumb a:hover{color:#111827;text-decoration:none}
-          .sh-hero{position:relative;z-index:2;text-align:center;max-width:860px;margin:0 auto;padding:72px 40px 64px}
-          .sh-hero h1{font-size:clamp(40px,6vw,72px);font-weight:900;line-height:1.07;letter-spacing:-2px;margin-bottom:24px;color:#111827;background:none;-webkit-text-fill-color:#111827}
-          .sh-hero-desc{font-size:18px;color:#6b7280;line-height:1.75;max-width:680px;margin:0 auto 40px}
-          .sh-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .sh-btn-primary{display:inline-block;padding:18px 48px;background:#0F3460;color:#fff;border-radius:8px;font-weight:700;font-size:16px;text-decoration:none;transition:all .25s;box-shadow:0 4px 20px rgba(15,52,96,.25);letter-spacing:.1px}
-          .sh-btn-primary:hover{background:#114171;transform:translateY(-2px);box-shadow:0 8px 28px rgba(15,52,96,.32)}
-          .sh-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:860px;margin:0 auto 0;background:#fff;border:1px solid #e5e7eb;box-shadow:0 2px 12px rgba(0,0,0,.06)}
-          .sh-stat-col{padding:18px 16px;text-align:center;border-right:1px solid rgba(15,52,96,.10)}
+          .sh-breadcrumb a{color:rgba(255,255,255,.55);text-decoration:none}
+          .sh-breadcrumb a:hover{color:#fff;text-decoration:none}
+          .sh-hero{position:relative;z-index:2;max-width:1380px;margin:0 auto;padding:52px 80px 80px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+          .sh-hero h1{font-size:clamp(44px,5.2vw,78px);font-weight:900;line-height:1.05;letter-spacing:-2.5px;margin:0 0 24px;color:#fff;background:none;-webkit-text-fill-color:#fff}
+          .sh-hero-desc{font-size:18px;color:rgba(255,255,255,.72);line-height:1.72;max-width:480px;margin:0 0 40px}
+          .sh-ctas{display:flex;flex-wrap:wrap;gap:14px}
+          .sh-btn-primary{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;background:#fff;color:#0F1F40;border-radius:6px;font-weight:700;font-size:16px;text-decoration:none;transition:all .25s;border:2px solid #fff;letter-spacing:.1px}
+          .sh-btn-primary:hover{background:transparent;color:#fff;transform:translateY(-2px)}
+          .sh-hero-right{position:relative;height:400px}
+          .sh-store-card{background:#162644;border-radius:14px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.5);position:absolute;width:330px;top:10px;left:50%;transform:translateX(-20%)}
+          .sh-store-topbar{background:#0d1c35;padding:10px 14px;display:flex;align-items:center;gap:6px}
+          .sh-store-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+          .sh-store-url{font-size:10px;color:rgba(255,255,255,.35);margin-left:8px;font-family:monospace}
+          .sh-store-banner{height:70px;background:linear-gradient(90deg,#2d5a1b 0%,#3d7a24 100%);display:flex;align-items:center;padding:0 18px}
+          .sh-store-banner-txt{color:#fff;font-size:13px;font-weight:700}
+          .sh-store-products{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px}
+          .sh-product-tile{background:#1e3160;border-radius:8px;overflow:hidden}
+          .sh-product-img{height:54px;background:linear-gradient(135deg,#27437d 0%,#1a2f5e 100%)}
+          .sh-product-info{padding:8px}
+          .sh-product-name{height:7px;background:rgba(255,255,255,.22);border-radius:4px;margin-bottom:6px;width:72%}
+          .sh-product-price{height:6px;background:rgba(150,191,72,.45);border-radius:4px;width:42%}
+          .sh-chip{position:absolute;border-radius:100px;padding:9px 18px;font-size:12px;font-weight:700;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+          .sh-chip-1{background:#fff;color:#0F1F40;top:0;left:0;animation:shChipFloat 4s ease-in-out infinite}
+          .sh-chip-2{background:#96bf48;color:#fff;bottom:80px;left:10px;animation:shChipFloat 4.5s ease-in-out .7s infinite}
+          .sh-chip-3{background:#162644;color:#fff;border:1px solid rgba(255,255,255,.2);top:110px;right:0;animation:shChipFloat 5s ease-in-out 1.2s infinite}
+          .sh-chip-4{background:#1a4a8c;color:#fff;bottom:20px;right:20px;animation:shChipFloat 4.2s ease-in-out 1.8s infinite}
+          @keyframes shChipFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+          .sh-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-bottom:1px solid #e5e7eb;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+          .sh-stat-col{padding:22px 24px;text-align:center;border-right:1px solid #e5e7eb}
           .sh-stat-col:last-child{border-right:none}
-          .sh-stat-val{font-size:28px;font-weight:900;color:#5a8a00;letter-spacing:-.5px;line-height:1}
-          .sh-stat-label{font-size:11px;color:#4A6080;font-weight:500;margin-top:5px}
+          .sh-stat-val{font-size:30px;font-weight:900;color:#0F3460;letter-spacing:-.5px;line-height:1}
+          .sh-stat-label{font-size:11px;color:#6b7280;font-weight:500;margin-top:6px}
+          @media(max-width:1100px){.sh-hero{padding:44px 48px 72px;gap:48px}.sh-breadcrumb{padding:16px 48px 0}}
+          @media(max-width:900px){.sh-hero{grid-template-columns:1fr;padding:36px 32px 56px}.sh-breadcrumb{padding:14px 32px 0}.sh-hero h1{text-align:center}.sh-hero-desc{text-align:center;max-width:100%;margin:0 auto 36px}.sh-ctas{justify-content:center}.sh-hero-right{display:none}}
+          @media(max-width:480px){.sh-hero{padding:28px 20px 48px}.sh-breadcrumb{padding:12px 20px 0}.sh-stats{grid-template-columns:repeat(2,1fr)}}
           .sh-logos{position:relative;z-index:2;padding:24px 40px 52px;display:flex;flex-direction:column;align-items:center;gap:14px}
           .sh-logos-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6A80A0}
           .sh-logos-wrap{width:100%;overflow:hidden}
@@ -427,26 +450,58 @@ export default function HireShopifyDeveloper() {
       </Head>
 
       <div className="sh-page">
-        <nav className="sh-breadcrumb" aria-label="Breadcrumb">
-          <ol itemScope itemType="https://schema.org/BreadcrumbList">
-            <li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement">
-              <Link href="/" itemProp="item"><span itemProp="name">Home</span></Link>
-              <meta itemProp="position" content="1" />
-            </li>
-            <li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement">
-              <span itemProp="name">Hire Shopify Developer</span>
-              <meta itemProp="position" content="2" />
-            </li>
-          </ol>
-        </nav>
+        <div className="sh-hero-wrap">
+          <nav className="sh-breadcrumb" aria-label="Breadcrumb">
+            <ol itemScope itemType="https://schema.org/BreadcrumbList">
+              <li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement">
+                <Link href="/" itemProp="item"><span itemProp="name">Home</span></Link>
+                <meta itemProp="position" content="1" />
+              </li>
+              <li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement">
+                <span itemProp="name">Hire Shopify Developer</span>
+                <meta itemProp="position" content="2" />
+              </li>
+            </ol>
+          </nav>
 
-        <section className="sh-hero">
-          <h1>Hire Expert Shopify Developers</h1>
-          <p className="sh-hero-desc">Custom Liquid themes, Shopify Plus, private app development, WooCommerce migrations, and Headless Shopify with Hydrogen — backed by 15+ years of eCommerce expertise.</p>
-          <div className="sh-ctas">
-            <Link href="#contact" className="sh-btn-primary">Hire a Shopify Developer</Link>
-          </div>
-        </section>
+          <section className="sh-hero">
+            <div className="sh-hero-left">
+              <h1>Hire Expert<br />Shopify<br />Developers</h1>
+              <p className="sh-hero-desc">Custom Liquid themes, Shopify Plus, private app development, WooCommerce migrations, and Headless Shopify with Hydrogen — backed by 15+ years of eCommerce expertise.</p>
+              <div className="sh-ctas">
+                <Link href="#contact" className="sh-btn-primary">Hire a Shopify Developer</Link>
+              </div>
+            </div>
+            <div className="sh-hero-right" aria-hidden="true">
+              <div className="sh-store-card">
+                <div className="sh-store-topbar">
+                  <div className="sh-store-dot" style={{background:'#ff6b6b'}} />
+                  <div className="sh-store-dot" style={{background:'#ffd700'}} />
+                  <div className="sh-store-dot" style={{background:'#96bf48'}} />
+                  <span className="sh-store-url">your-store.myshopify.com</span>
+                </div>
+                <div className="sh-store-banner">
+                  <span className="sh-store-banner-txt">Premium Shopify Store</span>
+                </div>
+                <div className="sh-store-products">
+                  {[1,2,3,4].map(i => (
+                    <div key={i} className="sh-product-tile">
+                      <div className="sh-product-img" />
+                      <div className="sh-product-info">
+                        <div className="sh-product-name" />
+                        <div className="sh-product-price" />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="sh-chip sh-chip-1">✓ Shopify Partner</div>
+              <div className="sh-chip sh-chip-2">▲ Revenue +40%</div>
+              <div className="sh-chip sh-chip-3">Custom Liquid Theme</div>
+              <div className="sh-chip sh-chip-4">Headless / Hydrogen</div>
+            </div>
+          </section>
+        </div>
 
         <div className="sh-stats" ref={statsRef}>
           {[['80+','Shopify Stores Built'],['15+','Years eCommerce'],['50M+','Revenue Processed'],['98%','Client Retention']].map(([v, l]) => (
