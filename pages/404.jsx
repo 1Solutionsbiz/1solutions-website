@@ -2,7 +2,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
-export default function Custom404() {
+function Custom404() {
   return (
     <>
       <Head>
@@ -258,3 +258,7 @@ export default function Custom404() {
     </>
   )
 }
+
+Custom404.getLayout = (page) => page
+
+export default Custom404

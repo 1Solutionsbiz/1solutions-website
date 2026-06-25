@@ -6,6 +6,11 @@ import '../styles/blog.css';
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
 
 export default function App({ Component, pageProps }) {
+  // Pages can define getLayout to opt out of the default shell
+  if (Component.getLayout) {
+    return Component.getLayout(<Component {...pageProps} />)
+  }
+
   return (
     <>
       <BlogHeader />
