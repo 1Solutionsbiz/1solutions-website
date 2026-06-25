@@ -71,18 +71,20 @@ export default function Hero() {
   return (
     <>
       <style>{`
-        @keyframes heroFadeUp {
-          from { opacity: 0; transform: translateY(28px); }
-          to   { opacity: 1; transform: translateY(0); }
+        @keyframes heroStagger {
+          0%   { opacity: 0; filter: blur(12px); transform: translateY(40px) scale(0.96); }
+          55%  { filter: blur(0px); }
+          100% { opacity: 1; filter: blur(0px); transform: translateY(0) scale(1); }
         }
         @keyframes heroMarquee {
           0%   { transform: translateX(0); }
           100% { transform: translateX(-50%); }
         }
-        .hero-fade-1 { animation: heroFadeUp 0.75s ease both; }
-        .hero-fade-2 { animation: heroFadeUp 0.75s ease 0.12s both; }
-        .hero-fade-3 { animation: heroFadeUp 0.75s ease 0.24s both; }
-        .hero-fade-4 { animation: heroFadeUp 0.75s ease 0.36s both; }
+        .hero-stagger-1 { animation: heroStagger 0.8s cubic-bezier(0.22,1,0.36,1) 0.08s both; }
+        .hero-stagger-2 { animation: heroStagger 0.8s cubic-bezier(0.22,1,0.36,1) 0.22s both; }
+        .hero-stagger-3 { animation: heroStagger 0.8s cubic-bezier(0.22,1,0.36,1) 0.37s both; }
+        .hero-stagger-4 { animation: heroStagger 0.8s cubic-bezier(0.22,1,0.36,1) 0.52s both; }
+        .hero-stagger-5 { animation: heroStagger 0.8s cubic-bezier(0.22,1,0.36,1) 0.68s both; }
         .hero-logos-track {
           display: flex; width: max-content;
           will-change: transform;
@@ -97,8 +99,8 @@ export default function Hero() {
           box-shadow: 0 4px 24px rgba(0,0,0,0.2);
         }
         @media (prefers-reduced-motion: reduce) {
-          .hero-fade-1,.hero-fade-2,.hero-fade-3,.hero-fade-4 {
-            animation: none !important; opacity: 1 !important;
+          .hero-stagger-1,.hero-stagger-2,.hero-stagger-3,.hero-stagger-4,.hero-stagger-5 {
+            animation: none !important; opacity: 1 !important; filter: none !important; transform: none !important;
           }
           .hero-logos-track { animation: none !important; }
         }
@@ -121,12 +123,12 @@ export default function Hero() {
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
           {/* Headline */}
-          <h1 className="hero-fade-1" style={{ fontSize: 'clamp(36px, 4.5vw, 62px)', fontWeight: 900, lineHeight: 1.1, marginBottom: '20px', letterSpacing: '-1.5px', color: '#fff' }}>
+          <h1 className="hero-stagger-1" style={{ fontSize: 'clamp(36px, 4.5vw, 62px)', fontWeight: 900, lineHeight: 1.1, marginBottom: '20px', letterSpacing: '-1.5px', color: '#fff' }}>
             We build Brands That Scale &amp; Generate Revenue.
           </h1>
 
           {/* Subheading */}
-          <p className="hero-fade-2" style={{
+          <p className="hero-stagger-2" style={{
             fontSize: '18px', color: 'rgba(255,255,255,0.78)',
             maxWidth: '680px', lineHeight: 1.8, margin: '0 auto',
           }}>
@@ -136,7 +138,7 @@ export default function Hero() {
           </p>
 
           {/* Metrics */}
-          <div className="hero-fade-3 hero-metrics">
+          <div className="hero-stagger-3 hero-metrics">
             {metrics.map((m, i) => (
               <div key={m.label} style={{
                 textAlign: 'center', padding: '22px 16px',
@@ -153,7 +155,7 @@ export default function Hero() {
           </div>
 
           {/* CTAs */}
-          <div className="hero-fade-4" style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <div className="hero-stagger-4" style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link
               href="/contact-us"
               onMouseEnter={() => setPriHov(true)}
@@ -195,7 +197,7 @@ export default function Hero() {
         </div>
 
         {/* Scrolling Client Logos */}
-        <div style={{ width: '100%', marginTop: '72px', position: 'relative', zIndex: 1 }}>
+        <div className="hero-stagger-5" style={{ width: '100%', marginTop: '72px', position: 'relative', zIndex: 1 }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <div style={{
               textAlign: 'center', fontSize: '11px', fontWeight: 700,
