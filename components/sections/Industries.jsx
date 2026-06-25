@@ -71,7 +71,7 @@ export default function Industries() {
       <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
 
         <h2 className="ind-blur-fade" style={{ ...blurFade(0), fontSize: 'clamp(28px,3.5vw,48px)', fontWeight: 900, textAlign: 'center', marginBottom: '16px', letterSpacing: '-0.5px' }}>
-          <AuroraText>Providing Expertise Across a Range of Industries</AuroraText>
+          <span style={{ color: '#111827' }}>Providing Expertise </span><AuroraText>Across a Range of Industries</AuroraText>
         </h2>
 
         <p className="ind-blur-fade" style={{

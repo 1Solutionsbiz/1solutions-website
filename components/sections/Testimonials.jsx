@@ -161,7 +161,7 @@ export default function Testimonials() {
         {/* Header */}
         <div style={{ textAlign: 'center', padding: '0 40px', marginBottom: '44px' }}>
           <h2 style={{ fontSize: 'clamp(32px,3.5vw,48px)', fontWeight: 900, marginBottom: '16px' }}>
-            <AuroraText>What Our Clients Say</AuroraText>
+            <span style={{ color: '#111827' }}>What Our </span><AuroraText>Clients Say</AuroraText>
           </h2>
           <p style={{ fontSize: '16px', color: '#6b7280', lineHeight: 1.7, maxWidth: '600px', margin: '0 auto' }}>
             Real feedback from 500+ teams we&apos;ve partnered with across 25 countries.

@@ -57,7 +57,7 @@ export default function BlogPreview({ posts }) {
       <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
 
         <h2 style={{ fontSize: 'clamp(32px,3.5vw,48px)', fontWeight: 900, textAlign: 'center', marginBottom: '16px', letterSpacing: '-0.5px' }}>
-          <AuroraText>Latest Insights</AuroraText>
+          <span style={{ color: '#111827' }}>Latest </span><AuroraText>Insights</AuroraText>
         </h2>
         <p style={{
           textAlign: 'center', color: '#6b7280', fontSize: '16px',

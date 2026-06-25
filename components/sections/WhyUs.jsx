@@ -152,7 +152,7 @@ export default function WhyUs() {
           <div className="whyus-header">
             <div>
               <h2 style={{ fontSize: 'clamp(28px,3.5vw,48px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2 }}>
-                <AuroraText>Real Brand Stories To Inspire You</AuroraText>
+                <span style={{ color: '#111827' }}>Real Brand </span><AuroraText>Stories To Inspire You</AuroraText>
               </h2>
             </div>
             <div>
@@ -269,9 +269,9 @@ export default function WhyUs() {
               <h2 style={{
                 fontSize: 'clamp(28px, 3vw, 42px)', fontWeight: 900,
                 lineHeight: 1.12, letterSpacing: '-0.5px',
-                color: '#111', margin: '0 0 20px',
+                margin: '0 0 20px',
               }}>
-                Highlighting Our<br />Growth Story
+                <span style={{ color: '#111827' }}>Highlighting Our </span><AuroraText>Growth Story</AuroraText>
               </h2>
               <p style={{ fontSize: '15px', color: '#6b7280', lineHeight: 1.75, margin: 0 }}>
                 Here's what being a client-focused technology and marketing company has allowed us to accomplish.

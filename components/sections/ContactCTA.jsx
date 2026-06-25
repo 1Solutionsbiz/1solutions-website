@@ -1,3 +1,5 @@
+import AuroraText from '../ui/AuroraText'
+
 export default function ContactCTA() {
   return (
     <>
@@ -23,13 +25,8 @@ export default function ContactCTA() {
 
         {/* Left */}
         <div style={{ padding: '40px 30px 40px 40px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
-          <h2 style={{
-            fontSize: 'clamp(28px,3vw,48px)', fontWeight: 900, lineHeight: 1.2, margin: 0,
-            background: 'linear-gradient(90deg, #0F3460 0%, #F59E0B 45%, #7C3AED 100%)',
-            WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text', color: 'transparent',
-          }}>
-            Let&apos;s Build Something<br />Great Together
+          <h2 style={{ fontSize: 'clamp(28px,3vw,48px)', fontWeight: 900, lineHeight: 1.2, margin: 0 }}>
+            <span style={{ color: '#111827' }}>Let&apos;s Build </span><AuroraText>Something<br />Great Together</AuroraText>
           </h2>
 
           <p style={{ fontSize: '14px', color: '#6b7280', lineHeight: 1.6, margin: 0 }}>

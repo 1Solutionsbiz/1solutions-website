@@ -219,7 +219,7 @@ export default function Services() {
       <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
 
         <h2 style={{ fontSize: 'clamp(32px,3.5vw,48px)', fontWeight: 900, marginBottom: '20px', textAlign: 'center', letterSpacing: '-0.5px' }}>
-          <AuroraText>Our Core Technology Services</AuroraText>
+          <span style={{ color: '#111827' }}>Our Core </span><AuroraText>Technology Services</AuroraText>
         </h2>
         <p style={{
           fontSize: '16px', color: '#6b7280', textAlign: 'center',
