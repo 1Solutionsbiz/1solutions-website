@@ -27,40 +27,33 @@ function Custom404() {
         }
 
         .p4-root {
-          height: 100vh;
-          overflow: hidden;
+          min-height: 70vh;
           display: flex;
           flex-direction: column;
           font-family: 'DM Sans', sans-serif;
           background-image:
             url('https://pub-e68758f43067417dba612b2371819aa1.r2.dev/viktor-components/alien-spaceship.png'),
             linear-gradient(to top left, #F5F5F5, #F7F7F7);
-          background-position: center 40%, center;
-          background-size: contain, cover;
+          background-position: center 50%, center;
+          background-size: 55%, cover;
           background-repeat: no-repeat, no-repeat;
-          background-attachment: fixed, fixed;
           --text-main: #1a1a1a;
           --text-sec: #888888;
         }
 
         /* ── Main content ── */
         .p4-main {
-          flex: 1;
           display: flex;
-          align-items: center;
           justify-content: center;
-          padding: 0 20px;
-          overflow: hidden;
+          padding: 56px 20px 64px;
         }
         .p4-inner {
           max-width: 700px;
           width: 100%;
-          flex: 1;
           display: flex;
           flex-direction: column;
           align-items: center;
           text-align: center;
-          padding: 80px 0 40px;
         }
 
         /* ── Floating decoration icons ── */
@@ -133,7 +126,7 @@ function Custom404() {
             background-size: 90%, cover !important;
             background-position: center 45%, center !important;
           }
-          .p4-inner { padding-top: 60px !important; }
+          .p4-main { padding: 36px 16px 48px !important; }
           .p4-deco-cloud { font-size: 30px !important; top: -14px !important; left: -18px !important; }
           .p4-deco-heart { font-size: 24px !important; bottom: -12px !important; right: 10px !important; }
           .p4-cards { gap: 10px !important; }
@@ -213,7 +206,7 @@ function Custom404() {
               style={{
                 display: 'flex', flexDirection: 'column',
                 gap: '12px', maxWidth: '460px', width: '100%',
-                marginTop: 'auto',
+                marginTop: '32px',
               }}
             >
               {/* Card 1 — Main Page */}
@@ -258,7 +251,5 @@ function Custom404() {
     </>
   )
 }
-
-Custom404.getLayout = (page) => page
 
 export default Custom404
