@@ -27,33 +27,38 @@ function Custom404() {
         }
 
         .p4-root {
-          min-height: 70vh;
+          height: 100vh;
+          overflow: hidden;
           display: flex;
           flex-direction: column;
           font-family: 'DM Sans', sans-serif;
           background-image:
             url('https://pub-e68758f43067417dba612b2371819aa1.r2.dev/viktor-components/alien-spaceship.png'),
             linear-gradient(to top left, #F5F5F5, #F7F7F7);
-          background-position: center 50%, center;
-          background-size: 55%, cover;
+          background-position: center 52%, center;
+          background-size: 48%, cover;
           background-repeat: no-repeat, no-repeat;
+          background-attachment: fixed, fixed;
           --text-main: #1a1a1a;
           --text-sec: #888888;
         }
 
-        /* ── Main content ── */
         .p4-main {
+          flex: 1;
           display: flex;
           justify-content: center;
-          padding: 48px 20px 40px;
+          padding: 0 20px;
         }
+
         .p4-inner {
-          max-width: 700px;
+          max-width: 680px;
           width: 100%;
+          flex: 1;
           display: flex;
           flex-direction: column;
           align-items: center;
           text-align: center;
+          padding: 52px 0 40px;
         }
 
         /* ── Floating decoration icons ── */
@@ -71,22 +76,8 @@ function Custom404() {
           line-height: 1;
         }
 
-        /* ── Highlight tags ── */
-        .p4-tag {
-          display: inline-flex;
-          align-items: center;
-          background: #E0E2E7;
-          font-size: 12.5px;
-          font-weight: 600;
-          padding: 2px 12px;
-          border-radius: 6px;
-          color: #1a1a1a;
-          vertical-align: baseline;
-          margin: 0 2px;
-        }
-
         /* ── Nav cards ── */
-        .p4-cards > a { flex: 1; }
+        .p4-cards > a { flex: 1; min-width: 0; }
         .p4-card {
           background: white;
           border-radius: 18px;
@@ -100,7 +91,7 @@ function Custom404() {
           text-decoration: none;
           color: inherit;
           transition: transform 0.25s ease, box-shadow 0.25s ease;
-          gap: 16px;
+          gap: 14px;
         }
         .p4-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.08); }
         .p4-card:hover .p4-card-icon { transform: scale(1.05); }
@@ -123,59 +114,42 @@ function Custom404() {
 
         /* ── Responsive ── */
         @media (max-width: 768px) {
-          .p4-root  {
-            background-size: 90%, cover !important;
-            background-position: center 45%, center !important;
+          .p4-root {
+            background-size: 80%, cover !important;
+            background-position: center 55%, center !important;
           }
-          .p4-main { padding: 36px 16px 48px !important; }
+          .p4-inner { padding: 36px 0 28px !important; }
           .p4-deco-cloud { font-size: 30px !important; top: -14px !important; left: -18px !important; }
           .p4-deco-heart { font-size: 24px !important; bottom: -12px !important; right: 10px !important; }
-          .p4-cards { gap: 10px !important; flex-direction: column !important; }
+          .p4-cards { flex-direction: column !important; gap: 10px !important; }
           .p4-card  { padding: 14px 16px !important; }
           .p4-card-icon { width: 40px !important; height: 40px !important; }
         }
         @media (max-width: 480px) {
-          .p4-root { background-size: 100%, cover !important; }
+          .p4-root { background-size: 95%, cover !important; }
           .p4-deco-cloud { font-size: 24px !important; }
           .p4-deco-heart { font-size: 20px !important; }
         }
       `}</style>
 
       <div className="p4-root">
-
-        {/* ── Main ── */}
         <main className="p4-main">
           <div className="p4-inner">
 
-            <p style={{
-              fontSize: '15px', fontWeight: 400,
-              color: '#888888', margin: '0 0 12px',
-            }}>
+            {/* ── Top text ── */}
+            <p style={{ fontSize: '15px', fontWeight: 400, color: '#888888', margin: '0 0 12px' }}>
               Seems you&apos;ve wandered off...
             </p>
 
-            {/* Title with floating decorations */}
             <div style={{ position: 'relative', display: 'inline-block', marginBottom: '14px' }}>
               <span
                 className="p4-deco p4-deco-cloud"
-                style={{
-                  top: '-18px', left: '-24px',
-                  fontSize: '42px',
-                  animation: 'floatSlow 5s ease-in-out 0.3s infinite',
-                }}
-              >
-                cloud
-              </span>
+                style={{ top: '-18px', left: '-24px', fontSize: '42px', animation: 'floatSlow 5s ease-in-out 0.3s infinite' }}
+              >cloud</span>
               <span
                 className="p4-deco p4-deco-heart"
-                style={{
-                  bottom: '-15px', right: '20px',
-                  fontSize: '32px',
-                  animation: 'floatSlow 4.5s ease-in-out 1s infinite',
-                }}
-              >
-                favorite
-              </span>
+                style={{ bottom: '-15px', right: '20px', fontSize: '32px', animation: 'floatSlow 4.5s ease-in-out 1s infinite' }}
+              >favorite</span>
               <h1 style={{
                 fontSize: 'clamp(34px, 5vw, 52px)',
                 fontWeight: 500,
@@ -189,16 +163,15 @@ function Custom404() {
               </h1>
             </div>
 
-            {/* Navigation cards */}
+            {/* ── Cards pinned to bottom ── */}
             <div
               className="p4-cards"
               style={{
                 display: 'flex', flexDirection: 'row',
-                gap: '16px', width: '100%', maxWidth: '600px',
-                marginTop: '32px',
+                gap: '16px', width: '100%', maxWidth: '580px',
+                marginTop: 'auto',
               }}
             >
-              {/* Card 1 — Main Page */}
               <Link href="/" className="p4-card">
                 <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
                   <div className="p4-card-icon">
@@ -215,7 +188,6 @@ function Custom404() {
                 <span className="p4-card-arrow">›</span>
               </Link>
 
-              {/* Card 2 — Showcase */}
               <Link href="/portfolio" className="p4-card">
                 <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
                   <div className="p4-card-icon">
@@ -235,10 +207,11 @@ function Custom404() {
 
           </div>
         </main>
-
       </div>
     </>
   )
 }
+
+Custom404.getLayout = (page) => page
 
 export default Custom404
