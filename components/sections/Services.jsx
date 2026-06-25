@@ -298,7 +298,7 @@ export default function Services() {
             <div style={{
               position: 'relative', zIndex: 1,
               borderRadius: '24px', overflow: 'hidden',
-              background: current.grad,
+              background: 'transparent',
               minHeight: '460px',
             }}>
               <img
