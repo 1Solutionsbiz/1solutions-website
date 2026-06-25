@@ -1,11 +1,8 @@
 'use client'
-import { useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 
 export default function Custom404() {
-  const [mobileOpen, setMobileOpen] = useState(false)
-
   return (
     <>
       <Head>
@@ -46,139 +43,6 @@ export default function Custom404() {
           --text-sec: #888888;
         }
 
-        /* ── Navbar ── */
-        .p4-nav-wrap { width: 100%; }
-        .p4-nav {
-          max-width: 1100px;
-          margin: 0 auto;
-          padding: 28px 40px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          position: relative;
-          box-sizing: border-box;
-        }
-        .p4-nav::after {
-          content: '';
-          position: absolute;
-          bottom: 0; left: 40px; right: 40px;
-          height: 1px;
-          background-image: linear-gradient(to right, rgba(0,0,0,0.08) 2px, transparent 2px);
-          background-size: 6px 1px;
-          background-repeat: repeat-x;
-        }
-        .p4-logo {
-          display: flex;
-          align-items: center;
-          gap: 9px;
-          text-decoration: none;
-          color: #111;
-          font-size: 20px;
-          font-weight: 700;
-          letter-spacing: -0.3px;
-        }
-        .p4-navlinks {
-          display: flex;
-          align-items: center;
-          gap: 36px;
-          list-style: none;
-          margin: 0; padding: 0;
-        }
-        .p4-navlinks a {
-          font-size: 14px;
-          font-weight: 400;
-          opacity: 0.65;
-          color: #1a1a1a;
-          text-decoration: none;
-          transition: opacity 0.2s;
-        }
-        .p4-navlinks a:hover { opacity: 1; }
-        .p4-cta {
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-          background: linear-gradient(180deg, #2c2c2c 0%, #111111 100%);
-          color: white;
-          font-family: 'DM Sans', sans-serif;
-          font-size: 13px;
-          font-weight: 500;
-          border-radius: 40px;
-          padding: 5px 16px 5px 5px;
-          border: none;
-          cursor: pointer;
-          box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-          transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
-          text-decoration: none;
-          white-space: nowrap;
-        }
-        .p4-cta:hover {
-          transform: translateY(-1px);
-          box-shadow: 0 6px 22px rgba(0,0,0,0.22);
-          filter: brightness(1.1);
-        }
-        .p4-cta-icon {
-          width: 24px; height: 24px;
-          border-radius: 50%;
-          background: white;
-          display: flex; align-items: center; justify-content: center;
-          flex-shrink: 0;
-        }
-
-        /* ── Hamburger ── */
-        .p4-burger {
-          display: none;
-          flex-direction: column;
-          justify-content: center;
-          gap: 5px;
-          cursor: pointer;
-          background: none;
-          border: none;
-          padding: 4px;
-        }
-        .p4-burger span {
-          display: block;
-          width: 24px; height: 2px;
-          background: #111;
-          border-radius: 2px;
-          transition: transform 0.3s, opacity 0.3s;
-          transform-origin: center;
-        }
-        .p4-burger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-        .p4-burger.active span:nth-child(2) { opacity: 0; }
-        .p4-burger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-        /* ── Mobile nav overlay ── */
-        .p4-mnav {
-          position: fixed;
-          inset: 0;
-          background: white;
-          z-index: 300;
-          flex-direction: column;
-          padding: 28px 32px;
-          transform: translateX(100%);
-          transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-          display: none;
-          box-sizing: border-box;
-        }
-        .p4-mnav.open { transform: translateX(0); }
-        .p4-mnav-links {
-          list-style: none;
-          margin: 48px 0 0; padding: 0;
-          display: flex; flex-direction: column;
-        }
-        .p4-mnav-links li { border-bottom: 1px solid rgba(0,0,0,0.07); }
-        .p4-mnav-links a {
-          display: block;
-          font-size: 38px;
-          font-weight: 800;
-          letter-spacing: -1.5px;
-          color: #111;
-          text-decoration: none;
-          padding: 24px 0;
-          transition: opacity 0.2s;
-        }
-        .p4-mnav-links a:hover { opacity: 0.6; }
-
         /* ── Main content ── */
         .p4-main {
           flex: 1;
@@ -196,7 +60,7 @@ export default function Custom404() {
           flex-direction: column;
           align-items: center;
           text-align: center;
-          padding: 20px 0 30px;
+          padding: 80px 0 40px;
         }
 
         /* ── Floating decoration icons ── */
@@ -265,15 +129,11 @@ export default function Custom404() {
 
         /* ── Responsive ── */
         @media (max-width: 768px) {
-          .p4-navlinks, .p4-cta-desk { display: none !important; }
-          .p4-burger { display: flex; }
-          .p4-mnav  { display: flex; }
-          .p4-nav   { padding: 20px !important; }
-          .p4-nav::after { left: 20px !important; right: 20px !important; }
           .p4-root  {
             background-size: 90%, cover !important;
             background-position: center 45%, center !important;
           }
+          .p4-inner { padding-top: 60px !important; }
           .p4-deco-cloud { font-size: 30px !important; top: -14px !important; left: -18px !important; }
           .p4-deco-heart { font-size: 24px !important; bottom: -12px !important; right: 10px !important; }
           .p4-cards { gap: 10px !important; }
@@ -288,83 +148,6 @@ export default function Custom404() {
       `}</style>
 
       <div className="p4-root">
-
-        {/* ── Mobile nav overlay ── */}
-        <div className={`p4-mnav${mobileOpen ? ' open' : ''}`}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <a href="/" className="p4-logo">
-              <img
-                src="https://pub-f170a2592d2c4a1485466404c36807be.r2.dev/Tests/logoipsum-415.svg"
-                alt="Logo"
-                style={{ height: 28, filter: 'brightness(0)' }}
-              />
-              nexto.
-            </a>
-            <button
-              onClick={() => setMobileOpen(false)}
-              style={{
-                background: 'none', border: 'none', cursor: 'pointer',
-                fontSize: '22px', color: '#111', padding: '4px',
-              }}
-              aria-label="Close menu"
-            >
-              ✕
-            </button>
-          </div>
-          <ul className="p4-mnav-links">
-            {['Our Team', 'Solutions', 'Showcase', 'News'].map(l => (
-              <li key={l}><a href="#">{l}</a></li>
-            ))}
-          </ul>
-          <div style={{ marginTop: '32px' }}>
-            <a href="#" className="p4-cta">
-              <span className="p4-cta-icon" style={{ width: 32, height: 32 }}>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                  <path d="M2.5 7H11.5M8 3.5L11.5 7L8 10.5" stroke="#111" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </span>
-              Let&apos;s Connect
-            </a>
-          </div>
-        </div>
-
-        {/* ── Navbar ── */}
-        <div className="p4-nav-wrap">
-          <nav className="p4-nav">
-            <a href="/" className="p4-logo">
-              <img
-                src="https://pub-f170a2592d2c4a1485466404c36807be.r2.dev/Tests/logoipsum-415.svg"
-                alt="Logo"
-                style={{ height: 28, filter: 'brightness(0)' }}
-              />
-              nexto.
-            </a>
-
-            <ul className="p4-navlinks">
-              <li><a href="#">Our Team</a></li>
-              <li><a href="#">Solutions ⌄</a></li>
-              <li><a href="#">Showcase</a></li>
-              <li><a href="#">News</a></li>
-            </ul>
-
-            <a href="#" className="p4-cta p4-cta-desk">
-              <span className="p4-cta-icon">
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                  <path d="M2 6H10M7 3L10 6L7 9" stroke="#111" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </span>
-              Let&apos;s Connect
-            </a>
-
-            <button
-              className={`p4-burger${mobileOpen ? ' active' : ''}`}
-              onClick={() => setMobileOpen(v => !v)}
-              aria-label="Toggle menu"
-            >
-              <span /><span /><span />
-            </button>
-          </nav>
-        </div>
 
         {/* ── Main ── */}
         <main className="p4-main">
