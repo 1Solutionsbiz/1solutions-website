@@ -264,7 +264,7 @@ export default function HireShopifyDeveloper() {
           .sh-btn-primary:hover{background:transparent;color:#fff;transform:translateY(-2px)}
           .sh-hero-right{position:relative;height:420px}
           .sh-person-card{position:absolute;width:320px;height:380px;top:10px;left:50%;transform:translateX(-15%);border-radius:16px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.55)}
-          .sh-person-img{width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block}
+          .sh-person-img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block}
           .sh-person-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent 20%,rgba(7,16,42,.92) 100%);padding:40px 20px 18px}
           .sh-person-label{color:#fff;font-size:15px;font-weight:700;margin-bottom:3px}
           .sh-person-sublabel{color:rgba(255,255,255,.60);font-size:13px}
@@ -468,7 +468,7 @@ export default function HireShopifyDeveloper() {
             <div className="sh-hero-right" aria-hidden="true">
               <div className="sh-person-card">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/office.png" alt="1Solutions Shopify Developers" className="sh-person-img" />
+                <img src="/images/hire-shopify-developer-hero.jpg" alt="1Solutions Shopify Developer" className="sh-person-img" />
                 <div className="sh-person-overlay">
                   <div className="sh-person-label">Expert Shopify Developers</div>
                   <div className="sh-person-sublabel">1Solutions · 15+ Years Experience</div>
