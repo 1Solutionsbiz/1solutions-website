@@ -283,16 +283,15 @@ export default function Hero() {
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 2 }}>
 
           <h1 className="hero-stagger-1" style={{ fontSize: 'clamp(36px, 4.5vw, 62px)', fontWeight: 900, lineHeight: 1.1, marginBottom: '20px', letterSpacing: '-1.5px', color: '#fff' }}>
-            We build Brands That Scale &amp; Generate Revenue.
+            We Engineer Products.<br />We Drive Growth.
           </h1>
 
           <p className="hero-stagger-2" style={{
             fontSize: '18px', color: 'rgba(255,255,255,0.78)',
             maxWidth: '680px', lineHeight: 1.8, margin: '0 auto',
           }}>
-            Tired of juggling multiple agencies? We combine strategy, design,
-            development, and marketing into one powerful system — faster launches,
-            lower costs, measurable growth.
+            From custom web &amp; mobile platforms to performance marketing and SEO —
+            one team that builds your technology and scales your revenue.
           </p>
 
           <div className="hero-stagger-3 hero-metrics">
