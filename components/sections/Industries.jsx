@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { useState, useEffect, useRef } from 'react'
+import AuroraText from '../ui/AuroraText'
 
 const industries = [
   { name: 'Education', href: '/elearning-software-development-services', img: '/images/industry-education.jpg', items: ['Student Information Management System','E-Learning Portal System','Custom LMS Development','Campus Administration & Operations System'] },
@@ -69,15 +70,8 @@ export default function Industries() {
     <section ref={sectionRef} id="industries" className="ind-section" style={{ background: '#fff' }}>
       <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
 
-        <h2 className="ind-blur-fade" style={{
-          ...blurFade(0),
-          fontSize: 'clamp(28px,3.5vw,48px)', fontWeight: 900,
-          textAlign: 'center', marginBottom: '16px', letterSpacing: '-0.5px',
-          background: 'linear-gradient(90deg, #0F3460 0%, #F59E0B 45%, #7C3AED 100%)',
-          WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-          backgroundClip: 'text', color: 'transparent',
-        }}>
-          Providing Expertise Across a Range of Industries
+        <h2 className="ind-blur-fade" style={{ ...blurFade(0), fontSize: 'clamp(28px,3.5vw,48px)', fontWeight: 900, textAlign: 'center', marginBottom: '16px', letterSpacing: '-0.5px' }}>
+          <AuroraText>Providing Expertise Across a Range of Industries</AuroraText>
         </h2>
 
         <p className="ind-blur-fade" style={{

@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { useState, useEffect, useRef } from 'react'
+import AuroraText from '../ui/AuroraText'
 
 const metrics = [
   { value: '500+', label: 'Projects Delivered' },
@@ -120,21 +121,8 @@ export default function Hero() {
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
           {/* Headline */}
-          <h1 className="hero-fade-1" style={{
-            fontSize: 'clamp(36px, 4.5vw, 62px)',
-            fontWeight: 900, lineHeight: 1.1,
-            marginBottom: '20px', letterSpacing: '-1.5px',
-            color: '#fff',
-          }}>
-            We build{' '}
-            <span style={{
-              background: 'linear-gradient(90deg, #FE9700 0%, #FFD166 100%)',
-              WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-            }}>
-              Brands That Scale
-            </span>
-            {' '}&amp; Generate Revenue.
+          <h1 className="hero-fade-1" style={{ fontSize: 'clamp(36px, 4.5vw, 62px)', fontWeight: 900, lineHeight: 1.1, marginBottom: '20px', letterSpacing: '-1.5px' }}>
+            <AuroraText>We build Brands That Scale &amp; Generate Revenue.</AuroraText>
           </h1>
 
           {/* Subheading */}

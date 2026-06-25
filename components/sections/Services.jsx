@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
+import AuroraText from '../ui/AuroraText'
 
 const services = [
   {
@@ -185,14 +186,8 @@ export default function Services() {
 
       <div style={{ maxWidth: '1440px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
-        <h2 style={{
-          fontSize: 'clamp(32px,3.5vw,48px)', fontWeight: 900, marginBottom: '20px',
-          textAlign: 'center', letterSpacing: '-0.5px',
-          background: 'linear-gradient(90deg, #0F3460 0%, #F59E0B 45%, #7C3AED 100%)',
-          WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-          backgroundClip: 'text', color: 'transparent',
-        }}>
-          Our Core Technology Services
+        <h2 style={{ fontSize: 'clamp(32px,3.5vw,48px)', fontWeight: 900, marginBottom: '20px', textAlign: 'center', letterSpacing: '-0.5px' }}>
+          <AuroraText>Our Core Technology Services</AuroraText>
         </h2>
         <p style={{
           fontSize: '16px', color: '#6b7280', textAlign: 'center',

@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
+import AuroraText from '../ui/AuroraText'
 
 const stories = [
   {
@@ -149,14 +150,8 @@ export default function WhyUs() {
           {/* Header: two-column */}
           <div className="whyus-header">
             <div>
-              <h2 style={{
-                fontSize: 'clamp(28px,3.5vw,48px)', fontWeight: 900, margin: '0 0 16px',
-                lineHeight: 1.2,
-                background: 'linear-gradient(90deg, #0F3460 0%, #F59E0B 45%, #7C3AED 100%)',
-                WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text', color: 'transparent',
-              }}>
-                Real Brand Stories To Inspire You
+              <h2 style={{ fontSize: 'clamp(28px,3.5vw,48px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2 }}>
+                <AuroraText>Real Brand Stories To Inspire You</AuroraText>
               </h2>
             </div>
             <div>
@@ -262,14 +257,8 @@ export default function WhyUs() {
         <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
 
           <div className="whyus-growth-header">
-            <h2 style={{
-              fontSize: 'clamp(36px,4vw,56px)', fontWeight: 900, lineHeight: 1.1,
-              letterSpacing: '-0.5px', margin: 0,
-              background: 'linear-gradient(90deg, #0F3460 0%, #F59E0B 45%, #7C3AED 100%)',
-              WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text', color: 'transparent',
-            }}>
-              Highlighting Our Growth Story
+            <h2 style={{ fontSize: 'clamp(36px,4vw,56px)', fontWeight: 900, lineHeight: 1.1, letterSpacing: '-0.5px', margin: 0 }}>
+              <AuroraText>Highlighting Our Growth Story</AuroraText>
             </h2>
             <p style={{ fontSize: '16px', lineHeight: 1.8, color: '#6b7280', letterSpacing: '0.3px', margin: '8px 0 0', maxWidth: '500px' }}>
               With collective team efforts and successful product engineering, we have grown our ecosystem, made it AI-ready, and worthwhile!

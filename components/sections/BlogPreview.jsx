@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import AuroraText from '../ui/AuroraText'
 
 const staticPosts = [
   { mins: '9',  title: 'How Much Does It Cost to Build a Custom Real Estate App?' },
@@ -105,14 +106,8 @@ export default function BlogPreview({ posts }) {
     <section id="insights" className="blog-prev-section" style={{ background: '#fafafa' }}>
       <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
 
-        <h2 style={{
-          fontSize: 'clamp(32px,3.5vw,48px)', fontWeight: 900,
-          textAlign: 'center', marginBottom: '16px', letterSpacing: '-0.5px',
-          background: 'linear-gradient(90deg, #0F3460 0%, #F59E0B 45%, #7C3AED 100%)',
-          WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-          backgroundClip: 'text', color: 'transparent',
-        }}>
-          Latest Insights
+        <h2 style={{ fontSize: 'clamp(32px,3.5vw,48px)', fontWeight: 900, textAlign: 'center', marginBottom: '16px', letterSpacing: '-0.5px' }}>
+          <AuroraText>Latest Insights</AuroraText>
         </h2>
         <p style={{
           textAlign: 'center', color: '#6b7280', fontSize: '16px',
