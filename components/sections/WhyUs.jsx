@@ -71,27 +71,9 @@ const TAG_COLORS = [
 ]
 
 const growthStats = [
-  { value: '89%', text: 'Growth in revenue, driving business success.' },
-  { value: '350+', text: 'Successful projects delivered worldwide.' },
-  { value: '150+', text: 'Strong team of skilled professionals.' },
-  { value: '200+', text: 'New customers trusting our solutions.' },
-  { value: '50+', text: 'Expertise in cutting-edge technologies.' },
-]
-
-const statImages = [
-  '/images/bg-1.jpg',
-  '/images/service-digital-transformation.png',
-  '/images/office.png',
-  '/images/Partner-with-us.jpg',
-  '/images/bg-2.jpg',
-]
-
-const statGridPos = [
-  { gridColumn: '1 / 3', gridRow: '1' },
-  { gridColumn: '3', gridRow: '1' },
-  { gridColumn: '1', gridRow: '2' },
-  { gridColumn: '2', gridRow: '2' },
-  { gridColumn: '3', gridRow: '2' },
+  { value: '350+', label: 'Successful projects delivered worldwide',   image: '/images/Partner-with-us.jpg', color: null },
+  { value: '150+', label: 'Skilled professionals in our team',          image: '/images/office.png',          color: null },
+  { value: '200+', label: 'Satisfied clients across 25+ countries',     image: null,                          color: '#114171' },
 ]
 
 const navBtnStyle = {
@@ -138,28 +120,22 @@ export default function WhyUs() {
         .whyus-story-card { display: grid; grid-template-columns: 40% 60%; align-items: center; border: 2px solid #FE9700; border-radius: 40px; overflow: hidden; height: 550px; background: #FFFBF7; }
         .whyus-story-left { display: flex; flex-direction: column; gap: 12px; justify-content: flex-start; padding: 40px 40px 40px 60px; margin: 20px 0 20px 30px; background: #fff; border-radius: 24px; overflow-y: auto; height: calc(100% - 40px); box-sizing: border-box; }
         .whyus-story-right { margin: 20px; border-radius: 24px; overflow: hidden; height: calc(100% - 40px); flex-shrink: 0; position: relative; }
-        .whyus-growth-sec { padding: 100px 40px; }
-        .whyus-growth-header { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: flex-start; }
-        .whyus-stats-grid { display: grid; grid-template-columns: repeat(3,1fr); grid-template-rows: auto auto; gap: 32px; margin-top: 60px; padding-top: 40px; border-top: 2px solid rgba(15,52,96,0.12); }
+        .whyus-growth-sec { padding: 80px 40px; }
+        .whyus-facts-layout { display: grid; grid-template-columns: 280px 1fr; gap: 48px; align-items: flex-start; }
+        .whyus-stats-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
         @media (max-width: 900px) {
           .whyus-sec { padding: 56px 24px; }
           .whyus-header { grid-template-columns: 1fr; gap: 24px; margin-bottom: 36px; }
           .whyus-story-card { grid-template-columns: 1fr; height: auto; border-radius: 24px; }
           .whyus-story-left { margin: 16px; padding: 24px; height: auto; overflow-y: visible; }
           .whyus-story-right { height: 260px; }
-          .whyus-growth-sec { padding: 64px 24px; }
-          .whyus-growth-header { grid-template-columns: 1fr; gap: 16px; }
-          .whyus-stats-grid { gap: 20px; }
-          .whyus-stat-item { grid-column: auto !important; grid-row: auto !important; min-height: auto !important; padding: 32px 28px !important; }
+          .whyus-growth-sec { padding: 56px 24px; }
+          .whyus-facts-layout { grid-template-columns: 1fr; gap: 32px; }
+          .whyus-stats-grid { gap: 12px; }
         }
         @media (max-width: 600px) {
           .whyus-sec { padding: 48px 16px; }
           .whyus-story-right { height: 200px; }
-          .whyus-stats-grid { grid-template-columns: 1fr 1fr; }
-          .whyus-stat-item { padding: 24px 20px !important; }
-          .whyus-stat-value { font-size: 44px !important; }
-        }
-        @media (max-width: 400px) {
           .whyus-stats-grid { grid-template-columns: 1fr; }
         }
         @media (prefers-reduced-motion: reduce) {
@@ -280,72 +256,74 @@ export default function WhyUs() {
       {/* ── Growth Story ── */}
       <section ref={growthRef} id="growth-story" className="whyus-growth-sec" style={{ background: '#fff' }}>
         <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
+          <div className="whyus-facts-layout">
 
-          <div className="whyus-growth-header">
-            <h2 style={{ fontSize: 'clamp(36px,4vw,56px)', fontWeight: 900, lineHeight: 1.1, letterSpacing: '-0.5px', margin: 0 }}>
-              <AuroraText>Highlighting Our Growth Story</AuroraText>
-            </h2>
-            <p style={{ fontSize: '16px', lineHeight: 1.8, color: '#6b7280', letterSpacing: '0.3px', margin: '8px 0 0', maxWidth: '500px' }}>
-              With collective team efforts and successful product engineering, we have grown our ecosystem, made it AI-ready, and worthwhile!
-            </p>
-          </div>
+            {/* Left: eyebrow + title + desc */}
+            <div style={blurFade(0)}>
+              <p style={{
+                fontSize: '12px', fontWeight: 600, letterSpacing: '1.8px',
+                textTransform: 'uppercase', color: '#888', margin: '0 0 16px',
+              }}>
+                FAST FACTS
+              </p>
+              <h2 style={{
+                fontSize: 'clamp(28px, 3vw, 42px)', fontWeight: 900,
+                lineHeight: 1.12, letterSpacing: '-0.5px',
+                color: '#111', margin: '0 0 20px',
+              }}>
+                Highlighting Our<br />Growth Story
+              </h2>
+              <p style={{ fontSize: '15px', color: '#6b7280', lineHeight: 1.75, margin: 0 }}>
+                Here's what being a client-focused technology and marketing company has allowed us to accomplish.
+              </p>
+            </div>
 
-          <div className="whyus-stats-grid">
-            {growthStats.map((s, i) => {
-              const isLarge = i === 0 || i === 4
-              return (
-                /* Outer: grid position + blur-fade entrance */
-                <div key={i} className="whyus-stat-item" style={{ ...statGridPos[i], ...blurFade(0.1 + i * 0.13) }}>
-                  {/* Inner: image bg + overlay + hover */}
-                  <div
-                    style={{
-                      position: 'relative', overflow: 'hidden',
-                      borderRadius: '20px',
-                      minHeight: isLarge ? '240px' : '180px',
-                      display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
-                      boxSizing: 'border-box',
-                      transition: 'transform 0.3s, box-shadow 0.3s',
-                      cursor: 'default',
-                    }}
-                    onMouseEnter={e => {
-                      e.currentTarget.style.transform = isLarge ? 'translateY(-8px)' : 'translateY(-4px) scale(1.01)'
-                      e.currentTarget.style.boxShadow = '0 24px 56px rgba(0,0,0,0.28)'
-                    }}
-                    onMouseLeave={e => {
-                      e.currentTarget.style.transform = 'none'
-                      e.currentTarget.style.boxShadow = 'none'
-                    }}
-                  >
-                    {/* Background image */}
-                    <img
-                      src={statImages[i]} alt="" aria-hidden="true"
-                      style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }}
-                    />
-                    {/* Dark gradient overlay */}
-                    <div style={{
-                      position: 'absolute', inset: 0,
-                      background: 'linear-gradient(160deg, rgba(8,20,55,0.72) 0%, rgba(15,52,96,0.88) 100%)',
-                      zIndex: 1,
-                    }} />
-                    {/* Content */}
-                    <div style={{ position: 'relative', zIndex: 2, padding: isLarge ? '48px 56px' : '32px 36px' }}>
-                      <div className="whyus-stat-value" style={{
-                        fontSize: isLarge ? '68px' : '52px', fontWeight: 900, color: '#FE9700',
-                        marginBottom: '12px', lineHeight: 1, letterSpacing: '-1px',
+            {/* Right: 3 stat cards */}
+            <div className="whyus-stats-grid">
+              {growthStats.map((s, i) => (
+                <div key={i} style={{
+                  border: '1px solid rgba(0,0,0,0.1)',
+                  borderRadius: '16px',
+                  padding: '36px 24px 32px',
+                  display: 'flex', flexDirection: 'column', alignItems: 'center',
+                  background: '#fff', textAlign: 'center',
+                  ...blurFade(0.15 + i * 0.15),
+                }}>
+                  {/* Circle */}
+                  <div style={{
+                    width: '160px', height: '160px', borderRadius: '50%',
+                    overflow: 'hidden', marginBottom: '32px', flexShrink: 0,
+                  }}>
+                    {s.image ? (
+                      <img src={s.image} alt="" aria-hidden="true"
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                    ) : (
+                      <div style={{
+                        width: '100%', height: '100%', background: s.color,
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
                       }}>
-                        {s.value}
+                        <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                          <polyline points="16 7 22 7 22 13" />
+                        </svg>
                       </div>
-                      <p style={{
-                        fontSize: isLarge ? '17px' : '14px', color: 'rgba(255,255,255,0.85)',
-                        lineHeight: 1.7, margin: 0, fontWeight: 500,
-                      }}>
-                        {s.text}
-                      </p>
-                    </div>
+                    )}
                   </div>
+                  {/* Value */}
+                  <div style={{
+                    fontSize: '44px', fontWeight: 700, color: '#111',
+                    letterSpacing: '-1px', lineHeight: 1, marginBottom: '14px',
+                  }}>
+                    {s.value}
+                  </div>
+                  {/* Label */}
+                  <p style={{ fontSize: '14px', color: '#6b7280', lineHeight: 1.6, margin: 0 }}>
+                    {s.label}
+                  </p>
                 </div>
-              )
-            })}
+              ))}
+            </div>
+
           </div>
         </div>
       </section>
