@@ -25,144 +25,79 @@ const clientLogos = [
 
 const doubled = [...clientLogos, ...clientLogos]
 
-const CHAR_RAMP = " .`'\",:;Il!i><~+_-?][}{z1)(|/tfjrxnuvczXYUJCLTQ0OZmwqpdbkhaos*#MW&8%B@$"
-const PALETTE   = ['#a78bfa', '#ec8499', '#67e8f9', '#fbbf24']
+// Aurora blob definitions — colors tuned for dark navy background
+const BLOBS = [
+  { color: 'rgba(124,58,237,0.55)',  x: 20, y: 30, size: 65 },
+  { color: 'rgba(236,72,153,0.45)',  x: 80, y: 25, size: 55 },
+  { color: 'rgba(6,182,212,0.40)',   x: 50, y: 80, size: 55 },
+  { color: 'rgba(254,151,0,0.30)',   x: 65, y: 50, size: 48 },
+]
 
 export default function Hero() {
   const [priHov, setPriHov] = useState(false)
   const [secHov, setSecHov] = useState(false)
-  const heroRef   = useRef(null)
-  const canvasRef = useRef(null)
+  const blobRefs = useRef([])
 
-  // ASCII field background
+  // Aurora lava-lamp simulation — direct DOM mutations, no state
   useEffect(() => {
-    const canvas = canvasRef.current
-    const host   = heroRef.current
-    if (!canvas || !host) return
-    const ctx = canvas.getContext('2d')
-    if (!ctx) return
+    const REPULSION = 0.18
 
-    let raf       = 0
-    let lastFrame = 0
-    let cols = 0, rows = 0, cellW = 0, cellH = 0
-    let baseField = new Float32Array(0)
-    const mouse   = { x: -9999, y: -9999 }
+    const state = BLOBS.map((b) => ({
+      x: b.x, y: b.y,
+      homeX: b.x, homeY: b.y,
+      size: b.size,
+      vx: (Math.random() - 0.5) * 0.06,
+      vy: (Math.random() - 0.5) * 0.06,
+    }))
 
-    const FONT_SIZE        = 12
-    const FONT_FAMILY      = 'JetBrains Mono, ui-monospace, monospace'
-    const BASE_OPACITY     = 0.15
-    const SPOTLIGHT_OPACITY = 0.88
-    const SPOTLIGHT_RADIUS = 10
-    const RIPPLE_STRENGTH  = 1.4
-    const RIPPLE_RADIUS    = 6
-    const FRAME_MS         = 50
+    let raf = 0
+    const tick = () => {
+      for (let i = 0; i < state.length; i++) {
+        const b = state[i]
 
-    const seed = () => {
-      baseField = new Float32Array(cols * rows)
-      for (let y = 0; y < rows; y++) {
-        for (let x = 0; x < cols; x++) {
-          const nx = (x / cols) * 2 - 1
-          const ny = (y / rows) * 2 - 1
-          const r  = Math.sqrt(nx * nx + ny * ny)
-          const stripes = 0.5 + 0.5 * Math.sin(nx * 6 + ny * 2)
-          const radial  = 1 - Math.min(1, r * 1.2)
-          baseField[y * cols + x] = 0.25 * stripes + 0.55 * radial
-        }
-      }
-    }
+        b.vx *= 0.965
+        b.vy *= 0.965
 
-    const resize = () => {
-      const rect = host.getBoundingClientRect()
-      if (rect.width === 0 || rect.height === 0) return
-      const dpr = Math.min(window.devicePixelRatio || 1, 2)
+        // spring toward home
+        b.vx += (b.homeX - b.x) * 0.0009
+        b.vy += (b.homeY - b.y) * 0.0009
 
-      canvas.width  = Math.max(1, Math.floor(rect.width  * dpr))
-      canvas.height = Math.max(1, Math.floor(rect.height * dpr))
-
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
-      ctx.font          = `${FONT_SIZE}px ${FONT_FAMILY}`
-      ctx.textBaseline  = 'top'
-
-      const measured = ctx.measureText('M').width || FONT_SIZE * 0.6
-      cellW = measured
-      cellH = FONT_SIZE * 1.15
-
-      cols = Math.max(1, Math.floor(rect.width  / cellW))
-      rows = Math.max(1, Math.floor(rect.height / cellH))
-      seed()
-    }
-
-    const render = (t) => {
-      if (t - lastFrame < FRAME_MS) { raf = requestAnimationFrame(render); return }
-      lastFrame = t
-      if (cols === 0 || rows === 0) { resize(); raf = requestAnimationFrame(render); return }
-
-      const time = t * 0.001
-      const rect = canvas.getBoundingClientRect()
-      const cx   = (mouse.x - rect.left) / cellW
-      const cy   = (mouse.y - rect.top)  / cellH
-      const margin = 24
-      const mouseInside =
-        mouse.x >= rect.left - margin && mouse.x <= rect.right  + margin &&
-        mouse.y >= rect.top  - margin && mouse.y <= rect.bottom + margin
-
-      ctx.clearRect(0, 0, rect.width, rect.height)
-
-      const rampMax = CHAR_RAMP.length - 1
-      const spotR2  = SPOTLIGHT_RADIUS * SPOTLIGHT_RADIUS * 2
-
-      for (let y = 0; y < rows; y++) {
-        for (let x = 0; x < cols; x++) {
-          const base = baseField[y * cols + x]
-          const wave = 0.15 * Math.sin(x * 0.18 + time * 1.4) * Math.cos(y * 0.22 - time * 1.1)
-
-          const dx = x - cx
-          const dy = (y - cy) * 1.8
-          const d2 = dx * dx + dy * dy
-          const d  = Math.sqrt(d2)
-
-          const ripple = mouseInside
-            ? RIPPLE_STRENGTH * Math.exp(-d2 / 80) -
-              0.6 * Math.exp(-(((d - RIPPLE_RADIUS) * (d - RIPPLE_RADIUS)) / 30))
-            : 0
-
-          const v  = Math.max(0, Math.min(1, base + wave + ripple))
-          const ch = CHAR_RAMP[Math.floor(v * rampMax)]
-          if (ch === ' ') continue
-
-          let alpha = BASE_OPACITY
-          if (mouseInside) {
-            const spot = Math.exp(-d2 / spotR2)
-            alpha = BASE_OPACITY + (SPOTLIGHT_OPACITY - BASE_OPACITY) * spot
-            alpha = Math.max(0, Math.min(1, alpha))
+        // repel from other blobs
+        for (let j = 0; j < state.length; j++) {
+          if (i === j) continue
+          const o = state[j]
+          const dx = b.x - o.x
+          const dy = b.y - o.y
+          const d = Math.hypot(dx, dy)
+          const minDist = (b.size + o.size) * 0.4
+          if (d < minDist && d > 0.001) {
+            const force = ((minDist - d) / minDist) * REPULSION
+            b.vx += (dx / d) * force
+            b.vy += (dy / d) * force
           }
-          if (alpha <= 0.01) continue
-
-          const huePos = (x * 0.1 + y * 0.07 + time * 0.12) % PALETTE.length
-          const color  = PALETTE[Math.floor(Math.abs(huePos)) % PALETTE.length]
-
-          ctx.globalAlpha = alpha
-          ctx.fillStyle   = color
-          ctx.fillText(ch, x * cellW, y * cellH)
         }
+
+        // brownian jitter
+        b.vx += (Math.random() - 0.5) * 0.012
+        b.vy += (Math.random() - 0.5) * 0.012
+
+        b.x += b.vx
+        b.y += b.vy
+
+        // soft walls
+        if (b.x < -10) { b.x = -10; b.vx =  Math.abs(b.vx) * 0.6 }
+        if (b.x > 110)  { b.x =  110; b.vx = -Math.abs(b.vx) * 0.6 }
+        if (b.y < -10) { b.y = -10; b.vy =  Math.abs(b.vy) * 0.6 }
+        if (b.y > 110)  { b.y =  110; b.vy = -Math.abs(b.vy) * 0.6 }
+
+        const el = blobRefs.current[i]
+        if (el) { el.style.left = `${b.x}%`; el.style.top = `${b.y}%` }
       }
-      ctx.globalAlpha = 1
-      raf = requestAnimationFrame(render)
+      raf = requestAnimationFrame(tick)
     }
 
-    const onMove = (e) => { mouse.x = e.clientX; mouse.y = e.clientY }
-
-    const ro = new ResizeObserver(resize)
-    ro.observe(host)
-    resize()
-    window.addEventListener('mousemove', onMove, { passive: true })
-    raf = requestAnimationFrame(render)
-
-    return () => {
-      cancelAnimationFrame(raf)
-      ro.disconnect()
-      window.removeEventListener('mousemove', onMove)
-    }
+    raf = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(raf)
   }, [])
 
   return (
@@ -210,7 +145,7 @@ export default function Hero() {
         }
       `}</style>
 
-      <section ref={heroRef} className="hero-section" style={{
+      <section className="hero-section" style={{
         background: '#0a2a50',
         padding: '100px 40px 80px',
         textAlign: 'center',
@@ -218,12 +153,32 @@ export default function Hero() {
         overflow: 'hidden',
       }}>
 
-        {/* ASCII field canvas */}
-        <canvas ref={canvasRef} style={{
-          position: 'absolute', inset: 0,
-          width: '100%', height: '100%',
-          zIndex: 0, pointerEvents: 'none', display: 'block',
-        }} />
+        {/* Aurora background */}
+        <div aria-hidden="true" style={{
+          position: 'absolute',
+          inset: '-20%',
+          zIndex: 0,
+          pointerEvents: 'none',
+          filter: 'blur(60px) saturate(150%)',
+        }}>
+          {BLOBS.map((b, i) => (
+            <div
+              key={i}
+              ref={el => { blobRefs.current[i] = el }}
+              style={{
+                position: 'absolute',
+                left: `${b.x}%`,
+                top: `${b.y}%`,
+                width: `${b.size}%`,
+                height: `${b.size}%`,
+                background: `radial-gradient(circle at center, ${b.color} 0%, transparent 70%)`,
+                transform: 'translate(-50%, -50%)',
+                pointerEvents: 'none',
+                borderRadius: '50%',
+              }}
+            />
+          ))}
+        </div>
 
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
