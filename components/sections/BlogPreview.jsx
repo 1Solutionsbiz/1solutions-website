@@ -56,11 +56,14 @@ export default function BlogPreview({ posts }) {
     <section id="insights" className="blog-prev-section" style={{ background: '#fafafa' }}>
       <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
 
+        <h2 style={{ fontSize: 'clamp(32px,3.5vw,48px)', fontWeight: 900, textAlign: 'center', marginBottom: '16px', letterSpacing: '-0.5px' }}>
+          <AuroraText>Latest Insights</AuroraText>
+        </h2>
         <p style={{
-          fontSize: '11px', fontWeight: 700, color: '#9ca3af',
-          letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '40px',
+          textAlign: 'center', color: '#6b7280', fontSize: '16px',
+          maxWidth: '580px', margin: '0 auto 48px', lineHeight: 1.8,
         }}>
-          Top Reads
+          Stay informed with our latest blogs — valuable knowledge and trends to empower your business decisions.
         </p>
 
         <div className="blog-prev-outer">
