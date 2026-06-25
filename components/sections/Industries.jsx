@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import { useState, useEffect, useRef } from 'react'
 
 const industries = [
   { name: 'Education', href: '/elearning-software-development-services', img: '/images/industry-education.jpg', items: ['Student Information Management System','E-Learning Portal System','Custom LMS Development','Campus Administration & Operations System'] },
@@ -13,6 +14,20 @@ const industries = [
 ]
 
 export default function Industries() {
+  const [inView, setInView] = useState(false)
+  const sectionRef = useRef(null)
+
+  useEffect(() => {
+    const el = sectionRef.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setInView(true) },
+      { threshold: 0.08 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
   const handleEnter = (e) => {
     const overlay = e.currentTarget.querySelector('[data-overlay]')
     if (overlay) overlay.style.opacity = '1'
@@ -25,6 +40,14 @@ export default function Industries() {
     e.currentTarget.style.transform = 'translateY(0)'
     e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.08)'
   }
+
+  const blurFade = (delay) => ({
+    opacity:    inView ? 1 : 0,
+    filter:     inView ? 'blur(0px)' : 'blur(12px)',
+    transform:  inView ? 'translateY(0px)' : 'translateY(20px)',
+    transition: 'opacity 0.6s ease, filter 0.6s ease, transform 0.6s ease',
+    transitionDelay: `${delay}s`,
+  })
 
   return (
     <>
@@ -39,11 +62,15 @@ export default function Industries() {
         .ind-section { padding: 48px 16px; }
         .ind-grid { grid-template-columns: repeat(2,1fr); gap: 14px; }
       }
+      @media (prefers-reduced-motion: reduce) {
+        .ind-blur-fade { transition: none !important; opacity: 1 !important; filter: none !important; transform: none !important; }
+      }
     `}</style>
-    <section id="industries" className="ind-section" style={{ background: '#fff' }}>
+    <section ref={sectionRef} id="industries" className="ind-section" style={{ background: '#fff' }}>
       <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
 
-        <h2 style={{
+        <h2 className="ind-blur-fade" style={{
+          ...blurFade(0),
           fontSize: 'clamp(28px,3.5vw,48px)', fontWeight: 900,
           textAlign: 'center', marginBottom: '16px', letterSpacing: '-0.5px',
           background: 'linear-gradient(90deg, #0F3460 0%, #F59E0B 45%, #7C3AED 100%)',
@@ -52,7 +79,9 @@ export default function Industries() {
         }}>
           Providing Expertise Across a Range of Industries
         </h2>
-        <p style={{
+
+        <p className="ind-blur-fade" style={{
+          ...blurFade(0.15),
           textAlign: 'center', color: '#6b7280', fontSize: '16px', lineHeight: 1.8,
           maxWidth: '640px', margin: '0 auto 48px',
         }}>
@@ -60,60 +89,63 @@ export default function Industries() {
         </p>
 
         <div className="ind-grid">
-          {industries.map((ind) => (
-            <div
-              key={ind.name}
-              style={{
-                position: 'relative', borderRadius: '16px', overflow: 'hidden',
-                cursor: 'pointer', height: '280px',
-                boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
-                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-              }}
-              onMouseEnter={handleEnter}
-              onMouseLeave={handleLeave}
-            >
-              <img src={ind.img} alt={ind.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-
-              {/* Always-visible title bar */}
-              <div style={{
-                position: 'absolute', bottom: 0, left: 0, right: 0,
-                background: 'linear-gradient(transparent, rgba(15,52,96,0.88))',
-                padding: '48px 18px 18px',
-                color: '#fff', fontWeight: 700, fontSize: '16px',
-              }}>
-                {ind.name}
-              </div>
-
-              {/* Hover overlay */}
+          {industries.map((ind, i) => (
+            /* Outer wrapper owns the blur-fade transition */
+            <div key={ind.name} className="ind-blur-fade" style={blurFade(0.28 + i * 0.09)}>
+              {/* Inner card owns hover transitions */}
               <div
-                data-overlay="true"
                 style={{
-                  position: 'absolute', inset: 0,
-                  background: 'linear-gradient(135deg, rgba(15,52,96,0.95) 0%, rgba(20,70,130,0.92) 100%)',
-                  padding: '24px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '12px',
-                  opacity: 0, transition: 'opacity 0.3s ease',
+                  position: 'relative', borderRadius: '16px', overflow: 'hidden',
+                  cursor: 'pointer', height: '280px',
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
+                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                 }}
+                onMouseEnter={handleEnter}
+                onMouseLeave={handleLeave}
               >
-                <h3 style={{ color: '#FE9700', fontWeight: 800, margin: 0, fontSize: '17px', letterSpacing: '-0.3px' }}>
+                <img src={ind.img} alt={ind.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+
+                {/* Always-visible title bar */}
+                <div style={{
+                  position: 'absolute', bottom: 0, left: 0, right: 0,
+                  background: 'linear-gradient(transparent, rgba(15,52,96,0.88))',
+                  padding: '48px 18px 18px',
+                  color: '#fff', fontWeight: 700, fontSize: '16px',
+                }}>
                   {ind.name}
-                </h3>
-                <ul style={{ paddingLeft: '18px', margin: 0, display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                  {ind.items.map(item => (
-                    <li key={item} style={{ color: 'rgba(255,255,255,0.9)', fontSize: '12px', lineHeight: 1.5 }}>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href={ind.href}
+                </div>
+
+                {/* Hover overlay */}
+                <div
+                  data-overlay="true"
                   style={{
-                    color: '#FE9700', fontSize: '13px', fontWeight: 700,
-                    textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px',
-                    marginTop: '4px',
+                    position: 'absolute', inset: 0,
+                    background: 'linear-gradient(135deg, rgba(15,52,96,0.95) 0%, rgba(20,70,130,0.92) 100%)',
+                    padding: '24px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '12px',
+                    opacity: 0, transition: 'opacity 0.3s ease',
                   }}
                 >
-                  Explore More →
-                </Link>
+                  <h3 style={{ color: '#FE9700', fontWeight: 800, margin: 0, fontSize: '17px', letterSpacing: '-0.3px' }}>
+                    {ind.name}
+                  </h3>
+                  <ul style={{ paddingLeft: '18px', margin: 0, display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                    {ind.items.map(item => (
+                      <li key={item} style={{ color: 'rgba(255,255,255,0.9)', fontSize: '12px', lineHeight: 1.5 }}>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    href={ind.href}
+                    style={{
+                      color: '#FE9700', fontSize: '13px', fontWeight: 700,
+                      textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px',
+                      marginTop: '4px',
+                    }}
+                  >
+                    Explore More →
+                  </Link>
+                </div>
               </div>
             </div>
           ))}
