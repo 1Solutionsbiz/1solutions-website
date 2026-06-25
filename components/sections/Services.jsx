@@ -12,7 +12,7 @@ const services = [
     tags: ['React', 'Next.js', 'Node.js', '.NET', 'Vue.js', 'Angular'],
     cta: 'Elevate Your Digital Journey',
     href: '/digital-transformation',
-    image: '/images/service-digital-transformation.png',
+    image: '/images/service-digital-transformation.jpg',
     accent: '#4F46E5',
     grad: 'linear-gradient(160deg,#e0e7ff 0%,#c7d2fe 50%,#818cf8 100%)',
     icon: (
@@ -30,7 +30,7 @@ const services = [
     tags: ['Shopify', 'WooCommerce', 'Magento', 'Headless', 'PWA', 'BigCommerce'],
     cta: 'Boost Your Online Store',
     href: '/ecommerce-development',
-    image: '/images/service-ecommerce-development.png',
+    image: '/images/service-ecommerce-development.jpg',
     accent: '#0EA5E9',
     grad: 'linear-gradient(160deg,#e0f2fe 0%,#bae6fd 50%,#38bdf8 100%)',
     icon: (
