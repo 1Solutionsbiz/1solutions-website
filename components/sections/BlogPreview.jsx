@@ -86,18 +86,17 @@ export default function BlogPreview({ posts }) {
       }
       .blog-prev-section { padding: 80px 40px; }
       .blog-prev-outer { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
-      .blog-prev-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+      .blog-prev-inner { display: flex; flex-direction: column; gap: 14px; }
+      .blog-card-strip { display: flex; align-items: center; gap: 16px; padding: 22px 24px; min-height: 86px; }
+      .blog-card-strip:hover .blog-card-arrow { color: #FE9700; transform: translateX(3px); }
+      .blog-card-arrow { color: #9ca3af; font-size: 18px; flex-shrink: 0; transition: color 0.2s ease, transform 0.2s ease; }
       @media (max-width: 900px) {
         .blog-prev-section { padding: 56px 24px; }
         .blog-prev-outer { grid-template-columns: 1fr; }
-        .blog-prev-inner { grid-template-columns: repeat(3,1fr); }
       }
-      @media (max-width: 600px) {
+      @media (max-width: 480px) {
         .blog-prev-section { padding: 48px 16px; }
-        .blog-prev-inner { grid-template-columns: repeat(2,1fr); }
-      }
-      @media (max-width: 400px) {
-        .blog-prev-inner { grid-template-columns: 1fr; }
+        .blog-card-strip { padding: 18px 16px; }
       }
       @media (prefers-reduced-motion: reduce) {
         .blog-prev-section div[style*="neonSpin"] { animation: none !important; }
@@ -164,38 +163,31 @@ export default function BlogPreview({ posts }) {
             </NeonCard>
           </Link>
 
-          {/* ── Article grid — each card with its own neon color pair ── */}
+          {/* ── 4 title-only blog cards ── */}
           <div className="blog-prev-inner">
-            {gridPosts.map((post, i) => {
+            {gridPosts.slice(0, 4).map((post, i) => {
               const { first, second } = neonPairs[i % neonPairs.length]
               return (
-                <Link key={i} href={post.href} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
-                  <NeonCard
-                    borderSize={2}
-                    borderRadius={13}
-                    firstColor={first}
-                    secondColor={second}
-                    speed={3 + (i % 3) * 0.5}
-                  >
-                    <div style={{
-                      padding: '20px',
-                      display: 'flex', flexDirection: 'column', gap: '10px',
-                      height: '100%', boxSizing: 'border-box',
-                    }}>
+                <Link key={i} href={post.href} style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
+                  <NeonCard borderSize={1.5} borderRadius={14} firstColor={first} secondColor={second} speed={3.5 + i * 0.3}>
+                    <div className="blog-card-strip">
                       <span style={{
-                        fontSize: '11px', fontWeight: 700, color: '#FE9700',
-                        background: 'rgba(254,151,0,0.1)',
-                        padding: '3px 10px', borderRadius: '20px',
-                        display: 'inline-block', width: 'fit-content',
+                        fontSize: '13px', fontWeight: 800, flexShrink: 0,
+                        fontVariantNumeric: 'tabular-nums', letterSpacing: '0.5px',
+                        color: first, opacity: 0.55,
+                        minWidth: '28px',
                       }}>
-                        {post.mins} min read
+                        {String(i + 1).padStart(2, '0')}
                       </span>
-                      <h3 style={{ fontSize: '13px', fontWeight: 700, color: '#111827', margin: 0, lineHeight: 1.55, flexGrow: 1 }}>
+                      <h3 style={{
+                        fontSize: '14px', fontWeight: 700, color: '#111827',
+                        margin: 0, lineHeight: 1.55, flexGrow: 1,
+                        display: '-webkit-box', WebkitLineClamp: 2,
+                        WebkitBoxOrient: 'vertical', overflow: 'hidden',
+                      }}>
                         {post.title}
                       </h3>
-                      <span style={{ color: '#0F3460', fontWeight: 600, fontSize: '12px', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                        Read more →
-                      </span>
+                      <span className="blog-card-arrow">→</span>
                     </div>
                   </NeonCard>
                 </Link>
