@@ -189,6 +189,27 @@ export default function Services() {
       @media (max-width: 520px) {
         .svc-tabs { grid-template-columns: repeat(2,1fr) !important; }
       }
+      @property --svc-angle {
+        syntax: '<angle>';
+        inherits: false;
+        initial-value: 0deg;
+      }
+      @keyframes svcRainbow {
+        to { --svc-angle: 360deg; }
+      }
+      .svc-cta-btn {
+        background:
+          linear-gradient(#0F3460, #0F3460) padding-box,
+          conic-gradient(from var(--svc-angle), #ff4444, #ff9900, #ffdd00, #00cc66, #0099ff, #9933ff, #ff4444) border-box;
+        border: 2px solid transparent;
+        animation: svcRainbow 3s linear infinite;
+        box-shadow: 0 0 18px rgba(99,102,241,0.25);
+        transition: opacity 0.2s, box-shadow 0.2s;
+      }
+      .svc-cta-btn:hover {
+        opacity: 0.88;
+        box-shadow: 0 0 28px rgba(99,102,241,0.4);
+      }
     `}</style>
 
     <section ref={sectionRef} id="services" className="svc-section" style={{
@@ -353,14 +374,11 @@ export default function Services() {
               })}
             </div>
 
-            <Link href={current.href} style={{
+            <Link href={current.href} className="svc-cta-btn" style={{
               display: 'inline-flex', alignItems: 'center', gap: '8px',
               padding: '15px 34px', borderRadius: '30px',
               fontSize: '15px', fontWeight: 700,
-              background: '#0F3460', color: '#fff',
-              textDecoration: 'none',
-              boxShadow: '0 4px 16px rgba(15,52,96,0.25)',
-              transition: 'background 0.2s, box-shadow 0.2s',
+              color: '#fff', textDecoration: 'none',
             }}>
               {current.cta}
             </Link>
