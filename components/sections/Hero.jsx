@@ -25,79 +25,155 @@ const clientLogos = [
 
 const doubled = [...clientLogos, ...clientLogos]
 
-// Aurora blob definitions — colors tuned for dark navy background
-const BLOBS = [
-  { color: 'rgba(124,58,237,0.55)',  x: 20, y: 30, size: 65 },
-  { color: 'rgba(236,72,153,0.45)',  x: 80, y: 25, size: 55 },
-  { color: 'rgba(6,182,212,0.40)',   x: 50, y: 80, size: 55 },
-  { color: 'rgba(254,151,0,0.30)',   x: 65, y: 50, size: 48 },
-]
+function withAlpha(hex, a) {
+  if (hex.startsWith('#')) {
+    let r, g, b
+    if (hex.length === 4) {
+      r = parseInt(hex[1] + hex[1], 16)
+      g = parseInt(hex[2] + hex[2], 16)
+      b = parseInt(hex[3] + hex[3], 16)
+    } else {
+      r = parseInt(hex.slice(1, 3), 16)
+      g = parseInt(hex.slice(3, 5), 16)
+      b = parseInt(hex.slice(5, 7), 16)
+    }
+    return `rgba(${r},${g},${b},${a})`
+  }
+  return hex
+}
 
 export default function Hero() {
   const [priHov, setPriHov] = useState(false)
   const [secHov, setSecHov] = useState(false)
-  const blobRefs = useRef([])
+  const heroRef   = useRef(null)
+  const canvasRef = useRef(null)
 
-  // Aurora lava-lamp simulation — direct DOM mutations, no state
+  // Node-graph background — ported from performativeUI NodeGraphBackground
   useEffect(() => {
-    const REPULSION = 0.18
+    const host   = heroRef.current
+    const canvas = canvasRef.current
+    if (!host || !canvas) return
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
 
-    const state = BLOBS.map((b) => ({
-      x: b.x, y: b.y,
-      homeX: b.x, homeY: b.y,
-      size: b.size,
-      vx: (Math.random() - 0.5) * 0.06,
-      vy: (Math.random() - 0.5) * 0.06,
-    }))
+    const DENSITY        = 70
+    const SPEED          = 0.4
+    const LINK_DISTANCE  = 140
+    const COLORS         = ['#a78bfa', '#f0abfc', '#67e8f9']
+    const LINK_COLOR     = '#7c3aed'
+    const HOVER_DIST     = 200
+    const HOVER_GRAVITY  = 0.005
+    const HOVER_BRIGHTEN = 0.8
+    const BASE_OPACITY   = 0.45
+    const OVERSCAN       = 80
 
-    let raf = 0
+    let width = 0, height = 0, dpr = 1
+    const mouse = { x: -9999, y: -9999 }
+    let raf   = 0
+    let nodes = []
+
+    const seed = () => {
+      nodes = Array.from({ length: DENSITY }, () => ({
+        x:     -OVERSCAN + Math.random() * (width  + OVERSCAN * 2),
+        y:     -OVERSCAN + Math.random() * (height + OVERSCAN * 2),
+        vx:    (Math.random() - 0.5) * SPEED * 2,
+        vy:    (Math.random() - 0.5) * SPEED * 2,
+        r:     1 + Math.random() * 1.6,
+        color: COLORS[Math.floor(Math.random() * COLORS.length)],
+      }))
+    }
+
+    const resize = () => {
+      const rect = host.getBoundingClientRect()
+      dpr    = Math.min(window.devicePixelRatio || 1, 2)
+      width  = rect.width
+      height = rect.height
+      canvas.width  = width  * dpr
+      canvas.height = height * dpr
+      canvas.style.width  = `${width}px`
+      canvas.style.height = `${height}px`
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
+      seed()
+    }
+
+    const brighten = (px, py) => {
+      if (mouse.x <= -9000 || HOVER_DIST <= 0 || HOVER_BRIGHTEN <= 0) return 0
+      const d = Math.hypot(mouse.x - px, mouse.y - py)
+      return d >= HOVER_DIST ? 0 : (1 - d / HOVER_DIST) * HOVER_BRIGHTEN
+    }
+
     const tick = () => {
-      for (let i = 0; i < state.length; i++) {
-        const b = state[i]
+      ctx.clearRect(0, 0, width, height)
+      const mouseActive = mouse.x > -9000
 
-        b.vx *= 0.965
-        b.vy *= 0.965
-
-        // spring toward home
-        b.vx += (b.homeX - b.x) * 0.0009
-        b.vy += (b.homeY - b.y) * 0.0009
-
-        // repel from other blobs
-        for (let j = 0; j < state.length; j++) {
-          if (i === j) continue
-          const o = state[j]
-          const dx = b.x - o.x
-          const dy = b.y - o.y
-          const d = Math.hypot(dx, dy)
-          const minDist = (b.size + o.size) * 0.4
-          if (d < minDist && d > 0.001) {
-            const force = ((minDist - d) / minDist) * REPULSION
-            b.vx += (dx / d) * force
-            b.vy += (dy / d) * force
+      // move nodes + cursor gravity
+      for (const n of nodes) {
+        n.x += n.vx
+        n.y += n.vy
+        if (n.x < -OVERSCAN || n.x > width  + OVERSCAN) n.vx *= -1
+        if (n.y < -OVERSCAN || n.y > height + OVERSCAN) n.vy *= -1
+        if (mouseActive && HOVER_GRAVITY > 0) {
+          const dx = mouse.x - n.x
+          const dy = mouse.y - n.y
+          const d  = Math.hypot(dx, dy)
+          if (d < HOVER_DIST) {
+            const pull = (1 - d / HOVER_DIST) * HOVER_GRAVITY
+            n.x += dx * pull
+            n.y += dy * pull
           }
         }
-
-        // brownian jitter
-        b.vx += (Math.random() - 0.5) * 0.012
-        b.vy += (Math.random() - 0.5) * 0.012
-
-        b.x += b.vx
-        b.y += b.vy
-
-        // soft walls
-        if (b.x < -10) { b.x = -10; b.vx =  Math.abs(b.vx) * 0.6 }
-        if (b.x > 110)  { b.x =  110; b.vx = -Math.abs(b.vx) * 0.6 }
-        if (b.y < -10) { b.y = -10; b.vy =  Math.abs(b.vy) * 0.6 }
-        if (b.y > 110)  { b.y =  110; b.vy = -Math.abs(b.vy) * 0.6 }
-
-        const el = blobRefs.current[i]
-        if (el) { el.style.left = `${b.x}%`; el.style.top = `${b.y}%` }
       }
+
+      // draw links
+      ctx.lineWidth = 1
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const a = nodes[i], b = nodes[j]
+          const dl = Math.hypot(a.x - b.x, a.y - b.y)
+          if (dl < LINK_DISTANCE) {
+            const la    = 1 - dl / LINK_DISTANCE
+            const boost = brighten((a.x + b.x) / 2, (a.y + b.y) / 2)
+            ctx.strokeStyle = withAlpha(LINK_COLOR, Math.min(1, la * BASE_OPACITY + boost * la))
+            ctx.beginPath()
+            ctx.moveTo(a.x, a.y)
+            ctx.lineTo(b.x, b.y)
+            ctx.stroke()
+          }
+        }
+      }
+
+      // draw nodes
+      for (const n of nodes) {
+        const boost = brighten(n.x, n.y)
+        ctx.fillStyle = withAlpha(n.color, Math.min(1, BASE_OPACITY + boost))
+        ctx.beginPath()
+        ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2)
+        ctx.fill()
+      }
+
       raf = requestAnimationFrame(tick)
     }
 
+    const onMove  = (e) => {
+      const rect = host.getBoundingClientRect()
+      mouse.x = e.clientX - rect.left
+      mouse.y = e.clientY - rect.top
+    }
+    const onLeave = () => { mouse.x = -9999; mouse.y = -9999 }
+
+    const ro = new ResizeObserver(resize)
+    ro.observe(host)
+    resize()
+    host.addEventListener('mousemove',  onMove)
+    host.addEventListener('mouseleave', onLeave)
     raf = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(raf)
+
+    return () => {
+      cancelAnimationFrame(raf)
+      ro.disconnect()
+      host.removeEventListener('mousemove',  onMove)
+      host.removeEventListener('mouseleave', onLeave)
+    }
   }, [])
 
   return (
@@ -145,7 +221,7 @@ export default function Hero() {
         }
       `}</style>
 
-      <section className="hero-section" style={{
+      <section ref={heroRef} className="hero-section" style={{
         background: '#0a2a50',
         padding: '100px 40px 80px',
         textAlign: 'center',
@@ -153,41 +229,19 @@ export default function Hero() {
         overflow: 'hidden',
       }}>
 
-        {/* Aurora background */}
-        <div aria-hidden="true" style={{
-          position: 'absolute',
-          inset: '-20%',
-          zIndex: 0,
-          pointerEvents: 'none',
-          filter: 'blur(60px) saturate(150%)',
-        }}>
-          {BLOBS.map((b, i) => (
-            <div
-              key={i}
-              ref={el => { blobRefs.current[i] = el }}
-              style={{
-                position: 'absolute',
-                left: `${b.x}%`,
-                top: `${b.y}%`,
-                width: `${b.size}%`,
-                height: `${b.size}%`,
-                background: `radial-gradient(circle at center, ${b.color} 0%, transparent 70%)`,
-                transform: 'translate(-50%, -50%)',
-                pointerEvents: 'none',
-                borderRadius: '50%',
-              }}
-            />
-          ))}
-        </div>
+        {/* Node-graph canvas */}
+        <canvas ref={canvasRef} aria-hidden="true" style={{
+          position: 'absolute', inset: 0,
+          width: '100%', height: '100%',
+          zIndex: 0, pointerEvents: 'none', display: 'block',
+        }} />
 
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
-          {/* Headline */}
           <h1 className="hero-stagger-1" style={{ fontSize: 'clamp(36px, 4.5vw, 62px)', fontWeight: 900, lineHeight: 1.1, marginBottom: '20px', letterSpacing: '-1.5px', color: '#fff' }}>
             We build Brands That Scale &amp; Generate Revenue.
           </h1>
 
-          {/* Subheading */}
           <p className="hero-stagger-2" style={{
             fontSize: '18px', color: 'rgba(255,255,255,0.78)',
             maxWidth: '680px', lineHeight: 1.8, margin: '0 auto',
@@ -197,7 +251,6 @@ export default function Hero() {
             lower costs, measurable growth.
           </p>
 
-          {/* Metrics */}
           <div className="hero-stagger-3 hero-metrics">
             {metrics.map((m, i) => (
               <div key={m.label} style={{
@@ -214,7 +267,6 @@ export default function Hero() {
             ))}
           </div>
 
-          {/* CTAs */}
           <div className="hero-stagger-4" style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link
               href="/contact-us"
