@@ -254,41 +254,42 @@ export default function Services() {
             key={`img-${active}`}
             className="svc-panel"
             style={{
-              borderRadius: '24px', overflow: 'hidden',
-              background: current.grad,
-              display: 'flex', alignItems: 'flex-end', justifyContent: 'center',
-              minHeight: '460px', padding: '32px 24px 0',
               position: 'relative',
+              paddingBottom: '32px',
               animation: 'svcPanelIn 0.42s cubic-bezier(0.22,1,0.36,1) both',
             }}
           >
-            {/* Backlight: blurred duplicate image creates natural color glow */}
+            {/* Backlight — lives OUTSIDE overflow:hidden so it spills around the card */}
             <img
               src={current.image}
               alt=""
               aria-hidden="true"
               style={{
                 position: 'absolute',
-                bottom: '-4%', left: '50%',
-                transform: 'translateX(-50%) scale(0.88)',
-                width: '80%', maxWidth: '300px',
+                bottom: '0', left: '50%',
+                transform: 'translateX(-50%) scale(0.8)',
+                width: '85%',
                 objectFit: 'contain',
-                filter: 'blur(40px)',
-                opacity: 0.75,
+                filter: 'blur(48px)',
+                opacity: 0.7,
                 zIndex: 0,
                 pointerEvents: 'none',
               }}
             />
-            {/* Actual image */}
-            <img
-              src={current.image}
-              alt={current.headline}
-              style={{
-                position: 'relative', zIndex: 1,
-                width: '100%', maxWidth: '340px',
-                objectFit: 'contain', display: 'block',
-              }}
-            />
+            {/* Gradient card — overflow:hidden only clips its own content */}
+            <div style={{
+              position: 'relative', zIndex: 1,
+              borderRadius: '24px', overflow: 'hidden',
+              background: current.grad,
+              display: 'flex', alignItems: 'flex-end', justifyContent: 'center',
+              minHeight: '460px', padding: '32px 24px 0',
+            }}>
+              <img
+                src={current.image}
+                alt={current.headline}
+                style={{ width: '100%', maxWidth: '340px', objectFit: 'contain', display: 'block' }}
+              />
+            </div>
           </div>
 
           {/* ── Right: content ── */}
