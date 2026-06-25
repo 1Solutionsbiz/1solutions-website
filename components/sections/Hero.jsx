@@ -121,8 +121,8 @@ export default function Hero() {
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
           {/* Headline */}
-          <h1 className="hero-fade-1" style={{ fontSize: 'clamp(36px, 4.5vw, 62px)', fontWeight: 900, lineHeight: 1.1, marginBottom: '20px', letterSpacing: '-1.5px' }}>
-            <AuroraText>We build Brands That Scale &amp; Generate Revenue.</AuroraText>
+          <h1 className="hero-fade-1" style={{ fontSize: 'clamp(36px, 4.5vw, 62px)', fontWeight: 900, lineHeight: 1.1, marginBottom: '20px', letterSpacing: '-1.5px', color: '#fff' }}>
+            We build Brands That Scale &amp; Generate Revenue.
           </h1>
 
           {/* Subheading */}
