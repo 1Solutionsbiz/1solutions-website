@@ -26,13 +26,13 @@ export default function BlogPreview({ posts }) {
   const featuredDate     = fp ? formatDate(fp.date) : 'Jun 10, 2025'
 
   const gridPosts = posts?.length > 1
-    ? posts.slice(1, 5).map(p => ({
+    ? posts.slice(1, 4).map(p => ({
         title:    cleanHtml(p.title?.rendered),
         href:     `/${p.slug}`,
         category: p._embedded?.['wp:term']?.[0]?.[0]?.name || 'Insights',
         date:     formatDate(p.date),
       }))
-    : staticPosts.map(p => ({ ...p, href: '/blog' }))
+    : staticPosts.slice(0, 3).map(p => ({ ...p, href: '/blog' }))
 
   return (
     <>
@@ -86,13 +86,6 @@ export default function BlogPreview({ posts }) {
                 {featuredCategory}
               </span>
             </div>
-            <h3 style={{
-              fontSize: 'clamp(22px,2.2vw,30px)', fontWeight: 800,
-              color: '#111827', margin: '0 0 12px', lineHeight: 1.3,
-              letterSpacing: '-0.3px',
-            }}>
-              {featuredTitle}
-            </h3>
             <span style={{ fontSize: '13px', color: '#9ca3af' }}>{featuredDate}</span>
           </Link>
 
