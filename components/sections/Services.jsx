@@ -12,7 +12,7 @@ const services = [
     tags: ['React', 'Next.js', 'Node.js', '.NET', 'Vue.js', 'Angular'],
     cta: 'Elevate Your Digital Journey',
     href: '/digital-transformation',
-    image: '/images/service-digital-transformation.jpg',
+    image: '/images/service-digital-transformation.png',
     accent: '#4F46E5',
     grad: 'linear-gradient(160deg,#e0e7ff 0%,#c7d2fe 50%,#818cf8 100%)',
     icon: (
@@ -30,7 +30,7 @@ const services = [
     tags: ['Shopify', 'WooCommerce', 'Magento', 'Headless', 'PWA', 'BigCommerce'],
     cta: 'Boost Your Online Store',
     href: '/ecommerce-development',
-    image: '/images/service-ecommerce-development.jpg',
+    image: '/images/service-ecommerce-development.png',
     accent: '#0EA5E9',
     grad: 'linear-gradient(160deg,#e0f2fe 0%,#bae6fd 50%,#38bdf8 100%)',
     icon: (
@@ -162,6 +162,11 @@ export default function Services() {
         from { opacity: 0; transform: translateX(-18px); }
         to   { opacity: 1; transform: translateX(0); }
       }
+      .svc-tab-item:hover {
+        background: #fff !important;
+        box-shadow: 0 2px 18px rgba(0,0,0,0.09) !important;
+      }
+      .svc-tab-item:hover .svc-tab-arrow { opacity: 1 !important; }
       @keyframes svcPanelIn {
         0%   { opacity: 0; transform: translateY(28px) scale(0.97); }
         100% { opacity: 1; transform: translateY(0) scale(1); }
@@ -205,7 +210,7 @@ export default function Services() {
         <div className="svc-layout">
 
           {/* ── Left: tab list ── */}
-          <div className="svc-tabs" style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+          <div className="svc-tabs" style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'flex-start' }}>
             {services.map((s, i) => {
               const isActive = active === s.id
               return (
@@ -214,36 +219,49 @@ export default function Services() {
                   className="svc-tab-item"
                   onClick={() => setActive(s.id)}
                   style={{
-                    display: 'flex', alignItems: 'center', gap: '12px',
-                    padding: '14px 18px', borderRadius: '14px',
+                    display: 'flex', alignItems: 'center', gap: '14px',
+                    padding: '12px 20px 12px 14px',
+                    borderRadius: '50px',
+                    border: 'none', cursor: 'pointer',
                     opacity: tabsVisible ? 1 : 0,
                     animation: tabsVisible ? 'tabSlideIn 0.42s ease both' : 'none',
                     animationDelay: `${i * 0.07}s`,
                     background: isActive ? '#fff' : 'transparent',
-                    boxShadow: isActive ? '0 2px 12px rgba(0,0,0,0.10)' : 'none',
-                    transition: 'background 0.2s, box-shadow 0.2s',
+                    boxShadow: isActive ? '0 2px 18px rgba(0,0,0,0.09)' : 'none',
+                    transition: 'background 0.25s ease, box-shadow 0.25s ease',
+                    width: 'fit-content',
                   }}
                 >
                   {/* Icon circle */}
                   <span style={{
-                    width: 36, height: 36, borderRadius: '50%', flexShrink: 0,
+                    width: 38, height: 38, borderRadius: '50%', flexShrink: 0,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    background: isActive ? s.accent : 'rgba(0,0,0,0.07)',
-                    color: isActive ? '#fff' : '#6b7280',
-                    transition: 'background 0.2s, color 0.2s',
+                    background: isActive ? s.accent : 'rgba(0,0,0,0.08)',
+                    color: isActive ? '#fff' : '#9ca3af',
+                    transition: 'background 0.25s, color 0.25s',
                   }}>
                     {s.icon}
                   </span>
-                  <span className="svc-tab-label" style={{
-                    fontSize: '14px', fontWeight: isActive ? 700 : 500,
+                  {/* Label */}
+                  <span style={{
+                    fontSize: '15px',
+                    fontWeight: isActive ? 700 : 400,
                     color: isActive ? '#111827' : '#6b7280',
-                    flex: 1, transition: 'color 0.2s',
+                    whiteSpace: 'nowrap',
+                    transition: 'color 0.25s, font-weight 0.25s',
                   }}>
                     {s.label}
                   </span>
-                  {isActive && (
-                    <span style={{ color: '#9ca3af', fontSize: '14px', fontWeight: 600 }}>›</span>
-                  )}
+                  {/* Arrow — visible on active and on hover via CSS */}
+                  <span className="svc-tab-arrow" style={{
+                    opacity: isActive ? 1 : 0,
+                    fontSize: '15px', fontWeight: 700,
+                    color: '#374151',
+                    transition: 'opacity 0.2s',
+                    lineHeight: 1,
+                  }}>
+                    ›
+                  </span>
                 </button>
               )
             })}
