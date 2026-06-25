@@ -245,32 +245,23 @@ export default function HireShopifyDeveloper() {
         <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
         <style>{`
-          .sh-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:linear-gradient(135deg,#f0fdf4 0%,#dcfce7 20%,#f0f9ff 50%,#fef9c3 75%,#f0fdf4 100%);color:#0F1F40;line-height:1.6;position:relative;overflow-x:hidden}
+          .sh-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#111827;line-height:1.6;position:relative;overflow-x:hidden}
           .sh-page *,.sh-page *::before,.sh-page *::after{box-sizing:border-box}
-          .sh-orb{position:absolute;border-radius:50%;pointer-events:none;z-index:0;filter:blur(20px)}
-          .sh-orb-1{width:880px;height:880px;background:radial-gradient(circle,rgba(90,138,0,.20) 0%,rgba(150,191,71,.08) 40%,transparent 70%);top:-280px;right:-260px}
-          .sh-orb-2{width:780px;height:780px;background:radial-gradient(circle,rgba(217,119,6,.22) 0%,rgba(245,158,11,.10) 40%,transparent 70%);bottom:0;left:-230px}
-          .sh-orb-3{width:550px;height:550px;background:radial-gradient(circle,rgba(0,181,173,.14) 0%,transparent 70%);top:42%;left:-120px;transform:translateY(-50%)}
+          .sh-orb-1,.sh-orb-2,.sh-orb-3{display:none}
           .sh-breadcrumb{position:relative;z-index:2;padding:16px 40px 0;max-width:1440px;margin:0 auto}
-          .sh-breadcrumb ol{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0;font-size:13px;color:#6A80A0}
+          .sh-breadcrumb ol{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0;font-size:13px;color:#9ca3af}
           .sh-breadcrumb li{display:flex;align-items:center;gap:6px}
           .sh-breadcrumb li::after{content:'/';opacity:.45}
           .sh-breadcrumb li:last-child::after{display:none}
-          .sh-breadcrumb a{color:#0F3460;text-decoration:none}
-          .sh-breadcrumb a:hover{text-decoration:underline}
-          .sh-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
-          .sh-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
-          .sh-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(90deg,#0F3460 0%,#5a8a00 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .sh-hero-desc{font-size:16px;color:#3A507A;line-height:1.65;max-width:740px;margin:0 auto 24px}
-          .sh-trust-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
-          .sh-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07)}
-          .sh-badge-dot{width:7px;height:7px;border-radius:50%;background:#5a8a00;flex-shrink:0}
+          .sh-breadcrumb a{color:#6b7280;text-decoration:none}
+          .sh-breadcrumb a:hover{color:#111827;text-decoration:none}
+          .sh-hero{position:relative;z-index:2;text-align:center;max-width:860px;margin:0 auto;padding:72px 40px 64px}
+          .sh-hero h1{font-size:clamp(40px,6vw,72px);font-weight:900;line-height:1.07;letter-spacing:-2px;margin-bottom:24px;color:#111827;background:none;-webkit-text-fill-color:#111827}
+          .sh-hero-desc{font-size:18px;color:#6b7280;line-height:1.75;max-width:680px;margin:0 auto 40px}
           .sh-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .sh-btn-primary{display:inline-block;padding:14px 36px;background:#5a8a00;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(90,138,0,.28)}
-          .sh-btn-primary:hover{background:#0F3460;transform:translateY(-2px)}
-          .sh-btn-ghost{display:inline-block;padding:14px 36px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .sh-btn-ghost:hover{background:rgba(255,255,255,.85);border-color:rgba(90,138,0,.5);transform:translateY(-2px)}
-          .sh-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:28px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
+          .sh-btn-primary{display:inline-block;padding:18px 48px;background:#0F3460;color:#fff;border-radius:8px;font-weight:700;font-size:16px;text-decoration:none;transition:all .25s;box-shadow:0 4px 20px rgba(15,52,96,.25);letter-spacing:.1px}
+          .sh-btn-primary:hover{background:#114171;transform:translateY(-2px);box-shadow:0 8px 28px rgba(15,52,96,.32)}
+          .sh-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:860px;margin:0 auto 0;background:#fff;border:1px solid #e5e7eb;box-shadow:0 2px 12px rgba(0,0,0,.06)}
           .sh-stat-col{padding:18px 16px;text-align:center;border-right:1px solid rgba(15,52,96,.10)}
           .sh-stat-col:last-child{border-right:none}
           .sh-stat-val{font-size:28px;font-weight:900;color:#5a8a00;letter-spacing:-.5px;line-height:1}
@@ -436,8 +427,6 @@ export default function HireShopifyDeveloper() {
       </Head>
 
       <div className="sh-page">
-        <div className="sh-orb sh-orb-1" /><div className="sh-orb sh-orb-2" /><div className="sh-orb sh-orb-3" />
-
         <nav className="sh-breadcrumb" aria-label="Breadcrumb">
           <ol itemScope itemType="https://schema.org/BreadcrumbList">
             <li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement">
@@ -452,17 +441,10 @@ export default function HireShopifyDeveloper() {
         </nav>
 
         <section className="sh-hero">
-          <span className="sh-eyebrow">Hire Shopify Developer</span>
-          <h1>Hire Expert Shopify Developers — Custom Themes, Shopify Plus, Apps & Headless</h1>
-          <p className="sh-hero-desc">Dedicated Shopify developers for custom Liquid theme development, Shopify Plus customisation, private app development, WooCommerce to Shopify migration, Headless Shopify with Hydrogen, and ERP/CRM integrations. Shopify Partner with 15+ years of eCommerce expertise.</p>
-          <div className="sh-trust-row">
-            {['Shopify Partner','Shopify Plus Specialists','Custom App Development','Headless / Hydrogen','15+ Years eCommerce'].map(b => (
-              <div className="sh-badge" key={b}><span className="sh-badge-dot" />{b}</div>
-            ))}
-          </div>
+          <h1>Hire Expert Shopify Developers</h1>
+          <p className="sh-hero-desc">Custom Liquid themes, Shopify Plus, private app development, WooCommerce migrations, and Headless Shopify with Hydrogen — backed by 15+ years of eCommerce expertise.</p>
           <div className="sh-ctas">
             <Link href="#contact" className="sh-btn-primary">Hire a Shopify Developer</Link>
-            <Link href="#engagement" className="sh-btn-ghost">View Engagement Models →</Link>
           </div>
         </section>
 
