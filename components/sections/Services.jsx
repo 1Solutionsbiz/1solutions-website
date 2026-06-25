@@ -104,6 +104,16 @@ const services = [
   },
 ]
 
+const RAY_CONFIG = [
+  { left: '6%',  width: 160, rotate: -28, delay: 0   },
+  { left: '18%', width: 220, rotate: -14, delay: 2.5 },
+  { left: '32%', width: 190, rotate: -4,  delay: 5   },
+  { left: '48%', width: 260, rotate:  0,  delay: 1.2 },
+  { left: '62%', width: 190, rotate:  6,  delay: 8   },
+  { left: '76%', width: 220, rotate: 16,  delay: 3.8 },
+  { left: '90%', width: 150, rotate: 30,  delay: 6.5 },
+]
+
 const TAG_COLORS = [
   { bg: 'rgba(79,70,229,0.11)',   color: '#4338CA', border: 'rgba(79,70,229,0.28)' },   // indigo
   { bg: 'rgba(245,158,11,0.12)',  color: '#B45309', border: 'rgba(245,158,11,0.3)' },   // amber
@@ -126,6 +136,10 @@ export default function Services() {
   return (
     <>
     <style>{`
+      @keyframes lightRayPulse {
+        0%, 100% { opacity: 0; }
+        50%       { opacity: 1; }
+      }
       .svc-section { padding: 80px 40px; }
       .svc-layout { display: grid; grid-template-columns: 280px 1fr; gap: 56px; align-items: flex-start; }
       .svc-card { display: flex; flex-direction: row; gap: 32px; padding: 48px; align-items: stretch; }
@@ -147,8 +161,29 @@ export default function Services() {
     `}</style>
     <section id="services" className="svc-section" style={{
       background: 'linear-gradient(135deg, #fdfcff 0%, #f9f8ff 50%, #f6f8ff 100%)',
+      position: 'relative', overflow: 'hidden',
     }}>
-      <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
+      {/* Light Rays */}
+      <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0 }}>
+        {RAY_CONFIG.map((ray, i) => (
+          <div key={i} style={{
+            position: 'absolute',
+            top: '-10%',
+            left: ray.left,
+            width: `${ray.width}px`,
+            height: '130%',
+            background: 'linear-gradient(to bottom, rgba(99,130,246,0.55) 0%, rgba(139,92,246,0.18) 40%, transparent 75%)',
+            transform: `rotate(${ray.rotate}deg)`,
+            transformOrigin: 'top center',
+            filter: 'blur(36px)',
+            opacity: 0,
+            animation: `lightRayPulse 14s ease-in-out infinite`,
+            animationDelay: `${ray.delay}s`,
+          }} />
+        ))}
+      </div>
+
+      <div style={{ maxWidth: '1440px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
         <h2 style={{
           fontSize: 'clamp(32px,3.5vw,48px)', fontWeight: 900, marginBottom: '20px',
