@@ -25,47 +25,144 @@ const clientLogos = [
 
 const doubled = [...clientLogos, ...clientLogos]
 
+const CHAR_RAMP = " .`'\",:;Il!i><~+_-?][}{z1)(|/tfjrxnuvczXYUJCLTQ0OZmwqpdbkhaos*#MW&8%B@$"
+const PALETTE   = ['#a78bfa', '#ec8499', '#67e8f9', '#fbbf24']
+
 export default function Hero() {
   const [priHov, setPriHov] = useState(false)
   const [secHov, setSecHov] = useState(false)
-  const heroRef = useRef(null)
+  const heroRef   = useRef(null)
+  const canvasRef = useRef(null)
 
-  // Vanta Waves
+  // ASCII field background
   useEffect(() => {
-    let vantaEffect = null
+    const canvas = canvasRef.current
+    const host   = heroRef.current
+    if (!canvas || !host) return
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
 
-    const loadScript = (src) => new Promise((resolve) => {
-      if (document.querySelector(`script[src="${src}"]`)) { resolve(); return }
-      const s = document.createElement('script')
-      s.src = src
-      s.onload = resolve
-      document.head.appendChild(s)
-    })
+    let raf       = 0
+    let lastFrame = 0
+    let cols = 0, rows = 0, cellW = 0, cellH = 0
+    let baseField = new Float32Array(0)
+    const mouse   = { x: -9999, y: -9999 }
 
-    const init = async () => {
-      await loadScript('https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js')
-      await loadScript('https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.waves.min.js')
-      if (window.VANTA && heroRef.current) {
-        vantaEffect = window.VANTA.WAVES({
-          el: heroRef.current,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200,
-          minWidth: 200,
-          scale: 1.0,
-          scaleMobile: 1.0,
-          color: 0x0a2a50,
-          shininess: 50,
-          waveHeight: 20,
-          waveSpeed: 0.65,
-          zoom: 0.85,
-        })
+    const FONT_SIZE        = 12
+    const FONT_FAMILY      = 'JetBrains Mono, ui-monospace, monospace'
+    const BASE_OPACITY     = 0.15
+    const SPOTLIGHT_OPACITY = 0.88
+    const SPOTLIGHT_RADIUS = 10
+    const RIPPLE_STRENGTH  = 1.4
+    const RIPPLE_RADIUS    = 6
+    const FRAME_MS         = 50
+
+    const seed = () => {
+      baseField = new Float32Array(cols * rows)
+      for (let y = 0; y < rows; y++) {
+        for (let x = 0; x < cols; x++) {
+          const nx = (x / cols) * 2 - 1
+          const ny = (y / rows) * 2 - 1
+          const r  = Math.sqrt(nx * nx + ny * ny)
+          const stripes = 0.5 + 0.5 * Math.sin(nx * 6 + ny * 2)
+          const radial  = 1 - Math.min(1, r * 1.2)
+          baseField[y * cols + x] = 0.25 * stripes + 0.55 * radial
+        }
       }
     }
 
-    init()
-    return () => { if (vantaEffect) vantaEffect.destroy() }
+    const resize = () => {
+      const rect = host.getBoundingClientRect()
+      if (rect.width === 0 || rect.height === 0) return
+      const dpr = Math.min(window.devicePixelRatio || 1, 2)
+
+      canvas.width  = Math.max(1, Math.floor(rect.width  * dpr))
+      canvas.height = Math.max(1, Math.floor(rect.height * dpr))
+
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
+      ctx.font          = `${FONT_SIZE}px ${FONT_FAMILY}`
+      ctx.textBaseline  = 'top'
+
+      const measured = ctx.measureText('M').width || FONT_SIZE * 0.6
+      cellW = measured
+      cellH = FONT_SIZE * 1.15
+
+      cols = Math.max(1, Math.floor(rect.width  / cellW))
+      rows = Math.max(1, Math.floor(rect.height / cellH))
+      seed()
+    }
+
+    const render = (t) => {
+      if (t - lastFrame < FRAME_MS) { raf = requestAnimationFrame(render); return }
+      lastFrame = t
+      if (cols === 0 || rows === 0) { resize(); raf = requestAnimationFrame(render); return }
+
+      const time = t * 0.001
+      const rect = canvas.getBoundingClientRect()
+      const cx   = (mouse.x - rect.left) / cellW
+      const cy   = (mouse.y - rect.top)  / cellH
+      const margin = 24
+      const mouseInside =
+        mouse.x >= rect.left - margin && mouse.x <= rect.right  + margin &&
+        mouse.y >= rect.top  - margin && mouse.y <= rect.bottom + margin
+
+      ctx.clearRect(0, 0, rect.width, rect.height)
+
+      const rampMax = CHAR_RAMP.length - 1
+      const spotR2  = SPOTLIGHT_RADIUS * SPOTLIGHT_RADIUS * 2
+
+      for (let y = 0; y < rows; y++) {
+        for (let x = 0; x < cols; x++) {
+          const base = baseField[y * cols + x]
+          const wave = 0.15 * Math.sin(x * 0.18 + time * 1.4) * Math.cos(y * 0.22 - time * 1.1)
+
+          const dx = x - cx
+          const dy = (y - cy) * 1.8
+          const d2 = dx * dx + dy * dy
+          const d  = Math.sqrt(d2)
+
+          const ripple = mouseInside
+            ? RIPPLE_STRENGTH * Math.exp(-d2 / 80) -
+              0.6 * Math.exp(-(((d - RIPPLE_RADIUS) * (d - RIPPLE_RADIUS)) / 30))
+            : 0
+
+          const v  = Math.max(0, Math.min(1, base + wave + ripple))
+          const ch = CHAR_RAMP[Math.floor(v * rampMax)]
+          if (ch === ' ') continue
+
+          let alpha = BASE_OPACITY
+          if (mouseInside) {
+            const spot = Math.exp(-d2 / spotR2)
+            alpha = BASE_OPACITY + (SPOTLIGHT_OPACITY - BASE_OPACITY) * spot
+            alpha = Math.max(0, Math.min(1, alpha))
+          }
+          if (alpha <= 0.01) continue
+
+          const huePos = (x * 0.1 + y * 0.07 + time * 0.12) % PALETTE.length
+          const color  = PALETTE[Math.floor(Math.abs(huePos)) % PALETTE.length]
+
+          ctx.globalAlpha = alpha
+          ctx.fillStyle   = color
+          ctx.fillText(ch, x * cellW, y * cellH)
+        }
+      }
+      ctx.globalAlpha = 1
+      raf = requestAnimationFrame(render)
+    }
+
+    const onMove = (e) => { mouse.x = e.clientX; mouse.y = e.clientY }
+
+    const ro = new ResizeObserver(resize)
+    ro.observe(host)
+    resize()
+    window.addEventListener('mousemove', onMove, { passive: true })
+    raf = requestAnimationFrame(render)
+
+    return () => {
+      cancelAnimationFrame(raf)
+      ro.disconnect()
+      window.removeEventListener('mousemove', onMove)
+    }
   }, [])
 
   return (
@@ -120,6 +217,14 @@ export default function Hero() {
         position: 'relative',
         overflow: 'hidden',
       }}>
+
+        {/* ASCII field canvas */}
+        <canvas ref={canvasRef} style={{
+          position: 'absolute', inset: 0,
+          width: '100%', height: '100%',
+          zIndex: 0, pointerEvents: 'none', display: 'block',
+        }} />
+
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
           {/* Headline */}
