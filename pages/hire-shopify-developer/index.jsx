@@ -262,19 +262,12 @@ export default function HireShopifyDeveloper() {
           .sh-ctas{display:flex;flex-wrap:wrap;gap:14px}
           .sh-btn-primary{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;background:#fff;color:#0F1F40;border-radius:6px;font-weight:700;font-size:16px;text-decoration:none;transition:all .25s;border:2px solid #fff;letter-spacing:.1px}
           .sh-btn-primary:hover{background:transparent;color:#fff;transform:translateY(-2px)}
-          .sh-hero-right{position:relative;height:400px}
-          .sh-store-card{background:#162644;border-radius:14px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.5);position:absolute;width:330px;top:10px;left:50%;transform:translateX(-20%)}
-          .sh-store-topbar{background:#0d1c35;padding:10px 14px;display:flex;align-items:center;gap:6px}
-          .sh-store-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
-          .sh-store-url{font-size:10px;color:rgba(255,255,255,.35);margin-left:8px;font-family:monospace}
-          .sh-store-banner{height:70px;background:linear-gradient(90deg,#2d5a1b 0%,#3d7a24 100%);display:flex;align-items:center;padding:0 18px}
-          .sh-store-banner-txt{color:#fff;font-size:13px;font-weight:700}
-          .sh-store-products{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px}
-          .sh-product-tile{background:#1e3160;border-radius:8px;overflow:hidden}
-          .sh-product-img{height:54px;background:linear-gradient(135deg,#27437d 0%,#1a2f5e 100%)}
-          .sh-product-info{padding:8px}
-          .sh-product-name{height:7px;background:rgba(255,255,255,.22);border-radius:4px;margin-bottom:6px;width:72%}
-          .sh-product-price{height:6px;background:rgba(150,191,72,.45);border-radius:4px;width:42%}
+          .sh-hero-right{position:relative;height:420px}
+          .sh-person-card{position:absolute;width:320px;height:380px;top:10px;left:50%;transform:translateX(-15%);border-radius:16px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.55)}
+          .sh-person-img{width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block}
+          .sh-person-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent 20%,rgba(7,16,42,.92) 100%);padding:40px 20px 18px}
+          .sh-person-label{color:#fff;font-size:15px;font-weight:700;margin-bottom:3px}
+          .sh-person-sublabel{color:rgba(255,255,255,.60);font-size:13px}
           .sh-chip{position:absolute;border-radius:100px;padding:9px 18px;font-size:12px;font-weight:700;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,.3)}
           .sh-chip-1{background:#fff;color:#0F1F40;top:0;left:0;animation:shChipFloat 4s ease-in-out infinite}
           .sh-chip-2{background:#96bf48;color:#fff;bottom:80px;left:10px;animation:shChipFloat 4.5s ease-in-out .7s infinite}
@@ -473,26 +466,12 @@ export default function HireShopifyDeveloper() {
               </div>
             </div>
             <div className="sh-hero-right" aria-hidden="true">
-              <div className="sh-store-card">
-                <div className="sh-store-topbar">
-                  <div className="sh-store-dot" style={{background:'#ff6b6b'}} />
-                  <div className="sh-store-dot" style={{background:'#ffd700'}} />
-                  <div className="sh-store-dot" style={{background:'#96bf48'}} />
-                  <span className="sh-store-url">your-store.myshopify.com</span>
-                </div>
-                <div className="sh-store-banner">
-                  <span className="sh-store-banner-txt">Premium Shopify Store</span>
-                </div>
-                <div className="sh-store-products">
-                  {[1,2,3,4].map(i => (
-                    <div key={i} className="sh-product-tile">
-                      <div className="sh-product-img" />
-                      <div className="sh-product-info">
-                        <div className="sh-product-name" />
-                        <div className="sh-product-price" />
-                      </div>
-                    </div>
-                  ))}
+              <div className="sh-person-card">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/images/office.png" alt="1Solutions Shopify Developers" className="sh-person-img" />
+                <div className="sh-person-overlay">
+                  <div className="sh-person-label">Expert Shopify Developers</div>
+                  <div className="sh-person-sublabel">1Solutions · 15+ Years Experience</div>
                 </div>
               </div>
               <div className="sh-chip sh-chip-1">✓ Shopify Partner</div>
