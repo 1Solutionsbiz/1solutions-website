@@ -13,8 +13,42 @@ function cleanHtml(str) {
   return (str || '').replace(/<[^>]+>/g, '').trim()
 }
 
+// Neon gradient card wrapper — rotating conic-gradient border + glow
+function NeonCard({ children, borderSize = 2.5, borderRadius = 20, firstColor = '#6366F1', secondColor = '#FE9700', speed = 4, innerStyle = {} }) {
+  return (
+    <div style={{
+      position: 'relative',
+      borderRadius: `${borderRadius + borderSize}px`,
+      padding: `${borderSize}px`,
+      overflow: 'hidden',
+      boxShadow: `0 0 18px ${firstColor}33, 0 0 32px ${secondColor}22`,
+      height: '100%',
+    }}>
+      {/* Spinning conic-gradient — creates the animated border */}
+      <div style={{
+        position: 'absolute',
+        width: '300%', height: '300%',
+        top: '-100%', left: '-100%',
+        background: `conic-gradient(from 0deg, ${firstColor}, ${secondColor}, ${firstColor})`,
+        animation: `neonSpin ${speed}s linear infinite`,
+        zIndex: 0,
+      }} />
+      {/* Inner card surface */}
+      <div style={{
+        position: 'relative', zIndex: 1,
+        borderRadius: `${borderRadius}px`,
+        overflow: 'hidden',
+        background: '#fff',
+        height: '100%',
+        ...innerStyle,
+      }}>
+        {children}
+      </div>
+    </div>
+  )
+}
+
 export default function BlogPreview({ posts }) {
-  // ── Featured post (left card) — uses posts[0] when available ──
   const fp = posts?.[0] || null
   const featuredTitle    = fp ? cleanHtml(fp.title?.rendered) : staticPosts[0].title
   const featuredImage    = fp?._embedded?.['wp:featuredmedia']?.[0]?.source_url || null
@@ -24,7 +58,6 @@ export default function BlogPreview({ posts }) {
   const featuredHref     = fp ? `/${fp.slug}` : '/blog'
   const featuredCategory = fp?._embedded?.['wp:term']?.[0]?.[0]?.name || 'Blog'
 
-  // ── Grid posts (right side) — uses posts[1..6] or static fallback ──
   const gridPosts = posts?.length > 1
     ? posts.slice(1, 7).map(p => ({
         mins: '8',
@@ -33,11 +66,25 @@ export default function BlogPreview({ posts }) {
       }))
     : staticPosts.map(p => ({ ...p, href: '/blog' }))
 
+  // Neon color pairs — cycle through grid cards
+  const neonPairs = [
+    { first: '#6366F1', second: '#FE9700' },
+    { first: '#8B5CF6', second: '#06B6D4' },
+    { first: '#0EA5E9', second: '#6366F1' },
+    { first: '#FE9700', second: '#8B5CF6' },
+    { first: '#06B6D4', second: '#6366F1' },
+    { first: '#6366F1', second: '#0EA5E9' },
+  ]
+
   return (
     <>
     <style>{`
+      @keyframes neonSpin {
+        0%   { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
       .blog-prev-section { padding: 80px 40px; }
-      .blog-prev-outer { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+      .blog-prev-outer { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
       .blog-prev-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
       @media (max-width: 900px) {
         .blog-prev-section { padding: 56px 24px; }
@@ -50,6 +97,9 @@ export default function BlogPreview({ posts }) {
       }
       @media (max-width: 400px) {
         .blog-prev-inner { grid-template-columns: 1fr; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .blog-prev-section div[style*="neonSpin"] { animation: none !important; }
       }
     `}</style>
     <section id="insights" className="blog-prev-section" style={{ background: '#fafafa' }}>
@@ -73,93 +123,89 @@ export default function BlogPreview({ posts }) {
 
         <div className="blog-prev-outer">
 
-          {/* ── Featured post ── */}
-          <Link href={featuredHref} style={{ textDecoration: 'none', color: 'inherit' }}>
-            <div style={{
-              borderRadius: '20px', overflow: 'hidden',
-              background: '#fff',
-              border: '1px solid rgba(229,231,235,0.8)',
-              boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
-              display: 'flex', flexDirection: 'column',
-              height: '100%',
-            }}>
-              <div style={{ position: 'relative', height: '260px', flexShrink: 0, background: '#e5e7eb' }}>
-                {featuredImage && (
-                  <img
-                    src={featuredImage}
-                    alt={featuredTitle}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                  />
-                )}
-                <div style={{
-                  position: 'absolute', inset: 0,
-                  background: 'linear-gradient(transparent 40%, rgba(15,52,96,0.65) 100%)',
-                }} />
-                <span style={{
-                  position: 'absolute', top: '16px', left: '16px',
-                  background: '#FE9700', color: '#fff',
-                  padding: '4px 14px', borderRadius: '20px',
-                  fontSize: '11px', fontWeight: 700, letterSpacing: '0.3px',
-                }}>
-                  {featuredCategory}
-                </span>
-              </div>
-              <div style={{ padding: '28px', display: 'flex', flexDirection: 'column', gap: '16px', flexGrow: 1 }}>
-                <h3 style={{
-                  fontSize: '20px', fontWeight: 800, color: '#111827',
-                  margin: 0, lineHeight: 1.45, flexGrow: 1,
-                }}>
-                  {featuredTitle}
-                </h3>
-                <p style={{ fontSize: '14px', color: '#6b7280', margin: 0, lineHeight: 1.6 }}>
-                  {featuredExcerpt}
-                </p>
-                <span style={{
-                  color: '#FE9700', fontWeight: 700, fontSize: '14px',
-                  display: 'inline-flex', alignItems: 'center', gap: '6px',
-                }}>
-                  Read more →
-                </span>
-              </div>
-            </div>
-          </Link>
-
-          {/* ── Article grid ── */}
-          <div className="blog-prev-inner">
-            {gridPosts.map((post, i) => (
-              <Link key={i} href={post.href} style={{ textDecoration: 'none', color: 'inherit' }}>
-                <div style={{
-                  borderRadius: '14px',
-                  border: '1px solid rgba(229,231,235,0.8)',
-                  padding: '20px',
-                  background: '#fff',
-                  boxShadow: '0 2px 10px rgba(0,0,0,0.04)',
-                  display: 'flex', flexDirection: 'column', gap: '10px',
-                  height: '100%',
-                }}>
+          {/* ── Featured post — neon border, larger glow ── */}
+          <Link href={featuredHref} style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
+            <NeonCard
+              borderSize={3}
+              borderRadius={18}
+              firstColor="#6366F1"
+              secondColor="#FE9700"
+              speed={5}
+            >
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <div style={{ position: 'relative', height: '260px', flexShrink: 0, background: '#e5e7eb' }}>
+                  {featuredImage && (
+                    <img
+                      src={featuredImage}
+                      alt={featuredTitle}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                    />
+                  )}
+                  <div style={{
+                    position: 'absolute', inset: 0,
+                    background: 'linear-gradient(transparent 40%, rgba(15,52,96,0.65) 100%)',
+                  }} />
                   <span style={{
-                    fontSize: '11px', fontWeight: 700, color: '#FE9700',
-                    background: 'rgba(254,151,0,0.1)',
-                    padding: '3px 10px', borderRadius: '20px',
-                    display: 'inline-block', width: 'fit-content',
+                    position: 'absolute', top: '16px', left: '16px',
+                    background: '#FE9700', color: '#fff',
+                    padding: '4px 14px', borderRadius: '20px',
+                    fontSize: '11px', fontWeight: 700, letterSpacing: '0.3px',
                   }}>
-                    {post.mins} min read
+                    {featuredCategory}
                   </span>
-                  <h3 style={{
-                    fontSize: '13px', fontWeight: 700, color: '#111827',
-                    margin: 0, lineHeight: 1.55, flexGrow: 1,
-                  }}>
-                    {post.title}
+                </div>
+                <div style={{ padding: '28px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  <h3 style={{ fontSize: '20px', fontWeight: 800, color: '#111827', margin: 0, lineHeight: 1.45 }}>
+                    {featuredTitle}
                   </h3>
-                  <span style={{
-                    color: '#0F3460', fontWeight: 600, fontSize: '12px',
-                    display: 'inline-flex', alignItems: 'center', gap: '4px',
-                  }}>
+                  <p style={{ fontSize: '14px', color: '#6b7280', margin: 0, lineHeight: 1.6 }}>
+                    {featuredExcerpt}
+                  </p>
+                  <span style={{ color: '#FE9700', fontWeight: 700, fontSize: '14px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
                     Read more →
                   </span>
                 </div>
-              </Link>
-            ))}
+              </div>
+            </NeonCard>
+          </Link>
+
+          {/* ── Article grid — each card with its own neon color pair ── */}
+          <div className="blog-prev-inner">
+            {gridPosts.map((post, i) => {
+              const { first, second } = neonPairs[i % neonPairs.length]
+              return (
+                <Link key={i} href={post.href} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
+                  <NeonCard
+                    borderSize={2}
+                    borderRadius={13}
+                    firstColor={first}
+                    secondColor={second}
+                    speed={3 + (i % 3) * 0.5}
+                  >
+                    <div style={{
+                      padding: '20px',
+                      display: 'flex', flexDirection: 'column', gap: '10px',
+                      height: '100%', boxSizing: 'border-box',
+                    }}>
+                      <span style={{
+                        fontSize: '11px', fontWeight: 700, color: '#FE9700',
+                        background: 'rgba(254,151,0,0.1)',
+                        padding: '3px 10px', borderRadius: '20px',
+                        display: 'inline-block', width: 'fit-content',
+                      }}>
+                        {post.mins} min read
+                      </span>
+                      <h3 style={{ fontSize: '13px', fontWeight: 700, color: '#111827', margin: 0, lineHeight: 1.55, flexGrow: 1 }}>
+                        {post.title}
+                      </h3>
+                      <span style={{ color: '#0F3460', fontWeight: 600, fontSize: '12px', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                        Read more →
+                      </span>
+                    </div>
+                  </NeonCard>
+                </Link>
+              )
+            })}
           </div>
         </div>
 
