@@ -145,7 +145,7 @@ const CLIENTS = [
 
 const WHY = [
   {
-    stat: '15+',
+    stat: '16+',
     label: 'Years in Operation',
     desc: "We've navigated every major technology shift since 2008 — and guided our clients through each one without disruption.",
   },
@@ -328,6 +328,7 @@ export default function WhoWeAre() {
             width: 100%;
             position: relative;
             z-index: 1;
+            text-align: center;
           }
           .au-hero-eyebrow {
             display: inline-flex;
@@ -370,13 +371,14 @@ export default function WhoWeAre() {
             line-height: 1.7;
             color: #374151;
             max-width: 620px;
-            margin: 0 0 40px;
+            margin: 0 auto 40px;
           }
           .au-hero-actions {
             display: flex;
             gap: 16px;
             flex-wrap: wrap;
             margin-bottom: 48px;
+            justify-content: center;
           }
           .au-btn-primary {
             background: #114171;
@@ -1000,23 +1002,6 @@ export default function WhoWeAre() {
               <Link href="/contact-us/" className="au-btn-primary">Start a Conversation</Link>
               <Link href="#our-story" className="au-btn-outline">Our Story</Link>
             </div>
-            <div className="au-hero-chips">
-              <div className="au-hero-chip">
-                <strong>2010</strong>Founded
-              </div>
-              <div className="au-hero-chip">
-                <strong>500+</strong>Clients Served
-              </div>
-              <div className="au-hero-chip">
-                <strong>1,200+</strong>Projects Delivered
-              </div>
-              <div className="au-hero-chip">
-                <strong>50+</strong>Team Members
-              </div>
-              <div className="au-hero-chip">
-                <strong>97%</strong>Retention Rate
-              </div>
-            </div>
           </div>
         </section>
 
@@ -1066,7 +1051,7 @@ export default function WhoWeAre() {
               </div>
               <div ref={statsRef}>
                 <div className="au-stats-grid">
-                  <AnimatedStat label="Years in Business" val={15} suffix="+" started={statsStarted} />
+                  <AnimatedStat label="Years in Business" val={16} suffix="+" started={statsStarted} />
                   <AnimatedStat label="Clients Served" val={500} suffix="+" started={statsStarted} />
                   <AnimatedStat label="Projects Delivered" val={1200} suffix="+" started={statsStarted} />
                   <AnimatedStat label="Retention Rate" val={97} suffix="%" started={statsStarted} />
