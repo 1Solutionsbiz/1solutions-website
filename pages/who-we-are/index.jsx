@@ -75,8 +75,8 @@ const TIMELINE = [
   },
   {
     year: '2024',
-    title: '15 Years & Counting',
-    desc: "Celebrating 15 years of continuous operation with 1,200+ projects delivered, 50+ team members, and a 97% client retention rate.",
+    title: '16 Years & Counting',
+    desc: "Celebrating 16 years of continuous operation with 1,200+ projects delivered, 50+ team members, and a 97% client retention rate.",
   },
 ];
 
@@ -282,10 +282,10 @@ export default function WhoWeAre() {
   return (
     <>
       <Head>
-        <title>Who We Are | 1Solutions — 15+ Years of Digital Excellence</title>
+        <title>Who We Are | 1Solutions — 16+ Years of Digital Excellence</title>
         <meta
           name="description"
-          content="1Solutions is a New Delhi-based web development and digital marketing agency with 15+ years of experience, 500+ global clients, and a 97% retention rate. Trusted by Verizon, Nuance, Indian Express, and more."
+          content="1Solutions is a New Delhi-based web development and digital marketing agency with 16+ years of experience, 500+ global clients, and a 97% retention rate. Trusted by Verizon, Nuance, Indian Express, and more."
         />
         <link rel="canonical" href="https://www.1solutions.biz/who-we-are/" />
         <style>{`
@@ -357,7 +357,7 @@ export default function WhoWeAre() {
             line-height: 1.12;
             letter-spacing: -0.03em;
             color: #0F1F40;
-            margin: 0 0 28px;
+            margin: 0 auto 28px;
             max-width: 860px;
           }
           .au-gradient-text {
@@ -995,7 +995,7 @@ export default function WhoWeAre() {
             </h1>
             <p className="au-hero-sub">
               1Solutions is a web development and digital marketing agency founded in 2010.
-              For 15+ years, we&apos;ve been the trusted technology partner for startups, scale-ups,
+              For 16+ years, we&apos;ve been the trusted technology partner for startups, scale-ups,
               and enterprise teams who need world-class work — at a fraction of what local agencies charge.
             </p>
             <div className="au-hero-actions">
@@ -1083,7 +1083,7 @@ export default function WhoWeAre() {
         <section className="au-section au-timeline-section">
           <div className="au-container">
             <div className="au-timeline-head">
-              <p className="au-eyebrow">15 Years in the Making</p>
+              <p className="au-eyebrow">16 Years in the Making</p>
               <h2 className="au-heading">The milestones that shaped who we are.</h2>
             </div>
             <div className="au-timeline" ref={timelineRef}>
@@ -1192,7 +1192,7 @@ export default function WhoWeAre() {
           <div className="au-container">
             <p className="au-eyebrow" style={{ textAlign: 'center' }}>Let&apos;s Build Together</p>
             <h2 className="au-heading">
-              Ready to work with a team that&apos;s been at this for 15 years?
+              Ready to work with a team that&apos;s been at this for 16 years?
             </h2>
             <p className="au-lead">
               Every great partnership starts with a conversation. Tell us what you&apos;re building —
