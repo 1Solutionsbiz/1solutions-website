@@ -122,7 +122,7 @@ export default function WhyUs() {
         .whyus-story-right { margin: 20px; border-radius: 24px; overflow: hidden; height: calc(100% - 40px); flex-shrink: 0; position: relative; }
         .whyus-growth-sec { padding: 80px 40px; }
         .whyus-facts-layout { display: grid; grid-template-columns: 280px 1fr; gap: 48px; align-items: flex-start; }
-        .whyus-stats-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+        .whyus-stats-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; padding: 20px; margin: -20px; }
         @media (max-width: 900px) {
           .whyus-sec { padding: 56px 24px; }
           .whyus-header { grid-template-columns: 1fr; gap: 24px; margin-bottom: 36px; }
@@ -280,48 +280,69 @@ export default function WhyUs() {
 
             {/* Right: 3 stat cards */}
             <div className="whyus-stats-grid">
-              {growthStats.map((s, i) => (
-                <div key={i} style={{
-                  border: '1px solid rgba(0,0,0,0.1)',
-                  borderRadius: '16px',
-                  padding: '36px 24px 32px',
-                  display: 'flex', flexDirection: 'column', alignItems: 'center',
-                  background: '#fff', textAlign: 'center',
-                  ...blurFade(0.15 + i * 0.15),
-                }}>
-                  {/* Circle */}
-                  <div style={{
-                    width: '160px', height: '160px', borderRadius: '50%',
-                    overflow: 'hidden', marginBottom: '32px', flexShrink: 0,
-                  }}>
-                    {s.image ? (
-                      <img src={s.image} alt="" aria-hidden="true"
-                        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                    ) : (
+              {growthStats.map((s, i) => {
+                const glowColors = [
+                  'rgba(254,151,0,0.55)',
+                  'rgba(17,65,113,0.50)',
+                  'rgba(20,184,166,0.48)',
+                ]
+                return (
+                  <div key={i} style={{ position: 'relative', ...blurFade(0.15 + i * 0.15) }}>
+                    {/* Glow blob behind card */}
+                    <div aria-hidden="true" style={{
+                      position: 'absolute',
+                      top: '-16px', left: '-16px', right: '-16px', bottom: '-16px',
+                      borderRadius: '32px',
+                      background: glowColors[i],
+                      filter: 'blur(28px)',
+                      opacity: 0.55,
+                      zIndex: 0,
+                      pointerEvents: 'none',
+                    }} />
+                    {/* Card */}
+                    <div style={{
+                      position: 'relative', zIndex: 1,
+                      border: '1px solid rgba(0,0,0,0.08)',
+                      borderRadius: '16px',
+                      padding: '36px 24px 32px',
+                      display: 'flex', flexDirection: 'column', alignItems: 'center',
+                      background: '#fff', textAlign: 'center',
+                    }}>
+                      {/* Circle */}
                       <div style={{
-                        width: '100%', height: '100%', background: s.color,
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        width: '160px', height: '160px', borderRadius: '50%',
+                        overflow: 'hidden', marginBottom: '32px', flexShrink: 0,
                       }}>
-                        <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                          <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
-                          <polyline points="16 7 22 7 22 13" />
-                        </svg>
+                        {s.image ? (
+                          <img src={s.image} alt="" aria-hidden="true"
+                            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                        ) : (
+                          <div style={{
+                            width: '100%', height: '100%', background: s.color,
+                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                          }}>
+                            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                              <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                              <polyline points="16 7 22 7 22 13" />
+                            </svg>
+                          </div>
+                        )}
                       </div>
-                    )}
+                      {/* Value */}
+                      <div style={{
+                        fontSize: '44px', fontWeight: 700, color: '#111',
+                        letterSpacing: '-1px', lineHeight: 1, marginBottom: '14px',
+                      }}>
+                        {s.value}
+                      </div>
+                      {/* Label */}
+                      <p style={{ fontSize: '14px', color: '#6b7280', lineHeight: 1.6, margin: 0 }}>
+                        {s.label}
+                      </p>
+                    </div>
                   </div>
-                  {/* Value */}
-                  <div style={{
-                    fontSize: '44px', fontWeight: 700, color: '#111',
-                    letterSpacing: '-1px', lineHeight: 1, marginBottom: '14px',
-                  }}>
-                    {s.value}
-                  </div>
-                  {/* Label */}
-                  <p style={{ fontSize: '14px', color: '#6b7280', lineHeight: 1.6, margin: 0 }}>
-                    {s.label}
-                  </p>
-                </div>
-              ))}
+                )
+              })}
             </div>
 
           </div>
