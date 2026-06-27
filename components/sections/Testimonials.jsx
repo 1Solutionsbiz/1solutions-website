@@ -151,6 +151,12 @@ export default function Testimonials() {
         @media (prefers-reduced-motion: reduce) {
           .testi-track, .testi-track-rev { animation: none !important; }
         }
+        .testi-fade { width: 160px; }
+        .testi-header-inner { padding: 0 40px; }
+        @media (max-width: 600px) {
+          .testi-fade { width: 48px !important; }
+          .testi-header-inner { padding: 0 20px !important; }
+        }
       `}</style>
 
       <section id="testimonials" style={{
@@ -159,7 +165,7 @@ export default function Testimonials() {
         overflow: 'hidden',
       }}>
         {/* Header */}
-        <div style={{ textAlign: 'center', padding: '0 40px', marginBottom: '44px' }}>
+        <div className="testi-header-inner" style={{ textAlign: 'center', marginBottom: '44px' }}>
           <h2 style={{ fontSize: 'clamp(32px,3.5vw,48px)', fontWeight: 900, marginBottom: '16px' }}>
             <span style={{ color: '#111827' }}>What Our </span><AuroraText>Clients Say</AuroraText>
           </h2>
@@ -170,12 +176,12 @@ export default function Testimonials() {
 
         {/* Row 1 — scrolls left */}
         <div className="testi-row" style={{ marginBottom: '16px', position: 'relative' }}>
-          <div style={{
-            position: 'absolute', left: 0, top: 0, bottom: 0, width: '160px', zIndex: 1,
+          <div className="testi-fade" style={{
+            position: 'absolute', left: 0, top: 0, bottom: 0, zIndex: 1,
             background: 'linear-gradient(to right, #faf8ff, transparent)', pointerEvents: 'none',
           }} />
-          <div style={{
-            position: 'absolute', right: 0, top: 0, bottom: 0, width: '160px', zIndex: 1,
+          <div className="testi-fade" style={{
+            position: 'absolute', right: 0, top: 0, bottom: 0, zIndex: 1,
             background: 'linear-gradient(to left, #faf8ff, transparent)', pointerEvents: 'none',
           }} />
           <div className="testi-track" style={{ paddingLeft: '20px' }}>
@@ -185,12 +191,12 @@ export default function Testimonials() {
 
         {/* Row 2 — scrolls right */}
         <div className="testi-row" style={{ position: 'relative' }}>
-          <div style={{
-            position: 'absolute', left: 0, top: 0, bottom: 0, width: '160px', zIndex: 1,
+          <div className="testi-fade" style={{
+            position: 'absolute', left: 0, top: 0, bottom: 0, zIndex: 1,
             background: 'linear-gradient(to right, #f3f8ff, transparent)', pointerEvents: 'none',
           }} />
-          <div style={{
-            position: 'absolute', right: 0, top: 0, bottom: 0, width: '160px', zIndex: 1,
+          <div className="testi-fade" style={{
+            position: 'absolute', right: 0, top: 0, bottom: 0, zIndex: 1,
             background: 'linear-gradient(to left, #f3f8ff, transparent)', pointerEvents: 'none',
           }} />
           <div className="testi-track-rev" style={{ paddingLeft: '20px' }}>

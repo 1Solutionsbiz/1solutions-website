@@ -143,6 +143,8 @@ export default function WhyUs() {
           .pf-row2 { grid-template-columns: 1fr; }
           .pf-row2 .pf-card { height: 200px; }
           .whyus-stats-grid { grid-template-columns: 1fr; }
+          .whyus-stat-circle { width: 110px !important; height: 110px !important; }
+          .whyus-stat-val { font-size: 36px !important; }
         }
         @media (prefers-reduced-motion:reduce) {
           .pf-card-img,.pf-overlay,.pf-bottom { transition: none !important; }
@@ -243,7 +245,7 @@ export default function WhyUs() {
                       padding: '36px 24px 32px', display: 'flex', flexDirection: 'column',
                       alignItems: 'center', background: '#fff', textAlign: 'center',
                     }}>
-                      <div style={{ width: '160px', height: '160px', borderRadius: '50%', overflow: 'hidden', marginBottom: '32px', flexShrink: 0 }}>
+                      <div className="whyus-stat-circle" style={{ width: '160px', height: '160px', borderRadius: '50%', overflow: 'hidden', marginBottom: '32px', flexShrink: 0 }}>
                         {s.image ? (
                           // eslint-disable-next-line @next/next/no-img-element
                           <img src={s.image} alt="" aria-hidden="true" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
@@ -255,7 +257,7 @@ export default function WhyUs() {
                           </div>
                         )}
                       </div>
-                      <div style={{ fontSize: '44px', fontWeight: 700, color: '#111', letterSpacing: '-1px', lineHeight: 1, marginBottom: '14px' }}>{s.value}</div>
+                      <div className="whyus-stat-val" style={{ fontSize: '44px', fontWeight: 700, color: '#111', letterSpacing: '-1px', lineHeight: 1, marginBottom: '14px' }}>{s.value}</div>
                       <p style={{ fontSize: '14px', color: '#6b7280', lineHeight: 1.6, margin: 0 }}>{s.label}</p>
                     </div>
                   </div>

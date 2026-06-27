@@ -185,9 +185,12 @@ export default function Services() {
         .svc-section { padding: 56px 20px; }
         .svc-layout  { grid-template-columns: 1fr; gap: 28px; }
         .svc-tabs    { display: grid !important; grid-template-columns: repeat(3,1fr); gap: 10px !important; }
+        .svc-tab-item { width: 100% !important; }
+        .svc-img-wrap { min-height: 240px !important; }
       }
       @media (max-width: 520px) {
         .svc-tabs { grid-template-columns: repeat(2,1fr) !important; }
+        .svc-section { padding: 48px 16px; }
       }
       @property --svc-angle {
         syntax: '<angle>';
@@ -316,7 +319,7 @@ export default function Services() {
               }}
             />
             {/* Gradient card — overflow:hidden only clips its own content */}
-            <div style={{
+            <div className="svc-img-wrap" style={{
               position: 'relative', zIndex: 1,
               borderRadius: '24px', overflow: 'hidden',
               background: 'transparent',

@@ -240,9 +240,15 @@ export default function Hero() {
         @media (max-width: 768px) {
           .hero-section { padding: 64px 20px 56px !important; }
           .hero-metrics { grid-template-columns: repeat(2,1fr); }
+          .hero-desc { font-size: 16px !important; }
+          .hero-logos-wrap { margin-top: 48px !important; }
         }
         @media (max-width: 480px) {
           .hero-section { padding: 56px 16px 48px !important; }
+          .hero-desc { font-size: 15px !important; }
+          .hero-logos-wrap { margin-top: 36px !important; }
+          .hero-metrics { margin-top: 28px !important; margin-bottom: 28px !important; }
+          .hero-btns { gap: 12px !important; }
         }
       `}</style>
 
@@ -286,7 +292,7 @@ export default function Hero() {
             We Engineer Products.<br />We Drive Growth.
           </h1>
 
-          <p className="hero-stagger-2" style={{
+          <p className="hero-stagger-2 hero-desc" style={{
             fontSize: '18px', color: 'rgba(255,255,255,0.78)',
             maxWidth: '680px', lineHeight: 1.8, margin: '0 auto',
           }}>
@@ -310,7 +316,7 @@ export default function Hero() {
             ))}
           </div>
 
-          <div className="hero-stagger-4" style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <div className="hero-stagger-4 hero-btns" style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link
               href="/contact-us"
               onMouseEnter={() => setPriHov(true)}
@@ -352,7 +358,7 @@ export default function Hero() {
         </div>
 
         {/* Scrolling Client Logos */}
-        <div className="hero-stagger-5" style={{ width: '100%', marginTop: '72px', position: 'relative', zIndex: 2 }}>
+        <div className="hero-stagger-5 hero-logos-wrap" style={{ width: '100%', marginTop: '72px', position: 'relative', zIndex: 2 }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <div style={{
               textAlign: 'center', fontSize: '11px', fontWeight: 700,

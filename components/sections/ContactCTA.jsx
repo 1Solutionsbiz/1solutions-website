@@ -7,6 +7,8 @@ export default function ContactCTA() {
       .cta-section { padding: 70px 40px; }
       .cta-grid { display: grid; grid-template-columns: 1fr 1.15fr; align-items: stretch; }
       .cta-form-rows { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+      .cta-left-panel { padding: 40px 30px 40px 40px; }
+      .cta-right-panel { padding: 40px; }
       @media (max-width: 900px) {
         .cta-section { padding: 56px 24px; }
         .cta-grid { grid-template-columns: 1fr; }
@@ -14,6 +16,9 @@ export default function ContactCTA() {
       @media (max-width: 480px) {
         .cta-section { padding: 40px 16px; }
         .cta-form-rows { grid-template-columns: 1fr; }
+        .cta-left-panel { padding: 24px 20px !important; }
+        .cta-right-panel { padding: 20px !important; }
+        .cta-stats-grid { grid-template-columns: 1fr 1fr !important; }
       }
     `}</style>
     <section id="contact" className="cta-section" style={{ background: '#fff' }}>
@@ -24,7 +29,7 @@ export default function ContactCTA() {
       }} className="cta-grid">
 
         {/* Left */}
-        <div style={{ padding: '40px 30px 40px 40px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
+        <div className="cta-left-panel" style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
           <h2 style={{ fontSize: 'clamp(28px,3vw,48px)', fontWeight: 900, lineHeight: 1.2, margin: 0 }}>
             <span style={{ color: '#111827' }}>Let&apos;s Build </span><AuroraText>Something<br />Great Together</AuroraText>
           </h2>
@@ -59,7 +64,7 @@ export default function ContactCTA() {
 
             {/* Stats */}
             <div style={{ paddingTop: '20px', borderTop: '2px solid rgba(15, 52, 96, 0.12)' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '16px' }}>
+              <div className="cta-stats-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '16px' }}>
                 {[
                   { n: '500+', l: 'Projects Delivered' },
                   { n: '16+', l: 'Years Experience' },
@@ -76,7 +81,7 @@ export default function ContactCTA() {
         </div>
 
         {/* Right: Form */}
-        <div style={{ padding: '40px', display: 'flex', alignItems: 'center' }}>
+        <div className="cta-right-panel" style={{ display: 'flex', alignItems: 'center' }}>
           <div style={{
             background: '#fff', border: '1px solid #e5e7eb',
             borderRadius: '12px', padding: '36px', width: '100%',

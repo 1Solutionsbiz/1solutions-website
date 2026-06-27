@@ -61,7 +61,8 @@ export default function Industries() {
       }
       @media (max-width: 480px) {
         .ind-section { padding: 48px 16px; }
-        .ind-grid { grid-template-columns: repeat(2,1fr); gap: 14px; }
+        .ind-grid { grid-template-columns: repeat(2,1fr); gap: 12px; }
+        .ind-card { height: 220px !important; }
       }
       @media (prefers-reduced-motion: reduce) {
         .ind-blur-fade { transition: none !important; opacity: 1 !important; filter: none !important; transform: none !important; }
@@ -88,6 +89,7 @@ export default function Industries() {
             <div key={ind.name} className="ind-blur-fade" style={blurFade(0.28 + i * 0.09)}>
               {/* Inner card owns hover transitions */}
               <div
+                className="ind-card"
                 style={{
                   position: 'relative', borderRadius: '16px', overflow: 'hidden',
                   cursor: 'pointer', height: '280px',
