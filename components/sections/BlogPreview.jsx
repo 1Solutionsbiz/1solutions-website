@@ -52,8 +52,8 @@ export default function BlogPreview({ posts }) {
         .bp-card { background: #fff; border-radius: 16px; overflow: hidden; text-decoration: none; color: inherit; display: flex; flex-direction: column; border: 1px solid #e5e7eb; transition: transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s cubic-bezier(.22,1,.36,1), border-color .3s; }
         .bp-card:hover { transform: translateY(-8px); box-shadow: 0 20px 52px rgba(15,52,96,.12); border-color: rgba(15,52,96,.15); }
 
-        .bp-img { aspect-ratio: 16/10; overflow: hidden; position: relative; flex-shrink: 0; }
-        .bp-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s cubic-bezier(.22,1,.36,1); }
+        .bp-img { aspect-ratio: 21/10; overflow: hidden; position: relative; flex-shrink: 0; }
+        .bp-img img { width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block; transition: transform .5s cubic-bezier(.22,1,.36,1); }
         .bp-card:hover .bp-img img { transform: scale(1.06); }
 
         .bp-body { padding: 24px 24px 22px; display: flex; flex-direction: column; flex: 1; gap: 10px; }
