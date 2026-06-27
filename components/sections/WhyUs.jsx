@@ -49,9 +49,9 @@ const stories = [
 ]
 
 const growthStats = [
-  { value: '350+', label: 'Successful projects delivered worldwide',  image: '/images/Partner-with-us.jpg', color: null },
-  { value: '150+', label: 'Skilled professionals in our team',         image: '/images/office.png',          color: null },
-  { value: '200+', label: 'Satisfied clients across 25+ countries',    image: null,                          color: '#114171' },
+  { value: '500+', label: 'Successful projects delivered worldwide',  image: '/images/Partner-with-us.jpg', color: null },
+  { value: '15+',  label: 'Years of Experience',                       image: '/images/office.png',          color: null },
+  { value: '200+', label: 'Satisfied clients across 25+ countries',    image: '/images/Partner-with-us.jpg', color: null },
 ]
 
 export default function WhyUs() {
