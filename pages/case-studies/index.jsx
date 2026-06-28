@@ -6,17 +6,17 @@ const CATEGORIES = ['All', 'Web Development', 'eCommerce', 'Digital Marketing', 
 
 const PROJECTS = [
   { id: 'comtradesol',        title: 'Comtradesol Advisory Services', category: 'Web Development',  industry: 'Financial Services',      tech: ['WordPress Development', 'UI/UX Design', 'LinkedIn Marketing'],   desc: 'Built a professional corporate website for a financial advisory firm specialising in Trade Financing, Debt Advisory, and Credit Rating — then grew their reach with a targeted LinkedIn brand programme.',                     image: '/images/portfolio/comtradesol-showcase.jpg', url: '/case-studies/comtradesol', internal: true  },
-  { id: 'rngfoundation',      title: 'RNG Foundation Awards',          category: 'Web Development',  industry: 'Media & Journalism',      tech: ['Custom Development', 'Laravel CRM', 'Portal Design'],             desc: "Custom awards portal and Laravel CRM for India's most prestigious journalism honours — 14 award categories, Indian Express Group, EY as knowledge partner.",                                                                  image: '/images/portfolio/rngfoundation.webp',       url: 'https://rngfoundation.com/awards/'               },
+  { id: 'rngfoundation',      title: 'RNG Foundation Awards',          category: 'Web Development',  industry: 'Media & Journalism',      tech: ['Custom Development', 'Laravel CRM', 'Portal Design'],             desc: "Custom awards portal and Laravel CRM for India's most prestigious journalism honours — 14 award categories, Indian Express Group, EY as knowledge partner.",                                                                  image: '/images/portfolio/rngfoundation.webp',       url: 'https://rngfoundation.com/awards/',              dual: true },
   { id: 'aiplusstore',        title: 'AI+ Store',                      category: 'eCommerce',        industry: 'Consumer Electronics',    tech: ['Shopify', 'Liquid', 'UI/UX Design'],                              desc: 'Full-featured Shopify store for AI+ SmartPhones — Nova series 5G smartphones, NovaPods, and NovaWatches across India.',                                                                                                    image: '/images/portfolio/aiplusstore.jpg',           url: 'https://aiplusstore.com/'                        },
-  { id: 'keiyura',            title: 'Keiyura',                        category: 'eCommerce',        industry: 'Fashion & Jewellery',     tech: ['Shopify', 'Liquid', 'UI/UX Design'],                              desc: 'Elegant Shopify store for a handcrafted jewellery brand featuring lookbooks, curated collections, and a storytelling-led shopping experience.',                                                                             image: '/images/portfolio/keiyura.jpg',               url: 'https://keiyura.com/'                            },
+  { id: 'keiyura',            title: 'Keiyura',                        category: 'eCommerce',        industry: 'Fashion & Jewellery',     tech: ['Shopify', 'Liquid', 'UI/UX Design'],                              desc: 'Elegant Shopify store for a handcrafted jewellery brand featuring lookbooks, curated collections, and a storytelling-led shopping experience.',                                                                             image: '/images/portfolio/keiyura.jpg',               url: 'https://keiyura.com/',                           dual: true },
   { id: 'asiandispatch',      title: 'Asian Dispatch',                 category: 'Web Development',  industry: 'Media & Journalism',      tech: ['WordPress', 'Custom Theme', 'UI/UX Design'],                      desc: 'Digital news network for investigative journalism across 13 Asian countries — AI & Tech, Climate, Health, Politics, and Human Rights.',                                                                                     image: '/images/portfolio/asiandispatch.webp',        url: 'https://www.asiandispatch.net'                   },
-  { id: 'vns',                title: 'VNS Group of Institutions',      category: 'Web Development',  industry: 'Education',               tech: ['WordPress', 'Custom Theme', 'UI/UX Design'],                      desc: 'Multi-faculty institution website in Bhopal covering Engineering, Pharmacy, Management, Nursing, and Education across a 50+ acre campus.',                                                                                  image: '/images/portfolio/vns.webp',                  url: 'https://vns.ac.in/'                              },
+  { id: 'vns',                title: 'VNS Group of Institutions',      category: 'Web Development',  industry: 'Education',               tech: ['WordPress', 'Custom Theme', 'UI/UX Design'],                      desc: 'Multi-faculty institution website in Bhopal covering Engineering, Pharmacy, Management, Nursing, and Education across a 50+ acre campus.',                                                                                  image: '/images/portfolio/vns.webp',                  url: 'https://vns.ac.in/',                             dual: true },
   { id: 'shopsamsin',         title: 'Samsin',                         category: 'eCommerce',        industry: 'Fashion & Apparel',       tech: ['Shopify', 'Liquid', 'Email Marketing'],                           desc: 'Minimalist Shopify store for a streetwear label selling tops, bottoms, and headwear — with VIP subscriber access and flash-sale promotions.',                                                                               image: '/images/portfolio/shopsamsin.jpg',            url: 'https://shopsamsin.com/'                         },
-  { id: 'foreverring',        title: 'Forever Ring',                   category: 'eCommerce',        industry: 'Fashion & Jewellery',     tech: ['Shopify', 'Liquid', 'UI/UX Design'],                              desc: 'Sophisticated Shopify store for a Canadian fine jewellery brand — clean product presentation, trust-building pages, and a seamless checkout flow.',                                                                          image: '/images/portfolio/foreverring.jpg',           url: 'https://www.foreverring.ca/'                     },
+  { id: 'foreverring',        title: 'Forever Ring',                   category: 'eCommerce',        industry: 'Fashion & Jewellery',     tech: ['Shopify', 'Liquid', 'UI/UX Design'],                              desc: 'Sophisticated Shopify store for a Canadian fine jewellery brand — clean product presentation, trust-building pages, and a seamless checkout flow.',                                                                          image: '/images/portfolio/foreverring.jpg',           url: 'https://www.foreverring.ca/',                    dual: true },
   { id: 'parfumfrance',       title: 'Parfum France',                  category: 'eCommerce',        industry: 'Beauty & Fragrance',      tech: ['Shopify', 'Liquid', 'UI/UX Design'],                              desc: 'Premium Shopify fragrance boutique bringing French parfumerie to a global audience with immersive design and rich product storytelling.',                                                                                    image: '/images/portfolio/parfumfrance.jpg',          url: 'https://parfumfrance.com/'                       },
-  { id: '305aero',            title: '305 Aero Supplies',              category: 'eCommerce',        industry: 'Electronics & IT',        tech: ['Shopify', 'Liquid', 'eCommerce'],                                 desc: 'Complete IT solutions store offering hardware and software products — a one-stop electronics shop for end-to-end technology needs.',                                                                                          image: '/images/portfolio/305aerosupplies.jpg',       url: 'https://305aerosupplies.com/'                    },
+  { id: '305aero',            title: '305 Aero Supplies',              category: 'eCommerce',        industry: 'Electronics & IT',        tech: ['Shopify', 'Liquid', 'eCommerce'],                                 desc: 'Complete IT solutions store offering hardware and software products — a one-stop electronics shop for end-to-end technology needs.',                                                                                          image: '/images/portfolio/305aerosupplies.jpg',       url: 'https://305aerosupplies.com/',                   dual: true },
   { id: 'yaahdy',             title: 'Yaahdy Store',                   category: 'eCommerce',        industry: 'Lifestyle & Gifts',       tech: ['Shopify', 'Liquid', 'Conversion Optimisation'],                   desc: 'Vibrant Shopify eCommerce store optimised for fast load times and high-converting product pages.',                                                                                                                          image: '/images/portfolio/yaahdy.jpg',                url: 'https://yaahdy.com/'                             },
-  { id: 'copalcollective',    title: 'Copal Collective',               category: 'eCommerce',        industry: 'Home & Lifestyle',        tech: ['Shopify', 'Liquid', 'UI/UX Design'],                              desc: 'Artisan Shopify store for handmade throws and textiles with a focus on craftsmanship and natural materials.',                                                                                                               image: '/images/portfolio/copalcollective.webp'                                                                  },
+  { id: 'copalcollective',    title: 'Copal Collective',               category: 'eCommerce',        industry: 'Home & Lifestyle',        tech: ['Shopify', 'Liquid', 'UI/UX Design'],                              desc: 'Artisan Shopify store for handmade throws and textiles with a focus on craftsmanship and natural materials.',                                                                                                               image: '/images/portfolio/copalcollective.webp',                                                                 dual: true },
   { id: 'explorehonor',       title: 'Explore HONOR',                  category: 'eCommerce',        industry: 'Consumer Electronics',    tech: ['Shopify', 'Liquid', 'UI/UX Design'],                              desc: 'Official Shopify store for HONOR India — smartphones, accessories, audio, wearables, and laptops with no-cost EMI.',                                                                                                        image: '/images/portfolio/explorehonor.webp'                                                                     },
   { id: 'recreator',          title: 'Recreator',                      category: 'eCommerce',        industry: 'Sustainable Fashion',     tech: ['WooCommerce', 'WordPress', 'UI/UX Design'],                       desc: "Eco-conscious WooCommerce store for a US hemp clothing brand — men's and women's sustainable apparel and accessories.",                                                                                                     image: '/images/portfolio/recreator.png'                                                                         },
   { id: 'expetize',           title: 'Expetize',                       category: 'Web Development',  industry: 'SaaS & MarTech',          tech: ['Custom Build', 'UI/UX Design'],                                   desc: 'Bulk email verification platform with 10+ validation layers — detecting disposable addresses and blacklisted emails. Used by teams at Salesforce, HubSpot, and Apollo.',                                                    image: '/images/portfolio/expetize.png'                                                                          },
@@ -165,6 +165,26 @@ export default function CaseStudies() {
   border-radius: 14px;
 }
 
+/* dual-image layout (Sparx "My Life Well" style) */
+.cs-imgs-double {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 12px;
+  align-items: stretch;
+}
+.cs-img-wide {
+  width: 100%; display: block;
+  aspect-ratio: 16/10; object-fit: cover;
+  object-position: left center;
+  border-radius: 14px;
+}
+.cs-img-tall {
+  width: 100%; display: block;
+  aspect-ratio: 3/4; object-fit: cover;
+  object-position: right top;
+  border-radius: 14px;
+}
+
 /* ── CTA ── */
 .cs-cta {
   background: #0A1628; padding: 96px 64px;
@@ -288,12 +308,19 @@ export default function CaseStudies() {
               </div>
 
               <div className="cs-entry-right">
-                <img
-                  src={p.image}
-                  alt={p.title}
-                  className="cs-entry-img"
-                  loading={i < 3 ? 'eager' : 'lazy'}
-                />
+                {p.dual ? (
+                  <div className="cs-imgs-double">
+                    <img src={p.image} alt={p.title} className="cs-img-wide" loading={i < 3 ? 'eager' : 'lazy'} />
+                    <img src={p.image} alt={`${p.title} detail`} className="cs-img-tall" loading="lazy" />
+                  </div>
+                ) : (
+                  <img
+                    src={p.image}
+                    alt={p.title}
+                    className="cs-entry-img"
+                    loading={i < 3 ? 'eager' : 'lazy'}
+                  />
+                )}
               </div>
 
             </div>
