@@ -1293,6 +1293,14 @@ body {
   color: rgba(255,255,255,0.60);
 }
 
+/* ── Footer accordion (mobile) ── */
+/* Desktop default: toggle hidden, static heading visible, list always open */
+.bf-col-toggle { display: none; }
+.bf-col-heading-static { display: block; }
+.bf-col-list { list-style: none; padding: 0; margin: 0; }
+.bf-col-chevron { color: rgba(255,255,255,0.45); flex-shrink: 0; transition: transform 0.25s; }
+.bf-col-chevron-open { transform: rotate(180deg); }
+
 /* ── Responsive ── */
 @media (max-width: 1280px) {
   /* Tighten nav gap on smaller desktops */
@@ -1323,9 +1331,41 @@ body {
   .bf-brand-inner { grid-template-columns: 1fr 1fr; gap: 24px; }
   .bf-brand-left { grid-column: 1 / -1; }
 }
+@media (max-width: 640px) {
+  /* Accordion: show toggle, hide static heading */
+  .bf-col-toggle {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    cursor: pointer;
+    padding: 13px 0;
+    text-align: left;
+    color: #fff;
+  }
+  .bf-col-heading-static { display: none !important; }
+  /* First col gets top border too */
+  .bf-col:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
+  /* List: closed by default, open when active */
+  .bf-col-list { max-height: 0; overflow: hidden; transition: max-height 0.32s ease; }
+  .bf-col-list-open { max-height: 440px; padding-bottom: 14px; }
+  /* Cols wrap: remove padding, stack columns */
+  .bf-cols-wrap { padding: 0; }
+  .bf-cols-wrap .bf-inner { grid-template-columns: 1fr; gap: 0; }
+  /* Search strip: stack items on mobile */
+  .bf-search-inner { flex-direction: column; align-items: flex-start; gap: 10px; padding: 14px 0; }
+  .bf-sitemap-link { display: none; }
+  /* Brand section: tighten */
+  .bf-brand-section { padding: 20px 0; }
+  .bf-brand-inner { gap: 20px; }
+  /* Hide long legal paragraphs — they're for desktop SEO */
+  .bf-legal-text-optional { display: none; }
+}
 @media (max-width: 480px) {
   .bf-inner { padding: 0 16px; }
-  .bf-cols-wrap .bf-inner { grid-template-columns: 1fr; }
   .bf-brand-inner { grid-template-columns: 1fr; }
   .bf-brand-left { grid-column: auto; }
   /* Fix mobile nav position — no topbar is rendered so header is always 76px */

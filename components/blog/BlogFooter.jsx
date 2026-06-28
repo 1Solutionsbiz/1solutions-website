@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState } from 'react';
 
 const COLS = [
   {
@@ -94,26 +95,50 @@ const SOCIAL = [
 ];
 
 export default function BlogFooter() {
+  const [openCol, setOpenCol] = useState(null);
+
+  const toggle = (heading) =>
+    setOpenCol(prev => prev === heading ? null : heading);
+
   return (
     <footer className="bf-footer">
 
       {/* ── LINK COLUMNS ── */}
       <div className="bf-cols-wrap">
         <div className="bf-inner">
-          {COLS.map(col => (
-            <div key={col.heading} className="bf-col">
-              <h3 className="bf-col-heading">{col.heading}</h3>
-              <ul>
-                {col.links.map(([label, href]) => (
-                  <li key={label}><Link href={href}>{label}</Link></li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {COLS.map(col => {
+            const isOpen = openCol === col.heading;
+            return (
+              <div key={col.heading} className="bf-col">
+                {/* Mobile: tappable accordion header */}
+                <button
+                  className="bf-col-toggle"
+                  onClick={() => toggle(col.heading)}
+                  aria-expanded={isOpen}
+                >
+                  <span className="bf-col-heading" style={{ margin: 0 }}>{col.heading}</span>
+                  <svg
+                    className={`bf-col-chevron${isOpen ? ' bf-col-chevron-open' : ''}`}
+                    width="16" height="16" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" strokeWidth="2.5"
+                  >
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </button>
+                {/* Desktop: static heading */}
+                <h3 className="bf-col-heading bf-col-heading-static">{col.heading}</h3>
+                <ul className={`bf-col-list${isOpen ? ' bf-col-list-open' : ''}`}>
+                  {col.links.map(([label, href]) => (
+                    <li key={label}><Link href={href}>{label}</Link></li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
         </div>
       </div>
 
-      {/* ── SITEMAP (left) + RATING (center) + SOCIAL ICONS (right) STRIP ── */}
+      {/* ── SITEMAP + RATING + SOCIAL STRIP ── */}
       <div className="bf-search-strip">
         <div className="bf-inner bf-search-inner">
           <Link href="/sitemap" className="bf-sitemap-link">Sitemap</Link>
@@ -131,7 +156,7 @@ export default function BlogFooter() {
         </div>
       </div>
 
-      {/* ── BOTTOM BRAND SECTION — 3 columns ── */}
+      {/* ── BOTTOM BRAND SECTION ── */}
       <div className="bf-brand-section">
         <div className="bf-inner bf-brand-inner">
 
@@ -152,15 +177,15 @@ export default function BlogFooter() {
             </nav>
           </div>
 
-          {/* Col 2 (middle): copyright + legal text + badge logos in one row */}
+          {/* Col 2: copyright + legal + badges */}
           <div className="bf-brand-middle">
             <p className="bf-copyright">
               &copy; {new Date().getFullYear()} 1Solutions. All rights reserved.
             </p>
-            <p className="bf-legal-text">
+            <p className="bf-legal-text bf-legal-text-optional">
               1Solutions is a full service web development and digital marketing company helping businesses build, grow, and scale their online presence through innovative technology and results driven marketing solutions.
             </p>
-            <p className="bf-legal-text">
+            <p className="bf-legal-text bf-legal-text-optional">
               Service offerings, features, support plans, pricing, and terms may be modified at our discretion without prior notice.
             </p>
             <div className="bf-trust-badges">
@@ -178,7 +203,7 @@ export default function BlogFooter() {
             </div>
           </div>
 
-          {/* Col 3 (right): registered office */}
+          {/* Col 3: contact */}
           <div className="bf-brand-right">
             <h3 className="bf-col-heading" style={{ marginBottom: '14px' }}>Connect with us</h3>
             <div className="bf-contact-row">
