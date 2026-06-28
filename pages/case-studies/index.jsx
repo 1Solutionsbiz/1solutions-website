@@ -6,9 +6,9 @@ import { PROJECTS } from '../../lib/case-studies';
 const CATEGORIES = ['All', 'Web Development', 'eCommerce', 'Digital Marketing', 'Mobile App', 'UI/UX Design'];
 
 const MOBILE_APPS = [
-  { id: 'ma1', num: '01', title: 'Booking & Scheduling App',  tags: ['Web App', 'Mobile App'], image: '/images/portfolio/zincfootball.png'      },
-  { id: 'ma2', num: '02', title: 'Healthcare Patient Portal', tags: ['Web App', 'Mobile App'], image: '/images/portfolio/playaorthodontics.png' },
-  { id: 'ma3', num: '03', title: 'Smart Commerce Platform',   tags: ['Mobile App'],            image: '/images/portfolio/aiplusstore.jpg'        },
+  { id: 'ma1', num: '01', title: 'Booking & Scheduling App',  tags: ['Web App', 'Mobile App'], image: '/images/portfolio/zincfootball.png',       url: '/case-studies/zincfootball'      },
+  { id: 'ma2', num: '02', title: 'Healthcare Patient Portal', tags: ['Web App', 'Mobile App'], image: '/images/portfolio/playaorthodontics.png',  url: '/case-studies/playaorthodontics' },
+  { id: 'ma3', num: '03', title: 'Smart Commerce Platform',   tags: ['Mobile App'],            image: '/images/portfolio/aiplusstore.jpg',        url: '/case-studies/aiplusstore'       },
 ];
 
 export default function CaseStudies() {
@@ -226,6 +226,15 @@ export default function CaseStudies() {
   border-radius: 50px;
   padding: 8px 18px;
 }
+.cs-app-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 18px;
+  font-size: 13px; font-weight: 700; color: #111;
+  border: 2px solid #111; border-radius: 50px;
+  padding: 11px 24px; text-decoration: none;
+  transition: background .2s, color .2s;
+}
+.cs-app-link:hover { background: #111; color: #fff; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
@@ -359,6 +368,10 @@ export default function CaseStudies() {
                     ))}
                   </div>
                 </div>
+                <Link href={app.url} className="cs-app-link">
+                  View Details
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </Link>
               </div>
             ))}
           </div>
