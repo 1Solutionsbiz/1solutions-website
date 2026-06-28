@@ -182,15 +182,19 @@ export default function Services() {
         .svc-layout { grid-template-columns: 220px 1fr 1.2fr; gap: 32px; }
       }
       @media (max-width: 860px) {
-        .svc-section { padding: 56px 20px; }
-        .svc-layout  { grid-template-columns: 1fr; gap: 28px; }
-        .svc-tabs    { display: grid !important; grid-template-columns: repeat(3,1fr); gap: 10px !important; }
-        .svc-tab-item { width: 100% !important; }
+        .svc-section  { padding: 56px 20px; }
+        .svc-layout   { grid-template-columns: 1fr; gap: 28px; }
+        .svc-tabs     { display: grid !important; grid-template-columns: repeat(3,1fr); gap: 8px !important; }
+        .svc-tab-item { width: 100% !important; padding: 10px 12px !important; }
+        .svc-tab-label { white-space: normal !important; font-size: 13px !important; line-height: 1.3 !important; }
+        .svc-tab-arrow { display: none !important; }
         .svc-img-wrap { min-height: 240px !important; }
       }
       @media (max-width: 520px) {
-        .svc-tabs { grid-template-columns: repeat(2,1fr) !important; }
-        .svc-section { padding: 48px 16px; }
+        .svc-section  { padding: 48px 16px; }
+        .svc-tabs     { grid-template-columns: repeat(2,1fr) !important; gap: 8px !important; }
+        .svc-tab-item { flex-direction: column !important; align-items: center !important; padding: 10px 8px !important; gap: 6px !important; border-radius: 14px !important; text-align: center !important; }
+        .svc-tab-label { font-size: 11px !important; }
       }
       @property --svc-angle {
         syntax: '<angle>';
@@ -269,7 +273,7 @@ export default function Services() {
                     {s.icon}
                   </span>
                   {/* Label */}
-                  <span style={{
+                  <span className="svc-tab-label" style={{
                     fontSize: '15px',
                     fontWeight: isActive ? 700 : 400,
                     color: isActive ? '#111827' : '#6b7280',
