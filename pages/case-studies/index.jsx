@@ -46,6 +46,12 @@ const PROJECTS = [
   { id: 'throneportapotties',  title: 'Throne Porta Potties',          category: 'Web Development',  industry: 'Sanitation & Events',     tech: ['WordPress', 'Custom Theme', 'UI/UX Design'],                      desc: 'Porta potty rental website showcasing sanitation solutions for construction sites, events, and outdoor projects.',                                                                                                          image: '/images/portfolio/throneportapotties.png'                                                                },
 ];
 
+const MOBILE_APPS = [
+  { id: 'ma1', num: '01', title: 'Booking & Scheduling App',  tags: ['Web App', 'Mobile App'], image: '/images/portfolio/zincfootball.png'      },
+  { id: 'ma2', num: '02', title: 'Healthcare Patient Portal', tags: ['Web App', 'Mobile App'], image: '/images/portfolio/playaorthodontics.png' },
+  { id: 'ma3', num: '03', title: 'Smart Commerce Platform',   tags: ['Mobile App'],            image: '/images/portfolio/aiplusstore.jpg'        },
+];
+
 export default function CaseStudies() {
   const [activeFilter, setActiveFilter] = useState('All');
   const filtered = activeFilter === 'All'
@@ -207,6 +213,61 @@ export default function CaseStudies() {
 .cs-cta-b2 { display:inline-flex;align-items:center;gap:10px;color:rgba(255,255,255,.65);padding:14px 28px;border-radius:6px;font-size:14px;font-weight:700;text-decoration:none;border:1.5px solid rgba(255,255,255,.14);transition:border-color .2s,color .2s; }
 .cs-cta-b2:hover { border-color:rgba(255,255,255,.4);color:#fff; }
 
+/* ── MOBILE APP CARD SHOWCASE ── */
+.cs-apps-section {
+  background: #fff;
+  padding: 96px 0 0;
+}
+.cs-apps-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 64px;
+}
+.cs-apps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.cs-app-header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.cs-app-num {
+  font-size: 13px; font-weight: 700;
+  color: #BBBBBB; letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+.cs-app-title {
+  font-size: clamp(1.25rem, 1.6vw, 1.6rem);
+  font-weight: 800; color: #111;
+  letter-spacing: -0.025em; line-height: 1.2;
+}
+.cs-app-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+}
+.cs-app-img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform .45s ease;
+}
+.cs-app-card:hover .cs-app-img { transform: scale(1.04); }
+.cs-app-pills {
+  position: absolute;
+  bottom: 20px; left: 20px;
+  display: flex; gap: 8px; flex-wrap: wrap;
+}
+.cs-app-pill {
+  font-size: 13px; font-weight: 600;
+  color: #111; background: #fff;
+  border-radius: 50px;
+  padding: 8px 18px;
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   .cs-entry { grid-template-columns: 260px 1fr; }
@@ -216,10 +277,13 @@ export default function CaseStudies() {
   .cs-hero-inner { padding: 0 24px; }
   .cs-entry { grid-template-columns: 1fr; padding: 56px 0; }
   .cs-entry-left { position: static; padding-right: 0; margin-bottom: 32px; }
+  .cs-apps-inner { padding-left: 24px; padding-right: 24px; }
+  .cs-apps-grid { grid-template-columns: 1fr; gap: 44px; }
 }
 @media (max-width: 600px) {
   .cs-filter-btn { padding: 12px 16px; font-size: 13px; }
   .cs-cta { padding: 64px 24px; }
+  .cs-apps-section { padding-top: 64px; }
 }
         `}</style>
       </Head>
@@ -328,6 +392,30 @@ export default function CaseStudies() {
 
         </div>
       </div>
+
+      {/* ── MOBILE APP CARD SHOWCASE ── */}
+      <section className="cs-apps-section">
+        <div className="cs-apps-inner">
+          <div className="cs-apps-grid">
+            {MOBILE_APPS.map(app => (
+              <div key={app.id}>
+                <div className="cs-app-header">
+                  <span className="cs-app-num">{app.num}</span>
+                  <h3 className="cs-app-title">{app.title}</h3>
+                </div>
+                <div className="cs-app-card">
+                  <img src={app.image} alt={app.title} className="cs-app-img" loading="lazy" />
+                  <div className="cs-app-pills">
+                    {app.tags.map(t => (
+                      <span key={t} className="cs-app-pill">{t}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ── CTA ── */}
       <section className="cs-cta">
