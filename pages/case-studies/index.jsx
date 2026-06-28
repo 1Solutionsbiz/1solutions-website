@@ -302,7 +302,9 @@ export default function CaseStudies() {
               <div className="cs-entry-left">
                 <div className="cs-entry-num-row">
                   <span className="cs-entry-num">{String(i + 1).padStart(2, '0')}</span>
-                  <h2 className="cs-entry-title">{p.title}</h2>
+                  <Link href={`/case-studies/${p.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <h2 className="cs-entry-title">{p.title}</h2>
+                  </Link>
                 </div>
                 <div className="cs-entry-industry">{p.industry}</div>
                 <p className="cs-entry-desc">{p.desc}</p>
@@ -317,7 +319,7 @@ export default function CaseStudies() {
                 </Link>
               </div>
 
-              <div className="cs-entry-right">
+              <Link href={`/case-studies/${p.id}`} className="cs-entry-right" style={{ display: 'block', textDecoration: 'none' }}>
                 {p.dual ? (
                   <div className="cs-imgs-double">
                     <img src={p.image} alt={p.title} className="cs-img-wide" loading={i < 3 ? 'eager' : 'lazy'} />
@@ -331,7 +333,7 @@ export default function CaseStudies() {
                     loading={i < 3 ? 'eager' : 'lazy'}
                   />
                 )}
-              </div>
+              </Link>
 
             </div>
           ))}
