@@ -17,8 +17,9 @@ const CASE_STUDIES = [
     subtitle: 'Financial Advisory — Gurgaon, India',
     desc: 'Built a professional corporate website on custom WordPress for a financial advisory firm specialising in Trade Financing, Debt Advisory, Equity Advisory, and Credit Rating. We also managed their LinkedIn company profile to grow brand authority and reach.',
     tags: ['WordPress Development', 'UI/UX Design', 'LinkedIn Marketing'],
-    image: '/images/portfolio/comtradesol.webp',
-    url: 'https://www.comtradesol.com/',
+    image: '/images/portfolio/comtradesol-showcase.jpg',
+    url: '/case-studies/comtradesol',
+    internal: true,
   },
   {
     num: '02',
@@ -388,15 +389,17 @@ export default function CaseStudies() {
                 })}
               </div>
               {cs.url && (
-                <a
-                  href={cs.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cs-link"
-                >
-                  View Project
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </a>
+                cs.internal ? (
+                  <Link href={cs.url} className="cs-link">
+                    Read Case Study
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </Link>
+                ) : (
+                  <a href={cs.url} target="_blank" rel="noopener noreferrer" className="cs-link">
+                    View Project
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </a>
+                )
               )}
             </div>
 
