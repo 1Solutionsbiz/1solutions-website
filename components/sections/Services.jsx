@@ -338,13 +338,6 @@ export default function Services() {
                   objectFit: 'cover', display: 'block',
                 }}
               />
-              {/* Accent tone overlay — matches the service gradient */}
-              <div aria-hidden="true" style={{
-                position: 'absolute', inset: 0,
-                background: current.grad,
-                opacity: 0.45,
-                pointerEvents: 'none',
-              }} />
             </div>
           </div>
 
