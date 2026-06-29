@@ -291,88 +291,151 @@ export default function CaseStudyPage({ project, prev, next }) {
           .ct-live-link:hover { opacity: 0.85; }
 
           /* ── Sidebar ── */
+          /* ── Sidebar ── */
           .ct-sidebar {
             position: sticky;
             top: 100px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 14px;
           }
-          .ct-sidebar-card {
-            background: #fff;
-            border: 1px solid #e5e7eb;
-            border-radius: 14px;
+
+          /* Snapshot card */
+          .ct-snap {
+            background: #0A1628;
+            border-radius: 18px;
             padding: 22px;
           }
-          .ct-sidebar-card h3 {
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: #9ca3af;
-            margin: 0 0 16px;
+          .ct-snap-kicker {
+            font-size: 10px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: .16em;
+            color: #FE9700; margin-bottom: 16px;
           }
-          .ct-sidebar-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid #f3f4f6;
-            font-size: 13px;
-          }
-          .ct-sidebar-row:last-child { border-bottom: none; padding-bottom: 0; }
-          .ct-sidebar-label { color: #6b7280; }
-          .ct-sidebar-val { font-weight: 700; color: #111827; text-align: right; max-width: 160px; }
-
-          .ct-sidebar-btn {
-            display: flex;
-            align-items: center;
+          .ct-snap-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 10px;
-            padding: 11px 16px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            text-decoration: none;
-            margin-bottom: 10px;
-            transition: opacity .2s;
           }
-          .ct-sidebar-btn:last-child { margin-bottom: 0; }
-          .ct-sidebar-btn.primary { background: #0A1628; color: #fff; }
-          .ct-sidebar-btn.primary:hover { opacity: 0.85; }
-          .ct-sidebar-btn.secondary { background: #f9fafb; color: #0a1628; border: 1px solid #e5e7eb; }
-          .ct-sidebar-btn.secondary:hover { background: #f3f4f6; }
-          .ct-sidebar-btn.green { background: #16a34a; color: #fff; }
-          .ct-sidebar-btn.green:hover { opacity: 0.88; }
+          .ct-snap-item {
+            background: rgba(255,255,255,.07);
+            border-radius: 11px;
+            padding: 13px 13px 11px;
+          }
+          .ct-snap-icon {
+            width: 28px; height: 28px;
+            background: rgba(254,151,0,.18);
+            border-radius: 7px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 9px;
+          }
+          .ct-snap-label {
+            font-size: 9px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: .1em;
+            color: rgba(255,255,255,.38); margin-bottom: 3px;
+          }
+          .ct-snap-val {
+            font-size: 12px; font-weight: 700;
+            color: #fff; line-height: 1.35;
+          }
 
+          /* Tech stack card */
+          .ct-tech {
+            background: #fff;
+            border: 1px solid #f0f0f0;
+            border-radius: 18px;
+            padding: 20px;
+          }
+          .ct-tech-hdr {
+            font-size: 10px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: .14em;
+            color: #9ca3af; margin-bottom: 13px;
+          }
+          .ct-tech-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+          .ct-sb-pill {
+            font-size: 11px; font-weight: 600;
+            padding: 4px 11px;
+            border-radius: 50px; border: 1.5px solid;
+          }
+
+          /* Live site card */
+          .ct-live {
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+            border-radius: 18px; padding: 20px;
+            text-decoration: none; display: block;
+            transition: transform .2s, opacity .2s;
+          }
+          .ct-live:hover { transform: translateY(-2px); opacity: .92; }
+          .ct-live-lbl {
+            font-size: 10px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: .15em;
+            color: rgba(255,255,255,.5); margin-bottom: 6px;
+          }
+          .ct-live-title {
+            font-size: 15px; font-weight: 800;
+            color: #fff; margin-bottom: 14px; line-height: 1.3;
+          }
+          .ct-live-btn {
+            display: inline-flex; align-items: center; gap: 7px;
+            background: rgba(255,255,255,.15); color: #fff;
+            border-radius: 7px; padding: 8px 15px;
+            font-size: 12px; font-weight: 700;
+          }
+
+          /* CTA card */
+          .ct-cta-card {
+            background: linear-gradient(135deg, #0F3460 0%, #1a4a7a 100%);
+            border-radius: 18px; padding: 22px;
+            position: relative; overflow: hidden;
+          }
+          .ct-cta-card-orb {
+            position: absolute; border-radius: 50%; pointer-events: none;
+            top: -40px; right: -40px;
+            width: 120px; height: 120px;
+            background: radial-gradient(circle, rgba(254,151,0,.18) 0%, transparent 70%);
+          }
+          .ct-cta-card h3 {
+            font-size: 16px; font-weight: 800;
+            color: #fff; line-height: 1.3;
+            margin: 0 0 7px; position: relative;
+          }
+          .ct-cta-card p {
+            font-size: 12px; color: rgba(255,255,255,.6);
+            line-height: 1.65; margin: 0 0 16px; position: relative;
+          }
+          .ct-cta-card-btn {
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            background: #FE9700; color: #fff;
+            border-radius: 8px; padding: 11px 18px;
+            font-size: 13px; font-weight: 700;
+            text-decoration: none; position: relative;
+            transition: background .2s;
+          }
+          .ct-cta-card-btn:hover { background: #e08600; }
+
+          /* Prev / Next nav */
+          .ct-nav { display: flex; flex-direction: column; gap: 8px; }
           .ct-nav-card {
-            display: block;
-            padding: 16px 18px;
-            border-radius: 12px;
-            text-decoration: none;
-            transition: opacity .2s;
+            display: block; padding: 13px 16px;
+            border-radius: 12px; text-decoration: none;
+            transition: transform .18s, opacity .18s;
           }
-          .ct-nav-card:hover { opacity: 0.88; }
-          .ct-nav-card.prev { background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%); border: 1px solid #e5e7eb; }
+          .ct-nav-card:hover { transform: translateY(-1px); opacity: .9; }
+          .ct-nav-card.prev { background: #f5f5f5; border: 1px solid #e8e8e8; }
           .ct-nav-card.next { background: linear-gradient(135deg, #0F3460 0%, #1a4a7a 100%); }
-          .ct-nav-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
-          .ct-nav-card.prev .ct-nav-label { color: #9ca3af; }
-          .ct-nav-card.next .ct-nav-label { color: rgba(255,255,255,0.5); }
-          .ct-nav-title { font-size: 13px; font-weight: 700; line-height: 1.4; }
-          .ct-nav-card.prev .ct-nav-title { color: #111827; }
-          .ct-nav-card.next .ct-nav-title { color: #fff; }
+          .ct-nav-lbl { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 4px; }
+          .ct-nav-card.prev .ct-nav-lbl { color: #aaa; }
+          .ct-nav-card.next .ct-nav-lbl { color: rgba(255,255,255,.45); }
+          .ct-nav-ttl { font-size: 12px; font-weight: 700; line-height: 1.4; }
+          .ct-nav-card.prev .ct-nav-ttl { color: #111; }
+          .ct-nav-card.next .ct-nav-ttl { color: #fff; }
 
-          .ct-back-link {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 13px;
-            font-weight: 600;
-            color: #6b7280;
-            text-decoration: none;
-            padding: 10px 0;
-            transition: color .18s;
+          /* Back link */
+          .ct-back {
+            display: flex; align-items: center; gap: 6px;
+            font-size: 12px; font-weight: 600; color: #aaa;
+            text-decoration: none; padding: 4px 0; transition: color .18s;
           }
-          .ct-back-link:hover { color: #111; }
+          .ct-back:hover { color: #111; }
 
           /* ── CTA ── */
           .ct-cta {
@@ -557,67 +620,96 @@ export default function CaseStudyPage({ project, prev, next }) {
         {/* ── RIGHT: Sidebar ── */}
         <aside className="ct-sidebar">
 
-          {/* At a Glance */}
-          <div className="ct-sidebar-card">
-            <h3>Project at a Glance</h3>
-            {[
-              { label: 'Industry', value: project.industry },
-              { label: 'Category', value: project.category },
-              { label: 'Platform', value: getPlatform(project.tech) },
-              { label: 'Year', value: '2024' },
-            ].map(row => (
-              <div key={row.label} className="ct-sidebar-row">
-                <span className="ct-sidebar-label">{row.label}</span>
-                <span className="ct-sidebar-val">{row.value}</span>
-              </div>
-            ))}
+          {/* Project Snapshot — dark navy card */}
+          <div className="ct-snap">
+            <div className="ct-snap-kicker">Project Snapshot</div>
+            <div className="ct-snap-grid">
+              {[
+                {
+                  label: 'Industry', value: project.industry,
+                  icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FE9700" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="12.01"/></svg>
+                },
+                {
+                  label: 'Category', value: project.category,
+                  icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FE9700" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                },
+                {
+                  label: 'Platform', value: getPlatform(project.tech),
+                  icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FE9700" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                },
+                {
+                  label: 'Year', value: '2024',
+                  icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FE9700" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                },
+              ].map(s => (
+                <div key={s.label} className="ct-snap-item">
+                  <div className="ct-snap-icon">{s.icon}</div>
+                  <div className="ct-snap-label">{s.label}</div>
+                  <div className="ct-snap-val">{s.value}</div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Live site */}
-          {project.liveUrl && (
-            <div className="ct-sidebar-card">
-              <h3>Visit Live Site</h3>
-              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="ct-sidebar-btn green">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                Open Live Website
-              </a>
-              <p style={{ fontSize: '12px', color: '#9ca3af', margin: '8px 0 0', lineHeight: 1.5 }}>Opens in a new tab</p>
+          {/* Tech Stack — coloured pills */}
+          <div className="ct-tech">
+            <div className="ct-tech-hdr">Built With</div>
+            <div className="ct-tech-pills">
+              {project.tech.map(t => {
+                const ts = getTagStyle(t);
+                return (
+                  <span key={t} className="ct-sb-pill" style={{ background: ts.bg, color: ts.color, borderColor: ts.border }}>
+                    {t}
+                  </span>
+                );
+              })}
             </div>
+          </div>
+
+          {/* Live Site — green gradient card */}
+          {project.liveUrl && (
+            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="ct-live">
+              <div className="ct-live-lbl">Live Website</div>
+              <div className="ct-live-title">See it in action ↗</div>
+              <div className="ct-live-btn">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                Open Live Site
+              </div>
+            </a>
           )}
 
-          {/* CTA */}
-          <div className="ct-sidebar-card">
-            <h3>Need a Similar Solution?</h3>
-            <Link href="/contact-us" className="ct-sidebar-btn primary">
+          {/* CTA — deep blue gradient card */}
+          <div className="ct-cta-card">
+            <div className="ct-cta-card-orb" />
+            <h3>Got a project in mind?</h3>
+            <p>Tell us what you need — we'll bring strategy, design, and engineering to make it happen.</p>
+            <Link href="/contact-us" className="ct-cta-card-btn">
               Start Your Project
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </Link>
-            <Link href="/wordpress-development-company" className="ct-sidebar-btn secondary">
-              Our Services
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </Link>
           </div>
 
-          {/* Prev/Next navigation */}
+          {/* Prev / Next navigation */}
           {(prev || next) && (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <div className="ct-nav">
               {prev && (
                 <Link href={`/case-studies/${prev.id}`} className="ct-nav-card prev">
-                  <div className="ct-nav-label">← Previous</div>
-                  <div className="ct-nav-title">{prev.title}</div>
+                  <div className="ct-nav-lbl">← Previous</div>
+                  <div className="ct-nav-ttl">{prev.title}</div>
                 </Link>
               )}
               {next && (
                 <Link href={`/case-studies/${next.id}`} className="ct-nav-card next">
-                  <div className="ct-nav-label">Next →</div>
-                  <div className="ct-nav-title">{next.title}</div>
+                  <div className="ct-nav-lbl">Next →</div>
+                  <div className="ct-nav-ttl">{next.title}</div>
                 </Link>
               )}
             </div>
           )}
 
           {/* Back link */}
-          <Link href="/case-studies" className="ct-back-link">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <Link href="/case-studies" className="ct-back">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             All Case Studies
           </Link>
 
