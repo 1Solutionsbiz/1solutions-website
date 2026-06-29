@@ -11,6 +11,42 @@ const MOBILE_APPS = [
   { id: 'ma3', num: '03', title: 'Smart Commerce Platform',   tags: ['Mobile App'],            image: '/images/portfolio/aiplusstore.jpg',        url: '/case-studies/aiplusstore'       },
 ];
 
+const TAG_COLORS = {
+  'WordPress Development':   { bg: '#EFF6FF', color: '#1D4ED8', border: '#BFDBFE' },
+  'WordPress':               { bg: '#EFF6FF', color: '#1D4ED8', border: '#BFDBFE' },
+  'Custom PHP Theme':        { bg: '#EFF6FF', color: '#1D4ED8', border: '#BFDBFE' },
+  'Custom Theme':            { bg: '#F5F3FF', color: '#6D28D9', border: '#DDD6FE' },
+  'Shopify':                 { bg: '#ECFDF5', color: '#047857', border: '#A7F3D0' },
+  'Liquid':                  { bg: '#D1FAE5', color: '#065F46', border: '#6EE7B7' },
+  'WooCommerce':             { bg: '#FFF7ED', color: '#C2410C', border: '#FED7AA' },
+  'UI/UX Design':            { bg: '#EDE9FE', color: '#6D28D9', border: '#DDD6FE' },
+  'Custom Development':      { bg: '#F0FDF4', color: '#15803D', border: '#86EFAC' },
+  'Custom Build':            { bg: '#F0FDF4', color: '#15803D', border: '#86EFAC' },
+  'Next.js':                 { bg: '#F5F3FF', color: '#5B21B6', border: '#C4B5FD' },
+  'LinkedIn Marketing':      { bg: '#EFF6FF', color: '#1E40AF', border: '#BFDBFE' },
+  'Email Marketing':         { bg: '#FFF7ED', color: '#C2410C', border: '#FED7AA' },
+  'Laravel CRM':             { bg: '#F0FDF4', color: '#15803D', border: '#86EFAC' },
+  'Portal Design':           { bg: '#F0F9FF', color: '#0369A1', border: '#BAE6FD' },
+  'Conversion Optimisation': { bg: '#FEFCE8', color: '#A16207', border: '#FDE68A' },
+  'eCommerce':               { bg: '#ECFDF5', color: '#047857', border: '#A7F3D0' },
+  'SEO':                     { bg: '#FEFCE8', color: '#A16207', border: '#FDE68A' },
+};
+const FALLBACK_TAG_COLORS = [
+  { bg: '#EFF6FF', color: '#1D4ED8', border: '#BFDBFE' },
+  { bg: '#EDE9FE', color: '#6D28D9', border: '#DDD6FE' },
+  { bg: '#ECFDF5', color: '#047857', border: '#A7F3D0' },
+  { bg: '#FFF7ED', color: '#C2410C', border: '#FED7AA' },
+  { bg: '#F0FDF4', color: '#15803D', border: '#86EFAC' },
+  { bg: '#FEFCE8', color: '#A16207', border: '#FDE68A' },
+  { bg: '#F0F9FF', color: '#0369A1', border: '#BAE6FD' },
+];
+function getTagStyle(tag) {
+  if (TAG_COLORS[tag]) return TAG_COLORS[tag];
+  let hash = 0;
+  for (let i = 0; i < tag.length; i++) hash = (hash + tag.charCodeAt(i)) % FALLBACK_TAG_COLORS.length;
+  return FALLBACK_TAG_COLORS[hash];
+}
+
 export default function CaseStudies() {
   const [activeFilter, setActiveFilter] = useState('All');
   const filtered = activeFilter === 'All'
@@ -108,12 +144,12 @@ export default function CaseStudies() {
   display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 28px;
 }
 .cs-entry-tag {
-  font-size: 12px; font-weight: 500; color: #333;
-  border: 1.5px solid #333; border-radius: 50px;
+  font-size: 12px; font-weight: 600;
+  border: 1.5px solid; border-radius: 50px;
   padding: 5px 16px;
-  transition: background .2s, color .2s;
+  transition: opacity .2s;
 }
-.cs-entry-tag:hover { background: #111; color: #fff; border-color: #111; }
+.cs-entry-tag:hover { opacity: 0.75; }
 .cs-entry-link {
   display: inline-flex; align-items: center; gap: 8px;
   font-size: 13px; font-weight: 700; color: #111;
@@ -318,9 +354,12 @@ export default function CaseStudies() {
                 <div className="cs-entry-industry">{p.industry}</div>
                 <p className="cs-entry-desc">{p.desc}</p>
                 <div className="cs-entry-tags">
-                  {p.tech.map(t => (
-                    <span key={t} className="cs-entry-tag">{t}</span>
-                  ))}
+                  {p.tech.map(t => {
+                    const ts = getTagStyle(t);
+                    return (
+                      <span key={t} className="cs-entry-tag" style={{ background: ts.bg, color: ts.color, borderColor: ts.border }}>{t}</span>
+                    );
+                  })}
                 </div>
                 <Link href={`/case-studies/${p.id}`} className="cs-entry-link">
                   Read Case Study
