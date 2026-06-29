@@ -152,12 +152,12 @@ export default function CaseStudies() {
 .cs-entry-tag:hover { opacity: 0.75; }
 .cs-entry-link {
   display: inline-flex; align-items: center; gap: 8px;
-  font-size: 13px; font-weight: 700; color: #111;
-  border: 2px solid #111; border-radius: 50px;
+  font-size: 13px; font-weight: 700; color: #114171;
+  border: 2px solid #114171; border-radius: 50px;
   padding: 11px 24px; text-decoration: none;
   transition: background .2s, color .2s;
 }
-.cs-entry-link:hover { background: #111; color: #fff; }
+.cs-entry-link:hover { background: #114171; color: #fff; }
 
 .cs-entry-right {}
 .cs-entry-img {
@@ -265,12 +265,12 @@ export default function CaseStudies() {
 .cs-app-link {
   display: inline-flex; align-items: center; gap: 8px;
   margin-top: 18px;
-  font-size: 13px; font-weight: 700; color: #111;
-  border: 2px solid #111; border-radius: 50px;
+  font-size: 13px; font-weight: 700; color: #114171;
+  border: 2px solid #114171; border-radius: 50px;
   padding: 11px 24px; text-decoration: none;
   transition: background .2s, color .2s;
 }
-.cs-app-link:hover { background: #111; color: #fff; }
+.cs-app-link:hover { background: #114171; color: #fff; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
