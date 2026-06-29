@@ -1047,24 +1047,6 @@ export default function WhoWeAre() {
           </div>
         </section>
 
-        {/* ── Tech Marquee ── */}
-        <div className="au-marquee-wrap" aria-hidden="true">
-          <div className="au-marquee-track">
-            {[
-              'WordPress', '·', 'Laravel', '·', 'Django', '·', 'React', '·', 'Next.js', '·',
-              'Python', '·', 'Node.js', '·', 'PHP', '·', 'WooCommerce', '·', 'Shopify', '·',
-              'Magento', '·', 'Drupal', '·', 'MySQL', '·', 'PostgreSQL', '·', 'AWS', '·',
-              'Google Cloud', '·', 'Docker', '·', 'Technical SEO', '·', 'PPC', '·', 'UI/UX Design', '·',
-              'WordPress', '·', 'Laravel', '·', 'Django', '·', 'React', '·', 'Next.js', '·',
-              'Python', '·', 'Node.js', '·', 'PHP', '·', 'WooCommerce', '·', 'Shopify', '·',
-              'Magento', '·', 'Drupal', '·', 'MySQL', '·', 'PostgreSQL', '·', 'AWS', '·',
-              'Google Cloud', '·', 'Docker', '·', 'Technical SEO', '·', 'PPC', '·', 'UI/UX Design', '·',
-            ].map((t, i) => (
-              <span key={i} className={t === '·' ? 'au-marquee-sep' : ''}>{t}</span>
-            ))}
-          </div>
-        </div>
-
         {/* ── Our Story + Stats ── */}
         <section
           id="our-story"
