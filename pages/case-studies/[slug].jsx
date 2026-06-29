@@ -651,7 +651,7 @@ export default function CaseStudyPage({ project, prev, next }) {
 export async function getStaticPaths() {
   const { PROJECTS } = require('../../lib/case-studies');
   return {
-    paths: PROJECTS.map(p => ({ params: { slug: p.id } })),
+    paths: PROJECTS.filter(p => p.id !== 'comtradesol').map(p => ({ params: { slug: p.id } })),
     fallback: false,
   };
 }
