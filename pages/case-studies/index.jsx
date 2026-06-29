@@ -277,17 +277,38 @@ export default function CaseStudies() {
   .cs-entry { grid-template-columns: 260px 1fr; }
 }
 @media (max-width: 860px) {
-  .cs-body-inner, .cs-cta { padding-left: 24px; padding-right: 24px; }
-  .cs-hero-inner { padding: 0 24px; }
-  .cs-entry { grid-template-columns: 1fr; padding: 56px 0; }
-  .cs-entry-left { position: static; padding-right: 0; margin-bottom: 32px; }
-  .cs-apps-inner { padding-left: 24px; padding-right: 24px; }
-  .cs-apps-grid { grid-template-columns: 1fr; gap: 44px; }
+  .cs-body-inner { padding-left: 20px; padding-right: 20px; }
+  .cs-hero-inner { padding: 0 20px; }
+  .cs-hero { padding: 80px 0 60px; }
+  .cs-filter-bar { padding-top: 36px; }
+  .cs-entry { grid-template-columns: 1fr; padding: 48px 0; }
+  .cs-entry-left { position: static; padding-right: 0; margin-bottom: 28px; }
+  .cs-imgs-double { grid-template-columns: 1fr; }
+  .cs-img-tall { display: none; }
+  .cs-apps-section { padding-top: 64px; }
+  .cs-apps-inner { padding-left: 20px; padding-right: 20px; }
+  .cs-apps-grid { grid-template-columns: 1fr; gap: 40px; }
+  .cs-cta { padding-left: 24px; padding-right: 24px; }
 }
 @media (max-width: 600px) {
-  .cs-filter-btn { padding: 12px 16px; font-size: 13px; }
-  .cs-cta { padding: 64px 24px; }
-  .cs-apps-section { padding-top: 64px; }
+  .cs-hero { padding: 70px 0 48px; min-height: unset; }
+  .cs-hero-sub { margin-bottom: 28px; font-size: .95rem; }
+  .cs-filter-btn { padding: 10px 14px; font-size: 13px; }
+  .cs-entry { padding: 36px 0; }
+  .cs-entry-tags { margin-bottom: 20px; }
+  .cs-apps-section { padding-top: 48px; }
+  .cs-cta { padding: 56px 20px; }
+}
+@media (max-width: 480px) {
+  .cs-body-inner { padding-left: 16px; padding-right: 16px; }
+  .cs-hero-inner { padding: 0 16px; }
+  .cs-hero { padding: 60px 0 40px; }
+  .cs-apps-inner { padding-left: 16px; padding-right: 16px; }
+  .cs-entry { padding: 28px 0; }
+  .cs-apps-grid { gap: 32px; }
+  .cs-hero-cta { font-size: .875rem; padding: 10px 18px 10px 12px; }
+  .cs-entry-link, .cs-app-link { padding: 10px 20px; font-size: 12px; }
+  .cs-filter-bar { padding-top: 28px; }
 }
         `}</style>
       </Head>
