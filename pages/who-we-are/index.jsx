@@ -75,8 +75,8 @@ const TIMELINE = [
   },
   {
     year: '2024',
-    title: '16 Years & Counting',
-    desc: "Celebrating 16 years of continuous operation with 1,200+ projects delivered, 50+ team members, and a 97% client retention rate.",
+    title: '15+ Years & Counting',
+    desc: "Celebrating 15+ years of continuous operation with 500+ projects delivered and a 97% client retention rate.",
   },
 ];
 
@@ -85,37 +85,79 @@ const SERVICES = [
     icon: '🌐',
     title: 'Web Development',
     href: '/web-development-services',
-    items: ['WordPress', 'Laravel', 'Django & Python', 'React / Next.js', 'Drupal', 'Custom PHP'],
+    items: [
+      { label: 'WordPress', href: '/wordpress-development-company' },
+      { label: 'Laravel', href: '/laravel-development-company' },
+      { label: 'Django & Python', href: '/python-development-services' },
+      { label: 'React / Next.js', href: '/nextjs-development-services' },
+      { label: 'Drupal', href: '/drupal-development-company' },
+      { label: 'Custom PHP', href: '/php-development-services' },
+    ],
   },
   {
     icon: '🛒',
     title: 'E-Commerce',
     href: '/ecommerce-website-development-services',
-    items: ['WooCommerce', 'Shopify', 'Magento', 'OpenCart', 'Custom Storefronts', 'Payment Integration'],
+    items: [
+      { label: 'WooCommerce', href: '/woocommerce-development-company' },
+      { label: 'Shopify', href: '/shopify-store-development' },
+      { label: 'Magento', href: '/magento-development-company' },
+      { label: 'OpenCart', href: '/opencart-development-company' },
+      { label: 'Custom Storefronts', href: '/ecommerce-website-development-services' },
+      { label: 'Payment Integration', href: '/ecommerce-website-development-services' },
+    ],
   },
   {
     icon: '📈',
     title: 'Digital Marketing',
     href: '/digital-marketing-services',
-    items: ['Technical SEO', 'PPC Management', 'Content Strategy', 'Social Media', 'Email Campaigns', 'Analytics & CRO'],
+    items: [
+      { label: 'Technical SEO', href: '/technical-seo-optimization' },
+      { label: 'PPC Management', href: '/ppc-management-services' },
+      { label: 'Content Strategy', href: '/content-marketing-services' },
+      { label: 'Social Media', href: '/social-media-marketing-services' },
+      { label: 'Email Campaigns', href: '/email-marketing-services' },
+      { label: 'Analytics & CRO', href: '/analytics-cro-services' },
+    ],
   },
   {
     icon: '🎨',
     title: 'UI/UX Design',
     href: '/website-design',
-    items: ['Wireframing', 'Prototyping', 'Brand Identity', 'Design Systems', 'User Research', 'Accessibility Audits'],
+    items: [
+      { label: 'Wireframing', href: '/website-design' },
+      { label: 'Prototyping', href: '/prototyping-services' },
+      { label: 'Brand Identity', href: '/brand-identity' },
+      { label: 'Design Systems', href: '/design-systems' },
+      { label: 'User Research', href: '/ux-research' },
+      { label: 'Accessibility Audits', href: '/website-design' },
+    ],
   },
   {
     icon: '☁️',
     title: 'Cloud & DevOps',
     href: '/devops-services-company',
-    items: ['AWS', 'Google Cloud', 'CI/CD Pipelines', 'Docker & Kubernetes', 'Server Optimization', 'Security Hardening'],
+    items: [
+      { label: 'AWS', href: '/devops-services-company' },
+      { label: 'Google Cloud', href: '/cloud-native-services' },
+      { label: 'CI/CD Pipelines', href: '/devops-services-company' },
+      { label: 'Docker & Kubernetes', href: '/devops-services-company' },
+      { label: 'Server Optimization', href: '/devops-services-company' },
+      { label: 'Security Hardening', href: '/devops-services-company' },
+    ],
   },
   {
     icon: '📡',
     title: 'Mobile & APIs',
     href: '/android-application-development-company',
-    items: ['React Native', 'Progressive Web Apps', 'REST APIs', 'GraphQL', 'Third-party Integration', 'Headless CMS'],
+    items: [
+      { label: 'React Native', href: '/react-native-app-development' },
+      { label: 'Progressive Web Apps', href: '/hire-pwa-developer' },
+      { label: 'REST APIs', href: '/web-development-services' },
+      { label: 'GraphQL', href: '/headless-wordpress-development' },
+      { label: 'Third-party Integration', href: '/web-development-services' },
+      { label: 'Headless CMS', href: '/headless-wordpress-development' },
+    ],
   },
 ];
 
@@ -282,7 +324,7 @@ export default function WhoWeAre() {
   return (
     <>
       <Head>
-        <title>Who We Are | 1Solutions — 16+ Years of Digital Excellence</title>
+        <title>Who We Are | 1Solutions | 15+ Years of Digital Excellence</title>
         <meta
           name="description"
           content="1Solutions is a New Delhi-based web development and digital marketing agency with 16+ years of experience, 500+ global clients, and a 97% retention rate. Trusted by Verizon, Nuance, Indian Express, and more."
@@ -995,8 +1037,8 @@ export default function WhoWeAre() {
             </h1>
             <p className="au-hero-sub">
               1Solutions is a web development and digital marketing agency founded in 2010.
-              For 16+ years, we&apos;ve been the trusted technology partner for startups, scale-ups,
-              and enterprise teams who need world-class work — at a fraction of what local agencies charge.
+              For 15+ years, we&apos;ve been the trusted technology partner for startups, scale-ups,
+              and enterprise teams who need world-class work at a fraction of what local agencies charge.
             </p>
             <div className="au-hero-actions">
               <Link href="/contact-us/" className="au-btn-primary">Start a Conversation</Link>
@@ -1039,21 +1081,21 @@ export default function WhoWeAre() {
                 <h2 className="au-heading">Built on a single principle: great work speaks for itself.</h2>
                 <p>
                   Founded in 2008, 1Solutions has grown from a small New Delhi startup into a trusted digital
-                  partner for businesses across the US, Canada, and Australia. Over the past 16+ years, we have
+                  partner for businesses across the globe. Over the past 15+ years, we have
                   successfully delivered 500+ projects spanning web development, eCommerce, digital marketing,
                   UI/UX design, and cloud solutions.
                 </p>
                 <p>
-                  Today, our team of 50+ professionals is committed to building high-performing digital experiences
+                  Today, our team of professionals is committed to building high-performing digital experiences
                   that drive measurable business growth. With a 97% client retention rate, we take pride in
                   fostering long-term partnerships through transparency, accountability, and consistent results.
                 </p>
               </div>
               <div ref={statsRef}>
                 <div className="au-stats-grid">
-                  <AnimatedStat label="Years in Business" val={16} suffix="+" started={statsStarted} />
+                  <AnimatedStat label="Years in Business" val={15} suffix="+" started={statsStarted} />
                   <AnimatedStat label="Clients Served" val={500} suffix="+" started={statsStarted} />
-                  <AnimatedStat label="Projects Delivered" val={1200} suffix="+" started={statsStarted} />
+                  <AnimatedStat label="Projects Delivered" val={500} suffix="+" started={statsStarted} />
                   <AnimatedStat label="Retention Rate" val={97} suffix="%" started={statsStarted} />
                 </div>
               </div>
@@ -1073,8 +1115,8 @@ export default function WhoWeAre() {
           <div className="au-office-overlay" />
           <div className="au-office-text">
             <blockquote className="au-office-quote">
-              &ldquo;We don&apos;t just write code. We take ownership of outcomes.&rdquo;
-              <cite>1Solutions &mdash; New Delhi, India &bull; Est. 2010</cite>
+              &ldquo;Do what you do so well that they will want to see it again and bring their friends.&rdquo;
+              <cite>Walt Disney</cite>
             </blockquote>
           </div>
         </div>
@@ -1083,7 +1125,7 @@ export default function WhoWeAre() {
         <section className="au-section au-timeline-section">
           <div className="au-container">
             <div className="au-timeline-head">
-              <p className="au-eyebrow">16 Years in the Making</p>
+              <p className="au-eyebrow">15+ Years in the Making</p>
               <h2 className="au-heading">The milestones that shaped who we are.</h2>
             </div>
             <div className="au-timeline" ref={timelineRef}>
@@ -1146,41 +1188,16 @@ export default function WhoWeAre() {
             </div>
             <div className="au-services-grid">
               {SERVICES.map((s, i) => (
-                <Link key={i} href={s.href} className="au-service-card" style={{ textDecoration: 'none' }}>
+                <div key={i} className="au-service-card">
                   <div className="au-service-icon">{s.icon}</div>
-                  <div className="au-service-title">{s.title}</div>
+                  <Link href={s.href} className="au-service-title" style={{ textDecoration: 'none', color: 'inherit', display: 'block', marginBottom: '14px' }}>{s.title}</Link>
                   <ul className="au-service-items">
                     {s.items.map((item, j) => (
-                      <li key={j}>{item}</li>
+                      <li key={j}>
+                        <Link href={item.href} style={{ textDecoration: 'none', color: 'inherit' }}>{item.label}</Link>
+                      </li>
                     ))}
                   </ul>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── Why 1Solutions — dark ── */}
-        <section className="au-section au-why-section">
-          <div className="au-container">
-            <div style={{ maxWidth: 560 }}>
-              <p className="au-eyebrow">Why 1Solutions</p>
-              <h2 className="au-heading">The numbers behind the reputation.</h2>
-              <p className="au-lead">
-                We let our track record make the case. These are the four numbers we&apos;re
-                most proud of — and what each one means for your project.
-              </p>
-            </div>
-            <div className="au-why-grid" ref={whyGridRef}>
-              {WHY.map((w, i) => (
-                <div
-                  key={i}
-                  className={`au-why-card${visibleWhyCards.includes(i) ? ' au-wc-in' : ''}`}
-                  style={{ transitionDelay: `${i * 80}ms` }}
-                >
-                  <div className="au-why-num">{w.stat}</div>
-                  <div className="au-why-label">{w.label}</div>
-                  <div className="au-why-desc">{w.desc}</div>
                 </div>
               ))}
             </div>
@@ -1192,7 +1209,7 @@ export default function WhoWeAre() {
           <div className="au-container">
             <p className="au-eyebrow" style={{ textAlign: 'center' }}>Let&apos;s Build Together</p>
             <h2 className="au-heading">
-              Ready to work with a team that&apos;s been at this for 16 years?
+              Ready to work with a team that&apos;s been at this for 15+ years?
             </h2>
             <p className="au-lead">
               Every great partnership starts with a conversation. Tell us what you&apos;re building —
@@ -1202,7 +1219,7 @@ export default function WhoWeAre() {
               <Link href="/contact-us/" className="au-btn-primary">Get a Free Consultation</Link>
               <Link href="/wordpress-development-company/" className="au-btn-outline">Explore Our Services</Link>
             </div>
-            <p className="au-cta-note">No commitment required &mdash; just a conversation.</p>
+            <p className="au-cta-note">No commitment required, just a conversation.</p>
           </div>
         </section>
 
