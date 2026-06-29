@@ -3,24 +3,76 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useState, useEffect, useRef } from 'react'
 
-function useCountUp(target, duration = 1800) {
-  const [count, setCount] = useState(0)
-  const raf = useRef(null)
-  const start = (t) => {
-    const s = performance.now()
-    const step = (now) => {
-      const p = Math.min((now - s) / duration, 1)
-      setCount(Math.floor(p * t))
-      if (p < 1) raf.current = requestAnimationFrame(step)
-    }
-    raf.current = requestAnimationFrame(step)
-  }
-  useEffect(() => () => cancelAnimationFrame(raf.current), [])
-  return [count, start]
-}
-
 const ACCENT = '#114171'
 const AMBER = '#FE9700'
+
+const TAG_COLORS = {
+  'React':          { bg: '#DBEAFE', color: '#1D4ED8', border: '#93C5FD' },
+  'Next.js':        { bg: '#F3F4F6', color: '#111827', border: '#D1D5DB' },
+  'Angular':        { bg: '#FEE2E2', color: '#DC2626', border: '#FCA5A5' },
+  'Vue.js':         { bg: '#D1FAE5', color: '#059669', border: '#6EE7B7' },
+  'Node.js':        { bg: '#D1FAE5', color: '#065F46', border: '#A7F3D0' },
+  'Python':         { bg: '#DBEAFE', color: '#1E40AF', border: '#93C5FD' },
+  'PHP':            { bg: '#EDE9FE', color: '#5B21B6', border: '#C4B5FD' },
+  '.NET':           { bg: '#EDE9FE', color: '#6D28D9', border: '#DDD6FE' },
+  'Flutter':        { bg: '#DBEAFE', color: '#1D4ED8', border: '#93C5FD' },
+  'React Native':   { bg: '#F0F9FF', color: '#0369A1', border: '#BAE6FD' },
+  'iOS':            { bg: '#F3F4F6', color: '#374151', border: '#D1D5DB' },
+  'Android':        { bg: '#D1FAE5', color: '#065F46', border: '#A7F3D0' },
+  'Shopify':        { bg: '#ECFDF5', color: '#047857', border: '#A7F3D0' },
+  'WooCommerce':    { bg: '#EDE9FE', color: '#6D28D9', border: '#DDD6FE' },
+  'Magento':        { bg: '#FEE2E2', color: '#DC2626', border: '#FCA5A5' },
+  'TensorFlow':     { bg: '#FFF7ED', color: '#C2410C', border: '#FED7AA' },
+  'LLMs':           { bg: '#FDF4FF', color: '#86198F', border: '#F5D0FE' },
+  'NLP':            { bg: '#FFFBEB', color: '#92400E', border: '#FDE68A' },
+  'AWS':            { bg: '#FFF7ED', color: '#C2410C', border: '#FED7AA' },
+  'Azure':          { bg: '#DBEAFE', color: '#1D4ED8', border: '#93C5FD' },
+  'Docker':         { bg: '#DBEAFE', color: '#1E40AF', border: '#93C5FD' },
+  'Kubernetes':     { bg: '#EDE9FE', color: '#5B21B6', border: '#C4B5FD' },
+  'Figma':          { bg: '#FDF4FF', color: '#86198F', border: '#F5D0FE' },
+  'Prototyping':    { bg: '#F0FDF4', color: '#15803D', border: '#BBF7D0' },
+  'Design Systems': { bg: '#EDE9FE', color: '#6D28D9', border: '#DDD6FE' },
+  'SEO':            { bg: '#D1FAE5', color: '#065F46', border: '#A7F3D0' },
+  'Google Ads':     { bg: '#FEE2E2', color: '#DC2626', border: '#FCA5A5' },
+  'Meta Ads':       { bg: '#DBEAFE', color: '#1D4ED8', border: '#93C5FD' },
+  'Content':        { bg: '#FFF7ED', color: '#C2410C', border: '#FED7AA' },
+  'Playwright':     { bg: '#D1FAE5', color: '#047857', border: '#A7F3D0' },
+  'Cypress':        { bg: '#D1FAE5', color: '#065F46', border: '#A7F3D0' },
+  'Selenium':       { bg: '#FEE2E2', color: '#991B1B', border: '#FCA5A5' },
+}
+
+const INDUSTRY_COLORS = [
+  { bg: '#EFF6FF', color: '#1D4ED8', border: '#BFDBFE' },
+  { bg: '#F0FDF4', color: '#15803D', border: '#BBF7D0' },
+  { bg: '#FFF1F2', color: '#BE123C', border: '#FECDD3' },
+  { bg: '#FFF7ED', color: '#C2410C', border: '#FED7AA' },
+  { bg: '#ECFDF5', color: '#047857', border: '#A7F3D0' },
+  { bg: '#EDE9FE', color: '#6D28D9', border: '#DDD6FE' },
+  { bg: '#FDF4FF', color: '#86198F', border: '#F5D0FE' },
+  { bg: '#FFFBEB', color: '#92400E', border: '#FDE68A' },
+  { bg: '#F0F9FF', color: '#0369A1', border: '#BAE6FD' },
+  { bg: '#FFF1F2', color: '#9F1239', border: '#FECDD3' },
+  { bg: '#F0FDFA', color: '#0F766E', border: '#99F6E4' },
+  { bg: '#EFF6FF', color: '#1E40AF', border: '#BFDBFE' },
+]
+
+const STEP_COLORS = [
+  { bg: '#EFF6FF', border: '#3B82F6', circle: '#3B82F6', glow: 'rgba(59,130,246,0.18)' },
+  { bg: '#FFF7ED', border: '#FE9700', circle: '#FE9700', glow: 'rgba(254,151,0,0.18)' },
+  { bg: '#F0FDF4', border: '#10B981', circle: '#10B981', glow: 'rgba(16,185,129,0.18)' },
+  { bg: '#F5F3FF', border: '#8B5CF6', circle: '#8B5CF6', glow: 'rgba(139,92,246,0.18)' },
+]
+
+const ROLE_HOVER = [
+  { bg: 'linear-gradient(135deg,#EFF6FF,#DBEAFE)', color: '#1D4ED8', border: '#93C5FD' },
+  { bg: 'linear-gradient(135deg,#F0FDF4,#D1FAE5)', color: '#065F46', border: '#6EE7B7' },
+  { bg: 'linear-gradient(135deg,#FFF7ED,#FED7AA)', color: '#C2410C', border: '#FDBA74' },
+  { bg: 'linear-gradient(135deg,#EDE9FE,#DDD6FE)', color: '#5B21B6', border: '#C4B5FD' },
+  { bg: 'linear-gradient(135deg,#FDF4FF,#F5D0FE)', color: '#86198F', border: '#E879F9' },
+  { bg: 'linear-gradient(135deg,#F0F9FF,#BAE6FD)', color: '#0369A1', border: '#7DD3FC' },
+  { bg: 'linear-gradient(135deg,#FFFBEB,#FDE68A)', color: '#92400E', border: '#FCD34D' },
+  { bg: 'linear-gradient(135deg,#FFF1F2,#FECDD3)', color: '#BE123C', border: '#FDA4AF' },
+]
 
 const RESOURCE_TYPES = [
   { icon: '💻', title: 'Frontend Developers', href: '/hire-reactjs-developer', desc: 'React.js, Next.js, Angular, Vue.js, TypeScript specialists who build pixel-perfect, performant UIs.', tags: ['React', 'Next.js', 'Angular', 'Vue.js'] },
@@ -78,12 +130,12 @@ const MODELS = [
 ]
 
 const WHY = [
-  { h: '150+ Pre-Vetted Professionals', b: 'Every developer, designer, and digital expert is vetted through multi-stage technical assessments, portfolio reviews, and communication screening before they reach you.' },
-  { h: 'Profiles in 48 Hours', b: 'Submit your requirements and receive 2–3 matched candidate profiles within 48 business hours — with detailed CVs, skill assessments, and project samples.' },
-  { h: 'No Lock-In Contracts', b: "Start month-to-month with the flexibility to scale up, scale down, or change resources anytime. We don't hold you hostage with long-term commitments." },
-  { h: 'NDA & IP Ownership', b: 'Confidentiality and IP assignment agreements are signed before any engagement begins. Your codebase, designs, and data remain 100% yours.' },
-  { h: 'Timezone Alignment', b: 'Our resources work overlapping hours with UK, US, Canadian, and Australian teams. No waking up at 3 AM for a standup.' },
-  { h: 'Dedicated Account Manager', b: 'A single point of contact manages your engagement — from onboarding through delivery — so you spend time building, not managing logistics.' },
+  { icon: '🏅', accentBg: 'rgba(254,151,0,0.13)', h: '150+ Pre-Vetted Professionals', b: 'Every developer, designer, and digital expert is vetted through multi-stage technical assessments, portfolio reviews, and communication screening before they reach you.' },
+  { icon: '⚡', accentBg: 'rgba(59,130,246,0.13)', h: 'Profiles in 48 Hours', b: 'Submit your requirements and receive 2–3 matched candidate profiles within 48 business hours — with detailed CVs, skill assessments, and project samples.' },
+  { icon: '🔓', accentBg: 'rgba(16,185,129,0.13)', h: 'No Lock-In Contracts', b: "Start month-to-month with the flexibility to scale up, scale down, or change resources anytime. We don't hold you hostage with long-term commitments." },
+  { icon: '🔒', accentBg: 'rgba(139,92,246,0.13)', h: 'NDA & IP Ownership', b: 'Confidentiality and IP assignment agreements are signed before any engagement begins. Your codebase, designs, and data remain 100% yours.' },
+  { icon: '🌍', accentBg: 'rgba(245,158,11,0.13)', h: 'Timezone Alignment', b: 'Our resources work overlapping hours with UK, US, Canadian, and Australian teams. No waking up at 3 AM for a standup.' },
+  { icon: '🎯', accentBg: 'rgba(236,72,153,0.13)', h: 'Dedicated Account Manager', b: 'A single point of contact manages your engagement — from onboarding through delivery — so you spend time building, not managing logistics.' },
 ]
 
 const PROCESS = [
@@ -101,63 +153,21 @@ const INDUSTRIES = [
 ]
 
 const FAQS = [
-  {
-    q: 'What is a dedicated resource model?',
-    a: 'A dedicated resource is a vetted professional — developer, designer, or marketing expert — who works exclusively or primarily on your project for a defined period. Unlike a freelancer, a dedicated resource integrates into your team, follows your processes, and is managed by 1Solutions for HR and operational matters.',
-  },
-  {
-    q: 'How quickly can I onboard a dedicated resource?',
-    a: 'We deliver matched candidate profiles within 48 business hours of receiving your brief. Once you select a candidate and contracts are signed, the resource typically joins your tools and begins work within 7 days.',
-  },
-  {
-    q: 'Can I scale the team up or down?',
-    a: 'Yes. Our engagement model is built for flexibility. You can add resources as your workload grows, reduce the team during slower periods, or swap specialisations as your project phase changes — with as little as 2 weeks notice.',
-  },
-  {
-    q: 'What seniority levels are available?',
-    a: 'We provide resources across all levels: Junior (1–3 years), Mid-Level (3–6 years), Senior (6–10 years), and Lead/Architect (10+ years). We also offer team leads and technical programme managers for larger engagements.',
-  },
-  {
-    q: 'Do you sign NDAs?',
-    a: 'Yes. A mutual NDA and IP assignment agreement are executed as standard before any engagement begins and before any access is granted to your codebase, designs, or proprietary information.',
-  },
-  {
-    q: 'What if the resource is not the right fit?',
-    a: 'We offer a 2-week replacement guarantee. If the assigned resource is not meeting expectations, notify your account manager and we will provide a replacement profile within 5 business days at no additional cost.',
-  },
-  {
-    q: 'Do your resources work in our timezone?',
-    a: 'Yes. We support timezone overlap with UK (GMT/BST), US (EST, CST, PST), Canada (EST/PST), and Australia (AEST). Resources adjust their working hours to ensure a minimum 4-hour daily overlap with your core team.',
-  },
+  { q: 'What is a dedicated resource model?', a: 'A dedicated resource is a vetted professional — developer, designer, or marketing expert — who works exclusively or primarily on your project for a defined period. Unlike a freelancer, a dedicated resource integrates into your team, follows your processes, and is managed by 1Solutions for HR and operational matters.' },
+  { q: 'How quickly can I onboard a dedicated resource?', a: 'We deliver matched candidate profiles within 48 business hours of receiving your brief. Once you select a candidate and contracts are signed, the resource typically joins your tools and begins work within 7 days.' },
+  { q: 'Can I scale the team up or down?', a: 'Yes. Our engagement model is built for flexibility. You can add resources as your workload grows, reduce the team during slower periods, or swap specialisations as your project phase changes — with as little as 2 weeks notice.' },
+  { q: 'What seniority levels are available?', a: 'We provide resources across all levels: Junior (1–3 years), Mid-Level (3–6 years), Senior (6–10 years), and Lead/Architect (10+ years). We also offer team leads and technical programme managers for larger engagements.' },
+  { q: 'Do you sign NDAs?', a: 'Yes. A mutual NDA and IP assignment agreement are executed as standard before any engagement begins and before any access is granted to your codebase, designs, or proprietary information.' },
+  { q: 'What if the resource is not the right fit?', a: 'We offer a 2-week replacement guarantee. If the assigned resource is not meeting expectations, notify your account manager and we will provide a replacement profile within 5 business days at no additional cost.' },
+  { q: 'Do your resources work in our timezone?', a: 'Yes. We support timezone overlap with UK (GMT/BST), US (EST, CST, PST), Canada (EST/PST), and Australia (AEST). Resources adjust their working hours to ensure a minimum 4-hour daily overlap with your core team.' },
 ]
 
 const LD = {
   '@context': 'https://schema.org',
   '@graph': [
-    {
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
-        { '@type': 'ListItem', position: 2, name: 'Hire Dedicated Resources', item: 'https://www.1solutions.biz/hire-dedicated-resources/' },
-      ],
-    },
-    {
-      '@type': 'Service',
-      name: 'Hire Dedicated Resources',
-      provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz' },
-      description: 'Hire dedicated developers, designers, and digital marketing experts from 1Solutions. Pre-vetted professionals on full-time, part-time, or hourly engagement models. Profiles in 48 hours.',
-      serviceType: 'Staff Augmentation',
-      areaServed: ['IN', 'US', 'CA', 'GB', 'AU'],
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '213', bestRating: '5' },
-    },
-    {
-      '@type': 'FAQPage',
-      mainEntity: FAQS.map(f => ({
-        '@type': 'Question',
-        name: f.q,
-        acceptedAnswer: { '@type': 'Answer', text: f.a },
-      })),
-    },
+    { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' }, { '@type': 'ListItem', position: 2, name: 'Hire Dedicated Resources', item: 'https://www.1solutions.biz/hire-dedicated-resources/' }] },
+    { '@type': 'Service', name: 'Hire Dedicated Resources', provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz' }, description: 'Hire dedicated developers, designers, and digital marketing experts from 1Solutions.', serviceType: 'Staff Augmentation', areaServed: ['IN', 'US', 'CA', 'GB', 'AU'], aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '213', bestRating: '5' } },
+    { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
   ],
 }
 
@@ -166,11 +176,7 @@ export default function HireDedicatedResources() {
   const enR = useRef(null); const [enV, setEnV] = useState(false)
   const whR = useRef(null); const [whV, setWhV] = useState(false)
   const prR = useRef(null); const [prV, setPrV] = useState(false)
-  const stR = useRef(null); const [stV, setStV] = useState(false)
-  const [c1, s1] = useCountUp(150)
-  const [c2, s2] = useCountUp(350)
-  const [c3, s3] = useCountUp(48)
-  const [c4, s4] = useCountUp(97)
+  const [hoveredRole, setHoveredRole] = useState(null)
   const [openFaq, setOpenFaq] = useState(null)
 
   useEffect(() => {
@@ -183,11 +189,7 @@ export default function HireDedicatedResources() {
     const o2 = mkObs(enR, setEnV)
     const o3 = mkObs(whR, setWhV)
     const o4 = mkObs(prR, setPrV)
-    const o5 = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting) { setStV(true); s1(150); s2(350); s3(48); s4(97); o5.disconnect() }
-    }, { threshold: 0.2 })
-    if (stR.current) o5.observe(stR.current)
-    return () => [o1, o2, o3, o4, o5].forEach(o => o.disconnect())
+    return () => [o1, o2, o3, o4].forEach(o => o.disconnect())
   }, [])
 
   return (
@@ -198,7 +200,7 @@ export default function HireDedicatedResources() {
         <link rel="canonical" href="https://www.1solutions.biz/hire-dedicated-resources/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
-          /* Hero — light gradient like brand pages */
+          /* Hero */
           .hdr-hero{background:linear-gradient(135deg,#dbeafe 0%,#ede9fe 25%,#e0f2fe 50%,#fef3c7 100%);color:#0F1F40;padding:100px 20px 80px;text-align:center;position:relative;overflow:hidden}
           .hdr-hero::before{content:'';position:absolute;top:-40%;left:-20%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(17,65,113,0.08) 0%,transparent 70%);pointer-events:none}
           .hdr-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin:0 0 20px;line-height:1.15;position:relative;color:#0F1F40}
@@ -214,67 +216,62 @@ export default function HireDedicatedResources() {
 
           .hdr-sec{padding:80px 20px}
           .hdr-sec-alt{background:#f8f9fc}
-          .hdr-sec-dark{background:#0A1628;color:#fff}
           .hdr-wrap{max-width:1160px;margin:0 auto}
           .hdr-title{font-size:clamp(1.65rem,3.5vw,2.3rem);font-weight:800;color:#0F1F40;text-align:center;margin:0 0 12px}
-          .hdr-title-white{color:#fff}
           .hdr-sub{text-align:center;color:#4b5563;font-size:1.05rem;max-width:640px;margin:0 auto 52px;line-height:1.75}
-          .hdr-sub-white{color:rgba(255,255,255,.75)}
 
-          /* Resource types grid */
+          /* Resource types — orange icon badges, colorful tags, orange glow */
           .hdr-rt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
-          .hdr-rt-card{background:#fff;border-radius:16px;padding:30px 28px;border:1.5px solid #e5e7eb;box-shadow:0 2px 12px rgba(0,0,0,.04);transition:all .3s;opacity:0;transform:translateY(22px);text-decoration:none;color:inherit;display:block}
+          .hdr-rt-card{background:#fff;border-radius:18px;padding:30px 28px;border:1.5px solid #e5e7eb;box-shadow:0 2px 16px rgba(0,0,0,.05);transition:all .35s;opacity:0;transform:translateY(22px);text-decoration:none;color:inherit;display:block}
           .hdr-rt-card.hdr-in{opacity:1;transform:none}
-          .hdr-rt-card:hover{border-color:${ACCENT};box-shadow:0 8px 32px rgba(17,65,113,.1);transform:translateY(-4px)}
-          .hdr-rt-icon{font-size:2.2rem;margin-bottom:14px}
-          .hdr-rt-card h3{font-size:1.1rem;font-weight:700;color:#0F1F40;margin:0 0 10px}
-          .hdr-rt-card p{color:#4b5563;line-height:1.7;font-size:.93rem;margin:0 0 16px}
-          .hdr-rt-tags{display:flex;flex-wrap:wrap;gap:8px}
-          .hdr-rt-tag{background:rgba(17,65,113,.07);color:${ACCENT};border-radius:20px;padding:4px 12px;font-size:.8rem;font-weight:600}
+          .hdr-rt-card:hover{border-color:rgba(254,151,0,.45);box-shadow:0 0 0 1px rgba(254,151,0,.2),0 14px 44px rgba(254,151,0,.2);transform:translateY(-5px)}
+          .hdr-rt-icon-wrap{width:54px;height:54px;background:rgba(254,151,0,0.13);border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.55rem;margin-bottom:16px;transition:background .3s}
+          .hdr-rt-card:hover .hdr-rt-icon-wrap{background:rgba(254,151,0,0.24)}
+          .hdr-rt-card h3{font-size:1.08rem;font-weight:700;color:#0F1F40;margin:0 0 10px}
+          .hdr-rt-card p{color:#4b5563;line-height:1.7;font-size:.92rem;margin:0 0 16px}
+          .hdr-rt-tags{display:flex;flex-wrap:wrap;gap:7px}
+          .hdr-rt-tag{border-radius:20px;padding:4px 11px;font-size:.78rem;font-weight:600;border:1.5px solid}
 
-          /* Popular roles */
+          /* Popular roles — pastel gradient bg, per-link color hover */
+          .hdr-roles-bg{background:linear-gradient(135deg,#f0f9ff 0%,#fdf4ff 50%,#fffbeb 100%)}
           .hdr-roles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-          .hdr-role-link{background:#fff;border:1.5px solid #e5e7eb;border-radius:10px;padding:14px 18px;font-size:.92rem;font-weight:600;color:${ACCENT};text-decoration:none;display:flex;align-items:center;gap:8px;transition:all .3s}
+          .hdr-role-link{background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);border:1.5px solid rgba(17,65,113,.12);border-radius:10px;padding:13px 18px;font-size:.92rem;font-weight:600;color:#114171;text-decoration:none;display:flex;align-items:center;gap:8px;transition:all .22s}
           .hdr-role-link::before{content:'→';font-size:1rem;flex-shrink:0;transition:transform .2s}
-          .hdr-role-link:hover{border-color:${ACCENT};background:rgba(17,65,113,.04);box-shadow:0 4px 12px rgba(17,65,113,.08)}
           .hdr-role-link:hover::before{transform:translateX(4px)}
 
           /* Engagement models */
           .hdr-em-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px}
           .hdr-em-card{background:#fff;border-radius:16px;padding:36px 30px;border:1.5px solid #e5e7eb;box-shadow:0 2px 12px rgba(0,0,0,.05);opacity:0;transform:translateY(22px);transition:opacity .5s,transform .5s;display:flex;flex-direction:column;gap:14px}
           .hdr-em-card.hdr-in{opacity:1;transform:none}
-          .hdr-em-card:hover{border-color:${AMBER};box-shadow:0 8px 32px rgba(254,151,0,.12)}
+          .hdr-em-card:hover{border-color:${AMBER};box-shadow:0 8px 32px rgba(254,151,0,.14)}
           .hdr-em-icon{font-size:2.4rem}
           .hdr-em-title{font-size:1.15rem;font-weight:800;color:#0F1F40;margin:0}
           .hdr-em-sub{display:inline-block;background:rgba(254,151,0,.12);color:#b45309;border-radius:20px;padding:3px 12px;font-size:.8rem;font-weight:700;width:fit-content}
           .hdr-em-card p{color:#4b5563;line-height:1.7;font-size:.93rem;margin:0;flex-grow:1}
           .hdr-em-best{font-size:.83rem;color:${ACCENT};font-weight:600;background:rgba(17,65,113,.06);border-radius:8px;padding:10px 14px;line-height:1.5}
 
-          /* Why grid */
-          .hdr-why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:22px}
-          .hdr-why-item{background:rgba(255,255,255,.06);border-radius:14px;padding:28px 26px;border-left:4px solid ${AMBER};opacity:0;transform:translateX(-18px);transition:opacity .5s,transform .5s}
+          /* Why — white bg, icon + text cards */
+          .hdr-why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+          .hdr-why-item{background:#f8fafc;border-radius:16px;padding:26px 24px;border:1.5px solid #e5e7eb;opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s,box-shadow .3s,background .25s;display:flex;gap:16px;align-items:flex-start}
           .hdr-why-item.hdr-in{opacity:1;transform:none}
-          .hdr-why-item h3{font-size:1.05rem;font-weight:700;color:#fff;margin:0 0 10px}
-          .hdr-why-item p{color:rgba(255,255,255,.75);line-height:1.7;font-size:.93rem;margin:0}
+          .hdr-why-item:hover{box-shadow:0 10px 32px rgba(17,65,113,.1);transform:translateY(-3px);background:#fff}
+          .hdr-why-icon-wrap{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+          .hdr-why-body h3{font-size:1rem;font-weight:700;color:#0F1F40;margin:0 0 7px;line-height:1.3}
+          .hdr-why-body p{color:#4b5563;line-height:1.7;font-size:.92rem;margin:0}
 
-          /* Stats strip — brand navy with orange numbers */
-          .hdr-stats-strip{background:${ACCENT};padding:50px 20px}
-          .hdr-stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;max-width:900px;margin:0 auto;text-align:center}
-          .hdr-stat-val{font-size:2.8rem;font-weight:900;color:${AMBER};line-height:1}
-          .hdr-stat-lbl{font-size:.93rem;color:rgba(255,255,255,.85);margin-top:6px;font-weight:500}
-
-          /* Process */
+          /* Process — 4 distinct colors + glow */
           .hdr-process-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
-          .hdr-step{text-align:center;padding:36px 24px;background:#fff;border-radius:14px;border:1.5px solid #e5e7eb;opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s}
+          .hdr-step{text-align:center;padding:38px 26px;border-radius:18px;border:1.5px solid;opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s,box-shadow .3s}
           .hdr-step.hdr-in{opacity:1;transform:none}
-          .hdr-step-n{width:52px;height:52px;border-radius:50%;background:${ACCENT};color:#fff;font-size:1.1rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+          .hdr-step:hover{transform:translateY(-4px)}
+          .hdr-step-n{width:54px;height:54px;border-radius:50%;color:#fff;font-size:1.1rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
           .hdr-step h3{font-size:1.02rem;font-weight:700;color:#0F1F40;margin:0 0 10px}
           .hdr-step p{color:#4b5563;font-size:.9rem;line-height:1.65;margin:0}
 
-          /* Industries */
+          /* Industries — colorful pills */
           .hdr-ind-grid{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .hdr-ind-pill{background:#fff;border:1.5px solid #dde2ec;border-radius:40px;padding:10px 22px;font-size:.93rem;font-weight:600;color:${ACCENT};transition:all .3s}
-          .hdr-ind-pill:hover{background:${ACCENT};color:#fff;border-color:${ACCENT}}
+          .hdr-ind-pill{border-radius:40px;padding:10px 22px;font-size:.93rem;font-weight:600;border:1.5px solid;transition:all .22s;cursor:default}
+          .hdr-ind-pill:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.1)}
 
           /* FAQ */
           .hdr-faq{max-width:780px;margin:0 auto}
@@ -284,7 +281,7 @@ export default function HireDedicatedResources() {
           .hdr-faq-icon.hdr-open{transform:rotate(45deg)}
           .hdr-faq-a{margin-top:14px;color:#4b5563;line-height:1.8;font-size:.95rem}
 
-          /* CTA — light gradient like brand pages */
+          /* CTA */
           .hdr-cta{background:linear-gradient(135deg,#dbeafe 0%,#ede9fe 50%,#fef3c7 100%);padding:90px 20px;text-align:center}
           .hdr-cta h2{font-size:clamp(1.8rem,4vw,2.7rem);font-weight:800;margin:0 0 16px;line-height:1.2;color:#0F1F40}
           .hdr-cta p{font-size:1.08rem;color:#374151;max-width:580px;margin:0 auto 40px;line-height:1.75}
@@ -295,13 +292,11 @@ export default function HireDedicatedResources() {
           .hdr-btn-white:hover{background:rgba(255,255,255,.95);transform:translateY(-2px)}
 
           @media(max-width:768px){
-            .hdr-stats-grid{grid-template-columns:repeat(2,1fr);gap:20px}
             .hdr-hero h1{font-size:1.8rem}
+            .hdr-why-grid{grid-template-columns:1fr}
           }
           @media(max-width:480px){
             .hdr-hero{padding:80px 18px 60px}
-            .hdr-stats-grid{grid-template-columns:1fr 1fr}
-            .hdr-stat-val{font-size:2.2rem}
           }
         `}</style>
       </Head>
@@ -330,11 +325,14 @@ export default function HireDedicatedResources() {
           <div className="hdr-rt-grid">
             {RESOURCE_TYPES.map((rt, i) => (
               <Link key={rt.title} href={rt.href} className={`hdr-rt-card${rtV ? ' hdr-in' : ''}`} style={{ transitionDelay: `${i * 70}ms` }}>
-                <div className="hdr-rt-icon">{rt.icon}</div>
+                <div className="hdr-rt-icon-wrap">{rt.icon}</div>
                 <h3>{rt.title}</h3>
                 <p>{rt.desc}</p>
                 <div className="hdr-rt-tags">
-                  {rt.tags.map(tag => <span key={tag} className="hdr-rt-tag">{tag}</span>)}
+                  {rt.tags.map(tag => {
+                    const tc = TAG_COLORS[tag] || { bg: '#F3F4F6', color: '#374151', border: '#D1D5DB' }
+                    return <span key={tag} className="hdr-rt-tag" style={{ background: tc.bg, color: tc.color, borderColor: tc.border }}>{tag}</span>
+                  })}
                 </div>
               </Link>
             ))}
@@ -342,15 +340,28 @@ export default function HireDedicatedResources() {
         </div>
       </section>
 
-      {/* ── Popular Roles ── */}
-      <section className="hdr-sec hdr-sec-alt">
+      {/* ── Popular Roles — gradient bg, per-link color hover ── */}
+      <section className="hdr-sec hdr-roles-bg">
         <div className="hdr-wrap">
           <h2 className="hdr-title">Browse Popular Hire Pages</h2>
           <p className="hdr-sub">Looking for a specific skill? Explore our dedicated hire pages for detailed profiles, tech stacks, and engagement options.</p>
           <div className="hdr-roles-grid">
-            {POPULAR_ROLES.map(role => (
-              <Link key={role.href} href={role.href} className="hdr-role-link">{role.label}</Link>
-            ))}
+            {POPULAR_ROLES.map((role, i) => {
+              const hc = ROLE_HOVER[i % ROLE_HOVER.length]
+              const isH = hoveredRole === i
+              return (
+                <Link
+                  key={role.href}
+                  href={role.href}
+                  className="hdr-role-link"
+                  style={isH ? { background: hc.bg, color: hc.color, borderColor: hc.border, transform: 'translateY(-2px)', boxShadow: '0 6px 20px rgba(0,0,0,.1)' } : {}}
+                  onMouseEnter={() => setHoveredRole(i)}
+                  onMouseLeave={() => setHoveredRole(null)}
+                >
+                  {role.label}
+                </Link>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -374,74 +385,74 @@ export default function HireDedicatedResources() {
         </div>
       </section>
 
-      {/* ── Stats Strip ── */}
-      <div className="hdr-stats-strip" ref={stR}>
-        <div className="hdr-stats-grid">
-          <div>
-            <div className="hdr-stat-val">{stV ? c1 : 0}+</div>
-            <div className="hdr-stat-lbl">Vetted Professionals</div>
-          </div>
-          <div>
-            <div className="hdr-stat-val">{stV ? c2 : 0}+</div>
-            <div className="hdr-stat-lbl">Projects Delivered</div>
-          </div>
-          <div>
-            <div className="hdr-stat-val">{stV ? c3 : 0}h</div>
-            <div className="hdr-stat-lbl">Avg Time to Profiles</div>
-          </div>
-          <div>
-            <div className="hdr-stat-val">{stV ? c4 : 0}%</div>
-            <div className="hdr-stat-lbl">Client Retention Rate</div>
-          </div>
-        </div>
-      </div>
-
-      {/* ── Why 1Solutions ── */}
-      <section className="hdr-sec hdr-sec-dark" ref={whR}>
+      {/* ── Why 1Solutions — light icon-card grid ── */}
+      <section className="hdr-sec hdr-sec-alt" ref={whR}>
         <div className="hdr-wrap">
-          <h2 className="hdr-title hdr-title-white">Why Hire Dedicated Resources from 1Solutions?</h2>
-          <p className="hdr-sub hdr-sub-white">We don&apos;t just fill seats — we match the right professional to your team culture, tech stack, and delivery standards.</p>
+          <h2 className="hdr-title">Why Hire Dedicated Resources from 1Solutions?</h2>
+          <p className="hdr-sub">We don&apos;t just fill seats — we match the right professional to your team culture, tech stack, and delivery standards.</p>
           <div className="hdr-why-grid">
             {WHY.map((w, i) => (
               <div key={w.h} className={`hdr-why-item${whV ? ' hdr-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}>
-                <h3>{w.h}</h3>
-                <p>{w.b}</p>
+                <div className="hdr-why-icon-wrap" style={{ background: w.accentBg }}>{w.icon}</div>
+                <div className="hdr-why-body">
+                  <h3>{w.h}</h3>
+                  <p>{w.b}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── Process ── */}
-      <section className="hdr-sec hdr-sec-alt" ref={prR}>
+      {/* ── Process — 4 colored steps with glow ── */}
+      <section className="hdr-sec" ref={prR}>
         <div className="hdr-wrap">
           <h2 className="hdr-title">How to Hire a Dedicated Resource in 4 Steps</h2>
           <p className="hdr-sub">From brief to first sprint deliverable — in under two weeks.</p>
           <div className="hdr-process-grid">
-            {PROCESS.map((p, i) => (
-              <div key={p.n} className={`hdr-step${prV ? ' hdr-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}>
-                <div className="hdr-step-n">{p.n}</div>
-                <h3>{p.h}</h3>
-                <p>{p.b}</p>
-              </div>
-            ))}
+            {PROCESS.map((p, i) => {
+              const sc = STEP_COLORS[i]
+              return (
+                <div
+                  key={p.n}
+                  className={`hdr-step${prV ? ' hdr-in' : ''}`}
+                  style={{
+                    transitionDelay: `${i * 110}ms`,
+                    background: sc.bg,
+                    borderColor: sc.border,
+                    boxShadow: prV ? `0 8px 36px ${sc.glow}` : 'none',
+                  }}
+                >
+                  <div className="hdr-step-n" style={{ background: sc.circle }}>{p.n}</div>
+                  <h3>{p.h}</h3>
+                  <p>{p.b}</p>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
 
-      {/* ── Industries ── */}
-      <section className="hdr-sec">
+      {/* ── Industries — colored pills ── */}
+      <section className="hdr-sec hdr-sec-alt">
         <div className="hdr-wrap">
           <h2 className="hdr-title">Industries We Serve</h2>
           <p className="hdr-sub">Our dedicated resources have delivered projects across diverse verticals — from early-stage startups to Fortune 500 enterprises.</p>
           <div className="hdr-ind-grid">
-            {INDUSTRIES.map(ind => <div key={ind} className="hdr-ind-pill">{ind}</div>)}
+            {INDUSTRIES.map((ind, i) => {
+              const ic = INDUSTRY_COLORS[i % INDUSTRY_COLORS.length]
+              return (
+                <div key={ind} className="hdr-ind-pill" style={{ background: ic.bg, color: ic.color, borderColor: ic.border }}>
+                  {ind}
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
 
       {/* ── FAQ ── */}
-      <section className="hdr-sec hdr-sec-alt">
+      <section className="hdr-sec">
         <div className="hdr-wrap">
           <h2 className="hdr-title">Frequently Asked Questions</h2>
           <p className="hdr-sub">Everything you need to know before hiring dedicated resources from 1Solutions.</p>
