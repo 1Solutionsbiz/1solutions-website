@@ -6,6 +6,31 @@ import { useState, useEffect, useRef } from 'react'
 const ACCENT = '#114171'
 const AMBER = '#FE9700'
 
+/* ── SVG icon library ── */
+const IC = {
+  /* resource types */
+  frontend:  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FE9700" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>,
+  backend:   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FE9700" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>,
+  mobile:    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FE9700" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>,
+  ecommerce: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FE9700" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>,
+  ai:        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FE9700" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>,
+  cloud:     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FE9700" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>,
+  design:    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FE9700" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>,
+  marketing: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FE9700" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>,
+  qa:        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FE9700" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><polyline points="8 11 10 13 14 9"/></svg>,
+  /* engagement models */
+  fulltime:  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FE9700" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>,
+  parttime:  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FE9700" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>,
+  hourly:    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FE9700" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>,
+  /* why items */
+  vetted:    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FE9700" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>,
+  fast:      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FE9700" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>,
+  unlock:    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FE9700" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>,
+  lock:      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FE9700" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>,
+  globe:     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FE9700" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>,
+  manager:   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FE9700" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
+}
+
 const TAG_COLORS = {
   'React':          { bg: '#DBEAFE', color: '#1D4ED8', border: '#93C5FD' },
   'Next.js':        { bg: '#F3F4F6', color: '#111827', border: '#D1D5DB' },
@@ -75,53 +100,53 @@ const ROLE_HOVER = [
 ]
 
 const RESOURCE_TYPES = [
-  { icon: '💻', title: 'Frontend Developers', href: '/hire-reactjs-developer', desc: 'React.js, Next.js, Angular, Vue.js, TypeScript specialists who build pixel-perfect, performant UIs.', tags: ['React', 'Next.js', 'Angular', 'Vue.js'] },
-  { icon: '⚙️', title: 'Backend Developers', href: '/hire-nodejs-developer', desc: 'Node.js, Python, PHP, .NET, and Java engineers for APIs, microservices, and server-side systems.', tags: ['Node.js', 'Python', 'PHP', '.NET'] },
-  { icon: '📱', title: 'Mobile App Developers', href: '/hire-flutter-developer', desc: 'iOS, Android, Flutter, and React Native experts for cross-platform and native mobile applications.', tags: ['Flutter', 'React Native', 'iOS', 'Android'] },
-  { icon: '🛒', title: 'eCommerce Developers', href: '/hire-shopify-developer', desc: 'Shopify, WooCommerce, Magento, and BigCommerce developers to build and scale your online store.', tags: ['Shopify', 'WooCommerce', 'Magento'] },
-  { icon: '🤖', title: 'AI / ML Engineers', href: '/hire-ml-developer', desc: 'Python-based AI, LLM integration, NLP, computer vision, and predictive analytics specialists.', tags: ['Python', 'TensorFlow', 'LLMs', 'NLP'] },
-  { icon: '☁️', title: 'Cloud & DevOps Engineers', href: '/devops-services-company', desc: 'AWS, Azure, GCP, Kubernetes, and CI/CD experts to modernise and automate your infrastructure.', tags: ['AWS', 'Azure', 'Docker', 'Kubernetes'] },
-  { icon: '🎨', title: 'UI/UX Designers', href: '/hire-dedicated-ui-ux-designer', desc: 'Figma-first product designers who deliver wireframes, prototypes, and design systems aligned with your brand.', tags: ['Figma', 'Prototyping', 'Design Systems'] },
-  { icon: '📈', title: 'Digital Marketing Experts', href: '/digital-marketing-services', desc: 'SEO strategists, PPC managers, content writers, and social media specialists to grow your visibility and ROI.', tags: ['SEO', 'Google Ads', 'Meta Ads', 'Content'] },
-  { icon: '🔍', title: 'QA Engineers', href: '/contact-us', desc: 'Manual and automation QA testers using Selenium, Playwright, and Cypress for thorough quality assurance.', tags: ['Playwright', 'Cypress', 'Selenium'] },
+  { iconKey: 'frontend',  title: 'Frontend Developers',       href: '/hire-reactjs-developer',        desc: 'React.js, Next.js, Angular, Vue.js, TypeScript specialists who build pixel-perfect, performant UIs.',                                            tags: ['React', 'Next.js', 'Angular', 'Vue.js'] },
+  { iconKey: 'backend',   title: 'Backend Developers',        href: '/hire-nodejs-developer',         desc: 'Node.js, Python, PHP, .NET, and Java engineers for APIs, microservices, and server-side systems.',                                              tags: ['Node.js', 'Python', 'PHP', '.NET'] },
+  { iconKey: 'mobile',    title: 'Mobile App Developers',     href: '/hire-flutter-developer',        desc: 'iOS, Android, Flutter, and React Native experts for cross-platform and native mobile applications.',                                             tags: ['Flutter', 'React Native', 'iOS', 'Android'] },
+  { iconKey: 'ecommerce', title: 'eCommerce Developers',      href: '/hire-shopify-developer',        desc: 'Shopify, WooCommerce, Magento, and BigCommerce developers to build and scale your online store.',                                               tags: ['Shopify', 'WooCommerce', 'Magento'] },
+  { iconKey: 'ai',        title: 'AI / ML Engineers',         href: '/hire-ml-developer',             desc: 'Python-based AI, LLM integration, NLP, computer vision, and predictive analytics specialists.',                                                 tags: ['Python', 'TensorFlow', 'LLMs', 'NLP'] },
+  { iconKey: 'cloud',     title: 'Cloud & DevOps Engineers',  href: '/devops-services-company',       desc: 'AWS, Azure, GCP, Kubernetes, and CI/CD experts to modernise and automate your infrastructure.',                                                 tags: ['AWS', 'Azure', 'Docker', 'Kubernetes'] },
+  { iconKey: 'design',    title: 'UI/UX Designers',           href: '/hire-dedicated-ui-ux-designer', desc: 'Figma-first product designers who deliver wireframes, prototypes, and design systems aligned with your brand.',                                  tags: ['Figma', 'Prototyping', 'Design Systems'] },
+  { iconKey: 'marketing', title: 'Digital Marketing Experts', href: '/digital-marketing-services',    desc: 'SEO strategists, PPC managers, content writers, and social media specialists to grow your visibility and ROI.',                                   tags: ['SEO', 'Google Ads', 'Meta Ads', 'Content'] },
+  { iconKey: 'qa',        title: 'QA Engineers',              href: '/contact-us',                    desc: 'Manual and automation QA testers using Selenium, Playwright, and Cypress for thorough quality assurance.',                                       tags: ['Playwright', 'Cypress', 'Selenium'] },
 ]
 
 const POPULAR_ROLES = [
-  { label: 'Hire React.js Developer', href: '/hire-reactjs-developer' },
-  { label: 'Hire Node.js Developer', href: '/hire-nodejs-developer' },
-  { label: 'Hire Flutter Developer', href: '/hire-flutter-developer' },
-  { label: 'Hire Python Developer', href: '/hire-python-developer' },
-  { label: 'Hire Shopify Developer', href: '/hire-shopify-developer' },
-  { label: 'Hire UI/UX Designer', href: '/hire-ui-ux-designer' },
-  { label: 'Hire WordPress Developer', href: '/hire-wordpress-developer' },
-  { label: 'Hire Full-Stack Developer', href: '/hire-full-stack-developer' },
-  { label: 'Hire Android Developer', href: '/hire-android-developer' },
-  { label: 'Hire iOS Developer', href: '/hire-ios-developer' },
-  { label: 'Hire React Native Developer', href: '/hire-react-native-developer' },
-  { label: 'Hire Data Scientist', href: '/hire-data-scientist' },
-  { label: 'Hire Magento Developer', href: '/hire-magento-developer' },
-  { label: 'Hire Blockchain Developer', href: '/hire-blockchain-developer' },
-  { label: 'Hire Angular Developer', href: '/hire-angularjs-developer' },
-  { label: 'Hire PHP Developer', href: '/hire-php-developer' },
+  { label: 'Hire React.js Developer',    href: '/hire-reactjs-developer' },
+  { label: 'Hire Node.js Developer',     href: '/hire-nodejs-developer' },
+  { label: 'Hire Flutter Developer',     href: '/hire-flutter-developer' },
+  { label: 'Hire Python Developer',      href: '/hire-python-developer' },
+  { label: 'Hire Shopify Developer',     href: '/hire-shopify-developer' },
+  { label: 'Hire UI/UX Designer',        href: '/hire-ui-ux-designer' },
+  { label: 'Hire WordPress Developer',   href: '/hire-wordpress-developer' },
+  { label: 'Hire Full-Stack Developer',  href: '/hire-full-stack-developer' },
+  { label: 'Hire Android Developer',     href: '/hire-android-developer' },
+  { label: 'Hire iOS Developer',         href: '/hire-ios-developer' },
+  { label: 'Hire React Native Developer',href: '/hire-react-native-developer' },
+  { label: 'Hire Data Scientist',        href: '/hire-data-scientist' },
+  { label: 'Hire Magento Developer',     href: '/hire-magento-developer' },
+  { label: 'Hire Blockchain Developer',  href: '/hire-blockchain-developer' },
+  { label: 'Hire Angular Developer',     href: '/hire-angularjs-developer' },
+  { label: 'Hire PHP Developer',         href: '/hire-php-developer' },
 ]
 
 const MODELS = [
   {
-    icon: '👤',
+    iconKey: 'fulltime',
     title: 'Full-Time Dedicated',
     sub: '160 hrs / month',
     desc: 'A resource works exclusively on your project — 8 hrs/day, 5 days/week. Full accountability, deep product context, and seamless integration with your team.',
     best: 'Best for: Long-term product builds, scaling teams, complex ongoing projects',
   },
   {
-    icon: '⏰',
+    iconKey: 'parttime',
     title: 'Part-Time Dedicated',
     sub: '80 hrs / month',
     desc: 'A vetted specialist commits half their workday to your project. Ideal for ongoing feature work, iterative improvements, or supporting an in-house team.',
     best: 'Best for: Feature additions, support & maintenance, team augmentation',
   },
   {
-    icon: '🕐',
+    iconKey: 'hourly',
     title: 'Hourly / Sprint-Based',
     sub: 'Pay as you go',
     desc: 'Flexible hourly engagements with no monthly commitment. Perfect for code reviews, performance audits, prototype development, or short sprints.',
@@ -130,19 +155,19 @@ const MODELS = [
 ]
 
 const WHY = [
-  { icon: '🏅', accentBg: 'rgba(254,151,0,0.13)', h: '150+ Pre-Vetted Professionals', b: 'Every developer, designer, and digital expert is vetted through multi-stage technical assessments, portfolio reviews, and communication screening before they reach you.' },
-  { icon: '⚡', accentBg: 'rgba(59,130,246,0.13)', h: 'Profiles in 48 Hours', b: 'Submit your requirements and receive 2–3 matched candidate profiles within 48 business hours — with detailed CVs, skill assessments, and project samples.' },
-  { icon: '🔓', accentBg: 'rgba(16,185,129,0.13)', h: 'No Lock-In Contracts', b: "Start month-to-month with the flexibility to scale up, scale down, or change resources anytime. We don't hold you hostage with long-term commitments." },
-  { icon: '🔒', accentBg: 'rgba(139,92,246,0.13)', h: 'NDA & IP Ownership', b: 'Confidentiality and IP assignment agreements are signed before any engagement begins. Your codebase, designs, and data remain 100% yours.' },
-  { icon: '🌍', accentBg: 'rgba(245,158,11,0.13)', h: 'Timezone Alignment', b: 'Our resources work overlapping hours with UK, US, Canadian, and Australian teams. No waking up at 3 AM for a standup.' },
-  { icon: '🎯', accentBg: 'rgba(236,72,153,0.13)', h: 'Dedicated Account Manager', b: 'A single point of contact manages your engagement — from onboarding through delivery — so you spend time building, not managing logistics.' },
+  { iconKey: 'vetted',  accentBg: 'rgba(254,151,0,0.12)',   h: '150+ Pre-Vetted Professionals', b: 'Every developer, designer, and digital expert is vetted through multi-stage technical assessments, portfolio reviews, and communication screening before they reach you.' },
+  { iconKey: 'fast',    accentBg: 'rgba(59,130,246,0.12)',  h: 'Profiles in 48 Hours',          b: 'Submit your requirements and receive 2–3 matched candidate profiles within 48 business hours — with detailed CVs, skill assessments, and project samples.' },
+  { iconKey: 'unlock',  accentBg: 'rgba(16,185,129,0.12)', h: 'No Lock-In Contracts',           b: "Start month-to-month with the flexibility to scale up, scale down, or change resources anytime. We don't hold you hostage with long-term commitments." },
+  { iconKey: 'lock',    accentBg: 'rgba(139,92,246,0.12)', h: 'NDA & IP Ownership',             b: 'Confidentiality and IP assignment agreements are signed before any engagement begins. Your codebase, designs, and data remain 100% yours.' },
+  { iconKey: 'globe',   accentBg: 'rgba(245,158,11,0.12)', h: 'Timezone Alignment',             b: 'Our resources work overlapping hours with UK, US, Canadian, and Australian teams. No waking up at 3 AM for a standup.' },
+  { iconKey: 'manager', accentBg: 'rgba(236,72,153,0.12)', h: 'Dedicated Account Manager',      b: 'A single point of contact manages your engagement — from onboarding through delivery — so you spend time building, not managing logistics.' },
 ]
 
 const PROCESS = [
-  { n: '01', h: 'Share Your Requirements', b: "Tell us the role, seniority, tech stack, engagement type, and working hours. The more detail you share, the better the match." },
+  { n: '01', h: 'Share Your Requirements',  b: "Tell us the role, seniority, tech stack, engagement type, and working hours. The more detail you share, the better the match." },
   { n: '02', h: 'Receive Matched Profiles', b: '2–3 shortlisted profiles land in your inbox within 48 business hours — complete with CVs, portfolios, and our assessment notes.' },
-  { n: '03', h: 'Interview & Select', b: 'Run your own technical interviews — live coding, system design, portfolio walk-through, or a paid trial task. You choose who joins.' },
-  { n: '04', h: 'Onboard & Deliver', b: 'Your resource joins your tools, repo, and sprint cycle. First deliverable typically within 7 days of signing.' },
+  { n: '03', h: 'Interview & Select',       b: 'Run your own technical interviews — live coding, system design, portfolio walk-through, or a paid trial task. You choose who joins.' },
+  { n: '04', h: 'Onboard & Deliver',        b: 'Your resource joins your tools, repo, and sprint cycle. First deliverable typically within 7 days of signing.' },
 ]
 
 const INDUSTRIES = [
@@ -153,13 +178,13 @@ const INDUSTRIES = [
 ]
 
 const FAQS = [
-  { q: 'What is a dedicated resource model?', a: 'A dedicated resource is a vetted professional — developer, designer, or marketing expert — who works exclusively or primarily on your project for a defined period. Unlike a freelancer, a dedicated resource integrates into your team, follows your processes, and is managed by 1Solutions for HR and operational matters.' },
+  { q: 'What is a dedicated resource model?',        a: 'A dedicated resource is a vetted professional — developer, designer, or marketing expert — who works exclusively or primarily on your project for a defined period. Unlike a freelancer, a dedicated resource integrates into your team, follows your processes, and is managed by 1Solutions for HR and operational matters.' },
   { q: 'How quickly can I onboard a dedicated resource?', a: 'We deliver matched candidate profiles within 48 business hours of receiving your brief. Once you select a candidate and contracts are signed, the resource typically joins your tools and begins work within 7 days.' },
-  { q: 'Can I scale the team up or down?', a: 'Yes. Our engagement model is built for flexibility. You can add resources as your workload grows, reduce the team during slower periods, or swap specialisations as your project phase changes — with as little as 2 weeks notice.' },
-  { q: 'What seniority levels are available?', a: 'We provide resources across all levels: Junior (1–3 years), Mid-Level (3–6 years), Senior (6–10 years), and Lead/Architect (10+ years). We also offer team leads and technical programme managers for larger engagements.' },
-  { q: 'Do you sign NDAs?', a: 'Yes. A mutual NDA and IP assignment agreement are executed as standard before any engagement begins and before any access is granted to your codebase, designs, or proprietary information.' },
+  { q: 'Can I scale the team up or down?',           a: 'Yes. Our engagement model is built for flexibility. You can add resources as your workload grows, reduce the team during slower periods, or swap specialisations as your project phase changes — with as little as 2 weeks notice.' },
+  { q: 'What seniority levels are available?',       a: 'We provide resources across all levels: Junior (1–3 years), Mid-Level (3–6 years), Senior (6–10 years), and Lead/Architect (10+ years). We also offer team leads and technical programme managers for larger engagements.' },
+  { q: 'Do you sign NDAs?',                          a: 'Yes. A mutual NDA and IP assignment agreement are executed as standard before any engagement begins and before any access is granted to your codebase, designs, or proprietary information.' },
   { q: 'What if the resource is not the right fit?', a: 'We offer a 2-week replacement guarantee. If the assigned resource is not meeting expectations, notify your account manager and we will provide a replacement profile within 5 business days at no additional cost.' },
-  { q: 'Do your resources work in our timezone?', a: 'Yes. We support timezone overlap with UK (GMT/BST), US (EST, CST, PST), Canada (EST/PST), and Australia (AEST). Resources adjust their working hours to ensure a minimum 4-hour daily overlap with your core team.' },
+  { q: 'Do your resources work in our timezone?',    a: 'Yes. We support timezone overlap with UK (GMT/BST), US (EST, CST, PST), Canada (EST/PST), and Australia (AEST). Resources adjust their working hours to ensure a minimum 4-hour daily overlap with your core team.' },
 ]
 
 const LD = {
@@ -169,6 +194,15 @@ const LD = {
     { '@type': 'Service', name: 'Hire Dedicated Resources', provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz' }, description: 'Hire dedicated developers, designers, and digital marketing experts from 1Solutions.', serviceType: 'Staff Augmentation', areaServed: ['IN', 'US', 'CA', 'GB', 'AU'], aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '213', bestRating: '5' } },
     { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
   ],
+}
+
+/* Shared icon box — orange rounded square like screenshot */
+function IconBox({ children, size = 52, radius = 13, bg = 'rgba(254,151,0,0.12)' }) {
+  return (
+    <div style={{ width: size, height: size, borderRadius: radius, background: bg, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+      {children}
+    </div>
+  )
 }
 
 export default function HireDedicatedResources() {
@@ -220,19 +254,17 @@ export default function HireDedicatedResources() {
           .hdr-title{font-size:clamp(1.65rem,3.5vw,2.3rem);font-weight:800;color:#0F1F40;text-align:center;margin:0 0 12px}
           .hdr-sub{text-align:center;color:#4b5563;font-size:1.05rem;max-width:640px;margin:0 auto 52px;line-height:1.75}
 
-          /* Resource types — orange icon badges, colorful tags, orange glow */
+          /* Resource type cards */
           .hdr-rt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
           .hdr-rt-card{background:#fff;border-radius:18px;padding:30px 28px;border:1.5px solid #e5e7eb;box-shadow:0 2px 16px rgba(0,0,0,.05);transition:all .35s;opacity:0;transform:translateY(22px);text-decoration:none;color:inherit;display:block}
           .hdr-rt-card.hdr-in{opacity:1;transform:none}
           .hdr-rt-card:hover{border-color:rgba(254,151,0,.45);box-shadow:0 0 0 1px rgba(254,151,0,.2),0 14px 44px rgba(254,151,0,.2);transform:translateY(-5px)}
-          .hdr-rt-icon-wrap{width:54px;height:54px;background:rgba(254,151,0,0.13);border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.55rem;margin-bottom:16px;transition:background .3s}
-          .hdr-rt-card:hover .hdr-rt-icon-wrap{background:rgba(254,151,0,0.24)}
           .hdr-rt-card h3{font-size:1.08rem;font-weight:700;color:#0F1F40;margin:0 0 10px}
           .hdr-rt-card p{color:#4b5563;line-height:1.7;font-size:.92rem;margin:0 0 16px}
           .hdr-rt-tags{display:flex;flex-wrap:wrap;gap:7px}
           .hdr-rt-tag{border-radius:20px;padding:4px 11px;font-size:.78rem;font-weight:600;border:1.5px solid}
 
-          /* Popular roles — pastel gradient bg, per-link color hover */
+          /* Popular roles */
           .hdr-roles-bg{background:linear-gradient(135deg,#f0f9ff 0%,#fdf4ff 50%,#fffbeb 100%)}
           .hdr-roles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
           .hdr-role-link{background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);border:1.5px solid rgba(17,65,113,.12);border-radius:10px;padding:13px 18px;font-size:.92rem;font-weight:600;color:#114171;text-decoration:none;display:flex;align-items:center;gap:8px;transition:all .22s}
@@ -241,25 +273,24 @@ export default function HireDedicatedResources() {
 
           /* Engagement models */
           .hdr-em-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px}
-          .hdr-em-card{background:#fff;border-radius:16px;padding:36px 30px;border:1.5px solid #e5e7eb;box-shadow:0 2px 12px rgba(0,0,0,.05);opacity:0;transform:translateY(22px);transition:opacity .5s,transform .5s;display:flex;flex-direction:column;gap:14px}
+          .hdr-em-card{background:#fff;border-radius:18px;padding:36px 30px;border:1.5px solid #e5e7eb;box-shadow:0 2px 12px rgba(0,0,0,.05);opacity:0;transform:translateY(22px);transition:opacity .5s,transform .5s;display:flex;flex-direction:column;gap:16px}
           .hdr-em-card.hdr-in{opacity:1;transform:none}
-          .hdr-em-card:hover{border-color:${AMBER};box-shadow:0 8px 32px rgba(254,151,0,.14)}
-          .hdr-em-icon{font-size:2.4rem}
-          .hdr-em-title{font-size:1.15rem;font-weight:800;color:#0F1F40;margin:0}
-          .hdr-em-sub{display:inline-block;background:rgba(254,151,0,.12);color:#b45309;border-radius:20px;padding:3px 12px;font-size:.8rem;font-weight:700;width:fit-content}
+          .hdr-em-card:hover{border-color:${AMBER};box-shadow:0 0 0 1px rgba(254,151,0,.2),0 12px 40px rgba(254,151,0,.15)}
+          .hdr-em-header{display:flex;align-items:center;gap:14px}
+          .hdr-em-titles h3{font-size:1.12rem;font-weight:800;color:#0F1F40;margin:0 0 4px;line-height:1.2}
+          .hdr-em-sub{display:inline-block;background:rgba(254,151,0,.12);color:#b45309;border-radius:20px;padding:3px 12px;font-size:.8rem;font-weight:700}
           .hdr-em-card p{color:#4b5563;line-height:1.7;font-size:.93rem;margin:0;flex-grow:1}
           .hdr-em-best{font-size:.83rem;color:${ACCENT};font-weight:600;background:rgba(17,65,113,.06);border-radius:8px;padding:10px 14px;line-height:1.5}
 
-          /* Why — white bg, icon + text cards */
+          /* Why — light icon-card grid */
           .hdr-why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
           .hdr-why-item{background:#f8fafc;border-radius:16px;padding:26px 24px;border:1.5px solid #e5e7eb;opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s,box-shadow .3s,background .25s;display:flex;gap:16px;align-items:flex-start}
           .hdr-why-item.hdr-in{opacity:1;transform:none}
           .hdr-why-item:hover{box-shadow:0 10px 32px rgba(17,65,113,.1);transform:translateY(-3px);background:#fff}
-          .hdr-why-icon-wrap{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
           .hdr-why-body h3{font-size:1rem;font-weight:700;color:#0F1F40;margin:0 0 7px;line-height:1.3}
           .hdr-why-body p{color:#4b5563;line-height:1.7;font-size:.92rem;margin:0}
 
-          /* Process — 4 distinct colors + glow */
+          /* Process — colored steps + glow */
           .hdr-process-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
           .hdr-step{text-align:center;padding:38px 26px;border-radius:18px;border:1.5px solid;opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s,box-shadow .3s}
           .hdr-step.hdr-in{opacity:1;transform:none}
@@ -268,7 +299,7 @@ export default function HireDedicatedResources() {
           .hdr-step h3{font-size:1.02rem;font-weight:700;color:#0F1F40;margin:0 0 10px}
           .hdr-step p{color:#4b5563;font-size:.9rem;line-height:1.65;margin:0}
 
-          /* Industries — colorful pills */
+          /* Industries */
           .hdr-ind-grid{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
           .hdr-ind-pill{border-radius:40px;padding:10px 22px;font-size:.93rem;font-weight:600;border:1.5px solid;transition:all .22s;cursor:default}
           .hdr-ind-pill:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.1)}
@@ -325,8 +356,8 @@ export default function HireDedicatedResources() {
           <div className="hdr-rt-grid">
             {RESOURCE_TYPES.map((rt, i) => (
               <Link key={rt.title} href={rt.href} className={`hdr-rt-card${rtV ? ' hdr-in' : ''}`} style={{ transitionDelay: `${i * 70}ms` }}>
-                <div className="hdr-rt-icon-wrap">{rt.icon}</div>
-                <h3>{rt.title}</h3>
+                <IconBox size={54} radius={13} style={{ marginBottom: 16 }}>{IC[rt.iconKey]}</IconBox>
+                <h3 style={{ marginTop: 16 }}>{rt.title}</h3>
                 <p>{rt.desc}</p>
                 <div className="hdr-rt-tags">
                   {rt.tags.map(tag => {
@@ -340,7 +371,7 @@ export default function HireDedicatedResources() {
         </div>
       </section>
 
-      {/* ── Popular Roles — gradient bg, per-link color hover ── */}
+      {/* ── Popular Roles ── */}
       <section className="hdr-sec hdr-roles-bg">
         <div className="hdr-wrap">
           <h2 className="hdr-title">Browse Popular Hire Pages</h2>
@@ -374,9 +405,14 @@ export default function HireDedicatedResources() {
           <div className="hdr-em-grid">
             {MODELS.map((m, i) => (
               <div key={m.title} className={`hdr-em-card${enV ? ' hdr-in' : ''}`} style={{ transitionDelay: `${i * 130}ms` }}>
-                <div className="hdr-em-icon">{m.icon}</div>
-                <h3 className="hdr-em-title">{m.title}</h3>
-                <span className="hdr-em-sub">{m.sub}</span>
+                {/* Icon + Title side-by-side */}
+                <div className="hdr-em-header">
+                  <IconBox size={52} radius={13}>{IC[m.iconKey]}</IconBox>
+                  <div className="hdr-em-titles">
+                    <h3>{m.title}</h3>
+                    <span className="hdr-em-sub">{m.sub}</span>
+                  </div>
+                </div>
                 <p>{m.desc}</p>
                 <div className="hdr-em-best">{m.best}</div>
               </div>
@@ -385,7 +421,7 @@ export default function HireDedicatedResources() {
         </div>
       </section>
 
-      {/* ── Why 1Solutions — light icon-card grid ── */}
+      {/* ── Why 1Solutions ── */}
       <section className="hdr-sec hdr-sec-alt" ref={whR}>
         <div className="hdr-wrap">
           <h2 className="hdr-title">Why Hire Dedicated Resources from 1Solutions?</h2>
@@ -393,7 +429,7 @@ export default function HireDedicatedResources() {
           <div className="hdr-why-grid">
             {WHY.map((w, i) => (
               <div key={w.h} className={`hdr-why-item${whV ? ' hdr-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}>
-                <div className="hdr-why-icon-wrap" style={{ background: w.accentBg }}>{w.icon}</div>
+                <IconBox size={48} radius={12} bg={w.accentBg}>{IC[w.iconKey]}</IconBox>
                 <div className="hdr-why-body">
                   <h3>{w.h}</h3>
                   <p>{w.b}</p>
@@ -404,7 +440,7 @@ export default function HireDedicatedResources() {
         </div>
       </section>
 
-      {/* ── Process — 4 colored steps with glow ── */}
+      {/* ── Process ── */}
       <section className="hdr-sec" ref={prR}>
         <div className="hdr-wrap">
           <h2 className="hdr-title">How to Hire a Dedicated Resource in 4 Steps</h2>
@@ -413,16 +449,7 @@ export default function HireDedicatedResources() {
             {PROCESS.map((p, i) => {
               const sc = STEP_COLORS[i]
               return (
-                <div
-                  key={p.n}
-                  className={`hdr-step${prV ? ' hdr-in' : ''}`}
-                  style={{
-                    transitionDelay: `${i * 110}ms`,
-                    background: sc.bg,
-                    borderColor: sc.border,
-                    boxShadow: prV ? `0 8px 36px ${sc.glow}` : 'none',
-                  }}
-                >
+                <div key={p.n} className={`hdr-step${prV ? ' hdr-in' : ''}`} style={{ transitionDelay: `${i * 110}ms`, background: sc.bg, borderColor: sc.border, boxShadow: prV ? `0 8px 36px ${sc.glow}` : 'none' }}>
                   <div className="hdr-step-n" style={{ background: sc.circle }}>{p.n}</div>
                   <h3>{p.h}</h3>
                   <p>{p.b}</p>
@@ -433,7 +460,7 @@ export default function HireDedicatedResources() {
         </div>
       </section>
 
-      {/* ── Industries — colored pills ── */}
+      {/* ── Industries ── */}
       <section className="hdr-sec hdr-sec-alt">
         <div className="hdr-wrap">
           <h2 className="hdr-title">Industries We Serve</h2>
@@ -441,11 +468,7 @@ export default function HireDedicatedResources() {
           <div className="hdr-ind-grid">
             {INDUSTRIES.map((ind, i) => {
               const ic = INDUSTRY_COLORS[i % INDUSTRY_COLORS.length]
-              return (
-                <div key={ind} className="hdr-ind-pill" style={{ background: ic.bg, color: ic.color, borderColor: ic.border }}>
-                  {ind}
-                </div>
-              )
+              return <div key={ind} className="hdr-ind-pill" style={{ background: ic.bg, color: ic.color, borderColor: ic.border }}>{ind}</div>
             })}
           </div>
         </div>
