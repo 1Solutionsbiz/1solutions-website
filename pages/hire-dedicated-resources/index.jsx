@@ -19,19 +19,19 @@ function useCountUp(target, duration = 1800) {
   return [count, start]
 }
 
-const ACCENT = '#0F3460'
-const AMBER = '#F59E0B'
+const ACCENT = '#114171'
+const AMBER = '#FE9700'
 
 const RESOURCE_TYPES = [
-  { icon: '💻', title: 'Frontend Developers', desc: 'React.js, Next.js, Angular, Vue.js, TypeScript specialists who build pixel-perfect, performant UIs.', tags: ['React', 'Next.js', 'Angular', 'Vue.js'] },
-  { icon: '⚙️', title: 'Backend Developers', desc: 'Node.js, Python, PHP, .NET, and Java engineers for APIs, microservices, and server-side systems.', tags: ['Node.js', 'Python', 'PHP', '.NET'] },
-  { icon: '📱', title: 'Mobile App Developers', desc: 'iOS, Android, Flutter, and React Native experts for cross-platform and native mobile applications.', tags: ['Flutter', 'React Native', 'iOS', 'Android'] },
-  { icon: '🛒', title: 'eCommerce Developers', desc: 'Shopify, WooCommerce, Magento, and BigCommerce developers to build and scale your online store.', tags: ['Shopify', 'WooCommerce', 'Magento'] },
-  { icon: '🤖', title: 'AI / ML Engineers', desc: 'Python-based AI, LLM integration, NLP, computer vision, and predictive analytics specialists.', tags: ['Python', 'TensorFlow', 'LLMs', 'NLP'] },
-  { icon: '☁️', title: 'Cloud & DevOps Engineers', desc: 'AWS, Azure, GCP, Kubernetes, and CI/CD experts to modernise and automate your infrastructure.', tags: ['AWS', 'Azure', 'Docker', 'Kubernetes'] },
-  { icon: '🎨', title: 'UI/UX Designers', desc: 'Figma-first product designers who deliver wireframes, prototypes, and design systems aligned with your brand.', tags: ['Figma', 'Prototyping', 'Design Systems'] },
-  { icon: '📈', title: 'Digital Marketing Experts', desc: 'SEO strategists, PPC managers, content writers, and social media specialists to grow your visibility and ROI.', tags: ['SEO', 'Google Ads', 'Meta Ads', 'Content'] },
-  { icon: '🔍', title: 'QA Engineers', desc: 'Manual and automation QA testers using Selenium, Playwright, and Cypress for thorough quality assurance.', tags: ['Playwright', 'Cypress', 'Selenium'] },
+  { icon: '💻', title: 'Frontend Developers', href: '/hire-reactjs-developer', desc: 'React.js, Next.js, Angular, Vue.js, TypeScript specialists who build pixel-perfect, performant UIs.', tags: ['React', 'Next.js', 'Angular', 'Vue.js'] },
+  { icon: '⚙️', title: 'Backend Developers', href: '/hire-nodejs-developer', desc: 'Node.js, Python, PHP, .NET, and Java engineers for APIs, microservices, and server-side systems.', tags: ['Node.js', 'Python', 'PHP', '.NET'] },
+  { icon: '📱', title: 'Mobile App Developers', href: '/hire-flutter-developer', desc: 'iOS, Android, Flutter, and React Native experts for cross-platform and native mobile applications.', tags: ['Flutter', 'React Native', 'iOS', 'Android'] },
+  { icon: '🛒', title: 'eCommerce Developers', href: '/hire-shopify-developer', desc: 'Shopify, WooCommerce, Magento, and BigCommerce developers to build and scale your online store.', tags: ['Shopify', 'WooCommerce', 'Magento'] },
+  { icon: '🤖', title: 'AI / ML Engineers', href: '/hire-ml-developer', desc: 'Python-based AI, LLM integration, NLP, computer vision, and predictive analytics specialists.', tags: ['Python', 'TensorFlow', 'LLMs', 'NLP'] },
+  { icon: '☁️', title: 'Cloud & DevOps Engineers', href: '/devops-services-company', desc: 'AWS, Azure, GCP, Kubernetes, and CI/CD experts to modernise and automate your infrastructure.', tags: ['AWS', 'Azure', 'Docker', 'Kubernetes'] },
+  { icon: '🎨', title: 'UI/UX Designers', href: '/hire-dedicated-ui-ux-designer', desc: 'Figma-first product designers who deliver wireframes, prototypes, and design systems aligned with your brand.', tags: ['Figma', 'Prototyping', 'Design Systems'] },
+  { icon: '📈', title: 'Digital Marketing Experts', href: '/digital-marketing-services', desc: 'SEO strategists, PPC managers, content writers, and social media specialists to grow your visibility and ROI.', tags: ['SEO', 'Google Ads', 'Meta Ads', 'Content'] },
+  { icon: '🔍', title: 'QA Engineers', href: '/contact-us', desc: 'Manual and automation QA testers using Selenium, Playwright, and Cypress for thorough quality assurance.', tags: ['Playwright', 'Cypress', 'Selenium'] },
 ]
 
 const POPULAR_ROLES = [
@@ -198,56 +198,57 @@ export default function HireDedicatedResources() {
         <link rel="canonical" href="https://www.1solutions.biz/hire-dedicated-resources/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
-          .hdr-hero{background:linear-gradient(135deg,${ACCENT} 0%,#071a35 60%,#122444 100%);color:#fff;padding:100px 20px 80px;text-align:center;position:relative;overflow:hidden}
-          .hdr-hero::before{content:'';position:absolute;top:-40%;left:-20%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.12) 0%,transparent 70%);pointer-events:none}
-          .hdr-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin:0 0 20px;line-height:1.15;position:relative}
+          /* Hero — light gradient like brand pages */
+          .hdr-hero{background:linear-gradient(135deg,#dbeafe 0%,#ede9fe 25%,#e0f2fe 50%,#fef3c7 100%);color:#0F1F40;padding:100px 20px 80px;text-align:center;position:relative;overflow:hidden}
+          .hdr-hero::before{content:'';position:absolute;top:-40%;left:-20%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(17,65,113,0.08) 0%,transparent 70%);pointer-events:none}
+          .hdr-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin:0 0 20px;line-height:1.15;position:relative;color:#0F1F40}
           .hdr-hero h1 span{color:${AMBER}}
-          .hdr-hero p{font-size:1.12rem;max-width:640px;margin:0 auto 36px;opacity:.88;line-height:1.75;position:relative}
+          .hdr-hero p{font-size:1.12rem;max-width:640px;margin:0 auto 36px;color:#374151;line-height:1.75;position:relative}
           .hdr-hero-badges{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:40px;position:relative}
-          .hdr-badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:40px;padding:6px 16px;font-size:.85rem;font-weight:600;color:rgba(255,255,255,0.9)}
+          .hdr-badge{background:rgba(255,255,255,0.8);backdrop-filter:blur(10px);border:1px solid rgba(17,65,113,0.15);border-radius:40px;padding:6px 16px;font-size:.85rem;font-weight:600;color:#114171}
           .hdr-hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
-          .hdr-btn-primary{background:${AMBER};color:#fff;padding:15px 36px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s;display:inline-block}
-          .hdr-btn-primary:hover{opacity:.88}
-          .hdr-btn-outline{border:2px solid rgba(255,255,255,.65);color:#fff;padding:14px 30px;border-radius:8px;font-weight:600;font-size:1rem;text-decoration:none;transition:border-color .2s;display:inline-block}
-          .hdr-btn-outline:hover{border-color:#fff}
+          .hdr-btn-primary{background:#114171;color:#fff;padding:15px 36px;border-radius:100px;font-weight:700;font-size:1rem;text-decoration:none;transition:all .25s;display:inline-block}
+          .hdr-btn-primary:hover{background:#0d3260;transform:translateY(-2px);box-shadow:0 8px 24px rgba(17,65,113,.3)}
+          .hdr-btn-outline{background:rgba(255,255,255,0.7);color:#114171;padding:14px 30px;border-radius:100px;font-weight:600;font-size:1rem;text-decoration:none;transition:all .25s;border:2px solid rgba(17,65,113,0.3);backdrop-filter:blur(8px);display:inline-block}
+          .hdr-btn-outline:hover{background:rgba(255,255,255,.95);transform:translateY(-2px)}
 
           .hdr-sec{padding:80px 20px}
           .hdr-sec-alt{background:#f8f9fc}
-          .hdr-sec-dark{background:${ACCENT};color:#fff}
+          .hdr-sec-dark{background:#0A1628;color:#fff}
           .hdr-wrap{max-width:1160px;margin:0 auto}
-          .hdr-title{font-size:clamp(1.65rem,3.5vw,2.3rem);font-weight:800;color:#111;text-align:center;margin:0 0 12px}
+          .hdr-title{font-size:clamp(1.65rem,3.5vw,2.3rem);font-weight:800;color:#0F1F40;text-align:center;margin:0 0 12px}
           .hdr-title-white{color:#fff}
-          .hdr-sub{text-align:center;color:#555;font-size:1.05rem;max-width:640px;margin:0 auto 52px;line-height:1.75}
-          .hdr-sub-white{color:rgba(255,255,255,.8)}
+          .hdr-sub{text-align:center;color:#4b5563;font-size:1.05rem;max-width:640px;margin:0 auto 52px;line-height:1.75}
+          .hdr-sub-white{color:rgba(255,255,255,.75)}
 
           /* Resource types grid */
           .hdr-rt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
-          .hdr-rt-card{background:#fff;border-radius:16px;padding:30px 28px;border:1.5px solid #e5e7eb;box-shadow:0 2px 12px rgba(0,0,0,.04);transition:all .3s;opacity:0;transform:translateY(22px)}
+          .hdr-rt-card{background:#fff;border-radius:16px;padding:30px 28px;border:1.5px solid #e5e7eb;box-shadow:0 2px 12px rgba(0,0,0,.04);transition:all .3s;opacity:0;transform:translateY(22px);text-decoration:none;color:inherit;display:block}
           .hdr-rt-card.hdr-in{opacity:1;transform:none}
-          .hdr-rt-card:hover{border-color:${ACCENT};box-shadow:0 8px 32px rgba(15,52,96,.1);transform:translateY(-4px)}
+          .hdr-rt-card:hover{border-color:${ACCENT};box-shadow:0 8px 32px rgba(17,65,113,.1);transform:translateY(-4px)}
           .hdr-rt-icon{font-size:2.2rem;margin-bottom:14px}
-          .hdr-rt-card h3{font-size:1.1rem;font-weight:700;color:#111;margin:0 0 10px}
-          .hdr-rt-card p{color:#555;line-height:1.7;font-size:.93rem;margin:0 0 16px}
+          .hdr-rt-card h3{font-size:1.1rem;font-weight:700;color:#0F1F40;margin:0 0 10px}
+          .hdr-rt-card p{color:#4b5563;line-height:1.7;font-size:.93rem;margin:0 0 16px}
           .hdr-rt-tags{display:flex;flex-wrap:wrap;gap:8px}
-          .hdr-rt-tag{background:rgba(15,52,96,.07);color:${ACCENT};border-radius:20px;padding:4px 12px;font-size:.8rem;font-weight:600}
+          .hdr-rt-tag{background:rgba(17,65,113,.07);color:${ACCENT};border-radius:20px;padding:4px 12px;font-size:.8rem;font-weight:600}
 
           /* Popular roles */
           .hdr-roles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
           .hdr-role-link{background:#fff;border:1.5px solid #e5e7eb;border-radius:10px;padding:14px 18px;font-size:.92rem;font-weight:600;color:${ACCENT};text-decoration:none;display:flex;align-items:center;gap:8px;transition:all .3s}
           .hdr-role-link::before{content:'→';font-size:1rem;flex-shrink:0;transition:transform .2s}
-          .hdr-role-link:hover{border-color:${ACCENT};background:rgba(15,52,96,.04);box-shadow:0 4px 12px rgba(15,52,96,.08)}
+          .hdr-role-link:hover{border-color:${ACCENT};background:rgba(17,65,113,.04);box-shadow:0 4px 12px rgba(17,65,113,.08)}
           .hdr-role-link:hover::before{transform:translateX(4px)}
 
           /* Engagement models */
           .hdr-em-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px}
           .hdr-em-card{background:#fff;border-radius:16px;padding:36px 30px;border:1.5px solid #e5e7eb;box-shadow:0 2px 12px rgba(0,0,0,.05);opacity:0;transform:translateY(22px);transition:opacity .5s,transform .5s;display:flex;flex-direction:column;gap:14px}
           .hdr-em-card.hdr-in{opacity:1;transform:none}
-          .hdr-em-card:hover{border-color:${AMBER};box-shadow:0 8px 32px rgba(245,158,11,.12)}
+          .hdr-em-card:hover{border-color:${AMBER};box-shadow:0 8px 32px rgba(254,151,0,.12)}
           .hdr-em-icon{font-size:2.4rem}
-          .hdr-em-title{font-size:1.15rem;font-weight:800;color:#111;margin:0}
-          .hdr-em-sub{display:inline-block;background:rgba(245,158,11,.12);color:#b45309;border-radius:20px;padding:3px 12px;font-size:.8rem;font-weight:700;width:fit-content}
-          .hdr-em-card p{color:#555;line-height:1.7;font-size:.93rem;margin:0;flex-grow:1}
-          .hdr-em-best{font-size:.83rem;color:${ACCENT};font-weight:600;background:rgba(15,52,96,.06);border-radius:8px;padding:10px 14px;line-height:1.5}
+          .hdr-em-title{font-size:1.15rem;font-weight:800;color:#0F1F40;margin:0}
+          .hdr-em-sub{display:inline-block;background:rgba(254,151,0,.12);color:#b45309;border-radius:20px;padding:3px 12px;font-size:.8rem;font-weight:700;width:fit-content}
+          .hdr-em-card p{color:#4b5563;line-height:1.7;font-size:.93rem;margin:0;flex-grow:1}
+          .hdr-em-best{font-size:.83rem;color:${ACCENT};font-weight:600;background:rgba(17,65,113,.06);border-radius:8px;padding:10px 14px;line-height:1.5}
 
           /* Why grid */
           .hdr-why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:22px}
@@ -256,19 +257,19 @@ export default function HireDedicatedResources() {
           .hdr-why-item h3{font-size:1.05rem;font-weight:700;color:#fff;margin:0 0 10px}
           .hdr-why-item p{color:rgba(255,255,255,.75);line-height:1.7;font-size:.93rem;margin:0}
 
-          /* Stats */
-          .hdr-stats-strip{background:${AMBER};padding:50px 20px}
+          /* Stats strip — brand navy with orange numbers */
+          .hdr-stats-strip{background:${ACCENT};padding:50px 20px}
           .hdr-stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;max-width:900px;margin:0 auto;text-align:center}
-          .hdr-stat-val{font-size:2.8rem;font-weight:900;color:#fff;line-height:1}
-          .hdr-stat-lbl{font-size:.93rem;color:rgba(255,255,255,.88);margin-top:6px;font-weight:500}
+          .hdr-stat-val{font-size:2.8rem;font-weight:900;color:${AMBER};line-height:1}
+          .hdr-stat-lbl{font-size:.93rem;color:rgba(255,255,255,.85);margin-top:6px;font-weight:500}
 
           /* Process */
           .hdr-process-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
           .hdr-step{text-align:center;padding:36px 24px;background:#fff;border-radius:14px;border:1.5px solid #e5e7eb;opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s}
           .hdr-step.hdr-in{opacity:1;transform:none}
           .hdr-step-n{width:52px;height:52px;border-radius:50%;background:${ACCENT};color:#fff;font-size:1.1rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
-          .hdr-step h3{font-size:1.02rem;font-weight:700;color:#111;margin:0 0 10px}
-          .hdr-step p{color:#666;font-size:.9rem;line-height:1.65;margin:0}
+          .hdr-step h3{font-size:1.02rem;font-weight:700;color:#0F1F40;margin:0 0 10px}
+          .hdr-step p{color:#4b5563;font-size:.9rem;line-height:1.65;margin:0}
 
           /* Industries */
           .hdr-ind-grid{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
@@ -278,20 +279,20 @@ export default function HireDedicatedResources() {
           /* FAQ */
           .hdr-faq{max-width:780px;margin:0 auto}
           .hdr-faq-item{border-bottom:1px solid #e5e7eb;padding:22px 0}
-          .hdr-faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;color:#111;font-size:1rem;gap:12px;line-height:1.5}
+          .hdr-faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;color:#0F1F40;font-size:1rem;gap:12px;line-height:1.5}
           .hdr-faq-icon{font-size:1.5rem;color:${ACCENT};flex-shrink:0;transition:transform .25s;font-weight:400}
           .hdr-faq-icon.hdr-open{transform:rotate(45deg)}
-          .hdr-faq-a{margin-top:14px;color:#555;line-height:1.8;font-size:.95rem}
+          .hdr-faq-a{margin-top:14px;color:#4b5563;line-height:1.8;font-size:.95rem}
 
-          /* CTA */
-          .hdr-cta{background:linear-gradient(135deg,${ACCENT} 0%,#071a35 100%);padding:90px 20px;text-align:center;color:#fff}
-          .hdr-cta h2{font-size:clamp(1.8rem,4vw,2.7rem);font-weight:800;margin:0 0 16px;line-height:1.2}
-          .hdr-cta p{font-size:1.08rem;opacity:.85;max-width:580px;margin:0 auto 40px;line-height:1.75}
+          /* CTA — light gradient like brand pages */
+          .hdr-cta{background:linear-gradient(135deg,#dbeafe 0%,#ede9fe 50%,#fef3c7 100%);padding:90px 20px;text-align:center}
+          .hdr-cta h2{font-size:clamp(1.8rem,4vw,2.7rem);font-weight:800;margin:0 0 16px;line-height:1.2;color:#0F1F40}
+          .hdr-cta p{font-size:1.08rem;color:#374151;max-width:580px;margin:0 auto 40px;line-height:1.75}
           .hdr-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-          .hdr-btn-amber{background:${AMBER};color:#fff;padding:15px 38px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s;display:inline-block}
-          .hdr-btn-amber:hover{opacity:.88}
-          .hdr-btn-white{border:2px solid rgba(255,255,255,.65);color:#fff;padding:14px 30px;border-radius:8px;font-weight:600;font-size:1rem;text-decoration:none;transition:border-color .2s;display:inline-block}
-          .hdr-btn-white:hover{border-color:#fff}
+          .hdr-btn-amber{background:#114171;color:#fff;padding:15px 38px;border-radius:100px;font-weight:700;font-size:1rem;text-decoration:none;transition:all .25s;display:inline-block}
+          .hdr-btn-amber:hover{background:#0d3260;transform:translateY(-2px);box-shadow:0 8px 24px rgba(17,65,113,.3)}
+          .hdr-btn-white{border:2px solid rgba(17,65,113,.3);color:#114171;background:rgba(255,255,255,.7);padding:14px 30px;border-radius:100px;font-weight:600;font-size:1rem;text-decoration:none;transition:all .25s;display:inline-block;backdrop-filter:blur(8px)}
+          .hdr-btn-white:hover{background:rgba(255,255,255,.95);transform:translateY(-2px)}
 
           @media(max-width:768px){
             .hdr-stats-grid{grid-template-columns:repeat(2,1fr);gap:20px}
@@ -307,7 +308,7 @@ export default function HireDedicatedResources() {
 
       {/* ── Hero ── */}
       <section className="hdr-hero">
-        <h1>Hire <span>Dedicated Resources</span> —<br />Developers, Designers &amp; Digital Experts</h1>
+        <h1>Hire <span>Dedicated Resources</span><br />Developers, Designers &amp; Digital Experts</h1>
         <p>Scale your team with pre-vetted full-time, part-time, or hourly professionals from 1Solutions. Onboard in 7 days. No lock-in contracts.</p>
         <div className="hdr-hero-badges">
           <span className="hdr-badge">&#10003; 150+ Vetted Professionals</span>
@@ -328,14 +329,14 @@ export default function HireDedicatedResources() {
           <p className="hdr-sub">From frontend engineers to performance marketers — every role is pre-vetted, technically assessed, and ready to integrate into your workflow.</p>
           <div className="hdr-rt-grid">
             {RESOURCE_TYPES.map((rt, i) => (
-              <div key={rt.title} className={`hdr-rt-card${rtV ? ' hdr-in' : ''}`} style={{ transitionDelay: `${i * 70}ms` }}>
+              <Link key={rt.title} href={rt.href} className={`hdr-rt-card${rtV ? ' hdr-in' : ''}`} style={{ transitionDelay: `${i * 70}ms` }}>
                 <div className="hdr-rt-icon">{rt.icon}</div>
                 <h3>{rt.title}</h3>
                 <p>{rt.desc}</p>
                 <div className="hdr-rt-tags">
                   {rt.tags.map(tag => <span key={tag} className="hdr-rt-tag">{tag}</span>)}
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

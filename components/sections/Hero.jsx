@@ -5,7 +5,7 @@ import AuroraText from '../ui/AuroraText'
 
 const metrics = [
   { value: '500+', label: 'Projects Delivered' },
-  { value: '16+',  label: 'Years Experience' },
+  { value: '15+',  label: 'Years Experience' },
   { value: '97%',  label: 'Client Retention' },
   { value: '25+',  label: 'Countries Served' },
 ]

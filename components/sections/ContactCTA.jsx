@@ -67,7 +67,7 @@ export default function ContactCTA() {
               <div className="cta-stats-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '16px' }}>
                 {[
                   { n: '500+', l: 'Projects Delivered' },
-                  { n: '16+', l: 'Years Experience' },
+                  { n: '15+', l: 'Years Experience' },
                   { n: '97%', l: 'Client Retention' },
                 ].map(stat => (
                   <div key={stat.l}>
