@@ -34,7 +34,7 @@ export default async function handler(req, res) {
   const captchaRes = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`, { method: 'POST' });
   const captchaData = await captchaRes.json();
   if (!captchaData.success || captchaData.score < 0.5) {
-    return res.status(400).json({ message: 'reCAPTCHA check failed. Please try again.', _debug: captchaData });
+    return res.status(400).json({ message: 'reCAPTCHA check failed. Please try again.' });
   }
 
   const htmlBody = `
