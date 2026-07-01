@@ -122,6 +122,7 @@ const STATIC_PAGES = [
   { url: '/affordable-seo-packages',             priority: '0.8', changefreq: 'monthly' },
   { url: '/seo-audit-services',                  priority: '0.8', changefreq: 'monthly' },
   { url: '/local-seo-services',                  priority: '0.8', changefreq: 'monthly' },
+  { url: '/seo-services-california',             priority: '0.8', changefreq: 'monthly' },
   { url: '/local-seo-packages',                  priority: '0.8', changefreq: 'monthly' },
   { url: '/ecommerce-seo-services',              priority: '0.8', changefreq: 'monthly' },
   { url: '/ecommerce-seo-packages',              priority: '0.8', changefreq: 'monthly' },
