@@ -1,4 +1,3 @@
-'use client'
 import Head from 'next/head'
 import Link from 'next/link'
 
@@ -38,7 +37,7 @@ function Custom404() {
           background-position: center 52%, center;
           background-size: 48%, cover;
           background-repeat: no-repeat, no-repeat;
-          background-attachment: fixed, fixed;
+          background-attachment: scroll, scroll;
           --text-main: #1a1a1a;
           --text-sec: #888888;
         }
