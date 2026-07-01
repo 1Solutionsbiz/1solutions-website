@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /search?*
+Disallow: /api/ai-generate
+Disallow: /api/contact
+Disallow: /api/apply
+Disallow: /api/og-image
+Disallow: /api/revalidate
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://www.1solutions.biz/sitemap.xml

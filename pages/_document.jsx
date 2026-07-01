@@ -7,8 +7,8 @@ export default function Document() {
         {/* Viewport — critical for mobile rendering */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="/images/logo.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/images/logo.png" />
         {/* Theme color */}
         <meta name="theme-color" content="#114171" />
       </Head>

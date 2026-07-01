@@ -1,42 +1,228 @@
 # 1Solutions
 
-> 1Solutions is a 15+ year digital marketing and web development agency based in New Delhi, India. We help businesses grow through SEO, WordPress development, ecommerce marketing, content strategy, social media management, and reputation management.
-
-## Services
-
-- [SEO Services](https://www.1solutions.biz/seo-services-company): Full-service search engine optimisation including on-page, technical SEO, and link building.
-- [Digital Marketing Services](https://www.1solutions.biz/digital-marketing-services): End-to-end digital marketing covering SEO, PPC, social media, content, and more.
-- [WordPress Development Company](https://www.1solutions.biz/wordpress-development-company): Custom WordPress website design, development, and maintenance.
-- [Headless WordPress Development](https://www.1solutions.biz/headless-wordpress-development): Decoupled WordPress development using Next.js, WPGraphQL, and React for blazing-fast frontends.
-- [Ecommerce Marketing Services](https://www.1solutions.biz/ecommerce-marketing-services): SEO and marketing for online stores across Shopify, WooCommerce, and Magento.
-- [Amazon SEO Services](https://www.1solutions.biz/amazon-seo-services): Amazon listing optimisation, A+ content, keyword research, and PPC management.
-- [Content & Copywriting Services](https://www.1solutions.biz/content-copywriting-services): SEO-optimised blog posts, landing pages, product descriptions, and web copy.
-- [Facebook Management Services](https://www.1solutions.biz/facebook-management-services): Facebook and Instagram page management, ad campaigns, and community management.
-- [Reputation Management Services](https://www.1solutions.biz/reputation-management-services): Online reputation monitoring, review management, and brand protection.
-- [Photography SEO Services](https://www.1solutions.biz/photography-seo-services): Local and national SEO for photographers across all niches.
-- [Lawn Care Marketing Services](https://www.1solutions.biz/lawn-care-marketing-services): Lead generation and local SEO for lawn care and landscaping businesses.
-- [HVAC SEO Services](https://www.1solutions.biz/hvac-seo-services): Search engine optimisation and Google Ads for HVAC companies.
-- [SEO for Small Business](https://www.1solutions.biz/seo-services-for-small-business): Affordable SEO packages tailored for small businesses.
-- [SEO Training Laxmi Nagar](https://www.1solutions.biz/seo-training-laxmi-nagar): In-person and online SEO training courses in Delhi.
-
-## Penalty Recovery
-
-- [Google Penalty Recovery](https://www.1solutions.biz/google-penalty-recovery-services): Recovery from manual actions, Panda, Penguin, and core algorithm updates.
-- [Google Panda Recovery](https://www.1solutions.biz/google-panda-recovery-services): Thin content and Helpful Content Update recovery and E-E-A-T improvement.
-- [Penguin Recovery Service](https://www.1solutions.biz/penguin-recovery-service): Toxic backlink audit, disavow file creation, and link spam recovery.
-
-## Pricing
-
-- [Local SEO Packages](https://www.1solutions.biz/local-seo-packages): Monthly and yearly local SEO pricing plans for small to mid-size businesses.
-- [Ecommerce SEO Packages](https://www.1solutions.biz/ecommerce-seo-packages): Monthly and yearly ecommerce SEO pricing plans.
-- [Link Building Packages](https://www.1solutions.biz/link-building-packages): Monthly and yearly link building pricing plans.
-- [Free 45-Day SEO Trial](https://www.1solutions.biz/free-45-day-seo-trial): Try our SEO services free for 45 days — no contract, no credit card.
-
-## Blog
-
-- [Blog](https://www.1solutions.biz/blog): Expert articles on SEO, digital marketing, web development, and AI tools.
+> 1Solutions is a 15+ year full-service digital agency based in New Delhi, India. We deliver web development, mobile apps, UI/UX design, eCommerce, digital marketing, SEO, and staff augmentation services to clients across the US, UK, Canada, Australia, and the globe.
 
 ## Company
 
-- [Contact Us](https://www.1solutions.biz/contact-us): Get in touch with 1Solutions for a free consultation.
-- [Sitemap](https://www.1solutions.biz/sitemap): Full list of all pages on the 1Solutions website.
+- [About 1Solutions](https://www.1solutions.biz/who-we-are): 15+ years of experience, 500+ projects delivered, team of professionals serving businesses across the globe.
+- [Portfolio](https://www.1solutions.biz/portfolio): Selected work across web development, eCommerce, digital marketing, and mobile apps.
+- [Case Studies](https://www.1solutions.biz/case-studies): In-depth project case studies with results for clients across industries.
+- [Work Culture](https://www.1solutions.biz/work-culture): How we work, our values, and our team environment.
+- [Open Positions](https://www.1solutions.biz/open-positions): Current job openings at 1Solutions.
+- [Partner With Us](https://www.1solutions.biz/partner-with-us): Agency partnership and white-label programme.
+- [Contact Us](https://www.1solutions.biz/contact-us): Get in touch for a free consultation.
+- [Book a Consultation](https://www.1solutions.biz/book-consultation): Schedule a call with our team.
+- [Corporate Responsibility](https://www.1solutions.biz/corporate-responsibility): Our commitment to social and environmental responsibility.
+
+## Web Development
+
+- [Web Development Services](https://www.1solutions.biz/web-development-services): Full-stack web development for startups, SMEs, and enterprises.
+- [WordPress Development Company](https://www.1solutions.biz/wordpress-development-company): Custom WordPress design, development, and maintenance.
+- [Headless WordPress Development](https://www.1solutions.biz/headless-wordpress-development): Decoupled WordPress with Next.js, WPGraphQL, and React for fast frontends.
+- [Next.js Development Services](https://www.1solutions.biz/nextjs-development-services): Server-side rendering and static site generation with Next.js.
+- [Laravel Development Company](https://www.1solutions.biz/laravel-development-company): Custom Laravel web applications, APIs, and portals.
+- [Node.js Development Services](https://www.1solutions.biz/nodejs-development-services): Scalable server-side applications and REST APIs with Node.js.
+- [PHP Development Services](https://www.1solutions.biz/php-development-services): Custom PHP web applications and backend development.
+- [Python Development Services](https://www.1solutions.biz/python-development-services): Python web apps, automation, and data-driven applications.
+- [CodeIgniter Development Company](https://www.1solutions.biz/codeigniter-development-company): Lightweight PHP frameworks for rapid web development.
+- [Drupal Development Company](https://www.1solutions.biz/drupal-development-company): Enterprise Drupal websites, portals, and CMS solutions.
+- [Joomla Development Company](https://www.1solutions.biz/joomla-development-company): Custom Joomla websites, extensions, and templates.
+- [TIBCO Development Services](https://www.1solutions.biz/tibco-development-services): Enterprise middleware and integration solutions.
+- [Website Support & Maintenance](https://www.1solutions.biz/website-support-maintenance-services): Ongoing website maintenance, updates, and technical support.
+- [WordPress Support & Maintenance](https://www.1solutions.biz/wordpress-support-and-maintenance-services): Dedicated WordPress care plans — updates, backups, and security.
+
+## Mobile App Development
+
+- [Android App Development Company](https://www.1solutions.biz/android-application-development-company): Native Android app development with Java and Kotlin.
+- [iOS App Development Company](https://www.1solutions.biz/ios-app-development-company): Native iOS app development with Swift and Objective-C.
+- [Flutter App Development Services](https://www.1solutions.biz/flutter-app-development-services): Cross-platform apps for iOS and Android with Flutter.
+- [React Native App Development](https://www.1solutions.biz/react-native-app-development): Cross-platform mobile apps with React Native.
+- [Social Media App Development](https://www.1solutions.biz/social-media-app-development-company): Custom social networking and community platform development.
+- [App Maintenance Services](https://www.1solutions.biz/app-maintenance-services): Ongoing mobile app support, updates, and performance monitoring.
+- [App Store Optimisation](https://www.1solutions.biz/app-store-optimization-services): ASO to improve app visibility and downloads on App Store and Play Store.
+
+## eCommerce Development
+
+- [eCommerce Website Development](https://www.1solutions.biz/ecommerce-website-development-services): End-to-end eCommerce store design and development.
+- [Shopify Store Development](https://www.1solutions.biz/shopify-store-development): Custom Shopify store design, theme development, and apps.
+- [Shopify Migration Services](https://www.1solutions.biz/shopify-migration-services): Migrate to Shopify from WooCommerce, Magento, or any platform.
+- [Magento Development Company](https://www.1solutions.biz/magento-development-company): Enterprise Magento eCommerce development and customisation.
+- [WooCommerce Development Company](https://www.1solutions.biz/woocommerce-development-company): Custom WooCommerce stores, plugins, and integrations.
+- [OpenCart Development Company](https://www.1solutions.biz/opencart-development-company): OpenCart store setup, customisation, and development.
+- [B2B eCommerce](https://www.1solutions.biz/b2b-ecommerce): Wholesale and B2B eCommerce solutions.
+
+## UI/UX Design
+
+- [Website Design](https://www.1solutions.biz/website-design): Professional website design focused on conversion and user experience.
+- [Mobile App Design](https://www.1solutions.biz/mobile-app-design): UI/UX design for iOS and Android mobile applications.
+- [Brand Identity](https://www.1solutions.biz/brand-identity): Logo design, visual identity, and brand guidelines.
+- [Graphic Design Services](https://www.1solutions.biz/graphic-design-services): Print and digital graphic design for all brand materials.
+- [Logo Design Services](https://www.1solutions.biz/logo-design-services): Custom logo design and brand mark creation.
+- [Design Systems](https://www.1solutions.biz/design-systems): Scalable component libraries and design system documentation.
+- [Prototyping Services](https://www.1solutions.biz/prototyping-services): Interactive wireframes and clickable prototypes in Figma.
+- [UX Research](https://www.1solutions.biz/ux-research): User research, usability testing, and journey mapping.
+- [Landing Page Design](https://www.1solutions.biz/landing-page-design-services): High-converting landing page design and development.
+- [Infographics Design](https://www.1solutions.biz/infographics-design): Data visualisation and branded infographic creation.
+- [App UI/UX Design](https://www.1solutions.biz/app-ui-ux-design): Dedicated app design services for web and mobile products.
+- [Home Services Website Design](https://www.1solutions.biz/home-services-website-design): Websites for home service businesses — plumbing, HVAC, cleaning, and more.
+
+## Cloud, DevOps & IT
+
+- [DevOps Services Company](https://www.1solutions.biz/devops-services-company): CI/CD pipelines, containerisation, Kubernetes, and infrastructure automation.
+- [Cloud Migration Services](https://www.1solutions.biz/cloud-migration-services): Move workloads to AWS, Azure, or GCP with zero downtime.
+- [Cloud Native Services](https://www.1solutions.biz/cloud-native-services): Microservices, serverless, and container-native application development.
+- [IT Outsourcing Services](https://www.1solutions.biz/it-outsourcing-services): Offshore IT outsourcing for development, design, and support.
+- [IT Staff Augmentation](https://www.1solutions.biz/it-staff-augmentation-services): Extend your team with vetted IT professionals on demand.
+- [Offshore Development Company](https://www.1solutions.biz/offshore-development-company): Dedicated offshore development centre with full project ownership.
+- [Virtual CTO Services](https://www.1solutions.biz/virtual-cto-services): Fractional CTO for technology strategy, architecture, and team leadership.
+- [Virtual Assistant Services](https://www.1solutions.biz/virtual-assistant-services): Remote executive and business support assistants.
+- [Software Cost Optimisation](https://www.1solutions.biz/software-development-cost-optimization): Reduce software development costs without sacrificing quality.
+
+## Hire Dedicated Resources
+
+- [Hire Dedicated Resources](https://www.1solutions.biz/hire-dedicated-resources): Hire pre-vetted developers, designers, and digital experts on monthly, part-time, or hourly engagements.
+- [Hire React.js Developer](https://www.1solutions.biz/hire-reactjs-developer): Dedicated React.js and Next.js frontend developers.
+- [Hire Node.js Developer](https://www.1solutions.biz/hire-nodejs-developer): Dedicated Node.js backend and API developers.
+- [Hire WordPress Developer](https://www.1solutions.biz/hire-wordpress-developer): Dedicated WordPress theme and plugin developers.
+- [Hire PHP Developer](https://www.1solutions.biz/hire-php-developer): Dedicated PHP developers for web applications and APIs.
+- [Hire Python Developer](https://www.1solutions.biz/hire-python-developer): Dedicated Python developers for web apps, data, and automation.
+- [Hire Full-Stack Developer](https://www.1solutions.biz/hire-full-stack-developer): Dedicated full-stack engineers for end-to-end development.
+- [Hire Shopify Developer](https://www.1solutions.biz/hire-shopify-developer): Dedicated Shopify theme, app, and Liquid developers.
+- [Hire Flutter Developer](https://www.1solutions.biz/hire-flutter-developer): Dedicated Flutter developers for cross-platform mobile apps.
+- [Hire Android Developer](https://www.1solutions.biz/hire-android-developer): Dedicated native Android developers.
+- [Hire iOS Developer](https://www.1solutions.biz/hire-ios-developer): Dedicated native iOS and Swift developers.
+- [Hire React Native Developer](https://www.1solutions.biz/hire-react-native-developer): Dedicated React Native mobile developers.
+- [Hire Laravel Developer](https://www.1solutions.biz/hire-laravel-developer): Dedicated Laravel PHP developers.
+- [Hire Angular Developer](https://www.1solutions.biz/hire-angularjs-developer): Dedicated Angular frontend developers.
+- [Hire Next.js Developer](https://www.1solutions.biz/hire-nextjs-developers): Dedicated Next.js and SSR developers.
+- [Hire UI/UX Designer](https://www.1solutions.biz/hire-dedicated-ui-ux-designer): Dedicated Figma-first product designers.
+- [Hire Graphic Designer](https://www.1solutions.biz/hire-dedicated-graphic-designer): Dedicated graphic and visual designers.
+- [Hire Web Developer](https://www.1solutions.biz/hire-web-developer): Dedicated general web developers.
+- [Hire Web Designer](https://www.1solutions.biz/hire-web-designer): Dedicated website designers.
+- [Hire AI Developer](https://www.1solutions.biz/hire-ai-developer): Dedicated AI and LLM integration developers.
+- [Hire ML Developer](https://www.1solutions.biz/hire-ml-developer): Dedicated machine learning and data science specialists.
+- [Hire Magento Developer](https://www.1solutions.biz/hire-magento-developer): Dedicated Magento eCommerce developers.
+- [Hire Blockchain Developer](https://www.1solutions.biz/hire-blockchain-developer): Dedicated blockchain and Web3 developers.
+- [Hire Data Scientist](https://www.1solutions.biz/hire-data-scientist): Dedicated data scientists and analysts.
+
+## Enterprise & Industry Solutions
+
+- [SaaS Application Development](https://www.1solutions.biz/saas-application-development-company): End-to-end SaaS product development from MVP to scale.
+- [ERP Development Company](https://www.1solutions.biz/erp-application-development-company): Custom ERP systems for manufacturing, finance, and operations.
+- [CRM Development Company](https://www.1solutions.biz/crm-application-development-company): Custom CRM platforms for sales, support, and marketing teams.
+- [Healthcare Software Development](https://www.1solutions.biz/healthcare-software-development): HIPAA-aware healthcare apps, patient portals, and telemedicine platforms.
+- [Fintech Software Development](https://www.1solutions.biz/fintech-software-development-company): Payment gateways, lending platforms, and financial dashboards.
+- [Real Estate Software Development](https://www.1solutions.biz/real-estate-software-development): Property listing, CRM, and PropTech solutions.
+- [Logistics Software Development](https://www.1solutions.biz/logistics-software-development-services): Fleet management, tracking, and supply chain software.
+- [Manufacturing Software Development](https://www.1solutions.biz/manufacturing-software-development-services): Factory operations, inventory, and production management systems.
+- [Education Software Development](https://www.1solutions.biz/elearning-software-development-services): LMS, e-learning platforms, and EdTech applications.
+- [Retail & eCommerce Software](https://www.1solutions.biz/retail-ecommerce-software-development): Omnichannel retail and inventory management systems.
+- [Agriculture Software Development](https://www.1solutions.biz/agriculture-software-development): AgriTech software for farming, supply chain, and commodity management.
+- [Automotive Software Solutions](https://www.1solutions.biz/automotive-software-solutions): Dealer management, fleet, and connected vehicle software.
+- [EV Software Development](https://www.1solutions.biz/ev-software-development-company): Charging station management and EV fleet software.
+- [Entertainment Software Development](https://www.1solutions.biz/entertainment-software-development): Streaming, ticketing, and media management platforms.
+- [Travel & Tourism Software](https://www.1solutions.biz/travel-and-tourism-software-solutions): Booking engines, itinerary tools, and travel management platforms.
+- [Wellness Software Development](https://www.1solutions.biz/wellness-software-development): Fitness, mental health, and wellness app development.
+
+## Digital Marketing
+
+- [Digital Marketing Services](https://www.1solutions.biz/digital-marketing-services): Full-service digital marketing including SEO, PPC, social, and content.
+- [SEO Services Company](https://www.1solutions.biz/seo-services-company): Comprehensive SEO including technical, on-page, and link building.
+- [Local SEO Services](https://www.1solutions.biz/local-seo-services): Google Maps ranking and local search optimisation.
+- [Enterprise SEO Services](https://www.1solutions.biz/enterprise-seo-services): Large-scale SEO for enterprise websites with thousands of pages.
+- [Technical SEO Optimisation](https://www.1solutions.biz/technical-seo-optimization): Core Web Vitals, crawlability, structured data, and indexation fixes.
+- [SEO Audit Services](https://www.1solutions.biz/seo-audit-services): Comprehensive website audit covering technical, content, and backlink issues.
+- [Link Building Services](https://www.1solutions.biz/link-building-services): White-hat link acquisition through editorial placements and digital PR.
+- [Content Marketing Services](https://www.1solutions.biz/content-marketing-services): Strategic content planning, creation, and distribution for organic growth.
+- [Content & Copywriting Services](https://www.1solutions.biz/content-copywriting-services): SEO blog posts, landing pages, product descriptions, and web copy.
+- [PPC Management Services](https://www.1solutions.biz/ppc-management-services): Google Ads, Shopping, and Performance Max campaign management.
+- [Meta Ads Management](https://www.1solutions.biz/meta-ads-management): Facebook and Instagram paid advertising management.
+- [LinkedIn Ads Management](https://www.1solutions.biz/linkedin-ads-management): B2B LinkedIn campaign setup, targeting, and optimisation.
+- [Google Shopping Management](https://www.1solutions.biz/google-shopping-management): Product feed optimisation and Shopping campaign management.
+- [Social Media Marketing](https://www.1solutions.biz/social-media-marketing-services): Organic social media strategy, content, and community management.
+- [Email Marketing Services](https://www.1solutions.biz/email-marketing-services): Email campaigns, automation flows, and list growth strategies.
+- [Klaviyo Email Marketing](https://www.1solutions.biz/klaviyo-email-marketing-agency): Klaviyo setup, flows, and email strategy for eCommerce brands.
+- [eCommerce Marketing Services](https://www.1solutions.biz/ecommerce-marketing-services): SEO, PPC, and email marketing for online stores.
+- [Amazon SEO Services](https://www.1solutions.biz/amazon-seo-services): Amazon listing optimisation, A+ content, and PPC management.
+- [Reputation Management](https://www.1solutions.biz/reputation-management-services): Online reputation monitoring, review strategy, and brand protection.
+- [Conversion Rate Optimisation](https://www.1solutions.biz/conversion-rate-optimization-services): A/B testing, heatmaps, and funnel optimisation to lift conversion rates.
+- [Analytics & CRO Services](https://www.1solutions.biz/analytics-cro-services): GA4 setup, reporting dashboards, and data-driven CRO.
+- [Google My Business Optimisation](https://www.1solutions.biz/google-my-business-optimization): GBP profile optimisation for local visibility and calls.
+- [Affiliate Marketing Services](https://www.1solutions.biz/affiliate-marketing-services): Affiliate programme setup, management, and partner recruitment.
+- [Influencer Marketing Services](https://www.1solutions.biz/influencer-marketing-services): Influencer identification, outreach, and campaign management.
+- [Video Marketing Services](https://www.1solutions.biz/video-marketing-services): Video strategy, production, and YouTube / social distribution.
+- [Voice Search Optimisation](https://www.1solutions.biz/voice-search-optimization-services): Schema markup and content optimisation for voice assistants.
+- [Answer Engine Optimisation](https://www.1solutions.biz/answer-engine-optimization-services): Optimising for AI-generated search answers and featured snippets.
+- [Generative Engine Optimisation](https://www.1solutions.biz/generative-engine-optimization-services): GEO strategies for visibility in ChatGPT, Perplexity, and AI overviews.
+
+## SEO by Platform
+
+- [WordPress SEO Services](https://www.1solutions.biz/wordpress-seo-services): WordPress-specific technical SEO and on-page optimisation.
+- [Shopify SEO Services](https://www.1solutions.biz/shopify-seo-services): Shopify store SEO including collections, products, and schema.
+- [WooCommerce SEO Services](https://www.1solutions.biz/woocommerce-seo-services): WooCommerce store SEO and product optimisation.
+- [Magento SEO Services](https://www.1solutions.biz/magento-seo-services): Magento technical SEO and catalogue optimisation.
+- [OpenCart SEO Services](https://www.1solutions.biz/opencart-seo-services): OpenCart store search engine optimisation.
+- [Wix SEO Services](https://www.1solutions.biz/wix-seo-services): SEO audit and optimisation for Wix-built websites.
+
+## SEO by Industry
+
+- [Dental SEO Services](https://www.1solutions.biz/dental-seo-services): Local SEO for dental practices and orthodontic clinics.
+- [Law Firm SEO Services](https://www.1solutions.biz/law-firm-seo-services): SEO for solicitors, law firms, and legal services.
+- [Insurance SEO Services](https://www.1solutions.biz/insurance-seo-services): Search optimisation for insurance brokers and carriers.
+- [HVAC SEO Services](https://www.1solutions.biz/hvac-seo-services): SEO and Google Ads for heating, ventilation, and air conditioning companies.
+- [Plumbing SEO Services](https://www.1solutions.biz/plumbing-seo-services): Local SEO and lead generation for plumbers.
+- [Home Repair SEO Services](https://www.1solutions.biz/home-repair-seo-services): SEO for contractors, handymen, and home improvement businesses.
+- [Lawn Care Marketing](https://www.1solutions.biz/lawn-care-marketing-services): SEO and paid ads for lawn care and landscaping companies.
+- [Restaurant SEO Services](https://www.1solutions.biz/restaurants-seo-services): Local SEO for restaurants and food service businesses.
+- [Pet Care SEO Services](https://www.1solutions.biz/petcare-seo-services): SEO for vets, groomers, and pet care businesses.
+- [Photography SEO Services](https://www.1solutions.biz/photography-seo-services): Local and national SEO for photographers.
+
+## SEO by Location
+
+- [SEO Company Delhi](https://www.1solutions.biz/seo-company-delhi): SEO services for businesses in New Delhi and NCR.
+- [SEO Company Austin](https://www.1solutions.biz/seo-company-austin): SEO services for businesses in Austin, Texas.
+- [SEO Company Toronto](https://www.1solutions.biz/seo-company-toronto): SEO services for businesses in Toronto, Canada.
+- [SEO Company Vancouver](https://www.1solutions.biz/seo-company-vancouver): SEO services for businesses in Vancouver, Canada.
+- [SEO Company Burlington](https://www.1solutions.biz/seo-company-burlington): SEO services for businesses in Burlington, Ontario.
+- [SEO Services Jacksonville](https://www.1solutions.biz/seo-services-jacksonville): SEO services for businesses in Jacksonville, Florida.
+
+## Google Penalty Recovery
+
+- [Google Penalty Recovery](https://www.1solutions.biz/google-penalty-recovery-services): Recovery from manual actions and core algorithm updates.
+- [Google Panda Recovery](https://www.1solutions.biz/google-panda-recovery-services): Thin content cleanup and Helpful Content Update recovery.
+- [Penguin Recovery Service](https://www.1solutions.biz/penguin-recovery-service): Toxic link audit, disavow file creation, and spam recovery.
+
+## Marketplace Management
+
+- [Amazon Account Management](https://www.1solutions.biz/amazon-account-management-services): Full Amazon seller account setup, listing, and advertising management.
+- [Amazon FBA Reconciliation](https://www.1solutions.biz/amazon-fba-shipment-reconciliation-services): FBA shipment audits and reimbursement claims.
+- [eBay Account Management](https://www.1solutions.biz/ebay-account-management-services): eBay store setup, listing optimisation, and account health.
+- [Flipkart Account Management](https://www.1solutions.biz/flipkart-account-management-services): Flipkart seller account management and cataloguing.
+- [Walmart Account Management](https://www.1solutions.biz/walmart-account-management-services): Walmart Marketplace seller setup and growth management.
+- [Etsy Account Management](https://www.1solutions.biz/etsy-account-management-services): Etsy shop setup, listing SEO, and seller account growth.
+- [Wayfair Account Management](https://www.1solutions.biz/wayfair-account-management-services): Wayfair supplier account and catalogue management.
+- [Home Depot Account Management](https://www.1solutions.biz/home-depot-account-management-services): Home Depot supplier onboarding and product listing management.
+- [Temu Account Management](https://www.1solutions.biz/temu-account-management-services): Temu seller account and listing management services.
+- [Houzz Product Listing](https://www.1solutions.biz/houzz-product-listing-services): Houzz product cataloguing and seller management.
+
+## Pricing & Packages
+
+- [Affordable SEO Packages](https://www.1solutions.biz/affordable-seo-packages): Flexible SEO pricing for businesses of all sizes.
+- [Local SEO Packages](https://www.1solutions.biz/local-seo-packages): Monthly local SEO plans for small to mid-size businesses.
+- [eCommerce SEO Packages](https://www.1solutions.biz/ecommerce-seo-packages): Monthly eCommerce SEO pricing plans.
+- [Link Building Packages](https://www.1solutions.biz/link-building-packages): Monthly link acquisition plans.
+- [Free 45-Day SEO Trial](https://www.1solutions.biz/free-45-day-seo-trial): Try SEO services free for 45 days — no contract, no credit card required.
+- [PPC Audit Services](https://www.1solutions.biz/ppc-audit-services): Independent audit of your Google Ads or Meta Ads account.
+- [Managed SEO Services](https://www.1solutions.biz/managed-seo-services): Fully managed SEO with dedicated account management.
+
+## Blog
+
+- [Blog](https://www.1solutions.biz/blog): Expert articles on SEO, digital marketing, web development, and AI.
+
+## Legal
+
+- [Privacy Policy](https://www.1solutions.biz/privacy-policy): How 1Solutions collects, uses, and protects your data.
+- [Terms of Use](https://www.1solutions.biz/terms-of-use): Terms governing use of the 1Solutions website and services.
+- [Cookie Policy](https://www.1solutions.biz/cookie-policy): How 1Solutions uses cookies and tracking technologies.
+- [Refund Policy](https://www.1solutions.biz/refund-policy): 1Solutions refund and cancellation terms.
+- [Sitemap](https://www.1solutions.biz/sitemap): Full directory of all pages on the 1Solutions website.
