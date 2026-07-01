@@ -47,7 +47,7 @@ const services = [
     desc: 'Migrate to the cloud, modernize infrastructure, and automate deployments. We help you scale reliably while cutting operational costs.',
     tags: ['AWS', 'Azure', 'GCP', 'Docker', 'Kubernetes', 'CI/CD'],
     cta: 'Modernize Your Infrastructure',
-    href: '/cloud-devops',
+    href: '/devops-services-company',
     image: '/images/service-cloud-devops.png',
     accent: '#06B6D4',
     grad: 'linear-gradient(160deg,#ecfeff 0%,#cffafe 50%,#22d3ee 100%)',
