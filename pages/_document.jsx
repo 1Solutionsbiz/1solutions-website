@@ -17,8 +17,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
         {/* Favicon */}
-        <link rel="icon" href="/images/1solutions-favicon.webp" type="image/webp" />
-        <link rel="apple-touch-icon" href="/images/1solutions-favicon.webp" />
+        <link rel="icon" type="image/png" href="/images/1solutions-favicon.png" />
+        <link rel="icon" type="image/webp" href="/images/1solutions-favicon.webp" />
+        <link rel="apple-touch-icon" href="/images/1solutions-favicon.png" />
         {/* Theme color */}
         <meta name="theme-color" content="#114171" />
         {/* Google Search Console verification */}
