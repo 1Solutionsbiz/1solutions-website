@@ -14,7 +14,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ message: 'Please provide a valid email address.' });
   }
 
-  const toEmail = process.env.CONTACT_TO_EMAIL || 'info@1solutions.biz';
+  const toEmails = ['atul@1solutions.biz', 'info@1solutions.biz'];
 
   const htmlBody = `
     <div style="font-family:Inter,Arial,sans-serif;max-width:600px;margin:0 auto;color:#1a1a2e">
@@ -57,8 +57,8 @@ export default async function handler(req, res) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          from: 'Partnership Enquiry <onboarding@resend.dev>',
-          to: [toEmail],
+          from: 'Partnership Enquiry <hello@1solutions.biz>',
+          to: toEmails,
           reply_to: email,
           subject: `Partnership Enquiry: ${type} — ${name}, ${company}`,
           html: htmlBody,

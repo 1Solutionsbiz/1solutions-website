@@ -26,7 +26,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ message: 'Please provide a valid email address.' });
   }
 
-  const hrEmail = process.env.HR_EMAIL || 'info@1solutions.biz';
+  const toEmails = ['atul@1solutions.biz', 'info@1solutions.biz'];
 
   const rows = [
     ['Position', position],
@@ -95,8 +95,8 @@ export default async function handler(req, res) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          from: 'Careers <onboarding@resend.dev>',
-          to: [hrEmail],
+          from: 'Careers <hello@1solutions.biz>',
+          to: toEmails,
           reply_to: email,
           subject: `Job Application: ${name} — ${position}`,
           html: htmlBody,
