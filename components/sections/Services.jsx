@@ -29,7 +29,7 @@ const services = [
     desc: "Having developed eCommerce for hundreds of businesses including Fortune 500, 1Solutions offers strong capability in the domain.",
     tags: ['Shopify', 'WooCommerce', 'Magento', 'Headless', 'PWA', 'BigCommerce'],
     cta: 'Boost Your Online Store',
-    href: '/ecommerce-development',
+    href: '/ecommerce-website-development-services',
     image: '/images/service-ecommerce-development.png',
     accent: '#0EA5E9',
     grad: 'linear-gradient(160deg,#e0f2fe 0%,#bae6fd 50%,#38bdf8 100%)',
