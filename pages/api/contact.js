@@ -1,10 +1,16 @@
-// Contact form API route
-//
-// To enable real email delivery, set these in Vercel → Settings → Environment Variables:
-//   RESEND_API_KEY   — free at resend.com (100 emails/day free tier)
-//   CONTACT_TO_EMAIL — where enquiries go (default: info@1solutions.biz)
-//
-// Without RESEND_API_KEY the route still returns 200 so the form UX works.
+import nodemailer from 'nodemailer';
+
+function createTransporter() {
+  return nodemailer.createTransport({
+    host: process.env.SMTP_HOST || 'smtp-relay.brevo.com',
+    port: parseInt(process.env.SMTP_PORT || '587'),
+    secure: false,
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
+  });
+}
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -22,13 +28,11 @@ export default async function handler(req, res) {
     return res.status(400).json({ message: 'Please provide a valid email address.' });
   }
 
-  const toEmails = ['atul@1solutions.biz', 'info@1solutions.biz'];
-
   const htmlBody = `
     <div style="font-family:Inter,Arial,sans-serif;max-width:600px;margin:0 auto;color:#1a1a2e">
       <div style="background:#0F1F40;padding:28px 32px;border-radius:12px 12px 0 0">
         <h2 style="color:#fff;margin:0;font-size:1.3rem">New Contact Form Enquiry</h2>
-        <p style="color:rgba(255,255,255,0.6);margin:6px 0 0;font-size:0.88rem">1solutions.biz/contact</p>
+        <p style="color:rgba(255,255,255,0.6);margin:6px 0 0;font-size:0.88rem">1solutions.biz/contact-us</p>
       </div>
       <div style="background:#f8fafc;padding:28px 32px;border-radius:0 0 12px 12px;border:1px solid #e5e7eb;border-top:none">
         <table style="width:100%;border-collapse:collapse">
@@ -50,42 +54,23 @@ export default async function handler(req, res) {
           <p style="margin:0 0 6px;font-size:0.82rem;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.06em">Message</p>
           <p style="margin:0;font-size:0.95rem;color:#374151;line-height:1.65;white-space:pre-wrap">${message.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p>
         </div>
-        <p style="margin:20px 0 0;font-size:0.8rem;color:#9ca3af">
-          Submitted via 1solutions.biz/contact — reply directly to this email to respond to the enquiry.
-        </p>
+        <p style="margin:20px 0 0;font-size:0.8rem;color:#9ca3af">Submitted via 1solutions.biz/contact-us</p>
       </div>
     </div>
   `;
 
-  if (process.env.RESEND_API_KEY) {
-    try {
-      const response = await fetch('https://api.resend.com/emails', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          from: 'Contact Form <hello@1solutions.biz>',
-          to: toEmails,
-          reply_to: email,
-          subject: `New enquiry from ${name}${company ? ` — ${company}` : ''}`,
-          html: htmlBody,
-        }),
-      });
-
-      if (!response.ok) {
-        const err = await response.json();
-        console.error('Resend error:', err);
-        return res.status(500).json({ message: 'Failed to send email. Please try again or contact us directly.' });
-      }
-    } catch (err) {
-      console.error('Email send error:', err);
-      return res.status(500).json({ message: 'Failed to send email. Please try again or contact us directly.' });
-    }
-  } else {
-    // Log submission when email is not configured (dev / preview)
-    console.log('[contact form]', { name, email, company, service, budget, message: message.slice(0, 80) });
+  try {
+    const transporter = createTransporter();
+    await transporter.sendMail({
+      from: `"1Solutions Contact" <contact@1solutions.biz>`,
+      to: ['atul@1solutions.biz', 'info@1solutions.biz'],
+      replyTo: email,
+      subject: `New enquiry from ${name}${company ? ` — ${company}` : ''}`,
+      html: htmlBody,
+    });
+  } catch (err) {
+    console.error('[contact] email error:', err);
+    return res.status(500).json({ message: 'Failed to send. Please try again or email us directly.' });
   }
 
   return res.status(200).json({ message: 'Message sent successfully.' });
