@@ -16,6 +16,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','${GTM_ID}');`,
           }}
         />
+        {/* reCAPTCHA v3 */}
+        <script src="https://www.google.com/recaptcha/api.js?render=6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs" async />
         {/* Favicon */}
         <link rel="icon" type="image/png" href="/images/1solutions-favicon.png" />
         <link rel="icon" type="image/webp" href="/images/1solutions-favicon.webp" />

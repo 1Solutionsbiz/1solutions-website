@@ -116,10 +116,15 @@ export default function ApplyOnline() {
     setStatus('loading');
     setErrorMsg('');
     try {
+      const recaptchaToken = await new Promise((resolve) => {
+        window.grecaptcha.ready(() => {
+          window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', { action: 'apply' }).then(resolve);
+        });
+      });
       const res = await fetch('/api/apply', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, recaptchaToken }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.message || 'Submission failed.');

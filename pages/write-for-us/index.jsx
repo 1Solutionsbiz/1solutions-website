@@ -115,10 +115,15 @@ export default function WriteForUs() {
     setStatus('sending');
     setErrorMsg('');
     try {
+      const recaptchaToken = await new Promise((resolve) => {
+        window.grecaptcha.ready(() => {
+          window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', { action: 'writeforus' }).then(resolve);
+        });
+      });
       const res = await fetch('/api/write-for-us', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, recaptchaToken }),
       });
       const data = await res.json();
       if (!res.ok) { setErrorMsg(data.message || 'Something went wrong.'); setStatus('error'); return; }

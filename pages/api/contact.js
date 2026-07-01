@@ -17,7 +17,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
-  const { name, email, phone, company, service, budget, message, consent } = req.body;
+  const { name, email, phone, company, service, budget, message, consent, recaptchaToken } = req.body;
 
   if (!name || !email || !message || !consent) {
     return res.status(400).json({ message: 'Name, email, message, and consent are required.' });
@@ -26,6 +26,15 @@ export default async function handler(req, res) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
     return res.status(400).json({ message: 'Please provide a valid email address.' });
+  }
+
+  if (!recaptchaToken) {
+    return res.status(400).json({ message: 'reCAPTCHA verification missing.' });
+  }
+  const captchaRes = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`, { method: 'POST' });
+  const captchaData = await captchaRes.json();
+  if (!captchaData.success || captchaData.score < 0.5) {
+    return res.status(400).json({ message: 'reCAPTCHA check failed. Please try again.' });
   }
 
   const htmlBody = `

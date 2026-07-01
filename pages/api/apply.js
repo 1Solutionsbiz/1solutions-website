@@ -20,7 +20,7 @@ export default async function handler(req, res) {
   const {
     name, email, phone, position, experience, location,
     currentSalary, expectedSalary, noticePeriod, linkedin,
-    resumeUrl, coverLetter, source, consent,
+    resumeUrl, coverLetter, source, consent, recaptchaToken,
   } = req.body;
 
   if (!name || !email || !phone || !position || !experience || !location || !noticePeriod || !resumeUrl || !coverLetter || !consent) {
@@ -30,6 +30,15 @@ export default async function handler(req, res) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
     return res.status(400).json({ message: 'Please provide a valid email address.' });
+  }
+
+  if (!recaptchaToken) {
+    return res.status(400).json({ message: 'reCAPTCHA verification missing.' });
+  }
+  const captchaRes = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`, { method: 'POST' });
+  const captchaData = await captchaRes.json();
+  if (!captchaData.success || captchaData.score < 0.5) {
+    return res.status(400).json({ message: 'reCAPTCHA check failed. Please try again.' });
   }
 
   const rows = [
