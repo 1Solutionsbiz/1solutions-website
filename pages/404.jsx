@@ -173,10 +173,10 @@ function Custom404() {
             >
               <Link href="/" className="p4-card">
                 <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-                  <div className="p4-card-icon">
+                  <div className="p4-card-icon" style={{ background: 'linear-gradient(135deg, #114171 0%, #1a5fa8 100%)' }}>
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H5a1 1 0 01-1-1V9.5z" fill="white" stroke="white" strokeWidth="1.5" />
-                      <path d="M9 21V12h6v9" stroke="#bfc3cc" strokeWidth="1.5" />
+                      <path d="M9 21V12h6v9" stroke="rgba(255,255,255,0.55)" strokeWidth="1.5" />
                     </svg>
                   </div>
                   <div style={{ textAlign: 'left' }}>
@@ -189,7 +189,7 @@ function Custom404() {
 
               <Link href="/contact-us" className="p4-card">
                 <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-                  <div className="p4-card-icon">
+                  <div className="p4-card-icon" style={{ background: 'linear-gradient(135deg, #FE9700 0%, #FFC14D 100%)' }}>
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" fill="white" stroke="white" strokeWidth="1.5" />
                     </svg>
