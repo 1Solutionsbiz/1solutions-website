@@ -566,7 +566,7 @@ export default function ContactPage() {
             </h1>
             <p className="co-sub">
               Tell us about your project and we&apos;ll get back to you within 24 hours with a
-              clear plan and honest assessment — no hard sell, no runaround.
+              clear plan and honest assessment.
             </p>
 
             <div className="co-trust">
@@ -600,10 +600,6 @@ export default function ContactPage() {
               )}
             </div>
 
-            <p style={{ fontSize: '0.8rem', color: '#9ca3af', lineHeight: 1.5 }}>
-              We serve clients in the <strong style={{ color: '#6b7280' }}>United States, Canada,
-              and Australia</strong>. All meetings are scheduled in your time zone.
-            </p>
           </aside>
 
           {/* ── Right form panel ── */}
