@@ -84,7 +84,7 @@ const services = [
     desc: 'Data-driven SEO, PPC, and content strategies that deliver measurable growth. We maximise your ROI across every digital channel.',
     tags: ['SEO', 'Google Ads', 'Meta Ads', 'Analytics', 'Content', 'Email'],
     cta: 'Grow Your Digital Presence',
-    href: '/digital-marketing',
+    href: '/digital-marketing-services',
     image: '/images/service-digital-marketing.png',
     accent: '#10B981',
     grad: 'linear-gradient(160deg,#ecfdf5 0%,#d1fae5 50%,#34d399 100%)',
