@@ -78,6 +78,7 @@ const TRUST = [
 const INITIAL_FORM = {
   name: '',
   email: '',
+  cc: '+1',
   phone: '',
   company: '',
   service: '',
@@ -90,16 +91,31 @@ export default function ContactPage() {
   const [form, setForm] = useState(INITIAL_FORM);
   const [status, setStatus] = useState('idle'); // idle | loading | success | error
   const [errorMsg, setErrorMsg] = useState('');
+  const [phoneErr, setPhoneErr] = useState('');
 
   function handleChange(e) {
     const { name, value, type, checked } = e.target;
+    if (name === 'phone') setPhoneErr('');
     setForm((prev) => ({ ...prev, [name]: type === 'checkbox' ? checked : value }));
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
-    setStatus('loading');
     setErrorMsg('');
+
+    // Phone validation
+    const digits = form.phone.replace(/\D/g, '');
+    if (!digits) {
+      setPhoneErr('Phone number is required.');
+      return;
+    }
+    if (digits.length < 7 || digits.length > 15) {
+      setPhoneErr('Enter a valid phone number (7–15 digits).');
+      return;
+    }
+    setPhoneErr('');
+
+    setStatus('loading');
 
     try {
       const recaptchaToken = await new Promise((resolve) => {
@@ -110,7 +126,7 @@ export default function ContactPage() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, source: 'Contact Us', recaptchaToken }),
+        body: JSON.stringify({ ...form, phone: form.cc + ' ' + form.phone, source: 'Contact Us', recaptchaToken }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.message || 'Submission failed');
@@ -704,11 +720,17 @@ export default function ContactPage() {
                   {/* Row 2: Phone + Company */}
                   <div className="co-row">
                     <div className="co-field">
-                      <label className="co-label" htmlFor="co-phone">Phone *</label>
-                      <div className="co-phone-wrap">
-                        <select className="co-phone-cc" aria-label="Country code">
+                      <label className="co-label" htmlFor="co-phone">Phone <span className="co-req">*</span></label>
+                      <div className="co-phone-wrap" style={phoneErr ? { borderColor: '#fca5a5' } : {}}>
+                        <select
+                          className="co-phone-cc"
+                          name="cc"
+                          value={form.cc}
+                          onChange={handleChange}
+                          aria-label="Country code"
+                        >
                           <option value="+1">🇺🇸 +1</option>
-                          <option value="+1ca">🇨🇦 +1</option>
+                          <option value="+1">🇨🇦 +1</option>
                           <option value="+61">🇦🇺 +61</option>
                           <option value="+44">🇬🇧 +44</option>
                           <option value="+91">🇮🇳 +91</option>
@@ -721,8 +743,14 @@ export default function ContactPage() {
                           placeholder="(555) 000-0000"
                           value={form.phone}
                           onChange={handleChange}
-                          autoComplete="tel" required />
+                          autoComplete="tel"
+                        />
                       </div>
+                      {phoneErr && (
+                        <span style={{ fontSize: '0.78rem', color: '#dc2626', marginTop: '4px' }}>
+                          {phoneErr}
+                        </span>
+                      )}
                     </div>
                     <div className="co-field">
                       <label className="co-label" htmlFor="co-company">Company / Organisation</label>
