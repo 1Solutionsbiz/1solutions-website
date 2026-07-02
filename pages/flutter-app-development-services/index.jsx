@@ -208,6 +208,26 @@ function useCountUp(target, duration = 1800, start = false) {
 function StatItem({ label, val, started }) {
   const num = useCountUp(val, 1800, started);
   const suffix = val.replace(/[\d,]/g, '');
+  const [_sfSt, _setSfSt] = useState('idle');
+  const _sfSubmit = async (e) => {
+    e.preventDefault();
+    _setSfSt('loading');
+    try {
+      const fd = new FormData(e.target);
+      const token = await new Promise(r => window.grecaptcha.ready(() =>
+        window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', {{ action: 'contact' }}).then(r)));
+      const res = await fetch('/api/contact', {{
+        method: 'POST', headers: {{ 'Content-Type': 'application/json' }},
+        body: JSON.stringify({{
+          name: fd.get('sf-name') || '', email: fd.get('sf-email') || '',
+          phone: (fd.get('sf-cc') ? fd.get('sf-cc') + ' ' : '') + (fd.get('sf-phone') || ''),
+          company: fd.get('sf-company') || '', message: fd.get('sf-message') || '',
+          source: 'Flutter App Development Services', consent: true, recaptchaToken: token,
+        }}),
+      }});
+      _setSfSt(res.ok ? 'success' : 'error');
+    }} catch {{ _setSfSt('error'); }}
+  };
   return (
     <div className="fl-stat-col">
       <div className="fl-stat-val">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div>
@@ -782,25 +802,25 @@ export default function FlutterAppDevelopment() {
             </div>
             <div className="fl-form-box">
               <h3>Tell Us About Your Flutter App</h3>
-              <form className="fl-form" onSubmit={e => e.preventDefault()}>
+              <form className="fl-form" onSubmit={_sfSubmit}>
                 <div className="fl-frow">
                   <div className="fl-fg">
                     <label htmlFor="fl-name">Full Name *</label>
-                    <input id="fl-name" type="text" placeholder="Your name" required />
+                    <input name="sf-name" id="fl-name" type="text" placeholder="Your name" required />
                   </div>
                   <div className="fl-fg">
                     <label htmlFor="fl-email">Work Email *</label>
-                    <input id="fl-email" type="email" placeholder="you@company.com" required />
+                    <input id="fl-email" type="email" name="sf-email" placeholder="you@company.com" required />
                   </div>
                 </div>
                 <div className="fl-frow">
                   <div className="fl-fg">
                     <label htmlFor="fl-company">Company / App Name</label>
-                    <input id="fl-company" type="text" placeholder="Company or app name" />
+                    <input name="sf-name" id="fl-company" type="text" placeholder="Company or app name" />
                   </div>
                   <div className="fl-fg">
                     <label htmlFor="fl-phone">Phone / WhatsApp *</label>
-                    <input id="fl-phone" type="tel" placeholder="+1 555 000 0000" required />
+                    <input id="fl-phone" type="tel" name="sf-phone" placeholder="+1 555 000 0000" required />
                   </div>
                 </div>
                 <div className="fl-fg full">
@@ -823,13 +843,14 @@ export default function FlutterAppDevelopment() {
                 </div>
                 <div className="fl-fg full">
                   <label htmlFor="fl-msg">App Brief *</label>
-                  <textarea id="fl-msg" rows={4} placeholder="Describe your app — target users, core features, platforms needed (iOS/Android/web/desktop), existing backend or API, current stage (idea/MVP/live), and go-live timeline..." required />
+                  <textarea name="sf-message" id="fl-msg" rows={4} placeholder="Describe your app — target users, core features, platforms needed (iOS/Android/web/desktop), existing backend or API, current stage (idea/MVP/live), and go-live timeline..." required />
                 </div>
                 <div className="fl-consent">
                   <input id="fl-consent" type="checkbox" required />
                   <label htmlFor="fl-consent">I agree to the <Link href="/privacy-policy">Privacy Policy</Link>. An NDA is available on request before we discuss your app concept or review any existing code.</label>
                 </div>
                 <button type="submit" className="fl-submit">Get Free Flutter Discovery Call →</button>
+                  {_sfSt === 'success' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#f0fdf4',border:'1px solid #86efac',borderRadius:'8px',color:'#166534',fontSize:'0.875rem',fontWeight:500}}>&#10003; Message sent! We&apos;ll get back to you within 24 hours.</div>}{_sfSt === 'error' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#fef2f2',border:'1px solid #fca5a5',borderRadius:'8px',color:'#991b1b',fontSize:'0.875rem',fontWeight:500}}>Something went wrong. Please email info@1solutions.biz</div>}
               </form>
             </div>
           </div>

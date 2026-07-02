@@ -175,6 +175,26 @@ function useCountUp(target, duration = 1800, start = false) {
 function StatItem({ label, val, started }) {
   const num = useCountUp(val, 1800, started);
   const suffix = val.replace(/[\d,]/g, '');
+  const [_sfSt, _setSfSt] = useState('idle');
+  const _sfSubmit = async (e) => {
+    e.preventDefault();
+    _setSfSt('loading');
+    try {
+      const fd = new FormData(e.target);
+      const token = await new Promise(r => window.grecaptcha.ready(() =>
+        window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', {{ action: 'contact' }}).then(r)));
+      const res = await fetch('/api/contact', {{
+        method: 'POST', headers: {{ 'Content-Type': 'application/json' }},
+        body: JSON.stringify({{
+          name: fd.get('sf-name') || '', email: fd.get('sf-email') || '',
+          phone: (fd.get('sf-cc') ? fd.get('sf-cc') + ' ' : '') + (fd.get('sf-phone') || ''),
+          company: fd.get('sf-company') || '', message: fd.get('sf-message') || '',
+          source: 'Hire Shopify Developer', consent: true, recaptchaToken: token,
+        }}),
+      }});
+      _setSfSt(res.ok ? 'success' : 'error');
+    }} catch {{ _setSfSt('error'); }}
+  };
   return (
     <div className="sh-stat-col">
       <div className="sh-stat-val">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div>
@@ -649,14 +669,14 @@ export default function HireShopifyDeveloper() {
             </div>
             <div className="sh-form-box">
               <h3>Tell Us About Your Shopify Project</h3>
-              <form className="sh-form" onSubmit={e => e.preventDefault()}>
+              <form className="sh-form" onSubmit={_sfSubmit}>
                 <div className="sh-frow">
-                  <div className="sh-fg"><label htmlFor="sh-name">Full Name *</label><input id="sh-name" type="text" placeholder="Your name" required /></div>
-                  <div className="sh-fg"><label htmlFor="sh-email">Work Email *</label><input id="sh-email" type="email" placeholder="you@company.com" required /></div>
+                  <div className="sh-fg"><label htmlFor="sh-name">Full Name *</label><input name="sf-name" id="sh-name" type="text" placeholder="Your name" required /></div>
+                  <div className="sh-fg"><label htmlFor="sh-email">Work Email *</label><input id="sh-email" type="email" name="sf-email" placeholder="you@company.com" required /></div>
                 </div>
                 <div className="sh-frow">
                   <div className="sh-fg"><label htmlFor="sh-url">Shopify Store URL</label><input id="sh-url" type="url" placeholder="https://yourstore.myshopify.com" /></div>
-                  <div className="sh-fg"><label htmlFor="sh-phone">Phone / WhatsApp *</label><input id="sh-phone" type="tel" placeholder="+1 555 000 0000" required /></div>
+                  <div className="sh-fg"><label htmlFor="sh-phone">Phone / WhatsApp *</label><input id="sh-phone" type="tel" name="sf-phone" placeholder="+1 555 000 0000" required /></div>
                 </div>
                 <div className="sh-fg full">
                   <label htmlFor="sh-type">Project Type *</label>
@@ -678,13 +698,14 @@ export default function HireShopifyDeveloper() {
                 </div>
                 <div className="sh-fg full">
                   <label htmlFor="sh-msg">Project Brief *</label>
-                  <textarea id="sh-msg" rows={4} placeholder="Describe your Shopify project — current platform if migrating, number of products, required integrations, whether you need Shopify or Shopify Plus, design brief, and your launch timeline..." required />
+                  <textarea name="sf-message" id="sh-msg" rows={4} placeholder="Describe your Shopify project — current platform if migrating, number of products, required integrations, whether you need Shopify or Shopify Plus, design brief, and your launch timeline..." required />
                 </div>
                 <div className="sh-consent">
                   <input id="sh-consent" type="checkbox" required />
                   <label htmlFor="sh-consent">I agree to the <Link href="/privacy-policy">Privacy Policy</Link>. We treat all project details confidentially.</label>
                 </div>
                 <button type="submit" className="sh-submit">Get Free Shopify Consultation →</button>
+                  {_sfSt === 'success' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#f0fdf4',border:'1px solid #86efac',borderRadius:'8px',color:'#166534',fontSize:'0.875rem',fontWeight:500}}>&#10003; Message sent! We&apos;ll get back to you within 24 hours.</div>}{_sfSt === 'error' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#fef2f2',border:'1px solid #fca5a5',borderRadius:'8px',color:'#991b1b',fontSize:'0.875rem',fontWeight:500}}>Something went wrong. Please email info@1solutions.biz</div>}
               </form>
             </div>
           </div>

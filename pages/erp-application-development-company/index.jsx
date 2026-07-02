@@ -208,6 +208,26 @@ function useCountUp(target, duration = 1800, start = false) {
 function StatItem({ label, val, started }) {
   const num = useCountUp(val, 1800, started);
   const suffix = val.replace(/[\d,]/g, '');
+  const [_sfSt, _setSfSt] = useState('idle');
+  const _sfSubmit = async (e) => {
+    e.preventDefault();
+    _setSfSt('loading');
+    try {
+      const fd = new FormData(e.target);
+      const token = await new Promise(r => window.grecaptcha.ready(() =>
+        window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', {{ action: 'contact' }}).then(r)));
+      const res = await fetch('/api/contact', {{
+        method: 'POST', headers: {{ 'Content-Type': 'application/json' }},
+        body: JSON.stringify({{
+          name: fd.get('sf-name') || '', email: fd.get('sf-email') || '',
+          phone: (fd.get('sf-cc') ? fd.get('sf-cc') + ' ' : '') + (fd.get('sf-phone') || ''),
+          company: fd.get('sf-company') || '', message: fd.get('sf-message') || '',
+          source: 'Erp Application Development Company', consent: true, recaptchaToken: token,
+        }}),
+      }});
+      _setSfSt(res.ok ? 'success' : 'error');
+    }} catch {{ _setSfSt('error'); }}
+  };
   return (
     <div className="er-stat-col">
       <div className="er-stat-val">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div>
@@ -782,25 +802,25 @@ export default function ErpApplicationDevelopment() {
             </div>
             <div className="er-form-box">
               <h3>Tell Us About Your ERP Requirements</h3>
-              <form className="er-form" onSubmit={e => e.preventDefault()}>
+              <form className="er-form" onSubmit={_sfSubmit}>
                 <div className="er-frow">
                   <div className="er-fg">
                     <label htmlFor="er-name">Full Name *</label>
-                    <input id="er-name" type="text" placeholder="Your name" required />
+                    <input name="sf-name" id="er-name" type="text" placeholder="Your name" required />
                   </div>
                   <div className="er-fg">
                     <label htmlFor="er-email">Work Email *</label>
-                    <input id="er-email" type="email" placeholder="you@company.com" required />
+                    <input id="er-email" type="email" name="sf-email" placeholder="you@company.com" required />
                   </div>
                 </div>
                 <div className="er-frow">
                   <div className="er-fg">
                     <label htmlFor="er-company">Company</label>
-                    <input id="er-company" type="text" placeholder="Company name" />
+                    <input name="sf-name" id="er-company" type="text" placeholder="Company name" />
                   </div>
                   <div className="er-fg">
                     <label htmlFor="er-phone">Phone / WhatsApp *</label>
-                    <input id="er-phone" type="tel" placeholder="+1 555 000 0000" required />
+                    <input id="er-phone" type="tel" name="sf-phone" placeholder="+1 555 000 0000" required />
                   </div>
                 </div>
                 <div className="er-fg full">
@@ -823,13 +843,14 @@ export default function ErpApplicationDevelopment() {
                 </div>
                 <div className="er-fg full">
                   <label htmlFor="er-msg">Project Brief *</label>
-                  <textarea id="er-msg" rows={4} placeholder="Describe your operations — industry, number of users, current system (ERP or spreadsheets), modules needed, key integrations, and go-live timeline..." required />
+                  <textarea name="sf-message" id="er-msg" rows={4} placeholder="Describe your operations — industry, number of users, current system (ERP or spreadsheets), modules needed, key integrations, and go-live timeline..." required />
                 </div>
                 <div className="er-consent">
                   <input id="er-consent" type="checkbox" required />
                   <label htmlFor="er-consent">I agree to the <Link href="/privacy-policy">Privacy Policy</Link>. An NDA is available on request before we review your business processes or existing system data.</label>
                 </div>
                 <button type="submit" className="er-submit">Get Free ERP Discovery Call →</button>
+                  {_sfSt === 'success' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#f0fdf4',border:'1px solid #86efac',borderRadius:'8px',color:'#166534',fontSize:'0.875rem',fontWeight:500}}>&#10003; Message sent! We&apos;ll get back to you within 24 hours.</div>}{_sfSt === 'error' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#fef2f2',border:'1px solid #fca5a5',borderRadius:'8px',color:'#991b1b',fontSize:'0.875rem',fontWeight:500}}>Something went wrong. Please email info@1solutions.biz</div>}
               </form>
             </div>
           </div>

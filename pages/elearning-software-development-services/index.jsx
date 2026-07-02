@@ -208,6 +208,26 @@ function useCountUp(target, duration = 1800, start = false) {
 function StatItem({ label, val, started }) {
   const num = useCountUp(val, 1800, started);
   const suffix = val.replace(/[\d,]/g, '');
+  const [_sfSt, _setSfSt] = useState('idle');
+  const _sfSubmit = async (e) => {
+    e.preventDefault();
+    _setSfSt('loading');
+    try {
+      const fd = new FormData(e.target);
+      const token = await new Promise(r => window.grecaptcha.ready(() =>
+        window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', {{ action: 'contact' }}).then(r)));
+      const res = await fetch('/api/contact', {{
+        method: 'POST', headers: {{ 'Content-Type': 'application/json' }},
+        body: JSON.stringify({{
+          name: fd.get('sf-name') || '', email: fd.get('sf-email') || '',
+          phone: (fd.get('sf-cc') ? fd.get('sf-cc') + ' ' : '') + (fd.get('sf-phone') || ''),
+          company: fd.get('sf-company') || '', message: fd.get('sf-message') || '',
+          source: 'Elearning Software Development Services', consent: true, recaptchaToken: token,
+        }}),
+      }});
+      _setSfSt(res.ok ? 'success' : 'error');
+    }} catch {{ _setSfSt('error'); }}
+  };
   return (
     <div className="el-stat-col">
       <div className="el-stat-val">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div>
@@ -782,25 +802,25 @@ export default function ElearningSoftwareDevelopment() {
             </div>
             <div className="el-form-box">
               <h3>Tell Us About Your eLearning Project</h3>
-              <form className="el-form" onSubmit={e => e.preventDefault()}>
+              <form className="el-form" onSubmit={_sfSubmit}>
                 <div className="el-frow">
                   <div className="el-fg">
                     <label htmlFor="el-name">Full Name *</label>
-                    <input id="el-name" type="text" placeholder="Your name" required />
+                    <input name="sf-name" id="el-name" type="text" placeholder="Your name" required />
                   </div>
                   <div className="el-fg">
                     <label htmlFor="el-email">Work Email *</label>
-                    <input id="el-email" type="email" placeholder="you@company.com" required />
+                    <input id="el-email" type="email" name="sf-email" placeholder="you@company.com" required />
                   </div>
                 </div>
                 <div className="el-frow">
                   <div className="el-fg">
                     <label htmlFor="el-company">Company / Organisation</label>
-                    <input id="el-company" type="text" placeholder="Company name" />
+                    <input name="sf-name" id="el-company" type="text" placeholder="Company name" />
                   </div>
                   <div className="el-fg">
                     <label htmlFor="el-phone">Phone / WhatsApp *</label>
-                    <input id="el-phone" type="tel" placeholder="+1 555 000 0000" required />
+                    <input id="el-phone" type="tel" name="sf-phone" placeholder="+1 555 000 0000" required />
                   </div>
                 </div>
                 <div className="el-fg full">
@@ -822,13 +842,14 @@ export default function ElearningSoftwareDevelopment() {
                 </div>
                 <div className="el-fg full">
                   <label htmlFor="el-msg">Project Brief *</label>
-                  <textarea id="el-msg" rows={4} placeholder="Describe your eLearning platform — target audience, content types, SCORM/xAPI requirements, integrations needed (HRIS, SSO, payment gateway), expected number of learners, and timeline..." required />
+                  <textarea name="sf-message" id="el-msg" rows={4} placeholder="Describe your eLearning platform — target audience, content types, SCORM/xAPI requirements, integrations needed (HRIS, SSO, payment gateway), expected number of learners, and timeline..." required />
                 </div>
                 <div className="el-consent">
                   <input id="el-consent" type="checkbox" required />
                   <label htmlFor="el-consent">I agree to the <Link href="/privacy-policy">Privacy Policy</Link>. An NDA is available on request to protect your platform idea before our first call.</label>
                 </div>
                 <button type="submit" className="el-submit">Get Free Discovery Call →</button>
+                  {_sfSt === 'success' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#f0fdf4',border:'1px solid #86efac',borderRadius:'8px',color:'#166534',fontSize:'0.875rem',fontWeight:500}}>&#10003; Message sent! We&apos;ll get back to you within 24 hours.</div>}{_sfSt === 'error' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#fef2f2',border:'1px solid #fca5a5',borderRadius:'8px',color:'#991b1b',fontSize:'0.875rem',fontWeight:500}}>Something went wrong. Please email info@1solutions.biz</div>}
               </form>
             </div>
           </div>

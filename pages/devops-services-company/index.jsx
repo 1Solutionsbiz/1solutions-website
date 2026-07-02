@@ -175,6 +175,26 @@ function useCountUp(target, duration = 1800, start = false) {
 function StatItem({ label, val, started }) {
   const num = useCountUp(val, 1800, started);
   const suffix = val.replace(/[\d,]/g, '');
+  const [_sfSt, _setSfSt] = useState('idle');
+  const _sfSubmit = async (e) => {
+    e.preventDefault();
+    _setSfSt('loading');
+    try {
+      const fd = new FormData(e.target);
+      const token = await new Promise(r => window.grecaptcha.ready(() =>
+        window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', {{ action: 'contact' }}).then(r)));
+      const res = await fetch('/api/contact', {{
+        method: 'POST', headers: {{ 'Content-Type': 'application/json' }},
+        body: JSON.stringify({{
+          name: fd.get('sf-name') || '', email: fd.get('sf-email') || '',
+          phone: (fd.get('sf-cc') ? fd.get('sf-cc') + ' ' : '') + (fd.get('sf-phone') || ''),
+          company: fd.get('sf-company') || '', message: fd.get('sf-message') || '',
+          source: 'Devops Services Company', consent: true, recaptchaToken: token,
+        }}),
+      }});
+      _setSfSt(res.ok ? 'success' : 'error');
+    }} catch {{ _setSfSt('error'); }}
+  };
   return (
     <div className="dv-stat-col">
       <div className="dv-stat-val">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div>
@@ -633,14 +653,14 @@ export default function DevopsServicesCompany() {
             </div>
             <div className="dv-form-box">
               <h3>Tell Us About Your DevOps Needs</h3>
-              <form className="dv-form" onSubmit={e => e.preventDefault()}>
+              <form className="dv-form" onSubmit={_sfSubmit}>
                 <div className="dv-frow">
-                  <div className="dv-fg"><label htmlFor="dv-name">Full Name *</label><input id="dv-name" type="text" placeholder="Your name" required /></div>
-                  <div className="dv-fg"><label htmlFor="dv-email">Work Email *</label><input id="dv-email" type="email" placeholder="you@company.com" required /></div>
+                  <div className="dv-fg"><label htmlFor="dv-name">Full Name *</label><input name="sf-name" id="dv-name" type="text" placeholder="Your name" required /></div>
+                  <div className="dv-fg"><label htmlFor="dv-email">Work Email *</label><input id="dv-email" type="email" name="sf-email" placeholder="you@company.com" required /></div>
                 </div>
                 <div className="dv-frow">
-                  <div className="dv-fg"><label htmlFor="dv-company">Company / Website URL</label><input id="dv-company" type="text" placeholder="Company or existing URL" /></div>
-                  <div className="dv-fg"><label htmlFor="dv-phone">Phone / WhatsApp *</label><input id="dv-phone" type="tel" placeholder="+1 555 000 0000" required /></div>
+                  <div className="dv-fg"><label htmlFor="dv-company">Company / Website URL</label><input name="sf-company" id="dv-company" type="text" placeholder="Company or existing URL" /></div>
+                  <div className="dv-fg"><label htmlFor="dv-phone">Phone / WhatsApp *</label><input id="dv-phone" type="tel" name="sf-phone" placeholder="+1 555 000 0000" required /></div>
                 </div>
                 <div className="dv-fg full">
                   <label htmlFor="dv-type">DevOps Service Needed *</label>
@@ -675,13 +695,14 @@ export default function DevopsServicesCompany() {
                 </div>
                 <div className="dv-fg full">
                   <label htmlFor="dv-msg">Current Situation &amp; Goals *</label>
-                  <textarea id="dv-msg" rows={4} placeholder="Describe your current deployment process, infrastructure, pain points (slow deploys, manual steps, missing CI/CD, high cloud costs, production incidents), and what you want to achieve..." required />
+                  <textarea name="sf-message" id="dv-msg" rows={4} placeholder="Describe your current deployment process, infrastructure, pain points (slow deploys, manual steps, missing CI/CD, high cloud costs, production incidents), and what you want to achieve..." required />
                 </div>
                 <div className="dv-consent">
                   <input id="dv-consent" type="checkbox" required />
                   <label htmlFor="dv-consent">I agree to the <Link href="/privacy-policy">Privacy Policy</Link>. We treat all details confidentially.</label>
                 </div>
                 <button type="submit" className="dv-submit">Get Free DevOps Consultation →</button>
+                  {_sfSt === 'success' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#f0fdf4',border:'1px solid #86efac',borderRadius:'8px',color:'#166534',fontSize:'0.875rem',fontWeight:500}}>&#10003; Message sent! We&apos;ll get back to you within 24 hours.</div>}{_sfSt === 'error' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#fef2f2',border:'1px solid #fca5a5',borderRadius:'8px',color:'#991b1b',fontSize:'0.875rem',fontWeight:500}}>Something went wrong. Please email info@1solutions.biz</div>}
               </form>
             </div>
           </div>

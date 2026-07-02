@@ -175,6 +175,26 @@ function useCountUp(target, duration = 1800, start = false) {
 function StatItem({ label, val, started }) {
   const num = useCountUp(val, 1800, started);
   const suffix = val.replace(/[\d,]/g, '');
+  const [_sfSt, _setSfSt] = useState('idle');
+  const _sfSubmit = async (e) => {
+    e.preventDefault();
+    _setSfSt('loading');
+    try {
+      const fd = new FormData(e.target);
+      const token = await new Promise(r => window.grecaptcha.ready(() =>
+        window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', {{ action: 'contact' }}).then(r)));
+      const res = await fetch('/api/contact', {{
+        method: 'POST', headers: {{ 'Content-Type': 'application/json' }},
+        body: JSON.stringify({{
+          name: fd.get('sf-name') || '', email: fd.get('sf-email') || '',
+          phone: (fd.get('sf-cc') ? fd.get('sf-cc') + ' ' : '') + (fd.get('sf-phone') || ''),
+          company: fd.get('sf-company') || '', message: fd.get('sf-message') || '',
+          source: 'Cloud Native Services', consent: true, recaptchaToken: token,
+        }}),
+      }});
+      _setSfSt(res.ok ? 'success' : 'error');
+    }} catch {{ _setSfSt('error'); }}
+  };
   return (
     <div className="cn-stat-col">
       <div className="cn-stat-val">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div>
@@ -633,14 +653,14 @@ export default function CloudNativeServices() {
             </div>
             <div className="cn-form-box">
               <h3>Tell Us About Your Cloud Native Project</h3>
-              <form className="cn-form" onSubmit={e => e.preventDefault()}>
+              <form className="cn-form" onSubmit={_sfSubmit}>
                 <div className="cn-frow">
-                  <div className="cn-fg"><label htmlFor="cn-name">Full Name *</label><input id="cn-name" type="text" placeholder="Your name" required /></div>
-                  <div className="cn-fg"><label htmlFor="cn-email">Work Email *</label><input id="cn-email" type="email" placeholder="you@company.com" required /></div>
+                  <div className="cn-fg"><label htmlFor="cn-name">Full Name *</label><input name="sf-name" id="cn-name" type="text" placeholder="Your name" required /></div>
+                  <div className="cn-fg"><label htmlFor="cn-email">Work Email *</label><input id="cn-email" type="email" name="sf-email" placeholder="you@company.com" required /></div>
                 </div>
                 <div className="cn-frow">
-                  <div className="cn-fg"><label htmlFor="cn-company">Company / Product Name</label><input id="cn-company" type="text" placeholder="Your company name" /></div>
-                  <div className="cn-fg"><label htmlFor="cn-phone">Phone / WhatsApp *</label><input id="cn-phone" type="tel" placeholder="+1 555 000 0000" required /></div>
+                  <div className="cn-fg"><label htmlFor="cn-company">Company / Product Name</label><input name="sf-name" id="cn-company" type="text" placeholder="Your company name" /></div>
+                  <div className="cn-fg"><label htmlFor="cn-phone">Phone / WhatsApp *</label><input id="cn-phone" type="tel" name="sf-phone" placeholder="+1 555 000 0000" required /></div>
                 </div>
                 <div className="cn-fg full">
                   <label htmlFor="cn-type">Cloud Native Service Needed *</label>
@@ -674,13 +694,14 @@ export default function CloudNativeServices() {
                 </div>
                 <div className="cn-fg full">
                   <label htmlFor="cn-msg">Project Description &amp; Goals *</label>
-                  <textarea id="cn-msg" rows={4} placeholder="Describe your application, architecture goals, scale requirements (requests/sec, events/sec, data volumes), team size, current pain points (monolith coupling, scaling issues, deployment frequency), and target cloud platform..." required />
+                  <textarea name="sf-message" id="cn-msg" rows={4} placeholder="Describe your application, architecture goals, scale requirements (requests/sec, events/sec, data volumes), team size, current pain points (monolith coupling, scaling issues, deployment frequency), and target cloud platform..." required />
                 </div>
                 <div className="cn-consent">
                   <input id="cn-consent" type="checkbox" required />
                   <label htmlFor="cn-consent">I agree to the <Link href="/privacy-policy">Privacy Policy</Link>. All details are treated confidentially.</label>
                 </div>
                 <button type="submit" className="cn-submit">Get Free Cloud Native Consultation →</button>
+                  {_sfSt === 'success' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#f0fdf4',border:'1px solid #86efac',borderRadius:'8px',color:'#166534',fontSize:'0.875rem',fontWeight:500}}>&#10003; Message sent! We&apos;ll get back to you within 24 hours.</div>}{_sfSt === 'error' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#fef2f2',border:'1px solid #fca5a5',borderRadius:'8px',color:'#991b1b',fontSize:'0.875rem',fontWeight:500}}>Something went wrong. Please email info@1solutions.biz</div>}
               </form>
             </div>
           </div>

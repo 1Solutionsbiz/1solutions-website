@@ -175,6 +175,26 @@ function useCountUp(target, duration = 1800, start = false) {
 function StatItem({ label, val, started }) {
   const num = useCountUp(val, 1800, started);
   const suffix = val.replace(/[\d,]/g, '');
+  const [_sfSt, _setSfSt] = useState('idle');
+  const _sfSubmit = async (e) => {
+    e.preventDefault();
+    _setSfSt('loading');
+    try {
+      const fd = new FormData(e.target);
+      const token = await new Promise(r => window.grecaptcha.ready(() =>
+        window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', {{ action: 'contact' }}).then(r)));
+      const res = await fetch('/api/contact', {{
+        method: 'POST', headers: {{ 'Content-Type': 'application/json' }},
+        body: JSON.stringify({{
+          name: fd.get('sf-name') || '', email: fd.get('sf-email') || '',
+          phone: (fd.get('sf-cc') ? fd.get('sf-cc') + ' ' : '') + (fd.get('sf-phone') || ''),
+          company: fd.get('sf-company') || '', message: fd.get('sf-message') || '',
+          source: 'Tibco Development Services', consent: true, recaptchaToken: token,
+        }}),
+      }});
+      _setSfSt(res.ok ? 'success' : 'error');
+    }} catch {{ _setSfSt('error'); }}
+  };
   return (
     <div className="tb-stat-col">
       <div className="tb-stat-val">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div>
@@ -633,14 +653,14 @@ export default function TibcoDevelopmentServices() {
             </div>
             <div className="tb-form-box">
               <h3>Tell Us About Your TIBCO Requirements</h3>
-              <form className="tb-form" onSubmit={e => e.preventDefault()}>
+              <form className="tb-form" onSubmit={_sfSubmit}>
                 <div className="tb-frow">
-                  <div className="tb-fg"><label htmlFor="tb-name">Full Name *</label><input id="tb-name" type="text" placeholder="Your name" required /></div>
-                  <div className="tb-fg"><label htmlFor="tb-email">Work Email *</label><input id="tb-email" type="email" placeholder="you@company.com" required /></div>
+                  <div className="tb-fg"><label htmlFor="tb-name">Full Name *</label><input name="sf-name" id="tb-name" type="text" placeholder="Your name" required /></div>
+                  <div className="tb-fg"><label htmlFor="tb-email">Work Email *</label><input id="tb-email" type="email" name="sf-email" placeholder="you@company.com" required /></div>
                 </div>
                 <div className="tb-frow">
-                  <div className="tb-fg"><label htmlFor="tb-company">Company / Organisation</label><input id="tb-company" type="text" placeholder="Your company name" /></div>
-                  <div className="tb-fg"><label htmlFor="tb-phone">Phone / WhatsApp *</label><input id="tb-phone" type="tel" placeholder="+1 555 000 0000" required /></div>
+                  <div className="tb-fg"><label htmlFor="tb-company">Company / Organisation</label><input name="sf-name" id="tb-company" type="text" placeholder="Your company name" /></div>
+                  <div className="tb-fg"><label htmlFor="tb-phone">Phone / WhatsApp *</label><input id="tb-phone" type="tel" name="sf-phone" placeholder="+1 555 000 0000" required /></div>
                 </div>
                 <div className="tb-fg full">
                   <label htmlFor="tb-type">TIBCO Service Required *</label>
@@ -675,13 +695,14 @@ export default function TibcoDevelopmentServices() {
                 </div>
                 <div className="tb-fg full">
                   <label htmlFor="tb-msg">Project Brief &amp; Current Situation *</label>
-                  <textarea id="tb-msg" rows={4} placeholder="Describe your TIBCO environment, integrations, systems connected (SAP, Oracle, Salesforce etc.), what you need to build or fix, migration plans, or support requirements..." required />
+                  <textarea name="sf-message" id="tb-msg" rows={4} placeholder="Describe your TIBCO environment, integrations, systems connected (SAP, Oracle, Salesforce etc.), what you need to build or fix, migration plans, or support requirements..." required />
                 </div>
                 <div className="tb-consent">
                   <input id="tb-consent" type="checkbox" required />
                   <label htmlFor="tb-consent">I agree to the <Link href="/privacy-policy">Privacy Policy</Link>. All details are treated confidentially.</label>
                 </div>
                 <button type="submit" className="tb-submit">Get Free TIBCO Consultation →</button>
+                  {_sfSt === 'success' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#f0fdf4',border:'1px solid #86efac',borderRadius:'8px',color:'#166534',fontSize:'0.875rem',fontWeight:500}}>&#10003; Message sent! We&apos;ll get back to you within 24 hours.</div>}{_sfSt === 'error' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#fef2f2',border:'1px solid #fca5a5',borderRadius:'8px',color:'#991b1b',fontSize:'0.875rem',fontWeight:500}}>Something went wrong. Please email info@1solutions.biz</div>}
               </form>
             </div>
           </div>

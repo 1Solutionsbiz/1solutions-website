@@ -115,6 +115,26 @@ function AnimatedStat({ label, val, started }) {
   const num = useCountUp(val, 1800, started);
   const suffix = String(val).replace(/[\d,]/g, '');
   const display = started ? num + suffix : val;
+  const [_sfSt, _setSfSt] = useState('idle');
+  const _sfSubmit = async (e) => {
+    e.preventDefault();
+    _setSfSt('loading');
+    try {
+      const fd = new FormData(e.target);
+      const token = await new Promise(r => window.grecaptcha.ready(() =>
+        window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', {{ action: 'contact' }}).then(r)));
+      const res = await fetch('/api/contact', {{
+        method: 'POST', headers: {{ 'Content-Type': 'application/json' }},
+        body: JSON.stringify({{
+          name: fd.get('sf-name') || '', email: fd.get('sf-email') || '',
+          phone: (fd.get('sf-cc') ? fd.get('sf-cc') + ' ' : '') + (fd.get('sf-phone') || ''),
+          company: fd.get('sf-company') || '', message: fd.get('sf-message') || '',
+          source: 'Ux Research', consent: true, recaptchaToken: token,
+        }}),
+      }});
+      _setSfSt(res.ok ? 'success' : 'error');
+    }} catch {{ _setSfSt('error'); }}
+  };
   return (
     <div className="uxr-stat-col">
       <div className="uxr-stat-value">{display}</div>
@@ -712,15 +732,15 @@ export default function UXResearch() {
             <div>
               <div className="uxr-form-box">
                 <h3>Request a Research Consultation</h3>
-                <form className="uxr-contact-form" onSubmit={e => e.preventDefault()}>
+                <form className="uxr-contact-form" onSubmit={_sfSubmit}>
                   <div className="uxr-form-row">
                     <div className="uxr-form-group">
                       <label>Full Name*</label>
-                      <input type="text" placeholder="Full Name*" required />
+                      <input name="sf-name" type="text" placeholder="Full Name*" required />
                     </div>
                     <div className="uxr-form-group">
                       <label>Business Email*</label>
-                      <input type="email" placeholder="Business Email*" required />
+                      <input type="email" name="sf-email" placeholder="Business Email*" required />
                     </div>
                   </div>
                   <div className="uxr-form-row">
@@ -734,17 +754,17 @@ export default function UXResearch() {
                           <option value="+61">🇦🇺 +61</option>
                           <option value="+1-CA">🇨🇦 +1</option>
                         </select>
-                        <input type="tel" placeholder="Phone Number*" required />
+                        <input type="tel" name="sf-phone" placeholder="Phone Number*" required />
                       </div>
                     </div>
                     <div className="uxr-form-group">
                       <label>Organization*</label>
-                      <input type="text" placeholder="Company / Startup*" required />
+                      <input name="sf-company" type="text" placeholder="Company / Startup*" required />
                     </div>
                   </div>
                   <div className="uxr-form-group full">
                     <label>Research Brief*</label>
-                    <textarea
+                    <textarea name="sf-message"
                       placeholder="Describe your product, what you want to learn from your users, and any known pain points or hypotheses..."
                       rows={5}
                       required
@@ -758,6 +778,7 @@ export default function UXResearch() {
                     </label>
                   </div>
                   <button type="submit" className="uxr-submit-btn">Send My Research Brief →</button>
+                  {_sfSt === 'success' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#f0fdf4',border:'1px solid #86efac',borderRadius:'8px',color:'#166534',fontSize:'0.875rem',fontWeight:500}}>&#10003; Message sent! We&apos;ll get back to you within 24 hours.</div>}{_sfSt === 'error' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#fef2f2',border:'1px solid #fca5a5',borderRadius:'8px',color:'#991b1b',fontSize:'0.875rem',fontWeight:500}}>Something went wrong. Please email info@1solutions.biz</div>}
                 </form>
               </div>
             </div>

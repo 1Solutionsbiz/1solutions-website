@@ -67,6 +67,26 @@ function AnimatedStat({ label, val, started }) {
   const suffix = val.replace(/[\d,]/g, '');
   const hasComma = val.includes(',');
   const display = started ? (hasComma ? num.toLocaleString() : num) + suffix : val;
+  const [_sfSt, _setSfSt] = useState('idle');
+  const _sfSubmit = async (e) => {
+    e.preventDefault();
+    _setSfSt('loading');
+    try {
+      const fd = new FormData(e.target);
+      const token = await new Promise(r => window.grecaptcha.ready(() =>
+        window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', {{ action: 'contact' }}).then(r)));
+      const res = await fetch('/api/contact', {{
+        method: 'POST', headers: {{ 'Content-Type': 'application/json' }},
+        body: JSON.stringify({{
+          name: fd.get('sf-name') || '', email: fd.get('sf-email') || '',
+          phone: (fd.get('sf-cc') ? fd.get('sf-cc') + ' ' : '') + (fd.get('sf-phone') || ''),
+          company: fd.get('sf-company') || '', message: fd.get('sf-message') || '',
+          source: 'Design Systems', consent: true, recaptchaToken: token,
+        }}),
+      }});
+      _setSfSt(res.ok ? 'success' : 'error');
+    }} catch {{ _setSfSt('error'); }}
+  };
   return (
     <div className="ds-stat-col">
       <div className="ds-stat-label">{label}</div>
@@ -706,10 +726,10 @@ export default function DesignSystemsPage() {
             <div>
               <div className="ds-form-box">
                 <h3>Get a Free Design System Consultation</h3>
-                <form className="ds-contact-form" onSubmit={e => e.preventDefault()}>
+                <form className="ds-contact-form" onSubmit={_sfSubmit}>
                   <div className="ds-form-row">
-                    <div className="ds-form-group"><label>Full Name*</label><input type="text" placeholder="Full Name*" required /></div>
-                    <div className="ds-form-group"><label>Business Email*</label><input type="email" placeholder="Business Email*" required /></div>
+                    <div className="ds-form-group"><label>Full Name*</label><input name="sf-name" type="text" placeholder="Full Name*" required /></div>
+                    <div className="ds-form-group"><label>Business Email*</label><input type="email" name="sf-email" placeholder="Business Email*" required /></div>
                   </div>
                   <div className="ds-form-row">
                     <div className="ds-form-group">
@@ -721,20 +741,21 @@ export default function DesignSystemsPage() {
                           <option value="+44">&#127468;&#127463; +44</option>
                           <option value="+61">&#127462;&#127482; +61</option>
                         </select>
-                        <input type="tel" placeholder="Phone Number*" required />
+                        <input type="tel" name="sf-phone" placeholder="Phone Number*" required />
                       </div>
                     </div>
-                    <div className="ds-form-group"><label>Company*</label><input type="text" placeholder="Company / Organisation*" required /></div>
+                    <div className="ds-form-group"><label>Company*</label><input name="sf-company" type="text" placeholder="Company / Organisation*" required /></div>
                   </div>
                   <div className="ds-form-group full">
                     <label>Tell us about your project*</label>
-                    <textarea placeholder="Describe your product, your tech stack, and what you are trying to solve with a design system..." rows={5} required />
+                    <textarea name="sf-message" placeholder="Describe your product, your tech stack, and what you are trying to solve with a design system..." rows={5} required />
                   </div>
                   <div className="ds-consent">
                     <input type="checkbox" id="ds-consent" required />
                     <label htmlFor="ds-consent">I consent that my personal data will be processed according to <Link href="/privacy-policy">1Solutions privacy policy</Link></label>
                   </div>
                   <button type="submit" className="ds-submit-btn">Send My Design System Brief</button>
+                  {_sfSt === 'success' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#f0fdf4',border:'1px solid #86efac',borderRadius:'8px',color:'#166534',fontSize:'0.875rem',fontWeight:500}}>&#10003; Message sent! We&apos;ll get back to you within 24 hours.</div>}{_sfSt === 'error' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#fef2f2',border:'1px solid #fca5a5',borderRadius:'8px',color:'#991b1b',fontSize:'0.875rem',fontWeight:500}}>Something went wrong. Please email info@1solutions.biz</div>}
                 </form>
               </div>
             </div>

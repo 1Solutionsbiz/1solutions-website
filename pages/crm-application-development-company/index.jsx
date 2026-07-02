@@ -208,6 +208,26 @@ function useCountUp(target, duration = 1800, start = false) {
 function StatItem({ label, val, started }) {
   const num = useCountUp(val, 1800, started);
   const suffix = val.replace(/[\d,]/g, '');
+  const [_sfSt, _setSfSt] = useState('idle');
+  const _sfSubmit = async (e) => {
+    e.preventDefault();
+    _setSfSt('loading');
+    try {
+      const fd = new FormData(e.target);
+      const token = await new Promise(r => window.grecaptcha.ready(() =>
+        window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', {{ action: 'contact' }}).then(r)));
+      const res = await fetch('/api/contact', {{
+        method: 'POST', headers: {{ 'Content-Type': 'application/json' }},
+        body: JSON.stringify({{
+          name: fd.get('sf-name') || '', email: fd.get('sf-email') || '',
+          phone: (fd.get('sf-cc') ? fd.get('sf-cc') + ' ' : '') + (fd.get('sf-phone') || ''),
+          company: fd.get('sf-company') || '', message: fd.get('sf-message') || '',
+          source: 'Crm Application Development Company', consent: true, recaptchaToken: token,
+        }}),
+      }});
+      _setSfSt(res.ok ? 'success' : 'error');
+    }} catch {{ _setSfSt('error'); }}
+  };
   return (
     <div className="cr-stat-col">
       <div className="cr-stat-val">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div>
@@ -782,25 +802,25 @@ export default function CrmApplicationDevelopment() {
             </div>
             <div className="cr-form-box">
               <h3>Tell Us About Your CRM Requirements</h3>
-              <form className="cr-form" onSubmit={e => e.preventDefault()}>
+              <form className="cr-form" onSubmit={_sfSubmit}>
                 <div className="cr-frow">
                   <div className="cr-fg">
                     <label htmlFor="cr-name">Full Name *</label>
-                    <input id="cr-name" type="text" placeholder="Your name" required />
+                    <input name="sf-name" id="cr-name" type="text" placeholder="Your name" required />
                   </div>
                   <div className="cr-fg">
                     <label htmlFor="cr-email">Work Email *</label>
-                    <input id="cr-email" type="email" placeholder="you@company.com" required />
+                    <input id="cr-email" type="email" name="sf-email" placeholder="you@company.com" required />
                   </div>
                 </div>
                 <div className="cr-frow">
                   <div className="cr-fg">
                     <label htmlFor="cr-company">Company</label>
-                    <input id="cr-company" type="text" placeholder="Company name" />
+                    <input name="sf-name" id="cr-company" type="text" placeholder="Company name" />
                   </div>
                   <div className="cr-fg">
                     <label htmlFor="cr-phone">Phone / WhatsApp *</label>
-                    <input id="cr-phone" type="tel" placeholder="+1 555 000 0000" required />
+                    <input id="cr-phone" type="tel" name="sf-phone" placeholder="+1 555 000 0000" required />
                   </div>
                 </div>
                 <div className="cr-fg full">
@@ -822,13 +842,14 @@ export default function CrmApplicationDevelopment() {
                 </div>
                 <div className="cr-fg full">
                   <label htmlFor="cr-msg">Project Brief *</label>
-                  <textarea id="cr-msg" rows={4} placeholder="Describe your sales process, team size, current CRM (if any), integrations needed (ERP, telephony, marketing tools), number of users, and go-live timeline..." required />
+                  <textarea name="sf-message" id="cr-msg" rows={4} placeholder="Describe your sales process, team size, current CRM (if any), integrations needed (ERP, telephony, marketing tools), number of users, and go-live timeline..." required />
                 </div>
                 <div className="cr-consent">
                   <input id="cr-consent" type="checkbox" required />
                   <label htmlFor="cr-consent">I agree to the <Link href="/privacy-policy">Privacy Policy</Link>. An NDA is available on request before we review your sales workflows or existing CRM data.</label>
                 </div>
                 <button type="submit" className="cr-submit">Get Free CRM Discovery Call →</button>
+                  {_sfSt === 'success' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#f0fdf4',border:'1px solid #86efac',borderRadius:'8px',color:'#166534',fontSize:'0.875rem',fontWeight:500}}>&#10003; Message sent! We&apos;ll get back to you within 24 hours.</div>}{_sfSt === 'error' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#fef2f2',border:'1px solid #fca5a5',borderRadius:'8px',color:'#991b1b',fontSize:'0.875rem',fontWeight:500}}>Something went wrong. Please email info@1solutions.biz</div>}
               </form>
             </div>
           </div>

@@ -208,6 +208,26 @@ function useCountUp(target, duration = 1800, start = false) {
 function StatItem({ label, val, started }) {
   const num = useCountUp(val, 1800, started);
   const suffix = val.replace(/[\d,]/g, '');
+  const [_sfSt, _setSfSt] = useState('idle');
+  const _sfSubmit = async (e) => {
+    e.preventDefault();
+    _setSfSt('loading');
+    try {
+      const fd = new FormData(e.target);
+      const token = await new Promise(r => window.grecaptcha.ready(() =>
+        window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', {{ action: 'contact' }}).then(r)));
+      const res = await fetch('/api/contact', {{
+        method: 'POST', headers: {{ 'Content-Type': 'application/json' }},
+        body: JSON.stringify({{
+          name: fd.get('sf-name') || '', email: fd.get('sf-email') || '',
+          phone: (fd.get('sf-cc') ? fd.get('sf-cc') + ' ' : '') + (fd.get('sf-phone') || ''),
+          company: fd.get('sf-company') || '', message: fd.get('sf-message') || '',
+          source: 'Android Application Development Company', consent: true, recaptchaToken: token,
+        }}),
+      }});
+      _setSfSt(res.ok ? 'success' : 'error');
+    }} catch {{ _setSfSt('error'); }}
+  };
   return (
     <div className="an-stat-col">
       <div className="an-stat-val">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div>
@@ -782,25 +802,25 @@ export default function AndroidAppDevelopment() {
             </div>
             <div className="an-form-box">
               <h3>Tell Us About Your Android App</h3>
-              <form className="an-form" onSubmit={e => e.preventDefault()}>
+              <form className="an-form" onSubmit={_sfSubmit}>
                 <div className="an-frow">
                   <div className="an-fg">
                     <label htmlFor="an-name">Full Name *</label>
-                    <input id="an-name" type="text" placeholder="Your name" required />
+                    <input name="sf-name" id="an-name" type="text" placeholder="Your name" required />
                   </div>
                   <div className="an-fg">
                     <label htmlFor="an-email">Work Email *</label>
-                    <input id="an-email" type="email" placeholder="you@company.com" required />
+                    <input id="an-email" type="email" name="sf-email" placeholder="you@company.com" required />
                   </div>
                 </div>
                 <div className="an-frow">
                   <div className="an-fg">
                     <label htmlFor="an-company">Company / App Name</label>
-                    <input id="an-company" type="text" placeholder="Company or app name" />
+                    <input name="sf-name" id="an-company" type="text" placeholder="Company or app name" />
                   </div>
                   <div className="an-fg">
                     <label htmlFor="an-phone">Phone / WhatsApp *</label>
-                    <input id="an-phone" type="tel" placeholder="+1 555 000 0000" required />
+                    <input id="an-phone" type="tel" name="sf-phone" placeholder="+1 555 000 0000" required />
                   </div>
                 </div>
                 <div className="an-fg full">
@@ -823,13 +843,14 @@ export default function AndroidAppDevelopment() {
                 </div>
                 <div className="an-fg full">
                   <label htmlFor="an-msg">App Brief *</label>
-                  <textarea id="an-msg" rows={4} placeholder="Describe your Android app — target users, core features, target devices (phone/tablet/TV/Wear OS), existing backend or API, current state (idea/legacy app/live app), and go-live timeline..." required />
+                  <textarea name="sf-message" id="an-msg" rows={4} placeholder="Describe your Android app — target users, core features, target devices (phone/tablet/TV/Wear OS), existing backend or API, current state (idea/legacy app/live app), and go-live timeline..." required />
                 </div>
                 <div className="an-consent">
                   <input id="an-consent" type="checkbox" required />
                   <label htmlFor="an-consent">I agree to the <Link href="/privacy-policy">Privacy Policy</Link>. An NDA is available on request before we discuss your app concept or review any existing code.</label>
                 </div>
                 <button type="submit" className="an-submit">Get Free Android Discovery Call →</button>
+                  {_sfSt === 'success' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#f0fdf4',border:'1px solid #86efac',borderRadius:'8px',color:'#166534',fontSize:'0.875rem',fontWeight:500}}>&#10003; Message sent! We&apos;ll get back to you within 24 hours.</div>}{_sfSt === 'error' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#fef2f2',border:'1px solid #fca5a5',borderRadius:'8px',color:'#991b1b',fontSize:'0.875rem',fontWeight:500}}>Something went wrong. Please email info@1solutions.biz</div>}
               </form>
             </div>
           </div>

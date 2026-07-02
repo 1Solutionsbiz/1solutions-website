@@ -175,6 +175,26 @@ function useCountUp(target, duration = 1800, start = false) {
 function StatItem({ label, val, started }) {
   const num = useCountUp(val, 1800, started);
   const suffix = val.replace(/[\d,]/g, '');
+  const [_sfSt, _setSfSt] = useState('idle');
+  const _sfSubmit = async (e) => {
+    e.preventDefault();
+    _setSfSt('loading');
+    try {
+      const fd = new FormData(e.target);
+      const token = await new Promise(r => window.grecaptcha.ready(() =>
+        window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', {{ action: 'contact' }}).then(r)));
+      const res = await fetch('/api/contact', {{
+        method: 'POST', headers: {{ 'Content-Type': 'application/json' }},
+        body: JSON.stringify({{
+          name: fd.get('sf-name') || '', email: fd.get('sf-email') || '',
+          phone: (fd.get('sf-cc') ? fd.get('sf-cc') + ' ' : '') + (fd.get('sf-phone') || ''),
+          company: fd.get('sf-company') || '', message: fd.get('sf-message') || '',
+          source: 'Website Support Maintenance Services', consent: true, recaptchaToken: token,
+        }}),
+      }});
+      _setSfSt(res.ok ? 'success' : 'error');
+    }} catch {{ _setSfSt('error'); }}
+  };
   return (
     <div className="sm-stat-col">
       <div className="sm-stat-val">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div>
@@ -633,14 +653,14 @@ export default function WebsiteMaintenanceServices() {
             </div>
             <div className="sm-form-box">
               <h3>Tell Us About Your Website</h3>
-              <form className="sm-form" onSubmit={e => e.preventDefault()}>
+              <form className="sm-form" onSubmit={_sfSubmit}>
                 <div className="sm-frow">
-                  <div className="sm-fg"><label htmlFor="sm-name">Full Name *</label><input id="sm-name" type="text" placeholder="Your name" required /></div>
-                  <div className="sm-fg"><label htmlFor="sm-email">Work Email *</label><input id="sm-email" type="email" placeholder="you@company.com" required /></div>
+                  <div className="sm-fg"><label htmlFor="sm-name">Full Name *</label><input name="sf-name" id="sm-name" type="text" placeholder="Your name" required /></div>
+                  <div className="sm-fg"><label htmlFor="sm-email">Work Email *</label><input id="sm-email" type="email" name="sf-email" placeholder="you@company.com" required /></div>
                 </div>
                 <div className="sm-frow">
                   <div className="sm-fg"><label htmlFor="sm-url">Website URL *</label><input id="sm-url" type="url" placeholder="https://yourwebsite.com" required /></div>
-                  <div className="sm-fg"><label htmlFor="sm-phone">Phone / WhatsApp *</label><input id="sm-phone" type="tel" placeholder="+1 555 000 0000" required /></div>
+                  <div className="sm-fg"><label htmlFor="sm-phone">Phone / WhatsApp *</label><input id="sm-phone" type="tel" name="sf-phone" placeholder="+1 555 000 0000" required /></div>
                 </div>
                 <div className="sm-fg full">
                   <label htmlFor="sm-cms">CMS / Platform *</label>
@@ -670,13 +690,14 @@ export default function WebsiteMaintenanceServices() {
                 </div>
                 <div className="sm-fg full">
                   <label htmlFor="sm-msg">Tell Us About Your Site</label>
-                  <textarea id="sm-msg" rows={3} placeholder="Describe your website — what it does, any current issues, how often you update content, and any specific concerns about security, speed, or uptime..." />
+                  <textarea name="sf-message" id="sm-msg" rows={3} placeholder="Describe your website — what it does, any current issues, how often you update content, and any specific concerns about security, speed, or uptime..." />
                 </div>
                 <div className="sm-consent">
                   <input id="sm-consent" type="checkbox" required />
                   <label htmlFor="sm-consent">I agree to the <Link href="/privacy-policy">Privacy Policy</Link>. We treat all details confidentially.</label>
                 </div>
                 <button type="submit" className="sm-submit">Get Free Website Audit & Quote →</button>
+                  {_sfSt === 'success' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#f0fdf4',border:'1px solid #86efac',borderRadius:'8px',color:'#166534',fontSize:'0.875rem',fontWeight:500}}>&#10003; Message sent! We&apos;ll get back to you within 24 hours.</div>}{_sfSt === 'error' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#fef2f2',border:'1px solid #fca5a5',borderRadius:'8px',color:'#991b1b',fontSize:'0.875rem',fontWeight:500}}>Something went wrong. Please email info@1solutions.biz</div>}
               </form>
             </div>
           </div>

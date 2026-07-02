@@ -17,7 +17,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
-  const { name, email, phone, company, service, budget, message, consent, recaptchaToken } = req.body;
+  const { name, email, phone, company, service, budget, message, consent, source, recaptchaToken } = req.body;
 
   if (!name || !email || !message || !consent) {
     return res.status(400).json({ message: 'Name, email, message, and consent are required.' });
@@ -42,11 +42,12 @@ export default async function handler(req, res) {
     <div style="font-family:Inter,Arial,sans-serif;max-width:600px;margin:0 auto;color:#1a1a2e">
       <div style="background:#0F1F40;padding:28px 32px;border-radius:12px 12px 0 0">
         <h2 style="color:#fff;margin:0;font-size:1.3rem">New Contact Form Enquiry</h2>
-        <p style="color:rgba(255,255,255,0.6);margin:6px 0 0;font-size:0.88rem">1solutions.biz/contact-us</p>
+        <p style="color:rgba(255,255,255,0.6);margin:6px 0 0;font-size:0.88rem">${source || 'Contact Us'}</p>
       </div>
       <div style="background:#f8fafc;padding:28px 32px;border-radius:0 0 12px 12px;border:1px solid #e5e7eb;border-top:none">
         <table style="width:100%;border-collapse:collapse">
           ${[
+            ['Source',  source || 'Contact Us'],
             ['Name',    name],
             ['Email',   email],
             ['Phone',   phone || '—'],

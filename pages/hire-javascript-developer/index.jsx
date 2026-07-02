@@ -104,6 +104,26 @@ function useCountUp(target, duration = 1800, start = false) {
 function StatItem({ label, val, started }) {
   const num = useCountUp(val, 1800, started);
   const suffix = val.replace(/[\d,]/g, '');
+  const [_sfSt, _setSfSt] = useState('idle');
+  const _sfSubmit = async (e) => {
+    e.preventDefault();
+    _setSfSt('loading');
+    try {
+      const fd = new FormData(e.target);
+      const token = await new Promise(r => window.grecaptcha.ready(() =>
+        window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', {{ action: 'contact' }}).then(r)));
+      const res = await fetch('/api/contact', {{
+        method: 'POST', headers: {{ 'Content-Type': 'application/json' }},
+        body: JSON.stringify({{
+          name: fd.get('sf-name') || '', email: fd.get('sf-email') || '',
+          phone: (fd.get('sf-cc') ? fd.get('sf-cc') + ' ' : '') + (fd.get('sf-phone') || ''),
+          company: fd.get('sf-company') || '', message: fd.get('sf-message') || '',
+          source: 'Hire Javascript Developer', consent: true, recaptchaToken: token,
+        }}),
+      }});
+      _setSfSt(res.ok ? 'success' : 'error');
+    }} catch {{ _setSfSt('error'); }}
+  };
   return (
     <div className="hj-stat-col">
       <div className="hj-stat-val">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div>
@@ -481,14 +501,14 @@ export default function HireJavaScriptDeveloper() {
             </div>
             <div className="hj-form-box">
               <h3>Tell Us Your JavaScript Requirements</h3>
-              <form className="hj-form" onSubmit={e => e.preventDefault()}>
+              <form className="hj-form" onSubmit={_sfSubmit}>
                 <div className="hj-frow">
-                  <div className="hj-fg"><label htmlFor="hj-name">Full Name *</label><input id="hj-name" type="text" placeholder="Your name" required /></div>
-                  <div className="hj-fg"><label htmlFor="hj-email">Work Email *</label><input id="hj-email" type="email" placeholder="you@company.com" required /></div>
+                  <div className="hj-fg"><label htmlFor="hj-name">Full Name *</label><input name="sf-name" id="hj-name" type="text" placeholder="Your name" required /></div>
+                  <div className="hj-fg"><label htmlFor="hj-email">Work Email *</label><input id="hj-email" type="email" name="sf-email" placeholder="you@company.com" required /></div>
                 </div>
                 <div className="hj-frow">
-                  <div className="hj-fg"><label htmlFor="hj-company">Company Name</label><input id="hj-company" type="text" placeholder="Your company" /></div>
-                  <div className="hj-fg"><label htmlFor="hj-phone">Phone / WhatsApp *</label><input id="hj-phone" type="tel" placeholder="+1 555 000 0000" required /></div>
+                  <div className="hj-fg"><label htmlFor="hj-company">Company Name</label><input name="sf-company" id="hj-company" type="text" placeholder="Your company" /></div>
+                  <div className="hj-fg"><label htmlFor="hj-phone">Phone / WhatsApp *</label><input id="hj-phone" type="tel" name="sf-phone" placeholder="+1 555 000 0000" required /></div>
                 </div>
                 <div className="hj-fg full">
                   <label htmlFor="hj-eng">Engagement Type *</label>
@@ -514,13 +534,14 @@ export default function HireJavaScriptDeveloper() {
                 </div>
                 <div className="hj-fg full">
                   <label htmlFor="hj-msg">Project Description *</label>
-                  <textarea id="hj-msg" rows={4} placeholder="Describe your product, current stack, the type of work needed, team size, time zone preference, and start date..." required />
+                  <textarea name="sf-message" id="hj-msg" rows={4} placeholder="Describe your product, current stack, the type of work needed, team size, time zone preference, and start date..." required />
                 </div>
                 <div className="hj-consent">
                   <input id="hj-consent" type="checkbox" required />
                   <label htmlFor="hj-consent">I agree to the <Link href="/privacy-policy">Privacy Policy</Link>. Details are treated confidentially.</label>
                 </div>
                 <button type="submit" className="hj-submit">Get Shortlisted Developers in 24 Hours →</button>
+                  {_sfSt === 'success' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#f0fdf4',border:'1px solid #86efac',borderRadius:'8px',color:'#166534',fontSize:'0.875rem',fontWeight:500}}>&#10003; Message sent! We&apos;ll get back to you within 24 hours.</div>}{_sfSt === 'error' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#fef2f2',border:'1px solid #fca5a5',borderRadius:'8px',color:'#991b1b',fontSize:'0.875rem',fontWeight:500}}>Something went wrong. Please email info@1solutions.biz</div>}
               </form>
             </div>
           </div>

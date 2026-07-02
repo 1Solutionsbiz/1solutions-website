@@ -67,6 +67,26 @@ function AnimatedStat({ label, val, started }) {
   const display = started
     ? (hasComma ? num.toLocaleString() : num) + suffix
     : val;
+  const [_sfSt, _setSfSt] = useState('idle');
+  const _sfSubmit = async (e) => {
+    e.preventDefault();
+    _setSfSt('loading');
+    try {
+      const fd = new FormData(e.target);
+      const token = await new Promise(r => window.grecaptcha.ready(() =>
+        window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', {{ action: 'contact' }}).then(r)));
+      const res = await fetch('/api/contact', {{
+        method: 'POST', headers: {{ 'Content-Type': 'application/json' }},
+        body: JSON.stringify({{
+          name: fd.get('sf-name') || '', email: fd.get('sf-email') || '',
+          phone: (fd.get('sf-cc') ? fd.get('sf-cc') + ' ' : '') + (fd.get('sf-phone') || ''),
+          company: fd.get('sf-company') || '', message: fd.get('sf-message') || '',
+          source: 'Shopify Store Development', consent: true, recaptchaToken: token,
+        }}),
+      }});
+      _setSfSt(res.ok ? 'success' : 'error');
+    }} catch {{ _setSfSt('error'); }}
+  };
   return (
     <div className="shopify-stat-col">
       <div className="shopify-stat-label">{label}</div>
@@ -836,10 +856,10 @@ export default function ShopifyStoreDevelopment() {
             <div className="shopify-contact-right">
               <div className="shopify-form-box">
                 <h3>Contact Us</h3>
-                <form className="shopify-contact-form" onSubmit={e => e.preventDefault()}>
+                <form className="shopify-contact-form" onSubmit={_sfSubmit}>
                   <div className="shopify-form-row">
-                    <div className="shopify-form-group"><label>Full Name*</label><input type="text" placeholder="Full Name*" required /></div>
-                    <div className="shopify-form-group"><label>Business Email*</label><input type="email" placeholder="Business Email Address*" required /></div>
+                    <div className="shopify-form-group"><label>Full Name*</label><input name="sf-name" type="text" placeholder="Full Name*" required /></div>
+                    <div className="shopify-form-group"><label>Business Email*</label><input type="email" name="sf-email" placeholder="Business Email Address*" required /></div>
                   </div>
                   <div className="shopify-form-row">
                     <div className="shopify-form-group">
@@ -851,17 +871,18 @@ export default function ShopifyStoreDevelopment() {
                           <option value="+44">🇬🇧 +44</option>
                           <option value="+61">🇦🇺 +61</option>
                         </select>
-                        <input type="tel" placeholder="Phone Number*" required />
+                        <input type="tel" name="sf-phone" placeholder="Phone Number*" required />
                       </div>
                     </div>
-                    <div className="shopify-form-group"><label>Organization*</label><input type="text" placeholder="Organization / Store Name*" required /></div>
+                    <div className="shopify-form-group"><label>Organization*</label><input name="sf-name" type="text" placeholder="Organization / Store Name*" required /></div>
                   </div>
-                  <div className="shopify-form-group full"><label>Message*</label><textarea placeholder="Tell us about your Shopify project..." rows={6} required /></div>
+                  <div className="shopify-form-group full"><label>Message*</label><textarea name="sf-message" placeholder="Tell us about your Shopify project..." rows={6} required /></div>
                   <div className="shopify-consent">
                     <input type="checkbox" id="shopify-consent" required />
                     <label htmlFor="shopify-consent">I consent that my personal data will be processed according to <Link href="/privacy-policy">1Solutions privacy policy</Link></label>
                   </div>
                   <button type="submit" className="shopify-submit-btn">Submit</button>
+                  {_sfSt === 'success' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#f0fdf4',border:'1px solid #86efac',borderRadius:'8px',color:'#166534',fontSize:'0.875rem',fontWeight:500}}>&#10003; Message sent! We&apos;ll get back to you within 24 hours.</div>}{_sfSt === 'error' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#fef2f2',border:'1px solid #fca5a5',borderRadius:'8px',color:'#991b1b',fontSize:'0.875rem',fontWeight:500}}>Something went wrong. Please email info@1solutions.biz</div>}
                 </form>
               </div>
             </div>

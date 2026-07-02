@@ -175,6 +175,26 @@ function useCountUp(target, duration = 1800, start = false) {
 function StatItem({ label, val, started }) {
   const num = useCountUp(val, 1800, started);
   const suffix = val.replace(/[\d,]/g, '');
+  const [_sfSt, _setSfSt] = useState('idle');
+  const _sfSubmit = async (e) => {
+    e.preventDefault();
+    _setSfSt('loading');
+    try {
+      const fd = new FormData(e.target);
+      const token = await new Promise(r => window.grecaptcha.ready(() =>
+        window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', {{ action: 'contact' }}).then(r)));
+      const res = await fetch('/api/contact', {{
+        method: 'POST', headers: {{ 'Content-Type': 'application/json' }},
+        body: JSON.stringify({{
+          name: fd.get('sf-name') || '', email: fd.get('sf-email') || '',
+          phone: (fd.get('sf-cc') ? fd.get('sf-cc') + ' ' : '') + (fd.get('sf-phone') || ''),
+          company: fd.get('sf-company') || '', message: fd.get('sf-message') || '',
+          source: 'Cloud Migration Services', consent: true, recaptchaToken: token,
+        }}),
+      }});
+      _setSfSt(res.ok ? 'success' : 'error');
+    }} catch {{ _setSfSt('error'); }}
+  };
   return (
     <div className="cm-stat-col">
       <div className="cm-stat-val">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div>
@@ -633,14 +653,14 @@ export default function CloudMigrationServices() {
             </div>
             <div className="cm-form-box">
               <h3>Tell Us About Your Cloud Migration</h3>
-              <form className="cm-form" onSubmit={e => e.preventDefault()}>
+              <form className="cm-form" onSubmit={_sfSubmit}>
                 <div className="cm-frow">
-                  <div className="cm-fg"><label htmlFor="cm-name">Full Name *</label><input id="cm-name" type="text" placeholder="Your name" required /></div>
-                  <div className="cm-fg"><label htmlFor="cm-email">Work Email *</label><input id="cm-email" type="email" placeholder="you@company.com" required /></div>
+                  <div className="cm-fg"><label htmlFor="cm-name">Full Name *</label><input name="sf-name" id="cm-name" type="text" placeholder="Your name" required /></div>
+                  <div className="cm-fg"><label htmlFor="cm-email">Work Email *</label><input id="cm-email" type="email" name="sf-email" placeholder="you@company.com" required /></div>
                 </div>
                 <div className="cm-frow">
-                  <div className="cm-fg"><label htmlFor="cm-company">Company / Organisation</label><input id="cm-company" type="text" placeholder="Your company name" /></div>
-                  <div className="cm-fg"><label htmlFor="cm-phone">Phone / WhatsApp *</label><input id="cm-phone" type="tel" placeholder="+1 555 000 0000" required /></div>
+                  <div className="cm-fg"><label htmlFor="cm-company">Company / Organisation</label><input name="sf-name" id="cm-company" type="text" placeholder="Your company name" /></div>
+                  <div className="cm-fg"><label htmlFor="cm-phone">Phone / WhatsApp *</label><input id="cm-phone" type="tel" name="sf-phone" placeholder="+1 555 000 0000" required /></div>
                 </div>
                 <div className="cm-fg full">
                   <label htmlFor="cm-target">Target Cloud Platform *</label>
@@ -672,13 +692,14 @@ export default function CloudMigrationServices() {
                 </div>
                 <div className="cm-fg full">
                   <label htmlFor="cm-msg">Current Environment &amp; Migration Goals *</label>
-                  <textarea id="cm-msg" rows={4} placeholder="Describe your current environment (number of applications, data centre, databases, operating systems), migration timeline, compliance requirements (GDPR, HIPAA, PCI-DSS), and your goals (cost reduction, agility, DR, compliance)..." required />
+                  <textarea name="sf-message" id="cm-msg" rows={4} placeholder="Describe your current environment (number of applications, data centre, databases, operating systems), migration timeline, compliance requirements (GDPR, HIPAA, PCI-DSS), and your goals (cost reduction, agility, DR, compliance)..." required />
                 </div>
                 <div className="cm-consent">
                   <input id="cm-consent" type="checkbox" required />
                   <label htmlFor="cm-consent">I agree to the <Link href="/privacy-policy">Privacy Policy</Link>. All details are treated confidentially.</label>
                 </div>
                 <button type="submit" className="cm-submit">Get Free Cloud Migration Consultation →</button>
+                  {_sfSt === 'success' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#f0fdf4',border:'1px solid #86efac',borderRadius:'8px',color:'#166534',fontSize:'0.875rem',fontWeight:500}}>&#10003; Message sent! We&apos;ll get back to you within 24 hours.</div>}{_sfSt === 'error' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#fef2f2',border:'1px solid #fca5a5',borderRadius:'8px',color:'#991b1b',fontSize:'0.875rem',fontWeight:500}}>Something went wrong. Please email info@1solutions.biz</div>}
               </form>
             </div>
           </div>

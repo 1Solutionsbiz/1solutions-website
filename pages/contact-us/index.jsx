@@ -110,7 +110,7 @@ export default function ContactPage() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, recaptchaToken }),
+        body: JSON.stringify({ ...form, source: 'Contact Us', recaptchaToken }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.message || 'Submission failed');

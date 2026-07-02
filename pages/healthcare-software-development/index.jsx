@@ -173,6 +173,26 @@ function useCountUp(target, duration = 1800, start = false) {
 function StatItem({ label, val, started }) {
   const num = useCountUp(val, 1800, started);
   const suffix = val.replace(/[\d,]/g, '');
+  const [_sfSt, _setSfSt] = useState('idle');
+  const _sfSubmit = async (e) => {
+    e.preventDefault();
+    _setSfSt('loading');
+    try {
+      const fd = new FormData(e.target);
+      const token = await new Promise(r => window.grecaptcha.ready(() =>
+        window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', {{ action: 'contact' }}).then(r)));
+      const res = await fetch('/api/contact', {{
+        method: 'POST', headers: {{ 'Content-Type': 'application/json' }},
+        body: JSON.stringify({{
+          name: fd.get('sf-name') || '', email: fd.get('sf-email') || '',
+          phone: (fd.get('sf-cc') ? fd.get('sf-cc') + ' ' : '') + (fd.get('sf-phone') || ''),
+          company: fd.get('sf-company') || '', message: fd.get('sf-message') || '',
+          source: 'Healthcare Software Development', consent: true, recaptchaToken: token,
+        }}),
+      }});
+      _setSfSt(res.ok ? 'success' : 'error');
+    }} catch {{ _setSfSt('error'); }}
+  };
   return (
     <div className="hc-stat-col">
       <div className="hc-stat-val">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div>
@@ -798,14 +818,14 @@ export default function HealthcareSoftwareDevelopment() {
             </div>
             <div className="hc-form-box">
               <h3>Book a Free Discovery Call</h3>
-              <form className="hc-form" onSubmit={e => e.preventDefault()}>
+              <form className="hc-form" onSubmit={_sfSubmit}>
                 <div className="hc-frow">
                   <div className="hc-fg"><label>Your Name *</label><input type="text" placeholder="Dr. Jane Smith" required /></div>
-                  <div className="hc-fg"><label>Work Email *</label><input type="email" placeholder="jane@clinic.com" required /></div>
+                  <div className="hc-fg"><label>Work Email *</label><input type="email" name="sf-email" placeholder="jane@clinic.com" required /></div>
                 </div>
                 <div className="hc-frow">
                   <div className="hc-fg"><label>Organisation</label><input type="text" placeholder="Hospital / Clinic / Startup" /></div>
-                  <div className="hc-fg"><label>Phone *</label><input type="tel" placeholder="+1 (555) 000-0000" required /></div>
+                  <div className="hc-fg"><label>Phone *</label><input type="tel" name="sf-phone" placeholder="+1 (555) 000-0000" required /></div>
                 </div>
                 <div className="hc-fg full">
                   <label>What are you building?</label>
@@ -824,13 +844,14 @@ export default function HealthcareSoftwareDevelopment() {
                 </div>
                 <div className="hc-fg full">
                   <label>Describe your project and key requirements</label>
-                  <textarea rows="3" placeholder="e.g. We need a HIPAA-compliant telemedicine platform integrated with our Epic EHR, targeting 500 providers across 3 states…" />
+                  <textarea name="sf-message" rows="3" placeholder="e.g. We need a HIPAA-compliant telemedicine platform integrated with our Epic EHR, targeting 500 providers across 3 states…" />
                 </div>
                 <div className="hc-consent">
                   <input type="checkbox" id="hc-con" required />
                   <label htmlFor="hc-con">I agree to the <Link href="/privacy-policy/">Privacy Policy</Link>. I understand 1Solutions will sign an NDA before discussing proprietary project details.</label>
                 </div>
                 <button type="submit" className="hc-submit">Book My Free Discovery Call →</button>
+                  {_sfSt === 'success' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#f0fdf4',border:'1px solid #86efac',borderRadius:'8px',color:'#166534',fontSize:'0.875rem',fontWeight:500}}>&#10003; Message sent! We&apos;ll get back to you within 24 hours.</div>}{_sfSt === 'error' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#fef2f2',border:'1px solid #fca5a5',borderRadius:'8px',color:'#991b1b',fontSize:'0.875rem',fontWeight:500}}>Something went wrong. Please email info@1solutions.biz</div>}
               </form>
             </div>
           </div>
