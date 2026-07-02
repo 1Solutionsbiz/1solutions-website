@@ -116,7 +116,7 @@ export default async function handler(req, res) {
     <tr>
       <td style="padding:28px 40px 8px;">
         <p style="font-size:15px;color:#1a1a2e;line-height:1.75;margin:0 0 10px;">
-          A <strong>new enquiry</strong> has been received from <strong style="color:#FE9700;">${name}</strong>${company ? ` of <strong style="color:#114171;">${company}</strong>` : ''} via the <strong style="color:#114171;">1Solutions website</strong>.
+          New enquiry from <strong style="color:#FE9700;">${name}</strong>${company ? ` · <strong style="color:#114171;">${company}</strong>` : ''}.
         </p>
         <p style="font-size:15px;color:#374151;margin:0 0 6px;">Submission Date: <strong style="color:#FE9700;">${notifDate}</strong></p>
       </td>
@@ -149,8 +149,8 @@ export default async function handler(req, res) {
     <!-- Footer note -->
     <tr>
       <td style="padding:0 40px 36px;">
-        <p style="font-size:14px;color:#6b7280;line-height:1.6;margin:0;">
-          This notification was sent to the 1Solutions team. Reply directly to <a href="mailto:${email}" style="color:#114171;text-decoration:none;font-weight:600;">${email}</a> to respond to this enquiry.
+        <p style="font-size:12px;color:#9ca3af;line-height:1.6;margin:0;">
+          Reply directly to <a href="mailto:${email}" style="color:#6b7280;text-decoration:none;">${email}</a> to respond to this enquiry.
         </p>
       </td>
     </tr>
