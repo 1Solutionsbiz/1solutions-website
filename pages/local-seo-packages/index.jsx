@@ -108,8 +108,8 @@ export default function LocalSeoPackages() {
   return (
     <>
       <Head>
-        <title>Local SEO Packages | Monthly Local SEO Pricing Plans | 1Solutions</title>
-        <meta name="description" content="Local SEO packages with transparent monthly and yearly pricing. Starter from $349/mo. GBP management, citation building, review management, and local link building for single and multi-location businesses." />
+        <title>Local SEO Packages & Pricing Plans | 1Solutions</title>
+        <meta name="description" content="Local SEO packages from $349/mo. GBP management, citation building, review management & local link building. No setup fee. Single & multi-location plans." />
         <meta name="keywords" content="local seo packages, local seo pricing, local seo plans, google business profile management, local seo services pricing, monthly local seo, multi-location seo packages" />
         <link rel="canonical" href="https://www.1solutions.biz/local-seo-packages/" />
         <meta property="og:title" content="Local SEO Packages & Pricing | 1Solutions" />
@@ -257,6 +257,54 @@ export default function LocalSeoPackages() {
               <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Cancel monthly with 30 days notice</span>
               <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Custom plans for 4+ locations</span>
               <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg> All plans include GBP management</span>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Local SEO */}
+        <section style={{background:'#fff',padding:'80px 40px'}}>
+          <div style={{maxWidth:960,margin:'0 auto'}}>
+            <span style={{fontSize:11,fontWeight:700,letterSpacing:2,textTransform:'uppercase',color:'#0891B2',marginBottom:10,display:'block'}}>Why It Matters</span>
+            <h2 className="lseopkg-ttl">Why Local SEO Packages Deliver Better ROI Than Traditional Advertising</h2>
+            <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:32,marginTop:36}}>
+              {[
+                { heading: 'Buyers search locally before they buy', body: '76% of people who search for something nearby visit a related business within 24 hours. Ranking in the Google Maps 3-pack for your key service area means appearing at the exact moment a high-intent buyer is looking. No ad spend required — just sustained local SEO.' },
+                { heading: 'The map pack beats organic results for local intent', body: 'For searches like "plumber near me," "dentist in Toronto," or "best SEO agency Burlington," the local map pack appears above all organic results. A business in the top 3 map positions captures 44% of all local search clicks — far more than a page 1 organic result.' },
+                { heading: 'Google Business Profile is your free storefront', body: 'A fully optimised GBP listing (with complete services, regular posts, fresh photos, and actively managed reviews) dramatically increases your visibility in both the map pack and Google\'s AI Overviews. Our packages manage this entirely on your behalf.' },
+                { heading: 'Citations and NAP consistency build trust', body: 'Inconsistent business name, address, or phone number across directories actively hurts local rankings. Our citation audit and cleanup process identifies and resolves inconsistencies across 50+ major directories — one of the fastest-acting improvements in local SEO.' },
+                { heading: 'Reviews drive rankings and conversions', body: 'Review count, recency, and rating are confirmed Google map pack ranking factors. A proactive review generation strategy — part of every Growth and Multi-Location plan — systematically increases your review velocity without gating or incentivising reviews (which violates Google policy).' },
+                { heading: 'Local SEO compounds over time', body: 'Unlike paid ads that stop the moment you pause spend, local SEO improvements compound. Citations built today keep working. GBP posts improve profile engagement month over month. Review velocity creates permanent social proof. The longer you invest, the wider the gap between you and competitors.' },
+              ].map(item => (
+                <div key={item.heading} style={{borderLeft:'3px solid #0891B2',paddingLeft:20}}>
+                  <h3 style={{fontSize:16,fontWeight:700,color:'#0F1F40',marginBottom:8}}>{item.heading}</h3>
+                  <p style={{fontSize:14,color:'#4A6080',lineHeight:1.75,margin:0}}>{item.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* What's in every plan */}
+        <section style={{background:'#f8fafd',padding:'80px 40px'}}>
+          <div style={{maxWidth:960,margin:'0 auto'}}>
+            <span style={{fontSize:11,fontWeight:700,letterSpacing:2,textTransform:'uppercase',color:'#0891B2',marginBottom:10,display:'block'}}>Included in All Plans</span>
+            <h2 className="lseopkg-ttl">What Every Local SEO Package Includes</h2>
+            <p style={{fontSize:15,color:'#4A6080',lineHeight:1.75,marginBottom:36,maxWidth:640}}>Regardless of which plan you choose, every local SEO package from 1Solutions includes these core deliverables — the building blocks of a strong local presence.</p>
+            <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:20}}>
+              {[
+                { icon: '📍', title: 'GBP Optimisation', body: 'Complete Google Business Profile setup or audit, service/product optimisation, category selection, photo strategy, and description copy.' },
+                { icon: '📋', title: 'Citation Building & Cleanup', body: 'NAP consistency audit across major directories, new citation submissions, and ongoing cleanup of inconsistent or duplicate listings.' },
+                { icon: '⭐', title: 'Review Monitoring', body: 'Alerts for every new review posted, response guidance, and (on Growth+) active response management in your brand voice.' },
+                { icon: '📈', title: 'Keyword Rank Tracking', body: 'Monthly tracking of your map pack and organic positions for your target local keywords, with before/after reporting.' },
+                { icon: '📊', title: 'Monthly Performance Report', body: 'Clear, jargon-free report covering GBP actions (calls, directions, website visits), keyword positions, review summary, and next-month priorities.' },
+                { icon: '🔗', title: 'Local Link Building', body: 'Local editorial links from regional publications, local business associations, and community sites — included from the Growth plan upwards.' },
+              ].map(item => (
+                <div key={item.title} style={{background:'#fff',border:'1.5px solid #e5e9f0',borderRadius:16,padding:'24px 20px'}}>
+                  <div style={{fontSize:'1.8rem',marginBottom:12}}>{item.icon}</div>
+                  <h3 style={{fontSize:15,fontWeight:700,color:'#0F1F40',marginBottom:8}}>{item.title}</h3>
+                  <p style={{fontSize:13,color:'#4A6080',lineHeight:1.7,margin:0}}>{item.body}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

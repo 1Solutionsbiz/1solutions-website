@@ -77,6 +77,38 @@ const WHY = [
   },
 ];
 
+const INDUSTRIES = [
+  {
+    icon: '🛒',
+    title: 'eCommerce',
+    body: 'Category page links, product comparison placements, and niche-relevant editorial mentions for Shopify, WooCommerce, and Magento stores. We target sites your buyers actually read.',
+  },
+  {
+    icon: '💻',
+    title: 'SaaS & Tech',
+    body: 'Integration pages, developer blogs, software review sites, and product comparisons. DR50+ placements in SaaS, fintech, and developer communities where your ICPs discover tools.',
+  },
+  {
+    icon: '📍',
+    title: 'Local Businesses',
+    body: 'Regional publications, local business directories, and geo-relevant editorial sites for law firms, dental practices, contractors, and service businesses targeting specific cities.',
+  },
+  {
+    icon: '🏢',
+    title: 'B2B Services',
+    body: 'Industry publications, thought leadership placements, and guest posts on business, marketing, and professional services sites — anchored to your service pages and city pages.',
+  },
+];
+
+const WHAT_IS = {
+  heading: 'What Is Link Building?',
+  body: [
+    'Link building is the process of earning hyperlinks from other websites to your own. Each link acts as a vote of confidence — Google interprets backlinks from authoritative, relevant sites as a signal that your content is trustworthy and worth ranking highly.',
+    'Not all links are equal. A single editorial link from a DR60+ industry publication can move rankings faster than 100 directory submissions. Quality, topical relevance, and the authority of the linking domain matter far more than raw link count.',
+    'For competitive commercial keywords — "best SEO agency," "Shopify development company," "WordPress developer Toronto" — backlinks are the single biggest differentiator between page 1 results and page 5. On-page SEO gets you indexed; links get you ranked.',
+  ],
+};
+
 const FAQS = [
   {
     q: 'How is link building services different from link building packages?',
@@ -93,6 +125,22 @@ const FAQS = [
   {
     q: 'Do you build links for ecommerce and SaaS sites?',
     a: 'Yes. We build links for ecommerce stores (Shopify, WooCommerce, Magento), SaaS platforms, B2B service businesses, professional services, and content sites. ecommerce and SaaS often require specific placement types — product category page links, integration pages, feature comparison content — which our team is experienced with. For highly competitive niches like finance, legal, or insurance, we recommend Growth or Authority plans.',
+  },
+  {
+    q: 'What is the difference between white-hat and black-hat link building?',
+    a: 'White-hat link building uses manual outreach, original content, and genuine editorial relationships to earn links from real websites. Black-hat link building uses private blog networks (PBNs), automated tools, paid link schemes, and link farms to artificially inflate link counts. White-hat links are permanent and compound over time. Black-hat links risk Google manual penalties and algorithmic devaluation — which can wipe out years of ranking progress overnight. We use white-hat methods exclusively.',
+  },
+  {
+    q: 'How many links do I need per month?',
+    a: 'The right volume depends on your current domain rating, the competitiveness of your target keywords, and how aggressively your competitors are building links. A local business targeting city-specific keywords may see strong results with 3 to 5 high-quality links per month. A national ecommerce brand competing against established players in a competitive category may need 10 to 20 links per month to close the authority gap. We run a backlink gap analysis before starting every engagement to recommend the right monthly volume for your specific situation.',
+  },
+  {
+    q: 'Do you offer link building for specific target pages?',
+    a: 'Yes. We build links to specific target URLs — your most important service pages, product category pages, location pages, or blog posts. You specify the target pages and preferred anchor text strategy (which we refine based on your existing anchor profile), and we direct placements accordingly. We do not exclusively build links to your homepage — distributing link equity across deep pages is more effective for ranking individual service and product pages.',
+  },
+  {
+    q: 'Can I see a sample link before committing?',
+    a: 'Yes. We can share anonymised examples of recent placements — the type of site, DR range, and content format — before you begin. We cannot share live URLs of client placements without client permission, but we can show you representative examples across our service tiers so you can assess quality before signing up.',
   },
 ];
 
@@ -132,9 +180,9 @@ export default function LinkBuildingServices() {
   return (
     <>
       <Head>
-        <title>Link Building Services | White-Hat Backlink Building Agency | 1Solutions</title>
-        <meta name="description" content="Manual outreach link building services from 1Solutions — guest posts, niche edits, and digital PR from DR40+ to DR60+ websites. 50,000+ links built. 15+ years experience." />
-        <meta name="keywords" content="link building services, backlink building, guest post service, niche edits, digital PR, white-hat link building, manual outreach link building" />
+        <title>Quality Link Building Services | Backlink Agency | 1Solutions</title>
+        <meta name="description" content="Manual outreach link building — guest posts on DR40+ sites, niche edits & digital PR. 50,000+ links built, 92% retention. White-hat only. 15+ years." />
+        <meta name="keywords" content="link building services, quality link building, backlink building, guest post service, niche edits, digital PR, white-hat link building, manual outreach link building" />
         <link rel="canonical" href="https://www.1solutions.biz/link-building-services/" />
         <meta property="og:title" content="Link Building Services | 1Solutions" />
         <meta property="og:url" content="https://www.1solutions.biz/link-building-services/" />
@@ -309,6 +357,35 @@ export default function LinkBuildingServices() {
                 <div key={w.title} className="lbs-why-item">
                   <div className="lbs-why-title">{w.title}</div>
                   <p className="lbs-why-body">{w.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* What Is Link Building */}
+        <section className="lbs-sec">
+          <div className="lbs-sec-in" style={{maxWidth:900}}>
+            <span className="lbs-eyebrow">The Fundamentals</span>
+            <h2 className="lbs-ttl">{WHAT_IS.heading}</h2>
+            {WHAT_IS.body.map((p, i) => (
+              <p key={i} style={{fontSize:'15px',color:'#4A6080',lineHeight:1.8,marginBottom:18}}>{p}</p>
+            ))}
+          </div>
+        </section>
+
+        {/* Industries */}
+        <section className="lbs-sec lbs-sec-alt">
+          <div className="lbs-sec-in">
+            <span className="lbs-eyebrow">Industries We Serve</span>
+            <h2 className="lbs-ttl">Link Building for Every Business Type</h2>
+            <p className="lbs-desc">Our outreach relationships and link placement experience span a wide range of verticals — so your links always come from sites your audience actually reads.</p>
+            <div className="lbs-cards">
+              {INDUSTRIES.map(ind => (
+                <div key={ind.title} className="lbs-card">
+                  <div className="lbs-card-icon">{ind.icon}</div>
+                  <div className="lbs-card-title">{ind.title}</div>
+                  <p className="lbs-card-body">{ind.body}</p>
                 </div>
               ))}
             </div>
