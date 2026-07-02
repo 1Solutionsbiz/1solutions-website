@@ -292,7 +292,7 @@ export default function FlutterAppDevelopment() {
           source: 'Flutter App Development Services', consent: true, recaptchaToken: token,
         }),
       });
-      _setSfSt(res.ok ? 'success' : 'error');
+      if (res.ok) { window.location.href = '/thank-you/'; } else { _setSfSt('error'); }
     } catch { _setSfSt('error'); }
   };
 

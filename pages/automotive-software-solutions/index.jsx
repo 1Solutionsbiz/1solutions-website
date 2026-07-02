@@ -292,7 +292,7 @@ export default function AutomotiveSoftwareSolutions() {
           source: 'Automotive Software Solutions', consent: true, recaptchaToken: token,
         }),
       });
-      _setSfSt(res.ok ? 'success' : 'error');
+      if (res.ok) { window.location.href = '/thank-you/'; } else { _setSfSt('error'); }
     } catch { _setSfSt('error'); }
   };
 
