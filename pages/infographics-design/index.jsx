@@ -64,8 +64,8 @@ export default function InfographicsDesign() {
   return (
     <>
       <Head>
-        <title>Infographics Design Services | Data Visualisation & Content Marketing Graphics | 1Solutions</title>
-        <meta name="description" content="Professional infographics design — statistical, process, timeline, comparison, and social media infographics. Built for engagement, sharing, and link building. 1,000+ infographics designed." />
+        <title>Infographic Design Services | Custom Data Visuals | 1Solutions</title>
+        <meta name="description" content="Professional infographic design — statistical, process, timeline & social media formats. Built for sharing & link building. 1,000+ infographics delivered." />
         <meta name="keywords" content="infographics design services, infographic design agency, data visualization infographic, content marketing infographic, social media infographic design" />
         <link rel="canonical" href="https://www.1solutions.biz/infographics-design/" />
         <meta property="og:title" content="Infographics Design Services | 1Solutions" />

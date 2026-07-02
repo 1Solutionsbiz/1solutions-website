@@ -1,4 +1,3 @@
-'use client';
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -299,8 +298,8 @@ export default function HireWordPressDeveloper() {
   return (
     <>
       <Head>
-        <title>Hire WordPress Developer | Expert WP Developers for Hire | 1Solutions</title>
-        <meta name="description" content="Hire expert WordPress developers — custom themes, plugins, WooCommerce, headless WordPress, Gutenberg blocks & migrations. Dedicated, fixed-price, or hourly. Ready in 48 hours." />
+        <title>Hire WordPress Developer | Dedicated WP Expert | 1Solutions</title>
+        <meta name="description" content="Hire expert WordPress developers — custom themes, plugins, WooCommerce & headless WP. Dedicated, fixed-price or hourly. Ready in 48 hours." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-wordpress-developer/" />
         <meta property="og:title" content="Hire WordPress Developer | 1Solutions" />
         <meta property="og:description" content="Hire senior WordPress developers for custom theme, plugin, WooCommerce, headless WP & migration projects. 15+ years | 200+ WP projects | Ready in 48 hours." />

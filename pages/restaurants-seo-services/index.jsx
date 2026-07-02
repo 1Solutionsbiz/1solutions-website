@@ -80,8 +80,8 @@ export default function RestaurantsSeoServices() {
   return (
     <>
       <Head>
-        <title>Restaurant SEO Services | Rank #1 for Restaurants Near Me | 1Solutions</title>
-        <meta name="description" content="Fill more tables with 1Solutions restaurant SEO. Rank for restaurants near me, best [cuisine] in [city], food delivery, and dining keywords that drive real bookings." />
+        <title>Restaurant SEO Services | Rank #1 Near Me | 1Solutions</title>
+        <meta name="description" content="Fill more tables with restaurant SEO. Rank for 'restaurants near me', best [cuisine] in [city] & food delivery keywords that drive real bookings." />
         <link rel="canonical" href="https://www.1solutions.biz/restaurants-seo-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

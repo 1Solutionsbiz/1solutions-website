@@ -1,4 +1,3 @@
-'use client';
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -207,8 +206,8 @@ export default function EcommerceWebsiteDevelopmentServices() {
   return (
     <>
       <Head>
-        <title>eCommerce Website Development Services | Expert eCommerce Development Company | 1Solutions</title>
-        <meta name="description" content="1Solutions is a leading eCommerce website development company with 15+ years experience. We build custom online stores on Shopify, WooCommerce, Magento, OpenCart & custom platforms for US, Canada & Australia." />
+        <title>eCommerce Development Company | Custom Online Stores | 1Solutions</title>
+        <meta name="description" content="Custom eCommerce development on Shopify, WooCommerce, Magento & OpenCart. 15+ years, 300+ stores delivered. US, Canada & Australia. Get a free quote." />
         <meta name="keywords" content="ecommerce website development, ecommerce development services, ecommerce development company, online store development, shopify development, woocommerce development, magento development, custom ecommerce development" />
         <link rel="canonical" href="https://www.1solutions.biz/ecommerce-website-development-services/" />
         <meta property="og:title" content="eCommerce Website Development Services | 1Solutions" />

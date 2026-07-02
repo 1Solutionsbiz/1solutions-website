@@ -80,7 +80,7 @@ export default function LawFirmSeoServices() {
   return (
     <>
       <Head>
-        <title>Law Firm SEO Services | Attorney and Lawyer SEO Marketing | 1Solutions</title>
+        <title>Law Firm SEO Services | Attorney SEO Marketing | 1Solutions</title>
         <meta name="description" content="Dominate legal search with 1Solutions law firm SEO. Rank for personal injury lawyer, family law attorney, criminal defense, DUI, and divorce lawyer keywords." />
         <link rel="canonical" href="https://www.1solutions.biz/law-firm-seo-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
