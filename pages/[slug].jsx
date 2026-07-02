@@ -131,13 +131,17 @@ function SinglePost({ post, relatedPosts }) {
 
     // Active TOC item on scroll
     const links = toc.querySelectorAll('a');
+    const HEADER_H = 88;
     const onScroll = () => {
-      const scrollPos = window.scrollY + 120;
       let active = null;
-      headings.forEach((h, i) => { if (h.offsetTop <= scrollPos) active = links[i]; });
+      headings.forEach((h, i) => {
+        const top = h.getBoundingClientRect().top + window.scrollY - HEADER_H;
+        if (top <= window.scrollY) active = links[i];
+      });
       links.forEach((l) => l.classList.toggle('toc-active', l === active));
     };
     window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // set initial active on load
     return () => window.removeEventListener('scroll', onScroll);
   }, [post.slug]);
 

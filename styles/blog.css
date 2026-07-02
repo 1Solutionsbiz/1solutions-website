@@ -355,8 +355,8 @@ body {
 
 /* Article body */
 .article-content { font-size: 16px; line-height: 1.9; color: var(--text); margin-bottom: 44px; }
-.article-content h2 { font-size: clamp(20px,3vw,30px); font-weight: 700; color: var(--primary); margin: 44px 0 14px; letter-spacing: -0.3px; }
-.article-content h3 { font-size: clamp(17px,2.5vw,22px); font-weight: 700; color: var(--text); margin: 32px 0 10px; }
+.article-content h2 { font-size: clamp(20px,3vw,30px); font-weight: 700; color: var(--primary); margin: 44px 0 14px; letter-spacing: -0.3px; scroll-margin-top: 88px; }
+.article-content h3 { font-size: clamp(17px,2.5vw,22px); font-weight: 700; color: var(--text); margin: 32px 0 10px; scroll-margin-top: 88px; }
 .article-content p  { margin-bottom: 18px; }
 .article-content ul, .article-content ol { margin: 0 0 20px 28px; }
 .article-content li { margin-bottom: 7px; }
