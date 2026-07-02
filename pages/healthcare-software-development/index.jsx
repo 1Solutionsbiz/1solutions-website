@@ -805,7 +805,7 @@ export default function HealthcareSoftwareDevelopment() {
                 </div>
                 <div className="hc-frow">
                   <div className="hc-fg"><label>Organisation</label><input type="text" placeholder="Hospital / Clinic / Startup" /></div>
-                  <div className="hc-fg"><label>Phone</label><input type="tel" placeholder="+1 (555) 000-0000" /></div>
+                  <div className="hc-fg"><label>Phone *</label><input type="tel" placeholder="+1 (555) 000-0000" required /></div>
                 </div>
                 <div className="hc-fg full">
                   <label>What are you building?</label>

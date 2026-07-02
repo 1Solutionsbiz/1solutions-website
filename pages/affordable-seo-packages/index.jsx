@@ -1009,7 +1009,7 @@ export default function AffordableSeoPackages() {
                   <div className="sp-fg"><label>Work Email *</label><input type="email" placeholder="jane@company.com" required /></div>
                 </div>
                 <div className="sp-frow">
-                  <div className="sp-fg"><label>Phone</label><input type="tel" placeholder="+1 (555) 000-0000" /></div>
+                  <div className="sp-fg"><label>Phone *</label><input type="tel" placeholder="+1 (555) 000-0000" required /></div>
                   <div className="sp-fg"><label>Website URL</label><input type="url" placeholder="https://yoursite.com" /></div>
                 </div>
                 <div className="sp-fg full">

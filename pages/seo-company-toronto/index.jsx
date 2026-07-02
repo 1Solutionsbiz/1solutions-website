@@ -413,7 +413,7 @@ export default function SeoCompanyToronto() {
                     <div className="trnt-field"><label>Email Address *</label><input required type="email" placeholder="jennifer@company.ca" value={form.email} onChange={e => setForm({...form,email:e.target.value})}/></div>
                   </div>
                   <div className="trnt-field-row">
-                    <div className="trnt-field"><label>Phone Number</label><input type="tel" placeholder="+1 416 000 0000" value={form.phone} onChange={e => setForm({...form,phone:e.target.value})}/></div>
+                    <div className="trnt-field"><label>Phone Number *</label><input type="tel" placeholder="+1 416 000 0000" value={form.phone} onChange={e => setForm({...form,phone:e.target.value})} required /></div>
                     <div className="trnt-field"><label>Your Website URL *</label><input required type="url" placeholder="https://yourcompany.ca" value={form.website} onChange={e => setForm({...form,website:e.target.value})}/></div>
                   </div>
                   <div className="trnt-field"><label>Business Industry</label>

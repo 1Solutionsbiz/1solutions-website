@@ -526,8 +526,8 @@ export default function SeoCompanyDelhi() {
                   </div>
                   <div className="dsel-field-row">
                     <div className="dsel-field">
-                      <label>Phone Number</label>
-                      <input type="tel" placeholder="+91 98xxxxxxxx" value={form.phone} onChange={e => setForm({...form, phone: e.target.value})} />
+                      <label>Phone Number *</label>
+                      <input type="tel" placeholder="+91 98xxxxxxxx" value={form.phone} onChange={e => setForm({...form, phone: e.target.value})} required />
                     </div>
                     <div className="dsel-field">
                       <label>Your Website URL *</label>

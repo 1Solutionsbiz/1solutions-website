@@ -799,8 +799,8 @@ export default function FlutterAppDevelopment() {
                     <input id="fl-company" type="text" placeholder="Company or app name" />
                   </div>
                   <div className="fl-fg">
-                    <label htmlFor="fl-phone">Phone / WhatsApp</label>
-                    <input id="fl-phone" type="tel" placeholder="+1 555 000 0000" />
+                    <label htmlFor="fl-phone">Phone / WhatsApp *</label>
+                    <input id="fl-phone" type="tel" placeholder="+1 555 000 0000" required />
                   </div>
                 </div>
                 <div className="fl-fg full">

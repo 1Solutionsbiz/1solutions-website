@@ -640,7 +640,7 @@ export default function DevopsServicesCompany() {
                 </div>
                 <div className="dv-frow">
                   <div className="dv-fg"><label htmlFor="dv-company">Company / Website URL</label><input id="dv-company" type="text" placeholder="Company or existing URL" /></div>
-                  <div className="dv-fg"><label htmlFor="dv-phone">Phone / WhatsApp</label><input id="dv-phone" type="tel" placeholder="+1 555 000 0000" /></div>
+                  <div className="dv-fg"><label htmlFor="dv-phone">Phone / WhatsApp *</label><input id="dv-phone" type="tel" placeholder="+1 555 000 0000" required /></div>
                 </div>
                 <div className="dv-fg full">
                   <label htmlFor="dv-type">DevOps Service Needed *</label>

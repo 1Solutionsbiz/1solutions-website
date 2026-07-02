@@ -810,7 +810,7 @@ export default function WordPressMaintenance() {
                 </div>
                 <div className="wm-frow">
                   <div className="wm-fg"><label htmlFor="wm-url">WordPress Site URL *</label><input id="wm-url" type="url" placeholder="https://yoursite.com" required /></div>
-                  <div className="wm-fg"><label htmlFor="wm-phone">Phone / WhatsApp</label><input id="wm-phone" type="tel" placeholder="+1 555 000 0000" /></div>
+                  <div className="wm-fg"><label htmlFor="wm-phone">Phone / WhatsApp *</label><input id="wm-phone" type="tel" placeholder="+1 555 000 0000" required /></div>
                 </div>
                 <div className="wm-fg full">
                   <label htmlFor="wm-type">Site Type *</label>

@@ -640,7 +640,7 @@ export default function TibcoDevelopmentServices() {
                 </div>
                 <div className="tb-frow">
                   <div className="tb-fg"><label htmlFor="tb-company">Company / Organisation</label><input id="tb-company" type="text" placeholder="Your company name" /></div>
-                  <div className="tb-fg"><label htmlFor="tb-phone">Phone / WhatsApp</label><input id="tb-phone" type="tel" placeholder="+1 555 000 0000" /></div>
+                  <div className="tb-fg"><label htmlFor="tb-phone">Phone / WhatsApp *</label><input id="tb-phone" type="tel" placeholder="+1 555 000 0000" required /></div>
                 </div>
                 <div className="tb-fg full">
                   <label htmlFor="tb-type">TIBCO Service Required *</label>

@@ -640,7 +640,7 @@ export default function NextjsDevelopmentServices() {
                 </div>
                 <div className="nx-frow">
                   <div className="nx-fg"><label htmlFor="nx-company">Company / Website URL</label><input id="nx-company" type="text" placeholder="Company or existing URL" /></div>
-                  <div className="nx-fg"><label htmlFor="nx-phone">Phone / WhatsApp</label><input id="nx-phone" type="tel" placeholder="+1 555 000 0000" /></div>
+                  <div className="nx-fg"><label htmlFor="nx-phone">Phone / WhatsApp *</label><input id="nx-phone" type="tel" placeholder="+1 555 000 0000" required /></div>
                 </div>
                 <div className="nx-fg full">
                   <label htmlFor="nx-type">Project Type *</label>

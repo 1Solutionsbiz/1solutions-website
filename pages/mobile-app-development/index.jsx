@@ -762,8 +762,8 @@ export default function MobileAppDevelopment() {
                     </div>
                     <div className="mob-frow">
                       <div className="mob-fg">
-                        <label htmlFor="mob-phone">Phone / WhatsApp</label>
-                        <input id="mob-phone" type="tel" placeholder="+1 555 000 0000" value={formData.phone} onChange={e => setFormData(p => ({ ...p, phone: e.target.value }))} />
+                        <label htmlFor="mob-phone">Phone / WhatsApp *</label>
+                        <input id="mob-phone" type="tel" placeholder="+1 555 000 0000" value={formData.phone} onChange={e => setFormData(p => ({ ...p, phone: e.target.value }))} required />
                       </div>
                       <div className="mob-fg">
                         <label htmlFor="mob-platform">Target Platform *</label>

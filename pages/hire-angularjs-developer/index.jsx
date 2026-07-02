@@ -487,7 +487,7 @@ export default function HireAngularJsDeveloper() {
                 </div>
                 <div className="ha-frow">
                   <div className="ha-fg"><label htmlFor="ha-company">Company Name</label><input id="ha-company" type="text" placeholder="Your company" /></div>
-                  <div className="ha-fg"><label htmlFor="ha-phone">Phone / WhatsApp</label><input id="ha-phone" type="tel" placeholder="+1 555 000 0000" /></div>
+                  <div className="ha-fg"><label htmlFor="ha-phone">Phone / WhatsApp *</label><input id="ha-phone" type="tel" placeholder="+1 555 000 0000" required /></div>
                 </div>
                 <div className="ha-fg full">
                   <label htmlFor="ha-eng">Engagement Type *</label>

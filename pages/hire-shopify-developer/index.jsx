@@ -656,7 +656,7 @@ export default function HireShopifyDeveloper() {
                 </div>
                 <div className="sh-frow">
                   <div className="sh-fg"><label htmlFor="sh-url">Shopify Store URL</label><input id="sh-url" type="url" placeholder="https://yourstore.myshopify.com" /></div>
-                  <div className="sh-fg"><label htmlFor="sh-phone">Phone / WhatsApp</label><input id="sh-phone" type="tel" placeholder="+1 555 000 0000" /></div>
+                  <div className="sh-fg"><label htmlFor="sh-phone">Phone / WhatsApp *</label><input id="sh-phone" type="tel" placeholder="+1 555 000 0000" required /></div>
                 </div>
                 <div className="sh-fg full">
                   <label htmlFor="sh-type">Project Type *</label>

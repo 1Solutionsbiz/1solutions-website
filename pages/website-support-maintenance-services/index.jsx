@@ -640,7 +640,7 @@ export default function WebsiteMaintenanceServices() {
                 </div>
                 <div className="sm-frow">
                   <div className="sm-fg"><label htmlFor="sm-url">Website URL *</label><input id="sm-url" type="url" placeholder="https://yourwebsite.com" required /></div>
-                  <div className="sm-fg"><label htmlFor="sm-phone">Phone / WhatsApp</label><input id="sm-phone" type="tel" placeholder="+1 555 000 0000" /></div>
+                  <div className="sm-fg"><label htmlFor="sm-phone">Phone / WhatsApp *</label><input id="sm-phone" type="tel" placeholder="+1 555 000 0000" required /></div>
                 </div>
                 <div className="sm-fg full">
                   <label htmlFor="sm-cms">CMS / Platform *</label>

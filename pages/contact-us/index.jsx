@@ -704,7 +704,7 @@ export default function ContactPage() {
                   {/* Row 2: Phone + Company */}
                   <div className="co-row">
                     <div className="co-field">
-                      <label className="co-label" htmlFor="co-phone">Phone</label>
+                      <label className="co-label" htmlFor="co-phone">Phone *</label>
                       <div className="co-phone-wrap">
                         <select className="co-phone-cc" aria-label="Country code">
                           <option value="+1">🇺🇸 +1</option>
@@ -721,8 +721,7 @@ export default function ContactPage() {
                           placeholder="(555) 000-0000"
                           value={form.phone}
                           onChange={handleChange}
-                          autoComplete="tel"
-                        />
+                          autoComplete="tel" required />
                       </div>
                     </div>
                     <div className="co-field">

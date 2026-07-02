@@ -488,7 +488,7 @@ export default function HireJavaScriptDeveloper() {
                 </div>
                 <div className="hj-frow">
                   <div className="hj-fg"><label htmlFor="hj-company">Company Name</label><input id="hj-company" type="text" placeholder="Your company" /></div>
-                  <div className="hj-fg"><label htmlFor="hj-phone">Phone / WhatsApp</label><input id="hj-phone" type="tel" placeholder="+1 555 000 0000" /></div>
+                  <div className="hj-fg"><label htmlFor="hj-phone">Phone / WhatsApp *</label><input id="hj-phone" type="tel" placeholder="+1 555 000 0000" required /></div>
                 </div>
                 <div className="hj-fg full">
                   <label htmlFor="hj-eng">Engagement Type *</label>

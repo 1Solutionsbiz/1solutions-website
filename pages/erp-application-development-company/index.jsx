@@ -799,8 +799,8 @@ export default function ErpApplicationDevelopment() {
                     <input id="er-company" type="text" placeholder="Company name" />
                   </div>
                   <div className="er-fg">
-                    <label htmlFor="er-phone">Phone / WhatsApp</label>
-                    <input id="er-phone" type="tel" placeholder="+1 555 000 0000" />
+                    <label htmlFor="er-phone">Phone / WhatsApp *</label>
+                    <input id="er-phone" type="tel" placeholder="+1 555 000 0000" required />
                   </div>
                 </div>
                 <div className="er-fg full">

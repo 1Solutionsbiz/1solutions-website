@@ -581,8 +581,8 @@ export default function PartnerWithUs() {
                     <input type="email" value={form.email} onChange={set('email')} placeholder="john@acme.com" required />
                   </div>
                   <div className="pwu-field">
-                    <label>Phone Number</label>
-                    <input type="tel" value={form.phone} onChange={set('phone')} placeholder="+1 555 000 0000" />
+                    <label>Phone Number *</label>
+                    <input type="tel" value={form.phone} onChange={set('phone')} placeholder="+1 555 000 0000" required />
                   </div>
                 </div>
 

@@ -413,7 +413,7 @@ export default function SeoCompanyAustin() {
                     <div className="aust-field"><label>Email Address *</label><input required type="email" placeholder="sarah@company.com" value={form.email} onChange={e => setForm({...form,email:e.target.value})}/></div>
                   </div>
                   <div className="aust-field-row">
-                    <div className="aust-field"><label>Phone Number</label><input type="tel" placeholder="+1 512 000 0000" value={form.phone} onChange={e => setForm({...form,phone:e.target.value})}/></div>
+                    <div className="aust-field"><label>Phone Number *</label><input type="tel" placeholder="+1 512 000 0000" value={form.phone} onChange={e => setForm({...form,phone:e.target.value})} required /></div>
                     <div className="aust-field"><label>Your Website URL *</label><input required type="url" placeholder="https://yourcompany.com" value={form.website} onChange={e => setForm({...form,website:e.target.value})}/></div>
                   </div>
                   <div className="aust-field"><label>Business Industry</label>

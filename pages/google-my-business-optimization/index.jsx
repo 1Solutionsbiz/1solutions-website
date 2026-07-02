@@ -808,8 +808,8 @@ export default function GoogleMyBusinessOptimization() {
                   </div>
                   <div className="gmbo-field-row">
                     <div className="gmbo-field">
-                      <label>Phone Number</label>
-                      <input type="tel" placeholder="+1 (555) 000-0000" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} />
+                      <label>Phone Number *</label>
+                      <input type="tel" placeholder="+1 (555) 000-0000" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} required />
                     </div>
                     <div className="gmbo-field">
                       <label>Business Website *</label>

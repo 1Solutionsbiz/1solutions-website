@@ -799,8 +799,8 @@ export default function AutomotiveSoftwareSolutions() {
                     <input id="av-company" type="text" placeholder="Company name" />
                   </div>
                   <div className="av-fg">
-                    <label htmlFor="av-phone">Phone / WhatsApp</label>
-                    <input id="av-phone" type="tel" placeholder="+1 555 000 0000" />
+                    <label htmlFor="av-phone">Phone / WhatsApp *</label>
+                    <input id="av-phone" type="tel" placeholder="+1 555 000 0000" required />
                   </div>
                 </div>
                 <div className="av-fg full">

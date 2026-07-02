@@ -799,8 +799,8 @@ export default function HireWordPressDeveloper() {
                     <input id="hw-company" type="text" placeholder="Company name" />
                   </div>
                   <div className="hw-fg">
-                    <label htmlFor="hw-phone">Phone / WhatsApp</label>
-                    <input id="hw-phone" type="tel" placeholder="+1 555 000 0000" />
+                    <label htmlFor="hw-phone">Phone / WhatsApp *</label>
+                    <input id="hw-phone" type="tel" placeholder="+1 555 000 0000" required />
                   </div>
                 </div>
                 <div className="hw-fg full">

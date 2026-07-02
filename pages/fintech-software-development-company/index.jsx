@@ -799,8 +799,8 @@ export default function FintechSoftwareDevelopment() {
                     <input id="ft-company" type="text" placeholder="Company name" />
                   </div>
                   <div className="ft-fg">
-                    <label htmlFor="ft-phone">Phone / WhatsApp</label>
-                    <input id="ft-phone" type="tel" placeholder="+1 555 000 0000" />
+                    <label htmlFor="ft-phone">Phone / WhatsApp *</label>
+                    <input id="ft-phone" type="tel" placeholder="+1 555 000 0000" required />
                   </div>
                 </div>
                 <div className="ft-fg full">

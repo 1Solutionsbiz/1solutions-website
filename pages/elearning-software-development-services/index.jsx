@@ -799,8 +799,8 @@ export default function ElearningSoftwareDevelopment() {
                     <input id="el-company" type="text" placeholder="Company name" />
                   </div>
                   <div className="el-fg">
-                    <label htmlFor="el-phone">Phone / WhatsApp</label>
-                    <input id="el-phone" type="tel" placeholder="+1 555 000 0000" />
+                    <label htmlFor="el-phone">Phone / WhatsApp *</label>
+                    <input id="el-phone" type="tel" placeholder="+1 555 000 0000" required />
                   </div>
                 </div>
                 <div className="el-fg full">

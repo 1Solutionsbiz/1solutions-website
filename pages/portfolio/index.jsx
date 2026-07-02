@@ -695,7 +695,7 @@ export default function Portfolio() {
                   <div className="pf-form-group"><label>Business Email</label><input type="email" placeholder="you@company.com" /></div>
                 </div>
                 <div className="pf-form-row">
-                  <div className="pf-form-group"><label>Phone</label><input type="tel" placeholder="+1 000 000 0000" /></div>
+                  <div className="pf-form-group"><label>Phone *</label><input type="tel" placeholder="+1 000 000 0000" required /></div>
                   <div className="pf-form-group"><label>Company</label><input type="text" placeholder="Company name" /></div>
                 </div>
                 <div className="pf-form-group">

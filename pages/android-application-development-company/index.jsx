@@ -799,8 +799,8 @@ export default function AndroidAppDevelopment() {
                     <input id="an-company" type="text" placeholder="Company or app name" />
                   </div>
                   <div className="an-fg">
-                    <label htmlFor="an-phone">Phone / WhatsApp</label>
-                    <input id="an-phone" type="tel" placeholder="+1 555 000 0000" />
+                    <label htmlFor="an-phone">Phone / WhatsApp *</label>
+                    <input id="an-phone" type="tel" placeholder="+1 555 000 0000" required />
                   </div>
                 </div>
                 <div className="an-fg full">

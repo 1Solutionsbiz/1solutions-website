@@ -681,7 +681,7 @@ export default function IosAppDevelopment() {
                 </div>
                 <div className="io-frow">
                   <div className="io-fg"><label htmlFor="io-company">Company / App Name</label><input id="io-company" type="text" placeholder="Company or app name" /></div>
-                  <div className="io-fg"><label htmlFor="io-phone">Phone / WhatsApp</label><input id="io-phone" type="tel" placeholder="+1 555 000 0000" /></div>
+                  <div className="io-fg"><label htmlFor="io-phone">Phone / WhatsApp *</label><input id="io-phone" type="tel" placeholder="+1 555 000 0000" required /></div>
                 </div>
                 <div className="io-fg full">
                   <label htmlFor="io-type">Project Type *</label>

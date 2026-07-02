@@ -414,7 +414,7 @@ export default function SeoCompanyVancouver() {
                     <div className="vanc-field"><label>Email Address *</label><input required type="email" placeholder="alex@company.ca" value={form.email} onChange={e => setForm({...form,email:e.target.value})}/></div>
                   </div>
                   <div className="vanc-field-row">
-                    <div className="vanc-field"><label>Phone Number</label><input type="tel" placeholder="+1 604 000 0000" value={form.phone} onChange={e => setForm({...form,phone:e.target.value})}/></div>
+                    <div className="vanc-field"><label>Phone Number *</label><input type="tel" placeholder="+1 604 000 0000" value={form.phone} onChange={e => setForm({...form,phone:e.target.value})} required /></div>
                     <div className="vanc-field"><label>Your Website URL *</label><input required type="url" placeholder="https://yourcompany.ca" value={form.website} onChange={e => setForm({...form,website:e.target.value})}/></div>
                   </div>
                   <div className="vanc-field"><label>Business Industry</label>

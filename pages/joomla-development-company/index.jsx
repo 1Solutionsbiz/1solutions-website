@@ -638,7 +638,7 @@ export default function JoomlaDevelopment() {
                 </div>
                 <div className="jo-frow">
                   <div className="jo-fg"><label htmlFor="jo-company">Company / Website URL</label><input id="jo-company" type="text" placeholder="Company or website URL" /></div>
-                  <div className="jo-fg"><label htmlFor="jo-phone">Phone / WhatsApp</label><input id="jo-phone" type="tel" placeholder="+1 555 000 0000" /></div>
+                  <div className="jo-fg"><label htmlFor="jo-phone">Phone / WhatsApp *</label><input id="jo-phone" type="tel" placeholder="+1 555 000 0000" required /></div>
                 </div>
                 <div className="jo-fg full">
                   <label htmlFor="jo-type">Project Type *</label>

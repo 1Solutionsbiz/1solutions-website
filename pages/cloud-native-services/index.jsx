@@ -640,7 +640,7 @@ export default function CloudNativeServices() {
                 </div>
                 <div className="cn-frow">
                   <div className="cn-fg"><label htmlFor="cn-company">Company / Product Name</label><input id="cn-company" type="text" placeholder="Your company name" /></div>
-                  <div className="cn-fg"><label htmlFor="cn-phone">Phone / WhatsApp</label><input id="cn-phone" type="tel" placeholder="+1 555 000 0000" /></div>
+                  <div className="cn-fg"><label htmlFor="cn-phone">Phone / WhatsApp *</label><input id="cn-phone" type="tel" placeholder="+1 555 000 0000" required /></div>
                 </div>
                 <div className="cn-fg full">
                   <label htmlFor="cn-type">Cloud Native Service Needed *</label>
