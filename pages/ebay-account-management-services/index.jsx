@@ -280,7 +280,7 @@ export default function EbayAccountManagement() {
         <div className="ebay-bc-inner">
           <Link href="/">Home</Link>
           <span className="ebay-bc-sep">›</span>
-          <Link href="/services">Services</Link>
+          <Link href="/ecommerce-marketing-services">Services</Link>
           <span className="ebay-bc-sep">›</span>
           <span className="ebay-bc-cur">eBay Account Management Services</span>
         </div>

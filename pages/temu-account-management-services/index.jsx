@@ -310,7 +310,7 @@ export default function TemuAccountManagement() {
           <div className="temu-breadcrumb-inner">
             <Link href="/">Home</Link>
             <span className="temu-breadcrumb-sep">›</span>
-            <Link href="/marketplace-account-management">Marketplace Management</Link>
+            <Link href="/ecommerce-marketing-services">Marketplace Management</Link>
             <span className="temu-breadcrumb-sep">›</span>
             <span className="temu-breadcrumb-current">Temu Account Management</span>
           </div>

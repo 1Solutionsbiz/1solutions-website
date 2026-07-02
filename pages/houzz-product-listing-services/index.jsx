@@ -299,7 +299,7 @@ export default function HouzzProductListingServices() {
           <div className="houz-breadcrumb-inner">
             <Link href="/">Home</Link>
             <span className="houz-breadcrumb-sep">›</span>
-            <Link href="/marketplace-account-management">Marketplace Management</Link>
+            <Link href="/ecommerce-marketing-services">Marketplace Management</Link>
             <span className="houz-breadcrumb-sep">›</span>
             <span className="houz-breadcrumb-current">Houzz Product Listing Services</span>
           </div>

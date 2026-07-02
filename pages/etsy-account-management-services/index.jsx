@@ -280,7 +280,7 @@ export default function EtsyAccountManagement() {
         <div className="etsy-bc-inner">
           <Link href="/">Home</Link>
           <span className="etsy-bc-sep">›</span>
-          <Link href="/services">Services</Link>
+          <Link href="/ecommerce-marketing-services">Services</Link>
           <span className="etsy-bc-sep">›</span>
           <span className="etsy-bc-cur">Etsy Shop Management Services</span>
         </div>

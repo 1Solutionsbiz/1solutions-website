@@ -299,7 +299,7 @@ export default function FlipkartAccountManagement() {
           <div className="flpk-breadcrumb-inner">
             <Link href="/">Home</Link>
             <span className="flpk-breadcrumb-sep">›</span>
-            <Link href="/marketplace-account-management">Marketplace Management</Link>
+            <Link href="/ecommerce-marketing-services">Marketplace Management</Link>
             <span className="flpk-breadcrumb-sep">›</span>
             <span className="flpk-breadcrumb-current">Flipkart Account Management</span>
           </div>

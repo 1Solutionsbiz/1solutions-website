@@ -299,7 +299,7 @@ export default function HomeDepotAccountManagement() {
           <div className="hdep-breadcrumb-inner">
             <Link href="/">Home</Link>
             <span className="hdep-breadcrumb-sep">›</span>
-            <Link href="/marketplace-account-management">Marketplace Management</Link>
+            <Link href="/ecommerce-marketing-services">Marketplace Management</Link>
             <span className="hdep-breadcrumb-sep">›</span>
             <span className="hdep-breadcrumb-current">Home Depot Marketplace Management</span>
           </div>

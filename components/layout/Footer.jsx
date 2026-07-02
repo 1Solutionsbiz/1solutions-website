@@ -89,7 +89,7 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} 1Solutions. All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link href="/terms-of-use" className="hover:text-white transition-colors">Terms of Service</Link>
             <Link href="/sitemap.xml" className="hover:text-white transition-colors">Sitemap</Link>
           </div>
         </div>

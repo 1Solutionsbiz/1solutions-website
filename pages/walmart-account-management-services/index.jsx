@@ -280,7 +280,7 @@ export default function WalmartAccountManagement() {
         <div className="wlmt-bc-inner">
           <Link href="/">Home</Link>
           <span className="wlmt-bc-sep">›</span>
-          <Link href="/services">Services</Link>
+          <Link href="/ecommerce-marketing-services">Services</Link>
           <span className="wlmt-bc-sep">›</span>
           <span className="wlmt-bc-cur">Walmart Marketplace Account Management</span>
         </div>
