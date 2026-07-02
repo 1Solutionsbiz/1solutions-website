@@ -51,7 +51,7 @@ const homeSchema = [
     sameAs: [
       'https://www.linkedin.com/company/1solutions/',
       'https://www.facebook.com/1solutionsbiz',
-      'https://twitter.com/1solutionsbiz',
+      'https://x.com/1solutionsbiz',
       'https://www.instagram.com/1solutionsbiz/',
     ],
     numberOfEmployees: { '@type': 'QuantitativeValue', value: 25 },

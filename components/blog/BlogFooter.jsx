@@ -79,7 +79,7 @@ const SOCIAL = [
   },
   {
     label: 'X',
-    href: 'https://x.com/1solutions',
+    href: 'https://x.com/1solutionsbiz',
     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.694l-5.248-6.856-6.027 6.856H2.421l7.782-8.917L2.959 2.25h6.863l4.744 6.278 5.578-6.278z"/></svg>,
   },
   {
