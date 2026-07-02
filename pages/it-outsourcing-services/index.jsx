@@ -95,7 +95,21 @@ function useCountUp(target, duration = 1800, start = false) {
 }
 function StatItem({ label, val, started }) {
   const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');
+  const suffix = val.replace(/[\d,]/g, '');  return (<div className="ito-sc"><div className="ito-sv">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div><div className="ito-sl">{label}</div></div>);
+}
+
+export default function ITOutsourcingServices() {
+  const [showAll, setShowAll] = useState(false);
+  const [openFaq, setOpenFaq] = useState(0);
+  const [ss, setSs] = useState(false);
+  const [vis, setVis] = useState(new Set());
+  const [vSk, setVSk] = useState([]); const [vEn, setVEn] = useState([]); const [vWh, setVWh] = useState([]); const [vTe, setVTe] = useState([]); const [vSt, setVSt] = useState([]);
+  const stR = useRef(null); const secR = useRef({});
+  const skR = useRef(null); const enR = useRef(null); const whR = useRef(null); const teR = useRef(null); const stGr = useRef(null);
+  useEffect(() => { if (!stR.current) return; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setSs(true); o.disconnect(); } }, { threshold: 0.4 }); o.observe(stR.current); return () => o.disconnect(); }, []);
+  useEffect(() => { const pairs = [[skR, SERVICES.length, setVSk],[enR, 3, setVEn],[whR, WHY_CARDS.length, setVWh],[teR, 3, setVTe],[stGr, TECH_STACK.length, setVSt]]; const obs = pairs.map(([ref, count, setter]) => { if (!ref.current) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { Array.from({ length: count }, (_, i) => setTimeout(() => setter(p => p.includes(i) ? p : [...p, i]), i * 80)); o.disconnect(); } }, { threshold: 0.05 }); o.observe(ref.current); return o; }); return () => obs.forEach(o => o?.disconnect()); }, []);
+  useEffect(() => { const ks = Object.keys(secR.current); const obs = ks.map(k => { const el = secR.current[k]; if (!el) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVis(p => new Set([...p, k])); o.disconnect(); } }, { threshold: 0.1 }); o.observe(el); return o; }); return () => obs.forEach(o => o?.disconnect()); }, []);
+  const visServices = showAll ? SERVICES : SERVICES.slice(0, 6);
   const [_sfSt, _setSfSt] = useState('idle');
   const _sfSubmit = async (e) => {
     e.preventDefault();
@@ -116,21 +130,7 @@ function StatItem({ label, val, started }) {
       _setSfSt(res.ok ? 'success' : 'error');
     } catch { _setSfSt('error'); }
   };
-  return (<div className="ito-sc"><div className="ito-sv">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div><div className="ito-sl">{label}</div></div>);
-}
 
-export default function ITOutsourcingServices() {
-  const [showAll, setShowAll] = useState(false);
-  const [openFaq, setOpenFaq] = useState(0);
-  const [ss, setSs] = useState(false);
-  const [vis, setVis] = useState(new Set());
-  const [vSk, setVSk] = useState([]); const [vEn, setVEn] = useState([]); const [vWh, setVWh] = useState([]); const [vTe, setVTe] = useState([]); const [vSt, setVSt] = useState([]);
-  const stR = useRef(null); const secR = useRef({});
-  const skR = useRef(null); const enR = useRef(null); const whR = useRef(null); const teR = useRef(null); const stGr = useRef(null);
-  useEffect(() => { if (!stR.current) return; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setSs(true); o.disconnect(); } }, { threshold: 0.4 }); o.observe(stR.current); return () => o.disconnect(); }, []);
-  useEffect(() => { const pairs = [[skR, SERVICES.length, setVSk],[enR, 3, setVEn],[whR, WHY_CARDS.length, setVWh],[teR, 3, setVTe],[stGr, TECH_STACK.length, setVSt]]; const obs = pairs.map(([ref, count, setter]) => { if (!ref.current) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { Array.from({ length: count }, (_, i) => setTimeout(() => setter(p => p.includes(i) ? p : [...p, i]), i * 80)); o.disconnect(); } }, { threshold: 0.05 }); o.observe(ref.current); return o; }); return () => obs.forEach(o => o?.disconnect()); }, []);
-  useEffect(() => { const ks = Object.keys(secR.current); const obs = ks.map(k => { const el = secR.current[k]; if (!el) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVis(p => new Set([...p, k])); o.disconnect(); } }, { threshold: 0.1 }); o.observe(el); return o; }); return () => obs.forEach(o => o?.disconnect()); }, []);
-  const visServices = showAll ? SERVICES : SERVICES.slice(0, 6);
   return (
     <>
       <Head>

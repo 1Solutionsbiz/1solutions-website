@@ -131,28 +131,7 @@ function AnimatedStat({ label, val, started }) {
   const num = useCountUp(val, 1800, started);
   const suffix = String(val).replace(/[\d,]/g, '');
   const hasComma = String(val).includes(',');
-  const display = started ? (hasComma ? num.toLocaleString() : num) + suffix : val;
-  const [_sfSt, _setSfSt] = useState('idle');
-  const _sfSubmit = async (e) => {
-    e.preventDefault();
-    _setSfSt('loading');
-    try {
-      const fd = new FormData(e.target);
-      const token = await new Promise(r => window.grecaptcha.ready(() =>
-        window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', { action: 'contact' }).then(r)));
-      const res = await fetch('/api/contact', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: fd.get('sf-name') || '', email: fd.get('sf-email') || '',
-          phone: (fd.get('sf-cc') ? fd.get('sf-cc') + ' ' : '') + (fd.get('sf-phone') || ''),
-          company: fd.get('sf-company') || '', message: fd.get('sf-message') || '',
-          source: 'Website Design', consent: true, recaptchaToken: token,
-        }),
-      });
-      _setSfSt(res.ok ? 'success' : 'error');
-    } catch { _setSfSt('error'); }
-  };
-  return (
+  const display = started ? (hasComma ? num.toLocaleString() : num) + suffix : val;  return (
     <div className="wd-stat-col">
       <div className="wd-stat-label">{label}</div>
       <div className="wd-stat-value">{display}</div>
@@ -287,6 +266,27 @@ export default function WebsiteDesign() {
     });
     return () => observers.forEach(o => o && o.disconnect());
   }, []);
+
+  const [_sfSt, _setSfSt] = useState('idle');
+  const _sfSubmit = async (e) => {
+    e.preventDefault();
+    _setSfSt('loading');
+    try {
+      const fd = new FormData(e.target);
+      const token = await new Promise(r => window.grecaptcha.ready(() =>
+        window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', { action: 'contact' }).then(r)));
+      const res = await fetch('/api/contact', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: fd.get('sf-name') || '', email: fd.get('sf-email') || '',
+          phone: (fd.get('sf-cc') ? fd.get('sf-cc') + ' ' : '') + (fd.get('sf-phone') || ''),
+          company: fd.get('sf-company') || '', message: fd.get('sf-message') || '',
+          source: 'Website Design', consent: true, recaptchaToken: token,
+        }),
+      });
+      _setSfSt(res.ok ? 'success' : 'error');
+    } catch { _setSfSt('error'); }
+  };
 
   return (
     <>

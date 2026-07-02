@@ -114,28 +114,7 @@ function useCountUp(target, duration = 1800, start = false) {
 function AnimatedStat({ label, val, started }) {
   const num = useCountUp(val, 1800, started);
   const suffix = String(val).replace(/[\d,]/g, '');
-  const display = started ? num + suffix : val;
-  const [_sfSt, _setSfSt] = useState('idle');
-  const _sfSubmit = async (e) => {
-    e.preventDefault();
-    _setSfSt('loading');
-    try {
-      const fd = new FormData(e.target);
-      const token = await new Promise(r => window.grecaptcha.ready(() =>
-        window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', { action: 'contact' }).then(r)));
-      const res = await fetch('/api/contact', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: fd.get('sf-name') || '', email: fd.get('sf-email') || '',
-          phone: (fd.get('sf-cc') ? fd.get('sf-cc') + ' ' : '') + (fd.get('sf-phone') || ''),
-          company: fd.get('sf-company') || '', message: fd.get('sf-message') || '',
-          source: 'Ux Research', consent: true, recaptchaToken: token,
-        }),
-      });
-      _setSfSt(res.ok ? 'success' : 'error');
-    } catch { _setSfSt('error'); }
-  };
-  return (
+  const display = started ? num + suffix : val;  return (
     <div className="uxr-stat-col">
       <div className="uxr-stat-value">{display}</div>
       <div className="uxr-stat-label">{label}</div>
@@ -223,6 +202,27 @@ export default function UXResearch() {
     });
     return () => observers.forEach(o => o && o.disconnect());
   }, []);
+
+  const [_sfSt, _setSfSt] = useState('idle');
+  const _sfSubmit = async (e) => {
+    e.preventDefault();
+    _setSfSt('loading');
+    try {
+      const fd = new FormData(e.target);
+      const token = await new Promise(r => window.grecaptcha.ready(() =>
+        window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', { action: 'contact' }).then(r)));
+      const res = await fetch('/api/contact', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: fd.get('sf-name') || '', email: fd.get('sf-email') || '',
+          phone: (fd.get('sf-cc') ? fd.get('sf-cc') + ' ' : '') + (fd.get('sf-phone') || ''),
+          company: fd.get('sf-company') || '', message: fd.get('sf-message') || '',
+          source: 'Ux Research', consent: true, recaptchaToken: token,
+        }),
+      });
+      _setSfSt(res.ok ? 'success' : 'error');
+    } catch { _setSfSt('error'); }
+  };
 
   return (
     <>

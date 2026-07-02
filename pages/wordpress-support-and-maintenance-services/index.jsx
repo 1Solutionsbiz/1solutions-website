@@ -229,28 +229,7 @@ function StatItem({ label, val, started }) {
   const canAnimate = started && !val.includes('.');
   const num = useCountUp(val, 1800, canAnimate);
   const suffix = val.replace(/^[\d,.]+/, '');
-  const display = (canAnimate && num > 0) ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val;
-  const [_sfSt, _setSfSt] = useState('idle');
-  const _sfSubmit = async (e) => {
-    e.preventDefault();
-    _setSfSt('loading');
-    try {
-      const fd = new FormData(e.target);
-      const token = await new Promise(r => window.grecaptcha.ready(() =>
-        window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', { action: 'contact' }).then(r)));
-      const res = await fetch('/api/contact', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: fd.get('sf-name') || '', email: fd.get('sf-email') || '',
-          phone: (fd.get('sf-cc') ? fd.get('sf-cc') + ' ' : '') + (fd.get('sf-phone') || ''),
-          company: fd.get('sf-company') || '', message: fd.get('sf-message') || '',
-          source: 'Wordpress Support and Maintenance Services', consent: true, recaptchaToken: token,
-        }),
-      });
-      _setSfSt(res.ok ? 'success' : 'error');
-    } catch { _setSfSt('error'); }
-  };
-  return (
+  const display = (canAnimate && num > 0) ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val;  return (
     <div className="wm-stat-col">
       <div className="wm-stat-val">{display}</div>
       <div className="wm-stat-label">{label}</div>
@@ -311,6 +290,27 @@ export default function WordPressMaintenance() {
   }, []);
 
   const visibleServices = showAllSvc ? SERVICES : SERVICES.slice(0, 6);
+
+  const [_sfSt, _setSfSt] = useState('idle');
+  const _sfSubmit = async (e) => {
+    e.preventDefault();
+    _setSfSt('loading');
+    try {
+      const fd = new FormData(e.target);
+      const token = await new Promise(r => window.grecaptcha.ready(() =>
+        window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', { action: 'contact' }).then(r)));
+      const res = await fetch('/api/contact', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: fd.get('sf-name') || '', email: fd.get('sf-email') || '',
+          phone: (fd.get('sf-cc') ? fd.get('sf-cc') + ' ' : '') + (fd.get('sf-phone') || ''),
+          company: fd.get('sf-company') || '', message: fd.get('sf-message') || '',
+          source: 'Wordpress Support and Maintenance Services', consent: true, recaptchaToken: token,
+        }),
+      });
+      _setSfSt(res.ok ? 'success' : 'error');
+    } catch { _setSfSt('error'); }
+  };
 
   return (
     <>
