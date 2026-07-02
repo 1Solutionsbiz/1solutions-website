@@ -26,7 +26,6 @@ export default function SearchPage() {
     }
   }, []);
 
-  // Auto-search when URL contains ?q=
   useEffect(() => {
     if (!router.isReady) return;
     const q = router.query.q ? String(router.query.q) : '';
@@ -46,9 +45,52 @@ export default function SearchPage() {
   return (
     <>
       <Head>
-        <title>{query ? `"${query}" — Search | 1Solutions</title>
+        <title>{query ? query + ' — Search | 1Solutions' : 'Search | 1Solutions'}</title>
         <meta name="description" content="Search 2,400+ articles on web development, SEO, digital marketing, and more." />
         <meta name="robots" content="noindex" />
+        <style>{`
+          .search-form {
+            display: flex;
+            gap: 12px;
+            margin-top: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+          }
+          .search-input {
+            flex: 1;
+            padding: 14px 20px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            font-family: inherit;
+            transition: border-color 0.2s;
+            background: white;
+          }
+          .search-input:focus { border-color: var(--primary); }
+          .search-btn {
+            padding: 14px 28px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+            white-space: nowrap;
+            transition: background 0.2s;
+          }
+          .search-btn:hover:not(:disabled) { background: var(--navy); }
+          .search-btn:disabled { opacity: 0.6; cursor: wait; }
+          .search-results-count {
+            font-size: 15px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            font-weight: 500;
+          }
+        `}</style>
       </Head>
 
       <section className="archive-hero" style={{ background: 'linear-gradient(135deg, rgba(17,65,113,0.05) 0%, rgba(254,151,0,0.05) 100%)' }}>
@@ -99,50 +141,6 @@ export default function SearchPage() {
           </div>
         )}
       </div>
-
-      <style jsx>{`
-        .search-form {
-          display: flex;
-          gap: 12px;
-          margin-top: 32px;
-          max-width: 600px;
-          margin-left: auto;
-          margin-right: auto;
-        }
-        .search-input {
-          flex: 1;
-          padding: 14px 20px;
-          border: 2px solid var(--border);
-          border-radius: 8px;
-          font-size: 16px;
-          outline: none;
-          font-family: inherit;
-          transition: border-color 0.2s;
-          background: white;
-        }
-        .search-input:focus { border-color: var(--primary); }
-        .search-btn {
-          padding: 14px 28px;
-          background: var(--primary);
-          color: white;
-          border: none;
-          border-radius: 8px;
-          font-size: 15px;
-          font-weight: 600;
-          cursor: pointer;
-          font-family: inherit;
-          white-space: nowrap;
-          transition: background 0.2s;
-        }
-        .search-btn:hover:not(:disabled) { background: var(--navy); }
-        .search-btn:disabled { opacity: 0.6; cursor: wait; }
-        .search-results-count {
-          font-size: 15px;
-          color: var(--text-light);
-          margin-bottom: 40px;
-          font-weight: 500;
-        }
-      `}</style>
     </>
   );
 }
