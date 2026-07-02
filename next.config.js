@@ -62,6 +62,28 @@ const nextConfig = {
 
   async redirects() {
     return [
+      // ── Common alias URLs ─────────────────────────────────────────────────
+      { source: '/about',                     destination: '/who-we-are/',                    permanent: true },
+      { source: '/about/',                    destination: '/who-we-are/',                    permanent: true },
+      { source: '/talk-to-us',               destination: '/contact-us/',                    permanent: true },
+      { source: '/talk-to-us/',              destination: '/contact-us/',                    permanent: true },
+      { source: '/careers',                   destination: '/open-positions/',                permanent: true },
+      { source: '/careers/',                  destination: '/open-positions/',                permanent: true },
+
+      // ── Old WordPress category pagination ─────────────────────────────────
+      { source: '/ecommerce/page/:num/',      destination: '/ecommerce-website-development-services/', permanent: true },
+      { source: '/ecommerce/page/:num',       destination: '/ecommerce-website-development-services/', permanent: true },
+      { source: '/content/page/:num/',        destination: '/blog/',                          permanent: true },
+      { source: '/content/page/:num',         destination: '/blog/',                          permanent: true },
+      { source: '/local-seo/page/:num/',      destination: '/local-seo-services/',            permanent: true },
+      { source: '/local-seo/page/:num',       destination: '/local-seo-services/',            permanent: true },
+
+      // ── Old WordPress theme template URLs ─────────────────────────────────
+      { source: '/wcf-template/:path*',       destination: '/',                               permanent: true },
+
+      // ── Case study subpages ───────────────────────────────────────────────
+      { source: '/case-studies/:slug',        destination: '/case-studies/',                  permanent: true },
+
       // ── Page renames ──────────────────────────────────────────────────────
       { source: '/hire-ui-ux-designer',       destination: '/hire-dedicated-ui-ux-designer',  permanent: true },
       { source: '/hire-ui-ux-designer/',      destination: '/hire-dedicated-ui-ux-designer/', permanent: true },
