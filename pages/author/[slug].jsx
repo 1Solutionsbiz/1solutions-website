@@ -22,11 +22,19 @@ const AUTHOR_EMAIL = {
   'ritika':         'ritika@1solutions.biz',
 };
 
+const AUTHOR_WEBSITE = {
+  'atul-chaudhary': 'https://www.1solutions.biz',
+  'ritika':         'https://www.1solutions.biz',
+};
+
 export default function AuthorPage({ author, posts, pageInfo, slug }) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.1solutions.biz';
   const linkedin = AUTHOR_LINKEDIN[slug] || AUTHOR_LINKEDIN[author.name];
   const twitter  = AUTHOR_TWITTER[slug]  || AUTHOR_TWITTER[author.name];
   const email    = AUTHOR_EMAIL[slug]    || AUTHOR_EMAIL[author.name];
+  const rawUrl   = author.url || '';
+  const website  = AUTHOR_WEBSITE[slug] || AUTHOR_WEBSITE[author.name]
+    || (rawUrl && !rawUrl.includes('hostingersite.com') ? rawUrl : null);
   const postCount = author.posts?.pageInfo
     ? posts.length
     : posts.length;
@@ -73,8 +81,8 @@ export default function AuthorPage({ author, posts, pageInfo, slug }) {
 
             {/* Social links */}
             <div className="author-archive-socials">
-              {author.url && (
-                <a href={author.url} className="author-social-pill" target="_blank" rel="noopener noreferrer">
+              {website && (
+                <a href={website} className="author-social-pill" target="_blank" rel="noopener noreferrer">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                   Website
                 </a>
