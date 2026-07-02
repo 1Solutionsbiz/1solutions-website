@@ -67,8 +67,8 @@ export default function AnswerEngineOptimizationServices() {
   return (
     <>
       <Head>
-        <title>Answer Engine Optimisation (AEO) Services | Featured Snippets & PAA | 1Solutions</title>
-        <meta name="description" content="Answer Engine Optimisation (AEO) services — featured snippet capture, People Also Ask targeting, FAQ schema, and knowledge panel optimisation. Be the answer, not just a result." />
+        <title>Answer Engine Optimisation (AEO) Services | 1Solutions</title>
+        <meta name="description" content="Answer Engine Optimisation (AEO) services — featured snippet capture, People Also Ask targeting, FAQ schema, and knowledge panel optimisation." />
         <meta name="keywords" content="answer engine optimization services, aeo services, featured snippet optimization, people also ask optimization, position zero seo, aeo agency, zero click seo" />
         <link rel="canonical" href="https://www.1solutions.biz/answer-engine-optimization-services/" />
         <meta property="og:title" content="Answer Engine Optimisation Services | 1Solutions" />

@@ -299,8 +299,8 @@ export default function FintechSoftwareDevelopment() {
   return (
     <>
       <Head>
-        <title>Fintech Software Development Company | PCI DSS Compliant | 1Solutions</title>
-        <meta name="description" content="Custom fintech software development — PCI DSS-compliant digital banking, payment gateways, neobank platforms, investment apps & lending systems. 15+ years | 100+ fintech clients | Free discovery call." />
+        <title>Fintech Software Development Company | 1Solutions</title>
+        <meta name="description" content="Custom fintech software development — PCI DSS-compliant digital banking, payment gateways, neobank platforms, investment apps & lending systems." />
         <link rel="canonical" href="https://www.1solutions.biz/fintech-software-development-company/" />
         <meta property="og:title" content="Fintech Software Development Company | 1Solutions" />
         <meta property="og:description" content="PCI DSS-compliant fintech software development — digital banking, payment gateways, neobank, investment, lending & blockchain solutions. 15+ years, 100+ fintech clients." />

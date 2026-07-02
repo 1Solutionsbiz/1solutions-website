@@ -199,7 +199,7 @@ export default function SeoServices() {
     <>
       <Head>
         <title>SEO Services Company | Rank #1 on Google | 1Solutions</title>
-        <meta name="description" content="1Solutions is a results-driven SEO company serving US, Canada and Australia. Technical SEO, content strategy, link building and eCommerce SEO — all under one roof. 15+ years experience." />
+        <meta name="description" content="1Solutions is a results-driven SEO company serving US, Canada and Australia. Technical SEO, content strategy, link building and eCommerce SEO — all under" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.1solutions.biz/seo-services-company/" />
         <meta property="og:title" content="SEO Services Company | Rank #1 on Google | 1Solutions" />

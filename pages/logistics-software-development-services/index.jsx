@@ -125,8 +125,8 @@ export default function LogisticsSoftware() {
   return (
     <>
       <Head>
-        <title>Logistics Software Development | TMS, WMS, Last-Mile, Fleet Management | 1Solutions</title>
-        <meta name="description" content="Custom logistics software development — TMS, WMS, last-mile delivery platforms, route optimisation, fleet management, carrier integrations (FedEx, UPS, DHL), supply chain visibility, and 3PL platforms. 100+ logistics projects. 15+ years." />
+        <title>Logistics Software Development | 1Solutions</title>
+        <meta name="description" content="Custom logistics software development — TMS, WMS, last-mile delivery platforms, route optimisation, fleet management, carrier integrations (FedEx, UPS," />
         <link rel="canonical" href="https://www.1solutions.biz/logistics-software-development-services/" />
         <meta property="og:title" content="Logistics Software Development Services | 1Solutions" />
         <meta property="og:description" content="TMS, WMS, last-mile delivery, route optimisation, fleet management, and carrier integrations. 100+ logistics projects." />

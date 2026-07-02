@@ -121,8 +121,8 @@ export default function SeoCompanyBurlington() {
   return (
     <>
       <Head>
-        <title>SEO Company in Burlington Ontario | Best Burlington SEO Agency | 1Solutions</title>
-        <meta name="description" content="Looking for the best SEO company in Burlington Ontario? 1Solutions delivers Page 1 Google rankings for Burlington businesses — technical SEO, local SEO, link building & content strategy. Free audit." />
+        <title>SEO Company in Burlington Ontario | 1Solutions</title>
+        <meta name="description" content="Looking for the best SEO company in Burlington Ontario? 1Solutions delivers Page 1 Google rankings for Burlington businesses — technical SEO, local SEO," />
         <meta name="keywords" content="SEO company in Burlington, SEO agency Burlington Ontario, SEO services Burlington, best SEO company Burlington ON, Burlington SEO, search engine optimization Burlington Ontario" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://1solutions.biz/seo-company-burlington/" />

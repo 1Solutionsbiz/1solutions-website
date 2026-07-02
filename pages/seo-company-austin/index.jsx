@@ -123,7 +123,7 @@ export default function SeoCompanyAustin() {
     <>
       <Head>
         <title>SEO Company in Austin TX | Best Austin SEO Agency | 1Solutions</title>
-        <meta name="description" content="Looking for the best SEO company in Austin TX? 1Solutions delivers Page 1 Google rankings for Austin businesses — technical SEO, local SEO, link building & content strategy. Free audit." />
+        <meta name="description" content="Looking for the best SEO company in Austin TX? 1Solutions delivers Page 1 Google rankings for Austin businesses — technical SEO, local SEO, link building &" />
         <meta name="keywords" content="SEO company in Austin, SEO agency Austin, SEO services Austin TX, best SEO company Austin, Austin SEO, search engine optimization Austin Texas" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://1solutions.biz/seo-company-austin/" />

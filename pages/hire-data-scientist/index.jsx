@@ -134,8 +134,8 @@ export default function HireDataScientist() {
   return (
     <>
       <Head>
-        <title>Hire Data Scientist | Python, SQL, A/B Testing, Predictive Modelling | 1Solutions</title>
-        <meta name="description" content="Hire expert data scientists from 1Solutions — EDA, statistical analysis, A/B testing, predictive modelling, customer analytics, SQL, Python, R, Tableau, and Snowflake/BigQuery/Redshift. Dedicated, part-time, or fixed-scope." />
+        <title>Hire Data Scientist | 1Solutions</title>
+        <meta name="description" content="Hire expert data scientists from 1Solutions — EDA, statistical analysis, A/B testing, predictive modelling, customer analytics, SQL, Python, R, Tableau, and" />
         <link rel="canonical" href="https://www.1solutions.biz/hire-data-scientist/" />
         <meta property="og:title" content="Hire Data Scientist | Python, SQL, A/B Testing | 1Solutions" />
         <meta property="og:description" content="Hire vetted data scientists — EDA, hypothesis testing, A/B testing, predictive modelling, customer analytics, Python, SQL, Tableau, Snowflake, BigQuery." />

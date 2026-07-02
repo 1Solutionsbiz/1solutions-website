@@ -80,8 +80,8 @@ export default function PlumbingSeoServices() {
   return (
     <>
       <Head>
-        <title>Plumbing SEO Services | Rank #1 for Emergency Plumber Searches | 1Solutions</title>
-        <meta name="description" content="Dominate plumbing searches with 1Solutions. Rank for emergency plumber, drain cleaning, pipe repair, and water heater keywords. Local SEO + Google Ads + GBP for plumbers." />
+        <title>Plumbing SEO Services | 1Solutions</title>
+        <meta name="description" content="Dominate plumbing searches with 1Solutions. Rank for emergency plumber, drain cleaning, pipe repair, and water heater keywords." />
         <link rel="canonical" href="https://www.1solutions.biz/plumbing-seo-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

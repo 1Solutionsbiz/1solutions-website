@@ -64,8 +64,8 @@ export default function LawnCareMarketingServices() {
   return (
     <>
       <Head>
-        <title>Lawn Care Marketing Services | Digital Marketing for Lawn Care Businesses | 1Solutions</title>
-        <meta name="description" content="Digital marketing services for lawn care businesses — local SEO, Google Ads, Facebook ads, review management, and seasonal campaigns that generate consistent leads and grow your customer base." />
+        <title>Lawn Care Marketing Services | 1Solutions</title>
+        <meta name="description" content="Digital marketing services for lawn care businesses — local SEO, Google Ads, Facebook ads, review management, and seasonal campaigns that generate" />
         <meta name="keywords" content="lawn care marketing services, digital marketing for lawn care, lawn care local seo, lawn care google ads, lawn care advertising, landscaping marketing, lawn care leads" />
         <link rel="canonical" href="https://www.1solutions.biz/lawn-care-marketing-services/" />
         <meta property="og:title" content="Lawn Care Marketing Services | 1Solutions" />

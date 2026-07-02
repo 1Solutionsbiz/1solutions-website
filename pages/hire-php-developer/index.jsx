@@ -96,8 +96,8 @@ export default function HirePHPDeveloper() {
   return (
     <>
       <Head>
-        <title>Hire PHP Developer | Laravel, Symfony & WordPress Experts | 1Solutions</title>
-        <meta name="description" content="Hire dedicated PHP developers from 1Solutions. Laravel, Symfony, WordPress, and PHP 8.x experts for web applications and APIs. Pre-vetted talent. Profiles in 48 hours." />
+        <title>Hire PHP Developer | 1Solutions</title>
+        <meta name="description" content="Hire dedicated PHP developers from 1Solutions. Laravel, Symfony, WordPress, and PHP 8.x experts for web applications and APIs. Pre-vetted talent." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-php-developer/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

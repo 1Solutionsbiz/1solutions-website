@@ -256,8 +256,8 @@ export default function TibcoDevelopmentServices() {
   return (
     <>
       <Head>
-        <title>TIBCO Development Services | BusinessWorks, EMS, BPM, Spotfire | 1Solutions</title>
-        <meta name="description" content="Expert TIBCO development services — TIBCO BusinessWorks integration, TIBCO EMS messaging, TIBCO BPM, Spotfire analytics, TIBCO Cloud Integration, TIBCO to MuleSoft/Boomi migration, performance tuning, and TIBCO administration. 15+ years." />
+        <title>TIBCO Development Services | 1Solutions</title>
+        <meta name="description" content="Expert TIBCO development services — TIBCO BusinessWorks integration, TIBCO EMS messaging, TIBCO BPM, Spotfire analytics, TIBCO Cloud Integration, TIBCO to" />
         <link rel="canonical" href="https://www.1solutions.biz/tibco-development-services/" />
         <meta property="og:title" content="TIBCO Development Services | 1Solutions" />
         <meta property="og:description" content="TIBCO BusinessWorks integration, EMS messaging, BPM automation, Spotfire analytics, TIBCO Cloud, TIBCO to MuleSoft migration, performance tuning, and ongoing TIBCO administration." />

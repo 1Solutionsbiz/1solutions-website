@@ -97,8 +97,8 @@ export default function HireReactNativeDeveloper() {
   return (
     <>
       <Head>
-        <title>Hire React Native Developer | iOS & Android from One Codebase | 1Solutions</title>
-        <meta name="description" content="Hire dedicated React Native developers from 1Solutions. Cross-platform iOS and Android experts with native module experience. Pre-vetted talent. Profiles in 48 hours." />
+        <title>Hire React Native Developer | 1Solutions</title>
+        <meta name="description" content="Hire dedicated React Native developers from 1Solutions. Cross-platform iOS and Android experts with native module experience. Pre-vetted talent." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-react-native-developer/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

@@ -80,7 +80,7 @@ export default function DentalSeoServices() {
   return (
     <>
       <Head>
-        <title>Dental SEO Services | Rank #1 for Dentist Near Me Searches | 1Solutions</title>
+        <title>Dental SEO Services | 1Solutions</title>
         <meta name="description" content="Get more dental patients with 1Solutions dental SEO. Rank for dentist near me, cosmetic dentistry, dental implants, orthodontist, and emergency dental keywords." />
         <link rel="canonical" href="https://www.1solutions.biz/dental-seo-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />

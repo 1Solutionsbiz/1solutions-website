@@ -134,8 +134,8 @@ export default function ITStaffAugmentation() {
   return (
     <>
       <Head>
-        <title>IT Staff Augmentation Services | Add Developers in 5–7 Days | 1Solutions</title>
-        <meta name="description" content="IT staff augmentation services — add pre-vetted frontend, backend, mobile, DevOps, QA, and AI/ML developers to your team in 5–7 business days. 60–70% below US/UK hiring cost. No recruitment fee or employer liability." />
+        <title>IT Staff Augmentation Services | 1Solutions</title>
+        <meta name="description" content="IT staff augmentation services — add pre-vetted frontend, backend, mobile, DevOps, QA, and AI/ML developers to your team in 5–7 business days." />
         <link rel="canonical" href="https://www.1solutions.biz/it-staff-augmentation-services/" />
         <meta property="og:title" content="IT Staff Augmentation Services | 1Solutions" />
         <meta property="og:description" content="Add pre-vetted offshore developers to your team in 5–7 days. Frontend, backend, mobile, DevOps, QA, AI/ML. 60–70% below local hiring costs." />

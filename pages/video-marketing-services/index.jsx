@@ -63,7 +63,7 @@ export default function VideoMarketingServices() {
   return (
     <>
       <Head>
-        <title>Video Marketing Services | YouTube & Short-Form Video Strategy | 1Solutions</title>
+        <title>Video Marketing Services | 1Solutions</title>
         <meta name="description" content="Video marketing by 1Solutions — YouTube channel strategy, short-form video content for Reels/TikTok, video SEO, and YouTube Ads management." />
         <link rel="canonical" href="https://www.1solutions.biz/video-marketing-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />

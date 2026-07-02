@@ -94,8 +94,8 @@ export default function HireDedicatedGraphicDesigner() {
   return (
     <>
       <Head>
-        <title>Hire Dedicated Graphic Designer | Brand, Print &amp; Digital Design Experts | 1Solutions</title>
-        <meta name="description" content="Hire dedicated graphic designers from 1Solutions. Brand identity, print design, social media graphics, packaging, and marketing collateral — pre-vetted creatives. Profiles in 48 hours." />
+        <title>Hire Dedicated Graphic Designer | 1Solutions</title>
+        <meta name="description" content="Hire dedicated graphic designers from 1Solutions. Brand identity, print design, social media graphics, packaging, and marketing collateral — pre-vetted" />
         <link rel="canonical" href="https://www.1solutions.biz/hire-dedicated-graphic-designer/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

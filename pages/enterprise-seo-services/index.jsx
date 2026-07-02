@@ -89,8 +89,8 @@ export default function EnterpriseSeoServices() {
   return (
     <>
       <Head>
-        <title>Enterprise SEO Services | Large-Scale SEO for Complex Sites | 1Solutions</title>
-        <meta name="description" content="Enterprise SEO services from 1Solutions — technical SEO at scale, international SEO, JavaScript SEO, crawl budget optimisation, and BI-integrated reporting for 100K+ page sites." />
+        <title>Enterprise SEO Services | 1Solutions</title>
+        <meta name="description" content="Enterprise SEO services from 1Solutions — technical SEO at scale, international SEO, JavaScript SEO, crawl budget optimisation, and BI-integrated reporting" />
         <meta name="keywords" content="enterprise seo services, enterprise seo agency, large scale seo, enterprise seo company, technical seo enterprise, international seo services" />
         <link rel="canonical" href="https://www.1solutions.biz/enterprise-seo-services/" />
         <meta property="og:title" content="Enterprise SEO Services | 1Solutions" />

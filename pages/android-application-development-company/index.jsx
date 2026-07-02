@@ -299,8 +299,8 @@ export default function AndroidAppDevelopment() {
   return (
     <>
       <Head>
-        <title>Android Application Development Company | Kotlin & Jetpack Compose | 1Solutions</title>
-        <meta name="description" content="Native Android app development in Kotlin & Jetpack Compose — phones, tablets, foldables, Android TV & Wear OS. 150+ apps shipped, Play Store-ready. Free discovery call." />
+        <title>Android Application Development Company | 1Solutions</title>
+        <meta name="description" content="Native Android app development in Kotlin & Jetpack Compose — phones, tablets, foldables, Android TV & Wear OS. 150+ apps shipped, Play Store-ready." />
         <link rel="canonical" href="https://www.1solutions.biz/android-application-development-company/" />
         <meta property="og:title" content="Android Application Development Company | 1Solutions" />
         <meta property="og:description" content="Native Android development in Kotlin & Jetpack Compose — from MVP to enterprise mobility. 150+ apps shipped, 15+ years experience. Phone, tablet, foldable, TV & Wear OS." />

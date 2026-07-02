@@ -114,8 +114,8 @@ export default function EcommerceSeoPackages() {
   return (
     <>
       <Head>
-        <title>Ecommerce SEO Packages | Pricing Plans for Online Stores | 1Solutions</title>
-        <meta name="description" content="Ecommerce SEO packages with transparent monthly and yearly pricing. Starter from $599/mo. Includes product page optimisation, technical SEO, content, and link building for Shopify, WooCommerce, and Magento." />
+        <title>Ecommerce SEO Packages | 1Solutions</title>
+        <meta name="description" content="Ecommerce SEO packages with transparent monthly and yearly pricing. Starter from $599/mo. Includes product page optimisation, technical SEO, content, and" />
         <meta name="keywords" content="ecommerce seo packages, ecommerce seo pricing, ecommerce seo plans, shopify seo packages, woocommerce seo pricing, ecommerce seo services pricing" />
         <link rel="canonical" href="https://www.1solutions.biz/ecommerce-seo-packages/" />
         <meta property="og:title" content="Ecommerce SEO Packages & Pricing | 1Solutions" />

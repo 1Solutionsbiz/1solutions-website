@@ -94,8 +94,8 @@ export default function KlaviyoEmailMarketingAgency() {
   return (
     <>
       <Head>
-        <title>Klaviyo Email Marketing Agency | Klaviyo Flows, Campaigns &amp; SMS | 1Solutions</title>
-        <meta name="description" content="1Solutions is a certified Klaviyo email marketing agency. We set up Klaviyo flows, design email campaigns, build segments, and drive revenue through email & SMS for DTC and e-commerce brands." />
+        <title>Klaviyo Email Marketing Agency | 1Solutions</title>
+        <meta name="description" content="1Solutions is a certified Klaviyo email marketing agency. We set up Klaviyo flows, design email campaigns, build segments, and drive revenue through email &" />
         <link rel="canonical" href="https://www.1solutions.biz/klaviyo-email-marketing-agency/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

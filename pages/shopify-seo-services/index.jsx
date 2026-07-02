@@ -68,7 +68,7 @@ export default function ShopifySeoServices() {
     <>
       <Head>
         <title>Shopify SEO Services | Shopify Store SEO Specialists | 1Solutions</title>
-        <meta name="description" content="Shopify SEO services that fix duplicate URLs, optimise product & collection pages, improve Core Web Vitals, and drive organic revenue. 500+ Shopify stores ranked." />
+        <meta name="description" content="Shopify SEO services that fix duplicate URLs, optimise product & collection pages, improve Core Web Vitals, and drive organic revenue." />
         <meta name="keywords" content="shopify seo services, shopify seo agency, shopify store seo, shopify seo company, shopify product page seo, shopify technical seo" />
         <link rel="canonical" href="https://www.1solutions.biz/shopify-seo-services/" />
         <meta property="og:title" content="Shopify SEO Services | 1Solutions" />

@@ -67,8 +67,8 @@ export default function VoiceSearchOptimizationServices() {
   return (
     <>
       <Head>
-        <title>Voice Search Optimisation Services | Siri, Alexa & Google Assistant SEO | 1Solutions</title>
-        <meta name="description" content="Voice search optimisation services — featured snippet capture, conversational content, FAQ schema, and local voice SEO for Google Assistant, Alexa, and Siri. Rank for spoken queries." />
+        <title>Voice Search Optimisation Services | 1Solutions</title>
+        <meta name="description" content="Voice search optimisation services — featured snippet capture, conversational content, FAQ schema, and local voice SEO for Google Assistant, Alexa, and Siri." />
         <meta name="keywords" content="voice search optimization services, voice seo, voice search seo, featured snippet optimization, alexa seo, google assistant optimization, voice search ranking" />
         <link rel="canonical" href="https://www.1solutions.biz/voice-search-optimization-services/" />
         <meta property="og:title" content="Voice Search Optimisation Services | 1Solutions" />

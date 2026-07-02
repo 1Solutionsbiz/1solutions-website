@@ -163,8 +163,8 @@ export default function AppMaintenanceServices() {
   return (
     <>
       <Head>
-        <title>App Maintenance & Support Services | Mobile & Web App Maintenance | 1Solutions</title>
-        <meta name="description" content="Professional app maintenance services for mobile & web apps. Bug fixes, OS updates, security patches, performance monitoring & App Store compliance. US, Canada & Australia." />
+        <title>App Maintenance & Support Services | 1Solutions</title>
+        <meta name="description" content="Professional app maintenance services for mobile & web apps. Bug fixes, OS updates, security patches, performance monitoring & App Store compliance." />
         <meta name="keywords" content="app maintenance services, mobile app maintenance, app support services, react native maintenance, ios android app maintenance, web app maintenance" />
         <link rel="canonical" href="https://www.1solutions.biz/app-maintenance-services" />
         <meta name="robots" content="index, follow" />

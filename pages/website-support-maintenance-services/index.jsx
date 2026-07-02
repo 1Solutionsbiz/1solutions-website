@@ -256,8 +256,8 @@ export default function WebsiteMaintenanceServices() {
   return (
     <>
       <Head>
-        <title>Website Support & Maintenance Services | Security, Updates & Performance | 1Solutions</title>
-        <meta name="description" content="Professional website maintenance services — CMS updates, security patching, daily backups, uptime monitoring, bug fixes, performance optimisation, and content updates. 15+ years. All CMS platforms supported." />
+        <title>Website Support & Maintenance Services | 1Solutions</title>
+        <meta name="description" content="Professional website maintenance services — CMS updates, security patching, daily backups, uptime monitoring, bug fixes, performance optimisation, and" />
         <link rel="canonical" href="https://www.1solutions.biz/website-support-maintenance-services/" />
         <meta property="og:title" content="Website Support & Maintenance Services | 1Solutions" />
         <meta property="og:description" content="Monthly website maintenance retainers — security patching, CMS updates, daily backups, uptime monitoring, Core Web Vitals, bug fixes, and content updates. All CMS platforms." />

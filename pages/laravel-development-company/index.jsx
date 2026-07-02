@@ -208,8 +208,8 @@ export default function LaravelDevelopmentCompany() {
   return (
     <>
       <Head>
-        <title>Laravel Development Company | Expert Laravel Development Services | 1Solutions</title>
-        <meta name="description" content="1Solutions is a leading Laravel development company with 15+ years experience. We build custom Laravel web apps, SaaS platforms, REST APIs, and e-commerce solutions for US, Canada & Australia." />
+        <title>Laravel Development Company | 1Solutions</title>
+        <meta name="description" content="1Solutions is a leading Laravel development company with 15+ years experience. We build custom Laravel web apps, SaaS platforms, REST APIs, and e-commerce" />
         <meta name="keywords" content="laravel development company, laravel development services, custom laravel development, laravel web application development, laravel api development, laravel saas development, laravel agency" />
         <link rel="canonical" href="https://www.1solutions.biz/laravel-development-company/" />
         <meta property="og:title" content="Laravel Development Company | 1Solutions" />

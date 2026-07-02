@@ -93,7 +93,7 @@ export default function HireTrendingDeveloper() {
   return (
     <>
       <Head>
-        <title>Hire Trending Technology Developer | AI, Web3, Rust & Edge Experts | 1Solutions</title>
+        <title>Hire Trending Technology Developer | 1Solutions</title>
         <meta name="description" content="Hire dedicated developers in AI/LLM integration, Web3, Rust, WebAssembly, and edge computing from 1Solutions. Pre-vetted specialists. Profiles in 48 hours." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-trending-developer/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />

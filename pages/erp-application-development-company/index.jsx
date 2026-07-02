@@ -299,8 +299,8 @@ export default function ErpApplicationDevelopment() {
   return (
     <>
       <Head>
-        <title>ERP Application Development Company | Custom ERP Software | 1Solutions</title>
-        <meta name="description" content="Custom ERP application development — finance, inventory, manufacturing, procurement, HR & supply chain modules built to replace SAP/Oracle at a fraction of the cost. 15+ years | 120+ ERP projects | Free discovery call." />
+        <title>ERP Application Development Company | 1Solutions</title>
+        <meta name="description" content="Custom ERP application development — finance, inventory, manufacturing, procurement, HR & supply chain modules built to replace SAP/Oracle at a fraction of" />
         <link rel="canonical" href="https://www.1solutions.biz/erp-application-development-company/" />
         <meta property="og:title" content="ERP Application Development Company | 1Solutions" />
         <meta property="og:description" content="Custom ERP software — finance, inventory, manufacturing, procurement, HR & supply chain. Replace SAP/Oracle licensing with a platform you own. 15+ years | 120+ ERP projects." />

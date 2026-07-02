@@ -299,8 +299,8 @@ export default function CrmApplicationDevelopment() {
   return (
     <>
       <Head>
-        <title>CRM Application Development Company | Custom CRM Software | 1Solutions</title>
-        <meta name="description" content="Custom CRM application development — sales pipeline automation, marketing CRM, AI lead scoring, ERP integration, mobile CRM apps & white-label CRM platforms. 15+ years | 150+ CRM projects | Free discovery call." />
+        <title>CRM Application Development Company | 1Solutions</title>
+        <meta name="description" content="Custom CRM application development — sales pipeline automation, marketing CRM, AI lead scoring, ERP integration, mobile CRM apps & white-label CRM platforms." />
         <link rel="canonical" href="https://www.1solutions.biz/crm-application-development-company/" />
         <meta property="og:title" content="CRM Application Development Company | 1Solutions" />
         <meta property="og:description" content="Custom CRM software development — sales automation, marketing CRM, AI lead scoring, ERP integration & white-label CRM. 15+ years | 150+ projects | GDPR compliant." />

@@ -100,7 +100,7 @@ export default function HireMagentoDeveloper() {
   return (
     <>
       <Head>
-        <title>Hire Magento Developer | Magento 2 & Adobe Commerce Experts | 1Solutions</title>
+        <title>Hire Magento Developer | 1Solutions</title>
         <meta name="description" content="Hire dedicated Magento developers from 1Solutions. Magento 2, Adobe Commerce, PWA Studio, and ERP integrations. Pre-vetted experts. Profiles in 48 hours." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-magento-developer/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />

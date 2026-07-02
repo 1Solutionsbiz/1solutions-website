@@ -134,8 +134,8 @@ export default function OffshoreDevCompany() {
   return (
     <>
       <Head>
-        <title>Offshore Development Company | Dedicated Offshore Teams | 1Solutions</title>
-        <meta name="description" content="Offshore software development company — dedicated offshore development teams, staff augmentation, and fixed-price project delivery. Senior developers in India at 60–70% below US/UK rates. 15+ years experience serving US, UK, AU clients." />
+        <title>Offshore Development Company | 1Solutions</title>
+        <meta name="description" content="Offshore software development company — dedicated offshore development teams, staff augmentation, and fixed-price project delivery." />
         <link rel="canonical" href="https://www.1solutions.biz/offshore-development-company/" />
         <meta property="og:title" content="Offshore Development Company | Dedicated Teams | 1Solutions" />
         <meta property="og:description" content="Hire dedicated offshore development teams from India. 60–70% cost savings vs US/UK rates. Senior developers across React, Node.js, Python, Mobile, DevOps, AI/ML." />

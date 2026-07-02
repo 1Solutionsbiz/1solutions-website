@@ -150,7 +150,7 @@ export default function HireAIDeveloper() {
     <>
       <Head>
         <title>Hire AI Developer | LLM, RAG, AI Agents Expert | 1Solutions</title>
-        <meta name="description" content="Hire expert AI developers from 1Solutions — LLM integration, RAG pipelines, AI agents, OpenAI/Anthropic/Gemini APIs, LangChain, vector databases, fine-tuning, and production AI product development. Dedicated, part-time, or hourly." />
+        <meta name="description" content="Hire expert AI developers from 1Solutions — LLM integration, RAG pipelines, AI agents, OpenAI/Anthropic/Gemini APIs, LangChain, vector databases," />
         <link rel="canonical" href="https://www.1solutions.biz/hire-ai-developer/" />
         <meta property="og:title" content="Hire AI Developer | LLM, RAG & AI Agents | 1Solutions" />
         <meta property="og:description" content="Hire vetted AI developers — GPT-4o/Claude/Gemini integration, RAG, AI agents, LangChain, vector databases, fine-tuning. Dedicated, part-time, or hourly. Start in 3–5 days." />

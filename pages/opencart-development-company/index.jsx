@@ -207,8 +207,8 @@ export default function OpenCartDevelopmentCompany() {
   return (
     <>
       <Head>
-        <title>OpenCart Development Company | Expert OpenCart Development Services | 1Solutions</title>
-        <meta name="description" content="1Solutions is a leading OpenCart development company with 15+ years experience. We build custom OpenCart stores, extensions, and multi-store setups for US, Canada & Australia." />
+        <title>OpenCart Development Company | 1Solutions</title>
+        <meta name="description" content="1Solutions is a leading OpenCart development company with 15+ years experience. We build custom OpenCart stores, extensions, and multi-store setups for US," />
         <meta name="keywords" content="opencart development company, opencart development services, custom opencart store, opencart extension development, opencart agency, opencart developer" />
         <link rel="canonical" href="https://www.1solutions.biz/opencart-development-company/" />
         <meta property="og:title" content="OpenCart Development Company | 1Solutions" />

@@ -80,7 +80,7 @@ export default function CorporateResponsibility() {
     <>
       <Head>
         <title>Corporate Responsibility | 1Solutions</title>
-        <meta name="description" content="Learn how 1Solutions gives back to the community through environmental initiatives, free digital literacy programmes, ethical business practices, and skill development." />
+        <meta name="description" content="Learn how 1Solutions gives back to the community through environmental initiatives, free digital literacy programmes, ethical business practices, and skill" />
         <link rel="canonical" href={`${siteUrl}/corporate-responsibility/`} />
         <meta property="og:title" content="Corporate Responsibility | 1Solutions" />
         <meta property="og:description" content="Our commitment to environment, community, education, and ethical business — because technology should create value for everyone." />

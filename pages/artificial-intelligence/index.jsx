@@ -59,8 +59,8 @@ export default function ArtificialIntelligence() {
   return (
     <>
       <Head>
-        <title>AI Solutions & Development Services | Machine Learning & Automation | 1Solutions</title>
-        <meta name="description" content="AI development services — machine learning models, NLP, computer vision, AI automation, and custom AI integrations. Build intelligent products and automate complex processes with AI." />
+        <title>AI Solutions & Development Services | 1Solutions</title>
+        <meta name="description" content="AI development services — machine learning models, NLP, computer vision, AI automation, and custom AI integrations." />
         <meta name="keywords" content="ai solutions, machine learning development, nlp services, computer vision, generative ai integration, artificial intelligence company india" />
         <link rel="canonical" href="https://www.1solutions.biz/artificial-intelligence/" />
         <meta property="og:title" content="AI Solutions & Development Services | 1Solutions" />

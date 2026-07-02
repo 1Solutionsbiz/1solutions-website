@@ -99,8 +99,8 @@ export default function HireFullStackDeveloper() {
   return (
     <>
       <Head>
-        <title>Hire Full Stack Developer | MERN, MEAN, Next.js Experts | 1Solutions</title>
-        <meta name="description" content="Hire dedicated full-stack developers from 1Solutions. MERN, MEAN, Django, and Next.js expertise. Pre-vetted engineers available for immediate engagement. Profiles in 48 hours." />
+        <title>Hire Full Stack Developer | 1Solutions</title>
+        <meta name="description" content="Hire dedicated full-stack developers from 1Solutions. MERN, MEAN, Django, and Next.js expertise. Pre-vetted engineers available for immediate engagement." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-full-stack-developer/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

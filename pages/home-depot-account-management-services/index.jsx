@@ -131,7 +131,7 @@ export default function HomeDepotAccountManagement() {
     <>
       <Head>
         <title>Home Depot Marketplace Account Management Services | 1Solutions</title>
-        <meta name="description" content="Grow on Home Depot Marketplace with 1Solutions. We manage supplier accounts, product data compliance, Direct Shipment Vendor (DSV) setup, listing optimisation, and Home Depot advertising." />
+        <meta name="description" content="Grow on Home Depot Marketplace with 1Solutions. We manage supplier accounts, product data compliance, Direct Shipment Vendor (DSV) setup, listing" />
         <link rel="canonical" href="https://1solutions.biz/home-depot-account-management-services/" />
       </Head>
 

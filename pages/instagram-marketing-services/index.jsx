@@ -64,8 +64,8 @@ export default function InstagramMarketingServices() {
   return (
     <>
       <Head>
-        <title>Instagram Marketing Services | Instagram Management & Reels Agency | 1Solutions</title>
-        <meta name="description" content="Instagram marketing services — content strategy, Reels production, Instagram Ads, Shopping setup, and community management. Grow your Instagram presence with a specialist social media team." />
+        <title>Instagram Marketing Services | 1Solutions</title>
+        <meta name="description" content="Instagram marketing services — content strategy, Reels production, Instagram Ads, Shopping setup, and community management." />
         <meta name="keywords" content="instagram marketing services, instagram management agency, instagram reels marketing, instagram ads management, instagram marketing agency, social media marketing instagram" />
         <link rel="canonical" href="https://www.1solutions.biz/instagram-marketing-services/" />
         <meta property="og:title" content="Instagram Marketing Services | 1Solutions" />

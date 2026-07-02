@@ -64,8 +64,8 @@ export default function DigitalMarketingServices() {
   return (
     <>
       <Head>
-        <title>Digital Marketing Services | SEO, PPC, Social Media & Content | 1Solutions</title>
-        <meta name="description" content="Digital marketing services — SEO, Google Ads, social media marketing, content marketing, email, ecommerce, and Amazon marketing. 15+ years of experience across 600+ clients in 40+ industries." />
+        <title>Digital Marketing Services | 1Solutions</title>
+        <meta name="description" content="Digital marketing services — SEO, Google Ads, social media marketing, content marketing, email, ecommerce, and Amazon marketing." />
         <meta name="keywords" content="digital marketing services, seo services, ppc advertising, social media marketing, content marketing, email marketing, ecommerce marketing, digital marketing company india" />
         <link rel="canonical" href="https://www.1solutions.biz/digital-marketing-services/" />
         <meta property="og:title" content="Digital Marketing Services | 1Solutions" />

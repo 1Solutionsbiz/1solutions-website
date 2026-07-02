@@ -211,8 +211,8 @@ export default function ShopifyStoreDevelopment() {
   return (
     <>
       <Head>
-        <title>Shopify Store Development Company | Expert Shopify Development Services | 1Solutions</title>
-        <meta name="description" content="1Solutions is a leading Shopify store development company with 15+ years experience. We build custom Shopify stores, Shopify Plus solutions, and Shopify apps for US, Canada & Australia." />
+        <title>Shopify Store Development Company | 1Solutions</title>
+        <meta name="description" content="1Solutions is a leading Shopify store development company with 15+ years experience. We build custom Shopify stores, Shopify Plus solutions, and Shopify" />
         <meta name="keywords" content="shopify store development, shopify development company, shopify development services, custom shopify store, shopify plus development, shopify agency" />
         <link rel="canonical" href="https://www.1solutions.biz/shopify-store-development/" />
         <meta property="og:title" content="Shopify Store Development Company | 1Solutions" />

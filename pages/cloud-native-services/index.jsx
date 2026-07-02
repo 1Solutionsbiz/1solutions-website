@@ -256,8 +256,8 @@ export default function CloudNativeServices() {
   return (
     <>
       <Head>
-        <title>Cloud Native Services | Microservices, Kubernetes, Kafka, Serverless | 1Solutions</title>
-        <meta name="description" content="Expert cloud native development services — microservices architecture, Kubernetes containerisation, Apache Kafka event streaming, serverless applications, service mesh (Istio), GitOps, cloud native security, and dedicated cloud native engineering teams. 15+ years." />
+        <title>Cloud Native Services | 1Solutions</title>
+        <meta name="description" content="Expert cloud native development services — microservices architecture, Kubernetes containerisation, Apache Kafka event streaming, serverless applications," />
         <link rel="canonical" href="https://www.1solutions.biz/cloud-native-services/" />
         <meta property="og:title" content="Cloud Native Services | Microservices, Kubernetes & Kafka | 1Solutions" />
         <meta property="og:description" content="Cloud native architecture design, microservices development, Kubernetes, Apache Kafka, serverless, Istio service mesh, GitOps, observability, and dedicated cloud native teams." />

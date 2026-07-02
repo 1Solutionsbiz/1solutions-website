@@ -98,7 +98,7 @@ export default function HirePrestaShopDeveloper() {
     <>
       <Head>
         <title>Hire PrestaShop Developer | Module & Theme Experts | 1Solutions</title>
-        <meta name="description" content="Hire dedicated PrestaShop developers from 1Solutions. Custom module & theme development, migrations, and multi-store setups. Pre-vetted experts. Profiles in 48 hours." />
+        <meta name="description" content="Hire dedicated PrestaShop developers from 1Solutions. Custom module & theme development, migrations, and multi-store setups. Pre-vetted experts." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-prestashop-developer/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

@@ -227,8 +227,8 @@ export default function PrototypingServices() {
   return (
     <>
       <Head>
-        <title>Prototyping Services | Interactive Wireframes & User Flows | 1Solutions</title>
-        <meta name="description" content="From low-fi wireframes to pixel-perfect interactive prototypes, 1Solutions helps you test concepts, align stakeholders, and ship with confidence. 400+ prototypes delivered." />
+        <title>Prototyping Services | 1Solutions</title>
+        <meta name="description" content="From low-fi wireframes to pixel-perfect interactive prototypes, 1Solutions helps you test concepts, align stakeholders, and ship with confidence." />
         <meta name="keywords" content="prototyping services, interactive wireframes, figma prototype, UX prototyping, clickable prototype, wireframing agency, product design prototyping" />
         <link rel="canonical" href="https://www.1solutions.biz/prototyping-services" />
         <meta property="og:title" content="Prototyping Services | Interactive Wireframes & User Flows | 1Solutions" />

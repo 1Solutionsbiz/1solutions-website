@@ -134,8 +134,8 @@ export default function SoftwareCostOptimization() {
   return (
     <>
       <Head>
-        <title>Software Development Cost Optimization | Reduce Engineering Spend 40–65% | 1Solutions</title>
-        <meta name="description" content="Software development cost optimization — reduce engineering spend by 40–65% through offshore team transition, cloud cost reduction, technical debt elimination, test automation, and process efficiency. Free cost audit with quantified savings roadmap." />
+        <title>Software Development Cost Optimization | 1Solutions</title>
+        <meta name="description" content="Software development cost optimization — reduce engineering spend by 40–65% through offshore team transition, cloud cost reduction, technical debt" />
         <link rel="canonical" href="https://www.1solutions.biz/software-development-cost-optimization/" />
         <meta property="og:title" content="Software Development Cost Optimization | 1Solutions" />
         <meta property="og:description" content="Reduce software development costs by 40–65%. Offshore transition, cloud cost reduction (20–40% savings), technical debt elimination, and test automation ROI." />

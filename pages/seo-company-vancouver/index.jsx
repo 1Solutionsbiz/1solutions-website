@@ -122,8 +122,8 @@ export default function SeoCompanyVancouver() {
   return (
     <>
       <Head>
-        <title>SEO Company in Vancouver | Best SEO Agency Metro Vancouver | 1Solutions</title>
-        <meta name="description" content="Looking for the best SEO company in Vancouver? 1Solutions delivers Page 1 Google rankings for Vancouver businesses — technical SEO, local SEO, link building & content strategy. Free SEO audit." />
+        <title>SEO Company in Vancouver | 1Solutions</title>
+        <meta name="description" content="Looking for the best SEO company in Vancouver? 1Solutions delivers Page 1 Google rankings for Vancouver businesses — technical SEO, local SEO, link building" />
         <meta name="keywords" content="SEO company in Vancouver, SEO agency Vancouver, SEO services Vancouver, best SEO company Vancouver, Vancouver SEO, search engine optimization Vancouver BC" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://1solutions.biz/seo-company-vancouver/" />

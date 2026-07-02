@@ -93,7 +93,7 @@ export default function HireVrDeveloper() {
   return (
     <>
       <Head>
-        <title>Hire VR Developer | Unity, Unreal & Meta Quest Experts | 1Solutions</title>
+        <title>Hire VR Developer | 1Solutions</title>
         <meta name="description" content="Hire dedicated VR/AR developers from 1Solutions. Unity, Unreal Engine 5, Meta Quest, Apple Vision Pro, and WebXR specialists. Pre-vetted profiles in 48 hours." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-vr-developer/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />

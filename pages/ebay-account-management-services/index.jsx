@@ -131,8 +131,8 @@ export default function EbayAccountManagement() {
   return (
     <>
       <Head>
-        <title>eBay Account Management Services | Seller Optimisation Experts | 1Solutions</title>
-        <meta name="description" content="Maximise eBay sales with 1Solutions. We manage your eBay store, listing optimisation, Promoted Listings, Top Rated Seller strategy, and Cassini SEO for sustainable growth." />
+        <title>eBay Account Management Services | 1Solutions</title>
+        <meta name="description" content="Maximise eBay sales with 1Solutions. We manage your eBay store, listing optimisation, Promoted Listings, Top Rated Seller strategy, and Cassini SEO for" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://1solutions.biz/ebay-account-management-services/" />
         <style>{`

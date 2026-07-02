@@ -63,7 +63,7 @@ export default function LinkedinAdsManagement() {
   return (
     <>
       <Head>
-        <title>LinkedIn Ads Management | B2B Lead Generation Specialists | 1Solutions</title>
+        <title>LinkedIn Ads Management | 1Solutions</title>
         <meta name="description" content="LinkedIn advertising management by 1Solutions — Sponsored Content, Message Ads, Lead Gen Forms, and account-based targeting for B2B businesses." />
         <link rel="canonical" href="https://www.1solutions.biz/linkedin-ads-management/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />

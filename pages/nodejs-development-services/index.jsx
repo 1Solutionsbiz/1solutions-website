@@ -93,8 +93,8 @@ export default function NodeJsDevelopmentServices() {
   return (
     <>
       <Head>
-        <title>Node.js Development Services | Scalable Backend &amp; API Development | 1Solutions</title>
-        <meta name="description" content="Expert Node.js development services from 1Solutions. We build scalable REST APIs, real-time applications, microservices, and full-stack Node.js solutions for startups and enterprises." />
+        <title>Node.js Development Services | 1Solutions</title>
+        <meta name="description" content="Expert Node.js development services from 1Solutions. We build scalable REST APIs, real-time applications, microservices, and full-stack Node." />
         <link rel="canonical" href="https://www.1solutions.biz/nodejs-development-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

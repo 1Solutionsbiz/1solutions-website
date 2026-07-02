@@ -207,8 +207,8 @@ export default function WooCommerceDevelopmentCompany() {
   return (
     <>
       <Head>
-        <title>WooCommerce Development Company | Expert WooCommerce Development Services | 1Solutions</title>
-        <meta name="description" content="1Solutions is a leading WooCommerce development company with 15+ years experience. We build custom WooCommerce stores, plugins, and B2B solutions for US, Canada & Australia." />
+        <title>WooCommerce Development Company | 1Solutions</title>
+        <meta name="description" content="1Solutions is a leading WooCommerce development company with 15+ years experience. We build custom WooCommerce stores, plugins, and B2B solutions for US," />
         <meta name="keywords" content="woocommerce development company, woocommerce development services, custom woocommerce store, woocommerce plugin development, woocommerce agency" />
         <link rel="canonical" href="https://www.1solutions.biz/woocommerce-development-company/" />
         <meta property="og:title" content="WooCommerce Development Company | 1Solutions" />

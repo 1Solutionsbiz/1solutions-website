@@ -231,8 +231,8 @@ export default function HeadlessWordPressDevelopment() {
   return (
     <>
       <Head>
-        <title>Headless WordPress Development Company | WPGraphQL and Next.js Experts | 1Solutions</title>
-        <meta name="description" content="1Solutions is a leading headless WordPress development company. We build blazing-fast decoupled WordPress websites using Next.js, WPGraphQL, and React for clients worldwide." />
+        <title>Headless WordPress Development Company | 1Solutions</title>
+        <meta name="description" content="1Solutions is a leading headless WordPress development company. We build blazing-fast decoupled WordPress websites using Next." />
         <meta name="keywords" content="headless wordpress development, headless wordpress development company, headless CMS wordpress, decoupled wordpress, wordpress next.js development, wpgraphql development, headless wordpress agency" />
         <link rel="canonical" href="https://www.1solutions.biz/headless-wordpress-development/" />
         <meta property="og:title" content="Headless WordPress Development Company | WPGraphQL and Next.js | 1Solutions" />

@@ -294,8 +294,8 @@ export default function MobileAppDesign() {
   return (
     <>
       <Head>
-        <title>Mobile App Design Company | iOS &amp; Android UI/UX Design | 1Solutions</title>
-        <meta name="description" content="1Solutions is a mobile app design company with 16+ years experience. We design intuitive iOS and Android UI/UX — from concept to pixel-perfect Figma handoff. 200+ apps delivered, 4.8 avg App Store rating." />
+        <title>Mobile App Design Company | 1Solutions</title>
+        <meta name="description" content="1Solutions is a mobile app design company with 16+ years experience. We design intuitive iOS and Android UI/UX — from concept to pixel-perfect Figma handoff." />
         <meta name="keywords" content="mobile app design company, iOS app design, Android app design, UI UX design, app design services, Figma app design, mobile UI design" />
         <link rel="canonical" href="https://www.1solutions.biz/mobile-app-design" />
         <meta property="og:title" content="Mobile App Design Company | iOS &amp; Android UI/UX Design | 1Solutions" />

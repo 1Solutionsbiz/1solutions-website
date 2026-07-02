@@ -67,8 +67,8 @@ export default function WoocommerceSeoServices() {
   return (
     <>
       <Head>
-        <title>WooCommerce SEO Services | WooCommerce Store SEO Experts | 1Solutions</title>
-        <meta name="description" content="WooCommerce SEO services — fix faceted navigation, duplicate content, and slow page load. Specialist WooCommerce SEO that drives organic revenue for WordPress stores." />
+        <title>WooCommerce SEO Services | 1Solutions</title>
+        <meta name="description" content="WooCommerce SEO services — fix faceted navigation, duplicate content, and slow page load. Specialist WooCommerce SEO that drives organic revenue for" />
         <meta name="keywords" content="woocommerce seo services, woocommerce seo agency, woocommerce seo company, woocommerce technical seo, wordpress ecommerce seo" />
         <link rel="canonical" href="https://www.1solutions.biz/woocommerce-seo-services/" />
         <meta property="og:title" content="WooCommerce SEO Services | 1Solutions" />

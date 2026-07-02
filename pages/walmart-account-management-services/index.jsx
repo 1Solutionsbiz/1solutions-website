@@ -132,7 +132,7 @@ export default function WalmartAccountManagement() {
     <>
       <Head>
         <title>Walmart Marketplace Account Management Services | 1Solutions</title>
-        <meta name="description" content="Grow on Walmart Marketplace with 1Solutions. We manage Seller Center, Walmart listings, WFS setup, Walmart Connect advertising, and performance optimisation for US brands." />
+        <meta name="description" content="Grow on Walmart Marketplace with 1Solutions. We manage Seller Center, Walmart listings, WFS setup, Walmart Connect advertising, and performance optimisation" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://1solutions.biz/walmart-account-management-services/" />
         <style>{`

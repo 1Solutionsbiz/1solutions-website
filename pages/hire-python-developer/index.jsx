@@ -97,8 +97,8 @@ export default function HirePythonDeveloper() {
   return (
     <>
       <Head>
-        <title>Hire Python Developer | Django, FastAPI & Flask Experts | 1Solutions</title>
-        <meta name="description" content="Hire dedicated Python developers from 1Solutions. Django, FastAPI, Flask, and data engineering experts. Pre-vetted engineers available immediately. Profiles in 48 hours." />
+        <title>Hire Python Developer | 1Solutions</title>
+        <meta name="description" content="Hire dedicated Python developers from 1Solutions. Django, FastAPI, Flask, and data engineering experts. Pre-vetted engineers available immediately." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-python-developer/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

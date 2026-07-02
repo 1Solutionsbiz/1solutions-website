@@ -207,8 +207,8 @@ export default function CodeIgniterDevelopmentCompany() {
   return (
     <>
       <Head>
-        <title>CodeIgniter Development Company | Expert CodeIgniter Development Services | 1Solutions</title>
-        <meta name="description" content="1Solutions is a leading CodeIgniter development company with 15+ years experience. We build custom CodeIgniter web applications, REST APIs, portals, and legacy upgrades for US, Canada & Australia." />
+        <title>CodeIgniter Development Company | 1Solutions</title>
+        <meta name="description" content="1Solutions is a leading CodeIgniter development company with 15+ years experience. We build custom CodeIgniter web applications, REST APIs, portals, and" />
         <meta name="keywords" content="codeigniter development company, codeigniter development services, codeigniter web application, codeigniter rest api, codeigniter developer, codeigniter agency" />
         <link rel="canonical" href="https://www.1solutions.biz/codeigniter-development-company/" />
         <meta property="og:title" content="CodeIgniter Development Company | 1Solutions" />

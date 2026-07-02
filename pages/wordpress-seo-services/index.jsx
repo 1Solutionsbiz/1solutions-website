@@ -70,7 +70,7 @@ export default function WordPressSeoServices() {
   return (
     <>
       <Head>
-        <title>WordPress SEO Services | Yoast, Rank Math & Core Web Vitals Experts | 1Solutions</title>
+        <title>WordPress SEO Services | 1Solutions</title>
         <meta name="description" content="Expert WordPress SEO services — technical audits, Yoast/Rank Math setup, Core Web Vitals, plugin optimisation, and content strategy to grow organic traffic." />
         <meta name="keywords" content="wordpress seo services, wordpress seo agency, wordpress seo company, wordpress technical seo, yoast seo setup, rank math configuration" />
         <link rel="canonical" href="https://www.1solutions.biz/wordpress-seo-services/" />

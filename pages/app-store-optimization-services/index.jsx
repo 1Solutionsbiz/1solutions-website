@@ -67,8 +67,8 @@ export default function AppStoreOptimizationServices() {
   return (
     <>
       <Head>
-        <title>App Store Optimisation (ASO) Services | iOS & Android ASO Agency | 1Solutions</title>
-        <meta name="description" content="App Store Optimisation (ASO) services for iOS and Android — keyword research, metadata optimisation, screenshot strategy, rating management, and A/B testing to grow organic installs." />
+        <title>App Store Optimisation (ASO) Services | 1Solutions</title>
+        <meta name="description" content="App Store Optimisation (ASO) services for iOS and Android — keyword research, metadata optimisation, screenshot strategy, rating management, and A/B testing" />
         <meta name="keywords" content="app store optimization services, aso services, app store seo, google play optimization, ios aso, android aso, aso agency" />
         <link rel="canonical" href="https://www.1solutions.biz/app-store-optimization-services/" />
         <meta property="og:title" content="App Store Optimisation Services | 1Solutions" />

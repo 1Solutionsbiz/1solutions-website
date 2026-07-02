@@ -295,8 +295,8 @@ export default function IosAppDevelopment() {
   return (
     <>
       <Head>
-        <title>iOS App Development Company | Swift & SwiftUI | iPhone, iPad & Apple Watch | 1Solutions</title>
-        <meta name="description" content="Native iOS app development in Swift & SwiftUI — iPhone, iPad, Apple Watch, Apple TV. ARKit, Core ML, HealthKit & StoreKit 2. 120+ apps shipped. Free discovery call." />
+        <title>iOS App Development Company | 1Solutions</title>
+        <meta name="description" content="Native iOS app development in Swift & SwiftUI — iPhone, iPad, Apple Watch, Apple TV. ARKit, Core ML, HealthKit & StoreKit 2. 120+ apps shipped." />
         <link rel="canonical" href="https://www.1solutions.biz/ios-app-development-company/" />
         <meta property="og:title" content="iOS App Development Company | Swift & SwiftUI | 1Solutions" />
         <meta property="og:description" content="Native iOS development in Swift & SwiftUI — iPhone, iPad, Apple Watch & Apple TV. ARKit, Core ML, HealthKit, Apple Pay. 120+ apps. 15+ years experience." />

@@ -64,8 +64,8 @@ export default function LogoDesignServices() {
   return (
     <>
       <Head>
-        <title>Logo Design Services | Professional Brand Logo Design Agency | 1Solutions</title>
-        <meta name="description" content="Professional logo design services — custom brand logos, identity systems, and brand guidelines. 500+ logos designed across all industries. Full IP ownership included." />
+        <title>Logo Design Services | 1Solutions</title>
+        <meta name="description" content="Professional logo design services — custom brand logos, identity systems, and brand guidelines. 500+ logos designed across all industries." />
         <meta name="keywords" content="logo design services, professional logo design, brand logo design, custom logo design, logo design agency, brand identity design" />
         <link rel="canonical" href="https://www.1solutions.biz/logo-design-services/" />
         <meta property="og:title" content="Logo Design Services | 1Solutions" />

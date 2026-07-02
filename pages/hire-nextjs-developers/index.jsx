@@ -93,8 +93,8 @@ export default function HireNextJsDevelopers() {
   return (
     <>
       <Head>
-        <title>Hire Next.js Developers | Next.js 14 App Router &amp; React Experts | 1Solutions</title>
-        <meta name="description" content="Hire dedicated Next.js developers from 1Solutions. Next.js 14 App Router, Server Components, TypeScript, and Vercel deployment experts. Pre-vetted. Profiles in 48 hours." />
+        <title>Hire Next.js Developers | 1Solutions</title>
+        <meta name="description" content="Hire dedicated Next.js developers from 1Solutions. Next.js 14 App Router, Server Components, TypeScript, and Vercel deployment experts. Pre-vetted." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-nextjs-developers/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

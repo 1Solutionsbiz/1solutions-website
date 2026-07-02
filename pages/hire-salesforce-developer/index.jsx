@@ -134,8 +134,8 @@ export default function HireSalesforceDeveloper() {
   return (
     <>
       <Head>
-        <title>Hire Salesforce Developer | Apex, LWC, CPQ, Flow, Integration | 1Solutions</title>
-        <meta name="description" content="Hire certified Salesforce developers from 1Solutions — Apex, LWC, Flow automation, Sales Cloud, Service Cloud, CPQ, Experience Cloud, and Salesforce integrations. Dedicated, part-time, or fixed-scope. Start in 3–5 days." />
+        <title>Hire Salesforce Developer | 1Solutions</title>
+        <meta name="description" content="Hire certified Salesforce developers from 1Solutions — Apex, LWC, Flow automation, Sales Cloud, Service Cloud, CPQ, Experience Cloud, and Salesforce" />
         <link rel="canonical" href="https://www.1solutions.biz/hire-salesforce-developer/" />
         <meta property="og:title" content="Hire Salesforce Developer | Apex, LWC, CPQ, Flow | 1Solutions" />
         <meta property="og:description" content="Hire certified Salesforce developers — Apex, LWC, Flow, Sales Cloud, Service Cloud, CPQ, integrations. Dedicated, part-time, or fixed-scope." />

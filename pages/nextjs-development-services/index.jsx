@@ -256,8 +256,8 @@ export default function NextjsDevelopmentServices() {
   return (
     <>
       <Head>
-        <title>Next.js Development Services | App Router, SaaS, Headless eCommerce | 1Solutions</title>
-        <meta name="description" content="Expert Next.js development — custom web apps, SaaS platforms, headless eCommerce, App Router, React Server Components, headless CMS integration, React SPA migration, and dedicated Next.js teams. 15+ years." />
+        <title>Next.js Development Services | 1Solutions</title>
+        <meta name="description" content="Expert Next.js development — custom web apps, SaaS platforms, headless eCommerce, App Router, React Server Components, headless CMS integration, React SPA" />
         <link rel="canonical" href="https://www.1solutions.biz/nextjs-development-services/" />
         <meta property="og:title" content="Next.js Development Services | 1Solutions" />
         <meta property="og:description" content="Next.js App Router development — SaaS platforms, headless eCommerce, full-stack Next.js, React migration, Core Web Vitals optimisation, and dedicated Next.js development teams." />

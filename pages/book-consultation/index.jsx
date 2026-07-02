@@ -74,7 +74,7 @@ export default function BookConsultation() {
     <>
       <Head>
         <title>Book a Free Consultation | 1Solutions</title>
-        <meta name="description" content="Schedule a free 30-minute consultation with our experts. Discuss your project goals, get a custom strategy, and learn how 1Solutions can help your business grow online." />
+        <meta name="description" content="Schedule a free 30-minute consultation with our experts. Discuss your project goals, get a custom strategy, and learn how 1Solutions can help your business" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.1solutions.biz/book-consultation" />
         <style>{`

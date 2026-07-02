@@ -132,7 +132,7 @@ export default function SeoCompanyDelhi() {
     <>
       <Head>
         <title>SEO Company in Delhi | Best SEO Agency Delhi NCR | 1Solutions</title>
-        <meta name="description" content="Looking for the best SEO company in Delhi? 1Solutions delivers Page 1 rankings for Delhi businesses — technical SEO, local SEO, link building, and content strategy. Get a free SEO audit today." />
+        <meta name="description" content="Looking for the best SEO company in Delhi? 1Solutions delivers Page 1 rankings for Delhi businesses — technical SEO, local SEO, link building, and content" />
         <meta name="keywords" content="SEO company in Delhi, SEO agency Delhi, SEO services Delhi, best SEO company Delhi, SEO company Delhi NCR, search engine optimization Delhi" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://1solutions.biz/seo-company-delhi/" />

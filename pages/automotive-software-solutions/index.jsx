@@ -299,8 +299,8 @@ export default function AutomotiveSoftwareSolutions() {
   return (
     <>
       <Head>
-        <title>Automotive Software Development Company | Connected Vehicle & ADAS | 1Solutions</title>
-        <meta name="description" content="Custom automotive software development — connected vehicle platforms, ADAS, fleet management, EV software, IVI systems & dealership management. 15+ years | ISO 26262 | Free discovery call." />
+        <title>Automotive Software Development Company | 1Solutions</title>
+        <meta name="description" content="Custom automotive software development — connected vehicle platforms, ADAS, fleet management, EV software, IVI systems & dealership management." />
         <link rel="canonical" href="https://www.1solutions.biz/automotive-software-solutions/" />
         <meta property="og:title" content="Automotive Software Development Company | 1Solutions" />
         <meta property="og:description" content="Custom automotive software — connected vehicles, ADAS, fleet management, EV software, telematics & dealership management systems. ISO 26262 | 15+ years | 60+ automotive clients." />

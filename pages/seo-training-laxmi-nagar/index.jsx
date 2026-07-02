@@ -64,8 +64,8 @@ export default function SeoTrainingLaxmiNagar() {
   return (
     <>
       <Head>
-        <title>SEO Training in Laxmi Nagar | Professional SEO Course Delhi | 1Solutions</title>
-        <meta name="description" content="SEO training in Laxmi Nagar, Delhi — professional SEO course taught by working SEO practitioners. Small batches, live project work, placement support, and 30-day post-training mentorship." />
+        <title>SEO Training in Laxmi Nagar | 1Solutions</title>
+        <meta name="description" content="SEO training in Laxmi Nagar, Delhi — professional SEO course taught by working SEO practitioners. Small batches, live project work, placement support, and" />
         <meta name="keywords" content="seo training laxmi nagar, seo course laxmi nagar, seo training delhi, seo institute laxmi nagar, seo classes laxmi nagar, digital marketing course laxmi nagar, seo training east delhi" />
         <link rel="canonical" href="https://www.1solutions.biz/seo-training-laxmi-nagar/" />
         <meta property="og:title" content="SEO Training in Laxmi Nagar | 1Solutions" />

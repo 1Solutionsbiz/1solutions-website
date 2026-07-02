@@ -131,8 +131,8 @@ export default function EtsyAccountManagement() {
   return (
     <>
       <Head>
-        <title>Etsy Shop Management Services | Etsy SEO & Ads Experts | 1Solutions</title>
-        <meta name="description" content="Grow your Etsy shop with 1Solutions. We optimise listings with Etsy SEO tags, manage Etsy Ads, pursue Star Seller status, and build your shop into a consistent revenue channel." />
+        <title>Etsy Shop Management Services | 1Solutions</title>
+        <meta name="description" content="Grow your Etsy shop with 1Solutions. We optimise listings with Etsy SEO tags, manage Etsy Ads, pursue Star Seller status, and build your shop into a" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://1solutions.biz/etsy-account-management-services/" />
         <style>{`

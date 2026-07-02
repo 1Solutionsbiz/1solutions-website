@@ -124,8 +124,8 @@ export default function WellnessSoftware() {
   return (
     <>
       <Head>
-        <title>Wellness Software Development | Mental Health App, Fitness Platform, Corporate Wellness | 1Solutions</title>
-        <meta name="description" content="Custom wellness software development — mental health apps, fitness and coaching platforms, corporate wellness portals, nutrition apps, meditation apps, wearable integration, and HIPAA/GDPR compliance. 65+ wellness projects. 15+ years." />
+        <title>Wellness Software Development | 1Solutions</title>
+        <meta name="description" content="Custom wellness software development — mental health apps, fitness and coaching platforms, corporate wellness portals, nutrition apps, meditation apps," />
         <link rel="canonical" href="https://www.1solutions.biz/wellness-software-development/" />
         <meta property="og:title" content="Wellness Software Development | Digital Health & Wellbeing Tech | 1Solutions" />
         <meta property="og:description" content="Mental health apps, fitness coaching platforms, corporate wellness portals, nutrition apps, wearable integration, and HIPAA compliance. 65+ digital wellness projects." />

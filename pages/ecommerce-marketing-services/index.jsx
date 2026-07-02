@@ -64,8 +64,8 @@ export default function EcommerceMarketingServices() {
   return (
     <>
       <Head>
-        <title>Ecommerce Marketing Services | Google Shopping, SEO & Email for Online Stores | 1Solutions</title>
-        <meta name="description" content="Ecommerce marketing services — SEO, Google Shopping, paid social, email automation, and CRO for online stores. Revenue-focused ecommerce marketing across Shopify, WooCommerce, and Magento." />
+        <title>Ecommerce Marketing Services | 1Solutions</title>
+        <meta name="description" content="Ecommerce marketing services — SEO, Google Shopping, paid social, email automation, and CRO for online stores." />
         <meta name="keywords" content="ecommerce marketing services, ecommerce seo, google shopping management, ecommerce marketing agency, shopify marketing, woocommerce marketing, online store marketing" />
         <link rel="canonical" href="https://www.1solutions.biz/ecommerce-marketing-services/" />
         <meta property="og:title" content="Ecommerce Marketing Services | 1Solutions" />

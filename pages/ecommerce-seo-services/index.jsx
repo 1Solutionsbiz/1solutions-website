@@ -80,7 +80,7 @@ export default function EcommerceSeoServices() {
   return (
     <>
       <Head>
-        <title>eCommerce SEO Services | Shopify, WooCommerce & Magento SEO | 1Solutions</title>
+        <title>eCommerce SEO Services | 1Solutions</title>
         <meta name="description" content="eCommerce SEO for Shopify, WooCommerce, and Magento. Product & category page optimisation, technical SEO, structured data, and Google Shopping feed management." />
         <link rel="canonical" href="https://www.1solutions.biz/ecommerce-seo-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />

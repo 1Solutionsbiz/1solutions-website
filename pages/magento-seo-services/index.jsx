@@ -69,7 +69,7 @@ export default function MagentoSeoServices() {
     <>
       <Head>
         <title>Magento SEO Services | Adobe Commerce SEO Experts | 1Solutions</title>
-        <meta name="description" content="Magento SEO services that fix layered navigation, duplicate content, and Core Web Vitals. Specialists in Magento 2 and Adobe Commerce SEO for large ecommerce catalogues." />
+        <meta name="description" content="Magento SEO services that fix layered navigation, duplicate content, and Core Web Vitals. Specialists in Magento 2 and Adobe Commerce SEO for large" />
         <meta name="keywords" content="magento seo services, magento seo agency, magento 2 seo, adobe commerce seo, magento technical seo, magento seo company" />
         <link rel="canonical" href="https://www.1solutions.biz/magento-seo-services/" />
         <meta property="og:title" content="Magento SEO Services | 1Solutions" />

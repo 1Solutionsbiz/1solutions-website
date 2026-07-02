@@ -96,7 +96,7 @@ export default function HireMERNStackDeveloper() {
   return (
     <>
       <Head>
-        <title>Hire MERN Stack Developer | MongoDB, Express, React, Node.js | 1Solutions</title>
+        <title>Hire MERN Stack Developer | 1Solutions</title>
         <meta name="description" content="Hire dedicated MERN stack developers from 1Solutions. MongoDB, Express, React 18 & Node.js experts with Next.js experience. Pre-vetted. Profiles in 48 hours." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-mern-stack-developer/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />

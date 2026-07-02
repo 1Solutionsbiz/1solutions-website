@@ -94,8 +94,8 @@ export default function HireWebDesigner() {
   return (
     <>
       <Head>
-        <title>Hire Web Designer | Figma & Conversion-Focused Design Experts | 1Solutions</title>
-        <meta name="description" content="Hire dedicated web designers from 1Solutions. Figma, HTML/CSS, WordPress & Shopify design specialists focused on conversion and brand consistency. Profiles in 48 hours." />
+        <title>Hire Web Designer | 1Solutions</title>
+        <meta name="description" content="Hire dedicated web designers from 1Solutions. Figma, HTML/CSS, WordPress & Shopify design specialists focused on conversion and brand consistency." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-web-designer/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

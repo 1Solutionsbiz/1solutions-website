@@ -64,8 +64,8 @@ export default function ContentCopywritingServices() {
   return (
     <>
       <Head>
-        <title>Content & Copywriting Services | SEO Content Writing Agency | 1Solutions</title>
-        <meta name="description" content="Content writing and copywriting services — website copy, SEO blog content, email sequences, ad copy, and product descriptions. Human-written content that ranks and converts." />
+        <title>Content & Copywriting Services | 1Solutions</title>
+        <meta name="description" content="Content writing and copywriting services — website copy, SEO blog content, email sequences, ad copy, and product descriptions." />
         <meta name="keywords" content="content writing services, copywriting services, seo content writing, website copywriting, blog writing services, content marketing agency, copywriting agency" />
         <link rel="canonical" href="https://www.1solutions.biz/content-copywriting-services/" />
         <meta property="og:title" content="Content & Copywriting Services | 1Solutions" />

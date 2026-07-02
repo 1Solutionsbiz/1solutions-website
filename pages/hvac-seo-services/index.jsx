@@ -64,8 +64,8 @@ export default function HvacSeoServices() {
   return (
     <>
       <Head>
-        <title>HVAC SEO Services | Digital Marketing for HVAC Companies | 1Solutions</title>
-        <meta name="description" content="SEO and digital marketing services for HVAC companies — local SEO, Google Ads for HVAC, emergency call campaigns, review generation, and seasonal marketing to generate consistent HVAC leads." />
+        <title>HVAC SEO Services | 1Solutions</title>
+        <meta name="description" content="SEO and digital marketing services for HVAC companies — local SEO, Google Ads for HVAC, emergency call campaigns, review generation, and seasonal marketing" />
         <meta name="keywords" content="hvac seo services, hvac digital marketing, hvac local seo, hvac google ads, hvac lead generation, hvac marketing company, air conditioning seo, heating company seo" />
         <link rel="canonical" href="https://www.1solutions.biz/hvac-seo-services/" />
         <meta property="og:title" content="HVAC SEO Services | 1Solutions" />

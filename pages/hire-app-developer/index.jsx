@@ -99,7 +99,7 @@ export default function HireAppDeveloper() {
   return (
     <>
       <Head>
-        <title>Hire App Developer | iOS, Android, Flutter & React Native | 1Solutions</title>
+        <title>Hire App Developer | 1Solutions</title>
         <meta name="description" content="Hire dedicated mobile app developers from 1Solutions. iOS, Android, Flutter, and React Native experts available for immediate engagement. Profiles in 48 hours." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-app-developer/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />

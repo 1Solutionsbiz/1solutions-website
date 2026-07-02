@@ -256,8 +256,8 @@ export default function DevopsServicesCompany() {
   return (
     <>
       <Head>
-        <title>DevOps Services Company | CI/CD, Kubernetes, Terraform, AWS DevOps | 1Solutions</title>
-        <meta name="description" content="Expert DevOps services — CI/CD pipeline automation, Terraform infrastructure as code, Kubernetes orchestration, AWS/Azure/GCP cloud DevOps, DevSecOps, monitoring & observability, SRE, and dedicated DevOps engineers. 15+ years." />
+        <title>DevOps Services Company | 1Solutions</title>
+        <meta name="description" content="Expert DevOps services — CI/CD pipeline automation, Terraform infrastructure as code, Kubernetes orchestration, AWS/Azure/GCP cloud DevOps, DevSecOps," />
         <link rel="canonical" href="https://www.1solutions.biz/devops-services-company/" />
         <meta property="og:title" content="DevOps Services Company | 1Solutions" />
         <meta property="og:description" content="DevOps automation services — CI/CD pipelines, Terraform IaC, Kubernetes, cloud DevOps on AWS/Azure/GCP, DevSecOps, monitoring, SRE, and dedicated DevOps engineers." />

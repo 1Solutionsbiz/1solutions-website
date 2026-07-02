@@ -186,7 +186,7 @@ export default function HireAngularJsDeveloper() {
     <>
       <Head>
         <title>Hire AngularJS Developer | Expert Angular Engineers | 1Solutions</title>
-        <meta name="description" content="Hire expert Angular developers from 1Solutions — pre-vetted Angular 2–17 engineers with deep RxJS, NgRx, TypeScript, Angular Material, and enterprise application expertise. Dedicated, part-time, or hourly. Start in 3–5 days." />
+        <meta name="description" content="Hire expert Angular developers from 1Solutions — pre-vetted Angular 2–17 engineers with deep RxJS, NgRx, TypeScript, Angular Material, and enterprise" />
         <link rel="canonical" href="https://www.1solutions.biz/hire-angularjs-developer/" />
         <meta property="og:title" content="Hire Angular Developer | RxJS, NgRx, TypeScript | 1Solutions" />
         <meta property="og:description" content="Hire vetted Angular developers — Angular 2–17, RxJS, NgRx, TypeScript strict, Angular Material, AngularJS migration. Dedicated, part-time, or hourly. 15+ years experience." />

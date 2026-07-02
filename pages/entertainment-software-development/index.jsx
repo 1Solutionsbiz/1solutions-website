@@ -124,8 +124,8 @@ export default function EntertainmentSoftware() {
   return (
     <>
       <Head>
-        <title>Entertainment Software Development | OTT Streaming, Media Tech, Ticketing | 1Solutions</title>
-        <meta name="description" content="Custom entertainment software development — OTT streaming platforms, media asset management, music streaming, AI recommendation engines, digital ticketing, fan engagement, and live streaming. 70+ media projects. 15+ years." />
+        <title>Entertainment Software Development | 1Solutions</title>
+        <meta name="description" content="Custom entertainment software development — OTT streaming platforms, media asset management, music streaming, AI recommendation engines, digital ticketing," />
         <link rel="canonical" href="https://www.1solutions.biz/entertainment-software-development/" />
         <meta property="og:title" content="Entertainment Software Development | OTT, Media & Ticketing | 1Solutions" />
         <meta property="og:description" content="OTT streaming platforms, music streaming apps, digital ticketing, fan engagement, and royalty management. 70+ media and entertainment projects." />

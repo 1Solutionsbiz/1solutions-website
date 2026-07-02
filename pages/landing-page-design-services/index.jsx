@@ -64,8 +64,8 @@ export default function LandingPageDesignServices() {
   return (
     <>
       <Head>
-        <title>Landing Page Design Services | High-Converting PPC & Lead Gen Pages | 1Solutions</title>
-        <meta name="description" content="Landing page design services — PPC landing pages, lead generation, sales pages, and A/B test variants. Conversion-first design + copywriting. 400+ pages built, +35% avg conversion lift." />
+        <title>Landing Page Design Services | 1Solutions</title>
+        <meta name="description" content="Landing page design services — PPC landing pages, lead generation, sales pages, and A/B test variants. Conversion-first design + copywriting." />
         <meta name="keywords" content="landing page design services, ppc landing page design, lead generation landing page, high converting landing page, landing page agency, conversion landing page design" />
         <link rel="canonical" href="https://www.1solutions.biz/landing-page-design-services/" />
         <meta property="og:title" content="Landing Page Design Services | 1Solutions" />

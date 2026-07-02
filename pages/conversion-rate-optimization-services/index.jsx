@@ -67,8 +67,8 @@ export default function ConversionRateOptimizationServices() {
   return (
     <>
       <Head>
-        <title>Conversion Rate Optimisation (CRO) Services | A/B Testing Agency | 1Solutions</title>
-        <meta name="description" content="Conversion rate optimisation services — A/B testing, heatmap analysis, landing page optimisation, and checkout CRO. Data-driven CRO that grows revenue from existing traffic." />
+        <title>Conversion Rate Optimisation (CRO) Services | 1Solutions</title>
+        <meta name="description" content="Conversion rate optimisation services — A/B testing, heatmap analysis, landing page optimisation, and checkout CRO." />
         <meta name="keywords" content="conversion rate optimization services, cro services, a/b testing agency, cro agency, landing page optimization, checkout optimization, cro audit" />
         <link rel="canonical" href="https://www.1solutions.biz/conversion-rate-optimization-services/" />
         <meta property="og:title" content="Conversion Rate Optimisation Services | 1Solutions" />

@@ -159,8 +159,8 @@ export default function B2BEcommerce() {
   return (
     <>
       <Head>
-        <title>B2B eCommerce Development Services | Wholesale Portal & Platform | 1Solutions</title>
-        <meta name="description" content="Custom B2B eCommerce solutions for manufacturers, wholesalers & distributors. Wholesale portals, tiered pricing, ERP integration & buyer self-service. US, Canada & Australia." />
+        <title>B2B eCommerce Development Services | 1Solutions</title>
+        <meta name="description" content="Custom B2B eCommerce solutions for manufacturers, wholesalers & distributors. Wholesale portals, tiered pricing, ERP integration & buyer self-service." />
         <meta name="keywords" content="b2b ecommerce development, b2b ecommerce solutions, b2b ecommerce platform, wholesale ecommerce development, b2b portal development, b2b ecommerce agency" />
         <link rel="canonical" href="https://www.1solutions.biz/b2b-ecommerce" />
         <meta name="robots" content="index, follow" />

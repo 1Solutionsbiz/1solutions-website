@@ -125,8 +125,8 @@ export default function ManufacturingSoftware() {
   return (
     <>
       <Head>
-        <title>Manufacturing Software Development | MES, IIoT, ERP Integration, QMS | 1Solutions</title>
-        <meta name="description" content="Custom manufacturing software development — MES, ERP integration (SAP, Oracle, Dynamics), IIoT factory monitoring, predictive maintenance, QMS, supply chain visibility, and OEE analytics. 90+ manufacturing projects. 15+ years." />
+        <title>Manufacturing Software Development | 1Solutions</title>
+        <meta name="description" content="Custom manufacturing software development — MES, ERP integration (SAP, Oracle, Dynamics), IIoT factory monitoring, predictive maintenance, QMS, supply chain" />
         <link rel="canonical" href="https://www.1solutions.biz/manufacturing-software-development-services/" />
         <meta property="og:title" content="Manufacturing Software Development Services | 1Solutions" />
         <meta property="og:description" content="MES, IIoT, ERP integration, predictive maintenance, QMS, and OEE analytics. 90+ manufacturing projects." />

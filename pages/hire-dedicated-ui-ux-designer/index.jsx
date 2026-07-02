@@ -94,8 +94,8 @@ export default function HireDedicatedUiUxDesigner() {
   return (
     <>
       <Head>
-        <title>Hire Dedicated UI/UX Designer | Figma &amp; User Research Experts | 1Solutions</title>
-        <meta name="description" content="Hire dedicated UI/UX designers from 1Solutions. Figma-native designers skilled in user research, design systems, accessibility, and conversion-focused product design. Profiles in 48 hours." />
+        <title>Hire Dedicated UI/UX Designer | 1Solutions</title>
+        <meta name="description" content="Hire dedicated UI/UX designers from 1Solutions. Figma-native designers skilled in user research, design systems, accessibility, and conversion-focused" />
         <link rel="canonical" href="https://www.1solutions.biz/hire-dedicated-ui-ux-designer/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

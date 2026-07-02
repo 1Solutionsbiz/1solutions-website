@@ -94,8 +94,8 @@ export default function HireWebDeveloper() {
   return (
     <>
       <Head>
-        <title>Hire Web Developer | Full-Stack React, Node.js & PHP Experts | 1Solutions</title>
-        <meta name="description" content="Hire dedicated web developers from 1Solutions. Full-stack specialists in React, Next.js, Node.js, PHP/Laravel, Python, and cloud deployment. Pre-vetted profiles in 48 hours." />
+        <title>Hire Web Developer | 1Solutions</title>
+        <meta name="description" content="Hire dedicated web developers from 1Solutions. Full-stack specialists in React, Next.js, Node.js, PHP/Laravel, Python, and cloud deployment." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-web-developer/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

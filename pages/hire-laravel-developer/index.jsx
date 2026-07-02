@@ -95,7 +95,7 @@ export default function HireLaravelDeveloper() {
   return (
     <>
       <Head>
-        <title>Hire Laravel Developer | Expert Laravel PHP Development | 1Solutions</title>
+        <title>Hire Laravel Developer | 1Solutions</title>
         <meta name="description" content="Hire dedicated Laravel developers from 1Solutions. Laravel 11, REST APIs, multi-tenant SaaS, and e-commerce experts. Pre-vetted. Profiles in 48 hours." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-laravel-developer/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />

@@ -156,8 +156,8 @@ export default function PhpDevelopmentServices() {
   return (
     <>
       <Head>
-        <title>PHP Development Services | Laravel & Custom PHP Web Apps | 1Solutions</title>
-        <meta name="description" content="Expert PHP development services — custom web apps, Laravel applications, REST APIs, legacy migration & CMS. Scalable, secure PHP built for US, Canada & Australia businesses." />
+        <title>PHP Development Services | 1Solutions</title>
+        <meta name="description" content="Expert PHP development services — custom web apps, Laravel applications, REST APIs, legacy migration & CMS." />
         <meta name="keywords" content="php development services, php development company, laravel development, custom php development, php web application development, php agency" />
         <link rel="canonical" href="https://www.1solutions.biz/php-development-services" />
         <meta name="robots" content="index, follow" />

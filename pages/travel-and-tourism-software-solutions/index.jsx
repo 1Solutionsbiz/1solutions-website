@@ -128,8 +128,8 @@ export default function TravelTourismSoftware() {
   return (
     <>
       <Head>
-        <title>Travel & Tourism Software Development | OTA, Hotel PMS, GDS Integration | 1Solutions</title>
-        <meta name="description" content="Custom travel and tourism software development — OTA platforms, hotel PMS, tour operator software, GDS integration (Amadeus, Sabre, Travelport), travel apps, dynamic pricing, and travel CRM. 120+ travel projects. 15+ years." />
+        <title>Travel & Tourism Software Development | 1Solutions</title>
+        <meta name="description" content="Custom travel and tourism software development — OTA platforms, hotel PMS, tour operator software, GDS integration (Amadeus, Sabre, Travelport), travel" />
         <link rel="canonical" href="https://www.1solutions.biz/travel-and-tourism-software-solutions/" />
         <meta property="og:title" content="Travel & Tourism Software Development | 1Solutions" />
         <meta property="og:description" content="OTA platforms, hotel PMS, GDS integration, travel apps, and dynamic pricing. 120+ travel projects. 15+ years." />

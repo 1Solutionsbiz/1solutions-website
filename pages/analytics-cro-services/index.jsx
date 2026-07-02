@@ -63,7 +63,7 @@ export default function AnalyticsCroServices() {
   return (
     <>
       <Head>
-        <title>Analytics & CRO Services | GA4, Conversion Optimisation | 1Solutions</title>
+        <title>Analytics & CRO Services | 1Solutions</title>
         <meta name="description" content="Analytics and CRO services by 1Solutions — GA4 setup, funnel analysis, A/B testing, and data-driven conversion rate optimisation for websites and landing pages." />
         <link rel="canonical" href="https://www.1solutions.biz/analytics-cro-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />

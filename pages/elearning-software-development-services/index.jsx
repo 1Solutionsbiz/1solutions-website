@@ -299,8 +299,8 @@ export default function ElearningSoftwareDevelopment() {
   return (
     <>
       <Head>
-        <title>eLearning Software Development Services | Custom LMS & EdTech | 1Solutions</title>
-        <meta name="description" content="Custom eLearning software development — LMS platforms, SCORM/xAPI-compliant course engines, virtual classrooms, gamification & corporate training portals. 15+ years | 80+ EdTech clients | Free discovery call." />
+        <title>eLearning Software Development Services | 1Solutions</title>
+        <meta name="description" content="Custom eLearning software development — LMS platforms, SCORM/xAPI-compliant course engines, virtual classrooms, gamification & corporate training portals." />
         <link rel="canonical" href="https://www.1solutions.biz/elearning-software-development-services/" />
         <meta property="og:title" content="eLearning Software Development Services | 1Solutions" />
         <meta property="og:description" content="Custom LMS, online course platforms, virtual classrooms, adaptive learning & corporate training portals. SCORM/xAPI compliant. 15+ years | 80+ EdTech clients." />

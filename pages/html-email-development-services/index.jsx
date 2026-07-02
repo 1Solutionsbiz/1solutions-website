@@ -94,8 +94,8 @@ export default function HtmlEmailDevelopmentServices() {
   return (
     <>
       <Head>
-        <title>HTML Email Development Services | Responsive Email Templates | 1Solutions</title>
-        <meta name="description" content="Professional HTML email development services from 1Solutions. We build pixel-perfect, responsive HTML email templates for campaigns, transactional emails, and newsletters — tested across 90+ clients." />
+        <title>HTML Email Development Services | 1Solutions</title>
+        <meta name="description" content="Professional HTML email development services from 1Solutions. We build pixel-perfect, responsive HTML email templates for campaigns, transactional emails," />
         <link rel="canonical" href="https://www.1solutions.biz/html-email-development-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

@@ -95,8 +95,8 @@ export default function ShopifyMigrationServices() {
   return (
     <>
       <Head>
-        <title>Shopify Migration Services | WooCommerce, Magento &amp; BigCommerce to Shopify | 1Solutions</title>
-        <meta name="description" content="Expert Shopify migration services from 1Solutions. We migrate WooCommerce, Magento, BigCommerce, and custom stores to Shopify with zero data loss, SEO preservation, and minimal downtime." />
+        <title>Shopify Migration Services | 1Solutions</title>
+        <meta name="description" content="Expert Shopify migration services from 1Solutions. We migrate WooCommerce, Magento, BigCommerce, and custom stores to Shopify with zero data loss, SEO" />
         <link rel="canonical" href="https://www.1solutions.biz/shopify-migration-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

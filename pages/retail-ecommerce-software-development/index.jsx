@@ -125,8 +125,8 @@ export default function RetailEcommerceSoftware() {
   return (
     <>
       <Head>
-        <title>Retail & eCommerce Software Development | Headless Commerce, Marketplace, OMS | 1Solutions</title>
-        <meta name="description" content="Custom retail and eCommerce software development — headless commerce (Next.js), multi-vendor marketplaces, D2C storefronts, OMS, POS integration, loyalty programmes, and AI personalisation. 150+ retail/eCommerce projects. 15+ years." />
+        <title>Retail & eCommerce Software Development | 1Solutions</title>
+        <meta name="description" content="Custom retail and eCommerce software development — headless commerce (Next.js), multi-vendor marketplaces, D2C storefronts, OMS, POS integration, loyalty" />
         <link rel="canonical" href="https://www.1solutions.biz/retail-ecommerce-software-development/" />
         <meta property="og:title" content="Retail & eCommerce Software Development | 1Solutions" />
         <meta property="og:description" content="Headless commerce, marketplace platforms, OMS, POS integration, loyalty, and AI personalisation. 150+ retail/eCommerce projects." />

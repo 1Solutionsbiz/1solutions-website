@@ -267,8 +267,8 @@ export default function WordPressDevelopmentCompany() {
             ]}
           ]
         }) }} />
-        <title>WordPress Development Company | Custom WordPress Development | 1Solutions</title>
-        <meta name="description" content="Hire 1Solutions — a dedicated WordPress development company since 2008. 500+ projects delivered. Custom WordPress, WooCommerce, headless WordPress &amp; enterprise solutions for US, Canada &amp; Australia. Free consultation." />
+        <title>WordPress Development Company | 1Solutions</title>
+        <meta name="description" content="Hire 1Solutions — a dedicated WordPress development company since 2008. 500+ projects delivered. Custom WordPress, WooCommerce, headless WordPress &amp;" />
         <meta name="keywords" content="wordpress development company, custom wordpress development, wordpress development services, woocommerce development, wordpress developers, headless wordpress, wordpress agency" />
         <link rel="canonical" href="https://www.1solutions.biz/wordpress-development-company/" />
         <meta property="og:title" content="WordPress Development Company | Custom WordPress Development | 1Solutions" />

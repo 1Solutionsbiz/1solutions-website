@@ -63,7 +63,7 @@ export default function RemarketingServices() {
   return (
     <>
       <Head>
-        <title>Remarketing Services | Retargeting Campaigns That Convert | 1Solutions</title>
+        <title>Remarketing Services | 1Solutions</title>
         <meta name="description" content="Remarketing and retargeting services by 1Solutions — Google Display, Meta, LinkedIn, and dynamic product remarketing to convert lost visitors." />
         <link rel="canonical" href="https://www.1solutions.biz/remarketing-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />

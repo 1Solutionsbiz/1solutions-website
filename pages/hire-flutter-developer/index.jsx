@@ -100,8 +100,8 @@ export default function HireFlutterDeveloper() {
   return (
     <>
       <Head>
-        <title>Hire Flutter Developer | Cross-Platform Mobile Experts | 1Solutions</title>
-        <meta name="description" content="Hire dedicated Flutter developers from 1Solutions. iOS, Android, web & desktop from a single codebase. Pre-vetted Dart & Flutter 3.x experts. Profiles in 48 hours." />
+        <title>Hire Flutter Developer | 1Solutions</title>
+        <meta name="description" content="Hire dedicated Flutter developers from 1Solutions. iOS, Android, web & desktop from a single codebase. Pre-vetted Dart & Flutter 3.x experts." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-flutter-developer/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

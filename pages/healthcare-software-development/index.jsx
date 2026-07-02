@@ -264,8 +264,8 @@ export default function HealthcareSoftwareDevelopment() {
   return (
     <>
       <Head>
-        <title>Healthcare Software Development Company | HIPAA Compliant | 1Solutions</title>
-        <meta name="description" content="Custom healthcare software development — HIPAA-compliant EHR/EMR, telemedicine, patient portals, medical billing & HL7 FHIR integrations. 15+ years | 50+ healthcare clients | Free discovery call." />
+        <title>Healthcare Software Development Company | 1Solutions</title>
+        <meta name="description" content="Custom healthcare software development — HIPAA-compliant EHR/EMR, telemedicine, patient portals, medical billing & HL7 FHIR integrations." />
         <link rel="canonical" href="https://www.1solutions.biz/healthcare-software-development/" />
         <meta property="og:title" content="Healthcare Software Development Company | 1Solutions" />
         <meta property="og:description" content="HIPAA-compliant healthcare software development — EHR, telemedicine, patient portals, medical billing, HL7 FHIR & AI-powered clinical tools. 15+ years, 50+ healthcare clients." />

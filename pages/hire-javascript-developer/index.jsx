@@ -186,7 +186,7 @@ export default function HireJavaScriptDeveloper() {
     <>
       <Head>
         <title>Hire JavaScript Developer | Expert JS Engineers | 1Solutions</title>
-        <meta name="description" content="Hire expert JavaScript developers from 1Solutions — full-stack JS engineers with React, Node.js, Vue.js, TypeScript, Next.js, and Angular expertise. Dedicated, part-time, or hourly. Start in 24–72 hours." />
+        <meta name="description" content="Hire expert JavaScript developers from 1Solutions — full-stack JS engineers with React, Node.js, Vue.js, TypeScript, Next.js, and Angular expertise." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-javascript-developer/" />
         <meta property="og:title" content="Hire JavaScript Developer | React, Node.js, TypeScript | 1Solutions" />
         <meta property="og:description" content="Hire vetted JavaScript developers — React, Node.js, Vue.js, TypeScript, Next.js. Dedicated, part-time, or hourly. 15+ years experience. Start in 3–5 days." />

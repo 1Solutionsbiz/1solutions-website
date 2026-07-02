@@ -228,8 +228,8 @@ export default function BrandIdentityPage() {
   return (
     <>
       <Head>
-        <title>Brand Identity Design | Logo, Colours &amp; Typography Systems | 1Solutions</title>
-        <meta name="description" content="1Solutions crafts brand identities that make you unmistakable — from logo mark to colour palette to typography system. 300+ brands, 16+ years, 97% client satisfaction." />
+        <title>Brand Identity Design | 1Solutions</title>
+        <meta name="description" content="1Solutions crafts brand identities that make you unmistakable — from logo mark to colour palette to typography system." />
         <meta name="keywords" content="brand identity design, logo design, brand guidelines, typography system, colour palette design, brand refresh, brand design agency" />
         <link rel="canonical" href="https://www.1solutions.biz/brand-identity/" />
         <meta property="og:title" content="Brand Identity Design | Logo, Colours &amp; Typography Systems | 1Solutions" />

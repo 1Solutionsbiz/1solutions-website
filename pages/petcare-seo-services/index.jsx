@@ -80,7 +80,7 @@ export default function PetcareSeoServices() {
   return (
     <>
       <Head>
-        <title>Pet Care SEO Services | Veterinarian, Grooming and Boarding SEO | 1Solutions</title>
+        <title>Pet Care SEO Services | 1Solutions</title>
         <meta name="description" content="Grow your pet care business with 1Solutions SEO. Rank for vet near me, dog grooming, pet boarding, cat clinic, and emergency vet keywords in your local area." />
         <link rel="canonical" href="https://www.1solutions.biz/petcare-seo-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />

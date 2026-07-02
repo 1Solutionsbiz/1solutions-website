@@ -254,8 +254,8 @@ export default function JoomlaDevelopment() {
   return (
     <>
       <Head>
-        <title>Joomla Development Company | Custom Joomla Templates, Components & Upgrades | 1Solutions</title>
-        <meta name="description" content="Expert Joomla development — custom templates, components, plugins, Joomla 3 to 5 upgrades, multilingual portals, eCommerce, security hardening. 15+ years. Free consultation." />
+        <title>Joomla Development Company | 1Solutions</title>
+        <meta name="description" content="Expert Joomla development — custom templates, components, plugins, Joomla 3 to 5 upgrades, multilingual portals, eCommerce, security hardening. 15+ years." />
         <link rel="canonical" href="https://www.1solutions.biz/joomla-development-company/" />
         <meta property="og:title" content="Joomla Development Company | 1Solutions" />
         <meta property="og:description" content="Custom Joomla development — templates, components, Joomla 3.x to 5.x upgrades, multilingual, membership portals, eCommerce, and security hardening. 15+ years experience." />

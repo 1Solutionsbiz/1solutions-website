@@ -94,8 +94,8 @@ export default function GraphicDesignServices() {
   return (
     <>
       <Head>
-        <title>Graphic Design Services | Brand, Print &amp; Digital Design | 1Solutions</title>
-        <meta name="description" content="Professional graphic design services from 1Solutions. Brand identity, logo design, marketing collateral, packaging, social media graphics, and presentation design for businesses worldwide." />
+        <title>Graphic Design Services | 1Solutions</title>
+        <meta name="description" content="Professional graphic design services from 1Solutions. Brand identity, logo design, marketing collateral, packaging, social media graphics, and presentation" />
         <link rel="canonical" href="https://www.1solutions.biz/graphic-design-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

@@ -63,7 +63,7 @@ export default function EmailMarketingServices() {
   return (
     <>
       <Head>
-        <title>Email Marketing Services | Drip Campaigns & Automation | 1Solutions</title>
+        <title>Email Marketing Services | 1Solutions</title>
         <meta name="description" content="Email marketing by 1Solutions — automated drip campaigns, welcome sequences, cart abandonment, and broadcast emails that drive revenue for eCommerce and B2B." />
         <link rel="canonical" href="https://www.1solutions.biz/email-marketing-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />

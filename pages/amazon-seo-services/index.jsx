@@ -64,8 +64,8 @@ export default function AmazonSeoServices() {
   return (
     <>
       <Head>
-        <title>Amazon SEO Services | Amazon Listing Optimisation & PPC Management | 1Solutions</title>
-        <meta name="description" content="Amazon SEO services — product listing optimisation, keyword research, A+ content, PPC management, and brand store design. Rank higher in Amazon search and convert more browsers into buyers." />
+        <title>Amazon SEO Services | 1Solutions</title>
+        <meta name="description" content="Amazon SEO services — product listing optimisation, keyword research, A+ content, PPC management, and brand store design." />
         <meta name="keywords" content="amazon seo services, amazon listing optimisation, amazon keyword research, amazon ppc management, amazon a+ content, amazon product ranking, amazon seller seo" />
         <link rel="canonical" href="https://www.1solutions.biz/amazon-seo-services/" />
         <meta property="og:title" content="Amazon SEO Services | 1Solutions" />

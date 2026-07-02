@@ -126,8 +126,8 @@ export default function RealEstateSoftware() {
   return (
     <>
       <Head>
-        <title>Real Estate Software Development | Property Portal, MLS/IDX, PMS | 1Solutions</title>
-        <meta name="description" content="Custom real estate software development — property listing portals, MLS/IDX integration, real estate CRM, property management systems, PropTech mobile apps, virtual tours, and CRE platforms. 110+ real estate projects. 15+ years." />
+        <title>Real Estate Software Development | 1Solutions</title>
+        <meta name="description" content="Custom real estate software development — property listing portals, MLS/IDX integration, real estate CRM, property management systems, PropTech mobile apps," />
         <link rel="canonical" href="https://www.1solutions.biz/real-estate-software-development/" />
         <meta property="og:title" content="Real Estate Software Development | 1Solutions" />
         <meta property="og:description" content="Property portals, MLS/IDX integration, PMS, PropTech apps, and CRE platforms. 110+ real estate projects." />

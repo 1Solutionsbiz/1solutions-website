@@ -104,8 +104,8 @@ export default function AffiliateMarketingServices() {
   return (
     <>
       <Head>
-        <title>Affiliate Marketing Services | Affiliate Program Setup &amp; Management | 1Solutions</title>
-        <meta name="description" content="Expert affiliate marketing services from 1Solutions. We set up, recruit, and manage affiliate programs for e-commerce and SaaS brands — driving performance-based revenue with zero wasted ad spend." />
+        <title>Affiliate Marketing Services | 1Solutions</title>
+        <meta name="description" content="Expert affiliate marketing services from 1Solutions. We set up, recruit, and manage affiliate programs for e-commerce and SaaS brands — driving" />
         <link rel="canonical" href="https://www.1solutions.biz/affiliate-marketing-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

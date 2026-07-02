@@ -67,8 +67,8 @@ export default function GenerativeEngineOptimizationServices() {
   return (
     <>
       <Head>
-        <title>Generative Engine Optimisation (GEO) Services | AI Search Visibility | 1Solutions</title>
-        <meta name="description" content="Generative Engine Optimisation (GEO) services — optimise your content for Google AI Overviews, ChatGPT, Perplexity, and Gemini citations. Build AI search visibility alongside traditional SEO." />
+        <title>Generative Engine Optimisation (GEO) Services | 1Solutions</title>
+        <meta name="description" content="Generative Engine Optimisation (GEO) services — optimise your content for Google AI Overviews, ChatGPT, Perplexity, and Gemini citations." />
         <meta name="keywords" content="generative engine optimization services, GEO services, AI search optimization, google ai overview optimization, ai visibility services, llm seo" />
         <link rel="canonical" href="https://www.1solutions.biz/generative-engine-optimization-services/" />
         <meta property="og:title" content="Generative Engine Optimisation (GEO) Services | 1Solutions" />

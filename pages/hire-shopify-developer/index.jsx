@@ -256,8 +256,8 @@ export default function HireShopifyDeveloper() {
   return (
     <>
       <Head>
-        <title>Hire Shopify Developer | Custom Themes, Shopify Plus, Apps & Headless | 1Solutions</title>
-        <meta name="description" content="Hire expert Shopify developers — custom Liquid themes, Shopify Plus customisation, private app development, WooCommerce to Shopify migration, Headless Shopify (Hydrogen), and ongoing Shopify support. 15+ years." />
+        <title>Hire Shopify Developer | 1Solutions</title>
+        <meta name="description" content="Hire expert Shopify developers — custom Liquid themes, Shopify Plus customisation, private app development, WooCommerce to Shopify migration, Headless" />
         <link rel="canonical" href="https://www.1solutions.biz/hire-shopify-developer/" />
         <meta property="og:title" content="Hire Shopify Developer | 1Solutions" />
         <meta property="og:description" content="Dedicated Shopify developers — custom themes, Shopify Plus, private app development, platform migration, Headless Shopify, ERP integrations, and monthly retainers." />

@@ -94,8 +94,8 @@ export default function VirtualAssistantServices() {
   return (
     <>
       <Head>
-        <title>Virtual Assistant Services | Dedicated VA for Business &amp; E-Commerce | 1Solutions</title>
-        <meta name="description" content="Hire dedicated virtual assistants from 1Solutions. We provide VAs for admin, customer support, e-commerce operations, social media, data entry, and research — trained, managed, and available 8 hrs/day." />
+        <title>Virtual Assistant Services | 1Solutions</title>
+        <meta name="description" content="Hire dedicated virtual assistants from 1Solutions. We provide VAs for admin, customer support, e-commerce operations, social media, data entry, and research" />
         <link rel="canonical" href="https://www.1solutions.biz/virtual-assistant-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

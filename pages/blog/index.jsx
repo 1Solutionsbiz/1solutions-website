@@ -20,7 +20,7 @@ export default function BlogIndex({ featuredPost, posts, totalPages, totalPosts 
   return (
     <>
       <Head>
-        <title>Blog &amp; Resources | 1Solutions — Web Development &amp; Digital Marketing</title>
+        <title>Blog &amp; Resources | 1Solutions</title>
         <meta name="description" content="Expert articles on web development, digital marketing, SEO, AI, and e-commerce. 460+ articles from 1Solutions." />
         <meta property="og:title" content="Blog | 1Solutions" />
         <meta property="og:description" content="Expert insights on web development, SEO, and digital marketing." />

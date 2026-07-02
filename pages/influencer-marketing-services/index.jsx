@@ -159,8 +159,8 @@ export default function InfluencerMarketing() {
   return (
     <>
       <Head>
-        <title>Influencer Marketing Services | Ecommerce Influencer Agency | 1Solutions</title>
-        <meta name="description" content="Result-driven influencer marketing services for ecommerce brands. Expert creator vetting, campaign management & ROI tracking across Instagram, TikTok & YouTube. Serving US, Canada & Australia." />
+        <title>Influencer Marketing Services | 1Solutions</title>
+        <meta name="description" content="Result-driven influencer marketing services for ecommerce brands. Expert creator vetting, campaign management & ROI tracking across Instagram, TikTok &" />
         <meta name="keywords" content="influencer marketing services, influencer marketing agency, ecommerce influencer marketing, instagram influencer marketing, tiktok influencer marketing, micro influencer marketing" />
         <link rel="canonical" href="https://www.1solutions.biz/influencer-marketing-services/" />
         <meta name="robots" content="index, follow" />

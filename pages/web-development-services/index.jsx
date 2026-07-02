@@ -94,8 +94,8 @@ export default function WebDevelopmentServices() {
   return (
     <>
       <Head>
-        <title>Web Development Services | Custom Website &amp; Web App Development | 1Solutions</title>
-        <meta name="description" content="Professional web development services from 1Solutions. We build custom websites, web applications, e-commerce stores, and SaaS platforms using WordPress, React, Next.js, Node.js, and Laravel." />
+        <title>Web Development Services | 1Solutions</title>
+        <meta name="description" content="Professional web development services from 1Solutions. We build custom websites, web applications, e-commerce stores, and SaaS platforms using WordPress," />
         <link rel="canonical" href="https://www.1solutions.biz/web-development-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

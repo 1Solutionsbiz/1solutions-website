@@ -135,8 +135,8 @@ export default function HireARDeveloper() {
   return (
     <>
       <Head>
-        <title>Hire AR Developer | ARKit, ARCore, WebAR, HoloLens, visionOS | 1Solutions</title>
-        <meta name="description" content="Hire expert AR developers from 1Solutions — ARKit, ARCore, Unity AR Foundation, WebAR (8thWall), Microsoft HoloLens 2, Apple Vision Pro visionOS, and industrial AR. Dedicated, part-time, or fixed-scope. Start in 3–5 days." />
+        <title>Hire AR Developer | 1Solutions</title>
+        <meta name="description" content="Hire expert AR developers from 1Solutions — ARKit, ARCore, Unity AR Foundation, WebAR (8thWall), Microsoft HoloLens 2, Apple Vision Pro visionOS, and" />
         <link rel="canonical" href="https://www.1solutions.biz/hire-ar-developer/" />
         <meta property="og:title" content="Hire AR Developer | ARKit, ARCore, WebAR, HoloLens | 1Solutions" />
         <meta property="og:description" content="Hire vetted AR developers — ARKit, ARCore, Unity AR Foundation, 8thWall WebAR, HoloLens 2, Apple Vision Pro. Mobile AR, WebAR, enterprise MR, industrial AR." />

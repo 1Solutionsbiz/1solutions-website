@@ -80,8 +80,8 @@ export default function InsuranceSeoServices() {
   return (
     <>
       <Head>
-        <title>Insurance SEO Services | Insurance Agent and Broker SEO | 1Solutions</title>
-        <meta name="description" content="Rank higher and win more clients with 1Solutions insurance SEO. We target auto, home, life, health, and commercial insurance keywords that drive qualified buyer traffic." />
+        <title>Insurance SEO Services | 1Solutions</title>
+        <meta name="description" content="Rank higher and win more clients with 1Solutions insurance SEO. We target auto, home, life, health, and commercial insurance keywords that drive qualified" />
         <link rel="canonical" href="https://www.1solutions.biz/insurance-seo-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

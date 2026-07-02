@@ -141,7 +141,7 @@ export default function ContactPage() {
   return (
     <>
       <Head>
-        <title>Contact Us | 1Solutions — Web Development & Digital Marketing Agency</title>
+        <title>Contact Us | 1Solutions</title>
         <meta
           name="description"
           content="Get in touch with 1Solutions. Tell us about your project and we'll respond within 24 hours with a tailored plan. Serving clients in the US, Canada, and Australia."

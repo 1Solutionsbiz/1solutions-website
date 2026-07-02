@@ -64,8 +64,8 @@ export default function FacebookManagementServices() {
   return (
     <>
       <Head>
-        <title>Facebook Management Services | Facebook Page & Ads Management Agency | 1Solutions</title>
-        <meta name="description" content="Facebook management services — page management, content creation, community management, and Facebook Ads. Grow your Facebook presence with a dedicated social media management team." />
+        <title>Facebook Management Services | 1Solutions</title>
+        <meta name="description" content="Facebook management services — page management, content creation, community management, and Facebook Ads." />
         <meta name="keywords" content="facebook management services, facebook page management, facebook marketing services, facebook ads management, social media management agency, facebook marketing agency" />
         <link rel="canonical" href="https://www.1solutions.biz/facebook-management-services/" />
         <meta property="og:title" content="Facebook Management Services | 1Solutions" />

@@ -214,7 +214,7 @@ export default function GoogleMyBusinessOptimization() {
   return (
     <div className="gmbo-page">
       <Head>
-        <title>Google My Business Optimization Services | GMB Experts | 1Solutions</title>
+        <title>Google My Business Optimization Services | 1Solutions</title>
         <meta name="description" content="Expert Google My Business optimization to rank in the Google Maps 3-pack. GBP setup, photos, posts, reviews & citations. 500+ profiles optimised. Free audit." />
         <meta name="keywords" content="Google My Business optimization, GMB optimization, Google Business Profile optimization, GBP optimization services, Google Maps optimization, local SEO, Google Maps 3-pack ranking" />
         <meta name="robots" content="index, follow" />

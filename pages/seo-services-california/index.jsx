@@ -147,8 +147,8 @@ export default function SeoServicesCalifornia() {
   return (
     <>
       <Head>
-        <title>SEO Services California | Los Angeles, San Francisco, San Diego | 1Solutions</title>
-        <meta name="description" content="SEO services for California businesses. Local SEO, technical SEO, content marketing & link building across Los Angeles, San Francisco, San Diego & all California markets. 15+ years experience." />
+        <title>SEO Services California | 1Solutions</title>
+        <meta name="description" content="SEO services for California businesses. Local SEO, technical SEO, content marketing & link building across Los Angeles, San Francisco, San Diego & all" />
         <meta name="keywords" content="seo services california, california seo company, los angeles seo, san francisco seo, san diego seo, seo agency california, california seo services" />
         <link rel="canonical" href="https://www.1solutions.biz/seo-services-california/" />
         <meta name="robots" content="index, follow" />

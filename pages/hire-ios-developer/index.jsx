@@ -101,7 +101,7 @@ export default function HireIOSDeveloper() {
     <>
       <Head>
         <title>Hire iOS Developer | Swift & SwiftUI Experts | 1Solutions</title>
-        <meta name="description" content="Hire dedicated iOS developers from 1Solutions. Swift, SwiftUI, and UIKit experts for iPhone, iPad, and Apple Watch apps. Pre-vetted talent. Profiles in 48 hours." />
+        <meta name="description" content="Hire dedicated iOS developers from 1Solutions. Swift, SwiftUI, and UIKit experts for iPhone, iPad, and Apple Watch apps. Pre-vetted talent." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-ios-developer/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

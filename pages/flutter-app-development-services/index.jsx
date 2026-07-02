@@ -299,8 +299,8 @@ export default function FlutterAppDevelopment() {
   return (
     <>
       <Head>
-        <title>Flutter App Development Services | Cross-Platform Mobile Apps | 1Solutions</title>
-        <meta name="description" content="Expert Flutter app development for iOS, Android, web & desktop — one Dart codebase, native performance, pixel-perfect UI. MVP in 8–14 weeks. 100+ Flutter apps shipped. Free discovery call." />
+        <title>Flutter App Development Services | 1Solutions</title>
+        <meta name="description" content="Expert Flutter app development for iOS, Android, web & desktop — one Dart codebase, native performance, pixel-perfect UI. MVP in 8–14 weeks." />
         <link rel="canonical" href="https://www.1solutions.biz/flutter-app-development-services/" />
         <meta property="og:title" content="Flutter App Development Services | 1Solutions" />
         <meta property="og:description" content="Cross-platform Flutter app development — iOS, Android, web & desktop from a single Dart codebase. Native performance, 60fps UI, 100+ apps shipped. 15+ years experience." />

@@ -123,7 +123,7 @@ export default function SeoCompanyToronto() {
     <>
       <Head>
         <title>SEO Company in Toronto | Best Toronto SEO Agency | 1Solutions</title>
-        <meta name="description" content="Looking for the best SEO company in Toronto? 1Solutions delivers Page 1 Google rankings for Toronto businesses — technical SEO, local SEO, link building & content strategy. Free SEO audit." />
+        <meta name="description" content="Looking for the best SEO company in Toronto? 1Solutions delivers Page 1 Google rankings for Toronto businesses — technical SEO, local SEO, link building &" />
         <meta name="keywords" content="SEO company in Toronto, SEO agency Toronto, SEO services Toronto, best SEO company Toronto, Toronto SEO, search engine optimization Toronto Ontario" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://1solutions.biz/seo-company-toronto/" />

@@ -63,8 +63,8 @@ export default function PpcAuditServices() {
   return (
     <>
       <Head>
-        <title>PPC Audit Services | Google Ads & Meta Ads Account Audit | 1Solutions</title>
-        <meta name="description" content="PPC audit by 1Solutions — 100-point Google Ads and Meta Ads review covering wasted spend, Quality Score, audience gaps, and conversion tracking. Delivered in 5 days." />
+        <title>PPC Audit Services | 1Solutions</title>
+        <meta name="description" content="PPC audit by 1Solutions — 100-point Google Ads and Meta Ads review covering wasted spend, Quality Score, audience gaps, and conversion tracking." />
         <link rel="canonical" href="https://www.1solutions.biz/ppc-audit-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

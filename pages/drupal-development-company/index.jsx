@@ -208,8 +208,8 @@ export default function DrupalDevelopmentCompany() {
   return (
     <>
       <Head>
-        <title>Drupal Development Company | Expert Drupal Development Services | 1Solutions</title>
-        <meta name="description" content="1Solutions is a leading Drupal development company with 15+ years experience. We deliver custom Drupal 10 websites, headless Drupal, Drupal Commerce, and migrations for US, Canada & Australia." />
+        <title>Drupal Development Company | 1Solutions</title>
+        <meta name="description" content="1Solutions is a leading Drupal development company with 15+ years experience. We deliver custom Drupal 10 websites, headless Drupal, Drupal Commerce, and" />
         <meta name="keywords" content="drupal development company, drupal development services, drupal 10 development, custom drupal development, drupal migration, headless drupal, drupal commerce, drupal agency" />
         <link rel="canonical" href="https://www.1solutions.biz/drupal-development-company/" />
         <meta property="og:title" content="Drupal Development Company | 1Solutions" />

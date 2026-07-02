@@ -68,7 +68,7 @@ export default function ManagedSeoServices() {
     <>
       <Head>
         <title>Managed SEO Services | Monthly SEO Retainer Agency | 1Solutions</title>
-        <meta name="description" content="Managed SEO services — monthly retainer SEO with a dedicated account manager, technical maintenance, content creation, link building, and transparent reporting. 300+ clients managed." />
+        <meta name="description" content="Managed SEO services — monthly retainer SEO with a dedicated account manager, technical maintenance, content creation, link building, and transparent" />
         <meta name="keywords" content="managed seo services, monthly seo services, seo retainer agency, managed seo agency, ongoing seo services, seo management company" />
         <link rel="canonical" href="https://www.1solutions.biz/managed-seo-services/" />
         <meta property="og:title" content="Managed SEO Services | 1Solutions" />

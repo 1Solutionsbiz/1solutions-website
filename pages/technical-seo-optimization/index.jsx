@@ -66,8 +66,8 @@ export default function TechnicalSeoOptimization() {
   return (
     <>
       <Head>
-        <title>Technical SEO Optimisation | Core Web Vitals, Crawl & JS SEO | 1Solutions</title>
-        <meta name="description" content="Technical SEO services — Core Web Vitals, crawl budget, JavaScript SEO, structured data, and site architecture fixes. Engineering-level technical SEO from 1Solutions." />
+        <title>Technical SEO Optimisation | 1Solutions</title>
+        <meta name="description" content="Technical SEO services — Core Web Vitals, crawl budget, JavaScript SEO, structured data, and site architecture fixes." />
         <meta name="keywords" content="technical seo optimization, technical seo services, core web vitals optimisation, crawl budget optimisation, javascript seo, technical seo audit" />
         <link rel="canonical" href="https://www.1solutions.biz/technical-seo-optimization/" />
         <meta property="og:title" content="Technical SEO Optimisation | 1Solutions" />

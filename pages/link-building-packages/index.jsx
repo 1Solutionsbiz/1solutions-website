@@ -322,8 +322,8 @@ export default function LinkBuildingPackages() {
   return (
     <>
       <Head>
-        <title>Link Building Packages | Monthly Backlink Plans &amp; Pricing | 1Solutions</title>
-        <meta name="description" content="White-hat link building packages from $499/month. Manual outreach, DR40+ to DR60+ guest posts, niche edits, and digital PR for any industry. Full link tracker on every plan." />
+        <title>Link Building Packages | 1Solutions</title>
+        <meta name="description" content="White-hat link building packages from $499/month. Manual outreach, DR40+ to DR60+ guest posts, niche edits, and digital PR for any industry." />
         <meta name="keywords" content="link building packages, link building pricing, link building plans, backlink packages, guest post packages, link building service pricing, monthly link building, white-hat link building, DR40 backlinks, niche edits" />
         <link rel="canonical" href="https://www.1solutions.biz/link-building-packages/" />
         <meta property="og:title" content="Link Building Packages &amp; Pricing | 1Solutions" />

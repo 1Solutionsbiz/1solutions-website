@@ -229,7 +229,7 @@ export default function DesignSystemsPage() {
     <>
       <Head>
         <title>Design Systems Agency | Scalable Component Libraries | 1Solutions</title>
-        <meta name="description" content="1Solutions builds structured, documented design systems — from atomic tokens to full component libraries — so your team ships faster with pixel-perfect consistency. 80+ design systems built." />
+        <meta name="description" content="1Solutions builds structured, documented design systems — from atomic tokens to full component libraries — so your team ships faster with pixel-perfect" />
         <meta name="keywords" content="design systems agency, component library, design tokens, Figma component library, Storybook, WCAG accessibility, design system audit, React component library" />
         <link rel="canonical" href="https://www.1solutions.biz/design-systems/" />
         <meta property="og:title" content="Design Systems Agency | Scalable Component Libraries | 1Solutions" />

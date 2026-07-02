@@ -257,7 +257,7 @@ export default function CloudMigrationServices() {
     <>
       <Head>
         <title>Cloud Migration Services | AWS, Azure, GCP Migration | 1Solutions</title>
-        <meta name="description" content="Expert cloud migration services — cloud readiness assessment, lift & shift, re-platforming, database migration, AWS/Azure/GCP migration, hybrid cloud, cloud cost optimisation, disaster recovery, and post-migration managed services. 15+ years." />
+        <meta name="description" content="Expert cloud migration services — cloud readiness assessment, lift & shift, re-platforming, database migration, AWS/Azure/GCP migration, hybrid cloud, cloud" />
         <link rel="canonical" href="https://www.1solutions.biz/cloud-migration-services/" />
         <meta property="og:title" content="Cloud Migration Services | AWS, Azure & GCP | 1Solutions" />
         <meta property="og:description" content="End-to-end cloud migration — cloud readiness assessment, lift & shift, re-platforming, database migration to AWS/Azure/GCP, hybrid cloud, cost optimisation, and post-migration managed services." />

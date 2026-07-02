@@ -59,8 +59,8 @@ export default function DigitalTransformation() {
   return (
     <>
       <Head>
-        <title>Digital Transformation Services | Modernize Your Business | 1Solutions</title>
-        <meta name="description" content="Digital transformation services that modernize legacy systems, automate processes, and build cloud-native infrastructure. 15+ years helping businesses transform digitally." />
+        <title>Digital Transformation Services | 1Solutions</title>
+        <meta name="description" content="Digital transformation services that modernize legacy systems, automate processes, and build cloud-native infrastructure." />
         <meta name="keywords" content="digital transformation services, cloud migration, process automation, legacy system modernisation, digital transformation company india" />
         <link rel="canonical" href="https://www.1solutions.biz/digital-transformation/" />
         <meta property="og:title" content="Digital Transformation Services | 1Solutions" />

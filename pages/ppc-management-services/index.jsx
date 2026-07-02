@@ -64,8 +64,8 @@ export default function PpcManagementServices() {
   return (
     <>
       <Head>
-        <title>Google Ads PPC Management | Search, Shopping & Performance Max | 1Solutions</title>
-        <meta name="description" content="Google Ads management by 1Solutions. Search, Display, Shopping, YouTube, and Performance Max campaigns engineered for ROAS and lead generation. US, Canada & Australia." />
+        <title>Google Ads PPC Management | 1Solutions</title>
+        <meta name="description" content="Google Ads management by 1Solutions. Search, Display, Shopping, YouTube, and Performance Max campaigns engineered for ROAS and lead generation." />
         <link rel="canonical" href="https://www.1solutions.biz/ppc-management-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

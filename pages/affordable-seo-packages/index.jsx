@@ -304,7 +304,7 @@ export default function AffordableSeoPackages() {
     <>
       <Head>
         <title>Monthly SEO Packages | Prices from $299/mo | 1Solutions</title>
-        <meta name="description" content="Transparent monthly SEO packages from $299/mo. Starter, Professional & Enterprise plans — on-page SEO, link building, content & local SEO included. 15+ yrs | 500+ clients | Free SEO audit." />
+        <meta name="description" content="Transparent monthly SEO packages from $299/mo. Starter, Professional & Enterprise plans — on-page SEO, link building, content & local SEO included." />
         <link rel="canonical" href="https://www.1solutions.biz/affordable-seo-packages/" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Monthly SEO Packages | Prices from $299/mo | 1Solutions" />

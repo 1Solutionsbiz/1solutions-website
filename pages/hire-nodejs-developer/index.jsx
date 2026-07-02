@@ -96,7 +96,7 @@ export default function HireNodeJSDeveloper() {
   return (
     <>
       <Head>
-        <title>Hire Node.js Developer | Express & NestJS Backend Experts | 1Solutions</title>
+        <title>Hire Node.js Developer | 1Solutions</title>
         <meta name="description" content="Hire dedicated Node.js developers from 1Solutions. Express, NestJS, microservices, and real-time API experts. Pre-vetted senior engineers. Profiles in 48 hours." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-nodejs-developer/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />

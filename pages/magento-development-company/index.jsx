@@ -207,8 +207,8 @@ export default function MagentoDevelopmentCompany() {
   return (
     <>
       <Head>
-        <title>Magento Development Company | Expert Magento Development Services | 1Solutions</title>
-        <meta name="description" content="1Solutions is a leading Magento development company with 15+ years experience. We build custom Magento 2 stores, Adobe Commerce solutions, and Magento extensions for US, Canada & Australia." />
+        <title>Magento Development Company | 1Solutions</title>
+        <meta name="description" content="1Solutions is a leading Magento development company with 15+ years experience. We build custom Magento 2 stores, Adobe Commerce solutions, and Magento" />
         <meta name="keywords" content="magento development company, magento development services, magento 2 development, adobe commerce development, magento agency, magento extension development" />
         <link rel="canonical" href="https://www.1solutions.biz/magento-development-company/" />
         <meta property="og:title" content="Magento Development Company | 1Solutions" />

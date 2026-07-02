@@ -229,8 +229,8 @@ export default function HireDedicatedResources() {
   return (
     <>
       <Head>
-        <title>Hire Dedicated Resources — Developers, Designers & Digital Experts | 1Solutions</title>
-        <meta name="description" content="Hire dedicated developers, designers, and digital marketing experts from 1Solutions. Pre-vetted professionals on full-time, part-time, or hourly engagements. Profiles in 48 hours. No lock-in contracts." />
+        <title>Hire Dedicated Resources — Developers, Designers | 1Solutions</title>
+        <meta name="description" content="Hire dedicated developers, designers, and digital marketing experts from 1Solutions. Pre-vetted professionals on full-time, part-time, or hourly engagements." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-dedicated-resources/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

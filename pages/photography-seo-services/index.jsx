@@ -65,7 +65,7 @@ export default function PhotographySeoServices() {
     <>
       <Head>
         <title>Photography SEO Services | SEO for Photographers | 1Solutions</title>
-        <meta name="description" content="SEO services for photographers — local search optimisation, image SEO, portfolio page optimisation, and Google Business Profile management to rank higher and book more clients from organic search." />
+        <meta name="description" content="SEO services for photographers — local search optimisation, image SEO, portfolio page optimisation, and Google Business Profile management to rank higher" />
         <meta name="keywords" content="photography seo services, seo for photographers, wedding photographer seo, photographer local seo, photography website seo, image seo, photographer google business profile" />
         <link rel="canonical" href="https://www.1solutions.biz/photography-seo-services/" />
         <meta property="og:title" content="Photography SEO Services | 1Solutions" />

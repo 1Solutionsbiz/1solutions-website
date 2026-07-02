@@ -64,8 +64,8 @@ export default function SeoServicesForSmallBusiness() {
   return (
     <>
       <Head>
-        <title>SEO Services for Small Business | Affordable Small Business SEO | 1Solutions</title>
-        <meta name="description" content="SEO services for small businesses — local SEO, on-page optimisation, content creation, and link building designed for small business budgets. No long-term contracts. Real results from month one." />
+        <title>SEO Services for Small Business | 1Solutions</title>
+        <meta name="description" content="SEO services for small businesses — local SEO, on-page optimisation, content creation, and link building designed for small business budgets." />
         <meta name="keywords" content="seo services for small business, small business seo, affordable seo for small business, local seo small business, small business seo packages, seo company for small business" />
         <link rel="canonical" href="https://www.1solutions.biz/seo-services-for-small-business/" />
         <meta property="og:title" content="SEO Services for Small Business | 1Solutions" />

@@ -135,8 +135,8 @@ export default function HireBlockchainDeveloper() {
   return (
     <>
       <Head>
-        <title>Hire Blockchain Developer | Solidity, DeFi, NFT, Web3 | 1Solutions</title>
-        <meta name="description" content="Hire expert blockchain developers from 1Solutions — Solidity smart contracts, DeFi protocols, NFT platforms, Web3 frontends, Ethereum, Polygon, Solana, and Layer 2. Dedicated, part-time, or fixed-scope. Start in 3–5 days." />
+        <title>Hire Blockchain Developer | 1Solutions</title>
+        <meta name="description" content="Hire expert blockchain developers from 1Solutions — Solidity smart contracts, DeFi protocols, NFT platforms, Web3 frontends, Ethereum, Polygon, Solana, and" />
         <link rel="canonical" href="https://www.1solutions.biz/hire-blockchain-developer/" />
         <meta property="og:title" content="Hire Blockchain Developer | Solidity, DeFi, NFT, Web3 | 1Solutions" />
         <meta property="og:description" content="Hire vetted blockchain developers — Solidity, DeFi, NFT, wagmi, ethers.js, Ethereum, Polygon, Solana, Layer 2. Dedicated, part-time, or fixed-scope. 15+ years dev experience." />

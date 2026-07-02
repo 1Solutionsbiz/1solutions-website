@@ -67,8 +67,8 @@ export default function OpencartSeoServices() {
   return (
     <>
       <Head>
-        <title>OpenCart SEO Services | OpenCart Store SEO Specialists | 1Solutions</title>
-        <meta name="description" content="OpenCart SEO services — fix URL structure, duplicate content, and slow page speed. Platform-specialist SEO for OpenCart 3.x and 4.x stores. Free audit available." />
+        <title>OpenCart SEO Services | 1Solutions</title>
+        <meta name="description" content="OpenCart SEO services — fix URL structure, duplicate content, and slow page speed. Platform-specialist SEO for OpenCart 3.x and 4.x stores." />
         <meta name="keywords" content="opencart seo services, opencart seo agency, opencart seo company, opencart technical seo, opencart store optimisation" />
         <link rel="canonical" href="https://www.1solutions.biz/opencart-seo-services/" />
         <meta property="og:title" content="OpenCart SEO Services | 1Solutions" />

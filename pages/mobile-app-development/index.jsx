@@ -271,8 +271,8 @@ export default function MobileAppDevelopment() {
   return (
     <>
       <Head>
-        <title>Mobile App Development Company | iOS, Android, Flutter & React Native | 1Solutions</title>
-        <meta name="description" content="End-to-end mobile app development — native iOS (Swift), Android (Kotlin), Flutter & React Native. 180+ apps shipped. App Store & Play Store experts. Free discovery call." />
+        <title>Mobile App Development Company | 1Solutions</title>
+        <meta name="description" content="End-to-end mobile app development — native iOS (Swift), Android (Kotlin), Flutter & React Native. 180+ apps shipped. App Store & Play Store experts." />
         <link rel="canonical" href="https://www.1solutions.biz/mobile-app-development/" />
         <meta property="og:title" content="Mobile App Development Company | iOS, Android, Flutter & React Native | 1Solutions" />
         <meta property="og:description" content="Native iOS, Android, Flutter & React Native development. 180+ apps shipped. 15+ years experience. Biweekly device builds. 100% IP ownership." />

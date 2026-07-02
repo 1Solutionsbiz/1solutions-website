@@ -130,8 +130,8 @@ export default function FBAReconciliation() {
   return (
     <>
       <Head>
-        <title>Amazon FBA Shipment Reconciliation Services | FBA Reimbursement Experts | 1Solutions</title>
-        <meta name="description" content="Recover lost FBA revenue with 1Solutions. We audit Amazon FBA shipments, file reimbursement claims for lost and damaged inventory, and recover money Amazon owes you." />
+        <title>Amazon FBA Shipment Reconciliation Services | 1Solutions</title>
+        <meta name="description" content="Recover lost FBA revenue with 1Solutions. We audit Amazon FBA shipments, file reimbursement claims for lost and damaged inventory, and recover money Amazon" />
         <link rel="canonical" href="https://1solutions.biz/amazon-fba-shipment-reconciliation-services/" />
       </Head>
 

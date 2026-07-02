@@ -96,8 +96,8 @@ export default function HireMEANStackDeveloper() {
   return (
     <>
       <Head>
-        <title>Hire MEAN Stack Developer | MongoDB, Express, Angular, Node.js | 1Solutions</title>
-        <meta name="description" content="Hire dedicated MEAN stack developers from 1Solutions. MongoDB, Express, Angular & Node.js experts for enterprise web apps. Pre-vetted talent. Profiles in 48 hours." />
+        <title>Hire MEAN Stack Developer | 1Solutions</title>
+        <meta name="description" content="Hire dedicated MEAN stack developers from 1Solutions. MongoDB, Express, Angular & Node.js experts for enterprise web apps. Pre-vetted talent." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-mean-stack-developer/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

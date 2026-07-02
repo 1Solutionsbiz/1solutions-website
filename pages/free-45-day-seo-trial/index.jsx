@@ -58,7 +58,7 @@ export default function Free45DaySeoTrial() {
     <>
       <Head>
         <title>Free 45-Day SEO Trial | No Payment, No Commitment | 1Solutions</title>
-        <meta name="description" content="Free 45-day SEO trial — full audit, keyword research, competitor analysis, and 5 on-page optimisations implemented on your site at no cost. No payment, no commitment. Results first." />
+        <meta name="description" content="Free 45-day SEO trial — full audit, keyword research, competitor analysis, and 5 on-page optimisations implemented on your site at no cost." />
         <meta name="keywords" content="free seo trial, 45 day seo trial, free seo audit, free seo services trial, try seo free, seo free trial, no commitment seo" />
         <link rel="canonical" href="https://www.1solutions.biz/free-45-day-seo-trial/" />
         <meta property="og:title" content="Free 45-Day SEO Trial | 1Solutions" />

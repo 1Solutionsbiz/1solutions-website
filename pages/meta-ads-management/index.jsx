@@ -61,8 +61,8 @@ export default function MetaAdsManagement() {
   return (
     <>
       <Head>
-        <title>Meta Ads Management | Facebook & Instagram Advertising | 1Solutions</title>
-        <meta name="description" content="Facebook and Instagram advertising management by 1Solutions. Audience strategy, creative, lead generation, and catalogue ads optimised for ROAS and CPL. US, Canada & Australia." />
+        <title>Meta Ads Management | 1Solutions</title>
+        <meta name="description" content="Facebook and Instagram advertising management by 1Solutions. Audience strategy, creative, lead generation, and catalogue ads optimised for ROAS and CPL." />
         <link rel="canonical" href="https://www.1solutions.biz/meta-ads-management/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

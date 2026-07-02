@@ -124,8 +124,8 @@ export default function AgricultureSoftware() {
   return (
     <>
       <Head>
-        <title>Agriculture Software Development | AgriTech, Farm Management, IoT Farming | 1Solutions</title>
-        <meta name="description" content="Custom agriculture software development — farm management systems, precision agriculture IoT platforms, crop monitoring, livestock management, agri-marketplaces, traceability, and drone analytics. 60+ AgriTech projects. 15+ years." />
+        <title>Agriculture Software Development | 1Solutions</title>
+        <meta name="description" content="Custom agriculture software development — farm management systems, precision agriculture IoT platforms, crop monitoring, livestock management," />
         <link rel="canonical" href="https://www.1solutions.biz/agriculture-software-development/" />
         <meta property="og:title" content="Agriculture Software Development | AgriTech Solutions | 1Solutions" />
         <meta property="og:description" content="Farm management systems, precision agriculture IoT, crop monitoring, livestock management, and agri-marketplace platforms. 60+ AgriTech projects." />

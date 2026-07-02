@@ -228,7 +228,7 @@ export default function UXResearch() {
     <>
       <Head>
         <title>UX Research Agency | User Testing & Journey Mapping | 1Solutions</title>
-        <meta name="description" content="1Solutions UX research agency delivers user interviews, usability testing, journey mapping, and heuristic evaluations that replace guesswork with evidence. 250+ projects, 5,000+ users tested." />
+        <meta name="description" content="1Solutions UX research agency delivers user interviews, usability testing, journey mapping, and heuristic evaluations that replace guesswork with evidence." />
         <meta name="keywords" content="UX research agency, usability testing, user testing, journey mapping, heuristic evaluation, UX research services, user research company" />
         <link rel="canonical" href="https://www.1solutions.biz/ux-research" />
         <meta property="og:title" content="UX Research Agency | User Testing & Journey Mapping | 1Solutions" />

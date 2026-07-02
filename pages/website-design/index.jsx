@@ -291,8 +291,8 @@ export default function WebsiteDesign() {
   return (
     <>
       <Head>
-        <title>Website Design Company | Conversion-Focused Web Design | 1Solutions</title>
-        <meta name="description" content="1Solutions is a conversion-focused website design company with 16+ years experience. We design landing pages, corporate sites, eCommerce stores, and UI/UX audits that turn visitors into customers." />
+        <title>Website Design Company | 1Solutions</title>
+        <meta name="description" content="1Solutions is a conversion-focused website design company with 16+ years experience. We design landing pages, corporate sites, eCommerce stores, and UI/UX" />
         <meta name="keywords" content="website design company, web design services, conversion-focused web design, landing page design, UI UX design, responsive web design, Figma design" />
         <link rel="canonical" href="https://www.1solutions.biz/website-design" />
         <meta property="og:title" content="Website Design Company | Conversion-Focused Web Design | 1Solutions" />

@@ -135,7 +135,7 @@ export default function VirtualCTOServices() {
     <>
       <Head>
         <title>Virtual CTO Services | Fractional CTO Advisory | 1Solutions</title>
-        <meta name="description" content="Virtual CTO (Fractional CTO) services — technology strategy, architecture review, technical due diligence, team building, AI/ML roadmap, security compliance, and engineering leadership advisory. India-based, US/UK/AU-experienced. NDA-protected. 15+ years." />
+        <meta name="description" content="Virtual CTO (Fractional CTO) services — technology strategy, architecture review, technical due diligence, team building, AI/ML roadmap, security" />
         <link rel="canonical" href="https://www.1solutions.biz/virtual-cto-services/" />
         <meta property="og:title" content="Virtual CTO Services | Fractional CTO Advisory | 1Solutions" />
         <meta property="og:description" content="Virtual CTO advisory — technology strategy, architecture, due diligence, team building, AI/ML roadmap, and engineering leadership. 50–70% below full-time CTO cost." />

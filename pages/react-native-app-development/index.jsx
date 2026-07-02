@@ -157,8 +157,8 @@ export default function ReactNativeAppDevelopment() {
   return (
     <>
       <Head>
-        <title>React Native App Development Services | Cross-Platform iOS & Android | 1Solutions</title>
-        <meta name="description" content="Expert React Native app development for iOS & Android from a single codebase. Custom cross-platform mobile apps — design, development, integration & App Store launch. US, Canada & Australia." />
+        <title>React Native App Development Services | 1Solutions</title>
+        <meta name="description" content="Expert React Native app development for iOS & Android from a single codebase. Custom cross-platform mobile apps — design, development, integration & App" />
         <meta name="keywords" content="react native app development, react native development company, cross platform app development, react native ios android, react native agency, mobile app development" />
         <link rel="canonical" href="https://www.1solutions.biz/react-native-app-development" />
         <meta name="robots" content="index, follow" />

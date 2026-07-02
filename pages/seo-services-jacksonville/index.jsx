@@ -110,8 +110,8 @@ export default function SeoServicesJacksonville() {
   return (
     <>
       <Head>
-        <title>SEO Services Jacksonville FL | Jacksonville SEO Company | 1Solutions</title>
-        <meta name="description" content="Expert SEO services in Jacksonville, FL from 1Solutions. We help Jacksonville businesses rank higher on Google, drive local traffic, and grow revenue through proven search engine optimisation." />
+        <title>SEO Services Jacksonville FL | 1Solutions</title>
+        <meta name="description" content="Expert SEO services in Jacksonville, FL from 1Solutions. We help Jacksonville businesses rank higher on Google, drive local traffic, and grow revenue" />
         <link rel="canonical" href="https://www.1solutions.biz/seo-services-jacksonville/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

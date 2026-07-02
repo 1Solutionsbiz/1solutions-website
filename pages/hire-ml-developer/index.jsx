@@ -134,8 +134,8 @@ export default function HireMLDeveloper() {
   return (
     <>
       <Head>
-        <title>Hire ML Developer | Machine Learning, PyTorch, TensorFlow, MLOps | 1Solutions</title>
-        <meta name="description" content="Hire expert ML developers from 1Solutions — supervised learning, deep learning (PyTorch, TensorFlow), computer vision, NLP, time-series forecasting, recommendation systems, MLOps, and production ML deployment. Dedicated, part-time, or fixed-scope." />
+        <title>Hire ML Developer | 1Solutions</title>
+        <meta name="description" content="Hire expert ML developers from 1Solutions — supervised learning, deep learning (PyTorch, TensorFlow), computer vision, NLP, time-series forecasting," />
         <link rel="canonical" href="https://www.1solutions.biz/hire-ml-developer/" />
         <meta property="og:title" content="Hire ML Developer | PyTorch, TensorFlow, MLOps | 1Solutions" />
         <meta property="og:description" content="Hire vetted ML developers — PyTorch, TensorFlow, XGBoost, computer vision, NLP, time-series, MLOps, production deployment. Dedicated, part-time, or fixed-scope." />

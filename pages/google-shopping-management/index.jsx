@@ -63,7 +63,7 @@ export default function GoogleShoppingManagement() {
   return (
     <>
       <Head>
-        <title>Google Shopping Management | Product Feed & ROAS Optimisation | 1Solutions</title>
+        <title>Google Shopping Management | 1Solutions</title>
         <meta name="description" content="Google Shopping campaign management by 1Solutions. Product feed optimisation, Performance Max, and ROAS-focused bidding for eCommerce stores." />
         <link rel="canonical" href="https://www.1solutions.biz/google-shopping-management/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />

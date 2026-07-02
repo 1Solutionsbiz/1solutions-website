@@ -135,8 +135,8 @@ export default function AmazonAccountManagement() {
   return (
     <>
       <Head>
-        <title>Amazon Account Management Services | Seller Central Experts | 1Solutions</title>
-        <meta name="description" content="Expert Amazon account management by 1Solutions. We handle Seller Central, listing optimization, PPC advertising, account health, Brand Registry, FBA management, and A+ Content." />
+        <title>Amazon Account Management Services | 1Solutions</title>
+        <meta name="description" content="Expert Amazon account management by 1Solutions. We handle Seller Central, listing optimization, PPC advertising, account health, Brand Registry, FBA" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://1solutions.biz/amazon-account-management-services/" />
         <style>{`

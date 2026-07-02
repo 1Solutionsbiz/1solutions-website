@@ -94,8 +94,8 @@ export default function HomeServicesWebsiteDesign() {
   return (
     <>
       <Head>
-        <title>Home Services Website Design | Websites for Contractors &amp; Local Businesses | 1Solutions</title>
-        <meta name="description" content="Professional home services website design from 1Solutions. We design and build conversion-focused websites for HVAC, plumbing, landscaping, cleaning, roofing, and other home service businesses." />
+        <title>Home Services Website Design | 1Solutions</title>
+        <meta name="description" content="Professional home services website design from 1Solutions. We design and build conversion-focused websites for HVAC, plumbing, landscaping, cleaning," />
         <link rel="canonical" href="https://www.1solutions.biz/home-services-website-design/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

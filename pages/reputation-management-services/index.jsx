@@ -63,8 +63,8 @@ export default function ReputationManagementServices() {
   return (
     <>
       <Head>
-        <title>Reputation Management Services | Brand Protection & Review Management | 1Solutions</title>
-        <meta name="description" content="Reputation management by 1Solutions — brand monitoring, review acquisition, negative content suppression, and crisis response for businesses in US, Canada & Australia." />
+        <title>Reputation Management Services | 1Solutions</title>
+        <meta name="description" content="Reputation management by 1Solutions — brand monitoring, review acquisition, negative content suppression, and crisis response for businesses in US, Canada &" />
         <link rel="canonical" href="https://www.1solutions.biz/reputation-management-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

@@ -208,8 +208,8 @@ export default function PythonDevelopmentServices() {
   return (
     <>
       <Head>
-        <title>Python Development Services | Custom Python Development Company | 1Solutions</title>
-        <meta name="description" content="1Solutions is a leading Python development company with 15+ years experience. We deliver custom Python web apps, Django & Flask APIs, ML/AI solutions, and data pipelines for US, Canada & Australia." />
+        <title>Python Development Services | 1Solutions</title>
+        <meta name="description" content="1Solutions is a leading Python development company with 15+ years experience. We deliver custom Python web apps, Django & Flask APIs, ML/AI solutions, and" />
         <meta name="keywords" content="python development services, python development company, django development, flask development, fastapi development, python web development, machine learning development, python api development" />
         <link rel="canonical" href="https://www.1solutions.biz/python-development-services/" />
         <meta property="og:title" content="Python Development Services | 1Solutions" />

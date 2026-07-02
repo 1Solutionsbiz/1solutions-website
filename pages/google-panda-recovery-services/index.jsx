@@ -65,8 +65,8 @@ export default function GooglePandaRecoveryServices() {
   return (
     <>
       <Head>
-        <title>Google Panda Recovery Services | Helpful Content Penalty Recovery | 1Solutions</title>
-        <meta name="description" content="Google Panda and Helpful Content Update recovery — thin content audit, E-E-A-T content rewriting, consolidation strategy, and content quality improvement to restore rankings after a Panda or HC penalty." />
+        <title>Google Panda Recovery Services | 1Solutions</title>
+        <meta name="description" content="Google Panda and Helpful Content Update recovery — thin content audit, E-E-A-T content rewriting, consolidation strategy, and content quality improvement to" />
         <meta name="keywords" content="google panda recovery, helpful content update recovery, thin content penalty recovery, google panda penalty fix, content quality recovery seo, helpful content penalty recovery" />
         <link rel="canonical" href="https://www.1solutions.biz/google-panda-recovery-services/" />
         <meta property="og:title" content="Google Panda Recovery Services | 1Solutions" />

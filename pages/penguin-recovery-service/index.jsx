@@ -64,8 +64,8 @@ export default function PenguinRecoveryService() {
   return (
     <>
       <Head>
-        <title>Google Penguin Recovery Service | Toxic Link Audit & Disavow | 1Solutions</title>
-        <meta name="description" content="Google Penguin recovery service — toxic backlink audit, link removal outreach, disavow file preparation, and clean link building after a Penguin or Link Spam Update penalty." />
+        <title>Google Penguin Recovery Service | 1Solutions</title>
+        <meta name="description" content="Google Penguin recovery service — toxic backlink audit, link removal outreach, disavow file preparation, and clean link building after a Penguin or Link" />
         <meta name="keywords" content="google penguin recovery, penguin penalty recovery, toxic backlink audit, disavow file service, link spam update recovery, unnatural links recovery, penguin recovery service" />
         <link rel="canonical" href="https://www.1solutions.biz/penguin-recovery-service/" />
         <meta property="og:title" content="Google Penguin Recovery Service | 1Solutions" />

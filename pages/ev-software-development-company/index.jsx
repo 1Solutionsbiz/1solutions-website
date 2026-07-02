@@ -124,8 +124,8 @@ export default function EVSoftware() {
   return (
     <>
       <Head>
-        <title>EV Software Development Company | OCPP Charging, Fleet Electrification, EMS | 1Solutions</title>
-        <meta name="description" content="Custom EV software development — OCPP-compliant charge station management (CSMS), EV driver apps, fleet electrification platforms, energy management systems, battery analytics, V2G, and OCPI roaming. 45+ EV projects. 15+ years." />
+        <title>EV Software Development Company | 1Solutions</title>
+        <meta name="description" content="Custom EV software development — OCPP-compliant charge station management (CSMS), EV driver apps, fleet electrification platforms, energy management" />
         <link rel="canonical" href="https://www.1solutions.biz/ev-software-development-company/" />
         <meta property="og:title" content="EV Software Development Company | OCPP, Fleet EV, Energy Management | 1Solutions" />
         <meta property="og:description" content="OCPP-compliant CSMS, EV driver apps, fleet electrification, energy management systems, battery analytics, and V2G integration. 45+ EV and clean energy projects." />

@@ -80,7 +80,7 @@ export default function HomeRepairSeoServices() {
   return (
     <>
       <Head>
-        <title>Home Repair SEO Services | Handyman and Home Services SEO | 1Solutions</title>
+        <title>Home Repair SEO Services | 1Solutions</title>
         <meta name="description" content="Grow your home repair business with SEO from 1Solutions. Rank for handyman, home services, contractor, renovation, and repair keywords in your local market." />
         <link rel="canonical" href="https://www.1solutions.biz/home-repair-seo-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />

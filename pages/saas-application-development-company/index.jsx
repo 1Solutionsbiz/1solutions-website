@@ -124,8 +124,8 @@ export default function SaaSDevelopment() {
   return (
     <>
       <Head>
-        <title>SaaS Application Development Company | B2B SaaS, Multi-Tenant, Stripe Billing | 1Solutions</title>
-        <meta name="description" content="SaaS application development company — B2B and B2C SaaS products built with multi-tenant architecture, Stripe subscription billing, SSO/SAML, self-serve onboarding, integrations marketplace, and SOC 2 compliance. 80+ SaaS products shipped. 15+ years." />
+        <title>SaaS Application Development Company | 1Solutions</title>
+        <meta name="description" content="SaaS application development company — B2B and B2C SaaS products built with multi-tenant architecture, Stripe subscription billing, SSO/SAML, self-serve" />
         <link rel="canonical" href="https://www.1solutions.biz/saas-application-development-company/" />
         <meta property="og:title" content="SaaS Application Development Company | 1Solutions" />
         <meta property="og:description" content="B2B SaaS product development — multi-tenant architecture, Stripe billing, SSO, onboarding, integrations, and SOC 2 compliance. 80+ SaaS products shipped." />

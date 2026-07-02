@@ -124,8 +124,8 @@ export default function SocialMediaAppDevelopment() {
   return (
     <>
       <Head>
-        <title>Social Media App Development Company | Niche Social Network, Creator Platform | 1Solutions</title>
-        <meta name="description" content="Custom social media app development — niche social networks, short-form video platforms, creator monetisation apps, fan community platforms, social commerce, real-time messaging, and content moderation. 55+ social app projects. 15+ years." />
+        <title>Social Media App Development Company | 1Solutions</title>
+        <meta name="description" content="Custom social media app development — niche social networks, short-form video platforms, creator monetisation apps, fan community platforms, social" />
         <link rel="canonical" href="https://www.1solutions.biz/social-media-app-development-company/" />
         <meta property="og:title" content="Social Media App Development Company | 1Solutions" />
         <meta property="og:description" content="Niche social networks, short-form video, creator monetisation, fan communities, social commerce, and content moderation. 55+ social app projects." />

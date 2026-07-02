@@ -64,8 +64,8 @@ export default function FacebookPageDesigning() {
   return (
     <>
       <Head>
-        <title>Facebook Page Designing Services | Cover Photo, Templates & Ad Creative | 1Solutions</title>
-        <meta name="description" content="Facebook page design services — cover photos, post templates, ad creatives, and full page setup. Professional Facebook page design that builds brand trust and drives engagement." />
+        <title>Facebook Page Designing Services | 1Solutions</title>
+        <meta name="description" content="Facebook page design services — cover photos, post templates, ad creatives, and full page setup. Professional Facebook page design that builds brand trust" />
         <meta name="keywords" content="facebook page designing, facebook page design services, facebook cover photo design, facebook business page design, facebook post template design, facebook ad creative design" />
         <link rel="canonical" href="https://www.1solutions.biz/facebook-page-designing/" />
         <meta property="og:title" content="Facebook Page Designing Services | 1Solutions" />

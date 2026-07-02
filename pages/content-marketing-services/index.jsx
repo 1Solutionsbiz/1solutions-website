@@ -63,8 +63,8 @@ export default function ContentMarketingServices() {
   return (
     <>
       <Head>
-        <title>Content Marketing Services | SEO Content That Ranks & Converts | 1Solutions</title>
-        <meta name="description" content="Content marketing by 1Solutions — SEO blog content, pillar pages, case studies, and content strategy that builds organic traffic and converts readers into leads." />
+        <title>Content Marketing Services | 1Solutions</title>
+        <meta name="description" content="Content marketing by 1Solutions — SEO blog content, pillar pages, case studies, and content strategy that builds organic traffic and converts readers into" />
         <link rel="canonical" href="https://www.1solutions.biz/content-marketing-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

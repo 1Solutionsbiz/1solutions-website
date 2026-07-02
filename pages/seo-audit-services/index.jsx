@@ -152,8 +152,8 @@ export default function SeoAuditServices() {
   return (
     <>
       <Head>
-        <title>SEO Audit Services | 150-Point Technical & Content SEO Audit | 1Solutions</title>
-        <meta name="description" content="Comprehensive SEO audit from 1Solutions. Technical SEO, on-page, backlink, content gap & competitor analysis with a prioritised 90-day action plan. US, Canada & Australia." />
+        <title>SEO Audit Services | 1Solutions</title>
+        <meta name="description" content="Comprehensive SEO audit from 1Solutions. Technical SEO, on-page, backlink, content gap & competitor analysis with a prioritised 90-day action plan." />
         <meta name="keywords" content="seo audit services, seo audit company, technical seo audit, website seo audit, seo audit agency, comprehensive seo audit" />
         <link rel="canonical" href="https://www.1solutions.biz/seo-audit-services/" />
         <meta name="robots" content="index, follow" />

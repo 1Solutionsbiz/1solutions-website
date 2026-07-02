@@ -63,7 +63,7 @@ export default function SocialMediaMarketingServices() {
   return (
     <>
       <Head>
-        <title>Social Media Marketing Services | Organic Growth & Brand Building | 1Solutions</title>
+        <title>Social Media Marketing Services | 1Solutions</title>
         <meta name="description" content="Social media marketing by 1Solutions — content strategy, community management, and organic brand growth across Instagram, LinkedIn, Facebook, X, and TikTok." />
         <link rel="canonical" href="https://www.1solutions.biz/social-media-marketing-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />

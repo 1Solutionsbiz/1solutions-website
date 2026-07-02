@@ -134,8 +134,8 @@ export default function ITOutsourcingServices() {
   return (
     <>
       <Head>
-        <title>IT Outsourcing Services | Software Development, Cloud, QA | 1Solutions</title>
-        <meta name="description" content="IT outsourcing services — outsource software development, cloud management, QA testing, DevOps, AI/ML, mobile, data engineering, and application maintenance to 1Solutions. SLA-backed, NDA-protected. 15+ years, 60–70% cost savings vs US/UK." />
+        <title>IT Outsourcing Services | 1Solutions</title>
+        <meta name="description" content="IT outsourcing services — outsource software development, cloud management, QA testing, DevOps, AI/ML, mobile, data engineering, and application maintenance" />
         <link rel="canonical" href="https://www.1solutions.biz/it-outsourcing-services/" />
         <meta property="og:title" content="IT Outsourcing Services | 1Solutions" />
         <meta property="og:description" content="Outsource software development, cloud management, QA, DevOps, AI/ML, and application maintenance. SLA-backed, NDA-protected, 60–70% below US/UK costs." />
