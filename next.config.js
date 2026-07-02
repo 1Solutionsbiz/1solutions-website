@@ -11,6 +11,9 @@ const securityHeaders = [
 ];
 
 const nextConfig = {
+  // Canonical URLs always end with /  — prevents split PageRank between /slug and /slug/
+  trailingSlash: true,
+
   // Don't block builds on lint errors — we fix them separately
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
