@@ -33,6 +33,7 @@
 
 ## Mobile App Development
 
+- [Mobile App Development](https://www.1solutions.biz/mobile-app-development): End-to-end mobile app development for iOS and Android — native, cross-platform, and hybrid.
 - [Android App Development Company](https://www.1solutions.biz/android-application-development-company): Native Android app development with Java and Kotlin.
 - [iOS App Development Company](https://www.1solutions.biz/ios-app-development-company): Native iOS app development with Swift and Objective-C.
 - [Flutter App Development Services](https://www.1solutions.biz/flutter-app-development-services): Cross-platform apps for iOS and Android with Flutter.
@@ -107,6 +108,8 @@
 
 ## Enterprise & Industry Solutions
 
+- [Artificial Intelligence Services](https://www.1solutions.biz/artificial-intelligence): AI strategy, model integration, and intelligent product development using LLMs and ML.
+- [Digital Transformation](https://www.1solutions.biz/digital-transformation): End-to-end digital transformation consulting and implementation for enterprises.
 - [SaaS Application Development](https://www.1solutions.biz/saas-application-development-company): End-to-end SaaS product development from MVP to scale.
 - [ERP Development Company](https://www.1solutions.biz/erp-application-development-company): Custom ERP systems for manufacturing, finance, and operations.
 - [CRM Development Company](https://www.1solutions.biz/crm-application-development-company): Custom CRM platforms for sales, support, and marketing teams.

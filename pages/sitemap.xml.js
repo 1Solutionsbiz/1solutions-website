@@ -78,6 +78,8 @@ const STATIC_PAGES = [
   { url: '/social-media-app-development-company', priority: '0.7', changefreq: 'monthly' },
   { url: '/erp-application-development-company', priority: '0.7', changefreq: 'monthly' },
   { url: '/crm-application-development-company', priority: '0.7', changefreq: 'monthly' },
+  { url: '/artificial-intelligence',              priority: '0.8', changefreq: 'monthly' },
+  { url: '/digital-transformation',              priority: '0.8', changefreq: 'monthly' },
   { url: '/saas-application-development-company', priority: '0.7', changefreq: 'monthly' },
   { url: '/ecommerce-website-development-services', priority: '0.9', changefreq: 'monthly' },
   { url: '/magento-development-company',         priority: '0.8', changefreq: 'monthly' },
@@ -90,6 +92,7 @@ const STATIC_PAGES = [
 
   // UI/UX & Design
   { url: '/website-design',                      priority: '0.8', changefreq: 'monthly' },
+  { url: '/mobile-app-development',              priority: '0.9', changefreq: 'monthly' },
   { url: '/mobile-app-design',                   priority: '0.7', changefreq: 'monthly' },
   { url: '/brand-identity',                      priority: '0.7', changefreq: 'monthly' },
   { url: '/design-systems',                      priority: '0.7', changefreq: 'monthly' },

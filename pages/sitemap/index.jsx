@@ -44,10 +44,13 @@ const SECTIONS = [
         { label: 'TIBCO Development',            href: '/tibco-development-services' },
       ],
       [
+        { label: 'Mobile App Development',       href: '/mobile-app-development' },
         { label: 'Android App Development',      href: '/android-application-development-company' },
         { label: 'iOS App Development',          href: '/ios-app-development-company' },
         { label: 'Flutter App Development',      href: '/flutter-app-development-services' },
         { label: 'Social Media App Development', href: '/social-media-app-development-company' },
+        { label: 'Artificial Intelligence',      href: '/artificial-intelligence' },
+        { label: 'Digital Transformation',       href: '/digital-transformation' },
         { label: 'ERP Development',              href: '/erp-application-development-company' },
         { label: 'CRM Development',              href: '/crm-application-development-company' },
         { label: 'SaaS Application Development', href: '/saas-application-development-company' },
