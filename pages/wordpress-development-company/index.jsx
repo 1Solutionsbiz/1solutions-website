@@ -110,10 +110,10 @@ function AnimatedStat({ label, val, started }) {
     try {
       const fd = new FormData(e.target);
       const token = await new Promise(r => window.grecaptcha.ready(() =>
-        window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', {{ action: 'contact' }}).then(r)));
-      const res = await fetch('/api/contact', {{
-        method: 'POST', headers: {{ 'Content-Type': 'application/json' }},
-        body: JSON.stringify({{
+        window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', { action: 'contact' }).then(r)));
+      const res = await fetch('/api/contact', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
           name: fd.get('sf-name') || '', email: fd.get('sf-email') || '',
           phone: (fd.get('sf-cc') ? fd.get('sf-cc') + ' ' : '') + (fd.get('sf-phone') || ''),
           company: fd.get('sf-company') || '', message: fd.get('sf-message') || '',
@@ -121,7 +121,7 @@ function AnimatedStat({ label, val, started }) {
         }}),
       }});
       _setSfSt(res.ok ? 'success' : 'error');
-    }} catch {{ _setSfSt('error'); }}
+    } catch { _setSfSt('error'); }
   };
   return (
     <div className="wp-stat-col" key={label}>
