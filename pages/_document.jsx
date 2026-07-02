@@ -19,10 +19,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {/* reCAPTCHA v3 */}
         <script src="https://www.google.com/recaptcha/api.js?render=6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs" async />
         {/* Favicon */}
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" type="image/png" href="/images/1solutions-favicon.png" />
-        <link rel="apple-touch-icon" href="/images/1solutions-favicon.png" />
+        <link rel="shortcut icon" href="/favicon.ico?v=2" />
+        <link rel="icon" href="/favicon.ico?v=2" sizes="any" />
+        <link rel="icon" type="image/png" href="/images/1solutions-favicon.png?v=2" />
+        <link rel="apple-touch-icon" href="/images/1solutions-favicon.png?v=2" />
         {/* Theme color */}
         <meta name="theme-color" content="#114171" />
         <meta property="og:site_name" content="1Solutions" />

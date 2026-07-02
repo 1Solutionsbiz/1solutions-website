@@ -35,6 +35,18 @@ const nextConfig = {
         headers: securityHeaders,
       },
       {
+        source: '/favicon.ico',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=0, must-revalidate' },
+        ],
+      },
+      {
+        source: '/images/1solutions-favicon.png',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=0, must-revalidate' },
+        ],
+      },
+      {
         source: '/api/ai-generate',
         headers: [
           { key: 'Access-Control-Allow-Origin',  value: '*' },
