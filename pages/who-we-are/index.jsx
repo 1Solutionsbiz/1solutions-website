@@ -330,6 +330,48 @@ export default function WhoWeAre() {
           content="1Solutions is a New Delhi-based web development and digital marketing agency with 16+ years of experience, 500+ global clients, and a 97% retention rate. Trusted by Verizon, Nuance, Indian Express, and more."
         />
         <link rel="canonical" href="https://www.1solutions.biz/who-we-are/" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([
+          {
+            '@context': 'https://schema.org',
+            '@type':    'AboutPage',
+            '@id':      'https://www.1solutions.biz/who-we-are/#webpage',
+            url:        'https://www.1solutions.biz/who-we-are/',
+            name:       'Who We Are | 1Solutions',
+            description: '1Solutions is a New Delhi-based web development and digital marketing agency with 16+ years of experience, 500+ global clients, and a 97% retention rate.',
+            isPartOf:   { '@id': 'https://www.1solutions.biz/#website' },
+            about:      { '@id': 'https://www.1solutions.biz/#organization' },
+            breadcrumb: {
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Home',        item: 'https://www.1solutions.biz/'           },
+                { '@type': 'ListItem', position: 2, name: 'Who We Are',  item: 'https://www.1solutions.biz/who-we-are/' },
+              ],
+            },
+          },
+          {
+            '@context':    'https://schema.org',
+            '@type':       'Organization',
+            '@id':         'https://www.1solutions.biz/#organization',
+            name:          '1Solutions',
+            url:           'https://www.1solutions.biz',
+            foundingDate:  '2008',
+            description:   '1Solutions is a New Delhi-based web development and digital marketing agency with 16+ years of experience, 500+ global clients, and a 97% retention rate. Trusted by Verizon, Nuance, Indian Express, and more.',
+            logo:          { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
+            address: {
+              '@type':         'PostalAddress',
+              addressLocality: 'New Delhi',
+              addressRegion:   'Delhi',
+              addressCountry:  'IN',
+            },
+            numberOfEmployees: { '@type': 'QuantitativeValue', value: 25 },
+            sameAs: [
+              'https://www.linkedin.com/company/1solutions/',
+              'https://www.facebook.com/1solutionsbiz',
+              'https://twitter.com/1solutionsbiz',
+              'https://www.instagram.com/1solutionsbiz/',
+            ],
+          },
+        ]) }} />
         <style>{`
           /* ─── Base ─── */
           .au-page {

@@ -497,6 +497,24 @@ export default function Portfolio() {
         <title>Portfolio | 1Solutions — Web Development & Digital Marketing Work</title>
         <meta name="description" content="Browse 1Solutions' portfolio of 500+ web development, eCommerce, digital marketing, and mobile app projects delivered across 50+ industries worldwide." />
         <link rel="canonical" href="https://www.1solutions.biz/portfolio/" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([
+          {
+            '@context': 'https://schema.org',
+            '@type':    'CollectionPage',
+            '@id':      'https://www.1solutions.biz/portfolio/#webpage',
+            url:        'https://www.1solutions.biz/portfolio/',
+            name:       'Portfolio | 1Solutions',
+            description: 'Browse 1Solutions\' portfolio of 500+ web development, eCommerce, digital marketing, and mobile app projects delivered across 50+ industries worldwide.',
+            isPartOf:   { '@id': 'https://www.1solutions.biz/#website' },
+            breadcrumb: {
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Home',      item: 'https://www.1solutions.biz/'         },
+                { '@type': 'ListItem', position: 2, name: 'Portfolio', item: 'https://www.1solutions.biz/portfolio/' },
+              ],
+            },
+          },
+        ]) }} />
         <style>{`
           @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
           *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }

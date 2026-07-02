@@ -131,6 +131,44 @@ export default function ContactPage() {
           content="Get in touch with 1Solutions. Tell us about your project and we'll respond within 24 hours with a tailored plan. Serving clients in the US, Canada, and Australia."
         />
         <link rel="canonical" href="https://www.1solutions.biz/contact-us/" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([
+          {
+            '@context': 'https://schema.org',
+            '@type':    'ContactPage',
+            '@id':      'https://www.1solutions.biz/contact-us/#webpage',
+            url:        'https://www.1solutions.biz/contact-us/',
+            name:       'Contact Us | 1Solutions',
+            description: 'Get in touch with 1Solutions. Tell us about your project and we\'ll respond within 24 hours.',
+            isPartOf:   { '@id': 'https://www.1solutions.biz/#website' },
+            breadcrumb: {
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Home',       item: 'https://www.1solutions.biz/'           },
+                { '@type': 'ListItem', position: 2, name: 'Contact Us', item: 'https://www.1solutions.biz/contact-us/' },
+              ],
+            },
+          },
+          {
+            '@context':   'https://schema.org',
+            '@type':      'Organization',
+            '@id':        'https://www.1solutions.biz/#organization',
+            name:         '1Solutions',
+            url:          'https://www.1solutions.biz',
+            email:        'info@1solutions.biz',
+            address: {
+              '@type':          'PostalAddress',
+              addressLocality:  'New Delhi',
+              addressRegion:    'Delhi',
+              addressCountry:   'IN',
+            },
+            contactPoint: {
+              '@type':       'ContactPoint',
+              contactType:   'customer support',
+              email:         'info@1solutions.biz',
+              availableLanguage: 'English',
+            },
+          },
+        ]) }} />
         <style>{`
           /* ─── Base ─── */
           .co-page {

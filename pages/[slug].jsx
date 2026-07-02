@@ -177,18 +177,43 @@ function SinglePost({ post, relatedPosts }) {
         {/* JSON-LD */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify({
-            '@context':         'https://schema.org',
-            '@type':            'Article',
-            headline:           post.title,
-            description:        seoDescription,
-            datePublished:      post.date,
-            dateModified:       post.modified,
-            author:             { '@type': 'Person', name: post.author?.node?.name },
-            publisher:          { '@type': 'Organization', name: '1Solutions', logo: { '@type': 'ImageObject', url: `${siteUrl}/images/logo.png` } },
-            mainEntityOfPage:   { '@type': 'WebPage', '@id': postUrl },
-            ...(seoImage ? { image: { '@type': 'ImageObject', url: seoImage } } : {}),
-          }) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify([
+            {
+              '@context':       'https://schema.org',
+              '@type':          'Article',
+              '@id':            `${postUrl}#article`,
+              headline:         post.title,
+              description:      seoDescription,
+              url:              postUrl,
+              datePublished:    post.date,
+              dateModified:     post.modified,
+              author:           {
+                '@type': 'Person',
+                name:    post.author?.node?.name,
+                url:     post.author?.node?.slug ? `${siteUrl}/author/${post.author.node.slug}` : undefined,
+              },
+              publisher: {
+                '@type': 'Organization',
+                '@id':   `${siteUrl}/#organization`,
+                name:    '1Solutions',
+                logo:    { '@type': 'ImageObject', url: `${siteUrl}/images/1solutions-logo.png` },
+              },
+              mainEntityOfPage: { '@type': 'WebPage', '@id': postUrl },
+              ...(seoImage ? { image: { '@type': 'ImageObject', url: seoImage } } : {}),
+              ...(cat ? { articleSection: cat.name, keywords: cat.name } : {}),
+              wordCount: post.content ? post.content.replace(/<[^>]+>/g, '').split(/\s+/).length : undefined,
+              inLanguage: 'en-US',
+            },
+            {
+              '@context': 'https://schema.org',
+              '@type':    'BreadcrumbList',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Home',  item: `${siteUrl}/`    },
+                { '@type': 'ListItem', position: 2, name: 'Blog',  item: `${siteUrl}/blog`},
+                { '@type': 'ListItem', position: 3, name: post.title, item: postUrl       },
+              ],
+            },
+          ]) }}
         />
       </Head>
 

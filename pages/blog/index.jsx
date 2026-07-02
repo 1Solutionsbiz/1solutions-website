@@ -26,6 +26,26 @@ export default function BlogIndex({ featuredPost, posts, totalPages, totalPosts 
         <meta property="og:description" content="Expert insights on web development, SEO, and digital marketing." />
         <link rel="canonical" href={`${siteUrl}/blog`} />
         {totalPages > 1 && <link rel="next" href={`${siteUrl}/blog/page/2`} />}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([
+          {
+            '@context': 'https://schema.org',
+            '@type':    'Blog',
+            '@id':      `${siteUrl}/blog#blog`,
+            url:        `${siteUrl}/blog`,
+            name:       'Insights & Resources | 1Solutions',
+            description: 'Expert articles on web development, digital marketing, SEO, AI, and e-commerce from 1Solutions.',
+            publisher:  { '@type': 'Organization', '@id': `${siteUrl}/#organization`, name: '1Solutions' },
+            inLanguage: 'en-US',
+          },
+          {
+            '@context': 'https://schema.org',
+            '@type':    'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` },
+              { '@type': 'ListItem', position: 2, name: 'Blog', item: `${siteUrl}/blog` },
+            ],
+          },
+        ]) }} />
       </Head>
 
       <BlogHero totalPosts={totalPosts} />
