@@ -1,16 +1,15 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
 import {
-  getPosts, getFeaturedPost, getTotalPostCount, getCursorAtOffset,
-  formatDate, stripHtml, getCategoryColor,
+  getPosts, getTotalPostCount, getCursorAtOffset,
 } from '../../../lib/graphql';
 import BlogCard from '../../../components/blog/BlogCard';
+import BlogHero from '../../../components/blog/BlogHero';
 import Pagination from '../../../components/blog/Pagination';
 
-const PER_PAGE = 9;
+const PER_PAGE = 24;
 
-export default function BlogPage({ posts, currentPage, totalPages }) {
+export default function BlogPage({ posts, currentPage, totalPages, totalPosts }) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.1solutions.biz';
 
   return (
@@ -23,13 +22,7 @@ export default function BlogPage({ posts, currentPage, totalPages }) {
         {currentPage < totalPages && <link rel="next" href={`${siteUrl}/blog/page/${currentPage + 1}`} />}
       </Head>
 
-      {/* ── BLOG HERO ── */}
-      <section className="blog-hero">
-        <div className="blog-hero-container">
-          <h1>Insights &amp; Resources</h1>
-          <p>Expert articles on web development, digital marketing, SEO, and emerging technology.</p>
-        </div>
-      </section>
+      <BlogHero totalPosts={totalPosts} />
 
       <div className="blog-container">
         {posts.length > 0 ? (
@@ -57,7 +50,6 @@ export async function getStaticPaths() {
     const total      = await getTotalPostCount();
     const totalPages = Math.ceil(total / PER_PAGE);
 
-    // Pre-build first 5 pages; rest generate on demand
     const paths = [];
     for (let p = 2; p <= Math.min(totalPages, 5); p++) {
       paths.push({ params: { page: String(p) } });
@@ -82,10 +74,8 @@ export async function getStaticProps({ params }) {
 
     if (page > totalPages) return { notFound: true };
 
-    // Get the cursor marking the end of the previous page
-    const offset = (page - 1) * PER_PAGE;
-    const after  = await getCursorAtOffset(offset);
-
+    const offset    = (page - 1) * PER_PAGE;
+    const after     = await getCursorAtOffset(offset);
     const postsData = await getPosts({ first: PER_PAGE, after });
 
     return {
@@ -93,6 +83,7 @@ export async function getStaticProps({ params }) {
         posts:       postsData.nodes || [],
         currentPage: page,
         totalPages,
+        totalPosts:  total || 0,
       },
       revalidate: 300,
     };

@@ -1,10 +1,11 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { getTagWithPosts, getCategories } from '../../lib/graphql';
+import { getTagWithPosts, getCategories, getTotalPostCount } from '../../lib/graphql';
 import BlogCard from '../../components/blog/BlogCard';
+import BlogHero from '../../components/blog/BlogHero';
 import Pagination from '../../components/blog/Pagination';
 
-export default function TagArchive({ tag, posts, pageInfo, categories }) {
+export default function TagArchive({ tag, posts, pageInfo, categories, totalPosts }) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.1solutions.biz';
 
   return (
@@ -15,24 +16,17 @@ export default function TagArchive({ tag, posts, pageInfo, categories }) {
         <link rel="canonical" href={`${siteUrl}/tag/${tag.slug}`} />
       </Head>
 
-      {/* ── TAG HERO ── */}
-      <section className="archive-hero tag-hero">
-        <div className="archive-hero-container">
-          <span className="archive-hero-badge cat-blue">Tag</span>
-          <h1 className="archive-title">#{tag.name}</h1>
-          {tag.description && <p className="archive-description">{tag.description}</p>}
-          <div className="archive-hero-meta">
-            <span className="archive-count">{tag.count} article{tag.count !== 1 ? 's' : ''}</span>
-          </div>
-        </div>
-      </section>
+      <BlogHero totalPosts={totalPosts} />
 
-      {/* Related Topics */}
+      {/* Tag context strip */}
       <div className="archive-filters-bar">
         <div className="archive-filters-inner">
-          <span className="filters-label">Browse by Topic:</span>
+          <span className="filters-label">
+            Tag: <strong>#{tag.name}</strong>
+            {tag.count > 0 && <span style={{ marginLeft: 8, fontWeight: 400, color: 'var(--text-light)' }}>— {tag.count} article{tag.count !== 1 ? 's' : ''}</span>}
+          </span>
           <div className="filters">
-            <Link href="/blog" className="filter-btn">All</Link>
+            <Link href="/blog" className="filter-btn">All Posts</Link>
             {categories.map((cat) => (
               <Link key={cat.slug} href={`/${cat.slug}`} className="filter-btn">
                 {cat.name}
@@ -50,10 +44,7 @@ export default function TagArchive({ tag, posts, pageInfo, categories }) {
                 <BlogCard key={post.slug} post={post} />
               ))}
             </div>
-            <Pagination
-              pageInfo={pageInfo}
-              baseUrl={`/tag/${tag.slug}`}
-            />
+            <Pagination pageInfo={pageInfo} baseUrl={`/tag/${tag.slug}`} />
           </>
         ) : (
           <div className="no-posts">
@@ -67,17 +58,15 @@ export default function TagArchive({ tag, posts, pageInfo, categories }) {
 }
 
 export async function getStaticPaths() {
-  return {
-    paths:    [],
-    fallback: 'blocking',
-  };
+  return { paths: [], fallback: 'blocking' };
 }
 
 export async function getStaticProps({ params }) {
   try {
-    const [tag, categories] = await Promise.all([
-      getTagWithPosts(params.slug, { first: 9 }),
+    const [tag, categories, total] = await Promise.all([
+      getTagWithPosts(params.slug, { first: 24 }),
       getCategories({ first: 10 }),
+      getTotalPostCount(),
     ]);
 
     if (!tag) return { notFound: true };
@@ -85,9 +74,10 @@ export async function getStaticProps({ params }) {
     return {
       props: {
         tag,
-        posts:    tag.posts?.nodes || [],
-        pageInfo: tag.posts?.pageInfo || null,
+        posts:      tag.posts?.nodes || [],
+        pageInfo:   tag.posts?.pageInfo || null,
         categories: categories || [],
+        totalPosts: total || 0,
       },
       revalidate: 3600,
     };

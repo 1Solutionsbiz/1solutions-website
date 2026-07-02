@@ -1,8 +1,9 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { getAuthorWithPosts } from '../../lib/graphql';
+import { getAuthorWithPosts, getTotalPostCount } from '../../lib/graphql';
 import BlogCard from '../../components/blog/BlogCard';
+import BlogHero from '../../components/blog/BlogHero';
 import Pagination from '../../components/blog/Pagination';
 
 // Author social/contact mapping
@@ -27,7 +28,7 @@ const AUTHOR_WEBSITE = {
   'ritika':         'https://www.1solutions.biz',
 };
 
-export default function AuthorPage({ author, posts, pageInfo, slug }) {
+export default function AuthorPage({ author, posts, pageInfo, slug, totalPosts }) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.1solutions.biz';
   const linkedin = AUTHOR_LINKEDIN[slug] || AUTHOR_LINKEDIN[author.name];
   const twitter  = AUTHOR_TWITTER[slug]  || AUTHOR_TWITTER[author.name];
@@ -50,6 +51,8 @@ export default function AuthorPage({ author, posts, pageInfo, slug }) {
         <meta property="og:type"        content="profile" />
         {author.avatar?.url && <meta property="og:image" content={author.avatar.url} />}
       </Head>
+
+      <BlogHero totalPosts={totalPosts} />
 
       {/* ── AUTHOR HERO ── */}
       <section className="author-archive-hero">
@@ -148,15 +151,19 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   try {
-    const author = await getAuthorWithPosts(params.slug, { first: 9 });
+    const [author, total] = await Promise.all([
+      getAuthorWithPosts(params.slug, { first: 24 }),
+      getTotalPostCount(),
+    ]);
     if (!author) return { notFound: true };
 
     return {
       props: {
         author,
-        posts:    author.posts?.nodes || [],
-        pageInfo: author.posts?.pageInfo || null,
-        slug:     params.slug,
+        posts:      author.posts?.nodes || [],
+        pageInfo:   author.posts?.pageInfo || null,
+        slug:       params.slug,
+        totalPosts: total || 0,
       },
       revalidate: 3600,
     };

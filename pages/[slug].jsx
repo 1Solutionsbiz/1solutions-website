@@ -4,10 +4,11 @@ import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import {
   getPostBySlug, getAllPostSlugs, getRelatedPosts,
-  getCategoryWithPosts, getAllCategorySlugs, getCategories,
+  getCategoryWithPosts, getAllCategorySlugs, getCategories, getTotalPostCount,
   formatDate, stripHtml, getCategoryColor, getReadingTime
 } from '../lib/graphql';
 import BlogCard from '../components/blog/BlogCard';
+import BlogHero from '../components/blog/BlogHero';
 import Pagination from '../components/blog/Pagination';
 
 // Author social links mapping (update here)
@@ -33,7 +34,7 @@ const AUTHOR_WEBSITE = {
 };
 
 // ── CATEGORY PAGE COMPONENT ──────────────────────────────────────────────────
-function CategoryPage({ category, posts, pageInfo, allCategories, currentAfter }) {
+function CategoryPage({ category, posts, pageInfo, allCategories, currentAfter, totalPosts }) {
   const color   = getCategoryColor(category.slug);
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.1solutions.biz';
 
@@ -45,24 +46,17 @@ function CategoryPage({ category, posts, pageInfo, allCategories, currentAfter }
         <link rel="canonical" href={`${siteUrl}/${category.slug}`} />
       </Head>
 
-      {/* Category Hero */}
-      <section className="archive-hero category-hero">
-        <div className="archive-hero-container">
-          <div className={`archive-hero-badge ${color}`}>Category</div>
-          <h1>{category.name}</h1>
-          {category.description && <p>{category.description}</p>}
-          <div className="archive-hero-meta">
-            <span className="archive-count">{category.count} Articles</span>
-          </div>
-        </div>
-      </section>
+      <BlogHero totalPosts={totalPosts} />
 
-      {/* Related Categories */}
+      {/* Category context strip */}
       <div className="archive-filters-bar">
         <div className="archive-filters-inner">
-          <span className="filters-label">Related Topics:</span>
+          <span className="filters-label">
+            Category: <strong>{category.name}</strong>
+            {category.count > 0 && <span style={{ marginLeft: 8, fontWeight: 400, color: 'var(--text-light)' }}>— {category.count} articles</span>}
+          </span>
           <div className="filters">
-            <Link href="/blog" className="filter-btn">All</Link>
+            <Link href="/blog" className="filter-btn">All Posts</Link>
             {allCategories
               .filter((c) => c.slug !== category.slug)
               .slice(0, 8)
@@ -521,9 +515,10 @@ export async function getStaticProps({ params }) {
     }
 
     // Try as a category
-    const [category, allCategories] = await Promise.all([
-      getCategoryWithPosts(params.slug, { first: 9 }),
+    const [category, allCategories, total] = await Promise.all([
+      getCategoryWithPosts(params.slug, { first: 24 }),
       getCategories({ first: 12 }),
+      getTotalPostCount(),
     ]);
 
     if (!category) return { notFound: true };
@@ -536,6 +531,7 @@ export async function getStaticProps({ params }) {
         pageInfo:     category.posts?.pageInfo || null,
         allCategories,
         currentAfter: null,
+        totalPosts:   total || 0,
       },
       revalidate: 3600,
     };

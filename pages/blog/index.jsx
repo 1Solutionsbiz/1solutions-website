@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8,22 +6,16 @@ import {
   formatDate, stripHtml, getCategoryColor,
 } from '../../lib/graphql';
 import BlogCard from '../../components/blog/BlogCard';
+import BlogHero from '../../components/blog/BlogHero';
 import Pagination from '../../components/blog/Pagination';
 
-const PER_PAGE = 9;
+const PER_PAGE = 24;
 
 export default function BlogIndex({ featuredPost, posts, totalPages, totalPosts }) {
   const feat      = featuredPost;
   const featCat   = feat?.categories?.nodes?.[0];
   const featColor = featCat ? getCategoryColor(featCat.slug) : 'cat-orange';
   const siteUrl   = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.1solutions.biz';
-  const [searchQ, setSearchQ] = useState('');
-  const router = useRouter();
-
-  const handleSearch = (e) => {
-    e.preventDefault();
-    if (searchQ.trim()) router.push(`/search?q=${encodeURIComponent(searchQ.trim())}`);
-  };
 
   return (
     <>
@@ -36,28 +28,7 @@ export default function BlogIndex({ featuredPost, posts, totalPages, totalPosts 
         {totalPages > 1 && <link rel="next" href={`${siteUrl}/blog/page/2`} />}
       </Head>
 
-      {/* ── BLOG HERO ── */}
-      <section className="blog-hero">
-        <div className="blog-hero-container">
-          <h1>Insights &amp; Resources</h1>
-          <p>Expert articles on web development, digital marketing, SEO, and emerging technology — helping your business stay ahead.</p>
-          <form onSubmit={handleSearch} className="blog-hero-search" role="search">
-            <input
-              type="search"
-              value={searchQ}
-              onChange={(e) => setSearchQ(e.target.value)}
-              placeholder={`Search ${totalPosts > 0 ? totalPosts.toLocaleString() + '+' : ''} articles…`}
-              aria-label="Search articles"
-              className="blog-hero-search-input"
-            />
-            <button type="submit" className="blog-hero-search-btn" aria-label="Search">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-              </svg>
-            </button>
-          </form>
-        </div>
-      </section>
+      <BlogHero totalPosts={totalPosts} />
 
       <div className="blog-container">
 
@@ -130,7 +101,6 @@ export async function getStaticProps() {
       getTotalPostCount(),
     ]);
 
-    // Remove featured post from the grid so it doesn't duplicate
     const allNodes  = postsData.nodes || [];
     const gridPosts = featured
       ? allNodes.filter((p) => p.slug !== featured.slug)
@@ -150,7 +120,7 @@ export async function getStaticProps() {
   } catch (err) {
     console.error('Blog index error:', err);
     return {
-      props: { featuredPost: null, posts: [], totalPages: 1 },
+      props: { featuredPost: null, posts: [], totalPages: 1, totalPosts: 0 },
       revalidate: 60,
     };
   }
