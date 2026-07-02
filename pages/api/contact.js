@@ -115,9 +115,6 @@ export default async function handler(req, res) {
     <!-- Intro -->
     <tr>
       <td style="padding:28px 40px 8px;">
-        <p style="font-size:15px;color:#1a1a2e;line-height:1.75;margin:0 0 10px;">
-          New enquiry from <strong style="color:#FE9700;">${name}</strong>${company ? ` · <strong style="color:#114171;">${company}</strong>` : ''}.
-        </p>
         <p style="font-size:15px;color:#374151;margin:0 0 6px;">Submission Date: <strong style="color:#FE9700;">${notifDate}</strong></p>
       </td>
     </tr>
