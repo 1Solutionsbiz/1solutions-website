@@ -78,37 +78,100 @@ export default async function handler(req, res) {
   }
 
   // ── Internal notification email (to 1Solutions team) ──────────────────────
-  const internalHtml = `
-    <div style="font-family:Inter,Arial,sans-serif;max-width:600px;margin:0 auto;color:#1a1a2e">
-      <div style="background:#0F1F40;padding:28px 32px;border-radius:12px 12px 0 0">
-        <h2 style="color:#fff;margin:0;font-size:1.3rem">New Contact Form Enquiry</h2>
-        <p style="color:rgba(255,255,255,0.6);margin:6px 0 0;font-size:0.88rem">${source || 'Contact Us'}</p>
-      </div>
-      <div style="background:#f8fafc;padding:28px 32px;border-radius:0 0 12px 12px;border:1px solid #e5e7eb;border-top:none">
-        <table style="width:100%;border-collapse:collapse">
-          ${[
-            ['Source',  source || 'Contact Us'],
-            ['Name',    name],
-            ['Email',   email],
-            ['Phone',   phone || '—'],
-            ['Company', company || '—'],
-            ['Service', service || '—'],
-            ['Budget',  budget || '—'],
-          ].map(([label, value]) => `
-            <tr>
-              <td style="padding:8px 0;font-size:0.82rem;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.06em;width:110px;vertical-align:top">${label}</td>
-              <td style="padding:8px 0;font-size:0.95rem;color:#0F1F40;font-weight:500">${value}</td>
-            </tr>
-          `).join('')}
+  const notifDate = new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+  const internalRows = [
+    ['Name',    name],
+    ['Email',   email],
+    ...(phone   ? [['Phone',   phone]]   : []),
+    ...(company ? [['Company', company]] : []),
+    ...(service ? [['Service', service]] : []),
+    ...(budget  ? [['Budget',  budget]]  : []),
+    ...(source  ? [['Source',  source]]  : []),
+  ];
+
+  const internalHtml = `<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;padding:0;background-color:#e8eaf0;font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;">
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#e8eaf0" style="background-color:#e8eaf0;">
+<tr><td align="center" style="padding:40px 16px 32px;">
+
+  <!-- Main card -->
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="max-width:580px;background-color:#ffffff;">
+
+    <!-- Logo -->
+    <tr>
+      <td align="center" style="padding:40px 40px 32px;">
+        <a href="https://www.1solutions.biz" style="display:inline-block;text-decoration:none;">
+          <img src="https://www.1solutions.biz/images/1solutions-logo.png" alt="1Solutions" width="200" style="display:block;border:0;height:auto;max-width:200px;" />
+        </a>
+      </td>
+    </tr>
+
+    <!-- Divider -->
+    <tr><td style="padding:0 40px;"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-top:1px solid #e5e7eb;"></td></tr></table></td></tr>
+
+    <!-- Intro -->
+    <tr>
+      <td style="padding:28px 40px 8px;">
+        <p style="font-size:15px;color:#1a1a2e;line-height:1.75;margin:0 0 10px;">
+          A <strong>new enquiry</strong> has been received from <strong style="color:#FE9700;">${name}</strong>${company ? ` of <strong style="color:#114171;">${company}</strong>` : ''} via the <strong style="color:#114171;">1Solutions website</strong>.
+        </p>
+        <p style="font-size:15px;color:#374151;margin:0 0 6px;">Submission Date: <strong style="color:#FE9700;">${notifDate}</strong></p>
+      </td>
+    </tr>
+
+    <!-- Fields -->
+    <tr>
+      <td style="padding:16px 40px 8px 60px;">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+          ${internalRows.map(([label, value]) => `
+          <tr>
+            <td width="88" style="padding:5px 0;font-size:13px;color:#6b7280;vertical-align:top;">${label}</td>
+            <td style="padding:5px 0;font-size:13px;color:#111827;font-weight:600;">${String(value).replace(/</g, '&lt;').replace(/>/g, '&gt;')}</td>
+          </tr>`).join('')}
         </table>
-        <div style="margin-top:20px;padding:16px;background:#fff;border-radius:8px;border:1px solid #e5e7eb">
-          <p style="margin:0 0 6px;font-size:0.82rem;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.06em">Message</p>
-          <p style="margin:0;font-size:0.95rem;color:#374151;line-height:1.65;white-space:pre-wrap">${message.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p>
-        </div>
-        <p style="margin:20px 0 0;font-size:0.8rem;color:#9ca3af">Submitted via 1solutions.biz</p>
-      </div>
-    </div>
-  `;
+      </td>
+    </tr>
+
+    <!-- Message -->
+    <tr>
+      <td style="padding:16px 40px 28px 60px;">
+        <p style="font-size:13px;color:#6b7280;margin:0 0 6px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;">Message</p>
+        <p style="font-size:14px;color:#374151;line-height:1.7;margin:0;white-space:pre-wrap;">${message.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p>
+      </td>
+    </tr>
+
+    <!-- Divider -->
+    <tr><td style="padding:0 40px 20px;"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-top:1px solid #e5e7eb;"></td></tr></table></td></tr>
+
+    <!-- Footer note -->
+    <tr>
+      <td style="padding:0 40px 36px;">
+        <p style="font-size:14px;color:#6b7280;line-height:1.6;margin:0;">
+          This notification was sent to the 1Solutions team. Reply directly to <a href="mailto:${email}" style="color:#114171;text-decoration:none;font-weight:600;">${email}</a> to respond to this enquiry.
+        </p>
+      </td>
+    </tr>
+
+  </table>
+
+  <!-- Below-card footer -->
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:580px;">
+    <tr>
+      <td align="center" style="padding:16px 20px 0;">
+        <p style="font-size:12px;color:#9ca3af;line-height:1.65;margin:0;">
+          This email was sent to atul@1solutions.biz and info@1solutions.biz via 1solutions.biz contact form.
+        </p>
+      </td>
+    </tr>
+  </table>
+
+</td></tr>
+</table>
+</body>
+</html>`;
 
   // ── Auto-reply confirmation email (to the enquirer) ───────────────────────
   const firstName = name.split(' ')[0];
