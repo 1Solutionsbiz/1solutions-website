@@ -278,7 +278,7 @@ export default async function handler(req, res) {
     await Promise.all([
       sendGraphEmail(token, {
         to:      ['atul@1solutions.biz', 'info@1solutions.biz'],
-        subject: `New enquiry from ${name}${company ? ` — ${company}` : ''}`,
+        subject: `New enquiry from ${name}`,
         html:    internalHtml,
         replyTo: email,
       }),
