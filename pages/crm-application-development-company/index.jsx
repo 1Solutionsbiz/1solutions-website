@@ -816,7 +816,7 @@ export default function CrmApplicationDevelopment() {
                 <div className="cr-frow">
                   <div className="cr-fg">
                     <label htmlFor="cr-company">Company</label>
-                    <input name="sf-name" id="cr-company" type="text" placeholder="Company name" />
+                    <input name="sf-company" id="cr-company" type="text" placeholder="Company name" />
                   </div>
                   <div className="cr-fg">
                     <label htmlFor="cr-phone">Phone / WhatsApp *</label>

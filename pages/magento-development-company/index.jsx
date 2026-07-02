@@ -857,7 +857,7 @@ export default function MagentoDevelopmentCompany() {
                         <input type="tel" name="sf-phone" placeholder="Phone Number*" required />
                       </div>
                     </div>
-                    <div className="mag-form-group"><label>Organization*</label><input name="sf-name" type="text" placeholder="Organization / Store Name*" required /></div>
+                    <div className="mag-form-group"><label>Organization*</label><input name="sf-company" type="text" placeholder="Organization / Store Name*" required /></div>
                   </div>
                   <div className="mag-form-group full"><label>Message*</label><textarea name="sf-message" placeholder="Tell us about your Magento project..." rows={6} required /></div>
                   <div className="mag-consent">

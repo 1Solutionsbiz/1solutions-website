@@ -659,7 +659,7 @@ export default function CloudNativeServices() {
                   <div className="cn-fg"><label htmlFor="cn-email">Work Email *</label><input id="cn-email" type="email" name="sf-email" placeholder="you@company.com" required /></div>
                 </div>
                 <div className="cn-frow">
-                  <div className="cn-fg"><label htmlFor="cn-company">Company / Product Name</label><input name="sf-name" id="cn-company" type="text" placeholder="Your company name" /></div>
+                  <div className="cn-fg"><label htmlFor="cn-company">Company / Product Name</label><input name="sf-company" id="cn-company" type="text" placeholder="Your company name" /></div>
                   <div className="cn-fg"><label htmlFor="cn-phone">Phone / WhatsApp *</label><input id="cn-phone" type="tel" name="sf-phone" placeholder="+1 555 000 0000" required /></div>
                 </div>
                 <div className="cn-fg full">

@@ -659,7 +659,7 @@ export default function CloudMigrationServices() {
                   <div className="cm-fg"><label htmlFor="cm-email">Work Email *</label><input id="cm-email" type="email" name="sf-email" placeholder="you@company.com" required /></div>
                 </div>
                 <div className="cm-frow">
-                  <div className="cm-fg"><label htmlFor="cm-company">Company / Organisation</label><input name="sf-name" id="cm-company" type="text" placeholder="Your company name" /></div>
+                  <div className="cm-fg"><label htmlFor="cm-company">Company / Organisation</label><input name="sf-company" id="cm-company" type="text" placeholder="Your company name" /></div>
                   <div className="cm-fg"><label htmlFor="cm-phone">Phone / WhatsApp *</label><input id="cm-phone" type="tel" name="sf-phone" placeholder="+1 555 000 0000" required /></div>
                 </div>
                 <div className="cm-fg full">

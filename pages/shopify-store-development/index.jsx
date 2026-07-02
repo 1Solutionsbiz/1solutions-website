@@ -874,7 +874,7 @@ export default function ShopifyStoreDevelopment() {
                         <input type="tel" name="sf-phone" placeholder="Phone Number*" required />
                       </div>
                     </div>
-                    <div className="shopify-form-group"><label>Organization*</label><input name="sf-name" type="text" placeholder="Organization / Store Name*" required /></div>
+                    <div className="shopify-form-group"><label>Organization*</label><input name="sf-company" type="text" placeholder="Organization / Store Name*" required /></div>
                   </div>
                   <div className="shopify-form-group full"><label>Message*</label><textarea name="sf-message" placeholder="Tell us about your Shopify project..." rows={6} required /></div>
                   <div className="shopify-consent">

@@ -816,7 +816,7 @@ export default function AndroidAppDevelopment() {
                 <div className="an-frow">
                   <div className="an-fg">
                     <label htmlFor="an-company">Company / App Name</label>
-                    <input name="sf-name" id="an-company" type="text" placeholder="Company or app name" />
+                    <input name="sf-company" id="an-company" type="text" placeholder="Company or app name" />
                   </div>
                   <div className="an-fg">
                     <label htmlFor="an-phone">Phone / WhatsApp *</label>

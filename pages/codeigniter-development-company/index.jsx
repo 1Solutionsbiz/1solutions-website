@@ -857,7 +857,7 @@ export default function CodeIgniterDevelopmentCompany() {
                         <input type="tel" name="sf-phone" placeholder="Phone Number*" required />
                       </div>
                     </div>
-                    <div className="ci-form-group"><label>Organization*</label><input name="sf-name" type="text" placeholder="Organization / Company Name*" required /></div>
+                    <div className="ci-form-group"><label>Organization*</label><input name="sf-company" type="text" placeholder="Organization / Company Name*" required /></div>
                   </div>
                   <div className="ci-form-group full"><label>Message*</label><textarea name="sf-message" placeholder="Describe your CodeIgniter project — what you're building, any existing codebase details, integrations needed, and your timeline..." rows={6} required /></div>
                   <div className="ci-consent">

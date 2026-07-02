@@ -700,7 +700,7 @@ export default function IosAppDevelopment() {
                   <div className="io-fg"><label htmlFor="io-email">Work Email *</label><input id="io-email" type="email" name="sf-email" placeholder="you@company.com" required /></div>
                 </div>
                 <div className="io-frow">
-                  <div className="io-fg"><label htmlFor="io-company">Company / App Name</label><input name="sf-name" id="io-company" type="text" placeholder="Company or app name" /></div>
+                  <div className="io-fg"><label htmlFor="io-company">Company / App Name</label><input name="sf-company" id="io-company" type="text" placeholder="Company or app name" /></div>
                   <div className="io-fg"><label htmlFor="io-phone">Phone / WhatsApp *</label><input id="io-phone" type="tel" name="sf-phone" placeholder="+1 555 000 0000" required /></div>
                 </div>
                 <div className="io-fg full">

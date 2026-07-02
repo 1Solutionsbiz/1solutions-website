@@ -816,7 +816,7 @@ export default function ElearningSoftwareDevelopment() {
                 <div className="el-frow">
                   <div className="el-fg">
                     <label htmlFor="el-company">Company / Organisation</label>
-                    <input name="sf-name" id="el-company" type="text" placeholder="Company name" />
+                    <input name="sf-company" id="el-company" type="text" placeholder="Company name" />
                   </div>
                   <div className="el-fg">
                     <label htmlFor="el-phone">Phone / WhatsApp *</label>

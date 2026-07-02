@@ -816,7 +816,7 @@ export default function FlutterAppDevelopment() {
                 <div className="fl-frow">
                   <div className="fl-fg">
                     <label htmlFor="fl-company">Company / App Name</label>
-                    <input name="sf-name" id="fl-company" type="text" placeholder="Company or app name" />
+                    <input name="sf-company" id="fl-company" type="text" placeholder="Company or app name" />
                   </div>
                   <div className="fl-fg">
                     <label htmlFor="fl-phone">Phone / WhatsApp *</label>

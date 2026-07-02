@@ -816,7 +816,7 @@ export default function ErpApplicationDevelopment() {
                 <div className="er-frow">
                   <div className="er-fg">
                     <label htmlFor="er-company">Company</label>
-                    <input name="sf-name" id="er-company" type="text" placeholder="Company name" />
+                    <input name="sf-company" id="er-company" type="text" placeholder="Company name" />
                   </div>
                   <div className="er-fg">
                     <label htmlFor="er-phone">Phone / WhatsApp *</label>

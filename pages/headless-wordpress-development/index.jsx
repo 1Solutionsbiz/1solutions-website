@@ -864,7 +864,7 @@ export default function HeadlessWordPressDevelopment() {
                         <input type="tel" name="sf-phone" placeholder="Phone Number*" required />
                       </div>
                     </div>
-                    <div className="hwp-form-group"><label>Organization*</label><input name="sf-name" type="text" placeholder="Organization / Company Name*" required /></div>
+                    <div className="hwp-form-group"><label>Organization*</label><input name="sf-company" type="text" placeholder="Organization / Company Name*" required /></div>
                   </div>
                   <div className="hwp-form-group full"><label>Message*</label><textarea name="sf-message" placeholder="Tell us about your headless WordPress project..." rows={6} required /></div>
                   <div className="hwp-consent">

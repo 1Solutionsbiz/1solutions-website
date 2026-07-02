@@ -816,7 +816,7 @@ export default function HireWordPressDeveloper() {
                 <div className="hw-frow">
                   <div className="hw-fg">
                     <label htmlFor="hw-company">Company / Agency</label>
-                    <input name="sf-name" id="hw-company" type="text" placeholder="Company name" />
+                    <input name="sf-company" id="hw-company" type="text" placeholder="Company name" />
                   </div>
                   <div className="hw-fg">
                     <label htmlFor="hw-phone">Phone / WhatsApp *</label>

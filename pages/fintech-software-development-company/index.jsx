@@ -816,7 +816,7 @@ export default function FintechSoftwareDevelopment() {
                 <div className="ft-frow">
                   <div className="ft-fg">
                     <label htmlFor="ft-company">Company</label>
-                    <input name="sf-name" id="ft-company" type="text" placeholder="Company name" />
+                    <input name="sf-company" id="ft-company" type="text" placeholder="Company name" />
                   </div>
                   <div className="ft-fg">
                     <label htmlFor="ft-phone">Phone / WhatsApp *</label>

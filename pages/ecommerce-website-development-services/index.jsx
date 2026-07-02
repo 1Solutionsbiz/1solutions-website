@@ -875,7 +875,7 @@ export default function EcommerceWebsiteDevelopmentServices() {
                         <input type="tel" name="sf-phone" placeholder="Phone Number*" required />
                       </div>
                     </div>
-                    <div className="ecom-form-group"><label>Organization*</label><input name="sf-name" type="text" placeholder="Organization / Store Name*" required /></div>
+                    <div className="ecom-form-group"><label>Organization*</label><input name="sf-company" type="text" placeholder="Organization / Store Name*" required /></div>
                   </div>
                   <div className="ecom-form-group full">
                     <label>Platform (optional)</label>
