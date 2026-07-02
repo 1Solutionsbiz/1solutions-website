@@ -497,6 +497,13 @@ export async function getStaticProps({ params }) {
     const post = await getPostBySlug(params.slug);
 
     if (post) {
+      // Replace staging URLs in post content so all internal links point to the live domain
+      if (post.content) {
+        post.content = post.content.replace(
+          /https?:\/\/midnightblue-lyrebird-831822\.hostingersite\.com/g,
+          'https://www.1solutions.biz'
+        );
+      }
       post.readingTime = getReadingTime(post.content);
 
       const primaryCatSlug = post.categories?.nodes?.[0]?.slug;
