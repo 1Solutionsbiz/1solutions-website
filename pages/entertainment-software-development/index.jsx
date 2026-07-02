@@ -96,8 +96,8 @@ function StatItem({ label, val, started }) {
           phone: (fd.get('sf-cc') ? fd.get('sf-cc') + ' ' : '') + (fd.get('sf-phone') || ''),
           company: fd.get('sf-company') || '', message: fd.get('sf-message') || '',
           source: 'Entertainment Software Development', consent: true, recaptchaToken: token,
-        }}),
-      }});
+        }),
+      });
       _setSfSt(res.ok ? 'success' : 'error');
     } catch { _setSfSt('error'); }
   };
