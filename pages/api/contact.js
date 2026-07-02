@@ -1,15 +1,51 @@
-import nodemailer from 'nodemailer';
+const SENDER = 'info@1solutions.biz';
 
-function createTransporter() {
-  return nodemailer.createTransport({
-    host: process.env.SMTP_HOST || 'smtp-relay.brevo.com',
-    port: parseInt(process.env.SMTP_PORT || '587'),
-    secure: false,
-    auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS,
+async function getGraphToken() {
+  const res = await fetch(
+    `https://login.microsoftonline.com/${process.env.AZURE_TENANT_ID}/oauth2/v2.0/token`,
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        client_id:     process.env.AZURE_CLIENT_ID,
+        client_secret: process.env.AZURE_CLIENT_SECRET,
+        scope:         'https://graph.microsoft.com/.default',
+        grant_type:    'client_credentials',
+      }),
+    }
+  );
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error_description || 'Failed to get Graph token');
+  return data.access_token;
+}
+
+async function sendGraphEmail(token, { to, subject, html, replyTo }) {
+  const toRecipients = (Array.isArray(to) ? to : [to])
+    .map(a => ({ emailAddress: { address: a } }));
+
+  const body = {
+    message: {
+      subject,
+      body: { contentType: 'HTML', content: html },
+      toRecipients,
+      ...(replyTo ? { replyTo: [{ emailAddress: { address: replyTo } }] } : {}),
     },
-  });
+    saveToSentItems: false,
+  };
+
+  const res = await fetch(
+    `https://graph.microsoft.com/v1.0/users/${SENDER}/sendMail`,
+    {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    }
+  );
+
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.error?.message || `Graph sendMail failed: ${res.status}`);
+  }
 }
 
 export default async function handler(req, res) {
@@ -65,7 +101,7 @@ export default async function handler(req, res) {
           <p style="margin:0 0 6px;font-size:0.82rem;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.06em">Message</p>
           <p style="margin:0;font-size:0.95rem;color:#374151;line-height:1.65;white-space:pre-wrap">${message.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p>
         </div>
-        <p style="margin:20px 0 0;font-size:0.8rem;color:#9ca3af">Submitted via 1solutions.biz/contact-us</p>
+        <p style="margin:20px 0 0;font-size:0.8rem;color:#9ca3af">Submitted via 1solutions.biz</p>
       </div>
     </div>
   `;
@@ -87,9 +123,9 @@ export default async function handler(req, res) {
           <p style="margin:0 0 10px;font-size:0.82rem;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.06em">Your enquiry summary</p>
           <table style="width:100%;border-collapse:collapse">
             ${[
-              ['Service',  service || '—'],
-              ['Budget',   budget  || '—'],
-              ['Phone',    phone   || '—'],
+              ['Service', service || '—'],
+              ['Budget',  budget  || '—'],
+              ['Phone',   phone   || '—'],
             ].map(([label, value]) => `
               <tr>
                 <td style="padding:5px 0;font-size:0.82rem;color:#6b7280;width:90px">${label}</td>
@@ -119,27 +155,22 @@ export default async function handler(req, res) {
   `;
 
   try {
-    const transporter = createTransporter();
-
+    const token = await getGraphToken();
     await Promise.all([
-      // Notification to team
-      transporter.sendMail({
-        from:    `"1Solutions Contact" <contact@1solutions.biz>`,
+      sendGraphEmail(token, {
         to:      ['atul@1solutions.biz', 'info@1solutions.biz'],
-        replyTo: email,
         subject: `New enquiry from ${name}${company ? ` — ${company}` : ''}`,
         html:    internalHtml,
+        replyTo: email,
       }),
-      // Auto-reply to enquirer
-      transporter.sendMail({
-        from:    `"1Solutions" <contact@1solutions.biz>`,
+      sendGraphEmail(token, {
         to:      email,
         subject: `We've received your message, ${name.split(' ')[0]}!`,
         html:    autoReplyHtml,
       }),
     ]);
   } catch (err) {
-    console.error('[contact] email error:', err.message, err.code);
+    console.error('[contact] Graph API error:', err.message);
     return res.status(500).json({ message: 'Failed to send. Please try again or email us directly at info@1solutions.biz' });
   }
 
