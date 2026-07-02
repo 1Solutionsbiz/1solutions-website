@@ -146,15 +146,6 @@ export default async function handler(req, res) {
     <!-- Divider -->
     <tr><td style="padding:0 40px 20px;"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-top:1px solid #e5e7eb;"></td></tr></table></td></tr>
 
-    <!-- Footer note -->
-    <tr>
-      <td style="padding:0 40px 36px;">
-        <p style="font-size:12px;color:#9ca3af;line-height:1.6;margin:0;">
-          Reply directly to <a href="mailto:${email}" style="color:#6b7280;text-decoration:none;">${email}</a> to respond to this enquiry.
-        </p>
-      </td>
-    </tr>
-
   </table>
 
   <!-- Below-card footer -->
