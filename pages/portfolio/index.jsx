@@ -67,7 +67,6 @@ const PROJECTS = [
     tech: ['Shopify', 'Liquid', 'Conversion Optimisation'],
     desc: 'Vibrant Shopify eCommerce store with a focus on lifestyle products — optimised for fast load times and high-converting product pages.',
     image: '/images/portfolio/yaahdy.jpg',
-    url: 'https://yaahdy.com/',
     featured: false,
   },
   {
