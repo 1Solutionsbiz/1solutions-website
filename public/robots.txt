@@ -8,13 +8,47 @@ Disallow: /api/apply
 Disallow: /api/og-image
 Disallow: /api/revalidate
 
+# OpenAI
 User-agent: GPTBot
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic
 User-agent: Claude-Web
 Allow: /
 
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# Perplexity
 User-agent: PerplexityBot
+Allow: /
+
+# Google AI (Gemini / AI Overviews)
+User-agent: Google-Extended
+Allow: /
+
+# xAI (Grok)
+User-agent: Grok
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+# Common AI research crawlers
+User-agent: CCBot
+Allow: /
+
+User-agent: Diffbot
 Allow: /
 
 Sitemap: https://www.1solutions.biz/sitemap.xml
