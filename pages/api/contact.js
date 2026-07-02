@@ -37,7 +37,8 @@ export default async function handler(req, res) {
     return res.status(400).json({ message: 'reCAPTCHA check failed. Please try again.' });
   }
 
-  const htmlBody = `
+  // ── Internal notification email (to 1Solutions team) ──────────────────────
+  const internalHtml = `
     <div style="font-family:Inter,Arial,sans-serif;max-width:600px;margin:0 auto;color:#1a1a2e">
       <div style="background:#0F1F40;padding:28px 32px;border-radius:12px 12px 0 0">
         <h2 style="color:#fff;margin:0;font-size:1.3rem">New Contact Form Enquiry</h2>
@@ -46,12 +47,12 @@ export default async function handler(req, res) {
       <div style="background:#f8fafc;padding:28px 32px;border-radius:0 0 12px 12px;border:1px solid #e5e7eb;border-top:none">
         <table style="width:100%;border-collapse:collapse">
           ${[
-            ['Name', name],
-            ['Email', email],
-            ['Phone', phone || '—'],
+            ['Name',    name],
+            ['Email',   email],
+            ['Phone',   phone || '—'],
             ['Company', company || '—'],
             ['Service', service || '—'],
-            ['Budget', budget || '—'],
+            ['Budget',  budget || '—'],
           ].map(([label, value]) => `
             <tr>
               <td style="padding:8px 0;font-size:0.82rem;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.06em;width:110px;vertical-align:top">${label}</td>
@@ -68,18 +69,77 @@ export default async function handler(req, res) {
     </div>
   `;
 
+  // ── Auto-reply confirmation email (to the enquirer) ───────────────────────
+  const autoReplyHtml = `
+    <div style="font-family:Inter,Arial,sans-serif;max-width:600px;margin:0 auto;color:#1a1a2e">
+      <div style="background:#0F1F40;padding:28px 32px;border-radius:12px 12px 0 0">
+        <img src="https://www.1solutions.biz/images/1solutions-logo.png" alt="1Solutions" style="height:36px;display:block;margin-bottom:16px" />
+        <h2 style="color:#fff;margin:0;font-size:1.25rem">We've received your message!</h2>
+        <p style="color:rgba(255,255,255,0.7);margin:8px 0 0;font-size:0.9rem">Thanks for reaching out — we'll get back to you within 24 hours.</p>
+      </div>
+      <div style="background:#f8fafc;padding:28px 32px;border-radius:0 0 12px 12px;border:1px solid #e5e7eb;border-top:none">
+        <p style="margin:0 0 16px;font-size:0.95rem;color:#374151;line-height:1.6">Hi ${name},</p>
+        <p style="margin:0 0 16px;font-size:0.95rem;color:#374151;line-height:1.6">
+          Thank you for contacting <strong>1Solutions</strong>. We've received your enquiry and a member of our team will review it and respond within <strong>24 hours</strong>.
+        </p>
+        <div style="background:#fff;border-radius:8px;border:1px solid #e5e7eb;padding:16px;margin:20px 0">
+          <p style="margin:0 0 10px;font-size:0.82rem;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.06em">Your enquiry summary</p>
+          <table style="width:100%;border-collapse:collapse">
+            ${[
+              ['Service',  service || '—'],
+              ['Budget',   budget  || '—'],
+              ['Phone',    phone   || '—'],
+            ].map(([label, value]) => `
+              <tr>
+                <td style="padding:5px 0;font-size:0.82rem;color:#6b7280;width:90px">${label}</td>
+                <td style="padding:5px 0;font-size:0.9rem;color:#0F1F40;font-weight:500">${value}</td>
+              </tr>
+            `).join('')}
+          </table>
+        </div>
+        <p style="margin:0 0 16px;font-size:0.95rem;color:#374151;line-height:1.6">
+          In the meantime, feel free to browse our
+          <a href="https://www.1solutions.biz/portfolio/" style="color:#114171;text-decoration:none;font-weight:600">portfolio</a>
+          or read our
+          <a href="https://www.1solutions.biz/blog" style="color:#114171;text-decoration:none;font-weight:600">blog</a>
+          for insights on web development and digital marketing.
+        </p>
+        <div style="border-top:1px solid #e5e7eb;margin-top:24px;padding-top:20px">
+          <p style="margin:0 0 4px;font-size:0.85rem;color:#6b7280">Warm regards,</p>
+          <p style="margin:0;font-size:0.95rem;font-weight:700;color:#0F1F40">The 1Solutions Team</p>
+          <p style="margin:4px 0 0;font-size:0.82rem;color:#9ca3af">
+            <a href="mailto:info@1solutions.biz" style="color:#114171;text-decoration:none">info@1solutions.biz</a>
+            &nbsp;·&nbsp;
+            <a href="https://www.1solutions.biz" style="color:#114171;text-decoration:none">www.1solutions.biz</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  `;
+
   try {
     const transporter = createTransporter();
-    await transporter.sendMail({
-      from: `"1Solutions Contact" <contact@1solutions.biz>`,
-      to: ['atul@1solutions.biz', 'info@1solutions.biz'],
-      replyTo: email,
-      subject: `New enquiry from ${name}${company ? ` — ${company}` : ''}`,
-      html: htmlBody,
-    });
+
+    await Promise.all([
+      // Notification to team
+      transporter.sendMail({
+        from:    `"1Solutions Contact" <contact@1solutions.biz>`,
+        to:      ['atul@1solutions.biz', 'info@1solutions.biz'],
+        replyTo: email,
+        subject: `New enquiry from ${name}${company ? ` — ${company}` : ''}`,
+        html:    internalHtml,
+      }),
+      // Auto-reply to enquirer
+      transporter.sendMail({
+        from:    `"1Solutions" <contact@1solutions.biz>`,
+        to:      email,
+        subject: `We've received your message, ${name.split(' ')[0]}!`,
+        html:    autoReplyHtml,
+      }),
+    ]);
   } catch (err) {
-    console.error('[contact] email error:', err);
-    return res.status(500).json({ message: 'Failed to send. Please try again or email us directly.' });
+    console.error('[contact] email error:', err.message, err.code);
+    return res.status(500).json({ message: 'Failed to send. Please try again or email us directly at info@1solutions.biz' });
   }
 
   return res.status(200).json({ message: 'Message sent successfully.' });
