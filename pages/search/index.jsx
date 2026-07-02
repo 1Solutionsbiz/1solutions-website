@@ -78,8 +78,8 @@ export default function SearchPage() {
         {searched && !loading && (
           <p className="search-results-count">
             {results.length > 0
-              ? `${results.length} result${results.length !== 1 ? 's' : ''} for "${query}"`
-              : `No results for "${query}"`}
+              ? <>{results.length} result{results.length !== 1 ? 's' : ''} for &ldquo;{query}&rdquo;</>
+              : <>No results for &ldquo;{query}&rdquo;</>}
           </p>
         )}
 

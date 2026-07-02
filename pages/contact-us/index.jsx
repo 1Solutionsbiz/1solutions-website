@@ -1,4 +1,3 @@
-'use client';
 import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -130,8 +129,8 @@ export default function ContactPage() {
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.message || 'Submission failed');
-      setStatus('success');
       setForm(INITIAL_FORM);
+      window.location.href = '/thank-you/';
     } catch (err) {
       setStatus('error');
       setErrorMsg(err.message || 'Something went wrong. Please try again or email us directly.');
