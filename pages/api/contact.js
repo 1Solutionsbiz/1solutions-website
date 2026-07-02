@@ -121,104 +121,94 @@ export default async function handler(req, res) {
     ...(company ? [['Company', company]] : []),
   ];
 
+  const submittedDate = new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+
   const autoReplyHtml = `<!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"></head>
-<body style="margin:0;padding:0;background-color:#f2f4f8;font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;">
+<body style="margin:0;padding:0;background-color:#e8eaf0;font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;">
 
-<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f2f4f8" style="background-color:#f2f4f8;">
-<tr><td align="center" style="padding:48px 16px 0;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#e8eaf0" style="background-color:#e8eaf0;">
+<tr><td align="center" style="padding:40px 16px 32px;">
 
-  <!-- Logo above card -->
-  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+  <!-- Main card -->
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="max-width:580px;background-color:#ffffff;">
+
+    <!-- Logo row -->
     <tr>
-      <td align="center" style="padding-bottom:24px;">
+      <td align="center" style="padding:40px 40px 32px;">
         <a href="https://www.1solutions.biz" style="display:inline-block;text-decoration:none;">
-          <img src="https://www.1solutions.biz/images/1solutions-logo.png" alt="1Solutions" width="160" style="display:block;border:0;height:auto;max-width:160px;" />
+          <img src="https://www.1solutions.biz/images/1solutions-logo.png" alt="1Solutions" width="200" style="display:block;border:0;height:auto;max-width:200px;" />
         </a>
       </td>
     </tr>
-  </table>
 
-  <!-- Main card -->
-  <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="max-width:560px;background-color:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.08);">
-
-    <!-- Blue header -->
-    <tr>
-      <td align="center" bgcolor="#114171" style="background-color:#114171;padding:36px 40px 30px;">
-        <!-- Checkmark circle -->
-        <table cellpadding="0" cellspacing="0" border="0" style="margin:0 auto 16px;">
-          <tr>
-            <td width="56" height="56" align="center" valign="middle" bgcolor="#1a5ca8" style="background-color:#1a5ca8;border-radius:50%;font-size:26px;color:#ffffff;font-weight:700;line-height:56px;text-align:center;">&#10003;</td>
-          </tr>
-        </table>
-        <h1 style="color:#ffffff;font-size:20px;font-weight:700;margin:0 0 8px;letter-spacing:-0.3px;line-height:1.3;">We&apos;ve received your message!</h1>
-        <p style="color:rgba(255,255,255,0.72);font-size:14px;margin:0;line-height:1.55;">Thanks for reaching out, ${firstName}. We&apos;ll be in touch within 24 hours.</p>
-      </td>
-    </tr>
+    <!-- Divider -->
+    <tr><td style="padding:0 40px;"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-top:1px solid #e5e7eb;"></td></tr></table></td></tr>
 
     <!-- Body -->
     <tr>
-      <td bgcolor="#ffffff" style="background-color:#ffffff;padding:36px 40px 32px;">
-
-        <p style="font-size:15px;color:#374151;line-height:1.7;margin:0 0 12px;">Hi ${firstName},</p>
-        <p style="font-size:15px;color:#374151;line-height:1.7;margin:0 0 28px;">
-          Thank you for contacting <strong style="color:#114171;">1Solutions</strong>. Your enquiry has been received and a member of our team will review it and respond within <strong>24 hours</strong>.
+      <td style="padding:32px 40px 12px;">
+        <p style="font-size:15px;color:#1a1a2e;line-height:1.75;margin:0 0 18px;">
+          A <strong>contact enquiry</strong> has been received from <strong style="color:#FE9700;">${name}</strong> via the <strong style="color:#114171;">1Solutions website</strong>.
         </p>
-
-        <!-- Summary box -->
-        <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f8fafc" style="background-color:#f8fafc;border:1px solid #e5e7eb;border-radius:8px;margin-bottom:28px;">
-          <tr>
-            <td style="padding:18px 20px;">
-              <p style="font-size:10px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.12em;margin:0 0 14px;">Your Enquiry Summary</p>
-              <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                ${summaryRows.map(([label, value]) => `
-                <tr>
-                  <td width="88" style="padding:5px 0;font-size:13px;color:#6b7280;vertical-align:top;">${label}</td>
-                  <td style="padding:5px 0;font-size:13px;color:#111827;font-weight:600;">${String(value).replace(/</g, '&lt;').replace(/>/g, '&gt;')}</td>
-                </tr>`).join('')}
-              </table>
-            </td>
-          </tr>
-        </table>
-
-        <!-- CTA -->
-        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:32px;">
-          <tr>
-            <td align="center">
-              <a href="https://www.1solutions.biz/portfolio/" style="display:inline-block;background-color:#114171;color:#ffffff;text-decoration:none;font-size:14px;font-weight:600;padding:13px 30px;border-radius:100px;letter-spacing:0.01em;">View Our Portfolio &rarr;</a>
-            </td>
-          </tr>
-        </table>
-
-        <!-- Divider -->
-        <table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-top:1px solid #e5e7eb;padding-bottom:20px;"></td></tr></table>
-
-        <!-- Signature -->
-        <p style="font-size:13px;color:#6b7280;margin:0 0 3px;">Warm regards,</p>
-        <p style="font-size:14px;font-weight:700;color:#0F1F40;margin:0 0 4px;">The 1Solutions Team</p>
-        <p style="font-size:12px;color:#9ca3af;margin:0;">
-          <a href="mailto:info@1solutions.biz" style="color:#114171;text-decoration:none;">info@1solutions.biz</a>
-          &nbsp;&middot;&nbsp;
-          <a href="https://www.1solutions.biz" style="color:#114171;text-decoration:none;">www.1solutions.biz</a>
-          &nbsp;&middot;&nbsp;
-          <a href="tel:+919654327900" style="color:#114171;text-decoration:none;">+91 96543 27900</a>
+        <p style="font-size:15px;color:#374151;line-height:1.3;margin:0 0 28px;">
+          Message Title: <strong>Contact Form Submission</strong>
         </p>
-
       </td>
     </tr>
+
+    <!-- Indented content block -->
+    <tr>
+      <td style="padding:0 40px 28px 60px;">
+        <p style="font-size:15px;color:#374151;line-height:1.75;margin:0 0 14px;">Hi ${firstName},</p>
+        <p style="font-size:15px;color:#374151;line-height:1.75;margin:0 0 14px;">
+          Thank you for contacting <strong style="color:#114171;">1Solutions</strong>. We have received your enquiry and a member of our team will respond within <strong>24 hours</strong>.
+        </p>
+        ${summaryRows.filter(([l]) => !['Name','Email'].includes(l)).length > 0 ? `
+        <p style="font-size:15px;color:#374151;line-height:1.75;margin:0 0 6px;">Your submitted details:</p>
+        ${summaryRows.filter(([l]) => !['Name','Email'].includes(l)).map(([label, value]) => `
+        <p style="font-size:15px;color:#374151;line-height:1.6;margin:0 0 4px;">&nbsp;&nbsp;<strong>${label}:</strong> ${String(value).replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p>`).join('')}
+        ` : ''}
+        <p style="font-size:15px;color:#374151;line-height:1.75;margin:18px 0 4px;"><strong>Regards,</strong></p>
+        <p style="font-size:15px;color:#374151;line-height:1.75;margin:0;">The 1Solutions Team</p>
+      </td>
+    </tr>
+
+    <!-- Date + links row -->
+    <tr>
+      <td style="padding:0 40px 28px;">
+        <p style="font-size:15px;color:#374151;line-height:1.75;margin:0 0 10px;">
+          Submission Date: <strong style="color:#FE9700;">${submittedDate}</strong>
+        </p>
+        <p style="font-size:15px;margin:0;">
+          <a href="https://www.1solutions.biz/portfolio/" style="color:#1a1aa8;text-decoration:underline;">View our portfolio</a>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <a href="https://www.1solutions.biz/blog" style="color:#1a1aa8;text-decoration:underline;">Read our blog</a>
+        </p>
+      </td>
+    </tr>
+
+    <!-- Divider -->
+    <tr><td style="padding:0 40px 20px;"><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-top:1px solid #e5e7eb;"></td></tr></table></td></tr>
+
+    <!-- Recipients note -->
+    <tr>
+      <td style="padding:0 40px 36px;">
+        <p style="font-size:14px;color:#6b7280;line-height:1.6;margin:0;">
+          This confirmation was sent to <strong>${name}</strong> and the 1Solutions team.
+        </p>
+      </td>
+    </tr>
+
   </table>
 
-  <!-- Footer -->
-  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;margin-top:20px;">
+  <!-- Below-card footer -->
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:580px;">
     <tr>
-      <td align="center" style="padding:0 20px 48px;">
-        <p style="font-size:12px;color:#9ca3af;line-height:1.7;margin:0 0 6px;">
-          This email was sent to <a href="mailto:${email}" style="color:#6b7280;text-decoration:underline;">${email}</a> because you submitted a contact form on <a href="https://www.1solutions.biz" style="color:#6b7280;text-decoration:underline;">1solutions.biz</a>.
-        </p>
-        <p style="font-size:11px;color:#c0c0c8;margin:0;">
-          &copy; ${new Date().getFullYear()} 1Solutions &nbsp;&middot;&nbsp; New Delhi, India &nbsp;&middot;&nbsp;
-          <a href="https://www.1solutions.biz/privacy-policy/" style="color:#c0c0c8;text-decoration:none;">Privacy Policy</a>
+      <td align="center" style="padding:16px 20px 0;">
+        <p style="font-size:12px;color:#9ca3af;line-height:1.65;margin:0;">
+          This email was sent to ${email} because you submitted a contact form on 1solutions.biz.
         </p>
       </td>
     </tr>
