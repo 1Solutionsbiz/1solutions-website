@@ -15,7 +15,10 @@ async function getGraphToken() {
     }
   );
   const data = await res.json();
-  if (!res.ok) throw new Error(data.error_description || 'Failed to get Graph token');
+  if (!res.ok) {
+    console.error('[contact] Token error:', JSON.stringify(data));
+    throw new Error(data.error_description || data.error || 'Failed to get Graph token');
+  }
   return data.access_token;
 }
 
@@ -44,6 +47,7 @@ async function sendGraphEmail(token, { to, subject, html, replyTo }) {
 
   if (!res.ok) {
     const err = await res.json().catch(() => ({}));
+    console.error('[contact] sendMail error:', res.status, JSON.stringify(err));
     throw new Error(err.error?.message || `Graph sendMail failed: ${res.status}`);
   }
 }
@@ -171,7 +175,7 @@ export default async function handler(req, res) {
     ]);
   } catch (err) {
     console.error('[contact] Graph API error:', err.message);
-    return res.status(500).json({ message: 'Failed to send. Please try again or email us directly at info@1solutions.biz' });
+    return res.status(500).json({ message: `Failed to send: ${err.message}` });
   }
 
   return res.status(200).json({ message: 'Message sent successfully.' });
