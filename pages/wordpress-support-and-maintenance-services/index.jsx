@@ -1,4 +1,3 @@
-'use client';
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -316,7 +315,7 @@ export default function WordPressMaintenance() {
     <>
       <Head>
         <title>WordPress Support & Maintenance Services | 1Solutions</title>
-        <meta name="description" content="WordPress support & maintenance - plugin updates, security hardening, malware removal, daily backups, uptime monitoring & emergency support. 500+ sites." />
+        <meta name="description" content="WordPress maintenance and support services — staging-first plugin updates, security hardening, malware removal, daily backups, WooCommerce maintenance & emergency support. 150+ sites, since 2008." />
         <link rel="canonical" href="https://www.1solutions.biz/wordpress-support-and-maintenance-services/" />
         <meta property="og:title" content="WordPress Maintenance Services | Support, Security & WooCommerce | 1Solutions" />
         <meta property="og:description" content="Professional WordPress maintenance services - plugin and core updates tested on staging, security hardening, malware removal, WooCommerce support, daily backups, uptime monitoring, and 24/7 emergency support." />
@@ -877,14 +876,14 @@ export default function WordPressMaintenance() {
             <p className="wm-faq-sub">Everything you need to know about WordPress maintenance with 1Solutions - what is covered, how updates work, WooCommerce support, security hardening, emergency response, and how to switch from another agency.</p>
             <div className="wm-faq-list">
               {FAQS.map((item, i) => (
-                <div key={i} className={`wm-fitem${openFaq === i ? ' open' : ''}`} itemScope itemType="https://schema.org/Question">
+                <div key={i} className={`wm-fitem${openFaq === i ? ' open' : ''}`}>
                   <button className="wm-fq" onClick={() => setOpenFaq(openFaq === i ? -1 : i)} aria-expanded={openFaq === i}>
                     <div className="wm-fq-badge">{String(i + 1).padStart(2, '0')}</div>
-                    <span itemProp="name">{item.q}</span>
+                    <span>{item.q}</span>
                     <svg className="wm-fchev" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><polyline points="6 9 12 15 18 9" /></svg>
                   </button>
-                  <div className="wm-fanswer-wrap" itemScope itemType="https://schema.org/Answer">
-                    <div className="wm-fanswer" itemProp="text">{item.a}</div>
+                  <div className="wm-fanswer-wrap">
+                    <div className="wm-fanswer">{item.a}</div>
                   </div>
                 </div>
               ))}
