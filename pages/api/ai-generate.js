@@ -1,16 +1,16 @@
 /**
- * Vercel serverless function — AI content generation via SSE streaming.
+ * Vercel serverless function - AI content generation via SSE streaming.
  *
  * PHP builds the prompt (Brave research + instructions) and sends it here.
  * This function streams from Anthropic and forwards keepalive pings to the
  * browser so the connection stays open for the full generation duration.
  *
  * Required Vercel env vars:
- *   ANTHROPIC_API_KEY   — Anthropic API key
- *   AI_GENERATE_SECRET  — shared secret entered in WP plugin settings
+ *   ANTHROPIC_API_KEY   - Anthropic API key
+ *   AI_GENERATE_SECRET  - shared secret entered in WP plugin settings
  */
 
-export const maxDuration = 300; // 5 minutes — requires Vercel Pro
+export const maxDuration = 300; // 5 minutes - requires Vercel Pro
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -99,7 +99,7 @@ export default async function handler(req, res) {
     }
 
     if (!fullText.includes('</POST_CONTENT>')) {
-      throw new Error('Content generation was incomplete — Claude stopped early. Try a shorter topic or try again.');
+      throw new Error('Content generation was incomplete - Claude stopped early. Try a shorter topic or try again.');
     }
 
     const parse = (tag) => {

@@ -4,20 +4,20 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const SERVICES = [
-  { n: '01', title: 'iOS App UI Design', desc: 'Native iOS interfaces following Apple Human Interface Guidelines — SF Symbols, fluid transitions, and haptic-aware interactions that feel unmistakably at home on iPhone and iPad.' },
+  { n: '01', title: 'iOS App UI Design', desc: 'Native iOS interfaces following Apple Human Interface Guidelines - SF Symbols, fluid transitions, and haptic-aware interactions that feel unmistakably at home on iPhone and iPad.' },
   { n: '02', title: 'Android App UI Design', desc: 'Material Design 3 compliant interfaces with adaptive layouts, dynamic colour, and motion specifications that meet Google Play quality standards from day one.' },
-  { n: '03', title: 'Cross-Platform App Design', desc: 'Unified design systems that feel native on both iOS and Android — shared component libraries with platform-specific variants to ensure nothing feels like a port.' },
+  { n: '03', title: 'Cross-Platform App Design', desc: 'Unified design systems that feel native on both iOS and Android - shared component libraries with platform-specific variants to ensure nothing feels like a port.' },
   { n: '04', title: 'App Onboarding Design', desc: 'First-run experiences that communicate value instantly, reduce drop-off during sign-up, and accelerate feature adoption so users reach their "aha moment" faster.' },
-  { n: '05', title: 'App Redesign / Refresh', desc: 'Modernise legacy apps with current design patterns, improved accessibility, and better usability — without losing the familiarity your existing users depend on.' },
+  { n: '05', title: 'App Redesign / Refresh', desc: 'Modernise legacy apps with current design patterns, improved accessibility, and better usability - without losing the familiarity your existing users depend on.' },
   { n: '06', title: 'Interactive Prototyping', desc: 'High-fidelity Figma prototypes with realistic micro-interactions for stakeholder sign-off, investor demos, and moderated user testing sessions.' },
-  { n: '07', title: 'Design System Creation', desc: 'Scalable component libraries with tokens, variants, states, and documentation — so your design and engineering teams move faster and stay in sync at scale.' },
+  { n: '07', title: 'Design System Creation', desc: 'Scalable component libraries with tokens, variants, states, and documentation - so your design and engineering teams move faster and stay in sync at scale.' },
   { n: '08', title: 'App Store Creatives', desc: 'Screenshots, preview videos, and feature graphics engineered to maximise browse-to-install conversion rates on both the App Store and Google Play.' },
 ];
 
 const FAQS = [
   {
     q: 'Do you design for both iOS and Android?',
-    a: 'Yes — we design for both platforms as standard. We create platform-specific Figma files for iOS (following Apple Human Interface Guidelines with SF Symbols, iOS navigation patterns, and native interaction models) and Android (following Material Design 3 with adaptive colour, dynamic theming, and Google Play standards). If you need a unified cross-platform design, we build a shared design system with platform-specific variant components so the experience feels native on both operating systems.',
+    a: 'Yes - we design for both platforms as standard. We create platform-specific Figma files for iOS (following Apple Human Interface Guidelines with SF Symbols, iOS navigation patterns, and native interaction models) and Android (following Material Design 3 with adaptive colour, dynamic theming, and Google Play standards). If you need a unified cross-platform design, we build a shared design system with platform-specific variant components so the experience feels native on both operating systems.',
   },
   {
     q: 'What tools do you use for mobile app design?',
@@ -29,15 +29,15 @@ const FAQS = [
   },
   {
     q: 'Can you design an app without a developer?',
-    a: 'Yes — our design deliverables are self-contained. You receive fully annotated Figma files, a component library, design tokens, interactive prototypes, and a detailed design specification document. This package gives any development team — whether in-house, freelance, or an agency — everything needed to build accurately without interpretation gaps. If you need development as well, our sister team at 1Solutions offers full-stack iOS, Android, Flutter, and React Native development.',
+    a: 'Yes - our design deliverables are self-contained. You receive fully annotated Figma files, a component library, design tokens, interactive prototypes, and a detailed design specification document. This package gives any development team - whether in-house, freelance, or an agency - everything needed to build accurately without interpretation gaps. If you need development as well, our sister team at 1Solutions offers full-stack iOS, Android, Flutter, and React Native development.',
   },
   {
     q: 'What does a mobile app design project cost?',
-    a: 'Mobile app design pricing depends on scope. A focused MVP design (5–8 core screens with a component library) typically starts from $3,000–$6,000. A full-featured consumer or B2B app (20–40+ screens across iOS and Android) ranges from $8,000–$25,000. Complex enterprise apps with design systems, multiple user roles, and platform-specific variants start from $25,000+. We provide a fixed-price quote after a free scoping call — no hidden costs, no milestone surprises.',
+    a: 'Mobile app design pricing depends on scope. A focused MVP design (5–8 core screens with a component library) typically starts from $3,000–$6,000. A full-featured consumer or B2B app (20–40+ screens across iOS and Android) ranges from $8,000–$25,000. Complex enterprise apps with design systems, multiple user roles, and platform-specific variants start from $25,000+. We provide a fixed-price quote after a free scoping call - no hidden costs, no milestone surprises.',
   },
   {
     q: 'Do you offer usability testing?',
-    a: 'Yes. We offer moderated and unmoderated usability testing as part of our design process. For moderated testing we facilitate live sessions with your target users using Figma or ProtoPie prototypes and provide a written findings report with prioritised recommendations. For unmoderated testing we set up studies using Maze or UserTesting.com and analyse task completion rates, error rates, and qualitative feedback. Testing can be added to any project phase — pre-design, mid-design, or post-launch audit.',
+    a: 'Yes. We offer moderated and unmoderated usability testing as part of our design process. For moderated testing we facilitate live sessions with your target users using Figma or ProtoPie prototypes and provide a written findings report with prioritised recommendations. For unmoderated testing we set up studies using Maze or UserTesting.com and analyse task completion rates, error rates, and qualitative feedback. Testing can be added to any project phase - pre-design, mid-design, or post-launch audit.',
   },
 ];
 
@@ -50,32 +50,32 @@ const WHY = [
   {
     icon: <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>,
     title: 'Developer-Ready Figma Handoff',
-    desc: 'Annotated Figma files with design tokens, component variants, and Dev Mode specs — so your engineers build accurately without back-and-forth.',
+    desc: 'Annotated Figma files with design tokens, component variants, and Dev Mode specs - so your engineers build accurately without back-and-forth.',
   },
   {
     icon: <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>,
     title: 'Retention-Focused Design',
-    desc: 'We design for Day 1, Day 7, and Day 30 retention — mapping the full user journey from onboarding to advanced feature discovery to long-term habit formation.',
+    desc: 'We design for Day 1, Day 7, and Day 30 retention - mapping the full user journey from onboarding to advanced feature discovery to long-term habit formation.',
   },
   {
     icon: <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>,
     title: '16+ Years of Experience',
-    desc: 'Since 2008 we have designed 200+ apps across fintech, health, retail, social, and enterprise — bringing cross-industry pattern recognition to every new project.',
+    desc: 'Since 2008 we have designed 200+ apps across fintech, health, retail, social, and enterprise - bringing cross-industry pattern recognition to every new project.',
   },
   {
     icon: <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>,
     title: 'Accessibility Built In',
-    desc: 'WCAG AA contrast ratios, minimum touch target compliance, Dynamic Type support, and VoiceOver/TalkBack-friendly layouts — not retrofitted, built in from day one.',
+    desc: 'WCAG AA contrast ratios, minimum touch target compliance, Dynamic Type support, and VoiceOver/TalkBack-friendly layouts - not retrofitted, built in from day one.',
   },
   {
     icon: <svg viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg>,
     title: 'Interactive Prototypes',
-    desc: 'We deliver working Figma prototypes you can tap through on a real device — perfect for stakeholder buy-in, investor demos, and user testing before a single line of code is written.',
+    desc: 'We deliver working Figma prototypes you can tap through on a real device - perfect for stakeholder buy-in, investor demos, and user testing before a single line of code is written.',
   },
   {
     icon: <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>,
     title: 'Dedicated Mobile Design Team',
-    desc: 'A dedicated mobile UI/UX designer, motion specialist, and a creative director on your project — with a single project manager keeping communication clear.',
+    desc: 'A dedicated mobile UI/UX designer, motion specialist, and a creative director on your project - with a single project manager keeping communication clear.',
   },
   {
     icon: <svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>,
@@ -91,19 +91,19 @@ const PROCESS_STEPS = [
   },
   {
     title: 'Information Architecture',
-    desc: 'We map out the full app structure — navigation hierarchy, user flows, and screen inventory — before any visual design begins. A clear IA prevents costly structural rework later in the project.',
+    desc: 'We map out the full app structure - navigation hierarchy, user flows, and screen inventory - before any visual design begins. A clear IA prevents costly structural rework later in the project.',
   },
   {
     title: 'Wireframes',
-    desc: 'Low-fidelity wireframes define layout, content priority, and interaction logic on each screen. Platform-specific navigation patterns (tab bar, bottom sheet, drawer) are resolved at this stage — not during visual design.',
+    desc: 'Low-fidelity wireframes define layout, content priority, and interaction logic on each screen. Platform-specific navigation patterns (tab bar, bottom sheet, drawer) are resolved at this stage - not during visual design.',
   },
   {
     title: 'Visual Design',
-    desc: 'We apply your brand identity to the approved wireframes — colour system, typography scale, iconography, imagery, and motion specifications. High-fidelity mockups are delivered at correct points (1x, 2x, 3x) for both platforms.',
+    desc: 'We apply your brand identity to the approved wireframes - colour system, typography scale, iconography, imagery, and motion specifications. High-fidelity mockups are delivered at correct points (1x, 2x, 3x) for both platforms.',
   },
   {
     title: 'Prototype & Test',
-    desc: 'Interactive Figma or ProtoPie prototypes are built for user testing. We validate key flows — onboarding, core task, conversion — with real users and feed findings back into the designs before finalising.',
+    desc: 'Interactive Figma or ProtoPie prototypes are built for user testing. We validate key flows - onboarding, core task, conversion - with real users and feed findings back into the designs before finalising.',
   },
   {
     title: 'Handoff',
@@ -295,7 +295,7 @@ export default function MobileAppDesign() {
     <>
       <Head>
         <title>Mobile App Design Company | 1Solutions</title>
-        <meta name="description" content="1Solutions is a mobile app design company with 16+ years experience. We design intuitive iOS and Android UI/UX — from concept to pixel-perfect Figma handoff." />
+        <meta name="description" content="1Solutions is a mobile app design company with 16+ years experience. We design intuitive iOS and Android UI/UX - from concept to pixel-perfect Figma handoff." />
         <meta name="keywords" content="mobile app design company, iOS app design, Android app design, UI UX design, app design services, Figma app design, mobile UI design" />
         <link rel="canonical" href="https://www.1solutions.biz/mobile-app-design" />
         <meta property="og:title" content="Mobile App Design Company | iOS &amp; Android UI/UX Design | 1Solutions" />
@@ -610,7 +610,7 @@ export default function MobileAppDesign() {
         {/* ── HERO ── */}
         <div className="mad-hero-block">
           <div className="mad-hero-content">
-            <span className="mad-eyebrow">Mobile App Design Company — iOS &amp; Android</span>
+            <span className="mad-eyebrow">Mobile App Design Company - iOS &amp; Android</span>
             <h1>Mobile App Design That Delights Users and Drives Retention</h1>
             <p>Intuitive, beautiful iOS and Android app designs rooted in platform guidelines and user psychology. From concept to pixel-perfect Figma handoff.</p>
             <div className="mad-platform-badges">
@@ -665,7 +665,7 @@ export default function MobileAppDesign() {
             <div className={`mad-section-reveal${visibleSections.has('services') ? ' mad-revealed' : ''}`} ref={el => { sectionRefs.current['services'] = el; }}>
               <span className="mad-section-eyebrow">Our Services</span>
               <h2 className="mad-section-title">Mobile App Design Services We Offer</h2>
-              <p className="mad-section-desc">From onboarding flows to full design systems — every deliverable is built for the platform it lives on, the users who interact with it, and the business outcomes that matter.</p>
+              <p className="mad-section-desc">From onboarding flows to full design systems - every deliverable is built for the platform it lives on, the users who interact with it, and the business outcomes that matter.</p>
             </div>
             <div className="mad-services-grid">
               {SERVICES.map(s => (
@@ -685,13 +685,13 @@ export default function MobileAppDesign() {
             <div className={`mad-section-reveal${visibleSections.has('platforms') ? ' mad-revealed' : ''}`} ref={el => { sectionRefs.current['platforms'] = el; }}>
               <span className="mad-section-eyebrow">Platform Expertise</span>
               <h2 className="mad-section-title">Native Design for Every Platform</h2>
-              <p className="mad-section-desc">We don&apos;t apply a one-size-fits-all template. Each platform has its own language, conventions, and user expectations — and we design to those standards.</p>
+              <p className="mad-section-desc">We don&apos;t apply a one-size-fits-all template. Each platform has its own language, conventions, and user expectations - and we design to those standards.</p>
             </div>
             <div className="mad-platform-grid">
               <div className="mad-platform-card ios">
                 <span className="mad-platform-icon"> </span>
                 <h3>iOS App Design</h3>
-                <p>We follow Apple Human Interface Guidelines to produce interfaces that feel unmistakably native — correct navigation models (tab bar, navigation stack, sheet), SF Symbols iconography, Dynamic Type support, and fluid spring animations that match iOS motion physics.</p>
+                <p>We follow Apple Human Interface Guidelines to produce interfaces that feel unmistakably native - correct navigation models (tab bar, navigation stack, sheet), SF Symbols iconography, Dynamic Type support, and fluid spring animations that match iOS motion physics.</p>
                 <div className="mad-platform-specs">
                   {['Apple Human Interface Guidelines', 'SF Symbols & SF Pro typeface', 'Dynamic Island & notch accommodation', 'iPadOS adaptive layouts', 'SwiftUI animation documentation', 'WCAG AA accessibility compliance'].map(s => (
                     <div className="mad-spec-item" key={s}>
@@ -704,7 +704,7 @@ export default function MobileAppDesign() {
               <div className="mad-platform-card android">
                 <span className="mad-platform-icon"> </span>
                 <h3>Android App Design</h3>
-                <p>We design to Material Design 3 specifications — dynamic colour theming with tonal palettes, adaptive layouts for phones, tablets, and foldables, bottom navigation, gesture navigation support, and motion specs that align with the Android animation system.</p>
+                <p>We design to Material Design 3 specifications - dynamic colour theming with tonal palettes, adaptive layouts for phones, tablets, and foldables, bottom navigation, gesture navigation support, and motion specs that align with the Android animation system.</p>
                 <div className="mad-platform-specs">
                   {['Material Design 3 compliance', 'Dynamic Color & tonal palette', 'Adaptive layouts for foldables & tablets', 'Gesture navigation support', 'Jetpack Compose component mapping', 'TalkBack accessibility support'].map(s => (
                     <div className="mad-spec-item" key={s}>
@@ -724,7 +724,7 @@ export default function MobileAppDesign() {
             <div className={`mad-section-reveal${visibleSections.has('process') ? ' mad-revealed' : ''}`} ref={el => { sectionRefs.current['process'] = el; }}>
               <p className="mad-process-eyebrow">OUR DESIGN PROCESS</p>
               <h2 className="mad-process-main-title">How We Design Mobile Apps That Users Love</h2>
-              <p className="mad-process-main-desc">Our six-phase process moves from research to a production-ready Figma handoff — with user validation at the midpoint to catch assumptions before they become expensive code. Every phase has defined outputs so you always know exactly where your project stands.</p>
+              <p className="mad-process-main-desc">Our six-phase process moves from research to a production-ready Figma handoff - with user validation at the midpoint to catch assumptions before they become expensive code. Every phase has defined outputs so you always know exactly where your project stands.</p>
             </div>
             <hr className="mad-process-divider" />
           </div>
@@ -751,7 +751,7 @@ export default function MobileAppDesign() {
               <div className="mad-process-img-wrap">
                 <div className="mad-process-img-placeholder">
                   <svg viewBox="0 0 24 24"><path d="M17 1H7c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm-5 20c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm5-4H7V4h10v13z"/></svg>
-                  <p>Research to pixel-perfect handoff — six structured phases that eliminate guesswork and validate with real users before a single line of code is written.</p>
+                  <p>Research to pixel-perfect handoff - six structured phases that eliminate guesswork and validate with real users before a single line of code is written.</p>
                 </div>
               </div>
             </div>
@@ -771,17 +771,17 @@ export default function MobileAppDesign() {
                 {
                   initials: 'RN', bg: '#3730a3',
                   text: '"The 1Solutions team redesigned our fintech app from scratch. Our Day 30 retention jumped 41% and the App Store rating went from 3.8 to 4.7 within two months of the new design going live."',
-                  name: 'Rahul Nair', role: 'CEO, FinPay App — USA', featured: false,
+                  name: 'Rahul Nair', role: 'CEO, FinPay App - USA', featured: false,
                 },
                 {
                   initials: 'SW', bg: '#5b21b6',
                   text: '"Exceptional mobile design work. They understood Material Design 3 deeply, delivered both iOS and Android files that our dev team could build from without any back-and-forth, and hit every deadline."',
-                  name: 'Sophie Williams', role: 'Product Director, RetailTech — Australia', featured: true,
+                  name: 'Sophie Williams', role: 'Product Director, RetailTech - Australia', featured: true,
                 },
                 {
                   initials: 'AM', bg: '#4338ca',
                   text: '"We had a complex B2B app with 5 user roles. 1Solutions designed a navigation architecture that made sense of all the complexity. Our enterprise clients now describe the app as \'the most intuitive tool they use\'."',
-                  name: 'Alex Moreau', role: 'CTO, SaaS platform — Canada', featured: false,
+                  name: 'Alex Moreau', role: 'CTO, SaaS platform - Canada', featured: false,
                 },
               ].map((t, i) => (
                 <div className={`mad-tcard${t.featured ? ' featured' : ''}${visibleTestiCards.includes(i) ? ' mad-tcard-visible' : ''}`} key={t.name}>
@@ -817,7 +817,7 @@ export default function MobileAppDesign() {
             <div className={`mad-section-header-center mad-section-reveal${visibleSections.has('why') ? ' mad-revealed' : ''}`} ref={el => { sectionRefs.current['why'] = el; }} style={{ textAlign: 'center', marginBottom: 0 }}>
               <span className="mad-section-eyebrow">Why 1Solutions</span>
               <h2 className="mad-section-title">Why App Teams Choose Us to Design Their Mobile Experience</h2>
-              <p style={{ fontSize: '16px', color: '#4A6080', margin: '0 auto', maxWidth: 680 }}>Platform expertise, production-quality deliverables, and a design process that validates with real users — not just internal assumptions.</p>
+              <p style={{ fontSize: '16px', color: '#4A6080', margin: '0 auto', maxWidth: 680 }}>Platform expertise, production-quality deliverables, and a design process that validates with real users - not just internal assumptions.</p>
             </div>
             <div className="mad-why-grid" ref={whyGridRef}>
               {WHY.map((w, i) => (
@@ -838,13 +838,13 @@ export default function MobileAppDesign() {
           <div className="mad-contact-container">
             <div>
               <h2 className="mad-contact-title">Let&apos;s Design Your App Together</h2>
-              <p className="mad-contact-desc">Tell us about your app and we&apos;ll respond within 24 hours with a project brief, scoping questions, and a ballpark investment — no commitment required.</p>
+              <p className="mad-contact-desc">Tell us about your app and we&apos;ll respond within 24 hours with a project brief, scoping questions, and a ballpark investment - no commitment required.</p>
               <div className="mad-merged-box">
                 <div>
                   {[
                     { text: 'All project details kept confidential under NDA before we talk.' },
                     { text: 'A senior mobile designer reviews your brief personally.' },
-                    { text: 'Free scoping call — we ask the right questions before quoting.' },
+                    { text: 'Free scoping call - we ask the right questions before quoting.' },
                     { text: 'Fixed-price quotes with phased milestone payments available.' },
                   ].map((b, i) => (
                     <div className="mad-benefit-item" key={i} style={{ marginBottom: i < 3 ? 14 : 0 }}>

@@ -48,11 +48,11 @@ export default async function handler(req, res) {
           ${[
             ['Name', name],
             ['Email', email],
-            ['Website', website || '—'],
+            ['Website', website || '-'],
             ['Article Title', title],
             ['Topic Category', topic],
             ['Audience Level', level],
-            ['Sample Articles', samples || '—'],
+            ['Sample Articles', samples || '-'],
           ].map(([label, value]) => `
             <tr>
               <td style="padding:8px 0;font-size:0.82rem;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.06em;width:130px;vertical-align:top">${label}</td>
@@ -75,7 +75,7 @@ export default async function handler(req, res) {
       from: `"1Solutions Blog" <contact@1solutions.biz>`,
       to: ['atul@1solutions.biz', 'info@1solutions.biz'],
       replyTo: email,
-      subject: `Guest Post Pitch: ${title} — ${name}`,
+      subject: `Guest Post Pitch: ${title} - ${name}`,
       html: htmlBody,
     });
   } catch (err) {

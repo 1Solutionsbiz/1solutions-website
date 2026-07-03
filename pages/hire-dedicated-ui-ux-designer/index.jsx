@@ -28,16 +28,16 @@ const SKILLS = [
   'User Journey Mapping', 'Heatmap & Analytics Analysis', 'Handoff (Zeplin, Storybook, Dev Mode)',
 ];
 const MODELS = [
-  { title: 'Dedicated Hire', desc: 'A full-time UI/UX designer embedded in your product team — 8 hrs/day, 5 days/week.', icon: '👤' },
+  { title: 'Dedicated Hire', desc: 'A full-time UI/UX designer embedded in your product team - 8 hrs/day, 5 days/week.', icon: '👤' },
   { title: 'Part-Time Hire', desc: 'Half-day engagement for design system maintenance, feature design, or usability testing cycles.', icon: '⏰' },
   { title: 'Hourly Hire',    desc: 'Flexible billing for UX audits, accessibility reviews, or one-off component design sprints.', icon: '🕐' },
 ];
 const WHY = [
-  { h: 'Research-Led Design', b: 'Our designers start with user interviews, heatmap analysis, and journey mapping before opening Figma — not after.' },
-  { h: 'Figma-Native Teams', b: 'Auto Layout, component properties, variables, and Dev Mode — our designers deliver production-ready handoff specs, not static mockups.' },
+  { h: 'Research-Led Design', b: 'Our designers start with user interviews, heatmap analysis, and journey mapping before opening Figma - not after.' },
+  { h: 'Figma-Native Teams', b: 'Auto Layout, component properties, variables, and Dev Mode - our designers deliver production-ready handoff specs, not static mockups.' },
   { h: 'Profiles in 48 Hours', b: 'Submit your design brief and receive 2-3 matched UI/UX designer profiles with portfolio links within two business days.' },
   { h: 'Design System Fluency', b: 'We build scalable design systems with tokens, typography scales, and color grids that developers can consume directly via code.' },
-  { h: 'Conversion Focus', b: 'Our designers tie every design decision to business outcomes — click-through rate, form completion, retention — not just aesthetics.' },
+  { h: 'Conversion Focus', b: 'Our designers tie every design decision to business outcomes - click-through rate, form completion, retention - not just aesthetics.' },
   { h: 'NDA & IP Protection', b: 'NDA and IP assignment signed before any access to your Figma files, user research, or product roadmap.' },
 ];
 const PROCESS = [
@@ -47,10 +47,10 @@ const PROCESS = [
   { n: '04', h: 'Onboard & Design', b: 'Designer joins your Figma workspace and ships first wireframes within 7 days.' },
 ];
 const FAQS = [
-  { q: 'Do your designers do user research or just visual design?', a: 'Both. Our designers are trained in UX research methods — user interviews, card sorting, tree testing, usability sessions — and can run the full double-diamond process, not just deliver mockups.' },
+  { q: 'Do your designers do user research or just visual design?', a: 'Both. Our designers are trained in UX research methods - user interviews, card sorting, tree testing, usability sessions - and can run the full double-diamond process, not just deliver mockups.' },
   { q: 'Which tools do they use?', a: 'Primarily Figma for UI design, prototyping, and design systems. Also Adobe XD, Illustrator, Principle for motion, and Lottie for developer-ready animations. Accessibility validation via axe and NVDA/VoiceOver.' },
-  { q: 'Can they build or maintain a design system?', a: 'Yes. We create and maintain scalable design systems in Figma — component libraries, token sets, typography and color grids — with developer handoff via Dev Mode, Zeplin, or Storybook integration.' },
-  { q: 'Do they deliver accessible designs?', a: 'Yes. Our designers validate against WCAG 2.1 AA as standard — colour contrast ratios, focus states, touch target sizes, ARIA annotations in handoff specs, and screen reader testing.' },
+  { q: 'Can they build or maintain a design system?', a: 'Yes. We create and maintain scalable design systems in Figma - component libraries, token sets, typography and color grids - with developer handoff via Dev Mode, Zeplin, or Storybook integration.' },
+  { q: 'Do they deliver accessible designs?', a: 'Yes. Our designers validate against WCAG 2.1 AA as standard - colour contrast ratios, focus states, touch target sizes, ARIA annotations in handoff specs, and screen reader testing.' },
   { q: 'Can they work with our existing brand or style guide?', a: 'Yes. Our designers extend and adhere to existing brand guidelines while improving usability. If no style guide exists, they can create one as part of the engagement.' },
   { q: 'Do you sign NDAs?', a: 'Yes. NDA and IP assignment agreements are signed as standard before any engagement begins.' },
 ];
@@ -84,7 +84,7 @@ export default function HireDedicatedUiUxDesigner() {
         { '@type': 'ListItem', position: 2, name: 'Hire Dedicated UI/UX Designer', item: 'https://www.1solutions.biz/hire-dedicated-ui-ux-designer/' },
       ]},
       { '@type': 'Service', name: 'Hire Dedicated UI/UX Designer', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Hire dedicated UI/UX designers from 1Solutions — Figma experts in user research, design systems, and accessible product design.',
+        description: 'Hire dedicated UI/UX designers from 1Solutions - Figma experts in user research, design systems, and accessible product design.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '96', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -149,7 +149,7 @@ export default function HireDedicatedUiUxDesigner() {
       </Head>
       <section className="huiux-hero">
         <h1>Hire Dedicated UI/UX Designers<br/>Figma &amp; User Research Specialists</h1>
-        <p>Pre-vetted designers who combine rigorous user research with conversion-focused visual design — building products people actually enjoy using. Profiles in 48 hours.</p>
+        <p>Pre-vetted designers who combine rigorous user research with conversion-focused visual design - building products people actually enjoy using. Profiles in 48 hours.</p>
         <div className="huiux-hero-btns">
           <Link href="/contact-us" className="huiux-btn-primary">Hire a UI/UX Designer →</Link>
           <Link href="/portfolio" className="huiux-btn-outline">View Portfolio</Link>
@@ -158,7 +158,7 @@ export default function HireDedicatedUiUxDesigner() {
       <section className="huiux-sec" ref={skR}>
         <div className="huiux-wrap">
           <h2 className="huiux-sec-title">Design Skills &amp; Tools</h2>
-          <p className="huiux-sec-sub">Our designers cover the full UX spectrum — from research to production-ready Figma handoff.</p>
+          <p className="huiux-sec-sub">Our designers cover the full UX spectrum - from research to production-ready Figma handoff.</p>
           <div className="huiux-skills">{SKILLS.map((s, i) => <span key={s} className={`huiux-skill${skV ? ' huiux-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>)}</div>
         </div>
       </section>
@@ -187,7 +187,7 @@ export default function HireDedicatedUiUxDesigner() {
       <section className="huiux-sec huiux-sec-alt" ref={prR}>
         <div className="huiux-wrap">
           <h2 className="huiux-sec-title">Hire in 4 Simple Steps</h2>
-          <p className="huiux-sec-sub">From design brief to first wireframes — in under two weeks.</p>
+          <p className="huiux-sec-sub">From design brief to first wireframes - in under two weeks.</p>
           <div className="huiux-process">{PROCESS.map((p, i) => <div key={p.n} className={`huiux-step${prV ? ' huiux-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}><div className="huiux-step-n">{p.n}</div><h3>{p.h}</h3><p>{p.b}</p></div>)}</div>
         </div>
       </section>
@@ -201,7 +201,7 @@ export default function HireDedicatedUiUxDesigner() {
       <section className="huiux-cta">
         <div className="huiux-wrap">
           <h2>Ready to Hire Your Dedicated UI/UX Designer?</h2>
-          <p>Share your product goals and receive matched designer profiles with portfolios within 48 hours — no commitment required.</p>
+          <p>Share your product goals and receive matched designer profiles with portfolios within 48 hours - no commitment required.</p>
           <Link href="/contact-us" className="huiux-btn-primary">Get Started Today →</Link>
         </div>
       </section>

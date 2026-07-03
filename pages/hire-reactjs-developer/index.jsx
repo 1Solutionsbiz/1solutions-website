@@ -27,22 +27,22 @@ const SKILLS = [
   'React Server Components', 'Accessibility (WCAG 2.1)', 'Core Web Vitals Optimisation',
 ];
 const MODELS = [
-  { title: 'Dedicated Hire', desc: 'A full-time React developer committed to your product — 8 hrs/day, 5 days/week.', icon: '👤' },
+  { title: 'Dedicated Hire', desc: 'A full-time React developer committed to your product - 8 hrs/day, 5 days/week.', icon: '👤' },
   { title: 'Part-Time Hire', desc: 'Half-day engagement for component library work, performance improvements, or ongoing feature delivery.', icon: '⏰' },
   { title: 'Hourly Hire',    desc: 'Flexible billing for code reviews, Core Web Vitals audits, or React migration work.', icon: '🕐' },
 ];
 const WHY = [
-  { h: 'React 18 & Next.js Specialists', b: 'Our developers are fluent in React Server Components, streaming SSR, Suspense, and concurrent features — not just class component veterans.' },
+  { h: 'React 18 & Next.js Specialists', b: 'Our developers are fluent in React Server Components, streaming SSR, Suspense, and concurrent features - not just class component veterans.' },
   { h: 'Performance-First UI', b: 'We target sub-2s LCP, zero CLS, and optimised TTI using lazy loading, code splitting, image optimisation, and selective hydration.' },
   { h: 'Profiles in 48 Hours', b: 'Submit your brief and receive 2-3 matched React developer CVs within two business days.' },
   { h: 'Component Library Culture', b: 'Our developers document components in Storybook, enforce design tokens, and maintain strict prop-type or TypeScript contracts for reusable UI.' },
-  { h: 'Testing-Driven Development', b: 'Unit tests with Jest, integration tests with React Testing Library, and E2E coverage with Playwright or Cypress — all shipped as part of the sprint.' },
+  { h: 'Testing-Driven Development', b: 'Unit tests with Jest, integration tests with React Testing Library, and E2E coverage with Playwright or Cypress - all shipped as part of the sprint.' },
   { h: 'NDA & IP Security', b: 'Full NDA and IP assignment signed before any access to your codebase or Figma designs.' },
 ];
 const PROCESS = [
   { n: '01', h: 'Describe Your Frontend', b: 'Tell us the React version, state management approach, styling system, and seniority needed.' },
   { n: '02', h: 'Receive Profiles', b: '2-3 matched React developer CVs delivered within 48 hours.' },
-  { n: '03', h: 'Interview & Select', b: 'Run your own technical round — live coding, component design, or system discussion.' },
+  { n: '03', h: 'Interview & Select', b: 'Run your own technical round - live coding, component design, or system discussion.' },
   { n: '04', h: 'Onboard & Build', b: 'Developer joins your repo and tools. First sprint starts within 7 days.' },
 ];
 const FAQS = [
@@ -83,7 +83,7 @@ export default function HireReactJSDeveloper() {
         { '@type': 'ListItem', position: 2, name: 'Hire React.js Developer', item: 'https://www.1solutions.biz/hire-reactjs-developer/' },
       ]},
       { '@type': 'Service', name: 'Hire React.js Developer', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Hire dedicated React.js developers from 1Solutions — React 18, Next.js, and TypeScript frontend experts.',
+        description: 'Hire dedicated React.js developers from 1Solutions - React 18, Next.js, and TypeScript frontend experts.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '127', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -148,7 +148,7 @@ export default function HireReactJSDeveloper() {
       </Head>
       <section className="hrjs-hero">
         <h1>Hire React.js Developers<br/>React 18, Next.js &amp; TypeScript Experts</h1>
-        <p>Pre-vetted React engineers who build fast, accessible, and maintainable frontends — Server Components, streaming SSR, and green Core Web Vitals as standard. Profiles in 48 hours.</p>
+        <p>Pre-vetted React engineers who build fast, accessible, and maintainable frontends - Server Components, streaming SSR, and green Core Web Vitals as standard. Profiles in 48 hours.</p>
         <div className="hrjs-hero-btns">
           <Link href="/contact-us" className="hrjs-btn-primary">Hire a React.js Developer →</Link>
           <Link href="/portfolio" className="hrjs-btn-outline">View Portfolio</Link>
@@ -157,7 +157,7 @@ export default function HireReactJSDeveloper() {
       <section className="hrjs-sec" ref={skR}>
         <div className="hrjs-wrap">
           <h2 className="hrjs-sec-title">Skills &amp; Tech Stack</h2>
-          <p className="hrjs-sec-sub">Our React developers cover the modern frontend ecosystem — from RSC to testing to performance tuning.</p>
+          <p className="hrjs-sec-sub">Our React developers cover the modern frontend ecosystem - from RSC to testing to performance tuning.</p>
           <div className="hrjs-skills">{SKILLS.map((s, i) => <span key={s} className={`hrjs-skill${skV ? ' hrjs-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>)}</div>
         </div>
       </section>
@@ -171,7 +171,7 @@ export default function HireReactJSDeveloper() {
       <section className="hrjs-sec" ref={whR}>
         <div className="hrjs-wrap">
           <h2 className="hrjs-sec-title">Why Hire React.js Developers from 1Solutions?</h2>
-          <p className="hrjs-sec-sub">We place engineers who have shipped production React apps with millions of users — not just side projects.</p>
+          <p className="hrjs-sec-sub">We place engineers who have shipped production React apps with millions of users - not just side projects.</p>
           <div className="hrjs-why-grid">{WHY.map((w, i) => <div key={w.h} className={`hrjs-why-item${whV ? ' hrjs-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
         </div>
       </section>
@@ -186,7 +186,7 @@ export default function HireReactJSDeveloper() {
       <section className="hrjs-sec hrjs-sec-alt" ref={prR}>
         <div className="hrjs-wrap">
           <h2 className="hrjs-sec-title">Hire in 4 Simple Steps</h2>
-          <p className="hrjs-sec-sub">From brief to first merged component — in under two weeks.</p>
+          <p className="hrjs-sec-sub">From brief to first merged component - in under two weeks.</p>
           <div className="hrjs-process">{PROCESS.map((p, i) => <div key={p.n} className={`hrjs-step${prV ? ' hrjs-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}><div className="hrjs-step-n">{p.n}</div><h3>{p.h}</h3><p>{p.b}</p></div>)}</div>
         </div>
       </section>
@@ -200,7 +200,7 @@ export default function HireReactJSDeveloper() {
       <section className="hrjs-cta">
         <div className="hrjs-wrap">
           <h2>Ready to Hire Your React.js Developer?</h2>
-          <p>Share your requirements and receive matched React specialist profiles within 48 hours — no commitment required.</p>
+          <p>Share your requirements and receive matched React specialist profiles within 48 hours - no commitment required.</p>
           <Link href="/contact-us" className="hrjs-btn-primary">Get Started Today →</Link>
         </div>
       </section>

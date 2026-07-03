@@ -17,7 +17,7 @@ const SCHEMA = {
       '@type': 'Service',
       name: 'Website Support & Maintenance Services',
       url: 'https://www.1solutions.biz/website-support-maintenance-services/',
-      description: 'Professional website support and maintenance services — website health monitoring, security patching, performance optimisation, content updates, CMS core updates, bug fixing, broken link repair, backup management, and dedicated technical support for businesses worldwide.',
+      description: 'Professional website support and maintenance services - website health monitoring, security patching, performance optimisation, content updates, CMS core updates, bug fixing, broken link repair, backup management, and dedicated technical support for businesses worldwide.',
       provider: {
         '@type': 'Organization',
         name: '1Solutions',
@@ -32,29 +32,29 @@ const SCHEMA = {
       '@type': 'FAQPage',
       mainEntity: [
         { '@type': 'Question', name: 'What is included in website maintenance?', acceptedAnswer: { '@type': 'Answer', text: 'Website maintenance typically covers: CMS and plugin/extension updates to keep your site on the latest stable versions; security monitoring and patching within 48 hours of critical vulnerability disclosures; daily automated backups with off-site storage and monthly restore testing; uptime monitoring with instant alerts; page speed and Core Web Vitals monitoring; broken link scanning and repair; SSL certificate renewal management; monthly performance and security reports; and a set number of development hours each month for content updates, design tweaks, and minor feature changes. The exact scope depends on your maintenance plan tier.' } },
-        { '@type': 'Question', name: 'Why do I need ongoing website maintenance?', acceptedAnswer: { '@type': 'Answer', text: 'Websites are not static products — they require ongoing care to remain secure, fast, and functional. CMS platforms (WordPress, Joomla, Drupal) and their plugins/extensions release security patches regularly; running outdated versions is the most common cause of website hacks. Page speed and Core Web Vitals affect your Google search rankings. Hosting environments, SSL certificates, and third-party API integrations all require monitoring. Without maintenance, a website that worked perfectly on launch will gradually develop security vulnerabilities, slow down, accumulate broken links, and eventually need expensive emergency repairs rather than routine upkeep.' } },
+        { '@type': 'Question', name: 'Why do I need ongoing website maintenance?', acceptedAnswer: { '@type': 'Answer', text: 'Websites are not static products - they require ongoing care to remain secure, fast, and functional. CMS platforms (WordPress, Joomla, Drupal) and their plugins/extensions release security patches regularly; running outdated versions is the most common cause of website hacks. Page speed and Core Web Vitals affect your Google search rankings. Hosting environments, SSL certificates, and third-party API integrations all require monitoring. Without maintenance, a website that worked perfectly on launch will gradually develop security vulnerabilities, slow down, accumulate broken links, and eventually need expensive emergency repairs rather than routine upkeep.' } },
         { '@type': 'Question', name: 'How quickly do you respond to website emergencies?', acceptedAnswer: { '@type': 'Answer', text: 'Emergency response times depend on your maintenance plan. Our highest-tier plans include a 2-hour emergency response SLA for critical incidents such as website down, security breach, or payment system failure. Mid-tier plans include a 4-hour SLA. Entry-level retainers include a next-business-day SLA for non-critical issues with 4-hour emergency escalation available as an add-on. All plans include 24/7 uptime monitoring so we are notified of outages before you or your customers notice them.' } },
-        { '@type': 'Question', name: 'Can you maintain websites built by other developers?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We take over maintenance of websites built by any development agency or freelancer, on any CMS or stack we support (WordPress, Joomla, Drupal, Magento, Shopify, custom PHP, Next.js, and others). We start every new maintenance engagement with a website audit — reviewing CMS version, plugin versions, security configuration, backup setup, performance baseline, and codebase quality. The audit report gives you a clear picture of your site\'s current health and any immediate issues to address before beginning the ongoing retainer.' } },
-        { '@type': 'Question', name: 'What happens if my website gets hacked?', acceptedAnswer: { '@type': 'Answer', text: 'If your website is compromised, we provide emergency incident response — diagnosing the attack vector, removing malware, restoring from a clean backup, patching the exploited vulnerability, and hardening the site against recurrence. For clients on our maintenance retainer, malware removal and hack recovery are covered as part of the plan. For non-retainer clients, we offer a paid emergency recovery service with a 4-hour response SLA. After recovery, we provide a written incident report detailing what happened, what was done, and what security improvements are recommended to prevent recurrence.' } },
+        { '@type': 'Question', name: 'Can you maintain websites built by other developers?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We take over maintenance of websites built by any development agency or freelancer, on any CMS or stack we support (WordPress, Joomla, Drupal, Magento, Shopify, custom PHP, Next.js, and others). We start every new maintenance engagement with a website audit - reviewing CMS version, plugin versions, security configuration, backup setup, performance baseline, and codebase quality. The audit report gives you a clear picture of your site\'s current health and any immediate issues to address before beginning the ongoing retainer.' } },
+        { '@type': 'Question', name: 'What happens if my website gets hacked?', acceptedAnswer: { '@type': 'Answer', text: 'If your website is compromised, we provide emergency incident response - diagnosing the attack vector, removing malware, restoring from a clean backup, patching the exploited vulnerability, and hardening the site against recurrence. For clients on our maintenance retainer, malware removal and hack recovery are covered as part of the plan. For non-retainer clients, we offer a paid emergency recovery service with a 4-hour response SLA. After recovery, we provide a written incident report detailing what happened, what was done, and what security improvements are recommended to prevent recurrence.' } },
         { '@type': 'Question', name: 'Do you provide monthly maintenance reports?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Every maintenance retainer client receives a monthly report covering: CMS and plugin updates applied during the month; security scan results and any issues identified and resolved; uptime statistics for the month; page speed and Core Web Vitals performance; backup status and restore test results; SSL certificate status; broken links found and repaired; development hours used and remaining; and recommendations for upcoming improvements. Reports are emailed to your nominated contact by the 5th business day of the following month.' } },
         { '@type': 'Question', name: 'Can you add new features while maintaining my site?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. All maintenance retainer plans include a set number of development hours per month that can be used for content updates, design changes, minor feature additions, form updates, SEO metadata changes, and other small development tasks. Larger development projects (new page templates, new integrations, significant functionality additions) are scoped and quoted separately as one-off fixed-price or time-and-materials projects that run alongside your maintenance retainer.' } },
-        { '@type': 'Question', name: 'What CMS platforms do you support?', acceptedAnswer: { '@type': 'Answer', text: 'We provide maintenance services for WordPress, WooCommerce, Joomla, Drupal, Magento, OpenCart, PrestaShop, Shopify, and custom-built PHP, Laravel, Next.js, and React websites. For each platform we maintain up-to-date expertise in its update cycles, security advisories, and known vulnerabilities. If your website runs on a platform not listed here, contact us — we assess each situation individually and can take on maintenance for most web technologies given an initial audit period.' } },
+        { '@type': 'Question', name: 'What CMS platforms do you support?', acceptedAnswer: { '@type': 'Answer', text: 'We provide maintenance services for WordPress, WooCommerce, Joomla, Drupal, Magento, OpenCart, PrestaShop, Shopify, and custom-built PHP, Laravel, Next.js, and React websites. For each platform we maintain up-to-date expertise in its update cycles, security advisories, and known vulnerabilities. If your website runs on a platform not listed here, contact us - we assess each situation individually and can take on maintenance for most web technologies given an initial audit period.' } },
       ],
     },
   ],
 };
 
 const SERVICES = [
-  { n: '01', title: 'CMS & Plugin/Extension Updates', desc: 'Timely updates of your CMS core (WordPress, Joomla, Drupal, Magento), all plugins, extensions, themes, and dependencies to their latest stable versions — tested on a staging clone before applying to production to prevent update-related breakages.' },
+  { n: '01', title: 'CMS & Plugin/Extension Updates', desc: 'Timely updates of your CMS core (WordPress, Joomla, Drupal, Magento), all plugins, extensions, themes, and dependencies to their latest stable versions - tested on a staging clone before applying to production to prevent update-related breakages.' },
   { n: '02', title: 'Security Monitoring & Patching', desc: 'Continuous malware scanning, vulnerability monitoring tied to your exact plugin/extension versions, and priority security patch application within 48 hours of critical CVE disclosures. Web Application Firewall (WAF), brute-force protection, and login hardening included.', feat: true },
   { n: '03', title: 'Daily Backups & Disaster Recovery', desc: 'Automated daily full-site backups (files + database) with off-site storage in geographically separate cloud storage. Monthly restore testing to verify backup integrity. Rapid restore in the event of data loss, hosting failure, or post-hack recovery.' },
   { n: '04', title: 'Uptime & Performance Monitoring', desc: 'Round-the-clock uptime monitoring with instant alerts and escalation to our team. Core Web Vitals (LCP, FID/INP, CLS) and PageSpeed tracking with monthly benchmarked reports. CDN and caching configuration to maintain optimal loading times as your site grows.' },
-  { n: '05', title: 'Bug Fixes & Technical Issue Resolution', desc: 'Diagnosis and resolution of website bugs, broken functionality, layout issues, form failures, and plugin conflicts — including issues introduced by CMS or plugin updates, hosting environment changes, or third-party API breaking changes.' },
-  { n: '06', title: 'Content & Design Updates', desc: 'Monthly development hours for content updates, copy changes, image swaps, new page additions, blog publishing, landing page tweaks, navigation changes, and minor design modifications — handled via ticket system with agreed turnaround times.' },
-  { n: '07', title: 'Broken Link & SEO Health Monitoring', desc: 'Monthly automated crawls to identify 404 broken links, redirect chains, missing meta descriptions, duplicate title tags, missing alt text, and other on-page SEO hygiene issues — with fixes applied within your maintenance hours allocation.' },
+  { n: '05', title: 'Bug Fixes & Technical Issue Resolution', desc: 'Diagnosis and resolution of website bugs, broken functionality, layout issues, form failures, and plugin conflicts - including issues introduced by CMS or plugin updates, hosting environment changes, or third-party API breaking changes.' },
+  { n: '06', title: 'Content & Design Updates', desc: 'Monthly development hours for content updates, copy changes, image swaps, new page additions, blog publishing, landing page tweaks, navigation changes, and minor design modifications - handled via ticket system with agreed turnaround times.' },
+  { n: '07', title: 'Broken Link & SEO Health Monitoring', desc: 'Monthly automated crawls to identify 404 broken links, redirect chains, missing meta descriptions, duplicate title tags, missing alt text, and other on-page SEO hygiene issues - with fixes applied within your maintenance hours allocation.' },
   { n: '08', title: 'SSL Certificate & Domain Management', desc: 'SSL certificate monitoring and renewal management to prevent lapses that trigger browser security warnings. Domain expiry monitoring and renewal reminders. HTTPS redirect configuration and HSTS implementation for security compliance.' },
   { n: '09', title: 'Emergency Support & Hack Recovery', desc: 'Priority emergency response for website outages, security breaches, payment system failures, and critical errors. Malware removal, clean restore from backup, vulnerability patching, and post-incident hardening with a written incident report.' },
-  { n: '10', title: 'Third-Party Integration Maintenance', desc: 'Monitoring and maintenance of third-party integrations — payment gateways, CRM connectors, email service providers, analytics, social feeds, APIs, and booking systems — ensuring they continue to function as upstream services change and APIs are updated.' },
+  { n: '10', title: 'Third-Party Integration Maintenance', desc: 'Monitoring and maintenance of third-party integrations - payment gateways, CRM connectors, email service providers, analytics, social feeds, APIs, and booking systems - ensuring they continue to function as upstream services change and APIs are updated.' },
 ];
 
 const TECH_STACK = [
@@ -104,16 +104,16 @@ const ENGAGEMENT_MODELS = [
     desc: 'Dedicated maintenance engineer, 2-hour emergency SLA, staging environment management, advanced WAF configuration, penetration testing (annual), multi-server monitoring, up to 20 hours of monthly development, quarterly strategy calls, and a custom SLA agreement.',
     bestFor: ['High-traffic eCommerce websites', 'Enterprise portals and membership sites', 'Sites with compliance requirements (PCI-DSS, GDPR)', 'Organisations needing a dedicated maintenance engineer'],
     process: 'Custom SLA → Dedicated engineer assignment → Continuous monitoring → Quarterly review',
-    timeline: 'Custom onboarding timeline — typically 5–7 business days',
+    timeline: 'Custom onboarding timeline - typically 5–7 business days',
   },
 ];
 
 const PROCESS_STEPS = [
-  { num: '01', title: 'Website Health Audit', desc: 'We start every engagement with a comprehensive audit of your website — CMS version and update status, plugin/extension inventory and vulnerability check, backup configuration assessment, security scan, page speed and Core Web Vitals baseline, broken link count, SSL status, and hosting environment review. You receive a written audit report with findings and priority actions before the retainer begins.' },
+  { num: '01', title: 'Website Health Audit', desc: 'We start every engagement with a comprehensive audit of your website - CMS version and update status, plugin/extension inventory and vulnerability check, backup configuration assessment, security scan, page speed and Core Web Vitals baseline, broken link count, SSL status, and hosting environment review. You receive a written audit report with findings and priority actions before the retainer begins.' },
   { num: '02', title: 'Onboarding & Access Setup', desc: 'Secure handover of CMS admin, hosting panel, FTP/SSH, domain registrar, Google Search Console, and Google Analytics access. We configure our monitoring tools (uptime, security scanner, backup agent) without disrupting your live website. Staging environment created as an isolated clone of your production site for safe update testing.' },
-  { num: '03', title: 'Immediate Priority Fixes', desc: 'Any critical issues identified in the audit — outdated CMS versions, unpatched known vulnerabilities, missing SSL, absent backups, misconfigured security settings — are resolved in the first week of the retainer as priority work before the regular maintenance cycle begins.' },
+  { num: '03', title: 'Immediate Priority Fixes', desc: 'Any critical issues identified in the audit - outdated CMS versions, unpatched known vulnerabilities, missing SSL, absent backups, misconfigured security settings - are resolved in the first week of the retainer as priority work before the regular maintenance cycle begins.' },
   { num: '04', title: 'Monthly Maintenance Cycle', desc: 'Each month: all available CMS and plugin updates are applied to the staging clone, tested for compatibility, then deployed to production during a low-traffic window. Security scans run weekly, uptime is monitored 24/7, backups are verified, broken links are found and repaired, and your monthly development hours are available for content and minor change requests via ticket.' },
-  { num: '05', title: 'Incident Response', desc: 'Any detected incidents — security alerts, uptime events, performance degradation, broken functionality after a third-party API change — are escalated immediately to our on-call team. Response within the SLA of your plan. Post-incident, you receive a written summary of what happened and what was done to resolve and prevent recurrence.' },
+  { num: '05', title: 'Incident Response', desc: 'Any detected incidents - security alerts, uptime events, performance degradation, broken functionality after a third-party API change - are escalated immediately to our on-call team. Response within the SLA of your plan. Post-incident, you receive a written summary of what happened and what was done to resolve and prevent recurrence.' },
   { num: '06', title: 'Monthly Report & Review', desc: 'A detailed monthly maintenance report is delivered by the 5th business day of the following month: updates applied, security status, uptime statistics, Core Web Vitals trend, backup status, broken links repaired, development hours used, and recommendations for the coming month. Professional and Enterprise plans include a monthly video review call with your account manager.' },
 ];
 
@@ -123,35 +123,35 @@ const TESTIMONIALS = [
     name: 'Sarah T.', role: 'Marketing Manager, Professional Services Firm (UK)', init: 'ST', bg: '#0F3460',
   },
   {
-    text: "We have eight websites across different CMSs — WordPress, Joomla, and a custom Laravel portal — and 1Solutions maintains all of them under a single retainer. One report, one point of contact, one invoice. The quality and consistency across all eight sites has been outstanding for two years. It freed up our internal dev team to focus on product rather than maintenance.",
+    text: "We have eight websites across different CMSs - WordPress, Joomla, and a custom Laravel portal - and 1Solutions maintains all of them under a single retainer. One report, one point of contact, one invoice. The quality and consistency across all eight sites has been outstanding for two years. It freed up our internal dev team to focus on product rather than maintenance.",
     name: 'David K.', role: 'Head of Digital, Retail Group (AU)', init: 'DK', bg: '#134e4a', feat: true,
   },
   {
-    text: "When our eCommerce site went down on a Saturday morning — peak trading day — 1Solutions had it back online in under 90 minutes. The post-incident report explained exactly what had caused the outage and what they had done to prevent it happening again. That level of transparency and responsiveness is why we have stayed with them for four years.",
+    text: "When our eCommerce site went down on a Saturday morning - peak trading day - 1Solutions had it back online in under 90 minutes. The post-incident report explained exactly what had caused the outage and what they had done to prevent it happening again. That level of transparency and responsiveness is why we have stayed with them for four years.",
     name: 'Mark R.', role: 'Director, eCommerce Business (US)', init: 'MR', bg: '#1e3a5f',
   },
 ];
 
 const WHY_CARDS = [
-  { title: '15+ Years of Website Maintenance Experience', desc: 'We have been maintaining websites across WordPress, Joomla, Drupal, Magento, and custom platforms for over 15 years. We understand the failure modes, security patterns, and update quirks of each CMS — and our maintenance processes are built around preventing the most common issues before they affect your site.' },
-  { title: 'CMS-Specific Expertise — Not Generic Hosting Support', desc: 'Generic hosting support teams reset your password and restart PHP-FPM. Our maintenance team understands WordPress plugin conflicts, Joomla extension API changes, Drupal module compatibility, and Magento patch dependencies. We fix root causes, not symptoms.' },
-  { title: 'Updates Applied to Staging First — Never Direct to Production', desc: 'Every CMS core update, plugin update, or theme update is applied to an isolated staging clone of your site, tested for visual regressions and functional breakages, then deployed to production during a low-traffic window. We have never broken a client site with an update.' },
-  { title: 'Security-First Mindset on Every Retainer', desc: 'Security is not an add-on — it is the foundation of every maintenance plan. Our team monitors CVE databases, vendor security advisories, and OWASP disclosures daily. Critical patches are applied within 48 hours of disclosure. WAF rules are updated continuously for all retainer clients.' },
-  { title: 'Transparent Monthly Reporting — No Black Box', desc: 'You receive a detailed report every month showing exactly what was done, what was found, uptime statistics, backup status, and Core Web Vitals trends. We tell you when something needs attention and we recommend proactive improvements — you are never left wondering what we have been doing.' },
+  { title: '15+ Years of Website Maintenance Experience', desc: 'We have been maintaining websites across WordPress, Joomla, Drupal, Magento, and custom platforms for over 15 years. We understand the failure modes, security patterns, and update quirks of each CMS - and our maintenance processes are built around preventing the most common issues before they affect your site.' },
+  { title: 'CMS-Specific Expertise - Not Generic Hosting Support', desc: 'Generic hosting support teams reset your password and restart PHP-FPM. Our maintenance team understands WordPress plugin conflicts, Joomla extension API changes, Drupal module compatibility, and Magento patch dependencies. We fix root causes, not symptoms.' },
+  { title: 'Updates Applied to Staging First - Never Direct to Production', desc: 'Every CMS core update, plugin update, or theme update is applied to an isolated staging clone of your site, tested for visual regressions and functional breakages, then deployed to production during a low-traffic window. We have never broken a client site with an update.' },
+  { title: 'Security-First Mindset on Every Retainer', desc: 'Security is not an add-on - it is the foundation of every maintenance plan. Our team monitors CVE databases, vendor security advisories, and OWASP disclosures daily. Critical patches are applied within 48 hours of disclosure. WAF rules are updated continuously for all retainer clients.' },
+  { title: 'Transparent Monthly Reporting - No Black Box', desc: 'You receive a detailed report every month showing exactly what was done, what was found, uptime statistics, backup status, and Core Web Vitals trends. We tell you when something needs attention and we recommend proactive improvements - you are never left wondering what we have been doing.' },
   { title: 'Single Retainer for Multiple Websites', desc: 'We maintain multi-site portfolios under a single retainer with consolidated reporting. Whether you have three WordPress sites or eight sites across different CMSs, you get one account manager, one monthly invoice, one point of contact, and consistent maintenance quality across all properties.' },
-  { title: 'Emergency Response Covered — Not an Upsell', desc: 'Emergency response for hacks, outages, and critical bugs is included in your maintenance plan — not billed as an expensive emergency call-out on top of your retainer. You pay a predictable monthly fee and we handle incidents as they arise within your plan SLA.' },
+  { title: 'Emergency Response Covered - Not an Upsell', desc: 'Emergency response for hacks, outages, and critical bugs is included in your maintenance plan - not billed as an expensive emergency call-out on top of your retainer. You pay a predictable monthly fee and we handle incidents as they arise within your plan SLA.' },
   { title: 'Proactive, Not Reactive', desc: 'We monitor your site before problems become visible to your visitors. Uptime monitoring catches outages in minutes. Security scans catch infections before they spread. Performance monitoring identifies slowdowns before they hurt conversions. Our goal is for you to never need to call us about a crisis.' },
 ];
 
 const FAQS = [
   { q: 'What is included in website maintenance?', a: 'Website maintenance typically covers: CMS and plugin/extension updates tested on staging before production deployment; security monitoring and patching within 48 hours of critical CVE disclosures; daily automated backups with off-site storage and monthly restore testing; 24/7 uptime monitoring; Core Web Vitals and page speed tracking; broken link scanning and repair; SSL certificate renewal management; monthly performance and security reports; and a monthly allocation of development hours for content updates and minor changes. Exact scope depends on your plan tier.' },
-  { q: 'Why do I need ongoing website maintenance?', a: 'Websites are not static — CMS platforms and plugins release security patches regularly, and running outdated versions is the most common cause of website hacks. Page speed and Core Web Vitals affect Google search rankings. SSL certificates expire. APIs change. Without maintenance, a site that worked perfectly at launch will gradually develop security vulnerabilities, slow down, accumulate broken links, and eventually require expensive emergency repairs rather than routine upkeep costing a fraction of that amount per month.' },
+  { q: 'Why do I need ongoing website maintenance?', a: 'Websites are not static - CMS platforms and plugins release security patches regularly, and running outdated versions is the most common cause of website hacks. Page speed and Core Web Vitals affect Google search rankings. SSL certificates expire. APIs change. Without maintenance, a site that worked perfectly at launch will gradually develop security vulnerabilities, slow down, accumulate broken links, and eventually require expensive emergency repairs rather than routine upkeep costing a fraction of that amount per month.' },
   { q: 'How quickly do you respond to website emergencies?', a: 'Emergency response times depend on your plan. Essential plans include next-business-day SLA with 4-hour emergency escalation available. Professional plans include a 4-hour emergency SLA. Enterprise plans include a 2-hour emergency SLA for critical incidents such as website down, security breach, or payment system failure. All plans include 24/7 uptime monitoring so we are alerted to outages before you or your customers notice them.' },
-  { q: 'Can you maintain a website built by another developer or agency?', a: "Yes. We take over maintenance of websites built by any development team, on any CMS or stack we support. We start with a website audit — reviewing CMS version, plugin versions, security configuration, backup setup, and performance baseline. The audit report gives you a clear picture of your site's current health and any immediate issues before the ongoing retainer begins. There is no lock-in to the original agency." },
-  { q: 'What happens if my website gets hacked?', a: 'We provide emergency incident response — diagnosing the attack vector, removing malware, restoring from a clean backup, patching the exploited vulnerability, and hardening the site against recurrence. For clients on a maintenance retainer, malware removal and hack recovery are covered within the plan. After recovery, you receive a written incident report detailing what happened, what was done, and what security improvements are recommended.' },
+  { q: 'Can you maintain a website built by another developer or agency?', a: "Yes. We take over maintenance of websites built by any development team, on any CMS or stack we support. We start with a website audit - reviewing CMS version, plugin versions, security configuration, backup setup, and performance baseline. The audit report gives you a clear picture of your site's current health and any immediate issues before the ongoing retainer begins. There is no lock-in to the original agency." },
+  { q: 'What happens if my website gets hacked?', a: 'We provide emergency incident response - diagnosing the attack vector, removing malware, restoring from a clean backup, patching the exploited vulnerability, and hardening the site against recurrence. For clients on a maintenance retainer, malware removal and hack recovery are covered within the plan. After recovery, you receive a written incident report detailing what happened, what was done, and what security improvements are recommended.' },
   { q: 'Do you provide monthly maintenance reports?', a: 'Yes. Every maintenance retainer client receives a monthly report covering: CMS and plugin updates applied; security scan results; uptime statistics; Core Web Vitals performance; backup status and restore test results; SSL certificate status; broken links found and repaired; development hours used and remaining; and recommendations for the coming month. Reports are delivered by the 5th business day of the following month.' },
-  { q: 'Can I use my maintenance hours for new features?', a: 'Yes. Your monthly development hours can be used for content updates, copy changes, image swaps, new page additions, form updates, SEO metadata changes, navigation changes, and minor design modifications. Larger projects — new page templates, new integrations, significant new functionality — are scoped and quoted separately as one-off projects running alongside your retainer.' },
-  { q: 'What CMS platforms do you support?', a: 'We maintain WordPress, WooCommerce, Joomla, Drupal, Magento, OpenCart, PrestaShop, and custom-built PHP, Laravel, Next.js, and React websites. For each platform we maintain current expertise in its update cycles, security advisories, and known vulnerability patterns. If your website runs on a platform not listed here, contact us — we assess each situation individually.' },
+  { q: 'Can I use my maintenance hours for new features?', a: 'Yes. Your monthly development hours can be used for content updates, copy changes, image swaps, new page additions, form updates, SEO metadata changes, navigation changes, and minor design modifications. Larger projects - new page templates, new integrations, significant new functionality - are scoped and quoted separately as one-off projects running alongside your retainer.' },
+  { q: 'What CMS platforms do you support?', a: 'We maintain WordPress, WooCommerce, Joomla, Drupal, Magento, OpenCart, PrestaShop, and custom-built PHP, Laravel, Next.js, and React websites. For each platform we maintain current expertise in its update cycles, security advisories, and known vulnerability patterns. If your website runs on a platform not listed here, contact us - we assess each situation individually.' },
 ];
 
 function useCountUp(target, duration = 1800, start = false) {
@@ -257,10 +257,10 @@ export default function WebsiteMaintenanceServices() {
     <>
       <Head>
         <title>Website Support & Maintenance Services | 1Solutions</title>
-        <meta name="description" content="Professional website maintenance services — CMS updates, security patching, daily backups, uptime monitoring, bug fixes, performance optimisation, and" />
+        <meta name="description" content="Professional website maintenance services - CMS updates, security patching, daily backups, uptime monitoring, bug fixes, performance optimisation, and" />
         <link rel="canonical" href="https://www.1solutions.biz/website-support-maintenance-services/" />
         <meta property="og:title" content="Website Support & Maintenance Services | 1Solutions" />
-        <meta property="og:description" content="Monthly website maintenance retainers — security patching, CMS updates, daily backups, uptime monitoring, Core Web Vitals, bug fixes, and content updates. All CMS platforms." />
+        <meta property="og:description" content="Monthly website maintenance retainers - security patching, CMS updates, daily backups, uptime monitoring, Core Web Vitals, bug fixes, and content updates. All CMS platforms." />
         <meta property="og:url" content="https://www.1solutions.biz/website-support-maintenance-services/" />
         <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
@@ -473,8 +473,8 @@ export default function WebsiteMaintenanceServices() {
 
         <section className="sm-hero">
           <span className="sm-eyebrow">Website Support & Maintenance Services</span>
-          <h1>Website Maintenance Services — Security, Updates, Uptime & Performance</h1>
-          <p className="sm-hero-desc">Monthly website maintenance retainers for businesses that need their website kept secure, fast, and running. CMS updates, security patching, daily backups, uptime monitoring, Core Web Vitals, bug fixes, and monthly development hours — all CMS platforms supported.</p>
+          <h1>Website Maintenance Services - Security, Updates, Uptime & Performance</h1>
+          <p className="sm-hero-desc">Monthly website maintenance retainers for businesses that need their website kept secure, fast, and running. CMS updates, security patching, daily backups, uptime monitoring, Core Web Vitals, bug fixes, and monthly development hours - all CMS platforms supported.</p>
           <div className="sm-trust-row">
             {['200+ Websites Maintained','All CMS Platforms','Security-First Approach','24/7 Uptime Monitoring','15+ Years Experience'].map(b => (
               <div className="sm-badge" key={b}><span className="sm-badge-dot" />{b}</div>
@@ -535,7 +535,7 @@ export default function WebsiteMaintenanceServices() {
             <div className={`sm-s-reveal${visibleSections.has('stk') ? ' sm-revealed' : ''}`} ref={el => { sectionRefs.current['stk'] = el; }}>
               <span className="sm-s-eyebrow">Platforms & Tools</span>
               <h2 id="sm-stack-heading" className="sm-s-title">CMS Platforms & Maintenance Toolset</h2>
-              <p className="sm-s-desc" style={{ maxWidth: 680 }}>WordPress, Joomla, Drupal, Magento, and custom PHP — maintained with enterprise-grade security tools, backup agents, uptime monitors, CDN performance stacks, and automated regression testing before every production deployment.</p>
+              <p className="sm-s-desc" style={{ maxWidth: 680 }}>WordPress, Joomla, Drupal, Magento, and custom PHP - maintained with enterprise-grade security tools, backup agents, uptime monitors, CDN performance stacks, and automated regression testing before every production deployment.</p>
             </div>
             <div className="sm-stack-grid" ref={stackGridRef}>
               {TECH_STACK.map((grp, i) => (
@@ -554,7 +554,7 @@ export default function WebsiteMaintenanceServices() {
           <div className="sm-inner">
             <div className={`sm-s-reveal${visibleSections.has('eng') ? ' sm-revealed' : ''}`} ref={el => { sectionRefs.current['eng'] = el; }}>
               <span className="sm-s-eyebrow">Maintenance Plans</span>
-              <h2 id="sm-eng-heading" className="sm-s-title">Website Care Plans — Choose Your Level</h2>
+              <h2 id="sm-eng-heading" className="sm-s-title">Website Care Plans - Choose Your Level</h2>
               <p className="sm-s-desc" style={{ maxWidth: 680 }}>From an entry-level Essential plan covering security updates and backups, to a Professional plan with priority support and Core Web Vitals monitoring, to an Enterprise plan with a dedicated engineer and 2-hour emergency SLA.</p>
             </div>
             <div className="sm-eng-grid" ref={engGridRef}>
@@ -580,7 +580,7 @@ export default function WebsiteMaintenanceServices() {
             <div className={`sm-s-reveal${visibleSections.has('proc') ? ' sm-revealed' : ''}`} ref={el => { sectionRefs.current['proc'] = el; }}>
               <span className="sm-s-eyebrow">How We Maintain Your Site</span>
               <h2 id="sm-proc-heading" className="sm-s-title">Our Website Maintenance Process</h2>
-              <p className="sm-s-desc">Starting with a health audit and immediate priority fixes, through a structured monthly maintenance cycle, 24/7 monitoring, incident response, and a monthly report — your website is always current, secure, and performing.</p>
+              <p className="sm-s-desc">Starting with a health audit and immediate priority fixes, through a structured monthly maintenance cycle, 24/7 monitoring, incident response, and a monthly report - your website is always current, secure, and performing.</p>
             </div>
             <div className="sm-psteps">
               {PROCESS_STEPS.map((step, i) => (
@@ -626,7 +626,7 @@ export default function WebsiteMaintenanceServices() {
             <div className={`sm-s-reveal${visibleSections.has('wy') ? ' sm-revealed' : ''}`} ref={el => { sectionRefs.current['wy'] = el; }}>
               <span className="sm-s-eyebrow">Why 1Solutions</span>
               <h2 id="sm-wy-heading" className="sm-s-title">Why Choose Us for Website Maintenance</h2>
-              <p className="sm-s-desc" style={{ maxWidth: 680 }}>15+ years of website maintenance across all major CMS platforms — with a security-first mindset, staging-before-production update workflow, transparent monthly reporting, and emergency response included in every plan.</p>
+              <p className="sm-s-desc" style={{ maxWidth: 680 }}>15+ years of website maintenance across all major CMS platforms - with a security-first mindset, staging-before-production update workflow, transparent monthly reporting, and emergency response included in every plan.</p>
             </div>
             <div className="sm-why-grid" ref={whyGridRef}>
               {WHY_CARDS.map((c, i) => (
@@ -644,9 +644,9 @@ export default function WebsiteMaintenanceServices() {
           <div className="sm-contact-grid">
             <div>
               <h2 id="sm-contact-heading" className="sm-ctitle">Get a Website Maintenance Quote</h2>
-              <p className="sm-cdesc">Tell us about your website and we will recommend the right maintenance plan. We start with a free health audit covering your CMS version, plugin update status, security configuration, backup setup, and performance baseline — then propose a maintenance retainer matched to your site and budget.</p>
+              <p className="sm-cdesc">Tell us about your website and we will recommend the right maintenance plan. We start with a free health audit covering your CMS version, plugin update status, security configuration, backup setup, and performance baseline - then propose a maintenance retainer matched to your site and budget.</p>
               <div className="sm-cbenefits">
-                {[['✓','Free website health audit — CMS, security, backups, and performance assessment'],['✓','Maintenance plan recommendation tailored to your site and update frequency'],['✓','All CMS platforms supported: WordPress, Joomla, Drupal, Magento, custom PHP'],['✓','Emergency response included in all plans — not an expensive add-on'],['✓','Response within 24 business hours from our maintenance team']].map(([icon, text]) => (
+                {[['✓','Free website health audit - CMS, security, backups, and performance assessment'],['✓','Maintenance plan recommendation tailored to your site and update frequency'],['✓','All CMS platforms supported: WordPress, Joomla, Drupal, Magento, custom PHP'],['✓','Emergency response included in all plans - not an expensive add-on'],['✓','Response within 24 business hours from our maintenance team']].map(([icon, text]) => (
                   <div className="sm-cbenefit" key={text}><span className="sm-cbenefit-icon">{icon}</span><p>{text}</p></div>
                 ))}
               </div>
@@ -681,7 +681,7 @@ export default function WebsiteMaintenanceServices() {
                 <div className="sm-fg full">
                   <label htmlFor="sm-plan">Support Plan Interest</label>
                   <select id="sm-plan">
-                    <option value="">Not sure — recommend one for me</option>
+                    <option value="">Not sure - recommend one for me</option>
                     <option>Essential Care Plan</option>
                     <option>Professional Care Plan</option>
                     <option>Enterprise Care Plan</option>
@@ -690,7 +690,7 @@ export default function WebsiteMaintenanceServices() {
                 </div>
                 <div className="sm-fg full">
                   <label htmlFor="sm-msg">Tell Us About Your Site</label>
-                  <textarea name="sf-message" id="sm-msg" rows={3} placeholder="Describe your website — what it does, any current issues, how often you update content, and any specific concerns about security, speed, or uptime..." />
+                  <textarea name="sf-message" id="sm-msg" rows={3} placeholder="Describe your website - what it does, any current issues, how often you update content, and any specific concerns about security, speed, or uptime..." />
                 </div>
                 <div className="sm-consent">
                   <input id="sm-consent" type="checkbox" required />
@@ -706,8 +706,8 @@ export default function WebsiteMaintenanceServices() {
         <section className="sm-faq" aria-labelledby="sm-faq-heading">
           <div className="sm-inner" style={{ maxWidth: 860 }}>
             <span className="sm-s-eyebrow">FAQ</span>
-            <h2 id="sm-faq-heading">Website Maintenance — Frequently Asked Questions</h2>
-            <p className="sm-faq-sub">Everything you need to know about our website maintenance retainers — what is included, how quickly we respond, which platforms we support, and what happens when something goes wrong.</p>
+            <h2 id="sm-faq-heading">Website Maintenance - Frequently Asked Questions</h2>
+            <p className="sm-faq-sub">Everything you need to know about our website maintenance retainers - what is included, how quickly we respond, which platforms we support, and what happens when something goes wrong.</p>
             <div className="sm-faq-list">
               {FAQS.map((item, i) => (
                 <div key={i} className={`sm-fitem${openFaq === i ? ' open' : ''}`} itemScope itemType="https://schema.org/Question">

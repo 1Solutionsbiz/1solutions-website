@@ -27,27 +27,27 @@ const SKILLS = [
   'OpenAI & AI SDK Integration', 'Sanity & Contentful CMS', 'GraphQL & tRPC', 'Core Web Vitals Optimisation',
 ];
 const MODELS = [
-  { title: 'Dedicated Hire', desc: 'A full-time Next.js developer committed to your product — 8 hrs/day, 5 days/week, fully embedded in your team.', icon: '👤' },
+  { title: 'Dedicated Hire', desc: 'A full-time Next.js developer committed to your product - 8 hrs/day, 5 days/week, fully embedded in your team.', icon: '👤' },
   { title: 'Part-Time Hire', desc: 'Half-day engagement for RSC migrations, App Router refactors, performance improvements, or feature delivery sprints.', icon: '⏰' },
   { title: 'Hourly Hire',    desc: 'Flexible billing for architectural reviews, Lighthouse audits, or short Next.js consulting engagements.', icon: '🕐' },
 ];
 const WHY = [
-  { h: 'App Router Specialists',      b: 'Our developers are fluent in Next.js 14 App Router — layouts, loading.tsx, error.tsx, parallel routes, intercepting routes, and the full RSC mental model. Not just pages router veterans forced to learn new APIs.' },
+  { h: 'App Router Specialists',      b: 'Our developers are fluent in Next.js 14 App Router - layouts, loading.tsx, error.tsx, parallel routes, intercepting routes, and the full RSC mental model. Not just pages router veterans forced to learn new APIs.' },
   { h: 'Full-Stack Capability',       b: 'Beyond the frontend: our Next.js developers build API routes, server actions, database integrations with Prisma or Drizzle, and full authentication flows with NextAuth.js.' },
-  { h: 'Vercel & Edge Deployment',    b: 'We configure Vercel deployments, ISR, On-Demand Revalidation, Edge Middleware, and regional functions — so your app is fast globally, not just locally.' },
-  { h: 'Performance-First Builds',    b: 'Sub-2s LCP, zero CLS, and optimised bundle size using code splitting, lazy loading, next/image, and next/font — green Core Web Vitals as standard.' },
-  { h: 'Profiles in 48 Hours',        b: 'Submit your brief and receive 2-3 matched Next.js developer CVs within two business days — ready for your technical interview.' },
+  { h: 'Vercel & Edge Deployment',    b: 'We configure Vercel deployments, ISR, On-Demand Revalidation, Edge Middleware, and regional functions - so your app is fast globally, not just locally.' },
+  { h: 'Performance-First Builds',    b: 'Sub-2s LCP, zero CLS, and optimised bundle size using code splitting, lazy loading, next/image, and next/font - green Core Web Vitals as standard.' },
+  { h: 'Profiles in 48 Hours',        b: 'Submit your brief and receive 2-3 matched Next.js developer CVs within two business days - ready for your technical interview.' },
   { h: 'NDA & IP Security',           b: 'Full NDA and IP assignment signed before any access to your codebase, Vercel project, or design files.' },
 ];
 const PROCESS = [
   { n: '01', h: 'Describe Your Stack',  b: 'Tell us the Next.js version, rendering strategy (SSR/SSG/ISR), database, CMS, and seniority level you need.' },
   { n: '02', h: 'Receive Profiles',     b: '2-3 matched Next.js developer CVs delivered within 48 hours.' },
-  { n: '03', h: 'Interview & Select',   b: 'Run your own technical round — App Router architecture discussion, RSC patterns, or live coding.' },
+  { n: '03', h: 'Interview & Select',   b: 'Run your own technical round - App Router architecture discussion, RSC patterns, or live coding.' },
   { n: '04', h: 'Onboard & Build',      b: 'Developer joins your repo and Vercel project. First PR within 7 days.' },
 ];
 const FAQS = [
   { q: 'Do your developers know Next.js App Router or just Pages Router?', a: 'Both. Our developers are fluent in the App Router (layouts, Server Components, Server Actions, parallel routes) and can also maintain or migrate Pages Router projects. We recommend App Router for new projects and can migrate your existing codebase incrementally.' },
-  { q: 'Can they build full-stack Next.js applications?', a: 'Yes. Beyond the React layer, our Next.js developers build API routes, server actions, Prisma/Drizzle ORM integrations, NextAuth.js authentication, and Stripe payment flows — full-stack development within a single Next.js codebase.' },
+  { q: 'Can they build full-stack Next.js applications?', a: 'Yes. Beyond the React layer, our Next.js developers build API routes, server actions, Prisma/Drizzle ORM integrations, NextAuth.js authentication, and Stripe payment flows - full-stack development within a single Next.js codebase.' },
   { q: 'Do they deploy on Vercel?', a: 'Yes. Our developers configure Vercel deployments, preview environments, ISR (Incremental Static Regeneration), On-Demand Revalidation, Edge Middleware, and Vercel Analytics. We also deploy to AWS (via Amplify or EC2), Cloudflare, and self-hosted Node.js servers.' },
   { q: 'Can they improve our Core Web Vitals?', a: 'Yes. We audit your current LCP, CLS, and INP scores, then implement fixes: next/image optimisation, font subsetting with next/font, route-level code splitting, partial prerendering, and server component conversion to reduce client-side JavaScript.' },
   { q: 'Do they work with headless CMS?', a: 'Yes. Our developers integrate with Sanity, Contentful, Strapi, WordPress (WPGraphQL), Prismic, and custom CMS backends using Next.js ISR or on-demand revalidation webhooks.' },
@@ -83,7 +83,7 @@ export default function HireNextJsDevelopers() {
         { '@type': 'ListItem', position: 2, name: 'Hire Next.js Developers', item: 'https://www.1solutions.biz/hire-nextjs-developers/' },
       ]},
       { '@type': 'Service', name: 'Hire Next.js Developers', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Hire dedicated Next.js developers from 1Solutions — App Router, Server Components, TypeScript, and Vercel deployment experts. Pre-vetted profiles in 48 hours.',
+        description: 'Hire dedicated Next.js developers from 1Solutions - App Router, Server Components, TypeScript, and Vercel deployment experts. Pre-vetted profiles in 48 hours.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '84', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -148,7 +148,7 @@ export default function HireNextJsDevelopers() {
       </Head>
       <section className="hnjs-hero">
         <h1>Hire Next.js Developers<br/>App Router, Server Components &amp; Vercel Experts</h1>
-        <p>Pre-vetted Next.js engineers who build fast, scalable, and SEO-optimised full-stack applications — App Router, React Server Components, streaming SSR, and edge-deployed. Profiles in 48 hours.</p>
+        <p>Pre-vetted Next.js engineers who build fast, scalable, and SEO-optimised full-stack applications - App Router, React Server Components, streaming SSR, and edge-deployed. Profiles in 48 hours.</p>
         <div className="hnjs-hero-btns">
           <Link href="/contact-us" className="hnjs-btn-primary">Hire a Next.js Developer →</Link>
           <Link href="/portfolio" className="hnjs-btn-outline">View Portfolio</Link>
@@ -157,7 +157,7 @@ export default function HireNextJsDevelopers() {
       <section className="hnjs-sec" ref={skR}>
         <div className="hnjs-wrap">
           <h2 className="hnjs-sec-title">Skills &amp; Tech Stack</h2>
-          <p className="hnjs-sec-sub">Our Next.js developers cover the full modern stack — from App Router to edge deployment and AI integration.</p>
+          <p className="hnjs-sec-sub">Our Next.js developers cover the full modern stack - from App Router to edge deployment and AI integration.</p>
           <div className="hnjs-skills">{SKILLS.map((s, i) => <span key={s} className={`hnjs-skill${skV ? ' hnjs-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>)}</div>
         </div>
       </section>
@@ -171,7 +171,7 @@ export default function HireNextJsDevelopers() {
       <section className="hnjs-sec" ref={whR}>
         <div className="hnjs-wrap">
           <h2 className="hnjs-sec-title">Why Hire Next.js Developers from 1Solutions?</h2>
-          <p className="hnjs-sec-sub">We place engineers who have shipped production Next.js apps with millions of users — not just course graduates.</p>
+          <p className="hnjs-sec-sub">We place engineers who have shipped production Next.js apps with millions of users - not just course graduates.</p>
           <div className="hnjs-why-grid">{WHY.map((w, i) => <div key={w.h} className={`hnjs-why-item${whV ? ' hnjs-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
         </div>
       </section>
@@ -186,7 +186,7 @@ export default function HireNextJsDevelopers() {
       <section className="hnjs-sec hnjs-sec-alt" ref={prR}>
         <div className="hnjs-wrap">
           <h2 className="hnjs-sec-title">Hire in 4 Simple Steps</h2>
-          <p className="hnjs-sec-sub">From tech brief to first merged PR — in under two weeks.</p>
+          <p className="hnjs-sec-sub">From tech brief to first merged PR - in under two weeks.</p>
           <div className="hnjs-process">{PROCESS.map((p, i) => <div key={p.n} className={`hnjs-step${prV ? ' hnjs-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}><div className="hnjs-step-n">{p.n}</div><h3>{p.h}</h3><p>{p.b}</p></div>)}</div>
         </div>
       </section>
@@ -200,7 +200,7 @@ export default function HireNextJsDevelopers() {
       <section className="hnjs-cta">
         <div className="hnjs-wrap">
           <h2>Ready to Hire Your Next.js Developer?</h2>
-          <p>Share your App Router, data layer, and deployment requirements — receive matched Next.js specialist profiles within 48 hours.</p>
+          <p>Share your App Router, data layer, and deployment requirements - receive matched Next.js specialist profiles within 48 hours.</p>
           <Link href="/contact-us" className="hnjs-btn-primary">Get Started Today →</Link>
         </div>
       </section>

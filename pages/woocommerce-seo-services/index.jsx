@@ -3,14 +3,14 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const SERVICES = [
-  { n: '01', title: 'WooCommerce Technical SEO Audit', desc: 'Comprehensive audit of your WooCommerce store — duplicate content, faceted navigation, pagination, canonical tags, Core Web Vitals, plugin conflicts, and crawl budget analysis.' },
-  { n: '02', title: 'WooCommerce Product Page SEO', desc: 'Unique product titles, meta descriptions, schema markup, heading structure, keyword targeting, and image alt text — optimised at scale across your full product catalogue.' },
-  { n: '03', title: 'WooCommerce Category SEO', desc: 'Category and subcategory page optimisation — unique content, commercial keyword targeting, internal linking to products, and schema markup for breadcrumb-rich snippets.' },
-  { n: '04', title: 'WooCommerce Faceted Navigation', desc: 'Fix the duplicate content and crawl budget waste that WooCommerce faceted navigation creates — canonical tags, robots directives, and selective indexation of commercially valuable filter combinations.' },
-  { n: '05', title: 'WooCommerce Schema Markup', desc: 'Product, Offer, AggregateRating, BreadcrumbList, and FAQPage structured data — going beyond what Yoast WooCommerce SEO provides by default for maximum rich snippet coverage.' },
-  { n: '06', title: 'WooCommerce Core Web Vitals', desc: 'LCP, CLS, and INP optimisation — WP Rocket configuration, image compression (WebP), unused plugin script removal, font optimisation, and server response improvements.' },
+  { n: '01', title: 'WooCommerce Technical SEO Audit', desc: 'Comprehensive audit of your WooCommerce store - duplicate content, faceted navigation, pagination, canonical tags, Core Web Vitals, plugin conflicts, and crawl budget analysis.' },
+  { n: '02', title: 'WooCommerce Product Page SEO', desc: 'Unique product titles, meta descriptions, schema markup, heading structure, keyword targeting, and image alt text - optimised at scale across your full product catalogue.' },
+  { n: '03', title: 'WooCommerce Category SEO', desc: 'Category and subcategory page optimisation - unique content, commercial keyword targeting, internal linking to products, and schema markup for breadcrumb-rich snippets.' },
+  { n: '04', title: 'WooCommerce Faceted Navigation', desc: 'Fix the duplicate content and crawl budget waste that WooCommerce faceted navigation creates - canonical tags, robots directives, and selective indexation of commercially valuable filter combinations.' },
+  { n: '05', title: 'WooCommerce Schema Markup', desc: 'Product, Offer, AggregateRating, BreadcrumbList, and FAQPage structured data - going beyond what Yoast WooCommerce SEO provides by default for maximum rich snippet coverage.' },
+  { n: '06', title: 'WooCommerce Core Web Vitals', desc: 'LCP, CLS, and INP optimisation - WP Rocket configuration, image compression (WebP), unused plugin script removal, font optimisation, and server response improvements.' },
   { n: '07', title: 'WooCommerce Content Strategy', desc: 'Buying guides, product comparison content, category landing pages, and blog content strategy targeting top-of-funnel keywords and supporting commercial page authority.' },
-  { n: '08', title: 'WooCommerce Link Building', desc: 'Niche-relevant link acquisition — product review placements, industry directories, digital PR, and competitor link gap analysis targeting your highest-revenue product categories.' },
+  { n: '08', title: 'WooCommerce Link Building', desc: 'Niche-relevant link acquisition - product review placements, industry directories, digital PR, and competitor link gap analysis targeting your highest-revenue product categories.' },
 ];
 
 const PLUGINS = ['Yoast WooCommerce SEO', 'Rank Math', 'WP Rocket', 'Imagify', 'WooCommerce Multilingual', 'WPML', 'Cloudflare', 'ShortPixel', 'WooCommerce Product Bundles', 'WooCommerce Subscriptions'];
@@ -21,27 +21,27 @@ const PROCESS = [
   { step: '03', title: 'Product & Category Optimisation', desc: 'Bulk meta tag updates, unique product descriptions, category page content, heading hierarchy, and internal link architecture.' },
   { step: '04', title: 'Plugin Stack Audit', desc: 'Review plugin conflicts, remove SEO-damaging plugins, configure Yoast WooCommerce SEO or Rank Math for maximum coverage.' },
   { step: '05', title: 'Content & Authority', desc: 'Buying guides, category landing pages, and link acquisition targeting commercial and informational keywords.' },
-  { step: '06', title: 'Monitor & Report', desc: 'Monthly reporting — organic revenue, keyword rankings, Core Web Vitals, crawl health, and conversion rate by channel.' },
+  { step: '06', title: 'Monitor & Report', desc: 'Monthly reporting - organic revenue, keyword rankings, Core Web Vitals, crawl health, and conversion rate by channel.' },
 ];
 
 const WHY = [
-  { title: 'WooCommerce-Specific Expertise', desc: 'We know every WooCommerce SEO issue — from faceted navigation crawl waste to plugin conflicts that silently duplicate metadata across your catalogue.' },
-  { title: 'WordPress & WooCommerce Combined', desc: 'WooCommerce SEO requires both WordPress SEO knowledge and ecommerce SEO strategy. Our team covers both — no handoffs or knowledge gaps between disciplines.' },
-  { title: 'Revenue Attribution Included', desc: 'We connect WooCommerce organic traffic to revenue using GA4 ecommerce tracking — every monthly report shows organic sales, average order value, and conversion rate.' },
+  { title: 'WooCommerce-Specific Expertise', desc: 'We know every WooCommerce SEO issue - from faceted navigation crawl waste to plugin conflicts that silently duplicate metadata across your catalogue.' },
+  { title: 'WordPress & WooCommerce Combined', desc: 'WooCommerce SEO requires both WordPress SEO knowledge and ecommerce SEO strategy. Our team covers both - no handoffs or knowledge gaps between disciplines.' },
+  { title: 'Revenue Attribution Included', desc: 'We connect WooCommerce organic traffic to revenue using GA4 ecommerce tracking - every monthly report shows organic sales, average order value, and conversion rate.' },
   { title: 'Scalable Processes', desc: 'From 50-product stores to 100,000+ SKU catalogues, we build scalable meta templates and optimisation workflows that maintain quality at every catalogue size.' },
-  { title: 'Plugin Stack Optimisation', desc: 'We audit your plugin stack for SEO conflicts and performance impact — and configure the right combination of SEO plugins, caching, and image optimisation tools.' },
+  { title: 'Plugin Stack Optimisation', desc: 'We audit your plugin stack for SEO conflicts and performance impact - and configure the right combination of SEO plugins, caching, and image optimisation tools.' },
   { title: 'Proven WooCommerce Results', desc: '400+ WooCommerce stores optimised. Average 320% organic traffic increase over 12 months, with documented revenue attribution across our client base.' },
 ];
 
 const FAQS = [
-  { q: 'What are the most common WooCommerce SEO problems?', a: 'The most frequent WooCommerce SEO issues are: (1) Faceted navigation creating thousands of crawlable filter URLs — wasting crawl budget on low-value pages; (2) Products in multiple categories creating duplicate content; (3) Thin category pages with only a product grid and no unique content; (4) Plugin conflicts creating duplicate metadata or slowing page load; (5) Unoptimised product descriptions using manufacturer copy. We address all of these in our standard WooCommerce SEO engagement.' },
-  { q: 'Should I use Yoast SEO or Rank Math for WooCommerce?', a: 'Both are strong options. Yoast SEO offers a dedicated WooCommerce SEO premium add-on that handles product breadcrumbs, carousel schema, and product review schema. Rank Math handles WooCommerce schema natively in the free version and is more flexible for custom schema configurations. We are proficient in both and configure whichever suits your existing setup — avoiding plugin migration risks when you already have one installed.' },
-  { q: 'How do you handle faceted navigation SEO in WooCommerce?', a: 'WooCommerce faceted navigation (product filters for colour, size, price, etc.) creates URLs for every filter combination. The correct SEO approach depends on which filter combinations have commercial search intent and traffic potential. High-volume filter combinations (e.g., /product-category/dresses/colour/red/) may warrant indexation. Low-value combinations should be canonicalised or set to noindex. We map this out per store before implementing — preserving UX while eliminating crawl waste.' },
+  { q: 'What are the most common WooCommerce SEO problems?', a: 'The most frequent WooCommerce SEO issues are: (1) Faceted navigation creating thousands of crawlable filter URLs - wasting crawl budget on low-value pages; (2) Products in multiple categories creating duplicate content; (3) Thin category pages with only a product grid and no unique content; (4) Plugin conflicts creating duplicate metadata or slowing page load; (5) Unoptimised product descriptions using manufacturer copy. We address all of these in our standard WooCommerce SEO engagement.' },
+  { q: 'Should I use Yoast SEO or Rank Math for WooCommerce?', a: 'Both are strong options. Yoast SEO offers a dedicated WooCommerce SEO premium add-on that handles product breadcrumbs, carousel schema, and product review schema. Rank Math handles WooCommerce schema natively in the free version and is more flexible for custom schema configurations. We are proficient in both and configure whichever suits your existing setup - avoiding plugin migration risks when you already have one installed.' },
+  { q: 'How do you handle faceted navigation SEO in WooCommerce?', a: 'WooCommerce faceted navigation (product filters for colour, size, price, etc.) creates URLs for every filter combination. The correct SEO approach depends on which filter combinations have commercial search intent and traffic potential. High-volume filter combinations (e.g., /product-category/dresses/colour/red/) may warrant indexation. Low-value combinations should be canonicalised or set to noindex. We map this out per store before implementing - preserving UX while eliminating crawl waste.' },
   { q: 'How do you fix WooCommerce duplicate content?', a: 'WooCommerce duplicate content typically comes from: products in multiple categories creating multiple accessible URLs; the shop page and category pages showing the same products; and tag/attribute archives duplicating category content. Fixes include: canonical tags on duplicate product URLs; consolidating product taxonomy to reduce duplication; robots noindex on low-value attribute pages; and ensuring each category has enough unique content to justify indexation.' },
-  { q: 'Can you optimise WooCommerce product descriptions at scale?', a: 'Yes. For catalogues with hundreds or thousands of products, we use a tiered approach: (1) Immediate manual optimisation for your top 20% of revenue-generating products; (2) Template-based improvements for mid-tier products; (3) Automated quality scoring to identify the worst short/duplicate descriptions for prioritisation. We do not use AI-generated content that simply paraphrases manufacturer copy — every product description is written to provide genuine value to a buyer with purchase intent.' },
-  { q: 'What impact does WooCommerce page speed have on SEO?', a: 'Core Web Vitals (LCP, CLS, INP) are confirmed Google ranking factors. Slow WooCommerce stores — particularly those with many plugins, large unoptimised product images, and no caching — consistently rank below faster competitors for equivalent keyword targets. We prioritise Core Web Vitals fixes early in our engagement because the ranking impact is often faster and more predictable than content or link building improvements.' },
+  { q: 'Can you optimise WooCommerce product descriptions at scale?', a: 'Yes. For catalogues with hundreds or thousands of products, we use a tiered approach: (1) Immediate manual optimisation for your top 20% of revenue-generating products; (2) Template-based improvements for mid-tier products; (3) Automated quality scoring to identify the worst short/duplicate descriptions for prioritisation. We do not use AI-generated content that simply paraphrases manufacturer copy - every product description is written to provide genuine value to a buyer with purchase intent.' },
+  { q: 'What impact does WooCommerce page speed have on SEO?', a: 'Core Web Vitals (LCP, CLS, INP) are confirmed Google ranking factors. Slow WooCommerce stores - particularly those with many plugins, large unoptimised product images, and no caching - consistently rank below faster competitors for equivalent keyword targets. We prioritise Core Web Vitals fixes early in our engagement because the ranking impact is often faster and more predictable than content or link building improvements.' },
   { q: 'Do you handle WooCommerce SEO for subscription-based stores?', a: 'Yes. WooCommerce Subscriptions stores have specific SEO considerations around product page content (clearly communicating the subscription model), FAQ schema for subscription terms, and retention-focused content strategy. We have optimised SEO for WooCommerce subscription boxes, SaaS billing through WooCommerce, and membership-based ecommerce stores.' },
-  { q: 'How do you measure the ROI of WooCommerce SEO?', a: 'We configure GA4 ecommerce tracking to attribute revenue to organic search specifically — not just traffic. Monthly reports show: organic revenue and transactions; organic conversion rate vs other channels; average order value from organic; and top-performing organic landing pages by revenue. We also track keyword ranking movements for your highest-revenue product and category pages to show the relationship between SEO improvements and sales outcomes.' },
+  { q: 'How do you measure the ROI of WooCommerce SEO?', a: 'We configure GA4 ecommerce tracking to attribute revenue to organic search specifically - not just traffic. Monthly reports show: organic revenue and transactions; organic conversion rate vs other channels; average order value from organic; and top-performing organic landing pages by revenue. We also track keyword ranking movements for your highest-revenue product and category pages to show the relationship between SEO improvements and sales outcomes.' },
 ];
 
 const STATS = [
@@ -68,7 +68,7 @@ export default function WoocommerceSeoServices() {
     <>
       <Head>
         <title>WooCommerce SEO Services | 1Solutions</title>
-        <meta name="description" content="WooCommerce SEO services — fix faceted navigation, duplicate content, and slow page load. Specialist WooCommerce SEO that drives organic revenue for" />
+        <meta name="description" content="WooCommerce SEO services - fix faceted navigation, duplicate content, and slow page load. Specialist WooCommerce SEO that drives organic revenue for" />
         <meta name="keywords" content="woocommerce seo services, woocommerce seo agency, woocommerce seo company, woocommerce technical seo, wordpress ecommerce seo" />
         <link rel="canonical" href="https://www.1solutions.biz/woocommerce-seo-services/" />
         <meta property="og:title" content="WooCommerce SEO Services | 1Solutions" />
@@ -151,7 +151,7 @@ export default function WoocommerceSeoServices() {
             <nav className="wcseo-bc"><Link href="/">Home</Link><span>/</span><Link href="/seo-services-company">SEO Services</Link><span>/</span><span style={{color:'#7E22CE'}}>WooCommerce SEO</span></nav>
             <span className="wcseo-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#7E22CE',display:'inline-block'}}/> WordPress · WooCommerce · Revenue-Focused</span>
             <h1 className="wcseo-h1">WooCommerce SEO Services That Drive Organic Revenue</h1>
-            <p className="wcseo-sub">Fix faceted navigation, resolve duplicate content, and optimise every product and category page — specialist WooCommerce SEO that connects organic rankings directly to your store&rsquo;s revenue.</p>
+            <p className="wcseo-sub">Fix faceted navigation, resolve duplicate content, and optimise every product and category page - specialist WooCommerce SEO that connects organic rankings directly to your store&rsquo;s revenue.</p>
             <div className="wcseo-btns">
               <Link href="/contact-us" className="wcseo-btn-p">Get a Free WooCommerce SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/woocommerce-development-company" className="wcseo-btn-s">WooCommerce Development</Link>
@@ -161,7 +161,7 @@ export default function WoocommerceSeoServices() {
         </section>
         <section className="wcseo-svc"><div className="wcseo-svc-in">
           <span className="wcseo-ey2">What We Do</span><h2 className="wcseo-ttl">WooCommerce SEO Services</h2>
-          <p className="wcseo-desc">From fixing structural issues to building long-term organic authority — every WooCommerce SEO layer handled by specialists who know WordPress and ecommerce.</p>
+          <p className="wcseo-desc">From fixing structural issues to building long-term organic authority - every WooCommerce SEO layer handled by specialists who know WordPress and ecommerce.</p>
           <div className="wcseo-grid" ref={cardsRef}>{SERVICES.map((s,i) => <div key={s.n} className={`wcseo-card${visibleCards.includes(i)?' visible':''}`}><div className="wcseo-num">{s.n}</div><h3>{s.title}</h3><p>{s.desc}</p></div>)}</div>
         </div></section>
         <section className="wcseo-plug"><div className="wcseo-plug-in">
@@ -170,12 +170,12 @@ export default function WoocommerceSeoServices() {
         </div></section>
         <section className="wcseo-proc"><div className="wcseo-proc-in">
           <span className="wcseo-ey2">How We Work</span><h2 className="wcseo-ttl">Our WooCommerce SEO Process</h2>
-          <p className="wcseo-desc">Technical fixes first, then product, category, and content optimisation — with monthly revenue attribution reporting throughout.</p>
+          <p className="wcseo-desc">Technical fixes first, then product, category, and content optimisation - with monthly revenue attribution reporting throughout.</p>
           <div className="wcseo-steps">{PROCESS.map((p,i) => <div key={p.step} ref={el=>{stepRefs.current[i]=el}} className={`wcseo-step${visibleSteps.includes(i)?' visible':''}`}><div className="wcseo-snum">{p.step}</div><div><h3>{p.title}</h3><p>{p.desc}</p></div></div>)}</div>
         </div></section>
         <section className="wcseo-why"><div className="wcseo-why-in">
           <span className="wcseo-ey2">Why 1Solutions</span><h2 className="wcseo-ttl">WooCommerce SEO Specialists</h2>
-          <p className="wcseo-desc">WooCommerce expertise, revenue attribution, and scalable processes for stores of any size — from 50 products to 100,000+ SKUs.</p>
+          <p className="wcseo-desc">WooCommerce expertise, revenue attribution, and scalable processes for stores of any size - from 50 products to 100,000+ SKUs.</p>
           <div className="wcseo-why-grid" ref={whyRef}>{WHY.map((w,i) => <div key={w.title} className={`wcseo-wcard${visibleWhy.includes(i)?' visible':''}`}><div className="wcseo-dot"/><h3>{w.title}</h3><p>{w.desc}</p></div>)}</div>
         </div></section>
         <section className="wcseo-faq"><div className="wcseo-faq-in">
@@ -187,7 +187,7 @@ export default function WoocommerceSeoServices() {
           <div className="wcseo-cta-in">
             <span className="wcseo-ey2" style={{textAlign:'center',display:'block',marginBottom:16}}>Ready to Grow Your WooCommerce Revenue?</span>
             <h2 className="wcseo-cta-t">Get Your Free WooCommerce SEO Audit</h2>
-            <p className="wcseo-cta-s">We&rsquo;ll audit your store&rsquo;s faceted navigation, duplicate content, product page quality, and keyword gaps — free, with a prioritised action plan.</p>
+            <p className="wcseo-cta-s">We&rsquo;ll audit your store&rsquo;s faceted navigation, duplicate content, product page quality, and keyword gaps - free, with a prioritised action plan.</p>
             <div className="wcseo-cta-btns">
               <Link href="/contact-us" className="wcseo-btn-p">Get Free WooCommerce SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/ecommerce-seo-services" className="wcseo-btn-s">Ecommerce SEO Services</Link>

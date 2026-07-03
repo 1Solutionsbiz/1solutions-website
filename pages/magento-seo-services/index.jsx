@@ -7,10 +7,10 @@ const SERVICES = [
   { n: '02', title: 'Layered Navigation Optimisation', desc: 'Magento\'s layered navigation creates thousands of crawlable faceted URLs. We configure canonical tags, robots directives, and URL parameter handling to eliminate indexation waste without breaking UX.' },
   { n: '03', title: 'Magento Duplicate Content Fix', desc: 'Resolve product duplication across multiple categories, pagination duplicate issues, and URL suffix variations (.html, /) that create competing versions of the same page.' },
   { n: '04', title: 'Product & Category Page SEO', desc: 'Bulk meta tag optimisation, heading structure, unique product descriptions, internal link architecture, and structured data for Magento product and category pages at scale.' },
-  { n: '05', title: 'Magento Schema Markup', desc: 'Product, BreadcrumbList, Organisation, AggregateRating, and Offer schema — implemented via Magento modules or custom extensions for rich snippet eligibility.' },
+  { n: '05', title: 'Magento Schema Markup', desc: 'Product, BreadcrumbList, Organisation, AggregateRating, and Offer schema - implemented via Magento modules or custom extensions for rich snippet eligibility.' },
   { n: '06', title: 'Magento Page Speed Optimisation', desc: 'Full-page cache configuration, Varnish setup, image optimisation, JS/CSS bundling, CDN integration, and Magento-specific Core Web Vitals improvements.' },
   { n: '07', title: 'International Magento SEO', desc: 'Hreflang implementation for Magento multi-store setups, store view SEO configuration, and geo-targeting strategy for international Magento and Adobe Commerce deployments.' },
-  { n: '08', title: 'Magento Link Building', desc: 'Authority link acquisition targeting commercial ecommerce keywords — product review placements, industry directory submissions, digital PR, and competitor link gap campaigns.' },
+  { n: '08', title: 'Magento Link Building', desc: 'Authority link acquisition targeting commercial ecommerce keywords - product review placements, industry directory submissions, digital PR, and competitor link gap campaigns.' },
 ];
 
 const PLATFORMS = ['Magento 2', 'Adobe Commerce', 'Magento Open Source', 'PWA Studio', 'Hyva Theme', 'Luma Theme', 'B2B Module', 'Multi-Store Setup'];
@@ -21,26 +21,26 @@ const PROCESS = [
   { step: '03', title: 'On-Page Optimisation', desc: 'Bulk meta tag updates, heading hierarchy, product description quality review, image alt text, and internal link architecture at catalogue scale.' },
   { step: '04', title: 'Speed Improvements', desc: 'Full-page cache, Varnish, image optimisation, CDN configuration, and Core Web Vitals fixes specific to your Magento theme.' },
   { step: '05', title: 'Content & Authority', desc: 'Category page content, buying guides, and link acquisition targeting your highest-value commercial keywords.' },
-  { step: '06', title: 'Monitor & Report', desc: 'Monthly reporting on organic revenue, keyword rankings, crawl health, and Core Web Vitals — with GSC and GA4 attribution.' },
+  { step: '06', title: 'Monitor & Report', desc: 'Monthly reporting on organic revenue, keyword rankings, crawl health, and Core Web Vitals - with GSC and GA4 attribution.' },
 ];
 
 const WHY = [
-  { title: 'Magento-Certified Expertise', desc: 'Our team includes Magento-certified developers and SEO specialists who understand the platform at code level — not just admin settings.' },
-  { title: 'Large Catalogue Experience', desc: 'We have optimised Magento catalogues with 5,000 to 500,000+ SKUs — building scalable, template-based SEO processes that maintain quality at every level.' },
-  { title: 'Layered Nav Mastery', desc: 'Magento\'s layered navigation is the #1 crawl budget destroyer for large stores. We fix it correctly — preserving filter UX while eliminating indexation waste.' },
-  { title: 'Adobe Commerce Ready', desc: 'We work across Magento Open Source and Adobe Commerce cloud deployments — including B2B module configurations and PWA Studio headless setups.' },
-  { title: 'Revenue-Focused Reporting', desc: 'We connect organic rankings to Magento revenue using GA4 ecommerce tracking — every report shows sales impact, not just keyword positions.' },
+  { title: 'Magento-Certified Expertise', desc: 'Our team includes Magento-certified developers and SEO specialists who understand the platform at code level - not just admin settings.' },
+  { title: 'Large Catalogue Experience', desc: 'We have optimised Magento catalogues with 5,000 to 500,000+ SKUs - building scalable, template-based SEO processes that maintain quality at every level.' },
+  { title: 'Layered Nav Mastery', desc: 'Magento\'s layered navigation is the #1 crawl budget destroyer for large stores. We fix it correctly - preserving filter UX while eliminating indexation waste.' },
+  { title: 'Adobe Commerce Ready', desc: 'We work across Magento Open Source and Adobe Commerce cloud deployments - including B2B module configurations and PWA Studio headless setups.' },
+  { title: 'Revenue-Focused Reporting', desc: 'We connect organic rankings to Magento revenue using GA4 ecommerce tracking - every report shows sales impact, not just keyword positions.' },
   { title: 'Proven Results at Scale', desc: '150+ Magento stores optimised. Average 285% organic traffic increase over 12 months across our Magento client base.' },
 ];
 
 const FAQS = [
   { q: 'What are the biggest SEO issues specific to Magento?', a: 'Magento\'s most significant SEO challenges are: (1) Layered navigation creating thousands of crawlable faceted URLs that waste crawl budget; (2) Product duplication across multiple categories creating competing URLs; (3) URL suffix inconsistencies (.html vs no suffix); (4) Slow page load due to default Magento rendering; (5) Thin category pages with limited unique content. All of these are addressable and we fix them as part of our standard Magento SEO engagement.' },
   { q: 'How do you handle Magento layered navigation for SEO?', a: 'Layered navigation in Magento generates a URL for every combination of filter selections. For a catalogue with 10 filters and 5 options each, this can generate millions of URLs. The correct approach combines: (1) canonical tags on filtered pages pointing to the unfiltered category URL; (2) robots noindex on low-value filter combinations; (3) Google Search Console parameter configuration; and (4) selective indexation of commercially valuable filtered pages (e.g., /women/tops/colour-red/ if it has sufficient search volume). We map this out per store before implementing.' },
-  { q: 'Does Magento 2 have better SEO than Magento 1?', a: 'Yes significantly. Magento 2 has native URL rewrites, improved canonical tag handling, better XML sitemap generation, and cleaner URL structures than Magento 1. However, Magento 2 still has the layered navigation problem, can generate duplicate content from category/product URL combinations, and requires proper configuration to achieve optimal SEO performance. If you are still on Magento 1, migrating to Magento 2 or Adobe Commerce is a strong SEO recommendation — along with a comprehensive redirect mapping exercise.' },
-  { q: 'Can you optimise Magento for Google Shopping alongside organic?', a: 'Yes. Magento product schema (Product, Offer, AggregateRating) supports both organic rich snippets and Google Shopping feed quality. We implement structured data that enhances your organic listings while aligning with Google Merchant Centre feed requirements — giving your products a presence in both Shopping ads and organic results.' },
+  { q: 'Does Magento 2 have better SEO than Magento 1?', a: 'Yes significantly. Magento 2 has native URL rewrites, improved canonical tag handling, better XML sitemap generation, and cleaner URL structures than Magento 1. However, Magento 2 still has the layered navigation problem, can generate duplicate content from category/product URL combinations, and requires proper configuration to achieve optimal SEO performance. If you are still on Magento 1, migrating to Magento 2 or Adobe Commerce is a strong SEO recommendation - along with a comprehensive redirect mapping exercise.' },
+  { q: 'Can you optimise Magento for Google Shopping alongside organic?', a: 'Yes. Magento product schema (Product, Offer, AggregateRating) supports both organic rich snippets and Google Shopping feed quality. We implement structured data that enhances your organic listings while aligning with Google Merchant Centre feed requirements - giving your products a presence in both Shopping ads and organic results.' },
   { q: 'How do you improve Magento page speed for SEO?', a: 'Magento speed improvements follow a priority order: (1) Enable full-page cache and Varnish; (2) Configure a CDN (Fastly for Adobe Commerce, Cloudflare for open source); (3) Compress and convert images to WebP; (4) Enable JS/CSS bundling and minification; (5) Defer non-critical third-party scripts; (6) Address render-blocking resources in the theme. We use PageSpeed Insights and Chrome DevTools to identify your specific bottlenecks before implementing changes.' },
-  { q: 'Do you handle Magento multi-store SEO?', a: 'Yes. Magento multi-store setups — multiple websites, stores, and store views — require careful hreflang implementation, separate GSC properties for each domain or subdomain, and store-view-level canonical tag configuration. We have managed international Magento multi-store SEO across US, UK, Canada, and Australian markets, including currency and language variations.' },
-  { q: 'What is the difference between Magento Open Source and Adobe Commerce for SEO?', a: 'Adobe Commerce (formerly Magento Commerce) includes Fastly CDN, Elasticsearch, and the Page Builder — all of which can impact SEO. Fastly provides better Core Web Vitals for high-traffic stores. Elasticsearch improves site search (which affects crawlability). Page Builder can introduce layout-driven rendering issues that need specific SEO attention. Our audit covers the specific version you are running and adjusts recommendations accordingly.' },
+  { q: 'Do you handle Magento multi-store SEO?', a: 'Yes. Magento multi-store setups - multiple websites, stores, and store views - require careful hreflang implementation, separate GSC properties for each domain or subdomain, and store-view-level canonical tag configuration. We have managed international Magento multi-store SEO across US, UK, Canada, and Australian markets, including currency and language variations.' },
+  { q: 'What is the difference between Magento Open Source and Adobe Commerce for SEO?', a: 'Adobe Commerce (formerly Magento Commerce) includes Fastly CDN, Elasticsearch, and the Page Builder - all of which can impact SEO. Fastly provides better Core Web Vitals for high-traffic stores. Elasticsearch improves site search (which affects crawlability). Page Builder can introduce layout-driven rendering issues that need specific SEO attention. Our audit covers the specific version you are running and adjusts recommendations accordingly.' },
   { q: 'How long does Magento SEO take to show results?', a: 'Technical fixes on Magento stores typically show crawl and indexation improvements within 3 to 6 weeks. Keyword ranking improvements for existing pages usually appear within 8 to 16 weeks following on-page optimisation. Large catalogues take longer because Googlebot needs time to re-crawl and re-index pages after changes. We track GSC crawl stats weekly post-implementation so you can see progress building from the first month.' },
 ];
 
@@ -153,7 +153,7 @@ export default function MagentoSeoServices() {
             <nav className="mgseo-bc"><Link href="/">Home</Link><span>/</span><Link href="/seo-services-company">SEO Services</Link><span>/</span><span style={{color:'#C2410C'}}>Magento SEO</span></nav>
             <span className="mgseo-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#C2410C',display:'inline-block'}}/> Magento 2 · Adobe Commerce · PWA Studio</span>
             <h1 className="mgseo-h1">Magento SEO Services for Large Ecommerce Catalogues</h1>
-            <p className="mgseo-sub">Fix layered navigation, resolve duplicate content, and drive organic revenue growth on Magento 2 and Adobe Commerce — with platform-native technical expertise and scalable processes.</p>
+            <p className="mgseo-sub">Fix layered navigation, resolve duplicate content, and drive organic revenue growth on Magento 2 and Adobe Commerce - with platform-native technical expertise and scalable processes.</p>
             <div className="mgseo-btns">
               <Link href="/contact-us" className="mgseo-btn-p">Get a Free Magento SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/magento-development-company" className="mgseo-btn-s">Magento Development</Link>
@@ -163,7 +163,7 @@ export default function MagentoSeoServices() {
         </section>
         <section className="mgseo-svc"><div className="mgseo-svc-in">
           <span className="mgseo-ey2">What We Do</span><h2 className="mgseo-ttl">Magento SEO Services</h2>
-          <p className="mgseo-desc">Every Magento SEO layer — technical, on-page, content, and authority — handled by specialists who know the platform at code level.</p>
+          <p className="mgseo-desc">Every Magento SEO layer - technical, on-page, content, and authority - handled by specialists who know the platform at code level.</p>
           <div className="mgseo-grid" ref={cardsRef}>{SERVICES.map((s,i) => <div key={s.n} className={`mgseo-card${visibleCards.includes(i)?' visible':''}`}><div className="mgseo-num">{s.n}</div><h3>{s.title}</h3><p>{s.desc}</p></div>)}</div>
         </div></section>
         <section className="mgseo-plat"><div className="mgseo-plat-in">
@@ -172,7 +172,7 @@ export default function MagentoSeoServices() {
         </div></section>
         <section className="mgseo-proc"><div className="mgseo-proc-in">
           <span className="mgseo-ey2">How We Work</span><h2 className="mgseo-ttl">Our Magento SEO Process</h2>
-          <p className="mgseo-desc">Platform audit first, scalable fixes second, then content and authority — monthly reporting on organic revenue throughout.</p>
+          <p className="mgseo-desc">Platform audit first, scalable fixes second, then content and authority - monthly reporting on organic revenue throughout.</p>
           <div className="mgseo-steps">{PROCESS.map((p,i) => <div key={p.step} ref={el=>{stepRefs.current[i]=el}} className={`mgseo-step${visibleSteps.includes(i)?' visible':''}`}><div className="mgseo-snum">{p.step}</div><div><h3>{p.title}</h3><p>{p.desc}</p></div></div>)}</div>
         </div></section>
         <section className="mgseo-why"><div className="mgseo-why-in">
@@ -189,7 +189,7 @@ export default function MagentoSeoServices() {
           <div className="mgseo-cta-in">
             <span className="mgseo-ey2" style={{textAlign:'center',display:'block',marginBottom:16}}>Ready to Rank Your Magento Store?</span>
             <h2 className="mgseo-cta-t">Get Your Free Magento SEO Audit</h2>
-            <p className="mgseo-cta-s">We&rsquo;ll audit your layered navigation, duplicate content issues, page speed, and organic keyword gaps — free, with a prioritised action plan.</p>
+            <p className="mgseo-cta-s">We&rsquo;ll audit your layered navigation, duplicate content issues, page speed, and organic keyword gaps - free, with a prioritised action plan.</p>
             <div className="mgseo-cta-btns">
               <Link href="/contact-us" className="mgseo-btn-p">Get Free Magento SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/ecommerce-seo-services" className="mgseo-btn-s">Ecommerce SEO Services</Link>

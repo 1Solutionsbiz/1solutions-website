@@ -27,16 +27,16 @@ const SKILLS = [
   'Lighthouse PWA Audit', 'TypeScript', 'REST APIs & GraphQL', 'Performance Optimisation',
 ];
 const MODELS = [
-  { title: 'Dedicated Hire', desc: 'A full-time PWA developer committed to your product — 8 hrs/day, 5 days/week.', icon: '👤' },
+  { title: 'Dedicated Hire', desc: 'A full-time PWA developer committed to your product - 8 hrs/day, 5 days/week.', icon: '👤' },
   { title: 'Part-Time Hire', desc: 'Half-day engagement for PWA conversion, offline features, or ongoing capability additions.', icon: '⏰' },
   { title: 'Hourly Hire',    desc: 'Flexible billing for PWA audits, Lighthouse score improvements, or service worker debugging.', icon: '🕐' },
 ];
 const WHY = [
-  { h: 'PWA-First Mindset', b: 'We design for offline-first from the start — service worker strategy, caching topology, and background sync are architecture decisions, not afterthoughts.' },
-  { h: 'Lighthouse 100 Targets', b: 'Our developers optimise for all four Lighthouse categories — Performance, Accessibility, Best Practices, and PWA criteria — as standard deliverables.' },
+  { h: 'PWA-First Mindset', b: 'We design for offline-first from the start - service worker strategy, caching topology, and background sync are architecture decisions, not afterthoughts.' },
+  { h: 'Lighthouse 100 Targets', b: 'Our developers optimise for all four Lighthouse categories - Performance, Accessibility, Best Practices, and PWA criteria - as standard deliverables.' },
   { h: 'Profiles in 48 Hours', b: 'Submit your brief and receive 2-3 matched PWA developer CVs within two business days.' },
-  { h: 'Cross-Framework Expertise', b: 'We build PWAs on React, Next.js, Vue, Nuxt, and Angular — the right framework for your team and use case.' },
-  { h: 'Install & Push Pipeline', b: 'From Web App Manifest configuration to platform-specific install prompts and push notification campaigns — end-to-end.' },
+  { h: 'Cross-Framework Expertise', b: 'We build PWAs on React, Next.js, Vue, Nuxt, and Angular - the right framework for your team and use case.' },
+  { h: 'Install & Push Pipeline', b: 'From Web App Manifest configuration to platform-specific install prompts and push notification campaigns - end-to-end.' },
   { h: 'NDA & IP Security', b: 'Full IP assignment and NDA signed before any access to your codebase or infrastructure.' },
 ];
 const PROCESS = [
@@ -46,7 +46,7 @@ const PROCESS = [
   { n: '04', h: 'Onboard & Optimise', b: 'Developer integrates with your codebase. First sprint starts within 7 days.' },
 ];
 const FAQS = [
-  { q: 'Can a PWA replace a native mobile app?', a: 'For many use cases — yes. PWAs support offline access, push notifications, home screen installation, camera, geolocation, and background sync. For apps requiring Bluetooth, NFC, or deep OS integration, a native approach may still be preferred.' },
+  { q: 'Can a PWA replace a native mobile app?', a: 'For many use cases - yes. PWAs support offline access, push notifications, home screen installation, camera, geolocation, and background sync. For apps requiring Bluetooth, NFC, or deep OS integration, a native approach may still be preferred.' },
   { q: 'Which frameworks do your PWA developers work with?', a: 'Our PWA developers are proficient in React (CRA and Vite), Next.js, Vue/Nuxt.js, and Angular. We select the framework based on your existing stack or project requirements.' },
   { q: 'Can they convert our existing web app into a PWA?', a: 'Yes. PWA conversion is one of our most common engagements. We add a service worker, manifest, caching strategy, and offline fallbacks to an existing web application without rebuilding it from scratch.' },
   { q: 'How do push notifications work in a PWA?', a: 'We implement Web Push using the Push API and service workers. Users are prompted to subscribe, and notifications are delivered even when the browser is closed via a push service (FCM for Chrome, APNS for Safari).' },
@@ -153,7 +153,7 @@ export default function HirePWADeveloper() {
 
       <section className="hpwa-hero">
         <h1>Hire PWA Developers<br/>App-Like Experiences on the Web</h1>
-        <p>Pre-vetted Progressive Web App specialists — offline-first architecture, Web Push, home screen install, and Lighthouse 100 targets. Profiles in 48 hours.</p>
+        <p>Pre-vetted Progressive Web App specialists - offline-first architecture, Web Push, home screen install, and Lighthouse 100 targets. Profiles in 48 hours.</p>
         <div className="hpwa-hero-btns">
           <Link href="/contact-us" className="hpwa-btn-primary">Hire a PWA Developer →</Link>
           <Link href="/portfolio" className="hpwa-btn-outline">View Portfolio</Link>
@@ -163,7 +163,7 @@ export default function HirePWADeveloper() {
       <section className="hpwa-sec" ref={skR}>
         <div className="hpwa-wrap">
           <h2 className="hpwa-sec-title">Skills &amp; Tech Stack</h2>
-          <p className="hpwa-sec-sub">Our PWA developers cover every layer — service workers, caching strategies, push notifications, and cross-framework implementation.</p>
+          <p className="hpwa-sec-sub">Our PWA developers cover every layer - service workers, caching strategies, push notifications, and cross-framework implementation.</p>
           <div className="hpwa-skills">
             {SKILLS.map((s, i) => <span key={s} className={`hpwa-skill${skV ? ' hpwa-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>)}
           </div>
@@ -173,7 +173,7 @@ export default function HirePWADeveloper() {
       <section className="hpwa-sec hpwa-sec-alt" ref={enR}>
         <div className="hpwa-wrap">
           <h2 className="hpwa-sec-title">Flexible Engagement Models</h2>
-          <p className="hpwa-sec-sub">Full-time, part-time, or hourly — matched to the scope of your PWA project.</p>
+          <p className="hpwa-sec-sub">Full-time, part-time, or hourly - matched to the scope of your PWA project.</p>
           <div className="hpwa-models">
             {MODELS.map((m, i) => (
               <div key={m.title} className={`hpwa-model${enV ? ' hpwa-in' : ''}`} style={{ transitionDelay: `${i * 120}ms` }}>
@@ -188,7 +188,7 @@ export default function HirePWADeveloper() {
       <section className="hpwa-sec" ref={whR}>
         <div className="hpwa-wrap">
           <h2 className="hpwa-sec-title">Why Hire PWA Developers from 1Solutions?</h2>
-          <p className="hpwa-sec-sub">We build PWAs that pass every installability and reliability check — not just ones with a manifest file added.</p>
+          <p className="hpwa-sec-sub">We build PWAs that pass every installability and reliability check - not just ones with a manifest file added.</p>
           <div className="hpwa-why-grid">
             {WHY.map((w, i) => (
               <div key={w.h} className={`hpwa-why-item${whV ? ' hpwa-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}>
@@ -211,7 +211,7 @@ export default function HirePWADeveloper() {
       <section className="hpwa-sec hpwa-sec-alt" ref={prR}>
         <div className="hpwa-wrap">
           <h2 className="hpwa-sec-title">Hire in 4 Simple Steps</h2>
-          <p className="hpwa-sec-sub">From brief to first installable build — in under two weeks.</p>
+          <p className="hpwa-sec-sub">From brief to first installable build - in under two weeks.</p>
           <div className="hpwa-process">
             {PROCESS.map((p, i) => (
               <div key={p.n} className={`hpwa-step${prV ? ' hpwa-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}>
@@ -244,7 +244,7 @@ export default function HirePWADeveloper() {
       <section className="hpwa-cta">
         <div className="hpwa-wrap">
           <h2>Ready to Hire Your PWA Developer?</h2>
-          <p>Share your requirements and receive matched PWA specialist profiles within 48 hours — no commitment required.</p>
+          <p>Share your requirements and receive matched PWA specialist profiles within 48 hours - no commitment required.</p>
           <Link href="/contact-us" className="hpwa-btn-primary">Get Started Today →</Link>
         </div>
       </section>

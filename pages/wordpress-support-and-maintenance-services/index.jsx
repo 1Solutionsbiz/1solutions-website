@@ -316,7 +316,7 @@ export default function WordPressMaintenance() {
     <>
       <Head>
         <title>WordPress Support & Maintenance Services | 1Solutions</title>
-        <meta name="description" content="WordPress support & maintenance — plugin updates, security hardening, malware removal, daily backups, uptime monitoring & emergency support. 500+ sites." />
+        <meta name="description" content="WordPress support & maintenance - plugin updates, security hardening, malware removal, daily backups, uptime monitoring & emergency support. 500+ sites." />
         <link rel="canonical" href="https://www.1solutions.biz/wordpress-support-and-maintenance-services/" />
         <meta property="og:title" content="WordPress Maintenance Services | Support, Security & WooCommerce | 1Solutions" />
         <meta property="og:description" content="Professional WordPress maintenance services - plugin and core updates tested on staging, security hardening, malware removal, WooCommerce support, daily backups, uptime monitoring, and 24/7 emergency support." />

@@ -28,22 +28,22 @@ const SKILLS = [
   'Report Preparation', 'WordPress Content Updates', 'Lead Generation & Prospecting',
 ];
 const MODELS = [
-  { title: 'Full-Time VA',  desc: 'A dedicated VA working 8 hrs/day, 5 days/week — fully committed to your business, trained on your systems, and managed by a 1Solutions team lead.', icon: '👤' },
-  { title: 'Part-Time VA',  desc: 'A half-day VA for 4 hrs/day — ideal for e-commerce operations, admin support, or social media management that doesn\'t yet need a full-time resource.', icon: '⏰' },
-  { title: 'Hourly VA',     desc: 'Flexible VA hours for project-based tasks — research sprints, data entry projects, or temporary cover during busy periods.', icon: '🕐' },
+  { title: 'Full-Time VA',  desc: 'A dedicated VA working 8 hrs/day, 5 days/week - fully committed to your business, trained on your systems, and managed by a 1Solutions team lead.', icon: '👤' },
+  { title: 'Part-Time VA',  desc: 'A half-day VA for 4 hrs/day - ideal for e-commerce operations, admin support, or social media management that doesn\'t yet need a full-time resource.', icon: '⏰' },
+  { title: 'Hourly VA',     desc: 'Flexible VA hours for project-based tasks - research sprints, data entry projects, or temporary cover during busy periods.', icon: '🕐' },
 ];
 const WHY = [
   { h: 'Pre-Vetted & Trained',       b: 'Every VA completes a structured onboarding programme covering communication skills, data security, and your specific task categories before their first day.' },
-  { h: 'Dedicated — Not Shared',     b: 'Your VA works exclusively for you during their contracted hours — they are not juggling 10 clients simultaneously like most VA agencies.' },
+  { h: 'Dedicated - Not Shared',     b: 'Your VA works exclusively for you during their contracted hours - they are not juggling 10 clients simultaneously like most VA agencies.' },
   { h: 'Team Lead Oversight',        b: 'Each VA is supervised by a 1Solutions team lead who reviews work quality, handles performance, and ensures your tasks are completed on time.' },
-  { h: 'Replacement Guarantee',      b: 'If your VA is unavailable or underperforms, we replace them within 48 hours — no disruption to your operations.' },
-  { h: 'Secure & Confidential',      b: 'All VAs sign NDAs, operate on secure, audited infrastructure, and follow strict data handling protocols — your business information never leaves our secure environment.' },
+  { h: 'Replacement Guarantee',      b: 'If your VA is unavailable or underperforms, we replace them within 48 hours - no disruption to your operations.' },
+  { h: 'Secure & Confidential',      b: 'All VAs sign NDAs, operate on secure, audited infrastructure, and follow strict data handling protocols - your business information never leaves our secure environment.' },
   { h: 'Profiles in 48 Hours',       b: 'Submit your VA brief and receive 2–3 matched VA profiles with skill assessments and background checks within two business days.' },
 ];
 const PROCESS = [
   { n: '01', h: 'Submit Your Brief',   b: 'Tell us the tasks, tools, hours, time zone, and communication preferences for your ideal VA.' },
   { n: '02', h: 'Receive Profiles',    b: '2–3 matched VA profiles with skill assessments and work samples delivered within 48 hours.' },
-  { n: '03', h: 'Interview & Select',  b: 'Interview your preferred candidate — run a short task test if needed. No commitment until you\'re ready.' },
+  { n: '03', h: 'Interview & Select',  b: 'Interview your preferred candidate - run a short task test if needed. No commitment until you\'re ready.' },
   { n: '04', h: 'Onboard & Start',     b: 'Your VA joins your tools and systems. First day within 7 days of selection. Team lead checks in weekly.' },
 ];
 const FAQS = [
@@ -84,7 +84,7 @@ export default function VirtualAssistantServices() {
         { '@type': 'ListItem', position: 2, name: 'Virtual Assistant Services', item: 'https://www.1solutions.biz/virtual-assistant-services/' },
       ]},
       { '@type': 'Service', name: 'Virtual Assistant Services', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Dedicated virtual assistant services from 1Solutions — pre-vetted VAs for business admin, e-commerce operations, customer support, and social media management.',
+        description: 'Dedicated virtual assistant services from 1Solutions - pre-vetted VAs for business admin, e-commerce operations, customer support, and social media management.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '118', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -149,7 +149,7 @@ export default function VirtualAssistantServices() {
       </Head>
       <section className="vas-hero">
         <h1>Virtual Assistant Services<br/>Dedicated VAs for Business, E-Commerce &amp; Admin</h1>
-        <p>Hire pre-vetted, dedicated virtual assistants trained in business admin, e-commerce operations, customer support, social media, and research. Full-time or part-time, your VA starts within 7 days — saving you 20+ hours a week.</p>
+        <p>Hire pre-vetted, dedicated virtual assistants trained in business admin, e-commerce operations, customer support, social media, and research. Full-time or part-time, your VA starts within 7 days - saving you 20+ hours a week.</p>
         <div className="vas-hero-btns">
           <Link href="/contact-us" className="vas-btn-primary">Hire a Virtual Assistant →</Link>
           <Link href="/contact-us" className="vas-btn-outline">Learn More</Link>
@@ -158,21 +158,21 @@ export default function VirtualAssistantServices() {
       <section className="vas-sec" ref={skR}>
         <div className="vas-wrap">
           <h2 className="vas-sec-title">Skills &amp; Task Coverage</h2>
-          <p className="vas-sec-sub">Our VAs cover the full range of business and e-commerce operations — from inbox zero to Amazon Seller Central.</p>
+          <p className="vas-sec-sub">Our VAs cover the full range of business and e-commerce operations - from inbox zero to Amazon Seller Central.</p>
           <div className="vas-skills">{SKILLS.map((s, i) => <span key={s} className={`vas-skill${skV ? ' vas-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>)}</div>
         </div>
       </section>
       <section className="vas-sec vas-sec-alt" ref={enR}>
         <div className="vas-wrap">
           <h2 className="vas-sec-title">Flexible Engagement Models</h2>
-          <p className="vas-sec-sub">Choose the model that fits your workload — scale up or down as your business grows.</p>
+          <p className="vas-sec-sub">Choose the model that fits your workload - scale up or down as your business grows.</p>
           <div className="vas-models">{MODELS.map((m, i) => <div key={m.title} className={`vas-model${enV ? ' vas-in' : ''}`} style={{ transitionDelay: `${i * 120}ms` }}><div className="vas-model-icon">{m.icon}</div><h3>{m.title}</h3><p>{m.desc}</p></div>)}</div>
         </div>
       </section>
       <section className="vas-sec" ref={whR}>
         <div className="vas-wrap">
           <h2 className="vas-sec-title">Why Hire a Virtual Assistant from 1Solutions?</h2>
-          <p className="vas-sec-sub">We don't just find you a VA — we manage them, train them, and guarantee their performance.</p>
+          <p className="vas-sec-sub">We don't just find you a VA - we manage them, train them, and guarantee their performance.</p>
           <div className="vas-why-grid">{WHY.map((w, i) => <div key={w.h} className={`vas-why-item${whV ? ' vas-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
         </div>
       </section>
@@ -187,7 +187,7 @@ export default function VirtualAssistantServices() {
       <section className="vas-sec vas-sec-alt" ref={prR}>
         <div className="vas-wrap">
           <h2 className="vas-sec-title">Hire in 4 Simple Steps</h2>
-          <p className="vas-sec-sub">From brief to first working day — in under two weeks.</p>
+          <p className="vas-sec-sub">From brief to first working day - in under two weeks.</p>
           <div className="vas-process">{PROCESS.map((p, i) => <div key={p.n} className={`vas-step${prV ? ' vas-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}><div className="vas-step-n">{p.n}</div><h3>{p.h}</h3><p>{p.b}</p></div>)}</div>
         </div>
       </section>
@@ -201,7 +201,7 @@ export default function VirtualAssistantServices() {
       <section className="vas-cta">
         <div className="vas-wrap">
           <h2>Ready to Hire Your Dedicated Virtual Assistant?</h2>
-          <p>Submit your brief and receive 2–3 matched VA profiles within 48 hours — full-time, part-time, or hourly. No long-term contracts.</p>
+          <p>Submit your brief and receive 2–3 matched VA profiles within 48 hours - full-time, part-time, or hourly. No long-term contracts.</p>
           <Link href="/contact-us" className="vas-btn-primary">Hire a Virtual Assistant →</Link>
         </div>
       </section>

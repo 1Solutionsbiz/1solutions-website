@@ -45,7 +45,7 @@ export default function SearchPage() {
   return (
     <>
       <Head>
-        <title>{query ? query + ' — Search | 1Solutions' : 'Search | 1Solutions'}</title>
+        <title>{query ? query + ' - Search | 1Solutions' : 'Search | 1Solutions'}</title>
         <meta name="description" content="Search 2,400+ articles on web development, SEO, digital marketing, and more." />
         <meta name="robots" content="noindex" />
         <style>{`

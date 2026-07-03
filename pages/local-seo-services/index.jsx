@@ -4,19 +4,19 @@ import Link from 'next/link';
 
 const SERVICES = [
   { n: '01', title: 'Google Business Profile Optimisation', desc: 'Complete GBP setup, category optimisation, photo strategy, Q&A management, and weekly post publishing to dominate the local pack.' },
-  { n: '02', title: 'Local Keyword Research', desc: 'Hyperlocal keyword mapping — suburb-level, city-level, and near-me queries — matched to the pages most likely to rank for each intent.' },
-  { n: '03', title: 'Local Citations & NAP Consistency', desc: 'Audit and clean up your business listings across 50+ directories — Yelp, Yellow Pages, Apple Maps, Bing Places — eliminating conflicting NAP data.' },
+  { n: '02', title: 'Local Keyword Research', desc: 'Hyperlocal keyword mapping - suburb-level, city-level, and near-me queries - matched to the pages most likely to rank for each intent.' },
+  { n: '03', title: 'Local Citations & NAP Consistency', desc: 'Audit and clean up your business listings across 50+ directories - Yelp, Yellow Pages, Apple Maps, Bing Places - eliminating conflicting NAP data.' },
   { n: '04', title: 'Review Generation & Management', desc: 'Systematic review acquisition from happy customers, negative review response strategy, and reputation monitoring across Google, Yelp, and Trustpilot.' },
-  { n: '05', title: 'Location Page Creation', desc: 'Unique, geo-targeted landing pages for every service area — written by humans, optimised for local intent, and structured for Google Maps relevance.' },
-  { n: '06', title: 'Local Link Building', desc: 'Authority link acquisition from local news outlets, chambers of commerce, sponsorships, and community organisations — the signals Google trusts most for local rankings.' },
-  { n: '07', title: 'Local Schema Markup', desc: 'LocalBusiness, Service, and Review schema implementation — structured data that tells Google exactly who you are, where you operate, and what customers think.' },
+  { n: '05', title: 'Location Page Creation', desc: 'Unique, geo-targeted landing pages for every service area - written by humans, optimised for local intent, and structured for Google Maps relevance.' },
+  { n: '06', title: 'Local Link Building', desc: 'Authority link acquisition from local news outlets, chambers of commerce, sponsorships, and community organisations - the signals Google trusts most for local rankings.' },
+  { n: '07', title: 'Local Schema Markup', desc: 'LocalBusiness, Service, and Review schema implementation - structured data that tells Google exactly who you are, where you operate, and what customers think.' },
   { n: '08', title: 'Local SEO Reporting', desc: 'Monthly reports tracking map pack positions, local keyword rankings, GBP calls and direction clicks, and revenue attributed to local organic search.' },
 ];
 
 const RESULTS = [
   { metric: '#1', label: 'Map Pack position achieved', sub: 'Multi-location AU service business', color: '#059669' },
-  { metric: '4.3×', label: 'Increase in GBP calls', sub: 'US home services client — 6 months', color: '#059669' },
-  { metric: '280%', label: 'Local organic traffic growth', sub: 'Canadian retail chain — 9 months', color: '#059669' },
+  { metric: '4.3×', label: 'Increase in GBP calls', sub: 'US home services client - 6 months', color: '#059669' },
+  { metric: '280%', label: 'Local organic traffic growth', sub: 'Canadian retail chain - 9 months', color: '#059669' },
 ];
 
 const PROCESS = [
@@ -29,18 +29,18 @@ const PROCESS = [
 ];
 
 const WHY = [
-  { title: 'Maps Pack Specialists', desc: 'We focus specifically on the signals that influence Google\'s 3-pack — proximity, prominence, and relevance — not just general SEO metrics.' },
+  { title: 'Maps Pack Specialists', desc: 'We focus specifically on the signals that influence Google\'s 3-pack - proximity, prominence, and relevance - not just general SEO metrics.' },
   { title: 'Multi-Location Experience', desc: 'From single-location SMBs to 50+ location franchises, we have built scalable local SEO systems that maintain quality at every location.' },
   { title: 'Review Strategy Included', desc: 'Most agencies ignore reviews. We build systematic review generation into every engagement because star rating directly impacts click-through rate.' },
-  { title: 'US, Canada & Australia Focus', desc: 'We understand the local search landscape in each market — from GBP categories to the directory ecosystems that carry most weight in each country.' },
-  { title: 'No Lock-In Contracts', desc: 'Local SEO takes time, but we earn your business every month. You stay because the map pack rankings keep climbing — not because of a contract.' },
-  { title: 'Transparent Monthly Reporting', desc: 'Every report shows map pack positions, GBP actions (calls, direction clicks, website visits), and local keyword movement — no smoke and mirrors.' },
+  { title: 'US, Canada & Australia Focus', desc: 'We understand the local search landscape in each market - from GBP categories to the directory ecosystems that carry most weight in each country.' },
+  { title: 'No Lock-In Contracts', desc: 'Local SEO takes time, but we earn your business every month. You stay because the map pack rankings keep climbing - not because of a contract.' },
+  { title: 'Transparent Monthly Reporting', desc: 'Every report shows map pack positions, GBP actions (calls, direction clicks, website visits), and local keyword movement - no smoke and mirrors.' },
 ];
 
 const FAQS = [
   {
     q: 'How long does it take to rank in the Google Maps pack?',
-    a: 'Most businesses see meaningful map pack movement within 2 to 4 months for low-to-medium competition local keywords. Highly competitive markets (lawyers, dentists, real estate in major cities) typically take 4 to 6 months. We set honest expectations in your initial audit — and provide monthly progress reports from day one so you can see movement building.',
+    a: 'Most businesses see meaningful map pack movement within 2 to 4 months for low-to-medium competition local keywords. Highly competitive markets (lawyers, dentists, real estate in major cities) typically take 4 to 6 months. We set honest expectations in your initial audit - and provide monthly progress reports from day one so you can see movement building.',
   },
   {
     q: 'Do I need a physical address to rank in Google Maps?',
@@ -48,15 +48,15 @@ const FAQS = [
   },
   {
     q: 'How important are Google reviews for local SEO?',
-    a: 'Very important. Review quantity, recency, and rating directly influence map pack rankings. Our local SEO packages include a review acquisition strategy to build a consistent review velocity — because a burst of 20 old reviews is less powerful than 3 new reviews every month. We also advise on responding to reviews (positive and negative) in ways that reinforce your local authority.',
+    a: 'Very important. Review quantity, recency, and rating directly influence map pack rankings. Our local SEO packages include a review acquisition strategy to build a consistent review velocity - because a burst of 20 old reviews is less powerful than 3 new reviews every month. We also advise on responding to reviews (positive and negative) in ways that reinforce your local authority.',
   },
   {
     q: 'What is NAP consistency and why does it matter?',
-    a: 'NAP stands for Name, Address, and Phone number. If your business details are inconsistent across directories (different phone numbers, abbreviated vs full address), Google loses confidence in your business data and your local rankings suffer. We audit and fix all major citation sources — typically 50+ directories — and maintain consistency going forward.',
+    a: 'NAP stands for Name, Address, and Phone number. If your business details are inconsistent across directories (different phone numbers, abbreviated vs full address), Google loses confidence in your business data and your local rankings suffer. We audit and fix all major citation sources - typically 50+ directories - and maintain consistency going forward.',
   },
   {
     q: 'Do you create location pages for each suburb or city?',
-    a: 'Yes, for multi-location businesses or service-area businesses covering multiple cities. Each location page is unique — not a template with the city name swapped — covering local landmarks, service descriptions, and location-specific trust signals. Unique, genuinely useful content is what Google rewards; templated pages can actually harm rankings.',
+    a: 'Yes, for multi-location businesses or service-area businesses covering multiple cities. Each location page is unique - not a template with the city name swapped - covering local landmarks, service descriptions, and location-specific trust signals. Unique, genuinely useful content is what Google rewards; templated pages can actually harm rankings.',
   },
   {
     q: 'Can you help if a competitor is outranking us with fake reviews?',
@@ -64,7 +64,7 @@ const FAQS = [
   },
   {
     q: 'Do you handle multi-location businesses?',
-    a: 'Yes. We build scalable local SEO systems for franchises and chains — standardised GBP management protocols, location page templates with unique content, and centralised reporting across all locations in one dashboard. We have managed local SEO for businesses with 2 locations and for those with 80+ locations across the US, Canada, and Australia.',
+    a: 'Yes. We build scalable local SEO systems for franchises and chains - standardised GBP management protocols, location page templates with unique content, and centralised reporting across all locations in one dashboard. We have managed local SEO for businesses with 2 locations and for those with 80+ locations across the US, Canada, and Australia.',
   },
   {
     q: 'What results can I realistically expect from local SEO?',
@@ -286,7 +286,7 @@ export default function LocalSeoServices() {
               US · Canada · Australia
             </span>
             <h1 className="lseo-hero-h1">Rank in the Google Maps Pack and Dominate Local Search</h1>
-            <p className="lseo-hero-sub">GBP optimisation, citation building, review strategy, and geo-targeted location pages that drive real foot traffic, calls, and direction requests — not just rankings.</p>
+            <p className="lseo-hero-sub">GBP optimisation, citation building, review strategy, and geo-targeted location pages that drive real foot traffic, calls, and direction requests - not just rankings.</p>
             <div className="lseo-hero-btns">
               <Link href="/contact-us" className="lseo-btn-primary">
                 Get a Free Local SEO Audit
@@ -309,7 +309,7 @@ export default function LocalSeoServices() {
           <div className="lseo-services-inner">
             <span className="lseo-section-eyebrow">What We Do</span>
             <h2 className="lseo-section-title">Complete Local SEO Services</h2>
-            <p className="lseo-section-desc">Every signal that Google uses for local rankings — covered in one integrated programme, managed by a dedicated account team.</p>
+            <p className="lseo-section-desc">Every signal that Google uses for local rankings - covered in one integrated programme, managed by a dedicated account team.</p>
             <div className="lseo-services-grid" ref={cardsRef}>
               {SERVICES.map((s, i) => (
                 <div key={s.n} className={`lseo-service-card${visibleCards.includes(i) ? ' visible' : ''}`}>
@@ -342,7 +342,7 @@ export default function LocalSeoServices() {
           <div className="lseo-process-inner">
             <span className="lseo-section-eyebrow">How We Work</span>
             <h2 className="lseo-section-title">Our 6-Step Local SEO Process</h2>
-            <p className="lseo-section-desc">From audit to map pack dominance — a structured methodology that compounds authority and rankings over time.</p>
+            <p className="lseo-section-desc">From audit to map pack dominance - a structured methodology that compounds authority and rankings over time.</p>
             <div className="lseo-process-steps">
               {PROCESS.map((p, i) => (
                 <div key={p.step} ref={el => { stepRefs.current[i] = el; }} className={`lseo-process-step${visibleSteps.includes(i) ? ' visible' : ''}`}>
@@ -358,7 +358,7 @@ export default function LocalSeoServices() {
           <div className="lseo-why-inner">
             <span className="lseo-section-eyebrow">Why 1Solutions</span>
             <h2 className="lseo-section-title">The Local SEO Partner That Drives Calls &amp; Footfall</h2>
-            <p className="lseo-section-desc">We measure success in map pack positions, GBP calls, and direction clicks — not just keyword rankings on a spreadsheet.</p>
+            <p className="lseo-section-desc">We measure success in map pack positions, GBP calls, and direction clicks - not just keyword rankings on a spreadsheet.</p>
             <div className="lseo-why-grid" ref={whyRef}>
               {WHY.map((w, i) => (
                 <div key={w.title} className={`lseo-why-card${visibleWhy.includes(i) ? ' visible' : ''}`}>
@@ -395,7 +395,7 @@ export default function LocalSeoServices() {
           <div className="lseo-cta-inner">
             <span className="lseo-section-eyebrow" style={{ textAlign: 'center', display: 'block', marginBottom: 16 }}>Ready to Rank Locally?</span>
             <h2 className="lseo-cta-title">Get Your Free Local SEO Audit</h2>
-            <p className="lseo-cta-sub">We&rsquo;ll review your Google Business Profile, local rankings, citation health, and competitor map pack positions — and share a clear action plan, completely free.</p>
+            <p className="lseo-cta-sub">We&rsquo;ll review your Google Business Profile, local rankings, citation health, and competitor map pack positions - and share a clear action plan, completely free.</p>
             <div className="lseo-cta-btns">
               <Link href="/contact-us" className="lseo-btn-primary">
                 Request Free Local SEO Audit

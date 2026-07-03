@@ -28,7 +28,7 @@ const GUIDELINES = [
       </svg>
     ),
     title: 'Original Content Only',
-    desc: 'Your article must be completely original and not published anywhere else — including your own blog, Medium, LinkedIn, or any other platform.',
+    desc: 'Your article must be completely original and not published anywhere else - including your own blog, Medium, LinkedIn, or any other platform.',
   },
   {
     icon: (
@@ -46,7 +46,7 @@ const GUIDELINES = [
       </svg>
     ),
     title: 'Practical & Actionable',
-    desc: 'Content should include concrete examples, step-by-step guidance, code snippets (where relevant), or data-backed insights — not just theory.',
+    desc: 'Content should include concrete examples, step-by-step guidance, code snippets (where relevant), or data-backed insights - not just theory.',
   },
   {
     icon: (
@@ -55,7 +55,7 @@ const GUIDELINES = [
       </svg>
     ),
     title: 'Credible Sources & References',
-    desc: 'Back your claims with links to reputable sources — industry studies, official documentation, or recognised publications in the field.',
+    desc: 'Back your claims with links to reputable sources - industry studies, official documentation, or recognised publications in the field.',
   },
   {
     icon: (
@@ -145,7 +145,7 @@ export default function WriteForUs() {
         <meta property="og:description" content="Share your expertise with our audience. We publish high-quality guest posts on web development, SEO, digital marketing, AI, and eCommerce." />
         <meta name="robots" content="index, follow" />
         <style>{`
-          /* ── Write For Us page — prefix: wfu- ── */
+          /* ── Write For Us page - prefix: wfu- ── */
           .wfu-hero {
             background: linear-gradient(135deg, #dbeafe 0%, #ede9fe 30%, #e0f2fe 60%, #fef3c7 100%);
             padding: 80px 24px 72px;
@@ -545,7 +545,7 @@ export default function WriteForUs() {
 
         {/* Guidelines */}
         <h2 className="wfu-section-title">Submission Guidelines</h2>
-        <p className="wfu-section-sub">Read these carefully before submitting — articles that don't meet our standards will not be reviewed.</p>
+        <p className="wfu-section-sub">Read these carefully before submitting - articles that don't meet our standards will not be reviewed.</p>
         <div className="wfu-guidelines-grid">
           {GUIDELINES.map((g) => (
             <div key={g.title} className="wfu-guideline-card">
@@ -575,7 +575,7 @@ export default function WriteForUs() {
           {/* Left: process steps */}
           <div className="wfu-form-aside">
             <h2>How It Works</h2>
-            <p>From pitch to publication — here's what to expect after you submit your idea.</p>
+            <p>From pitch to publication - here's what to expect after you submit your idea.</p>
             <ol className="wfu-process-steps">
               <li>
                 <div>
@@ -616,7 +616,7 @@ export default function WriteForUs() {
 
             {status === 'success' ? (
               <div className="wfu-success-box">
-                <h3>Pitch received — thank you!</h3>
+                <h3>Pitch received - thank you!</h3>
                 <p>We'll review your submission and get back to you within 2–3 business days at the email you provided.</p>
               </div>
             ) : (

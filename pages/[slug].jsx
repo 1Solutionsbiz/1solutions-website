@@ -42,7 +42,7 @@ function CategoryPage({ category, posts, pageInfo, allCategories, currentAfter, 
     <>
       <Head>
         <title>{category.name} Articles | 1Solutions Blog</title>
-        <meta name="description" content={category.description || `Browse all ${category.name} articles from 1Solutions — ${category.count} posts.`} />
+        <meta name="description" content={category.description || `Browse all ${category.name} articles from 1Solutions - ${category.count} posts.`} />
         <link rel="canonical" href={`${siteUrl}/${category.slug}`} />
       </Head>
 
@@ -53,7 +53,7 @@ function CategoryPage({ category, posts, pageInfo, allCategories, currentAfter, 
         <div className="archive-filters-inner">
           <span className="filters-label">
             Category: <strong>{category.name}</strong>
-            {category.count > 0 && <span style={{ marginLeft: 8, fontWeight: 400, color: 'var(--text-light)' }}>— {category.count} articles</span>}
+            {category.count > 0 && <span style={{ marginLeft: 8, fontWeight: 400, color: 'var(--text-light)' }}>- {category.count} articles</span>}
           </span>
           <div className="filters">
             <Link href="/blog" className="filter-btn">All Posts</Link>
@@ -458,7 +458,7 @@ function SinglePost({ post, relatedPosts }) {
                 <div className="newsletter-icon">✉</div>
                 <h4>Weekly Insights</h4>
               </div>
-              <p>Get the latest in web development, SEO, and digital marketing — every Tuesday.</p>
+              <p>Get the latest in web development, SEO, and digital marketing - every Tuesday.</p>
               <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
                 <input type="email" placeholder="Your email address" required />
                 <button type="submit" className="newsletter-btn">Subscribe →</button>
@@ -502,7 +502,7 @@ export async function getStaticPaths() {
       getAllCategorySlugs(),
     ]);
 
-    // Merge; posts take priority — deduplicate by keeping post slugs
+    // Merge; posts take priority - deduplicate by keeping post slugs
     const postSet = new Set(postSlugs);
     const allSlugs = [
       ...postSlugs,

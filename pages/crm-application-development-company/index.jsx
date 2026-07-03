@@ -18,7 +18,7 @@ const SCHEMA = {
       '@type': 'Service',
       name: 'CRM Application Development',
       url: 'https://www.1solutions.biz/crm-application-development-company/',
-      description: 'Custom CRM application development — sales pipeline automation, marketing CRM, customer service portals, CRM integration with ERP and third-party APIs, mobile CRM apps, AI-powered lead scoring, and white-label CRM platforms for SaaS companies.',
+      description: 'Custom CRM application development - sales pipeline automation, marketing CRM, customer service portals, CRM integration with ERP and third-party APIs, mobile CRM apps, AI-powered lead scoring, and white-label CRM platforms for SaaS companies.',
       provider: {
         '@type': 'Organization',
         name: '1Solutions',
@@ -32,7 +32,7 @@ const SCHEMA = {
     {
       '@type': 'FAQPage',
       mainEntity: [
-        { '@type': 'Question', name: 'Why build a custom CRM instead of using Salesforce or HubSpot?', acceptedAnswer: { '@type': 'Answer', text: 'Off-the-shelf CRMs like Salesforce and HubSpot are powerful but come with significant trade-offs: high per-seat licensing costs that scale steeply, complex configuration layers that rarely map cleanly to your actual sales process, and limited flexibility for industry-specific workflows. A custom CRM is built precisely around your pipeline stages, customer data model, team hierarchy, and integration requirements — with no per-seat fees, no feature bloat, and full ownership of your data and code.' } },
+        { '@type': 'Question', name: 'Why build a custom CRM instead of using Salesforce or HubSpot?', acceptedAnswer: { '@type': 'Answer', text: 'Off-the-shelf CRMs like Salesforce and HubSpot are powerful but come with significant trade-offs: high per-seat licensing costs that scale steeply, complex configuration layers that rarely map cleanly to your actual sales process, and limited flexibility for industry-specific workflows. A custom CRM is built precisely around your pipeline stages, customer data model, team hierarchy, and integration requirements - with no per-seat fees, no feature bloat, and full ownership of your data and code.' } },
         { '@type': 'Question', name: 'How long does custom CRM development take?', acceptedAnswer: { '@type': 'Answer', text: 'A core CRM with contact and account management, a custom sales pipeline, activity tracking, basic reporting, and user roles typically takes 14–18 weeks. Adding marketing automation, a customer service ticketing module, or mobile apps adds 6–10 weeks per module. Full-featured enterprise CRM platforms with AI lead scoring, advanced analytics, and multi-tenant architecture typically take 6–12 months. We provide milestone-based estimates after a free discovery session.' } },
         { '@type': 'Question', name: 'Can you integrate a custom CRM with our existing ERP or third-party tools?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. CRM integration is one of our core specialisations. We have built bidirectional integrations with ERP systems (SAP, Oracle NetSuite, Microsoft Dynamics), marketing platforms (Mailchimp, Klaviyo, ActiveCampaign), telephony (Twilio, RingCentral, Aircall), support desks (Zendesk, Freshdesk), eCommerce platforms (Shopify, WooCommerce), and accounting tools (QuickBooks, Xero). We build integration layers using REST APIs, webhooks, and message queues for reliable, real-time data synchronisation.' } },
         { '@type': 'Question', name: 'Do you build mobile CRM applications?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We develop native iOS and Android mobile CRM apps using Flutter or React Native, with offline-first architecture so your sales team can access contact data, log calls, update pipeline stages, and add notes without connectivity. Real-time sync with the backend CRM occurs automatically when back online. Push notifications for follow-up reminders, deal stage changes, and new lead assignments are also included.' } },
@@ -45,16 +45,16 @@ const SCHEMA = {
 
 /* ─── Page data ──────────────────────────────────────────────── */
 const SERVICES = [
-  { n: '01', title: 'Custom CRM Development', desc: 'End-to-end custom CRM platforms built around your exact sales process — contact and account management, custom pipeline stages, activity logging, deal tracking, role-based access control, and branded user portals.' },
+  { n: '01', title: 'Custom CRM Development', desc: 'End-to-end custom CRM platforms built around your exact sales process - contact and account management, custom pipeline stages, activity logging, deal tracking, role-based access control, and branded user portals.' },
   { n: '02', title: 'Sales Pipeline & Automation', desc: 'Visual drag-and-drop sales pipelines with automated stage transitions, follow-up reminders, deal scoring, email sequence triggers, task auto-assignment, and sales performance dashboards for managers and reps.', feat: true },
   { n: '03', title: 'CRM Integration & API Connectivity', desc: 'Bidirectional CRM integrations with ERP systems (SAP, NetSuite), marketing platforms (Mailchimp, Klaviyo), telephony (Twilio, Aircall), support desks (Zendesk), eCommerce (Shopify, WooCommerce), and accounting tools (QuickBooks, Xero).' },
   { n: '04', title: 'Marketing Automation CRM', desc: 'CRM modules covering lead capture, lead nurturing workflows, email drip campaigns, landing page integration, lead scoring models, UTM tracking, campaign ROI reporting, and audience segmentation for targeted outreach.' },
-  { n: '05', title: 'Customer Service & Support CRM', desc: 'Integrated support ticketing within the CRM — multi-channel inbox (email, chat, phone), SLA tracking, escalation rules, customer satisfaction (CSAT) surveys, knowledge base, and agent performance analytics.' },
-  { n: '06', title: 'Mobile CRM Applications', desc: 'Native iOS and Android mobile CRM apps with offline-first architecture — access contacts, update deals, log calls, add notes, and receive push notifications for follow-up reminders anywhere, syncing automatically when back online.' },
-  { n: '07', title: 'AI-Powered Lead Scoring & Analytics', desc: 'Machine learning lead scoring models that rank inbound leads by conversion probability based on firmographic data, engagement history, and behavioural signals — helping sales teams prioritise the right prospects at the right time.' },
+  { n: '05', title: 'Customer Service & Support CRM', desc: 'Integrated support ticketing within the CRM - multi-channel inbox (email, chat, phone), SLA tracking, escalation rules, customer satisfaction (CSAT) surveys, knowledge base, and agent performance analytics.' },
+  { n: '06', title: 'Mobile CRM Applications', desc: 'Native iOS and Android mobile CRM apps with offline-first architecture - access contacts, update deals, log calls, add notes, and receive push notifications for follow-up reminders anywhere, syncing automatically when back online.' },
+  { n: '07', title: 'AI-Powered Lead Scoring & Analytics', desc: 'Machine learning lead scoring models that rank inbound leads by conversion probability based on firmographic data, engagement history, and behavioural signals - helping sales teams prioritise the right prospects at the right time.' },
   { n: '08', title: 'CRM Analytics & Reporting Dashboards', desc: 'Custom CRM reporting with real-time sales dashboards, funnel conversion analytics, forecast accuracy tracking, rep leaderboards, customer lifetime value (CLV) reporting, and scheduled executive summaries.' },
-  { n: '09', title: 'White-Label CRM for SaaS & Agencies', desc: 'Multi-tenant white-label CRM platforms with per-tenant domain, isolated data, configurable branding, subscription billing, and self-service onboarding — built for agencies and SaaS companies to resell under their own brand.' },
-  { n: '10', title: 'CRM Migration & Legacy System Modernisation', desc: 'Full CRM data migrations from Salesforce, HubSpot, Zoho, Pipedrive, or any legacy system — with contact, account, deal, activity history, and custom field mapping, staged validation, and zero-downtime cutover.' },
+  { n: '09', title: 'White-Label CRM for SaaS & Agencies', desc: 'Multi-tenant white-label CRM platforms with per-tenant domain, isolated data, configurable branding, subscription billing, and self-service onboarding - built for agencies and SaaS companies to resell under their own brand.' },
+  { n: '10', title: 'CRM Migration & Legacy System Modernisation', desc: 'Full CRM data migrations from Salesforce, HubSpot, Zoho, Pipedrive, or any legacy system - with contact, account, deal, activity history, and custom field mapping, staged validation, and zero-downtime cutover.' },
 ];
 
 const TECH_STACK = [
@@ -109,10 +109,10 @@ const ENGAGEMENT_MODELS = [
     feat: true,
     icon: 'M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z',
     headline: 'Your offshore CRM engineering team. Full-time. Fully yours.',
-    desc: 'A dedicated squad of CRM specialists — backend engineer, frontend developer, mobile developer, QA, and DevOps — working exclusively on your CRM product at a fraction of US/UK/AU hiring cost. Full IP ownership retained by you.',
+    desc: 'A dedicated squad of CRM specialists - backend engineer, frontend developer, mobile developer, QA, and DevOps - working exclusively on your CRM product at a fraction of US/UK/AU hiring cost. Full IP ownership retained by you.',
     bestFor: ['Long-term CRM product development', 'Growing SaaS CRM platform', 'Replacing or augmenting an in-house CRM team', 'White-label CRM built for resale'],
     process: 'Team assembly → Onboarding → Weekly sprint delivery → Continuous roadmap',
-    timeline: 'Ongoing — scale up or down each quarter',
+    timeline: 'Ongoing - scale up or down each quarter',
   },
   {
     id: 'fixed',
@@ -121,7 +121,7 @@ const ENGAGEMENT_MODELS = [
     badgeColor: '#0891b2',
     icon: 'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z',
     headline: 'Agreed price. Agreed scope. Delivered on time.',
-    desc: 'Ideal for well-scoped CRM projects — a core CRM build, a specific integration module, a CRM migration, or a reporting dashboard. We agree on deliverables, price, and timeline upfront with milestone-based delivery and full transparency.',
+    desc: 'Ideal for well-scoped CRM projects - a core CRM build, a specific integration module, a CRM migration, or a reporting dashboard. We agree on deliverables, price, and timeline upfront with milestone-based delivery and full transparency.',
     bestFor: ['Core CRM MVP build', 'Specific CRM integration (ERP, telephony)', 'CRM data migration from Salesforce/HubSpot', 'Custom analytics and reporting module'],
     process: 'Detailed spec → Fixed quote → Milestone delivery → Sign-off',
     timeline: 'Best for projects 8–24 weeks',
@@ -136,15 +136,15 @@ const ENGAGEMENT_MODELS = [
     desc: 'Billed on actual time and resources used. Best for early-stage CRM startups iterating rapidly on user feedback, or for adding AI features, new integration connectors, or analytics modules to an existing CRM platform.',
     bestFor: ['CRM MVP with evolving requirements', 'Adding AI lead scoring or automation', 'Exploratory integration or API prototyping', 'CRM audit, performance, or security review'],
     process: 'Sprint planning → Biweekly delivery → Iterative refinement → Transparent timesheets',
-    timeline: 'Start in 1 week — no lengthy onboarding',
+    timeline: 'Start in 1 week - no lengthy onboarding',
   },
 ];
 
 const PROCESS_STEPS = [
   { num: '01', title: 'CRM Discovery & Workflow Mapping', desc: 'We map your sales process, customer lifecycle stages, team hierarchy, data model requirements, and integration touchpoints before any development begins. This discovery phase prevents expensive rework and ensures the CRM reflects how your business actually operates.' },
-  { num: '02', title: 'Architecture Design & Data Modelling', desc: 'Our architects design a scalable, multi-tenant-ready data architecture with a custom entity-relationship model covering contacts, accounts, deals, activities, and your specific business objects — plus an API layer designed for future integration extensibility.' },
-  { num: '03', title: 'Agile CRM Development — Core Modules First', desc: 'Development begins with the CRM core (contacts, pipeline, activities, roles) and expands in sprint cycles. Frontend, backend, and mobile streams run in parallel. Each sprint delivers working, stageable features reviewed directly by your team.' },
-  { num: '04', title: 'Integration Development & API Connectivity', desc: 'We build and test all required integrations — ERP, marketing automation, telephony, support desk, eCommerce, and accounting tools — using REST APIs, webhooks, and message queues, with full error handling, retry logic, and integration monitoring.' },
+  { num: '02', title: 'Architecture Design & Data Modelling', desc: 'Our architects design a scalable, multi-tenant-ready data architecture with a custom entity-relationship model covering contacts, accounts, deals, activities, and your specific business objects - plus an API layer designed for future integration extensibility.' },
+  { num: '03', title: 'Agile CRM Development - Core Modules First', desc: 'Development begins with the CRM core (contacts, pipeline, activities, roles) and expands in sprint cycles. Frontend, backend, and mobile streams run in parallel. Each sprint delivers working, stageable features reviewed directly by your team.' },
+  { num: '04', title: 'Integration Development & API Connectivity', desc: 'We build and test all required integrations - ERP, marketing automation, telephony, support desk, eCommerce, and accounting tools - using REST APIs, webhooks, and message queues, with full error handling, retry logic, and integration monitoring.' },
   { num: '05', title: 'QA, User Acceptance Testing & Data Migration', desc: 'Systematic functional and regression testing, cross-browser and mobile QA, security and penetration testing, and load testing for concurrent user scenarios. For migrations, we run a full data validation pass in staging before final cutover.' },
   { num: '06', title: 'Launch, Training & Ongoing Optimisation', desc: 'Zero-downtime production deployment with staged rollout, admin and user training sessions, real-time performance monitoring, and tiered SLA-backed post-launch support. Feature releases continue on a defined sprint cadence after go-live.' },
 ];
@@ -155,35 +155,35 @@ const TESTIMONIALS = [
     name: 'Marcus D.', role: 'VP Sales, B2B SaaS Company (US)', init: 'MD', bg: '#0F3460',
   },
   {
-    text: "1Solutions built our multi-tenant white-label CRM from scratch. We resell it to 40+ agencies and it handles everything — custom domains, isolated data, subscription billing, and configurable branding. The platform is rock-solid and they continue to deliver new features on schedule.",
+    text: "1Solutions built our multi-tenant white-label CRM from scratch. We resell it to 40+ agencies and it handles everything - custom domains, isolated data, subscription billing, and configurable branding. The platform is rock-solid and they continue to deliver new features on schedule.",
     name: 'Fiona L.', role: 'CEO, Agency Software Platform (UK)', init: 'FL', bg: '#0e4a5f', feat: true,
   },
   {
-    text: "Our real estate business needed a CRM with property pipeline stages, automated email sequences, and a mobile app for agents in the field. 1Solutions built exactly that — including a Twilio integration for call logging — in 16 weeks. Conversions improved 34% in the first quarter.",
+    text: "Our real estate business needed a CRM with property pipeline stages, automated email sequences, and a mobile app for agents in the field. 1Solutions built exactly that - including a Twilio integration for call logging - in 16 weeks. Conversions improved 34% in the first quarter.",
     name: 'Rahul P.', role: 'Director, Real Estate Group (AU)', init: 'RP', bg: '#1a4a3a',
   },
 ];
 
 const WHY_CARDS = [
-  { title: '15+ Years CRM & Enterprise App Expertise', desc: 'We have been building CRM systems, sales automation tools, and customer data platforms since 2008 — across B2B SaaS, real estate, financial services, healthcare, retail, and professional services.' },
-  { title: 'Built Around Your Workflow, Not a Template', desc: 'Every CRM we build starts with a deep workflow mapping session. We model your pipeline stages, deal objects, custom fields, team hierarchy, and automation rules from scratch — not from a rigid template.' },
-  { title: 'Deep Integration Experience', desc: 'We have built CRM integrations with 50+ third-party platforms — ERP systems, marketing tools, telephony providers, support desks, eCommerce platforms, and accounting software — using REST APIs, webhooks, and event queues.' },
+  { title: '15+ Years CRM & Enterprise App Expertise', desc: 'We have been building CRM systems, sales automation tools, and customer data platforms since 2008 - across B2B SaaS, real estate, financial services, healthcare, retail, and professional services.' },
+  { title: 'Built Around Your Workflow, Not a Template', desc: 'Every CRM we build starts with a deep workflow mapping session. We model your pipeline stages, deal objects, custom fields, team hierarchy, and automation rules from scratch - not from a rigid template.' },
+  { title: 'Deep Integration Experience', desc: 'We have built CRM integrations with 50+ third-party platforms - ERP systems, marketing tools, telephony providers, support desks, eCommerce platforms, and accounting software - using REST APIs, webhooks, and event queues.' },
   { title: 'AI & Predictive Analytics Ready', desc: 'We integrate machine learning lead scoring, predictive churn models, NLP-based sentiment analysis on customer interactions, and AI-powered next-best-action recommendations directly into the CRM workflow.' },
   { title: 'No Per-Seat Licensing. Ever.', desc: 'A custom CRM eliminates per-seat SaaS fees permanently. For most organisations, the development investment pays back within 12–18 months. After that, your CRM costs only what infrastructure and support require.' },
-  { title: 'GDPR, CCPA & SOC 2 Ready', desc: 'We architect CRM platforms with RBAC, AES-256 data encryption at rest and in transit, comprehensive audit logs, data retention policies, right-to-erasure workflows, and consent management — compliant with GDPR, CCPA, and SOC 2 requirements.' },
-  { title: 'US / UK / AU Market Expertise', desc: 'We serve B2B SaaS companies, agencies, professional services firms, and enterprise sales teams across North America, Europe, and Australia — adapting CRM data models to regional compliance and sales culture nuances.' },
-  { title: 'Transparent Delivery, Full Ownership', desc: 'Fortnightly demos, weekly sprint reports, shared task boards, and direct developer access on Slack or Teams. All source code, data, and IP are 100% yours from day one — no vendor lock-in.' },
+  { title: 'GDPR, CCPA & SOC 2 Ready', desc: 'We architect CRM platforms with RBAC, AES-256 data encryption at rest and in transit, comprehensive audit logs, data retention policies, right-to-erasure workflows, and consent management - compliant with GDPR, CCPA, and SOC 2 requirements.' },
+  { title: 'US / UK / AU Market Expertise', desc: 'We serve B2B SaaS companies, agencies, professional services firms, and enterprise sales teams across North America, Europe, and Australia - adapting CRM data models to regional compliance and sales culture nuances.' },
+  { title: 'Transparent Delivery, Full Ownership', desc: 'Fortnightly demos, weekly sprint reports, shared task boards, and direct developer access on Slack or Teams. All source code, data, and IP are 100% yours from day one - no vendor lock-in.' },
 ];
 
 const FAQS = [
-  { q: 'Why build a custom CRM instead of using Salesforce or HubSpot?', a: 'Off-the-shelf CRMs like Salesforce and HubSpot are powerful but expensive and inflexible at scale. Per-seat licensing costs escalate steeply as your team grows, configuration layers rarely map cleanly to your actual sales process, and customisation quickly requires specialist consultants at high day rates. A custom CRM is built precisely around your pipeline stages, customer data model, team hierarchy, and integration requirements — with no per-seat fees, no feature bloat, and full ownership of your data and code. For most organisations, the investment pays back in 12–18 months.' },
+  { q: 'Why build a custom CRM instead of using Salesforce or HubSpot?', a: 'Off-the-shelf CRMs like Salesforce and HubSpot are powerful but expensive and inflexible at scale. Per-seat licensing costs escalate steeply as your team grows, configuration layers rarely map cleanly to your actual sales process, and customisation quickly requires specialist consultants at high day rates. A custom CRM is built precisely around your pipeline stages, customer data model, team hierarchy, and integration requirements - with no per-seat fees, no feature bloat, and full ownership of your data and code. For most organisations, the investment pays back in 12–18 months.' },
   { q: 'How long does custom CRM development take?', a: 'A core CRM with contact and account management, a custom sales pipeline, activity tracking, basic reporting, and user roles typically takes 14–18 weeks. Adding marketing automation, a customer service ticketing module, or mobile apps adds 6–10 weeks per module. A full-featured enterprise CRM with AI lead scoring, advanced analytics, and multi-tenant white-label architecture typically takes 6–12 months. We provide milestone-based estimates after a free discovery session.' },
   { q: 'Can you integrate a custom CRM with our existing ERP or third-party tools?', a: 'Yes. CRM integration is a core specialisation. We have built bidirectional integrations with ERP systems (SAP, Oracle NetSuite, Microsoft Dynamics), marketing platforms (Mailchimp, Klaviyo, ActiveCampaign), telephony (Twilio, RingCentral, Aircall), support desks (Zendesk, Freshdesk), eCommerce platforms (Shopify, WooCommerce), and accounting tools (QuickBooks, Xero). We build integration layers using REST APIs, webhooks, and message queues for reliable, real-time data synchronisation with full error handling and retry logic.' },
   { q: 'Do you build mobile CRM applications?', a: 'Yes. We develop native iOS and Android mobile CRM apps using Flutter or React Native, with offline-first architecture so your sales team can access contacts, log calls, update pipeline stages, and add notes without connectivity. Automatic sync with the backend CRM occurs when back online. Push notifications for follow-up reminders, deal stage changes, and new lead assignments are included as standard.' },
   { q: 'Can you build a white-label CRM platform for resale?', a: 'Yes. Multi-tenant, white-label CRM development is a core service. We build CRM platforms with per-tenant custom domain support, isolated data environments, configurable branding (logo, colours, fonts), subscription billing integration via Stripe or Razorpay, and a self-service tenant onboarding flow. Full source code and IP ownership is retained by you. We have delivered white-label CRM platforms for agencies, vertical SaaS companies, and industry software providers.' },
   { q: 'Do you migrate data from Salesforce, HubSpot, or Zoho to a custom CRM?', a: 'Yes. We handle full CRM data migrations from Salesforce, HubSpot, Zoho, Pipedrive, Microsoft Dynamics, SugarCRM, and other platforms. This includes contacts, accounts, deals and opportunities, activity history, notes and attachments, custom field mapping, and relationship data. We run migrations in a staging environment first, validate data integrity with automated checks, and perform a final delta sync before cutover to minimise data loss risk.' },
   { q: 'What security and compliance standards does a custom CRM meet?', a: 'We architect CRM platforms with role-based access control (RBAC), AES-256 data encryption at rest and in transit, comprehensive audit logs, data retention and purge policies, right-to-erasure workflows for GDPR compliance, and consent management. For US clients we support CCPA requirements. SSO via SAML 2.0 and OAuth2 is standard. Platforms handling sensitive data can be architected for SOC 2 Type II readiness with appropriate audit trail controls.' },
-  { q: 'Do you offer ongoing support and feature development after launch?', a: 'Yes — all CRM projects include a 30-day post-launch hypercare period with prioritised bug fix SLA. We then offer ongoing support plans covering security patches, performance optimisation, third-party API updates as provider APIs change, and feature development sprints. Our dedicated team model is particularly well-suited for post-launch CRM evolution — your team continues on a sprint cadence delivering the next roadmap features as your business grows.' },
+  { q: 'Do you offer ongoing support and feature development after launch?', a: 'Yes - all CRM projects include a 30-day post-launch hypercare period with prioritised bug fix SLA. We then offer ongoing support plans covering security patches, performance optimisation, third-party API updates as provider APIs change, and feature development sprints. Our dedicated team model is particularly well-suited for post-launch CRM evolution - your team continues on a sprint cadence delivering the next roadmap features as your business grows.' },
 ];
 
 /* ─── Hooks ──────────────────────────────────────────────────── */
@@ -300,10 +300,10 @@ export default function CrmApplicationDevelopment() {
     <>
       <Head>
         <title>CRM Application Development Company | 1Solutions</title>
-        <meta name="description" content="Custom CRM application development — sales pipeline automation, marketing CRM, AI lead scoring, ERP integration, mobile CRM apps & white-label CRM platforms." />
+        <meta name="description" content="Custom CRM application development - sales pipeline automation, marketing CRM, AI lead scoring, ERP integration, mobile CRM apps & white-label CRM platforms." />
         <link rel="canonical" href="https://www.1solutions.biz/crm-application-development-company/" />
         <meta property="og:title" content="CRM Application Development Company | 1Solutions" />
-        <meta property="og:description" content="Custom CRM software development — sales automation, marketing CRM, AI lead scoring, ERP integration & white-label CRM. 15+ years | 150+ projects | GDPR compliant." />
+        <meta property="og:description" content="Custom CRM software development - sales automation, marketing CRM, AI lead scoring, ERP integration & white-label CRM. 15+ years | 150+ projects | GDPR compliant." />
         <meta property="og:url" content="https://www.1solutions.biz/crm-application-development-company/" />
         <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
@@ -578,8 +578,8 @@ export default function CrmApplicationDevelopment() {
         {/* ── HERO ── */}
         <section className="cr-hero">
           <span className="cr-eyebrow">CRM Application Development Company</span>
-          <h1>Custom CRM Development — Built Around Your Sales, Marketing &amp; Service Workflows</h1>
-          <p className="cr-hero-desc">We build custom CRM applications that replace expensive off-the-shelf platforms and match your exact pipeline, customer data model, and team hierarchy — with sales automation, marketing workflows, AI lead scoring, ERP integration, mobile apps, and white-label multi-tenant architecture.</p>
+          <h1>Custom CRM Development - Built Around Your Sales, Marketing &amp; Service Workflows</h1>
+          <p className="cr-hero-desc">We build custom CRM applications that replace expensive off-the-shelf platforms and match your exact pipeline, customer data model, and team hierarchy - with sales automation, marketing workflows, AI lead scoring, ERP integration, mobile apps, and white-label multi-tenant architecture.</p>
           <div className="cr-trust-row">
             {['150+ CRM Projects','No Per-Seat Licensing','GDPR & CCPA Compliant','15+ Years Experience','Full IP Ownership'].map(b => (
               <div className="cr-badge" key={b}><span className="cr-badge-dot" />{b}</div>
@@ -630,7 +630,7 @@ export default function CrmApplicationDevelopment() {
             <div className={`cr-s-reveal${visibleSections.has('svc') ? ' cr-revealed' : ''}`} ref={el => { sectionRefs.current['svc'] = el; }}>
               <span className="cr-s-eyebrow">What We Build</span>
               <h2 id="cr-svc-heading" className="cr-s-title">CRM Development Services We Deliver</h2>
-              <p className="cr-s-desc" style={{ maxWidth: 720 }}>From sales pipeline automation and marketing CRM modules to AI lead scoring, ERP integrations, mobile CRM apps, and white-label multi-tenant platforms — we engineer every layer of your CRM system.</p>
+              <p className="cr-s-desc" style={{ maxWidth: 720 }}>From sales pipeline automation and marketing CRM modules to AI lead scoring, ERP integrations, mobile CRM apps, and white-label multi-tenant platforms - we engineer every layer of your CRM system.</p>
             </div>
             <div className="cr-svc-grid" ref={svcGridRef}>
               {visibleServices.map((s, i) => (
@@ -657,7 +657,7 @@ export default function CrmApplicationDevelopment() {
             <div className={`cr-s-reveal${visibleSections.has('stk') ? ' cr-revealed' : ''}`} ref={el => { sectionRefs.current['stk'] = el; }}>
               <span className="cr-s-eyebrow">The CRM Tech Stack We Use</span>
               <h2 id="cr-stack-heading" className="cr-s-title">Technology That Powers Modern CRM Platforms</h2>
-              <p className="cr-s-desc" style={{ maxWidth: 680 }}>Every technology choice is driven by scalability, integration flexibility, and security — from a robust multi-tenant backend to real-time analytics pipelines and AI-powered lead intelligence layers.</p>
+              <p className="cr-s-desc" style={{ maxWidth: 680 }}>Every technology choice is driven by scalability, integration flexibility, and security - from a robust multi-tenant backend to real-time analytics pipelines and AI-powered lead intelligence layers.</p>
             </div>
             <div className="cr-stack-grid" ref={stackGridRef}>
               {TECH_STACK.map((grp, i) => (
@@ -680,7 +680,7 @@ export default function CrmApplicationDevelopment() {
             <div className={`cr-s-reveal${visibleSections.has('eng') ? ' cr-revealed' : ''}`} ref={el => { sectionRefs.current['eng'] = el; }}>
               <span className="cr-s-eyebrow">How We Work With You</span>
               <h2 id="cr-eng-heading" className="cr-s-title">Engagement Models for CRM Development</h2>
-              <p className="cr-s-desc" style={{ maxWidth: 680 }}>Whether you need a dedicated CRM engineering team, a fixed-price platform build, or flexible sprint-based development — we have a model that fits your budget, timeline, and growth stage.</p>
+              <p className="cr-s-desc" style={{ maxWidth: 680 }}>Whether you need a dedicated CRM engineering team, a fixed-price platform build, or flexible sprint-based development - we have a model that fits your budget, timeline, and growth stage.</p>
             </div>
             <div className="cr-eng-grid" ref={engGridRef}>
               {ENGAGEMENT_MODELS.map((m, i) => (
@@ -713,7 +713,7 @@ export default function CrmApplicationDevelopment() {
             <div className={`cr-s-reveal${visibleSections.has('proc') ? ' cr-revealed' : ''}`} ref={el => { sectionRefs.current['proc'] = el; }}>
               <span className="cr-s-eyebrow">How We Deliver</span>
               <h2 id="cr-proc-heading" className="cr-s-title">Our CRM Application Development Process</h2>
-              <p className="cr-s-desc">A structured six-stage process designed to deliver a CRM that your sales team actually adopts — from deep workflow discovery and data modelling to integration build, QA, and post-launch optimisation.</p>
+              <p className="cr-s-desc">A structured six-stage process designed to deliver a CRM that your sales team actually adopts - from deep workflow discovery and data modelling to integration build, QA, and post-launch optimisation.</p>
             </div>
             <div className="cr-psteps">
               {PROCESS_STEPS.map((step, i) => (
@@ -765,7 +765,7 @@ export default function CrmApplicationDevelopment() {
             <div className={`cr-s-reveal${visibleSections.has('wy') ? ' cr-revealed' : ''}`} ref={el => { sectionRefs.current['wy'] = el; }}>
               <span className="cr-s-eyebrow">Why 1Solutions</span>
               <h2 id="cr-wy-heading" className="cr-s-title">Why Choose Us for CRM Application Development</h2>
-              <p className="cr-s-desc" style={{ maxWidth: 680 }}>15+ years building custom CRM systems, sales automation platforms, and customer data applications — with deep integration expertise, AI-ready architecture, and a track record of replacing Salesforce and HubSpot at a fraction of the cost.</p>
+              <p className="cr-s-desc" style={{ maxWidth: 680 }}>15+ years building custom CRM systems, sales automation platforms, and customer data applications - with deep integration expertise, AI-ready architecture, and a track record of replacing Salesforce and HubSpot at a fraction of the cost.</p>
             </div>
             <div className="cr-why-grid" ref={whyGridRef}>
               {WHY_CARDS.map((c, i) => (
@@ -784,13 +784,13 @@ export default function CrmApplicationDevelopment() {
           <div className="cr-contact-grid">
             <div>
               <h2 id="cr-contact-heading" className="cr-ctitle">Start Your Custom CRM Project</h2>
-              <p className="cr-cdesc">Tell us about your sales process and we will schedule a free 60-minute CRM discovery call with a senior solutions architect. We will map your pipeline, identify integration touchpoints, and give you a realistic scope and cost estimate — at no charge.</p>
+              <p className="cr-cdesc">Tell us about your sales process and we will schedule a free 60-minute CRM discovery call with a senior solutions architect. We will map your pipeline, identify integration touchpoints, and give you a realistic scope and cost estimate - at no charge.</p>
               <div className="cr-cbenefits">
                 {[
                   ['✓', 'Free 60-minute CRM discovery and workflow mapping session'],
                   ['✓', 'Preliminary data model, integration map, and scope estimate at no charge'],
                   ['✓', 'Salesforce / HubSpot cost comparison and custom CRM ROI analysis'],
-                  ['✓', 'NDA available on request — your sales process and data stay protected'],
+                  ['✓', 'NDA available on request - your sales process and data stay protected'],
                   ['✓', 'Response within 24 business hours from our CRM engineering team'],
                 ].map(([icon, text]) => (
                   <div className="cr-cbenefit" key={text}>
@@ -859,8 +859,8 @@ export default function CrmApplicationDevelopment() {
         <section className="cr-faq" aria-labelledby="cr-faq-heading">
           <div className="cr-inner" style={{ maxWidth: 860 }}>
             <span className="cr-s-eyebrow">FAQ</span>
-            <h2 id="cr-faq-heading">CRM Application Development — Frequently Asked Questions</h2>
-            <p className="cr-faq-sub">Everything you need to know about building a custom CRM platform with 1Solutions — from cost and timeline to compliance and migration.</p>
+            <h2 id="cr-faq-heading">CRM Application Development - Frequently Asked Questions</h2>
+            <p className="cr-faq-sub">Everything you need to know about building a custom CRM platform with 1Solutions - from cost and timeline to compliance and migration.</p>
             <div className="cr-faq-list">
               {FAQS.map((item, i) => (
                 <div key={i} className={`cr-fitem${openFaq === i ? ' open' : ''}`} itemScope itemType="https://schema.org/Question">

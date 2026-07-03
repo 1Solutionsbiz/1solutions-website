@@ -18,7 +18,7 @@ const SCHEMA = {
       '@type': 'Service',
       name: 'Automotive Software Development',
       url: 'https://www.1solutions.biz/automotive-software-solutions/',
-      description: 'Custom automotive software development — connected vehicle platforms, ADAS, fleet management, EV software, in-vehicle infotainment, dealership management systems, and V2X communication solutions.',
+      description: 'Custom automotive software development - connected vehicle platforms, ADAS, fleet management, EV software, in-vehicle infotainment, dealership management systems, and V2X communication solutions.',
       provider: {
         '@type': 'Organization',
         name: '1Solutions',
@@ -36,7 +36,7 @@ const SCHEMA = {
         { '@type': 'Question', name: 'Can you build connected vehicle and telematics platforms?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We have delivered connected vehicle platforms integrating OBD-II/CAN bus data, GPS tracking, real-time telemetry streaming via MQTT and Kafka, cloud ingestion on AWS IoT and Azure IoT Hub, and driver behaviour analytics dashboards. We handle the full stack from embedded firmware to cloud backend to mobile and web dashboards.' } },
         { '@type': 'Question', name: 'How long does automotive software development take?', acceptedAnswer: { '@type': 'Answer', text: 'Timelines depend on complexity. A fleet management platform MVP typically takes 12–18 weeks. A dealership management system takes 16–24 weeks. ADAS feature development depends on the sensor suite and safety certification requirements and typically ranges from 6–18 months. We provide milestone-based estimates after a technical discovery phase.' } },
         { '@type': 'Question', name: 'Do you develop software for electric vehicles (EVs)?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We develop EV-specific software including battery management system (BMS) interfaces, charging station management systems (CSMS/OCPP), range prediction algorithms, energy consumption analytics, OTA firmware update platforms, and EV fleet management dashboards. We have experience with both BEV and PHEV architectures.' } },
-        { '@type': 'Question', name: 'Which engagement model is best for an automotive software project?', acceptedAnswer: { '@type': 'Answer', text: 'For long-term automotive product development — connected vehicle platforms, fleet software, or ADAS features — the Dedicated Team model works best. You get a full-stack team with embedded, cloud, and mobile expertise working exclusively on your product. For well-defined modules like a DMS or a specific API integration, Fixed Price gives you cost certainty. Time & Material suits R&D and sensor integration work where requirements evolve with testing results.' } },
+        { '@type': 'Question', name: 'Which engagement model is best for an automotive software project?', acceptedAnswer: { '@type': 'Answer', text: 'For long-term automotive product development - connected vehicle platforms, fleet software, or ADAS features - the Dedicated Team model works best. You get a full-stack team with embedded, cloud, and mobile expertise working exclusively on your product. For well-defined modules like a DMS or a specific API integration, Fixed Price gives you cost certainty. Time & Material suits R&D and sensor integration work where requirements evolve with testing results.' } },
         { '@type': 'Question', name: 'Do you offer post-launch support and OTA update management?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We provide post-launch support including OTA firmware and software update management, real-time monitoring and alerting, security patch management, compliance updates as automotive cybersecurity standards evolve, and tiered SLA-backed engineering support. Our Enterprise plan offers 24/7 coverage with a 4-hour critical response SLA.' } },
       ],
     },
@@ -46,15 +46,15 @@ const SCHEMA = {
 /* ─── Page data ──────────────────────────────────────────────── */
 const SERVICES = [
   { n: '01', title: 'Connected Vehicle Platforms', desc: 'End-to-end telematics platforms integrating OBD-II/CAN bus, GPS, real-time data streaming, cloud ingestion, driver behaviour analytics, and remote vehicle diagnostics dashboards.' },
-  { n: '02', title: 'ADAS & Autonomous Driving Software', desc: 'Advanced driver assistance system software — lane departure warning, collision avoidance, adaptive cruise control, sensor fusion (camera, LiDAR, radar), and computer vision pipelines.', feat: true },
+  { n: '02', title: 'ADAS & Autonomous Driving Software', desc: 'Advanced driver assistance system software - lane departure warning, collision avoidance, adaptive cruise control, sensor fusion (camera, LiDAR, radar), and computer vision pipelines.', feat: true },
   { n: '03', title: 'Fleet Management Systems', desc: 'Comprehensive fleet platforms with real-time vehicle tracking, route optimisation, fuel monitoring, driver scoring, maintenance scheduling, and compliance reporting for commercial fleets.' },
   { n: '04', title: 'Electric Vehicle (EV) Software', desc: 'BMS interfaces, OCPP-compliant charging station management, range prediction, energy analytics, OTA firmware update platforms, and EV fleet dashboards for BEV and PHEV architectures.' },
-  { n: '05', title: 'In-Vehicle Infotainment (IVI) Systems', desc: 'Android Automotive OS and QNX-based IVI development — navigation, media streaming, voice control, smartphone mirroring (CarPlay/Android Auto), and over-the-air content updates.' },
+  { n: '05', title: 'In-Vehicle Infotainment (IVI) Systems', desc: 'Android Automotive OS and QNX-based IVI development - navigation, media streaming, voice control, smartphone mirroring (CarPlay/Android Auto), and over-the-air content updates.' },
   { n: '06', title: 'Dealership Management Systems (DMS)', desc: 'Custom DMS platforms covering inventory management, sales pipeline, F&I workflows, service scheduling, parts management, CRM integration, and multi-location reporting dashboards.' },
   { n: '07', title: 'Vehicle Diagnostics & OBD Software', desc: 'OBD-II diagnostic tools, DTC reading and interpretation, real-time parameter monitoring, remote diagnostics portals, and predictive maintenance alert engines for passenger and commercial vehicles.' },
   { n: '08', title: 'Automotive Supply Chain Software', desc: 'Supply chain visibility platforms with supplier portals, parts traceability, demand forecasting, JIT inventory management, and EDI integration for OEMs and Tier 1/2 suppliers.' },
-  { n: '09', title: 'V2X Communication Platforms', desc: 'Vehicle-to-everything communication software — V2I, V2V, V2P, and V2N protocols (DSRC/C-V2X), roadside unit integration, and smart traffic management system backends.' },
-  { n: '10', title: 'Automotive Cybersecurity Solutions', desc: 'ISO/SAE 21434-aligned cybersecurity engineering — threat analysis and risk assessment (TARA), intrusion detection systems (IDS), secure OTA pipelines, PKI, and HSM integration for connected vehicles.' },
+  { n: '09', title: 'V2X Communication Platforms', desc: 'Vehicle-to-everything communication software - V2I, V2V, V2P, and V2N protocols (DSRC/C-V2X), roadside unit integration, and smart traffic management system backends.' },
+  { n: '10', title: 'Automotive Cybersecurity Solutions', desc: 'ISO/SAE 21434-aligned cybersecurity engineering - threat analysis and risk assessment (TARA), intrusion detection systems (IDS), secure OTA pipelines, PKI, and HSM integration for connected vehicles.' },
 ];
 
 const TECH_STACK = [
@@ -108,7 +108,7 @@ const ENGAGEMENT_MODELS = [
     badgeColor: '#0ea5e9',
     icon: 'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z',
     headline: 'Agreed price. Agreed scope. No surprises.',
-    desc: 'Ideal for well-scoped modules — a dealership management system, a fleet tracking MVP, or a specific OBD diagnostic tool. We agree on deliverables, price, and timeline upfront with milestone-based delivery.',
+    desc: 'Ideal for well-scoped modules - a dealership management system, a fleet tracking MVP, or a specific OBD diagnostic tool. We agree on deliverables, price, and timeline upfront with milestone-based delivery.',
     bestFor: ['Fleet management MVP', 'Dealership management system', 'OBD diagnostic application', 'Specific API or telematics integration'],
     process: 'Detailed spec → Fixed quote → Milestone delivery → Sign-off',
     timeline: 'Best for projects 8–24 weeks',
@@ -121,10 +121,10 @@ const ENGAGEMENT_MODELS = [
     feat: true,
     icon: 'M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z',
     headline: 'Your offshore automotive engineering team. Full-time. Fully yours.',
-    desc: 'A dedicated squad of automotive software specialists — embedded engineer, cloud architect, frontend, mobile, QA, and DevOps — working exclusively on your product at a fraction of US/EU hiring cost. Full IP ownership retained by you.',
+    desc: 'A dedicated squad of automotive software specialists - embedded engineer, cloud architect, frontend, mobile, QA, and DevOps - working exclusively on your product at a fraction of US/EU hiring cost. Full IP ownership retained by you.',
     bestFor: ['Connected vehicle platform development', 'Long-term ADAS feature delivery', 'EV software product teams', 'Replacing or extending an in-house automotive team'],
     process: 'Team assembly → Onboarding → Weekly sprint delivery → Continuous roadmap',
-    timeline: 'Ongoing — scale up or down each quarter',
+    timeline: 'Ongoing - scale up or down each quarter',
   },
   {
     id: 'tm',
@@ -136,14 +136,14 @@ const ENGAGEMENT_MODELS = [
     desc: 'Billed on actual time and resources used. Best for R&D projects, sensor integration work, or ADAS features where requirements evolve rapidly with hardware testing results and regulatory feedback.',
     bestFor: ['ADAS proof-of-concept & R&D', 'Sensor fusion algorithm development', 'V2X communication prototyping', 'Projects where hardware testing drives scope'],
     process: 'Sprint planning → Biweekly delivery → Iterative refinement → Transparent timesheets',
-    timeline: 'Start in 1 week — no lengthy onboarding',
+    timeline: 'Start in 1 week - no lengthy onboarding',
   },
 ];
 
 const PROCESS_STEPS = [
-  { num: '01', title: 'Technical Discovery & Requirements Scoping', desc: 'We analyse your vehicle architecture, target ECUs, connectivity requirements, safety integrity levels (ASIL), and applicable standards — ISO 26262, ISO/SAE 21434, AUTOSAR — before a line of code is written.' },
+  { num: '01', title: 'Technical Discovery & Requirements Scoping', desc: 'We analyse your vehicle architecture, target ECUs, connectivity requirements, safety integrity levels (ASIL), and applicable standards - ISO 26262, ISO/SAE 21434, AUTOSAR - before a line of code is written.' },
   { num: '02', title: 'System Architecture & Safety Design', desc: 'Our architects define the software architecture, AUTOSAR stack configuration, hardware abstraction layers, communication interfaces (CAN, Ethernet, LIN), and cybersecurity architecture aligned to TARA outcomes.' },
-  { num: '03', title: 'Embedded & Cloud Software Development', desc: 'Parallel development streams — embedded firmware in C/C++ or Rust, cloud backend microservices, real-time data pipelines, and mobile/web dashboards — with strict MISRA compliance and code review gates.' },
+  { num: '03', title: 'Embedded & Cloud Software Development', desc: 'Parallel development streams - embedded firmware in C/C++ or Rust, cloud backend microservices, real-time data pipelines, and mobile/web dashboards - with strict MISRA compliance and code review gates.' },
   { num: '04', title: 'Hardware-in-the-Loop (HIL/SIL) Testing', desc: 'Systematic testing against requirements using software-in-the-loop (SIL), model-in-the-loop (MIL), and hardware-in-the-loop (HIL) environments. Includes regression testing, fault injection, and boundary condition analysis.' },
   { num: '05', title: 'Safety, Cybersecurity & Compliance Audit', desc: 'Independent safety audit against ISO 26262 ASIL targets, automotive cybersecurity review per ISO/SAE 21434, penetration testing of connected components, and ASPICE process assessment documentation.' },
   { num: '06', title: 'Production Release, OTA & Ongoing Support', desc: 'Zero-regression production deployment with secure OTA update infrastructure (TUF/Uptane), real-time fleet monitoring, intrusion detection alerting, and tiered SLA-backed post-launch engineering support.' },
@@ -151,7 +151,7 @@ const PROCESS_STEPS = [
 
 const TESTIMONIALS = [
   {
-    text: "1Solutions built our connected vehicle telematics platform from the ground up — CAN bus integration, cloud ingestion, real-time dashboards, and driver scoring. They delivered on schedule and their embedded engineers genuinely understood automotive protocols, not just generic IoT.",
+    text: "1Solutions built our connected vehicle telematics platform from the ground up - CAN bus integration, cloud ingestion, real-time dashboards, and driver scoring. They delivered on schedule and their embedded engineers genuinely understood automotive protocols, not just generic IoT.",
     name: 'Michael R.', role: 'CTO, Commercial Fleet Technology Company (US)', init: 'MR', bg: '#0F3460',
   },
   {
@@ -165,25 +165,25 @@ const TESTIMONIALS = [
 ];
 
 const WHY_CARDS = [
-  { title: 'Deep Automotive Domain Expertise', desc: 'Our engineers understand CAN bus, LIN, AUTOSAR, OBD-II, SOME/IP, and automotive Ethernet — not just generic software. We speak the language of automotive engineering.' },
+  { title: 'Deep Automotive Domain Expertise', desc: 'Our engineers understand CAN bus, LIN, AUTOSAR, OBD-II, SOME/IP, and automotive Ethernet - not just generic software. We speak the language of automotive engineering.' },
   { title: 'ISO 26262 & ASPICE Experience', desc: 'Functional safety and process maturity are built into our delivery approach, not added after the fact. We document to ASPICE Level 2/3 and conduct systematic HARA for safety-critical modules.' },
-  { title: '15+ Years of Proven Delivery', desc: 'We have been building automotive and embedded software since 2008 — across OEMs, Tier 1 suppliers, fleet operators, EV startups, and dealership groups.' },
-  { title: 'Full-Stack Automotive Team', desc: 'Embedded firmware, cloud backend, real-time data pipelines, mobile apps, and web dashboards — your entire automotive software product delivered by a single accountable team.' },
+  { title: '15+ Years of Proven Delivery', desc: 'We have been building automotive and embedded software since 2008 - across OEMs, Tier 1 suppliers, fleet operators, EV startups, and dealership groups.' },
+  { title: 'Full-Stack Automotive Team', desc: 'Embedded firmware, cloud backend, real-time data pipelines, mobile apps, and web dashboards - your entire automotive software product delivered by a single accountable team.' },
   { title: 'Secure OTA & Connected Vehicle', desc: 'We design OTA update infrastructure following TUF/Uptane standards with cryptographic signing, rollback protection, and delta update support for bandwidth-constrained vehicle environments.' },
-  { title: 'EV & ADAS-Ready Engineering', desc: 'From BMS integration and OCPP charging to computer vision pipelines and sensor fusion — our team has hands-on experience with the technology defining the next generation of vehicles.' },
+  { title: 'EV & ADAS-Ready Engineering', desc: 'From BMS integration and OCPP charging to computer vision pipelines and sensor fusion - our team has hands-on experience with the technology defining the next generation of vehicles.' },
   { title: 'US / UK / AU / EU Expertise', desc: 'We serve OEMs, Tier 1 suppliers, fleet operators, and automotive startups across North America, Europe, and Australia, adapting to FMVSS, UN R155/R156, and regional homologation requirements.' },
   { title: 'Transparent, Milestone-Based Delivery', desc: 'Fortnightly demos, weekly status reports, and full source code access from day one. No black boxes. No surprises at invoice time. Full IP ownership retained by the client.' },
 ];
 
 const FAQS = [
   { q: 'Do you develop ISO 26262 functional safety-compliant automotive software?', a: 'Yes. We develop automotive software following ISO 26262 functional safety standards and ASPICE process frameworks. Our engineers are experienced in AUTOSAR-compliant ECU software, MISRA C/C++ coding guidelines, hardware-in-the-loop (HIL) testing, and systematic hazard analysis and risk assessment (HARA). We also support ISO/SAE 21434 automotive cybersecurity requirements for connected vehicle components.' },
-  { q: 'Can you build connected vehicle and telematics platforms integrating CAN bus and OBD-II?', a: 'Yes. We have delivered connected vehicle platforms integrating OBD-II/CAN bus, GPS, real-time telemetry streaming via MQTT and Kafka, cloud ingestion on AWS IoT and Azure IoT Hub, and driver behaviour analytics dashboards. We handle the full stack — from embedded firmware and protocol parsing to cloud backend, real-time pipelines, and mobile/web dashboards.' },
-  { q: 'How long does automotive software development take?', a: 'Timelines depend on complexity. A fleet management MVP typically takes 12–18 weeks. A dealership management system takes 16–24 weeks. An EV CSMS with OCPP compliance takes 16–20 weeks. ADAS feature development varies significantly based on sensor suite and safety certification requirements — typically 6–18 months. We provide milestone-based estimates after a technical discovery phase.' },
+  { q: 'Can you build connected vehicle and telematics platforms integrating CAN bus and OBD-II?', a: 'Yes. We have delivered connected vehicle platforms integrating OBD-II/CAN bus, GPS, real-time telemetry streaming via MQTT and Kafka, cloud ingestion on AWS IoT and Azure IoT Hub, and driver behaviour analytics dashboards. We handle the full stack - from embedded firmware and protocol parsing to cloud backend, real-time pipelines, and mobile/web dashboards.' },
+  { q: 'How long does automotive software development take?', a: 'Timelines depend on complexity. A fleet management MVP typically takes 12–18 weeks. A dealership management system takes 16–24 weeks. An EV CSMS with OCPP compliance takes 16–20 weeks. ADAS feature development varies significantly based on sensor suite and safety certification requirements - typically 6–18 months. We provide milestone-based estimates after a technical discovery phase.' },
   { q: 'Do you develop software for electric vehicles (EVs) and charging infrastructure?', a: 'Yes. We develop EV-specific software including BMS telemetry interfaces, OCPP 1.6/2.0.1-compliant charging station management systems (CSMS), dynamic load balancing, range prediction algorithms, energy consumption analytics, OTA firmware update platforms, and EV fleet dashboards. We have delivered solutions for both BEV and PHEV architectures across charging network operators and automotive OEMs.' },
-  { q: 'Which engagement model is best for an automotive software project?', a: 'For long-term automotive product development — connected vehicle platforms, fleet software, or ADAS features — the Dedicated Team model works best. You get a full-stack team with embedded, cloud, and mobile expertise. For well-defined modules like a DMS or a specific API integration, Fixed Price gives cost certainty. Time & Material suits R&D and sensor integration work where requirements evolve with hardware testing results.' },
+  { q: 'Which engagement model is best for an automotive software project?', a: 'For long-term automotive product development - connected vehicle platforms, fleet software, or ADAS features - the Dedicated Team model works best. You get a full-stack team with embedded, cloud, and mobile expertise. For well-defined modules like a DMS or a specific API integration, Fixed Price gives cost certainty. Time & Material suits R&D and sensor integration work where requirements evolve with hardware testing results.' },
   { q: 'Do you support AUTOSAR Classic and Adaptive platform development?', a: 'Yes. We have experience with AUTOSAR Classic for body electronics, powertrain, and chassis ECU development, and AUTOSAR Adaptive for high-performance compute platforms running ADAS and connected services. We configure BSW stacks, develop SWCs compliant with AUTOSAR methodology, and integrate with toolchains including Vector CANoe, ETAS, and dSPACE.' },
   { q: 'Can you build V2X communication and smart mobility software?', a: 'Yes. We develop V2X communication software covering V2I (vehicle-to-infrastructure), V2V (vehicle-to-vehicle), V2P (vehicle-to-pedestrian), and V2N (vehicle-to-network) protocols using both DSRC (IEEE 802.11p) and C-V2X (LTE-V/5G-V2X) standards. We also develop roadside unit (RSU) backends and smart traffic management integrations.' },
-  { q: 'Do you offer post-launch support and OTA update management for automotive software?', a: 'Yes — all projects include a 30-day hypercare period post-launch. We provide OTA firmware and software update management following TUF/Uptane standards, real-time fleet monitoring and alerting, intrusion detection system management, security patch delivery, and tiered SLA-backed engineering support. Our Enterprise plan offers 24/7 coverage with a 4-hour critical response SLA.' },
+  { q: 'Do you offer post-launch support and OTA update management for automotive software?', a: 'Yes - all projects include a 30-day hypercare period post-launch. We provide OTA firmware and software update management following TUF/Uptane standards, real-time fleet monitoring and alerting, intrusion detection system management, security patch delivery, and tiered SLA-backed engineering support. Our Enterprise plan offers 24/7 coverage with a 4-hour critical response SLA.' },
 ];
 
 /* ─── Hooks ──────────────────────────────────────────────────── */
@@ -300,10 +300,10 @@ export default function AutomotiveSoftwareSolutions() {
     <>
       <Head>
         <title>Automotive Software Development Company | 1Solutions</title>
-        <meta name="description" content="Custom automotive software development — connected vehicle platforms, ADAS, fleet management, EV software, IVI systems & dealership management." />
+        <meta name="description" content="Custom automotive software development - connected vehicle platforms, ADAS, fleet management, EV software, IVI systems & dealership management." />
         <link rel="canonical" href="https://www.1solutions.biz/automotive-software-solutions/" />
         <meta property="og:title" content="Automotive Software Development Company | 1Solutions" />
-        <meta property="og:description" content="Custom automotive software — connected vehicles, ADAS, fleet management, EV software, telematics & dealership management systems. ISO 26262 | 15+ years | 60+ automotive clients." />
+        <meta property="og:description" content="Custom automotive software - connected vehicles, ADAS, fleet management, EV software, telematics & dealership management systems. ISO 26262 | 15+ years | 60+ automotive clients." />
         <meta property="og:url" content="https://www.1solutions.biz/automotive-software-solutions/" />
         <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
@@ -578,7 +578,7 @@ export default function AutomotiveSoftwareSolutions() {
         {/* ── HERO ── */}
         <section className="av-hero">
           <span className="av-eyebrow">Automotive Software Development Company</span>
-          <h1>Automotive Software Development — Connected, Intelligent &amp; Road-Ready</h1>
+          <h1>Automotive Software Development - Connected, Intelligent &amp; Road-Ready</h1>
           <p className="av-hero-desc">We engineer connected vehicle platforms, ADAS software, fleet management systems, EV solutions, and dealership management platforms for OEMs, Tier 1 suppliers, fleet operators, and automotive startups across the US, UK, Europe, and Australia.</p>
           <div className="av-trust-row">
             {['ISO 26262 Experience','AUTOSAR Compliant','15+ Years Experience','60+ Automotive Clients','Full-Stack Delivery'].map(b => (
@@ -630,7 +630,7 @@ export default function AutomotiveSoftwareSolutions() {
             <div className={`av-s-reveal${visibleSections.has('svc') ? ' av-revealed' : ''}`} ref={el => { sectionRefs.current['svc'] = el; }}>
               <span className="av-s-eyebrow">What We Build</span>
               <h2 id="av-svc-heading" className="av-s-title">Automotive Software Solutions We Deliver</h2>
-              <p className="av-s-desc" style={{ maxWidth: 720 }}>From connected vehicle telematics and ADAS features to fleet management, EV charging infrastructure, and dealership platforms — we engineer the full spectrum of automotive software with embedded, cloud, and mobile expertise.</p>
+              <p className="av-s-desc" style={{ maxWidth: 720 }}>From connected vehicle telematics and ADAS features to fleet management, EV charging infrastructure, and dealership platforms - we engineer the full spectrum of automotive software with embedded, cloud, and mobile expertise.</p>
             </div>
             <div className="av-svc-grid" ref={svcGridRef}>
               {visibleServices.map((s, i) => (
@@ -657,7 +657,7 @@ export default function AutomotiveSoftwareSolutions() {
             <div className={`av-s-reveal${visibleSections.has('stk') ? ' av-revealed' : ''}`} ref={el => { sectionRefs.current['stk'] = el; }}>
               <span className="av-s-eyebrow">The Automotive Tech Stack We Use</span>
               <h2 id="av-stack-heading" className="av-s-title">Technology Built for Automotive-Grade Reliability</h2>
-              <p className="av-s-desc" style={{ maxWidth: 680 }}>Every technology we use is selected for the determinism, safety integrity, and regulatory compliance that automotive software demands — from MISRA-compliant embedded code to OCPP-certified charging systems.</p>
+              <p className="av-s-desc" style={{ maxWidth: 680 }}>Every technology we use is selected for the determinism, safety integrity, and regulatory compliance that automotive software demands - from MISRA-compliant embedded code to OCPP-certified charging systems.</p>
             </div>
             <div className="av-stack-grid" ref={stackGridRef}>
               {TECH_STACK.map((grp, i) => (
@@ -713,7 +713,7 @@ export default function AutomotiveSoftwareSolutions() {
             <div className={`av-s-reveal${visibleSections.has('proc') ? ' av-revealed' : ''}`} ref={el => { sectionRefs.current['proc'] = el; }}>
               <span className="av-s-eyebrow">How We Deliver</span>
               <h2 id="av-proc-heading" className="av-s-title">Our Automotive Software Development Process</h2>
-              <p className="av-s-desc">A structured six-stage process designed for safety-critical automotive software — from requirements scoping and architecture design to HIL testing and production OTA deployment.</p>
+              <p className="av-s-desc">A structured six-stage process designed for safety-critical automotive software - from requirements scoping and architecture design to HIL testing and production OTA deployment.</p>
             </div>
             <div className="av-psteps">
               {PROCESS_STEPS.map((step, i) => (
@@ -784,13 +784,13 @@ export default function AutomotiveSoftwareSolutions() {
           <div className="av-contact-grid">
             <div>
               <h2 id="av-contact-heading" className="av-ctitle">Start Your Automotive Software Project</h2>
-              <p className="av-cdesc">Tell us about your product and we will schedule a free 60-minute technical discovery call with a senior automotive software architect. No sales pitch — just clear engineering guidance on what you need to build.</p>
+              <p className="av-cdesc">Tell us about your product and we will schedule a free 60-minute technical discovery call with a senior automotive software architect. No sales pitch - just clear engineering guidance on what you need to build.</p>
               <div className="av-cbenefits">
                 {[
                   ['✓', 'Free 60-minute discovery call with a senior automotive software architect'],
                   ['✓', 'Preliminary ISO 26262 / AUTOSAR / connectivity scoping at no charge'],
                   ['✓', 'Architecture recommendation and tech stack advice before you commit'],
-                  ['✓', 'NDA available on request — your product idea stays protected'],
+                  ['✓', 'NDA available on request - your product idea stays protected'],
                   ['✓', 'Response within 24 business hours from our automotive engineering team'],
                 ].map(([icon, text]) => (
                   <div className="av-cbenefit" key={text}>
@@ -859,7 +859,7 @@ export default function AutomotiveSoftwareSolutions() {
         <section className="av-faq" aria-labelledby="av-faq-heading">
           <div className="av-inner" style={{ maxWidth: 860 }}>
             <span className="av-s-eyebrow">FAQ</span>
-            <h2 id="av-faq-heading">Automotive Software Development — Frequently Asked Questions</h2>
+            <h2 id="av-faq-heading">Automotive Software Development - Frequently Asked Questions</h2>
             <p className="av-faq-sub">Everything you need to know about building ISO 26262-experienced, production-ready automotive software with 1Solutions.</p>
             <div className="av-faq-list">
               {FAQS.map((item, i) => (

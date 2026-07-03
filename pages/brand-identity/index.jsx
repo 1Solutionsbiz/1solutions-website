@@ -6,39 +6,39 @@ import Link from 'next/link';
 const SERVICES = [
   { n:'01', title:'Logo Design', desc:'Wordmarks, lettermarks, emblems, and combination marks crafted with full usage guidelines, colour variations, and scalability from favicon to billboard.', featured:false },
   { n:'02', title:'Brand Colour Palette', desc:'Primary, secondary, and accent colour systems with accessibility contrast ratios, hex/RGB/CMYK values, and dark-mode variants for every platform.', featured:true },
-  { n:'03', title:'Typography System', desc:'Font pairing, sizing scale, line-height hierarchy, and web/print usage rules — so every headline and body copy feels intentional and on-brand.', featured:false },
+  { n:'03', title:'Typography System', desc:'Font pairing, sizing scale, line-height hierarchy, and web/print usage rules - so every headline and body copy feels intentional and on-brand.', featured:false },
   { n:'04', title:'Brand Guidelines Document', desc:'Comprehensive 30–80 page PDF covering every usage scenario: logo clearspace, incorrect usage examples, colour on dark/light backgrounds, and tone of voice.', featured:false },
   { n:'05', title:'Business Card & Stationery', desc:'Letterhead, envelope, email signature, and business card designs that extend your brand into every physical touchpoint.', featured:false },
-  { n:'06', title:'Social Media Brand Kit', desc:'Profile images, banner templates, and post templates sized for every platform — so your brand looks sharp across Instagram, LinkedIn, X, and beyond.', featured:false },
+  { n:'06', title:'Social Media Brand Kit', desc:'Profile images, banner templates, and post templates sized for every platform - so your brand looks sharp across Instagram, LinkedIn, X, and beyond.', featured:false },
   { n:'07', title:'Packaging & Print Design', desc:'Labels, boxes, brochures, pull-up banners, and display materials that carry your brand identity into the physical world with print-ready files.', featured:false },
-  { n:'08', title:'Brand Refresh & Evolution', desc:'Modernise an existing identity — refine the logo, update the palette, and elevate typography — while carefully preserving the brand equity you have built.', featured:false },
+  { n:'08', title:'Brand Refresh & Evolution', desc:'Modernise an existing identity - refine the logo, update the palette, and elevate typography - while carefully preserving the brand equity you have built.', featured:false },
 ];
 
 const FAQS = [
   { q:'What is included in a brand identity package?', a:'A full brand identity package from 1Solutions includes a logo suite (primary, secondary, and icon variants), brand colour palette with accessibility ratios, typography system, brand guidelines document, and social media brand kit. We can also extend the package to include stationery, packaging, and presentation templates. Every deliverable is provided in editable source files plus export-ready formats.' },
-  { q:'How long does a brand identity project take?', a:'A standard brand identity project — logo through to brand guidelines — typically takes 4–6 weeks from kick-off to final delivery. Projects requiring packaging, stationery, or extensive print collateral can extend to 8–10 weeks. We share a detailed timeline in the proposal stage and provide progress updates at every milestone so you are never left wondering where things stand.' },
-  { q:'Do you provide editable source files?', a:'Yes, always. Every deliverable is handed over in fully editable source files — Adobe Illustrator (.ai), Adobe InDesign (.indd), and Figma, depending on what was used during production. We also provide export packages in PNG, SVG, PDF, and JPEG in both RGB and CMYK colour modes, sized and named for common use cases.' },
-  { q:'Can you refresh our existing logo without a full rebrand?', a:'Absolutely. A logo refresh — sometimes called an evolution — is one of our most common engagements. We analyse what is working in your current mark, identify what is holding it back, and refine it rather than replace it. This preserves the brand recognition you have already built while modernising the visual presentation. The scope and cost is typically 40–60% of a new identity project.' },
+  { q:'How long does a brand identity project take?', a:'A standard brand identity project - logo through to brand guidelines - typically takes 4–6 weeks from kick-off to final delivery. Projects requiring packaging, stationery, or extensive print collateral can extend to 8–10 weeks. We share a detailed timeline in the proposal stage and provide progress updates at every milestone so you are never left wondering where things stand.' },
+  { q:'Do you provide editable source files?', a:'Yes, always. Every deliverable is handed over in fully editable source files - Adobe Illustrator (.ai), Adobe InDesign (.indd), and Figma, depending on what was used during production. We also provide export packages in PNG, SVG, PDF, and JPEG in both RGB and CMYK colour modes, sized and named for common use cases.' },
+  { q:'Can you refresh our existing logo without a full rebrand?', a:'Absolutely. A logo refresh - sometimes called an evolution - is one of our most common engagements. We analyse what is working in your current mark, identify what is holding it back, and refine it rather than replace it. This preserves the brand recognition you have already built while modernising the visual presentation. The scope and cost is typically 40–60% of a new identity project.' },
   { q:'What file formats do you deliver?', a:'We deliver a complete file package: vector formats (SVG, AI, EPS, PDF) for scalability, raster formats (PNG with transparent background, JPEG) at multiple resolutions (72 dpi web, 150 dpi screen, 300 dpi print), and Figma components for digital teams. All files are colour-separated into RGB, CMYK, and Pantone variants where applicable.' },
-  { q:'Do you work with startups as well as established businesses?', a:'Yes — we work with clients at every stage, from pre-launch startups building their identity from scratch to established businesses with 20+ years of history looking to modernise. For startups, we offer focused brand starter packages that prioritise the essential deliverables. For established businesses, we offer comprehensive brand audits before recommending the most strategic path forward.' },
+  { q:'Do you work with startups as well as established businesses?', a:'Yes - we work with clients at every stage, from pre-launch startups building their identity from scratch to established businesses with 20+ years of history looking to modernise. For startups, we offer focused brand starter packages that prioritise the essential deliverables. For established businesses, we offer comprehensive brand audits before recommending the most strategic path forward.' },
 ];
 
 const WHY = [
-  { icon:<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>, title:'Research-Led Strategy', desc:'Every brand decision is rooted in audience research, competitor analysis, and market positioning — not personal preference or aesthetic trends.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>, title:'Comprehensive Guidelines', desc:'We deliver brand guidelines that actually get used — clear, visual, and actionable enough that any designer, printer, or developer can apply them correctly.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>, title:'Multi-Industry Experience', desc:'300+ brand identities across 50+ industries — from B2B SaaS to consumer packaged goods to professional services. We know what works in your sector.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>, title:'Research-Led Strategy', desc:'Every brand decision is rooted in audience research, competitor analysis, and market positioning - not personal preference or aesthetic trends.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>, title:'Comprehensive Guidelines', desc:'We deliver brand guidelines that actually get used - clear, visual, and actionable enough that any designer, printer, or developer can apply them correctly.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>, title:'Multi-Industry Experience', desc:'300+ brand identities across 50+ industries - from B2B SaaS to consumer packaged goods to professional services. We know what works in your sector.' },
   { icon:<svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>, title:'Accessibility by Default', desc:'All colour palettes are tested for WCAG 2.2 AA contrast ratios at minimum. We ensure your brand works for every user, not just the majority.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg>, title:'Collaborative Process', desc:'You are involved at every key milestone — mood board review, concept presentation, refinement rounds — so the final identity feels authentically yours.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg>, title:'Collaborative Process', desc:'You are involved at every key milestone - mood board review, concept presentation, refinement rounds - so the final identity feels authentically yours.' },
   { icon:<svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>, title:'Long-Term Partnership', desc:'Brand identity is never truly finished. We stay available for extensions, seasonal campaigns, and product launches as your business evolves.' },
   { icon:<svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>, title:'On-Time Delivery', desc:'Structured project phases with fixed milestone dates. You will always know what is happening, what is next, and when you will see it.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>, title:'One Team, End to End', desc:'Strategy, design, and guidelines all produced by the same team — so nothing gets lost in translation between brand thinking and visual execution.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>, title:'One Team, End to End', desc:'Strategy, design, and guidelines all produced by the same team - so nothing gets lost in translation between brand thinking and visual execution.' },
 ];
 
 const PROCESS_STEPS = [
   { title:'Discovery & Research', desc:'We start by deeply understanding your business, audience, competitors, and aspirations. Brand questionnaires, stakeholder interviews, and market analysis form the strategic foundation everything else is built upon.' },
   { title:'Mood Boarding', desc:'We translate strategic insights into visual direction through curated mood boards. Multiple creative directions are presented so you can guide the aesthetic path before a single logo concept is drawn.' },
   { title:'Concept Design', desc:'Our design team creates two or three distinct logo concepts, each accompanied by a rationale explaining the thinking behind the mark, typeface choice, and colour direction.' },
-  { title:'Refinement', desc:'Your selected concept is refined across multiple rounds of feedback. We fine-tune proportions, spacing, weight, and colour until the mark is exactly right — then lock off the master logo suite.' },
+  { title:'Refinement', desc:'Your selected concept is refined across multiple rounds of feedback. We fine-tune proportions, spacing, weight, and colour until the mark is exactly right - then lock off the master logo suite.' },
   { title:'Guidelines & Delivery', desc:'We build the comprehensive brand guidelines document, produce the full file package, and hand everything over with a walk-through call to ensure your team can apply the brand with confidence from day one.' },
 ];
 
@@ -229,11 +229,11 @@ export default function BrandIdentityPage() {
     <>
       <Head>
         <title>Brand Identity Design | 1Solutions</title>
-        <meta name="description" content="1Solutions crafts brand identities that make you unmistakable — from logo mark to colour palette to typography system." />
+        <meta name="description" content="1Solutions crafts brand identities that make you unmistakable - from logo mark to colour palette to typography system." />
         <meta name="keywords" content="brand identity design, logo design, brand guidelines, typography system, colour palette design, brand refresh, brand design agency" />
         <link rel="canonical" href="https://www.1solutions.biz/brand-identity/" />
         <meta property="og:title" content="Brand Identity Design | Logo, Colours &amp; Typography Systems | 1Solutions" />
-        <meta property="og:description" content="We craft brand identities that resonate — logo, colour palette, typography, and guidelines — so your audience recognises and trusts you instantly." />
+        <meta property="og:description" content="We craft brand identities that resonate - logo, colour palette, typography, and guidelines - so your audience recognises and trusts you instantly." />
         <meta property="og:url" content="https://www.1solutions.biz/brand-identity/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
@@ -504,9 +504,9 @@ export default function BrandIdentityPage() {
         {/* ── HERO ── */}
         <div className="bi-hero-block">
           <div className="bi-hero-content">
-            <span className="bi-eyebrow">Brand Identity Design Agency — 16+ Years</span>
+            <span className="bi-eyebrow">Brand Identity Design Agency - 16+ Years</span>
             <h1>Brand Identity Design That Makes You Unmistakable</h1>
-            <p>We craft brand identities that resonate — from logo mark to colour palette to type system. Everything your audience needs to recognise and trust you instantly.</p>
+            <p>We craft brand identities that resonate - from logo mark to colour palette to type system. Everything your audience needs to recognise and trust you instantly.</p>
             <div className="bi-hero-badges">
               <span className="bi-badge">&#10003; 300+ Brands Crafted</span>
               <span className="bi-badge">&#10003; 50+ Industries</span>
@@ -554,7 +554,7 @@ export default function BrandIdentityPage() {
             <div className={`bi-section-reveal${visibleSections.has('services') ? ' bi-revealed' : ''}`} ref={el => { sectionRefs.current['services'] = el; }}>
               <span className="bi-section-eyebrow">What We Design</span>
               <h2 className="bi-section-title">Brand Identity Services We Offer</h2>
-              <p className="bi-section-desc">From the first logo concept to a comprehensive brand system — everything your business needs to show up consistently and confidently across every platform and touchpoint.</p>
+              <p className="bi-section-desc">From the first logo concept to a comprehensive brand system - everything your business needs to show up consistently and confidently across every platform and touchpoint.</p>
             </div>
             <div className="bi-services-grid" ref={serviceGridRef}>
               {SERVICES.map((s, i) => (
@@ -574,7 +574,7 @@ export default function BrandIdentityPage() {
             <div className={`bi-section-reveal${visibleSections.has('why') ? ' bi-revealed' : ''}`} ref={el => { sectionRefs.current['why'] = el; }} style={{ textAlign:'center' }}>
               <span className="bi-section-eyebrow">Why 1Solutions</span>
               <h2 className="bi-section-title">Why Businesses Choose Us For Brand Identity</h2>
-              <p className="bi-section-desc" style={{ margin:'0 auto 0' }}>Strategy, design, and execution under one roof — with 16+ years of craft and a client retention rate that speaks for itself.</p>
+              <p className="bi-section-desc" style={{ margin:'0 auto 0' }}>Strategy, design, and execution under one roof - with 16+ years of craft and a client retention rate that speaks for itself.</p>
             </div>
             <div className="bi-why-grid" ref={whyGridRef}>
               {WHY.map((w, i) => (
@@ -596,7 +596,7 @@ export default function BrandIdentityPage() {
             <div className={`bi-section-reveal${visibleSections.has('process') ? ' bi-revealed' : ''}`} ref={el => { sectionRefs.current['process'] = el; }}>
               <span className="bi-process-eyebrow">OUR CREATIVE PROCESS</span>
               <h2 className="bi-process-title">How We Build Brand Identities That Last</h2>
-              <p className="bi-process-desc">Every brand identity we create follows a structured five-stage process — from deep discovery to final delivery. No shortcuts, no generic templates, no guesswork.</p>
+              <p className="bi-process-desc">Every brand identity we create follows a structured five-stage process - from deep discovery to final delivery. No shortcuts, no generic templates, no guesswork.</p>
             </div>
             <hr className="bi-process-divider" />
           </div>
@@ -632,9 +632,9 @@ export default function BrandIdentityPage() {
             </div>
             <div className="bi-testi-grid">
               {[
-                { initials:'LC', bg:'#7C3AED', text:'"1Solutions gave our startup an identity that looked like we\'d been around for 20 years. The logo is perfect, the colour system is so easy to apply, and the guidelines document has saved us hours on every new asset we create."', name:'Laura Chen', role:'Co-Founder, Elevate SaaS — Canada', featured:false },
-                { initials:'RP', bg:'#0F3460', text:'"We came to 1Solutions for a brand refresh after 12 years with the same logo. They found the perfect balance — modernised the mark, updated the palette, and everything still feels unmistakably us. Clients noticed immediately."', name:'Robert Pierce', role:'CEO, Meridian Advisory — USA', featured:true },
-                { initials:'AK', bg:'#5B21B6', text:'"The brand guidelines document they delivered is genuinely the best I\'ve seen — clear, visual, and comprehensive enough that our print supplier and our web team both work from the same document without any confusion."', name:'Aisha Khan', role:'Head of Marketing, NovaTech — Australia', featured:false },
+                { initials:'LC', bg:'#7C3AED', text:'"1Solutions gave our startup an identity that looked like we\'d been around for 20 years. The logo is perfect, the colour system is so easy to apply, and the guidelines document has saved us hours on every new asset we create."', name:'Laura Chen', role:'Co-Founder, Elevate SaaS - Canada', featured:false },
+                { initials:'RP', bg:'#0F3460', text:'"We came to 1Solutions for a brand refresh after 12 years with the same logo. They found the perfect balance - modernised the mark, updated the palette, and everything still feels unmistakably us. Clients noticed immediately."', name:'Robert Pierce', role:'CEO, Meridian Advisory - USA', featured:true },
+                { initials:'AK', bg:'#5B21B6', text:'"The brand guidelines document they delivered is genuinely the best I\'ve seen - clear, visual, and comprehensive enough that our print supplier and our web team both work from the same document without any confusion."', name:'Aisha Khan', role:'Head of Marketing, NovaTech - Australia', featured:false },
               ].map((t, i) => (
                 <div className={`bi-tcard${t.featured ? ' featured' : ''}`} key={t.name}>
                   <div className="bi-tcard-stars">★★★★★</div>
@@ -672,10 +672,10 @@ export default function BrandIdentityPage() {
               <div className="bi-merged-box">
                 <div>
                   {[
-                    { icon:<svg className="bi-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>, text:'All project details are confidential — NDA available on request.' },
+                    { icon:<svg className="bi-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>, text:'All project details are confidential - NDA available on request.' },
                     { icon:<svg className="bi-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>, text:'A senior brand designer personally reviews every brief.' },
-                    { icon:<svg className="bi-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>, text:'Response within 24 business hours — no automated replies.' },
-                    { icon:<svg className="bi-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>, text:'No obligation to proceed — just a genuine conversation.' },
+                    { icon:<svg className="bi-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>, text:'Response within 24 business hours - no automated replies.' },
+                    { icon:<svg className="bi-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>, text:'No obligation to proceed - just a genuine conversation.' },
                   ].map((b, i) => (
                     <div className="bi-benefit-item" key={i} style={{ marginBottom: i < 3 ? 14 : 0 }}>
                       <div className="bi-benefit-icon-wrap">{b.icon}</div>

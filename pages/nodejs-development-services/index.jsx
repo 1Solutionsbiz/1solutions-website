@@ -27,28 +27,28 @@ const SKILLS = [
   'Bull & BullMQ (Job Queues)', 'JWT & OAuth 2.0 Authentication', 'Docker & Kubernetes', 'AWS Lambda & Serverless',
 ];
 const MODELS = [
-  { title: 'Dedicated Node.js Team', desc: 'A dedicated backend team (1–3 engineers) committed to your product full-time — architecture, development, and DevOps included.', icon: '👥' },
-  { title: 'Node.js Consulting',     desc: 'Architecture review, code audit, performance optimisation, or migration planning — billed hourly or as a fixed-scope engagement.', icon: '🔍' },
-  { title: 'Managed Node.js Development', desc: 'Project-based delivery with fixed scope, timeline, and price — from API design to production deployment.', icon: '🚀' },
+  { title: 'Dedicated Node.js Team', desc: 'A dedicated backend team (1–3 engineers) committed to your product full-time - architecture, development, and DevOps included.', icon: '👥' },
+  { title: 'Node.js Consulting',     desc: 'Architecture review, code audit, performance optimisation, or migration planning - billed hourly or as a fixed-scope engagement.', icon: '🔍' },
+  { title: 'Managed Node.js Development', desc: 'Project-based delivery with fixed scope, timeline, and price - from API design to production deployment.', icon: '🚀' },
 ];
 const WHY = [
-  { h: 'Non-Blocking Performance',   b: 'We architect Node.js services to fully exploit the event loop — async/await throughout, efficient I/O handling, and zero blocking operations that would stall under load.' },
-  { h: 'API-First Development',      b: 'We design APIs before writing a line of implementation code — OpenAPI specs, contract testing, and versioning strategy agreed upfront so your frontends and mobile apps are never blocked.' },
-  { h: 'Real-Time Expertise',        b: 'WebSockets, Server-Sent Events, and Socket.io for live dashboards, chat, notifications, and collaborative tools — we\'ve built real-time systems handling 10,000+ concurrent connections.' },
-  { h: 'Scalability Built In',       b: 'Horizontal scaling, stateless service design, Redis-backed sessions, and queue-based job processing — so your Node.js services scale from 100 to 10 million requests without a rewrite.' },
-  { h: 'Full-Stack Capability',      b: 'Our Node.js engineers pair seamlessly with React and Next.js frontends — same team, same codebase conventions, faster delivery.' },
+  { h: 'Non-Blocking Performance',   b: 'We architect Node.js services to fully exploit the event loop - async/await throughout, efficient I/O handling, and zero blocking operations that would stall under load.' },
+  { h: 'API-First Development',      b: 'We design APIs before writing a line of implementation code - OpenAPI specs, contract testing, and versioning strategy agreed upfront so your frontends and mobile apps are never blocked.' },
+  { h: 'Real-Time Expertise',        b: 'WebSockets, Server-Sent Events, and Socket.io for live dashboards, chat, notifications, and collaborative tools - we\'ve built real-time systems handling 10,000+ concurrent connections.' },
+  { h: 'Scalability Built In',       b: 'Horizontal scaling, stateless service design, Redis-backed sessions, and queue-based job processing - so your Node.js services scale from 100 to 10 million requests without a rewrite.' },
+  { h: 'Full-Stack Capability',      b: 'Our Node.js engineers pair seamlessly with React and Next.js frontends - same team, same codebase conventions, faster delivery.' },
   { h: 'NDA & IP Security',          b: 'Full NDA and IP assignment signed before any access to your codebase, infrastructure, or business logic.' },
 ];
 const PROCESS = [
-  { n: '01', h: 'Architecture Design',          b: 'We design your API contracts, data models, service boundaries, and infrastructure before writing any code — preventing expensive rework later.' },
+  { n: '01', h: 'Architecture Design',          b: 'We design your API contracts, data models, service boundaries, and infrastructure before writing any code - preventing expensive rework later.' },
   { n: '02', h: 'Iterative Development',        b: 'Two-week sprints with working software at the end of each. APIs are documented in Swagger as they\'re built.' },
   { n: '03', h: 'Performance & Security Testing', b: 'Load testing with k6, security scanning with Snyk, and OWASP Top 10 review before any production deployment.' },
-  { n: '04', h: 'Deploy & Monitor',             b: 'CI/CD pipeline, Docker containerisation, and monitoring with Datadog or CloudWatch — with on-call support for the first 30 days post-launch.' },
+  { n: '04', h: 'Deploy & Monitor',             b: 'CI/CD pipeline, Docker containerisation, and monitoring with Datadog or CloudWatch - with on-call support for the first 30 days post-launch.' },
 ];
 const FAQS = [
   { q: 'What types of Node.js applications do you build?', a: 'REST and GraphQL APIs, real-time applications (chat, notifications, live dashboards), microservices, BFF (Backend for Frontend) layers, serverless functions (AWS Lambda, Vercel Edge), CLI tools, and full-stack applications with Next.js or React frontends.' },
-  { q: 'How does Node.js compare to other backend technologies?', a: 'Node.js excels at I/O-bound workloads — APIs, real-time data, and high-concurrency applications. Its non-blocking event loop handles thousands of simultaneous connections efficiently. For CPU-intensive tasks (image processing, ML inference), we use worker threads or offload to dedicated services.' },
-  { q: 'Can you migrate our existing backend to Node.js?', a: 'Yes. We migrate from PHP (Laravel, WordPress), Python (Django, Flask), Ruby on Rails, and Java Spring to Node.js — with feature parity testing, incremental migration using the strangler fig pattern, and zero-downtime cutovers.' },
+  { q: 'How does Node.js compare to other backend technologies?', a: 'Node.js excels at I/O-bound workloads - APIs, real-time data, and high-concurrency applications. Its non-blocking event loop handles thousands of simultaneous connections efficiently. For CPU-intensive tasks (image processing, ML inference), we use worker threads or offload to dedicated services.' },
+  { q: 'Can you migrate our existing backend to Node.js?', a: 'Yes. We migrate from PHP (Laravel, WordPress), Python (Django, Flask), Ruby on Rails, and Java Spring to Node.js - with feature parity testing, incremental migration using the strangler fig pattern, and zero-downtime cutovers.' },
   { q: 'Which databases do you work with?', a: 'MongoDB (with Mongoose), PostgreSQL and MySQL (with Prisma or TypeORM), Redis for caching and pub/sub, Elasticsearch for full-text search, and DynamoDB for serverless architectures.' },
   { q: 'Do you provide ongoing Node.js maintenance?', a: 'Yes. We offer maintenance retainers covering security updates, dependency upgrades, performance monitoring, bug fixes, and a set of development hours per month for feature improvements.' },
   { q: 'Do you sign NDAs?', a: 'Yes. NDA and IP assignment signed as standard before any access to your codebase or infrastructure.' },
@@ -83,7 +83,7 @@ export default function NodeJsDevelopmentServices() {
         { '@type': 'ListItem', position: 2, name: 'Node.js Development Services', item: 'https://www.1solutions.biz/nodejs-development-services/' },
       ]},
       { '@type': 'Service', name: 'Node.js Development Services', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Expert Node.js development from 1Solutions — REST APIs, GraphQL, real-time apps, and microservices for startups and enterprises.',
+        description: 'Expert Node.js development from 1Solutions - REST APIs, GraphQL, real-time apps, and microservices for startups and enterprises.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '114', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -148,7 +148,7 @@ export default function NodeJsDevelopmentServices() {
       </Head>
       <section className="njs-hero">
         <h1>Node.js Development Services<br/>Scalable APIs, Real-Time Apps &amp; Microservices</h1>
-        <p>We build high-performance Node.js backends, REST and GraphQL APIs, real-time applications, and microservices architectures — deployed on AWS, GCP, or Azure. 15+ years of server-side expertise trusted by startups and enterprises across the US, Canada, and Australia.</p>
+        <p>We build high-performance Node.js backends, REST and GraphQL APIs, real-time applications, and microservices architectures - deployed on AWS, GCP, or Azure. 15+ years of server-side expertise trusted by startups and enterprises across the US, Canada, and Australia.</p>
         <div className="njs-hero-btns">
           <Link href="/contact-us" className="njs-btn-primary">Get a Free Node.js Consultation →</Link>
           <Link href="/portfolio" className="njs-btn-outline">View Portfolio</Link>
@@ -157,7 +157,7 @@ export default function NodeJsDevelopmentServices() {
       <section className="njs-sec" ref={skR}>
         <div className="njs-wrap">
           <h2 className="njs-sec-title">Skills &amp; Tech Stack</h2>
-          <p className="njs-sec-sub">Our Node.js developers cover the full backend ecosystem — from REST APIs to real-time systems and serverless deployments.</p>
+          <p className="njs-sec-sub">Our Node.js developers cover the full backend ecosystem - from REST APIs to real-time systems and serverless deployments.</p>
           <div className="njs-skills">{SKILLS.map((s, i) => <span key={s} className={`njs-skill${skV ? ' njs-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>)}</div>
         </div>
       </section>
@@ -186,7 +186,7 @@ export default function NodeJsDevelopmentServices() {
       <section className="njs-sec njs-sec-alt" ref={prR}>
         <div className="njs-wrap">
           <h2 className="njs-sec-title">Our Development Process</h2>
-          <p className="njs-sec-sub">From architecture to production — a process that eliminates surprises.</p>
+          <p className="njs-sec-sub">From architecture to production - a process that eliminates surprises.</p>
           <div className="njs-process">{PROCESS.map((p, i) => <div key={p.n} className={`njs-step${prV ? ' njs-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}><div className="njs-step-n">{p.n}</div><h3>{p.h}</h3><p>{p.b}</p></div>)}</div>
         </div>
       </section>

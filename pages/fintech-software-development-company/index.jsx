@@ -18,7 +18,7 @@ const SCHEMA = {
       '@type': 'Service',
       name: 'Fintech Software Development',
       url: 'https://www.1solutions.biz/fintech-software-development-company/',
-      description: 'Custom fintech software development — PCI DSS-compliant digital banking, payment gateways, neobank platforms, investment apps, lending systems, InsurTech, RegTech, and blockchain solutions.',
+      description: 'Custom fintech software development - PCI DSS-compliant digital banking, payment gateways, neobank platforms, investment apps, lending systems, InsurTech, RegTech, and blockchain solutions.',
       provider: {
         '@type': 'Organization',
         name: '1Solutions',
@@ -32,12 +32,12 @@ const SCHEMA = {
     {
       '@type': 'FAQPage',
       mainEntity: [
-        { '@type': 'Question', name: 'Do you develop PCI DSS-compliant fintech software?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Every fintech engagement at 1Solutions is built to PCI DSS Level 1 requirements — the highest standard for payment security. This includes tokenisation, end-to-end encryption, network segmentation, vulnerability scanning, and penetration testing. We also implement KYC/AML compliance workflows, SOC 2 Type II controls, and GDPR data protection measures as required by jurisdiction.' } },
+        { '@type': 'Question', name: 'Do you develop PCI DSS-compliant fintech software?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Every fintech engagement at 1Solutions is built to PCI DSS Level 1 requirements - the highest standard for payment security. This includes tokenisation, end-to-end encryption, network segmentation, vulnerability scanning, and penetration testing. We also implement KYC/AML compliance workflows, SOC 2 Type II controls, and GDPR data protection measures as required by jurisdiction.' } },
         { '@type': 'Question', name: 'Can you integrate with banking APIs, SWIFT, and payment processors?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We have delivered integrations with Stripe, Braintree, Adyen, PayPal, Square, Razorpay, SWIFT GPI, Plaid, Yodlee, MX, and Open Banking APIs across the UK, EU, and Australia. We support ISO 20022, FIX Protocol, SEPA, ACH, BACS, and custom core banking system connectors via middleware layers.' } },
         { '@type': 'Question', name: 'How long does fintech software development take?', acceptedAnswer: { '@type': 'Answer', text: 'Timelines vary by scope. A payment gateway integration typically takes 6–10 weeks. A neobank MVP takes 16–24 weeks. A full lending platform or investment app can take 6–12 months. PCI DSS compliance QA and security testing add 4–6 weeks to any project. We provide milestone-based estimates after a paid discovery phase.' } },
         { '@type': 'Question', name: 'What security standards do you implement in fintech applications?', acceptedAnswer: { '@type': 'Answer', text: 'We implement PCI DSS Level 1, SOC 2 Type II, ISO 27001 controls, AML/KYC frameworks, OAuth 2.0/OpenID Connect, MFA/biometric authentication, AES-256 encryption at rest, TLS 1.3 in transit, OWASP ASVS Level 2/3 standards, fraud detection systems, and real-time transaction monitoring. All fintech products undergo independent penetration testing before launch.' } },
         { '@type': 'Question', name: 'Which engagement model is best for a fintech startup?', acceptedAnswer: { '@type': 'Answer', text: 'For most fintech startups, the Dedicated Team model gives the best outcomes. You get a full-stack team with fintech domain expertise working exclusively on your product at a fraction of US or UK hiring cost. You retain all IP and technical direction. The team scales as your funding and roadmap evolve.' } },
-        { '@type': 'Question', name: 'Do you offer post-launch support for fintech applications?', acceptedAnswer: { '@type': 'Answer', text: 'Yes — all projects include a 30-day hypercare period. Ongoing support is available in Standard (business hours, 48hr SLA), Professional (extended hours, 24hr SLA), and Enterprise (24/7, 2hr critical SLA) tiers. All plans include security patch management, PCI DSS re-assessment support, compliance monitoring, and quarterly feature reviews.' } },
+        { '@type': 'Question', name: 'Do you offer post-launch support for fintech applications?', acceptedAnswer: { '@type': 'Answer', text: 'Yes - all projects include a 30-day hypercare period. Ongoing support is available in Standard (business hours, 48hr SLA), Professional (extended hours, 24hr SLA), and Enterprise (24/7, 2hr critical SLA) tiers. All plans include security patch management, PCI DSS re-assessment support, compliance monitoring, and quarterly feature reviews.' } },
       ],
     },
   ],
@@ -47,7 +47,7 @@ const SCHEMA = {
 const SERVICES = [
   { n: '01', title: 'Digital Banking Platforms', desc: 'Full-featured core banking systems with current accounts, savings products, debit/credit card issuance, multi-currency support, and real-time transaction processing built for scale.' },
   { n: '02', title: 'Payment Gateway Development', desc: 'Secure, PCI DSS-compliant payment gateways with multi-acquirer routing, 3D Secure 2.0, tokenisation, split payments, and reconciliation dashboards for high-volume transactions.', feat: true },
-  { n: '03', title: 'Neobank & Challenger Bank Solutions', desc: 'End-to-end neobank platforms — account opening, KYC verification, virtual/physical cards, P2P transfers, savings pots, spending analytics, and Open Banking integrations.' },
+  { n: '03', title: 'Neobank & Challenger Bank Solutions', desc: 'End-to-end neobank platforms - account opening, KYC verification, virtual/physical cards, P2P transfers, savings pots, spending analytics, and Open Banking integrations.' },
   { n: '04', title: 'Investment & Trading Platforms', desc: 'Stock, ETF, crypto, and robo-advisor platforms with real-time market data, portfolio analytics, fractional investing, order management systems, and regulatory reporting.' },
   { n: '05', title: 'Personal Finance Management Apps', desc: 'Smart money management apps with account aggregation, expense categorisation, budget tracking, savings goals, bill prediction, and AI-powered financial insights.' },
   { n: '06', title: 'Lending & Loan Management Systems', desc: 'Automated lending platforms covering credit scoring, loan origination, underwriting, disbursement, repayment scheduling, collections, and regulatory reporting for banks and NBFCs.' },
@@ -121,10 +121,10 @@ const ENGAGEMENT_MODELS = [
     feat: true,
     icon: 'M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z',
     headline: 'Your offshore fintech engineering team. Full-time. Fully yours.',
-    desc: 'A dedicated squad of fintech specialists — PM, architect, frontend, backend, security engineer, and QA — working exclusively on your product at a fraction of US/UK hiring cost. You retain full IP ownership and technical direction.',
+    desc: 'A dedicated squad of fintech specialists - PM, architect, frontend, backend, security engineer, and QA - working exclusively on your product at a fraction of US/UK hiring cost. You retain full IP ownership and technical direction.',
     bestFor: ['Fintech startups scaling a platform', 'Long-term product development', 'Replacing or extending an in-house team', 'Complex, evolving financial products'],
     process: 'Team assembly → Onboarding → Weekly sprint delivery → Continuous roadmap',
-    timeline: 'Ongoing — scale up or down each quarter',
+    timeline: 'Ongoing - scale up or down each quarter',
   },
   {
     id: 'tm',
@@ -136,12 +136,12 @@ const ENGAGEMENT_MODELS = [
     desc: 'Billed on actual time and resources used. Best for R&D projects, complex third-party integrations, or products where regulatory requirements drive frequent scope changes.',
     bestFor: ['Proof-of-concept & R&D builds', 'Complex banking API integrations', 'Blockchain / DeFi exploration', 'Products with rapidly changing regulatory scope'],
     process: 'Sprint planning → Biweekly delivery → Iterative refinement → Transparent timesheets',
-    timeline: 'Start in 1 week — no lengthy onboarding',
+    timeline: 'Start in 1 week - no lengthy onboarding',
   },
 ];
 
 const PROCESS_STEPS = [
-  { num: '01', title: 'Discovery & Regulatory Scoping', desc: 'We map your business model, target jurisdiction, and regulatory obligations — PCI DSS, FCA, ASIC, FinCEN, or GDPR — and define a compliant architecture from day one.' },
+  { num: '01', title: 'Discovery & Regulatory Scoping', desc: 'We map your business model, target jurisdiction, and regulatory obligations - PCI DSS, FCA, ASIC, FinCEN, or GDPR - and define a compliant architecture from day one.' },
   { num: '02', title: 'Secure Architecture Design', desc: 'Our security architects design a PCI DSS / SOC 2-ready infrastructure with network segmentation, encryption strategy, secrets management, and access control frameworks.' },
   { num: '03', title: 'UI/UX Design for Financial Workflows', desc: 'We design frictionless onboarding flows, KYC journeys, trading dashboards, and payment interfaces that balance regulatory requirements with exceptional user experience.' },
   { num: '04', title: 'Agile Development & Integrations', desc: 'Two-week sprints with fortnightly demos. We integrate payment processors, banking APIs, identity providers, market data feeds, and fraud engines in parallel with feature development.' },
@@ -151,7 +151,7 @@ const PROCESS_STEPS = [
 
 const TESTIMONIALS = [
   {
-    text: "1Solutions built our neobank platform from scratch — account opening, card issuance, P2P transfers, and Open Banking integrations. They understood PSD2 inside out. We launched in 19 weeks and passed our FCA technical audit on the first submission.",
+    text: "1Solutions built our neobank platform from scratch - account opening, card issuance, P2P transfers, and Open Banking integrations. They understood PSD2 inside out. We launched in 19 weeks and passed our FCA technical audit on the first submission.",
     name: 'Daniel M.', role: 'CTO, Digital Challenger Bank (UK)', init: 'DM', bg: '#0F3460',
   },
   {
@@ -165,23 +165,23 @@ const TESTIMONIALS = [
 ];
 
 const WHY_CARDS = [
-  { title: 'PCI DSS-Native Development', desc: 'Security is built into the architecture from day one — not bolted on at the end. Every sprint includes a security review against PCI DSS and OWASP ASVS controls.' },
+  { title: 'PCI DSS-Native Development', desc: 'Security is built into the architecture from day one - not bolted on at the end. Every sprint includes a security review against PCI DSS and OWASP ASVS controls.' },
   { title: 'Deep Fintech Domain Expertise', desc: 'Our engineers have shipped digital banking, payment, lending, and investment platforms. We understand regulatory constraints, not just code.' },
-  { title: '15+ Years of Proven Delivery', desc: 'We have been building financial software since 2008 — through PSD2, open banking mandates, GDPR, and multiple technology cycles.' },
-  { title: 'Full-Stack Security Engineering', desc: 'Dedicated security engineers on every fintech project — threat modelling, SAST/DAST scanning, penetration testing, and compliance certification support.' },
+  { title: '15+ Years of Proven Delivery', desc: 'We have been building financial software since 2008 - through PSD2, open banking mandates, GDPR, and multiple technology cycles.' },
+  { title: 'Full-Stack Security Engineering', desc: 'Dedicated security engineers on every fintech project - threat modelling, SAST/DAST scanning, penetration testing, and compliance certification support.' },
   { title: 'Zero Payment Breaches', desc: 'Across 100+ fintech clients and 15+ years, we have maintained a zero-breach record on payment and financial data infrastructure we have built and managed.' },
-  { title: 'End-to-End Fintech Team', desc: 'PM, architect, frontend, backend, mobile, security, QA, and DevOps — every skill your fintech product needs, in a single accountable team.' },
+  { title: 'End-to-End Fintech Team', desc: 'PM, architect, frontend, backend, mobile, security, QA, and DevOps - every skill your fintech product needs, in a single accountable team.' },
   { title: 'US / UK / AU / CA Expertise', desc: 'We understand PCI DSS, FCA, ASIC, FinCEN, OSFI, and CDR open banking. Jurisdiction-specific compliance is part of our discovery process, not an afterthought.' },
   { title: 'Transparent, Milestone-Based Delivery', desc: 'Fortnightly demos, weekly status reports, and full source code access from day one. No black boxes. No surprises at invoice time.' },
 ];
 
 const FAQS = [
-  { q: 'Do you develop PCI DSS-compliant fintech software?', a: "Yes. Every fintech engagement at 1Solutions is architected to PCI DSS Level 1 — the highest payment security standard. This includes card data tokenisation, end-to-end AES-256 encryption, network segmentation, real-time fraud monitoring, vulnerability scanning, and annual penetration testing. We also implement KYC/AML workflows, SOC 2 Type II controls, and GDPR/FCA/ASIC compliance as required by jurisdiction." },
+  { q: 'Do you develop PCI DSS-compliant fintech software?', a: "Yes. Every fintech engagement at 1Solutions is architected to PCI DSS Level 1 - the highest payment security standard. This includes card data tokenisation, end-to-end AES-256 encryption, network segmentation, real-time fraud monitoring, vulnerability scanning, and annual penetration testing. We also implement KYC/AML workflows, SOC 2 Type II controls, and GDPR/FCA/ASIC compliance as required by jurisdiction." },
   { q: 'Can you integrate with Stripe, Adyen, Plaid, SWIFT, and existing banking APIs?', a: 'Yes. We have delivered integrations with Stripe, Adyen, Braintree, PayPal, Square, Razorpay, Worldpay, Plaid, Yodlee, MX, and Open Banking APIs across the UK, EU, US, and Australia. We support ISO 20022, SWIFT GPI, FIX Protocol, SEPA, ACH, BACS, and build custom middleware for proprietary core banking systems that lack a published API.' },
   { q: 'How long does fintech software development take?', a: 'Timelines depend on scope. A payment gateway integration typically takes 6–10 weeks. A neobank MVP (accounts, cards, notifications) takes 16–24 weeks. A full lending platform or investment app can take 6–12 months. PCI DSS compliance QA and security testing add 4–6 weeks to any project. We provide detailed milestone-based estimates after a paid discovery phase.' },
   { q: 'What security standards do you implement in fintech applications?', a: 'We implement PCI DSS Level 1, SOC 2 Type II, ISO 27001 controls, AML/KYC screening, OAuth 2.0/OpenID Connect, MFA and biometric authentication, AES-256 encryption at rest, TLS 1.3 in transit, OWASP ASVS Level 2/3, and real-time transaction anomaly detection. All fintech products undergo independent penetration testing and a security architecture review before launch.' },
-  { q: 'Which engagement model is best for a fintech startup?', a: "For most early-stage fintech startups, the Dedicated Team model delivers the best outcomes. You get a full-stack team with fintech domain expertise — PM, architect, frontend, backend, security engineer, QA — working exclusively on your product at significantly less than equivalent US or UK hiring cost. You direct the work and retain all IP. The team scales as your funding grows and your regulatory requirements evolve." },
-  { q: 'Do you offer post-launch support for fintech applications?', a: 'Yes — all projects include a 30-day hypercare period post-launch. Ongoing support is available in three tiers: Standard (business hours, 48hr SLA), Professional (extended hours, 24hr SLA), and Enterprise (24/7, 2hr critical SLA). All plans include security patch management, PCI DSS re-assessment support, compliance monitoring, performance alerts, and quarterly roadmap review calls.' },
+  { q: 'Which engagement model is best for a fintech startup?', a: "For most early-stage fintech startups, the Dedicated Team model delivers the best outcomes. You get a full-stack team with fintech domain expertise - PM, architect, frontend, backend, security engineer, QA - working exclusively on your product at significantly less than equivalent US or UK hiring cost. You direct the work and retain all IP. The team scales as your funding grows and your regulatory requirements evolve." },
+  { q: 'Do you offer post-launch support for fintech applications?', a: 'Yes - all projects include a 30-day hypercare period post-launch. Ongoing support is available in three tiers: Standard (business hours, 48hr SLA), Professional (extended hours, 24hr SLA), and Enterprise (24/7, 2hr critical SLA). All plans include security patch management, PCI DSS re-assessment support, compliance monitoring, performance alerts, and quarterly roadmap review calls.' },
   { q: 'Do you work with US, UK, Australian, and Canadian fintech companies?', a: 'Yes. The majority of our fintech clients are in the US (PCI DSS, FinCEN, OCC), UK (FCA, PSD2, open banking), Australia (ASIC, CDR, open banking), and Canada (FINTRAC, OSFI). We adapt our compliance and architecture frameworks per jurisdiction. Our team covers US and Australian-friendly hours with async communication for UK and European clients.' },
   { q: 'Can you build AI-powered fraud detection and credit scoring into fintech software?', a: "Yes. We have built real-time fraud detection systems using gradient boosting, neural networks, and rule-based engines operating at sub-100ms latency. We also develop alternative credit scoring models using transaction history, cash flow analysis, and behavioural data, as well as AI-powered AML transaction monitoring. We use TensorFlow, PyTorch, and scikit-learn on PCI DSS-compliant cloud infrastructure." },
 ];
@@ -300,10 +300,10 @@ export default function FintechSoftwareDevelopment() {
     <>
       <Head>
         <title>Fintech Software Development Company | 1Solutions</title>
-        <meta name="description" content="Custom fintech software development — PCI DSS-compliant digital banking, payment gateways, neobank platforms, investment apps & lending systems." />
+        <meta name="description" content="Custom fintech software development - PCI DSS-compliant digital banking, payment gateways, neobank platforms, investment apps & lending systems." />
         <link rel="canonical" href="https://www.1solutions.biz/fintech-software-development-company/" />
         <meta property="og:title" content="Fintech Software Development Company | 1Solutions" />
-        <meta property="og:description" content="PCI DSS-compliant fintech software development — digital banking, payment gateways, neobank, investment, lending & blockchain solutions. 15+ years, 100+ fintech clients." />
+        <meta property="og:description" content="PCI DSS-compliant fintech software development - digital banking, payment gateways, neobank, investment, lending & blockchain solutions. 15+ years, 100+ fintech clients." />
         <meta property="og:url" content="https://www.1solutions.biz/fintech-software-development-company/" />
         <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
@@ -578,7 +578,7 @@ export default function FintechSoftwareDevelopment() {
         {/* ── HERO ── */}
         <section className="ft-hero">
           <span className="ft-eyebrow">Fintech Software Development Company</span>
-          <h1>Custom Fintech Software Development — PCI DSS Compliant, Secure &amp; Scalable</h1>
+          <h1>Custom Fintech Software Development - PCI DSS Compliant, Secure &amp; Scalable</h1>
           <p className="ft-hero-desc">We design and build digital banking platforms, payment gateways, neobank solutions, investment apps, lending systems, InsurTech, and blockchain products for fintech startups, banks, and financial institutions across the US, UK, Australia, and Canada.</p>
           <div className="ft-trust-row">
             {['PCI DSS Compliant','SOC 2 Type II','15+ Years Experience','100+ Fintech Clients','End-to-End Development'].map(b => (
@@ -630,7 +630,7 @@ export default function FintechSoftwareDevelopment() {
             <div className={`ft-s-reveal${visibleSections.has('svc') ? ' ft-revealed' : ''}`} ref={el => { sectionRefs.current['svc'] = el; }}>
               <span className="ft-s-eyebrow">What We Build</span>
               <h2 id="ft-svc-heading" className="ft-s-title">Fintech Software Solutions We Deliver</h2>
-              <p className="ft-s-desc" style={{ maxWidth: 720 }}>From core digital banking and payment infrastructure to AI-powered lending, blockchain, and RegTech compliance platforms — we cover the full spectrum of financial technology with deep PCI DSS and regulatory expertise.</p>
+              <p className="ft-s-desc" style={{ maxWidth: 720 }}>From core digital banking and payment infrastructure to AI-powered lending, blockchain, and RegTech compliance platforms - we cover the full spectrum of financial technology with deep PCI DSS and regulatory expertise.</p>
             </div>
             <div className="ft-svc-grid" ref={svcGridRef}>
               {visibleServices.map((s, i) => (
@@ -657,7 +657,7 @@ export default function FintechSoftwareDevelopment() {
             <div className={`ft-s-reveal${visibleSections.has('stk') ? ' ft-revealed' : ''}`} ref={el => { sectionRefs.current['stk'] = el; }}>
               <span className="ft-s-eyebrow">The Fintech Tech Stack We Use</span>
               <h2 id="ft-stack-heading" className="ft-s-title">Technology Built for Financial-Grade Performance</h2>
-              <p className="ft-s-desc" style={{ maxWidth: 680 }}>Every tool in our stack is selected for security, regulatory compliance, and the sub-millisecond reliability that financial systems demand — from payment processing to real-time fraud detection.</p>
+              <p className="ft-s-desc" style={{ maxWidth: 680 }}>Every tool in our stack is selected for security, regulatory compliance, and the sub-millisecond reliability that financial systems demand - from payment processing to real-time fraud detection.</p>
             </div>
             <div className="ft-stack-grid" ref={stackGridRef}>
               {TECH_STACK.map((grp, i) => (
@@ -713,7 +713,7 @@ export default function FintechSoftwareDevelopment() {
             <div className={`ft-s-reveal${visibleSections.has('proc') ? ' ft-revealed' : ''}`} ref={el => { sectionRefs.current['proc'] = el; }}>
               <span className="ft-s-eyebrow">How We Deliver</span>
               <h2 id="ft-proc-heading" className="ft-s-title">Our Fintech Development Process</h2>
-              <p className="ft-s-desc">A structured six-stage process designed for compliance-first financial software — from regulatory scoping to production monitoring.</p>
+              <p className="ft-s-desc">A structured six-stage process designed for compliance-first financial software - from regulatory scoping to production monitoring.</p>
             </div>
             <div className="ft-psteps">
               {PROCESS_STEPS.map((step, i) => (
@@ -784,13 +784,13 @@ export default function FintechSoftwareDevelopment() {
           <div className="ft-contact-grid">
             <div>
               <h2 id="ft-contact-heading" className="ft-ctitle">Start Your Fintech Project</h2>
-              <p className="ft-cdesc">Tell us about your product and we will schedule a free 60-minute discovery call with a senior fintech architect. No sales pitch — just technical clarity on what you need to build and how to build it compliantly.</p>
+              <p className="ft-cdesc">Tell us about your product and we will schedule a free 60-minute discovery call with a senior fintech architect. No sales pitch - just technical clarity on what you need to build and how to build it compliantly.</p>
               <div className="ft-cbenefits">
                 {[
                   ['✓', 'Free 60-minute discovery call with a senior fintech architect'],
                   ['✓', 'Preliminary PCI DSS / regulatory scoping at no charge'],
                   ['✓', 'Architecture recommendation and tech stack advice before you commit'],
-                  ['✓', 'NDA available on request — your idea stays protected'],
+                  ['✓', 'NDA available on request - your idea stays protected'],
                   ['✓', 'Response within 24 business hours from our fintech team'],
                 ].map(([icon, text]) => (
                   <div className="ft-cbenefit" key={text}>
@@ -859,7 +859,7 @@ export default function FintechSoftwareDevelopment() {
         <section className="ft-faq" aria-labelledby="ft-faq-heading">
           <div className="ft-inner" style={{ maxWidth: 860 }}>
             <span className="ft-s-eyebrow">FAQ</span>
-            <h2 id="ft-faq-heading">Fintech Development — Frequently Asked Questions</h2>
+            <h2 id="ft-faq-heading">Fintech Development - Frequently Asked Questions</h2>
             <p className="ft-faq-sub">Everything you need to know about building PCI DSS-compliant, production-ready fintech software with 1Solutions.</p>
             <div className="ft-faq-list">
               {FAQS.map((item, i) => (

@@ -1,13 +1,13 @@
 /**
- * OG Image Generator — /api/og-image
+ * OG Image Generator - /api/og-image
  * 1200×630 branded featured images for WordPress blog posts.
  *
- * Banner (banner-1sol.jpg) is embedded as base64 — no CDN fetch, no cache issues.
+ * Banner (banner-1sol.jpg) is embedded as base64 - no CDN fetch, no cache issues.
  * Overlays only the post title in bold white, centered, 200px padding each side.
  *
  * Query params:
- *   title  — blog post title (URL-encoded)
- *   secret — must match OG_SECRET env var
+ *   title  - blog post title (URL-encoded)
+ *   secret - must match OG_SECRET env var
  */
 
 import { ImageResponse } from 'next/og';

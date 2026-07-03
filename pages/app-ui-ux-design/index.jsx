@@ -3,14 +3,14 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const SERVICES = [
-  { n: '01', title: 'User Research & Persona Development', desc: 'We interview real users, analyse behavioural data, and build evidence-based personas — so design decisions are grounded in how your users actually think and behave.' },
-  { n: '02', title: 'UX Strategy & Information Architecture', desc: 'App structure, navigation systems, feature hierarchy, and user flow maps — establishing the skeleton of the experience before any visual design begins.' },
-  { n: '03', title: 'Wireframing & User Flow Mapping', desc: 'Low-fidelity wireframes and clickable user flows that prove the experience works before committing to high-fidelity design — cheap to change, expensive to skip.' },
-  { n: '04', title: 'High-Fidelity UI Design', desc: 'Pixel-perfect screen designs for iOS and Android — following platform conventions (HIG, Material Design) while expressing your brand identity through every pixel.' },
-  { n: '05', title: 'Interactive Prototyping', desc: 'Realistic clickable prototypes in Figma that stakeholders can navigate, investors can demo, and developers can reference — before a single line of code is written.' },
+  { n: '01', title: 'User Research & Persona Development', desc: 'We interview real users, analyse behavioural data, and build evidence-based personas - so design decisions are grounded in how your users actually think and behave.' },
+  { n: '02', title: 'UX Strategy & Information Architecture', desc: 'App structure, navigation systems, feature hierarchy, and user flow maps - establishing the skeleton of the experience before any visual design begins.' },
+  { n: '03', title: 'Wireframing & User Flow Mapping', desc: 'Low-fidelity wireframes and clickable user flows that prove the experience works before committing to high-fidelity design - cheap to change, expensive to skip.' },
+  { n: '04', title: 'High-Fidelity UI Design', desc: 'Pixel-perfect screen designs for iOS and Android - following platform conventions (HIG, Material Design) while expressing your brand identity through every pixel.' },
+  { n: '05', title: 'Interactive Prototyping', desc: 'Realistic clickable prototypes in Figma that stakeholders can navigate, investors can demo, and developers can reference - before a single line of code is written.' },
   { n: '06', title: 'Design System & Component Library', desc: 'A documented, reusable component library that ensures visual consistency across every screen, speeds up development, and scales with your product over time.' },
-  { n: '07', title: 'Usability Testing & Iteration', desc: 'Moderated and unmoderated usability sessions with real users — identifying friction, confusion, and drop-off points before launch when fixes are still cheap.' },
-  { n: '08', title: 'Developer Handoff & Design QA', desc: 'Structured Figma handoff with annotations, spacing specs, and asset exports — plus design QA during development to ensure the built app matches the designs.' },
+  { n: '07', title: 'Usability Testing & Iteration', desc: 'Moderated and unmoderated usability sessions with real users - identifying friction, confusion, and drop-off points before launch when fixes are still cheap.' },
+  { n: '08', title: 'Developer Handoff & Design QA', desc: 'Structured Figma handoff with annotations, spacing specs, and asset exports - plus design QA during development to ensure the built app matches the designs.' },
 ];
 
 const TOOLS = [
@@ -21,53 +21,53 @@ const TOOLS = [
 
 const PROCESS = [
   { step: '01', title: 'Discovery & User Research', desc: 'Stakeholder workshops, competitive analysis, and user interviews to understand your audience, their goals, and the jobs your app needs to do for them.' },
-  { step: '02', title: 'Information Architecture & Flows', desc: 'We map app structure, navigation patterns, and core user journeys — validated in low-fidelity before any visual design investment is made.' },
+  { step: '02', title: 'Information Architecture & Flows', desc: 'We map app structure, navigation patterns, and core user journeys - validated in low-fidelity before any visual design investment is made.' },
   { step: '03', title: 'Wireframes & Concept Testing', desc: 'Grey-box wireframes for every screen, clickable in Figma, tested with real users to validate assumptions and surface UX issues early.' },
-  { step: '04', title: 'High-Fidelity Design & Prototype', desc: 'Full-colour, pixel-perfect screen designs and an interactive prototype — reviewed against your brand guidelines, accessibility standards, and platform conventions.' },
+  { step: '04', title: 'High-Fidelity Design & Prototype', desc: 'Full-colour, pixel-perfect screen designs and an interactive prototype - reviewed against your brand guidelines, accessibility standards, and platform conventions.' },
   { step: '05', title: 'Handoff, QA & Iteration', desc: 'Structured developer handoff with all specs and assets, followed by design QA during development sprints to ensure the build matches the intent.' },
 ];
 
 const WHY = [
-  { title: 'Design Rooted in Research', desc: 'We don\'t design by gut. Every major design decision is supported by user research, data, or validated assumption — reducing the risk of building beautiful features nobody uses.' },
-  { title: 'iOS & Android Native Expertise', desc: 'We design natively for each platform — following Apple\'s Human Interface Guidelines for iOS and Material Design for Android — so apps feel right, not just look right.' },
-  { title: 'Accessibility as Standard', desc: 'WCAG 2.1 AA compliance is built into every design. Proper contrast ratios, touch target sizes, readable typography, and screen reader annotations — included, not optional.' },
-  { title: 'Design-to-Development Alignment', desc: 'Our design team works closely with our React Native and mobile developers — producing handoff files that translate cleanly to code, not designs that look good in Figma but break in builds.' },
-  { title: 'Measurable Outcomes', desc: 'We tie design to metrics: task completion rate, time-on-task, session length, and conversion rate. Good UX is measurable — and we help you measure it.' },
+  { title: 'Design Rooted in Research', desc: 'We don\'t design by gut. Every major design decision is supported by user research, data, or validated assumption - reducing the risk of building beautiful features nobody uses.' },
+  { title: 'iOS & Android Native Expertise', desc: 'We design natively for each platform - following Apple\'s Human Interface Guidelines for iOS and Material Design for Android - so apps feel right, not just look right.' },
+  { title: 'Accessibility as Standard', desc: 'WCAG 2.1 AA compliance is built into every design. Proper contrast ratios, touch target sizes, readable typography, and screen reader annotations - included, not optional.' },
+  { title: 'Design-to-Development Alignment', desc: 'Our design team works closely with our React Native and mobile developers - producing handoff files that translate cleanly to code, not designs that look good in Figma but break in builds.' },
+  { title: 'Measurable Outcomes', desc: 'We tie design to metrics: task completion rate, time-on-task, session length, and conversion rate. Good UX is measurable - and we help you measure it.' },
   { title: 'Long-Term Design Partnership', desc: 'Most of our design clients work with us across multiple feature releases, not just the initial build. We become an embedded design partner who knows your product deeply.' },
 ];
 
 const FAQS = [
   {
     q: 'What is app UI/UX design and why does it matter?',
-    a: 'App UI/UX design is the discipline of designing how a mobile application looks (UI — User Interface) and how it works from the user\'s perspective (UX — User Experience). Good UI creates visual clarity and brand expression. Good UX ensures the app is intuitive, efficient, and enjoyable to use. Together, they directly impact your app\'s retention rate, conversion rate, App Store rating, and user satisfaction. Poor UX is the #1 reason users abandon apps — typically within the first three sessions. Investing in UX design before development prevents expensive rework after launch.',
+    a: 'App UI/UX design is the discipline of designing how a mobile application looks (UI - User Interface) and how it works from the user\'s perspective (UX - User Experience). Good UI creates visual clarity and brand expression. Good UX ensures the app is intuitive, efficient, and enjoyable to use. Together, they directly impact your app\'s retention rate, conversion rate, App Store rating, and user satisfaction. Poor UX is the #1 reason users abandon apps - typically within the first three sessions. Investing in UX design before development prevents expensive rework after launch.',
   },
   {
     q: 'What is the difference between UI design and UX design?',
-    a: 'UX design focuses on the structure, flow, and usability of an app — how users navigate, what information appears where, and how efficiently they can complete tasks. UX deliverables include user research, wireframes, user flows, and usability testing. UI design focuses on the visual execution — typography, colour, spacing, iconography, animation, and the overall aesthetic. Both are equally important: beautiful UI on a poorly structured UX leads to frustrated users; well-structured UX with poor UI leads to users who don\'t trust the app. The best results come from teams where both disciplines inform each other.',
+    a: 'UX design focuses on the structure, flow, and usability of an app - how users navigate, what information appears where, and how efficiently they can complete tasks. UX deliverables include user research, wireframes, user flows, and usability testing. UI design focuses on the visual execution - typography, colour, spacing, iconography, animation, and the overall aesthetic. Both are equally important: beautiful UI on a poorly structured UX leads to frustrated users; well-structured UX with poor UI leads to users who don\'t trust the app. The best results come from teams where both disciplines inform each other.',
   },
   {
     q: 'How much does app UI/UX design cost?',
-    a: 'App design costs depend on the scope and complexity. A focused UX/UI design engagement for a simple app (10–20 screens) typically starts from $8,000–$15,000. A mid-complexity app with custom interactions, design system creation, and usability testing rounds ranges from $15,000–$35,000. Full-scale design for a complex product with research, multiple user roles, and iterative testing can exceed $50,000. We provide a scoped quote after understanding your app\'s requirements — and design can be phased to match budget and timeline.',
+    a: 'App design costs depend on the scope and complexity. A focused UX/UI design engagement for a simple app (10–20 screens) typically starts from $8,000–$15,000. A mid-complexity app with custom interactions, design system creation, and usability testing rounds ranges from $15,000–$35,000. Full-scale design for a complex product with research, multiple user roles, and iterative testing can exceed $50,000. We provide a scoped quote after understanding your app\'s requirements - and design can be phased to match budget and timeline.',
   },
   {
     q: 'Do you design for both iOS and Android?',
-    a: 'Yes — we design for both platforms, following the respective platform conventions: Apple\'s Human Interface Guidelines (HIG) for iOS and Google\'s Material Design 3 for Android. While many apps share a common design language, we adapt navigation patterns, iconography, typography, and interaction behaviours to feel native on each platform. If you\'re building a cross-platform app in React Native or Flutter, we can design a unified system that respects both platforms\' conventions while maintaining visual consistency.',
+    a: 'Yes - we design for both platforms, following the respective platform conventions: Apple\'s Human Interface Guidelines (HIG) for iOS and Google\'s Material Design 3 for Android. While many apps share a common design language, we adapt navigation patterns, iconography, typography, and interaction behaviours to feel native on each platform. If you\'re building a cross-platform app in React Native or Flutter, we can design a unified system that respects both platforms\' conventions while maintaining visual consistency.',
   },
   {
     q: 'What tools do you use for app UI/UX design?',
-    a: 'Figma is our primary design tool for all UI/UX work — wireframes, high-fidelity designs, prototypes, component libraries, and developer handoff. We use FigJam for collaborative workshops and user flow mapping. For advanced interactions and motion design, we use Principle or ProtoPie. For usability testing, we use Maze (unmoderated) and UserTesting (moderated). For post-launch analytics, we can integrate with Hotjar, Mixpanel, or Amplitude to inform ongoing design iteration based on real user behaviour.',
+    a: 'Figma is our primary design tool for all UI/UX work - wireframes, high-fidelity designs, prototypes, component libraries, and developer handoff. We use FigJam for collaborative workshops and user flow mapping. For advanced interactions and motion design, we use Principle or ProtoPie. For usability testing, we use Maze (unmoderated) and UserTesting (moderated). For post-launch analytics, we can integrate with Hotjar, Mixpanel, or Amplitude to inform ongoing design iteration based on real user behaviour.',
   },
   {
     q: 'What is a design system and do I need one?',
-    a: 'A design system is a library of reusable UI components — buttons, inputs, cards, navigation, typography scales, colour tokens, spacing rules, and icons — documented and ready to use. It ensures visual consistency across every screen, dramatically speeds up both design and development time, and scales with your product as it grows. For apps with multiple screens or a roadmap of future features, a design system is a significant long-term investment. For very simple apps with a fixed scope, it may not be necessary — we\'ll advise based on your specific situation.',
+    a: 'A design system is a library of reusable UI components - buttons, inputs, cards, navigation, typography scales, colour tokens, spacing rules, and icons - documented and ready to use. It ensures visual consistency across every screen, dramatically speeds up both design and development time, and scales with your product as it grows. For apps with multiple screens or a roadmap of future features, a design system is a significant long-term investment. For very simple apps with a fixed scope, it may not be necessary - we\'ll advise based on your specific situation.',
   },
   {
     q: 'Do you conduct usability testing?',
-    a: 'Yes — usability testing is part of our standard UX process. We conduct both moderated sessions (live video calls where we observe users navigating the prototype and ask questions in real time) and unmoderated sessions (users complete tasks independently and we review recordings). Testing typically happens at the wireframe or prototype stage, before development begins — this is when changes are cheapest. We recruit participants matching your actual user profile, write task-based test scripts, and deliver a findings report with prioritised recommendations.',
+    a: 'Yes - usability testing is part of our standard UX process. We conduct both moderated sessions (live video calls where we observe users navigating the prototype and ask questions in real time) and unmoderated sessions (users complete tasks independently and we review recordings). Testing typically happens at the wireframe or prototype stage, before development begins - this is when changes are cheapest. We recruit participants matching your actual user profile, write task-based test scripts, and deliver a findings report with prioritised recommendations.',
   },
   {
     q: 'Can you redesign an existing app rather than design from scratch?',
-    a: 'Yes — app redesigns are a common engagement for us. The process starts with a UX audit of your existing app: reviewing analytics, conducting user interviews, and running a heuristic evaluation against established UX principles. This gives us a clear picture of what\'s working, what\'s not, and why. We then design improvements in prioritised phases — focusing on the highest-impact UX issues first. We can redesign the full app, specific user journeys, or individual feature areas depending on your budget and priorities.',
+    a: 'Yes - app redesigns are a common engagement for us. The process starts with a UX audit of your existing app: reviewing analytics, conducting user interviews, and running a heuristic evaluation against established UX principles. This gives us a clear picture of what\'s working, what\'s not, and why. We then design improvements in prioritised phases - focusing on the highest-impact UX issues first. We can redesign the full app, specific user journeys, or individual feature areas depending on your budget and priorities.',
   },
 ];
 
@@ -132,7 +132,7 @@ export default function AppUiUxDesign() {
       {
         '@type': 'Service',
         name: 'App UI/UX Design Services',
-        description: 'Mobile app UI/UX design — user research, wireframing, high-fidelity design, prototyping, design systems, and usability testing for iOS and Android apps.',
+        description: 'Mobile app UI/UX design - user research, wireframing, high-fidelity design, prototyping, design systems, and usability testing for iOS and Android apps.',
         provider: {
           '@type': 'Organization',
           name: '1Solutions',
@@ -157,13 +157,13 @@ export default function AppUiUxDesign() {
     <>
       <Head>
         <title>App UI/UX Design Services | Mobile App Design Agency | 1Solutions</title>
-        <meta name="description" content="Expert mobile app UI/UX design — user research, wireframing, high-fidelity design, prototyping & usability testing for iOS & Android. US, Canada & Australia." />
+        <meta name="description" content="Expert mobile app UI/UX design - user research, wireframing, high-fidelity design, prototyping & usability testing for iOS & Android. US, Canada & Australia." />
         <meta name="keywords" content="app ui ux design, mobile app design, ios app design, android app design, ux design agency, mobile app ux design, app design services" />
         <link rel="canonical" href="https://www.1solutions.biz/app-ui-ux-design" />
         <meta name="robots" content="index, follow" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="App UI/UX Design Services | 1Solutions" />
-        <meta property="og:description" content="Research-driven mobile app design for iOS & Android — wireframes, high-fidelity UI, prototypes & design systems. Design that converts users into loyal customers." />
+        <meta property="og:description" content="Research-driven mobile app design for iOS & Android - wireframes, high-fidelity UI, prototypes & design systems. Design that converts users into loyal customers." />
         <meta property="og:url" content="https://www.1solutions.biz/app-ui-ux-design" />
         <meta name="twitter:card" content="summary_large_image" />
         <script
@@ -283,7 +283,7 @@ export default function AppUiUxDesign() {
               Mobile Development
             </span>
             <h1 className="ux-hero-h1">App UI/UX Design Services That Turn Users Into Loyal Customers</h1>
-            <p className="ux-hero-sub">Research-driven mobile app design for iOS and Android — from user flows and wireframes to pixel-perfect UI, prototypes, and design systems. Built for engagement, retention, and conversion.</p>
+            <p className="ux-hero-sub">Research-driven mobile app design for iOS and Android - from user flows and wireframes to pixel-perfect UI, prototypes, and design systems. Built for engagement, retention, and conversion.</p>
             <div className="ux-hero-btns">
               <Link href="/contact-us" className="ux-btn-primary">
                 Start a Design Project
@@ -306,7 +306,7 @@ export default function AppUiUxDesign() {
           <div className="ux-services-inner">
             <span className="ux-section-eyebrow">What We Deliver</span>
             <h2 className="ux-section-title">App UI/UX Design Services</h2>
-            <p className="ux-section-desc">From first-session research through to developer handoff — complete mobile app design services that cover every stage of the product design process.</p>
+            <p className="ux-section-desc">From first-session research through to developer handoff - complete mobile app design services that cover every stage of the product design process.</p>
             <div className="ux-services-grid" ref={cardsRef}>
               {SERVICES.map((s, i) => (
                 <div key={s.n} className={`ux-service-card${visibleCards.includes(i) ? ' visible' : ''}`}>
@@ -323,7 +323,7 @@ export default function AppUiUxDesign() {
           <div className="ux-tools-inner">
             <span className="ux-section-eyebrow">Tools &amp; Standards</span>
             <h2 className="ux-section-title">Design Tools &amp; Frameworks</h2>
-            <p className="ux-section-desc">We use industry-standard tools and design against established platform guidelines — producing handoff files that translate cleanly into production code.</p>
+            <p className="ux-section-desc">We use industry-standard tools and design against established platform guidelines - producing handoff files that translate cleanly into production code.</p>
             <div className="ux-tools-grid">
               {TOOLS.map(t => <span key={t} className="ux-tool-pill">{t}</span>)}
             </div>
@@ -334,7 +334,7 @@ export default function AppUiUxDesign() {
           <div className="ux-process-inner">
             <span className="ux-section-eyebrow">How We Design</span>
             <h2 className="ux-section-title">Our App Design Process</h2>
-            <p className="ux-section-desc">A structured, validated design process that reduces risk — every phase produces artefacts that inform the next, with user feedback built in throughout.</p>
+            <p className="ux-section-desc">A structured, validated design process that reduces risk - every phase produces artefacts that inform the next, with user feedback built in throughout.</p>
             <div className="ux-process-steps">
               {PROCESS.map((p, i) => (
                 <div key={p.step} ref={el => { stepRefs.current[i] = el; }} className={`ux-process-step${visibleSteps.includes(i) ? ' visible' : ''}`}>
@@ -350,7 +350,7 @@ export default function AppUiUxDesign() {
           <div className="ux-why-inner">
             <span className="ux-section-eyebrow">Why 1Solutions</span>
             <h2 className="ux-section-title">Why Choose Us for App Design</h2>
-            <p className="ux-section-desc">Good design is not just beautiful screens — it&rsquo;s measurable impact on retention, conversion, and user satisfaction. Here&rsquo;s how we deliver that.</p>
+            <p className="ux-section-desc">Good design is not just beautiful screens - it&rsquo;s measurable impact on retention, conversion, and user satisfaction. Here&rsquo;s how we deliver that.</p>
             <div className="ux-why-grid" ref={whyRef}>
               {WHY.map((w, i) => (
                 <div key={w.title} className={`ux-why-card${visibleWhy.includes(i) ? ' visible' : ''}`}>
@@ -387,7 +387,7 @@ export default function AppUiUxDesign() {
           <div className="ux-cta-inner">
             <span className="ux-section-eyebrow" style={{ textAlign: 'center', display: 'block', marginBottom: 16 }}>Start Designing</span>
             <h2 className="ux-cta-title">Ready to Design an App Your Users Actually Love?</h2>
-            <p className="ux-cta-sub">Book a free 30-minute design consultation. We&rsquo;ll review your app concept, identify the highest UX risks, and outline a design approach — no obligation.</p>
+            <p className="ux-cta-sub">Book a free 30-minute design consultation. We&rsquo;ll review your app concept, identify the highest UX risks, and outline a design approach - no obligation.</p>
             <div className="ux-cta-btns">
               <Link href="/contact-us" className="ux-btn-primary">
                 Book a Free Design Consultation

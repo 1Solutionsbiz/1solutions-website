@@ -4,39 +4,39 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const SERVICES = [
-  { n:'01', title:'Custom Python Development', desc:'Bespoke Python applications built from scratch — scalable, maintainable, and aligned with your specific business logic and workflows.', featured:false },
-  { n:'02', title:'Django Web Development', desc:'Robust, secure web applications and portals built on Django — the batteries-included Python framework trusted by Instagram and Pinterest.', featured:true },
-  { n:'03', title:'Flask & FastAPI Development', desc:'Lightweight, high-performance REST APIs and microservices with Flask or FastAPI — ideal for modern SaaS products and mobile backends.', featured:false },
+  { n:'01', title:'Custom Python Development', desc:'Bespoke Python applications built from scratch - scalable, maintainable, and aligned with your specific business logic and workflows.', featured:false },
+  { n:'02', title:'Django Web Development', desc:'Robust, secure web applications and portals built on Django - the batteries-included Python framework trusted by Instagram and Pinterest.', featured:true },
+  { n:'03', title:'Flask & FastAPI Development', desc:'Lightweight, high-performance REST APIs and microservices with Flask or FastAPI - ideal for modern SaaS products and mobile backends.', featured:false },
   { n:'04', title:'Data Science & Analytics', desc:'Custom data pipelines, dashboards, and analytical models that turn raw data into actionable business intelligence using Pandas, NumPy, and Matplotlib.', featured:false },
   { n:'05', title:'Machine Learning & AI Solutions', desc:'End-to-end ML model development, training, and deployment using scikit-learn, TensorFlow, and PyTorch for classification, prediction, and NLP tasks.', featured:false },
-  { n:'06', title:'Python API Development', desc:'Secure, well-documented REST and GraphQL APIs built with Python — designed for performance, versioning, and seamless third-party integrations.', featured:false },
+  { n:'06', title:'Python API Development', desc:'Secure, well-documented REST and GraphQL APIs built with Python - designed for performance, versioning, and seamless third-party integrations.', featured:false },
   { n:'07', title:'Automation & Scripting', desc:'Reduce manual work with custom Python scripts that automate repetitive tasks, data entry, report generation, and internal workflows.', featured:false },
-  { n:'08', title:'Web Scraping & Data Extraction', desc:'Reliable scrapers and crawlers with BeautifulSoup and Scrapy to collect structured data from any website at scale — ethically and efficiently.', featured:false },
+  { n:'08', title:'Web Scraping & Data Extraction', desc:'Reliable scrapers and crawlers with BeautifulSoup and Scrapy to collect structured data from any website at scale - ethically and efficiently.', featured:false },
   { n:'09', title:'Python for DevOps & Cloud', desc:'Infrastructure automation, CI/CD pipelines, and cloud deployment scripts using Python with AWS Boto3, Azure SDK, and GCP libraries.', featured:false },
-  { n:'10', title:'Python CMS & E-Commerce', desc:'Full-featured web platforms on Wagtail or Django Oscar — scalable CMS and e-commerce solutions with a clean admin interface.', featured:false },
+  { n:'10', title:'Python CMS & E-Commerce', desc:'Full-featured web platforms on Wagtail or Django Oscar - scalable CMS and e-commerce solutions with a clean admin interface.', featured:false },
   { n:'11', title:'Python Migration & Modernisation', desc:'Migrate legacy codebases from PHP, Ruby, or Node.js to Python, or upgrade from Python 2 to Python 3 with zero disruption to your business.', featured:false },
-  { n:'12', title:'Python Support & Maintenance', desc:'Ongoing code reviews, bug fixes, performance tuning, and security patches — SLA-backed support plans so your Python applications run flawlessly.', featured:false },
+  { n:'12', title:'Python Support & Maintenance', desc:'Ongoing code reviews, bug fixes, performance tuning, and security patches - SLA-backed support plans so your Python applications run flawlessly.', featured:false },
 ];
 
 const FAQS = [
   { q:'What types of Python development services does 1Solutions offer?', a:'We offer end-to-end Python development including custom web applications with Django and Flask, REST API development with FastAPI, machine learning and AI solutions, data science and analytics pipelines, automation scripting, web scraping, and cloud DevOps automation. Whether you need a single microservice or a full-stack data platform, we scope and deliver the right solution.' },
-  { q:'How much does custom Python development cost?', a:'Custom Python projects typically start from $3,000 for straightforward automation tools or simple APIs, and range up to $30,000+ for enterprise-grade web platforms or ML pipelines with model training and deployment. Cost depends on complexity, integrations, infrastructure requirements, and timeline. We provide a detailed fixed-price quote after a free scoping call — no surprises.' },
+  { q:'How much does custom Python development cost?', a:'Custom Python projects typically start from $3,000 for straightforward automation tools or simple APIs, and range up to $30,000+ for enterprise-grade web platforms or ML pipelines with model training and deployment. Cost depends on complexity, integrations, infrastructure requirements, and timeline. We provide a detailed fixed-price quote after a free scoping call - no surprises.' },
   { q:'How long does a Python web application project take?', a:'A standard Django or Flask web application takes 4–8 weeks from kick-off to deployment. ML/AI projects involving data collection, model training, and API deployment typically take 8–16 weeks depending on data availability and model complexity. We share a detailed milestone timeline in the proposal and provide weekly status updates throughout.' },
-  { q:'Do you work with US, Canadian, and Australian clients remotely?', a:'Yes — we have delivered Python projects remotely for clients across the US, Canada, and Australia since 2008. We operate in your time zone, communicate via Slack and Loom, and maintain full transparency with regular demos and updates. Our 97% client retention rate reflects the quality of our remote collaboration.' },
+  { q:'Do you work with US, Canadian, and Australian clients remotely?', a:'Yes - we have delivered Python projects remotely for clients across the US, Canada, and Australia since 2008. We operate in your time zone, communicate via Slack and Loom, and maintain full transparency with regular demos and updates. Our 97% client retention rate reflects the quality of our remote collaboration.' },
   { q:'Can you integrate Python applications with our existing systems?', a:'Absolutely. We regularly build Python integrations with Salesforce, HubSpot, Stripe, AWS, Google Cloud, Azure, Shopify, QuickBooks, Twilio, and dozens of other platforms. We use secure REST/GraphQL APIs, webhooks, and data pipelines to ensure seamless data flow between your Python application and existing tools.' },
   { q:'What Python frameworks and libraries do your developers use?', a:'Our Python team works with Django, Flask, FastAPI, Celery, SQLAlchemy, Pandas, NumPy, scikit-learn, TensorFlow, PyTorch, Scrapy, BeautifulSoup, Pytest, and more. On the infrastructure side we use Docker, Kubernetes, AWS (EC2, Lambda, RDS, S3), GitHub Actions, and PostgreSQL/MySQL. We choose the right tool for the job, not the fashionable one.' },
   { q:'Do you build machine learning models and deploy them to production?', a:'Yes. We handle the full ML lifecycle: data collection and cleaning, exploratory data analysis, feature engineering, model training and evaluation, hyperparameter tuning, and deployment as a REST API (using FastAPI or Flask) or as a serverless function on AWS Lambda or Google Cloud Run. We also set up monitoring for model drift and performance degradation.' },
-  { q:'What makes 1Solutions different from freelance Python developers?', a:'Accountability, depth, and continuity. Unlike freelancers, we offer a dedicated team — a project manager, senior developer, and QA engineer — so your project never stalls. We follow documented development processes, maintain comprehensive test coverage, write clean code with proper documentation, and offer long-term maintenance plans. We are a business partner, not a one-off contractor.' },
+  { q:'What makes 1Solutions different from freelance Python developers?', a:'Accountability, depth, and continuity. Unlike freelancers, we offer a dedicated team - a project manager, senior developer, and QA engineer - so your project never stalls. We follow documented development processes, maintain comprehensive test coverage, write clean code with proper documentation, and offer long-term maintenance plans. We are a business partner, not a one-off contractor.' },
 ];
 
 const WHY = [
   { icon:<svg viewBox="0 0 24 24"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V17H7v2h10v-2h-4v-1.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>, title:'15+ Years of Python Expertise', desc:'Since 2008, our Python developers have shipped 300+ production applications across industries including fintech, healthtech, SaaS, and e-commerce.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>, title:'US, Canada & Australia Focused', desc:'We understand the compliance requirements, UX expectations, and technical standards of western markets — not just generic offshore delivery.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>, title:'US, Canada & Australia Focused', desc:'We understand the compliance requirements, UX expectations, and technical standards of western markets - not just generic offshore delivery.' },
   { icon:<svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>, title:'On-Time, On-Budget Delivery', desc:'Our structured Agile process (Discover → Define → Develop → Deploy) ensures projects are scoped correctly and delivered without scope creep or budget overruns.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>, title:'Security-First Development', desc:'Every application we build follows OWASP security standards — parameterised queries, input validation, JWT auth, encrypted secrets, and dependency auditing.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>, title:'Full-Stack Python Capability', desc:'From backend API to data pipeline to ML model deployment — all under one roof. Django, FastAPI, PostgreSQL, Redis, Docker, AWS — no handoffs, no finger-pointing.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>, title:'Security-First Development', desc:'Every application we build follows OWASP security standards - parameterised queries, input validation, JWT auth, encrypted secrets, and dependency auditing.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>, title:'Full-Stack Python Capability', desc:'From backend API to data pipeline to ML model deployment - all under one roof. Django, FastAPI, PostgreSQL, Redis, Docker, AWS - no handoffs, no finger-pointing.' },
   { icon:<svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>, title:'Dedicated Project Manager', desc:'No ticket queues. You get a dedicated PM who speaks plain English, understands your goals, tracks blockers daily, and keeps you updated in real time.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg>, title:'Test-Driven Development', desc:'We write unit, integration, and end-to-end tests with Pytest and Selenium — ensuring your code is maintainable, regression-free, and production-ready from day one.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg>, title:'Test-Driven Development', desc:'We write unit, integration, and end-to-end tests with Pytest and Selenium - ensuring your code is maintainable, regression-free, and production-ready from day one.' },
   { icon:<svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>, title:'Long-Term Partnership', desc:'97% client retention rate. We maintain your Python applications after launch with support plans, performance monitoring, and dedicated engineering retainers.' },
 ];
 
@@ -557,8 +557,8 @@ export default function PythonDevelopmentServices() {
         <div className="py-hero-block">
           <div className="py-hero-content">
             <span className="py-eyebrow">Expert Python Development Company</span>
-            <h1>Python Development Services — Build Smarter, Scale Faster</h1>
-            <p>From custom web applications and REST APIs to machine learning pipelines and automation tools — 1Solutions delivers production-grade Python solutions for businesses across the US, Canada, and Australia.</p>
+            <h1>Python Development Services - Build Smarter, Scale Faster</h1>
+            <p>From custom web applications and REST APIs to machine learning pipelines and automation tools - 1Solutions delivers production-grade Python solutions for businesses across the US, Canada, and Australia.</p>
             <Link href="#contact" className="py-btn-hero py-btn-hero-shimmer">Get a Free Consultation Now</Link>
           </div>
 
@@ -600,7 +600,7 @@ export default function PythonDevelopmentServices() {
             <div className={`py-section-reveal${visibleSections.has('services') ? ' py-revealed' : ''}`} ref={el => { sectionRefs.current['services'] = el; }}>
               <span className="py-section-eyebrow">Our Services</span>
               <h2 className="py-section-title">Python Development Services We Offer</h2>
-              <p className="py-section-desc">From lightweight automation scripts to enterprise-grade Django platforms and production ML systems — our Python experts deliver end-to-end solutions built for performance, security, and long-term maintainability.</p>
+              <p className="py-section-desc">From lightweight automation scripts to enterprise-grade Django platforms and production ML systems - our Python experts deliver end-to-end solutions built for performance, security, and long-term maintainability.</p>
             </div>
             <div className="py-services-grid">
               {visibleServices.map(s => (
@@ -624,7 +624,7 @@ export default function PythonDevelopmentServices() {
           <div className="py-tech-wrap">
             <div className={`py-tech-header py-section-reveal${visibleSections.has('tech') ? ' py-revealed' : ''}`} ref={el => { sectionRefs.current['tech'] = el; }}>
               <h2 className="py-tech-title">Our Python Technology Stack</h2>
-              <p className="py-tech-subtitle">We use battle-tested frameworks and libraries — chosen for reliability, community support, and production readiness.</p>
+              <p className="py-tech-subtitle">We use battle-tested frameworks and libraries - chosen for reliability, community support, and production readiness.</p>
             </div>
             <div className="py-tech-groups">
               {[
@@ -659,8 +659,8 @@ export default function PythonDevelopmentServices() {
           <div className="py-process-inner">
             <div className="py-process-steps">
               {[
-                ['Discover','We start with a free scoping call to understand your business goals, technical constraints, and data landscape. Our senior Python architect maps out the right stack and approach — before a single line of code is written.'],
-                ['Define','Together we define the full project scope, technical architecture, database schema, API contracts, and timeline. You approve the spec before development begins — no surprises, no scope creep.'],
+                ['Discover','We start with a free scoping call to understand your business goals, technical constraints, and data landscape. Our senior Python architect maps out the right stack and approach - before a single line of code is written.'],
+                ['Define','Together we define the full project scope, technical architecture, database schema, API contracts, and timeline. You approve the spec before development begins - no surprises, no scope creep.'],
                 ['Develop','Our Python team builds your solution in two-week sprints with daily standups, weekly demos, and a shared staging environment. Full test coverage, code reviews, and CI/CD pipelines from day one.'],
                 ['Deploy','We handle production deployment to your preferred cloud (AWS, GCP, Azure), configure monitoring and alerting, hand over full documentation, and provide post-launch support to ensure a smooth go-live.'],
               ].map(([title, desc], i) => (
@@ -699,9 +699,9 @@ export default function PythonDevelopmentServices() {
             </div>
             <div className="py-testi-grid" ref={testiGridRef}>
               {[
-                { initials:'AW', bg:'#1a4a7a', text:'"1Solutions built our entire data pipeline and analytics dashboard in Python. What used to take our team days to process now runs in minutes. Exceptional work and great communication throughout."', name:'Aaron Walsh', role:'Head of Data, FinCore Analytics — USA', featured:false },
-                { initials:'CM', bg:'#0F3460', text:'"We needed a complex Django REST API to power our mobile app. The team delivered clean, well-documented code on time and within budget. I have recommended them to three other founders already."', name:'Claire Morrison', role:'CTO, Healthify App — Australia', featured:true },
-                { initials:'BT', bg:'#2d5a8e', text:'"Their Python automation work saved us 40 hours of manual data entry every week. Fast, professional, and they actually understand our business processes. Will definitely use 1Solutions again."', name:'Blake Thompson', role:'Operations Manager, NorthTrade — Canada', featured:false },
+                { initials:'AW', bg:'#1a4a7a', text:'"1Solutions built our entire data pipeline and analytics dashboard in Python. What used to take our team days to process now runs in minutes. Exceptional work and great communication throughout."', name:'Aaron Walsh', role:'Head of Data, FinCore Analytics - USA', featured:false },
+                { initials:'CM', bg:'#0F3460', text:'"We needed a complex Django REST API to power our mobile app. The team delivered clean, well-documented code on time and within budget. I have recommended them to three other founders already."', name:'Claire Morrison', role:'CTO, Healthify App - Australia', featured:true },
+                { initials:'BT', bg:'#2d5a8e', text:'"Their Python automation work saved us 40 hours of manual data entry every week. Fast, professional, and they actually understand our business processes. Will definitely use 1Solutions again."', name:'Blake Thompson', role:'Operations Manager, NorthTrade - Canada', featured:false },
               ].map((t,i) => (
                 <div className={`py-tcard${t.featured?' featured':''}${visibleTestiCards.includes(i)?' py-tcard-visible':''}`} key={t.name}>
                   <div className="py-tcard-stars">★★★★★</div>
@@ -736,7 +736,7 @@ export default function PythonDevelopmentServices() {
             <div className={`py-section-reveal${visibleSections.has('why') ? ' py-revealed' : ''}`} ref={el => { sectionRefs.current['why'] = el; }} style={{ textAlign:'center',marginBottom:0 }}>
               <span className="py-section-eyebrow">Why 1Solutions</span>
               <h2 className="py-section-title">Why Businesses Choose Us for Python Development</h2>
-              <p className="py-section-sub" style={{ maxWidth:680,margin:'0 auto' }}>We don't just write Python code — we engineer reliable, scalable solutions. Here's what makes us different from freelancers and generic agencies.</p>
+              <p className="py-section-sub" style={{ maxWidth:680,margin:'0 auto' }}>We don't just write Python code - we engineer reliable, scalable solutions. Here's what makes us different from freelancers and generic agencies.</p>
             </div>
             <div className="py-why-grid" ref={whyGridRef}>
               {WHY.map((w, i) => (
@@ -768,11 +768,11 @@ export default function PythonDevelopmentServices() {
             </div>
             <div className="py-engage-right" ref={eCardsRef}>
               {[
-                { title:'Dedicated Team', desc:'Hire a full-time dedicated Python team — a senior developer, ML engineer, or data scientist working exclusively on your product with a dedicated project manager.', features:['Cost-effective Approach','Less Admin Overhead','Rapid Iteration','Timely Reporting'],
+                { title:'Dedicated Team', desc:'Hire a full-time dedicated Python team - a senior developer, ML engineer, or data scientist working exclusively on your product with a dedicated project manager.', features:['Cost-effective Approach','Less Admin Overhead','Rapid Iteration','Timely Reporting'],
                   icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> },
-                { title:'Fixed-Price', desc:'Ideal for clearly scoped Python projects — automation tools, APIs, data dashboards. We agree on deliverables, timeline, and cost upfront. No surprises.', features:['Full Budget Control','Easy Management','No Hidden Costs','On-time Delivery'],
+                { title:'Fixed-Price', desc:'Ideal for clearly scoped Python projects - automation tools, APIs, data dashboards. We agree on deliverables, timeline, and cost upfront. No surprises.', features:['Full Budget Control','Easy Management','No Hidden Costs','On-time Delivery'],
                   icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> },
-                { title:'Time & Material', desc:'For evolving Python projects — ML experiments, iterative product development, or ongoing data engineering. Pay only for hours worked with full visibility.', features:['Maximum Flexibility','Reduced Risk','Iterative Development','Full Transparency'],
+                { title:'Time & Material', desc:'For evolving Python projects - ML experiments, iterative product development, or ongoing data engineering. Pay only for hours worked with full visibility.', features:['Maximum Flexibility','Reduced Risk','Iterative Development','Full Transparency'],
                   icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> },
                 { title:'Offshore Development', desc:'Leverage our New Delhi-based Python team for significant cost savings. US/AU timezone overlap available. Expert developers at offshore rates without quality compromise.', features:['Access to Expert Talent','Shared Responsibility','Managed Team','Cost-Efficient'],
                   icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> },
@@ -804,9 +804,9 @@ export default function PythonDevelopmentServices() {
                 <div>
                   {[
                     { icon:<svg className="py-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>, text:'Your project details are confidential. We respect your privacy and sign NDAs on request.' },
-                    { icon:<svg className="py-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>, text:'A senior Python engineer reviews your requirements — not automated responses.' },
+                    { icon:<svg className="py-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>, text:'A senior Python engineer reviews your requirements - not automated responses.' },
                     { icon:<svg className="py-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>, text:'Response within 24 business hours with a detailed technical assessment.' },
-                    { icon:<svg className="py-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>, text:"Free scoping session — no obligation to proceed." },
+                    { icon:<svg className="py-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>, text:"Free scoping session - no obligation to proceed." },
                   ].map((b,i) => (
                     <div className="py-benefit-item" key={i} style={{ marginBottom: i < 3 ? 14 : 0 }}>
                       <div className="py-benefit-icon-wrap">{b.icon}</div>

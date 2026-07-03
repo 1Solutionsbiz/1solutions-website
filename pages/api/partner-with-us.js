@@ -49,7 +49,7 @@ export default async function handler(req, res) {
             ['Name', name],
             ['Company', company],
             ['Email', email],
-            ['Phone', phone || '—'],
+            ['Phone', phone || '-'],
             ['Partnership Type', type],
           ].map(([label, value]) => `
             <tr>
@@ -73,7 +73,7 @@ export default async function handler(req, res) {
       from: `"1Solutions Partnership" <contact@1solutions.biz>`,
       to: ['atul@1solutions.biz', 'info@1solutions.biz'],
       replyTo: email,
-      subject: `Partnership Enquiry: ${type} — ${name}, ${company}`,
+      subject: `Partnership Enquiry: ${type} - ${name}, ${company}`,
       html: htmlBody,
     });
   } catch (err) {

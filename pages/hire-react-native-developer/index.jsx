@@ -28,16 +28,16 @@ const SKILLS = [
   'Detox & Jest Testing', 'Fastlane & CI/CD', 'App Store & Play Store Deployment',
 ];
 const MODELS = [
-  { title: 'Dedicated Hire', desc: 'A full-time React Native developer committed to your app — 8 hrs/day, 5 days/week.', icon: '👤' },
+  { title: 'Dedicated Hire', desc: 'A full-time React Native developer committed to your app - 8 hrs/day, 5 days/week.', icon: '👤' },
   { title: 'Part-Time Hire', desc: 'Half-day engagement for iterative feature work, OTA releases, or native bridge tasks.', icon: '⏰' },
   { title: 'Hourly Hire',    desc: 'Flexible billing for performance profiling, bridge debugging, or burst sprint capacity.', icon: '🕐' },
 ];
 const WHY = [
-  { h: 'True Cross-Platform Expertise', b: 'Our React Native developers build apps that feel native on both iOS and Android — proper platform-specific UI patterns, gestures, and animations.' },
+  { h: 'True Cross-Platform Expertise', b: 'Our React Native developers build apps that feel native on both iOS and Android - proper platform-specific UI patterns, gestures, and animations.' },
   { h: 'Native Module Experience', b: 'When JavaScript is not enough, our developers write native modules in Swift/Objective-C and Kotlin/Java to bridge platform capabilities.' },
   { h: 'Profiles in 48 Hours', b: 'Submit your brief and receive 2-3 matched React Native developer CVs within two business days.' },
   { h: 'Performance-Optimised Delivery', b: 'We profile with Flipper and Instruments, eliminate unnecessary re-renders, and use Hermes + Reanimated for fluid 60/120 fps UI.' },
-  { h: 'Full Release Pipeline', b: 'From beta distribution on TestFlight and Firebase to production App Store and Play Store releases — we manage the full delivery cycle.' },
+  { h: 'Full Release Pipeline', b: 'From beta distribution on TestFlight and Firebase to production App Store and Play Store releases - we manage the full delivery cycle.' },
   { h: 'NDA & IP Security', b: 'Full NDA and IP assignment executed before any access to your codebase, designs, or developer accounts.' },
 ];
 const PROCESS = [
@@ -50,7 +50,7 @@ const FAQS = [
   { q: 'Should I use Expo or bare React Native CLI?', a: 'Expo is ideal for rapid development and standard features; the bare CLI gives full native module control. Our developers are fluent in both and can advise the best fit based on your feature set and timeline.' },
   { q: 'Can they integrate native iOS or Android modules?', a: 'Yes. When JavaScript APIs are insufficient, our developers write native modules in Swift/Objective-C for iOS and Kotlin/Java for Android, exposing them to the React Native layer via the bridge or JSI.' },
   { q: 'How do they handle over-the-air updates?', a: 'We integrate CodePush (App Center) or Expo Updates for OTA JavaScript bundle pushes, allowing bug-fixes and feature flags to ship without App Store review delays.' },
-  { q: 'Can they migrate our existing native iOS/Android app to React Native?', a: 'Yes. We have done brownfield integrations — embedding React Native screens into existing native apps — as well as full rewrites. We assess the best migration strategy based on your codebase size.' },
+  { q: 'Can they migrate our existing native iOS/Android app to React Native?', a: 'Yes. We have done brownfield integrations - embedding React Native screens into existing native apps - as well as full rewrites. We assess the best migration strategy based on your codebase size.' },
   { q: 'What is the minimum engagement period?', a: 'Our standard minimum is 4 weeks. This provides adequate time for onboarding, architecture alignment, and meaningful feature delivery.' },
   { q: 'Do you sign NDAs?', a: 'Yes. NDA and IP assignment agreements are signed as standard before any access to your project.' },
 ];
@@ -153,7 +153,7 @@ export default function HireReactNativeDeveloper() {
       </Head>
       <section className="hrnd-hero">
         <h1>Hire React Native Developers<br/>iOS &amp; Android from One Codebase</h1>
-        <p>Pre-vetted React Native engineers with native module experience — shipping polished cross-platform apps to the App Store and Google Play. Profiles in 48 hours.</p>
+        <p>Pre-vetted React Native engineers with native module experience - shipping polished cross-platform apps to the App Store and Google Play. Profiles in 48 hours.</p>
         <div className="hrnd-hero-btns">
           <Link href="/contact-us" className="hrnd-btn-primary">Hire a React Native Developer →</Link>
           <Link href="/portfolio" className="hrnd-btn-outline">View Portfolio</Link>
@@ -162,21 +162,21 @@ export default function HireReactNativeDeveloper() {
       <section className="hrnd-sec" ref={skR}>
         <div className="hrnd-wrap">
           <h2 className="hrnd-sec-title">Skills &amp; Tech Stack</h2>
-          <p className="hrnd-sec-sub">From Expo setup to native bridge modules — our React Native developers cover the full cross-platform stack.</p>
+          <p className="hrnd-sec-sub">From Expo setup to native bridge modules - our React Native developers cover the full cross-platform stack.</p>
           <div className="hrnd-skills">{SKILLS.map((s, i) => <span key={s} className={`hrnd-skill${skV ? ' hrnd-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>)}</div>
         </div>
       </section>
       <section className="hrnd-sec hrnd-sec-alt" ref={enR}>
         <div className="hrnd-wrap">
           <h2 className="hrnd-sec-title">Flexible Engagement Models</h2>
-          <p className="hrnd-sec-sub">Full-time, part-time, or hourly — scaled to your release calendar.</p>
+          <p className="hrnd-sec-sub">Full-time, part-time, or hourly - scaled to your release calendar.</p>
           <div className="hrnd-models">{MODELS.map((m, i) => <div key={m.title} className={`hrnd-model${enV ? ' hrnd-in' : ''}`} style={{ transitionDelay: `${i * 120}ms` }}><div className="hrnd-model-icon">{m.icon}</div><h3>{m.title}</h3><p>{m.desc}</p></div>)}</div>
         </div>
       </section>
       <section className="hrnd-sec" ref={whR}>
         <div className="hrnd-wrap">
           <h2 className="hrnd-sec-title">Why Hire React Native Developers from 1Solutions?</h2>
-          <p className="hrnd-sec-sub">We place engineers who have shipped cross-platform apps with 100k+ downloads — not just Todo app builders.</p>
+          <p className="hrnd-sec-sub">We place engineers who have shipped cross-platform apps with 100k+ downloads - not just Todo app builders.</p>
           <div className="hrnd-why-grid">{WHY.map((w, i) => <div key={w.h} className={`hrnd-why-item${whV ? ' hrnd-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
         </div>
       </section>
@@ -191,7 +191,7 @@ export default function HireReactNativeDeveloper() {
       <section className="hrnd-sec hrnd-sec-alt" ref={prR}>
         <div className="hrnd-wrap">
           <h2 className="hrnd-sec-title">Hire in 4 Simple Steps</h2>
-          <p className="hrnd-sec-sub">From brief to first sprint — in under two weeks.</p>
+          <p className="hrnd-sec-sub">From brief to first sprint - in under two weeks.</p>
           <div className="hrnd-process">{PROCESS.map((p, i) => <div key={p.n} className={`hrnd-step${prV ? ' hrnd-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}><div className="hrnd-step-n">{p.n}</div><h3>{p.h}</h3><p>{p.b}</p></div>)}</div>
         </div>
       </section>
@@ -205,7 +205,7 @@ export default function HireReactNativeDeveloper() {
       <section className="hrnd-cta">
         <div className="hrnd-wrap">
           <h2>Ready to Hire Your React Native Developer?</h2>
-          <p>Share your requirements and receive matched React Native specialist profiles within 48 hours — no commitment required.</p>
+          <p>Share your requirements and receive matched React Native specialist profiles within 48 hours - no commitment required.</p>
           <Link href="/contact-us" className="hrnd-btn-primary">Get Started Today →</Link>
         </div>
       </section>

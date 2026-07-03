@@ -27,13 +27,13 @@ const SKILLS = [
   'Socket.io (Real-Time)', 'CI/CD Pipelines', 'Microservices & Serverless',
 ];
 const MODELS = [
-  { title: 'Dedicated Hire', desc: 'A full-time MERN stack developer committed to your product — 8 hrs/day, 5 days/week.', icon: '👤' },
+  { title: 'Dedicated Hire', desc: 'A full-time MERN stack developer committed to your product - 8 hrs/day, 5 days/week.', icon: '👤' },
   { title: 'Part-Time Hire', desc: 'Half-day engagement for iterative feature delivery or React/Node.js maintenance.', icon: '⏰' },
   { title: 'Hourly Hire',    desc: 'Flexible billing for code audits, performance tuning, or one-off sprint deliverables.', icon: '🕐' },
 ];
 const WHY = [
-  { h: 'End-to-End JS Stack', b: 'One developer, one language — MongoDB to React. Our MERN engineers eliminate the backend-frontend handoff that slows teams down.' },
-  { h: 'React & Next.js Depth', b: 'We build performant React apps with server components, streaming SSR, and optimised Core Web Vitals — not just SPAs.' },
+  { h: 'End-to-End JS Stack', b: 'One developer, one language - MongoDB to React. Our MERN engineers eliminate the backend-frontend handoff that slows teams down.' },
+  { h: 'React & Next.js Depth', b: 'We build performant React apps with server components, streaming SSR, and optimised Core Web Vitals - not just SPAs.' },
   { h: 'Profiles in 48 Hours', b: 'Submit your brief and receive 2-3 matched MERN stack developer CVs within two business days.' },
   { h: 'Agile & Transparent', b: 'Daily standups, bi-weekly demos, shared Jira boards, and weekly delivery reports keep you in full control.' },
   { h: 'IP & NDA Protection', b: 'Full NDA and IP assignment signed before any access to your repository or infrastructure.' },
@@ -86,7 +86,7 @@ export default function HireMERNStackDeveloper() {
         { '@type': 'ListItem', position: 2, name: 'Hire MERN Stack Developer', item: 'https://www.1solutions.biz/hire-mern-stack-developer/' },
       ]},
       { '@type': 'Service', name: 'Hire MERN Stack Developer', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Hire dedicated MERN stack developers from 1Solutions — MongoDB, Express, React, and Node.js experts.',
+        description: 'Hire dedicated MERN stack developers from 1Solutions - MongoDB, Express, React, and Node.js experts.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '103', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -153,7 +153,7 @@ export default function HireMERNStackDeveloper() {
 
       <section className="hmern-hero">
         <h1>Hire MERN Stack Developers<br/>MongoDB · Express · React · Node.js</h1>
-        <p>Pre-vetted engineers who build full-stack JavaScript products from database to React UI — with Next.js, TypeScript, and real-time capabilities. Profiles in 48 hours.</p>
+        <p>Pre-vetted engineers who build full-stack JavaScript products from database to React UI - with Next.js, TypeScript, and real-time capabilities. Profiles in 48 hours.</p>
         <div className="hmern-hero-btns">
           <Link href="/contact-us" className="hmern-btn-primary">Hire a MERN Stack Developer →</Link>
           <Link href="/portfolio" className="hmern-btn-outline">View Portfolio</Link>
@@ -163,7 +163,7 @@ export default function HireMERNStackDeveloper() {
       <section className="hmern-sec" ref={skR}>
         <div className="hmern-wrap">
           <h2 className="hmern-sec-title">Skills &amp; Tech Stack</h2>
-          <p className="hmern-sec-sub">Our MERN developers cover the complete JavaScript ecosystem — from Mongoose schemas to React Server Components and beyond.</p>
+          <p className="hmern-sec-sub">Our MERN developers cover the complete JavaScript ecosystem - from Mongoose schemas to React Server Components and beyond.</p>
           <div className="hmern-skills">
             {SKILLS.map((s, i) => <span key={s} className={`hmern-skill${skV ? ' hmern-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>)}
           </div>
@@ -173,7 +173,7 @@ export default function HireMERNStackDeveloper() {
       <section className="hmern-sec hmern-sec-alt" ref={enR}>
         <div className="hmern-wrap">
           <h2 className="hmern-sec-title">Flexible Engagement Models</h2>
-          <p className="hmern-sec-sub">Choose the model that fits your product stage and budget — adjust anytime.</p>
+          <p className="hmern-sec-sub">Choose the model that fits your product stage and budget - adjust anytime.</p>
           <div className="hmern-models">
             {MODELS.map((m, i) => (
               <div key={m.title} className={`hmern-model${enV ? ' hmern-in' : ''}`} style={{ transitionDelay: `${i * 120}ms` }}>
@@ -188,7 +188,7 @@ export default function HireMERNStackDeveloper() {
       <section className="hmern-sec" ref={whR}>
         <div className="hmern-wrap">
           <h2 className="hmern-sec-title">Why Hire MERN Stack Developers from 1Solutions?</h2>
-          <p className="hmern-sec-sub">We place engineers who have shipped MERN products at scale — SaaS platforms, marketplaces, and real-time applications.</p>
+          <p className="hmern-sec-sub">We place engineers who have shipped MERN products at scale - SaaS platforms, marketplaces, and real-time applications.</p>
           <div className="hmern-why-grid">
             {WHY.map((w, i) => (
               <div key={w.h} className={`hmern-why-item${whV ? ' hmern-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}>
@@ -211,7 +211,7 @@ export default function HireMERNStackDeveloper() {
       <section className="hmern-sec hmern-sec-alt" ref={prR}>
         <div className="hmern-wrap">
           <h2 className="hmern-sec-title">Hire in 4 Simple Steps</h2>
-          <p className="hmern-sec-sub">From brief to first commit — in under two weeks.</p>
+          <p className="hmern-sec-sub">From brief to first commit - in under two weeks.</p>
           <div className="hmern-process">
             {PROCESS.map((p, i) => (
               <div key={p.n} className={`hmern-step${prV ? ' hmern-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}>
@@ -244,7 +244,7 @@ export default function HireMERNStackDeveloper() {
       <section className="hmern-cta">
         <div className="hmern-wrap">
           <h2>Ready to Hire Your MERN Stack Developer?</h2>
-          <p>Share your stack and requirements — receive matched developer profiles within 48 hours, no commitment required.</p>
+          <p>Share your stack and requirements - receive matched developer profiles within 48 hours, no commitment required.</p>
           <Link href="/contact-us" className="hmern-btn-primary">Get Started Today →</Link>
         </div>
       </section>

@@ -17,7 +17,7 @@ const SCHEMA = {
       '@type': 'Service',
       name: 'Joomla Development',
       url: 'https://www.1solutions.biz/joomla-development-company/',
-      description: 'Expert Joomla development services — custom Joomla templates, component and plugin development, Joomla eCommerce, migration from legacy CMS to Joomla, and Joomla maintenance and security hardening for businesses worldwide.',
+      description: 'Expert Joomla development services - custom Joomla templates, component and plugin development, Joomla eCommerce, migration from legacy CMS to Joomla, and Joomla maintenance and security hardening for businesses worldwide.',
       provider: {
         '@type': 'Organization',
         name: '1Solutions',
@@ -32,10 +32,10 @@ const SCHEMA = {
       '@type': 'FAQPage',
       mainEntity: [
         { '@type': 'Question', name: 'What can you build with Joomla?', acceptedAnswer: { '@type': 'Answer', text: 'Joomla is a powerful open-source CMS suited to corporate websites, membership portals, online communities, government and NGO websites, multilingual websites, eCommerce stores (via VirtueMart or HikaShop), job boards, document management portals, and complex multi-user websites with granular access control levels (ACL). Its multi-level ACL system and built-in multilingual support make it particularly strong for organisations needing fine-grained permission hierarchies or publishing in multiple languages without plugins.' } },
-        { '@type': 'Question', name: 'How is Joomla different from WordPress?', acceptedAnswer: { '@type': 'Answer', text: 'Joomla has a more sophisticated built-in access control system (ACL) than WordPress, better native multilingual support without requiring plugins, and a more structured content model with categories and tags built into core. WordPress has a larger plugin ecosystem and a gentler learning curve for non-technical editors. Joomla tends to be chosen by organisations that need complex user role hierarchies, government or enterprise content governance structures, or robust multilingual publishing — without relying on third-party plugins for these capabilities.' } },
+        { '@type': 'Question', name: 'How is Joomla different from WordPress?', acceptedAnswer: { '@type': 'Answer', text: 'Joomla has a more sophisticated built-in access control system (ACL) than WordPress, better native multilingual support without requiring plugins, and a more structured content model with categories and tags built into core. WordPress has a larger plugin ecosystem and a gentler learning curve for non-technical editors. Joomla tends to be chosen by organisations that need complex user role hierarchies, government or enterprise content governance structures, or robust multilingual publishing - without relying on third-party plugins for these capabilities.' } },
         { '@type': 'Question', name: 'Can you migrate our existing website to Joomla?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We handle migrations to Joomla from WordPress, Drupal, Magento, Joomla 3.x to Joomla 4.x/5.x, and static HTML websites. Migration covers content (articles, categories, tags), users and access levels, media library, URL structure (with 301 redirects to preserve SEO), menu structures, and template redesign. We run a parallel staging environment, perform SEO link audit before and after migration, and validate all content before go-live cutover.' } },
         { '@type': 'Question', name: 'Do you build custom Joomla components and plugins?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Custom Joomla component and plugin development is a core service. We build custom Joomla components (MVC-based backend and frontend components), plugins (system, content, authentication, user, search, and editor plugins), modules (sidebar and content area modules), and templates. All custom development follows Joomla coding standards, uses the Joomla Framework API, and is built for compatibility with current Joomla 4.x/5.x and PHP 8.x.' } },
-        { '@type': 'Question', name: 'Can you upgrade our Joomla 3.x site to Joomla 4.x or 5.x?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Joomla 3.x reached end-of-life in August 2023, meaning it no longer receives security updates. We handle Joomla 3.x to 4.x and 4.x to 5.x upgrades — assessing third-party extension compatibility, identifying extensions that need to be replaced or updated, migrating custom templates and overrides to Bootstrap 5 (required for Joomla 4+), running the upgrade on a staging clone, testing all site functionality, and managing the production cutover with zero downtime.' } },
+        { '@type': 'Question', name: 'Can you upgrade our Joomla 3.x site to Joomla 4.x or 5.x?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Joomla 3.x reached end-of-life in August 2023, meaning it no longer receives security updates. We handle Joomla 3.x to 4.x and 4.x to 5.x upgrades - assessing third-party extension compatibility, identifying extensions that need to be replaced or updated, migrating custom templates and overrides to Bootstrap 5 (required for Joomla 4+), running the upgrade on a staging clone, testing all site functionality, and managing the production cutover with zero downtime.' } },
         { '@type': 'Question', name: 'What does Joomla security hardening involve?', acceptedAnswer: { '@type': 'Answer', text: 'Joomla security hardening covers: keeping core Joomla and all extensions updated to the latest security releases, removing unused extensions (each is an attack surface), configuring correct file and folder permissions, disabling the Joomla administrator directory path (renaming from /administrator/), implementing two-factor authentication for admin accounts, configuring a Web Application Firewall (WAF) via Akeeba Admin Tools or server-level WAF, enabling HTTPS with HSTS, setting up regular automated backups (Akeeba Backup), and configuring security headers (CSP, X-Frame-Options, etc.).' } },
       ],
     },
@@ -43,16 +43,16 @@ const SCHEMA = {
 };
 
 const SERVICES = [
-  { n: '01', title: 'Custom Joomla Website Development', desc: 'End-to-end Joomla website development — custom templates, content architecture, ACL configuration, menu structure, multilingual setup, and SEO foundations. Corporate websites, membership portals, government, NGO, and community websites built on Joomla 4.x/5.x with PHP 8.x.' },
-  { n: '02', title: 'Custom Joomla Template Development', desc: 'Bespoke Joomla templates built from scratch — responsive HTML5/CSS3, Bootstrap 5, pixel-perfect implementation of your brand design system, dark mode, accessibility (WCAG 2.1 AA), and full Cassiopeia/Helix compatibility for Joomla 4.x and 5.x. No cookie-cutter theme purchases.', feat: true },
-  { n: '03', title: 'Joomla Component & Plugin Development', desc: 'Custom Joomla MVC components, system and content plugins, authentication plugins, user plugins, search plugins, modules, and editor-XTD plugins — built following Joomla coding standards with PHP 8.x compatibility and full Joomla 4.x/5.x API compliance.' },
-  { n: '04', title: 'Joomla eCommerce (VirtueMart / HikaShop)', desc: 'Joomla eCommerce solutions with VirtueMart or HikaShop — product catalogue setup, payment gateway integration (PayPal, Stripe, Razorpay), shipping rule configuration, tax calculation, multi-currency, custom product fields, and WooCommerce migration to Joomla eCommerce.' },
-  { n: '05', title: 'Joomla 3.x to 4.x / 5.x Upgrade', desc: 'Safe Joomla version upgrades — extension compatibility audit, replacement of end-of-life third-party extensions, template migration to Bootstrap 5 and Cassiopeia, staging clone testing, database migration, and zero-downtime production cutover with full rollback capability.' },
-  { n: '06', title: 'CMS Migration to Joomla', desc: 'Full content migrations to Joomla from WordPress, Drupal, static HTML, legacy CMS platforms — content, users, media, URL structure with 301 SEO redirects, menu rebuild, and access control reconfiguration on staging before production cutover.' },
-  { n: '07', title: 'Joomla Multilingual Website Development', desc: 'Native Joomla multilingual websites using the built-in Language Manager, Content Languages, and Language Switcher — no third-party translation plugin required. Hreflang implementation, RTL language support, language-specific menu items, and per-language SEO metadata management.' },
-  { n: '08', title: 'Joomla Membership & Subscription Portals', desc: 'Membership and subscription websites on Joomla using CB (Community Builder), AcyMailing, and custom ACL configurations — tiered access levels, paid membership integration with payment gateways, member directory, gated content, automated email workflows, and renewal management.' },
+  { n: '01', title: 'Custom Joomla Website Development', desc: 'End-to-end Joomla website development - custom templates, content architecture, ACL configuration, menu structure, multilingual setup, and SEO foundations. Corporate websites, membership portals, government, NGO, and community websites built on Joomla 4.x/5.x with PHP 8.x.' },
+  { n: '02', title: 'Custom Joomla Template Development', desc: 'Bespoke Joomla templates built from scratch - responsive HTML5/CSS3, Bootstrap 5, pixel-perfect implementation of your brand design system, dark mode, accessibility (WCAG 2.1 AA), and full Cassiopeia/Helix compatibility for Joomla 4.x and 5.x. No cookie-cutter theme purchases.', feat: true },
+  { n: '03', title: 'Joomla Component & Plugin Development', desc: 'Custom Joomla MVC components, system and content plugins, authentication plugins, user plugins, search plugins, modules, and editor-XTD plugins - built following Joomla coding standards with PHP 8.x compatibility and full Joomla 4.x/5.x API compliance.' },
+  { n: '04', title: 'Joomla eCommerce (VirtueMart / HikaShop)', desc: 'Joomla eCommerce solutions with VirtueMart or HikaShop - product catalogue setup, payment gateway integration (PayPal, Stripe, Razorpay), shipping rule configuration, tax calculation, multi-currency, custom product fields, and WooCommerce migration to Joomla eCommerce.' },
+  { n: '05', title: 'Joomla 3.x to 4.x / 5.x Upgrade', desc: 'Safe Joomla version upgrades - extension compatibility audit, replacement of end-of-life third-party extensions, template migration to Bootstrap 5 and Cassiopeia, staging clone testing, database migration, and zero-downtime production cutover with full rollback capability.' },
+  { n: '06', title: 'CMS Migration to Joomla', desc: 'Full content migrations to Joomla from WordPress, Drupal, static HTML, legacy CMS platforms - content, users, media, URL structure with 301 SEO redirects, menu rebuild, and access control reconfiguration on staging before production cutover.' },
+  { n: '07', title: 'Joomla Multilingual Website Development', desc: 'Native Joomla multilingual websites using the built-in Language Manager, Content Languages, and Language Switcher - no third-party translation plugin required. Hreflang implementation, RTL language support, language-specific menu items, and per-language SEO metadata management.' },
+  { n: '08', title: 'Joomla Membership & Subscription Portals', desc: 'Membership and subscription websites on Joomla using CB (Community Builder), AcyMailing, and custom ACL configurations - tiered access levels, paid membership integration with payment gateways, member directory, gated content, automated email workflows, and renewal management.' },
   { n: '09', title: 'Joomla Security Hardening & Malware Removal', desc: 'Joomla security audits, malware removal and website restoration from backup, security hardening (Akeeba Admin Tools, WAF, 2FA, file permission hardening, admin path rename), emergency response for hacked Joomla sites, and ongoing security monitoring.' },
-  { n: '10', title: 'Joomla Maintenance & Support', desc: 'Ongoing Joomla maintenance — core and extension updates, performance optimisation (caching, CDN, image optimisation), uptime monitoring, monthly security scan reports, content support, server migration, backup management, and a dedicated Joomla support helpdesk.' },
+  { n: '10', title: 'Joomla Maintenance & Support', desc: 'Ongoing Joomla maintenance - core and extension updates, performance optimisation (caching, CDN, image optimisation), uptime monitoring, monthly security scan reports, content support, server migration, backup management, and a dedicated Joomla support helpdesk.' },
 ];
 
 const TECH_STACK = [
@@ -78,7 +78,7 @@ const ENGAGEMENT_MODELS = [
     desc: 'Full-time offshore Joomla developers, a designer, and QA working as an extension of your team at a fraction of US/UK/AU cost. Ideal for large Joomla builds, ongoing portal development, or replacing an in-house Joomla team. Full code ownership yours from day one.',
     bestFor: ['Large Joomla portal or membership site', 'Long-term Joomla product with ongoing roadmap', 'Joomla eCommerce platform development', 'Replacing in-house Joomla capacity at lower cost'],
     process: 'Team assembly → Discovery → Sprint delivery → Continuous roadmap',
-    timeline: 'Ongoing — scale up or down each quarter',
+    timeline: 'Ongoing - scale up or down each quarter',
   },
   {
     id: 'fixed',
@@ -108,9 +108,9 @@ const ENGAGEMENT_MODELS = [
 
 const PROCESS_STEPS = [
   { num: '01', title: 'Discovery & Joomla Architecture Planning', desc: 'We review your content model, user roles and ACL requirements, multilingual needs, extension requirements, and integration landscape. We produce a Joomla architecture document covering content categories, menu structure, ACL levels, and the extension selection or custom development plan before any work begins.' },
-  { num: '02', title: 'Design & Joomla Template Prototyping', desc: 'High-fidelity Figma mockups of your key page templates — homepage, content pages, listing pages, and forms. Once approved, we translate these into a custom Joomla template (Bootstrap 5, fully responsive) with position mapping for modules and component output areas.' },
+  { num: '02', title: 'Design & Joomla Template Prototyping', desc: 'High-fidelity Figma mockups of your key page templates - homepage, content pages, listing pages, and forms. Once approved, we translate these into a custom Joomla template (Bootstrap 5, fully responsive) with position mapping for modules and component output areas.' },
   { num: '03', title: 'Joomla Development & Extension Setup', desc: 'Core Joomla installation, template development, extension installation and configuration, custom component or plugin development, multilingual configuration, ACL setup, SEF URL configuration, and content entry on a password-protected staging environment.' },
-  { num: '04', title: 'Content Migration & Data Import', desc: 'Migration of existing content — articles, categories, users, media — from your current platform to Joomla staging. URL mapping and 301 redirect configuration to preserve all SEO equity. Review of migrated content for formatting, images, and link integrity.' },
+  { num: '04', title: 'Content Migration & Data Import', desc: 'Migration of existing content - articles, categories, users, media - from your current platform to Joomla staging. URL mapping and 301 redirect configuration to preserve all SEO equity. Review of migrated content for formatting, images, and link integrity.' },
   { num: '05', title: 'Testing, Security Hardening & Performance', desc: 'Cross-browser and device testing, WCAG accessibility checks, Joomla security hardening (Akeeba Admin Tools, 2FA, file permissions, admin path rename), page speed optimisation (Joomla caching, CDN, image compression), and Lighthouse/GTmetrix performance testing.' },
   { num: '06', title: 'Launch, Training & Ongoing Support', desc: 'DNS cutover and go-live, post-launch monitoring, Akeeba Backup configuration, search engine resubmission, and editorial team training on the Joomla admin interface. Ongoing support retainer available for updates, patches, and new feature development.' },
 ];
@@ -121,22 +121,22 @@ const TESTIMONIALS = [
     name: 'Karen B.', role: 'Marketing Director, Industry Association (UK)', init: 'KB', bg: '#0F3460',
   },
   {
-    text: "We needed a multilingual membership portal — English, French, Arabic, and Spanish — with different access tiers for members, partners, and public. 1Solutions built it on Joomla with native multilingual support and a custom ACL structure that our admin team can manage without developer help. The RTL Arabic support works perfectly.",
+    text: "We needed a multilingual membership portal - English, French, Arabic, and Spanish - with different access tiers for members, partners, and public. 1Solutions built it on Joomla with native multilingual support and a custom ACL structure that our admin team can manage without developer help. The RTL Arabic support works perfectly.",
     name: 'Hassan A.', role: 'CTO, International NGO (AU)', init: 'HA', bg: '#4a1942', feat: true,
   },
   {
-    text: "1Solutions built a custom Joomla component for our document management workflow — upload, approval, categorisation, and access-controlled download. It replaced a clunky SharePoint setup at a fraction of the ongoing cost. The component integrates with our existing Joomla ACL so permissions management stays in one place.",
+    text: "1Solutions built a custom Joomla component for our document management workflow - upload, approval, categorisation, and access-controlled download. It replaced a clunky SharePoint setup at a fraction of the ongoing cost. The component integrates with our existing Joomla ACL so permissions management stays in one place.",
     name: 'Chris M.', role: 'IT Director, Professional Services Firm (US)', init: 'CM', bg: '#1e3a5f',
   },
 ];
 
 const WHY_CARDS = [
-  { title: '15+ Years Joomla Development Experience', desc: 'We have been building Joomla websites since Joomla 1.5 — through 2.5, 3.x, 4.x, and now Joomla 5.x. We understand the Joomla framework architecture, the MVC component model, and the ACL system at a depth that comes from a decade and a half of real Joomla projects.' },
-  { title: 'Custom Templates, Not Themeforest Purchases', desc: 'Every Joomla template we deliver is built from scratch to your brand — responsive, fast, accessible (WCAG 2.1 AA), and maintainable. No off-the-shelf templates loaded with unused features and styles that slow down your site and complicate future updates.' },
-  { title: 'Joomla ACL & Multilingual Specialists', desc: 'Joomla\'s built-in ACL and multilingual systems are its most powerful differentiators. We design and implement complex multi-role access structures and native multilingual websites that use Joomla\'s core capabilities — minimising plugin dependencies and technical debt.' },
-  { title: 'Security-First Approach', desc: 'Every Joomla site we build or maintain is security hardened from day one — Akeeba Admin Tools WAF, two-factor authentication, correct file permissions, admin path protection, HTTPS with HSTS, automated daily backups, and monthly security scan reports.' },
-  { title: 'Joomla 3.x to 5.x Upgrade Specialists', desc: 'Joomla 3.x is end-of-life. We have migrated dozens of Joomla 3 sites to Joomla 4 and 5 — handling the Bootstrap 5 template migration, extension compatibility audit and replacement, database migration, and production cutover with full rollback capability.' },
-  { title: 'Full Stack — Joomla + Server + Performance', desc: 'We configure the full stack your Joomla site runs on — Apache/Nginx, PHP 8.x, MySQL, Redis/Memcached for session caching, CloudFlare CDN, and server-level security — not just the Joomla application layer. Your site is fast and secure end-to-end.' },
+  { title: '15+ Years Joomla Development Experience', desc: 'We have been building Joomla websites since Joomla 1.5 - through 2.5, 3.x, 4.x, and now Joomla 5.x. We understand the Joomla framework architecture, the MVC component model, and the ACL system at a depth that comes from a decade and a half of real Joomla projects.' },
+  { title: 'Custom Templates, Not Themeforest Purchases', desc: 'Every Joomla template we deliver is built from scratch to your brand - responsive, fast, accessible (WCAG 2.1 AA), and maintainable. No off-the-shelf templates loaded with unused features and styles that slow down your site and complicate future updates.' },
+  { title: 'Joomla ACL & Multilingual Specialists', desc: 'Joomla\'s built-in ACL and multilingual systems are its most powerful differentiators. We design and implement complex multi-role access structures and native multilingual websites that use Joomla\'s core capabilities - minimising plugin dependencies and technical debt.' },
+  { title: 'Security-First Approach', desc: 'Every Joomla site we build or maintain is security hardened from day one - Akeeba Admin Tools WAF, two-factor authentication, correct file permissions, admin path protection, HTTPS with HSTS, automated daily backups, and monthly security scan reports.' },
+  { title: 'Joomla 3.x to 5.x Upgrade Specialists', desc: 'Joomla 3.x is end-of-life. We have migrated dozens of Joomla 3 sites to Joomla 4 and 5 - handling the Bootstrap 5 template migration, extension compatibility audit and replacement, database migration, and production cutover with full rollback capability.' },
+  { title: 'Full Stack - Joomla + Server + Performance', desc: 'We configure the full stack your Joomla site runs on - Apache/Nginx, PHP 8.x, MySQL, Redis/Memcached for session caching, CloudFlare CDN, and server-level security - not just the Joomla application layer. Your site is fast and secure end-to-end.' },
   { title: 'Fixed-Price Projects with No Scope Creep', desc: 'We scope Joomla projects in detail before quoting. Our fixed-price contracts include a clear change request process so you always know what is in scope, what is an addition, and what it costs. No surprise invoices at go-live.' },
   { title: 'Ongoing Maintenance Retainers Available', desc: 'Joomla requires regular updates to stay secure. Our monthly maintenance retainers include core and extension updates, security monitoring, performance checks, backup verification, and a set number of hours for ad hoc content and development changes.' },
 ];
@@ -145,7 +145,7 @@ const FAQS = [
   { q: 'What can you build with Joomla?', a: 'Joomla is a powerful open-source CMS suited to corporate websites, membership portals, online communities, government and NGO websites, multilingual websites, eCommerce stores (VirtueMart or HikaShop), job boards, document management portals, and complex multi-user websites needing granular access control. Its multi-level ACL system and native multilingual support make it particularly strong for organisations with complex permission hierarchies or multi-language publishing requirements.' },
   { q: 'How is Joomla different from WordPress?', a: 'Joomla has a more sophisticated built-in ACL than WordPress, better native multilingual support without plugins, and a more structured content model. WordPress has a larger plugin ecosystem and a gentler learning curve for non-technical editors. Joomla is typically chosen by organisations needing complex user role hierarchies, government or enterprise content governance structures, or robust multilingual publishing without relying on third-party plugins for these core capabilities.' },
   { q: 'Can you migrate our website to Joomla?', a: 'Yes. We handle migrations to Joomla from WordPress, Drupal, static HTML, and legacy CMS platforms. Migration covers content (articles, categories, tags), users and access levels, media library, URL structure with 301 redirects to preserve SEO equity, menu rebuild, and template redesign. We run a parallel staging environment, perform an SEO link audit before and after, and validate all content before go-live cutover.' },
-  { q: 'Can you upgrade our Joomla 3.x site to Joomla 4.x or 5.x?', a: 'Yes. Joomla 3.x reached end-of-life in August 2023 and no longer receives security updates. We handle Joomla 3.x to 4.x and 4.x to 5.x upgrades — assessing third-party extension compatibility, replacing end-of-life extensions, migrating custom templates to Bootstrap 5, running the upgrade on a staging clone, testing all site functionality, and managing the production cutover with zero downtime and a full rollback plan.' },
+  { q: 'Can you upgrade our Joomla 3.x site to Joomla 4.x or 5.x?', a: 'Yes. Joomla 3.x reached end-of-life in August 2023 and no longer receives security updates. We handle Joomla 3.x to 4.x and 4.x to 5.x upgrades - assessing third-party extension compatibility, replacing end-of-life extensions, migrating custom templates to Bootstrap 5, running the upgrade on a staging clone, testing all site functionality, and managing the production cutover with zero downtime and a full rollback plan.' },
   { q: 'Do you build custom Joomla components and plugins?', a: 'Yes. We build custom Joomla MVC components (backend and frontend), system and content plugins, authentication plugins, user plugins, search plugins, modules, and editor-XTD plugins. All custom development follows Joomla coding standards, uses the Joomla Framework API, and is built for PHP 8.x compatibility with Joomla 4.x and 5.x. We also develop Joomla extensions as commercial products for third-party distribution.' },
   { q: 'What does Joomla security hardening involve?', a: 'Joomla security hardening covers: keeping core Joomla and all extensions updated to latest security releases, removing unused extensions, configuring correct file and folder permissions, renaming the /administrator/ path, implementing two-factor authentication for admin accounts, configuring a Web Application Firewall via Akeeba Admin Tools, enabling HTTPS with HSTS, setting up automated daily backups via Akeeba Backup, and configuring security response headers (CSP, X-Frame-Options, Referrer-Policy).' },
   { q: 'Can you build multilingual Joomla websites?', a: 'Yes. Multilingual Joomla development is a speciality. We use the native Joomla Language Manager, Content Languages, and Language Switcher to build multilingual sites without third-party translation plugins. We implement hreflang tags for international SEO, RTL language support (Arabic, Hebrew, Persian), language-specific menu items and module assignments, per-language SEO metadata, and language-specific access control if required. We have built Joomla sites in English, French, Spanish, Arabic, German, Dutch, and other languages simultaneously.' },
@@ -255,10 +255,10 @@ export default function JoomlaDevelopment() {
     <>
       <Head>
         <title>Joomla Development Company | 1Solutions</title>
-        <meta name="description" content="Expert Joomla development — custom templates, components, plugins, Joomla 3 to 5 upgrades, multilingual portals, eCommerce, security hardening. 15+ years." />
+        <meta name="description" content="Expert Joomla development - custom templates, components, plugins, Joomla 3 to 5 upgrades, multilingual portals, eCommerce, security hardening. 15+ years." />
         <link rel="canonical" href="https://www.1solutions.biz/joomla-development-company/" />
         <meta property="og:title" content="Joomla Development Company | 1Solutions" />
-        <meta property="og:description" content="Custom Joomla development — templates, components, Joomla 3.x to 5.x upgrades, multilingual, membership portals, eCommerce, and security hardening. 15+ years experience." />
+        <meta property="og:description" content="Custom Joomla development - templates, components, Joomla 3.x to 5.x upgrades, multilingual, membership portals, eCommerce, and security hardening. 15+ years experience." />
         <meta property="og:url" content="https://www.1solutions.biz/joomla-development-company/" />
         <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
@@ -471,8 +471,8 @@ export default function JoomlaDevelopment() {
 
         <section className="jo-hero">
           <span className="jo-eyebrow">Joomla Development Company</span>
-          <h1>Expert Joomla Development — Custom Templates, Components & Joomla 5 Upgrades</h1>
-          <p className="jo-hero-desc">We build, upgrade, and maintain Joomla websites — custom templates from scratch, bespoke MVC components and plugins, multilingual portals, eCommerce, Joomla 3.x to 5.x upgrades, and security hardening. 15+ years of Joomla expertise for businesses worldwide.</p>
+          <h1>Expert Joomla Development - Custom Templates, Components & Joomla 5 Upgrades</h1>
+          <p className="jo-hero-desc">We build, upgrade, and maintain Joomla websites - custom templates from scratch, bespoke MVC components and plugins, multilingual portals, eCommerce, Joomla 3.x to 5.x upgrades, and security hardening. 15+ years of Joomla expertise for businesses worldwide.</p>
           <div className="jo-trust-row">
             {['100+ Joomla Projects','Joomla 4.x & 5.x Experts','Custom Templates & Components','15+ Years Experience','Security Hardening Included'].map(b => (
               <div className="jo-badge" key={b}><span className="jo-badge-dot" />{b}</div>
@@ -553,7 +553,7 @@ export default function JoomlaDevelopment() {
             <div className={`jo-s-reveal${visibleSections.has('eng') ? ' jo-revealed' : ''}`} ref={el => { sectionRefs.current['eng'] = el; }}>
               <span className="jo-s-eyebrow">How We Work With You</span>
               <h2 id="jo-eng-heading" className="jo-s-title">Engagement Models for Joomla Development</h2>
-              <p className="jo-s-desc" style={{ maxWidth: 680 }}>Whether you need a dedicated Joomla team for a large portal, a fixed-price project for a defined website, or a monthly retainer for ongoing maintenance and updates — we adapt to your project type and budget.</p>
+              <p className="jo-s-desc" style={{ maxWidth: 680 }}>Whether you need a dedicated Joomla team for a large portal, a fixed-price project for a defined website, or a monthly retainer for ongoing maintenance and updates - we adapt to your project type and budget.</p>
             </div>
             <div className="jo-eng-grid" ref={engGridRef}>
               {ENGAGEMENT_MODELS.map((m, i) => (
@@ -578,7 +578,7 @@ export default function JoomlaDevelopment() {
             <div className={`jo-s-reveal${visibleSections.has('proc') ? ' jo-revealed' : ''}`} ref={el => { sectionRefs.current['proc'] = el; }}>
               <span className="jo-s-eyebrow">How We Deliver</span>
               <h2 id="jo-proc-heading" className="jo-s-title">Our Joomla Development Process</h2>
-              <p className="jo-s-desc">From architecture planning and custom template design through Joomla development, content migration, security hardening, and go-live — with stakeholder review at every stage on a password-protected staging environment.</p>
+              <p className="jo-s-desc">From architecture planning and custom template design through Joomla development, content migration, security hardening, and go-live - with stakeholder review at every stage on a password-protected staging environment.</p>
             </div>
             <div className="jo-psteps">
               {PROCESS_STEPS.map((step, i) => (
@@ -624,7 +624,7 @@ export default function JoomlaDevelopment() {
             <div className={`jo-s-reveal${visibleSections.has('wy') ? ' jo-revealed' : ''}`} ref={el => { sectionRefs.current['wy'] = el; }}>
               <span className="jo-s-eyebrow">Why 1Solutions</span>
               <h2 id="jo-wy-heading" className="jo-s-title">Why Choose Us for Joomla Development</h2>
-              <p className="jo-s-desc" style={{ maxWidth: 680 }}>15+ years of Joomla development — from Joomla 1.5 to Joomla 5.x — with deep expertise in custom templates, MVC components, ACL architecture, native multilingual sites, and security hardening for production Joomla deployments.</p>
+              <p className="jo-s-desc" style={{ maxWidth: 680 }}>15+ years of Joomla development - from Joomla 1.5 to Joomla 5.x - with deep expertise in custom templates, MVC components, ACL architecture, native multilingual sites, and security hardening for production Joomla deployments.</p>
             </div>
             <div className="jo-why-grid" ref={whyGridRef}>
               {WHY_CARDS.map((c, i) => (
@@ -642,7 +642,7 @@ export default function JoomlaDevelopment() {
           <div className="jo-contact-grid">
             <div>
               <h2 id="jo-contact-heading" className="jo-ctitle">Start Your Joomla Project</h2>
-              <p className="jo-cdesc">Tell us about your Joomla project and we will schedule a free consultation. Whether you need a new Joomla website, a Joomla 3.x upgrade, a custom component, or an ongoing maintenance retainer — our Joomla specialists will assess your requirements and give you a transparent quote.</p>
+              <p className="jo-cdesc">Tell us about your Joomla project and we will schedule a free consultation. Whether you need a new Joomla website, a Joomla 3.x upgrade, a custom component, or an ongoing maintenance retainer - our Joomla specialists will assess your requirements and give you a transparent quote.</p>
               <div className="jo-cbenefits">
                 {[['✓','Free 45-minute Joomla project consultation and scope assessment'],['✓','Joomla 3.x to 5.x upgrade feasibility review at no charge'],['✓','Extension compatibility audit and replacement recommendations included'],['✓','Security hardening and performance assessment for existing Joomla sites'],['✓','Response within 24 business hours from our Joomla development team']].map(([icon, text]) => (
                   <div className="jo-cbenefit" key={text}><span className="jo-cbenefit-icon">{icon}</span><p>{text}</p></div>
@@ -679,7 +679,7 @@ export default function JoomlaDevelopment() {
                 </div>
                 <div className="jo-fg full">
                   <label htmlFor="jo-msg">Project Brief *</label>
-                  <textarea name="sf-message" id="jo-msg" rows={4} placeholder="Describe your Joomla project — current Joomla version, number of pages, extensions you use, languages, ACL requirements, integrations, and your timeline..." required />
+                  <textarea name="sf-message" id="jo-msg" rows={4} placeholder="Describe your Joomla project - current Joomla version, number of pages, extensions you use, languages, ACL requirements, integrations, and your timeline..." required />
                 </div>
                 <div className="jo-consent">
                   <input id="jo-consent" type="checkbox" required />
@@ -695,8 +695,8 @@ export default function JoomlaDevelopment() {
         <section className="jo-faq" aria-labelledby="jo-faq-heading">
           <div className="jo-inner" style={{ maxWidth: 860 }}>
             <span className="jo-s-eyebrow">FAQ</span>
-            <h2 id="jo-faq-heading">Joomla Development — Frequently Asked Questions</h2>
-            <p className="jo-faq-sub">Everything you need to know about Joomla development with 1Solutions — from what Joomla is best for, to version upgrades, custom extensions, multilingual sites, and security hardening.</p>
+            <h2 id="jo-faq-heading">Joomla Development - Frequently Asked Questions</h2>
+            <p className="jo-faq-sub">Everything you need to know about Joomla development with 1Solutions - from what Joomla is best for, to version upgrades, custom extensions, multilingual sites, and security hardening.</p>
             <div className="jo-faq-list">
               {FAQS.map((item, i) => (
                 <div key={i} className={`jo-fitem${openFaq === i ? ' open' : ''}`} itemScope itemType="https://schema.org/Question">

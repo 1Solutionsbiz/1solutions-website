@@ -3,47 +3,47 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const SERVICES = [
-  { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Veterinary Keyword Strategy', desc: 'Comprehensive keyword mapping across vet near me, emergency vet, cat vet, dog specialist, low-cost vet, exotic animal vet, and specialist referral terms — ensuring your practice appears for every search a pet owner makes when their animal needs care.' },
-  { icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z', title: 'Pet Groomer Local SEO', desc: 'Targeted optimisation for dog groomer near me, mobile pet grooming, breed-specific grooming services, puppy first groom, cat grooming, and senior pet grooming — capturing pet owners searching for exactly the grooming service you provide.' },
+  { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Veterinary Keyword Strategy', desc: 'Comprehensive keyword mapping across vet near me, emergency vet, cat vet, dog specialist, low-cost vet, exotic animal vet, and specialist referral terms - ensuring your practice appears for every search a pet owner makes when their animal needs care.' },
+  { icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z', title: 'Pet Groomer Local SEO', desc: 'Targeted optimisation for dog groomer near me, mobile pet grooming, breed-specific grooming services, puppy first groom, cat grooming, and senior pet grooming - capturing pet owners searching for exactly the grooming service you provide.' },
   { icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064', title: 'Google Business Profile for Pet Businesses', desc: 'Full GBP setup with the correct pet services categories, a photo strategy featuring adorable patient and guest photos, appointment booking link integration, holiday hours management, and review management that builds trust with local pet owners.' },
-  { icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z', title: 'Pet Boarding and Daycare SEO', desc: 'Dedicated keyword targeting and content for dog boarding, cat boarding, pet hotel, doggy daycare, weekend boarding, and holiday pet care — including seasonal campaigns timed to peak demand periods like summer and holiday periods.' },
-  { icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1', title: 'Pet Care Citation Building', desc: 'Business listings across Yelp, VetFinder, BringFido, PetFinder professional listings, Angi pet services, local chamber directories, and pet-industry directories — consistent NAP data that builds the local authority your map pack position depends on.' },
-  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'Pet Care Content Marketing', desc: 'Educational content targeting research-phase pet owner queries — vaccination schedules, grooming tips, boarding checklists, toxic foods for dogs and cats, dental health for pets — ranking for the queries pet owners type before they need to book a service.' },
-  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'Competitor Analysis for Pet Services', desc: 'Identify every keyword your local vet competitors, grooming salons, and boarding facilities rank for that you do not — and a prioritised roadmap to capture top-10 positions for the highest-value service terms in your area.' },
-  { icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4', title: 'Pet Business Schema Markup', desc: 'VeterinaryCare, AnimalShelter, and LocalBusiness schema types with services offered, appointment availability, species treated, and review aggregate schema — the structured data that gives your business rich result eligibility and local Knowledge Panel presence.' },
+  { icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z', title: 'Pet Boarding and Daycare SEO', desc: 'Dedicated keyword targeting and content for dog boarding, cat boarding, pet hotel, doggy daycare, weekend boarding, and holiday pet care - including seasonal campaigns timed to peak demand periods like summer and holiday periods.' },
+  { icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1', title: 'Pet Care Citation Building', desc: 'Business listings across Yelp, VetFinder, BringFido, PetFinder professional listings, Angi pet services, local chamber directories, and pet-industry directories - consistent NAP data that builds the local authority your map pack position depends on.' },
+  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'Pet Care Content Marketing', desc: 'Educational content targeting research-phase pet owner queries - vaccination schedules, grooming tips, boarding checklists, toxic foods for dogs and cats, dental health for pets - ranking for the queries pet owners type before they need to book a service.' },
+  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'Competitor Analysis for Pet Services', desc: 'Identify every keyword your local vet competitors, grooming salons, and boarding facilities rank for that you do not - and a prioritised roadmap to capture top-10 positions for the highest-value service terms in your area.' },
+  { icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4', title: 'Pet Business Schema Markup', desc: 'VeterinaryCare, AnimalShelter, and LocalBusiness schema types with services offered, appointment availability, species treated, and review aggregate schema - the structured data that gives your business rich result eligibility and local Knowledge Panel presence.' },
 ];
 
 const RESULTS = [
-  { metric: '#1', label: 'For vet near me [city]', sub: '3-vet practice — 4 months', color: '#80FFB0' },
-  { metric: '3.6×', label: 'Increase in appointment bookings', sub: 'Pet grooming salon — 5 months', color: '#FFD060' },
-  { metric: '210%', label: 'Growth in organic traffic', sub: 'Pet boarding facility — 7 months', color: '#80DFFF' },
+  { metric: '#1', label: 'For vet near me [city]', sub: '3-vet practice - 4 months', color: '#80FFB0' },
+  { metric: '3.6×', label: 'Increase in appointment bookings', sub: 'Pet grooming salon - 5 months', color: '#FFD060' },
+  { metric: '210%', label: 'Growth in organic traffic', sub: 'Pet boarding facility - 7 months', color: '#80DFFF' },
 ];
 
 const PROCESS = [
-  { n: '01', title: 'Pet Business Audit', desc: 'Full audit of your website, GBP, citation profile, and competitor landscape — identifying every gap between your current rankings and the top map pack positions for your key services.' },
-  { n: '02', title: 'Keyword + Competitor Mapping', desc: 'We map search demand across every pet service you offer — vet, grooming, boarding, daycare, supplies — and identify the competitor keyword gaps that represent the fastest growth opportunities.' },
-  { n: '03', title: 'GBP + Service Pages', desc: 'Google Business Profile optimised with the right pet service categories. Dedicated service pages written for each offering — with keyword targeting, schema markup, and conversion copy built in.' },
-  { n: '04', title: 'Citation + Directory Setup', desc: 'Your pet business listed and verified across all major pet and local directories — Yelp, VetFinder, BringFido, Angi, and local chamber directories — with consistent NAP data across all platforms.' },
-  { n: '05', title: 'Seasonal Content Campaigns', desc: 'Content campaigns planned around peak demand periods — summer boarding, holiday grooming, spring flea and tick season, winter wellness checks — so you rank at the top when demand spikes.' },
-  { n: '06', title: 'Monthly Reporting', desc: 'Monthly rank tracking, GBP call volume, appointment enquiry count, seasonal campaign performance, and a 90-day forward roadmap — complete visibility into what your SEO is delivering.' },
+  { n: '01', title: 'Pet Business Audit', desc: 'Full audit of your website, GBP, citation profile, and competitor landscape - identifying every gap between your current rankings and the top map pack positions for your key services.' },
+  { n: '02', title: 'Keyword + Competitor Mapping', desc: 'We map search demand across every pet service you offer - vet, grooming, boarding, daycare, supplies - and identify the competitor keyword gaps that represent the fastest growth opportunities.' },
+  { n: '03', title: 'GBP + Service Pages', desc: 'Google Business Profile optimised with the right pet service categories. Dedicated service pages written for each offering - with keyword targeting, schema markup, and conversion copy built in.' },
+  { n: '04', title: 'Citation + Directory Setup', desc: 'Your pet business listed and verified across all major pet and local directories - Yelp, VetFinder, BringFido, Angi, and local chamber directories - with consistent NAP data across all platforms.' },
+  { n: '05', title: 'Seasonal Content Campaigns', desc: 'Content campaigns planned around peak demand periods - summer boarding, holiday grooming, spring flea and tick season, winter wellness checks - so you rank at the top when demand spikes.' },
+  { n: '06', title: 'Monthly Reporting', desc: 'Monthly rank tracking, GBP call volume, appointment enquiry count, seasonal campaign performance, and a 90-day forward roadmap - complete visibility into what your SEO is delivering.' },
 ];
 
 const WHY = [
-  { title: 'Pet Industry SEO Expertise', desc: 'We understand the search behaviour of pet owners — from panicked emergency vet searches to leisurely groomer comparisons — and build content and pages that convert at each stage.' },
-  { title: 'Seasonal Campaign Strategy', desc: 'Pet care demand is highly seasonal. We plan boarding campaigns for summer, grooming campaigns for spring, and health content for winter — ensuring you rank at the peak of each demand cycle.' },
-  { title: 'Multi-Service Keyword Coverage', desc: 'Whether you offer vet services, grooming, boarding, daycare, or pet supplies, we build a separate keyword strategy for each service — maximising your total search visibility.' },
-  { title: 'Community-Focused Link Building', desc: 'We earn links and mentions from local pet communities, rescue groups, dog parks, and lifestyle publications — building the local authority signals that lift all your pet service rankings.' },
-  { title: 'Transparent Reporting', desc: 'Monthly reports in plain language — appointment enquiries from organic, GBP call volume, keyword positions for all target terms, and seasonal campaign performance.' },
-  { title: 'No Lock-in Contracts', desc: 'Month-to-month engagements only. You continue because your appointment book is fuller — not because a contract requires it.' },
+  { title: 'Pet Industry SEO Expertise', desc: 'We understand the search behaviour of pet owners - from panicked emergency vet searches to leisurely groomer comparisons - and build content and pages that convert at each stage.' },
+  { title: 'Seasonal Campaign Strategy', desc: 'Pet care demand is highly seasonal. We plan boarding campaigns for summer, grooming campaigns for spring, and health content for winter - ensuring you rank at the peak of each demand cycle.' },
+  { title: 'Multi-Service Keyword Coverage', desc: 'Whether you offer vet services, grooming, boarding, daycare, or pet supplies, we build a separate keyword strategy for each service - maximising your total search visibility.' },
+  { title: 'Community-Focused Link Building', desc: 'We earn links and mentions from local pet communities, rescue groups, dog parks, and lifestyle publications - building the local authority signals that lift all your pet service rankings.' },
+  { title: 'Transparent Reporting', desc: 'Monthly reports in plain language - appointment enquiries from organic, GBP call volume, keyword positions for all target terms, and seasonal campaign performance.' },
+  { title: 'No Lock-in Contracts', desc: 'Month-to-month engagements only. You continue because your appointment book is fuller - not because a contract requires it.' },
 ];
 
 const FAQS = [
   { q: 'How long does vet SEO take to show results?', a: 'Google Business Profile optimisation for veterinary practices typically produces measurable additional calls and appointment requests within 3 to 6 weeks. Organic website rankings for terms like "vet near me [city]" typically take 3 to 6 months for meaningful movement, depending on local competition. Emergency vet keywords in major metro markets may take 6 to 9 months to reach top-3 positions.' },
-  { q: 'Do you work with mobile pet groomers?', a: 'Yes. Mobile groomers have a different local SEO profile from fixed-location salons — service area targeting becomes more important than a single location. We build service-area landing pages for every suburb or postcode you operate in, and configure your GBP with a service area rather than a physical address. This ensures you rank for "mobile dog groomer [suburb]" searches across your full coverage zone.' },
-  { q: 'How do you target emergency vet searches?', a: 'Emergency vet searches have extreme urgency — pet owners are panicking and click the first result they trust. We build dedicated emergency pages targeting "emergency vet near me", "24-hour vet [city]", and "emergency animal hospital [suburb]", optimised for both organic rankings and GBP map pack visibility. Fast loading speed and clear phone number prominence on these pages is critical for conversion.' },
-  { q: 'Can you run seasonal SEO campaigns for pet boarding?', a: 'Yes — seasonal planning is a core part of our pet care SEO strategy. For boarding businesses, we build content and GBP campaign momentum in the weeks leading up to peak periods: spring school holidays, summer vacation season, and Christmas/New Year holiday periods. This ensures you rank at the top when pet owners are actively searching for boarding options — not after the season has already started.' },
+  { q: 'Do you work with mobile pet groomers?', a: 'Yes. Mobile groomers have a different local SEO profile from fixed-location salons - service area targeting becomes more important than a single location. We build service-area landing pages for every suburb or postcode you operate in, and configure your GBP with a service area rather than a physical address. This ensures you rank for "mobile dog groomer [suburb]" searches across your full coverage zone.' },
+  { q: 'How do you target emergency vet searches?', a: 'Emergency vet searches have extreme urgency - pet owners are panicking and click the first result they trust. We build dedicated emergency pages targeting "emergency vet near me", "24-hour vet [city]", and "emergency animal hospital [suburb]", optimised for both organic rankings and GBP map pack visibility. Fast loading speed and clear phone number prominence on these pages is critical for conversion.' },
+  { q: 'Can you run seasonal SEO campaigns for pet boarding?', a: 'Yes - seasonal planning is a core part of our pet care SEO strategy. For boarding businesses, we build content and GBP campaign momentum in the weeks leading up to peak periods: spring school holidays, summer vacation season, and Christmas/New Year holiday periods. This ensures you rank at the top when pet owners are actively searching for boarding options - not after the season has already started.' },
   { q: 'What directories matter most for pet care businesses?', a: 'The most impactful directories for pet businesses are Google Business Profile (essential for map pack), Yelp, BringFido (for dog-friendly and pet service businesses), VetFinder (for veterinary practices), Angi pet services category, and local community directories. For veterinary practices, listing on pet insurance provider directories is also valuable for attracting insured pet owners.' },
-  { q: 'Can you do SEO for a multi-service pet business (vet + grooming + boarding)?', a: 'Yes — multi-service pet businesses represent an excellent SEO opportunity because each service targets a distinct keyword set with different search intent. We build separate keyword strategies and landing pages for each service, so your vet services rank for vet-intent searches and your grooming competes on groomer searches independently. This multi-track approach maximises total search visibility across your entire service menu.' },
+  { q: 'Can you do SEO for a multi-service pet business (vet + grooming + boarding)?', a: 'Yes - multi-service pet businesses represent an excellent SEO opportunity because each service targets a distinct keyword set with different search intent. We build separate keyword strategies and landing pages for each service, so your vet services rank for vet-intent searches and your grooming competes on groomer searches independently. This multi-track approach maximises total search visibility across your entire service menu.' },
   { q: 'Which review platforms matter for pet businesses?', a: 'Google Business Profile reviews are the most important for map pack rankings and local trust. Yelp is particularly valuable in the US market for grooming salons and boarding facilities. BringFido reviews matter for boarding and daycare businesses targeting travelling pet owners. For veterinary practices, Healthgrades and VetRatingz are relevant. We build review velocity across all platforms relevant to your specific pet services.' },
 ];
 
@@ -180,10 +180,10 @@ export default function PetcareSeoServices() {
         <div className="ptseo-inner">
           <span className="ptseo-eyebrow">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
-            Pet Care SEO — Vet · Grooming · Boarding · Daycare
+            Pet Care SEO - Vet · Grooming · Boarding · Daycare
           </span>
           <h1 className="ptseo-h1">Pet Care SEO That Brings More<br/>Loyal Pet Owners to Your Door</h1>
-          <p className="ptseo-desc">1Solutions builds pet care SEO strategies that put your vet clinic, grooming salon, or boarding facility in front of pet owners exactly when they need you — from urgent emergency vet searches to summer boarding bookings. Local SEO, GBP dominance, and seasonal campaigns built for the pet industry.</p>
+          <p className="ptseo-desc">1Solutions builds pet care SEO strategies that put your vet clinic, grooming salon, or boarding facility in front of pet owners exactly when they need you - from urgent emergency vet searches to summer boarding bookings. Local SEO, GBP dominance, and seasonal campaigns built for the pet industry.</p>
           <div className="ptseo-btns">
             <a href="#contact" className="ptseo-btn-p">
               Get Your Free Pet Care SEO Audit
@@ -219,7 +219,7 @@ export default function PetcareSeoServices() {
         <div className="ptseo-sec-inner">
           <span className="ptseo-tag">What We Do</span>
           <h2 className="ptseo-h2">Full-Spectrum <span>Pet Care SEO Services</span></h2>
-          <p className="ptseo-lead">From veterinary keyword strategy to seasonal boarding campaigns — every component your pet care business needs to dominate local search.</p>
+          <p className="ptseo-lead">From veterinary keyword strategy to seasonal boarding campaigns - every component your pet care business needs to dominate local search.</p>
           <div className="ptseo-grid3">
             {SERVICES.map(s => (
               <div key={s.title} className="ptseo-card">
@@ -252,7 +252,7 @@ export default function PetcareSeoServices() {
         <div className="ptseo-sec-inner">
           <span className="ptseo-tag">Why 1Solutions</span>
           <h2 className="ptseo-h2">The Pet Care SEO Agency <span>That Understands Pet Owners</span></h2>
-          <p className="ptseo-lead">We build pet care SEO strategies rooted in genuine industry knowledge — understanding how pet owners search, decide, and become loyal long-term clients.</p>
+          <p className="ptseo-lead">We build pet care SEO strategies rooted in genuine industry knowledge - understanding how pet owners search, decide, and become loyal long-term clients.</p>
           <div className="ptseo-grid3">
             {WHY.map(w => (
               <div key={w.title} className="ptseo-why-card">
@@ -269,7 +269,7 @@ export default function PetcareSeoServices() {
         <div className="ptseo-sec-inner">
           <span className="ptseo-tag">How We Work</span>
           <h2 className="ptseo-h2">Our <span>6-Step Pet Care SEO Process</span></h2>
-          <p className="ptseo-lead">From audit to ongoing appointment growth — a structured process built for pet care businesses with seasonal demand patterns.</p>
+          <p className="ptseo-lead">From audit to ongoing appointment growth - a structured process built for pet care businesses with seasonal demand patterns.</p>
           <div className="ptseo-grid3">
             {PROCESS.map(p => (
               <div key={p.n}>
@@ -305,7 +305,7 @@ export default function PetcareSeoServices() {
         <div className="ptseo-sec-inner">
           <span className="ptseo-tag" style={{ display:'block', textAlign:'center', marginBottom:12 }}>Ready to Attract More Pet Owners?</span>
           <h2 className="ptseo-cta-h">Get Your Free Pet Care SEO Audit</h2>
-          <p className="ptseo-cta-p">We will audit your GBP, website, citations, and competitor landscape — and deliver a prioritised action plan for growing your appointments and bookings from local search. Free, no obligation.</p>
+          <p className="ptseo-cta-p">We will audit your GBP, website, citations, and competitor landscape - and deliver a prioritised action plan for growing your appointments and bookings from local search. Free, no obligation.</p>
           <div style={{ display:'flex', gap:14, justifyContent:'center', flexWrap:'wrap' }}>
             <Link href="/contact-us" className="ptseo-btn-p">
               Request Free Audit

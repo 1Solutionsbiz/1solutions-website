@@ -28,12 +28,12 @@ const SKILLS = [
   'PrestaShop CLI & Composer', 'PHPUnit Testing', 'SEO & URL Rewriting',
 ];
 const MODELS = [
-  { title: 'Dedicated Hire', desc: 'A full-time PrestaShop developer focused on your store — 8 hrs/day, 5 days/week.', icon: '👤' },
+  { title: 'Dedicated Hire', desc: 'A full-time PrestaShop developer focused on your store - 8 hrs/day, 5 days/week.', icon: '👤' },
   { title: 'Part-Time Hire', desc: 'Half-day engagement for ongoing module work, theme adjustments, or store maintenance.', icon: '⏰' },
   { title: 'Hourly Hire',    desc: 'Flexible billing for audits, bug-fixes, or specific module deliverables.', icon: '🕐' },
 ];
 const WHY = [
-  { h: 'PrestaShop Platform Depth', b: 'Our developers have built multi-store PrestaShop platforms with custom modules, overrides, and complex checkout flows — not just theme installations.' },
+  { h: 'PrestaShop Platform Depth', b: 'Our developers have built multi-store PrestaShop platforms with custom modules, overrides, and complex checkout flows - not just theme installations.' },
   { h: 'Module & Theme Specialists', b: 'We build certified-quality PrestaShop modules and pixel-perfect responsive themes from scratch, following PrestaShop Validator guidelines.' },
   { h: 'Profiles in 48 Hours', b: 'Submit your brief and receive 2-3 pre-vetted PrestaShop developer CVs within two business days.' },
   { h: 'Migration Expertise', b: 'We handle PrestaShop version upgrades, as well as migrations from other platforms including WooCommerce, Magento, and OpenCart.' },
@@ -164,7 +164,7 @@ export default function HirePrestaShopDeveloper() {
       <section className="hpres-sec" ref={skR}>
         <div className="hpres-wrap">
           <h2 className="hpres-sec-title">Skills &amp; Tech Stack</h2>
-          <p className="hpres-sec-sub">Our PrestaShop developers cover the full platform — modules, themes, APIs, performance, and third-party integrations.</p>
+          <p className="hpres-sec-sub">Our PrestaShop developers cover the full platform - modules, themes, APIs, performance, and third-party integrations.</p>
           <div className="hpres-skills">
             {SKILLS.map((s, i) => <span key={s} className={`hpres-skill${skV ? ' hpres-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>)}
           </div>
@@ -212,7 +212,7 @@ export default function HirePrestaShopDeveloper() {
       <section className="hpres-sec hpres-sec-alt" ref={prR}>
         <div className="hpres-wrap">
           <h2 className="hpres-sec-title">Hire in 4 Simple Steps</h2>
-          <p className="hpres-sec-sub">From brief to first staging deployment — in under two weeks.</p>
+          <p className="hpres-sec-sub">From brief to first staging deployment - in under two weeks.</p>
           <div className="hpres-process">
             {PROCESS.map((p, i) => (
               <div key={p.n} className={`hpres-step${prV ? ' hpres-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}>

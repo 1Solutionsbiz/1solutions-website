@@ -11,7 +11,7 @@ const challenges = [
   {
     icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z',
     title: 'CastleGate Fulfilment Setup Complexity',
-    desc: "CastleGate (Wayfair's fulfilment network) dramatically improves delivery speed and search ranking — but the inbound requirements, item eligibility rules, and freight processes are significantly more involved than Amazon FBA, deterring most suppliers from using it.",
+    desc: "CastleGate (Wayfair's fulfilment network) dramatically improves delivery speed and search ranking - but the inbound requirements, item eligibility rules, and freight processes are significantly more involved than Amazon FBA, deterring most suppliers from using it.",
   },
   {
     icon: '9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
@@ -39,7 +39,7 @@ const services = [
   {
     icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z',
     title: 'CastleGate Fulfillment Onboarding & Management',
-    desc: 'Item eligibility review, inbound freight coordination, CastleGate setup in Partner Home, inventory planning, and ongoing replenishment management — ensuring your top-selling SKUs are always in the CastleGate network.',
+    desc: 'Item eligibility review, inbound freight coordination, CastleGate setup in Partner Home, inventory planning, and ongoing replenishment management - ensuring your top-selling SKUs are always in the CastleGate network.',
   },
   {
     icon: 'M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z',
@@ -49,7 +49,7 @@ const services = [
   {
     icon: '9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
     title: 'Wayfair Advertising Management',
-    desc: 'Sponsored Placements campaign management — keyword strategy, placement selection, bid management, and performance reporting to drive profitable traffic to your best-performing products on Wayfair.com.',
+    desc: 'Sponsored Placements campaign management - keyword strategy, placement selection, bid management, and performance reporting to drive profitable traffic to your best-performing products on Wayfair.com.',
   },
   {
     icon: 'M13 10V3L4 14h7v7l9-11h-7z',
@@ -59,7 +59,7 @@ const services = [
   {
     icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',
     title: 'Return Rate Reduction',
-    desc: 'Systematic return reason analysis across your catalogue — identifying the root cause of each return category (size, colour, damage, expectations) and implementing content, imagery, and data fixes to reduce avoidable returns.',
+    desc: 'Systematic return reason analysis across your catalogue - identifying the root cause of each return category (size, colour, damage, expectations) and implementing content, imagery, and data fixes to reduce avoidable returns.',
   },
   {
     icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
@@ -95,7 +95,7 @@ const steps = [
   { title: 'Partner Home Audit', desc: 'Full review of your existing Partner Home setup, product data quality, suppressed listings, return rate analysis, CastleGate eligibility, and pricing competitiveness.' },
   { title: 'Product Data Strategy', desc: 'Category mapping, attribute gap analysis, and a prioritised data enrichment plan to bring your entire catalogue to Wayfair compliance standards and maximise search visibility.' },
   { title: 'CastleGate Setup', desc: 'Item eligibility assessment, freight coordination, CastleGate activation in Partner Home, and initial inventory planning to ensure your top SKUs are in the fulfilment network from day one.' },
-  { title: 'Listing Quality Optimisation', desc: 'Systematic content improvement across your catalogue — title optimisation, attribute enrichment, image review, and return-risk item identification and remediation.' },
+  { title: 'Listing Quality Optimisation', desc: 'Systematic content improvement across your catalogue - title optimisation, attribute enrichment, image review, and return-risk item identification and remediation.' },
   { title: 'Advertising Launch', desc: 'Sponsored Placements campaign setup with keyword research, placement strategy, initial bid structure, and performance baseline measurement for the first 30 days.' },
   { title: 'Monthly Performance Review', desc: 'Full monthly performance review covering revenue, return rate, on-time delivery, CastleGate inventory, advertising ROI, and a clear action plan for the next 30 days.' },
 ];
@@ -111,7 +111,7 @@ const trust = ['Wayfair Partner Home experts', 'CastleGate certified setup', 'No
 
 const FAQS = [
   { q: 'How do I become an approved Wayfair supplier?', a: 'Wayfair supplier applications are submitted through the Partner Home portal. The review process evaluates your product catalogue, pricing, fulfilment capability, and product data quality. Having professional product photography, complete attribute data, and a clear fulfilment model (dropship or CastleGate) significantly improves approval speed. We manage the full application and onboarding process for new suppliers.' },
-  { q: 'What is CastleGate and do I need it to succeed on Wayfair?', a: "CastleGate is Wayfair's fulfilment network — you send inventory to Wayfair's warehouses and they handle delivery to customers, typically within 2 days. CastleGate listings receive significantly higher search ranking and conversion rates due to the faster delivery promise. While not mandatory, we strongly recommend CastleGate for your top-selling SKUs as it is one of the most powerful ranking levers on the platform." },
+  { q: 'What is CastleGate and do I need it to succeed on Wayfair?', a: "CastleGate is Wayfair's fulfilment network - you send inventory to Wayfair's warehouses and they handle delivery to customers, typically within 2 days. CastleGate listings receive significantly higher search ranking and conversion rates due to the faster delivery promise. While not mandatory, we strongly recommend CastleGate for your top-selling SKUs as it is one of the most powerful ranking levers on the platform." },
   { q: 'Why are my Wayfair products not appearing in search?', a: 'The most common causes are incomplete product attributes (missing dimensions, weight, or required category-specific fields), pricing that falls outside the acceptable range for the category, item quality score below the minimum threshold, or fulfilment speed that does not meet Wayfair standards. We diagnose the exact suppression reason for each product and fix it systematically.' },
   { q: 'How does Wayfair pricing work and can you help with pricing strategy?', a: "Wayfair uses a retail model where you set your MSRP and Wayfair adds their margin. However, Wayfair's algorithm strongly weights pricing competitiveness and they may request margin adjustments to run promotions. We help you set a pricing structure that maintains your profitability while remaining competitive within Wayfair's algorithm and eligible for promotional placements." },
   { q: 'What causes high return rates on Wayfair and how do you fix them?', a: 'High return rates on Wayfair are almost always caused by one of three things: inaccurate product dimensions that cause size mismatch surprises, insufficient photography that misrepresents colour or finish, or material descriptions that do not match customer expectations. We audit every return reason you receive and implement specific content fixes that address the root cause SKU by SKU.' },
@@ -295,7 +295,7 @@ export default function WayfairAccountManagement() {
             Wayfair Supplier Management That Drives <span className="wayf-h1-accent">Consistent Home Goods Orders</span>
           </h1>
           <p className="wayf-desc">
-            Wayfair is North America's largest online home goods retailer, with 22 million active customers. 1Solutions manages your complete Wayfair supplier presence — from Partner Home setup to CastleGate fulfilment and listing quality — driving consistent purchase orders month after month.
+            Wayfair is North America's largest online home goods retailer, with 22 million active customers. 1Solutions manages your complete Wayfair supplier presence - from Partner Home setup to CastleGate fulfilment and listing quality - driving consistent purchase orders month after month.
           </p>
           <div className="wayf-trust">
             {trust.map((t, i) => (
@@ -345,7 +345,7 @@ export default function WayfairAccountManagement() {
         <div className="wayf-inner">
           <span className="wayf-tag">Full-Service Wayfair Management</span>
           <h2 className="wayf-h2">What Our <span>Wayfair Management</span> Covers</h2>
-          <p className="wayf-lead">From Partner Home setup to CastleGate fulfilment, product data quality, and Sponsored Placements advertising — we manage every aspect of your Wayfair supplier presence.</p>
+          <p className="wayf-lead">From Partner Home setup to CastleGate fulfilment, product data quality, and Sponsored Placements advertising - we manage every aspect of your Wayfair supplier presence.</p>
           <div className="wayf-grid4">
             {services.map((s, i) => (
               <div key={i} className="wayf-card">
@@ -417,7 +417,7 @@ export default function WayfairAccountManagement() {
         <div className="wayf-inner">
           <span className="wayf-tag">Our Process</span>
           <h2 className="wayf-h2">How We <span>Manage Your Wayfair Account</span></h2>
-          <p className="wayf-lead">A structured six-step process built for Wayfair suppliers — from Partner Home setup and CastleGate onboarding to consistent monthly revenue growth.</p>
+          <p className="wayf-lead">A structured six-step process built for Wayfair suppliers - from Partner Home setup and CastleGate onboarding to consistent monthly revenue growth.</p>
           <div className="wayf-grid3">
             {steps.map((s, i) => (
               <div key={i} className="wayf-card">
@@ -437,7 +437,7 @@ export default function WayfairAccountManagement() {
           <div className="wayf-contact-grid">
             <div>
               <h2 className="wayf-contact-info-h">Get a Free <span>Wayfair Supplier Consultation</span></h2>
-              <p className="wayf-contact-info-p">We will review your existing Wayfair supplier setup or help you plan a new launch — covering product data quality, CastleGate eligibility, pricing strategy, and listing performance.</p>
+              <p className="wayf-contact-info-p">We will review your existing Wayfair supplier setup or help you plan a new launch - covering product data quality, CastleGate eligibility, pricing strategy, and listing performance.</p>
               <div className="wayf-contact-item">
                 <div className="wayf-contact-item-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
@@ -561,7 +561,7 @@ export default function WayfairAccountManagement() {
       <section className="wayf-cta">
         <div className="wayf-inner">
           <h2>Ready to Scale Your Wayfair Revenue?</h2>
-          <p>Join home goods suppliers who trust 1Solutions to manage, optimise, and grow their Wayfair presence — from first SKU to six-figure monthly orders.</p>
+          <p>Join home goods suppliers who trust 1Solutions to manage, optimise, and grow their Wayfair presence - from first SKU to six-figure monthly orders.</p>
           <Link href="#contact" className="wayf-cta-btn">Get Your Free Consultation Today →</Link>
         </div>
       </section>

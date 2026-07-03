@@ -13,7 +13,7 @@ const PILLARS = [
     bg: '#f0faf0',
     border: '#b8e4b5',
     points: [
-      'Paperless-first operations — all documentation, contracts, and reporting are fully digital',
+      'Paperless-first operations - all documentation, contracts, and reporting are fully digital',
       'Remote-first work culture that significantly reduces commute-related carbon emissions',
       'Energy-efficient server infrastructure and preference for green-certified cloud providers',
       'Internal policy encouraging responsible e-waste disposal through certified recyclers',
@@ -64,7 +64,7 @@ const PILLARS = [
     bg: '#f5f0ff',
     border: '#d8c8f8',
     points: [
-      'Transparent pricing, honest timelines, and no hidden fees — ever',
+      'Transparent pricing, honest timelines, and no hidden fees - ever',
       'MSME registered and ISO 9001:2015 certified, upholding global quality management standards',
       'Strict data privacy policies aligned with GDPR principles for all client data handling',
       'Fair wages, inclusive hiring, and zero tolerance for discrimination in our workplace',
@@ -83,10 +83,10 @@ export default function CorporateResponsibility() {
         <meta name="description" content="Learn how 1Solutions gives back to the community through environmental initiatives, free digital literacy programmes, ethical business practices, and skill" />
         <link rel="canonical" href={`${siteUrl}/corporate-responsibility/`} />
         <meta property="og:title" content="Corporate Responsibility | 1Solutions" />
-        <meta property="og:description" content="Our commitment to environment, community, education, and ethical business — because technology should create value for everyone." />
+        <meta property="og:description" content="Our commitment to environment, community, education, and ethical business - because technology should create value for everyone." />
         <meta name="robots" content="index, follow" />
         <style>{`
-          /* ── Corporate Responsibility — prefix: csr- ── */
+          /* ── Corporate Responsibility - prefix: csr- ── */
           .csr-hero {
             background: linear-gradient(135deg, #dbeafe 0%, #d1fae5 30%, #e0f2fe 60%, #fef3c7 100%);
             padding: 80px 24px 72px;
@@ -369,13 +369,13 @@ export default function CorporateResponsibility() {
         <div className="csr-mission">
           <div className="csr-mission-text">
             <h2>Our Commitment to Responsible Business</h2>
-            <p>Since 2009, 1Solutions has grown from a small web development studio into a full-service digital agency. Along the way, we've stayed rooted in a belief that long-term business success and positive social impact are not competing priorities — they're complementary.</p>
+            <p>Since 2009, 1Solutions has grown from a small web development studio into a full-service digital agency. Along the way, we've stayed rooted in a belief that long-term business success and positive social impact are not competing priorities - they're complementary.</p>
             <p>Our CSR commitments aren't a marketing exercise. They are embedded in how we hire, how we operate, how we spend our profits, and how we measure success.</p>
             <p>We hold ourselves to the same standards we'd recommend to any of our clients: transparent, accountable, and always improving.</p>
           </div>
           <div className="csr-mission-visual">
-            <p className="csr-mission-quote">"We build digital solutions for businesses, but our bigger mission is to build a more digitally empowered society — one community at a time."</p>
-            <span className="csr-mission-attr">— 1Solutions Leadership Team</span>
+            <p className="csr-mission-quote">"We build digital solutions for businesses, but our bigger mission is to build a more digitally empowered society - one community at a time."</p>
+            <span className="csr-mission-attr">- 1Solutions Leadership Team</span>
           </div>
         </div>
 

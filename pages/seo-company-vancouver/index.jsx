@@ -3,38 +3,38 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const SERVICES = [
-  { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Keyword Research & Strategy', desc: "In-depth analysis of how Vancouver customers search for your services — high-intent buying queries, neighbourhood-level terms, and competitive keyword gaps your Vancouver rivals are missing." },
-  { icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4', title: 'Technical SEO', desc: 'Core Web Vitals optimisation, mobile speed, crawl error fixes, structured data, and site architecture — the technical foundation every Vancouver business needs before other SEO efforts can compound.' },
-  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'On-Page SEO', desc: 'Title tags, meta descriptions, heading structure, internal linking, and content optimisation across every key page — written for Vancouver buyers, tuned for Google ranking signals.' },
+  { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Keyword Research & Strategy', desc: "In-depth analysis of how Vancouver customers search for your services - high-intent buying queries, neighbourhood-level terms, and competitive keyword gaps your Vancouver rivals are missing." },
+  { icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4', title: 'Technical SEO', desc: 'Core Web Vitals optimisation, mobile speed, crawl error fixes, structured data, and site architecture - the technical foundation every Vancouver business needs before other SEO efforts can compound.' },
+  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'On-Page SEO', desc: 'Title tags, meta descriptions, heading structure, internal linking, and content optimisation across every key page - written for Vancouver buyers, tuned for Google ranking signals.' },
   { icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z', title: 'Local SEO Vancouver', desc: 'Google Business Profile optimisation, Google Maps 3-pack strategy, Vancouver-specific citation building, and NAP consistency management to dominate local search across Metro Vancouver.' },
-  { icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1', title: 'Link Building', desc: 'Quality backlinks from Canadian authority sites, Vancouver business media, industry directories, and digital PR — building the domain authority that sustains Page 1 positions through algorithm updates.' },
-  { icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z', title: 'Content Marketing', desc: 'SEO-driven blog articles, service pages, and landing pages built around what Vancouver customers are actively searching for — content that ranks and converts, not just fills word counts.' },
-  { icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z', title: 'eCommerce SEO', desc: 'Product and category page optimisation for Vancouver online stores on Shopify, WooCommerce, Magento, and custom platforms — more organic visibility, lower customer acquisition costs.' },
-  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'SEO Reporting & Analytics', desc: 'Monthly reports showing keyword ranking movement, organic traffic growth, lead attribution, and ROI — clear numbers so you know exactly what your Vancouver SEO investment is generating.' },
+  { icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1', title: 'Link Building', desc: 'Quality backlinks from Canadian authority sites, Vancouver business media, industry directories, and digital PR - building the domain authority that sustains Page 1 positions through algorithm updates.' },
+  { icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z', title: 'Content Marketing', desc: 'SEO-driven blog articles, service pages, and landing pages built around what Vancouver customers are actively searching for - content that ranks and converts, not just fills word counts.' },
+  { icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z', title: 'eCommerce SEO', desc: 'Product and category page optimisation for Vancouver online stores on Shopify, WooCommerce, Magento, and custom platforms - more organic visibility, lower customer acquisition costs.' },
+  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'SEO Reporting & Analytics', desc: 'Monthly reports showing keyword ranking movement, organic traffic growth, lead attribution, and ROI - clear numbers so you know exactly what your Vancouver SEO investment is generating.' },
 ];
 
 const RESULTS = [
-  { metric: '280%', label: 'Organic traffic growth', sub: 'Vancouver real estate brokerage — 8 months', color: '#0a4268' },
-  { metric: 'Top 3', label: 'Google rankings for 60+ keywords', sub: 'Metro Vancouver tech company — 7 months', color: '#FE9700' },
-  { metric: '3.9×', label: 'Increase in organic leads', sub: 'Vancouver healthcare clinic — 6 months', color: '#059669' },
+  { metric: '280%', label: 'Organic traffic growth', sub: 'Vancouver real estate brokerage - 8 months', color: '#0a4268' },
+  { metric: 'Top 3', label: 'Google rankings for 60+ keywords', sub: 'Metro Vancouver tech company - 7 months', color: '#FE9700' },
+  { metric: '3.9×', label: 'Increase in organic leads', sub: 'Vancouver healthcare clinic - 6 months', color: '#059669' },
 ];
 
 const PROCESS = [
   { n: '01', title: 'Free Vancouver SEO Audit', desc: 'We audit your website for technical health, current keyword rankings, backlink profile, competitor positions, and the specific gaps holding your Vancouver business back from Page 1 on Google.' },
-  { n: '02', title: 'Keyword & Market Research', desc: 'Deep analysis of how Vancouver and Metro Vancouver customers search for your services — mapping every high-intent query, local modifier, and competitor keyword gap into a prioritised roadmap.' },
-  { n: '03', title: 'Technical Optimisation', desc: 'We fix the technical foundations first — Core Web Vitals, mobile performance, crawl errors, schema markup, and site structure — so every subsequent SEO effort builds on solid ground.' },
-  { n: '04', title: 'On-Page & Content', desc: 'Optimising every key page for target keywords and creating new content that captures Vancouver buyer demand across the full search intent spectrum — informational to transactional.' },
-  { n: '05', title: 'Authority & Link Building', desc: 'Building quality backlinks from relevant Canadian authority sites, Vancouver business publications, and local directories — compounding domain authority that holds rankings long-term.' },
-  { n: '06', title: 'Monthly Reporting & Scale', desc: 'Clear monthly reports with ranking movement, traffic growth, and lead data — plus a forward roadmap so you always know what is happening and what we are prioritising next.' },
+  { n: '02', title: 'Keyword & Market Research', desc: 'Deep analysis of how Vancouver and Metro Vancouver customers search for your services - mapping every high-intent query, local modifier, and competitor keyword gap into a prioritised roadmap.' },
+  { n: '03', title: 'Technical Optimisation', desc: 'We fix the technical foundations first - Core Web Vitals, mobile performance, crawl errors, schema markup, and site structure - so every subsequent SEO effort builds on solid ground.' },
+  { n: '04', title: 'On-Page & Content', desc: 'Optimising every key page for target keywords and creating new content that captures Vancouver buyer demand across the full search intent spectrum - informational to transactional.' },
+  { n: '05', title: 'Authority & Link Building', desc: 'Building quality backlinks from relevant Canadian authority sites, Vancouver business publications, and local directories - compounding domain authority that holds rankings long-term.' },
+  { n: '06', title: 'Monthly Reporting & Scale', desc: 'Clear monthly reports with ranking movement, traffic growth, and lead data - plus a forward roadmap so you always know what is happening and what we are prioritising next.' },
 ];
 
 const WHY = [
-  { title: 'Vancouver Market Expertise', desc: "We understand Metro Vancouver's competitive digital landscape — from the tech density in Yaletown to the tourism-driven search behaviour in Gastown. Strategy built on real Vancouver search data." },
-  { title: '15+ Years SEO Experience', desc: "Founded in 2009, 1Solutions has navigated every major Google algorithm update — Panda, Penguin, Hummingbird, BERT, and Helpful Content — consistently delivering Page 1 rankings." },
-  { title: 'Dedicated Account Manager', desc: 'Every Vancouver client has one point of contact who understands your business, reports monthly, and is reachable when you need answers — no rotating teams, no offshore handoffs.' },
-  { title: 'White-Hat SEO Only', desc: 'No shortcuts. We build rankings through technical excellence, quality content, and genuine authority building — methods that outlast algorithm updates and never put your domain at risk.' },
-  { title: 'Transparent Reporting', desc: 'You see exactly what we did, what moved, and what it generated. Keyword rankings, organic sessions, and lead attribution in a clear monthly report — no smoke and mirrors.' },
-  { title: 'No Lock-In Contracts', desc: 'Month-to-month engagements because our results earn your continued business. You stay because your Vancouver rankings keep climbing — not because a contract forces you to.' },
+  { title: 'Vancouver Market Expertise', desc: "We understand Metro Vancouver's competitive digital landscape - from the tech density in Yaletown to the tourism-driven search behaviour in Gastown. Strategy built on real Vancouver search data." },
+  { title: '15+ Years SEO Experience', desc: "Founded in 2009, 1Solutions has navigated every major Google algorithm update - Panda, Penguin, Hummingbird, BERT, and Helpful Content - consistently delivering Page 1 rankings." },
+  { title: 'Dedicated Account Manager', desc: 'Every Vancouver client has one point of contact who understands your business, reports monthly, and is reachable when you need answers - no rotating teams, no offshore handoffs.' },
+  { title: 'White-Hat SEO Only', desc: 'No shortcuts. We build rankings through technical excellence, quality content, and genuine authority building - methods that outlast algorithm updates and never put your domain at risk.' },
+  { title: 'Transparent Reporting', desc: 'You see exactly what we did, what moved, and what it generated. Keyword rankings, organic sessions, and lead attribution in a clear monthly report - no smoke and mirrors.' },
+  { title: 'No Lock-In Contracts', desc: 'Month-to-month engagements because our results earn your continued business. You stay because your Vancouver rankings keep climbing - not because a contract forces you to.' },
 ];
 
 const INDUSTRIES = [
@@ -57,11 +57,11 @@ const AREAS = [
 ];
 
 const FAQS = [
-  { q: "How much does SEO cost in Vancouver?", a: "Vancouver SEO packages from 1Solutions start at CAD 800 per month for small business and local SEO. Comprehensive packages for competitive Vancouver industries like real estate, legal, and tech range from CAD 1,500 to CAD 5,000+ per month depending on competition level and growth goals. We provide a custom quote after your free Vancouver SEO audit — no guesswork, no surprises." },
-  { q: "How long does it take to rank on Google in Vancouver?", a: "Lower-competition local keywords in Vancouver typically show ranking movement within 8 to 12 weeks. Mid-competition terms take 3 to 5 months. Highly competitive Vancouver categories — real estate, lawyers, dentists, and tech SaaS — usually require 5 to 8 months of consistent work. We give honest, audit-based timelines, not optimistic promises designed to win your business." },
-  { q: "Is 1Solutions based in Vancouver?", a: "1Solutions has dedicated SEO specialists with deep expertise in the Metro Vancouver market and the Canadian search landscape. We work with Vancouver clients both remotely and through direct account management — with full understanding of BC-specific business directories, Canadian backlink sources, and Metro Vancouver search competition across every major industry." },
-  { q: "What Vancouver industries do you work with?", a: "We work with Vancouver businesses across real estate, tech and SaaS, healthcare and wellness, legal services, hospitality and tourism, retail and eCommerce, education, and professional services. Every strategy is built from actual Vancouver and Metro Vancouver search volume data for your specific industry — not repurposed content from other markets." },
-  { q: "Do you provide local SEO for Vancouver businesses?", a: "Yes. Local SEO for Vancouver is a core service — Google Business Profile optimisation for Metro Vancouver, BC-specific citation building (Yellow Pages Canada, Yelp Canada, Better Business Bureau), Google Maps 3-pack strategy, and neighbourhood-level targeting across Vancouver, Burnaby, Richmond, Surrey, North Vancouver, Coquitlam, and the broader Metro Vancouver region." },
+  { q: "How much does SEO cost in Vancouver?", a: "Vancouver SEO packages from 1Solutions start at CAD 800 per month for small business and local SEO. Comprehensive packages for competitive Vancouver industries like real estate, legal, and tech range from CAD 1,500 to CAD 5,000+ per month depending on competition level and growth goals. We provide a custom quote after your free Vancouver SEO audit - no guesswork, no surprises." },
+  { q: "How long does it take to rank on Google in Vancouver?", a: "Lower-competition local keywords in Vancouver typically show ranking movement within 8 to 12 weeks. Mid-competition terms take 3 to 5 months. Highly competitive Vancouver categories - real estate, lawyers, dentists, and tech SaaS - usually require 5 to 8 months of consistent work. We give honest, audit-based timelines, not optimistic promises designed to win your business." },
+  { q: "Is 1Solutions based in Vancouver?", a: "1Solutions has dedicated SEO specialists with deep expertise in the Metro Vancouver market and the Canadian search landscape. We work with Vancouver clients both remotely and through direct account management - with full understanding of BC-specific business directories, Canadian backlink sources, and Metro Vancouver search competition across every major industry." },
+  { q: "What Vancouver industries do you work with?", a: "We work with Vancouver businesses across real estate, tech and SaaS, healthcare and wellness, legal services, hospitality and tourism, retail and eCommerce, education, and professional services. Every strategy is built from actual Vancouver and Metro Vancouver search volume data for your specific industry - not repurposed content from other markets." },
+  { q: "Do you provide local SEO for Vancouver businesses?", a: "Yes. Local SEO for Vancouver is a core service - Google Business Profile optimisation for Metro Vancouver, BC-specific citation building (Yellow Pages Canada, Yelp Canada, Better Business Bureau), Google Maps 3-pack strategy, and neighbourhood-level targeting across Vancouver, Burnaby, Richmond, Surrey, North Vancouver, Coquitlam, and the broader Metro Vancouver region." },
   { q: "Can you help a Vancouver startup with a limited SEO budget?", a: "Absolutely. We work with Vancouver startups from early-stage companies building organic foundations pre-launch to growth-stage companies scaling their inbound channel. For limited budgets, we prioritise keyword gap opportunities and content strategies that generate organic traction within 3 to 4 months without requiring a large initial investment." },
   { q: "How do you measure and report SEO results?", a: "We track keyword ranking movement for all target terms, organic sessions from Google Analytics, organic goal completions (leads, calls, form fills), and revenue attributed to organic search where measurable. Monthly reports are sent in the first week of each month with a clear summary of what changed, what drove it, and the priority roadmap for next quarter." },
 ];
@@ -84,7 +84,7 @@ export default function SeoCompanyVancouver() {
       },
       {
         '@type': 'LocalBusiness',
-        name: '1Solutions — SEO Company in Vancouver',
+        name: '1Solutions - SEO Company in Vancouver',
         url: 'https://1solutions.biz',
         email: 'info@1solutions.biz',
         address: { '@type': 'PostalAddress', addressLocality: 'Vancouver', addressRegion: 'BC', addressCountry: 'CA' },
@@ -103,7 +103,7 @@ export default function SeoCompanyVancouver() {
         '@type': 'Service',
         name: 'SEO Services in Vancouver',
         provider: { '@type': 'Organization', name: '1Solutions', url: 'https://1solutions.biz' },
-        description: 'Comprehensive SEO services for Vancouver businesses — technical SEO, on-page optimisation, local SEO, link building, and content strategy to achieve Page 1 Google rankings.',
+        description: 'Comprehensive SEO services for Vancouver businesses - technical SEO, on-page optimisation, local SEO, link building, and content strategy to achieve Page 1 Google rankings.',
         areaServed: { '@type': 'City', name: 'Vancouver' },
         serviceType: 'Search Engine Optimisation',
       },
@@ -123,7 +123,7 @@ export default function SeoCompanyVancouver() {
     <>
       <Head>
         <title>SEO Company in Vancouver | 1Solutions</title>
-        <meta name="description" content="Looking for the best SEO company in Vancouver? 1Solutions delivers Page 1 Google rankings for Vancouver businesses — technical SEO, local SEO, link building" />
+        <meta name="description" content="Looking for the best SEO company in Vancouver? 1Solutions delivers Page 1 Google rankings for Vancouver businesses - technical SEO, local SEO, link building" />
         <meta name="keywords" content="SEO company in Vancouver, SEO agency Vancouver, SEO services Vancouver, best SEO company Vancouver, Vancouver SEO, search engine optimization Vancouver BC" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://1solutions.biz/seo-company-vancouver/" />
@@ -266,7 +266,7 @@ export default function SeoCompanyVancouver() {
         <div className="vanc-inner">
           <span className="vanc-eyebrow"><span className="vanc-eyebrow-dot" />SEO Company in Vancouver, BC</span>
           <h1 className="vanc-h1">Top-Ranked <span>SEO Company in Vancouver</span><br />That Delivers Page 1 Rankings</h1>
-          <p className="vanc-desc">1Solutions is a results-driven SEO company in Vancouver with 15+ years of experience helping Metro Vancouver businesses rank on Page 1 of Google. From technical SEO and local search to link building and content strategy — we build organic visibility that generates qualified leads, not just traffic numbers.</p>
+          <p className="vanc-desc">1Solutions is a results-driven SEO company in Vancouver with 15+ years of experience helping Metro Vancouver businesses rank on Page 1 of Google. From technical SEO and local search to link building and content strategy - we build organic visibility that generates qualified leads, not just traffic numbers.</p>
           <div className="vanc-btns">
             <a href="#contact" className="vanc-btn-p">Get a Free SEO Audit<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
             <Link href="/affordable-seo-packages/" className="vanc-btn-s">View SEO Packages →</Link>
@@ -288,7 +288,7 @@ export default function SeoCompanyVancouver() {
         <div className="vanc-sec-inner">
           <span className="vanc-tag">Our Vancouver SEO Services</span>
           <h2 className="vanc-h2">Complete <span>SEO Services in Vancouver</span></h2>
-          <p className="vanc-lead">Every component of a winning SEO strategy — delivered by a dedicated team that understands the Metro Vancouver market and your growth goals.</p>
+          <p className="vanc-lead">Every component of a winning SEO strategy - delivered by a dedicated team that understands the Metro Vancouver market and your growth goals.</p>
           <div className="vanc-grid4">
             {SERVICES.map(s => (
               <div key={s.title} className="vanc-card">
@@ -319,7 +319,7 @@ export default function SeoCompanyVancouver() {
         <div className="vanc-sec-inner">
           <span className="vanc-tag">Why Choose 1Solutions</span>
           <h2 className="vanc-h2">The Vancouver SEO Agency <span>That Makes Rankings Last</span></h2>
-          <p className="vanc-lead">We build SEO foundations that outlast algorithm updates and deliver compounding organic growth — not short-term spikes that vanish when Google changes its algorithm.</p>
+          <p className="vanc-lead">We build SEO foundations that outlast algorithm updates and deliver compounding organic growth - not short-term spikes that vanish when Google changes its algorithm.</p>
           <div className="vanc-grid2">
             {WHY.map(w => (
               <div key={w.title} className="vanc-why-card">
@@ -335,7 +335,7 @@ export default function SeoCompanyVancouver() {
         <div className="vanc-sec-inner">
           <span className="vanc-tag">How We Work</span>
           <h2 className="vanc-h2">Our <span>6-Step Vancouver SEO Process</span></h2>
-          <p className="vanc-lead">A structured, transparent methodology that compounds organic growth over time — from your first free audit to sustained Page 1 dominance in Metro Vancouver search results.</p>
+          <p className="vanc-lead">A structured, transparent methodology that compounds organic growth over time - from your first free audit to sustained Page 1 dominance in Metro Vancouver search results.</p>
           <div className="vanc-grid3">
             {PROCESS.map(p => (
               <div key={p.n}><div className="vanc-proc-num">{p.n}</div><div className="vanc-proc-line"/><h3 className="vanc-proc-h">{p.title}</h3><p className="vanc-proc-p">{p.desc}</p></div>
@@ -348,7 +348,7 @@ export default function SeoCompanyVancouver() {
         <div className="vanc-sec-inner">
           <span className="vanc-tag">Vancouver Industries We Serve</span>
           <h2 className="vanc-h2">SEO for <span>Every Vancouver Business Sector</span></h2>
-          <p className="vanc-lead">From Yaletown tech startups to Gastown tourism businesses — we deliver SEO strategies built around the specific competitive landscape of your Vancouver industry.</p>
+          <p className="vanc-lead">From Yaletown tech startups to Gastown tourism businesses - we deliver SEO strategies built around the specific competitive landscape of your Vancouver industry.</p>
           <div className="vanc-ind-grid">
             {INDUSTRIES.map(ind => (
               <div key={ind.name} className="vanc-ind-card">
@@ -364,7 +364,7 @@ export default function SeoCompanyVancouver() {
         <div className="vanc-sec-inner">
           <span className="vanc-tag">Areas We Cover</span>
           <h2 className="vanc-h2">SEO Services Across <span>Metro Vancouver</span></h2>
-          <p className="vanc-lead">We serve businesses throughout the Metro Vancouver region — from Vancouver neighbourhoods to the surrounding cities of the Lower Mainland.</p>
+          <p className="vanc-lead">We serve businesses throughout the Metro Vancouver region - from Vancouver neighbourhoods to the surrounding cities of the Lower Mainland.</p>
           <div className="vanc-areas-wrap">
             {AREAS.map(a => <span key={a} className="vanc-area-tag">{a}</span>)}
           </div>
@@ -399,7 +399,7 @@ export default function SeoCompanyVancouver() {
               <div className="vanc-ci"><div className="vanc-ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div><div className="vanc-ci-text"><strong>Email</strong><a href="mailto:info@1solutions.biz">info@1solutions.biz</a></div></div>
               <div className="vanc-ci"><div className="vanc-ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div className="vanc-ci-text"><strong>Response Time</strong><span>Within 24 hours</span></div></div>
               <div className="vanc-trust-list">
-                {['Free audit — no credit card, no commitment','Dedicated Vancouver SEO specialist assigned','Honest timelines based on real competitor data','White-hat only — no ranking risk'].map(t => (
+                {['Free audit - no credit card, no commitment','Dedicated Vancouver SEO specialist assigned','Honest timelines based on real competitor data','White-hat only - no ranking risk'].map(t => (
                   <span key={t} className="vanc-trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>{t}</span>
                 ))}
               </div>

@@ -56,10 +56,10 @@ const PARTNER_TYPES = [
 
 const WHY_PARTNER = [
   { title: '15+ Years of Delivery', desc: 'Over a decade and a half of on-time, on-budget project delivery across 500+ clients worldwide.' },
-  { title: 'Full-Service Capability', desc: 'Web, mobile, cloud, SEO, and design — everything under one roof so your client never needs a third vendor.' },
+  { title: 'Full-Service Capability', desc: 'Web, mobile, cloud, SEO, and design - everything under one roof so your client never needs a third vendor.' },
   { title: 'Transparent Collaboration', desc: 'Real-time project updates, shared dashboards, and a single point of contact for every engagement.' },
   { title: 'NDA-First Approach', desc: 'Your client relationships stay yours. We operate fully under your brand with strict confidentiality agreements.' },
-  { title: 'Flexible Engagement', desc: 'Fixed price, time & materials, or retainer — we adapt to your workflow, not the other way around.' },
+  { title: 'Flexible Engagement', desc: 'Fixed price, time & materials, or retainer - we adapt to your workflow, not the other way around.' },
   { title: 'ISO 9001:2015 Certified', desc: 'Our quality management processes meet international standards, giving you and your clients peace of mind.' },
 ];
 
@@ -111,14 +111,14 @@ export default function PartnerWithUs() {
   return (
     <>
       <Head>
-        <title>Partner with Us | 1Solutions — Technology & Referral Partnerships</title>
+        <title>Partner with Us | 1Solutions - Technology & Referral Partnerships</title>
         <meta name="description" content="Explore technology, referral, white-label, and enterprise partnership opportunities with 1Solutions. Let's grow together." />
         <link rel="canonical" href={`${siteUrl}/partner-with-us/`} />
         <meta property="og:title" content="Partner with Us | 1Solutions" />
         <meta property="og:description" content="Technology, referral, white-label, and enterprise partnerships. Join 1Solutions' growing partner network." />
         <meta name="robots" content="index, follow" />
         <style>{`
-          /* ── Partner with Us — prefix: pwu- ── */
+          /* ── Partner with Us - prefix: pwu- ── */
           .pwu-hero {
             background: linear-gradient(135deg, #dbeafe 0%, #ede9fe 30%, #fef3c7 60%, #fce7f3 100%);
             padding: 80px 24px 72px;
@@ -479,7 +479,7 @@ export default function PartnerWithUs() {
         <div className="pwu-hero-inner">
           <span className="pwu-tag">Partnerships</span>
           <h1>Grow Together with 1Solutions</h1>
-          <p>Whether you're an agency, consultant, technology vendor, or enterprise — there's a partnership model built for you. Let's create more value, together.</p>
+          <p>Whether you're an agency, consultant, technology vendor, or enterprise - there's a partnership model built for you. Let's create more value, together.</p>
           <a href="#apply" className="pwu-hero-cta">Apply to Partner →</a>
         </div>
       </section>
@@ -557,7 +557,7 @@ export default function PartnerWithUs() {
 
             {status === 'success' ? (
               <div className="pwu-success-box">
-                <h3>Enquiry received — thank you!</h3>
+                <h3>Enquiry received - thank you!</h3>
                 <p>Our partnerships team will review your application and be in touch within 1–2 business days.</p>
               </div>
             ) : (

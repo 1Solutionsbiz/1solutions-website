@@ -28,31 +28,31 @@ const SKILLS = [
   'Schema Markup (LocalBusiness)', 'Conversion Rate Optimisation', 'SSL & Security Setup',
 ];
 const MODELS = [
-  { title: 'Starter Website',   desc: 'A fast, professional 5–8 page WordPress website: home, services, about, service areas, and contact — with click-to-call and basic local SEO.', icon: '🏠' },
+  { title: 'Starter Website',   desc: 'A fast, professional 5–8 page WordPress website: home, services, about, service areas, and contact - with click-to-call and basic local SEO.', icon: '🏠' },
   { title: 'Full Website Build', desc: 'A complete website with individual service pages, service area landing pages, before/after gallery, online booking, and advanced local SEO.', icon: '🔨' },
-  { title: 'Website Redesign',  desc: 'We redesign your existing home services website — improving speed, mobile experience, trust signals, and conversion rate — without changing your content strategy.', icon: '🔄' },
+  { title: 'Website Redesign',  desc: 'We redesign your existing home services website - improving speed, mobile experience, trust signals, and conversion rate - without changing your content strategy.', icon: '🔄' },
 ];
 const WHY = [
   { h: 'Built for Lead Generation',        b: 'Every page is designed with one goal: generating calls and booking requests. We use proven CTA placement, trust signals, and urgency triggers specific to home service buyers.' },
   { h: 'Mobile-First Design',              b: '70%+ of home service searches happen on mobile. Our designs put your phone number front-and-center, load in under 2 seconds, and make booking frictionless on any device.' },
   { h: 'Local SEO Ready',                  b: 'We build LocalBusiness schema, individual service area pages, Google Maps integration, and GMB-optimised on-page content from day one.' },
-  { h: 'Home Services Industry Experience', b: "We've built websites for HVAC companies, plumbers, landscapers, roofers, electricians, cleaning services, and pest control businesses — we understand your buyers." },
+  { h: 'Home Services Industry Experience', b: "We've built websites for HVAC companies, plumbers, landscapers, roofers, electricians, cleaning services, and pest control businesses - we understand your buyers." },
   { h: 'Fast Turnaround',                  b: 'Most home services websites go live in 3–5 weeks. We use a structured process with clear milestones so you\'re never waiting on us.' },
   { h: 'Ongoing Support Available',        b: 'Post-launch, we offer WordPress maintenance plans, local SEO retainers, and Google Ads management so your website keeps generating leads.' },
 ];
 const PROCESS = [
-  { n: '01', h: 'Discovery Call',    b: 'We learn about your services, service area, target customers, and current lead generation challenges — then scope the project and share a fixed-price proposal.' },
+  { n: '01', h: 'Discovery Call',    b: 'We learn about your services, service area, target customers, and current lead generation challenges - then scope the project and share a fixed-price proposal.' },
   { n: '02', h: 'Design',            b: 'We create wireframes and a full design mockup for your approval. You review, request changes, and sign off before development begins.' },
   { n: '03', h: 'Development',       b: 'We build your WordPress website with all pages, service area content, booking forms, click-to-call, local SEO setup, and speed optimisation.' },
   { n: '04', h: 'Launch & Handover', b: 'We test the site on all devices, launch it, submit to Google Search Console, and train you on how to update your own content.' },
 ];
 const FAQS = [
   { q: 'What types of home service businesses do you work with?', a: "We've built websites for HVAC companies, plumbers, electricians, landscapers, lawn care businesses, roofers, cleaning services, pest control operators, garage door companies, and general contractors. If you work on homes, we can build your site." },
-  { q: 'How much does a home services website cost?', a: 'A starter 5–8 page website starts from $1,500. A full website with service area pages, gallery, online booking, and advanced SEO starts from $3,000. We provide a fixed-price quote after a free discovery call — no hourly billing surprises.' },
-  { q: 'Will my website rank on Google?', a: 'We build local SEO fundamentals into every website — LocalBusiness schema, correct heading structure, meta tags, service area content, and Google Maps integration. For ongoing ranking improvement, we offer monthly local SEO retainers.' },
+  { q: 'How much does a home services website cost?', a: 'A starter 5–8 page website starts from $1,500. A full website with service area pages, gallery, online booking, and advanced SEO starts from $3,000. We provide a fixed-price quote after a free discovery call - no hourly billing surprises.' },
+  { q: 'Will my website rank on Google?', a: 'We build local SEO fundamentals into every website - LocalBusiness schema, correct heading structure, meta tags, service area content, and Google Maps integration. For ongoing ranking improvement, we offer monthly local SEO retainers.' },
   { q: 'Can customers book jobs online?', a: 'Yes. We integrate booking forms, quote request forms, or scheduling tools (such as Jobber, ServiceTitan, or a custom form) so customers can request service directly from your website.' },
   { q: 'How long does it take to build?', a: 'Typically 3–5 weeks from project kick-off to launch. Larger websites with many service area pages can take 6–8 weeks. We share a detailed timeline in the proposal.' },
-  { q: 'Do you offer website maintenance after launch?', a: 'Yes. Our WordPress maintenance plans cover security updates, plugin updates, uptime monitoring, and a set number of content update hours per month — starting from $99/month.' },
+  { q: 'Do you offer website maintenance after launch?', a: 'Yes. Our WordPress maintenance plans cover security updates, plugin updates, uptime monitoring, and a set number of content update hours per month - starting from $99/month.' },
 ];
 
 export default function HomeServicesWebsiteDesign() {
@@ -84,7 +84,7 @@ export default function HomeServicesWebsiteDesign() {
         { '@type': 'ListItem', position: 2, name: 'Home Services Website Design', item: 'https://www.1solutions.biz/home-services-website-design/' },
       ]},
       { '@type': 'Service', name: 'Home Services Website Design', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Professional home services website design from 1Solutions — conversion-focused websites for HVAC, plumbing, landscaping, roofing, and contractor businesses.',
+        description: 'Professional home services website design from 1Solutions - conversion-focused websites for HVAC, plumbing, landscaping, roofing, and contractor businesses.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '112', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -149,7 +149,7 @@ export default function HomeServicesWebsiteDesign() {
       </Head>
       <section className="hsd-hero">
         <h1>Home Services Website Design<br/>Websites Built to Book Jobs and Generate Calls</h1>
-        <p>We design and build professional websites for HVAC, plumbing, landscaping, roofing, cleaning, and other home service businesses — optimised for local SEO, click-to-call, and online booking to turn visitors into paying customers.</p>
+        <p>We design and build professional websites for HVAC, plumbing, landscaping, roofing, cleaning, and other home service businesses - optimised for local SEO, click-to-call, and online booking to turn visitors into paying customers.</p>
         <div className="hsd-hero-btns">
           <Link href="/contact-us" className="hsd-btn-primary">Get a Free Website Quote →</Link>
           <Link href="/portfolio" className="hsd-btn-outline">View Portfolio</Link>
@@ -165,14 +165,14 @@ export default function HomeServicesWebsiteDesign() {
       <section className="hsd-sec hsd-sec-alt" ref={enR}>
         <div className="hsd-wrap">
           <h2 className="hsd-sec-title">Website Packages</h2>
-          <p className="hsd-sec-sub">From a quick professional starter site to a full lead-generation machine — choose what fits your business right now.</p>
+          <p className="hsd-sec-sub">From a quick professional starter site to a full lead-generation machine - choose what fits your business right now.</p>
           <div className="hsd-models">{MODELS.map((m, i) => <div key={m.title} className={`hsd-model${enV ? ' hsd-in' : ''}`} style={{ transitionDelay: `${i * 120}ms` }}><div className="hsd-model-icon">{m.icon}</div><h3>{m.title}</h3><p>{m.desc}</p></div>)}</div>
         </div>
       </section>
       <section className="hsd-sec" ref={whR}>
         <div className="hsd-wrap">
           <h2 className="hsd-sec-title">Why Home Service Businesses Choose 1Solutions</h2>
-          <p className="hsd-sec-sub">We understand the home services market — your buyers, your competition, and what it takes to win local search.</p>
+          <p className="hsd-sec-sub">We understand the home services market - your buyers, your competition, and what it takes to win local search.</p>
           <div className="hsd-why-grid">{WHY.map((w, i) => <div key={w.h} className={`hsd-why-item${whV ? ' hsd-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
         </div>
       </section>
@@ -187,7 +187,7 @@ export default function HomeServicesWebsiteDesign() {
       <section className="hsd-sec hsd-sec-alt" ref={prR}>
         <div className="hsd-wrap">
           <h2 className="hsd-sec-title">How We Build Your Website</h2>
-          <p className="hsd-sec-sub">A clear four-step process from discovery to launch — with no surprises on timeline or cost.</p>
+          <p className="hsd-sec-sub">A clear four-step process from discovery to launch - with no surprises on timeline or cost.</p>
           <div className="hsd-process">{PROCESS.map((p, i) => <div key={p.n} className={`hsd-step${prV ? ' hsd-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}><div className="hsd-step-n">{p.n}</div><h3>{p.h}</h3><p>{p.b}</p></div>)}</div>
         </div>
       </section>
@@ -201,7 +201,7 @@ export default function HomeServicesWebsiteDesign() {
       <section className="hsd-cta">
         <div className="hsd-wrap">
           <h2>Ready to Get a Website That Books More Jobs?</h2>
-          <p>Tell us about your home service business and we&apos;ll deliver a fixed-price proposal within 24 hours — no contracts, no hourly billing.</p>
+          <p>Tell us about your home service business and we&apos;ll deliver a fixed-price proposal within 24 hours - no contracts, no hourly billing.</p>
           <Link href="/contact-us" className="hsd-btn-primary">Get a Free Website Quote →</Link>
         </div>
       </section>

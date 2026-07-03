@@ -325,7 +325,7 @@ export default function Sitemap() {
     <>
       <Head>
         <title>Sitemap | 1Solutions</title>
-        <meta name="description" content="Complete sitemap of 1Solutions — browse all our web development, digital marketing, industry solutions, and hire developer pages." />
+        <meta name="description" content="Complete sitemap of 1Solutions - browse all our web development, digital marketing, industry solutions, and hire developer pages." />
         <meta name="robots" content="index, follow" />
       </Head>
 
@@ -495,7 +495,7 @@ export default function Sitemap() {
           <div className="sm-hero-inner">
             <h1>Sitemap</h1>
             <p>
-              A complete directory of every page on 1Solutions.biz — find our services,
+              A complete directory of every page on 1Solutions.biz - find our services,
               solutions, industry expertise, and resources all in one place.
             </p>
           </div>

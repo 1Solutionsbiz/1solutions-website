@@ -28,13 +28,13 @@ const SKILLS = [
   'WebSockets (ASGI)', 'CI/CD Pipelines',
 ];
 const MODELS = [
-  { title: 'Dedicated Hire', desc: 'A full-time Python developer committed to your project — 8 hrs/day, 5 days/week.', icon: '👤' },
+  { title: 'Dedicated Hire', desc: 'A full-time Python developer committed to your project - 8 hrs/day, 5 days/week.', icon: '👤' },
   { title: 'Part-Time Hire', desc: 'Half-day engagement for API development, data pipelines, or ongoing feature delivery.', icon: '⏰' },
   { title: 'Hourly Hire',    desc: 'Flexible billing for code reviews, architecture planning, or data engineering tasks.', icon: '🕐' },
 ];
 const WHY = [
-  { h: 'Web & Data Python Specialists', b: 'Our developers span Django web apps, FastAPI microservices, and data engineering pipelines — one partner for your entire Python backend.' },
-  { h: 'Production-Proven Code', b: 'Every developer has shipped Python systems at scale — high-throughput APIs, ETL pipelines, ML inference endpoints, and async ASGI services.' },
+  { h: 'Web & Data Python Specialists', b: 'Our developers span Django web apps, FastAPI microservices, and data engineering pipelines - one partner for your entire Python backend.' },
+  { h: 'Production-Proven Code', b: 'Every developer has shipped Python systems at scale - high-throughput APIs, ETL pipelines, ML inference endpoints, and async ASGI services.' },
   { h: 'Profiles in 48 Hours', b: 'Submit your brief and receive 2-3 pre-screened Python developer CVs within two business days.' },
   { h: 'Clean, Testable Python', b: 'Our developers follow PEP 8, type annotations, pytest-driven TDD, and use tools like Ruff, mypy, and Black for automated quality enforcement.' },
   { h: 'NDA & IP Security', b: 'NDA and IP assignment signed before any access to your repositories, data, or infrastructure.' },
@@ -43,7 +43,7 @@ const WHY = [
 const PROCESS = [
   { n: '01', h: 'Share Your Stack', b: 'Tell us the Python version, framework (Django/Flask/FastAPI), and project goals.' },
   { n: '02', h: 'Receive Profiles', b: '2-3 matched Python developer CVs delivered within 48 hours.' },
-  { n: '03', h: 'Interview & Select', b: 'Run your own technical round — algorithms, system design, or live coding.' },
+  { n: '03', h: 'Interview & Select', b: 'Run your own technical round - algorithms, system design, or live coding.' },
   { n: '04', h: 'Onboard & Deliver', b: 'Developer joins your repo and tools. First sprint starts within 7 days.' },
 ];
 const FAQS = [
@@ -87,7 +87,7 @@ export default function HirePythonDeveloper() {
         { '@type': 'ListItem', position: 2, name: 'Hire Python Developer', item: 'https://www.1solutions.biz/hire-python-developer/' },
       ]},
       { '@type': 'Service', name: 'Hire Python Developer', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Hire dedicated Python developers from 1Solutions — Django, FastAPI, Flask, and data engineering experts.',
+        description: 'Hire dedicated Python developers from 1Solutions - Django, FastAPI, Flask, and data engineering experts.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '108', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -164,7 +164,7 @@ export default function HirePythonDeveloper() {
       <section className="hpy-sec" ref={skR}>
         <div className="hpy-wrap">
           <h2 className="hpy-sec-title">Skills &amp; Tech Stack</h2>
-          <p className="hpy-sec-sub">Our Python developers cover web frameworks, async APIs, data engineering, and cloud deployment — end to end.</p>
+          <p className="hpy-sec-sub">Our Python developers cover web frameworks, async APIs, data engineering, and cloud deployment - end to end.</p>
           <div className="hpy-skills">
             {SKILLS.map((s, i) => <span key={s} className={`hpy-skill${skV ? ' hpy-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>)}
           </div>
@@ -174,7 +174,7 @@ export default function HirePythonDeveloper() {
       <section className="hpy-sec hpy-sec-alt" ref={enR}>
         <div className="hpy-wrap">
           <h2 className="hpy-sec-title">Flexible Engagement Models</h2>
-          <p className="hpy-sec-sub">Full-time, part-time, or hourly — scaled to your sprint velocity and budget.</p>
+          <p className="hpy-sec-sub">Full-time, part-time, or hourly - scaled to your sprint velocity and budget.</p>
           <div className="hpy-models">
             {MODELS.map((m, i) => (
               <div key={m.title} className={`hpy-model${enV ? ' hpy-in' : ''}`} style={{ transitionDelay: `${i * 120}ms` }}>
@@ -189,7 +189,7 @@ export default function HirePythonDeveloper() {
       <section className="hpy-sec" ref={whR}>
         <div className="hpy-wrap">
           <h2 className="hpy-sec-title">Why Hire Python Developers from 1Solutions?</h2>
-          <p className="hpy-sec-sub">We place Pythonistas who write idiomatic, tested, and documented code — not just scripts that happen to work.</p>
+          <p className="hpy-sec-sub">We place Pythonistas who write idiomatic, tested, and documented code - not just scripts that happen to work.</p>
           <div className="hpy-why-grid">
             {WHY.map((w, i) => (
               <div key={w.h} className={`hpy-why-item${whV ? ' hpy-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}>
@@ -212,7 +212,7 @@ export default function HirePythonDeveloper() {
       <section className="hpy-sec hpy-sec-alt" ref={prR}>
         <div className="hpy-wrap">
           <h2 className="hpy-sec-title">Hire in 4 Simple Steps</h2>
-          <p className="hpy-sec-sub">From brief to first merged PR — in under two weeks.</p>
+          <p className="hpy-sec-sub">From brief to first merged PR - in under two weeks.</p>
           <div className="hpy-process">
             {PROCESS.map((p, i) => (
               <div key={p.n} className={`hpy-step${prV ? ' hpy-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}>
@@ -245,7 +245,7 @@ export default function HirePythonDeveloper() {
       <section className="hpy-cta">
         <div className="hpy-wrap">
           <h2>Ready to Hire Your Python Developer?</h2>
-          <p>Share your stack and requirements — receive matched Python specialist profiles within 48 hours, no commitment required.</p>
+          <p>Share your stack and requirements - receive matched Python specialist profiles within 48 hours, no commitment required.</p>
           <Link href="/contact-us" className="hpy-btn-primary">Get Started Today →</Link>
         </div>
       </section>

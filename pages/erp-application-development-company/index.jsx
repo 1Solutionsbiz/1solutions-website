@@ -18,7 +18,7 @@ const SCHEMA = {
       '@type': 'Service',
       name: 'ERP Application Development',
       url: 'https://www.1solutions.biz/erp-application-development-company/',
-      description: 'Custom ERP application development — finance, inventory, manufacturing, procurement, HR, and supply chain modules built to unify your operations, eliminate data silos, and replace expensive off-the-shelf ERP licensing with a platform you fully own.',
+      description: 'Custom ERP application development - finance, inventory, manufacturing, procurement, HR, and supply chain modules built to unify your operations, eliminate data silos, and replace expensive off-the-shelf ERP licensing with a platform you fully own.',
       provider: {
         '@type': 'Organization',
         name: '1Solutions',
@@ -32,11 +32,11 @@ const SCHEMA = {
     {
       '@type': 'FAQPage',
       mainEntity: [
-        { '@type': 'Question', name: 'Why build a custom ERP instead of using SAP or Oracle?', acceptedAnswer: { '@type': 'Answer', text: 'SAP, Oracle, and Microsoft Dynamics are powerful but carry steep licensing costs, lengthy implementation timelines (12–36 months), heavy customisation consultancy fees, and significant process adaptation burden. A custom ERP is built precisely around your business processes — your chart of accounts, your production workflows, your approval hierarchies — with no licensing fees, no forced upgrades, and full ownership of the code and data. For mid-market and growth-stage companies, a custom ERP typically costs 40–70% less over 5 years than an equivalent SAP or Oracle implementation.' } },
-        { '@type': 'Question', name: 'How long does custom ERP development take?', acceptedAnswer: { '@type': 'Answer', text: 'A core ERP covering finance (GL, AP/AR, invoicing), inventory management, and basic procurement typically takes 20–28 weeks. Adding manufacturing (BOM, production orders, MES integration), HR and payroll, or advanced supply chain modules adds 8–14 weeks per module. A full enterprise ERP covering all major modules with multi-entity, multi-currency, and BI dashboards typically takes 12–18 months. We use a modular delivery approach — core modules go live first while additional modules are built in parallel.' } },
+        { '@type': 'Question', name: 'Why build a custom ERP instead of using SAP or Oracle?', acceptedAnswer: { '@type': 'Answer', text: 'SAP, Oracle, and Microsoft Dynamics are powerful but carry steep licensing costs, lengthy implementation timelines (12–36 months), heavy customisation consultancy fees, and significant process adaptation burden. A custom ERP is built precisely around your business processes - your chart of accounts, your production workflows, your approval hierarchies - with no licensing fees, no forced upgrades, and full ownership of the code and data. For mid-market and growth-stage companies, a custom ERP typically costs 40–70% less over 5 years than an equivalent SAP or Oracle implementation.' } },
+        { '@type': 'Question', name: 'How long does custom ERP development take?', acceptedAnswer: { '@type': 'Answer', text: 'A core ERP covering finance (GL, AP/AR, invoicing), inventory management, and basic procurement typically takes 20–28 weeks. Adding manufacturing (BOM, production orders, MES integration), HR and payroll, or advanced supply chain modules adds 8–14 weeks per module. A full enterprise ERP covering all major modules with multi-entity, multi-currency, and BI dashboards typically takes 12–18 months. We use a modular delivery approach - core modules go live first while additional modules are built in parallel.' } },
         { '@type': 'Question', name: 'Can you integrate a custom ERP with our existing systems?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. ERP integration is a core specialisation. We have built integrations with CRM systems (Salesforce, HubSpot, custom CRM), eCommerce platforms (Shopify, WooCommerce, Magento), payment gateways, banking APIs, logistics and 3PL systems (ShipBob, ShipStation), HRMS platforms, EDI for supplier and customer data exchange, customs and tax systems, and BI tools (Power BI, Tableau, Metabase). All integrations are built with error handling, retry logic, and real-time monitoring dashboards.' } },
         { '@type': 'Question', name: 'Can you migrate data from SAP, Oracle, or legacy ERP to a custom system?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We handle full ERP data migrations from SAP Business One, SAP S/4HANA, Oracle NetSuite, Microsoft Dynamics, Sage, Epicor, Infor, and legacy custom ERP systems. Migration covers chart of accounts, GL balances, open transactions, vendor and customer master data, inventory records, historical orders, and employee data. We run the migration on a staging system first, validate data integrity with automated reconciliation checks, and perform a final delta migration before go-live cutover.' } },
-        { '@type': 'Question', name: 'Do you build cloud-based ERP systems?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. All ERP systems we build are cloud-native by default, deployed on AWS, Azure, or Google Cloud with auto-scaling infrastructure, multi-availability-zone redundancy, and 99.9% uptime SLA. We also offer hybrid deployment models for organisations with on-premise data requirements — with cloud-based analytics and reporting layers connected to on-premise operational databases. Mobile ERP access for iOS and Android is included across all cloud ERP builds.' } },
+        { '@type': 'Question', name: 'Do you build cloud-based ERP systems?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. All ERP systems we build are cloud-native by default, deployed on AWS, Azure, or Google Cloud with auto-scaling infrastructure, multi-availability-zone redundancy, and 99.9% uptime SLA. We also offer hybrid deployment models for organisations with on-premise data requirements - with cloud-based analytics and reporting layers connected to on-premise operational databases. Mobile ERP access for iOS and Android is included across all cloud ERP builds.' } },
         { '@type': 'Question', name: 'What ERP modules do you develop?', acceptedAnswer: { '@type': 'Answer', text: 'We develop the full spectrum of ERP modules: Financial Management (GL, AP, AR, fixed assets, budgeting, multi-entity consolidation), Inventory & Warehouse Management (multi-location, barcode/RFID, lot tracking, reorder automation), Manufacturing (BOM, MRP, production orders, shop floor control), Procurement (purchase orders, supplier management, three-way matching), Sales Order Management, HR & Payroll, Project Management & Job Costing, Supply Chain Management, and Business Intelligence dashboards. Modules are built independently and integrated into a unified data platform.' } },
       ],
     },
@@ -45,7 +45,7 @@ const SCHEMA = {
 
 /* ─── Page data ──────────────────────────────────────────────── */
 const SERVICES = [
-  { n: '01', title: 'Custom ERP Development', desc: 'End-to-end custom ERP platforms designed around your business processes — modular architecture covering finance, inventory, manufacturing, procurement, HR, and supply chain, unified in a single data platform with role-based access.' },
+  { n: '01', title: 'Custom ERP Development', desc: 'End-to-end custom ERP platforms designed around your business processes - modular architecture covering finance, inventory, manufacturing, procurement, HR, and supply chain, unified in a single data platform with role-based access.' },
   { n: '02', title: 'Financial Management Module', desc: 'General ledger, accounts payable/receivable, invoicing, multi-currency, multi-entity consolidation, fixed asset management, budgeting, cash flow forecasting, and tax compliance reporting built to your chart of accounts.', feat: true },
   { n: '03', title: 'Inventory & Warehouse Management', desc: 'Multi-location inventory control with barcode and RFID integration, lot and serial number tracking, reorder point automation, cycle counting, goods receipt/issue workflows, and warehouse management system (WMS) capabilities.' },
   { n: '04', title: 'Manufacturing & Production (MES)', desc: 'Bill of materials (BOM), material requirements planning (MRP), production order management, shop floor scheduling, work-in-progress (WIP) tracking, capacity planning, quality control, and manufacturing execution system (MES) integration.' },
@@ -53,7 +53,7 @@ const SERVICES = [
   { n: '06', title: 'HR, Payroll & Workforce Management', desc: 'Employee master data, organisational hierarchy, leave and attendance management, payroll processing (multi-country), expense claims, performance management, onboarding workflows, and self-service employee portals.' },
   { n: '07', title: 'Supply Chain & Demand Planning', desc: 'End-to-end supply chain visibility with demand forecasting (AI/ML-driven), supplier lead time tracking, safety stock optimisation, logistics integration (3PL, freight, customs), and multi-tier supply chain analytics.' },
   { n: '08', title: 'ERP Integration & API Connectivity', desc: 'Bidirectional integrations with CRM systems, eCommerce platforms (Shopify, WooCommerce), payment gateways, banking APIs, logistics providers, EDI for trading partners, BI tools, and customs/tax compliance systems.' },
-  { n: '09', title: 'ERP Migration & Legacy Modernisation', desc: 'Full ERP data migrations from SAP, Oracle NetSuite, Microsoft Dynamics, Sage, Epicor, Infor, or legacy bespoke systems — with GL balance migration, open transaction transfer, master data mapping, and staged cutover.' },
+  { n: '09', title: 'ERP Migration & Legacy Modernisation', desc: 'Full ERP data migrations from SAP, Oracle NetSuite, Microsoft Dynamics, Sage, Epicor, Infor, or legacy bespoke systems - with GL balance migration, open transaction transfer, master data mapping, and staged cutover.' },
   { n: '10', title: 'ERP Analytics & BI Dashboards', desc: 'Real-time operational dashboards, financial consolidation reports, production efficiency KPIs, inventory turnover analytics, procurement spend analysis, and executive BI dashboards built on ClickHouse, Metabase, or Power BI.' },
 ];
 
@@ -109,10 +109,10 @@ const ENGAGEMENT_MODELS = [
     feat: true,
     icon: 'M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z',
     headline: 'Your offshore ERP engineering team. Full-time. Fully yours.',
-    desc: 'A dedicated squad of ERP specialists — backend engineer, frontend developer, database architect, QA, and DevOps — working exclusively on your ERP platform at a fraction of US/UK/AU hiring cost. Full source code and IP ownership retained by you.',
+    desc: 'A dedicated squad of ERP specialists - backend engineer, frontend developer, database architect, QA, and DevOps - working exclusively on your ERP platform at a fraction of US/UK/AU hiring cost. Full source code and IP ownership retained by you.',
     bestFor: ['Full ERP platform development (multi-module)', 'Long-term ERP product or SaaS roadmap', 'Replacing or augmenting an in-house ERP team', 'Industry-vertical ERP built for resale'],
     process: 'Team assembly → Discovery sprint → Modular delivery → Continuous roadmap',
-    timeline: 'Ongoing — scale up or down each quarter',
+    timeline: 'Ongoing - scale up or down each quarter',
   },
   {
     id: 'fixed',
@@ -121,7 +121,7 @@ const ENGAGEMENT_MODELS = [
     badgeColor: '#ea580c',
     icon: 'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z',
     headline: 'Agreed price. Agreed scope. Milestone delivery.',
-    desc: 'Best for well-defined ERP modules or a core ERP build with a clear specification. We agree on deliverables, price, and timeline upfront — with milestone-based releases and full transparency. No scope creep, no surprise invoices.',
+    desc: 'Best for well-defined ERP modules or a core ERP build with a clear specification. We agree on deliverables, price, and timeline upfront - with milestone-based releases and full transparency. No scope creep, no surprise invoices.',
     bestFor: ['Core ERP MVP (Finance + Inventory + Procurement)', 'Specific ERP module (Manufacturing, HR, WMS)', 'ERP data migration from legacy system', 'Custom ERP integration with a defined API'],
     process: 'Detailed spec → Fixed quote → Milestone delivery → Sign-off',
     timeline: 'Best for projects 12–28 weeks',
@@ -136,22 +136,22 @@ const ENGAGEMENT_MODELS = [
     desc: 'Billed on actual time and resources used. Best for ERP discovery phases, proof-of-concept builds, AI analytics module development, or iterative feature additions to an existing ERP where business requirements are still being defined.',
     bestFor: ['ERP discovery, scoping & process mapping', 'Adding AI demand forecasting or BI module', 'ERP audit, performance, or security review', 'Proof-of-concept for a new ERP module'],
     process: 'Sprint planning → Biweekly delivery → Iterative refinement → Transparent timesheets',
-    timeline: 'Start in 1 week — no lengthy onboarding',
+    timeline: 'Start in 1 week - no lengthy onboarding',
   },
 ];
 
 const PROCESS_STEPS = [
-  { num: '01', title: 'Business Process Discovery & Requirements Mapping', desc: 'We conduct structured workshops with your finance, operations, procurement, manufacturing, and HR stakeholders to map existing workflows, identify pain points, define data ownership, and establish integration requirements — before a single line of code is written.' },
-  { num: '02', title: 'ERP Architecture & Data Modelling', desc: 'Our architects design a modular, scalable ERP architecture with a unified data model — shared master data (entities, accounts, locations, products) with module-specific transaction tables, a clean API layer, and a reporting data warehouse decoupled from operational databases.' },
-  { num: '03', title: 'Phased Module Development — Core First', desc: 'We build and deliver the core financial and inventory modules first, getting your team on live data quickly. Manufacturing, procurement, HR, and supply chain modules are built in parallel sprints, with biweekly demo releases on a shared staging environment.' },
-  { num: '04', title: 'Integration Development & EDI/API Connectivity', desc: 'All required integrations are designed, built, and tested — CRM, eCommerce, banking, logistics, EDI trading partners, tax engines, and BI tools. Integration monitoring dashboards with alert thresholds are delivered alongside each connector.' },
-  { num: '05', title: 'Data Migration, UAT & Parallel Run', desc: 'Full data migration from your legacy or interim system — GL balances, open transactions, vendor and customer master data, inventory, and historical records. A controlled parallel run period validates ERP data accuracy against your existing system before final cutover.' },
+  { num: '01', title: 'Business Process Discovery & Requirements Mapping', desc: 'We conduct structured workshops with your finance, operations, procurement, manufacturing, and HR stakeholders to map existing workflows, identify pain points, define data ownership, and establish integration requirements - before a single line of code is written.' },
+  { num: '02', title: 'ERP Architecture & Data Modelling', desc: 'Our architects design a modular, scalable ERP architecture with a unified data model - shared master data (entities, accounts, locations, products) with module-specific transaction tables, a clean API layer, and a reporting data warehouse decoupled from operational databases.' },
+  { num: '03', title: 'Phased Module Development - Core First', desc: 'We build and deliver the core financial and inventory modules first, getting your team on live data quickly. Manufacturing, procurement, HR, and supply chain modules are built in parallel sprints, with biweekly demo releases on a shared staging environment.' },
+  { num: '04', title: 'Integration Development & EDI/API Connectivity', desc: 'All required integrations are designed, built, and tested - CRM, eCommerce, banking, logistics, EDI trading partners, tax engines, and BI tools. Integration monitoring dashboards with alert thresholds are delivered alongside each connector.' },
+  { num: '05', title: 'Data Migration, UAT & Parallel Run', desc: 'Full data migration from your legacy or interim system - GL balances, open transactions, vendor and customer master data, inventory, and historical records. A controlled parallel run period validates ERP data accuracy against your existing system before final cutover.' },
   { num: '06', title: 'Go-Live, Training & Ongoing Optimisation', desc: 'Staged go-live starting with pilot business units, followed by phased rollout. User training sessions, admin documentation, and an ERP helpdesk during the hypercare period. Post-go-live, new modules and features continue on a sprint roadmap.' },
 ];
 
 const TESTIMONIALS = [
   {
-    text: "We replaced a decade-old legacy ERP — finance, inventory, and procurement — with a custom platform built by 1Solutions. The project was delivered on time and on budget, and we went live with zero disruption to month-end close. Our finance team had full real-time visibility for the first time in years.",
+    text: "We replaced a decade-old legacy ERP - finance, inventory, and procurement - with a custom platform built by 1Solutions. The project was delivered on time and on budget, and we went live with zero disruption to month-end close. Our finance team had full real-time visibility for the first time in years.",
     name: 'Claire W.', role: 'CFO, Manufacturing Group (UK)', init: 'CW', bg: '#0F3460',
   },
   {
@@ -165,25 +165,25 @@ const TESTIMONIALS = [
 ];
 
 const WHY_CARDS = [
-  { title: '15+ Years ERP & Enterprise Application Expertise', desc: 'We have been building ERP systems and enterprise business applications since 2008 — across manufacturing, distribution, retail, food and beverage, professional services, and government sectors.' },
-  { title: 'Modular Architecture — Go Live Faster', desc: 'We build ERP systems module by module. Your core finance and inventory modules go live in 20–28 weeks while manufacturing and HR modules are built in parallel — so your team benefits from the new system long before the full platform is complete.' },
+  { title: '15+ Years ERP & Enterprise Application Expertise', desc: 'We have been building ERP systems and enterprise business applications since 2008 - across manufacturing, distribution, retail, food and beverage, professional services, and government sectors.' },
+  { title: 'Modular Architecture - Go Live Faster', desc: 'We build ERP systems module by module. Your core finance and inventory modules go live in 20–28 weeks while manufacturing and HR modules are built in parallel - so your team benefits from the new system long before the full platform is complete.' },
   { title: 'No Licensing Fees. Ever.', desc: 'A custom ERP eliminates per-user ERP licensing permanently. For most mid-market businesses, the development investment pays back within 18–24 months versus SAP or Oracle licensing, implementation consultancy, and annual support costs.' },
-  { title: 'Deep Integration Expertise', desc: 'We have built ERP integrations with 60+ external systems — CRM, eCommerce, 3PL and logistics, banking APIs, EDI trading partners, customs platforms, tax engines (Avalara, Vertex), and BI tools — with full monitoring and alerting.' },
-  { title: 'AI-Powered Demand & Supply Intelligence', desc: 'We integrate ML-powered demand forecasting, inventory optimisation, supplier risk scoring, predictive maintenance scheduling, and anomaly detection directly into ERP operational workflows — not as a bolt-on afterthought.' },
+  { title: 'Deep Integration Expertise', desc: 'We have built ERP integrations with 60+ external systems - CRM, eCommerce, 3PL and logistics, banking APIs, EDI trading partners, customs platforms, tax engines (Avalara, Vertex), and BI tools - with full monitoring and alerting.' },
+  { title: 'AI-Powered Demand & Supply Intelligence', desc: 'We integrate ML-powered demand forecasting, inventory optimisation, supplier risk scoring, predictive maintenance scheduling, and anomaly detection directly into ERP operational workflows - not as a bolt-on afterthought.' },
   { title: 'SOC 2 Ready, ISO 27001 Aligned', desc: 'ERP platforms we build include RBAC, AES-256 encryption at rest and in transit, comprehensive audit logs, immutable financial transaction records, data retention policies, and SOC 2 Type II-ready access control frameworks.' },
-  { title: 'US / UK / AU / Global Delivery', desc: 'We serve manufacturers, distributors, retailers, and service businesses across North America, Europe, and Australia — adapting to GAAP, IFRS, GST, VAT, and regional payroll tax requirements in the ERP financial and compliance modules.' },
-  { title: 'Transparent Delivery. Full Ownership.', desc: 'Biweekly module demos, weekly progress reports, shared sprint boards, and direct architect access. All source code, data schemas, and IP are 100% yours from day one — no vendor lock-in, no held-hostage upgrades.' },
+  { title: 'US / UK / AU / Global Delivery', desc: 'We serve manufacturers, distributors, retailers, and service businesses across North America, Europe, and Australia - adapting to GAAP, IFRS, GST, VAT, and regional payroll tax requirements in the ERP financial and compliance modules.' },
+  { title: 'Transparent Delivery. Full Ownership.', desc: 'Biweekly module demos, weekly progress reports, shared sprint boards, and direct architect access. All source code, data schemas, and IP are 100% yours from day one - no vendor lock-in, no held-hostage upgrades.' },
 ];
 
 const FAQS = [
-  { q: 'Why build a custom ERP instead of using SAP or Oracle?', a: 'SAP, Oracle, and Microsoft Dynamics are powerful but carry steep per-user licensing, lengthy 12–36 month implementation timelines, heavy customisation consultancy fees, and significant process adaptation overhead. A custom ERP is built precisely around your business processes — your chart of accounts, production workflows, approval hierarchies — with no licensing fees, no forced upgrades, and full code ownership. For mid-market businesses, a custom ERP typically costs 40–70% less over 5 years than an equivalent SAP or Oracle implementation with comparable functionality.' },
-  { q: 'How long does custom ERP development take?', a: 'A core ERP covering finance (GL, AP/AR, invoicing), inventory management, and basic procurement typically takes 20–28 weeks. Adding manufacturing (BOM, production orders, MES integration), HR and payroll, or advanced supply chain modules adds 8–14 weeks per module. A full enterprise ERP with all major modules, multi-entity consolidation, multi-currency, and BI dashboards typically takes 12–18 months. We use a modular delivery approach — core modules go live first while additional modules are built in parallel sprints.' },
+  { q: 'Why build a custom ERP instead of using SAP or Oracle?', a: 'SAP, Oracle, and Microsoft Dynamics are powerful but carry steep per-user licensing, lengthy 12–36 month implementation timelines, heavy customisation consultancy fees, and significant process adaptation overhead. A custom ERP is built precisely around your business processes - your chart of accounts, production workflows, approval hierarchies - with no licensing fees, no forced upgrades, and full code ownership. For mid-market businesses, a custom ERP typically costs 40–70% less over 5 years than an equivalent SAP or Oracle implementation with comparable functionality.' },
+  { q: 'How long does custom ERP development take?', a: 'A core ERP covering finance (GL, AP/AR, invoicing), inventory management, and basic procurement typically takes 20–28 weeks. Adding manufacturing (BOM, production orders, MES integration), HR and payroll, or advanced supply chain modules adds 8–14 weeks per module. A full enterprise ERP with all major modules, multi-entity consolidation, multi-currency, and BI dashboards typically takes 12–18 months. We use a modular delivery approach - core modules go live first while additional modules are built in parallel sprints.' },
   { q: 'Can you integrate a custom ERP with our existing systems?', a: 'Yes. ERP integration is a core specialisation. We have built integrations with CRM systems (Salesforce, HubSpot, custom CRM), eCommerce platforms (Shopify, WooCommerce, Magento), payment gateways, banking APIs, logistics and 3PL systems (ShipBob, ShipStation), HRMS platforms, EDI for supplier and customer data exchange (X12 and EDIFACT standards), customs and tax systems, and BI tools (Power BI, Tableau, Metabase). All integrations include error handling, retry logic, and real-time monitoring dashboards.' },
   { q: 'Can you migrate data from SAP, Oracle, or a legacy ERP?', a: 'Yes. We handle full ERP data migrations from SAP Business One, SAP S/4HANA, Oracle NetSuite, Microsoft Dynamics, Sage 50/200/300, Epicor, Infor, and legacy bespoke systems. Migration covers chart of accounts, GL opening balances, open AP/AR transactions, vendor and customer master data, inventory records with lot and serial history, and historical purchase and sales orders. We run the migration on staging first, validate with automated reconciliation checks, and perform a final delta migration before go-live cutover.' },
-  { q: 'Do you build cloud-based ERP systems?', a: 'Yes. All ERP systems we build are cloud-native by default, deployed on AWS, Azure, or Google Cloud with auto-scaling infrastructure, multi-availability-zone redundancy, and 99.9% uptime SLA. We also support hybrid deployment for organisations with on-premise data requirements — with cloud-based analytics and reporting connected to on-premise operational databases. Mobile ERP access for iOS and Android with offline-first capability is included across all cloud ERP builds.' },
+  { q: 'Do you build cloud-based ERP systems?', a: 'Yes. All ERP systems we build are cloud-native by default, deployed on AWS, Azure, or Google Cloud with auto-scaling infrastructure, multi-availability-zone redundancy, and 99.9% uptime SLA. We also support hybrid deployment for organisations with on-premise data requirements - with cloud-based analytics and reporting connected to on-premise operational databases. Mobile ERP access for iOS and Android with offline-first capability is included across all cloud ERP builds.' },
   { q: 'What ERP modules do you develop?', a: 'We develop the full ERP module spectrum: Financial Management (GL, AP, AR, fixed assets, budgeting, multi-entity consolidation), Inventory and Warehouse Management (multi-location, barcode/RFID, lot tracking, reorder automation), Manufacturing (BOM, MRP, production orders, shop floor control, MES integration), Procurement (purchase orders, supplier management, three-way matching), Sales Order Management, HR and Payroll, Project Management and Job Costing, Supply Chain Management, and Business Intelligence dashboards. Modules are built independently and integrated into a unified data platform.' },
   { q: 'Can you build a multi-entity, multi-currency ERP?', a: 'Yes. Multi-entity and multi-currency ERP is a standard capability in the platforms we build. This includes separate legal entity accounting with intercompany transaction elimination, consolidated group reporting in a base currency, real-time exchange rate integration (via open banking or FX API), currency revaluation, and country-specific tax handling. We have delivered multi-entity ERP for groups operating across US, UK, EU, Australia, and the Middle East simultaneously.' },
-  { q: 'Do you offer ERP support and feature development after launch?', a: 'Yes — all ERP projects include a 30-day hypercare period post go-live with prioritised SLA support. We then offer ongoing support plans covering security patches, database performance optimisation, third-party API updates as provider APIs evolve, regulatory compliance updates (tax rule changes, payroll updates), and feature development sprints. Our dedicated team model is ideal for post-launch ERP evolution — your team continues on a sprint cadence delivering the next roadmap modules as your business grows.' },
+  { q: 'Do you offer ERP support and feature development after launch?', a: 'Yes - all ERP projects include a 30-day hypercare period post go-live with prioritised SLA support. We then offer ongoing support plans covering security patches, database performance optimisation, third-party API updates as provider APIs evolve, regulatory compliance updates (tax rule changes, payroll updates), and feature development sprints. Our dedicated team model is ideal for post-launch ERP evolution - your team continues on a sprint cadence delivering the next roadmap modules as your business grows.' },
 ];
 
 /* ─── Hooks ──────────────────────────────────────────────────── */
@@ -300,10 +300,10 @@ export default function ErpApplicationDevelopment() {
     <>
       <Head>
         <title>ERP Application Development Company | 1Solutions</title>
-        <meta name="description" content="Custom ERP application development — finance, inventory, manufacturing, procurement, HR & supply chain modules built to replace SAP/Oracle at a fraction of" />
+        <meta name="description" content="Custom ERP application development - finance, inventory, manufacturing, procurement, HR & supply chain modules built to replace SAP/Oracle at a fraction of" />
         <link rel="canonical" href="https://www.1solutions.biz/erp-application-development-company/" />
         <meta property="og:title" content="ERP Application Development Company | 1Solutions" />
-        <meta property="og:description" content="Custom ERP software — finance, inventory, manufacturing, procurement, HR & supply chain. Replace SAP/Oracle licensing with a platform you own. 15+ years | 120+ ERP projects." />
+        <meta property="og:description" content="Custom ERP software - finance, inventory, manufacturing, procurement, HR & supply chain. Replace SAP/Oracle licensing with a platform you own. 15+ years | 120+ ERP projects." />
         <meta property="og:url" content="https://www.1solutions.biz/erp-application-development-company/" />
         <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
@@ -578,8 +578,8 @@ export default function ErpApplicationDevelopment() {
         {/* ── HERO ── */}
         <section className="er-hero">
           <span className="er-eyebrow">ERP Application Development Company</span>
-          <h1>Custom ERP Development — Unified Operations, Zero Licensing Fees</h1>
-          <p className="er-hero-desc">We build custom ERP systems that unify your finance, inventory, manufacturing, procurement, HR, and supply chain on a single platform — built around your business processes, not a rigid off-the-shelf template. Replace SAP, Oracle, or legacy ERP licensing with a platform you fully own.</p>
+          <h1>Custom ERP Development - Unified Operations, Zero Licensing Fees</h1>
+          <p className="er-hero-desc">We build custom ERP systems that unify your finance, inventory, manufacturing, procurement, HR, and supply chain on a single platform - built around your business processes, not a rigid off-the-shelf template. Replace SAP, Oracle, or legacy ERP licensing with a platform you fully own.</p>
           <div className="er-trust-row">
             {['120+ ERP Projects','No Licensing Fees','SOC 2 Ready','15+ Years Experience','GAAP / IFRS Compliant'].map(b => (
               <div className="er-badge" key={b}><span className="er-badge-dot" />{b}</div>
@@ -630,7 +630,7 @@ export default function ErpApplicationDevelopment() {
             <div className={`er-s-reveal${visibleSections.has('svc') ? ' er-revealed' : ''}`} ref={el => { sectionRefs.current['svc'] = el; }}>
               <span className="er-s-eyebrow">What We Build</span>
               <h2 id="er-svc-heading" className="er-s-title">ERP Development Services We Deliver</h2>
-              <p className="er-s-desc" style={{ maxWidth: 720 }}>From core financial management and inventory control to manufacturing execution, supply chain planning, HR modules, and AI-powered analytics — we engineer every layer of your enterprise resource planning platform.</p>
+              <p className="er-s-desc" style={{ maxWidth: 720 }}>From core financial management and inventory control to manufacturing execution, supply chain planning, HR modules, and AI-powered analytics - we engineer every layer of your enterprise resource planning platform.</p>
             </div>
             <div className="er-svc-grid" ref={svcGridRef}>
               {visibleServices.map((s, i) => (
@@ -657,7 +657,7 @@ export default function ErpApplicationDevelopment() {
             <div className={`er-s-reveal${visibleSections.has('stk') ? ' er-revealed' : ''}`} ref={el => { sectionRefs.current['stk'] = el; }}>
               <span className="er-s-eyebrow">The ERP Tech Stack We Use</span>
               <h2 id="er-stack-heading" className="er-s-title">Enterprise-Grade Technology, Built to Scale</h2>
-              <p className="er-s-desc" style={{ maxWidth: 680 }}>Every technology choice is made for long-term reliability, data integrity, and integration flexibility — from a robust relational database core to real-time analytics pipelines and AI-powered operational intelligence.</p>
+              <p className="er-s-desc" style={{ maxWidth: 680 }}>Every technology choice is made for long-term reliability, data integrity, and integration flexibility - from a robust relational database core to real-time analytics pipelines and AI-powered operational intelligence.</p>
             </div>
             <div className="er-stack-grid" ref={stackGridRef}>
               {TECH_STACK.map((grp, i) => (
@@ -680,7 +680,7 @@ export default function ErpApplicationDevelopment() {
             <div className={`er-s-reveal${visibleSections.has('eng') ? ' er-revealed' : ''}`} ref={el => { sectionRefs.current['eng'] = el; }}>
               <span className="er-s-eyebrow">How We Work With You</span>
               <h2 id="er-eng-heading" className="er-s-title">Engagement Models for ERP Development</h2>
-              <p className="er-s-desc" style={{ maxWidth: 680 }}>Whether you need a dedicated ERP engineering team for a long-term product roadmap, a fixed-price core ERP build, or flexible sprint-based module development — we adapt to your project stage and timeline.</p>
+              <p className="er-s-desc" style={{ maxWidth: 680 }}>Whether you need a dedicated ERP engineering team for a long-term product roadmap, a fixed-price core ERP build, or flexible sprint-based module development - we adapt to your project stage and timeline.</p>
             </div>
             <div className="er-eng-grid" ref={engGridRef}>
               {ENGAGEMENT_MODELS.map((m, i) => (
@@ -713,7 +713,7 @@ export default function ErpApplicationDevelopment() {
             <div className={`er-s-reveal${visibleSections.has('proc') ? ' er-revealed' : ''}`} ref={el => { sectionRefs.current['proc'] = el; }}>
               <span className="er-s-eyebrow">How We Deliver</span>
               <h2 id="er-proc-heading" className="er-s-title">Our ERP Application Development Process</h2>
-              <p className="er-s-desc">A structured six-stage process designed to deliver an ERP your operations team actually adopts — from business process discovery and data modelling through modular development, integration, parallel run, and post-go-live optimisation.</p>
+              <p className="er-s-desc">A structured six-stage process designed to deliver an ERP your operations team actually adopts - from business process discovery and data modelling through modular development, integration, parallel run, and post-go-live optimisation.</p>
             </div>
             <div className="er-psteps">
               {PROCESS_STEPS.map((step, i) => (
@@ -765,7 +765,7 @@ export default function ErpApplicationDevelopment() {
             <div className={`er-s-reveal${visibleSections.has('wy') ? ' er-revealed' : ''}`} ref={el => { sectionRefs.current['wy'] = el; }}>
               <span className="er-s-eyebrow">Why 1Solutions</span>
               <h2 id="er-wy-heading" className="er-s-title">Why Choose Us for ERP Application Development</h2>
-              <p className="er-s-desc" style={{ maxWidth: 680 }}>15+ years building custom ERP systems across manufacturing, distribution, food and beverage, retail, and professional services — with deep integration expertise, modular delivery, and a track record of replacing SAP and Oracle at a fraction of the cost.</p>
+              <p className="er-s-desc" style={{ maxWidth: 680 }}>15+ years building custom ERP systems across manufacturing, distribution, food and beverage, retail, and professional services - with deep integration expertise, modular delivery, and a track record of replacing SAP and Oracle at a fraction of the cost.</p>
             </div>
             <div className="er-why-grid" ref={whyGridRef}>
               {WHY_CARDS.map((c, i) => (
@@ -784,13 +784,13 @@ export default function ErpApplicationDevelopment() {
           <div className="er-contact-grid">
             <div>
               <h2 id="er-contact-heading" className="er-ctitle">Start Your Custom ERP Project</h2>
-              <p className="er-cdesc">Tell us about your operations and we will schedule a free 60-minute ERP discovery call with a senior solutions architect. We will map your business processes, identify integration requirements, and give you a realistic scope and cost estimate at no charge — including a comparison against SAP or Oracle implementation costs.</p>
+              <p className="er-cdesc">Tell us about your operations and we will schedule a free 60-minute ERP discovery call with a senior solutions architect. We will map your business processes, identify integration requirements, and give you a realistic scope and cost estimate at no charge - including a comparison against SAP or Oracle implementation costs.</p>
               <div className="er-cbenefits">
                 {[
                   ['✓', 'Free 60-minute ERP discovery and business process mapping session'],
                   ['✓', 'Preliminary module scope, data model, and integration map at no charge'],
                   ['✓', 'SAP / Oracle cost comparison and custom ERP ROI analysis included'],
-                  ['✓', 'NDA available on request — your processes and data stay protected'],
+                  ['✓', 'NDA available on request - your processes and data stay protected'],
                   ['✓', 'Response within 24 business hours from our ERP engineering team'],
                 ].map(([icon, text]) => (
                   <div className="er-cbenefit" key={text}>
@@ -843,7 +843,7 @@ export default function ErpApplicationDevelopment() {
                 </div>
                 <div className="er-fg full">
                   <label htmlFor="er-msg">Project Brief *</label>
-                  <textarea name="sf-message" id="er-msg" rows={4} placeholder="Describe your operations — industry, number of users, current system (ERP or spreadsheets), modules needed, key integrations, and go-live timeline..." required />
+                  <textarea name="sf-message" id="er-msg" rows={4} placeholder="Describe your operations - industry, number of users, current system (ERP or spreadsheets), modules needed, key integrations, and go-live timeline..." required />
                 </div>
                 <div className="er-consent">
                   <input id="er-consent" type="checkbox" required />
@@ -860,8 +860,8 @@ export default function ErpApplicationDevelopment() {
         <section className="er-faq" aria-labelledby="er-faq-heading">
           <div className="er-inner" style={{ maxWidth: 860 }}>
             <span className="er-s-eyebrow">FAQ</span>
-            <h2 id="er-faq-heading">ERP Application Development — Frequently Asked Questions</h2>
-            <p className="er-faq-sub">Everything you need to know about building a custom ERP platform with 1Solutions — from timeline and cost to data migration and compliance.</p>
+            <h2 id="er-faq-heading">ERP Application Development - Frequently Asked Questions</h2>
+            <p className="er-faq-sub">Everything you need to know about building a custom ERP platform with 1Solutions - from timeline and cost to data migration and compliance.</p>
             <div className="er-faq-list">
               {FAQS.map((item, i) => (
                 <div key={i} className={`er-fitem${openFaq === i ? ' open' : ''}`} itemScope itemType="https://schema.org/Question">

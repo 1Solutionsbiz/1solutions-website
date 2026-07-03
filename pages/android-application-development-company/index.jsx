@@ -18,7 +18,7 @@ const SCHEMA = {
       '@type': 'Service',
       name: 'Android Application Development',
       url: 'https://www.1solutions.biz/android-application-development-company/',
-      description: 'Native Android application development in Kotlin and Jetpack Compose — from consumer apps and Android MVPs to enterprise mobility solutions, Android TV, Wear OS, and large-screen tablet experiences. Play Store-ready, performant, and built with clean architecture.',
+      description: 'Native Android application development in Kotlin and Jetpack Compose - from consumer apps and Android MVPs to enterprise mobility solutions, Android TV, Wear OS, and large-screen tablet experiences. Play Store-ready, performant, and built with clean architecture.',
       provider: {
         '@type': 'Organization',
         name: '1Solutions',
@@ -34,8 +34,8 @@ const SCHEMA = {
       mainEntity: [
         { '@type': 'Question', name: 'Should I build a native Android app or use a cross-platform framework like Flutter or React Native?', acceptedAnswer: { '@type': 'Answer', text: 'Native Android development in Kotlin gives you the best possible performance, the deepest access to Android device capabilities, the most idiomatic Android UX, and no framework abstraction layer between your code and the OS. This matters most for apps with complex UI, intensive background processing, Bluetooth/BLE, camera or media manipulation, Android enterprise MDM requirements, or Android TV/Wear OS targets. Cross-platform (Flutter, React Native) is a strong choice when you need simultaneous iOS launch and your app is primarily data-display and form-based. For Android-first businesses, or apps requiring platform-specific hardware integration, native Kotlin is the right choice.' } },
         { '@type': 'Question', name: 'How long does it take to develop an Android app?', acceptedAnswer: { '@type': 'Answer', text: 'A native Android MVP covering authentication, 3–6 core screens, API integration, and Play Store submission typically takes 10–16 weeks. A mid-complexity Android app with custom UI (Jetpack Compose), real-time features, payments, and background services typically takes 18–26 weeks. A full enterprise Android app with offline capability, complex data sync, MDM integration, multiple user roles, and a companion admin dashboard typically takes 28–40 weeks. We deliver working APK builds to Firebase App Distribution on a biweekly sprint cycle so you can test on real devices throughout development.' } },
-        { '@type': 'Question', name: 'Do you build Android apps in Kotlin or Java?', acceptedAnswer: { '@type': 'Answer', text: 'All new Android development we do is in Kotlin with Jetpack Compose for the UI layer — this is the current Google-recommended approach and the direction of the entire Android ecosystem. We also maintain and extend existing Java Android codebases, and handle Java-to-Kotlin migration projects, including introducing Compose UI incrementally alongside existing XML Views. For legacy Java codebases we produce a migration plan that phases in Kotlin and Compose without a full rewrite, protecting your existing investment while modernising the codebase for the long term.' } },
-        { '@type': 'Question', name: 'Can you migrate our existing Java Android app to Kotlin and Jetpack Compose?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Android modernisation migrations are a speciality. The typical approach is phased: first introduce Kotlin interoperability and migrate the data and domain layers (ViewModel, Repository, Use Cases) to Kotlin with Coroutines and Flow, then migrate the UI layer from XML Views to Jetpack Compose screen by screen — using the ComposeView interop bridge to run Compose and Views side by side during the transition. This avoids a big-bang rewrite and allows continuous feature delivery while the migration progresses. We deliver improved performance, reduced boilerplate, and a modern testable architecture as tangible outcomes of the migration.' } },
+        { '@type': 'Question', name: 'Do you build Android apps in Kotlin or Java?', acceptedAnswer: { '@type': 'Answer', text: 'All new Android development we do is in Kotlin with Jetpack Compose for the UI layer - this is the current Google-recommended approach and the direction of the entire Android ecosystem. We also maintain and extend existing Java Android codebases, and handle Java-to-Kotlin migration projects, including introducing Compose UI incrementally alongside existing XML Views. For legacy Java codebases we produce a migration plan that phases in Kotlin and Compose without a full rewrite, protecting your existing investment while modernising the codebase for the long term.' } },
+        { '@type': 'Question', name: 'Can you migrate our existing Java Android app to Kotlin and Jetpack Compose?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Android modernisation migrations are a speciality. The typical approach is phased: first introduce Kotlin interoperability and migrate the data and domain layers (ViewModel, Repository, Use Cases) to Kotlin with Coroutines and Flow, then migrate the UI layer from XML Views to Jetpack Compose screen by screen - using the ComposeView interop bridge to run Compose and Views side by side during the transition. This avoids a big-bang rewrite and allows continuous feature delivery while the migration progresses. We deliver improved performance, reduced boilerplate, and a modern testable architecture as tangible outcomes of the migration.' } },
         { '@type': 'Question', name: 'Do you build Android apps for tablets and large screens?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Android large-screen support (tablets, foldables, and Chromebook/desktop modes) is a first-class capability in our Android development. We implement adaptive layouts using WindowSizeClass, multi-pane navigation (list-detail), drag-and-drop support, stylus input handling, and display cutout/hinge-aware layouts for foldable devices. We also run full device compatibility testing on tablet emulators and physical large-screen devices to ensure Play Store large-screen quality badges. Many of our clients specifically require Android tablet apps for field operations, healthcare, and logistics workflows.' } },
         { '@type': 'Question', name: 'Can you build Android apps for enterprise with MDM and SSO support?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Enterprise Android development is a core capability. We build Android Enterprise-compatible apps supporting managed configurations (for EMM/MDM deployment via Google Play), Android Work Profile, DPC (device policy controller) integration, SAML and OAuth SSO (Okta, Azure AD, Google Workspace), certificate-based authentication, VPN-bound networking, and app signing for enterprise distribution channels. We have built enterprise Android apps deployed to 10,000+ managed devices across logistics, healthcare, and field service sectors.' } },
       ],
@@ -45,16 +45,16 @@ const SCHEMA = {
 
 /* ─── Page data ──────────────────────────────────────────────── */
 const SERVICES = [
-  { n: '01', title: 'Custom Android App Development', desc: 'End-to-end native Android app development in Kotlin and Jetpack Compose — from architecture design and UI implementation through Play Store submission and post-launch maintenance. Consumer apps, B2B tools, and enterprise mobility solutions for phones, tablets, and foldables.' },
-  { n: '02', title: 'Android MVP & Rapid Prototyping', desc: 'A production-quality Android MVP on Google Play in 10–16 weeks. We scope the core user journeys, design a polished Compose UI, integrate essential backend APIs, and deliver an APK via Firebase App Distribution throughout development — ready for real user feedback before your full launch.', feat: true },
-  { n: '03', title: 'Kotlin & Jetpack Compose Development', desc: 'Modern native Android development using Kotlin (the Google-recommended language), Jetpack Compose (declarative UI), Coroutines and Flow for async, Hilt for dependency injection, and the full Jetpack suite — Room, Navigation, WorkManager, Paging 3, and DataStore.' },
-  { n: '04', title: 'Android Tablet & Large-Screen Apps', desc: 'Adaptive Android layouts for tablets, foldables, and Chromebooks — WindowSizeClass-based responsive design, multi-pane list-detail navigation, stylus input, hinge-aware layouts for foldable devices, and Play Store large-screen quality badge compliance testing.' },
-  { n: '05', title: 'Android TV & Wear OS Apps', desc: 'Specialised Android platform development for Android TV (Leanback library, D-pad navigation, content recommendations), Wear OS (health and fitness apps, complication providers, Tiles), and Android Auto — extending your brand across every Google surface.' },
-  { n: '06', title: 'Java → Kotlin & Legacy App Modernisation', desc: 'Phased Android modernisation: migrate existing Java codebases to Kotlin with Coroutines/Flow, introduce Jetpack Compose UI alongside existing XML Views using ComposeView interop, adopt clean architecture (MVVM/MVI), and upgrade deprecated APIs — without stopping feature delivery.' },
+  { n: '01', title: 'Custom Android App Development', desc: 'End-to-end native Android app development in Kotlin and Jetpack Compose - from architecture design and UI implementation through Play Store submission and post-launch maintenance. Consumer apps, B2B tools, and enterprise mobility solutions for phones, tablets, and foldables.' },
+  { n: '02', title: 'Android MVP & Rapid Prototyping', desc: 'A production-quality Android MVP on Google Play in 10–16 weeks. We scope the core user journeys, design a polished Compose UI, integrate essential backend APIs, and deliver an APK via Firebase App Distribution throughout development - ready for real user feedback before your full launch.', feat: true },
+  { n: '03', title: 'Kotlin & Jetpack Compose Development', desc: 'Modern native Android development using Kotlin (the Google-recommended language), Jetpack Compose (declarative UI), Coroutines and Flow for async, Hilt for dependency injection, and the full Jetpack suite - Room, Navigation, WorkManager, Paging 3, and DataStore.' },
+  { n: '04', title: 'Android Tablet & Large-Screen Apps', desc: 'Adaptive Android layouts for tablets, foldables, and Chromebooks - WindowSizeClass-based responsive design, multi-pane list-detail navigation, stylus input, hinge-aware layouts for foldable devices, and Play Store large-screen quality badge compliance testing.' },
+  { n: '05', title: 'Android TV & Wear OS Apps', desc: 'Specialised Android platform development for Android TV (Leanback library, D-pad navigation, content recommendations), Wear OS (health and fitness apps, complication providers, Tiles), and Android Auto - extending your brand across every Google surface.' },
+  { n: '06', title: 'Java → Kotlin & Legacy App Modernisation', desc: 'Phased Android modernisation: migrate existing Java codebases to Kotlin with Coroutines/Flow, introduce Jetpack Compose UI alongside existing XML Views using ComposeView interop, adopt clean architecture (MVVM/MVI), and upgrade deprecated APIs - without stopping feature delivery.' },
   { n: '07', title: 'Android Backend Integration & API Development', desc: 'REST and GraphQL API integration with Retrofit/OkHttp, Firebase (Realtime Database, Firestore, Auth, FCM push notifications), Supabase, WebSockets for real-time data, payment gateway SDKs (Stripe, Razorpay), and Google Maps/Places API integration.' },
-  { n: '08', title: 'Android Performance Optimisation', desc: 'Deep Android performance work — reducing UI jank with Compose stability analysis and recomposition profiling, optimising battery consumption (WorkManager, Doze-mode compliance), reducing APK/AAB size (R8, resource shrinking), fixing memory leaks (LeakCanary), and improving cold-start time.' },
+  { n: '08', title: 'Android Performance Optimisation', desc: 'Deep Android performance work - reducing UI jank with Compose stability analysis and recomposition profiling, optimising battery consumption (WorkManager, Doze-mode compliance), reducing APK/AAB size (R8, resource shrinking), fixing memory leaks (LeakCanary), and improving cold-start time.' },
   { n: '09', title: 'Android Enterprise & MDM Applications', desc: 'Enterprise Android apps with managed configuration, Android Work Profile, EMM/MDM compatibility (Intune, VMware Workspace ONE, SOTI), SAML/OAuth SSO, certificate-based auth, VPN-bound networking, and silent enterprise distribution via managed Google Play.' },
-  { n: '10', title: 'Android App Maintenance & Play Store Support', desc: 'Ongoing Android maintenance — target SDK updates (mandatory yearly for Play Store compliance), dependency upgrades, Google Play policy compliance reviews, ANR and crash investigation via Play Console and Firebase Crashlytics, and feature sprint delivery post-launch.' },
+  { n: '10', title: 'Android App Maintenance & Play Store Support', desc: 'Ongoing Android maintenance - target SDK updates (mandatory yearly for Play Store compliance), dependency upgrades, Google Play policy compliance reviews, ANR and crash investigation via Play Console and Firebase Crashlytics, and feature sprint delivery post-launch.' },
 ];
 
 const TECH_STACK = [
@@ -64,7 +64,7 @@ const TECH_STACK = [
     items: ['Kotlin', 'Java (legacy)', 'Android SDK', 'Android Studio', 'Gradle / KTS', 'Android Emulator'],
   },
   {
-    group: 'UI — Jetpack Compose',
+    group: 'UI - Jetpack Compose',
     color: '#15803d',
     items: ['Jetpack Compose', 'Material Design 3', 'XML Views (legacy)', 'ComposeView Interop', 'Compose Animation', 'Adaptive Layouts (WindowSizeClass)'],
   },
@@ -109,10 +109,10 @@ const ENGAGEMENT_MODELS = [
     feat: true,
     icon: 'M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z',
     headline: 'A dedicated Android squad working exclusively on your app.',
-    desc: 'A full-time offshore Android team — Kotlin developer(s), UI/UX designer, QA engineer, and backend developer — working as a seamless extension of your team at a fraction of US/UK/AU in-house cost. Sprint-based delivery, daily standups, biweekly APK builds. Full source code and IP ownership yours from day one.',
+    desc: 'A full-time offshore Android team - Kotlin developer(s), UI/UX designer, QA engineer, and backend developer - working as a seamless extension of your team at a fraction of US/UK/AU in-house cost. Sprint-based delivery, daily standups, biweekly APK builds. Full source code and IP ownership yours from day one.',
     bestFor: ['Full-featured native Android app with ongoing roadmap', 'Long-term Android product with monthly feature releases', 'Replacing in-house Android capacity at lower cost', 'Android enterprise app deployed across a managed device fleet'],
     process: 'Team assembly → Discovery sprint → Biweekly APK releases → Continuous roadmap',
-    timeline: 'Ongoing — scale up or down per quarter',
+    timeline: 'Ongoing - scale up or down per quarter',
   },
   {
     id: 'fixed',
@@ -121,7 +121,7 @@ const ENGAGEMENT_MODELS = [
     badgeColor: '#16a34a',
     icon: 'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z',
     headline: 'Agreed scope. Agreed price. App delivered on time.',
-    desc: 'Best for a clearly defined Android MVP or a feature set with agreed user stories and screen designs. We quote a fixed price covering design, Kotlin development, testing, and Play Store submission — with milestone APK releases throughout. No scope creep, no surprise invoices.',
+    desc: 'Best for a clearly defined Android MVP or a feature set with agreed user stories and screen designs. We quote a fixed price covering design, Kotlin development, testing, and Play Store submission - with milestone APK releases throughout. No scope creep, no surprise invoices.',
     bestFor: ['Android MVP with defined screens and user stories', 'Java-to-Kotlin migration with agreed scope', 'New Android feature module with defined requirements', 'Legacy Android app upgrade to target SDK 35+'],
     process: 'Detailed spec → Fixed quote → Milestone APK delivery → Play Store launch',
     timeline: 'Best for projects 10–24 weeks',
@@ -136,53 +136,53 @@ const ENGAGEMENT_MODELS = [
     desc: 'Billed on actual time and resources used. Ideal for Android discovery sprints, iterative consumer apps where UX is validated with real users before scope is locked, or adding new Compose screens and Kotlin features to an existing Android codebase.',
     bestFor: ['Android architecture audit and modernisation planning', 'Iterative consumer app driven by user research', 'Adding Jetpack Compose to an existing XML/Java codebase', 'Android performance profiling and optimisation engagement'],
     process: 'Sprint planning → Biweekly APK → Iterative refinement → Transparent timesheets',
-    timeline: 'Start in 1 week — no lengthy onboarding',
+    timeline: 'Start in 1 week - no lengthy onboarding',
   },
 ];
 
 const PROCESS_STEPS = [
   { num: '01', title: 'Discovery, Architecture & Android Stack Decision', desc: 'We start with a structured discovery of your app concept, target Android devices (phones, tablets, foldables, TV, Wear OS), performance requirements, backend and API design, and Play Store strategy. We define the architecture (MVVM or MVI, Clean Architecture layering), DI approach (Hilt), navigation graph, and the full Jetpack component set before sprint planning begins.' },
-  { num: '02', title: 'UI/UX Design — Material Design 3 & Compose Prototyping', desc: 'Our designers produce high-fidelity Figma prototypes following Material Design 3 guidelines with adaptive layouts for phone and tablet. We define the Compose component library — theming tokens (color scheme, typography, shapes), reusable Composable functions, and animation specs — before development so sprint velocity is maximised from day one.' },
-  { num: '03', title: 'Agile Sprint Development — Biweekly APK Builds', desc: 'Android development runs in two-week sprints. Every sprint you receive a working APK/AAB via Firebase App Distribution covering the sprint scope — install it on any Android device and test the real app. No waiting until the end to see the product. Sprint reviews include a live demo with screen recording for async stakeholder review.' },
-  { num: '04', title: 'Backend & API Integration', desc: 'Backend integrations are built in parallel with Android development — Retrofit REST or Apollo GraphQL clients, Firebase Auth and Firestore/FCM configuration, payment gateway SDK integration (Stripe, Razorpay, Google Pay), Google Maps and Places integration, third-party SDK setup, and WebSocket or Server-Sent Events for real-time features.' },
+  { num: '02', title: 'UI/UX Design - Material Design 3 & Compose Prototyping', desc: 'Our designers produce high-fidelity Figma prototypes following Material Design 3 guidelines with adaptive layouts for phone and tablet. We define the Compose component library - theming tokens (color scheme, typography, shapes), reusable Composable functions, and animation specs - before development so sprint velocity is maximised from day one.' },
+  { num: '03', title: 'Agile Sprint Development - Biweekly APK Builds', desc: 'Android development runs in two-week sprints. Every sprint you receive a working APK/AAB via Firebase App Distribution covering the sprint scope - install it on any Android device and test the real app. No waiting until the end to see the product. Sprint reviews include a live demo with screen recording for async stakeholder review.' },
+  { num: '04', title: 'Backend & API Integration', desc: 'Backend integrations are built in parallel with Android development - Retrofit REST or Apollo GraphQL clients, Firebase Auth and Firestore/FCM configuration, payment gateway SDK integration (Stripe, Razorpay, Google Pay), Google Maps and Places integration, third-party SDK setup, and WebSocket or Server-Sent Events for real-time features.' },
   { num: '05', title: 'QA, Performance Profiling & Play Store Compliance', desc: 'Comprehensive QA across physical Android devices covering a range of manufacturers (Samsung, Pixel, OnePlus) and API levels (Android 10–15). Android Studio Profiler for CPU, memory, and network analysis. Compose recomposition profiler to eliminate unnecessary rebuilds. Play Store pre-launch report review, data safety form completion, and content rating submission.' },
-  { num: '06', title: 'Play Store Launch, Monitoring & Ongoing Roadmap', desc: 'Managed Google Play Console submission — production release, staged rollout (10% → 50% → 100%), release notes, and store listing optimisation. Post-launch monitoring via Firebase Crashlytics, Play Console vitals (ANR rate, crash rate), and Firebase Analytics. A defined sprint cadence for ongoing feature delivery, yearly target SDK updates, and Play Store policy compliance maintenance.' },
+  { num: '06', title: 'Play Store Launch, Monitoring & Ongoing Roadmap', desc: 'Managed Google Play Console submission - production release, staged rollout (10% → 50% → 100%), release notes, and store listing optimisation. Post-launch monitoring via Firebase Crashlytics, Play Console vitals (ANR rate, crash rate), and Firebase Analytics. A defined sprint cadence for ongoing feature delivery, yearly target SDK updates, and Play Store policy compliance maintenance.' },
 ];
 
 const TESTIMONIALS = [
   {
-    text: "We had an old Java Android app that was crashing constantly and failing Play Store target SDK requirements. 1Solutions migrated it to Kotlin with Jetpack Compose, fixed the architecture, and got our crash rate from 4.8% down to 0.3%. The app feels completely new — our users noticed immediately and our Play Store rating went from 3.4 to 4.6.",
+    text: "We had an old Java Android app that was crashing constantly and failing Play Store target SDK requirements. 1Solutions migrated it to Kotlin with Jetpack Compose, fixed the architecture, and got our crash rate from 4.8% down to 0.3%. The app feels completely new - our users noticed immediately and our Play Store rating went from 3.4 to 4.6.",
     name: 'Richard P.', role: 'Head of Product, SaaS Company (UK)', init: 'RP', bg: '#0F3460',
   },
   {
-    text: "1Solutions built our Android field operations app for 3,500 logistics drivers — offline-first, GPS tracking, barcode scanning, digital proof-of-delivery signatures, and real-time dispatch sync. It works flawlessly on the mix of Samsung and Zebra devices our fleet uses. The ROI was visible within two months of launch.",
+    text: "1Solutions built our Android field operations app for 3,500 logistics drivers - offline-first, GPS tracking, barcode scanning, digital proof-of-delivery signatures, and real-time dispatch sync. It works flawlessly on the mix of Samsung and Zebra devices our fleet uses. The ROI was visible within two months of launch.",
     name: 'Michelle O.', role: 'CTO, Logistics Company (AU)', init: 'MO', bg: '#14532d', feat: true,
   },
   {
-    text: "We needed a native Android app fast — investors were waiting and we had a 12-week window. 1Solutions delivered a polished Kotlin/Compose MVP to the Play Store in 11 weeks. The Compose animations and performance were noticeably better than competitors' React Native apps. We closed our seed round two weeks after launch.",
+    text: "We needed a native Android app fast - investors were waiting and we had a 12-week window. 1Solutions delivered a polished Kotlin/Compose MVP to the Play Store in 11 weeks. The Compose animations and performance were noticeably better than competitors' React Native apps. We closed our seed round two weeks after launch.",
     name: 'Alex F.', role: 'Founder, Consumer App Startup (US)', init: 'AF', bg: '#1e1b4b',
   },
 ];
 
 const WHY_CARDS = [
-  { title: '150+ Native Android Apps Shipped', desc: 'We have shipped 150+ native Android apps across consumer, B2B, enterprise, logistics, healthcare, fintech, and field-service verticals — from solo MVP launches to apps deployed across 10,000+ managed enterprise devices on the Play Store.' },
-  { title: 'Kotlin-First, Compose-First Since Day One', desc: 'We adopted Kotlin and Jetpack Compose early and have shipped production Compose UIs since Compose 1.0 stable. Our engineers understand Compose recomposition, state hoisting, side effects, and Compose performance profiling at a depth that comes from building real apps — not tutorials.' },
-  { title: 'Clean Architecture — Maintainable & Testable', desc: 'Every Android app we build uses a clean layered architecture (presentation / domain / data), Hilt for dependency injection, Kotlin Flow for reactive state, and a full unit and integration test suite. Future developers — yours or ours — can understand and extend the codebase immediately.' },
-  { title: 'Material Design 3 & Adaptive UI Expertise', desc: 'Our designers and developers are fluent in Material Design 3 — dynamic colour, typography scale, elevation, motion — and implement adaptive layouts for the full Android device spectrum: phones, tablets, foldables, and Chromebooks. Your app earns Play Store quality badges.' },
-  { title: 'Performance at the Core, Not an Afterthought', desc: 'We profile every Android app with Android Studio Profiler before release — checking CPU traces, memory allocations, jank frame counts, and battery consumption. We run Compose recomposition analysis, LeakCanary for memory leaks, and cold-start timing on mid-range Android devices.' },
+  { title: '150+ Native Android Apps Shipped', desc: 'We have shipped 150+ native Android apps across consumer, B2B, enterprise, logistics, healthcare, fintech, and field-service verticals - from solo MVP launches to apps deployed across 10,000+ managed enterprise devices on the Play Store.' },
+  { title: 'Kotlin-First, Compose-First Since Day One', desc: 'We adopted Kotlin and Jetpack Compose early and have shipped production Compose UIs since Compose 1.0 stable. Our engineers understand Compose recomposition, state hoisting, side effects, and Compose performance profiling at a depth that comes from building real apps - not tutorials.' },
+  { title: 'Clean Architecture - Maintainable & Testable', desc: 'Every Android app we build uses a clean layered architecture (presentation / domain / data), Hilt for dependency injection, Kotlin Flow for reactive state, and a full unit and integration test suite. Future developers - yours or ours - can understand and extend the codebase immediately.' },
+  { title: 'Material Design 3 & Adaptive UI Expertise', desc: 'Our designers and developers are fluent in Material Design 3 - dynamic colour, typography scale, elevation, motion - and implement adaptive layouts for the full Android device spectrum: phones, tablets, foldables, and Chromebooks. Your app earns Play Store quality badges.' },
+  { title: 'Performance at the Core, Not an Afterthought', desc: 'We profile every Android app with Android Studio Profiler before release - checking CPU traces, memory allocations, jank frame counts, and battery consumption. We run Compose recomposition analysis, LeakCanary for memory leaks, and cold-start timing on mid-range Android devices.' },
   { title: 'Enterprise Android & MDM Expertise', desc: 'We build Android Enterprise-compatible apps with managed configurations, Work Profile support, MDM platform compatibility (Intune, Workspace ONE, SOTI), SAML/OAuth SSO, and silent enterprise distribution via managed Google Play. Deployed to enterprise fleets of 1,000–50,000 devices.' },
-  { title: 'End-to-End — App + Backend + DevOps', desc: 'We build the full stack your Android app needs — the Kotlin front-end, the backend API (Node.js, Python, Firebase/Supabase), Fastlane/GitHub Actions CI/CD pipeline, Firebase App Distribution for internal testing, and Play Store management. One partner, full accountability.' },
-  { title: 'Transparent Delivery. Full IP Ownership.', desc: 'Biweekly APK builds you can install and test on your own devices, a shared sprint board, direct access to your Android lead engineer, and weekly progress reports. All source code, assets, and intellectual property are 100% yours from day one — no lock-in.' },
+  { title: 'End-to-End - App + Backend + DevOps', desc: 'We build the full stack your Android app needs - the Kotlin front-end, the backend API (Node.js, Python, Firebase/Supabase), Fastlane/GitHub Actions CI/CD pipeline, Firebase App Distribution for internal testing, and Play Store management. One partner, full accountability.' },
+  { title: 'Transparent Delivery. Full IP Ownership.', desc: 'Biweekly APK builds you can install and test on your own devices, a shared sprint board, direct access to your Android lead engineer, and weekly progress reports. All source code, assets, and intellectual property are 100% yours from day one - no lock-in.' },
 ];
 
 const FAQS = [
   { q: 'Should I build a native Android app or use a cross-platform framework like Flutter?', a: 'Native Android (Kotlin/Compose) gives you the best performance, deepest device hardware access, most idiomatic Android UX, and no framework abstraction layer. This matters most for apps with complex UI animation, intensive background processing, Bluetooth/BLE/NFC, camera or media pipelines, enterprise MDM requirements, or Android TV/Wear OS targets. Flutter is a strong choice when you need simultaneous iOS launch and your app is primarily data-display and form-based. For Android-first products or apps requiring deep hardware integration, native Kotlin is the right choice.' },
   { q: 'How long does it take to build a native Android app?', a: 'A native Android MVP covering authentication, 3–6 core screens, API integration, and Play Store submission typically takes 10–16 weeks. A mid-complexity app with Compose UI, real-time features, payments, and background services typically takes 18–26 weeks. A full enterprise Android app with offline capability, complex data sync, MDM integration, multiple user roles, and admin dashboard typically takes 28–40 weeks. We deliver working APK builds via Firebase App Distribution on a biweekly sprint cycle throughout development.' },
-  { q: 'Do you build Android apps in Kotlin or Java?', a: 'All new Android development we do is in Kotlin with Jetpack Compose — the current Google-recommended approach. We also maintain and extend existing Java codebases, and handle Java-to-Kotlin migration projects including introducing Compose UI incrementally alongside existing XML Views using ComposeView interop. For legacy Java codebases, we produce a phased migration plan that modernises the codebase without a full rewrite, protecting your existing investment while delivering a Kotlin-first architecture for long-term maintainability.' },
-  { q: 'Can you migrate our Java Android app to Kotlin and Jetpack Compose?', a: 'Yes. Android modernisation is a speciality. Our phased approach first migrates the data and domain layers to Kotlin with Coroutines and Flow, then migrates the UI from XML Views to Jetpack Compose screen by screen using the ComposeView bridge — allowing Compose and Views to coexist during the transition. This avoids a big-bang rewrite and allows continuous feature delivery. Outcomes include improved performance, reduced boilerplate, a modern testable architecture, and compliance with the latest Play Store target SDK requirements.' },
-  { q: 'Do you build Android apps for tablets and large screens?', a: 'Yes. Android large-screen support is a first-class capability. We implement adaptive layouts using WindowSizeClass, multi-pane list-detail navigation, drag-and-drop, stylus input handling, and hinge-aware layouts for foldable devices. We test on tablet emulators and physical large-screen devices and ensure compliance with Play Store large-screen quality guidelines — earning the large-screen badge where applicable. Many clients specifically need Android tablet apps for field operations, healthcare, warehouse, and logistics workflows.' },
+  { q: 'Do you build Android apps in Kotlin or Java?', a: 'All new Android development we do is in Kotlin with Jetpack Compose - the current Google-recommended approach. We also maintain and extend existing Java codebases, and handle Java-to-Kotlin migration projects including introducing Compose UI incrementally alongside existing XML Views using ComposeView interop. For legacy Java codebases, we produce a phased migration plan that modernises the codebase without a full rewrite, protecting your existing investment while delivering a Kotlin-first architecture for long-term maintainability.' },
+  { q: 'Can you migrate our Java Android app to Kotlin and Jetpack Compose?', a: 'Yes. Android modernisation is a speciality. Our phased approach first migrates the data and domain layers to Kotlin with Coroutines and Flow, then migrates the UI from XML Views to Jetpack Compose screen by screen using the ComposeView bridge - allowing Compose and Views to coexist during the transition. This avoids a big-bang rewrite and allows continuous feature delivery. Outcomes include improved performance, reduced boilerplate, a modern testable architecture, and compliance with the latest Play Store target SDK requirements.' },
+  { q: 'Do you build Android apps for tablets and large screens?', a: 'Yes. Android large-screen support is a first-class capability. We implement adaptive layouts using WindowSizeClass, multi-pane list-detail navigation, drag-and-drop, stylus input handling, and hinge-aware layouts for foldable devices. We test on tablet emulators and physical large-screen devices and ensure compliance with Play Store large-screen quality guidelines - earning the large-screen badge where applicable. Many clients specifically need Android tablet apps for field operations, healthcare, warehouse, and logistics workflows.' },
   { q: 'Can you build enterprise Android apps with MDM and SSO support?', a: 'Yes. Enterprise Android is a core speciality. We build apps supporting managed configurations for EMM/MDM deployment (Intune, Workspace ONE, SOTI), Android Work Profile, device policy controller integration, SAML and OAuth 2.0 SSO (Okta, Azure AD, Google Workspace), certificate-based authentication, VPN-bound networking, and silent enterprise distribution via managed Google Play. We have built enterprise Android apps deployed across fleets of 1,000 to 50,000+ managed devices.' },
-  { q: 'How do you handle Play Store target SDK updates and policy compliance?', a: 'Google requires Android apps to target the latest or near-latest API level annually (currently API 35 for new apps). We handle all mandatory target SDK updates as part of our maintenance plans — reviewing deprecated API usage, updating permissions declarations, completing data safety form updates, reviewing Play Store policy changes that affect your app category, and managing the release of compliant updates before Google deadlines. This is included in our ongoing support retainer for all Android apps we build.' },
+  { q: 'How do you handle Play Store target SDK updates and policy compliance?', a: 'Google requires Android apps to target the latest or near-latest API level annually (currently API 35 for new apps). We handle all mandatory target SDK updates as part of our maintenance plans - reviewing deprecated API usage, updating permissions declarations, completing data safety form updates, reviewing Play Store policy changes that affect your app category, and managing the release of compliant updates before Google deadlines. This is included in our ongoing support retainer for all Android apps we build.' },
   { q: 'Do you build for Android TV and Wear OS as well as phones?', a: 'Yes. We develop for the full Android platform spectrum: Android TV (Leanback library, D-pad navigation, content recommendations, Android TV channels), Wear OS (health and fitness apps, watch face complications, Tiles for glanceable content, Wear Compose UI), and Android Auto (media and messaging apps via the Android for Cars App Library). We also build for Android tablets and foldables. If your product needs to span multiple Google surfaces, we build all of them from a shared Kotlin codebase with platform-specific UI layers.' },
 ];
 
@@ -300,10 +300,10 @@ export default function AndroidAppDevelopment() {
     <>
       <Head>
         <title>Android Application Development Company | 1Solutions</title>
-        <meta name="description" content="Native Android app development in Kotlin & Jetpack Compose — phones, tablets, foldables, Android TV & Wear OS. 150+ apps shipped, Play Store-ready." />
+        <meta name="description" content="Native Android app development in Kotlin & Jetpack Compose - phones, tablets, foldables, Android TV & Wear OS. 150+ apps shipped, Play Store-ready." />
         <link rel="canonical" href="https://www.1solutions.biz/android-application-development-company/" />
         <meta property="og:title" content="Android Application Development Company | 1Solutions" />
-        <meta property="og:description" content="Native Android development in Kotlin & Jetpack Compose — from MVP to enterprise mobility. 150+ apps shipped, 15+ years experience. Phone, tablet, foldable, TV & Wear OS." />
+        <meta property="og:description" content="Native Android development in Kotlin & Jetpack Compose - from MVP to enterprise mobility. 150+ apps shipped, 15+ years experience. Phone, tablet, foldable, TV & Wear OS." />
         <meta property="og:url" content="https://www.1solutions.biz/android-application-development-company/" />
         <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
@@ -578,8 +578,8 @@ export default function AndroidAppDevelopment() {
         {/* ── HERO ── */}
         <section className="an-hero">
           <span className="an-eyebrow">Android Application Development Company</span>
-          <h1>Native Android Apps in Kotlin — Built for Performance, Scale & the Play Store</h1>
-          <p className="an-hero-desc">We build production-quality native Android applications in Kotlin and Jetpack Compose — from consumer MVPs to enterprise mobility platforms. Phone, tablet, foldable, Android TV, and Wear OS. Play Store-ready, pixel-perfect, and architected to scale.</p>
+          <h1>Native Android Apps in Kotlin - Built for Performance, Scale & the Play Store</h1>
+          <p className="an-hero-desc">We build production-quality native Android applications in Kotlin and Jetpack Compose - from consumer MVPs to enterprise mobility platforms. Phone, tablet, foldable, Android TV, and Wear OS. Play Store-ready, pixel-perfect, and architected to scale.</p>
           <div className="an-trust-row">
             {['150+ Android Apps Shipped','Kotlin & Jetpack Compose','Phone · Tablet · TV · Wear OS','15+ Years Experience','Play Store Ready'].map(b => (
               <div className="an-badge" key={b}><span className="an-badge-dot" />{b}</div>
@@ -630,7 +630,7 @@ export default function AndroidAppDevelopment() {
             <div className={`an-s-reveal${visibleSections.has('svc') ? ' an-revealed' : ''}`} ref={el => { sectionRefs.current['svc'] = el; }}>
               <span className="an-s-eyebrow">What We Build</span>
               <h2 id="an-svc-heading" className="an-s-title">Android App Development Services We Deliver</h2>
-              <p className="an-s-desc" style={{ maxWidth: 720 }}>From native Kotlin and Jetpack Compose development through Java-to-Kotlin modernisation, Android TV, Wear OS, enterprise MDM apps, and Play Store optimisation — our Android engineers cover every dimension of the Android platform.</p>
+              <p className="an-s-desc" style={{ maxWidth: 720 }}>From native Kotlin and Jetpack Compose development through Java-to-Kotlin modernisation, Android TV, Wear OS, enterprise MDM apps, and Play Store optimisation - our Android engineers cover every dimension of the Android platform.</p>
             </div>
             <div className="an-svc-grid" ref={svcGridRef}>
               {visibleServices.map((s, i) => (
@@ -657,7 +657,7 @@ export default function AndroidAppDevelopment() {
             <div className={`an-s-reveal${visibleSections.has('stk') ? ' an-revealed' : ''}`} ref={el => { sectionRefs.current['stk'] = el; }}>
               <span className="an-s-eyebrow">The Android Tech Stack We Use</span>
               <h2 id="an-stack-heading" className="an-s-title">Kotlin, Compose & the Full Jetpack Ecosystem</h2>
-              <p className="an-s-desc" style={{ maxWidth: 680 }}>From Kotlin with Coroutines and Flow through Jetpack Compose UI, Hilt DI, Room, WorkManager, CameraX, and Firebase — every modern Android Jetpack component, combined with Fastlane and GitHub Actions CI/CD for rapid, reliable releases.</p>
+              <p className="an-s-desc" style={{ maxWidth: 680 }}>From Kotlin with Coroutines and Flow through Jetpack Compose UI, Hilt DI, Room, WorkManager, CameraX, and Firebase - every modern Android Jetpack component, combined with Fastlane and GitHub Actions CI/CD for rapid, reliable releases.</p>
             </div>
             <div className="an-stack-grid" ref={stackGridRef}>
               {TECH_STACK.map((grp, i) => (
@@ -680,7 +680,7 @@ export default function AndroidAppDevelopment() {
             <div className={`an-s-reveal${visibleSections.has('eng') ? ' an-revealed' : ''}`} ref={el => { sectionRefs.current['eng'] = el; }}>
               <span className="an-s-eyebrow">How We Work With You</span>
               <h2 id="an-eng-heading" className="an-s-title">Engagement Models for Android Development</h2>
-              <p className="an-s-desc" style={{ maxWidth: 680 }}>Whether you need a dedicated Android team for a long-term product roadmap, a fixed-price MVP, or flexible sprint-based development for an evolving app — we structure the engagement to fit your product stage and budget.</p>
+              <p className="an-s-desc" style={{ maxWidth: 680 }}>Whether you need a dedicated Android team for a long-term product roadmap, a fixed-price MVP, or flexible sprint-based development for an evolving app - we structure the engagement to fit your product stage and budget.</p>
             </div>
             <div className="an-eng-grid" ref={engGridRef}>
               {ENGAGEMENT_MODELS.map((m, i) => (
@@ -713,7 +713,7 @@ export default function AndroidAppDevelopment() {
             <div className={`an-s-reveal${visibleSections.has('proc') ? ' an-revealed' : ''}`} ref={el => { sectionRefs.current['proc'] = el; }}>
               <span className="an-s-eyebrow">How We Deliver</span>
               <h2 id="an-proc-heading" className="an-s-title">Our Android App Development Process</h2>
-              <p className="an-s-desc">Six stages from architecture and Material Design 3 prototyping through biweekly APK builds, backend integration, performance profiling, and managed Play Store launch — with a working app on your physical Android device from sprint one.</p>
+              <p className="an-s-desc">Six stages from architecture and Material Design 3 prototyping through biweekly APK builds, backend integration, performance profiling, and managed Play Store launch - with a working app on your physical Android device from sprint one.</p>
             </div>
             <div className="an-psteps">
               {PROCESS_STEPS.map((step, i) => (
@@ -765,7 +765,7 @@ export default function AndroidAppDevelopment() {
             <div className={`an-s-reveal${visibleSections.has('wy') ? ' an-revealed' : ''}`} ref={el => { sectionRefs.current['wy'] = el; }}>
               <span className="an-s-eyebrow">Why 1Solutions</span>
               <h2 id="an-wy-heading" className="an-s-title">Why Choose Us for Android App Development</h2>
-              <p className="an-s-desc" style={{ maxWidth: 680 }}>150+ native Android apps shipped across consumer, enterprise, logistics, healthcare, and fintech verticals — with Kotlin-first development, clean architecture, Material Design 3 expertise, and performance profiling on real Android devices before every release.</p>
+              <p className="an-s-desc" style={{ maxWidth: 680 }}>150+ native Android apps shipped across consumer, enterprise, logistics, healthcare, and fintech verticals - with Kotlin-first development, clean architecture, Material Design 3 expertise, and performance profiling on real Android devices before every release.</p>
             </div>
             <div className="an-why-grid" ref={whyGridRef}>
               {WHY_CARDS.map((c, i) => (
@@ -790,7 +790,7 @@ export default function AndroidAppDevelopment() {
                   ['✓', 'Free 60-minute Android discovery and architecture review call'],
                   ['✓', 'App scope, screen inventory, and Jetpack tech stack recommendation at no charge'],
                   ['✓', 'Native Android vs Flutter vs React Native analysis for your specific use case'],
-                  ['✓', 'NDA available on request — your app concept stays fully confidential'],
+                  ['✓', 'NDA available on request - your app concept stays fully confidential'],
                   ['✓', 'Response within 24 business hours from our Android engineering lead'],
                 ].map(([icon, text]) => (
                   <div className="an-cbenefit" key={text}>
@@ -843,7 +843,7 @@ export default function AndroidAppDevelopment() {
                 </div>
                 <div className="an-fg full">
                   <label htmlFor="an-msg">App Brief *</label>
-                  <textarea name="sf-message" id="an-msg" rows={4} placeholder="Describe your Android app — target users, core features, target devices (phone/tablet/TV/Wear OS), existing backend or API, current state (idea/legacy app/live app), and go-live timeline..." required />
+                  <textarea name="sf-message" id="an-msg" rows={4} placeholder="Describe your Android app - target users, core features, target devices (phone/tablet/TV/Wear OS), existing backend or API, current state (idea/legacy app/live app), and go-live timeline..." required />
                 </div>
                 <div className="an-consent">
                   <input id="an-consent" type="checkbox" required />
@@ -860,8 +860,8 @@ export default function AndroidAppDevelopment() {
         <section className="an-faq" aria-labelledby="an-faq-heading">
           <div className="an-inner" style={{ maxWidth: 860 }}>
             <span className="an-s-eyebrow">FAQ</span>
-            <h2 id="an-faq-heading">Android App Development — Frequently Asked Questions</h2>
-            <p className="an-faq-sub">Everything you need to know about building a native Android application with 1Solutions — from Kotlin vs Java to timelines, enterprise MDM, large screens, and Play Store compliance.</p>
+            <h2 id="an-faq-heading">Android App Development - Frequently Asked Questions</h2>
+            <p className="an-faq-sub">Everything you need to know about building a native Android application with 1Solutions - from Kotlin vs Java to timelines, enterprise MDM, large screens, and Play Store compliance.</p>
             <div className="an-faq-list">
               {FAQS.map((item, i) => (
                 <div key={i} className={`an-fitem${openFaq === i ? ' open' : ''}`} itemScope itemType="https://schema.org/Question">

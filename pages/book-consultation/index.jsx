@@ -17,7 +17,7 @@ const COVERS = [
       </svg>
     ),
     title: 'Your Business Goals',
-    desc: 'We listen first — understanding where you are and where you want to go.',
+    desc: 'We listen first - understanding where you are and where you want to go.',
   },
   {
     icon: (
@@ -44,7 +44,7 @@ const COVERS = [
       </svg>
     ),
     title: 'Pricing & Timelines',
-    desc: 'Transparent ballpark figures so you can plan confidently — no surprises.',
+    desc: 'Transparent ballpark figures so you can plan confidently - no surprises.',
   },
 ];
 
@@ -291,7 +291,7 @@ export default function BookConsultation() {
           <p className="bc-eyebrow">Free Consultation</p>
           <h1 className="bc-hero-title">Book a Free Strategy Call</h1>
           <p className="bc-hero-sub">
-            30 minutes with our experts. No sales pitch — just a focused conversation about your goals and how we can help you achieve them.
+            30 minutes with our experts. No sales pitch - just a focused conversation about your goals and how we can help you achieve them.
           </p>
           <div className="bc-trust-row">
             {TRUST.map((t, i) => (

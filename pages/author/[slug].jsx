@@ -43,7 +43,7 @@ export default function AuthorPage({ author, posts, pageInfo, slug, totalPosts }
   return (
     <>
       <Head>
-        <title>{author.name} — Author | 1Solutions Blog</title>
+        <title>{author.name} - Author | 1Solutions Blog</title>
         <meta name="description" content={author.description || `Articles by ${author.name} on web development, SEO, and digital marketing.`} />
         <link rel="canonical" href={`${siteUrl}/author/${slug}`} />
         <meta property="og:title"       content={`${author.name} | 1Solutions`} />

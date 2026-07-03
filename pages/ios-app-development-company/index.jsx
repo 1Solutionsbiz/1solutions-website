@@ -17,7 +17,7 @@ const SCHEMA = {
       '@type': 'Service',
       name: 'iOS App Development',
       url: 'https://www.1solutions.biz/ios-app-development-company/',
-      description: 'Native iOS app development in Swift and SwiftUI — iPhone, iPad, Apple Watch, Apple TV, and Mac Catalyst. App Store-ready, performance-optimised, and built with clean architecture for long-term maintainability.',
+      description: 'Native iOS app development in Swift and SwiftUI - iPhone, iPad, Apple Watch, Apple TV, and Mac Catalyst. App Store-ready, performance-optimised, and built with clean architecture for long-term maintainability.',
       provider: {
         '@type': 'Organization',
         name: '1Solutions',
@@ -33,26 +33,26 @@ const SCHEMA = {
       mainEntity: [
         { '@type': 'Question', name: 'Should I build a native iOS app in Swift or use a cross-platform framework?', acceptedAnswer: { '@type': 'Answer', text: 'Native Swift development gives you the best possible iOS performance, the deepest access to Apple platform APIs (ARKit, Core ML, HealthKit, WatchKit, HomeKit, VisionKit), the most polished Apple Human Interface Guideline-compliant UX, and seamless Apple ecosystem integration (iCloud, Apple Pay, Sign in with Apple, Siri, Shortcuts). Cross-platform frameworks like Flutter and React Native work well for apps that are primarily data-display and need simultaneous Android launch. For premium iOS user experiences, complex animations, Apple Watch or Apple TV targets, or apps that heavily rely on Apple-specific APIs, native Swift is the right choice.' } },
         { '@type': 'Question', name: 'How long does it take to build an iOS app?', acceptedAnswer: { '@type': 'Answer', text: 'A native iOS MVP covering authentication, 4–6 core screens, API integration, and App Store submission typically takes 10–16 weeks. A mid-complexity iOS app with SwiftUI animations, real-time features, in-app purchases, and Apple platform integrations typically takes 18–26 weeks. A full enterprise iOS app with offline capability, Core Data sync, complex business logic, and multiple user roles typically takes 28–40 weeks. We distribute working TestFlight builds on a biweekly sprint cycle so you can test on real iPhones and iPads throughout development.' } },
-        { '@type': 'Question', name: 'Do you build iOS apps in Swift or Objective-C?', acceptedAnswer: { '@type': 'Answer', text: 'All new iOS development we do is in Swift with SwiftUI for the UI layer — this is the Apple-recommended approach for all new iOS development. We also maintain and extend existing Objective-C codebases, and handle Objective-C to Swift migration projects, including introducing SwiftUI views incrementally alongside UIKit using UIHostingController. For legacy Objective-C codebases we produce a phased migration plan that modernises the codebase without a disruptive full rewrite, while improving performance and long-term maintainability.' } },
-        { '@type': 'Question', name: 'Can you build apps for iPhone, iPad, and Apple Watch simultaneously?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We build multi-target Apple platform apps from a shared Swift codebase — iPhone, iPad (with adaptive split-view layouts), Apple Watch (watchOS with complications and always-on display), Apple TV (tvOS with focus-based navigation), and Mac (Mac Catalyst or native macOS SwiftUI). Shared business logic is factored into framework targets that compile across platforms, with platform-specific UI layers in SwiftUI targeting each device idiom. This maximises code reuse while delivering a native-quality experience on each platform.' } },
+        { '@type': 'Question', name: 'Do you build iOS apps in Swift or Objective-C?', acceptedAnswer: { '@type': 'Answer', text: 'All new iOS development we do is in Swift with SwiftUI for the UI layer - this is the Apple-recommended approach for all new iOS development. We also maintain and extend existing Objective-C codebases, and handle Objective-C to Swift migration projects, including introducing SwiftUI views incrementally alongside UIKit using UIHostingController. For legacy Objective-C codebases we produce a phased migration plan that modernises the codebase without a disruptive full rewrite, while improving performance and long-term maintainability.' } },
+        { '@type': 'Question', name: 'Can you build apps for iPhone, iPad, and Apple Watch simultaneously?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We build multi-target Apple platform apps from a shared Swift codebase - iPhone, iPad (with adaptive split-view layouts), Apple Watch (watchOS with complications and always-on display), Apple TV (tvOS with focus-based navigation), and Mac (Mac Catalyst or native macOS SwiftUI). Shared business logic is factored into framework targets that compile across platforms, with platform-specific UI layers in SwiftUI targeting each device idiom. This maximises code reuse while delivering a native-quality experience on each platform.' } },
         { '@type': 'Question', name: 'Do you integrate Apple platform APIs like ARKit, Core ML, HealthKit, and Apple Pay?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Apple platform API integration is a core speciality. We have built iOS apps using ARKit and RealityKit for augmented reality, Core ML for on-device machine learning inference (image classification, natural language processing, pose estimation), HealthKit for fitness and health data, HomeKit for smart home control, StoreKit 2 for in-app purchases and subscriptions, Apple Pay for payment flows, Sign in with Apple, MapKit, Core Location, AVFoundation for camera and media, and VisionKit for document scanning and text recognition.' } },
-        { '@type': 'Question', name: 'Can you migrate our Objective-C or UIKit app to Swift and SwiftUI?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. iOS modernisation is a common engagement. Our phased approach first introduces Swift modules and Swift Package Manager alongside Objective-C, migrates the data layer (Codable models, async/await networking, Core Data), then migrates the UI from UIKit to SwiftUI screen by screen using UIHostingController interop — allowing SwiftUI and UIKit views to coexist during the transition. This avoids a big-bang rewrite and allows continuous feature delivery. Outcomes include faster build times, reduced crash rates, modern concurrency (Swift Concurrency async/await), and compliance with the latest iOS SDK requirements.' } },
+        { '@type': 'Question', name: 'Can you migrate our Objective-C or UIKit app to Swift and SwiftUI?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. iOS modernisation is a common engagement. Our phased approach first introduces Swift modules and Swift Package Manager alongside Objective-C, migrates the data layer (Codable models, async/await networking, Core Data), then migrates the UI from UIKit to SwiftUI screen by screen using UIHostingController interop - allowing SwiftUI and UIKit views to coexist during the transition. This avoids a big-bang rewrite and allows continuous feature delivery. Outcomes include faster build times, reduced crash rates, modern concurrency (Swift Concurrency async/await), and compliance with the latest iOS SDK requirements.' } },
       ],
     },
   ],
 };
 
 const SERVICES = [
-  { n: '01', title: 'Custom iOS App Development', desc: 'End-to-end native iOS app development in Swift and SwiftUI — from architecture, UI implementation, and Apple platform API integration through App Store submission and post-launch maintenance. Consumer apps, B2B tools, and enterprise iOS solutions for iPhone, iPad, and Apple Watch.' },
-  { n: '02', title: 'iOS MVP & Rapid Prototyping', desc: 'A production-quality iOS MVP on the App Store in 10–16 weeks. We scope the core user journeys, design a polished SwiftUI interface following Apple HIG, integrate backend APIs, and distribute TestFlight builds throughout development — ready for real user feedback and investor demos.', feat: true },
-  { n: '03', title: 'Swift & SwiftUI Development', desc: 'Modern native iOS development using Swift 5.x, SwiftUI declarative UI, Swift Concurrency (async/await and Structured Concurrency), Combine for reactive streams, and Swift Package Manager — with clean MVVM or TCA architecture and a comprehensive test suite.' },
+  { n: '01', title: 'Custom iOS App Development', desc: 'End-to-end native iOS app development in Swift and SwiftUI - from architecture, UI implementation, and Apple platform API integration through App Store submission and post-launch maintenance. Consumer apps, B2B tools, and enterprise iOS solutions for iPhone, iPad, and Apple Watch.' },
+  { n: '02', title: 'iOS MVP & Rapid Prototyping', desc: 'A production-quality iOS MVP on the App Store in 10–16 weeks. We scope the core user journeys, design a polished SwiftUI interface following Apple HIG, integrate backend APIs, and distribute TestFlight builds throughout development - ready for real user feedback and investor demos.', feat: true },
+  { n: '03', title: 'Swift & SwiftUI Development', desc: 'Modern native iOS development using Swift 5.x, SwiftUI declarative UI, Swift Concurrency (async/await and Structured Concurrency), Combine for reactive streams, and Swift Package Manager - with clean MVVM or TCA architecture and a comprehensive test suite.' },
   { n: '04', title: 'iPad & Universal App Development', desc: 'iPad-first and universal iOS apps with adaptive layouts using SwiftUI Layout, split-view navigation, drag-and-drop, Apple Pencil support (PencilKit), multi-window for iPadOS, Stage Manager compatibility, and keyboard/pointer support for productivity-focused tablet apps.' },
   { n: '05', title: 'Apple Watch & watchOS Apps', desc: 'Native watchOS apps with complications, always-on display support, WidgetKit for Smart Stacks, background workout sessions via HealthKit, WatchConnectivity for iPhone sync, and high-performance watch UI built with SwiftUI for the always-on Retina display.' },
-  { n: '06', title: 'Objective-C → Swift & UIKit → SwiftUI Migration', desc: 'Phased iOS modernisation: migrate Objective-C to Swift with interop bridging, introduce SwiftUI alongside UIKit using UIHostingController, adopt Swift Concurrency in place of callbacks and Combine, and upgrade deprecated APIs — without stopping feature delivery.' },
+  { n: '06', title: 'Objective-C → Swift & UIKit → SwiftUI Migration', desc: 'Phased iOS modernisation: migrate Objective-C to Swift with interop bridging, introduce SwiftUI alongside UIKit using UIHostingController, adopt Swift Concurrency in place of callbacks and Combine, and upgrade deprecated APIs - without stopping feature delivery.' },
   { n: '07', title: 'Apple Platform API Integration', desc: 'Deep iOS platform integration: ARKit and RealityKit (AR experiences), Core ML (on-device ML inference), HealthKit, StoreKit 2 (in-app purchases and subscriptions), Apple Pay, Sign in with Apple, MapKit, AVFoundation, VisionKit, HomeKit, and Siri App Intents.' },
-  { n: '08', title: 'iOS App Performance Optimisation', desc: 'Xcode Instruments profiling — Time Profiler for CPU, Allocations for memory leaks and retain cycles, Core Data batch performance, SwiftUI render profiling, energy impact analysis, and app launch time optimisation to hit under 400ms time-to-interactive on current devices.' },
+  { n: '08', title: 'iOS App Performance Optimisation', desc: 'Xcode Instruments profiling - Time Profiler for CPU, Allocations for memory leaks and retain cycles, Core Data batch performance, SwiftUI render profiling, energy impact analysis, and app launch time optimisation to hit under 400ms time-to-interactive on current devices.' },
   { n: '09', title: 'iOS Enterprise & MDM Applications', desc: 'Enterprise iOS apps compatible with Mobile Device Management (Intune, Jamf Pro, Workspace ONE), MDM-provisioned distribution outside the App Store, SSO with SAML/OAuth (Okta, Azure AD), certificate-based auth, and managed app configuration via MDM profiles.' },
-  { n: '10', title: 'App Store Optimisation & Maintenance', desc: 'Ongoing iOS maintenance — yearly iOS SDK and minimum version updates, App Store Review Guideline compliance, privacy manifest and required reasons API declarations, Xcode version upgrades, dependency updates, and App Store Connect metadata and screenshot management.' },
+  { n: '10', title: 'App Store Optimisation & Maintenance', desc: 'Ongoing iOS maintenance - yearly iOS SDK and minimum version updates, App Store Review Guideline compliance, privacy manifest and required reasons API declarations, Xcode version upgrades, dependency updates, and App Store Connect metadata and screenshot management.' },
 ];
 
 const TECH_STACK = [
@@ -62,7 +62,7 @@ const TECH_STACK = [
     items: ['Swift 5.x / 6.x', 'Objective-C (legacy)', 'iOS SDK 17/18', 'Xcode 16', 'Swift Package Manager', 'Simulator & Instruments'],
   },
   {
-    group: 'UI — SwiftUI & UIKit',
+    group: 'UI - SwiftUI & UIKit',
     color: '#1e40af',
     items: ['SwiftUI', 'UIKit (legacy / interop)', 'UIHostingController', 'SwiftUI Animations', 'PencilKit', 'Adaptive Layouts (SizeClass)'],
   },
@@ -107,10 +107,10 @@ const ENGAGEMENT_MODELS = [
     feat: true,
     icon: 'M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z',
     headline: 'A dedicated iOS squad working exclusively on your app.',
-    desc: 'A full-time offshore iOS team — Swift developer(s), UI/UX designer, QA engineer, and backend developer — working as a seamless extension of your team at a fraction of US/UK/AU in-house cost. Sprint-based delivery with daily standups and biweekly TestFlight builds. Full source code and IP ownership yours from day one.',
+    desc: 'A full-time offshore iOS team - Swift developer(s), UI/UX designer, QA engineer, and backend developer - working as a seamless extension of your team at a fraction of US/UK/AU in-house cost. Sprint-based delivery with daily standups and biweekly TestFlight builds. Full source code and IP ownership yours from day one.',
     bestFor: ['Full-featured native iOS app with ongoing roadmap', 'Long-term iOS product with monthly feature releases', 'Replacing in-house iOS capacity at lower cost', 'iOS app spanning iPhone, iPad, and Apple Watch'],
     process: 'Team assembly → Discovery sprint → Biweekly TestFlight releases → Continuous roadmap',
-    timeline: 'Ongoing — scale up or down per quarter',
+    timeline: 'Ongoing - scale up or down per quarter',
   },
   {
     id: 'fixed',
@@ -119,7 +119,7 @@ const ENGAGEMENT_MODELS = [
     badgeColor: '#1d4ed8',
     icon: 'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z',
     headline: 'Agreed scope. Agreed price. App delivered on time.',
-    desc: 'Best for a well-scoped iOS MVP or a feature set with agreed user stories and screen designs. We quote a fixed price covering design, Swift development, testing, and App Store submission — with milestone TestFlight releases throughout. No scope creep, no surprise invoices.',
+    desc: 'Best for a well-scoped iOS MVP or a feature set with agreed user stories and screen designs. We quote a fixed price covering design, Swift development, testing, and App Store submission - with milestone TestFlight releases throughout. No scope creep, no surprise invoices.',
     bestFor: ['iOS MVP with defined screens and user stories', 'Objective-C to Swift migration with agreed scope', 'Specific iOS feature (Apple Pay, ARKit, StoreKit)', 'Legacy iOS app upgrade to current iOS SDK'],
     process: 'Detailed spec → Fixed quote → Milestone TestFlight → App Store launch',
     timeline: 'Best for projects 10–26 weeks',
@@ -134,17 +134,17 @@ const ENGAGEMENT_MODELS = [
     desc: 'Billed on actual time and resources used. Ideal for iOS discovery sprints, iterative consumer apps where UX is validated with real users before scope is locked, or extending an existing Swift codebase with new features or Apple platform integrations.',
     bestFor: ['iOS architecture audit and modernisation planning', 'Iterative consumer app with user-research-driven scope', 'Adding ARKit, Core ML, or HealthKit to existing app', 'iOS performance profiling and optimisation engagement'],
     process: 'Sprint planning → Biweekly TestFlight → Iterative refinement → Transparent timesheets',
-    timeline: 'Start in 1 week — no lengthy onboarding',
+    timeline: 'Start in 1 week - no lengthy onboarding',
   },
 ];
 
 const PROCESS_STEPS = [
   { num: '01', title: 'Discovery, Architecture & Swift Stack Decision', desc: 'We begin with a structured discovery of your app concept, target Apple devices (iPhone, iPad, Apple Watch, Apple TV), Apple platform API requirements (HealthKit, ARKit, StoreKit), backend and API design, and App Store strategy. We define the Swift architecture (MVVM, TCA, or feature-first), data layer (Core Data, SwiftData, or Realm), navigation structure, and concurrency model before sprint planning begins.' },
-  { num: '02', title: 'UI/UX Design — Apple HIG & SwiftUI Prototyping', desc: 'Our designers produce high-fidelity Figma prototypes following Apple Human Interface Guidelines — SF Symbols, system fonts, native iOS navigation patterns (NavigationStack, Tab Bar, sheets), and Dynamic Type support. We define a SwiftUI component library with design tokens (colour, typography, spacing) before development so sprint velocity is maximised from day one.' },
-  { num: '03', title: 'Agile Sprint Development — Biweekly TestFlight Builds', desc: 'iOS development runs in two-week sprints. Every sprint you receive a working TestFlight build covering the sprint scope — install it on your own iPhone or iPad and test the real app throughout development. Sprint reviews include a live demo with screen recording for async stakeholder review. No waiting until the end to see the product.' },
-  { num: '04', title: 'Backend & Apple Platform API Integration', desc: 'Backend integrations are built in parallel with iOS development — URLSession async/await REST or Apollo GraphQL clients, Firebase Auth and Firestore/FCM configuration, StoreKit 2 subscription and in-app purchase setup, Apple Pay payment flows, Sign in with Apple, MapKit and Core Location, HealthKit read/write permissions, and third-party SDK setup.' },
-  { num: '05', title: 'QA, Instruments Profiling & App Store Review Compliance', desc: 'Comprehensive QA across physical iPhone and iPad devices covering multiple iOS versions (iOS 16–18). Xcode Instruments profiling for CPU, memory allocations, leaks, and energy impact. SwiftUI render profiling. App Store Review Guidelines compliance check — privacy manifests, required reasons APIs, data collection declarations in App Store Connect, and content rating submission.' },
-  { num: '06', title: 'App Store Launch, Monitoring & Ongoing Roadmap', desc: 'Managed App Store Connect submission — phased release, App Store listing optimisation (title, subtitle, keywords, screenshots, preview video), and response management if Apple Review requests changes. Post-launch monitoring via Firebase Crashlytics, App Store Connect analytics, and Firebase Analytics. Defined sprint cadence for ongoing feature delivery and yearly iOS SDK updates.' },
+  { num: '02', title: 'UI/UX Design - Apple HIG & SwiftUI Prototyping', desc: 'Our designers produce high-fidelity Figma prototypes following Apple Human Interface Guidelines - SF Symbols, system fonts, native iOS navigation patterns (NavigationStack, Tab Bar, sheets), and Dynamic Type support. We define a SwiftUI component library with design tokens (colour, typography, spacing) before development so sprint velocity is maximised from day one.' },
+  { num: '03', title: 'Agile Sprint Development - Biweekly TestFlight Builds', desc: 'iOS development runs in two-week sprints. Every sprint you receive a working TestFlight build covering the sprint scope - install it on your own iPhone or iPad and test the real app throughout development. Sprint reviews include a live demo with screen recording for async stakeholder review. No waiting until the end to see the product.' },
+  { num: '04', title: 'Backend & Apple Platform API Integration', desc: 'Backend integrations are built in parallel with iOS development - URLSession async/await REST or Apollo GraphQL clients, Firebase Auth and Firestore/FCM configuration, StoreKit 2 subscription and in-app purchase setup, Apple Pay payment flows, Sign in with Apple, MapKit and Core Location, HealthKit read/write permissions, and third-party SDK setup.' },
+  { num: '05', title: 'QA, Instruments Profiling & App Store Review Compliance', desc: 'Comprehensive QA across physical iPhone and iPad devices covering multiple iOS versions (iOS 16–18). Xcode Instruments profiling for CPU, memory allocations, leaks, and energy impact. SwiftUI render profiling. App Store Review Guidelines compliance check - privacy manifests, required reasons APIs, data collection declarations in App Store Connect, and content rating submission.' },
+  { num: '06', title: 'App Store Launch, Monitoring & Ongoing Roadmap', desc: 'Managed App Store Connect submission - phased release, App Store listing optimisation (title, subtitle, keywords, screenshots, preview video), and response management if Apple Review requests changes. Post-launch monitoring via Firebase Crashlytics, App Store Connect analytics, and Firebase Analytics. Defined sprint cadence for ongoing feature delivery and yearly iOS SDK updates.' },
 ];
 
 const TESTIMONIALS = [
@@ -153,34 +153,34 @@ const TESTIMONIALS = [
     name: 'Laura H.', role: 'Head of Product, Consumer App (UK)', init: 'LH', bg: '#0F3460',
   },
   {
-    text: "1Solutions built our iOS app for healthcare practitioners — HealthKit integration, HIPAA-aware data handling, offline Core Data sync, and Apple Watch support. The App Store review process was smooth and they handled every compliance requirement correctly. Our practitioners call it the best clinical app they have ever used.",
+    text: "1Solutions built our iOS app for healthcare practitioners - HealthKit integration, HIPAA-aware data handling, offline Core Data sync, and Apple Watch support. The App Store review process was smooth and they handled every compliance requirement correctly. Our practitioners call it the best clinical app they have ever used.",
     name: 'Dr. Jason W.', role: 'Founder, HealthTech Startup (US)', init: 'JW', bg: '#1e3a5f', feat: true,
   },
   {
-    text: "We needed an ARKit-powered iOS app for retail product visualisation — placing furniture in a room at scale. 1Solutions delivered a pixel-perfect SwiftUI app with smooth ARKit anchoring in 14 weeks. Our conversion rate on product pages with the AR feature is 3x higher than without it.",
+    text: "We needed an ARKit-powered iOS app for retail product visualisation - placing furniture in a room at scale. 1Solutions delivered a pixel-perfect SwiftUI app with smooth ARKit anchoring in 14 weeks. Our conversion rate on product pages with the AR feature is 3x higher than without it.",
     name: 'Sophie C.', role: 'Digital Director, Retail Brand (AU)', init: 'SC', bg: '#312e81',
   },
 ];
 
 const WHY_CARDS = [
-  { title: '120+ Native iOS Apps Shipped', desc: 'We have shipped 120+ native iOS apps to the App Store across consumer, enterprise, healthtech, fintech, AR, and retail verticals — from solo founder MVPs to apps with millions of downloads and enterprise deployments across thousands of managed Apple devices.' },
+  { title: '120+ Native iOS Apps Shipped', desc: 'We have shipped 120+ native iOS apps to the App Store across consumer, enterprise, healthtech, fintech, AR, and retail verticals - from solo founder MVPs to apps with millions of downloads and enterprise deployments across thousands of managed Apple devices.' },
   { title: 'Swift-First, SwiftUI-First Since Swift 5', desc: 'We adopted Swift early and have built production SwiftUI apps since SwiftUI 2.0. Our engineers understand SwiftUI view identity, state management, animations, and the SwiftUI-UIKit boundary at a depth that comes from shipping real apps, not watching WWDC sessions.' },
-  { title: 'Apple HIG Fluency — Apps that Feel Right', desc: 'We build iOS apps that feel genuinely native — correct use of NavigationStack, sheet presentation, SF Symbols, Dynamic Type, Dark Mode, haptic feedback, and system gestures. Apple reviewers notice the difference, and so do your users. Our App Store approval rate on first submission is over 95%.' },
-  { title: 'Apple Platform API Specialists', desc: 'Deep expertise in ARKit and RealityKit, Core ML and Vision, HealthKit, StoreKit 2, Apple Pay, MapKit and Core Location, AVFoundation, VisionKit, HomeKit, and Siri App Intents — the APIs that make iOS apps genuinely differentiated from web and Android experiences.' },
-  { title: 'Performance Profiled on Real Devices', desc: 'We profile every iOS app with Xcode Instruments before release — checking CPU traces, memory allocations, retain cycles, energy impact, and launch time on the oldest supported device target. We target under 400ms time-to-interactive and 60fps scroll performance on iPhone SE as a baseline.' },
-  { title: 'End-to-End — App + Backend + DevOps', desc: 'We build everything your iOS app needs — the Swift front-end, the backend API (Node.js, Python, Firebase/Supabase), Fastlane/Xcode Cloud CI/CD, TestFlight management, and App Store Connect maintenance. One partner, full accountability, no gaps between teams.' },
-  { title: 'US / UK / AU Timezone Overlap', desc: 'Our iOS engineers maintain scheduled daily standup windows overlapping US EST, UK GMT, and Australian AEST business hours. You get real-time communication with your Swift development team — not 24-hour email delays on critical architecture or design decisions.' },
-  { title: 'Transparent Delivery. Full IP Ownership.', desc: 'Biweekly TestFlight builds you can install on your own devices, a shared sprint board, direct access to your iOS lead engineer, and weekly progress reports. All source code, assets, and intellectual property are 100% yours from day one — no vendor lock-in.' },
+  { title: 'Apple HIG Fluency - Apps that Feel Right', desc: 'We build iOS apps that feel genuinely native - correct use of NavigationStack, sheet presentation, SF Symbols, Dynamic Type, Dark Mode, haptic feedback, and system gestures. Apple reviewers notice the difference, and so do your users. Our App Store approval rate on first submission is over 95%.' },
+  { title: 'Apple Platform API Specialists', desc: 'Deep expertise in ARKit and RealityKit, Core ML and Vision, HealthKit, StoreKit 2, Apple Pay, MapKit and Core Location, AVFoundation, VisionKit, HomeKit, and Siri App Intents - the APIs that make iOS apps genuinely differentiated from web and Android experiences.' },
+  { title: 'Performance Profiled on Real Devices', desc: 'We profile every iOS app with Xcode Instruments before release - checking CPU traces, memory allocations, retain cycles, energy impact, and launch time on the oldest supported device target. We target under 400ms time-to-interactive and 60fps scroll performance on iPhone SE as a baseline.' },
+  { title: 'End-to-End - App + Backend + DevOps', desc: 'We build everything your iOS app needs - the Swift front-end, the backend API (Node.js, Python, Firebase/Supabase), Fastlane/Xcode Cloud CI/CD, TestFlight management, and App Store Connect maintenance. One partner, full accountability, no gaps between teams.' },
+  { title: 'US / UK / AU Timezone Overlap', desc: 'Our iOS engineers maintain scheduled daily standup windows overlapping US EST, UK GMT, and Australian AEST business hours. You get real-time communication with your Swift development team - not 24-hour email delays on critical architecture or design decisions.' },
+  { title: 'Transparent Delivery. Full IP Ownership.', desc: 'Biweekly TestFlight builds you can install on your own devices, a shared sprint board, direct access to your iOS lead engineer, and weekly progress reports. All source code, assets, and intellectual property are 100% yours from day one - no vendor lock-in.' },
 ];
 
 const FAQS = [
   { q: 'Should I build a native iOS app in Swift or use a cross-platform framework?', a: 'Native Swift gives you the best iOS performance, deepest Apple platform API access (ARKit, Core ML, HealthKit, WatchKit, HomeKit, StoreKit 2), the most polished Apple HIG-compliant UX, and seamless Apple ecosystem integration. Cross-platform frameworks like Flutter work well for apps that are primarily data-display and need simultaneous Android launch. For premium iOS experiences, complex animations, Apple Watch/Apple TV targets, or apps that rely heavily on Apple-specific APIs, native Swift is the right choice and what we recommend.' },
   { q: 'How long does it take to build a native iOS app?', a: 'A native iOS MVP covering authentication, 4–6 core screens, API integration, and App Store submission typically takes 10–16 weeks. A mid-complexity app with SwiftUI animations, real-time features, in-app purchases, and Apple platform integrations typically takes 18–26 weeks. A full enterprise iOS app with offline capability, Core Data sync, complex business logic, and multiple user roles typically takes 28–40 weeks. We distribute working TestFlight builds on a biweekly sprint cycle throughout development.' },
-  { q: 'Do you build iOS apps in Swift or Objective-C?', a: 'All new iOS development is in Swift with SwiftUI — the Apple-recommended approach. We also maintain Objective-C codebases and handle Objective-C-to-Swift migrations, introducing SwiftUI alongside UIKit using UIHostingController interop. For legacy Objective-C apps we produce a phased migration plan that modernises the codebase without a disruptive full rewrite, while delivering improved performance, Swift Concurrency, and compliance with current App Store requirements.' },
-  { q: 'Can you build for iPhone, iPad, and Apple Watch at the same time?', a: 'Yes. We build multi-target Apple platform apps from a shared Swift codebase — iPhone, iPad with adaptive split-view layouts, Apple Watch with complications and always-on display, Apple TV with focus-based tvOS navigation, and Mac via Mac Catalyst or native macOS SwiftUI. Shared business logic is factored into framework targets compiled across platforms, with platform-specific SwiftUI UI layers targeting each device idiom. This maximises code reuse while delivering a native-quality experience on each platform.' },
+  { q: 'Do you build iOS apps in Swift or Objective-C?', a: 'All new iOS development is in Swift with SwiftUI - the Apple-recommended approach. We also maintain Objective-C codebases and handle Objective-C-to-Swift migrations, introducing SwiftUI alongside UIKit using UIHostingController interop. For legacy Objective-C apps we produce a phased migration plan that modernises the codebase without a disruptive full rewrite, while delivering improved performance, Swift Concurrency, and compliance with current App Store requirements.' },
+  { q: 'Can you build for iPhone, iPad, and Apple Watch at the same time?', a: 'Yes. We build multi-target Apple platform apps from a shared Swift codebase - iPhone, iPad with adaptive split-view layouts, Apple Watch with complications and always-on display, Apple TV with focus-based tvOS navigation, and Mac via Mac Catalyst or native macOS SwiftUI. Shared business logic is factored into framework targets compiled across platforms, with platform-specific SwiftUI UI layers targeting each device idiom. This maximises code reuse while delivering a native-quality experience on each platform.' },
   { q: 'Do you integrate Apple APIs like ARKit, Core ML, HealthKit, and Apple Pay?', a: 'Yes. Apple platform API integration is a core speciality. We have shipped iOS apps using ARKit and RealityKit for augmented reality, Core ML for on-device machine learning (image classification, pose estimation, NLP), HealthKit for fitness data and clinical records, StoreKit 2 for subscriptions and in-app purchases, Apple Pay for payment flows, Sign in with Apple, MapKit, AVFoundation for camera and media, VisionKit for document scanning, HomeKit for smart home, and Siri App Intents for voice-driven workflows.' },
   { q: 'Can you migrate our Objective-C or UIKit app to Swift and SwiftUI?', a: 'Yes. iOS modernisation is a common engagement. Our phased approach introduces Swift modules alongside Objective-C, migrates the data layer to Swift (Codable, async/await networking, Core Data or SwiftData), then migrates the UI from UIKit to SwiftUI screen by screen using UIHostingController interop. This allows SwiftUI and UIKit to coexist throughout the migration, enabling continuous feature delivery. Outcomes include faster Xcode build times, reduced crash rates, modern async/await concurrency, and App Store compliance.' },
-  { q: 'How do you handle App Store review and submission?', a: 'We manage the full App Store submission process — provisioning profiles, code signing, App Store Connect setup, app metadata (title, subtitle, keywords, description), screenshot and preview video production, privacy nutrition label and data collection declarations, required reasons API declarations in the privacy manifest, content rating and age-appropriate design compliance, and TestFlight external testing group setup. Our first-submission App Store approval rate is over 95% because we do a compliance review before every submission.' },
+  { q: 'How do you handle App Store review and submission?', a: 'We manage the full App Store submission process - provisioning profiles, code signing, App Store Connect setup, app metadata (title, subtitle, keywords, description), screenshot and preview video production, privacy nutrition label and data collection declarations, required reasons API declarations in the privacy manifest, content rating and age-appropriate design compliance, and TestFlight external testing group setup. Our first-submission App Store approval rate is over 95% because we do a compliance review before every submission.' },
   { q: 'Do you build iOS enterprise apps distributed outside the App Store?', a: 'Yes. We build enterprise iOS apps distributed via Apple Business Manager (formerly DEP) and Mobile Device Management platforms including Jamf Pro, Microsoft Intune, and VMware Workspace ONE. Enterprise distribution uses an Apple Enterprise Developer Programme certificate for in-house apps, or custom apps distributed privately through the App Store to specific organisations. We implement managed app configuration via MDM profiles, SAML and OAuth SSO, certificate-based authentication, and MDM-managed VPN connectivity.' },
 ];
 
@@ -296,10 +296,10 @@ export default function IosAppDevelopment() {
     <>
       <Head>
         <title>iOS App Development Company | 1Solutions</title>
-        <meta name="description" content="Native iOS app development in Swift & SwiftUI — iPhone, iPad, Apple Watch, Apple TV. ARKit, Core ML, HealthKit & StoreKit 2. 120+ apps shipped." />
+        <meta name="description" content="Native iOS app development in Swift & SwiftUI - iPhone, iPad, Apple Watch, Apple TV. ARKit, Core ML, HealthKit & StoreKit 2. 120+ apps shipped." />
         <link rel="canonical" href="https://www.1solutions.biz/ios-app-development-company/" />
         <meta property="og:title" content="iOS App Development Company | Swift & SwiftUI | 1Solutions" />
-        <meta property="og:description" content="Native iOS development in Swift & SwiftUI — iPhone, iPad, Apple Watch & Apple TV. ARKit, Core ML, HealthKit, Apple Pay. 120+ apps. 15+ years experience." />
+        <meta property="og:description" content="Native iOS development in Swift & SwiftUI - iPhone, iPad, Apple Watch & Apple TV. ARKit, Core ML, HealthKit, Apple Pay. 120+ apps. 15+ years experience." />
         <meta property="og:url" content="https://www.1solutions.biz/ios-app-development-company/" />
         <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
@@ -512,8 +512,8 @@ export default function IosAppDevelopment() {
 
         <section className="io-hero">
           <span className="io-eyebrow">iOS App Development Company</span>
-          <h1>Native iOS Apps in Swift — Built for the App Store, iPhone, iPad & Apple Watch</h1>
-          <p className="io-hero-desc">We build production-quality native iOS applications in Swift and SwiftUI — from consumer MVPs to enterprise mobility platforms. iPhone, iPad, Apple Watch, and Apple TV. App Store-ready, Human Interface Guideline-compliant, and architectured for long-term maintainability.</p>
+          <h1>Native iOS Apps in Swift - Built for the App Store, iPhone, iPad & Apple Watch</h1>
+          <p className="io-hero-desc">We build production-quality native iOS applications in Swift and SwiftUI - from consumer MVPs to enterprise mobility platforms. iPhone, iPad, Apple Watch, and Apple TV. App Store-ready, Human Interface Guideline-compliant, and architectured for long-term maintainability.</p>
           <div className="io-trust-row">
             {['120+ iOS Apps Shipped','Swift & SwiftUI','iPhone · iPad · Watch · TV','15+ Years Experience','App Store Ready'].map(b => (
               <div className="io-badge" key={b}><span className="io-badge-dot" />{b}</div>
@@ -548,7 +548,7 @@ export default function IosAppDevelopment() {
             <div className={`io-s-reveal${visibleSections.has('svc') ? ' io-revealed' : ''}`} ref={el => { sectionRefs.current['svc'] = el; }}>
               <span className="io-s-eyebrow">What We Build</span>
               <h2 id="io-svc-heading" className="io-s-title">iOS App Development Services We Deliver</h2>
-              <p className="io-s-desc" style={{ maxWidth: 720 }}>From Swift MVPs and SwiftUI consumer apps through Objective-C migrations, Apple Watch and Apple TV development, ARKit/Core ML integrations, and enterprise MDM iOS apps — our iOS engineers cover every dimension of the Apple platform.</p>
+              <p className="io-s-desc" style={{ maxWidth: 720 }}>From Swift MVPs and SwiftUI consumer apps through Objective-C migrations, Apple Watch and Apple TV development, ARKit/Core ML integrations, and enterprise MDM iOS apps - our iOS engineers cover every dimension of the Apple platform.</p>
             </div>
             <div className="io-svc-grid" ref={svcGridRef}>
               {visibleServices.map((s, i) => (
@@ -574,7 +574,7 @@ export default function IosAppDevelopment() {
             <div className={`io-s-reveal${visibleSections.has('stk') ? ' io-revealed' : ''}`} ref={el => { sectionRefs.current['stk'] = el; }}>
               <span className="io-s-eyebrow">The iOS Tech Stack We Use</span>
               <h2 id="io-stack-heading" className="io-s-title">Swift, SwiftUI & the Full Apple Platform Ecosystem</h2>
-              <p className="io-s-desc" style={{ maxWidth: 680 }}>From Swift Concurrency and SwiftUI through Core Data, ARKit, Core ML, StoreKit 2, HealthKit, and Fastlane/Xcode Cloud CI/CD — every modern iOS and Apple platform technology, architected for performance and maintainability.</p>
+              <p className="io-s-desc" style={{ maxWidth: 680 }}>From Swift Concurrency and SwiftUI through Core Data, ARKit, Core ML, StoreKit 2, HealthKit, and Fastlane/Xcode Cloud CI/CD - every modern iOS and Apple platform technology, architected for performance and maintainability.</p>
             </div>
             <div className="io-stack-grid" ref={stackGridRef}>
               {TECH_STACK.map((grp, i) => (
@@ -596,7 +596,7 @@ export default function IosAppDevelopment() {
             <div className={`io-s-reveal${visibleSections.has('eng') ? ' io-revealed' : ''}`} ref={el => { sectionRefs.current['eng'] = el; }}>
               <span className="io-s-eyebrow">How We Work With You</span>
               <h2 id="io-eng-heading" className="io-s-title">Engagement Models for iOS Development</h2>
-              <p className="io-s-desc" style={{ maxWidth: 680 }}>Whether you need a dedicated iOS team for a long-term app roadmap, a fixed-price Swift MVP, or flexible T&M sprints for an iterative consumer app — we structure the engagement to match your product stage and budget.</p>
+              <p className="io-s-desc" style={{ maxWidth: 680 }}>Whether you need a dedicated iOS team for a long-term app roadmap, a fixed-price Swift MVP, or flexible T&M sprints for an iterative consumer app - we structure the engagement to match your product stage and budget.</p>
             </div>
             <div className="io-eng-grid" ref={engGridRef}>
               {ENGAGEMENT_MODELS.map((m, i) => (
@@ -621,7 +621,7 @@ export default function IosAppDevelopment() {
             <div className={`io-s-reveal${visibleSections.has('proc') ? ' io-revealed' : ''}`} ref={el => { sectionRefs.current['proc'] = el; }}>
               <span className="io-s-eyebrow">How We Deliver</span>
               <h2 id="io-proc-heading" className="io-s-title">Our iOS App Development Process</h2>
-              <p className="io-s-desc">Six stages from Swift architecture and Apple HIG design through biweekly TestFlight builds, Apple platform API integration, Instruments profiling, and managed App Store launch — with a working app on your iPhone from sprint one.</p>
+              <p className="io-s-desc">Six stages from Swift architecture and Apple HIG design through biweekly TestFlight builds, Apple platform API integration, Instruments profiling, and managed App Store launch - with a working app on your iPhone from sprint one.</p>
             </div>
             <div className="io-psteps">
               {PROCESS_STEPS.map((step, i) => (
@@ -667,7 +667,7 @@ export default function IosAppDevelopment() {
             <div className={`io-s-reveal${visibleSections.has('wy') ? ' io-revealed' : ''}`} ref={el => { sectionRefs.current['wy'] = el; }}>
               <span className="io-s-eyebrow">Why 1Solutions</span>
               <h2 id="io-wy-heading" className="io-s-title">Why Choose Us for iOS App Development</h2>
-              <p className="io-s-desc" style={{ maxWidth: 680 }}>120+ native iOS apps shipped across consumer, enterprise, healthtech, fintech, AR, and retail verticals — with Swift-first development, Apple HIG fluency, deep Apple platform API expertise, and performance profiling on real Apple devices before every release.</p>
+              <p className="io-s-desc" style={{ maxWidth: 680 }}>120+ native iOS apps shipped across consumer, enterprise, healthtech, fintech, AR, and retail verticals - with Swift-first development, Apple HIG fluency, deep Apple platform API expertise, and performance profiling on real Apple devices before every release.</p>
             </div>
             <div className="io-why-grid" ref={whyGridRef}>
               {WHY_CARDS.map((c, i) => (
@@ -687,7 +687,7 @@ export default function IosAppDevelopment() {
               <h2 id="io-contact-heading" className="io-ctitle">Start Your iOS App Project</h2>
               <p className="io-cdesc">Tell us about your iOS app and we will schedule a free 60-minute discovery call with a senior Swift architect. We will review your requirements, recommend the right architecture, and give you a realistic scope, timeline, and cost estimate at no charge.</p>
               <div className="io-cbenefits">
-                {[['✓','Free 60-minute iOS discovery and architecture review call'],['✓','App scope, screen inventory, and Swift tech stack recommendation at no charge'],['✓','Native iOS vs Flutter vs React Native analysis for your specific use case'],['✓','NDA available on request — your app concept stays fully confidential'],['✓','Response within 24 business hours from our iOS engineering lead']].map(([icon, text]) => (
+                {[['✓','Free 60-minute iOS discovery and architecture review call'],['✓','App scope, screen inventory, and Swift tech stack recommendation at no charge'],['✓','Native iOS vs Flutter vs React Native analysis for your specific use case'],['✓','NDA available on request - your app concept stays fully confidential'],['✓','Response within 24 business hours from our iOS engineering lead']].map(([icon, text]) => (
                   <div className="io-cbenefit" key={text}><span className="io-cbenefit-icon">{icon}</span><p>{text}</p></div>
                 ))}
               </div>
@@ -723,7 +723,7 @@ export default function IosAppDevelopment() {
                 </div>
                 <div className="io-fg full">
                   <label htmlFor="io-msg">App Brief *</label>
-                  <textarea name="sf-message" id="io-msg" rows={4} placeholder="Describe your iOS app — target users, core features, target devices (iPhone/iPad/Watch), Apple APIs needed (ARKit, HealthKit, StoreKit), existing backend, current stage, and go-live timeline..." required />
+                  <textarea name="sf-message" id="io-msg" rows={4} placeholder="Describe your iOS app - target users, core features, target devices (iPhone/iPad/Watch), Apple APIs needed (ARKit, HealthKit, StoreKit), existing backend, current stage, and go-live timeline..." required />
                 </div>
                 <div className="io-consent">
                   <input id="io-consent" type="checkbox" required />
@@ -739,8 +739,8 @@ export default function IosAppDevelopment() {
         <section className="io-faq" aria-labelledby="io-faq-heading">
           <div className="io-inner" style={{ maxWidth: 860 }}>
             <span className="io-s-eyebrow">FAQ</span>
-            <h2 id="io-faq-heading">iOS App Development — Frequently Asked Questions</h2>
-            <p className="io-faq-sub">Everything you need to know about building a native iOS application with 1Solutions — from Swift vs Objective-C to Apple platform APIs, enterprise MDM, and App Store submission.</p>
+            <h2 id="io-faq-heading">iOS App Development - Frequently Asked Questions</h2>
+            <p className="io-faq-sub">Everything you need to know about building a native iOS application with 1Solutions - from Swift vs Objective-C to Apple platform APIs, enterprise MDM, and App Store submission.</p>
             <div className="io-faq-list">
               {FAQS.map((item, i) => (
                 <div key={i} className={`io-fitem${openFaq === i ? ' open' : ''}`} itemScope itemType="https://schema.org/Question">

@@ -17,7 +17,7 @@ const SCHEMA = {
       '@type': 'Service',
       name: 'Mobile App Development',
       url: 'https://www.1solutions.biz/mobile-app-development/',
-      description: 'End-to-end mobile app development for iOS and Android — native Swift, Kotlin, Flutter, and React Native. 180+ apps shipped across consumer, enterprise, and e-commerce verticals.',
+      description: 'End-to-end mobile app development for iOS and Android - native Swift, Kotlin, Flutter, and React Native. 180+ apps shipped across consumer, enterprise, and e-commerce verticals.',
       provider: {
         '@type': 'Organization',
         name: '1Solutions',
@@ -31,9 +31,9 @@ const SCHEMA = {
     {
       '@type': 'FAQPage',
       mainEntity: [
-        { '@type': 'Question', name: 'Should I build a native app or use a cross-platform framework like Flutter or React Native?', acceptedAnswer: { '@type': 'Answer', text: 'It depends on your priorities. Native apps (Swift for iOS, Kotlin for Android) deliver the best possible performance, deepest platform API access, and most polished UX — ideal for apps with complex animations, AR, ML, health, or payment features. Cross-platform frameworks like Flutter and React Native let you target both iOS and Android from a single codebase, reducing development time and cost by 30–40% for apps that are primarily data-display, CRUD, or content-heavy. We recommend native when platform-specific UX or API depth matters most, and Flutter or React Native when speed-to-market and budget efficiency are the priority. We build all four and will recommend the right fit for your specific app.' } },
+        { '@type': 'Question', name: 'Should I build a native app or use a cross-platform framework like Flutter or React Native?', acceptedAnswer: { '@type': 'Answer', text: 'It depends on your priorities. Native apps (Swift for iOS, Kotlin for Android) deliver the best possible performance, deepest platform API access, and most polished UX - ideal for apps with complex animations, AR, ML, health, or payment features. Cross-platform frameworks like Flutter and React Native let you target both iOS and Android from a single codebase, reducing development time and cost by 30–40% for apps that are primarily data-display, CRUD, or content-heavy. We recommend native when platform-specific UX or API depth matters most, and Flutter or React Native when speed-to-market and budget efficiency are the priority. We build all four and will recommend the right fit for your specific app.' } },
         { '@type': 'Question', name: 'How long does it take to build a mobile app?', acceptedAnswer: { '@type': 'Answer', text: 'An MVP covering authentication, 4–6 core screens, API integration, and App Store / Play Store submission typically takes 12–18 weeks. A mid-complexity app with real-time features, push notifications, in-app purchases, and third-party integrations typically takes 20–28 weeks. A full enterprise mobile app with offline capability, complex business logic, multi-role access, and extensive integrations typically takes 32–48 weeks. We work in two-week sprints with working builds on TestFlight (iOS) and Firebase App Distribution (Android) throughout development so you can test on real devices at every stage.' } },
-        { '@type': 'Question', name: 'Do you build apps for both iOS and Android?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We build native iOS apps in Swift and SwiftUI, native Android apps in Kotlin and Jetpack Compose, and cross-platform apps in Flutter and React Native. For clients launching on both platforms simultaneously, Flutter is usually the most cost-effective choice — a single Dart codebase compiles to native ARM code on both iOS and Android. For clients with an existing user base strongly skewed to one platform, we often recommend starting with a native app on that platform and adding the second later.' } },
+        { '@type': 'Question', name: 'Do you build apps for both iOS and Android?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We build native iOS apps in Swift and SwiftUI, native Android apps in Kotlin and Jetpack Compose, and cross-platform apps in Flutter and React Native. For clients launching on both platforms simultaneously, Flutter is usually the most cost-effective choice - a single Dart codebase compiles to native ARM code on both iOS and Android. For clients with an existing user base strongly skewed to one platform, we often recommend starting with a native app on that platform and adding the second later.' } },
         { '@type': 'Question', name: 'What is your mobile app development process?', acceptedAnswer: { '@type': 'Answer', text: 'Our process runs in six phases. Discovery & scoping (1–2 weeks): we map your user journeys, define MVP scope, agree on tech stack, and produce a detailed project plan. UI/UX design (2–4 weeks): Figma wireframes, high-fidelity screens, interactive prototype, and design system. Development (8–32 weeks depending on scope): sprint-based development with biweekly TestFlight / App Distribution builds and a demo every sprint. QA & testing (2–4 weeks): functional, performance, accessibility, and device compatibility testing across 30+ real devices. Submission & launch: App Store and Play Store submission, metadata, screenshots, ASO, and review management. Post-launch support: crash monitoring, analytics, OS update maintenance, and feature roadmap.' } },
         { '@type': 'Question', name: 'Who owns the source code and IP?', acceptedAnswer: { '@type': 'Answer', text: 'You own 100% of the source code, design assets, and intellectual property from day one. We deliver the full codebase via a private GitHub or GitLab repository, and all third-party licences used are commercially permissive. We sign an NDA before the project begins, and the development contract explicitly assigns all IP to you. We have no ongoing dependency on 1Solutions code, infrastructure, or tools after handover.' } },
         { '@type': 'Question', name: 'Can you integrate third-party APIs, payment gateways, and push notifications?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Third-party integrations are a core part of every mobile project. Common integrations we handle include payment gateways (Stripe, Razorpay, PayPal, Apple Pay, Google Pay), push notifications (Firebase Cloud Messaging, APNs, OneSignal), social auth (Sign in with Apple, Google, Facebook), maps (Google Maps, Mapbox, Apple MapKit), analytics (Firebase Analytics, Mixpanel, Amplitude), CRM (HubSpot, Salesforce, Zoho), shipping (Shiprocket, FedEx, UPS), and live video/audio (Twilio, Agora, WebRTC). We also build custom REST and GraphQL API backends for apps that need their own server layer.' } },
@@ -43,12 +43,12 @@ const SCHEMA = {
 };
 
 const SERVICES = [
-  { n: '01', title: 'iOS App Development', desc: 'Native iPhone and iPad apps in Swift and SwiftUI — ARKit, Core ML, HealthKit, StoreKit 2, Apple Pay, and full App Store submission. Follows Apple Human Interface Guidelines for polished, review-compliant experiences.', feat: false },
-  { n: '02', title: 'Android App Development', desc: 'Native Android apps in Kotlin and Jetpack Compose — Material Design 3, adaptive layouts for phones, tablets, and foldables, Google Play billing, Firebase integration, and full Play Store submission.', feat: false },
+  { n: '01', title: 'iOS App Development', desc: 'Native iPhone and iPad apps in Swift and SwiftUI - ARKit, Core ML, HealthKit, StoreKit 2, Apple Pay, and full App Store submission. Follows Apple Human Interface Guidelines for polished, review-compliant experiences.', feat: false },
+  { n: '02', title: 'Android App Development', desc: 'Native Android apps in Kotlin and Jetpack Compose - Material Design 3, adaptive layouts for phones, tablets, and foldables, Google Play billing, Firebase integration, and full Play Store submission.', feat: false },
   { n: '03', title: 'Flutter App Development', desc: 'A single Flutter/Dart codebase that compiles to native ARM code on iOS and Android. Pixel-perfect custom UI, platform channel integrations, and 30–40% faster time-to-market vs. building two native apps.', feat: true },
   { n: '04', title: 'React Native Development', desc: 'JavaScript/TypeScript React Native apps sharing up to 90% of code between iOS and Android. Expo-managed or bare workflow, OTA updates via EAS, and native module bridges for platform-specific features.', feat: false },
-  { n: '05', title: 'Mobile UI/UX Design', desc: 'Figma-based mobile UI/UX design: user research, information architecture, wireframes, high-fidelity screens, interaction design, and a reusable design system — all before a single line of code is written.', feat: false },
-  { n: '06', title: 'App Backend & API Development', desc: 'Scalable backends for mobile apps — REST or GraphQL APIs, push notifications (FCM, APNs), real-time features (WebSockets, Socket.io), auth (JWT, OAuth, Sign in with Apple), and cloud hosting on AWS, GCP, or Firebase.', feat: false },
+  { n: '05', title: 'Mobile UI/UX Design', desc: 'Figma-based mobile UI/UX design: user research, information architecture, wireframes, high-fidelity screens, interaction design, and a reusable design system - all before a single line of code is written.', feat: false },
+  { n: '06', title: 'App Backend & API Development', desc: 'Scalable backends for mobile apps - REST or GraphQL APIs, push notifications (FCM, APNs), real-time features (WebSockets, Socket.io), auth (JWT, OAuth, Sign in with Apple), and cloud hosting on AWS, GCP, or Firebase.', feat: false },
   { n: '07', title: 'E-Commerce Mobile Apps', desc: 'Feature-rich shopping apps with product catalogues, cart, wishlists, Stripe/Razorpay/Apple Pay checkout, order tracking, loyalty programmes, and deep Shopify, WooCommerce, or Magento integration.', feat: false },
   { n: '08', title: 'Enterprise Mobile Apps', desc: 'Secure enterprise apps with SSO (SAML, Okta, Azure AD), MDM compatibility (Intune, Jamf), offline-first architecture, role-based access, and deep ERP/CRM integration for field teams and operations.', feat: false },
   { n: '09', title: 'App Store Optimisation (ASO)', desc: 'Keyword research, title and subtitle optimisation, screenshot design, preview video, localisation, and rating strategy to maximise organic downloads on both the App Store and Google Play.', feat: false },
@@ -107,10 +107,10 @@ const ENGAGEMENT_MODELS = [
     feat: true,
     icon: 'M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z',
     headline: 'A dedicated mobile squad embedded in your team.',
-    desc: 'A full-time offshore mobile team — iOS/Android/Flutter developer(s), UI/UX designer, QA engineer, and project manager — working as a seamless extension of your team at a fraction of US/UK/AU in-house cost. Two-week sprints with daily standups and biweekly device builds. 100% source code and IP ownership from day one.',
+    desc: 'A full-time offshore mobile team - iOS/Android/Flutter developer(s), UI/UX designer, QA engineer, and project manager - working as a seamless extension of your team at a fraction of US/UK/AU in-house cost. Two-week sprints with daily standups and biweekly device builds. 100% source code and IP ownership from day one.',
     bestFor: ['Full-featured app with ongoing feature roadmap', 'Long-term mobile product with monthly releases', 'Replacing or augmenting in-house mobile capacity', 'Simultaneous iOS + Android launch'],
     process: 'Team assembly → Discovery sprint → Biweekly device builds → Continuous roadmap',
-    timeline: 'Ongoing — scale up or down each quarter',
+    timeline: 'Ongoing - scale up or down each quarter',
   },
   {
     id: 'fixed',
@@ -119,7 +119,7 @@ const ENGAGEMENT_MODELS = [
     badgeColor: '#1d4ed8',
     icon: 'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z',
     headline: 'Predictable cost and timeline for scoped apps.',
-    desc: 'Agreed scope, fixed price, and guaranteed delivery date — ideal for MVPs, v1 product launches, and clearly scoped apps. We handle discovery, design, development, QA, and App Store / Play Store submission. Payment in milestones tied to deliverables.',
+    desc: 'Agreed scope, fixed price, and guaranteed delivery date - ideal for MVPs, v1 product launches, and clearly scoped apps. We handle discovery, design, development, QA, and App Store / Play Store submission. Payment in milestones tied to deliverables.',
     bestFor: ['MVP or v1 launch with a defined feature set', 'Startup with investor deadline', 'Internal enterprise tool with clear requirements', 'App redesign or feature addition'],
     process: 'Scope & estimate → Milestone payments → Delivery & launch',
     timeline: '12–28 weeks depending on complexity',
@@ -130,38 +130,38 @@ const ENGAGEMENT_MODELS = [
     badge: 'Flexible scope',
     badgeColor: '#14b8a6',
     icon: 'M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z',
-    headline: 'Maximum flexibility — pay only for hours worked.',
-    desc: 'Hourly billing with full transparency — daily time logs, weekly summaries, and the ability to pivot scope at any sprint. Best for research-driven products where the roadmap evolves with user feedback, or for adding specific mobile engineers to your existing team.',
-    bestFor: ['Iterative product discovery with rapid pivots', 'Staff augmentation — specific mobile skill needed', 'Long-running project with evolving requirements', 'Prototype to validate before full build'],
+    headline: 'Maximum flexibility - pay only for hours worked.',
+    desc: 'Hourly billing with full transparency - daily time logs, weekly summaries, and the ability to pivot scope at any sprint. Best for research-driven products where the roadmap evolves with user feedback, or for adding specific mobile engineers to your existing team.',
+    bestFor: ['Iterative product discovery with rapid pivots', 'Staff augmentation - specific mobile skill needed', 'Long-running project with evolving requirements', 'Prototype to validate before full build'],
     process: 'Sprint planning → Daily logs → Weekly billing → Continuous delivery',
-    timeline: 'Ongoing — start and pause anytime',
+    timeline: 'Ongoing - start and pause anytime',
   },
 ];
 
 const PROCESS_STEPS = [
   { num: '01', title: 'Discovery & Scoping', desc: 'We map user journeys, define the feature set, agree on the technology stack, and produce a detailed project plan with sprint breakdown and delivery milestones. NDA signed before we begin.' },
   { num: '02', title: 'UI/UX Design', desc: 'Figma wireframes → high-fidelity screens → interactive prototype → design system. We follow Apple HIG and Material Design 3 guidelines so every screen is platform-native and review-ready.' },
-  { num: '03', title: 'Sprint Development', desc: 'Two-week sprints with working builds on TestFlight and Firebase App Distribution throughout. You test on real iPhones and Android devices every sprint — no surprises at launch.' },
+  { num: '03', title: 'Sprint Development', desc: 'Two-week sprints with working builds on TestFlight and Firebase App Distribution throughout. You test on real iPhones and Android devices every sprint - no surprises at launch.' },
   { num: '04', title: 'QA & Device Testing', desc: 'Functional, regression, performance, and accessibility testing across 30+ real devices. We run automated tests (XCTest, Espresso, Detox) and manual exploratory testing on every sprint build.' },
-  { num: '05', title: 'App Store & Play Store Submission', desc: 'We handle metadata, screenshots, preview video, privacy labels, App Review responses, and Play Store listing — plus ASO keyword strategy to maximise organic discovery from day one.' },
+  { num: '05', title: 'App Store & Play Store Submission', desc: 'We handle metadata, screenshots, preview video, privacy labels, App Review responses, and Play Store listing - plus ASO keyword strategy to maximise organic discovery from day one.' },
   { num: '06', title: 'Post-Launch Support', desc: 'Crash monitoring via Crashlytics, performance analytics, OS update maintenance (new iOS/Android releases each September/October), and a prioritised feature backlog for the next version.' },
 ];
 
 const TESTIMONIALS = [
-  { stars: 5, text: '1Solutions built our Flutter app for iOS and Android simultaneously. The code quality is exceptional — Riverpod architecture, full test coverage, and beautiful animations. Launched on time, within budget, and 4.8 stars on the App Store from week one.', name: 'James Whitfield', role: 'Founder, RetailSync UK', color: '#1d4ed8', feat: true },
+  { stars: 5, text: '1Solutions built our Flutter app for iOS and Android simultaneously. The code quality is exceptional - Riverpod architecture, full test coverage, and beautiful animations. Launched on time, within budget, and 4.8 stars on the App Store from week one.', name: 'James Whitfield', role: 'Founder, RetailSync UK', color: '#1d4ed8', feat: true },
   { stars: 5, text: 'Our enterprise Android app handles field inspections for 800+ technicians. 1Solutions delivered offline-first architecture with SQLite sync, barcode scanning, and MDM deployment via Jamf. Rock-solid.', name: 'Priya Nair', role: 'CTO, FieldOps India', color: '#16a34a', feat: false },
   { stars: 5, text: 'We replaced a slow React Native v0.63 app with a native Swift rewrite. 1Solutions phased the migration over 12 weeks with zero downtime to the existing user base. Launch time dropped from 4.2s to 0.9s.', name: 'Lena Schreiber', role: 'Product Lead, HealthTrack DE', color: '#7c3aed', feat: false },
 ];
 
 const WHY_CARDS = [
-  { dot: '#1d4ed8', title: '180+ Apps Shipped', body: 'Consumer, enterprise, and e-commerce apps across iOS, Android, Flutter, and React Native — with an average App Store rating of 4.8.' },
-  { dot: '#16a34a', title: 'All Four Platforms', body: 'Native Swift, native Kotlin, Flutter, and React Native — in-house experts for each. We recommend the right stack for your app, not the one we prefer.' },
+  { dot: '#1d4ed8', title: '180+ Apps Shipped', body: 'Consumer, enterprise, and e-commerce apps across iOS, Android, Flutter, and React Native - with an average App Store rating of 4.8.' },
+  { dot: '#16a34a', title: 'All Four Platforms', body: 'Native Swift, native Kotlin, Flutter, and React Native - in-house experts for each. We recommend the right stack for your app, not the one we prefer.' },
   { dot: '#D97706', title: '15+ Years Experience', body: 'Founded in 2008, we have built mobile products through every major platform shift: iOS 2 → 18, Android 1.5 → 15, hybrid → cross-platform.' },
-  { dot: '#7c3aed', title: 'Biweekly Device Builds', body: 'You test on real iPhones and Android devices every two weeks. No 3-month blackbox — you see working screens throughout the entire build.' },
-  { dot: '#0ea5e9', title: '100% IP Ownership', body: 'Full source code delivered via GitHub or GitLab from sprint one. NDA before discovery. All IP assigned to you contractually — no ongoing dependency on us.' },
+  { dot: '#7c3aed', title: 'Biweekly Device Builds', body: 'You test on real iPhones and Android devices every two weeks. No 3-month blackbox - you see working screens throughout the entire build.' },
+  { dot: '#0ea5e9', title: '100% IP Ownership', body: 'Full source code delivered via GitHub or GitLab from sprint one. NDA before discovery. All IP assigned to you contractually - no ongoing dependency on us.' },
   { dot: '#f97316', title: 'Western Market Expertise', body: 'US, UK, AU, and CA market expectations built-in: App Review compliance, GDPR/CCPA privacy manifests, accessibility (WCAG 2.2), and localisation.' },
   { dot: '#14b8a6', title: 'Transparent Communication', body: 'Daily standups, a shared project board (Jira/Linear), and a dedicated Slack channel. You always know what was shipped, what is in progress, and what is next.' },
-  { dot: '#a855f7', title: 'Post-Launch Partnership', body: 'We handle OS updates, Crashlytics monitoring, App Store rating responses, and feature roadmap planning — not just the initial build.' },
+  { dot: '#a855f7', title: 'Post-Launch Partnership', body: 'We handle OS updates, Crashlytics monitoring, App Store rating responses, and feature roadmap planning - not just the initial build.' },
 ];
 
 function useCounter(target, started, duration = 1800) {
@@ -272,7 +272,7 @@ export default function MobileAppDevelopment() {
     <>
       <Head>
         <title>Mobile App Development Company | 1Solutions</title>
-        <meta name="description" content="End-to-end mobile app development — native iOS (Swift), Android (Kotlin), Flutter & React Native. 180+ apps shipped. App Store & Play Store experts." />
+        <meta name="description" content="End-to-end mobile app development - native iOS (Swift), Android (Kotlin), Flutter & React Native. 180+ apps shipped. App Store & Play Store experts." />
         <link rel="canonical" href="https://www.1solutions.biz/mobile-app-development/" />
         <meta property="og:title" content="Mobile App Development Company | iOS, Android, Flutter & React Native | 1Solutions" />
         <meta property="og:description" content="Native iOS, Android, Flutter & React Native development. 180+ apps shipped. 15+ years experience. Biweekly device builds. 100% IP ownership." />
@@ -486,7 +486,7 @@ export default function MobileAppDevelopment() {
           <span className="mob-eyebrow">Mobile App Development Company</span>
           <h1>iOS · Android · Flutter · React&nbsp;Native</h1>
           <p className="mob-hero-desc">
-            End-to-end mobile app development from idea to App Store. Native iOS in Swift, native Android in Kotlin, cross-platform Flutter and React Native — 180+ apps shipped, 15+ years experience, biweekly device builds.
+            End-to-end mobile app development from idea to App Store. Native iOS in Swift, native Android in Kotlin, cross-platform Flutter and React Native - 180+ apps shipped, 15+ years experience, biweekly device builds.
           </p>
 
           <div className="mob-platform-pills">
@@ -553,7 +553,7 @@ export default function MobileAppDevelopment() {
             >
               <span className="mob-s-eyebrow">What We Build</span>
               <h2 className="mob-s-title">Mobile App Development Services</h2>
-              <p className="mob-s-desc">Native iOS, Android, Flutter, and React Native — plus backend APIs, UI/UX design, ASO, and ongoing maintenance.</p>
+              <p className="mob-s-desc">Native iOS, Android, Flutter, and React Native - plus backend APIs, UI/UX design, ASO, and ongoing maintenance.</p>
             </div>
             <div className="mob-svc-grid" ref={svcGridRef}>
               {visibleServices.map((s, i) => (
@@ -583,7 +583,7 @@ export default function MobileAppDevelopment() {
             >
               <span className="mob-s-eyebrow">Technology Stack</span>
               <h2 className="mob-s-title">Tools & Frameworks We Use</h2>
-              <p className="mob-s-desc">Native platforms, cross-platform frameworks, backend services, CI/CD pipelines, and testing tools — all production-proven.</p>
+              <p className="mob-s-desc">Native platforms, cross-platform frameworks, backend services, CI/CD pipelines, and testing tools - all production-proven.</p>
             </div>
             <div className="mob-stack-grid" ref={stackGridRef}>
               {TECH_STACK.map((group, i) => (
@@ -611,7 +611,7 @@ export default function MobileAppDevelopment() {
             >
               <span className="mob-s-eyebrow">Engagement Models</span>
               <h2 className="mob-s-title">How We Work Together</h2>
-              <p className="mob-s-desc">Three flexible models — choose the one that fits your stage, budget, and how much control you want.</p>
+              <p className="mob-s-desc">Three flexible models - choose the one that fits your stage, budget, and how much control you want.</p>
             </div>
             <div className="mob-eng-grid" ref={engGridRef}>
               {ENGAGEMENT_MODELS.map((m, i) => (
@@ -647,7 +647,7 @@ export default function MobileAppDevelopment() {
             >
               <span className="mob-s-eyebrow">Our Process</span>
               <h2 className="mob-s-title">From Idea to App Store in 6 Phases</h2>
-              <p className="mob-s-desc">A proven delivery process — transparent, sprint-based, and always shipping working builds to real devices.</p>
+              <p className="mob-s-desc">A proven delivery process - transparent, sprint-based, and always shipping working builds to real devices.</p>
             </div>
             <div className="mob-psteps">
               {PROCESS_STEPS.map((step, i) => (
@@ -724,10 +724,10 @@ export default function MobileAppDevelopment() {
             <div>
               <span className="mob-s-eyebrow">Get Started</span>
               <h2 className="mob-ctitle">Tell Us About Your App</h2>
-              <p className="mob-cdesc">Share your idea — platform, core features, target users — and we will send you a free technical estimate and recommended tech stack within 24 hours.</p>
+              <p className="mob-cdesc">Share your idea - platform, core features, target users - and we will send you a free technical estimate and recommended tech stack within 24 hours.</p>
               <div className="mob-cbenefits">
                 {[
-                  { icon: '✓', text: 'Free technical estimate — no obligation' },
+                  { icon: '✓', text: 'Free technical estimate - no obligation' },
                   { icon: '✓', text: 'NDA signed before discovery call' },
                   { icon: '✓', text: 'Platform recommendation included' },
                   { icon: '✓', text: 'Response within 24 hours, Monday–Friday' },
@@ -774,7 +774,7 @@ export default function MobileAppDevelopment() {
                           <option value="Both iOS & Android">Both iOS &amp; Android</option>
                           <option value="Flutter (iOS + Android)">Flutter (iOS + Android)</option>
                           <option value="React Native (iOS + Android)">React Native (iOS + Android)</option>
-                          <option value="Not sure">Not sure — need guidance</option>
+                          <option value="Not sure">Not sure - need guidance</option>
                         </select>
                       </div>
                     </div>

@@ -4,43 +4,43 @@ import { useState } from 'react';
 
 const ACCENT = '#002d3d';
 const SERVICES = [
-  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'GA4 Implementation & Audit', desc: 'Full GA4 setup with custom event tracking, conversion goals, audience configuration, and cross-domain tracking — or a forensic audit of your existing GA4 property to fix missing data and incorrect attribution.' },
-  { icon: 'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6', title: 'Conversion Funnel Analysis', desc: 'Step-by-step funnel visualisation identifying where visitors drop off between awareness and conversion — with session data, heatmaps, and scroll depth correlated to each drop-off point.' },
-  { icon: 'M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z', title: 'Heatmap & Session Recording', desc: 'Click heatmaps, scroll depth maps, and session recordings using tools like Hotjar or Microsoft Clarity — revealing exactly how users interact with your pages and where they get stuck.' },
-  { icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15', title: 'A/B & Multivariate Testing', desc: 'Structured A/B tests and multivariate experiments built around data-backed hypotheses — not guesses — with statistical significance monitoring and winning variant implementation.' },
-  { icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6', title: 'Landing Page CRO', desc: 'Landing page analysis covering headline clarity, value proposition, trust signals, CTA placement, form friction, and page speed — with prioritised recommendations and A/B test designs.' },
-  { icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z', title: 'Checkout Optimisation', desc: 'eCommerce checkout funnel analysis — cart-to-payment drop-off identification, payment option audit, form field reduction, trust signal placement, and mobile checkout experience improvements.' },
-  { icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z', title: 'GTM (Google Tag Manager) Setup', desc: 'Complete GTM container setup, tag migration, trigger configuration, and variable management — enabling reliable tracking across GA4, Meta Pixel, LinkedIn Insight Tag, and ad platform conversion tags.' },
-  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'CRO Reporting & Insights', desc: 'Monthly CRO report — conversion rate by page, test results, funnel performance, revenue impact of optimisations completed, and next-quarter test roadmap — in plain English.' },
+  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'GA4 Implementation & Audit', desc: 'Full GA4 setup with custom event tracking, conversion goals, audience configuration, and cross-domain tracking - or a forensic audit of your existing GA4 property to fix missing data and incorrect attribution.' },
+  { icon: 'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6', title: 'Conversion Funnel Analysis', desc: 'Step-by-step funnel visualisation identifying where visitors drop off between awareness and conversion - with session data, heatmaps, and scroll depth correlated to each drop-off point.' },
+  { icon: 'M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z', title: 'Heatmap & Session Recording', desc: 'Click heatmaps, scroll depth maps, and session recordings using tools like Hotjar or Microsoft Clarity - revealing exactly how users interact with your pages and where they get stuck.' },
+  { icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15', title: 'A/B & Multivariate Testing', desc: 'Structured A/B tests and multivariate experiments built around data-backed hypotheses - not guesses - with statistical significance monitoring and winning variant implementation.' },
+  { icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6', title: 'Landing Page CRO', desc: 'Landing page analysis covering headline clarity, value proposition, trust signals, CTA placement, form friction, and page speed - with prioritised recommendations and A/B test designs.' },
+  { icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z', title: 'Checkout Optimisation', desc: 'eCommerce checkout funnel analysis - cart-to-payment drop-off identification, payment option audit, form field reduction, trust signal placement, and mobile checkout experience improvements.' },
+  { icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z', title: 'GTM (Google Tag Manager) Setup', desc: 'Complete GTM container setup, tag migration, trigger configuration, and variable management - enabling reliable tracking across GA4, Meta Pixel, LinkedIn Insight Tag, and ad platform conversion tags.' },
+  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'CRO Reporting & Insights', desc: 'Monthly CRO report - conversion rate by page, test results, funnel performance, revenue impact of optimisations completed, and next-quarter test roadmap - in plain English.' },
 ];
 const RESULTS = [
   { metric: '74%', label: 'Improvement in checkout completion', sub: 'US eCommerce brand', color: '#38b2c8' },
-  { metric: '2.4×', label: 'Lead form submissions', sub: 'AU professional services — CRO', color: '#63cfe0' },
+  { metric: '2.4×', label: 'Lead form submissions', sub: 'AU professional services - CRO', color: '#63cfe0' },
   { metric: '41%', label: 'Lower bounce rate', sub: 'Canadian SaaS landing page', color: '#90e4f0' },
 ];
 const PROCESS = [
-  { n: '01', title: 'Analytics Audit', desc: 'We audit your GA4 setup, conversion tracking, data accuracy, and existing reporting — identifying missing events, duplicate tracking, attribution errors, and data gaps before any testing begins.' },
-  { n: '02', title: 'Data Collection Setup', desc: 'GTM implementation, GA4 events, enhanced eCommerce tracking, heatmap tool installation, and session recording configuration — all verified and tested.' },
+  { n: '01', title: 'Analytics Audit', desc: 'We audit your GA4 setup, conversion tracking, data accuracy, and existing reporting - identifying missing events, duplicate tracking, attribution errors, and data gaps before any testing begins.' },
+  { n: '02', title: 'Data Collection Setup', desc: 'GTM implementation, GA4 events, enhanced eCommerce tracking, heatmap tool installation, and session recording configuration - all verified and tested.' },
   { n: '03', title: 'Funnel Analysis', desc: 'Step-by-step funnel analysis combining quantitative data (GA4, heatmaps) with qualitative data (session recordings, surveys) to identify the highest-impact conversion opportunities.' },
-  { n: '04', title: 'Hypothesis Generation', desc: 'Prioritised test roadmap based on funnel data — each hypothesis scored by potential impact, confidence level, and ease of implementation, so testing effort is focused where it matters most.' },
-  { n: '05', title: 'A/B Test Build', desc: 'Tests designed, built, and QA-tested across devices and browsers — with minimum sample size calculated before launch to ensure statistical validity and reliable results.' },
-  { n: '06', title: 'Measure & Scale', desc: 'Results analysed for statistical significance, winning variants implemented, learnings documented, and the next test prioritised — a continuous improvement cycle that compounds over time.' },
+  { n: '04', title: 'Hypothesis Generation', desc: 'Prioritised test roadmap based on funnel data - each hypothesis scored by potential impact, confidence level, and ease of implementation, so testing effort is focused where it matters most.' },
+  { n: '05', title: 'A/B Test Build', desc: 'Tests designed, built, and QA-tested across devices and browsers - with minimum sample size calculated before launch to ensure statistical validity and reliable results.' },
+  { n: '06', title: 'Measure & Scale', desc: 'Results analysed for statistical significance, winning variants implemented, learnings documented, and the next test prioritised - a continuous improvement cycle that compounds over time.' },
 ];
 const WHY = [
-  { title: 'GA4 Specialists', desc: 'We implement, audit, and configure GA4 accounts properly — custom events, enhanced measurement, conversion goals, audience segments, and Looker Studio dashboards built to your reporting needs.' },
+  { title: 'GA4 Specialists', desc: 'We implement, audit, and configure GA4 accounts properly - custom events, enhanced measurement, conversion goals, audience segments, and Looker Studio dashboards built to your reporting needs.' },
   { title: 'Testing-First Culture', desc: 'We do not guess what will improve conversion rates. Every change is hypothesised from data, tested rigorously, and implemented only when the numbers are statistically significant.' },
-  { title: 'Data You Can Trust', desc: 'Accurate tracking is the foundation of good decisions. We fix tracking issues before drawing conclusions — no CRO work is built on corrupted or incomplete data.' },
-  { title: 'Qualitative + Quantitative', desc: 'We combine GA4 funnel data with heatmaps, session recordings, and user surveys — because numbers tell you what is happening, and qualitative data tells you why.' },
-  { title: 'No Vanity Metrics', desc: 'We measure what matters — conversion rate, revenue per visitor, cost per acquisition, and checkout completion — not sessions, bounce rate, and other metrics that do not drive business outcomes.' },
+  { title: 'Data You Can Trust', desc: 'Accurate tracking is the foundation of good decisions. We fix tracking issues before drawing conclusions - no CRO work is built on corrupted or incomplete data.' },
+  { title: 'Qualitative + Quantitative', desc: 'We combine GA4 funnel data with heatmaps, session recordings, and user surveys - because numbers tell you what is happening, and qualitative data tells you why.' },
+  { title: 'No Vanity Metrics', desc: 'We measure what matters - conversion rate, revenue per visitor, cost per acquisition, and checkout completion - not sessions, bounce rate, and other metrics that do not drive business outcomes.' },
   { title: 'Integrated with SEO & Ads', desc: 'CRO improvements benefit every traffic source simultaneously. We align landing page optimisation with SEO and paid media teams so improvements compound across all channels.' },
 ];
 const FAQS = [
-  { q: 'What is the difference between GA4 and Universal Analytics?', a: 'Universal Analytics (UA) used a session-based data model and was sunset by Google in July 2023. GA4 uses an event-based data model that tracks every user interaction as an event — giving far more flexibility for custom tracking. GA4 also includes cross-device reporting, machine learning insights, and native BigQuery integration. If you are still relying on UA data, you need a proper GA4 setup.' },
-  { q: 'How much traffic do I need before A/B testing works?', a: 'Reliable A/B tests require enough traffic to reach statistical significance — typically 500 to 1,000 conversions per variant over 2 to 4 weeks. For low-traffic pages, we use alternative methods — user testing, session recordings, expert reviews, and multivariate testing with smaller samples. We calculate required sample sizes before launching any test.' },
-  { q: 'Should I focus on CRO or PPC to grow revenue?', a: 'CRO improves the return on every traffic source simultaneously — including paid, organic, email, and social. A 20% improvement in conversion rate is equivalent to a 20% reduction in cost per acquisition across all channels. We recommend CRO as a priority investment because the benefits compound and are permanent, whereas stopping PPC stops the results.' },
-  { q: 'What is Google Tag Manager and do I need it?', a: 'Google Tag Manager (GTM) is a tag management system that lets you deploy and manage tracking codes (Google Ads, GA4, Meta Pixel, LinkedIn, etc.) without editing your website code for each change. GTM is not strictly required — tracking can be hardcoded — but it is strongly recommended because it gives your marketing team the ability to deploy and update tags quickly without relying on developers.' },
-  { q: 'How long before CRO testing shows results?', a: 'Individual A/B tests require 2 to 6 weeks to reach statistical significance depending on traffic volume and conversion rate. Over 3 to 6 months of continuous testing, most programs deliver 20 to 40% improvement in conversion rate from compounding wins. CRO is a continuous process — not a one-time fix.' },
-  { q: 'What tools do you use for CRO?', a: 'We use GA4 and Looker Studio for quantitative analysis, Hotjar or Microsoft Clarity for heatmaps and session recordings, VWO or Google Optimize-compatible tools for A/B testing, and Google Tag Manager for tracking implementation. Tool selection is always tailored to your existing tech stack and budget — we do not force proprietary tools.' },
+  { q: 'What is the difference between GA4 and Universal Analytics?', a: 'Universal Analytics (UA) used a session-based data model and was sunset by Google in July 2023. GA4 uses an event-based data model that tracks every user interaction as an event - giving far more flexibility for custom tracking. GA4 also includes cross-device reporting, machine learning insights, and native BigQuery integration. If you are still relying on UA data, you need a proper GA4 setup.' },
+  { q: 'How much traffic do I need before A/B testing works?', a: 'Reliable A/B tests require enough traffic to reach statistical significance - typically 500 to 1,000 conversions per variant over 2 to 4 weeks. For low-traffic pages, we use alternative methods - user testing, session recordings, expert reviews, and multivariate testing with smaller samples. We calculate required sample sizes before launching any test.' },
+  { q: 'Should I focus on CRO or PPC to grow revenue?', a: 'CRO improves the return on every traffic source simultaneously - including paid, organic, email, and social. A 20% improvement in conversion rate is equivalent to a 20% reduction in cost per acquisition across all channels. We recommend CRO as a priority investment because the benefits compound and are permanent, whereas stopping PPC stops the results.' },
+  { q: 'What is Google Tag Manager and do I need it?', a: 'Google Tag Manager (GTM) is a tag management system that lets you deploy and manage tracking codes (Google Ads, GA4, Meta Pixel, LinkedIn, etc.) without editing your website code for each change. GTM is not strictly required - tracking can be hardcoded - but it is strongly recommended because it gives your marketing team the ability to deploy and update tags quickly without relying on developers.' },
+  { q: 'How long before CRO testing shows results?', a: 'Individual A/B tests require 2 to 6 weeks to reach statistical significance depending on traffic volume and conversion rate. Over 3 to 6 months of continuous testing, most programs deliver 20 to 40% improvement in conversion rate from compounding wins. CRO is a continuous process - not a one-time fix.' },
+  { q: 'What tools do you use for CRO?', a: 'We use GA4 and Looker Studio for quantitative analysis, Hotjar or Microsoft Clarity for heatmaps and session recordings, VWO or Google Optimize-compatible tools for A/B testing, and Google Tag Manager for tracking implementation. Tool selection is always tailored to your existing tech stack and budget - we do not force proprietary tools.' },
 ];
 
 export default function AnalyticsCroServices() {
@@ -54,7 +54,7 @@ export default function AnalyticsCroServices() {
         { '@type': 'ListItem', position: 3, name: 'Analytics & CRO Services', item: 'https://www.1solutions.biz/analytics-cro-services/' },
       ]},
       { '@type': 'Service', name: 'Analytics & CRO Services', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Analytics and CRO services by 1Solutions — GA4 setup, funnel analysis, A/B testing, and data-driven conversion rate optimisation for websites and landing pages.',
+        description: 'Analytics and CRO services by 1Solutions - GA4 setup, funnel analysis, A/B testing, and data-driven conversion rate optimisation for websites and landing pages.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '61', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -64,7 +64,7 @@ export default function AnalyticsCroServices() {
     <>
       <Head>
         <title>Analytics & CRO Services | 1Solutions</title>
-        <meta name="description" content="Analytics and CRO services by 1Solutions — GA4 setup, funnel analysis, A/B testing, and data-driven conversion rate optimisation for websites and landing pages." />
+        <meta name="description" content="Analytics and CRO services by 1Solutions - GA4 setup, funnel analysis, A/B testing, and data-driven conversion rate optimisation for websites and landing pages." />
         <link rel="canonical" href="https://www.1solutions.biz/analytics-cro-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
@@ -142,9 +142,9 @@ export default function AnalyticsCroServices() {
       <nav className="acro-bc"><div className="acro-bci"><Link href="/">Home</Link><span className="acro-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="acro-sep">›</span><span className="acro-cur">Analytics & CRO Services</span></div></nav>
       <section className="acro-hero"><div className="acro-o1"/><div className="acro-o2"/>
         <div className="acro-in">
-          <span className="acro-ey">Analytics & CRO — GA4 · GTM · A/B Testing · Funnel Analysis · Heatmaps</span>
+          <span className="acro-ey">Analytics & CRO - GA4 · GTM · A/B Testing · Funnel Analysis · Heatmaps</span>
           <h1 className="acro-h1">Analytics & CRO That Turns More of Your Existing Traffic Into Revenue</h1>
-          <p className="acro-p">1Solutions implements accurate analytics, identifies conversion bottlenecks, and runs data-driven A/B tests that systematically improve your conversion rate — so every traffic source delivers more revenue without more spend.</p>
+          <p className="acro-p">1Solutions implements accurate analytics, identifies conversion bottlenecks, and runs data-driven A/B tests that systematically improve your conversion rate - so every traffic source delivers more revenue without more spend.</p>
           <div className="acro-btns">
             <Link href="/contact-us" className="acro-bp">Get a Free Analytics Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
             <Link href="/contact-us" className="acro-bs">Discuss Your CRO Strategy</Link>
@@ -156,7 +156,7 @@ export default function AnalyticsCroServices() {
       <section className="acro-sec acro-bg"><div className="acro-si2">
         <span className="acro-tag">What We Deliver</span>
         <h2 className="acro-h2">Complete <span>Analytics & CRO Services</span></h2>
-        <p className="acro-lead">From accurate tracking implementation to continuous A/B testing — every service needed to understand your funnel and optimise it for revenue.</p>
+        <p className="acro-lead">From accurate tracking implementation to continuous A/B testing - every service needed to understand your funnel and optimise it for revenue.</p>
         <div className="acro-g3">{SERVICES.map(s=><div key={s.title} className="acro-card"><div className="acro-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d={s.icon}/></svg></div><h3 className="acro-ch">{s.title}</h3><p className="acro-cp">{s.desc}</p></div>)}</div>
       </div></section>
       <section className="acro-rb"><div className="acro-ri">
@@ -167,13 +167,13 @@ export default function AnalyticsCroServices() {
       <section className="acro-sec"><div className="acro-si2">
         <span className="acro-tag">Why 1Solutions</span>
         <h2 className="acro-h2">The Analytics Partner <span>That Tests Before It Recommends</span></h2>
-        <p className="acro-lead">We do not guess what will improve your conversion rate. We measure, hypothesise, test, and implement — with statistical rigour that separates genuine wins from random noise.</p>
+        <p className="acro-lead">We do not guess what will improve your conversion rate. We measure, hypothesise, test, and implement - with statistical rigour that separates genuine wins from random noise.</p>
         <div className="acro-g3">{WHY.map(w=><div key={w.title} className="acro-wc"><div className="acro-wck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><h3 className="acro-wh">{w.title}</h3><p className="acro-wp">{w.desc}</p></div>)}</div>
       </div></section>
       <section className="acro-sec acro-bg"><div className="acro-si2">
         <span className="acro-tag">How We Work</span>
         <h2 className="acro-h2">Our <span>6-Step Analytics & CRO Process</span></h2>
-        <p className="acro-lead">From tracking audit to continuous testing — a structured process that compounds conversion improvements every quarter.</p>
+        <p className="acro-lead">From tracking audit to continuous testing - a structured process that compounds conversion improvements every quarter.</p>
         <div className="acro-g3">{PROCESS.map(p=><div key={p.n}><div className="acro-pn">{p.n}</div><div className="acro-pl"/><h3 className="acro-ph">{p.title}</h3><p className="acro-pp">{p.desc}</p></div>)}</div>
       </div></section>
       <section className="acro-sec"><div className="acro-si2">
@@ -184,7 +184,7 @@ export default function AnalyticsCroServices() {
       <section className="acro-cta"><div className="acro-si2">
         <span className="acro-tag" style={{display:'block',textAlign:'center',marginBottom:12}}>Ready to Convert More of the Traffic You Already Have?</span>
         <h2 className="acro-cth">Get a Free Analytics & CRO Audit</h2>
-        <p className="acro-ctp">We will review your GA4 setup, identify tracking gaps, analyse your conversion funnel, and share the highest-impact CRO opportunities for your website — completely free.</p>
+        <p className="acro-ctp">We will review your GA4 setup, identify tracking gaps, analyse your conversion funnel, and share the highest-impact CRO opportunities for your website - completely free.</p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
           <Link href="/contact-us" className="acro-bp">Request Free CRO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
           <Link href="/contact-us" className="acro-bs">Talk to a CRO Specialist</Link>

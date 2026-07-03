@@ -5,39 +5,39 @@ import Link from 'next/link';
 
 const SERVICES = [
   { n: '01', title: 'User Interviews', desc: 'One-on-one qualitative sessions to uncover goals, pain points, mental models, and decision-making behaviours that quantitative data can never reveal.' },
-  { n: '02', title: 'Usability Testing', desc: 'Moderated and unmoderated task-based sessions that surface real friction points in your product — with video recordings, transcripts, and severity ratings.' },
+  { n: '02', title: 'Usability Testing', desc: 'Moderated and unmoderated task-based sessions that surface real friction points in your product - with video recordings, transcripts, and severity ratings.' },
   { n: '03', title: 'Customer Journey Mapping', desc: 'Visual maps of every touchpoint from awareness through advocacy, identifying gaps, moments of truth, and opportunities for differentiation.' },
   { n: '04', title: 'Heuristic Evaluation', desc: 'Expert review against Nielsen\'s 10 heuristics with severity ratings (critical / major / minor) and actionable fixes prioritised by impact and effort.', featured: true },
-  { n: '05', title: 'Card Sorting & Tree Testing', desc: 'Information architecture research that reveals how real users categorise and navigate content — so your nav structure matches their mental model, not yours.' },
+  { n: '05', title: 'Card Sorting & Tree Testing', desc: 'Information architecture research that reveals how real users categorise and navigate content - so your nav structure matches their mental model, not yours.' },
   { n: '06', title: 'Survey Design & Analysis', desc: 'Quantitative surveys deployed at scale with statistical analysis, significance testing, and insight reports that complement qualitative findings.' },
-  { n: '07', title: 'Eye Tracking & Click Heatmaps', desc: 'Behavioural data overlays that show exactly where attention lands, what gets ignored, and where users drop off — powered by session recording tools.' },
-  { n: '08', title: 'Persona & Empathy Map Creation', desc: 'Evidence-based personas grounded in real user data — not demographic assumptions — that create shared team understanding and guide design decisions.' },
+  { n: '07', title: 'Eye Tracking & Click Heatmaps', desc: 'Behavioural data overlays that show exactly where attention lands, what gets ignored, and where users drop off - powered by session recording tools.' },
+  { n: '08', title: 'Persona & Empathy Map Creation', desc: 'Evidence-based personas grounded in real user data - not demographic assumptions - that create shared team understanding and guide design decisions.' },
 ];
 
 const PROCESS = [
-  { title: 'Research Planning', desc: 'We define the research questions, choose the right methodologies, set success metrics, and build a research protocol. Good research starts with a plan — not a script.' },
-  { title: 'Participant Recruitment', desc: 'We recruit participants who match your target user profile using screener surveys, recruitment panels, and your existing customer base — ensuring representative, bias-free samples.' },
-  { title: 'Data Collection', desc: 'We run the sessions — interviews, usability tests, surveys, heuristic reviews — capturing video, audio, click paths, and qualitative notes using industry-standard research tools.' },
+  { title: 'Research Planning', desc: 'We define the research questions, choose the right methodologies, set success metrics, and build a research protocol. Good research starts with a plan - not a script.' },
+  { title: 'Participant Recruitment', desc: 'We recruit participants who match your target user profile using screener surveys, recruitment panels, and your existing customer base - ensuring representative, bias-free samples.' },
+  { title: 'Data Collection', desc: 'We run the sessions - interviews, usability tests, surveys, heuristic reviews - capturing video, audio, click paths, and qualitative notes using industry-standard research tools.' },
   { title: 'Analysis & Synthesis', desc: 'Raw data is coded, themed, and synthesised using affinity diagrams and thematic analysis. Patterns emerge that individual sessions would never reveal on their own.' },
-  { title: 'Insight Report', desc: 'A structured research report delivers key findings, supporting evidence, user quotes, severity ratings, and a prioritised list of opportunities — ready to present to any stakeholder.' },
-  { title: 'Design Recommendations', desc: 'We don\'t just stop at findings. Every insight is mapped to a specific, actionable design recommendation with rationale — feeding directly into your next design sprint.' },
+  { title: 'Insight Report', desc: 'A structured research report delivers key findings, supporting evidence, user quotes, severity ratings, and a prioritised list of opportunities - ready to present to any stakeholder.' },
+  { title: 'Design Recommendations', desc: 'We don\'t just stop at findings. Every insight is mapped to a specific, actionable design recommendation with rationale - feeding directly into your next design sprint.' },
 ];
 
 const WHY = [
-  { icon: <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>, title: '5,000+ Users Tested', desc: 'Across SaaS, fintech, healthcare, retail, and enterprise platforms — our research experience spans every industry and user type. We have seen every pattern.' },
-  { icon: <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>, title: 'Research-First Approach', desc: 'We treat research as a discipline, not a box to tick. Every project follows rigorous methodological standards — so your design decisions are built on evidence you can defend.' },
+  { icon: <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>, title: '5,000+ Users Tested', desc: 'Across SaaS, fintech, healthcare, retail, and enterprise platforms - our research experience spans every industry and user type. We have seen every pattern.' },
+  { icon: <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>, title: 'Research-First Approach', desc: 'We treat research as a discipline, not a box to tick. Every project follows rigorous methodological standards - so your design decisions are built on evidence you can defend.' },
   { icon: <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>, title: 'Mixed-Methods Expertise', desc: 'We combine qualitative depth (interviews, usability tests) with quantitative breadth (surveys, analytics, heatmaps) to give you a complete picture, not a partial view.' },
   { icon: <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>, title: 'Fast-Turnaround Reports', desc: 'Research reports are delivered within 5 business days of the final session. You don\'t wait weeks for insights that should feed immediately into your sprint cycle.' },
   { icon: <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>, title: '45% Average Satisfaction Lift', desc: 'Across our research-led redesign projects, client products see an average 45% improvement in user satisfaction scores (SUS / CSAT) within 6 months of implementing findings.' },
-  { icon: <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>, title: 'Findings Your Team Will Actually Use', desc: 'We write reports for product teams, not academic journals. Clear headlines, actionable recommendations, and visual summaries that drive decisions — not desk-drawer dust.' },
-  { icon: <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>, title: 'Remote Research Capability', desc: 'We run fully remote research sessions across US, Canada, Australia, and UK time zones — using Zoom, Lookback, UserZoom, and Maze for high-quality remote data collection.' },
-  { icon: <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>, title: 'Research That Feeds Design Directly', desc: 'Every research engagement is structured to feed directly into your next design sprint. We don\'t hand over a PDF and disappear — we work alongside your team to act on insights.' },
+  { icon: <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>, title: 'Findings Your Team Will Actually Use', desc: 'We write reports for product teams, not academic journals. Clear headlines, actionable recommendations, and visual summaries that drive decisions - not desk-drawer dust.' },
+  { icon: <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>, title: 'Remote Research Capability', desc: 'We run fully remote research sessions across US, Canada, Australia, and UK time zones - using Zoom, Lookback, UserZoom, and Maze for high-quality remote data collection.' },
+  { icon: <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>, title: 'Research That Feeds Design Directly', desc: 'Every research engagement is structured to feed directly into your next design sprint. We don\'t hand over a PDF and disappear - we work alongside your team to act on insights.' },
 ];
 
 const FAQS = [
   {
     q: 'What is UX research and why does my product need it?',
-    a: 'UX research is the systematic study of your users — their behaviours, needs, motivations, and pain points — using both qualitative and quantitative methods. Without it, product teams design based on assumptions, internal opinions, and hippo (highest-paid person\'s opinion) decisions. With it, every design choice is grounded in evidence from the people who actually use the product. Skipping research doesn\'t save time — it creates expensive rework when assumptions turn out to be wrong, which they almost always are.',
+    a: 'UX research is the systematic study of your users - their behaviours, needs, motivations, and pain points - using both qualitative and quantitative methods. Without it, product teams design based on assumptions, internal opinions, and hippo (highest-paid person\'s opinion) decisions. With it, every design choice is grounded in evidence from the people who actually use the product. Skipping research doesn\'t save time - it creates expensive rework when assumptions turn out to be wrong, which they almost always are.',
   },
   {
     q: 'How do you recruit participants for user testing?',
@@ -53,7 +53,7 @@ const FAQS = [
   },
   {
     q: 'Can you run remote usability testing?',
-    a: 'Yes. Remote usability testing is our default approach and accounts for the majority of the research we run. We use tools including Zoom (moderated sessions with screen share), Lookback and UserZoom (moderated with session recording and note-taking), Maze and Useberry (unmoderated task-based testing at scale), and Hotjar / FullStory (behavioural heatmaps and session recordings on live products). Remote testing gives us access to participants in any geography — particularly important for US, Canadian, and Australian markets.',
+    a: 'Yes. Remote usability testing is our default approach and accounts for the majority of the research we run. We use tools including Zoom (moderated sessions with screen share), Lookback and UserZoom (moderated with session recording and note-taking), Maze and Useberry (unmoderated task-based testing at scale), and Hotjar / FullStory (behavioural heatmaps and session recordings on live products). Remote testing gives us access to participants in any geography - particularly important for US, Canadian, and Australian markets.',
   },
   {
     q: 'How do your research findings integrate into the design process?',
@@ -486,9 +486,9 @@ export default function UXResearch() {
         {/* ── HERO ── */}
         <div className="uxr-hero">
           <div className="uxr-hero-content">
-            <span className="uxr-eyebrow">UX Research Agency — 16+ Years Experience</span>
+            <span className="uxr-eyebrow">UX Research Agency - 16+ Years Experience</span>
             <h1>UX Research That Replaces Guesswork With Evidence</h1>
-            <p>We uncover what your users actually need through structured research — interviews, usability tests, journey maps, and heuristic audits that feed directly into design decisions.</p>
+            <p>We uncover what your users actually need through structured research - interviews, usability tests, journey maps, and heuristic audits that feed directly into design decisions.</p>
             <div className="uxr-hero-btns">
               <Link href="#contact" className="uxr-btn-primary">Get a Free Research Consultation</Link>
               <Link href="/portfolio" className="uxr-btn-secondary">View Our Work →</Link>
@@ -531,7 +531,7 @@ export default function UXResearch() {
             >
               <span className="uxr-section-eyebrow">What We Deliver</span>
               <h2 className="uxr-section-title">UX Research Services We Offer</h2>
-              <p className="uxr-section-desc">From exploratory discovery research to evaluative usability testing — every methodology is chosen to answer your specific product questions.</p>
+              <p className="uxr-section-desc">From exploratory discovery research to evaluative usability testing - every methodology is chosen to answer your specific product questions.</p>
             </div>
             <div className="uxr-services-grid">
               {SERVICES.map(s => (
@@ -555,7 +555,7 @@ export default function UXResearch() {
             >
               <span className="uxr-section-eyebrow">Why 1Solutions</span>
               <h2 className="uxr-section-title">Why Product Teams Choose Us for UX Research</h2>
-              <p className="uxr-section-desc" style={{ maxWidth: 680, margin: '0 auto 0' }}>We run research programmes that generate insights your team will actually act on — not 80-page decks that sit unread in a shared drive.</p>
+              <p className="uxr-section-desc" style={{ maxWidth: 680, margin: '0 auto 0' }}>We run research programmes that generate insights your team will actually act on - not 80-page decks that sit unread in a shared drive.</p>
             </div>
             <div className="uxr-why-grid" ref={whyGridRef}>
               {WHY.map((w, i) => (
@@ -582,7 +582,7 @@ export default function UXResearch() {
             >
               <span className="uxr-section-eyebrow">Our Process</span>
               <h2 className="uxr-section-title">How We Run UX Research Projects</h2>
-              <p className="uxr-section-desc">A rigorous 6-stage process — from research planning through design recommendations — so every engagement produces findings you can act on immediately.</p>
+              <p className="uxr-section-desc">A rigorous 6-stage process - from research planning through design recommendations - so every engagement produces findings you can act on immediately.</p>
             </div>
             <div className="uxr-process-layout">
               <div className="uxr-process-steps">
@@ -617,7 +617,7 @@ export default function UXResearch() {
                     ].map(([icon, title, desc]) => (
                       <div className="uxr-deliverable-item" key={title}>
                         <div className="uxr-deliverable-icon">{icon}</div>
-                        <p><strong>{title}</strong> — {desc}</p>
+                        <p><strong>{title}</strong> - {desc}</p>
                       </div>
                     ))}
                   </div>
@@ -641,9 +641,9 @@ export default function UXResearch() {
             </div>
             <div className="uxr-testi-grid">
               {[
-                { initials: 'MP', bg: '#059669', text: '"The user interview findings completely changed our product roadmap. 1Solutions identified pain points we had been ignoring for two years and made the case for fixing them so compellingly that even our most sceptical stakeholders were convinced."', name: 'Maya Patel', role: 'Product Director, HealthTrack — USA' },
-                { initials: 'JW', bg: '#0F3460', text: '"We commissioned a heuristic evaluation and usability study before our redesign. The report was genuinely excellent — clear priorities, concrete recommendations, and the kind of evidence that gets design changes approved at board level."', name: 'James Whitfield', role: 'Head of Digital, RetailGroup — Australia' },
-                { initials: 'SC', bg: '#10b981', text: '"1Solutions ran our card sorting and tree testing for a complete information architecture overhaul. Navigation task success went from 52% to 89% after we implemented their recommendations. Exceptional ROI."', name: 'Sophie Chen', role: 'UX Lead, FinancePro — Canada' },
+                { initials: 'MP', bg: '#059669', text: '"The user interview findings completely changed our product roadmap. 1Solutions identified pain points we had been ignoring for two years and made the case for fixing them so compellingly that even our most sceptical stakeholders were convinced."', name: 'Maya Patel', role: 'Product Director, HealthTrack - USA' },
+                { initials: 'JW', bg: '#0F3460', text: '"We commissioned a heuristic evaluation and usability study before our redesign. The report was genuinely excellent - clear priorities, concrete recommendations, and the kind of evidence that gets design changes approved at board level."', name: 'James Whitfield', role: 'Head of Digital, RetailGroup - Australia' },
+                { initials: 'SC', bg: '#10b981', text: '"1Solutions ran our card sorting and tree testing for a complete information architecture overhaul. Navigation task success went from 52% to 89% after we implemented their recommendations. Exceptional ROI."', name: 'Sophie Chen', role: 'UX Lead, FinancePro - Canada' },
               ].map(t => (
                 <div className="uxr-tcard" key={t.name}>
                   <div className="uxr-tcard-stars">★★★★★</div>
@@ -709,7 +709,7 @@ export default function UXResearch() {
               <p className="uxr-contact-desc">Tell us about your product and your research questions. We'll respond within 24 business hours with a methodology recommendation and timeline.</p>
               <div className="uxr-contact-perks">
                 {[
-                  'All briefs and findings are kept strictly confidential — NDA available on request.',
+                  'All briefs and findings are kept strictly confidential - NDA available on request.',
                   'A senior UX researcher reviews every enquiry and proposes the right methodology.',
                   'We respond within 24 business hours with a tailored research plan outline.',
                   'Free 30-minute discovery call to understand your product questions before you commit.',

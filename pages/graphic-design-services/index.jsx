@@ -28,30 +28,30 @@ const SKILLS = [
   'Vehicle Wrap Design', 'Annual Report Design', 'Adobe Illustrator, Photoshop & InDesign',
 ];
 const MODELS = [
-  { title: 'One-Off Project',    desc: 'A single deliverable — a logo, a brochure, a set of social media templates, or a pitch deck — scoped, priced, and delivered to a fixed deadline.', icon: '🎨' },
+  { title: 'One-Off Project',    desc: 'A single deliverable - a logo, a brochure, a set of social media templates, or a pitch deck - scoped, priced, and delivered to a fixed deadline.', icon: '🎨' },
   { title: 'Brand Package',      desc: 'Complete brand identity: logo, colour palette, typography, brand guidelines, and a core set of collateral (business cards, letterhead, social media kit).', icon: '📦' },
-  { title: 'Design Retainer',    desc: 'Monthly design support — a set number of design hours per month for ongoing social media graphics, campaign assets, and brand maintenance.', icon: '🔄' },
+  { title: 'Design Retainer',    desc: 'Monthly design support - a set number of design hours per month for ongoing social media graphics, campaign assets, and brand maintenance.', icon: '🔄' },
 ];
 const WHY = [
-  { h: 'Strategy Before Aesthetics',    b: 'We research your market, competitors, and target audience before opening Illustrator. Great design communicates your positioning — it is not just decoration.' },
+  { h: 'Strategy Before Aesthetics',    b: 'We research your market, competitors, and target audience before opening Illustrator. Great design communicates your positioning - it is not just decoration.' },
   { h: 'Brand System Thinking',         b: 'We design logos that work in one colour, on dark backgrounds, at 16px and at 3 metres wide. Every element is built for real-world use, not just a portfolio mockup.' },
   { h: 'Print-Ready & Digital-Ready',   b: 'All files delivered print-ready (CMYK, 300 dpi, bleed and trim marks) and digital-ready (RGB, optimised file sizes, web formats) as standard.' },
   { h: 'Fast Turnaround',               b: 'Most logo projects are completed in 5–7 business days. Social media graphics in 24–48 hours. We work to your campaign calendar, not ours.' },
-  { h: 'Unlimited Revisions',           b: 'Within the agreed revision rounds, we refine until you are completely satisfied — no nickel-and-diming for minor changes.' },
+  { h: 'Unlimited Revisions',           b: 'Within the agreed revision rounds, we refine until you are completely satisfied - no nickel-and-diming for minor changes.' },
   { h: 'NDA & IP Protection',           b: 'All original artwork and source files belong to you on final payment. NDA signed before any access to your brand assets or brief.' },
 ];
 const PROCESS = [
-  { n: '01', h: 'Brief & Research', b: 'We learn your brand, audience, competitors, and design preferences — then research the visual landscape before proposing any concepts.' },
+  { n: '01', h: 'Brief & Research', b: 'We learn your brand, audience, competitors, and design preferences - then research the visual landscape before proposing any concepts.' },
   { n: '02', h: 'Concepts',         b: 'We present 2–3 distinct design directions with rationale. You choose a direction and we refine from there.' },
-  { n: '03', h: 'Refine',           b: 'Structured revision rounds until the design is exactly right. No open-ended changes — clear scope, clear timeline.' },
-  { n: '04', h: 'Deliver',          b: 'Final files in every format you need — AI, EPS, PDF, SVG, PNG, JPG — with a handoff guide explaining how to use each file.' },
+  { n: '03', h: 'Refine',           b: 'Structured revision rounds until the design is exactly right. No open-ended changes - clear scope, clear timeline.' },
+  { n: '04', h: 'Deliver',          b: 'Final files in every format you need - AI, EPS, PDF, SVG, PNG, JPG - with a handoff guide explaining how to use each file.' },
 ];
 const FAQS = [
   { q: 'What graphic design services do you offer?', a: 'Logo and brand identity design, business stationery (cards, letterhead, envelopes), marketing collateral (brochures, flyers, posters, banners), packaging design, social media graphics (static and animated), presentation design (PowerPoint, Keynote, Google Slides), email template design, display advertising, trade show graphics, and annual reports.' },
-  { q: 'How much does a logo design cost?', a: 'A professional logo design starts from $400 for a single logo mark with three colour variants. A complete brand identity package (logo, colour palette, typography, brand guidelines, and stationery set) starts from $1,200. We provide a fixed-price quote after reviewing your brief — no hourly billing.' },
+  { q: 'How much does a logo design cost?', a: 'A professional logo design starts from $400 for a single logo mark with three colour variants. A complete brand identity package (logo, colour palette, typography, brand guidelines, and stationery set) starts from $1,200. We provide a fixed-price quote after reviewing your brief - no hourly billing.' },
   { q: 'How long does logo design take?', a: 'A standard logo project takes 5–7 business days from brief to final delivery. A full brand identity package takes 2–3 weeks. Rush timelines are available for an additional fee.' },
-  { q: 'Do I own the final designs?', a: 'Yes. On receipt of final payment, all copyright and IP transfers fully to you. You receive source files in every relevant format (AI, EPS, PDF, SVG, PNG, JPG) — not just flattened exports.' },
-  { q: 'Can you match our existing brand guidelines?', a: 'Yes. We work within existing brand systems regularly — applying your colour palette, typography, and usage rules to new collateral while ensuring everything looks consistent across channels.' },
+  { q: 'Do I own the final designs?', a: 'Yes. On receipt of final payment, all copyright and IP transfers fully to you. You receive source files in every relevant format (AI, EPS, PDF, SVG, PNG, JPG) - not just flattened exports.' },
+  { q: 'Can you match our existing brand guidelines?', a: 'Yes. We work within existing brand systems regularly - applying your colour palette, typography, and usage rules to new collateral while ensuring everything looks consistent across channels.' },
   { q: 'Do you create animated graphics for social media?', a: 'Yes. We produce short animated graphics and GIFs in After Effects or Figma for social media, email campaigns, and digital advertising.' },
 ];
 
@@ -84,7 +84,7 @@ export default function GraphicDesignServices() {
         { '@type': 'ListItem', position: 2, name: 'Graphic Design Services', item: 'https://www.1solutions.biz/graphic-design-services/' },
       ]},
       { '@type': 'Service', name: 'Graphic Design Services', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Professional graphic design from 1Solutions — brand identity, logo design, print collateral, social media graphics, and packaging design.',
+        description: 'Professional graphic design from 1Solutions - brand identity, logo design, print collateral, social media graphics, and packaging design.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '88', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -149,7 +149,7 @@ export default function GraphicDesignServices() {
       </Head>
       <section className="gds-hero">
         <h1>Graphic Design Services<br/>Brand Identity, Print &amp; Digital Design</h1>
-        <p>We create compelling visual identities, marketing collateral, social media graphics, packaging, and print materials that make your brand memorable. From a single logo to a full brand system — design that works across every touchpoint.</p>
+        <p>We create compelling visual identities, marketing collateral, social media graphics, packaging, and print materials that make your brand memorable. From a single logo to a full brand system - design that works across every touchpoint.</p>
         <div className="gds-hero-btns">
           <Link href="/contact-us" className="gds-btn-primary">Get a Free Design Quote →</Link>
           <Link href="/portfolio" className="gds-btn-outline">View Portfolio</Link>
@@ -158,14 +158,14 @@ export default function GraphicDesignServices() {
       <section className="gds-sec" ref={skR}>
         <div className="gds-wrap">
           <h2 className="gds-sec-title">Design Skills &amp; Services</h2>
-          <p className="gds-sec-sub">From logo marks to full brand systems — we cover every visual design discipline your business needs.</p>
+          <p className="gds-sec-sub">From logo marks to full brand systems - we cover every visual design discipline your business needs.</p>
           <div className="gds-skills">{SKILLS.map((s, i) => <span key={s} className={`gds-skill${skV ? ' gds-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>)}</div>
         </div>
       </section>
       <section className="gds-sec gds-sec-alt" ref={enR}>
         <div className="gds-wrap">
           <h2 className="gds-sec-title">Engagement Options</h2>
-          <p className="gds-sec-sub">A single deliverable, a complete brand package, or ongoing monthly design support — we have the right model.</p>
+          <p className="gds-sec-sub">A single deliverable, a complete brand package, or ongoing monthly design support - we have the right model.</p>
           <div className="gds-models">{MODELS.map((m, i) => <div key={m.title} className={`gds-model${enV ? ' gds-in' : ''}`} style={{ transitionDelay: `${i * 120}ms` }}><div className="gds-model-icon">{m.icon}</div><h3>{m.title}</h3><p>{m.desc}</p></div>)}</div>
         </div>
       </section>
@@ -201,7 +201,7 @@ export default function GraphicDesignServices() {
       <section className="gds-cta">
         <div className="gds-wrap">
           <h2>Ready to Elevate Your Brand with Professional Design?</h2>
-          <p>Share your design brief and we'll quote within 24 hours — fixed price, no hourly surprises.</p>
+          <p>Share your design brief and we'll quote within 24 hours - fixed price, no hourly surprises.</p>
           <Link href="/contact-us" className="gds-btn-primary">Get a Free Design Quote →</Link>
         </div>
       </section>

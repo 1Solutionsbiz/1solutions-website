@@ -6,12 +6,12 @@ const challenges = [
   {
     icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
     title: 'Walmart Algorithm Is Not Amazon',
-    desc: "Sellers who migrate their Amazon strategy to Walmart without adaptation see poor results. Walmart's algorithm weights item quality score, price competitiveness, and fulfilment speed differently — and most sellers do not know how to optimise for Polaris (Walmart's search algorithm).",
+    desc: "Sellers who migrate their Amazon strategy to Walmart without adaptation see poor results. Walmart's algorithm weights item quality score, price competitiveness, and fulfilment speed differently - and most sellers do not know how to optimise for Polaris (Walmart's search algorithm).",
   },
   {
     icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
     title: 'Item Setup & Spec Compliance',
-    desc: 'Walmart has strict and complex item setup requirements including specific attribute fields, category taxonomies, and content quality thresholds. Non-compliant items are automatically suppressed from search — often without clear error messages.',
+    desc: 'Walmart has strict and complex item setup requirements including specific attribute fields, category taxonomies, and content quality thresholds. Non-compliant items are automatically suppressed from search - often without clear error messages.',
   },
   {
     icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z',
@@ -21,7 +21,7 @@ const challenges = [
   {
     icon: 'M13 10V3L4 14h7v7l9-11h-7z',
     title: 'Walmart Connect Advertising Gaps',
-    desc: "Walmart's advertising platform has fewer features than Amazon Ads and a smaller advertiser base — but that is actually an opportunity most sellers miss. Without a structured approach to Sponsored Products and Display, brands cede visibility to the small number of savvy advertisers already capitalising on lower CPCs.",
+    desc: "Walmart's advertising platform has fewer features than Amazon Ads and a smaller advertiser base - but that is actually an opportunity most sellers miss. Without a structured approach to Sponsored Products and Display, brands cede visibility to the small number of savvy advertisers already capitalising on lower CPCs.",
   },
 ];
 
@@ -44,7 +44,7 @@ const services = [
   {
     icon: '9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
     title: 'Walmart Connect Advertising',
-    desc: 'Sponsored Products and Display advertising campaign management on Walmart Connect — including keyword strategy, bid optimisation, and campaign performance reporting to drive profitable traffic.',
+    desc: 'Sponsored Products and Display advertising campaign management on Walmart Connect - including keyword strategy, bid optimisation, and campaign performance reporting to drive profitable traffic.',
   },
   {
     icon: 'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z',
@@ -64,7 +64,7 @@ const services = [
   {
     icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
     title: 'Performance Analytics & Monthly Reporting',
-    desc: 'Monthly performance reports covering sales velocity, item quality scores, advertising performance, competitor pricing, and WFS inventory levels — with a clear action plan for the following month.',
+    desc: 'Monthly performance reports covering sales velocity, item quality scores, advertising performance, competitor pricing, and WFS inventory levels - with a clear action plan for the following month.',
   },
 ];
 
@@ -93,7 +93,7 @@ const caseStudies = [
 
 const steps = [
   { title: 'Walmart Account Audit', desc: 'Full review of your existing Seller Center setup, item quality scores, suppressed listings, pricing competitiveness, and WFS eligibility.' },
-  { title: 'Item Strategy & Setup', desc: 'Category mapping, attribute planning, and bulk item setup with full spec compliance — targeting 95+ item quality scores across your catalogue.' },
+  { title: 'Item Strategy & Setup', desc: 'Category mapping, attribute planning, and bulk item setup with full spec compliance - targeting 95+ item quality scores across your catalogue.' },
   { title: 'WFS Onboarding', desc: 'Item eligibility review, inbound freight coordination, WFS setup in Seller Center, and inventory planning to avoid stockouts.' },
   { title: 'Advertising Launch', desc: 'Walmart Connect Sponsored Products campaigns built from the ground up with keyword research, initial bids, and campaign structure.' },
   { title: 'Performance Optimisation', desc: 'Ongoing item quality score improvements, weekly advertising bid adjustments, pricing strategy updates, and competitor monitoring.' },
@@ -111,9 +111,9 @@ const trust = ['Walmart Seller Center experts', 'WFS certified setup', 'No lock-
 
 const FAQS = [
   { q: 'How is Walmart Marketplace different from Amazon for sellers?', a: "Walmart's Polaris search algorithm prioritises price competitiveness, item quality score, and fulfilment speed differently than Amazon's A9. Walmart has a smaller but highly price-conscious buyer base, lower seller competition, and significantly lower advertising costs. The key difference is that Walmart's marketplace is newer and growing fast, which creates real first-mover advantage for sellers who move now." },
-  { q: 'What is Walmart Fulfillment Services (WFS) and do I need it?', a: 'WFS is Walmart\'s equivalent of Amazon FBA — you send inventory to Walmart\'s fulfilment centres and they handle storage, picking, packing, and delivery. WFS listings display a "Fulfilled by Walmart" badge which significantly increases conversion rate and search ranking. We strongly recommend WFS for any seller with eligible products as it is one of the single biggest ranking levers on the platform.' },
+  { q: 'What is Walmart Fulfillment Services (WFS) and do I need it?', a: 'WFS is Walmart\'s equivalent of Amazon FBA - you send inventory to Walmart\'s fulfilment centres and they handle storage, picking, packing, and delivery. WFS listings display a "Fulfilled by Walmart" badge which significantly increases conversion rate and search ranking. We strongly recommend WFS for any seller with eligible products as it is one of the single biggest ranking levers on the platform.' },
   { q: 'How long does Walmart seller onboarding take?', a: 'The Walmart Seller Center application and approval process typically takes 2 to 4 weeks. Once approved, item setup and the first listings can go live within 1 to 2 weeks depending on catalogue size and data readiness. WFS onboarding adds another 1 to 2 weeks for the inbound shipment setup and item eligibility review.' },
-  { q: 'Can you manage Walmart Connect advertising alongside organic optimisation?', a: "Yes. We manage both organic listing optimisation (item quality score, Polaris SEO, WFS) and Walmart Connect advertising (Sponsored Products, Display) as an integrated programme. The two strategies compound — organic ranking reduces your reliance on paid visibility while advertising accelerates ranking for new items that haven't yet built organic history." },
+  { q: 'Can you manage Walmart Connect advertising alongside organic optimisation?', a: "Yes. We manage both organic listing optimisation (item quality score, Polaris SEO, WFS) and Walmart Connect advertising (Sponsored Products, Display) as an integrated programme. The two strategies compound - organic ranking reduces your reliance on paid visibility while advertising accelerates ranking for new items that haven't yet built organic history." },
   { q: 'Do you handle Walmart category approvals for restricted categories?', a: 'Yes. Some Walmart categories require additional approval including certain electronics, health products, and grocery items. We manage the category approval application process, prepare the required documentation, and follow up with your Walmart account representative until approval is granted.' },
   { q: 'What revenue growth can I realistically expect in the first 6 months?', a: 'Most of our Walmart sellers achieve 3 to 5 times their initial monthly revenue within 6 months, particularly when WFS and Walmart Connect are used together. Sellers starting from scratch typically reach $50K to $100K per month within 6 to 9 months depending on category, catalogue size, and pricing competitiveness.' },
 ];
@@ -295,7 +295,7 @@ export default function WalmartAccountManagement() {
             Walmart Marketplace Management That Puts Your Brand in Front of <span className="wlmt-h1-accent">120M Monthly Shoppers</span>
           </h1>
           <p className="wlmt-desc">
-            Walmart is the fastest-growing US marketplace — and most sellers are leaving enormous revenue on the table by running it like a secondary channel. 1Solutions manages your full Walmart seller presence to capture market share while your competitors sleep.
+            Walmart is the fastest-growing US marketplace - and most sellers are leaving enormous revenue on the table by running it like a secondary channel. 1Solutions manages your full Walmart seller presence to capture market share while your competitors sleep.
           </p>
           <div className="wlmt-trust">
             {trust.map((t, i) => (
@@ -325,7 +325,7 @@ export default function WalmartAccountManagement() {
         <div className="wlmt-inner">
           <span className="wlmt-tag">Common Walmart Seller Struggles</span>
           <h2 className="wlmt-h2">Why Walmart Sellers <span>Struggle to Scale</span></h2>
-          <p className="wlmt-lead">Walmart Marketplace has enormous potential — but it requires a platform-specific strategy. These are the four challenges that most Walmart sellers face without expert management.</p>
+          <p className="wlmt-lead">Walmart Marketplace has enormous potential - but it requires a platform-specific strategy. These are the four challenges that most Walmart sellers face without expert management.</p>
           <div className="wlmt-grid4">
             {challenges.map((c, i) => (
               <div key={i} className="wlmt-chal-card">
@@ -345,7 +345,7 @@ export default function WalmartAccountManagement() {
         <div className="wlmt-inner">
           <span className="wlmt-tag">Full-Service Walmart Management</span>
           <h2 className="wlmt-h2">What Our <span>Walmart Management</span> Covers</h2>
-          <p className="wlmt-lead">From initial Seller Center setup to WFS fulfilment and Walmart Connect advertising — we manage every aspect of your Walmart seller presence.</p>
+          <p className="wlmt-lead">From initial Seller Center setup to WFS fulfilment and Walmart Connect advertising - we manage every aspect of your Walmart seller presence.</p>
           <div className="wlmt-grid4">
             {services.map((s, i) => (
               <div key={i} className="wlmt-card">
@@ -417,7 +417,7 @@ export default function WalmartAccountManagement() {
         <div className="wlmt-inner">
           <span className="wlmt-tag">Our Process</span>
           <h2 className="wlmt-h2">How We <span>Manage Your Walmart Account</span></h2>
-          <p className="wlmt-lead">A six-step process built specifically for Walmart Marketplace — from setup to consistent monthly revenue growth.</p>
+          <p className="wlmt-lead">A six-step process built specifically for Walmart Marketplace - from setup to consistent monthly revenue growth.</p>
           <div className="wlmt-grid3">
             {steps.map((s, i) => (
               <div key={i} className="wlmt-card">
@@ -437,7 +437,7 @@ export default function WalmartAccountManagement() {
           <div className="wlmt-contact-grid">
             <div>
               <h2 className="wlmt-contact-info-h">Get a Free <span>Walmart Seller Audit</span></h2>
-              <p className="wlmt-contact-info-p">We will audit your existing Walmart seller setup or help you plan a new launch — reviewing item quality scores, pricing, WFS eligibility, and ad opportunities.</p>
+              <p className="wlmt-contact-info-p">We will audit your existing Walmart seller setup or help you plan a new launch - reviewing item quality scores, pricing, WFS eligibility, and ad opportunities.</p>
               <div className="wlmt-contact-item">
                 <div className="wlmt-contact-item-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
@@ -561,7 +561,7 @@ export default function WalmartAccountManagement() {
       <section className="wlmt-cta">
         <div className="wlmt-inner">
           <h2>Ready to Capture Walmart Marketplace Revenue?</h2>
-          <p>Join brands who trust 1Solutions to manage and scale their Walmart seller accounts — from first listing to six-figure monthly revenue.</p>
+          <p>Join brands who trust 1Solutions to manage and scale their Walmart seller accounts - from first listing to six-figure monthly revenue.</p>
           <Link href="#contact" className="wlmt-cta-btn">Get Your Free Audit Today →</Link>
         </div>
       </section>

@@ -27,28 +27,28 @@ const SKILLS = [
   'XCTest & Swift Testing', 'Xcode Cloud & Fastlane', 'App Store Connect & TestFlight',
 ];
 const MODELS = [
-  { title: 'Dedicated Hire', desc: 'A full-time Swift developer committed to your iOS app — 8 hrs/day, 5 days/week.', icon: '👤' },
+  { title: 'Dedicated Hire', desc: 'A full-time Swift developer committed to your iOS app - 8 hrs/day, 5 days/week.', icon: '👤' },
   { title: 'Part-Time Hire', desc: 'Half-day engagement for SwiftUI refactors, new feature modules, or performance tuning.', icon: '⏰' },
   { title: 'Hourly Hire',    desc: 'Flexible billing for App Store submissions, crash investigations, or code reviews.', icon: '🕐' },
 ];
 const WHY = [
-  { h: 'Native iOS Specialists', b: 'Pure Swift — no cross-platform wrappers. Our developers write idiomatic Swift that Apple engineers would be happy to review.' },
+  { h: 'Native iOS Specialists', b: 'Pure Swift - no cross-platform wrappers. Our developers write idiomatic Swift that Apple engineers would be happy to review.' },
   { h: 'SwiftUI & UIKit Fluency', b: 'We cover both paradigms: SwiftUI for modern declarative UIs and UIKit for complex layout, animation, and custom controls.' },
   { h: 'Profiles in 48 Hours', b: 'Submit your requirements and receive 2-3 matched Swift developer CVs within two business days.' },
   { h: 'App Store Track Record', b: 'Our developers have shipped apps across Health, Finance, AR/VR, and Consumer categories with strong App Store ratings.' },
-  { h: 'Privacy & Security First', b: 'We follow Apple\'s privacy guidelines — minimal data collection, local-first architecture, and App Tracking Transparency compliance.' },
+  { h: 'Privacy & Security First', b: 'We follow Apple\'s privacy guidelines - minimal data collection, local-first architecture, and App Tracking Transparency compliance.' },
   { h: 'NDA & IP Protection', b: 'NDA and IP assignment signed before access to your codebase, Xcode project, or design files.' },
 ];
 const PROCESS = [
   { n: '01', h: 'Share iOS Requirements', b: 'Tell us your iOS version targets, feature scope, and the level of Swift expertise you need.' },
   { n: '02', h: 'Receive Profiles', b: '2-3 matched Swift developer CVs delivered within 48 hours.' },
-  { n: '03', h: 'Interview & Select', b: 'Run your own technical round — SwiftUI code review, architecture discussion, or live Swift challenge.' },
+  { n: '03', h: 'Interview & Select', b: 'Run your own technical round - SwiftUI code review, architecture discussion, or live Swift challenge.' },
   { n: '04', h: 'Onboard & Build', b: 'Developer joins your Xcode workspace. First commit lands within 7 days.' },
 ];
 const FAQS = [
   { q: 'Do your Swift developers use SwiftUI or UIKit?', a: 'Both. Most new projects use SwiftUI (iOS 16+), while legacy apps typically retain UIKit with gradual SwiftUI adoption for new screens. Our developers are comfortable in either paradigm.' },
   { q: 'Can they work with CoreData and SwiftData?', a: 'Yes. We use CoreData for iOS 16 and earlier targets, and SwiftData for iOS 17+ projects that benefit from the modern macro-driven persistence model.' },
-  { q: 'Do they handle App Store submissions?', a: 'Yes. Our developers manage the full App Store Connect workflow — provisioning profiles, code signing, screenshot generation, App Review submissions, and TestFlight beta distribution.' },
+  { q: 'Do they handle App Store submissions?', a: 'Yes. Our developers manage the full App Store Connect workflow - provisioning profiles, code signing, screenshot generation, App Review submissions, and TestFlight beta distribution.' },
   { q: 'Can they integrate HealthKit or StoreKit 2?', a: 'Yes. We have shipped apps in the Health and Fitness category with HealthKit integration, and consumer apps using StoreKit 2 for subscription and one-time purchase management.' },
   { q: 'Do they write unit and UI tests?', a: 'Yes. Unit tests with XCTest, UI automation with XCUITest, and optional Swift Testing framework for newer targets. We also configure Xcode Cloud or Fastlane for CI/CD.' },
   { q: 'Do you sign NDAs?', a: 'Yes. NDA and IP assignment agreements are signed as standard before any engagement begins.' },
@@ -83,7 +83,7 @@ export default function HireSwiftDeveloper() {
         { '@type': 'ListItem', position: 2, name: 'Hire Swift Developer', item: 'https://www.1solutions.biz/hire-swift-developer/' },
       ]},
       { '@type': 'Service', name: 'Hire Swift Developer', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Hire dedicated Swift developers from 1Solutions — native iOS, SwiftUI, and Apple platform experts.',
+        description: 'Hire dedicated Swift developers from 1Solutions - native iOS, SwiftUI, and Apple platform experts.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '83', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -157,7 +157,7 @@ export default function HireSwiftDeveloper() {
       <section className="hswft-sec" ref={skR}>
         <div className="hswft-wrap">
           <h2 className="hswft-sec-title">Skills &amp; Tech Stack</h2>
-          <p className="hswft-sec-sub">Our Swift developers cover the full Apple platform — from SwiftUI layouts to CoreML models.</p>
+          <p className="hswft-sec-sub">Our Swift developers cover the full Apple platform - from SwiftUI layouts to CoreML models.</p>
           <div className="hswft-skills">{SKILLS.map((s, i) => <span key={s} className={`hswft-skill${skV ? ' hswft-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>)}</div>
         </div>
       </section>
@@ -186,7 +186,7 @@ export default function HireSwiftDeveloper() {
       <section className="hswft-sec hswft-sec-alt" ref={prR}>
         <div className="hswft-wrap">
           <h2 className="hswft-sec-title">Hire in 4 Simple Steps</h2>
-          <p className="hswft-sec-sub">From brief to first Xcode commit — in under two weeks.</p>
+          <p className="hswft-sec-sub">From brief to first Xcode commit - in under two weeks.</p>
           <div className="hswft-process">{PROCESS.map((p, i) => <div key={p.n} className={`hswft-step${prV ? ' hswft-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}><div className="hswft-step-n">{p.n}</div><h3>{p.h}</h3><p>{p.b}</p></div>)}</div>
         </div>
       </section>
@@ -200,7 +200,7 @@ export default function HireSwiftDeveloper() {
       <section className="hswft-cta">
         <div className="hswft-wrap">
           <h2>Ready to Hire Your Swift Developer?</h2>
-          <p>Share your iOS requirements and receive matched Swift specialist profiles within 48 hours — no commitment required.</p>
+          <p>Share your iOS requirements and receive matched Swift specialist profiles within 48 hours - no commitment required.</p>
           <Link href="/contact-us" className="hswft-btn-primary">Get Started Today →</Link>
         </div>
       </section>

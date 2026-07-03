@@ -31,12 +31,12 @@ const PROCESS = [
   {
     num: '01',
     title: 'Backlink Gap Analysis',
-    body: 'We audit your current link profile and your top 5 competitors to identify exactly which sites link to them but not you — your highest-priority acquisition targets.',
+    body: 'We audit your current link profile and your top 5 competitors to identify exactly which sites link to them but not you - your highest-priority acquisition targets.',
   },
   {
     num: '02',
     title: 'Prospect Research & Vetting',
-    body: 'We identify prospective link sites using DR, organic traffic, topical relevance, and editorial standards. No link farms, no PBNs — every site is manually reviewed.',
+    body: 'We identify prospective link sites using DR, organic traffic, topical relevance, and editorial standards. No link farms, no PBNs - every site is manually reviewed.',
   },
   {
     num: '03',
@@ -57,7 +57,7 @@ const WHY = [
   },
   {
     title: '15+ Years of Outreach Relationships',
-    body: "We've built relationships with thousands of editors and site owners across verticals — meaning faster placements and access to sites competitors can't reach through cold outreach.",
+    body: "We've built relationships with thousands of editors and site owners across verticals - meaning faster placements and access to sites competitors can't reach through cold outreach.",
   },
   {
     title: 'Minimum DR40+ Guarantee',
@@ -65,11 +65,11 @@ const WHY = [
   },
   {
     title: 'Niche Relevance First',
-    body: 'Authority matters, but so does context. Every link we build comes from a site topically related to your industry — which sends the right signals to Google.',
+    body: 'Authority matters, but so does context. Every link we build comes from a site topically related to your industry - which sends the right signals to Google.',
   },
   {
     title: 'Full Transparency, No Black Boxes',
-    body: 'Your live link tracker is updated the moment a link goes live. You see every link, every domain, every metric — nothing is hidden in a summary report.',
+    body: 'Your live link tracker is updated the moment a link goes live. You see every link, every domain, every metric - nothing is hidden in a summary report.',
   },
   {
     title: 'Works With Any SEO Strategy',
@@ -96,39 +96,39 @@ const INDUSTRIES = [
   {
     icon: '🏢',
     title: 'B2B Services',
-    body: 'Industry publications, thought leadership placements, and guest posts on business, marketing, and professional services sites — anchored to your service pages and city pages.',
+    body: 'Industry publications, thought leadership placements, and guest posts on business, marketing, and professional services sites - anchored to your service pages and city pages.',
   },
 ];
 
 const WHAT_IS = {
   heading: 'What Is Link Building?',
   body: [
-    'Link building is the process of earning hyperlinks from other websites to your own. Each link acts as a vote of confidence — Google interprets backlinks from authoritative, relevant sites as a signal that your content is trustworthy and worth ranking highly.',
+    'Link building is the process of earning hyperlinks from other websites to your own. Each link acts as a vote of confidence - Google interprets backlinks from authoritative, relevant sites as a signal that your content is trustworthy and worth ranking highly.',
     'Not all links are equal. A single editorial link from a DR60+ industry publication can move rankings faster than 100 directory submissions. Quality, topical relevance, and the authority of the linking domain matter far more than raw link count.',
-    'For competitive commercial keywords — "best SEO agency," "Shopify development company," "WordPress developer Toronto" — backlinks are the single biggest differentiator between page 1 results and page 5. On-page SEO gets you indexed; links get you ranked.',
+    'For competitive commercial keywords - "best SEO agency," "Shopify development company," "WordPress developer Toronto" - backlinks are the single biggest differentiator between page 1 results and page 5. On-page SEO gets you indexed; links get you ranked.',
   ],
 };
 
 const FAQS = [
   {
     q: 'How is link building services different from link building packages?',
-    a: 'Link Building Services describes the methodology and deliverables — what we actually do to acquire your links (manual outreach, guest posts, niche edits, digital PR). Link Building Packages is the pricing and plan structure — how many links per month, at what DR, and at what monthly or yearly price. If you are comparing what we do versus what it costs, start here; then visit the packages page to choose your plan.',
+    a: 'Link Building Services describes the methodology and deliverables - what we actually do to acquire your links (manual outreach, guest posts, niche edits, digital PR). Link Building Packages is the pricing and plan structure - how many links per month, at what DR, and at what monthly or yearly price. If you are comparing what we do versus what it costs, start here; then visit the packages page to choose your plan.',
   },
   {
     q: 'What DR (Domain Rating) links do you build?',
-    a: 'Our packages specify minimum DR thresholds: Starter (DR40+), Growth (DR50+), Authority (DR60+). In practice, many links we place exceed the floor — it is a minimum, not an average. We use DR alongside organic traffic and topical relevance to evaluate each prospective site before outreach begins.',
+    a: 'Our packages specify minimum DR thresholds: Starter (DR40+), Growth (DR50+), Authority (DR60+). In practice, many links we place exceed the floor - it is a minimum, not an average. We use DR alongside organic traffic and topical relevance to evaluate each prospective site before outreach begins.',
   },
   {
     q: 'How long before I see ranking improvements?',
-    a: 'New backlinks are typically indexed within 2 to 6 weeks. Domain authority improvements become visible in 2 to 4 months. Ranking improvements for target keywords are usually observable between 3 and 6 months. Significant organic traffic growth follows 6 to 9 months into a consistent monthly programme. Link building compounds — month 12 results are exponentially better than month 3.',
+    a: 'New backlinks are typically indexed within 2 to 6 weeks. Domain authority improvements become visible in 2 to 4 months. Ranking improvements for target keywords are usually observable between 3 and 6 months. Significant organic traffic growth follows 6 to 9 months into a consistent monthly programme. Link building compounds - month 12 results are exponentially better than month 3.',
   },
   {
     q: 'Do you build links for ecommerce and SaaS sites?',
-    a: 'Yes. We build links for ecommerce stores (Shopify, WooCommerce, Magento), SaaS platforms, B2B service businesses, professional services, and content sites. ecommerce and SaaS often require specific placement types — product category page links, integration pages, feature comparison content — which our team is experienced with. For highly competitive niches like finance, legal, or insurance, we recommend Growth or Authority plans.',
+    a: 'Yes. We build links for ecommerce stores (Shopify, WooCommerce, Magento), SaaS platforms, B2B service businesses, professional services, and content sites. ecommerce and SaaS often require specific placement types - product category page links, integration pages, feature comparison content - which our team is experienced with. For highly competitive niches like finance, legal, or insurance, we recommend Growth or Authority plans.',
   },
   {
     q: 'What is the difference between white-hat and black-hat link building?',
-    a: 'White-hat link building uses manual outreach, original content, and genuine editorial relationships to earn links from real websites. Black-hat link building uses private blog networks (PBNs), automated tools, paid link schemes, and link farms to artificially inflate link counts. White-hat links are permanent and compound over time. Black-hat links risk Google manual penalties and algorithmic devaluation — which can wipe out years of ranking progress overnight. We use white-hat methods exclusively.',
+    a: 'White-hat link building uses manual outreach, original content, and genuine editorial relationships to earn links from real websites. Black-hat link building uses private blog networks (PBNs), automated tools, paid link schemes, and link farms to artificially inflate link counts. White-hat links are permanent and compound over time. Black-hat links risk Google manual penalties and algorithmic devaluation - which can wipe out years of ranking progress overnight. We use white-hat methods exclusively.',
   },
   {
     q: 'How many links do I need per month?',
@@ -136,11 +136,11 @@ const FAQS = [
   },
   {
     q: 'Do you offer link building for specific target pages?',
-    a: 'Yes. We build links to specific target URLs — your most important service pages, product category pages, location pages, or blog posts. You specify the target pages and preferred anchor text strategy (which we refine based on your existing anchor profile), and we direct placements accordingly. We do not exclusively build links to your homepage — distributing link equity across deep pages is more effective for ranking individual service and product pages.',
+    a: 'Yes. We build links to specific target URLs - your most important service pages, product category pages, location pages, or blog posts. You specify the target pages and preferred anchor text strategy (which we refine based on your existing anchor profile), and we direct placements accordingly. We do not exclusively build links to your homepage - distributing link equity across deep pages is more effective for ranking individual service and product pages.',
   },
   {
     q: 'Can I see a sample link before committing?',
-    a: 'Yes. We can share anonymised examples of recent placements — the type of site, DR range, and content format — before you begin. We cannot share live URLs of client placements without client permission, but we can show you representative examples across our service tiers so you can assess quality before signing up.',
+    a: 'Yes. We can share anonymised examples of recent placements - the type of site, DR range, and content format - before you begin. We cannot share live URLs of client placements without client permission, but we can show you representative examples across our service tiers so you can assess quality before signing up.',
   },
 ];
 
@@ -161,7 +161,7 @@ const jsonLd = {
       provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz' },
       serviceType: 'Link Building',
       url: 'https://www.1solutions.biz/link-building-services/',
-      description: 'Manual outreach link building services from 1Solutions — guest posts, niche edits, and digital PR from DR40+ to DR60+ websites. 50,000+ links built. 15+ years experience.',
+      description: 'Manual outreach link building services from 1Solutions - guest posts, niche edits, and digital PR from DR40+ to DR60+ websites. 50,000+ links built. 15+ years experience.',
     },
     {
       '@type': 'FAQPage',
@@ -181,7 +181,7 @@ export default function LinkBuildingServices() {
     <>
       <Head>
         <title>Quality Link Building Services | Backlink Agency | 1Solutions</title>
-        <meta name="description" content="Manual outreach link building — guest posts on DR40+ sites, niche edits & digital PR. 50,000+ links built, 92% retention. White-hat only. 15+ years." />
+        <meta name="description" content="Manual outreach link building - guest posts on DR40+ sites, niche edits & digital PR. 50,000+ links built, 92% retention. White-hat only. 15+ years." />
         <meta name="keywords" content="link building services, quality link building, backlink building, guest post service, niche edits, digital PR, white-hat link building, manual outreach link building" />
         <link rel="canonical" href="https://www.1solutions.biz/link-building-services/" />
         <meta property="og:title" content="Link Building Services | 1Solutions" />
@@ -291,8 +291,8 @@ export default function LinkBuildingServices() {
               <span style={{width:6,height:6,borderRadius:'50%',background:'#7C3AED',display:'inline-block'}}/>
               Manual Outreach · White-Hat Only · DR40–DR60+
             </span>
-            <h1 className="lbs-h1">Link Building Services — Earn Backlinks That Move Rankings</h1>
-            <p className="lbs-sub">We build high-authority backlinks through 100% manual outreach — guest posts on niche-relevant DR40+ sites, niche edits in existing indexed content, and digital PR placements. Every link is reported, every placement tracked live.</p>
+            <h1 className="lbs-h1">Link Building Services - Earn Backlinks That Move Rankings</h1>
+            <p className="lbs-sub">We build high-authority backlinks through 100% manual outreach - guest posts on niche-relevant DR40+ sites, niche edits in existing indexed content, and digital PR placements. Every link is reported, every placement tracked live.</p>
             <div className="lbs-btns">
               <Link href="/link-building-packages" className="lbs-btn-p">
                 View Pricing &amp; Packages <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -315,7 +315,7 @@ export default function LinkBuildingServices() {
           <div className="lbs-sec-in">
             <span className="lbs-eyebrow">What We Build</span>
             <h2 className="lbs-ttl">Three Types of High-Authority Backlinks</h2>
-            <p className="lbs-desc">Every link we build is a genuine editorial placement — no shortcuts, no automation, no link farms.</p>
+            <p className="lbs-desc">Every link we build is a genuine editorial placement - no shortcuts, no automation, no link farms.</p>
             <div className="lbs-cards">
               {SERVICES.map(s => (
                 <div key={s.title} className="lbs-card">
@@ -333,7 +333,7 @@ export default function LinkBuildingServices() {
           <div className="lbs-sec-in">
             <span className="lbs-eyebrow">Our Process</span>
             <h2 className="lbs-ttl">How We Build Your Backlinks</h2>
-            <p className="lbs-desc">A repeatable, four-stage process that delivers high-quality links at scale — with full visibility at every step.</p>
+            <p className="lbs-desc">A repeatable, four-stage process that delivers high-quality links at scale - with full visibility at every step.</p>
             <div className="lbs-steps">
               {PROCESS.map(p => (
                 <div key={p.num} className="lbs-step">
@@ -379,7 +379,7 @@ export default function LinkBuildingServices() {
           <div className="lbs-sec-in">
             <span className="lbs-eyebrow">Industries We Serve</span>
             <h2 className="lbs-ttl">Link Building for Every Business Type</h2>
-            <p className="lbs-desc">Our outreach relationships and link placement experience span a wide range of verticals — so your links always come from sites your audience actually reads.</p>
+            <p className="lbs-desc">Our outreach relationships and link placement experience span a wide range of verticals - so your links always come from sites your audience actually reads.</p>
             <div className="lbs-cards">
               {INDUSTRIES.map(ind => (
                 <div key={ind.title} className="lbs-card">
@@ -418,7 +418,7 @@ export default function LinkBuildingServices() {
           <div className="lbs-cta-in">
             <span className="lbs-eyebrow" style={{textAlign:'center',display:'block',marginBottom:16}}>Free Backlink Gap Analysis</span>
             <h2 className="lbs-cta-t">Ready to Build Backlinks That Matter?</h2>
-            <p className="lbs-cta-s">Share your domain and target keywords — we&rsquo;ll run a free backlink gap analysis and recommend the right plan and monthly volume for your site.</p>
+            <p className="lbs-cta-s">Share your domain and target keywords - we&rsquo;ll run a free backlink gap analysis and recommend the right plan and monthly volume for your site.</p>
             <div className="lbs-btns">
               <Link href="/link-building-packages" className="lbs-btn-p">
                 View Pricing &amp; Packages <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>

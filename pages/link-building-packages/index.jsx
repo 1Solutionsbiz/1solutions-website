@@ -82,19 +82,19 @@ const METHODOLOGY = [
   {
     n: '02',
     title: 'Prospect Research & Vetting',
-    desc: 'We identify prospective link sites using 15+ quality signals — DR, organic traffic, niche relevance, spam score, editorial standards, and link velocity.',
+    desc: 'We identify prospective link sites using 15+ quality signals - DR, organic traffic, niche relevance, spam score, editorial standards, and link velocity.',
     detail: ['DR + traffic threshold checks', 'Spam score < 2% filter', 'Niche relevance scoring', 'Editorial quality review'],
   },
   {
     n: '03',
     title: 'Manual Outreach & Relationship Building',
-    desc: 'Our outreach team contacts site editors and publishers through personalised pitches — never automated templates. We build genuine relationships for consistent placement.',
+    desc: 'Our outreach team contacts site editors and publishers through personalised pitches - never automated templates. We build genuine relationships for consistent placement.',
     detail: ['Personalised outreach pitches', 'Editor relationship management', 'No automated mass outreach', 'Positive reply rate tracking'],
   },
   {
     n: '04',
     title: 'Content Creation & Editorial Review',
-    desc: "For guest posts, our writers create original, expert-level content written for the target publication's audience — not repurposed content from your blog.",
+    desc: "For guest posts, our writers create original, expert-level content written for the target publication's audience - not repurposed content from your blog.",
     detail: ['Original article per placement', 'Niche subject-matter writing', 'Editorial guideline compliance', 'Natural link integration'],
   },
   {
@@ -106,7 +106,7 @@ const METHODOLOGY = [
   {
     n: '06',
     title: 'Reporting & Strategy Iteration',
-    desc: 'Monthly reports document every link built — URL, DR, traffic, anchor text, target page. Growth and Authority clients get a strategy call to review and plan next month.',
+    desc: 'Monthly reports document every link built - URL, DR, traffic, anchor text, target page. Growth and Authority clients get a strategy call to review and plan next month.',
     detail: ['Full link delivery report', 'Live Google Sheets tracker', 'Monthly strategy review call', 'Ongoing anchor text refinement'],
   },
 ];
@@ -120,7 +120,7 @@ const QUALITY_SIGNALS = [
   {
     icon: 'M13 10V3L4 14h7v7l9-11h-7z',
     title: 'Real Organic Traffic',
-    desc: 'We only place links on sites with genuine organic search traffic — typically 1,000+ monthly organic visits minimum. Low-traffic sites provide no authority signal.',
+    desc: 'We only place links on sites with genuine organic search traffic - typically 1,000+ monthly organic visits minimum. Low-traffic sites provide no authority signal.',
   },
   {
     icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9',
@@ -160,16 +160,16 @@ const INDUSTRIES = [
 ];
 
 const RESULTS = [
-  { metric: 'DR28→DR52', label: 'Domain authority growth in 8 months', detail: 'SaaS startup — Growth package', sub: '4 commercial keywords moved to page 1' },
-  { metric: '340%', label: 'Organic traffic increase over 12 months', detail: 'Ecommerce — Authority package', sub: '8,200 → 36,000 monthly sessions' },
-  { metric: 'Pos 24→8', label: 'Primary keyword ranking jump', detail: 'B2B agency — Growth package (6 months)', sub: '18 new DR55+ referring domains added' },
+  { metric: 'DR28→DR52', label: 'Domain authority growth in 8 months', detail: 'SaaS startup - Growth package', sub: '4 commercial keywords moved to page 1' },
+  { metric: '340%', label: 'Organic traffic increase over 12 months', detail: 'Ecommerce - Authority package', sub: '8,200 → 36,000 monthly sessions' },
+  { metric: 'Pos 24→8', label: 'Primary keyword ranking jump', detail: 'B2B agency - Growth package (6 months)', sub: '18 new DR55+ referring domains added' },
 ];
 
 const WHYS = [
   {
     icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z',
     title: '100% Manual Outreach',
-    desc: 'Every link is acquired through human-led outreach. No automated tools, no scraped lists, no mass email blasts — just genuine editor relationships.',
+    desc: 'Every link is acquired through human-led outreach. No automated tools, no scraped lists, no mass email blasts - just genuine editor relationships.',
   },
   {
     icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z',
@@ -184,7 +184,7 @@ const WHYS = [
   {
     icon: 'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6',
     title: 'Strategy-First Approach',
-    desc: "We don't just build links. We build the right links — to the right pages, with the right anchors — based on your ranking targets and backlink gap.",
+    desc: "We don't just build links. We build the right links - to the right pages, with the right anchors - based on your ranking targets and backlink gap.",
   },
   {
     icon: 'M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3',
@@ -199,26 +199,26 @@ const WHYS = [
 ];
 
 const FAQS = [
-  { q: 'What is link building and why does it matter for SEO?', a: "Link building is the process of acquiring hyperlinks from other websites that point back to yours. Google treats these backlinks as votes of confidence — a link from a credible, high-authority site signals to Google that your content is trustworthy and valuable. The number and quality of backlinks pointing to your domain is one of the strongest ranking factors in Google's algorithm. Without a strong backlink profile, it is very difficult to rank competitively for high-value keywords, regardless of how well your on-page content is optimised." },
-  { q: 'What are link building packages?', a: "Link building packages are monthly subscription plans that give you a set number of high-authority backlinks acquired through manual outreach each month. Unlike one-off link purchases, packages provide a consistent, compounding backlink acquisition strategy. Each package specifies the number of links per month, minimum domain rating (DR) thresholds, link types included, and reporting. A monthly package is the right approach because Google's algorithm rewards consistent, natural-looking link growth over time — not sudden spikes." },
-  { q: 'What is Domain Rating (DR) and why does it matter?', a: "Domain Rating (DR) is a metric developed by Ahrefs that measures the strength of a website's backlink profile on a scale from 0 to 100. A higher DR indicates a stronger, more authoritative domain. In our packages, we specify minimum DR thresholds (DR40+, DR50+, DR60+) to ensure the links we build come from genuinely authoritative websites rather than low-quality sites that could harm your profile. We use DR alongside other qualitative signals — niche relevance, organic traffic, editorial standards — to evaluate each prospective link placement site before outreach." },
-  { q: 'What types of links do you build?', a: 'We build two primary types of links: Guest posts — original content written and published on third-party websites in your niche, with a contextual link back to your site. Niche edits — placements of your link within existing, already-indexed content on relevant authority sites. On the Authority package, we also pursue digital PR placements — coverage in online publications, news sites, and industry media. We do not build links from link farms, private blog networks (PBNs), spammy directories, or any other low-quality sources.' },
+  { q: 'What is link building and why does it matter for SEO?', a: "Link building is the process of acquiring hyperlinks from other websites that point back to yours. Google treats these backlinks as votes of confidence - a link from a credible, high-authority site signals to Google that your content is trustworthy and valuable. The number and quality of backlinks pointing to your domain is one of the strongest ranking factors in Google's algorithm. Without a strong backlink profile, it is very difficult to rank competitively for high-value keywords, regardless of how well your on-page content is optimised." },
+  { q: 'What are link building packages?', a: "Link building packages are monthly subscription plans that give you a set number of high-authority backlinks acquired through manual outreach each month. Unlike one-off link purchases, packages provide a consistent, compounding backlink acquisition strategy. Each package specifies the number of links per month, minimum domain rating (DR) thresholds, link types included, and reporting. A monthly package is the right approach because Google's algorithm rewards consistent, natural-looking link growth over time - not sudden spikes." },
+  { q: 'What is Domain Rating (DR) and why does it matter?', a: "Domain Rating (DR) is a metric developed by Ahrefs that measures the strength of a website's backlink profile on a scale from 0 to 100. A higher DR indicates a stronger, more authoritative domain. In our packages, we specify minimum DR thresholds (DR40+, DR50+, DR60+) to ensure the links we build come from genuinely authoritative websites rather than low-quality sites that could harm your profile. We use DR alongside other qualitative signals - niche relevance, organic traffic, editorial standards - to evaluate each prospective link placement site before outreach." },
+  { q: 'What types of links do you build?', a: 'We build two primary types of links: Guest posts - original content written and published on third-party websites in your niche, with a contextual link back to your site. Niche edits - placements of your link within existing, already-indexed content on relevant authority sites. On the Authority package, we also pursue digital PR placements - coverage in online publications, news sites, and industry media. We do not build links from link farms, private blog networks (PBNs), spammy directories, or any other low-quality sources.' },
   { q: 'What is the difference between a guest post and a niche edit?', a: "A guest post involves writing and publishing a brand-new, original article on a third-party website, with your link placed naturally within the content. A niche edit (link insertion) places your link within an article that already exists and is already indexed on a third-party website. Niche edits can be faster to secure than guest posts and often carry strong authority because the article has already accumulated backlinks and traffic. We use both in combination for maximum effect on Growth and Authority plans." },
-  { q: 'What is digital PR link building?', a: 'Digital PR link building involves earning links from high-authority news sites, industry publications, and online media through newsworthy content assets — original research, data studies, expert commentary, or product/service stories. These links typically come from DR70+ domains and are editorially given rather than purchased. Digital PR is the gold standard of link building but requires significant investment in content and outreach. We include digital PR as part of the Authority package and can run standalone digital PR campaigns for clients who need high-authority press links fast.' },
-  { q: 'How long does it take to see results from link building?', a: 'Link building results take time to manifest because Google needs to crawl and index the new links, and then the domain authority gains need to translate to ranking improvements. Typically: new links start being indexed within 2 to 6 weeks of placement; domain authority improvements are visible within 2 to 4 months; ranking improvements for target keywords are typically observable within 3 to 6 months; significant organic traffic growth occurs within 6 to 9 months. Link building compounds over time — a consistent monthly programme delivers exponentially better results at 12 months than at 3 months.' },
+  { q: 'What is digital PR link building?', a: 'Digital PR link building involves earning links from high-authority news sites, industry publications, and online media through newsworthy content assets - original research, data studies, expert commentary, or product/service stories. These links typically come from DR70+ domains and are editorially given rather than purchased. Digital PR is the gold standard of link building but requires significant investment in content and outreach. We include digital PR as part of the Authority package and can run standalone digital PR campaigns for clients who need high-authority press links fast.' },
+  { q: 'How long does it take to see results from link building?', a: 'Link building results take time to manifest because Google needs to crawl and index the new links, and then the domain authority gains need to translate to ranking improvements. Typically: new links start being indexed within 2 to 6 weeks of placement; domain authority improvements are visible within 2 to 4 months; ranking improvements for target keywords are typically observable within 3 to 6 months; significant organic traffic growth occurs within 6 to 9 months. Link building compounds over time - a consistent monthly programme delivers exponentially better results at 12 months than at 3 months.' },
   { q: 'How many links per month do I need?', a: "The right number of links per month depends on your current domain authority compared to your target competitors, the keyword competitiveness of your target market, and how aggressively you want to close the backlink gap. For markets where the top 3 competitors have DR50+ with 200–500 referring domains, we typically recommend the Growth package (12 links/month) as a minimum. For highly competitive markets (finance, legal, SaaS) with DR70+ competitors, Authority (25 links/month) is the right starting point. We perform a free backlink gap analysis before recommending a package." },
   { q: 'Can I see the links you build each month?', a: 'Yes. Every link we build is documented in your dedicated live link tracker (Google Sheets or dashboard). The monthly report includes: the URL of the page where your link appears; the anchor text used; the DR of the linking domain; the estimated organic traffic of the linking page; the date the link went live; and the target page on your site that received the link. You have full visibility into every link placed. The Growth and Authority packages also include a monthly call to review the links and align on strategy for the next month.' },
   { q: 'Is link building safe? Will it hurt my site?', a: "White-hat link building using manual outreach and editorial placements on genuine websites is safe and is exactly what Google recommends. The risks come from low-quality tactics: buying links from link farms, using PBNs, creating spammy directory submissions, or participating in link exchange schemes. These are tactics we never use. All links we build are from real websites with genuine organic traffic, editorial standards, and topical relevance to your niche. If you have previously received a manual penalty from Google for unnatural links, we include a disavow audit in Growth and above packages." },
-  { q: 'What happens if a link goes down?', a: 'If a link we build goes down within 90 days of delivery — due to the publisher removing the article, changing the URL, or the site going offline — we will replace it at no additional cost. We track every live link on an ongoing basis and flag removals in your monthly report. For links that go down after 90 days due to editorial changes outside our control, we will work with you on a replacement at a preferential rate. Our 90-day replacement policy is industry-leading.' },
-  { q: 'Can you build links to product or category pages?', a: "Yes. We build links directly to the pages that need authority — including product pages, category pages, service pages, and landing pages. Linking directly to commercial pages is harder because publishers are selective about linking to overtly commercial content, so it typically requires niche edit placements or digital PR rather than guest posts. We will advise during strategy on the right mix of target pages and link types for your site. Product and category page links are highest-priority for ecommerce clients because they directly improve rankings for transactional keywords." },
-  { q: 'Do you offer white-label link building?', a: 'Yes. We offer white-label link building for SEO agencies and digital marketing companies. Under a white-label arrangement, all reports and communications are unbranded — your clients see only your agency branding. Pricing for white-label is the same as our standard packages. If you need custom volumes (e.g., 50+ links per month across multiple client accounts), we offer custom agency pricing. Contact us with your projected monthly volume to discuss agency rates. We currently have over 30 agency partners who resell our link building as their own service.' },
+  { q: 'What happens if a link goes down?', a: 'If a link we build goes down within 90 days of delivery - due to the publisher removing the article, changing the URL, or the site going offline - we will replace it at no additional cost. We track every live link on an ongoing basis and flag removals in your monthly report. For links that go down after 90 days due to editorial changes outside our control, we will work with you on a replacement at a preferential rate. Our 90-day replacement policy is industry-leading.' },
+  { q: 'Can you build links to product or category pages?', a: "Yes. We build links directly to the pages that need authority - including product pages, category pages, service pages, and landing pages. Linking directly to commercial pages is harder because publishers are selective about linking to overtly commercial content, so it typically requires niche edit placements or digital PR rather than guest posts. We will advise during strategy on the right mix of target pages and link types for your site. Product and category page links are highest-priority for ecommerce clients because they directly improve rankings for transactional keywords." },
+  { q: 'Do you offer white-label link building?', a: 'Yes. We offer white-label link building for SEO agencies and digital marketing companies. Under a white-label arrangement, all reports and communications are unbranded - your clients see only your agency branding. Pricing for white-label is the same as our standard packages. If you need custom volumes (e.g., 50+ links per month across multiple client accounts), we offer custom agency pricing. Contact us with your projected monthly volume to discuss agency rates. We currently have over 30 agency partners who resell our link building as their own service.' },
   { q: 'What anchor text strategy do you use?', a: 'Anchor text strategy is one of the most important elements of a safe, effective link building campaign. Over-optimised exact-match anchors is a common cause of Google penalties. We use a diversified anchor text strategy: roughly 30% exact-match or partial-match keyword anchors; 40% branded anchors (your company or domain name); 20% generic anchors (click here, learn more, visit); and 10% naked URL anchors. We build and refine an anchor text map at the start of your campaign and update it each month based on your existing profile.' },
-  { q: 'Do you offer custom link building plans?', a: "If the Starter, Growth, or Authority packages do not fit your exact requirements — for example, you need 40 links per month, only DR60+ placements, only guest posts with no niche edits, or specific publication targets — we can build a fully custom plan. Custom plans are also available for specific campaigns: product launches, national expansion, competitive keyword pushes. Contact us with your requirements and we will provide a custom proposal within 48 hours. Custom plans are available on a monthly or project basis." },
-  { q: 'Can you perform a backlink gap analysis before I commit?', a: "Yes, and we recommend it. A backlink gap analysis compares your referring domain count, average DR, and link velocity against your top 3–5 competitors for your target keywords. It tells us exactly how many links and what DR profile you need to be competitive. We offer a free backlink gap analysis as part of our pre-sales process — no commitment required. Share your domain and your top 3 competitors, and we'll return a gap analysis report within 48 hours showing the exact deficit and what it would take to close it." },
+  { q: 'Do you offer custom link building plans?', a: "If the Starter, Growth, or Authority packages do not fit your exact requirements - for example, you need 40 links per month, only DR60+ placements, only guest posts with no niche edits, or specific publication targets - we can build a fully custom plan. Custom plans are also available for specific campaigns: product launches, national expansion, competitive keyword pushes. Contact us with your requirements and we will provide a custom proposal within 48 hours. Custom plans are available on a monthly or project basis." },
+  { q: 'Can you perform a backlink gap analysis before I commit?', a: "Yes, and we recommend it. A backlink gap analysis compares your referring domain count, average DR, and link velocity against your top 3–5 competitors for your target keywords. It tells us exactly how many links and what DR profile you need to be competitive. We offer a free backlink gap analysis as part of our pre-sales process - no commitment required. Share your domain and your top 3 competitors, and we'll return a gap analysis report within 48 hours showing the exact deficit and what it would take to close it." },
   { q: 'How do you measure ROI from link building?', a: 'Link building ROI is measured through ranking improvements and organic traffic growth rather than direct revenue attribution. We track: the DR growth of your domain over time; the referring domain count increase; keyword ranking changes for your target keywords; organic traffic growth from Google Search Console; and conversion data if you share access. At 3 months we review early DR and ranking signals; at 6 months we expect observable ranking movement; at 12 months we measure full organic traffic and conversion improvement. Growth and Authority plans include a quarterly ROI summary.' },
   { q: 'Do you build links for any industry or niche?', a: 'We build links across most industries, including B2B, ecommerce, SaaS, professional services, home services, healthcare, legal, finance, education, technology, and lifestyle. Some industries are harder to build links in due to limited publication options or editorial restrictions. We will advise honestly during scoping if your niche presents specific challenges and adjust the strategy accordingly. For highly competitive niches like finance or legal, DR thresholds are more important and we recommend Growth or Authority packages.' },
-  { q: 'What contract length is required?', a: "Monthly plans require no long-term contract — just 30 days' notice to cancel. Yearly plans are paid upfront (saving 17%) but can be paused or adjusted mid-year in exceptional circumstances. There is no setup fee on any plan. We recommend a minimum 3-month commitment to see meaningful results, but we do not lock you into that contractually. Most clients continue for 6–12+ months because link building compounds — the authority gains in month 4 and beyond are significantly higher than in months 1–2." },
-  { q: 'Can I combine link building with an SEO package?', a: 'Yes. Link building works best as part of a coordinated SEO strategy rather than in isolation. When link building is combined with on-page SEO, technical optimisation, and content creation, the authority gains translate to ranking improvements much more efficiently. Our ecommerce SEO and managed SEO packages include link building as a component — if you are already on one of those packages, you may not need a standalone link building package. If you have an existing in-house SEO team handling on-page work but need external link building expertise, our standalone packages are the right fit.' },
+  { q: 'What contract length is required?', a: "Monthly plans require no long-term contract - just 30 days' notice to cancel. Yearly plans are paid upfront (saving 17%) but can be paused or adjusted mid-year in exceptional circumstances. There is no setup fee on any plan. We recommend a minimum 3-month commitment to see meaningful results, but we do not lock you into that contractually. Most clients continue for 6–12+ months because link building compounds - the authority gains in month 4 and beyond are significantly higher than in months 1–2." },
+  { q: 'Can I combine link building with an SEO package?', a: 'Yes. Link building works best as part of a coordinated SEO strategy rather than in isolation. When link building is combined with on-page SEO, technical optimisation, and content creation, the authority gains translate to ranking improvements much more efficiently. Our ecommerce SEO and managed SEO packages include link building as a component - if you are already on one of those packages, you may not need a standalone link building package. If you have an existing in-house SEO team handling on-page work but need external link building expertise, our standalone packages are the right fit.' },
 ];
 
 const STATS = [
@@ -595,15 +595,15 @@ export default function LinkBuildingPackages() {
               <span style={{color:'#D97706'}}>Link Building Packages</span>
             </nav>
             <span className="lbp-eyebrow">Manual Outreach · DR40–DR60+ · White-Hat Only</span>
-            <h1 className="lbp-h1">Link Building Packages — High-DA Backlinks Through Manual Outreach</h1>
-            <p className="lbp-hero-sub">White-hat link building packages with transparent monthly pricing — guest posts, niche edits, and digital PR from DR40+ to DR60+ niche-relevant websites. Every link reported, every placement tracked.</p>
+            <h1 className="lbp-h1">Link Building Packages - High-DA Backlinks Through Manual Outreach</h1>
+            <p className="lbp-hero-sub">White-hat link building packages with transparent monthly pricing - guest posts, niche edits, and digital PR from DR40+ to DR60+ niche-relevant websites. Every link reported, every placement tracked.</p>
             <div className="lbp-kt">
               <div className="lbp-kt-t">Key Takeaways</div>
               <ul className="lbp-kt-list">
-                <li>Link building packages provide a consistent monthly stream of high-authority backlinks through manual outreach — no automation, no PBNs</li>
+                <li>Link building packages provide a consistent monthly stream of high-authority backlinks through manual outreach - no automation, no PBNs</li>
                 <li>Plans start at $499/month (5 links, DR40+) and scale to $1,499/month (25 links, DR60+) with digital PR included</li>
-                <li>Every link is tracked in a live dashboard — URL, DR, organic traffic, anchor text, and target page reported monthly</li>
-                <li>The #1 Google result has 3.8× more backlinks than positions 2–10 — consistent link building is the path to closing that gap</li>
+                <li>Every link is tracked in a live dashboard - URL, DR, organic traffic, anchor text, and target page reported monthly</li>
+                <li>The #1 Google result has 3.8× more backlinks than positions 2–10 - consistent link building is the path to closing that gap</li>
               </ul>
             </div>
             <Link href="/contact-us" className="lbp-btn-hero">Talk to a Link Building Specialist →</Link>
@@ -628,11 +628,11 @@ export default function LinkBuildingPackages() {
             </div>
             <div className="lbp-glass lbp-def-box">
               <p className="lbp-def-intro">
-                <strong>Link building packages</strong> are monthly subscription plans that deliver a fixed number of high-authority backlinks to your website each month through manual outreach to real website editors. Each package specifies the volume of links, minimum domain rating (DR) threshold, and link types included — giving you a predictable, compounding backlink acquisition programme rather than one-off link purchases. Google&rsquo;s algorithm treats links from authoritative, niche-relevant sites as editorial endorsements — and pages with the strongest backlink profiles rank highest for competitive keywords.
+                <strong>Link building packages</strong> are monthly subscription plans that deliver a fixed number of high-authority backlinks to your website each month through manual outreach to real website editors. Each package specifies the volume of links, minimum domain rating (DR) threshold, and link types included - giving you a predictable, compounding backlink acquisition programme rather than one-off link purchases. Google&rsquo;s algorithm treats links from authoritative, niche-relevant sites as editorial endorsements - and pages with the strongest backlink profiles rank highest for competitive keywords.
               </p>
               <div className="lbp-def-aspects">
                 {[
-                  { t: 'Why monthly packages?', d: "Google's algorithm rewards consistent, natural-looking link growth. A steady monthly programme builds authority signals in a pattern that mirrors how real sites earn links organically — and compounds over 6–12 months." },
+                  { t: 'Why monthly packages?', d: "Google's algorithm rewards consistent, natural-looking link growth. A steady monthly programme builds authority signals in a pattern that mirrors how real sites earn links organically - and compounds over 6–12 months." },
                   { t: 'What makes a link valuable?', d: 'Domain rating, organic traffic, topical relevance, dofollow status, and editorial placement context all determine link value. We vet every site against 15+ signals before outreach.' },
                   { t: 'Guest posts vs. niche edits?', d: 'Guest posts are new articles published on a third-party site with your link included. Niche edits insert your link into an existing, indexed article. Both are valuable; the best strategy uses both.' },
                 ].map(a => (
@@ -672,7 +672,7 @@ export default function LinkBuildingPackages() {
             <div className={`lbp-reveal${visibleSections.has('pricing')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['pricing']=el;}} style={{textAlign:'center'}}>
               <span className="lbp-sec-ey">Pricing Plans</span>
               <h2 className="lbp-sec-ttl">Choose Your Link Building Package</h2>
-              <p className="lbp-sec-desc" style={{margin:'0 auto 44px'}}>All packages use 100% manual outreach — no automated tools, no PBNs, no link farms. Full transparency with a live link tracker on every plan.</p>
+              <p className="lbp-sec-desc" style={{margin:'0 auto 44px'}}>All packages use 100% manual outreach - no automated tools, no PBNs, no link farms. Full transparency with a live link tracker on every plan.</p>
             </div>
             <div className="lbp-tog-row">
               <span className={`lbp-tog-lbl${!isYearly?' active':''}`}>Monthly</span>
@@ -725,9 +725,9 @@ export default function LinkBuildingPackages() {
                 <thead>
                   <tr>
                     <th>Feature</th>
-                    <th>Starter — $499/mo</th>
-                    <th>Growth — $899/mo</th>
-                    <th>Authority — $1,499/mo</th>
+                    <th>Starter - $499/mo</th>
+                    <th>Growth - $899/mo</th>
+                    <th>Authority - $1,499/mo</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -764,7 +764,7 @@ export default function LinkBuildingPackages() {
             <div className={`lbp-reveal${visibleSections.has('method')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['method']=el;}} style={{textAlign:'center',marginBottom:44}}>
               <span className="lbp-sec-ey">Our Process</span>
               <h2 className="lbp-sec-ttl">How Our Link Building Process Works</h2>
-              <p className="lbp-sec-desc" style={{margin:'0 auto'}}>Six rigorous steps from strategy to live link — every campaign, every month.</p>
+              <p className="lbp-sec-desc" style={{margin:'0 auto'}}>Six rigorous steps from strategy to live link - every campaign, every month.</p>
             </div>
             <div className="lbp-method-grid">
               {METHODOLOGY.map(m => (
@@ -899,7 +899,7 @@ export default function LinkBuildingPackages() {
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
               </svg>
             </div>
-            <p className="lbp-author-text">Written and reviewed by the <strong>1Solutions Link Building Team</strong> — 15+ years of manual outreach experience, 50,000+ links built across 1,000+ campaigns. Updated June 2025 to reflect current Google quality guidelines and DR benchmark data.</p>
+            <p className="lbp-author-text">Written and reviewed by the <strong>1Solutions Link Building Team</strong> - 15+ years of manual outreach experience, 50,000+ links built across 1,000+ campaigns. Updated June 2025 to reflect current Google quality guidelines and DR benchmark data.</p>
           </div>
         </div>
 
@@ -908,9 +908,9 @@ export default function LinkBuildingPackages() {
           <div className="lbp-cta-in">
             <span className="lbp-sec-ey" style={{display:'block',textAlign:'center',marginBottom:16}}>Not sure how many links you need?</span>
             <h2 className="lbp-cta-t">Get a Free Backlink Gap Analysis</h2>
-            <p className="lbp-cta-s">Share your domain and top competitors — we&rsquo;ll analyse the backlink gap and recommend exactly how many links per month you need to close it.</p>
+            <p className="lbp-cta-s">Share your domain and top competitors - we&rsquo;ll analyse the backlink gap and recommend exactly how many links per month you need to close it.</p>
             <div className="lbp-pricing-note">
-              <strong>How much does link building cost?</strong> Our link building packages start from <strong>$499/month</strong> for 5 DR40+ guest post placements. The Growth plan at <strong>$899/month</strong> is our most popular option for businesses targeting competitive keywords. Custom plans are available for agencies and high-volume requirements — <Link href="/contact-us" style={{color:'#D97706',fontWeight:600}}>contact us to discuss</Link>.
+              <strong>How much does link building cost?</strong> Our link building packages start from <strong>$499/month</strong> for 5 DR40+ guest post placements. The Growth plan at <strong>$899/month</strong> is our most popular option for businesses targeting competitive keywords. Custom plans are available for agencies and high-volume requirements - <Link href="/contact-us" style={{color:'#D97706',fontWeight:600}}>contact us to discuss</Link>.
             </div>
             <div className="lbp-btns">
               <Link href="/contact-us" className="lbp-btn-p">

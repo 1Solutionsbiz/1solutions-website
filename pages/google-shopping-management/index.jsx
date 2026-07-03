@@ -4,43 +4,43 @@ import { useState } from 'react';
 
 const ACCENT = '#006d2c';
 const SERVICES = [
-  { icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2', title: 'Product Feed Optimisation', desc: 'Title restructuring, attribute enrichment, category mapping, and custom label strategy — the foundation of every high-performing Shopping campaign.' },
+  { icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2', title: 'Product Feed Optimisation', desc: 'Title restructuring, attribute enrichment, category mapping, and custom label strategy - the foundation of every high-performing Shopping campaign.' },
   { icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z', title: 'Standard Shopping Campaigns', desc: 'Structured Shopping campaigns with granular ad group segmentation, negative keyword sculpting, and bid-by-product-performance logic.' },
   { icon: 'M13 10V3L4 14h7v7l9-11h-7z', title: 'Performance Max', desc: 'Performance Max campaigns with structured asset groups, strong audience signals, and search theme exclusions to prevent budget waste on irrelevant queries.' },
   { icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z', title: 'Feed Title & Attribute Optimisation', desc: 'Keyword-rich product titles, optimised descriptions, accurate GTINs, and complete attribute sets that improve impressions, CTR, and Quality Score.' },
-  { icon: 'M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636', title: 'Negative Keyword Sculpting', desc: 'Systematic search term analysis and negative keyword exclusion at campaign and ad group level — eliminating irrelevant traffic that destroys ROAS.' },
-  { icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z', title: 'ROAS Bidding Strategy', desc: 'Target ROAS, Maximise Conversion Value, and manual CPC strategies selected by campaign maturity and conversion volume — with regular bid reviews.' },
-  { icon: 'M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z', title: 'Google Merchant Center', desc: 'Merchant Center setup, feed submission, policy compliance, and suspension resolution — plus feed health monitoring to maintain active product listings.' },
-  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'Competitor Price Monitoring', desc: 'Price competitiveness reporting using Merchant Center benchmarks — identifying where pricing gaps are costing you impressions and clicks on Shopping results.' },
+  { icon: 'M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636', title: 'Negative Keyword Sculpting', desc: 'Systematic search term analysis and negative keyword exclusion at campaign and ad group level - eliminating irrelevant traffic that destroys ROAS.' },
+  { icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z', title: 'ROAS Bidding Strategy', desc: 'Target ROAS, Maximise Conversion Value, and manual CPC strategies selected by campaign maturity and conversion volume - with regular bid reviews.' },
+  { icon: 'M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z', title: 'Google Merchant Center', desc: 'Merchant Center setup, feed submission, policy compliance, and suspension resolution - plus feed health monitoring to maintain active product listings.' },
+  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'Competitor Price Monitoring', desc: 'Price competitiveness reporting using Merchant Center benchmarks - identifying where pricing gaps are costing you impressions and clicks on Shopping results.' },
 ];
 const RESULTS = [
-  { metric: '4.6×', label: 'ROAS achieved', sub: 'AU fashion eCommerce — 6 months', color: '#52b788' },
+  { metric: '4.6×', label: 'ROAS achieved', sub: 'AU fashion eCommerce - 6 months', color: '#52b788' },
   { metric: '38%', label: 'Lower CPC', sub: 'US home goods store', color: '#95d5b2' },
   { metric: '310%', label: 'Increase in Shopping revenue', sub: 'Canadian retail brand', color: '#b7e4c7' },
 ];
 const PROCESS = [
   { n: '01', title: 'Feed Audit', desc: 'We review your existing product feed for title quality, missing attributes, GTIN accuracy, category mismatches, and policy violations that limit impressions.' },
   { n: '02', title: 'Merchant Center Setup', desc: 'Account configuration, feed submission, shipping and tax settings, product review eligibility, and policy compliance review before any spend is allocated.' },
-  { n: '03', title: 'Campaign Structure', desc: 'Campaign hierarchy design — brand vs non-brand, product category segmentation, and custom label strategy to control bids by margin and performance.' },
+  { n: '03', title: 'Campaign Structure', desc: 'Campaign hierarchy design - brand vs non-brand, product category segmentation, and custom label strategy to control bids by margin and performance.' },
   { n: '04', title: 'Launch & Test', desc: 'Campaigns go live with manual CPC bidding to gather clean data on which products, categories, and search queries drive the best ROAS before switching to automated strategies.' },
-  { n: '05', title: 'Optimise', desc: 'Weekly search term pruning, negative keyword additions, bid adjustments by product performance, and feed title tests — compounding improvement every week.' },
+  { n: '05', title: 'Optimise', desc: 'Weekly search term pruning, negative keyword additions, bid adjustments by product performance, and feed title tests - compounding improvement every week.' },
   { n: '06', title: 'Scale', desc: 'Once target ROAS is stable, we expand to higher-volume audiences, introduce Performance Max, and identify new product categories worth promoting.' },
 ];
 const WHY = [
-  { title: 'Feed-First Approach', desc: 'We know that Shopping performance starts with the feed, not the bids. Our first priority is always feed quality — titles, attributes, GTINs, and categories.' },
-  { title: 'Performance Max Expertise', desc: 'We build Performance Max campaigns properly — with asset groups, audience signals, and search term exclusions that prevent bleed into irrelevant placements.' },
-  { title: 'No % of Spend', desc: 'Flat monthly fee — our incentive is ROAS improvement, not budget inflation. Your spend increases stay in your campaigns.' },
+  { title: 'Feed-First Approach', desc: 'We know that Shopping performance starts with the feed, not the bids. Our first priority is always feed quality - titles, attributes, GTINs, and categories.' },
+  { title: 'Performance Max Expertise', desc: 'We build Performance Max campaigns properly - with asset groups, audience signals, and search term exclusions that prevent bleed into irrelevant placements.' },
+  { title: 'No % of Spend', desc: 'Flat monthly fee - our incentive is ROAS improvement, not budget inflation. Your spend increases stay in your campaigns.' },
   { title: 'You Own Everything', desc: 'Your Merchant Center, your Google Ads account, your product feed. We work inside your owned assets and hand everything back if we ever part ways.' },
-  { title: 'eCommerce Specialists', desc: 'We work exclusively with online retailers — fashion, home goods, health, sports, electronics — and understand the seasonal, margin, and inventory dynamics of each.' },
+  { title: 'eCommerce Specialists', desc: 'We work exclusively with online retailers - fashion, home goods, health, sports, electronics - and understand the seasonal, margin, and inventory dynamics of each.' },
   { title: 'Integrated with SEO', desc: 'Shopping search term data informs organic keyword strategy. We share insights across teams so your paid and organic presence reinforce each other.' },
 ];
 const FAQS = [
-  { q: 'What is the difference between Google Shopping and Google Search Ads?', a: 'Google Search Ads are text-based and triggered by keywords you bid on. Google Shopping Ads show your product image, price, and store name based on your product feed — Google matches them to search queries automatically. Shopping ads typically have higher conversion rates because buyers can see the product and price before clicking.' },
-  { q: 'What feed requirements does Google Shopping have?', a: 'Google requires a product feed submitted via Merchant Center with fields including title, description, image link, price, availability, GTIN (for branded products), brand, and product category. Feed quality — especially title structure and attribute completeness — directly determines how often your products appear and at what cost.' },
-  { q: 'Should I run Performance Max or Standard Shopping?', a: 'Both. Standard Shopping gives you granular control over keywords, negatives, and bids — ideal when you have existing data and want tight control. Performance Max uses AI to serve across all Google channels and is best once you have conversion history. We typically run Standard Shopping to gather data first, then layer in Performance Max.' },
+  { q: 'What is the difference between Google Shopping and Google Search Ads?', a: 'Google Search Ads are text-based and triggered by keywords you bid on. Google Shopping Ads show your product image, price, and store name based on your product feed - Google matches them to search queries automatically. Shopping ads typically have higher conversion rates because buyers can see the product and price before clicking.' },
+  { q: 'What feed requirements does Google Shopping have?', a: 'Google requires a product feed submitted via Merchant Center with fields including title, description, image link, price, availability, GTIN (for branded products), brand, and product category. Feed quality - especially title structure and attribute completeness - directly determines how often your products appear and at what cost.' },
+  { q: 'Should I run Performance Max or Standard Shopping?', a: 'Both. Standard Shopping gives you granular control over keywords, negatives, and bids - ideal when you have existing data and want tight control. Performance Max uses AI to serve across all Google channels and is best once you have conversion history. We typically run Standard Shopping to gather data first, then layer in Performance Max.' },
   { q: 'What budget do I need for Google Shopping?', a: 'For most eCommerce stores, we recommend a minimum of $2,000/month in ad spend to generate enough product and query data for optimisation. Higher SKU count and more competitive categories require larger budgets. We provide a budget recommendation based on your product catalog and target ROAS.' },
   { q: 'How long does it take to see ROAS improvements?', a: 'Initial Shopping campaigns need 4 to 6 weeks of data collection before automated bidding strategies perform reliably. Feed optimisation improvements often show results within 2 weeks as impressions and CTR improve. Most accounts reach target ROAS within 8 to 12 weeks of restructuring.' },
-  { q: 'What happens if my Merchant Center account gets suspended?', a: 'Merchant Center suspensions are typically caused by policy violations — misrepresentation, price discrepancies, or landing page issues. We diagnose the root cause, fix the violations, and submit a reinstatement request. Most account-level suspensions are resolved within 2 to 4 weeks.' },
+  { q: 'What happens if my Merchant Center account gets suspended?', a: 'Merchant Center suspensions are typically caused by policy violations - misrepresentation, price discrepancies, or landing page issues. We diagnose the root cause, fix the violations, and submit a reinstatement request. Most account-level suspensions are resolved within 2 to 4 weeks.' },
 ];
 
 export default function GoogleShoppingManagement() {
@@ -142,9 +142,9 @@ export default function GoogleShoppingManagement() {
       <nav className="gsho-bc"><div className="gsho-bci"><Link href="/">Home</Link><span className="gsho-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="gsho-sep">›</span><span className="gsho-cur">Google Shopping Management</span></div></nav>
       <section className="gsho-hero"><div className="gsho-o1"/><div className="gsho-o2"/>
         <div className="gsho-in">
-          <span className="gsho-ey">eCommerce Advertising — Feed Optimisation · Shopping · Performance Max · ROAS</span>
+          <span className="gsho-ey">eCommerce Advertising - Feed Optimisation · Shopping · Performance Max · ROAS</span>
           <h1 className="gsho-h1">Google Shopping Ads That Put Your Products in Front of Ready-to-Buy Customers</h1>
-          <p className="gsho-p">1Solutions manages Google Shopping campaigns that drive eCommerce revenue — with feed-first optimisation, granular campaign structures, and ROAS-focused bidding that converts browsers into buyers.</p>
+          <p className="gsho-p">1Solutions manages Google Shopping campaigns that drive eCommerce revenue - with feed-first optimisation, granular campaign structures, and ROAS-focused bidding that converts browsers into buyers.</p>
           <div className="gsho-btns">
             <Link href="/contact-us" className="gsho-bp">Get a Free Feed Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
             <Link href="/contact-us" className="gsho-bs">Discuss Your Shopping Campaigns</Link>
@@ -156,7 +156,7 @@ export default function GoogleShoppingManagement() {
       <section className="gsho-sec gsho-bg"><div className="gsho-si2">
         <span className="gsho-tag">What We Manage</span>
         <h2 className="gsho-h2">Complete <span>Google Shopping Services</span></h2>
-        <p className="gsho-lead">From Merchant Center setup to Performance Max — every component of Google Shopping managed by eCommerce specialists.</p>
+        <p className="gsho-lead">From Merchant Center setup to Performance Max - every component of Google Shopping managed by eCommerce specialists.</p>
         <div className="gsho-g3">{SERVICES.map(s=><div key={s.title} className="gsho-card"><div className="gsho-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d={s.icon}/></svg></div><h3 className="gsho-ch">{s.title}</h3><p className="gsho-cp">{s.desc}</p></div>)}</div>
       </div></section>
       <section className="gsho-rb"><div className="gsho-ri">
@@ -167,13 +167,13 @@ export default function GoogleShoppingManagement() {
       <section className="gsho-sec"><div className="gsho-si2">
         <span className="gsho-tag">Why 1Solutions</span>
         <h2 className="gsho-h2">The Shopping Ads Partner <span>That Starts With Your Feed</span></h2>
-        <p className="gsho-lead">We optimise the thing most agencies ignore — your product feed — because that is where Shopping performance is actually won or lost.</p>
+        <p className="gsho-lead">We optimise the thing most agencies ignore - your product feed - because that is where Shopping performance is actually won or lost.</p>
         <div className="gsho-g3">{WHY.map(w=><div key={w.title} className="gsho-wc"><div className="gsho-wck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><h3 className="gsho-wh">{w.title}</h3><p className="gsho-wp">{w.desc}</p></div>)}</div>
       </div></section>
       <section className="gsho-sec gsho-bg"><div className="gsho-si2">
         <span className="gsho-tag">How We Work</span>
         <h2 className="gsho-h2">Our <span>6-Step Shopping Process</span></h2>
-        <p className="gsho-lead">From feed audit to profitable scale — a structured approach built for eCommerce revenue growth.</p>
+        <p className="gsho-lead">From feed audit to profitable scale - a structured approach built for eCommerce revenue growth.</p>
         <div className="gsho-g3">{PROCESS.map(p=><div key={p.n}><div className="gsho-pn">{p.n}</div><div className="gsho-pl"/><h3 className="gsho-ph">{p.title}</h3><p className="gsho-pp">{p.desc}</p></div>)}</div>
       </div></section>
       <section className="gsho-sec"><div className="gsho-si2">
@@ -184,7 +184,7 @@ export default function GoogleShoppingManagement() {
       <section className="gsho-cta"><div className="gsho-si2">
         <span className="gsho-tag" style={{display:'block',textAlign:'center',marginBottom:12}}>Ready to Grow Your eCommerce Revenue?</span>
         <h2 className="gsho-cth">Get a Free Google Shopping Feed Audit</h2>
-        <p className="gsho-ctp">We will review your product feed, Merchant Center account, and existing Shopping campaigns — identifying where ROAS is being lost and what to fix first.</p>
+        <p className="gsho-ctp">We will review your product feed, Merchant Center account, and existing Shopping campaigns - identifying where ROAS is being lost and what to fix first.</p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
           <Link href="/contact-us" className="gsho-bp">Request Free Shopping Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
           <Link href="/contact-us" className="gsho-bs">Talk to a Shopping Specialist</Link>

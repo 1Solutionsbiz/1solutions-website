@@ -27,12 +27,12 @@ const SKILLS = [
   'Authentication (JWT / OAuth)', 'Testing (Jest / Cypress)', 'Git & Code Review',
 ];
 const MODELS = [
-  { title: 'Dedicated Hire', desc: 'A full-stack engineer committed to your product full-time — 8 hrs/day, 5 days/week.', icon: '👤' },
+  { title: 'Dedicated Hire', desc: 'A full-stack engineer committed to your product full-time - 8 hrs/day, 5 days/week.', icon: '👤' },
   { title: 'Part-Time Hire', desc: 'Half-day coverage for ongoing feature work, code reviews, or technical oversight.', icon: '⏰' },
   { title: 'Hourly Hire',    desc: 'Flexible hourly billing for architecture reviews, technical audits, or sprint bursts.', icon: '🕐' },
 ];
 const WHY = [
-  { h: 'End-to-End Ownership', b: 'Our full-stack developers own both the frontend UX and backend API — reducing handoff delays and keeping velocity high.' },
+  { h: 'End-to-End Ownership', b: 'Our full-stack developers own both the frontend UX and backend API - reducing handoff delays and keeping velocity high.' },
   { h: 'Pre-Vetted Engineers', b: 'Every developer passes system design, data structure, and live coding assessments before being placed with a client.' },
   { h: 'Fast Placement', b: 'Profiles delivered within 48 hours. Developer onboarded and committing code within 7 business days.' },
   { h: 'Agile-First Culture', b: '2-week sprints with demos, retrospectives, and visible delivery metrics throughout the engagement.' },
@@ -86,7 +86,7 @@ export default function HireFullStackDeveloper() {
         { '@type': 'ListItem', position: 2, name: 'Hire Full Stack Developer', item: 'https://www.1solutions.biz/hire-full-stack-developer/' },
       ]},
       { '@type': 'Service', name: 'Hire Full Stack Developer', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Hire dedicated full-stack developers from 1Solutions — MERN, MEAN, Django, Next.js and more.',
+        description: 'Hire dedicated full-stack developers from 1Solutions - MERN, MEAN, Django, Next.js and more.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', reviewCount: '134', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({
@@ -166,7 +166,7 @@ export default function HireFullStackDeveloper() {
       <section className="hfsd-sec" ref={skR}>
         <div className="hfsd-wrap">
           <h2 className="hfsd-sec-title">Skills &amp; Tech Stack</h2>
-          <p className="hfsd-sec-sub">Frontend to cloud infrastructure — our full-stack developers cover everything your product needs to ship.</p>
+          <p className="hfsd-sec-sub">Frontend to cloud infrastructure - our full-stack developers cover everything your product needs to ship.</p>
           <div className="hfsd-skills">
             {SKILLS.map((s, i) => (
               <span key={s} className={`hfsd-skill${skV ? ' hfsd-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>
@@ -178,7 +178,7 @@ export default function HireFullStackDeveloper() {
       <section className="hfsd-sec hfsd-sec-alt" ref={enR}>
         <div className="hfsd-wrap">
           <h2 className="hfsd-sec-title">Flexible Engagement Models</h2>
-          <p className="hfsd-sec-sub">Match the engagement to your velocity — scale up or down as your roadmap changes.</p>
+          <p className="hfsd-sec-sub">Match the engagement to your velocity - scale up or down as your roadmap changes.</p>
           <div className="hfsd-models">
             {MODELS.map((m, i) => (
               <div key={m.title} className={`hfsd-model${enV ? ' hfsd-in' : ''}`} style={{ transitionDelay: `${i * 120}ms` }}>
@@ -194,7 +194,7 @@ export default function HireFullStackDeveloper() {
       <section className="hfsd-sec" ref={whR}>
         <div className="hfsd-wrap">
           <h2 className="hfsd-sec-title">Why Hire Full Stack Developers from 1Solutions?</h2>
-          <p className="hfsd-sec-sub">We place engineers with production track records — not theoretical candidates.</p>
+          <p className="hfsd-sec-sub">We place engineers with production track records - not theoretical candidates.</p>
           <div className="hfsd-why-grid">
             {WHY.map((w, i) => (
               <div key={w.h} className={`hfsd-why-item${whV ? ' hfsd-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}>
@@ -218,7 +218,7 @@ export default function HireFullStackDeveloper() {
       <section className="hfsd-sec hfsd-sec-alt" ref={prR}>
         <div className="hfsd-wrap">
           <h2 className="hfsd-sec-title">Hire in 4 Simple Steps</h2>
-          <p className="hfsd-sec-sub">From brief to first commit — in under two weeks.</p>
+          <p className="hfsd-sec-sub">From brief to first commit - in under two weeks.</p>
           <div className="hfsd-process">
             {PROCESS.map((p, i) => (
               <div key={p.n} className={`hfsd-step${prV ? ' hfsd-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}>
@@ -252,7 +252,7 @@ export default function HireFullStackDeveloper() {
       <section className="hfsd-cta">
         <div className="hfsd-wrap">
           <h2>Ready to Hire Your Full Stack Developer?</h2>
-          <p>Share your requirements and receive matched developer profiles within 48 hours — no commitment required to view CVs.</p>
+          <p>Share your requirements and receive matched developer profiles within 48 hours - no commitment required to view CVs.</p>
           <Link href="/contact-us" className="hfsd-btn-primary">Get Started Today →</Link>
         </div>
       </section>

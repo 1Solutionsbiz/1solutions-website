@@ -3,48 +3,48 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const SERVICES = [
-  { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Insurance Keyword Strategy', desc: 'Comprehensive keyword mapping across auto insurance, home insurance, life insurance quotes, health insurance broker, commercial insurance, business liability, renters insurance, and umbrella policies — segmented by buyer intent stage so each page attracts the right prospect at the right moment.' },
-  { icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z', title: 'Insurance Agent Google Business Profile', desc: 'Full GBP optimisation with the insurance agent category, office hours, virtual consultation option, professional photo strategy, and review management — ensuring your agency appears prominently in map pack results for insurance searches in your area.' },
-  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'Product-Specific Landing Pages', desc: 'Dedicated, individually optimised pages for every insurance line your agency offers — auto, home, life, health, commercial, umbrella, specialty, and renters insurance — each targeting its own keyword cluster to maximise the total search surface of your agency.' },
-  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'Quote Comparison Content', desc: 'Educational content targeting high buyer-intent research queries — "how much does home insurance cost", "best auto insurance [state]", "life insurance vs term life", "what does commercial liability cover" — capturing prospective policyholders in the research phase before they request a quote.' },
-  { icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1', title: 'Insurance Citation Building', desc: 'Agency listed across Yelp, BBB, Alignable, local chamber of commerce directories, and insurance-specific directories — building consistent NAP data that anchors your local rankings and builds trust with prospective clients researching your agency.' },
-  { icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4', title: 'Insurance Schema Markup', desc: 'InsuranceAgency LocalBusiness schema, FinancialService type, products offered, geographic area served, and review aggregate schema — the structured data that gives Google the signals needed to feature your agency in rich results and enhances your Knowledge Panel.' },
-  { icon: 'M13 10V3L4 14h7v7l9-11h-7z', title: 'Technical SEO for Insurance Sites', desc: 'Fast page load times, HTTPS security, mobile optimisation, and Core Web Vitals compliance — all critical for insurance sites falling under Google\'s YMYL (Your Money Your Life) standards, where technical quality directly influences ranking ability.' },
-  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'Lead Attribution Reporting', desc: 'Monthly tracking of organic quote requests, GBP calls, keyword ranking positions across all insurance product lines, and revenue per keyword cluster — giving your agency complete visibility into which insurance products your SEO is selling most effectively.' },
+  { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Insurance Keyword Strategy', desc: 'Comprehensive keyword mapping across auto insurance, home insurance, life insurance quotes, health insurance broker, commercial insurance, business liability, renters insurance, and umbrella policies - segmented by buyer intent stage so each page attracts the right prospect at the right moment.' },
+  { icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z', title: 'Insurance Agent Google Business Profile', desc: 'Full GBP optimisation with the insurance agent category, office hours, virtual consultation option, professional photo strategy, and review management - ensuring your agency appears prominently in map pack results for insurance searches in your area.' },
+  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'Product-Specific Landing Pages', desc: 'Dedicated, individually optimised pages for every insurance line your agency offers - auto, home, life, health, commercial, umbrella, specialty, and renters insurance - each targeting its own keyword cluster to maximise the total search surface of your agency.' },
+  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'Quote Comparison Content', desc: 'Educational content targeting high buyer-intent research queries - "how much does home insurance cost", "best auto insurance [state]", "life insurance vs term life", "what does commercial liability cover" - capturing prospective policyholders in the research phase before they request a quote.' },
+  { icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1', title: 'Insurance Citation Building', desc: 'Agency listed across Yelp, BBB, Alignable, local chamber of commerce directories, and insurance-specific directories - building consistent NAP data that anchors your local rankings and builds trust with prospective clients researching your agency.' },
+  { icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4', title: 'Insurance Schema Markup', desc: 'InsuranceAgency LocalBusiness schema, FinancialService type, products offered, geographic area served, and review aggregate schema - the structured data that gives Google the signals needed to feature your agency in rich results and enhances your Knowledge Panel.' },
+  { icon: 'M13 10V3L4 14h7v7l9-11h-7z', title: 'Technical SEO for Insurance Sites', desc: 'Fast page load times, HTTPS security, mobile optimisation, and Core Web Vitals compliance - all critical for insurance sites falling under Google\'s YMYL (Your Money Your Life) standards, where technical quality directly influences ranking ability.' },
+  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'Lead Attribution Reporting', desc: 'Monthly tracking of organic quote requests, GBP calls, keyword ranking positions across all insurance product lines, and revenue per keyword cluster - giving your agency complete visibility into which insurance products your SEO is selling most effectively.' },
 ];
 
 const RESULTS = [
-  { metric: '#1', label: 'For auto insurance agent [city]', sub: 'Independent insurance agency — 5 months', color: '#FFD080' },
-  { metric: '5.1×', label: 'Increase in online quote requests', sub: 'Multi-line insurance agency — 7 months', color: '#80D0FF' },
-  { metric: '370%', label: 'Growth in organic leads', sub: 'Life insurance broker — 9 months', color: '#B0FFD0' },
+  { metric: '#1', label: 'For auto insurance agent [city]', sub: 'Independent insurance agency - 5 months', color: '#FFD080' },
+  { metric: '5.1×', label: 'Increase in online quote requests', sub: 'Multi-line insurance agency - 7 months', color: '#80D0FF' },
+  { metric: '370%', label: 'Growth in organic leads', sub: 'Life insurance broker - 9 months', color: '#B0FFD0' },
 ];
 
 const PROCESS = [
-  { n: '01', title: 'Insurance Site Audit', desc: 'Full technical and content audit of your insurance agency website — evaluating YMYL compliance, page speed, product page coverage, GBP status, citation consistency, and competitor keyword gaps.' },
-  { n: '02', title: 'Keyword + Product Mapping', desc: 'We map search demand to every insurance product you offer, segmenting by buyer intent — research queries, comparison queries, and direct quote-request queries — then build a keyword architecture that addresses all three.' },
-  { n: '03', title: 'GBP + Product Pages', desc: 'Google Business Profile optimised for insurance agent category. Dedicated product landing pages built for auto, home, life, health, and commercial insurance — each with schema markup, conversion copy, and quote request CTAs.' },
-  { n: '04', title: 'Citation Building', desc: 'Insurance agency listed across BBB, Yelp, Alignable, local chamber directories, and insurance-specific directories with consistent NAP data — building the local authority that drives map pack rankings.' },
-  { n: '05', title: 'YMYL Content Authority', desc: 'Monthly publication of high-quality insurance educational content — coverage guides, cost explainers, comparison articles — meeting the Expertise, Authoritativeness, and Trustworthiness (E-E-A-T) standards that YMYL content requires to rank.' },
-  { n: '06', title: 'Monthly Lead Reporting', desc: 'Monthly rank tracking for all insurance product keywords, organic quote request volume, GBP call volume, and revenue attribution by keyword cluster — complete transparency into what your SEO is generating.' },
+  { n: '01', title: 'Insurance Site Audit', desc: 'Full technical and content audit of your insurance agency website - evaluating YMYL compliance, page speed, product page coverage, GBP status, citation consistency, and competitor keyword gaps.' },
+  { n: '02', title: 'Keyword + Product Mapping', desc: 'We map search demand to every insurance product you offer, segmenting by buyer intent - research queries, comparison queries, and direct quote-request queries - then build a keyword architecture that addresses all three.' },
+  { n: '03', title: 'GBP + Product Pages', desc: 'Google Business Profile optimised for insurance agent category. Dedicated product landing pages built for auto, home, life, health, and commercial insurance - each with schema markup, conversion copy, and quote request CTAs.' },
+  { n: '04', title: 'Citation Building', desc: 'Insurance agency listed across BBB, Yelp, Alignable, local chamber directories, and insurance-specific directories with consistent NAP data - building the local authority that drives map pack rankings.' },
+  { n: '05', title: 'YMYL Content Authority', desc: 'Monthly publication of high-quality insurance educational content - coverage guides, cost explainers, comparison articles - meeting the Expertise, Authoritativeness, and Trustworthiness (E-E-A-T) standards that YMYL content requires to rank.' },
+  { n: '06', title: 'Monthly Lead Reporting', desc: 'Monthly rank tracking for all insurance product keywords, organic quote request volume, GBP call volume, and revenue attribution by keyword cluster - complete transparency into what your SEO is generating.' },
 ];
 
 const WHY = [
-  { title: 'Insurance SEO Authority', desc: 'We understand the specific ranking challenges of insurance websites — YMYL classification, high competition, and strict E-E-A-T requirements — and build strategies that meet Google\'s elevated standards for financial service content.' },
+  { title: 'Insurance SEO Authority', desc: 'We understand the specific ranking challenges of insurance websites - YMYL classification, high competition, and strict E-E-A-T requirements - and build strategies that meet Google\'s elevated standards for financial service content.' },
   { title: 'YMYL Best Practices', desc: 'Insurance is a "Your Money Your Life" category, meaning Google scrutinises content quality, author expertise, and site trustworthiness more heavily. Our content and technical standards are built for YMYL compliance from the ground up.' },
   { title: 'Product-Level Keyword Depth', desc: 'Auto, home, life, health, and commercial insurance each have distinct search audiences and keyword ecosystems. We build deep, separate keyword strategies for every product your agency offers.' },
-  { title: 'High-Intent Buyer Content', desc: 'We produce content that targets buyers in the research and comparison phase — when they are actively evaluating insurers and most likely to request a quote. This content converts at significantly higher rates than brand-awareness traffic.' },
-  { title: 'No Lock-in Contracts', desc: 'Month-to-month engagements. You continue because your organic quote requests are growing — not because a long-term contract requires it.' },
-  { title: 'Quote-to-Close Attribution', desc: 'We track organic leads from first click through to quote request — and can integrate with your CRM to give you full visibility into which insurance products and keyword clusters are generating your highest-value closed policies.' },
+  { title: 'High-Intent Buyer Content', desc: 'We produce content that targets buyers in the research and comparison phase - when they are actively evaluating insurers and most likely to request a quote. This content converts at significantly higher rates than brand-awareness traffic.' },
+  { title: 'No Lock-in Contracts', desc: 'Month-to-month engagements. You continue because your organic quote requests are growing - not because a long-term contract requires it.' },
+  { title: 'Quote-to-Close Attribution', desc: 'We track organic leads from first click through to quote request - and can integrate with your CRM to give you full visibility into which insurance products and keyword clusters are generating your highest-value closed policies.' },
 ];
 
 const FAQS = [
-  { q: 'Is insurance SEO better than Google Ads for agencies?', a: 'Insurance keywords are among the most expensive in Google Ads — averaging $50 to $140 per click. SEO builds organic visibility that, once established, generates quote requests without a per-click cost. Most successful insurance agencies use both: Ads for immediate visibility while SEO builds, then shift budget toward SEO as organic rankings mature. Within 12 to 18 months, most agencies find SEO delivers a significantly lower cost per acquired client than Ads alone.' },
+  { q: 'Is insurance SEO better than Google Ads for agencies?', a: 'Insurance keywords are among the most expensive in Google Ads - averaging $50 to $140 per click. SEO builds organic visibility that, once established, generates quote requests without a per-click cost. Most successful insurance agencies use both: Ads for immediate visibility while SEO builds, then shift budget toward SEO as organic rankings mature. Within 12 to 18 months, most agencies find SEO delivers a significantly lower cost per acquired client than Ads alone.' },
   { q: 'What YMYL content requirements apply to insurance websites?', a: 'Google classifies insurance as "Your Money Your Life" content, applying stricter quality standards. This means your site needs clear author credentials or company qualifications displayed, transparent business information (address, license number, contact details), factually accurate and up-to-date policy information, and a professional, trustworthy site experience. We ensure all content we create meets Google\'s E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) standards for insurance.' },
-  { q: 'How long does insurance SEO take to produce results?', a: 'GBP optimisation for insurance agents typically produces additional local calls within 4 to 8 weeks. Product-specific landing pages for moderate-competition terms — like "renters insurance [city]" or "small business insurance [state]" — typically achieve top-10 rankings within 3 to 5 months. Highly competitive terms like "auto insurance [major city]" may take 9 to 15 months for top-5 positions, depending on the existing domain authority of your site.' },
-  { q: 'Does SEO work differently for independent vs captive insurance agents?', a: 'Yes. Independent agents have a significant SEO advantage: they can create content comparing multiple carriers on price and coverage — something captive agents (tied to one carrier) cannot do honestly. This comparison content attracts high-intent buyers researching their options and often has lower keyword competition than direct carrier terms. We build content strategies that leverage the independent agent advantage fully.' },
+  { q: 'How long does insurance SEO take to produce results?', a: 'GBP optimisation for insurance agents typically produces additional local calls within 4 to 8 weeks. Product-specific landing pages for moderate-competition terms - like "renters insurance [city]" or "small business insurance [state]" - typically achieve top-10 rankings within 3 to 5 months. Highly competitive terms like "auto insurance [major city]" may take 9 to 15 months for top-5 positions, depending on the existing domain authority of your site.' },
+  { q: 'Does SEO work differently for independent vs captive insurance agents?', a: 'Yes. Independent agents have a significant SEO advantage: they can create content comparing multiple carriers on price and coverage - something captive agents (tied to one carrier) cannot do honestly. This comparison content attracts high-intent buyers researching their options and often has lower keyword competition than direct carrier terms. We build content strategies that leverage the independent agent advantage fully.' },
   { q: 'Should you focus on life insurance or auto insurance keywords first?', a: 'Auto insurance keywords have higher search volume but extreme competition from major carriers with enormous domain authority. Life insurance keywords, particularly term life and whole life comparison queries, often represent better early-win opportunities for independent agencies. We analyse your specific market, existing domain authority, and product mix to determine which insurance lines to prioritise for the fastest ROI.' },
-  { q: 'Can insurance SEO work for a local agent competing against national carriers?', a: 'Yes — and local agents have a genuine SEO advantage in geographic searches. A national carrier like State Farm does not have locally optimised GBP profiles, service-area-specific landing pages, or local community trust signals for your specific city. Local agents who invest in GBP, local citations, and service-area content consistently outrank national carriers in map pack results for city-specific searches. That is where we focus.' },
-  { q: 'How do you measure insurance SEO ROI?', a: 'We track organic quote request form submissions (with form tracking), GBP calls (with call tracking numbers), keyword ranking positions across all insurance product lines, and map pack positions for local insurance agent searches. For agencies using CRM systems, we integrate organic lead data to show you cost-per-acquired-policy from SEO — the most meaningful ROI metric for an insurance business.' },
+  { q: 'Can insurance SEO work for a local agent competing against national carriers?', a: 'Yes - and local agents have a genuine SEO advantage in geographic searches. A national carrier like State Farm does not have locally optimised GBP profiles, service-area-specific landing pages, or local community trust signals for your specific city. Local agents who invest in GBP, local citations, and service-area content consistently outrank national carriers in map pack results for city-specific searches. That is where we focus.' },
+  { q: 'How do you measure insurance SEO ROI?', a: 'We track organic quote request form submissions (with form tracking), GBP calls (with call tracking numbers), keyword ranking positions across all insurance product lines, and map pack positions for local insurance agent searches. For agencies using CRM systems, we integrate organic lead data to show you cost-per-acquired-policy from SEO - the most meaningful ROI metric for an insurance business.' },
 ];
 
 export default function InsuranceSeoServices() {
@@ -180,10 +180,10 @@ export default function InsuranceSeoServices() {
         <div className="inseo-inner">
           <span className="inseo-eyebrow">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-            Insurance SEO — Auto · Home · Life · Health · Commercial
+            Insurance SEO - Auto · Home · Life · Health · Commercial
           </span>
           <h1 className="inseo-h1">Insurance SEO That Drives Qualified<br/>Policy Buyers to Your Agency</h1>
-          <p className="inseo-desc">1Solutions builds insurance SEO strategies that attract high-intent buyers researching auto, home, life, health, and commercial insurance — putting your agency in front of qualified prospects before they request a quote. YMYL-compliant content, GBP optimisation, and product-level keyword depth for independent and captive agents.</p>
+          <p className="inseo-desc">1Solutions builds insurance SEO strategies that attract high-intent buyers researching auto, home, life, health, and commercial insurance - putting your agency in front of qualified prospects before they request a quote. YMYL-compliant content, GBP optimisation, and product-level keyword depth for independent and captive agents.</p>
           <div className="inseo-btns">
             <a href="#contact" className="inseo-btn-p">
               Get Your Free Insurance SEO Audit
@@ -201,7 +201,7 @@ export default function InsuranceSeoServices() {
           </div>
           <div className="inseo-stats-bar">
             {[
-              { num:'$50–$140', lbl:'avg CPC for insurance keywords — #1 most expensive vertical' },
+              { num:'$50–$140', lbl:'avg CPC for insurance keywords - #1 most expensive vertical' },
               { num:'74%', lbl:'of insurance buyers start with an online search' },
               { num:'3×', lbl:'more inbound leads for agents using SEO' },
               { num:'$1,200+', lbl:'avg lifetime value per insured client' },
@@ -219,7 +219,7 @@ export default function InsuranceSeoServices() {
         <div className="inseo-sec-inner">
           <span className="inseo-tag">What We Do</span>
           <h2 className="inseo-h2">Full-Spectrum <span>Insurance SEO Services</span></h2>
-          <p className="inseo-lead">From auto insurance keyword strategy to YMYL content authority — every component your agency needs to rank and convert high-intent insurance buyers.</p>
+          <p className="inseo-lead">From auto insurance keyword strategy to YMYL content authority - every component your agency needs to rank and convert high-intent insurance buyers.</p>
           <div className="inseo-grid3">
             {SERVICES.map(s => (
               <div key={s.title} className="inseo-card">
@@ -252,7 +252,7 @@ export default function InsuranceSeoServices() {
         <div className="inseo-sec-inner">
           <span className="inseo-tag">Why 1Solutions</span>
           <h2 className="inseo-h2">The Insurance SEO Agency <span>That Understands YMYL</span></h2>
-          <p className="inseo-lead">We build insurance SEO strategies that meet Google\'s elevated content standards for financial services — and attract the qualified buyer traffic that converts into policy sales.</p>
+          <p className="inseo-lead">We build insurance SEO strategies that meet Google\'s elevated content standards for financial services - and attract the qualified buyer traffic that converts into policy sales.</p>
           <div className="inseo-grid3">
             {WHY.map(w => (
               <div key={w.title} className="inseo-why-card">
@@ -269,7 +269,7 @@ export default function InsuranceSeoServices() {
         <div className="inseo-sec-inner">
           <span className="inseo-tag">How We Work</span>
           <h2 className="inseo-h2">Our <span>6-Step Insurance SEO Process</span></h2>
-          <p className="inseo-lead">From YMYL-compliant audit to ongoing quote request growth — a structured process for insurance agencies that want to compete and win online.</p>
+          <p className="inseo-lead">From YMYL-compliant audit to ongoing quote request growth - a structured process for insurance agencies that want to compete and win online.</p>
           <div className="inseo-grid3">
             {PROCESS.map(p => (
               <div key={p.n}>
@@ -305,7 +305,7 @@ export default function InsuranceSeoServices() {
         <div className="inseo-sec-inner">
           <span className="inseo-tag" style={{ display:'block', textAlign:'center', marginBottom:12 }}>Ready to Grow Your Policy Sales?</span>
           <h2 className="inseo-cta-h">Get Your Free Insurance Agency SEO Audit</h2>
-          <p className="inseo-cta-p">We will audit your website, GBP, product page coverage, and citation profile — and deliver a prioritised action plan for growing your organic quote requests. Free, no obligation.</p>
+          <p className="inseo-cta-p">We will audit your website, GBP, product page coverage, and citation profile - and deliver a prioritised action plan for growing your organic quote requests. Free, no obligation.</p>
           <div style={{ display:'flex', gap:14, justifyContent:'center', flexWrap:'wrap' }}>
             <Link href="/contact-us" className="inseo-btn-p">
               Request Free Audit

@@ -3,45 +3,45 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const SERVICES = [
-  { n: '01', title: 'Facebook Page Setup & Optimisation', desc: 'Complete Facebook Business Page setup — category selection, contact details, business description, CTA button, and URL customisation — or full audit and optimisation of your existing page.' },
-  { n: '02', title: 'Facebook Cover Photo Design', desc: 'Custom Facebook cover photo (820×312px) — brand-consistent design that communicates your value proposition, current promotion, or brand story in the prime visual real estate of your page.' },
-  { n: '03', title: 'Facebook Profile Picture Design', desc: 'Optimised profile picture — correctly sized logo or brand image for Facebook\'s circular crop, optimised for recognition at small sizes in comments, ads, and the news feed.' },
-  { n: '04', title: 'Facebook Highlights & Story Covers', desc: 'Branded Facebook Story highlight covers — consistent icon set matching your brand colour palette that makes your page look polished and organised at first glance.' },
-  { n: '05', title: 'Facebook Post Template Design', desc: 'Custom post template suite — branded Canva or Adobe templates for your content team to use, ensuring every post stays on-brand without needing a designer for every piece of content.' },
-  { n: '06', title: 'Facebook Ad Creative Design', desc: 'Custom ad creative templates and one-off ad assets — feed ads, Story ads, and carousel formats — designed to Meta\'s ad specifications and optimised for scroll-stopping visual impact.' },
-  { n: '07', title: 'Facebook Event Cover Design', desc: 'Branded Facebook Event cover images (1920×1005px) for product launches, webinars, sales events, and in-person events — designed to attract attention and communicate event details clearly.' },
-  { n: '08', title: 'Facebook Shop Visual Design', desc: 'Facebook Shop collection cover images, featured product selection, and visual merchandising design — making your Facebook Shop look as compelling as a dedicated ecommerce site.' },
+  { n: '01', title: 'Facebook Page Setup & Optimisation', desc: 'Complete Facebook Business Page setup - category selection, contact details, business description, CTA button, and URL customisation - or full audit and optimisation of your existing page.' },
+  { n: '02', title: 'Facebook Cover Photo Design', desc: 'Custom Facebook cover photo (820×312px) - brand-consistent design that communicates your value proposition, current promotion, or brand story in the prime visual real estate of your page.' },
+  { n: '03', title: 'Facebook Profile Picture Design', desc: 'Optimised profile picture - correctly sized logo or brand image for Facebook\'s circular crop, optimised for recognition at small sizes in comments, ads, and the news feed.' },
+  { n: '04', title: 'Facebook Highlights & Story Covers', desc: 'Branded Facebook Story highlight covers - consistent icon set matching your brand colour palette that makes your page look polished and organised at first glance.' },
+  { n: '05', title: 'Facebook Post Template Design', desc: 'Custom post template suite - branded Canva or Adobe templates for your content team to use, ensuring every post stays on-brand without needing a designer for every piece of content.' },
+  { n: '06', title: 'Facebook Ad Creative Design', desc: 'Custom ad creative templates and one-off ad assets - feed ads, Story ads, and carousel formats - designed to Meta\'s ad specifications and optimised for scroll-stopping visual impact.' },
+  { n: '07', title: 'Facebook Event Cover Design', desc: 'Branded Facebook Event cover images (1920×1005px) for product launches, webinars, sales events, and in-person events - designed to attract attention and communicate event details clearly.' },
+  { n: '08', title: 'Facebook Shop Visual Design', desc: 'Facebook Shop collection cover images, featured product selection, and visual merchandising design - making your Facebook Shop look as compelling as a dedicated ecommerce site.' },
 ];
 
 const SPECS = ['Cover Photo (820×312)', 'Profile Picture (170×170)', 'Post Image (1200×630)', 'Story (1080×1920)', 'Feed Ad (1200×628)', 'Carousel Ad (1080×1080)', 'Event Cover (1920×1005)', 'Group Cover (1640×856)'];
 
 const PROCESS = [
-  { step: '01', title: 'Brand Assets Review', desc: 'Review your existing logo, colour palette, fonts, and brand guidelines — or work from scratch to establish the visual direction if you are launching a new brand.' },
-  { step: '02', title: 'Design Brief', desc: 'Current promotion, key message, and visual preferences — a brief for each asset ensuring the design serves a specific communication purpose.' },
-  { step: '03', title: 'Design Concepts', desc: '2 to 3 initial design concepts for key assets (cover photo, profile picture) — presenting different visual directions before committing to the full suite.' },
-  { step: '04', title: 'Revisions', desc: '1 to 2 revision rounds on approved direction — refining copy, imagery, colour, and layout based on your feedback.' },
-  { step: '05', title: 'Full Suite Delivery', desc: 'All assets delivered in correct Facebook specifications — PNG, JPG, and editable source files — ready to upload immediately.' },
-  { step: '06', title: 'Template Setup', desc: 'Post templates set up in Canva or Figma — ready for your team to create on-brand content independently going forward.' },
+  { step: '01', title: 'Brand Assets Review', desc: 'Review your existing logo, colour palette, fonts, and brand guidelines - or work from scratch to establish the visual direction if you are launching a new brand.' },
+  { step: '02', title: 'Design Brief', desc: 'Current promotion, key message, and visual preferences - a brief for each asset ensuring the design serves a specific communication purpose.' },
+  { step: '03', title: 'Design Concepts', desc: '2 to 3 initial design concepts for key assets (cover photo, profile picture) - presenting different visual directions before committing to the full suite.' },
+  { step: '04', title: 'Revisions', desc: '1 to 2 revision rounds on approved direction - refining copy, imagery, colour, and layout based on your feedback.' },
+  { step: '05', title: 'Full Suite Delivery', desc: 'All assets delivered in correct Facebook specifications - PNG, JPG, and editable source files - ready to upload immediately.' },
+  { step: '06', title: 'Template Setup', desc: 'Post templates set up in Canva or Figma - ready for your team to create on-brand content independently going forward.' },
 ];
 
 const WHY = [
-  { title: 'Platform-Spec Expertise', desc: 'Facebook has specific image dimension requirements and safe zones that change periodically. We design to current Meta specifications — no cropping, no pixelation, no text in restricted areas.' },
-  { title: 'Brand Consistency Focus', desc: 'Your Facebook page is often a prospect\'s first touchpoint. Every visual element — cover, profile, posts, ads — should tell a consistent brand story that builds immediate credibility.' },
-  { title: 'Editable Templates Included', desc: 'We do not just deliver finished assets — we create reusable Canva or Figma templates your team can update independently, so you are never dependent on a designer for every post.' },
-  { title: 'Ad Creative Experience', desc: 'Facebook ad creative follows different rules from organic content — text limits, attention patterns, and scroll-stopping requirements. We bring paid creative expertise to every ad asset we design.' },
-  { title: 'Fast Turnaround', desc: 'Standard Facebook page design package (cover, profile, post templates, 3 ad creatives) delivered within 3 to 5 business days — so you can launch or relaunch your page without delay.' },
-  { title: 'Ongoing Creative Support', desc: 'Beyond the initial page design, we offer monthly creative refresh services — new cover photos for campaigns, seasonal ad creatives, and event banners — keeping your page visually current.' },
+  { title: 'Platform-Spec Expertise', desc: 'Facebook has specific image dimension requirements and safe zones that change periodically. We design to current Meta specifications - no cropping, no pixelation, no text in restricted areas.' },
+  { title: 'Brand Consistency Focus', desc: 'Your Facebook page is often a prospect\'s first touchpoint. Every visual element - cover, profile, posts, ads - should tell a consistent brand story that builds immediate credibility.' },
+  { title: 'Editable Templates Included', desc: 'We do not just deliver finished assets - we create reusable Canva or Figma templates your team can update independently, so you are never dependent on a designer for every post.' },
+  { title: 'Ad Creative Experience', desc: 'Facebook ad creative follows different rules from organic content - text limits, attention patterns, and scroll-stopping requirements. We bring paid creative expertise to every ad asset we design.' },
+  { title: 'Fast Turnaround', desc: 'Standard Facebook page design package (cover, profile, post templates, 3 ad creatives) delivered within 3 to 5 business days - so you can launch or relaunch your page without delay.' },
+  { title: 'Ongoing Creative Support', desc: 'Beyond the initial page design, we offer monthly creative refresh services - new cover photos for campaigns, seasonal ad creatives, and event banners - keeping your page visually current.' },
 ];
 
 const FAQS = [
   { q: 'What size is a Facebook cover photo?', a: 'The Facebook cover photo displays at 820×312 pixels on desktop and 640×360 pixels on mobile. To ensure your cover looks correct on both, design at 820×312px and keep all important visual elements and text in the central safe zone (centred within approximately 640×312px). The profile picture overlaps the bottom-left corner of the cover photo on mobile, so avoid placing critical content in that area. We design Facebook cover photos to the current Meta specifications with all safe zones respected.' },
-  { q: 'What is the best profile picture for a Facebook Business Page?', a: 'For a Facebook Business Page, the profile picture should be your logo or brand icon — not a photo of a person (unless you are a personal brand or sole trader). The profile picture displays as a circle cropped from a 170×170px image. It appears at very small sizes in comments and ads (as small as 32×32px), so the image must be simple and recognisable at tiny sizes. A complex logo with fine detail or small text will not be legible at small sizes. If needed, we create a simplified icon version of your logo specifically for profile picture use.' },
-  { q: 'Do I need custom Facebook post templates?', a: 'Custom Facebook post templates are valuable if you publish regular content and want consistency without needing a designer for every post. Branded templates in Canva or Figma allow your marketing team or social media manager to create on-brand posts independently — maintaining visual consistency without the time or cost of commissioning individual designs. We create template suites covering your core content types: promotional posts, testimonial cards, product spotlights, blog promotions, and event announcements.' },
-  { q: 'Can you design Facebook ad creatives?', a: 'Yes. Facebook ad creative design is a specific skill — different from organic post design. Effective ad creatives need to stop the scroll within 1 to 2 seconds, communicate the offer clearly, include social proof or urgency, and work without sound for video. We design static feed ads (1200×628px), square ads (1080×1080px), Story ads (1080×1920px), and carousel ad frames — all following Meta\'s current text and overlay guidelines. For split testing, we design multiple creative variants per campaign so you can identify the highest-performing format.' },
-  { q: 'How long does Facebook page design take?', a: 'A complete Facebook page design package — cover photo, profile picture optimisation, 3 to 5 post templates, and 2 ad creative variants — typically takes 3 to 5 business days from brief sign-off. Individual assets (a single cover photo or one ad creative) can often be delivered within 24 to 48 hours. Rush delivery is available for time-sensitive campaign launches. Full brand identity development before page design adds time — typically 1 to 2 additional weeks if no brand guidelines exist.' },
-  { q: 'What file formats do you deliver Facebook design assets in?', a: 'Facebook page design assets are delivered in: PNG (web-optimised, transparent background for logos); JPG (compressed for cover photos and post images); and the source/editable file (Figma, Adobe Photoshop .psd, or Canva shareable link) for future editing. All assets are delivered at the correct Facebook specifications — no resizing required. For post templates delivered in Canva, you receive a shared Canva folder with all templates accessible and editable by your team.' },
-  { q: 'Do you optimise the Facebook page copy as well as the design?', a: 'Yes. Our Facebook page design service includes reviewing and optimising your page copy alongside the visual design: Page name and username (Facebook URL customisation); Business description (keyword-optimised, compelling, correct length); Category selection (affects Facebook search discoverability); CTA button selection and destination URL; About section completeness; and Pinned post strategy. A fully optimised Facebook page — great visuals AND complete, search-optimised copy — makes a significantly stronger first impression and ranks better in Facebook search.' },
-  { q: 'Can you refresh an existing Facebook page design?', a: 'Yes. Page design refresh is common — particularly ahead of a rebrand, new campaign, or seasonal promotion. A refresh typically involves: updating the cover photo for the new campaign or season; reviewing and updating page copy for current messaging; creating new ad creative templates for current offers; and reviewing profile picture for any brand updates. A full page refresh can be completed in 2 to 3 business days for established brands with clear visual guidelines.' },
+  { q: 'What is the best profile picture for a Facebook Business Page?', a: 'For a Facebook Business Page, the profile picture should be your logo or brand icon - not a photo of a person (unless you are a personal brand or sole trader). The profile picture displays as a circle cropped from a 170×170px image. It appears at very small sizes in comments and ads (as small as 32×32px), so the image must be simple and recognisable at tiny sizes. A complex logo with fine detail or small text will not be legible at small sizes. If needed, we create a simplified icon version of your logo specifically for profile picture use.' },
+  { q: 'Do I need custom Facebook post templates?', a: 'Custom Facebook post templates are valuable if you publish regular content and want consistency without needing a designer for every post. Branded templates in Canva or Figma allow your marketing team or social media manager to create on-brand posts independently - maintaining visual consistency without the time or cost of commissioning individual designs. We create template suites covering your core content types: promotional posts, testimonial cards, product spotlights, blog promotions, and event announcements.' },
+  { q: 'Can you design Facebook ad creatives?', a: 'Yes. Facebook ad creative design is a specific skill - different from organic post design. Effective ad creatives need to stop the scroll within 1 to 2 seconds, communicate the offer clearly, include social proof or urgency, and work without sound for video. We design static feed ads (1200×628px), square ads (1080×1080px), Story ads (1080×1920px), and carousel ad frames - all following Meta\'s current text and overlay guidelines. For split testing, we design multiple creative variants per campaign so you can identify the highest-performing format.' },
+  { q: 'How long does Facebook page design take?', a: 'A complete Facebook page design package - cover photo, profile picture optimisation, 3 to 5 post templates, and 2 ad creative variants - typically takes 3 to 5 business days from brief sign-off. Individual assets (a single cover photo or one ad creative) can often be delivered within 24 to 48 hours. Rush delivery is available for time-sensitive campaign launches. Full brand identity development before page design adds time - typically 1 to 2 additional weeks if no brand guidelines exist.' },
+  { q: 'What file formats do you deliver Facebook design assets in?', a: 'Facebook page design assets are delivered in: PNG (web-optimised, transparent background for logos); JPG (compressed for cover photos and post images); and the source/editable file (Figma, Adobe Photoshop .psd, or Canva shareable link) for future editing. All assets are delivered at the correct Facebook specifications - no resizing required. For post templates delivered in Canva, you receive a shared Canva folder with all templates accessible and editable by your team.' },
+  { q: 'Do you optimise the Facebook page copy as well as the design?', a: 'Yes. Our Facebook page design service includes reviewing and optimising your page copy alongside the visual design: Page name and username (Facebook URL customisation); Business description (keyword-optimised, compelling, correct length); Category selection (affects Facebook search discoverability); CTA button selection and destination URL; About section completeness; and Pinned post strategy. A fully optimised Facebook page - great visuals AND complete, search-optimised copy - makes a significantly stronger first impression and ranks better in Facebook search.' },
+  { q: 'Can you refresh an existing Facebook page design?', a: 'Yes. Page design refresh is common - particularly ahead of a rebrand, new campaign, or seasonal promotion. A refresh typically involves: updating the cover photo for the new campaign or season; reviewing and updating page copy for current messaging; creating new ad creative templates for current offers; and reviewing profile picture for any brand updates. A full page refresh can be completed in 2 to 3 business days for established brands with clear visual guidelines.' },
 ];
 
 const STATS = [
@@ -65,7 +65,7 @@ export default function FacebookPageDesigning() {
     <>
       <Head>
         <title>Facebook Page Designing Services | 1Solutions</title>
-        <meta name="description" content="Facebook page design services — cover photos, post templates, ad creatives, and full page setup. Professional Facebook page design that builds brand trust" />
+        <meta name="description" content="Facebook page design services - cover photos, post templates, ad creatives, and full page setup. Professional Facebook page design that builds brand trust" />
         <meta name="keywords" content="facebook page designing, facebook page design services, facebook cover photo design, facebook business page design, facebook post template design, facebook ad creative design" />
         <link rel="canonical" href="https://www.1solutions.biz/facebook-page-designing/" />
         <meta property="og:title" content="Facebook Page Designing Services | 1Solutions" />
@@ -147,8 +147,8 @@ export default function FacebookPageDesigning() {
           <div className="fbpd-in">
             <nav className="fbpd-bc"><Link href="/">Home</Link><span>/</span><Link href="/social-media-marketing-services">Social Media</Link><span>/</span><span style={{color:'#0369A1'}}>Facebook Page Design</span></nav>
             <span className="fbpd-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#0369A1',display:'inline-block'}}/> Cover Photo · Templates · Ad Creative</span>
-            <h1 className="fbpd-h1">Facebook Page Designing — Make Your First Impression Count</h1>
-            <p className="fbpd-sub">Professional Facebook Business Page design — cover photos, post templates, ad creatives, and full page setup — ensuring your Facebook presence looks as credible as your business deserves.</p>
+            <h1 className="fbpd-h1">Facebook Page Designing - Make Your First Impression Count</h1>
+            <p className="fbpd-sub">Professional Facebook Business Page design - cover photos, post templates, ad creatives, and full page setup - ensuring your Facebook presence looks as credible as your business deserves.</p>
             <div className="fbpd-btns">
               <Link href="/contact-us" className="fbpd-btn-p">Get a Facebook Page Designed <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/facebook-management-services" className="fbpd-btn-s">Facebook Management</Link>
@@ -158,7 +158,7 @@ export default function FacebookPageDesigning() {
         </section>
         <section className="fbpd-svc"><div className="fbpd-svc-in">
           <span className="fbpd-ey2">What We Design</span><h2 className="fbpd-ttl">Facebook Page Design Services</h2>
-          <p className="fbpd-desc">Every visual element of your Facebook Business Page — designed to Meta specifications, consistent with your brand, and built to make a strong first impression.</p>
+          <p className="fbpd-desc">Every visual element of your Facebook Business Page - designed to Meta specifications, consistent with your brand, and built to make a strong first impression.</p>
           <div className="fbpd-grid" ref={cardsRef}>{SERVICES.map((s,i) => <div key={s.n} className={`fbpd-card${visibleCards.includes(i)?' visible':''}`}><div className="fbpd-num">{s.n}</div><h3>{s.title}</h3><p>{s.desc}</p></div>)}</div>
         </div></section>
         <section className="fbpd-spec"><div className="fbpd-spec-in">
@@ -167,12 +167,12 @@ export default function FacebookPageDesigning() {
         </div></section>
         <section className="fbpd-proc"><div className="fbpd-proc-in">
           <span className="fbpd-ey2">How We Work</span><h2 className="fbpd-ttl">Our Facebook Page Design Process</h2>
-          <p className="fbpd-desc">Brand review to full page delivery in 3 to 5 days — with editable templates included so your team can keep content fresh independently.</p>
+          <p className="fbpd-desc">Brand review to full page delivery in 3 to 5 days - with editable templates included so your team can keep content fresh independently.</p>
           <div className="fbpd-steps">{PROCESS.map((p,i) => <div key={p.step} ref={el=>{stepRefs.current[i]=el}} className={`fbpd-step${visibleSteps.includes(i)?' visible':''}`}><div className="fbpd-snum">{p.step}</div><div><h3>{p.title}</h3><p>{p.desc}</p></div></div>)}</div>
         </div></section>
         <section className="fbpd-why"><div className="fbpd-why-in">
           <span className="fbpd-ey2">Why 1Solutions</span><h2 className="fbpd-ttl">Spec-Accurate, Brand-Consistent Facebook Design</h2>
-          <p className="fbpd-desc">We design to current Meta specifications, build reusable templates, and optimise both visuals and copy — so your Facebook page works as hard as the rest of your marketing.</p>
+          <p className="fbpd-desc">We design to current Meta specifications, build reusable templates, and optimise both visuals and copy - so your Facebook page works as hard as the rest of your marketing.</p>
           <div className="fbpd-why-grid" ref={whyRef}>{WHY.map((w,i) => <div key={w.title} className={`fbpd-wcard${visibleWhy.includes(i)?' visible':''}`}><div className="fbpd-dot"/><h3>{w.title}</h3><p>{w.desc}</p></div>)}</div>
         </div></section>
         <section className="fbpd-faq"><div className="fbpd-faq-in">
@@ -184,7 +184,7 @@ export default function FacebookPageDesigning() {
           <div className="fbpd-cta-in">
             <span className="fbpd-ey2" style={{textAlign:'center',display:'block',marginBottom:16}}>Ready to Make Your Facebook Page Look Its Best?</span>
             <h2 className="fbpd-cta-t">Get Your Facebook Page Professionally Designed</h2>
-            <p className="fbpd-cta-s">Share your brand assets and goals — we&rsquo;ll deliver a complete Facebook page design package within 3 to 5 business days.</p>
+            <p className="fbpd-cta-s">Share your brand assets and goals - we&rsquo;ll deliver a complete Facebook page design package within 3 to 5 business days.</p>
             <div className="fbpd-cta-btns">
               <Link href="/contact-us" className="fbpd-btn-p">Get a Facebook Page Design Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/facebook-management-services" className="fbpd-btn-s">Facebook Management Services</Link>

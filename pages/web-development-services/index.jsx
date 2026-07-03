@@ -28,31 +28,31 @@ const SKILLS = [
   'SEO-Ready Development', 'Third-Party API Integration', 'Website Speed Optimisation',
 ];
 const MODELS = [
-  { title: 'Custom Website Build',        desc: 'A bespoke website designed and built to your brand, audience, and conversion goals — from a 5-page business site to a 500-page enterprise portal.', icon: '🌐' },
-  { title: 'Web Application Development', desc: 'Complex web applications with user authentication, dashboards, admin panels, APIs, and third-party integrations — built for scale and maintainability.', icon: '⚙️' },
-  { title: 'Website Redesign',            desc: 'We redesign your existing website — improving performance, mobile experience, and conversion rate while preserving your SEO footprint.', icon: '🔄' },
+  { title: 'Custom Website Build',        desc: 'A bespoke website designed and built to your brand, audience, and conversion goals - from a 5-page business site to a 500-page enterprise portal.', icon: '🌐' },
+  { title: 'Web Application Development', desc: 'Complex web applications with user authentication, dashboards, admin panels, APIs, and third-party integrations - built for scale and maintainability.', icon: '⚙️' },
+  { title: 'Website Redesign',            desc: 'We redesign your existing website - improving performance, mobile experience, and conversion rate while preserving your SEO footprint.', icon: '🔄' },
 ];
 const WHY = [
-  { h: 'Full-Stack Capability',         b: 'Frontend (React, Next.js), backend (Node.js, Laravel), databases (PostgreSQL, MongoDB), and infrastructure (AWS, Docker) — one team, end-to-end delivery.' },
-  { h: 'SEO Built Into Every Build',    b: 'Correct heading structure, schema markup, sitemap, robots.txt, Core Web Vitals, and canonical tags are standard — not an afterthought or expensive add-on.' },
-  { h: 'Performance-First Development', b: 'Sub-2s load times, optimised images, lazy loading, code splitting, and green Lighthouse scores — because slow websites lose customers.' },
+  { h: 'Full-Stack Capability',         b: 'Frontend (React, Next.js), backend (Node.js, Laravel), databases (PostgreSQL, MongoDB), and infrastructure (AWS, Docker) - one team, end-to-end delivery.' },
+  { h: 'SEO Built Into Every Build',    b: 'Correct heading structure, schema markup, sitemap, robots.txt, Core Web Vitals, and canonical tags are standard - not an afterthought or expensive add-on.' },
+  { h: 'Performance-First Development', b: 'Sub-2s load times, optimised images, lazy loading, code splitting, and green Lighthouse scores - because slow websites lose customers.' },
   { h: '15+ Years of Proven Delivery',  b: 'Since 2008, we\'ve delivered 1,200+ web projects. We know what breaks at scale, what converts at every industry, and how to de-risk complex builds.' },
   { h: 'On-Time, Fixed-Price Delivery', b: 'Detailed scope, agreed timeline, and fixed price before development starts. No moving goalposts, no surprise invoices.' },
-  { h: 'Post-Launch Support',           b: 'Maintenance plans, performance monitoring, security updates, and a dedicated point of contact after go-live — not a support ticket queue.' },
+  { h: 'Post-Launch Support',           b: 'Maintenance plans, performance monitoring, security updates, and a dedicated point of contact after go-live - not a support ticket queue.' },
 ];
 const PROCESS = [
-  { n: '01', h: 'Discovery & Scoping',       b: 'We audit your existing site, research your competitors, and define the full project scope — pages, features, integrations, and success metrics — before any design work begins.' },
+  { n: '01', h: 'Discovery & Scoping',       b: 'We audit your existing site, research your competitors, and define the full project scope - pages, features, integrations, and success metrics - before any design work begins.' },
   { n: '02', h: 'Design & Prototype',        b: 'Wireframes and high-fidelity mockups reviewed and approved by you before development. Mobile-first, brand-aligned, and conversion-optimised.' },
   { n: '03', h: 'Development & Integration', b: 'Agile sprints with weekly demos. All third-party integrations (CRM, payment gateways, APIs) built and tested in staging before go-live.' },
-  { n: '04', h: 'Launch & Handover',         b: 'QA across devices and browsers, performance audit, SEO checklist, Google Search Console submission, and full training on your CMS — then ongoing support.' },
+  { n: '04', h: 'Launch & Handover',         b: 'QA across devices and browsers, performance audit, SEO checklist, Google Search Console submission, and full training on your CMS - then ongoing support.' },
 ];
 const FAQS = [
   { q: 'Which technologies do you use for web development?', a: 'We choose the right technology for each project. WordPress for content-heavy sites, Next.js and React for dynamic web applications, Shopify for e-commerce, Node.js and Laravel for complex backends, and headless CMS architectures for enterprise content platforms. We do not force a single tech stack on every project.' },
-  { q: 'How much does a custom website cost?', a: 'A standard business website starts from $2,000. E-commerce stores start from $3,000. Complex web applications with custom functionality start from $8,000. We provide a detailed fixed-price quote after a free discovery call — no hourly billing surprises.' },
+  { q: 'How much does a custom website cost?', a: 'A standard business website starts from $2,000. E-commerce stores start from $3,000. Complex web applications with custom functionality start from $8,000. We provide a detailed fixed-price quote after a free discovery call - no hourly billing surprises.' },
   { q: 'How long does web development take?', a: 'A standard website: 4–6 weeks. An e-commerce store: 4–8 weeks. A complex web application: 3–6 months. We share a detailed project timeline in the proposal stage and update it weekly throughout development.' },
-  { q: 'Will my website be mobile-friendly?', a: 'Yes — mobile-first is our default. Every website we build is tested across iPhone, Android, tablet, and desktop viewports. We target 90+ Google PageSpeed scores on mobile.' },
+  { q: 'Will my website be mobile-friendly?', a: 'Yes - mobile-first is our default. Every website we build is tested across iPhone, Android, tablet, and desktop viewports. We target 90+ Google PageSpeed scores on mobile.' },
   { q: 'Can you work with our existing design team?', a: 'Yes. We can develop from Figma, Sketch, or Adobe XD designs provided by your team, or we can handle design in-house. We integrate with your existing tools and workflows.' },
-  { q: 'Do you offer website maintenance after launch?', a: 'Yes. Our maintenance plans cover security updates, CMS/plugin updates, uptime monitoring, performance checks, and a set number of content update hours per month — from $99/month.' },
+  { q: 'Do you offer website maintenance after launch?', a: 'Yes. Our maintenance plans cover security updates, CMS/plugin updates, uptime monitoring, performance checks, and a set number of content update hours per month - from $99/month.' },
 ];
 
 export default function WebDevelopmentServices() {
@@ -84,7 +84,7 @@ export default function WebDevelopmentServices() {
         { '@type': 'ListItem', position: 2, name: 'Web Development Services', item: 'https://www.1solutions.biz/web-development-services/' },
       ]},
       { '@type': 'Service', name: 'Web Development Services', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Custom web development services from 1Solutions — websites, web applications, e-commerce stores, and SaaS platforms. 1,200+ projects delivered.',
+        description: 'Custom web development services from 1Solutions - websites, web applications, e-commerce stores, and SaaS platforms. 1,200+ projects delivered.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '203', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -158,21 +158,21 @@ export default function WebDevelopmentServices() {
       <section className="wds-sec" ref={skR}>
         <div className="wds-wrap">
           <h2 className="wds-sec-title">Technologies &amp; Capabilities</h2>
-          <p className="wds-sec-sub">We work across the full web technology stack — choosing the right tool for your project, not the one we happen to know.</p>
+          <p className="wds-sec-sub">We work across the full web technology stack - choosing the right tool for your project, not the one we happen to know.</p>
           <div className="wds-skills">{SKILLS.map((s, i) => <span key={s} className={`wds-skill${skV ? ' wds-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>)}</div>
         </div>
       </section>
       <section className="wds-sec wds-sec-alt" ref={enR}>
         <div className="wds-wrap">
           <h2 className="wds-sec-title">Engagement Options</h2>
-          <p className="wds-sec-sub">Whether you need a new site, a web app, or a redesign — we have the right model for you.</p>
+          <p className="wds-sec-sub">Whether you need a new site, a web app, or a redesign - we have the right model for you.</p>
           <div className="wds-models">{MODELS.map((m, i) => <div key={m.title} className={`wds-model${enV ? ' wds-in' : ''}`} style={{ transitionDelay: `${i * 120}ms` }}><div className="wds-model-icon">{m.icon}</div><h3>{m.title}</h3><p>{m.desc}</p></div>)}</div>
         </div>
       </section>
       <section className="wds-sec" ref={whR}>
         <div className="wds-wrap">
           <h2 className="wds-sec-title">Why Choose 1Solutions for Web Development?</h2>
-          <p className="wds-sec-sub">1,200+ projects delivered since 2008 — we know what it takes to build websites that perform.</p>
+          <p className="wds-sec-sub">1,200+ projects delivered since 2008 - we know what it takes to build websites that perform.</p>
           <div className="wds-why-grid">{WHY.map((w, i) => <div key={w.h} className={`wds-why-item${whV ? ' wds-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
         </div>
       </section>
@@ -201,7 +201,7 @@ export default function WebDevelopmentServices() {
       <section className="wds-cta">
         <div className="wds-wrap">
           <h2>Ready to Build Your Website or Web Application?</h2>
-          <p>Tell us about your project and we'll deliver a detailed proposal with timeline and fixed price within 48 hours — no commitment required.</p>
+          <p>Tell us about your project and we'll deliver a detailed proposal with timeline and fixed price within 48 hours - no commitment required.</p>
           <Link href="/contact-us" className="wds-btn-primary">Get a Free Web Development Quote →</Link>
         </div>
       </section>

@@ -46,11 +46,11 @@ export default async function handler(req, res) {
     ['Experience', experience],
     ['Notice Period', noticePeriod],
     ['Location', location],
-    ['Current CTC', currentSalary || '—'],
-    ['Expected CTC', expectedSalary || '—'],
-    ['LinkedIn', linkedin ? `<a href="${linkedin}" style="color:#114171">${linkedin}</a>` : '—'],
-    ['Resume / Portfolio', resumeUrl ? `<a href="${resumeUrl}" style="color:#114171;font-weight:700">View Resume →</a>` : '—'],
-    ['How They Found Us', source || '—'],
+    ['Current CTC', currentSalary || '-'],
+    ['Expected CTC', expectedSalary || '-'],
+    ['LinkedIn', linkedin ? `<a href="${linkedin}" style="color:#114171">${linkedin}</a>` : '-'],
+    ['Resume / Portfolio', resumeUrl ? `<a href="${resumeUrl}" style="color:#114171;font-weight:700">View Resume →</a>` : '-'],
+    ['How They Found Us', source || '-'],
   ];
 
   const htmlBody = `
@@ -95,7 +95,7 @@ export default async function handler(req, res) {
       from: `"1Solutions Careers" <contact@1solutions.biz>`,
       to: ['atul@1solutions.biz', 'info@1solutions.biz'],
       replyTo: email,
-      subject: `Job Application: ${name} — ${position}`,
+      subject: `Job Application: ${name} - ${position}`,
       html: htmlBody,
     });
   } catch (err) {

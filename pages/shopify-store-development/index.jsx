@@ -4,41 +4,41 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const SERVICES = [
-  { n:'01', title:'Custom Shopify Store Development', desc:'Fully bespoke Shopify stores built from the ground up — tailored to your brand, products, and conversion goals.', featured:false },
+  { n:'01', title:'Custom Shopify Store Development', desc:'Fully bespoke Shopify stores built from the ground up - tailored to your brand, products, and conversion goals.', featured:false },
   { n:'02', title:'Shopify Theme Development', desc:'Pixel-perfect, high-performance Shopify themes crafted to reflect your brand and deliver an outstanding shopping experience.', featured:true },
   { n:'03', title:'Shopify App Development', desc:'Custom Shopify apps and private integrations built to extend your store\'s functionality beyond what off-the-shelf apps offer.', featured:false },
   { n:'04', title:'Shopify Plus Development', desc:'Enterprise-grade Shopify Plus solutions with advanced automation, B2B portals, checkout customisations, and multi-store setups.', featured:false },
   { n:'05', title:'WooCommerce to Shopify Migration', desc:'Seamless migration from WooCommerce, Magento, BigCommerce, or any platform to Shopify with zero data loss and full SEO preservation.', featured:false },
   { n:'06', title:'Shopify SEO Optimization', desc:'Technical SEO, structured data, Core Web Vitals, and content optimisation to rank your Shopify store higher and drive organic traffic.', featured:false },
-  { n:'07', title:'Shopify Speed Optimization', desc:'Audit and optimise your store\'s performance — faster load times, higher PageSpeed scores, and lower bounce rates.', featured:false },
+  { n:'07', title:'Shopify Speed Optimization', desc:'Audit and optimise your store\'s performance - faster load times, higher PageSpeed scores, and lower bounce rates.', featured:false },
   { n:'08', title:'Payment Gateway Integration', desc:'Integrate Stripe, PayPal, Afterpay, Klarna, Razorpay, and 100+ payment gateways for seamless global checkout.', featured:false },
   { n:'09', title:'Shopify Dropshipping Setup', desc:'End-to-end dropshipping store setup including supplier integrations, product importing, pricing rules, and automated order fulfilment.', featured:false },
   { n:'10', title:'Third-Party API Integration', desc:'Connect your Shopify store with ERPs, CRMs, inventory management systems, shipping providers, and marketing platforms.', featured:false },
   { n:'11', title:'Shopify Maintenance & Support', desc:'Ongoing maintenance, updates, performance monitoring, bug fixes, and dedicated support so your store never misses a sale.', featured:false },
-  { n:'12', title:'Conversion Rate Optimization', desc:'Data-driven CRO — A/B testing, UX improvements, cart abandonment recovery, and checkout optimisation to maximise revenue.', featured:false },
+  { n:'12', title:'Conversion Rate Optimization', desc:'Data-driven CRO - A/B testing, UX improvements, cart abandonment recovery, and checkout optimisation to maximise revenue.', featured:false },
 ];
 
 const FAQS = [
-  { q:'How much does custom Shopify store development cost?', a:'A custom Shopify store typically starts from $2,500 for a basic branded store and ranges up to $20,000+ for complex Shopify Plus builds with custom apps, multi-currency, multi-language support, and ERP integrations. The cost depends on design complexity, number of products, required functionality, and third-party integrations. We provide a detailed fixed-price quote after a free discovery call — no hidden costs, no surprises.' },
+  { q:'How much does custom Shopify store development cost?', a:'A custom Shopify store typically starts from $2,500 for a basic branded store and ranges up to $20,000+ for complex Shopify Plus builds with custom apps, multi-currency, multi-language support, and ERP integrations. The cost depends on design complexity, number of products, required functionality, and third-party integrations. We provide a detailed fixed-price quote after a free discovery call - no hidden costs, no surprises.' },
   { q:'How long does it take to build a Shopify store?', a:'A standard Shopify store with a custom theme typically takes 3–6 weeks from project kick-off to launch. Complex Shopify Plus builds or stores requiring custom app development can take 8–16 weeks. We share a detailed project timeline in the proposal stage, provide weekly progress updates, and use our structured 4D process to ensure on-time delivery.' },
   { q:'Can you migrate my WooCommerce or Magento store to Shopify?', a:'Absolutely. We migrate stores from WooCommerce, Magento, BigCommerce, PrestaShop, OpenCart, and custom-built platforms to Shopify. Our migration process preserves all products, customer records, order history, URLs, and SEO rankings. We test thoroughly on a staging environment before going live to ensure zero data loss and minimal downtime.' },
   { q:'Do you offer Shopify Plus development?', a:'Yes. We have extensive experience building Shopify Plus stores including custom checkout experiences (via Checkout Extensibility), B2B wholesale portals, Shopify Flow automation, Launchpad campaign scheduling, multi-currency and multi-language setups, and headless Shopify architectures using Hydrogen or Next.js.' },
   { q:'What is included in your Shopify maintenance plans?', a:'Our Shopify maintenance plans include theme and app updates, performance monitoring, security reviews, uptime monitoring, bug fixes, and a set number of content/product update hours per month. Plans start from $99/month. We also offer dedicated retainers for businesses needing ongoing development work or CRO improvements.' },
-  { q:'Can you build custom Shopify apps?', a:'Yes. We build custom public apps, private apps, and embedded apps using Shopify\'s App Bridge, GraphQL Admin API, and Storefront API. Whether you need a custom loyalty programme, a bespoke product configurator, a B2B pricing engine, or an ERP sync — we can build it.' },
-  { q:'Will my Shopify store be optimised for search engines?', a:'Yes — SEO is built into our development process from day one. Every store we deliver includes proper heading structure, schema markup (Product, BreadcrumbList, Organisation), Open Graph tags, sitemap, robots.txt, canonical tags, and Core Web Vitals optimisation. We also offer ongoing Shopify SEO services covering content strategy, link building, and technical audits.' },
-  { q:'What makes 1Solutions different from other Shopify agencies?', a:'Three things: accountability, depth, and focus on western markets. Unlike freelancers, we offer a dedicated team — designers, developers, and a project manager — so your project never stalls. Unlike large agencies, engagements stay personal with a single point of contact. And unlike generic offshore firms, we\'ve spent 16+ years building for US, Canadian, and Australian businesses — we understand your market, compliance needs, and customer expectations.' },
-  { q:'Do you work with international clients remotely?', a:'Yes — 100% of our client work is delivered remotely. We have been working with clients across the US, Canada, Australia, and the UK since 2008. We schedule meetings in your time zone, use tools like Slack, Notion, and Loom for transparent communication, and maintain full project visibility throughout.' },
+  { q:'Can you build custom Shopify apps?', a:'Yes. We build custom public apps, private apps, and embedded apps using Shopify\'s App Bridge, GraphQL Admin API, and Storefront API. Whether you need a custom loyalty programme, a bespoke product configurator, a B2B pricing engine, or an ERP sync - we can build it.' },
+  { q:'Will my Shopify store be optimised for search engines?', a:'Yes - SEO is built into our development process from day one. Every store we deliver includes proper heading structure, schema markup (Product, BreadcrumbList, Organisation), Open Graph tags, sitemap, robots.txt, canonical tags, and Core Web Vitals optimisation. We also offer ongoing Shopify SEO services covering content strategy, link building, and technical audits.' },
+  { q:'What makes 1Solutions different from other Shopify agencies?', a:'Three things: accountability, depth, and focus on western markets. Unlike freelancers, we offer a dedicated team - designers, developers, and a project manager - so your project never stalls. Unlike large agencies, engagements stay personal with a single point of contact. And unlike generic offshore firms, we\'ve spent 16+ years building for US, Canadian, and Australian businesses - we understand your market, compliance needs, and customer expectations.' },
+  { q:'Do you work with international clients remotely?', a:'Yes - 100% of our client work is delivered remotely. We have been working with clients across the US, Canada, Australia, and the UK since 2008. We schedule meetings in your time zone, use tools like Slack, Notion, and Loom for transparent communication, and maintain full project visibility throughout.' },
 ];
 
 const WHY = [
   { icon:<svg viewBox="0 0 24 24"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V17H7v2h10v-2h-4v-1.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>, title:'15+ Years of Proven Experience', desc:'Since 2008, we\'ve delivered 500+ e-commerce projects. Our depth means fewer surprises, faster delivery, and better outcomes for your store.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>, title:'US, Canada & Australia Focused', desc:'We understand the market nuances, compliance needs, and consumer expectations of English-speaking western markets — not just generic offshore delivery.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>, title:'US, Canada & Australia Focused', desc:'We understand the market nuances, compliance needs, and consumer expectations of English-speaking western markets - not just generic offshore delivery.' },
   { icon:<svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>, title:'On-Time, On-Budget Delivery', desc:'Our structured 4D process (Discover → Define → Develop → Deploy) ensures projects are scoped correctly and delivered without cost overruns.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>, title:'Conversion-Focused Development', desc:'Every design and development decision is made with conversion in mind — from product page layout to checkout flow optimisation.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>, title:'Custom App & Integration Expertise', desc:'Beyond themes — we build custom Shopify apps, ERP integrations, and bespoke automation that off-the-shelf solutions cannot deliver.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>, title:'Conversion-Focused Development', desc:'Every design and development decision is made with conversion in mind - from product page layout to checkout flow optimisation.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>, title:'Custom App & Integration Expertise', desc:'Beyond themes - we build custom Shopify apps, ERP integrations, and bespoke automation that off-the-shelf solutions cannot deliver.' },
   { icon:<svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>, title:'Dedicated Point of Contact', desc:'No ticket queues. A dedicated project manager speaks your language, understands your goals, and keeps you informed throughout.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg>, title:'SEO Built Into Every Build', desc:'Schema markup, Core Web Vitals, and on-page SEO are baked in from day one — not as an afterthought or an expensive add-on.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>, title:'Long-Term Partnership', desc:'97% client retention rate. We don\'t disappear after launch — maintenance plans, support retainers, and growth partnerships keep us invested in your success.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg>, title:'SEO Built Into Every Build', desc:'Schema markup, Core Web Vitals, and on-page SEO are baked in from day one - not as an afterthought or an expensive add-on.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>, title:'Long-Term Partnership', desc:'97% client retention rate. We don\'t disappear after launch - maintenance plans, support retainers, and growth partnerships keep us invested in your success.' },
 ];
 
 function useCountUp(target, duration = 1800, start = false) {
@@ -569,8 +569,8 @@ export default function ShopifyStoreDevelopment() {
         <div className="shopify-hero-block">
           <div className="shopify-hero-content">
             <span className="shopify-eyebrow">Expert Shopify Store Development Company</span>
-            <h1>Shopify Store Development Services — Launch, Grow & Scale Your Online Store</h1>
-            <p>Build high-converting, lightning-fast Shopify stores with 1Solutions' expert Shopify development services. From custom themes to Shopify Plus and bespoke app development — we deliver stores that drive real revenue for businesses across the US, Canada, and Australia.</p>
+            <h1>Shopify Store Development Services - Launch, Grow & Scale Your Online Store</h1>
+            <p>Build high-converting, lightning-fast Shopify stores with 1Solutions' expert Shopify development services. From custom themes to Shopify Plus and bespoke app development - we deliver stores that drive real revenue for businesses across the US, Canada, and Australia.</p>
             <Link href="#contact" className="shopify-btn-hero shopify-btn-hero-shimmer">Get a Free Shopify Consultation</Link>
           </div>
 
@@ -625,7 +625,7 @@ export default function ShopifyStoreDevelopment() {
             <div className={`shopify-section-reveal${visibleSections.has('services') ? ' shopify-revealed' : ''}`} ref={el => { sectionRefs.current['services'] = el; }}>
               <span className="shopify-section-eyebrow">Our Services</span>
               <h2 className="shopify-section-title">Shopify Development Services We Offer</h2>
-              <p className="shopify-section-desc">From brand-new Shopify stores to complex Shopify Plus migrations and custom app development — our certified experts deliver end-to-end solutions built for performance, scalability, and conversions.</p>
+              <p className="shopify-section-desc">From brand-new Shopify stores to complex Shopify Plus migrations and custom app development - our certified experts deliver end-to-end solutions built for performance, scalability, and conversions.</p>
             </div>
             <div className="shopify-services-grid">
               {visibleServices.map(s => (
@@ -653,8 +653,8 @@ export default function ShopifyStoreDevelopment() {
             </div>
             <div className="shopify-portfolio-grid">
               {[
-                { img:'/images/portfolio/aiplusstore.jpg', name:'AI+ Store — Shopify eCommerce', tech:'Consumer Electronics / Shopify, Liquid, UI/UX Design', cats:'eCommerce / Smartphones / Product Catalogue / DTC', url:'https://aiplusstore.com/' },
-                { img:'/images/portfolio/keiyura.jpg', name:'Keiyura — Artisanal Jewellery', tech:'Fashion & Jewellery / Shopify, Liquid, UI/UX Design', cats:'eCommerce / Handcrafted / Lookbook / Collections', url:'https://keiyura.com/' },
+                { img:'/images/portfolio/aiplusstore.jpg', name:'AI+ Store - Shopify eCommerce', tech:'Consumer Electronics / Shopify, Liquid, UI/UX Design', cats:'eCommerce / Smartphones / Product Catalogue / DTC', url:'https://aiplusstore.com/' },
+                { img:'/images/portfolio/keiyura.jpg', name:'Keiyura - Artisanal Jewellery', tech:'Fashion & Jewellery / Shopify, Liquid, UI/UX Design', cats:'eCommerce / Handcrafted / Lookbook / Collections', url:'https://keiyura.com/' },
                 { img:'/images/portfolio/305aerosupplies.jpg', name:'305 Aero Supplies', tech:'Electronics & IT / Shopify, Liquid, eCommerce', cats:'eCommerce / Hardware / Software / IT Solutions', url:'https://305aerosupplies.com/' },
               ].map(p => (
                 <a className="shopify-pcard" key={p.name} href={p.url} target="_blank" rel="noopener noreferrer" style={{textDecoration:'none',color:'inherit'}}>
@@ -686,10 +686,10 @@ export default function ShopifyStoreDevelopment() {
           <div className="shopify-process-inner">
             <div className="shopify-process-steps">
               {[
-                ['Discover','We start by understanding your business model, target audience, product catalogue, and growth goals — identifying the right Shopify plan, apps, and integrations to power your store.'],
-                ['Define','We collaborate with your team to define the store architecture, design direction, feature set, and integration requirements — aligning every decision with your brand and revenue objectives.'],
-                ['Develop','Our certified Shopify developers build your custom theme, configure apps, integrate payment gateways and fulfilment systems, and optimise for speed and SEO — with regular progress updates throughout.'],
-                ['Deploy','We run thorough QA testing, performance audits, and a staged launch — then hand over training, documentation, and ongoing support to keep your store growing after go-live.'],
+                ['Discover','We start by understanding your business model, target audience, product catalogue, and growth goals - identifying the right Shopify plan, apps, and integrations to power your store.'],
+                ['Define','We collaborate with your team to define the store architecture, design direction, feature set, and integration requirements - aligning every decision with your brand and revenue objectives.'],
+                ['Develop','Our certified Shopify developers build your custom theme, configure apps, integrate payment gateways and fulfilment systems, and optimise for speed and SEO - with regular progress updates throughout.'],
+                ['Deploy','We run thorough QA testing, performance audits, and a staged launch - then hand over training, documentation, and ongoing support to keep your store growing after go-live.'],
               ].map(([title, desc], i) => (
                 <div
                   className={`shopify-pstep${visibleSteps.includes(i) ? ' visible' : ''}`}
@@ -726,9 +726,9 @@ export default function ShopifyStoreDevelopment() {
             </div>
             <div className="shopify-testi-grid" ref={testiGridRef}>
               {[
-                { initials:'AM', bg:'#114171', text:'"1Solutions built our entire Shopify store from scratch — custom theme, Recharge subscriptions, and Klaviyo integration. Revenue was up 55% within the first quarter. Exceptional work."', name:'Amanda Morrison', role:'Founder, GreenLeaf Organics — USA', featured:false },
-                { initials:'TR', bg:'#0F3460', text:'"We migrated from WooCommerce to Shopify Plus with zero downtime and no SEO loss. The team handled everything — product data, redirects, custom checkout — flawlessly. Highly recommend."', name:'Tom Reynolds', role:'Head of Digital, RetailEdge — Australia', featured:true },
-                { initials:'CL', bg:'#1D4ED8', text:'"The custom Shopify app they built for our B2B portal saved us 20+ hours a week in manual order processing. Brilliant developers, clear communication, delivered ahead of schedule."', name:'Christine Lee', role:'COO, TechSupply Co. — Canada', featured:false },
+                { initials:'AM', bg:'#114171', text:'"1Solutions built our entire Shopify store from scratch - custom theme, Recharge subscriptions, and Klaviyo integration. Revenue was up 55% within the first quarter. Exceptional work."', name:'Amanda Morrison', role:'Founder, GreenLeaf Organics - USA', featured:false },
+                { initials:'TR', bg:'#0F3460', text:'"We migrated from WooCommerce to Shopify Plus with zero downtime and no SEO loss. The team handled everything - product data, redirects, custom checkout - flawlessly. Highly recommend."', name:'Tom Reynolds', role:'Head of Digital, RetailEdge - Australia', featured:true },
+                { initials:'CL', bg:'#1D4ED8', text:'"The custom Shopify app they built for our B2B portal saved us 20+ hours a week in manual order processing. Brilliant developers, clear communication, delivered ahead of schedule."', name:'Christine Lee', role:'COO, TechSupply Co. - Canada', featured:false },
               ].map((t,i) => (
                 <div className={`shopify-tcard${t.featured?' featured':''}${visibleTestiCards.includes(i)?' shopify-tcard-visible':''}`} key={t.name}>
                   <div className="shopify-tcard-stars">★★★★★</div>
@@ -763,7 +763,7 @@ export default function ShopifyStoreDevelopment() {
             <div className={`shopify-section-reveal${visibleSections.has('why') ? ' shopify-revealed' : ''}`} ref={el => { sectionRefs.current['why'] = el; }} style={{ textAlign:'center',marginBottom:0 }}>
               <span className="shopify-section-eyebrow">Why 1Solutions</span>
               <h2 className="shopify-section-title">Why Brands Choose Us for Shopify Development</h2>
-              <p className="shopify-section-sub" style={{ maxWidth:680,margin:'0 auto' }}>We don't just build Shopify stores — we build revenue-generating assets. Here's what sets us apart from freelancers and generic Shopify agencies.</p>
+              <p className="shopify-section-sub" style={{ maxWidth:680,margin:'0 auto' }}>We don't just build Shopify stores - we build revenue-generating assets. Here's what sets us apart from freelancers and generic Shopify agencies.</p>
             </div>
             <div className="shopify-why-grid" ref={whyGridRef}>
               {WHY.map((w, i) => (
@@ -786,7 +786,7 @@ export default function ShopifyStoreDevelopment() {
               <div className={`shopify-section-reveal${visibleSections.has('engage') ? ' shopify-revealed' : ''}`} ref={el => { sectionRefs.current['engage'] = el; }}>
                 <span className="shopify-section-eyebrow">Engagement Models</span>
                 <h2 className="shopify-engage-title">Flexible Engagement Models Built Around You</h2>
-                <p className="shopify-engage-desc">We offer flexible engagement models so you can choose the approach that best fits your Shopify project, timeline, and budget — with full transparency at every step.</p>
+                <p className="shopify-engage-desc">We offer flexible engagement models so you can choose the approach that best fits your Shopify project, timeline, and budget - with full transparency at every step.</p>
               </div>
               <div className="shopify-engage-img-wrap">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -797,7 +797,7 @@ export default function ShopifyStoreDevelopment() {
               {[
                 { title:'Dedicated Team', desc:'Hire a full-time dedicated Shopify development team for long-term projects. We deploy a project manager and certified developers who work exclusively on your store.', features:['Cost-effective Approach','Less Administrative Overhead','Quick-paced Development','Timely Reporting'],
                   icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> },
-                { title:'Fixed-Price Project', desc:'Ideal for well-defined Shopify builds with a clear scope. We agree on deliverables, timeline, and cost upfront — no surprises, no hidden fees.', features:['Complete Budget Control','Ease of Management','No Hidden Costs','On-time Delivery'],
+                { title:'Fixed-Price Project', desc:'Ideal for well-defined Shopify builds with a clear scope. We agree on deliverables, timeline, and cost upfront - no surprises, no hidden fees.', features:['Complete Budget Control','Ease of Management','No Hidden Costs','On-time Delivery'],
                   icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> },
                 { title:'Time & Material', desc:'Perfect for evolving Shopify projects where requirements change. Pay only for the hours worked with full visibility into progress and spend.', features:['Maximum Flexibility','Reduced Risk','Iterative Development','Transparent Billing'],
                   icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> },
@@ -831,7 +831,7 @@ export default function ShopifyStoreDevelopment() {
                 <div>
                   {[
                     { icon:<svg className="shopify-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>, text:'Your project details are confidential. We respect your privacy.' },
-                    { icon:<svg className="shopify-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>, text:'A certified Shopify expert reviews your requirements — not automated responses.' },
+                    { icon:<svg className="shopify-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>, text:'A certified Shopify expert reviews your requirements - not automated responses.' },
                     { icon:<svg className="shopify-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>, text:'Quick response within 24 business hours.' },
                     { icon:<svg className="shopify-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>, text:"No obligation to proceed. Let's just talk." },
                   ].map((b,i) => (

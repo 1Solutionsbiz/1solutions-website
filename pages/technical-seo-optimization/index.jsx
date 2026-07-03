@@ -3,12 +3,12 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const SERVICES = [
-  { n: '01', title: 'Technical SEO Audit', desc: 'Comprehensive 150-point technical audit — crawlability, indexation, site architecture, canonical tags, hreflang, Core Web Vitals, JavaScript rendering, and security signals.' },
+  { n: '01', title: 'Technical SEO Audit', desc: 'Comprehensive 150-point technical audit - crawlability, indexation, site architecture, canonical tags, hreflang, Core Web Vitals, JavaScript rendering, and security signals.' },
   { n: '02', title: 'Crawl Budget Optimisation', desc: 'Analyse Google\'s crawl patterns through log file analysis, identify crawl waste from parameters, faceted navigation, and thin pages, and redirect Googlebot to your highest-value URLs.' },
-  { n: '03', title: 'Core Web Vitals (LCP, CLS, INP)', desc: 'Fix Largest Contentful Paint, Cumulative Layout Shift, and Interaction to Next Paint — with developer-ready specifications for your specific tech stack and hosting environment.' },
-  { n: '04', title: 'JavaScript SEO', desc: 'Rendering audits for React, Vue, Angular, Next.js, and Nuxt — fixing pre-rendering gaps, dynamic rendering issues, and JavaScript-dependent content that Googlebot cannot index.' },
+  { n: '03', title: 'Core Web Vitals (LCP, CLS, INP)', desc: 'Fix Largest Contentful Paint, Cumulative Layout Shift, and Interaction to Next Paint - with developer-ready specifications for your specific tech stack and hosting environment.' },
+  { n: '04', title: 'JavaScript SEO', desc: 'Rendering audits for React, Vue, Angular, Next.js, and Nuxt - fixing pre-rendering gaps, dynamic rendering issues, and JavaScript-dependent content that Googlebot cannot index.' },
   { n: '05', title: 'Site Architecture & Internal Linking', desc: 'Flat information architecture design, internal link equity distribution, orphan page identification, and crawl depth analysis to ensure every important page is reachable within 3 clicks.' },
-  { n: '06', title: 'Structured Data & Schema', desc: 'Schema markup implementation for all relevant types — Article, Product, FAQ, LocalBusiness, BreadcrumbList, HowTo, Event — validated and deployed at scale via Liquid, GTM, or CMS.' },
+  { n: '06', title: 'Structured Data & Schema', desc: 'Schema markup implementation for all relevant types - Article, Product, FAQ, LocalBusiness, BreadcrumbList, HowTo, Event - validated and deployed at scale via Liquid, GTM, or CMS.' },
   { n: '07', title: 'Duplicate Content Elimination', desc: 'Canonical tag audit, parameter URL management, pagination SEO (rel=prev/next), and URL consolidation to eliminate competing page versions wasting crawl budget and diluting authority.' },
   { n: '08', title: 'International SEO (Hreflang)', desc: 'Hreflang implementation, x-default configuration, ccTLD vs subdirectory vs subdomain strategy, and geo-targeting setup in Google Search Console for international sites.' },
 ];
@@ -16,31 +16,31 @@ const SERVICES = [
 const STACK = ['Screaming Frog', 'Sitebulb', 'Botify', 'Log File Analyser', 'Chrome DevTools', 'Lighthouse', 'PageSpeed Insights', 'WebPageTest', 'GSC', 'Cloudflare', 'Next.js', 'Nuxt'];
 
 const PROCESS = [
-  { step: '01', title: 'Technical Audit', desc: 'Full crawl, log file analysis, GSC data review, Core Web Vitals assessment, and rendering audit — a complete picture of your technical SEO health.' },
-  { step: '02', title: 'Priority Mapping', desc: 'Every issue ranked by traffic impact and implementation effort — so your dev team works on what moves rankings first.' },
-  { step: '03', title: 'Developer Specifications', desc: 'Ticket-ready fix specifications — code snippets, Liquid examples, htaccess rules, and configuration instructions your engineers can implement without ambiguity.' },
-  { step: '04', title: 'Implementation QA', desc: 'Post-implementation validation — re-crawl, GSC coverage monitoring, and CWV score verification to confirm every fix landed correctly.' },
+  { step: '01', title: 'Technical Audit', desc: 'Full crawl, log file analysis, GSC data review, Core Web Vitals assessment, and rendering audit - a complete picture of your technical SEO health.' },
+  { step: '02', title: 'Priority Mapping', desc: 'Every issue ranked by traffic impact and implementation effort - so your dev team works on what moves rankings first.' },
+  { step: '03', title: 'Developer Specifications', desc: 'Ticket-ready fix specifications - code snippets, Liquid examples, htaccess rules, and configuration instructions your engineers can implement without ambiguity.' },
+  { step: '04', title: 'Implementation QA', desc: 'Post-implementation validation - re-crawl, GSC coverage monitoring, and CWV score verification to confirm every fix landed correctly.' },
   { step: '05', title: 'Ongoing Monitoring', desc: 'Weekly crawl anomaly alerts, Core Web Vitals trend tracking, and pre-deployment SEO review for every major release.' },
 ];
 
 const WHY = [
-  { title: 'Engineering-Level Expertise', desc: 'Our technical SEOs read log files, write regex, review pull requests, and understand rendering pipelines — not just Google\'s beginner documentation.' },
-  { title: 'Platform Agnostic', desc: 'AEM, Sitecore, Shopify, WooCommerce, Magento, Next.js, Nuxt, custom builds — we have optimised technical SEO across all major platforms and frameworks.' },
-  { title: 'Developer-Ready Specs', desc: 'Every recommendation comes with exact implementation instructions — no vague "fix this" directives that leave developers guessing.' },
-  { title: 'Log File Analysis Capability', desc: 'We go beyond crawl tools — actual server log analysis shows us exactly how Googlebot is behaving on your site, revealing issues no crawler can find.' },
-  { title: 'Pre-Deploy SEO Review', desc: 'We join your deployment process as a standing SEO reviewer — catching ranking-damaging changes before they go live, not after rankings drop.' },
-  { title: '15+ Years Technical SEO', desc: 'From the early days of robots.txt to modern Core Web Vitals and INP — we have been solving technical SEO problems across every major Google algorithm era.' },
+  { title: 'Engineering-Level Expertise', desc: 'Our technical SEOs read log files, write regex, review pull requests, and understand rendering pipelines - not just Google\'s beginner documentation.' },
+  { title: 'Platform Agnostic', desc: 'AEM, Sitecore, Shopify, WooCommerce, Magento, Next.js, Nuxt, custom builds - we have optimised technical SEO across all major platforms and frameworks.' },
+  { title: 'Developer-Ready Specs', desc: 'Every recommendation comes with exact implementation instructions - no vague "fix this" directives that leave developers guessing.' },
+  { title: 'Log File Analysis Capability', desc: 'We go beyond crawl tools - actual server log analysis shows us exactly how Googlebot is behaving on your site, revealing issues no crawler can find.' },
+  { title: 'Pre-Deploy SEO Review', desc: 'We join your deployment process as a standing SEO reviewer - catching ranking-damaging changes before they go live, not after rankings drop.' },
+  { title: '15+ Years Technical SEO', desc: 'From the early days of robots.txt to modern Core Web Vitals and INP - we have been solving technical SEO problems across every major Google algorithm era.' },
 ];
 
 const FAQS = [
-  { q: 'What is technical SEO and why does it matter?', a: 'Technical SEO is the practice of optimising the infrastructure of a website so that search engines can efficiently crawl, render, understand, and index its content. Without a sound technical foundation — clean URLs, fast page load, correct canonical tags, renderable JavaScript, efficient crawl budget — even the best content and strongest backlinks will underperform. Technical SEO is the foundation everything else is built on.' },
+  { q: 'What is technical SEO and why does it matter?', a: 'Technical SEO is the practice of optimising the infrastructure of a website so that search engines can efficiently crawl, render, understand, and index its content. Without a sound technical foundation - clean URLs, fast page load, correct canonical tags, renderable JavaScript, efficient crawl budget - even the best content and strongest backlinks will underperform. Technical SEO is the foundation everything else is built on.' },
   { q: 'What does a technical SEO audit cover?', a: 'Our technical SEO audits cover: crawlability and indexation (robots.txt, sitemaps, noindex tags, canonical tags); site architecture (crawl depth, internal linking, URL structure); page speed and Core Web Vitals (LCP, CLS, INP); JavaScript rendering (Googlebot\'s ability to process your JS framework); structured data (schema markup validity and completeness); duplicate content (canonical issues, parameter URLs, pagination); international SEO (hreflang implementation); and security (HTTPS, mixed content). Each issue is prioritised by ranking impact.' },
   { q: 'How do you fix Core Web Vitals?', a: 'Core Web Vitals fixes depend on which metric is failing and why. LCP (Largest Contentful Paint) fixes typically involve: server response time improvements, preloading critical resources, optimising the LCP image/element. CLS (Cumulative Layout Shift) fixes involve: setting explicit dimensions on images and embeds, avoiding dynamically injected content above the fold. INP (Interaction to Next Paint) fixes involve: reducing JavaScript execution time, code splitting, and deferring non-critical scripts. We diagnose your specific issues before prescribing fixes.' },
   { q: 'What is crawl budget and how do you optimise it?', a: 'Crawl budget is the number of pages Googlebot will crawl on your site within a given time period. It matters most for large sites (10,000+ pages). Crawl budget waste comes from: faceted navigation URLs, paginated duplicates, URL parameters creating thin variants, crawlable 404 pages, and orphan pages with no internal links. We use server log file analysis to see exactly how Googlebot is spending its crawl budget and build a prioritised plan to redirect that crawl activity to your highest-value pages.' },
   { q: 'Can you fix JavaScript SEO issues?', a: 'Yes. JavaScript SEO requires understanding how different rendering approaches (client-side rendering, server-side rendering, static site generation, hybrid) affect Googlebot\'s ability to index content. We conduct rendering audits using Google\'s URL Inspection tool, Rendertron, and Chrome DevTools to identify content that is visible to users but invisible to Googlebot. Fixes may include implementing pre-rendering, switching to SSR for key pages, or adding noindex to pages that cannot be rendered correctly.' },
   { q: 'How long does it take to see results from technical SEO?', a: 'Technical SEO results depend on the type of fix. Crawlability improvements (fixing robots.txt blocks, removing noindex tags) can show GSC coverage improvements within 1 to 2 weeks. Canonical tag fixes typically resolve indexation issues within 2 to 4 weeks as Googlebot recrawls affected pages. Core Web Vitals improvements reflect in the CrUX data set after 28 days of improved field data collection. Crawl budget optimisation on large sites shows measurable ranking improvements over 1 to 3 months as more high-value pages get recrawled more frequently.' },
-  { q: 'Do you provide implementation support for technical SEO fixes?', a: 'Yes. We offer three levels of technical SEO engagement: (1) Audit and specifications only — we deliver the audit and ticket-ready specs for your team to implement; (2) Audit plus implementation oversight — we write specs, join sprint planning, review PRs, and QA deployed changes; (3) Full implementation — we implement technical fixes directly via CMS, Liquid, or code changes on agreed platforms. Most enterprise clients use model 2; SMBs often use model 3.' },
-  { q: 'What is the difference between technical SEO and on-page SEO?', a: 'Technical SEO covers the infrastructure layer — how search engines access, render, and index your site. On-page SEO covers the content layer — title tags, headings, keyword targeting, internal links. Both matter, but technical issues must be fixed first because on-page optimisation on pages that cannot be crawled or indexed has zero impact. Our standard process is technical audit and fixes before on-page work — because fixing a crawlability block can unlock more ranking improvement than months of on-page optimisation.' },
+  { q: 'Do you provide implementation support for technical SEO fixes?', a: 'Yes. We offer three levels of technical SEO engagement: (1) Audit and specifications only - we deliver the audit and ticket-ready specs for your team to implement; (2) Audit plus implementation oversight - we write specs, join sprint planning, review PRs, and QA deployed changes; (3) Full implementation - we implement technical fixes directly via CMS, Liquid, or code changes on agreed platforms. Most enterprise clients use model 2; SMBs often use model 3.' },
+  { q: 'What is the difference between technical SEO and on-page SEO?', a: 'Technical SEO covers the infrastructure layer - how search engines access, render, and index your site. On-page SEO covers the content layer - title tags, headings, keyword targeting, internal links. Both matter, but technical issues must be fixed first because on-page optimisation on pages that cannot be crawled or indexed has zero impact. Our standard process is technical audit and fixes before on-page work - because fixing a crawlability block can unlock more ranking improvement than months of on-page optimisation.' },
 ];
 
 const STATS = [
@@ -67,7 +67,7 @@ export default function TechnicalSeoOptimization() {
     <>
       <Head>
         <title>Technical SEO Optimisation | 1Solutions</title>
-        <meta name="description" content="Technical SEO services — Core Web Vitals, crawl budget, JavaScript SEO, structured data, and site architecture fixes." />
+        <meta name="description" content="Technical SEO services - Core Web Vitals, crawl budget, JavaScript SEO, structured data, and site architecture fixes." />
         <meta name="keywords" content="technical seo optimization, technical seo services, core web vitals optimisation, crawl budget optimisation, javascript seo, technical seo audit" />
         <link rel="canonical" href="https://www.1solutions.biz/technical-seo-optimization/" />
         <meta property="og:title" content="Technical SEO Optimisation | 1Solutions" />
@@ -150,7 +150,7 @@ export default function TechnicalSeoOptimization() {
             <nav className="tseo-bc"><Link href="/">Home</Link><span>/</span><Link href="/seo-services-company">SEO Services</Link><span>/</span><span style={{color:'#2563EB'}}>Technical SEO</span></nav>
             <span className="tseo-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#2563EB',display:'inline-block'}}/> Core Web Vitals · Crawl · JS SEO</span>
             <h1 className="tseo-h1">Technical SEO Optimisation That Fixes What Blocks Your Rankings</h1>
-            <p className="tseo-sub">Engineering-level technical SEO — crawl budget analysis, Core Web Vitals fixes, JavaScript rendering, structured data, and site architecture — the foundation every high-performing SEO strategy is built on.</p>
+            <p className="tseo-sub">Engineering-level technical SEO - crawl budget analysis, Core Web Vitals fixes, JavaScript rendering, structured data, and site architecture - the foundation every high-performing SEO strategy is built on.</p>
             <div className="tseo-btns">
               <Link href="/contact-us" className="tseo-btn-p">Get a Technical SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/seo-audit-services" className="tseo-btn-s">Full SEO Audit</Link>
@@ -160,7 +160,7 @@ export default function TechnicalSeoOptimization() {
         </section>
         <section className="tseo-svc"><div className="tseo-svc-in">
           <span className="tseo-ey2">What We Fix</span><h2 className="tseo-ttl">Technical SEO Services</h2>
-          <p className="tseo-desc">Every technical layer that influences how Google crawls, renders, and ranks your website — diagnosed and fixed with developer-ready specifications.</p>
+          <p className="tseo-desc">Every technical layer that influences how Google crawls, renders, and ranks your website - diagnosed and fixed with developer-ready specifications.</p>
           <div className="tseo-grid" ref={cardsRef}>{SERVICES.map((s,i) => <div key={s.n} className={`tseo-card${visibleCards.includes(i)?' visible':''}`}><div className="tseo-num">{s.n}</div><h3>{s.title}</h3><p>{s.desc}</p></div>)}</div>
         </div></section>
         <section className="tseo-stack"><div className="tseo-stack-in">
@@ -169,12 +169,12 @@ export default function TechnicalSeoOptimization() {
         </div></section>
         <section className="tseo-proc"><div className="tseo-proc-in">
           <span className="tseo-ey2">How We Work</span><h2 className="tseo-ttl">Our Technical SEO Process</h2>
-          <p className="tseo-desc">Audit to implementation QA — a structured process that integrates with your engineering workflow and delivers developer-ready specifications from day one.</p>
+          <p className="tseo-desc">Audit to implementation QA - a structured process that integrates with your engineering workflow and delivers developer-ready specifications from day one.</p>
           <div className="tseo-steps">{PROCESS.map((p,i) => <div key={p.step} ref={el=>{stepRefs.current[i]=el}} className={`tseo-step${visibleSteps.includes(i)?' visible':''}`}><div className="tseo-snum">{p.step}</div><div><h3>{p.title}</h3><p>{p.desc}</p></div></div>)}</div>
         </div></section>
         <section className="tseo-why"><div className="tseo-why-in">
           <span className="tseo-ey2">Why 1Solutions</span><h2 className="tseo-ttl">Engineering-Grade Technical SEO</h2>
-          <p className="tseo-desc">We go beyond crawl reports — log file analysis, rendering audits, PR reviews, and pre-deployment checks that prevent ranking-damaging releases.</p>
+          <p className="tseo-desc">We go beyond crawl reports - log file analysis, rendering audits, PR reviews, and pre-deployment checks that prevent ranking-damaging releases.</p>
           <div className="tseo-why-grid" ref={whyRef}>{WHY.map((w,i) => <div key={w.title} className={`tseo-wcard${visibleWhy.includes(i)?' visible':''}`}><div className="tseo-dot"/><h3>{w.title}</h3><p>{w.desc}</p></div>)}</div>
         </div></section>
         <section className="tseo-faq"><div className="tseo-faq-in">
@@ -186,7 +186,7 @@ export default function TechnicalSeoOptimization() {
           <div className="tseo-cta-in">
             <span className="tseo-ey2" style={{textAlign:'center',display:'block',marginBottom:16}}>Ready to Fix Your Technical SEO Foundation?</span>
             <h2 className="tseo-cta-t">Get Your Technical SEO Audit</h2>
-            <p className="tseo-cta-s">150-point technical audit — crawl health, Core Web Vitals, JS rendering, structured data, and architecture — with a prioritised, developer-ready action plan.</p>
+            <p className="tseo-cta-s">150-point technical audit - crawl health, Core Web Vitals, JS rendering, structured data, and architecture - with a prioritised, developer-ready action plan.</p>
             <div className="tseo-cta-btns">
               <Link href="/contact-us" className="tseo-btn-p">Get Technical SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/seo-services-company" className="tseo-btn-s">SEO Services Overview</Link>

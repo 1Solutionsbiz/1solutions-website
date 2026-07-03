@@ -47,8 +47,8 @@ const services = [
   },
   {
     icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z',
-    title: 'Houzz SEO — Keyword Optimisation',
-    desc: "Keyword research and optimisation for Houzz's search queries by room type (living room, kitchen, bedroom), style (mid-century, Scandinavian, industrial), and material — driving discovery from both professionals and homeowners.",
+    title: 'Houzz SEO - Keyword Optimisation',
+    desc: "Keyword research and optimisation for Houzz's search queries by room type (living room, kitchen, bedroom), style (mid-century, Scandinavian, industrial), and material - driving discovery from both professionals and homeowners.",
   },
   {
     icon: 'M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z',
@@ -109,12 +109,12 @@ const steps = [
 ];
 
 const FAQS = [
-  { q: "Who shops on Houzz and how is the audience different from Amazon or Wayfair?", a: "Houzz is used by a combination of interior designers and architects (who buy on behalf of clients), design-conscious homeowners planning renovation projects, and trade professionals sourcing products for installation. Unlike Amazon (impulse purchase) or Wayfair (price-driven discovery), Houzz buyers are in a high-consideration purchase mode — they spend weeks researching before buying, making photography, specification depth, and brand storytelling critical." },
+  { q: "Who shops on Houzz and how is the audience different from Amazon or Wayfair?", a: "Houzz is used by a combination of interior designers and architects (who buy on behalf of clients), design-conscious homeowners planning renovation projects, and trade professionals sourcing products for installation. Unlike Amazon (impulse purchase) or Wayfair (price-driven discovery), Houzz buyers are in a high-consideration purchase mode - they spend weeks researching before buying, making photography, specification depth, and brand storytelling critical." },
   { q: "What types of products work best on Houzz?", a: "Houzz is strongest for home furniture (particularly sofas, beds, dining tables), decorative lighting, wall art and decor, bathroom vanities and fittings, kitchen hardware, outdoor furniture, and architectural products like tiles, flooring, and windows. Products with strong visual appeal, professional photography, and a clear design story perform best. Mass-produced commodity items without visual differentiation rarely succeed." },
   { q: "How do Houzz Sponsored Product ads work?", a: "Houzz Sponsored Products appear at the top and throughout search results for room type, style, and product category queries. Unlike Google Shopping, Houzz ads target buyers specifically browsing for home products, which means higher purchase intent than typical display advertising. We build campaigns based on room type targeting (living room, bedroom, kitchen), style targeting (mid-century modern, industrial, Scandinavian), and specific search keywords." },
-  { q: "What is Houzz Pro and how does it help reach design professionals?", a: "Houzz Pro is the platform for interior designers, architects, and home contractors. These professionals use Houzz Pro to find products, create mood boards, and make trade purchases. Having a strong presence within trade-oriented discovery paths — including trade pricing, specification sheets, and direct enquiry capability — significantly increases orders from design professionals who typically buy in higher quantities." },
+  { q: "What is Houzz Pro and how does it help reach design professionals?", a: "Houzz Pro is the platform for interior designers, architects, and home contractors. These professionals use Houzz Pro to find products, create mood boards, and make trade purchases. Having a strong presence within trade-oriented discovery paths - including trade pricing, specification sheets, and direct enquiry capability - significantly increases orders from design professionals who typically buy in higher quantities." },
   { q: "How long does it take to set up and start receiving orders on Houzz?", a: "For an existing brand with product photography ready, we can have your Houzz presence built, optimised, and live within 3 to 4 weeks. For brands that need photography coordination or are new to the platform, 6 to 8 weeks is more realistic. Sponsored Product campaigns go live the same week listings are published. Most clients see their first organic orders within 4 to 6 weeks of an optimised listing launch." },
-  { q: "Do you write the product descriptions and specifications, or do I need to provide them?", a: "We write all product descriptions, specification tables, and marketing copy from your existing product data (PDFs, datasheets, brand guidelines, sample listings). If your product data is incomplete, we guide you on exactly what information we need to write compelling copy. Professional specification depth — dimensions, materials, finishes, lead times, certifications — is one of the most important factors for Houzz search ranking and buyer confidence." },
+  { q: "Do you write the product descriptions and specifications, or do I need to provide them?", a: "We write all product descriptions, specification tables, and marketing copy from your existing product data (PDFs, datasheets, brand guidelines, sample listings). If your product data is incomplete, we guide you on exactly what information we need to write compelling copy. Professional specification depth - dimensions, materials, finishes, lead times, certifications - is one of the most important factors for Houzz search ranking and buyer confidence." },
 ];
 
 export default function HouzzProductListingServices() {
@@ -315,7 +315,7 @@ export default function HouzzProductListingServices() {
             </div>
             <h1>Houzz Product Listing Services That Reach Interior Designers and Luxury Homeowners</h1>
             <p className="houz-hero-desc">
-              Houzz has 65 million monthly users — including 3 million home design professionals who actively source and specify products for their clients. 1Solutions creates and optimises your Houzz product listings to meet the aesthetic and technical standards that design professionals expect, and manages your Houzz Pro presence for consistent product discovery and sales.
+              Houzz has 65 million monthly users - including 3 million home design professionals who actively source and specify products for their clients. 1Solutions creates and optimises your Houzz product listings to meet the aesthetic and technical standards that design professionals expect, and manages your Houzz Pro presence for consistent product discovery and sales.
             </p>
             <div className="houz-stats-bar">
               <div className="houz-stat"><span className="houz-stat-num">65M</span><span className="houz-stat-label">Monthly Houzz users</span></div>
@@ -446,7 +446,7 @@ export default function HouzzProductListingServices() {
               <div>
                 <p className="houz-section-label">Get Started</p>
                 <h2 className="houz-contact-h2">Get a Free <span>Houzz Listing Review</span></h2>
-                <p className="houz-contact-desc">We will review your existing Houzz presence or plan your launch — covering listing quality, photography standards, Houzz Pro setup, and the advertising opportunity in your product category.</p>
+                <p className="houz-contact-desc">We will review your existing Houzz presence or plan your launch - covering listing quality, photography standards, Houzz Pro setup, and the advertising opportunity in your product category.</p>
                 <div className="houz-contact-items">
                   <div className="houz-contact-item">
                     <svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>

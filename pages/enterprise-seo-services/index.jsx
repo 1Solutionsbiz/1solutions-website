@@ -8,8 +8,8 @@ const SERVICES = [
   { n: '03', title: 'Enterprise Content Strategy', desc: 'Topical authority mapping across thousands of pages, content gap analysis at scale, pillar-cluster architecture, and E-E-A-T optimisation for YMYL industries.' },
   { n: '04', title: 'Enterprise Link Authority', desc: 'Strategic digital PR, analyst relations, thought leadership placements, and link acquisition from tier-1 publications that move domain authority at enterprise scale.' },
   { n: '05', title: 'JavaScript SEO', desc: 'Rendering audits for React, Angular, Vue, Next.js, and Nuxt applications. Fix pre-rendering gaps, dynamic rendering configurations, and lazy-load indexation issues.' },
-  { n: '06', title: 'Crawl Budget Optimisation', desc: 'Identify and resolve crawl waste from faceted navigation, pagination, session IDs, and parameter URLs — ensuring Googlebot prioritises your highest-value pages.' },
-  { n: '07', title: 'Structured Data at Scale', desc: 'Templated schema deployment across product, article, FAQ, breadcrumb, and organisation types — managed via GTM or CMS integration for zero-dev-overhead maintenance.' },
+  { n: '06', title: 'Crawl Budget Optimisation', desc: 'Identify and resolve crawl waste from faceted navigation, pagination, session IDs, and parameter URLs - ensuring Googlebot prioritises your highest-value pages.' },
+  { n: '07', title: 'Structured Data at Scale', desc: 'Templated schema deployment across product, article, FAQ, breadcrumb, and organisation types - managed via GTM or CMS integration for zero-dev-overhead maintenance.' },
   { n: '08', title: 'SEO Analytics & BI Integration', desc: 'GSC and GA4 data piped into Looker, Tableau, or Power BI. Custom dashboards tracking revenue, rankings, and share-of-voice for C-suite and board reporting.' },
 ];
 
@@ -17,8 +17,8 @@ const CAPABILITIES = ['Sites 100K–10M+ URLs', 'JS Framework SEO', 'Log File An
 
 const PROCESS = [
   { step: '01', title: 'Enterprise SEO Audit', desc: 'Full technical audit, content audit, link profile analysis, and competitor benchmarking. We map your full organic search landscape before touching anything.' },
-  { step: '02', title: 'Strategy & Roadmap', desc: 'Priority-ranked roadmap aligned to your engineering sprints, content calendar, and business objectives — with clear revenue impact estimates for each initiative.' },
-  { step: '03', title: 'Technical Implementation', desc: 'We work directly with your engineering and platform teams to implement technical fixes — not just recommendations. Our specs are developer-ready from day one.' },
+  { step: '02', title: 'Strategy & Roadmap', desc: 'Priority-ranked roadmap aligned to your engineering sprints, content calendar, and business objectives - with clear revenue impact estimates for each initiative.' },
+  { step: '03', title: 'Technical Implementation', desc: 'We work directly with your engineering and platform teams to implement technical fixes - not just recommendations. Our specs are developer-ready from day one.' },
   { step: '04', title: 'Content & Authority', desc: 'Scaled content production and editorial strategy, combined with proactive link acquisition through digital PR and thought leadership channels.' },
   { step: '05', title: 'QA & Monitoring', desc: 'Post-deployment SEO QA on every major release, continuous rank tracking across thousands of keywords, and weekly anomaly alerts.' },
   { step: '06', title: 'Executive Reporting', desc: 'Monthly performance reviews with board-ready reporting: organic revenue attribution, share-of-voice movements, and roadmap progress against KPIs.' },
@@ -26,22 +26,22 @@ const PROCESS = [
 
 const WHY = [
   { title: 'Enterprise-Only Focus', desc: 'We do not mix enterprise clients with SMB accounts. Your engagement is handled by a dedicated senior team with enterprise platform experience.' },
-  { title: 'Engineering-Level Technical SEO', desc: 'Our technical SEOs can read log files, write regex, review pull requests, and configure render pipelines — not just fill out recommendation templates.' },
-  { title: 'Platform Agnostic', desc: 'AEM, Sitecore, Salesforce Commerce, SAP Commerce, custom builds — we have worked across all major enterprise CMS and commerce platforms.' },
-  { title: 'Revenue Attribution', desc: 'We connect organic search performance to pipeline and revenue using GA4, CRM integration, and assisted conversion modelling — not just rankings.' },
+  { title: 'Engineering-Level Technical SEO', desc: 'Our technical SEOs can read log files, write regex, review pull requests, and configure render pipelines - not just fill out recommendation templates.' },
+  { title: 'Platform Agnostic', desc: 'AEM, Sitecore, Salesforce Commerce, SAP Commerce, custom builds - we have worked across all major enterprise CMS and commerce platforms.' },
+  { title: 'Revenue Attribution', desc: 'We connect organic search performance to pipeline and revenue using GA4, CRM integration, and assisted conversion modelling - not just rankings.' },
   { title: 'Global Delivery Capability', desc: 'Covering US, UK, Canada, Australia, and APAC markets with native-language content partners and local market SEO expertise.' },
   { title: 'C-Suite Communication', desc: 'Monthly briefings structured for CTO, CMO, and CFO audiences. We translate SEO data into business impact language that resonates at board level.' },
 ];
 
 const FAQS = [
-  { q: 'What makes enterprise SEO different from standard SEO?', a: 'Enterprise SEO involves managing organic search for sites with thousands to millions of pages, complex technical environments (JavaScript frameworks, headless CMS, custom platforms), large cross-functional teams, and significant investment decisions. The technical complexity, stakeholder management, content governance, and reporting requirements are fundamentally different from SMB SEO — requiring specialist tools, experience, and delivery models.' },
+  { q: 'What makes enterprise SEO different from standard SEO?', a: 'Enterprise SEO involves managing organic search for sites with thousands to millions of pages, complex technical environments (JavaScript frameworks, headless CMS, custom platforms), large cross-functional teams, and significant investment decisions. The technical complexity, stakeholder management, content governance, and reporting requirements are fundamentally different from SMB SEO - requiring specialist tools, experience, and delivery models.' },
   { q: 'How do you handle SEO during major platform migrations?', a: 'Platform migrations are one of the highest-risk SEO events for enterprise sites. We conduct a full pre-migration SEO audit, create a comprehensive redirect map (often 50K+ URLs), define pre- and post-launch QA protocols, and monitor rankings, crawl behaviour, and organic traffic daily for 90 days post-migration. We have managed zero-traffic-loss migrations for enterprise clients moving between AEM, Sitecore, Salesforce Commerce, and custom platforms.' },
-  { q: 'How do you integrate with our existing engineering sprints?', a: 'We adapt to your development workflow — whether Agile, SAFe, or waterfall. Our SEO specifications are written in ticket-ready format (Jira, Linear, Asana), we attend relevant sprint planning sessions, review PRs for SEO impact, and maintain a backlog of approved technical work ready for your next sprint cycle. We are a functional SEO partner, not an external vendor delivering PDFs.' },
+  { q: 'How do you integrate with our existing engineering sprints?', a: 'We adapt to your development workflow - whether Agile, SAFe, or waterfall. Our SEO specifications are written in ticket-ready format (Jira, Linear, Asana), we attend relevant sprint planning sessions, review PRs for SEO impact, and maintain a backlog of approved technical work ready for your next sprint cycle. We are a functional SEO partner, not an external vendor delivering PDFs.' },
   { q: 'What tools do you use for enterprise-scale SEO?', a: 'Primary: Screaming Frog (large crawl), Sitebulb, DeepCrawl, Botify (for very large crawls), Ahrefs, SEMrush, Moz Pro, Google Search Console, GA4, Looker Studio. For log file analysis: Splunk, ELK Stack, custom SQL. For rendering audits: Chrome DevTools, Rendertron, Puppeteer. For international: hreflang.org, Merkle hreflang checker. We adapt to your existing tech stack where possible.' },
   { q: 'Can you manage SEO for multi-domain or multi-brand enterprise portfolios?', a: 'Yes. We manage SEO across enterprise portfolios covering multiple brands, domains, languages, and regions. We build unified reporting dashboards, establish consistent governance frameworks, and ensure cross-domain cannibalisation is proactively managed. Our largest portfolio engagement covers 14 domains across 6 countries.' },
-  { q: 'How do you measure the ROI of enterprise SEO?', a: 'We build organic revenue attribution models using GA4 assisted conversions, CRM data matching (where available), and pipeline influence analysis. For ecommerce, we track direct organic-attributed revenue. For lead gen, we model organic-to-pipeline contribution. All reporting ties back to business value — not just keywords and traffic.' },
-  { q: 'Do you provide dedicated account management?', a: 'Yes. Every enterprise engagement includes a dedicated Senior SEO Strategist (your primary point of contact), a Technical SEO Lead, and access to specialist resources (content, digital PR, analytics) as required. You have direct access — not an account manager who relays messages.' },
-  { q: 'What is the minimum engagement for enterprise SEO?', a: 'Enterprise SEO engagements start at a 6-month initial term, with monthly retainer pricing based on site complexity, keyword footprint, and deliverable scope. We provide a detailed scoping document and fixed monthly pricing at proposal stage — no ambiguous "as-needed" billing.' },
+  { q: 'How do you measure the ROI of enterprise SEO?', a: 'We build organic revenue attribution models using GA4 assisted conversions, CRM data matching (where available), and pipeline influence analysis. For ecommerce, we track direct organic-attributed revenue. For lead gen, we model organic-to-pipeline contribution. All reporting ties back to business value - not just keywords and traffic.' },
+  { q: 'Do you provide dedicated account management?', a: 'Yes. Every enterprise engagement includes a dedicated Senior SEO Strategist (your primary point of contact), a Technical SEO Lead, and access to specialist resources (content, digital PR, analytics) as required. You have direct access - not an account manager who relays messages.' },
+  { q: 'What is the minimum engagement for enterprise SEO?', a: 'Enterprise SEO engagements start at a 6-month initial term, with monthly retainer pricing based on site complexity, keyword footprint, and deliverable scope. We provide a detailed scoping document and fixed monthly pricing at proposal stage - no ambiguous "as-needed" billing.' },
 ];
 
 const STATS = [
@@ -81,7 +81,7 @@ export default function EnterpriseSeoServices() {
     '@context': 'https://schema.org',
     '@graph': [
       { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' }, { '@type': 'ListItem', position: 2, name: 'SEO Services', item: 'https://www.1solutions.biz/seo-services-company/' }, { '@type': 'ListItem', position: 3, name: 'Enterprise SEO', item: 'https://www.1solutions.biz/enterprise-seo-services/' }] },
-      { '@type': 'Service', name: 'Enterprise SEO Services', provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz' }, description: 'Enterprise SEO services for large-scale websites — technical SEO, international, content strategy, and BI reporting for 100K+ page sites.', serviceType: 'Enterprise SEO', url: 'https://www.1solutions.biz/enterprise-seo-services/' },
+      { '@type': 'Service', name: 'Enterprise SEO Services', provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz' }, description: 'Enterprise SEO services for large-scale websites - technical SEO, international, content strategy, and BI reporting for 100K+ page sites.', serviceType: 'Enterprise SEO', url: 'https://www.1solutions.biz/enterprise-seo-services/' },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
     ],
   };
@@ -90,11 +90,11 @@ export default function EnterpriseSeoServices() {
     <>
       <Head>
         <title>Enterprise SEO Services | 1Solutions</title>
-        <meta name="description" content="Enterprise SEO services from 1Solutions — technical SEO at scale, international SEO, JavaScript SEO, crawl budget optimisation, and BI-integrated reporting" />
+        <meta name="description" content="Enterprise SEO services from 1Solutions - technical SEO at scale, international SEO, JavaScript SEO, crawl budget optimisation, and BI-integrated reporting" />
         <meta name="keywords" content="enterprise seo services, enterprise seo agency, large scale seo, enterprise seo company, technical seo enterprise, international seo services" />
         <link rel="canonical" href="https://www.1solutions.biz/enterprise-seo-services/" />
         <meta property="og:title" content="Enterprise SEO Services | 1Solutions" />
-        <meta property="og:description" content="SEO built for complexity — technical SEO at scale, international SEO, JS framework audits, and C-suite reporting for enterprise websites." />
+        <meta property="og:description" content="SEO built for complexity - technical SEO at scale, international SEO, JS framework audits, and C-suite reporting for enterprise websites." />
         <meta property="og:url" content="https://www.1solutions.biz/enterprise-seo-services/" />
         <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -182,7 +182,7 @@ export default function EnterpriseSeoServices() {
             </nav>
             <span className="eseo-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#1D4ED8',display:'inline-block'}}/> Large-Scale SEO · Global Delivery</span>
             <h1 className="eseo-h1">Enterprise SEO Services for Complex, Large-Scale Websites</h1>
-            <p className="eseo-sub">Technical SEO at scale, international SEO, JavaScript framework audits, crawl budget optimisation, and C-suite reporting — built for sites with 100K to 10M+ pages.</p>
+            <p className="eseo-sub">Technical SEO at scale, international SEO, JavaScript framework audits, crawl budget optimisation, and C-suite reporting - built for sites with 100K to 10M+ pages.</p>
             <div className="eseo-btns">
               <Link href="/contact-us" className="eseo-btn-p">Request Enterprise SEO Proposal <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/seo-audit-services" className="eseo-btn-s">Get an Enterprise SEO Audit</Link>
@@ -213,7 +213,7 @@ export default function EnterpriseSeoServices() {
           <div className="eseo-proc-in">
             <span className="eseo-ey2">How We Work</span>
             <h2 className="eseo-ttl">Our Enterprise SEO Process</h2>
-            <p className="eseo-desc">From audit to ongoing optimisation — a structured engagement model that integrates with your engineering, content, and reporting workflows.</p>
+            <p className="eseo-desc">From audit to ongoing optimisation - a structured engagement model that integrates with your engineering, content, and reporting workflows.</p>
             <div className="eseo-steps">
               {PROCESS.map((p,i) => <div key={p.step} ref={el=>{stepRefs.current[i]=el}} className={`eseo-step${visibleSteps.includes(i)?' visible':''}`}><div className="eseo-snum">{p.step}</div><div><h3>{p.title}</h3><p>{p.desc}</p></div></div>)}
             </div>
@@ -224,7 +224,7 @@ export default function EnterpriseSeoServices() {
           <div className="eseo-why-in">
             <span className="eseo-ey2">Why 1Solutions</span>
             <h2 className="eseo-ttl">The Enterprise SEO Partner Built for Scale</h2>
-            <p className="eseo-desc">Senior-led delivery, engineering-grade technical capability, and reporting that connects SEO to business outcomes — not just keyword counts.</p>
+            <p className="eseo-desc">Senior-led delivery, engineering-grade technical capability, and reporting that connects SEO to business outcomes - not just keyword counts.</p>
             <div className="eseo-why-grid" ref={whyRef}>
               {WHY.map((w,i) => <div key={w.title} className={`eseo-wcard${visibleWhy.includes(i)?' visible':''}`}><div className="eseo-dot"/><h3>{w.title}</h3><p>{w.desc}</p></div>)}
             </div>
@@ -247,7 +247,7 @@ export default function EnterpriseSeoServices() {
           <div className="eseo-cta-in">
             <span className="eseo-ey2" style={{textAlign:'center',display:'block',marginBottom:16}}>Ready to Scale Your Organic Growth?</span>
             <h2 className="eseo-cta-t">Request Your Enterprise SEO Proposal</h2>
-            <p className="eseo-cta-s">Tell us your site scale, platforms, and growth objectives — we&rsquo;ll build a scoped proposal with clear deliverables and fixed monthly pricing.</p>
+            <p className="eseo-cta-s">Tell us your site scale, platforms, and growth objectives - we&rsquo;ll build a scoped proposal with clear deliverables and fixed monthly pricing.</p>
             <div className="eseo-cta-btns">
               <Link href="/contact-us" className="eseo-btn-p">Request Enterprise SEO Proposal <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/seo-audit-services" className="eseo-btn-s">Start with an SEO Audit</Link>

@@ -29,30 +29,30 @@ const SKILLS = [
   'WooCommerce & Shopify API Integration',
 ];
 const MODELS = [
-  { title: 'Dedicated Hire', desc: 'A full-time Laravel developer committed to your product — 8 hrs/day, 5 days/week, fully embedded in your team.', icon: '👤' },
+  { title: 'Dedicated Hire', desc: 'A full-time Laravel developer committed to your product - 8 hrs/day, 5 days/week, fully embedded in your team.', icon: '👤' },
   { title: 'Part-Time Hire', desc: 'Half-day engagement for API development, legacy refactoring, or ongoing feature delivery sprints.', icon: '⏰' },
   { title: 'Hourly Hire',    desc: 'Flexible billing for code reviews, architecture consultations, or short Laravel debugging engagements.', icon: '🕐' },
 ];
 const WHY = [
-  { h: 'Laravel 11 Specialists', b: 'Our developers are fluent in Laravel 11 — application service providers, the new minimal bootstrap structure, context features, and the full modern Laravel ecosystem including Pennant, Reverb, and Folio.' },
-  { h: 'API-First Engineers', b: 'RESTful and GraphQL APIs designed with OpenAPI specs, versioning strategy, and rate limiting before a line of code is written — so your mobile and frontend teams are never blocked.' },
-  { h: 'Multi-Tenant SaaS Expertise', b: "We've built multi-tenant Laravel SaaS platforms using single-database, multi-database, and hybrid tenancy strategies — including subscription billing with Laravel Cashier and Stripe." },
-  { h: 'Test-Driven Development', b: 'PHPUnit and Pest test suites are shipped as part of every sprint — feature tests, unit tests, and integration tests — not as an afterthought before go-live.' },
+  { h: 'Laravel 11 Specialists', b: 'Our developers are fluent in Laravel 11 - application service providers, the new minimal bootstrap structure, context features, and the full modern Laravel ecosystem including Pennant, Reverb, and Folio.' },
+  { h: 'API-First Engineers', b: 'RESTful and GraphQL APIs designed with OpenAPI specs, versioning strategy, and rate limiting before a line of code is written - so your mobile and frontend teams are never blocked.' },
+  { h: 'Multi-Tenant SaaS Expertise', b: "We've built multi-tenant Laravel SaaS platforms using single-database, multi-database, and hybrid tenancy strategies - including subscription billing with Laravel Cashier and Stripe." },
+  { h: 'Test-Driven Development', b: 'PHPUnit and Pest test suites are shipped as part of every sprint - feature tests, unit tests, and integration tests - not as an afterthought before go-live.' },
   { h: 'Profiles in 48 Hours', b: 'Submit your brief and receive 2-3 matched Laravel developer CVs within two business days, ready for your technical interview.' },
   { h: 'NDA & IP Security', b: 'Full NDA and IP assignment signed before any access to your codebase, database schema, or business logic.' },
 ];
 const PROCESS = [
   { n: '01', h: 'Describe Your Project', b: 'Tell us the Laravel version, database, authentication approach, integrations, and seniority level you need.' },
   { n: '02', h: 'Receive Profiles', b: '2-3 matched Laravel developer CVs delivered within 48 hours.' },
-  { n: '03', h: 'Interview & Select', b: 'Run your own technical round — Eloquent design, API architecture, or a short take-home task.' },
+  { n: '03', h: 'Interview & Select', b: 'Run your own technical round - Eloquent design, API architecture, or a short take-home task.' },
   { n: '04', h: 'Onboard & Build', b: 'Developer joins your repo and tools. First PR within 7 days of onboarding.' },
 ];
 const FAQS = [
   { q: 'Which versions of Laravel do your developers work with?', a: 'Our developers are proficient across Laravel 10 and 11 (latest stable). They can also maintain Laravel 8 and 9 applications and plan incremental upgrades to the current version. We recommend upgrading to Laravel 11 for all new projects.' },
-  { q: 'Can they build multi-tenant SaaS applications?', a: 'Yes. We have extensive experience building multi-tenant Laravel applications using the Tenancy for Laravel package (stancl/tenancy) — both single-database (tenant scoping via global scopes) and multi-database (separate database per tenant) architectures. We also implement subscription billing using Laravel Cashier with Stripe or Paddle.' },
-  { q: 'Do they write tests?', a: 'Yes. Our Laravel developers write PHPUnit and Pest feature and unit tests as a standard part of development — not an afterthought. We aim for 80%+ coverage on business-critical code paths and include database transaction rollback in tests so the test suite runs fast.' },
+  { q: 'Can they build multi-tenant SaaS applications?', a: 'Yes. We have extensive experience building multi-tenant Laravel applications using the Tenancy for Laravel package (stancl/tenancy) - both single-database (tenant scoping via global scopes) and multi-database (separate database per tenant) architectures. We also implement subscription billing using Laravel Cashier with Stripe or Paddle.' },
+  { q: 'Do they write tests?', a: 'Yes. Our Laravel developers write PHPUnit and Pest feature and unit tests as a standard part of development - not an afterthought. We aim for 80%+ coverage on business-critical code paths and include database transaction rollback in tests so the test suite runs fast.' },
   { q: 'Can they build REST and GraphQL APIs?', a: 'Yes. RESTful APIs following JSON:API or custom conventions, documented with OpenAPI (Swagger). GraphQL APIs using the Lighthouse package with schema-first design. We include Postman collections or Swagger UI as part of every API delivery.' },
-  { q: 'Do they work with Livewire and Inertia.js?', a: 'Yes. Livewire for server-rendered reactive UIs within a Laravel monolith, and Inertia.js for full-stack Laravel + Vue.js or Laravel + React applications — giving you SPA-like UX without building a separate API.' },
+  { q: 'Do they work with Livewire and Inertia.js?', a: 'Yes. Livewire for server-rendered reactive UIs within a Laravel monolith, and Inertia.js for full-stack Laravel + Vue.js or Laravel + React applications - giving you SPA-like UX without building a separate API.' },
   { q: 'Do you sign NDAs?', a: 'Yes. NDA and IP assignment agreements are signed as standard before any engagement begins.' },
 ];
 
@@ -85,7 +85,7 @@ export default function HireLaravelDeveloper() {
         { '@type': 'ListItem', position: 2, name: 'Hire Laravel Developer', item: 'https://www.1solutions.biz/hire-laravel-developer/' },
       ]},
       { '@type': 'Service', name: 'Hire Laravel Developer', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Hire dedicated Laravel developers from 1Solutions — Laravel 11, REST APIs, multi-tenant SaaS, and e-commerce backend experts. Pre-vetted profiles in 48 hours.',
+        description: 'Hire dedicated Laravel developers from 1Solutions - Laravel 11, REST APIs, multi-tenant SaaS, and e-commerce backend experts. Pre-vetted profiles in 48 hours.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '127', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -159,7 +159,7 @@ export default function HireLaravelDeveloper() {
       <section className="hlv-sec" ref={skR}>
         <div className="hlv-wrap">
           <h2 className="hlv-sec-title">Skills &amp; Tech Stack</h2>
-          <p className="hlv-sec-sub">Our Laravel developers cover the full PHP ecosystem — from API architecture to multi-tenant SaaS to e-commerce integrations.</p>
+          <p className="hlv-sec-sub">Our Laravel developers cover the full PHP ecosystem - from API architecture to multi-tenant SaaS to e-commerce integrations.</p>
           <div className="hlv-skills">{SKILLS.map((s, i) => <span key={s} className={`hlv-skill${skV ? ' hlv-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>)}</div>
         </div>
       </section>
@@ -173,7 +173,7 @@ export default function HireLaravelDeveloper() {
       <section className="hlv-sec" ref={whR}>
         <div className="hlv-wrap">
           <h2 className="hlv-sec-title">Why Hire Laravel Developers from 1Solutions?</h2>
-          <p className="hlv-sec-sub">We place engineers who have shipped production Laravel applications — APIs, SaaS platforms, and e-commerce backends at scale.</p>
+          <p className="hlv-sec-sub">We place engineers who have shipped production Laravel applications - APIs, SaaS platforms, and e-commerce backends at scale.</p>
           <div className="hlv-why-grid">{WHY.map((w, i) => <div key={w.h} className={`hlv-why-item${whV ? ' hlv-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
         </div>
       </section>
@@ -188,7 +188,7 @@ export default function HireLaravelDeveloper() {
       <section className="hlv-sec hlv-sec-alt" ref={prR}>
         <div className="hlv-wrap">
           <h2 className="hlv-sec-title">Hire in 4 Simple Steps</h2>
-          <p className="hlv-sec-sub">From brief to first merged PR — in under two weeks.</p>
+          <p className="hlv-sec-sub">From brief to first merged PR - in under two weeks.</p>
           <div className="hlv-process">{PROCESS.map((p, i) => <div key={p.n} className={`hlv-step${prV ? ' hlv-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}><div className="hlv-step-n">{p.n}</div><h3>{p.h}</h3><p>{p.b}</p></div>)}</div>
         </div>
       </section>

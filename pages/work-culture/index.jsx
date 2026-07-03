@@ -5,7 +5,7 @@ const UPDATED = 'June 13, 2025';
 
 const VALUES = [
   { icon: '🤝', title: 'Respect & Dignity', desc: 'Every person at 1Solutions is treated with respect, regardless of role, tenure, or background. We do not tolerate disrespect in any form.' },
-  { icon: '🎯', title: 'Ownership', desc: 'We take responsibility for our work — the good and the bad. When something goes wrong, we fix it without making excuses.' },
+  { icon: '🎯', title: 'Ownership', desc: 'We take responsibility for our work - the good and the bad. When something goes wrong, we fix it without making excuses.' },
   { icon: '📣', title: 'Candour', desc: 'We say what we think, respectfully. Honest feedback is a gift, not an attack. We value direct communication over corporate politeness.' },
   { icon: '🌱', title: 'Continuous Growth', desc: 'We are all perpetual learners. Curiosity and skill development are encouraged and supported through resources and time.' },
   { icon: '🏆', title: 'Excellence', desc: 'We set high standards for ourselves. Good enough is not enough. We take pride in craft and quality in everything we deliver.' },
@@ -16,11 +16,11 @@ const SECTIONS = [
   {
     id: 'overview',
     title: '1. Our Culture in Brief',
-    body: `At 1Solutions, culture is not what we put on a poster — it is what we do when no one is watching. It is the cumulative effect of how we treat each other, make decisions, give feedback, and show up every day.
+    body: `At 1Solutions, culture is not what we put on a poster - it is what we do when no one is watching. It is the cumulative effect of how we treat each other, make decisions, give feedback, and show up every day.
 
 We are a team of 50+ professionals working on projects for clients across the US, Canada, and Australia. We have been doing this for 15+ years, and we know that the quality of our work is a direct reflection of the quality of our environment.
 
-This Work Culture document outlines our shared commitments — to our team, to our clients, and to our own growth. It applies to everyone at 1Solutions: full-time employees, contractors, interns, and leadership.`,
+This Work Culture document outlines our shared commitments - to our team, to our clients, and to our own growth. It applies to everyone at 1Solutions: full-time employees, contractors, interns, and leadership.`,
   },
   {
     id: 'values',
@@ -36,7 +36,7 @@ Standard working hours:
 • Monday to Friday, 10:00 AM – 7:00 PM IST
 • Flexible start times (10:00 AM – 12:00 PM window) available by arrangement
 
-We do not expect or celebrate unnecessary overtime. If someone consistently works late, we treat it as a planning or workload problem to solve — not a badge of dedication.
+We do not expect or celebrate unnecessary overtime. If someone consistently works late, we treat it as a planning or workload problem to solve - not a badge of dedication.
 
 Client time-zone coverage:
 Some roles (client management, business development) require overlap with US/Australia business hours. These schedules are agreed upfront and compensated fairly.`,
@@ -47,13 +47,13 @@ Some roles (client management, business development) require overlap with US/Aus
     body: `We communicate with clarity, respect, and intent.
 
 Internal communication:
-• Written communication (Slack, email) should be clear and direct — we do not use passive-aggressive language
+• Written communication (Slack, email) should be clear and direct - we do not use passive-aggressive language
 • Meetings must have an agenda. If there is no agenda, the meeting should be an email
-• We respect focused work time — not every message needs an immediate reply
+• We respect focused work time - not every message needs an immediate reply
 • We document decisions so knowledge is not siloed in one person's memory
 
 Feedback culture:
-• Feedback is given directly — not through intermediaries, and not in front of a crowd
+• Feedback is given directly - not through intermediaries, and not in front of a crowd
 • We separate feedback about work from judgement of character
 • We welcome questions. "I don't know" is an acceptable and respected answer
 
@@ -72,14 +72,14 @@ What we provide:
 • Mentorship: junior team members are paired with experienced mentors
 • Opportunities to work on diverse projects across industries and technology stacks
 
-Promotions are based on demonstrated performance and skill growth — not tenure or politics. We document criteria transparently so there are no surprises.
+Promotions are based on demonstrated performance and skill growth - not tenure or politics. We document criteria transparently so there are no surprises.
 
 If you want to grow into a new area (e.g., a developer interested in moving into project management), raise it with your lead. We actively support internal transitions.`,
   },
   {
     id: 'diversity',
     title: '6. Diversity, Equity & Inclusion',
-    body: `1Solutions is an equal opportunity employer. We hire, promote, and compensate based on skill, performance, and potential — not on gender, religion, caste, nationality, age, disability, sexual orientation, or any other characteristic unrelated to the work.
+    body: `1Solutions is an equal opportunity employer. We hire, promote, and compensate based on skill, performance, and potential - not on gender, religion, caste, nationality, age, disability, sexual orientation, or any other characteristic unrelated to the work.
 
 Our commitments:
 • We actively work to reduce bias in our hiring and review processes
@@ -103,7 +103,7 @@ Leave entitlements (full-time employees):
 • Paternity leave: 10 days, fully paid
 
 Mental health:
-We acknowledge that mental health is health. If you are struggling, please talk to your team lead or HR. We will accommodate reasonable adjustments — time off, schedule changes, or workload adjustments — without judgement.
+We acknowledge that mental health is health. If you are struggling, please talk to your team lead or HR. We will accommodate reasonable adjustments - time off, schedule changes, or workload adjustments - without judgement.
 
 We do not glorify burnout. Taking your leave and logging off at the end of the day is not a lack of commitment. It is what allows you to do great work sustainably.`,
   },
@@ -116,7 +116,7 @@ We do not glorify burnout. Taking your leave and logging off at the end of the d
 ✓ Keep client information strictly confidential
 ✓ Use company resources (devices, software, internet) for work purposes
 ✓ Represent 1Solutions honestly and professionally in all external communications
-✓ Report unethical behaviour — to a lead, to HR, or to info@1solutions.biz
+✓ Report unethical behaviour - to a lead, to HR, or to info@1solutions.biz
 
 The following are grounds for immediate disciplinary action or termination:
 • Harassment, discrimination, or bullying of any kind
@@ -125,12 +125,12 @@ The following are grounds for immediate disciplinary action or termination:
 • Insubordination or deliberate sabotage
 • Any conduct that brings the company or its clients into disrepute
 
-We handle disciplinary matters through a fair, documented process. We do not act on rumour — we investigate facts.`,
+We handle disciplinary matters through a fair, documented process. We do not act on rumour - we investigate facts.`,
   },
   {
     id: 'feedback-channel',
     title: '9. Raising Concerns',
-    body: `We want to know when something is not working — before it becomes a serious problem.
+    body: `We want to know when something is not working - before it becomes a serious problem.
 
 How to raise a concern:
 1. Speak directly to your immediate team lead (for work or process issues)
@@ -147,11 +147,11 @@ Anonymous concerns can be submitted in writing, though these are harder to inves
   {
     id: 'updates',
     title: '10. Updates to This Document',
-    body: `This Work Culture document is a living document. We will review and update it at least annually — or sooner if there are significant changes to the company, applicable laws, or team feedback.
+    body: `This Work Culture document is a living document. We will review and update it at least annually - or sooner if there are significant changes to the company, applicable laws, or team feedback.
 
 All team members will be notified of material changes. Previous versions are available upon request.
 
-Culture is built by everyone here, not just by leadership. If you see something that contradicts what is written here — or something we should add — please let us know.`,
+Culture is built by everyone here, not just by leadership. If you see something that contradicts what is written here - or something we should add - please let us know.`,
   },
 ];
 
@@ -159,8 +159,8 @@ export default function WorkCulture() {
   return (
     <>
       <Head>
-        <title>Work Culture | 1Solutions — How We Work & Who We Are</title>
-        <meta name="description" content="1Solutions Work Culture — our values, communication standards, DEI commitments, leave policy, and code of conduct for our team in New Delhi." />
+        <title>Work Culture | 1Solutions - How We Work & Who We Are</title>
+        <meta name="description" content="1Solutions Work Culture - our values, communication standards, DEI commitments, leave policy, and code of conduct for our team in New Delhi." />
         <link rel="canonical" href="https://www.1solutions.biz/work-culture/" />
         <style>{`
           .wc-page { font-family:'Inter',sans-serif; color:#1a1a2e; background:#f8fafc; }
@@ -244,7 +244,7 @@ export default function WorkCulture() {
           </nav>
           <main className="wc-content">
             <div className="wc-intro">
-              This document applies to <strong>all team members at 1Solutions</strong> — full-time employees, contractors, interns, and leadership. It is a living document and reflects our ongoing commitment to building a team we are proud to be part of.
+              This document applies to <strong>all team members at 1Solutions</strong> - full-time employees, contractors, interns, and leadership. It is a living document and reflects our ongoing commitment to building a team we are proud to be part of.
             </div>
             {SECTIONS.map(s => (
               <section key={s.id} id={s.id} className="wc-section">
@@ -266,7 +266,7 @@ export default function WorkCulture() {
             ))}
             <div className="wc-cta-card">
               <h3>Interested in joining the team?</h3>
-              <p>Browse our open roles or submit a general application — we review all profiles and reach out when a match arises.</p>
+              <p>Browse our open roles or submit a general application - we review all profiles and reach out when a match arises.</p>
               <div className="wc-cta-actions">
                 <Link href="/open-positions/" className="wc-btn wc-btn-green">View Open Positions</Link>
                 <Link href="/apply-online/" className="wc-btn wc-btn-primary">Apply Online</Link>

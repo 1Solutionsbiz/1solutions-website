@@ -28,16 +28,16 @@ const SKILLS = [
   'Prototyping & Interactive Mockups', 'Webflow & Visual Builders',
 ];
 const MODELS = [
-  { title: 'Dedicated Hire', desc: 'A full-time web designer embedded in your team — 8 hrs/day, 5 days/week.', icon: '👤' },
+  { title: 'Dedicated Hire', desc: 'A full-time web designer embedded in your team - 8 hrs/day, 5 days/week.', icon: '👤' },
   { title: 'Part-Time Hire', desc: 'Half-day engagement for landing page design, redesign projects, or design system maintenance.', icon: '⏰' },
   { title: 'Hourly Hire',    desc: 'Flexible billing for one-off page designs, visual audits, or conversion-focused redesigns.', icon: '🕐' },
 ];
 const WHY = [
-  { h: 'Conversion-Focused Design', b: 'Our designers do not just make pages look good — they engineer them to convert. Every layout decision is tied to CTA visibility, scan patterns, and trust signals.' },
-  { h: 'Brand-Coherent Visual Language', b: 'We build consistent visual systems — typography scales, color palettes, spacing grids — that work across every page of your site, not just the homepage.' },
+  { h: 'Conversion-Focused Design', b: 'Our designers do not just make pages look good - they engineer them to convert. Every layout decision is tied to CTA visibility, scan patterns, and trust signals.' },
+  { h: 'Brand-Coherent Visual Language', b: 'We build consistent visual systems - typography scales, color palettes, spacing grids - that work across every page of your site, not just the homepage.' },
   { h: 'Profiles in 48 Hours', b: 'Submit your design brief and receive 2-3 matched web designer profiles with portfolio links within two business days.' },
-  { h: 'Pixel-Perfect Developer Handoff', b: 'Our designers deliver production-ready specs via Figma Dev Mode, Zeplin, or annotated HTML/CSS prototypes — so your developers can build exactly what was designed.' },
-  { h: 'SEO & Performance Awareness', b: 'Our designers understand Core Web Vitals — they design with image optimisation, font loading, and layout stability in mind, not just aesthetics.' },
+  { h: 'Pixel-Perfect Developer Handoff', b: 'Our designers deliver production-ready specs via Figma Dev Mode, Zeplin, or annotated HTML/CSS prototypes - so your developers can build exactly what was designed.' },
+  { h: 'SEO & Performance Awareness', b: 'Our designers understand Core Web Vitals - they design with image optimisation, font loading, and layout stability in mind, not just aesthetics.' },
   { h: 'NDA & IP Protection', b: 'NDA and IP assignment signed before access to your brand assets, Figma files, or website analytics.' },
 ];
 const PROCESS = [
@@ -47,11 +47,11 @@ const PROCESS = [
   { n: '04', h: 'Onboard & Design', b: 'Designer joins your workspace and delivers first wireframes or mockups within 7 days.' },
 ];
 const FAQS = [
-  { q: 'Do your web designers also write HTML and CSS?', a: 'Yes. Many of our web designers are hybrid designer-developers who can translate Figma designs into clean, semantic HTML and CSS — bridging the gap between design and development.' },
-  { q: 'Can they design for WordPress or Shopify?', a: 'Yes. We design for both platforms — custom WordPress theme designs with ACF-compatible layouts, and Shopify storefront designs optimised for conversion, including product pages and checkout flows.' },
+  { q: 'Do your web designers also write HTML and CSS?', a: 'Yes. Many of our web designers are hybrid designer-developers who can translate Figma designs into clean, semantic HTML and CSS - bridging the gap between design and development.' },
+  { q: 'Can they design for WordPress or Shopify?', a: 'Yes. We design for both platforms - custom WordPress theme designs with ACF-compatible layouts, and Shopify storefront designs optimised for conversion, including product pages and checkout flows.' },
   { q: 'Do they do UX research or just visual design?', a: 'Our web designers focus primarily on visual and interaction design. For full UX research (user interviews, usability testing, journey mapping), we recommend pairing with a dedicated UX researcher or hiring a combined UI/UX designer.' },
-  { q: 'Can they redesign an existing website without rebuilding from scratch?', a: 'Yes. We do visual redesigns — updating the look, layout, and conversion elements while preserving your existing CMS structure and content. We deliver Figma specs that developers can apply to the existing site.' },
-  { q: 'Do they design for mobile?', a: 'Yes. All our web designers work mobile-first — designing for 320px to 1440px viewports, testing touch targets, and ensuring layouts adapt correctly across breakpoints.' },
+  { q: 'Can they redesign an existing website without rebuilding from scratch?', a: 'Yes. We do visual redesigns - updating the look, layout, and conversion elements while preserving your existing CMS structure and content. We deliver Figma specs that developers can apply to the existing site.' },
+  { q: 'Do they design for mobile?', a: 'Yes. All our web designers work mobile-first - designing for 320px to 1440px viewports, testing touch targets, and ensuring layouts adapt correctly across breakpoints.' },
   { q: 'Do you sign NDAs?', a: 'Yes. NDA and IP assignment agreements are signed as standard before any engagement begins.' },
 ];
 
@@ -84,7 +84,7 @@ export default function HireWebDesigner() {
         { '@type': 'ListItem', position: 2, name: 'Hire Web Designer', item: 'https://www.1solutions.biz/hire-web-designer/' },
       ]},
       { '@type': 'Service', name: 'Hire Web Designer', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Hire dedicated web designers from 1Solutions — conversion-focused, brand-coherent website designers with Figma expertise.',
+        description: 'Hire dedicated web designers from 1Solutions - conversion-focused, brand-coherent website designers with Figma expertise.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '112', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -149,7 +149,7 @@ export default function HireWebDesigner() {
       </Head>
       <section className="hwdes-hero">
         <h1>Hire Web Designers<br/>Conversion-Focused &amp; Brand-Coherent</h1>
-        <p>Pre-vetted web designers who build beautiful, high-converting websites — from Figma wireframes to pixel-perfect developer handoff. Profiles in 48 hours.</p>
+        <p>Pre-vetted web designers who build beautiful, high-converting websites - from Figma wireframes to pixel-perfect developer handoff. Profiles in 48 hours.</p>
         <div className="hwdes-hero-btns">
           <Link href="/contact-us" className="hwdes-btn-primary">Hire a Web Designer →</Link>
           <Link href="/portfolio" className="hwdes-btn-outline">View Portfolio</Link>
@@ -165,7 +165,7 @@ export default function HireWebDesigner() {
       <section className="hwdes-sec hwdes-sec-alt" ref={enR}>
         <div className="hwdes-wrap">
           <h2 className="hwdes-sec-title">Flexible Engagement Models</h2>
-          <p className="hwdes-sec-sub">From full-site redesigns to targeted landing page sprints — we fit your design timeline.</p>
+          <p className="hwdes-sec-sub">From full-site redesigns to targeted landing page sprints - we fit your design timeline.</p>
           <div className="hwdes-models">{MODELS.map((m, i) => <div key={m.title} className={`hwdes-model${enV ? ' hwdes-in' : ''}`} style={{ transitionDelay: `${i * 120}ms` }}><div className="hwdes-model-icon">{m.icon}</div><h3>{m.title}</h3><p>{m.desc}</p></div>)}</div>
         </div>
       </section>
@@ -187,7 +187,7 @@ export default function HireWebDesigner() {
       <section className="hwdes-sec hwdes-sec-alt" ref={prR}>
         <div className="hwdes-wrap">
           <h2 className="hwdes-sec-title">Hire in 4 Simple Steps</h2>
-          <p className="hwdes-sec-sub">From brief to first design mockups — in under two weeks.</p>
+          <p className="hwdes-sec-sub">From brief to first design mockups - in under two weeks.</p>
           <div className="hwdes-process">{PROCESS.map((p, i) => <div key={p.n} className={`hwdes-step${prV ? ' hwdes-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}><div className="hwdes-step-n">{p.n}</div><h3>{p.h}</h3><p>{p.b}</p></div>)}</div>
         </div>
       </section>
@@ -201,7 +201,7 @@ export default function HireWebDesigner() {
       <section className="hwdes-cta">
         <div className="hwdes-wrap">
           <h2>Ready to Hire Your Web Designer?</h2>
-          <p>Share your brand and goals — receive matched web designer profiles with portfolios within 48 hours. No commitment required.</p>
+          <p>Share your brand and goals - receive matched web designer profiles with portfolios within 48 hours. No commitment required.</p>
           <Link href="/contact-us" className="hwdes-btn-primary">Get Started Today →</Link>
         </div>
       </section>

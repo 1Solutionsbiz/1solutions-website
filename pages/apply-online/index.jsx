@@ -140,10 +140,10 @@ export default function ApplyOnline() {
   return (
     <>
       <Head>
-        <title>Apply Online | Careers at 1Solutions — Join Our Team</title>
+        <title>Apply Online | Careers at 1Solutions - Join Our Team</title>
         <meta
           name="description"
-          content="Join 1Solutions — a 15-year-old web development agency in New Delhi hiring WordPress, Laravel, Python, React developers, SEO executives, designers, and more. Apply online today."
+          content="Join 1Solutions - a 15-year-old web development agency in New Delhi hiring WordPress, Laravel, Python, React developers, SEO executives, designers, and more. Apply online today."
         />
         <link rel="canonical" href="https://www.1solutions.biz/apply-online/" />
         <style>{`
@@ -772,7 +772,7 @@ export default function ApplyOnline() {
             <div>
               <div className="ap-hero-eyebrow">
                 <span className="ap-hero-dot" />
-                We&apos;re Hiring — New Delhi, India
+                We&apos;re Hiring - New Delhi, India
               </div>
               <h1>
                 Build your career at{' '}
@@ -818,7 +818,7 @@ export default function ApplyOnline() {
             <p className="ap-eyebrow">Open Roles</p>
             <h2 className="ap-heading">Current open positions.</h2>
             <p className="ap-lead">
-              Don&apos;t see a perfect fit? Submit a general application — we review all profiles and
+              Don&apos;t see a perfect fit? Submit a general application - we review all profiles and
               reach out when a matching role opens up.
             </p>
             <div className="ap-positions-grid">

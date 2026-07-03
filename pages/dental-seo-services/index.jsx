@@ -3,48 +3,48 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const SERVICES = [
-  { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Dentist Keyword Strategy', desc: 'Comprehensive keyword mapping across general dentistry, cosmetic dentistry, dental implants, Invisalign, emergency dental, teeth whitening, orthodontist, and periodontics — targeting every treatment a patient searches for at every stage of their decision journey.' },
+  { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Dentist Keyword Strategy', desc: 'Comprehensive keyword mapping across general dentistry, cosmetic dentistry, dental implants, Invisalign, emergency dental, teeth whitening, orthodontist, and periodontics - targeting every treatment a patient searches for at every stage of their decision journey.' },
   { icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z', title: 'Google Business Profile for Dental Practices', desc: 'Full GBP setup and ongoing management with dental-specific categories, service attributes, patient photo strategy, appointment booking link integration, before/after gallery, and review management to dominate the dental map pack.' },
-  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'Treatment-Specific Landing Pages', desc: 'Dedicated, fully optimised pages for implants, veneers, crowns, root canal treatment, teeth whitening, Invisalign, traditional braces, wisdom tooth removal, and emergency dentistry — each page targeting its own high-intent keyword cluster.' },
-  { icon: 'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z', title: 'Patient Review Generation', desc: 'HIPAA-compliant review acquisition workflows delivered via SMS and email after appointments, active Google and Healthgrades review building, and professional negative review response strategy — building the social proof that fills appointment books.' },
-  { icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1', title: 'Local Citation Management', desc: 'Dental practice listings across Healthgrades, Zocdoc, Yelp, WebMD Dentist Finder, 1-800-Dentist, RateMDs, Vitals, and dental professional directories — consistent NAP data that anchors your local and map pack rankings.' },
-  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'Dental Content Marketing', desc: 'Educational blog content targeting patient research queries — "how much do dental implants cost", "Invisalign vs traditional braces", "what to expect from a root canal", "signs you need a crown" — ranking for the queries patients ask before booking.' },
-  { icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4', title: 'Dental Schema Markup', desc: 'Dentist LocalBusiness schema type, services offered, accepted insurance providers, payment options, and patient aggregate review schema — giving Google the structured data signals needed for rich results and local Knowledge Panel enhancement.' },
-  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'Monthly Dental SEO Reporting', desc: 'New patient attribution by channel, keyword ranking movement for all treatment terms, GBP call tracking, appointment-to-click conversion data, and a 90-day forward action plan — complete monthly visibility into what your SEO investment is generating.' },
+  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'Treatment-Specific Landing Pages', desc: 'Dedicated, fully optimised pages for implants, veneers, crowns, root canal treatment, teeth whitening, Invisalign, traditional braces, wisdom tooth removal, and emergency dentistry - each page targeting its own high-intent keyword cluster.' },
+  { icon: 'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z', title: 'Patient Review Generation', desc: 'HIPAA-compliant review acquisition workflows delivered via SMS and email after appointments, active Google and Healthgrades review building, and professional negative review response strategy - building the social proof that fills appointment books.' },
+  { icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1', title: 'Local Citation Management', desc: 'Dental practice listings across Healthgrades, Zocdoc, Yelp, WebMD Dentist Finder, 1-800-Dentist, RateMDs, Vitals, and dental professional directories - consistent NAP data that anchors your local and map pack rankings.' },
+  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'Dental Content Marketing', desc: 'Educational blog content targeting patient research queries - "how much do dental implants cost", "Invisalign vs traditional braces", "what to expect from a root canal", "signs you need a crown" - ranking for the queries patients ask before booking.' },
+  { icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4', title: 'Dental Schema Markup', desc: 'Dentist LocalBusiness schema type, services offered, accepted insurance providers, payment options, and patient aggregate review schema - giving Google the structured data signals needed for rich results and local Knowledge Panel enhancement.' },
+  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'Monthly Dental SEO Reporting', desc: 'New patient attribution by channel, keyword ranking movement for all treatment terms, GBP call tracking, appointment-to-click conversion data, and a 90-day forward action plan - complete monthly visibility into what your SEO investment is generating.' },
 ];
 
 const RESULTS = [
-  { metric: '#1', label: 'For dental implants [city]', sub: 'Multi-chair practice, US — 5 months', color: '#60CFFF' },
-  { metric: '5.2×', label: 'Increase in new patient enquiries', sub: 'Cosmetic dental practice — 6 months', color: '#80FFD0' },
-  { metric: '390%', label: 'Organic traffic growth', sub: 'Dental group — 10 months', color: '#FFD080' },
+  { metric: '#1', label: 'For dental implants [city]', sub: 'Multi-chair practice, US - 5 months', color: '#60CFFF' },
+  { metric: '5.2×', label: 'Increase in new patient enquiries', sub: 'Cosmetic dental practice - 6 months', color: '#80FFD0' },
+  { metric: '390%', label: 'Organic traffic growth', sub: 'Dental group - 10 months', color: '#FFD080' },
 ];
 
 const PROCESS = [
-  { n: '01', title: 'Dental Practice Audit', desc: 'Full audit of your website, GBP, citation profile, treatment page content, and competitor keyword landscape — identifying every gap between your current position and the top map pack slots.' },
-  { n: '02', title: 'Patient Keyword Mapping', desc: 'We map search demand to every treatment you offer — separating emergency dental intent from cosmetic enquiry intent — and build a keyword architecture that covers your entire service menu.' },
+  { n: '01', title: 'Dental Practice Audit', desc: 'Full audit of your website, GBP, citation profile, treatment page content, and competitor keyword landscape - identifying every gap between your current position and the top map pack slots.' },
+  { n: '02', title: 'Patient Keyword Mapping', desc: 'We map search demand to every treatment you offer - separating emergency dental intent from cosmetic enquiry intent - and build a keyword architecture that covers your entire service menu.' },
   { n: '03', title: 'GBP + Treatment Pages', desc: 'Google Business Profile optimised with dental categories and booking links. Dedicated treatment landing pages written by dental-industry copywriters, targeting high-value implant, cosmetic, and orthodontic keywords.' },
   { n: '04', title: 'Citation + Directory Setup', desc: 'Practice listed and verified across Healthgrades, Zocdoc, WebMD, Vitals, 1-800-Dentist, and all major dental directories with consistent NAP data and optimised profile descriptions.' },
-  { n: '05', title: 'Review Acquisition', desc: 'HIPAA-compliant post-appointment review request sequences go live via SMS and email — building Google and Healthgrades reviews rapidly to reach the 50+ review benchmark that drives map pack prominence.' },
-  { n: '06', title: 'Monthly Reporting', desc: 'New patient lead attribution, keyword position movement, GBP call volume, and a rolling 90-day action plan — every month, in plain language, showing exactly what your SEO is delivering.' },
+  { n: '05', title: 'Review Acquisition', desc: 'HIPAA-compliant post-appointment review request sequences go live via SMS and email - building Google and Healthgrades reviews rapidly to reach the 50+ review benchmark that drives map pack prominence.' },
+  { n: '06', title: 'Monthly Reporting', desc: 'New patient lead attribution, keyword position movement, GBP call volume, and a rolling 90-day action plan - every month, in plain language, showing exactly what your SEO is delivering.' },
 ];
 
 const WHY = [
-  { title: 'Dental Industry Specialists', desc: 'We understand treatment-level search behaviour, patient research journeys, and the competitive dynamics of dental markets — from single-chair practices to multi-site dental groups.' },
-  { title: 'HIPAA-Aware Marketing', desc: 'Our review acquisition workflows and content strategies are designed with patient privacy compliance in mind — so your marketing never creates regulatory exposure for your practice.' },
-  { title: 'Treatment-Level Keyword Coverage', desc: 'Every treatment you offer — from routine cleaning to full-arch implants — gets its own keyword-optimised page. This maximises your visibility across the full spectrum of patient searches.' },
-  { title: 'Patient Review Expertise', desc: 'We build review velocity across Google, Healthgrades, and Zocdoc with compliant post-appointment workflows — reaching the review counts that make the map pack selection straightforward.' },
-  { title: 'No Lock-in Contracts', desc: 'Month-to-month engagements only. Your practice continues because new patient bookings are growing — not because a long-term contract requires it.' },
-  { title: 'New Patient Attribution Reporting', desc: 'We track every new patient enquiry back to its SEO source — keyword, page, and channel — so you can see exactly which treatment keywords and which pages are filling your appointment book.' },
+  { title: 'Dental Industry Specialists', desc: 'We understand treatment-level search behaviour, patient research journeys, and the competitive dynamics of dental markets - from single-chair practices to multi-site dental groups.' },
+  { title: 'HIPAA-Aware Marketing', desc: 'Our review acquisition workflows and content strategies are designed with patient privacy compliance in mind - so your marketing never creates regulatory exposure for your practice.' },
+  { title: 'Treatment-Level Keyword Coverage', desc: 'Every treatment you offer - from routine cleaning to full-arch implants - gets its own keyword-optimised page. This maximises your visibility across the full spectrum of patient searches.' },
+  { title: 'Patient Review Expertise', desc: 'We build review velocity across Google, Healthgrades, and Zocdoc with compliant post-appointment workflows - reaching the review counts that make the map pack selection straightforward.' },
+  { title: 'No Lock-in Contracts', desc: 'Month-to-month engagements only. Your practice continues because new patient bookings are growing - not because a long-term contract requires it.' },
+  { title: 'New Patient Attribution Reporting', desc: 'We track every new patient enquiry back to its SEO source - keyword, page, and channel - so you can see exactly which treatment keywords and which pages are filling your appointment book.' },
 ];
 
 const FAQS = [
   { q: 'How long does dental SEO take to generate new patients?', a: 'Google Business Profile optimisation typically produces measurable call and enquiry increases within 3 to 6 weeks. Treatment-specific landing pages usually rank within 2 to 4 months for moderate-competition terms. For high-competition keywords like "dental implants [major city]", top-3 positions typically take 6 to 12 months of consistent optimisation and content authority building.' },
-  { q: 'Which review platforms matter most for dental practices?', a: 'Google Business Profile is the most important by far — GBP reviews directly influence map pack rankings and patient click-through rates. Healthgrades and Zocdoc are essential for patient discovery within healthcare-specific platforms. Yelp matters in certain markets, particularly the US West Coast. We build review velocity across all relevant platforms for your location.' },
-  { q: 'Do you create separate pages for every dental treatment?', a: 'Yes. Each major treatment — implants, veneers, crowns, root canal, teeth whitening, Invisalign, braces, emergency dentistry — gets its own dedicated landing page. Each page is optimised for its own keyword cluster and structured to convert research-phase visitors into appointment enquiries.' },
+  { q: 'Which review platforms matter most for dental practices?', a: 'Google Business Profile is the most important by far - GBP reviews directly influence map pack rankings and patient click-through rates. Healthgrades and Zocdoc are essential for patient discovery within healthcare-specific platforms. Yelp matters in certain markets, particularly the US West Coast. We build review velocity across all relevant platforms for your location.' },
+  { q: 'Do you create separate pages for every dental treatment?', a: 'Yes. Each major treatment - implants, veneers, crowns, root canal, teeth whitening, Invisalign, braces, emergency dentistry - gets its own dedicated landing page. Each page is optimised for its own keyword cluster and structured to convert research-phase visitors into appointment enquiries.' },
   { q: 'Can you target insurance-related dental keywords?', a: 'Yes. Keywords like "dentist that accepts [insurance plan]", "bulk billing dentist [city]", and "[insurance] dental provider" are valuable intent signals. We include insurance keywords in our strategy where they represent significant search volume in your market, and we ensure your website and GBP profile clearly communicate the insurance plans you accept.' },
-  { q: 'Do you work with multi-location dental groups?', a: 'Yes. Multi-location dental groups require a different strategy — individual location pages for each practice, centralised GBP management across all profiles, and a coordinated review strategy. We have experience managing SEO across dental groups ranging from 2 to 20+ locations, maintaining consistent brand authority while capturing hyper-local rankings for each site.' },
+  { q: 'Do you work with multi-location dental groups?', a: 'Yes. Multi-location dental groups require a different strategy - individual location pages for each practice, centralised GBP management across all profiles, and a coordinated review strategy. We have experience managing SEO across dental groups ranging from 2 to 20+ locations, maintaining consistent brand authority while capturing hyper-local rankings for each site.' },
   { q: 'How competitive is dental SEO in major cities?', a: 'Dental SEO in major metro markets is highly competitive, with large DSOs (Dental Service Organisations) and private equity-backed group practices investing heavily. However, independent practices with strong GBP profiles, high review counts, and treatment-specific content consistently outperform larger competitors in the map pack. Local authority and review velocity are the differentiators.' },
-  { q: 'How do you measure dental SEO ROI?', a: 'We track new patient enquiries from organic search (form submissions and call tracking), GBP call volume, keyword ranking positions for all treatment terms, and map pack positions. For practices using practice management software like Dentrix or Eaglesoft, we can help correlate organic leads to booked appointments — giving you a true cost-per-new-patient from your SEO investment.' },
+  { q: 'How do you measure dental SEO ROI?', a: 'We track new patient enquiries from organic search (form submissions and call tracking), GBP call volume, keyword ranking positions for all treatment terms, and map pack positions. For practices using practice management software like Dentrix or Eaglesoft, we can help correlate organic leads to booked appointments - giving you a true cost-per-new-patient from your SEO investment.' },
 ];
 
 export default function DentalSeoServices() {
@@ -180,10 +180,10 @@ export default function DentalSeoServices() {
         <div className="dnseo-inner">
           <span className="dnseo-eyebrow">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
-            Dental SEO — General · Cosmetic · Implants · Orthodontics
+            Dental SEO - General · Cosmetic · Implants · Orthodontics
           </span>
           <h1 className="dnseo-h1">Dental SEO Services That Fill<br/>Your Patient Appointment Book</h1>
-          <p className="dnseo-desc">1Solutions builds dental SEO strategies that attract high-value patients searching for implants, cosmetic dentistry, Invisalign, and emergency dental care. Treatment-specific pages, GBP dominance, and compliant review systems — engineered to grow new patient numbers month after month.</p>
+          <p className="dnseo-desc">1Solutions builds dental SEO strategies that attract high-value patients searching for implants, cosmetic dentistry, Invisalign, and emergency dental care. Treatment-specific pages, GBP dominance, and compliant review systems - engineered to grow new patient numbers month after month.</p>
           <div className="dnseo-btns">
             <a href="#contact" className="dnseo-btn-p">
               Get Your Free Dental SEO Audit
@@ -219,7 +219,7 @@ export default function DentalSeoServices() {
         <div className="dnseo-sec-inner">
           <span className="dnseo-tag">What We Do</span>
           <h2 className="dnseo-h2">Full-Spectrum <span>Dental SEO Services</span></h2>
-          <p className="dnseo-lead">From treatment landing pages to compliant review systems — every component your dental practice needs to dominate local and map pack rankings.</p>
+          <p className="dnseo-lead">From treatment landing pages to compliant review systems - every component your dental practice needs to dominate local and map pack rankings.</p>
           <div className="dnseo-grid3">
             {SERVICES.map(s => (
               <div key={s.title} className="dnseo-card">
@@ -252,7 +252,7 @@ export default function DentalSeoServices() {
         <div className="dnseo-sec-inner">
           <span className="dnseo-tag">Why 1Solutions</span>
           <h2 className="dnseo-h2">The Dental SEO Agency <span>That Fills Appointment Books</span></h2>
-          <p className="dnseo-lead">We combine deep dental industry knowledge with local SEO expertise — building strategies that attract the high-value patients your practice wants most.</p>
+          <p className="dnseo-lead">We combine deep dental industry knowledge with local SEO expertise - building strategies that attract the high-value patients your practice wants most.</p>
           <div className="dnseo-grid3">
             {WHY.map(w => (
               <div key={w.title} className="dnseo-why-card">
@@ -269,7 +269,7 @@ export default function DentalSeoServices() {
         <div className="dnseo-sec-inner">
           <span className="dnseo-tag">How We Work</span>
           <h2 className="dnseo-h2">Our <span>6-Step Dental SEO Process</span></h2>
-          <p className="dnseo-lead">From practice audit to ongoing new patient growth — a structured dental SEO programme built for long-term results.</p>
+          <p className="dnseo-lead">From practice audit to ongoing new patient growth - a structured dental SEO programme built for long-term results.</p>
           <div className="dnseo-grid3">
             {PROCESS.map(p => (
               <div key={p.n}>
@@ -305,7 +305,7 @@ export default function DentalSeoServices() {
         <div className="dnseo-sec-inner">
           <span className="dnseo-tag" style={{ display:'block', textAlign:'center', marginBottom:12 }}>Ready to Attract More New Patients?</span>
           <h2 className="dnseo-cta-h">Get Your Free Dental Practice SEO Audit</h2>
-          <p className="dnseo-cta-p">We will audit your GBP, treatment pages, citation profile, and competitor landscape — and deliver a prioritised action plan for growing new patient bookings from organic search. Free, no obligation.</p>
+          <p className="dnseo-cta-p">We will audit your GBP, treatment pages, citation profile, and competitor landscape - and deliver a prioritised action plan for growing new patient bookings from organic search. Free, no obligation.</p>
           <div style={{ display:'flex', gap:14, justifyContent:'center', flexWrap:'wrap' }}>
             <Link href="/contact-us" className="dnseo-btn-p">
               Request Free Audit

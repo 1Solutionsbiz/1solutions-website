@@ -28,15 +28,15 @@ const SKILLS = [
   'Xcode Instruments', 'OAuth 2.0 & Biometrics',
 ];
 const MODELS = [
-  { title: 'Dedicated Hire', desc: 'A full-time iOS developer committed exclusively to your product — 8 hrs/day, 5 days/week.', icon: '👤' },
+  { title: 'Dedicated Hire', desc: 'A full-time iOS developer committed exclusively to your product - 8 hrs/day, 5 days/week.', icon: '👤' },
   { title: 'Part-Time Hire', desc: 'Half-day engagement for ongoing feature additions, App Store releases, or maintenance.', icon: '⏰' },
   { title: 'Hourly Hire',    desc: 'Flexible hourly billing for code audits, Swift migration, or burst feature delivery.', icon: '🕐' },
 ];
 const WHY = [
-  { h: 'Apple Platform Depth', b: 'Our developers build for iPhone, iPad, Apple Watch, and Apple TV — native to the core, not cross-platform wrappers.' },
+  { h: 'Apple Platform Depth', b: 'Our developers build for iPhone, iPad, Apple Watch, and Apple TV - native to the core, not cross-platform wrappers.' },
   { h: 'Swift & SwiftUI First', b: 'All new development uses modern Swift and SwiftUI. Legacy UIKit codebases are also fully supported and incrementally migrated.' },
   { h: 'Profiles in 48 Hours', b: 'Submit your brief and receive 2-3 pre-screened iOS developer CVs within two business days.' },
-  { h: 'App Store Expertise', b: 'From TestFlight beta management to App Store Connect submissions and review response — we handle the full release cycle.' },
+  { h: 'App Store Expertise', b: 'From TestFlight beta management to App Store Connect submissions and review response - we handle the full release cycle.' },
   { h: 'IP & NDA Protection', b: 'NDA and IP assignment signed before any access to your Xcode project, codebase, or Apple developer account.' },
   { h: 'No Lock-In', b: 'Month-to-month engagements with 30-day notice to scale or disengage. Your code belongs to you.' },
 ];
@@ -49,7 +49,7 @@ const PROCESS = [
 const FAQS = [
   { q: 'Do your iOS developers use Swift or Objective-C?', a: 'All new projects are built in Swift. Our developers also maintain and refactor Objective-C codebases and can incrementally migrate them to Swift.' },
   { q: 'Can they build for iPad, Apple Watch, and tvOS too?', a: 'Yes. We have developers with cross-platform Apple experience covering iPadOS, watchOS, and tvOS alongside the primary iPhone target.' },
-  { q: 'How do you handle App Store submissions?', a: 'Our developers manage the full release process — TestFlight builds, metadata and screenshots, App Store Connect submission, and review board responses.' },
+  { q: 'How do you handle App Store submissions?', a: 'Our developers manage the full release process - TestFlight builds, metadata and screenshots, App Store Connect submission, and review board responses.' },
   { q: 'Can the developer work with our existing Xcode project?', a: 'Absolutely. The developer begins with a codebase review, aligns to your architecture patterns, and follows your code review process before writing new code.' },
   { q: 'What is the minimum engagement length?', a: 'Our standard minimum is 4 weeks. This allows enough time for onboarding, architecture alignment, and meaningful feature delivery.' },
   { q: 'Do you sign NDAs?', a: 'Yes. NDA and IP assignment agreements are signed as standard before any project access is granted.' },
@@ -87,7 +87,7 @@ export default function HireIOSDeveloper() {
         { '@type': 'ListItem', position: 2, name: 'Hire iOS Developer', item: 'https://www.1solutions.biz/hire-ios-developer/' },
       ]},
       { '@type': 'Service', name: 'Hire iOS Developer', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Hire dedicated iOS developers from 1Solutions — Swift, SwiftUI, and UIKit experts for iPhone, iPad, and Apple Watch.',
+        description: 'Hire dedicated iOS developers from 1Solutions - Swift, SwiftUI, and UIKit experts for iPhone, iPad, and Apple Watch.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '96', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({
@@ -167,7 +167,7 @@ export default function HireIOSDeveloper() {
       <section className="hios-sec" ref={skR}>
         <div className="hios-wrap">
           <h2 className="hios-sec-title">Skills &amp; Tech Stack</h2>
-          <p className="hios-sec-sub">Our iOS developers are fluent in the full Apple platform — from Swift concurrency to HealthKit and ARKit integrations.</p>
+          <p className="hios-sec-sub">Our iOS developers are fluent in the full Apple platform - from Swift concurrency to HealthKit and ARKit integrations.</p>
           <div className="hios-skills">
             {SKILLS.map((s, i) => (
               <span key={s} className={`hios-skill${skV ? ' hios-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>
@@ -179,7 +179,7 @@ export default function HireIOSDeveloper() {
       <section className="hios-sec hios-sec-alt" ref={enR}>
         <div className="hios-wrap">
           <h2 className="hios-sec-title">Flexible Engagement Models</h2>
-          <p className="hios-sec-sub">Full-time focus, part-time sprints, or hourly support — structured around your release calendar.</p>
+          <p className="hios-sec-sub">Full-time focus, part-time sprints, or hourly support - structured around your release calendar.</p>
           <div className="hios-models">
             {MODELS.map((m, i) => (
               <div key={m.title} className={`hios-model${enV ? ' hios-in' : ''}`} style={{ transitionDelay: `${i * 120}ms` }}>
@@ -195,7 +195,7 @@ export default function HireIOSDeveloper() {
       <section className="hios-sec" ref={whR}>
         <div className="hios-wrap">
           <h2 className="hios-sec-title">Why Hire iOS Developers from 1Solutions?</h2>
-          <p className="hios-sec-sub">Our iOS engineers have shipped App Store apps with millions of downloads — not just internal tools.</p>
+          <p className="hios-sec-sub">Our iOS engineers have shipped App Store apps with millions of downloads - not just internal tools.</p>
           <div className="hios-why-grid">
             {WHY.map((w, i) => (
               <div key={w.h} className={`hios-why-item${whV ? ' hios-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}>
@@ -219,7 +219,7 @@ export default function HireIOSDeveloper() {
       <section className="hios-sec hios-sec-alt" ref={prR}>
         <div className="hios-wrap">
           <h2 className="hios-sec-title">Hire in 4 Simple Steps</h2>
-          <p className="hios-sec-sub">From brief to first TestFlight build — in under two weeks.</p>
+          <p className="hios-sec-sub">From brief to first TestFlight build - in under two weeks.</p>
           <div className="hios-process">
             {PROCESS.map((p, i) => (
               <div key={p.n} className={`hios-step${prV ? ' hios-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}>
@@ -253,7 +253,7 @@ export default function HireIOSDeveloper() {
       <section className="hios-cta">
         <div className="hios-wrap">
           <h2>Ready to Hire Your iOS Developer?</h2>
-          <p>Share your requirements and receive matched iOS specialist profiles within 48 hours — no commitment required.</p>
+          <p>Share your requirements and receive matched iOS specialist profiles within 48 hours - no commitment required.</p>
           <Link href="/contact-us" className="hios-btn-primary">Get Started Today →</Link>
         </div>
       </section>

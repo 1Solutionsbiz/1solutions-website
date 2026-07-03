@@ -27,13 +27,13 @@ const SKILLS = [
   'Microservices Architecture', 'JWT & OAuth 2.0', 'Jest & Supertest', 'CI/CD Pipelines',
 ];
 const MODELS = [
-  { title: 'Dedicated Hire', desc: 'A full-time Node.js developer focused exclusively on your backend — 8 hrs/day, 5 days/week.', icon: '👤' },
+  { title: 'Dedicated Hire', desc: 'A full-time Node.js developer focused exclusively on your backend - 8 hrs/day, 5 days/week.', icon: '👤' },
   { title: 'Part-Time Hire', desc: 'Half-day engagement for API development, performance work, or ongoing backend maintenance.', icon: '⏰' },
   { title: 'Hourly Hire',    desc: 'Flexible hourly billing for architecture reviews, security audits, or sprint capacity boosts.', icon: '🕐' },
 ];
 const WHY = [
-  { h: 'High-Throughput Backend Expertise', b: 'Our Node.js developers have built APIs handling millions of requests per day — event-driven, non-blocking, and horizontally scalable.' },
-  { h: 'NestJS & Enterprise Patterns', b: 'We build maintainable backends using NestJS with dependency injection, CQRS, and clean module boundaries — not just raw Express.' },
+  { h: 'High-Throughput Backend Expertise', b: 'Our Node.js developers have built APIs handling millions of requests per day - event-driven, non-blocking, and horizontally scalable.' },
+  { h: 'NestJS & Enterprise Patterns', b: 'We build maintainable backends using NestJS with dependency injection, CQRS, and clean module boundaries - not just raw Express.' },
   { h: 'Matched in 48 Hours', b: 'Submit your brief and receive 2-3 pre-screened Node.js developer CVs within two business days.' },
   { h: 'Full Observability', b: 'Developers instrument APIs with structured logging (Winston/Pino), distributed tracing, and metrics from day one.' },
   { h: 'Security-First Approach', b: 'Every API is built with input validation, rate limiting, OAuth 2.0, and OWASP Top 10 mitigations as standard.' },
@@ -47,7 +47,7 @@ const PROCESS = [
 ];
 const FAQS = [
   { q: 'Do your Node.js developers work with NestJS or just Express?', a: 'We have specialists in both. For greenfield projects requiring long-term maintainability we recommend NestJS. For simpler APIs or existing Express codebases we match accordingly.' },
-  { q: 'Can they build real-time backends with WebSockets?', a: 'Yes. Our developers build real-time systems using Socket.io, native WebSockets, and Server-Sent Events — for chat, notifications, live dashboards, and collaborative tools.' },
+  { q: 'Can they build real-time backends with WebSockets?', a: 'Yes. Our developers build real-time systems using Socket.io, native WebSockets, and Server-Sent Events - for chat, notifications, live dashboards, and collaborative tools.' },
   { q: 'Do they have experience with message queues and event-driven architectures?', a: 'Absolutely. Our Node.js engineers work with Kafka, RabbitMQ, AWS SQS, and BullMQ for async processing, event sourcing, and microservice communication.' },
   { q: 'Can they handle high-traffic API performance optimisation?', a: 'Yes. Our developers profile APIs using Clinic.js and Node.js built-in profiler, optimise database queries, implement multi-layer caching (Redis, CDN), and tune event loop performance.' },
   { q: 'What is the minimum engagement period?', a: 'Our standard minimum is 4 weeks. This ensures sufficient time for onboarding and meaningful API delivery.' },
@@ -86,7 +86,7 @@ export default function HireNodeJSDeveloper() {
         { '@type': 'ListItem', position: 2, name: 'Hire Node.js Developer', item: 'https://www.1solutions.biz/hire-nodejs-developer/' },
       ]},
       { '@type': 'Service', name: 'Hire Node.js Developer', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Hire dedicated Node.js developers from 1Solutions — Express, NestJS, and microservices experts.',
+        description: 'Hire dedicated Node.js developers from 1Solutions - Express, NestJS, and microservices experts.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '118', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -163,7 +163,7 @@ export default function HireNodeJSDeveloper() {
       <section className="hnjs-sec" ref={skR}>
         <div className="hnjs-wrap">
           <h2 className="hnjs-sec-title">Skills &amp; Tech Stack</h2>
-          <p className="hnjs-sec-sub">Our Node.js developers cover the full backend spectrum — API design, async messaging, cloud deployment, and performance tuning.</p>
+          <p className="hnjs-sec-sub">Our Node.js developers cover the full backend spectrum - API design, async messaging, cloud deployment, and performance tuning.</p>
           <div className="hnjs-skills">
             {SKILLS.map((s, i) => <span key={s} className={`hnjs-skill${skV ? ' hnjs-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>)}
           </div>
@@ -173,7 +173,7 @@ export default function HireNodeJSDeveloper() {
       <section className="hnjs-sec hnjs-sec-alt" ref={enR}>
         <div className="hnjs-wrap">
           <h2 className="hnjs-sec-title">Flexible Engagement Models</h2>
-          <p className="hnjs-sec-sub">Full-time, part-time, or hourly — scale to match your API delivery roadmap.</p>
+          <p className="hnjs-sec-sub">Full-time, part-time, or hourly - scale to match your API delivery roadmap.</p>
           <div className="hnjs-models">
             {MODELS.map((m, i) => (
               <div key={m.title} className={`hnjs-model${enV ? ' hnjs-in' : ''}`} style={{ transitionDelay: `${i * 120}ms` }}>
@@ -188,7 +188,7 @@ export default function HireNodeJSDeveloper() {
       <section className="hnjs-sec" ref={whR}>
         <div className="hnjs-wrap">
           <h2 className="hnjs-sec-title">Why Hire Node.js Developers from 1Solutions?</h2>
-          <p className="hnjs-sec-sub">We place backend engineers who have built systems serving millions of users — not just CRUD tutorial writers.</p>
+          <p className="hnjs-sec-sub">We place backend engineers who have built systems serving millions of users - not just CRUD tutorial writers.</p>
           <div className="hnjs-why-grid">
             {WHY.map((w, i) => (
               <div key={w.h} className={`hnjs-why-item${whV ? ' hnjs-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}>
@@ -211,7 +211,7 @@ export default function HireNodeJSDeveloper() {
       <section className="hnjs-sec hnjs-sec-alt" ref={prR}>
         <div className="hnjs-wrap">
           <h2 className="hnjs-sec-title">Hire in 4 Simple Steps</h2>
-          <p className="hnjs-sec-sub">From brief to first API endpoint — in under two weeks.</p>
+          <p className="hnjs-sec-sub">From brief to first API endpoint - in under two weeks.</p>
           <div className="hnjs-process">
             {PROCESS.map((p, i) => (
               <div key={p.n} className={`hnjs-step${prV ? ' hnjs-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}>
@@ -244,7 +244,7 @@ export default function HireNodeJSDeveloper() {
       <section className="hnjs-cta">
         <div className="hnjs-wrap">
           <h2>Ready to Hire Your Node.js Developer?</h2>
-          <p>Share your API requirements and receive matched Node.js specialist profiles within 48 hours — no commitment required.</p>
+          <p>Share your API requirements and receive matched Node.js specialist profiles within 48 hours - no commitment required.</p>
           <Link href="/contact-us" className="hnjs-btn-primary">Get Started Today →</Link>
         </div>
       </section>

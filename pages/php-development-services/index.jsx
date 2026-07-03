@@ -3,14 +3,14 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const SERVICES = [
-  { n: '01', title: 'Custom PHP Web Application Development', desc: 'Fully bespoke PHP web applications built around your business logic — scalable architecture, clean codebase, and long-term maintainability from day one.' },
-  { n: '02', title: 'Laravel Application Development', desc: 'Sophisticated web applications built on Laravel — the most robust PHP framework. REST APIs, admin panels, SaaS platforms, and complex business portals.' },
-  { n: '03', title: 'REST API & Backend Development', desc: 'Fast, secure, and well-documented RESTful APIs and GraphQL endpoints — built to power web apps, mobile apps, and third-party integrations at any scale.' },
-  { n: '04', title: 'PHP CMS Development', desc: 'Custom CMS builds and extensions on WordPress, Drupal, and Joomla — tailored to your editorial workflow and content structure requirements.' },
-  { n: '05', title: 'Legacy PHP Migration & Modernisation', desc: 'Refactor or rebuild legacy PHP 5.x/7.x codebases onto modern PHP 8 + Laravel or Symfony — improving security, performance, and developer productivity.' },
-  { n: '06', title: 'PHP eCommerce Development', desc: 'Custom ecommerce platforms and WooCommerce extensions built in PHP — with bespoke pricing engines, ERP integrations, and buyer-specific workflows.' },
-  { n: '07', title: 'PHP Portal & Dashboard Development', desc: 'Multi-user portals, admin dashboards, reporting tools, and client-facing self-service platforms — with role-based access control and clean data visualisation.' },
-  { n: '08', title: 'PHP Support & Maintenance', desc: 'Ongoing support for existing PHP applications — bug fixing, security patching, performance optimisation, dependency updates, and feature enhancements.' },
+  { n: '01', title: 'Custom PHP Web Application Development', desc: 'Fully bespoke PHP web applications built around your business logic - scalable architecture, clean codebase, and long-term maintainability from day one.' },
+  { n: '02', title: 'Laravel Application Development', desc: 'Sophisticated web applications built on Laravel - the most robust PHP framework. REST APIs, admin panels, SaaS platforms, and complex business portals.' },
+  { n: '03', title: 'REST API & Backend Development', desc: 'Fast, secure, and well-documented RESTful APIs and GraphQL endpoints - built to power web apps, mobile apps, and third-party integrations at any scale.' },
+  { n: '04', title: 'PHP CMS Development', desc: 'Custom CMS builds and extensions on WordPress, Drupal, and Joomla - tailored to your editorial workflow and content structure requirements.' },
+  { n: '05', title: 'Legacy PHP Migration & Modernisation', desc: 'Refactor or rebuild legacy PHP 5.x/7.x codebases onto modern PHP 8 + Laravel or Symfony - improving security, performance, and developer productivity.' },
+  { n: '06', title: 'PHP eCommerce Development', desc: 'Custom ecommerce platforms and WooCommerce extensions built in PHP - with bespoke pricing engines, ERP integrations, and buyer-specific workflows.' },
+  { n: '07', title: 'PHP Portal & Dashboard Development', desc: 'Multi-user portals, admin dashboards, reporting tools, and client-facing self-service platforms - with role-based access control and clean data visualisation.' },
+  { n: '08', title: 'PHP Support & Maintenance', desc: 'Ongoing support for existing PHP applications - bug fixing, security patching, performance optimisation, dependency updates, and feature enhancements.' },
 ];
 
 const FRAMEWORKS = [
@@ -20,26 +20,26 @@ const FRAMEWORKS = [
 ];
 
 const PROCESS = [
-  { step: '01', title: 'Discovery & Technical Scoping', desc: 'We map your business requirements to a concrete technical specification — architecture decisions, database design, API contracts, and third-party integration points.' },
-  { step: '02', title: 'Architecture & Database Design', desc: 'Before coding begins, we design the data model, service layer, and API structure — ensuring the foundation supports future scale without costly reworks.' },
+  { step: '01', title: 'Discovery & Technical Scoping', desc: 'We map your business requirements to a concrete technical specification - architecture decisions, database design, API contracts, and third-party integration points.' },
+  { step: '02', title: 'Architecture & Database Design', desc: 'Before coding begins, we design the data model, service layer, and API structure - ensuring the foundation supports future scale without costly reworks.' },
   { step: '03', title: 'Agile Development in Sprints', desc: 'Two-week sprints with demo-ready milestones. Code reviews, automated tests, and staging deployments at every sprint so you see progress, not promises.' },
   { step: '04', title: 'QA, Security Audit & Staging', desc: 'Functional testing, unit and integration test suites, OWASP security review, and performance profiling before any production deployment.' },
   { step: '05', title: 'Deployment, Handover & Support', desc: 'Production deployment, server configuration, documentation handover, and a hypercare period covering any issues that arise post-launch.' },
 ];
 
 const WHY = [
-  { title: '15+ Years of PHP Expertise', desc: 'We\'ve been building PHP applications since 2008. From small APIs to multi-tenant SaaS platforms with millions of users — our team has seen and solved the full range of PHP complexity.' },
-  { title: 'Laravel Specialists', desc: 'Laravel is our framework of choice for complex applications. We follow Laravel best practices — service containers, Eloquent relationships, queues, broadcasting, and full test coverage.' },
+  { title: '15+ Years of PHP Expertise', desc: 'We\'ve been building PHP applications since 2008. From small APIs to multi-tenant SaaS platforms with millions of users - our team has seen and solved the full range of PHP complexity.' },
+  { title: 'Laravel Specialists', desc: 'Laravel is our framework of choice for complex applications. We follow Laravel best practices - service containers, Eloquent relationships, queues, broadcasting, and full test coverage.' },
   { title: 'Security-First Development', desc: 'Every PHP application we build includes OWASP-aligned security practices: input validation, prepared statements, CSRF protection, rate limiting, and regular dependency audits.' },
-  { title: 'Clean, Documented Code', desc: 'We write code that your team — or a future developer — can understand, extend, and maintain. Full PHPDoc, README documentation, and architecture decision records on every project.' },
+  { title: 'Clean, Documented Code', desc: 'We write code that your team - or a future developer - can understand, extend, and maintain. Full PHPDoc, README documentation, and architecture decision records on every project.' },
   { title: 'US, Canada & Australia Focused', desc: 'We understand the infrastructure, compliance, and performance requirements of western markets. Servers in your region, GDPR/CCPA awareness, and western business-hour support.' },
-  { title: 'Full-Stack Delivery', desc: 'Backend PHP development, React/Next.js frontends, cloud infrastructure, CI/CD pipelines, and ongoing maintenance — all under one roof. No outsourcing, no finger-pointing.' },
+  { title: 'Full-Stack Delivery', desc: 'Backend PHP development, React/Next.js frontends, cloud infrastructure, CI/CD pipelines, and ongoing maintenance - all under one roof. No outsourcing, no finger-pointing.' },
 ];
 
 const FAQS = [
   {
     q: 'Is PHP still a good choice for web application development in 2025?',
-    a: 'Yes — PHP 8.x is a modern, high-performance language with significant improvements in type safety, performance (JIT compilation), and developer ergonomics compared to PHP 5 or 7. PHP powers over 77% of server-side websites globally, including Facebook, Wikipedia, Slack\'s backend, and millions of Laravel and WordPress applications. With frameworks like Laravel and Symfony, PHP applications are highly structured, testable, and maintainable. For API-heavy applications, ecommerce, CMS, or business portals, PHP remains an excellent and pragmatic choice.',
+    a: 'Yes - PHP 8.x is a modern, high-performance language with significant improvements in type safety, performance (JIT compilation), and developer ergonomics compared to PHP 5 or 7. PHP powers over 77% of server-side websites globally, including Facebook, Wikipedia, Slack\'s backend, and millions of Laravel and WordPress applications. With frameworks like Laravel and Symfony, PHP applications are highly structured, testable, and maintainable. For API-heavy applications, ecommerce, CMS, or business portals, PHP remains an excellent and pragmatic choice.',
   },
   {
     q: 'What is Laravel and why do you recommend it?',
@@ -47,19 +47,19 @@ const FAQS = [
   },
   {
     q: 'How much does custom PHP development cost?',
-    a: 'PHP development costs vary based on complexity. A simple web application (5–10 features, basic API) typically starts from $8,000–$20,000. A mid-complexity Laravel application with user management, integrations, admin panel, and reporting ranges from $20,000–$60,000. Complex multi-tenant SaaS platforms or enterprise applications can exceed $100,000. We provide detailed fixed-price quotes after a discovery workshop — with full technical specifications so costs are predictable and scope is controlled.',
+    a: 'PHP development costs vary based on complexity. A simple web application (5–10 features, basic API) typically starts from $8,000–$20,000. A mid-complexity Laravel application with user management, integrations, admin panel, and reporting ranges from $20,000–$60,000. Complex multi-tenant SaaS platforms or enterprise applications can exceed $100,000. We provide detailed fixed-price quotes after a discovery workshop - with full technical specifications so costs are predictable and scope is controlled.',
   },
   {
     q: 'Can you modernise our legacy PHP application?',
-    a: 'Yes — legacy PHP migration and modernisation is one of our most common engagements. We typically encounter PHP 5.6 or 7.x applications with no framework, global variables, procedural code, and security vulnerabilities. Our approach: audit the existing codebase, map all functionality, then incrementally refactor or rebuild onto PHP 8 + Laravel, with a parallel test suite ensuring no functionality regression. We prefer incremental migration over big-bang rewrites to reduce risk and maintain business continuity throughout the process.',
+    a: 'Yes - legacy PHP migration and modernisation is one of our most common engagements. We typically encounter PHP 5.6 or 7.x applications with no framework, global variables, procedural code, and security vulnerabilities. Our approach: audit the existing codebase, map all functionality, then incrementally refactor or rebuild onto PHP 8 + Laravel, with a parallel test suite ensuring no functionality regression. We prefer incremental migration over big-bang rewrites to reduce risk and maintain business continuity throughout the process.',
   },
   {
     q: 'Do you write tests for your PHP applications?',
-    a: 'Yes — automated testing is part of our standard development process. We write unit tests for business logic, feature tests for API endpoints, and integration tests for critical user flows using PHPUnit and Laravel\'s built-in testing tools. Test coverage targets are agreed at project scope — typically 70–80% for business-critical code. CI pipelines run the full test suite on every code push. Test coverage significantly reduces regression risk, improves deployment confidence, and reduces maintenance cost over the application\'s lifetime.',
+    a: 'Yes - automated testing is part of our standard development process. We write unit tests for business logic, feature tests for API endpoints, and integration tests for critical user flows using PHPUnit and Laravel\'s built-in testing tools. Test coverage targets are agreed at project scope - typically 70–80% for business-critical code. CI pipelines run the full test suite on every code push. Test coverage significantly reduces regression risk, improves deployment confidence, and reduces maintenance cost over the application\'s lifetime.',
   },
   {
     q: 'Can you integrate our PHP application with third-party services?',
-    a: 'Yes — third-party integration is a core part of most PHP projects we deliver. Common integrations include: payment gateways (Stripe, PayPal, Braintree, Authorize.net), CRMs (Salesforce, HubSpot, Zoho), ERPs (SAP, NetSuite, Dynamics), shipping carriers (FedEx, UPS, Australia Post, Canada Post), email services (SendGrid, Mailgun, Postmark), SMS providers (Twilio), and data warehouses (BigQuery, Snowflake). We design integrations with proper error handling, retry logic, and webhooks — not fragile synchronous calls that fail silently.',
+    a: 'Yes - third-party integration is a core part of most PHP projects we deliver. Common integrations include: payment gateways (Stripe, PayPal, Braintree, Authorize.net), CRMs (Salesforce, HubSpot, Zoho), ERPs (SAP, NetSuite, Dynamics), shipping carriers (FedEx, UPS, Australia Post, Canada Post), email services (SendGrid, Mailgun, Postmark), SMS providers (Twilio), and data warehouses (BigQuery, Snowflake). We design integrations with proper error handling, retry logic, and webhooks - not fragile synchronous calls that fail silently.',
   },
   {
     q: 'How do you handle PHP application security?',
@@ -67,7 +67,7 @@ const FAQS = [
   },
   {
     q: 'Do you provide ongoing PHP support after the project launches?',
-    a: 'Yes — we offer dedicated PHP support and maintenance retainers post-launch. This covers: bug fixing and crash resolution, PHP and dependency version upgrades, security patching, performance monitoring and optimisation, minor feature enhancements, and database maintenance. We also offer dedicated development retainers if you need ongoing feature development. All support clients get a named account manager, monthly reports, and access to our support ticketing system with guaranteed response times based on issue severity.',
+    a: 'Yes - we offer dedicated PHP support and maintenance retainers post-launch. This covers: bug fixing and crash resolution, PHP and dependency version upgrades, security patching, performance monitoring and optimisation, minor feature enhancements, and database maintenance. We also offer dedicated development retainers if you need ongoing feature development. All support clients get a named account manager, monthly reports, and access to our support ticketing system with guaranteed response times based on issue severity.',
   },
 ];
 
@@ -132,7 +132,7 @@ export default function PhpDevelopmentServices() {
       {
         '@type': 'Service',
         name: 'PHP Development Services',
-        description: 'Custom PHP web application development — Laravel applications, REST APIs, legacy migration, CMS, ecommerce, and business portals for US, Canada & Australia.',
+        description: 'Custom PHP web application development - Laravel applications, REST APIs, legacy migration, CMS, ecommerce, and business portals for US, Canada & Australia.',
         provider: {
           '@type': 'Organization',
           name: '1Solutions',
@@ -157,7 +157,7 @@ export default function PhpDevelopmentServices() {
     <>
       <Head>
         <title>PHP Development Services | 1Solutions</title>
-        <meta name="description" content="Expert PHP development services — custom web apps, Laravel applications, REST APIs, legacy migration & CMS." />
+        <meta name="description" content="Expert PHP development services - custom web apps, Laravel applications, REST APIs, legacy migration & CMS." />
         <meta name="keywords" content="php development services, php development company, laravel development, custom php development, php web application development, php agency" />
         <link rel="canonical" href="https://www.1solutions.biz/php-development-services" />
         <meta name="robots" content="index, follow" />
@@ -284,7 +284,7 @@ export default function PhpDevelopmentServices() {
               Web Development
             </span>
             <h1 className="php-hero-h1">PHP Development Services for Custom Web Applications &amp; APIs</h1>
-            <p className="php-hero-sub">Custom PHP and Laravel applications built clean, secure, and documented — for startups, SMEs, and enterprises across the US, Canada, and Australia.</p>
+            <p className="php-hero-sub">Custom PHP and Laravel applications built clean, secure, and documented - for startups, SMEs, and enterprises across the US, Canada, and Australia.</p>
             <div className="php-hero-btns">
               <Link href="/contact-us" className="php-btn-primary">
                 Start a PHP Project
@@ -307,7 +307,7 @@ export default function PhpDevelopmentServices() {
           <div className="php-services-inner">
             <span className="php-section-eyebrow">What We Build</span>
             <h2 className="php-section-title">PHP Development Services</h2>
-            <p className="php-section-desc">From custom applications and Laravel backends to legacy modernisation and API development — full-spectrum PHP delivery under one roof.</p>
+            <p className="php-section-desc">From custom applications and Laravel backends to legacy modernisation and API development - full-spectrum PHP delivery under one roof.</p>
             <div className="php-services-grid" ref={cardsRef}>
               {SERVICES.map((s, i) => (
                 <div key={s.n} className={`php-service-card${visibleCards.includes(i) ? ' visible' : ''}`}>
@@ -324,7 +324,7 @@ export default function PhpDevelopmentServices() {
           <div className="php-fw-inner">
             <span className="php-section-eyebrow">Tech Stack</span>
             <h2 className="php-section-title">Frameworks &amp; Technologies</h2>
-            <p className="php-section-desc">We work with the full PHP ecosystem — choosing the right framework and tooling for each project&rsquo;s specific requirements and scale.</p>
+            <p className="php-section-desc">We work with the full PHP ecosystem - choosing the right framework and tooling for each project&rsquo;s specific requirements and scale.</p>
             <div className="php-fw-grid">
               {FRAMEWORKS.map(f => <span key={f} className="php-fw-pill">{f}</span>)}
             </div>
@@ -335,7 +335,7 @@ export default function PhpDevelopmentServices() {
           <div className="php-process-inner">
             <span className="php-section-eyebrow">How We Work</span>
             <h2 className="php-section-title">Our PHP Development Process</h2>
-            <p className="php-section-desc">A structured, transparent process from discovery through to deployment — with working software at each milestone, not just at the end.</p>
+            <p className="php-section-desc">A structured, transparent process from discovery through to deployment - with working software at each milestone, not just at the end.</p>
             <div className="php-process-steps">
               {PROCESS.map((p, i) => (
                 <div key={p.step} ref={el => { stepRefs.current[i] = el; }} className={`php-process-step${visibleSteps.includes(i) ? ' visible' : ''}`}>

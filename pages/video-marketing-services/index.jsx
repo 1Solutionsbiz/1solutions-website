@@ -4,42 +4,42 @@ import { useState } from 'react';
 
 const ACCENT = '#1a0028';
 const SERVICES = [
-  { icon: 'M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z', title: 'YouTube Channel Strategy & Management', desc: 'Channel positioning, content roadmap, upload scheduling, YouTube SEO, end screen strategy, playlist architecture, and ongoing channel growth management — treating YouTube as the search engine it is.' },
-  { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Video SEO (YouTube & Google)', desc: 'Title optimisation, description keyword structure, tag strategy, closed captions, chapter markers, and schema markup — maximising discoverability on both YouTube search and Google video results.' },
-  { icon: 'M13 10V3L4 14h7v7l9-11h-7z', title: 'Short-Form Video (Reels, TikTok, Shorts)', desc: 'Short-form video content strategy and production briefs for Instagram Reels, TikTok, and YouTube Shorts — hook-first scripts, trend research, and platform-specific optimisation for maximum reach.' },
-  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'YouTube Ads Management', desc: 'TrueView in-stream, bumper ad, and Video Action campaigns managed for view cost and conversion performance — with audience targeting, creative testing, and weekly bid optimisation.' },
-  { icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z', title: 'Video Script Writing', desc: 'Hook-first scripts written to hold attention from the first 3 seconds — structured for the platform format, brand voice, and call to action, with A/B script variants for testing.' },
-  { icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z', title: 'Video Production Coordination', desc: 'Production brief creation, talent briefing, filming schedule coordination, and post-production direction — bridging strategy and execution for your internal or external production team.' },
-  { icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z', title: 'Thumbnail Design Strategy', desc: 'Click-through-rate-optimised YouTube thumbnail strategy — face framing, contrast, text hierarchy, and A/B testing — because your thumbnail is the most important creative element on YouTube.' },
-  { icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z', title: 'Video Analytics & Reporting', desc: 'Monthly video performance report — views, watch time, CTR, subscriber growth, top-performing videos, audience retention curves, and YouTube Ads attribution — with next-month recommendations.' },
+  { icon: 'M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z', title: 'YouTube Channel Strategy & Management', desc: 'Channel positioning, content roadmap, upload scheduling, YouTube SEO, end screen strategy, playlist architecture, and ongoing channel growth management - treating YouTube as the search engine it is.' },
+  { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Video SEO (YouTube & Google)', desc: 'Title optimisation, description keyword structure, tag strategy, closed captions, chapter markers, and schema markup - maximising discoverability on both YouTube search and Google video results.' },
+  { icon: 'M13 10V3L4 14h7v7l9-11h-7z', title: 'Short-Form Video (Reels, TikTok, Shorts)', desc: 'Short-form video content strategy and production briefs for Instagram Reels, TikTok, and YouTube Shorts - hook-first scripts, trend research, and platform-specific optimisation for maximum reach.' },
+  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'YouTube Ads Management', desc: 'TrueView in-stream, bumper ad, and Video Action campaigns managed for view cost and conversion performance - with audience targeting, creative testing, and weekly bid optimisation.' },
+  { icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z', title: 'Video Script Writing', desc: 'Hook-first scripts written to hold attention from the first 3 seconds - structured for the platform format, brand voice, and call to action, with A/B script variants for testing.' },
+  { icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z', title: 'Video Production Coordination', desc: 'Production brief creation, talent briefing, filming schedule coordination, and post-production direction - bridging strategy and execution for your internal or external production team.' },
+  { icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z', title: 'Thumbnail Design Strategy', desc: 'Click-through-rate-optimised YouTube thumbnail strategy - face framing, contrast, text hierarchy, and A/B testing - because your thumbnail is the most important creative element on YouTube.' },
+  { icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z', title: 'Video Analytics & Reporting', desc: 'Monthly video performance report - views, watch time, CTR, subscriber growth, top-performing videos, audience retention curves, and YouTube Ads attribution - with next-month recommendations.' },
 ];
 const RESULTS = [
-  { metric: '2.8M', label: 'Views in 90 days', sub: 'AU DTC product — YouTube strategy', color: '#9b59b6' },
+  { metric: '2.8M', label: 'Views in 90 days', sub: 'AU DTC product - YouTube strategy', color: '#9b59b6' },
   { metric: '3.1×', label: 'Website traffic from video', sub: 'US B2B brand', color: '#c39bd3' },
-  { metric: '58%', label: 'Lower CPV vs industry avg', sub: 'Canadian brand — YouTube Ads', color: '#d7bde2' },
+  { metric: '58%', label: 'Lower CPV vs industry avg', sub: 'Canadian brand - YouTube Ads', color: '#d7bde2' },
 ];
 const PROCESS = [
-  { n: '01', title: 'Video Strategy Audit', desc: 'We audit your existing YouTube channel or video presence — SEO, content gaps, competitor channels, audience data, and growth opportunities — establishing a baseline before producing anything new.' },
-  { n: '02', title: 'Channel Optimisation', desc: 'Channel art, About section, keyword-rich channel description, playlist architecture, channel keywords, and featured video — optimising every element that influences discoverability and subscriber conversion.' },
-  { n: '03', title: 'Content Calendar', desc: 'Monthly video content calendar — topics prioritised by search volume, audience intent, and business goals — with format mix (long-form, Shorts, and series) planned 4 weeks in advance.' },
-  { n: '04', title: 'Script & Brief Creation', desc: 'Hook-first video scripts or detailed briefs for every planned video — including opening hook, narrative arc, talking points, B-roll direction, CTA, and end screen strategy.' },
-  { n: '05', title: 'Publish & Optimise', desc: 'Videos published with SEO-optimised titles, descriptions, tags, chapters, and thumbnails — then indexed and monitored for CTR and retention performance from the first 48 hours.' },
-  { n: '06', title: 'Analyse & Scale', desc: 'Audience retention analysis, CTR benchmarking, subscriber growth tracking, and search ranking monitoring — identifying what to repeat, expand, and retire each month.' },
+  { n: '01', title: 'Video Strategy Audit', desc: 'We audit your existing YouTube channel or video presence - SEO, content gaps, competitor channels, audience data, and growth opportunities - establishing a baseline before producing anything new.' },
+  { n: '02', title: 'Channel Optimisation', desc: 'Channel art, About section, keyword-rich channel description, playlist architecture, channel keywords, and featured video - optimising every element that influences discoverability and subscriber conversion.' },
+  { n: '03', title: 'Content Calendar', desc: 'Monthly video content calendar - topics prioritised by search volume, audience intent, and business goals - with format mix (long-form, Shorts, and series) planned 4 weeks in advance.' },
+  { n: '04', title: 'Script & Brief Creation', desc: 'Hook-first video scripts or detailed briefs for every planned video - including opening hook, narrative arc, talking points, B-roll direction, CTA, and end screen strategy.' },
+  { n: '05', title: 'Publish & Optimise', desc: 'Videos published with SEO-optimised titles, descriptions, tags, chapters, and thumbnails - then indexed and monitored for CTR and retention performance from the first 48 hours.' },
+  { n: '06', title: 'Analyse & Scale', desc: 'Audience retention analysis, CTR benchmarking, subscriber growth tracking, and search ranking monitoring - identifying what to repeat, expand, and retire each month.' },
 ];
 const WHY = [
-  { title: 'YouTube SEO Expertise', desc: 'We treat YouTube as the second-largest search engine it is — with keyword-driven content strategy, title optimisation, and description structure that drives organic discoverability.' },
-  { title: 'Short-Form Native', desc: 'We create Reels, TikTok, and Shorts content with native hooks, trends, and formats — not just repurposed long-form content that performs poorly on short-form platforms.' },
-  { title: 'Script & Brief Included', desc: 'Every video strategy engagement includes scripts or detailed production briefs — so your production team (internal or external) has everything they need to film.' },
-  { title: 'YouTube Ads Integration', desc: 'Organic video strategy and YouTube Ads are aligned — high-performing organic videos become paid retargeting assets, and ad audience data informs organic content decisions.' },
-  { title: 'Cross-Platform Distribution', desc: 'Each piece of video content is planned for repurposing across YouTube, LinkedIn, Instagram, TikTok, and website embedding — maximising the return on every video produced.' },
+  { title: 'YouTube SEO Expertise', desc: 'We treat YouTube as the second-largest search engine it is - with keyword-driven content strategy, title optimisation, and description structure that drives organic discoverability.' },
+  { title: 'Short-Form Native', desc: 'We create Reels, TikTok, and Shorts content with native hooks, trends, and formats - not just repurposed long-form content that performs poorly on short-form platforms.' },
+  { title: 'Script & Brief Included', desc: 'Every video strategy engagement includes scripts or detailed production briefs - so your production team (internal or external) has everything they need to film.' },
+  { title: 'YouTube Ads Integration', desc: 'Organic video strategy and YouTube Ads are aligned - high-performing organic videos become paid retargeting assets, and ad audience data informs organic content decisions.' },
+  { title: 'Cross-Platform Distribution', desc: 'Each piece of video content is planned for repurposing across YouTube, LinkedIn, Instagram, TikTok, and website embedding - maximising the return on every video produced.' },
   { title: 'Data-Driven Iteration', desc: 'Audience retention curves, CTR data, and search ranking reports guide every content decision. We double down on what the data shows is working and cut what is not.' },
 ];
 const FAQS = [
-  { q: 'Should I focus on YouTube or TikTok?', a: 'YouTube and TikTok serve different roles. YouTube is a long-term search and discovery platform — videos rank in Google and YouTube search for years. TikTok is a short-form entertainment platform that offers faster reach but shorter content lifespan. For most B2B brands and those selling considered purchases, YouTube delivers higher-quality long-term traffic. For B2C brands targeting under-35 audiences, TikTok offers exceptional reach. The strongest video strategies use both.' },
+  { q: 'Should I focus on YouTube or TikTok?', a: 'YouTube and TikTok serve different roles. YouTube is a long-term search and discovery platform - videos rank in Google and YouTube search for years. TikTok is a short-form entertainment platform that offers faster reach but shorter content lifespan. For most B2B brands and those selling considered purchases, YouTube delivers higher-quality long-term traffic. For B2C brands targeting under-35 audiences, TikTok offers exceptional reach. The strongest video strategies use both.' },
   { q: 'What production quality do I need for YouTube?', a: 'Production quality matters less than content quality. Many of the highest-performing YouTube channels are filmed with a smartphone and good lighting. What matters most is audio quality, clear value delivery, and strong retention in the first 30 seconds. We focus on script quality, hook strength, and thumbnail design before recommending production investment.' },
   { q: 'What is video SEO and how does it work?', a: 'Video SEO is the practice of optimising YouTube videos to rank in YouTube search and Google video results. The key factors are the video title (keyword in the first 40 characters), description (natural keyword use in the first 150 characters), tags, closed captions, chapter markers, and engagement signals (likes, comments, watch time, CTR). We optimise all of these elements for every video published.' },
-  { q: 'Is YouTube Shorts worth investing in?', a: 'Yes. YouTube Shorts benefit from dedicated algorithm promotion and have a separate discovery feed from long-form content. Shorts can grow your subscriber base quickly — but Shorts subscribers often have lower watch time rates on long-form content. We recommend a mixed strategy: Shorts for reach and subscriber growth, long-form for depth and search ranking, with Shorts serving as entry points into your long-form content.' },
-  { q: 'How long before a YouTube channel shows results?', a: 'YouTube channel growth follows a compounding curve. Most channels see meaningful search traction at 20 to 30 published videos, and significant organic traffic by 50 to 80 videos over 6 to 12 months. Channels with strong keyword research and SEO optimisation from the start grow faster than those relying on social sharing. YouTube is a long-term investment — the content library compounds in value over time.' },
+  { q: 'Is YouTube Shorts worth investing in?', a: 'Yes. YouTube Shorts benefit from dedicated algorithm promotion and have a separate discovery feed from long-form content. Shorts can grow your subscriber base quickly - but Shorts subscribers often have lower watch time rates on long-form content. We recommend a mixed strategy: Shorts for reach and subscriber growth, long-form for depth and search ranking, with Shorts serving as entry points into your long-form content.' },
+  { q: 'How long before a YouTube channel shows results?', a: 'YouTube channel growth follows a compounding curve. Most channels see meaningful search traction at 20 to 30 published videos, and significant organic traffic by 50 to 80 videos over 6 to 12 months. Channels with strong keyword research and SEO optimisation from the start grow faster than those relying on social sharing. YouTube is a long-term investment - the content library compounds in value over time.' },
   { q: 'Do you write the video scripts?', a: 'Yes. Our video strategy engagement includes full scripts or detailed production briefs for every planned video. Scripts include the opening hook (first 3 to 5 seconds), structured body, B-roll direction notes, CTA placement, and end screen strategy. For clients who prefer to speak naturally on camera, we produce structured talking point briefs instead of word-for-word scripts.' },
 ];
 
@@ -54,7 +54,7 @@ export default function VideoMarketingServices() {
         { '@type': 'ListItem', position: 3, name: 'Video Marketing Services', item: 'https://www.1solutions.biz/video-marketing-services/' },
       ]},
       { '@type': 'Service', name: 'Video Marketing Services', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Video marketing by 1Solutions — YouTube channel strategy, short-form video content for Reels/TikTok, video SEO, and YouTube Ads management.',
+        description: 'Video marketing by 1Solutions - YouTube channel strategy, short-form video content for Reels/TikTok, video SEO, and YouTube Ads management.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '49', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -64,7 +64,7 @@ export default function VideoMarketingServices() {
     <>
       <Head>
         <title>Video Marketing Services | 1Solutions</title>
-        <meta name="description" content="Video marketing by 1Solutions — YouTube channel strategy, short-form video content for Reels/TikTok, video SEO, and YouTube Ads management." />
+        <meta name="description" content="Video marketing by 1Solutions - YouTube channel strategy, short-form video content for Reels/TikTok, video SEO, and YouTube Ads management." />
         <link rel="canonical" href="https://www.1solutions.biz/video-marketing-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
@@ -142,9 +142,9 @@ export default function VideoMarketingServices() {
       <nav className="vmkt-bc"><div className="vmkt-bci"><Link href="/">Home</Link><span className="vmkt-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="vmkt-sep">›</span><span className="vmkt-cur">Video Marketing Services</span></div></nav>
       <section className="vmkt-hero"><div className="vmkt-o1"/><div className="vmkt-o2"/>
         <div className="vmkt-in">
-          <span className="vmkt-ey">Video Marketing — YouTube Strategy · Video SEO · Reels · TikTok · Shorts · YouTube Ads</span>
+          <span className="vmkt-ey">Video Marketing - YouTube Strategy · Video SEO · Reels · TikTok · Shorts · YouTube Ads</span>
           <h1 className="vmkt-h1">Video Marketing That Builds Authority and Drives Conversions</h1>
-          <p className="vmkt-p">1Solutions builds video marketing programs that grow YouTube channels, rank in search, dominate short-form feeds, and convert viewers into customers — with strategy, scripts, SEO, and YouTube Ads working together.</p>
+          <p className="vmkt-p">1Solutions builds video marketing programs that grow YouTube channels, rank in search, dominate short-form feeds, and convert viewers into customers - with strategy, scripts, SEO, and YouTube Ads working together.</p>
           <div className="vmkt-btns">
             <Link href="/contact-us" className="vmkt-bp">Get a Free Video Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
             <Link href="/contact-us" className="vmkt-bs">Discuss Your Video Strategy</Link>
@@ -156,7 +156,7 @@ export default function VideoMarketingServices() {
       <section className="vmkt-sec vmkt-bg"><div className="vmkt-si2">
         <span className="vmkt-tag">What We Deliver</span>
         <h2 className="vmkt-h2">Complete <span>Video Marketing Services</span></h2>
-        <p className="vmkt-lead">From YouTube strategy and SEO to short-form scripts and YouTube Ads — every component of a video marketing program that builds authority and drives revenue.</p>
+        <p className="vmkt-lead">From YouTube strategy and SEO to short-form scripts and YouTube Ads - every component of a video marketing program that builds authority and drives revenue.</p>
         <div className="vmkt-g3">{SERVICES.map(s=><div key={s.title} className="vmkt-card"><div className="vmkt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d={s.icon}/></svg></div><h3 className="vmkt-ch">{s.title}</h3><p className="vmkt-cp">{s.desc}</p></div>)}</div>
       </div></section>
       <section className="vmkt-rb"><div className="vmkt-ri">
@@ -167,13 +167,13 @@ export default function VideoMarketingServices() {
       <section className="vmkt-sec"><div className="vmkt-si2">
         <span className="vmkt-tag">Why 1Solutions</span>
         <h2 className="vmkt-h2">The Video Partner <span>That Treats YouTube as a Search Engine</span></h2>
-        <p className="vmkt-lead">We build video strategies around discoverability and authority — not just production quality. Great videos that nobody finds do not grow businesses.</p>
+        <p className="vmkt-lead">We build video strategies around discoverability and authority - not just production quality. Great videos that nobody finds do not grow businesses.</p>
         <div className="vmkt-g3">{WHY.map(w=><div key={w.title} className="vmkt-wc"><div className="vmkt-wck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><h3 className="vmkt-wh">{w.title}</h3><p className="vmkt-wp">{w.desc}</p></div>)}</div>
       </div></section>
       <section className="vmkt-sec vmkt-bg"><div className="vmkt-si2">
         <span className="vmkt-tag">How We Work</span>
         <h2 className="vmkt-h2">Our <span>6-Step Video Marketing Process</span></h2>
-        <p className="vmkt-lead">From channel audit to compounding growth — a structured approach to video that builds a library of search-ranking, revenue-driving content.</p>
+        <p className="vmkt-lead">From channel audit to compounding growth - a structured approach to video that builds a library of search-ranking, revenue-driving content.</p>
         <div className="vmkt-g3">{PROCESS.map(p=><div key={p.n}><div className="vmkt-pn">{p.n}</div><div className="vmkt-pl"/><h3 className="vmkt-ph">{p.title}</h3><p className="vmkt-pp">{p.desc}</p></div>)}</div>
       </div></section>
       <section className="vmkt-sec"><div className="vmkt-si2">
@@ -184,7 +184,7 @@ export default function VideoMarketingServices() {
       <section className="vmkt-cta"><div className="vmkt-si2">
         <span className="vmkt-tag" style={{display:'block',textAlign:'center',marginBottom:12}}>Ready to Build a Video Presence That Drives Revenue?</span>
         <h2 className="vmkt-cth">Get a Free Video Marketing Audit</h2>
-        <p className="vmkt-ctp">We will review your YouTube channel or video presence, identify content and SEO gaps, and share a video strategy roadmap — completely free.</p>
+        <p className="vmkt-ctp">We will review your YouTube channel or video presence, identify content and SEO gaps, and share a video strategy roadmap - completely free.</p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
           <Link href="/contact-us" className="vmkt-bp">Request Free Video Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
           <Link href="/contact-us" className="vmkt-bs">Talk to a Video Specialist</Link>

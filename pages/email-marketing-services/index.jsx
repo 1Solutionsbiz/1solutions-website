@@ -5,40 +5,40 @@ import { useState } from 'react';
 const ACCENT = '#6b0023';
 const SERVICES = [
   { icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2', title: 'Email Strategy & Audit', desc: 'Current email program audit, revenue attribution analysis, deliverability health check, list quality assessment, and a 90-day roadmap for automation and list growth.' },
-  { icon: 'M13 10V3L4 14h7v7l9-11h-7z', title: 'Welcome & Onboarding Sequences', desc: 'Automated welcome series that introduces new subscribers to your brand, builds trust, and guides them toward their first purchase or conversion — typically 3 to 7 emails over 2 weeks.' },
-  { icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15', title: 'Drip & Nurture Campaigns', desc: 'Behaviour-triggered email sequences that nurture leads based on their actions — content downloads, page visits, form fills — delivering the right message at each stage of the buyer journey.' },
-  { icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z', title: 'Cart Abandonment Recovery', desc: 'Multi-step cart abandonment sequences — timed at 1 hour, 24 hours, and 72 hours — with dynamic product pulls, social proof, and personalised subject lines that recover lost revenue.' },
-  { icon: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', title: 'Broadcast & Newsletter Campaigns', desc: 'Monthly or weekly email broadcasts — promotions, product launches, newsletters, and seasonal campaigns — written, designed, and segmented for maximum open rate and click-through.' },
-  { icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z', title: 'Segmentation & Personalisation', desc: 'List segmentation by purchase history, browse behaviour, engagement level, location, and LTV — so each subscriber receives emails relevant to their interests and stage in the customer lifecycle.' },
-  { icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z', title: 'Email Template Design', desc: 'Mobile-optimised, on-brand email templates for every campaign type — promotional, transactional, newsletter, and automation flows — designed and tested across major email clients.' },
-  { icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z', title: 'Platform Migration & Setup', desc: 'Migration, integration, and full platform setup for Klaviyo, Mailchimp, HubSpot, and ActiveCampaign — including flows, templates, segments, and integrations with your eCommerce or CRM platform.' },
+  { icon: 'M13 10V3L4 14h7v7l9-11h-7z', title: 'Welcome & Onboarding Sequences', desc: 'Automated welcome series that introduces new subscribers to your brand, builds trust, and guides them toward their first purchase or conversion - typically 3 to 7 emails over 2 weeks.' },
+  { icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15', title: 'Drip & Nurture Campaigns', desc: 'Behaviour-triggered email sequences that nurture leads based on their actions - content downloads, page visits, form fills - delivering the right message at each stage of the buyer journey.' },
+  { icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z', title: 'Cart Abandonment Recovery', desc: 'Multi-step cart abandonment sequences - timed at 1 hour, 24 hours, and 72 hours - with dynamic product pulls, social proof, and personalised subject lines that recover lost revenue.' },
+  { icon: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', title: 'Broadcast & Newsletter Campaigns', desc: 'Monthly or weekly email broadcasts - promotions, product launches, newsletters, and seasonal campaigns - written, designed, and segmented for maximum open rate and click-through.' },
+  { icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z', title: 'Segmentation & Personalisation', desc: 'List segmentation by purchase history, browse behaviour, engagement level, location, and LTV - so each subscriber receives emails relevant to their interests and stage in the customer lifecycle.' },
+  { icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z', title: 'Email Template Design', desc: 'Mobile-optimised, on-brand email templates for every campaign type - promotional, transactional, newsletter, and automation flows - designed and tested across major email clients.' },
+  { icon: 'M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z', title: 'Platform Migration & Setup', desc: 'Migration, integration, and full platform setup for Klaviyo, Mailchimp, HubSpot, and ActiveCampaign - including flows, templates, segments, and integrations with your eCommerce or CRM platform.' },
 ];
 const RESULTS = [
-  { metric: '28%', label: 'Of revenue from email', sub: 'AU eCommerce — Klaviyo automation', color: '#f48fb1' },
+  { metric: '28%', label: 'Of revenue from email', sub: 'AU eCommerce - Klaviyo automation', color: '#f48fb1' },
   { metric: '3.9×', label: 'Cart recovery rate', sub: 'US DTC brand', color: '#f06292' },
   { metric: '52%', label: 'Open rate on welcome series', sub: 'Canadian SaaS onboarding', color: '#ec407a' },
 ];
 const PROCESS = [
   { n: '01', title: 'Platform Audit', desc: 'We review your existing email platform, active flows, list health, deliverability reputation, segmentation setup, and revenue attribution to identify what to fix and what to build.' },
-  { n: '02', title: 'List Segmentation', desc: 'Subscriber list cleaned, validated, and segmented by engagement, purchase history, lifecycle stage, and behavioural data — the foundation of personalised email performance.' },
-  { n: '03', title: 'Flow Strategy', desc: 'We map every automation flow needed for your business — welcome, browse abandonment, cart abandonment, post-purchase, win-back, and sunset — prioritised by revenue impact.' },
-  { n: '04', title: 'Template Design', desc: 'Mobile-first email templates designed in your brand style — for automations, broadcasts, and transactional emails — built and tested across Gmail, Outlook, Apple Mail, and mobile.' },
-  { n: '05', title: 'Copy & Build', desc: 'Subject lines, preview text, body copy, and CTAs written for each email in the sequence — then built inside your platform and tested for rendering, links, and tracking.' },
-  { n: '06', title: 'Launch & Optimise', desc: 'Flows go live. We monitor open rates, click rates, revenue per email, unsubscribe rates, and deliverability weekly — A/B testing subject lines and content to improve performance continuously.' },
+  { n: '02', title: 'List Segmentation', desc: 'Subscriber list cleaned, validated, and segmented by engagement, purchase history, lifecycle stage, and behavioural data - the foundation of personalised email performance.' },
+  { n: '03', title: 'Flow Strategy', desc: 'We map every automation flow needed for your business - welcome, browse abandonment, cart abandonment, post-purchase, win-back, and sunset - prioritised by revenue impact.' },
+  { n: '04', title: 'Template Design', desc: 'Mobile-first email templates designed in your brand style - for automations, broadcasts, and transactional emails - built and tested across Gmail, Outlook, Apple Mail, and mobile.' },
+  { n: '05', title: 'Copy & Build', desc: 'Subject lines, preview text, body copy, and CTAs written for each email in the sequence - then built inside your platform and tested for rendering, links, and tracking.' },
+  { n: '06', title: 'Launch & Optimise', desc: 'Flows go live. We monitor open rates, click rates, revenue per email, unsubscribe rates, and deliverability weekly - A/B testing subject lines and content to improve performance continuously.' },
 ];
 const WHY = [
-  { title: 'Revenue-Attributed Reporting', desc: 'Every email campaign and automation is attributed to actual revenue — not just opens and clicks. You see exactly what your email program contributes to monthly revenue.' },
-  { title: 'Platform Agnostic', desc: 'We work across Klaviyo, Mailchimp, HubSpot, ActiveCampaign, and other major platforms — recommending the right tool for your business, not the one we prefer.' },
-  { title: 'List Health Management', desc: 'Regular list cleaning, re-engagement campaigns, and sunset flows keep your list healthy — protecting deliverability and reducing unsubscribe rates over time.' },
-  { title: 'Deliverability Expertise', desc: 'Domain authentication (SPF, DKIM, DMARC), IP warming for new senders, and inbox placement monitoring — we protect your sender reputation as a core part of email management.' },
-  { title: 'GDPR Compliant', desc: 'Consent management, preference centres, unsubscribe handling, and data retention policies built into every email program — fully compliant with GDPR, CAN-SPAM, and CASL.' },
-  { title: 'Integrated with CRM', desc: 'Email automation connected to your CRM — HubSpot, Salesforce, or custom — so lead scoring, sales notifications, and customer data stay in sync across every platform.' },
+  { title: 'Revenue-Attributed Reporting', desc: 'Every email campaign and automation is attributed to actual revenue - not just opens and clicks. You see exactly what your email program contributes to monthly revenue.' },
+  { title: 'Platform Agnostic', desc: 'We work across Klaviyo, Mailchimp, HubSpot, ActiveCampaign, and other major platforms - recommending the right tool for your business, not the one we prefer.' },
+  { title: 'List Health Management', desc: 'Regular list cleaning, re-engagement campaigns, and sunset flows keep your list healthy - protecting deliverability and reducing unsubscribe rates over time.' },
+  { title: 'Deliverability Expertise', desc: 'Domain authentication (SPF, DKIM, DMARC), IP warming for new senders, and inbox placement monitoring - we protect your sender reputation as a core part of email management.' },
+  { title: 'GDPR Compliant', desc: 'Consent management, preference centres, unsubscribe handling, and data retention policies built into every email program - fully compliant with GDPR, CAN-SPAM, and CASL.' },
+  { title: 'Integrated with CRM', desc: 'Email automation connected to your CRM - HubSpot, Salesforce, or custom - so lead scoring, sales notifications, and customer data stay in sync across every platform.' },
 ];
 const FAQS = [
-  { q: 'Which email platform should I use?', a: 'Platform choice depends on your business type and existing tech stack. For eCommerce, Klaviyo is the industry standard — deep Shopify integration and powerful predictive analytics. For B2B, HubSpot or ActiveCampaign offer better CRM integration and lead scoring. For small businesses with simple needs, Mailchimp is cost-effective. We recommend the right platform based on your goals and budget, not our preference.' },
-  { q: 'How large does my list need to be before email marketing is worth it?', a: 'Email marketing is worth investing in from the moment you have 500 active subscribers. Even a small, engaged list with strong automation (welcome, cart abandonment, post-purchase) can generate significant revenue. The return on email marketing compounds as your list grows — we recommend starting the foundational flows early rather than waiting for a large list.' },
-  { q: 'What open rates should I expect?', a: 'Industry benchmarks vary significantly by sector. eCommerce averages 20 to 30% open rates. B2B newsletters average 25 to 40%. Welcome emails typically achieve 45 to 60% open rates. These are averages — strong subject lines, list hygiene, and sender reputation all influence your specific rates. We target above-industry-average performance through segmentation and continuous testing.' },
-  { q: 'What is the difference between automation and broadcast emails?', a: 'Automation emails are triggered by subscriber behaviour — joining a list, abandoning a cart, making a purchase — and run automatically without manual intervention. Broadcast emails are sent manually to a segment of your list at a specific time — promotions, newsletters, and announcements. A healthy email program uses both: automations run continuously generating revenue, while broadcasts drive campaign-specific results.' },
+  { q: 'Which email platform should I use?', a: 'Platform choice depends on your business type and existing tech stack. For eCommerce, Klaviyo is the industry standard - deep Shopify integration and powerful predictive analytics. For B2B, HubSpot or ActiveCampaign offer better CRM integration and lead scoring. For small businesses with simple needs, Mailchimp is cost-effective. We recommend the right platform based on your goals and budget, not our preference.' },
+  { q: 'How large does my list need to be before email marketing is worth it?', a: 'Email marketing is worth investing in from the moment you have 500 active subscribers. Even a small, engaged list with strong automation (welcome, cart abandonment, post-purchase) can generate significant revenue. The return on email marketing compounds as your list grows - we recommend starting the foundational flows early rather than waiting for a large list.' },
+  { q: 'What open rates should I expect?', a: 'Industry benchmarks vary significantly by sector. eCommerce averages 20 to 30% open rates. B2B newsletters average 25 to 40%. Welcome emails typically achieve 45 to 60% open rates. These are averages - strong subject lines, list hygiene, and sender reputation all influence your specific rates. We target above-industry-average performance through segmentation and continuous testing.' },
+  { q: 'What is the difference between automation and broadcast emails?', a: 'Automation emails are triggered by subscriber behaviour - joining a list, abandoning a cart, making a purchase - and run automatically without manual intervention. Broadcast emails are sent manually to a segment of your list at a specific time - promotions, newsletters, and announcements. A healthy email program uses both: automations run continuously generating revenue, while broadcasts drive campaign-specific results.' },
   { q: 'How do you improve email deliverability?', a: 'Deliverability starts with domain authentication (SPF, DKIM, DMARC records), a clean list (removing bounces, inactive subscribers), consistent sending volume (no sudden spikes), and content that avoids spam triggers. We also monitor your sender reputation, inbox placement rates across major email clients, and adjust sending patterns to maintain deliverability above 95%.' },
   { q: 'Are you GDPR compliant?', a: 'Yes. We implement double opt-in for new subscribers, manage preference centres, handle unsubscribe requests within 10 business days, and structure data retention and deletion policies in line with GDPR. For Canadian clients, we ensure CASL compliance. For US clients, CAN-SPAM compliance is built into every campaign setup.' },
 ];
@@ -54,7 +54,7 @@ export default function EmailMarketingServices() {
         { '@type': 'ListItem', position: 3, name: 'Email Marketing Services', item: 'https://www.1solutions.biz/email-marketing-services/' },
       ]},
       { '@type': 'Service', name: 'Email Marketing Services', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Email marketing by 1Solutions — automated drip campaigns, welcome sequences, cart abandonment, and broadcast emails that drive revenue for eCommerce and B2B.',
+        description: 'Email marketing by 1Solutions - automated drip campaigns, welcome sequences, cart abandonment, and broadcast emails that drive revenue for eCommerce and B2B.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '72', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -64,7 +64,7 @@ export default function EmailMarketingServices() {
     <>
       <Head>
         <title>Email Marketing Services | 1Solutions</title>
-        <meta name="description" content="Email marketing by 1Solutions — automated drip campaigns, welcome sequences, cart abandonment, and broadcast emails that drive revenue for eCommerce and B2B." />
+        <meta name="description" content="Email marketing by 1Solutions - automated drip campaigns, welcome sequences, cart abandonment, and broadcast emails that drive revenue for eCommerce and B2B." />
         <link rel="canonical" href="https://www.1solutions.biz/email-marketing-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
@@ -142,9 +142,9 @@ export default function EmailMarketingServices() {
       <nav className="emkt-bc"><div className="emkt-bci"><Link href="/">Home</Link><span className="emkt-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="emkt-sep">›</span><span className="emkt-cur">Email Marketing Services</span></div></nav>
       <section className="emkt-hero"><div className="emkt-o1"/><div className="emkt-o2"/>
         <div className="emkt-in">
-          <span className="emkt-ey">Email Marketing — Klaviyo · Mailchimp · HubSpot · ActiveCampaign · Automation</span>
+          <span className="emkt-ey">Email Marketing - Klaviyo · Mailchimp · HubSpot · ActiveCampaign · Automation</span>
           <h1 className="emkt-h1">Email Marketing That Nurtures Leads and Drives Repeat Revenue</h1>
-          <p className="emkt-p">1Solutions builds email marketing programs that work while you sleep — automated welcome sequences, cart recovery flows, and nurture campaigns that turn subscribers into customers and customers into loyal advocates.</p>
+          <p className="emkt-p">1Solutions builds email marketing programs that work while you sleep - automated welcome sequences, cart recovery flows, and nurture campaigns that turn subscribers into customers and customers into loyal advocates.</p>
           <div className="emkt-btns">
             <Link href="/contact-us" className="emkt-bp">Get a Free Email Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
             <Link href="/contact-us" className="emkt-bs">Discuss Your Email Program</Link>
@@ -156,7 +156,7 @@ export default function EmailMarketingServices() {
       <section className="emkt-sec emkt-bg"><div className="emkt-si2">
         <span className="emkt-tag">What We Deliver</span>
         <h2 className="emkt-h2">Complete <span>Email Marketing Services</span></h2>
-        <p className="emkt-lead">From strategy and automation to design and deliverability — every component of a revenue-generating email program built and managed for you.</p>
+        <p className="emkt-lead">From strategy and automation to design and deliverability - every component of a revenue-generating email program built and managed for you.</p>
         <div className="emkt-g3">{SERVICES.map(s=><div key={s.title} className="emkt-card"><div className="emkt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d={s.icon}/></svg></div><h3 className="emkt-ch">{s.title}</h3><p className="emkt-cp">{s.desc}</p></div>)}</div>
       </div></section>
       <section className="emkt-rb"><div className="emkt-ri">
@@ -167,13 +167,13 @@ export default function EmailMarketingServices() {
       <section className="emkt-sec"><div className="emkt-si2">
         <span className="emkt-tag">Why 1Solutions</span>
         <h2 className="emkt-h2">The Email Partner <span>That Measures Revenue, Not Just Opens</span></h2>
-        <p className="emkt-lead">We build email programs that generate measurable revenue — not just campaigns that get opened and forgotten.</p>
+        <p className="emkt-lead">We build email programs that generate measurable revenue - not just campaigns that get opened and forgotten.</p>
         <div className="emkt-g3">{WHY.map(w=><div key={w.title} className="emkt-wc"><div className="emkt-wck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><h3 className="emkt-wh">{w.title}</h3><p className="emkt-wp">{w.desc}</p></div>)}</div>
       </div></section>
       <section className="emkt-sec emkt-bg"><div className="emkt-si2">
         <span className="emkt-tag">How We Work</span>
         <h2 className="emkt-h2">Our <span>6-Step Email Marketing Process</span></h2>
-        <p className="emkt-lead">From platform audit to revenue-generating automations — a structured approach to email that compounds over time.</p>
+        <p className="emkt-lead">From platform audit to revenue-generating automations - a structured approach to email that compounds over time.</p>
         <div className="emkt-g3">{PROCESS.map(p=><div key={p.n}><div className="emkt-pn">{p.n}</div><div className="emkt-pl"/><h3 className="emkt-ph">{p.title}</h3><p className="emkt-pp">{p.desc}</p></div>)}</div>
       </div></section>
       <section className="emkt-sec"><div className="emkt-si2">
@@ -184,7 +184,7 @@ export default function EmailMarketingServices() {
       <section className="emkt-cta"><div className="emkt-si2">
         <span className="emkt-tag" style={{display:'block',textAlign:'center',marginBottom:12}}>Ready to Turn Your Email List Into Revenue?</span>
         <h2 className="emkt-cth">Get a Free Email Marketing Audit</h2>
-        <p className="emkt-ctp">We will review your current email program, deliverability health, automation flows, and list segmentation — and share a revenue roadmap for your email channel.</p>
+        <p className="emkt-ctp">We will review your current email program, deliverability health, automation flows, and list segmentation - and share a revenue roadmap for your email channel.</p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
           <Link href="/contact-us" className="emkt-bp">Request Free Email Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
           <Link href="/contact-us" className="emkt-bs">Talk to an Email Specialist</Link>

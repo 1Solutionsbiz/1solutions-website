@@ -3,47 +3,47 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const SERVICES = [
-  { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Handyman Keyword Research', desc: 'Comprehensive keyword mapping covering handyman near me, home repair, odd jobs, fixture installation, drywall repair, tile work, and seasonal maintenance terms — so every search that leads to a job booking lands on your site first.' },
+  { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Handyman Keyword Research', desc: 'Comprehensive keyword mapping covering handyman near me, home repair, odd jobs, fixture installation, drywall repair, tile work, and seasonal maintenance terms - so every search that leads to a job booking lands on your site first.' },
   { icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z', title: 'Google Business Profile Optimisation', desc: 'Full GBP setup and ongoing optimisation with the correct home improvement categories, service area configuration, before/after project photos, weekly posting cadence, and Q&A management that turns profile views into booked appointments.' },
-  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'Service-Area Landing Pages', desc: 'Unique, individually optimised pages for every trade (carpentry, painting, flooring, tile work, pressure washing, drywall) and every geographic area you serve — the fastest path to ranking across your full coverage zone.' },
-  { icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1', title: 'Local Citation Building', desc: 'NAP-consistent citations across HomeAdvisor, Angi, Houzz, Thumbtack, TaskRabbit, Porch, and 35+ home services directories — the citation profile that anchors your local map pack rankings.' },
-  { icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z', title: 'Seasonal SEO Campaigns', desc: 'Targeted content campaigns aligned to demand spikes — gutter cleaning and leaf removal in autumn, deck repair and painting in spring, weatherproofing and draught-proofing in winter — so you rank when homeowners need you most.' },
-  { icon: 'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z', title: 'Review and Reputation Management', desc: 'Systematic review collection after every job via SMS and email, active Google, Houzz, and Angi review building, and professional negative review response — the social proof engine that converts searchers into enquiries.' },
-  { icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4', title: 'On-Page Technical SEO', desc: 'Structured URL architecture, LocalBusiness schema markup, optimised meta tags, mobile speed improvements, and Core Web Vitals fixes — the technical foundation that lets your content rank to its full potential.' },
-  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'Competitor Benchmarking and Gap Analysis', desc: 'Monthly analysis of your top local competitors — identifying every keyword they rank for that you do not, and a rolling keyword capture roadmap targeting the highest-value job-type and location terms.' },
+  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'Service-Area Landing Pages', desc: 'Unique, individually optimised pages for every trade (carpentry, painting, flooring, tile work, pressure washing, drywall) and every geographic area you serve - the fastest path to ranking across your full coverage zone.' },
+  { icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1', title: 'Local Citation Building', desc: 'NAP-consistent citations across HomeAdvisor, Angi, Houzz, Thumbtack, TaskRabbit, Porch, and 35+ home services directories - the citation profile that anchors your local map pack rankings.' },
+  { icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z', title: 'Seasonal SEO Campaigns', desc: 'Targeted content campaigns aligned to demand spikes - gutter cleaning and leaf removal in autumn, deck repair and painting in spring, weatherproofing and draught-proofing in winter - so you rank when homeowners need you most.' },
+  { icon: 'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z', title: 'Review and Reputation Management', desc: 'Systematic review collection after every job via SMS and email, active Google, Houzz, and Angi review building, and professional negative review response - the social proof engine that converts searchers into enquiries.' },
+  { icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4', title: 'On-Page Technical SEO', desc: 'Structured URL architecture, LocalBusiness schema markup, optimised meta tags, mobile speed improvements, and Core Web Vitals fixes - the technical foundation that lets your content rank to its full potential.' },
+  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'Competitor Benchmarking and Gap Analysis', desc: 'Monthly analysis of your top local competitors - identifying every keyword they rank for that you do not, and a rolling keyword capture roadmap targeting the highest-value job-type and location terms.' },
 ];
 
 const RESULTS = [
-  { metric: '3.9×', label: 'Increase in booked jobs', sub: 'Handyman company, Southeast US — 7 months', color: '#FFB347' },
-  { metric: '#1', label: 'For handyman [city]', sub: 'Home services business — 4 months', color: '#7DFFE0' },
-  { metric: '260%', label: 'More organic leads', sub: 'Home renovation contractor — 8 months', color: '#FFA0C0' },
+  { metric: '3.9×', label: 'Increase in booked jobs', sub: 'Handyman company, Southeast US - 7 months', color: '#FFB347' },
+  { metric: '#1', label: 'For handyman [city]', sub: 'Home services business - 4 months', color: '#7DFFE0' },
+  { metric: '260%', label: 'More organic leads', sub: 'Home renovation contractor - 8 months', color: '#FFA0C0' },
 ];
 
 const PROCESS = [
-  { n: '01', title: 'Home Services Audit', desc: 'Full audit of your website, GBP, citation profile, and competitor landscape — identifying every gap between your current rankings and the top map pack position.' },
-  { n: '02', title: 'Keyword + Service-Area Mapping', desc: 'We map search demand to every trade service and every suburb you cover — building a full keyword architecture that leaves no local opportunity uncaptured.' },
+  { n: '01', title: 'Home Services Audit', desc: 'Full audit of your website, GBP, citation profile, and competitor landscape - identifying every gap between your current rankings and the top map pack position.' },
+  { n: '02', title: 'Keyword + Service-Area Mapping', desc: 'We map search demand to every trade service and every suburb you cover - building a full keyword architecture that leaves no local opportunity uncaptured.' },
   { n: '03', title: 'GBP + On-Page Fixes', desc: 'Google Business Profile categories, service descriptions, photos, and hours are optimised. Website title tags, meta descriptions, and service page content are rewritten for target keywords.' },
-  { n: '04', title: 'Citation Building', desc: 'Consistent NAP submissions across all major home services directories — HomeAdvisor, Angi, Houzz, Thumbtack, and 35+ more — building the local authority signal that powers map pack rankings.' },
+  { n: '04', title: 'Citation Building', desc: 'Consistent NAP submissions across all major home services directories - HomeAdvisor, Angi, Houzz, Thumbtack, and 35+ more - building the local authority signal that powers map pack rankings.' },
   { n: '05', title: 'Review Launch', desc: 'Automated post-job review request sequences go live via SMS and email, with templates and follow-up cadence designed to rapidly build your Google review count and star rating.' },
-  { n: '06', title: 'Monthly Reporting', desc: 'Monthly rank tracking, GBP call volume, organic lead count, seasonal campaign performance, and a 90-day forward roadmap — complete visibility into your SEO investment.' },
+  { n: '06', title: 'Monthly Reporting', desc: 'Monthly rank tracking, GBP call volume, organic lead count, seasonal campaign performance, and a 90-day forward roadmap - complete visibility into your SEO investment.' },
 ];
 
 const WHY = [
-  { title: 'Home Services Niche Expertise', desc: 'We understand the unique search behaviour of homeowners researching contractors — from impulse repair searches to considered renovation quotes — and build content for every stage of that journey.' },
-  { title: 'Seasonal Strategy Built-In', desc: 'Unlike generic SEO agencies, we plan seasonal content campaigns months in advance — ensuring you rank for spring, summer, autumn, and winter service peaks before the demand arrives.' },
-  { title: 'Trade-Specific Landing Pages', desc: 'Every trade you offer gets its own optimised landing page. Carpentry, painting, flooring, tiling, pressure washing — each page targets its own keyword cluster for maximum search coverage.' },
-  { title: 'Multi-Service Keyword Coverage', desc: 'We map and track rankings across every service type and every service area — giving you full visibility into which trades and locations are generating the most organic leads.' },
-  { title: 'No Long-Term Contracts', desc: 'Month-to-month engagements only. You continue because the booked jobs keep increasing — not because a contract forces you to.' },
-  { title: 'Full Transparency in Reporting', desc: 'Monthly reports in plain language — call volume from GBP, organic leads from website, keyword positions, and which service areas are growing fastest.' },
+  { title: 'Home Services Niche Expertise', desc: 'We understand the unique search behaviour of homeowners researching contractors - from impulse repair searches to considered renovation quotes - and build content for every stage of that journey.' },
+  { title: 'Seasonal Strategy Built-In', desc: 'Unlike generic SEO agencies, we plan seasonal content campaigns months in advance - ensuring you rank for spring, summer, autumn, and winter service peaks before the demand arrives.' },
+  { title: 'Trade-Specific Landing Pages', desc: 'Every trade you offer gets its own optimised landing page. Carpentry, painting, flooring, tiling, pressure washing - each page targets its own keyword cluster for maximum search coverage.' },
+  { title: 'Multi-Service Keyword Coverage', desc: 'We map and track rankings across every service type and every service area - giving you full visibility into which trades and locations are generating the most organic leads.' },
+  { title: 'No Long-Term Contracts', desc: 'Month-to-month engagements only. You continue because the booked jobs keep increasing - not because a contract forces you to.' },
+  { title: 'Full Transparency in Reporting', desc: 'Monthly reports in plain language - call volume from GBP, organic leads from website, keyword positions, and which service areas are growing fastest.' },
 ];
 
 const FAQS = [
   { q: 'How long does home repair SEO take to generate leads?', a: 'Google Business Profile improvements typically start showing results within 2 to 4 weeks. Service area and trade-specific landing pages typically see ranking movement within 8 to 12 weeks. Full lead volume impact is usually measurable within 4 to 6 months. Competitive markets like major metro areas may take 6 to 9 months for top-3 positions.' },
   { q: 'What is a realistic SEO budget for a handyman business?', a: 'For a single-operator handyman business covering one city, a local SEO programme starts from a few hundred dollars per month covering GBP optimisation, citations, and core service pages. Multi-trade businesses covering multiple suburbs require a larger investment to build out the full page and citation infrastructure. We tailor the scope and budget to your revenue targets.' },
-  { q: 'Can you do SEO for multiple trades under one business?', a: 'Yes — this is where our trade-specific landing page strategy delivers the most value. If you offer carpentry, painting, tiling, and pressure washing, each trade gets its own keyword-optimised page. This dramatically increases the total number of searches your site is visible for, without cannibalising rankings between services.' },
-  { q: 'How do service-area pages work for home repair businesses?', a: 'A service-area page is a unique, optimised page for a specific combination of service and location — for example, "handyman services in [suburb]" or "deck repair [city]". These pages rank for highly specific local searches that larger generic competitors ignore. We build these pages for every trade and every suburb you cover.' },
-  { q: 'How many reviews does a home repair business need to rank well?', a: 'For most competitive local markets, reaching 30 to 50 Google reviews with a 4.5+ star average puts you in a strong position for map pack rankings. Review recency also matters — consistent new reviews signal to Google that your business is active. Our automated post-job review system keeps the review velocity high.' },
-  { q: 'Do you work with seasonal home repair businesses?', a: 'Yes. Seasonal businesses — for example, gutter cleaners or snow removal services — need SEO campaigns that build ranking authority in the months before their peak season, not during it. We plan content and GBP campaigns on a seasonal calendar so you appear at the top when demand spikes.' },
+  { q: 'Can you do SEO for multiple trades under one business?', a: 'Yes - this is where our trade-specific landing page strategy delivers the most value. If you offer carpentry, painting, tiling, and pressure washing, each trade gets its own keyword-optimised page. This dramatically increases the total number of searches your site is visible for, without cannibalising rankings between services.' },
+  { q: 'How do service-area pages work for home repair businesses?', a: 'A service-area page is a unique, optimised page for a specific combination of service and location - for example, "handyman services in [suburb]" or "deck repair [city]". These pages rank for highly specific local searches that larger generic competitors ignore. We build these pages for every trade and every suburb you cover.' },
+  { q: 'How many reviews does a home repair business need to rank well?', a: 'For most competitive local markets, reaching 30 to 50 Google reviews with a 4.5+ star average puts you in a strong position for map pack rankings. Review recency also matters - consistent new reviews signal to Google that your business is active. Our automated post-job review system keeps the review velocity high.' },
+  { q: 'Do you work with seasonal home repair businesses?', a: 'Yes. Seasonal businesses - for example, gutter cleaners or snow removal services - need SEO campaigns that build ranking authority in the months before their peak season, not during it. We plan content and GBP campaigns on a seasonal calendar so you appear at the top when demand spikes.' },
   { q: 'How do you measure SEO success for a home repair company?', a: 'We track GBP calls (using call tracking numbers), organic contact form and quote request submissions, keyword ranking positions for all target service and location terms, and map pack positions. For clients with job management software, we can correlate organic leads directly to booked job revenue, giving you a true cost-per-job from SEO.' },
 ];
 
@@ -180,10 +180,10 @@ export default function HomeRepairSeoServices() {
         <div className="hrseo-inner">
           <span className="hrseo-eyebrow">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
-            Home Repair SEO — Handyman · Contractor · Renovation
+            Home Repair SEO - Handyman · Contractor · Renovation
           </span>
           <h1 className="hrseo-h1">Home Repair SEO That Turns<br/>Local Searches Into Booked Jobs</h1>
-          <p className="hrseo-desc">1Solutions builds home repair SEO strategies that put your business in front of homeowners at every stage — from the first Google search to the moment they pick up the phone. Trade-specific pages, GBP optimisation, and seasonal campaigns built for the home services industry.</p>
+          <p className="hrseo-desc">1Solutions builds home repair SEO strategies that put your business in front of homeowners at every stage - from the first Google search to the moment they pick up the phone. Trade-specific pages, GBP optimisation, and seasonal campaigns built for the home services industry.</p>
           <div className="hrseo-btns">
             <a href="#contact" className="hrseo-btn-p">
               Get Your Free Home Services SEO Audit
@@ -219,7 +219,7 @@ export default function HomeRepairSeoServices() {
         <div className="hrseo-sec-inner">
           <span className="hrseo-tag">What We Do</span>
           <h2 className="hrseo-h2">Full-Spectrum <span>Home Repair SEO Services</span></h2>
-          <p className="hrseo-lead">From handyman keyword research to seasonal campaigns and reputation management — every tool a home services business needs to fill its calendar.</p>
+          <p className="hrseo-lead">From handyman keyword research to seasonal campaigns and reputation management - every tool a home services business needs to fill its calendar.</p>
           <div className="hrseo-grid3">
             {SERVICES.map(s => (
               <div key={s.title} className="hrseo-card">
@@ -252,7 +252,7 @@ export default function HomeRepairSeoServices() {
         <div className="hrseo-sec-inner">
           <span className="hrseo-tag">Why 1Solutions</span>
           <h2 className="hrseo-h2">The Home Services SEO Agency <span>That Thinks in Booked Jobs</span></h2>
-          <p className="hrseo-lead">We build home repair SEO programmes with one goal in mind — more booked jobs, more revenue, from every trade and every suburb you serve.</p>
+          <p className="hrseo-lead">We build home repair SEO programmes with one goal in mind - more booked jobs, more revenue, from every trade and every suburb you serve.</p>
           <div className="hrseo-grid3">
             {WHY.map(w => (
               <div key={w.title} className="hrseo-why-card">
@@ -269,7 +269,7 @@ export default function HomeRepairSeoServices() {
         <div className="hrseo-sec-inner">
           <span className="hrseo-tag">How We Work</span>
           <h2 className="hrseo-h2">Our <span>6-Step Home Repair SEO Process</span></h2>
-          <p className="hrseo-lead">A systematic process from audit to ongoing lead growth — built for multi-trade home services businesses.</p>
+          <p className="hrseo-lead">A systematic process from audit to ongoing lead growth - built for multi-trade home services businesses.</p>
           <div className="hrseo-grid3">
             {PROCESS.map(p => (
               <div key={p.n}>
@@ -305,7 +305,7 @@ export default function HomeRepairSeoServices() {
         <div className="hrseo-sec-inner">
           <span className="hrseo-tag" style={{ display:'block', textAlign:'center', marginBottom:12 }}>Ready to Fill Your Job Calendar?</span>
           <h2 className="hrseo-cta-h">Get Your Free Home Repair SEO Audit</h2>
-          <p className="hrseo-cta-p">We will audit your GBP, website, citations, and competitor landscape — and deliver a prioritised action plan for growing your booked jobs from local search. Free, with no obligation.</p>
+          <p className="hrseo-cta-p">We will audit your GBP, website, citations, and competitor landscape - and deliver a prioritised action plan for growing your booked jobs from local search. Free, with no obligation.</p>
           <div style={{ display:'flex', gap:14, justifyContent:'center', flexWrap:'wrap' }}>
             <Link href="/contact-us" className="hrseo-btn-p">
               Request Free Audit

@@ -3,38 +3,38 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const SERVICES = [
-  { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Keyword Research & Strategy', desc: "In-depth analysis of how Toronto customers search for your services — high-intent buying queries, GTA-specific local modifiers, and the competitive keyword gaps your Toronto rivals are not targeting." },
-  { icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4', title: 'Technical SEO', desc: 'Core Web Vitals optimisation, mobile speed, crawl error fixes, structured data, and site architecture — the technical foundation every Toronto business needs before other SEO efforts can compound.' },
-  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'On-Page SEO', desc: 'Title tags, meta descriptions, heading structure, internal linking, and content optimisation across every key page — written for Toronto buyers, tuned for Google ranking signals in the GTA.' },
+  { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Keyword Research & Strategy', desc: "In-depth analysis of how Toronto customers search for your services - high-intent buying queries, GTA-specific local modifiers, and the competitive keyword gaps your Toronto rivals are not targeting." },
+  { icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4', title: 'Technical SEO', desc: 'Core Web Vitals optimisation, mobile speed, crawl error fixes, structured data, and site architecture - the technical foundation every Toronto business needs before other SEO efforts can compound.' },
+  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'On-Page SEO', desc: 'Title tags, meta descriptions, heading structure, internal linking, and content optimisation across every key page - written for Toronto buyers, tuned for Google ranking signals in the GTA.' },
   { icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z', title: 'Local SEO Toronto', desc: 'Google Business Profile optimisation, Google Maps 3-pack strategy, Toronto-specific citation building, and NAP consistency to dominate local search across Toronto and the Greater Toronto Area.' },
-  { icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1', title: 'Link Building', desc: 'Quality backlinks from Canadian authority sites, Toronto media (Globe and Mail, Toronto Star, Financial Post), Ontario business directories, and digital PR — building domain authority that lasts.' },
-  { icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z', title: 'Content Marketing', desc: 'SEO-driven blog articles, service pages, and landing pages built around what Toronto customers are searching for — content that ranks and converts in one of the most competitive markets in Canada.' },
-  { icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z', title: 'eCommerce SEO', desc: 'Product and category page optimisation for Toronto online stores on Shopify, WooCommerce, Magento, and custom platforms — more organic visibility and lower customer acquisition costs in the GTA.' },
-  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'SEO Reporting & Analytics', desc: 'Monthly reports showing keyword ranking movement, organic traffic growth, lead attribution, and ROI — clear numbers so you know exactly what your Toronto SEO investment is generating.' },
+  { icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1', title: 'Link Building', desc: 'Quality backlinks from Canadian authority sites, Toronto media (Globe and Mail, Toronto Star, Financial Post), Ontario business directories, and digital PR - building domain authority that lasts.' },
+  { icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z', title: 'Content Marketing', desc: 'SEO-driven blog articles, service pages, and landing pages built around what Toronto customers are searching for - content that ranks and converts in one of the most competitive markets in Canada.' },
+  { icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z', title: 'eCommerce SEO', desc: 'Product and category page optimisation for Toronto online stores on Shopify, WooCommerce, Magento, and custom platforms - more organic visibility and lower customer acquisition costs in the GTA.' },
+  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'SEO Reporting & Analytics', desc: 'Monthly reports showing keyword ranking movement, organic traffic growth, lead attribution, and ROI - clear numbers so you know exactly what your Toronto SEO investment is generating.' },
 ];
 
 const RESULTS = [
-  { metric: '290%', label: 'Organic traffic growth', sub: 'Toronto financial services firm — 10 months', color: '#6e0014' },
-  { metric: 'Top 3', label: 'Google rankings for 90+ keywords', sub: 'GTA legal practice — 8 months', color: '#FE9700' },
-  { metric: '4.5×', label: 'Increase in organic leads', sub: 'Toronto real estate brokerage — 7 months', color: '#059669' },
+  { metric: '290%', label: 'Organic traffic growth', sub: 'Toronto financial services firm - 10 months', color: '#6e0014' },
+  { metric: 'Top 3', label: 'Google rankings for 90+ keywords', sub: 'GTA legal practice - 8 months', color: '#FE9700' },
+  { metric: '4.5×', label: 'Increase in organic leads', sub: 'Toronto real estate brokerage - 7 months', color: '#059669' },
 ];
 
 const PROCESS = [
   { n: '01', title: 'Free Toronto SEO Audit', desc: 'We audit your website for technical health, current keyword rankings, backlink profile, competitor positions, and the specific gaps holding your Toronto business back from Page 1 on Google.' },
-  { n: '02', title: 'Keyword & Market Research', desc: 'Deep analysis of how Toronto and GTA customers search for your services — mapping every high-intent query, local modifier, and competitor keyword gap into a prioritised ranking roadmap.' },
-  { n: '03', title: 'Technical Optimisation', desc: 'We fix the technical foundations first — Core Web Vitals, mobile performance, crawl errors, schema markup, and site structure — so every subsequent SEO effort builds on solid ground.' },
-  { n: '04', title: 'On-Page & Content', desc: 'Optimising every key page for target keywords and creating new content that captures Toronto buyer demand across the full search intent spectrum — informational through to high-intent transactional.' },
-  { n: '05', title: 'Authority & Link Building', desc: 'Building quality backlinks from Canadian authority sites, Toronto publications, and Ontario business directories — compounding domain authority that holds rankings through algorithm updates.' },
-  { n: '06', title: 'Monthly Reporting & Scale', desc: 'Clear monthly reports with ranking movement, traffic growth, and lead data — plus a forward roadmap so you always know what is happening and what we are prioritising next quarter.' },
+  { n: '02', title: 'Keyword & Market Research', desc: 'Deep analysis of how Toronto and GTA customers search for your services - mapping every high-intent query, local modifier, and competitor keyword gap into a prioritised ranking roadmap.' },
+  { n: '03', title: 'Technical Optimisation', desc: 'We fix the technical foundations first - Core Web Vitals, mobile performance, crawl errors, schema markup, and site structure - so every subsequent SEO effort builds on solid ground.' },
+  { n: '04', title: 'On-Page & Content', desc: 'Optimising every key page for target keywords and creating new content that captures Toronto buyer demand across the full search intent spectrum - informational through to high-intent transactional.' },
+  { n: '05', title: 'Authority & Link Building', desc: 'Building quality backlinks from Canadian authority sites, Toronto publications, and Ontario business directories - compounding domain authority that holds rankings through algorithm updates.' },
+  { n: '06', title: 'Monthly Reporting & Scale', desc: 'Clear monthly reports with ranking movement, traffic growth, and lead data - plus a forward roadmap so you always know what is happening and what we are prioritising next quarter.' },
 ];
 
 const WHY = [
-  { title: 'Toronto Market Expertise', desc: "We understand Toronto's intensely competitive digital landscape — from the Bay Street finance cluster to the King West tech corridor and the multicultural consumer base that shapes GTA search behaviour." },
-  { title: '15+ Years SEO Experience', desc: "Founded in 2009, 1Solutions has navigated every major Google algorithm update — Panda, Penguin, BERT, and Helpful Content — delivering consistent Page 1 rankings for clients in Canada's most competitive market." },
-  { title: 'Dedicated Account Manager', desc: 'Every Toronto client has one point of contact who understands your business, reports monthly, and is reachable when you need answers — no rotating account teams, no offshore handoffs.' },
-  { title: 'White-Hat SEO Only', desc: 'No shortcuts. We build rankings through technical excellence, quality content, and genuine authority building — methods that outlast algorithm updates and never put your domain at risk.' },
-  { title: 'Transparent Reporting', desc: 'You see exactly what we did, what moved, and what it generated. Keyword rankings, organic sessions, and lead attribution in a clear monthly report — no smoke and mirrors.' },
-  { title: 'No Lock-In Contracts', desc: 'Month-to-month engagements because our results earn your continued business. You stay because your Toronto rankings keep climbing — not because a contract forces you to.' },
+  { title: 'Toronto Market Expertise', desc: "We understand Toronto's intensely competitive digital landscape - from the Bay Street finance cluster to the King West tech corridor and the multicultural consumer base that shapes GTA search behaviour." },
+  { title: '15+ Years SEO Experience', desc: "Founded in 2009, 1Solutions has navigated every major Google algorithm update - Panda, Penguin, BERT, and Helpful Content - delivering consistent Page 1 rankings for clients in Canada's most competitive market." },
+  { title: 'Dedicated Account Manager', desc: 'Every Toronto client has one point of contact who understands your business, reports monthly, and is reachable when you need answers - no rotating account teams, no offshore handoffs.' },
+  { title: 'White-Hat SEO Only', desc: 'No shortcuts. We build rankings through technical excellence, quality content, and genuine authority building - methods that outlast algorithm updates and never put your domain at risk.' },
+  { title: 'Transparent Reporting', desc: 'You see exactly what we did, what moved, and what it generated. Keyword rankings, organic sessions, and lead attribution in a clear monthly report - no smoke and mirrors.' },
+  { title: 'No Lock-In Contracts', desc: 'Month-to-month engagements because our results earn your continued business. You stay because your Toronto rankings keep climbing - not because a contract forces you to.' },
 ];
 
 const INDUSTRIES = [
@@ -57,12 +57,12 @@ const AREAS = [
 ];
 
 const FAQS = [
-  { q: "How much does SEO cost in Toronto?", a: "Toronto SEO packages from 1Solutions start at CAD 1,000 per month for small business and local SEO. Comprehensive packages for competitive Toronto industries like finance, legal, real estate, and SaaS range from CAD 2,000 to CAD 8,000+ per month — reflecting the fact that Toronto is one of the most competitive SEO markets in Canada. We provide a custom quote after your free Toronto SEO audit, based on real competitive data." },
-  { q: "How long does it take to rank on Google in Toronto?", a: "Toronto is Canada's most competitive SEO market. Lower-competition local keywords typically show ranking movement within 8 to 12 weeks. Mid-competition GTA terms take 3 to 5 months. High-competition Toronto categories — finance, legal, real estate, SaaS, and healthcare — usually require 6 to 10 months of consistent, systematic work. We give honest, audit-based timelines rather than optimistic promises designed to win your business." },
+  { q: "How much does SEO cost in Toronto?", a: "Toronto SEO packages from 1Solutions start at CAD 1,000 per month for small business and local SEO. Comprehensive packages for competitive Toronto industries like finance, legal, real estate, and SaaS range from CAD 2,000 to CAD 8,000+ per month - reflecting the fact that Toronto is one of the most competitive SEO markets in Canada. We provide a custom quote after your free Toronto SEO audit, based on real competitive data." },
+  { q: "How long does it take to rank on Google in Toronto?", a: "Toronto is Canada's most competitive SEO market. Lower-competition local keywords typically show ranking movement within 8 to 12 weeks. Mid-competition GTA terms take 3 to 5 months. High-competition Toronto categories - finance, legal, real estate, SaaS, and healthcare - usually require 6 to 10 months of consistent, systematic work. We give honest, audit-based timelines rather than optimistic promises designed to win your business." },
   { q: "Is 1Solutions based in Toronto?", a: "1Solutions has dedicated SEO specialists with deep expertise in the Toronto and GTA market, the Canadian search landscape, and the specific link building opportunities available through Toronto media (Globe and Mail, Toronto Star, Financial Post, Toronto Life, BNN Bloomberg). We work with Toronto clients with full knowledge of Ontario business directories, Canadian backlink sources, and the competitive dynamics of every major Toronto industry." },
-  { q: "What Toronto industries do you work with?", a: "We work with Toronto businesses across finance and banking, tech and SaaS, real estate and condos, healthcare and medical, legal, media and entertainment, retail and eCommerce, and education. Toronto has the highest concentration of financial services firms and legal practices in Canada — verticals where we have deep SEO experience. Every strategy is built from actual Toronto and GTA search volume data for your specific sector." },
-  { q: "Do you provide local SEO for Toronto businesses?", a: "Yes. Local SEO for Toronto is a core service — Google Business Profile optimisation for the GTA, Ontario-specific citation building (Yellow Pages Canada, Yelp Canada, Better Business Bureau, Ontario Chamber of Commerce), Google Maps 3-pack strategy, and neighbourhood-level targeting across Toronto, Mississauga, Brampton, Markham, Vaughan, Richmond Hill, Oakville, and the broader GTA." },
-  { q: "Can you help a Toronto startup?", a: "Absolutely. We work with Toronto startups across all stages — from early-stage companies building their organic foundation pre-Series A to growth-stage companies scaling their inbound marketing channel. Toronto has a dense startup ecosystem centred around MaRS Discovery District, Communitech, and the DMZ. We understand the SaaS and tech keyword landscape in this market and the content strategies that build organic traction fastest." },
+  { q: "What Toronto industries do you work with?", a: "We work with Toronto businesses across finance and banking, tech and SaaS, real estate and condos, healthcare and medical, legal, media and entertainment, retail and eCommerce, and education. Toronto has the highest concentration of financial services firms and legal practices in Canada - verticals where we have deep SEO experience. Every strategy is built from actual Toronto and GTA search volume data for your specific sector." },
+  { q: "Do you provide local SEO for Toronto businesses?", a: "Yes. Local SEO for Toronto is a core service - Google Business Profile optimisation for the GTA, Ontario-specific citation building (Yellow Pages Canada, Yelp Canada, Better Business Bureau, Ontario Chamber of Commerce), Google Maps 3-pack strategy, and neighbourhood-level targeting across Toronto, Mississauga, Brampton, Markham, Vaughan, Richmond Hill, Oakville, and the broader GTA." },
+  { q: "Can you help a Toronto startup?", a: "Absolutely. We work with Toronto startups across all stages - from early-stage companies building their organic foundation pre-Series A to growth-stage companies scaling their inbound marketing channel. Toronto has a dense startup ecosystem centred around MaRS Discovery District, Communitech, and the DMZ. We understand the SaaS and tech keyword landscape in this market and the content strategies that build organic traction fastest." },
   { q: "How do you measure and report SEO results?", a: "We track keyword ranking movement for all target terms, organic sessions from Google Analytics, organic goal completions (leads, calls, form fills, demo requests), and revenue attributed to organic search where measurable. Monthly reports are sent in the first week of each month with a clear summary of what changed, what drove it, and the priority roadmap for next quarter. Toronto clients also get competitive rank tracking showing your position versus named Toronto competitors." },
 ];
 
@@ -84,7 +84,7 @@ export default function SeoCompanyToronto() {
       },
       {
         '@type': 'LocalBusiness',
-        name: '1Solutions — SEO Company in Toronto',
+        name: '1Solutions - SEO Company in Toronto',
         url: 'https://1solutions.biz',
         email: 'info@1solutions.biz',
         address: { '@type': 'PostalAddress', addressLocality: 'Toronto', addressRegion: 'ON', addressCountry: 'CA' },
@@ -103,7 +103,7 @@ export default function SeoCompanyToronto() {
         '@type': 'Service',
         name: 'SEO Services in Toronto',
         provider: { '@type': 'Organization', name: '1Solutions', url: 'https://1solutions.biz' },
-        description: 'Comprehensive SEO services for Toronto Ontario businesses — technical SEO, on-page optimisation, local SEO, link building, and content strategy to achieve Page 1 Google rankings in the GTA.',
+        description: 'Comprehensive SEO services for Toronto Ontario businesses - technical SEO, on-page optimisation, local SEO, link building, and content strategy to achieve Page 1 Google rankings in the GTA.',
         areaServed: { '@type': 'City', name: 'Toronto' },
         serviceType: 'Search Engine Optimisation',
       },
@@ -123,7 +123,7 @@ export default function SeoCompanyToronto() {
     <>
       <Head>
         <title>SEO Company in Toronto | Best Toronto SEO Agency | 1Solutions</title>
-        <meta name="description" content="Looking for the best SEO company in Toronto? 1Solutions delivers Page 1 Google rankings for Toronto businesses — technical SEO, local SEO, link building &" />
+        <meta name="description" content="Looking for the best SEO company in Toronto? 1Solutions delivers Page 1 Google rankings for Toronto businesses - technical SEO, local SEO, link building &" />
         <meta name="keywords" content="SEO company in Toronto, SEO agency Toronto, SEO services Toronto, best SEO company Toronto, Toronto SEO, search engine optimization Toronto Ontario" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://1solutions.biz/seo-company-toronto/" />
@@ -265,7 +265,7 @@ export default function SeoCompanyToronto() {
         <div className="trnt-inner">
           <span className="trnt-eyebrow"><span className="trnt-eyebrow-dot" />SEO Company in Toronto, Ontario</span>
           <h1 className="trnt-h1">Top-Ranked <span>SEO Company in Toronto</span><br />That Delivers Page 1 Rankings</h1>
-          <p className="trnt-desc">1Solutions is a results-driven SEO company in Toronto with 15+ years of experience helping Toronto and GTA businesses rank on Page 1 of Google. From technical SEO and local search to link building and content strategy — we build organic visibility that generates leads in Canada's most competitive digital market.</p>
+          <p className="trnt-desc">1Solutions is a results-driven SEO company in Toronto with 15+ years of experience helping Toronto and GTA businesses rank on Page 1 of Google. From technical SEO and local search to link building and content strategy - we build organic visibility that generates leads in Canada's most competitive digital market.</p>
           <div className="trnt-btns">
             <a href="#contact" className="trnt-btn-p">Get a Free SEO Audit<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
             <Link href="/affordable-seo-packages/" className="trnt-btn-s">View SEO Packages →</Link>
@@ -287,7 +287,7 @@ export default function SeoCompanyToronto() {
         <div className="trnt-sec-inner">
           <span className="trnt-tag">Our Toronto SEO Services</span>
           <h2 className="trnt-h2">Complete <span>SEO Services in Toronto</span></h2>
-          <p className="trnt-lead">Every component of a winning SEO strategy — delivered by a team that understands the Toronto and Greater Toronto Area market and your growth goals.</p>
+          <p className="trnt-lead">Every component of a winning SEO strategy - delivered by a team that understands the Toronto and Greater Toronto Area market and your growth goals.</p>
           <div className="trnt-grid4">
             {SERVICES.map(s => (
               <div key={s.title} className="trnt-card">
@@ -318,7 +318,7 @@ export default function SeoCompanyToronto() {
         <div className="trnt-sec-inner">
           <span className="trnt-tag">Why Choose 1Solutions</span>
           <h2 className="trnt-h2">The Toronto SEO Agency <span>That Makes Rankings Last</span></h2>
-          <p className="trnt-lead">We build SEO foundations that outlast algorithm updates and deliver compounding organic growth — critical in a market as competitive as Toronto where short-term tactics fail fast.</p>
+          <p className="trnt-lead">We build SEO foundations that outlast algorithm updates and deliver compounding organic growth - critical in a market as competitive as Toronto where short-term tactics fail fast.</p>
           <div className="trnt-grid2">
             {WHY.map(w => (
               <div key={w.title} className="trnt-why-card">
@@ -334,7 +334,7 @@ export default function SeoCompanyToronto() {
         <div className="trnt-sec-inner">
           <span className="trnt-tag">How We Work</span>
           <h2 className="trnt-h2">Our <span>6-Step Toronto SEO Process</span></h2>
-          <p className="trnt-lead">A structured, transparent methodology that compounds organic growth over time — from your first free audit to sustained Page 1 dominance in Toronto and GTA search results.</p>
+          <p className="trnt-lead">A structured, transparent methodology that compounds organic growth over time - from your first free audit to sustained Page 1 dominance in Toronto and GTA search results.</p>
           <div className="trnt-grid3">
             {PROCESS.map(p => (
               <div key={p.n}><div className="trnt-proc-num">{p.n}</div><div className="trnt-proc-line"/><h3 className="trnt-proc-h">{p.title}</h3><p className="trnt-proc-p">{p.desc}</p></div>
@@ -347,7 +347,7 @@ export default function SeoCompanyToronto() {
         <div className="trnt-sec-inner">
           <span className="trnt-tag">Toronto Industries We Serve</span>
           <h2 className="trnt-h2">SEO for <span>Every Toronto Business Sector</span></h2>
-          <p className="trnt-lead">From Bay Street finance firms to King West tech startups — we deliver SEO strategies built around the specific competitive landscape of your Toronto industry.</p>
+          <p className="trnt-lead">From Bay Street finance firms to King West tech startups - we deliver SEO strategies built around the specific competitive landscape of your Toronto industry.</p>
           <div className="trnt-ind-grid">
             {INDUSTRIES.map(ind => (
               <div key={ind.name} className="trnt-ind-card">
@@ -363,7 +363,7 @@ export default function SeoCompanyToronto() {
         <div className="trnt-sec-inner">
           <span className="trnt-tag">Areas We Cover</span>
           <h2 className="trnt-h2">SEO Services Across <span>Toronto & the GTA</span></h2>
-          <p className="trnt-lead">We serve businesses throughout Toronto and the Greater Toronto Area — from downtown Toronto neighbourhoods to the expanding cities and communities across the GTA.</p>
+          <p className="trnt-lead">We serve businesses throughout Toronto and the Greater Toronto Area - from downtown Toronto neighbourhoods to the expanding cities and communities across the GTA.</p>
           <div className="trnt-areas-wrap">
             {AREAS.map(a => <span key={a} className="trnt-area-tag">{a}</span>)}
           </div>
@@ -398,7 +398,7 @@ export default function SeoCompanyToronto() {
               <div className="trnt-ci"><div className="trnt-ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div><div className="trnt-ci-text"><strong>Email</strong><a href="mailto:info@1solutions.biz">info@1solutions.biz</a></div></div>
               <div className="trnt-ci"><div className="trnt-ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div className="trnt-ci-text"><strong>Response Time</strong><span>Within 24 hours</span></div></div>
               <div className="trnt-trust-list">
-                {['Free audit — no credit card, no commitment','Dedicated Toronto SEO specialist assigned','Honest timelines based on real competitor data','White-hat only — no ranking risk'].map(t => (
+                {['Free audit - no credit card, no commitment','Dedicated Toronto SEO specialist assigned','Honest timelines based on real competitor data','White-hat only - no ranking risk'].map(t => (
                   <span key={t} className="trnt-trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>{t}</span>
                 ))}
               </div>

@@ -10,7 +10,7 @@ const challenges = [
   {
     icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
     title: 'F-Assured Certification Is Critical But Complex',
-    desc: "Flipkart's F-Assured badge (equivalent to Amazon Prime) is displayed on the search results page and significantly increases click-through and conversion rate. Achieving and maintaining F-Assured requires meeting strict quality, return, and fulfilment standards — standards that many sellers fail without a systematic approach.",
+    desc: "Flipkart's F-Assured badge (equivalent to Amazon Prime) is displayed on the search results page and significantly increases click-through and conversion rate. Achieving and maintaining F-Assured requires meeting strict quality, return, and fulfilment standards - standards that many sellers fail without a systematic approach.",
   },
   {
     icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z',
@@ -43,7 +43,7 @@ const services = [
   {
     icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
     title: 'F-Assured Certification Strategy & Maintenance',
-    desc: "Systematic improvement of the seller metrics required for F-Assured eligibility — fulfilment speed, return rate, quality compliance — and ongoing maintenance once the badge is achieved.",
+    desc: "Systematic improvement of the seller metrics required for F-Assured eligibility - fulfilment speed, return rate, quality compliance - and ongoing maintenance once the badge is achieved.",
   },
   {
     icon: 'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10',
@@ -109,12 +109,12 @@ const steps = [
 ];
 
 const FAQS = [
-  { q: "What is F-Assured and why does it matter for Flipkart sellers?", a: "F-Assured is Flipkart's quality certification badge — it signals to buyers that the seller meets Flipkart's standards for authentic products, accurate descriptions, and reliable fulfilment. F-Assured listings receive significantly higher visibility in search, a trust badge that increases conversion rate, and eligibility for special promotional placements. Getting and maintaining F-Assured status is one of the highest-impact actions for a Flipkart seller." },
+  { q: "What is F-Assured and why does it matter for Flipkart sellers?", a: "F-Assured is Flipkart's quality certification badge - it signals to buyers that the seller meets Flipkart's standards for authentic products, accurate descriptions, and reliable fulfilment. F-Assured listings receive significantly higher visibility in search, a trust badge that increases conversion rate, and eligibility for special promotional placements. Getting and maintaining F-Assured status is one of the highest-impact actions for a Flipkart seller." },
   { q: "How is Flipkart SEO different from Amazon SEO?", a: "Flipkart search ranking is driven by a combination of listing quality score (title keyword relevance, correct attributes, image quality), price competitiveness, seller rating, and fulfilment speed. Unlike Amazon where backend keywords play a major role, Flipkart prioritises product title relevance and attribute completeness more heavily. Getting every attribute field filled correctly is critical and often overlooked by sellers." },
   { q: "Can you help with Flipkart Ads (Flipkart Sponsored Products)?", a: "Yes. We manage Flipkart Product Ads including keyword targeting, bid strategy, campaign structure, and ongoing optimisation. Flipkart advertising is particularly effective for new listings that need visibility before organic ranking builds, and for seasonal sales periods like Big Billion Days and End of Season Sales where ad competition is high." },
-  { q: "How does Flipkart Fulfillment by Flipkart (FBF) work and should I use it?", a: "FBF is Flipkart's equivalent of Amazon FBA — you send inventory to Flipkart warehouses and they handle storage, packing, and next-day or same-day delivery. FBF is one of the fastest paths to F-Assured eligibility, and it dramatically improves delivery speed scores which directly affect search ranking. We recommend FBF for your top 20 percent of SKUs as a starting point." },
-  { q: "What seller categories are most competitive on Flipkart?", a: "Fashion, mobile phones, electronics, and home appliances are the most competitive categories on Flipkart with established national brands dominating paid and organic visibility. The biggest opportunities for mid-size sellers are in home furnishings, kitchen appliances, beauty, and personal care — categories where Flipkart has grown significantly and where private label brands can compete effectively on quality differentiation rather than just price." },
-  { q: "How long before a new Flipkart seller account starts generating significant revenue?", a: "With a well-structured launch — correct listing setup, F-Assured fast-track, and initial Flipkart Ads investment — most new sellers see their first meaningful orders within 2 to 4 weeks. Reaching consistent monthly revenue of INR 5 to 10 lakh per month typically takes 3 to 5 months depending on category, pricing, and catalogue size." },
+  { q: "How does Flipkart Fulfillment by Flipkart (FBF) work and should I use it?", a: "FBF is Flipkart's equivalent of Amazon FBA - you send inventory to Flipkart warehouses and they handle storage, packing, and next-day or same-day delivery. FBF is one of the fastest paths to F-Assured eligibility, and it dramatically improves delivery speed scores which directly affect search ranking. We recommend FBF for your top 20 percent of SKUs as a starting point." },
+  { q: "What seller categories are most competitive on Flipkart?", a: "Fashion, mobile phones, electronics, and home appliances are the most competitive categories on Flipkart with established national brands dominating paid and organic visibility. The biggest opportunities for mid-size sellers are in home furnishings, kitchen appliances, beauty, and personal care - categories where Flipkart has grown significantly and where private label brands can compete effectively on quality differentiation rather than just price." },
+  { q: "How long before a new Flipkart seller account starts generating significant revenue?", a: "With a well-structured launch - correct listing setup, F-Assured fast-track, and initial Flipkart Ads investment - most new sellers see their first meaningful orders within 2 to 4 weeks. Reaching consistent monthly revenue of INR 5 to 10 lakh per month typically takes 3 to 5 months depending on category, pricing, and catalogue size." },
 ];
 
 export default function FlipkartAccountManagement() {
@@ -315,7 +315,7 @@ export default function FlipkartAccountManagement() {
             </div>
             <h1>Flipkart Account Management for India's #1 Marketplace</h1>
             <p className="flpk-hero-desc">
-              Flipkart commands over 35% of India's eCommerce market with 400M+ registered users. 1Solutions manages your Flipkart Seller Hub account end-to-end — from listing optimisation and F-Assured certification to Flipkart Ads and Flipkart Fulfillment (FBF) — driving sustainable sales growth on India's most competitive marketplace.
+              Flipkart commands over 35% of India's eCommerce market with 400M+ registered users. 1Solutions manages your Flipkart Seller Hub account end-to-end - from listing optimisation and F-Assured certification to Flipkart Ads and Flipkart Fulfillment (FBF) - driving sustainable sales growth on India's most competitive marketplace.
             </p>
             <div className="flpk-stats-bar">
               <div className="flpk-stat"><span className="flpk-stat-num">400M+</span><span className="flpk-stat-label">Flipkart registered users</span></div>
@@ -446,7 +446,7 @@ export default function FlipkartAccountManagement() {
               <div>
                 <p className="flpk-section-label">Get Started</p>
                 <h2 className="flpk-contact-h2">Get a Free <span>Flipkart Seller Audit</span></h2>
-                <p className="flpk-contact-desc">We will review your Flipkart Seller Hub, F-Assured eligibility, listing quality scores, and ad performance — and give you a clear growth roadmap for the next 90 days.</p>
+                <p className="flpk-contact-desc">We will review your Flipkart Seller Hub, F-Assured eligibility, listing quality scores, and ad performance - and give you a clear growth roadmap for the next 90 days.</p>
                 <div className="flpk-contact-items">
                   <div className="flpk-contact-item">
                     <svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>

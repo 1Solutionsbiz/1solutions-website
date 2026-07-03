@@ -23,7 +23,7 @@ const VALUES = [
   {
     icon: '⬡',
     title: 'Partnership Over Vendor',
-    desc: "We act like stakeholders, not contractors. Your success metrics are our success metrics — from strategy through launch and beyond.",
+    desc: "We act like stakeholders, not contractors. Your success metrics are our success metrics - from strategy through launch and beyond.",
   },
   {
     icon: '◫',
@@ -33,7 +33,7 @@ const VALUES = [
   {
     icon: '◬',
     title: 'Accountability Without Exception',
-    desc: "We own our mistakes and fix them fast. No finger-pointing, no passing the buck — just clear communication and solutions.",
+    desc: "We own our mistakes and fix them fast. No finger-pointing, no passing the buck - just clear communication and solutions.",
   },
 ];
 
@@ -51,7 +51,7 @@ const TIMELINE = [
   {
     year: '2013',
     title: 'Full-Stack Team of 25',
-    desc: "Grew to a full team of designers, developers, and SEO specialists — enabling end-to-end digital product delivery under one roof.",
+    desc: "Grew to a full team of designers, developers, and SEO specialists - enabling end-to-end digital product delivery under one roof.",
   },
   {
     year: '2015',
@@ -71,7 +71,7 @@ const TIMELINE = [
   {
     year: '2022',
     title: '500+ Clients Served',
-    desc: "Reached the 500-client milestone — a testament to the trust placed in us by businesses ranging from funded startups to publicly listed companies.",
+    desc: "Reached the 500-client milestone - a testament to the trust placed in us by businesses ranging from funded startups to publicly listed companies.",
   },
   {
     year: '2024',
@@ -189,12 +189,12 @@ const WHY = [
   {
     stat: '16+',
     label: 'Years in Operation',
-    desc: "We've navigated every major technology shift since 2008 — and guided our clients through each one without disruption.",
+    desc: "We've navigated every major technology shift since 2008 - and guided our clients through each one without disruption.",
   },
   {
     stat: '97%',
     label: 'Client Retention Rate',
-    desc: "Our clients don't just return for new projects — they send their colleagues. That's the metric we care about most.",
+    desc: "Our clients don't just return for new projects - they send their colleagues. That's the metric we care about most.",
   },
   {
     stat: '50+',
@@ -204,7 +204,7 @@ const WHY = [
   {
     stat: '3',
     label: 'Global Markets Served',
-    desc: "Built-in time-zone coverage for US, Canada, and Australia — no timezone friction, no communication delays.",
+    desc: "Built-in time-zone coverage for US, Canada, and Australia - no timezone friction, no communication delays.",
   },
 ];
 
@@ -904,7 +904,7 @@ export default function WhoWeAre() {
             height: 50px;
           }
 
-          /* ─── Why — dark section ─── */
+          /* ─── Why - dark section ─── */
           .au-why-section {
             background: #0F1F40;
           }
@@ -1179,7 +1179,7 @@ export default function WhoWeAre() {
               <p className="au-eyebrow">What We Believe</p>
               <h2 className="au-heading">The values that govern how we work.</h2>
               <p className="au-lead">
-                These aren&apos;t wall art. They&apos;re the lens through which we evaluate every decision —
+                These aren&apos;t wall art. They&apos;re the lens through which we evaluate every decision -
                 from architecture choices to how we handle a production incident at 2 a.m.
               </p>
             </div>
@@ -1236,7 +1236,7 @@ export default function WhoWeAre() {
               Ready to work with a team that&apos;s been at this for 15+ years?
             </h2>
             <p className="au-lead">
-              Every great partnership starts with a conversation. Tell us what you&apos;re building —
+              Every great partnership starts with a conversation. Tell us what you&apos;re building -
               we&apos;ll tell you exactly how we can help, and what it will cost.
             </p>
             <div className="au-cta-actions">

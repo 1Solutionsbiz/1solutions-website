@@ -27,12 +27,12 @@ const SKILLS = [
   'Analytics Integration', 'OAuth / Biometric Auth', 'Unit & UI Testing',
 ];
 const MODELS = [
-  { title: 'Dedicated Hire', desc: 'A full-time mobile developer committed to your product — 8 hrs/day, 5 days/week.', icon: '👤' },
+  { title: 'Dedicated Hire', desc: 'A full-time mobile developer committed to your product - 8 hrs/day, 5 days/week.', icon: '👤' },
   { title: 'Part-Time Hire', desc: 'Half-day engagement for feature additions, bug-fix sprints, or ongoing maintenance.', icon: '⏰' },
-  { title: 'Hourly Hire',    desc: 'Pay for exactly what you need — ideal for code audits, POCs, or burst capacity.', icon: '🕐' },
+  { title: 'Hourly Hire',    desc: 'Pay for exactly what you need - ideal for code audits, POCs, or burst capacity.', icon: '🕐' },
 ];
 const WHY = [
-  { h: 'Multi-Platform Expertise', b: 'We have specialists across iOS, Android, React Native, and Flutter — one partner for your entire mobile portfolio.' },
+  { h: 'Multi-Platform Expertise', b: 'We have specialists across iOS, Android, React Native, and Flutter - one partner for your entire mobile portfolio.' },
   { h: 'Pre-Screened Talent', b: 'Every developer passes architecture, code quality, and live-coding assessments before being matched to a client.' },
   { h: 'Quick Start', b: 'Profiles in 48 hours, interviews arranged same week, first sprint launched within 7 business days.' },
   { h: 'Transparent Process', b: 'Daily standups, sprint demos, and shared dashboards so you always know what is shipping next.' },
@@ -43,7 +43,7 @@ const PROCESS = [
   { n: '01', h: 'Submit Your Brief', b: 'Tell us the platform, seniority, and project context. Takes under 10 minutes.' },
   { n: '02', h: 'Receive Profiles', b: 'Get 2-3 hand-picked developer profiles within 48 hours.' },
   { n: '03', h: 'Interview & Choose', b: 'Run your own technical interview and select the best fit.' },
-  { n: '04', h: 'Onboard & Build', b: 'Developer joins your stack, tools, and daily workflow — sprints start immediately.' },
+  { n: '04', h: 'Onboard & Build', b: 'Developer joins your stack, tools, and daily workflow - sprints start immediately.' },
 ];
 const FAQS = [
   { q: 'Can I hire a developer for both iOS and Android?', a: 'Yes. We have cross-platform specialists in React Native and Flutter as well as native iOS and Android developers. We can also provide separate specialists for each platform.' },
@@ -86,7 +86,7 @@ export default function HireAppDeveloper() {
         { '@type': 'ListItem', position: 2, name: 'Hire App Developer', item: 'https://www.1solutions.biz/hire-app-developer/' },
       ]},
       { '@type': 'Service', name: 'Hire App Developer', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Hire dedicated mobile app developers — iOS, Android, React Native, and Flutter — from 1Solutions.',
+        description: 'Hire dedicated mobile app developers - iOS, Android, React Native, and Flutter - from 1Solutions.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', reviewCount: '112', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({
@@ -156,7 +156,7 @@ export default function HireAppDeveloper() {
 
       <section className="hapd-hero">
         <h1>Hire Mobile App Developers<br/>Across Every Platform</h1>
-        <p>iOS, Android, Flutter, and React Native experts — pre-vetted, available immediately, and matched to your requirements in 48 hours.</p>
+        <p>iOS, Android, Flutter, and React Native experts - pre-vetted, available immediately, and matched to your requirements in 48 hours.</p>
         <div className="hapd-hero-btns">
           <Link href="/contact-us" className="hapd-btn-primary">Hire an App Developer →</Link>
           <Link href="/portfolio" className="hapd-btn-outline">View Portfolio</Link>
@@ -166,7 +166,7 @@ export default function HireAppDeveloper() {
       <section className="hapd-sec" ref={skR}>
         <div className="hapd-wrap">
           <h2 className="hapd-sec-title">Skills &amp; Technology Coverage</h2>
-          <p className="hapd-sec-sub">Our developers cover the full spectrum of modern mobile development — native and cross-platform.</p>
+          <p className="hapd-sec-sub">Our developers cover the full spectrum of modern mobile development - native and cross-platform.</p>
           <div className="hapd-skills">
             {SKILLS.map((s, i) => (
               <span key={s} className={`hapd-skill${skV ? ' hapd-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>
@@ -178,7 +178,7 @@ export default function HireAppDeveloper() {
       <section className="hapd-sec hapd-sec-alt" ref={enR}>
         <div className="hapd-wrap">
           <h2 className="hapd-sec-title">Flexible Engagement Models</h2>
-          <p className="hapd-sec-sub">Match the hiring model to your budget and timeline — switch or scale anytime.</p>
+          <p className="hapd-sec-sub">Match the hiring model to your budget and timeline - switch or scale anytime.</p>
           <div className="hapd-models">
             {MODELS.map((m, i) => (
               <div key={m.title} className={`hapd-model${enV ? ' hapd-in' : ''}`} style={{ transitionDelay: `${i * 120}ms` }}>
@@ -194,7 +194,7 @@ export default function HireAppDeveloper() {
       <section className="hapd-sec" ref={whR}>
         <div className="hapd-wrap">
           <h2 className="hapd-sec-title">Why Hire App Developers from 1Solutions?</h2>
-          <p className="hapd-sec-sub">We match you with developers who are already shipping production apps — not fresh graduates.</p>
+          <p className="hapd-sec-sub">We match you with developers who are already shipping production apps - not fresh graduates.</p>
           <div className="hapd-why-grid">
             {WHY.map((w, i) => (
               <div key={w.h} className={`hapd-why-item${whV ? ' hapd-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}>
@@ -252,7 +252,7 @@ export default function HireAppDeveloper() {
       <section className="hapd-cta">
         <div className="hapd-wrap">
           <h2>Ready to Hire Your App Developer?</h2>
-          <p>Share your requirements and receive matched developer profiles within 48 hours — no commitment required to view profiles.</p>
+          <p>Share your requirements and receive matched developer profiles within 48 hours - no commitment required to view profiles.</p>
           <Link href="/contact-us" className="hapd-btn-primary">Get Started Today →</Link>
         </div>
       </section>

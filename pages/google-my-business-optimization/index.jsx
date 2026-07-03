@@ -6,12 +6,12 @@ const OPTIMIZATIONS = [
   {
     icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
     title: 'GBP Setup & Verification',
-    desc: 'Complete Google Business Profile setup — accurate business information, category selection, service area configuration, and the verification process handled end to end so your listing goes live correctly the first time.',
+    desc: 'Complete Google Business Profile setup - accurate business information, category selection, service area configuration, and the verification process handled end to end so your listing goes live correctly the first time.',
   },
   {
     icon: 'M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A2 2 0 013 12V7a4 4 0 014-4z',
     title: 'Category & Attribute Optimisation',
-    desc: 'Selecting the right primary and secondary categories is one of the highest-impact GMB ranking factors. We research the categories your top competitors use, then optimise every applicable attribute — from accessibility features to payment methods.',
+    desc: 'Selecting the right primary and secondary categories is one of the highest-impact GMB ranking factors. We research the categories your top competitors use, then optimise every applicable attribute - from accessibility features to payment methods.',
   },
   {
     icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
@@ -21,12 +21,12 @@ const OPTIMIZATIONS = [
   {
     icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z',
     title: 'Google Posts & Updates',
-    desc: 'Weekly Google Posts keep your listing active and give Google fresh content signals. We manage your post calendar — offers, events, product announcements, and What\'s New posts — with keyword-optimised copy and compelling CTAs.',
+    desc: 'Weekly Google Posts keep your listing active and give Google fresh content signals. We manage your post calendar - offers, events, product announcements, and What\'s New posts - with keyword-optimised copy and compelling CTAs.',
   },
   {
     icon: 'M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
     title: 'Q&A Management',
-    desc: 'The Q&A section is an underutilised ranking signal. We seed high-intent questions with keyword-rich answers, monitor for new questions, and flag or remove misinformation — turning a neglected section into a trust and keyword asset.',
+    desc: 'The Q&A section is an underutilised ranking signal. We seed high-intent questions with keyword-rich answers, monitor for new questions, and flag or remove misinformation - turning a neglected section into a trust and keyword asset.',
   },
   {
     icon: 'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z',
@@ -41,20 +41,20 @@ const OPTIMIZATIONS = [
   {
     icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
     title: 'GBP Insights & Reporting',
-    desc: 'Monthly reports tracking map pack position movement, search query data, direction requests, call clicks, and photo views — with actionable commentary on what changed, what drove it, and the priority actions for next month.',
+    desc: 'Monthly reports tracking map pack position movement, search query data, direction requests, call clicks, and photo views - with actionable commentary on what changed, what drove it, and the priority actions for next month.',
   },
 ];
 
 const STATS = [
-  { num: '46%', desc: 'of all Google searches have local intent — your GBP is the first thing these searchers see.', source: 'Google' },
+  { num: '46%', desc: 'of all Google searches have local intent - your GBP is the first thing these searchers see.', source: 'Google' },
   { num: '88%', desc: 'of consumers who do a local search visit or call the business within 24 hours of finding it.', source: 'Google / Ipsos' },
   { num: '70%', desc: 'of customers visit a business because of information they found in its Google Business Profile.', source: 'BrightLocal' },
 ];
 
 const RESULTS = [
-  { metric: 'Top 3', h3: 'Ranked in Google Maps Top 3', label: 'Google Maps pack positions', sub: 'US HVAC contractor — 4 months', color: '#1a73e8' },
-  { metric: '340%', h3: '340% Increase in GBP Phone Calls', label: 'Increase in GBP phone calls', sub: 'AU dental practice — 6 months', color: '#fbbc04' },
-  { metric: '2.8×', h3: '2.8× More Direction Requests', label: 'More direction requests', sub: 'India retail chain — 5 months', color: '#34a853' },
+  { metric: 'Top 3', h3: 'Ranked in Google Maps Top 3', label: 'Google Maps pack positions', sub: 'US HVAC contractor - 4 months', color: '#1a73e8' },
+  { metric: '340%', h3: '340% Increase in GBP Phone Calls', label: 'Increase in GBP phone calls', sub: 'AU dental practice - 6 months', color: '#fbbc04' },
+  { metric: '2.8×', h3: '2.8× More Direction Requests', label: 'More direction requests', sub: 'India retail chain - 5 months', color: '#34a853' },
 ];
 
 const RANKING_FACTORS = [
@@ -67,13 +67,13 @@ const RANKING_FACTORS = [
   {
     title: 'Distance',
     icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z',
-    desc: 'How far your business location — or defined service area — is from the searcher or the geographic term in the query. Distance is the least controllable factor, but multi-location strategy and accurate service-area setup both help.',
-    tips: ['Use an accurate, verifiable physical address', 'Create individual GBP listings for each physical location', 'Service-area businesses: define your radius precisely', 'Avoid overstating your service area — Google penalises inflated radii'],
+    desc: 'How far your business location - or defined service area - is from the searcher or the geographic term in the query. Distance is the least controllable factor, but multi-location strategy and accurate service-area setup both help.',
+    tips: ['Use an accurate, verifiable physical address', 'Create individual GBP listings for each physical location', 'Service-area businesses: define your radius precisely', 'Avoid overstating your service area - Google penalises inflated radii'],
   },
   {
     title: 'Prominence',
     icon: 'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z',
-    desc: "How well-known and authoritative Google considers your business to be. Prominence is the factor most improved by active GBP optimization — reviews, citations, GBP activity, and your website's organic authority all contribute.",
+    desc: "How well-known and authoritative Google considers your business to be. Prominence is the factor most improved by active GBP optimization - reviews, citations, GBP activity, and your website's organic authority all contribute.",
     tips: ['Build consistent review volume, recency, and rating', 'Ensure NAP consistency across 50+ authoritative directories', 'Earn local backlinks to your website', 'Maintain 100% GBP completeness with regular weekly posting'],
   },
 ];
@@ -89,7 +89,7 @@ const CHECKLIST = [
   'Add all products to the Products section if applicable',
   'Enable Google Messaging with an auto-reply configured',
   'Build a systematic review request process via SMS or email',
-  'Respond to every review — positive and negative — within 24 hours',
+  'Respond to every review - positive and negative - within 24 hours',
   "Publish Google Posts weekly (offers, events, What's New, products)",
   'Seed the Q&A section with 5–10 keyword-rich questions and answers',
   'Audit NAP consistency across all existing directory citations',
@@ -101,18 +101,18 @@ const CHECKLIST = [
 const PROCESS = [
   { n: '01', title: 'GBP Audit & Competitor Analysis', desc: 'We audit your existing GBP for completeness, accuracy, category fit, photo quality, review health, and citation consistency. We benchmark your profile against the top 3 map pack competitors for every target keyword.' },
   { n: '02', title: 'Keyword & Category Strategy', desc: 'We identify every high-intent local keyword your customers search for, map them to the right GBP categories, and build a content strategy that covers every service and geographic modifier.' },
-  { n: '03', title: 'Profile Optimisation', desc: 'We update every section of your GBP — business description with natural keyword placement, categories, attributes, services, products, and hours — following Google\'s current quality guidelines.' },
+  { n: '03', title: 'Profile Optimisation', desc: 'We update every section of your GBP - business description with natural keyword placement, categories, attributes, services, products, and hours - following Google\'s current quality guidelines.' },
   { n: '04', title: 'Photo, Post & Q&A Execution', desc: 'We launch your photo strategy, begin the weekly Google Posts schedule, and seed the Q&A section with high-value keyword-rich answers covering your most important search queries.' },
   { n: '05', title: 'Review & Citation Building', desc: 'We deploy your review acquisition system and begin fixing and building citations across the most authoritative local directories for your industry and geography.' },
   { n: '06', title: 'Monitor, Report & Iterate', desc: 'Monthly map pack ranking reports, GBP insight summaries, and a forward action plan. We adjust strategy monthly based on ranking movement, algorithm changes, and competitive shifts.' },
 ];
 
 const WHY = [
-  { title: 'GBP-First Approach', desc: 'Many SEO agencies treat GBP as an afterthought. We treat it as its own channel with its own ranking algorithm — proximity, prominence, and relevance signals that require specific expertise to move.' },
+  { title: 'GBP-First Approach', desc: 'Many SEO agencies treat GBP as an afterthought. We treat it as its own channel with its own ranking algorithm - proximity, prominence, and relevance signals that require specific expertise to move.' },
   { title: '15+ Years Local SEO Experience', desc: 'We have been optimising Google Business Profiles (formerly Google My Business) since the platform launched. Our team has navigated every major change to the local algorithm and ranking factors.' },
-  { title: 'Multi-Location Capability', desc: 'From a single clinic to a 100-location franchise, we have the systems and workflows to manage GBP optimisation at scale — consistent quality across every location, centralised reporting.' },
+  { title: 'Multi-Location Capability', desc: 'From a single clinic to a 100-location franchise, we have the systems and workflows to manage GBP optimisation at scale - consistent quality across every location, centralised reporting.' },
   { title: 'Review Strategy Included', desc: 'A 4.8-star profile with 200 reviews dramatically outranks a 4.2-star profile with 20. Every GMB engagement includes a systematic review acquisition process and a response framework for every review type.' },
-  { title: 'Spam & Competitor Monitoring', desc: 'We monitor your map pack for keyword stuffing in competitor names, fake listings, and GBP policy violations — and file removal requests with documentation when we find violations targeting your rankings.' },
+  { title: 'Spam & Competitor Monitoring', desc: 'We monitor your map pack for keyword stuffing in competitor names, fake listings, and GBP policy violations - and file removal requests with documentation when we find violations targeting your rankings.' },
   { title: 'Transparent Monthly Reporting', desc: 'You see exactly where your GBP ranks for each target keyword, how many calls and direction requests Google attributed to your profile, and what we are doing next month to improve each metric.' },
 ];
 
@@ -128,18 +128,18 @@ const INDUSTRIES = [
 ];
 
 const FAQS = [
-  { q: "What is the difference between Google My Business and Google Business Profile?", a: "Google rebranded Google My Business (GMB) to Google Business Profile (GBP) in November 2021. They are the same platform — the free tool businesses use to manage how they appear in Google Search and Google Maps. Many people still search for 'Google My Business optimization' so both terms are in common use. Our service covers the full GBP/GMB management and optimisation process regardless of what you call it." },
-  { q: "How long does it take to rank in the Google Maps 3-pack after optimisation?", a: "Most businesses see meaningful map pack movement within 6 to 12 weeks for lower-competition local keywords. Highly competitive verticals like legal, dental, and real estate in major cities typically take 3 to 5 months. Initial improvements — more profile completeness, better click-through rate — are often visible within the first 30 days. We give honest, audit-based timelines rather than promises." },
-  { q: "Do I need a physical address to appear in Google Maps?", a: "Yes, for traditional map pack rankings tied to a physical location. However, service-area businesses (plumbers, electricians, IT support) can hide their address and set a service area instead — and still appear in the map pack for queries within those areas. We optimise both types of GBP listings." },
+  { q: "What is the difference between Google My Business and Google Business Profile?", a: "Google rebranded Google My Business (GMB) to Google Business Profile (GBP) in November 2021. They are the same platform - the free tool businesses use to manage how they appear in Google Search and Google Maps. Many people still search for 'Google My Business optimization' so both terms are in common use. Our service covers the full GBP/GMB management and optimisation process regardless of what you call it." },
+  { q: "How long does it take to rank in the Google Maps 3-pack after optimisation?", a: "Most businesses see meaningful map pack movement within 6 to 12 weeks for lower-competition local keywords. Highly competitive verticals like legal, dental, and real estate in major cities typically take 3 to 5 months. Initial improvements - more profile completeness, better click-through rate - are often visible within the first 30 days. We give honest, audit-based timelines rather than promises." },
+  { q: "Do I need a physical address to appear in Google Maps?", a: "Yes, for traditional map pack rankings tied to a physical location. However, service-area businesses (plumbers, electricians, IT support) can hide their address and set a service area instead - and still appear in the map pack for queries within those areas. We optimise both types of GBP listings." },
   { q: "Can you help if my Google Business Profile is suspended or has been penalised?", a: "Yes. GBP suspensions are usually caused by guideline violations, keyword stuffing in the business name, or address issues. We diagnose the root cause, clean up the profile to comply with Google's guidelines, and submit a reinstatement request with the appropriate documentation. Reinstatement timelines vary from a few days to a few weeks." },
-  { q: "How many Google reviews do I need to rank in the local pack?", a: "Review count is one factor, but review velocity (how recently and how regularly new reviews arrive), average rating, and keyword content in reviews all matter. There is no fixed number — what matters is outperforming local competitors on those dimensions. We focus on building a sustainable review system rather than a one-time surge, because consistent new reviews signal ongoing relevance to Google." },
-  { q: "What are Google Posts and do they actually help rankings?", a: "Google Posts are short updates — offers, events, news, product announcements — that appear directly in your GBP knowledge panel. They are a relevance signal and a click-through driver. Regular posting demonstrates business activity to Google and gives searchers a reason to engage with your listing over a competitor's. Our service includes weekly post creation and publishing." },
-  { q: "Do you manage multi-location Google Business Profiles?", a: "Yes. We have systems for managing GBP optimisation across multi-location businesses and franchises — from 2 locations to 100+. Each location gets its own tailored optimisation (correct category, location-specific photos, local citations) with centralised reporting so you can see performance across your entire portfolio in one view." },
+  { q: "How many Google reviews do I need to rank in the local pack?", a: "Review count is one factor, but review velocity (how recently and how regularly new reviews arrive), average rating, and keyword content in reviews all matter. There is no fixed number - what matters is outperforming local competitors on those dimensions. We focus on building a sustainable review system rather than a one-time surge, because consistent new reviews signal ongoing relevance to Google." },
+  { q: "What are Google Posts and do they actually help rankings?", a: "Google Posts are short updates - offers, events, news, product announcements - that appear directly in your GBP knowledge panel. They are a relevance signal and a click-through driver. Regular posting demonstrates business activity to Google and gives searchers a reason to engage with your listing over a competitor's. Our service includes weekly post creation and publishing." },
+  { q: "Do you manage multi-location Google Business Profiles?", a: "Yes. We have systems for managing GBP optimisation across multi-location businesses and franchises - from 2 locations to 100+. Each location gets its own tailored optimisation (correct category, location-specific photos, local citations) with centralised reporting so you can see performance across your entire portfolio in one view." },
   { q: "What does a Google My Business optimization service include?", a: "A complete Google My Business optimization service covers: GBP setup and verification, primary and secondary category selection, business description writing with keyword placement, photo strategy and upload scheduling, weekly Google Posts management, Q&A seeding with keyword-rich answers, review acquisition system setup and response management, NAP citation audit and new citation building, and monthly map pack ranking reports. 1Solutions manages all of these as part of our GBP retainer." },
-  { q: "Is Google My Business optimization worth it for small businesses?", a: "Yes — Google My Business optimization is one of the highest-ROI local marketing activities for small businesses. The Google Maps 3-pack appears above organic results and drives direct calls, direction requests, and website visits without ad spend. For service-area businesses and physical retail, a well-optimised GBP is often the single biggest driver of inbound customer enquiries. The cost of professional GMB optimization is typically recovered within the first month of improved rankings." },
-  { q: "What is the difference between local SEO and Google Business Profile optimization?", a: "Local SEO is the broader discipline of improving a business's visibility across all local search results — including organic website rankings, local pack rankings, and directory listings. Google Business Profile optimization is a specific subset of local SEO focused entirely on the GBP listing itself: categories, photos, posts, reviews, Q&A, and citation signals that influence map pack rankings. At 1Solutions, we offer both — GBP optimization as a standalone service and as part of a full local SEO strategy." },
-  { q: "How much does Google My Business optimization cost?", a: "Google My Business optimization pricing depends on the number of locations, the competitive intensity of your market, and the level of ongoing management required. A single-location GMB optimization retainer covers profile setup, monthly posting, review management, and citation building. Multi-location packages are priced per location with volume discounts. Contact us for a tailored quote — we provide a free GBP audit first so you understand exactly what work is needed before committing." },
-  { q: "What are the most important Google Business Profile ranking factors?", a: "Google uses three primary factors to rank businesses in the Maps 3-pack: relevance (how well your GBP matches the search query — driven by categories, descriptions, and services listed), distance (how close your location is to the searcher or the searched location), and prominence (how well-known your business is — driven by review volume and rating, citation consistency, backlinks, and GBP completeness). Of these, relevance and prominence are the most actionable through optimization." },
+  { q: "Is Google My Business optimization worth it for small businesses?", a: "Yes - Google My Business optimization is one of the highest-ROI local marketing activities for small businesses. The Google Maps 3-pack appears above organic results and drives direct calls, direction requests, and website visits without ad spend. For service-area businesses and physical retail, a well-optimised GBP is often the single biggest driver of inbound customer enquiries. The cost of professional GMB optimization is typically recovered within the first month of improved rankings." },
+  { q: "What is the difference between local SEO and Google Business Profile optimization?", a: "Local SEO is the broader discipline of improving a business's visibility across all local search results - including organic website rankings, local pack rankings, and directory listings. Google Business Profile optimization is a specific subset of local SEO focused entirely on the GBP listing itself: categories, photos, posts, reviews, Q&A, and citation signals that influence map pack rankings. At 1Solutions, we offer both - GBP optimization as a standalone service and as part of a full local SEO strategy." },
+  { q: "How much does Google My Business optimization cost?", a: "Google My Business optimization pricing depends on the number of locations, the competitive intensity of your market, and the level of ongoing management required. A single-location GMB optimization retainer covers profile setup, monthly posting, review management, and citation building. Multi-location packages are priced per location with volume discounts. Contact us for a tailored quote - we provide a free GBP audit first so you understand exactly what work is needed before committing." },
+  { q: "What are the most important Google Business Profile ranking factors?", a: "Google uses three primary factors to rank businesses in the Maps 3-pack: relevance (how well your GBP matches the search query - driven by categories, descriptions, and services listed), distance (how close your location is to the searcher or the searched location), and prominence (how well-known your business is - driven by review volume and rating, citation consistency, backlinks, and GBP completeness). Of these, relevance and prominence are the most actionable through optimization." },
 ];
 
 export default function GoogleMyBusinessOptimization() {
@@ -182,7 +182,7 @@ export default function GoogleMyBusinessOptimization() {
         '@type': 'Service',
         name: 'Google My Business Optimization Services',
         provider: { '@type': 'Organization', name: '1Solutions', url: 'https://1solutions.biz' },
-        description: 'Expert Google My Business (Google Business Profile) optimization services — GBP setup, category strategy, photo management, Google Posts, review acquisition, citation building, and monthly reporting to dominate the Google Maps 3-pack.',
+        description: 'Expert Google My Business (Google Business Profile) optimization services - GBP setup, category strategy, photo management, Google Posts, review acquisition, citation building, and monthly reporting to dominate the Google Maps 3-pack.',
         areaServed: ['IN', 'US', 'CA', 'AU', 'GB'],
         serviceType: 'Google Business Profile Optimization',
         dateModified: '2026-06-23',
@@ -191,7 +191,7 @@ export default function GoogleMyBusinessOptimization() {
       {
         '@type': 'HowTo',
         name: '6-Step Google My Business Optimization Process',
-        description: 'How to optimize a Google Business Profile to rank in the Google Maps 3-pack — from initial audit to sustained local map pack rankings.',
+        description: 'How to optimize a Google Business Profile to rank in the Google Maps 3-pack - from initial audit to sustained local map pack rankings.',
         step: PROCESS.map((p, i) => ({
           '@type': 'HowToStep',
           position: i + 1,
@@ -479,7 +479,7 @@ export default function GoogleMyBusinessOptimization() {
             That Gets You Into the Maps 3-Pack
           </h1>
           <p className="gmbo-desc">
-            1Solutions delivers expert Google My Business optimization (now Google Business Profile) to help local businesses rank in the top 3 of Google Maps — the most visible real estate in local search. Complete GBP management: setup, categories, photos, posts, reviews, citations, and monthly reporting.
+            1Solutions delivers expert Google My Business optimization (now Google Business Profile) to help local businesses rank in the top 3 of Google Maps - the most visible real estate in local search. Complete GBP management: setup, categories, photos, posts, reviews, citations, and monthly reporting.
           </p>
           <div className="gmbo-btns">
             <a href="#contact" className="gmbo-btn-p">
@@ -489,7 +489,7 @@ export default function GoogleMyBusinessOptimization() {
             <Link href="/local-seo-services/" className="gmbo-btn-s">See Local SEO Services →</Link>
           </div>
 
-          {/* Key Takeaways — AI Overview & featured snippet signal */}
+          {/* Key Takeaways - AI Overview & featured snippet signal */}
           <div className="gmbo-takeaways">
             <span className="gmbo-takeaways-label">Key Takeaways</span>
             <ul>
@@ -525,22 +525,22 @@ export default function GoogleMyBusinessOptimization() {
         </div>
       </section>
 
-      {/* What Is GMB Optimization — definition for AI Overviews */}
+      {/* What Is GMB Optimization - definition for AI Overviews */}
       <section className="gmbo-sec gmbo-bg">
         <div className="gmbo-sec-inner">
           <span className="gmbo-tag">Definition</span>
           <h2 className="gmbo-h2">What Is <span>Google My Business Optimization?</span></h2>
           <div className="gmbo-def-box">
             <p className="gmbo-def-intro">
-              <strong>Google My Business optimization</strong> (officially Google Business Profile optimization since November 2021) is the process of completing, structuring, and actively managing a business&rsquo;s GBP listing to rank in the <strong>Google Maps 3-pack</strong> — the block of three local business results that appears at the top of Google Search for queries with local intent. It is distinct from general SEO: where website SEO improves organic rankings, GMB optimization directly influences how a business appears in Google Maps and the local knowledge panel.
+              <strong>Google My Business optimization</strong> (officially Google Business Profile optimization since November 2021) is the process of completing, structuring, and actively managing a business&rsquo;s GBP listing to rank in the <strong>Google Maps 3-pack</strong> - the block of three local business results that appears at the top of Google Search for queries with local intent. It is distinct from general SEO: where website SEO improves organic rankings, GMB optimization directly influences how a business appears in Google Maps and the local knowledge panel.
             </p>
             <p className="gmbo-def-intro" style={{ marginBottom: 0 }}>
-              Effective Google Business Profile optimization covers eight core areas: business verification and category selection, photo and video strategy, Google Posts management, Q&amp;A seeding, review acquisition and response, citation building, and ongoing performance reporting — all working together to strengthen the three ranking signals Google uses: <strong>relevance</strong>, <strong>distance</strong>, and <strong>prominence</strong>.
+              Effective Google Business Profile optimization covers eight core areas: business verification and category selection, photo and video strategy, Google Posts management, Q&amp;A seeding, review acquisition and response, citation building, and ongoing performance reporting - all working together to strengthen the three ranking signals Google uses: <strong>relevance</strong>, <strong>distance</strong>, and <strong>prominence</strong>.
             </p>
             <div className="gmbo-def-aspects">
               {[
                 { title: 'Also known as', desc: 'GMB optimization, GBP optimization, Google Maps optimization, Google listing optimization' },
-                { title: 'Managed in', desc: 'Google Business Profile Manager (business.google.com) — free platform for all businesses' },
+                { title: 'Managed in', desc: 'Google Business Profile Manager (business.google.com) - free platform for all businesses' },
                 { title: 'Target outcome', desc: 'Ranking in the top 3 of the Google Maps local pack for high-intent local search queries' },
               ].map(a => (
                 <div key={a.title} className="gmbo-def-aspect">
@@ -558,7 +558,7 @@ export default function GoogleMyBusinessOptimization() {
         <div className="gmbo-sec-inner">
           <span className="gmbo-tag">Why Google Business Profile Matters</span>
           <h2 className="gmbo-h2">Local Search Is Where <span>Customers Decide to Buy</span></h2>
-          <p className="gmbo-lead">Your Google Business Profile is the first thing local customers see — before your website, before your ads. The data is clear.</p>
+          <p className="gmbo-lead">Your Google Business Profile is the first thing local customers see - before your website, before your ads. The data is clear.</p>
           <div className="gmbo-stat-cards">
             {STATS.map(s => (
               <div key={s.num} className="gmbo-stat-card">
@@ -571,7 +571,7 @@ export default function GoogleMyBusinessOptimization() {
         </div>
       </section>
 
-      {/* How Google Ranks — ranking factors, featured snippet target */}
+      {/* How Google Ranks - ranking factors, featured snippet target */}
       <section className="gmbo-sec gmbo-bg" id="ranking-factors">
         <div className="gmbo-sec-inner">
           <span className="gmbo-tag">How Google Maps Rankings Work</span>
@@ -604,7 +604,7 @@ export default function GoogleMyBusinessOptimization() {
         <div className="gmbo-sec-inner">
           <span className="gmbo-tag">What We Optimise</span>
           <h2 className="gmbo-h2">Complete <span>Google My Business Optimization</span> Service</h2>
-          <p className="gmbo-lead">Every element of your Google Business Profile that influences how Google ranks you in Maps — and how customers decide whether to call you.</p>
+          <p className="gmbo-lead">Every element of your Google Business Profile that influences how Google ranks you in Maps - and how customers decide whether to call you.</p>
           <div className="gmbo-grid4">
             {OPTIMIZATIONS.map(o => (
               <div key={o.title} className="gmbo-card">
@@ -642,7 +642,7 @@ export default function GoogleMyBusinessOptimization() {
         <div className="gmbo-sec-inner">
           <span className="gmbo-tag">How We Work</span>
           <h2 className="gmbo-h2">Our <span>6-Step GMB Optimization Process</span></h2>
-          <p className="gmbo-lead">A structured, transparent approach to Google Business Profile optimization — from audit to sustained map pack rankings.</p>
+          <p className="gmbo-lead">A structured, transparent approach to Google Business Profile optimization - from audit to sustained map pack rankings.</p>
           <div className="gmbo-grid3">
             {PROCESS.map(p => (
               <div key={p.n}>
@@ -661,7 +661,7 @@ export default function GoogleMyBusinessOptimization() {
         <div className="gmbo-sec-inner">
           <span className="gmbo-tag">Why Choose 1Solutions</span>
           <h2 className="gmbo-h2">The GMB Agency That <span>Delivers Measurable Rankings</span></h2>
-          <p className="gmbo-lead">We treat Google Business Profile as its own search channel — with its own algorithm, ranking factors, and optimisation playbook. Here is why 500+ businesses trust us with their GBP.</p>
+          <p className="gmbo-lead">We treat Google Business Profile as its own search channel - with its own algorithm, ranking factors, and optimisation playbook. Here is why 500+ businesses trust us with their GBP.</p>
           <div className="gmbo-grid2">
             {WHY.map(w => (
               <div key={w.title} className="gmbo-why-card">
@@ -681,7 +681,7 @@ export default function GoogleMyBusinessOptimization() {
         <div className="gmbo-sec-inner">
           <span className="gmbo-tag">Industries We Serve</span>
           <h2 className="gmbo-h2">GMB Optimization for <span>Every Local Business Type</span></h2>
-          <p className="gmbo-lead">We optimise Google Business Profiles across the industries where local search intent is highest — where customers are searching for a business near them right now.</p>
+          <p className="gmbo-lead">We optimise Google Business Profiles across the industries where local search intent is highest - where customers are searching for a business near them right now.</p>
           <div className="gmbo-ind-grid">
             {INDUSTRIES.map(ind => (
               <div key={ind.name} className="gmbo-ind-card">
@@ -740,7 +740,7 @@ export default function GoogleMyBusinessOptimization() {
           <div className="gmbo-contact-grid">
             <div>
               <h2 className="gmbo-info-h">Get Your Free <span>Google Business Profile Audit</span></h2>
-              <p className="gmbo-info-p">Tell us about your business and we will audit your Google Business Profile — checking category fit, completeness, competitor gaps, citation consistency, and review health. Free, no commitment, delivered within 24 hours.</p>
+              <p className="gmbo-info-p">Tell us about your business and we will audit your Google Business Profile - checking category fit, completeness, competitor gaps, citation consistency, and review health. Free, no commitment, delivered within 24 hours.</p>
               <div className="gmbo-ci">
                 <div className="gmbo-ci-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
@@ -770,7 +770,7 @@ export default function GoogleMyBusinessOptimization() {
               </div>
               <div className="gmbo-trust-list">
                 {[
-                  'Free GBP audit — no credit card, no commitment',
+                  'Free GBP audit - no credit card, no commitment',
                   'Dedicated local SEO specialist assigned',
                   'Works for single locations and multi-location businesses',
                   'White-hat, Google-guideline-compliant strategies only',
@@ -782,7 +782,7 @@ export default function GoogleMyBusinessOptimization() {
                 ))}
               </div>
               <div className="gmbo-pricing-note">
-                <strong>How much does Google My Business optimization cost?</strong> Our GMB optimization plans start from <strong>$199/month</strong> for a single-location business. Pricing scales with the number of locations, keyword competition level, and the scope of citation and review management included. Every engagement begins with a free GBP audit — book yours above and we will send a detailed proposal with pricing within 24 hours.
+                <strong>How much does Google My Business optimization cost?</strong> Our GMB optimization plans start from <strong>$199/month</strong> for a single-location business. Pricing scales with the number of locations, keyword competition level, and the scope of citation and review management included. Every engagement begins with a free GBP audit - book yours above and we will send a detailed proposal with pricing within 24 hours.
               </div>
             </div>
             <div className="gmbo-form-wrap">

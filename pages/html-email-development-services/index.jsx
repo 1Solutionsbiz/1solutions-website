@@ -29,28 +29,28 @@ const SKILLS = [
 ];
 const MODELS = [
   { title: 'One-Off Template', desc: 'A single HTML email template designed, coded, and tested across 90+ clients. Perfect for a hero campaign or a transactional trigger.', icon: '✉️' },
-  { title: 'Template Suite',   desc: 'A set of 5–20 branded email templates: welcome series, cart abandonment, receipts, newsletters, and more — built to a consistent design system.', icon: '📧' },
-  { title: 'Ongoing Retainer', desc: 'Monthly HTML email development support for teams who send regularly — new templates, template edits, A/B variants, and dark-mode updates.', icon: '🔄' },
+  { title: 'Template Suite',   desc: 'A set of 5–20 branded email templates: welcome series, cart abandonment, receipts, newsletters, and more - built to a consistent design system.', icon: '📧' },
+  { title: 'Ongoing Retainer', desc: 'Monthly HTML email development support for teams who send regularly - new templates, template edits, A/B variants, and dark-mode updates.', icon: '🔄' },
 ];
 const WHY = [
   { h: 'Outlook-Proof Coding',      b: 'Outlook uses Microsoft Word\'s rendering engine, which breaks modern CSS. We use MSO conditional comments, VML, and table-based layouts that look perfect in Outlook 2007–2023.' },
-  { h: 'Dark Mode Ready',            b: '40%+ of users read email in dark mode. We code media query overrides that preserve your brand in dark environments — not just let Outlook invert your colours.' },
+  { h: 'Dark Mode Ready',            b: '40%+ of users read email in dark mode. We code media query overrides that preserve your brand in dark environments - not just let Outlook invert your colours.' },
   { h: '90+ Client Testing',         b: 'Every template is tested in Litmus or Email on Acid across Gmail, Outlook, Apple Mail, Samsung Mail, and Thunderbird before delivery.' },
   { h: 'Responsive on Every Device', b: 'Fluid-hybrid layouts that adapt from 600px desktop to 320px mobile without breaking your header, hero, or CTA.' },
-  { h: 'ESP-Ready Delivery',         b: 'Templates delivered in your ESP\'s format — Klaviyo drag-and-drop blocks, Mailchimp editable regions, HubSpot custom modules, or raw HTML.' },
-  { h: 'Accessibility First',        b: 'Semantic HTML, role="presentation" on layout tables, ALT text on all images, and sufficient colour contrast — so your emails work for screen reader users too.' },
+  { h: 'ESP-Ready Delivery',         b: 'Templates delivered in your ESP\'s format - Klaviyo drag-and-drop blocks, Mailchimp editable regions, HubSpot custom modules, or raw HTML.' },
+  { h: 'Accessibility First',        b: 'Semantic HTML, role="presentation" on layout tables, ALT text on all images, and sufficient colour contrast - so your emails work for screen reader users too.' },
 ];
 const PROCESS = [
-  { n: '01', h: 'Brief & Design',       b: 'We review your brand guidelines, ESP, and email objectives — then produce a design mockup for approval before any coding begins.' },
-  { n: '02', h: 'Code & Build',         b: 'We hand-code the template using table-based HTML, MSO conditionals, and fluid-hybrid responsive techniques — no drag-and-drop shortcuts.' },
+  { n: '01', h: 'Brief & Design',       b: 'We review your brand guidelines, ESP, and email objectives - then produce a design mockup for approval before any coding begins.' },
+  { n: '02', h: 'Code & Build',         b: 'We hand-code the template using table-based HTML, MSO conditionals, and fluid-hybrid responsive techniques - no drag-and-drop shortcuts.' },
   { n: '03', h: 'Cross-Client Testing', b: 'We test the coded template across 90+ email clients in Litmus, verify dark mode behaviour, and check plain-text rendering.' },
-  { n: '04', h: 'Deliver & Deploy',     b: "We deliver the template in your ESP's format — with editable regions, content blocks, and a handoff guide — ready to send." },
+  { n: '04', h: 'Deliver & Deploy',     b: "We deliver the template in your ESP's format - with editable regions, content blocks, and a handoff guide - ready to send." },
 ];
 const FAQS = [
   { q: 'Why hand-code HTML emails instead of using a builder?', a: 'Email builders produce bloated, inconsistent code that breaks in Outlook, ignores dark mode, and limits customisation. Hand-coded emails give you precise control over rendering, smaller file sizes (important for deliverability), and templates that actually look like your design.' },
   { q: 'Which email clients do you test in?', a: 'We test in 90+ clients including all Gmail variants (webmail, iOS, Android), Outlook 2007–2023, Outlook.com, Apple Mail (iOS and macOS), Samsung Mail, Yahoo Mail, and Thunderbird. Testing is done via Litmus or Email on Acid.' },
-  { q: 'Can you build templates inside Klaviyo, Mailchimp, or HubSpot?', a: 'Yes. We deliver templates as native ESP components — Klaviyo drag-and-drop blocks with editable text and image sections, Mailchimp editable region templates, or HubSpot custom email modules — so your marketing team can send without touching code.' },
-  { q: 'Do you support AMP for Email?', a: 'Yes. For Gmail and Mail.app, we can add AMP components — carousels, accordions, real-time content — to make emails interactive. We always include the required HTML fallback for clients that don\'t support AMP.' },
+  { q: 'Can you build templates inside Klaviyo, Mailchimp, or HubSpot?', a: 'Yes. We deliver templates as native ESP components - Klaviyo drag-and-drop blocks with editable text and image sections, Mailchimp editable region templates, or HubSpot custom email modules - so your marketing team can send without touching code.' },
+  { q: 'Do you support AMP for Email?', a: 'Yes. For Gmail and Mail.app, we can add AMP components - carousels, accordions, real-time content - to make emails interactive. We always include the required HTML fallback for clients that don\'t support AMP.' },
   { q: 'How long does it take to build an HTML email template?', a: 'A single template takes 3–5 business days from brief to tested delivery. A suite of 10–15 templates takes 3–4 weeks. Retainer clients receive templates within 2–3 business days of brief approval.' },
   { q: 'Do you sign NDAs?', a: 'Yes. NDA and IP assignment signed as standard before any access to your brand assets or ESP account.' },
 ];
@@ -84,7 +84,7 @@ export default function HtmlEmailDevelopmentServices() {
         { '@type': 'ListItem', position: 2, name: 'HTML Email Development Services', item: 'https://www.1solutions.biz/html-email-development-services/' },
       ]},
       { '@type': 'Service', name: 'HTML Email Development Services', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Professional HTML email development from 1Solutions — pixel-perfect, responsive email templates tested across 90+ clients for Klaviyo, Mailchimp, HubSpot and more.',
+        description: 'Professional HTML email development from 1Solutions - pixel-perfect, responsive email templates tested across 90+ clients for Klaviyo, Mailchimp, HubSpot and more.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '88', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -149,7 +149,7 @@ export default function HtmlEmailDevelopmentServices() {
       </Head>
       <section className="hem-hero">
         <h1>HTML Email Development Services<br/>Pixel-Perfect Emails That Render Everywhere</h1>
-        <p>We build responsive HTML email templates that render flawlessly across Gmail, Outlook, Apple Mail, and 90+ email clients. From campaign templates to full transactional email suites — hand-coded, tested, and ready to deploy.</p>
+        <p>We build responsive HTML email templates that render flawlessly across Gmail, Outlook, Apple Mail, and 90+ email clients. From campaign templates to full transactional email suites - hand-coded, tested, and ready to deploy.</p>
         <div className="hem-hero-btns">
           <Link href="/contact-us" className="hem-btn-primary">Get a Free Email Template Quote →</Link>
           <Link href="/portfolio" className="hem-btn-outline">View Portfolio</Link>
@@ -158,21 +158,21 @@ export default function HtmlEmailDevelopmentServices() {
       <section className="hem-sec" ref={skR}>
         <div className="hem-wrap">
           <h2 className="hem-sec-title">Skills &amp; Platforms</h2>
-          <p className="hem-sec-sub">We code for every major ESP and test across every major email client — no exceptions.</p>
+          <p className="hem-sec-sub">We code for every major ESP and test across every major email client - no exceptions.</p>
           <div className="hem-skills">{SKILLS.map((s, i) => <span key={s} className={`hem-skill${skV ? ' hem-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>)}</div>
         </div>
       </section>
       <section className="hem-sec hem-sec-alt" ref={enR}>
         <div className="hem-wrap">
           <h2 className="hem-sec-title">Engagement Options</h2>
-          <p className="hem-sec-sub">From a single template to a full retainer — we fit around your send schedule.</p>
+          <p className="hem-sec-sub">From a single template to a full retainer - we fit around your send schedule.</p>
           <div className="hem-models">{MODELS.map((m, i) => <div key={m.title} className={`hem-model${enV ? ' hem-in' : ''}`} style={{ transitionDelay: `${i * 120}ms` }}><div className="hem-model-icon">{m.icon}</div><h3>{m.title}</h3><p>{m.desc}</p></div>)}</div>
         </div>
       </section>
       <section className="hem-sec" ref={whR}>
         <div className="hem-wrap">
           <h2 className="hem-sec-title">Why Choose 1Solutions for HTML Email Development?</h2>
-          <p className="hem-sec-sub">We build emails that survive the inbox — Outlook, dark mode, mobile, and everything in between.</p>
+          <p className="hem-sec-sub">We build emails that survive the inbox - Outlook, dark mode, mobile, and everything in between.</p>
           <div className="hem-why-grid">{WHY.map((w, i) => <div key={w.h} className={`hem-why-item${whV ? ' hem-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
         </div>
       </section>
@@ -187,7 +187,7 @@ export default function HtmlEmailDevelopmentServices() {
       <section className="hem-sec hem-sec-alt" ref={prR}>
         <div className="hem-wrap">
           <h2 className="hem-sec-title">Our Email Development Process</h2>
-          <p className="hem-sec-sub">Brief to inbox-tested delivery in 4 steps — no shortcuts, no builders, no broken rendering.</p>
+          <p className="hem-sec-sub">Brief to inbox-tested delivery in 4 steps - no shortcuts, no builders, no broken rendering.</p>
           <div className="hem-process">{PROCESS.map((p, i) => <div key={p.n} className={`hem-step${prV ? ' hem-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}><div className="hem-step-n">{p.n}</div><h3>{p.h}</h3><p>{p.b}</p></div>)}</div>
         </div>
       </section>
@@ -201,7 +201,7 @@ export default function HtmlEmailDevelopmentServices() {
       <section className="hem-cta">
         <div className="hem-wrap">
           <h2>Ready to Build HTML Emails That Actually Render?</h2>
-          <p>Tell us your ESP, send volume, and template needs — we'll quote within 24 hours and deliver your first template in under a week.</p>
+          <p>Tell us your ESP, send volume, and template needs - we'll quote within 24 hours and deliver your first template in under a week.</p>
           <Link href="/contact-us" className="hem-btn-primary">Get a Free Template Quote →</Link>
         </div>
       </section>

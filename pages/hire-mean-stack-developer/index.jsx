@@ -27,13 +27,13 @@ const SKILLS = [
   'CI/CD Pipelines', 'WebSockets', 'Microservices Architecture',
 ];
 const MODELS = [
-  { title: 'Dedicated Hire', desc: 'A full-time MEAN stack developer committed to your product — 8 hrs/day, 5 days/week.', icon: '👤' },
+  { title: 'Dedicated Hire', desc: 'A full-time MEAN stack developer committed to your product - 8 hrs/day, 5 days/week.', icon: '👤' },
   { title: 'Part-Time Hire', desc: 'Half-day engagement for ongoing feature delivery or Angular/Node.js maintenance.', icon: '⏰' },
   { title: 'Hourly Hire',    desc: 'Flexible billing for architecture reviews, performance audits, or burst sprints.', icon: '🕐' },
 ];
 const WHY = [
-  { h: 'Full-Stack MEAN Mastery', b: 'Our developers own MongoDB schemas, Express middleware, Angular components, and Node.js services — no hand-off delays.' },
-  { h: 'Enterprise Angular Experience', b: 'We build large-scale Angular apps with lazy loading, NgRx state management, and strict TypeScript — not just simple SPAs.' },
+  { h: 'Full-Stack MEAN Mastery', b: 'Our developers own MongoDB schemas, Express middleware, Angular components, and Node.js services - no hand-off delays.' },
+  { h: 'Enterprise Angular Experience', b: 'We build large-scale Angular apps with lazy loading, NgRx state management, and strict TypeScript - not just simple SPAs.' },
   { h: 'Profiles in 48 Hours', b: 'Submit your brief and receive 2-3 pre-screened MEAN stack developer CVs within two business days.' },
   { h: 'Agile Delivery', b: '2-week sprints with working demos, velocity tracking, and clear acceptance criteria every cycle.' },
   { h: 'NDA & IP Security', b: 'Comprehensive NDA and IP assignment signed before any access to your codebase or infrastructure.' },
@@ -47,7 +47,7 @@ const PROCESS = [
 ];
 const FAQS = [
   { q: 'What Angular versions do your developers work with?', a: 'Our developers are proficient in Angular 14 through 17+, including the latest signals-based reactivity model, standalone components, and Ivy renderer.' },
-  { q: 'Can they work on both the API and Angular frontend?', a: 'Yes. MEAN stack developers own the entire vertical — MongoDB models, Express routes, Node.js services, and Angular views — without splitting tasks across teams.' },
+  { q: 'Can they work on both the API and Angular frontend?', a: 'Yes. MEAN stack developers own the entire vertical - MongoDB models, Express routes, Node.js services, and Angular views - without splitting tasks across teams.' },
   { q: 'Do your developers use NgRx for state management?', a: 'Yes. Our developers are experienced with NgRx (actions, reducers, effects, selectors) as well as lighter alternatives like Akita or simple RxJS-based service patterns for smaller apps.' },
   { q: 'Can they integrate with third-party APIs and microservices?', a: 'Absolutely. Our MEAN developers regularly integrate with payment gateways, CRMs, ERPs, and third-party REST or GraphQL APIs via Express middleware and Angular HTTP interceptors.' },
   { q: 'What is the minimum engagement period?', a: 'Our standard minimum is 4 weeks. This ensures sufficient time for codebase onboarding, alignment, and meaningful delivery.' },
@@ -86,7 +86,7 @@ export default function HireMEANStackDeveloper() {
         { '@type': 'ListItem', position: 2, name: 'Hire MEAN Stack Developer', item: 'https://www.1solutions.biz/hire-mean-stack-developer/' },
       ]},
       { '@type': 'Service', name: 'Hire MEAN Stack Developer', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Hire dedicated MEAN stack developers from 1Solutions — MongoDB, Express, Angular, and Node.js experts.',
+        description: 'Hire dedicated MEAN stack developers from 1Solutions - MongoDB, Express, Angular, and Node.js experts.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', reviewCount: '68', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -153,7 +153,7 @@ export default function HireMEANStackDeveloper() {
 
       <section className="hmean-hero">
         <h1>Hire MEAN Stack Developers<br/>MongoDB · Express · Angular · Node.js</h1>
-        <p>Pre-vetted engineers who own the full MEAN stack — from MongoDB schemas to Angular UI — and ship production-grade apps with TypeScript throughout. Profiles in 48 hours.</p>
+        <p>Pre-vetted engineers who own the full MEAN stack - from MongoDB schemas to Angular UI - and ship production-grade apps with TypeScript throughout. Profiles in 48 hours.</p>
         <div className="hmean-hero-btns">
           <Link href="/contact-us" className="hmean-btn-primary">Hire a MEAN Stack Developer →</Link>
           <Link href="/portfolio" className="hmean-btn-outline">View Portfolio</Link>
@@ -163,7 +163,7 @@ export default function HireMEANStackDeveloper() {
       <section className="hmean-sec" ref={skR}>
         <div className="hmean-wrap">
           <h2 className="hmean-sec-title">Skills &amp; Tech Stack</h2>
-          <p className="hmean-sec-sub">Our MEAN developers cover the full stack — NoSQL data modelling, REST/GraphQL APIs, enterprise Angular, and cloud deployment.</p>
+          <p className="hmean-sec-sub">Our MEAN developers cover the full stack - NoSQL data modelling, REST/GraphQL APIs, enterprise Angular, and cloud deployment.</p>
           <div className="hmean-skills">
             {SKILLS.map((s, i) => <span key={s} className={`hmean-skill${skV ? ' hmean-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>)}
           </div>
@@ -173,7 +173,7 @@ export default function HireMEANStackDeveloper() {
       <section className="hmean-sec hmean-sec-alt" ref={enR}>
         <div className="hmean-wrap">
           <h2 className="hmean-sec-title">Flexible Engagement Models</h2>
-          <p className="hmean-sec-sub">Full-time, part-time, or hourly — scale the engagement to match your roadmap.</p>
+          <p className="hmean-sec-sub">Full-time, part-time, or hourly - scale the engagement to match your roadmap.</p>
           <div className="hmean-models">
             {MODELS.map((m, i) => (
               <div key={m.title} className={`hmean-model${enV ? ' hmean-in' : ''}`} style={{ transitionDelay: `${i * 120}ms` }}>
@@ -188,7 +188,7 @@ export default function HireMEANStackDeveloper() {
       <section className="hmean-sec" ref={whR}>
         <div className="hmean-wrap">
           <h2 className="hmean-sec-title">Why Hire MEAN Stack Developers from 1Solutions?</h2>
-          <p className="hmean-sec-sub">We place engineers with real production MEAN apps in their portfolio — not bootcamp graduates.</p>
+          <p className="hmean-sec-sub">We place engineers with real production MEAN apps in their portfolio - not bootcamp graduates.</p>
           <div className="hmean-why-grid">
             {WHY.map((w, i) => (
               <div key={w.h} className={`hmean-why-item${whV ? ' hmean-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}>
@@ -211,7 +211,7 @@ export default function HireMEANStackDeveloper() {
       <section className="hmean-sec hmean-sec-alt" ref={prR}>
         <div className="hmean-wrap">
           <h2 className="hmean-sec-title">Hire in 4 Simple Steps</h2>
-          <p className="hmean-sec-sub">From brief to first sprint — in under two weeks.</p>
+          <p className="hmean-sec-sub">From brief to first sprint - in under two weeks.</p>
           <div className="hmean-process">
             {PROCESS.map((p, i) => (
               <div key={p.n} className={`hmean-step${prV ? ' hmean-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}>
@@ -244,7 +244,7 @@ export default function HireMEANStackDeveloper() {
       <section className="hmean-cta">
         <div className="hmean-wrap">
           <h2>Ready to Hire Your MEAN Stack Developer?</h2>
-          <p>Share your requirements and receive matched developer profiles within 48 hours — no commitment required.</p>
+          <p>Share your requirements and receive matched developer profiles within 48 hours - no commitment required.</p>
           <Link href="/contact-us" className="hmean-btn-primary">Get Started Today →</Link>
         </div>
       </section>

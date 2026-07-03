@@ -28,16 +28,16 @@ const SKILLS = [
   'Display Ad & Banner Design',
 ];
 const MODELS = [
-  { title: 'Dedicated Hire', desc: 'A full-time graphic designer embedded in your marketing or product team — 8 hrs/day, 5 days/week, exclusively yours.', icon: '👤' },
+  { title: 'Dedicated Hire', desc: 'A full-time graphic designer embedded in your marketing or product team - 8 hrs/day, 5 days/week, exclusively yours.', icon: '👤' },
   { title: 'Part-Time Hire', desc: 'Half-day engagement for ongoing social media graphics, campaign assets, or brand maintenance work.', icon: '⏰' },
   { title: 'Hourly Hire',    desc: 'Flexible billing for one-off projects: a logo, a pitch deck, a brochure, or a set of display ads.', icon: '🕐' },
 ];
 const WHY = [
   { h: 'Brand-First Designers', b: 'Our designers understand brand strategy, not just tools. They create visuals that communicate your value proposition and build recognition across every touchpoint.' },
-  { h: 'Adobe Suite & Figma Experts', b: 'Proficient across the full Adobe Creative Suite (Illustrator, Photoshop, InDesign) and Figma — they work in whatever tools your team already uses.' },
+  { h: 'Adobe Suite & Figma Experts', b: 'Proficient across the full Adobe Creative Suite (Illustrator, Photoshop, InDesign) and Figma - they work in whatever tools your team already uses.' },
   { h: 'Profiles in 48 Hours', b: 'Submit your design brief and receive 2-3 matched graphic designer profiles with portfolio links within two business days.' },
-  { h: 'Print & Digital Covered', b: 'From business cards and trade show banners to social media templates and digital ad sets — our designers handle the full range, not just one medium.' },
-  { h: 'Revision-Friendly Process', b: 'Every engagement includes structured review rounds so you get exactly what you need — no surprise extra charges for changes.' },
+  { h: 'Print & Digital Covered', b: 'From business cards and trade show banners to social media templates and digital ad sets - our designers handle the full range, not just one medium.' },
+  { h: 'Revision-Friendly Process', b: 'Every engagement includes structured review rounds so you get exactly what you need - no surprise extra charges for changes.' },
   { h: 'NDA & IP Protection', b: 'NDA and IP assignment signed before any access to your brand assets, brief, or design files.' },
 ];
 const PROCESS = [
@@ -49,8 +49,8 @@ const PROCESS = [
 const FAQS = [
   { q: 'What types of graphic design work can your designers handle?', a: 'Brand identity (logos, style guides, brand books), marketing collateral (brochures, flyers, posters, banners), social media graphics (static and animated), packaging design, presentation design (PowerPoint, Keynote, Google Slides), email template design, and display advertising. If it is a visual design deliverable, our designers can produce it.' },
   { q: 'Which software do your designers use?', a: 'Adobe Illustrator for vector and logo work, Adobe Photoshop for photo-based design and compositing, Adobe InDesign for print and multi-page documents, and Figma for digital and UI-adjacent design. We match designers to your existing toolset.' },
-  { q: 'Can they follow existing brand guidelines?', a: 'Yes. Our designers are experienced in working within existing brand systems — following colour palettes, typography hierarchies, and usage rules from your brand book. They can also extend or refresh your guidelines if needed.' },
-  { q: 'Can they create print-ready files?', a: 'Yes. Our designers produce print-ready files with correct colour profiles (CMYK), bleed settings, and resolution (300 dpi) — ready to send directly to your printer or print-on-demand supplier.' },
+  { q: 'Can they follow existing brand guidelines?', a: 'Yes. Our designers are experienced in working within existing brand systems - following colour palettes, typography hierarchies, and usage rules from your brand book. They can also extend or refresh your guidelines if needed.' },
+  { q: 'Can they create print-ready files?', a: 'Yes. Our designers produce print-ready files with correct colour profiles (CMYK), bleed settings, and resolution (300 dpi) - ready to send directly to your printer or print-on-demand supplier.' },
   { q: 'Can they create animated graphics for social media?', a: 'Yes. Our designers can produce short animated graphics and GIFs in After Effects or Figma for social media, email, and display advertising.' },
   { q: 'Do you sign NDAs?', a: 'Yes. NDA and IP assignment agreements are signed as standard before any engagement begins.' },
 ];
@@ -84,7 +84,7 @@ export default function HireDedicatedGraphicDesigner() {
         { '@type': 'ListItem', position: 2, name: 'Hire Dedicated Graphic Designer', item: 'https://www.1solutions.biz/hire-dedicated-graphic-designer/' },
       ]},
       { '@type': 'Service', name: 'Hire Dedicated Graphic Designer', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Hire dedicated graphic designers from 1Solutions — brand identity, print design, social media graphics, and marketing collateral. Pre-vetted profiles in 48 hours.',
+        description: 'Hire dedicated graphic designers from 1Solutions - brand identity, print design, social media graphics, and marketing collateral. Pre-vetted profiles in 48 hours.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '88', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -95,7 +95,7 @@ export default function HireDedicatedGraphicDesigner() {
     <>
       <Head>
         <title>Hire Dedicated Graphic Designer | 1Solutions</title>
-        <meta name="description" content="Hire dedicated graphic designers from 1Solutions. Brand identity, print design, social media graphics, packaging, and marketing collateral — pre-vetted" />
+        <meta name="description" content="Hire dedicated graphic designers from 1Solutions. Brand identity, print design, social media graphics, packaging, and marketing collateral - pre-vetted" />
         <link rel="canonical" href="https://www.1solutions.biz/hire-dedicated-graphic-designer/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
@@ -149,7 +149,7 @@ export default function HireDedicatedGraphicDesigner() {
       </Head>
       <section className="hgd-hero">
         <h1>Hire Dedicated Graphic Designers<br/>Brand, Print &amp; Digital Design Experts</h1>
-        <p>Pre-vetted graphic designers who create compelling brand identities, marketing collateral, social media graphics, packaging, and print materials. Not freelancers — dedicated professionals who become part of your team. Profiles in 48 hours.</p>
+        <p>Pre-vetted graphic designers who create compelling brand identities, marketing collateral, social media graphics, packaging, and print materials. Not freelancers - dedicated professionals who become part of your team. Profiles in 48 hours.</p>
         <div className="hgd-hero-btns">
           <Link href="/contact-us" className="hgd-btn-primary">Hire a Graphic Designer →</Link>
           <Link href="/portfolio" className="hgd-btn-outline">View Portfolio</Link>
@@ -158,21 +158,21 @@ export default function HireDedicatedGraphicDesigner() {
       <section className="hgd-sec" ref={skR}>
         <div className="hgd-wrap">
           <h2 className="hgd-sec-title">Design Skills &amp; Tools</h2>
-          <p className="hgd-sec-sub">Our graphic designers cover the full creative spectrum — from brand identity to print production to digital campaigns.</p>
+          <p className="hgd-sec-sub">Our graphic designers cover the full creative spectrum - from brand identity to print production to digital campaigns.</p>
           <div className="hgd-skills">{SKILLS.map((s, i) => <span key={s} className={`hgd-skill${skV ? ' hgd-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>)}</div>
         </div>
       </section>
       <section className="hgd-sec hgd-sec-alt" ref={enR}>
         <div className="hgd-wrap">
           <h2 className="hgd-sec-title">Flexible Engagement Models</h2>
-          <p className="hgd-sec-sub">Embed a designer into your team or hire for a focused project — whatever your workload demands.</p>
+          <p className="hgd-sec-sub">Embed a designer into your team or hire for a focused project - whatever your workload demands.</p>
           <div className="hgd-models">{MODELS.map((m, i) => <div key={m.title} className={`hgd-model${enV ? ' hgd-in' : ''}`} style={{ transitionDelay: `${i * 120}ms` }}><div className="hgd-model-icon">{m.icon}</div><h3>{m.title}</h3><p>{m.desc}</p></div>)}</div>
         </div>
       </section>
       <section className="hgd-sec" ref={whR}>
         <div className="hgd-wrap">
           <h2 className="hgd-sec-title">Why Hire Graphic Designers from 1Solutions?</h2>
-          <p className="hgd-sec-sub">We place designers who treat visual communication as a business discipline — not just aesthetics.</p>
+          <p className="hgd-sec-sub">We place designers who treat visual communication as a business discipline - not just aesthetics.</p>
           <div className="hgd-why-grid">{WHY.map((w, i) => <div key={w.h} className={`hgd-why-item${whV ? ' hgd-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
         </div>
       </section>
@@ -187,7 +187,7 @@ export default function HireDedicatedGraphicDesigner() {
       <section className="hgd-sec hgd-sec-alt" ref={prR}>
         <div className="hgd-wrap">
           <h2 className="hgd-sec-title">Hire in 4 Simple Steps</h2>
-          <p className="hgd-sec-sub">From design brief to first deliverables — in under two weeks.</p>
+          <p className="hgd-sec-sub">From design brief to first deliverables - in under two weeks.</p>
           <div className="hgd-process">{PROCESS.map((p, i) => <div key={p.n} className={`hgd-step${prV ? ' hgd-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}><div className="hgd-step-n">{p.n}</div><h3>{p.h}</h3><p>{p.b}</p></div>)}</div>
         </div>
       </section>
@@ -201,7 +201,7 @@ export default function HireDedicatedGraphicDesigner() {
       <section className="hgd-cta">
         <div className="hgd-wrap">
           <h2>Ready to Hire Your Dedicated Graphic Designer?</h2>
-          <p>Share your design brief and receive matched graphic designer profiles with portfolios within 48 hours — no commitment required.</p>
+          <p>Share your design brief and receive matched graphic designer profiles with portfolios within 48 hours - no commitment required.</p>
           <Link href="/contact-us" className="hgd-btn-primary">Get Started Today →</Link>
         </div>
       </section>

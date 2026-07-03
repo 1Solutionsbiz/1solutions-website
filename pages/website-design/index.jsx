@@ -4,11 +4,11 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const SERVICES = [
-  { n: '01', title: 'Landing Page Design', desc: 'High-converting pages built around a single compelling call to action — crafted to capture leads and drive purchases.' },
+  { n: '01', title: 'Landing Page Design', desc: 'High-converting pages built around a single compelling call to action - crafted to capture leads and drive purchases.' },
   { n: '02', title: 'Corporate Website Design', desc: 'Professional multi-page sites that establish credibility, tell your brand story, and drive qualified enquiries.' },
   { n: '03', title: 'eCommerce Website Design', desc: 'Product-first layouts engineered to reduce friction, increase basket size, and turn browsers into repeat buyers.' },
-  { n: '04', title: 'WordPress Theme Design', desc: 'Bespoke WordPress themes built for speed, SEO, and editorial ease — no bloat, no compromises.' },
-  { n: '05', title: 'Responsive / Mobile-First Design', desc: 'Pixel-perfect on every device from 320px to 5K displays — your site looks exceptional everywhere it\'s seen.' },
+  { n: '04', title: 'WordPress Theme Design', desc: 'Bespoke WordPress themes built for speed, SEO, and editorial ease - no bloat, no compromises.' },
+  { n: '05', title: 'Responsive / Mobile-First Design', desc: 'Pixel-perfect on every device from 320px to 5K displays - your site looks exceptional everywhere it\'s seen.' },
   { n: '06', title: 'UI/UX Audit & Redesign', desc: 'Identify friction points with heuristic analysis and heatmap data, then redesign with data-backed improvements.' },
   { n: '07', title: 'Design to Development Handoff', desc: 'Figma files with component specs, design tokens, spacing grids, and annotated developer notes for zero-ambiguity handoffs.' },
   { n: '08', title: 'Conversion Rate Optimisation', desc: 'A/B-tested design variations, optimised CTAs, and persuasive page layouts that lift sales and lead capture rates.' },
@@ -17,7 +17,7 @@ const SERVICES = [
 const FAQS = [
   {
     q: 'How much does a professional website design cost?',
-    a: 'Website design pricing varies by project scope. A focused landing page design typically starts from $800–$1,500. A full corporate multi-page website design ranges from $2,500–$8,000. Complex eCommerce or enterprise portal designs start from $10,000+. We provide a detailed fixed-price quote after a free discovery call — no hidden costs and no surprises. Every quote includes Figma source files and developer-ready specs.',
+    a: 'Website design pricing varies by project scope. A focused landing page design typically starts from $800–$1,500. A full corporate multi-page website design ranges from $2,500–$8,000. Complex eCommerce or enterprise portal designs start from $10,000+. We provide a detailed fixed-price quote after a free discovery call - no hidden costs and no surprises. Every quote includes Figma source files and developer-ready specs.',
   },
   {
     q: 'What design tools do you use?',
@@ -25,7 +25,7 @@ const FAQS = [
   },
   {
     q: 'Do you design in Figma?',
-    a: 'Yes — 100%. Figma is our end-to-end design tool. You receive a well-organised Figma file with a component library, design tokens (colours, typography, spacing), all page frames, interactive prototypes, and developer annotations. We use Figma\'s Dev Mode so your developers can inspect CSS values, download assets, and measure spacing directly — making handoff seamless and reducing back-and-forth.',
+    a: 'Yes - 100%. Figma is our end-to-end design tool. You receive a well-organised Figma file with a component library, design tokens (colours, typography, spacing), all page frames, interactive prototypes, and developer annotations. We use Figma\'s Dev Mode so your developers can inspect CSS values, download assets, and measure spacing directly - making handoff seamless and reducing back-and-forth.',
   },
   {
     q: 'How long does website design take?',
@@ -33,11 +33,11 @@ const FAQS = [
   },
   {
     q: 'Can you redesign my existing website?',
-    a: 'Absolutely. Redesign projects are one of our specialities. We begin with a UX audit of your current site — reviewing heatmaps, analytics, user feedback, and competitor benchmarks — to identify exactly what\'s costing you conversions. We then design an improved experience that preserves your brand equity while eliminating friction. We can also work alongside your existing development team or handle the complete design-to-development process.',
+    a: 'Absolutely. Redesign projects are one of our specialities. We begin with a UX audit of your current site - reviewing heatmaps, analytics, user feedback, and competitor benchmarks - to identify exactly what\'s costing you conversions. We then design an improved experience that preserves your brand equity while eliminating friction. We can also work alongside your existing development team or handle the complete design-to-development process.',
   },
   {
     q: 'Do you provide mobile-responsive designs?',
-    a: 'Yes — every design we deliver is mobile-first and fully responsive. We design breakpoints for mobile (375px), tablet (768px), and desktop (1440px) as standard. For high-traffic or mobile-heavy audiences we also provide additional breakpoints at 320px and 1280px. All Figma files include responsive frames so developers have clear guidance at every screen width. We do not deliver desktop-only designs.',
+    a: 'Yes - every design we deliver is mobile-first and fully responsive. We design breakpoints for mobile (375px), tablet (768px), and desktop (1440px) as standard. For high-traffic or mobile-heavy audiences we also provide additional breakpoints at 320px and 1280px. All Figma files include responsive frames so developers have clear guidance at every screen width. We do not deliver desktop-only designs.',
   },
 ];
 
@@ -50,7 +50,7 @@ const WHY = [
   {
     icon: <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>,
     title: 'Figma-First Workflow',
-    desc: 'Clean, well-organised Figma files with components, tokens, and Dev Mode annotations — so your developers can build without guesswork.',
+    desc: 'Clean, well-organised Figma files with components, tokens, and Dev Mode annotations - so your developers can build without guesswork.',
   },
   {
     icon: <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>,
@@ -60,22 +60,22 @@ const WHY = [
   {
     icon: <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>,
     title: 'Data-Backed Design Decisions',
-    desc: 'We use heatmaps, session recordings, and A/B test results to guide every redesign — not opinions, not guesswork, not trends for their own sake.',
+    desc: 'We use heatmaps, session recordings, and A/B test results to guide every redesign - not opinions, not guesswork, not trends for their own sake.',
   },
   {
     icon: <svg viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg>,
     title: 'Mobile-First by Default',
-    desc: 'Over 65% of web traffic is mobile. We design for the smallest screen first and scale up — ensuring your site excels where it matters most.',
+    desc: 'Over 65% of web traffic is mobile. We design for the smallest screen first and scale up - ensuring your site excels where it matters most.',
   },
   {
     icon: <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>,
     title: 'Dedicated Design Team',
-    desc: 'Your project gets a dedicated UI/UX designer, a creative director, and a project manager — not a one-person freelancer juggling ten clients.',
+    desc: 'Your project gets a dedicated UI/UX designer, a creative director, and a project manager - not a one-person freelancer juggling ten clients.',
   },
   {
     icon: <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>,
     title: 'SEO-Compatible Architecture',
-    desc: 'We design with technical SEO in mind — semantic heading hierarchy, Core Web Vitals-friendly layouts, and page structures built for Google.',
+    desc: 'We design with technical SEO in mind - semantic heading hierarchy, Core Web Vitals-friendly layouts, and page structures built for Google.',
   },
   {
     icon: <svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>,
@@ -91,11 +91,11 @@ const PROCESS_STEPS = [
   },
   {
     title: 'Wireframing',
-    desc: 'Low-fidelity wireframes define the layout, information hierarchy, and user flow before a single colour or font is chosen. This keeps structural decisions separate from visual decisions — saving time and revision cycles.',
+    desc: 'Low-fidelity wireframes define the layout, information hierarchy, and user flow before a single colour or font is chosen. This keeps structural decisions separate from visual decisions - saving time and revision cycles.',
   },
   {
     title: 'Visual Design',
-    desc: 'We apply your brand identity to the approved wireframes — colour palettes, typography, imagery, micro-interactions, and component styles. You review high-fidelity Figma mockups for all key pages and breakpoints.',
+    desc: 'We apply your brand identity to the approved wireframes - colour palettes, typography, imagery, micro-interactions, and component styles. You review high-fidelity Figma mockups for all key pages and breakpoints.',
   },
   {
     title: 'Review & Iterate',
@@ -296,7 +296,7 @@ export default function WebsiteDesign() {
         <meta name="keywords" content="website design company, web design services, conversion-focused web design, landing page design, UI UX design, responsive web design, Figma design" />
         <link rel="canonical" href="https://www.1solutions.biz/website-design" />
         <meta property="og:title" content="Website Design Company | Conversion-Focused Web Design | 1Solutions" />
-        <meta property="og:description" content="We design websites that don't just look great — they convert. From landing pages to enterprise portals, every pixel is crafted for performance." />
+        <meta property="og:description" content="We design websites that don't just look great - they convert. From landing pages to enterprise portals, every pixel is crafted for performance." />
         <meta property="og:url" content="https://www.1solutions.biz/website-design" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
@@ -584,7 +584,7 @@ export default function WebsiteDesign() {
           <div className="wd-hero-content">
             <span className="wd-eyebrow">Conversion-Focused Website Design Company</span>
             <h1>Conversion-Focused Website Design That Turns Visitors Into Customers</h1>
-            <p>We design websites that don&apos;t just look great — they convert. From landing pages to enterprise portals, every pixel is crafted for performance.</p>
+            <p>We design websites that don&apos;t just look great - they convert. From landing pages to enterprise portals, every pixel is crafted for performance.</p>
             <Link href="#contact" className="wd-btn-hero">Get a Free Design Consultation</Link>
           </div>
 
@@ -631,7 +631,7 @@ export default function WebsiteDesign() {
             <div className={`wd-section-reveal${visibleSections.has('services') ? ' wd-revealed' : ''}`} ref={el => { sectionRefs.current['services'] = el; }}>
               <span className="wd-section-eyebrow">Our Services</span>
               <h2 className="wd-section-title">Website Design Services We Offer</h2>
-              <p className="wd-section-desc">From first-impression landing pages to full eCommerce platforms — every design we deliver is rooted in user psychology, brand strategy, and measurable conversion metrics.</p>
+              <p className="wd-section-desc">From first-impression landing pages to full eCommerce platforms - every design we deliver is rooted in user psychology, brand strategy, and measurable conversion metrics.</p>
             </div>
             <div className="wd-services-grid">
               {SERVICES.map(s => (
@@ -678,7 +678,7 @@ export default function WebsiteDesign() {
               <div className="wd-process-img-wrap">
                 <div className="wd-process-img-placeholder">
                   <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
-                  <p>From discovery to Figma handoff — our structured process keeps every design decision aligned with your commercial goals.</p>
+                  <p>From discovery to Figma handoff - our structured process keeps every design decision aligned with your commercial goals.</p>
                 </div>
               </div>
             </div>
@@ -698,17 +698,17 @@ export default function WebsiteDesign() {
                 {
                   initials: 'KL', bg: '#1a4a7a',
                   text: '"Our new landing page design from 1Solutions increased our lead conversion rate by 52% in the first 60 days. The wireframing process alone surfaced UX problems we\'d been blind to for years."',
-                  name: 'Karen Liu', role: 'VP Marketing, SaaS platform — USA', featured: false,
+                  name: 'Karen Liu', role: 'VP Marketing, SaaS platform - USA', featured: false,
                 },
                 {
                   initials: 'MJ', bg: '#0F3460',
                   text: '"Every screen they designed was thoughtful, on-brand, and tested against real user behaviour. The Figma files were so clean our dev team commented it was the best handoff they\'d ever received."',
-                  name: 'Mark Jensen', role: 'Founder, eCommerce brand — Australia', featured: true,
+                  name: 'Mark Jensen', role: 'Founder, eCommerce brand - Australia', featured: true,
                 },
                 {
                   initials: 'TP', bg: '#2d5a8e',
                   text: '"1Solutions redesigned our corporate website from the ground up. Time on site doubled, bounce rate dropped 38%, and we now regularly get compliments from prospects on how professional we look."',
-                  name: 'Theresa Park', role: 'CEO, Consulting firm — Canada', featured: false,
+                  name: 'Theresa Park', role: 'CEO, Consulting firm - Canada', featured: false,
                 },
               ].map((t, i) => (
                 <div className={`wd-tcard${t.featured ? ' featured' : ''}${visibleTestiCards.includes(i) ? ' wd-tcard-visible' : ''}`} key={t.name}>
@@ -744,7 +744,7 @@ export default function WebsiteDesign() {
             <div className={`wd-section-header-center wd-section-reveal${visibleSections.has('why') ? ' wd-revealed' : ''}`} ref={el => { sectionRefs.current['why'] = el; }} style={{ textAlign: 'center', marginBottom: 0 }}>
               <span className="wd-section-eyebrow">Why 1Solutions</span>
               <h2 className="wd-section-title">Why Businesses Choose Us to Design Their Website</h2>
-              <p style={{ fontSize: '16px', color: '#4A6080', margin: '0 auto', maxWidth: 680 }}>We combine creative excellence with commercial rigour — producing designs that look world-class and perform even better.</p>
+              <p style={{ fontSize: '16px', color: '#4A6080', margin: '0 auto', maxWidth: 680 }}>We combine creative excellence with commercial rigour - producing designs that look world-class and perform even better.</p>
             </div>
             <div className="wd-why-grid" ref={whyGridRef}>
               {WHY.map((w, i) => (
@@ -770,7 +770,7 @@ export default function WebsiteDesign() {
                 <div>
                   {[
                     { text: 'Your project details are kept strictly confidential under NDA.' },
-                    { text: 'A senior designer reviews your brief — not an automated bot.' },
+                    { text: 'A senior designer reviews your brief - not an automated bot.' },
                     { text: 'Free discovery call to scope your project with no obligation.' },
                     { text: 'Fixed-price quotes with no hidden costs or scope surprises.' },
                   ].map((b, i) => (

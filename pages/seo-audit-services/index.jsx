@@ -3,38 +3,38 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const AUDIT_AREAS = [
-  { n: '01', title: 'Technical SEO Audit', desc: 'Crawlability, indexation, canonical tags, redirect chains, Core Web Vitals, mobile usability, HTTPS, hreflang, and site architecture — a 150-point technical health check.' },
+  { n: '01', title: 'Technical SEO Audit', desc: 'Crawlability, indexation, canonical tags, redirect chains, Core Web Vitals, mobile usability, HTTPS, hreflang, and site architecture - a 150-point technical health check.' },
   { n: '02', title: 'On-Page SEO Audit', desc: 'Title tags, meta descriptions, heading structure, keyword targeting, internal linking, content quality, duplicate content, and E-E-A-T signals across all key pages.' },
-  { n: '03', title: 'Backlink Profile Audit', desc: 'Full link profile analysis — toxic and spammy links, anchor text distribution, referring domain quality, link velocity, and competitor link gap identification.' },
+  { n: '03', title: 'Backlink Profile Audit', desc: 'Full link profile analysis - toxic and spammy links, anchor text distribution, referring domain quality, link velocity, and competitor link gap identification.' },
   { n: '04', title: 'Keyword & Content Audit', desc: 'Ranking keyword analysis, content gap identification, cannibalisation issues, and prioritised content opportunities mapped to search intent and revenue potential.' },
-  { n: '05', title: 'Page Speed & Core Web Vitals', desc: 'LCP, CLS, INP scoring for desktop and mobile — with specific, developer-ready fixes for render-blocking resources, image optimisation, font loading, and server response time.' },
-  { n: '06', title: 'Structured Data Audit', desc: 'Schema markup validation — missing, incorrect, or outdated structured data for Article, Product, FAQ, BreadcrumbList, LocalBusiness, and Review types.' },
-  { n: '07', title: 'Competitor Benchmarking', desc: 'Head-to-head analysis against your top 3 organic competitors — domain authority, keyword coverage, content strategy, backlink profile, and technical advantage gaps.' },
+  { n: '05', title: 'Page Speed & Core Web Vitals', desc: 'LCP, CLS, INP scoring for desktop and mobile - with specific, developer-ready fixes for render-blocking resources, image optimisation, font loading, and server response time.' },
+  { n: '06', title: 'Structured Data Audit', desc: 'Schema markup validation - missing, incorrect, or outdated structured data for Article, Product, FAQ, BreadcrumbList, LocalBusiness, and Review types.' },
+  { n: '07', title: 'Competitor Benchmarking', desc: 'Head-to-head analysis against your top 3 organic competitors - domain authority, keyword coverage, content strategy, backlink profile, and technical advantage gaps.' },
   { n: '08', title: 'Local SEO Audit', desc: 'Google Business Profile completeness, NAP consistency across directories, local citation coverage, review profile health, and local keyword ranking analysis.' },
 ];
 
 const DELIVERABLES = [
-  { n: '01', title: 'Executive Summary', desc: 'A plain-English overview of your site\'s SEO health, top issues, and the estimated traffic impact of fixing them — written for decision makers, not just developers.' },
-  { n: '02', title: 'Prioritised Issue List', desc: 'Every issue ranked by impact (high / medium / low) with implementation effort noted — so you know exactly what to fix first for the fastest results.' },
-  { n: '03', title: 'Developer-Ready Fix Specs', desc: 'Technical issues come with specific fix instructions — copy-paste code snippets, redirect maps, canonical tag examples — so your developers can implement without back-and-forth.' },
+  { n: '01', title: 'Executive Summary', desc: 'A plain-English overview of your site\'s SEO health, top issues, and the estimated traffic impact of fixing them - written for decision makers, not just developers.' },
+  { n: '02', title: 'Prioritised Issue List', desc: 'Every issue ranked by impact (high / medium / low) with implementation effort noted - so you know exactly what to fix first for the fastest results.' },
+  { n: '03', title: 'Developer-Ready Fix Specs', desc: 'Technical issues come with specific fix instructions - copy-paste code snippets, redirect maps, canonical tag examples - so your developers can implement without back-and-forth.' },
   { n: '04', title: 'Keyword Opportunity Report', desc: 'A prioritised list of keyword gaps and ranking opportunities, mapped to your existing pages or flagged as new content requirements.' },
-  { n: '05', title: 'Competitor Gap Analysis', desc: 'Side-by-side comparison with your top 3 organic competitors — where they outrank you, why, and what it would take to close the gap.' },
-  { n: '06', title: '90-Day SEO Roadmap', desc: 'A structured action plan with monthly milestones — giving your team or agency a clear sequence for implementing the audit findings.' },
+  { n: '05', title: 'Competitor Gap Analysis', desc: 'Side-by-side comparison with your top 3 organic competitors - where they outrank you, why, and what it would take to close the gap.' },
+  { n: '06', title: '90-Day SEO Roadmap', desc: 'A structured action plan with monthly milestones - giving your team or agency a clear sequence for implementing the audit findings.' },
 ];
 
 const PROCESS = [
   { step: '01', title: 'Kickoff & Access', desc: 'We gather your Google Search Console, GA4, and Ahrefs/SEMrush access. You brief us on your goals, target markets, and known problem areas.' },
-  { step: '02', title: 'Full Site Crawl', desc: 'We run a comprehensive crawl using Screaming Frog and Sitebulb — analysing every URL, redirect, canonical tag, and technical signal across your site.' },
+  { step: '02', title: 'Full Site Crawl', desc: 'We run a comprehensive crawl using Screaming Frog and Sitebulb - analysing every URL, redirect, canonical tag, and technical signal across your site.' },
   { step: '03', title: 'Data Analysis', desc: 'GSC performance data, ranking history, backlink profile, page speed scores, competitor benchmarks, and keyword gap analysis are all synthesised.' },
-  { step: '04', title: 'Audit Report Creation', desc: 'Our senior SEO strategist writes the full audit document — prioritised issues, fix specifications, keyword opportunities, and 90-day roadmap.' },
-  { step: '05', title: 'Presentation & Q&A', desc: 'We walk you through the findings in a 60-minute call — explaining every issue, answering questions, and adjusting priorities based on your team\'s capacity.' },
+  { step: '04', title: 'Audit Report Creation', desc: 'Our senior SEO strategist writes the full audit document - prioritised issues, fix specifications, keyword opportunities, and 90-day roadmap.' },
+  { step: '05', title: 'Presentation & Q&A', desc: 'We walk you through the findings in a 60-minute call - explaining every issue, answering questions, and adjusting priorities based on your team\'s capacity.' },
   { step: '06', title: 'Implementation Support', desc: 'Optionally, we manage implementation directly or provide ongoing support to your in-house team or development agency as they action the findings.' },
 ];
 
 const FAQS = [
   {
     q: 'What is included in your SEO audit?',
-    a: 'Our full SEO audit covers technical SEO (crawlability, indexation, speed, schema), on-page SEO (title tags, content, internal links), off-page SEO (backlink quality, toxic links), keyword analysis (rankings, gaps, cannibalisation), competitor benchmarking, and a 90-day prioritised roadmap. You receive a full written report — typically 20–40 pages — plus a dedicated presentation call where we walk you through every finding and answer questions.',
+    a: 'Our full SEO audit covers technical SEO (crawlability, indexation, speed, schema), on-page SEO (title tags, content, internal links), off-page SEO (backlink quality, toxic links), keyword analysis (rankings, gaps, cannibalisation), competitor benchmarking, and a 90-day prioritised roadmap. You receive a full written report - typically 20–40 pages - plus a dedicated presentation call where we walk you through every finding and answer questions.',
   },
   {
     q: 'How long does an SEO audit take?',
@@ -42,27 +42,27 @@ const FAQS = [
   },
   {
     q: 'Do I need to give you access to my website backend?',
-    a: 'No backend access is required for the audit itself. We do need read-only access to Google Search Console and Google Analytics 4, plus your website URL. If you use Ahrefs or SEMrush, sharing access speeds up the process but is not required. All access is read-only — we never make changes to your site as part of the audit.',
+    a: 'No backend access is required for the audit itself. We do need read-only access to Google Search Console and Google Analytics 4, plus your website URL. If you use Ahrefs or SEMrush, sharing access speeds up the process but is not required. All access is read-only - we never make changes to your site as part of the audit.',
   },
   {
     q: 'Can you audit a Shopify, WordPress, or Magento site?',
-    a: 'Yes. We have platform-specific audit frameworks for Shopify (duplicate URL issues, theme speed, app conflicts), WordPress/WooCommerce (plugin conflicts, faceted navigation, bloat), and Magento/Adobe Commerce (large catalogue crawling, layered navigation, server response). Each platform has unique SEO quirks that we test for specifically — and our fix recommendations are practical, not generic.',
+    a: 'Yes. We have platform-specific audit frameworks for Shopify (duplicate URL issues, theme speed, app conflicts), WordPress/WooCommerce (plugin conflicts, faceted navigation, bloat), and Magento/Adobe Commerce (large catalogue crawling, layered navigation, server response). Each platform has unique SEO quirks that we test for specifically - and our fix recommendations are practical, not generic.',
   },
   {
     q: 'Will the audit tell me why my traffic dropped?',
-    a: 'Yes. If you\'ve experienced a traffic drop, we cross-reference your GSC data with known Google algorithm update dates (Core, Helpful Content, Product Reviews, Spam) and identify whether the drop is algorithmic, technical, or content-related — with a specific recovery plan. We\'ve helped dozens of businesses diagnose and recover from Google penalties and algorithm hits.',
+    a: 'Yes. If you\'ve experienced a traffic drop, we cross-reference your GSC data with known Google algorithm update dates (Core, Helpful Content, Product Reviews, Spam) and identify whether the drop is algorithmic, technical, or content-related - with a specific recovery plan. We\'ve helped dozens of businesses diagnose and recover from Google penalties and algorithm hits.',
   },
   {
     q: 'What is the difference between your free audit and a paid audit?',
-    a: 'Our free SEO review (available with a consultation) is a high-level assessment covering the most critical technical signals — typically 5 to 10 priority issues. A full paid audit is a comprehensive 150-point analysis with detailed fix specifications, full keyword research, competitor benchmarking, and a 90-day roadmap document. The paid audit is a proper working document, not a sales pitch.',
+    a: 'Our free SEO review (available with a consultation) is a high-level assessment covering the most critical technical signals - typically 5 to 10 priority issues. A full paid audit is a comprehensive 150-point analysis with detailed fix specifications, full keyword research, competitor benchmarking, and a 90-day roadmap document. The paid audit is a proper working document, not a sales pitch.',
   },
   {
     q: 'Do you implement the fixes or just provide recommendations?',
-    a: 'Both options are available. We can deliver the audit as a standalone document your team implements, or we can manage implementation directly as part of an ongoing SEO retainer. We also offer a hybrid model where we oversee your developers\' implementation — reviewing pull requests, QA\'ing technical fixes, and validating that GSC confirms the improvements.',
+    a: 'Both options are available. We can deliver the audit as a standalone document your team implements, or we can manage implementation directly as part of an ongoing SEO retainer. We also offer a hybrid model where we oversee your developers\' implementation - reviewing pull requests, QA\'ing technical fixes, and validating that GSC confirms the improvements.',
   },
   {
     q: 'How much does an SEO audit cost?',
-    a: 'SEO audit pricing depends on site size and depth required. A standard business website audit (under 500 pages) starts from $1,500–$3,000 and includes all 8 audit areas, the full report, and a presentation call. Large ecommerce or enterprise sites (1,000–50,000+ pages) are quoted individually based on crawl scope. We provide a fixed price quote with a clear scope — no surprise invoices after delivery.',
+    a: 'SEO audit pricing depends on site size and depth required. A standard business website audit (under 500 pages) starts from $1,500–$3,000 and includes all 8 audit areas, the full report, and a presentation call. Large ecommerce or enterprise sites (1,000–50,000+ pages) are quoted individually based on crawl scope. We provide a fixed price quote with a clear scope - no surprise invoices after delivery.',
   },
 ];
 
@@ -136,7 +136,7 @@ export default function SeoAuditServices() {
         '@type': 'Service',
         name: 'SEO Audit Services',
         provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz' },
-        description: 'Comprehensive SEO audits covering technical SEO, on-page, backlinks, content gaps, and competitor analysis — with a 90-day prioritised roadmap.',
+        description: 'Comprehensive SEO audits covering technical SEO, on-page, backlinks, content gaps, and competitor analysis - with a 90-day prioritised roadmap.',
         areaServed: ['US', 'CA', 'AU'],
         serviceType: 'SEO Audit',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '87', bestRating: '5' },
@@ -159,7 +159,7 @@ export default function SeoAuditServices() {
         <meta name="robots" content="index, follow" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="SEO Audit Services | 1Solutions" />
-        <meta property="og:description" content="150-point SEO audit — technical, on-page, backlinks, content gaps & competitor benchmarking. Prioritised 90-day roadmap + walkthrough call included." />
+        <meta property="og:description" content="150-point SEO audit - technical, on-page, backlinks, content gaps & competitor benchmarking. Prioritised 90-day roadmap + walkthrough call included." />
         <meta property="og:url" content="https://www.1solutions.biz/seo-audit-services/" />
         <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -270,7 +270,7 @@ export default function SeoAuditServices() {
               150-Point Audit · US · Canada · Australia
             </span>
             <h1 className="saud-hero-h1">SEO Audit That Finds What Is Holding Your Site Back</h1>
-            <p className="saud-hero-sub">Comprehensive 150-point SEO audit — technical health, on-page quality, backlink profile, content gaps, and competitor benchmarking — with a prioritised 90-day action plan and a live walkthrough call included.</p>
+            <p className="saud-hero-sub">Comprehensive 150-point SEO audit - technical health, on-page quality, backlink profile, content gaps, and competitor benchmarking - with a prioritised 90-day action plan and a live walkthrough call included.</p>
             <div className="saud-hero-btns">
               <Link href="/contact-us" className="saud-btn-primary">
                 Request an SEO Audit
@@ -293,7 +293,7 @@ export default function SeoAuditServices() {
           <div className="saud-services-inner">
             <span className="saud-section-eyebrow">What We Audit</span>
             <h2 className="saud-section-title">8 Areas Covered in Every SEO Audit</h2>
-            <p className="saud-section-desc">A complete diagnosis of every factor influencing your organic search performance — technical, content, authority, and competitive.</p>
+            <p className="saud-section-desc">A complete diagnosis of every factor influencing your organic search performance - technical, content, authority, and competitive.</p>
             <div className="saud-services-grid" ref={cardsRef}>
               {AUDIT_AREAS.map((s, i) => (
                 <div key={s.n} className={`saud-service-card${visibleCards.includes(i) ? ' visible' : ''}`}>
@@ -326,7 +326,7 @@ export default function SeoAuditServices() {
           <div className="saud-process-inner">
             <span className="saud-section-eyebrow">How We Work</span>
             <h2 className="saud-section-title">Our 6-Step Audit Process</h2>
-            <p className="saud-section-desc">From access to actionable report — a structured process that leaves nothing unchecked and delivers in 7 to 10 business days.</p>
+            <p className="saud-section-desc">From access to actionable report - a structured process that leaves nothing unchecked and delivers in 7 to 10 business days.</p>
             <div className="saud-process-steps">
               {PROCESS.map((p, i) => (
                 <div key={p.step} ref={el => { stepRefs.current[i] = el; }} className={`saud-process-step${visibleSteps.includes(i) ? ' visible' : ''}`}>
@@ -362,7 +362,7 @@ export default function SeoAuditServices() {
           <div className="saud-cta-inner">
             <span className="saud-section-eyebrow" style={{ textAlign: 'center', display: 'block', marginBottom: 16 }}>Ready to Find What is Holding You Back?</span>
             <h2 className="saud-cta-title">Request Your Comprehensive SEO Audit</h2>
-            <p className="saud-cta-sub">150-point analysis. Prioritised action plan. Live walkthrough call included. Delivered in 7 to 10 business days — fixed price, no surprises.</p>
+            <p className="saud-cta-sub">150-point analysis. Prioritised action plan. Live walkthrough call included. Delivered in 7 to 10 business days - fixed price, no surprises.</p>
             <div className="saud-cta-btns">
               <Link href="/contact-us" className="saud-btn-primary">
                 Request an SEO Audit

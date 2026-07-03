@@ -3,14 +3,14 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const SERVICES = [
-  { n: '01', title: 'OpenCart Technical SEO Audit', desc: 'Complete audit of your OpenCart store — duplicate URL issues, SEO URL configuration, crawlability, canonical tags, XML sitemap quality, robots.txt, and Core Web Vitals.' },
+  { n: '01', title: 'OpenCart Technical SEO Audit', desc: 'Complete audit of your OpenCart store - duplicate URL issues, SEO URL configuration, crawlability, canonical tags, XML sitemap quality, robots.txt, and Core Web Vitals.' },
   { n: '02', title: 'OpenCart URL Structure Optimisation', desc: 'Configure OpenCart\'s SEO-friendly URL settings correctly, eliminate session ID and query string URLs from indexation, and establish a clean, keyword-rich URL structure.' },
   { n: '03', title: 'Product & Category Page SEO', desc: 'Bulk meta tag optimisation, heading structure, unique product descriptions, keyword targeting, and internal linking for OpenCart product and category pages.' },
   { n: '04', title: 'OpenCart Duplicate Content Fix', desc: 'Resolve product duplication across categories, fix pagination duplicate issues, and canonicalise currency/language switching parameters that create competing page versions.' },
-  { n: '05', title: 'OpenCart Schema Markup', desc: 'Product, BreadcrumbList, Organisation, Offer, and AggregateRating structured data — implemented via OpenCart extensions or custom PHP for rich search result eligibility.' },
+  { n: '05', title: 'OpenCart Schema Markup', desc: 'Product, BreadcrumbList, Organisation, Offer, and AggregateRating structured data - implemented via OpenCart extensions or custom PHP for rich search result eligibility.' },
   { n: '06', title: 'OpenCart Page Speed', desc: 'Image optimisation, caching configuration, CDN setup, CSS/JS minification, and database query optimisation to improve Core Web Vitals scores and user experience.' },
   { n: '07', title: 'OpenCart Content Strategy', desc: 'Keyword research, category page content creation, buying guides, and blog strategy to capture top-of-funnel traffic and support commercial page authority.' },
-  { n: '08', title: 'OpenCart Link Building', desc: 'Domain authority building through industry directories, product review sites, and digital PR — targeted to the keywords and pages that drive the most revenue for your store.' },
+  { n: '08', title: 'OpenCart Link Building', desc: 'Domain authority building through industry directories, product review sites, and digital PR - targeted to the keywords and pages that drive the most revenue for your store.' },
 ];
 
 const EXTENSIONS = ['OpenCart 3.x', 'OpenCart 4.x', 'SEO Pack Extension', 'Journal Theme', 'Opencart SEO Module', 'Google Analytics Integration', 'Multi-Store', 'Multi-Language'];
@@ -25,20 +25,20 @@ const PROCESS = [
 ];
 
 const WHY = [
-  { title: 'OpenCart Platform Knowledge', desc: 'We have worked with OpenCart 2.x, 3.x, and 4.x — knowing the default SEO settings that need correcting and the extensions that genuinely help.' },
+  { title: 'OpenCart Platform Knowledge', desc: 'We have worked with OpenCart 2.x, 3.x, and 4.x - knowing the default SEO settings that need correcting and the extensions that genuinely help.' },
   { title: 'URL Structure Expertise', desc: 'OpenCart\'s default URL handling creates significant indexation problems. We configure it correctly from the start and clean up any existing URL debt.' },
-  { title: 'Extension-Aware Approach', desc: 'We audit your OpenCart extension stack for conflicts and performance impact — recommending only what adds genuine SEO value.' },
-  { title: 'Multi-Store & Multi-Language', desc: 'OpenCart multi-store and multi-language setups require specific hreflang, canonical, and geo-targeting configuration — we handle all of it.' },
-  { title: 'Transparent Reporting', desc: 'Monthly reports with direct GSC and GA4 data — keyword rankings, organic traffic, and revenue attribution with no black-box metrics.' },
+  { title: 'Extension-Aware Approach', desc: 'We audit your OpenCart extension stack for conflicts and performance impact - recommending only what adds genuine SEO value.' },
+  { title: 'Multi-Store & Multi-Language', desc: 'OpenCart multi-store and multi-language setups require specific hreflang, canonical, and geo-targeting configuration - we handle all of it.' },
+  { title: 'Transparent Reporting', desc: 'Monthly reports with direct GSC and GA4 data - keyword rankings, organic traffic, and revenue attribution with no black-box metrics.' },
   { title: 'Proven Ecommerce Results', desc: '100+ OpenCart stores optimised. Average 190% organic traffic growth over 12 months, with documented revenue attribution.' },
 ];
 
 const FAQS = [
-  { q: 'What are the most common OpenCart SEO issues?', a: 'The most frequent OpenCart SEO problems are: (1) SEO URLs not enabled or incorrectly configured — generating query string URLs like ?route=product/product&product_id=123; (2) Duplicate product pages when products appear in multiple categories; (3) Thin category pages with no unique content; (4) No structured data for products; (5) Slow page load from unoptimised images and no caching. We address all of these as part of our standard OpenCart SEO engagement.' },
+  { q: 'What are the most common OpenCart SEO issues?', a: 'The most frequent OpenCart SEO problems are: (1) SEO URLs not enabled or incorrectly configured - generating query string URLs like ?route=product/product&product_id=123; (2) Duplicate product pages when products appear in multiple categories; (3) Thin category pages with no unique content; (4) No structured data for products; (5) Slow page load from unoptimised images and no caching. We address all of these as part of our standard OpenCart SEO engagement.' },
   { q: 'How do you configure OpenCart SEO URLs correctly?', a: 'OpenCart\'s SEO URL feature needs to be enabled in admin, the .htaccess file needs to be configured correctly for URL rewrites, and a unique SEO keyword must be set for every product and category page. We also ensure consistent trailing slash usage, configure 301 redirects from old URLs, and submit the updated sitemap to Google Search Console. This process often reveals previously uncrawled pages that start ranking once technical issues are resolved.' },
   { q: 'Can you optimise an OpenCart store with thousands of products?', a: 'Yes. For large OpenCart catalogues we use automated bulk meta generation (using product name + category templates as a baseline), prioritise manual optimisation for highest-revenue products, and implement a meta tag quality scoring system to identify pages needing immediate improvement. We have optimised OpenCart stores with 500 to 50,000+ products, building scalable processes that maintain quality across the full catalogue.' },
-  { q: 'Does OpenCart have good native SEO features?', a: 'OpenCart has basic SEO functionality — SEO URL rewrites, editable meta tags, and XML sitemap generation. However, it does not automatically handle canonical tags for duplicate product URLs, does not generate structured data, has limited control over pagination SEO, and requires extensions for advanced features like schema markup and bulk meta editing. Our service fills these gaps with the right combination of extensions and custom implementation.' },
-  { q: 'What OpenCart SEO extensions do you recommend?', a: 'For most OpenCart stores we recommend: a dedicated SEO extension for bulk meta management (SEO Pack or similar); an image optimisation extension; a caching module for speed; and a schema markup extension. We audit your existing extensions before recommending additions — because too many extensions slow your store and can conflict. Our goal is a lean extension stack that covers SEO requirements without creating new performance problems.' },
+  { q: 'Does OpenCart have good native SEO features?', a: 'OpenCart has basic SEO functionality - SEO URL rewrites, editable meta tags, and XML sitemap generation. However, it does not automatically handle canonical tags for duplicate product URLs, does not generate structured data, has limited control over pagination SEO, and requires extensions for advanced features like schema markup and bulk meta editing. Our service fills these gaps with the right combination of extensions and custom implementation.' },
+  { q: 'What OpenCart SEO extensions do you recommend?', a: 'For most OpenCart stores we recommend: a dedicated SEO extension for bulk meta management (SEO Pack or similar); an image optimisation extension; a caching module for speed; and a schema markup extension. We audit your existing extensions before recommending additions - because too many extensions slow your store and can conflict. Our goal is a lean extension stack that covers SEO requirements without creating new performance problems.' },
   { q: 'Can you migrate my OpenCart store to a different platform without losing SEO rankings?', a: 'Yes. Platform migrations require a comprehensive SEO redirect mapping (all existing URLs mapped to new URLs), pre-migration ranking baseline, GSC property update, and 90-day post-migration monitoring. We have managed OpenCart migrations to WooCommerce, Shopify, and Magento without ranking loss when the redirect strategy is implemented correctly. We provide a detailed migration SEO checklist and QA process.' },
   { q: 'How do you handle OpenCart multi-store SEO?', a: 'OpenCart multi-store configurations need separate GSC properties for each store domain, hreflang tags for international variants, and careful canonical configuration to prevent stores from competing with each other. We map the relationship between stores, configure canonical and hreflang correctly, and build a unified reporting view across all stores.' },
   { q: 'What results should I expect from OpenCart SEO?', a: 'Stores in low-to-medium competition categories typically see keyword ranking improvements within 8 to 12 weeks of technical and on-page work. Organic traffic growth of 100 to 200% over 12 months is realistic for stores with solid technical foundations and active content and link building. Highly competitive categories (consumer electronics, fashion) take longer and require sustained authority building. We provide realistic projections in your initial audit report.' },
@@ -68,7 +68,7 @@ export default function OpencartSeoServices() {
     <>
       <Head>
         <title>OpenCart SEO Services | 1Solutions</title>
-        <meta name="description" content="OpenCart SEO services — fix URL structure, duplicate content, and slow page speed. Platform-specialist SEO for OpenCart 3.x and 4.x stores." />
+        <meta name="description" content="OpenCart SEO services - fix URL structure, duplicate content, and slow page speed. Platform-specialist SEO for OpenCart 3.x and 4.x stores." />
         <meta name="keywords" content="opencart seo services, opencart seo agency, opencart seo company, opencart technical seo, opencart store optimisation" />
         <link rel="canonical" href="https://www.1solutions.biz/opencart-seo-services/" />
         <meta property="og:title" content="OpenCart SEO Services | 1Solutions" />
@@ -151,7 +151,7 @@ export default function OpencartSeoServices() {
             <nav className="ocseo-bc"><Link href="/">Home</Link><span>/</span><Link href="/seo-services-company">SEO Services</Link><span>/</span><span style={{color:'#0891B2'}}>OpenCart SEO</span></nav>
             <span className="ocseo-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#0891B2',display:'inline-block'}}/> OpenCart 3.x · 4.x · Multi-Store</span>
             <h1 className="ocseo-h1">OpenCart SEO Services That Grow Your Store&rsquo;s Organic Traffic</h1>
-            <p className="ocseo-sub">Fix URL structure issues, resolve duplicate content, and optimise product and category pages — platform-specialist SEO for OpenCart stores that drives measurable organic revenue growth.</p>
+            <p className="ocseo-sub">Fix URL structure issues, resolve duplicate content, and optimise product and category pages - platform-specialist SEO for OpenCart stores that drives measurable organic revenue growth.</p>
             <div className="ocseo-btns">
               <Link href="/contact-us" className="ocseo-btn-p">Get a Free OpenCart SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/opencart-development-company" className="ocseo-btn-s">OpenCart Development</Link>
@@ -161,7 +161,7 @@ export default function OpencartSeoServices() {
         </section>
         <section className="ocseo-svc"><div className="ocseo-svc-in">
           <span className="ocseo-ey2">What We Do</span><h2 className="ocseo-ttl">OpenCart SEO Services</h2>
-          <p className="ocseo-desc">Every OpenCart SEO layer — from technical URL configuration to product page copy and link building — handled by specialists who know the platform.</p>
+          <p className="ocseo-desc">Every OpenCart SEO layer - from technical URL configuration to product page copy and link building - handled by specialists who know the platform.</p>
           <div className="ocseo-grid" ref={cardsRef}>{SERVICES.map((s,i) => <div key={s.n} className={`ocseo-card${visibleCards.includes(i)?' visible':''}`}><div className="ocseo-num">{s.n}</div><h3>{s.title}</h3><p>{s.desc}</p></div>)}</div>
         </div></section>
         <section className="ocseo-plat"><div className="ocseo-plat-in">
@@ -170,12 +170,12 @@ export default function OpencartSeoServices() {
         </div></section>
         <section className="ocseo-proc"><div className="ocseo-proc-in">
           <span className="ocseo-ey2">How We Work</span><h2 className="ocseo-ttl">Our OpenCart SEO Process</h2>
-          <p className="ocseo-desc">Audit first, technical fixes second, then content and authority — monthly reporting on rankings and organic revenue throughout.</p>
+          <p className="ocseo-desc">Audit first, technical fixes second, then content and authority - monthly reporting on rankings and organic revenue throughout.</p>
           <div className="ocseo-steps">{PROCESS.map((p,i) => <div key={p.step} ref={el=>{stepRefs.current[i]=el}} className={`ocseo-step${visibleSteps.includes(i)?' visible':''}`}><div className="ocseo-snum">{p.step}</div><div><h3>{p.title}</h3><p>{p.desc}</p></div></div>)}</div>
         </div></section>
         <section className="ocseo-why"><div className="ocseo-why-in">
           <span className="ocseo-ey2">Why 1Solutions</span><h2 className="ocseo-ttl">OpenCart SEO Specialists</h2>
-          <p className="ocseo-desc">Platform knowledge, scalable processes, and transparent reporting — built for OpenCart stores that want organic growth without agency fluff.</p>
+          <p className="ocseo-desc">Platform knowledge, scalable processes, and transparent reporting - built for OpenCart stores that want organic growth without agency fluff.</p>
           <div className="ocseo-why-grid" ref={whyRef}>{WHY.map((w,i) => <div key={w.title} className={`ocseo-wcard${visibleWhy.includes(i)?' visible':''}`}><div className="ocseo-dot"/><h3>{w.title}</h3><p>{w.desc}</p></div>)}</div>
         </div></section>
         <section className="ocseo-faq"><div className="ocseo-faq-in">
@@ -187,7 +187,7 @@ export default function OpencartSeoServices() {
           <div className="ocseo-cta-in">
             <span className="ocseo-ey2" style={{textAlign:'center',display:'block',marginBottom:16}}>Ready to Rank Your OpenCart Store?</span>
             <h2 className="ocseo-cta-t">Get Your Free OpenCart SEO Audit</h2>
-            <p className="ocseo-cta-s">We&rsquo;ll audit your URL structure, duplicate content, page speed, and keyword gaps — and send you a prioritised action plan, completely free.</p>
+            <p className="ocseo-cta-s">We&rsquo;ll audit your URL structure, duplicate content, page speed, and keyword gaps - and send you a prioritised action plan, completely free.</p>
             <div className="ocseo-cta-btns">
               <Link href="/contact-us" className="ocseo-btn-p">Get Free OpenCart SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/ecommerce-seo-services" className="ocseo-btn-s">Ecommerce SEO Services</Link>

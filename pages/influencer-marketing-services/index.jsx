@@ -3,14 +3,14 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const SERVICES = [
-  { n: '01', title: 'Influencer Strategy & Campaign Planning', desc: 'Data-backed campaign blueprints aligned to your brand goals, target audience, and budget — built before a single creator is approached.' },
-  { n: '02', title: 'Influencer Discovery & Vetting', desc: 'We identify and vet creators by niche, engagement rate, audience demographics, and brand-safety scores — not just follower count.' },
+  { n: '01', title: 'Influencer Strategy & Campaign Planning', desc: 'Data-backed campaign blueprints aligned to your brand goals, target audience, and budget - built before a single creator is approached.' },
+  { n: '02', title: 'Influencer Discovery & Vetting', desc: 'We identify and vet creators by niche, engagement rate, audience demographics, and brand-safety scores - not just follower count.' },
   { n: '03', title: 'Campaign Execution & Management', desc: 'End-to-end campaign management including outreach, negotiations, contracts, briefing, approval workflows, and post-tracking.' },
-  { n: '04', title: 'Content Brief & Creative Direction', desc: 'Clear, brand-aligned briefs that give creators the direction they need while preserving their authentic voice — the key to content that converts.' },
+  { n: '04', title: 'Content Brief & Creative Direction', desc: 'Clear, brand-aligned briefs that give creators the direction they need while preserving their authentic voice - the key to content that converts.' },
   { n: '05', title: 'Micro-Influencer Programs', desc: 'High-trust micro-influencer campaigns (10K–100K followers) that deliver 3–5× higher engagement and significantly lower cost-per-click.' },
   { n: '06', title: 'TikTok & Instagram Reels Campaigns', desc: 'Short-form video influencer campaigns built for maximum reach, virality, and product discovery on the platforms your customers use most.' },
   { n: '07', title: 'Brand Ambassador Programs', desc: 'Long-term ambassador relationships that build authentic brand affinity, repeat content, and community loyalty around your ecommerce brand.' },
-  { n: '08', title: 'Performance Analytics & Reporting', desc: 'Detailed campaign reports covering reach, impressions, engagement, link clicks, conversions, and attributed revenue — no vanity metrics.' },
+  { n: '08', title: 'Performance Analytics & Reporting', desc: 'Detailed campaign reports covering reach, impressions, engagement, link clicks, conversions, and attributed revenue - no vanity metrics.' },
 ];
 
 const PLATFORMS = [
@@ -25,24 +25,24 @@ const PLATFORMS = [
 const PROCESS = [
   { step: '01', title: 'Discovery & Brand Audit', desc: 'We learn your brand, goals, target customer, competitors, and past campaign history to set a precise strategy baseline.' },
   { step: '02', title: 'Influencer Research & Shortlisting', desc: 'Using data tools and manual vetting, we build a curated shortlist of creators whose audiences genuinely match your customer profile.' },
-  { step: '03', title: 'Outreach, Negotiation & Contracting', desc: 'We handle all creator communications, rate negotiations, deliverable agreements, and contract signing — so you don\'t have to.' },
+  { step: '03', title: 'Outreach, Negotiation & Contracting', desc: 'We handle all creator communications, rate negotiations, deliverable agreements, and contract signing - so you don\'t have to.' },
   { step: '04', title: 'Campaign Execution & Live Monitoring', desc: 'We brief creators, review content before posting, schedule for peak times, and monitor live performance in real time.' },
   { step: '05', title: 'Reporting, Learning & Optimisation', desc: 'After every campaign, you get a full performance report with insights and recommendations to make the next campaign even better.' },
 ];
 
 const WHY = [
   { title: 'Vetted Creator Network', desc: 'Access to 50,000+ pre-vetted creators across niches. Every influencer in our network has passed our audience authenticity and brand-safety screening.' },
-  { title: 'Ecommerce-Specific Expertise', desc: 'We specialise in ecommerce brands — we know what drives product discovery, clicks to product pages, and add-to-cart conversions from social content.' },
-  { title: 'Dedicated Campaign Manager', desc: 'Every client gets a dedicated manager who owns the campaign end-to-end. No handoffs, no ticket queues — one person who knows your brand.' },
+  { title: 'Ecommerce-Specific Expertise', desc: 'We specialise in ecommerce brands - we know what drives product discovery, clicks to product pages, and add-to-cart conversions from social content.' },
+  { title: 'Dedicated Campaign Manager', desc: 'Every client gets a dedicated manager who owns the campaign end-to-end. No handoffs, no ticket queues - one person who knows your brand.' },
   { title: 'Transparent Pricing, No Markups', desc: 'We charge a flat management fee. Influencer fees go directly to creators. You always know exactly what your budget is buying.' },
-  { title: 'Cross-Platform Mastery', desc: 'From TikTok Shop integrations to YouTube review campaigns to Pinterest idea pins — we run campaigns natively on each platform, not copy-pasted.' },
+  { title: 'Cross-Platform Mastery', desc: 'From TikTok Shop integrations to YouTube review campaigns to Pinterest idea pins - we run campaigns natively on each platform, not copy-pasted.' },
   { title: 'ROI-First Approach', desc: 'We tie every campaign to measurable outcomes: traffic, conversions, and attributed revenue. If it doesn\'t move the needle, we iterate until it does.' },
 ];
 
 const FAQS = [
   {
     q: 'What is influencer marketing and how does it work for ecommerce?',
-    a: 'Influencer marketing is a form of social media marketing where brands collaborate with creators who have established audiences to promote products or services. For ecommerce, it works by placing your products in front of a creator\'s engaged, trust-based audience — driving product discovery, website traffic, and purchases. Unlike paid ads, the content feels organic because it comes through a voice the audience already follows and trusts. We manage the entire process: strategy, creator selection, campaign execution, and performance reporting.',
+    a: 'Influencer marketing is a form of social media marketing where brands collaborate with creators who have established audiences to promote products or services. For ecommerce, it works by placing your products in front of a creator\'s engaged, trust-based audience - driving product discovery, website traffic, and purchases. Unlike paid ads, the content feels organic because it comes through a voice the audience already follows and trusts. We manage the entire process: strategy, creator selection, campaign execution, and performance reporting.',
   },
   {
     q: 'How much does influencer marketing cost?',
@@ -50,7 +50,7 @@ const FAQS = [
   },
   {
     q: 'What\'s the difference between macro-influencers and micro-influencers?',
-    a: 'Macro-influencers (500K+ followers) offer massive reach but often lower engagement rates (1–2%) and higher costs. Micro-influencers (10K–100K followers) have smaller audiences but significantly higher engagement rates (3–8%), more niche-specific followers, and greater perceived authenticity — which typically translates to better conversion rates for ecommerce. Most ecommerce brands get better ROI from running 10 micro-influencer campaigns than one macro campaign at the same total cost. We help you find the right balance for your objectives.',
+    a: 'Macro-influencers (500K+ followers) offer massive reach but often lower engagement rates (1–2%) and higher costs. Micro-influencers (10K–100K followers) have smaller audiences but significantly higher engagement rates (3–8%), more niche-specific followers, and greater perceived authenticity - which typically translates to better conversion rates for ecommerce. Most ecommerce brands get better ROI from running 10 micro-influencer campaigns than one macro campaign at the same total cost. We help you find the right balance for your objectives.',
   },
   {
     q: 'How do you find the right influencers for my ecommerce brand?',
@@ -58,11 +58,11 @@ const FAQS = [
   },
   {
     q: 'How long before I see results from an influencer marketing campaign?',
-    a: 'Initial campaign results — reach, impressions, engagement, and direct link clicks — are visible within 24–72 hours of content going live. Sales attribution, depending on your product\'s consideration cycle, typically builds over 2–4 weeks as audiences see multiple touchpoints. For brand awareness campaigns, meaningful lift in branded search and direct traffic is usually visible within 30–60 days. We recommend a 3-month minimum commitment to properly measure and optimise influencer marketing performance.',
+    a: 'Initial campaign results - reach, impressions, engagement, and direct link clicks - are visible within 24–72 hours of content going live. Sales attribution, depending on your product\'s consideration cycle, typically builds over 2–4 weeks as audiences see multiple touchpoints. For brand awareness campaigns, meaningful lift in branded search and direct traffic is usually visible within 30–60 days. We recommend a 3-month minimum commitment to properly measure and optimise influencer marketing performance.',
   },
   {
     q: 'Do you run influencer marketing campaigns for brands in the US, Canada, and Australia?',
-    a: 'Yes — this is our primary focus. We\'ve been working with ecommerce brands across the US, Canada, and Australia since 2008. Our creator networks include US, Canadian, and Australian influencers who genuinely speak to those markets. We handle all time-zone coordination, schedule posts during each market\'s peak engagement windows, and understand the cultural nuances that make content resonate locally. We operate fully remotely and are available during your business hours.',
+    a: 'Yes - this is our primary focus. We\'ve been working with ecommerce brands across the US, Canada, and Australia since 2008. Our creator networks include US, Canadian, and Australian influencers who genuinely speak to those markets. We handle all time-zone coordination, schedule posts during each market\'s peak engagement windows, and understand the cultural nuances that make content resonate locally. We operate fully remotely and are available during your business hours.',
   },
   {
     q: 'How do you measure influencer marketing ROI?',
@@ -170,7 +170,7 @@ export default function InfluencerMarketing() {
         <meta property="og:url" content="https://www.1solutions.biz/influencer-marketing-services/" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Influencer Marketing Services | 1Solutions" />
-        <meta name="twitter:description" content="Ecommerce influencer marketing — strategy to ROI. Instagram, TikTok, YouTube. US, Canada & Australia." />
+        <meta name="twitter:description" content="Ecommerce influencer marketing - strategy to ROI. Instagram, TikTok, YouTube. US, Canada & Australia." />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -698,7 +698,7 @@ export default function InfluencerMarketing() {
               Influencer Marketing Services That Drive Real Ecommerce Growth
             </h1>
             <p className="im-hero-sub">
-              We connect ecommerce brands with the right creators — not just the biggest ones. Data-backed influencer campaigns on Instagram, TikTok, YouTube, and more, built for measurable ROI.
+              We connect ecommerce brands with the right creators - not just the biggest ones. Data-backed influencer campaigns on Instagram, TikTok, YouTube, and more, built for measurable ROI.
             </p>
             <div className="im-hero-btns">
               <Link href="/contact-us" className="im-btn-primary">
@@ -728,7 +728,7 @@ export default function InfluencerMarketing() {
             <span className="im-section-eyebrow">What We Do</span>
             <h2 className="im-section-title">Influencer Marketing Services</h2>
             <p className="im-section-desc">
-              From strategy and creator discovery to campaign execution and performance reporting — we handle everything so your team doesn&rsquo;t have to.
+              From strategy and creator discovery to campaign execution and performance reporting - we handle everything so your team doesn&rsquo;t have to.
             </p>
             <div className="im-services-grid" ref={servicesRef}>
               {SERVICES.map((s, i) => (
@@ -751,7 +751,7 @@ export default function InfluencerMarketing() {
             <span className="im-section-eyebrow">Where We Operate</span>
             <h2 className="im-section-title">Platforms We Work With</h2>
             <p className="im-section-desc">
-              We run campaigns natively on each platform — not copy-pasted content. Each channel has different content formats, algorithms, and audience behaviours that we optimise for individually.
+              We run campaigns natively on each platform - not copy-pasted content. Each channel has different content formats, algorithms, and audience behaviours that we optimise for individually.
             </p>
             <div className="im-platforms-grid">
               {PLATFORMS.map(p => (
@@ -772,7 +772,7 @@ export default function InfluencerMarketing() {
             <span className="im-section-eyebrow">How It Works</span>
             <h2 className="im-section-title">Our Proven Campaign Process</h2>
             <p className="im-section-desc">
-              A structured, transparent 5-step process that takes your campaign from brief to measurable results — with zero guesswork.
+              A structured, transparent 5-step process that takes your campaign from brief to measurable results - with zero guesswork.
             </p>
             <div className="im-process-steps">
               {PROCESS.map((p, i) => (
@@ -821,7 +821,7 @@ export default function InfluencerMarketing() {
             <span className="im-section-eyebrow">Got Questions?</span>
             <h2 className="im-section-title">Influencer Marketing FAQs</h2>
             <p className="im-section-desc">
-              Everything you need to know before starting your first — or next — influencer campaign.
+              Everything you need to know before starting your first - or next - influencer campaign.
             </p>
             <div className="im-faq-list">
               {FAQS.map((f, i) => (

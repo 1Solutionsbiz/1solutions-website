@@ -27,27 +27,27 @@ const SKILLS = [
   'eBPF & Platform Engineering', 'Observability (OpenTelemetry)', 'Green Software Engineering',
 ];
 const MODELS = [
-  { title: 'Dedicated Hire', desc: 'A full-time developer specialising in your chosen emerging technology — 8 hrs/day, 5 days/week.', icon: '👤' },
+  { title: 'Dedicated Hire', desc: 'A full-time developer specialising in your chosen emerging technology - 8 hrs/day, 5 days/week.', icon: '👤' },
   { title: 'Part-Time Hire', desc: 'Half-day engagement to integrate AI, Wasm, or edge capabilities into an existing product.', icon: '⏰' },
   { title: 'Hourly Hire',    desc: 'Flexible billing for proof-of-concept work, architecture reviews, or LLM fine-tuning sessions.', icon: '🕐' },
 ];
 const WHY = [
-  { h: 'Ahead of the Curve', b: 'Our developers stay current with bleeding-edge releases — WWDC, Google I/O, AWS re:Invent — and bring hands-on experience, not just conference notes.' },
+  { h: 'Ahead of the Curve', b: 'Our developers stay current with bleeding-edge releases - WWDC, Google I/O, AWS re:Invent - and bring hands-on experience, not just conference notes.' },
   { h: 'PoC to Production', b: 'We turn AI/LLM prototypes, Web3 pilots, and edge experiments into production-grade systems with real reliability and security posture.' },
   { h: 'Profiles in 48 Hours', b: 'Submit your technology brief and receive 2-3 matched specialist profiles within two business days.' },
   { h: 'Cross-Stack Expertise', b: 'Emerging tech rarely lives in isolation. Our developers integrate new capabilities into existing React, Node, Python, or cloud-native stacks seamlessly.' },
-  { h: 'Rapid Iteration', b: 'Short feedback loops, weekly demos, and fast context-switching — essential when the technology itself is still evolving.' },
+  { h: 'Rapid Iteration', b: 'Short feedback loops, weekly demos, and fast context-switching - essential when the technology itself is still evolving.' },
   { h: 'NDA & IP Security', b: 'Full NDA and IP assignment signed before any access to your codebase, AI prompts, or blockchain smart contracts.' },
 ];
 const PROCESS = [
-  { n: '01', h: 'Describe the Technology', b: 'Name the emerging tech or trend — AI agents, Wasm, Web3, edge — and your use case.' },
+  { n: '01', h: 'Describe the Technology', b: 'Name the emerging tech or trend - AI agents, Wasm, Web3, edge - and your use case.' },
   { n: '02', h: 'Receive Profiles', b: '2-3 matched specialist CVs delivered within 48 hours.' },
-  { n: '03', h: 'Interview & Select', b: 'Run your technical round — PoC walkthrough, architecture whiteboard, or live coding.' },
+  { n: '03', h: 'Interview & Select', b: 'Run your technical round - PoC walkthrough, architecture whiteboard, or live coding.' },
   { n: '04', h: 'Onboard & Iterate', b: 'Developer joins your stack and ships the first PoC within 7 days.' },
 ];
 const FAQS = [
-  { q: 'What counts as a "trending" developer?', a: 'We define trending developers as specialists in technologies gaining rapid enterprise adoption: Generative AI / LLM integration, AI agents, Web3/blockchain, Rust, WebAssembly, edge computing, and PWA. If your technology is not listed, ask us — we likely have a match.' },
-  { q: 'Can they integrate LLMs like GPT-4 or Claude into our product?', a: 'Yes. Our developers work with OpenAI, Anthropic, Google Gemini, and open-source models (LLaMA, Mistral) via LangChain, LlamaIndex, or direct API integration — including RAG pipelines, tool use, and agentic workflows.' },
+  { q: 'What counts as a "trending" developer?', a: 'We define trending developers as specialists in technologies gaining rapid enterprise adoption: Generative AI / LLM integration, AI agents, Web3/blockchain, Rust, WebAssembly, edge computing, and PWA. If your technology is not listed, ask us - we likely have a match.' },
+  { q: 'Can they integrate LLMs like GPT-4 or Claude into our product?', a: 'Yes. Our developers work with OpenAI, Anthropic, Google Gemini, and open-source models (LLaMA, Mistral) via LangChain, LlamaIndex, or direct API integration - including RAG pipelines, tool use, and agentic workflows.' },
   { q: 'Do you have Rust or WebAssembly specialists?', a: 'Yes. We have developers with production Rust experience (systems programming, CLI tools, WASM modules) and WebAssembly experience for performance-critical browser computation.' },
   { q: 'Can they build blockchain or smart contract features?', a: 'Yes. We have Solidity developers for Ethereum/EVM chains, and experience with Rust-based chains (Solana, Near). Smart contract auditing is also available.' },
   { q: 'What if the technology is still experimental?', a: 'That is fine. We are used to building with unstable APIs, pre-release SDKs, and evolving specifications. We manage the risk through short iteration cycles and clear PoC-to-production transition plans.' },
@@ -148,7 +148,7 @@ export default function HireTrendingDeveloper() {
       </Head>
       <section className="htrd-hero">
         <h1>Hire Trending Technology Developers<br/>AI, Web3, Rust &amp; Edge Specialists</h1>
-        <p>Pre-vetted engineers who have shipped production projects with Generative AI, LLM integration, Web3, WebAssembly, and edge computing — not just followed the hype. Profiles in 48 hours.</p>
+        <p>Pre-vetted engineers who have shipped production projects with Generative AI, LLM integration, Web3, WebAssembly, and edge computing - not just followed the hype. Profiles in 48 hours.</p>
         <div className="htrd-hero-btns">
           <Link href="/contact-us" className="htrd-btn-primary">Hire a Specialist Developer →</Link>
           <Link href="/portfolio" className="htrd-btn-outline">View Portfolio</Link>
@@ -164,14 +164,14 @@ export default function HireTrendingDeveloper() {
       <section className="htrd-sec htrd-sec-alt" ref={enR}>
         <div className="htrd-wrap">
           <h2 className="htrd-sec-title">Flexible Engagement Models</h2>
-          <p className="htrd-sec-sub">From full-time product builds to short PoC engagements — we fit your pace.</p>
+          <p className="htrd-sec-sub">From full-time product builds to short PoC engagements - we fit your pace.</p>
           <div className="htrd-models">{MODELS.map((m, i) => <div key={m.title} className={`htrd-model${enV ? ' htrd-in' : ''}`} style={{ transitionDelay: `${i * 120}ms` }}><div className="htrd-model-icon">{m.icon}</div><h3>{m.title}</h3><p>{m.desc}</p></div>)}</div>
         </div>
       </section>
       <section className="htrd-sec" ref={whR}>
         <div className="htrd-wrap">
           <h2 className="htrd-sec-title">Why Hire Trending Tech Developers from 1Solutions?</h2>
-          <p className="htrd-sec-sub">We place practitioners, not theorists — engineers who have done it in production.</p>
+          <p className="htrd-sec-sub">We place practitioners, not theorists - engineers who have done it in production.</p>
           <div className="htrd-why-grid">{WHY.map((w, i) => <div key={w.h} className={`htrd-why-item${whV ? ' htrd-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
         </div>
       </section>
@@ -186,7 +186,7 @@ export default function HireTrendingDeveloper() {
       <section className="htrd-sec htrd-sec-alt" ref={prR}>
         <div className="htrd-wrap">
           <h2 className="htrd-sec-title">Hire in 4 Simple Steps</h2>
-          <p className="htrd-sec-sub">From technology brief to first PoC — in under two weeks.</p>
+          <p className="htrd-sec-sub">From technology brief to first PoC - in under two weeks.</p>
           <div className="htrd-process">{PROCESS.map((p, i) => <div key={p.n} className={`htrd-step${prV ? ' htrd-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}><div className="htrd-step-n">{p.n}</div><h3>{p.h}</h3><p>{p.b}</p></div>)}</div>
         </div>
       </section>
@@ -200,7 +200,7 @@ export default function HireTrendingDeveloper() {
       <section className="htrd-cta">
         <div className="htrd-wrap">
           <h2>Ready to Hire Your Specialist Developer?</h2>
-          <p>Share the technology and use case — we will match you with a practitioner who has shipped it in production. Profiles in 48 hours.</p>
+          <p>Share the technology and use case - we will match you with a practitioner who has shipped it in production. Profiles in 48 hours.</p>
           <Link href="/contact-us" className="htrd-btn-primary">Get Started Today →</Link>
         </div>
       </section>

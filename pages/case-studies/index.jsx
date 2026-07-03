@@ -313,7 +313,7 @@ export default function CaseStudies() {
         `}</style>
       </Head>
 
-      {/* ── HERO — original, untouched ── */}
+      {/* ── HERO - original, untouched ── */}
       <section className="cs-hero">
         <div className="cs-hero-orb1" />
         <div className="cs-hero-orb2" />
@@ -348,7 +348,7 @@ export default function CaseStudies() {
       <div className="cs-body">
         <div className="cs-body-inner">
 
-          {/* Filter tabs — no heading above */}
+          {/* Filter tabs - no heading above */}
           <div className="cs-filter-bar">
             {CATEGORIES.map(cat => (
               <button

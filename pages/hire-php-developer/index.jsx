@@ -27,12 +27,12 @@ const SKILLS = [
   'OOP & SOLID Principles', 'MVC Architecture', 'AWS & cPanel Hosting',
 ];
 const MODELS = [
-  { title: 'Dedicated Hire', desc: 'A full-time PHP developer committed to your project — 8 hrs/day, 5 days/week.', icon: '👤' },
+  { title: 'Dedicated Hire', desc: 'A full-time PHP developer committed to your project - 8 hrs/day, 5 days/week.', icon: '👤' },
   { title: 'Part-Time Hire', desc: 'Half-day engagement for ongoing feature development, bug-fixing, or legacy maintenance.', icon: '⏰' },
   { title: 'Hourly Hire',    desc: 'Flexible hourly billing for code audits, security reviews, or burst delivery windows.', icon: '🕐' },
 ];
 const WHY = [
-  { h: 'Deep Framework Expertise', b: 'Our PHP developers are specialists in Laravel and Symfony — not just WordPress hobbyists. We build robust, testable, enterprise-grade applications.' },
+  { h: 'Deep Framework Expertise', b: 'Our PHP developers are specialists in Laravel and Symfony - not just WordPress hobbyists. We build robust, testable, enterprise-grade applications.' },
   { h: 'Legacy PHP Modernisation', b: 'We refactor PHP 5/7 legacy codebases to PHP 8.x with strict typing, enums, fibers, and modern design patterns.' },
   { h: 'Profiles in 48 Hours', b: 'Submit your brief and receive 2-3 matched PHP developer CVs within two business days.' },
   { h: 'Rigorous Code Quality', b: 'All code follows PSR standards with PHPStan/Psalm static analysis, PHPUnit tests, and peer code review built into the workflow.' },
@@ -86,7 +86,7 @@ export default function HirePHPDeveloper() {
         { '@type': 'ListItem', position: 2, name: 'Hire PHP Developer', item: 'https://www.1solutions.biz/hire-php-developer/' },
       ]},
       { '@type': 'Service', name: 'Hire PHP Developer', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Hire dedicated PHP developers from 1Solutions — Laravel, Symfony, and WordPress experts for web applications.',
+        description: 'Hire dedicated PHP developers from 1Solutions - Laravel, Symfony, and WordPress experts for web applications.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', reviewCount: '142', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -163,7 +163,7 @@ export default function HirePHPDeveloper() {
       <section className="hphp-sec" ref={skR}>
         <div className="hphp-wrap">
           <h2 className="hphp-sec-title">Skills &amp; Tech Stack</h2>
-          <p className="hphp-sec-sub">Our PHP developers cover the full server-side stack — modern frameworks, database design, API architecture, and cloud deployment.</p>
+          <p className="hphp-sec-sub">Our PHP developers cover the full server-side stack - modern frameworks, database design, API architecture, and cloud deployment.</p>
           <div className="hphp-skills">
             {SKILLS.map((s, i) => <span key={s} className={`hphp-skill${skV ? ' hphp-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>)}
           </div>
@@ -188,7 +188,7 @@ export default function HirePHPDeveloper() {
       <section className="hphp-sec" ref={whR}>
         <div className="hphp-wrap">
           <h2 className="hphp-sec-title">Why Hire PHP Developers from 1Solutions?</h2>
-          <p className="hphp-sec-sub">Our PHP engineers build maintainable, testable, and secure applications — not just working code.</p>
+          <p className="hphp-sec-sub">Our PHP engineers build maintainable, testable, and secure applications - not just working code.</p>
           <div className="hphp-why-grid">
             {WHY.map((w, i) => (
               <div key={w.h} className={`hphp-why-item${whV ? ' hphp-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}>
@@ -211,7 +211,7 @@ export default function HirePHPDeveloper() {
       <section className="hphp-sec hphp-sec-alt" ref={prR}>
         <div className="hphp-wrap">
           <h2 className="hphp-sec-title">Hire in 4 Simple Steps</h2>
-          <p className="hphp-sec-sub">From brief to first deployment — in under two weeks.</p>
+          <p className="hphp-sec-sub">From brief to first deployment - in under two weeks.</p>
           <div className="hphp-process">
             {PROCESS.map((p, i) => (
               <div key={p.n} className={`hphp-step${prV ? ' hphp-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}>
@@ -244,7 +244,7 @@ export default function HirePHPDeveloper() {
       <section className="hphp-cta">
         <div className="hphp-wrap">
           <h2>Ready to Hire Your PHP Developer?</h2>
-          <p>Share your requirements and receive matched PHP specialist profiles within 48 hours — no commitment required.</p>
+          <p>Share your requirements and receive matched PHP specialist profiles within 48 hours - no commitment required.</p>
           <Link href="/contact-us" className="hphp-btn-primary">Get Started Today →</Link>
         </div>
       </section>

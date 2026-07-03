@@ -4,44 +4,44 @@ import { useState } from 'react';
 
 const ACCENT = '#1557a0';
 const SERVICES = [
-  { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Google Search Ads', desc: 'Keyword research, match-type strategy, responsive search ads, Quality Score optimisation, and bid management — campaigns engineered to capture high-intent buyers.' },
+  { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Google Search Ads', desc: 'Keyword research, match-type strategy, responsive search ads, Quality Score optimisation, and bid management - campaigns engineered to capture high-intent buyers.' },
   { icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z', title: 'Google Display Ads', desc: 'Audience targeting, remarketing lists, responsive display ads, and placement optimisation across 3M+ websites in the Google Display Network.' },
   { icon: 'M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z', title: 'YouTube & Video Ads', desc: 'TrueView in-stream, bumper ads, and Video Action campaigns targeting custom intent and affinity audiences on YouTube.' },
   { icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z', title: 'Google Shopping Campaigns', desc: 'Product feed optimisation, Smart Shopping and Performance Max campaign management, and negative keyword sculpting to maximise ROAS for eCommerce stores.' },
-  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'Performance Max Campaigns', desc: 'AI-driven campaigns across all Google channels — Search, Display, YouTube, Maps, Gmail, and Discover — with asset group strategy and audience signal optimisation.' },
+  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'Performance Max Campaigns', desc: 'AI-driven campaigns across all Google channels - Search, Display, YouTube, Maps, Gmail, and Discover - with asset group strategy and audience signal optimisation.' },
   { icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z', title: 'Conversion Tracking & Attribution', desc: 'GA4 and Google Ads conversion tracking setup, enhanced conversions, and attribution model analysis to ensure every lead and sale is correctly credited.' },
-  { icon: 'M13 10V3L4 14h7v7l9-11h-7z', title: 'Bid Strategy Optimisation', desc: 'Target CPA, Target ROAS, Maximise Conversions, and manual CPC strategies — chosen and adjusted based on campaign maturity, data volume, and business goals.' },
-  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'PPC Reporting & Insights', desc: 'Weekly performance dashboards, monthly insight reports, and quarterly strategy reviews — with every metric tied to cost per lead, ROAS, and revenue impact.' },
+  { icon: 'M13 10V3L4 14h7v7l9-11h-7z', title: 'Bid Strategy Optimisation', desc: 'Target CPA, Target ROAS, Maximise Conversions, and manual CPC strategies - chosen and adjusted based on campaign maturity, data volume, and business goals.' },
+  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'PPC Reporting & Insights', desc: 'Weekly performance dashboards, monthly insight reports, and quarterly strategy reviews - with every metric tied to cost per lead, ROAS, and revenue impact.' },
 ];
 const RESULTS = [
-  { metric: '3.8×', label: 'ROAS achieved', sub: 'US eCommerce client — Google Shopping', color: '#FE9700' },
-  { metric: '52%', label: 'Reduction in cost per lead', sub: 'AU B2B SaaS client — 4 months', color: '#7C3AED' },
+  { metric: '3.8×', label: 'ROAS achieved', sub: 'US eCommerce client - Google Shopping', color: '#FE9700' },
+  { metric: '52%', label: 'Reduction in cost per lead', sub: 'AU B2B SaaS client - 4 months', color: '#7C3AED' },
   { metric: '290%', label: 'Increase in conversion volume', sub: 'Canadian services business', color: ACCENT },
 ];
 const PROCESS = [
   { n: '01', title: 'Account Audit & Strategy', desc: 'We audit your existing campaigns (or start fresh), analyse competitor ad activity, and build a channel and budget strategy aligned to your CPA or ROAS targets.' },
-  { n: '02', title: 'Campaign Build', desc: 'Keyword research, audience targeting, ad copy creation, landing page recommendations, conversion tracking setup, and campaign structure — built before a single dollar is spent.' },
+  { n: '02', title: 'Campaign Build', desc: 'Keyword research, audience targeting, ad copy creation, landing page recommendations, conversion tracking setup, and campaign structure - built before a single dollar is spent.' },
   { n: '03', title: 'Launch & Learn', desc: 'Campaigns go live. We monitor quality scores, impression share, search term reports, and conversion data daily in the first two weeks.' },
-  { n: '04', title: 'Optimise', desc: 'Negative keyword additions, bid adjustments, ad copy testing, audience refinement, and Quality Score improvements — ongoing every week.' },
+  { n: '04', title: 'Optimise', desc: 'Negative keyword additions, bid adjustments, ad copy testing, audience refinement, and Quality Score improvements - ongoing every week.' },
   { n: '05', title: 'Scale', desc: 'Once CPA or ROAS targets are met consistently, we identify budget expansion opportunities, new campaign types, and geographic expansion.' },
-  { n: '06', title: 'Report', desc: 'Weekly dashboards and monthly insight reports — cost, clicks, conversions, CPA, ROAS, and competitive metrics — in plain English.' },
+  { n: '06', title: 'Report', desc: 'Weekly dashboards and monthly insight reports - cost, clicks, conversions, CPA, ROAS, and competitive metrics - in plain English.' },
 ];
 const WHY = [
-  { title: 'Google Partner Certified', desc: 'Our team holds active Google Ads certifications — Search, Display, Shopping, and Video — with real campaign experience across every format.' },
+  { title: 'Google Partner Certified', desc: 'Our team holds active Google Ads certifications - Search, Display, Shopping, and Video - with real campaign experience across every format.' },
   { title: 'No Percentage-of-Spend Fees', desc: 'We charge a flat management fee, not a percentage of your ad budget. Your budget increases stay in the campaigns, not in our pocket.' },
   { title: 'Landing Page Collaboration', desc: 'A great ad to a poor landing page wastes money. We review and provide specific recommendations on your landing pages as part of every campaign build.' },
-  { title: 'Transparent Access', desc: 'You own your Google Ads account. We work inside it — you always have full visibility and control, and you keep everything if we ever part ways.' },
+  { title: 'Transparent Access', desc: 'You own your Google Ads account. We work inside it - you always have full visibility and control, and you keep everything if we ever part ways.' },
   { title: 'US, Canada & Australia Focus', desc: 'We understand the search landscapes, seasonal patterns, and competitive dynamics in each English-speaking market where your customers are searching.' },
-  { title: 'Integrated with SEO', desc: 'We share keyword data between paid and organic to improve both channels — PPC search term data informs SEO content, and organic rankings reduce branded CPCs.' },
+  { title: 'Integrated with SEO', desc: 'We share keyword data between paid and organic to improve both channels - PPC search term data informs SEO content, and organic rankings reduce branded CPCs.' },
 ];
 const FAQS = [
   { q: 'How much should I budget for Google Ads?', a: 'Minimum budgets depend on your industry and CPC landscape. For most service businesses, we recommend starting at $1,500–$3,000/month in ad spend. eCommerce typically starts higher. We provide a budget recommendation based on your target CPA and competitive CPC data before you commit.' },
   { q: 'How quickly will I see results from Google Ads?', a: 'Search campaigns typically show conversion data within the first 2 to 4 weeks. However, the first 4 to 6 weeks are a learning phase where Google\'s algorithm optimises delivery. Most accounts reach stable CPA/ROAS targets by month 2 to 3.' },
   { q: 'Do you take a percentage of ad spend?', a: 'No. We charge a fixed monthly management fee regardless of your ad budget. This means our incentive is campaign performance, not inflating your spend.' },
-  { q: 'Will I own my Google Ads account?', a: 'Yes. You own the account, all campaigns, all historical data, and all conversion tracking. We are granted manager access — if you ever stop working with us, everything stays with you.' },
+  { q: 'Will I own my Google Ads account?', a: 'Yes. You own the account, all campaigns, all historical data, and all conversion tracking. We are granted manager access - if you ever stop working with us, everything stays with you.' },
   { q: 'Do you manage Performance Max campaigns?', a: 'Yes. We build Performance Max campaigns with structured asset groups, strong audience signals, and exclusion lists to prevent wasted spend on irrelevant placements. We also monitor search term insights and adjust regularly.' },
-  { q: 'Can you take over an existing underperforming account?', a: 'Yes. We specialise in account audits and turnarounds — identifying wasted spend, poor account structure, Quality Score issues, and missed opportunities, then restructuring campaigns for better performance.' },
-  { q: 'Do you handle conversion tracking setup?', a: 'Yes. Proper conversion tracking is non-negotiable. We set up Google Ads conversion actions, GA4 goals, and enhanced conversions — and verify every tracking trigger before launching any campaign.' },
+  { q: 'Can you take over an existing underperforming account?', a: 'Yes. We specialise in account audits and turnarounds - identifying wasted spend, poor account structure, Quality Score issues, and missed opportunities, then restructuring campaigns for better performance.' },
+  { q: 'Do you handle conversion tracking setup?', a: 'Yes. Proper conversion tracking is non-negotiable. We set up Google Ads conversion actions, GA4 goals, and enhanced conversions - and verify every tracking trigger before launching any campaign.' },
 ];
 
 export default function PpcManagementServices() {
@@ -55,7 +55,7 @@ export default function PpcManagementServices() {
         { '@type': 'ListItem', position: 3, name: 'Google Ads Management', item: 'https://www.1solutions.biz/ppc-management-services/' },
       ]},
       { '@type': 'Service', name: 'Google Ads PPC Management', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Google Ads PPC management services — Search, Display, Shopping, YouTube, and Performance Max campaigns for US, Canada, and Australia.',
+        description: 'Google Ads PPC management services - Search, Display, Shopping, YouTube, and Performance Max campaigns for US, Canada, and Australia.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '91', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -143,9 +143,9 @@ export default function PpcManagementServices() {
       <nav className="gppc-bc"><div className="gppc-bci"><Link href="/">Home</Link><span className="gppc-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="gppc-sep">›</span><span className="gppc-cur">Google Ads (PPC)</span></div></nav>
       <section className="gppc-hero"><div className="gppc-o1"/><div className="gppc-o2"/>
         <div className="gppc-in">
-          <span className="gppc-ey">Google Partner — Search · Display · Shopping · YouTube</span>
+          <span className="gppc-ey">Google Partner - Search · Display · Shopping · YouTube</span>
           <h1 className="gppc-h1">Google Ads Management That<br/>Turns Budget Into Revenue</h1>
-          <p className="gppc-p">1Solutions manages Google Ads campaigns that drive qualified leads and sales — not just clicks. Search, Shopping, Display, YouTube, and Performance Max, all optimised weekly for your CPA and ROAS targets.</p>
+          <p className="gppc-p">1Solutions manages Google Ads campaigns that drive qualified leads and sales - not just clicks. Search, Shopping, Display, YouTube, and Performance Max, all optimised weekly for your CPA and ROAS targets.</p>
           <div className="gppc-btns">
             <Link href="/contact-us" className="gppc-bp">Get a Free PPC Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
             <Link href="/contact-us" className="gppc-bs">Discuss Your Campaigns</Link>
@@ -157,7 +157,7 @@ export default function PpcManagementServices() {
       <section className="gppc-sec gppc-bg"><div className="gppc-si2">
         <span className="gppc-tag">What We Manage</span>
         <h2 className="gppc-h2">Full-Funnel <span>Google Ads Services</span></h2>
-        <p className="gppc-lead">Every Google Ads campaign type — built, launched, and optimised by certified specialists.</p>
+        <p className="gppc-lead">Every Google Ads campaign type - built, launched, and optimised by certified specialists.</p>
         <div className="gppc-g3">{SERVICES.map(s=><div key={s.title} className="gppc-card"><div className="gppc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d={s.icon}/></svg></div><h3 className="gppc-ch">{s.title}</h3><p className="gppc-cp">{s.desc}</p></div>)}</div>
       </div></section>
       <section className="gppc-rb"><div className="gppc-ri">
@@ -168,13 +168,13 @@ export default function PpcManagementServices() {
       <section className="gppc-sec"><div className="gppc-si2">
         <span className="gppc-tag">Why 1Solutions</span>
         <h2 className="gppc-h2">The Google Ads Partner <span>That Cares About Your Margins</span></h2>
-        <p className="gppc-lead">We manage ads for the outcome — leads, sales, and ROAS — not impressions and click volume.</p>
+        <p className="gppc-lead">We manage ads for the outcome - leads, sales, and ROAS - not impressions and click volume.</p>
         <div className="gppc-g3">{WHY.map(w=><div key={w.title} className="gppc-wc"><div className="gppc-wck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><h3 className="gppc-wh">{w.title}</h3><p className="gppc-wp">{w.desc}</p></div>)}</div>
       </div></section>
       <section className="gppc-sec gppc-bg"><div className="gppc-si2">
         <span className="gppc-tag">How We Work</span>
         <h2 className="gppc-h2">Our <span>6-Step PPC Process</span></h2>
-        <p className="gppc-lead">From account audit to profitable scale — a structured approach that eliminates wasted spend.</p>
+        <p className="gppc-lead">From account audit to profitable scale - a structured approach that eliminates wasted spend.</p>
         <div className="gppc-g3">{PROCESS.map(p=><div key={p.n}><div className="gppc-pn">{p.n}</div><div className="gppc-pl"/><h3 className="gppc-ph">{p.title}</h3><p className="gppc-pp">{p.desc}</p></div>)}</div>
       </div></section>
       <section className="gppc-sec"><div className="gppc-si2">
@@ -185,7 +185,7 @@ export default function PpcManagementServices() {
       <section className="gppc-cta"><div className="gppc-si2">
         <span className="gppc-tag" style={{display:'block',textAlign:'center',marginBottom:12}}>Ready to Improve Your Google Ads?</span>
         <h2 className="gppc-cth">Get a Free Google Ads Audit</h2>
-        <p className="gppc-ctp">We will review your campaigns, identify wasted spend, and share a clear plan for improving ROAS and reducing CPA — completely free.</p>
+        <p className="gppc-ctp">We will review your campaigns, identify wasted spend, and share a clear plan for improving ROAS and reducing CPA - completely free.</p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
           <Link href="/contact-us" className="gppc-bp">Request Free PPC Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
           <Link href="/contact-us" className="gppc-bs">Talk to a PPC Specialist</Link>

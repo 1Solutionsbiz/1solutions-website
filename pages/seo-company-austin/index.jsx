@@ -3,38 +3,38 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const SERVICES = [
-  { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Keyword Research & Strategy', desc: "In-depth analysis of how Austin customers search for your services — high-intent buying queries, Texas-specific local modifiers, and competitive keyword gaps your Austin rivals are missing." },
-  { icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4', title: 'Technical SEO', desc: 'Core Web Vitals optimisation, mobile speed, crawl error fixes, structured data, and site architecture — the technical foundation every Austin business needs before other SEO efforts can compound.' },
-  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'On-Page SEO', desc: 'Title tags, meta descriptions, heading structure, internal linking, and content optimisation across every key page — written for Austin buyers, tuned for Google ranking signals in a competitive Texas market.' },
+  { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Keyword Research & Strategy', desc: "In-depth analysis of how Austin customers search for your services - high-intent buying queries, Texas-specific local modifiers, and competitive keyword gaps your Austin rivals are missing." },
+  { icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4', title: 'Technical SEO', desc: 'Core Web Vitals optimisation, mobile speed, crawl error fixes, structured data, and site architecture - the technical foundation every Austin business needs before other SEO efforts can compound.' },
+  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'On-Page SEO', desc: 'Title tags, meta descriptions, heading structure, internal linking, and content optimisation across every key page - written for Austin buyers, tuned for Google ranking signals in a competitive Texas market.' },
   { icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z', title: 'Local SEO Austin', desc: 'Google Business Profile optimisation, Google Maps 3-pack strategy, Austin-specific citation building, and NAP consistency management to dominate local search across the Greater Austin metro area.' },
-  { icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1', title: 'Link Building', desc: 'Quality backlinks from US authority sites, Austin and Texas business media, industry directories, and digital PR — building the domain authority that sustains Page 1 positions long-term.' },
-  { icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z', title: 'Content Marketing', desc: 'SEO-driven blog articles, service pages, and landing pages built around what Austin customers are searching for — content that ranks and converts, built for the Austin and Texas audience.' },
-  { icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z', title: 'eCommerce SEO', desc: 'Product and category page optimisation for Austin online stores on Shopify, WooCommerce, Magento, and custom platforms — more organic visibility and lower customer acquisition costs.' },
-  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'SEO Reporting & Analytics', desc: 'Monthly reports showing keyword ranking movement, organic traffic growth, lead attribution, and ROI — clear numbers so you know exactly what your Austin SEO investment is generating each month.' },
+  { icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1', title: 'Link Building', desc: 'Quality backlinks from US authority sites, Austin and Texas business media, industry directories, and digital PR - building the domain authority that sustains Page 1 positions long-term.' },
+  { icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z', title: 'Content Marketing', desc: 'SEO-driven blog articles, service pages, and landing pages built around what Austin customers are searching for - content that ranks and converts, built for the Austin and Texas audience.' },
+  { icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z', title: 'eCommerce SEO', desc: 'Product and category page optimisation for Austin online stores on Shopify, WooCommerce, Magento, and custom platforms - more organic visibility and lower customer acquisition costs.' },
+  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'SEO Reporting & Analytics', desc: 'Monthly reports showing keyword ranking movement, organic traffic growth, lead attribution, and ROI - clear numbers so you know exactly what your Austin SEO investment is generating each month.' },
 ];
 
 const RESULTS = [
-  { metric: '320%', label: 'Organic traffic growth', sub: 'Austin SaaS company — 9 months', color: '#7a2000' },
-  { metric: 'Top 3', label: 'Google rankings for 75+ keywords', sub: 'Austin law firm — 8 months', color: '#FE9700' },
-  { metric: '4.2×', label: 'Increase in organic leads', sub: 'Austin real estate agency — 7 months', color: '#059669' },
+  { metric: '320%', label: 'Organic traffic growth', sub: 'Austin SaaS company - 9 months', color: '#7a2000' },
+  { metric: 'Top 3', label: 'Google rankings for 75+ keywords', sub: 'Austin law firm - 8 months', color: '#FE9700' },
+  { metric: '4.2×', label: 'Increase in organic leads', sub: 'Austin real estate agency - 7 months', color: '#059669' },
 ];
 
 const PROCESS = [
   { n: '01', title: 'Free Austin SEO Audit', desc: 'We audit your website for technical health, current keyword rankings, backlink profile, competitor positions, and the specific gaps holding your Austin business back from Page 1 on Google.' },
-  { n: '02', title: 'Keyword & Market Research', desc: 'Deep analysis of how Austin and Greater Austin customers search for your services — mapping every high-intent query, local modifier, and competitor keyword gap into a prioritised roadmap.' },
-  { n: '03', title: 'Technical Optimisation', desc: 'We fix the technical foundations first — Core Web Vitals, mobile performance, crawl errors, schema markup, and site structure — so every subsequent SEO effort builds on solid ground.' },
-  { n: '04', title: 'On-Page & Content', desc: 'Optimising every key page for target keywords and creating new content that captures Austin buyer demand across the full search intent spectrum — informational through to high-intent transactional.' },
-  { n: '05', title: 'Authority & Link Building', desc: 'Building quality backlinks from relevant US authority sites, Austin and Texas business publications, and local directories — compounding domain authority that holds rankings long-term.' },
-  { n: '06', title: 'Monthly Reporting & Scale', desc: 'Clear monthly reports with ranking movement, traffic growth, and lead data — plus a forward roadmap so you always know what is happening and what we are prioritising next.' },
+  { n: '02', title: 'Keyword & Market Research', desc: 'Deep analysis of how Austin and Greater Austin customers search for your services - mapping every high-intent query, local modifier, and competitor keyword gap into a prioritised roadmap.' },
+  { n: '03', title: 'Technical Optimisation', desc: 'We fix the technical foundations first - Core Web Vitals, mobile performance, crawl errors, schema markup, and site structure - so every subsequent SEO effort builds on solid ground.' },
+  { n: '04', title: 'On-Page & Content', desc: 'Optimising every key page for target keywords and creating new content that captures Austin buyer demand across the full search intent spectrum - informational through to high-intent transactional.' },
+  { n: '05', title: 'Authority & Link Building', desc: 'Building quality backlinks from relevant US authority sites, Austin and Texas business publications, and local directories - compounding domain authority that holds rankings long-term.' },
+  { n: '06', title: 'Monthly Reporting & Scale', desc: 'Clear monthly reports with ranking movement, traffic growth, and lead data - plus a forward roadmap so you always know what is happening and what we are prioritising next.' },
 ];
 
 const WHY = [
-  { title: 'Austin Market Expertise', desc: "We understand Austin's hyper-competitive SEO landscape — from the Silicon Hills tech cluster to the tourism economy on Sixth Street. Strategy built on real Austin search data, not generic templates." },
-  { title: '15+ Years SEO Experience', desc: "Founded in 2009, 1Solutions has navigated every major Google update — Panda, Penguin, BERT, and Helpful Content — delivering consistent Page 1 rankings for clients in competitive US markets." },
-  { title: 'Dedicated Account Manager', desc: 'Every Austin client has one point of contact who understands your business, reports monthly, and is reachable when you need answers — no rotating teams, no offshore handoffs.' },
-  { title: 'White-Hat SEO Only', desc: 'No shortcuts. We build rankings through technical excellence, quality content, and genuine authority building — methods that outlast algorithm updates and never put your domain at risk.' },
-  { title: 'Transparent Reporting', desc: 'You see exactly what we did, what moved, and what it generated. Keyword rankings, organic sessions, and lead attribution in a clear monthly report — no smoke and mirrors.' },
-  { title: 'No Lock-In Contracts', desc: 'Month-to-month engagements because our results earn your continued business. You stay because your Austin rankings keep climbing — not because a contract forces you to.' },
+  { title: 'Austin Market Expertise', desc: "We understand Austin's hyper-competitive SEO landscape - from the Silicon Hills tech cluster to the tourism economy on Sixth Street. Strategy built on real Austin search data, not generic templates." },
+  { title: '15+ Years SEO Experience', desc: "Founded in 2009, 1Solutions has navigated every major Google update - Panda, Penguin, BERT, and Helpful Content - delivering consistent Page 1 rankings for clients in competitive US markets." },
+  { title: 'Dedicated Account Manager', desc: 'Every Austin client has one point of contact who understands your business, reports monthly, and is reachable when you need answers - no rotating teams, no offshore handoffs.' },
+  { title: 'White-Hat SEO Only', desc: 'No shortcuts. We build rankings through technical excellence, quality content, and genuine authority building - methods that outlast algorithm updates and never put your domain at risk.' },
+  { title: 'Transparent Reporting', desc: 'You see exactly what we did, what moved, and what it generated. Keyword rankings, organic sessions, and lead attribution in a clear monthly report - no smoke and mirrors.' },
+  { title: 'No Lock-In Contracts', desc: 'Month-to-month engagements because our results earn your continued business. You stay because your Austin rankings keep climbing - not because a contract forces you to.' },
 ];
 
 const INDUSTRIES = [
@@ -57,12 +57,12 @@ const AREAS = [
 ];
 
 const FAQS = [
-  { q: "How much does SEO cost in Austin?", a: "Austin SEO packages from 1Solutions start at USD 800 per month for small business and local SEO. Comprehensive packages for competitive Austin sectors like tech, real estate, and legal range from USD 1,500 to USD 6,000+ per month depending on competition intensity and growth targets. We provide a custom quote after your free Austin SEO audit — based on your actual competitive landscape, not a generic pricing sheet." },
-  { q: "How long does it take to rank on Google in Austin?", a: "Austin is one of the most competitive SEO markets in Texas — driven by the rapid influx of tech companies and population growth. Lower-competition local keywords typically show movement within 8 to 12 weeks. Mid-competition Austin terms take 3 to 5 months. High-competition verticals like SaaS, real estate, legal, and healthcare in Austin usually require 5 to 9 months of consistent work. We set honest, audit-based timelines." },
-  { q: "Do you specialise in SEO for Austin tech companies?", a: "Yes. The Silicon Hills tech cluster makes Austin one of the most competitive SaaS and B2B tech SEO markets in the US. We have extensive experience with SaaS SEO — optimising for product keywords, comparison pages, integration content, and the full B2B buyer research journey. We understand the Austin tech ecosystem and the search behaviour of the buyers these companies target." },
-  { q: "What Austin industries do you serve?", a: "We work with Austin businesses across tech and SaaS, real estate, healthcare and medical, legal services, hospitality and food and beverage, education and higher education, retail and eCommerce, and manufacturing and B2B. Every strategy is built from actual Austin and Greater Austin search volume data for your specific industry — not content repurposed from other markets." },
-  { q: "Do you provide local SEO for Austin businesses?", a: "Yes. Local SEO for Austin is a core service — Google Business Profile optimisation for the Greater Austin metro, Texas-specific citation building (Austin Chamber directories, Texas business listings), Google Maps 3-pack strategy, and neighbourhood-level targeting across Austin, Cedar Park, Round Rock, Georgetown, Kyle, Pflugerville, and the broader Central Texas region." },
-  { q: "What makes Austin SEO different from other US cities?", a: "Austin is one of the fastest-growing metro areas in the US, which means search competition intensifies every quarter as new businesses enter the market. The tech-forward audience skews toward mobile search and voice search. The short-term rental and hospitality market is unusually competitive. And the local media landscape — Austin American-Statesman, Austin Business Journal, KXAN — offers link building opportunities unique to the Austin market that we actively target." },
+  { q: "How much does SEO cost in Austin?", a: "Austin SEO packages from 1Solutions start at USD 800 per month for small business and local SEO. Comprehensive packages for competitive Austin sectors like tech, real estate, and legal range from USD 1,500 to USD 6,000+ per month depending on competition intensity and growth targets. We provide a custom quote after your free Austin SEO audit - based on your actual competitive landscape, not a generic pricing sheet." },
+  { q: "How long does it take to rank on Google in Austin?", a: "Austin is one of the most competitive SEO markets in Texas - driven by the rapid influx of tech companies and population growth. Lower-competition local keywords typically show movement within 8 to 12 weeks. Mid-competition Austin terms take 3 to 5 months. High-competition verticals like SaaS, real estate, legal, and healthcare in Austin usually require 5 to 9 months of consistent work. We set honest, audit-based timelines." },
+  { q: "Do you specialise in SEO for Austin tech companies?", a: "Yes. The Silicon Hills tech cluster makes Austin one of the most competitive SaaS and B2B tech SEO markets in the US. We have extensive experience with SaaS SEO - optimising for product keywords, comparison pages, integration content, and the full B2B buyer research journey. We understand the Austin tech ecosystem and the search behaviour of the buyers these companies target." },
+  { q: "What Austin industries do you serve?", a: "We work with Austin businesses across tech and SaaS, real estate, healthcare and medical, legal services, hospitality and food and beverage, education and higher education, retail and eCommerce, and manufacturing and B2B. Every strategy is built from actual Austin and Greater Austin search volume data for your specific industry - not content repurposed from other markets." },
+  { q: "Do you provide local SEO for Austin businesses?", a: "Yes. Local SEO for Austin is a core service - Google Business Profile optimisation for the Greater Austin metro, Texas-specific citation building (Austin Chamber directories, Texas business listings), Google Maps 3-pack strategy, and neighbourhood-level targeting across Austin, Cedar Park, Round Rock, Georgetown, Kyle, Pflugerville, and the broader Central Texas region." },
+  { q: "What makes Austin SEO different from other US cities?", a: "Austin is one of the fastest-growing metro areas in the US, which means search competition intensifies every quarter as new businesses enter the market. The tech-forward audience skews toward mobile search and voice search. The short-term rental and hospitality market is unusually competitive. And the local media landscape - Austin American-Statesman, Austin Business Journal, KXAN - offers link building opportunities unique to the Austin market that we actively target." },
   { q: "How do you measure and report SEO results?", a: "We track keyword ranking movement for all target terms, organic sessions from Google Analytics, organic goal completions (leads, calls, form fills), and revenue attributed to organic search where measurable. Monthly reports are sent in the first week of each month with a clear summary of what changed, what drove it, and the priority roadmap for next quarter." },
 ];
 
@@ -84,7 +84,7 @@ export default function SeoCompanyAustin() {
       },
       {
         '@type': 'LocalBusiness',
-        name: '1Solutions — SEO Company in Austin',
+        name: '1Solutions - SEO Company in Austin',
         url: 'https://1solutions.biz',
         email: 'info@1solutions.biz',
         address: { '@type': 'PostalAddress', addressLocality: 'Austin', addressRegion: 'TX', addressCountry: 'US' },
@@ -103,7 +103,7 @@ export default function SeoCompanyAustin() {
         '@type': 'Service',
         name: 'SEO Services in Austin TX',
         provider: { '@type': 'Organization', name: '1Solutions', url: 'https://1solutions.biz' },
-        description: 'Comprehensive SEO services for Austin Texas businesses — technical SEO, on-page optimisation, local SEO, link building, and content strategy to achieve Page 1 Google rankings.',
+        description: 'Comprehensive SEO services for Austin Texas businesses - technical SEO, on-page optimisation, local SEO, link building, and content strategy to achieve Page 1 Google rankings.',
         areaServed: { '@type': 'City', name: 'Austin' },
         serviceType: 'Search Engine Optimisation',
       },
@@ -123,7 +123,7 @@ export default function SeoCompanyAustin() {
     <>
       <Head>
         <title>SEO Company in Austin TX | Best Austin SEO Agency | 1Solutions</title>
-        <meta name="description" content="Looking for the best SEO company in Austin TX? 1Solutions delivers Page 1 Google rankings for Austin businesses — technical SEO, local SEO, link building &" />
+        <meta name="description" content="Looking for the best SEO company in Austin TX? 1Solutions delivers Page 1 Google rankings for Austin businesses - technical SEO, local SEO, link building &" />
         <meta name="keywords" content="SEO company in Austin, SEO agency Austin, SEO services Austin TX, best SEO company Austin, Austin SEO, search engine optimization Austin Texas" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://1solutions.biz/seo-company-austin/" />
@@ -265,7 +265,7 @@ export default function SeoCompanyAustin() {
         <div className="aust-inner">
           <span className="aust-eyebrow"><span className="aust-eyebrow-dot" />SEO Company in Austin, Texas</span>
           <h1 className="aust-h1">Top-Ranked <span>SEO Company in Austin</span><br />That Delivers Page 1 Rankings</h1>
-          <p className="aust-desc">1Solutions is a results-driven SEO company in Austin with 15+ years of experience helping Austin and Greater Austin businesses rank on Page 1 of Google. From technical SEO and local search to link building and content strategy — we build organic visibility that generates leads in one of the most competitive markets in the US.</p>
+          <p className="aust-desc">1Solutions is a results-driven SEO company in Austin with 15+ years of experience helping Austin and Greater Austin businesses rank on Page 1 of Google. From technical SEO and local search to link building and content strategy - we build organic visibility that generates leads in one of the most competitive markets in the US.</p>
           <div className="aust-btns">
             <a href="#contact" className="aust-btn-p">Get a Free SEO Audit<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
             <Link href="/affordable-seo-packages/" className="aust-btn-s">View SEO Packages →</Link>
@@ -287,7 +287,7 @@ export default function SeoCompanyAustin() {
         <div className="aust-sec-inner">
           <span className="aust-tag">Our Austin SEO Services</span>
           <h2 className="aust-h2">Complete <span>SEO Services in Austin TX</span></h2>
-          <p className="aust-lead">Every component of a winning SEO strategy — delivered by a team that understands the Austin and Greater Austin market and your growth goals.</p>
+          <p className="aust-lead">Every component of a winning SEO strategy - delivered by a team that understands the Austin and Greater Austin market and your growth goals.</p>
           <div className="aust-grid4">
             {SERVICES.map(s => (
               <div key={s.title} className="aust-card">
@@ -318,7 +318,7 @@ export default function SeoCompanyAustin() {
         <div className="aust-sec-inner">
           <span className="aust-tag">Why Choose 1Solutions</span>
           <h2 className="aust-h2">The Austin SEO Agency <span>That Makes Rankings Last</span></h2>
-          <p className="aust-lead">We build SEO foundations that outlast algorithm updates and deliver compounding organic growth — not short-term spikes that vanish when Google changes its algorithm.</p>
+          <p className="aust-lead">We build SEO foundations that outlast algorithm updates and deliver compounding organic growth - not short-term spikes that vanish when Google changes its algorithm.</p>
           <div className="aust-grid2">
             {WHY.map(w => (
               <div key={w.title} className="aust-why-card">
@@ -334,7 +334,7 @@ export default function SeoCompanyAustin() {
         <div className="aust-sec-inner">
           <span className="aust-tag">How We Work</span>
           <h2 className="aust-h2">Our <span>6-Step Austin SEO Process</span></h2>
-          <p className="aust-lead">A structured, transparent methodology that compounds organic growth over time — from your first free audit to sustained Page 1 dominance in Austin search results.</p>
+          <p className="aust-lead">A structured, transparent methodology that compounds organic growth over time - from your first free audit to sustained Page 1 dominance in Austin search results.</p>
           <div className="aust-grid3">
             {PROCESS.map(p => (
               <div key={p.n}><div className="aust-proc-num">{p.n}</div><div className="aust-proc-line"/><h3 className="aust-proc-h">{p.title}</h3><p className="aust-proc-p">{p.desc}</p></div>
@@ -347,7 +347,7 @@ export default function SeoCompanyAustin() {
         <div className="aust-sec-inner">
           <span className="aust-tag">Austin Industries We Serve</span>
           <h2 className="aust-h2">SEO for <span>Every Austin Business Sector</span></h2>
-          <p className="aust-lead">From Silicon Hills tech companies to South Congress retailers — we deliver SEO strategies built around the specific competitive landscape of your Austin industry.</p>
+          <p className="aust-lead">From Silicon Hills tech companies to South Congress retailers - we deliver SEO strategies built around the specific competitive landscape of your Austin industry.</p>
           <div className="aust-ind-grid">
             {INDUSTRIES.map(ind => (
               <div key={ind.name} className="aust-ind-card">
@@ -363,7 +363,7 @@ export default function SeoCompanyAustin() {
         <div className="aust-sec-inner">
           <span className="aust-tag">Areas We Cover</span>
           <h2 className="aust-h2">SEO Services Across <span>Greater Austin</span></h2>
-          <p className="aust-lead">We serve businesses throughout the Greater Austin metro area — from the urban core to the rapidly growing suburbs of Central Texas.</p>
+          <p className="aust-lead">We serve businesses throughout the Greater Austin metro area - from the urban core to the rapidly growing suburbs of Central Texas.</p>
           <div className="aust-areas-wrap">
             {AREAS.map(a => <span key={a} className="aust-area-tag">{a}</span>)}
           </div>
@@ -398,7 +398,7 @@ export default function SeoCompanyAustin() {
               <div className="aust-ci"><div className="aust-ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div><div className="aust-ci-text"><strong>Email</strong><a href="mailto:info@1solutions.biz">info@1solutions.biz</a></div></div>
               <div className="aust-ci"><div className="aust-ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div className="aust-ci-text"><strong>Response Time</strong><span>Within 24 hours</span></div></div>
               <div className="aust-trust-list">
-                {['Free audit — no credit card, no commitment','Dedicated Austin SEO specialist assigned','Honest timelines based on real competitor data','White-hat only — no ranking risk'].map(t => (
+                {['Free audit - no credit card, no commitment','Dedicated Austin SEO specialist assigned','Honest timelines based on real competitor data','White-hat only - no ranking risk'].map(t => (
                   <span key={t} className="aust-trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>{t}</span>
                 ))}
               </div>

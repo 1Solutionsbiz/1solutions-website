@@ -11,7 +11,7 @@ const challenges = [
   {
     icon: 'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z',
     title: 'Star Seller Requirements Hard to Maintain at Scale',
-    desc: "Etsy's Star Seller badge requires a 95% message response rate within 24 hours, 95% on-time shipping, and a 4.8+ average review rating — all simultaneously and consistently across a rolling 3-month window. This is difficult for growing shops to maintain without systems.",
+    desc: "Etsy's Star Seller badge requires a 95% message response rate within 24 hours, 95% on-time shipping, and a 4.8+ average review rating - all simultaneously and consistently across a rolling 3-month window. This is difficult for growing shops to maintain without systems.",
   },
   {
     icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
@@ -29,7 +29,7 @@ const services = [
   {
     icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
     title: 'Etsy Shop Audit & Optimisation Strategy',
-    desc: 'Comprehensive review of your Etsy shop covering listing quality, tag usage, Star Seller metrics, Etsy Ads performance, shop branding, and conversion rate — producing a clear prioritised action plan.',
+    desc: 'Comprehensive review of your Etsy shop covering listing quality, tag usage, Star Seller metrics, Etsy Ads performance, shop branding, and conversion rate - producing a clear prioritised action plan.',
   },
   {
     icon: '21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z',
@@ -39,17 +39,17 @@ const services = [
   {
     icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
     title: 'Etsy Ads Management & Budget Optimisation',
-    desc: 'Strategic Etsy Ads management — identifying your top-converting listings, concentrating budget on high-margin items, pausing low-ROI listings, and scaling spend during peak shopping periods.',
+    desc: 'Strategic Etsy Ads management - identifying your top-converting listings, concentrating budget on high-margin items, pausing low-ROI listings, and scaling spend during peak shopping periods.',
   },
   {
     icon: 'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z',
     title: 'Star Seller Status Strategy & Maintenance',
-    desc: 'Systems and processes to maintain Star Seller badge — auto-reply setup for 24-hour message response, dispatch workflow optimisation for on-time shipping, and review generation strategy.',
+    desc: 'Systems and processes to maintain Star Seller badge - auto-reply setup for 24-hour message response, dispatch workflow optimisation for on-time shipping, and review generation strategy.',
   },
   {
     icon: 'M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z',
     title: 'Shop Branding & Section Organisation',
-    desc: 'Shop banner design consultation, about section copywriting, shop section restructuring around buyer intent, and featured listing curation — creating a cohesive brand experience that drives repeat purchases.',
+    desc: 'Shop banner design consultation, about section copywriting, shop section restructuring around buyer intent, and featured listing curation - creating a cohesive brand experience that drives repeat purchases.',
   },
   {
     icon: 'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z',
@@ -59,12 +59,12 @@ const services = [
   {
     icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
     title: 'Seasonal Campaign Planning',
-    desc: 'Comprehensive seasonal planning for the holiday season, Q1 gifting events (Valentine\'s Day, Mother\'s Day), and other high-traffic Etsy shopping moments — including listing updates, Etsy Ads ramp-up, and new product planning.',
+    desc: 'Comprehensive seasonal planning for the holiday season, Q1 gifting events (Valentine\'s Day, Mother\'s Day), and other high-traffic Etsy shopping moments - including listing updates, Etsy Ads ramp-up, and new product planning.',
   },
   {
     icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
     title: 'Etsy Analytics & Shop Stats Reporting',
-    desc: 'Monthly shop analytics review covering listing views, click-through rate, conversion rate, revenue by listing, Etsy Ads spend and return, and Star Seller metric tracking — with a clear action plan each month.',
+    desc: 'Monthly shop analytics review covering listing views, click-through rate, conversion rate, revenue by listing, Etsy Ads spend and return, and Star Seller metric tracking - with a clear action plan each month.',
   },
 ];
 
@@ -93,8 +93,8 @@ const caseStudies = [
 
 const steps = [
   { title: 'Etsy Shop Audit', desc: 'Full review of your shop stats, listing conversion rates, tag usage, Star Seller metrics, Etsy Ads performance, and competitive positioning in your category.' },
-  { title: 'Keyword & Tag Research', desc: 'Platform-specific keyword research using Etsy search data to identify the exact search queries your ideal buyers are using — across all product categories.' },
-  { title: 'Listing Optimisation Sprint', desc: 'Systematic overhaul of titles, all 13 tags, attributes, and descriptions across your catalogue — prioritised by revenue impact and conversion potential.' },
+  { title: 'Keyword & Tag Research', desc: 'Platform-specific keyword research using Etsy search data to identify the exact search queries your ideal buyers are using - across all product categories.' },
+  { title: 'Listing Optimisation Sprint', desc: 'Systematic overhaul of titles, all 13 tags, attributes, and descriptions across your catalogue - prioritised by revenue impact and conversion potential.' },
   { title: 'Etsy Ads Setup', desc: 'Strategic ad campaign setup with listing selection, daily budget recommendation, and performance tracking to maximise return on your Etsy Ads spend.' },
   { title: 'Star Seller Systems', desc: 'Implementation of auto-reply templates, dispatch workflow improvements, and review generation processes to achieve and maintain Star Seller status.' },
   { title: 'Monthly Analytics Review', desc: 'Monthly performance review covering revenue by listing, conversion rate trends, Etsy Ads ROI, Star Seller metrics, and a clear action plan for the next 30 days.' },
@@ -110,12 +110,12 @@ const stats = [
 const trust = ['Etsy SEO specialists', 'Star Seller strategy experts', 'No lock-in contracts', 'Dedicated account manager'];
 
 const FAQS = [
-  { q: 'How is Etsy SEO different from Google SEO?', a: "Etsy's Aleph algorithm uses listing tags, titles, and attributes as its primary ranking signals — very different from Google's link-based authority model. On Etsy, the right 13 tags and a keyword-rich title can move a listing from page 10 to page 1 within weeks. Etsy SEO is highly tag-specific, buyer-intent driven, and changes seasonally, requiring ongoing optimisation rather than a one-time fix." },
-  { q: 'What exactly does Star Seller status require?', a: 'Star Seller requires three metrics to all be met simultaneously over a rolling 3-month window: a message response rate of 95 percent or higher (first message responded to within 24 hours), an on-time shipping and tracking rate of 95 percent or higher, and an average review rating of 4.8 stars or above. All three must be maintained consistently — failing any single metric removes the badge.' },
+  { q: 'How is Etsy SEO different from Google SEO?', a: "Etsy's Aleph algorithm uses listing tags, titles, and attributes as its primary ranking signals - very different from Google's link-based authority model. On Etsy, the right 13 tags and a keyword-rich title can move a listing from page 10 to page 1 within weeks. Etsy SEO is highly tag-specific, buyer-intent driven, and changes seasonally, requiring ongoing optimisation rather than a one-time fix." },
+  { q: 'What exactly does Star Seller status require?', a: 'Star Seller requires three metrics to all be met simultaneously over a rolling 3-month window: a message response rate of 95 percent or higher (first message responded to within 24 hours), an on-time shipping and tracking rate of 95 percent or higher, and an average review rating of 4.8 stars or above. All three must be maintained consistently - failing any single metric removes the badge.' },
   { q: 'How much should I spend on Etsy Ads and how do I know if they are working?', a: 'We typically recommend starting Etsy Ads at $3 to $5 per day per shop and scaling based on ROAS (Return on Ad Spend). Etsy Ads work best when focused on your highest-converting listings rather than promoting your full catalogue. We monitor revenue per click, listing conversion rate, and ROAS weekly, and shift budget toward listings that demonstrate positive ad profitability.' },
   { q: 'Can you help with both physical handmade product shops and digital download shops?', a: 'Yes. Physical product and digital download shops require very different strategies on Etsy. Physical shops focus on photography quality, shipping speed for Star Seller, and seasonal inventory planning. Digital shops focus on thumbnail design for click-through, instant delivery, and volume-based keyword coverage across a large catalogue of variations. We tailor our approach to your specific shop type.' },
-  { q: 'How long does it take to improve Etsy search ranking after optimisation?', a: "Etsy's algorithm typically takes 4 to 8 weeks to fully index and re-rank optimised listings. You will usually see click-through rate improvements within 2 to 3 weeks as better titles attract more relevant search impressions. Full ranking improvement — including conversion rate data feeding back into Etsy's ranking — typically stabilises at the 8 to 12 week mark." },
-  { q: 'Do you manage Etsy shop sections, collections, and seasonal planning?', a: 'Yes. Shop section organisation is an underrated ranking factor on Etsy — well-organised sections improve the buyer experience and help Etsy understand your shop taxonomy, which feeds into category and collection page ranking. We also plan seasonal content calendars so your shop is ready with holiday-specific listings, photography, and Etsy Ads budgets 6 to 8 weeks before peak seasons.' },
+  { q: 'How long does it take to improve Etsy search ranking after optimisation?', a: "Etsy's algorithm typically takes 4 to 8 weeks to fully index and re-rank optimised listings. You will usually see click-through rate improvements within 2 to 3 weeks as better titles attract more relevant search impressions. Full ranking improvement - including conversion rate data feeding back into Etsy's ranking - typically stabilises at the 8 to 12 week mark." },
+  { q: 'Do you manage Etsy shop sections, collections, and seasonal planning?', a: 'Yes. Shop section organisation is an underrated ranking factor on Etsy - well-organised sections improve the buyer experience and help Etsy understand your shop taxonomy, which feeds into category and collection page ranking. We also plan seasonal content calendars so your shop is ready with holiday-specific listings, photography, and Etsy Ads budgets 6 to 8 weeks before peak seasons.' },
 ];
 
 export default function EtsyAccountManagement() {
@@ -325,7 +325,7 @@ export default function EtsyAccountManagement() {
         <div className="etsy-inner">
           <span className="etsy-tag">Common Etsy Seller Struggles</span>
           <h2 className="etsy-h2">Why Etsy Shops <span>Struggle to Scale</span></h2>
-          <p className="etsy-lead">Etsy's Aleph algorithm, Star Seller requirements, and Etsy Ads platform have unique mechanics that most sellers do not fully understand — leaving significant revenue on the table.</p>
+          <p className="etsy-lead">Etsy's Aleph algorithm, Star Seller requirements, and Etsy Ads platform have unique mechanics that most sellers do not fully understand - leaving significant revenue on the table.</p>
           <div className="etsy-grid4">
             {challenges.map((c, i) => (
               <div key={i} className="etsy-chal-card">
@@ -345,7 +345,7 @@ export default function EtsyAccountManagement() {
         <div className="etsy-inner">
           <span className="etsy-tag">Full-Service Etsy Management</span>
           <h2 className="etsy-h2">What Our <span>Etsy Management</span> Covers</h2>
-          <p className="etsy-lead">From Aleph-optimised listing creation to Etsy Ads management and Star Seller maintenance — we handle every aspect of your Etsy shop growth.</p>
+          <p className="etsy-lead">From Aleph-optimised listing creation to Etsy Ads management and Star Seller maintenance - we handle every aspect of your Etsy shop growth.</p>
           <div className="etsy-grid4">
             {services.map((s, i) => (
               <div key={i} className="etsy-card">
@@ -417,7 +417,7 @@ export default function EtsyAccountManagement() {
         <div className="etsy-inner">
           <span className="etsy-tag">Our Process</span>
           <h2 className="etsy-h2">How We <span>Manage Your Etsy Shop</span></h2>
-          <p className="etsy-lead">A six-step process designed specifically for Etsy — from tag research to Star Seller systems and consistent monthly revenue growth.</p>
+          <p className="etsy-lead">A six-step process designed specifically for Etsy - from tag research to Star Seller systems and consistent monthly revenue growth.</p>
           <div className="etsy-grid3">
             {steps.map((s, i) => (
               <div key={i} className="etsy-card">
@@ -437,7 +437,7 @@ export default function EtsyAccountManagement() {
           <div className="etsy-contact-grid">
             <div>
               <h2 className="etsy-contact-info-h">Get a Free <span>Etsy Shop Review</span></h2>
-              <p className="etsy-contact-info-p">We will analyse your Etsy shop listings, tags, Star Seller metrics, and Etsy Ads performance — and show you a clear roadmap to double your monthly shop revenue.</p>
+              <p className="etsy-contact-info-p">We will analyse your Etsy shop listings, tags, Star Seller metrics, and Etsy Ads performance - and show you a clear roadmap to double your monthly shop revenue.</p>
               <div className="etsy-contact-item">
                 <div className="etsy-contact-item-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>

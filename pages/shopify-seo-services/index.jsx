@@ -3,14 +3,14 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const SERVICES = [
-  { n: '01', title: 'Shopify Technical SEO Audit', desc: 'Full audit of your Shopify store — duplicate content from URL parameters, canonical tag issues, collection/product URL structure, Shopify theme speed, and app-generated bloat.' },
+  { n: '01', title: 'Shopify Technical SEO Audit', desc: 'Full audit of your Shopify store - duplicate content from URL parameters, canonical tag issues, collection/product URL structure, Shopify theme speed, and app-generated bloat.' },
   { n: '02', title: 'Shopify Duplicate Content Fix', desc: 'Shopify creates duplicate URLs for products in multiple collections (/collections/x/products/y vs /products/y). We canonicalise correctly and eliminate indexation waste.' },
   { n: '03', title: 'Product & Collection Page SEO', desc: 'Optimised title tags, meta descriptions, heading structure, product descriptions, and internal linking for every product and collection page at scale.' },
-  { n: '04', title: 'Shopify Schema Markup', desc: 'Product, BreadcrumbList, Organisation, and FAQ schema — implemented via Liquid theme files or JSON-LD injection for rich snippet eligibility in Google Shopping and search results.' },
-  { n: '05', title: 'Shopify Core Web Vitals', desc: 'LCP, CLS, and INP optimisation for Shopify themes — image compression, lazy loading, unused app script removal, font optimisation, and CDN configuration.' },
+  { n: '04', title: 'Shopify Schema Markup', desc: 'Product, BreadcrumbList, Organisation, and FAQ schema - implemented via Liquid theme files or JSON-LD injection for rich snippet eligibility in Google Shopping and search results.' },
+  { n: '05', title: 'Shopify Core Web Vitals', desc: 'LCP, CLS, and INP optimisation for Shopify themes - image compression, lazy loading, unused app script removal, font optimisation, and CDN configuration.' },
   { n: '06', title: 'Shopify App Conflict Audit', desc: 'Third-party Shopify apps frequently inject duplicate scripts, slow page load, and conflict with each other. We audit app impact on site speed and SEO and recommend consolidation.' },
   { n: '07', title: 'Shopify Content & Blog SEO', desc: 'Shopify blog content strategy, internal linking from blog to product/collection pages, keyword research for top-of-funnel content, and meta optimisation for articles.' },
-  { n: '08', title: 'Shopify Link Building', desc: 'Niche-relevant link acquisition — product reviews, industry guides, supplier partnerships, and digital PR campaigns to build domain authority for your Shopify store.' },
+  { n: '08', title: 'Shopify Link Building', desc: 'Niche-relevant link acquisition - product reviews, industry guides, supplier partnerships, and digital PR campaigns to build domain authority for your Shopify store.' },
 ];
 
 const PLATFORMS = ['Shopify', 'Shopify Plus', 'Shopify Markets', 'Shopify Sections API', 'Liquid Templates', 'Shopify Hydrogen', 'Shopify Analytics', 'Google Merchant Centre'];
@@ -19,29 +19,29 @@ const PROCESS = [
   { step: '01', title: 'Shopify SEO Audit', desc: 'Full crawl, GSC analysis, duplicate URL identification, Core Web Vitals scores, app inventory review, and competitor benchmarking.' },
   { step: '02', title: 'Technical Fixes', desc: 'Canonical tag corrections, duplicate URL resolution, sitemap optimisation, robots.txt update, and schema implementation via Liquid.' },
   { step: '03', title: 'On-Page Optimisation', desc: 'Product and collection page title tags, meta descriptions, heading structure, image alt text, and internal link architecture.' },
-  { step: '04', title: 'Speed & App Audit', desc: 'Core Web Vitals fixes — image compression, script consolidation, unused app removal, and theme code optimisation.' },
+  { step: '04', title: 'Speed & App Audit', desc: 'Core Web Vitals fixes - image compression, script consolidation, unused app removal, and theme code optimisation.' },
   { step: '05', title: 'Content Strategy', desc: 'Blog content calendar, buying guide creation, keyword-targeted collection page copy, and FAQ content for featured snippet capture.' },
-  { step: '06', title: 'Monitor & Report', desc: 'Monthly Shopify SEO report — organic revenue, keyword rankings, crawl health, and Core Web Vitals trends.' },
+  { step: '06', title: 'Monitor & Report', desc: 'Monthly Shopify SEO report - organic revenue, keyword rankings, crawl health, and Core Web Vitals trends.' },
 ];
 
 const WHY = [
-  { title: 'Shopify Platform Specialists', desc: 'We know Shopify\'s SEO quirks — from the /collections/x/products/y duplication issue to Liquid rendering limitations — and have built solutions for all of them.' },
-  { title: 'App-Aware Optimisation', desc: 'We audit your Shopify app stack for speed and SEO conflicts — because many common Shopify apps slow your store and create indexation problems.' },
-  { title: 'Revenue Attribution', desc: 'We connect organic traffic to Shopify revenue using GA4 ecommerce tracking — so you see exactly which keywords and pages are driving sales.' },
-  { title: 'Google Shopping Integration', desc: 'Product schema and feed optimisation to support Google Shopping placements alongside organic rankings — a unified search presence strategy.' },
-  { title: 'Shopify Plus Experience', desc: 'From standard Shopify to Shopify Plus with multiple storefronts, custom checkout, and B2B configurations — we handle the full range of Shopify complexity.' },
+  { title: 'Shopify Platform Specialists', desc: 'We know Shopify\'s SEO quirks - from the /collections/x/products/y duplication issue to Liquid rendering limitations - and have built solutions for all of them.' },
+  { title: 'App-Aware Optimisation', desc: 'We audit your Shopify app stack for speed and SEO conflicts - because many common Shopify apps slow your store and create indexation problems.' },
+  { title: 'Revenue Attribution', desc: 'We connect organic traffic to Shopify revenue using GA4 ecommerce tracking - so you see exactly which keywords and pages are driving sales.' },
+  { title: 'Google Shopping Integration', desc: 'Product schema and feed optimisation to support Google Shopping placements alongside organic rankings - a unified search presence strategy.' },
+  { title: 'Shopify Plus Experience', desc: 'From standard Shopify to Shopify Plus with multiple storefronts, custom checkout, and B2B configurations - we handle the full range of Shopify complexity.' },
   { title: 'Proven Ecommerce Results', desc: '500+ Shopify stores optimised. Average 280% organic traffic increase over 12 months across our Shopify SEO client base.' },
 ];
 
 const FAQS = [
-  { q: 'What are the biggest SEO problems with Shopify?', a: 'The most common Shopify SEO issues are: (1) Duplicate product URLs — Shopify creates /collections/X/products/Y in addition to /products/Y, causing content duplication unless canonicalised correctly; (2) Thin collection pages with little content; (3) Slow theme speed from app scripts; (4) Limited control over URL structure (no subdirectories for products); (5) Blog content not being linked strategically to commercial pages. We fix all of these as part of our standard Shopify SEO engagement.' },
-  { q: 'Does Shopify handle SEO automatically?', a: 'Shopify provides basic SEO functionality — editable title tags, meta descriptions, alt text, and XML sitemaps. However, it does not fix duplicate content issues, does not configure schema markup beyond basic product data, does not optimise Core Web Vitals, and does not build links or create content. The built-in tools are a foundation — they do not constitute a competitive SEO strategy.' },
-  { q: 'How do I fix the Shopify duplicate product URL issue?', a: 'Shopify creates two accessible URLs for products assigned to collections — /products/handle and /collections/collection-handle/products/handle. The fix is to implement a canonical tag on the /collections/ version pointing to the /products/ canonical URL. In most themes, this is done via a Liquid edit to the product.liquid template. We handle this across your entire product catalogue as part of the technical SEO phase.' },
-  { q: 'Which Shopify apps help with SEO?', a: 'The most valuable SEO-focused apps are: Plug In SEO or SEO Manager for bulk meta editing; TinyIMG or Crush.pics for image optimisation; Smart SEO for schema markup automation; and JSON-LD for SEO for advanced structured data. However, adding too many apps slows your store — we audit your app stack and recommend the minimum set needed to achieve your SEO goals.' },
+  { q: 'What are the biggest SEO problems with Shopify?', a: 'The most common Shopify SEO issues are: (1) Duplicate product URLs - Shopify creates /collections/X/products/Y in addition to /products/Y, causing content duplication unless canonicalised correctly; (2) Thin collection pages with little content; (3) Slow theme speed from app scripts; (4) Limited control over URL structure (no subdirectories for products); (5) Blog content not being linked strategically to commercial pages. We fix all of these as part of our standard Shopify SEO engagement.' },
+  { q: 'Does Shopify handle SEO automatically?', a: 'Shopify provides basic SEO functionality - editable title tags, meta descriptions, alt text, and XML sitemaps. However, it does not fix duplicate content issues, does not configure schema markup beyond basic product data, does not optimise Core Web Vitals, and does not build links or create content. The built-in tools are a foundation - they do not constitute a competitive SEO strategy.' },
+  { q: 'How do I fix the Shopify duplicate product URL issue?', a: 'Shopify creates two accessible URLs for products assigned to collections - /products/handle and /collections/collection-handle/products/handle. The fix is to implement a canonical tag on the /collections/ version pointing to the /products/ canonical URL. In most themes, this is done via a Liquid edit to the product.liquid template. We handle this across your entire product catalogue as part of the technical SEO phase.' },
+  { q: 'Which Shopify apps help with SEO?', a: 'The most valuable SEO-focused apps are: Plug In SEO or SEO Manager for bulk meta editing; TinyIMG or Crush.pics for image optimisation; Smart SEO for schema markup automation; and JSON-LD for SEO for advanced structured data. However, adding too many apps slows your store - we audit your app stack and recommend the minimum set needed to achieve your SEO goals.' },
   { q: 'Can you improve my Shopify store\'s Core Web Vitals?', a: 'Yes. Shopify Core Web Vitals improvements typically involve: compressing and converting product images to WebP; removing unused Shopify apps that inject scripts; deferring third-party scripts (chat widgets, analytics); optimising font loading; and fixing Cumulative Layout Shift from above-fold image dimensions. We identify your specific bottlenecks using PageSpeed Insights and implement targeted fixes rather than generic recommendations.' },
   { q: 'Do you optimise Shopify collection pages?', a: 'Yes. Collection pages are often the highest-converting entry points for commercial keywords and are frequently under-optimised. We write unique, keyword-targeted content for each collection page, optimise meta tags, implement schema, add internal links to subcategories and products, and build links specifically to collection page URLs. Collection page SEO is one of the highest-ROI improvements for Shopify stores.' },
   { q: 'How long does it take to rank a Shopify store?', a: 'For established Shopify stores with existing domain authority, technical fixes typically improve rankings within 6 to 12 weeks. New stores or stores with minimal authority targeting competitive keywords (e.g., "buy running shoes online") realistically take 6 to 12 months to achieve first-page positions. We provide a realistic timeline and keyword difficulty assessment in your initial audit.' },
-  { q: 'Do you offer Shopify SEO for international stores using Shopify Markets?', a: 'Yes. Shopify Markets requires careful hreflang implementation, geo-targeting configuration in Google Search Console, and market-specific keyword strategy. We have optimised Shopify Markets setups for stores selling across US, UK, Canada, and Australia markets — handling both subdirectory and subdomain configurations.' },
+  { q: 'Do you offer Shopify SEO for international stores using Shopify Markets?', a: 'Yes. Shopify Markets requires careful hreflang implementation, geo-targeting configuration in Google Search Console, and market-specific keyword strategy. We have optimised Shopify Markets setups for stores selling across US, UK, Canada, and Australia markets - handling both subdirectory and subdomain configurations.' },
 ];
 
 const STATS = [
@@ -171,12 +171,12 @@ export default function ShopifySeoServices() {
         </div></section>
         <section className="shseo-proc"><div className="shseo-proc-in">
           <span className="shseo-ey2">How We Work</span><h2 className="shseo-ttl">Our Shopify SEO Process</h2>
-          <p className="shseo-desc">Technical fixes first, then content and authority — a structured 6-step programme with monthly reporting on organic revenue impact.</p>
+          <p className="shseo-desc">Technical fixes first, then content and authority - a structured 6-step programme with monthly reporting on organic revenue impact.</p>
           <div className="shseo-steps">{PROCESS.map((p,i) => <div key={p.step} ref={el=>{stepRefs.current[i]=el}} className={`shseo-step${visibleSteps.includes(i)?' visible':''}`}><div className="shseo-snum">{p.step}</div><div><h3>{p.title}</h3><p>{p.desc}</p></div></div>)}</div>
         </div></section>
         <section className="shseo-why"><div className="shseo-why-in">
-          <span className="shseo-ey2">Why 1Solutions</span><h2 className="shseo-ttl">Shopify SEO Specialists — Not Generalists</h2>
-          <p className="shseo-desc">We know every Shopify SEO issue — from the /collections/products/ duplication problem to app script bloat — and have documented fixes for all of them.</p>
+          <span className="shseo-ey2">Why 1Solutions</span><h2 className="shseo-ttl">Shopify SEO Specialists - Not Generalists</h2>
+          <p className="shseo-desc">We know every Shopify SEO issue - from the /collections/products/ duplication problem to app script bloat - and have documented fixes for all of them.</p>
           <div className="shseo-why-grid" ref={whyRef}>{WHY.map((w,i) => <div key={w.title} className={`shseo-wcard${visibleWhy.includes(i)?' visible':''}`}><div className="shseo-dot"/><h3>{w.title}</h3><p>{w.desc}</p></div>)}</div>
         </div></section>
         <section className="shseo-faq"><div className="shseo-faq-in">
@@ -188,7 +188,7 @@ export default function ShopifySeoServices() {
           <div className="shseo-cta-in">
             <span className="shseo-ey2" style={{textAlign:'center',display:'block',marginBottom:16}}>Ready to Rank Your Shopify Store?</span>
             <h2 className="shseo-cta-t">Get Your Free Shopify SEO Audit</h2>
-            <p className="shseo-cta-s">We&rsquo;ll audit your store&rsquo;s technical health, duplicate URL issues, product page optimisation, and keyword gaps — free, with a clear action plan.</p>
+            <p className="shseo-cta-s">We&rsquo;ll audit your store&rsquo;s technical health, duplicate URL issues, product page optimisation, and keyword gaps - free, with a clear action plan.</p>
             <div className="shseo-cta-btns">
               <Link href="/contact-us" className="shseo-btn-p">Get Free Shopify SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/ecommerce-seo-services" className="shseo-btn-s">Ecommerce SEO Services</Link>

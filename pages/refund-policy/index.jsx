@@ -48,7 +48,7 @@ C) Duplicate or Erroneous Payment
 If you are charged more than once for the same invoice or charged an incorrect amount, the overcharge will be refunded in full within 5 business days of confirmation.
 
 D) Service Not Commenced
-If you cancel within 48 hours of project kickoff and no work has begun (no calls held, no files received, no design work started), a full refund of payments made — excluding the non-refundable deposit — may be issued at our discretion.`,
+If you cancel within 48 hours of project kickoff and no work has begun (no calls held, no files received, no design work started), a full refund of payments made - excluding the non-refundable deposit - may be issued at our discretion.`,
   },
   {
     id: 'no-refund',
@@ -94,7 +94,7 @@ We will provide an end-of-engagement report within 10 business days of your fina
     title: '8. How to Request a Refund',
     body: `To request a refund, please follow these steps:
 
-1. Email info@1solutions.biz with the subject line "Refund Request — [Your Company Name] — [Invoice Number]"
+1. Email info@1solutions.biz with the subject line "Refund Request - [Your Company Name] - [Invoice Number]"
 2. Include a description of the reason for your refund request and supporting documentation
 3. We will acknowledge your request within 3 business days
 4. We will investigate and provide a written decision within 14 business days
@@ -128,7 +128,7 @@ export default function RefundPolicy() {
     <>
       <Head>
         <title>Refund Policy | 1Solutions</title>
-        <meta name="description" content="1Solutions Refund Policy — when refunds apply, how to request one, and what to expect from cancelled or disputed projects." />
+        <meta name="description" content="1Solutions Refund Policy - when refunds apply, how to request one, and what to expect from cancelled or disputed projects." />
         <link rel="canonical" href="https://www.1solutions.biz/refund-policy/" />
         <style>{`
           .rp-page { font-family:'Inter',sans-serif; color:#1a1a2e; background:#f8fafc; }
@@ -205,7 +205,7 @@ export default function RefundPolicy() {
           </nav>
           <main className="rp-content">
             <div className="rp-intro">
-              This Refund Policy applies to all services provided by <strong>1Solutions</strong>. We build lasting client relationships — if something is not right, we want to know and will work to resolve it fairly.
+              This Refund Policy applies to all services provided by <strong>1Solutions</strong>. We build lasting client relationships - if something is not right, we want to know and will work to resolve it fairly.
             </div>
             {SECTIONS.map(s => (
               <section key={s.id} id={s.id} className="rp-section">
@@ -213,7 +213,7 @@ export default function RefundPolicy() {
                 {s.body === 'contact' ? (
                   <div className="rp-contact-card">
                     <p>To submit a refund request or discuss a billing concern, please contact us:</p>
-                    <p>Email: <a href="mailto:info@1solutions.biz">info@1solutions.biz</a> (Subject: "Refund Request — [Your Company] — [Invoice No]")</p>
+                    <p>Email: <a href="mailto:info@1solutions.biz">info@1solutions.biz</a> (Subject: "Refund Request - [Your Company] - [Invoice No]")</p>
                     <p>Phone: <a href="tel:+919654327900">+91 96543 27900</a></p>
                     <p>We acknowledge all requests within 3 business days and aim to resolve most issues within 14 business days.</p>
                     <div className="rp-contact-actions">

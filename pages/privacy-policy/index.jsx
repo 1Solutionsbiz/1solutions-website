@@ -58,8 +58,8 @@ We will never sell your personal information to third parties.`,
     body: `For individuals in the EEA or UK, we process your personal data on the following legal bases under Article 6 of the GDPR:
 
 • Contractual necessity: to perform a contract with you or take pre-contractual steps at your request (e.g., providing a project proposal)
-• Legitimate interests: to operate and improve our Site, prevent fraud, and communicate about our services — where these interests are not overridden by your rights
-• Consent: for marketing emails and optional cookies — you may withdraw consent at any time
+• Legitimate interests: to operate and improve our Site, prevent fraud, and communicate about our services - where these interests are not overridden by your rights
+• Consent: for marketing emails and optional cookies - you may withdraw consent at any time
 • Legal obligation: to comply with applicable law, court orders, or regulatory requirements
 
 For processing of sensitive data (where applicable), we rely on your explicit consent or another permitted ground under Article 9 GDPR.`,
@@ -82,7 +82,7 @@ We do not transfer your data to third parties for their own marketing purposes.`
   {
     id: 'international',
     title: '6. International Data Transfers',
-    body: `1Solutions is headquartered in India. If you are located outside India — including in the US, Canada, Australia, or the EEA — your data may be transferred to and processed in India.
+    body: `1Solutions is headquartered in India. If you are located outside India - including in the US, Canada, Australia, or the EEA - your data may be transferred to and processed in India.
 
 For transfers from the EEA/UK, we rely on appropriate safeguards including Standard Contractual Clauses (SCCs) approved by the European Commission, or other lawful transfer mechanisms.
 
@@ -168,7 +168,7 @@ export default function PrivacyPolicy() {
     <>
       <Head>
         <title>Privacy Policy | 1Solutions</title>
-        <meta name="description" content="1Solutions Privacy Policy — how we collect, use, and protect your personal data. GDPR, CCPA, and Australian Privacy Act compliant." />
+        <meta name="description" content="1Solutions Privacy Policy - how we collect, use, and protect your personal data. GDPR, CCPA, and Australian Privacy Act compliant." />
         <link rel="canonical" href="https://www.1solutions.biz/privacy-policy/" />
         <style>{`
           .pp-page { font-family:'Inter',sans-serif; color:#1a1a2e; background:#f8fafc; }

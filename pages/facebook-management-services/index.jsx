@@ -3,45 +3,45 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const SERVICES = [
-  { n: '01', title: 'Facebook Page Management', desc: 'End-to-end Facebook page management — content calendar, post creation, scheduling, community management, comment and message responses, and ongoing performance monitoring.' },
-  { n: '02', title: 'Facebook Content Strategy', desc: 'Monthly content strategy tailored to your brand, audience, and business goals — content pillars, post formats, campaign planning, and seasonal content calendar development.' },
-  { n: '03', title: 'Facebook Ads Management', desc: 'Paid Facebook advertising — campaign strategy, audience targeting, ad creative, A/B testing, budget management, and ROAS optimisation across Lead Generation, Traffic, Conversion, and Awareness objectives.' },
-  { n: '04', title: 'Facebook Audience Building', desc: 'Organic and paid audience growth — targeted like campaigns, lookalike audience strategies, retargeting custom audiences, and community growth tactics to build an engaged following.' },
-  { n: '05', title: 'Facebook Reels & Video', desc: 'Short-form video content creation and strategy for Facebook Reels — scripting, editing, captioning, and optimisation for maximum organic reach in Facebook\'s video-first algorithm.' },
-  { n: '06', title: 'Community Management', desc: '24 to 48-hour response management for comments, messages, and reviews — maintaining brand voice, handling complaints professionally, and turning interactions into relationship-building opportunities.' },
-  { n: '07', title: 'Facebook Shop & Catalogue', desc: 'Facebook Shop setup and management — product catalogue integration, collection creation, product tagging in posts, and dynamic product ad setup for ecommerce businesses.' },
-  { n: '08', title: 'Facebook Analytics & Reporting', desc: 'Monthly performance reports — reach, engagement, follower growth, ad performance (CTR, CPC, ROAS), and conversion attribution — with next month\'s strategic recommendations.' },
+  { n: '01', title: 'Facebook Page Management', desc: 'End-to-end Facebook page management - content calendar, post creation, scheduling, community management, comment and message responses, and ongoing performance monitoring.' },
+  { n: '02', title: 'Facebook Content Strategy', desc: 'Monthly content strategy tailored to your brand, audience, and business goals - content pillars, post formats, campaign planning, and seasonal content calendar development.' },
+  { n: '03', title: 'Facebook Ads Management', desc: 'Paid Facebook advertising - campaign strategy, audience targeting, ad creative, A/B testing, budget management, and ROAS optimisation across Lead Generation, Traffic, Conversion, and Awareness objectives.' },
+  { n: '04', title: 'Facebook Audience Building', desc: 'Organic and paid audience growth - targeted like campaigns, lookalike audience strategies, retargeting custom audiences, and community growth tactics to build an engaged following.' },
+  { n: '05', title: 'Facebook Reels & Video', desc: 'Short-form video content creation and strategy for Facebook Reels - scripting, editing, captioning, and optimisation for maximum organic reach in Facebook\'s video-first algorithm.' },
+  { n: '06', title: 'Community Management', desc: '24 to 48-hour response management for comments, messages, and reviews - maintaining brand voice, handling complaints professionally, and turning interactions into relationship-building opportunities.' },
+  { n: '07', title: 'Facebook Shop & Catalogue', desc: 'Facebook Shop setup and management - product catalogue integration, collection creation, product tagging in posts, and dynamic product ad setup for ecommerce businesses.' },
+  { n: '08', title: 'Facebook Analytics & Reporting', desc: 'Monthly performance reports - reach, engagement, follower growth, ad performance (CTR, CPC, ROAS), and conversion attribution - with next month\'s strategic recommendations.' },
 ];
 
 const CAPABILITIES = ['Facebook Business Suite', 'Meta Ads Manager', 'Facebook Shop', 'Facebook Reels', 'Lookalike Audiences', 'Custom Audiences', 'Lead Ads', 'Dynamic Ads', 'Retargeting', 'Facebook Pixel', 'CAPI Integration'];
 
 const PROCESS = [
-  { step: '01', title: 'Page & Account Audit', desc: 'Review of your existing Facebook presence — page completeness, audience health, historical content performance, and current ad account structure.' },
-  { step: '02', title: 'Strategy & Content Plan', desc: 'Content pillars, post frequency, ad strategy, and 30-day content calendar — agreed before management begins so you know exactly what is being executed.' },
-  { step: '03', title: 'Content Creation', desc: 'Monthly content batch — graphics, captions, video scripts, and ad creatives — created, reviewed, and approved before scheduling.' },
-  { step: '04', title: 'Publishing & Community Management', desc: 'Scheduled publishing across optimal times, comment/message monitoring, and community engagement — maintaining an active, responsive presence.' },
-  { step: '05', title: 'Paid Campaign Management', desc: 'Ad campaigns launched, monitored daily, and optimised continuously — adjusting targeting, creative, and bids based on performance data.' },
-  { step: '06', title: 'Monthly Reporting', desc: 'Full performance report — organic metrics, paid metrics, audience growth, and next month\'s strategy — with a review call to align on priorities.' },
+  { step: '01', title: 'Page & Account Audit', desc: 'Review of your existing Facebook presence - page completeness, audience health, historical content performance, and current ad account structure.' },
+  { step: '02', title: 'Strategy & Content Plan', desc: 'Content pillars, post frequency, ad strategy, and 30-day content calendar - agreed before management begins so you know exactly what is being executed.' },
+  { step: '03', title: 'Content Creation', desc: 'Monthly content batch - graphics, captions, video scripts, and ad creatives - created, reviewed, and approved before scheduling.' },
+  { step: '04', title: 'Publishing & Community Management', desc: 'Scheduled publishing across optimal times, comment/message monitoring, and community engagement - maintaining an active, responsive presence.' },
+  { step: '05', title: 'Paid Campaign Management', desc: 'Ad campaigns launched, monitored daily, and optimised continuously - adjusting targeting, creative, and bids based on performance data.' },
+  { step: '06', title: 'Monthly Reporting', desc: 'Full performance report - organic metrics, paid metrics, audience growth, and next month\'s strategy - with a review call to align on priorities.' },
 ];
 
 const WHY = [
-  { title: 'Meta-Certified Team', desc: 'Our social media managers are Meta-trained and stay current with Facebook algorithm changes, ad format updates, and platform policy changes — so your account is always compliant and competitive.' },
-  { title: 'Content + Ads Under One Roof', desc: 'Organic content and paid ads need to work together — consistent messaging, coordinated campaigns, and retargeting audiences built from organic engagement. We manage both.' },
-  { title: 'No Minimum Spend Lock-In', desc: 'We work with your existing ad budget — whether that is £300/month or £30,000/month. Our management fee is separate from ad spend and scales based on campaign complexity, not budget size.' },
-  { title: 'Ecommerce Facebook Expertise', desc: 'Facebook Shop, catalogue ads, dynamic retargeting, and checkout integration — we have specific expertise in ecommerce Facebook management that goes beyond simple post scheduling.' },
-  { title: 'Crisis & Reputation Management', desc: 'When negative comments or PR situations arise on Facebook, we handle them quickly and professionally — protecting your brand reputation while maintaining authentic community relationships.' },
-  { title: 'Transparent Monthly Reports', desc: 'Every month: reach, engagement, follower growth, ad performance, and leads or sales attributed to Facebook — with clear numbers and honest analysis, not just vanity metrics.' },
+  { title: 'Meta-Certified Team', desc: 'Our social media managers are Meta-trained and stay current with Facebook algorithm changes, ad format updates, and platform policy changes - so your account is always compliant and competitive.' },
+  { title: 'Content + Ads Under One Roof', desc: 'Organic content and paid ads need to work together - consistent messaging, coordinated campaigns, and retargeting audiences built from organic engagement. We manage both.' },
+  { title: 'No Minimum Spend Lock-In', desc: 'We work with your existing ad budget - whether that is £300/month or £30,000/month. Our management fee is separate from ad spend and scales based on campaign complexity, not budget size.' },
+  { title: 'Ecommerce Facebook Expertise', desc: 'Facebook Shop, catalogue ads, dynamic retargeting, and checkout integration - we have specific expertise in ecommerce Facebook management that goes beyond simple post scheduling.' },
+  { title: 'Crisis & Reputation Management', desc: 'When negative comments or PR situations arise on Facebook, we handle them quickly and professionally - protecting your brand reputation while maintaining authentic community relationships.' },
+  { title: 'Transparent Monthly Reports', desc: 'Every month: reach, engagement, follower growth, ad performance, and leads or sales attributed to Facebook - with clear numbers and honest analysis, not just vanity metrics.' },
 ];
 
 const FAQS = [
   { q: 'What does Facebook page management include?', a: 'Our Facebook page management service includes: content strategy (monthly content calendar with post topics, formats, and campaign hooks); content creation (graphics, captions, and video for each post); scheduling and publishing (posting at optimal times using Facebook Business Suite); community management (responding to comments and messages within 24 to 48 hours); hashtag and SEO optimisation for Facebook search; monthly performance analysis; and a standing review call to align on the next month\'s priorities. Optional additions include Facebook Ads management, Reels production, and Facebook Shop management.' },
   { q: 'How much does Facebook management cost?', a: 'Facebook management pricing depends on the scope of work: content volume (posts per week), whether ads management is included, community management hours required, and any specialist services like Reels production or Shop management. We offer tiered packages starting from basic page management (3 posts per week, no ads) up to full-service management including paid campaigns, Reels, and ecommerce integration. Contact us for a customised quote based on your specific requirements and business goals.' },
-  { q: 'Do you manage Facebook Ads as well as organic content?', a: 'Yes. We manage both organic Facebook content and paid Facebook advertising. They are priced as separate services but work best together — consistent organic content builds brand trust that makes ads more effective, and paid campaigns amplify the organic content that is performing well. If you want ads management, we set up or audit your Meta Ads Manager account, build campaigns, create ad creatives, manage bidding and budgets, A/B test ad variations, and provide detailed monthly ROAS reporting.' },
+  { q: 'Do you manage Facebook Ads as well as organic content?', a: 'Yes. We manage both organic Facebook content and paid Facebook advertising. They are priced as separate services but work best together - consistent organic content builds brand trust that makes ads more effective, and paid campaigns amplify the organic content that is performing well. If you want ads management, we set up or audit your Meta Ads Manager account, build campaigns, create ad creatives, manage bidding and budgets, A/B test ad variations, and provide detailed monthly ROAS reporting.' },
   { q: 'How quickly can you respond to comments and messages?', a: 'Our standard community management SLA is a response within 24 hours on business days. For clients requiring faster response times (same-day or within a few hours), we offer priority community management tiers. For ecommerce clients where purchase queries come through Facebook Messenger, we typically respond within 4 to 8 business hours. All responses follow approved brand voice guidelines and escalation protocols for complaints or sensitive topics that require your direct involvement.' },
   { q: 'Will I have control over what gets posted?', a: 'Yes. Content is never published without your approval. Our standard process is: we create the monthly content batch; you receive it for review (typically 5 to 7 business days before the first scheduled date); you approve, request edits, or reject individual pieces; we update and resubmit if needed; then we publish according to the approved schedule. You maintain full visibility and approval rights over all content. Urgent or reactive content (responding to news events or trends) may have a shorter approval window, which we agree in advance.' },
-  { q: 'How long does it take to see results from Facebook management?', a: 'Organic Facebook growth takes time. In months 1 to 3, the focus is establishing content consistency, optimising posting times, and building the content quality foundation. Measurable engagement improvements typically become visible in months 2 to 4. Significant follower growth and consistent lead generation from organic Facebook typically takes 6 to 12 months of sustained quality management. Paid Facebook advertising delivers faster results — ad campaigns can generate leads or sales from week one, though optimisation compounds over the first 2 to 3 months as the algorithm learns your best-performing audiences.' },
-  { q: 'Do you create the graphics and videos, or do I need to provide them?', a: 'We create all content as part of the management service — static graphics, designed post images, short video edits, and Reels. We use your brand assets (logo, colours, fonts, product photography if provided) to create on-brand content. For product-based businesses, high-quality product photos provided by you significantly improve content quality. For video content, we can work with footage you provide or script and direct user-generated style content — but on-location filming is not included in standard management packages.' },
-  { q: 'Can you manage Facebook for ecommerce businesses?', a: 'Yes — ecommerce is a significant portion of our Facebook management client base. Ecommerce Facebook management includes: Facebook Shop setup and catalogue management; dynamic product ads (DPA) targeting users who viewed or abandoned products; catalogue-based retargeting; collection ad formats; and Facebook Checkout integration where available. We also coordinate Facebook advertising with Google Shopping and other paid channels for consistent cross-platform coverage.' },
+  { q: 'How long does it take to see results from Facebook management?', a: 'Organic Facebook growth takes time. In months 1 to 3, the focus is establishing content consistency, optimising posting times, and building the content quality foundation. Measurable engagement improvements typically become visible in months 2 to 4. Significant follower growth and consistent lead generation from organic Facebook typically takes 6 to 12 months of sustained quality management. Paid Facebook advertising delivers faster results - ad campaigns can generate leads or sales from week one, though optimisation compounds over the first 2 to 3 months as the algorithm learns your best-performing audiences.' },
+  { q: 'Do you create the graphics and videos, or do I need to provide them?', a: 'We create all content as part of the management service - static graphics, designed post images, short video edits, and Reels. We use your brand assets (logo, colours, fonts, product photography if provided) to create on-brand content. For product-based businesses, high-quality product photos provided by you significantly improve content quality. For video content, we can work with footage you provide or script and direct user-generated style content - but on-location filming is not included in standard management packages.' },
+  { q: 'Can you manage Facebook for ecommerce businesses?', a: 'Yes - ecommerce is a significant portion of our Facebook management client base. Ecommerce Facebook management includes: Facebook Shop setup and catalogue management; dynamic product ads (DPA) targeting users who viewed or abandoned products; catalogue-based retargeting; collection ad formats; and Facebook Checkout integration where available. We also coordinate Facebook advertising with Google Shopping and other paid channels for consistent cross-platform coverage.' },
 ];
 
 const STATS = [
@@ -65,7 +65,7 @@ export default function FacebookManagementServices() {
     <>
       <Head>
         <title>Facebook Management Services | 1Solutions</title>
-        <meta name="description" content="Facebook management services — page management, content creation, community management, and Facebook Ads." />
+        <meta name="description" content="Facebook management services - page management, content creation, community management, and Facebook Ads." />
         <meta name="keywords" content="facebook management services, facebook page management, facebook marketing services, facebook ads management, social media management agency, facebook marketing agency" />
         <link rel="canonical" href="https://www.1solutions.biz/facebook-management-services/" />
         <meta property="og:title" content="Facebook Management Services | 1Solutions" />
@@ -147,8 +147,8 @@ export default function FacebookManagementServices() {
           <div className="fbm-in">
             <nav className="fbm-bc"><Link href="/">Home</Link><span>/</span><Link href="/social-media-marketing-services">Social Media</Link><span>/</span><span style={{color:'#1877F2'}}>Facebook Management</span></nav>
             <span className="fbm-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#1877F2',display:'inline-block'}}/> Page Management · Ads · Community</span>
-            <h1 className="fbm-h1">Facebook Management Services — Content, Ads & Community Under One Roof</h1>
-            <p className="fbm-sub">End-to-end Facebook management — content strategy, post creation, community management, and paid advertising — handled by a dedicated social media team so you can focus on your business.</p>
+            <h1 className="fbm-h1">Facebook Management Services - Content, Ads & Community Under One Roof</h1>
+            <p className="fbm-sub">End-to-end Facebook management - content strategy, post creation, community management, and paid advertising - handled by a dedicated social media team so you can focus on your business.</p>
             <div className="fbm-btns">
               <Link href="/contact-us" className="fbm-btn-p">Get a Facebook Management Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/instagram-marketing-services" className="fbm-btn-s">Instagram Marketing</Link>
@@ -158,7 +158,7 @@ export default function FacebookManagementServices() {
         </section>
         <section className="fbm-svc"><div className="fbm-svc-in">
           <span className="fbm-ey2">What We Do</span><h2 className="fbm-ttl">Facebook Management Services</h2>
-          <p className="fbm-desc">Page management, content creation, paid ads, community engagement, and ecommerce integration — everything your Facebook presence needs.</p>
+          <p className="fbm-desc">Page management, content creation, paid ads, community engagement, and ecommerce integration - everything your Facebook presence needs.</p>
           <div className="fbm-grid" ref={cardsRef}>{SERVICES.map((s,i) => <div key={s.n} className={`fbm-card${visibleCards.includes(i)?' visible':''}`}><div className="fbm-num">{s.n}</div><h3>{s.title}</h3><p>{s.desc}</p></div>)}</div>
         </div></section>
         <section className="fbm-cap"><div className="fbm-cap-in">
@@ -167,12 +167,12 @@ export default function FacebookManagementServices() {
         </div></section>
         <section className="fbm-proc"><div className="fbm-proc-in">
           <span className="fbm-ey2">How We Work</span><h2 className="fbm-ttl">Our Facebook Management Process</h2>
-          <p className="fbm-desc">Audit to ongoing management — a structured monthly process with full visibility, content approval, and performance reporting.</p>
+          <p className="fbm-desc">Audit to ongoing management - a structured monthly process with full visibility, content approval, and performance reporting.</p>
           <div className="fbm-steps">{PROCESS.map((p,i) => <div key={p.step} ref={el=>{stepRefs.current[i]=el}} className={`fbm-step${visibleSteps.includes(i)?' visible':''}`}><div className="fbm-snum">{p.step}</div><div><h3>{p.title}</h3><p>{p.desc}</p></div></div>)}</div>
         </div></section>
         <section className="fbm-why"><div className="fbm-why-in">
-          <span className="fbm-ey2">Why 1Solutions</span><h2 className="fbm-ttl">Content + Ads + Community — One Team, One Strategy</h2>
-          <p className="fbm-desc">Facebook management works best when organic and paid are aligned. We handle both — coherent messaging, coordinated campaigns, and transparent reporting.</p>
+          <span className="fbm-ey2">Why 1Solutions</span><h2 className="fbm-ttl">Content + Ads + Community - One Team, One Strategy</h2>
+          <p className="fbm-desc">Facebook management works best when organic and paid are aligned. We handle both - coherent messaging, coordinated campaigns, and transparent reporting.</p>
           <div className="fbm-why-grid" ref={whyRef}>{WHY.map((w,i) => <div key={w.title} className={`fbm-wcard${visibleWhy.includes(i)?' visible':''}`}><div className="fbm-dot"/><h3>{w.title}</h3><p>{w.desc}</p></div>)}</div>
         </div></section>
         <section className="fbm-faq"><div className="fbm-faq-in">

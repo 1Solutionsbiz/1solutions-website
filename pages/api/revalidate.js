@@ -23,7 +23,7 @@ export default async function handler(req, res) {
     const paths = []
 
     if (path) {
-      // Direct path revalidation — e.g. /blog/page/3
+      // Direct path revalidation - e.g. /blog/page/3
       paths.push(path)
     } else if (type === 'post' && slug) {
       paths.push(`/${slug}`)

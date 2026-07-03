@@ -3,14 +3,14 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const SERVICES = [
-  { n: '01', title: 'Custom React Native App Development', desc: 'Fully bespoke iOS and Android apps from a single codebase — built to your exact specification with native look, feel, and performance.' },
+  { n: '01', title: 'Custom React Native App Development', desc: 'Fully bespoke iOS and Android apps from a single codebase - built to your exact specification with native look, feel, and performance.' },
   { n: '02', title: 'Cross-Platform App Strategy & Architecture', desc: 'Platform selection, component architecture, state management patterns, and navigation design scoped before a line of code is written.' },
   { n: '03', title: 'iOS & Android Simultaneous Deployment', desc: 'One codebase, two stores. We develop, test, and submit to both the Apple App Store and Google Play in a single development cycle.' },
-  { n: '04', title: 'React Native UI/UX Design', desc: 'Mobile-first interfaces designed around touch interaction, platform conventions, and accessibility — not desktop layouts shrunk to a screen.' },
-  { n: '05', title: 'Legacy App Migration to React Native', desc: 'Migrate your existing native iOS or Android app — or web app — to React Native, preserving features while dramatically reducing future maintenance cost.' },
-  { n: '06', title: 'Third-Party API & SDK Integration', desc: 'Payments (Stripe, PayPal), maps, analytics, social auth, push notifications, CRMs — we connect your app to the services your users expect.' },
+  { n: '04', title: 'React Native UI/UX Design', desc: 'Mobile-first interfaces designed around touch interaction, platform conventions, and accessibility - not desktop layouts shrunk to a screen.' },
+  { n: '05', title: 'Legacy App Migration to React Native', desc: 'Migrate your existing native iOS or Android app - or web app - to React Native, preserving features while dramatically reducing future maintenance cost.' },
+  { n: '06', title: 'Third-Party API & SDK Integration', desc: 'Payments (Stripe, PayPal), maps, analytics, social auth, push notifications, CRMs - we connect your app to the services your users expect.' },
   { n: '07', title: 'Performance Optimisation', desc: 'Profiling, render optimisation, lazy loading, memory management, and bundle size reduction to ensure your app feels fast on every device.' },
-  { n: '08', title: 'App Store Submission & Publishing', desc: 'Full App Store and Google Play submission — screenshots, metadata, ratings optimisation, compliance review, and rejection resolution.' },
+  { n: '08', title: 'App Store Submission & Publishing', desc: 'Full App Store and Google Play submission - screenshots, metadata, ratings optimisation, compliance review, and rejection resolution.' },
 ];
 
 const CAPABILITIES = [
@@ -22,53 +22,53 @@ const CAPABILITIES = [
 
 const PROCESS = [
   { step: '01', title: 'Discovery & Product Definition', desc: 'We map your user journeys, define core features, agree on tech stack, and produce a detailed functional specification before development begins.' },
-  { step: '02', title: 'UI/UX Design & Prototype', desc: 'High-fidelity mobile designs reviewed and approved before engineering starts — ensuring the build matches expectations and reducing costly rework.' },
-  { step: '03', title: 'Agile Development in Sprints', desc: 'Two-week sprints with demo-ready builds at each milestone. You see working software early and often — not just at the end.' },
+  { step: '02', title: 'UI/UX Design & Prototype', desc: 'High-fidelity mobile designs reviewed and approved before engineering starts - ensuring the build matches expectations and reducing costly rework.' },
+  { step: '03', title: 'Agile Development in Sprints', desc: 'Two-week sprints with demo-ready builds at each milestone. You see working software early and often - not just at the end.' },
   { step: '04', title: 'QA, Device Testing & Beta', desc: 'Testing on real iOS and Android devices across screen sizes, OS versions, and edge-case user flows before any public release.' },
   { step: '05', title: 'Launch, Monitor & Iterate', desc: 'App store submission, post-launch monitoring, crash reporting, and a structured iteration cycle to improve based on real user behaviour.' },
 ];
 
 const WHY = [
-  { title: 'React Native Specialists', desc: 'We\'ve been building React Native apps since the framework\'s early days. Our team lives in the ecosystem — we know its strengths, its edge cases, and how to get the best out of it.' },
-  { title: '40% Lower Cost Than Dual Native', desc: 'A single React Native codebase covering iOS and Android typically costs 40–60% less than building two separate native apps — without compromising on performance or UX quality.' },
-  { title: 'Design & Engineering Under One Roof', desc: 'UI/UX design and React Native development both sit within our team. No third-party handoffs, no design-dev translation loss — faster delivery, better results.' },
+  { title: 'React Native Specialists', desc: 'We\'ve been building React Native apps since the framework\'s early days. Our team lives in the ecosystem - we know its strengths, its edge cases, and how to get the best out of it.' },
+  { title: '40% Lower Cost Than Dual Native', desc: 'A single React Native codebase covering iOS and Android typically costs 40–60% less than building two separate native apps - without compromising on performance or UX quality.' },
+  { title: 'Design & Engineering Under One Roof', desc: 'UI/UX design and React Native development both sit within our team. No third-party handoffs, no design-dev translation loss - faster delivery, better results.' },
   { title: 'US, Canada & Australia Focused', desc: 'We know the App Store and Google Play requirements, WCAG accessibility standards, and user expectations of western markets. Not generic global output.' },
-  { title: 'Post-Launch Support Included', desc: 'Every app we build includes a 30-day hypercare period post-launch. Bug fixes, monitoring, and minor adjustments — at no extra cost while you stabilise.' },
+  { title: 'Post-Launch Support Included', desc: 'Every app we build includes a 30-day hypercare period post-launch. Bug fixes, monitoring, and minor adjustments - at no extra cost while you stabilise.' },
   { title: '15+ Years of Product Delivery', desc: 'Since 2008, we\'ve shipped 500+ digital products. Our project management, communication cadence, and quality controls are battle-tested across hundreds of client engagements.' },
 ];
 
 const FAQS = [
   {
     q: 'What is React Native and why is it a good choice for mobile app development?',
-    a: 'React Native is an open-source framework by Meta that lets developers build iOS and Android apps from a single JavaScript codebase. Unlike hybrid webview apps (Cordova, Ionic), React Native renders truly native UI components — so the app feels and performs like a native app on both platforms. The key advantages for businesses: significantly lower development and maintenance cost compared to building two separate native apps, faster time to market, and a large talent pool. It\'s used in production by Facebook, Instagram, Microsoft, Shopify, and thousands of other companies.',
+    a: 'React Native is an open-source framework by Meta that lets developers build iOS and Android apps from a single JavaScript codebase. Unlike hybrid webview apps (Cordova, Ionic), React Native renders truly native UI components - so the app feels and performs like a native app on both platforms. The key advantages for businesses: significantly lower development and maintenance cost compared to building two separate native apps, faster time to market, and a large talent pool. It\'s used in production by Facebook, Instagram, Microsoft, Shopify, and thousands of other companies.',
   },
   {
     q: 'How much does React Native app development cost?',
-    a: 'React Native app costs vary based on complexity. A simple utility app (5–10 screens, basic API integration) typically starts from $15,000–$30,000. A mid-complexity app with user accounts, real-time features, payment integration, and admin dashboard ranges from $30,000–$80,000. Complex apps with marketplace features, AR/ML, or extensive third-party integrations can exceed $100,000. We provide a detailed fixed-price quote after a free discovery call — with full scope documentation so there are no surprises.',
+    a: 'React Native app costs vary based on complexity. A simple utility app (5–10 screens, basic API integration) typically starts from $15,000–$30,000. A mid-complexity app with user accounts, real-time features, payment integration, and admin dashboard ranges from $30,000–$80,000. Complex apps with marketplace features, AR/ML, or extensive third-party integrations can exceed $100,000. We provide a detailed fixed-price quote after a free discovery call - with full scope documentation so there are no surprises.',
   },
   {
     q: 'How long does it take to build a React Native app?',
-    a: 'A simple React Native app takes 8–14 weeks from kick-off to App Store submission. Mid-complexity apps with social features, payments, and custom backend take 16–24 weeks. Complex apps take 6–12 months. We use two-week sprints with demo-ready builds at each milestone — so you see working software early and can provide feedback throughout. App Store review itself takes 1–3 business days for first submissions, longer if changes are requested.',
+    a: 'A simple React Native app takes 8–14 weeks from kick-off to App Store submission. Mid-complexity apps with social features, payments, and custom backend take 16–24 weeks. Complex apps take 6–12 months. We use two-week sprints with demo-ready builds at each milestone - so you see working software early and can provide feedback throughout. App Store review itself takes 1–3 business days for first submissions, longer if changes are requested.',
   },
   {
     q: 'Can React Native apps access native device features like camera, GPS, and biometrics?',
-    a: 'Yes — React Native provides access to all major native device APIs via modules: camera, GPS/location, biometric authentication (Face ID, Touch ID), push notifications, accelerometer, Bluetooth, NFC, and more. For capabilities not covered by the React Native core, we use well-maintained community libraries or write custom native modules in Swift (iOS) and Kotlin (Android) that bridge to the React Native layer. There is effectively no native device capability that React Native cannot access.',
+    a: 'Yes - React Native provides access to all major native device APIs via modules: camera, GPS/location, biometric authentication (Face ID, Touch ID), push notifications, accelerometer, Bluetooth, NFC, and more. For capabilities not covered by the React Native core, we use well-maintained community libraries or write custom native modules in Swift (iOS) and Kotlin (Android) that bridge to the React Native layer. There is effectively no native device capability that React Native cannot access.',
   },
   {
     q: 'What is the difference between React Native CLI and Expo?',
-    a: 'Expo is a toolset built on top of React Native that simplifies setup and provides managed workflows — great for simpler apps and rapid prototyping. React Native CLI gives full control over native code, which is necessary for custom native modules, complex integrations, and performance-critical apps. For most production-quality apps with third-party SDK integrations (payments, analytics, custom cameras), we use React Native CLI. We choose the right approach based on your app\'s requirements during the discovery phase.',
+    a: 'Expo is a toolset built on top of React Native that simplifies setup and provides managed workflows - great for simpler apps and rapid prototyping. React Native CLI gives full control over native code, which is necessary for custom native modules, complex integrations, and performance-critical apps. For most production-quality apps with third-party SDK integrations (payments, analytics, custom cameras), we use React Native CLI. We choose the right approach based on your app\'s requirements during the discovery phase.',
   },
   {
     q: 'Can you migrate my existing native iOS or Android app to React Native?',
-    a: 'Yes — we have specific experience in React Native migrations. We assess your existing app\'s feature set, identify which screens and functionality are good candidates for cross-platform migration, and plan a phased approach that lets you maintain your current app for existing users while the new React Native version is built. We preserve your app\'s existing App Store and Google Play presence, ratings, and reviews. Most migrations are delivered in 3–6 months depending on app complexity.',
+    a: 'Yes - we have specific experience in React Native migrations. We assess your existing app\'s feature set, identify which screens and functionality are good candidates for cross-platform migration, and plan a phased approach that lets you maintain your current app for existing users while the new React Native version is built. We preserve your app\'s existing App Store and Google Play presence, ratings, and reviews. Most migrations are delivered in 3–6 months depending on app complexity.',
   },
   {
     q: 'Do you handle App Store and Google Play submission?',
-    a: 'Yes — we manage the full submission process for both platforms. This includes preparing screenshots and preview videos for each device size, writing App Store descriptions and keyword-optimised metadata, setting age ratings and content categories, creating privacy policy links and data usage declarations, and resolving any rejection issues with Apple or Google\'s review teams. We also advise on App Store Optimisation (ASO) strategies to improve organic discovery after launch.',
+    a: 'Yes - we manage the full submission process for both platforms. This includes preparing screenshots and preview videos for each device size, writing App Store descriptions and keyword-optimised metadata, setting age ratings and content categories, creating privacy policy links and data usage declarations, and resolving any rejection issues with Apple or Google\'s review teams. We also advise on App Store Optimisation (ASO) strategies to improve organic discovery after launch.',
   },
   {
     q: 'Do you provide ongoing support and maintenance after the app launches?',
-    a: 'Yes — we offer structured post-launch support through our App Maintenance retainer plans. All new apps include a complimentary 30-day hypercare period for bug fixes and minor adjustments. Beyond that, our maintenance plans cover: iOS and Android OS update compatibility, React Native version upgrades, bug fixing, performance monitoring, third-party library updates, and App Store compliance as Apple and Google update their requirements. Maintenance is recommended for all live apps — platform requirements change frequently and unattended apps can be removed from stores.',
+    a: 'Yes - we offer structured post-launch support through our App Maintenance retainer plans. All new apps include a complimentary 30-day hypercare period for bug fixes and minor adjustments. Beyond that, our maintenance plans cover: iOS and Android OS update compatibility, React Native version upgrades, bug fixing, performance monitoring, third-party library updates, and App Store compliance as Apple and Google update their requirements. Maintenance is recommended for all live apps - platform requirements change frequently and unattended apps can be removed from stores.',
   },
 ];
 
@@ -133,7 +133,7 @@ export default function ReactNativeAppDevelopment() {
       {
         '@type': 'Service',
         name: 'React Native App Development Services',
-        description: 'Custom cross-platform iOS and Android app development using React Native. From concept to App Store — UI/UX design, development, integration, and launch.',
+        description: 'Custom cross-platform iOS and Android app development using React Native. From concept to App Store - UI/UX design, development, integration, and launch.',
         provider: {
           '@type': 'Organization',
           name: '1Solutions',
@@ -158,7 +158,7 @@ export default function ReactNativeAppDevelopment() {
     <>
       <Head>
         <title>React Native App Development Services | 1Solutions</title>
-        <meta name="description" content="Expert React Native app development for iOS & Android from a single codebase. Custom cross-platform mobile apps — design, development, integration & App" />
+        <meta name="description" content="Expert React Native app development for iOS & Android from a single codebase. Custom cross-platform mobile apps - design, development, integration & App" />
         <meta name="keywords" content="react native app development, react native development company, cross platform app development, react native ios android, react native agency, mobile app development" />
         <link rel="canonical" href="https://www.1solutions.biz/react-native-app-development" />
         <meta name="robots" content="index, follow" />
@@ -463,7 +463,7 @@ export default function ReactNativeAppDevelopment() {
               React Native App Development for iOS &amp; Android
             </h1>
             <p className="rn-hero-sub">
-              One codebase, two platforms, native performance. We build custom React Native apps for startups and established businesses across the US, Canada, and Australia — from concept to App Store launch.
+              One codebase, two platforms, native performance. We build custom React Native apps for startups and established businesses across the US, Canada, and Australia - from concept to App Store launch.
             </p>
             <div className="rn-hero-btns">
               <Link href="/contact-us" className="rn-btn-primary">
@@ -491,7 +491,7 @@ export default function ReactNativeAppDevelopment() {
             <span className="rn-section-eyebrow">What We Deliver</span>
             <h2 className="rn-section-title">React Native Development Services</h2>
             <p className="rn-section-desc">
-              Everything from initial architecture through to App Store submission — handled by a single team that specialises in React Native cross-platform development.
+              Everything from initial architecture through to App Store submission - handled by a single team that specialises in React Native cross-platform development.
             </p>
             <div className="rn-services-grid" ref={cardsRef}>
               {SERVICES.map((s, i) => (
@@ -527,7 +527,7 @@ export default function ReactNativeAppDevelopment() {
             <span className="rn-section-eyebrow">How We Work</span>
             <h2 className="rn-section-title">Our App Development Process</h2>
             <p className="rn-section-desc">
-              A transparent, milestone-driven process that keeps you in control of the build — with working software at every stage, not just at the end.
+              A transparent, milestone-driven process that keeps you in control of the build - with working software at every stage, not just at the end.
             </p>
             <div className="rn-process-steps">
               {PROCESS.map((p, i) => (
@@ -599,7 +599,7 @@ export default function ReactNativeAppDevelopment() {
             <span className="rn-section-eyebrow" style={{ textAlign: 'center', display: 'block', marginBottom: 16 }}>Start Your App Project</span>
             <h2 className="rn-cta-title">Ready to Build Your Cross-Platform App?</h2>
             <p className="rn-cta-sub">
-              Book a free consultation call. We&rsquo;ll review your app idea, scope the core features, and give you a ballpark cost and timeline — no obligation.
+              Book a free consultation call. We&rsquo;ll review your app idea, scope the core features, and give you a ballpark cost and timeline - no obligation.
             </p>
             <div className="rn-cta-btns">
               <Link href="/contact-us" className="rn-btn-primary">

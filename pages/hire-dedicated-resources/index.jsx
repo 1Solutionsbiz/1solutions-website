@@ -135,7 +135,7 @@ const MODELS = [
     iconKey: 'fulltime',
     title: 'Full-Time Dedicated',
     sub: '160 hrs / month',
-    desc: 'A resource works exclusively on your project — 8 hrs/day, 5 days/week. Full accountability, deep product context, and seamless integration with your team.',
+    desc: 'A resource works exclusively on your project - 8 hrs/day, 5 days/week. Full accountability, deep product context, and seamless integration with your team.',
     best: 'Best for: Long-term product builds, scaling teams, complex ongoing projects',
   },
   {
@@ -156,17 +156,17 @@ const MODELS = [
 
 const WHY = [
   { iconKey: 'vetted',  accentBg: 'rgba(254,151,0,0.12)',   h: '150+ Pre-Vetted Professionals', b: 'Every developer, designer, and digital expert is vetted through multi-stage technical assessments, portfolio reviews, and communication screening before they reach you.' },
-  { iconKey: 'fast',    accentBg: 'rgba(59,130,246,0.12)',  h: 'Profiles in 48 Hours',          b: 'Submit your requirements and receive 2–3 matched candidate profiles within 48 business hours — with detailed CVs, skill assessments, and project samples.' },
+  { iconKey: 'fast',    accentBg: 'rgba(59,130,246,0.12)',  h: 'Profiles in 48 Hours',          b: 'Submit your requirements and receive 2–3 matched candidate profiles within 48 business hours - with detailed CVs, skill assessments, and project samples.' },
   { iconKey: 'unlock',  accentBg: 'rgba(16,185,129,0.12)', h: 'No Lock-In Contracts',           b: "Start month-to-month with the flexibility to scale up, scale down, or change resources anytime. We don't hold you hostage with long-term commitments." },
   { iconKey: 'lock',    accentBg: 'rgba(139,92,246,0.12)', h: 'NDA & IP Ownership',             b: 'Confidentiality and IP assignment agreements are signed before any engagement begins. Your codebase, designs, and data remain 100% yours.' },
   { iconKey: 'globe',   accentBg: 'rgba(245,158,11,0.12)', h: 'Timezone Alignment',             b: 'Our resources work overlapping hours with UK, US, Canadian, and Australian teams. No waking up at 3 AM for a standup.' },
-  { iconKey: 'manager', accentBg: 'rgba(236,72,153,0.12)', h: 'Dedicated Account Manager',      b: 'A single point of contact manages your engagement — from onboarding through delivery — so you spend time building, not managing logistics.' },
+  { iconKey: 'manager', accentBg: 'rgba(236,72,153,0.12)', h: 'Dedicated Account Manager',      b: 'A single point of contact manages your engagement - from onboarding through delivery - so you spend time building, not managing logistics.' },
 ]
 
 const PROCESS = [
   { n: '01', h: 'Share Your Requirements',  b: "Tell us the role, seniority, tech stack, engagement type, and working hours. The more detail you share, the better the match." },
-  { n: '02', h: 'Receive Matched Profiles', b: '2–3 shortlisted profiles land in your inbox within 48 business hours — complete with CVs, portfolios, and our assessment notes.' },
-  { n: '03', h: 'Interview & Select',       b: 'Run your own technical interviews — live coding, system design, portfolio walk-through, or a paid trial task. You choose who joins.' },
+  { n: '02', h: 'Receive Matched Profiles', b: '2–3 shortlisted profiles land in your inbox within 48 business hours - complete with CVs, portfolios, and our assessment notes.' },
+  { n: '03', h: 'Interview & Select',       b: 'Run your own technical interviews - live coding, system design, portfolio walk-through, or a paid trial task. You choose who joins.' },
   { n: '04', h: 'Onboard & Deliver',        b: 'Your resource joins your tools, repo, and sprint cycle. First deliverable typically within 7 days of signing.' },
 ]
 
@@ -178,9 +178,9 @@ const INDUSTRIES = [
 ]
 
 const FAQS = [
-  { q: 'What is a dedicated resource model?',        a: 'A dedicated resource is a vetted professional — developer, designer, or marketing expert — who works exclusively or primarily on your project for a defined period. Unlike a freelancer, a dedicated resource integrates into your team, follows your processes, and is managed by 1Solutions for HR and operational matters.' },
+  { q: 'What is a dedicated resource model?',        a: 'A dedicated resource is a vetted professional - developer, designer, or marketing expert - who works exclusively or primarily on your project for a defined period. Unlike a freelancer, a dedicated resource integrates into your team, follows your processes, and is managed by 1Solutions for HR and operational matters.' },
   { q: 'How quickly can I onboard a dedicated resource?', a: 'We deliver matched candidate profiles within 48 business hours of receiving your brief. Once you select a candidate and contracts are signed, the resource typically joins your tools and begins work within 7 days.' },
-  { q: 'Can I scale the team up or down?',           a: 'Yes. Our engagement model is built for flexibility. You can add resources as your workload grows, reduce the team during slower periods, or swap specialisations as your project phase changes — with as little as 2 weeks notice.' },
+  { q: 'Can I scale the team up or down?',           a: 'Yes. Our engagement model is built for flexibility. You can add resources as your workload grows, reduce the team during slower periods, or swap specialisations as your project phase changes - with as little as 2 weeks notice.' },
   { q: 'What seniority levels are available?',       a: 'We provide resources across all levels: Junior (1–3 years), Mid-Level (3–6 years), Senior (6–10 years), and Lead/Architect (10+ years). We also offer team leads and technical programme managers for larger engagements.' },
   { q: 'Do you sign NDAs?',                          a: 'Yes. A mutual NDA and IP assignment agreement are executed as standard before any engagement begins and before any access is granted to your codebase, designs, or proprietary information.' },
   { q: 'What if the resource is not the right fit?', a: 'We offer a 2-week replacement guarantee. If the assigned resource is not meeting expectations, notify your account manager and we will provide a replacement profile within 5 business days at no additional cost.' },
@@ -196,7 +196,7 @@ const LD = {
   ],
 }
 
-/* Shared icon box — orange rounded square like screenshot */
+/* Shared icon box - orange rounded square like screenshot */
 function IconBox({ children, size = 52, radius = 13, bg = 'rgba(254,151,0,0.12)' }) {
   return (
     <div style={{ width: size, height: size, borderRadius: radius, background: bg, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
@@ -229,7 +229,7 @@ export default function HireDedicatedResources() {
   return (
     <>
       <Head>
-        <title>Hire Dedicated Resources — Developers, Designers | 1Solutions</title>
+        <title>Hire Dedicated Resources - Developers, Designers | 1Solutions</title>
         <meta name="description" content="Hire dedicated developers, designers, and digital marketing experts from 1Solutions. Pre-vetted professionals on full-time, part-time, or hourly engagements." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-dedicated-resources/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
@@ -282,7 +282,7 @@ export default function HireDedicatedResources() {
           .hdr-em-card p{color:#4b5563;line-height:1.7;font-size:.93rem;margin:0;flex-grow:1}
           .hdr-em-best{font-size:.83rem;color:${ACCENT};font-weight:600;background:rgba(17,65,113,.06);border-radius:8px;padding:10px 14px;line-height:1.5}
 
-          /* Why — light icon-card grid */
+          /* Why - light icon-card grid */
           .hdr-why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
           .hdr-why-item{background:#f8fafc;border-radius:16px;padding:26px 24px;border:1.5px solid #e5e7eb;opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s,box-shadow .3s,background .25s;display:flex;gap:16px;align-items:flex-start}
           .hdr-why-item.hdr-in{opacity:1;transform:none}
@@ -290,7 +290,7 @@ export default function HireDedicatedResources() {
           .hdr-why-body h3{font-size:1rem;font-weight:700;color:#0F1F40;margin:0 0 7px;line-height:1.3}
           .hdr-why-body p{color:#4b5563;line-height:1.7;font-size:.92rem;margin:0}
 
-          /* Process — colored steps + glow */
+          /* Process - colored steps + glow */
           .hdr-process-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
           .hdr-step{text-align:center;padding:38px 26px;border-radius:18px;border:1.5px solid;opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s,box-shadow .3s}
           .hdr-step.hdr-in{opacity:1;transform:none}
@@ -352,7 +352,7 @@ export default function HireDedicatedResources() {
       <section className="hdr-sec" ref={rtR}>
         <div className="hdr-wrap">
           <h2 className="hdr-title">What Kind of Resources Can You Hire?</h2>
-          <p className="hdr-sub">From frontend engineers to performance marketers — every role is pre-vetted, technically assessed, and ready to integrate into your workflow.</p>
+          <p className="hdr-sub">From frontend engineers to performance marketers - every role is pre-vetted, technically assessed, and ready to integrate into your workflow.</p>
           <div className="hdr-rt-grid">
             {RESOURCE_TYPES.map((rt, i) => (
               <Link key={rt.title} href={rt.href} className={`hdr-rt-card${rtV ? ' hdr-in' : ''}`} style={{ transitionDelay: `${i * 70}ms` }}>
@@ -425,7 +425,7 @@ export default function HireDedicatedResources() {
       <section className="hdr-sec hdr-sec-alt" ref={whR}>
         <div className="hdr-wrap">
           <h2 className="hdr-title">Why Hire Dedicated Resources from 1Solutions?</h2>
-          <p className="hdr-sub">We don&apos;t just fill seats — we match the right professional to your team culture, tech stack, and delivery standards.</p>
+          <p className="hdr-sub">We don&apos;t just fill seats - we match the right professional to your team culture, tech stack, and delivery standards.</p>
           <div className="hdr-why-grid">
             {WHY.map((w, i) => (
               <div key={w.h} className={`hdr-why-item${whV ? ' hdr-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}>
@@ -444,7 +444,7 @@ export default function HireDedicatedResources() {
       <section className="hdr-sec" ref={prR}>
         <div className="hdr-wrap">
           <h2 className="hdr-title">How to Hire a Dedicated Resource in 4 Steps</h2>
-          <p className="hdr-sub">From brief to first sprint deliverable — in under two weeks.</p>
+          <p className="hdr-sub">From brief to first sprint deliverable - in under two weeks.</p>
           <div className="hdr-process-grid">
             {PROCESS.map((p, i) => {
               const sc = STEP_COLORS[i]
@@ -464,7 +464,7 @@ export default function HireDedicatedResources() {
       <section className="hdr-sec hdr-sec-alt">
         <div className="hdr-wrap">
           <h2 className="hdr-title">Industries We Serve</h2>
-          <p className="hdr-sub">Our dedicated resources have delivered projects across diverse verticals — from early-stage startups to Fortune 500 enterprises.</p>
+          <p className="hdr-sub">Our dedicated resources have delivered projects across diverse verticals - from early-stage startups to Fortune 500 enterprises.</p>
           <div className="hdr-ind-grid">
             {INDUSTRIES.map((ind, i) => {
               const ic = INDUSTRY_COLORS[i % INDUSTRY_COLORS.length]
@@ -497,7 +497,7 @@ export default function HireDedicatedResources() {
       <section className="hdr-cta">
         <div className="hdr-wrap">
           <h2>Ready to Hire Your Dedicated Team?</h2>
-          <p>Share your requirements and receive matched professional profiles within 48 hours — no commitment required to start the conversation.</p>
+          <p>Share your requirements and receive matched professional profiles within 48 hours - no commitment required to start the conversation.</p>
           <div className="hdr-cta-btns">
             <Link href="/contact-us" className="hdr-btn-amber">Get Matched Profiles →</Link>
             <Link href="/who-we-are" className="hdr-btn-white">About 1Solutions</Link>

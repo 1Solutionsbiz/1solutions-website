@@ -4,42 +4,42 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const SERVICES = [
-  { n:'01', title:'Design Token Architecture', desc:'Spacing, colour, typography, shadow, and motion tokens structured for multi-platform output — web, iOS, Android, and beyond — using a single source of truth.', featured:false },
+  { n:'01', title:'Design Token Architecture', desc:'Spacing, colour, typography, shadow, and motion tokens structured for multi-platform output - web, iOS, Android, and beyond - using a single source of truth.', featured:false },
   { n:'02', title:'Component Library (Figma)', desc:'Auto-layout components with variants, properties, states, and interactive prototypes. Every component documented with usage notes and do/don\'t examples.', featured:true },
   { n:'03', title:'Code Component Library', desc:'React, Vue, or Angular components matching Figma 1:1, with Storybook documentation, TypeScript support, and automated visual regression testing.', featured:false },
   { n:'04', title:'Icon System', desc:'Consistent iconography library with sizing grid, style guide, stroke/fill variants, and SVG exports optimised for web and native applications.', featured:false },
-  { n:'05', title:'Design System Audit', desc:'Review existing systems for consistency gaps, deprecated patterns, redundant components, and scalability issues — with a prioritised remediation roadmap.', featured:false },
+  { n:'05', title:'Design System Audit', desc:'Review existing systems for consistency gaps, deprecated patterns, redundant components, and scalability issues - with a prioritised remediation roadmap.', featured:false },
   { n:'06', title:'Accessibility (WCAG 2.2)', desc:'AA/AAA colour contrast checks, focus states, ARIA annotations, keyboard navigation patterns, and screen reader compatibility built into every component.', featured:false },
   { n:'07', title:'Documentation & Governance', desc:'Contribution guidelines, versioning strategy, component deprecation workflow, and change management process to keep your system healthy as it grows.', featured:false },
-  { n:'08', title:'Design System Migration', desc:'Migrate from legacy UI to a modern design system with a structured rollout plan — component by component, zero regression, full team alignment.', featured:false },
+  { n:'08', title:'Design System Migration', desc:'Migrate from legacy UI to a modern design system with a structured rollout plan - component by component, zero regression, full team alignment.', featured:false },
 ];
 
 const FAQS = [
-  { q:'What is a design system and why does my product need one?', a:'A design system is a shared library of design decisions — tokens, components, patterns, and guidelines — that enables your design and engineering teams to build product interfaces faster and with perfect consistency. Without one, every team member makes independent decisions that lead to visual inconsistency, duplicated effort, and technical debt. With one, a designer can hand off a component to a developer and know it will be implemented identically every time — across every screen, every release.' },
+  { q:'What is a design system and why does my product need one?', a:'A design system is a shared library of design decisions - tokens, components, patterns, and guidelines - that enables your design and engineering teams to build product interfaces faster and with perfect consistency. Without one, every team member makes independent decisions that lead to visual inconsistency, duplicated effort, and technical debt. With one, a designer can hand off a component to a developer and know it will be implemented identically every time - across every screen, every release.' },
   { q:'Do you build design systems in Figma only, or in code too?', a:'Both. We build the Figma component library (with auto-layout, variants, and interactive prototypes) and the code component library (React, Vue, or Angular with Storybook). The two are kept in sync so what designers see in Figma maps 1:1 to what engineers ship in production. We can also build the Figma layer only, or the code layer only, depending on where you are in your process.' },
-  { q:'How long does it take to build a design system?', a:'A foundation design system — tokens, core components (button, input, typography, colour, spacing), and documentation — typically takes 6–10 weeks. A comprehensive system covering 40–80+ components with full Storybook documentation, accessibility annotations, and governance processes typically takes 3–5 months. We provide a phased delivery plan so your teams get value from week one, not just at the end.' },
+  { q:'How long does it take to build a design system?', a:'A foundation design system - tokens, core components (button, input, typography, colour, spacing), and documentation - typically takes 6–10 weeks. A comprehensive system covering 40–80+ components with full Storybook documentation, accessibility annotations, and governance processes typically takes 3–5 months. We provide a phased delivery plan so your teams get value from week one, not just at the end.' },
   { q:'Can you integrate with our existing codebase?', a:'Yes. We work within your existing tech stack, version control system, CI/CD pipeline, and package management approach. We can publish your component library as a private npm package, integrate it into your Storybook instance, and set up automated visual regression tests using tools like Chromatic or Percy. We work with what you have, not what we prefer.' },
-  { q:'What is the cost of a design system project?', a:'Design system projects vary significantly based on scope — the number of components, whether you need Figma only or Figma plus code, the complexity of your token architecture, and the level of documentation and governance. Foundation systems typically start from $8,000. Comprehensive production-grade systems for enterprise products range from $20,000 to $60,000+. We provide a detailed fixed-price quote after a free scoping call.' },
+  { q:'What is the cost of a design system project?', a:'Design system projects vary significantly based on scope - the number of components, whether you need Figma only or Figma plus code, the complexity of your token architecture, and the level of documentation and governance. Foundation systems typically start from $8,000. Comprehensive production-grade systems for enterprise products range from $20,000 to $60,000+. We provide a detailed fixed-price quote after a free scoping call.' },
   { q:'How do you handle ongoing maintenance of the design system?', a:'We offer three paths: a one-time build with knowledge transfer to your internal team; a retainer model where we own ongoing additions and maintenance; or a hybrid where we build and train a design system champion on your team. We also offer quarterly audits to identify drift, deprecated patterns, and new requirements as your product evolves.' },
 ];
 
 const WHY = [
-  { icon:<svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>, title:'Token-First Architecture', desc:'We design token systems that work across platforms from day one — web, iOS, Android — using a single structured source of truth that scales as your product grows.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>, title:'Figma + Code, In Sync', desc:'Our design and development teams work in parallel — so your Figma library and code component library are always in perfect 1:1 alignment, not aspirationally aligned.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M1 21L12 2l11 19H1zm3.45-2h15.1L12 5.99 4.45 19zM11 16v2h2v-2h-2zm0-6v4h2v-4h-2z"/></svg>, title:'Accessibility by Default', desc:'WCAG 2.2 AA compliance is built into every component, not audited after the fact — contrast ratios, focus states, ARIA annotations, and keyboard patterns included.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>, title:'3× Faster Development', desc:'Teams using a mature design system ship new features significantly faster — less decision-making, less rework, less QA time on visual inconsistencies.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg>, title:'Documentation That Gets Used', desc:'We write component documentation that developers actually read — clear usage guidelines, code examples, do/don\'t patterns, and prop tables in Storybook.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>, title:'Token-First Architecture', desc:'We design token systems that work across platforms from day one - web, iOS, Android - using a single structured source of truth that scales as your product grows.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>, title:'Figma + Code, In Sync', desc:'Our design and development teams work in parallel - so your Figma library and code component library are always in perfect 1:1 alignment, not aspirationally aligned.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M1 21L12 2l11 19H1zm3.45-2h15.1L12 5.99 4.45 19zM11 16v2h2v-2h-2zm0-6v4h2v-4h-2z"/></svg>, title:'Accessibility by Default', desc:'WCAG 2.2 AA compliance is built into every component, not audited after the fact - contrast ratios, focus states, ARIA annotations, and keyboard patterns included.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>, title:'3× Faster Development', desc:'Teams using a mature design system ship new features significantly faster - less decision-making, less rework, less QA time on visual inconsistencies.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg>, title:'Documentation That Gets Used', desc:'We write component documentation that developers actually read - clear usage guidelines, code examples, do/don\'t patterns, and prop tables in Storybook.' },
   { icon:<svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>, title:'Governance & Versioning', desc:'We build the contribution process, versioning strategy, and change management workflow so your system stays healthy and evolves without becoming a maintenance burden.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>, title:'Works With Your Stack', desc:'We integrate into your existing codebase, CI/CD pipeline, and toolchain — publishing as an npm package, connecting to your Storybook, and fitting your release process.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>, title:'Works With Your Stack', desc:'We integrate into your existing codebase, CI/CD pipeline, and toolchain - publishing as an npm package, connecting to your Storybook, and fitting your release process.' },
   { icon:<svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>, title:'Team Enablement Included', desc:'Every engagement ends with a structured handoff and training session so your team can maintain, contribute to, and extend the system confidently without us.' },
 ];
 
 const PROCESS_STEPS = [
-  { title:'Audit & Discovery', desc:'We start by auditing your existing UI — cataloguing every component, pattern, and visual inconsistency. For new products, we run a discovery workshop to understand your product roadmap, tech stack, team structure, and the scale of what you need to build.' },
-  { title:'Token Definition', desc:'We define your design token taxonomy — naming conventions, semantic layers, tier structure, and platform targets. Tokens are the foundation everything else is built on, so getting this right before touching any components is essential.' },
-  { title:'Component Architecture', desc:'We map every component your product needs, establish a priority order based on usage frequency and complexity, and define the API — variants, properties, states, and responsive behaviour — before any design or code work begins.' },
+  { title:'Audit & Discovery', desc:'We start by auditing your existing UI - cataloguing every component, pattern, and visual inconsistency. For new products, we run a discovery workshop to understand your product roadmap, tech stack, team structure, and the scale of what you need to build.' },
+  { title:'Token Definition', desc:'We define your design token taxonomy - naming conventions, semantic layers, tier structure, and platform targets. Tokens are the foundation everything else is built on, so getting this right before touching any components is essential.' },
+  { title:'Component Architecture', desc:'We map every component your product needs, establish a priority order based on usage frequency and complexity, and define the API - variants, properties, states, and responsive behaviour - before any design or code work begins.' },
   { title:'Build & Document', desc:'Design and engineering build in parallel. Figma components are built with auto-layout and variants; code components are built with Storybook stories, TypeScript types, accessibility attributes, and visual regression tests. Every component ships with usage documentation.' },
-  { title:'Handoff & Training', desc:'We run a structured handoff session with your design and engineering leads — walking through the token system, component API, contribution process, and versioning strategy. We also provide recorded walkthroughs and written governance documentation for future reference.' },
+  { title:'Handoff & Training', desc:'We run a structured handoff session with your design and engineering leads - walking through the token system, component API, contribution process, and versioning strategy. We also provide recorded walkthroughs and written governance documentation for future reference.' },
 ];
 
 // Count-up hook
@@ -88,7 +88,7 @@ const LD = {
       '@type': 'Service',
       name: 'Design Systems Agency',
       provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz' },
-      description: 'We build structured, documented design systems — from atomic tokens to full component libraries — so your team ships faster with pixel-perfect consistency. 80+ design systems built.',
+      description: 'We build structured, documented design systems - from atomic tokens to full component libraries - so your team ships faster with pixel-perfect consistency. 80+ design systems built.',
       serviceType: 'Design System Development',
       areaServed: ['IN', 'US', 'CA', 'GB', 'AU'],
       aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '94', bestRating: '5' },
@@ -229,11 +229,11 @@ export default function DesignSystemsPage() {
     <>
       <Head>
         <title>Design Systems Agency | Scalable Component Libraries | 1Solutions</title>
-        <meta name="description" content="1Solutions builds structured, documented design systems — from atomic tokens to full component libraries — so your team ships faster with pixel-perfect" />
+        <meta name="description" content="1Solutions builds structured, documented design systems - from atomic tokens to full component libraries - so your team ships faster with pixel-perfect" />
         <meta name="keywords" content="design systems agency, component library, design tokens, Figma component library, Storybook, WCAG accessibility, design system audit, React component library" />
         <link rel="canonical" href="https://www.1solutions.biz/design-systems/" />
         <meta property="og:title" content="Design Systems Agency | Scalable Component Libraries | 1Solutions" />
-        <meta property="og:description" content="We build structured, documented design systems — from atomic tokens to full component libraries — so your team ships faster with pixel-perfect consistency." />
+        <meta property="og:description" content="We build structured, documented design systems - from atomic tokens to full component libraries - so your team ships faster with pixel-perfect consistency." />
         <meta property="og:url" content="https://www.1solutions.biz/design-systems/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
@@ -515,9 +515,9 @@ export default function DesignSystemsPage() {
         {/* ── HERO ── */}
         <div className="ds-hero-block">
           <div className="ds-hero-content">
-            <span className="ds-eyebrow">Design Systems Agency — 16+ Years Experience</span>
+            <span className="ds-eyebrow">Design Systems Agency - 16+ Years Experience</span>
             <h1>Design Systems That Scale With Your Product</h1>
-            <p>We build structured, documented design systems — from atomic tokens to full component libraries — so your team ships faster with pixel-perfect consistency.</p>
+            <p>We build structured, documented design systems - from atomic tokens to full component libraries - so your team ships faster with pixel-perfect consistency.</p>
             <div className="ds-hero-badges">
               <span className="ds-badge">&#10003; Figma + Code Libraries</span>
               <span className="ds-badge">&#10003; WCAG 2.2 Accessibility</span>
@@ -565,7 +565,7 @@ export default function DesignSystemsPage() {
             <div className={`ds-section-reveal${visibleSections.has('services') ? ' ds-revealed' : ''}`} ref={el => { sectionRefs.current['services'] = el; }}>
               <span className="ds-section-eyebrow">What We Build</span>
               <h2 className="ds-section-title">Design System Services We Offer</h2>
-              <p className="ds-section-desc">From a first-time token architecture to a complete multi-platform component library — we scope and build exactly what your product and team need at your stage of growth.</p>
+              <p className="ds-section-desc">From a first-time token architecture to a complete multi-platform component library - we scope and build exactly what your product and team need at your stage of growth.</p>
             </div>
             <div className="ds-services-grid" ref={serviceGridRef}>
               {SERVICES.map((s, i) => (
@@ -602,7 +602,7 @@ export default function DesignSystemsPage() {
             <div className={`ds-section-reveal${visibleSections.has('why') ? ' ds-revealed' : ''}`} ref={el => { sectionRefs.current['why'] = el; }} style={{ textAlign:'center' }}>
               <span className="ds-section-eyebrow">Why 1Solutions</span>
               <h2 className="ds-section-title">Why Product Teams Choose Us For Design Systems</h2>
-              <p className="ds-section-desc" style={{ margin:'0 auto 0' }}>We don&apos;t just build component libraries — we build the processes, governance, and culture that make design systems actually work inside your organisation.</p>
+              <p className="ds-section-desc" style={{ margin:'0 auto 0' }}>We don&apos;t just build component libraries - we build the processes, governance, and culture that make design systems actually work inside your organisation.</p>
             </div>
             <div className="ds-why-grid" ref={whyGridRef}>
               {WHY.map((w, i) => (
@@ -624,7 +624,7 @@ export default function DesignSystemsPage() {
             <div className={`ds-section-reveal${visibleSections.has('process') ? ' ds-revealed' : ''}`} ref={el => { sectionRefs.current['process'] = el; }}>
               <span className="ds-process-eyebrow">OUR METHODOLOGY</span>
               <h2 className="ds-process-title">How We Build Design Systems That Scale</h2>
-              <p className="ds-process-desc">Our five-stage methodology takes you from a scattered UI to a structured, documented, governance-ready design system — without disrupting your in-flight product development.</p>
+              <p className="ds-process-desc">Our five-stage methodology takes you from a scattered UI to a structured, documented, governance-ready design system - without disrupting your in-flight product development.</p>
             </div>
             <hr className="ds-process-divider" />
           </div>
@@ -660,9 +660,9 @@ export default function DesignSystemsPage() {
             </div>
             <div className="ds-testi-grid">
               {[
-                { initials:'MH', bg:'#0369A1', text:'"1Solutions built our entire design system from scratch — Figma library, React component library, Storybook, and governance docs. Our dev time on new features dropped by more than half within the first quarter of adoption."', name:'Marcus Hughes', role:'VP of Product, Finstack — USA', featured:false },
-                { initials:'SB', bg:'#0F3460', text:'"The token architecture they designed is exactly what we needed to scale across web and mobile without duplication. Every designer and every engineer now works from the same source of truth. The quality of what we ship has never been higher."', name:'Sophie Beaumont', role:'Design Lead, PulseApp — UK', featured:true },
-                { initials:'JT', bg:'#0E7490', text:'"We had a messy legacy UI with hundreds of inconsistent components. 1Solutions audited everything, built a clean migration plan, and delivered a new design system without a single regression. Genuinely impressive execution."', name:'James Tran', role:'CTO, MedCore — Australia', featured:false },
+                { initials:'MH', bg:'#0369A1', text:'"1Solutions built our entire design system from scratch - Figma library, React component library, Storybook, and governance docs. Our dev time on new features dropped by more than half within the first quarter of adoption."', name:'Marcus Hughes', role:'VP of Product, Finstack - USA', featured:false },
+                { initials:'SB', bg:'#0F3460', text:'"The token architecture they designed is exactly what we needed to scale across web and mobile without duplication. Every designer and every engineer now works from the same source of truth. The quality of what we ship has never been higher."', name:'Sophie Beaumont', role:'Design Lead, PulseApp - UK', featured:true },
+                { initials:'JT', bg:'#0E7490', text:'"We had a messy legacy UI with hundreds of inconsistent components. 1Solutions audited everything, built a clean migration plan, and delivered a new design system without a single regression. Genuinely impressive execution."', name:'James Tran', role:'CTO, MedCore - Australia', featured:false },
               ].map((t, i) => (
                 <div className={`ds-tcard${t.featured ? ' featured' : ''}`} key={t.name}>
                   <div className="ds-tcard-stars">★★★★★</div>
@@ -700,10 +700,10 @@ export default function DesignSystemsPage() {
               <div className="ds-merged-box">
                 <div>
                   {[
-                    { icon:<svg className="ds-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>, text:'All project details are confidential — NDA available on request.' },
+                    { icon:<svg className="ds-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>, text:'All project details are confidential - NDA available on request.' },
                     { icon:<svg className="ds-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>, text:'A senior design systems specialist personally reviews your brief.' },
-                    { icon:<svg className="ds-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>, text:'Response within 24 business hours — no automated replies.' },
-                    { icon:<svg className="ds-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>, text:'No obligation — just a clear, expert conversation about your needs.' },
+                    { icon:<svg className="ds-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>, text:'Response within 24 business hours - no automated replies.' },
+                    { icon:<svg className="ds-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>, text:'No obligation - just a clear, expert conversation about your needs.' },
                   ].map((b, i) => (
                     <div className="ds-benefit-item" key={i} style={{ marginBottom: i < 3 ? 14 : 0 }}>
                       <div className="ds-benefit-icon-wrap">{b.icon}</div>

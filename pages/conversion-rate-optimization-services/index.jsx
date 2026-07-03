@@ -3,45 +3,45 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const SERVICES = [
-  { n: '01', title: 'CRO Audit & Heuristic Analysis', desc: 'Expert-led CRO audit — reviewing page layout, navigation, CTAs, form design, trust signals, and user journey friction points against established conversion optimisation principles.' },
-  { n: '02', title: 'User Behaviour Analysis', desc: 'Heatmap, scroll map, click map, and session recording analysis via Hotjar, Microsoft Clarity, or FullStory — revealing exactly where users drop off, skip, or get confused.' },
-  { n: '03', title: 'A/B & Multivariate Testing', desc: 'Hypothesis-driven A/B testing and multivariate experiments — statistically significant test design, implementation via Optimizely, VWO, or Google Optimize, and performance-preserving test execution.' },
-  { n: '04', title: 'Landing Page Optimisation', desc: 'Landing page redesign and copy optimisation — headline testing, hero section structure, benefit hierarchy, social proof placement, CTA design, and above-the-fold content strategy.' },
+  { n: '01', title: 'CRO Audit & Heuristic Analysis', desc: 'Expert-led CRO audit - reviewing page layout, navigation, CTAs, form design, trust signals, and user journey friction points against established conversion optimisation principles.' },
+  { n: '02', title: 'User Behaviour Analysis', desc: 'Heatmap, scroll map, click map, and session recording analysis via Hotjar, Microsoft Clarity, or FullStory - revealing exactly where users drop off, skip, or get confused.' },
+  { n: '03', title: 'A/B & Multivariate Testing', desc: 'Hypothesis-driven A/B testing and multivariate experiments - statistically significant test design, implementation via Optimizely, VWO, or Google Optimize, and performance-preserving test execution.' },
+  { n: '04', title: 'Landing Page Optimisation', desc: 'Landing page redesign and copy optimisation - headline testing, hero section structure, benefit hierarchy, social proof placement, CTA design, and above-the-fold content strategy.' },
   { n: '05', title: 'Checkout & Form Optimisation', desc: 'Checkout flow simplification, form field reduction, abandoned cart recovery, progress indicator implementation, and checkout trust signal optimisation for ecommerce and lead generation.' },
-  { n: '06', title: 'CTA & Copy Testing', desc: 'Button copy, placement, colour, and design testing — combined with headline, subheadline, and value proposition copy optimisation to increase click-through and completion rates.' },
-  { n: '07', title: 'UX & Design Improvements', desc: 'User experience improvements informed by data — navigation restructuring, mobile UX fixes, page layout changes, and accessibility improvements that remove conversion blockers at scale.' },
-  { n: '08', title: 'Conversion Analytics & Reporting', desc: 'GA4 conversion goal setup, funnel analysis, micro-conversion tracking, and monthly CRO performance reports — with actionable next test recommendations based on current data.' },
+  { n: '06', title: 'CTA & Copy Testing', desc: 'Button copy, placement, colour, and design testing - combined with headline, subheadline, and value proposition copy optimisation to increase click-through and completion rates.' },
+  { n: '07', title: 'UX & Design Improvements', desc: 'User experience improvements informed by data - navigation restructuring, mobile UX fixes, page layout changes, and accessibility improvements that remove conversion blockers at scale.' },
+  { n: '08', title: 'Conversion Analytics & Reporting', desc: 'GA4 conversion goal setup, funnel analysis, micro-conversion tracking, and monthly CRO performance reports - with actionable next test recommendations based on current data.' },
 ];
 
 const TOOLS = ['Google Analytics 4', 'Hotjar', 'Microsoft Clarity', 'Optimizely', 'VWO', 'Google Tag Manager', 'FullStory', 'Unbounce', 'Crazy Egg', 'Lucky Orange', 'Heap Analytics'];
 
 const PROCESS = [
   { step: '01', title: 'Data Collection', desc: 'Quantitative data (GA4 funnels, conversion rates, exit pages) and qualitative data (heatmaps, session recordings, user surveys) to build a complete picture of your conversion barriers.' },
-  { step: '02', title: 'Hypothesis Generation', desc: 'From data to testable hypotheses — specific, measurable changes with a predicted outcome and the supporting evidence from step 1.' },
-  { step: '03', title: 'Test Prioritisation', desc: 'Hypotheses ranked by potential impact, ease of implementation, and statistical feasibility — ensuring tests are run in the highest-value order.' },
-  { step: '04', title: 'Test Design & Launch', desc: 'Test built and launched — with traffic split, sample size calculation, and analytics instrumented correctly before launch.' },
-  { step: '05', title: 'Analysis & Decision', desc: 'Statistical significance reached — winner declared, loser archived, learnings documented. No decisions made before significance thresholds are met.' },
-  { step: '06', title: 'Iterate & Scale', desc: 'Winning variant becomes the control. New hypothesis generated. The CRO cycle repeats — compounding conversion improvements month after month.' },
+  { step: '02', title: 'Hypothesis Generation', desc: 'From data to testable hypotheses - specific, measurable changes with a predicted outcome and the supporting evidence from step 1.' },
+  { step: '03', title: 'Test Prioritisation', desc: 'Hypotheses ranked by potential impact, ease of implementation, and statistical feasibility - ensuring tests are run in the highest-value order.' },
+  { step: '04', title: 'Test Design & Launch', desc: 'Test built and launched - with traffic split, sample size calculation, and analytics instrumented correctly before launch.' },
+  { step: '05', title: 'Analysis & Decision', desc: 'Statistical significance reached - winner declared, loser archived, learnings documented. No decisions made before significance thresholds are met.' },
+  { step: '06', title: 'Iterate & Scale', desc: 'Winning variant becomes the control. New hypothesis generated. The CRO cycle repeats - compounding conversion improvements month after month.' },
 ];
 
 const WHY = [
-  { title: 'Data-First Approach', desc: 'We do not make recommendations based on opinion or aesthetic preference — every hypothesis is grounded in quantitative funnel data and qualitative user behaviour analysis.' },
-  { title: 'Statistical Rigour', desc: 'We run tests to statistical significance before declaring winners — 95% confidence threshold as standard. No "test for a week and call it" shortcuts that produce false conclusions.' },
+  { title: 'Data-First Approach', desc: 'We do not make recommendations based on opinion or aesthetic preference - every hypothesis is grounded in quantitative funnel data and qualitative user behaviour analysis.' },
+  { title: 'Statistical Rigour', desc: 'We run tests to statistical significance before declaring winners - 95% confidence threshold as standard. No "test for a week and call it" shortcuts that produce false conclusions.' },
   { title: 'Ecommerce & Lead Gen Expertise', desc: 'CRO strategy differs significantly between ecommerce checkout optimisation and B2B lead generation forms. We bring specific expertise across both contexts.' },
-  { title: 'SEO-Aware CRO', desc: 'CRO changes can inadvertently damage SEO — removing content, changing URL structures, or altering structured data. Our CRO work is always reviewed for SEO impact before deployment.' },
-  { title: 'Full Funnel Focus', desc: 'Conversion optimisation covers the full funnel — ad landing page, website journey, and checkout or lead form — not just individual page elements in isolation.' },
-  { title: 'Transparent Reporting', desc: 'Every month: what we tested, what the results were, what we learned, and what we\'re testing next. Full transparency on test outcomes — including failed tests that still generate learning.' },
+  { title: 'SEO-Aware CRO', desc: 'CRO changes can inadvertently damage SEO - removing content, changing URL structures, or altering structured data. Our CRO work is always reviewed for SEO impact before deployment.' },
+  { title: 'Full Funnel Focus', desc: 'Conversion optimisation covers the full funnel - ad landing page, website journey, and checkout or lead form - not just individual page elements in isolation.' },
+  { title: 'Transparent Reporting', desc: 'Every month: what we tested, what the results were, what we learned, and what we\'re testing next. Full transparency on test outcomes - including failed tests that still generate learning.' },
 ];
 
 const FAQS = [
-  { q: 'What is conversion rate optimisation (CRO)?', a: 'Conversion rate optimisation (CRO) is the systematic practice of increasing the percentage of website visitors who complete a desired action — a purchase, enquiry form submission, phone call, email sign-up, or other goal. CRO uses data analysis (quantitative analytics + qualitative user research), hypothesis generation, and controlled A/B or multivariate testing to make evidence-based improvements to pages, funnels, and user journeys — improving conversion rate without necessarily increasing traffic.' },
-  { q: 'How is CRO different from UX design?', a: 'CRO and UX overlap significantly but differ in approach. UX design is typically a creative and strategic discipline focused on the entire user experience — often without controlled testing to validate individual changes. CRO is a scientific discipline focused specifically on conversion metrics — hypothesising that a specific change will increase conversion rate and testing that hypothesis in a controlled experiment. Good CRO uses UX principles to generate hypotheses and A/B testing to validate them with statistical confidence. We combine both — UX-informed ideation and rigorous A/B test validation.' },
-  { q: 'What conversion rate is "good"?', a: 'Conversion rates vary enormously by industry, traffic source, and conversion type. Ecommerce conversion rates typically range from 1% to 4% for direct purchases; lead generation forms for B2B can range from 2% to 10% depending on the ask. Averages matter less than your own baseline — our goal is to improve YOUR conversion rate relative to your current performance. A 25% relative improvement to a 1% conversion rate (to 1.25%) is meaningful regardless of what the industry average is.' },
-  { q: 'How long does CRO take to show results?', a: 'CRO test results depend on traffic volume and the size of the conversion rate difference being detected. Low-traffic sites need to run tests for longer to reach statistical significance — sometimes 4 to 8 weeks per test. High-traffic sites can reach significance in 1 to 2 weeks. The minimum traffic requirement for reliable A/B test results is approximately 1,000 conversions per variant — so a page receiving 10,000 sessions with a 5% conversion rate (500 conversions) needs at minimum 2 test cycles before reaching significance. We calculate required sample sizes before starting tests so you know the timeline upfront.' },
+  { q: 'What is conversion rate optimisation (CRO)?', a: 'Conversion rate optimisation (CRO) is the systematic practice of increasing the percentage of website visitors who complete a desired action - a purchase, enquiry form submission, phone call, email sign-up, or other goal. CRO uses data analysis (quantitative analytics + qualitative user research), hypothesis generation, and controlled A/B or multivariate testing to make evidence-based improvements to pages, funnels, and user journeys - improving conversion rate without necessarily increasing traffic.' },
+  { q: 'How is CRO different from UX design?', a: 'CRO and UX overlap significantly but differ in approach. UX design is typically a creative and strategic discipline focused on the entire user experience - often without controlled testing to validate individual changes. CRO is a scientific discipline focused specifically on conversion metrics - hypothesising that a specific change will increase conversion rate and testing that hypothesis in a controlled experiment. Good CRO uses UX principles to generate hypotheses and A/B testing to validate them with statistical confidence. We combine both - UX-informed ideation and rigorous A/B test validation.' },
+  { q: 'What conversion rate is "good"?', a: 'Conversion rates vary enormously by industry, traffic source, and conversion type. Ecommerce conversion rates typically range from 1% to 4% for direct purchases; lead generation forms for B2B can range from 2% to 10% depending on the ask. Averages matter less than your own baseline - our goal is to improve YOUR conversion rate relative to your current performance. A 25% relative improvement to a 1% conversion rate (to 1.25%) is meaningful regardless of what the industry average is.' },
+  { q: 'How long does CRO take to show results?', a: 'CRO test results depend on traffic volume and the size of the conversion rate difference being detected. Low-traffic sites need to run tests for longer to reach statistical significance - sometimes 4 to 8 weeks per test. High-traffic sites can reach significance in 1 to 2 weeks. The minimum traffic requirement for reliable A/B test results is approximately 1,000 conversions per variant - so a page receiving 10,000 sessions with a 5% conversion rate (500 conversions) needs at minimum 2 test cycles before reaching significance. We calculate required sample sizes before starting tests so you know the timeline upfront.' },
   { q: 'What pages should be prioritised for CRO?', a: 'Prioritise pages by: traffic volume × conversion impact potential. The highest-value CRO targets are typically: checkout pages (high traffic, direct revenue impact); primary landing pages from paid traffic (high spend at risk); lead generation forms (direct pipeline impact); product pages for your top-selling products; and homepage or key category pages with high exit rates. We use GA4 funnel analysis to identify where the largest conversion gaps exist in your specific user journey.' },
-  { q: 'Do I need CRO or do I need better traffic?', a: 'Both matter, but CRO improves the return on ALL your traffic channels simultaneously. Doubling your traffic costs twice as much. Doubling your conversion rate from 1% to 2% doubles your revenue from the same traffic spend. CRO is typically the higher ROI investment once you have meaningful traffic volume (at least 10,000 sessions/month to test effectively). If you are still building traffic, focus on SEO and paid channels first — CRO has diminishing value below the traffic threshold needed for statistically reliable testing.' },
-  { q: 'Can CRO damage SEO?', a: 'Poorly executed CRO can inadvertently damage SEO — for example, removing content that contains target keywords, changing URL structures, or altering structured data incorrectly. Well-executed CRO avoids these risks. Our CRO team works alongside our SEO team — all significant page changes are reviewed for SEO impact before deployment. Specifically, we ensure: content changes maintain keyword relevance; A/B test JavaScript does not interfere with Googlebot rendering; winning variants replace the original cleanly without creating duplicate content; and meta data is preserved across test variants.' },
-  { q: 'What is the minimum traffic needed for CRO testing?', a: 'Effective A/B testing requires sufficient statistical power. As a general guide: you need at least 1,000 conversions per variant to detect a 20% relative improvement with 95% confidence. This means: if your landing page converts at 3%, you need approximately 33,000 sessions to run a valid test detecting a 20% lift. Lower traffic sites are not excluded from CRO — but testing cycles are longer, and some test types (multivariate with many combinations) are not statistically feasible. For lower-traffic sites we focus on high-impact single-variable tests and qualitative CRO (heuristic audits, user testing) rather than statistical A/B testing.' },
+  { q: 'Do I need CRO or do I need better traffic?', a: 'Both matter, but CRO improves the return on ALL your traffic channels simultaneously. Doubling your traffic costs twice as much. Doubling your conversion rate from 1% to 2% doubles your revenue from the same traffic spend. CRO is typically the higher ROI investment once you have meaningful traffic volume (at least 10,000 sessions/month to test effectively). If you are still building traffic, focus on SEO and paid channels first - CRO has diminishing value below the traffic threshold needed for statistically reliable testing.' },
+  { q: 'Can CRO damage SEO?', a: 'Poorly executed CRO can inadvertently damage SEO - for example, removing content that contains target keywords, changing URL structures, or altering structured data incorrectly. Well-executed CRO avoids these risks. Our CRO team works alongside our SEO team - all significant page changes are reviewed for SEO impact before deployment. Specifically, we ensure: content changes maintain keyword relevance; A/B test JavaScript does not interfere with Googlebot rendering; winning variants replace the original cleanly without creating duplicate content; and meta data is preserved across test variants.' },
+  { q: 'What is the minimum traffic needed for CRO testing?', a: 'Effective A/B testing requires sufficient statistical power. As a general guide: you need at least 1,000 conversions per variant to detect a 20% relative improvement with 95% confidence. This means: if your landing page converts at 3%, you need approximately 33,000 sessions to run a valid test detecting a 20% lift. Lower traffic sites are not excluded from CRO - but testing cycles are longer, and some test types (multivariate with many combinations) are not statistically feasible. For lower-traffic sites we focus on high-impact single-variable tests and qualitative CRO (heuristic audits, user testing) rather than statistical A/B testing.' },
 ];
 
 const STATS = [
@@ -68,7 +68,7 @@ export default function ConversionRateOptimizationServices() {
     <>
       <Head>
         <title>Conversion Rate Optimisation (CRO) Services | 1Solutions</title>
-        <meta name="description" content="Conversion rate optimisation services — A/B testing, heatmap analysis, landing page optimisation, and checkout CRO." />
+        <meta name="description" content="Conversion rate optimisation services - A/B testing, heatmap analysis, landing page optimisation, and checkout CRO." />
         <meta name="keywords" content="conversion rate optimization services, cro services, a/b testing agency, cro agency, landing page optimization, checkout optimization, cro audit" />
         <link rel="canonical" href="https://www.1solutions.biz/conversion-rate-optimization-services/" />
         <meta property="og:title" content="Conversion Rate Optimisation Services | 1Solutions" />
@@ -150,8 +150,8 @@ export default function ConversionRateOptimizationServices() {
           <div className="cro-in">
             <nav className="cro-bc"><Link href="/">Home</Link><span>/</span><Link href="/seo-services-company">SEO &amp; Marketing</Link><span>/</span><span style={{color:'#E11D48'}}>Conversion Rate Optimisation</span></nav>
             <span className="cro-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#E11D48',display:'inline-block'}}/> A/B Testing · Heatmaps · Landing Pages</span>
-            <h1 className="cro-h1">Conversion Rate Optimisation Services — More Revenue from Your Existing Traffic</h1>
-            <p className="cro-sub">Data-driven CRO — A/B testing, user behaviour analysis, landing page optimisation, and checkout improvement — that increases conversion rate without increasing ad spend.</p>
+            <h1 className="cro-h1">Conversion Rate Optimisation Services - More Revenue from Your Existing Traffic</h1>
+            <p className="cro-sub">Data-driven CRO - A/B testing, user behaviour analysis, landing page optimisation, and checkout improvement - that increases conversion rate without increasing ad spend.</p>
             <div className="cro-btns">
               <Link href="/contact-us" className="cro-btn-p">Get a CRO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/seo-audit-services" className="cro-btn-s">SEO Audit</Link>
@@ -161,7 +161,7 @@ export default function ConversionRateOptimizationServices() {
         </section>
         <section className="cro-svc"><div className="cro-svc-in">
           <span className="cro-ey2">What We Do</span><h2 className="cro-ttl">Conversion Rate Optimisation Services</h2>
-          <p className="cro-desc">CRO audit to A/B testing to checkout optimisation — a systematic, data-first process that turns more visitors into customers.</p>
+          <p className="cro-desc">CRO audit to A/B testing to checkout optimisation - a systematic, data-first process that turns more visitors into customers.</p>
           <div className="cro-grid" ref={cardsRef}>{SERVICES.map((s,i) => <div key={s.n} className={`cro-card${visibleCards.includes(i)?' visible':''}`}><div className="cro-num">{s.n}</div><h3>{s.title}</h3><p>{s.desc}</p></div>)}</div>
         </div></section>
         <section className="cro-tools"><div className="cro-tools-in">
@@ -170,12 +170,12 @@ export default function ConversionRateOptimizationServices() {
         </div></section>
         <section className="cro-proc"><div className="cro-proc-in">
           <span className="cro-ey2">How We Work</span><h2 className="cro-ttl">Our CRO Process</h2>
-          <p className="cro-desc">Data to hypothesis to test to statistical decision — a rigorous cycle that compounds conversion improvements month after month with evidence, not opinion.</p>
+          <p className="cro-desc">Data to hypothesis to test to statistical decision - a rigorous cycle that compounds conversion improvements month after month with evidence, not opinion.</p>
           <div className="cro-steps">{PROCESS.map((p,i) => <div key={p.step} ref={el=>{stepRefs.current[i]=el}} className={`cro-step${visibleSteps.includes(i)?' visible':''}`}><div className="cro-snum">{p.step}</div><div><h3>{p.title}</h3><p>{p.desc}</p></div></div>)}</div>
         </div></section>
         <section className="cro-why"><div className="cro-why-in">
           <span className="cro-ey2">Why 1Solutions</span><h2 className="cro-ttl">Data-Driven CRO, Not Gut-Feel Redesigns</h2>
-          <p className="cro-desc">We test before we declare winners, run to statistical significance, and report transparently — including failed tests that still generate learning.</p>
+          <p className="cro-desc">We test before we declare winners, run to statistical significance, and report transparently - including failed tests that still generate learning.</p>
           <div className="cro-why-grid" ref={whyRef}>{WHY.map((w,i) => <div key={w.title} className={`cro-wcard${visibleWhy.includes(i)?' visible':''}`}><div className="cro-dot"/><h3>{w.title}</h3><p>{w.desc}</p></div>)}</div>
         </div></section>
         <section className="cro-faq"><div className="cro-faq-in">
@@ -187,7 +187,7 @@ export default function ConversionRateOptimizationServices() {
           <div className="cro-cta-in">
             <span className="cro-ey2" style={{textAlign:'center',display:'block',marginBottom:16}}>Ready to Convert More of Your Existing Traffic?</span>
             <h2 className="cro-cta-t">Get Your CRO Audit</h2>
-            <p className="cro-cta-s">We&rsquo;ll review your conversion funnel, identify your biggest drop-off points, and prioritise the tests most likely to move your conversion rate — starting with a free CRO audit.</p>
+            <p className="cro-cta-s">We&rsquo;ll review your conversion funnel, identify your biggest drop-off points, and prioritise the tests most likely to move your conversion rate - starting with a free CRO audit.</p>
             <div className="cro-cta-btns">
               <Link href="/contact-us" className="cro-btn-p">Get Free CRO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/seo-services-company" className="cro-btn-s">SEO Services Overview</Link>

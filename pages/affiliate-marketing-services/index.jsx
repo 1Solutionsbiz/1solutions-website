@@ -40,26 +40,26 @@ const SKILLS = [
 const MODELS = [
   { title: 'Program Setup',      desc: 'Full affiliate program launch: platform selection, commission structure, tracking setup, creatives, terms, and initial affiliate recruitment.', icon: '⚙️' },
   { title: 'Monthly Management', desc: 'Ongoing affiliate program management: recruitment, communications, commission reviews, fraud monitoring, and monthly performance reporting.', icon: '📅' },
-  { title: 'Program Audit',      desc: 'A detailed audit of your existing affiliate program — identifying inactive affiliates, commission cannibalisation, fraud risks, and growth opportunities.', icon: '🔍' },
+  { title: 'Program Audit',      desc: 'A detailed audit of your existing affiliate program - identifying inactive affiliates, commission cannibalisation, fraud risks, and growth opportunities.', icon: '🔍' },
 ];
 const WHY = [
-  { h: 'Performance-Only Channel',         b: 'Affiliate marketing is the only paid channel where you pay purely for results — no wasted budget on impressions or clicks that don\'t convert.' },
-  { h: 'Quality Affiliate Recruitment',    b: 'We recruit topical content affiliates, review sites, comparison platforms, and deal communities — not coupon parasites that cannibalise your organic traffic.' },
-  { h: 'Platform-Agnostic Expertise',      b: 'We work across ShareASale, Commission Junction (CJ), Impact Radius, PartnerStack, Refersion, and direct affiliate tracking — recommending the right platform for your margins and product type.' },
+  { h: 'Performance-Only Channel',         b: 'Affiliate marketing is the only paid channel where you pay purely for results - no wasted budget on impressions or clicks that don\'t convert.' },
+  { h: 'Quality Affiliate Recruitment',    b: 'We recruit topical content affiliates, review sites, comparison platforms, and deal communities - not coupon parasites that cannibalise your organic traffic.' },
+  { h: 'Platform-Agnostic Expertise',      b: 'We work across ShareASale, Commission Junction (CJ), Impact Radius, PartnerStack, Refersion, and direct affiliate tracking - recommending the right platform for your margins and product type.' },
   { h: 'Commission Structure Optimisation', b: 'The wrong commission structure either kills affiliate motivation or destroys your margins. We model commission rates against your AOV, CLV, and blended CAC to find the sweet spot.' },
   { h: 'Fraud Prevention',                 b: 'Coupon stacking, cookie stuffing, and brand bidding by affiliates can silently erode your profitability. We monitor for policy violations and remove bad actors before they cost you.' },
-  { h: 'Transparent Reporting',            b: 'Monthly reports showing programme revenue, affiliate count, top performers, average order value, and incremental revenue — not just click and impression numbers.' },
+  { h: 'Transparent Reporting',            b: 'Monthly reports showing programme revenue, affiliate count, top performers, average order value, and incremental revenue - not just click and impression numbers.' },
 ];
 const PROCESS = [
-  { n: '01', h: 'Program Audit / Strategy', b: 'We audit your current setup (or design from scratch) — commission model, platform choice, affiliate mix, and competitive benchmarking.' },
+  { n: '01', h: 'Program Audit / Strategy', b: 'We audit your current setup (or design from scratch) - commission model, platform choice, affiliate mix, and competitive benchmarking.' },
   { n: '02', h: 'Setup & Launch',           b: 'Platform configuration, tracking implementation, creative assets, affiliate terms, and recruitment outreach to 50+ targeted affiliates.' },
   { n: '03', h: 'Recruit & Activate',       b: 'Ongoing recruitment targeting high-quality content and review affiliates. Activation campaigns for approved but inactive affiliates.' },
   { n: '04', h: 'Optimise & Report',        b: 'Monthly performance reviews, commission adjustments, fraud sweeps, and co-marketing with top affiliates to grow programme revenue.' },
 ];
 const FAQS = [
   { q: 'What affiliate platforms do you manage programs on?', a: 'We work across all major affiliate networks and SaaS platforms: ShareASale, Commission Junction (CJ Affiliate), Impact Radius, PartnerStack, Refersion, Tapfiliate, Awin, and Rakuten Advertising. For SaaS companies, we also set up direct referral programs using custom tracking. We recommend the right platform based on your product type, margins, and target affiliate mix.' },
-  { q: 'How long does it take to launch an affiliate program?', a: 'A new affiliate program takes 3–4 weeks to set up: 1 week for platform configuration and creative assets, 1–2 weeks for initial affiliate recruitment, and an ongoing ramp-up period of 60–90 days before meaningful revenue builds. Affiliate programs are a long-term channel — they compound over time, not overnight.' },
-  { q: 'How do you recruit affiliates?', a: 'We use a combination of outreach to existing content creators in your niche, placement on affiliate directories, recruitment through the affiliate network marketplace, and direct outreach to review sites, comparison platforms, and deal communities. We target quality over quantity — 20 active affiliates outperform 200 dormant ones.' },
+  { q: 'How long does it take to launch an affiliate program?', a: 'A new affiliate program takes 3–4 weeks to set up: 1 week for platform configuration and creative assets, 1–2 weeks for initial affiliate recruitment, and an ongoing ramp-up period of 60–90 days before meaningful revenue builds. Affiliate programs are a long-term channel - they compound over time, not overnight.' },
+  { q: 'How do you recruit affiliates?', a: 'We use a combination of outreach to existing content creators in your niche, placement on affiliate directories, recruitment through the affiliate network marketplace, and direct outreach to review sites, comparison platforms, and deal communities. We target quality over quantity - 20 active affiliates outperform 200 dormant ones.' },
   { q: 'How do you prevent affiliate fraud?', a: 'We monitor for common fraud patterns: coupon stacking (affiliates claiming commissions for customers who never used their link), cookie stuffing, brand keyword bidding (affiliates bidding on your brand name in paid search), and self-referrals. We enforce strict affiliate terms, audit suspicious conversion patterns, and remove bad actors immediately.' },
   { q: 'What commission rates should we offer?', a: 'Typical commission rates range from 5–20% for physical products and 15–40% for digital products and SaaS. The right rate depends on your average order value, customer lifetime value, gross margin, and competitive affiliate landscape. We model the optimal rate during program setup.' },
   { q: 'Do you sign NDAs?', a: 'Yes. NDA and confidentiality agreements signed before any access to your revenue data, affiliate platform, or commission structure.' },
@@ -94,7 +94,7 @@ export default function AffiliateMarketingServices() {
         { '@type': 'ListItem', position: 2, name: 'Affiliate Marketing Services', item: 'https://www.1solutions.biz/affiliate-marketing-services/' },
       ]},
       { '@type': 'Service', name: 'Affiliate Marketing Services', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Affiliate marketing services from 1Solutions — affiliate program setup, recruitment, fraud management, and ongoing affiliate channel management.',
+        description: 'Affiliate marketing services from 1Solutions - affiliate program setup, recruitment, fraud management, and ongoing affiliate channel management.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '84', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -105,7 +105,7 @@ export default function AffiliateMarketingServices() {
     <>
       <Head>
         <title>Affiliate Marketing Services | 1Solutions</title>
-        <meta name="description" content="Expert affiliate marketing services from 1Solutions. We set up, recruit, and manage affiliate programs for e-commerce and SaaS brands — driving" />
+        <meta name="description" content="Expert affiliate marketing services from 1Solutions. We set up, recruit, and manage affiliate programs for e-commerce and SaaS brands - driving" />
         <link rel="canonical" href="https://www.1solutions.biz/affiliate-marketing-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
@@ -158,8 +158,8 @@ export default function AffiliateMarketingServices() {
         `}</style>
       </Head>
       <section className="aff-hero">
-        <h1>Affiliate Marketing Services — Build a Performance-Based Revenue Channel</h1>
-        <p>We set up and manage affiliate programs that drive sales on pure performance — you only pay for results. From programme architecture and affiliate recruitment to compliance and payout management, we run every part of your affiliate channel.</p>
+        <h1>Affiliate Marketing Services - Build a Performance-Based Revenue Channel</h1>
+        <p>We set up and manage affiliate programs that drive sales on pure performance - you only pay for results. From programme architecture and affiliate recruitment to compliance and payout management, we run every part of your affiliate channel.</p>
         <div className="aff-hero-btns">
           <Link href="/contact-us" className="aff-btn-primary">Get a Free Affiliate Audit →</Link>
           <Link href="/contact-us" className="aff-btn-outline">Learn More</Link>
@@ -168,7 +168,7 @@ export default function AffiliateMarketingServices() {
       <section className="aff-sec" ref={skR}>
         <div className="aff-wrap">
           <h2 className="aff-sec-title">Affiliate Marketing Capabilities</h2>
-          <p className="aff-sec-sub">From programme architecture to fraud prevention — we cover every aspect of affiliate channel management.</p>
+          <p className="aff-sec-sub">From programme architecture to fraud prevention - we cover every aspect of affiliate channel management.</p>
           <div className="aff-skills">{SKILLS.map((s, i) => <span key={s} className={`aff-skill${skV ? ' aff-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>)}</div>
         </div>
       </section>
@@ -182,7 +182,7 @@ export default function AffiliateMarketingServices() {
       <section className="aff-sec" ref={whR}>
         <div className="aff-wrap">
           <h2 className="aff-sec-title">Why Choose 1Solutions for Affiliate Marketing?</h2>
-          <p className="aff-sec-sub">We build affiliate programmes that compound over time — not quick-win coupon farms that erode your margins.</p>
+          <p className="aff-sec-sub">We build affiliate programmes that compound over time - not quick-win coupon farms that erode your margins.</p>
           <div className="aff-why-grid">{WHY.map((w, i) => <div key={w.h} className={`aff-why-item${whV ? ' aff-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
         </div>
       </section>
@@ -197,7 +197,7 @@ export default function AffiliateMarketingServices() {
       <section className="aff-sec aff-sec-alt" ref={prR}>
         <div className="aff-wrap">
           <h2 className="aff-sec-title">How We Build Your Affiliate Programme</h2>
-          <p className="aff-sec-sub">From strategy to compounding revenue — in four structured phases.</p>
+          <p className="aff-sec-sub">From strategy to compounding revenue - in four structured phases.</p>
           <div className="aff-process">{PROCESS.map((p, i) => <div key={p.n} className={`aff-step${prV ? ' aff-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}><div className="aff-step-n">{p.n}</div><h3>{p.h}</h3><p>{p.b}</p></div>)}</div>
         </div>
       </section>
@@ -211,7 +211,7 @@ export default function AffiliateMarketingServices() {
       <section className="aff-cta">
         <div className="aff-wrap">
           <h2>Ready to Build Your Affiliate Channel?</h2>
-          <p>Get a free affiliate program audit — we'll review your current setup (or design one from scratch) and deliver a launch plan within 48 hours.</p>
+          <p>Get a free affiliate program audit - we'll review your current setup (or design one from scratch) and deliver a launch plan within 48 hours.</p>
           <Link href="/contact-us" className="aff-btn-primary">Get a Free Affiliate Audit →</Link>
         </div>
       </section>

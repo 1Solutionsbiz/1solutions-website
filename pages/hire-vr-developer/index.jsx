@@ -27,12 +27,12 @@ const SKILLS = [
   'Oculus Interaction SDK', 'Mixed Reality Toolkit (MRTK)', 'Physics & Collision Simulation', 'VR Performance Optimisation',
 ];
 const MODELS = [
-  { title: 'Dedicated Hire', desc: 'A full-time VR/AR developer committed to your XR product — 8 hrs/day, 5 days/week.', icon: '👤' },
+  { title: 'Dedicated Hire', desc: 'A full-time VR/AR developer committed to your XR product - 8 hrs/day, 5 days/week.', icon: '👤' },
   { title: 'Part-Time Hire', desc: 'Half-day engagement for VR module development, scene optimisation, or platform porting.', icon: '⏰' },
   { title: 'Hourly Hire',    desc: 'Flexible billing for performance profiling, hand-tracking integration, or visionOS prototypes.', icon: '🕐' },
 ];
 const WHY = [
-  { h: 'Multi-Platform XR Expertise', b: 'Our developers deploy across Meta Quest, Apple Vision Pro, HTC Vive, and WebXR — one team, all major headsets.' },
+  { h: 'Multi-Platform XR Expertise', b: 'Our developers deploy across Meta Quest, Apple Vision Pro, HTC Vive, and WebXR - one team, all major headsets.' },
   { h: 'Unity & Unreal Specialists', b: 'Deep experience in both engines: Unity (C# scripts, URP/HDRP, XR Interaction Toolkit) and Unreal Engine 5 (Blueprints, XR plugins, Nanite).' },
   { h: 'Profiles in 48 Hours', b: 'Submit your XR brief and receive 2-3 matched VR developer profiles within two business days.' },
   { h: 'Comfort & Performance Focus', b: 'We engineer for 90fps+ frame rates, minimal motion sickness, correct IPD handling, and accessible interaction models.' },
@@ -42,14 +42,14 @@ const WHY = [
 const PROCESS = [
   { n: '01', h: 'Describe Your XR Vision', b: 'Tell us the target headset(s), use case (training, retail, entertainment, enterprise), and the engine preference.' },
   { n: '02', h: 'Receive Profiles', b: '2-3 matched VR developer CVs with demo links delivered within 48 hours.' },
-  { n: '03', h: 'Interview & Select', b: 'Run your technical round — Unity scene review, performance discussion, or live interaction prototype.' },
+  { n: '03', h: 'Interview & Select', b: 'Run your technical round - Unity scene review, performance discussion, or live interaction prototype.' },
   { n: '04', h: 'Onboard & Build', b: 'Developer joins your project. First scene prototype ships within 7 days.' },
 ];
 const FAQS = [
   { q: 'Do you develop for Meta Quest, Apple Vision Pro, and PC VR?', a: 'Yes. We develop for Meta Quest 2/3/Pro (standalone and PC-link), Apple Vision Pro (visionOS with RealityKit/SwiftUI), HTC Vive/Cosmos, Valve Index, and browser-based WebXR. We also handle multi-platform builds from a single Unity or Unreal codebase.' },
-  { q: 'Which engine do you recommend — Unity or Unreal?', a: 'Unity for mobile VR (Meta Quest standalone), multiplayer apps, and rapid iteration. Unreal Engine 5 for photorealistic visuals, large open-world environments, and high-fidelity training simulators where visual fidelity is paramount.' },
+  { q: 'Which engine do you recommend - Unity or Unreal?', a: 'Unity for mobile VR (Meta Quest standalone), multiplayer apps, and rapid iteration. Unreal Engine 5 for photorealistic visuals, large open-world environments, and high-fidelity training simulators where visual fidelity is paramount.' },
   { q: 'Can you build enterprise VR training applications?', a: 'Yes. We have delivered safety training, surgical procedure simulations, equipment maintenance guides, and soft-skills training applications for enterprise clients in manufacturing, healthcare, and aviation.' },
-  { q: 'How do you handle VR performance and motion sickness prevention?', a: 'We target 90fps+ with fixed foveated rendering, aggressive draw-call batching, LOD management, and physics offloading. We follow Oculus and Apple comfort guidelines — no artificial locomotion without tunnelling, proper IPD and IPD rendering.' },
+  { q: 'How do you handle VR performance and motion sickness prevention?', a: 'We target 90fps+ with fixed foveated rendering, aggressive draw-call batching, LOD management, and physics offloading. We follow Oculus and Apple comfort guidelines - no artificial locomotion without tunnelling, proper IPD and IPD rendering.' },
   { q: 'Can you add hand tracking to an existing VR app?', a: 'Yes. We integrate Meta Hand Tracking SDK, Apple ARKit hand anchors, and Ultraleap for PC VR. We redesign interactions as necessary to work without controllers.' },
   { q: 'Do you sign NDAs?', a: 'Yes. NDA and IP assignment agreements are signed as standard before any engagement begins.' },
 ];
@@ -83,7 +83,7 @@ export default function HireVrDeveloper() {
         { '@type': 'ListItem', position: 2, name: 'Hire VR Developer', item: 'https://www.1solutions.biz/hire-vr-developer/' },
       ]},
       { '@type': 'Service', name: 'Hire VR Developer', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Hire dedicated VR/AR developers from 1Solutions — Unity, Unreal Engine, Meta Quest, and Apple Vision Pro specialists.',
+        description: 'Hire dedicated VR/AR developers from 1Solutions - Unity, Unreal Engine, Meta Quest, and Apple Vision Pro specialists.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '58', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -148,7 +148,7 @@ export default function HireVrDeveloper() {
       </Head>
       <section className="hvrd-hero">
         <h1>Hire VR Developers<br/>Unity, Unreal &amp; Meta Quest Specialists</h1>
-        <p>Pre-vetted XR engineers who build immersive VR/AR experiences for Meta Quest, Apple Vision Pro, HTC Vive, and WebXR — with 90fps performance as standard. Profiles in 48 hours.</p>
+        <p>Pre-vetted XR engineers who build immersive VR/AR experiences for Meta Quest, Apple Vision Pro, HTC Vive, and WebXR - with 90fps performance as standard. Profiles in 48 hours.</p>
         <div className="hvrd-hero-btns">
           <Link href="/contact-us" className="hvrd-btn-primary">Hire a VR Developer →</Link>
           <Link href="/portfolio" className="hvrd-btn-outline">View Portfolio</Link>
@@ -164,14 +164,14 @@ export default function HireVrDeveloper() {
       <section className="hvrd-sec hvrd-sec-alt" ref={enR}>
         <div className="hvrd-wrap">
           <h2 className="hvrd-sec-title">Flexible Engagement Models</h2>
-          <p className="hvrd-sec-sub">From full XR product builds to targeted integration sprints — we fit your timeline.</p>
+          <p className="hvrd-sec-sub">From full XR product builds to targeted integration sprints - we fit your timeline.</p>
           <div className="hvrd-models">{MODELS.map((m, i) => <div key={m.title} className={`hvrd-model${enV ? ' hvrd-in' : ''}`} style={{ transitionDelay: `${i * 120}ms` }}><div className="hvrd-model-icon">{m.icon}</div><h3>{m.title}</h3><p>{m.desc}</p></div>)}</div>
         </div>
       </section>
       <section className="hvrd-sec" ref={whR}>
         <div className="hvrd-wrap">
           <h2 className="hvrd-sec-title">Why Hire VR Developers from 1Solutions?</h2>
-          <p className="hvrd-sec-sub">We place XR engineers who have shipped real applications — not just VR demos.</p>
+          <p className="hvrd-sec-sub">We place XR engineers who have shipped real applications - not just VR demos.</p>
           <div className="hvrd-why-grid">{WHY.map((w, i) => <div key={w.h} className={`hvrd-why-item${whV ? ' hvrd-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
         </div>
       </section>
@@ -186,7 +186,7 @@ export default function HireVrDeveloper() {
       <section className="hvrd-sec hvrd-sec-alt" ref={prR}>
         <div className="hvrd-wrap">
           <h2 className="hvrd-sec-title">Hire in 4 Simple Steps</h2>
-          <p className="hvrd-sec-sub">From XR brief to first interactive scene prototype — in under two weeks.</p>
+          <p className="hvrd-sec-sub">From XR brief to first interactive scene prototype - in under two weeks.</p>
           <div className="hvrd-process">{PROCESS.map((p, i) => <div key={p.n} className={`hvrd-step${prV ? ' hvrd-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}><div className="hvrd-step-n">{p.n}</div><h3>{p.h}</h3><p>{p.b}</p></div>)}</div>
         </div>
       </section>
@@ -200,7 +200,7 @@ export default function HireVrDeveloper() {
       <section className="hvrd-cta">
         <div className="hvrd-wrap">
           <h2>Ready to Hire Your VR Developer?</h2>
-          <p>Share your XR vision and receive matched VR developer profiles with demo links within 48 hours — no commitment required.</p>
+          <p>Share your XR vision and receive matched VR developer profiles with demo links within 48 hours - no commitment required.</p>
           <Link href="/contact-us" className="hvrd-btn-primary">Get Started Today →</Link>
         </div>
       </section>

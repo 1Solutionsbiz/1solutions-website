@@ -3,48 +3,48 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const SERVICES = [
-  { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Practice Area Keyword Targeting', desc: 'In-depth keyword mapping for personal injury, car accident lawyer, medical malpractice, family law attorney, DUI defense, criminal lawyer, immigration attorney, estate planning, bankruptcy attorney, and workers compensation — targeting every case type at every stage of the search funnel.' },
-  { icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z', title: 'Attorney Google Business Profile', desc: 'Law firm GBP setup with the correct legal service categories, office hours, virtual consultation option, headshot and office photos, consultation booking link, and review management — the first impression for most prospective clients searching for an attorney.' },
-  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'Practice Area Landing Pages', desc: 'Dedicated, individually optimised pages for every legal specialty — personal injury, medical malpractice, workers compensation, divorce and family law, child custody, DUI defense, criminal defense, estate planning, immigration, and bankruptcy — each ranking its own keyword cluster.' },
-  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'Legal Content Authority Building', desc: 'In-depth legal guides and FAQ pages targeting the research queries prospective clients type before hiring an attorney — "what to do after a car accident", "how is child custody determined", "what is the statute of limitations for personal injury" — building topical authority that lifts all practice area pages.' },
-  { icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1', title: 'Law Firm Citation Building', desc: 'Attorney and law firm listings across Avvo, FindLaw, Justia, Martindale-Hubbell, Super Lawyers, Lawyers.com, Nolo, and state bar association directories — the legal-specific citation profile that builds both authority and trust signals for prospective clients.' },
-  { icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4', title: 'Legal Schema Markup', desc: 'LegalService, Attorney, and LawFirm schema types with practice areas, jurisdictions served, bar admissions, attorney credentials, and case type schema — structured data that enhances your Google Knowledge Panel and eligibility for legal rich results.' },
-  { icon: 'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z', title: 'Reputation and Review Strategy', desc: 'Google and Avvo review generation with bar association compliance in mind — ethical review request workflows, response templates for negative reviews, and a strategy to build the review profile that prospective clients trust when making high-stakes legal decisions.' },
-  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'Competitor Gap Analysis', desc: 'Detailed analysis of which cases your local competitors rank for that you do not — from "slip and fall attorney [city]" to "[state] DUI lawyer" — with a prioritised keyword capture roadmap targeting the highest-value case-type queries in your market.' },
+  { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Practice Area Keyword Targeting', desc: 'In-depth keyword mapping for personal injury, car accident lawyer, medical malpractice, family law attorney, DUI defense, criminal lawyer, immigration attorney, estate planning, bankruptcy attorney, and workers compensation - targeting every case type at every stage of the search funnel.' },
+  { icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z', title: 'Attorney Google Business Profile', desc: 'Law firm GBP setup with the correct legal service categories, office hours, virtual consultation option, headshot and office photos, consultation booking link, and review management - the first impression for most prospective clients searching for an attorney.' },
+  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'Practice Area Landing Pages', desc: 'Dedicated, individually optimised pages for every legal specialty - personal injury, medical malpractice, workers compensation, divorce and family law, child custody, DUI defense, criminal defense, estate planning, immigration, and bankruptcy - each ranking its own keyword cluster.' },
+  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'Legal Content Authority Building', desc: 'In-depth legal guides and FAQ pages targeting the research queries prospective clients type before hiring an attorney - "what to do after a car accident", "how is child custody determined", "what is the statute of limitations for personal injury" - building topical authority that lifts all practice area pages.' },
+  { icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1', title: 'Law Firm Citation Building', desc: 'Attorney and law firm listings across Avvo, FindLaw, Justia, Martindale-Hubbell, Super Lawyers, Lawyers.com, Nolo, and state bar association directories - the legal-specific citation profile that builds both authority and trust signals for prospective clients.' },
+  { icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4', title: 'Legal Schema Markup', desc: 'LegalService, Attorney, and LawFirm schema types with practice areas, jurisdictions served, bar admissions, attorney credentials, and case type schema - structured data that enhances your Google Knowledge Panel and eligibility for legal rich results.' },
+  { icon: 'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z', title: 'Reputation and Review Strategy', desc: 'Google and Avvo review generation with bar association compliance in mind - ethical review request workflows, response templates for negative reviews, and a strategy to build the review profile that prospective clients trust when making high-stakes legal decisions.' },
+  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'Competitor Gap Analysis', desc: 'Detailed analysis of which cases your local competitors rank for that you do not - from "slip and fall attorney [city]" to "[state] DUI lawyer" - with a prioritised keyword capture roadmap targeting the highest-value case-type queries in your market.' },
 ];
 
 const RESULTS = [
-  { metric: '#1', label: 'For personal injury lawyer [city]', sub: 'Boutique PI firm — 6 months', color: '#FFD080' },
-  { metric: '7.4×', label: 'Increase in consultation requests', sub: 'Family law firm — 8 months', color: '#80D4FF' },
-  { metric: '440%', label: 'Growth in qualified organic traffic', sub: 'Criminal defense firm — 12 months', color: '#B0FFB0' },
+  { metric: '#1', label: 'For personal injury lawyer [city]', sub: 'Boutique PI firm - 6 months', color: '#FFD080' },
+  { metric: '7.4×', label: 'Increase in consultation requests', sub: 'Family law firm - 8 months', color: '#80D4FF' },
+  { metric: '440%', label: 'Growth in qualified organic traffic', sub: 'Criminal defense firm - 12 months', color: '#B0FFB0' },
 ];
 
 const PROCESS = [
-  { n: '01', title: 'Law Firm Audit + Competitor Analysis', desc: 'Full audit of your website, GBP, citation profile, and competitor keyword landscape — identifying exactly which case types your competitors rank for and which represent the fastest opportunity for your firm.' },
-  { n: '02', title: 'Practice Area Keyword Mapping', desc: 'We map every case type you handle to its own keyword cluster — separating personal injury intent from family law intent, criminal defense from DUI — building a keyword architecture that leaves no practice area uncovered.' },
+  { n: '01', title: 'Law Firm Audit + Competitor Analysis', desc: 'Full audit of your website, GBP, citation profile, and competitor keyword landscape - identifying exactly which case types your competitors rank for and which represent the fastest opportunity for your firm.' },
+  { n: '02', title: 'Practice Area Keyword Mapping', desc: 'We map every case type you handle to its own keyword cluster - separating personal injury intent from family law intent, criminal defense from DUI - building a keyword architecture that leaves no practice area uncovered.' },
   { n: '03', title: 'Attorney Pages + GBP Setup', desc: 'Individual attorney bio pages, dedicated practice area landing pages, and GBP optimised with legal categories and consultation booking. All content reviewed for bar association advertising compliance.' },
-  { n: '04', title: 'Citation + Legal Directory Building', desc: 'Law firm listed and verified across Avvo, FindLaw, Justia, Martindale-Hubbell, Super Lawyers, Lawyers.com, and state bar directories — building the legal-specific authority profile that ranks for high-competition legal keywords.' },
-  { n: '05', title: 'Content Authority Programme', desc: 'Monthly publication of in-depth legal guides and FAQ content targeting research-phase queries — building the topical authority that lifts all practice area pages and establishes your firm as the trusted source in your legal specialty.' },
-  { n: '06', title: 'Monthly Case Lead Reporting', desc: 'Monthly rank tracking for all practice area keywords, consultation request volume, GBP call tracking, and case lead attribution — with a 90-day forward roadmap tied to your highest-value case types.' },
+  { n: '04', title: 'Citation + Legal Directory Building', desc: 'Law firm listed and verified across Avvo, FindLaw, Justia, Martindale-Hubbell, Super Lawyers, Lawyers.com, and state bar directories - building the legal-specific authority profile that ranks for high-competition legal keywords.' },
+  { n: '05', title: 'Content Authority Programme', desc: 'Monthly publication of in-depth legal guides and FAQ content targeting research-phase queries - building the topical authority that lifts all practice area pages and establishes your firm as the trusted source in your legal specialty.' },
+  { n: '06', title: 'Monthly Case Lead Reporting', desc: 'Monthly rank tracking for all practice area keywords, consultation request volume, GBP call tracking, and case lead attribution - with a 90-day forward roadmap tied to your highest-value case types.' },
 ];
 
 const WHY = [
-  { title: 'Legal Industry SEO Specialists', desc: 'We understand legal search intent, bar association advertising rules, and the competitive dynamics of legal markets — from boutique personal injury firms to multi-practice-area regional law firms.' },
-  { title: 'High-Value Case Keyword Focus', desc: 'We prioritise the case types that generate the highest fees — personal injury, medical malpractice, complex family law, white-collar criminal defense — ensuring SEO effort is directed at the most valuable client acquisition opportunities.' },
-  { title: 'Practice Area Page Expertise', desc: 'Every practice area your firm handles gets its own keyword-optimised page — maximising the total number of case-type searches your firm appears for without cannibalising rankings between specialties.' },
-  { title: 'Avvo + Legal Directory Mastery', desc: 'Avvo, FindLaw, and Justia are not just citation sources — they are lead generation platforms in their own right. We optimise your profiles on each to generate direct enquiries, not just citation authority.' },
-  { title: 'No Lock-in Contracts', desc: 'Month-to-month engagements. You continue because the consultation requests keep growing — not because a long-term contract requires it.' },
-  { title: 'Case Lead Attribution Reporting', desc: 'Monthly reporting tied to consultation requests, GBP calls, and keyword ranking movement — with clear attribution showing which practice area pages and keywords are generating the highest-value client enquiries.' },
+  { title: 'Legal Industry SEO Specialists', desc: 'We understand legal search intent, bar association advertising rules, and the competitive dynamics of legal markets - from boutique personal injury firms to multi-practice-area regional law firms.' },
+  { title: 'High-Value Case Keyword Focus', desc: 'We prioritise the case types that generate the highest fees - personal injury, medical malpractice, complex family law, white-collar criminal defense - ensuring SEO effort is directed at the most valuable client acquisition opportunities.' },
+  { title: 'Practice Area Page Expertise', desc: 'Every practice area your firm handles gets its own keyword-optimised page - maximising the total number of case-type searches your firm appears for without cannibalising rankings between specialties.' },
+  { title: 'Avvo + Legal Directory Mastery', desc: 'Avvo, FindLaw, and Justia are not just citation sources - they are lead generation platforms in their own right. We optimise your profiles on each to generate direct enquiries, not just citation authority.' },
+  { title: 'No Lock-in Contracts', desc: 'Month-to-month engagements. You continue because the consultation requests keep growing - not because a long-term contract requires it.' },
+  { title: 'Case Lead Attribution Reporting', desc: 'Monthly reporting tied to consultation requests, GBP calls, and keyword ranking movement - with clear attribution showing which practice area pages and keywords are generating the highest-value client enquiries.' },
 ];
 
 const FAQS = [
   { q: 'How long does law firm SEO take to generate consultation requests?', a: 'GBP optimisation for law firms typically produces measurable additional calls within 4 to 8 weeks. Practice area landing pages typically achieve meaningful ranking movement within 3 to 5 months. For highly competitive legal keywords like "personal injury lawyer [major city]", top-3 organic positions typically take 9 to 18 months of consistent content authority building and link acquisition.' },
-  { q: 'Are personal injury and family law keywords very different to target?', a: 'Yes, significantly. Personal injury keywords have extremely high commercial intent — searchers have already experienced an injury and need representation now. Family law keywords often have more research intent — people are weighing their options. These different intent profiles require different landing page structures, different content angles, and different conversion optimisation approaches. We build separate strategies for each practice area.' },
-  { q: 'How important are Avvo and legal directories for law firm SEO?', a: 'Very important — in two distinct ways. First, Avvo and FindLaw rank highly in Google for legal search terms, so appearing prominently on these platforms drives direct client enquiries. Second, citations from legal directories are strong authority signals that help your own website rank for competitive legal keywords. We optimise your presence on all major legal platforms for both of these benefits.' },
-  { q: 'How do you handle bar association advertising compliance in legal content?', a: 'All law firm content we create is reviewed for compliance with ABA Model Rules on attorney advertising — avoiding unsubstantiated superlatives, misleading outcome guarantees, and testimonial language that violates state bar rules. We work with your team to ensure all content passes your bar association requirements before publication.' },
-  { q: 'Should law firms use local SEO or national SEO?', a: 'Most law firms should prioritise local SEO — the majority of clients hire attorneys within their city or state, and local search delivers the highest-intent traffic. However, practice areas like immigration law, entertainment law, or niche federal practice areas may benefit from national content strategies. We build the right mix based on your practice areas, case values, and client geography.' },
-  { q: 'Do you work with multi-attorney law firms?', a: 'Yes. Multi-attorney firms benefit from individual attorney bio pages that rank for attorney-name + practice area searches, in addition to the firm-level practice area pages. We build out the full page architecture — firm homepage, practice area pages, attorney bio pages, city-specific pages, and blog content — ensuring every attorney and every practice area has strong organic visibility.' },
-  { q: 'How do you measure ROI for law firm SEO?', a: 'We track consultation requests from organic search (form submissions and call tracking), GBP call volume, keyword ranking positions for all practice area terms, and map pack positions for attorney-related searches. For firms using CRM systems, we can help correlate organic leads to signed retainers — giving you a true cost-per-signed-client from your SEO investment.' },
+  { q: 'Are personal injury and family law keywords very different to target?', a: 'Yes, significantly. Personal injury keywords have extremely high commercial intent - searchers have already experienced an injury and need representation now. Family law keywords often have more research intent - people are weighing their options. These different intent profiles require different landing page structures, different content angles, and different conversion optimisation approaches. We build separate strategies for each practice area.' },
+  { q: 'How important are Avvo and legal directories for law firm SEO?', a: 'Very important - in two distinct ways. First, Avvo and FindLaw rank highly in Google for legal search terms, so appearing prominently on these platforms drives direct client enquiries. Second, citations from legal directories are strong authority signals that help your own website rank for competitive legal keywords. We optimise your presence on all major legal platforms for both of these benefits.' },
+  { q: 'How do you handle bar association advertising compliance in legal content?', a: 'All law firm content we create is reviewed for compliance with ABA Model Rules on attorney advertising - avoiding unsubstantiated superlatives, misleading outcome guarantees, and testimonial language that violates state bar rules. We work with your team to ensure all content passes your bar association requirements before publication.' },
+  { q: 'Should law firms use local SEO or national SEO?', a: 'Most law firms should prioritise local SEO - the majority of clients hire attorneys within their city or state, and local search delivers the highest-intent traffic. However, practice areas like immigration law, entertainment law, or niche federal practice areas may benefit from national content strategies. We build the right mix based on your practice areas, case values, and client geography.' },
+  { q: 'Do you work with multi-attorney law firms?', a: 'Yes. Multi-attorney firms benefit from individual attorney bio pages that rank for attorney-name + practice area searches, in addition to the firm-level practice area pages. We build out the full page architecture - firm homepage, practice area pages, attorney bio pages, city-specific pages, and blog content - ensuring every attorney and every practice area has strong organic visibility.' },
+  { q: 'How do you measure ROI for law firm SEO?', a: 'We track consultation requests from organic search (form submissions and call tracking), GBP call volume, keyword ranking positions for all practice area terms, and map pack positions for attorney-related searches. For firms using CRM systems, we can help correlate organic leads to signed retainers - giving you a true cost-per-signed-client from your SEO investment.' },
 ];
 
 export default function LawFirmSeoServices() {
@@ -180,10 +180,10 @@ export default function LawFirmSeoServices() {
         <div className="lwseo-inner">
           <span className="lwseo-eyebrow">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-            Law Firm SEO — Personal Injury · Family Law · Criminal Defense
+            Law Firm SEO - Personal Injury · Family Law · Criminal Defense
           </span>
           <h1 className="lwseo-h1">Law Firm SEO That Generates<br/>High-Value Client Cases</h1>
-          <p className="lwseo-desc">1Solutions builds law firm SEO strategies that rank for the highest-value legal keywords in your market — putting your firm in front of potential clients at the exact moment they need legal representation. Practice area pages, authority content, and legal directory dominance for attorneys who want to grow.</p>
+          <p className="lwseo-desc">1Solutions builds law firm SEO strategies that rank for the highest-value legal keywords in your market - putting your firm in front of potential clients at the exact moment they need legal representation. Practice area pages, authority content, and legal directory dominance for attorneys who want to grow.</p>
           <div className="lwseo-btns">
             <a href="#contact" className="lwseo-btn-p">
               Get Your Free Law Firm SEO Audit
@@ -201,7 +201,7 @@ export default function LawFirmSeoServices() {
           </div>
           <div className="lwseo-stats-bar">
             {[
-              { num:'$54–$300', lbl:'avg CPC for legal keywords — highest of any vertical' },
+              { num:'$54–$300', lbl:'avg CPC for legal keywords - highest of any vertical' },
               { num:'96%', lbl:'of people seeking legal advice start with search' },
               { num:'$40B+', lbl:'personal injury legal fees generated annually (US)' },
               { num:'12:1', lbl:'avg ROI for law firm SEO investment' },
@@ -219,7 +219,7 @@ export default function LawFirmSeoServices() {
         <div className="lwseo-sec-inner">
           <span className="lwseo-tag">What We Do</span>
           <h2 className="lwseo-h2">Full-Spectrum <span>Law Firm SEO Services</span></h2>
-          <p className="lwseo-lead">From practice area pages to legal directory authority — every component your law firm needs to rank for high-value case-type keywords and grow consultation requests.</p>
+          <p className="lwseo-lead">From practice area pages to legal directory authority - every component your law firm needs to rank for high-value case-type keywords and grow consultation requests.</p>
           <div className="lwseo-grid3">
             {SERVICES.map(s => (
               <div key={s.title} className="lwseo-card">
@@ -252,7 +252,7 @@ export default function LawFirmSeoServices() {
         <div className="lwseo-sec-inner">
           <span className="lwseo-tag">Why 1Solutions</span>
           <h2 className="lwseo-h2">The Legal SEO Agency <span>That Thinks in Case Values</span></h2>
-          <p className="lwseo-lead">We prioritise the case types that generate the highest revenue for your firm — and build SEO strategies that attract those clients consistently.</p>
+          <p className="lwseo-lead">We prioritise the case types that generate the highest revenue for your firm - and build SEO strategies that attract those clients consistently.</p>
           <div className="lwseo-grid3">
             {WHY.map(w => (
               <div key={w.title} className="lwseo-why-card">
@@ -269,7 +269,7 @@ export default function LawFirmSeoServices() {
         <div className="lwseo-sec-inner">
           <span className="lwseo-tag">How We Work</span>
           <h2 className="lwseo-h2">Our <span>6-Step Law Firm SEO Process</span></h2>
-          <p className="lwseo-lead">From competitive audit to ongoing consultation lead growth — a structured process for law firms that want to dominate legal search in their market.</p>
+          <p className="lwseo-lead">From competitive audit to ongoing consultation lead growth - a structured process for law firms that want to dominate legal search in their market.</p>
           <div className="lwseo-grid3">
             {PROCESS.map(p => (
               <div key={p.n}>
@@ -305,7 +305,7 @@ export default function LawFirmSeoServices() {
         <div className="lwseo-sec-inner">
           <span className="lwseo-tag" style={{ display:'block', textAlign:'center', marginBottom:12 }}>Ready to Grow Your Practice?</span>
           <h2 className="lwseo-cta-h">Get Your Free Law Firm SEO Audit</h2>
-          <p className="lwseo-cta-p">We will audit your website, GBP, legal directory presence, and competitor keyword landscape — and deliver a prioritised plan for growing your consultation requests from organic search. Free, no obligation.</p>
+          <p className="lwseo-cta-p">We will audit your website, GBP, legal directory presence, and competitor keyword landscape - and deliver a prioritised plan for growing your consultation requests from organic search. Free, no obligation.</p>
           <div style={{ display:'flex', gap:14, justifyContent:'center', flexWrap:'wrap' }}>
             <Link href="/contact-us" className="lwseo-btn-p">
               Request Free Audit

@@ -5,7 +5,7 @@ export default function ComtradesolCaseStudy() {
   return (
     <>
       <Head>
-        <title>Comtradesol Case Study — Corporate Website & LinkedIn Marketing | 1Solutions</title>
+        <title>Comtradesol Case Study - Corporate Website & LinkedIn Marketing | 1Solutions</title>
         <meta name="description" content="How 1Solutions built a professional WordPress website and managed LinkedIn marketing for Comtradesol Advisory Services, a Gurgaon-based financial advisory firm." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.1solutions.biz/case-studies/comtradesol" />
@@ -404,7 +404,7 @@ export default function ComtradesolCaseStudy() {
       <section className="csc-hero">
         <img
           src="/images/portfolio/comtradesol-showcase.jpg"
-          alt="Comtradesol Advisory Services — Portfolio Website by 1Solutions"
+          alt="Comtradesol Advisory Services - Portfolio Website by 1Solutions"
           className="csc-hero-img"
         />
         <div className="csc-hero-overlay" />
@@ -466,7 +466,7 @@ export default function ComtradesolCaseStudy() {
               Comtradesol Advisory Services Pvt. Ltd. is a Gurgaon-based startup advisory firm incorporated in 2024 by a group of seasoned professionals from diverse financial backgrounds. The firm offers end-to-end solutions in Trade Finance, Debt Syndication, Equity Advisory, Credit Rating, and a range of corporate finance advisory services across industries.
             </p>
             <p>
-              As a newly launched firm operating in a trust-driven industry, Comtradesol needed a digital presence that immediately communicated authority, professionalism, and deep domain expertise — before prospects ever picked up the phone.
+              As a newly launched firm operating in a trust-driven industry, Comtradesol needed a digital presence that immediately communicated authority, professionalism, and deep domain expertise - before prospects ever picked up the phone.
             </p>
           </div>
 
@@ -475,7 +475,7 @@ export default function ComtradesolCaseStudy() {
             <p className="csc-eyebrow">The Challenge</p>
             <h2>Standing Out in a Credibility-First Industry</h2>
             <p>
-              Financial advisory is one of the most trust-sensitive sectors in digital marketing. Prospects evaluate a firm's website within seconds — and a poorly designed or generic presence can cost a firm its credibility before any conversation begins.
+              Financial advisory is one of the most trust-sensitive sectors in digital marketing. Prospects evaluate a firm's website within seconds - and a poorly designed or generic presence can cost a firm its credibility before any conversation begins.
             </p>
             <p>
               Comtradesol faced three specific challenges: they needed a website that felt established despite being newly founded, a clear articulation of their multi-service offering without overwhelming visitors, and a LinkedIn presence that would reach their core audience of CFOs, promoters, and institutional clients.
@@ -487,7 +487,7 @@ export default function ComtradesolCaseStudy() {
             <p className="csc-eyebrow">Our Solution</p>
             <h2>A Custom WordPress Site Built for Trust and Conversion</h2>
             <p>
-              1Solutions designed and developed a fully custom WordPress website for Comtradesol — built from scratch with a bespoke theme that reflects the firm's identity in the financial sector. Every design decision was made with credibility in mind: a structured layout, authoritative typography, a restrained colour palette, and clear service segmentation.
+              1Solutions designed and developed a fully custom WordPress website for Comtradesol - built from scratch with a bespoke theme that reflects the firm's identity in the financial sector. Every design decision was made with credibility in mind: a structured layout, authoritative typography, a restrained colour palette, and clear service segmentation.
             </p>
 
             <div className="csc-feature-grid">
@@ -496,7 +496,7 @@ export default function ComtradesolCaseStudy() {
                   icon: '🎨',
                   bg: '#EDE9FE',
                   title: 'Custom WordPress Theme',
-                  desc: 'Designed and built a bespoke theme from the ground up — no templates. Every element was crafted to reflect Comtradesol\'s brand identity.',
+                  desc: 'Designed and built a bespoke theme from the ground up - no templates. Every element was crafted to reflect Comtradesol\'s brand identity.',
                 },
                 {
                   icon: '📐',
@@ -508,13 +508,13 @@ export default function ComtradesolCaseStudy() {
                   icon: '📱',
                   bg: '#ECFDF5',
                   title: 'Fully Responsive',
-                  desc: 'Pixel-perfect responsiveness across desktop, tablet, and mobile — essential for reaching C-suite professionals on all devices.',
+                  desc: 'Pixel-perfect responsiveness across desktop, tablet, and mobile - essential for reaching C-suite professionals on all devices.',
                 },
                 {
                   icon: '💼',
                   bg: '#FFF7ED',
                   title: 'LinkedIn Management',
-                  desc: 'Created and managed the company LinkedIn profile — content strategy, post scheduling, and audience growth to build brand authority.',
+                  desc: 'Created and managed the company LinkedIn profile - content strategy, post scheduling, and audience growth to build brand authority.',
                 },
               ].map(f => (
                 <div key={f.title} className="csc-feature-card">
@@ -538,7 +538,7 @@ export default function ComtradesolCaseStudy() {
 
             <div className="csc-results-row">
               {[
-                { num: '100%', label: 'Custom design — no templates used' },
+                { num: '100%', label: 'Custom design - no templates used' },
                 { num: '3×', label: 'Faster LinkedIn follower growth' },
                 { num: '5★', label: 'Client satisfaction rating' },
               ].map(s => (
@@ -551,9 +551,9 @@ export default function ComtradesolCaseStudy() {
 
             <div className="csc-quote">
               <p>
-                "1Solutions understood exactly what a financial firm needs online — professionalism, clarity, and trust. The website they built for us is exactly the image we wanted to project to our clients."
+                "1Solutions understood exactly what a financial firm needs online - professionalism, clarity, and trust. The website they built for us is exactly the image we wanted to project to our clients."
               </p>
-              <div className="csc-quote-author">— Comtradesol Advisory Services Pvt. Ltd.</div>
+              <div className="csc-quote-author">- Comtradesol Advisory Services Pvt. Ltd.</div>
             </div>
           </div>
 

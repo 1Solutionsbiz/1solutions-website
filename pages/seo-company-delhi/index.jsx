@@ -3,38 +3,38 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const SERVICES = [
-  { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Keyword Research & Strategy', desc: 'In-depth analysis of how Delhi customers search for your services — high-intent buying queries, local neighbourhood terms, and competitive gaps your rivals are missing.' },
-  { icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4', title: 'Technical SEO', desc: 'Core Web Vitals optimisation, mobile speed, crawl error fixes, structured data, and site architecture — the technical foundation that lets every other SEO effort compound.' },
-  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'On-Page SEO', desc: 'Title tags, meta descriptions, heading structure, internal linking, and content optimisation for every key page — written for Delhi buyers, tuned for Google ranking signals.' },
+  { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Keyword Research & Strategy', desc: 'In-depth analysis of how Delhi customers search for your services - high-intent buying queries, local neighbourhood terms, and competitive gaps your rivals are missing.' },
+  { icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4', title: 'Technical SEO', desc: 'Core Web Vitals optimisation, mobile speed, crawl error fixes, structured data, and site architecture - the technical foundation that lets every other SEO effort compound.' },
+  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'On-Page SEO', desc: 'Title tags, meta descriptions, heading structure, internal linking, and content optimisation for every key page - written for Delhi buyers, tuned for Google ranking signals.' },
   { icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z', title: 'Local SEO Delhi', desc: 'Google Business Profile optimisation, Google Maps 3-pack strategy, Delhi-specific citation building, and NAP consistency management to dominate local search results in Delhi NCR.' },
-  { icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1', title: 'Link Building', desc: 'Quality backlinks from Indian authority websites, Delhi business publications, industry directories, and digital PR — building the domain authority that sustains Page 1 positions.' },
-  { icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z', title: 'Content Marketing', desc: 'SEO-driven blog articles, service page copy, and landing pages built around what Delhi customers are searching for — content that ranks and converts, not just fills word counts.' },
-  { icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z', title: 'eCommerce SEO', desc: 'Product and category page optimisation for Delhi-based online stores on Shopify, WooCommerce, Magento, and custom platforms — more organic visibility, lower customer acquisition cost.' },
-  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'SEO Reporting & Analytics', desc: 'Monthly reports showing keyword ranking movement, organic traffic growth, lead attribution, and ROI — clear numbers that show exactly what your Delhi SEO investment is generating.' },
+  { icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1', title: 'Link Building', desc: 'Quality backlinks from Indian authority websites, Delhi business publications, industry directories, and digital PR - building the domain authority that sustains Page 1 positions.' },
+  { icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z', title: 'Content Marketing', desc: 'SEO-driven blog articles, service page copy, and landing pages built around what Delhi customers are searching for - content that ranks and converts, not just fills word counts.' },
+  { icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z', title: 'eCommerce SEO', desc: 'Product and category page optimisation for Delhi-based online stores on Shopify, WooCommerce, Magento, and custom platforms - more organic visibility, lower customer acquisition cost.' },
+  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'SEO Reporting & Analytics', desc: 'Monthly reports showing keyword ranking movement, organic traffic growth, lead attribution, and ROI - clear numbers that show exactly what your Delhi SEO investment is generating.' },
 ];
 
 const RESULTS = [
-  { metric: '310%', label: 'Organic traffic growth', sub: 'Delhi real estate portal — 10 months', color: '#0c2461' },
-  { metric: 'Top 3', label: 'Google positions for 80+ keywords', sub: 'Delhi B2B manufacturer — 9 months', color: '#FE9700' },
-  { metric: '4.8×', label: 'Increase in organic leads', sub: 'Delhi healthcare services — 7 months', color: '#059669' },
+  { metric: '310%', label: 'Organic traffic growth', sub: 'Delhi real estate portal - 10 months', color: '#0c2461' },
+  { metric: 'Top 3', label: 'Google positions for 80+ keywords', sub: 'Delhi B2B manufacturer - 9 months', color: '#FE9700' },
+  { metric: '4.8×', label: 'Increase in organic leads', sub: 'Delhi healthcare services - 7 months', color: '#059669' },
 ];
 
 const PROCESS = [
   { n: '01', title: 'Free Delhi SEO Audit', desc: 'We audit your website for technical health, current keyword rankings, backlink profile, competitor positions, and the specific gaps holding your Delhi business back from Page 1.' },
-  { n: '02', title: 'Keyword & Market Research', desc: 'Deep analysis of how Delhi customers search for your services — mapping every high-intent query, local modifier, and competitor keyword gap into a prioritised ranking roadmap.' },
-  { n: '03', title: 'Technical Optimisation', desc: 'We fix the technical foundations first — Core Web Vitals, mobile performance, crawl errors, schema markup, and site structure — so every subsequent effort builds on solid ground.' },
-  { n: '04', title: 'On-Page & Content', desc: 'Optimising every key page for target keywords and creating new content that captures Delhi buyer demand across the full search intent spectrum — informational to transactional.' },
-  { n: '05', title: 'Authority & Link Building', desc: 'Building quality backlinks from relevant Indian authority sites, Delhi publications, and business directories — compounding domain authority that holds rankings through algorithm updates.' },
-  { n: '06', title: 'Monthly Reporting & Scale', desc: 'Clear monthly reports with ranking movement, traffic growth, and lead data — plus a forward roadmap so you always know what is happening and what we are prioritising next.' },
+  { n: '02', title: 'Keyword & Market Research', desc: 'Deep analysis of how Delhi customers search for your services - mapping every high-intent query, local modifier, and competitor keyword gap into a prioritised ranking roadmap.' },
+  { n: '03', title: 'Technical Optimisation', desc: 'We fix the technical foundations first - Core Web Vitals, mobile performance, crawl errors, schema markup, and site structure - so every subsequent effort builds on solid ground.' },
+  { n: '04', title: 'On-Page & Content', desc: 'Optimising every key page for target keywords and creating new content that captures Delhi buyer demand across the full search intent spectrum - informational to transactional.' },
+  { n: '05', title: 'Authority & Link Building', desc: 'Building quality backlinks from relevant Indian authority sites, Delhi publications, and business directories - compounding domain authority that holds rankings through algorithm updates.' },
+  { n: '06', title: 'Monthly Reporting & Scale', desc: 'Clear monthly reports with ranking movement, traffic growth, and lead data - plus a forward roadmap so you always know what is happening and what we are prioritising next.' },
 ];
 
 const WHY = [
-  { title: 'Delhi Market Expertise', desc: "We understand Delhi's competitive digital landscape — from the startup density in Gurugram to the retail concentration in Connaught Place. Our strategy is built on real Delhi search data, not generic templates." },
-  { title: '15+ Years SEO Experience', desc: "Founded in 2009, 1Solutions has navigated every major Google update — Panda, Penguin, Hummingbird, BERT, and Helpful Content — delivering consistent rankings for clients across Delhi NCR." },
-  { title: 'Dedicated Account Manager', desc: 'Every Delhi client has one point of contact who understands your business, reports to you monthly, and is reachable when you need answers — no rotating account teams, no offshore handoffs.' },
-  { title: 'White-Hat SEO Only', desc: "No shortcuts. We build rankings through technical excellence, content quality, and genuine authority building — methods that last well beyond the next algorithm update and never put your domain at risk." },
-  { title: 'Transparent Reporting', desc: 'You see exactly what we did, what moved, and what it generated. Keyword rankings, organic sessions, and lead attribution in a clear monthly report — no smoke and mirrors.' },
-  { title: 'No Lock-In Contracts', desc: "Month-to-month engagements because our results earn your continued business. You stay because your Delhi rankings keep climbing — not because a contract traps you." },
+  { title: 'Delhi Market Expertise', desc: "We understand Delhi's competitive digital landscape - from the startup density in Gurugram to the retail concentration in Connaught Place. Our strategy is built on real Delhi search data, not generic templates." },
+  { title: '15+ Years SEO Experience', desc: "Founded in 2009, 1Solutions has navigated every major Google update - Panda, Penguin, Hummingbird, BERT, and Helpful Content - delivering consistent rankings for clients across Delhi NCR." },
+  { title: 'Dedicated Account Manager', desc: 'Every Delhi client has one point of contact who understands your business, reports to you monthly, and is reachable when you need answers - no rotating account teams, no offshore handoffs.' },
+  { title: 'White-Hat SEO Only', desc: "No shortcuts. We build rankings through technical excellence, content quality, and genuine authority building - methods that last well beyond the next algorithm update and never put your domain at risk." },
+  { title: 'Transparent Reporting', desc: 'You see exactly what we did, what moved, and what it generated. Keyword rankings, organic sessions, and lead attribution in a clear monthly report - no smoke and mirrors.' },
+  { title: 'No Lock-In Contracts', desc: "Month-to-month engagements because our results earn your continued business. You stay because your Delhi rankings keep climbing - not because a contract traps you." },
 ];
 
 const INDUSTRIES = [
@@ -58,12 +58,12 @@ const AREAS = [
 ];
 
 const FAQS = [
-  { q: "How much does SEO cost in Delhi?", a: "Our Delhi SEO packages start at INR 15,000 per month for small businesses and local SEO. Comprehensive packages for competitive industries range from INR 30,000 to INR 1,00,000 per month depending on industry competition, keyword volume, and growth targets. We provide a tailored quote after your free SEO audit — no guesswork." },
-  { q: "How long does it take to rank on Google in Delhi?", a: "Low-competition local keywords typically show ranking movement within 2 to 3 months. Mid-competition terms take 3 to 5 months. High-competition Delhi categories like real estate, legal, and healthcare usually require 6 to 9 months of consistent work. We give honest timelines in your free audit based on real competitor data — not optimistic promises to win the sale." },
-  { q: "Is 1Solutions based in Delhi?", a: "Yes. 1Solutions has a team dedicated to the Delhi NCR market with SEO specialists who understand Delhi's competitive digital environment. We work with clients across Central Delhi, South Delhi, Gurugram, Noida, Faridabad, and Ghaziabad — both in person and fully remotely." },
-  { q: "What industries do you serve in Delhi?", a: "We work across Delhi's major sectors: real estate, healthcare, education and coaching institutes, legal services, retail and eCommerce, IT companies, hospitality, and B2B manufacturing. Our keyword and content strategies are always built from actual Delhi search volume data for your specific industry — not repurposed from other markets." },
-  { q: "Do you provide local SEO for Delhi businesses?", a: "Yes. Local SEO for Delhi businesses is a core service — Google Business Profile optimisation, Delhi-specific directory citations, NAP consistency audits, and Google Maps 3-pack ranking strategy. If you serve customers in specific Delhi areas or have a physical location, local SEO is the highest-ROI channel for driving calls and footfall." },
-  { q: "Can you help a Delhi startup with limited SEO budget?", a: "Absolutely. We work with Delhi startups at multiple stages — pre-revenue companies building organic foundations early and growth-stage startups scaling their inbound channel. For limited budgets, we focus on keyword gap opportunities and content strategies that generate organic traction within 3 to 4 months without a large initial investment." },
+  { q: "How much does SEO cost in Delhi?", a: "Our Delhi SEO packages start at INR 15,000 per month for small businesses and local SEO. Comprehensive packages for competitive industries range from INR 30,000 to INR 1,00,000 per month depending on industry competition, keyword volume, and growth targets. We provide a tailored quote after your free SEO audit - no guesswork." },
+  { q: "How long does it take to rank on Google in Delhi?", a: "Low-competition local keywords typically show ranking movement within 2 to 3 months. Mid-competition terms take 3 to 5 months. High-competition Delhi categories like real estate, legal, and healthcare usually require 6 to 9 months of consistent work. We give honest timelines in your free audit based on real competitor data - not optimistic promises to win the sale." },
+  { q: "Is 1Solutions based in Delhi?", a: "Yes. 1Solutions has a team dedicated to the Delhi NCR market with SEO specialists who understand Delhi's competitive digital environment. We work with clients across Central Delhi, South Delhi, Gurugram, Noida, Faridabad, and Ghaziabad - both in person and fully remotely." },
+  { q: "What industries do you serve in Delhi?", a: "We work across Delhi's major sectors: real estate, healthcare, education and coaching institutes, legal services, retail and eCommerce, IT companies, hospitality, and B2B manufacturing. Our keyword and content strategies are always built from actual Delhi search volume data for your specific industry - not repurposed from other markets." },
+  { q: "Do you provide local SEO for Delhi businesses?", a: "Yes. Local SEO for Delhi businesses is a core service - Google Business Profile optimisation, Delhi-specific directory citations, NAP consistency audits, and Google Maps 3-pack ranking strategy. If you serve customers in specific Delhi areas or have a physical location, local SEO is the highest-ROI channel for driving calls and footfall." },
+  { q: "Can you help a Delhi startup with limited SEO budget?", a: "Absolutely. We work with Delhi startups at multiple stages - pre-revenue companies building organic foundations early and growth-stage startups scaling their inbound channel. For limited budgets, we focus on keyword gap opportunities and content strategies that generate organic traction within 3 to 4 months without a large initial investment." },
   { q: "How do you measure and report SEO results?", a: "We track keyword ranking movement for all target terms, organic sessions from Google Analytics, organic goal completions (leads, calls, form fills), and revenue attributed to organic search where measurable. Monthly reports are delivered in the first week of each month with a clear summary of changes, wins, and the next quarter roadmap." },
 ];
 
@@ -86,7 +86,7 @@ export default function SeoCompanyDelhi() {
       {
         '@type': 'LocalBusiness',
         '@id': 'https://1solutions.biz/#organization',
-        name: '1Solutions — SEO Company in Delhi',
+        name: '1Solutions - SEO Company in Delhi',
         url: 'https://1solutions.biz',
         telephone: '+918881SOLUTIONS',
         email: 'info@1solutions.biz',
@@ -112,7 +112,7 @@ export default function SeoCompanyDelhi() {
         '@type': 'Service',
         name: 'SEO Services in Delhi',
         provider: { '@type': 'Organization', name: '1Solutions', url: 'https://1solutions.biz' },
-        description: 'Comprehensive SEO services for Delhi businesses — technical SEO, on-page optimisation, local SEO, link building, and content strategy to achieve Page 1 Google rankings.',
+        description: 'Comprehensive SEO services for Delhi businesses - technical SEO, on-page optimisation, local SEO, link building, and content strategy to achieve Page 1 Google rankings.',
         areaServed: { '@type': 'City', name: 'New Delhi' },
         serviceType: 'Search Engine Optimisation',
       },
@@ -132,7 +132,7 @@ export default function SeoCompanyDelhi() {
     <>
       <Head>
         <title>SEO Company in Delhi | Best SEO Agency Delhi NCR | 1Solutions</title>
-        <meta name="description" content="Looking for the best SEO company in Delhi? 1Solutions delivers Page 1 rankings for Delhi businesses — technical SEO, local SEO, link building, and content" />
+        <meta name="description" content="Looking for the best SEO company in Delhi? 1Solutions delivers Page 1 rankings for Delhi businesses - technical SEO, local SEO, link building, and content" />
         <meta name="keywords" content="SEO company in Delhi, SEO agency Delhi, SEO services Delhi, best SEO company Delhi, SEO company Delhi NCR, search engine optimization Delhi" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://1solutions.biz/seo-company-delhi/" />
@@ -299,7 +299,7 @@ export default function SeoCompanyDelhi() {
             That Delivers Page 1 Rankings
           </h1>
           <p className="dsel-desc">
-            1Solutions is a results-driven SEO company in Delhi with 15+ years of experience helping Delhi NCR businesses rank on Page 1 of Google. From technical SEO and local search to link building and content strategy — we build organic visibility that generates leads, not just traffic.
+            1Solutions is a results-driven SEO company in Delhi with 15+ years of experience helping Delhi NCR businesses rank on Page 1 of Google. From technical SEO and local search to link building and content strategy - we build organic visibility that generates leads, not just traffic.
           </p>
           <div className="dsel-btns">
             <a href="#contact" className="dsel-btn-p">
@@ -337,7 +337,7 @@ export default function SeoCompanyDelhi() {
         <div className="dsel-sec-inner">
           <span className="dsel-tag">Our Delhi SEO Services</span>
           <h2 className="dsel-h2">Complete <span>SEO Services in Delhi</span></h2>
-          <p className="dsel-lead">Every component of a winning SEO strategy — delivered by a dedicated team that understands the Delhi market and your growth goals.</p>
+          <p className="dsel-lead">Every component of a winning SEO strategy - delivered by a dedicated team that understands the Delhi market and your growth goals.</p>
           <div className="dsel-grid4">
             {SERVICES.map(s => (
               <div key={s.title} className="dsel-card">
@@ -372,7 +372,7 @@ export default function SeoCompanyDelhi() {
         <div className="dsel-sec-inner">
           <span className="dsel-tag">Why Choose 1Solutions</span>
           <h2 className="dsel-h2">The Delhi SEO Agency <span>That Makes Rankings Last</span></h2>
-          <p className="dsel-lead">We build SEO foundations that outlast algorithm updates and deliver compounding organic growth — not short-term spikes that disappear when Google updates.</p>
+          <p className="dsel-lead">We build SEO foundations that outlast algorithm updates and deliver compounding organic growth - not short-term spikes that disappear when Google updates.</p>
           <div className="dsel-grid2">
             {WHY.map(w => (
               <div key={w.title} className="dsel-why-card">
@@ -390,7 +390,7 @@ export default function SeoCompanyDelhi() {
         <div className="dsel-sec-inner">
           <span className="dsel-tag">How We Work</span>
           <h2 className="dsel-h2">Our <span>6-Step Delhi SEO Process</span></h2>
-          <p className="dsel-lead">A structured, transparent methodology that compounds organic growth over time — from your first free audit to sustained Page 1 dominance.</p>
+          <p className="dsel-lead">A structured, transparent methodology that compounds organic growth over time - from your first free audit to sustained Page 1 dominance.</p>
           <div className="dsel-grid3">
             {PROCESS.map(p => (
               <div key={p.n}>
@@ -409,7 +409,7 @@ export default function SeoCompanyDelhi() {
         <div className="dsel-sec-inner">
           <span className="dsel-tag">Delhi Industries We Serve</span>
           <h2 className="dsel-h2">SEO for <span>Every Delhi Business Sector</span></h2>
-          <p className="dsel-lead">From Connaught Place retail to Gurugram tech startups — we deliver SEO strategies built around the specific competitive landscape of your Delhi industry.</p>
+          <p className="dsel-lead">From Connaught Place retail to Gurugram tech startups - we deliver SEO strategies built around the specific competitive landscape of your Delhi industry.</p>
           <div className="dsel-ind-grid">
             {INDUSTRIES.map(ind => (
               <div key={ind.name} className="dsel-ind-card">
@@ -426,14 +426,14 @@ export default function SeoCompanyDelhi() {
         <div className="dsel-sec-inner">
           <span className="dsel-tag">Areas We Cover</span>
           <h2 className="dsel-h2">SEO Services Across <span>Delhi &amp; NCR</span></h2>
-          <p className="dsel-lead">We serve businesses throughout the Delhi National Capital Region — from the central business districts to the growing satellite cities of the NCR corridor.</p>
+          <p className="dsel-lead">We serve businesses throughout the Delhi National Capital Region - from the central business districts to the growing satellite cities of the NCR corridor.</p>
           <div className="dsel-areas-wrap">
             {AREAS.map(area => (
               <span key={area} className="dsel-area-tag">{area}</span>
             ))}
           </div>
           <p style={{ marginTop: 32, fontSize: '0.95rem', color: '#6b7280', lineHeight: 1.7, maxWidth: 720 }}>
-            Whether your business is headquartered in South Delhi, operates out of a Gurugram tech park, or serves customers across the entire NCR region — our Delhi SEO strategies are built around your specific geographic target market and local competition intensity.
+            Whether your business is headquartered in South Delhi, operates out of a Gurugram tech park, or serves customers across the entire NCR region - our Delhi SEO strategies are built around your specific geographic target market and local competition intensity.
           </p>
         </div>
       </section>
@@ -466,7 +466,7 @@ export default function SeoCompanyDelhi() {
           <div className="dsel-contact-grid">
             <div>
               <h2 className="dsel-contact-info-h">Get Your Free <span>Delhi SEO Audit</span></h2>
-              <p className="dsel-contact-info-p">Tell us about your Delhi business and we will prepare a detailed SEO audit — covering your current rankings, technical health, competitor gaps, and a clear roadmap to Page 1. Completely free, no commitment.</p>
+              <p className="dsel-contact-info-p">Tell us about your Delhi business and we will prepare a detailed SEO audit - covering your current rankings, technical health, competitor gaps, and a clear roadmap to Page 1. Completely free, no commitment.</p>
               <div className="dsel-contact-item">
                 <div className="dsel-contact-item-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
@@ -495,7 +495,7 @@ export default function SeoCompanyDelhi() {
                 </div>
               </div>
               <div className="dsel-trust-list">
-                {['Free audit — no credit card, no commitment', 'Dedicated Delhi SEO specialist assigned', 'Honest timelines based on real competitor data', 'White-hat strategies only — no ranking risk'].map(t => (
+                {['Free audit - no credit card, no commitment', 'Dedicated Delhi SEO specialist assigned', 'Honest timelines based on real competitor data', 'White-hat strategies only - no ranking risk'].map(t => (
                   <span key={t} className="dsel-trust-item">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                     {t}

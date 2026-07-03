@@ -28,30 +28,30 @@ const SKILLS = [
   'Git & Agile / Scrum Workflows',
 ];
 const MODELS = [
-  { title: 'Dedicated Hire', desc: 'A full-time web developer committed to your project — 8 hrs/day, 5 days/week.', icon: '👤' },
+  { title: 'Dedicated Hire', desc: 'A full-time web developer committed to your project - 8 hrs/day, 5 days/week.', icon: '👤' },
   { title: 'Part-Time Hire', desc: 'Half-day engagement for feature development, bug fixing, or ongoing CMS work.', icon: '⏰' },
   { title: 'Hourly Hire',    desc: 'Flexible billing for code reviews, security audits, or short integration tasks.', icon: '🕐' },
 ];
 const WHY = [
-  { h: 'Full-Stack Coverage', b: 'Frontend, backend, database, and cloud deployment — our web developers handle the full stack so you are not managing multiple specialists for a single feature.' },
-  { h: 'Framework Fluency', b: 'React, Next.js, Laravel, Django, Node.js — our developers are proficient in the frameworks that match your existing tech stack.' },
+  { h: 'Full-Stack Coverage', b: 'Frontend, backend, database, and cloud deployment - our web developers handle the full stack so you are not managing multiple specialists for a single feature.' },
+  { h: 'Framework Fluency', b: 'React, Next.js, Laravel, Django, Node.js - our developers are proficient in the frameworks that match your existing tech stack.' },
   { h: 'Profiles in 48 Hours', b: 'Submit your requirements and receive 2-3 matched web developer CVs within two business days.' },
-  { h: 'Scalable Architecture', b: 'We build with scale in mind from day one — modular APIs, indexed databases, CDN-ready assets, and infrastructure as code.' },
+  { h: 'Scalable Architecture', b: 'We build with scale in mind from day one - modular APIs, indexed databases, CDN-ready assets, and infrastructure as code.' },
   { h: 'Security & Code Quality', b: 'OWASP Top 10 awareness, SQL injection prevention, secure session handling, and mandatory code reviews before every merge.' },
   { h: 'NDA & IP Protection', b: 'NDA and IP assignment signed before any access to your codebase, API keys, or deployment infrastructure.' },
 ];
 const PROCESS = [
   { n: '01', h: 'Share Your Project Brief', b: 'Describe the tech stack, the scope of work, timeline, and the level of seniority you need.' },
   { n: '02', h: 'Receive Profiles', b: '2-3 matched web developer CVs with GitHub links or portfolio projects delivered within 48 hours.' },
-  { n: '03', h: 'Interview & Select', b: 'Run your own technical round — architecture discussion, live coding, or code review challenge.' },
+  { n: '03', h: 'Interview & Select', b: 'Run your own technical round - architecture discussion, live coding, or code review challenge.' },
   { n: '04', h: 'Onboard & Build', b: 'Developer joins your repo and tools. First sprint starts within 7 days.' },
 ];
 const FAQS = [
-  { q: 'Do your web developers work on both frontend and backend?', a: 'Yes. Many of our web developers are full-stack generalists comfortable across the entire web layer — HTML/CSS/JS on the frontend and Node.js, PHP, or Python on the backend. We also place frontend specialists and backend specialists when that is a better fit.' },
+  { q: 'Do your web developers work on both frontend and backend?', a: 'Yes. Many of our web developers are full-stack generalists comfortable across the entire web layer - HTML/CSS/JS on the frontend and Node.js, PHP, or Python on the backend. We also place frontend specialists and backend specialists when that is a better fit.' },
   { q: 'Which frameworks do they work with?', a: 'Our developers cover the major web frameworks: React.js, Next.js, Vue.js, and Angular on the frontend; Laravel, Django, Node.js (Express/Fastify), and Ruby on Rails on the backend. We match based on your existing stack.' },
   { q: 'Can they handle database design and optimisation?', a: 'Yes. Our developers design normalised schemas, write optimised queries, set up indexes, and implement caching layers (Redis, Memcached) for high-traffic applications.' },
   { q: 'Do they have experience with cloud deployment?', a: 'Yes. Our web developers deploy to AWS (EC2, Lambda, RDS, S3), Google Cloud, and Azure. They are comfortable with Docker, CI/CD pipelines (GitHub Actions, Jenkins, GitLab CI), and infrastructure tooling like Terraform.' },
-  { q: 'Can they work on an existing codebase?', a: 'Yes. We regularly place developers into established codebases — reading and understanding existing architecture, adding features, refactoring for performance, and fixing security issues without breaking existing functionality.' },
+  { q: 'Can they work on an existing codebase?', a: 'Yes. We regularly place developers into established codebases - reading and understanding existing architecture, adding features, refactoring for performance, and fixing security issues without breaking existing functionality.' },
   { q: 'Do you sign NDAs?', a: 'Yes. NDA and IP assignment agreements are signed as standard before any engagement begins.' },
 ];
 
@@ -84,7 +84,7 @@ export default function HireWebDeveloper() {
         { '@type': 'ListItem', position: 2, name: 'Hire Web Developer', item: 'https://www.1solutions.biz/hire-web-developer/' },
       ]},
       { '@type': 'Service', name: 'Hire Web Developer', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Hire dedicated web developers from 1Solutions — full-stack specialists in React, Node.js, PHP, Python, and cloud deployment.',
+        description: 'Hire dedicated web developers from 1Solutions - full-stack specialists in React, Node.js, PHP, Python, and cloud deployment.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '168', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -149,7 +149,7 @@ export default function HireWebDeveloper() {
       </Head>
       <section className="hwdev-hero">
         <h1>Hire Web Developers<br/>Full-Stack React, Node.js &amp; PHP Experts</h1>
-        <p>Pre-vetted web developers who build scalable, secure, and high-performance web applications — from solo developers to full squads. Profiles in 48 hours.</p>
+        <p>Pre-vetted web developers who build scalable, secure, and high-performance web applications - from solo developers to full squads. Profiles in 48 hours.</p>
         <div className="hwdev-hero-btns">
           <Link href="/contact-us" className="hwdev-btn-primary">Hire a Web Developer →</Link>
           <Link href="/portfolio" className="hwdev-btn-outline">View Portfolio</Link>
@@ -158,7 +158,7 @@ export default function HireWebDeveloper() {
       <section className="hwdev-sec" ref={skR}>
         <div className="hwdev-wrap">
           <h2 className="hwdev-sec-title">Skills &amp; Tech Stack</h2>
-          <p className="hwdev-sec-sub">Our web developers cover the full stack — frontend, backend, database, cloud, and everything in between.</p>
+          <p className="hwdev-sec-sub">Our web developers cover the full stack - frontend, backend, database, cloud, and everything in between.</p>
           <div className="hwdev-skills">{SKILLS.map((s, i) => <span key={s} className={`hwdev-skill${skV ? ' hwdev-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>)}</div>
         </div>
       </section>
@@ -172,7 +172,7 @@ export default function HireWebDeveloper() {
       <section className="hwdev-sec" ref={whR}>
         <div className="hwdev-wrap">
           <h2 className="hwdev-sec-title">Why Hire Web Developers from 1Solutions?</h2>
-          <p className="hwdev-sec-sub">We place engineers who write production-grade web applications — not portfolios.</p>
+          <p className="hwdev-sec-sub">We place engineers who write production-grade web applications - not portfolios.</p>
           <div className="hwdev-why-grid">{WHY.map((w, i) => <div key={w.h} className={`hwdev-why-item${whV ? ' hwdev-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
         </div>
       </section>
@@ -187,7 +187,7 @@ export default function HireWebDeveloper() {
       <section className="hwdev-sec hwdev-sec-alt" ref={prR}>
         <div className="hwdev-wrap">
           <h2 className="hwdev-sec-title">Hire in 4 Simple Steps</h2>
-          <p className="hwdev-sec-sub">From project brief to first merged PR — in under two weeks.</p>
+          <p className="hwdev-sec-sub">From project brief to first merged PR - in under two weeks.</p>
           <div className="hwdev-process">{PROCESS.map((p, i) => <div key={p.n} className={`hwdev-step${prV ? ' hwdev-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}><div className="hwdev-step-n">{p.n}</div><h3>{p.h}</h3><p>{p.b}</p></div>)}</div>
         </div>
       </section>
@@ -201,7 +201,7 @@ export default function HireWebDeveloper() {
       <section className="hwdev-cta">
         <div className="hwdev-wrap">
           <h2>Ready to Hire Your Web Developer?</h2>
-          <p>Share your project requirements and receive matched web developer profiles within 48 hours — no commitment required.</p>
+          <p>Share your project requirements and receive matched web developer profiles within 48 hours - no commitment required.</p>
           <Link href="/contact-us" className="hwdev-btn-primary">Get Started Today →</Link>
         </div>
       </section>

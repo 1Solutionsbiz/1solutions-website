@@ -3,45 +3,45 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const SERVICES = [
-  { n: '01', title: 'Instagram Content Strategy', desc: 'Monthly content strategy — content pillars, post themes, Reels topics, Stories series, and campaign calendar aligned to your brand identity and growth objectives.' },
-  { n: '02', title: 'Feed Content Creation', desc: 'On-brand static posts, carousels, and infographics for your Instagram feed — designed to the latest aspect ratios, with captioning and hashtag research optimised for reach and engagement.' },
-  { n: '03', title: 'Instagram Reels Production', desc: 'Short-form video content — Reels scripts, editing, captions, audio selection, and cover image creation — optimised for the Instagram algorithm\'s video-first distribution strategy.' },
-  { n: '04', title: 'Instagram Stories', desc: 'Daily or weekly Story sequences — behind-the-scenes content, product spotlights, polls, Q&As, countdown stickers, and swipe-up links — keeping your audience engaged between feed posts.' },
-  { n: '05', title: 'Instagram Ads Management', desc: 'Paid Instagram advertising across Feed, Stories, Reels, Explore, and Shopping placements — audience targeting, creative testing, budget management, and ROAS optimisation via Meta Ads Manager.' },
-  { n: '06', title: 'Instagram Shopping & Product Tagging', desc: 'Instagram Shop setup, product catalogue integration, product tagging in posts and Stories, and collection creation — turning your Instagram into a shoppable storefront for ecommerce brands.' },
-  { n: '07', title: 'Influencer Collaboration Strategy', desc: 'Influencer identification, brief development, collaboration negotiation, content review, and performance tracking — coordinating micro and mid-tier influencer partnerships that align with your brand.' },
-  { n: '08', title: 'Instagram Analytics & Reporting', desc: 'Monthly performance reports — reach, impressions, engagement rate, follower growth, profile visits, website clicks, and ad ROAS — with audience insights and next month\'s content recommendations.' },
+  { n: '01', title: 'Instagram Content Strategy', desc: 'Monthly content strategy - content pillars, post themes, Reels topics, Stories series, and campaign calendar aligned to your brand identity and growth objectives.' },
+  { n: '02', title: 'Feed Content Creation', desc: 'On-brand static posts, carousels, and infographics for your Instagram feed - designed to the latest aspect ratios, with captioning and hashtag research optimised for reach and engagement.' },
+  { n: '03', title: 'Instagram Reels Production', desc: 'Short-form video content - Reels scripts, editing, captions, audio selection, and cover image creation - optimised for the Instagram algorithm\'s video-first distribution strategy.' },
+  { n: '04', title: 'Instagram Stories', desc: 'Daily or weekly Story sequences - behind-the-scenes content, product spotlights, polls, Q&As, countdown stickers, and swipe-up links - keeping your audience engaged between feed posts.' },
+  { n: '05', title: 'Instagram Ads Management', desc: 'Paid Instagram advertising across Feed, Stories, Reels, Explore, and Shopping placements - audience targeting, creative testing, budget management, and ROAS optimisation via Meta Ads Manager.' },
+  { n: '06', title: 'Instagram Shopping & Product Tagging', desc: 'Instagram Shop setup, product catalogue integration, product tagging in posts and Stories, and collection creation - turning your Instagram into a shoppable storefront for ecommerce brands.' },
+  { n: '07', title: 'Influencer Collaboration Strategy', desc: 'Influencer identification, brief development, collaboration negotiation, content review, and performance tracking - coordinating micro and mid-tier influencer partnerships that align with your brand.' },
+  { n: '08', title: 'Instagram Analytics & Reporting', desc: 'Monthly performance reports - reach, impressions, engagement rate, follower growth, profile visits, website clicks, and ad ROAS - with audience insights and next month\'s content recommendations.' },
 ];
 
 const FORMATS = ['Instagram Reels', 'Feed Posts', 'Carousel Posts', 'Instagram Stories', 'Instagram Shopping', 'Reels Ads', 'Story Ads', 'Explore Ads', 'Collaboration Posts', 'UGC Campaigns'];
 
 const PROCESS = [
-  { step: '01', title: 'Profile & Audience Audit', desc: 'Audit your current Instagram profile — bio optimisation, highlights structure, feed aesthetic, follower quality, and engagement rate benchmarking.' },
-  { step: '02', title: 'Content Strategy', desc: 'Content pillars, post frequency, Reels cadence, and 30-day content calendar — all agreed before month one begins.' },
-  { step: '03', title: 'Content Creation & Approval', desc: 'Monthly content batch created — feed posts, Reels, Stories — reviewed and approved by you before scheduling.' },
+  { step: '01', title: 'Profile & Audience Audit', desc: 'Audit your current Instagram profile - bio optimisation, highlights structure, feed aesthetic, follower quality, and engagement rate benchmarking.' },
+  { step: '02', title: 'Content Strategy', desc: 'Content pillars, post frequency, Reels cadence, and 30-day content calendar - all agreed before month one begins.' },
+  { step: '03', title: 'Content Creation & Approval', desc: 'Monthly content batch created - feed posts, Reels, Stories - reviewed and approved by you before scheduling.' },
   { step: '04', title: 'Publishing & Engagement', desc: 'Scheduled publishing at optimal times, comment responses, Story interactions, and community engagement to grow genuine relationships.' },
-  { step: '05', title: 'Paid Campaign Management', desc: 'Instagram ad campaigns launched and optimised — targeting your ideal audience with tested creative and tracked conversions.' },
+  { step: '05', title: 'Paid Campaign Management', desc: 'Instagram ad campaigns launched and optimised - targeting your ideal audience with tested creative and tracked conversions.' },
   { step: '06', title: 'Monthly Report & Strategy', desc: 'Full performance report with engagement metrics, growth data, and next month\'s strategic adjustments based on what is working.' },
 ];
 
 const WHY = [
-  { title: 'Reels-First Strategy', desc: 'Instagram is rewarding Reels with outsized organic reach. Every management package includes Reels as a core component — not a bolt-on — because that\'s where Instagram growth is happening in 2025.' },
-  { title: 'Visual Brand Consistency', desc: 'Instagram success depends on a coherent visual identity — consistent colour palette, typography style, and compositional approach that makes your feed instantly recognisable at a glance.' },
-  { title: 'Ecommerce Instagram Expertise', desc: 'Instagram Shopping, product tagging, checkout integration, and shoppable Reels — we build Instagram into a direct sales channel for ecommerce brands, not just a brand awareness platform.' },
-  { title: 'Content + Ads Aligned', desc: 'Paid Instagram ads amplify organic content and build custom audiences from your engaged followers. We manage both in coordination — consistent message, smarter targeting, better ROAS.' },
-  { title: 'Influencer Partnership Access', desc: 'We have established relationships with UK and international micro and mid-tier influencers across fashion, beauty, fitness, food, tech, and lifestyle — for brands wanting creator-led growth.' },
-  { title: 'Engagement Rate Focus', desc: 'We do not chase follower vanity metrics — we optimise for engagement rate, profile visits, and website clicks. A smaller, highly engaged audience converts better than a large passive one.' },
+  { title: 'Reels-First Strategy', desc: 'Instagram is rewarding Reels with outsized organic reach. Every management package includes Reels as a core component - not a bolt-on - because that\'s where Instagram growth is happening in 2025.' },
+  { title: 'Visual Brand Consistency', desc: 'Instagram success depends on a coherent visual identity - consistent colour palette, typography style, and compositional approach that makes your feed instantly recognisable at a glance.' },
+  { title: 'Ecommerce Instagram Expertise', desc: 'Instagram Shopping, product tagging, checkout integration, and shoppable Reels - we build Instagram into a direct sales channel for ecommerce brands, not just a brand awareness platform.' },
+  { title: 'Content + Ads Aligned', desc: 'Paid Instagram ads amplify organic content and build custom audiences from your engaged followers. We manage both in coordination - consistent message, smarter targeting, better ROAS.' },
+  { title: 'Influencer Partnership Access', desc: 'We have established relationships with UK and international micro and mid-tier influencers across fashion, beauty, fitness, food, tech, and lifestyle - for brands wanting creator-led growth.' },
+  { title: 'Engagement Rate Focus', desc: 'We do not chase follower vanity metrics - we optimise for engagement rate, profile visits, and website clicks. A smaller, highly engaged audience converts better than a large passive one.' },
 ];
 
 const FAQS = [
   { q: 'What does Instagram marketing management include?', a: 'Our Instagram management service includes: content strategy (monthly content pillars and 30-day calendar); feed content creation (static posts and carousels); Reels production (scripting, editing, and publishing); Instagram Stories creation and publishing; hashtag research and optimisation; community management (comment and DM responses); monthly performance analytics report; and a strategy review call. Optional additions include Instagram Ads management, Instagram Shopping setup, and influencer collaboration coordination.' },
-  { q: 'How many posts per week do you create?', a: 'Post frequency depends on your package tier: our standard management packages include 3 to 5 feed posts per week plus daily Stories. Reels are published 2 to 4 times per week as a separate content stream. The optimal posting frequency for your account depends on your audience size, content type, and industry — we recommend a frequency during onboarding based on benchmarking against similar accounts. Consistency matters more than volume — a reliable 4 posts per week outperforms sporadic bursts of 10 posts.' },
-  { q: 'Do you produce Instagram Reels or just photos?', a: 'Yes — Reels are a core part of all our Instagram management packages, not an optional extra. In 2025, Instagram heavily prioritises Reels in its algorithm because the platform competes with TikTok for short-form video attention. Every monthly content plan includes dedicated Reels as part of the core strategy. We script, edit, caption, and optimise Reels — handling the full production workflow. If you want to be a on-camera talent, we can script and brief you; if you prefer brand-created content, we produce it without your on-screen involvement.' },
-  { q: 'How do you grow Instagram followers organically?', a: 'Organic Instagram follower growth comes from: consistently high-quality Reels that get distributed to non-followers via the Explore page and Reels feed; strategic hashtag use that increases post discoverability to targeted audiences; engagement bait content (polls, questions, quizzes in Stories) that keeps current followers active, which signals the algorithm to expand reach; collaboration posts (collab feature) with complementary accounts that expose you to each other\'s audiences; and profile SEO optimisation (keyword in name field, keyword-optimised bio) for Instagram search visibility. We do not use follow-unfollow tactics or bot engagement — sustainable growth only.' },
-  { q: 'Can you manage Instagram Ads alongside organic management?', a: 'Yes. Instagram advertising is managed via Meta Ads Manager and works best when coordinated with your organic content strategy. We run ads across Feed, Stories, Reels, and Explore placements — targeting your ideal audience with custom audiences (from your email list or website visitors), lookalike audiences, and interest-based targeting. Ad creatives are tested in variations, budgets are managed daily, and ROAS is tracked and reported monthly. Ads management is priced separately from organic management but integrated into the same strategic framework.' },
+  { q: 'How many posts per week do you create?', a: 'Post frequency depends on your package tier: our standard management packages include 3 to 5 feed posts per week plus daily Stories. Reels are published 2 to 4 times per week as a separate content stream. The optimal posting frequency for your account depends on your audience size, content type, and industry - we recommend a frequency during onboarding based on benchmarking against similar accounts. Consistency matters more than volume - a reliable 4 posts per week outperforms sporadic bursts of 10 posts.' },
+  { q: 'Do you produce Instagram Reels or just photos?', a: 'Yes - Reels are a core part of all our Instagram management packages, not an optional extra. In 2025, Instagram heavily prioritises Reels in its algorithm because the platform competes with TikTok for short-form video attention. Every monthly content plan includes dedicated Reels as part of the core strategy. We script, edit, caption, and optimise Reels - handling the full production workflow. If you want to be a on-camera talent, we can script and brief you; if you prefer brand-created content, we produce it without your on-screen involvement.' },
+  { q: 'How do you grow Instagram followers organically?', a: 'Organic Instagram follower growth comes from: consistently high-quality Reels that get distributed to non-followers via the Explore page and Reels feed; strategic hashtag use that increases post discoverability to targeted audiences; engagement bait content (polls, questions, quizzes in Stories) that keeps current followers active, which signals the algorithm to expand reach; collaboration posts (collab feature) with complementary accounts that expose you to each other\'s audiences; and profile SEO optimisation (keyword in name field, keyword-optimised bio) for Instagram search visibility. We do not use follow-unfollow tactics or bot engagement - sustainable growth only.' },
+  { q: 'Can you manage Instagram Ads alongside organic management?', a: 'Yes. Instagram advertising is managed via Meta Ads Manager and works best when coordinated with your organic content strategy. We run ads across Feed, Stories, Reels, and Explore placements - targeting your ideal audience with custom audiences (from your email list or website visitors), lookalike audiences, and interest-based targeting. Ad creatives are tested in variations, budgets are managed daily, and ROAS is tracked and reported monthly. Ads management is priced separately from organic management but integrated into the same strategic framework.' },
   { q: 'What results can I expect from Instagram marketing?', a: 'Realistic Instagram results depend on your starting point, budget, industry, and content quality. Engagement rate improvements (more likes, comments, and saves per post) are typically visible within 4 to 8 weeks of consistent, quality management. Follower growth of 200 to 500 new followers per month is achievable for most accounts with a quality organic strategy. Paid Instagram advertising can drive measurable website traffic or leads from month one. Profile visit and website click growth typically compounds over 3 to 6 months. We set specific, realistic KPIs for your account during onboarding based on your starting metrics.' },
-  { q: 'Do you work with ecommerce brands on Instagram?', a: 'Yes. Ecommerce is a large part of our Instagram client base. For ecommerce brands we offer: Instagram Shopping setup (product catalogue sync, shop tab, product tagging in posts and Stories); shoppable Reels with product tags; dynamic product ads (showing users the products they viewed on your website); Instagram Checkout (where available); and influencer seeding to reach new audiences with social proof. Instagram is a powerful top-funnel and mid-funnel channel for ecommerce — particularly for fashion, beauty, home, lifestyle, and food and beverage brands.' },
-  { q: 'How do you measure Instagram marketing success?', a: 'We track multiple performance layers: reach and impressions (how many people see your content); engagement rate (likes, comments, saves, shares as a percentage of reach — more meaningful than raw numbers); follower growth rate; profile visits (traffic to your profile page); website clicks (traffic from Instagram bio link, Stories link, and shoppable posts); and for ad campaigns, CTR, CPC, CPM, and ROAS. Every monthly report covers all these metrics with trend analysis and a qualitative assessment of content performance by format and theme.' },
+  { q: 'Do you work with ecommerce brands on Instagram?', a: 'Yes. Ecommerce is a large part of our Instagram client base. For ecommerce brands we offer: Instagram Shopping setup (product catalogue sync, shop tab, product tagging in posts and Stories); shoppable Reels with product tags; dynamic product ads (showing users the products they viewed on your website); Instagram Checkout (where available); and influencer seeding to reach new audiences with social proof. Instagram is a powerful top-funnel and mid-funnel channel for ecommerce - particularly for fashion, beauty, home, lifestyle, and food and beverage brands.' },
+  { q: 'How do you measure Instagram marketing success?', a: 'We track multiple performance layers: reach and impressions (how many people see your content); engagement rate (likes, comments, saves, shares as a percentage of reach - more meaningful than raw numbers); follower growth rate; profile visits (traffic to your profile page); website clicks (traffic from Instagram bio link, Stories link, and shoppable posts); and for ad campaigns, CTR, CPC, CPM, and ROAS. Every monthly report covers all these metrics with trend analysis and a qualitative assessment of content performance by format and theme.' },
 ];
 
 const STATS = [
@@ -65,7 +65,7 @@ export default function InstagramMarketingServices() {
     <>
       <Head>
         <title>Instagram Marketing Services | 1Solutions</title>
-        <meta name="description" content="Instagram marketing services — content strategy, Reels production, Instagram Ads, Shopping setup, and community management." />
+        <meta name="description" content="Instagram marketing services - content strategy, Reels production, Instagram Ads, Shopping setup, and community management." />
         <meta name="keywords" content="instagram marketing services, instagram management agency, instagram reels marketing, instagram ads management, instagram marketing agency, social media marketing instagram" />
         <link rel="canonical" href="https://www.1solutions.biz/instagram-marketing-services/" />
         <meta property="og:title" content="Instagram Marketing Services | 1Solutions" />
@@ -147,8 +147,8 @@ export default function InstagramMarketingServices() {
           <div className="igm-in">
             <nav className="igm-bc"><Link href="/">Home</Link><span>/</span><Link href="/social-media-marketing-services">Social Media</Link><span>/</span><span style={{color:'#DB2777'}}>Instagram Marketing</span></nav>
             <span className="igm-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#DB2777',display:'inline-block'}}/> Reels · Feed · Shopping · Ads</span>
-            <h1 className="igm-h1">Instagram Marketing Services — Reels, Growth & Sales for Your Brand</h1>
-            <p className="igm-sub">Content strategy, Reels production, Instagram Ads, Shopping integration, and community management — everything your Instagram needs to grow an engaged audience and drive real business results.</p>
+            <h1 className="igm-h1">Instagram Marketing Services - Reels, Growth & Sales for Your Brand</h1>
+            <p className="igm-sub">Content strategy, Reels production, Instagram Ads, Shopping integration, and community management - everything your Instagram needs to grow an engaged audience and drive real business results.</p>
             <div className="igm-btns">
               <Link href="/contact-us" className="igm-btn-p">Get an Instagram Marketing Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/facebook-management-services" className="igm-btn-s">Facebook Management</Link>
@@ -158,7 +158,7 @@ export default function InstagramMarketingServices() {
         </section>
         <section className="igm-svc"><div className="igm-svc-in">
           <span className="igm-ey2">What We Do</span><h2 className="igm-ttl">Instagram Marketing Services</h2>
-          <p className="igm-desc">Feed content, Reels, Stories, Shopping, and Ads — full Instagram management from content creation to paid growth.</p>
+          <p className="igm-desc">Feed content, Reels, Stories, Shopping, and Ads - full Instagram management from content creation to paid growth.</p>
           <div className="igm-grid" ref={cardsRef}>{SERVICES.map((s,i) => <div key={s.n} className={`igm-card${visibleCards.includes(i)?' visible':''}`}><div className="igm-num">{s.n}</div><h3>{s.title}</h3><p>{s.desc}</p></div>)}</div>
         </div></section>
         <section className="igm-fmt"><div className="igm-fmt-in">
@@ -167,12 +167,12 @@ export default function InstagramMarketingServices() {
         </div></section>
         <section className="igm-proc"><div className="igm-proc-in">
           <span className="igm-ey2">How We Work</span><h2 className="igm-ttl">Our Instagram Management Process</h2>
-          <p className="igm-desc">Profile audit to monthly content execution — a clear process with full content approval before anything goes live.</p>
+          <p className="igm-desc">Profile audit to monthly content execution - a clear process with full content approval before anything goes live.</p>
           <div className="igm-steps">{PROCESS.map((p,i) => <div key={p.step} ref={el=>{stepRefs.current[i]=el}} className={`igm-step${visibleSteps.includes(i)?' visible':''}`}><div className="igm-snum">{p.step}</div><div><h3>{p.title}</h3><p>{p.desc}</p></div></div>)}</div>
         </div></section>
         <section className="igm-why"><div className="igm-why-in">
           <span className="igm-ey2">Why 1Solutions</span><h2 className="igm-ttl">Reels-First, Results-Focused Instagram Management</h2>
-          <p className="igm-desc">We build Instagram strategies around how the algorithm actually works in 2025 — with Reels at the core, Shopping integrated for ecommerce, and paid ads amplifying organic growth.</p>
+          <p className="igm-desc">We build Instagram strategies around how the algorithm actually works in 2025 - with Reels at the core, Shopping integrated for ecommerce, and paid ads amplifying organic growth.</p>
           <div className="igm-why-grid" ref={whyRef}>{WHY.map((w,i) => <div key={w.title} className={`igm-wcard${visibleWhy.includes(i)?' visible':''}`}><div className="igm-dot"/><h3>{w.title}</h3><p>{w.desc}</p></div>)}</div>
         </div></section>
         <section className="igm-faq"><div className="igm-faq-in">
@@ -184,7 +184,7 @@ export default function InstagramMarketingServices() {
           <div className="igm-cta-in">
             <span className="igm-ey2" style={{textAlign:'center',display:'block',marginBottom:16}}>Ready to Build an Instagram Presence That Converts?</span>
             <h2 className="igm-cta-t">Start Your Instagram Marketing Strategy</h2>
-            <p className="igm-cta-s">We&rsquo;ll audit your current Instagram profile and competitor landscape — and build a strategy around the content formats and tactics that will grow your specific audience.</p>
+            <p className="igm-cta-s">We&rsquo;ll audit your current Instagram profile and competitor landscape - and build a strategy around the content formats and tactics that will grow your specific audience.</p>
             <div className="igm-cta-btns">
               <Link href="/contact-us" className="igm-btn-p">Get an Instagram Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/social-media-marketing-services" className="igm-btn-s">Social Media Overview</Link>

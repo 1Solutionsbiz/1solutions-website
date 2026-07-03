@@ -38,30 +38,30 @@ const SKILLS = [
   'Multi-Location SEO',
 ];
 const MODELS = [
-  { title: 'Local SEO',    desc: 'Dominate Jacksonville local search results and Google Maps — ideal for service businesses, restaurants, retail, and professional services.', icon: '📍' },
-  { title: 'National SEO', desc: 'Rank for competitive national keywords alongside your Jacksonville local presence — for e-commerce, SaaS, and multi-location businesses.', icon: '🌐' },
-  { title: 'SEO Audit',    desc: 'A comprehensive technical and content audit of your Jacksonville business website — with a prioritised action plan and competitor gap analysis.', icon: '🔍' },
+  { title: 'Local SEO',    desc: 'Dominate Jacksonville local search results and Google Maps - ideal for service businesses, restaurants, retail, and professional services.', icon: '📍' },
+  { title: 'National SEO', desc: 'Rank for competitive national keywords alongside your Jacksonville local presence - for e-commerce, SaaS, and multi-location businesses.', icon: '🌐' },
+  { title: 'SEO Audit',    desc: 'A comprehensive technical and content audit of your Jacksonville business website - with a prioritised action plan and competitor gap analysis.', icon: '🔍' },
 ];
 const WHY = [
-  { h: 'Jacksonville Market Knowledge',   b: 'We understand the Jacksonville business landscape — from Riverside to Southside, from healthcare to construction to hospitality — and we tailor keyword strategy to your specific local market.' },
+  { h: 'Jacksonville Market Knowledge',   b: 'We understand the Jacksonville business landscape - from Riverside to Southside, from healthcare to construction to hospitality - and we tailor keyword strategy to your specific local market.' },
   { h: 'Google Maps Dominance',           b: 'For most Jacksonville service businesses, the Google Maps 3-pack drives more leads than organic results. We optimise your Google Business Profile, build citations, and generate reviews to put you in the top 3.' },
-  { h: 'Transparent Monthly Reporting',   b: 'You receive a monthly report showing keyword rankings, organic traffic, Google Business Profile performance, and leads generated — tied directly to your business metrics, not vanity SEO stats.' },
-  { h: 'No Long-Term Contracts',          b: 'We earn your business month by month. Our Jacksonville SEO clients stay because we deliver results — not because they are locked into a 12-month contract.' },
+  { h: 'Transparent Monthly Reporting',   b: 'You receive a monthly report showing keyword rankings, organic traffic, Google Business Profile performance, and leads generated - tied directly to your business metrics, not vanity SEO stats.' },
+  { h: 'No Long-Term Contracts',          b: 'We earn your business month by month. Our Jacksonville SEO clients stay because we deliver results - not because they are locked into a 12-month contract.' },
   { h: '15+ Years of Proven SEO',         b: 'Since 2008, we have ranked businesses in competitive markets across the US, Canada, and Australia. We know what works and what Google penalises.' },
   { h: 'White-Hat Only',                  b: "Every link we build, every piece of content we create, and every technical change we make follows Google's guidelines. No shortcuts that risk a penalty to your Jacksonville business." },
 ];
 const PROCESS = [
   { n: '01', h: 'SEO Audit & Strategy',    b: 'We audit your website, research Jacksonville keywords, analyse your top 10 competitors, and deliver a detailed SEO strategy tailored to your market and goals.' },
-  { n: '02', h: 'Technical Optimisation',  b: 'We fix technical issues — site speed, crawlability, Core Web Vitals, structured data, and mobile experience — that are holding your rankings back.' },
+  { n: '02', h: 'Technical Optimisation',  b: 'We fix technical issues - site speed, crawlability, Core Web Vitals, structured data, and mobile experience - that are holding your rankings back.' },
   { n: '03', h: 'Content & Links',         b: 'We create SEO-optimised content targeting Jacksonville search intent and build high-authority backlinks through digital PR and outreach.' },
-  { n: '04', h: 'Track & Report',          b: 'Monthly ranking reports, traffic analysis, and strategy adjustments based on what Google responds to — with a direct line to your SEO manager.' },
+  { n: '04', h: 'Track & Report',          b: 'Monthly ranking reports, traffic analysis, and strategy adjustments based on what Google responds to - with a direct line to your SEO manager.' },
 ];
 const FAQS = [
-  { q: 'How long does SEO take to work in Jacksonville?', a: 'Most Jacksonville businesses see measurable ranking improvements within 3–4 months. Competitive terms in dense markets (personal injury law, roofing, HVAC) can take 6–9 months to reach page one. Local SEO (Google Maps) typically shows results faster — 4–8 weeks — because the competition for the 3-pack is often less intense than organic rankings.' },
+  { q: 'How long does SEO take to work in Jacksonville?', a: 'Most Jacksonville businesses see measurable ranking improvements within 3–4 months. Competitive terms in dense markets (personal injury law, roofing, HVAC) can take 6–9 months to reach page one. Local SEO (Google Maps) typically shows results faster - 4–8 weeks - because the competition for the 3-pack is often less intense than organic rankings.' },
   { q: 'How much do Jacksonville SEO services cost?', a: 'Our Jacksonville SEO packages start from $499/month for local businesses targeting a specific service area. Competitive multi-location campaigns start from $999/month. We also offer a Free 45-Day SEO Trial so you can evaluate our work before committing to a monthly plan.' },
   { q: 'Do you work with Jacksonville businesses in all industries?', a: 'Yes. We have ranked Jacksonville businesses in healthcare, legal services, HVAC and home services, restaurants, retail, real estate, financial services, automotive, and e-commerce. We adapt our keyword and content strategy to your specific industry and competitive landscape.' },
-  { q: 'What is included in your Jacksonville SEO service?', a: 'Keyword research specific to the Jacksonville market, on-page optimisation, technical SEO fixes, Google Business Profile management, local citation building, content creation, link building, and monthly performance reporting. We manage everything — you focus on your business.' },
-  { q: 'Can you help us rank in specific Jacksonville neighbourhoods?', a: 'Yes. We create neighbourhood-specific landing pages and optimise for hyper-local search terms (e.g., "plumber Riverside Jacksonville" or "HVAC San Marco") — capturing customers searching within specific parts of Jacksonville.' },
+  { q: 'What is included in your Jacksonville SEO service?', a: 'Keyword research specific to the Jacksonville market, on-page optimisation, technical SEO fixes, Google Business Profile management, local citation building, content creation, link building, and monthly performance reporting. We manage everything - you focus on your business.' },
+  { q: 'Can you help us rank in specific Jacksonville neighbourhoods?', a: 'Yes. We create neighbourhood-specific landing pages and optimise for hyper-local search terms (e.g., "plumber Riverside Jacksonville" or "HVAC San Marco") - capturing customers searching within specific parts of Jacksonville.' },
   { q: 'Do you offer a free SEO audit for Jacksonville businesses?', a: 'Yes. We provide a free website SEO audit covering technical health, keyword gaps, competitor analysis, and Google Business Profile optimisation opportunities. Submit your details via our contact form and we will deliver the audit within 48 hours.' },
 ];
 
@@ -94,7 +94,7 @@ export default function SeoServicesJacksonville() {
         { '@type': 'ListItem', position: 2, name: 'SEO Services Jacksonville', item: 'https://www.1solutions.biz/seo-services-jacksonville/' },
       ]},
       { '@type': 'Service', name: 'SEO Services Jacksonville', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Expert SEO services for Jacksonville FL businesses — local SEO, Google Maps optimisation, link building, and technical SEO from 1Solutions.',
+        description: 'Expert SEO services for Jacksonville FL businesses - local SEO, Google Maps optimisation, link building, and technical SEO from 1Solutions.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '112', bestRating: '5' },
         areaServed: { '@type': 'City', name: 'Jacksonville' },
       },
@@ -164,8 +164,8 @@ export default function SeoServicesJacksonville() {
         `}</style>
       </Head>
       <section className="jax-hero">
-        <h1>SEO Services Jacksonville, FL — Rank Higher &amp; Grow Your Jacksonville Business</h1>
-        <p>We help Jacksonville businesses dominate Google search results — local SEO, technical optimisation, content strategy, and link building that drives real enquiries and sales. 15+ years of SEO expertise, 300+ businesses ranked.</p>
+        <h1>SEO Services Jacksonville, FL - Rank Higher &amp; Grow Your Jacksonville Business</h1>
+        <p>We help Jacksonville businesses dominate Google search results - local SEO, technical optimisation, content strategy, and link building that drives real enquiries and sales. 15+ years of SEO expertise, 300+ businesses ranked.</p>
         <div className="jax-hero-btns">
           <Link href="/contact-us" className="jax-btn-primary">Get a Free Jacksonville SEO Audit →</Link>
           <Link href="/local-seo-packages" className="jax-btn-outline">View SEO Packages</Link>
@@ -174,7 +174,7 @@ export default function SeoServicesJacksonville() {
       <section className="jax-sec" ref={skR}>
         <div className="jax-wrap">
           <h2 className="jax-sec-title">Jacksonville SEO Services We Provide</h2>
-          <p className="jax-sec-sub">Every tactic we use is designed for the Jacksonville market — from hyperlocal keyword targeting to Google Maps dominance.</p>
+          <p className="jax-sec-sub">Every tactic we use is designed for the Jacksonville market - from hyperlocal keyword targeting to Google Maps dominance.</p>
           <div className="jax-skills">{SKILLS.map((s, i) => <span key={s} className={`jax-skill${skV ? ' jax-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>)}</div>
         </div>
       </section>
@@ -188,7 +188,7 @@ export default function SeoServicesJacksonville() {
       <section className="jax-sec" ref={whR}>
         <div className="jax-wrap">
           <h2 className="jax-sec-title">Why Jacksonville Businesses Choose 1Solutions</h2>
-          <p className="jax-sec-sub">We bring 15+ years of SEO experience to the Jacksonville market — results-driven, transparent, and contract-free.</p>
+          <p className="jax-sec-sub">We bring 15+ years of SEO experience to the Jacksonville market - results-driven, transparent, and contract-free.</p>
           <div className="jax-why-grid">{WHY.map((w, i) => <div key={w.h} className={`jax-why-item${whV ? ' jax-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
         </div>
       </section>
@@ -203,13 +203,13 @@ export default function SeoServicesJacksonville() {
       <section className="jax-sec jax-sec-alt" ref={prR}>
         <div className="jax-wrap">
           <h2 className="jax-sec-title">How We Rank Your Jacksonville Business</h2>
-          <p className="jax-sec-sub">A proven four-phase process — from audit to compounding organic growth.</p>
+          <p className="jax-sec-sub">A proven four-phase process - from audit to compounding organic growth.</p>
           <div className="jax-process">{PROCESS.map((p, i) => <div key={p.n} className={`jax-step${prV ? ' jax-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}><div className="jax-step-n">{p.n}</div><h3>{p.h}</h3><p>{p.b}</p></div>)}</div>
         </div>
       </section>
       <section className="jax-sec">
         <div className="jax-wrap">
-          <h2 className="jax-sec-title">Jacksonville SEO — Frequently Asked Questions</h2>
+          <h2 className="jax-sec-title">Jacksonville SEO - Frequently Asked Questions</h2>
           <p className="jax-sec-sub">Everything you need to know before hiring a Jacksonville SEO company.</p>
           <div className="jax-faq">{FAQS.map((f, i) => <div key={i} className="jax-faq-item"><div className="jax-faq-q" onClick={() => setOpenFaq(openFaq === i ? null : i)}><span>{f.q}</span><span className={`jax-faq-icon${openFaq === i ? ' jax-open' : ''}`}>+</span></div>{openFaq === i && <p className="jax-faq-a">{f.a}</p>}</div>)}</div>
         </div>
@@ -217,7 +217,7 @@ export default function SeoServicesJacksonville() {
       <section className="jax-cta">
         <div className="jax-wrap">
           <h2>Ready to Dominate Jacksonville Search Results?</h2>
-          <p>Get a free Jacksonville SEO audit — we'll review your rankings, identify your biggest opportunities, and deliver an action plan within 48 hours.</p>
+          <p>Get a free Jacksonville SEO audit - we'll review your rankings, identify your biggest opportunities, and deliver an action plan within 48 hours.</p>
           <Link href="/contact-us" className="jax-btn-primary">Get Your Free Jacksonville SEO Audit →</Link>
         </div>
       </section>

@@ -18,7 +18,7 @@ const SCHEMA = {
       '@type': 'Service',
       name: 'eLearning Software Development Services',
       url: 'https://www.1solutions.biz/elearning-software-development-services/',
-      description: 'Custom eLearning software development — LMS platforms, SCORM/xAPI-compliant course engines, virtual classrooms, adaptive learning systems, gamification, mobile learning apps, and corporate training portals.',
+      description: 'Custom eLearning software development - LMS platforms, SCORM/xAPI-compliant course engines, virtual classrooms, adaptive learning systems, gamification, mobile learning apps, and corporate training portals.',
       provider: {
         '@type': 'Organization',
         name: '1Solutions',
@@ -34,10 +34,10 @@ const SCHEMA = {
       mainEntity: [
         { '@type': 'Question', name: 'Do you build SCORM and xAPI-compliant eLearning platforms?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We develop eLearning platforms with full SCORM 1.2, SCORM 2004 (all editions), xAPI (Tin Can), and AICC compliance. Our LMS solutions support standard course packaging, runtime communication, and detailed learner tracking. We also implement LTI (Learning Tools Interoperability) for seamless integration with third-party tools, content providers, and institutional systems.' } },
         { '@type': 'Question', name: 'How long does it take to build a custom LMS?', acceptedAnswer: { '@type': 'Answer', text: 'A fully custom LMS with course management, user roles, SCORM runtime, progress tracking, assessment engine, and basic reporting typically takes 16–20 weeks. A more complex platform with live virtual classrooms, adaptive learning, gamification, and advanced analytics takes 24–36 weeks. We provide milestone-based estimates after a requirements discovery session.' } },
-        { '@type': 'Question', name: 'Can you build a white-label eLearning platform we can sell to clients?', acceptedAnswer: { '@type': 'Answer', text: 'Yes — multi-tenant, white-label LMS development is one of our core services. We build platforms with custom domain support, per-tenant branding (logo, colours, fonts), isolated data environments, subscription billing integration (Stripe, Razorpay), and a self-service onboarding flow. You retain full ownership of the platform and all source code.' } },
+        { '@type': 'Question', name: 'Can you build a white-label eLearning platform we can sell to clients?', acceptedAnswer: { '@type': 'Answer', text: 'Yes - multi-tenant, white-label LMS development is one of our core services. We build platforms with custom domain support, per-tenant branding (logo, colours, fonts), isolated data environments, subscription billing integration (Stripe, Razorpay), and a self-service onboarding flow. You retain full ownership of the platform and all source code.' } },
         { '@type': 'Question', name: 'Do you integrate live virtual classrooms into eLearning platforms?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We integrate live virtual classroom capabilities using WebRTC (for custom builds), Zoom SDK, Google Meet API, Jitsi, BigBlueButton, and Agora. Features include interactive whiteboards, screen sharing, breakout rooms, session recording, attendance tracking, and LMS activity log synchronisation. We also build fully custom video conferencing modules for platforms requiring data sovereignty.' } },
-        { '@type': 'Question', name: 'Which engagement model suits eLearning platform development?', acceptedAnswer: { '@type': 'Answer', text: 'For a defined eLearning product — an LMS, a course marketplace, or a corporate training portal — Fixed Price works well and gives budget certainty. For a long-term product roadmap with evolving features, the Dedicated Team model gives you a full-stack team working exclusively on your platform. Time & Material suits early-stage startups building an MVP and iterating rapidly based on user feedback.' } },
-        { '@type': 'Question', name: 'Can you migrate our existing Moodle or TalentLMS platform to a custom solution?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We handle full LMS migrations — from Moodle, TalentLMS, Docebo, Canvas, or other platforms — to a custom or open-source LMS. This includes course content migration (SCORM packages, AICC, and native formats), user data migration, gradebook and completion history migration, and integration re-mapping. We provide a parallel-run period to validate data integrity before cutover.' } },
+        { '@type': 'Question', name: 'Which engagement model suits eLearning platform development?', acceptedAnswer: { '@type': 'Answer', text: 'For a defined eLearning product - an LMS, a course marketplace, or a corporate training portal - Fixed Price works well and gives budget certainty. For a long-term product roadmap with evolving features, the Dedicated Team model gives you a full-stack team working exclusively on your platform. Time & Material suits early-stage startups building an MVP and iterating rapidly based on user feedback.' } },
+        { '@type': 'Question', name: 'Can you migrate our existing Moodle or TalentLMS platform to a custom solution?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We handle full LMS migrations - from Moodle, TalentLMS, Docebo, Canvas, or other platforms - to a custom or open-source LMS. This includes course content migration (SCORM packages, AICC, and native formats), user data migration, gradebook and completion history migration, and integration re-mapping. We provide a parallel-run period to validate data integrity before cutover.' } },
       ],
     },
   ],
@@ -49,9 +49,9 @@ const SERVICES = [
   { n: '02', title: 'Online Course & Marketplace Platforms', desc: 'Course creation platforms and multi-instructor marketplaces with video hosting, drip content scheduling, coupon and pricing engines, affiliate programmes, and Stripe/PayPal payment integration.', feat: true },
   { n: '03', title: 'Virtual Classroom & Live Learning', desc: 'Live virtual classroom modules with WebRTC/Zoom/BigBlueButton integration, interactive whiteboards, breakout rooms, session recording, attendance tracking, and real-time polls and Q&A.' },
   { n: '04', title: 'Corporate Training & L&D Portals', desc: 'Enterprise learning and development platforms with onboarding workflows, role-based training paths, compliance training tracking, performance analytics, manager dashboards, and HRIS integration.' },
-  { n: '05', title: 'Adaptive Learning Systems', desc: 'AI-driven adaptive learning engines that personalise content sequencing based on learner performance, knowledge gaps, and learning velocity — maximising knowledge retention and course completion rates.' },
+  { n: '05', title: 'Adaptive Learning Systems', desc: 'AI-driven adaptive learning engines that personalise content sequencing based on learner performance, knowledge gaps, and learning velocity - maximising knowledge retention and course completion rates.' },
   { n: '06', title: 'Mobile Learning (mLearning) Apps', desc: 'Native iOS and Android mobile learning apps with offline content sync, push notification reminders, micro-learning modules, in-app assessments, and seamless LMS backend synchronisation.' },
-  { n: '07', title: 'Gamification & Learner Engagement', desc: 'Gamification layers with points, badges, leaderboards, learning streaks, achievement unlocks, and social learning feeds — proven to increase course completion rates by 30–40%.' },
+  { n: '07', title: 'Gamification & Learner Engagement', desc: 'Gamification layers with points, badges, leaderboards, learning streaks, achievement unlocks, and social learning feeds - proven to increase course completion rates by 30–40%.' },
   { n: '08', title: 'Assessment & Quiz Engines', desc: 'Flexible assessment tools supporting multiple choice, drag-and-drop, fill-in-the-blank, video response, and timed exams. Includes question banks, randomisation, anti-cheating controls, and detailed result analytics.' },
   { n: '09', title: 'Content Management & Authoring Tools', desc: 'Custom content authoring environments and SCORM packaging tools enabling instructional designers to create interactive modules, branching scenarios, H5P-compatible content, and multimedia lessons without code.' },
   { n: '10', title: 'eLearning Platform Integration & Migration', desc: 'Third-party integrations (CRM, HRIS, SSO, payment gateways, video platforms) and full LMS migrations from Moodle, TalentLMS, Docebo, or Canvas to a custom or modern open-source platform.' },
@@ -108,7 +108,7 @@ const ENGAGEMENT_MODELS = [
     badgeColor: '#0ea5e9',
     icon: 'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z',
     headline: 'Agreed price. Agreed scope. No surprises.',
-    desc: 'Ideal for well-scoped eLearning products — an LMS MVP, a course marketplace, a corporate training portal, or a specific integration. We agree on deliverables, price, and timeline upfront with milestone-based delivery.',
+    desc: 'Ideal for well-scoped eLearning products - an LMS MVP, a course marketplace, a corporate training portal, or a specific integration. We agree on deliverables, price, and timeline upfront with milestone-based delivery.',
     bestFor: ['Custom LMS MVP', 'Online course marketplace', 'Corporate training portal', 'Assessment engine or authoring tool'],
     process: 'Detailed spec → Fixed quote → Milestone delivery → Sign-off',
     timeline: 'Best for projects 8–24 weeks',
@@ -121,10 +121,10 @@ const ENGAGEMENT_MODELS = [
     feat: true,
     icon: 'M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z',
     headline: 'Your offshore eLearning engineering team. Full-time. Fully yours.',
-    desc: 'A dedicated squad of eLearning specialists — full-stack developer, mobile engineer, instructional technology expert, QA, and DevOps — working exclusively on your platform at a fraction of US/UK hiring cost. Full IP ownership retained by you.',
+    desc: 'A dedicated squad of eLearning specialists - full-stack developer, mobile engineer, instructional technology expert, QA, and DevOps - working exclusively on your platform at a fraction of US/UK hiring cost. Full IP ownership retained by you.',
     bestFor: ['Growing eLearning SaaS or LMS product', 'Long-term course platform roadmap', 'EdTech startup scaling its engineering team', 'Replacing or augmenting an in-house team'],
     process: 'Team assembly → Onboarding → Weekly sprint delivery → Continuous roadmap',
-    timeline: 'Ongoing — scale up or down each quarter',
+    timeline: 'Ongoing - scale up or down each quarter',
   },
   {
     id: 'tm',
@@ -136,14 +136,14 @@ const ENGAGEMENT_MODELS = [
     desc: 'Billed on actual time and resources used. Best for EdTech startups building an MVP and iterating quickly based on early user feedback, or for adding specific features to an existing platform.',
     bestFor: ['EdTech MVP with evolving scope', 'Adding adaptive learning or AI features', 'Integrating new video or virtual classroom tools', 'Rapid prototyping for investor demos'],
     process: 'Sprint planning → Biweekly delivery → Iterative refinement → Transparent timesheets',
-    timeline: 'Start in 1 week — no lengthy onboarding',
+    timeline: 'Start in 1 week - no lengthy onboarding',
   },
 ];
 
 const PROCESS_STEPS = [
   { num: '01', title: 'Discovery & Instructional Design Requirements', desc: 'We work with your team to map learner personas, course taxonomy, content formats, assessment types, completion criteria, and integration requirements (HRIS, SSO, payment gateways) before any development begins.' },
-  { num: '02', title: 'Platform Architecture & UX Design', desc: 'Our architects design a scalable, multi-tenant-ready platform architecture. UX designers create learner-centric wireframes and prototypes covering the course player, dashboard, assessment flow, and instructor studio — reviewed and approved before development.' },
-  { num: '03', title: 'Agile Development — Backend, Frontend & Mobile', desc: 'Parallel development streams: backend APIs and LMS core (course engine, user management, SCORM/xAPI runtime), frontend learner and instructor portals, and iOS/Android mobile apps — all progressing in 2-week sprint cycles.' },
+  { num: '02', title: 'Platform Architecture & UX Design', desc: 'Our architects design a scalable, multi-tenant-ready platform architecture. UX designers create learner-centric wireframes and prototypes covering the course player, dashboard, assessment flow, and instructor studio - reviewed and approved before development.' },
+  { num: '03', title: 'Agile Development - Backend, Frontend & Mobile', desc: 'Parallel development streams: backend APIs and LMS core (course engine, user management, SCORM/xAPI runtime), frontend learner and instructor portals, and iOS/Android mobile apps - all progressing in 2-week sprint cycles.' },
   { num: '04', title: 'eLearning Standards Compliance Testing', desc: 'Rigorous SCORM 1.2/2004 and xAPI conformance testing using SCORM Cloud and Rustici Engine. Cross-browser and cross-device testing, accessibility audit (WCAG 2.1 AA), load testing for concurrent learner sessions, and video streaming quality validation.' },
   { num: '05', title: 'Content Migration & Integration Setup', desc: 'If migrating from an existing LMS, we handle course content migration, user data transfer, gradebook history, and integration re-mapping. For new platforms, we set up SSO (SAML 2.0 / OAuth2), payment gateways, CRM connectors, and video CDN configuration.' },
   { num: '06', title: 'Launch, Analytics & Ongoing Optimisation', desc: 'Zero-downtime production deployment with staging validation, CDN configuration for global video delivery, real-time learner analytics dashboards, and tiered SLA-backed post-launch support. Ongoing feature releases on a defined roadmap cadence.' },
@@ -151,7 +151,7 @@ const PROCESS_STEPS = [
 
 const TESTIMONIALS = [
   {
-    text: "1Solutions built our multi-tenant LMS from scratch — SCORM runtime, course marketplace, video streaming, and a gamification layer. They understood instructional design requirements as well as engineering ones, and the platform launched on schedule. Our learner engagement metrics doubled within 3 months.",
+    text: "1Solutions built our multi-tenant LMS from scratch - SCORM runtime, course marketplace, video streaming, and a gamification layer. They understood instructional design requirements as well as engineering ones, and the platform launched on schedule. Our learner engagement metrics doubled within 3 months.",
     name: 'Sarah K.', role: 'CEO, EdTech Platform (US)', init: 'SK', bg: '#4c1d95',
   },
   {
@@ -165,25 +165,25 @@ const TESTIMONIALS = [
 ];
 
 const WHY_CARDS = [
-  { title: 'Deep eLearning Domain Expertise', desc: 'We understand SCORM, xAPI, LTI, adaptive learning, and instructional design — not just generic web development. We speak the language of learning technologists and L&D teams.' },
+  { title: 'Deep eLearning Domain Expertise', desc: 'We understand SCORM, xAPI, LTI, adaptive learning, and instructional design - not just generic web development. We speak the language of learning technologists and L&D teams.' },
   { title: 'SCORM, xAPI & LTI Compliance', desc: 'Our LMS platforms are tested for SCORM 1.2/2004 and xAPI conformance using Rustici SCORM Cloud, and support LTI 1.3 for seamless integration with institutional and third-party tool ecosystems.' },
-  { title: '15+ Years of Platform Delivery', desc: 'We have been building eLearning platforms, LMS solutions, and EdTech products since 2008 — for startups, universities, corporate L&D teams, and online course marketplaces worldwide.' },
-  { title: 'Full-Stack eLearning Team', desc: 'Backend LMS core, SCORM runtime, frontend course player, mobile apps, video streaming, and AI personalisation — your entire eLearning platform delivered by a single accountable team.' },
-  { title: 'Scalable Multi-Tenant Architecture', desc: 'We architect eLearning platforms to support thousands of concurrent learners and hundreds of tenants from day one — with per-tenant data isolation, custom branding, and independent billing.' },
+  { title: '15+ Years of Platform Delivery', desc: 'We have been building eLearning platforms, LMS solutions, and EdTech products since 2008 - for startups, universities, corporate L&D teams, and online course marketplaces worldwide.' },
+  { title: 'Full-Stack eLearning Team', desc: 'Backend LMS core, SCORM runtime, frontend course player, mobile apps, video streaming, and AI personalisation - your entire eLearning platform delivered by a single accountable team.' },
+  { title: 'Scalable Multi-Tenant Architecture', desc: 'We architect eLearning platforms to support thousands of concurrent learners and hundreds of tenants from day one - with per-tenant data isolation, custom branding, and independent billing.' },
   { title: 'AI-Powered Adaptive Learning', desc: 'We integrate adaptive learning engines, NLP-based chatbot tutors, intelligent content recommendations, and auto-grading AI to personalise the learning journey and improve knowledge retention.' },
-  { title: 'US / UK / AU / Global Delivery', desc: 'We serve EdTech startups, universities, corporate L&D departments, and online training providers across North America, Europe, and Australia — adapting to FERPA, GDPR, and regional data compliance.' },
+  { title: 'US / UK / AU / Global Delivery', desc: 'We serve EdTech startups, universities, corporate L&D departments, and online training providers across North America, Europe, and Australia - adapting to FERPA, GDPR, and regional data compliance.' },
   { title: 'Transparent, Milestone-Based Delivery', desc: 'Fortnightly demos, weekly status reports, and full source code access from day one. No black boxes. Full IP ownership retained by the client. No surprise invoices.' },
 ];
 
 const FAQS = [
   { q: 'Do you build SCORM and xAPI-compliant eLearning platforms?', a: 'Yes. We develop eLearning platforms with full SCORM 1.2, SCORM 2004 (all editions), xAPI (Tin Can API), and AICC compliance. Our LMS solutions support standard course packaging, runtime communication, and detailed learner tracking. We also implement LTI 1.1 and 1.3 for seamless integration with third-party tools, content providers, and institutional systems such as Canvas and Blackboard.' },
   { q: 'How long does it take to build a custom LMS?', a: 'A custom LMS with course management, user roles, SCORM/xAPI runtime, progress tracking, completion certificates, and basic reporting typically takes 16–20 weeks. A more complex platform with live virtual classrooms, adaptive learning, gamification, and advanced analytics takes 24–36 weeks. We provide milestone-based estimates after a technical discovery session at no charge.' },
-  { q: 'Can you build a white-label eLearning platform for resale?', a: 'Yes — multi-tenant, white-label LMS development is one of our core specialisations. We build platforms with custom domain support, per-tenant branding (logo, colours, fonts), isolated data environments, subscription billing integration via Stripe or Razorpay, and a self-service tenant onboarding flow. You retain full ownership of the platform source code and all intellectual property.' },
+  { q: 'Can you build a white-label eLearning platform for resale?', a: 'Yes - multi-tenant, white-label LMS development is one of our core specialisations. We build platforms with custom domain support, per-tenant branding (logo, colours, fonts), isolated data environments, subscription billing integration via Stripe or Razorpay, and a self-service tenant onboarding flow. You retain full ownership of the platform source code and all intellectual property.' },
   { q: 'Do you integrate live virtual classrooms into eLearning platforms?', a: 'Yes. We integrate live virtual classroom capabilities using WebRTC (for fully custom builds), Zoom SDK, Google Meet API, Jitsi Meet, BigBlueButton, and Agora.io. Features include interactive whiteboards, screen sharing, breakout rooms, session recording and playback, attendance tracking, and LMS activity synchronisation. We also build fully custom video conferencing modules for platforms with data sovereignty requirements.' },
-  { q: 'Which engagement model suits eLearning platform development?', a: 'For a defined eLearning product — an LMS, a course marketplace, or a corporate training portal — Fixed Price gives budget certainty. For a long-term product roadmap with evolving features, the Dedicated Team model gives you a full-stack team working exclusively on your platform. Time and Material suits early-stage EdTech startups building an MVP and iterating rapidly based on learner feedback.' },
+  { q: 'Which engagement model suits eLearning platform development?', a: 'For a defined eLearning product - an LMS, a course marketplace, or a corporate training portal - Fixed Price gives budget certainty. For a long-term product roadmap with evolving features, the Dedicated Team model gives you a full-stack team working exclusively on your platform. Time and Material suits early-stage EdTech startups building an MVP and iterating rapidly based on learner feedback.' },
   { q: 'Can you migrate our existing LMS to a custom solution?', a: 'Yes. We handle full LMS migrations from Moodle, TalentLMS, Docebo, Canvas, and other platforms to custom or modern open-source solutions. This includes SCORM package migration, user and enrolment data transfer, gradebook and completion history migration, and integration re-mapping. We provide a parallel-run validation period to ensure data integrity before final cutover.' },
-  { q: 'Do you build mobile learning apps with offline support?', a: 'Yes. We develop native iOS and Android mobile learning apps using Flutter or React Native, with offline-first architecture. Learners can download courses, complete assessments, and track progress without connectivity — with automatic sync when back online. Push notifications for reminders, streaks, and new content are also included.' },
-  { q: 'Do you offer post-launch support and platform optimisation?', a: 'Yes — all projects include a 30-day hypercare period post-launch. We then offer tiered SLA-backed support plans covering bug fixes, security patches, performance optimisation, feature additions, and infrastructure scaling. Our Enterprise plan includes 24/7 monitoring and a 4-hour critical response SLA.' },
+  { q: 'Do you build mobile learning apps with offline support?', a: 'Yes. We develop native iOS and Android mobile learning apps using Flutter or React Native, with offline-first architecture. Learners can download courses, complete assessments, and track progress without connectivity - with automatic sync when back online. Push notifications for reminders, streaks, and new content are also included.' },
+  { q: 'Do you offer post-launch support and platform optimisation?', a: 'Yes - all projects include a 30-day hypercare period post-launch. We then offer tiered SLA-backed support plans covering bug fixes, security patches, performance optimisation, feature additions, and infrastructure scaling. Our Enterprise plan includes 24/7 monitoring and a 4-hour critical response SLA.' },
 ];
 
 /* ─── Hooks ──────────────────────────────────────────────────── */
@@ -300,7 +300,7 @@ export default function ElearningSoftwareDevelopment() {
     <>
       <Head>
         <title>eLearning Software Development Services | 1Solutions</title>
-        <meta name="description" content="Custom eLearning software development — LMS platforms, SCORM/xAPI-compliant course engines, virtual classrooms, gamification & corporate training portals." />
+        <meta name="description" content="Custom eLearning software development - LMS platforms, SCORM/xAPI-compliant course engines, virtual classrooms, gamification & corporate training portals." />
         <link rel="canonical" href="https://www.1solutions.biz/elearning-software-development-services/" />
         <meta property="og:title" content="eLearning Software Development Services | 1Solutions" />
         <meta property="og:description" content="Custom LMS, online course platforms, virtual classrooms, adaptive learning & corporate training portals. SCORM/xAPI compliant. 15+ years | 80+ EdTech clients." />
@@ -578,7 +578,7 @@ export default function ElearningSoftwareDevelopment() {
         {/* ── HERO ── */}
         <section className="el-hero">
           <span className="el-eyebrow">eLearning Software Development Company</span>
-          <h1>eLearning Software Development — Engaging, Scalable &amp; Standards-Compliant</h1>
+          <h1>eLearning Software Development - Engaging, Scalable &amp; Standards-Compliant</h1>
           <p className="el-hero-desc">We build custom LMS platforms, SCORM/xAPI-compliant course engines, virtual classrooms, adaptive learning systems, and corporate training portals for EdTech startups, universities, enterprises, and online training providers across the US, UK, Australia, and beyond.</p>
           <div className="el-trust-row">
             {['SCORM & xAPI Compliant','LTI 1.3 Integration','15+ Years Experience','80+ EdTech Clients','Full-Stack Delivery'].map(b => (
@@ -630,7 +630,7 @@ export default function ElearningSoftwareDevelopment() {
             <div className={`el-s-reveal${visibleSections.has('svc') ? ' el-revealed' : ''}`} ref={el => { sectionRefs.current['svc'] = el; }}>
               <span className="el-s-eyebrow">What We Build</span>
               <h2 id="el-svc-heading" className="el-s-title">eLearning Software Solutions We Deliver</h2>
-              <p className="el-s-desc" style={{ maxWidth: 720 }}>From custom LMS platforms and SCORM-compliant course engines to live virtual classrooms, gamified learning apps, and enterprise L&D portals — we engineer the full spectrum of eLearning technology.</p>
+              <p className="el-s-desc" style={{ maxWidth: 720 }}>From custom LMS platforms and SCORM-compliant course engines to live virtual classrooms, gamified learning apps, and enterprise L&D portals - we engineer the full spectrum of eLearning technology.</p>
             </div>
             <div className="el-svc-grid" ref={svcGridRef}>
               {visibleServices.map((s, i) => (
@@ -657,7 +657,7 @@ export default function ElearningSoftwareDevelopment() {
             <div className={`el-s-reveal${visibleSections.has('stk') ? ' el-revealed' : ''}`} ref={el => { sectionRefs.current['stk'] = el; }}>
               <span className="el-s-eyebrow">The eLearning Tech Stack We Use</span>
               <h2 id="el-stack-heading" className="el-s-title">Technology That Powers Modern Learning Experiences</h2>
-              <p className="el-s-desc" style={{ maxWidth: 680 }}>Every technology we use is chosen for scalability, learner experience, and standards compliance — from SCORM-tested LMS cores to AI-driven adaptive learning engines and WebRTC-powered virtual classrooms.</p>
+              <p className="el-s-desc" style={{ maxWidth: 680 }}>Every technology we use is chosen for scalability, learner experience, and standards compliance - from SCORM-tested LMS cores to AI-driven adaptive learning engines and WebRTC-powered virtual classrooms.</p>
             </div>
             <div className="el-stack-grid" ref={stackGridRef}>
               {TECH_STACK.map((grp, i) => (
@@ -680,7 +680,7 @@ export default function ElearningSoftwareDevelopment() {
             <div className={`el-s-reveal${visibleSections.has('eng') ? ' el-revealed' : ''}`} ref={el => { sectionRefs.current['eng'] = el; }}>
               <span className="el-s-eyebrow">How We Work With You</span>
               <h2 id="el-eng-heading" className="el-s-title">Engagement Models for eLearning Development</h2>
-              <p className="el-s-desc" style={{ maxWidth: 680 }}>Whether you need a fixed-price LMS build, a dedicated EdTech engineering team, or flexible sprint-based collaboration on a growing course platform — we adapt to your project stage and budget.</p>
+              <p className="el-s-desc" style={{ maxWidth: 680 }}>Whether you need a fixed-price LMS build, a dedicated EdTech engineering team, or flexible sprint-based collaboration on a growing course platform - we adapt to your project stage and budget.</p>
             </div>
             <div className="el-eng-grid" ref={engGridRef}>
               {ENGAGEMENT_MODELS.map((m, i) => (
@@ -713,7 +713,7 @@ export default function ElearningSoftwareDevelopment() {
             <div className={`el-s-reveal${visibleSections.has('proc') ? ' el-revealed' : ''}`} ref={el => { sectionRefs.current['proc'] = el; }}>
               <span className="el-s-eyebrow">How We Deliver</span>
               <h2 id="el-proc-heading" className="el-s-title">Our eLearning Software Development Process</h2>
-              <p className="el-s-desc">A structured six-stage process designed for learner-centric eLearning products — from instructional design requirements to standards-compliance testing and post-launch analytics optimisation.</p>
+              <p className="el-s-desc">A structured six-stage process designed for learner-centric eLearning products - from instructional design requirements to standards-compliance testing and post-launch analytics optimisation.</p>
             </div>
             <div className="el-psteps">
               {PROCESS_STEPS.map((step, i) => (
@@ -765,7 +765,7 @@ export default function ElearningSoftwareDevelopment() {
             <div className={`el-s-reveal${visibleSections.has('wy') ? ' el-revealed' : ''}`} ref={el => { sectionRefs.current['wy'] = el; }}>
               <span className="el-s-eyebrow">Why 1Solutions</span>
               <h2 id="el-wy-heading" className="el-s-title">Why Choose Us for eLearning Software Development</h2>
-              <p className="el-s-desc" style={{ maxWidth: 680 }}>15+ years building eLearning platforms, LMS solutions, and EdTech products — with deep expertise in SCORM/xAPI compliance, adaptive learning, video delivery, and enterprise L&D integration.</p>
+              <p className="el-s-desc" style={{ maxWidth: 680 }}>15+ years building eLearning platforms, LMS solutions, and EdTech products - with deep expertise in SCORM/xAPI compliance, adaptive learning, video delivery, and enterprise L&D integration.</p>
             </div>
             <div className="el-why-grid" ref={whyGridRef}>
               {WHY_CARDS.map((c, i) => (
@@ -784,13 +784,13 @@ export default function ElearningSoftwareDevelopment() {
           <div className="el-contact-grid">
             <div>
               <h2 id="el-contact-heading" className="el-ctitle">Start Your eLearning Software Project</h2>
-              <p className="el-cdesc">Tell us about your platform and we will schedule a free 60-minute technical discovery call with a senior eLearning architect. No sales pitch — just clear guidance on the right LMS architecture, compliance approach, and tech stack for your specific learning product.</p>
+              <p className="el-cdesc">Tell us about your platform and we will schedule a free 60-minute technical discovery call with a senior eLearning architect. No sales pitch - just clear guidance on the right LMS architecture, compliance approach, and tech stack for your specific learning product.</p>
               <div className="el-cbenefits">
                 {[
                   ['✓', 'Free 60-minute discovery call with a senior eLearning software architect'],
                   ['✓', 'Preliminary SCORM/xAPI compliance scoping and LMS architecture advice at no charge'],
-                  ['✓', 'Tech stack recommendation — LMS framework, video infrastructure, AI personalisation'],
-                  ['✓', 'NDA available on request — your platform idea stays protected'],
+                  ['✓', 'Tech stack recommendation - LMS framework, video infrastructure, AI personalisation'],
+                  ['✓', 'NDA available on request - your platform idea stays protected'],
                   ['✓', 'Response within 24 business hours from our EdTech engineering team'],
                 ].map(([icon, text]) => (
                   <div className="el-cbenefit" key={text}>
@@ -842,7 +842,7 @@ export default function ElearningSoftwareDevelopment() {
                 </div>
                 <div className="el-fg full">
                   <label htmlFor="el-msg">Project Brief *</label>
-                  <textarea name="sf-message" id="el-msg" rows={4} placeholder="Describe your eLearning platform — target audience, content types, SCORM/xAPI requirements, integrations needed (HRIS, SSO, payment gateway), expected number of learners, and timeline..." required />
+                  <textarea name="sf-message" id="el-msg" rows={4} placeholder="Describe your eLearning platform - target audience, content types, SCORM/xAPI requirements, integrations needed (HRIS, SSO, payment gateway), expected number of learners, and timeline..." required />
                 </div>
                 <div className="el-consent">
                   <input id="el-consent" type="checkbox" required />
@@ -859,7 +859,7 @@ export default function ElearningSoftwareDevelopment() {
         <section className="el-faq" aria-labelledby="el-faq-heading">
           <div className="el-inner" style={{ maxWidth: 860 }}>
             <span className="el-s-eyebrow">FAQ</span>
-            <h2 id="el-faq-heading">eLearning Software Development — Frequently Asked Questions</h2>
+            <h2 id="el-faq-heading">eLearning Software Development - Frequently Asked Questions</h2>
             <p className="el-faq-sub">Everything you need to know about building SCORM-compliant, scalable eLearning platforms with 1Solutions.</p>
             <div className="el-faq-list">
               {FAQS.map((item, i) => (

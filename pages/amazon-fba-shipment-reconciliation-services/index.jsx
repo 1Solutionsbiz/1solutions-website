@@ -10,7 +10,7 @@ const challenges = [
   {
     icon: 'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10',
     title: 'Amazon Loses More Inventory Than You Realise',
-    desc: "Amazon's FBA warehouses process millions of units daily across hundreds of facilities. Items get lost during receiving, misplaced during storage, miscounted in transfer between warehouses, or damaged by warehouse equipment. Most sellers are owed reimbursements for 1-3% of their total FBA inventory value every month — and most never know it.",
+    desc: "Amazon's FBA warehouses process millions of units daily across hundreds of facilities. Items get lost during receiving, misplaced during storage, miscounted in transfer between warehouses, or damaged by warehouse equipment. Most sellers are owed reimbursements for 1-3% of their total FBA inventory value every month - and most never know it.",
   },
   {
     icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
@@ -53,7 +53,7 @@ const services = [
   {
     icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',
     title: 'Returns Reconciliation',
-    desc: 'Audit of customer returns to ensure all returned units are received and credited correctly — identifying units that were "returned" but never actually made it back to FBA inventory.',
+    desc: 'Audit of customer returns to ensure all returned units are received and credited correctly - identifying units that were "returned" but never actually made it back to FBA inventory.',
   },
   {
     icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z',
@@ -109,12 +109,12 @@ const steps = [
 ];
 
 const FAQS = [
-  { q: "How do you access my Amazon Seller Central data?", a: "We use secondary user permissions within your Seller Central account — you grant us specific permissions (inventory, reports, cases) and can revoke access at any time. We never request your primary login credentials. The access level we need is limited to reading reports, submitting support cases, and viewing inventory data." },
+  { q: "How do you access my Amazon Seller Central data?", a: "We use secondary user permissions within your Seller Central account - you grant us specific permissions (inventory, reports, cases) and can revoke access at any time. We never request your primary login credentials. The access level we need is limited to reading reports, submitting support cases, and viewing inventory data." },
   { q: "What types of FBA reimbursements can you recover?", a: "We file claims for the full range of FBA reimbursement categories: inventory lost in transit to Amazon fulfilment centres, inventory damaged at fulfilment centres, customer returns not restocked correctly, units destroyed without authorisation, inbound shipment quantity discrepancies, and customer refunds issued without inventory being returned. Most sellers have unclaimed reimbursements across multiple categories." },
   { q: "How much can I expect to recover?", a: "Most FBA sellers with 6 or more months of history recover 1 to 3 percent of their annual FBA revenue in our first audit. For a seller doing $500K per year in FBA, that is typically $5,000 to $15,000 recovered. The exact amount depends on how long since the last reconciliation and how many inbound shipment discrepancies have accumulated." },
   { q: "How long does the reconciliation process take?", a: "Initial audit and claim filing typically takes 5 to 10 business days depending on the volume of historical data. Amazon response time on claims varies: straightforward inventory discrepancy claims are typically resolved within 2 to 4 weeks. Complex cases requiring escalation can take 6 to 12 weeks." },
   { q: "Do I need to do anything during the process?", a: "Very little. We handle the full process from data pull through claim submission and follow-up. You may need to provide documentation such as your original inbound shipment packing lists if Amazon disputes a claim, but most claims are resolved using data we pull from your Seller Central reports directly." },
-  { q: "What are the time limits for filing FBA reimbursement claims?", a: "Amazon has a 9-month lookback window for most claim types — claims older than 9 months from the incident date are no longer eligible. This is why regular reconciliation is important. Some claim types such as overcharge fees have different windows. We file all eligible claims as quickly as possible after the audit to avoid approaching these deadlines." },
+  { q: "What are the time limits for filing FBA reimbursement claims?", a: "Amazon has a 9-month lookback window for most claim types - claims older than 9 months from the incident date are no longer eligible. This is why regular reconciliation is important. Some claim types such as overcharge fees have different windows. We file all eligible claims as quickly as possible after the audit to avoid approaching these deadlines." },
 ];
 
 export default function FBAReconciliation() {
@@ -315,7 +315,7 @@ export default function FBAReconciliation() {
             </div>
             <h1>Amazon FBA Reconciliation Services That Recover Money Amazon Owes You</h1>
             <p className="fbar-hero-desc">
-              Amazon loses, damages, or miscounts FBA inventory every single month — and most sellers never claim the reimbursements they are owed. 1Solutions audits your FBA shipments, identifies every discrepancy, files claims on your behalf, and follows up until the money is recovered.
+              Amazon loses, damages, or miscounts FBA inventory every single month - and most sellers never claim the reimbursements they are owed. 1Solutions audits your FBA shipments, identifies every discrepancy, files claims on your behalf, and follows up until the money is recovered.
             </p>
             <div className="fbar-stats-bar">
               <div className="fbar-stat"><span className="fbar-stat-num">$3.2M+</span><span className="fbar-stat-label">Recovered for FBA sellers</span></div>

@@ -30,29 +30,29 @@ const SKILLS = [
 const MODELS = [
   { title: 'Klaviyo Setup',       desc: 'Full Klaviyo account setup: integration, core flows (welcome, cart, browse, post-purchase, win-back), list hygiene, and sending domain configuration.', icon: '⚙️' },
   { title: 'Monthly Management',  desc: 'Ongoing Klaviyo management: campaign calendar, new flows, A/B testing, list segmentation, and monthly performance reporting.', icon: '📅' },
-  { title: 'Klaviyo Audit',       desc: 'A detailed audit of your existing Klaviyo account — flow performance, deliverability, segmentation gaps, and a prioritised optimisation roadmap.', icon: '🔍' },
+  { title: 'Klaviyo Audit',       desc: 'A detailed audit of your existing Klaviyo account - flow performance, deliverability, segmentation gaps, and a prioritised optimisation roadmap.', icon: '🔍' },
 ];
 const WHY = [
   { h: 'Revenue-First Approach',       b: 'We optimise for attributed revenue, not open rates. Every flow and campaign is built around your CAC, AOV, and LTV targets.' },
   { h: 'Certified Klaviyo Expertise',  b: 'Our team is Klaviyo-certified and has set up and optimised accounts for 100+ DTC and e-commerce brands across Shopify and WooCommerce.' },
-  { h: 'Full-Funnel Coverage',         b: 'From first-touch welcome series to 12-month win-back sequences — we build every flow in the customer lifecycle, not just abandoned cart.' },
-  { h: 'Deep Shopify Integration',     b: "We leverage Klaviyo's native Shopify integration to its fullest — real-time event tracking, predictive analytics, product recommendations, and dynamic content." },
-  { h: 'Deliverability Management',    b: 'Sending domain setup, warm-up schedules, bounce management, and list hygiene to ensure your emails land in the inbox — not spam.' },
-  { h: 'Transparent Reporting',        b: 'Monthly reports showing attributed revenue, flow performance, campaign results, and list growth — tied directly to your business metrics.' },
+  { h: 'Full-Funnel Coverage',         b: 'From first-touch welcome series to 12-month win-back sequences - we build every flow in the customer lifecycle, not just abandoned cart.' },
+  { h: 'Deep Shopify Integration',     b: "We leverage Klaviyo's native Shopify integration to its fullest - real-time event tracking, predictive analytics, product recommendations, and dynamic content." },
+  { h: 'Deliverability Management',    b: 'Sending domain setup, warm-up schedules, bounce management, and list hygiene to ensure your emails land in the inbox - not spam.' },
+  { h: 'Transparent Reporting',        b: 'Monthly reports showing attributed revenue, flow performance, campaign results, and list growth - tied directly to your business metrics.' },
 ];
 const PROCESS = [
-  { n: '01', h: 'Account Audit',      b: 'We audit your existing Klaviyo setup (or review your ESP) — identifying revenue gaps, deliverability issues, and quick wins.' },
-  { n: '02', h: 'Strategy & Build',   b: 'We build your flow architecture, campaign calendar, segmentation strategy, and email templates — all aligned to your customer journey.' },
-  { n: '03', h: 'Launch & Test',      b: 'We go live with core flows and run A/B tests on subject lines, send times, and content — optimising for open rate, click rate, and attributed revenue.' },
-  { n: '04', h: 'Optimise & Report',  b: 'Monthly performance reviews, new campaign deployments, and continuous flow optimisation — with full revenue attribution reporting.' },
+  { n: '01', h: 'Account Audit',      b: 'We audit your existing Klaviyo setup (or review your ESP) - identifying revenue gaps, deliverability issues, and quick wins.' },
+  { n: '02', h: 'Strategy & Build',   b: 'We build your flow architecture, campaign calendar, segmentation strategy, and email templates - all aligned to your customer journey.' },
+  { n: '03', h: 'Launch & Test',      b: 'We go live with core flows and run A/B tests on subject lines, send times, and content - optimising for open rate, click rate, and attributed revenue.' },
+  { n: '04', h: 'Optimise & Report',  b: 'Monthly performance reviews, new campaign deployments, and continuous flow optimisation - with full revenue attribution reporting.' },
 ];
 const FAQS = [
   { q: 'Are you a certified Klaviyo partner?', a: 'Yes. Our team holds Klaviyo certifications in email marketing and SMS marketing. We are experienced with both the Klaviyo platform and the broader DTC and e-commerce context it operates in.' },
   { q: 'Which e-commerce platforms do you integrate Klaviyo with?', a: "Primarily Shopify and WooCommerce, but also BigCommerce, Magento, and headless storefronts via Klaviyo's API. We configure the integration, set up event tracking, and ensure product catalog sync is working correctly." },
-  { q: 'How much revenue should Klaviyo generate for my store?', a: 'A well-optimised Klaviyo account typically generates 20–35% of total store revenue. If your email channel is below 15%, there is almost always a significant opportunity — usually in flow coverage, segmentation depth, or deliverability.' },
+  { q: 'How much revenue should Klaviyo generate for my store?', a: 'A well-optimised Klaviyo account typically generates 20–35% of total store revenue. If your email channel is below 15%, there is almost always a significant opportunity - usually in flow coverage, segmentation depth, or deliverability.' },
   { q: 'How long does it take to set up Klaviyo from scratch?', a: 'Core setup (integration, welcome series, abandoned cart, post-purchase) takes 2–3 weeks. A full flow library covering 8–12 customer lifecycle moments takes 4–6 weeks. Monthly management begins immediately after setup.' },
   { q: 'Do you write the email copy?', a: 'Yes. Our packages include email copywriting, HTML email development, and design. You review and approve everything before it goes live.' },
-  { q: 'Do you manage SMS as well?', a: 'Yes. We set up and manage Klaviyo SMS — compliance (TCPA/GDPR), opt-in flows, SMS campaign calendar, and SMS-specific flows like cart recovery and back-in-stock alerts.' },
+  { q: 'Do you manage SMS as well?', a: 'Yes. We set up and manage Klaviyo SMS - compliance (TCPA/GDPR), opt-in flows, SMS campaign calendar, and SMS-specific flows like cart recovery and back-in-stock alerts.' },
 ];
 
 export default function KlaviyoEmailMarketingAgency() {
@@ -84,7 +84,7 @@ export default function KlaviyoEmailMarketingAgency() {
         { '@type': 'ListItem', position: 2, name: 'Klaviyo Email Marketing Agency', item: 'https://www.1solutions.biz/klaviyo-email-marketing-agency/' },
       ]},
       { '@type': 'Service', name: 'Klaviyo Email Marketing Agency', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Certified Klaviyo email marketing agency — 1Solutions sets up and manages Klaviyo flows, campaigns, SMS, and segmentation for DTC and e-commerce brands.',
+        description: 'Certified Klaviyo email marketing agency - 1Solutions sets up and manages Klaviyo flows, campaigns, SMS, and segmentation for DTC and e-commerce brands.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '84', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -149,7 +149,7 @@ export default function KlaviyoEmailMarketingAgency() {
       </Head>
       <section className="kla-hero">
         <h1>Klaviyo Email Marketing Agency<br/>Flows, Campaigns &amp; SMS That Drive E-Commerce Revenue</h1>
-        <p>We set up and optimise Klaviyo for DTC and e-commerce brands — from welcome series and abandoned cart flows to post-purchase sequences and SMS campaigns. Certified Klaviyo partners with 15+ years of e-commerce experience.</p>
+        <p>We set up and optimise Klaviyo for DTC and e-commerce brands - from welcome series and abandoned cart flows to post-purchase sequences and SMS campaigns. Certified Klaviyo partners with 15+ years of e-commerce experience.</p>
         <div className="kla-hero-btns">
           <Link href="/contact-us" className="kla-btn-primary">Get a Free Klaviyo Audit →</Link>
           <Link href="/portfolio" className="kla-btn-outline">View Portfolio</Link>
@@ -158,7 +158,7 @@ export default function KlaviyoEmailMarketingAgency() {
       <section className="kla-sec" ref={skR}>
         <div className="kla-wrap">
           <h2 className="kla-sec-title">Klaviyo Skills &amp; Services</h2>
-          <p className="kla-sec-sub">From flow architecture to deliverability — we cover the full Klaviyo stack for DTC and e-commerce brands.</p>
+          <p className="kla-sec-sub">From flow architecture to deliverability - we cover the full Klaviyo stack for DTC and e-commerce brands.</p>
           <div className="kla-skills">{SKILLS.map((s, i) => <span key={s} className={`kla-skill${skV ? ' kla-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>)}</div>
         </div>
       </section>
@@ -172,7 +172,7 @@ export default function KlaviyoEmailMarketingAgency() {
       <section className="kla-sec" ref={whR}>
         <div className="kla-wrap">
           <h2 className="kla-sec-title">Why Choose 1Solutions as Your Klaviyo Agency?</h2>
-          <p className="kla-sec-sub">We treat email as a revenue channel, not a broadcast tool — every decision is tied to measurable business outcomes.</p>
+          <p className="kla-sec-sub">We treat email as a revenue channel, not a broadcast tool - every decision is tied to measurable business outcomes.</p>
           <div className="kla-why-grid">{WHY.map((w, i) => <div key={w.h} className={`kla-why-item${whV ? ' kla-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
         </div>
       </section>
@@ -187,7 +187,7 @@ export default function KlaviyoEmailMarketingAgency() {
       <section className="kla-sec kla-sec-alt" ref={prR}>
         <div className="kla-wrap">
           <h2 className="kla-sec-title">Our Klaviyo Process</h2>
-          <p className="kla-sec-sub">From audit to revenue — a clear four-step process with measurable results at every stage.</p>
+          <p className="kla-sec-sub">From audit to revenue - a clear four-step process with measurable results at every stage.</p>
           <div className="kla-process">{PROCESS.map((p, i) => <div key={p.n} className={`kla-step${prV ? ' kla-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}><div className="kla-step-n">{p.n}</div><h3>{p.h}</h3><p>{p.b}</p></div>)}</div>
         </div>
       </section>
@@ -201,7 +201,7 @@ export default function KlaviyoEmailMarketingAgency() {
       <section className="kla-cta">
         <div className="kla-wrap">
           <h2>Ready to Turn Email Into Your Top Revenue Channel?</h2>
-          <p>Get a free Klaviyo audit — we&apos;ll review your account, identify revenue gaps, and deliver a prioritised optimisation plan within 48 hours.</p>
+          <p>Get a free Klaviyo audit - we&apos;ll review your account, identify revenue gaps, and deliver a prioritised optimisation plan within 48 hours.</p>
           <Link href="/contact-us" className="kla-btn-primary">Get Your Free Klaviyo Audit →</Link>
         </div>
       </section>

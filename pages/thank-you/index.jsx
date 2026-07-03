@@ -312,7 +312,7 @@ export default function ThankYou() {
             Message Received
           </div>
 
-          <h1 className="ty-h1">Thank You — We'll Be<br /><span>In Touch Soon</span></h1>
+          <h1 className="ty-h1">Thank You - We'll Be<br /><span>In Touch Soon</span></h1>
           <p className="ty-sub">
             Your enquiry is with us. A specialist will review your requirements and
             get back to you within <strong>24 hours</strong> with a tailored plan.
@@ -338,7 +338,7 @@ export default function ThankYou() {
           <div className="ty-step">
             <div className="ty-step-num">03</div>
             <div className="ty-step-t">Custom Proposal</div>
-            <p className="ty-step-d">A detailed proposal with clear scope, delivery timeline, and fixed pricing — no surprises.</p>
+            <p className="ty-step-d">A detailed proposal with clear scope, delivery timeline, and fixed pricing - no surprises.</p>
           </div>
         </div>
 

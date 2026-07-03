@@ -3,38 +3,38 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const SERVICES = [
-  { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Keyword Research & Strategy', desc: "In-depth analysis of how Burlington Ontario customers search for your services — high-intent buying queries, Halton Region-specific local modifiers, and keyword gaps your Burlington competitors are missing." },
-  { icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4', title: 'Technical SEO', desc: 'Core Web Vitals optimisation, mobile speed, crawl error fixes, structured data, and site architecture — the technical foundation every Burlington business needs before other SEO investments can compound.' },
-  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'On-Page SEO', desc: 'Title tags, meta descriptions, heading structure, internal linking, and content optimisation across every key page — written for Burlington and Halton Region buyers, tuned for Google ranking signals.' },
+  { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Keyword Research & Strategy', desc: "In-depth analysis of how Burlington Ontario customers search for your services - high-intent buying queries, Halton Region-specific local modifiers, and keyword gaps your Burlington competitors are missing." },
+  { icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4', title: 'Technical SEO', desc: 'Core Web Vitals optimisation, mobile speed, crawl error fixes, structured data, and site architecture - the technical foundation every Burlington business needs before other SEO investments can compound.' },
+  { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'On-Page SEO', desc: 'Title tags, meta descriptions, heading structure, internal linking, and content optimisation across every key page - written for Burlington and Halton Region buyers, tuned for Google ranking signals.' },
   { icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z', title: 'Local SEO Burlington', desc: 'Google Business Profile optimisation, Google Maps 3-pack strategy, Burlington-specific citation building, and NAP consistency to dominate local search across Burlington and the Halton Region.' },
-  { icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1', title: 'Link Building', desc: 'Quality backlinks from Canadian authority sites, Ontario business media, Halton Region directories, and digital PR — building the domain authority that sustains Page 1 positions long-term.' },
-  { icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z', title: 'Content Marketing', desc: 'SEO-driven blog articles, service pages, and landing pages built around what Burlington and GTA customers are searching for — content that ranks and converts, not just fills word counts.' },
-  { icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z', title: 'eCommerce SEO', desc: 'Product and category page optimisation for Burlington online stores on Shopify, WooCommerce, Magento, and custom platforms — more organic visibility and lower customer acquisition costs.' },
-  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'SEO Reporting & Analytics', desc: 'Monthly reports showing keyword ranking movement, organic traffic growth, lead attribution, and ROI — clear numbers so you know exactly what your Burlington SEO investment is generating.' },
+  { icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1', title: 'Link Building', desc: 'Quality backlinks from Canadian authority sites, Ontario business media, Halton Region directories, and digital PR - building the domain authority that sustains Page 1 positions long-term.' },
+  { icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z', title: 'Content Marketing', desc: 'SEO-driven blog articles, service pages, and landing pages built around what Burlington and GTA customers are searching for - content that ranks and converts, not just fills word counts.' },
+  { icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z', title: 'eCommerce SEO', desc: 'Product and category page optimisation for Burlington online stores on Shopify, WooCommerce, Magento, and custom platforms - more organic visibility and lower customer acquisition costs.' },
+  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'SEO Reporting & Analytics', desc: 'Monthly reports showing keyword ranking movement, organic traffic growth, lead attribution, and ROI - clear numbers so you know exactly what your Burlington SEO investment is generating.' },
 ];
 
 const RESULTS = [
-  { metric: '265%', label: 'Organic traffic growth', sub: 'Burlington manufacturing firm — 9 months', color: '#1a3d0a' },
-  { metric: 'Top 3', label: 'Google rankings for 50+ keywords', sub: 'Halton Region healthcare provider — 6 months', color: '#FE9700' },
-  { metric: '3.6×', label: 'Increase in organic leads', sub: 'Burlington professional services — 7 months', color: '#059669' },
+  { metric: '265%', label: 'Organic traffic growth', sub: 'Burlington manufacturing firm - 9 months', color: '#1a3d0a' },
+  { metric: 'Top 3', label: 'Google rankings for 50+ keywords', sub: 'Halton Region healthcare provider - 6 months', color: '#FE9700' },
+  { metric: '3.6×', label: 'Increase in organic leads', sub: 'Burlington professional services - 7 months', color: '#059669' },
 ];
 
 const PROCESS = [
   { n: '01', title: 'Free Burlington SEO Audit', desc: 'We audit your website for technical health, current keyword rankings, backlink profile, competitor positions, and the specific gaps holding your Burlington business back from Page 1 on Google.' },
-  { n: '02', title: 'Keyword & Market Research', desc: 'Deep analysis of how Burlington, Halton Region, and Greater Hamilton-Toronto corridor customers search for your services — mapping every high-intent query and competitor keyword gap into a prioritised roadmap.' },
-  { n: '03', title: 'Technical Optimisation', desc: 'We fix the technical foundations first — Core Web Vitals, mobile performance, crawl errors, schema markup, and site structure — so every subsequent SEO effort builds on solid ground.' },
-  { n: '04', title: 'On-Page & Content', desc: 'Optimising every key page for target keywords and creating new content that captures Burlington buyer demand across the full search intent spectrum — informational through to high-intent transactional.' },
-  { n: '05', title: 'Authority & Link Building', desc: 'Building quality backlinks from relevant Canadian authority sites, Ontario business publications, and Halton Region directories — compounding domain authority that holds rankings long-term.' },
-  { n: '06', title: 'Monthly Reporting & Scale', desc: 'Clear monthly reports with ranking movement, traffic growth, and lead data — plus a forward roadmap so you always know what is happening and what we are prioritising next.' },
+  { n: '02', title: 'Keyword & Market Research', desc: 'Deep analysis of how Burlington, Halton Region, and Greater Hamilton-Toronto corridor customers search for your services - mapping every high-intent query and competitor keyword gap into a prioritised roadmap.' },
+  { n: '03', title: 'Technical Optimisation', desc: 'We fix the technical foundations first - Core Web Vitals, mobile performance, crawl errors, schema markup, and site structure - so every subsequent SEO effort builds on solid ground.' },
+  { n: '04', title: 'On-Page & Content', desc: 'Optimising every key page for target keywords and creating new content that captures Burlington buyer demand across the full search intent spectrum - informational through to high-intent transactional.' },
+  { n: '05', title: 'Authority & Link Building', desc: 'Building quality backlinks from relevant Canadian authority sites, Ontario business publications, and Halton Region directories - compounding domain authority that holds rankings long-term.' },
+  { n: '06', title: 'Monthly Reporting & Scale', desc: 'Clear monthly reports with ranking movement, traffic growth, and lead data - plus a forward roadmap so you always know what is happening and what we are prioritising next.' },
 ];
 
 const WHY = [
-  { title: 'Burlington & Halton Expertise', desc: "We understand Burlington's position in the Golden Horseshoe — the manufacturing base, the growing professional services sector, and the search behaviour of both local buyers and GTA spillover customers." },
-  { title: '15+ Years SEO Experience', desc: "Founded in 2009, 1Solutions has navigated every major Google algorithm update — Panda, Penguin, BERT, and Helpful Content — delivering consistent Page 1 rankings for clients across Canada." },
-  { title: 'Dedicated Account Manager', desc: 'Every Burlington client has one point of contact who understands your business, reports monthly, and is reachable when you need answers — no rotating teams, no offshore handoffs.' },
-  { title: 'White-Hat SEO Only', desc: 'No shortcuts. We build rankings through technical excellence, quality content, and genuine authority building — methods that outlast algorithm updates and never put your domain at risk.' },
-  { title: 'Transparent Reporting', desc: 'You see exactly what we did, what moved, and what it generated. Keyword rankings, organic sessions, and lead attribution in a clear monthly report — no smoke and mirrors.' },
-  { title: 'No Lock-In Contracts', desc: 'Month-to-month engagements because our results earn your continued business. You stay because your Burlington rankings keep climbing — not because a contract forces you to.' },
+  { title: 'Burlington & Halton Expertise', desc: "We understand Burlington's position in the Golden Horseshoe - the manufacturing base, the growing professional services sector, and the search behaviour of both local buyers and GTA spillover customers." },
+  { title: '15+ Years SEO Experience', desc: "Founded in 2009, 1Solutions has navigated every major Google algorithm update - Panda, Penguin, BERT, and Helpful Content - delivering consistent Page 1 rankings for clients across Canada." },
+  { title: 'Dedicated Account Manager', desc: 'Every Burlington client has one point of contact who understands your business, reports monthly, and is reachable when you need answers - no rotating teams, no offshore handoffs.' },
+  { title: 'White-Hat SEO Only', desc: 'No shortcuts. We build rankings through technical excellence, quality content, and genuine authority building - methods that outlast algorithm updates and never put your domain at risk.' },
+  { title: 'Transparent Reporting', desc: 'You see exactly what we did, what moved, and what it generated. Keyword rankings, organic sessions, and lead attribution in a clear monthly report - no smoke and mirrors.' },
+  { title: 'No Lock-In Contracts', desc: 'Month-to-month engagements because our results earn your continued business. You stay because your Burlington rankings keep climbing - not because a contract forces you to.' },
 ];
 
 const INDUSTRIES = [
@@ -57,12 +57,12 @@ const AREAS = [
 ];
 
 const FAQS = [
-  { q: "How much does SEO cost in Burlington Ontario?", a: "Burlington Ontario SEO packages from 1Solutions start at CAD 800 per month for small business and local SEO. Comprehensive packages for competitive Burlington sectors like manufacturing, healthcare, and professional services range from CAD 1,200 to CAD 4,000+ per month. We provide a custom quote after your free Burlington SEO audit — based on your actual competitive landscape and target keyword difficulty." },
+  { q: "How much does SEO cost in Burlington Ontario?", a: "Burlington Ontario SEO packages from 1Solutions start at CAD 800 per month for small business and local SEO. Comprehensive packages for competitive Burlington sectors like manufacturing, healthcare, and professional services range from CAD 1,200 to CAD 4,000+ per month. We provide a custom quote after your free Burlington SEO audit - based on your actual competitive landscape and target keyword difficulty." },
   { q: "How long does it take to rank on Google in Burlington?", a: "Burlington is a moderately competitive market with overlap from Oakville, Hamilton, and the broader GTA West corridor. Lower-competition local keywords typically show ranking movement within 6 to 10 weeks. Mid-competition terms take 3 to 4 months. More competitive categories like real estate, healthcare, and legal usually require 4 to 7 months of consistent work. We give honest, audit-based timelines." },
-  { q: "Is 1Solutions based in Burlington or Ontario?", a: "1Solutions has dedicated SEO specialists with deep expertise in the Ontario and Halton Region market and the Canadian search landscape. We work with Burlington clients with full understanding of Ontario-specific business directories, Canadian backlink sources, and the competitive dynamics of Burlington's position between Hamilton, Oakville, and Mississauga — a market geography that creates unique local search opportunities." },
-  { q: "What Burlington industries do you work with?", a: "We work with Burlington businesses across manufacturing and B2B, healthcare and wellness, real estate, tech and professional services, retail, legal, education, and home services and trades. Burlington's strong manufacturing base and growing professional services sector each have distinct keyword landscapes that require specialist understanding — which is why every strategy starts from Burlington-specific search data." },
-  { q: "Do you provide local SEO for Burlington businesses?", a: "Yes. Local SEO for Burlington is a core service — Google Business Profile optimisation for Halton Region, Ontario-specific citation building (Yellow Pages Canada, Better Business Bureau, Ontario Chamber directories), Google Maps 3-pack strategy, and neighbourhood-level targeting across Burlington, Oakville, Hamilton, Milton, and the broader Halton Region." },
-  { q: "Can you help a small Burlington business on a limited budget?", a: "Absolutely. We work with Burlington small businesses at multiple budget levels — from startups building organic foundations early to established businesses scaling their inbound channel. For limited budgets, we prioritise the keyword opportunities and content strategies that generate organic traction fastest — often within 3 to 4 months — without requiring a large upfront investment." },
+  { q: "Is 1Solutions based in Burlington or Ontario?", a: "1Solutions has dedicated SEO specialists with deep expertise in the Ontario and Halton Region market and the Canadian search landscape. We work with Burlington clients with full understanding of Ontario-specific business directories, Canadian backlink sources, and the competitive dynamics of Burlington's position between Hamilton, Oakville, and Mississauga - a market geography that creates unique local search opportunities." },
+  { q: "What Burlington industries do you work with?", a: "We work with Burlington businesses across manufacturing and B2B, healthcare and wellness, real estate, tech and professional services, retail, legal, education, and home services and trades. Burlington's strong manufacturing base and growing professional services sector each have distinct keyword landscapes that require specialist understanding - which is why every strategy starts from Burlington-specific search data." },
+  { q: "Do you provide local SEO for Burlington businesses?", a: "Yes. Local SEO for Burlington is a core service - Google Business Profile optimisation for Halton Region, Ontario-specific citation building (Yellow Pages Canada, Better Business Bureau, Ontario Chamber directories), Google Maps 3-pack strategy, and neighbourhood-level targeting across Burlington, Oakville, Hamilton, Milton, and the broader Halton Region." },
+  { q: "Can you help a small Burlington business on a limited budget?", a: "Absolutely. We work with Burlington small businesses at multiple budget levels - from startups building organic foundations early to established businesses scaling their inbound channel. For limited budgets, we prioritise the keyword opportunities and content strategies that generate organic traction fastest - often within 3 to 4 months - without requiring a large upfront investment." },
   { q: "How do you measure and report SEO results?", a: "We track keyword ranking movement for all target terms, organic sessions from Google Analytics, organic goal completions (leads, calls, form fills), and revenue attributed to organic search where measurable. Monthly reports are sent in the first week of each month with a clear summary of what changed, what drove it, and the priority roadmap for next quarter." },
 ];
 
@@ -84,7 +84,7 @@ export default function SeoCompanyBurlington() {
       },
       {
         '@type': 'LocalBusiness',
-        name: '1Solutions — SEO Company in Burlington Ontario',
+        name: '1Solutions - SEO Company in Burlington Ontario',
         url: 'https://1solutions.biz',
         email: 'info@1solutions.biz',
         address: { '@type': 'PostalAddress', addressLocality: 'Burlington', addressRegion: 'ON', addressCountry: 'CA' },
@@ -102,7 +102,7 @@ export default function SeoCompanyBurlington() {
         '@type': 'Service',
         name: 'SEO Services in Burlington Ontario',
         provider: { '@type': 'Organization', name: '1Solutions', url: 'https://1solutions.biz' },
-        description: 'Comprehensive SEO services for Burlington Ontario businesses — technical SEO, on-page optimisation, local SEO, link building, and content strategy to achieve Page 1 Google rankings.',
+        description: 'Comprehensive SEO services for Burlington Ontario businesses - technical SEO, on-page optimisation, local SEO, link building, and content strategy to achieve Page 1 Google rankings.',
         areaServed: { '@type': 'City', name: 'Burlington' },
         serviceType: 'Search Engine Optimisation',
       },
@@ -122,7 +122,7 @@ export default function SeoCompanyBurlington() {
     <>
       <Head>
         <title>SEO Company in Burlington Ontario | 1Solutions</title>
-        <meta name="description" content="Looking for the best SEO company in Burlington Ontario? 1Solutions delivers Page 1 Google rankings for Burlington businesses — technical SEO, local SEO," />
+        <meta name="description" content="Looking for the best SEO company in Burlington Ontario? 1Solutions delivers Page 1 Google rankings for Burlington businesses - technical SEO, local SEO," />
         <meta name="keywords" content="SEO company in Burlington, SEO agency Burlington Ontario, SEO services Burlington, best SEO company Burlington ON, Burlington SEO, search engine optimization Burlington Ontario" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://1solutions.biz/seo-company-burlington/" />
@@ -264,7 +264,7 @@ export default function SeoCompanyBurlington() {
         <div className="burl-inner">
           <span className="burl-eyebrow"><span className="burl-eyebrow-dot" />SEO Company in Burlington, Ontario</span>
           <h1 className="burl-h1">Top-Ranked <span>SEO Company in Burlington</span><br />That Delivers Page 1 Rankings</h1>
-          <p className="burl-desc">1Solutions is a results-driven SEO company in Burlington Ontario with 15+ years of experience helping Halton Region businesses rank on Page 1 of Google. From technical SEO and local search to link building and content strategy — we build organic visibility that generates qualified leads in Burlington and the GTA West corridor.</p>
+          <p className="burl-desc">1Solutions is a results-driven SEO company in Burlington Ontario with 15+ years of experience helping Halton Region businesses rank on Page 1 of Google. From technical SEO and local search to link building and content strategy - we build organic visibility that generates qualified leads in Burlington and the GTA West corridor.</p>
           <div className="burl-btns">
             <a href="#contact" className="burl-btn-p">Get a Free SEO Audit<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
             <Link href="/affordable-seo-packages/" className="burl-btn-s">View SEO Packages →</Link>
@@ -286,7 +286,7 @@ export default function SeoCompanyBurlington() {
         <div className="burl-sec-inner">
           <span className="burl-tag">Our Burlington SEO Services</span>
           <h2 className="burl-h2">Complete <span>SEO Services in Burlington ON</span></h2>
-          <p className="burl-lead">Every component of a winning SEO strategy — delivered by a team that understands the Halton Region market and your growth goals.</p>
+          <p className="burl-lead">Every component of a winning SEO strategy - delivered by a team that understands the Halton Region market and your growth goals.</p>
           <div className="burl-grid4">
             {SERVICES.map(s => (
               <div key={s.title} className="burl-card">
@@ -317,7 +317,7 @@ export default function SeoCompanyBurlington() {
         <div className="burl-sec-inner">
           <span className="burl-tag">Why Choose 1Solutions</span>
           <h2 className="burl-h2">The Burlington SEO Agency <span>That Makes Rankings Last</span></h2>
-          <p className="burl-lead">We build SEO foundations that outlast algorithm updates and deliver compounding organic growth — not short-term spikes that vanish when Google changes its algorithm.</p>
+          <p className="burl-lead">We build SEO foundations that outlast algorithm updates and deliver compounding organic growth - not short-term spikes that vanish when Google changes its algorithm.</p>
           <div className="burl-grid2">
             {WHY.map(w => (
               <div key={w.title} className="burl-why-card">
@@ -333,7 +333,7 @@ export default function SeoCompanyBurlington() {
         <div className="burl-sec-inner">
           <span className="burl-tag">How We Work</span>
           <h2 className="burl-h2">Our <span>6-Step Burlington SEO Process</span></h2>
-          <p className="burl-lead">A structured, transparent methodology that compounds organic growth — from your first free audit to sustained Page 1 dominance in Burlington and Halton Region search results.</p>
+          <p className="burl-lead">A structured, transparent methodology that compounds organic growth - from your first free audit to sustained Page 1 dominance in Burlington and Halton Region search results.</p>
           <div className="burl-grid3">
             {PROCESS.map(p => (
               <div key={p.n}><div className="burl-proc-num">{p.n}</div><div className="burl-proc-line"/><h3 className="burl-proc-h">{p.title}</h3><p className="burl-proc-p">{p.desc}</p></div>
@@ -346,7 +346,7 @@ export default function SeoCompanyBurlington() {
         <div className="burl-sec-inner">
           <span className="burl-tag">Burlington Industries We Serve</span>
           <h2 className="burl-h2">SEO for <span>Every Burlington Business Sector</span></h2>
-          <p className="burl-lead">From Burlington manufacturing firms to downtown professional services — we deliver SEO strategies built around the specific competitive landscape of your Burlington industry.</p>
+          <p className="burl-lead">From Burlington manufacturing firms to downtown professional services - we deliver SEO strategies built around the specific competitive landscape of your Burlington industry.</p>
           <div className="burl-ind-grid">
             {INDUSTRIES.map(ind => (
               <div key={ind.name} className="burl-ind-card">
@@ -362,7 +362,7 @@ export default function SeoCompanyBurlington() {
         <div className="burl-sec-inner">
           <span className="burl-tag">Areas We Cover</span>
           <h2 className="burl-h2">SEO Services Across <span>Burlington & Halton Region</span></h2>
-          <p className="burl-lead">We serve businesses throughout Burlington and the surrounding Halton Region — from Burlington neighbourhoods to adjacent communities in the GTA West corridor.</p>
+          <p className="burl-lead">We serve businesses throughout Burlington and the surrounding Halton Region - from Burlington neighbourhoods to adjacent communities in the GTA West corridor.</p>
           <div className="burl-areas-wrap">
             {AREAS.map(a => <span key={a} className="burl-area-tag">{a}</span>)}
           </div>
@@ -397,7 +397,7 @@ export default function SeoCompanyBurlington() {
               <div className="burl-ci"><div className="burl-ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div><div className="burl-ci-text"><strong>Email</strong><a href="mailto:info@1solutions.biz">info@1solutions.biz</a></div></div>
               <div className="burl-ci"><div className="burl-ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div className="burl-ci-text"><strong>Response Time</strong><span>Within 24 hours</span></div></div>
               <div className="burl-trust-list">
-                {['Free audit — no credit card, no commitment','Dedicated Burlington SEO specialist assigned','Honest timelines based on real competitor data','White-hat only — no ranking risk'].map(t => (
+                {['Free audit - no credit card, no commitment','Dedicated Burlington SEO specialist assigned','Honest timelines based on real competitor data','White-hat only - no ranking risk'].map(t => (
                   <span key={t} className="burl-trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>{t}</span>
                 ))}
               </div>

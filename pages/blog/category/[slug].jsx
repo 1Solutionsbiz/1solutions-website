@@ -12,7 +12,7 @@ export default function CategoryPage({ category, posts, pageInfo, allCategories,
     <>
       <Head>
         <title>{category.name} Articles | 1Solutions Blog</title>
-        <meta name="description" content={category.description || `Browse all ${category.name} articles from 1Solutions — ${category.count} posts.`} />
+        <meta name="description" content={category.description || `Browse all ${category.name} articles from 1Solutions - ${category.count} posts.`} />
         <link rel="canonical" href={`${siteUrl}/blog/category/${category.slug}`} />
       </Head>
 

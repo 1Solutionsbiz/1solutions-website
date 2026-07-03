@@ -20,7 +20,7 @@ const challenges = [
   {
     icon: 'M13 10V3L4 14h7v7l9-11h-7z',
     title: 'GMV Algorithm Not Understood',
-    desc: "Temu's search ranking is heavily weighted by GMV (gross merchandise value) — meaning high-volume, lower-priced products rank better than low-volume higher-priced ones. Most sellers run flat catalogues without understanding that Temu rewards velocity above all else.",
+    desc: "Temu's search ranking is heavily weighted by GMV (gross merchandise value) - meaning high-volume, lower-priced products rank better than low-volume higher-priced ones. Most sellers run flat catalogues without understanding that Temu rewards velocity above all else.",
   },
   {
     icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064',
@@ -38,7 +38,7 @@ const services = [
   {
     icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
     title: 'Product Selection & Category Strategy',
-    desc: 'Data-driven selection of which products in your catalogue are viable on Temu based on price points, competition density, and GMV potential — avoiding margin-destroying categories.',
+    desc: 'Data-driven selection of which products in your catalogue are viable on Temu based on price points, competition density, and GMV potential - avoiding margin-destroying categories.',
   },
   {
     icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z',
@@ -110,7 +110,7 @@ const steps = [
 
 const FAQS = [
   { q: "What seller model is best for a new Temu seller?", a: "Temu has two main models: consignment (Temu sets prices, handles fulfilment, owns the customer relationship) and marketplace (seller sets prices, handles shipping). For most sellers new to the US market, we recommend starting with the consignment model to test product demand without fulfilment complexity, then transitioning to the marketplace model for SKUs where you can maintain pricing control and margin." },
-  { q: "How does Temu search ranking work and how do you improve it?", a: "Temu search is primarily driven by GMV (gross merchandise value) — high-velocity, competitively priced products rank higher. Secondary factors include listing quality (images, title, attribute completeness), customer ratings, and fulfilment speed. We improve ranking by identifying your highest-potential SKUs, launching with competitive pricing and Temu Ads to build initial velocity, then sustaining momentum with ongoing optimisation." },
+  { q: "How does Temu search ranking work and how do you improve it?", a: "Temu search is primarily driven by GMV (gross merchandise value) - high-velocity, competitively priced products rank higher. Secondary factors include listing quality (images, title, attribute completeness), customer ratings, and fulfilment speed. We improve ranking by identifying your highest-potential SKUs, launching with competitive pricing and Temu Ads to build initial velocity, then sustaining momentum with ongoing optimisation." },
   { q: "Can you help us prepare product listings that comply with US safety requirements?", a: "Yes. Products sold to US consumers through Temu must comply with CPSC (Consumer Product Safety Commission) regulations and relevant ASTM standards for applicable categories. We review your product catalogue for compliance gaps, recommend certification requirements, and rewrite product descriptions to include required safety information and accurate specifications." },
   { q: "How long before we see GMV growth on Temu?", a: "Initial GMV typically starts within 2 to 4 weeks of listing launch once Temu Ads are active and initial pricing is competitive. Organic ranking growth, driven by sales velocity accumulation, typically shows meaningful improvement at the 6 to 8 week mark. Most clients see 3 to 5 times their initial monthly GMV within 90 days when we manage the full optimisation and ad strategy." },
   { q: "What do you charge and how is the fee structured?", a: "Our Temu management fee is a flat monthly retainer covering account management, listing optimisation, and ad management. We do not take a percentage of revenue. Pricing depends on catalogue size and ad spend level; contact us for a custom quote based on your specific catalogue and growth goals." },

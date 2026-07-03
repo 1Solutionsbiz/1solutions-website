@@ -11,7 +11,7 @@ const challenges = [
   {
     icon: 'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z',
     title: 'Top Rated Seller Status at Risk',
-    desc: 'TRS status provides up to 10% final value fee discount and a gold TRS badge that increases click-through rate. Maintaining it requires consistently meeting shipping time, tracking upload, and defect rate standards — which many sellers struggle with at scale.',
+    desc: 'TRS status provides up to 10% final value fee discount and a gold TRS badge that increases click-through rate. Maintaining it requires consistently meeting shipping time, tracking upload, and defect rate standards - which many sellers struggle with at scale.',
   },
   {
     icon: '9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
@@ -29,17 +29,17 @@ const services = [
   {
     icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
     title: 'eBay Store Setup & Management',
-    desc: 'Store subscription management, custom category creation, store branding (banner, logo, featured listings), and store SEO — building a professional eBay storefront that drives repeat buyer visits.',
+    desc: 'Store subscription management, custom category creation, store branding (banner, logo, featured listings), and store SEO - building a professional eBay storefront that drives repeat buyer visits.',
   },
   {
     icon: '21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z',
     title: 'Listing Optimisation (Cassini SEO)',
-    desc: "Keyword-optimised titles using Cassini ranking factors, complete item specifics for every listing, HTML description formatting, and category selection — building listings that rank and convert.",
+    desc: "Keyword-optimised titles using Cassini ranking factors, complete item specifics for every listing, HTML description formatting, and category selection - building listings that rank and convert.",
   },
   {
     icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
     title: 'Promoted Listings Management',
-    desc: 'Promoted Listings Standard and Advanced campaign management — identifying the right ad rate, targeting high-margin and underperforming SKUs, and optimising campaigns for maximum sales velocity.',
+    desc: 'Promoted Listings Standard and Advanced campaign management - identifying the right ad rate, targeting high-margin and underperforming SKUs, and optimising campaigns for maximum sales velocity.',
   },
   {
     icon: 'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z',
@@ -54,7 +54,7 @@ const services = [
   {
     icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
     title: 'eBay SEO & Competitor Research (Terapeak)',
-    desc: 'In-depth Terapeak analysis to identify high-demand product opportunities, seasonal trends, optimal pricing, and competitor positioning — driving data-backed decisions for your eBay catalogue.',
+    desc: 'In-depth Terapeak analysis to identify high-demand product opportunities, seasonal trends, optimal pricing, and competitor positioning - driving data-backed decisions for your eBay catalogue.',
   },
   {
     icon: 'M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z',
@@ -112,9 +112,9 @@ const trust = ['Cassini SEO specialists', 'TRS status experts', 'No lock-in cont
 const FAQS = [
   { q: 'What is the Cassini algorithm and how does it affect my eBay listings?', a: "Cassini is eBay's search engine. It ranks listings based on a combination of listing quality (title keywords, item specifics, description completeness), seller performance metrics (feedback score, defect rate, late shipment rate), pricing competitiveness, and conversion rate. Sellers who optimise only for keywords while ignoring seller performance consistently see their listings buried despite good content." },
   { q: 'What are the requirements for Top Rated Seller status?', a: 'To achieve Top Rated Seller status, you need a minimum of 100 transactions and $1,000 in sales in the past 12 months, a defect rate below 0.5 percent, a late shipment rate below 3 percent, and cases closed without seller resolution below 0.3 percent. TRS status provides a 10 percent final value fee discount and the gold TRS badge in search results, which measurably increases click-through rate.' },
-  { q: 'How do eBay Promoted Listings work and are they worth it?', a: 'eBay Promoted Listings Standard is a pay-on-sale advertising format — you only pay a percentage of the sale price when a buyer clicks your promoted listing and purchases within 30 days. There is no cost per click. This makes it one of the most cost-effective marketplace advertising formats available, and we recommend it for most eBay sellers as part of a balanced organic and paid strategy.' },
+  { q: 'How do eBay Promoted Listings work and are they worth it?', a: 'eBay Promoted Listings Standard is a pay-on-sale advertising format - you only pay a percentage of the sale price when a buyer clicks your promoted listing and purchases within 30 days. There is no cost per click. This makes it one of the most cost-effective marketplace advertising formats available, and we recommend it for most eBay sellers as part of a balanced organic and paid strategy.' },
   { q: 'Can you help with international eBay selling through the Global Shipping Program?', a: 'Yes. The Global Shipping Program (GSP) allows you to sell to buyers in 100+ countries by shipping to one UK facility, with eBay handling the international forwarding and customs. We set up GSP on your eligible listings, optimise titles for international search, and manage the additional customer service complexity that comes with cross-border transactions.' },
-  { q: 'My eBay account is below standard — can you help recover it?', a: 'Yes. We have helped dozens of eBay sellers recover from Below Standard status. Our recovery plan typically involves identifying the root cause of the performance failure, implementing operational fixes to prevent recurrence, and a controlled strategy to build transaction volume and positive feedback to lift the performance metrics within eBay\'s evaluation window.' },
+  { q: 'My eBay account is below standard - can you help recover it?', a: 'Yes. We have helped dozens of eBay sellers recover from Below Standard status. Our recovery plan typically involves identifying the root cause of the performance failure, implementing operational fixes to prevent recurrence, and a controlled strategy to build transaction volume and positive feedback to lift the performance metrics within eBay\'s evaluation window.' },
   { q: 'Do you manage eBay Stores and all listing formats?', a: "Yes. We manage eBay Stores at all subscription tiers (Basic, Premium, Anchor, Enterprise), including store category structure, promotional marketing, Markdown Manager, and the Store Newsletter. We also manage both fixed price (Buy It Now) and auction format listings, and advise on which format maximises sell-through rate for different product types." },
 ];
 
@@ -295,7 +295,7 @@ export default function EbayAccountManagement() {
             eBay Account Management That <span className="ebay-h1-accent">Maximises Sales Velocity</span> and Seller Status
           </h1>
           <p className="ebay-desc">
-            eBay's Cassini algorithm rewards sellers who optimise listing quality, fulfilment speed, and return policy. 1Solutions manages your entire eBay seller presence — from store structure to promoted listings — to drive consistent monthly growth.
+            eBay's Cassini algorithm rewards sellers who optimise listing quality, fulfilment speed, and return policy. 1Solutions manages your entire eBay seller presence - from store structure to promoted listings - to drive consistent monthly growth.
           </p>
           <div className="ebay-trust">
             {trust.map((t, i) => (
@@ -325,7 +325,7 @@ export default function EbayAccountManagement() {
         <div className="ebay-inner">
           <span className="ebay-tag">Common eBay Seller Struggles</span>
           <h2 className="ebay-h2">Why eBay Sellers <span>Struggle to Scale</span></h2>
-          <p className="ebay-lead">eBay is one of the world's largest marketplaces — but Cassini's ranking factors, TRS requirements, and Promoted Listings mechanics trip up most sellers trying to grow beyond a certain level.</p>
+          <p className="ebay-lead">eBay is one of the world's largest marketplaces - but Cassini's ranking factors, TRS requirements, and Promoted Listings mechanics trip up most sellers trying to grow beyond a certain level.</p>
           <div className="ebay-grid4">
             {challenges.map((c, i) => (
               <div key={i} className="ebay-chal-card">
@@ -345,7 +345,7 @@ export default function EbayAccountManagement() {
         <div className="ebay-inner">
           <span className="ebay-tag">Full-Service eBay Management</span>
           <h2 className="ebay-h2">What Our <span>eBay Management</span> Covers</h2>
-          <p className="ebay-lead">From Cassini-optimised listing creation to Promoted Listings management and global expansion — we handle every lever that drives eBay revenue growth.</p>
+          <p className="ebay-lead">From Cassini-optimised listing creation to Promoted Listings management and global expansion - we handle every lever that drives eBay revenue growth.</p>
           <div className="ebay-grid4">
             {services.map((s, i) => (
               <div key={i} className="ebay-card">
@@ -437,7 +437,7 @@ export default function EbayAccountManagement() {
           <div className="ebay-contact-grid">
             <div>
               <h2 className="ebay-contact-info-h">Get a Free <span>eBay Store Audit</span></h2>
-              <p className="ebay-contact-info-p">We will review your eBay store structure, listing quality, seller health metrics, and Promoted Listings performance — and show you exactly where you are leaving money on the table.</p>
+              <p className="ebay-contact-info-p">We will review your eBay store structure, listing quality, seller health metrics, and Promoted Listings performance - and show you exactly where you are leaving money on the table.</p>
               <div className="ebay-contact-item">
                 <div className="ebay-contact-item-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>

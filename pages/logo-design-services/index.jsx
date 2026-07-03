@@ -3,45 +3,45 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const SERVICES = [
-  { n: '01', title: 'Brand Logo Design', desc: 'Custom logo design from scratch — wordmarks, lettermarks, pictorial marks, abstract marks, mascots, and combination marks — crafted to communicate your brand personality and values.' },
-  { n: '02', title: 'Logo Redesign & Refresh', desc: 'Modernise your existing logo without losing brand equity — updating typography, refining proportions, or evolving the icon while retaining the recognition your audience already has.' },
-  { n: '03', title: 'Brand Identity System', desc: 'Complete visual identity — logo suite, colour palette (primary, secondary, neutral), typography system, iconography style, and pattern/texture assets for consistent brand expression.' },
-  { n: '04', title: 'Industry-Specific Logo Design', desc: 'Sector expertise across technology, healthcare, finance, retail, hospitality, legal, and professional services — design that resonates with your specific audience and industry conventions.' },
-  { n: '05', title: 'Logo Variations & Formats', desc: 'Full logo suite delivery — primary, horizontal, stacked, icon-only, dark background, light background, monochrome, and embossed variants in SVG, PNG, PDF, EPS, and AI formats.' },
-  { n: '06', title: 'Brand Guidelines Document', desc: 'Professional brand guidelines document — logo usage rules, clear space requirements, colour specifications (CMYK, RGB, HEX, Pantone), typography hierarchy, and do/don\'t examples.' },
-  { n: '07', title: 'Business Card & Stationery Design', desc: 'Branded stationery suite — business cards, letterhead, email signatures, and presentation templates — applying your new identity consistently across all professional materials.' },
-  { n: '08', title: 'Social Media Profile Kit', desc: 'Optimised logo versions for social media — profile pictures, cover photos, and favicon — correctly sized and formatted for Facebook, Instagram, LinkedIn, Twitter/X, and YouTube.' },
+  { n: '01', title: 'Brand Logo Design', desc: 'Custom logo design from scratch - wordmarks, lettermarks, pictorial marks, abstract marks, mascots, and combination marks - crafted to communicate your brand personality and values.' },
+  { n: '02', title: 'Logo Redesign & Refresh', desc: 'Modernise your existing logo without losing brand equity - updating typography, refining proportions, or evolving the icon while retaining the recognition your audience already has.' },
+  { n: '03', title: 'Brand Identity System', desc: 'Complete visual identity - logo suite, colour palette (primary, secondary, neutral), typography system, iconography style, and pattern/texture assets for consistent brand expression.' },
+  { n: '04', title: 'Industry-Specific Logo Design', desc: 'Sector expertise across technology, healthcare, finance, retail, hospitality, legal, and professional services - design that resonates with your specific audience and industry conventions.' },
+  { n: '05', title: 'Logo Variations & Formats', desc: 'Full logo suite delivery - primary, horizontal, stacked, icon-only, dark background, light background, monochrome, and embossed variants in SVG, PNG, PDF, EPS, and AI formats.' },
+  { n: '06', title: 'Brand Guidelines Document', desc: 'Professional brand guidelines document - logo usage rules, clear space requirements, colour specifications (CMYK, RGB, HEX, Pantone), typography hierarchy, and do/don\'t examples.' },
+  { n: '07', title: 'Business Card & Stationery Design', desc: 'Branded stationery suite - business cards, letterhead, email signatures, and presentation templates - applying your new identity consistently across all professional materials.' },
+  { n: '08', title: 'Social Media Profile Kit', desc: 'Optimised logo versions for social media - profile pictures, cover photos, and favicon - correctly sized and formatted for Facebook, Instagram, LinkedIn, Twitter/X, and YouTube.' },
 ];
 
 const DELIVERABLES = ['SVG Vector Files', 'PNG (Transparent)', 'PDF & EPS', 'AI Source Files', 'Brand Guidelines PDF', 'Dark & Light Variants', 'Icon-Only Version', 'Social Media Kit'];
 
 const PROCESS = [
-  { step: '01', title: 'Discovery Brief', desc: 'Understanding your business, target audience, brand personality, competitors, and design preferences — a structured brief that ensures the design direction is right before any concepts are created.' },
-  { step: '02', title: 'Research & Concepts', desc: 'Market and competitor research, moodboard creation, and initial concept sketching — exploring multiple directions before committing to full digital development.' },
-  { step: '03', title: 'Initial Concepts', desc: '3 distinct logo concepts presented with rationale — different approaches to your brief, allowing you to choose or combine elements from the direction that resonates most.' },
-  { step: '04', title: 'Refinement Rounds', desc: '2 full rounds of revisions on your chosen concept — refining typography, proportion, colour, and icon detail based on your feedback until the design is exactly right.' },
-  { step: '05', title: 'Colour & Typography', desc: 'Develop the full colour palette and typography system to accompany the final logo — delivering a cohesive visual identity, not just an isolated mark.' },
-  { step: '06', title: 'Final Delivery', desc: 'Complete file package — all formats, all variants, brand guidelines PDF — delivered with full ownership transfer and source files so you are never dependent on us for future use.' },
+  { step: '01', title: 'Discovery Brief', desc: 'Understanding your business, target audience, brand personality, competitors, and design preferences - a structured brief that ensures the design direction is right before any concepts are created.' },
+  { step: '02', title: 'Research & Concepts', desc: 'Market and competitor research, moodboard creation, and initial concept sketching - exploring multiple directions before committing to full digital development.' },
+  { step: '03', title: 'Initial Concepts', desc: '3 distinct logo concepts presented with rationale - different approaches to your brief, allowing you to choose or combine elements from the direction that resonates most.' },
+  { step: '04', title: 'Refinement Rounds', desc: '2 full rounds of revisions on your chosen concept - refining typography, proportion, colour, and icon detail based on your feedback until the design is exactly right.' },
+  { step: '05', title: 'Colour & Typography', desc: 'Develop the full colour palette and typography system to accompany the final logo - delivering a cohesive visual identity, not just an isolated mark.' },
+  { step: '06', title: 'Final Delivery', desc: 'Complete file package - all formats, all variants, brand guidelines PDF - delivered with full ownership transfer and source files so you are never dependent on us for future use.' },
 ];
 
 const WHY = [
-  { title: '15+ Years Brand Design', desc: 'Over 500 logos designed across every sector — from funded startups to established businesses rebranding for new growth. The breadth of experience shows in every brief we take on.' },
-  { title: 'Strategy Before Aesthetics', desc: 'A logo that looks good but does not communicate the right thing is a failed brief. We start with brand strategy — audience, positioning, values — before opening any design software.' },
+  { title: '15+ Years Brand Design', desc: 'Over 500 logos designed across every sector - from funded startups to established businesses rebranding for new growth. The breadth of experience shows in every brief we take on.' },
+  { title: 'Strategy Before Aesthetics', desc: 'A logo that looks good but does not communicate the right thing is a failed brief. We start with brand strategy - audience, positioning, values - before opening any design software.' },
   { title: 'Full Ownership Included', desc: 'All source files and intellectual property transfer to you on final payment. No stock icons, no template bases, no licensing restrictions. Everything created is exclusively yours.' },
-  { title: 'Vector-First Design', desc: 'Every logo is designed in vector format from day one — infinitely scalable, print-ready at any size, and compatible with every professional production workflow.' },
-  { title: 'Transparent Revision Process', desc: '2 structured revision rounds on your chosen concept — not unlimited back-and-forth that produces indecision. Clear milestones that keep the project moving toward a great result.' },
-  { title: 'Beyond the Logo', desc: 'A logo is the start of a brand identity, not the end. We offer the full visual identity system — guidelines, stationery, digital assets — so your brand looks consistent everywhere it appears.' },
+  { title: 'Vector-First Design', desc: 'Every logo is designed in vector format from day one - infinitely scalable, print-ready at any size, and compatible with every professional production workflow.' },
+  { title: 'Transparent Revision Process', desc: '2 structured revision rounds on your chosen concept - not unlimited back-and-forth that produces indecision. Clear milestones that keep the project moving toward a great result.' },
+  { title: 'Beyond the Logo', desc: 'A logo is the start of a brand identity, not the end. We offer the full visual identity system - guidelines, stationery, digital assets - so your brand looks consistent everywhere it appears.' },
 ];
 
 const FAQS = [
-  { q: 'How much does a professional logo design cost?', a: 'Professional logo design costs vary significantly based on complexity and scope. At 1Solutions, logo packages start from a focused wordmark or simple icon mark and scale up to full brand identity systems with guidelines, stationery, and digital asset kits. The investment depends on: the complexity of the mark (a clean wordmark vs a detailed illustrated mascot); the scope of deliverables (logo only vs full identity system); and the number of revision rounds included. We provide transparent pricing after reviewing your brief — contact us for a specific quote based on your requirements.' },
-  { q: 'What is the difference between a logo and a brand identity?', a: 'A logo is a single mark — a symbol, wordmark, or combination — that identifies your business. A brand identity is the complete visual language that extends from the logo: colour palette (primary, secondary, tonal ranges), typography system (heading font, body font, hierarchy), iconography style, photographic style, pattern and texture assets, and usage guidelines. Many businesses start with a logo and grow into a full brand identity as they mature. We design both — standalone logos and complete identity systems.' },
+  { q: 'How much does a professional logo design cost?', a: 'Professional logo design costs vary significantly based on complexity and scope. At 1Solutions, logo packages start from a focused wordmark or simple icon mark and scale up to full brand identity systems with guidelines, stationery, and digital asset kits. The investment depends on: the complexity of the mark (a clean wordmark vs a detailed illustrated mascot); the scope of deliverables (logo only vs full identity system); and the number of revision rounds included. We provide transparent pricing after reviewing your brief - contact us for a specific quote based on your requirements.' },
+  { q: 'What is the difference between a logo and a brand identity?', a: 'A logo is a single mark - a symbol, wordmark, or combination - that identifies your business. A brand identity is the complete visual language that extends from the logo: colour palette (primary, secondary, tonal ranges), typography system (heading font, body font, hierarchy), iconography style, photographic style, pattern and texture assets, and usage guidelines. Many businesses start with a logo and grow into a full brand identity as they mature. We design both - standalone logos and complete identity systems.' },
   { q: 'How long does logo design take?', a: 'A standard logo design project with 3 initial concepts and 2 revision rounds typically takes 2 to 3 weeks from brief sign-off to final delivery. Full brand identity systems (logo plus colour, typography, guidelines, and stationery) typically take 4 to 6 weeks. Timeline depends on: client feedback turnaround speed; complexity of the mark; and the number of deliverables in scope. We agree a timeline during briefing so both parties have clear expectations from the start.' },
-  { q: 'Will I own the logo once it is designed?', a: 'Yes — on final payment, full intellectual property ownership transfers to you. This includes: the right to use the logo in perpetuity with no licensing fees; the source files (Adobe Illustrator .ai, vector .eps, .svg) to make future modifications yourself or with another designer; no restrictions on commercial use; and no hidden royalty obligations. We do not use stock icon libraries or template bases — every logo is created from scratch, ensuring 100% original ownership.' },
-  { q: 'What file formats will I receive?', a: 'Your final logo package includes: SVG (scalable vector — web standard); AI (Adobe Illustrator source file); EPS (universal vector for print production); PDF (vector PDF for print); PNG with transparent background (multiple sizes); JPEG (for contexts requiring white background); and optionally, a Sketch or Figma file if requested. You receive all colour variants (full colour, black, white, monochrome) and all layout variants (primary, horizontal, stacked, icon only) in each format.' },
-  { q: 'Can you redesign my existing logo?', a: 'Yes. Logo redesign and brand refresh projects are a significant part of our work. The approach depends on what needs to change: a full redesign (new concept from scratch, retaining only the brand name); a brand refresh (evolving the existing mark — modernising typography, refining proportions, updating colours — while retaining core recognition); or a technical redraw (recreating an existing logo in proper vector format from a low-quality source file, without changing the design). We recommend the right approach after reviewing your current mark and understanding your goals.' },
-  { q: 'Do you design logos for specific industries?', a: 'Yes. Our logo design portfolio spans technology and SaaS, healthcare and medical, finance and fintech, retail and ecommerce, hospitality and restaurants, legal and professional services, education, construction, and more. Industry context significantly shapes logo design — the conventions, colour psychology, and audience expectations of a healthcare logo differ entirely from a technology startup or a restaurant. We research your specific sector competitive landscape before developing concepts to ensure the design positions you effectively.' },
-  { q: 'What information do you need to start a logo design project?', a: 'To start a logo design project we need: your business name (and any preferred abbreviations); a clear description of what you do and who your customers are; your brand personality (3 to 5 adjectives describing how you want to be perceived); competitor logos to reference (for differentiation); any design preferences — styles you like, colours you want to include or avoid, fonts that feel right or wrong; and intended use cases (digital only, print heavy, embroidery, signage). The more detail you provide in the brief, the more precisely the initial concepts will match your vision.' },
+  { q: 'Will I own the logo once it is designed?', a: 'Yes - on final payment, full intellectual property ownership transfers to you. This includes: the right to use the logo in perpetuity with no licensing fees; the source files (Adobe Illustrator .ai, vector .eps, .svg) to make future modifications yourself or with another designer; no restrictions on commercial use; and no hidden royalty obligations. We do not use stock icon libraries or template bases - every logo is created from scratch, ensuring 100% original ownership.' },
+  { q: 'What file formats will I receive?', a: 'Your final logo package includes: SVG (scalable vector - web standard); AI (Adobe Illustrator source file); EPS (universal vector for print production); PDF (vector PDF for print); PNG with transparent background (multiple sizes); JPEG (for contexts requiring white background); and optionally, a Sketch or Figma file if requested. You receive all colour variants (full colour, black, white, monochrome) and all layout variants (primary, horizontal, stacked, icon only) in each format.' },
+  { q: 'Can you redesign my existing logo?', a: 'Yes. Logo redesign and brand refresh projects are a significant part of our work. The approach depends on what needs to change: a full redesign (new concept from scratch, retaining only the brand name); a brand refresh (evolving the existing mark - modernising typography, refining proportions, updating colours - while retaining core recognition); or a technical redraw (recreating an existing logo in proper vector format from a low-quality source file, without changing the design). We recommend the right approach after reviewing your current mark and understanding your goals.' },
+  { q: 'Do you design logos for specific industries?', a: 'Yes. Our logo design portfolio spans technology and SaaS, healthcare and medical, finance and fintech, retail and ecommerce, hospitality and restaurants, legal and professional services, education, construction, and more. Industry context significantly shapes logo design - the conventions, colour psychology, and audience expectations of a healthcare logo differ entirely from a technology startup or a restaurant. We research your specific sector competitive landscape before developing concepts to ensure the design positions you effectively.' },
+  { q: 'What information do you need to start a logo design project?', a: 'To start a logo design project we need: your business name (and any preferred abbreviations); a clear description of what you do and who your customers are; your brand personality (3 to 5 adjectives describing how you want to be perceived); competitor logos to reference (for differentiation); any design preferences - styles you like, colours you want to include or avoid, fonts that feel right or wrong; and intended use cases (digital only, print heavy, embroidery, signage). The more detail you provide in the brief, the more precisely the initial concepts will match your vision.' },
 ];
 
 const STATS = [
@@ -65,7 +65,7 @@ export default function LogoDesignServices() {
     <>
       <Head>
         <title>Logo Design Services | 1Solutions</title>
-        <meta name="description" content="Professional logo design services — custom brand logos, identity systems, and brand guidelines. 500+ logos designed across all industries." />
+        <meta name="description" content="Professional logo design services - custom brand logos, identity systems, and brand guidelines. 500+ logos designed across all industries." />
         <meta name="keywords" content="logo design services, professional logo design, brand logo design, custom logo design, logo design agency, brand identity design" />
         <link rel="canonical" href="https://www.1solutions.biz/logo-design-services/" />
         <meta property="og:title" content="Logo Design Services | 1Solutions" />
@@ -147,8 +147,8 @@ export default function LogoDesignServices() {
           <div className="logo-in">
             <nav className="logo-bc"><Link href="/">Home</Link><span>/</span><Link href="/app-ui-ux-design">Design Services</Link><span>/</span><span style={{color:'#B45309'}}>Logo Design</span></nav>
             <span className="logo-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#B45309',display:'inline-block'}}/> Custom Design · Full Ownership · Vector Files</span>
-            <h1 className="logo-h1">Professional Logo Design Services — Brands That Get Remembered</h1>
-            <p className="logo-sub">Custom logo design built on brand strategy — not templates. 500+ logos designed across all industries, with full IP ownership and every format you need delivered on completion.</p>
+            <h1 className="logo-h1">Professional Logo Design Services - Brands That Get Remembered</h1>
+            <p className="logo-sub">Custom logo design built on brand strategy - not templates. 500+ logos designed across all industries, with full IP ownership and every format you need delivered on completion.</p>
             <div className="logo-btns">
               <Link href="/contact-us" className="logo-btn-p">Start Your Logo Project <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/app-ui-ux-design" className="logo-btn-s">UI/UX Design Services</Link>
@@ -158,7 +158,7 @@ export default function LogoDesignServices() {
         </section>
         <section className="logo-svc"><div className="logo-svc-in">
           <span className="logo-ey2">What We Offer</span><h2 className="logo-ttl">Logo Design Services</h2>
-          <p className="logo-desc">From startup wordmarks to full brand identity systems — every logo design service you need under one roof.</p>
+          <p className="logo-desc">From startup wordmarks to full brand identity systems - every logo design service you need under one roof.</p>
           <div className="logo-grid" ref={cardsRef}>{SERVICES.map((s,i) => <div key={s.n} className={`logo-card${visibleCards.includes(i)?' visible':''}`}><div className="logo-num">{s.n}</div><h3>{s.title}</h3><p>{s.desc}</p></div>)}</div>
         </div></section>
         <section className="logo-dlv"><div className="logo-dlv-in">
@@ -167,12 +167,12 @@ export default function LogoDesignServices() {
         </div></section>
         <section className="logo-proc"><div className="logo-proc-in">
           <span className="logo-ey2">How We Work</span><h2 className="logo-ttl">Our Logo Design Process</h2>
-          <p className="logo-desc">Brief to final delivery in 2 to 3 weeks — a structured process that produces great work efficiently without endless revision loops.</p>
+          <p className="logo-desc">Brief to final delivery in 2 to 3 weeks - a structured process that produces great work efficiently without endless revision loops.</p>
           <div className="logo-steps">{PROCESS.map((p,i) => <div key={p.step} ref={el=>{stepRefs.current[i]=el}} className={`logo-step${visibleSteps.includes(i)?' visible':''}`}><div className="logo-snum">{p.step}</div><div><h3>{p.title}</h3><p>{p.desc}</p></div></div>)}</div>
         </div></section>
         <section className="logo-why"><div className="logo-why-in">
           <span className="logo-ey2">Why 1Solutions</span><h2 className="logo-ttl">Strategy-Led Design, Not Template Work</h2>
-          <p className="logo-desc">Every logo is original, built on a brand brief, and delivered with full ownership — no stock, no templates, no restrictions.</p>
+          <p className="logo-desc">Every logo is original, built on a brand brief, and delivered with full ownership - no stock, no templates, no restrictions.</p>
           <div className="logo-why-grid" ref={whyRef}>{WHY.map((w,i) => <div key={w.title} className={`logo-wcard${visibleWhy.includes(i)?' visible':''}`}><div className="logo-dot"/><h3>{w.title}</h3><p>{w.desc}</p></div>)}</div>
         </div></section>
         <section className="logo-faq"><div className="logo-faq-in">
@@ -184,7 +184,7 @@ export default function LogoDesignServices() {
           <div className="logo-cta-in">
             <span className="logo-ey2" style={{textAlign:'center',display:'block',marginBottom:16}}>Ready to Build a Brand That Gets Noticed?</span>
             <h2 className="logo-cta-t">Start Your Logo Design Project</h2>
-            <p className="logo-cta-s">Tell us about your business and brand goals — we&rsquo;ll send you a tailored quote and timeline within 24 hours.</p>
+            <p className="logo-cta-s">Tell us about your business and brand goals - we&rsquo;ll send you a tailored quote and timeline within 24 hours.</p>
             <div className="logo-cta-btns">
               <Link href="/contact-us" className="logo-btn-p">Get a Logo Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/app-ui-ux-design" className="logo-btn-s">UI/UX Design Services</Link>

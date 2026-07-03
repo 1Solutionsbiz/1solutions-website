@@ -3,14 +3,14 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const SERVICES = [
-  { n: '01', title: 'California Local SEO', desc: 'Google Business Profile optimisation, local citation building, and geo-targeted content for every California market — from Los Angeles to Sacramento, San Diego to the Bay Area.' },
-  { n: '02', title: 'Technical SEO Audits', desc: 'Core Web Vitals, crawlability, site architecture, duplicate content, canonical tags, structured data, and mobile performance — fixing every technical issue holding your California rankings back.' },
-  { n: '03', title: 'Keyword Research & Strategy', desc: 'California-specific keyword research mapping high-intent commercial queries to the right pages — targeting buyers in your exact service area, not generic statewide traffic.' },
-  { n: '04', title: 'On-Page SEO Optimisation', desc: 'Title tags, meta descriptions, header structure, internal linking, schema markup, and content optimisation — every on-page signal tuned to rank for competitive California search queries.' },
-  { n: '05', title: 'Content Marketing & SEO Copywriting', desc: 'Long-form SEO content, location pages, blog strategy, and pillar page architecture — building topical authority that earns organic traffic and backlinks in the California market.' },
-  { n: '06', title: 'Link Building for California', desc: 'Authority link acquisition from California news outlets, local directories, chambers of commerce, industry associations, and relevant regional publishers — the signals that move competitive rankings.' },
+  { n: '01', title: 'California Local SEO', desc: 'Google Business Profile optimisation, local citation building, and geo-targeted content for every California market - from Los Angeles to Sacramento, San Diego to the Bay Area.' },
+  { n: '02', title: 'Technical SEO Audits', desc: 'Core Web Vitals, crawlability, site architecture, duplicate content, canonical tags, structured data, and mobile performance - fixing every technical issue holding your California rankings back.' },
+  { n: '03', title: 'Keyword Research & Strategy', desc: 'California-specific keyword research mapping high-intent commercial queries to the right pages - targeting buyers in your exact service area, not generic statewide traffic.' },
+  { n: '04', title: 'On-Page SEO Optimisation', desc: 'Title tags, meta descriptions, header structure, internal linking, schema markup, and content optimisation - every on-page signal tuned to rank for competitive California search queries.' },
+  { n: '05', title: 'Content Marketing & SEO Copywriting', desc: 'Long-form SEO content, location pages, blog strategy, and pillar page architecture - building topical authority that earns organic traffic and backlinks in the California market.' },
+  { n: '06', title: 'Link Building for California', desc: 'Authority link acquisition from California news outlets, local directories, chambers of commerce, industry associations, and relevant regional publishers - the signals that move competitive rankings.' },
   { n: '07', title: 'eCommerce SEO', desc: 'Product page optimisation, category architecture, Google Shopping feeds, and ecommerce schema for California-based online retailers competing in the US market.' },
-  { n: '08', title: 'SEO Reporting & Analytics', desc: 'Monthly ranking reports, Google Search Console analysis, traffic attribution, and conversion tracking — clear visibility into what your California SEO investment is producing.' },
+  { n: '08', title: 'SEO Reporting & Analytics', desc: 'Monthly ranking reports, Google Search Console analysis, traffic attribution, and conversion tracking - clear visibility into what your California SEO investment is producing.' },
 ];
 
 const CITIES = [
@@ -27,32 +27,32 @@ const INDUSTRIES = [
 ];
 
 const PROCESS = [
-  { step: '01', title: 'California SEO Audit', desc: 'We audit your current rankings, technical health, backlink profile, content gaps, and Google Business Profile — benchmarked against the top competitors in your specific California market.' },
-  { step: '02', title: 'Keyword & Market Strategy', desc: 'Mapping high-intent California search queries to your service pages — city-level, county-level, and industry-specific keyword targets prioritised by search volume, competition, and commercial value.' },
-  { step: '03', title: 'Technical & On-Page Fixes', desc: 'Resolving crawl errors, page speed issues, duplicate content, and thin pages — implementing schema markup, internal linking architecture, and on-page optimisation across your key landing pages.' },
-  { step: '04', title: 'Content & Location Pages', desc: 'Building or optimising location-specific content for the California cities and service areas most valuable to your business — unique, useful content that earns rankings, not thin templates.' },
-  { step: '05', title: 'Authority & Link Building', desc: 'Earning high-quality backlinks from California-relevant sources — local press, industry publications, directories, and digital PR — the authority signals that separate page-one rankings from page two.' },
-  { step: '06', title: 'Monthly Reporting & Iteration', desc: 'Transparent monthly reports showing keyword movements, organic traffic growth, conversion attribution, and priority actions for the next 30 days — measurable progress every month.' },
+  { step: '01', title: 'California SEO Audit', desc: 'We audit your current rankings, technical health, backlink profile, content gaps, and Google Business Profile - benchmarked against the top competitors in your specific California market.' },
+  { step: '02', title: 'Keyword & Market Strategy', desc: 'Mapping high-intent California search queries to your service pages - city-level, county-level, and industry-specific keyword targets prioritised by search volume, competition, and commercial value.' },
+  { step: '03', title: 'Technical & On-Page Fixes', desc: 'Resolving crawl errors, page speed issues, duplicate content, and thin pages - implementing schema markup, internal linking architecture, and on-page optimisation across your key landing pages.' },
+  { step: '04', title: 'Content & Location Pages', desc: 'Building or optimising location-specific content for the California cities and service areas most valuable to your business - unique, useful content that earns rankings, not thin templates.' },
+  { step: '05', title: 'Authority & Link Building', desc: 'Earning high-quality backlinks from California-relevant sources - local press, industry publications, directories, and digital PR - the authority signals that separate page-one rankings from page two.' },
+  { step: '06', title: 'Monthly Reporting & Iteration', desc: 'Transparent monthly reports showing keyword movements, organic traffic growth, conversion attribution, and priority actions for the next 30 days - measurable progress every month.' },
 ];
 
 const WHY = [
-  { title: '15+ Years of SEO Experience', desc: 'Active in SEO since 2009 — through every major Google algorithm update, the Panda, Penguin, Hummingbird, BERT, and Helpful Content updates. We have survived every shake-up because we build SEO on fundamentals that hold, not tactics that expire.' },
-  { title: 'California Market Knowledge', desc: 'We understand the competitive dynamics of the California search landscape — from the hyper-competitive Los Angeles and Bay Area markets to emerging opportunities in Central Valley cities and Southern California suburbs.' },
-  { title: 'Integrated SEO + Content', desc: 'Rankings require both technical optimisation and content that deserves to rank. We build both in-house — technical SEO, keyword strategy, and content production are all delivered by the same team, not outsourced to generalists.' },
-  { title: 'Business Outcomes First', desc: 'We track leads, enquiries, and revenue attributed to organic search — not just keyword positions. If rankings are climbing but calls are not, we diagnose and fix the conversion gap, not just report the numbers.' },
-  { title: 'Transparent Month-by-Month', desc: 'No lock-in contracts. We work month-to-month and provide full reporting access — Google Search Console, keyword rank tracker, and traffic analytics — so you always see exactly what your California SEO programme is producing.' },
-  { title: 'Multi-Industry Experience', desc: 'We have delivered California SEO results in legal, real estate, healthcare, SaaS, home services, hospitality, finance, and retail — sector experience that means we understand your buyers, your compliance requirements, and your competitive environment.' },
+  { title: '15+ Years of SEO Experience', desc: 'Active in SEO since 2009 - through every major Google algorithm update, the Panda, Penguin, Hummingbird, BERT, and Helpful Content updates. We have survived every shake-up because we build SEO on fundamentals that hold, not tactics that expire.' },
+  { title: 'California Market Knowledge', desc: 'We understand the competitive dynamics of the California search landscape - from the hyper-competitive Los Angeles and Bay Area markets to emerging opportunities in Central Valley cities and Southern California suburbs.' },
+  { title: 'Integrated SEO + Content', desc: 'Rankings require both technical optimisation and content that deserves to rank. We build both in-house - technical SEO, keyword strategy, and content production are all delivered by the same team, not outsourced to generalists.' },
+  { title: 'Business Outcomes First', desc: 'We track leads, enquiries, and revenue attributed to organic search - not just keyword positions. If rankings are climbing but calls are not, we diagnose and fix the conversion gap, not just report the numbers.' },
+  { title: 'Transparent Month-by-Month', desc: 'No lock-in contracts. We work month-to-month and provide full reporting access - Google Search Console, keyword rank tracker, and traffic analytics - so you always see exactly what your California SEO programme is producing.' },
+  { title: 'Multi-Industry Experience', desc: 'We have delivered California SEO results in legal, real estate, healthcare, SaaS, home services, hospitality, finance, and retail - sector experience that means we understand your buyers, your compliance requirements, and your competitive environment.' },
 ];
 
 const FAQS = [
-  { q: 'How long does SEO take to produce results in California?', a: 'For most California businesses, meaningful organic ranking improvements appear within 3 to 6 months for low-to-medium competition keywords, and 6 to 12 months for competitive markets like Los Angeles, San Francisco, and San Diego. California\'s major city markets are among the most competitive in the US, so realistic timelines depend heavily on your specific keywords, current domain authority, and the strength of existing competitors. We provide honest timeline estimates in your initial audit based on your specific competitive landscape — not generic promises.' },
-  { q: 'Do you specialise in specific California cities?', a: 'We serve businesses across the entire state of California — Los Angeles, San Francisco, San Diego, San Jose, Sacramento, the East Bay, Orange County, the Inland Empire, Central Valley, and beyond. For businesses with multiple California locations, we build geo-targeted strategies covering every service area with dedicated location content, city-specific keyword targeting, and GBP optimisation for each location.' },
-  { q: 'What industries do you serve for California SEO?', a: 'We have worked across most California industries — technology and SaaS, real estate, legal services, healthcare and medical practices, hospitality and restaurants, home services (HVAC, plumbing, landscaping), construction and contracting, finance and insurance, retail and ecommerce, and education. Industry experience matters in SEO because different sectors have different search behaviour, content requirements, and competitive dynamics. We apply sector-specific knowledge, not generic SEO templates.' },
-  { q: 'How much does California SEO cost?', a: 'California SEO pricing depends on your market competitiveness, the number of target keywords and locations, and the scope of technical and content work required. As a guide: local SEO for a single-location California business typically ranges from $800 to $2,500 per month; multi-location or statewide programmes range from $2,500 to $6,000+ per month; highly competitive markets (law, real estate, healthcare in LA or SF) require more investment to be competitive. We provide a custom scope and pricing after your initial audit — we do not quote without understanding your specific situation.' },
-  { q: 'Can you help with both local and national SEO from California?', a: 'Yes. Many California businesses need both local visibility (Google Maps, near-me searches) and national organic rankings (broad industry terms). We build integrated strategies that cover both — local SEO for foot traffic and city-specific leads, and national SEO for expanding reach beyond California. This is especially common for California-based SaaS companies, ecommerce businesses, and professional services firms serving clients across the US.' },
-  { q: 'Do you work with California businesses remotely?', a: 'Yes, entirely remotely. All our SEO work is delivered remotely — strategy, implementation, content, reporting, and communication. We work across time zones with California clients through asynchronous updates and monthly or bi-weekly calls. The majority of our US client base is managed remotely with no impact on quality or communication. Most clients find that monthly reporting calls and a shared tracking dashboard provide all the visibility they need.' },
-  { q: 'What makes California SEO different from SEO in other states?', a: 'California is the most competitive state for SEO in several industries — technology, legal, real estate, and healthcare in particular. The LA and SF Bay Area markets are among the most contested local search environments in the country. At the same time, California\'s diverse geography creates significant opportunity in less contested markets — Central Valley cities, Inland Empire, and North California — where quality SEO produces faster results. We tailor strategy to your specific California market, not a one-size-fits-all approach.' },
-  { q: 'Do you offer SEO audits for California businesses?', a: 'Yes. We offer comprehensive SEO audits covering technical health, on-page optimisation, backlink profile, keyword gap analysis, competitor benchmarking, and local SEO signals — tailored to your California market and industry. Audits are available as a standalone service or as the first phase of an ongoing programme. The audit provides a prioritised action plan so you can see exactly what is holding your California rankings back and what the highest-impact fixes are.' },
+  { q: 'How long does SEO take to produce results in California?', a: 'For most California businesses, meaningful organic ranking improvements appear within 3 to 6 months for low-to-medium competition keywords, and 6 to 12 months for competitive markets like Los Angeles, San Francisco, and San Diego. California\'s major city markets are among the most competitive in the US, so realistic timelines depend heavily on your specific keywords, current domain authority, and the strength of existing competitors. We provide honest timeline estimates in your initial audit based on your specific competitive landscape - not generic promises.' },
+  { q: 'Do you specialise in specific California cities?', a: 'We serve businesses across the entire state of California - Los Angeles, San Francisco, San Diego, San Jose, Sacramento, the East Bay, Orange County, the Inland Empire, Central Valley, and beyond. For businesses with multiple California locations, we build geo-targeted strategies covering every service area with dedicated location content, city-specific keyword targeting, and GBP optimisation for each location.' },
+  { q: 'What industries do you serve for California SEO?', a: 'We have worked across most California industries - technology and SaaS, real estate, legal services, healthcare and medical practices, hospitality and restaurants, home services (HVAC, plumbing, landscaping), construction and contracting, finance and insurance, retail and ecommerce, and education. Industry experience matters in SEO because different sectors have different search behaviour, content requirements, and competitive dynamics. We apply sector-specific knowledge, not generic SEO templates.' },
+  { q: 'How much does California SEO cost?', a: 'California SEO pricing depends on your market competitiveness, the number of target keywords and locations, and the scope of technical and content work required. As a guide: local SEO for a single-location California business typically ranges from $800 to $2,500 per month; multi-location or statewide programmes range from $2,500 to $6,000+ per month; highly competitive markets (law, real estate, healthcare in LA or SF) require more investment to be competitive. We provide a custom scope and pricing after your initial audit - we do not quote without understanding your specific situation.' },
+  { q: 'Can you help with both local and national SEO from California?', a: 'Yes. Many California businesses need both local visibility (Google Maps, near-me searches) and national organic rankings (broad industry terms). We build integrated strategies that cover both - local SEO for foot traffic and city-specific leads, and national SEO for expanding reach beyond California. This is especially common for California-based SaaS companies, ecommerce businesses, and professional services firms serving clients across the US.' },
+  { q: 'Do you work with California businesses remotely?', a: 'Yes, entirely remotely. All our SEO work is delivered remotely - strategy, implementation, content, reporting, and communication. We work across time zones with California clients through asynchronous updates and monthly or bi-weekly calls. The majority of our US client base is managed remotely with no impact on quality or communication. Most clients find that monthly reporting calls and a shared tracking dashboard provide all the visibility they need.' },
+  { q: 'What makes California SEO different from SEO in other states?', a: 'California is the most competitive state for SEO in several industries - technology, legal, real estate, and healthcare in particular. The LA and SF Bay Area markets are among the most contested local search environments in the country. At the same time, California\'s diverse geography creates significant opportunity in less contested markets - Central Valley cities, Inland Empire, and North California - where quality SEO produces faster results. We tailor strategy to your specific California market, not a one-size-fits-all approach.' },
+  { q: 'Do you offer SEO audits for California businesses?', a: 'Yes. We offer comprehensive SEO audits covering technical health, on-page optimisation, backlink profile, keyword gap analysis, competitor benchmarking, and local SEO signals - tailored to your California market and industry. Audits are available as a standalone service or as the first phase of an ongoing programme. The audit provides a prioritised action plan so you can see exactly what is holding your California rankings back and what the highest-impact fixes are.' },
 ];
 
 const STATS = [
@@ -63,8 +63,8 @@ const STATS = [
 ];
 
 const RESULTS = [
-  { metric: '340%', label: 'Organic traffic growth', sub: 'California legal services firm — 12 months' },
-  { metric: '4.1×', label: 'Leads from organic search', sub: 'LA real estate client — 8 months' },
+  { metric: '340%', label: 'Organic traffic growth', sub: 'California legal services firm - 12 months' },
+  { metric: '4.1×', label: 'Leads from organic search', sub: 'LA real estate client - 8 months' },
   { metric: '#1', label: 'Google ranking achieved', sub: 'San Diego home services business' },
 ];
 
@@ -131,7 +131,7 @@ export default function SeoServicesCalifornia() {
         '@type': 'Service',
         name: 'SEO Services California',
         provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz' },
-        description: 'SEO services for California businesses — local SEO, technical SEO, content marketing, and link building across Los Angeles, San Francisco, San Diego, and all major California markets.',
+        description: 'SEO services for California businesses - local SEO, technical SEO, content marketing, and link building across Los Angeles, San Francisco, San Diego, and all major California markets.',
         areaServed: { '@type': 'State', name: 'California', sameAs: 'https://en.wikipedia.org/wiki/California' },
         serviceType: 'Search Engine Optimisation',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '87', bestRating: '5' },
@@ -281,7 +281,7 @@ export default function SeoServicesCalifornia() {
             </nav>
             <span className="calseo-badge">
               <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#FE9700', display: 'inline-block' }} />
-              SEO Services — California
+              SEO Services - California
             </span>
             <h1 className="calseo-h1">SEO Services for <span>California Businesses</span></h1>
             <p className="calseo-sub">Rank higher on Google across Los Angeles, San Francisco, San Diego, and every California market that matters to your business. 15+ years of SEO experience, 500+ clients, no lock-in contracts.</p>
@@ -307,7 +307,7 @@ export default function SeoServicesCalifornia() {
           <div className="calseo-svc-in">
             <span className="calseo-ey">What We Do</span>
             <h2 className="calseo-ttl">Complete California SEO Services</h2>
-            <p className="calseo-dsc">Every SEO discipline under one roof — from technical audits and on-page optimisation to content strategy and link building, tailored to California markets.</p>
+            <p className="calseo-dsc">Every SEO discipline under one roof - from technical audits and on-page optimisation to content strategy and link building, tailored to California markets.</p>
             <div className="calseo-grid" ref={cardsRef}>
               {SERVICES.map((s, i) => (
                 <div key={s.n} className={`calseo-card${visibleCards.includes(i) ? ' visible' : ''}`}>
@@ -342,7 +342,7 @@ export default function SeoServicesCalifornia() {
           <div className="calseo-results-in">
             <span className="calseo-ey">Client Results</span>
             <h2 className="calseo-ttl">California SEO Results</h2>
-            <p className="calseo-dsc">Real outcomes from real California businesses — measured in traffic, leads, and revenue, not just keyword rankings.</p>
+            <p className="calseo-dsc">Real outcomes from real California businesses - measured in traffic, leads, and revenue, not just keyword rankings.</p>
             <div className="calseo-results-grid">
               {RESULTS.map(r => (
                 <div key={r.label} className="calseo-result-card">
@@ -359,7 +359,7 @@ export default function SeoServicesCalifornia() {
           <div className="calseo-proc-in">
             <span className="calseo-ey">How We Work</span>
             <h2 className="calseo-ttl">Our California SEO Process</h2>
-            <p className="calseo-dsc">A structured, transparent approach from audit to rankings — built around your specific California market, competitive landscape, and business goals.</p>
+            <p className="calseo-dsc">A structured, transparent approach from audit to rankings - built around your specific California market, competitive landscape, and business goals.</p>
             <div className="calseo-steps">
               {PROCESS.map((p, i) => (
                 <div key={p.step} ref={el => { stepRefs.current[i] = el; }} className={`calseo-step${visibleSteps.includes(i) ? ' visible' : ''}`}>
@@ -375,7 +375,7 @@ export default function SeoServicesCalifornia() {
           <div className="calseo-why-in">
             <span className="calseo-ey">Why 1Solutions</span>
             <h2 className="calseo-ttl">The California SEO Partner That Delivers Results</h2>
-            <p className="calseo-dsc">We measure success in organic leads and revenue — not just rankings. Here is why California businesses choose 1Solutions.</p>
+            <p className="calseo-dsc">We measure success in organic leads and revenue - not just rankings. Here is why California businesses choose 1Solutions.</p>
             <div className="calseo-why-grid" ref={whyRef}>
               {WHY.map((w, i) => (
                 <div key={w.title} className={`calseo-why-card${visibleWhy.includes(i) ? ' visible' : ''}`}>
@@ -412,7 +412,7 @@ export default function SeoServicesCalifornia() {
           <div className="calseo-cta-in">
             <span className="calseo-ey" style={{ color: 'rgba(254,151,0,0.75)', textAlign: 'center', display: 'block', marginBottom: 16 }}>Ready to Rank in California?</span>
             <h2 className="calseo-cta-ttl">Get Your Free <span>California SEO Audit</span></h2>
-            <p className="calseo-cta-sub">We&rsquo;ll audit your current rankings, technical health, backlink profile, and competitors — and deliver a clear action plan for growing your California organic search presence.</p>
+            <p className="calseo-cta-sub">We&rsquo;ll audit your current rankings, technical health, backlink profile, and competitors - and deliver a clear action plan for growing your California organic search presence.</p>
             <div className="calseo-cta-btns">
               <Link href="/contact-us" className="calseo-btn-p">
                 Request Free SEO Audit

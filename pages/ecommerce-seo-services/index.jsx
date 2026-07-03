@@ -3,46 +3,46 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const SERVICES = [
-  { icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z', title: 'Product Page SEO', desc: 'Title tag, meta description, schema markup, image alt text, and conversion copy optimisation for every product — at scale, even for catalogues with thousands of SKUs.' },
+  { icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z', title: 'Product Page SEO', desc: 'Title tag, meta description, schema markup, image alt text, and conversion copy optimisation for every product - at scale, even for catalogues with thousands of SKUs.' },
   { icon: 'M4 6h16M4 10h16M4 14h16M4 18h16', title: 'Category Page Optimisation', desc: 'Category pages drive the highest-intent traffic. We optimise URL structure, heading hierarchy, faceted navigation, canonical tags, and add unique introductory copy that ranks.' },
   { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'Technical eCommerce SEO', desc: 'Crawl budget optimisation, duplicate content elimination, faceted navigation handling (noindex/canonical), site speed (Core Web Vitals), and XML sitemap management for large stores.' },
   { icon: 'M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4', title: 'Structured Data & Rich Snippets', desc: 'Product, Review, BreadcrumbList, and Offer schema implementation so your listings show star ratings, price, and availability directly in Google search results.' },
-  { icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064', title: 'Google Shopping Feed Optimisation', desc: 'Feed title, description, GTIN, MPN, and attribute optimisation for Google Merchant Center — improving Shopping ad quality scores and organic Shopping visibility.' },
-  { icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1', title: 'eCommerce Link Building', desc: 'Authority links from product review sites, industry blogs, supplier directories, and digital PR — building the domain authority that lifts your entire catalogue.' },
+  { icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064', title: 'Google Shopping Feed Optimisation', desc: 'Feed title, description, GTIN, MPN, and attribute optimisation for Google Merchant Center - improving Shopping ad quality scores and organic Shopping visibility.' },
+  { icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1', title: 'eCommerce Link Building', desc: 'Authority links from product review sites, industry blogs, supplier directories, and digital PR - building the domain authority that lifts your entire catalogue.' },
   { icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z', title: 'eCommerce Content Strategy', desc: 'Buying guides, comparison articles, and "best X for Y" content that ranks for high-intent queries and drives buyers into your category and product pages.' },
   { icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', title: 'Platform-Specific SEO', desc: 'Deep expertise in Shopify (canonical issues, theme speed), WooCommerce (permalink structure, plugin conflicts), Magento (faceted nav, large catalogue crawling), and custom platforms.' },
 ];
 
 const RESULTS = [
-  { metric: '410%', label: 'Organic revenue increase', sub: 'Shopify fashion store — 12 months', color: '#FE9700' },
-  { metric: '2.9×', label: 'Category page traffic growth', sub: 'WooCommerce electronics — 8 months', color: '#7C3AED' },
-  { metric: '#1–3', label: 'Google positions for 200+ products', sub: 'Magento home goods client — AU', color: '#0F3460' },
+  { metric: '410%', label: 'Organic revenue increase', sub: 'Shopify fashion store - 12 months', color: '#FE9700' },
+  { metric: '2.9×', label: 'Category page traffic growth', sub: 'WooCommerce electronics - 8 months', color: '#7C3AED' },
+  { metric: '#1–3', label: 'Google positions for 200+ products', sub: 'Magento home goods client - AU', color: '#0F3460' },
 ];
 
 const PROCESS = [
-  { n: '01', title: 'eCommerce SEO Audit', desc: 'Full crawl of your store — product pages, categories, faceted nav, duplicate content, speed, structured data gaps, and competitor benchmarking.' },
-  { n: '02', title: 'Keyword & Catalogue Mapping', desc: 'We map search demand to your catalogue architecture — identifying which categories, products, and content gaps represent the biggest revenue opportunity.' },
-  { n: '03', title: 'Technical Fixes', desc: 'Duplicate product URLs, canonical tag issues, crawl budget waste, faceted navigation indexation — we fix the technical debt that holds large stores back.' },
-  { n: '04', title: 'On-Page Optimisation', desc: 'Title tags, meta descriptions, H1/H2 structure, alt text, and unique copy for priority category and product pages — prioritised by revenue potential.' },
+  { n: '01', title: 'eCommerce SEO Audit', desc: 'Full crawl of your store - product pages, categories, faceted nav, duplicate content, speed, structured data gaps, and competitor benchmarking.' },
+  { n: '02', title: 'Keyword & Catalogue Mapping', desc: 'We map search demand to your catalogue architecture - identifying which categories, products, and content gaps represent the biggest revenue opportunity.' },
+  { n: '03', title: 'Technical Fixes', desc: 'Duplicate product URLs, canonical tag issues, crawl budget waste, faceted navigation indexation - we fix the technical debt that holds large stores back.' },
+  { n: '04', title: 'On-Page Optimisation', desc: 'Title tags, meta descriptions, H1/H2 structure, alt text, and unique copy for priority category and product pages - prioritised by revenue potential.' },
   { n: '05', title: 'Content & Link Building', desc: 'Buying guides, comparison content, and authority link acquisition from relevant product review publications and industry directories.' },
-  { n: '06', title: 'Measure & Scale', desc: 'Monthly reporting on organic revenue, product/category ranking movement, and crawl health — with a clear roadmap for the next quarter.' },
+  { n: '06', title: 'Measure & Scale', desc: 'Monthly reporting on organic revenue, product/category ranking movement, and crawl health - with a clear roadmap for the next quarter.' },
 ];
 
 const WHY = [
-  { title: 'Platform-Specific Expertise', desc: 'Shopify, WooCommerce, Magento, and custom — we know the unique SEO challenges of each platform and how to solve them without breaking your store.' },
-  { title: 'Revenue-First Mindset', desc: 'We prioritise optimisation by revenue potential — focusing on categories and products with the highest conversion value, not just the easiest keyword wins.' },
+  { title: 'Platform-Specific Expertise', desc: 'Shopify, WooCommerce, Magento, and custom - we know the unique SEO challenges of each platform and how to solve them without breaking your store.' },
+  { title: 'Revenue-First Mindset', desc: 'We prioritise optimisation by revenue potential - focusing on categories and products with the highest conversion value, not just the easiest keyword wins.' },
   { title: 'Scalable for Large Catalogues', desc: 'We have optimised stores with 10,000+ SKUs using templated optimisation frameworks, automated audit scripts, and bulk implementation workflows.' },
-  { title: 'Structured Data Specialists', desc: 'Rich snippets with star ratings, price, and availability in SERPs significantly increase click-through rates — we implement and monitor schema for every major product type.' },
-  { title: 'No Lock-in Contracts', desc: 'We earn your business every month. Month-to-month engagements — you stay because the organic revenue numbers keep growing.' },
-  { title: 'Transparent Reporting', desc: 'Monthly reports tied to revenue — organic sessions, conversion rate, organic revenue, and keyword movement — not just traffic numbers.' },
+  { title: 'Structured Data Specialists', desc: 'Rich snippets with star ratings, price, and availability in SERPs significantly increase click-through rates - we implement and monitor schema for every major product type.' },
+  { title: 'No Lock-in Contracts', desc: 'We earn your business every month. Month-to-month engagements - you stay because the organic revenue numbers keep growing.' },
+  { title: 'Transparent Reporting', desc: 'Monthly reports tied to revenue - organic sessions, conversion rate, organic revenue, and keyword movement - not just traffic numbers.' },
 ];
 
 const FAQS = [
   { q: 'How is eCommerce SEO different from regular SEO?', a: 'eCommerce SEO deals with challenges unique to online stores: duplicate product URLs from filters and sorting, thin category page content, crawl budget management for large catalogues, Product and Review schema, and Google Shopping feed optimisation. These require specialised knowledge beyond standard on-page SEO.' },
-  { q: 'Which eCommerce platforms do you work with?', a: 'Shopify, WooCommerce, Magento (1 and 2), BigCommerce, PrestaShop, OpenCart, and custom-built eCommerce platforms. Each has unique SEO quirks — from Shopify\'s duplicate URL structure to Magento\'s faceted navigation — and we know how to handle all of them.' },
+  { q: 'Which eCommerce platforms do you work with?', a: 'Shopify, WooCommerce, Magento (1 and 2), BigCommerce, PrestaShop, OpenCart, and custom-built eCommerce platforms. Each has unique SEO quirks - from Shopify\'s duplicate URL structure to Magento\'s faceted navigation - and we know how to handle all of them.' },
   { q: 'How do you handle duplicate content from product variants and filters?', a: 'We use a combination of canonical tags, noindex directives, and parameter handling in Google Search Console to ensure only the preferred version of each URL is indexed. For Shopify specifically, we resolve the /collections/ vs /products/ duplication that affects most stores.' },
-  { q: 'Can you optimise a store with thousands of products?', a: 'Yes. We have scalable processes for large catalogues — templated title/meta optimisation, automated crawl monitoring, bulk schema implementation, and prioritisation frameworks that focus effort on the highest-revenue product and category pages first.' },
-  { q: 'Do you help with Google Shopping / Merchant Center?', a: 'Yes. We optimise your product feed titles, descriptions, GTINs, and attributes for Google Merchant Center — improving both paid Shopping ad quality scores and organic Shopping visibility (free listings).' },
+  { q: 'Can you optimise a store with thousands of products?', a: 'Yes. We have scalable processes for large catalogues - templated title/meta optimisation, automated crawl monitoring, bulk schema implementation, and prioritisation frameworks that focus effort on the highest-revenue product and category pages first.' },
+  { q: 'Do you help with Google Shopping / Merchant Center?', a: 'Yes. We optimise your product feed titles, descriptions, GTINs, and attributes for Google Merchant Center - improving both paid Shopping ad quality scores and organic Shopping visibility (free listings).' },
   { q: 'How long before eCommerce SEO shows results?', a: 'Technical fixes often show results within 4 to 8 weeks. Category page improvements typically show ranking movement within 2 to 3 months. Full organic revenue impact is usually measurable by month 4 to 6, depending on competition and catalogue size.' },
   { q: 'Do you provide eCommerce SEO for international stores?', a: 'Yes. We handle hreflang implementation, geo-targeted content, currency and language variants, and the crawl budget implications of multi-regional catalogues. We have clients running Shopify and WooCommerce stores across US, UK, AU, and CA simultaneously.' },
 ];
@@ -179,10 +179,10 @@ export default function EcommerceSeoServices() {
         <div className="eseo-inner">
           <span className="eseo-eyebrow">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
-            eCommerce SEO — Shopify · WooCommerce · Magento
+            eCommerce SEO - Shopify · WooCommerce · Magento
           </span>
           <h1 className="eseo-h1">eCommerce SEO That Drives<br/>Product Sales, Not Just Traffic</h1>
-          <p className="eseo-desc">1Solutions delivers eCommerce SEO that connects buyers to your products at the exact moment they are ready to purchase — through product page optimisation, category architecture, structured data, and scalable technical fixes across Shopify, WooCommerce, and Magento.</p>
+          <p className="eseo-desc">1Solutions delivers eCommerce SEO that connects buyers to your products at the exact moment they are ready to purchase - through product page optimisation, category architecture, structured data, and scalable technical fixes across Shopify, WooCommerce, and Magento.</p>
           <div className="eseo-btns">
             <a href="#contact" className="eseo-btn-p">
               Get a Free eCommerce SEO Audit
@@ -213,7 +213,7 @@ export default function EcommerceSeoServices() {
         <div className="eseo-sec-inner">
           <span className="eseo-tag">What We Do</span>
           <h2 className="eseo-h2">Full-Spectrum <span>eCommerce SEO Services</span></h2>
-          <p className="eseo-lead">From product schema to faceted navigation — every layer of your store, optimised for maximum organic revenue.</p>
+          <p className="eseo-lead">From product schema to faceted navigation - every layer of your store, optimised for maximum organic revenue.</p>
           <div className="eseo-grid3">
             {SERVICES.map(s => (
               <div key={s.title} className="eseo-card">
@@ -246,7 +246,7 @@ export default function EcommerceSeoServices() {
         <div className="eseo-sec-inner">
           <span className="eseo-tag">Why 1Solutions</span>
           <h2 className="eseo-h2">The eCommerce SEO Agency <span>That Thinks in Revenue</span></h2>
-          <p className="eseo-lead">We do not optimise for rankings in isolation — every decision is tied to conversion value and organic revenue growth.</p>
+          <p className="eseo-lead">We do not optimise for rankings in isolation - every decision is tied to conversion value and organic revenue growth.</p>
           <div className="eseo-grid3">
             {WHY.map(w => (
               <div key={w.title} className="eseo-why-card">
@@ -299,7 +299,7 @@ export default function EcommerceSeoServices() {
         <div className="eseo-sec-inner">
           <span className="eseo-tag" style={{ display:'block', textAlign:'center', marginBottom:12 }}>Ready to Grow Organic Revenue?</span>
           <h2 className="eseo-cta-h">Get Your Free eCommerce SEO Audit</h2>
-          <p className="eseo-cta-p">We will crawl your store, identify your biggest revenue-impacting SEO issues, and share a prioritised action plan — completely free, no obligations.</p>
+          <p className="eseo-cta-p">We will crawl your store, identify your biggest revenue-impacting SEO issues, and share a prioritised action plan - completely free, no obligations.</p>
           <div style={{ display:'flex', gap:14, justifyContent:'center', flexWrap:'wrap' }}>
             <Link href="/contact-us" className="eseo-btn-p">
               Request Free Audit

@@ -28,15 +28,15 @@ const SKILLS = [
   'Flavors & CI/CD', 'Fastlane & Codemagic',
 ];
 const MODELS = [
-  { title: 'Dedicated Hire', desc: 'A Flutter specialist working exclusively on your product — 8 hrs/day, 5 days/week.', icon: '👤' },
+  { title: 'Dedicated Hire', desc: 'A Flutter specialist working exclusively on your product - 8 hrs/day, 5 days/week.', icon: '👤' },
   { title: 'Part-Time Hire', desc: 'Half-day engagement for iterative feature development or ongoing platform maintenance.', icon: '⏰' },
-  { title: 'Hourly Hire',    desc: 'Flexible billing for code reviews, POCs, or burst delivery — pay for actual hours.', icon: '🕐' },
+  { title: 'Hourly Hire',    desc: 'Flexible billing for code reviews, POCs, or burst delivery - pay for actual hours.', icon: '🕐' },
 ];
 const WHY = [
   { h: 'Senior Flutter Engineers', b: 'Our Flutter developers have shipped production apps on iOS, Android, web, and desktop using the same codebase.' },
   { h: 'Performance-First Development', b: 'Every app is profiled for jank-free 60/120 fps rendering, minimal rebuild cycles, and efficient state management.' },
   { h: '48-Hour Matching', b: 'Submit your brief and receive 2-3 matched developer profiles within two business days.' },
-  { h: 'Seamless Collaboration', b: 'Daily standups, pull request reviews, and shared project boards — integrated into your existing workflow.' },
+  { h: 'Seamless Collaboration', b: 'Daily standups, pull request reviews, and shared project boards - integrated into your existing workflow.' },
   { h: 'IP & NDA Security', b: 'Full IP assignment and confidentiality agreements signed before any code is accessed or written.' },
   { h: 'Elastic Team Size', b: 'Start with one developer and scale to a full Flutter squad as your product roadmap grows.' },
 ];
@@ -48,7 +48,7 @@ const PROCESS = [
 ];
 const FAQS = [
   { q: 'Can Flutter developers build for iOS, Android, and web simultaneously?', a: 'Yes. Flutter is designed for a single codebase that targets iOS, Android, web, and desktop. Our developers are experienced in managing platform-specific divergence and flavors.' },
-  { q: 'Which state management approach do your developers prefer?', a: 'Our developers are proficient in BLoC, Riverpod, GetX, and Provider. We recommend BLoC or Riverpod for larger apps and GetX for rapid prototyping — the final choice depends on your team standard.' },
+  { q: 'Which state management approach do your developers prefer?', a: 'Our developers are proficient in BLoC, Riverpod, GetX, and Provider. We recommend BLoC or Riverpod for larger apps and GetX for rapid prototyping - the final choice depends on your team standard.' },
   { q: 'Can a hired Flutter developer work with our existing codebase?', a: 'Absolutely. Our developers begin with a codebase review, familiarise themselves with your architecture, and follow your coding conventions before writing a single line.' },
   { q: 'Do you support Flutter Web and Desktop builds?', a: 'Yes. We have experience delivering Flutter apps for web (deployed via CDN) and desktop (macOS, Windows, Linux). Native-specific features are handled via platform channels.' },
   { q: 'What is the minimum engagement period?', a: 'Our standard minimum is 4 weeks. Shorter engagements for specific deliverables are considered on request.' },
@@ -167,7 +167,7 @@ export default function HireFlutterDeveloper() {
       <section className="hflut-sec" ref={skR}>
         <div className="hflut-wrap">
           <h2 className="hflut-sec-title">Skills &amp; Tech Stack</h2>
-          <p className="hflut-sec-sub">Our Flutter developers cover the full Dart and Flutter ecosystem — state management, native bridges, CI/CD, and beyond.</p>
+          <p className="hflut-sec-sub">Our Flutter developers cover the full Dart and Flutter ecosystem - state management, native bridges, CI/CD, and beyond.</p>
           <div className="hflut-skills">
             {SKILLS.map((s, i) => (
               <span key={s} className={`hflut-skill${skV ? ' hflut-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>
@@ -179,7 +179,7 @@ export default function HireFlutterDeveloper() {
       <section className="hflut-sec hflut-sec-alt" ref={enR}>
         <div className="hflut-wrap">
           <h2 className="hflut-sec-title">Flexible Engagement Models</h2>
-          <p className="hflut-sec-sub">Full-time dedication, half-day support, or hourly bursts — choose what fits your roadmap.</p>
+          <p className="hflut-sec-sub">Full-time dedication, half-day support, or hourly bursts - choose what fits your roadmap.</p>
           <div className="hflut-models">
             {MODELS.map((m, i) => (
               <div key={m.title} className={`hflut-model${enV ? ' hflut-in' : ''}`} style={{ transitionDelay: `${i * 120}ms` }}>
@@ -195,7 +195,7 @@ export default function HireFlutterDeveloper() {
       <section className="hflut-sec" ref={whR}>
         <div className="hflut-wrap">
           <h2 className="hflut-sec-title">Why Hire Flutter Developers from 1Solutions?</h2>
-          <p className="hflut-sec-sub">We place Flutter engineers who have shipped to the App Store and Play Store — not just hobby projects.</p>
+          <p className="hflut-sec-sub">We place Flutter engineers who have shipped to the App Store and Play Store - not just hobby projects.</p>
           <div className="hflut-why-grid">
             {WHY.map((w, i) => (
               <div key={w.h} className={`hflut-why-item${whV ? ' hflut-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}>
@@ -219,7 +219,7 @@ export default function HireFlutterDeveloper() {
       <section className="hflut-sec hflut-sec-alt" ref={prR}>
         <div className="hflut-wrap">
           <h2 className="hflut-sec-title">Hire in 4 Simple Steps</h2>
-          <p className="hflut-sec-sub">From brief to first sprint — in under two weeks.</p>
+          <p className="hflut-sec-sub">From brief to first sprint - in under two weeks.</p>
           <div className="hflut-process">
             {PROCESS.map((p, i) => (
               <div key={p.n} className={`hflut-step${prV ? ' hflut-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}>
@@ -253,7 +253,7 @@ export default function HireFlutterDeveloper() {
       <section className="hflut-cta">
         <div className="hflut-wrap">
           <h2>Ready to Hire Your Flutter Developer?</h2>
-          <p>Share your requirements and receive matched Flutter specialist profiles within 48 hours — no commitment required.</p>
+          <p>Share your requirements and receive matched Flutter specialist profiles within 48 hours - no commitment required.</p>
           <Link href="/contact-us" className="hflut-btn-primary">Get Started Today →</Link>
         </div>
       </section>

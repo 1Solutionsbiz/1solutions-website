@@ -3,44 +3,44 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const SERVICES = [
-  { n: '01', title: 'Dedicated SEO Account Management', desc: 'A single dedicated SEO account manager who understands your business, communicates proactively, and coordinates all SEO activity — no ticket queues, no chasing different specialists.' },
-  { n: '02', title: 'Monthly Technical SEO Maintenance', desc: 'Ongoing technical health monitoring — crawl error resolution, Core Web Vitals management, index coverage review, and pre-deployment SEO checks on every site release.' },
-  { n: '03', title: 'Keyword Research & Ongoing Targeting', desc: 'Continuous keyword opportunity identification — expanding your target keyword set as rankings improve, capturing seasonal opportunities, and targeting competitor keyword gaps month over month.' },
-  { n: '04', title: 'Content Strategy & Creation', desc: 'Monthly content planning and production — blog posts, landing pages, guides, and product copy that targets your keyword universe and builds topical authority over time.' },
-  { n: '05', title: 'On-Page Optimisation', desc: 'Regular on-page SEO updates — title tags, meta descriptions, H1s, internal links, and schema markup — systematically improving your highest-priority pages based on performance data.' },
-  { n: '06', title: 'Link Building & Digital PR', desc: 'Continuous white-hat link acquisition — editorial outreach, digital PR, guest posting, and resource link building that grows your domain authority month by month.' },
-  { n: '07', title: 'Competitor Monitoring', desc: 'Monthly competitor tracking — ranking movements, new content, backlink acquisition, and SERP feature changes — with strategic recommendations to stay ahead of competitors.' },
-  { n: '08', title: 'Monthly Reporting & Strategy Review', desc: 'Clear monthly reports — ranking movements, traffic trends, leads attributed to SEO, content performance, and next month\'s priorities — with a standing review call with your account manager.' },
+  { n: '01', title: 'Dedicated SEO Account Management', desc: 'A single dedicated SEO account manager who understands your business, communicates proactively, and coordinates all SEO activity - no ticket queues, no chasing different specialists.' },
+  { n: '02', title: 'Monthly Technical SEO Maintenance', desc: 'Ongoing technical health monitoring - crawl error resolution, Core Web Vitals management, index coverage review, and pre-deployment SEO checks on every site release.' },
+  { n: '03', title: 'Keyword Research & Ongoing Targeting', desc: 'Continuous keyword opportunity identification - expanding your target keyword set as rankings improve, capturing seasonal opportunities, and targeting competitor keyword gaps month over month.' },
+  { n: '04', title: 'Content Strategy & Creation', desc: 'Monthly content planning and production - blog posts, landing pages, guides, and product copy that targets your keyword universe and builds topical authority over time.' },
+  { n: '05', title: 'On-Page Optimisation', desc: 'Regular on-page SEO updates - title tags, meta descriptions, H1s, internal links, and schema markup - systematically improving your highest-priority pages based on performance data.' },
+  { n: '06', title: 'Link Building & Digital PR', desc: 'Continuous white-hat link acquisition - editorial outreach, digital PR, guest posting, and resource link building that grows your domain authority month by month.' },
+  { n: '07', title: 'Competitor Monitoring', desc: 'Monthly competitor tracking - ranking movements, new content, backlink acquisition, and SERP feature changes - with strategic recommendations to stay ahead of competitors.' },
+  { n: '08', title: 'Monthly Reporting & Strategy Review', desc: 'Clear monthly reports - ranking movements, traffic trends, leads attributed to SEO, content performance, and next month\'s priorities - with a standing review call with your account manager.' },
 ];
 
 const INCLUDES = ['Dedicated Account Manager', 'Technical SEO', 'Content Strategy', 'On-Page Optimisation', 'Link Building', 'Monthly Reporting', 'Competitor Monitoring', 'GSC & GA4 Management'];
 
 const PROCESS = [
-  { step: '01', title: 'Discovery & Audit', desc: 'Technical audit, keyword research, competitor analysis, and goal-setting — a complete picture of where you are and where managed SEO will take you.' },
-  { step: '02', title: 'Strategy & Roadmap', desc: '90-day SEO roadmap — prioritised by impact and agreed with you before work begins. No vague retainer activity — specific deliverables for each month.' },
-  { step: '03', title: 'Month 1–3 Foundation', desc: 'Technical fixes, on-page optimisation, initial content, and link building foundation — the high-impact work that unlocks ranking growth quickly.' },
-  { step: '04', title: 'Ongoing Execution', desc: 'Monthly content production, link acquisition, on-page updates, and technical maintenance — compounding improvements that grow traffic month over month.' },
-  { step: '05', title: 'Reporting & Optimisation', desc: 'Monthly performance reports, standing review calls, and strategy adjustments based on what the data is showing — agile SEO that responds to results.' },
-  { step: '06', title: 'Quarterly Strategic Review', desc: 'Every quarter we review your full SEO performance, update keyword targets, assess competitor movements, and set the next quarter\'s priorities — keeping strategy sharp as your business grows.' },
+  { step: '01', title: 'Discovery & Audit', desc: 'Technical audit, keyword research, competitor analysis, and goal-setting - a complete picture of where you are and where managed SEO will take you.' },
+  { step: '02', title: 'Strategy & Roadmap', desc: '90-day SEO roadmap - prioritised by impact and agreed with you before work begins. No vague retainer activity - specific deliverables for each month.' },
+  { step: '03', title: 'Month 1–3 Foundation', desc: 'Technical fixes, on-page optimisation, initial content, and link building foundation - the high-impact work that unlocks ranking growth quickly.' },
+  { step: '04', title: 'Ongoing Execution', desc: 'Monthly content production, link acquisition, on-page updates, and technical maintenance - compounding improvements that grow traffic month over month.' },
+  { step: '05', title: 'Reporting & Optimisation', desc: 'Monthly performance reports, standing review calls, and strategy adjustments based on what the data is showing - agile SEO that responds to results.' },
+  { step: '06', title: 'Quarterly Strategic Review', desc: 'Every quarter we review your full SEO performance, update keyword targets, assess competitor movements, and set the next quarter\'s priorities - keeping strategy sharp as your business grows.' },
 ];
 
 const WHY = [
-  { title: 'One Dedicated Manager', desc: 'Your account manager coordinates all SEO specialists — technical, content, and link building — so you get coherent strategy, not fragmented service from a shared team.' },
-  { title: 'No Lock-In Commitments', desc: 'We work month-to-month after an initial 3-month onboarding period — because we retain clients by delivering results, not by trapping them in long contracts.' },
-  { title: 'Transparent Monthly Reports', desc: 'Every month you receive a clear report — keyword rankings, traffic, leads attributed to SEO, deliverables completed, and next month\'s plan — nothing hidden.' },
-  { title: 'Responsive Communication', desc: '24-hour response time on all queries, weekly progress updates, and a standing monthly review call — you are always informed about what your SEO retainer is doing.' },
-  { title: 'Full-Service In-House', desc: 'Technical SEO, content writers, outreach specialists, and developers all in-house — coherent execution without the coordination delays of outsourced execution chains.' },
-  { title: '15+ Years & 500+ Clients', desc: 'We have managed SEO for startups, SMBs, and enterprise clients across ecommerce, B2B, SaaS, healthcare, and professional services — sector experience that accelerates results.' },
+  { title: 'One Dedicated Manager', desc: 'Your account manager coordinates all SEO specialists - technical, content, and link building - so you get coherent strategy, not fragmented service from a shared team.' },
+  { title: 'No Lock-In Commitments', desc: 'We work month-to-month after an initial 3-month onboarding period - because we retain clients by delivering results, not by trapping them in long contracts.' },
+  { title: 'Transparent Monthly Reports', desc: 'Every month you receive a clear report - keyword rankings, traffic, leads attributed to SEO, deliverables completed, and next month\'s plan - nothing hidden.' },
+  { title: 'Responsive Communication', desc: '24-hour response time on all queries, weekly progress updates, and a standing monthly review call - you are always informed about what your SEO retainer is doing.' },
+  { title: 'Full-Service In-House', desc: 'Technical SEO, content writers, outreach specialists, and developers all in-house - coherent execution without the coordination delays of outsourced execution chains.' },
+  { title: '15+ Years & 500+ Clients', desc: 'We have managed SEO for startups, SMBs, and enterprise clients across ecommerce, B2B, SaaS, healthcare, and professional services - sector experience that accelerates results.' },
 ];
 
 const FAQS = [
-  { q: 'What is managed SEO?', a: 'Managed SEO (also called retained SEO or monthly SEO services) is an ongoing SEO partnership where an agency handles all aspects of your search engine optimisation on a monthly retainer basis. Unlike one-off audits or project-based work, managed SEO provides continuous execution — technical maintenance, content creation, link building, on-page optimisation, and monthly reporting — all coordinated by a dedicated account manager who understands your business and goals.' },
+  { q: 'What is managed SEO?', a: 'Managed SEO (also called retained SEO or monthly SEO services) is an ongoing SEO partnership where an agency handles all aspects of your search engine optimisation on a monthly retainer basis. Unlike one-off audits or project-based work, managed SEO provides continuous execution - technical maintenance, content creation, link building, on-page optimisation, and monthly reporting - all coordinated by a dedicated account manager who understands your business and goals.' },
   { q: 'What does a managed SEO retainer typically include?', a: 'Our managed SEO retainers include: dedicated account management; monthly technical SEO monitoring and fixes; keyword research and ongoing keyword expansion; content strategy and monthly content production; on-page optimisation (title tags, meta, headings, schema, internal links); link building and digital PR; competitor monitoring and SERP tracking; Google Search Console and GA4 management; and monthly reporting with a review call. The specific volume of each activity is agreed based on your budget and goals.' },
   { q: 'How much does managed SEO cost?', a: 'Managed SEO retainers typically range from £500/month for small local businesses with limited content needs to £5,000+/month for ecommerce or enterprise clients requiring significant content production and link acquisition. The budget required depends on: how competitive your industry is (competitive industries require more monthly investment to move rankings); your current SEO baseline (a technically clean site with some existing rankings is cheaper to grow than one starting from zero); and the volume of content and links needed to compete. We offer a free strategy call to assess your situation and recommend the right investment level.' },
   { q: 'How long until I see results from managed SEO?', a: 'SEO results compound over time. Most clients see measurable keyword ranking improvements within 3 to 6 months, significant organic traffic growth within 6 to 12 months, and strong ROI within 12 to 18 months of sustained managed SEO. The timeline depends on domain authority, starting keyword rankings, content production rate, and link building velocity. Technical sites with existing authority can see faster early movements; new sites or sites recovering from penalties take longer. We set realistic expectations during onboarding and provide monthly progress tracking.' },
-  { q: 'What is the difference between managed SEO and a one-off SEO project?', a: 'A one-off SEO project (audit, on-page optimisation, content creation) delivers a defined output at a point in time. Managed SEO delivers continuous execution — because SEO is not a one-time fix but an ongoing competitive activity. Search rankings fluctuate with algorithm updates, competitor actions, and content freshness signals. Without ongoing management — regular content, continuous link building, and technical maintenance — rankings achieved through a one-off project will decay as competitors continue their activity. Managed SEO compounds improvements month over month rather than delivering a single output.' },
-  { q: 'Do I need to sign a long-term contract for managed SEO?', a: 'We require a minimum 3-month initial commitment to give the technical foundation, content, and link building work time to have an impact — SEO results are not visible overnight, and cancelling before 3 months means you leave before seeing the results of the work done. After the initial 3 months, we operate on a rolling monthly basis. Clients who see strong results stay; clients who do not see results we would expect at that stage can exit. We do not trap clients in 12-month contracts.' },
-  { q: 'Will managed SEO work for my industry?', a: 'Managed SEO works across virtually all industries that have search demand for their services — ecommerce, B2B, professional services, healthcare, SaaS, local services, and more. The competitive landscape differs significantly across industries, which affects how much monthly investment is required and how long it takes to achieve competitive rankings. Highly competitive industries (legal, financial services, insurance, healthcare) require longer investment horizons and larger monthly budgets. We assess your specific industry competition during the strategy call before recommending a retainer level.' },
+  { q: 'What is the difference between managed SEO and a one-off SEO project?', a: 'A one-off SEO project (audit, on-page optimisation, content creation) delivers a defined output at a point in time. Managed SEO delivers continuous execution - because SEO is not a one-time fix but an ongoing competitive activity. Search rankings fluctuate with algorithm updates, competitor actions, and content freshness signals. Without ongoing management - regular content, continuous link building, and technical maintenance - rankings achieved through a one-off project will decay as competitors continue their activity. Managed SEO compounds improvements month over month rather than delivering a single output.' },
+  { q: 'Do I need to sign a long-term contract for managed SEO?', a: 'We require a minimum 3-month initial commitment to give the technical foundation, content, and link building work time to have an impact - SEO results are not visible overnight, and cancelling before 3 months means you leave before seeing the results of the work done. After the initial 3 months, we operate on a rolling monthly basis. Clients who see strong results stay; clients who do not see results we would expect at that stage can exit. We do not trap clients in 12-month contracts.' },
+  { q: 'Will managed SEO work for my industry?', a: 'Managed SEO works across virtually all industries that have search demand for their services - ecommerce, B2B, professional services, healthcare, SaaS, local services, and more. The competitive landscape differs significantly across industries, which affects how much monthly investment is required and how long it takes to achieve competitive rankings. Highly competitive industries (legal, financial services, insurance, healthcare) require longer investment horizons and larger monthly budgets. We assess your specific industry competition during the strategy call before recommending a retainer level.' },
   { q: 'How do you measure managed SEO success?', a: 'We track multiple layers of SEO performance: keyword ranking movements (positions for target keywords tracked weekly); organic traffic (sessions, users, and pageviews from organic search in GA4); organic conversions (enquiries, leads, sales, or revenue attributed to organic search); and SEO visibility (indexed pages, impressions, and click-through rate in GSC). Every monthly report covers all four layers with trend analysis. We also track competitor rankings to contextualise your progress within your competitive environment.' },
 ];
 
@@ -68,7 +68,7 @@ export default function ManagedSeoServices() {
     <>
       <Head>
         <title>Managed SEO Services | Monthly SEO Retainer Agency | 1Solutions</title>
-        <meta name="description" content="Managed SEO services — monthly retainer SEO with a dedicated account manager, technical maintenance, content creation, link building, and transparent" />
+        <meta name="description" content="Managed SEO services - monthly retainer SEO with a dedicated account manager, technical maintenance, content creation, link building, and transparent" />
         <meta name="keywords" content="managed seo services, monthly seo services, seo retainer agency, managed seo agency, ongoing seo services, seo management company" />
         <link rel="canonical" href="https://www.1solutions.biz/managed-seo-services/" />
         <meta property="og:title" content="Managed SEO Services | 1Solutions" />
@@ -150,8 +150,8 @@ export default function ManagedSeoServices() {
           <div className="mnseo-in">
             <nav className="mnseo-bc"><Link href="/">Home</Link><span>/</span><Link href="/seo-services-company">SEO Services</Link><span>/</span><span style={{color:'#0F766E'}}>Managed SEO</span></nav>
             <span className="mnseo-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#0F766E',display:'inline-block'}}/> Dedicated Manager · Monthly Retainer · No Lock-In</span>
-            <h1 className="mnseo-h1">Managed SEO Services — Dedicated SEO Partnership That Grows Your Traffic</h1>
-            <p className="mnseo-sub">Monthly managed SEO with a dedicated account manager — technical maintenance, content, link building, and clear reporting. One retainer, everything covered, no chasing separate agencies.</p>
+            <h1 className="mnseo-h1">Managed SEO Services - Dedicated SEO Partnership That Grows Your Traffic</h1>
+            <p className="mnseo-sub">Monthly managed SEO with a dedicated account manager - technical maintenance, content, link building, and clear reporting. One retainer, everything covered, no chasing separate agencies.</p>
             <div className="mnseo-btns">
               <Link href="/contact-us" className="mnseo-btn-p">Start Managed SEO <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/seo-audit-services" className="mnseo-btn-s">SEO Audit First</Link>
@@ -161,7 +161,7 @@ export default function ManagedSeoServices() {
         </section>
         <section className="mnseo-svc"><div className="mnseo-svc-in">
           <span className="mnseo-ey2">What&rsquo;s Included</span><h2 className="mnseo-ttl">Managed SEO Services</h2>
-          <p className="mnseo-desc">Every component of a full-service SEO programme — coordinated by one dedicated account manager, executed by in-house specialists.</p>
+          <p className="mnseo-desc">Every component of a full-service SEO programme - coordinated by one dedicated account manager, executed by in-house specialists.</p>
           <div className="mnseo-grid" ref={cardsRef}>{SERVICES.map((s,i) => <div key={s.n} className={`mnseo-card${visibleCards.includes(i)?' visible':''}`}><div className="mnseo-num">{s.n}</div><h3>{s.title}</h3><p>{s.desc}</p></div>)}</div>
         </div></section>
         <section className="mnseo-inc"><div className="mnseo-inc-in">
@@ -170,12 +170,12 @@ export default function ManagedSeoServices() {
         </div></section>
         <section className="mnseo-proc"><div className="mnseo-proc-in">
           <span className="mnseo-ey2">How We Work</span><h2 className="mnseo-ttl">Our Managed SEO Process</h2>
-          <p className="mnseo-desc">Discovery to ongoing execution — a structured managed SEO process that delivers compounding results month after month with full visibility at every stage.</p>
+          <p className="mnseo-desc">Discovery to ongoing execution - a structured managed SEO process that delivers compounding results month after month with full visibility at every stage.</p>
           <div className="mnseo-steps">{PROCESS.map((p,i) => <div key={p.step} ref={el=>{stepRefs.current[i]=el}} className={`mnseo-step${visibleSteps.includes(i)?' visible':''}`}><div className="mnseo-snum">{p.step}</div><div><h3>{p.title}</h3><p>{p.desc}</p></div></div>)}</div>
         </div></section>
         <section className="mnseo-why"><div className="mnseo-why-in">
           <span className="mnseo-ey2">Why 1Solutions</span><h2 className="mnseo-ttl">The Managed SEO Partner Clients Stay With</h2>
-          <p className="mnseo-desc">94% client retention because we deliver measurable results — transparent reporting, no lock-in after onboarding, and one dedicated manager who knows your business.</p>
+          <p className="mnseo-desc">94% client retention because we deliver measurable results - transparent reporting, no lock-in after onboarding, and one dedicated manager who knows your business.</p>
           <div className="mnseo-why-grid" ref={whyRef}>{WHY.map((w,i) => <div key={w.title} className={`mnseo-wcard${visibleWhy.includes(i)?' visible':''}`}><div className="mnseo-dot"/><h3>{w.title}</h3><p>{w.desc}</p></div>)}</div>
         </div></section>
         <section className="mnseo-faq"><div className="mnseo-faq-in">
@@ -187,7 +187,7 @@ export default function ManagedSeoServices() {
           <div className="mnseo-cta-in">
             <span className="mnseo-ey2" style={{textAlign:'center',display:'block',marginBottom:16}}>Ready for SEO That Compounds Month After Month?</span>
             <h2 className="mnseo-cta-t">Start Your Managed SEO Partnership</h2>
-            <p className="mnseo-cta-s">Free strategy call — we&rsquo;ll review your current SEO, assess your competition, and recommend the right retainer level for your goals.</p>
+            <p className="mnseo-cta-s">Free strategy call - we&rsquo;ll review your current SEO, assess your competition, and recommend the right retainer level for your goals.</p>
             <div className="mnseo-cta-btns">
               <Link href="/contact-us" className="mnseo-btn-p">Book a Strategy Call <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/seo-services-company" className="mnseo-btn-s">SEO Services Overview</Link>

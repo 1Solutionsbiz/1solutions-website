@@ -3,11 +3,11 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const SERVICES = [
-  { n: '01', title: 'Bug Fixing & Crash Resolution', desc: 'Rapid identification and resolution of bugs, crashes, and functional defects — with root cause analysis to prevent recurrence, not just one-time patches.' },
-  { n: '02', title: 'iOS & Android OS Update Compatibility', desc: 'Proactive compatibility testing and updates for every major Apple and Google OS release — so your app never breaks after a platform update.' },
-  { n: '03', title: 'Performance Monitoring & Optimisation', desc: 'Continuous APM monitoring for crashes, slow responses, memory leaks, and ANRs — with regular optimisation cycles to keep your app fast and stable.' },
+  { n: '01', title: 'Bug Fixing & Crash Resolution', desc: 'Rapid identification and resolution of bugs, crashes, and functional defects - with root cause analysis to prevent recurrence, not just one-time patches.' },
+  { n: '02', title: 'iOS & Android OS Update Compatibility', desc: 'Proactive compatibility testing and updates for every major Apple and Google OS release - so your app never breaks after a platform update.' },
+  { n: '03', title: 'Performance Monitoring & Optimisation', desc: 'Continuous APM monitoring for crashes, slow responses, memory leaks, and ANRs - with regular optimisation cycles to keep your app fast and stable.' },
   { n: '04', title: 'Security Patches & Vulnerability Management', desc: 'Regular security audits, dependency vulnerability scanning, and prompt patching of identified risks before they become exploits or store rejections.' },
-  { n: '05', title: 'Feature Enhancements & Minor Updates', desc: 'Iterative feature improvements, UI tweaks, copy changes, and workflow enhancements — delivered in regular sprints without disrupting app stability.' },
+  { n: '05', title: 'Feature Enhancements & Minor Updates', desc: 'Iterative feature improvements, UI tweaks, copy changes, and workflow enhancements - delivered in regular sprints without disrupting app stability.' },
   { n: '06', title: 'Third-Party Integration Updates', desc: 'Keeping your payment gateways, analytics SDKs, social auth, push notification services, and APIs up-to-date as providers release breaking changes.' },
   { n: '07', title: 'App Store Compliance & Re-submission', desc: 'Monitoring and responding to App Store and Google Play policy changes, updating metadata, and managing re-submissions to keep your app live and compliant.' },
   { n: '08', title: 'Database & Backend Maintenance', desc: 'Database optimisation, query performance improvements, server patching, and backend dependency updates to support reliable app performance at scale.' },
@@ -28,19 +28,19 @@ const PLAN_FEATURES = [
 
 const PROCESS = [
   { step: '01', title: 'Onboarding & App Audit', desc: 'We review your codebase, dependencies, CI/CD setup, monitoring tools, and App Store account to establish a full health baseline for your app.' },
-  { step: '02', title: 'Monitoring & Alert Setup', desc: 'We instrument crash reporting (Sentry/Firebase), uptime monitoring, and performance baselines — so we know about issues before your users do.' },
+  { step: '02', title: 'Monitoring & Alert Setup', desc: 'We instrument crash reporting (Sentry/Firebase), uptime monitoring, and performance baselines - so we know about issues before your users do.' },
   { step: '03', title: 'Scheduled Maintenance Cycles', desc: 'Regular dependency updates, security patches, and OS compatibility checks are batched into planned maintenance windows to minimise disruption.' },
   { step: '04', title: 'Rapid Response for Critical Issues', desc: 'For critical bugs and crashes, we initiate investigation within your SLA window, provide status updates throughout, and push fixes with expedited review.' },
-  { step: '05', title: 'Monthly Reporting & Planning', desc: 'A monthly report covering issues resolved, performance trends, upcoming risks, and recommended improvements — keeping you informed and in control.' },
+  { step: '05', title: 'Monthly Reporting & Planning', desc: 'A monthly report covering issues resolved, performance trends, upcoming risks, and recommended improvements - keeping you informed and in control.' },
 ];
 
 const WHY = [
-  { title: 'Proactive, Not Reactive', desc: 'We monitor your app continuously and flag emerging issues before they become user-facing problems — not just fix things after customers complain.' },
+  { title: 'Proactive, Not Reactive', desc: 'We monitor your app continuously and flag emerging issues before they become user-facing problems - not just fix things after customers complain.' },
   { title: 'Original-Code Familiarity', desc: 'If we built your app, we know the codebase inside out. If we\'re taking over an existing app, we conduct a thorough audit before making any changes.' },
-  { title: 'No Handoff, No Re-Briefing', desc: 'One dedicated team manages your app throughout its lifetime. No rotating contractors, no re-explaining your context every ticket — just consistent, informed support.' },
-  { title: 'Transparent Monthly Reporting', desc: 'You receive a monthly report covering every issue resolved, performance metric, security scan result, and upcoming risk — full visibility, no guesswork.' },
-  { title: 'App Store Compliance Experts', desc: 'We track Apple and Google policy changes proactively. When their requirements shift — and they do, regularly — your app is updated before it risks removal.' },
-  { title: 'Flexible Plans, No Lock-In', desc: 'Monthly and annual maintenance plans scaled to your app\'s complexity and update frequency. Cancel or adjust at any time — no punitive contracts.' },
+  { title: 'No Handoff, No Re-Briefing', desc: 'One dedicated team manages your app throughout its lifetime. No rotating contractors, no re-explaining your context every ticket - just consistent, informed support.' },
+  { title: 'Transparent Monthly Reporting', desc: 'You receive a monthly report covering every issue resolved, performance metric, security scan result, and upcoming risk - full visibility, no guesswork.' },
+  { title: 'App Store Compliance Experts', desc: 'We track Apple and Google policy changes proactively. When their requirements shift - and they do, regularly - your app is updated before it risks removal.' },
+  { title: 'Flexible Plans, No Lock-In', desc: 'Monthly and annual maintenance plans scaled to your app\'s complexity and update frequency. Cancel or adjust at any time - no punitive contracts.' },
 ];
 
 const FAQS = [
@@ -50,19 +50,19 @@ const FAQS = [
   },
   {
     q: 'How much does app maintenance cost?',
-    a: 'App maintenance costs depend on the app\'s complexity, technology stack, and how many updates are required each month. Simple apps with minimal dependencies typically cost $500–$1,500/month. Mid-complexity apps with integrations, regular feature requests, and backend dependencies range from $1,500–$5,000/month. Enterprise apps with SLA requirements and large codebases can cost $5,000–$15,000/month or more. We offer structured monthly retainer plans based on a standard block of hours — with a clear scope of what\'s included and transparent additional rates for out-of-scope work.',
+    a: 'App maintenance costs depend on the app\'s complexity, technology stack, and how many updates are required each month. Simple apps with minimal dependencies typically cost $500–$1,500/month. Mid-complexity apps with integrations, regular feature requests, and backend dependencies range from $1,500–$5,000/month. Enterprise apps with SLA requirements and large codebases can cost $5,000–$15,000/month or more. We offer structured monthly retainer plans based on a standard block of hours - with a clear scope of what\'s included and transparent additional rates for out-of-scope work.',
   },
   {
     q: 'What happens if I don\'t maintain my app?',
-    a: 'Neglecting app maintenance has predictable and serious consequences. New iOS and Android versions frequently introduce breaking changes — unattended apps stop working correctly or crash on updated devices. Third-party libraries accumulate known security vulnerabilities that can be exploited. Apple and Google regularly update their review guidelines; apps that don\'t comply are removed from stores without warning. Performance degrades as usage grows and backend dependencies drift. Most critically, user trust erodes rapidly when an app is buggy, slow, or missing from the store entirely.',
+    a: 'Neglecting app maintenance has predictable and serious consequences. New iOS and Android versions frequently introduce breaking changes - unattended apps stop working correctly or crash on updated devices. Third-party libraries accumulate known security vulnerabilities that can be exploited. Apple and Google regularly update their review guidelines; apps that don\'t comply are removed from stores without warning. Performance degrades as usage grows and backend dependencies drift. Most critically, user trust erodes rapidly when an app is buggy, slow, or missing from the store entirely.',
   },
   {
     q: 'Can you maintain an app you didn\'t build?',
-    a: 'Yes — we regularly take over maintenance of apps built by other developers or agencies. Our onboarding process begins with a thorough technical audit: we review the codebase, identify technical debt, document the architecture, map all third-party integrations, and establish a baseline health score. We then create a remediation plan for any critical issues before moving to ongoing maintenance. We work with React Native, Flutter, native iOS (Swift/Objective-C), native Android (Kotlin/Java), and web apps (React, Next.js, Node.js, Laravel).',
+    a: 'Yes - we regularly take over maintenance of apps built by other developers or agencies. Our onboarding process begins with a thorough technical audit: we review the codebase, identify technical debt, document the architecture, map all third-party integrations, and establish a baseline health score. We then create a remediation plan for any critical issues before moving to ongoing maintenance. We work with React Native, Flutter, native iOS (Swift/Objective-C), native Android (Kotlin/Java), and web apps (React, Next.js, Node.js, Laravel).',
   },
   {
     q: 'What is your response time for critical bugs?',
-    a: 'Response times depend on your plan tier. Our Standard plan guarantees acknowledgement within one business day for critical issues. Our Pro plan includes a 4-hour response SLA for critical bugs and crashes — with status updates every 2 hours until resolved. For app-breaking issues that make your app unusable or cause it to be removed from stores, we treat these as P0 emergencies regardless of plan, initiating immediate response and communication. All response time commitments are documented in our service agreement.',
+    a: 'Response times depend on your plan tier. Our Standard plan guarantees acknowledgement within one business day for critical issues. Our Pro plan includes a 4-hour response SLA for critical bugs and crashes - with status updates every 2 hours until resolved. For app-breaking issues that make your app unusable or cause it to be removed from stores, we treat these as P0 emergencies regardless of plan, initiating immediate response and communication. All response time commitments are documented in our service agreement.',
   },
   {
     q: 'How do you handle iOS and Android OS updates?',
@@ -70,11 +70,11 @@ const FAQS = [
   },
   {
     q: 'Do you provide maintenance for web apps as well as mobile apps?',
-    a: 'Yes — we maintain web applications built on React, Next.js, Vue, Angular, Node.js, Laravel, WordPress, and other major frameworks. Web app maintenance includes: dependency updates and security patching, performance monitoring and Core Web Vitals optimisation, server and infrastructure updates, SSL certificate management, database optimisation, and bug fixing. We can maintain both the front-end and back-end of full-stack web applications, and handle both the app and its supporting API if relevant.',
+    a: 'Yes - we maintain web applications built on React, Next.js, Vue, Angular, Node.js, Laravel, WordPress, and other major frameworks. Web app maintenance includes: dependency updates and security patching, performance monitoring and Core Web Vitals optimisation, server and infrastructure updates, SSL certificate management, database optimisation, and bug fixing. We can maintain both the front-end and back-end of full-stack web applications, and handle both the app and its supporting API if relevant.',
   },
   {
     q: 'Can I scale up my maintenance plan if my needs change?',
-    a: 'Yes — our maintenance plans are designed to flex with your needs. You can upgrade your plan at any time if your app grows in complexity, you launch new features, or you need a faster SLA. You can also add one-off development hours outside your monthly block when you have a larger feature request. We review your usage with you monthly and proactively recommend adjustments if your actual needs are consistently above or below your current plan scope. There are no lock-in periods — you can cancel with 30 days\' notice.',
+    a: 'Yes - our maintenance plans are designed to flex with your needs. You can upgrade your plan at any time if your app grows in complexity, you launch new features, or you need a faster SLA. You can also add one-off development hours outside your monthly block when you have a larger feature request. We review your usage with you monthly and proactively recommend adjustments if your actual needs are consistently above or below your current plan scope. There are no lock-in periods - you can cancel with 30 days\' notice.',
   },
 ];
 
@@ -139,7 +139,7 @@ export default function AppMaintenanceServices() {
       {
         '@type': 'Service',
         name: 'App Maintenance & Support Services',
-        description: 'Ongoing mobile and web app maintenance — bug fixing, OS updates, security patching, performance monitoring, and App Store compliance. Serving US, Canada & Australia.',
+        description: 'Ongoing mobile and web app maintenance - bug fixing, OS updates, security patching, performance monitoring, and App Store compliance. Serving US, Canada & Australia.',
         provider: {
           '@type': 'Organization',
           name: '1Solutions',
@@ -170,7 +170,7 @@ export default function AppMaintenanceServices() {
         <meta name="robots" content="index, follow" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="App Maintenance & Support Services | 1Solutions" />
-        <meta property="og:description" content="Keep your mobile and web apps running flawlessly. Bug fixes, OS compatibility, security patches & App Store compliance — ongoing managed maintenance." />
+        <meta property="og:description" content="Keep your mobile and web apps running flawlessly. Bug fixes, OS compatibility, security patches & App Store compliance - ongoing managed maintenance." />
         <meta property="og:url" content="https://www.1solutions.biz/app-maintenance-services" />
         <meta name="twitter:card" content="summary_large_image" />
         <script
@@ -449,7 +449,7 @@ export default function AppMaintenanceServices() {
               App Maintenance &amp; Support Services That Keep Your App Running Flawlessly
             </h1>
             <p className="am-hero-sub">
-              Proactive maintenance plans for mobile and web apps — bug fixing, OS compatibility, security patching, performance monitoring, and App Store compliance. Built for businesses that can&rsquo;t afford downtime.
+              Proactive maintenance plans for mobile and web apps - bug fixing, OS compatibility, security patching, performance monitoring, and App Store compliance. Built for businesses that can&rsquo;t afford downtime.
             </p>
             <div className="am-hero-btns">
               <Link href="/contact-us" className="am-btn-primary">
@@ -477,7 +477,7 @@ export default function AppMaintenanceServices() {
             <span className="am-section-eyebrow">What&apos;s Covered</span>
             <h2 className="am-section-title">App Maintenance Services</h2>
             <p className="am-section-desc">
-              Every aspect of ongoing app health — from critical bug fixes and security patches to feature improvements and App Store compliance — managed under one retainer.
+              Every aspect of ongoing app health - from critical bug fixes and security patches to feature improvements and App Store compliance - managed under one retainer.
             </p>
             <div className="am-services-grid" ref={cardsRef}>
               {SERVICES.map((s, i) => (
@@ -497,7 +497,7 @@ export default function AppMaintenanceServices() {
             <span className="am-section-eyebrow">How We Work</span>
             <h2 className="am-section-title">Our Maintenance Process</h2>
             <p className="am-section-desc">
-              A structured onboarding process, ongoing monitoring, and a predictable monthly rhythm — so your app gets consistent care, not just reactive fixes.
+              A structured onboarding process, ongoing monitoring, and a predictable monthly rhythm - so your app gets consistent care, not just reactive fixes.
             </p>
             <div className="am-process-steps">
               {PROCESS.map((p, i) => (
@@ -523,7 +523,7 @@ export default function AppMaintenanceServices() {
             <span className="am-section-eyebrow">Why 1Solutions</span>
             <h2 className="am-section-title">Why Businesses Trust Us With Their Apps</h2>
             <p className="am-section-desc">
-              App maintenance is a long-term partnership — not a ticket queue. Here&rsquo;s what makes our approach different.
+              App maintenance is a long-term partnership - not a ticket queue. Here&rsquo;s what makes our approach different.
             </p>
             <div className="am-why-grid" ref={whyRef}>
               {WHY.map((w, i) => (
@@ -571,7 +571,7 @@ export default function AppMaintenanceServices() {
               Don&rsquo;t Let Your App Go Dark After Launch
             </h2>
             <p className="am-cta-sub">
-              Get a free app health audit — we&rsquo;ll review your current app, identify risks, and recommend the right maintenance plan for your needs. No commitment required.
+              Get a free app health audit - we&rsquo;ll review your current app, identify risks, and recommend the right maintenance plan for your needs. No commitment required.
             </p>
             <div className="am-cta-btns">
               <Link href="/contact-us" className="am-btn-primary">

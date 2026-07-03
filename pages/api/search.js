@@ -1,6 +1,6 @@
 /**
  * /api/search?q=keyword
- * Server-side search via WPGraphQL — avoids CORS from browser.
+ * Server-side search via WPGraphQL - avoids CORS from browser.
  */
 import { searchPosts, stripHtml } from '../../lib/graphql';
 

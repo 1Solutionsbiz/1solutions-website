@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const SERVICES = [
   { n: '01', title: 'Low-Fidelity Wireframes', desc: 'Rapid hand-sketch-style wireframes to explore layout options and user flows before any commitment to visual design.' },
-  { n: '02', title: 'Mid-Fidelity Wireframes', desc: 'Greyscale annotated wireframes with component placeholders and copy guidance — perfect for stakeholder alignment.' },
+  { n: '02', title: 'Mid-Fidelity Wireframes', desc: 'Greyscale annotated wireframes with component placeholders and copy guidance - perfect for stakeholder alignment.' },
   { n: '03', title: 'High-Fidelity Prototypes', desc: 'Pixel-perfect, branded interactive prototypes with real micro-interactions that mirror the final product experience.' },
   { n: '04', title: 'User Flow Mapping', desc: 'End-to-end task flows showing every screen state, error path, and empty state so nothing falls through the cracks.' },
   { n: '05', title: 'Clickable Prototype (Figma)', desc: 'Shareable prototype links for stakeholder demos, investor presentations, and remote user testing sessions.', featured: true },
@@ -16,36 +16,36 @@ const SERVICES = [
 
 const PROCESS = [
   { title: 'Brief & Goals', desc: 'We start with a structured discovery session to understand your product vision, target users, business goals, and success metrics. This brief becomes the north star for every decision.' },
-  { title: 'Information Architecture', desc: 'Before drawing a single screen, we define the site map, navigation structure, and content hierarchy — ensuring the prototype reflects real user mental models, not assumptions.' },
-  { title: 'Low-Fi Wireframes', desc: 'Rapid greyscale wireframes explore layout options, content hierarchy, and flow logic. This is where ideas are tested cheaply — before any visual polish is applied.' },
+  { title: 'Information Architecture', desc: 'Before drawing a single screen, we define the site map, navigation structure, and content hierarchy - ensuring the prototype reflects real user mental models, not assumptions.' },
+  { title: 'Low-Fi Wireframes', desc: 'Rapid greyscale wireframes explore layout options, content hierarchy, and flow logic. This is where ideas are tested cheaply - before any visual polish is applied.' },
   { title: 'High-Fi Prototype', desc: 'Wireframes evolve into pixel-perfect, on-brand interactive prototypes with clickable flows, component libraries, and motion specifications in Figma.' },
-  { title: 'Test & Iterate', desc: 'We run usability sessions on the prototype — moderated or unmoderated — gather quantitative and qualitative findings, and iterate based on evidence, not opinion.' },
+  { title: 'Test & Iterate', desc: 'We run usability sessions on the prototype - moderated or unmoderated - gather quantitative and qualitative findings, and iterate based on evidence, not opinion.' },
   { title: 'Handoff', desc: 'The final prototype is annotated with developer specs, redlines, design tokens, and interaction notes. Your engineering team can build from day one without back-and-forth guesswork.' },
 ];
 
 const WHY = [
-  { icon: <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>, title: '400+ Prototypes Delivered', desc: 'Across SaaS, fintech, healthcare, e-commerce, and enterprise software — we have seen every edge case and know how to navigate complexity quickly.' },
-  { icon: <svg viewBox="0 0 24 24"><path d="M9 11H7a5 5 0 0 1 0-10h1m7 10h2a5 5 0 0 0 0-10h-1m-5 10v2m0-12v2m-4 4h8"/></svg>, title: 'Figma-Native Workflow', desc: 'We work exclusively in Figma — the industry standard tool — so prototypes are shareable via URL, inspectable by developers, and version-controlled from day one.' },
-  { icon: <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>, title: 'Cross-Functional Team', desc: 'Our UX researchers, interaction designers, and product strategists collaborate on every prototype — bringing research-backed decisions to every screen.' },
+  { icon: <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>, title: '400+ Prototypes Delivered', desc: 'Across SaaS, fintech, healthcare, e-commerce, and enterprise software - we have seen every edge case and know how to navigate complexity quickly.' },
+  { icon: <svg viewBox="0 0 24 24"><path d="M9 11H7a5 5 0 0 1 0-10h1m7 10h2a5 5 0 0 0 0-10h-1m-5 10v2m0-12v2m-4 4h8"/></svg>, title: 'Figma-Native Workflow', desc: 'We work exclusively in Figma - the industry standard tool - so prototypes are shareable via URL, inspectable by developers, and version-controlled from day one.' },
+  { icon: <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>, title: 'Cross-Functional Team', desc: 'Our UX researchers, interaction designers, and product strategists collaborate on every prototype - bringing research-backed decisions to every screen.' },
   { icon: <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>, title: '60% Faster Stakeholder Sign-Off', desc: 'An interactive prototype communicates intent 10x better than static mocks. Stakeholders approve confidently because they can experience the product, not just imagine it.' },
   { icon: <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>, title: '90% Fewer Development Revisions', desc: 'Every ambiguity resolved in the prototype phase costs a fraction of what it costs in development. Our clients routinely report dramatically fewer dev-phase change requests.' },
-  { icon: <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>, title: 'On-Time, Fixed-Scope Delivery', desc: 'Prototyping projects are scoped precisely. You receive a clear timeline with milestone reviews at wireframe, prototype, and handoff stages — no open-ended engagements.' },
-  { icon: <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>, title: 'Native App & Web Expertise', desc: 'We prototype iOS, Android, and web applications — including complex multi-role systems like dashboards, marketplaces, and SaaS admin panels.' },
-  { icon: <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>, title: 'US, Canada & Australia Focused', desc: 'We align working hours with your timezone so iteration cycles stay tight. Reviews, feedback sessions, and handoffs happen on your schedule — not ours.' },
+  { icon: <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>, title: 'On-Time, Fixed-Scope Delivery', desc: 'Prototyping projects are scoped precisely. You receive a clear timeline with milestone reviews at wireframe, prototype, and handoff stages - no open-ended engagements.' },
+  { icon: <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>, title: 'Native App & Web Expertise', desc: 'We prototype iOS, Android, and web applications - including complex multi-role systems like dashboards, marketplaces, and SaaS admin panels.' },
+  { icon: <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>, title: 'US, Canada & Australia Focused', desc: 'We align working hours with your timezone so iteration cycles stay tight. Reviews, feedback sessions, and handoffs happen on your schedule - not ours.' },
 ];
 
 const FAQS = [
   {
     q: 'What is the difference between a wireframe and a prototype?',
-    a: 'A wireframe is a static, low-detail layout sketch that shows content placement and structure without visual design or interactivity. A prototype is an interactive, clickable simulation of the product — it can range from simple click-through screens to fully animated, high-fidelity experiences that feel like the real application. Wireframes are faster to produce and great for early-stage exploration; prototypes are essential for usability testing, stakeholder demos, and developer handoff.',
+    a: 'A wireframe is a static, low-detail layout sketch that shows content placement and structure without visual design or interactivity. A prototype is an interactive, clickable simulation of the product - it can range from simple click-through screens to fully animated, high-fidelity experiences that feel like the real application. Wireframes are faster to produce and great for early-stage exploration; prototypes are essential for usability testing, stakeholder demos, and developer handoff.',
   },
   {
     q: 'What tools do you use for prototyping?',
-    a: 'We work primarily in Figma for all wireframing and interactive prototyping. Figma allows us to create shareable links that anyone can view and interact with in a browser — no software installation required for stakeholders. For advanced animations and motion design, we also use Principle and ProtoPie. All deliverables are handed off in Figma with developer inspection mode enabled.',
+    a: 'We work primarily in Figma for all wireframing and interactive prototyping. Figma allows us to create shareable links that anyone can view and interact with in a browser - no software installation required for stakeholders. For advanced animations and motion design, we also use Principle and ProtoPie. All deliverables are handed off in Figma with developer inspection mode enabled.',
   },
   {
     q: 'Can stakeholders interact with the prototype without design tools?',
-    a: 'Yes. Figma prototypes are shared via a URL that opens in any modern browser. Stakeholders, clients, and investors can click through the flows, experience interactions, and leave comments directly on specific frames — without needing a Figma account or any software installation. This makes remote reviews, async feedback, and investor demos seamless.',
+    a: 'Yes. Figma prototypes are shared via a URL that opens in any modern browser. Stakeholders, clients, and investors can click through the flows, experience interactions, and leave comments directly on specific frames - without needing a Figma account or any software installation. This makes remote reviews, async feedback, and investor demos seamless.',
   },
   {
     q: 'How many rounds of revisions are included?',
@@ -53,11 +53,11 @@ const FAQS = [
   },
   {
     q: 'How long does a prototyping project take?',
-    a: 'Timeline depends on scope: a focused user flow for a single feature (e.g., onboarding) typically takes 1–2 weeks. A complete app prototype covering multiple roles and screens (e.g., a SaaS product with user, admin, and super-admin views) typically takes 3–6 weeks from brief to final handoff. We share a detailed project timeline after the brief — and we stick to it.',
+    a: 'Timeline depends on scope: a focused user flow for a single feature (e.g., onboarding) typically takes 1–2 weeks. A complete app prototype covering multiple roles and screens (e.g., a SaaS product with user, admin, and super-admin views) typically takes 3–6 weeks from brief to final handoff. We share a detailed project timeline after the brief - and we stick to it.',
   },
   {
     q: 'Can you prototype a native mobile app as well as a web app?',
-    a: 'Yes — we prototype for iOS, Android, and responsive web, as well as complex multi-platform products. Our Figma prototypes can be configured to mirror device frames (iPhone, Android, tablet, desktop) and we test interactive prototypes directly on real devices using Figma Mirror for accurate experience validation.',
+    a: 'Yes - we prototype for iOS, Android, and responsive web, as well as complex multi-platform products. Our Figma prototypes can be configured to mirror device frames (iPhone, Android, tablet, desktop) and we test interactive prototypes directly on real devices using Figma Mirror for accurate experience validation.',
   },
 ];
 
@@ -482,9 +482,9 @@ export default function PrototypingServices() {
         {/* ── HERO ── */}
         <div className="ps-hero">
           <div className="ps-hero-content">
-            <span className="ps-eyebrow">UX Prototyping Agency — 16+ Years Experience</span>
+            <span className="ps-eyebrow">UX Prototyping Agency - 16+ Years Experience</span>
             <h1>Prototyping That Validates Ideas Before You Write a Line of Code</h1>
-            <p>From low-fi wireframes to pixel-perfect interactive prototypes, we help you test concepts, align stakeholders, and ship with confidence — not guesswork.</p>
+            <p>From low-fi wireframes to pixel-perfect interactive prototypes, we help you test concepts, align stakeholders, and ship with confidence - not guesswork.</p>
             <div className="ps-hero-btns">
               <Link href="#contact" className="ps-btn-primary">Get a Free Prototype Consultation</Link>
               <Link href="/portfolio" className="ps-btn-secondary">View Our Work →</Link>
@@ -551,7 +551,7 @@ export default function PrototypingServices() {
             >
               <span className="ps-section-eyebrow">Why 1Solutions</span>
               <h2 className="ps-section-title">Why Product Teams Choose Us for Prototyping</h2>
-              <p className="ps-section-desc" style={{ maxWidth: 680, margin: '0 auto 0' }}>We combine research rigour with design craft to build prototypes that don't just look right — they work right.</p>
+              <p className="ps-section-desc" style={{ maxWidth: 680, margin: '0 auto 0' }}>We combine research rigour with design craft to build prototypes that don't just look right - they work right.</p>
             </div>
             <div className="ps-why-grid" ref={whyGridRef}>
               {WHY.map((w, i) => (
@@ -578,7 +578,7 @@ export default function PrototypingServices() {
             >
               <span className="ps-section-eyebrow">Our Process</span>
               <h2 className="ps-section-title">How We Build Prototypes That Ship</h2>
-              <p className="ps-section-desc">A structured 6-stage process ensures nothing is left to assumption — from initial brief through developer handoff.</p>
+              <p className="ps-section-desc">A structured 6-stage process ensures nothing is left to assumption - from initial brief through developer handoff.</p>
             </div>
             <div className="ps-process-layout">
               <div className="ps-process-steps">
@@ -606,14 +606,14 @@ export default function PrototypingServices() {
                     {[
                       ['📐', 'Annotated wireframes', 'Low and mid-fidelity frames with layout rationale and copy guidance notes'],
                       ['🎨', 'High-fidelity prototype', 'Pixel-perfect, on-brand interactive prototype in Figma with real component library'],
-                      ['🔗', 'Shareable prototype URL', 'Accessible to anyone via browser — no Figma account or software required'],
+                      ['🔗', 'Shareable prototype URL', 'Accessible to anyone via browser - no Figma account or software required'],
                       ['📋', 'Usability test report', 'Recorded session findings, task completion rates, and ranked friction points'],
                       ['📦', 'Developer handoff file', 'Figma file with inspection mode, redlines, spacing specs, and design tokens'],
                       ['♻️', 'Component library', 'Reusable design system components your engineering team can build and maintain'],
                     ].map(([icon, title, desc]) => (
                       <div className="ps-deliverable-item" key={title}>
                         <div className="ps-deliverable-icon">{icon}</div>
-                        <p><strong>{title}</strong> — {desc}</p>
+                        <p><strong>{title}</strong> - {desc}</p>
                       </div>
                     ))}
                   </div>
@@ -637,9 +637,9 @@ export default function PrototypingServices() {
             </div>
             <div className="ps-testi-grid">
               {[
-                { initials: 'RK', bg: '#4f46e5', text: '"1Solutions delivered a high-fidelity prototype for our SaaS dashboard in under 3 weeks. Stakeholders were blown away by the quality — we got immediate sign-off and the dev team had zero questions during build."', name: 'Rachel Kim', role: 'Head of Product, TechVault — USA' },
-                { initials: 'BT', bg: '#0F3460', text: '"We\'d been stuck in design purgatory for months. 1Solutions structured the project properly, mapped our user flows, and delivered an interactive prototype that made the path forward crystal clear. Best investment we made this year."', name: 'Ben Turner', role: 'CTO, Finbridge — Australia' },
-                { initials: 'AL', bg: '#6366f1', text: '"The Figma prototype they produced was so detailed that our engineers barely had to ask any questions during development. That alone saved us weeks. Would absolutely work with them again."', name: 'Amara Lawson', role: 'VP Design, CloudScale — Canada' },
+                { initials: 'RK', bg: '#4f46e5', text: '"1Solutions delivered a high-fidelity prototype for our SaaS dashboard in under 3 weeks. Stakeholders were blown away by the quality - we got immediate sign-off and the dev team had zero questions during build."', name: 'Rachel Kim', role: 'Head of Product, TechVault - USA' },
+                { initials: 'BT', bg: '#0F3460', text: '"We\'d been stuck in design purgatory for months. 1Solutions structured the project properly, mapped our user flows, and delivered an interactive prototype that made the path forward crystal clear. Best investment we made this year."', name: 'Ben Turner', role: 'CTO, Finbridge - Australia' },
+                { initials: 'AL', bg: '#6366f1', text: '"The Figma prototype they produced was so detailed that our engineers barely had to ask any questions during development. That alone saved us weeks. Would absolutely work with them again."', name: 'Amara Lawson', role: 'VP Design, CloudScale - Canada' },
               ].map(t => (
                 <div className="ps-tcard" key={t.name}>
                   <div className="ps-tcard-stars">★★★★★</div>
@@ -694,10 +694,10 @@ export default function PrototypingServices() {
           <div className="ps-contact-container">
             <div>
               <h2 className="ps-contact-title">Let's Build Your Prototype Together</h2>
-              <p className="ps-contact-desc">Tell us about your product and we'll respond within 24 business hours with a scoped proposal — no fluff, no obligation.</p>
+              <p className="ps-contact-desc">Tell us about your product and we'll respond within 24 business hours with a scoped proposal - no fluff, no obligation.</p>
               <div className="ps-contact-perks">
                 {[
-                  'Your project brief is kept confidential — NDA available on request.',
+                  'Your project brief is kept confidential - NDA available on request.',
                   'A senior UX designer reviews every enquiry personally.',
                   'We respond within 24 business hours, not 5 business days.',
                   'Free 30-minute discovery call to scope your project before you commit.',

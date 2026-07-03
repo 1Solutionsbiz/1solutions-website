@@ -3,14 +3,14 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const SERVICES = [
-  { n: '01', title: 'Custom B2B eCommerce Platform Development', desc: 'Fully bespoke B2B portals built from the ground up — tailored to your buyer workflows, product catalogue complexity, and sales process.' },
+  { n: '01', title: 'Custom B2B eCommerce Platform Development', desc: 'Fully bespoke B2B portals built from the ground up - tailored to your buyer workflows, product catalogue complexity, and sales process.' },
   { n: '02', title: 'Wholesale & Bulk Ordering Systems', desc: 'Streamlined bulk order entry, minimum order quantity enforcement, reorder pads, and CSV/spreadsheet upload ordering for high-volume buyers.' },
-  { n: '03', title: 'Customer-Specific Pricing & Catalogues', desc: 'Tiered pricing, contract-specific rates, buyer-group catalogues, and hidden products — ensuring every buyer sees exactly what they should.' },
+  { n: '03', title: 'Customer-Specific Pricing & Catalogues', desc: 'Tiered pricing, contract-specific rates, buyer-group catalogues, and hidden products - ensuring every buyer sees exactly what they should.' },
   { n: '04', title: 'Account & User Role Management', desc: 'Multi-user company accounts with configurable roles: buyer, approver, admin. Built-in purchase approval workflows for enterprise procurement.' },
-  { n: '05', title: 'ERP, CRM & PIM Integration', desc: 'Native integrations with SAP, NetSuite, Salesforce, HubSpot, Zoho, and custom ERPs — keeping inventory, orders, and customer data perfectly in sync.' },
+  { n: '05', title: 'ERP, CRM & PIM Integration', desc: 'Native integrations with SAP, NetSuite, Salesforce, HubSpot, Zoho, and custom ERPs - keeping inventory, orders, and customer data perfectly in sync.' },
   { n: '06', title: 'Quote & Custom Order Workflows', desc: 'Request-for-quote (RFQ) modules, custom product configurators, and approval chains that match how your sales team actually closes deals.' },
   { n: '07', title: 'B2B Payment & Credit Terms', desc: 'Net-30/60/90 credit terms, purchase order (PO) payment, trade credit accounts, invoicing, and automated accounts receivable management.' },
-  { n: '08', title: 'Self-Service Buyer Portal', desc: 'Give buyers full visibility into their order history, invoices, tracking, returns, and account statements — reducing inbound sales and support load.' },
+  { n: '08', title: 'Self-Service Buyer Portal', desc: 'Give buyers full visibility into their order history, invoices, tracking, returns, and account statements - reducing inbound sales and support load.' },
 ];
 
 const PLATFORMS = [
@@ -25,18 +25,18 @@ const PLATFORMS = [
 const PROCESS = [
   { step: '01', title: 'Discovery & Requirements Mapping', desc: 'We audit your current sales process, buyer types, pricing complexity, and integration needs to produce a detailed functional requirements document.' },
   { step: '02', title: 'Platform Selection & Architecture', desc: 'We recommend the right platform or custom build approach based on your scale, integration requirements, and long-term growth roadmap.' },
-  { step: '03', title: 'UX/UI Design for Buyers & Admins', desc: 'We design buyer-facing storefronts and admin dashboards with your procurement team\'s workflows at the centre — not off-the-shelf templates.' },
+  { step: '03', title: 'UX/UI Design for Buyers & Admins', desc: 'We design buyer-facing storefronts and admin dashboards with your procurement team\'s workflows at the centre - not off-the-shelf templates.' },
   { step: '04', title: 'Development & Integration', desc: 'Full-stack development with priority given to ERP/CRM integrations, pricing engine accuracy, and performance under high SKU counts.' },
   { step: '05', title: 'Testing, Training & Launch', desc: 'Rigorous UAT with your team, admin and buyer training, phased rollout, and a dedicated hypercare period post-launch to resolve any teething issues.' },
 ];
 
 const WHY = [
-  { title: 'B2B-Specific Expertise', desc: 'We\'ve built B2B portals for manufacturers, wholesalers, distributors, and trade suppliers across the US, Canada, and Australia. We know the complexity — pricing tiers, approval chains, integration dependencies — from the inside.' },
+  { title: 'B2B-Specific Expertise', desc: 'We\'ve built B2B portals for manufacturers, wholesalers, distributors, and trade suppliers across the US, Canada, and Australia. We know the complexity - pricing tiers, approval chains, integration dependencies - from the inside.' },
   { title: 'Integration-First Approach', desc: 'Your B2B portal is only as good as its data. We architect integrations with ERP, CRM, and PIM systems first, so the storefront always reflects accurate inventory, pricing, and customer data.' },
-  { title: 'Buyer & Admin UX Focus', desc: 'B2B UX is not B2C UX. We design for repeat professional buyers who need speed, bulk tools, and account visibility — not for impulse shoppers browsing on a phone.' },
+  { title: 'Buyer & Admin UX Focus', desc: 'B2B UX is not B2C UX. We design for repeat professional buyers who need speed, bulk tools, and account visibility - not for impulse shoppers browsing on a phone.' },
   { title: 'Scalable Architecture', desc: 'From 500 SKUs to 500,000. From 10 buyers to 10,000. We build on proven foundations that scale with your business without requiring costly rebuilds.' },
-  { title: '15+ Years of Ecommerce Delivery', desc: 'Since 2008, we\'ve delivered 500+ ecommerce projects. Our experience means we\'ve already solved most of the edge cases you\'ll encounter — and have proven solutions ready.' },
-  { title: 'Ongoing Support & Growth', desc: 'Post-launch, we offer dedicated support retainers, quarterly feature roadmap planning, and continuous performance optimisation — not a handoff-and-disappear model.' },
+  { title: '15+ Years of Ecommerce Delivery', desc: 'Since 2008, we\'ve delivered 500+ ecommerce projects. Our experience means we\'ve already solved most of the edge cases you\'ll encounter - and have proven solutions ready.' },
+  { title: 'Ongoing Support & Growth', desc: 'Post-launch, we offer dedicated support retainers, quarterly feature roadmap planning, and continuous performance optimisation - not a handoff-and-disappear model.' },
 ];
 
 const FAQS = [
@@ -46,23 +46,23 @@ const FAQS = [
   },
   {
     q: 'Which platforms do you use for B2B eCommerce development?',
-    a: 'Our platform recommendation depends on your specific requirements. For brands already on WordPress/WooCommerce, we extend with B2B plugins and custom development. For enterprise scale and complexity, we recommend Magento/Adobe Commerce or OroCommerce. Shopify Plus is ideal if you need both B2B and DTC on one platform. For highly custom workflows — complex pricing engines, legacy ERP dependencies, or unique buyer journeys — we build custom portals using Laravel or Node.js with a React frontend. We\'ll recommend the right fit during our discovery process.',
+    a: 'Our platform recommendation depends on your specific requirements. For brands already on WordPress/WooCommerce, we extend with B2B plugins and custom development. For enterprise scale and complexity, we recommend Magento/Adobe Commerce or OroCommerce. Shopify Plus is ideal if you need both B2B and DTC on one platform. For highly custom workflows - complex pricing engines, legacy ERP dependencies, or unique buyer journeys - we build custom portals using Laravel or Node.js with a React frontend. We\'ll recommend the right fit during our discovery process.',
   },
   {
     q: 'How much does B2B eCommerce development cost?',
-    a: 'B2B eCommerce projects vary significantly based on complexity. A WooCommerce or Shopify Plus B2B setup with standard features (tiered pricing, account management, bulk ordering) typically ranges from $8,000–$25,000. Mid-complexity builds with ERP integration and custom workflows range from $25,000–$75,000. Enterprise custom platforms or heavily integrated builds can exceed $100,000. We provide a detailed fixed-price quote after our discovery workshop — no vague estimates or scope-creep surprises.',
+    a: 'B2B eCommerce projects vary significantly based on complexity. A WooCommerce or Shopify Plus B2B setup with standard features (tiered pricing, account management, bulk ordering) typically ranges from $8,000–$25,000. Mid-complexity builds with ERP integration and custom workflows range from $25,000–$75,000. Enterprise custom platforms or heavily integrated builds can exceed $100,000. We provide a detailed fixed-price quote after our discovery workshop - no vague estimates or scope-creep surprises.',
   },
   {
     q: 'How long does a B2B eCommerce development project take?',
-    a: 'A standard B2B WooCommerce or Shopify Plus setup takes 8–12 weeks from project kick-off to launch. Mid-complexity builds with ERP integrations typically take 12–20 weeks. Custom platform builds or enterprise projects with extensive integrations and UAT cycles can take 6–12 months. We share a detailed project timeline in the proposal, with clearly defined phases and milestones. We always recommend a phased approach — launching core functionality first, then adding complex features in subsequent sprints.',
+    a: 'A standard B2B WooCommerce or Shopify Plus setup takes 8–12 weeks from project kick-off to launch. Mid-complexity builds with ERP integrations typically take 12–20 weeks. Custom platform builds or enterprise projects with extensive integrations and UAT cycles can take 6–12 months. We share a detailed project timeline in the proposal, with clearly defined phases and milestones. We always recommend a phased approach - launching core functionality first, then adding complex features in subsequent sprints.',
   },
   {
     q: 'Can you integrate our ERP or accounting system with the B2B portal?',
-    a: 'Yes — ERP and accounting integration is one of our core B2B competencies. We\'ve built native integrations with SAP, Oracle NetSuite, Microsoft Dynamics, MYOB, Xero, QuickBooks, Sage, and custom legacy ERP systems. Integrations typically cover: product/inventory sync, pricing and customer data sync, order push to ERP, invoice generation, and shipment tracking pull-back. We use APIs where available, and build middleware or ETL connectors where direct API access doesn\'t exist.',
+    a: 'Yes - ERP and accounting integration is one of our core B2B competencies. We\'ve built native integrations with SAP, Oracle NetSuite, Microsoft Dynamics, MYOB, Xero, QuickBooks, Sage, and custom legacy ERP systems. Integrations typically cover: product/inventory sync, pricing and customer data sync, order push to ERP, invoice generation, and shipment tracking pull-back. We use APIs where available, and build middleware or ETL connectors where direct API access doesn\'t exist.',
   },
   {
     q: 'Can your B2B platform support customer-specific pricing and catalogues?',
-    a: 'Yes — this is a fundamental B2B requirement we implement for every client. We support: per-customer pricing overrides, buyer-group tiered pricing (Gold/Silver/Bronze), volume/quantity-break pricing, contract-specific rates, currency-specific pricing for international buyers, and per-account product catalogue restrictions (hide products, categories, or entire ranges from specific buyer groups). Prices are always pulled in real time from the pricing engine or ERP — no manual synchronisation required.',
+    a: 'Yes - this is a fundamental B2B requirement we implement for every client. We support: per-customer pricing overrides, buyer-group tiered pricing (Gold/Silver/Bronze), volume/quantity-break pricing, contract-specific rates, currency-specific pricing for international buyers, and per-account product catalogue restrictions (hide products, categories, or entire ranges from specific buyer groups). Prices are always pulled in real time from the pricing engine or ERP - no manual synchronisation required.',
   },
   {
     q: 'What B2B payment options can you enable?',
@@ -70,7 +70,7 @@ const FAQS = [
   },
   {
     q: 'Do you work with manufacturers, wholesalers, and distributors in the US, Canada, and Australia?',
-    a: 'Yes — these are our core B2B client types. We\'ve built B2B portals for manufacturers selling direct to trade customers, wholesale distributors managing complex account hierarchies, importers and brand owners running dealer or reseller portals, and industrial suppliers with large SKU counts and complex pricing structures. We work remotely with clients across the US, Canada, and Australia, with full project management, regular video calls, and a dedicated single point of contact throughout.',
+    a: 'Yes - these are our core B2B client types. We\'ve built B2B portals for manufacturers selling direct to trade customers, wholesale distributors managing complex account hierarchies, importers and brand owners running dealer or reseller portals, and industrial suppliers with large SKU counts and complex pricing structures. We work remotely with clients across the US, Canada, and Australia, with full project management, regular video calls, and a dedicated single point of contact throughout.',
   },
 ];
 
@@ -135,7 +135,7 @@ export default function B2BEcommerce() {
       {
         '@type': 'Service',
         name: 'B2B eCommerce Development Services',
-        description: 'Custom B2B eCommerce platform development — wholesale portals, bulk ordering, tiered pricing, ERP integration, and buyer self-service for manufacturers, wholesalers, and distributors.',
+        description: 'Custom B2B eCommerce platform development - wholesale portals, bulk ordering, tiered pricing, ERP integration, and buyer self-service for manufacturers, wholesalers, and distributors.',
         provider: {
           '@type': 'Organization',
           name: '1Solutions',
@@ -728,7 +728,7 @@ export default function B2BEcommerce() {
             <span className="b2b-section-eyebrow">What We Build</span>
             <h2 className="b2b-section-title">B2B eCommerce Services</h2>
             <p className="b2b-section-desc">
-              From simple wholesale ordering systems to complex multi-buyer portals with ERP integration — we build the B2B platform your buyers actually want to use.
+              From simple wholesale ordering systems to complex multi-buyer portals with ERP integration - we build the B2B platform your buyers actually want to use.
             </p>
             <div className="b2b-services-grid" ref={cardsRef}>
               {SERVICES.map((s, i) => (
@@ -751,7 +751,7 @@ export default function B2BEcommerce() {
             <span className="b2b-section-eyebrow">Our Tech Stack</span>
             <h2 className="b2b-section-title">Platforms We Build On</h2>
             <p className="b2b-section-desc">
-              We&rsquo;re platform-agnostic. We recommend what&rsquo;s right for your scale and complexity — not what&rsquo;s easiest for us to build.
+              We&rsquo;re platform-agnostic. We recommend what&rsquo;s right for your scale and complexity - not what&rsquo;s easiest for us to build.
             </p>
             <div className="b2b-platforms-grid">
               {PLATFORMS.map(p => (
@@ -819,7 +819,7 @@ export default function B2BEcommerce() {
             <span className="b2b-section-eyebrow">Common Questions</span>
             <h2 className="b2b-section-title">B2B eCommerce FAQs</h2>
             <p className="b2b-section-desc">
-              Answers to the questions we hear most from manufacturers, wholesalers, and distributors exploring B2B eCommerce for the first time — or upgrading an existing platform.
+              Answers to the questions we hear most from manufacturers, wholesalers, and distributors exploring B2B eCommerce for the first time - or upgrading an existing platform.
             </p>
             <div className="b2b-faq-list">
               {FAQS.map((f, i) => (

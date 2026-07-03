@@ -3,13 +3,13 @@ import Link from 'next/link';
 
 function getOverviewP2(project) {
   const catMap = {
-    'Web Development': `Our team managed the full engagement — discovery, wireframing, custom development, QA, and launch — delivering a website that performs as well as it looks in the competitive ${project.industry} space.`,
-    'eCommerce': `From store architecture and theme development to product pages and checkout optimisation, we handled the full eCommerce build — ensuring every interaction moves shoppers closer to purchase in the ${project.industry} market.`,
-    'Digital Marketing': `We developed and executed a data-driven strategy across the highest-impact channels for ${project.industry} — continuously measuring results and doubling down on what works to compound growth over time.`,
-    'Mobile App': `We delivered a performant, cross-platform solution for ${project.industry} — with clean UX, snappy load times, and the kind of polish that earns repeat engagement.`,
-    'UI/UX Design': `We approached the ${project.industry} project design-first — mapping user journeys, building interactive prototypes, and iterating until every interaction felt natural and intentional.`,
+    'Web Development': `Our team managed the full engagement - discovery, wireframing, custom development, QA, and launch - delivering a website that performs as well as it looks in the competitive ${project.industry} space.`,
+    'eCommerce': `From store architecture and theme development to product pages and checkout optimisation, we handled the full eCommerce build - ensuring every interaction moves shoppers closer to purchase in the ${project.industry} market.`,
+    'Digital Marketing': `We developed and executed a data-driven strategy across the highest-impact channels for ${project.industry} - continuously measuring results and doubling down on what works to compound growth over time.`,
+    'Mobile App': `We delivered a performant, cross-platform solution for ${project.industry} - with clean UX, snappy load times, and the kind of polish that earns repeat engagement.`,
+    'UI/UX Design': `We approached the ${project.industry} project design-first - mapping user journeys, building interactive prototypes, and iterating until every interaction felt natural and intentional.`,
   };
-  return catMap[project.category] || `Our team delivered this ${project.industry} project with a focus on quality, performance, and long-term value — on time and to specification.`;
+  return catMap[project.category] || `Our team delivered this ${project.industry} project with a focus on quality, performance, and long-term value - on time and to specification.`;
 }
 
 function getPlatform(tech) {
@@ -23,25 +23,25 @@ function getPlatform(tech) {
 }
 
 const FEAT = {
-  'WordPress Development':   { icon: '🎨', bg: '#EDE9FE', title: 'Custom WordPress Theme',    desc: 'Built from scratch with a bespoke theme — no page builders or generic templates. Every element crafted to reflect the brand.' },
-  'WordPress':               { icon: '🎨', bg: '#EDE9FE', title: 'Custom WordPress Theme',    desc: 'Built from scratch with a bespoke theme — no page builders or generic templates. Every element crafted to reflect the brand.' },
-  'Custom PHP Theme':        { icon: '🎨', bg: '#EDE9FE', title: 'Custom WordPress Theme',    desc: 'Built from scratch with a bespoke theme — no page builders or generic templates. Every element crafted to reflect the brand.' },
-  'Custom Theme':            { icon: '🎨', bg: '#EDE9FE', title: 'Custom Theme Design',       desc: 'A bespoke theme built to the project brief — not adapted from an existing template.' },
+  'WordPress Development':   { icon: '🎨', bg: '#EDE9FE', title: 'Custom WordPress Theme',    desc: 'Built from scratch with a bespoke theme - no page builders or generic templates. Every element crafted to reflect the brand.' },
+  'WordPress':               { icon: '🎨', bg: '#EDE9FE', title: 'Custom WordPress Theme',    desc: 'Built from scratch with a bespoke theme - no page builders or generic templates. Every element crafted to reflect the brand.' },
+  'Custom PHP Theme':        { icon: '🎨', bg: '#EDE9FE', title: 'Custom WordPress Theme',    desc: 'Built from scratch with a bespoke theme - no page builders or generic templates. Every element crafted to reflect the brand.' },
+  'Custom Theme':            { icon: '🎨', bg: '#EDE9FE', title: 'Custom Theme Design',       desc: 'A bespoke theme built to the project brief - not adapted from an existing template.' },
   'Shopify':                 { icon: '🛒', bg: '#ECFDF5', title: 'Shopify Store',             desc: 'Full Shopify setup with custom Liquid theme, product pages, collections, and a high-converting checkout.' },
   'Liquid':                  { icon: '🛒', bg: '#ECFDF5', title: 'Liquid Theming',            desc: 'Custom Shopify Liquid for pixel-perfect product presentation and a brand-aligned store experience.' },
   'WooCommerce':             { icon: '🛍️', bg: '#FFF7ED', title: 'WooCommerce Store',        desc: 'End-to-end WooCommerce with payment gateways, product management, and order workflows.' },
   'UI/UX Design':            { icon: '📐', bg: '#EFF6FF', title: 'UI/UX Design',             desc: 'User-centred design with intuitive navigation, clear CTAs, and a visual identity that builds trust from the first visit.' },
-  'Custom Development':      { icon: '⚙️', bg: '#F0FDF4', title: 'Custom Development',       desc: 'Bespoke engineering tailored to exact requirements — scalable, secure, and built to last.' },
-  'Custom Build':            { icon: '⚙️', bg: '#F0FDF4', title: 'Custom Development',       desc: 'Bespoke engineering tailored to exact requirements — scalable, secure, and built to last.' },
-  'Next.js':                 { icon: '⚡', bg: '#EDE9FE', title: 'Next.js Development',      desc: 'High-performance site built with Next.js — fast page loads, SEO-optimised, and fully responsive.' },
+  'Custom Development':      { icon: '⚙️', bg: '#F0FDF4', title: 'Custom Development',       desc: 'Bespoke engineering tailored to exact requirements - scalable, secure, and built to last.' },
+  'Custom Build':            { icon: '⚙️', bg: '#F0FDF4', title: 'Custom Development',       desc: 'Bespoke engineering tailored to exact requirements - scalable, secure, and built to last.' },
+  'Next.js':                 { icon: '⚡', bg: '#EDE9FE', title: 'Next.js Development',      desc: 'High-performance site built with Next.js - fast page loads, SEO-optimised, and fully responsive.' },
   'Laravel CRM':             { icon: '🔧', bg: '#F0FDF4', title: 'Laravel CRM & Portal',     desc: 'Custom Laravel backend with a purpose-built CRM, role management, and automated data workflows.' },
-  'Portal Design':           { icon: '🗂️', bg: '#EFF6FF', title: 'Portal Design',           desc: 'Structured portal for complex user flows — multi-role access, dashboards, and data management.' },
+  'Portal Design':           { icon: '🗂️', bg: '#EFF6FF', title: 'Portal Design',           desc: 'Structured portal for complex user flows - multi-role access, dashboards, and data management.' },
   'LinkedIn Marketing':      { icon: '📣', bg: '#FFF7ED', title: 'LinkedIn Marketing',       desc: 'Strategic content, profile management, and audience growth to build authority and reach decision-makers.' },
   'Email Marketing':         { icon: '📧', bg: '#FFF7ED', title: 'Email Marketing',          desc: 'Targeted campaigns with subscriber management, automation flows, and performance tracking.' },
   'Conversion Optimisation': { icon: '📈', bg: '#ECFDF5', title: 'Conversion Optimisation', desc: 'Data-driven improvements to product pages, CTAs, and checkout to maximise store revenue.' },
   'eCommerce':               { icon: '🛒', bg: '#EFF6FF', title: 'eCommerce Development',    desc: 'Full eCommerce setup including catalogue, payment integration, and order management.' },
   'React Native':            { icon: '📱', bg: '#EDE9FE', title: 'React Native App',         desc: 'Cross-platform mobile app with native performance on both iOS and Android.' },
-  'SEO':                     { icon: '🔍', bg: '#ECFDF5', title: 'SEO Strategy',            desc: 'On-page and technical SEO from the ground up — keyword mapping, schema markup, and site speed.' },
+  'SEO':                     { icon: '🔍', bg: '#ECFDF5', title: 'SEO Strategy',            desc: 'On-page and technical SEO from the ground up - keyword mapping, schema markup, and site speed.' },
 };
 
 function getFeatures(project) {
@@ -55,11 +55,11 @@ function getFeatures(project) {
     }
   }
   if (cards.length < 3 && !seen.has('Responsive Design')) {
-    cards.push({ icon: '📱', bg: '#ECFDF5', title: 'Responsive Design', desc: 'Pixel-perfect across all screen sizes — desktop, tablet, and mobile — with zero layout breaks.' });
+    cards.push({ icon: '📱', bg: '#ECFDF5', title: 'Responsive Design', desc: 'Pixel-perfect across all screen sizes - desktop, tablet, and mobile - with zero layout breaks.' });
     seen.add('Responsive Design');
   }
   if (cards.length < 3 && !seen.has('SEO Foundation')) {
-    cards.push({ icon: '🔍', bg: '#F0FDF4', title: 'SEO Foundation', desc: 'Built with SEO best practices — clean markup, fast load times, and correct meta structure.' });
+    cards.push({ icon: '🔍', bg: '#F0FDF4', title: 'SEO Foundation', desc: 'Built with SEO best practices - clean markup, fast load times, and correct meta structure.' });
   }
   return cards.slice(0, 4);
 }
@@ -93,7 +93,7 @@ export default function CaseStudyPage({ project, prev, next }) {
   return (
     <>
       <Head>
-        <title>{project.title} — {project.industry} Case Study | 1Solutions</title>
+        <title>{project.title} - {project.industry} Case Study | 1Solutions</title>
         <meta name="description" content={`See how 1Solutions delivered a ${project.category.toLowerCase()} solution for ${project.title} in the ${project.industry} sector. ${project.desc}`} />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`https://www.1solutions.biz/case-studies/${project.id}`} />
@@ -508,7 +508,7 @@ export default function CaseStudyPage({ project, prev, next }) {
       <section className="ct-hero">
         <img
           src={project.image}
-          alt={`${project.title} — Case Study | 1Solutions`}
+          alt={`${project.title} - Case Study | 1Solutions`}
           className="ct-hero-img"
         />
         <div className="ct-hero-overlay" />
@@ -570,7 +570,7 @@ export default function CaseStudyPage({ project, prev, next }) {
             <p className="ct-eyebrow">Our Approach</p>
             <h2>What We Built</h2>
             <p>
-              Every project at 1Solutions starts with listening — understanding your business, your audience, and your goals before writing a single line of code or designing a single screen.
+              Every project at 1Solutions starts with listening - understanding your business, your audience, and your goals before writing a single line of code or designing a single screen.
               Here&rsquo;s what we delivered for {project.title}:
             </p>
             <div className="ct-feature-grid">
@@ -590,7 +590,7 @@ export default function CaseStudyPage({ project, prev, next }) {
           <div className="ct-section">
             <p className="ct-eyebrow">Technology &amp; Tools</p>
             <h2>What We Built With</h2>
-            <p>Our technology choices are deliberate — we pick the right tool for the job, not the most fashionable one.</p>
+            <p>Our technology choices are deliberate - we pick the right tool for the job, not the most fashionable one.</p>
             <div className="ct-tech-list">
               {project.tech.map(t => (
                 <span key={t} className="ct-tech-pill">
@@ -620,7 +620,7 @@ export default function CaseStudyPage({ project, prev, next }) {
         {/* ── RIGHT: Sidebar ── */}
         <aside className="ct-sidebar">
 
-          {/* Project Snapshot — dark navy card */}
+          {/* Project Snapshot - dark navy card */}
           <div className="ct-snap">
             <div className="ct-snap-kicker">Project Snapshot</div>
             <div className="ct-snap-grid">
@@ -651,7 +651,7 @@ export default function CaseStudyPage({ project, prev, next }) {
             </div>
           </div>
 
-          {/* Tech Stack — coloured pills */}
+          {/* Tech Stack - coloured pills */}
           <div className="ct-tech">
             <div className="ct-tech-hdr">Built With</div>
             <div className="ct-tech-pills">
@@ -666,7 +666,7 @@ export default function CaseStudyPage({ project, prev, next }) {
             </div>
           </div>
 
-          {/* Live Site — green gradient card */}
+          {/* Live Site - green gradient card */}
           {project.liveUrl && (
             <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="ct-live">
               <div className="ct-live-lbl">Live Website</div>
@@ -678,11 +678,11 @@ export default function CaseStudyPage({ project, prev, next }) {
             </a>
           )}
 
-          {/* CTA — deep blue gradient card */}
+          {/* CTA - deep blue gradient card */}
           <div className="ct-cta-card">
             <div className="ct-cta-card-orb" />
             <h3>Got a project in mind?</h3>
-            <p>Tell us what you need — we'll bring strategy, design, and engineering to make it happen.</p>
+            <p>Tell us what you need - we'll bring strategy, design, and engineering to make it happen.</p>
             <Link href="/contact-us" className="ct-cta-card-btn">
               Start Your Project
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>

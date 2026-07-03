@@ -18,9 +18,9 @@ const JOBS = [
     tagBg: '#f0fdf4',
     tagBorder: '#86efac',
     brief:
-      "Build web applications for clients across the US, Canada, and Australia — working across frontend and backend on a modern, varied stack.",
+      "Build web applications for clients across the US, Canada, and Australia - working across frontend and backend on a modern, varied stack.",
     about:
-      "We're looking for a talented Full Stack Developer to join our engineering team. You'll work on diverse projects — WordPress-powered business sites, custom Laravel/Python web apps, React frontends, and API integrations — for clients who expect Silicon Valley quality at every level.",
+      "We're looking for a talented Full Stack Developer to join our engineering team. You'll work on diverse projects - WordPress-powered business sites, custom Laravel/Python web apps, React frontends, and API integrations - for clients who expect Silicon Valley quality at every level.",
     responsibilities: [
       'Develop responsive, high-performance web applications (frontend + backend)',
       'Work across technologies including React / Next.js, PHP / Laravel, Python / Django, Node.js, MySQL',
@@ -60,7 +60,7 @@ const JOBS = [
     brief:
       "Own strategy, content, and performance reporting for social accounts across 5–10 client brands on Instagram, LinkedIn, Facebook, and X.",
     about:
-      "We manage social media for clients across industries including e-commerce, SaaS, healthcare, and real estate. As Social Media Manager, you'll be the voice behind multiple brands — creating content that drives real engagement and measurable business outcomes, not just vanity metrics.",
+      "We manage social media for clients across industries including e-commerce, SaaS, healthcare, and real estate. As Social Media Manager, you'll be the voice behind multiple brands - creating content that drives real engagement and measurable business outcomes, not just vanity metrics.",
     responsibilities: [
       'Manage and grow social media profiles for 5–10 active client accounts',
       'Develop monthly content calendars aligned with each client\'s brand and goals',
@@ -72,10 +72,10 @@ const JOBS = [
     ],
     requirements: [
       '2–3 years of social media management experience (agency background preferred)',
-      'Strong English copywriting skills — you can match any brand voice',
+      'Strong English copywriting skills - you can match any brand voice',
       'Hands-on experience with Meta Ads (Facebook + Instagram campaigns)',
       'Proficiency with scheduling tools such as Buffer, Hootsuite, or Sprout Social',
-      'Analytical — comfortable pulling data from Meta Business Suite and LinkedIn Analytics',
+      'Analytical - comfortable pulling data from Meta Business Suite and LinkedIn Analytics',
       'Highly organised: able to juggle content calendars for multiple clients simultaneously',
     ],
     niceToHave: [
@@ -99,9 +99,9 @@ const JOBS = [
     tagBg: '#fef2f2',
     tagBorder: '#fca5a5',
     brief:
-      "Drive new business from the US, Canada, and Australia — owning the full sales cycle from prospecting to signed contract, with clear revenue targets and strong team support.",
+      "Drive new business from the US, Canada, and Australia - owning the full sales cycle from prospecting to signed contract, with clear revenue targets and strong team support.",
     about:
-      "1Solutions has grown to 500+ clients over 15 years almost entirely on referrals and organic search. We're now ready to invest in outbound growth. As our Business Development Manager, you'll build and own the outbound engine — identifying the right prospects, running discovery calls with decision-makers, and closing deals for web development and digital marketing services.",
+      "1Solutions has grown to 500+ clients over 15 years almost entirely on referrals and organic search. We're now ready to invest in outbound growth. As our Business Development Manager, you'll build and own the outbound engine - identifying the right prospects, running discovery calls with decision-makers, and closing deals for web development and digital marketing services.",
     responsibilities: [
       'Generate qualified leads via LinkedIn outreach, email campaigns, and industry networking',
       'Conduct discovery calls and deliver tailored service proposals to prospective clients',
@@ -114,7 +114,7 @@ const JOBS = [
     requirements: [
       '3–5 years of B2B sales experience, preferably in IT services or a digital agency',
       'Proven record of consistently meeting or exceeding revenue targets',
-      'Excellent spoken and written English — you\'ll pitch to US, Canadian, and Australian buyers',
+      'Excellent spoken and written English - you\'ll pitch to US, Canadian, and Australian buyers',
       'Strong interpersonal skills and the ability to handle objections with confidence',
       'Experience with CRM tools (HubSpot, Salesforce, or Zoho)',
       'Self-motivated, target-oriented, and comfortable managing your own pipeline',
@@ -139,9 +139,9 @@ const JOBS = [
     tagBg: '#eff6ff',
     tagBorder: '#93c5fd',
     brief:
-      "An ideal first role for fresh graduates who want to learn SEO, PPC, content, and social media on live client campaigns — guided by a team with 15 years of industry experience.",
+      "An ideal first role for fresh graduates who want to learn SEO, PPC, content, and social media on live client campaigns - guided by a team with 15 years of industry experience.",
     about:
-      "This is our structured entry-level programme designed to turn motivated graduates into well-rounded digital marketers in 12 months. You won't be fetching coffee — from week one you'll be working on real campaigns under close mentorship. Fast learners progress to executive-level roles quickly.",
+      "This is our structured entry-level programme designed to turn motivated graduates into well-rounded digital marketers in 12 months. You won't be fetching coffee - from week one you'll be working on real campaigns under close mentorship. Fast learners progress to executive-level roles quickly.",
     responsibilities: [
       'Assist the SEO team with keyword research, on-page optimisation audits, and rank tracking',
       'Support PPC campaign setup and monitoring on Google Ads and Meta Ads under senior guidance',
@@ -153,7 +153,7 @@ const JOBS = [
     requirements: [
       "Bachelor's degree (completed or final year) in Marketing, Business, Mass Communication, or related",
       'Genuine interest in digital marketing and eagerness to learn quickly',
-      'Strong written English — ability to write clear, engaging content',
+      'Strong written English - ability to write clear, engaging content',
       'Comfortable with data: able to read a spreadsheet and spot patterns',
       'Proactive, detail-oriented, and receptive to feedback',
     ],
@@ -338,7 +338,7 @@ export default function OpenPositions() {
             border-color: rgba(17,65,113,0.3);
           }
 
-          /* Card header — always visible */
+          /* Card header - always visible */
           .op-card-header {
             padding: 28px 32px;
             display: grid;
@@ -421,7 +421,7 @@ export default function OpenPositions() {
           .op-toggle-btn.op-open svg { transform: rotate(180deg); }
           .op-toggle-btn svg { transition: transform 0.3s ease; }
 
-          /* Card brief — visible in collapsed state */
+          /* Card brief - visible in collapsed state */
           .op-card-brief {
             padding: 0 32px 24px;
             font-size: 0.95rem;
@@ -624,7 +624,7 @@ export default function OpenPositions() {
           <div className="op-hero-inner">
             <div className="op-hero-pill">
               <span className="op-pill-dot" />
-              We&apos;re Hiring — 4 Open Positions
+              We&apos;re Hiring - 4 Open Positions
             </div>
             <h1>
               Join the team building{' '}
@@ -633,7 +633,7 @@ export default function OpenPositions() {
             </h1>
             <p className="op-hero-sub">
               1Solutions is a 15-year-old web development and digital marketing agency in New Delhi.
-              We work on real global projects for clients across the US, Canada, and Australia —
+              We work on real global projects for clients across the US, Canada, and Australia -
               and we&apos;re growing. Come build something with us.
             </p>
             <div className="op-stats-row">
@@ -726,7 +726,7 @@ export default function OpenPositions() {
                       </div>
                     </div>
 
-                    {/* Brief — always shown */}
+                    {/* Brief - always shown */}
                     {!isOpen && (
                       <div className="op-card-brief">{job.brief}</div>
                     )}

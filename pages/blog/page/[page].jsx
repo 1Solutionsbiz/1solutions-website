@@ -15,7 +15,7 @@ export default function BlogPage({ posts, currentPage, totalPages, totalPosts })
   return (
     <>
       <Head>
-        <title>{`Blog — Page ${currentPage} | 1Solutions`}</title>
+        <title>{`Blog - Page ${currentPage} | 1Solutions`}</title>
         <meta name="description" content={`Expert articles on web development, digital marketing, SEO, and AI. Page ${currentPage} of ${totalPages}.`} />
         <link rel="canonical" href={`${siteUrl}/blog/page/${currentPage}`} />
         {currentPage > 1 && <link rel="prev" href={currentPage === 2 ? `${siteUrl}/blog` : `${siteUrl}/blog/page/${currentPage - 1}`} />}

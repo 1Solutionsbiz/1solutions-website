@@ -17,7 +17,7 @@ const SCHEMA = {
       '@type': 'Service',
       name: 'Hire WordPress Developer',
       url: 'https://www.1solutions.biz/hire-wordpress-developer/',
-      description: 'Hire expert WordPress developers for custom theme development, plugin development, WooCommerce stores, REST API integration, Gutenberg blocks, headless WordPress, and enterprise multisite — on a dedicated, fixed-price, or hourly basis.',
+      description: 'Hire expert WordPress developers for custom theme development, plugin development, WooCommerce stores, REST API integration, Gutenberg blocks, headless WordPress, and enterprise multisite - on a dedicated, fixed-price, or hourly basis.',
       provider: {
         '@type': 'Organization',
         name: '1Solutions',
@@ -35,8 +35,8 @@ const SCHEMA = {
         { '@type': 'Question', name: 'Do your WordPress developers have WooCommerce expertise?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Our WordPress developers have deep WooCommerce experience including custom theme development, product catalogue architecture, payment gateway integration (Stripe, PayPal, Razorpay, Authorize.net), subscription management via WooCommerce Subscriptions, multi-currency and multi-language stores, and performance optimisation for high-traffic WooCommerce sites. We have delivered WooCommerce stores processing over $10M in annual GMV.' } },
         { '@type': 'Question', name: 'Can your developers build custom WordPress plugins?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Custom WordPress plugin development is one of our strongest capabilities. Our developers build plugins from scratch following WordPress coding standards, with proper hook and filter architecture, custom REST API endpoints, admin dashboard UI, and plugin update mechanisms. We also develop Gutenberg blocks (React-based), custom widgets, and shortcodes. All plugins are tested for compatibility with major WordPress versions and popular themes.' } },
         { '@type': 'Question', name: 'Do you develop headless WordPress with React or Next.js?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We develop headless WordPress architectures using the WordPress REST API and WPGraphQL as the content backend, paired with a React.js or Next.js frontend for a modern, high-performance JAMstack experience. This approach is popular for publishers, eCommerce, and enterprise sites that need both editorial flexibility and front-end performance. We handle the full stack including ISR/SSG configuration, media CDN, and preview mode.' } },
-        { '@type': 'Question', name: 'What engagement models do you offer for hiring WordPress developers?', acceptedAnswer: { '@type': 'Answer', text: 'We offer three models. Dedicated Developer: a full-time WordPress developer working exclusively on your project, billed monthly — ideal for ongoing development. Fixed Price: scoped deliverables at an agreed cost — ideal for a theme build, plugin, or migration. Hourly / Time & Material: billed on actual hours — ideal for audits, bug fixes, or sprint-based feature development. All models include daily communication and weekly progress reports.' } },
-        { '@type': 'Question', name: 'Can you migrate our existing website to WordPress?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We handle WordPress migrations from any source — Wix, Squarespace, Joomla, Drupal, Magento, Shopify, or a custom-built site. The migration process covers content migration (posts, pages, media, metadata), URL structure preservation with 301 redirects, SEO tag migration, user data transfer, and a staging-to-production cutover with zero downtime. We provide a post-migration audit to verify content integrity and search ranking continuity.' } },
+        { '@type': 'Question', name: 'What engagement models do you offer for hiring WordPress developers?', acceptedAnswer: { '@type': 'Answer', text: 'We offer three models. Dedicated Developer: a full-time WordPress developer working exclusively on your project, billed monthly - ideal for ongoing development. Fixed Price: scoped deliverables at an agreed cost - ideal for a theme build, plugin, or migration. Hourly / Time & Material: billed on actual hours - ideal for audits, bug fixes, or sprint-based feature development. All models include daily communication and weekly progress reports.' } },
+        { '@type': 'Question', name: 'Can you migrate our existing website to WordPress?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We handle WordPress migrations from any source - Wix, Squarespace, Joomla, Drupal, Magento, Shopify, or a custom-built site. The migration process covers content migration (posts, pages, media, metadata), URL structure preservation with 301 redirects, SEO tag migration, user data transfer, and a staging-to-production cutover with zero downtime. We provide a post-migration audit to verify content integrity and search ranking continuity.' } },
       ],
     },
   ],
@@ -44,15 +44,15 @@ const SCHEMA = {
 
 /* ─── Page data ──────────────────────────────────────────────── */
 const SERVICES = [
-  { n: '01', title: 'Custom WordPress Theme Development', desc: 'Pixel-perfect custom WordPress themes built from scratch — responsive, accessible, and optimised for Core Web Vitals. We also convert Figma, Adobe XD, and PSD designs to WordPress themes with clean, maintainable PHP and CSS.' },
-  { n: '02', title: 'WordPress Plugin Development', desc: 'Custom plugin development following WordPress coding standards — bespoke functionality, REST API endpoints, Gutenberg blocks, admin dashboards, and secure database interactions. GPL-licensed and update-ready.', feat: true },
+  { n: '01', title: 'Custom WordPress Theme Development', desc: 'Pixel-perfect custom WordPress themes built from scratch - responsive, accessible, and optimised for Core Web Vitals. We also convert Figma, Adobe XD, and PSD designs to WordPress themes with clean, maintainable PHP and CSS.' },
+  { n: '02', title: 'WordPress Plugin Development', desc: 'Custom plugin development following WordPress coding standards - bespoke functionality, REST API endpoints, Gutenberg blocks, admin dashboards, and secure database interactions. GPL-licensed and update-ready.', feat: true },
   { n: '03', title: 'WooCommerce Development', desc: 'Full-featured WooCommerce stores with custom product types, payment gateways, subscription management, multi-currency, multi-language, and performance optimisation for high-traffic catalogues.' },
-  { n: '04', title: 'Headless WordPress & REST API', desc: 'Decouple WordPress as a headless CMS using the WP REST API or WPGraphQL, paired with a React.js or Next.js frontend — delivering editorial flexibility with modern front-end performance and SEO.' },
-  { n: '05', title: 'Gutenberg Block Development', desc: 'Custom Gutenberg blocks built with React and the WordPress Block API — reusable, editor-friendly content components that give your editorial team fine-grained layout control without code.' },
-  { n: '06', title: 'WordPress Multisite & Enterprise', desc: 'WordPress Multisite network setup and management for agency networks, university portals, franchise chains, and enterprise content hubs — with centralised user management, shared plugins, and per-site customisation.' },
+  { n: '04', title: 'Headless WordPress & REST API', desc: 'Decouple WordPress as a headless CMS using the WP REST API or WPGraphQL, paired with a React.js or Next.js frontend - delivering editorial flexibility with modern front-end performance and SEO.' },
+  { n: '05', title: 'Gutenberg Block Development', desc: 'Custom Gutenberg blocks built with React and the WordPress Block API - reusable, editor-friendly content components that give your editorial team fine-grained layout control without code.' },
+  { n: '06', title: 'WordPress Multisite & Enterprise', desc: 'WordPress Multisite network setup and management for agency networks, university portals, franchise chains, and enterprise content hubs - with centralised user management, shared plugins, and per-site customisation.' },
   { n: '07', title: 'WordPress Migration & Redesign', desc: 'Migrate from Wix, Squarespace, Joomla, Drupal, or any legacy CMS to WordPress with full content migration, URL structure preservation, 301 redirects, SEO metadata continuity, and zero-downtime cutover.' },
-  { n: '08', title: 'Performance & Core Web Vitals Optimisation', desc: 'Systematic WordPress performance audits and optimisation — image compression, lazy loading, database query optimisation, caching (Redis, Memcached, WP Rocket), CDN configuration, and LCP/CLS/FID improvements.' },
-  { n: '09', title: 'WordPress Security & Hardening', desc: 'WordPress security audits, malware removal, and hardening — file permission hardening, login protection (2FA, CAPTCHA), WAF configuration, vulnerability patching, SSL enforcement, and security monitoring setup.' },
+  { n: '08', title: 'Performance & Core Web Vitals Optimisation', desc: 'Systematic WordPress performance audits and optimisation - image compression, lazy loading, database query optimisation, caching (Redis, Memcached, WP Rocket), CDN configuration, and LCP/CLS/FID improvements.' },
+  { n: '09', title: 'WordPress Security & Hardening', desc: 'WordPress security audits, malware removal, and hardening - file permission hardening, login protection (2FA, CAPTCHA), WAF configuration, vulnerability patching, SSL enforcement, and security monitoring setup.' },
   { n: '10', title: 'WordPress Maintenance & Support', desc: 'Ongoing WordPress maintenance plans covering core, theme, and plugin updates, daily backups, uptime monitoring, security scanning, monthly performance reports, and developer support hours for content changes.' },
 ];
 
@@ -108,10 +108,10 @@ const ENGAGEMENT_MODELS = [
     feat: true,
     icon: 'M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z',
     headline: 'Your WordPress expert, full-time, exclusively yours.',
-    desc: 'A senior WordPress developer working full-time on your project — same timezone overlap, daily standups, direct Slack or Teams access, and weekly sprint delivery. At a fraction of the cost of a UK/US hire.',
+    desc: 'A senior WordPress developer working full-time on your project - same timezone overlap, daily standups, direct Slack or Teams access, and weekly sprint delivery. At a fraction of the cost of a UK/US hire.',
     bestFor: ['Ongoing WordPress product or site development', 'Extending or replacing an in-house team', 'WooCommerce store with continuous feature releases', 'Long-term agency white-label WordPress partnership'],
     process: 'Profile match → 1-hr skills call → Onboard in 48hrs → Weekly sprints',
-    timeline: 'Month-to-month — scale or pause anytime',
+    timeline: 'Month-to-month - scale or pause anytime',
   },
   {
     id: 'fixed',
@@ -120,7 +120,7 @@ const ENGAGEMENT_MODELS = [
     badgeColor: '#0073aa',
     icon: 'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z',
     headline: 'Agreed price. Agreed scope. On-time delivery.',
-    desc: 'Ideal for well-defined WordPress projects — a custom theme build, a plugin, a WooCommerce store, or a migration. We agree on deliverables, price, and timeline upfront with milestone-based releases and full transparency.',
+    desc: 'Ideal for well-defined WordPress projects - a custom theme build, a plugin, a WooCommerce store, or a migration. We agree on deliverables, price, and timeline upfront with milestone-based releases and full transparency.',
     bestFor: ['Custom WordPress theme from Figma/XD', 'Bespoke plugin development', 'WooCommerce store setup and launch', 'CMS migration to WordPress'],
     process: 'Detailed spec → Fixed quote → Milestone delivery → Sign-off',
     timeline: 'Best for projects 4–16 weeks',
@@ -135,15 +135,15 @@ const ENGAGEMENT_MODELS = [
     desc: 'Billed on actual hours. Best for WordPress audits, bug fixes, performance work, or iterative feature development where scope is not fully defined upfront. Transparent timesheets shared weekly with no minimum commitment.',
     bestFor: ['WordPress performance or security audit', 'Bug fix or emergency support', 'Gutenberg block or plugin feature addition', 'Exploratory R&D or proof-of-concept'],
     process: 'Brief → Start within 24hrs → Weekly timesheets → Pay as you go',
-    timeline: 'No minimum — start and stop anytime',
+    timeline: 'No minimum - start and stop anytime',
   },
 ];
 
 const PROCESS_STEPS = [
-  { num: '01', title: 'Share Your Requirements', desc: 'Tell us what you need — a theme, plugin, WooCommerce store, migration, or ongoing WordPress support. We review your brief, existing site (if any), and technical constraints before recommending the right developer profile.' },
+  { num: '01', title: 'Share Your Requirements', desc: 'Tell us what you need - a theme, plugin, WooCommerce store, migration, or ongoing WordPress support. We review your brief, existing site (if any), and technical constraints before recommending the right developer profile.' },
   { num: '02', title: 'Developer Matching in 24 Hours', desc: 'We match your requirements against our vetted pool of WordPress developers and present 1–3 shortlisted profiles with skills, portfolio samples, and experience summaries relevant to your specific project needs.' },
-  { num: '03', title: 'Skills Alignment Call', desc: 'A 30–60 minute technical call between you and the shortlisted developer — covering your stack, coding approach, plugin/theme philosophy, and working style. No commitment required until you are satisfied with the fit.' },
-  { num: '04', title: 'Onboarding in 48 Hours', desc: 'Once you approve, the developer is onboarded to your project within 48 hours — access to your repo, staging environment, project management tool (Jira, Linear, Asana), and communication channels (Slack, Teams).' },
+  { num: '03', title: 'Skills Alignment Call', desc: 'A 30–60 minute technical call between you and the shortlisted developer - covering your stack, coding approach, plugin/theme philosophy, and working style. No commitment required until you are satisfied with the fit.' },
+  { num: '04', title: 'Onboarding in 48 Hours', desc: 'Once you approve, the developer is onboarded to your project within 48 hours - access to your repo, staging environment, project management tool (Jira, Linear, Asana), and communication channels (Slack, Teams).' },
   { num: '05', title: 'Agile Sprint Delivery', desc: 'Development proceeds in 1–2 week sprint cycles with sprint demos, code reviews, staging deployments for your review, and a shared Kanban or sprint board. You maintain full visibility and control throughout.' },
   { num: '06', title: 'Ongoing Support & Scaling', desc: 'After launch, your developer continues on maintenance, new features, or performance work. You can scale the team up with additional developers or specialists, or hand off to your in-house team with full code documentation.' },
 ];
@@ -158,19 +158,19 @@ const TESTIMONIALS = [
     name: 'Rachel M.', role: 'eCommerce Director, Retail Brand (US)', init: 'RM', bg: '#4a1942', feat: true,
   },
   {
-    text: "I needed a headless WordPress setup with Next.js for our media publication — fast editorial workflow and sub-second page loads. 1Solutions delivered the WPGraphQL backend and Next.js frontend in 10 weeks. Our Core Web Vitals went from red to green across the board.",
+    text: "I needed a headless WordPress setup with Next.js for our media publication - fast editorial workflow and sub-second page loads. 1Solutions delivered the WPGraphQL backend and Next.js frontend in 10 weeks. Our Core Web Vitals went from red to green across the board.",
     name: 'Arjun S.', role: 'Head of Product, Online Publisher (AU)', init: 'AS', bg: '#1a4a7a',
   },
 ];
 
 const WHY_CARDS = [
   { title: '15+ Years WordPress Expertise', desc: 'We have been building WordPress sites, themes, and plugins since WordPress 2.x. Our developers have seen every version, every major architecture shift, and know the platform inside out.' },
-  { title: 'Senior, Vetted Developers Only', desc: 'Every developer goes through a multi-stage technical vetting process — PHP coding test, WordPress architecture review, plugin quality audit, and a live problem-solving session. No juniors placed on client projects without supervision.' },
-  { title: 'WordPress Coding Standards Compliant', desc: 'All code follows official WordPress Coding Standards for PHP, JavaScript, HTML, and CSS — ensuring your codebase is maintainable, reviewable, and compatible with the WordPress update lifecycle.' },
+  { title: 'Senior, Vetted Developers Only', desc: 'Every developer goes through a multi-stage technical vetting process - PHP coding test, WordPress architecture review, plugin quality audit, and a live problem-solving session. No juniors placed on client projects without supervision.' },
+  { title: 'WordPress Coding Standards Compliant', desc: 'All code follows official WordPress Coding Standards for PHP, JavaScript, HTML, and CSS - ensuring your codebase is maintainable, reviewable, and compatible with the WordPress update lifecycle.' },
   { title: 'WooCommerce & Headless Specialists', desc: 'Beyond standard WordPress, we have specialists in WooCommerce (custom product types, payment gateways, subscriptions) and headless WordPress architectures using WPGraphQL, Next.js, and Faust.js.' },
-  { title: 'Full IP Ownership, Always', desc: 'All code written by our developers is 100% your intellectual property from day one. We never retain rights to your theme, plugin, or site — and we hand over full source code and documentation at project end.' },
+  { title: 'Full IP Ownership, Always', desc: 'All code written by our developers is 100% your intellectual property from day one. We never retain rights to your theme, plugin, or site - and we hand over full source code and documentation at project end.' },
   { title: 'Transparent Communication', desc: 'Daily standups, weekly sprint demos, shared task boards (Jira, Asana, Linear), and direct developer access on Slack or Teams. You always know what your developer is working on and what ships next.' },
-  { title: 'US / UK / AU Timezone Coverage', desc: 'Our WordPress developers offer 4–8 hours of daily overlap with US, UK, and Australian business hours. No chasing messages across timezones — real-time collaboration during your working day.' },
+  { title: 'US / UK / AU Timezone Coverage', desc: 'Our WordPress developers offer 4–8 hours of daily overlap with US, UK, and Australian business hours. No chasing messages across timezones - real-time collaboration during your working day.' },
   { title: 'No Lock-in, No Minimum Contracts', desc: 'Month-to-month dedicated developers, fixed-price projects with milestone releases, and hourly work with no minimums. You can scale, pause, or stop engagement at any time without penalty.' },
 ];
 
@@ -179,9 +179,9 @@ const FAQS = [
   { q: 'Do your WordPress developers have WooCommerce expertise?', a: 'Yes. Our WordPress developers have deep WooCommerce experience including custom theme development, product catalogue architecture, payment gateway integration (Stripe, PayPal, Razorpay, Authorize.net), subscription management via WooCommerce Subscriptions, multi-currency and multi-language stores, and performance optimisation for high-traffic WooCommerce sites. We have delivered WooCommerce stores processing over $10M in annual GMV.' },
   { q: 'Can your developers build custom WordPress plugins?', a: 'Yes. Custom WordPress plugin development is a core specialisation. Our developers build plugins from scratch following WordPress coding standards, with proper hook and filter architecture, custom REST API endpoints, admin dashboard UI, and plugin update mechanisms. We also develop custom Gutenberg blocks (React-based), custom widgets, and shortcodes. All plugins are tested for compatibility with major WordPress versions and popular themes.' },
   { q: 'Do you develop headless WordPress with React or Next.js?', a: 'Yes. We develop headless WordPress architectures using the WordPress REST API and WPGraphQL as the content backend, paired with a React.js or Next.js frontend for a modern, high-performance JAMstack experience. This is popular for publishers, eCommerce brands, and enterprise sites that need both editorial flexibility and front-end performance. We handle the full stack including ISR/SSG configuration, media CDN setup, and WordPress preview mode.' },
-  { q: 'What engagement models do you offer for hiring WordPress developers?', a: 'We offer three models. Dedicated Developer: a full-time WordPress expert working exclusively on your project, billed monthly — ideal for ongoing development. Fixed Price: scoped deliverables at an agreed cost — ideal for a theme build, plugin, or migration. Hourly / Time and Material: billed on actual hours with weekly timesheets — ideal for audits, bug fixes, or sprint-based feature development. All models include daily communication and weekly progress reports.' },
-  { q: 'Can you migrate our existing website to WordPress?', a: 'Yes. We handle WordPress migrations from any source — Wix, Squarespace, Joomla, Drupal, Magento, Shopify, or a custom-built site. The process covers content migration (posts, pages, media, metadata), URL structure preservation with 301 redirects, SEO tag migration, user data transfer, and a staging-to-production cutover with zero downtime. We also provide a post-migration audit to verify content integrity and search ranking continuity.' },
-  { q: 'Do your developers work with page builders like Elementor or Divi?', a: 'Yes — our developers are experienced with Elementor Pro, Divi, Beaver Builder, Bricks Builder, and the native WordPress block editor (Gutenberg). For most client projects we recommend custom themes with the block editor or a lightweight framework for long-term maintainability, but we fully support page builder-based sites where your team requires it. We can also convert page builder sites to custom block-based themes.' },
+  { q: 'What engagement models do you offer for hiring WordPress developers?', a: 'We offer three models. Dedicated Developer: a full-time WordPress expert working exclusively on your project, billed monthly - ideal for ongoing development. Fixed Price: scoped deliverables at an agreed cost - ideal for a theme build, plugin, or migration. Hourly / Time and Material: billed on actual hours with weekly timesheets - ideal for audits, bug fixes, or sprint-based feature development. All models include daily communication and weekly progress reports.' },
+  { q: 'Can you migrate our existing website to WordPress?', a: 'Yes. We handle WordPress migrations from any source - Wix, Squarespace, Joomla, Drupal, Magento, Shopify, or a custom-built site. The process covers content migration (posts, pages, media, metadata), URL structure preservation with 301 redirects, SEO tag migration, user data transfer, and a staging-to-production cutover with zero downtime. We also provide a post-migration audit to verify content integrity and search ranking continuity.' },
+  { q: 'Do your developers work with page builders like Elementor or Divi?', a: 'Yes - our developers are experienced with Elementor Pro, Divi, Beaver Builder, Bricks Builder, and the native WordPress block editor (Gutenberg). For most client projects we recommend custom themes with the block editor or a lightweight framework for long-term maintainability, but we fully support page builder-based sites where your team requires it. We can also convert page builder sites to custom block-based themes.' },
   { q: 'Do you provide WordPress maintenance and support after project completion?', a: 'Yes. All project deliveries include a 30-day post-launch support period. We also offer ongoing WordPress maintenance plans covering core, theme, and plugin updates, daily automated backups, uptime monitoring, security scanning, monthly performance reports, and developer support hours for content updates and minor feature additions. Support plans start with a defined monthly hour bank and SLA response time.' },
 ];
 
@@ -299,7 +299,7 @@ export default function HireWordPressDeveloper() {
     <>
       <Head>
         <title>Hire WordPress Developer | Dedicated WP Expert | 1Solutions</title>
-        <meta name="description" content="Hire expert WordPress developers — custom themes, plugins, WooCommerce & headless WP. Dedicated, fixed-price or hourly. Ready in 48 hours." />
+        <meta name="description" content="Hire expert WordPress developers - custom themes, plugins, WooCommerce & headless WP. Dedicated, fixed-price or hourly. Ready in 48 hours." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-wordpress-developer/" />
         <meta property="og:title" content="Hire WordPress Developer | 1Solutions" />
         <meta property="og:description" content="Hire senior WordPress developers for custom theme, plugin, WooCommerce, headless WP & migration projects. 15+ years | 200+ WP projects | Ready in 48 hours." />
@@ -577,8 +577,8 @@ export default function HireWordPressDeveloper() {
         {/* ── HERO ── */}
         <section className="hw-hero">
           <span className="hw-eyebrow">Hire WordPress Developer</span>
-          <h1>Hire Expert WordPress Developers — Vetted, Senior &amp; Ready in 48 Hours</h1>
-          <p className="hw-hero-desc">Hire dedicated WordPress developers for custom theme and plugin development, WooCommerce stores, headless WordPress with Next.js, Gutenberg block development, migrations, and ongoing maintenance — on a dedicated, fixed-price, or hourly basis. 15+ years of WordPress expertise across the US, UK, and Australia.</p>
+          <h1>Hire Expert WordPress Developers - Vetted, Senior &amp; Ready in 48 Hours</h1>
+          <p className="hw-hero-desc">Hire dedicated WordPress developers for custom theme and plugin development, WooCommerce stores, headless WordPress with Next.js, Gutenberg block development, migrations, and ongoing maintenance - on a dedicated, fixed-price, or hourly basis. 15+ years of WordPress expertise across the US, UK, and Australia.</p>
           <div className="hw-trust-row">
             {['Senior, Vetted Developers','WordPress Coding Standards','Ready in 48 Hours','Full IP Ownership','No Lock-in Contracts'].map(b => (
               <div className="hw-badge" key={b}><span className="hw-badge-dot" />{b}</div>
@@ -629,7 +629,7 @@ export default function HireWordPressDeveloper() {
             <div className={`hw-s-reveal${visibleSections.has('svc') ? ' hw-revealed' : ''}`} ref={el => { sectionRefs.current['svc'] = el; }}>
               <span className="hw-s-eyebrow">What Our WordPress Developers Build</span>
               <h2 id="hw-svc-heading" className="hw-s-title">WordPress Development Services We Deliver</h2>
-              <p className="hw-s-desc" style={{ maxWidth: 720 }}>From custom themes and bespoke plugins to WooCommerce stores, headless WordPress, Gutenberg blocks, and full CMS migrations — our developers cover every aspect of the WordPress platform.</p>
+              <p className="hw-s-desc" style={{ maxWidth: 720 }}>From custom themes and bespoke plugins to WooCommerce stores, headless WordPress, Gutenberg blocks, and full CMS migrations - our developers cover every aspect of the WordPress platform.</p>
             </div>
             <div className="hw-svc-grid" ref={svcGridRef}>
               {visibleServices.map((s, i) => (
@@ -655,8 +655,8 @@ export default function HireWordPressDeveloper() {
           <div className="hw-inner">
             <div className={`hw-s-reveal${visibleSections.has('stk') ? ' hw-revealed' : ''}`} ref={el => { sectionRefs.current['stk'] = el; }}>
               <span className="hw-s-eyebrow">The WordPress Stack We Work With</span>
-              <h2 id="hw-stack-heading" className="hw-s-title">WordPress Technology — Core to Cloud</h2>
-              <p className="hw-s-desc" style={{ maxWidth: 680 }}>Our WordPress developers are proficient across the full platform stack — from PHP 8.x core and REST API to React-based Gutenberg blocks, headless Next.js frontends, and enterprise hosting infrastructure.</p>
+              <h2 id="hw-stack-heading" className="hw-s-title">WordPress Technology - Core to Cloud</h2>
+              <p className="hw-s-desc" style={{ maxWidth: 680 }}>Our WordPress developers are proficient across the full platform stack - from PHP 8.x core and REST API to React-based Gutenberg blocks, headless Next.js frontends, and enterprise hosting infrastructure.</p>
             </div>
             <div className="hw-stack-grid" ref={stackGridRef}>
               {TECH_STACK.map((grp, i) => (
@@ -679,7 +679,7 @@ export default function HireWordPressDeveloper() {
             <div className={`hw-s-reveal${visibleSections.has('eng') ? ' hw-revealed' : ''}`} ref={el => { sectionRefs.current['eng'] = el; }}>
               <span className="hw-s-eyebrow">How to Hire Our WordPress Developers</span>
               <h2 id="hw-eng-heading" className="hw-s-title">Flexible Hiring Models for Every Project</h2>
-              <p className="hw-s-desc" style={{ maxWidth: 680 }}>Whether you need a full-time dedicated WordPress developer, a fixed-price project delivery, or hourly support for bug fixes and audits — we have a hiring model that fits your budget and timeline.</p>
+              <p className="hw-s-desc" style={{ maxWidth: 680 }}>Whether you need a full-time dedicated WordPress developer, a fixed-price project delivery, or hourly support for bug fixes and audits - we have a hiring model that fits your budget and timeline.</p>
             </div>
             <div className="hw-eng-grid" ref={engGridRef}>
               {ENGAGEMENT_MODELS.map((m, i) => (
@@ -712,7 +712,7 @@ export default function HireWordPressDeveloper() {
             <div className={`hw-s-reveal${visibleSections.has('proc') ? ' hw-revealed' : ''}`} ref={el => { sectionRefs.current['proc'] = el; }}>
               <span className="hw-s-eyebrow">How Hiring Works</span>
               <h2 id="hw-proc-heading" className="hw-s-title">Hire a WordPress Developer in 6 Simple Steps</h2>
-              <p className="hw-s-desc">From sharing your requirements to your first sprint delivery — our hiring process is designed to get you working with the right WordPress developer as fast as possible, without compromise on quality.</p>
+              <p className="hw-s-desc">From sharing your requirements to your first sprint delivery - our hiring process is designed to get you working with the right WordPress developer as fast as possible, without compromise on quality.</p>
             </div>
             <div className="hw-psteps">
               {PROCESS_STEPS.map((step, i) => (
@@ -764,7 +764,7 @@ export default function HireWordPressDeveloper() {
             <div className={`hw-s-reveal${visibleSections.has('wy') ? ' hw-revealed' : ''}`} ref={el => { sectionRefs.current['wy'] = el; }}>
               <span className="hw-s-eyebrow">Why 1Solutions</span>
               <h2 id="hw-wy-heading" className="hw-s-title">Why Hire WordPress Developers from 1Solutions</h2>
-              <p className="hw-s-desc" style={{ maxWidth: 680 }}>Senior, vetted WordPress developers with 15+ years of platform experience — delivering clean, standards-compliant code, transparent communication, and full IP ownership on every engagement.</p>
+              <p className="hw-s-desc" style={{ maxWidth: 680 }}>Senior, vetted WordPress developers with 15+ years of platform experience - delivering clean, standards-compliant code, transparent communication, and full IP ownership on every engagement.</p>
             </div>
             <div className="hw-why-grid" ref={whyGridRef}>
               {WHY_CARDS.map((c, i) => (
@@ -783,14 +783,14 @@ export default function HireWordPressDeveloper() {
           <div className="hw-contact-grid">
             <div>
               <h2 id="hw-contact-heading" className="hw-ctitle">Hire a WordPress Developer Today</h2>
-              <p className="hw-cdesc">Share your requirements and we will match you with the right WordPress developer within 24 hours. A 30-minute skills alignment call follows — no commitment until you are satisfied with the fit.</p>
+              <p className="hw-cdesc">Share your requirements and we will match you with the right WordPress developer within 24 hours. A 30-minute skills alignment call follows - no commitment until you are satisfied with the fit.</p>
               <div className="hw-cbenefits">
                 {[
                   ['✓', 'Developer matched and profiled within 24 hours of your enquiry'],
-                  ['✓', '30-minute free technical skills alignment call — no commitment required'],
+                  ['✓', '30-minute free technical skills alignment call - no commitment required'],
                   ['✓', 'Developer onboarded and writing code within 48 hours of approval'],
-                  ['✓', 'NDA available on request — your codebase and requirements protected'],
-                  ['✓', 'Month-to-month engagement — pause or stop without penalty'],
+                  ['✓', 'NDA available on request - your codebase and requirements protected'],
+                  ['✓', 'Month-to-month engagement - pause or stop without penalty'],
                 ].map(([icon, text]) => (
                   <div className="hw-cbenefit" key={text}>
                     <span className="hw-cbenefit-icon">{icon}</span>
@@ -841,7 +841,7 @@ export default function HireWordPressDeveloper() {
                 </div>
                 <div className="hw-fg full">
                   <label htmlFor="hw-msg">Project Brief *</label>
-                  <textarea name="sf-message" id="hw-msg" rows={4} placeholder="Describe what you need built — existing site URL (if any), plugins or theme in use, integrations required, number of developers needed, and timeline..." required />
+                  <textarea name="sf-message" id="hw-msg" rows={4} placeholder="Describe what you need built - existing site URL (if any), plugins or theme in use, integrations required, number of developers needed, and timeline..." required />
                 </div>
                 <div className="hw-consent">
                   <input id="hw-consent" type="checkbox" required />
@@ -858,7 +858,7 @@ export default function HireWordPressDeveloper() {
         <section className="hw-faq" aria-labelledby="hw-faq-heading">
           <div className="hw-inner" style={{ maxWidth: 860 }}>
             <span className="hw-s-eyebrow">FAQ</span>
-            <h2 id="hw-faq-heading">Hiring WordPress Developers — Frequently Asked Questions</h2>
+            <h2 id="hw-faq-heading">Hiring WordPress Developers - Frequently Asked Questions</h2>
             <p className="hw-faq-sub">Everything you need to know about hiring expert WordPress developers from 1Solutions.</p>
             <div className="hw-faq-list">
               {FAQS.map((item, i) => (

@@ -37,7 +37,7 @@ We reserve the right to terminate your access to the Site immediately if you vio
   {
     id: 'ip',
     title: '4. Intellectual Property',
-    body: `All content on this Site — including but not limited to text, graphics, logos, icons, images, audio clips, and software — is the property of 1Solutions or its content suppliers and is protected by applicable copyright, trademark, and other intellectual property laws.
+    body: `All content on this Site - including but not limited to text, graphics, logos, icons, images, audio clips, and software - is the property of 1Solutions or its content suppliers and is protected by applicable copyright, trademark, and other intellectual property laws.
 
 You may view and print pages from the Site for your own personal, non-commercial use, provided that you retain all copyright and other proprietary notices. You may not republish, reproduce, duplicate, copy, sell, or otherwise exploit any material from the Site without our express written permission.
 
@@ -46,7 +46,7 @@ The 1Solutions name, logo, and all related names, logos, product and service nam
   {
     id: 'submissions',
     title: '5. User Submissions',
-    body: `Any material, information, or feedback you submit through the Site — including via our contact form or job application form — is provided voluntarily. By submitting such content, you grant 1Solutions a non-exclusive, royalty-free, perpetual right to use, reproduce, modify, and display that content for the purpose of responding to your enquiry or processing your application.
+    body: `Any material, information, or feedback you submit through the Site - including via our contact form or job application form - is provided voluntarily. By submitting such content, you grant 1Solutions a non-exclusive, royalty-free, perpetual right to use, reproduce, modify, and display that content for the purpose of responding to your enquiry or processing your application.
 
 You represent that any submission you make is accurate, complete, and does not infringe the intellectual property rights of any third party.`,
   },
@@ -117,7 +117,7 @@ export default function TermsOfUse() {
     <>
       <Head>
         <title>Terms of Use | 1Solutions</title>
-        <meta name="description" content="Terms of Use for 1Solutions (www.1solutions.biz) — the rules governing your use of our website and services." />
+        <meta name="description" content="Terms of Use for 1Solutions (www.1solutions.biz) - the rules governing your use of our website and services." />
         <link rel="canonical" href="https://www.1solutions.biz/terms-of-use/" />
         <style>{`
           .tu-page { font-family:'Inter',sans-serif; color:#1a1a2e; background:#f8fafc; }

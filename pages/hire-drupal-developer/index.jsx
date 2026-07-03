@@ -27,15 +27,15 @@ const SKILLS = [
   'PHPUnit Testing', 'Composer & Drush', 'Headless / Decoupled Drupal',
 ];
 const MODELS = [
-  { title: 'Dedicated Hire', desc: 'A Drupal specialist committed to your project full-time — 8 hrs/day, 5 days/week.', icon: '👤' },
-  { title: 'Part-Time Hire', desc: '4 hrs/day engagement — ideal for ongoing module development or site maintenance.', icon: '⏰' },
-  { title: 'Hourly Hire',    desc: 'Flexible hourly billing — perfect for audits, migrations, or one-off deliverables.', icon: '🕐' },
+  { title: 'Dedicated Hire', desc: 'A Drupal specialist committed to your project full-time - 8 hrs/day, 5 days/week.', icon: '👤' },
+  { title: 'Part-Time Hire', desc: '4 hrs/day engagement - ideal for ongoing module development or site maintenance.', icon: '⏰' },
+  { title: 'Hourly Hire',    desc: 'Flexible hourly billing - perfect for audits, migrations, or one-off deliverables.', icon: '🕐' },
 ];
 const WHY = [
-  { h: 'Deep Drupal Expertise', b: 'Our developers have built enterprise Drupal platforms for government, media, and healthcare organisations — not just simple blogs.' },
+  { h: 'Deep Drupal Expertise', b: 'Our developers have built enterprise Drupal platforms for government, media, and healthcare organisations - not just simple blogs.' },
   { h: 'Pre-Vetted Specialists', b: 'Every Drupal developer is assessed on module architecture, theming best practices, and performance optimisation before joining.' },
   { h: 'Fast Engagement Start', b: 'Receive matched profiles within 48 hours. First code committed within 7 business days of signing.' },
-  { h: 'Clear Communication', b: 'Daily standups, shared task boards, and weekly progress reports — always know what is happening.' },
+  { h: 'Clear Communication', b: 'Daily standups, shared task boards, and weekly progress reports - always know what is happening.' },
   { h: 'IP & NDA Protection', b: 'Contracts include comprehensive NDA and IP assignment. Your custom modules and site configs remain yours.' },
   { h: 'Flexible Scaling', b: 'Ramp up during large builds and scale back during quiet phases with 2-week notice.' },
 ];
@@ -166,7 +166,7 @@ export default function HireDrupalDeveloper() {
       <section className="hdd-sec" ref={skR}>
         <div className="hdd-wrap">
           <h2 className="hdd-sec-title">Skills &amp; Tech Stack</h2>
-          <p className="hdd-sec-sub">Our Drupal developers cover the full platform — from custom module architecture to performance tuning and cloud hosting.</p>
+          <p className="hdd-sec-sub">Our Drupal developers cover the full platform - from custom module architecture to performance tuning and cloud hosting.</p>
           <div className="hdd-skills">
             {SKILLS.map((s, i) => (
               <span key={s} className={`hdd-skill${skV ? ' hdd-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>
@@ -178,7 +178,7 @@ export default function HireDrupalDeveloper() {
       <section className="hdd-sec hdd-sec-alt" ref={enR}>
         <div className="hdd-wrap">
           <h2 className="hdd-sec-title">Flexible Engagement Models</h2>
-          <p className="hdd-sec-sub">Choose full-time, part-time, or hourly — scale as your project evolves.</p>
+          <p className="hdd-sec-sub">Choose full-time, part-time, or hourly - scale as your project evolves.</p>
           <div className="hdd-models">
             {MODELS.map((m, i) => (
               <div key={m.title} className={`hdd-model${enV ? ' hdd-in' : ''}`} style={{ transitionDelay: `${i * 120}ms` }}>
@@ -194,7 +194,7 @@ export default function HireDrupalDeveloper() {
       <section className="hdd-sec" ref={whR}>
         <div className="hdd-wrap">
           <h2 className="hdd-sec-title">Why Hire Drupal Developers from 1Solutions?</h2>
-          <p className="hdd-sec-sub">Our Drupal talent has built platforms used by millions — governments, global media brands, and enterprise SaaS.</p>
+          <p className="hdd-sec-sub">Our Drupal talent has built platforms used by millions - governments, global media brands, and enterprise SaaS.</p>
           <div className="hdd-why-grid">
             {WHY.map((w, i) => (
               <div key={w.h} className={`hdd-why-item${whV ? ' hdd-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}>
@@ -218,7 +218,7 @@ export default function HireDrupalDeveloper() {
       <section className="hdd-sec hdd-sec-alt" ref={prR}>
         <div className="hdd-wrap">
           <h2 className="hdd-sec-title">Hire in 4 Simple Steps</h2>
-          <p className="hdd-sec-sub">From brief to first commit — in under two weeks.</p>
+          <p className="hdd-sec-sub">From brief to first commit - in under two weeks.</p>
           <div className="hdd-process">
             {PROCESS.map((p, i) => (
               <div key={p.n} className={`hdd-step${prV ? ' hdd-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}>

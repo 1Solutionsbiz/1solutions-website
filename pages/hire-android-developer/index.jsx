@@ -27,15 +27,15 @@ const SKILLS = [
   'In-App Purchases', 'Push Notifications', 'CI/CD (Fastlane)',
 ];
 const MODELS = [
-  { title: 'Dedicated Hire', desc: 'Full-time Android developer working exclusively on your project — 8 hrs/day, 5 days/week.', icon: '👤' },
+  { title: 'Dedicated Hire', desc: 'Full-time Android developer working exclusively on your project - 8 hrs/day, 5 days/week.', icon: '👤' },
   { title: 'Part-Time Hire', desc: 'Flexible 4 hrs/day engagement, ideal for ongoing feature additions or maintenance.', icon: '⏰' },
-  { title: 'Hourly Hire',    desc: 'Pay only for hours logged — perfect for audits, bug-fixes, or short deliverables.', icon: '🕐' },
+  { title: 'Hourly Hire',    desc: 'Pay only for hours logged - perfect for audits, bug-fixes, or short deliverables.', icon: '🕐' },
 ];
 const WHY = [
   { h: 'Pre-Vetted Developers', b: 'Every candidate passes a 3-stage technical screen covering Kotlin, architecture patterns, and live coding.' },
   { h: 'Fast Onboarding', b: 'Developers are ready to commit code within 7 business days of engagement confirmation.' },
   { h: 'Transparent Communication', b: 'Daily standups, Slack integration, and weekly delivery reports keep you fully in the loop.' },
-  { h: 'IP & NDA Protection', b: 'Strict NDA and IP assignment agreements signed before work begins — your codebase stays yours.' },
+  { h: 'IP & NDA Protection', b: 'Strict NDA and IP assignment agreements signed before work begins - your codebase stays yours.' },
   { h: 'Agile Delivery', b: '2-week sprints with demos, retrospectives, and clear velocity metrics throughout the project.' },
   { h: 'Zero Lock-in', b: 'Month-to-month contracts. Scale the team up, down, or disengage with 30-day notice.' },
 ];
@@ -158,7 +158,7 @@ export default function HireAndroidDeveloper() {
       {/* Hero */}
       <section className="had-hero">
         <h1>Hire Android Developers<br/>Built for Your Product</h1>
-        <p>Pre-vetted Kotlin &amp; Java experts available for dedicated, part-time, or hourly engagements. Matched within 48 hours — onboarded in 7 days.</p>
+        <p>Pre-vetted Kotlin &amp; Java experts available for dedicated, part-time, or hourly engagements. Matched within 48 hours - onboarded in 7 days.</p>
         <div className="had-hero-btns">
           <Link href="/contact-us" className="had-btn-primary">Hire an Android Developer →</Link>
           <Link href="/portfolio" className="had-btn-outline">View Portfolio</Link>
@@ -169,7 +169,7 @@ export default function HireAndroidDeveloper() {
       <section className="had-sec" ref={skR}>
         <div className="had-wrap">
           <h2 className="had-sec-title">Skills &amp; Tech Stack</h2>
-          <p className="had-sec-sub">Our Android developers are proficient across the full native stack — from architecture patterns to deployment pipelines.</p>
+          <p className="had-sec-sub">Our Android developers are proficient across the full native stack - from architecture patterns to deployment pipelines.</p>
           <div className="had-skills">
             {SKILLS.map((s, i) => (
               <span key={s} className={`had-skill${skV ? ' had-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>
@@ -182,7 +182,7 @@ export default function HireAndroidDeveloper() {
       <section className="had-sec had-sec-alt" ref={enR}>
         <div className="had-wrap">
           <h2 className="had-sec-title">Flexible Engagement Models</h2>
-          <p className="had-sec-sub">Choose the model that fits your budget and timeline — switch or scale anytime.</p>
+          <p className="had-sec-sub">Choose the model that fits your budget and timeline - switch or scale anytime.</p>
           <div className="had-models">
             {MODELS.map((m, i) => (
               <div key={m.title} className={`had-model${enV ? ' had-in' : ''}`} style={{ transitionDelay: `${i * 120}ms` }}>
@@ -199,7 +199,7 @@ export default function HireAndroidDeveloper() {
       <section className="had-sec" ref={whR}>
         <div className="had-wrap">
           <h2 className="had-sec-title">Why Hire Android Developers from 1Solutions?</h2>
-          <p className="had-sec-sub">We go beyond CVs — every developer is screened for code quality, communication, and delivery discipline.</p>
+          <p className="had-sec-sub">We go beyond CVs - every developer is screened for code quality, communication, and delivery discipline.</p>
           <div className="had-why-grid">
             {WHY.map((w, i) => (
               <div key={w.h} className={`had-why-item${whV ? ' had-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}>
@@ -225,7 +225,7 @@ export default function HireAndroidDeveloper() {
       <section className="had-sec had-sec-alt" ref={prR}>
         <div className="had-wrap">
           <h2 className="had-sec-title">How to Hire in 4 Simple Steps</h2>
-          <p className="had-sec-sub">From requirement brief to first commit — in under two weeks.</p>
+          <p className="had-sec-sub">From requirement brief to first commit - in under two weeks.</p>
           <div className="had-process">
             {PROCESS.map((p, i) => (
               <div key={p.n} className={`had-step${prV ? ' had-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}>
@@ -261,7 +261,7 @@ export default function HireAndroidDeveloper() {
       <section className="had-cta">
         <div className="had-wrap">
           <h2>Ready to Hire Your Android Developer?</h2>
-          <p>Share your requirements and we will match you with the right developer within 48 hours — no commitment required.</p>
+          <p>Share your requirements and we will match you with the right developer within 48 hours - no commitment required.</p>
           <Link href="/contact-us" className="had-btn-primary">Get Started Today →</Link>
         </div>
       </section>

@@ -4,42 +4,42 @@ import { useState } from 'react';
 
 const ACCENT = '#3d2800';
 const SERVICES = [
-  { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Google Ads Audit', desc: 'Account structure, campaign settings, keyword match types, Quality Scores, ad copy, bid strategies, audience targeting, and conversion tracking — reviewed against 100-point criteria.' },
-  { icon: 'M7 20l4-16m2 16l4-16M6 9h14M4 15h14', title: 'Meta Ads Audit', desc: 'Campaign objectives, audience targeting, creative performance, pixel health, ROAS by ad set, budget allocation, and attribution model — full account analysis with actionable findings.' },
-  { icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z', title: 'Conversion Tracking Audit', desc: 'Every conversion action verified — Google Ads tags, GA4 goals, Meta Pixel events, and enhanced conversions — so you know whether your reported data is accurate.' },
-  { icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6', title: 'Landing Page Assessment', desc: 'Landing page relevance, message match, load speed, CTA clarity, and trust signals — evaluated for how well they support ad performance and Quality Score.' },
-  { icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z', title: 'Audience & Targeting Review', desc: 'Keyword targeting, match type distribution, audience lists, demographic bid adjustments, device performance, and geographic targeting — gaps and waste identified.' },
-  { icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z', title: 'Bid Strategy Evaluation', desc: 'Current bidding strategy assessed for campaign maturity and conversion volume — with recommendations for whether automated or manual strategies are appropriate.' },
+  { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Google Ads Audit', desc: 'Account structure, campaign settings, keyword match types, Quality Scores, ad copy, bid strategies, audience targeting, and conversion tracking - reviewed against 100-point criteria.' },
+  { icon: 'M7 20l4-16m2 16l4-16M6 9h14M4 15h14', title: 'Meta Ads Audit', desc: 'Campaign objectives, audience targeting, creative performance, pixel health, ROAS by ad set, budget allocation, and attribution model - full account analysis with actionable findings.' },
+  { icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z', title: 'Conversion Tracking Audit', desc: 'Every conversion action verified - Google Ads tags, GA4 goals, Meta Pixel events, and enhanced conversions - so you know whether your reported data is accurate.' },
+  { icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6', title: 'Landing Page Assessment', desc: 'Landing page relevance, message match, load speed, CTA clarity, and trust signals - evaluated for how well they support ad performance and Quality Score.' },
+  { icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z', title: 'Audience & Targeting Review', desc: 'Keyword targeting, match type distribution, audience lists, demographic bid adjustments, device performance, and geographic targeting - gaps and waste identified.' },
+  { icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z', title: 'Bid Strategy Evaluation', desc: 'Current bidding strategy assessed for campaign maturity and conversion volume - with recommendations for whether automated or manual strategies are appropriate.' },
   { icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z', title: 'Ad Copy & Creative Review', desc: 'Responsive search ad asset combinations, ad copy relevance, CTR benchmarks, creative fatigue signals, and split-test opportunities identified across every active campaign.' },
-  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'Competitor Ad Intelligence', desc: 'Auction insights, competitor ad copy analysis, Google Ads transparency data, and market-level CPC benchmarks — so you understand how your account compares to the competitive landscape.' },
+  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'Competitor Ad Intelligence', desc: 'Auction insights, competitor ad copy analysis, Google Ads transparency data, and market-level CPC benchmarks - so you understand how your account compares to the competitive landscape.' },
 ];
 const RESULTS = [
   { metric: '41%', label: 'Immediate spend reduction', sub: 'US eCommerce after audit', color: '#c8842a' },
-  { metric: '2.9×', label: 'ROAS improvement', sub: 'AU B2B — post-audit restructure', color: '#e0a84a' },
+  { metric: '2.9×', label: 'ROAS improvement', sub: 'AU B2B - post-audit restructure', color: '#e0a84a' },
   { metric: '$28k', label: 'Monthly wasted spend identified', sub: 'Canadian retail brand', color: '#f0c870' },
 ];
 const PROCESS = [
-  { n: '01', title: 'Access Collection', desc: 'We request read-only access to your Google Ads account, Meta Ads Manager, GA4, and Google Merchant Center (if applicable) — no changes made during the audit phase.' },
-  { n: '02', title: 'Data Analysis', desc: 'We pull 90 days of account data — performance by campaign, ad group, keyword, audience, device, and placement — and run it through our 100-point audit framework.' },
-  { n: '03', title: 'Campaign Deep-Dive', desc: 'Every active campaign reviewed manually — structure, settings, targeting, bidding, ad copy, landing pages, and conversion tracking — with issues flagged and prioritised.' },
-  { n: '04', title: 'Report Writing', desc: 'A structured audit report is produced: executive summary, critical issues (fix immediately), high-priority improvements, and quick wins — each with specific action steps.' },
-  { n: '05', title: 'Presentation Call', desc: 'A 60-minute video call to walk through every finding, answer questions, and prioritise implementation so you leave with a clear action plan — not just a document.' },
+  { n: '01', title: 'Access Collection', desc: 'We request read-only access to your Google Ads account, Meta Ads Manager, GA4, and Google Merchant Center (if applicable) - no changes made during the audit phase.' },
+  { n: '02', title: 'Data Analysis', desc: 'We pull 90 days of account data - performance by campaign, ad group, keyword, audience, device, and placement - and run it through our 100-point audit framework.' },
+  { n: '03', title: 'Campaign Deep-Dive', desc: 'Every active campaign reviewed manually - structure, settings, targeting, bidding, ad copy, landing pages, and conversion tracking - with issues flagged and prioritised.' },
+  { n: '04', title: 'Report Writing', desc: 'A structured audit report is produced: executive summary, critical issues (fix immediately), high-priority improvements, and quick wins - each with specific action steps.' },
+  { n: '05', title: 'Presentation Call', desc: 'A 60-minute video call to walk through every finding, answer questions, and prioritise implementation so you leave with a clear action plan - not just a document.' },
   { n: '06', title: 'Implementation Support', desc: 'If you proceed to management, we implement every audit recommendation in the first month. If not, the report is yours to implement in-house or with another agency.' },
 ];
 const WHY = [
-  { title: 'Platform-Agnostic View', desc: 'We audit both Google Ads and Meta Ads in the same engagement — giving you a unified view of cross-platform waste and opportunity, not just one channel in isolation.' },
-  { title: 'Senior Analyst', desc: 'Every audit is performed by a senior PPC specialist — not a junior analyst or an automated tool. You get expert-level findings with clear recommendations.' },
-  { title: 'No Obligation', desc: 'The audit is a standalone deliverable. You are not obligated to engage us for management — take the report and implement it however you choose.' },
+  { title: 'Platform-Agnostic View', desc: 'We audit both Google Ads and Meta Ads in the same engagement - giving you a unified view of cross-platform waste and opportunity, not just one channel in isolation.' },
+  { title: 'Senior Analyst', desc: 'Every audit is performed by a senior PPC specialist - not a junior analyst or an automated tool. You get expert-level findings with clear recommendations.' },
+  { title: 'No Obligation', desc: 'The audit is a standalone deliverable. You are not obligated to engage us for management - take the report and implement it however you choose.' },
   { title: 'Quick Turnaround', desc: 'Audit report delivered within 5 business days of receiving account access. Presentation call scheduled within 7 days of delivery.' },
-  { title: 'Developer-Ready Fixes', desc: 'Where fixes require development — tracking implementation, landing page changes, feed updates — we provide technical specifications your team can act on immediately.' },
-  { title: 'Implementation Option', desc: 'If you want us to implement the audit findings, we offer a managed implementation engagement — restructuring campaigns, fixing tracking, and relaunching with best practices.' },
+  { title: 'Developer-Ready Fixes', desc: 'Where fixes require development - tracking implementation, landing page changes, feed updates - we provide technical specifications your team can act on immediately.' },
+  { title: 'Implementation Option', desc: 'If you want us to implement the audit findings, we offer a managed implementation engagement - restructuring campaigns, fixing tracking, and relaunching with best practices.' },
 ];
 const FAQS = [
   { q: 'What is included in a PPC audit?', a: 'Our PPC audit covers 100 checkpoints across account structure, campaign settings, keyword strategy, Quality Score, audience targeting, bid strategies, ad copy, landing pages, conversion tracking accuracy, and competitor positioning. Each finding is categorised by urgency and includes a specific recommended action.' },
-  { q: 'How long does the PPC audit take?', a: 'We deliver the written audit report within 5 business days of receiving account access. The presentation call is then scheduled within 7 days. For large accounts with significant historical data or multiple platforms, delivery may extend to 7 business days — we confirm timelines upfront.' },
-  { q: 'What account access do you need?', a: 'We need read-only access to your Google Ads account, Meta Business Manager, GA4 property, and Google Merchant Center (if you run Shopping). Read-only access means we can view everything without making any changes — your campaigns are safe throughout the audit process.' },
+  { q: 'How long does the PPC audit take?', a: 'We deliver the written audit report within 5 business days of receiving account access. The presentation call is then scheduled within 7 days. For large accounts with significant historical data or multiple platforms, delivery may extend to 7 business days - we confirm timelines upfront.' },
+  { q: 'What account access do you need?', a: 'We need read-only access to your Google Ads account, Meta Business Manager, GA4 property, and Google Merchant Center (if you run Shopping). Read-only access means we can view everything without making any changes - your campaigns are safe throughout the audit process.' },
   { q: 'Which platforms does the audit cover?', a: 'Our standard audit covers Google Ads (Search, Display, Shopping, YouTube, Performance Max) and Meta Ads (Facebook and Instagram). We can extend the audit to include LinkedIn Ads, Microsoft Ads, or TikTok Ads for an additional fee. Conversion tracking audits cover all connected platforms.' },
-  { q: 'Is there a free PPC audit available?', a: 'We offer a complimentary high-level account review — covering campaign structure, Quality Scores, and obvious waste — as part of an initial consultation. This is a 30-minute assessment, not a full audit. The comprehensive 100-point audit is a paid engagement, priced based on account complexity and number of platforms reviewed.' },
+  { q: 'Is there a free PPC audit available?', a: 'We offer a complimentary high-level account review - covering campaign structure, Quality Scores, and obvious waste - as part of an initial consultation. This is a 30-minute assessment, not a full audit. The comprehensive 100-point audit is a paid engagement, priced based on account complexity and number of platforms reviewed.' },
   { q: 'What happens after the audit?', a: 'After the presentation call, you receive the full report and all supporting data. You can implement the findings yourself, share them with your current agency, or engage us to implement them directly. Most clients see meaningful ROAS improvements within the first 4 to 8 weeks after acting on the audit recommendations.' },
 ];
 
@@ -54,7 +54,7 @@ export default function PpcAuditServices() {
         { '@type': 'ListItem', position: 3, name: 'PPC Audit Services', item: 'https://www.1solutions.biz/ppc-audit-services/' },
       ]},
       { '@type': 'Service', name: 'PPC Audit Services', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'PPC audit by 1Solutions — 100-point Google Ads and Meta Ads review covering wasted spend, Quality Score, audience gaps, and conversion tracking. Delivered in 5 days.',
+        description: 'PPC audit by 1Solutions - 100-point Google Ads and Meta Ads review covering wasted spend, Quality Score, audience gaps, and conversion tracking. Delivered in 5 days.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '58', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -64,7 +64,7 @@ export default function PpcAuditServices() {
     <>
       <Head>
         <title>PPC Audit Services | 1Solutions</title>
-        <meta name="description" content="PPC audit by 1Solutions — 100-point Google Ads and Meta Ads review covering wasted spend, Quality Score, audience gaps, and conversion tracking." />
+        <meta name="description" content="PPC audit by 1Solutions - 100-point Google Ads and Meta Ads review covering wasted spend, Quality Score, audience gaps, and conversion tracking." />
         <link rel="canonical" href="https://www.1solutions.biz/ppc-audit-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
@@ -142,9 +142,9 @@ export default function PpcAuditServices() {
       <nav className="ppca-bc"><div className="ppca-bci"><Link href="/">Home</Link><span className="ppca-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="ppca-sep">›</span><span className="ppca-cur">PPC Audit Services</span></div></nav>
       <section className="ppca-hero"><div className="ppca-o1"/><div className="ppca-o2"/>
         <div className="ppca-in">
-          <span className="ppca-ey">100-Point PPC Audit — Google Ads · Meta Ads · Conversion Tracking · Delivered in 5 Days</span>
+          <span className="ppca-ey">100-Point PPC Audit - Google Ads · Meta Ads · Conversion Tracking · Delivered in 5 Days</span>
           <h1 className="ppca-h1">PPC Audit That Finds Where Your Ad Budget Is Being Wasted</h1>
-          <p className="ppca-p">1Solutions delivers a comprehensive 100-point PPC audit covering Google Ads and Meta Ads — identifying wasted spend, tracking errors, audience gaps, and structural issues that are costing you ROAS right now.</p>
+          <p className="ppca-p">1Solutions delivers a comprehensive 100-point PPC audit covering Google Ads and Meta Ads - identifying wasted spend, tracking errors, audience gaps, and structural issues that are costing you ROAS right now.</p>
           <div className="ppca-btns">
             <Link href="/contact-us" className="ppca-bp">Request a PPC Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
             <Link href="/contact-us" className="ppca-bs">Ask About the Audit</Link>
@@ -156,7 +156,7 @@ export default function PpcAuditServices() {
       <section className="ppca-sec ppca-bg"><div className="ppca-si2">
         <span className="ppca-tag">What We Audit</span>
         <h2 className="ppca-h2">100-Point <span>PPC Audit Coverage</span></h2>
-        <p className="ppca-lead">Every component of your paid advertising reviewed against best-practice criteria — from account structure to conversion tracking accuracy.</p>
+        <p className="ppca-lead">Every component of your paid advertising reviewed against best-practice criteria - from account structure to conversion tracking accuracy.</p>
         <div className="ppca-g3">{SERVICES.map(s=><div key={s.title} className="ppca-card"><div className="ppca-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d={s.icon}/></svg></div><h3 className="ppca-ch">{s.title}</h3><p className="ppca-cp">{s.desc}</p></div>)}</div>
       </div></section>
       <section className="ppca-rb"><div className="ppca-ri">
@@ -167,13 +167,13 @@ export default function PpcAuditServices() {
       <section className="ppca-sec"><div className="ppca-si2">
         <span className="ppca-tag">Why 1Solutions</span>
         <h2 className="ppca-h2">The PPC Audit Partner <span>That Delivers Actionable Findings</span></h2>
-        <p className="ppca-lead">Not a report you file away — a clear action plan with prioritised fixes and specific steps your team can implement immediately.</p>
+        <p className="ppca-lead">Not a report you file away - a clear action plan with prioritised fixes and specific steps your team can implement immediately.</p>
         <div className="ppca-g3">{WHY.map(w=><div key={w.title} className="ppca-wc"><div className="ppca-wck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><h3 className="ppca-wh">{w.title}</h3><p className="ppca-wp">{w.desc}</p></div>)}</div>
       </div></section>
       <section className="ppca-sec ppca-bg"><div className="ppca-si2">
         <span className="ppca-tag">How We Work</span>
         <h2 className="ppca-h2">Our <span>6-Step PPC Audit Process</span></h2>
-        <p className="ppca-lead">From read-only access to a prioritised action plan — a structured audit process completed in 5 business days.</p>
+        <p className="ppca-lead">From read-only access to a prioritised action plan - a structured audit process completed in 5 business days.</p>
         <div className="ppca-g3">{PROCESS.map(p=><div key={p.n}><div className="ppca-pn">{p.n}</div><div className="ppca-pl"/><h3 className="ppca-ph">{p.title}</h3><p className="ppca-pp">{p.desc}</p></div>)}</div>
       </div></section>
       <section className="ppca-sec"><div className="ppca-si2">
@@ -183,8 +183,8 @@ export default function PpcAuditServices() {
       </div></section>
       <section className="ppca-cta"><div className="ppca-si2">
         <span className="ppca-tag" style={{display:'block',textAlign:'center',marginBottom:12}}>Ready to Find Your Wasted Ad Spend?</span>
-        <h2 className="ppca-cth">Request a PPC Audit — Delivered in 5 Days</h2>
-        <p className="ppca-ctp">We will review your Google Ads and Meta Ads accounts across 100 checkpoints — and deliver a prioritised action plan with specific fixes your team can implement immediately.</p>
+        <h2 className="ppca-cth">Request a PPC Audit - Delivered in 5 Days</h2>
+        <p className="ppca-ctp">We will review your Google Ads and Meta Ads accounts across 100 checkpoints - and deliver a prioritised action plan with specific fixes your team can implement immediately.</p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
           <Link href="/contact-us" className="ppca-bp">Request PPC Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
           <Link href="/contact-us" className="ppca-bs">Talk to a PPC Specialist</Link>

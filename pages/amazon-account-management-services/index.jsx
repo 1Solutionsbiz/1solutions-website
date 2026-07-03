@@ -24,7 +24,7 @@ const challenges = [
   {
     icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z',
     title: 'Invisible Listings in Search',
-    desc: "Poorly written titles, missing backend keywords, and weak bullet points keep profitable products buried on page 5. Amazon's A9 algorithm rewards relevance and conversion rate — and most product listings are optimised for neither.",
+    desc: "Poorly written titles, missing backend keywords, and weak bullet points keep profitable products buried on page 5. Amazon's A9 algorithm rewards relevance and conversion rate - and most product listings are optimised for neither.",
   },
 ];
 
@@ -47,7 +47,7 @@ const services = [
   {
     icon: '9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
     title: 'Amazon PPC Management',
-    desc: 'Sponsored Products, Sponsored Brands, and Sponsored Display campaign management — including keyword harvesting, negative keyword builds, bid optimisation, dayparting, and campaign structure audit.',
+    desc: 'Sponsored Products, Sponsored Brands, and Sponsored Display campaign management - including keyword harvesting, negative keyword builds, bid optimisation, dayparting, and campaign structure audit.',
   },
   {
     icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
@@ -67,7 +67,7 @@ const services = [
   {
     icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
     title: 'Reporting & Analytics',
-    desc: 'Monthly business review reports showing sales velocity, BSR movement, PPC performance, conversion rate trends, and Buy Box win percentage — with a clear roadmap for the next 30 days.',
+    desc: 'Monthly business review reports showing sales velocity, BSR movement, PPC performance, conversion rate trends, and Buy Box win percentage - with a clear roadmap for the next 30 days.',
   },
 ];
 
@@ -87,7 +87,7 @@ const caseStudies = [
   },
   {
     seller: 'UK Consumer Electronics Seller',
-    before: 'Suspended — $0 revenue',
+    before: 'Suspended - $0 revenue',
     after: 'Reinstated + $95K/mo',
     time: '4 months',
     actions: ['Account suspension appeal written and submitted', '60 ASINs re-listed with compliant content', 'New account health monitoring protocol put in place'],
@@ -299,7 +299,7 @@ export default function AmazonAccountManagement() {
             Amazon Account Management That <span className="amzn-h1-accent">Grows Your Revenue</span> Month Over Month
           </h1>
           <p className="amzn-desc">
-            1Solutions manages every aspect of your Amazon Seller Central account — listings, PPC, account health, FBA, and Brand Registry — so you can focus on your products while we focus on your growth.
+            1Solutions manages every aspect of your Amazon Seller Central account - listings, PPC, account health, FBA, and Brand Registry - so you can focus on your products while we focus on your growth.
           </p>
           <div className="amzn-trust">
             {trust.map((t, i) => (
@@ -329,7 +329,7 @@ export default function AmazonAccountManagement() {
         <div className="amzn-inner">
           <span className="amzn-tag">Common Amazon Seller Struggles</span>
           <h2 className="amzn-h2">Why Amazon Sellers <span>Struggle to Scale</span></h2>
-          <p className="amzn-lead">Amazon is the world's largest marketplace — but it is also the most complex. These are the four challenges that consistently hold sellers back from sustainable growth.</p>
+          <p className="amzn-lead">Amazon is the world's largest marketplace - but it is also the most complex. These are the four challenges that consistently hold sellers back from sustainable growth.</p>
           <div className="amzn-grid4">
             {challenges.map((c, i) => (
               <div key={i} className="amzn-chal-card">
@@ -349,7 +349,7 @@ export default function AmazonAccountManagement() {
         <div className="amzn-inner">
           <span className="amzn-tag">Full-Service Amazon Management</span>
           <h2 className="amzn-h2">What Our <span>Amazon Management</span> Covers</h2>
-          <p className="amzn-lead">From listing creation to PPC management to account protection — we handle every lever that drives Amazon revenue growth.</p>
+          <p className="amzn-lead">From listing creation to PPC management to account protection - we handle every lever that drives Amazon revenue growth.</p>
           <div className="amzn-grid4" style={{gridTemplateColumns:'repeat(4,1fr)'}}>
             {services.map((s, i) => (
               <div key={i} className="amzn-card">
@@ -441,7 +441,7 @@ export default function AmazonAccountManagement() {
           <div className="amzn-contact-grid">
             <div>
               <h2 className="amzn-contact-info-h">Get a Free <span>Amazon Account Audit</span></h2>
-              <p className="amzn-contact-info-p">Tell us about your Amazon store and we will prepare a detailed audit covering your listings, PPC performance, account health gaps, and revenue growth opportunities — completely free.</p>
+              <p className="amzn-contact-info-p">Tell us about your Amazon store and we will prepare a detailed audit covering your listings, PPC performance, account health gaps, and revenue growth opportunities - completely free.</p>
               <div className="amzn-contact-item">
                 <div className="amzn-contact-item-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>

@@ -37,7 +37,7 @@ const SCHEMA = {
           price: '299',
           priceCurrency: 'USD',
           priceSpecification: { '@type': 'UnitPriceSpecification', price: '299', priceCurrency: 'USD', unitText: 'MON' },
-          description: 'Small business monthly SEO package — up to 10 keywords, 10-page on-page optimisation, 5–8 monthly backlinks, 2 blog articles, technical SEO, local SEO, and monthly reporting.',
+          description: 'Small business monthly SEO package - up to 10 keywords, 10-page on-page optimisation, 5–8 monthly backlinks, 2 blog articles, technical SEO, local SEO, and monthly reporting.',
           url: 'https://www.1solutions.biz/affordable-seo-packages/',
         },
         {
@@ -46,7 +46,7 @@ const SCHEMA = {
           price: '599',
           priceCurrency: 'USD',
           priceSpecification: { '@type': 'UnitPriceSpecification', price: '599', priceCurrency: 'USD', unitText: 'MON' },
-          description: 'Professional monthly SEO package — up to 25 keywords, 25-page optimisation, 15–20 monthly backlinks, 4 blog articles, schema markup, competitor analysis, and monthly reporting.',
+          description: 'Professional monthly SEO package - up to 25 keywords, 25-page optimisation, 15–20 monthly backlinks, 4 blog articles, schema markup, competitor analysis, and monthly reporting.',
           url: 'https://www.1solutions.biz/affordable-seo-packages/',
         },
         {
@@ -55,7 +55,7 @@ const SCHEMA = {
           price: '999',
           priceCurrency: 'USD',
           priceSpecification: { '@type': 'UnitPriceSpecification', price: '999', priceCurrency: 'USD', unitText: 'MON' },
-          description: 'Enterprise monthly SEO package — up to 60 keywords, unlimited pages, 35–50 monthly backlinks, 8 blog articles, dedicated account manager, and monthly reporting.',
+          description: 'Enterprise monthly SEO package - up to 60 keywords, unlimited pages, 35–50 monthly backlinks, 8 blog articles, dedicated account manager, and monthly reporting.',
           url: 'https://www.1solutions.biz/affordable-seo-packages/',
         },
       ],
@@ -72,10 +72,10 @@ const SCHEMA = {
       mainEntity: [
         { '@type': 'Question', name: 'How much do monthly SEO packages cost?', acceptedAnswer: { '@type': 'Answer', text: 'Monthly SEO packages from 1Solutions start at $299/month for the Starter plan (up to 10 keywords), $599/month for the Professional plan (up to 25 keywords), and $999/month for the Enterprise plan (up to 60 keywords). Annual billing saves 20%. There are no setup fees and no long-term contracts.' } },
         { '@type': 'Question', name: 'What is included in a monthly SEO package?', acceptedAnswer: { '@type': 'Answer', text: 'A monthly SEO package from 1Solutions includes: keyword research and tracking, on-page optimisation (title tags, meta descriptions, headings, content), technical SEO (Core Web Vitals, crawlability, site speed), manual link building from authoritative websites, SEO content writing (blog articles), local SEO and Google Business Profile optimisation, XML sitemap and robots.txt management, Google Analytics 4 and Search Console setup, and a monthly performance report.' } },
-        { '@type': 'Question', name: 'How long does SEO take to show results?', acceptedAnswer: { '@type': 'Answer', text: 'Most clients see meaningful keyword ranking improvements within 3–6 months. Competitive industries or newer websites may take 6–12 months to show significant organic traffic growth. SEO compounds over time — the results in month 12 are significantly stronger than month 3. We provide monthly reports so you can track progress at every stage.' } },
-        { '@type': 'Question', name: 'Do you guarantee first-page Google rankings?', acceptedAnswer: { '@type': 'Answer', text: 'No ethical SEO agency can guarantee specific rankings — Google\'s algorithm is not within any agency\'s control. What we guarantee is white-hat, Google-compliant SEO work to the highest standard, transparent monthly reporting, and measurable progress. We have ranked 500+ businesses across 50+ industries over 15 years.' } },
-        { '@type': 'Question', name: 'What is the difference between monthly SEO and a one-time SEO audit?', acceptedAnswer: { '@type': 'Answer', text: 'A one-time SEO audit identifies what needs fixing but does not fix it, and does not build the ongoing link profile and content that Google requires to rank. Monthly SEO packages handle all implementation continuously — technical fixes, ongoing content creation, and link building every month. SEO requires sustained effort because competitors are also investing in it continuously.' } },
-        { '@type': 'Question', name: 'Are SEO packages worth the investment?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Organic search is typically the highest-ROI digital marketing channel. Unlike paid ads, organic rankings continue to drive traffic after you stop paying — rankings built over 12 months compound. Our clients typically see a 3–10x ROI within 12 months. The Starter plan at $299/month costs less than a single day of Google Ads for most industries.' } },
+        { '@type': 'Question', name: 'How long does SEO take to show results?', acceptedAnswer: { '@type': 'Answer', text: 'Most clients see meaningful keyword ranking improvements within 3–6 months. Competitive industries or newer websites may take 6–12 months to show significant organic traffic growth. SEO compounds over time - the results in month 12 are significantly stronger than month 3. We provide monthly reports so you can track progress at every stage.' } },
+        { '@type': 'Question', name: 'Do you guarantee first-page Google rankings?', acceptedAnswer: { '@type': 'Answer', text: 'No ethical SEO agency can guarantee specific rankings - Google\'s algorithm is not within any agency\'s control. What we guarantee is white-hat, Google-compliant SEO work to the highest standard, transparent monthly reporting, and measurable progress. We have ranked 500+ businesses across 50+ industries over 15 years.' } },
+        { '@type': 'Question', name: 'What is the difference between monthly SEO and a one-time SEO audit?', acceptedAnswer: { '@type': 'Answer', text: 'A one-time SEO audit identifies what needs fixing but does not fix it, and does not build the ongoing link profile and content that Google requires to rank. Monthly SEO packages handle all implementation continuously - technical fixes, ongoing content creation, and link building every month. SEO requires sustained effort because competitors are also investing in it continuously.' } },
+        { '@type': 'Question', name: 'Are SEO packages worth the investment?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Organic search is typically the highest-ROI digital marketing channel. Unlike paid ads, organic rankings continue to drive traffic after you stop paying - rankings built over 12 months compound. Our clients typically see a 3–10x ROI within 12 months. The Starter plan at $299/month costs less than a single day of Google Ads for most industries.' } },
         { '@type': 'Question', name: 'Do you offer SEO packages for small businesses?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. The Starter SEO package at $299/month is designed specifically for small businesses and local brands. It targets up to 10 keywords, optimises 10 pages, builds 5–8 backlinks per month, and includes local SEO and Google Business Profile optimisation. It is our most popular package for businesses just starting their SEO journey.' } },
         { '@type': 'Question', name: 'Can I cancel my SEO package at any time?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. All 1Solutions SEO packages are month-to-month with no long-term contracts. You can cancel with 30 days notice. Annual plans are discounted by 20% and are paid upfront, but monthly plans have complete flexibility. We earn your business every month through results, not paperwork.' } },
       ],
@@ -170,35 +170,35 @@ const INCLUDED = [
   { n: '01', title: 'Technical SEO', desc: 'Core Web Vitals, crawl budget, site architecture, canonical tags, HTTPS, 404 fixes, XML sitemap, robots.txt, structured data, and international hreflang where needed.' },
   { n: '02', title: 'On-Page Optimisation', desc: 'Title tags, meta descriptions, heading hierarchy (H1–H3), keyword placement, internal linking strategy, image alt text, and content quality improvements aligned with E-E-A-T.' },
   { n: '03', title: 'Link Building', desc: 'Manual outreach for genuine editorial backlinks from authoritative, niche-relevant websites. We never use PBNs, link farms, or paid link schemes that violate Google\'s guidelines.' },
-  { n: '04', title: 'SEO Content Writing', desc: 'In-house writers produce keyword-optimised, E-E-A-T-aligned blog posts and landing pages. Every article targets real search intent — informational, commercial, or transactional.' },
+  { n: '04', title: 'SEO Content Writing', desc: 'In-house writers produce keyword-optimised, E-E-A-T-aligned blog posts and landing pages. Every article targets real search intent - informational, commercial, or transactional.' },
   { n: '05', title: 'Local SEO', desc: 'Google Business Profile optimisation, local citation building, NAP consistency audit, review strategy, and local keyword targeting to dominate map pack results.' },
   { n: '06', title: 'Analytics & Reporting', desc: 'GA4 and Search Console setup, monthly keyword rank tracking report, organic traffic analysis, CTR optimisation, and a plain-English summary of what we did and what\'s next.' },
 ];
 
 const FAQS = [
-  { q: 'How much do monthly SEO packages cost?', a: 'Our monthly SEO packages start at $299/month for the Starter plan, $599/month for Professional, and $999/month for Enterprise. Annual billing saves 20% — the Professional plan at $479/month (annual) saves $1,440/year. There are no setup fees and no lock-in contracts. Pricing is transparent and fixed — no surprise invoices.' },
+  { q: 'How much do monthly SEO packages cost?', a: 'Our monthly SEO packages start at $299/month for the Starter plan, $599/month for Professional, and $999/month for Enterprise. Annual billing saves 20% - the Professional plan at $479/month (annual) saves $1,440/year. There are no setup fees and no lock-in contracts. Pricing is transparent and fixed - no surprise invoices.' },
   { q: 'What is included in a monthly SEO package?', a: 'Every 1Solutions SEO package includes: keyword research and tracking, on-page optimisation (title tags, meta descriptions, headings, content), technical SEO (Core Web Vitals, crawlability, site speed), manual link building, SEO content writing (blog articles), local SEO and Google Business Profile management, XML sitemap and robots.txt, GA4 and Search Console setup, and a monthly performance report. Higher plans add schema markup, competitor analysis, and a dedicated account manager.' },
-  { q: 'How long does SEO take to show results?', a: 'Most clients see measurable keyword ranking movement within 3–4 months. Meaningful organic traffic increases typically arrive by month 5–6. Competitive national keywords can take 9–12 months. SEO is a long-term compounding investment — the results in month 12 are significantly stronger than month 3, and unlike paid ads, rankings continue after investment slows. We show you progress every month via rank tracking reports.' },
-  { q: 'Do you guarantee first-page rankings?', a: 'No ethical SEO agency can guarantee specific rankings — Google\'s algorithm processes 200+ signals and is not controllable by any third party. Agencies that promise guaranteed rankings typically use black-hat tactics that work short-term and result in Google penalties long-term. What we guarantee: white-hat work compliant with Google\'s guidelines, transparent monthly reporting, and measurable progress. We have ranked 500+ businesses across 50+ industries over 15 years without a single manual penalty.' },
+  { q: 'How long does SEO take to show results?', a: 'Most clients see measurable keyword ranking movement within 3–4 months. Meaningful organic traffic increases typically arrive by month 5–6. Competitive national keywords can take 9–12 months. SEO is a long-term compounding investment - the results in month 12 are significantly stronger than month 3, and unlike paid ads, rankings continue after investment slows. We show you progress every month via rank tracking reports.' },
+  { q: 'Do you guarantee first-page rankings?', a: 'No ethical SEO agency can guarantee specific rankings - Google\'s algorithm processes 200+ signals and is not controllable by any third party. Agencies that promise guaranteed rankings typically use black-hat tactics that work short-term and result in Google penalties long-term. What we guarantee: white-hat work compliant with Google\'s guidelines, transparent monthly reporting, and measurable progress. We have ranked 500+ businesses across 50+ industries over 15 years without a single manual penalty.' },
   { q: 'What is the difference between monthly SEO and a one-time SEO audit?', a: 'A one-time audit identifies problems but does not fix them. SEO requires continuous implementation: technical fixes that get re-broken as sites update, ongoing content creation that Google needs to see before ranking you, and monthly link building because your competitors are building links every month. Monthly SEO packages handle all of this on an ongoing basis. We recommend starting with a monthly package; our free audit is included at sign-up.' },
-  { q: 'Are monthly SEO packages worth the investment?', a: 'Yes — organic search consistently delivers the highest ROI of any digital marketing channel. Unlike Google Ads (traffic stops the moment you stop paying), SEO builds equity: rankings you earn this month continue to drive free traffic in month 6, 12, and 24. Our clients typically see a 3–8x ROI within 12 months. The Starter plan at $299/month costs less than a single day of Google Ads in most competitive industries, yet its results compound indefinitely.' },
+  { q: 'Are monthly SEO packages worth the investment?', a: 'Yes - organic search consistently delivers the highest ROI of any digital marketing channel. Unlike Google Ads (traffic stops the moment you stop paying), SEO builds equity: rankings you earn this month continue to drive free traffic in month 6, 12, and 24. Our clients typically see a 3–8x ROI within 12 months. The Starter plan at $299/month costs less than a single day of Google Ads in most competitive industries, yet its results compound indefinitely.' },
   { q: 'Do you offer SEO packages for small businesses?', a: 'Yes. The Starter package at $299/month is built for small businesses and local brands. It targets up to 10 high-intent keywords, optimises 10 pages, builds 5–8 quality backlinks monthly, includes 2 blog articles, and covers full local SEO including Google Business Profile management. It\'s our most popular entry-level plan and has produced first-page rankings for hundreds of local businesses.' },
   { q: 'Can I cancel my SEO package at any time?', a: 'Yes. All monthly plans are cancel-anytime with 30 days\' notice and no penalties. Annual plans are discounted 20% and paid upfront; these are non-refundable after the first month but carry no further obligation. We do not use 12-month lock-in contracts because we believe agencies should earn retention through results, not paperwork.' },
-  { q: 'Do you work with businesses in the US, UK, Canada, and Australia?', a: 'Yes — the majority of our SEO clients are in the US, Australia, and Canada. We have deep familiarity with English-language western search markets, local competitor landscapes, and SERP feature differences by region. Communication is async-friendly with regular video check-ins at your time zone. Our reporting is adapted to your local market.' },
-  { q: 'What makes 1Solutions different from other SEO agencies?', a: '15+ years of SEO experience (founded 2008), 500+ clients across 50+ industries, 10,000+ keywords ranked, and 97% client retention. We have navigated every major Google algorithm update — Panda, Penguin, Hummingbird, BERT, Helpful Content, and the 2024–2025 Core Updates — without a single client receiving a manual penalty. We use no shortcuts, no grey-hat tactics, and no opaque reporting. Our team is fully in-house — no outsourced writers or link builders.' },
-  { q: 'What is Google\'s Helpful Content update and how do your packages address it?', a: 'Google\'s Helpful Content system (rolled out 2022–2024) demotes content written primarily for search engines rather than people. Our content team produces articles that satisfy E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) — written by humans with domain knowledge, citing real data, and structured to directly answer the reader\'s question. We audit existing content for helpful-content compliance and replace thin or AI-generated content with depth that Google rewards.' },
-  { q: 'Do you handle AI Overview (SGE) and answer engine optimisation?', a: 'Yes. We optimise content specifically for Google AI Overviews and answer engines (AEO/GEO) — structuring pages to answer specific questions directly, implementing FAQPage and HowTo schema markup, ensuring factual accuracy with cited sources, and targeting featured snippets and People Also Ask results. As AI-powered search surfaces grow, this structured content approach is essential for maintaining organic visibility.' },
+  { q: 'Do you work with businesses in the US, UK, Canada, and Australia?', a: 'Yes - the majority of our SEO clients are in the US, Australia, and Canada. We have deep familiarity with English-language western search markets, local competitor landscapes, and SERP feature differences by region. Communication is async-friendly with regular video check-ins at your time zone. Our reporting is adapted to your local market.' },
+  { q: 'What makes 1Solutions different from other SEO agencies?', a: '15+ years of SEO experience (founded 2008), 500+ clients across 50+ industries, 10,000+ keywords ranked, and 97% client retention. We have navigated every major Google algorithm update - Panda, Penguin, Hummingbird, BERT, Helpful Content, and the 2024–2025 Core Updates - without a single client receiving a manual penalty. We use no shortcuts, no grey-hat tactics, and no opaque reporting. Our team is fully in-house - no outsourced writers or link builders.' },
+  { q: 'What is Google\'s Helpful Content update and how do your packages address it?', a: 'Google\'s Helpful Content system (rolled out 2022–2024) demotes content written primarily for search engines rather than people. Our content team produces articles that satisfy E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) - written by humans with domain knowledge, citing real data, and structured to directly answer the reader\'s question. We audit existing content for helpful-content compliance and replace thin or AI-generated content with depth that Google rewards.' },
+  { q: 'Do you handle AI Overview (SGE) and answer engine optimisation?', a: 'Yes. We optimise content specifically for Google AI Overviews and answer engines (AEO/GEO) - structuring pages to answer specific questions directly, implementing FAQPage and HowTo schema markup, ensuring factual accuracy with cited sources, and targeting featured snippets and People Also Ask results. As AI-powered search surfaces grow, this structured content approach is essential for maintaining organic visibility.' },
 ];
 
 const WHY = [
   { icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z', title: '15+ Years of SEO Experience', desc: 'Founded in 2008, we have navigated every major Google update since Panda. Our strategies are future-proof, not built around loopholes that disappear with the next core update.' },
-  { icon: 'M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z', title: '10,000+ Keywords on Page 1', desc: 'Across 500+ clients and 50+ industries — from local plumbers to SaaS platforms to national eCommerce brands. We know what it takes to rank in each market.' },
+  { icon: 'M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z', title: '10,000+ Keywords on Page 1', desc: 'Across 500+ clients and 50+ industries - from local plumbers to SaaS platforms to national eCommerce brands. We know what it takes to rank in each market.' },
   { icon: 'M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z', title: 'Zero Manual Penalties in 15 Years', desc: 'We have never had a client receive a Google manual action or algorithmic penalty because we only use white-hat, Google-compliant techniques. No shortcuts, no PBNs, no paid links.' },
-  { icon: 'M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z', title: 'Transparent Monthly Reports', desc: 'You see every keyword rank change, every backlink earned, and every page optimised. No vanity metrics, no hiding behind "proprietary dashboards" — just clear data you can act on.' },
-  { icon: 'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z', title: 'In-House E-E-A-T Content Team', desc: 'Our writers are full-time SEO content specialists — not freelancers or AI tools. Every article is researched, fact-checked, and written to satisfy Google\'s E-E-A-T standards.' },
+  { icon: 'M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z', title: 'Transparent Monthly Reports', desc: 'You see every keyword rank change, every backlink earned, and every page optimised. No vanity metrics, no hiding behind "proprietary dashboards" - just clear data you can act on.' },
+  { icon: 'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z', title: 'In-House E-E-A-T Content Team', desc: 'Our writers are full-time SEO content specialists - not freelancers or AI tools. Every article is researched, fact-checked, and written to satisfy Google\'s E-E-A-T standards.' },
   { icon: 'M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z', title: 'US, Canada & Australia Market Experts', desc: 'We understand local search behaviour, regional SERP features, and competitor intensity in English-speaking western markets. Most of our client base is in these regions.' },
-  { icon: 'M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z', title: 'Full-Stack SEO Under One Roof', desc: 'Technical SEO, on-page, content, link building, local SEO, schema markup, and analytics — all handled by specialists in-house. No agency-hopping, no coordination overhead.' },
-  { icon: 'M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z', title: '97% Client Retention Rate', desc: 'Our average client relationship is 3+ years because SEO compounds over time — the results keep improving and clients have no reason to leave. We measure our success by yours.' },
+  { icon: 'M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z', title: 'Full-Stack SEO Under One Roof', desc: 'Technical SEO, on-page, content, link building, local SEO, schema markup, and analytics - all handled by specialists in-house. No agency-hopping, no coordination overhead.' },
+  { icon: 'M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z', title: '97% Client Retention Rate', desc: 'Our average client relationship is 3+ years because SEO compounds over time - the results keep improving and clients have no reason to leave. We measure our success by yours.' },
 ];
 
 /* ─── Hooks ─────────────────────────────────────────────────────────── */
@@ -296,7 +296,7 @@ export default function AffordableSeoPackages() {
 
   const TCell = ({ v }) => {
     if (v === true)  return <span className="sp-tc-yes" aria-label="Included">✓</span>;
-    if (v === false) return <span className="sp-tc-no"  aria-label="Not included">—</span>;
+    if (v === false) return <span className="sp-tc-no"  aria-label="Not included">-</span>;
     return <span className="sp-tc-val">{v}</span>;
   };
 
@@ -304,7 +304,7 @@ export default function AffordableSeoPackages() {
     <>
       <Head>
         <title>Monthly SEO Packages | Prices from $299/mo | 1Solutions</title>
-        <meta name="description" content="Transparent monthly SEO packages from $299/mo. Starter, Professional & Enterprise plans — on-page SEO, link building, content & local SEO included." />
+        <meta name="description" content="Transparent monthly SEO packages from $299/mo. Starter, Professional & Enterprise plans - on-page SEO, link building, content & local SEO included." />
         <link rel="canonical" href="https://www.1solutions.biz/affordable-seo-packages/" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Monthly SEO Packages | Prices from $299/mo | 1Solutions" />
@@ -633,9 +633,9 @@ export default function AffordableSeoPackages() {
 
         {/* ── HERO ── */}
         <section className="sp-hero">
-          <span className="sp-eyebrow">Monthly SEO Packages — Transparent Pricing, Zero Lock-in Contracts</span>
+          <span className="sp-eyebrow">Monthly SEO Packages - Transparent Pricing, Zero Lock-in Contracts</span>
           <h1>Monthly SEO Packages That Rank Your Business on Page 1 of Google</h1>
-          <p className="sp-hero-desc">Starting at $299/month. White-hat only. No contracts. Trusted by 500+ businesses across the US, Canada, and Australia — with 15+ years of proven ranking results.</p>
+          <p className="sp-hero-desc">Starting at $299/month. White-hat only. No contracts. Trusted by 500+ businesses across the US, Canada, and Australia - with 15+ years of proven ranking results.</p>
 
           <div className="sp-trust-badges" role="list">
             {['No Setup Fees','No Lock-in Contracts','White-Hat Only','Free SEO Audit','97% Client Retention'].map(b => (
@@ -693,7 +693,7 @@ export default function AffordableSeoPackages() {
               <div>
                 <div className="sp-definition-box">
                   <h3>Definition</h3>
-                  <p>A <strong>monthly SEO package</strong> is a bundled service where an agency handles all ongoing search engine optimisation for your website — technical fixes, on-page improvements, content creation, and link building — for a fixed monthly fee. Unlike a one-time audit, monthly SEO is continuous because Google&apos;s algorithm evolves, competitors keep investing, and rankings require sustained effort to build and maintain.</p>
+                  <p>A <strong>monthly SEO package</strong> is a bundled service where an agency handles all ongoing search engine optimisation for your website - technical fixes, on-page improvements, content creation, and link building - for a fixed monthly fee. Unlike a one-time audit, monthly SEO is continuous because Google&apos;s algorithm evolves, competitors keep investing, and rankings require sustained effort to build and maintain.</p>
                 </div>
                 <br />
                 <div className="sp-whatis-col">
@@ -703,7 +703,7 @@ export default function AffordableSeoPackages() {
                     <li>On-page optimisation (title tags, meta descriptions, headings, content)</li>
                     <li>Technical SEO (Core Web Vitals, crawlability, site speed, structured data)</li>
                     <li>Manual, white-hat link building from real editorial websites</li>
-                    <li>SEO content writing — blog posts and landing pages</li>
+                    <li>SEO content writing - blog posts and landing pages</li>
                     <li>Local SEO and Google Business Profile management</li>
                     <li>Google Analytics 4 and Search Console monitoring</li>
                     <li>Plain-English monthly performance report</li>
@@ -727,7 +727,7 @@ export default function AffordableSeoPackages() {
                   <br />
                   <div className="sp-definition-box" style={{padding:'18px 20px'}}>
                     <h3 style={{marginBottom:'8px'}}>Google E-E-A-T Compliance</h3>
-                    <p style={{fontSize:'13px'}}>All our SEO packages are built around Google&apos;s <strong>E-E-A-T framework</strong> (Experience, Expertise, Authoritativeness, Trustworthiness) — the quality standard Google uses to assess content in its 2024–2025 core updates and Helpful Content system.</p>
+                    <p style={{fontSize:'13px'}}>All our SEO packages are built around Google&apos;s <strong>E-E-A-T framework</strong> (Experience, Expertise, Authoritativeness, Trustworthiness) - the quality standard Google uses to assess content in its 2024–2025 core updates and Helpful Content system.</p>
                   </div>
                 </div>
               </div>
@@ -751,7 +751,7 @@ export default function AffordableSeoPackages() {
             <div style={{textAlign:'center',padding:'28px 0 24px'}}>
               <span className="sp-s-eyebrow">SEO Pricing</span>
               <h2 id="pkg-heading" className="sp-s-title">Monthly SEO Packages & Pricing</h2>
-              <p className="sp-s-desc" style={{margin:'0 auto'}}>Three transparent plans — no hidden fees, no long-term contracts, no surprises. All plans include a free SEO audit at sign-up.</p>
+              <p className="sp-s-desc" style={{margin:'0 auto'}}>Three transparent plans - no hidden fees, no long-term contracts, no surprises. All plans include a free SEO audit at sign-up.</p>
             </div>
             <div className="sp-pkg-grid" ref={pkgGridRef}>
               {PACKAGES.map((pkg,i)=>(
@@ -759,7 +759,7 @@ export default function AffordableSeoPackages() {
                   key={pkg.id}
                   className={`sp-pkg${pkg.featured?' feat':''}${visiblePkgCards.includes(i)?' sp-pv':''}`}
                   style={{transitionDelay:`${i*120}ms`}}
-                  aria-label={`${pkg.name} SEO package — $${pkg.price[billing]}/month`}
+                  aria-label={`${pkg.name} SEO package - $${pkg.price[billing]}/month`}
                 >
                   {pkg.tag && <span className="sp-pkg-tag">{pkg.tag}</span>}
                   <div className="sp-pkg-head">
@@ -772,7 +772,7 @@ export default function AffordableSeoPackages() {
                     <div className="sp-price-note">
                       {billing==='annual' ? `Save $${(pkg.price.monthly - pkg.price.annual)*12}/year` : `$${pkg.price.annual}/mo with annual billing`}
                     </div>
-                    <Link href="#contact" className="sp-pkg-cta">Get Started — Free Audit Included</Link>
+                    <Link href="#contact" className="sp-pkg-cta">Get Started - Free Audit Included</Link>
                   </div>
                   <div className="sp-pkg-div" />
                   <div className="sp-pkg-feats">
@@ -803,7 +803,7 @@ export default function AffordableSeoPackages() {
             <div className={`sp-s-reveal${visibleSections.has('cmp')?' sp-revealed':''}`} ref={el=>{sectionRefs.current['cmp']=el;}}>
               <span className="sp-s-eyebrow">Side-by-Side Comparison</span>
               <h2 id="compare-heading" className="sp-s-title">Compare SEO Package Features</h2>
-              <p className="sp-s-desc">Every deliverable, every plan — in one place. No surprises, no upsells, no hidden extras.</p>
+              <p className="sp-s-desc">Every deliverable, every plan - in one place. No surprises, no upsells, no hidden extras.</p>
             </div>
             <div className="sp-compare-wrap">
               <table className="sp-ctable" role="table" aria-label="SEO package feature comparison">
@@ -835,7 +835,7 @@ export default function AffordableSeoPackages() {
           <div className="sp-included-inner">
             <div className={`sp-s-reveal${visibleSections.has('inc')?' sp-revealed':''}`} ref={el=>{sectionRefs.current['inc']=el;}}>
               <span className="sp-s-eyebrow">Every Package Includes</span>
-              <h2 id="included-heading" className="sp-s-title">Full-Stack SEO — Nothing Left Out</h2>
+              <h2 id="included-heading" className="sp-s-title">Full-Stack SEO - Nothing Left Out</h2>
               <p className="sp-s-desc">Every 1Solutions SEO plan covers the complete spectrum of modern SEO. No paid add-ons. No module upgrades. Everything you need to rank is in the package.</p>
             </div>
             <div className="sp-inc-grid">
@@ -861,7 +861,7 @@ export default function AffordableSeoPackages() {
             <div className={`sp-s-reveal${visibleSections.has('gd')?' sp-revealed':''}`} ref={el=>{sectionRefs.current['gd']=el;}}>
               <span className="sp-s-eyebrow">Monthly SEO Pricing Explained</span>
               <h2 id="guide-heading" className="sp-s-title">What Should You Pay for Monthly SEO in 2025?</h2>
-              <p className="sp-s-desc">Monthly SEO pricing varies widely. Here is what different price points actually deliver — so you can make an informed decision.</p>
+              <p className="sp-s-desc">Monthly SEO pricing varies widely. Here is what different price points actually deliver - so you can make an informed decision.</p>
             </div>
             <div className="sp-guide-grid">
               {[
@@ -880,7 +880,7 @@ export default function AffordableSeoPackages() {
             </div>
             <div className="sp-definition-box" style={{marginTop:'28px',maxWidth:'860px'}}>
               <h3>Our Recommendation</h3>
-              <p>For most small and mid-sized businesses, the <strong>Professional plan at $599/month</strong> provides the best return on investment — enough keyword coverage, content volume, and link velocity to see meaningful organic traffic growth within 6 months. The Starter plan at $299/month is ideal for local businesses and single-location service providers.</p>
+              <p>For most small and mid-sized businesses, the <strong>Professional plan at $599/month</strong> provides the best return on investment - enough keyword coverage, content volume, and link velocity to see meaningful organic traffic growth within 6 months. The Starter plan at $299/month is ideal for local businesses and single-location service providers.</p>
             </div>
           </div>
         </section>
@@ -895,10 +895,10 @@ export default function AffordableSeoPackages() {
             </div>
             <div className="sp-psteps">
               {[
-                ['1','Free SEO Audit (Week 1)','We analyse your website — technical health, on-page quality, backlink profile, Core Web Vitals, and current keyword rankings. You receive a comprehensive audit report within 5 business days of sign-up, at no cost.'],
-                ['2','Keyword Strategy (Week 2)','We identify high-intent, achievable keywords mapped to your buyer\'s journey. We research the keywords your competitors rank for, identify gaps, and create a 12-month keyword roadmap aligned to business goals — not just search volume.'],
+                ['1','Free SEO Audit (Week 1)','We analyse your website - technical health, on-page quality, backlink profile, Core Web Vitals, and current keyword rankings. You receive a comprehensive audit report within 5 business days of sign-up, at no cost.'],
+                ['2','Keyword Strategy (Week 2)','We identify high-intent, achievable keywords mapped to your buyer\'s journey. We research the keywords your competitors rank for, identify gaps, and create a 12-month keyword roadmap aligned to business goals - not just search volume.'],
                 ['3','On-Page & Technical Fixes (Month 1)','We implement all on-page optimisations: title tags, meta descriptions, heading structures, content improvements, internal linking, schema markup, site speed fixes, and crawlability improvements across your target pages.'],
-                ['4','Content & Link Building (Ongoing)','We publish SEO-targeted blog content every month and build genuine editorial backlinks through manual outreach. All links are from real, niche-relevant websites with genuine traffic — no PBNs, no spam directories.'],
+                ['4','Content & Link Building (Ongoing)','We publish SEO-targeted blog content every month and build genuine editorial backlinks through manual outreach. All links are from real, niche-relevant websites with genuine traffic - no PBNs, no spam directories.'],
                 ['5','Monthly Reporting & Iteration','Every month you receive a clear report: keyword rank movements, organic traffic trends, backlinks earned, and the action plan for next month. We adapt strategy based on algorithm changes, competitor moves, and performance data.'],
               ].map(([n,title,desc],i)=>(
                 <div key={n} className={`sp-pstep${visibleSections.has('pr')?' sp-vis':''}`} style={{transitionDelay:`${i*110}ms`}}>
@@ -922,13 +922,13 @@ export default function AffordableSeoPackages() {
             <div className={`sp-center-head sp-s-reveal${visibleSections.has('ts')?' sp-revealed':''}`} ref={el=>{sectionRefs.current['ts']=el;}}>
               <span className="sp-s-eyebrow">Client Reviews</span>
               <h2 id="testi-heading" className="sp-s-title">What Our SEO Clients Say</h2>
-              <p style={{fontSize:'15px',color:'#4A6080'}}>Real results from real clients — no cherry-picked case studies, no inflated metrics.</p>
+              <p style={{fontSize:'15px',color:'#4A6080'}}>Real results from real clients - no cherry-picked case studies, no inflated metrics.</p>
             </div>
             <div className="sp-tgrid" ref={testiGridRef}>
               {[
-                {init:'JW',bg:'#1a4a7a',text:'"Our organic traffic grew by 340% in 9 months. We moved from page 3 to the top 3 positions for our most competitive keywords. The monthly reports are clear and the team flags issues before they become problems."',name:'Jason Wheeler',role:'CEO, HomeServices Direct — USA',feat:false},
-                {init:'SB',bg:'#0F3460',text:'"We tried two other SEO agencies before 1Solutions. The difference is depth — they understand our industry, write content that actually converts, and build links that move the needle. We upgraded from Professional to Enterprise within 4 months."',name:'Sophie Brennan',role:'Marketing Director, LegalEdge — Australia',feat:true},
-                {init:'RC',bg:'#2d5a8e',text:'"Our local SEO transformed completely. Google Business Profile impressions are up, we\'re appearing in the map pack for 15 new terms, and organic phone calls increased by 60% in 6 months. Outstanding ROI."',name:'Ravi Chandra',role:'Owner, MedicalSupply Plus — Canada',feat:false},
+                {init:'JW',bg:'#1a4a7a',text:'"Our organic traffic grew by 340% in 9 months. We moved from page 3 to the top 3 positions for our most competitive keywords. The monthly reports are clear and the team flags issues before they become problems."',name:'Jason Wheeler',role:'CEO, HomeServices Direct - USA',feat:false},
+                {init:'SB',bg:'#0F3460',text:'"We tried two other SEO agencies before 1Solutions. The difference is depth - they understand our industry, write content that actually converts, and build links that move the needle. We upgraded from Professional to Enterprise within 4 months."',name:'Sophie Brennan',role:'Marketing Director, LegalEdge - Australia',feat:true},
+                {init:'RC',bg:'#2d5a8e',text:'"Our local SEO transformed completely. Google Business Profile impressions are up, we\'re appearing in the map pack for 15 new terms, and organic phone calls increased by 60% in 6 months. Outstanding ROI."',name:'Ravi Chandra',role:'Owner, MedicalSupply Plus - Canada',feat:false},
               ].map((t,i)=>(
                 <article
                   key={t.name}
@@ -965,7 +965,7 @@ export default function AffordableSeoPackages() {
             <div className={`sp-s-reveal${visibleSections.has('wy')?' sp-revealed':''}`} ref={el=>{sectionRefs.current['wy']=el;}} style={{textAlign:'center'}}>
               <span className="sp-s-eyebrow">Why 1Solutions</span>
               <h2 id="why-heading" className="sp-s-title">Why Businesses Choose Us for SEO</h2>
-              <p className="sp-s-desc" style={{maxWidth:660,margin:'0 auto'}}>What separates a 15-year SEO agency from a new agency selling the same packages — and why it matters for your rankings.</p>
+              <p className="sp-s-desc" style={{maxWidth:660,margin:'0 auto'}}>What separates a 15-year SEO agency from a new agency selling the same packages - and why it matters for your rankings.</p>
             </div>
             <div className="sp-why-grid" ref={whyGridRef}>
               {WHY.map((w,i)=>(
@@ -986,10 +986,10 @@ export default function AffordableSeoPackages() {
           <div className="sp-contact-grid">
             <div>
               <h2 className="sp-ctitle" id="contact-heading">Get a Free SEO Audit &amp; Package Recommendation</h2>
-              <p className="sp-cdesc">Tell us about your business and we will send you a free technical SEO audit with a personalised package recommendation — usually within 24 hours, no commitment required.</p>
+              <p className="sp-cdesc">Tell us about your business and we will send you a free technical SEO audit with a personalised package recommendation - usually within 24 hours, no commitment required.</p>
               <div className="sp-cbenefits">
                 {[
-                  ['✓','Free technical SEO audit of your website — crawl health, Core Web Vitals, on-page quality, backlink profile.'],
+                  ['✓','Free technical SEO audit of your website - crawl health, Core Web Vitals, on-page quality, backlink profile.'],
                   ['✓','Package recommendation matched to your industry, competition level, and growth targets.'],
                   ['✓','No lock-in contracts. Cancel any time. We earn your business through results.'],
                   ['✓','Response within 24 hours. Audit delivered within 2 business days.'],
@@ -1016,10 +1016,10 @@ export default function AffordableSeoPackages() {
                   <label>Package Interested In</label>
                   <select>
                     <option value="">Select a package…</option>
-                    <option>Starter — $299/month</option>
-                    <option>Professional — $599/month</option>
-                    <option>Enterprise — $999/month</option>
-                    <option>Not sure — send me a recommendation</option>
+                    <option>Starter - $299/month</option>
+                    <option>Professional - $599/month</option>
+                    <option>Enterprise - $999/month</option>
+                    <option>Not sure - send me a recommendation</option>
                   </select>
                 </div>
                 <div className="sp-fg full">
@@ -1040,7 +1040,7 @@ export default function AffordableSeoPackages() {
         <section className="sp-faq" aria-labelledby="faq-heading">
           <div className="sp-faq-inner">
             <h2 id="faq-heading">Frequently Asked Questions About SEO Packages</h2>
-            <p className="sp-faq-sub">Everything you need to know before choosing a monthly SEO package — answered honestly.</p>
+            <p className="sp-faq-sub">Everything you need to know before choosing a monthly SEO package - answered honestly.</p>
             <div className="sp-faq-list">
               {FAQS.map((f,i)=>(
                 <div key={i} className={`sp-fitem${openFaq===i?' open':''}`} itemScope itemType="https://schema.org/Question">

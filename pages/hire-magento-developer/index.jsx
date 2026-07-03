@@ -28,15 +28,15 @@ const SKILLS = [
   'Adobe Commerce Cloud', 'Third-Party ERP & CRM Integration', 'PHPUnit Testing',
 ];
 const MODELS = [
-  { title: 'Dedicated Hire', desc: 'A Magento specialist working full-time on your store — 8 hrs/day, 5 days/week.', icon: '👤' },
+  { title: 'Dedicated Hire', desc: 'A Magento specialist working full-time on your store - 8 hrs/day, 5 days/week.', icon: '👤' },
   { title: 'Part-Time Hire', desc: 'Half-day engagement for ongoing module development, upgrades, or performance tuning.', icon: '⏰' },
   { title: 'Hourly Hire',    desc: 'Flexible billing for code reviews, migration planning, or one-off bug-fix sprints.', icon: '🕐' },
 ];
 const WHY = [
-  { h: 'Deep Magento Platform Expertise', b: 'Our developers have built large-scale Magento 2 stores handling millions in GMV — not just simple product catalogues.' },
+  { h: 'Deep Magento Platform Expertise', b: 'Our developers have built large-scale Magento 2 stores handling millions in GMV - not just simple product catalogues.' },
   { h: 'Adobe Commerce Certified', b: 'Team members hold Adobe Commerce certifications covering front-end, back-end, and solution architecture.' },
   { h: '48-Hour Profile Delivery', b: 'Submit your brief and receive matched Magento developer CVs within two business days.' },
-  { h: 'Performance & Scalability Focus', b: 'Every engagement includes a performance baseline — we optimise for page speed, database queries, and cache hit rates.' },
+  { h: 'Performance & Scalability Focus', b: 'Every engagement includes a performance baseline - we optimise for page speed, database queries, and cache hit rates.' },
   { h: 'NDA & IP Security', b: 'Comprehensive NDA and IP assignment signed before any access to your Magento codebase or admin panel.' },
   { h: 'Flexible Engagement', b: 'Scale up for large upgrade projects or reduce hours during quieter trading periods with 2-week notice.' },
 ];
@@ -167,7 +167,7 @@ export default function HireMagentoDeveloper() {
       <section className="hmag-sec" ref={skR}>
         <div className="hmag-wrap">
           <h2 className="hmag-sec-title">Skills &amp; Tech Stack</h2>
-          <p className="hmag-sec-sub">Our Magento developers are experienced across the full platform — custom modules, performance, cloud, and third-party integrations.</p>
+          <p className="hmag-sec-sub">Our Magento developers are experienced across the full platform - custom modules, performance, cloud, and third-party integrations.</p>
           <div className="hmag-skills">
             {SKILLS.map((s, i) => (
               <span key={s} className={`hmag-skill${skV ? ' hmag-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>
@@ -195,7 +195,7 @@ export default function HireMagentoDeveloper() {
       <section className="hmag-sec" ref={whR}>
         <div className="hmag-wrap">
           <h2 className="hmag-sec-title">Why Hire Magento Developers from 1Solutions?</h2>
-          <p className="hmag-sec-sub">Our Magento team has built and scaled stores doing millions in annual revenue — across B2C and B2B commerce.</p>
+          <p className="hmag-sec-sub">Our Magento team has built and scaled stores doing millions in annual revenue - across B2C and B2B commerce.</p>
           <div className="hmag-why-grid">
             {WHY.map((w, i) => (
               <div key={w.h} className={`hmag-why-item${whV ? ' hmag-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}>
@@ -219,7 +219,7 @@ export default function HireMagentoDeveloper() {
       <section className="hmag-sec hmag-sec-alt" ref={prR}>
         <div className="hmag-wrap">
           <h2 className="hmag-sec-title">Hire in 4 Simple Steps</h2>
-          <p className="hmag-sec-sub">From brief to first staging deployment — in under two weeks.</p>
+          <p className="hmag-sec-sub">From brief to first staging deployment - in under two weeks.</p>
           <div className="hmag-process">
             {PROCESS.map((p, i) => (
               <div key={p.n} className={`hmag-step${prV ? ' hmag-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}>
@@ -253,7 +253,7 @@ export default function HireMagentoDeveloper() {
       <section className="hmag-cta">
         <div className="hmag-wrap">
           <h2>Ready to Hire Your Magento Developer?</h2>
-          <p>Share your requirements and receive matched Magento specialist profiles within 48 hours — no commitment required to view CVs.</p>
+          <p>Share your requirements and receive matched Magento specialist profiles within 48 hours - no commitment required to view CVs.</p>
           <Link href="/contact-us" className="hmag-btn-primary">Get Started Today →</Link>
         </div>
       </section>

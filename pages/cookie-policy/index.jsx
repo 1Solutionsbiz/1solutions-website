@@ -71,9 +71,9 @@ We may use Google Ads, Meta Pixel, or LinkedIn Insight Tag for remarketing purpo
     title: '4. Third-Party Cookies',
     content: `In addition to our own cookies, we may use third-party cookies to report website usage statistics and to deliver advertisements. These third parties include:
 
-• Google (Analytics, Ads, Tag Manager) — privacy.google.com
-• Meta / Facebook (Pixel, Ads) — facebook.com/privacy/policy
-• LinkedIn (Insight Tag) — linkedin.com/legal/privacy-policy
+• Google (Analytics, Ads, Tag Manager) - privacy.google.com
+• Meta / Facebook (Pixel, Ads) - facebook.com/privacy/policy
+• LinkedIn (Insight Tag) - linkedin.com/legal/privacy-policy
 
 We do not control these third-party cookies. Please refer to each provider's privacy policy for information on how they use data.`,
   },
@@ -83,16 +83,16 @@ We do not control these third-party cookies. Please refer to each provider's pri
     content: `You have the right to decide whether to accept or reject optional cookies. You can exercise your cookie preferences by:
 
 Browser settings: Most browsers allow you to view, manage, delete, and block cookies via their settings. Note that blocking all cookies may affect the functionality of our website.
-  — Chrome: Settings → Privacy and Security → Cookies and other site data
-  — Safari: Settings → Privacy → Manage Website Data
-  — Firefox: Options → Privacy & Security → Cookies and Site Data
-  — Edge: Settings → Site permissions → Cookies and site data
+  - Chrome: Settings → Privacy and Security → Cookies and other site data
+  - Safari: Settings → Privacy → Manage Website Data
+  - Firefox: Options → Privacy & Security → Cookies and Site Data
+  - Edge: Settings → Site permissions → Cookies and site data
 
 Opt-out tools:
-  — Google Analytics: tools.google.com/dlpage/gaoptout
-  — Google Ads personalisation: adssettings.google.com
-  — Meta Ads preferences: facebook.com/ads/preferences
-  — Your Online Choices (EU): youronlinechoices.eu
+  - Google Analytics: tools.google.com/dlpage/gaoptout
+  - Google Ads personalisation: adssettings.google.com
+  - Meta Ads preferences: facebook.com/ads/preferences
+  - Your Online Choices (EU): youronlinechoices.eu
 
 Please note that deleting cookies or opting out does not prevent all data collection. Some information may still be collected on an aggregate or anonymised basis.`,
   },
@@ -135,7 +135,7 @@ export default function CookiePolicy() {
         <title>Cookie Policy | 1Solutions</title>
         <meta
           name="description"
-          content="1Solutions Cookie Policy — how we use cookies, what types we use, and how you can manage or disable them on our website."
+          content="1Solutions Cookie Policy - how we use cookies, what types we use, and how you can manage or disable them on our website."
         />
         <link rel="canonical" href="https://www.1solutions.biz/cookie-policy/" />
         <style>{`

@@ -12,7 +12,7 @@ export default function TagArchive({ tag, posts, pageInfo, categories, totalPost
     <>
       <Head>
         <title>{tag.name} - Blog | 1Solutions</title>
-        <meta name="description" content={`Articles tagged with ${tag.name} from 1Solutions — ${tag.count} posts.`} />
+        <meta name="description" content={`Articles tagged with ${tag.name} from 1Solutions - ${tag.count} posts.`} />
         <link rel="canonical" href={`${siteUrl}/tag/${tag.slug}`} />
       </Head>
 
@@ -23,7 +23,7 @@ export default function TagArchive({ tag, posts, pageInfo, categories, totalPost
         <div className="archive-filters-inner">
           <span className="filters-label">
             Tag: <strong>#{tag.name}</strong>
-            {tag.count > 0 && <span style={{ marginLeft: 8, fontWeight: 400, color: 'var(--text-light)' }}>— {tag.count} article{tag.count !== 1 ? 's' : ''}</span>}
+            {tag.count > 0 && <span style={{ marginLeft: 8, fontWeight: 400, color: 'var(--text-light)' }}>- {tag.count} article{tag.count !== 1 ? 's' : ''}</span>}
           </span>
           <div className="filters">
             <Link href="/blog" className="filter-btn">All Posts</Link>

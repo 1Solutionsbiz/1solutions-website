@@ -18,7 +18,7 @@ const SCHEMA = {
       '@type': 'Service',
       name: 'Healthcare Software Development',
       url: 'https://www.1solutions.biz/healthcare-software-development/',
-      description: 'Custom healthcare software development — HIPAA-compliant EHR/EMR systems, telemedicine platforms, patient portals, healthcare mobile apps, medical billing software, and HL7 FHIR integrations.',
+      description: 'Custom healthcare software development - HIPAA-compliant EHR/EMR systems, telemedicine platforms, patient portals, healthcare mobile apps, medical billing software, and HL7 FHIR integrations.',
       provider: {
         '@type': 'Organization',
         name: '1Solutions',
@@ -32,12 +32,12 @@ const SCHEMA = {
     {
       '@type': 'FAQPage',
       mainEntity: [
-        { '@type': 'Question', name: 'Do you develop HIPAA-compliant healthcare software?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Every engagement at 1Solutions follows HIPAA/HITECH compliance requirements — from encrypted data storage and transmission to role-based access control, audit logging, and Business Associate Agreement (BAA) management. We build on HIPAA-eligible cloud infrastructure (AWS GovCloud, Azure Healthcare, Google Cloud Healthcare API) and conduct security penetration testing before every launch.' } },
+        { '@type': 'Question', name: 'Do you develop HIPAA-compliant healthcare software?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Every engagement at 1Solutions follows HIPAA/HITECH compliance requirements - from encrypted data storage and transmission to role-based access control, audit logging, and Business Associate Agreement (BAA) management. We build on HIPAA-eligible cloud infrastructure (AWS GovCloud, Azure Healthcare, Google Cloud Healthcare API) and conduct security penetration testing before every launch.' } },
         { '@type': 'Question', name: 'Can you integrate with existing EHR systems like Epic, Cerner, or Athenahealth?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We have experience integrating with Epic (MyChart, FHIR APIs), Cerner (Millennium, FHIR R4), Athenahealth, AllScripts, eClinicalWorks, and many others. We use HL7 FHIR R4, HL7 v2.x, and CCD/C-CDA standards to ensure interoperability. We also build custom integration middleware for proprietary hospital systems.' } },
         { '@type': 'Question', name: 'How long does healthcare software development take?', acceptedAnswer: { '@type': 'Answer', text: 'Timelines vary by scope. A patient portal MVP typically takes 12–16 weeks. A full EHR system can take 6–18 months depending on complexity and integration requirements. Telemedicine platforms typically take 10–14 weeks for a production-ready MVP. We provide detailed timeline estimates after the discovery phase.' } },
         { '@type': 'Question', name: 'What HL7 FHIR standards do you support?', acceptedAnswer: { '@type': 'Answer', text: 'We support HL7 FHIR R4 (the current standard), HL7 FHIR STU3, HL7 v2.x message formats, CCD/C-CDA document exchange, DICOM for medical imaging, and SMART on FHIR for app authorisation. Our team has built FHIR servers, FHIR-native data stores, and custom FHIR resource mappings for multiple healthcare clients.' } },
         { '@type': 'Question', name: 'Do you offer post-launch support for healthcare applications?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We offer tiered post-launch support plans: Standard (business hours, 48hr SLA), Professional (extended hours, 24hr SLA), and Enterprise (24/7 coverage, 4hr critical SLA). All support plans include security patch management, compliance updates as regulations change, performance monitoring, and feature enhancements.' } },
-        { '@type': 'Question', name: 'Which engagement model is best for a healthcare startup?', acceptedAnswer: { '@type': 'Answer', text: 'For most healthcare startups, the Dedicated Team model is the strongest choice. It gives you a full-stack team (PM, architect, frontend, backend, QA, DevOps) working exclusively on your product at a significantly lower cost than US hiring. You retain full IP and direction. As requirements evolve — which they always do in early-stage healthtech — the team adapts without the overhead of contract renegotiation.' } },
+        { '@type': 'Question', name: 'Which engagement model is best for a healthcare startup?', acceptedAnswer: { '@type': 'Answer', text: 'For most healthcare startups, the Dedicated Team model is the strongest choice. It gives you a full-stack team (PM, architect, frontend, backend, QA, DevOps) working exclusively on your product at a significantly lower cost than US hiring. You retain full IP and direction. As requirements evolve - which they always do in early-stage healthtech - the team adapts without the overhead of contract renegotiation.' } },
       ],
     },
   ],
@@ -46,10 +46,10 @@ const SCHEMA = {
 /* ─── Page data ──────────────────────────────────────────────── */
 const SERVICES = [
   { n: '01', title: 'EHR / EMR Systems', desc: 'Custom electronic health record systems with patient timeline, SOAP notes, lab integration, e-prescribing, referral management, and granular role-based access control.' },
-  { n: '02', title: 'Telemedicine Platforms', desc: 'HIPAA-compliant video consultation, asynchronous messaging, remote patient monitoring, integrated scheduling, and prescription management — all on web and mobile.', feat: true },
+  { n: '02', title: 'Telemedicine Platforms', desc: 'HIPAA-compliant video consultation, asynchronous messaging, remote patient monitoring, integrated scheduling, and prescription management - all on web and mobile.', feat: true },
   { n: '03', title: 'Patient Portals', desc: 'Self-service portals enabling appointment booking, secure access to medical records, prescription refills, bill payment, and direct messaging with care teams.' },
   { n: '04', title: 'Healthcare Mobile Apps', desc: 'iOS and Android health apps for chronic disease management, medication adherence, fitness tracking, wearable device integration, and remote monitoring.' },
-  { n: '05', title: 'Medical Billing Software', desc: 'End-to-end revenue cycle management — eligibility verification, claims submission, denial management, ICD-10/CPT coding, EOB processing, and reporting dashboards.' },
+  { n: '05', title: 'Medical Billing Software', desc: 'End-to-end revenue cycle management - eligibility verification, claims submission, denial management, ICD-10/CPT coding, EOB processing, and reporting dashboards.' },
   { n: '06', title: 'Clinical Decision Support', desc: 'AI-assisted tools that surface evidence-based recommendations, drug interaction alerts, allergy checks, and risk stratification scores at the point of care.' },
   { n: '07', title: 'Health Data Analytics', desc: 'Population health dashboards, readmission risk prediction, outcomes analytics, care gap identification, and operational efficiency reporting for health systems.' },
   { n: '08', title: 'Laboratory Information Systems', desc: 'Specimen lifecycle tracking, result reporting, instrument interfacing, quality control management, and accreditation-ready audit trails for clinical and diagnostic labs.' },
@@ -121,10 +121,10 @@ const ENGAGEMENT_MODELS = [
     feat: true,
     icon: 'M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z',
     headline: 'Your offshore engineering team. Full-time. Fully yours.',
-    desc: 'A dedicated squad of healthcare software specialists — PM, architect, frontend, backend, QA, and DevOps — working exclusively on your product at a fraction of US hiring cost. You retain full IP ownership and technical direction.',
+    desc: 'A dedicated squad of healthcare software specialists - PM, architect, frontend, backend, QA, and DevOps - working exclusively on your product at a fraction of US hiring cost. You retain full IP ownership and technical direction.',
     bestFor: ['Healthcare startups scaling a product', 'Long-term platform development', 'Replacing or extending an in-house team', 'Complex, evolving healthtech products'],
     process: 'Team assembly → Onboarding → Weekly sprint delivery → Continuous roadmap',
-    timeline: 'Ongoing — scale up or down each quarter',
+    timeline: 'Ongoing - scale up or down each quarter',
   },
   {
     id: 'tm',
@@ -136,16 +136,16 @@ const ENGAGEMENT_MODELS = [
     desc: 'Billed on actual time and resources used. Best for projects where the scope evolves, requirements are research-heavy, or you need to pivot quickly as clinical workflows become clearer.',
     bestFor: ['Proof-of-concept & R&D work', 'Complex third-party EHR API integrations', 'Greenfield healthtech platforms', 'Projects with frequently changing requirements'],
     process: 'Sprint planning → Biweekly delivery → Iterative refinement → Transparent timesheets',
-    timeline: 'Start in 1 week — no lengthy onboarding',
+    timeline: 'Start in 1 week - no lengthy onboarding',
   },
 ];
 
 const FAQS = [
-  { q: 'Do you develop HIPAA-compliant healthcare software?', a: 'Yes. Every 1Solutions healthcare engagement follows HIPAA/HITECH compliance requirements — encrypted data storage and transmission (AES-256, TLS 1.3), role-based access control, comprehensive audit logging, and Business Associate Agreement (BAA) support. We build on HIPAA-eligible cloud infrastructure (AWS GovCloud, Azure Healthcare API, Google Cloud Healthcare API) and conduct security penetration testing and HIPAA risk assessments before every product launch.' },
+  { q: 'Do you develop HIPAA-compliant healthcare software?', a: 'Yes. Every 1Solutions healthcare engagement follows HIPAA/HITECH compliance requirements - encrypted data storage and transmission (AES-256, TLS 1.3), role-based access control, comprehensive audit logging, and Business Associate Agreement (BAA) support. We build on HIPAA-eligible cloud infrastructure (AWS GovCloud, Azure Healthcare API, Google Cloud Healthcare API) and conduct security penetration testing and HIPAA risk assessments before every product launch.' },
   { q: 'Can you integrate with Epic, Cerner, Athenahealth, and other existing EHR systems?', a: 'Yes. We have delivered integrations with Epic (MyChart, FHIR R4 APIs), Cerner Millennium, Athenahealth, AllScripts, eClinicalWorks, and several proprietary hospital systems. We use HL7 FHIR R4, HL7 v2.x message formats, CCD/C-CDA, and SMART on FHIR for authorisation. For systems without a published FHIR API, we build custom middleware and HL7 translation layers.' },
-  { q: 'How long does healthcare software development take?', a: 'Timelines depend on scope and complexity. A patient portal MVP typically takes 12–16 weeks. A telemedicine platform takes 10–14 weeks for a production-ready launch. A full custom EHR can take 6–18 months. HIPAA compliance QA and security testing add 3–4 weeks to any project. We provide detailed timeline estimates — broken into milestones — after the discovery phase, which we offer as a paid fixed-price engagement.' },
+  { q: 'How long does healthcare software development take?', a: 'Timelines depend on scope and complexity. A patient portal MVP typically takes 12–16 weeks. A telemedicine platform takes 10–14 weeks for a production-ready launch. A full custom EHR can take 6–18 months. HIPAA compliance QA and security testing add 3–4 weeks to any project. We provide detailed timeline estimates - broken into milestones - after the discovery phase, which we offer as a paid fixed-price engagement.' },
   { q: 'What HL7 FHIR standards do you support?', a: 'We support HL7 FHIR R4 (current standard), FHIR STU3, HL7 v2.x message formats, CCD/C-CDA document exchange, DICOM for medical imaging, and SMART on FHIR for app authorisation. We have built FHIR servers, FHIR-native data stores, and custom resource mappings for US Certification criteria (ONC/CMS interoperability rules) compliance.' },
-  { q: 'Do you offer post-launch support for healthcare applications?', a: 'Yes — all projects include a 30-day hypercare period post-launch. Ongoing support is available in three tiers: Standard (business hours, 48hr SLA), Professional (extended hours, 24hr SLA), and Enterprise (24/7, 4hr critical response SLA). All plans include security patch management, compliance updates as HIPAA rules change, performance monitoring with alerts, and quarterly feature review calls.' },
+  { q: 'Do you offer post-launch support for healthcare applications?', a: 'Yes - all projects include a 30-day hypercare period post-launch. Ongoing support is available in three tiers: Standard (business hours, 48hr SLA), Professional (extended hours, 24hr SLA), and Enterprise (24/7, 4hr critical response SLA). All plans include security patch management, compliance updates as HIPAA rules change, performance monitoring with alerts, and quarterly feature review calls.' },
   { q: 'Which engagement model is best for a healthcare startup?', a: 'For most early-stage healthtech startups, the Dedicated Team model gives the best outcomes. You get a full-stack team (PM, architect, frontend, backend, QA, DevOps) for significantly less than equivalent US hiring. You direct the work, retain all IP, and can scale the team up or down quarterly as funding and roadmap evolve. The fixed-price model works well once specific features or an MVP scope is fully defined.' },
   { q: 'Do you work with US, UK, Australian, and Canadian healthcare providers?', a: 'Yes. The majority of our healthcare clients are in the United States (HIPAA jurisdiction), with others in Australia (Privacy Act/My Health Records Act), the UK (NHS standards, GDPR), and Canada (PIPEDA). We adapt our compliance frameworks to each jurisdiction. Our team works US and Australian-friendly hours and communicates async with UK and European clients.' },
   { q: 'Can you build AI-powered features into healthcare software?', a: 'Yes. We have built clinical NLP tools for medical record summarisation, predictive models for readmission risk and deterioration early warning, AI-assisted diagnosis support tools, and automated medical coding (ICD-10/CPT) using machine learning. We use TensorFlow, PyTorch, and scikit-learn on HIPAA-compliant cloud environments, with full model explainability documentation for regulatory review.' },
@@ -265,10 +265,10 @@ export default function HealthcareSoftwareDevelopment() {
     <>
       <Head>
         <title>Healthcare Software Development Company | 1Solutions</title>
-        <meta name="description" content="Custom healthcare software development — HIPAA-compliant EHR/EMR, telemedicine, patient portals, medical billing & HL7 FHIR integrations." />
+        <meta name="description" content="Custom healthcare software development - HIPAA-compliant EHR/EMR, telemedicine, patient portals, medical billing & HL7 FHIR integrations." />
         <link rel="canonical" href="https://www.1solutions.biz/healthcare-software-development/" />
         <meta property="og:title" content="Healthcare Software Development Company | 1Solutions" />
-        <meta property="og:description" content="HIPAA-compliant healthcare software development — EHR, telemedicine, patient portals, medical billing, HL7 FHIR & AI-powered clinical tools. 15+ years, 50+ healthcare clients." />
+        <meta property="og:description" content="HIPAA-compliant healthcare software development - EHR, telemedicine, patient portals, medical billing, HL7 FHIR & AI-powered clinical tools. 15+ years, 50+ healthcare clients." />
         <meta property="og:url" content="https://www.1solutions.biz/healthcare-software-development/" />
         <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
@@ -543,7 +543,7 @@ export default function HealthcareSoftwareDevelopment() {
         {/* ── HERO ── */}
         <section className="hc-hero">
           <span className="hc-eyebrow">Healthcare Software Development Company</span>
-          <h1>Custom Healthcare Software Development — HIPAA-Compliant, HL7 FHIR-Ready</h1>
+          <h1>Custom Healthcare Software Development - HIPAA-Compliant, HL7 FHIR-Ready</h1>
           <p className="hc-hero-desc">We design and develop EHR/EMR systems, telemedicine platforms, patient portals, medical billing software, and AI-powered clinical tools for hospitals, clinics, and healthtech startups across the US, Canada, and Australia.</p>
           <div className="hc-trust-row">
             {['HIPAA Compliant','HL7 FHIR R4','15+ Years Experience','50+ Healthcare Clients','End-to-End Development'].map(b => (
@@ -595,7 +595,7 @@ export default function HealthcareSoftwareDevelopment() {
             <div className={`hc-s-reveal${visibleSections.has('svc') ? ' hc-revealed' : ''}`} ref={el => { sectionRefs.current['svc'] = el; }}>
               <span className="hc-s-eyebrow">What We Build</span>
               <h2 id="svc-heading" className="hc-s-title">Healthcare Software Solutions We Deliver</h2>
-              <p className="hc-s-desc" style={{ maxWidth: 720 }}>From clinical workflow automation to patient-facing apps and interoperability integrations — we cover the full spectrum of healthcare software development with deep HIPAA and HL7 FHIR expertise.</p>
+              <p className="hc-s-desc" style={{ maxWidth: 720 }}>From clinical workflow automation to patient-facing apps and interoperability integrations - we cover the full spectrum of healthcare software development with deep HIPAA and HL7 FHIR expertise.</p>
             </div>
             <div className="hc-svc-grid" ref={svcGridRef}>
               {visibleServices.map((s, i) => (
@@ -655,7 +655,7 @@ export default function HealthcareSoftwareDevelopment() {
             <div className={`hc-s-reveal${visibleSections.has('eng') ? ' hc-revealed' : ''}`} ref={el => { sectionRefs.current['eng'] = el; }} style={{ textAlign: 'center' }}>
               <span className="hc-s-eyebrow">Engagement Models</span>
               <h2 id="eng-heading" className="hc-s-title">Engagement Models for Healthcare Software Development</h2>
-              <p className="hc-s-desc" style={{ maxWidth: 700, margin: '0 auto' }}>Every healthcare project is different. Choose the model that fits your stage, budget, and how well-defined your requirements are — or ask us to recommend the right fit.</p>
+              <p className="hc-s-desc" style={{ maxWidth: 700, margin: '0 auto' }}>Every healthcare project is different. Choose the model that fits your stage, budget, and how well-defined your requirements are - or ask us to recommend the right fit.</p>
             </div>
             <div className="hc-eng-grid" ref={engGridRef}>
               {ENGAGEMENT_MODELS.map((m, i) => (
@@ -703,9 +703,9 @@ export default function HealthcareSoftwareDevelopment() {
             <div className="hc-psteps">
               {[
                 ['1', 'Discovery & Requirements', 'Stakeholder interviews with clinicians, administrators, and IT leads. We map existing clinical workflows, identify integration points with EHR/LIS/billing systems, define compliance requirements (HIPAA, state regulations), and produce a detailed technical specification and project roadmap.'],
-                ['2', 'HIPAA-Compliant Architecture', 'System architecture designed around healthcare-specific constraints — HIPAA-eligible cloud infrastructure, end-to-end encryption, audit logging at every data access point, role-based access control, and HL7 FHIR API design. Security threat modelling is completed before a single line of code is written.'],
+                ['2', 'HIPAA-Compliant Architecture', 'System architecture designed around healthcare-specific constraints - HIPAA-eligible cloud infrastructure, end-to-end encryption, audit logging at every data access point, role-based access control, and HL7 FHIR API design. Security threat modelling is completed before a single line of code is written.'],
                 ['3', 'UI/UX Design for Clinical Workflows', 'Patient-centred and clinician-centred design that reduces cognitive load in high-stakes environments. We follow WCAG 2.1 accessibility standards, conduct usability testing with clinical staff, and produce validated interactive prototypes before development begins.'],
-                ['4', 'Agile Development & Integrations', 'Two-week sprints with continuous delivery to a staging environment. We handle all third-party integrations — EHR APIs, lab instruments, payment gateways, identity providers, and device data streams — using HL7 FHIR R4, HL7 v2.x, and proprietary APIs where needed.'],
+                ['4', 'Agile Development & Integrations', 'Two-week sprints with continuous delivery to a staging environment. We handle all third-party integrations - EHR APIs, lab instruments, payment gateways, identity providers, and device data streams - using HL7 FHIR R4, HL7 v2.x, and proprietary APIs where needed.'],
                 ['5', 'QA, Security Testing & Compliance Audit', 'Comprehensive QA including functional testing, performance load testing, and clinical edge-case scenarios. HIPAA security risk assessment, OWASP-aligned penetration testing, WCAG 2.1 accessibility audit, and cross-browser/cross-device testing before every release.'],
                 ['6', 'Launch, Training & Ongoing Support', 'Phased production rollout with a 30-day hypercare period, clinical staff training, and full technical documentation. Post-launch support tiers available from business-hours to 24/7 coverage, with proactive monitoring, security patches, and compliance updates as regulations evolve.'],
               ].map(([n, title, desc], i) => (
@@ -737,9 +737,9 @@ export default function HealthcareSoftwareDevelopment() {
             </div>
             <div className="hc-tgrid" ref={testiGridRef}>
               {[
-                { init: 'DM', bg: '#0F3460', text: '"1Solutions built our telemedicine platform from scratch — HIPAA-compliant, Epic-integrated, and live in 14 weeks. Patient adoption hit 78% in the first month. The team understood clinical workflows in a way most tech agencies simply don\'t."', name: 'Dr. Daniel Morrow', role: 'CTO, CareConnect Telehealth — USA', feat: false },
-                { init: 'SL', bg: '#1a4a7a', text: '"We needed a patient portal integrated with our Athenahealth EHR within a tight regulatory deadline. 1Solutions delivered on time, passed our HIPAA security audit first attempt, and the clinician feedback has been outstanding. Highly recommended."', name: 'Sarah Lim', role: 'VP Technology, PrimeCare Health Network — Australia', feat: true },
-                { init: 'RT', bg: '#065f46', text: '"The medical billing module they built reduced our claims denial rate from 18% to 4% in six months. Tight HL7 integration, clean UX for our billing staff, and the post-launch support has been proactive. Real healthcare software expertise."', name: 'Robert Theron', role: 'CFO, MedBilling Solutions — Canada', feat: false },
+                { init: 'DM', bg: '#0F3460', text: '"1Solutions built our telemedicine platform from scratch - HIPAA-compliant, Epic-integrated, and live in 14 weeks. Patient adoption hit 78% in the first month. The team understood clinical workflows in a way most tech agencies simply don\'t."', name: 'Dr. Daniel Morrow', role: 'CTO, CareConnect Telehealth - USA', feat: false },
+                { init: 'SL', bg: '#1a4a7a', text: '"We needed a patient portal integrated with our Athenahealth EHR within a tight regulatory deadline. 1Solutions delivered on time, passed our HIPAA security audit first attempt, and the clinician feedback has been outstanding. Highly recommended."', name: 'Sarah Lim', role: 'VP Technology, PrimeCare Health Network - Australia', feat: true },
+                { init: 'RT', bg: '#065f46', text: '"The medical billing module they built reduced our claims denial rate from 18% to 4% in six months. Tight HL7 integration, clean UX for our billing staff, and the post-launch support has been proactive. Real healthcare software expertise."', name: 'Robert Theron', role: 'CFO, MedBilling Solutions - Canada', feat: false },
               ].map((t, i) => (
                 <article
                   key={t.name}
@@ -768,18 +768,18 @@ export default function HealthcareSoftwareDevelopment() {
             <div className={`hc-s-reveal${visibleSections.has('wy') ? ' hc-revealed' : ''}`} ref={el => { sectionRefs.current['wy'] = el; }} style={{ textAlign: 'center' }}>
               <span className="hc-s-eyebrow">Why 1Solutions</span>
               <h2 id="why-heading" className="hc-s-title">Why Healthcare Organisations Choose 1Solutions</h2>
-              <p className="hc-s-desc" style={{ maxWidth: 660, margin: '0 auto' }}>What separates healthcare software specialists from generic development agencies — and why it matters for your patients, your staff, and your compliance obligations.</p>
+              <p className="hc-s-desc" style={{ maxWidth: 660, margin: '0 auto' }}>What separates healthcare software specialists from generic development agencies - and why it matters for your patients, your staff, and your compliance obligations.</p>
             </div>
             <div className="hc-why-grid" ref={whyGridRef}>
               {[
-                ['HIPAA/HITECH Native', 'We don\'t bolt compliance on at the end. Our architecture patterns, development standards, and QA processes are built around HIPAA requirements from day one — audit logging, encryption, access controls, and risk assessment are standard deliverables, not extras.'],
+                ['HIPAA/HITECH Native', 'We don\'t bolt compliance on at the end. Our architecture patterns, development standards, and QA processes are built around HIPAA requirements from day one - audit logging, encryption, access controls, and risk assessment are standard deliverables, not extras.'],
                 ['HL7 FHIR & Interoperability Experts', 'Deep hands-on experience with HL7 FHIR R4, HL7 v2.x, DICOM, CCD/C-CDA, and SMART on FHIR. We have built successful integrations with Epic, Cerner, Athenahealth, AllScripts, and proprietary hospital systems.'],
-                ['15+ Years in Healthcare IT', 'We have been building healthcare software since 2008 — through ICD-10 transitions, Meaningful Use requirements, ACA changes, and ONC/CMS interoperability mandates. We know what changes and what stays the same.'],
-                ['Clinical Workflow Understanding', 'Our team includes developers with prior healthcare IT experience. We conduct structured workflow discovery with clinicians before writing code — because the right feature built on the wrong workflow creates risk, not value.'],
+                ['15+ Years in Healthcare IT', 'We have been building healthcare software since 2008 - through ICD-10 transitions, Meaningful Use requirements, ACA changes, and ONC/CMS interoperability mandates. We know what changes and what stays the same.'],
+                ['Clinical Workflow Understanding', 'Our team includes developers with prior healthcare IT experience. We conduct structured workflow discovery with clinicians before writing code - because the right feature built on the wrong workflow creates risk, not value.'],
                 ['Zero Compromise on Security', 'HIPAA penetration testing, OWASP security review, encrypted data at rest and in transit, and detailed audit trails for every data access are standard deliverables on every engagement. We have never had a client experience a PHI breach.'],
-                ['Full-Stack, End-to-End Delivery', 'Discovery, architecture, design, frontend, backend, mobile, QA, DevOps, and post-launch support — all under one roof with a single accountability point. No vendor coordination overhead.'],
+                ['Full-Stack, End-to-End Delivery', 'Discovery, architecture, design, frontend, backend, mobile, QA, DevOps, and post-launch support - all under one roof with a single accountability point. No vendor coordination overhead.'],
                 ['US, Australian & Canadian Market Expertise', 'Deep familiarity with HIPAA (US), My Health Records Act (Australia), PIPEDA (Canada), NHS Digital Standards (UK). Our team works US-friendly hours and adapts compliance frameworks to each jurisdiction.'],
-                ['Transparent Delivery Process', 'Weekly sprint demos, live staging environments, Jira tracking, and direct Slack/Teams access to your developers. You always know what\'s been built, what\'s in progress, and what\'s next — no black-box delivery.'],
+                ['Transparent Delivery Process', 'Weekly sprint demos, live staging environments, Jira tracking, and direct Slack/Teams access to your developers. You always know what\'s been built, what\'s in progress, and what\'s next - no black-box delivery.'],
               ].map(([title, desc], i) => (
                 <div
                   key={title}
@@ -805,9 +805,9 @@ export default function HealthcareSoftwareDevelopment() {
                 {[
                   ['✓', 'Free 60-minute discovery call with a healthcare software architect.'],
                   ['✓', 'HIPAA compliance framework recommendation for your specific use case.'],
-                  ['✓', 'Honest scope, timeline, and budget estimate — no inflated quotes.'],
+                  ['✓', 'Honest scope, timeline, and budget estimate - no inflated quotes.'],
                   ['✓', 'NDAs signed before any discussion of proprietary clinical workflows.'],
-                  ['✓', 'All three engagement models available — Fixed Price, Dedicated Team, T&M.'],
+                  ['✓', 'All three engagement models available - Fixed Price, Dedicated Team, T&M.'],
                 ].map(([icon, text]) => (
                   <div className="hc-cbenefit" key={text}>
                     <span className="hc-cbenefit-icon">{icon}</span>

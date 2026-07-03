@@ -3,40 +3,40 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const SERVICES = [
-  { n: '01', title: 'Custom AI Model Development', desc: 'Building, training, and deploying custom machine learning models for your specific use case — classification, regression, recommendation, anomaly detection, forecasting, and ranking models trained on your data.', href: '/contact-us' },
-  { n: '02', title: 'Natural Language Processing (NLP)', desc: 'Text classification, sentiment analysis, entity recognition, document parsing, chatbots, and language models — NLP solutions that extract value from unstructured text data at scale.', href: '/contact-us' },
-  { n: '03', title: 'Computer Vision', desc: 'Image and video analysis solutions — object detection, image classification, OCR, defect detection, and visual inspection — for manufacturing quality control, retail, security, and healthcare applications.', href: '/contact-us' },
-  { n: '04', title: 'Generative AI Integration', desc: 'Integrating large language models (GPT-4, Claude, Gemini) and image generation APIs into products and workflows — AI content generation, document summarisation, code generation, and intelligent assistants built on foundation models.', href: '/contact-us' },
-  { n: '05', title: 'AI-Powered Automation', desc: 'Automating complex decision-making processes that previously required human judgement — document processing, approval workflows, fraud detection, customer support routing, and intelligent data extraction.', href: '/contact-us' },
-  { n: '06', title: 'Predictive Analytics', desc: 'Forecasting models for demand prediction, churn prediction, pricing optimisation, inventory management, and financial modelling — turning historical data into forward-looking intelligence that improves operational decisions.', href: '/contact-us' },
-  { n: '07', title: 'Recommendation Systems', desc: 'Personalisation engines for ecommerce, content platforms, and SaaS products — collaborative filtering, content-based filtering, and hybrid recommendation models that increase engagement and revenue per user.', href: '/contact-us' },
-  { n: '08', title: 'AI Strategy & Consulting', desc: 'Identifying the highest-value AI opportunities in your business, assessing data readiness, selecting the right approaches, and building a phased AI roadmap — for organisations that want to invest in AI strategically rather than ad hoc.', href: '/contact-us' },
+  { n: '01', title: 'Custom AI Model Development', desc: 'Building, training, and deploying custom machine learning models for your specific use case - classification, regression, recommendation, anomaly detection, forecasting, and ranking models trained on your data.', href: '/contact-us' },
+  { n: '02', title: 'Natural Language Processing (NLP)', desc: 'Text classification, sentiment analysis, entity recognition, document parsing, chatbots, and language models - NLP solutions that extract value from unstructured text data at scale.', href: '/contact-us' },
+  { n: '03', title: 'Computer Vision', desc: 'Image and video analysis solutions - object detection, image classification, OCR, defect detection, and visual inspection - for manufacturing quality control, retail, security, and healthcare applications.', href: '/contact-us' },
+  { n: '04', title: 'Generative AI Integration', desc: 'Integrating large language models (GPT-4, Claude, Gemini) and image generation APIs into products and workflows - AI content generation, document summarisation, code generation, and intelligent assistants built on foundation models.', href: '/contact-us' },
+  { n: '05', title: 'AI-Powered Automation', desc: 'Automating complex decision-making processes that previously required human judgement - document processing, approval workflows, fraud detection, customer support routing, and intelligent data extraction.', href: '/contact-us' },
+  { n: '06', title: 'Predictive Analytics', desc: 'Forecasting models for demand prediction, churn prediction, pricing optimisation, inventory management, and financial modelling - turning historical data into forward-looking intelligence that improves operational decisions.', href: '/contact-us' },
+  { n: '07', title: 'Recommendation Systems', desc: 'Personalisation engines for ecommerce, content platforms, and SaaS products - collaborative filtering, content-based filtering, and hybrid recommendation models that increase engagement and revenue per user.', href: '/contact-us' },
+  { n: '08', title: 'AI Strategy & Consulting', desc: 'Identifying the highest-value AI opportunities in your business, assessing data readiness, selecting the right approaches, and building a phased AI roadmap - for organisations that want to invest in AI strategically rather than ad hoc.', href: '/contact-us' },
 ];
 
 const PROCESS = [
-  { step: '01', title: 'Use Case Discovery', desc: 'Identifying specific, high-value AI opportunities in your business — where AI can reduce cost, increase revenue, or improve quality — and prioritising by impact and feasibility given your data and constraints.' },
-  { step: '02', title: 'Data Assessment', desc: 'Evaluating your available data — volume, quality, labelling, and structure — and identifying what data preparation, collection, or labelling is required before model development can begin.' },
-  { step: '03', title: 'Proof of Concept', desc: 'Building a lightweight proof of concept to validate the core AI hypothesis before full investment — demonstrating that the approach works on your data before committing to production development.' },
-  { step: '04', title: 'Model Development & Training', desc: 'Full model development, feature engineering, training, validation, and iteration — with clear performance metrics agreed before development begins and transparent reporting on model performance throughout.' },
-  { step: '05', title: 'Integration & Deployment', desc: 'Integrating the AI model into your product or workflow — API development, real-time or batch inference infrastructure, monitoring, and logging — deployed to cloud infrastructure that scales with usage.' },
-  { step: '06', title: 'Monitoring & Improvement', desc: 'Post-deployment model monitoring for performance drift, data distribution shifts, and edge cases — with scheduled retraining cycles to maintain model accuracy as your data evolves.' },
+  { step: '01', title: 'Use Case Discovery', desc: 'Identifying specific, high-value AI opportunities in your business - where AI can reduce cost, increase revenue, or improve quality - and prioritising by impact and feasibility given your data and constraints.' },
+  { step: '02', title: 'Data Assessment', desc: 'Evaluating your available data - volume, quality, labelling, and structure - and identifying what data preparation, collection, or labelling is required before model development can begin.' },
+  { step: '03', title: 'Proof of Concept', desc: 'Building a lightweight proof of concept to validate the core AI hypothesis before full investment - demonstrating that the approach works on your data before committing to production development.' },
+  { step: '04', title: 'Model Development & Training', desc: 'Full model development, feature engineering, training, validation, and iteration - with clear performance metrics agreed before development begins and transparent reporting on model performance throughout.' },
+  { step: '05', title: 'Integration & Deployment', desc: 'Integrating the AI model into your product or workflow - API development, real-time or batch inference infrastructure, monitoring, and logging - deployed to cloud infrastructure that scales with usage.' },
+  { step: '06', title: 'Monitoring & Improvement', desc: 'Post-deployment model monitoring for performance drift, data distribution shifts, and edge cases - with scheduled retraining cycles to maintain model accuracy as your data evolves.' },
 ];
 
 const WHY = [
-  { title: 'Engineering-First Approach', desc: 'We build AI solutions that work in production — reliable, scalable, and maintainable — not impressive demos that fail under real-world conditions. Every model we build is designed for deployment, monitoring, and long-term operation from day one.' },
-  { title: 'Data-Realistic', desc: 'We are honest about what AI can and cannot do with your data. If your data volume or quality is not sufficient for the approach you are considering, we tell you — and recommend what data investments would enable the AI capability you want.' },
-  { title: 'Business-Outcome Focus', desc: 'We measure AI projects against business outcomes — cost saved, revenue generated, time reduced, accuracy improved — not against academic performance metrics that do not connect to your goals.' },
-  { title: 'Full-Stack AI Delivery', desc: 'From use case discovery and data preparation through model development, API integration, and deployment infrastructure — we deliver complete AI solutions, not just models that need a separate engineering team to deploy.' },
-  { title: 'Responsible AI Practices', desc: 'We build AI solutions with fairness, transparency, and reliability in mind — including bias evaluation, explainability where required, and robust testing across edge cases and demographic groups.' },
+  { title: 'Engineering-First Approach', desc: 'We build AI solutions that work in production - reliable, scalable, and maintainable - not impressive demos that fail under real-world conditions. Every model we build is designed for deployment, monitoring, and long-term operation from day one.' },
+  { title: 'Data-Realistic', desc: 'We are honest about what AI can and cannot do with your data. If your data volume or quality is not sufficient for the approach you are considering, we tell you - and recommend what data investments would enable the AI capability you want.' },
+  { title: 'Business-Outcome Focus', desc: 'We measure AI projects against business outcomes - cost saved, revenue generated, time reduced, accuracy improved - not against academic performance metrics that do not connect to your goals.' },
+  { title: 'Full-Stack AI Delivery', desc: 'From use case discovery and data preparation through model development, API integration, and deployment infrastructure - we deliver complete AI solutions, not just models that need a separate engineering team to deploy.' },
+  { title: 'Responsible AI Practices', desc: 'We build AI solutions with fairness, transparency, and reliability in mind - including bias evaluation, explainability where required, and robust testing across edge cases and demographic groups.' },
 ];
 
 const FAQS = [
   { q: 'What types of AI solutions do you build?', a: 'We build a wide range of AI solutions depending on business needs: machine learning models for prediction and classification, NLP solutions for text analysis and document processing, computer vision for image and video analysis, generative AI integrations using large language models, recommendation systems for personalisation, and AI automation for complex decision-making workflows. We work across both product AI (embedded in software products) and operational AI (automating internal business processes).' },
-  { q: 'Do I need a lot of data to use AI?', a: 'It depends on the approach. Traditional machine learning models typically require thousands to hundreds of thousands of labelled examples. Deep learning models require significantly more. However, fine-tuning foundation models (GPT, Claude) or using retrieval-augmented generation can deliver powerful AI capabilities with much smaller datasets. We assess your data situation early and recommend approaches that are appropriate for what you have — or advise on data collection strategies to enable the AI capability you want.' },
-  { q: 'How long does an AI project take?', a: 'A proof of concept for a focused use case typically takes 4 to 8 weeks. A production AI model with integration and deployment takes 3 to 6 months depending on complexity and data readiness. Enterprise AI platforms or multi-model systems take 6 to 18+ months. We scope projects after the discovery and data assessment phase — timeline estimates before that point are not reliable.' },
-  { q: 'What is the difference between AI and automation?', a: 'Traditional automation (RPA, workflow tools) follows explicit rules — if X then Y. It handles structured, predictable processes well. AI adds the ability to handle unstructured data, make probabilistic judgements, learn from data, and adapt to variation — the things that rule-based systems cannot handle. In practice, the most effective solutions combine both: AI for the judgement layer, automation for the execution layer.' },
-  { q: 'Can you integrate AI into our existing systems?', a: 'Yes. Most of our AI projects involve integrating models into existing products, CRMs, ERPs, or workflows via APIs. We design AI integrations that work with your current architecture — adding intelligent capabilities to what you have rather than requiring a complete rebuild. Common integrations include Salesforce, HubSpot, Shopify, WooCommerce, custom web applications, and enterprise software via REST APIs.' },
-  { q: 'How do you ensure AI model accuracy and reliability?', a: 'We start by agreeing performance targets before development begins — precision, recall, accuracy, and business-level metrics specific to the use case. We use hold-out test sets and cross-validation to evaluate model performance on unseen data. After deployment, we monitor model performance in production, track data distribution shifts, and schedule retraining cycles. We also implement confidence thresholds and human-in-the-loop fallbacks for high-stakes decisions.' },
+  { q: 'Do I need a lot of data to use AI?', a: 'It depends on the approach. Traditional machine learning models typically require thousands to hundreds of thousands of labelled examples. Deep learning models require significantly more. However, fine-tuning foundation models (GPT, Claude) or using retrieval-augmented generation can deliver powerful AI capabilities with much smaller datasets. We assess your data situation early and recommend approaches that are appropriate for what you have - or advise on data collection strategies to enable the AI capability you want.' },
+  { q: 'How long does an AI project take?', a: 'A proof of concept for a focused use case typically takes 4 to 8 weeks. A production AI model with integration and deployment takes 3 to 6 months depending on complexity and data readiness. Enterprise AI platforms or multi-model systems take 6 to 18+ months. We scope projects after the discovery and data assessment phase - timeline estimates before that point are not reliable.' },
+  { q: 'What is the difference between AI and automation?', a: 'Traditional automation (RPA, workflow tools) follows explicit rules - if X then Y. It handles structured, predictable processes well. AI adds the ability to handle unstructured data, make probabilistic judgements, learn from data, and adapt to variation - the things that rule-based systems cannot handle. In practice, the most effective solutions combine both: AI for the judgement layer, automation for the execution layer.' },
+  { q: 'Can you integrate AI into our existing systems?', a: 'Yes. Most of our AI projects involve integrating models into existing products, CRMs, ERPs, or workflows via APIs. We design AI integrations that work with your current architecture - adding intelligent capabilities to what you have rather than requiring a complete rebuild. Common integrations include Salesforce, HubSpot, Shopify, WooCommerce, custom web applications, and enterprise software via REST APIs.' },
+  { q: 'How do you ensure AI model accuracy and reliability?', a: 'We start by agreeing performance targets before development begins - precision, recall, accuracy, and business-level metrics specific to the use case. We use hold-out test sets and cross-validation to evaluate model performance on unseen data. After deployment, we monitor model performance in production, track data distribution shifts, and schedule retraining cycles. We also implement confidence thresholds and human-in-the-loop fallbacks for high-stakes decisions.' },
 ];
 
 const STATS = [
@@ -60,7 +60,7 @@ export default function ArtificialIntelligence() {
     <>
       <Head>
         <title>AI Solutions & Development Services | 1Solutions</title>
-        <meta name="description" content="AI development services — machine learning models, NLP, computer vision, AI automation, and custom AI integrations." />
+        <meta name="description" content="AI development services - machine learning models, NLP, computer vision, AI automation, and custom AI integrations." />
         <meta name="keywords" content="ai solutions, machine learning development, nlp services, computer vision, generative ai integration, artificial intelligence company india" />
         <link rel="canonical" href="https://www.1solutions.biz/artificial-intelligence/" />
         <meta property="og:title" content="AI Solutions & Development Services | 1Solutions" />
@@ -137,7 +137,7 @@ export default function ArtificialIntelligence() {
             <nav className="aisol-bc"><Link href="/">Home</Link><span>/</span><span style={{color:'#FE9700'}}>AI Solutions</span></nav>
             <span className="aisol-badge"><span style={{width:6,height:6,borderRadius:'50%',background:'#7dd3fc',display:'inline-block'}}/> ARTIFICIAL INTELLIGENCE</span>
             <h1 className="aisol-h1">Build Smarter Products with <span>AI Solutions</span></h1>
-            <p className="aisol-sub">From machine learning models and NLP to computer vision and AI automation — we help businesses integrate artificial intelligence into products, workflows, and decisions that drive measurable outcomes.</p>
+            <p className="aisol-sub">From machine learning models and NLP to computer vision and AI automation - we help businesses integrate artificial intelligence into products, workflows, and decisions that drive measurable outcomes.</p>
             <div className="aisol-btns">
               <Link href="/contact-us" className="aisol-btn-p">Explore AI Solutions <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/case-studies" className="aisol-btn-s">View Our Work</Link>
@@ -147,16 +147,16 @@ export default function ArtificialIntelligence() {
         </section>
         <section className="aisol-svc"><div className="aisol-svc-in">
           <span className="aisol-ey2">Our Services</span><h2 className="aisol-ttl">AI Development Services</h2>
-          <p className="aisol-desc">Custom ML models, NLP, computer vision, generative AI integrations, predictive analytics, and AI automation — end-to-end AI delivery from use case discovery to production deployment.</p>
+          <p className="aisol-desc">Custom ML models, NLP, computer vision, generative AI integrations, predictive analytics, and AI automation - end-to-end AI delivery from use case discovery to production deployment.</p>
           <div className="aisol-grid" ref={cardsRef}>{SERVICES.map((s,i) => <Link key={s.n} href={s.href} className={`aisol-card${visibleCards.includes(i)?' visible':''}`}><div className="aisol-num">{s.n}</div><h3>{s.title}</h3><p>{s.desc}</p></Link>)}</div>
         </div></section>
         <section className="aisol-proc"><div className="aisol-proc-in">
           <span className="aisol-ey2">How We Work</span><h2 className="aisol-ttl">Our AI Development Process</h2>
-          <p className="aisol-desc">Discovery to proof of concept to production — a structured approach that validates AI assumptions before full investment and ensures models perform in the real world.</p>
+          <p className="aisol-desc">Discovery to proof of concept to production - a structured approach that validates AI assumptions before full investment and ensures models perform in the real world.</p>
           <div className="aisol-steps">{PROCESS.map((p,i) => <div key={p.step} ref={el=>{stepRefs.current[i]=el}} className={`aisol-step${visibleSteps.includes(i)?' visible':''}`}><div className="aisol-snum">{p.step}</div><div><h3>{p.title}</h3><p>{p.desc}</p></div></div>)}</div>
         </div></section>
         <section className="aisol-why"><div className="aisol-why-in">
-          <span className="aisol-ey2">Why 1Solutions</span><h2 className="aisol-ttl">AI That Works in Production — Not Just in Demos</h2>
+          <span className="aisol-ey2">Why 1Solutions</span><h2 className="aisol-ttl">AI That Works in Production - Not Just in Demos</h2>
           <p className="aisol-desc">Engineering-first AI delivery with a focus on business outcomes, data realism, and long-term reliability.</p>
           <div className="aisol-why-grid" ref={whyRef}>{WHY.map((w,i) => <div key={w.title} className={`aisol-wcard${visibleWhy.includes(i)?' visible':''}`}><div className="aisol-dot"/><h3>{w.title}</h3><p>{w.desc}</p></div>)}</div>
         </div></section>
@@ -168,7 +168,7 @@ export default function ArtificialIntelligence() {
         <section className="aisol-cta"><div className="aisol-cta-o"/>
           <div className="aisol-cta-in">
             <h2 className="aisol-cta-t">Ready to Build with AI?</h2>
-            <p className="aisol-cta-s">Tell us your use case, your data situation, and your goals — we&rsquo;ll assess feasibility, recommend the right approach, and scope a proof of concept that validates the AI before full investment.</p>
+            <p className="aisol-cta-s">Tell us your use case, your data situation, and your goals - we&rsquo;ll assess feasibility, recommend the right approach, and scope a proof of concept that validates the AI before full investment.</p>
             <div className="aisol-btns">
               <Link href="/contact-us" className="aisol-btn-p">Explore AI Solutions <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
               <Link href="/case-studies" className="aisol-btn-s">View Our Work</Link>

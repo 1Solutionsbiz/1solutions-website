@@ -36,23 +36,23 @@ const MODELS = [
 const WHY = [
   { h: 'Zero Data Loss Guaranteed',         b: 'We use validated migration tools and manual checks to ensure every product, variant, customer record, and order transfers without corruption or loss.' },
   { h: 'Full SEO Preservation',             b: 'We map every old URL to its Shopify equivalent with 301 redirects, migrate meta titles and descriptions, and preserve your Google rankings.' },
-  { h: '15+ Years of E-Commerce Experience', b: "Since 2008, we've migrated 300+ e-commerce stores. We know what breaks during migrations — and how to prevent it." },
-  { h: 'Staging Environment Testing',       b: 'All migrations are tested on a staging store before going live — so your customers never experience downtime or broken pages.' },
+  { h: '15+ Years of E-Commerce Experience', b: "Since 2008, we've migrated 300+ e-commerce stores. We know what breaks during migrations - and how to prevent it." },
+  { h: 'Staging Environment Testing',       b: 'All migrations are tested on a staging store before going live - so your customers never experience downtime or broken pages.' },
   { h: 'Post-Migration Support',            b: 'We provide 30 days of post-migration support to catch edge cases, fix broken links, and ensure your Shopify store performs as expected.' },
   { h: 'NDA & IP Security',                 b: 'Full NDA signed before any access to your existing store data, product catalogue, or customer records.' },
 ];
 const PROCESS = [
-  { n: '01', h: 'Migration Audit',   b: 'We audit your current platform — product count, data structure, URL patterns, SEO footprint, and third-party integrations.' },
+  { n: '01', h: 'Migration Audit',   b: 'We audit your current platform - product count, data structure, URL patterns, SEO footprint, and third-party integrations.' },
   { n: '02', h: 'Migration Plan',    b: 'We deliver a detailed migration plan: data mapping, redirect list, timeline, risk register, and rollback procedure.' },
-  { n: '03', h: 'Staging Migration', b: 'We execute the migration on a private staging store — products, customers, orders, SEO fields, and redirects — and test thoroughly.' },
+  { n: '03', h: 'Staging Migration', b: 'We execute the migration on a private staging store - products, customers, orders, SEO fields, and redirects - and test thoroughly.' },
   { n: '04', h: 'Go Live',           b: 'We cut over to the new Shopify store, verify all redirects fire correctly, and monitor rankings and traffic for the first 30 days.' },
 ];
 const FAQS = [
   { q: 'Which platforms can you migrate to Shopify?', a: 'We migrate from WooCommerce, Magento 1 & 2, BigCommerce, PrestaShop, OpenCart, Volusion, 3dcart, Wix, Squarespace, and fully custom-built platforms. If your store runs on it, we can migrate it.' },
-  { q: 'Will I lose my Google rankings?', a: 'No — if the migration is handled correctly. We map every old URL to its Shopify equivalent with 301 permanent redirects, preserve meta titles and descriptions, and keep your sitemap and robots.txt in order. Migrations done without proper redirect mapping are the primary cause of ranking loss.' },
+  { q: 'Will I lose my Google rankings?', a: 'No - if the migration is handled correctly. We map every old URL to its Shopify equivalent with 301 permanent redirects, preserve meta titles and descriptions, and keep your sitemap and robots.txt in order. Migrations done without proper redirect mapping are the primary cause of ranking loss.' },
   { q: 'How long does a Shopify migration take?', a: 'Small stores (under 500 products): 1–2 weeks. Medium stores (500–5,000 products): 2–4 weeks. Large or complex migrations (Magento, custom platforms, 10,000+ products): 4–8 weeks. We provide a precise timeline after the migration audit.' },
-  { q: 'Will customer passwords transfer?', a: 'Customer email addresses, names, addresses, and order history transfer fully. Passwords cannot be migrated due to encryption — customers receive a password reset email on first login to your new Shopify store.' },
-  { q: 'Do you set up the Shopify theme as well?', a: 'Yes. Full migration packages include theme setup — either installing and configuring a premium theme or applying your existing brand guidelines to a new Shopify theme. Custom theme development is also available.' },
+  { q: 'Will customer passwords transfer?', a: 'Customer email addresses, names, addresses, and order history transfer fully. Passwords cannot be migrated due to encryption - customers receive a password reset email on first login to your new Shopify store.' },
+  { q: 'Do you set up the Shopify theme as well?', a: 'Yes. Full migration packages include theme setup - either installing and configuring a premium theme or applying your existing brand guidelines to a new Shopify theme. Custom theme development is also available.' },
   { q: 'What happens if something breaks after go-live?', a: 'All our migrations include 30 days of post-migration support. If any redirects break, data is missing, or integrations misbehave after launch, we fix it at no additional charge.' },
 ];
 
@@ -85,7 +85,7 @@ export default function ShopifyMigrationServices() {
         { '@type': 'ListItem', position: 2, name: 'Shopify Migration Services', item: 'https://www.1solutions.biz/shopify-migration-services/' },
       ]},
       { '@type': 'Service', name: 'Shopify Migration Services', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Expert Shopify migration services from 1Solutions — WooCommerce, Magento, BigCommerce, and custom platform migrations with zero data loss and SEO preservation.',
+        description: 'Expert Shopify migration services from 1Solutions - WooCommerce, Magento, BigCommerce, and custom platform migrations with zero data loss and SEO preservation.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '112', bestRating: '5' },
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
@@ -159,21 +159,21 @@ export default function ShopifyMigrationServices() {
       <section className="sms-sec" ref={skR}>
         <div className="sms-wrap">
           <h2 className="sms-sec-title">Migration Capabilities</h2>
-          <p className="sms-sec-sub">We handle migrations from every major e-commerce platform — with full data integrity and SEO preservation.</p>
+          <p className="sms-sec-sub">We handle migrations from every major e-commerce platform - with full data integrity and SEO preservation.</p>
           <div className="sms-skills">{SKILLS.map((s, i) => <span key={s} className={`sms-skill${skV ? ' sms-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>)}</div>
         </div>
       </section>
       <section className="sms-sec sms-sec-alt" ref={enR}>
         <div className="sms-wrap">
           <h2 className="sms-sec-title">Migration Service Options</h2>
-          <p className="sms-sec-sub">Choose the engagement that matches your needs — from a full end-to-end migration to a pre-migration audit.</p>
+          <p className="sms-sec-sub">Choose the engagement that matches your needs - from a full end-to-end migration to a pre-migration audit.</p>
           <div className="sms-models">{MODELS.map((m, i) => <div key={m.title} className={`sms-model${enV ? ' sms-in' : ''}`} style={{ transitionDelay: `${i * 120}ms` }}><div className="sms-model-icon">{m.icon}</div><h3>{m.title}</h3><p>{m.desc}</p></div>)}</div>
         </div>
       </section>
       <section className="sms-sec" ref={whR}>
         <div className="sms-wrap">
           <h2 className="sms-sec-title">Why Choose 1Solutions for Your Shopify Migration?</h2>
-          <p className="sms-sec-sub">We have migrated 300+ stores and know exactly what breaks — and how to prevent it.</p>
+          <p className="sms-sec-sub">We have migrated 300+ stores and know exactly what breaks - and how to prevent it.</p>
           <div className="sms-why-grid">{WHY.map((w, i) => <div key={w.h} className={`sms-why-item${whV ? ' sms-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
         </div>
       </section>
@@ -202,7 +202,7 @@ export default function ShopifyMigrationServices() {
       <section className="sms-cta">
         <div className="sms-wrap">
           <h2>Ready to Migrate to Shopify?</h2>
-          <p>Get a free migration audit — we'll review your current platform, map your data, and deliver a no-obligation plan within 48 hours.</p>
+          <p>Get a free migration audit - we'll review your current platform, map your data, and deliver a no-obligation plan within 48 hours.</p>
           <Link href="/contact-us" className="sms-btn-primary">Get Your Free Migration Audit →</Link>
         </div>
       </section>

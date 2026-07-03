@@ -18,7 +18,7 @@ const SCHEMA = {
       '@type': 'Service',
       name: 'Flutter App Development Services',
       url: 'https://www.1solutions.biz/flutter-app-development-services/',
-      description: 'Cross-platform Flutter app development for iOS, Android, web, and desktop — a single Dart codebase delivering native performance, pixel-perfect UI, and 60fps animations. Custom Flutter apps from MVP to enterprise-scale, built and deployed faster than separate native development.',
+      description: 'Cross-platform Flutter app development for iOS, Android, web, and desktop - a single Dart codebase delivering native performance, pixel-perfect UI, and 60fps animations. Custom Flutter apps from MVP to enterprise-scale, built and deployed faster than separate native development.',
       provider: {
         '@type': 'Organization',
         name: '1Solutions',
@@ -32,12 +32,12 @@ const SCHEMA = {
     {
       '@type': 'FAQPage',
       mainEntity: [
-        { '@type': 'Question', name: 'Why choose Flutter over React Native or native iOS/Android development?', acceptedAnswer: { '@type': 'Answer', text: 'Flutter compiles directly to native ARM code — unlike React Native, which uses a JavaScript bridge. This gives Flutter near-native performance with smooth 60/120fps animations. A single Dart codebase targets iOS, Android, web, and desktop simultaneously, so development time and cost are typically 40–60% lower than building separate native apps. Flutter also provides pixel-perfect UI consistency across platforms — your app looks identical on iOS and Android without platform-specific workarounds. Google uses Flutter internally for apps like Google Pay, and major brands including BMW, Alibaba, and eBay have shipped Flutter apps at scale.' } },
+        { '@type': 'Question', name: 'Why choose Flutter over React Native or native iOS/Android development?', acceptedAnswer: { '@type': 'Answer', text: 'Flutter compiles directly to native ARM code - unlike React Native, which uses a JavaScript bridge. This gives Flutter near-native performance with smooth 60/120fps animations. A single Dart codebase targets iOS, Android, web, and desktop simultaneously, so development time and cost are typically 40–60% lower than building separate native apps. Flutter also provides pixel-perfect UI consistency across platforms - your app looks identical on iOS and Android without platform-specific workarounds. Google uses Flutter internally for apps like Google Pay, and major brands including BMW, Alibaba, and eBay have shipped Flutter apps at scale.' } },
         { '@type': 'Question', name: 'How long does it take to build a Flutter app?', acceptedAnswer: { '@type': 'Answer', text: 'A Flutter MVP with core screens (authentication, 3–5 main screens, API integration, and basic state management) typically takes 8–14 weeks. A mid-complexity app with custom UI components, real-time features (chat, notifications), payments, and backend integrations typically takes 16–24 weeks. A full enterprise Flutter app with offline capability, complex state management, multiple user roles, admin dashboard, and CI/CD pipeline typically takes 24–36 weeks. We deliver functional builds to a TestFlight/Play Console staging environment on a biweekly sprint cycle throughout development.' } },
         { '@type': 'Question', name: 'Can Flutter apps access native device features?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Flutter has a rich ecosystem of packages providing access to native device features: camera, GPS and location services, biometric authentication (Face ID, Touch ID, fingerprint), push notifications (Firebase Cloud Messaging), Bluetooth and BLE, NFC, local storage, contacts and calendar, in-app purchases, social login (Google, Apple, Facebook), and platform-specific capabilities through platform channels. Where a package does not exist, we write native platform channel code in Swift/Kotlin to expose device capabilities to the Flutter layer.' } },
-        { '@type': 'Question', name: 'Can you migrate our existing React Native or Ionic app to Flutter?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We handle full framework migrations from React Native, Ionic, Xamarin, and Cordova to Flutter. The migration process starts with a codebase audit, then a feature-by-feature rewrite in Dart/Flutter using the same backend APIs. We typically phase the migration — running Flutter alongside the existing app on a feature-by-feature basis — to reduce risk and allow A/B testing of new Flutter screens before full cutover. Most React Native to Flutter migrations see 30–50% performance improvements at the UI layer and significant reduction in JS bundle size and bridge overhead.' } },
+        { '@type': 'Question', name: 'Can you migrate our existing React Native or Ionic app to Flutter?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We handle full framework migrations from React Native, Ionic, Xamarin, and Cordova to Flutter. The migration process starts with a codebase audit, then a feature-by-feature rewrite in Dart/Flutter using the same backend APIs. We typically phase the migration - running Flutter alongside the existing app on a feature-by-feature basis - to reduce risk and allow A/B testing of new Flutter screens before full cutover. Most React Native to Flutter migrations see 30–50% performance improvements at the UI layer and significant reduction in JS bundle size and bridge overhead.' } },
         { '@type': 'Question', name: 'Does Flutter support offline functionality and local data storage?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Flutter has excellent offline support. We use Hive (fast, lightweight NoSQL), Isar (schema-based, high performance), SQLite via the drift or sqflite package, or Realm depending on data complexity. Offline-first architecture uses a local-first data model with background sync to the server when connectivity is restored, conflict resolution strategies for concurrent edits, and optimistic UI updates so the app feels instant even on slow connections. We have built offline-capable Flutter apps for field inspection, logistics, healthcare, and retail use cases.' } },
-        { '@type': 'Question', name: 'What Flutter state management approach do you use?', acceptedAnswer: { '@type': 'Answer', text: "State management choice depends on app complexity. For simple apps we use Provider or Riverpod. For medium complexity apps with clear separation of business logic and UI we use BLoC/Cubit — it's testable, predictable, and scalable. For highly reactive apps we use Riverpod (code-gen variant) for compile-safe, boilerplate-free state. We avoid GetX in production apps due to its opinionated conventions and difficulty in testing. All our Flutter apps include a full unit and widget test suite targeting the state management layer." } },
+        { '@type': 'Question', name: 'What Flutter state management approach do you use?', acceptedAnswer: { '@type': 'Answer', text: "State management choice depends on app complexity. For simple apps we use Provider or Riverpod. For medium complexity apps with clear separation of business logic and UI we use BLoC/Cubit - it's testable, predictable, and scalable. For highly reactive apps we use Riverpod (code-gen variant) for compile-safe, boilerplate-free state. We avoid GetX in production apps due to its opinionated conventions and difficulty in testing. All our Flutter apps include a full unit and widget test suite targeting the state management layer." } },
       ],
     },
   ],
@@ -45,16 +45,16 @@ const SCHEMA = {
 
 /* ─── Page data ──────────────────────────────────────────────── */
 const SERVICES = [
-  { n: '01', title: 'Custom Flutter App Development', desc: 'End-to-end custom Flutter app development for iOS and Android from a single Dart codebase — architecture design, UI implementation, API integration, state management, app store submission, and ongoing roadmap delivery for consumer, B2B, and enterprise apps.' },
+  { n: '01', title: 'Custom Flutter App Development', desc: 'End-to-end custom Flutter app development for iOS and Android from a single Dart codebase - architecture design, UI implementation, API integration, state management, app store submission, and ongoing roadmap delivery for consumer, B2B, and enterprise apps.' },
   { n: '02', title: 'Flutter MVP & Rapid Prototyping', desc: 'Launch a market-validated Flutter MVP in 8–14 weeks. We scope core user journeys, design a minimal but polished UI, integrate essential backend APIs, and deliver a TestFlight/Play Console build ready for real user testing and investor demonstrations.', feat: true },
-  { n: '03', title: 'Flutter iOS & Android Apps', desc: 'Production-quality Flutter apps that pass App Store and Google Play review on first submission — platform-specific design conventions (Material 3 / Cupertino), adaptive layouts, deep linking, background services, push notifications, and in-app purchases implemented correctly.' },
+  { n: '03', title: 'Flutter iOS & Android Apps', desc: 'Production-quality Flutter apps that pass App Store and Google Play review on first submission - platform-specific design conventions (Material 3 / Cupertino), adaptive layouts, deep linking, background services, push notifications, and in-app purchases implemented correctly.' },
   { n: '04', title: 'Flutter Web & Desktop Apps', desc: 'Extend your Flutter mobile app to web browsers and Windows/macOS/Linux desktops from the same codebase. Adaptive layouts that reflow from mobile to tablet to desktop, SEO-friendly web rendering (CanvasKit / HTML renderer), and OS-level integrations for desktop.' },
-  { n: '05', title: 'Flutter UI/UX Design & Animations', desc: 'Pixel-perfect custom Flutter UIs with 60fps animations — hero transitions, Rive and Lottie animation integration, custom implicit and explicit animation curves, shader-based visual effects, and micro-interactions that make your app feel premium and responsive.' },
-  { n: '06', title: 'Flutter App Migration (RN / Ionic → Flutter)', desc: 'Full framework migrations from React Native, Ionic, Xamarin, or Cordova to Flutter — with feature parity audit, phased rewrite strategy, performance benchmarking before and after, and zero data loss migration of local storage and user preferences.' },
-  { n: '07', title: 'Flutter Backend Integration & API Development', desc: 'REST API, GraphQL, Firebase, Supabase, and WebSocket integrations. We also design and build the backend (Node.js, Python, or Dart/Shelf) alongside the Flutter app for end-to-end ownership — with real-time sync, offline queue, and push notification infrastructure.' },
-  { n: '08', title: 'Flutter Performance Optimisation', desc: 'Profiling and optimisation of existing Flutter apps — reducing jank, fixing memory leaks, optimising build methods, lazy loading, image caching, reducing rebuild scope with efficient state management, and reducing app bundle size for faster download and install.' },
-  { n: '09', title: 'Flutter Enterprise & B2B Applications', desc: 'Complex Flutter apps for enterprise use cases — field workforce apps, logistics and fleet management, inspection and audit tools, HRMS employee portals, and B2B SaaS mobile clients. Offline-first architecture, RBAC, SSO (SAML/OAuth), MDM compatibility, and enterprise security compliance.' },
-  { n: '10', title: 'Flutter App Maintenance & Support', desc: 'Ongoing Flutter app maintenance — OS version compatibility updates (new iOS/Android SDK requirements), dependency upgrades, bug triage and hotfix releases, App Store and Play Store re-submissions, performance monitoring, and feature sprint cadence post-launch.' },
+  { n: '05', title: 'Flutter UI/UX Design & Animations', desc: 'Pixel-perfect custom Flutter UIs with 60fps animations - hero transitions, Rive and Lottie animation integration, custom implicit and explicit animation curves, shader-based visual effects, and micro-interactions that make your app feel premium and responsive.' },
+  { n: '06', title: 'Flutter App Migration (RN / Ionic → Flutter)', desc: 'Full framework migrations from React Native, Ionic, Xamarin, or Cordova to Flutter - with feature parity audit, phased rewrite strategy, performance benchmarking before and after, and zero data loss migration of local storage and user preferences.' },
+  { n: '07', title: 'Flutter Backend Integration & API Development', desc: 'REST API, GraphQL, Firebase, Supabase, and WebSocket integrations. We also design and build the backend (Node.js, Python, or Dart/Shelf) alongside the Flutter app for end-to-end ownership - with real-time sync, offline queue, and push notification infrastructure.' },
+  { n: '08', title: 'Flutter Performance Optimisation', desc: 'Profiling and optimisation of existing Flutter apps - reducing jank, fixing memory leaks, optimising build methods, lazy loading, image caching, reducing rebuild scope with efficient state management, and reducing app bundle size for faster download and install.' },
+  { n: '09', title: 'Flutter Enterprise & B2B Applications', desc: 'Complex Flutter apps for enterprise use cases - field workforce apps, logistics and fleet management, inspection and audit tools, HRMS employee portals, and B2B SaaS mobile clients. Offline-first architecture, RBAC, SSO (SAML/OAuth), MDM compatibility, and enterprise security compliance.' },
+  { n: '10', title: 'Flutter App Maintenance & Support', desc: 'Ongoing Flutter app maintenance - OS version compatibility updates (new iOS/Android SDK requirements), dependency upgrades, bug triage and hotfix releases, App Store and Play Store re-submissions, performance monitoring, and feature sprint cadence post-launch.' },
 ];
 
 const TECH_STACK = [
@@ -109,10 +109,10 @@ const ENGAGEMENT_MODELS = [
     feat: true,
     icon: 'M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z',
     headline: 'A dedicated Flutter squad working exclusively on your app.',
-    desc: 'A full-time offshore Flutter team — Flutter developer(s), UI/UX designer, QA, and backend engineer — working as a seamless extension of your team at a fraction of US/UK/AU hiring cost. Sprint-based delivery, daily standups, biweekly demos. Full source code and IP ownership yours from day one.',
+    desc: 'A full-time offshore Flutter team - Flutter developer(s), UI/UX designer, QA, and backend engineer - working as a seamless extension of your team at a fraction of US/UK/AU hiring cost. Sprint-based delivery, daily standups, biweekly demos. Full source code and IP ownership yours from day one.',
     bestFor: ['Full-featured consumer or enterprise Flutter app', 'Long-term app product with ongoing feature roadmap', 'Replacing in-house Flutter capacity at lower cost', 'Multi-platform Flutter app (mobile + web + desktop)'],
     process: 'Team assembly → Discovery sprint → Biweekly releases → Continuous roadmap',
-    timeline: 'Ongoing — scale up or down per quarter',
+    timeline: 'Ongoing - scale up or down per quarter',
   },
   {
     id: 'fixed',
@@ -121,7 +121,7 @@ const ENGAGEMENT_MODELS = [
     badgeColor: '#0ea5e9',
     icon: 'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z',
     headline: 'Agreed price. Agreed scope. App delivered on time.',
-    desc: 'Best for a clearly scoped Flutter MVP or a defined app with agreed user stories. We quote a fixed price covering design, development, testing, and store submission — with milestone releases throughout. No scope creep, no surprise invoices.',
+    desc: 'Best for a clearly scoped Flutter MVP or a defined app with agreed user stories. We quote a fixed price covering design, development, testing, and store submission - with milestone releases throughout. No scope creep, no surprise invoices.',
     bestFor: ['Flutter MVP (8–14 weeks, defined screens)', 'Migration from React Native / Ionic to Flutter', 'New feature set with well-defined user stories', 'Flutter app for a specific platform (iOS or Android)'],
     process: 'Detailed spec → Fixed quote → Milestone delivery → Store launch',
     timeline: 'Best for projects 8–24 weeks',
@@ -136,16 +136,16 @@ const ENGAGEMENT_MODELS = [
     desc: 'Billed on actual time and resources used. Ideal for exploratory development, iterative design-led builds, or adding new modules to an existing Flutter app where requirements are still being defined or validated with real users.',
     bestFor: ['Flutter discovery sprint and architecture design', 'Iterative consumer app with user-research-driven scope', 'Adding new features to an existing Flutter codebase', 'Performance profiling and optimisation of an existing app'],
     process: 'Sprint planning → Weekly demos → Iterative refinement → Transparent timesheets',
-    timeline: 'Start in 1 week — no lengthy onboarding',
+    timeline: 'Start in 1 week - no lengthy onboarding',
   },
 ];
 
 const PROCESS_STEPS = [
   { num: '01', title: 'Discovery, Architecture & Tech Stack Decision', desc: 'We start with a deep-dive discovery of your app concept, target users, platform requirements, backend needs, and monetisation model. We define the Flutter architecture (clean architecture or feature-first), choose state management approach, design the data model, and map all API and third-party integrations before sprint planning begins.' },
-  { num: '02', title: 'UI/UX Design — Figma to Flutter Component Library', desc: 'Our designers produce high-fidelity Figma prototypes with interactive flows for stakeholder sign-off. We then build a Flutter component library matching the design system — custom widgets, typography scale, colour tokens, and animation specs — so development velocity is maximised from sprint one.' },
-  { num: '03', title: 'Agile Sprint Development — Biweekly App Builds', desc: 'Flutter development runs in two-week sprints. Every two weeks you receive a working build on TestFlight (iOS) and Firebase App Distribution / Play Console (Android) covering the sprint scope. You can install and test the real app throughout development — no "big bang" delivery at the end.' },
-  { num: '04', title: 'Backend & API Integration', desc: 'All backend integrations are built and tested in parallel with frontend Flutter development — REST endpoints, Firebase Firestore/Auth/FCM, third-party APIs, payment gateways (Stripe, Razorpay), social login, push notification infrastructure, and real-time WebSocket or Firestore listeners.' },
-  { num: '05', title: 'QA, Performance Profiling & Store Compliance', desc: 'Comprehensive QA across physical iOS and Android devices and screen sizes — unit tests, widget tests, integration tests, and manual exploratory testing. Flutter DevTools performance profiling to eliminate jank, reduce rebuild counts, and optimise memory usage. App Store and Google Play submission compliance review and metadata preparation.' },
+  { num: '02', title: 'UI/UX Design - Figma to Flutter Component Library', desc: 'Our designers produce high-fidelity Figma prototypes with interactive flows for stakeholder sign-off. We then build a Flutter component library matching the design system - custom widgets, typography scale, colour tokens, and animation specs - so development velocity is maximised from sprint one.' },
+  { num: '03', title: 'Agile Sprint Development - Biweekly App Builds', desc: 'Flutter development runs in two-week sprints. Every two weeks you receive a working build on TestFlight (iOS) and Firebase App Distribution / Play Console (Android) covering the sprint scope. You can install and test the real app throughout development - no "big bang" delivery at the end.' },
+  { num: '04', title: 'Backend & API Integration', desc: 'All backend integrations are built and tested in parallel with frontend Flutter development - REST endpoints, Firebase Firestore/Auth/FCM, third-party APIs, payment gateways (Stripe, Razorpay), social login, push notification infrastructure, and real-time WebSocket or Firestore listeners.' },
+  { num: '05', title: 'QA, Performance Profiling & Store Compliance', desc: 'Comprehensive QA across physical iOS and Android devices and screen sizes - unit tests, widget tests, integration tests, and manual exploratory testing. Flutter DevTools performance profiling to eliminate jank, reduce rebuild counts, and optimise memory usage. App Store and Google Play submission compliance review and metadata preparation.' },
   { num: '06', title: 'Store Launch, Analytics & Ongoing Roadmap', desc: 'Managed App Store and Google Play submissions, including review response if required. Post-launch monitoring via Firebase Analytics, Crashlytics, and Sentry. A defined release cadence for ongoing feature sprints, OS compatibility updates (new iOS/Android SDK requirements), and dependency maintenance keeps your Flutter app healthy long after launch.' },
 ];
 
@@ -155,35 +155,35 @@ const TESTIMONIALS = [
     name: 'James T.', role: 'CTO, Consumer App Startup (UK)', init: 'JT', bg: '#0F3460',
   },
   {
-    text: "1Solutions built our Flutter field inspection app from scratch — offline-first, GPS tracking, photo capture, digital signatures, and real-time sync. Our field teams use it on both iOS and Android with zero issues. The offline capability alone saved us from the connectivity problems we had with our old web app.",
+    text: "1Solutions built our Flutter field inspection app from scratch - offline-first, GPS tracking, photo capture, digital signatures, and real-time sync. Our field teams use it on both iOS and Android with zero issues. The offline capability alone saved us from the connectivity problems we had with our old web app.",
     name: 'Sarah M.', role: 'VP Operations, Infrastructure Company (AU)', init: 'SM', bg: '#064e3b', feat: true,
   },
   {
-    text: "The Flutter MVP 1Solutions built for us was live on both app stores in 11 weeks. We used it to raise our seed round — investors were impressed with how polished it looked and how fast it performed. We are now 18 months post-launch with 200K active users and still on the same Flutter codebase.",
+    text: "The Flutter MVP 1Solutions built for us was live on both app stores in 11 weeks. We used it to raise our seed round - investors were impressed with how polished it looked and how fast it performed. We are now 18 months post-launch with 200K active users and still on the same Flutter codebase.",
     name: 'David K.', role: 'Founder & CEO, HealthTech Startup (US)', init: 'DK', bg: '#312e81',
   },
 ];
 
 const WHY_CARDS = [
-  { title: '100+ Flutter Apps Shipped to the App Stores', desc: 'We have shipped 100+ Flutter applications across consumer, B2B, enterprise, healthcare, fintech, logistics, and field-service verticals — on iOS, Android, and Flutter web. We know what makes a Flutter app pass review and retain users.' },
-  { title: 'Cross-Platform Done Right — Not Just a Cost Cut', desc: 'We architect Flutter apps for real cross-platform quality — adaptive layouts for each platform, platform-specific UX conventions where they matter, and platform channels for native capabilities not yet covered by packages. Your iOS app feels like iOS; your Android app feels like Android.' },
+  { title: '100+ Flutter Apps Shipped to the App Stores', desc: 'We have shipped 100+ Flutter applications across consumer, B2B, enterprise, healthcare, fintech, logistics, and field-service verticals - on iOS, Android, and Flutter web. We know what makes a Flutter app pass review and retain users.' },
+  { title: 'Cross-Platform Done Right - Not Just a Cost Cut', desc: 'We architect Flutter apps for real cross-platform quality - adaptive layouts for each platform, platform-specific UX conventions where they matter, and platform channels for native capabilities not yet covered by packages. Your iOS app feels like iOS; your Android app feels like Android.' },
   { title: 'Clean Architecture & Testable Codebase', desc: 'Every Flutter app we build uses clean architecture (or feature-first for smaller apps), a clearly separated domain/data/presentation layer, comprehensive unit and widget test coverage, and documentation-ready code. You can hand it to any Flutter developer and they will understand it immediately.' },
-  { title: 'Design-Led Flutter Development', desc: 'We have in-house UI/UX designers who produce Figma prototypes before development starts, build a Flutter design system (component library), and collaborate with developers through the full build. Your Flutter app is not just functional — it is visually polished and on-brand.' },
-  { title: 'End-to-End — App + Backend + DevOps', desc: 'We build everything your Flutter app needs — the Flutter front-end, the backend API (Node.js, Python, or Firebase/Supabase), CI/CD pipeline (Codemagic/Fastlane), App Store and Play Store management, and ongoing maintenance. One partner, full accountability.' },
-  { title: 'Performance Obsessed', desc: 'We profile every Flutter app with DevTools before release — measuring frame render times, rebuild counts, memory allocations, and GPU raster thread performance. We target 60fps on mid-range Android devices as a standard, not a premium. Jank is a bug.' },
-  { title: 'US / UK / AU Timezone Overlap', desc: 'Our Flutter engineers are available across IST, EST, GMT, and AEST time zones with scheduled daily standup windows that overlap with US, UK, and Australian business hours — so you get real-time collaboration, not overnight delays on critical decisions.' },
+  { title: 'Design-Led Flutter Development', desc: 'We have in-house UI/UX designers who produce Figma prototypes before development starts, build a Flutter design system (component library), and collaborate with developers through the full build. Your Flutter app is not just functional - it is visually polished and on-brand.' },
+  { title: 'End-to-End - App + Backend + DevOps', desc: 'We build everything your Flutter app needs - the Flutter front-end, the backend API (Node.js, Python, or Firebase/Supabase), CI/CD pipeline (Codemagic/Fastlane), App Store and Play Store management, and ongoing maintenance. One partner, full accountability.' },
+  { title: 'Performance Obsessed', desc: 'We profile every Flutter app with DevTools before release - measuring frame render times, rebuild counts, memory allocations, and GPU raster thread performance. We target 60fps on mid-range Android devices as a standard, not a premium. Jank is a bug.' },
+  { title: 'US / UK / AU Timezone Overlap', desc: 'Our Flutter engineers are available across IST, EST, GMT, and AEST time zones with scheduled daily standup windows that overlap with US, UK, and Australian business hours - so you get real-time collaboration, not overnight delays on critical decisions.' },
   { title: 'Transparent Delivery. Full IP Ownership.', desc: 'Biweekly demo builds you can install and test, shared sprint board (Linear or Jira), direct access to your Flutter lead engineer, and weekly progress reports. All source code, assets, and intellectual property are 100% yours from day one.' },
 ];
 
 const FAQS = [
-  { q: 'Why choose Flutter over React Native or native iOS/Android development?', a: 'Flutter compiles directly to native ARM code — unlike React Native, which uses a JavaScript bridge. This gives Flutter near-native performance with smooth 60/120fps animations. A single Dart codebase targets iOS, Android, web, and desktop simultaneously, so development cost is typically 40–60% lower than building separate native apps. Flutter also delivers pixel-perfect UI consistency across platforms without platform-specific workarounds. Google, BMW, Alibaba, and eBay have all shipped Flutter apps at scale.' },
+  { q: 'Why choose Flutter over React Native or native iOS/Android development?', a: 'Flutter compiles directly to native ARM code - unlike React Native, which uses a JavaScript bridge. This gives Flutter near-native performance with smooth 60/120fps animations. A single Dart codebase targets iOS, Android, web, and desktop simultaneously, so development cost is typically 40–60% lower than building separate native apps. Flutter also delivers pixel-perfect UI consistency across platforms without platform-specific workarounds. Google, BMW, Alibaba, and eBay have all shipped Flutter apps at scale.' },
   { q: 'How long does it take to build a Flutter app?', a: 'A Flutter MVP with core screens (authentication, 3–5 main screens, API integration, and state management) typically takes 8–14 weeks. A mid-complexity app with custom UI, real-time features, payments, and backend integrations typically takes 16–24 weeks. A full enterprise Flutter app with offline capability, complex state management, multiple user roles, admin dashboard, and CI/CD pipeline typically takes 24–36 weeks. We deliver working builds to TestFlight and Play Console on a biweekly sprint cycle throughout development.' },
   { q: 'Can Flutter apps access native device features like camera, GPS, and biometrics?', a: 'Yes. Flutter has a rich package ecosystem for native device features: camera, GPS and location services, biometric authentication (Face ID, Touch ID, fingerprint), push notifications (Firebase Cloud Messaging), Bluetooth and BLE, NFC, local storage, contacts, calendar, in-app purchases, and social login (Google, Apple, Facebook). Where a package does not exist, we write native platform channel code in Swift or Kotlin to expose device capabilities to the Flutter layer.' },
-  { q: 'Can you migrate our React Native or Ionic app to Flutter?', a: 'Yes. We handle full framework migrations from React Native, Ionic, Xamarin, and Cordova to Flutter. The migration starts with a codebase audit, then a feature-by-feature rewrite in Dart/Flutter using the same backend APIs. We typically phase the migration — running Flutter alongside the existing app on a feature-by-feature basis — to reduce risk and allow A/B testing before full cutover. Most React Native to Flutter migrations see 30–50% UI performance improvements and a significant reduction in crash rates.' },
+  { q: 'Can you migrate our React Native or Ionic app to Flutter?', a: 'Yes. We handle full framework migrations from React Native, Ionic, Xamarin, and Cordova to Flutter. The migration starts with a codebase audit, then a feature-by-feature rewrite in Dart/Flutter using the same backend APIs. We typically phase the migration - running Flutter alongside the existing app on a feature-by-feature basis - to reduce risk and allow A/B testing before full cutover. Most React Native to Flutter migrations see 30–50% UI performance improvements and a significant reduction in crash rates.' },
   { q: 'Does Flutter support offline functionality?', a: 'Yes. Flutter has excellent offline support. We use Hive (lightweight NoSQL), Isar (schema-based, high performance), SQLite via Drift or sqflite, or Realm depending on data complexity. Our offline-first architecture uses a local-first data model with background sync to the server when connectivity is restored, conflict resolution for concurrent edits, and optimistic UI updates so the app feels instant even on slow or no connection. We have built offline-capable Flutter apps for field inspection, logistics, healthcare, and retail use cases.' },
-  { q: 'What state management approach do you use in Flutter?', a: "State management choice depends on app complexity. For simple apps we use Provider or Riverpod. For medium and large apps with clear separation of business logic and UI, we use BLoC/Cubit — it is testable, predictable, and scales well. For highly reactive apps, we use Riverpod (code-gen variant) for compile-safe, boilerplate-free state. All our Flutter apps include a full unit and widget test suite targeting the state management layer, ensuring state transitions are verifiable and regression-safe." },
-  { q: 'Can Flutter apps be submitted to both the App Store and Google Play?', a: 'Yes. Flutter produces fully native iOS and Android binaries that meet all App Store and Google Play submission requirements. We handle the full submission process — provisioning profiles, signing certificates, App Store Connect metadata, Google Play Console setup, privacy policy and data safety forms, and screenshot/preview video production. We also manage responses to reviewer rejections, which are uncommon in our submissions because we do a compliance review before every store submission.' },
-  { q: 'Do you build Flutter web apps as well as mobile?', a: 'Yes. Flutter supports web deployment using either the CanvasKit renderer (best visual fidelity and animation quality) or the HTML renderer (better SEO and initial load speed for content-heavy pages). We build adaptive Flutter apps that reflow intelligently from mobile to tablet to desktop breakpoints. Flutter web works particularly well for dashboard-style web apps, internal tools, and admin panels that share a codebase with an existing Flutter mobile app — eliminating the need for a separate React or Vue web frontend.' },
+  { q: 'What state management approach do you use in Flutter?', a: "State management choice depends on app complexity. For simple apps we use Provider or Riverpod. For medium and large apps with clear separation of business logic and UI, we use BLoC/Cubit - it is testable, predictable, and scales well. For highly reactive apps, we use Riverpod (code-gen variant) for compile-safe, boilerplate-free state. All our Flutter apps include a full unit and widget test suite targeting the state management layer, ensuring state transitions are verifiable and regression-safe." },
+  { q: 'Can Flutter apps be submitted to both the App Store and Google Play?', a: 'Yes. Flutter produces fully native iOS and Android binaries that meet all App Store and Google Play submission requirements. We handle the full submission process - provisioning profiles, signing certificates, App Store Connect metadata, Google Play Console setup, privacy policy and data safety forms, and screenshot/preview video production. We also manage responses to reviewer rejections, which are uncommon in our submissions because we do a compliance review before every store submission.' },
+  { q: 'Do you build Flutter web apps as well as mobile?', a: 'Yes. Flutter supports web deployment using either the CanvasKit renderer (best visual fidelity and animation quality) or the HTML renderer (better SEO and initial load speed for content-heavy pages). We build adaptive Flutter apps that reflow intelligently from mobile to tablet to desktop breakpoints. Flutter web works particularly well for dashboard-style web apps, internal tools, and admin panels that share a codebase with an existing Flutter mobile app - eliminating the need for a separate React or Vue web frontend.' },
 ];
 
 /* ─── Hooks ──────────────────────────────────────────────────── */
@@ -300,10 +300,10 @@ export default function FlutterAppDevelopment() {
     <>
       <Head>
         <title>Flutter App Development Services | 1Solutions</title>
-        <meta name="description" content="Expert Flutter app development for iOS, Android, web & desktop — one Dart codebase, native performance, pixel-perfect UI. MVP in 8–14 weeks." />
+        <meta name="description" content="Expert Flutter app development for iOS, Android, web & desktop - one Dart codebase, native performance, pixel-perfect UI. MVP in 8–14 weeks." />
         <link rel="canonical" href="https://www.1solutions.biz/flutter-app-development-services/" />
         <meta property="og:title" content="Flutter App Development Services | 1Solutions" />
-        <meta property="og:description" content="Cross-platform Flutter app development — iOS, Android, web & desktop from a single Dart codebase. Native performance, 60fps UI, 100+ apps shipped. 15+ years experience." />
+        <meta property="og:description" content="Cross-platform Flutter app development - iOS, Android, web & desktop from a single Dart codebase. Native performance, 60fps UI, 100+ apps shipped. 15+ years experience." />
         <meta property="og:url" content="https://www.1solutions.biz/flutter-app-development-services/" />
         <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
@@ -578,8 +578,8 @@ export default function FlutterAppDevelopment() {
         {/* ── HERO ── */}
         <section className="fl-hero">
           <span className="fl-eyebrow">Flutter App Development Services</span>
-          <h1>Cross-Platform Flutter Apps — Built Once, Shipped Everywhere</h1>
-          <p className="fl-hero-desc">We build production-quality Flutter applications for iOS, Android, web, and desktop from a single Dart codebase — delivering native performance, 60fps animations, and pixel-perfect UI at 40–60% lower cost than separate native development. From MVP to enterprise-scale Flutter apps.</p>
+          <h1>Cross-Platform Flutter Apps - Built Once, Shipped Everywhere</h1>
+          <p className="fl-hero-desc">We build production-quality Flutter applications for iOS, Android, web, and desktop from a single Dart codebase - delivering native performance, 60fps animations, and pixel-perfect UI at 40–60% lower cost than separate native development. From MVP to enterprise-scale Flutter apps.</p>
           <div className="fl-trust-row">
             {['100+ Flutter Apps Shipped','iOS + Android + Web + Desktop','60fps Native Performance','15+ Years Experience','App Store & Play Store Ready'].map(b => (
               <div className="fl-badge" key={b}><span className="fl-badge-dot" />{b}</div>
@@ -630,7 +630,7 @@ export default function FlutterAppDevelopment() {
             <div className={`fl-s-reveal${visibleSections.has('svc') ? ' fl-revealed' : ''}`} ref={el => { sectionRefs.current['svc'] = el; }}>
               <span className="fl-s-eyebrow">What We Build</span>
               <h2 id="fl-svc-heading" className="fl-s-title">Flutter App Development Services We Deliver</h2>
-              <p className="fl-s-desc" style={{ maxWidth: 720 }}>From consumer apps and Flutter MVPs to enterprise mobile platforms, offline-first field apps, and React Native migrations — our Flutter engineers cover every stage of the app development lifecycle.</p>
+              <p className="fl-s-desc" style={{ maxWidth: 720 }}>From consumer apps and Flutter MVPs to enterprise mobile platforms, offline-first field apps, and React Native migrations - our Flutter engineers cover every stage of the app development lifecycle.</p>
             </div>
             <div className="fl-svc-grid" ref={svcGridRef}>
               {visibleServices.map((s, i) => (
@@ -657,7 +657,7 @@ export default function FlutterAppDevelopment() {
             <div className={`fl-s-reveal${visibleSections.has('stk') ? ' fl-revealed' : ''}`} ref={el => { sectionRefs.current['stk'] = el; }}>
               <span className="fl-s-eyebrow">The Flutter Tech Stack We Use</span>
               <h2 id="fl-stack-heading" className="fl-s-title">Flutter & Dart Expertise Across the Full Stack</h2>
-              <p className="fl-s-desc" style={{ maxWidth: 680 }}>From Flutter 3.x with Dart sound null safety and BLoC state management through Firebase, Supabase, Rive animations, Codemagic CI/CD, and Firebase Analytics — every layer of the modern Flutter app ecosystem.</p>
+              <p className="fl-s-desc" style={{ maxWidth: 680 }}>From Flutter 3.x with Dart sound null safety and BLoC state management through Firebase, Supabase, Rive animations, Codemagic CI/CD, and Firebase Analytics - every layer of the modern Flutter app ecosystem.</p>
             </div>
             <div className="fl-stack-grid" ref={stackGridRef}>
               {TECH_STACK.map((grp, i) => (
@@ -680,7 +680,7 @@ export default function FlutterAppDevelopment() {
             <div className={`fl-s-reveal${visibleSections.has('eng') ? ' fl-revealed' : ''}`} ref={el => { sectionRefs.current['eng'] = el; }}>
               <span className="fl-s-eyebrow">How We Work With You</span>
               <h2 id="fl-eng-heading" className="fl-s-title">Engagement Models for Flutter Development</h2>
-              <p className="fl-s-desc" style={{ maxWidth: 680 }}>Whether you need a dedicated Flutter team for a long-term app roadmap, a fixed-price MVP build, or flexible T&M sprints for iterative development — we structure the engagement around your product stage and budget.</p>
+              <p className="fl-s-desc" style={{ maxWidth: 680 }}>Whether you need a dedicated Flutter team for a long-term app roadmap, a fixed-price MVP build, or flexible T&M sprints for iterative development - we structure the engagement around your product stage and budget.</p>
             </div>
             <div className="fl-eng-grid" ref={engGridRef}>
               {ENGAGEMENT_MODELS.map((m, i) => (
@@ -713,7 +713,7 @@ export default function FlutterAppDevelopment() {
             <div className={`fl-s-reveal${visibleSections.has('proc') ? ' fl-revealed' : ''}`} ref={el => { sectionRefs.current['proc'] = el; }}>
               <span className="fl-s-eyebrow">How We Deliver</span>
               <h2 id="fl-proc-heading" className="fl-s-title">Our Flutter App Development Process</h2>
-              <p className="fl-s-desc">A six-stage process from architecture and Figma design through biweekly sprint builds, backend integration, QA profiling, and managed store launch — with a working app build in your hands from week two, not week twenty.</p>
+              <p className="fl-s-desc">A six-stage process from architecture and Figma design through biweekly sprint builds, backend integration, QA profiling, and managed store launch - with a working app build in your hands from week two, not week twenty.</p>
             </div>
             <div className="fl-psteps">
               {PROCESS_STEPS.map((step, i) => (
@@ -765,7 +765,7 @@ export default function FlutterAppDevelopment() {
             <div className={`fl-s-reveal${visibleSections.has('wy') ? ' fl-revealed' : ''}`} ref={el => { sectionRefs.current['wy'] = el; }}>
               <span className="fl-s-eyebrow">Why 1Solutions</span>
               <h2 id="fl-wy-heading" className="fl-s-title">Why Choose Us for Flutter App Development</h2>
-              <p className="fl-s-desc" style={{ maxWidth: 680 }}>100+ Flutter apps shipped across consumer, enterprise, fintech, healthtech, logistics, and field-service verticals — with clean architecture, design-led development, end-to-end delivery, and a performance obsession that shows in every frame rate metric.</p>
+              <p className="fl-s-desc" style={{ maxWidth: 680 }}>100+ Flutter apps shipped across consumer, enterprise, fintech, healthtech, logistics, and field-service verticals - with clean architecture, design-led development, end-to-end delivery, and a performance obsession that shows in every frame rate metric.</p>
             </div>
             <div className="fl-why-grid" ref={whyGridRef}>
               {WHY_CARDS.map((c, i) => (
@@ -789,8 +789,8 @@ export default function FlutterAppDevelopment() {
                 {[
                   ['✓', 'Free 60-minute Flutter discovery and architecture review call'],
                   ['✓', 'App scope, screen list, and high-level tech stack recommendation at no charge'],
-                  ['✓', 'Build-vs-buy analysis — Flutter vs React Native vs native iOS/Android'],
-                  ['✓', 'NDA available on request — your app concept stays confidential'],
+                  ['✓', 'Build-vs-buy analysis - Flutter vs React Native vs native iOS/Android'],
+                  ['✓', 'NDA available on request - your app concept stays confidential'],
                   ['✓', 'Response within 24 business hours from our Flutter engineering lead'],
                 ].map(([icon, text]) => (
                   <div className="fl-cbenefit" key={text}>
@@ -843,7 +843,7 @@ export default function FlutterAppDevelopment() {
                 </div>
                 <div className="fl-fg full">
                   <label htmlFor="fl-msg">App Brief *</label>
-                  <textarea name="sf-message" id="fl-msg" rows={4} placeholder="Describe your app — target users, core features, platforms needed (iOS/Android/web/desktop), existing backend or API, current stage (idea/MVP/live), and go-live timeline..." required />
+                  <textarea name="sf-message" id="fl-msg" rows={4} placeholder="Describe your app - target users, core features, platforms needed (iOS/Android/web/desktop), existing backend or API, current stage (idea/MVP/live), and go-live timeline..." required />
                 </div>
                 <div className="fl-consent">
                   <input id="fl-consent" type="checkbox" required />
@@ -860,8 +860,8 @@ export default function FlutterAppDevelopment() {
         <section className="fl-faq" aria-labelledby="fl-faq-heading">
           <div className="fl-inner" style={{ maxWidth: 860 }}>
             <span className="fl-s-eyebrow">FAQ</span>
-            <h2 id="fl-faq-heading">Flutter App Development — Frequently Asked Questions</h2>
-            <p className="fl-faq-sub">Everything you need to know about building a production-quality Flutter app with 1Solutions — from framework choice and timelines to state management, offline support, and store submission.</p>
+            <h2 id="fl-faq-heading">Flutter App Development - Frequently Asked Questions</h2>
+            <p className="fl-faq-sub">Everything you need to know about building a production-quality Flutter app with 1Solutions - from framework choice and timelines to state management, offline support, and store submission.</p>
             <div className="fl-faq-list">
               {FAQS.map((item, i) => (
                 <div key={i} className={`fl-fitem${openFaq === i ? ' open' : ''}`} itemScope itemType="https://schema.org/Question">
