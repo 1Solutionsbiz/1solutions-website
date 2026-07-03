@@ -59,12 +59,6 @@ const SCHEMA = {
           url: 'https://www.1solutions.biz/affordable-seo-packages/',
         },
       ],
-        '@type': 'AggregateRating',
-        ratingValue: '4.9',
-        reviewCount: '312',
-        bestRating: '5',
-        worstRating: '1',
-      },
     },
     {
       '@type': 'FAQPage',
