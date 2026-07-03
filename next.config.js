@@ -85,6 +85,8 @@ const nextConfig = {
       { source: '/case-studies/:slug',        destination: '/case-studies/',                  permanent: true },
 
       // ── Page renames ──────────────────────────────────────────────────────
+      { source: '/hire-dedicated-web-designer',  destination: '/hire-web-designer/',             permanent: true },
+      { source: '/hire-dedicated-web-designer/', destination: '/hire-web-designer/',            permanent: true },
       { source: '/hire-ui-ux-designer',       destination: '/hire-dedicated-ui-ux-designer',  permanent: true },
       { source: '/hire-ui-ux-designer/',      destination: '/hire-dedicated-ui-ux-designer/', permanent: true },
       { source: '/influencer-marketing',      destination: '/influencer-marketing-services',  permanent: true },
