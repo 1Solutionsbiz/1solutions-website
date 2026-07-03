@@ -199,7 +199,7 @@ export default function HeadlessWordPressDevelopment() {
     name: 'Headless WordPress Development',
     description: 'Expert headless WordPress development services using Next.js, WPGraphQL, and modern JavaScript frameworks. Build blazing-fast, SEO-optimized decoupled WordPress websites.',
     provider: {
-      '@type': 'Organization',
+      '@type': 'LocalBusiness',
       name: '1Solutions',
       url: 'https://www.1solutions.biz',
     },

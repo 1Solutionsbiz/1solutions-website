@@ -68,7 +68,6 @@ export default function LawFirmSeoServices() {
         description: 'Law firm SEO for attorneys and legal practices. Rank for personal injury, family law, criminal defense, and DUI keywords to generate high-value consultation requests.',
         areaServed: ['US', 'CA', 'AU'],
         serviceType: 'Attorney and Law Firm Search Engine Optimisation',
-        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '89', bestRating: '5' },
       },
       {
         '@type': 'FAQPage',

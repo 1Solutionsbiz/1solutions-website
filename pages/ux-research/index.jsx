@@ -78,7 +78,6 @@ const LD = {
       description: 'User testing, journey mapping, heuristic evaluation, and qualitative research that replaces guesswork with evidence. 250+ research projects delivered.',
       serviceType: 'UX Research',
       areaServed: ['IN', 'US', 'CA', 'GB', 'AU'],
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '63', bestRating: '5' },
     },
     {
       '@type': 'FAQPage',

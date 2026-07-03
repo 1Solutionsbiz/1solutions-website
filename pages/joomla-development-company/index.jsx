@@ -19,14 +19,13 @@ const SCHEMA = {
       url: 'https://www.1solutions.biz/joomla-development-company/',
       description: 'Expert Joomla development services - custom Joomla templates, component and plugin development, Joomla eCommerce, migration from legacy CMS to Joomla, and Joomla maintenance and security hardening for businesses worldwide.',
       provider: {
-        '@type': 'Organization',
+        '@type': 'LocalBusiness',
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
         logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
         foundingDate: '2008',
         areaServed: ['US', 'GB', 'AU', 'CA', 'IN'],
       },
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '84', bestRating: '5' },
     },
     {
       '@type': 'FAQPage',
@@ -451,7 +450,25 @@ export default function JoomlaDevelopment() {
           @media(max-width:1024px){.jo-hero h1,.jo-s-title,.jo-faq h2{font-size:36px}.jo-svc-grid{grid-template-columns:repeat(2,1fr)}.jo-stack-grid{grid-template-columns:repeat(2,1fr)}.jo-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.jo-eng-card.feat{transform:none}.jo-eng-card.feat.jo-ev{transform:none}.jo-eng-card.feat.jo-ev:hover{transform:translateY(-4px)}.jo-why-grid{grid-template-columns:repeat(2,1fr)}.jo-tgrid{grid-template-columns:1fr}.jo-contact-grid{grid-template-columns:1fr}}
           @media(max-width:768px){.jo-breadcrumb{padding:12px 20px 0}.jo-hero{padding:28px 20px 20px}.jo-hero h1{font-size:26px;letter-spacing:-.3px}.jo-stats{grid-template-columns:1fr 1fr}.jo-stat-col:nth-child(2){border-right:none}.jo-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.jo-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.jo-logos{padding:16px 20px 28px}.jo-svc-section,.jo-stack-section,.jo-eng-section,.jo-process-section,.jo-testi,.jo-why-section,.jo-faq,.jo-related{padding:52px 20px}.jo-contact{padding:48px 20px}.jo-svc-grid,.jo-stack-grid,.jo-why-grid{grid-template-columns:1fr}.jo-frow{grid-template-columns:1fr}.jo-ctitle{font-size:28px}.jo-s-title{font-size:28px}}
         `}</style>
-      </Head>
+              <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': TESTIMONIALS.map(t => ({
+              '@type': 'Review',
+              itemReviewed: {
+                '@type': 'LocalBusiness',
+                '@id': 'https://www.1solutions.biz/#organization',
+                name: '1Solutions',
+                url: 'https://www.1solutions.biz',
+              },
+              reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+              author: { '@type': 'Person', name: t.name },
+              reviewBody: t.text,
+            })),
+          })}}
+        />
+</Head>
 
       <div className="jo-page">
         <div className="jo-orb jo-orb-1" /><div className="jo-orb jo-orb-2" /><div className="jo-orb jo-orb-3" />
@@ -606,12 +623,12 @@ export default function JoomlaDevelopment() {
             </div>
             <div className="jo-tgrid" ref={testiGridRef}>
               {TESTIMONIALS.map((t, i) => (
-                <div key={i} className={`jo-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' jo-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }} itemScope itemType="https://schema.org/Review">
+                <div key={i} className={`jo-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' jo-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}>
                   <div className="jo-stars" aria-label="5 out of 5 stars">★★★★★</div>
-                  <p className="jo-ttext" itemProp="reviewBody">{t.text}</p>
+                  <p className="jo-ttext">{t.text}</p>
                   <div className="jo-tauthor">
                     <div className="jo-tavatar" style={{ background: t.bg }}>{t.init}</div>
-                    <div><div className="jo-tname" itemProp="author">{t.name}</div><div className="jo-trole">{t.role}</div></div>
+                    <div><div className="jo-tname">{t.name}</div><div className="jo-trole">{t.role}</div></div>
                   </div>
                 </div>
               ))}

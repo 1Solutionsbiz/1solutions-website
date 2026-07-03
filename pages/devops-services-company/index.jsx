@@ -19,14 +19,13 @@ const SCHEMA = {
       url: 'https://www.1solutions.biz/devops-services-company/',
       description: 'End-to-end DevOps services - CI/CD pipeline automation, infrastructure as code with Terraform/Pulumi, Kubernetes container orchestration, cloud DevOps on AWS/Azure/GCP, DevSecOps, monitoring and observability, site reliability engineering, and dedicated DevOps engineers for businesses worldwide.',
       provider: {
-        '@type': 'Organization',
+        '@type': 'LocalBusiness',
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
         logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
         foundingDate: '2008',
         areaServed: ['US', 'GB', 'AU', 'CA', 'IN'],
       },
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '76', bestRating: '5' },
     },
     {
       '@type': 'FAQPage',
@@ -453,7 +452,25 @@ export default function DevopsServicesCompany() {
           @media(max-width:1024px){.dv-hero h1,.dv-s-title,.dv-faq h2{font-size:36px}.dv-svc-grid{grid-template-columns:repeat(2,1fr)}.dv-stack-grid{grid-template-columns:repeat(2,1fr)}.dv-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.dv-eng-card.feat{transform:none}.dv-eng-card.feat.dv-ev{transform:none}.dv-eng-card.feat.dv-ev:hover{transform:translateY(-4px)}.dv-why-grid{grid-template-columns:repeat(2,1fr)}.dv-tgrid{grid-template-columns:1fr}.dv-contact-grid{grid-template-columns:1fr}}
           @media(max-width:768px){.dv-breadcrumb{padding:12px 20px 0}.dv-hero{padding:28px 20px 20px}.dv-hero h1{font-size:26px;letter-spacing:-.3px}.dv-stats{grid-template-columns:1fr 1fr}.dv-stat-col:nth-child(2){border-right:none}.dv-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.dv-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.dv-logos{padding:16px 20px 28px}.dv-svc-section,.dv-stack-section,.dv-eng-section,.dv-process-section,.dv-testi,.dv-why-section,.dv-faq,.dv-related{padding:52px 20px}.dv-contact{padding:48px 20px}.dv-svc-grid,.dv-stack-grid,.dv-why-grid{grid-template-columns:1fr}.dv-frow{grid-template-columns:1fr}.dv-ctitle{font-size:28px}.dv-s-title{font-size:28px}}
         `}</style>
-      </Head>
+              <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': TESTIMONIALS.map(t => ({
+              '@type': 'Review',
+              itemReviewed: {
+                '@type': 'LocalBusiness',
+                '@id': 'https://www.1solutions.biz/#organization',
+                name: '1Solutions',
+                url: 'https://www.1solutions.biz',
+              },
+              reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+              author: { '@type': 'Person', name: t.name },
+              reviewBody: t.text,
+            })),
+          })}}
+        />
+</Head>
 
       <div className="dv-page">
         <div className="dv-orb dv-orb-1" /><div className="dv-orb dv-orb-2" /><div className="dv-orb dv-orb-3" />
@@ -608,12 +625,12 @@ export default function DevopsServicesCompany() {
             </div>
             <div className="dv-tgrid" ref={testiGridRef}>
               {TESTIMONIALS.map((t, i) => (
-                <div key={i} className={`dv-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' dv-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }} itemScope itemType="https://schema.org/Review">
+                <div key={i} className={`dv-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' dv-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}>
                   <div className="dv-stars" aria-label="5 out of 5 stars">★★★★★</div>
-                  <p className="dv-ttext" itemProp="reviewBody">{t.text}</p>
+                  <p className="dv-ttext">{t.text}</p>
                   <div className="dv-tauthor">
                     <div className="dv-tavatar" style={{ background: t.bg }}>{t.init}</div>
-                    <div><div className="dv-tname" itemProp="author">{t.name}</div><div className="dv-trole">{t.role}</div></div>
+                    <div><div className="dv-tname">{t.name}</div><div className="dv-trole">{t.role}</div></div>
                   </div>
                 </div>
               ))}

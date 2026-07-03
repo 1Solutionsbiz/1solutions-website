@@ -68,7 +68,6 @@ export default function HomeRepairSeoServices() {
         description: 'Home repair SEO services for handymen, contractors, and renovation businesses. Local SEO, GBP optimisation, trade-specific landing pages, and review management.',
         areaServed: ['US', 'CA', 'AU'],
         serviceType: 'Home Repair Search Engine Optimisation',
-        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '87', bestRating: '5' },
       },
       {
         '@type': 'FAQPage',

@@ -20,14 +20,13 @@ const SCHEMA = {
       url: 'https://www.1solutions.biz/android-application-development-company/',
       description: 'Native Android application development in Kotlin and Jetpack Compose - from consumer apps and Android MVPs to enterprise mobility solutions, Android TV, Wear OS, and large-screen tablet experiences. Play Store-ready, performant, and built with clean architecture.',
       provider: {
-        '@type': 'Organization',
+        '@type': 'LocalBusiness',
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
         logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
         foundingDate: '2008',
         areaServed: ['US', 'GB', 'AU', 'CA', 'IN'],
       },
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '118', bestRating: '5' },
     },
     {
       '@type': 'FAQPage',
@@ -554,7 +553,25 @@ export default function AndroidAppDevelopment() {
             .an-s-title { font-size:28px; }
           }
         `}</style>
-      </Head>
+              <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': TESTIMONIALS.map(t => ({
+              '@type': 'Review',
+              itemReviewed: {
+                '@type': 'LocalBusiness',
+                '@id': 'https://www.1solutions.biz/#organization',
+                name: '1Solutions',
+                url: 'https://www.1solutions.biz',
+              },
+              reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+              author: { '@type': 'Person', name: t.name },
+              reviewBody: t.text,
+            })),
+          })}}
+        />
+</Head>
 
       <div className="an-page">
         <div className="an-orb an-orb-1" />
@@ -742,14 +759,13 @@ export default function AndroidAppDevelopment() {
             </div>
             <div className="an-tgrid" ref={testiGridRef}>
               {TESTIMONIALS.map((t, i) => (
-                <div key={i} className={`an-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' an-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}
-                  itemScope itemType="https://schema.org/Review">
+                <div key={i} className={`an-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' an-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}>
                   <div className="an-stars" aria-label="5 out of 5 stars">★★★★★</div>
-                  <p className="an-ttext" itemProp="reviewBody">{t.text}</p>
+                  <p className="an-ttext">{t.text}</p>
                   <div className="an-tauthor">
                     <div className="an-tavatar" style={{ background: t.bg }}>{t.init}</div>
                     <div>
-                      <div className="an-tname" itemProp="author">{t.name}</div>
+                      <div className="an-tname">{t.name}</div>
                       <div className="an-trole">{t.role}</div>
                     </div>
                   </div>

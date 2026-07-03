@@ -19,14 +19,13 @@ const SCHEMA = {
       url: 'https://www.1solutions.biz/cloud-migration-services/',
       description: 'Expert cloud migration services - cloud readiness assessment, lift and shift migration, application re-platforming, database migration to cloud, multi-cloud strategy, hybrid cloud implementation, AWS/Azure/GCP migration, cloud cost optimisation, disaster recovery, and post-migration managed services for businesses worldwide.',
       provider: {
-        '@type': 'Organization',
+        '@type': 'LocalBusiness',
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
         logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
         foundingDate: '2008',
         areaServed: ['US', 'GB', 'AU', 'CA', 'IN'],
       },
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '71', bestRating: '5' },
     },
     {
       '@type': 'FAQPage',
@@ -453,7 +452,25 @@ export default function CloudMigrationServices() {
           @media(max-width:1024px){.cm-hero h1,.cm-s-title,.cm-faq h2{font-size:36px}.cm-svc-grid{grid-template-columns:repeat(2,1fr)}.cm-stack-grid{grid-template-columns:repeat(2,1fr)}.cm-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.cm-eng-card.feat{transform:none}.cm-eng-card.feat.cm-ev{transform:none}.cm-eng-card.feat.cm-ev:hover{transform:translateY(-4px)}.cm-why-grid{grid-template-columns:repeat(2,1fr)}.cm-tgrid{grid-template-columns:1fr}.cm-contact-grid{grid-template-columns:1fr}}
           @media(max-width:768px){.cm-breadcrumb{padding:12px 20px 0}.cm-hero{padding:28px 20px 20px}.cm-hero h1{font-size:26px;letter-spacing:-.3px}.cm-stats{grid-template-columns:1fr 1fr}.cm-stat-col:nth-child(2){border-right:none}.cm-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.cm-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.cm-logos{padding:16px 20px 28px}.cm-svc-section,.cm-stack-section,.cm-eng-section,.cm-process-section,.cm-testi,.cm-why-section,.cm-faq,.cm-related{padding:52px 20px}.cm-contact{padding:48px 20px}.cm-svc-grid,.cm-stack-grid,.cm-why-grid{grid-template-columns:1fr}.cm-frow{grid-template-columns:1fr}.cm-ctitle{font-size:28px}.cm-s-title{font-size:28px}}
         `}</style>
-      </Head>
+              <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': TESTIMONIALS.map(t => ({
+              '@type': 'Review',
+              itemReviewed: {
+                '@type': 'LocalBusiness',
+                '@id': 'https://www.1solutions.biz/#organization',
+                name: '1Solutions',
+                url: 'https://www.1solutions.biz',
+              },
+              reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+              author: { '@type': 'Person', name: t.name },
+              reviewBody: t.text,
+            })),
+          })}}
+        />
+</Head>
 
       <div className="cm-page">
         <div className="cm-orb cm-orb-1" /><div className="cm-orb cm-orb-2" /><div className="cm-orb cm-orb-3" />
@@ -608,12 +625,12 @@ export default function CloudMigrationServices() {
             </div>
             <div className="cm-tgrid" ref={testiGridRef}>
               {TESTIMONIALS.map((t, i) => (
-                <div key={i} className={`cm-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' cm-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }} itemScope itemType="https://schema.org/Review">
+                <div key={i} className={`cm-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' cm-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}>
                   <div className="cm-stars" aria-label="5 out of 5 stars">★★★★★</div>
-                  <p className="cm-ttext" itemProp="reviewBody">{t.text}</p>
+                  <p className="cm-ttext">{t.text}</p>
                   <div className="cm-tauthor">
                     <div className="cm-tavatar" style={{ background: t.bg }}>{t.init}</div>
-                    <div><div className="cm-tname" itemProp="author">{t.name}</div><div className="cm-trole">{t.role}</div></div>
+                    <div><div className="cm-tname">{t.name}</div><div className="cm-trole">{t.role}</div></div>
                   </div>
                 </div>
               ))}

@@ -154,7 +154,7 @@ export default function SeoServices() {
         ],
       },
       {
-        '@type': 'Organization',
+        '@type': 'LocalBusiness',
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
         logo: 'https://www.1solutions.biz/images/1solutions-logo.png',
@@ -179,7 +179,6 @@ export default function SeoServices() {
         url: 'https://www.1solutions.biz/seo-services-company/',
         description: 'Full-service SEO company offering technical SEO, content strategy, link building and local SEO for businesses in US, Canada and Australia.',
         areaServed: ['US', 'CA', 'AU'],
-        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '142', bestRating: '5' },
         dateModified: '2026-06-24',
       },
       {

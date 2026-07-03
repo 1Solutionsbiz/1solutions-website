@@ -20,14 +20,13 @@ const SCHEMA = {
       url: 'https://www.1solutions.biz/automotive-software-solutions/',
       description: 'Custom automotive software development - connected vehicle platforms, ADAS, fleet management, EV software, in-vehicle infotainment, dealership management systems, and V2X communication solutions.',
       provider: {
-        '@type': 'Organization',
+        '@type': 'LocalBusiness',
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
         logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
         foundingDate: '2008',
         areaServed: ['US', 'GB', 'AU', 'CA', 'DE'],
       },
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '94', bestRating: '5' },
     },
     {
       '@type': 'FAQPage',
@@ -554,7 +553,25 @@ export default function AutomotiveSoftwareSolutions() {
             .av-s-title { font-size:28px; }
           }
         `}</style>
-      </Head>
+              <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': TESTIMONIALS.map(t => ({
+              '@type': 'Review',
+              itemReviewed: {
+                '@type': 'LocalBusiness',
+                '@id': 'https://www.1solutions.biz/#organization',
+                name: '1Solutions',
+                url: 'https://www.1solutions.biz',
+              },
+              reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+              author: { '@type': 'Person', name: t.name },
+              reviewBody: t.text,
+            })),
+          })}}
+        />
+</Head>
 
       <div className="av-page">
         <div className="av-orb av-orb-1" />
@@ -742,14 +759,13 @@ export default function AutomotiveSoftwareSolutions() {
             </div>
             <div className="av-tgrid" ref={testiGridRef}>
               {TESTIMONIALS.map((t, i) => (
-                <div key={i} className={`av-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' av-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}
-                  itemScope itemType="https://schema.org/Review">
+                <div key={i} className={`av-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' av-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}>
                   <div className="av-stars" aria-label="5 out of 5 stars">★★★★★</div>
-                  <p className="av-ttext" itemProp="reviewBody">{t.text}</p>
+                  <p className="av-ttext">{t.text}</p>
                   <div className="av-tauthor">
                     <div className="av-tavatar" style={{ background: t.bg }}>{t.init}</div>
                     <div>
-                      <div className="av-tname" itemProp="author">{t.name}</div>
+                      <div className="av-tname">{t.name}</div>
                       <div className="av-trole">{t.role}</div>
                     </div>
                   </div>

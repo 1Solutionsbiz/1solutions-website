@@ -141,7 +141,7 @@ export default function AppMaintenanceServices() {
         name: 'App Maintenance & Support Services',
         description: 'Ongoing mobile and web app maintenance - bug fixing, OS updates, security patching, performance monitoring, and App Store compliance. Serving US, Canada & Australia.',
         provider: {
-          '@type': 'Organization',
+          '@type': 'LocalBusiness',
           name: '1Solutions',
           url: 'https://www.1solutions.biz',
           areaServed: ['US', 'CA', 'AU'],

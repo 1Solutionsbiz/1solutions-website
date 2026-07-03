@@ -139,7 +139,6 @@ export default function SeoAuditServices() {
         description: 'Comprehensive SEO audits covering technical SEO, on-page, backlinks, content gaps, and competitor analysis - with a 90-day prioritised roadmap.',
         areaServed: ['US', 'CA', 'AU'],
         serviceType: 'SEO Audit',
-        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '87', bestRating: '5' },
         url: 'https://www.1solutions.biz/seo-audit-services/',
       },
       {

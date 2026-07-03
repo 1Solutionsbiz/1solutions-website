@@ -197,7 +197,7 @@ function SinglePost({ post, relatedPosts }) {
                 url:     post.author?.node?.slug ? `${siteUrl}/author/${post.author.node.slug}` : undefined,
               },
               publisher: {
-                '@type': 'Organization',
+                '@type': 'LocalBusiness',
                 '@id':   `${siteUrl}/#organization`,
                 name:    '1Solutions',
                 logo:    { '@type': 'ImageObject', url: `${siteUrl}/images/1solutions-logo.png` },

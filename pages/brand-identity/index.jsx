@@ -91,7 +91,6 @@ const LD = {
       description: 'Logo design, brand colour palettes, typography systems, and comprehensive brand guidelines. 300+ brands crafted across 50+ industries in 16+ years.',
       serviceType: 'Brand Identity Design',
       areaServed: ['IN', 'US', 'CA', 'GB', 'AU'],
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '186', bestRating: '5' },
     },
     {
       '@type': 'FAQPage',

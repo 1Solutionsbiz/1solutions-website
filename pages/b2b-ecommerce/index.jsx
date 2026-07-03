@@ -137,7 +137,7 @@ export default function B2BEcommerce() {
         name: 'B2B eCommerce Development Services',
         description: 'Custom B2B eCommerce platform development - wholesale portals, bulk ordering, tiered pricing, ERP integration, and buyer self-service for manufacturers, wholesalers, and distributors.',
         provider: {
-          '@type': 'Organization',
+          '@type': 'LocalBusiness',
           name: '1Solutions',
           url: 'https://www.1solutions.biz',
           areaServed: ['US', 'CA', 'AU'],

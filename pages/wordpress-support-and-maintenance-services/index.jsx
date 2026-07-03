@@ -15,7 +15,7 @@ const SCHEMA = {
       ],
     },
     {
-      '@type': 'Organization',
+      '@type': 'LocalBusiness',
       '@id': 'https://www.1solutions.biz/#organization',
       name: '1Solutions',
       url: 'https://www.1solutions.biz',

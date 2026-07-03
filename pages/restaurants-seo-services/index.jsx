@@ -68,7 +68,6 @@ export default function RestaurantsSeoServices() {
         description: 'Restaurant SEO to rank for restaurants near me, best cuisine in city, food delivery, and dining occasion keywords that fill tables and grow reservations.',
         areaServed: ['US', 'CA', 'AU'],
         serviceType: 'Restaurant and Food Business Search Engine Optimisation',
-        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '96', bestRating: '5' },
       },
       {
         '@type': 'FAQPage',

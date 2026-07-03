@@ -20,14 +20,13 @@ const SCHEMA = {
       url: 'https://www.1solutions.biz/healthcare-software-development/',
       description: 'Custom healthcare software development - HIPAA-compliant EHR/EMR systems, telemedicine platforms, patient portals, healthcare mobile apps, medical billing software, and HL7 FHIR integrations.',
       provider: {
-        '@type': 'Organization',
+        '@type': 'LocalBusiness',
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
         logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
         foundingDate: '2008',
         areaServed: ['US', 'GB', 'AU', 'CA'],
       },
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '87', bestRating: '5' },
     },
     {
       '@type': 'FAQPage',
@@ -745,10 +744,9 @@ export default function HealthcareSoftwareDevelopment() {
                   key={t.name}
                   className={`hc-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' hc-tv' : ''}`}
                   style={{ transitionDelay: `${i * 120}ms` }}
-                  itemScope itemType="https://schema.org/Review"
                 >
                   <div className="hc-stars">★★★★★</div>
-                  <p className="hc-ttext" itemProp="reviewBody">{t.text}</p>
+                  <p className="hc-ttext">{t.text}</p>
                   <div className="hc-tauthor">
                     <div className="hc-tavatar" style={{ background: t.bg }}>{t.init}</div>
                     <div>

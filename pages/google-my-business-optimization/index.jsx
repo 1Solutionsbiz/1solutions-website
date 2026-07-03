@@ -159,7 +159,7 @@ export default function GoogleMyBusinessOptimization() {
         ],
       },
       {
-        '@type': 'Organization',
+        '@type': 'LocalBusiness',
         name: '1Solutions',
         url: 'https://1solutions.biz',
         logo: 'https://1solutions.biz/logo/1solutions-logo.png',
@@ -186,7 +186,6 @@ export default function GoogleMyBusinessOptimization() {
         areaServed: ['IN', 'US', 'CA', 'AU', 'GB'],
         serviceType: 'Google Business Profile Optimization',
         dateModified: '2026-06-23',
-        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '375', bestRating: '5' },
       },
       {
         '@type': 'HowTo',

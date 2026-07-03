@@ -68,7 +68,6 @@ export default function PlumbingSeoServices() {
         description: 'Plumbing SEO services that rank plumbers for emergency and planned service keywords, grow Google Business Profile calls, and build map pack dominance.',
         areaServed: ['US', 'CA', 'AU'],
         serviceType: 'Plumber Search Engine Optimisation',
-        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '94', bestRating: '5' },
       },
       {
         '@type': 'FAQPage',

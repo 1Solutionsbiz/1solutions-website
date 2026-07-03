@@ -91,7 +91,6 @@ const LD = {
       description: 'We build structured, documented design systems - from atomic tokens to full component libraries - so your team ships faster with pixel-perfect consistency. 80+ design systems built.',
       serviceType: 'Design System Development',
       areaServed: ['IN', 'US', 'CA', 'GB', 'AU'],
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '94', bestRating: '5' },
     },
     {
       '@type': 'FAQPage',

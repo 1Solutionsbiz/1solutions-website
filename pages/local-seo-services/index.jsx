@@ -145,7 +145,6 @@ export default function LocalSeoServices() {
         description: 'Local SEO services that get your business into the Google Maps pack. GBP optimisation, citations, review management, and location pages.',
         areaServed: ['US', 'CA', 'AU'],
         serviceType: 'Local Search Engine Optimisation',
-        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '94', bestRating: '5' },
         url: 'https://www.1solutions.biz/local-seo-services/',
       },
       {

@@ -7,7 +7,7 @@ const SCHEMA = {
   '@context': 'https://schema.org',
   '@graph': [
     { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' }, { '@type': 'ListItem', position: 2, name: 'Hire JavaScript Developer', item: 'https://www.1solutions.biz/hire-javascript-developer/' }] },
-    { '@type': 'Service', name: 'Hire JavaScript Developer', url: 'https://www.1solutions.biz/hire-javascript-developer/', description: 'Hire expert JavaScript developers from 1Solutions - full-stack JS engineers with deep React, Node.js, Vue.js, TypeScript, and Next.js expertise. Dedicated, part-time, or hourly engagement. 15+ years of JavaScript development experience.', provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz', logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' }, foundingDate: '2008', areaServed: ['US', 'GB', 'AU', 'CA', 'IN'] }, aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '82', bestRating: '5' } },
+    { '@type': 'Service', name: 'Hire JavaScript Developer', url: 'https://www.1solutions.biz/hire-javascript-developer/', description: 'Hire expert JavaScript developers from 1Solutions - full-stack JS engineers with deep React, Node.js, Vue.js, TypeScript, and Next.js expertise. Dedicated, part-time, or hourly engagement. 15+ years of JavaScript development experience.', provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz', logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' }, foundingDate: '2008', areaServed: ['US', 'GB', 'AU', 'CA', 'IN'] } },
     { '@type': 'FAQPage', mainEntity: [
       { '@type': 'Question', name: 'What can I expect from a dedicated JavaScript developer from 1Solutions?', acceptedAnswer: { '@type': 'Answer', text: 'A dedicated JavaScript developer from 1Solutions functions as a full member of your engineering team - attending daily standups, committing directly to your repositories, joining sprint planning, and owning features end-to-end. They are pre-vetted across JavaScript fundamentals (closures, event loop, async/await, prototypal inheritance), modern frontend (React/Vue/Angular), backend (Node.js, Express, NestJS), TypeScript, REST and GraphQL API design, and testing (Jest, Vitest, Playwright). You get a developer who can work across the full JS stack - not a narrow specialist who needs hand-holding outside their exact sub-skill.' } },
       { '@type': 'Question', name: 'How quickly can I hire a JavaScript developer?', acceptedAnswer: { '@type': 'Answer', text: "You can have a shortlisted JavaScript developer within 24 business hours of sharing your requirements. Our pre-vetted bench of JavaScript engineers means we don't start searching after you submit - we match from an active pool of screened candidates. From requirements received to developer starting engagement: typically 3–5 business days for a dedicated hire, 1–2 days for an hourly engagement." } },
@@ -382,7 +382,25 @@ export default function HireJavaScriptDeveloper() {
           @media(max-width:1024px){.hj-hero h1,.hj-s-title,.hj-faq h2{font-size:36px}.hj-skill-grid{grid-template-columns:repeat(2,1fr)}.hj-stack-grid{grid-template-columns:repeat(2,1fr)}.hj-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.hj-eng-card.feat{transform:none}.hj-eng-card.feat.hj-ev{transform:none}.hj-eng-card.feat.hj-ev:hover{transform:translateY(-4px)}.hj-why-grid{grid-template-columns:repeat(2,1fr)}.hj-tgrid{grid-template-columns:1fr}.hj-contact-grid{grid-template-columns:1fr}}
           @media(max-width:768px){.hj-breadcrumb{padding:12px 20px 0}.hj-hero{padding:28px 20px 20px}.hj-hero h1{font-size:26px;letter-spacing:-.3px}.hj-stats{grid-template-columns:1fr 1fr}.hj-stat-col:nth-child(2){border-right:none}.hj-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.hj-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.hj-logos{padding:16px 20px 28px}.hj-skill-section,.hj-stack-section,.hj-eng-section,.hj-process-section,.hj-testi,.hj-why-section,.hj-faq,.hj-related{padding:52px 20px}.hj-contact{padding:48px 20px}.hj-skill-grid,.hj-stack-grid,.hj-why-grid{grid-template-columns:1fr}.hj-frow{grid-template-columns:1fr}.hj-ctitle{font-size:28px}.hj-s-title{font-size:28px}}
         `}</style>
-      </Head>
+              <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': TESTIMONIALS.map(t => ({
+              '@type': 'Review',
+              itemReviewed: {
+                '@type': 'LocalBusiness',
+                '@id': 'https://www.1solutions.biz/#organization',
+                name: '1Solutions',
+                url: 'https://www.1solutions.biz',
+              },
+              reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+              author: { '@type': 'Person', name: t.name },
+              reviewBody: t.text,
+            })),
+          })}}
+        />
+</Head>
       <div className="hj-page">
         <div className="hj-orb hj-orb-1" /><div className="hj-orb hj-orb-2" /><div className="hj-orb hj-orb-3" />
         <nav className="hj-breadcrumb" aria-label="Breadcrumb">
@@ -474,7 +492,7 @@ export default function HireJavaScriptDeveloper() {
               <p className="hj-s-desc">Engineering managers, CTOs, and agency delivery leads across the US, UK, and Australia on hiring JavaScript developers from 1Solutions.</p>
             </div>
             <div className="hj-tgrid" ref={testiGridRef}>
-              {TESTIMONIALS.map((t, i) => (<div key={i} className={`hj-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' hj-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }} itemScope itemType="https://schema.org/Review"><div className="hj-stars">★★★★★</div><p className="hj-ttext" itemProp="reviewBody">{t.text}</p><div className="hj-tauthor"><div className="hj-tavatar" style={{ background: t.bg }}>{t.init}</div><div><div className="hj-tname" itemProp="author">{t.name}</div><div className="hj-trole">{t.role}</div></div></div></div>))}
+              {TESTIMONIALS.map((t, i) => (<div key={i} className={`hj-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' hj-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}><div className="hj-stars">★★★★★</div><p className="hj-ttext">{t.text}</p><div className="hj-tauthor"><div className="hj-tavatar" style={{ background: t.bg }}>{t.init}</div><div><div className="hj-tname">{t.name}</div><div className="hj-trole">{t.role}</div></div></div></div>))}
             </div>
           </div>
         </section>

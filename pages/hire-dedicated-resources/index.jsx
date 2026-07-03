@@ -191,7 +191,7 @@ const LD = {
   '@context': 'https://schema.org',
   '@graph': [
     { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' }, { '@type': 'ListItem', position: 2, name: 'Hire Dedicated Resources', item: 'https://www.1solutions.biz/hire-dedicated-resources/' }] },
-    { '@type': 'Service', name: 'Hire Dedicated Resources', provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz' }, description: 'Hire dedicated developers, designers, and digital marketing experts from 1Solutions.', serviceType: 'Staff Augmentation', areaServed: ['IN', 'US', 'CA', 'GB', 'AU'], aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '213', bestRating: '5' } },
+    { '@type': 'Service', name: 'Hire Dedicated Resources', provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz' }, description: 'Hire dedicated developers, designers, and digital marketing experts from 1Solutions.', serviceType: 'Staff Augmentation', areaServed: ['IN', 'US', 'CA', 'GB', 'AU'] },
     { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
   ],
 }

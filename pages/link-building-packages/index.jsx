@@ -272,7 +272,7 @@ export default function LinkBuildingPackages() {
         ],
       },
       {
-        '@type': 'Organization',
+        '@type': 'LocalBusiness',
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
         logo: 'https://www.1solutions.biz/images/1solutions-logo.png',
@@ -297,7 +297,6 @@ export default function LinkBuildingPackages() {
         url: 'https://www.1solutions.biz/link-building-packages/',
         description: 'White-hat link building through manual outreach. Guest posts, niche edits, and digital PR from DR40+ to DR60+ niche-relevant websites.',
         areaServed: 'Worldwide',
-        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '127', bestRating: '5' },
         offers: PLANS.map(p => ({
           '@type': 'Offer',
           name: `${p.name} Link Building Package`,

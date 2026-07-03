@@ -68,7 +68,6 @@ export default function InsuranceSeoServices() {
         description: 'Insurance SEO for agents and brokers. Rank for auto insurance, home insurance, life insurance, health insurance, and commercial insurance keywords that drive qualified buyer traffic.',
         areaServed: ['US', 'CA', 'AU'],
         serviceType: 'Insurance Agent and Broker Search Engine Optimisation',
-        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '82', bestRating: '5' },
       },
       {
         '@type': 'FAQPage',

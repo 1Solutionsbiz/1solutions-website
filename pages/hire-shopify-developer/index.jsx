@@ -19,14 +19,13 @@ const SCHEMA = {
       url: 'https://www.1solutions.biz/hire-shopify-developer/',
       description: 'Hire expert Shopify developers - custom Shopify theme development, Shopify Plus customisation, Liquid templating, Shopify App development, Shopify headless (Hydrogen), API integrations, migration to Shopify, and ongoing Shopify maintenance and support.',
       provider: {
-        '@type': 'Organization',
+        '@type': 'LocalBusiness',
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
         logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
         foundingDate: '2008',
         areaServed: ['US', 'GB', 'AU', 'CA', 'IN'],
       },
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '96', bestRating: '5' },
     },
     {
       '@type': 'FAQPage',
@@ -460,7 +459,25 @@ export default function HireShopifyDeveloper() {
           @media(max-width:1024px){.sh-hero h1,.sh-s-title,.sh-faq h2{font-size:36px}.sh-svc-grid{grid-template-columns:repeat(2,1fr)}.sh-stack-grid{grid-template-columns:repeat(2,1fr)}.sh-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.sh-eng-card.feat{transform:none}.sh-eng-card.feat.sh-ev{transform:none}.sh-eng-card.feat.sh-ev:hover{transform:translateY(-4px)}.sh-why-grid{grid-template-columns:repeat(2,1fr)}.sh-tgrid{grid-template-columns:1fr}.sh-contact-grid{grid-template-columns:1fr}}
           @media(max-width:768px){.sh-breadcrumb{padding:12px 20px 0}.sh-hero{padding:28px 20px 20px}.sh-hero h1{font-size:26px;letter-spacing:-.3px}.sh-stats{grid-template-columns:1fr 1fr}.sh-stat-col:nth-child(2){border-right:none}.sh-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.sh-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.sh-logos{padding:16px 20px 28px}.sh-svc-section,.sh-stack-section,.sh-eng-section,.sh-process-section,.sh-testi,.sh-why-section,.sh-faq,.sh-related{padding:52px 20px}.sh-contact{padding:48px 20px}.sh-svc-grid,.sh-stack-grid,.sh-why-grid{grid-template-columns:1fr}.sh-frow{grid-template-columns:1fr}.sh-ctitle{font-size:28px}.sh-s-title{font-size:28px}}
         `}</style>
-      </Head>
+              <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': TESTIMONIALS.map(t => ({
+              '@type': 'Review',
+              itemReviewed: {
+                '@type': 'LocalBusiness',
+                '@id': 'https://www.1solutions.biz/#organization',
+                name: '1Solutions',
+                url: 'https://www.1solutions.biz',
+              },
+              reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+              author: { '@type': 'Person', name: t.name },
+              reviewBody: t.text,
+            })),
+          })}}
+        />
+</Head>
 
       <div className="sh-page">
         <div className="sh-hero-wrap">
@@ -624,12 +641,12 @@ export default function HireShopifyDeveloper() {
             </div>
             <div className="sh-tgrid" ref={testiGridRef}>
               {TESTIMONIALS.map((t, i) => (
-                <div key={i} className={`sh-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' sh-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }} itemScope itemType="https://schema.org/Review">
+                <div key={i} className={`sh-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' sh-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}>
                   <div className="sh-stars" aria-label="5 out of 5 stars">★★★★★</div>
-                  <p className="sh-ttext" itemProp="reviewBody">{t.text}</p>
+                  <p className="sh-ttext">{t.text}</p>
                   <div className="sh-tauthor">
                     <div className="sh-tavatar" style={{ background: t.bg }}>{t.init}</div>
-                    <div><div className="sh-tname" itemProp="author">{t.name}</div><div className="sh-trole">{t.role}</div></div>
+                    <div><div className="sh-tname">{t.name}</div><div className="sh-trole">{t.role}</div></div>
                   </div>
                 </div>
               ))}

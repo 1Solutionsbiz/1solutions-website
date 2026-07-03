@@ -68,7 +68,6 @@ export default function PetcareSeoServices() {
         description: 'Pet care SEO for veterinarians, groomers, boarding facilities, and pet daycares. Rank for vet near me, pet grooming, dog boarding, and emergency vet keywords.',
         areaServed: ['US', 'CA', 'AU'],
         serviceType: 'Pet Care Business Search Engine Optimisation',
-        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '78', bestRating: '5' },
       },
       {
         '@type': 'FAQPage',

@@ -68,7 +68,6 @@ export default function DentalSeoServices() {
         description: 'Dental SEO services for dental practices. Rank for dentist near me, dental implants, cosmetic dentistry, and emergency dental keywords to attract new patients.',
         areaServed: ['US', 'CA', 'AU'],
         serviceType: 'Dental Practice Search Engine Optimisation',
-        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '102', bestRating: '5' },
       },
       {
         '@type': 'FAQPage',

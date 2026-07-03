@@ -68,7 +68,6 @@ export default function EcommerceSeoServices() {
         description: 'eCommerce SEO services for Shopify, WooCommerce, and Magento stores. Product page, category page, technical SEO, and Google Shopping optimisation.',
         areaServed: ['US', 'CA', 'AU'],
         serviceType: 'eCommerce Search Engine Optimisation',
-        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '108', bestRating: '5' },
       },
       {
         '@type': 'FAQPage',

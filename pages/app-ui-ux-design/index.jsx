@@ -134,7 +134,7 @@ export default function AppUiUxDesign() {
         name: 'App UI/UX Design Services',
         description: 'Mobile app UI/UX design - user research, wireframing, high-fidelity design, prototyping, design systems, and usability testing for iOS and Android apps.',
         provider: {
-          '@type': 'Organization',
+          '@type': 'LocalBusiness',
           name: '1Solutions',
           url: 'https://www.1solutions.biz',
           areaServed: ['US', 'CA', 'AU'],

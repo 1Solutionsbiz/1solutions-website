@@ -20,14 +20,13 @@ const SCHEMA = {
       url: 'https://www.1solutions.biz/flutter-app-development-services/',
       description: 'Cross-platform Flutter app development for iOS, Android, web, and desktop - a single Dart codebase delivering native performance, pixel-perfect UI, and 60fps animations. Custom Flutter apps from MVP to enterprise-scale, built and deployed faster than separate native development.',
       provider: {
-        '@type': 'Organization',
+        '@type': 'LocalBusiness',
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
         logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
         foundingDate: '2008',
         areaServed: ['US', 'GB', 'AU', 'CA', 'IN'],
       },
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '97', bestRating: '5' },
     },
     {
       '@type': 'FAQPage',
@@ -554,7 +553,25 @@ export default function FlutterAppDevelopment() {
             .fl-s-title { font-size:28px; }
           }
         `}</style>
-      </Head>
+              <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': TESTIMONIALS.map(t => ({
+              '@type': 'Review',
+              itemReviewed: {
+                '@type': 'LocalBusiness',
+                '@id': 'https://www.1solutions.biz/#organization',
+                name: '1Solutions',
+                url: 'https://www.1solutions.biz',
+              },
+              reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+              author: { '@type': 'Person', name: t.name },
+              reviewBody: t.text,
+            })),
+          })}}
+        />
+</Head>
 
       <div className="fl-page">
         <div className="fl-orb fl-orb-1" />
@@ -742,14 +759,13 @@ export default function FlutterAppDevelopment() {
             </div>
             <div className="fl-tgrid" ref={testiGridRef}>
               {TESTIMONIALS.map((t, i) => (
-                <div key={i} className={`fl-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' fl-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}
-                  itemScope itemType="https://schema.org/Review">
+                <div key={i} className={`fl-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' fl-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}>
                   <div className="fl-stars" aria-label="5 out of 5 stars">★★★★★</div>
-                  <p className="fl-ttext" itemProp="reviewBody">{t.text}</p>
+                  <p className="fl-ttext">{t.text}</p>
                   <div className="fl-tauthor">
                     <div className="fl-tavatar" style={{ background: t.bg }}>{t.init}</div>
                     <div>
-                      <div className="fl-tname" itemProp="author">{t.name}</div>
+                      <div className="fl-tname">{t.name}</div>
                       <div className="fl-trole">{t.role}</div>
                     </div>
                   </div>

@@ -19,14 +19,13 @@ const SCHEMA = {
       url: 'https://www.1solutions.biz/nextjs-development-services/',
       description: 'Expert Next.js development services - custom Next.js web applications, SaaS platforms, headless eCommerce storefronts, enterprise portals, API Routes and full-stack Next.js, headless CMS integration, Next.js migration, performance optimisation, and dedicated Next.js development teams for businesses worldwide.',
       provider: {
-        '@type': 'Organization',
+        '@type': 'LocalBusiness',
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
         logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
         foundingDate: '2008',
         areaServed: ['US', 'GB', 'AU', 'CA', 'IN'],
       },
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '88', bestRating: '5' },
     },
     {
       '@type': 'FAQPage',
@@ -453,7 +452,25 @@ export default function NextjsDevelopmentServices() {
           @media(max-width:1024px){.nx-hero h1,.nx-s-title,.nx-faq h2{font-size:36px}.nx-svc-grid{grid-template-columns:repeat(2,1fr)}.nx-stack-grid{grid-template-columns:repeat(2,1fr)}.nx-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.nx-eng-card.feat{transform:none}.nx-eng-card.feat.nx-ev{transform:none}.nx-eng-card.feat.nx-ev:hover{transform:translateY(-4px)}.nx-why-grid{grid-template-columns:repeat(2,1fr)}.nx-tgrid{grid-template-columns:1fr}.nx-contact-grid{grid-template-columns:1fr}}
           @media(max-width:768px){.nx-breadcrumb{padding:12px 20px 0}.nx-hero{padding:28px 20px 20px}.nx-hero h1{font-size:26px;letter-spacing:-.3px}.nx-stats{grid-template-columns:1fr 1fr}.nx-stat-col:nth-child(2){border-right:none}.nx-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.nx-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.nx-logos{padding:16px 20px 28px}.nx-svc-section,.nx-stack-section,.nx-eng-section,.nx-process-section,.nx-testi,.nx-why-section,.nx-faq,.nx-related{padding:52px 20px}.nx-contact{padding:48px 20px}.nx-svc-grid,.nx-stack-grid,.nx-why-grid{grid-template-columns:1fr}.nx-frow{grid-template-columns:1fr}.nx-ctitle{font-size:28px}.nx-s-title{font-size:28px}}
         `}</style>
-      </Head>
+              <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': TESTIMONIALS.map(t => ({
+              '@type': 'Review',
+              itemReviewed: {
+                '@type': 'LocalBusiness',
+                '@id': 'https://www.1solutions.biz/#organization',
+                name: '1Solutions',
+                url: 'https://www.1solutions.biz',
+              },
+              reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+              author: { '@type': 'Person', name: t.name },
+              reviewBody: t.text,
+            })),
+          })}}
+        />
+</Head>
 
       <div className="nx-page">
         <div className="nx-orb nx-orb-1" /><div className="nx-orb nx-orb-2" /><div className="nx-orb nx-orb-3" />
@@ -608,12 +625,12 @@ export default function NextjsDevelopmentServices() {
             </div>
             <div className="nx-tgrid" ref={testiGridRef}>
               {TESTIMONIALS.map((t, i) => (
-                <div key={i} className={`nx-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' nx-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }} itemScope itemType="https://schema.org/Review">
+                <div key={i} className={`nx-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' nx-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}>
                   <div className="nx-stars" aria-label="5 out of 5 stars">★★★★★</div>
-                  <p className="nx-ttext" itemProp="reviewBody">{t.text}</p>
+                  <p className="nx-ttext">{t.text}</p>
                   <div className="nx-tauthor">
                     <div className="nx-tavatar" style={{ background: t.bg }}>{t.init}</div>
-                    <div><div className="nx-tname" itemProp="author">{t.name}</div><div className="nx-trole">{t.role}</div></div>
+                    <div><div className="nx-tname">{t.name}</div><div className="nx-trole">{t.role}</div></div>
                   </div>
                 </div>
               ))}

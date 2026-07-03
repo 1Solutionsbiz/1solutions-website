@@ -19,14 +19,13 @@ const SCHEMA = {
       url: 'https://www.1solutions.biz/ios-app-development-company/',
       description: 'Native iOS app development in Swift and SwiftUI - iPhone, iPad, Apple Watch, Apple TV, and Mac Catalyst. App Store-ready, performance-optimised, and built with clean architecture for long-term maintainability.',
       provider: {
-        '@type': 'Organization',
+        '@type': 'LocalBusiness',
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
         logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
         foundingDate: '2008',
         areaServed: ['US', 'GB', 'AU', 'CA', 'IN'],
       },
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '109', bestRating: '5' },
     },
     {
       '@type': 'FAQPage',
@@ -492,7 +491,25 @@ export default function IosAppDevelopment() {
           @media(max-width:1024px){.io-hero h1,.io-s-title,.io-faq h2{font-size:36px}.io-svc-grid{grid-template-columns:repeat(2,1fr)}.io-stack-grid{grid-template-columns:repeat(2,1fr)}.io-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.io-eng-card.feat{transform:none}.io-eng-card.feat.io-ev{transform:none}.io-eng-card.feat.io-ev:hover{transform:translateY(-4px)}.io-why-grid{grid-template-columns:repeat(2,1fr)}.io-tgrid{grid-template-columns:1fr}.io-contact-grid{grid-template-columns:1fr}}
           @media(max-width:768px){.io-breadcrumb{padding:12px 20px 0}.io-hero{padding:28px 20px 20px}.io-hero h1{font-size:26px;letter-spacing:-.3px}.io-stats{grid-template-columns:1fr 1fr}.io-stat-col:nth-child(2){border-right:none}.io-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.io-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.io-logos{padding:16px 20px 28px}.io-svc-section,.io-stack-section,.io-eng-section,.io-process-section,.io-testi,.io-why-section,.io-faq,.io-related{padding:52px 20px}.io-contact{padding:48px 20px}.io-svc-grid,.io-stack-grid,.io-why-grid{grid-template-columns:1fr}.io-frow{grid-template-columns:1fr}.io-ctitle{font-size:28px}.io-s-title{font-size:28px}}
         `}</style>
-      </Head>
+              <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': TESTIMONIALS.map(t => ({
+              '@type': 'Review',
+              itemReviewed: {
+                '@type': 'LocalBusiness',
+                '@id': 'https://www.1solutions.biz/#organization',
+                name: '1Solutions',
+                url: 'https://www.1solutions.biz',
+              },
+              reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+              author: { '@type': 'Person', name: t.name },
+              reviewBody: t.text,
+            })),
+          })}}
+        />
+</Head>
 
       <div className="io-page">
         <div className="io-orb io-orb-1" /><div className="io-orb io-orb-2" /><div className="io-orb io-orb-3" />
@@ -649,12 +666,12 @@ export default function IosAppDevelopment() {
             </div>
             <div className="io-tgrid" ref={testiGridRef}>
               {TESTIMONIALS.map((t, i) => (
-                <div key={i} className={`io-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' io-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }} itemScope itemType="https://schema.org/Review">
+                <div key={i} className={`io-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' io-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}>
                   <div className="io-stars" aria-label="5 out of 5 stars">★★★★★</div>
-                  <p className="io-ttext" itemProp="reviewBody">{t.text}</p>
+                  <p className="io-ttext">{t.text}</p>
                   <div className="io-tauthor">
                     <div className="io-tavatar" style={{ background: t.bg }}>{t.init}</div>
-                    <div><div className="io-tname" itemProp="author">{t.name}</div><div className="io-trole">{t.role}</div></div>
+                    <div><div className="io-tname">{t.name}</div><div className="io-trole">{t.role}</div></div>
                   </div>
                 </div>
               ))}

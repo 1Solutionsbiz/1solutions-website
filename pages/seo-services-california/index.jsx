@@ -134,7 +134,6 @@ export default function SeoServicesCalifornia() {
         description: 'SEO services for California businesses - local SEO, technical SEO, content marketing, and link building across Los Angeles, San Francisco, San Diego, and all major California markets.',
         areaServed: { '@type': 'State', name: 'California', sameAs: 'https://en.wikipedia.org/wiki/California' },
         serviceType: 'Search Engine Optimisation',
-        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '87', bestRating: '5' },
         url: 'https://www.1solutions.biz/seo-services-california/',
       },
       {

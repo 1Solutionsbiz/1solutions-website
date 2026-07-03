@@ -20,14 +20,13 @@ const SCHEMA = {
       url: 'https://www.1solutions.biz/fintech-software-development-company/',
       description: 'Custom fintech software development - PCI DSS-compliant digital banking, payment gateways, neobank platforms, investment apps, lending systems, InsurTech, RegTech, and blockchain solutions.',
       provider: {
-        '@type': 'Organization',
+        '@type': 'LocalBusiness',
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
         logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
         foundingDate: '2008',
         areaServed: ['US', 'GB', 'AU', 'CA'],
       },
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '112', bestRating: '5' },
     },
     {
       '@type': 'FAQPage',
@@ -554,7 +553,25 @@ export default function FintechSoftwareDevelopment() {
             .ft-s-title { font-size:28px; }
           }
         `}</style>
-      </Head>
+              <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': TESTIMONIALS.map(t => ({
+              '@type': 'Review',
+              itemReviewed: {
+                '@type': 'LocalBusiness',
+                '@id': 'https://www.1solutions.biz/#organization',
+                name: '1Solutions',
+                url: 'https://www.1solutions.biz',
+              },
+              reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+              author: { '@type': 'Person', name: t.name },
+              reviewBody: t.text,
+            })),
+          })}}
+        />
+</Head>
 
       <div className="ft-page">
         <div className="ft-orb ft-orb-1" />
@@ -742,14 +759,13 @@ export default function FintechSoftwareDevelopment() {
             </div>
             <div className="ft-tgrid" ref={testiGridRef}>
               {TESTIMONIALS.map((t, i) => (
-                <div key={i} className={`ft-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' ft-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}
-                  itemScope itemType="https://schema.org/Review">
+                <div key={i} className={`ft-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' ft-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}>
                   <div className="ft-stars" aria-label="5 out of 5 stars">★★★★★</div>
-                  <p className="ft-ttext" itemProp="reviewBody">{t.text}</p>
+                  <p className="ft-ttext">{t.text}</p>
                   <div className="ft-tauthor">
                     <div className="ft-tavatar" style={{ background: t.bg }}>{t.init}</div>
                     <div>
-                      <div className="ft-tname" itemProp="author">{t.name}</div>
+                      <div className="ft-tname">{t.name}</div>
                       <div className="ft-trole">{t.role}</div>
                     </div>
                   </div>

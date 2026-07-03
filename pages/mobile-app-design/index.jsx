@@ -159,7 +159,6 @@ const LD = {
       description: 'iOS and Android mobile app UI/UX design by 1Solutions. Platform-native interfaces, interactive prototypes, design systems, and developer-ready Figma handoff.',
       serviceType: 'Mobile App Design',
       areaServed: ['IN', 'US', 'CA', 'GB', 'AU'],
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '134', bestRating: '5' },
     },
     {
       '@type': 'FAQPage',

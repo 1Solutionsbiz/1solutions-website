@@ -7,7 +7,7 @@ const SCHEMA = {
   '@context': 'https://schema.org',
   '@graph': [
     { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' }, { '@type': 'ListItem', position: 2, name: 'Hire AngularJS Developer', item: 'https://www.1solutions.biz/hire-angularjs-developer/' }] },
-    { '@type': 'Service', name: 'Hire AngularJS Developer', url: 'https://www.1solutions.biz/hire-angularjs-developer/', description: 'Hire expert Angular developers from 1Solutions - pre-vetted Angular engineers with deep Angular 2–17 expertise, RxJS, NgRx, TypeScript, Angular Material, and enterprise-grade application development. Dedicated, part-time, or hourly.', provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz', logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' }, foundingDate: '2008', areaServed: ['US', 'GB', 'AU', 'CA', 'IN'] }, aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '64', bestRating: '5' } },
+    { '@type': 'Service', name: 'Hire AngularJS Developer', url: 'https://www.1solutions.biz/hire-angularjs-developer/', description: 'Hire expert Angular developers from 1Solutions - pre-vetted Angular engineers with deep Angular 2–17 expertise, RxJS, NgRx, TypeScript, Angular Material, and enterprise-grade application development. Dedicated, part-time, or hourly.', provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz', logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' }, foundingDate: '2008', areaServed: ['US', 'GB', 'AU', 'CA', 'IN'] } },
     { '@type': 'FAQPage', mainEntity: [
       { '@type': 'Question', name: 'What Angular versions do your developers work with?', acceptedAnswer: { '@type': 'Answer', text: 'Our Angular developers work with Angular 2 through Angular 17+. They are proficient in standalone components (introduced in Angular 14), the new control flow syntax (@if, @for, @switch) introduced in Angular 17, signals-based reactivity (Angular 16+), functional guards and resolvers (Angular 14+), inject() function, and the Ivy rendering engine. They can also maintain AngularJS (Angular 1.x) codebases and execute AngularJS-to-Angular migration projects.' } },
       { '@type': 'Question', name: 'What is the difference between Angular (modern) and AngularJS?', acceptedAnswer: { '@type': 'Answer', text: 'AngularJS (Angular 1.x) is the original 2010 framework using JavaScript, two-way data binding with watchers, controllers, and a digest cycle. It is in long-term support and no longer receiving new features. Angular (Angular 2+) is a complete rewrite using TypeScript, component-based architecture, RxJS for reactive programming, Ivy rendering engine, and a modular dependency injection system. When clients search for "AngularJS developers" they typically mean Angular 2–17+ developers - our team covers both, with primary expertise in modern Angular.' } },
@@ -381,7 +381,25 @@ export default function HireAngularJsDeveloper() {
           @media(max-width:1024px){.ha-hero h1,.ha-s-title,.ha-faq h2{font-size:36px}.ha-skill-grid{grid-template-columns:repeat(2,1fr)}.ha-stack-grid{grid-template-columns:repeat(2,1fr)}.ha-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.ha-eng-card.feat{transform:none}.ha-eng-card.feat.ha-ev{transform:none}.ha-eng-card.feat.ha-ev:hover{transform:translateY(-4px)}.ha-why-grid{grid-template-columns:repeat(2,1fr)}.ha-tgrid{grid-template-columns:1fr}.ha-contact-grid{grid-template-columns:1fr}}
           @media(max-width:768px){.ha-breadcrumb{padding:12px 20px 0}.ha-hero{padding:28px 20px 20px}.ha-hero h1{font-size:26px;letter-spacing:-.3px}.ha-stats{grid-template-columns:1fr 1fr}.ha-stat-col:nth-child(2){border-right:none}.ha-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.ha-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.ha-logos{padding:16px 20px 28px}.ha-skill-section,.ha-stack-section,.ha-eng-section,.ha-process-section,.ha-testi,.ha-why-section,.ha-faq,.ha-related{padding:52px 20px}.ha-contact{padding:48px 20px}.ha-skill-grid,.ha-stack-grid,.ha-why-grid{grid-template-columns:1fr}.ha-frow{grid-template-columns:1fr}.ha-ctitle{font-size:28px}.ha-s-title{font-size:28px}}
         `}</style>
-      </Head>
+              <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': TESTIMONIALS.map(t => ({
+              '@type': 'Review',
+              itemReviewed: {
+                '@type': 'LocalBusiness',
+                '@id': 'https://www.1solutions.biz/#organization',
+                name: '1Solutions',
+                url: 'https://www.1solutions.biz',
+              },
+              reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+              author: { '@type': 'Person', name: t.name },
+              reviewBody: t.text,
+            })),
+          })}}
+        />
+</Head>
       <div className="ha-page">
         <div className="ha-orb ha-orb-1" /><div className="ha-orb ha-orb-2" /><div className="ha-orb ha-orb-3" />
         <nav className="ha-breadcrumb" aria-label="Breadcrumb">
@@ -473,7 +491,7 @@ export default function HireAngularJsDeveloper() {
               <p className="ha-s-desc">CTOs, VP Engineers, and Engineering Managers across the US, UK, and Australia on hiring Angular developers from 1Solutions.</p>
             </div>
             <div className="ha-tgrid" ref={testiGridRef}>
-              {TESTIMONIALS.map((t, i) => (<div key={i} className={`ha-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' ha-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }} itemScope itemType="https://schema.org/Review"><div className="ha-stars">★★★★★</div><p className="ha-ttext" itemProp="reviewBody">{t.text}</p><div className="ha-tauthor"><div className="ha-tavatar" style={{ background: t.bg }}>{t.init}</div><div><div className="ha-tname" itemProp="author">{t.name}</div><div className="ha-trole">{t.role}</div></div></div></div>))}
+              {TESTIMONIALS.map((t, i) => (<div key={i} className={`ha-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' ha-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}><div className="ha-stars">★★★★★</div><p className="ha-ttext">{t.text}</p><div className="ha-tauthor"><div className="ha-tavatar" style={{ background: t.bg }}>{t.init}</div><div><div className="ha-tname">{t.name}</div><div className="ha-trole">{t.role}</div></div></div></div>))}
             </div>
           </div>
         </section>

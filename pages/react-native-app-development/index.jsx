@@ -135,7 +135,7 @@ export default function ReactNativeAppDevelopment() {
         name: 'React Native App Development Services',
         description: 'Custom cross-platform iOS and Android app development using React Native. From concept to App Store - UI/UX design, development, integration, and launch.',
         provider: {
-          '@type': 'Organization',
+          '@type': 'LocalBusiness',
           name: '1Solutions',
           url: 'https://www.1solutions.biz',
           areaServed: ['US', 'CA', 'AU'],

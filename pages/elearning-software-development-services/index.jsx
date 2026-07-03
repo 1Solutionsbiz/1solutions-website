@@ -20,14 +20,13 @@ const SCHEMA = {
       url: 'https://www.1solutions.biz/elearning-software-development-services/',
       description: 'Custom eLearning software development - LMS platforms, SCORM/xAPI-compliant course engines, virtual classrooms, adaptive learning systems, gamification, mobile learning apps, and corporate training portals.',
       provider: {
-        '@type': 'Organization',
+        '@type': 'LocalBusiness',
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
         logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
         foundingDate: '2008',
         areaServed: ['US', 'GB', 'AU', 'CA', 'IN'],
       },
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '108', bestRating: '5' },
     },
     {
       '@type': 'FAQPage',
@@ -554,7 +553,25 @@ export default function ElearningSoftwareDevelopment() {
             .el-s-title { font-size:28px; }
           }
         `}</style>
-      </Head>
+              <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': TESTIMONIALS.map(t => ({
+              '@type': 'Review',
+              itemReviewed: {
+                '@type': 'LocalBusiness',
+                '@id': 'https://www.1solutions.biz/#organization',
+                name: '1Solutions',
+                url: 'https://www.1solutions.biz',
+              },
+              reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+              author: { '@type': 'Person', name: t.name },
+              reviewBody: t.text,
+            })),
+          })}}
+        />
+</Head>
 
       <div className="el-page">
         <div className="el-orb el-orb-1" />
@@ -742,14 +759,13 @@ export default function ElearningSoftwareDevelopment() {
             </div>
             <div className="el-tgrid" ref={testiGridRef}>
               {TESTIMONIALS.map((t, i) => (
-                <div key={i} className={`el-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' el-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}
-                  itemScope itemType="https://schema.org/Review">
+                <div key={i} className={`el-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' el-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}>
                   <div className="el-stars" aria-label="5 out of 5 stars">★★★★★</div>
-                  <p className="el-ttext" itemProp="reviewBody">{t.text}</p>
+                  <p className="el-ttext">{t.text}</p>
                   <div className="el-tauthor">
                     <div className="el-tavatar" style={{ background: t.bg }}>{t.init}</div>
                     <div>
-                      <div className="el-tname" itemProp="author">{t.name}</div>
+                      <div className="el-tname">{t.name}</div>
                       <div className="el-trole">{t.role}</div>
                     </div>
                   </div>

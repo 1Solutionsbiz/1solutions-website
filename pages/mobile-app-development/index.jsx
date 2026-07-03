@@ -19,14 +19,13 @@ const SCHEMA = {
       url: 'https://www.1solutions.biz/mobile-app-development/',
       description: 'End-to-end mobile app development for iOS and Android - native Swift, Kotlin, Flutter, and React Native. 180+ apps shipped across consumer, enterprise, and e-commerce verticals.',
       provider: {
-        '@type': 'Organization',
+        '@type': 'LocalBusiness',
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
         logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
         foundingDate: '2008',
         areaServed: ['US', 'GB', 'AU', 'CA', 'IN'],
       },
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '143', bestRating: '5' },
     },
     {
       '@type': 'FAQPage',

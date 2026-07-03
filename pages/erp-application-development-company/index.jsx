@@ -20,14 +20,13 @@ const SCHEMA = {
       url: 'https://www.1solutions.biz/erp-application-development-company/',
       description: 'Custom ERP application development - finance, inventory, manufacturing, procurement, HR, and supply chain modules built to unify your operations, eliminate data silos, and replace expensive off-the-shelf ERP licensing with a platform you fully own.',
       provider: {
-        '@type': 'Organization',
+        '@type': 'LocalBusiness',
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
         logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
         foundingDate: '2008',
         areaServed: ['US', 'GB', 'AU', 'CA', 'IN'],
       },
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '103', bestRating: '5' },
     },
     {
       '@type': 'FAQPage',
@@ -554,7 +553,25 @@ export default function ErpApplicationDevelopment() {
             .er-s-title { font-size:28px; }
           }
         `}</style>
-      </Head>
+              <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': TESTIMONIALS.map(t => ({
+              '@type': 'Review',
+              itemReviewed: {
+                '@type': 'LocalBusiness',
+                '@id': 'https://www.1solutions.biz/#organization',
+                name: '1Solutions',
+                url: 'https://www.1solutions.biz',
+              },
+              reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+              author: { '@type': 'Person', name: t.name },
+              reviewBody: t.text,
+            })),
+          })}}
+        />
+</Head>
 
       <div className="er-page">
         <div className="er-orb er-orb-1" />
@@ -742,14 +759,13 @@ export default function ErpApplicationDevelopment() {
             </div>
             <div className="er-tgrid" ref={testiGridRef}>
               {TESTIMONIALS.map((t, i) => (
-                <div key={i} className={`er-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' er-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}
-                  itemScope itemType="https://schema.org/Review">
+                <div key={i} className={`er-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' er-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}>
                   <div className="er-stars" aria-label="5 out of 5 stars">★★★★★</div>
-                  <p className="er-ttext" itemProp="reviewBody">{t.text}</p>
+                  <p className="er-ttext">{t.text}</p>
                   <div className="er-tauthor">
                     <div className="er-tavatar" style={{ background: t.bg }}>{t.init}</div>
                     <div>
-                      <div className="er-tname" itemProp="author">{t.name}</div>
+                      <div className="er-tname">{t.name}</div>
                       <div className="er-trole">{t.role}</div>
                     </div>
                   </div>

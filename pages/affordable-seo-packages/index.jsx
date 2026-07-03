@@ -21,7 +21,7 @@ const SCHEMA = {
       url: 'https://www.1solutions.biz/affordable-seo-packages/',
       description: 'Affordable monthly SEO packages starting at $299/month. Includes on-page optimisation, technical SEO, link building, content writing, local SEO, and monthly reporting. No contracts. White-hat only.',
       provider: {
-        '@type': 'Organization',
+        '@type': 'LocalBusiness',
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
         logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
@@ -59,7 +59,6 @@ const SCHEMA = {
           url: 'https://www.1solutions.biz/affordable-seo-packages/',
         },
       ],
-      aggregateRating: {
         '@type': 'AggregateRating',
         ratingValue: '4.9',
         reviewCount: '312',
@@ -934,11 +933,10 @@ export default function AffordableSeoPackages() {
                   key={t.name}
                   className={`sp-tcard${t.feat?' feat':''}${visibleTestiCards.includes(i)?' sp-tv':''}`}
                   style={{transitionDelay:`${i*120}ms`}}
-                  itemScope itemType="https://schema.org/Review"
                 >
                   <div className="sp-stars" aria-label="5 stars">★★★★★</div>
-                  <p className="sp-ttext" itemProp="reviewBody">{t.text}</p>
-                  <div className="sp-tauthor" itemScope itemType="https://schema.org/Person" itemProp="author">
+                  <p className="sp-ttext">{t.text}</p>
+                  <div className="sp-tauthor" itemScope itemType="https://schema.org/Person">
                     <div className="sp-tavatar" style={{background:t.bg}}>{t.init}</div>
                     <div>
                       <div className="sp-tname" itemProp="name">{t.name}</div>

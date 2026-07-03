@@ -156,7 +156,6 @@ const LD = {
       description: 'Conversion-focused website design services by 1Solutions. Landing pages, corporate websites, eCommerce design, UI/UX audits, and Figma handoff.',
       serviceType: 'Website Design',
       areaServed: ['IN', 'US', 'CA', 'GB', 'AU'],
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '178', bestRating: '5' },
     },
     {
       '@type': 'FAQPage',

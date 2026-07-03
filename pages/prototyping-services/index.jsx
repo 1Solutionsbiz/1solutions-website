@@ -78,7 +78,6 @@ const LD = {
       description: 'Interactive wireframes, clickable prototypes, and developer-ready Figma handoffs. We help product teams validate ideas, align stakeholders, and ship with confidence.',
       serviceType: 'UX Prototyping',
       areaServed: ['IN', 'US', 'CA', 'GB', 'AU'],
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '87', bestRating: '5' },
     },
     {
       '@type': 'FAQPage',

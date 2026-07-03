@@ -134,7 +134,7 @@ export default function PhpDevelopmentServices() {
         name: 'PHP Development Services',
         description: 'Custom PHP web application development - Laravel applications, REST APIs, legacy migration, CMS, ecommerce, and business portals for US, Canada & Australia.',
         provider: {
-          '@type': 'Organization',
+          '@type': 'LocalBusiness',
           name: '1Solutions',
           url: 'https://www.1solutions.biz',
           areaServed: ['US', 'CA', 'AU'],

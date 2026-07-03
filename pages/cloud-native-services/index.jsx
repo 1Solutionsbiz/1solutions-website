@@ -19,14 +19,13 @@ const SCHEMA = {
       url: 'https://www.1solutions.biz/cloud-native-services/',
       description: 'Expert cloud native development services - cloud native architecture design, microservices development, Kubernetes containerisation, serverless applications, service mesh, event-driven architecture, cloud native security, API gateway management, cloud native CI/CD, and cloud native consulting for businesses worldwide.',
       provider: {
-        '@type': 'Organization',
+        '@type': 'LocalBusiness',
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
         logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
         foundingDate: '2008',
         areaServed: ['US', 'GB', 'AU', 'CA', 'IN'],
       },
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '68', bestRating: '5' },
     },
     {
       '@type': 'FAQPage',
@@ -453,7 +452,25 @@ export default function CloudNativeServices() {
           @media(max-width:1024px){.cn-hero h1,.cn-s-title,.cn-faq h2{font-size:36px}.cn-svc-grid{grid-template-columns:repeat(2,1fr)}.cn-stack-grid{grid-template-columns:repeat(2,1fr)}.cn-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.cn-eng-card.feat{transform:none}.cn-eng-card.feat.cn-ev{transform:none}.cn-eng-card.feat.cn-ev:hover{transform:translateY(-4px)}.cn-why-grid{grid-template-columns:repeat(2,1fr)}.cn-tgrid{grid-template-columns:1fr}.cn-contact-grid{grid-template-columns:1fr}}
           @media(max-width:768px){.cn-breadcrumb{padding:12px 20px 0}.cn-hero{padding:28px 20px 20px}.cn-hero h1{font-size:26px;letter-spacing:-.3px}.cn-stats{grid-template-columns:1fr 1fr}.cn-stat-col:nth-child(2){border-right:none}.cn-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.cn-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.cn-logos{padding:16px 20px 28px}.cn-svc-section,.cn-stack-section,.cn-eng-section,.cn-process-section,.cn-testi,.cn-why-section,.cn-faq,.cn-related{padding:52px 20px}.cn-contact{padding:48px 20px}.cn-svc-grid,.cn-stack-grid,.cn-why-grid{grid-template-columns:1fr}.cn-frow{grid-template-columns:1fr}.cn-ctitle{font-size:28px}.cn-s-title{font-size:28px}}
         `}</style>
-      </Head>
+              <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': TESTIMONIALS.map(t => ({
+              '@type': 'Review',
+              itemReviewed: {
+                '@type': 'LocalBusiness',
+                '@id': 'https://www.1solutions.biz/#organization',
+                name: '1Solutions',
+                url: 'https://www.1solutions.biz',
+              },
+              reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+              author: { '@type': 'Person', name: t.name },
+              reviewBody: t.text,
+            })),
+          })}}
+        />
+</Head>
 
       <div className="cn-page">
         <div className="cn-orb cn-orb-1" /><div className="cn-orb cn-orb-2" /><div className="cn-orb cn-orb-3" />
@@ -608,12 +625,12 @@ export default function CloudNativeServices() {
             </div>
             <div className="cn-tgrid" ref={testiGridRef}>
               {TESTIMONIALS.map((t, i) => (
-                <div key={i} className={`cn-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' cn-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }} itemScope itemType="https://schema.org/Review">
+                <div key={i} className={`cn-tcard${t.feat ? ' feat' : ''}${visibleTestiCards.includes(i) ? ' cn-tv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}>
                   <div className="cn-stars" aria-label="5 out of 5 stars">★★★★★</div>
-                  <p className="cn-ttext" itemProp="reviewBody">{t.text}</p>
+                  <p className="cn-ttext">{t.text}</p>
                   <div className="cn-tauthor">
                     <div className="cn-tavatar" style={{ background: t.bg }}>{t.init}</div>
-                    <div><div className="cn-tname" itemProp="author">{t.name}</div><div className="cn-trole">{t.role}</div></div>
+                    <div><div className="cn-tname">{t.name}</div><div className="cn-trole">{t.role}</div></div>
                   </div>
                 </div>
               ))}

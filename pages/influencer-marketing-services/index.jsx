@@ -137,7 +137,7 @@ export default function InfluencerMarketing() {
         name: 'Influencer Marketing Services',
         description: 'End-to-end influencer marketing for ecommerce brands. Strategy, creator vetting, campaign execution, and ROI reporting across Instagram, TikTok, YouTube, and more.',
         provider: {
-          '@type': 'Organization',
+          '@type': 'LocalBusiness',
           name: '1Solutions',
           url: 'https://www.1solutions.biz',
           areaServed: ['US', 'CA', 'AU'],
