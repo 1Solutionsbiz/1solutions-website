@@ -11,10 +11,8 @@ const securityHeaders = [
 ];
 
 const nextConfig = {
-  // skipTrailingSlashRedirect: middleware.js handles trailing slashes for page routes
-  // but skips /api/* so POST bodies are never dropped (fixes AI generator 308 issue).
-  // trailingSlash: true is intentionally removed - it conflicts with this flag by
-  // creating a /blog/ -> /blog -> /blog/ redirect loop at the CDN level.
+  // Prevents Vercel CDN from issuing 308 redirects to add/remove trailing slashes.
+  // Without this, POST /api/ai-generate gets 308 -> /api/ai-generate/ and the body is dropped.
   skipTrailingSlashRedirect: true,
 
   // Don't block builds on lint errors — we fix them separately
