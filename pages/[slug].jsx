@@ -33,6 +33,14 @@ const AUTHOR_WEBSITE = {
   'Ritika': 'https://www.1solutions.biz',
 };
 
+// Slug-specific meta overrides for posts where the WP excerpt makes a poor description.
+// Add entries here whenever GSC shows high impressions / near-zero CTR on a blog post.
+const SLUG_META = {
+  'aio-checklist-20-quick-wins-for-ai-friendly-pages': {
+    description: 'AIO checklist — 20 quick wins to get your pages cited in Google AI Overviews. Covers E-E-A-T, structured content, schema markup, and entity signals. Free, actionable guide.',
+  },
+};
+
 // ── CATEGORY PAGE COMPONENT ──────────────────────────────────────────────────
 function CategoryPage({ category, posts, pageInfo, allCategories, currentAfter, totalPosts }) {
   const color   = getCategoryColor(category.slug);
@@ -159,8 +167,9 @@ function SinglePost({ post, relatedPosts }) {
     navigator.clipboard.writeText(postUrl).catch(() => {});
   };
 
+  const slugOverride   = SLUG_META[post.slug] || {};
   const seoTitle       = post.seo?.title       || `${post.title} | 1Solutions`;
-  const seoDescription = post.seo?.metaDesc    || stripHtml(post.excerpt).slice(0, 160);
+  const seoDescription = slugOverride.description || post.seo?.metaDesc || stripHtml(post.excerpt).slice(0, 160);
   const seoImage       = post.seo?.opengraphImage?.sourceUrl || post.featuredImage?.node?.sourceUrl;
 
   return (
