@@ -1,210 +1,1122 @@
-'use client';
+import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
 
-function useCountUp(target, duration = 1800) {
+const SERVICES = [
+  { n:'01', title:'Custom HTML Email Templates', desc:'Hand-coded, pixel-perfect email templates built from scratch to match your brand — no drag-and-drop, no bloated builders, no rendering surprises.', featured:false },
+  { n:'02', title:'Responsive Email Design', desc:'Fluid-hybrid layouts that adapt from 640px desktop to 320px mobile, rendering correctly on every screen size without breaking your header or CTA.', featured:true },
+  { n:'03', title:'Transactional Email Development', desc:'Order confirmations, receipts, password resets, shipping updates — hand-coded transactional templates optimised for deliverability and brand trust.', featured:false },
+  { n:'04', title:'Email Campaign Templates', desc:'Promotional, seasonal, and re-engagement templates designed to convert — tested across every major email client before delivery.', featured:false },
+  { n:'05', title:'Klaviyo Template Development', desc:'Native Klaviyo drag-and-drop blocks with editable text, images, and dynamic content — built to your brand and ready for your marketing team.', featured:false },
+  { n:'06', title:'Mailchimp Custom Templates', desc:'Mailchimp-compatible editable region templates coded to pixel-perfect standards and delivered as .zip or imported directly to your account.', featured:false },
+  { n:'07', title:'HubSpot Email Modules', desc:'Custom HubSpot email modules with inline editing, smart content support, and full brand compliance — deployed directly to your HubSpot portal.', featured:false },
+  { n:'08', title:'Salesforce Marketing Cloud', desc:'AMPscript-powered dynamic emails, drag-and-drop content blocks, and complex journey builder templates for Salesforce Marketing Cloud.', featured:false },
+  { n:'09', title:'Dark Mode Email Support', desc:'Media query overrides that preserve your brand in dark environments — not just let clients invert your colours. Tested across all dark-mode clients.', featured:false },
+  { n:'10', title:'AMP for Email', desc:'Interactive AMP components — carousels, accordions, real-time content — for Gmail and Mail.app, always with the required HTML fallback included.', featured:false },
+  { n:'11', title:'Email Accessibility (WCAG)', desc:'Semantic HTML, role="presentation" on layout tables, ALT text on all images, WCAG-compliant colour contrast — emails that work for every subscriber.', featured:false },
+  { n:'12', title:'Cross-Client Testing & QA', desc:'Every template tested across 90+ email clients via Litmus or Email on Acid — Gmail, Outlook, Apple Mail, Samsung Mail, Yahoo Mail, and more.', featured:false },
+];
+
+const FAQS = [
+  { q:'Why hand-code HTML emails instead of using a builder?', a:'Email builders produce bloated, inconsistent code that breaks in Outlook, ignores dark mode, and limits customisation. Hand-coded emails give you precise control over rendering, smaller file sizes (important for deliverability), and templates that actually look like your design.' },
+  { q:'Which email clients do you test in?', a:'We test in 90+ clients including all Gmail variants (webmail, iOS, Android), Outlook 2007–2023, Outlook.com, Apple Mail (iOS and macOS), Samsung Mail, Yahoo Mail, and Thunderbird. Testing is done via Litmus or Email on Acid.' },
+  { q:'Can you build templates inside Klaviyo, Mailchimp, or HubSpot?', a:"Yes. We deliver templates as native ESP components — Klaviyo drag-and-drop blocks with editable text and image sections, Mailchimp editable region templates, or HubSpot custom email modules — so your marketing team can send without touching code." },
+  { q:'Do you support AMP for Email?', a:"Yes. For Gmail and Mail.app, we can add AMP components — carousels, accordions, real-time content — to make emails interactive. We always include the required HTML fallback for clients that don't support AMP." },
+  { q:'How long does it take to build an HTML email template?', a:'A single template takes 3–5 business days from brief to tested delivery. A suite of 10–15 templates takes 3–4 weeks. Retainer clients receive templates within 2–3 business days of brief approval.' },
+  { q:'What is the file size limit for HTML emails?', a:'Gmail clips emails over 102KB. We target under 100KB for the HTML file (excluding linked images). We optimise code, inline all CSS, and recommend hosting images externally — our templates consistently come in under this limit.' },
+  { q:'How do you handle Outlook rendering?', a:"Outlook 2007–2023 uses Microsoft Word's rendering engine, which ignores modern CSS. We use MSO conditional comments, VML backgrounds, table-based layouts, and Outlook-specific resets to ensure your email looks correct across all Outlook versions." },
+  { q:'Do you sign NDAs?', a:'Yes. NDA and IP assignment signed as standard before any access to your brand assets or ESP account. Your IP remains yours, always.' },
+];
+
+const WHY = [
+  { icon:<svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>, title:'Outlook-Proof Coding', desc:"MSO conditional comments, VML backgrounds, and table-based layouts that render perfectly in Outlook 2007 through 2023 — Word rendering engine and all." },
+  { icon:<svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>, title:'Dark Mode Ready', desc:'40%+ of users read email in dark mode. We code media query overrides that preserve your brand in dark environments, not just let clients invert your colours.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>, title:'90+ Client Testing', desc:'Every template tested in Litmus or Email on Acid across Gmail, Outlook, Apple Mail, Samsung Mail, and Thunderbird before delivery. Zero surprises on send day.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>, title:'Responsive on Every Device', desc:'Fluid-hybrid layouts that adapt from 640px desktop to 320px mobile without breaking your header, hero image, or call-to-action button.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>, title:'ESP-Ready Delivery', desc:"Templates delivered in your ESP's native format — Klaviyo blocks, Mailchimp editable regions, HubSpot modules, or raw HTML with fully inlined styles." },
+  { icon:<svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>, title:'Accessibility First', desc:'Semantic HTML, role="presentation" on layout tables, ALT text on all images, WCAG 2.1 AA colour contrast — emails that work for every subscriber.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>, title:'Fast 3–5 Day Turnaround', desc:'Single templates in 3–5 business days from approved brief. Retainer clients get 2–3 day turnaround. No queues, no waiting weeks for a single email.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>, title:'NDA & IP Protection', desc:'NDA and IP assignment signed as standard before accessing your brand assets, ESP account, or design files. Your IP remains yours, always.' },
+];
+
+const TECH_STACK = [
+  { group:'Email Service Providers', items:['Klaviyo','Mailchimp','HubSpot','Salesforce MC','ActiveCampaign','Campaign Monitor','Brevo','Iterable','Customer.io'] },
+  { group:'Testing Platforms', items:['Litmus','Email on Acid','Mailtrap','Mail Tester','GlockApps','SpamAssassin'] },
+  { group:'Languages & Standards', items:['HTML5','CSS3 (Inline)','VML','MSO Conditionals','AMP for Email','MJML'] },
+  { group:'Email Clients Covered', items:['Gmail (Web, iOS, Android)','Outlook 2007–2023','Apple Mail (iOS & macOS)','Samsung Mail','Yahoo Mail','Thunderbird','Outlook.com'] },
+  { group:'Accessibility Standards', items:['WCAG 2.1 AA','ARIA Roles','Alt Text','Colour Contrast','Screen Reader Support'] },
+  { group:'Design & Dev Tools', items:['Figma','Photoshop','Git','AWS SES','Postman','Litmus Builder'] },
+];
+
+const INDUSTRIES = [
+  { icon:'🛒', title:'eCommerce & Retail', desc:'Cart abandonment, order confirmations, shipping updates, and promotional campaigns that drive repeat purchases and reduce churn.' },
+  { icon:'💼', title:'SaaS & Technology', desc:'Onboarding sequences, feature announcements, usage digests, and lifecycle emails that drive activation and reduce customer churn.' },
+  { icon:'🏥', title:'Healthcare & Wellness', desc:'Appointment confirmations, patient reminders, and health content newsletters coded for clarity, privacy, and accessibility.' },
+  { icon:'🎓', title:'Education & eLearning', desc:'Course enrollment, lesson reminders, certificate delivery, and instructor updates for online education and LMS platforms.' },
+  { icon:'🏦', title:'Financial Services', desc:'Account statements, transaction alerts, payment reminders, and compliance-ready communications with clear, accessible design.' },
+  { icon:'🏨', title:'Hospitality & Travel', desc:'Booking confirmations, itinerary emails, loyalty reward notifications, and post-stay review requests that build brand loyalty.' },
+  { icon:'📱', title:'Consumer Apps & Mobile', desc:'Re-engagement campaigns, app update announcements, push-to-email digests, and habit-forming lifecycle sequences.' },
+  { icon:'⚖️', title:'Professional Services', desc:'Client communications, proposal follow-ups, invoice emails, and newsletter campaigns for agencies and consulting firms.' },
+];
+
+function useCountUp(target, duration = 1800, start = false) {
   const [count, setCount] = useState(0);
-  const raf = useRef(null);
-  const start = (t) => {
-    const s = performance.now();
-    const step = (now) => {
-      const p = Math.min((now - s) / duration, 1);
-      setCount(Math.floor(p * t));
-      if (p < 1) raf.current = requestAnimationFrame(step);
+  useEffect(() => {
+    if (!start) return;
+    const numTarget = parseInt(String(target).replace(/\D/g, ''), 10);
+    if (!numTarget) return;
+    let startTime = null;
+    const step = (ts) => {
+      if (!startTime) startTime = ts;
+      const progress = Math.min((ts - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(eased * numTarget));
+      if (progress < 1) requestAnimationFrame(step);
     };
-    raf.current = requestAnimationFrame(step);
-  };
-  useEffect(() => () => cancelAnimationFrame(raf.current), []);
-  return [count, start];
+    requestAnimationFrame(step);
+  }, [start, target, duration]);
+  return count;
 }
 
-const ACCENT = '#1e40af';
-const SKILLS = [
-  'HTML Email Coding (Tables & MSO)', 'Responsive Email Design', 'Gmail & Outlook Compatibility',
-  'Dark Mode Email Support', 'Litmus & Email on Acid Testing', 'Transactional Email Templates',
-  'Email Campaign Templates', 'Newsletter Templates', 'Klaviyo Template Development',
-  'Mailchimp Template Coding', 'HubSpot Email Templates', 'Salesforce Marketing Cloud',
-  'AMP for Email', 'Email Accessibility (WCAG)', 'Plain-Text Fallback Versions',
-];
-const MODELS = [
-  { title: 'One-Off Template', desc: 'A single HTML email template designed, coded, and tested across 90+ clients. Perfect for a hero campaign or a transactional trigger.', icon: '✉️' },
-  { title: 'Template Suite',   desc: 'A set of 5–20 branded email templates: welcome series, cart abandonment, receipts, newsletters, and more - built to a consistent design system.', icon: '📧' },
-  { title: 'Ongoing Retainer', desc: 'Monthly HTML email development support for teams who send regularly - new templates, template edits, A/B variants, and dark-mode updates.', icon: '🔄' },
-];
-const WHY = [
-  { h: 'Outlook-Proof Coding',      b: 'Outlook uses Microsoft Word\'s rendering engine, which breaks modern CSS. We use MSO conditional comments, VML, and table-based layouts that look perfect in Outlook 2007–2023.' },
-  { h: 'Dark Mode Ready',            b: '40%+ of users read email in dark mode. We code media query overrides that preserve your brand in dark environments - not just let Outlook invert your colours.' },
-  { h: '90+ Client Testing',         b: 'Every template is tested in Litmus or Email on Acid across Gmail, Outlook, Apple Mail, Samsung Mail, and Thunderbird before delivery.' },
-  { h: 'Responsive on Every Device', b: 'Fluid-hybrid layouts that adapt from 600px desktop to 320px mobile without breaking your header, hero, or CTA.' },
-  { h: 'ESP-Ready Delivery',         b: 'Templates delivered in your ESP\'s format - Klaviyo drag-and-drop blocks, Mailchimp editable regions, HubSpot custom modules, or raw HTML.' },
-  { h: 'Accessibility First',        b: 'Semantic HTML, role="presentation" on layout tables, ALT text on all images, and sufficient colour contrast - so your emails work for screen reader users too.' },
-];
-const PROCESS = [
-  { n: '01', h: 'Brief & Design',       b: 'We review your brand guidelines, ESP, and email objectives - then produce a design mockup for approval before any coding begins.' },
-  { n: '02', h: 'Code & Build',         b: 'We hand-code the template using table-based HTML, MSO conditionals, and fluid-hybrid responsive techniques - no drag-and-drop shortcuts.' },
-  { n: '03', h: 'Cross-Client Testing', b: 'We test the coded template across 90+ email clients in Litmus, verify dark mode behaviour, and check plain-text rendering.' },
-  { n: '04', h: 'Deliver & Deploy',     b: "We deliver the template in your ESP's format - with editable regions, content blocks, and a handoff guide - ready to send." },
-];
-const FAQS = [
-  { q: 'Why hand-code HTML emails instead of using a builder?', a: 'Email builders produce bloated, inconsistent code that breaks in Outlook, ignores dark mode, and limits customisation. Hand-coded emails give you precise control over rendering, smaller file sizes (important for deliverability), and templates that actually look like your design.' },
-  { q: 'Which email clients do you test in?', a: 'We test in 90+ clients including all Gmail variants (webmail, iOS, Android), Outlook 2007–2023, Outlook.com, Apple Mail (iOS and macOS), Samsung Mail, Yahoo Mail, and Thunderbird. Testing is done via Litmus or Email on Acid.' },
-  { q: 'Can you build templates inside Klaviyo, Mailchimp, or HubSpot?', a: 'Yes. We deliver templates as native ESP components - Klaviyo drag-and-drop blocks with editable text and image sections, Mailchimp editable region templates, or HubSpot custom email modules - so your marketing team can send without touching code.' },
-  { q: 'Do you support AMP for Email?', a: 'Yes. For Gmail and Mail.app, we can add AMP components - carousels, accordions, real-time content - to make emails interactive. We always include the required HTML fallback for clients that don\'t support AMP.' },
-  { q: 'How long does it take to build an HTML email template?', a: 'A single template takes 3–5 business days from brief to tested delivery. A suite of 10–15 templates takes 3–4 weeks. Retainer clients receive templates within 2–3 business days of brief approval.' },
-  { q: 'Do you sign NDAs?', a: 'Yes. NDA and IP assignment signed as standard before any access to your brand assets or ESP account.' },
-];
+function AnimatedStat({ label, val, started }) {
+  const num = useCountUp(val, 1800, started);
+  const suffix = val.replace(/[\d,.]/g, '');
+  const display = started ? num + suffix : val;
+  return (
+    <div className="he-stat-col">
+      <div className="he-stat-label">{label}</div>
+      <div className="he-stat-value">{display}</div>
+    </div>
+  );
+}
 
 export default function HtmlEmailDevelopmentServices() {
-  const skR  = useRef(null); const [skV, setSkV] = useState(false);
-  const enR  = useRef(null); const [enV, setEnV] = useState(false);
-  const whR  = useRef(null); const [whV, setWhV] = useState(false);
-  const prR  = useRef(null); const [prV, setPrV] = useState(false);
-  const stGr = useRef(null); const [stV, setStV] = useState(false);
-  const [c1, s1] = useCountUp(150); const [c2, s2] = useCountUp(50);
-  const [c3, s3] = useCountUp(49);  const [c4, s4] = useCountUp(90);
-  const [openFaq, setOpenFaq] = useState(null);
+  const [showAll, setShowAll] = useState(false);
+  const [openFaq, setOpenFaq] = useState(0);
+  const [visibleSteps, setVisibleSteps] = useState([]);
+  const [statsStarted, setStatsStarted] = useState(false);
+  const [visibleSections, setVisibleSections] = useState(new Set());
+  const [visibleWhyCards, setVisibleWhyCards] = useState([]);
+  const [visibleTestiCards, setVisibleTestiCards] = useState([]);
+  const [visibleECards, setVisibleECards] = useState([]);
+  const stepRefs = useRef([]);
+  const statsRef = useRef(null);
+  const sectionRefs = useRef({});
+  const whyGridRef = useRef(null);
+  const testiGridRef = useRef(null);
+  const eCardsRef = useRef(null);
 
   useEffect(() => {
-    const obs = (ref, setter) => new IntersectionObserver(([e]) => { if (e.isIntersecting) { setter(true); obs.disconnect(); } }, { threshold: 0.15 });
-    const o1 = obs(skR, setSkV); if (skR.current) o1.observe(skR.current);
-    const o2 = obs(enR, setEnV); if (enR.current) o2.observe(enR.current);
-    const o3 = obs(whR, setWhV); if (whR.current) o3.observe(whR.current);
-    const o4 = obs(prR, setPrV); if (prR.current) o4.observe(prR.current);
-    const o5 = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStV(true); s1(150); s2(50); s3(49); s4(90); o5.disconnect(); } }, { threshold: 0.2 });
-    if (stGr.current) o5.observe(stGr.current);
-    return () => [o1, o2, o3, o4, o5].forEach(o => o.disconnect());
+    const observers = stepRefs.current.map((el, i) => {
+      if (!el) return null;
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => setVisibleSteps(prev => prev.includes(i) ? prev : [...prev, i]), i * 150);
+            obs.disconnect();
+          }
+        },
+        { threshold: 0.25 }
+      );
+      obs.observe(el);
+      return obs;
+    });
+    return () => observers.forEach(o => o && o.disconnect());
   }, []);
+
+  useEffect(() => {
+    if (!statsRef.current) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setStatsStarted(true); obs.disconnect(); } },
+      { threshold: 0.5 }
+    );
+    obs.observe(statsRef.current);
+    return () => obs.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!whyGridRef.current) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          WHY.forEach((_, i) => setTimeout(() => setVisibleWhyCards(prev => prev.includes(i) ? prev : [...prev, i]), i * 100));
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    obs.observe(whyGridRef.current);
+    return () => obs.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!testiGridRef.current) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          [0,1,2].forEach(i => setTimeout(() => setVisibleTestiCards(p => p.includes(i) ? p : [...p, i]), i * 150));
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    obs.observe(testiGridRef.current);
+    return () => obs.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!eCardsRef.current) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          [0,1,2,3].forEach(i => setTimeout(() => setVisibleECards(p => p.includes(i) ? p : [...p, i]), i * 130));
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    obs.observe(eCardsRef.current);
+    return () => obs.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const keys = Object.keys(sectionRefs.current);
+    const observers = keys.map(key => {
+      const el = sectionRefs.current[key];
+      if (!el) return null;
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisibleSections(prev => new Set([...prev, key]));
+            obs.disconnect();
+          }
+        },
+        { threshold: 0.15 }
+      );
+      obs.observe(el);
+      return obs;
+    });
+    return () => observers.forEach(o => o && o.disconnect());
+  }, []);
+
+  const visibleServices = showAll ? SERVICES : SERVICES.slice(0, 8);
+
+  const [_sfSt, _setSfSt] = useState('idle');
+  const _sfSubmit = async (e) => {
+    e.preventDefault();
+    _setSfSt('loading');
+    try {
+      const fd = new FormData(e.target);
+      const token = await new Promise(r => window.grecaptcha.ready(() =>
+        window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', { action: 'contact' }).then(r)));
+      const res = await fetch('/api/contact', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: fd.get('sf-name') || '', email: fd.get('sf-email') || '',
+          phone: (fd.get('sf-cc') ? fd.get('sf-cc') + ' ' : '') + (fd.get('sf-phone') || ''),
+          company: fd.get('sf-company') || '', message: fd.get('sf-message') || '',
+          source: 'HTML Email Development Services', consent: true, recaptchaToken: token,
+        }),
+      });
+      if (res.ok) { window.location.href = '/thank-you/'; } else { _setSfSt('error'); }
+    } catch { _setSfSt('error'); }
+  };
 
   const LD = {
     '@context': 'https://schema.org',
     '@graph': [
-      { '@type': 'BreadcrumbList', itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
-        { '@type': 'ListItem', position: 2, name: 'HTML Email Development Services', item: 'https://www.1solutions.biz/html-email-development-services/' },
-      ]},
-      { '@type': 'Service', name: 'HTML Email Development Services', provider: { '@type': 'Organization', name: '1Solutions' },
-        description: 'Professional HTML email development from 1Solutions - pixel-perfect, responsive email templates tested across 90+ clients for Klaviyo, Mailchimp, HubSpot and more.',
-        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '88', bestRating: '5' },
+      {
+        '@type': 'LocalBusiness',
+        '@id': 'https://www.1solutions.biz/#organization',
+        name: '1Solutions',
+        url: 'https://www.1solutions.biz',
+        foundingDate: '2008',
+        description: 'HTML email development company delivering hand-coded, responsive email templates tested across 90+ email clients for US, Canada, and Australia.',
+        areaServed: [
+          { '@type': 'Country', name: 'United States' },
+          { '@type': 'Country', name: 'Canada' },
+          { '@type': 'Country', name: 'Australia' },
+          { '@type': 'Country', name: 'United Kingdom' },
+        ],
       },
-      { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
+      {
+        '@type': 'WebPage',
+        '@id': 'https://www.1solutions.biz/html-email-development-services/',
+        url: 'https://www.1solutions.biz/html-email-development-services/',
+        name: 'HTML Email Development Services | 1Solutions',
+        description: 'Professional HTML email development services from 1Solutions. Hand-coded, responsive templates tested across 90+ email clients for Klaviyo, Mailchimp, HubSpot & more.',
+        inLanguage: 'en-US',
+        breadcrumb: {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
+            { '@type': 'ListItem', position: 2, name: 'HTML Email Development Services', item: 'https://www.1solutions.biz/html-email-development-services/' },
+          ],
+        },
+      },
+      {
+        '@type': 'ProfessionalService',
+        name: 'HTML Email Development Services by 1Solutions',
+        provider: { '@id': 'https://www.1solutions.biz/#organization' },
+        serviceType: 'HTML Email Development',
+        url: 'https://www.1solutions.biz/html-email-development-services/',
+        areaServed: ['United States', 'Canada', 'Australia', 'United Kingdom'],
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: 'HTML Email Development Services',
+          itemListElement: [
+            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Custom HTML Email Templates' } },
+            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Responsive Email Design' } },
+            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Klaviyo Template Development' } },
+            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Mailchimp Custom Templates' } },
+            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'HubSpot Email Modules' } },
+            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'AMP for Email' } },
+          ],
+        },
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: FAQS.map(f => ({
+          '@type': 'Question',
+          name: f.q,
+          acceptedAnswer: { '@type': 'Answer', text: f.a },
+        })),
+      },
     ],
   };
 
   return (
     <>
       <Head>
-        <title>HTML Email Development Services | 1Solutions</title>
-        <meta name="description" content="Professional HTML email development services from 1Solutions. We build pixel-perfect, responsive HTML email templates for campaigns, transactional emails," />
-        <link rel="canonical" href="https://www.1solutions.biz/html-email-development-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
+        <title>HTML Email Development Services | 1Solutions</title>
+        <meta name="description" content="Professional HTML email development services from 1Solutions. Hand-coded, responsive templates tested across 90+ email clients for Klaviyo, Mailchimp, HubSpot & more." />
+        <meta name="keywords" content="html email development, html email template, responsive email design, klaviyo template development, mailchimp custom template, email coding services, outlook email template" />
+        <link rel="canonical" href="https://www.1solutions.biz/html-email-development-services/" />
+        <meta property="og:title" content="HTML Email Development Services | 1Solutions" />
+        <meta property="og:description" content="Hand-coded HTML email templates tested across 90+ email clients. Klaviyo, Mailchimp, HubSpot, Outlook-proof, dark mode ready. Get a free quote." />
+        <meta property="og:url" content="https://www.1solutions.biz/html-email-development-services/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.1solutions.biz/BG-1Solutions.png" />
+        <meta property="og:site_name" content="1Solutions" />
+        <meta property="og:locale" content="en_US" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="HTML Email Development Services | 1Solutions" />
+        <meta name="twitter:description" content="Hand-coded HTML email templates tested across 90+ email clients for Klaviyo, Mailchimp, HubSpot & more." />
         <style>{`
-          .hem-hero{background:linear-gradient(135deg,${ACCENT} 0%,#1e3a8a 60%,#1d4ed8 100%);color:#fff;padding:100px 20px 80px;text-align:center}
-          .hem-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin:0 0 18px;line-height:1.15}
-          .hem-hero p{font-size:1.15rem;max-width:640px;margin:0 auto 36px;opacity:.88;line-height:1.7}
-          .hem-hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-          .hem-btn-primary{background:#FE9700;color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s}
-          .hem-btn-primary:hover{opacity:.88}
-          .hem-btn-outline{border:2px solid rgba(255,255,255,.7);color:#fff;padding:13px 28px;border-radius:8px;font-weight:600;font-size:1rem;text-decoration:none;transition:border-color .2s}
-          .hem-btn-outline:hover{border-color:#fff}
-          .hem-sec{padding:70px 20px}.hem-sec-alt{background:#eff6ff}
-          .hem-wrap{max-width:1100px;margin:0 auto}
-          .hem-sec-title{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:800;color:#111;text-align:center;margin:0 0 12px}
-          .hem-sec-sub{text-align:center;color:#555;font-size:1.05rem;max-width:600px;margin:0 auto 48px;line-height:1.7}
-          .hem-skills{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .hem-skill{background:#fff;border:1.5px solid #93c5fd;border-radius:40px;padding:9px 20px;font-size:.92rem;font-weight:600;color:${ACCENT};opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s}
-          .hem-skill.hem-in{opacity:1;transform:none}
-          .hem-models{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
-          .hem-model{background:#fff;border-radius:14px;padding:32px 28px;border:1.5px solid #93c5fd;box-shadow:0 2px 12px rgba(0,0,0,.05);opacity:0;transform:translateY(22px);transition:opacity .5s,transform .5s}
-          .hem-model.hem-in{opacity:1;transform:none}
-          .hem-model-icon{font-size:2.2rem;margin-bottom:14px}
-          .hem-model h3{font-size:1.15rem;font-weight:700;color:#111;margin:0 0 10px}
-          .hem-model p{color:#555;line-height:1.7;font-size:.95rem;margin:0}
-          .hem-why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
-          .hem-why-item{background:#fff;border-radius:12px;padding:26px 24px;border-left:4px solid ${ACCENT};box-shadow:0 2px 10px rgba(0,0,0,.04);opacity:0;transform:translateX(-18px);transition:opacity .5s,transform .5s}
-          .hem-why-item.hem-in{opacity:1;transform:none}
-          .hem-why-item h3{font-size:1.05rem;font-weight:700;color:${ACCENT};margin:0 0 8px}
-          .hem-why-item p{color:#555;line-height:1.7;font-size:.93rem;margin:0}
-          .hem-process{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-          .hem-step{text-align:center;padding:30px 20px;background:#fff;border-radius:12px;border:1.5px solid #93c5fd;opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s}
-          .hem-step.hem-in{opacity:1;transform:none}
-          .hem-step-n{width:48px;height:48px;border-radius:50%;background:${ACCENT};color:#fff;font-size:1.1rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
-          .hem-step h3{font-size:1rem;font-weight:700;color:#111;margin:0 0 8px}
-          .hem-step p{color:#666;font-size:.9rem;line-height:1.6;margin:0}
-          .hem-stats{background:${ACCENT};padding:60px 20px;color:#fff}
-          .hem-stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;max-width:900px;margin:0 auto;text-align:center}
-          .hem-stat-val{font-size:2.8rem;font-weight:900;line-height:1}
-          .hem-stat-label{font-size:.95rem;opacity:.82;margin-top:6px}
-          .hem-faq{max-width:760px;margin:0 auto}
-          .hem-faq-item{border-bottom:1px solid #e5e5e5;padding:20px 0}
-          .hem-faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;color:#111;font-size:1rem;gap:12px}
-          .hem-faq-icon{font-size:1.4rem;color:${ACCENT};flex-shrink:0;transition:transform .25s}
-          .hem-faq-icon.hem-open{transform:rotate(45deg)}
-          .hem-faq-a{margin-top:12px;color:#555;line-height:1.75;font-size:.95rem}
-          .hem-cta{background:linear-gradient(135deg,${ACCENT},#1e3a8a);padding:80px 20px;text-align:center;color:#fff}
-          .hem-cta h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin:0 0 16px}
-          .hem-cta p{font-size:1.08rem;opacity:.88;max-width:560px;margin:0 auto 36px;line-height:1.7}
-          @media(max-width:600px){.hem-hero{padding:80px 18px 60px}.hem-stats-grid{grid-template-columns:1fr 1fr}}
+          .he-page {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #dbeafe 0%, #ede9fe 25%, #e0f2fe 50%, #fef3c7 75%, #fce7f3 100%);
+            background-attachment: fixed;
+            color: #0F1F40;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+            overflow-y: clip;
+          }
+          .he-page *, .he-page *::before, .he-page *::after { box-sizing: border-box; }
+
+          .he-orb-1 { position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(99,130,255,0.35) 0%,rgba(139,92,246,0.15) 40%,transparent 70%);top:-300px;right:-300px;pointer-events:none;z-index:0;filter:blur(20px); }
+          .he-orb-2 { position:absolute;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(251,146,60,0.30) 0%,rgba(245,158,11,0.15) 40%,transparent 70%);bottom:0;left:-250px;pointer-events:none;z-index:0;filter:blur(20px); }
+          .he-orb-3 { position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(20,184,166,0.20) 0%,transparent 70%);top:45%;left:-150px;transform:translateY(-50%);pointer-events:none;z-index:0;filter:blur(20px); }
+
+          /* Hero */
+          .he-hero-block { background:transparent;position:relative;overflow:hidden; }
+          .he-hero-block::before { content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.12) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px); }
+          .he-hero-block::after { content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.18) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px); }
+          .he-hero-content { position:relative;z-index:2;text-align:center;max-width:860px;margin:0 auto;padding:56px 40px 40px; }
+          .he-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:18px; }
+          .he-hero-content h1 { font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+          .he-hero-content p { font-size:16px;color:#3A507A;line-height:1.65;max-width:620px;margin:0 auto 28px; }
+          .he-btn-hero { display:inline-block;padding:14px 40px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1); }
+          .he-btn-hero:hover { background:rgba(255,255,255,0.85);border-color:rgba(245,158,11,0.6);box-shadow:0 12px 36px rgba(15,52,96,0.15),0 0 0 2px rgba(245,158,11,0.22),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px);color:#0F3460; }
+          .he-btn-hero-shimmer { position:relative;overflow:hidden; }
+          .he-btn-hero-shimmer::after { content:'';position:absolute;top:-10%;left:-120%;width:80%;height:120%;background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,0.75) 45%,rgba(255,255,255,0.9) 50%,rgba(255,255,255,0.75) 55%,transparent 100%);animation:he-shimmer 2.5s ease-in-out infinite;pointer-events:none; }
+          @keyframes he-shimmer { 0% { left:-120%; } 35%,100% { left:160%; } }
+
+          /* Stats bar */
+          .he-hero-stats { position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
+          .he-stat-col { padding:18px 20px;text-align:center;border-right:1px solid rgba(15,52,96,0.10); }
+          .he-stat-col:last-child { border-right:none; }
+          .he-stat-label { font-size:12px;color:#4A6080;font-weight:500;margin-bottom:6px; }
+          .he-stat-value { font-size:26px;font-weight:900;color:#D97706;letter-spacing:-0.5px;line-height:1; }
+
+          /* Client logos */
+          .he-clients-bar { position:relative;z-index:2;padding:20px 40px 60px;max-width:1440px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px; }
+          .he-clients-label { font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6A80A0; }
+          .he-clients-logos { width:100%;overflow:hidden; }
+          .he-logos-track { display:flex;align-items:center;gap:60px;width:max-content;animation:he-marquee 28s linear infinite; }
+          .he-logos-track:hover { animation-play-state:paused; }
+          @keyframes he-marquee { 0% { transform:translateX(0); } 100% { transform:translateX(-50%); } }
+          .he-client-logo { height:26px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(100%);opacity:0.5;transition:opacity 0.25s,filter 0.25s; }
+          .he-client-logo:hover { opacity:0.85;filter:grayscale(0%); }
+
+          /* Shared section styles */
+          .he-section-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:12px;display:block; }
+          .he-section-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin-bottom:10px; }
+          .he-section-desc { font-size:15px;color:#4A6080;line-height:1.7;max-width:680px;margin-bottom:36px; }
+          .he-section-sub { font-size:16px;color:#4A6080;margin:0; }
+          .he-section-header-center { text-align:center;margin-bottom:52px; }
+
+          /* Section fade-up */
+          .he-section-reveal { opacity:0;transform:translateY(48px);transition:opacity 0.7s cubic-bezier(0.22,1,0.36,1),transform 0.7s cubic-bezier(0.22,1,0.36,1); }
+          .he-section-reveal.he-revealed { opacity:1;transform:translateY(0); }
+
+          /* Definition block */
+          .he-def-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);padding:80px 40px;position:relative;z-index:2; }
+          .he-def-inner { max-width:1280px;margin:0 auto; }
+          .he-def-block { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:24px;padding:44px;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
+          .he-def-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:12px; }
+          .he-def-title { font-size:34px;font-weight:900;color:#0F3460;margin-bottom:18px;line-height:1.2;letter-spacing:-0.5px; }
+          .he-def-body { font-size:16px;color:#374151;line-height:1.8;margin-bottom:14px;max-width:960px; }
+          .he-def-facts { display:grid;grid-template-columns:repeat(3,1fr);gap:24px;border-top:1px solid rgba(15,52,96,0.10);padding-top:28px;margin-top:28px; }
+          .he-def-fact { display:flex;flex-direction:column;gap:6px; }
+          .he-def-fact-num { font-size:28px;font-weight:900;color:#D97706;line-height:1; }
+          .he-def-fact-label { font-size:13px;color:#4A6080;line-height:1.5; }
+
+          /* Services */
+          .he-services-section { background:#f8fafd;padding:72px 40px 60px;position:relative;z-index:2;box-shadow:0 -20px 60px rgba(15,52,96,0.18),0 -4px 16px rgba(15,52,96,0.10); }
+          .he-services-inner { max-width:1280px;margin:0 auto; }
+          .he-services-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:14px; }
+          .he-service-card { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:26px 22px 22px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95);transition:transform 0.22s,box-shadow 0.22s,border-color 0.22s;cursor:default; }
+          .he-service-card:hover { transform:translateY(-6px);border-color:rgba(217,119,6,0.45);box-shadow:0 16px 48px rgba(15,52,96,0.14),inset 0 1px 0 rgba(255,255,255,1); }
+          .he-service-card.featured { background:linear-gradient(135deg,rgba(254,243,199,0.50) 0%,rgba(255,255,255,0.85) 55%,rgba(219,234,254,0.45) 100%);border-color:rgba(217,119,6,0.25);box-shadow:0 6px 32px rgba(217,119,6,0.10),inset 0 1px 0 rgba(255,255,255,1); }
+          .he-service-card::before { content:'';position:absolute;left:0;top:12%;height:76%;width:3px;background:linear-gradient(180deg,#D97706,#f59e0b);border-radius:0 2px 2px 0;transform:scaleY(0);transform-origin:top center;transition:transform 0.3s cubic-bezier(0.22,1,0.36,1); }
+          .he-service-card:hover::before { transform:scaleY(1); }
+          .he-service-card:hover h3 { color:#D97706; }
+          .he-card-num { position:absolute;top:8px;right:14px;font-size:72px;font-weight:900;line-height:1;color:#0F3460;opacity:0.055;pointer-events:none;letter-spacing:-4px;user-select:none; }
+          .he-service-card h3 { font-size:15px;font-weight:700;color:#0F1F40;line-height:1.3;margin-bottom:8px;position:relative;z-index:1; }
+          .he-service-card p { font-size:13px;color:#4A6080;line-height:1.6;position:relative;z-index:1; }
+          .he-services-footer { text-align:center;margin-top:20px; }
+          .he-btn-show-more { display:inline-block;background:#ffffff;border:1.5px solid rgba(15,52,96,0.20);color:#0F3460;padding:10px 32px;border-radius:20px;font-weight:600;font-size:14px;cursor:pointer;transition:all 0.2s;box-shadow:0 2px 10px rgba(15,52,96,0.08);font-family:inherit; }
+          .he-btn-show-more:hover { background:#0F3460;border-color:#0F3460;color:#ffffff;box-shadow:0 8px 28px rgba(15,52,96,0.20);transform:translateY(-2px); }
+
+          /* Process */
+          .he-process-section { background:transparent;padding:80px 40px;position:relative;z-index:1; }
+          .he-process-top { max-width:1280px;margin:0 auto 56px; }
+          .he-process-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D97706;margin:0 0 14px; }
+          .he-process-main-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
+          .he-process-main-desc { font-size:15px;color:#4A6080;line-height:1.7;margin:0; }
+          .he-process-divider { border:none;border-top:1px solid rgba(15,52,96,0.15);margin:36px 0 0;width:100%; }
+          .he-process-inner { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:minmax(0,55%) minmax(0,45%);gap:80px;align-items:start; }
+          .he-process-steps { display:flex;flex-direction:column; }
+          .he-pstep { display:grid;grid-template-columns:60px 1fr;gap:0 20px;opacity:0;transform:translateY(52px);transition:opacity 0.65s cubic-bezier(0.22,1,0.36,1),transform 0.65s cubic-bezier(0.22,1,0.36,1); }
+          .he-pstep.visible { opacity:1;transform:translateY(0); }
+          .he-pstep-left { display:flex;flex-direction:column;align-items:center; }
+          .he-pstep-circle { width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,0.65);backdrop-filter:blur(8px);border:2px solid rgba(15,52,96,0.18);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:#0F3460;flex-shrink:0;transition:background 0.3s,border-color 0.3s; }
+          .he-pstep:hover .he-pstep-circle { background:rgba(245,158,11,0.2);border-color:#D97706;color:#D97706; }
+          .he-pstep-arrow { flex:1;display:flex;flex-direction:column;align-items:center;padding:6px 0;min-height:48px; }
+          .he-pstep-arrow::before { content:'';width:2px;flex:1;background:#0F3460;opacity:0.25; }
+          .he-pstep-arrow::after { content:'';width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:9px solid #0F3460;opacity:0.45;margin-top:-1px; }
+          .he-pstep:last-child .he-pstep-arrow { display:none; }
+          .he-pstep-content { padding:4px 0 44px; }
+          .he-pstep:last-child .he-pstep-content { padding-bottom:0; }
+          .he-pstep-title { font-size:22px;font-weight:700;color:#0F3460;margin:0 0 10px;line-height:1.2; }
+          .he-pstep-desc { font-size:15px;color:#4A6080;line-height:1.75;margin:0; }
+          .he-process-image-col { position:sticky;top:100px;min-width:0; }
+          .he-process-img-wrap { width:100%;max-width:100%;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(15,52,96,0.15);aspect-ratio:4/5;background:#e8edf5; }
+          .he-process-img-wrap img { width:100%;height:100%;object-fit:cover;display:block; }
+
+          /* Tech Stack */
+          .he-tech-section { padding:80px 40px;background:transparent;position:relative;z-index:1; }
+          .he-tech-inner { max-width:1280px;margin:0 auto; }
+          .he-tech-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px; }
+          .he-tech-group { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:16px;padding:28px 24px;box-shadow:0 4px 20px rgba(15,52,96,0.07),inset 0 1px 0 rgba(255,255,255,0.95); }
+          .he-tech-group-title { font-size:12px;font-weight:700;color:#D97706;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px; }
+          .he-tech-tags { display:flex;flex-wrap:wrap;gap:8px; }
+          .he-tech-tag { padding:5px 12px;background:rgba(15,52,96,0.07);border:1px solid rgba(15,52,96,0.12);border-radius:20px;font-size:12px;font-weight:600;color:#374151; }
+
+          /* Industries */
+          .he-industries-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);padding:80px 40px;position:relative;z-index:1; }
+          .he-industries-inner { max-width:1280px;margin:0 auto; }
+          .he-industry-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px; }
+          .he-industry-card { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:16px;padding:26px 22px;box-shadow:0 4px 16px rgba(15,52,96,0.07),inset 0 1px 0 rgba(255,255,255,0.95);transition:transform 0.22s,border-color 0.22s,box-shadow 0.22s;cursor:default; }
+          .he-industry-card:hover { transform:translateY(-4px);border-color:rgba(217,119,6,0.35);box-shadow:0 12px 36px rgba(15,52,96,0.12); }
+          .he-industry-icon { font-size:28px;margin-bottom:12px;line-height:1; }
+          .he-industry-card h3 { font-size:15px;font-weight:700;color:#0F3460;margin-bottom:8px;line-height:1.3; }
+          .he-industry-card p { font-size:13px;color:#4A6080;line-height:1.6; }
+
+          /* Comparison Table */
+          .he-compare-section { padding:80px 40px;background:transparent;position:relative;z-index:1; }
+          .he-compare-inner { max-width:1280px;margin:0 auto; }
+          .he-compare-wrap { margin-top:44px;overflow-x:auto;width:100%;-webkit-overflow-scrolling:touch; }
+          .he-compare-table { width:100%;border-collapse:separate;border-spacing:0;min-width:580px; }
+          .he-compare-table thead tr th { padding:16px 24px;text-align:left;font-size:14px;font-weight:700;background:#0F3460;color:#fff; }
+          .he-compare-table thead tr th:first-child { border-radius:12px 0 0 0; }
+          .he-compare-table thead tr th:last-child { border-radius:0 12px 0 0; }
+          .he-compare-th-hl { background:linear-gradient(135deg,#1a4d80,#0F3460) !important;border-top:3px solid #D97706 !important;color:#fde68a !important; }
+          .he-compare-table tbody tr td { padding:13px 24px;font-size:14px;color:#374151;border-bottom:1px solid rgba(15,52,96,0.08);background:rgba(255,255,255,0.65);vertical-align:middle; }
+          .he-compare-table tbody tr td:first-child { font-weight:600;color:#0F3460;background:rgba(255,255,255,0.80); }
+          .he-compare-table tbody tr td:nth-child(2) { background:rgba(254,243,199,0.35);font-weight:500;color:#0F3460; }
+          .he-compare-table tbody tr:last-child td:first-child { border-radius:0 0 0 12px; }
+          .he-compare-table tbody tr:last-child td:last-child { border-radius:0 0 12px 0; }
+          .he-compare-table tbody tr:hover td { background:rgba(219,234,254,0.40); }
+          .he-compare-table tbody tr:hover td:nth-child(2) { background:rgba(254,243,199,0.55); }
+
+          /* Testimonials */
+          .he-testi-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08);padding:80px 40px;position:relative;z-index:1; }
+          .he-testi-inner { max-width:1280px;margin:0 auto; }
+          .he-testi-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:52px; }
+          .he-tcard { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:32px 28px;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95);display:flex;flex-direction:column;gap:16px;opacity:0;transform:translateY(44px);transition:opacity 0.6s cubic-bezier(0.22,1,0.36,1),transform 0.6s cubic-bezier(0.22,1,0.36,1),box-shadow 0.3s,border-color 0.3s; }
+          .he-tcard.he-tcard-visible { opacity:1;transform:translateY(0); }
+          .he-tcard:hover { transform:translateY(-6px) !important;border-color:rgba(217,119,6,0.40);box-shadow:0 16px 48px rgba(15,52,96,0.14),inset 0 1px 0 rgba(255,255,255,1); }
+          .he-tcard.featured { background:linear-gradient(135deg,rgba(254,243,199,0.50) 0%,rgba(255,255,255,0.85) 55%,rgba(219,234,254,0.45) 100%);border-color:rgba(217,119,6,0.25);box-shadow:0 6px 32px rgba(217,119,6,0.10),inset 0 1px 0 rgba(255,255,255,1); }
+          .he-tcard-stars { font-size:18px;color:#D97706;letter-spacing:2px; }
+          .he-tcard-text { font-size:15px;line-height:1.75;color:#374151;margin:0;flex:1; }
+          .he-tcard.featured .he-tcard-text { color:#1f2937; }
+          .he-tcard-author { display:flex;align-items:center;gap:12px;margin-top:4px; }
+          .he-tcard-avatar { width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#ffffff;flex-shrink:0; }
+          .he-tcard-name { font-size:14px;font-weight:700;color:#0F3460; }
+          .he-tcard-role { font-size:12px;color:#6b7280; }
+          .he-testi-stats { display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(219,234,254,0.50) 0%,rgba(255,255,255,0.75) 50%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:16px;padding:32px 40px;border:1px solid rgba(255,255,255,0.85);box-shadow:0 4px 20px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
+          .he-tstat { display:flex;flex-direction:column;align-items:center;gap:4px;flex:1; }
+          .he-tstat-num { font-size:28px;font-weight:800;color:#0F3460; }
+          .he-tstat-label { font-size:13px;color:#4A6080;font-weight:500; }
+          .he-tstat-divider { width:1px;height:40px;background:rgba(15,52,96,0.15); }
+
+          /* Why */
+          .he-why-section { padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08);position:relative;z-index:1; }
+          .he-why-inner { max-width:1280px;margin:0 auto; }
+          .he-why-grid { display:grid;grid-template-columns:repeat(4,1fr);margin-top:56px;gap:16px; }
+          .he-why-card { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:32px 28px;text-align:left;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95);opacity:0;transform:translateY(36px) scale(0.97);transition:opacity 0.55s cubic-bezier(0.22,1,0.36,1),transform 0.55s cubic-bezier(0.22,1,0.36,1),box-shadow 0.25s,border-color 0.25s; }
+          .he-why-card.he-card-visible { opacity:1;transform:translateY(0) scale(1); }
+          .he-why-card:hover { transform:translateY(-6px) scale(1) !important;border-color:rgba(217,119,6,0.40);box-shadow:0 16px 48px rgba(15,52,96,0.14),inset 0 1px 0 rgba(255,255,255,1); }
+          .he-why-card-header { display:flex;align-items:center;gap:12px;margin-bottom:10px; }
+          .he-why-icon { width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
+          .he-why-icon svg { width:28px;height:28px;fill:#D97706; }
+          .he-why-card h3 { font-size:15px;font-weight:700;color:#0F1F40;margin:0;line-height:1.35; }
+          .he-why-card p { font-size:13px;color:#4A6080;line-height:1.7;margin:0; }
+
+          /* Engagement */
+          .he-engage-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08);padding:80px 40px;position:relative;z-index:1; }
+          .he-engage-inner { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:stretch; }
+          .he-engage-left { position:sticky;top:100px;display:flex;flex-direction:column; }
+          .he-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
+          .he-engage-desc { font-size:15px;color:#3A507A;line-height:1.75;margin:0 0 32px; }
+          .he-engage-img-wrap { border-radius:14px;overflow:hidden;box-shadow:0 16px 48px rgba(15,52,96,0.15);flex:1;min-height:300px; }
+          .he-engage-img-wrap img { width:100%;height:100%;min-height:300px;object-fit:cover;display:block; }
+          .he-engage-right { display:flex;flex-direction:column;gap:16px; }
+          .he-ecard { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:14px;padding:26px 28px;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95);opacity:0;transform:translateX(40px);transition:opacity 0.55s cubic-bezier(0.22,1,0.36,1),transform 0.55s cubic-bezier(0.22,1,0.36,1),border-color 0.3s; }
+          .he-ecard.he-ecard-visible { opacity:1;transform:translateX(0); }
+          .he-ecard:hover { border-color:rgba(217,119,6,0.45);box-shadow:0 16px 48px rgba(15,52,96,0.14),inset 0 1px 0 rgba(255,255,255,1);transform:translateX(4px); }
+          .he-ecard-header { display:flex;align-items:center;gap:14px;margin-bottom:10px; }
+          .he-ecard-icon { width:44px;height:44px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
+          .he-ecard-icon svg { width:26px;height:26px;stroke:#D97706;fill:none; }
+          .he-ecard-title { font-size:18px;font-weight:700;color:#0F3460;margin:0; }
+          .he-ecard-desc { font-size:14px;color:#3A507A;line-height:1.65;margin:0 0 16px; }
+          .he-ecard-features { display:grid;grid-template-columns:1fr 1fr;gap:8px 16px; }
+          .he-efeat { display:flex;align-items:center;gap:8px;font-size:13px;color:#2A3F6F;font-weight:500; }
+          .he-efeat-check { color:#D97706;font-size:12px;flex-shrink:0; }
+
+          /* Contact */
+          .he-contact-section { padding:70px 40px;background:linear-gradient(135deg,rgba(254,243,199,0.70) 0%,rgba(255,255,255,0.60) 40%,rgba(219,234,254,0.65) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.80); }
+          .he-contact-container { max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;align-items:start;gap:32px; }
+          .he-contact-title { font-size:48px;font-weight:900;line-height:1.2;margin:0 0 16px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent; }
+          .he-contact-desc { font-size:14px;color:#4A6080;line-height:1.6;margin:0 0 24px; }
+          .he-merged-box { background:linear-gradient(135deg,rgba(255,255,255,0.70) 0%,rgba(219,234,254,0.35) 100%);border:1px solid rgba(255,255,255,0.90);border-radius:14px;padding:24px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,1);display:flex;flex-direction:column;gap:20px; }
+          .he-benefit-item { display:flex;gap:10px;align-items:flex-start; }
+          .he-benefit-icon-wrap { width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
+          .he-benefit-icon { width:20px;height:20px;color:#D97706;stroke:#D97706;stroke-width:1.75; }
+          .he-benefit-item p { font-size:13px;color:#4A6080;margin:0;line-height:1.5; }
+          .he-stats-box { padding-top:32px;border-top:1px solid rgba(15,52,96,0.12); }
+          .he-stats-grid { display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px; }
+          .he-stat-number { font-size:40px;font-weight:900;color:#0F3460;line-height:1;display:inline-block;margin-bottom:4px; }
+          .he-stat-text { font-size:13px;color:#4A6080;line-height:1.4;font-weight:500; }
+          .he-form-box { background:linear-gradient(135deg,rgba(255,255,255,0.88) 0%,rgba(237,233,254,0.25) 50%,rgba(255,255,255,0.84) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.92);border-radius:20px;padding:36px;box-shadow:0 8px 40px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1); }
+          .he-form-box h3 { font-size:26px;font-weight:700;margin:0 0 28px;color:#0F1F40;letter-spacing:-0.5px; }
+          .he-contact-form { display:flex;flex-direction:column;gap:16px; }
+          .he-form-row { display:grid;grid-template-columns:1fr 1fr;gap:14px; }
+          .he-form-group { display:flex;flex-direction:column;gap:6px; }
+          .he-form-group.full { grid-column:1/-1; }
+          .he-form-group label { font-size:12px;font-weight:500;color:#0F1F40; }
+          .he-form-group input,.he-form-group textarea,.he-form-group select { padding:10px 14px;border:1px solid rgba(15,52,96,0.15);border-radius:6px;font-size:13px;font-family:inherit;color:#0F1F40;background:rgba(255,255,255,0.55);box-shadow:inset 0 1px 4px rgba(15,52,96,0.06);transition:border-color 0.2s,background 0.2s; }
+          .he-form-group input:focus,.he-form-group textarea:focus { outline:none;border-color:#D97706;background:rgba(255,255,255,0.90);box-shadow:0 0 0 3px rgba(217,119,6,0.12); }
+          .he-phone-input { display:flex;border:1px solid rgba(15,52,96,0.15);border-radius:6px;overflow:hidden; }
+          .he-phone-input select { padding:10px;border:none;background:rgba(255,255,255,0.1);font-size:12px;min-width:75px; }
+          .he-phone-input input { flex:1;border:none;border-radius:0;padding:10px 14px;box-shadow:none; }
+          .he-phone-input input:focus { outline:none; }
+          .he-consent { display:flex;gap:8px;align-items:flex-start;margin-top:8px; }
+          .he-consent input[type="checkbox"] { margin-top:3px;width:16px;height:16px;cursor:pointer; }
+          .he-consent label { font-size:11px;color:#4A6080;line-height:1.5;margin:0; }
+          .he-consent a { color:#0F3460;text-decoration:none; }
+          .he-submit-btn { padding:14px 28px;background:rgba(15,52,96,0.85);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.30);color:white;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all 0.3s;margin-top:8px;width:100%;box-shadow:0 6px 24px rgba(15,52,96,0.25),inset 0 1px 0 rgba(255,255,255,0.15); }
+          .he-submit-btn:hover { background:rgba(15,52,96,0.95);border-color:rgba(245,158,11,0.6);transform:translateY(-2px); }
+          .he-submit-btn:disabled { opacity:0.7;cursor:not-allowed; }
+
+          /* FAQ */
+          .he-faq-section { padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);position:relative;z-index:1; }
+          .he-faq-inner { max-width:1280px;margin:0 auto; }
+          .he-faq-heading { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 36px; }
+          .he-faq-list { display:flex;flex-direction:column;gap:12px; }
+          .he-faq-item { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:16px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(15,52,96,0.07),inset 0 1px 0 rgba(255,255,255,0.95);transition:border-color 0.2s,box-shadow 0.2s; }
+          .he-faq-item.open { border-color:rgba(217,119,6,0.40);box-shadow:0 8px 32px rgba(15,52,96,0.12),inset 0 1px 0 rgba(255,255,255,1); }
+          .he-faq-item.open::before { content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#D97706;border-radius:3px 0 0 3px; }
+          .he-faq-question { width:100%;background:none;border:none;padding:22px 22px 22px 60px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;text-align:left;gap:16px;font-family:inherit;position:relative; }
+          .he-faq-q-badge { position:absolute;left:16px;top:50%;transform:translateY(-50%);width:28px;height:28px;background:rgba(15,52,96,0.10);color:#374151;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:6px;flex-shrink:0;transition:background 0.2s,color 0.2s; }
+          .he-faq-item.open .he-faq-q-badge { background:#D97706;color:#fff; }
+          .he-faq-question span { font-size:16px;font-weight:600;color:#0F1F40;line-height:1.45; }
+          .he-faq-item.open .he-faq-question span { color:#D97706; }
+          .he-faq-chevron { width:24px;height:24px;flex-shrink:0;color:#9ca3af;transition:transform 0.3s; }
+          .he-faq-item.open .he-faq-chevron { transform:rotate(180deg);color:#D97706; }
+          .he-faq-answer-wrap { overflow:hidden;transition:max-height 0.35s ease;max-height:0; }
+          .he-faq-item.open .he-faq-answer-wrap { max-height:400px; }
+          .he-faq-answer { padding:0 22px 22px 60px;font-size:15px;color:#4b5563;line-height:1.8; }
+          .he-faq-a-badge { display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:#0F3460;color:#fff;font-size:12px;font-weight:700;border-radius:6px;margin-right:12px;flex-shrink:0;vertical-align:middle; }
+
+          /* Related */
+          .he-related-section { background:rgba(237,233,254,0.18);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,0.60);padding:80px 40px; }
+          .he-related-inner { max-width:1280px;margin:0 auto;text-align:center; }
+          .he-related-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A6080;margin:0 0 14px;display:block; }
+          .he-related-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
+          .he-related-sub { font-size:15px;color:#0F1F40;line-height:1.7;margin:0 auto;max-width:680px; }
+          .he-related-divider { border:none;border-top:1px solid rgba(15,52,96,0.12);margin:40px 0; }
+          .he-related-tags { display:flex;flex-wrap:wrap;justify-content:center;gap:12px; }
+          .he-rtag { display:inline-block;padding:11px 22px;border:1.5px solid;border-radius:50px;font-size:14px;font-weight:500;text-decoration:none;transition:all 0.25s; }
+          .he-rtag:hover { filter:brightness(0.92);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.10); }
+          .he-rtag-blue    { background:rgba(59,130,246,0.10);border-color:rgba(59,130,246,0.30);color:#1D4ED8; }
+          .he-rtag-violet  { background:rgba(139,92,246,0.10);border-color:rgba(139,92,246,0.30);color:#6D28D9; }
+          .he-rtag-amber   { background:rgba(245,158,11,0.12);border-color:rgba(245,158,11,0.35);color:#B45309; }
+          .he-rtag-teal    { background:rgba(20,184,166,0.10);border-color:rgba(20,184,166,0.30);color:#0F766E; }
+          .he-rtag-rose    { background:rgba(244,63,94,0.10);border-color:rgba(244,63,94,0.28);color:#BE123C; }
+          .he-rtag-green   { background:rgba(34,197,94,0.10);border-color:rgba(34,197,94,0.28);color:#15803D; }
+          .he-rtag-indigo  { background:rgba(99,102,241,0.10);border-color:rgba(99,102,241,0.28);color:#4338CA; }
+          .he-rtag-sky     { background:rgba(14,165,233,0.10);border-color:rgba(14,165,233,0.28);color:#0369A1; }
+          .he-rtag-emerald { background:rgba(16,185,129,0.10);border-color:rgba(16,185,129,0.28);color:#065F46; }
+
+          /* Mobile background */
+          @media (max-width:900px) {
+            .he-page { background-attachment:scroll !important;background:linear-gradient(160deg,#dbeafe 0%,#ede9fe 30%,#e0f2fe 55%,#fef3c7 78%,#fce7f3 100%) !important; }
+          }
+          @media (max-width:1024px) {
+            .he-hero-content h1 { font-size:40px; }
+            .he-services-grid { grid-template-columns:repeat(2,1fr); }
+            .he-why-grid { grid-template-columns:repeat(2,1fr); }
+            .he-tech-grid { grid-template-columns:repeat(2,1fr); }
+            .he-industry-grid { grid-template-columns:repeat(2,1fr); }
+            .he-engage-inner { grid-template-columns:1fr; }
+            .he-engage-left { position:static; }
+            .he-process-inner { grid-template-columns:1fr; }
+            .he-process-image-col { display:none; }
+          }
+          @media (max-width:768px) {
+            .he-hero-content { padding:36px 20px 24px; }
+            .he-hero-content h1 { font-size:28px;letter-spacing:-0.3px; }
+            .he-hero-content p { font-size:15px; }
+            .he-hero-stats { grid-template-columns:1fr 1fr;max-width:100%; }
+            .he-stat-col { padding:14px 12px; }
+            .he-stat-col:nth-child(2) { border-right:none; }
+            .he-stat-col:nth-child(3) { border-top:1px solid rgba(15,52,96,0.10); }
+            .he-stat-col:nth-child(4) { border-top:1px solid rgba(15,52,96,0.10);border-right:none; }
+            .he-stat-value { font-size:22px; }
+            .he-clients-bar { padding:16px 20px 36px;gap:12px; }
+            .he-def-section { padding:60px 20px; }
+            .he-def-block { padding:28px 20px; }
+            .he-def-title { font-size:24px; }
+            .he-def-body { font-size:15px; }
+            .he-def-facts { grid-template-columns:1fr 1fr;gap:16px; }
+            .he-services-section { padding:48px 20px 40px; }
+            .he-process-section { padding:60px 20px; }
+            .he-process-top { margin-bottom:36px; }
+            .he-tech-section { padding:60px 20px; }
+            .he-tech-grid { grid-template-columns:1fr 1fr;gap:12px;margin-top:32px; }
+            .he-industries-section { padding:60px 20px; }
+            .he-industry-grid { grid-template-columns:1fr 1fr;gap:12px;margin-top:32px; }
+            .he-compare-section { padding:60px 20px; }
+            .he-compare-table thead tr th,.he-compare-table tbody tr td { padding:11px 14px;font-size:13px; }
+            .he-testi-section { padding:60px 20px; }
+            .he-testi-section .he-section-header-center { text-align:left; }
+            .he-testi-grid { grid-template-columns:1fr; }
+            .he-testi-stats { flex-wrap:wrap;padding:24px 20px; }
+            .he-tstat { flex:0 0 50%;width:50%;padding:12px 8px;border-bottom:1px solid rgba(15,52,96,0.10); }
+            .he-tstat:nth-child(odd) { border-right:1px solid rgba(15,52,96,0.10); }
+            .he-tstat:nth-last-child(-n+2) { border-bottom:none; }
+            .he-tstat-divider { display:none; }
+            .he-why-section { padding:60px 20px; }
+            .he-why-section .he-section-header-center { text-align:left; }
+            .he-why-grid { grid-template-columns:1fr;margin-top:40px; }
+            .he-why-card { padding:24px 20px; }
+            .he-engage-section { padding:60px 20px; }
+            .he-contact-section { padding:48px 16px; }
+            .he-contact-container { grid-template-columns:1fr;gap:20px; }
+            .he-contact-title { font-size:28px; }
+            .he-form-row { grid-template-columns:1fr; }
+            .he-stats-grid { grid-template-columns:1fr 1fr 1fr; }
+            .he-faq-section { padding:60px 20px; }
+            .he-faq-heading { font-size:26px; }
+            .he-faq-question { padding:18px 18px 18px 52px; }
+            .he-faq-question span { font-size:14px; }
+            .he-faq-answer { padding:0 18px 18px 52px;font-size:14px; }
+            .he-faq-q-badge { left:14px; }
+            .he-related-section { padding:60px 20px; }
+            .he-related-tags { gap:8px; }
+            .he-rtag { padding:9px 16px;font-size:13px; }
+            .he-section-title,.he-engage-title,.he-process-main-title,.he-related-title { font-size:30px; }
+          }
+          @media (max-width:480px) {
+            .he-hero-content h1 { font-size:24px; }
+            .he-section-title,.he-engage-title,.he-process-main-title,.he-related-title { font-size:26px; }
+            .he-services-grid { grid-template-columns:1fr; }
+            .he-service-card { padding:20px 18px 18px; }
+            .he-card-num { font-size:52px; }
+            .he-def-facts { grid-template-columns:1fr; }
+            .he-tech-grid { grid-template-columns:1fr; }
+            .he-industry-grid { grid-template-columns:1fr; }
+            .he-tcard { padding:24px 20px; }
+            .he-ecard { padding:20px; }
+            .he-ecard-features { grid-template-columns:1fr; }
+            .he-merged-box { padding:18px; }
+            .he-contact-title { font-size:24px; }
+          }
         `}</style>
       </Head>
-      <section className="hem-hero">
-        <h1>HTML Email Development Services<br/>Pixel-Perfect Emails That Render Everywhere</h1>
-        <p>We build responsive HTML email templates that render flawlessly across Gmail, Outlook, Apple Mail, and 90+ email clients. From campaign templates to full transactional email suites - hand-coded, tested, and ready to deploy.</p>
-        <div className="hem-hero-btns">
-          <Link href="/contact-us" className="hem-btn-primary">Get a Free Email Template Quote →</Link>
-          <Link href="/portfolio" className="hem-btn-outline">View Portfolio</Link>
+
+      <div className="he-page">
+        <div className="he-orb-1" />
+        <div className="he-orb-2" />
+        <div className="he-orb-3" />
+
+        {/* ── HERO ── */}
+        <div className="he-hero-block">
+          <div className="he-hero-content">
+            <span className="he-eyebrow">Professional HTML Email Development · Since 2008</span>
+            <h1>HTML Email Development Services — Pixel-Perfect Emails That Render Everywhere</h1>
+            <p>Hand-coded, responsive HTML email templates tested across 90+ email clients. From transactional triggers to full campaign suites — built for Klaviyo, Mailchimp, HubSpot, Salesforce MC, and every major ESP.</p>
+            <Link href="#contact" className="he-btn-hero he-btn-hero-shimmer">Get a Free Email Template Quote</Link>
+          </div>
+          <div className="he-hero-stats" ref={statsRef}>
+            {[['Email Templates Built','150+'],['ESPs Supported','12+'],['Email Clients Tested','90+'],['Client Satisfaction','4.9/5']].map(([label, val]) => (
+              <AnimatedStat key={label} label={label} val={val} started={statsStarted} />
+            ))}
+          </div>
+          <div className="he-clients-bar">
+            <span className="he-clients-label">Trusted by Leading Brands</span>
+            <div className="he-clients-logos">
+              <div className="he-logos-track">
+                {[
+                  ['/logo/Indian_Express_Logo_full.png','Indian Express'],
+                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],
+                  ['/logo/Uniphore.jpg','Uniphore'],
+                  ['/logo/ICCoLogo.png','ICC'],
+                  ['/logo/Honor_Logo_(2020).svg.png','Honor'],
+                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],
+                  ['/logo/amarujala-print-logo_60e03f7d5b4a8.webp','Amar Ujala'],
+                  ['/logo/Nuance-Symbol-500x281.png','Nuance'],
+                  ['/logo/PHDCCI-Logo-2024.png','PHD Chamber'],
+                  ['/logo/Wilson-logo.svg.png','Wilson'],
+                  ['/logo/Indian_Express_Logo_full.png','Indian Express2'],
+                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon2'],
+                  ['/logo/Uniphore.jpg','Uniphore2'],
+                  ['/logo/ICCoLogo.png','ICC2'],
+                  ['/logo/Honor_Logo_(2020).svg.png','Honor2'],
+                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv2'],
+                  ['/logo/amarujala-print-logo_60e03f7d5b4a8.webp','Amar Ujala2'],
+                  ['/logo/Nuance-Symbol-500x281.png','Nuance2'],
+                  ['/logo/PHDCCI-Logo-2024.png','PHD Chamber2'],
+                  ['/logo/Wilson-logo.svg.png','Wilson2'],
+                ].map(([src, alt]) => (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img key={alt} src={src} alt={alt.replace(/\d+$/, '')} className="he-client-logo" />
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
-      <section className="hem-sec" ref={skR}>
-        <div className="hem-wrap">
-          <h2 className="hem-sec-title">Skills &amp; Platforms</h2>
-          <p className="hem-sec-sub">We code for every major ESP and test across every major email client - no exceptions.</p>
-          <div className="hem-skills">{SKILLS.map((s, i) => <span key={s} className={`hem-skill${skV ? ' hem-in' : ''}`} style={{ transitionDelay: `${i * 50}ms` }}>{s}</span>)}</div>
-        </div>
-      </section>
-      <section className="hem-sec hem-sec-alt" ref={enR}>
-        <div className="hem-wrap">
-          <h2 className="hem-sec-title">Engagement Options</h2>
-          <p className="hem-sec-sub">From a single template to a full retainer - we fit around your send schedule.</p>
-          <div className="hem-models">{MODELS.map((m, i) => <div key={m.title} className={`hem-model${enV ? ' hem-in' : ''}`} style={{ transitionDelay: `${i * 120}ms` }}><div className="hem-model-icon">{m.icon}</div><h3>{m.title}</h3><p>{m.desc}</p></div>)}</div>
-        </div>
-      </section>
-      <section className="hem-sec" ref={whR}>
-        <div className="hem-wrap">
-          <h2 className="hem-sec-title">Why Choose 1Solutions for HTML Email Development?</h2>
-          <p className="hem-sec-sub">We build emails that survive the inbox - Outlook, dark mode, mobile, and everything in between.</p>
-          <div className="hem-why-grid">{WHY.map((w, i) => <div key={w.h} className={`hem-why-item${whV ? ' hem-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
-        </div>
-      </section>
-      <section className="hem-stats" ref={stGr}>
-        <div className="hem-stats-grid">
-          <div><div className="hem-stat-val">{stV ? c1 : 0}+</div><div className="hem-stat-label">Email Templates Built</div></div>
-          <div><div className="hem-stat-val">{stV ? c2 : 0}+</div><div className="hem-stat-label">ESP Platforms Supported</div></div>
-          <div><div className="hem-stat-val">4.{stV ? c3 : 0}/5</div><div className="hem-stat-label">Client Satisfaction</div></div>
-          <div><div className="hem-stat-val">{stV ? c4 : 0}+</div><div className="hem-stat-label">Email Clients Tested</div></div>
-        </div>
-      </section>
-      <section className="hem-sec hem-sec-alt" ref={prR}>
-        <div className="hem-wrap">
-          <h2 className="hem-sec-title">Our Email Development Process</h2>
-          <p className="hem-sec-sub">Brief to inbox-tested delivery in 4 steps - no shortcuts, no builders, no broken rendering.</p>
-          <div className="hem-process">{PROCESS.map((p, i) => <div key={p.n} className={`hem-step${prV ? ' hem-in' : ''}`} style={{ transitionDelay: `${i * 110}ms` }}><div className="hem-step-n">{p.n}</div><h3>{p.h}</h3><p>{p.b}</p></div>)}</div>
-        </div>
-      </section>
-      <section className="hem-sec">
-        <div className="hem-wrap">
-          <h2 className="hem-sec-title">Frequently Asked Questions</h2>
-          <p className="hem-sec-sub">Common questions about our HTML email development services.</p>
-          <div className="hem-faq">{FAQS.map((f, i) => <div key={i} className="hem-faq-item"><div className="hem-faq-q" onClick={() => setOpenFaq(openFaq === i ? null : i)}><span>{f.q}</span><span className={`hem-faq-icon${openFaq === i ? ' hem-open' : ''}`}>+</span></div>{openFaq === i && <p className="hem-faq-a">{f.a}</p>}</div>)}</div>
-        </div>
-      </section>
-      <section className="hem-cta">
-        <div className="hem-wrap">
-          <h2>Ready to Build HTML Emails That Actually Render?</h2>
-          <p>Tell us your ESP, send volume, and template needs - we'll quote within 24 hours and deliver your first template in under a week.</p>
-          <Link href="/contact-us" className="hem-btn-primary">Get a Free Template Quote →</Link>
-        </div>
-      </section>
+
+        {/* ── DEFINITION ── */}
+        <section className="he-def-section">
+          <div className="he-def-inner">
+            <div className={`he-def-block he-section-reveal${visibleSections.has('def') ? ' he-revealed' : ''}`} ref={el => { sectionRefs.current['def'] = el; }}>
+              <span className="he-def-eyebrow">Definition</span>
+              <h2 className="he-def-title">What Is HTML Email Development?</h2>
+              <p className="he-def-body">
+                <strong>HTML email development</strong> is the process of hand-coding email templates using table-based HTML, inline CSS, and client-specific techniques to ensure consistent rendering across every inbox. Unlike websites — which benefit from modern CSS Grid, Flexbox, and JavaScript — emails are rendered by dozens of different clients (Gmail, Outlook, Apple Mail) each with their own rendering engine and unique quirks.
+              </p>
+              <p className="he-def-body">
+                Outlook 2007–2023 uses Microsoft Word as its rendering engine. Gmail clips emails over 102KB. Dark mode inverts colours on many clients. A professional HTML email development service ensures your templates survive all of these environments — Outlook-proofed, dark-mode-ready, and responsive from desktop to mobile without breaking.
+              </p>
+              <div className="he-def-facts">
+                {[['90+','email clients and environments we test across'],['102KB','Gmail clip limit — we keep all templates under 100KB'],['40%+','of subscribers read email in dark mode']].map(([num, label]) => (
+                  <div className="he-def-fact" key={label}>
+                    <span className="he-def-fact-num">{num}</span>
+                    <span className="he-def-fact-label">{label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── SERVICES ── */}
+        <section className="he-services-section">
+          <div className="he-services-inner">
+            <div className={`he-section-reveal${visibleSections.has('services') ? ' he-revealed' : ''}`} ref={el => { sectionRefs.current['services'] = el; }}>
+              <span className="he-section-eyebrow">Our Services</span>
+              <h2 className="he-section-title">HTML Email Development Services We Offer</h2>
+              <p className="he-section-desc">From a single transactional template to a full suite of branded components — hand-coded, tested, and delivered in your ESP&apos;s native format.</p>
+            </div>
+            <div className="he-services-grid">
+              {visibleServices.map(s => (
+                <div key={s.n} className={`he-service-card${s.featured ? ' featured' : ''}`}>
+                  <span className="he-card-num">{s.n}</span>
+                  <h3>{s.title}</h3>
+                  <p>{s.desc}</p>
+                </div>
+              ))}
+            </div>
+            <div className="he-services-footer">
+              <button className="he-btn-show-more" onClick={() => setShowAll(v => !v)}>
+                {showAll ? 'Show Less ↑' : 'Show More Email Services ↓'}
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* ── PROCESS ── */}
+        <section className="he-process-section">
+          <div className="he-process-top">
+            <div className={`he-section-reveal${visibleSections.has('process') ? ' he-revealed' : ''}`} ref={el => { sectionRefs.current['process'] = el; }}>
+              <p className="he-process-eyebrow">HOW WE WORK</p>
+              <h2 className="he-process-main-title">How We Deliver HTML Email Development</h2>
+              <p className="he-process-main-desc">Our email development team follows a 4-step process — brief to tested, inbox-ready delivery. No drag-and-drop shortcuts, no builder bloat, no rendering surprises on send day.</p>
+            </div>
+            <hr className="he-process-divider" />
+          </div>
+          <div className="he-process-inner">
+            <div className="he-process-steps">
+              {[
+                ['Brief & Design', 'We review your brand guidelines, ESP environment, and email objectives — then produce a design mockup for your approval before any coding begins.'],
+                ['Code & Build', 'We hand-code the template using table-based HTML, MSO conditional comments, and fluid-hybrid responsive techniques — no drag-and-drop builders, no shortcuts.'],
+                ['Cross-Client Testing', "We test across 90+ email clients in Litmus or Email on Acid, verify dark mode behaviour, check plain-text rendering, and confirm file size stays under Gmail's 102KB clip limit."],
+                ['Deliver & Deploy', "We deliver in your ESP's native format — with editable regions, content blocks, and a handoff guide — ready to schedule and send."],
+              ].map(([title, desc], i) => (
+                <div
+                  className={`he-pstep${visibleSteps.includes(i) ? ' visible' : ''}`}
+                  key={title}
+                  ref={el => { stepRefs.current[i] = el; }}
+                >
+                  <div className="he-pstep-left">
+                    <div className="he-pstep-circle">{i + 1}</div>
+                    {i < 3 && <div className="he-pstep-arrow" />}
+                  </div>
+                  <div className="he-pstep-content">
+                    <h3 className="he-pstep-title">{title}</h3>
+                    <p className="he-pstep-desc">{desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="he-process-image-col">
+              <div className="he-process-img-wrap">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/images/office.png" alt="1Solutions HTML email development team" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── TECH STACK ── */}
+        <section className="he-tech-section">
+          <div className="he-tech-inner">
+            <div className={`he-section-reveal${visibleSections.has('tech') ? ' he-revealed' : ''}`} ref={el => { sectionRefs.current['tech'] = el; }}>
+              <span className="he-section-eyebrow">Technology & Platforms</span>
+              <h2 className="he-section-title">ESPs, Tools & Standards We Work With</h2>
+              <p className="he-section-desc">We stay current with the full email technology landscape — from widely used ESPs to niche platforms, testing tools, and emerging standards like AMP for Email.</p>
+            </div>
+            <div className="he-tech-grid">
+              {TECH_STACK.map(group => (
+                <div className="he-tech-group" key={group.group}>
+                  <div className="he-tech-group-title">{group.group}</div>
+                  <div className="he-tech-tags">
+                    {group.items.map(item => <span className="he-tech-tag" key={item}>{item}</span>)}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── INDUSTRIES ── */}
+        <section className="he-industries-section">
+          <div className="he-industries-inner">
+            <div className={`he-section-reveal${visibleSections.has('industries') ? ' he-revealed' : ''}`} ref={el => { sectionRefs.current['industries'] = el; }}>
+              <span className="he-section-eyebrow">Industries We Serve</span>
+              <h2 className="he-section-title">HTML Email Development Across Industries</h2>
+              <p className="he-section-desc">We have built email templates for businesses across 8+ verticals — bringing domain-specific knowledge to inbox placement, content hierarchy, and conversion-focused design.</p>
+            </div>
+            <div className="he-industry-grid">
+              {INDUSTRIES.map(ind => (
+                <div className="he-industry-card" key={ind.title}>
+                  <div className="he-industry-icon">{ind.icon}</div>
+                  <h3>{ind.title}</h3>
+                  <p>{ind.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── COMPARISON TABLE ── */}
+        <section className="he-compare-section">
+          <div className="he-compare-inner">
+            <div className={`he-section-reveal${visibleSections.has('compare') ? ' he-revealed' : ''}`} ref={el => { sectionRefs.current['compare'] = el; }}>
+              <span className="he-section-eyebrow">Why Choose Us</span>
+              <h2 className="he-section-title">1Solutions vs DIY Builders vs Freelancers</h2>
+              <p className="he-section-desc">See how our dedicated HTML email development service compares against the alternatives.</p>
+            </div>
+            <div className="he-compare-wrap">
+              <table className="he-compare-table">
+                <thead>
+                  <tr>
+                    <th>Feature</th>
+                    <th className="he-compare-th-hl">1Solutions</th>
+                    <th>DIY Builder</th>
+                    <th>Freelancer</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Code Quality','Hand-coded, clean HTML','Bloated builder output','Varies widely'],
+                    ['Outlook Compatibility','MSO conditionals & VML','Often broken','Depends on skill'],
+                    ['Dark Mode Support','Tested & coded for dark mode','Usually ignored','Rarely included'],
+                    ['Cross-Client Testing','90+ clients via Litmus','None','Sometimes partial'],
+                    ['File Size Control','Under 100KB target','Often 150KB+','Varies'],
+                    ['ESP Integration','Native blocks & modules','Generic export','Copy-paste only'],
+                    ['Turnaround','3–5 business days','Instant (but broken)','Days to weeks'],
+                    ['Accessibility','WCAG 2.1 AA built in','None','Rarely included'],
+                  ].map(([feature, us, diy, freelancer]) => (
+                    <tr key={feature}>
+                      <td>{feature}</td>
+                      <td>{us}</td>
+                      <td>{diy}</td>
+                      <td>{freelancer}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        {/* ── TESTIMONIALS ── */}
+        <section className="he-testi-section">
+          <div className="he-testi-inner">
+            <div className={`he-section-header-center he-section-reveal${visibleSections.has('testi') ? ' he-revealed' : ''}`} ref={el => { sectionRefs.current['testi'] = el; }}>
+              <span className="he-section-eyebrow">Client Reviews</span>
+              <h2 className="he-section-title">Know What Our Customers Say</h2>
+              <p className="he-section-sub">Trusted by eCommerce brands, SaaS companies, and agencies across the US, Canada, and Australia.</p>
+            </div>
+            <div className="he-testi-grid" ref={testiGridRef}>
+              {[
+                { initials:'KR', bg:'#1a4a7a', text:'"1Solutions rebuilt our entire Klaviyo template library from scratch. Every email renders perfectly in Outlook, dark mode looks great, and our click rates went up 22% in the first month. Incredible attention to detail."', name:'Karen Richards', role:'Email Marketing Manager, Retail Brand — USA', featured:false },
+                { initials:'TM', bg:'#0F3460', text:"\"We've tried three different freelancers for HTML email work and always ended up with Outlook issues. 1Solutions solved everything first try — MSO conditionals, dark mode, 90+ client testing. This is what professional email development looks like.\"", name:'Tom McCarthy', role:'CTO, SaaS Platform — Australia', featured:true },
+                { initials:'SP', bg:'#2d5a8e', text:'"Fast, accurate, and genuinely understand email. Our HubSpot custom modules were delivered in 4 days with full inline editing. We\'ve been on retainer ever since and wouldn\'t use anyone else."', name:'Sarah Park', role:'Digital Director, Agency — Canada', featured:false },
+              ].map((t, i) => (
+                <div className={`he-tcard${t.featured ? ' featured' : ''}${visibleTestiCards.includes(i) ? ' he-tcard-visible' : ''}`} key={t.name}>
+                  <div className="he-tcard-stars">★★★★★</div>
+                  <p className="he-tcard-text">{t.text}</p>
+                  <div className="he-tcard-author">
+                    <div className="he-tcard-avatar" style={{ background: t.bg }}>{t.initials}</div>
+                    <div>
+                      <div className="he-tcard-name">{t.name}</div>
+                      <div className="he-tcard-role">{t.role}</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="he-testi-stats">
+              {[['4.9/5','Average Rating'],['150+','Templates Delivered'],['98%','Client Satisfaction'],['90%','Repeat Clients']].map(([num, label], i, arr) => (
+                <>
+                  <div className="he-tstat" key={label}>
+                    <span className="he-tstat-num">{num}</span>
+                    <span className="he-tstat-label">{label}</span>
+                  </div>
+                  {i < arr.length - 1 && <div className="he-tstat-divider" key={`d${i}`} />}
+                </>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── WHY US ── */}
+        <section className="he-why-section">
+          <div className="he-why-inner">
+            <div className={`he-section-reveal${visibleSections.has('why') ? ' he-revealed' : ''}`} ref={el => { sectionRefs.current['why'] = el; }} style={{ textAlign:'center', marginBottom:0 }}>
+              <span className="he-section-eyebrow">Why 1Solutions</span>
+              <h2 className="he-section-title">Why Businesses Choose Us for HTML Email Development</h2>
+              <p className="he-section-sub" style={{ maxWidth:680, margin:'0 auto' }}>We don&apos;t just build templates — we build emails that survive every inbox. Here&apos;s what sets us apart.</p>
+            </div>
+            <div className="he-why-grid" ref={whyGridRef}>
+              {WHY.map((w, i) => (
+                <div className={`he-why-card${visibleWhyCards.includes(i) ? ' he-card-visible' : ''}`} key={w.title}>
+                  <div className="he-why-card-header">
+                    <div className="he-why-icon">{w.icon}</div>
+                    <h3>{w.title}</h3>
+                  </div>
+                  <p>{w.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── ENGAGEMENT MODELS ── */}
+        <section className="he-engage-section">
+          <div className="he-engage-inner">
+            <div className="he-engage-left">
+              <div className={`he-section-reveal${visibleSections.has('engage') ? ' he-revealed' : ''}`} ref={el => { sectionRefs.current['engage'] = el; }}>
+                <span className="he-section-eyebrow">Engagement Models</span>
+                <h2 className="he-engage-title">Flexible Engagement Models Built Around You</h2>
+                <p className="he-engage-desc">Whether you need a single template, a full suite, or ongoing monthly support — we offer engagement models that fit your send schedule, team size, and budget. Full transparency at every step.</p>
+              </div>
+              <div className="he-engage-img-wrap">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/images/Partner-with-us.jpg" alt="Partner With 1Solutions for Email Development" />
+              </div>
+            </div>
+            <div className="he-engage-right" ref={eCardsRef}>
+              {[
+                { title:'One-Off Template', desc:'A single HTML email template — designed, hand-coded, and tested across 90+ clients. Perfect for a hero campaign, a new transactional trigger, or a seasonal send.', features:['Design mockup for approval','Hand-coded HTML','90+ client testing','ESP-ready delivery'],
+                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> },
+                { title:'Template Suite', desc:'A set of 5–20 branded email templates — welcome series, cart abandonment, receipts, newsletters — built to a consistent design system and delivered as a complete library.', features:['Consistent design system','Suite in 3–4 weeks','All ESP formats','Handoff guide included'],
+                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg> },
+                { title:'Monthly Retainer', desc:'Ongoing HTML email development support for teams who send regularly — new templates, edits, A/B variants, dark mode updates, and priority 2–3 day turnaround.', features:['Priority 2–3 day turnaround','New + edited templates','A/B variant builds','Dark mode maintenance'],
+                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg> },
+                { title:'Offshore Team', desc:'Dedicated offshore email developers from our New Delhi team — significant cost savings with no quality compromise. US/AU timezone overlap available on request.', features:['Cost-efficient','Dedicated developer','Full timezone overlap','Managed delivery'],
+                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> },
+              ].map((e, i) => (
+                <div className={`he-ecard${visibleECards.includes(i) ? ' he-ecard-visible' : ''}`} key={e.title}>
+                  <div className="he-ecard-header">
+                    <div className="he-ecard-icon">{e.icon}</div>
+                    <h3 className="he-ecard-title">{e.title}</h3>
+                  </div>
+                  <p className="he-ecard-desc">{e.desc}</p>
+                  <div className="he-ecard-features">
+                    {e.features.map(f => <div className="he-efeat" key={f}><span className="he-efeat-check">✔</span>{f}</div>)}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── CONTACT ── */}
+        <section className="he-contact-section" id="contact">
+          <div className="he-contact-container">
+            <div>
+              <h2 className="he-contact-title">Ready to Build Emails That Actually Render?</h2>
+              <p className="he-contact-desc">Tell us your ESP, send volume, and template needs — we&apos;ll quote within 24 hours and deliver your first template in under a week.</p>
+              <div className="he-merged-box">
+                <div>
+                  {[
+                    { icon:<svg className="he-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>, text:'Your brand assets and ESP credentials are handled with full confidentiality. NDA signed as standard.' },
+                    { icon:<svg className="he-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>, text:'A real email developer reviews your brief — not automated responses or sales scripts.' },
+                    { icon:<svg className="he-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>, text:'Quote within 24 business hours. First template delivered in 3–5 business days.' },
+                    { icon:<svg className="he-benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>, text:"No obligation to proceed. Let's just talk about your email needs." },
+                  ].map((b, i) => (
+                    <div className="he-benefit-item" key={i} style={{ marginBottom: i < 3 ? 14 : 0 }}>
+                      <div className="he-benefit-icon-wrap">{b.icon}</div>
+                      <p>{b.text}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="he-stats-box">
+                  <div className="he-stats-grid">
+                    {[['150+','Templates Delivered'],['16+','Years Experience'],['90+','Email Clients Tested']].map(([num, text]) => (
+                      <div key={text}>
+                        <div className="he-stat-number">{num}</div>
+                        <div className="he-stat-text">{text}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className="he-form-box">
+                <h3>Contact Us</h3>
+                <form className="he-contact-form" onSubmit={_sfSubmit}>
+                  <div className="he-form-row">
+                    <div className="he-form-group"><label>Full Name*</label><input name="sf-name" type="text" placeholder="Full Name*" required /></div>
+                    <div className="he-form-group"><label>Business Email*</label><input type="email" name="sf-email" placeholder="Business Email Address*" required /></div>
+                  </div>
+                  <div className="he-form-row">
+                    <div className="he-form-group">
+                      <label>Phone Number*</label>
+                      <div className="he-phone-input">
+                        <select name="sf-cc">
+                          <option value="+91">🇮🇳 +91</option>
+                          <option value="+1">🇺🇸 +1</option>
+                          <option value="+44">🇬🇧 +44</option>
+                          <option value="+61">🇦🇺 +61</option>
+                        </select>
+                        <input type="tel" name="sf-phone" placeholder="Phone Number*" required />
+                      </div>
+                    </div>
+                    <div className="he-form-group"><label>Organization*</label><input name="sf-company" type="text" placeholder="Organization / Institution*" required /></div>
+                  </div>
+                  <div className="he-form-group full"><label>Message*</label><textarea name="sf-message" placeholder="Tell us about your ESP, template type, and send volume..." rows={6} required /></div>
+                  <div className="he-consent">
+                    <input type="checkbox" id="he-consent" required />
+                    <label htmlFor="he-consent">I consent that my personal data will be processed according to <Link href="/privacy-policy">1Solutions privacy policy</Link></label>
+                  </div>
+                  <button type="submit" className="he-submit-btn" disabled={_sfSt === 'loading'}>
+                    {_sfSt === 'loading' ? 'Sending...' : 'Submit'}
+                  </button>
+                  {_sfSt === 'error' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#fef2f2',border:'1px solid #fca5a5',borderRadius:'8px',color:'#991b1b',fontSize:'0.875rem',fontWeight:500}}>Something went wrong. Please email info@1solutions.biz</div>}
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── FAQ ── */}
+        <section className="he-faq-section" id="faq">
+          <div className="he-faq-inner">
+            <h2 className="he-faq-heading">HTML Email Development — Frequently Asked Questions</h2>
+            <div className="he-faq-list">
+              {FAQS.map((faq, i) => (
+                <div className={`he-faq-item${openFaq === i ? ' open' : ''}`} key={i}>
+                  <button className="he-faq-question" onClick={() => setOpenFaq(openFaq === i ? -1 : i)}>
+                    <div className="he-faq-q-badge">Q</div>
+                    <span>{faq.q}</span>
+                    <svg className="he-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="6 9 12 15 18 9"/></svg>
+                  </button>
+                  <div className="he-faq-answer-wrap">
+                    <div className="he-faq-answer"><span className="he-faq-a-badge">A</span>{faq.a}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── RELATED SERVICES ── */}
+        <section className="he-related-section">
+          <div className="he-related-inner">
+            <span className="he-related-eyebrow">RELATED OFFERINGS</span>
+            <h2 className="he-related-title">Explore Related Services</h2>
+            <p className="he-related-sub">Pair our HTML email development expertise with related digital services to tackle your most important marketing and development initiatives.</p>
+            <hr className="he-related-divider" />
+            <div className="he-related-tags">
+              {[
+                ['WordPress Development',            'violet',  '/wordpress-development-company'],
+                ['WordPress Maintenance & Support',  'green',   '/wordpress-support-and-maintenance-services'],
+                ['Digital Marketing Services',       'amber',   '/digital-marketing-services'],
+                ['Next.js Development Services',     'sky',     '/nextjs-development-services'],
+                ['SEO Services',                     'rose',    '/seo-services-company'],
+                ['UI/UX Design Services',            'blue',    '/website-design'],
+                ['eCommerce Development',            'teal',    '/ecommerce-website-development-services'],
+                ['Content Marketing',                'emerald', '/content-copywriting-services'],
+                ['PPC Management',                   'indigo',  '/ppc-management-services'],
+              ].map(([label, color, href]) => (
+                <Link href={href} className={`he-rtag he-rtag-${color}`} key={label}>{label}</Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+      </div>
     </>
   );
 }
