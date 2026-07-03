@@ -11,8 +11,13 @@ const securityHeaders = [
 ];
 
 const nextConfig = {
-  // Canonical URLs always end with /  — prevents split PageRank between /slug and /slug/
+  // Canonical URLs always end with / - prevents split PageRank between /slug and /slug/
   trailingSlash: true,
+
+  // Disable the automatic CDN-level 308 redirect so middleware can handle trailing
+  // slashes selectively - API routes (e.g. /api/ai-generate) must NOT be redirected
+  // because POST bodies are dropped on redirect, breaking the AI generator.
+  skipTrailingSlashRedirect: true,
 
   // Don't block builds on lint errors — we fix them separately
   eslint: { ignoreDuringBuilds: true },
