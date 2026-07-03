@@ -262,30 +262,45 @@ export default function WordPressMaintenance() {
   }, []);
 
   useEffect(() => {
+    const isMobile = window.innerWidth <= 768;
     const pairs = [[svcGridRef, SERVICES.length, setVisibleSvcCards],[engGridRef, 3, setVisibleEngCards],[whyGridRef, WHY_CARDS.length, setVisibleWhyCards],[testiGridRef, 3, setVisibleTestiCards],[stackGridRef, TECH_STACK.length, setVisibleStackCards]];
-    if (window.innerWidth <= 768) {
+    if (isMobile) {
       pairs.forEach(([, count, setter]) => setter(Array.from({ length: count }, (_, i) => i)));
       return;
     }
-    const observers = pairs.map(([ref, count, setter]) => {
-      if (!ref.current) return null;
-      const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { Array.from({ length: count }, (_, i) => setTimeout(() => setter(p => p.includes(i) ? p : [...p, i]), i * 80)); obs.disconnect(); } }, { threshold: 0.05 });
-      obs.observe(ref.current);
-      return obs;
-    });
-    return () => observers.forEach(o => o?.disconnect());
+    const setup = () => {
+      const observers = pairs.map(([ref, count, setter]) => {
+        if (!ref.current) return null;
+        const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { Array.from({ length: count }, (_, i) => setTimeout(() => setter(p => p.includes(i) ? p : [...p, i]), i * 80)); obs.disconnect(); } }, { threshold: 0.05 });
+        obs.observe(ref.current);
+        return obs;
+      });
+      return () => observers.forEach(o => o?.disconnect());
+    };
+    if (typeof window.requestIdleCallback === 'function') {
+      const id = window.requestIdleCallback(setup, { timeout: 2000 });
+      return () => window.cancelIdleCallback(id);
+    }
+    return setup();
   }, []);
 
   useEffect(() => {
-    const keys = Object.keys(sectionRefs.current);
-    const observers = keys.map(key => {
-      const el = sectionRefs.current[key];
-      if (!el) return null;
-      const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVisibleSections(p => new Set([...p, key])); obs.disconnect(); } }, { threshold: 0.1 });
-      obs.observe(el);
-      return obs;
-    });
-    return () => observers.forEach(o => o?.disconnect());
+    const setup = () => {
+      const keys = Object.keys(sectionRefs.current);
+      const observers = keys.map(key => {
+        const el = sectionRefs.current[key];
+        if (!el) return null;
+        const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVisibleSections(p => new Set([...p, key])); obs.disconnect(); } }, { threshold: 0.1 });
+        obs.observe(el);
+        return obs;
+      });
+      return () => observers.forEach(o => o?.disconnect());
+    };
+    if (typeof window.requestIdleCallback === 'function') {
+      const id = window.requestIdleCallback(setup, { timeout: 2000 });
+      return () => window.cancelIdleCallback(id);
+    }
+    return setup();
   }, []);
 
   const visibleServices = showAllSvc ? SERVICES : SERVICES.slice(0, 6);
@@ -317,6 +332,9 @@ export default function WordPressMaintenance() {
         <title>WordPress Support & Maintenance Services | 1Solutions</title>
         <meta name="description" content="WordPress maintenance and support services — staging-first plugin updates, security hardening, malware removal, daily backups, WooCommerce maintenance & emergency support. 150+ sites, since 2008." />
         <link rel="canonical" href="https://www.1solutions.biz/wordpress-support-and-maintenance-services/" />
+        <link rel="preconnect" href="https://www.google.com" crossOrigin="" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
+        <link rel="dns-prefetch" href="https://www.google.com" />
         <meta property="og:title" content="WordPress Maintenance Services | Support, Security & WooCommerce | 1Solutions" />
         <meta property="og:description" content="Professional WordPress maintenance services - plugin and core updates tested on staging, security hardening, malware removal, WooCommerce support, daily backups, uptime monitoring, and 24/7 emergency support." />
         <meta property="og:url" content="https://www.1solutions.biz/wordpress-support-and-maintenance-services/" />
@@ -351,7 +369,7 @@ export default function WordPressMaintenance() {
           .wm-logos{position:relative;z-index:2;padding:24px 40px 52px;display:flex;flex-direction:column;align-items:center;gap:14px}
           .wm-logos-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6A80A0}
           .wm-logos-wrap{width:100%;overflow:hidden}
-          .wm-logos-track{display:flex;align-items:center;gap:60px;width:max-content;animation:wm-marquee 28s linear infinite}
+          .wm-logos-track{display:flex;align-items:center;gap:60px;width:max-content;animation:wm-marquee 28s linear infinite;will-change:transform}
           .wm-logos-track:hover{animation-play-state:paused}
           @keyframes wm-marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
           .wm-clogo{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
@@ -538,7 +556,9 @@ export default function WordPressMaintenance() {
           @media(max-width:480px){.wm-hero h1{font-size:22px}.wm-hero-desc{font-size:13px}.wm-badge{font-size:10px;padding:4px 8px;gap:5px}.wm-badge-dot{width:6px;height:6px}.wm-btn-primary,.wm-btn-ghost{font-size:14px;padding:12px 20px}.wm-stat-val{font-size:20px}.wm-stat-label{font-size:10px}.wm-stat-col{padding:14px 10px}.wm-s-title{font-size:20px}.wm-faq h2{font-size:20px}.wm-ctitle{font-size:20px}.wm-what-text h2{font-size:20px}.wm-stack-grid{grid-template-columns:1fr}.wm-why-grid{grid-template-columns:1fr}.wm-svc-card h3{font-size:15px}.wm-svc-card p{font-size:12px}.wm-eng-card{padding:24px 20px}.wm-pstep{grid-template-columns:48px 1fr;gap:0 14px}.wm-pstep-circle{width:44px;height:44px;font-size:16px}.wm-pstep-title{font-size:16px}.wm-pstep-desc{font-size:13px}.wm-fq{padding:14px 14px 14px 46px}.wm-fq-badge{left:10px;width:22px;height:22px;font-size:9px}.wm-fq span{font-size:13px}.wm-fanswer{padding:0 14px 14px 46px;font-size:12px}.wm-form-box{padding:18px 14px}.wm-form-box h3{font-size:18px}.wm-wcard h3{font-size:13px}.wm-wcard p{font-size:12px}}
           @media(max-width:360px){.wm-hero h1{font-size:19px}.wm-s-title{font-size:18px}.wm-faq h2{font-size:18px}.wm-ctitle{font-size:18px}.wm-stat-col{padding:12px 8px}.wm-stat-val{font-size:18px}.wm-btn-primary,.wm-btn-ghost{font-size:13px;padding:11px 16px}.wm-pstep{grid-template-columns:44px 1fr;gap:0 10px}.wm-pstep-circle{width:40px;height:40px;font-size:14px}}
           @media(max-width:1024px){.wm-orb{display:none}}
-          @media(max-width:768px){.wm-badge,.wm-btn-ghost,.wm-stats,.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-pstep-circle,.wm-tcard,.wm-wcard,.wm-contact,.wm-cbenefits,.wm-form-box,.wm-submit,.wm-fitem,.wm-related,.wm-why-highlight{backdrop-filter:none;-webkit-backdrop-filter:none}.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-tcard,.wm-wcard,.wm-fitem{background:rgba(255,255,255,.93);box-shadow:0 2px 8px rgba(15,52,96,.08)}.wm-stats{background:rgba(255,255,255,.90)}.wm-form-box{background:rgba(255,255,255,.96)}.wm-cbenefits{background:rgba(255,255,255,.92)}.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-tcard,.wm-wcard,.wm-pstep{opacity:1;transform:none;transition:none}}
+          @media(max-width:1024px){.wm-badge,.wm-btn-ghost,.wm-stats,.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-pstep-circle,.wm-tcard,.wm-wcard,.wm-contact,.wm-cbenefits,.wm-form-box,.wm-submit,.wm-fitem,.wm-related,.wm-why-highlight{backdrop-filter:none !important;-webkit-backdrop-filter:none !important}}
+          @media(max-width:768px){.wm-logos-track{animation:none}.wm-page{background:linear-gradient(160deg,#dbeafe 0%,#e8f0fb 100%) !important}.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-tcard,.wm-wcard,.wm-fitem{background:rgba(255,255,255,.95);box-shadow:0 2px 8px rgba(15,52,96,.08)}.wm-stats{background:rgba(255,255,255,.92)}.wm-form-box{background:rgba(255,255,255,.97)}.wm-cbenefits{background:rgba(255,255,255,.94)}.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-tcard,.wm-wcard,.wm-pstep{opacity:1;transform:none;transition:none}}
+          @media(prefers-reduced-motion:reduce){.wm-logos-track{animation:none}.wm-s-reveal,.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-tcard,.wm-wcard,.wm-pstep{opacity:1 !important;transform:none !important;transition:none !important}}
         `}</style>
       </Head>
 
@@ -573,7 +593,7 @@ export default function WordPressMaintenance() {
           <div className="wm-logos-wrap">
             <div className="wm-logos-track">
               {[['/logo/Indian_Express_Logo_full.png','Indian Express'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],['/logo/Uniphore.jpg','Uniphore'],['/logo/ICCoLogo.png','ICC'],['/logo/Honor_Logo_(2020).svg.png','Honor'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],['/logo/Indian_Express_Logo_full.png','Indian Express 2'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon 2'],['/logo/Uniphore.jpg','Uniphore 2'],['/logo/ICCoLogo.png','ICC 2'],['/logo/Honor_Logo_(2020).svg.png','Honor 2'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv 2']].map(([src, alt]) => (
-                <Image key={alt} src={src} alt={alt.replace(/ \d$/, '')} width={110} height={24} className="wm-clogo" style={{ width: 'auto', height: '24px', maxWidth: '110px' }} />
+                <Image key={alt} src={src} alt={alt.replace(/ \d$/, '')} width={110} height={24} className="wm-clogo" loading="lazy" style={{ width: 'auto', height: '24px', maxWidth: '110px' }} />
               ))}
             </div>
           </div>

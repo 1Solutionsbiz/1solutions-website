@@ -6,6 +6,11 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        {/* Preconnect to external origins */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
+        <link rel="preconnect" href="https://www.google.com" crossOrigin="" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google.com" />
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
@@ -16,8 +21,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','${GTM_ID}');`,
           }}
         />
-        {/* reCAPTCHA v3 */}
-        <script src="https://www.google.com/recaptcha/api.js?render=6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs" async />
         {/* Favicon */}
         <link rel="shortcut icon" href="/favicon.ico?v=2" />
         <link rel="icon" href="/favicon.ico?v=2" sizes="any" />
@@ -40,6 +43,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </noscript>
         <Main />
         <NextScript />
+        {/* reCAPTCHA v3 — loaded after main content to avoid blocking TBT */}
+        <script src="https://www.google.com/recaptcha/api.js?render=6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs" async defer />
       </body>
     </Html>
   );
