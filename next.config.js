@@ -152,6 +152,12 @@ const nextConfig = {
         destination: process.env.NEXT_PUBLIC_WORDPRESS_API_URL ||
           'https://midnightblue-lyrebird-831822.hostingersite.com/graphql',
       },
+      // trailingSlash:true redirects POST /api/ai-generate → 308 /api/ai-generate/,
+      // dropping the request body. Rewrite bypasses the redirect so the body is preserved.
+      {
+        source: '/api/ai-generate',
+        destination: '/api/ai-generate/',
+      },
     ];
   },
 };
