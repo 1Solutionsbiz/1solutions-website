@@ -2,6 +2,38 @@ import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
+function useCountUp(target, duration = 1800, start = false) {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    if (!start) return;
+    const numTarget = parseInt(target.replace(/\D/g, ''), 10);
+    if (!numTarget) return;
+    let startTime = null;
+    const step = (ts) => {
+      if (!startTime) startTime = ts;
+      const progress = Math.min((ts - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(eased * numTarget));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [start, target, duration]);
+  return count;
+}
+
+function AnimatedStat({ label, val, started }) {
+  const num = useCountUp(val, 1800, started);
+  const suffix = val.replace(/[\d,]/g, '');
+  const hasComma = val.includes(',');
+  const display = started ? (hasComma ? num.toLocaleString() : num) + suffix : val;
+  return (
+    <div className="lbp-stat">
+      <div className="lbp-stat-l">{label}</div>
+      <div className="lbp-stat-v">{display}</div>
+    </div>
+  );
+}
+
 const PLANS = [
   {
     name: 'Starter',
@@ -329,7 +361,19 @@ export default function LinkBuildingPackages() {
   const [isYearly, setIsYearly] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleSections, setVisibleSections] = useState(new Set());
+  const [statsStarted, setStatsStarted] = useState(false);
   const sectionRefs = useRef({});
+  const statsRef = useRef(null);
+
+  useEffect(() => {
+    if (!statsRef.current) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setStatsStarted(true); obs.disconnect(); } },
+      { threshold: 0.5 }
+    );
+    obs.observe(statsRef.current);
+    return () => obs.disconnect();
+  }, []);
 
   useEffect(() => {
     const keys = Object.keys(sectionRefs.current);
@@ -435,33 +479,37 @@ export default function LinkBuildingPackages() {
           .lbp-orb3{position:fixed;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(20,184,166,.18) 0%,transparent 70%);top:45%;left:-150px;transform:translateY(-50%);pointer-events:none;z-index:0;filter:blur(20px)}
 
           /* ── HERO ── */
-          .lbp-hero{position:relative;overflow:hidden;padding:0 40px}
-          .lbp-hero-content{position:relative;z-index:2;text-align:center;max-width:900px;margin:0 auto;padding:52px 0 40px}
-          .lbp-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:22px;font-weight:500}
-          .lbp-bc a{color:#6b7280;text-decoration:none}.lbp-bc a:hover{color:#D97706}.lbp-bc-sep{color:#d1d5db}
-          .lbp-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:16px}
-          .lbp-ai-platforms{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:20px}
-          .lbp-ai-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:5px 12px;font-size:11px;font-weight:600;color:#374151}
-          .lbp-ai-dot{width:6px;height:6px;border-radius:50%;background:#22c55e;flex-shrink:0}
-          .lbp-h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .lbp-hero-sub{font-size:16px;color:#3A507A;line-height:1.65;max-width:660px;margin:0 auto 28px}
+          .lbp-hero{position:relative;overflow:hidden;z-index:1}
+          .lbp-hero::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.12) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px)}
+          .lbp-hero::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,.18) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px)}
+          .lbp-hero-content{position:relative;z-index:2;text-align:center;max-width:860px;margin:0 auto;padding:56px 40px 40px}
+          .lbp-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:18px}
+          .lbp-h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .lbp-hero-sub{font-size:16px;color:#3A507A;line-height:1.65;max-width:640px;margin:0 auto 28px}
 
-          /* ── KEY TAKEAWAYS ── */
-          .lbp-kt{background:rgba(255,255,255,.50);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:16px;padding:20px 28px;max-width:740px;margin:0 auto 32px;text-align:left;box-shadow:0 4px 20px rgba(15,52,96,.07),inset 0 1px 0 rgba(255,255,255,.95)}
-          .lbp-kt-t{font-size:11px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#D97706;margin-bottom:12px}
-          .lbp-kt-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
-          .lbp-kt-list li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#374151;line-height:1.5}
-          .lbp-kt-list li::before{content:'✓';color:#D97706;font-weight:700;flex-shrink:0;margin-top:1px}
-
-          /* ── HERO BUTTON ── */
-          .lbp-btn-hero{display:inline-block;padding:14px 40px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;box-shadow:0 4px 20px rgba(15,52,96,.10),inset 0 1px 0 rgba(255,255,255,1);margin-bottom:52px}
+          /* ── HERO BUTTONS ── */
+          .lbp-btn-hero{position:relative;overflow:hidden;display:inline-block;padding:14px 40px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;box-shadow:0 4px 20px rgba(15,52,96,.10),inset 0 1px 0 rgba(255,255,255,1);margin-bottom:32px}
           .lbp-btn-hero:hover{background:rgba(255,255,255,.85);border-color:rgba(245,158,11,.6);box-shadow:0 12px 36px rgba(15,52,96,.15),0 0 0 2px rgba(245,158,11,.22),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px);color:#0F3460}
+          .lbp-btn-hero::after{content:'';position:absolute;top:-10%;left:-120%;width:80%;height:120%;background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,.75) 45%,rgba(255,255,255,.9) 50%,rgba(255,255,255,.75) 55%,transparent 100%);animation:lbp-shimmer 2.5s ease-in-out infinite;pointer-events:none}
+          @keyframes lbp-shimmer{0%{left:-120%}35%,100%{left:160%}}
+          .lbp-btn-outline{display:inline-block;padding:14px 32px;background:transparent;border:1.5px solid rgba(15,52,96,.25);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;margin-bottom:32px;margin-left:12px}
+          .lbp-btn-outline:hover{border-color:rgba(217,119,6,.5);color:#D97706;transform:translateY(-2px)}
 
           /* ── STATS BAR ── */
           .lbp-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
           .lbp-stat{padding:18px 20px;text-align:center;border-right:1px solid rgba(15,52,96,.10)}.lbp-stat:last-child{border-right:none}
           .lbp-stat-l{font-size:12px;color:#4A6080;font-weight:500;margin-bottom:6px}
           .lbp-stat-v{font-size:26px;font-weight:900;color:#D97706;letter-spacing:-.5px;line-height:1}
+
+          /* ── CLIENTS BAR ── */
+          .lbp-clients-bar{position:relative;z-index:2;padding:20px 40px 60px;max-width:1440px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px}
+          .lbp-clients-label{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6A80A0}
+          .lbp-clients-logos{width:100%;overflow:hidden}
+          .lbp-logos-track{display:flex;align-items:center;gap:60px;width:max-content;animation:lbp-marquee 28s linear infinite}
+          .lbp-logos-track:hover{animation-play-state:paused}
+          @keyframes lbp-marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+          .lbp-client-logo{height:26px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(100%);opacity:.5;transition:opacity .25s,filter .25s}
+          .lbp-client-logo:hover{opacity:.85;filter:grayscale(0%)}
 
           /* ── SHARED SECTION ── */
           .lbp-sec{padding:80px 40px;position:relative;z-index:1}
@@ -703,9 +751,11 @@ export default function LinkBuildingPackages() {
             .lbp-ai-grid{grid-template-columns:1fr}
           }
           @media(max-width:768px){
-            .lbp-hero,.lbp-sec,.lbp-results,.lbp-cta,.lbp-ai-sec{padding-left:20px;padding-right:20px}
-            .lbp-hero-content{padding:36px 0 24px}
+            .lbp-sec,.lbp-results,.lbp-cta,.lbp-ai-sec{padding-left:20px;padding-right:20px}
+            .lbp-hero-content{padding:36px 20px 24px}
             .lbp-h1{font-size:clamp(1.7rem,6vw,2.4rem)}
+            .lbp-btn-outline{margin-left:0;display:block;text-align:center}
+            .lbp-clients-bar{padding:16px 20px 36px;gap:12px}
             .lbp-stats{grid-template-columns:repeat(2,1fr)}
             .lbp-stat:nth-child(2){border-right:none}
             .lbp-stat:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}
@@ -730,44 +780,54 @@ export default function LinkBuildingPackages() {
         <div className="lbp-orb1"/><div className="lbp-orb2"/><div className="lbp-orb3"/>
 
         {/* ── HERO ── */}
-        <section className="lbp-hero">
+        <div className="lbp-hero">
           <div className="lbp-hero-content">
-            <nav className="lbp-bc" aria-label="Breadcrumb">
-              <Link href="/">Home</Link><span className="lbp-bc-sep">/</span>
-              <Link href="/seo-services-company">SEO Services</Link><span className="lbp-bc-sep">/</span>
-              <span style={{color:'#D97706'}}>Link Building Packages</span>
-            </nav>
-            <span className="lbp-eyebrow">Manual Outreach · DR40–DR65+ · White-Hat · AI+GEO Ready</span>
-            <div className="lbp-ai-platforms" role="list" aria-label="AI platforms we optimise for">
-              {AI_PLATFORMS.map(p => (
-                <span key={p} className="lbp-ai-pill" role="listitem">
-                  <span className="lbp-ai-dot" aria-hidden="true"/>
-                  {p}
-                </span>
-              ))}
-            </div>
-            <h1 className="lbp-h1">Link Building Packages — Built for Google, AI Search & Generative Rankings</h1>
-            <p className="lbp-hero-sub">White-hat link building packages that build authority for both traditional Google rankings and AI-generated citations. From $499/month — guest posts, niche edits, digital PR, and AI+GEO citation building. Every link tracked, every placement verified.</p>
-            <div className="lbp-kt">
-              <div className="lbp-kt-t">Key Takeaways</div>
-              <ul className="lbp-kt-list">
-                <li>Link building packages start at $499/month (5 links, DR40+) and scale to $2,499/month for AI+GEO Elite (35+ links, DR65+, AI citation building)</li>
-                <li>AI engines — Google AI Overviews, ChatGPT, Perplexity — use domain authority (built by backlinks) as a primary signal for selecting citation sources</li>
-                <li>Every link is verified live, tracked in a real-time dashboard, and reported monthly with URL, DR, traffic, anchor text, and target page</li>
-                <li>100% manual outreach — no automated tools, no PBNs, no link farms. Every placement is editorial and genuine</li>
-              </ul>
-            </div>
-            <Link href="/contact-us" className="lbp-btn-hero">Talk to a Link Building Specialist →</Link>
+            <span className="lbp-eyebrow">White-Hat Link Building · DR40–DR65+ · Manual Outreach · AI+GEO Ready</span>
+            <h1 className="lbp-h1">Link Building Packages That Rank You on Google and Get You Cited by AI</h1>
+            <p className="lbp-hero-sub">White-hat link building packages from $499/month. Guest posts, niche edits, digital PR, and AI+GEO citation building — 100% manual outreach, every link tracked live. Built for both traditional rankings and AI-generated answers.</p>
+            <Link href="/contact-us" className="lbp-btn-hero">Get a Free Backlink Audit</Link>
+            <Link href="#pricing" className="lbp-btn-outline">View Packages</Link>
           </div>
-          <div className="lbp-stats" role="list">
-            {STATS.map(s => (
-              <div key={s.label} className="lbp-stat" role="listitem">
-                <div className="lbp-stat-l">{s.label}</div>
-                <div className="lbp-stat-v">{s.val}</div>
-              </div>
+
+          <div className="lbp-stats" ref={statsRef}>
+            {[['Links Built','50000'],['Years Experience','15'],['Client Retention','92'],['Avg Domain Rating','50']].map(([label,val],i) => (
+              <AnimatedStat key={label} label={label} val={val + (i===0?'+':i===1?'+':i===2?'%':'')} started={statsStarted} />
             ))}
           </div>
-        </section>
+
+          <div className="lbp-clients-bar">
+            <span className="lbp-clients-label">Trusted by Leading Brands</span>
+            <div className="lbp-clients-logos">
+              <div className="lbp-logos-track">
+                {[
+                  ['/logo/Indian_Express_Logo_full.png','Indian Express'],
+                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],
+                  ['/logo/Uniphore.jpg','Uniphore'],
+                  ['/logo/ICCoLogo.png','ICC'],
+                  ['/logo/Honor_Logo_(2020).svg.png','Honor'],
+                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],
+                  ['/logo/amarujala-print-logo_60e03f7d5b4a8.webp','Amar Ujala'],
+                  ['/logo/Nuance-Symbol-500x281.png','Nuance'],
+                  ['/logo/PHDCCI-Logo-2024.png','PHD Chamber'],
+                  ['/logo/Wilson-logo.svg.png','Wilson'],
+                  ['/logo/Indian_Express_Logo_full.png','Indian Express2'],
+                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon2'],
+                  ['/logo/Uniphore.jpg','Uniphore2'],
+                  ['/logo/ICCoLogo.png','ICC2'],
+                  ['/logo/Honor_Logo_(2020).svg.png','Honor2'],
+                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv2'],
+                  ['/logo/amarujala-print-logo_60e03f7d5b4a8.webp','Amar Ujala2'],
+                  ['/logo/Nuance-Symbol-500x281.png','Nuance2'],
+                  ['/logo/PHDCCI-Logo-2024.png','PHD Chamber2'],
+                  ['/logo/Wilson-logo.svg.png','Wilson2'],
+                ].map(([src, alt]) => (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img key={alt} src={src} alt={alt.replace(/\d+$/, '')} className="lbp-client-logo" />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* ── DEFINITION ── */}
         <section className="lbp-sec lbp-white-sec" aria-labelledby="def-title">
@@ -874,7 +934,7 @@ export default function LinkBuildingPackages() {
         </section>
 
         {/* ── PRICING ── */}
-        <section className="lbp-sec lbp-pricing-bg" aria-labelledby="pricing-title">
+        <section id="pricing" className="lbp-sec lbp-pricing-bg" aria-labelledby="pricing-title">
           <div className="lbp-sec-in">
             <div className={`lbp-reveal${visibleSections.has('pricing')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['pricing']=el;}} style={{textAlign:'center'}}>
               <span className="lbp-sec-ey">Transparent Pricing</span>
