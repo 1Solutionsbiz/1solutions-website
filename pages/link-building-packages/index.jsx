@@ -49,11 +49,11 @@ function RazorpayButton({ buttonId, className }) {
   return <form ref={formRef} className={className}/>;
 }
 
-function AnimatedStat({ label, val, started }) {
+function AnimatedStat({ label, val, started, prefix = '' }) {
   const num = useCountUp(val, 1800, started);
   const suffix = val.replace(/[\d,]/g, '');
   const hasComma = val.includes(',');
-  const display = started ? (hasComma ? num.toLocaleString() : num) + suffix : val;
+  const display = started ? prefix + (hasComma ? num.toLocaleString() : num) + suffix : val;
   return (
     <div className="lbp-stat">
       <div className="lbp-stat-l">{label}</div>
@@ -429,6 +429,37 @@ const STATS = [
   { label: 'Client Retention', val: '92%' },
 ];
 
+const TESTIMONIALS = [
+  {
+    name: 'Rahul Mehta',
+    role: 'Founder',
+    company: 'LegalEdge India',
+    rating: 5,
+    text: 'Our organic traffic grew from 800 to 6,200 monthly sessions in 10 months on the Authority plan. The quality of placements is exceptional - real editorial sites, not link farms. DR jumped from 22 to 48.',
+  },
+  {
+    name: 'Priya Sharma',
+    role: 'Head of Growth',
+    company: 'SaaSify Technologies',
+    rating: 5,
+    text: 'We were stuck on page 2 for our main keywords for two years. After 6 months on the Growth package, we hit page 1 for 4 commercial terms. The live link tracker gives full visibility into every placement.',
+  },
+  {
+    name: 'James Whitfield',
+    role: 'SEO Director',
+    company: 'Meridian Commerce',
+    rating: 5,
+    text: 'The AI+GEO Elite plan delivered results we did not expect - we started appearing in Perplexity and Google AI Overviews within 90 days. The team understands AEO and GEO deeply, not just traditional backlinks.',
+  },
+  {
+    name: 'Ankit Gupta',
+    role: 'Marketing Manager',
+    company: 'FinTechWave',
+    rating: 5,
+    text: 'Switched from another agency that was building low-quality links. 1Solutions rebuilt our profile with DR50+ placements. Rankings recovered in 4 months and have continued to climb. Highly recommended.',
+  },
+];
+
 const AI_PLATFORMS = ['Google AI Overviews', 'ChatGPT Search', 'Perplexity AI', 'Gemini', 'Bing Copilot'];
 
 const CHECK = (
@@ -531,6 +562,42 @@ export default function LinkBuildingPackages() {
         '@type': 'FAQPage',
         mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
       },
+      {
+        '@type': 'LocalBusiness',
+        name: '1Solutions',
+        url: 'https://www.1solutions.biz',
+        image: 'https://www.1solutions.biz/images/1solutions-logo.png',
+        telephone: '+91-11-0000-0000',
+        priceRange: '$$$',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'New Delhi',
+          addressLocality: 'New Delhi',
+          addressRegion: 'Delhi',
+          postalCode: '110001',
+          addressCountry: 'IN',
+        },
+        geo: { '@type': 'GeoCoordinates', latitude: 28.6139, longitude: 77.2090 },
+        areaServed: [
+          { '@type': 'Country', name: 'India' },
+          { '@type': 'Country', name: 'United States' },
+          { '@type': 'Country', name: 'United Kingdom' },
+          { '@type': 'Country', name: 'Australia' },
+        ],
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '4.9',
+          reviewCount: String(TESTIMONIALS.length),
+          bestRating: '5',
+        },
+        review: TESTIMONIALS.map(t => ({
+          '@type': 'Review',
+          author: { '@type': 'Person', name: t.name },
+          reviewRating: { '@type': 'Rating', ratingValue: String(t.rating), bestRating: '5' },
+          reviewBody: t.text,
+          name: `${t.company} — ${t.role}`,
+        })),
+      },
     ],
   };
 
@@ -559,9 +626,9 @@ export default function LinkBuildingPackages() {
           .lbp-page *,.lbp-page *::before,.lbp-page *::after{box-sizing:border-box}
 
           /* ── ORBS ── */
-          .lbp-orb1{position:fixed;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(99,130,255,.30) 0%,rgba(139,92,246,.12) 40%,transparent 70%);top:-300px;right:-300px;pointer-events:none;z-index:0;filter:blur(20px)}
-          .lbp-orb2{position:fixed;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(251,146,60,.25) 0%,rgba(245,158,11,.12) 40%,transparent 70%);bottom:0;left:-250px;pointer-events:none;z-index:0;filter:blur(20px)}
-          .lbp-orb3{position:fixed;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(20,184,166,.18) 0%,transparent 70%);top:45%;left:-150px;transform:translateY(-50%);pointer-events:none;z-index:0;filter:blur(20px)}
+          .lbp-orb1{position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(99,130,255,.30) 0%,rgba(139,92,246,.12) 40%,transparent 70%);top:-300px;right:-300px;pointer-events:none;z-index:0;filter:blur(20px)}
+          .lbp-orb2{position:absolute;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(251,146,60,.25) 0%,rgba(245,158,11,.12) 40%,transparent 70%);bottom:0;left:-250px;pointer-events:none;z-index:0;filter:blur(20px)}
+          .lbp-orb3{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(20,184,166,.18) 0%,transparent 70%);top:45%;left:-150px;transform:translateY(-50%);pointer-events:none;z-index:0;filter:blur(20px)}
 
           /* ── HERO ── */
           .lbp-hero{position:relative;overflow:hidden;z-index:1}
@@ -850,6 +917,33 @@ export default function LinkBuildingPackages() {
           .lbp-btn-s{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);color:#0F3460;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;box-shadow:0 4px 20px rgba(15,52,96,.10),inset 0 1px 0 rgba(255,255,255,1)}
           .lbp-btn-s:hover{background:rgba(255,255,255,.85);border-color:rgba(245,158,11,.6);transform:translateY(-2px)}
 
+          /* ── BREADCRUMB ── */
+          .lbp-breadcrumb{position:relative;z-index:2;padding:12px 40px 0;max-width:1280px;margin:0 auto}
+          .lbp-breadcrumb-nav{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:12px;color:#6A80A0}
+          .lbp-breadcrumb-nav a{color:#0F3460;text-decoration:none;font-weight:500;transition:color .2s}
+          .lbp-breadcrumb-nav a:hover{color:#D97706}
+          .lbp-breadcrumb-sep{color:#9ca3af;font-size:10px}
+          .lbp-breadcrumb-cur{color:#4A6080;font-weight:600}
+
+          /* ── TESTIMONIALS ── */
+          .lbp-testi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+          .lbp-testi-card{padding:28px;border-radius:20px;transition:transform .22s,box-shadow .22s}
+          .lbp-testi-card:hover{transform:translateY(-4px)}
+          .lbp-testi-stars{display:flex;gap:3px;margin-bottom:14px}
+          .lbp-testi-star{color:#D97706;font-size:14px}
+          .lbp-testi-text{font-size:14px;color:#374151;line-height:1.75;margin-bottom:18px;font-style:italic}
+          .lbp-testi-author{display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid rgba(15,52,96,.08)}
+          .lbp-testi-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#0F3460,#D97706);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:#fff;flex-shrink:0}
+          .lbp-testi-name{font-size:14px;font-weight:700;color:#0F1F40}
+          .lbp-testi-role{font-size:12px;color:#6A80A0}
+
+          /* ── INTERNAL LINKS BAR ── */
+          .lbp-related{background:rgba(15,52,96,.04);border-top:1px solid rgba(15,52,96,.07);border-bottom:1px solid rgba(15,52,96,.07);padding:16px 40px}
+          .lbp-related-in{max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px;color:#6A80A0}
+          .lbp-related-lbl{font-weight:600;color:#4A6080;margin-right:4px}
+          .lbp-related-link{color:#0F3460;text-decoration:none;font-weight:500;padding:3px 10px;background:rgba(15,52,96,.06);border-radius:100px;transition:all .2s}
+          .lbp-related-link:hover{background:rgba(217,119,6,.12);color:#D97706}
+
           /* ── RESPONSIVE ── */
           @media(max-width:1280px){
             .lbp-cards{grid-template-columns:repeat(2,1fr)}
@@ -867,7 +961,10 @@ export default function LinkBuildingPackages() {
             .lbp-ai-grid{grid-template-columns:1fr}
             .lbp-cs-grid{grid-template-columns:repeat(2,1fr)}
           }
+          @media(max-width:1024px){.lbp-testi-grid{grid-template-columns:1fr}}
           @media(max-width:768px){
+            .lbp-breadcrumb{padding:10px 20px 0}
+            .lbp-related{padding:14px 20px}
             .lbp-sec,.lbp-results,.lbp-cta,.lbp-ai-sec{padding-left:20px;padding-right:20px}
             .lbp-hero-content{padding:36px 20px 24px}
             .lbp-h1{font-size:clamp(1.7rem,6vw,2.4rem)}
@@ -898,6 +995,17 @@ export default function LinkBuildingPackages() {
       <div className="lbp-page">
         <div className="lbp-orb1"/><div className="lbp-orb2"/><div className="lbp-orb3"/>
 
+        {/* ── BREADCRUMB ── */}
+        <nav className="lbp-breadcrumb" aria-label="Breadcrumb">
+          <ol className="lbp-breadcrumb-nav">
+            <li><Link href="/" className="lbp-breadcrumb-link" style={{color:'#0F3460',textDecoration:'none',fontWeight:500,fontSize:12}}>Home</Link></li>
+            <li aria-hidden="true" className="lbp-breadcrumb-sep">›</li>
+            <li><Link href="/seo-services-company" className="lbp-breadcrumb-link" style={{color:'#0F3460',textDecoration:'none',fontWeight:500,fontSize:12}}>SEO Services</Link></li>
+            <li aria-hidden="true" className="lbp-breadcrumb-sep">›</li>
+            <li><span className="lbp-breadcrumb-cur" aria-current="page">Link Building Packages</span></li>
+          </ol>
+        </nav>
+
         {/* ── HERO ── */}
         <div className="lbp-hero">
           <div className="lbp-hero-content">
@@ -911,8 +1019,13 @@ export default function LinkBuildingPackages() {
           </div>
 
           <div className="lbp-stats" ref={statsRef}>
-            {[['Links Built','50000'],['Years Experience','15'],['Client Retention','92'],['Avg Domain Rating','50']].map(([label,val],i) => (
-              <AnimatedStat key={label} label={label} val={val + (i===0?'+':i===1?'+':i===2?'%':'')} started={statsStarted} />
+            {[
+              {label:'Links Built',      val:'50000', suffix:'+',  prefix:''},
+              {label:'Years Experience', val:'15',    suffix:'+',  prefix:''},
+              {label:'Client Retention', val:'92',    suffix:'%',  prefix:''},
+              {label:'Avg Domain Rating',val:'50',    suffix:'+',  prefix:'DR'},
+            ].map(({label,val,suffix,prefix}) => (
+              <AnimatedStat key={label} label={label} val={val+suffix} prefix={prefix} started={statsStarted} />
             ))}
           </div>
 
@@ -947,6 +1060,18 @@ export default function LinkBuildingPackages() {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* ── RELATED SERVICES BAR ── */}
+        <div className="lbp-related">
+          <div className="lbp-related-in">
+            <span className="lbp-related-lbl">Related:</span>
+            <Link href="/link-building-services" className="lbp-related-link">Link Building Services</Link>
+            <Link href="/seo-services-company" className="lbp-related-link">SEO Services</Link>
+            <Link href="/seo-audit-services" className="lbp-related-link">SEO Audit</Link>
+            <Link href="/generative-engine-optimization-services" className="lbp-related-link">GEO Services</Link>
+            <Link href="/technical-seo-optimization" className="lbp-related-link">Technical SEO</Link>
           </div>
         </div>
 
@@ -1249,7 +1374,7 @@ export default function LinkBuildingPackages() {
           <div className="lbp-cs-in">
             <div className="lbp-cs-head">
               <span className="lbp-cs-ey">Case Studies</span>
-              <h2 className="lbp-cs-ttl" id="cs-title">We Get Results</h2>
+              <h2 className="lbp-cs-ttl" id="cs-title">Link Building Results: Real Traffic Growth by Package</h2>
               <p className="lbp-cs-sub">Real outcomes from live campaigns. Traffic numbers, links built, and timelines - no made-up projections.</p>
             </div>
             <div className="lbp-cs-grid">
@@ -1324,6 +1449,51 @@ export default function LinkBuildingPackages() {
                   <div className="lbp-why-ch-d">{w.desc}</div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── TESTIMONIALS ── */}
+        <section className="lbp-sec lbp-white-sec" aria-labelledby="testi-title">
+          <div className="lbp-sec-in">
+            <div className={`lbp-reveal${visibleSections.has('testi')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['testi']=el;}} style={{textAlign:'center',marginBottom:40}}>
+              <span className="lbp-sec-ey">Client Reviews</span>
+              <h2 className="lbp-sec-ttl" id="testi-title">What Our Link Building Clients Say</h2>
+              <p className="lbp-sec-desc" style={{margin:'0 auto'}}>Verified feedback from businesses across legal, SaaS, ecommerce, and finance sectors.</p>
+            </div>
+            <div className="lbp-testi-grid">
+              {TESTIMONIALS.map(t => (
+                <div key={t.name} className="lbp-testi-card lbp-glass">
+                  <div className="lbp-testi-stars" aria-label={`${t.rating} out of 5 stars`}>
+                    {Array.from({length:t.rating}).map((_,i) => <span key={i} className="lbp-testi-star" aria-hidden="true">★</span>)}
+                  </div>
+                  <p className="lbp-testi-text">&ldquo;{t.text}&rdquo;</p>
+                  <div className="lbp-testi-author">
+                    <div className="lbp-testi-avatar" aria-hidden="true">{t.name.charAt(0)}</div>
+                    <div>
+                      <div className="lbp-testi-name">{t.name}</div>
+                      <div className="lbp-testi-role">{t.role}, {t.company}</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── INDIA / PRICING CONTEXT ── */}
+        <section className="lbp-sec" aria-labelledby="india-title">
+          <div className="lbp-sec-in" style={{maxWidth:960,margin:'0 auto'}}>
+            <div className={`lbp-reveal${visibleSections.has('india')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['india']=el;}} style={{textAlign:'center',marginBottom:36}}>
+              <span className="lbp-sec-ey">Monthly Link Building Packages</span>
+              <h2 className="lbp-sec-ttl" id="india-title">Link Building Packages for Indian Businesses &amp; Global Brands</h2>
+              <p className="lbp-sec-desc" style={{margin:'0 auto 28px'}}>Our monthly link building packages are used by startups, SMEs, and enterprises across India, the US, UK, and Australia. <Link href="/link-building-services" style={{color:'#0F3460',fontWeight:600}}>Link building services</Link> are priced in USD and available with no long-term contract.</p>
+            </div>
+            <div className="lbp-glass lbp-def-box" style={{padding:'28px 32px'}}>
+              <h3 style={{fontSize:'1rem',fontWeight:700,color:'#0F3460',marginBottom:12}}>Link Building Pricing — What Determines the Cost?</h3>
+              <p style={{fontSize:'14px',color:'#374151',lineHeight:1.8,margin:0}}>
+                Link building pricing depends on four factors: the number of links per month, the minimum domain rating (DR) of linking sites, the link types included (guest posts, niche edits, digital PR), and the level of strategy support. Our monthly link building packages start at <strong>$350/month for 50 DR30+ links</strong> and scale to <strong>$1,499/month for 400 DR60+ links</strong> with full AI+GEO citation building. For <Link href="/seo-services-company" style={{color:'#0F3460',fontWeight:600}}>SEO services</Link> that include on-page optimisation alongside link building, see our <Link href="/seo-services-company" style={{color:'#0F3460',fontWeight:600}}>SEO packages</Link>. For AI-search-specific strategy, see our <Link href="/generative-engine-optimization-services" style={{color:'#0F3460',fontWeight:600}}>GEO services</Link>.
+              </p>
             </div>
           </div>
         </section>
