@@ -38,19 +38,20 @@ const PLANS = [
   {
     name: 'Starter',
     slug: 'starter',
-    monthlyPrice: 250,
-    yearlyPrice: 208,
-    yearlySave: 504,
+    monthlyPrice: 350,
+    yearlyPrice: 291,
+    yearlySave: 708,
     desc: 'The perfect entry point for small businesses and startups beginning their authority journey.',
     popular: false,
     elite: false,
     badge: null,
     accentColor: '#3B82F6',
     features: [
-      '5 guest post links per month',
+      '50 backlinks per month',
       'DR30+ / DA20+ domains',
       'Spam Score below 3%',
       '100% manual outreach',
+      'Guest post placements',
       'Niche-relevant placements only',
       'Content written for you',
       'Natural anchor text',
@@ -72,9 +73,10 @@ const PLANS = [
     badge: 'Most Popular',
     accentColor: '#D97706',
     features: [
-      '10 links per month (guest posts + niche edits)',
+      '100 backlinks per month',
       'DR40+ / DA30+ domains',
       'Spam Score below 2%',
+      'Guest posts + niche edits',
       'Manual outreach + relationship building',
       'Full anchor text strategy',
       'Competitor backlink gap analysis',
@@ -97,8 +99,9 @@ const PLANS = [
     badge: null,
     accentColor: '#059669',
     features: [
-      '20 links per month (guest posts + niche edits + digital PR)',
+      '200 backlinks per month',
       'DR50+ / DA40+ domains',
+      'Guest posts + niche edits + digital PR',
       'Premium publication placements',
       'AEO-optimised anchor text strategy',
       'AI citation building (foundational)',
@@ -122,7 +125,7 @@ const PLANS = [
     badge: 'AI+GEO Leader',
     accentColor: '#8B5CF6',
     features: [
-      '30+ premium links per month',
+      '400 backlinks per month',
       'DR60+ / DA50+ - AI-cited sources',
       'All link types + AI authority placements',
       'LLM citation source building',
@@ -1071,7 +1074,7 @@ export default function LinkBuildingPackages() {
                 <thead>
                   <tr>
                     <th>Feature</th>
-                    <th>Starter - $250/mo</th>
+                    <th>Starter - $350/mo</th>
                     <th>Growth - $499/mo</th>
                     <th>Authority - $899/mo</th>
                     <th>AI+GEO Elite - $1,499/mo</th>
@@ -1079,7 +1082,7 @@ export default function LinkBuildingPackages() {
                 </thead>
                 <tbody>
                   {[
-                    ['Links per month','5','10','20','30+'],
+                    ['Backlinks per month','50','100','200','400'],
                     ['Min. Domain Rating (DR)','DR30+','DR40+','DR50+','DR60+'],
                     ['Min. Domain Authority (DA)','DA20+','DA30+','DA40+','DA50+'],
                     ['Spam Score threshold','Below 3%','Below 2%','Below 2%','Below 1%'],
@@ -1183,25 +1186,6 @@ export default function LinkBuildingPackages() {
         </section>
 
         {/* ── RESULTS ── */}
-        <section className="lbp-results" aria-labelledby="results-title">
-          <div className="lbp-res-orb" aria-hidden="true"/>
-          <div className="lbp-res-in">
-            <span className="lbp-res-ey">Client Results</span>
-            <h2 className="lbp-res-ttl" id="results-title">Real Outcomes from Real Campaigns</h2>
-            <p className="lbp-res-sub">Representative results from active clients. Individual results vary by niche, competition, and starting authority.</p>
-            <div className="lbp-res-grid">
-              {RESULTS.map(r => (
-                <div key={r.metric} className="lbp-res-card">
-                  <div className="lbp-res-metric">{r.metric}</div>
-                  <div className="lbp-res-label">{r.label}</div>
-                  <div className="lbp-res-detail">{r.detail}</div>
-                  <div className="lbp-res-sub2">{r.sub}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* ── CASE STUDIES ── */}
         <section className="lbp-cs-sec" aria-labelledby="cs-title">
           <div className="lbp-cs-in">
@@ -1309,38 +1293,12 @@ export default function LinkBuildingPackages() {
           </div>
         </section>
 
-        {/* ── AUTHOR BAR (E-E-A-T) ── */}
-        <div className="lbp-author-bar" role="complementary" aria-label="Content authorship">
-          <div className="lbp-author-inner">
-            <div className="lbp-author-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
-              </svg>
-            </div>
-            <div className="lbp-author-body">
-              <div className="lbp-author-name">1Solutions Link Building Team - Reviewed July 2026</div>
-              <div className="lbp-author-creds">
-                {['15+ Years Link Building','50,000+ Links Built','1,000+ Campaigns','AI+GEO Certified'].map(c => (
-                  <span key={c} className="lbp-author-cred">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                    {c}
-                  </span>
-                ))}
-              </div>
-              <p className="lbp-author-text">Written and reviewed by the 1Solutions Link Building Team - founded 2008, with 15+ years of manual outreach expertise across 1,000+ campaigns in B2B, ecommerce, SaaS, legal, healthcare, and finance. Updated to reflect current Google E-E-A-T guidelines, AI Overview citation research, and 2025 domain rating benchmarks. All statistics independently sourced from Backlinko, Ahrefs, SE Ranking, and Moz.</p>
-            </div>
-          </div>
-        </div>
-
         {/* ── CTA ── */}
         <section className="lbp-cta" aria-labelledby="cta-title">
           <div className="lbp-cta-in">
             <span className="lbp-sec-ey" style={{display:'block',textAlign:'center',marginBottom:16}}>Not sure which plan is right for you?</span>
             <h2 className="lbp-cta-t" id="cta-title">Get a Free Backlink Gap Analysis</h2>
             <p className="lbp-cta-s">Share your domain and top competitors - we&rsquo;ll analyse the backlink gap, assess your AI citation presence, and recommend exactly which package will close the gap fastest.</p>
-            <div className="lbp-pricing-note">
-              <strong>How much does link building cost?</strong> Our packages start from <strong>$499/month</strong> for 5 DR40+ guest post placements. The Growth plan at <strong>$899/month</strong> is our most popular for businesses targeting competitive keywords. For brands competing in AI search, the <strong>AI+GEO Elite at $2,499/month</strong> builds citation authority across Google AI Overviews, Perplexity, and ChatGPT alongside traditional rankings. Custom plans available - <Link href="/contact-us" style={{color:'#D97706',fontWeight:600}}>contact us to discuss</Link>.
-            </div>
             <div className="lbp-btns">
               <Link href="/contact-us" className="lbp-btn-p">
                 Request a Free Backlink Audit
