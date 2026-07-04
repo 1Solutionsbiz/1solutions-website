@@ -1071,6 +1071,10 @@ export default function LinkBuildingPackages() {
                     <div className="lbp-rzp-wrap">
                       <RazorpayButton buttonId="pl_T9SSBF0E80x93O" />
                     </div>
+                  ) : plan.slug === 'authority' ? (
+                    <div className="lbp-rzp-wrap">
+                      <RazorpayButton buttonId="pl_T9SVQSBcNAfBSD" />
+                    </div>
                   ) : (
                     <Link href="/contact-us" className="lbp-cta-card">Get Started →</Link>
                   )}
