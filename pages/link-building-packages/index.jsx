@@ -117,7 +117,7 @@ const PLANS = [
     accentColor: '#8B5CF6',
     features: [
       '35+ premium links per month',
-      'DR65+ — AI-cited source domains',
+      'DR65+ - AI-cited source domains',
       'All link types + AI authority placements',
       'LLM citation source building',
       'Google AI Overview signal building',
@@ -149,7 +149,7 @@ const AI_PILLARS = [
   {
     icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1',
     title: 'Citation-Worthy Placements',
-    desc: 'Links from sources AI engines already cite — high-traffic editorial publications, industry media, .edu and .gov adjacent sites — transfer citation authority. We target these placements specifically for the AI+GEO Elite plan.',
+    desc: 'Links from sources AI engines already cite - high-traffic editorial publications, industry media, .edu and .gov adjacent sites - transfer citation authority. We target these placements specifically for the AI+GEO Elite plan.',
     stat: '8+',
     statLabel: 'AI platforms monitored for citation signals',
   },
@@ -167,14 +167,14 @@ const EEAT_SIGNALS = [
     letter: 'E',
     word: 'Experience',
     color: '#3B82F6',
-    desc: 'First-hand expertise signals built through editorial placements where real practitioners share case studies, outcomes, and professional opinions — not generic content.',
+    desc: 'First-hand expertise signals built through editorial placements where real practitioners share case studies, outcomes, and professional opinions - not generic content.',
     links: 'Practitioner bylines, case study features, client outcome coverage',
   },
   {
     letter: 'E',
     word: 'Expertise',
     color: '#D97706',
-    desc: 'Thought leadership links from niche-specific publications that establish topical authority — the foundation of both Google ranking signals and AI engine citation selection.',
+    desc: 'Thought leadership links from niche-specific publications that establish topical authority - the foundation of both Google ranking signals and AI engine citation selection.',
     links: 'Industry publication guest posts, expert commentary features, technical guides',
   },
   {
@@ -188,7 +188,7 @@ const EEAT_SIGNALS = [
     letter: 'T',
     word: 'Trustworthiness',
     color: '#8B5CF6',
-    desc: 'Trust signals from editorially rigorous publications with transparent editorial standards, real authors, and genuine organic audiences — the trust signals AI engines use most.',
+    desc: 'Trust signals from editorially rigorous publications with transparent editorial standards, real authors, and genuine organic audiences - the trust signals AI engines use most.',
     links: 'No-PBN policy, spam score filter, dofollow verified, editorial standard check',
   },
 ];
@@ -197,25 +197,25 @@ const METHODOLOGY = [
   {
     n: '01',
     title: 'Discovery & Strategy',
-    desc: 'We audit your existing backlink profile and analyse your top 5 competitors to identify authority gaps and the highest-value link opportunities — including AI citation source analysis for Elite plan clients.',
+    desc: 'We audit your existing backlink profile and analyse your top 5 competitors to identify authority gaps and the highest-value link opportunities - including AI citation source analysis for Elite plan clients.',
     detail: ['Current backlink profile audit', 'Competitor link gap analysis', 'Keyword-to-page link targets', 'Anchor text strategy map'],
   },
   {
     n: '02',
     title: 'Prospect Research & Vetting',
-    desc: 'We identify prospective link sites using 15+ quality signals — DR, organic traffic, niche relevance, spam score, editorial standards, link velocity, and AI citation frequency.',
+    desc: 'We identify prospective link sites using 15+ quality signals - DR, organic traffic, niche relevance, spam score, editorial standards, link velocity, and AI citation frequency.',
     detail: ['DR + traffic threshold checks', 'Spam score < 2% filter', 'Niche relevance scoring', 'AI citation frequency (Elite)'],
   },
   {
     n: '03',
     title: 'Manual Outreach & Relationships',
-    desc: 'Our outreach team contacts site editors through personalised pitches — never automated templates. We build genuine relationships for consistent, repeatable placements at scale.',
+    desc: 'Our outreach team contacts site editors through personalised pitches - never automated templates. We build genuine relationships for consistent, repeatable placements at scale.',
     detail: ['Personalised outreach pitches', 'Editor relationship management', 'No automated mass outreach', 'Positive reply rate tracking'],
   },
   {
     n: '04',
     title: 'Content Creation & Review',
-    desc: "For guest posts, our writers create original, expert-level content written for the target publication's audience — not repurposed content. E-E-A-T signals are baked into every piece.",
+    desc: "For guest posts, our writers create original, expert-level content written for the target publication's audience - not repurposed content. E-E-A-T signals are baked into every piece.",
     detail: ['Original article per placement', 'E-E-A-T signal integration', 'Editorial guideline compliance', 'Natural link integration'],
   },
   {
@@ -241,7 +241,7 @@ const QUALITY_SIGNALS = [
   {
     icon: 'M13 10V3L4 14h7v7l9-11h-7z',
     title: 'Real Organic Traffic',
-    desc: 'We only place links on sites with genuine organic search traffic — typically 1,000+ monthly organic visits minimum. Low-traffic sites provide no authority signal.',
+    desc: 'We only place links on sites with genuine organic search traffic - typically 1,000+ monthly organic visits minimum. Low-traffic sites provide no authority signal.',
   },
   {
     icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9',
@@ -281,16 +281,16 @@ const INDUSTRIES = [
 ];
 
 const RESULTS = [
-  { metric: 'DR28→DR52', label: 'Domain authority growth in 8 months', detail: 'SaaS startup — Growth package', sub: '4 commercial keywords moved to page 1' },
-  { metric: '340%', label: 'Organic traffic increase over 12 months', detail: 'Ecommerce — Authority package', sub: '8,200 → 36,000 monthly sessions' },
-  { metric: '4 Citations', label: 'AI Overview citations in 90 days', detail: 'B2B brand — AI+GEO Elite package', sub: 'Perplexity + ChatGPT + Google AIO citations secured' },
+  { metric: 'DR28→DR52', label: 'Domain authority growth in 8 months', detail: 'SaaS startup - Growth package', sub: '4 commercial keywords moved to page 1' },
+  { metric: '340%', label: 'Organic traffic increase over 12 months', detail: 'Ecommerce - Authority package', sub: '8,200 → 36,000 monthly sessions' },
+  { metric: '4 Citations', label: 'AI Overview citations in 90 days', detail: 'B2B brand - AI+GEO Elite package', sub: 'Perplexity + ChatGPT + Google AIO citations secured' },
 ];
 
 const WHYS = [
   {
     icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z',
     title: '100% Manual Outreach',
-    desc: 'Every link is acquired through human-led outreach. No automated tools, no scraped lists, no mass email blasts — genuine editor relationships at scale.',
+    desc: 'Every link is acquired through human-led outreach. No automated tools, no scraped lists, no mass email blasts - genuine editor relationships at scale.',
   },
   {
     icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z',
@@ -300,7 +300,7 @@ const WHYS = [
   {
     icon: 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z',
     title: 'AI+GEO Ready',
-    desc: 'Our AI+GEO Elite plan targets the sources ChatGPT, Perplexity, and Google AI Overviews cite — building citation authority alongside traditional rankings.',
+    desc: 'Our AI+GEO Elite plan targets the sources ChatGPT, Perplexity, and Google AI Overviews cite - building citation authority alongside traditional rankings.',
   },
   {
     icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
@@ -310,7 +310,7 @@ const WHYS = [
   {
     icon: 'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6',
     title: 'Strategy-First Approach',
-    desc: "We don't just build links — we build the right links, to the right pages, with the right anchors, based on your ranking targets, backlink gap, and AI visibility goals.",
+    desc: "We don't just build links - we build the right links, to the right pages, with the right anchors, based on your ranking targets, backlink gap, and AI visibility goals.",
   },
   {
     icon: 'M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3',
@@ -320,26 +320,26 @@ const WHYS = [
 ];
 
 const FAQS = [
-  { q: 'What is link building and why does it matter for SEO?', a: "Link building is the process of acquiring hyperlinks from other websites that point back to yours. Google treats these backlinks as votes of confidence — a link from a credible, high-authority site signals to Google that your content is trustworthy and valuable. The number and quality of backlinks pointing to your domain is one of the strongest ranking factors in Google's algorithm. Without a strong backlink profile, it is very difficult to rank competitively for high-value keywords, regardless of how well your on-page content is optimised." },
-  { q: 'What are link building packages?', a: "Link building packages are monthly subscription plans that give you a set number of high-authority backlinks acquired through manual outreach each month. Unlike one-off link purchases, packages provide a consistent, compounding backlink acquisition strategy. Each package specifies the number of links per month, minimum domain rating (DR) thresholds, and link types included. A monthly package is the right approach because Google's algorithm rewards consistent, natural-looking link growth over time — not sudden spikes." },
-  { q: 'How do backlinks affect AI search citations (GEO)?', a: 'Backlinks are a primary input into the domain authority metrics that AI engines — Google AI Overviews, ChatGPT Search, Perplexity, and Gemini — use to evaluate source credibility. Sites with higher DR and more referring domains are consistently chosen as citation sources more frequently than low-authority sites. Studies show sites with DR55+ receive significantly more AI Overview citations. Building a strong backlink profile is therefore foundational to both traditional Google rankings AND AI citation presence, making link building essential for Generative Engine Optimisation (GEO).' },
-  { q: 'What is the AI+GEO Elite link building package?', a: 'The AI+GEO Elite package is our highest-tier plan designed specifically for brands that need to dominate both traditional search and AI-generated answers. In addition to 35+ DR65+ links per month, it includes targeted placements on sources that AI engines actively cite — high-traffic editorial publications, industry media, and authoritative niche sites that appear frequently in ChatGPT, Perplexity, and Google AI Overview responses. It also includes a brand mention campaign (linked and unlinked citations), expert author E-E-A-T placements, and monthly AI visibility reporting tracking your citation frequency across major AI platforms.' },
-  { q: 'How do links help me appear in Google AI Overviews?', a: 'Google AI Overviews select citation sources based on a combination of factors: content relevance to the query, E-E-A-T signals (Expertise, Experience, Authoritativeness, Trustworthiness), domain authority as measured by referring domains and DR, and whether the content is cited by other authoritative sources. High-quality backlinks from niche-relevant, high-DR sites directly improve your domain authority and E-E-A-T signals — both of which increase the probability of your content being selected as a citation source. The AI+GEO Elite plan specifically targets placements on the types of sites Google most frequently cites in AI Overviews.' },
-  { q: 'Does Perplexity use backlinks as a ranking signal?', a: 'Perplexity relies on web crawling and citation selection algorithms that weight source authority, topical relevance, and content comprehensiveness. While Perplexity does not publish its exact algorithm, evidence from citation analysis shows a strong correlation between domain authority (which is directly influenced by backlinks) and Perplexity citation frequency. Additionally, links from sources that Perplexity already trusts — major publications, established industry blogs, .edu sites — appear to create a citation signal. Our AI+GEO Elite plan targets these citation-authority sources specifically.' },
-  { q: 'What is Domain Rating (DR) and why does it matter?', a: "Domain Rating (DR) is a metric developed by Ahrefs that measures the strength of a website's backlink profile on a scale from 0 to 100. A higher DR indicates a stronger, more authoritative domain. In our packages, we specify minimum DR thresholds (DR40+, DR50+, DR60+, DR65+) to ensure the links we build come from genuinely authoritative websites. We use DR alongside other qualitative signals — niche relevance, organic traffic, editorial standards, and AI citation frequency — to evaluate each prospective link placement site." },
-  { q: 'What types of links do you build?', a: 'We build three primary types of links: Guest posts — original content written and published on third-party websites with a contextual link back to your site. Niche edits — placements of your link within existing, already-indexed content on relevant authority sites. Digital PR — coverage in online publications, news sites, and industry media (Authority and Elite plans). On the AI+GEO Elite plan, we also build AI authority placements specifically targeting sources that AI engines frequently cite, plus brand mention campaigns for entity recognition.' },
-  { q: 'What is E-E-A-T and how does link building improve it?', a: "E-E-A-T stands for Experience, Expertise, Authoritativeness, and Trustworthiness — the four dimensions Google uses to evaluate content quality and source credibility. Link building directly improves E-E-A-T by: building Authoritativeness through editorial links from respected industry publications; establishing Expertise through guest post placements where subject-matter experts publish original content; building Trustworthiness through links from vetted, editorially-rigorous sites with real traffic and genuine editorial standards. Strong E-E-A-T is also a prerequisite for AI citation selection, making it central to both Google rankings and GEO strategy." },
-  { q: 'What is AEO (Answer Engine Optimisation) and how does link building fit in?', a: "Answer Engine Optimisation (AEO) is the practice of optimising content to appear as direct answers in search engines and AI assistants — voice search, featured snippets, Google AI Overviews, and AI chatbots. Link building supports AEO by building the domain authority and E-E-A-T signals that make search engines and AI models select your content as a trustworthy answer source. Anchor text strategy in our packages is also designed with AEO in mind — using natural language anchors that match how people phrase questions, improving the relevance signal for question-type queries." },
+  { q: 'What is link building and why does it matter for SEO?', a: "Link building is the process of acquiring hyperlinks from other websites that point back to yours. Google treats these backlinks as votes of confidence - a link from a credible, high-authority site signals to Google that your content is trustworthy and valuable. The number and quality of backlinks pointing to your domain is one of the strongest ranking factors in Google's algorithm. Without a strong backlink profile, it is very difficult to rank competitively for high-value keywords, regardless of how well your on-page content is optimised." },
+  { q: 'What are link building packages?', a: "Link building packages are monthly subscription plans that give you a set number of high-authority backlinks acquired through manual outreach each month. Unlike one-off link purchases, packages provide a consistent, compounding backlink acquisition strategy. Each package specifies the number of links per month, minimum domain rating (DR) thresholds, and link types included. A monthly package is the right approach because Google's algorithm rewards consistent, natural-looking link growth over time - not sudden spikes." },
+  { q: 'How do backlinks affect AI search citations (GEO)?', a: 'Backlinks are a primary input into the domain authority metrics that AI engines - Google AI Overviews, ChatGPT Search, Perplexity, and Gemini - use to evaluate source credibility. Sites with higher DR and more referring domains are consistently chosen as citation sources more frequently than low-authority sites. Studies show sites with DR55+ receive significantly more AI Overview citations. Building a strong backlink profile is therefore foundational to both traditional Google rankings AND AI citation presence, making link building essential for Generative Engine Optimisation (GEO).' },
+  { q: 'What is the AI+GEO Elite link building package?', a: 'The AI+GEO Elite package is our highest-tier plan designed specifically for brands that need to dominate both traditional search and AI-generated answers. In addition to 35+ DR65+ links per month, it includes targeted placements on sources that AI engines actively cite - high-traffic editorial publications, industry media, and authoritative niche sites that appear frequently in ChatGPT, Perplexity, and Google AI Overview responses. It also includes a brand mention campaign (linked and unlinked citations), expert author E-E-A-T placements, and monthly AI visibility reporting tracking your citation frequency across major AI platforms.' },
+  { q: 'How do links help me appear in Google AI Overviews?', a: 'Google AI Overviews select citation sources based on a combination of factors: content relevance to the query, E-E-A-T signals (Expertise, Experience, Authoritativeness, Trustworthiness), domain authority as measured by referring domains and DR, and whether the content is cited by other authoritative sources. High-quality backlinks from niche-relevant, high-DR sites directly improve your domain authority and E-E-A-T signals - both of which increase the probability of your content being selected as a citation source. The AI+GEO Elite plan specifically targets placements on the types of sites Google most frequently cites in AI Overviews.' },
+  { q: 'Does Perplexity use backlinks as a ranking signal?', a: 'Perplexity relies on web crawling and citation selection algorithms that weight source authority, topical relevance, and content comprehensiveness. While Perplexity does not publish its exact algorithm, evidence from citation analysis shows a strong correlation between domain authority (which is directly influenced by backlinks) and Perplexity citation frequency. Additionally, links from sources that Perplexity already trusts - major publications, established industry blogs, .edu sites - appear to create a citation signal. Our AI+GEO Elite plan targets these citation-authority sources specifically.' },
+  { q: 'What is Domain Rating (DR) and why does it matter?', a: "Domain Rating (DR) is a metric developed by Ahrefs that measures the strength of a website's backlink profile on a scale from 0 to 100. A higher DR indicates a stronger, more authoritative domain. In our packages, we specify minimum DR thresholds (DR40+, DR50+, DR60+, DR65+) to ensure the links we build come from genuinely authoritative websites. We use DR alongside other qualitative signals - niche relevance, organic traffic, editorial standards, and AI citation frequency - to evaluate each prospective link placement site." },
+  { q: 'What types of links do you build?', a: 'We build three primary types of links: Guest posts - original content written and published on third-party websites with a contextual link back to your site. Niche edits - placements of your link within existing, already-indexed content on relevant authority sites. Digital PR - coverage in online publications, news sites, and industry media (Authority and Elite plans). On the AI+GEO Elite plan, we also build AI authority placements specifically targeting sources that AI engines frequently cite, plus brand mention campaigns for entity recognition.' },
+  { q: 'What is E-E-A-T and how does link building improve it?', a: "E-E-A-T stands for Experience, Expertise, Authoritativeness, and Trustworthiness - the four dimensions Google uses to evaluate content quality and source credibility. Link building directly improves E-E-A-T by: building Authoritativeness through editorial links from respected industry publications; establishing Expertise through guest post placements where subject-matter experts publish original content; building Trustworthiness through links from vetted, editorially-rigorous sites with real traffic and genuine editorial standards. Strong E-E-A-T is also a prerequisite for AI citation selection, making it central to both Google rankings and GEO strategy." },
+  { q: 'What is AEO (Answer Engine Optimisation) and how does link building fit in?', a: "Answer Engine Optimisation (AEO) is the practice of optimising content to appear as direct answers in search engines and AI assistants - voice search, featured snippets, Google AI Overviews, and AI chatbots. Link building supports AEO by building the domain authority and E-E-A-T signals that make search engines and AI models select your content as a trustworthy answer source. Anchor text strategy in our packages is also designed with AEO in mind - using natural language anchors that match how people phrase questions, improving the relevance signal for question-type queries." },
   { q: 'How long does it take to see results from link building?', a: 'Link building results take time to manifest because Google needs to crawl and index new links, and domain authority gains translate to ranking improvements over time. Typically: new links start being indexed within 2 to 6 weeks; domain authority improvements are visible within 2 to 4 months; ranking improvements for target keywords are typically observable within 3 to 6 months; significant organic traffic growth occurs within 6 to 9 months. AI citation improvements on the Elite plan are typically observable within 4 to 10 weeks as new placements on AI-cited sources are crawled and processed.' },
   { q: 'How many links per month do I need?', a: "The right number depends on your current domain authority compared to target competitors and keyword competitiveness. For markets where top competitors have DR50+ with 200–500 referring domains, we recommend the Growth package (12 links/month) as a minimum. For highly competitive markets (finance, legal, SaaS) with DR70+ competitors, Authority (25 links/month) is the right starting point. For brands also competing in AI search, the AI+GEO Elite plan (35+ links/month) provides the velocity needed to build AI citation presence alongside traditional rankings. We perform a free backlink gap analysis before recommending." },
   { q: 'Can I see the links you build each month?', a: 'Yes. Every link is documented in your live link tracker (Google Sheets). The monthly report includes: the URL of the page where your link appears; the anchor text used; the DR of the linking domain; the estimated organic traffic; the date the link went live; and the target page on your site. AI+GEO Elite clients also receive a monthly AI visibility report tracking citation appearances across ChatGPT, Perplexity, and Google AI Overviews.' },
-  { q: 'Is link building safe?', a: "White-hat link building using manual outreach and editorial placements on genuine websites is safe and exactly what Google recommends. Risks come from low-quality tactics: buying links from link farms, using PBNs, creating spammy directories, or link exchange schemes — none of which we use. All links come from real websites with genuine organic traffic, editorial standards, and topical relevance. Growth and above plans include a disavow audit if you have previously received a manual penalty." },
-  { q: 'What happens if a link goes down?', a: 'If a link we build goes down within 90 days of delivery — due to the publisher removing the article, changing the URL, or the site going offline — we replace it at no additional cost. We track every live link on an ongoing basis and flag removals in your monthly report. Our 90-day replacement policy is industry-leading.' },
-  { q: 'Do you offer white-label link building?', a: 'Yes. We offer white-label link building for SEO agencies and digital marketing companies. All reports and communications are unbranded — your clients see only your agency branding. We currently have over 30 agency partners. For custom volumes (50+ links per month across multiple client accounts), contact us for agency pricing.' },
+  { q: 'Is link building safe?', a: "White-hat link building using manual outreach and editorial placements on genuine websites is safe and exactly what Google recommends. Risks come from low-quality tactics: buying links from link farms, using PBNs, creating spammy directories, or link exchange schemes - none of which we use. All links come from real websites with genuine organic traffic, editorial standards, and topical relevance. Growth and above plans include a disavow audit if you have previously received a manual penalty." },
+  { q: 'What happens if a link goes down?', a: 'If a link we build goes down within 90 days of delivery - due to the publisher removing the article, changing the URL, or the site going offline - we replace it at no additional cost. We track every live link on an ongoing basis and flag removals in your monthly report. Our 90-day replacement policy is industry-leading.' },
+  { q: 'Do you offer white-label link building?', a: 'Yes. We offer white-label link building for SEO agencies and digital marketing companies. All reports and communications are unbranded - your clients see only your agency branding. We currently have over 30 agency partners. For custom volumes (50+ links per month across multiple client accounts), contact us for agency pricing.' },
   { q: 'What anchor text strategy do you use?', a: 'We use a diversified anchor text strategy to keep link profiles safe: roughly 30% exact-match or partial-match keyword anchors; 40% branded anchors; 20% generic anchors; and 10% naked URL anchors. For AEO, we also incorporate natural-language question anchors that align with voice search and AI answer patterns. We build and refine an anchor text map at the start of your campaign and update it each month based on your existing profile.' },
-  { q: 'Do you offer custom link building plans?', a: "If our standard packages do not fit your exact requirements — for example, 40 links per month, only DR60+ placements, or specific publication targets — we can build a fully custom plan. Contact us with your requirements and we will provide a custom proposal within 48 hours. Custom plans are available on a monthly or project basis." },
-  { q: 'Can you perform a backlink gap analysis before I commit?', a: "Yes. A backlink gap analysis compares your referring domain count, average DR, and link velocity against your top 3–5 competitors. We offer a free backlink gap analysis as part of our pre-sales process — no commitment required. Share your domain and top 3 competitors and we'll return a gap analysis report within 48 hours." },
-  { q: 'What contract length is required?', a: "Monthly plans require no long-term contract — just 30 days' notice to cancel. Yearly plans are paid upfront (saving 17%) and can be adjusted mid-year in exceptional circumstances. There is no setup fee on any plan. We recommend a minimum 3-month commitment to see meaningful results, but we do not lock you into that contractually." },
+  { q: 'Do you offer custom link building plans?', a: "If our standard packages do not fit your exact requirements - for example, 40 links per month, only DR60+ placements, or specific publication targets - we can build a fully custom plan. Contact us with your requirements and we will provide a custom proposal within 48 hours. Custom plans are available on a monthly or project basis." },
+  { q: 'Can you perform a backlink gap analysis before I commit?', a: "Yes. A backlink gap analysis compares your referring domain count, average DR, and link velocity against your top 3–5 competitors. We offer a free backlink gap analysis as part of our pre-sales process - no commitment required. Share your domain and top 3 competitors and we'll return a gap analysis report within 48 hours." },
+  { q: 'What contract length is required?', a: "Monthly plans require no long-term contract - just 30 days' notice to cancel. Yearly plans are paid upfront (saving 17%) and can be adjusted mid-year in exceptional circumstances. There is no setup fee on any plan. We recommend a minimum 3-month commitment to see meaningful results, but we do not lock you into that contractually." },
 ];
 
 const STATS = [
@@ -462,7 +462,7 @@ export default function LinkBuildingPackages() {
         <meta name="description" content="White-hat link building packages from $499/month. Manual outreach, DR40–DR65+ guest posts, niche edits, digital PR, and AI+GEO citation building for Google AI Overviews, Perplexity & ChatGPT." />
         <meta name="keywords" content="link building packages, link building pricing, AI link building, GEO link building, backlink packages, guest post packages, link building plans, white-hat link building, AI citation building, AEO link building" />
         <link rel="canonical" href="https://www.1solutions.biz/link-building-packages/" />
-        <meta property="og:title" content="Link Building Packages 2025 — AI+GEO & SEO Backlinks | 1Solutions" />
+        <meta property="og:title" content="Link Building Packages 2025 - AI+GEO & SEO Backlinks | 1Solutions" />
         <meta property="og:description" content="White-hat link building packages from $499/month. DR40–DR65+ guest posts, niche edits, digital PR, and AI+GEO citation building. Live link tracker on every plan." />
         <meta property="og:url" content="https://www.1solutions.biz/link-building-packages/" />
         <meta property="og:type" content="website" />
@@ -784,7 +784,7 @@ export default function LinkBuildingPackages() {
           <div className="lbp-hero-content">
             <span className="lbp-eyebrow">White-Hat Link Building · DR40–DR65+ · Manual Outreach · AI+GEO Ready</span>
             <h1 className="lbp-h1">Link Building Packages That Rank You on Google and Get You Cited by AI</h1>
-            <p className="lbp-hero-sub">White-hat link building packages from $499/month. Guest posts, niche edits, digital PR, and AI+GEO citation building — 100% manual outreach, every link tracked live. Built for both traditional rankings and AI-generated answers.</p>
+            <p className="lbp-hero-sub">White-hat link building packages from $499/month. Guest posts, niche edits, digital PR, and AI+GEO citation building - 100% manual outreach, every link tracked live. Built for both traditional rankings and AI-generated answers.</p>
             <Link href="/contact-us" className="lbp-btn-hero">Get a Free Backlink Audit</Link>
             <Link href="#pricing" className="lbp-btn-outline">View Packages</Link>
           </div>
@@ -839,11 +839,11 @@ export default function LinkBuildingPackages() {
             </div>
             <div className="lbp-glass lbp-def-box">
               <p className="lbp-def-intro">
-                <strong>Link building packages</strong> are monthly subscription plans that deliver a fixed number of high-authority backlinks to your website each month through manual outreach to real website editors and publishers. Each package specifies the volume of links, minimum domain rating (DR) threshold, and link types included — giving you a predictable, compounding backlink acquisition programme. Google treats links from authoritative, niche-relevant sites as editorial endorsements, and pages with the strongest backlink profiles consistently rank highest for competitive keywords. In 2025, this authority signal also determines how frequently AI engines — Google AI Overviews, ChatGPT Search, Perplexity — cite your content in generated answers.
+                <strong>Link building packages</strong> are monthly subscription plans that deliver a fixed number of high-authority backlinks to your website each month through manual outreach to real website editors and publishers. Each package specifies the volume of links, minimum domain rating (DR) threshold, and link types included - giving you a predictable, compounding backlink acquisition programme. Google treats links from authoritative, niche-relevant sites as editorial endorsements, and pages with the strongest backlink profiles consistently rank highest for competitive keywords. In 2025, this authority signal also determines how frequently AI engines - Google AI Overviews, ChatGPT Search, Perplexity - cite your content in generated answers.
               </p>
               <div className="lbp-def-aspects">
                 {[
-                  { t: 'Why monthly packages?', d: "Google rewards consistent, natural-looking link growth. A steady monthly programme builds authority signals in a pattern that mirrors how real sites earn links organically — and compounds dramatically over 6–12 months." },
+                  { t: 'Why monthly packages?', d: "Google rewards consistent, natural-looking link growth. A steady monthly programme builds authority signals in a pattern that mirrors how real sites earn links organically - and compounds dramatically over 6–12 months." },
                   { t: 'Links + AI citations?', d: 'AI engines use domain authority as a trust signal when selecting sources to cite. High DR (driven by quality backlinks) + topical relevance + E-E-A-T signals = higher probability of being cited in Google AI Overviews, Perplexity, and ChatGPT.' },
                   { t: 'Guest posts vs. niche edits?', d: 'Guest posts are new articles published on third-party sites with your link included. Niche edits insert your link into existing, indexed content. Both are valuable; the best strategy combines them for maximum authority distribution.' },
                 ].map(a => (
@@ -863,7 +863,7 @@ export default function LinkBuildingPackages() {
             <div className={`lbp-reveal${visibleSections.has('why')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['why']=el;}} style={{textAlign:'center',marginBottom:40}}>
               <span className="lbp-sec-ey">The Data</span>
               <h2 className="lbp-sec-ttl" id="why-title">Why Link Building Matters in 2025</h2>
-              <p className="lbp-sec-desc" style={{margin:'0 auto'}}>Links remain the single strongest off-page ranking signal in Google&rsquo;s algorithm — and the primary authority input for AI search citation selection.</p>
+              <p className="lbp-sec-desc" style={{margin:'0 auto'}}>Links remain the single strongest off-page ranking signal in Google&rsquo;s algorithm - and the primary authority input for AI search citation selection.</p>
             </div>
             <div className="lbp-why-grid">
               {WHY_MATTERS.map(w => (
@@ -918,7 +918,7 @@ export default function LinkBuildingPackages() {
             <div className={`lbp-reveal${visibleSections.has('eeat')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['eeat']=el;}} style={{textAlign:'center',marginBottom:44}}>
               <span className="lbp-sec-ey">Google Quality Guidelines</span>
               <h2 className="lbp-sec-ttl" id="eeat-title">E-E-A-T Authority Through Strategic Link Building</h2>
-              <p className="lbp-sec-desc" style={{margin:'0 auto'}}>Every link we build is designed to strengthen one or more of the four E-E-A-T signals Google uses to evaluate content quality — and that AI engines use to select citation sources.</p>
+              <p className="lbp-sec-desc" style={{margin:'0 auto'}}>Every link we build is designed to strengthen one or more of the four E-E-A-T signals Google uses to evaluate content quality - and that AI engines use to select citation sources.</p>
             </div>
             <div className="lbp-eeat-grid">
               {EEAT_SIGNALS.map(e => (
@@ -939,7 +939,7 @@ export default function LinkBuildingPackages() {
             <div className={`lbp-reveal${visibleSections.has('pricing')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['pricing']=el;}} style={{textAlign:'center'}}>
               <span className="lbp-sec-ey">Transparent Pricing</span>
               <h2 className="lbp-sec-ttl" id="pricing-title">Choose Your Link Building Package</h2>
-              <p className="lbp-sec-desc" style={{margin:'0 auto 44px'}}>All packages use 100% manual outreach — no automated tools, no PBNs, no link farms. Full transparency with a live link tracker on every plan. Payment links coming soon — contact us to get started.</p>
+              <p className="lbp-sec-desc" style={{margin:'0 auto 44px'}}>All packages use 100% manual outreach - no automated tools, no PBNs, no link farms. Full transparency with a live link tracker on every plan. Payment links coming soon - contact us to get started.</p>
             </div>
             <div className="lbp-tog-row">
               <span className={`lbp-tog-lbl${!isYearly?' active':''}`}>Monthly</span>
@@ -962,7 +962,7 @@ export default function LinkBuildingPackages() {
                   </div>
                   <div className="lbp-billed">{isYearly ? 'Billed annually' : 'Billed monthly'}</div>
                   <div className="lbp-save-line">{isYearly ? `Save $${plan.yearlySave.toLocaleString()} per year` : ' '}</div>
-                  {/* Payment link placeholder — replace href with actual checkout URL per plan */}
+                  {/* Payment link placeholder - replace href with actual checkout URL per plan */}
                   <Link href="/contact-us" className="lbp-cta-card">Get Started →</Link>
                   <div className="lbp-divider"/>
                   <ul className="lbp-feat-list">
@@ -994,10 +994,10 @@ export default function LinkBuildingPackages() {
                 <thead>
                   <tr>
                     <th>Feature</th>
-                    <th>Starter — $499/mo</th>
-                    <th>Growth — $899/mo</th>
-                    <th>Authority — $1,499/mo</th>
-                    <th>AI+GEO Elite — $2,499/mo</th>
+                    <th>Starter - $499/mo</th>
+                    <th>Growth - $899/mo</th>
+                    <th>Authority - $1,499/mo</th>
+                    <th>AI+GEO Elite - $2,499/mo</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -1037,7 +1037,7 @@ export default function LinkBuildingPackages() {
             <div className={`lbp-reveal${visibleSections.has('method')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['method']=el;}} style={{textAlign:'center',marginBottom:44}}>
               <span className="lbp-sec-ey">Our Process</span>
               <h2 className="lbp-sec-ttl" id="method-title">How Our Link Building Process Works</h2>
-              <p className="lbp-sec-desc" style={{margin:'0 auto'}}>Six rigorous steps from strategy to live link — every campaign, every month. AI+GEO Elite clients receive additional citation tracking at each stage.</p>
+              <p className="lbp-sec-desc" style={{margin:'0 auto'}}>Six rigorous steps from strategy to live link - every campaign, every month. AI+GEO Elite clients receive additional citation tracking at each stage.</p>
             </div>
             <div className="lbp-method-grid">
               {METHODOLOGY.map(m => (
@@ -1147,7 +1147,7 @@ export default function LinkBuildingPackages() {
             <div className={`lbp-reveal${visibleSections.has('faq')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['faq']=el;}}>
               <span className="lbp-sec-ey">Common Questions</span>
               <h2 className="lbp-sec-ttl" id="faq-title">Link Building Package FAQs</h2>
-              <p className="lbp-sec-desc">Everything you need to know about our link building packages — including AI+GEO and E-E-A-T questions.</p>
+              <p className="lbp-sec-desc">Everything you need to know about our link building packages - including AI+GEO and E-E-A-T questions.</p>
             </div>
             <div className="lbp-faq-list">
               {FAQS.map((f, i) => (
@@ -1173,7 +1173,7 @@ export default function LinkBuildingPackages() {
               </svg>
             </div>
             <div className="lbp-author-body">
-              <div className="lbp-author-name">1Solutions Link Building Team — Reviewed July 2026</div>
+              <div className="lbp-author-name">1Solutions Link Building Team - Reviewed July 2026</div>
               <div className="lbp-author-creds">
                 {['15+ Years Link Building','50,000+ Links Built','1,000+ Campaigns','AI+GEO Certified'].map(c => (
                   <span key={c} className="lbp-author-cred">
@@ -1182,7 +1182,7 @@ export default function LinkBuildingPackages() {
                   </span>
                 ))}
               </div>
-              <p className="lbp-author-text">Written and reviewed by the 1Solutions Link Building Team — founded 2008, with 15+ years of manual outreach expertise across 1,000+ campaigns in B2B, ecommerce, SaaS, legal, healthcare, and finance. Updated to reflect current Google E-E-A-T guidelines, AI Overview citation research, and 2025 domain rating benchmarks. All statistics independently sourced from Backlinko, Ahrefs, SE Ranking, and Moz.</p>
+              <p className="lbp-author-text">Written and reviewed by the 1Solutions Link Building Team - founded 2008, with 15+ years of manual outreach expertise across 1,000+ campaigns in B2B, ecommerce, SaaS, legal, healthcare, and finance. Updated to reflect current Google E-E-A-T guidelines, AI Overview citation research, and 2025 domain rating benchmarks. All statistics independently sourced from Backlinko, Ahrefs, SE Ranking, and Moz.</p>
             </div>
           </div>
         </div>
@@ -1192,9 +1192,9 @@ export default function LinkBuildingPackages() {
           <div className="lbp-cta-in">
             <span className="lbp-sec-ey" style={{display:'block',textAlign:'center',marginBottom:16}}>Not sure which plan is right for you?</span>
             <h2 className="lbp-cta-t" id="cta-title">Get a Free Backlink Gap Analysis</h2>
-            <p className="lbp-cta-s">Share your domain and top competitors — we&rsquo;ll analyse the backlink gap, assess your AI citation presence, and recommend exactly which package will close the gap fastest.</p>
+            <p className="lbp-cta-s">Share your domain and top competitors - we&rsquo;ll analyse the backlink gap, assess your AI citation presence, and recommend exactly which package will close the gap fastest.</p>
             <div className="lbp-pricing-note">
-              <strong>How much does link building cost?</strong> Our packages start from <strong>$499/month</strong> for 5 DR40+ guest post placements. The Growth plan at <strong>$899/month</strong> is our most popular for businesses targeting competitive keywords. For brands competing in AI search, the <strong>AI+GEO Elite at $2,499/month</strong> builds citation authority across Google AI Overviews, Perplexity, and ChatGPT alongside traditional rankings. Custom plans available — <Link href="/contact-us" style={{color:'#D97706',fontWeight:600}}>contact us to discuss</Link>.
+              <strong>How much does link building cost?</strong> Our packages start from <strong>$499/month</strong> for 5 DR40+ guest post placements. The Growth plan at <strong>$899/month</strong> is our most popular for businesses targeting competitive keywords. For brands competing in AI search, the <strong>AI+GEO Elite at $2,499/month</strong> builds citation authority across Google AI Overviews, Perplexity, and ChatGPT alongside traditional rankings. Custom plans available - <Link href="/contact-us" style={{color:'#D97706',fontWeight:600}}>contact us to discuss</Link>.
             </div>
             <div className="lbp-btns">
               <Link href="/contact-us" className="lbp-btn-p">
