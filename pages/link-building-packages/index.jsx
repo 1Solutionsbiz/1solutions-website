@@ -1073,7 +1073,7 @@ export default function LinkBuildingPackages() {
                     </div>
                   ) : plan.slug === 'authority' ? (
                     <div className="lbp-rzp-wrap">
-                      <RazorpayButton buttonId="pl_T9SVQSBcNAfBSD" />
+                      <RazorpayButton buttonId={isYearly ? 'pl_T9SfDFCdZ1lH0S' : 'pl_T9SVQSBcNAfBSD'} />
                     </div>
                   ) : (
                     <div className="lbp-rzp-wrap">
