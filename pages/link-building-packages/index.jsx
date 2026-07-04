@@ -1493,19 +1493,6 @@ export default function LinkBuildingPackages() {
               ))}
             </div>
           </div>
-          <div style={{padding:'0 40px'}}>
-            <div className="lbp-testi-stats" style={{padding:'32px 40px'}}>
-              {[['4.9/5','Average Rating'],['200+','Verified Reviews'],['92%','Client Retention'],['15+','Years Experience']].map(([num,label],i,arr) => (
-                <>{/* eslint-disable-next-line react/jsx-key */}
-                  <div className="lbp-tstat" key={label}>
-                    <span className="lbp-tstat-num">{num}</span>
-                    <span className="lbp-tstat-label">{label}</span>
-                  </div>
-                  {i < arr.length-1 && <div className="lbp-tstat-divider" key={`d${i}`}/>}
-                </>
-              ))}
-            </div>
-          </div>
         </section>
 
         {/* ── FAQ ── */}
