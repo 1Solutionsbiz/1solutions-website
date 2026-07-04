@@ -1076,7 +1076,9 @@ export default function LinkBuildingPackages() {
                       <RazorpayButton buttonId="pl_T9SVQSBcNAfBSD" />
                     </div>
                   ) : (
-                    <Link href="/contact-us" className="lbp-cta-card">Get Started →</Link>
+                    <div className="lbp-rzp-wrap">
+                      <RazorpayButton buttonId="pl_T9SXTt7gsAYHy6" />
+                    </div>
                   )}
                   <div className="lbp-divider"/>
                   <ul className="lbp-feat-list">
