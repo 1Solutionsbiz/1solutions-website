@@ -616,7 +616,9 @@ export default function LinkBuildingPackages() {
           .lbp-hero::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,.18) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px)}
           .lbp-hero-content{position:relative;z-index:2;text-align:center;max-width:860px;margin:0 auto;padding:56px 40px 40px}
           .lbp-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:18px}
-          .lbp-h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .lbp-h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;color:#111827}
+          .lbp-hl{background:linear-gradient(90deg,#7C3AED,#0F3460);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .lbp-hl-gold{background:linear-gradient(90deg,#fff 30%,#fcd34d 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .lbp-hero-sub{font-size:16px;color:#3A507A;line-height:1.65;max-width:640px;margin:0 auto 28px}
 
           /* ── HERO BUTTONS ── */
@@ -633,7 +635,7 @@ export default function LinkBuildingPackages() {
           .lbp-cs-in{max-width:1280px;margin:0 auto;position:relative;z-index:2}
           .lbp-cs-head{text-align:center;margin-bottom:48px}
           .lbp-cs-ey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:10px;display:block}
-          .lbp-cs-ttl{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;text-align:center;margin-bottom:12px;line-height:1.15;background:linear-gradient(90deg,#fff 30%,#fcd34d 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .lbp-cs-ttl{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;text-align:center;margin-bottom:12px;line-height:1.15;color:#fff}
           .lbp-cs-sub{font-size:1rem;color:rgba(255,255,255,.60);text-align:center;max-width:560px;margin:0 auto}
           .lbp-cs-orb{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.20) 0%,transparent 65%);top:-150px;right:-100px;pointer-events:none;filter:blur(30px)}
           .lbp-cs-orb2{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(217,119,6,.15) 0%,transparent 65%);bottom:-80px;left:-80px;pointer-events:none;filter:blur(30px)}
@@ -676,7 +678,7 @@ export default function LinkBuildingPackages() {
           .lbp-sec-in{max-width:1280px;margin:0 auto}
           .lbp-white-sec{background:#f8fafd;border-top:1px solid rgba(15,52,96,.08);border-bottom:1px solid rgba(15,52,96,.08)}
           .lbp-sec-ey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:12px;display:block}
-          .lbp-sec-ttl{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .lbp-sec-ttl{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;letter-spacing:-1px;color:#111827;margin-bottom:10px}
           .lbp-sec-desc{font-size:15px;color:#4A6080;line-height:1.7;max-width:640px;margin-bottom:40px}
 
           /* ── REVEAL ── */
@@ -711,7 +713,7 @@ export default function LinkBuildingPackages() {
           .lbp-ai-orb2{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(217,119,6,.18) 0%,transparent 65%);bottom:-100px;left:-100px;pointer-events:none;filter:blur(40px)}
           .lbp-ai-in{max-width:1280px;margin:0 auto;position:relative;z-index:2}
           .lbp-ai-ey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:10px;display:block;text-align:center}
-          .lbp-ai-ttl{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;text-align:center;margin-bottom:14px;line-height:1.15;background:linear-gradient(90deg,#fff 30%,#fcd34d 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .lbp-ai-ttl{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;text-align:center;margin-bottom:14px;line-height:1.15;color:#fff}
           .lbp-ai-sub{font-size:1rem;color:rgba(255,255,255,.65);text-align:center;max-width:620px;margin:0 auto 52px;line-height:1.75}
           .lbp-ai-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px}
           .lbp-ai-card{background:rgba(255,255,255,.07);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:32px;transition:background .25s,border-color .25s,transform .25s}
@@ -890,7 +892,7 @@ export default function LinkBuildingPackages() {
           .lbp-related-section{background:rgba(237,233,254,.18);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.60);padding:80px 40px}
           .lbp-related-inner{max-width:1280px;margin:0 auto;text-align:center}
           .lbp-related-eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#4A6080;margin:0 0 14px;display:block}
-          .lbp-related-title{font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px}
+          .lbp-related-title{font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;color:#111827;margin:0 0 16px}
           .lbp-related-sub{font-size:15px;color:#0F1F40;line-height:1.7;margin:0 auto;max-width:680px}
           .lbp-related-divider{border:none;border-top:1px solid rgba(15,52,96,.12);margin:40px 0}
           .lbp-related-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
@@ -910,7 +912,7 @@ export default function LinkBuildingPackages() {
           .lbp-rtag-lime{background:rgba(132,204,22,.10);border-color:rgba(132,204,22,.28);color:#3F6212}
           .lbp-cta{background:linear-gradient(135deg,rgba(254,243,199,.70) 0%,rgba(255,255,255,.60) 40%,rgba(219,234,254,.65) 100%);backdrop-filter:blur(20px);padding:80px 40px;position:relative;z-index:1;border-top:1px solid rgba(255,255,255,.80)}
           .lbp-cta-in{max-width:760px;margin:0 auto;text-align:center;position:relative;z-index:1}
-          .lbp-cta-t{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;line-height:1.2}
+          .lbp-cta-t{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;color:#111827;margin-bottom:16px;line-height:1.2}
           .lbp-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 28px;max-width:520px}
           .lbp-pricing-note{background:rgba(255,255,255,.60);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.85);border-radius:14px;padding:16px 24px;margin-bottom:32px;font-size:14px;color:#4A6080;line-height:1.65;text-align:left;box-shadow:0 4px 16px rgba(15,52,96,.06)}
           .lbp-pricing-note strong{color:#0F3460}
@@ -932,7 +934,6 @@ export default function LinkBuildingPackages() {
           .lbp-testi-sec{padding:72px 0;background:linear-gradient(135deg,#faf8ff 0%,#f7f4ff 50%,#f3f8ff 100%);overflow:hidden}
           .lbp-testi-hd{text-align:center;margin-bottom:44px;padding:0 40px}
           .lbp-testi-hd h2{font-size:clamp(32px,3.5vw,48px);font-weight:900;margin-bottom:16px;color:#111827}
-          .lbp-testi-hd h2 span{background:linear-gradient(90deg,#7C3AED,#0F3460);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .lbp-testi-hd p{font-size:16px;color:#6b7280;line-height:1.7;max-width:600px;margin:0 auto}
           .lbp-trow{overflow:hidden;position:relative}
           .lbp-trow+.lbp-trow{margin-top:16px}
@@ -1015,7 +1016,7 @@ export default function LinkBuildingPackages() {
         <div className="lbp-hero">
           <div className="lbp-hero-content">
             <span className="lbp-eyebrow">White-Hat Link Building · DR40–DR90 · Manual Outreach · AI+GEO Ready</span>
-            <h1 className="lbp-h1">Link Building Packages That Rank You on Google and Get You Cited by AI</h1>
+            <h1 className="lbp-h1">Link Building Packages <span className="lbp-hl">That Rank You on Google</span> and Get You Cited by AI</h1>
             <p className="lbp-hero-sub">White-hat link building packages from $350/month. Guest posts, niche edits, digital PR, and AI+GEO citation building - 100% manual outreach, every link tracked live. Built for both traditional rankings and AI-generated answers.</p>
             <div className="lbp-hero-btns">
               <Link href="/contact-us" className="lbp-btn-hero">Get a Free Backlink Audit</Link>
@@ -1073,7 +1074,7 @@ export default function LinkBuildingPackages() {
           <div className="lbp-sec-in" style={{textAlign:'center'}}>
             <div className={`lbp-reveal${visibleSections.has('def')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['def']=el;}}>
               <span className="lbp-sec-ey">Understanding Link Building</span>
-              <h2 className="lbp-sec-ttl" id="def-title">What Are Link Building Packages?</h2>
+              <h2 className="lbp-sec-ttl" id="def-title">What Are <span className="lbp-hl">Link Building Packages</span>?</h2>
               <p className="lbp-sec-desc" style={{margin:'0 auto 32px'}}>A plain-English explanation of what you are buying, how it works, and why it matters in 2026.</p>
             </div>
             <div className="lbp-glass lbp-def-box">
@@ -1101,7 +1102,7 @@ export default function LinkBuildingPackages() {
           <div className="lbp-sec-in">
             <div className={`lbp-reveal${visibleSections.has('why')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['why']=el;}} style={{textAlign:'center',marginBottom:40}}>
               <span className="lbp-sec-ey">The Data</span>
-              <h2 className="lbp-sec-ttl" id="why-title">Why Link Building Matters in 2026</h2>
+              <h2 className="lbp-sec-ttl" id="why-title">Why <span className="lbp-hl">Link Building</span> Matters in 2026</h2>
               <p className="lbp-sec-desc" style={{margin:'0 auto'}}>Links remain the single strongest off-page ranking signal in Google&rsquo;s algorithm - and the primary authority input for AI search citation selection.</p>
             </div>
             <div className="lbp-why-grid">
@@ -1121,7 +1122,7 @@ export default function LinkBuildingPackages() {
           <div className="lbp-ai-orb" aria-hidden="true"/><div className="lbp-ai-orb2" aria-hidden="true"/>
           <div className="lbp-ai-in">
             <span className="lbp-ai-ey">The AI Search Era</span>
-            <h2 className="lbp-ai-ttl" id="ai-title">Link Building for Google AI, GEO & AEO</h2>
+            <h2 className="lbp-ai-ttl" id="ai-title">Link Building for <span className="lbp-hl-gold">Google AI, GEO & AEO</span></h2>
             <p className="lbp-ai-sub">How backlinks amplify your brand&rsquo;s presence in ChatGPT, Google AI Overviews, Perplexity, and every AI-generated answer. This is the new frontier of off-page SEO.</p>
             <div className="lbp-ai-grid">
               {AI_PILLARS.map(p => (
@@ -1156,7 +1157,7 @@ export default function LinkBuildingPackages() {
           <div className="lbp-sec-in">
             <div className={`lbp-reveal${visibleSections.has('eeat')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['eeat']=el;}} style={{textAlign:'center',marginBottom:44}}>
               <span className="lbp-sec-ey">Google Quality Guidelines</span>
-              <h2 className="lbp-sec-ttl" id="eeat-title">E-E-A-T Authority Through Strategic Link Building</h2>
+              <h2 className="lbp-sec-ttl" id="eeat-title">E-E-A-T Authority Through <span className="lbp-hl">Strategic Link Building</span></h2>
               <p className="lbp-sec-desc" style={{margin:'0 auto'}}>Every link we build is designed to strengthen one or more of the four E-E-A-T signals Google uses to evaluate content quality - and that AI engines use to select citation sources.</p>
             </div>
             <div className="lbp-eeat-grid">
@@ -1177,7 +1178,7 @@ export default function LinkBuildingPackages() {
           <div className="lbp-sec-in">
             <div className={`lbp-reveal${visibleSections.has('pricing')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['pricing']=el;}} style={{textAlign:'center'}}>
               <span className="lbp-sec-ey">Transparent Pricing</span>
-              <h2 className="lbp-sec-ttl" id="pricing-title">Choose Your Link Building Package</h2>
+              <h2 className="lbp-sec-ttl" id="pricing-title">Choose Your <span className="lbp-hl">Link Building Package</span></h2>
               <p className="lbp-sec-desc" style={{margin:'0 auto 44px'}}>All packages use 100% manual outreach - no automated tools, no PBNs, no link farms. Full transparency with a live link tracker on every plan. Payment links coming soon - contact us to get started.</p>
             </div>
             <div className="lbp-tog-row">
@@ -1241,7 +1242,7 @@ export default function LinkBuildingPackages() {
           <div className="lbp-sec-in">
             <div style={{textAlign:'center',marginBottom:32}}>
               <span className="lbp-sec-ey">Plan Comparison</span>
-              <h2 className="lbp-sec-ttl" id="compare-title">Package Comparison at a Glance</h2>
+              <h2 className="lbp-sec-ttl" id="compare-title"><span className="lbp-hl">Package Comparison</span> at a Glance</h2>
             </div>
             <div className="lbp-tbl-wrap">
               <table className="lbp-tbl">
@@ -1296,7 +1297,7 @@ export default function LinkBuildingPackages() {
           <div className="lbp-sec-in">
             <div className={`lbp-reveal${visibleSections.has('method')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['method']=el;}} style={{textAlign:'center',marginBottom:44}}>
               <span className="lbp-sec-ey">Our Process</span>
-              <h2 className="lbp-sec-ttl" id="method-title">How Our Link Building Process Works</h2>
+              <h2 className="lbp-sec-ttl" id="method-title">How Our <span className="lbp-hl">Link Building Process</span> Works</h2>
               <p className="lbp-sec-desc" style={{margin:'0 auto'}}>Six rigorous steps from strategy to live link - every campaign, every month. AI+GEO Elite clients receive additional citation tracking at each stage.</p>
             </div>
             <div className="lbp-method-grid">
@@ -1321,7 +1322,7 @@ export default function LinkBuildingPackages() {
           <div className="lbp-sec-in">
             <div className={`lbp-reveal${visibleSections.has('qual')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['qual']=el;}} style={{textAlign:'center',marginBottom:40}}>
               <span className="lbp-sec-ey">Quality Standards</span>
-              <h2 className="lbp-sec-ttl" id="quality-title">What Makes Our Links Different</h2>
+              <h2 className="lbp-sec-ttl" id="quality-title">What Makes Our <span className="lbp-hl">Links</span> Different</h2>
               <p className="lbp-sec-desc" style={{margin:'0 auto'}}>We vet every link site against 15+ quality signals before a single outreach email is sent.</p>
             </div>
             <div className="lbp-qual-grid">
@@ -1345,7 +1346,7 @@ export default function LinkBuildingPackages() {
           <div className="lbp-sec-in">
             <div style={{textAlign:'center',marginBottom:36}}>
               <span className="lbp-sec-ey">Industries We Serve</span>
-              <h2 className="lbp-sec-ttl" id="industries-title">Link Building Across Every Niche</h2>
+              <h2 className="lbp-sec-ttl" id="industries-title"><span className="lbp-hl">Link Building</span> Across Every Niche</h2>
             </div>
             <div className="lbp-ind-grid">
               {INDUSTRIES.map(ind => (
@@ -1370,7 +1371,7 @@ export default function LinkBuildingPackages() {
           <div className="lbp-cs-in">
             <div className="lbp-cs-head">
               <span className="lbp-cs-ey">Case Studies</span>
-              <h2 className="lbp-cs-ttl" id="cs-title">Link Building Results: Real Traffic Growth by Package</h2>
+              <h2 className="lbp-cs-ttl" id="cs-title"><span className="lbp-hl-gold">Link Building Results</span>: Real Traffic Growth by Package</h2>
               <p className="lbp-cs-sub">Real outcomes from live campaigns. Traffic numbers, links built, and timelines - no made-up projections.</p>
             </div>
             <div className="lbp-cs-grid">
@@ -1424,7 +1425,7 @@ export default function LinkBuildingPackages() {
           <div className="lbp-sec-in">
             <div className={`lbp-reveal${visibleSections.has('why-ch')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['why-ch']=el;}} style={{textAlign:'center',marginBottom:48}}>
               <span className="lbp-sec-ey">Why 1Solutions</span>
-              <h2 className="lbp-sec-ttl" id="why-ch-title">Why Choose Our Link Building Service</h2>
+              <h2 className="lbp-sec-ttl" id="why-ch-title">Why Choose Our <span className="lbp-hl">Link Building</span> Service</h2>
             </div>
             <div className="lbp-why-ch-grid">
               {WHYS.map(w => (
@@ -1445,7 +1446,7 @@ export default function LinkBuildingPackages() {
         {/* ── TESTIMONIALS ── */}
         <section className="lbp-testi-sec" aria-labelledby="testi-title">
           <div className="lbp-testi-hd" ref={el=>{sectionRefs.current['testi']=el;}}>
-            <h2 id="testi-title">What Our <span>Link Building Clients</span> Say</h2>
+            <h2 id="testi-title">What Our <span className="lbp-hl">Link Building Clients</span> Say</h2>
             <p>Real results from businesses across India, US, UK and Australia who trust 1Solutions for link building.</p>
           </div>
           {/* Row 1 — scrolls left */}
@@ -1512,7 +1513,7 @@ export default function LinkBuildingPackages() {
           <div className="lbp-sec-in" style={{maxWidth:1000,margin:'0 auto'}}>
             <div className={`lbp-reveal${visibleSections.has('faq')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['faq']=el;}}>
               <span className="lbp-sec-ey">Common Questions</span>
-              <h2 className="lbp-sec-ttl" id="faq-title">Link Building Package FAQs</h2>
+              <h2 className="lbp-sec-ttl" id="faq-title"><span className="lbp-hl">Link Building Package</span> FAQs</h2>
               <p className="lbp-sec-desc">Everything you need to know about our link building packages - including AI+GEO and E-E-A-T questions.</p>
             </div>
             <div className="lbp-faq-list">
@@ -1537,7 +1538,7 @@ export default function LinkBuildingPackages() {
         <section className="lbp-related-section">
           <div className="lbp-related-inner">
             <span className="lbp-related-eyebrow">LINK BUILDING RELATED OFFERINGS</span>
-            <h2 className="lbp-related-title">Explore Related Services and Technologies</h2>
+            <h2 className="lbp-related-title">Explore <span className="lbp-hl">Related Services</span> and Technologies</h2>
             <p className="lbp-related-sub">Pair our link building expertise with related SEO and digital marketing services to maximise your organic growth and AI search visibility.</p>
             <hr className="lbp-related-divider"/>
             <div className="lbp-related-tags">
