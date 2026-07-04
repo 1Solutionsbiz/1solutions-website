@@ -1065,7 +1065,7 @@ export default function LinkBuildingPackages() {
                   <div className="lbp-save-line">{isYearly ? `Save $${plan.yearlySave.toLocaleString()} per year` : ' '}</div>
                   {plan.slug === 'starter' ? (
                     <div className="lbp-rzp-wrap">
-                      <RazorpayButton buttonId="pl_T9SKv2WiRUGdIF" />
+                      <RazorpayButton buttonId={isYearly ? 'pl_T9SZWFdVQpdPJM' : 'pl_T9SKv2WiRUGdIF'} />
                     </div>
                   ) : plan.slug === 'growth' ? (
                     <div className="lbp-rzp-wrap">
