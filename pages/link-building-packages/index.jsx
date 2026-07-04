@@ -1067,6 +1067,10 @@ export default function LinkBuildingPackages() {
                     <div className="lbp-rzp-wrap">
                       <RazorpayButton buttonId="pl_T9SKv2WiRUGdIF" />
                     </div>
+                  ) : plan.slug === 'growth' ? (
+                    <div className="lbp-rzp-wrap">
+                      <RazorpayButton buttonId="pl_T9SSBF0E80x93O" />
+                    </div>
                   ) : (
                     <Link href="/contact-us" className="lbp-cta-card">Get Started →</Link>
                   )}
