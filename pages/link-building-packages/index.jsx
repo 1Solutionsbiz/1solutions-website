@@ -717,9 +717,9 @@ export default function LinkBuildingPackages() {
           .lbp-ai-sub{font-size:1rem;color:rgba(255,255,255,.65);text-align:center;max-width:620px;margin:0 auto 52px;line-height:1.75}
           .lbp-ai-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px}
           .lbp-ai-card{background:rgba(255,255,255,.07);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:32px;transition:background .25s,border-color .25s,transform .25s}
-          .lbp-ai-card:hover{background:rgba(255,255,255,.11);border-color:rgba(139,92,246,.45);transform:translateY(-4px)}
-          .lbp-ai-icon{width:48px;height:48px;background:rgba(139,92,246,.20);border:1px solid rgba(139,92,246,.35);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
-          .lbp-ai-icon svg{width:24px;height:24px;stroke:#a78bfa;fill:none}
+          .lbp-ai-card:hover{background:rgba(255,255,255,.11);border-color:rgba(217,119,6,.45);transform:translateY(-4px)}
+          .lbp-ai-icon{width:48px;height:48px;background:rgba(217,119,6,.20);border:1px solid rgba(217,119,6,.35);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+          .lbp-ai-icon svg{width:24px;height:24px;stroke:#F59E0B;fill:none}
           .lbp-ai-card-t{font-size:16px;font-weight:700;color:#fff;margin-bottom:10px}
           .lbp-ai-card-d{font-size:13px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:16px}
           .lbp-ai-stat-row{display:flex;align-items:baseline;gap:8px;padding-top:14px;border-top:1px solid rgba(255,255,255,.10)}
