@@ -21,6 +21,20 @@ function useCountUp(target, duration = 1800, start = false) {
   return count;
 }
 
+function RazorpayButton({ buttonId, className }) {
+  const formRef = useRef(null);
+  useEffect(() => {
+    if (!formRef.current) return;
+    formRef.current.innerHTML = '';
+    const script = document.createElement('script');
+    script.src = 'https://checkout.razorpay.com/v1/payment-button.js';
+    script.setAttribute('data-payment_button_id', buttonId);
+    script.async = true;
+    formRef.current.appendChild(script);
+  }, [buttonId]);
+  return <form ref={formRef} className={className}/>;
+}
+
 function AnimatedStat({ label, val, started }) {
   const num = useCountUp(val, 1800, started);
   const suffix = val.replace(/[\d,]/g, '');
@@ -186,7 +200,7 @@ const CASE_STUDIES = [
 
 const WHY_MATTERS = [
   { num: '3.8×', desc: 'more backlinks the #1 Google result has compared to pages ranking 2–10', source: 'Backlinko, 2024' },
-  { num: '68%', desc: 'of AI Overview citations go to sites with DR55+ and strong topical authority', source: 'SE Ranking AI Study, 2025' },
+  { num: '68%', desc: 'of AI Overview citations go to sites with DR55+ and strong topical authority', source: 'SE Ranking AI Study, 2026' },
   { num: '5×', desc: 'more organic traffic received by pages with a strong backlink profile vs. pages without', source: 'Backlinko Research' },
 ];
 
@@ -472,7 +486,7 @@ export default function LinkBuildingPackages() {
         '@type': 'WebPage',
         '@id': 'https://www.1solutions.biz/link-building-packages/',
         url: 'https://www.1solutions.biz/link-building-packages/',
-        name: 'Link Building Packages 2025 | AI+GEO & SEO Backlink Plans | 1Solutions',
+        name: 'Link Building Packages 2026 | AI+GEO & SEO Backlink Plans | 1Solutions',
         description: 'White-hat link building packages from $350/month. Manual outreach, DR30+ to DR90 guest posts, niche edits, digital PR, and AI+GEO citation building for Google AI Overviews, Perplexity, and ChatGPT.',
         dateModified: '2026-07-04',
         inLanguage: 'en-US',
@@ -510,11 +524,11 @@ export default function LinkBuildingPackages() {
   return (
     <>
       <Head>
-        <title>Link Building Packages 2025 | AI+GEO & SEO Backlinks | 1Solutions</title>
+        <title>Link Building Packages 2026 | AI+GEO & SEO Backlinks | 1Solutions</title>
         <meta name="description" content="White-hat link building packages from $350/month. Manual outreach, DR40–DR90 guest posts, niche edits, digital PR, and AI+GEO citation building for Google AI Overviews, Perplexity & ChatGPT." />
         <meta name="keywords" content="link building packages, link building pricing, AI link building, GEO link building, backlink packages, guest post packages, link building plans, white-hat link building, AI citation building, AEO link building" />
         <link rel="canonical" href="https://www.1solutions.biz/link-building-packages/" />
-        <meta property="og:title" content="Link Building Packages 2025 - AI+GEO & SEO Backlinks | 1Solutions" />
+        <meta property="og:title" content="Link Building Packages 2026 - AI+GEO & SEO Backlinks | 1Solutions" />
         <meta property="og:description" content="White-hat link building packages from $350/month. DR40–DR90 guest posts, niche edits, digital PR, and AI+GEO citation building. Live link tracker on every plan." />
         <meta property="og:url" content="https://www.1solutions.biz/link-building-packages/" />
         <meta property="og:type" content="website" />
@@ -692,6 +706,8 @@ export default function LinkBuildingPackages() {
           .lbp-save-line{font-size:11px;font-weight:700;color:#16a34a;margin-bottom:18px;min-height:16px}
           .lbp-card-pop .lbp-save-line{color:#86efac}
           .lbp-card-elite .lbp-save-line{color:#a78bfa}
+          .lbp-rzp-wrap{width:100%;margin-bottom:20px;display:flex;justify-content:center}
+          .lbp-rzp-wrap form{width:100%}
           .lbp-cta-card{display:block;width:100%;text-align:center;padding:12px;border-radius:50px;font-weight:700;font-size:.875rem;text-decoration:none;background:rgba(15,52,96,.85);color:#fff;transition:all .22s;margin-bottom:20px;box-shadow:0 4px 16px rgba(15,52,96,.20)}
           .lbp-cta-card:hover{background:rgba(15,52,96,1);transform:translateY(-1px);box-shadow:0 6px 24px rgba(15,52,96,.30)}
           .lbp-card-pop .lbp-cta-card{background:rgba(255,255,255,.18);backdrop-filter:blur(12px);border:1.5px solid rgba(255,255,255,.35);color:#fff}
@@ -920,11 +936,11 @@ export default function LinkBuildingPackages() {
             <div className={`lbp-reveal${visibleSections.has('def')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['def']=el;}}>
               <span className="lbp-sec-ey">Understanding Link Building</span>
               <h2 className="lbp-sec-ttl" id="def-title">What Are Link Building Packages?</h2>
-              <p className="lbp-sec-desc" style={{margin:'0 auto 32px'}}>A plain-English explanation of what you are buying, how it works, and why it matters in 2025.</p>
+              <p className="lbp-sec-desc" style={{margin:'0 auto 32px'}}>A plain-English explanation of what you are buying, how it works, and why it matters in 2026.</p>
             </div>
             <div className="lbp-glass lbp-def-box">
               <p className="lbp-def-intro">
-                <strong>Link building packages</strong> are monthly subscription plans that deliver a fixed number of high-authority backlinks to your website each month through manual outreach to real website editors and publishers. Each package specifies the volume of links, minimum domain rating (DR) threshold, and link types included - giving you a predictable, compounding backlink acquisition programme. Google treats links from authoritative, niche-relevant sites as editorial endorsements, and pages with the strongest backlink profiles consistently rank highest for competitive keywords. In 2025, this authority signal also determines how frequently AI engines - Google AI Overviews, ChatGPT Search, Perplexity - cite your content in generated answers.
+                <strong>Link building packages</strong> are monthly subscription plans that deliver a fixed number of high-authority backlinks to your website each month through manual outreach to real website editors and publishers. Each package specifies the volume of links, minimum domain rating (DR) threshold, and link types included - giving you a predictable, compounding backlink acquisition programme. Google treats links from authoritative, niche-relevant sites as editorial endorsements, and pages with the strongest backlink profiles consistently rank highest for competitive keywords. In 2026, this authority signal also determines how frequently AI engines - Google AI Overviews, ChatGPT Search, Perplexity - cite your content in generated answers.
               </p>
               <div className="lbp-def-aspects">
                 {[
@@ -947,7 +963,7 @@ export default function LinkBuildingPackages() {
           <div className="lbp-sec-in">
             <div className={`lbp-reveal${visibleSections.has('why')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['why']=el;}} style={{textAlign:'center',marginBottom:40}}>
               <span className="lbp-sec-ey">The Data</span>
-              <h2 className="lbp-sec-ttl" id="why-title">Why Link Building Matters in 2025</h2>
+              <h2 className="lbp-sec-ttl" id="why-title">Why Link Building Matters in 2026</h2>
               <p className="lbp-sec-desc" style={{margin:'0 auto'}}>Links remain the single strongest off-page ranking signal in Google&rsquo;s algorithm - and the primary authority input for AI search citation selection.</p>
             </div>
             <div className="lbp-why-grid">
@@ -1047,8 +1063,13 @@ export default function LinkBuildingPackages() {
                   </div>
                   <div className="lbp-billed">{isYearly ? 'Billed annually' : 'Billed monthly'}</div>
                   <div className="lbp-save-line">{isYearly ? `Save $${plan.yearlySave.toLocaleString()} per year` : ' '}</div>
-                  {/* Payment link placeholder - replace href with actual checkout URL per plan */}
-                  <Link href="/contact-us" className="lbp-cta-card">Get Started →</Link>
+                  {plan.slug === 'starter' ? (
+                    <div className="lbp-rzp-wrap">
+                      <RazorpayButton buttonId="pl_T9SKv2WiRUGdIF" />
+                    </div>
+                  ) : (
+                    <Link href="/contact-us" className="lbp-cta-card">Get Started →</Link>
+                  )}
                   <div className="lbp-divider"/>
                   <ul className="lbp-feat-list">
                     {plan.features.map(f => <li key={f}>{CHECK}<span>{f}</span></li>)}
