@@ -38,97 +38,146 @@ const PLANS = [
   {
     name: 'Starter',
     slug: 'starter',
-    monthlyPrice: 499,
-    yearlyPrice: 415,
-    yearlySave: 1008,
-    desc: 'Essential link building for businesses beginning their domain authority journey.',
+    monthlyPrice: 250,
+    yearlyPrice: 208,
+    yearlySave: 504,
+    desc: 'The perfect entry point for small businesses and startups beginning their authority journey.',
     popular: false,
     elite: false,
     badge: null,
     accentColor: '#3B82F6',
     features: [
-      '5 high-DA links per month',
-      'DR40+ domains only',
-      'Guest post placements',
+      '5 guest post links per month',
+      'DR30+ / DA20+ domains',
+      'Spam Score below 3%',
       '100% manual outreach',
-      'Niche-relevant sites',
-      'Anchor text optimisation',
-      'Monthly link delivery report',
+      'Niche-relevant placements only',
+      'Content written for you',
+      'Natural anchor text',
+      'Link indexing included',
+      'Monthly delivery report',
       'Live Google Sheets tracker',
+      '20-25 day turnaround',
     ],
   },
   {
     name: 'Growth',
     slug: 'growth',
-    monthlyPrice: 899,
-    yearlyPrice: 749,
-    yearlySave: 1800,
-    desc: 'For businesses serious about building authority through diverse, high-quality links.',
+    monthlyPrice: 499,
+    yearlyPrice: 415,
+    yearlySave: 1008,
+    desc: 'For businesses scaling their authority with diverse, high-quality editorial placements.',
     popular: true,
     elite: false,
     badge: 'Most Popular',
     accentColor: '#D97706',
     features: [
-      '12 high-DA links per month',
-      'DR50+ domains',
-      'Guest posts + niche edits',
+      '10 links per month (guest posts + niche edits)',
+      'DR40+ / DA30+ domains',
+      'Spam Score below 2%',
+      'Manual outreach + relationship building',
       'Full anchor text strategy',
       'Competitor backlink gap analysis',
       'Disavow audit (if needed)',
       'E-E-A-T signal placements',
       'Monthly report + strategy call',
       'Live link tracker dashboard',
+      '15-20 day turnaround',
     ],
   },
   {
     name: 'Authority',
     slug: 'authority',
-    monthlyPrice: 1499,
-    yearlyPrice: 1249,
-    yearlySave: 3000,
-    desc: 'For competitive industries needing scale, premium placements, and digital PR.',
+    monthlyPrice: 899,
+    yearlyPrice: 748,
+    yearlySave: 1812,
+    desc: 'For competitive niches needing scale, premium placements, and AI citation foundations.',
     popular: false,
     elite: false,
     badge: null,
     accentColor: '#059669',
     features: [
-      '25 high-DA links per month',
-      'DR60+ domains',
-      'Guest posts + niche edits + digital PR',
+      '20 links per month (guest posts + niche edits + digital PR)',
+      'DR50+ / DA40+ domains',
       'Premium publication placements',
       'AEO-optimised anchor text strategy',
       'AI citation building (foundational)',
+      'Full link profile strategy',
       'Monthly competitor gap analysis',
       'Custom anchor text map',
       'Monthly report + strategy call',
       'Dedicated link building strategist',
+      '10-15 day turnaround',
     ],
   },
   {
     name: 'AI+GEO Elite',
     slug: 'ai-geo-elite',
-    monthlyPrice: 2499,
-    yearlyPrice: 2082,
-    yearlySave: 5004,
+    monthlyPrice: 1499,
+    yearlyPrice: 1249,
+    yearlySave: 3000,
     desc: 'Maximum authority and AI citation building for brands dominating AI-driven search.',
     popular: false,
     elite: true,
     badge: 'AI+GEO Leader',
     accentColor: '#8B5CF6',
     features: [
-      '35+ premium links per month',
-      'DR65+ - AI-cited source domains',
+      '30+ premium links per month',
+      'DR60+ / DA50+ - AI-cited sources',
       'All link types + AI authority placements',
       'LLM citation source building',
       'Google AI Overview signal building',
-      'Perplexity & ChatGPT source targeting',
+      'Perplexity + ChatGPT source targeting',
       'Brand mention campaigns (linked + unlinked)',
       'Expert author E-E-A-T placements',
       'AEO + GEO anchor text strategy',
       'AI visibility tracking monthly report',
-      'Quarterly competitor AI citation analysis',
       'Dedicated AI+GEO strategist',
+      '7-10 day turnaround',
     ],
+  },
+];
+
+const CASE_STUDIES = [
+  {
+    industry: 'Legal Services',
+    icon: '⚖️',
+    growth: '847%',
+    trafficFrom: '241',
+    trafficTo: '2.3k',
+    linksBuilt: 48,
+    timeSpan: '12 months',
+    package: 'Growth',
+  },
+  {
+    industry: 'SaaS Platform',
+    icon: '💻',
+    growth: '312%',
+    trafficFrom: '1.2k',
+    trafficTo: '4.9k',
+    linksBuilt: 96,
+    timeSpan: '8 months',
+    package: 'Authority',
+  },
+  {
+    industry: 'Ecommerce Store',
+    icon: '🛒',
+    growth: '680%',
+    trafficFrom: '2.1k',
+    trafficTo: '16.4k',
+    linksBuilt: 144,
+    timeSpan: '12 months',
+    package: 'Authority',
+  },
+  {
+    industry: 'B2B Consultancy',
+    icon: '📊',
+    growth: '215%',
+    trafficFrom: '890',
+    trafficTo: '2.8k',
+    linksBuilt: 60,
+    timeSpan: '9 months',
+    package: 'Growth',
   },
 ];
 
@@ -488,12 +537,35 @@ export default function LinkBuildingPackages() {
           .lbp-hero-sub{font-size:16px;color:#3A507A;line-height:1.65;max-width:640px;margin:0 auto 28px}
 
           /* ── HERO BUTTONS ── */
-          .lbp-btn-hero{position:relative;overflow:hidden;display:inline-block;padding:14px 40px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;box-shadow:0 4px 20px rgba(15,52,96,.10),inset 0 1px 0 rgba(255,255,255,1);margin-bottom:32px}
+          .lbp-hero-btns{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:32px}
+          .lbp-btn-hero{position:relative;overflow:hidden;display:inline-block;padding:14px 40px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;box-shadow:0 4px 20px rgba(15,52,96,.10),inset 0 1px 0 rgba(255,255,255,1)}
           .lbp-btn-hero:hover{background:rgba(255,255,255,.85);border-color:rgba(245,158,11,.6);box-shadow:0 12px 36px rgba(15,52,96,.15),0 0 0 2px rgba(245,158,11,.22),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px);color:#0F3460}
           .lbp-btn-hero::after{content:'';position:absolute;top:-10%;left:-120%;width:80%;height:120%;background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,.75) 45%,rgba(255,255,255,.9) 50%,rgba(255,255,255,.75) 55%,transparent 100%);animation:lbp-shimmer 2.5s ease-in-out infinite;pointer-events:none}
           @keyframes lbp-shimmer{0%{left:-120%}35%,100%{left:160%}}
-          .lbp-btn-outline{display:inline-block;padding:14px 32px;background:transparent;border:1.5px solid rgba(15,52,96,.25);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;margin-bottom:32px;margin-left:12px}
+          .lbp-btn-outline{display:inline-block;padding:14px 32px;background:transparent;border:1.5px solid rgba(15,52,96,.25);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s}
           .lbp-btn-outline:hover{border-color:rgba(217,119,6,.5);color:#D97706;transform:translateY(-2px)}
+
+          /* ── CASE STUDIES ── */
+          .lbp-cs-sec{padding:80px 40px;position:relative;z-index:1;background:#f8fafd;border-top:1px solid rgba(15,52,96,.08);border-bottom:1px solid rgba(15,52,96,.08)}
+          .lbp-cs-in{max-width:1280px;margin:0 auto}
+          .lbp-cs-head{text-align:center;margin-bottom:48px}
+          .lbp-cs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:40px}
+          .lbp-cs-card{background:#fff;border:1px solid rgba(15,52,96,.08);border-radius:20px;padding:28px 24px;box-shadow:0 4px 20px rgba(15,52,96,.06);transition:transform .22s,box-shadow .22s,border-color .22s}
+          .lbp-cs-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(15,52,96,.12);border-color:rgba(217,119,6,.30)}
+          .lbp-cs-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+          .lbp-cs-name{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:#0F1F40}
+          .lbp-cs-emoji{font-size:1.1rem}
+          .lbp-cs-badge{display:inline-flex;align-items:center;gap:4px;background:#d1fae5;color:#065f46;font-size:12px;font-weight:700;padding:4px 10px;border-radius:100px}
+          .lbp-cs-badge::before{content:'↑';font-size:11px}
+          .lbp-cs-rows{display:flex;flex-direction:column;gap:14px}
+          .lbp-cs-row{display:flex;align-items:center;justify-content:space-between;font-size:13px}
+          .lbp-cs-row-label{display:flex;align-items:center;gap:6px;color:#6b7280}
+          .lbp-cs-row-val{font-weight:700;color:#0F1F40}
+          .lbp-cs-arrow{color:#D97706;font-weight:700;margin:0 4px}
+          .lbp-cs-divider{height:1px;background:rgba(15,52,96,.07);margin:4px 0}
+          .lbp-cs-cta-row{text-align:center}
+          .lbp-cs-cta{display:inline-flex;align-items:center;gap:8px;padding:13px 32px;background:#0F3460;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 4px 16px rgba(15,52,96,.22)}
+          .lbp-cs-cta:hover{background:#D97706;box-shadow:0 8px 28px rgba(217,119,6,.35);transform:translateY(-2px)}
 
           /* ── STATS BAR ── */
           .lbp-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
@@ -749,13 +821,16 @@ export default function LinkBuildingPackages() {
             .lbp-res-grid{grid-template-columns:1fr;max-width:400px;margin-left:auto;margin-right:auto}
             .lbp-why-grid{grid-template-columns:1fr;max-width:440px;margin-left:auto;margin-right:auto}
             .lbp-ai-grid{grid-template-columns:1fr}
+            .lbp-cs-grid{grid-template-columns:repeat(2,1fr)}
           }
           @media(max-width:768px){
             .lbp-sec,.lbp-results,.lbp-cta,.lbp-ai-sec{padding-left:20px;padding-right:20px}
             .lbp-hero-content{padding:36px 20px 24px}
             .lbp-h1{font-size:clamp(1.7rem,6vw,2.4rem)}
-            .lbp-btn-outline{margin-left:0;display:block;text-align:center}
+            .lbp-hero-btns{flex-direction:column}
             .lbp-clients-bar{padding:16px 20px 36px;gap:12px}
+            .lbp-cs-grid{grid-template-columns:1fr}
+            .lbp-cs-sec{padding-left:20px;padding-right:20px}
             .lbp-stats{grid-template-columns:repeat(2,1fr)}
             .lbp-stat:nth-child(2){border-right:none}
             .lbp-stat:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}
@@ -785,8 +860,10 @@ export default function LinkBuildingPackages() {
             <span className="lbp-eyebrow">White-Hat Link Building · DR40–DR65+ · Manual Outreach · AI+GEO Ready</span>
             <h1 className="lbp-h1">Link Building Packages That Rank You on Google and Get You Cited by AI</h1>
             <p className="lbp-hero-sub">White-hat link building packages from $499/month. Guest posts, niche edits, digital PR, and AI+GEO citation building - 100% manual outreach, every link tracked live. Built for both traditional rankings and AI-generated answers.</p>
-            <Link href="/contact-us" className="lbp-btn-hero">Get a Free Backlink Audit</Link>
-            <Link href="#pricing" className="lbp-btn-outline">View Packages</Link>
+            <div className="lbp-hero-btns">
+              <Link href="/contact-us" className="lbp-btn-hero">Get a Free Backlink Audit</Link>
+              <Link href="#pricing" className="lbp-btn-outline">View Packages</Link>
+            </div>
           </div>
 
           <div className="lbp-stats" ref={statsRef}>
@@ -994,29 +1071,36 @@ export default function LinkBuildingPackages() {
                 <thead>
                   <tr>
                     <th>Feature</th>
-                    <th>Starter - $499/mo</th>
-                    <th>Growth - $899/mo</th>
-                    <th>Authority - $1,499/mo</th>
-                    <th>AI+GEO Elite - $2,499/mo</th>
+                    <th>Starter - $250/mo</th>
+                    <th>Growth - $499/mo</th>
+                    <th>Authority - $899/mo</th>
+                    <th>AI+GEO Elite - $1,499/mo</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    ['Links per month','5','12','25','35+'],
-                    ['Min. domain rating','DR40+','DR50+','DR60+','DR65+'],
+                    ['Links per month','5','10','20','30+'],
+                    ['Min. Domain Rating (DR)','DR30+','DR40+','DR50+','DR60+'],
+                    ['Min. Domain Authority (DA)','DA20+','DA30+','DA40+','DA50+'],
+                    ['Spam Score threshold','Below 3%','Below 2%','Below 2%','Below 1%'],
                     ['Guest posts','✓','✓','✓','✓'],
-                    ['Niche edits','✗','✓','✓','✓'],
+                    ['Niche edits / link insertions','✗','✓','✓','✓'],
                     ['Digital PR','✗','✗','✓','✓'],
+                    ['Content writing included','✓','✓','✓','✓'],
+                    ['Manual outreach','✓','✓','✓','✓'],
+                    ['E-E-A-T signal placements','✗','✓','✓','Expert level'],
+                    ['Anchor text strategy','Natural','Full strategy','AEO optimised','AEO + GEO advanced'],
                     ['AI authority placements','✗','✗','Foundational','Full'],
                     ['LLM citation source targeting','✗','✗','✗','✓'],
                     ['Brand mention campaigns','✗','✗','✗','✓'],
-                    ['E-E-A-T signal placements','✗','✓','✓','Expert level'],
-                    ['AEO anchor text strategy','✗','✗','✓','Advanced'],
-                    ['Competitor gap analysis','✗','Monthly','Monthly','Monthly + AI'],
                     ['AI visibility tracking','✗','✗','✗','Monthly report'],
+                    ['Competitor gap analysis','✗','Monthly','Monthly','Monthly + AI'],
+                    ['Disavow audit','✗','✓','✓','✓'],
+                    ['Monthly report','✓','✓','✓','✓'],
                     ['Strategy call','✗','Monthly','Monthly','Monthly'],
                     ['Dedicated strategist','✗','✗','✓','AI+GEO specialist'],
                     ['Live link tracker','✓','✓','✓','✓'],
+                    ['Turnaround time','20-25 days','15-20 days','10-15 days','7-10 days'],
                   ].map(([feat,...cols]) => (
                     <tr key={feat}>
                       <td>{feat}</td>
@@ -1114,6 +1198,67 @@ export default function LinkBuildingPackages() {
                   <div className="lbp-res-sub2">{r.sub}</div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── CASE STUDIES ── */}
+        <section className="lbp-cs-sec" aria-labelledby="cs-title">
+          <div className="lbp-cs-in">
+            <div className="lbp-cs-head">
+              <span className="lbp-sec-ey">Case Studies</span>
+              <h2 className="lbp-sec-ttl" id="cs-title">We Get Results</h2>
+              <p className="lbp-sec-desc" style={{margin:'0 auto'}}>Real outcomes from live campaigns. Traffic numbers, links built, and timelines - no made-up projections.</p>
+            </div>
+            <div className="lbp-cs-grid">
+              {CASE_STUDIES.map(cs => (
+                <div key={cs.industry} className="lbp-cs-card">
+                  <div className="lbp-cs-card-top">
+                    <div className="lbp-cs-name">
+                      <span className="lbp-cs-emoji" aria-hidden="true">{cs.icon}</span>
+                      {cs.industry}
+                    </div>
+                    <span className="lbp-cs-badge">{cs.growth}</span>
+                  </div>
+                  <div className="lbp-cs-rows">
+                    <div className="lbp-cs-row">
+                      <span className="lbp-cs-row-label">
+                        <span aria-hidden="true">🚀</span> Traffic Increase
+                      </span>
+                      <span className="lbp-cs-row-val">
+                        {cs.trafficFrom}<span className="lbp-cs-arrow">→</span>{cs.trafficTo}
+                      </span>
+                    </div>
+                    <div className="lbp-cs-divider"/>
+                    <div className="lbp-cs-row">
+                      <span className="lbp-cs-row-label">
+                        <span aria-hidden="true">🔗</span> Links Built
+                      </span>
+                      <span className="lbp-cs-row-val">{cs.linksBuilt}</span>
+                    </div>
+                    <div className="lbp-cs-divider"/>
+                    <div className="lbp-cs-row">
+                      <span className="lbp-cs-row-label">
+                        <span aria-hidden="true">🕐</span> Time Span
+                      </span>
+                      <span className="lbp-cs-row-val">{cs.timeSpan}</span>
+                    </div>
+                    <div className="lbp-cs-divider"/>
+                    <div className="lbp-cs-row">
+                      <span className="lbp-cs-row-label">
+                        <span aria-hidden="true">📦</span> Package
+                      </span>
+                      <span className="lbp-cs-row-val">{cs.package}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="lbp-cs-cta-row">
+              <Link href="/contact-us" className="lbp-cs-cta">
+                Get Similar Results for Your Business
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </Link>
             </div>
           </div>
         </section>
