@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }) {
           <meta property="og:image:height" content="270" />
           <meta property="og:image:type" content="image/jpeg" />
         </Head>
-        <Script id="gtm-init" strategy="afterInteractive">{`
+        <Script id="gtm-init" strategy="lazyOnload">{`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
           j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -30,7 +30,7 @@ export default function App({ Component, pageProps }) {
         `}</Script>
         <Script
           src="https://www.google.com/recaptcha/api.js?render=6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         {Component.getLayout(<Component {...pageProps} />)}
       </>
@@ -48,7 +48,7 @@ export default function App({ Component, pageProps }) {
         <meta property="og:image:height" content="270" />
         <meta property="og:image:type" content="image/jpeg" />
       </Head>
-      <Script id="gtm-init-default" strategy="afterInteractive">{`
+      <Script id="gtm-init-default" strategy="lazyOnload">{`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
           j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -57,7 +57,7 @@ export default function App({ Component, pageProps }) {
         `}</Script>
       <Script
         src="https://www.google.com/recaptcha/api.js?render=6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
       <BlogHeader />
       <main className={inter.className} style={{ minHeight: '70vh' }}>
