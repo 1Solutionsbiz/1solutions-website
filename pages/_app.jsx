@@ -1,13 +1,29 @@
 import Head from 'next/head';
 import Script from 'next/script';
+import { useEffect } from 'react';
 import { Inter } from 'next/font/google';
 import BlogHeader from '../components/blog/BlogHeader';
 import BlogFooter from '../components/blog/BlogFooter';
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
+const RC_SRC = 'https://www.google.com/recaptcha/api.js?render=6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs';
 
 export default function App({ Component, pageProps }) {
-  // Pages can define getLayout to opt out of the default shell
+  useEffect(() => {
+    const events = ['scroll', 'click', 'touchstart', 'keydown'];
+    const load = () => {
+      events.forEach(e => window.removeEventListener(e, load));
+      if (!document.querySelector(`script[src="${RC_SRC}"]`)) {
+        const s = document.createElement('script');
+        s.src = RC_SRC;
+        s.async = true;
+        document.head.appendChild(s);
+      }
+    };
+    events.forEach(e => window.addEventListener(e, load, { passive: true }));
+    return () => events.forEach(e => window.removeEventListener(e, load));
+  }, []);
+
   if (Component.getLayout) {
     return (
       <>
@@ -27,10 +43,6 @@ export default function App({ Component, pageProps }) {
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-TGMKTBL');
         `}</Script>
-        <Script
-          src="https://www.google.com/recaptcha/api.js?render=6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs"
-          strategy="lazyOnload"
-        />
         {Component.getLayout(<Component {...pageProps} />)}
       </>
     );
@@ -54,10 +66,6 @@ export default function App({ Component, pageProps }) {
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-TGMKTBL');
         `}</Script>
-      <Script
-        src="https://www.google.com/recaptcha/api.js?render=6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs"
-        strategy="lazyOnload"
-      />
       <BlogHeader />
       <main className={inter.className} style={{ minHeight: '70vh' }}>
         <Component {...pageProps} />
