@@ -1077,7 +1077,7 @@ export default function LinkBuildingPackages() {
                     </div>
                   ) : (
                     <div className="lbp-rzp-wrap">
-                      <RazorpayButton buttonId="pl_T9SXTt7gsAYHy6" />
+                      <RazorpayButton buttonId={isYearly ? 'pl_T9Sgh4zAysP8S1' : 'pl_T9SXTt7gsAYHy6'} />
                     </div>
                   )}
                   <div className="lbp-divider"/>
