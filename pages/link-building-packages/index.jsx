@@ -425,35 +425,19 @@ const STATS = [
   { label: 'Client Retention', val: '92%' },
 ];
 
-const TESTIMONIALS = [
-  {
-    name: 'Rahul Mehta',
-    role: 'Founder',
-    company: 'LegalEdge India',
-    rating: 5,
-    text: 'Our organic traffic grew from 800 to 6,200 monthly sessions in 10 months on the Authority plan. The quality of placements is exceptional - real editorial sites, not link farms. DR jumped from 22 to 48.',
-  },
-  {
-    name: 'Priya Sharma',
-    role: 'Head of Growth',
-    company: 'SaaSify Technologies',
-    rating: 5,
-    text: 'We were stuck on page 2 for our main keywords for two years. After 6 months on the Growth package, we hit page 1 for 4 commercial terms. The live link tracker gives full visibility into every placement.',
-  },
-  {
-    name: 'James Whitfield',
-    role: 'SEO Director',
-    company: 'Meridian Commerce',
-    rating: 5,
-    text: 'The AI+GEO Elite plan delivered results we did not expect - we started appearing in Perplexity and Google AI Overviews within 90 days. The team understands AEO and GEO deeply, not just traditional backlinks.',
-  },
-  {
-    name: 'Ankit Gupta',
-    role: 'Marketing Manager',
-    company: 'FinTechWave',
-    rating: 5,
-    text: 'Switched from another agency that was building low-quality links. 1Solutions rebuilt our profile with DR50+ placements. Rankings recovered in 4 months and have continued to climb. Highly recommended.',
-  },
+const TESTIMONIALS_ROW1 = [
+  { initials:'RM', bg:'#1a4a7a', name:'Rahul Mehta', role:'Founder, LegalEdge India', text:'"Our organic traffic grew from 800 to 6,200 monthly sessions in 10 months on the Authority plan. Real editorial sites, not link farms. DR jumped from 22 to 48."' },
+  { initials:'PG', bg:'#0F3460', name:'Priya Gupta', role:'Head of Growth, SaaSify Technologies', text:'"We were stuck on page 2 for two years. After 6 months on the Growth package, we hit page 1 for 4 commercial terms. The live tracker gives full visibility into every placement."' },
+  { initials:'JW', bg:'#2d5a8e', name:'James Whitfield', role:'SEO Director, Meridian Commerce - UK', text:'"The AI+GEO Elite plan delivered results we did not expect. We started appearing in Perplexity and Google AI Overviews within 90 days. The team understands AEO and GEO deeply."' },
+  { initials:'AG', bg:'#164e63', name:'Ankit Gupta', role:'Marketing Manager, FinTechWave', text:'"Switched from an agency building low-quality links. 1Solutions rebuilt our profile with DR50+ placements. Rankings recovered in 4 months and have continued to climb. Highly recommended."' },
+  { initials:'SL', bg:'#1e3a5f', name:'Sophie Lawrence', role:'eCommerce Director, StyleHaven UK', text:'"We launched a new product line and needed quick authority. The Growth package delivered 100 placements in month 1, all on niche-relevant fashion and lifestyle sites. Traffic up 340% in 5 months."' },
+];
+const TESTIMONIALS_ROW2 = [
+  { initials:'VK', bg:'#0c4a6e', name:'Vikram Kumar', role:'CEO, Healthify India', text:'"Healthcare SEO is brutal - YMYL pages need the highest quality links. The Authority plan only places on medically credible sites. Our DR moved from 31 to 56 in 8 months. Phenomenal work."' },
+  { initials:'MB', bg:'#134e4a', name:'Marcus Brennan', role:'Head of SEO, PropVault - AU', text:'"Real estate keywords are highly competitive. After 6 months on Authority, we went from page 4 to position 3 for our main city keyword. The competitor gap analysis at onboarding was eye-opening."' },
+  { initials:'ND', bg:'#3b1f6e', name:'Natasha D\'Souza', role:'Growth Lead, FinBridge App', text:'"We scaled from Starter to Growth to Authority as our budget grew. Each upgrade brought a measurable jump in domain authority. The team never pushed us to upgrade early - they were genuinely strategic."' },
+  { initials:'TC', bg:'#1c3252', name:'Tom Chen', role:'VP Marketing, CloudStack SaaS', text:'"The AI+GEO Elite package is worth every dollar if you want to appear in AI-generated answers. We now show up in ChatGPT and Perplexity for our main SaaS category. ROI has been exceptional."' },
+  { initials:'AL', bg:'#2c4a1e', name:'Aisha Lim', role:'Founder, EduPath Online', text:'"Education niche needs authoritative .edu-adjacent links. The Authority plan delivered placements on high-traffic educational blogs and established media. Our course signups doubled in 6 months."' },
 ];
 
 const AI_PLATFORMS = ['Google AI Overviews', 'ChatGPT Search', 'Perplexity AI', 'Gemini', 'Bing Copilot'];
@@ -583,15 +567,15 @@ export default function LinkBuildingPackages() {
         aggregateRating: {
           '@type': 'AggregateRating',
           ratingValue: '4.9',
-          reviewCount: String(TESTIMONIALS.length),
+          reviewCount: String(TESTIMONIALS_ROW1.length + TESTIMONIALS_ROW2.length),
           bestRating: '5',
         },
-        review: TESTIMONIALS.map(t => ({
+        review: [...TESTIMONIALS_ROW1, ...TESTIMONIALS_ROW2].map(t => ({
           '@type': 'Review',
           author: { '@type': 'Person', name: t.name },
-          reviewRating: { '@type': 'Rating', ratingValue: String(t.rating), bestRating: '5' },
-          reviewBody: t.text,
-          name: `${t.company} — ${t.role}`,
+          reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          reviewBody: t.text.replace(/^"|"$/g, ''),
+          name: t.role,
         })),
       },
     ],
@@ -903,6 +887,27 @@ export default function LinkBuildingPackages() {
           .lbp-author-text{font-size:13px;color:#4A6080;line-height:1.6}
 
           /* ── CTA ── */
+          .lbp-related-section{background:rgba(237,233,254,.18);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.60);padding:80px 40px}
+          .lbp-related-inner{max-width:1280px;margin:0 auto;text-align:center}
+          .lbp-related-eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#4A6080;margin:0 0 14px;display:block}
+          .lbp-related-title{font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px}
+          .lbp-related-sub{font-size:15px;color:#0F1F40;line-height:1.7;margin:0 auto;max-width:680px}
+          .lbp-related-divider{border:none;border-top:1px solid rgba(15,52,96,.12);margin:40px 0}
+          .lbp-related-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+          .lbp-rtag{display:inline-block;padding:11px 22px;border:1.5px solid;border-radius:50px;font-size:14px;font-weight:500;text-decoration:none;transition:all .25s}
+          .lbp-rtag:hover{filter:brightness(.92);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.10)}
+          .lbp-rtag-blue{background:rgba(59,130,246,.10);border-color:rgba(59,130,246,.30);color:#1D4ED8}
+          .lbp-rtag-violet{background:rgba(139,92,246,.10);border-color:rgba(139,92,246,.30);color:#6D28D9}
+          .lbp-rtag-amber{background:rgba(245,158,11,.12);border-color:rgba(245,158,11,.35);color:#B45309}
+          .lbp-rtag-teal{background:rgba(20,184,166,.10);border-color:rgba(20,184,166,.30);color:#0F766E}
+          .lbp-rtag-rose{background:rgba(244,63,94,.10);border-color:rgba(244,63,94,.28);color:#BE123C}
+          .lbp-rtag-green{background:rgba(34,197,94,.10);border-color:rgba(34,197,94,.28);color:#15803D}
+          .lbp-rtag-indigo{background:rgba(99,102,241,.10);border-color:rgba(99,102,241,.28);color:#4338CA}
+          .lbp-rtag-orange{background:rgba(249,115,22,.10);border-color:rgba(249,115,22,.30);color:#C2410C}
+          .lbp-rtag-cyan{background:rgba(6,182,212,.10);border-color:rgba(6,182,212,.28);color:#0E7490}
+          .lbp-rtag-slate{background:rgba(100,116,139,.10);border-color:rgba(100,116,139,.28);color:#334155}
+          .lbp-rtag-sky{background:rgba(14,165,233,.10);border-color:rgba(14,165,233,.28);color:#0369A1}
+          .lbp-rtag-lime{background:rgba(132,204,22,.10);border-color:rgba(132,204,22,.28);color:#3F6212}
           .lbp-cta{background:linear-gradient(135deg,rgba(254,243,199,.70) 0%,rgba(255,255,255,.60) 40%,rgba(219,234,254,.65) 100%);backdrop-filter:blur(20px);padding:80px 40px;position:relative;z-index:1;border-top:1px solid rgba(255,255,255,.80)}
           .lbp-cta-in{max-width:760px;margin:0 auto;text-align:center;position:relative;z-index:1}
           .lbp-cta-t{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;line-height:1.2}
@@ -924,18 +929,22 @@ export default function LinkBuildingPackages() {
           .lbp-breadcrumb-cur{color:#4A6080;font-weight:600}
 
           /* ── TESTIMONIALS ── */
-          .lbp-testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:40px}
-          .lbp-tcard{background:linear-gradient(135deg,rgba(219,234,254,.55) 0%,rgba(255,255,255,.80) 60%,rgba(237,233,254,.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:20px;padding:32px 28px;box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95);display:flex;flex-direction:column;gap:16px;transition:transform .3s,box-shadow .3s,border-color .3s}
-          .lbp-tcard:hover{transform:translateY(-6px);border-color:rgba(217,119,6,.40);box-shadow:0 16px 48px rgba(15,52,96,.14),inset 0 1px 0 rgba(255,255,255,1)}
-          .lbp-tcard.featured{background:linear-gradient(135deg,rgba(254,243,199,.50) 0%,rgba(255,255,255,.85) 55%,rgba(219,234,254,.45) 100%);border-color:rgba(217,119,6,.25);box-shadow:0 6px 32px rgba(217,119,6,.10),inset 0 1px 0 rgba(255,255,255,1)}
-          .lbp-tcard-stars{font-size:18px;color:#D97706;letter-spacing:2px}
-          .lbp-tcard-text{font-size:15px;line-height:1.75;color:#374151;margin:0;flex:1}
-          .lbp-tcard.featured .lbp-tcard-text{color:#1f2937}
+          .lbp-tstrip-outer{overflow:hidden;position:relative;padding:8px 0;-webkit-mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%);mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%)}
+          .lbp-tstrip-outer+.lbp-tstrip-outer{margin-top:20px}
+          .lbp-tstrip{display:flex;gap:20px;width:max-content}
+          .lbp-tstrip.row1{animation:lbp-scroll-left 45s linear infinite}
+          .lbp-tstrip.row2{animation:lbp-scroll-right 45s linear infinite}
+          .lbp-tstrip:hover{animation-play-state:paused}
+          @keyframes lbp-scroll-left{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+          @keyframes lbp-scroll-right{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
+          .lbp-tcard{background:linear-gradient(135deg,rgba(219,234,254,.55) 0%,rgba(255,255,255,.80) 60%,rgba(237,233,254,.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:20px;padding:28px 24px;box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95);display:flex;flex-direction:column;gap:14px;width:340px;flex-shrink:0}
+          .lbp-tcard-stars{font-size:16px;color:#D97706;letter-spacing:2px}
+          .lbp-tcard-text{font-size:14px;line-height:1.75;color:#374151;margin:0;flex:1}
           .lbp-tcard-author{display:flex;align-items:center;gap:12px;margin-top:4px}
-          .lbp-tcard-avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;flex-shrink:0}
+          .lbp-tcard-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;flex-shrink:0}
           .lbp-tcard-name{font-size:14px;font-weight:700;color:#0F3460}
           .lbp-tcard-role{font-size:12px;color:#6b7280}
-          .lbp-testi-stats{display:flex;align-items:center;justify-content:center;gap:0;background:linear-gradient(135deg,rgba(219,234,254,.50) 0%,rgba(255,255,255,.75) 50%,rgba(237,233,254,.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:16px;padding:32px 40px;border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 20px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
+          .lbp-testi-stats{display:flex;align-items:center;justify-content:center;gap:0;background:linear-gradient(135deg,rgba(219,234,254,.50) 0%,rgba(255,255,255,.75) 50%,rgba(237,233,254,.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:16px;padding:32px 40px;border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 20px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95);margin-top:52px}
           .lbp-tstat{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1}
           .lbp-tstat-num{font-size:28px;font-weight:800;color:#0F3460}
           .lbp-tstat-label{font-size:13px;color:#4A6080;font-weight:500}
@@ -958,12 +967,12 @@ export default function LinkBuildingPackages() {
             .lbp-ai-grid{grid-template-columns:1fr}
             .lbp-cs-grid{grid-template-columns:repeat(2,1fr)}
           }
-          @media(max-width:1024px){.lbp-testi-grid{grid-template-columns:1fr}
-            .lbp-testi-stats{flex-wrap:wrap;gap:16px;padding:24px 20px}}
+          @media(max-width:1024px){.lbp-testi-stats{flex-wrap:wrap;gap:16px;padding:24px 20px}}
           @media(max-width:768px){
             .lbp-breadcrumb{padding:10px 20px 0}
             .lbp-related{padding:14px 20px}
-            .lbp-sec,.lbp-results,.lbp-cta,.lbp-ai-sec{padding-left:20px;padding-right:20px}
+            .lbp-sec,.lbp-results,.lbp-cta,.lbp-ai-sec,.lbp-related-section{padding-left:20px;padding-right:20px}
+            .lbp-related-title{font-size:28px}
             .lbp-hero-content{padding:36px 20px 24px}
             .lbp-h1{font-size:clamp(1.7rem,6vw,2.4rem)}
             .lbp-hero-btns{flex-direction:column}
@@ -1425,33 +1434,50 @@ export default function LinkBuildingPackages() {
         </section>
 
         {/* ── TESTIMONIALS ── */}
-        <section className="lbp-sec lbp-white-sec" aria-labelledby="testi-title">
-          <div className="lbp-sec-in">
-            <div className={`lbp-reveal${visibleSections.has('testi')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['testi']=el;}} style={{textAlign:'center',marginBottom:52}}>
+        <section className="lbp-sec lbp-white-sec" style={{overflow:'hidden'}} aria-labelledby="testi-title">
+          <div style={{maxWidth:1400,margin:'0 auto'}}>
+            <div className={`lbp-reveal${visibleSections.has('testi')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['testi']=el;}} style={{textAlign:'center',marginBottom:52,padding:'0 40px'}}>
               <span className="lbp-sec-ey">Client Reviews</span>
               <h2 className="lbp-sec-ttl" id="testi-title">What Our Link Building Clients Say</h2>
               <p className="lbp-sec-desc" style={{margin:'0 auto'}}>Trusted by businesses across India, US, UK and Australia for 15+ years.</p>
             </div>
-            <div className="lbp-testi-grid">
-              {[
-                {initials:'RM', bg:'#1a4a7a', text:'"Our organic traffic grew from 800 to 6,200 monthly sessions in 10 months on the Authority plan. The quality of placements is exceptional - real editorial sites, not link farms. DR jumped from 22 to 48."', name:'Rahul Mehta', role:'Founder, LegalEdge India', featured:false},
-                {initials:'PG', bg:'#0F3460', text:'"We were stuck on page 2 for our main keywords for two years. After 6 months on the Growth package, we hit page 1 for 4 commercial terms. The live link tracker gives full visibility into every placement."', name:'Priya Gupta', role:'Head of Growth, SaaSify Technologies', featured:true},
-                {initials:'JW', bg:'#2d5a8e', text:'"The AI+GEO Elite plan delivered results we did not expect - we started appearing in Perplexity and Google AI Overviews within 90 days. The team understands AEO and GEO deeply, not just traditional backlinks."', name:'James Whitfield', role:'SEO Director, Meridian Commerce - UK', featured:false},
-              ].map(t => (
-                <div key={t.name} className={`lbp-tcard${t.featured?' featured':''}`}>
-                  <div className="lbp-tcard-stars">★★★★★</div>
-                  <p className="lbp-tcard-text">{t.text}</p>
-                  <div className="lbp-tcard-author">
-                    <div className="lbp-tcard-avatar" style={{background:t.bg}}>{t.initials}</div>
-                    <div>
-                      <div className="lbp-tcard-name">{t.name}</div>
-                      <div className="lbp-tcard-role">{t.role}</div>
+            {/* Row 1 — scrolls left */}
+            <div className="lbp-tstrip-outer">
+              <div className="lbp-tstrip row1" aria-hidden="true">
+                {[...TESTIMONIALS_ROW1,...TESTIMONIALS_ROW1].map((t,i) => (
+                  <div key={i} className="lbp-tcard">
+                    <div className="lbp-tcard-stars">★★★★★</div>
+                    <p className="lbp-tcard-text">{t.text}</p>
+                    <div className="lbp-tcard-author">
+                      <div className="lbp-tcard-avatar" style={{background:t.bg}}>{t.initials}</div>
+                      <div>
+                        <div className="lbp-tcard-name">{t.name}</div>
+                        <div className="lbp-tcard-role">{t.role}</div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-            <div className="lbp-testi-stats">
+            {/* Row 2 — scrolls right */}
+            <div className="lbp-tstrip-outer">
+              <div className="lbp-tstrip row2" aria-hidden="true">
+                {[...TESTIMONIALS_ROW2,...TESTIMONIALS_ROW2].map((t,i) => (
+                  <div key={i} className="lbp-tcard">
+                    <div className="lbp-tcard-stars">★★★★★</div>
+                    <p className="lbp-tcard-text">{t.text}</p>
+                    <div className="lbp-tcard-author">
+                      <div className="lbp-tcard-avatar" style={{background:t.bg}}>{t.initials}</div>
+                      <div>
+                        <div className="lbp-tcard-name">{t.name}</div>
+                        <div className="lbp-tcard-role">{t.role}</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="lbp-testi-stats" style={{maxWidth:1100,margin:'52px auto 0',marginLeft:'auto',marginRight:'auto',padding:'32px 40px'}}>
               {[['4.9/5','Average Rating'],['200+','Verified Reviews'],['92%','Client Retention'],['15+','Years Experience']].map(([num,label],i,arr) => (
                 <>{/* eslint-disable-next-line react/jsx-key */}
                   <div className="lbp-tstat" key={label}>
@@ -1491,17 +1517,30 @@ export default function LinkBuildingPackages() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="lbp-cta" aria-labelledby="cta-title">
-          <div className="lbp-cta-in">
-            <span className="lbp-sec-ey" style={{display:'block',textAlign:'center',marginBottom:16}}>Not sure which plan is right for you?</span>
-            <h2 className="lbp-cta-t" id="cta-title">Get a Free Backlink Gap Analysis</h2>
-            <p className="lbp-cta-s">Share your domain and top competitors - we&rsquo;ll analyse the backlink gap, assess your AI citation presence, and recommend exactly which package will close the gap fastest.</p>
-            <div className="lbp-btns">
-              <Link href="/contact-us" className="lbp-btn-p">
-                Request a Free Backlink Audit
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </Link>
-              <Link href="/generative-engine-optimization-services" className="lbp-btn-s">Explore GEO Services</Link>
+        {/* ── RELATED SERVICES ── */}
+        <section className="lbp-related-section">
+          <div className="lbp-related-inner">
+            <span className="lbp-related-eyebrow">LINK BUILDING RELATED OFFERINGS</span>
+            <h2 className="lbp-related-title">Explore Related Services and Technologies</h2>
+            <p className="lbp-related-sub">Pair our link building expertise with related SEO and digital marketing services to maximise your organic growth and AI search visibility.</p>
+            <hr className="lbp-related-divider"/>
+            <div className="lbp-related-tags">
+              {[
+                ['SEO Services',                        'blue',    '/seo-services-company'],
+                ['Content Marketing Services',          'amber',   '/content-marketing-services'],
+                ['Digital PR & Brand Mentions',         'green',   '/digital-marketing-services'],
+                ['Generative Engine Optimization',      'violet',  '/generative-engine-optimization-services'],
+                ['Technical SEO Optimization',          'slate',   '/technical-seo-optimization'],
+                ['SEO Packages',                        'sky',     '/affordable-seo-packages'],
+                ['Link Building Services',              'rose',    '/link-building-services'],
+                ['Local SEO Services',                  'teal',    '/local-seo-services'],
+                ['eCommerce SEO',                       'orange',  '/ecommerce-seo-services'],
+                ['Answer Engine Optimization',          'indigo',  '/answer-engine-optimization-services'],
+                ['SEO Audit Services',                  'cyan',    '/seo-audit-services'],
+                ['Enterprise SEO Services',             'lime',    '/enterprise-seo-services'],
+              ].map(([label,color,href]) => (
+                <Link href={href} className={`lbp-rtag lbp-rtag-${color}`} key={label}>{label}</Link>
+              ))}
             </div>
           </div>
         </section>
