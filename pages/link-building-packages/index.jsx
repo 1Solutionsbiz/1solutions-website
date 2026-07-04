@@ -23,14 +23,28 @@ function useCountUp(target, duration = 1800, start = false) {
 
 function RazorpayButton({ buttonId, className }) {
   const formRef = useRef(null);
+  const loaded = useRef(false);
   useEffect(() => {
-    if (!formRef.current) return;
-    formRef.current.innerHTML = '';
-    const script = document.createElement('script');
-    script.src = 'https://checkout.razorpay.com/v1/payment-button.js';
-    script.setAttribute('data-payment_button_id', buttonId);
-    script.async = true;
-    formRef.current.appendChild(script);
+    loaded.current = false;
+  }, [buttonId]);
+  useEffect(() => {
+    const el = formRef.current;
+    if (!el) return;
+    const inject = () => {
+      if (loaded.current) return;
+      loaded.current = true;
+      el.innerHTML = '';
+      const script = document.createElement('script');
+      script.src = 'https://checkout.razorpay.com/v1/payment-button.js';
+      script.setAttribute('data-payment_button_id', buttonId);
+      script.async = true;
+      el.appendChild(script);
+    };
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) { inject(); observer.disconnect(); }
+    }, { rootMargin: '300px' });
+    observer.observe(el);
+    return () => observer.disconnect();
   }, [buttonId]);
   return <form ref={formRef} className={className}/>;
 }
