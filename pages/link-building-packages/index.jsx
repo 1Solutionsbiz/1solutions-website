@@ -494,7 +494,6 @@ export default function LinkBuildingPackages() {
         foundingDate: '2008',
         sameAs: ['https://www.linkedin.com/company/1solutions/', 'https://x.com/1solutionsbiz', 'https://www.facebook.com/1solutionsbiz'],
         address: { '@type': 'PostalAddress', addressLocality: 'New Delhi', addressCountry: 'IN' },
-        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '127', bestRating: '5' },
       },
       {
         '@type': 'WebPage',
@@ -539,14 +538,20 @@ export default function LinkBuildingPackages() {
     <>
       <Head>
         <title>Link Building Packages 2026 | AI+GEO & SEO Backlinks | 1Solutions</title>
-        <meta name="description" content="White-hat link building packages from $350/month. Manual outreach, DR40–DR90 guest posts, niche edits, digital PR, and AI+GEO citation building for Google AI Overviews, Perplexity & ChatGPT." />
-        <meta name="keywords" content="link building packages, link building pricing, AI link building, GEO link building, backlink packages, guest post packages, link building plans, white-hat link building, AI citation building, AEO link building" />
+        <meta name="description" content="White-hat link building packages from $350/month. DR40–DR90 guest posts, niche edits, digital PR and AI+GEO citation building for Google AI Overviews, Perplexity & ChatGPT. Live tracked." />
         <link rel="canonical" href="https://www.1solutions.biz/link-building-packages/" />
         <meta property="og:title" content="Link Building Packages 2026 - AI+GEO & SEO Backlinks | 1Solutions" />
         <meta property="og:description" content="White-hat link building packages from $350/month. DR40–DR90 guest posts, niche edits, digital PR, and AI+GEO citation building. Live link tracker on every plan." />
         <meta property="og:url" content="https://www.1solutions.biz/link-building-packages/" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.1solutions.biz/images/link-building-packages-og.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Link Building Packages by 1Solutions - Starting $350/month" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Link Building Packages 2026 | AI+GEO & SEO Backlinks | 1Solutions" />
+        <meta name="twitter:description" content="White-hat link building from $350/month. DR40–DR90 guest posts, niche edits, digital PR and AI+GEO citation building. Manual outreach, fully tracked." />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/link-building-packages-og.jpg" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <style>{`
           /* ── BASE ── */
@@ -809,6 +814,7 @@ export default function LinkBuildingPackages() {
 
           /* ── FAQ ── */
           .lbp-faq-list{display:flex;flex-direction:column;gap:10px}
+          .lbp-fq-h{margin:0;padding:0;font-size:inherit;font-weight:inherit;line-height:inherit}
           .lbp-fitem{background:linear-gradient(135deg,rgba(219,234,254,.55) 0%,rgba(255,255,255,.80) 60%,rgba(237,233,254,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:16px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(15,52,96,.07),inset 0 1px 0 rgba(255,255,255,.95);transition:border-color .2s,box-shadow .2s}
           .lbp-fitem.open{border-color:rgba(217,119,6,.40);box-shadow:0 8px 32px rgba(15,52,96,.12),inset 0 1px 0 rgba(255,255,255,1)}
           .lbp-fitem.open::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#D97706;border-radius:3px 0 0 3px}
@@ -1333,11 +1339,13 @@ export default function LinkBuildingPackages() {
             <div className="lbp-faq-list">
               {FAQS.map((f, i) => (
                 <div key={i} className={`lbp-fitem${openFaq===i?' open':''}`}>
-                  <button className="lbp-fq" onClick={()=>setOpenFaq(openFaq===i?-1:i)} aria-expanded={openFaq===i} aria-controls={`faq-ans-${i}`}>
-                    <span className="lbp-fq-badge" aria-hidden="true">{String(i+1).padStart(2,'0')}</span>
-                    <span className="lbp-fq-text">{f.q}</span>
-                    <svg className="lbp-fq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-                  </button>
+                  <h3 className="lbp-fq-h">
+                    <button className="lbp-fq" onClick={()=>setOpenFaq(openFaq===i?-1:i)} aria-expanded={openFaq===i} aria-controls={`faq-ans-${i}`}>
+                      <span className="lbp-fq-badge" aria-hidden="true">{String(i+1).padStart(2,'0')}</span>
+                      <span className="lbp-fq-text">{f.q}</span>
+                      <svg className="lbp-fq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                  </h3>
                   <div id={`faq-ans-${i}`} className="lbp-fa" style={{display:openFaq===i?'block':'none'}}>{f.a}</div>
                 </div>
               ))}
