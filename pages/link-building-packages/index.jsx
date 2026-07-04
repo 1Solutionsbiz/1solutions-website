@@ -86,7 +86,6 @@ const PLANS = [
       'Link indexing included',
       'Monthly delivery report',
       'Live Google Sheets tracker',
-      '20-25 day turnaround',
     ],
   },
   {
@@ -112,7 +111,6 @@ const PLANS = [
       'E-E-A-T signal placements',
       'Monthly report + strategy call',
       'Live link tracker dashboard',
-      '15-20 day turnaround',
     ],
   },
   {
@@ -138,7 +136,6 @@ const PLANS = [
       'Custom anchor text map',
       'Monthly report + strategy call',
       'Dedicated link building strategist',
-      '10-15 day turnaround',
     ],
   },
   {
@@ -164,7 +161,6 @@ const PLANS = [
       'AEO + GEO anchor text strategy',
       'AI visibility tracking monthly report',
       'Dedicated AI+GEO strategist',
-      '7-10 day turnaround',
     ],
   },
 ];
@@ -346,18 +342,18 @@ const QUALITY_SIGNALS = [
 ];
 
 const INDUSTRIES = [
-  { icon: '🛒', label: 'Ecommerce' },
-  { icon: '⚖️', label: 'Legal' },
-  { icon: '💊', label: 'Healthcare' },
-  { icon: '💰', label: 'Finance' },
-  { icon: '🏠', label: 'Real Estate' },
-  { icon: '💻', label: 'SaaS / Tech' },
-  { icon: '🎓', label: 'Education' },
-  { icon: '🏗️', label: 'Home Services' },
-  { icon: '✈️', label: 'Travel' },
-  { icon: '📊', label: 'B2B Services' },
-  { icon: '🤖', label: 'AI / LLM' },
-  { icon: '🌿', label: 'Wellness' },
+  { label: 'Ecommerce',     path: 'M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z' },
+  { label: 'Legal',         path: 'M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3' },
+  { label: 'Healthcare',    path: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z' },
+  { label: 'Finance',       path: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z' },
+  { label: 'Real Estate',   path: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' },
+  { label: 'SaaS / Tech',   path: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' },
+  { label: 'Education',     path: 'M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222' },
+  { label: 'Home Services', path: 'M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z' },
+  { label: 'Travel',        path: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064' },
+  { label: 'B2B Services',  path: 'M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z' },
+  { label: 'AI / LLM',      path: 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z' },
+  { label: 'Wellness',      path: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z' },
 ];
 
 const RESULTS = [
@@ -672,8 +668,8 @@ export default function LinkBuildingPackages() {
           .lbp-cs-arrow{color:#fcd34d;font-weight:700;margin:0 4px}
           .lbp-cs-divider{height:1px;background:rgba(255,255,255,.08);margin:4px 0}
           .lbp-cs-cta-row{text-align:center}
-          .lbp-cs-cta{display:inline-flex;align-items:center;gap:8px;padding:13px 32px;background:rgba(255,255,255,.12);backdrop-filter:blur(12px);border:1.5px solid rgba(255,255,255,.25);color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .lbp-cs-cta:hover{background:rgba(217,119,6,.85);border-color:rgba(217,119,6,.85);box-shadow:0 8px 28px rgba(217,119,6,.40);transform:translateY(-2px)}
+          .lbp-cs-cta{display:inline-flex;align-items:center;gap:8px;padding:13px 32px;background:#D97706;border:1.5px solid #D97706;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;box-shadow:0 4px 20px rgba(217,119,6,.35)}
+          .lbp-cs-cta:hover{background:#B45309;border-color:#B45309;box-shadow:0 0 0 6px rgba(217,119,6,.20),0 8px 32px rgba(217,119,6,.55);transform:translateY(-2px)}
 
           /* ── STATS BAR ── */
           .lbp-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
@@ -850,9 +846,11 @@ export default function LinkBuildingPackages() {
 
           /* ── INDUSTRIES ── */
           .lbp-ind-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
-          .lbp-ind-card{padding:18px 12px;text-align:center;transition:transform .22s,box-shadow .22s,border-color .22s}
+          .lbp-ind-card{padding:20px 14px;text-align:center;transition:transform .22s,box-shadow .22s,border-color .22s}
           .lbp-ind-card:hover{transform:translateY(-5px);border-color:rgba(217,119,6,.45) !important;box-shadow:0 12px 32px rgba(15,52,96,.12),inset 0 1px 0 rgba(255,255,255,1) !important}
-          .lbp-ind-emoji{font-size:1.8rem;margin-bottom:8px;display:block}
+          .lbp-ind-icon{width:44px;height:44px;background:rgba(217,119,6,.10);border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;transition:background .2s}
+          .lbp-ind-card:hover .lbp-ind-icon{background:rgba(217,119,6,.18)}
+          .lbp-ind-icon svg{width:22px;height:22px;stroke:#D97706;fill:none}
           .lbp-ind-lbl{font-size:12px;font-weight:600;color:#374151}
 
           /* ── RESULTS ── */
@@ -1261,7 +1259,6 @@ export default function LinkBuildingPackages() {
                     ['Strategy call','✗','Monthly','Monthly','Monthly'],
                     ['Dedicated strategist','✗','✗','✓','AI+GEO specialist'],
                     ['Live link tracker','✓','✓','✓','✓'],
-                    ['Turnaround time','20-25 days','15-20 days','10-15 days','7-10 days'],
                   ].map(([feat,...cols]) => (
                     <tr key={feat}>
                       <td>{feat}</td>
@@ -1335,7 +1332,11 @@ export default function LinkBuildingPackages() {
             <div className="lbp-ind-grid">
               {INDUSTRIES.map(ind => (
                 <div key={ind.label} className="lbp-ind-card lbp-glass">
-                  <span className="lbp-ind-emoji" aria-hidden="true">{ind.icon}</span>
+                  <div className="lbp-ind-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#D97706" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                      <path d={ind.path}/>
+                    </svg>
+                  </div>
                   <div className="lbp-ind-lbl">{ind.label}</div>
                 </div>
               ))}
@@ -1464,25 +1465,8 @@ export default function LinkBuildingPackages() {
           </div>
         </section>
 
-        {/* ── INDIA / PRICING CONTEXT ── */}
-        <section className="lbp-sec" aria-labelledby="india-title">
-          <div className="lbp-sec-in" style={{maxWidth:960,margin:'0 auto'}}>
-            <div className={`lbp-reveal${visibleSections.has('india')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['india']=el;}} style={{textAlign:'center',marginBottom:36}}>
-              <span className="lbp-sec-ey">Monthly Link Building Packages</span>
-              <h2 className="lbp-sec-ttl" id="india-title">Link Building Packages for Indian Businesses &amp; Global Brands</h2>
-              <p className="lbp-sec-desc" style={{margin:'0 auto 28px'}}>Our monthly link building packages are used by startups, SMEs, and enterprises across India, the US, UK, and Australia. <Link href="/link-building-services" style={{color:'#0F3460',fontWeight:600}}>Link building services</Link> are priced in USD and available with no long-term contract.</p>
-            </div>
-            <div className="lbp-glass lbp-def-box" style={{padding:'28px 32px'}}>
-              <h3 style={{fontSize:'1rem',fontWeight:700,color:'#0F3460',marginBottom:12}}>Link Building Pricing — What Determines the Cost?</h3>
-              <p style={{fontSize:'14px',color:'#374151',lineHeight:1.8,margin:0}}>
-                Link building pricing depends on four factors: the number of links per month, the minimum domain rating (DR) of linking sites, the link types included (guest posts, niche edits, digital PR), and the level of strategy support. Our monthly link building packages start at <strong>$350/month for 50 DR30+ links</strong> and scale to <strong>$1,499/month for 400 DR60+ links</strong> with full AI+GEO citation building. For <Link href="/seo-services-company" style={{color:'#0F3460',fontWeight:600}}>SEO services</Link> that include on-page optimisation alongside link building, see our <Link href="/seo-services-company" style={{color:'#0F3460',fontWeight:600}}>SEO packages</Link>. For AI-search-specific strategy, see our <Link href="/generative-engine-optimization-services" style={{color:'#0F3460',fontWeight:600}}>GEO services</Link>.
-              </p>
-            </div>
-          </div>
-        </section>
-
         {/* ── FAQ ── */}
-        <section className="lbp-sec" style={{paddingTop:80,paddingBottom:80}} aria-labelledby="faq-title">
+        <section className="lbp-sec lbp-white-sec" style={{paddingTop:80,paddingBottom:80}} aria-labelledby="faq-title">
           <div className="lbp-sec-in" style={{maxWidth:1000,margin:'0 auto'}}>
             <div className={`lbp-reveal${visibleSections.has('faq')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['faq']=el;}}>
               <span className="lbp-sec-ey">Common Questions</span>
