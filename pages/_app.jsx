@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Script from 'next/script';
 import { Inter } from 'next/font/google';
 import BlogHeader from '../components/blog/BlogHeader';
 import BlogFooter from '../components/blog/BlogFooter';
@@ -20,6 +21,10 @@ export default function App({ Component, pageProps }) {
           <meta property="og:image:height" content="270" />
           <meta property="og:image:type" content="image/jpeg" />
         </Head>
+        <Script
+          src="https://www.google.com/recaptcha/api.js?render=6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs"
+          strategy="afterInteractive"
+        />
         {Component.getLayout(<Component {...pageProps} />)}
       </>
     );
@@ -36,6 +41,10 @@ export default function App({ Component, pageProps }) {
         <meta property="og:image:height" content="270" />
         <meta property="og:image:type" content="image/jpeg" />
       </Head>
+      <Script
+        src="https://www.google.com/recaptcha/api.js?render=6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs"
+        strategy="afterInteractive"
+      />
       <BlogHeader />
       <main className={inter.className} style={{ minHeight: '70vh' }}>
         <Component {...pageProps} />

@@ -43,8 +43,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </noscript>
         <Main />
         <NextScript />
-        {/* reCAPTCHA v3 — loaded after main content to avoid blocking TBT */}
-        <script src="https://www.google.com/recaptcha/api.js?render=6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs" async defer />
       </body>
     </Html>
   );
