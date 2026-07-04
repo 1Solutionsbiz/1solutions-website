@@ -287,8 +287,8 @@ const METHODOLOGY = [
 const QUALITY_SIGNALS = [
   {
     icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
-    title: 'DR40–DR65+ Thresholds by Plan',
-    desc: 'Every link site is pre-screened against Ahrefs DR thresholds by plan tier. Starter requires DR40+, Growth DR50+, Authority DR60+, AI+GEO Elite DR65+. No exceptions.',
+    title: 'DR40–DR90 Thresholds by Plan',
+    desc: 'Every link site is pre-screened against Ahrefs DR thresholds by plan tier. Starter requires DR30+, Growth DR40+, Authority DR50+, AI+GEO Elite DR60+. Domains up to DR90 are actively targeted on higher plans. No exceptions.',
   },
   {
     icon: 'M13 10V3L4 14h7v7l9-11h-7z',
@@ -375,10 +375,10 @@ const FAQS = [
   { q: 'What is link building and why does it matter for SEO?', a: "Link building is the process of acquiring hyperlinks from other websites that point back to yours. Google treats these backlinks as votes of confidence - a link from a credible, high-authority site signals to Google that your content is trustworthy and valuable. The number and quality of backlinks pointing to your domain is one of the strongest ranking factors in Google's algorithm. Without a strong backlink profile, it is very difficult to rank competitively for high-value keywords, regardless of how well your on-page content is optimised." },
   { q: 'What are link building packages?', a: "Link building packages are monthly subscription plans that give you a set number of high-authority backlinks acquired through manual outreach each month. Unlike one-off link purchases, packages provide a consistent, compounding backlink acquisition strategy. Each package specifies the number of links per month, minimum domain rating (DR) thresholds, and link types included. A monthly package is the right approach because Google's algorithm rewards consistent, natural-looking link growth over time - not sudden spikes." },
   { q: 'How do backlinks affect AI search citations (GEO)?', a: 'Backlinks are a primary input into the domain authority metrics that AI engines - Google AI Overviews, ChatGPT Search, Perplexity, and Gemini - use to evaluate source credibility. Sites with higher DR and more referring domains are consistently chosen as citation sources more frequently than low-authority sites. Studies show sites with DR55+ receive significantly more AI Overview citations. Building a strong backlink profile is therefore foundational to both traditional Google rankings AND AI citation presence, making link building essential for Generative Engine Optimisation (GEO).' },
-  { q: 'What is the AI+GEO Elite link building package?', a: 'The AI+GEO Elite package is our highest-tier plan designed specifically for brands that need to dominate both traditional search and AI-generated answers. In addition to 35+ DR65+ links per month, it includes targeted placements on sources that AI engines actively cite - high-traffic editorial publications, industry media, and authoritative niche sites that appear frequently in ChatGPT, Perplexity, and Google AI Overview responses. It also includes a brand mention campaign (linked and unlinked citations), expert author E-E-A-T placements, and monthly AI visibility reporting tracking your citation frequency across major AI platforms.' },
+  { q: 'What is the AI+GEO Elite link building package?', a: 'The AI+GEO Elite package is our highest-tier plan designed specifically for brands that need to dominate both traditional search and AI-generated answers. In addition to 400 DR60+ links per month, it includes targeted placements on sources that AI engines actively cite - high-traffic editorial publications, industry media, and authoritative niche sites that appear frequently in ChatGPT, Perplexity, and Google AI Overview responses. It also includes a brand mention campaign (linked and unlinked citations), expert author E-E-A-T placements, and monthly AI visibility reporting tracking your citation frequency across major AI platforms.' },
   { q: 'How do links help me appear in Google AI Overviews?', a: 'Google AI Overviews select citation sources based on a combination of factors: content relevance to the query, E-E-A-T signals (Expertise, Experience, Authoritativeness, Trustworthiness), domain authority as measured by referring domains and DR, and whether the content is cited by other authoritative sources. High-quality backlinks from niche-relevant, high-DR sites directly improve your domain authority and E-E-A-T signals - both of which increase the probability of your content being selected as a citation source. The AI+GEO Elite plan specifically targets placements on the types of sites Google most frequently cites in AI Overviews.' },
   { q: 'Does Perplexity use backlinks as a ranking signal?', a: 'Perplexity relies on web crawling and citation selection algorithms that weight source authority, topical relevance, and content comprehensiveness. While Perplexity does not publish its exact algorithm, evidence from citation analysis shows a strong correlation between domain authority (which is directly influenced by backlinks) and Perplexity citation frequency. Additionally, links from sources that Perplexity already trusts - major publications, established industry blogs, .edu sites - appear to create a citation signal. Our AI+GEO Elite plan targets these citation-authority sources specifically.' },
-  { q: 'What is Domain Rating (DR) and why does it matter?', a: "Domain Rating (DR) is a metric developed by Ahrefs that measures the strength of a website's backlink profile on a scale from 0 to 100. A higher DR indicates a stronger, more authoritative domain. In our packages, we specify minimum DR thresholds (DR40+, DR50+, DR60+, DR65+) to ensure the links we build come from genuinely authoritative websites. We use DR alongside other qualitative signals - niche relevance, organic traffic, editorial standards, and AI citation frequency - to evaluate each prospective link placement site." },
+  { q: 'What is Domain Rating (DR) and why does it matter?', a: "Domain Rating (DR) is a metric developed by Ahrefs that measures the strength of a website's backlink profile on a scale from 0 to 100. A higher DR indicates a stronger, more authoritative domain. In our packages, we specify minimum DR thresholds (DR30+, DR40+, DR50+, DR60+ up to DR90) to ensure the links we build come from genuinely authoritative websites. We use DR alongside other qualitative signals - niche relevance, organic traffic, editorial standards, and AI citation frequency - to evaluate each prospective link placement site." },
   { q: 'What types of links do you build?', a: 'We build three primary types of links: Guest posts - original content written and published on third-party websites with a contextual link back to your site. Niche edits - placements of your link within existing, already-indexed content on relevant authority sites. Digital PR - coverage in online publications, news sites, and industry media (Authority and Elite plans). On the AI+GEO Elite plan, we also build AI authority placements specifically targeting sources that AI engines frequently cite, plus brand mention campaigns for entity recognition.' },
   { q: 'What is E-E-A-T and how does link building improve it?', a: "E-E-A-T stands for Experience, Expertise, Authoritativeness, and Trustworthiness - the four dimensions Google uses to evaluate content quality and source credibility. Link building directly improves E-E-A-T by: building Authoritativeness through editorial links from respected industry publications; establishing Expertise through guest post placements where subject-matter experts publish original content; building Trustworthiness through links from vetted, editorially-rigorous sites with real traffic and genuine editorial standards. Strong E-E-A-T is also a prerequisite for AI citation selection, making it central to both Google rankings and GEO strategy." },
   { q: 'What is AEO (Answer Engine Optimisation) and how does link building fit in?', a: "Answer Engine Optimisation (AEO) is the practice of optimising content to appear as direct answers in search engines and AI assistants - voice search, featured snippets, Google AI Overviews, and AI chatbots. Link building supports AEO by building the domain authority and E-E-A-T signals that make search engines and AI models select your content as a trustworthy answer source. Anchor text strategy in our packages is also designed with AEO in mind - using natural language anchors that match how people phrase questions, improving the relevance signal for question-type queries." },
@@ -473,7 +473,7 @@ export default function LinkBuildingPackages() {
         '@id': 'https://www.1solutions.biz/link-building-packages/',
         url: 'https://www.1solutions.biz/link-building-packages/',
         name: 'Link Building Packages 2025 | AI+GEO & SEO Backlink Plans | 1Solutions',
-        description: 'White-hat link building packages from $499/month. Manual outreach, DR40+ to DR65+ guest posts, niche edits, digital PR, and AI+GEO citation building for Google AI Overviews, Perplexity, and ChatGPT.',
+        description: 'White-hat link building packages from $350/month. Manual outreach, DR30+ to DR90 guest posts, niche edits, digital PR, and AI+GEO citation building for Google AI Overviews, Perplexity, and ChatGPT.',
         dateModified: '2026-07-04',
         inLanguage: 'en-US',
         author: { '@type': 'Organization', name: '1Solutions Link Building Team' },
@@ -484,7 +484,7 @@ export default function LinkBuildingPackages() {
         provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz' },
         serviceType: 'Link Building & AI Citation Building',
         url: 'https://www.1solutions.biz/link-building-packages/',
-        description: 'White-hat link building through manual outreach. Guest posts, niche edits, digital PR, and AI+GEO citation building from DR40+ to DR65+ niche-relevant websites.',
+        description: 'White-hat link building through manual outreach. Guest posts, niche edits, digital PR, and AI+GEO citation building from DR30+ to DR90 niche-relevant websites.',
         areaServed: 'Worldwide',
         offers: PLANS.map(p => ({
           '@type': 'Offer',
@@ -511,11 +511,11 @@ export default function LinkBuildingPackages() {
     <>
       <Head>
         <title>Link Building Packages 2025 | AI+GEO & SEO Backlinks | 1Solutions</title>
-        <meta name="description" content="White-hat link building packages from $499/month. Manual outreach, DR40–DR65+ guest posts, niche edits, digital PR, and AI+GEO citation building for Google AI Overviews, Perplexity & ChatGPT." />
+        <meta name="description" content="White-hat link building packages from $350/month. Manual outreach, DR40–DR90 guest posts, niche edits, digital PR, and AI+GEO citation building for Google AI Overviews, Perplexity & ChatGPT." />
         <meta name="keywords" content="link building packages, link building pricing, AI link building, GEO link building, backlink packages, guest post packages, link building plans, white-hat link building, AI citation building, AEO link building" />
         <link rel="canonical" href="https://www.1solutions.biz/link-building-packages/" />
         <meta property="og:title" content="Link Building Packages 2025 - AI+GEO & SEO Backlinks | 1Solutions" />
-        <meta property="og:description" content="White-hat link building packages from $499/month. DR40–DR65+ guest posts, niche edits, digital PR, and AI+GEO citation building. Live link tracker on every plan." />
+        <meta property="og:description" content="White-hat link building packages from $350/month. DR40–DR90 guest posts, niche edits, digital PR, and AI+GEO citation building. Live link tracker on every plan." />
         <meta property="og:url" content="https://www.1solutions.biz/link-building-packages/" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -549,26 +549,31 @@ export default function LinkBuildingPackages() {
           .lbp-btn-outline:hover{border-color:rgba(217,119,6,.5);color:#D97706;transform:translateY(-2px)}
 
           /* ── CASE STUDIES ── */
-          .lbp-cs-sec{padding:80px 40px;position:relative;z-index:1;background:#f8fafd;border-top:1px solid rgba(15,52,96,.08);border-bottom:1px solid rgba(15,52,96,.08)}
-          .lbp-cs-in{max-width:1280px;margin:0 auto}
+          .lbp-cs-sec{padding:80px 40px;position:relative;z-index:1;background:linear-gradient(135deg,#071e3d 0%,#0F3460 45%,#1a2a5e 70%,#0a1628 100%);overflow:hidden}
+          .lbp-cs-in{max-width:1280px;margin:0 auto;position:relative;z-index:2}
           .lbp-cs-head{text-align:center;margin-bottom:48px}
+          .lbp-cs-ey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:10px;display:block}
+          .lbp-cs-ttl{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;text-align:center;margin-bottom:12px;line-height:1.15;background:linear-gradient(90deg,#fff 30%,#fcd34d 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .lbp-cs-sub{font-size:1rem;color:rgba(255,255,255,.60);text-align:center;max-width:560px;margin:0 auto}
+          .lbp-cs-orb{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.20) 0%,transparent 65%);top:-150px;right:-100px;pointer-events:none;filter:blur(30px)}
+          .lbp-cs-orb2{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(217,119,6,.15) 0%,transparent 65%);bottom:-80px;left:-80px;pointer-events:none;filter:blur(30px)}
           .lbp-cs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:40px}
-          .lbp-cs-card{background:#fff;border:1px solid rgba(15,52,96,.08);border-radius:20px;padding:28px 24px;box-shadow:0 4px 20px rgba(15,52,96,.06);transition:transform .22s,box-shadow .22s,border-color .22s}
-          .lbp-cs-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(15,52,96,.12);border-color:rgba(217,119,6,.30)}
+          .lbp-cs-card{background:rgba(255,255,255,.07);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:28px 24px;transition:transform .22s,background .22s,border-color .22s}
+          .lbp-cs-card:hover{transform:translateY(-6px);background:rgba(255,255,255,.12);border-color:rgba(217,119,6,.45)}
           .lbp-cs-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
-          .lbp-cs-name{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:#0F1F40}
+          .lbp-cs-name{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:#fff}
           .lbp-cs-emoji{font-size:1.1rem}
-          .lbp-cs-badge{display:inline-flex;align-items:center;gap:4px;background:#d1fae5;color:#065f46;font-size:12px;font-weight:700;padding:4px 10px;border-radius:100px}
+          .lbp-cs-badge{display:inline-flex;align-items:center;gap:4px;background:rgba(34,197,94,.20);color:#86efac;border:1px solid rgba(34,197,94,.35);font-size:12px;font-weight:700;padding:4px 10px;border-radius:100px}
           .lbp-cs-badge::before{content:'↑';font-size:11px}
           .lbp-cs-rows{display:flex;flex-direction:column;gap:14px}
           .lbp-cs-row{display:flex;align-items:center;justify-content:space-between;font-size:13px}
-          .lbp-cs-row-label{display:flex;align-items:center;gap:6px;color:#6b7280}
-          .lbp-cs-row-val{font-weight:700;color:#0F1F40}
-          .lbp-cs-arrow{color:#D97706;font-weight:700;margin:0 4px}
-          .lbp-cs-divider{height:1px;background:rgba(15,52,96,.07);margin:4px 0}
+          .lbp-cs-row-label{display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.55)}
+          .lbp-cs-row-val{font-weight:700;color:#fff}
+          .lbp-cs-arrow{color:#fcd34d;font-weight:700;margin:0 4px}
+          .lbp-cs-divider{height:1px;background:rgba(255,255,255,.08);margin:4px 0}
           .lbp-cs-cta-row{text-align:center}
-          .lbp-cs-cta{display:inline-flex;align-items:center;gap:8px;padding:13px 32px;background:#0F3460;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 4px 16px rgba(15,52,96,.22)}
-          .lbp-cs-cta:hover{background:#D97706;box-shadow:0 8px 28px rgba(217,119,6,.35);transform:translateY(-2px)}
+          .lbp-cs-cta{display:inline-flex;align-items:center;gap:8px;padding:13px 32px;background:rgba(255,255,255,.12);backdrop-filter:blur(12px);border:1.5px solid rgba(255,255,255,.25);color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
+          .lbp-cs-cta:hover{background:rgba(217,119,6,.85);border-color:rgba(217,119,6,.85);box-shadow:0 8px 28px rgba(217,119,6,.40);transform:translateY(-2px)}
 
           /* ── STATS BAR ── */
           .lbp-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
@@ -860,9 +865,9 @@ export default function LinkBuildingPackages() {
         {/* ── HERO ── */}
         <div className="lbp-hero">
           <div className="lbp-hero-content">
-            <span className="lbp-eyebrow">White-Hat Link Building · DR40–DR65+ · Manual Outreach · AI+GEO Ready</span>
+            <span className="lbp-eyebrow">White-Hat Link Building · DR40–DR90 · Manual Outreach · AI+GEO Ready</span>
             <h1 className="lbp-h1">Link Building Packages That Rank You on Google and Get You Cited by AI</h1>
-            <p className="lbp-hero-sub">White-hat link building packages from $499/month. Guest posts, niche edits, digital PR, and AI+GEO citation building - 100% manual outreach, every link tracked live. Built for both traditional rankings and AI-generated answers.</p>
+            <p className="lbp-hero-sub">White-hat link building packages from $350/month. Guest posts, niche edits, digital PR, and AI+GEO citation building - 100% manual outreach, every link tracked live. Built for both traditional rankings and AI-generated answers.</p>
             <div className="lbp-hero-btns">
               <Link href="/contact-us" className="lbp-btn-hero">Get a Free Backlink Audit</Link>
               <Link href="#pricing" className="lbp-btn-outline">View Packages</Link>
@@ -1188,11 +1193,13 @@ export default function LinkBuildingPackages() {
         {/* ── RESULTS ── */}
         {/* ── CASE STUDIES ── */}
         <section className="lbp-cs-sec" aria-labelledby="cs-title">
+          <div className="lbp-cs-orb" aria-hidden="true"/>
+          <div className="lbp-cs-orb2" aria-hidden="true"/>
           <div className="lbp-cs-in">
             <div className="lbp-cs-head">
-              <span className="lbp-sec-ey">Case Studies</span>
-              <h2 className="lbp-sec-ttl" id="cs-title">We Get Results</h2>
-              <p className="lbp-sec-desc" style={{margin:'0 auto'}}>Real outcomes from live campaigns. Traffic numbers, links built, and timelines - no made-up projections.</p>
+              <span className="lbp-cs-ey">Case Studies</span>
+              <h2 className="lbp-cs-ttl" id="cs-title">We Get Results</h2>
+              <p className="lbp-cs-sub">Real outcomes from live campaigns. Traffic numbers, links built, and timelines - no made-up projections.</p>
             </div>
             <div className="lbp-cs-grid">
               {CASE_STUDIES.map(cs => (
