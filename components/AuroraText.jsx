@@ -6,7 +6,7 @@ const AuroraText = memo(function AuroraText({
   colors = ['#FF0080', '#7928CA', '#0070F3', '#38bdf8'],
   speed = 1,
 }) {
-  const gradientStyle = {
+  const style = {
     backgroundImage: `linear-gradient(135deg, ${[...colors, colors[0]].join(', ')})`,
     backgroundSize: '200% auto',
     WebkitBackgroundClip: 'text',
@@ -21,11 +21,8 @@ const AuroraText = memo(function AuroraText({
   };
 
   return (
-    <span className={`relative inline-block ${className}`.trim()}>
-      <span className="sr-only">{children}</span>
-      <span style={gradientStyle} aria-hidden="true">
-        {children}
-      </span>
+    <span className={className || undefined} style={style}>
+      {children}
     </span>
   );
 });
