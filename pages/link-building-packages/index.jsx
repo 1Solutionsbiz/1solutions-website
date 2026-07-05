@@ -949,8 +949,8 @@ export default function LinkBuildingPackages() {
           .lbp-fg textarea{resize:vertical}
           .lbp-af-phone-wrap{display:flex;border:1px solid rgba(15,52,96,.15);border-radius:6px;overflow:hidden;background:rgba(255,255,255,.55)}
           .lbp-af-phone-wrap select{padding:10px;border:none;background:transparent;font-size:12px;min-width:70px;color:#0F1F40;font-family:inherit;flex-shrink:0}
-          .lbp-af-phone-wrap input{flex:1!important;width:auto!important;min-width:0!important;border:none!important;border-radius:0!important;padding:10px 14px!important;box-shadow:none!important;background:transparent!important}
-          .lbp-af-phone-wrap input:focus{outline:none;box-shadow:none!important;background:transparent!important;border-color:transparent!important}
+          .lbp-af-phone-wrap input{flex:1!important;width:auto!important;min-width:0!important;border:none!important;border-radius:0!important;padding:10px 14px!important;box-shadow:none!important;background:rgba(255,255,255,.55)!important;color:#0F1F40!important}
+          .lbp-af-phone-wrap input:focus{outline:none!important;box-shadow:none!important;background:rgba(255,255,255,.90)!important;border-color:transparent!important}
           .lbp-af-consent{display:flex;gap:8px;align-items:flex-start}
           .lbp-af-consent input[type="checkbox"]{margin-top:3px;width:16px;height:16px;cursor:pointer;flex-shrink:0}
           .lbp-af-consent label{font-size:11px;color:#4A6080;line-height:1.5;margin:0}
