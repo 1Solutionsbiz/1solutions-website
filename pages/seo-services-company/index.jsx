@@ -226,11 +226,12 @@ export default function SeoServices() {
           .seo-hero-sub { font-size:16px;color:#3A507A;line-height:1.65;max-width:640px;margin:0 auto 28px; }
 
           /* ── HERO BUTTON ── */
-          .seo-btn-hero { position:relative;overflow:hidden;display:inline-block;padding:14px 40px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1);margin-bottom:32px; }
+          .seo-hero-btns { display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:32px; }
+          .seo-btn-hero { position:relative;overflow:hidden;display:inline-flex;align-items:center;padding:14px 40px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1); }
           .seo-btn-hero:hover { background:rgba(255,255,255,0.85);border-color:rgba(245,158,11,0.6);box-shadow:0 12px 36px rgba(15,52,96,0.15),0 0 0 2px rgba(245,158,11,0.22),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px);color:#0F3460; }
           .seo-btn-hero::after { content:'';position:absolute;top:-10%;left:-120%;width:80%;height:120%;background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,0.75) 45%,rgba(255,255,255,0.9) 50%,rgba(255,255,255,0.75) 55%,transparent 100%);animation:seo-shimmer 2.5s ease-in-out infinite;pointer-events:none; }
           @keyframes seo-shimmer { 0% { left:-120%; } 35%,100% { left:160%; } }
-          .seo-btn-outline { display:inline-block;padding:14px 32px;background:transparent;border:1.5px solid rgba(15,52,96,0.25);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;margin-bottom:32px;margin-left:12px; }
+          .seo-btn-outline { display:inline-flex;align-items:center;padding:14px 32px;background:transparent;border:1.5px solid rgba(15,52,96,0.25);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s; }
           .seo-btn-outline:hover { border-color:rgba(217,119,6,0.5);color:#D97706;transform:translateY(-2px); }
 
           /* ── CLIENTS BAR ── */
@@ -446,8 +447,10 @@ export default function SeoServices() {
             <span className="seo-eyebrow">Trusted SEO Company - US · Canada · Australia</span>
             <h1 className="seo-h1">SEO Services That Rank Your Business at the Top of Google</h1>
             <p className="seo-hero-sub">1Solutions is a 15-year-old SEO agency delivering measurable, sustainable organic growth for businesses across the US, Canada, and Australia. From technical foundations to authority links - we cover every dimension of modern search.</p>
-            <a href="#contact" className="seo-btn-hero">Get a Free SEO Audit Now</a>
-            <Link href="/affordable-seo-packages/" className="seo-btn-outline">View Plans</Link>
+            <div className="seo-hero-btns">
+              <a href="#contact" className="seo-btn-hero">Get a Free SEO Audit Now</a>
+              <Link href="/affordable-seo-packages/" className="seo-btn-outline">View Plans</Link>
+            </div>
           </div>
 
           <div className="seo-stats" ref={statsRef}>
