@@ -654,8 +654,6 @@ export default function LinkBuildingPackages() {
           .lbp-hero-content{position:relative;z-index:2;text-align:center;max-width:860px;margin:0 auto;padding:56px 40px 40px}
           .lbp-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:18px}
           .lbp-h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;color:#111827}
-          .lbp-hl{background:linear-gradient(90deg,#7C3AED,#0F3460);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .lbp-hl-gold{background:linear-gradient(90deg,#fff 30%,#fcd34d 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .lbp-hero-sub{font-size:16px;color:#3A507A;line-height:1.65;max-width:640px;margin:0 auto 28px}
 
           /* ── HERO BUTTONS ── */
@@ -929,7 +927,7 @@ export default function LinkBuildingPackages() {
           /* ── AUDIT FORM ── */
           .lbp-audit-sec{padding:72px 40px;background:linear-gradient(135deg,rgba(254,243,199,.70) 0%,rgba(255,255,255,.60) 40%,rgba(219,234,254,.65) 100%);position:relative;z-index:1;border-top:1px solid rgba(255,255,255,.80)}
           .lbp-audit-in{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;align-items:start;gap:48px}
-          .lbp-audit-ttl{font-size:clamp(2rem,3.5vw,2.8rem);font-weight:900;line-height:1.2;margin:0 0 16px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .lbp-audit-ttl{font-size:clamp(2rem,3.5vw,2.8rem);font-weight:900;line-height:1.2;margin:0 0 16px;color:#111827}
           .lbp-audit-desc{font-size:14px;color:#4A6080;line-height:1.65;margin:0 0 24px}
           .lbp-audit-benefits-box{background:linear-gradient(135deg,rgba(255,255,255,.70) 0%,rgba(219,234,254,.35) 100%);border:1px solid rgba(255,255,255,.90);border-radius:14px;padding:24px;backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,1);display:flex;flex-direction:column;gap:16px}
           .lbp-audit-ben{display:flex;gap:12px;align-items:flex-start}
@@ -1092,7 +1090,7 @@ export default function LinkBuildingPackages() {
         <div className="lbp-hero">
           <div className="lbp-hero-content">
             <span className="lbp-eyebrow">White-Hat Link Building · DR40–DR90 · Manual Outreach · AI+GEO Ready</span>
-            <h1 className="lbp-h1">Link Building Packages <span className="lbp-hl">That Rank You on Google</span> and Get You Cited by AI</h1>
+            <h1 className="lbp-h1">Link Building Packages <span className="aurora-text">That Rank You on Google</span> and Get You Cited by AI</h1>
             <p className="lbp-hero-sub">White-hat link building packages from $350/month. Guest posts, niche edits, digital PR, and AI+GEO citation building - 100% manual outreach, every link tracked live. Built for both traditional rankings and AI-generated answers.</p>
             <div className="lbp-hero-btns">
               <Link href="#link-audit" className="lbp-btn-hero">Get a Free Backlink Audit</Link>
@@ -1150,7 +1148,7 @@ export default function LinkBuildingPackages() {
           <div className="lbp-sec-in" style={{textAlign:'center'}}>
             <div className={`lbp-reveal${visibleSections.has('def')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['def']=el;}}>
               <span className="lbp-sec-ey">Understanding Link Building</span>
-              <h2 className="lbp-sec-ttl" id="def-title">What Are <span className="lbp-hl">Link Building Packages</span>?</h2>
+              <h2 className="lbp-sec-ttl" id="def-title">What Are <span className="aurora-text">Link Building Packages</span>?</h2>
               <p className="lbp-sec-desc" style={{margin:'0 auto 32px'}}>A plain-English explanation of what you are buying, how it works, and why it matters in 2026.</p>
             </div>
             <div className="lbp-glass lbp-def-box">
@@ -1178,7 +1176,7 @@ export default function LinkBuildingPackages() {
           <div className="lbp-sec-in">
             <div className={`lbp-reveal${visibleSections.has('why')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['why']=el;}} style={{textAlign:'center',marginBottom:40}}>
               <span className="lbp-sec-ey">The Data</span>
-              <h2 className="lbp-sec-ttl" id="why-title">Why <span className="lbp-hl">Link Building</span> Matters in 2026</h2>
+              <h2 className="lbp-sec-ttl" id="why-title">Why <span className="aurora-text">Link Building</span> Matters in 2026</h2>
               <p className="lbp-sec-desc" style={{margin:'0 auto'}}>Links remain the single strongest off-page ranking signal in Google&rsquo;s algorithm - and the primary authority input for AI search citation selection.</p>
             </div>
             <div className="lbp-why-grid">
@@ -1198,7 +1196,7 @@ export default function LinkBuildingPackages() {
           <div className="lbp-ai-orb" aria-hidden="true"/><div className="lbp-ai-orb2" aria-hidden="true"/>
           <div className="lbp-ai-in">
             <span className="lbp-ai-ey">The AI Search Era</span>
-            <h2 className="lbp-ai-ttl" id="ai-title">Link Building for <span className="lbp-hl-gold">Google AI, GEO & AEO</span></h2>
+            <h2 className="lbp-ai-ttl" id="ai-title">Link Building for <span className="aurora-text">Google AI, GEO & AEO</span></h2>
             <p className="lbp-ai-sub">How backlinks amplify your brand&rsquo;s presence in ChatGPT, Google AI Overviews, Perplexity, and every AI-generated answer. This is the new frontier of off-page SEO.</p>
             <div className="lbp-ai-grid">
               {AI_PILLARS.map(p => (
@@ -1233,7 +1231,7 @@ export default function LinkBuildingPackages() {
           <div className="lbp-sec-in">
             <div className={`lbp-reveal${visibleSections.has('eeat')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['eeat']=el;}} style={{textAlign:'center',marginBottom:44}}>
               <span className="lbp-sec-ey">Google Quality Guidelines</span>
-              <h2 className="lbp-sec-ttl" id="eeat-title">E-E-A-T Authority Through <span className="lbp-hl">Strategic Link Building</span></h2>
+              <h2 className="lbp-sec-ttl" id="eeat-title">E-E-A-T Authority Through <span className="aurora-text">Strategic Link Building</span></h2>
               <p className="lbp-sec-desc" style={{margin:'0 auto'}}>Every link we build is designed to strengthen one or more of the four E-E-A-T signals Google uses to evaluate content quality - and that AI engines use to select citation sources.</p>
             </div>
             <div className="lbp-eeat-grid">
@@ -1254,7 +1252,7 @@ export default function LinkBuildingPackages() {
           <div className="lbp-sec-in">
             <div className={`lbp-reveal${visibleSections.has('pricing')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['pricing']=el;}} style={{textAlign:'center'}}>
               <span className="lbp-sec-ey">Transparent Pricing</span>
-              <h2 className="lbp-sec-ttl" id="pricing-title">Choose Your <span className="lbp-hl">Link Building Package</span></h2>
+              <h2 className="lbp-sec-ttl" id="pricing-title">Choose Your <span className="aurora-text">Link Building Package</span></h2>
               <p className="lbp-sec-desc" style={{margin:'0 auto 44px'}}>All packages use 100% manual outreach - no automated tools, no PBNs, no link farms. Full transparency with a live link tracker on every plan. Payment links coming soon - contact us to get started.</p>
             </div>
             <div className="lbp-tog-row">
@@ -1318,7 +1316,7 @@ export default function LinkBuildingPackages() {
           <div className="lbp-sec-in">
             <div style={{textAlign:'center',marginBottom:32}}>
               <span className="lbp-sec-ey">Plan Comparison</span>
-              <h2 className="lbp-sec-ttl" id="compare-title"><span className="lbp-hl">Package Comparison</span> at a Glance</h2>
+              <h2 className="lbp-sec-ttl" id="compare-title"><span className="aurora-text">Package Comparison</span> at a Glance</h2>
             </div>
             <div className="lbp-tbl-wrap">
               <table className="lbp-tbl">
@@ -1373,7 +1371,7 @@ export default function LinkBuildingPackages() {
           <div className="lbp-sec-in">
             <div className={`lbp-reveal${visibleSections.has('method')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['method']=el;}} style={{textAlign:'center',marginBottom:44}}>
               <span className="lbp-sec-ey">Our Process</span>
-              <h2 className="lbp-sec-ttl" id="method-title">How Our <span className="lbp-hl">Link Building Process</span> Works</h2>
+              <h2 className="lbp-sec-ttl" id="method-title">How Our <span className="aurora-text">Link Building Process</span> Works</h2>
               <p className="lbp-sec-desc" style={{margin:'0 auto'}}>Six rigorous steps from strategy to live link - every campaign, every month. AI+GEO Elite clients receive additional citation tracking at each stage.</p>
             </div>
             <div className="lbp-method-grid">
@@ -1398,7 +1396,7 @@ export default function LinkBuildingPackages() {
           <div className="lbp-sec-in">
             <div className={`lbp-reveal${visibleSections.has('qual')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['qual']=el;}} style={{textAlign:'center',marginBottom:40}}>
               <span className="lbp-sec-ey">Quality Standards</span>
-              <h2 className="lbp-sec-ttl" id="quality-title">What Makes Our <span className="lbp-hl">Links</span> Different</h2>
+              <h2 className="lbp-sec-ttl" id="quality-title">What Makes Our <span className="aurora-text">Links</span> Different</h2>
               <p className="lbp-sec-desc" style={{margin:'0 auto'}}>We vet every link site against 15+ quality signals before a single outreach email is sent.</p>
             </div>
             <div className="lbp-qual-grid">
@@ -1422,7 +1420,7 @@ export default function LinkBuildingPackages() {
           <div className="lbp-sec-in">
             <div style={{textAlign:'center',marginBottom:36}}>
               <span className="lbp-sec-ey">Industries We Serve</span>
-              <h2 className="lbp-sec-ttl" id="industries-title"><span className="lbp-hl">Link Building</span> Across Every Niche</h2>
+              <h2 className="lbp-sec-ttl" id="industries-title"><span className="aurora-text">Link Building</span> Across Every Niche</h2>
             </div>
             <div className="lbp-ind-grid">
               {INDUSTRIES.map(ind => (
@@ -1447,7 +1445,7 @@ export default function LinkBuildingPackages() {
           <div className="lbp-cs-in">
             <div className="lbp-cs-head">
               <span className="lbp-cs-ey">Case Studies</span>
-              <h2 className="lbp-cs-ttl" id="cs-title"><span className="lbp-hl-gold">Link Building Results</span>: Real Traffic Growth by Package</h2>
+              <h2 className="lbp-cs-ttl" id="cs-title"><span className="aurora-text">Link Building Results</span>: Real Traffic Growth by Package</h2>
               <p className="lbp-cs-sub">Real outcomes from live campaigns. Traffic numbers, links built, and timelines - no made-up projections.</p>
             </div>
             <div className="lbp-cs-grid">
@@ -1501,7 +1499,7 @@ export default function LinkBuildingPackages() {
           <div className="lbp-sec-in">
             <div className={`lbp-reveal${visibleSections.has('why-ch')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['why-ch']=el;}} style={{textAlign:'center',marginBottom:48}}>
               <span className="lbp-sec-ey">Why 1Solutions</span>
-              <h2 className="lbp-sec-ttl" id="why-ch-title">Why Choose Our <span className="lbp-hl">Link Building</span> Service</h2>
+              <h2 className="lbp-sec-ttl" id="why-ch-title">Why Choose Our <span className="aurora-text">Link Building</span> Service</h2>
             </div>
             <div className="lbp-why-ch-grid">
               {WHYS.map(w => (
@@ -1522,7 +1520,7 @@ export default function LinkBuildingPackages() {
         {/* ── TESTIMONIALS ── */}
         <section className="lbp-testi-sec" aria-labelledby="testi-title">
           <div className="lbp-testi-hd" ref={el=>{sectionRefs.current['testi']=el;}}>
-            <h2 id="testi-title">What Our <span className="lbp-hl">Link Building Clients</span> Say</h2>
+            <h2 id="testi-title">What Our <span className="aurora-text">Link Building Clients</span> Say</h2>
             <p>Real results from businesses across India, US, UK and Australia who trust 1Solutions for link building.</p>
           </div>
           {/* Row 1 — scrolls left */}
@@ -1576,7 +1574,7 @@ export default function LinkBuildingPackages() {
           <div className="lbp-audit-in">
             {/* Left copy */}
             <div>
-              <h2 className="lbp-audit-ttl" id="audit-form-title">Get Your Free<br/>Link Building Audit</h2>
+              <h2 className="lbp-audit-ttl" id="audit-form-title">Get Your Free<br/><span className="aurora-text">Link Building Audit</span></h2>
               <p className="lbp-audit-desc">Tell us about your website and goals. We will analyse your current backlink profile, identify your competitor gap, check your AI citation presence, and share a clear, actionable roadmap — completely free, no obligations.</p>
               <div className="lbp-audit-benefits-box">
                 <div className="lbp-audit-ben">
@@ -1685,7 +1683,7 @@ export default function LinkBuildingPackages() {
           <div className="lbp-sec-in" style={{maxWidth:1000,margin:'0 auto'}}>
             <div className={`lbp-reveal${visibleSections.has('faq')?' lbp-visible':''}`} ref={el=>{sectionRefs.current['faq']=el;}}>
               <span className="lbp-sec-ey">Common Questions</span>
-              <h2 className="lbp-sec-ttl" id="faq-title"><span className="lbp-hl">Link Building Package</span> FAQs</h2>
+              <h2 className="lbp-sec-ttl" id="faq-title"><span className="aurora-text">Link Building Package</span> FAQs</h2>
               <p className="lbp-sec-desc">Everything you need to know about our link building packages - including AI+GEO and E-E-A-T questions.</p>
             </div>
             <div className="lbp-faq-list">
@@ -1710,7 +1708,7 @@ export default function LinkBuildingPackages() {
         <section className="lbp-related-section">
           <div className="lbp-related-inner">
             <span className="lbp-related-eyebrow">LINK BUILDING RELATED OFFERINGS</span>
-            <h2 className="lbp-related-title">Explore <span className="lbp-hl">Related Services</span> and Technologies</h2>
+            <h2 className="lbp-related-title">Explore <span className="aurora-text">Related Services</span> and Technologies</h2>
             <p className="lbp-related-sub">Pair our link building expertise with related SEO and digital marketing services to maximise your organic growth and AI search visibility.</p>
             <hr className="lbp-related-divider"/>
             <div className="lbp-related-tags">
