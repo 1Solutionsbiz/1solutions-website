@@ -459,19 +459,30 @@ export default function LinkBuildingPackages() {
 
   const _auditSubmit = async (e) => {
     e.preventDefault();
+    const fd = new FormData(e.target);
+    const name = (fd.get('la-name') || '').trim();
+    const email = (fd.get('la-email') || '').trim();
+    const phone = (fd.get('la-phone') || '').trim();
+    const domain = (fd.get('la-domain') || '').trim();
+    const challenge = (fd.get('la-challenge') || '').trim();
+    const goals = (fd.get('la-goals') || '').trim();
+    const consent = document.getElementById('la-consent')?.checked;
+    if (!name || !email || !phone || !domain || !challenge || !goals || !consent) {
+      setAuditSt('validation');
+      return;
+    }
     setAuditSt('loading');
     try {
-      const fd = new FormData(e.target);
       const token = await new Promise(r => window.grecaptcha.ready(() =>
         window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', { action: 'contact' }).then(r)));
       const res = await fetch('/api/contact', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: fd.get('la-name') || '',
-          email: fd.get('la-email') || '',
-          phone: (fd.get('la-cc') ? fd.get('la-cc') + ' ' : '') + (fd.get('la-phone') || ''),
-          company: fd.get('la-domain') || '',
-          message: `Domain: ${fd.get('la-domain') || ''}\n\nChallenge: ${fd.get('la-challenge') || ''}\n\nGoals / Details: ${fd.get('la-goals') || ''}`,
+          name,
+          email,
+          phone: (fd.get('la-cc') ? fd.get('la-cc') + ' ' : '') + phone,
+          company: domain,
+          message: `Domain: ${domain}\n\nChallenge: ${challenge}\n\nGoals / Details: ${goals}`,
           source: 'Link Building Packages - Free Link Audit',
           consent: true,
           recaptchaToken: token,
@@ -937,9 +948,9 @@ export default function LinkBuildingPackages() {
           .lbp-fg input:focus,.lbp-fg textarea:focus,.lbp-fg select:focus{outline:none;border-color:#D97706;background:rgba(255,255,255,.90);box-shadow:0 0 0 3px rgba(217,119,6,.12)}
           .lbp-fg textarea{resize:vertical}
           .lbp-af-phone-wrap{display:flex;border:1px solid rgba(15,52,96,.15);border-radius:6px;overflow:hidden;background:rgba(255,255,255,.55)}
-          .lbp-af-phone-wrap select{padding:10px;border:none;background:transparent;font-size:12px;min-width:75px;color:#0F1F40;font-family:inherit}
-          .lbp-af-phone-wrap input{flex:1;border:none!important;border-radius:0!important;padding:10px 14px;box-shadow:none!important;background:transparent!important}
-          .lbp-af-phone-wrap input:focus{outline:none}
+          .lbp-af-phone-wrap select{padding:10px;border:none;background:transparent;font-size:12px;min-width:70px;color:#0F1F40;font-family:inherit;flex-shrink:0}
+          .lbp-af-phone-wrap input{flex:1!important;width:auto!important;min-width:0!important;border:none!important;border-radius:0!important;padding:10px 14px!important;box-shadow:none!important;background:transparent!important}
+          .lbp-af-phone-wrap input:focus{outline:none;box-shadow:none!important;background:transparent!important;border-color:transparent!important}
           .lbp-af-consent{display:flex;gap:8px;align-items:flex-start}
           .lbp-af-consent input[type="checkbox"]{margin-top:3px;width:16px;height:16px;cursor:pointer;flex-shrink:0}
           .lbp-af-consent label{font-size:11px;color:#4A6080;line-height:1.5;margin:0}
@@ -1604,7 +1615,7 @@ export default function LinkBuildingPackages() {
               ) : (
                 <>
                   <h3>Request Free Link Audit</h3>
-                  <form className="lbp-af-form" onSubmit={_auditSubmit} noValidate>
+                  <form className="lbp-af-form" onSubmit={_auditSubmit}>
                     <div className="lbp-af-row">
                       <div className="lbp-fg">
                         <label htmlFor="la-name">Full Name*</label>
@@ -1653,6 +1664,9 @@ export default function LinkBuildingPackages() {
                       <input type="checkbox" id="la-consent" required/>
                       <label htmlFor="la-consent">I consent that my personal data will be processed according to <a href="/privacy-policy">1Solutions privacy policy</a></label>
                     </div>
+                    {auditSt === 'validation' && (
+                      <p style={{color:'#dc2626',fontSize:13,margin:0,textAlign:'center'}}>Please fill in all required fields and accept the privacy policy.</p>
+                    )}
                     {auditSt === 'error' && (
                       <p style={{color:'#dc2626',fontSize:13,margin:0,textAlign:'center'}}>Something went wrong. Please try again or email us directly.</p>
                     )}
