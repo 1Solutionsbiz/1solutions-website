@@ -83,3 +83,39 @@ img { max-width: 100%; display: block; }
     background-size: 100% auto;
   }
 }
+
+/* ── MagicUI Marquee ──────────────────────────────────────────────────── */
+.marquee-outer {
+  display: flex;
+  gap: var(--marquee-gap, 1rem);
+  overflow: hidden;
+  padding: 2px 0;
+}
+.marquee-outer.marquee-vert {
+  flex-direction: column;
+}
+.marquee-inner {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-around;
+  gap: var(--marquee-gap, 1rem);
+  animation: marquee-scroll var(--marquee-duration, 40s) linear infinite;
+}
+.marquee-inner.marquee-vert-inner {
+  flex-direction: column;
+  animation: marquee-scroll-vert var(--marquee-duration, 40s) linear infinite;
+}
+.marquee-inner.marquee-reverse {
+  animation-direction: reverse;
+}
+.marquee-pause-hover:hover .marquee-inner {
+  animation-play-state: paused;
+}
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-100% - var(--marquee-gap, 1rem))); }
+}
+@keyframes marquee-scroll-vert {
+  from { transform: translateY(0); }
+  to   { transform: translateY(calc(-100% - var(--marquee-gap, 1rem))); }
+}

@@ -2,6 +2,23 @@ import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { AuroraText } from '../../components/AuroraText';
+import { Marquee } from '../../components/Marquee';
+
+const TESTIMONIALS_ROW1 = [
+  { initials:'SR', bg:'#0F3460', name:'Sarah Reynolds', role:'Founder, LuxeFragrance Co. — USA', text:'"1Solutions took our Shopify store from a basic theme to a fully custom, conversion-optimised storefront. Our average order value increased by 40% in the first three months post-launch. Outstanding — they genuinely care about results, not just deliverables."' },
+  { initials:'DJ', bg:'#D97706', name:'David James', role:'Head of Digital, AgriSupply Direct — Australia', text:'"We needed a complex B2B WooCommerce portal with customer group pricing, SAP integration, and a custom quote system. 1Solutions delivered everything on spec and on time. The project manager was proactive, communicative, and clearly very experienced."' },
+  { initials:'MF', bg:'#1E3A8A', name:'Michelle Forbes', role:'eCommerce Director, TechZone — Canada', text:'"Our Magento 2 migration from an ageing Magento 1 store was massive — 80,000 SKUs, custom modules, and a tight deadline. 1Solutions handled every detail with zero data loss and a seamless cutover. We\'ve been on a maintenance retainer ever since."' },
+  { initials:'NK', bg:'#047857', name:'Nathan King', role:'CEO, PetPremium Direct — UK', text:'"The headless WooCommerce build on Next.js they delivered is blazing fast. We went from 45-second loads on our old Magento 1 store to sub-2-second loads. Conversion rate up 28% in the first 90 days. A remarkable technical result."' },
+  { initials:'AL', bg:'#7C3AED', name:'Amelia Lee', role:'Digital Manager, NovaBrands — USA', text:'"1Solutions rebuilt our Shopify Plus store from scratch. The custom product configurator they built — 3D views, custom engraving, variant bundles — is exactly what we scoped and delivered on time. Great communication and zero surprises."' },
+];
+
+const TESTIMONIALS_ROW2 = [
+  { initials:'JM', bg:'#B45309', name:'James Mitchell', role:'Operations Director, SportCore — Australia', text:'"Platform migration from OpenCart to WooCommerce with 12,000 products and 5 years of order history. Zero data loss, SEO rankings preserved, and launched on schedule. The staging environment access throughout the project was reassuring at every stage."' },
+  { initials:'PC', bg:'#0F3460', name:'Patricia Chen', role:'Founder, OrganicHarvest — Canada', text:'"We\'ve worked with three other agencies before 1Solutions. The difference is night and day. They think commercially, not just technically. The subscription bundle system they built on WooCommerce added $40k/month in recurring revenue."' },
+  { initials:'RM', bg:'#D97706', name:'Robert Moore', role:'CTO, GearZone Pro — UK', text:'"The B2B ecommerce portal 1Solutions built handles 2,000 trade accounts with tiered pricing, minimum order quantities, and a full RFQ workflow. It replaced a legacy system that cost us 3× as much to maintain. Genuinely transformative."' },
+  { initials:'SW', bg:'#0891B2', name:'Sophie Walker', role:'Marketing Director, BeautyVault — USA', text:'"Our Shopify redesign had to maintain our existing SEO rankings while completely refreshing the UX. 1Solutions delivered — organic traffic actually increased 18% in the month after launch. A rare outcome for any major redesign."' },
+  { initials:'TN', bg:'#16a34a', name:'Tom Nakamura', role:'Founder, CraftBrew Direct — USA', text:'"1Solutions built our entire DTC ecommerce stack from zero — Shopify, Klaviyo, Gorgias, LoyaltyLion, all integrated and automated. What took our team 3 hours a day now runs automatically. Exceptional technical and strategic depth."' },
+];
 
 const SERVICES = [
   { n:'01', title:'Custom eCommerce Website Development', desc:'Fully bespoke online stores built from the ground up - architected around your catalogue, business model, and conversion goals, not retrofitted into a generic template.', featured:false },
@@ -335,21 +352,23 @@ export default function EcommerceWebsiteDevelopmentServices() {
           .ecom-process-img-wrap img { width:100%;height:100%;object-fit:cover;display:block; }
 
           /* Testimonials */
-          .ecom-testi-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.10);border-bottom:1px solid rgba(15,52,96,0.10);padding:80px 40px;position:relative;z-index:1; }
+          .ecom-testi-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.10);border-bottom:1px solid rgba(15,52,96,0.10);padding:80px 0;position:relative;z-index:1;overflow:hidden; }
           .ecom-testi-inner { max-width:1280px;margin:0 auto; }
+          .ecom-testi-inner .ecom-section-header-center { padding:0 40px; }
           .ecom-section-header-center { text-align:center;margin-bottom:52px; }
-          .ecom-testi-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:52px; }
-          .ecom-tcard { background:linear-gradient(135deg,rgba(219,234,254,0.58) 0%,rgba(255,255,255,0.82) 60%,rgba(237,233,254,0.42) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.88);border-radius:20px;padding:32px 28px;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95);display:flex;flex-direction:column;gap:16px;opacity:0;transform:translateY(44px);transition:opacity 0.6s cubic-bezier(0.22,1,0.36,1),transform 0.6s cubic-bezier(0.22,1,0.36,1),box-shadow 0.3s,border-color 0.3s; }
-          .ecom-tcard.ecom-tcard-visible { opacity:1;transform:translateY(0); }
-          .ecom-tcard:hover { transform:translateY(-6px)!important;border-color:rgba(15,52,96,0.38);box-shadow:0 16px 48px rgba(15,52,96,0.14),inset 0 1px 0 rgba(255,255,255,1); }
-          .ecom-tcard.featured { background:linear-gradient(135deg,rgba(237,233,254,0.55) 0%,rgba(255,255,255,0.88) 55%,rgba(219,234,254,0.45) 100%);border-color:rgba(15,52,96,0.18);box-shadow:0 6px 32px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1); }
-          .ecom-tcard-stars { font-size:18px;color:#D97706;letter-spacing:2px; }
-          .ecom-tcard-text  { font-size:15px;line-height:1.75;color:#374151;margin:0;flex:1; }
-          .ecom-tcard.featured .ecom-tcard-text { color:#1f2937; }
-          .ecom-tcard-author { display:flex;align-items:center;gap:12px;margin-top:4px; }
-          .ecom-tcard-avatar { width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#ffffff;flex-shrink:0; }
-          .ecom-tcard-name  { font-size:14px;font-weight:700;color:#0F3460; }
-          .ecom-tcard-role  { font-size:12px;color:#6b7280; }
+          .ecom-marq-row { position:relative;overflow:hidden; }
+          .ecom-marq-row+.ecom-marq-row { margin-top:18px; }
+          .ecom-marq-fade-l { position:absolute;left:0;top:0;bottom:0;width:140px;z-index:1;background:linear-gradient(to right,#f8fafd,transparent);pointer-events:none; }
+          .ecom-marq-fade-r { position:absolute;right:0;top:0;bottom:0;width:140px;z-index:1;background:linear-gradient(to left,#f8fafd,transparent);pointer-events:none; }
+          .ecom-testi-stats-wrap { padding:0 40px;margin-top:52px; }
+          .ecom-tcard { width:420px;flex-shrink:0;background:linear-gradient(135deg,rgba(219,234,254,0.58) 0%,rgba(255,255,255,0.82) 60%,rgba(237,233,254,0.42) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.88);border-radius:20px;padding:26px 24px;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95);display:flex;flex-direction:column;gap:14px;user-select:none;transition:box-shadow 0.3s,border-color 0.3s; }
+          .ecom-tcard:hover { border-color:rgba(217,119,6,0.40);box-shadow:0 12px 40px rgba(15,52,96,0.14),inset 0 1px 0 rgba(255,255,255,1); }
+          .ecom-tcard-stars { font-size:16px;color:#D97706;letter-spacing:2px; }
+          .ecom-tcard-text  { font-size:14px;line-height:1.75;color:#374151;margin:0;flex:1; }
+          .ecom-tcard-author { display:flex;align-items:center;gap:12px;border-top:1px solid rgba(15,52,96,0.07);padding-top:14px; }
+          .ecom-tcard-avatar { width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#ffffff;flex-shrink:0; }
+          .ecom-tcard-name  { font-size:13px;font-weight:700;color:#0F3460; }
+          .ecom-tcard-role  { font-size:12px;color:#6b7280;margin-top:1px; }
           .ecom-testi-stats { display:flex;align-items:center;justify-content:center;gap:0;background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.78) 50%,rgba(237,233,254,0.42) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:16px;padding:32px 40px;border:1px solid rgba(255,255,255,0.88);box-shadow:0 4px 20px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
           .ecom-tstat { display:flex;flex-direction:column;align-items:center;gap:4px;flex:1; }
           .ecom-tstat-num   { font-size:28px;font-weight:800;color:#D97706; }
@@ -517,8 +536,10 @@ export default function EcommerceWebsiteDevelopmentServices() {
             .ecom-portfolio-title { font-size:26px; }
             .ecom-process-section { padding:60px 20px; }
             .ecom-process-top { margin-bottom:36px; }
-            .ecom-testi-section { padding:60px 20px; }
-            .ecom-testi-section .ecom-section-header-center { text-align:left; }
+            .ecom-testi-section { padding:60px 0; }
+            .ecom-testi-inner .ecom-section-header-center { padding:0 20px;text-align:left; }
+            .ecom-testi-stats-wrap { padding:0 20px; }
+            .ecom-marq-fade-l,.ecom-marq-fade-r { width:60px; }
             .ecom-why-section { padding:60px 20px; }
             .ecom-why-section .ecom-section-header-center { text-align:left; }
             .ecom-why-grid { grid-template-columns:1fr;margin-top:40px; }
@@ -537,7 +558,7 @@ export default function EcommerceWebsiteDevelopmentServices() {
             .ecom-related-tags { gap:8px; }
             .ecom-rtag { padding:9px 16px;font-size:13px; }
             .ecom-services-grid { grid-template-columns:1fr 1fr;gap:10px; }
-            .ecom-testi-grid { grid-template-columns:1fr; }
+            .ecom-tcard { width:320px; }
             .ecom-portfolio-grid { grid-template-columns:1fr; }
             .ecom-section-title,.ecom-engage-title,.ecom-process-main-title,.ecom-related-title { font-size:30px; }
             .ecom-testi-stats { flex-wrap:wrap;gap:0;padding:24px 20px; }
@@ -728,35 +749,60 @@ export default function EcommerceWebsiteDevelopmentServices() {
               <h2 className="ecom-section-title">What Our <AuroraText>eCommerce Clients Say</AuroraText></h2>
               <p className="ecom-section-sub">Trusted by e-commerce businesses across the US, Canada, Australia, and beyond for 15+ years.</p>
             </div>
-            <div className="ecom-testi-grid" ref={testiGridRef}>
-              {[
-                { initials:'SR', bg:'#0F3460', text:'"1Solutions took our Shopify store from a basic theme to a fully custom, conversion-optimised storefront. Our average order value increased by 40% in the first three months post-launch. Outstanding work - they genuinely care about results, not just deliverables."', name:'Sarah Reynolds', role:'Founder, LuxeFragrance Co. - USA', featured:false },
-                { initials:'DJ', bg:'#D97706', text:'"We needed a complex B2B WooCommerce portal with customer group pricing, SAP integration, and a custom quote system. 1Solutions delivered everything on spec and on time. The project manager was proactive, communicative, and clearly experienced. Highly recommended."', name:'David James', role:'Head of Digital, AgriSupply Direct - Australia', featured:true },
-                { initials:'MF', bg:'#0F3460', text:'"Our Magento 2 migration from an ageing Magento 1 store was massive - 80,000 SKUs, custom modules, and a tight deadline. 1Solutions handled every detail with zero data loss and a seamless cutover. We\'ve been on a maintenance retainer with them ever since."', name:'Michelle Forbes', role:'eCommerce Director, TechZone - Canada', featured:false },
-              ].map((t,i) => (
-                <div className={`ecom-tcard${t.featured?' featured':''}${visibleTestiCards.includes(i)?' ecom-tcard-visible':''}`} key={t.name}>
-                  <div className="ecom-tcard-stars">★★★★★</div>
-                  <p className="ecom-tcard-text">{t.text}</p>
-                  <div className="ecom-tcard-author">
-                    <div className="ecom-tcard-avatar" style={{ background:t.bg }}>{t.initials}</div>
-                    <div>
-                      <div className="ecom-tcard-name">{t.name}</div>
-                      <div className="ecom-tcard-role">{t.role}</div>
+          </div>
+          <div style={{marginTop:40}}>
+            <div className="ecom-marq-row">
+              <div className="ecom-marq-fade-l" />
+              <div className="ecom-marq-fade-r" />
+              <Marquee pauseOnHover gap="20px" duration="42s" repeat={3}>
+                {TESTIMONIALS_ROW1.map((t) => (
+                  <div className="ecom-tcard" key={t.name}>
+                    <div className="ecom-tcard-stars">★★★★★</div>
+                    <p className="ecom-tcard-text">{t.text}</p>
+                    <div className="ecom-tcard-author">
+                      <div className="ecom-tcard-avatar" style={{background:t.bg}}>{t.initials}</div>
+                      <div>
+                        <div className="ecom-tcard-name">{t.name}</div>
+                        <div className="ecom-tcard-role">{t.role}</div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </Marquee>
             </div>
-            <div className="ecom-testi-stats">
-              {[['4.9/5','Average Rating'],['500+','Stores Launched'],['98%','Client Satisfaction'],['97%','Retention Rate']].map(([num,label],i,arr) => (
-                <>
-                  <div className="ecom-tstat" key={label}>
-                    <span className="ecom-tstat-num">{num}</span>
-                    <span className="ecom-tstat-label">{label}</span>
+            <div className="ecom-marq-row">
+              <div className="ecom-marq-fade-l" />
+              <div className="ecom-marq-fade-r" />
+              <Marquee reverse pauseOnHover gap="20px" duration="42s" repeat={3}>
+                {TESTIMONIALS_ROW2.map((t) => (
+                  <div className="ecom-tcard" key={t.name}>
+                    <div className="ecom-tcard-stars">★★★★★</div>
+                    <p className="ecom-tcard-text">{t.text}</p>
+                    <div className="ecom-tcard-author">
+                      <div className="ecom-tcard-avatar" style={{background:t.bg}}>{t.initials}</div>
+                      <div>
+                        <div className="ecom-tcard-name">{t.name}</div>
+                        <div className="ecom-tcard-role">{t.role}</div>
+                      </div>
+                    </div>
                   </div>
-                  {i < arr.length-1 && <div className="ecom-tstat-divider" key={`d${i}`} />}
-                </>
-              ))}
+                ))}
+              </Marquee>
+            </div>
+          </div>
+          <div className="ecom-testi-inner">
+            <div className="ecom-testi-stats-wrap">
+              <div className="ecom-testi-stats">
+                {[['4.9/5','Average Rating'],['500+','Stores Launched'],['98%','Client Satisfaction'],['97%','Retention Rate']].map(([num,label],i,arr) => (
+                  <>
+                    <div className="ecom-tstat" key={label}>
+                      <span className="ecom-tstat-num">{num}</span>
+                      <span className="ecom-tstat-label">{label}</span>
+                    </div>
+                    {i < arr.length-1 && <div className="ecom-tstat-divider" key={`d${i}`} />}
+                  </>
+                ))}
+              </div>
             </div>
           </div>
         </section>
