@@ -1,199 +1,810 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
 
 const SERVICES = [
-  { n: '01', title: 'CRO Audit & Heuristic Analysis', desc: 'Expert-led CRO audit - reviewing page layout, navigation, CTAs, form design, trust signals, and user journey friction points against established conversion optimisation principles.' },
-  { n: '02', title: 'User Behaviour Analysis', desc: 'Heatmap, scroll map, click map, and session recording analysis via Hotjar, Microsoft Clarity, or FullStory - revealing exactly where users drop off, skip, or get confused.' },
-  { n: '03', title: 'A/B & Multivariate Testing', desc: 'Hypothesis-driven A/B testing and multivariate experiments - statistically significant test design, implementation via Optimizely, VWO, or Google Optimize, and performance-preserving test execution.' },
-  { n: '04', title: 'Landing Page Optimisation', desc: 'Landing page redesign and copy optimisation - headline testing, hero section structure, benefit hierarchy, social proof placement, CTA design, and above-the-fold content strategy.' },
-  { n: '05', title: 'Checkout & Form Optimisation', desc: 'Checkout flow simplification, form field reduction, abandoned cart recovery, progress indicator implementation, and checkout trust signal optimisation for ecommerce and lead generation.' },
-  { n: '06', title: 'CTA & Copy Testing', desc: 'Button copy, placement, colour, and design testing - combined with headline, subheadline, and value proposition copy optimisation to increase click-through and completion rates.' },
-  { n: '07', title: 'UX & Design Improvements', desc: 'User experience improvements informed by data - navigation restructuring, mobile UX fixes, page layout changes, and accessibility improvements that remove conversion blockers at scale.' },
-  { n: '08', title: 'Conversion Analytics & Reporting', desc: 'GA4 conversion goal setup, funnel analysis, micro-conversion tracking, and monthly CRO performance reports - with actionable next test recommendations based on current data.' },
+  { icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4', title: 'CRO Audit & Heuristic Analysis', desc: 'Expert-led CRO audit reviewing page layout, navigation, CTAs, form design, trust signals, and user journey friction points against established conversion optimisation principles.' },
+  { icon: 'M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z', title: 'User Behaviour Analysis', desc: 'Heatmap, scroll map, click map, and session recording analysis via Hotjar, Microsoft Clarity, or FullStory — revealing exactly where users drop off, skip, or get confused.' },
+  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'A/B & Multivariate Testing', desc: 'Hypothesis-driven A/B testing and multivariate experiments — statistically significant test design, implementation via Optimizely, VWO, or Google Optimize, run to 95% confidence.' },
+  { icon: 'M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z', title: 'Landing Page Optimisation', desc: 'Landing page redesign and copy optimisation — headline testing, hero section structure, benefit hierarchy, social proof placement, CTA design, and above-the-fold content strategy.' },
+  { icon: 'M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z', title: 'Checkout & Form Optimisation', desc: 'Checkout flow simplification, form field reduction, abandoned cart recovery, progress indicator implementation, and checkout trust signal optimisation for ecommerce and lead generation.' },
+  { icon: 'M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122', title: 'CTA & Copy Testing', desc: 'Button copy, placement, colour, and design testing — combined with headline, subheadline, and value proposition copy optimisation to increase click-through and completion rates.' },
+  { icon: 'M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z', title: 'UX & Design Improvements', desc: 'User experience improvements informed by data — navigation restructuring, mobile UX fixes, page layout changes, and accessibility improvements that remove conversion blockers at scale.' },
+  { icon: 'M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z', title: 'Conversion Analytics & Reporting', desc: 'GA4 conversion goal setup, funnel analysis, micro-conversion tracking, and monthly CRO performance reports — with actionable next test recommendations based on current data.' },
 ];
 
-const TOOLS = ['Google Analytics 4', 'Hotjar', 'Microsoft Clarity', 'Optimizely', 'VWO', 'Google Tag Manager', 'FullStory', 'Unbounce', 'Crazy Egg', 'Lucky Orange', 'Heap Analytics'];
+const TOOLS = ['Google Analytics 4', 'Hotjar', 'Microsoft Clarity', 'Optimizely', 'VWO', 'Google Tag Manager', 'FullStory', 'Unbounce', 'Crazy Egg', 'Lucky Orange', 'Heap Analytics', 'Google Optimize'];
 
 const PROCESS = [
-  { step: '01', title: 'Data Collection', desc: 'Quantitative data (GA4 funnels, conversion rates, exit pages) and qualitative data (heatmaps, session recordings, user surveys) to build a complete picture of your conversion barriers.' },
-  { step: '02', title: 'Hypothesis Generation', desc: 'From data to testable hypotheses - specific, measurable changes with a predicted outcome and the supporting evidence from step 1.' },
-  { step: '03', title: 'Test Prioritisation', desc: 'Hypotheses ranked by potential impact, ease of implementation, and statistical feasibility - ensuring tests are run in the highest-value order.' },
-  { step: '04', title: 'Test Design & Launch', desc: 'Test built and launched - with traffic split, sample size calculation, and analytics instrumented correctly before launch.' },
-  { step: '05', title: 'Analysis & Decision', desc: 'Statistical significance reached - winner declared, loser archived, learnings documented. No decisions made before significance thresholds are met.' },
-  { step: '06', title: 'Iterate & Scale', desc: 'Winning variant becomes the control. New hypothesis generated. The CRO cycle repeats - compounding conversion improvements month after month.' },
+  { n: '01', title: 'Data Collection', desc: 'Quantitative data (GA4 funnels, conversion rates, exit pages) and qualitative data (heatmaps, session recordings, user surveys) to build a complete picture of your conversion barriers.' },
+  { n: '02', title: 'Hypothesis Generation', desc: 'From data to testable hypotheses — specific, measurable changes with a predicted outcome and the supporting evidence from step 1. No guessing, no opinions.' },
+  { n: '03', title: 'Test Prioritisation', desc: 'Hypotheses ranked by potential impact, ease of implementation, and statistical feasibility — ensuring tests are run in the highest-value order using PIE or ICE frameworks.' },
+  { n: '04', title: 'Test Design & Launch', desc: 'Test built and launched — with traffic split, sample size calculation, and analytics instrumented correctly before launch. No test goes live without a pre-defined success metric.' },
+  { n: '05', title: 'Analysis & Decision', desc: 'Statistical significance reached — winner declared, loser archived, learnings documented. No decisions made before 95% confidence thresholds are met.' },
+  { n: '06', title: 'Iterate & Scale', desc: 'Winning variant becomes the control. New hypothesis generated. The CRO cycle repeats — compounding conversion improvements month after month.' },
 ];
 
 const WHY = [
-  { title: 'Data-First Approach', desc: 'We do not make recommendations based on opinion or aesthetic preference - every hypothesis is grounded in quantitative funnel data and qualitative user behaviour analysis.' },
-  { title: 'Statistical Rigour', desc: 'We run tests to statistical significance before declaring winners - 95% confidence threshold as standard. No "test for a week and call it" shortcuts that produce false conclusions.' },
-  { title: 'Ecommerce & Lead Gen Expertise', desc: 'CRO strategy differs significantly between ecommerce checkout optimisation and B2B lead generation forms. We bring specific expertise across both contexts.' },
-  { title: 'SEO-Aware CRO', desc: 'CRO changes can inadvertently damage SEO - removing content, changing URL structures, or altering structured data. Our CRO work is always reviewed for SEO impact before deployment.' },
-  { title: 'Full Funnel Focus', desc: 'Conversion optimisation covers the full funnel - ad landing page, website journey, and checkout or lead form - not just individual page elements in isolation.' },
-  { title: 'Transparent Reporting', desc: 'Every month: what we tested, what the results were, what we learned, and what we\'re testing next. Full transparency on test outcomes - including failed tests that still generate learning.' },
+  { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'Data-First Approach', desc: 'We do not make recommendations based on opinion or aesthetic preference — every hypothesis is grounded in quantitative funnel data and qualitative user behaviour analysis.' },
+  { icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', title: 'Statistical Rigour', desc: 'We run tests to 95% statistical significance before declaring winners. No "test for a week and call it" shortcuts that produce false conclusions and wasted development effort.' },
+  { icon: 'M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z', title: 'Ecommerce & Lead Gen Expertise', desc: 'CRO strategy differs significantly between ecommerce checkout optimisation and B2B lead generation forms. We bring specific, proven expertise across both conversion contexts.' },
+  { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'SEO-Aware CRO', desc: 'CRO changes can inadvertently damage SEO — removing content, changing URL structures, or altering structured data. Our CRO work is always reviewed for SEO impact before deployment.' },
+  { icon: 'M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7', title: 'Full Funnel Focus', desc: 'Conversion optimisation covers the full funnel — ad landing page, website journey, and checkout or lead form — not just isolated page elements divorced from the user\'s actual path.' },
+  { icon: 'M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'Transparent Reporting', desc: 'Every month: what we tested, what the results were, what we learned, and what we\'re testing next. Full transparency on test outcomes — including failed tests that still generate learning.' },
 ];
 
 const FAQS = [
-  { q: 'What is conversion rate optimisation (CRO)?', a: 'Conversion rate optimisation (CRO) is the systematic practice of increasing the percentage of website visitors who complete a desired action - a purchase, enquiry form submission, phone call, email sign-up, or other goal. CRO uses data analysis (quantitative analytics + qualitative user research), hypothesis generation, and controlled A/B or multivariate testing to make evidence-based improvements to pages, funnels, and user journeys - improving conversion rate without necessarily increasing traffic.' },
-  { q: 'How is CRO different from UX design?', a: 'CRO and UX overlap significantly but differ in approach. UX design is typically a creative and strategic discipline focused on the entire user experience - often without controlled testing to validate individual changes. CRO is a scientific discipline focused specifically on conversion metrics - hypothesising that a specific change will increase conversion rate and testing that hypothesis in a controlled experiment. Good CRO uses UX principles to generate hypotheses and A/B testing to validate them with statistical confidence. We combine both - UX-informed ideation and rigorous A/B test validation.' },
-  { q: 'What conversion rate is "good"?', a: 'Conversion rates vary enormously by industry, traffic source, and conversion type. Ecommerce conversion rates typically range from 1% to 4% for direct purchases; lead generation forms for B2B can range from 2% to 10% depending on the ask. Averages matter less than your own baseline - our goal is to improve YOUR conversion rate relative to your current performance. A 25% relative improvement to a 1% conversion rate (to 1.25%) is meaningful regardless of what the industry average is.' },
-  { q: 'How long does CRO take to show results?', a: 'CRO test results depend on traffic volume and the size of the conversion rate difference being detected. Low-traffic sites need to run tests for longer to reach statistical significance - sometimes 4 to 8 weeks per test. High-traffic sites can reach significance in 1 to 2 weeks. The minimum traffic requirement for reliable A/B test results is approximately 1,000 conversions per variant - so a page receiving 10,000 sessions with a 5% conversion rate (500 conversions) needs at minimum 2 test cycles before reaching significance. We calculate required sample sizes before starting tests so you know the timeline upfront.' },
+  { q: 'What is conversion rate optimisation (CRO)?', a: 'Conversion rate optimisation (CRO) is the systematic practice of increasing the percentage of website visitors who complete a desired action — a purchase, enquiry form submission, phone call, email sign-up, or other goal. CRO uses data analysis (quantitative analytics + qualitative user research), hypothesis generation, and controlled A/B or multivariate testing to make evidence-based improvements to pages, funnels, and user journeys — improving conversion rate without necessarily increasing traffic.' },
+  { q: 'How is CRO different from UX design?', a: 'CRO and UX overlap significantly but differ in approach. UX design is typically a creative and strategic discipline focused on the entire user experience — often without controlled testing to validate individual changes. CRO is a scientific discipline focused specifically on conversion metrics — hypothesising that a specific change will increase conversion rate and testing that hypothesis in a controlled experiment. Good CRO uses UX principles to generate hypotheses and A/B testing to validate them with statistical confidence. We combine both — UX-informed ideation and rigorous A/B test validation.' },
+  { q: 'What conversion rate is "good"?', a: 'Conversion rates vary enormously by industry, traffic source, and conversion type. Ecommerce conversion rates typically range from 1% to 4% for direct purchases; lead generation forms for B2B can range from 2% to 10% depending on the ask. Averages matter less than your own baseline — our goal is to improve YOUR conversion rate relative to your current performance. A 25% relative improvement to a 1% conversion rate (to 1.25%) is meaningful regardless of what the industry average is.' },
+  { q: 'How long does CRO take to show results?', a: 'CRO test results depend on traffic volume and the size of the conversion rate difference being detected. Low-traffic sites need to run tests for longer to reach statistical significance — sometimes 4 to 8 weeks per test. High-traffic sites can reach significance in 1 to 2 weeks. The minimum traffic requirement for reliable A/B test results is approximately 1,000 conversions per variant — so a page receiving 10,000 sessions with a 5% conversion rate needs at minimum 2 test cycles before reaching significance. We calculate required sample sizes before starting tests so you know the timeline upfront.' },
   { q: 'What pages should be prioritised for CRO?', a: 'Prioritise pages by: traffic volume × conversion impact potential. The highest-value CRO targets are typically: checkout pages (high traffic, direct revenue impact); primary landing pages from paid traffic (high spend at risk); lead generation forms (direct pipeline impact); product pages for your top-selling products; and homepage or key category pages with high exit rates. We use GA4 funnel analysis to identify where the largest conversion gaps exist in your specific user journey.' },
-  { q: 'Do I need CRO or do I need better traffic?', a: 'Both matter, but CRO improves the return on ALL your traffic channels simultaneously. Doubling your traffic costs twice as much. Doubling your conversion rate from 1% to 2% doubles your revenue from the same traffic spend. CRO is typically the higher ROI investment once you have meaningful traffic volume (at least 10,000 sessions/month to test effectively). If you are still building traffic, focus on SEO and paid channels first - CRO has diminishing value below the traffic threshold needed for statistically reliable testing.' },
-  { q: 'Can CRO damage SEO?', a: 'Poorly executed CRO can inadvertently damage SEO - for example, removing content that contains target keywords, changing URL structures, or altering structured data incorrectly. Well-executed CRO avoids these risks. Our CRO team works alongside our SEO team - all significant page changes are reviewed for SEO impact before deployment. Specifically, we ensure: content changes maintain keyword relevance; A/B test JavaScript does not interfere with Googlebot rendering; winning variants replace the original cleanly without creating duplicate content; and meta data is preserved across test variants.' },
-  { q: 'What is the minimum traffic needed for CRO testing?', a: 'Effective A/B testing requires sufficient statistical power. As a general guide: you need at least 1,000 conversions per variant to detect a 20% relative improvement with 95% confidence. This means: if your landing page converts at 3%, you need approximately 33,000 sessions to run a valid test detecting a 20% lift. Lower traffic sites are not excluded from CRO - but testing cycles are longer, and some test types (multivariate with many combinations) are not statistically feasible. For lower-traffic sites we focus on high-impact single-variable tests and qualitative CRO (heuristic audits, user testing) rather than statistical A/B testing.' },
+  { q: 'Do I need CRO or do I need better traffic?', a: 'Both matter, but CRO improves the return on ALL your traffic channels simultaneously. Doubling your traffic costs twice as much. Doubling your conversion rate from 1% to 2% doubles your revenue from the same traffic spend. CRO is typically the higher ROI investment once you have meaningful traffic volume (at least 10,000 sessions/month to test effectively). If you are still building traffic, focus on SEO and paid channels first — CRO has diminishing value below the traffic threshold needed for statistically reliable testing.' },
+  { q: 'Can CRO damage SEO?', a: 'Poorly executed CRO can inadvertently damage SEO — for example, removing content that contains target keywords, changing URL structures, or altering structured data incorrectly. Well-executed CRO avoids these risks. Our CRO team works alongside our SEO team — all significant page changes are reviewed for SEO impact before deployment. We ensure: content changes maintain keyword relevance; A/B test JavaScript does not interfere with Googlebot rendering; winning variants replace the original cleanly without creating duplicate content; and meta data is preserved across test variants.' },
+  { q: 'What is the minimum traffic needed for CRO testing?', a: 'Effective A/B testing requires sufficient statistical power. As a general guide: you need at least 1,000 conversions per variant to detect a 20% relative improvement with 95% confidence. This means: if your landing page converts at 3%, you need approximately 33,000 sessions to run a valid test detecting a 20% lift. Lower-traffic sites are not excluded from CRO — but testing cycles are longer, and multivariate tests are not statistically feasible. For lower-traffic sites we focus on high-impact single-variable tests and qualitative CRO (heuristic audits, user testing) rather than statistical A/B testing.' },
+  { q: 'What tools do you use for CRO?', a: 'Our CRO technology stack includes: Google Analytics 4 and Google Tag Manager for quantitative funnel data; Hotjar, Microsoft Clarity, and FullStory for heatmaps, session recordings, and user behaviour analysis; Optimizely and VWO for enterprise-grade A/B and multivariate testing; Unbounce and Instapage for landing page testing; Crazy Egg and Lucky Orange for click tracking and scroll maps; and Heap Analytics for retroactive event analysis. Tool selection is always based on your existing stack and budget — we do not mandate expensive platforms if lighter-weight alternatives are sufficient.' },
+  { q: 'How do you measure CRO success?', a: 'We measure CRO success against your primary conversion KPI (purchase, lead, sign-up, call) with the following metrics: conversion rate (primary), revenue per visitor (for ecommerce), cost per lead (for lead gen), and test velocity (number of statistically significant tests completed per quarter). We also track secondary metrics: average order value, cart abandonment rate, form completion rate, and bounce rate on key landing pages. All metrics are reported monthly with trend analysis and benchmarked against your pre-CRO baseline.' },
+  { q: 'Do you offer CRO for ecommerce specifically?', a: 'Yes — ecommerce CRO is one of our core specialisations. We have deep experience with Shopify, WooCommerce, Magento, and BigCommerce checkout optimisation. Key ecommerce CRO areas include: product page conversion elements (images, copy, trust badges, reviews), add-to-cart rate optimisation, multi-step checkout flow simplification, guest checkout implementation, abandoned cart recovery, upsell and cross-sell placement, and post-purchase flow optimisation. We have delivered measurable conversion rate uplifts for ecommerce clients across US, Canadian, and Australian markets.' },
+  { q: 'What does a CRO audit include?', a: 'Our CRO audit covers: heuristic analysis of your top 10 highest-traffic pages against 200+ conversion optimisation criteria; GA4 funnel analysis identifying your biggest conversion drop-off points; heatmap and session recording review of user behaviour on key pages; form analytics review (field abandonment, error rates, completion time); competitor benchmarking of your key landing pages versus top 3 competitors; and a prioritised roadmap of 15 to 20 specific test recommendations ranked by estimated impact. The audit deliverable is a detailed report with annotated screenshots, data evidence, and a phased test calendar.' },
 ];
 
-const STATS = [
-  { label: 'Avg Conversion Rate Lift', val: '+38%' },
-  { label: 'CRO Clients Served', val: '150+' },
-  { label: 'A/B Tests Run', val: '600+' },
-  { label: 'Client Retention', val: '91%' },
+const INDUSTRIES = [
+  'eCommerce & Retail', 'SaaS & Software', 'B2B Lead Generation', 'Healthcare & Wellness',
+  'Finance & Fintech', 'Travel & Hospitality', 'Education & eLearning', 'Legal Services',
+  'Real Estate', 'Home Services', 'Subscription Businesses', 'Agencies & Resellers',
 ];
 
 export default function ConversionRateOptimizationServices() {
   const [openFaq, setOpenFaq] = useState(0);
-  const [visibleCards, setVisibleCards] = useState([]);
-  const [visibleSteps, setVisibleSteps] = useState([]);
-  const [visibleWhy, setVisibleWhy] = useState([]);
-  const cardsRef = useRef(null); const stepRefs = useRef([]); const whyRef = useRef(null);
+  const [visibleSections, setVisibleSections] = useState(new Set());
+  const [statsStarted, setStatsStarted] = useState(false);
+  const [formSt, setFormSt] = useState('idle');
+  const sectionRefs = useRef({});
+  const statsRef = useRef(null);
+  const recaptchaLoaded = useRef(false);
 
-  useEffect(() => { if (!cardsRef.current) return; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { SERVICES.forEach((_, i) => setTimeout(() => setVisibleCards(p => p.includes(i) ? p : [...p, i]), i * 60)); o.disconnect(); } }, { threshold: 0.05 }); o.observe(cardsRef.current); return () => o.disconnect(); }, []);
-  useEffect(() => { const obs = stepRefs.current.map((el, i) => { if (!el) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setTimeout(() => setVisibleSteps(p => p.includes(i) ? p : [...p, i]), i * 120); o.disconnect(); } }, { threshold: 0.2 }); o.observe(el); return o; }); return () => obs.forEach(o => o && o.disconnect()); }, []);
-  useEffect(() => { if (!whyRef.current) return; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { WHY.forEach((_, i) => setTimeout(() => setVisibleWhy(p => p.includes(i) ? p : [...p, i]), i * 90)); o.disconnect(); } }, { threshold: 0.1 }); o.observe(whyRef.current); return () => o.disconnect(); }, []);
+  useEffect(() => {
+    if (!recaptchaLoaded.current) {
+      const s = document.createElement('script');
+      s.src = 'https://www.google.com/recaptcha/api.js?render=6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs';
+      s.async = true;
+      document.head.appendChild(s);
+      recaptchaLoaded.current = true;
+    }
+  }, []);
 
-  const jsonLd = { '@context': 'https://schema.org', '@graph': [{ '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' }, { '@type': 'ListItem', position: 2, name: 'Digital Marketing', item: 'https://www.1solutions.biz/digital-marketing-services/' }, { '@type': 'ListItem', position: 3, name: 'Conversion Rate Optimisation', item: 'https://www.1solutions.biz/conversion-rate-optimization-services/' }] }, { '@type': 'Service', name: 'Conversion Rate Optimisation Services', provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz' }, serviceType: 'Conversion Rate Optimisation', url: 'https://www.1solutions.biz/conversion-rate-optimization-services/' }, { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }] };
+  useEffect(() => {
+    const keys = Object.keys(sectionRefs.current);
+    const observers = keys.map(key => {
+      const el = sectionRefs.current[key];
+      if (!el) return null;
+      const obs = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) { setVisibleSections(prev => new Set([...prev, key])); obs.disconnect(); } },
+        { threshold: 0.12 }
+      );
+      obs.observe(el);
+      return obs;
+    });
+    return () => observers.forEach(o => o && o.disconnect());
+  }, []);
+
+  useEffect(() => {
+    if (!statsRef.current) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setStatsStarted(true); obs.disconnect(); } },
+      { threshold: 0.5 }
+    );
+    obs.observe(statsRef.current);
+    return () => obs.disconnect();
+  }, []);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setFormSt('submitting');
+    try {
+      const token = await window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', { action: 'cro_contact' });
+      const fd = new FormData(e.target);
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: fd.get('cro-name'),
+          email: fd.get('cro-email'),
+          phone: fd.get('cro-phone'),
+          company: fd.get('cro-company'),
+          message: `Website: ${fd.get('cro-website') || 'Not provided'}\n\nWhat they want to improve:\n${fd.get('cro-message')}`,
+          service: 'Conversion Rate Optimisation',
+          source: 'CRO Services Page - Free Audit',
+          consent: true,
+          recaptchaToken: token,
+        }),
+      });
+      if (res.ok) { setFormSt('success'); e.target.reset(); } else { setFormSt('error'); }
+    } catch { setFormSt('error'); }
+  }
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
+          { '@type': 'ListItem', position: 2, name: 'Digital Marketing Services', item: 'https://www.1solutions.biz/digital-marketing-services/' },
+          { '@type': 'ListItem', position: 3, name: 'Conversion Rate Optimisation Services', item: 'https://www.1solutions.biz/conversion-rate-optimization-services/' },
+        ],
+      },
+      {
+        '@type': 'LocalBusiness',
+        name: '1Solutions',
+        url: 'https://www.1solutions.biz',
+        logo: 'https://www.1solutions.biz/images/1solutions-logo.png',
+        sameAs: ['https://www.linkedin.com/company/1solutions/', 'https://x.com/1solutionsbiz', 'https://www.facebook.com/1solutionsbiz'],
+        address: { '@type': 'PostalAddress', addressLocality: 'New Delhi', addressCountry: 'IN' },
+        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '142', bestRating: '5' },
+      },
+      {
+        '@type': 'WebPage',
+        '@id': 'https://www.1solutions.biz/conversion-rate-optimization-services/',
+        url: 'https://www.1solutions.biz/conversion-rate-optimization-services/',
+        name: 'Conversion Rate Optimisation (CRO) Services | Increase Conversions | 1Solutions',
+        description: 'Expert CRO services — A/B testing, heatmap analysis, landing page optimisation, and checkout CRO. Trusted by 150+ businesses to increase conversion rates by an average of 38%. Get a free CRO audit.',
+        dateModified: '2026-07-06',
+        inLanguage: 'en-US',
+      },
+      {
+        '@type': 'Service',
+        name: 'Conversion Rate Optimisation Services',
+        provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz' },
+        serviceType: 'Conversion Rate Optimisation',
+        url: 'https://www.1solutions.biz/conversion-rate-optimization-services/',
+        description: 'Full-service CRO agency offering A/B testing, heatmap analysis, landing page optimisation, checkout CRO, and user behaviour analysis for ecommerce and lead generation businesses.',
+        areaServed: ['US', 'CA', 'AU'],
+        dateModified: '2026-07-06',
+      },
+      {
+        '@type': 'HowTo',
+        name: 'Our CRO Process',
+        description: 'Our 6-step CRO methodology for delivering compounding conversion rate improvements.',
+        step: PROCESS.map(p => ({ '@type': 'HowToStep', name: p.title, text: p.desc })),
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+      },
+    ],
+  };
 
   return (
     <>
       <Head>
-        <title>Conversion Rate Optimisation (CRO) Services | 1Solutions</title>
-        <meta name="description" content="Conversion rate optimisation services - A/B testing, heatmap analysis, landing page optimisation, and checkout CRO." />
-        <meta name="keywords" content="conversion rate optimization services, cro services, a/b testing agency, cro agency, landing page optimization, checkout optimization, cro audit" />
+        <title>Conversion Rate Optimisation (CRO) Services | Increase Conversions | 1Solutions</title>
+        <meta name="description" content="Expert CRO services — A/B testing, heatmap analysis, landing page optimisation, and checkout CRO. Trusted by 150+ businesses to increase conversion rates by an average of 38%. Get a free CRO audit." />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.1solutions.biz/conversion-rate-optimization-services/" />
-        <meta property="og:title" content="Conversion Rate Optimisation Services | 1Solutions" />
+        <meta property="og:title" content="Conversion Rate Optimisation (CRO) Services | 1Solutions" />
+        <meta property="og:description" content="Data-driven CRO — A/B testing, heatmap analysis, landing page optimisation, and checkout CRO. 150+ clients, +38% avg conversion lift. Free CRO audit." />
+        <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.1solutions.biz/conversion-rate-optimization-services/" />
         <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <style>{`
-          .cro-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
-          .cro-page *,.cro-page *::before,.cro-page *::after{box-sizing:border-box}
-          .cro-hero{background:linear-gradient(135deg,#fff1f2 0%,#fecdd3 25%,#ffe4e6 60%,#fff5f6 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .cro-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(225,29,72,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .cro-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(136,19,55,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .cro-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}
-          .cro-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500}
-          .cro-bc a{color:#6b7280;text-decoration:none}.cro-bc a:hover{color:#E11D48}.cro-bc span{color:#d1d5db}
-          .cro-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(225,29,72,0.08);border:1px solid rgba(225,29,72,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#BE123C;margin-bottom:28px}
-          .cro-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(90deg,#881337 0%,#E11D48 50%,#9F1239 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .cro-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
-          .cro-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
-          .cro-btn-p{display:inline-flex;align-items:center;gap:8px;background:#E11D48;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(225,29,72,0.28)}
-          .cro-btn-p:hover{background:#BE123C;box-shadow:0 8px 32px rgba(225,29,72,0.38);transform:translateY(-2px)}
-          .cro-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.18);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
-          .cro-btn-s:hover{border-color:#E11D48;color:#E11D48;transform:translateY(-2px)}
-          .cro-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(225,29,72,0.07)}
-          .cro-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(225,29,72,0.08)}.cro-stat:last-child{border-right:none}
-          .cro-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .cro-stat-v{font-size:1.6rem;font-weight:900;color:#E11D48;letter-spacing:-0.5px}
-          .cro-svc{background:#f8fafd;padding:80px 40px}.cro-svc-in{max-width:1280px;margin:0 auto}
-          .cro-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#E11D48;margin-bottom:10px;display:block}
-          .cro-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#881337 0%,#E11D48 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
-          .cro-desc{font-size:15px;color:#4A6080;line-height:1.7;max-width:640px;margin-bottom:44px}
-          .cro-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-          .cro-card{background:linear-gradient(135deg,rgba(255,241,242,0.65) 0%,rgba(255,255,255,0.88) 60%,rgba(254,205,211,0.25) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:26px 22px 22px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(225,29,72,0.05);opacity:0;transform:translateY(20px);transition:opacity 0.4s ease,transform 0.4s ease,box-shadow 0.22s}
-          .cro-card.visible{opacity:1;transform:translateY(0)}.cro-card:hover{transform:translateY(-6px);border-color:rgba(225,29,72,0.22);box-shadow:0 16px 48px rgba(225,29,72,0.09)}
-          .cro-num{position:absolute;top:8px;right:14px;font-size:72px;font-weight:900;line-height:1;color:#E11D48;opacity:0.05;letter-spacing:-4px;pointer-events:none;user-select:none}
-          .cro-card h3{font-size:15px;font-weight:700;color:#0F1F40;line-height:1.3;margin-bottom:8px;position:relative;z-index:1}
-          .cro-card p{font-size:13px;color:#4A6080;line-height:1.6;position:relative;z-index:1;margin:0}
-          .cro-tools{background:linear-gradient(135deg,#881337 0%,#E11D48 100%);padding:60px 40px}
-          .cro-tools-in{max-width:1280px;margin:0 auto;text-align:center}
-          .cro-tools h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:900;color:#fff;margin-bottom:32px}
-          .cro-pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-          .cro-pill{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.20);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;color:#fff}
-          .cro-proc{background:linear-gradient(135deg,#fff1f2 0%,#fff5f6 50%,#fecdd3 100%);padding:80px 40px}
-          .cro-proc-in{max-width:900px;margin:0 auto}
-          .cro-steps{display:flex;flex-direction:column;margin-top:44px}
-          .cro-step{display:grid;grid-template-columns:80px 1fr;gap:24px;align-items:flex-start;padding:28px 0;border-bottom:1px solid rgba(225,29,72,0.10);opacity:0;transform:translateX(-20px);transition:opacity 0.45s ease,transform 0.45s ease}
-          .cro-step:last-child{border-bottom:none}.cro-step.visible{opacity:1;transform:translateX(0)}
-          .cro-snum{font-size:3rem;font-weight:900;color:rgba(225,29,72,0.15);line-height:1;letter-spacing:-2px}
-          .cro-step h3{font-size:1.1rem;font-weight:800;color:#0F1F40;margin-bottom:6px}
-          .cro-step p{font-size:0.9rem;color:#4A6080;line-height:1.7;margin:0}
-          .cro-why{background:#fff;padding:80px 40px}.cro-why-in{max-width:1280px;margin:0 auto}
-          .cro-why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
-          .cro-wcard{background:linear-gradient(135deg,#fff1f2 0%,#fff 60%,#fecdd3 100%);border:1px solid rgba(225,29,72,0.10);border-radius:16px;padding:28px;opacity:0;transform:translateY(16px);transition:opacity 0.4s ease,transform 0.4s ease}
-          .cro-wcard.visible{opacity:1;transform:translateY(0)}.cro-wcard:hover{border-color:rgba(225,29,72,0.20);box-shadow:0 8px 32px rgba(225,29,72,0.07)}
-          .cro-dot{width:8px;height:8px;border-radius:50%;background:#E11D48;margin-bottom:16px}
-          .cro-wcard h3{font-size:1rem;font-weight:800;color:#0F1F40;margin-bottom:10px}
-          .cro-wcard p{font-size:0.88rem;color:#4A6080;line-height:1.7;margin:0}
-          .cro-faq{background:#f8fafd;padding:80px 40px}.cro-faq-in{max-width:860px;margin:0 auto}
-          .cro-fitem{border-bottom:1px solid #e5e7eb}
-          .cro-fq{width:100%;background:none;border:none;text-align:left;padding:22px 0;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;cursor:pointer;font-family:inherit;font-size:1rem;font-weight:700;color:#0F1F40;line-height:1.4}
-          .cro-fq:hover{color:#E11D48}
-          .cro-ficon{width:22px;height:22px;border:2px solid #e5e7eb;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9ca3af;transition:all 0.2s;margin-top:2px}
-          .cro-fitem.open .cro-ficon{border-color:#E11D48;color:#E11D48;background:rgba(225,29,72,0.06)}
-          .cro-fa{font-size:0.92rem;color:#4A6080;line-height:1.8;overflow:hidden;max-height:0;transition:max-height 0.35s ease,padding-bottom 0.35s ease}
-          .cro-fitem.open .cro-fa{max-height:500px;padding-bottom:22px}
-          .cro-cta{background:linear-gradient(135deg,rgba(225,29,72,0.06) 0%,rgba(255,255,255,0.80) 40%,rgba(136,19,55,0.04) 100%);padding:90px 40px;position:relative;overflow:hidden}
-          .cro-cta-o1{position:absolute;top:-80px;right:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(225,29,72,0.10) 0%,transparent 70%);pointer-events:none}
-          .cro-cta-o2{position:absolute;bottom:-60px;left:-60px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(136,19,55,0.08) 0%,transparent 70%);pointer-events:none}
-          .cro-cta-in{max-width:760px;margin:0 auto;text-align:center;position:relative;z-index:1}
-          .cro-cta-t{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;background:linear-gradient(90deg,#881337 0%,#E11D48 50%,#9F1239 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;line-height:1.2}
-          .cro-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
-          .cro-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-          @media(max-width:1024px){.cro-grid{grid-template-columns:repeat(2,1fr)}.cro-why-grid{grid-template-columns:repeat(2,1fr)}}
-          @media(max-width:768px){.cro-hero,.cro-svc,.cro-tools,.cro-proc,.cro-why,.cro-faq,.cro-cta{padding:60px 24px}.cro-hero{padding-top:60px;padding-bottom:0}.cro-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.cro-stat:nth-child(2){border-right:none}.cro-grid{grid-template-columns:1fr}.cro-why-grid{grid-template-columns:1fr}.cro-step{grid-template-columns:56px 1fr}.cro-btns{flex-direction:column;align-items:center}}
+          /* ── BASE ── */
+          .cro-page { font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; background:linear-gradient(135deg,#dbeafe 0%,#ede9fe 25%,#e0f2fe 50%,#fef3c7 75%,#fce7f3 100%); background-attachment:scroll; color:#0F1F40; line-height:1.6; overflow-x:hidden; position:relative; }
+          .cro-page *,.cro-page *::before,.cro-page *::after { box-sizing:border-box; }
+
+          /* ── ORBS ── */
+          .cro-orb1 { position:fixed;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(99,130,255,0.30) 0%,rgba(139,92,246,0.12) 40%,transparent 70%);top:-300px;right:-300px;pointer-events:none;z-index:0;filter:blur(20px); }
+          .cro-orb2 { position:fixed;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(251,146,60,0.25) 0%,rgba(245,158,11,0.12) 40%,transparent 70%);bottom:0;left:-250px;pointer-events:none;z-index:0;filter:blur(20px); }
+          .cro-orb3 { position:fixed;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(20,184,166,0.18) 0%,transparent 70%);top:45%;left:-150px;transform:translateY(-50%);pointer-events:none;z-index:0;filter:blur(20px); }
+
+          /* ── HERO ── */
+          .cro-hero { position:relative;overflow:hidden;z-index:1; }
+          .cro-hero::before { content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.12) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px); }
+          .cro-hero::after { content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.18) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px); }
+          .cro-hero-content { position:relative;z-index:2;text-align:center;max-width:880px;margin:0 auto;padding:56px 40px 40px; }
+          .cro-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:18px; }
+          .cro-h1 { font-size:clamp(2rem,5vw,3.4rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;color:#0F1F40; }
+          .cro-hero-sub { font-size:16px;color:#3A507A;line-height:1.65;max-width:660px;margin:0 auto 28px; }
+          .cro-hero-btns { display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:32px; }
+          .cro-btn-primary { position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:8px;padding:14px 36px;background:rgba(15,52,96,0.85);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.20);border-radius:50px;color:#fff;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 6px 24px rgba(15,52,96,0.25); }
+          .cro-btn-primary:hover { background:rgba(15,52,96,1);border-color:rgba(245,158,11,0.6);transform:translateY(-2px);box-shadow:0 12px 36px rgba(15,52,96,0.30); }
+          .cro-btn-secondary { display:inline-flex;align-items:center;padding:14px 32px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1); }
+          .cro-btn-secondary:hover { background:rgba(255,255,255,0.85);border-color:rgba(245,158,11,0.6);transform:translateY(-2px); }
+
+          /* ── STATS BAR ── */
+          .cro-stats { position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
+          .cro-stat { padding:18px 20px;text-align:center;border-right:1px solid rgba(15,52,96,0.10); }
+          .cro-stat:last-child { border-right:none; }
+          .cro-stat-l { font-size:12px;color:#4A6080;font-weight:500;margin-bottom:6px; }
+          .cro-stat-v { font-size:26px;font-weight:900;color:#D97706;letter-spacing:-0.5px;line-height:1; }
+
+          /* ── CLIENT LOGOS ── */
+          .cro-clients-bar { position:relative;z-index:2;padding:20px 40px 60px;max-width:1440px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px; }
+          .cro-clients-label { font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6A80A0; }
+          .cro-clients-logos { width:100%;overflow:hidden; }
+          .cro-logos-track { display:flex;align-items:center;gap:60px;width:max-content;animation:cro-marquee 28s linear infinite; }
+          .cro-logos-track:hover { animation-play-state:paused; }
+          @keyframes cro-marquee { 0% { transform:translateX(0); } 100% { transform:translateX(-50%); } }
+          .cro-client-logo { height:26px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(100%);opacity:0.5;transition:opacity 0.25s,filter 0.25s; }
+          .cro-client-logo:hover { opacity:0.85;filter:grayscale(0%); }
+
+          /* ── SHARED SECTION ── */
+          .cro-sec { padding:80px 40px;position:relative;z-index:1; }
+          .cro-sec-in { max-width:1280px;margin:0 auto; }
+          .cro-white { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08); }
+          .cro-sec-ey { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:12px;display:block; }
+          .cro-sec-ttl { font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;letter-spacing:-1px;color:#0F1F40;margin-bottom:10px; }
+          .cro-sec-desc { font-size:15px;color:#4A6080;line-height:1.7;max-width:640px;margin-bottom:40px; }
+
+          /* ── REVEAL ── */
+          .cro-reveal { opacity:0;transform:translateY(44px);transition:opacity 0.7s cubic-bezier(0.22,1,0.36,1),transform 0.7s cubic-bezier(0.22,1,0.36,1); }
+          .cro-reveal.cro-visible { opacity:1;transform:translateY(0); }
+
+          /* ── GLASS CARD ── */
+          .cro-glass { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:20px;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
+
+          /* ── DEFINITION ── */
+          .cro-def-box { padding:36px;max-width:1040px;margin:0 auto; }
+          .cro-def-intro { font-size:1.02rem;color:#374151;line-height:1.8;margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid rgba(15,52,96,0.08); }
+          .cro-def-intro strong { color:#0F3460; }
+          .cro-def-aspects { display:grid;grid-template-columns:repeat(3,1fr);gap:20px; }
+          .cro-def-aspect { background:rgba(255,255,255,0.55);border:1px solid rgba(15,52,96,0.10);border-radius:14px;padding:20px;transition:border-color 0.2s; }
+          .cro-def-aspect:hover { border-color:rgba(217,119,6,0.35); }
+          .cro-def-t { font-weight:700;color:#0F3460;font-size:14px;margin-bottom:6px; }
+          .cro-def-d { font-size:13px;color:#4A6080;line-height:1.6; }
+
+          /* ── WHY MATTERS ── */
+          .cro-wm-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:24px; }
+          .cro-wm-card { padding:32px 28px;text-align:center;transition:transform 0.25s,box-shadow 0.25s,border-color 0.25s; }
+          .cro-wm-card:hover { transform:translateY(-6px);border-color:rgba(217,119,6,0.45)!important;box-shadow:0 16px 48px rgba(15,52,96,0.14),inset 0 1px 0 rgba(255,255,255,1)!important; }
+          .cro-wm-num { font-size:3.2rem;font-weight:900;background:linear-gradient(90deg,#0F3460,#D97706);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-1.5px;line-height:1;margin-bottom:12px; }
+          .cro-wm-desc { font-size:14px;color:#374151;line-height:1.6;margin-bottom:8px; }
+          .cro-wm-src { font-size:11px;color:#9ca3af;font-style:italic; }
+
+          /* ── SERVICES ── */
+          .cro-svc-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:20px; }
+          .cro-svc-card { padding:28px 24px;transition:transform 0.22s,box-shadow 0.22s,border-color 0.22s; }
+          .cro-svc-card:hover { transform:translateY(-6px);border-color:rgba(217,119,6,0.45)!important;box-shadow:0 16px 48px rgba(15,52,96,0.14),inset 0 1px 0 rgba(255,255,255,1)!important; }
+          .cro-svc-icon { width:48px;height:48px;border-radius:14px;background:rgba(15,52,96,0.06);display:flex;align-items:center;justify-content:center;margin-bottom:16px;transition:background 0.2s; }
+          .cro-svc-card:hover .cro-svc-icon { background:rgba(217,119,6,0.10); }
+          .cro-svc-icon svg { width:22px;height:22px;stroke:#0F3460;fill:none;transition:stroke 0.2s; }
+          .cro-svc-card:hover .cro-svc-icon svg { stroke:#D97706; }
+          .cro-svc-t { font-size:1rem;font-weight:700;color:#0F1F40;margin:0 0 8px;line-height:1.3; }
+          .cro-svc-d { font-size:13.5px;color:#4A6080;line-height:1.7;margin:0; }
+
+          /* ── RESULTS DARK ── */
+          .cro-results { background:linear-gradient(135deg,#071e3d 0%,#0F3460 40%,#0a2549 100%);padding:80px 40px;position:relative;overflow:hidden;z-index:1; }
+          .cro-res-orb { position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(217,119,6,0.18) 0%,transparent 65%);top:-150px;right:-100px;pointer-events:none;filter:blur(30px); }
+          .cro-res-in { max-width:1280px;margin:0 auto;position:relative;z-index:2; }
+          .cro-res-ey { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:10px;display:block;text-align:center; }
+          .cro-res-ttl { font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;text-align:center;margin-bottom:12px;line-height:1.15;background:linear-gradient(90deg,#fff 30%,#fcd34d 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+          .cro-res-sub { font-size:1rem;color:rgba(255,255,255,0.60);text-align:center;max-width:560px;margin:0 auto 52px; }
+          .cro-res-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:24px; }
+          .cro-res-card { background:rgba(255,255,255,0.07);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:32px;text-align:center;transition:background 0.25s,border-color 0.25s; }
+          .cro-res-card:hover { background:rgba(255,255,255,0.11);border-color:rgba(217,119,6,0.45); }
+          .cro-res-metric { font-size:3rem;font-weight:900;color:#fcd34d;margin-bottom:6px;line-height:1;letter-spacing:-2px; }
+          .cro-res-label { font-size:14px;color:rgba(255,255,255,0.80);font-weight:600;margin-bottom:6px; }
+          .cro-res-sub2 { font-size:12px;color:rgba(255,255,255,0.50); }
+
+          /* ── PROCESS ── */
+          .cro-proc-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:28px; }
+          .cro-proc-card { padding:28px 24px;transition:transform 0.22s,box-shadow 0.22s,border-color 0.22s; }
+          .cro-proc-card:hover { transform:translateY(-5px);border-color:rgba(217,119,6,0.40)!important;box-shadow:0 16px 48px rgba(15,52,96,0.12),inset 0 1px 0 rgba(255,255,255,1)!important; }
+          .cro-proc-n { font-size:3rem;font-weight:900;color:rgba(15,52,96,0.08);line-height:1;margin-bottom:6px;letter-spacing:-2px; }
+          .cro-proc-line { width:40px;height:3px;background:linear-gradient(90deg,#D97706,rgba(217,119,6,0.25));border-radius:2px;margin-bottom:14px; }
+          .cro-proc-t { font-size:1rem;font-weight:700;color:#0F1F40;margin:0 0 8px; }
+          .cro-proc-d { font-size:13.5px;color:#4A6080;line-height:1.7;margin:0; }
+
+          /* ── TOOLS ── */
+          .cro-tools-wrap { display:flex;flex-wrap:wrap;gap:12px; }
+          .cro-tool-pill { display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.85);border-radius:50px;padding:9px 18px;font-size:13px;font-weight:500;color:#374151;box-shadow:0 2px 10px rgba(15,52,96,0.06);transition:border-color 0.2s,color 0.2s,box-shadow 0.2s; }
+          .cro-tool-pill:hover { border-color:rgba(217,119,6,0.45);color:#D97706;box-shadow:0 4px 16px rgba(15,52,96,0.10); }
+          .cro-tool-dot { width:7px;height:7px;border-radius:50%;background:#D97706;flex-shrink:0; }
+
+          /* ── WHY ── */
+          .cro-why-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:20px; }
+          .cro-why-card { padding:28px 24px;transition:transform 0.25s,box-shadow 0.25s,border-color 0.25s; }
+          .cro-why-card:hover { transform:translateY(-6px);border-color:rgba(217,119,6,0.45)!important;box-shadow:0 16px 48px rgba(15,52,96,0.14),inset 0 1px 0 rgba(255,255,255,1)!important; }
+          .cro-why-icon { width:44px;height:44px;display:flex;align-items:center;justify-content:center;margin-bottom:14px; }
+          .cro-why-icon svg { width:26px;height:26px;stroke:#D97706;fill:none; }
+          .cro-why-t { font-size:15px;font-weight:700;color:#0F1F40;margin:0 0 8px; }
+          .cro-why-d { font-size:13.5px;color:#4A6080;line-height:1.7;margin:0; }
+
+          /* ── INDUSTRIES ── */
+          .cro-ind-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:12px; }
+          .cro-ind-pill { background:rgba(255,255,255,0.65);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.85);border-radius:12px;padding:14px 16px;font-size:13px;font-weight:600;color:#374151;text-align:center;box-shadow:0 2px 10px rgba(15,52,96,0.06);transition:all 0.2s; }
+          .cro-ind-pill:hover { background:rgba(255,255,255,0.85);border-color:rgba(217,119,6,0.45);color:#D97706;box-shadow:0 6px 20px rgba(15,52,96,0.10); }
+
+          /* ── CONTACT ── */
+          .cro-contact { padding:72px 40px;background:linear-gradient(135deg,rgba(254,243,199,0.70) 0%,rgba(255,255,255,0.60) 40%,rgba(219,234,254,0.65) 100%);position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.80); }
+          .cro-contact-in { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;align-items:start;gap:48px; }
+          .cro-contact-ttl { font-size:clamp(2rem,3.5vw,2.8rem);font-weight:900;line-height:1.2;margin:0 0 16px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+          .cro-contact-desc { font-size:14px;color:#4A6080;line-height:1.65;margin:0 0 24px; }
+          .cro-benefits-box { background:linear-gradient(135deg,rgba(255,255,255,0.70) 0%,rgba(219,234,254,0.35) 100%);border:1px solid rgba(255,255,255,0.90);border-radius:14px;padding:24px;backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,1);display:flex;flex-direction:column;gap:16px; }
+          .cro-ben-item { display:flex;gap:12px;align-items:flex-start; }
+          .cro-ben-icon { width:20px;height:20px;stroke:#D97706;fill:none;flex-shrink:0;margin-top:2px; }
+          .cro-ben-text { font-size:13px;color:#4A6080;line-height:1.55; }
+          .cro-contact-stats { display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-top:20px;border-top:1px solid rgba(15,52,96,0.10); }
+          .cro-cstat-num { font-size:36px;font-weight:900;color:#0F3460;line-height:1;margin-bottom:4px; }
+          .cro-cstat-txt { font-size:12px;color:#4A6080;font-weight:500;line-height:1.4; }
+          .cro-form-box { background:linear-gradient(135deg,rgba(255,255,255,0.88) 0%,rgba(237,233,254,0.25) 50%,rgba(255,255,255,0.84) 100%);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.92);border-radius:20px;padding:36px;box-shadow:0 8px 40px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1); }
+          .cro-form-box h3 { font-size:24px;font-weight:700;margin:0 0 24px;color:#0F1F40;letter-spacing:-0.5px; }
+          .cro-form { display:flex;flex-direction:column;gap:16px; }
+          .cro-form-row { display:grid;grid-template-columns:1fr 1fr;gap:14px; }
+          .cro-fg { display:flex;flex-direction:column;gap:6px; }
+          .cro-fg.full { grid-column:1/-1; }
+          .cro-fg label { font-size:12px;font-weight:500;color:#0F1F40; }
+          .cro-fg input,.cro-fg textarea,.cro-fg select { padding:10px 14px;border:1px solid rgba(15,52,96,0.15);border-radius:6px;font-size:13px;font-family:inherit;color:#0F1F40;background:rgba(255,255,255,0.55);box-shadow:inset 0 1px 4px rgba(15,52,96,0.06);transition:border-color 0.2s,background 0.2s; }
+          .cro-fg input:focus,.cro-fg textarea:focus,.cro-fg select:focus { outline:none;border-color:#D97706;background:rgba(255,255,255,0.90);box-shadow:0 0 0 3px rgba(217,119,6,0.12); }
+          .cro-phone-wrap { display:flex;border:1px solid rgba(15,52,96,0.15);border-radius:6px;overflow:hidden; }
+          .cro-phone-wrap select { padding:10px;border:none;background:rgba(255,255,255,0.1);font-size:12px;min-width:75px; }
+          .cro-phone-wrap input { flex:1;border:none;border-radius:0;padding:10px 14px;box-shadow:none;background:rgba(255,255,255,0.55); }
+          .cro-phone-wrap input:focus { outline:none; }
+          .cro-consent { display:flex;gap:8px;align-items:flex-start;margin-top:4px; }
+          .cro-consent input[type="checkbox"] { margin-top:3px;width:16px;height:16px;cursor:pointer; }
+          .cro-consent label { font-size:11px;color:#4A6080;line-height:1.5;margin:0; }
+          .cro-consent a { color:#0F3460;text-decoration:none; }
+          .cro-submit { padding:14px 28px;background:rgba(15,52,96,0.85);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.30);color:#fff;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all 0.3s;margin-top:8px;width:100%;box-shadow:0 6px 24px rgba(15,52,96,0.25),inset 0 1px 0 rgba(255,255,255,0.15); }
+          .cro-submit:hover:not(:disabled) { background:rgba(15,52,96,0.95);border-color:rgba(245,158,11,0.6);transform:translateY(-2px); }
+          .cro-submit:disabled { opacity:0.6;cursor:not-allowed; }
+
+          /* ── AUTHOR BAR ── */
+          .cro-author-bar { background:linear-gradient(135deg,rgba(254,243,199,0.50) 0%,rgba(255,255,255,0.60) 40%,rgba(219,234,254,0.45) 100%);border-top:1px solid rgba(217,119,6,0.15);border-bottom:1px solid rgba(217,119,6,0.15);padding:20px 40px;position:relative;z-index:1; }
+          .cro-author-inner { max-width:860px;margin:0 auto;display:flex;align-items:center;gap:16px; }
+          .cro-author-icon { width:44px;height:44px;background:linear-gradient(135deg,#0F3460,#1a3a6e);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
+          .cro-author-text { font-size:13px;color:#4A6080;line-height:1.55; }
+          .cro-author-text strong { color:#0F3460; }
+
+          /* ── FAQ ── */
+          .cro-faq-list { display:flex;flex-direction:column;gap:12px; }
+          .cro-fitem { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:16px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(15,52,96,0.07),inset 0 1px 0 rgba(255,255,255,0.95);transition:border-color 0.2s,box-shadow 0.2s; }
+          .cro-fitem.open { border-color:rgba(217,119,6,0.40);box-shadow:0 8px 32px rgba(15,52,96,0.12),inset 0 1px 0 rgba(255,255,255,1); }
+          .cro-fitem.open::before { content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#D97706;border-radius:3px 0 0 3px; }
+          .cro-fq { width:100%;background:none;border:none;padding:20px 22px 20px 60px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;text-align:left;gap:16px;font-family:inherit;position:relative; }
+          .cro-fq-badge { position:absolute;left:16px;top:50%;transform:translateY(-50%);width:28px;height:28px;background:rgba(15,52,96,0.08);color:#374151;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:6px;flex-shrink:0;transition:background 0.2s,color 0.2s; }
+          .cro-fitem.open .cro-fq-badge { background:#D97706;color:#fff; }
+          .cro-fq-text { font-size:15px;font-weight:600;color:#0F1F40;line-height:1.45; }
+          .cro-fitem.open .cro-fq-text { color:#D97706; }
+          .cro-fq-chevron { width:22px;height:22px;flex-shrink:0;color:#9ca3af;transition:transform 0.3s; }
+          .cro-fitem.open .cro-fq-chevron { transform:rotate(180deg);color:#D97706; }
+          .cro-fa { font-size:14px;color:#4b5563;line-height:1.8;padding:0 22px 20px 60px; }
+
+          /* ── FINAL CTA ── */
+          .cro-cta { background:linear-gradient(135deg,rgba(254,243,199,0.70) 0%,rgba(255,255,255,0.60) 40%,rgba(219,234,254,0.65) 100%);backdrop-filter:blur(20px);padding:80px 40px;position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.80);text-align:center; }
+          .cro-cta-ey { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:16px;display:block; }
+          .cro-cta-t { font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;color:#0F1F40;margin-bottom:16px;line-height:1.2; }
+          .cro-cta-s { font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 28px;max-width:520px; }
+          .cro-cta-note { background:rgba(255,255,255,0.60);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.85);border-radius:14px;padding:16px 24px;margin:0 auto 32px;max-width:620px;font-size:14px;color:#4A6080;line-height:1.65;text-align:left;box-shadow:0 4px 16px rgba(15,52,96,0.06); }
+          .cro-cta-note strong { color:#0F3460; }
+          .cro-cta-btns { display:flex;gap:14px;justify-content:center;flex-wrap:wrap; }
+
+          /* ── RESPONSIVE ── */
+          @media(max-width:1024px) {
+            .cro-svc-grid { grid-template-columns:repeat(2,1fr); }
+            .cro-why-grid { grid-template-columns:repeat(2,1fr); }
+            .cro-proc-grid { grid-template-columns:repeat(2,1fr); }
+            .cro-res-grid { grid-template-columns:1fr;max-width:400px;margin-left:auto;margin-right:auto; }
+            .cro-wm-grid { grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto; }
+            .cro-contact-in { grid-template-columns:1fr; }
+            .cro-ind-grid { grid-template-columns:repeat(3,1fr); }
+            .cro-def-aspects { grid-template-columns:1fr; }
+          }
+          @media(max-width:768px) {
+            .cro-sec,.cro-results,.cro-contact,.cro-cta,.cro-author-bar { padding-left:24px;padding-right:24px; }
+            .cro-hero-content { padding:36px 20px 24px; }
+            .cro-h1 { font-size:clamp(1.7rem,6vw,2.4rem); }
+            .cro-clients-bar { padding:16px 20px 36px;gap:12px; }
+            .cro-stats { grid-template-columns:repeat(2,1fr);max-width:100%; }
+            .cro-stat:nth-child(2) { border-right:none; }
+            .cro-stat:nth-child(3) { border-top:1px solid rgba(15,52,96,0.10); }
+            .cro-stat:nth-child(4) { border-top:1px solid rgba(15,52,96,0.10);border-right:none; }
+            .cro-svc-grid,.cro-why-grid,.cro-proc-grid { grid-template-columns:1fr; }
+            .cro-ind-grid { grid-template-columns:repeat(2,1fr); }
+            .cro-fq { padding:18px 18px 18px 52px; }
+            .cro-fq-text { font-size:14px; }
+            .cro-fa { padding:0 18px 18px 52px;font-size:13px; }
+            .cro-fq-badge { left:14px; }
+            .cro-form-row { grid-template-columns:1fr; }
+            .cro-cta-btns { flex-direction:column;align-items:center; }
+          }
+          @media(max-width:480px) {
+            .cro-ind-grid { grid-template-columns:repeat(2,1fr); }
+            .cro-contact-stats { grid-template-columns:1fr 1fr 1fr; }
+          }
         `}</style>
       </Head>
+
       <div className="cro-page">
-        <section className="cro-hero"><div className="cro-o1"/><div className="cro-o2"/>
-          <div className="cro-in">
-            <nav className="cro-bc"><Link href="/">Home</Link><span>/</span><Link href="/seo-services-company">SEO &amp; Marketing</Link><span>/</span><span style={{color:'#E11D48'}}>Conversion Rate Optimisation</span></nav>
-            <span className="cro-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#E11D48',display:'inline-block'}}/> A/B Testing · Heatmaps · Landing Pages</span>
-            <h1 className="cro-h1">Conversion Rate Optimisation Services - More Revenue from Your Existing Traffic</h1>
-            <p className="cro-sub">Data-driven CRO - A/B testing, user behaviour analysis, landing page optimisation, and checkout improvement - that increases conversion rate without increasing ad spend.</p>
-            <div className="cro-btns">
-              <Link href="/contact-us" className="cro-btn-p">Get a CRO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/seo-audit-services" className="cro-btn-s">SEO Audit</Link>
-            </div>
-            <div className="cro-stats">{STATS.map(s => <div key={s.label} className="cro-stat"><div className="cro-stat-l">{s.label}</div><div className="cro-stat-v">{s.val}</div></div>)}</div>
-          </div>
-        </section>
-        <section className="cro-svc"><div className="cro-svc-in">
-          <span className="cro-ey2">What We Do</span><h2 className="cro-ttl">Conversion Rate Optimisation Services</h2>
-          <p className="cro-desc">CRO audit to A/B testing to checkout optimisation - a systematic, data-first process that turns more visitors into customers.</p>
-          <div className="cro-grid" ref={cardsRef}>{SERVICES.map((s,i) => <div key={s.n} className={`cro-card${visibleCards.includes(i)?' visible':''}`}><div className="cro-num">{s.n}</div><h3>{s.title}</h3><p>{s.desc}</p></div>)}</div>
-        </div></section>
-        <section className="cro-tools"><div className="cro-tools-in">
-          <h2>Tools &amp; Technology Stack</h2>
-          <div className="cro-pills">{TOOLS.map(c => <span key={c} className="cro-pill">{c}</span>)}</div>
-        </div></section>
-        <section className="cro-proc"><div className="cro-proc-in">
-          <span className="cro-ey2">How We Work</span><h2 className="cro-ttl">Our CRO Process</h2>
-          <p className="cro-desc">Data to hypothesis to test to statistical decision - a rigorous cycle that compounds conversion improvements month after month with evidence, not opinion.</p>
-          <div className="cro-steps">{PROCESS.map((p,i) => <div key={p.step} ref={el=>{stepRefs.current[i]=el}} className={`cro-step${visibleSteps.includes(i)?' visible':''}`}><div className="cro-snum">{p.step}</div><div><h3>{p.title}</h3><p>{p.desc}</p></div></div>)}</div>
-        </div></section>
-        <section className="cro-why"><div className="cro-why-in">
-          <span className="cro-ey2">Why 1Solutions</span><h2 className="cro-ttl">Data-Driven CRO, Not Gut-Feel Redesigns</h2>
-          <p className="cro-desc">We test before we declare winners, run to statistical significance, and report transparently - including failed tests that still generate learning.</p>
-          <div className="cro-why-grid" ref={whyRef}>{WHY.map((w,i) => <div key={w.title} className={`cro-wcard${visibleWhy.includes(i)?' visible':''}`}><div className="cro-dot"/><h3>{w.title}</h3><p>{w.desc}</p></div>)}</div>
-        </div></section>
-        <section className="cro-faq"><div className="cro-faq-in">
-          <span className="cro-ey2">Got Questions?</span><h2 className="cro-ttl">CRO FAQs</h2>
-          <p className="cro-desc">Answers to the most common questions about conversion rate optimisation and A/B testing.</p>
-          <div style={{marginTop:44}}>{FAQS.map((f,i) => <div key={i} className={`cro-fitem${openFaq===i?' open':''}`}><button className="cro-fq" onClick={()=>setOpenFaq(openFaq===i?-1:i)}>{f.q}<span className="cro-ficon">{openFaq===i?'−':'+'}</span></button><div className="cro-fa" style={openFaq===i?{maxHeight:500,paddingBottom:22}:{}}>{f.a}</div></div>)}</div>
-        </div></section>
-        <section className="cro-cta"><div className="cro-cta-o1"/><div className="cro-cta-o2"/>
-          <div className="cro-cta-in">
-            <span className="cro-ey2" style={{textAlign:'center',display:'block',marginBottom:16}}>Ready to Convert More of Your Existing Traffic?</span>
-            <h2 className="cro-cta-t">Get Your CRO Audit</h2>
-            <p className="cro-cta-s">We&rsquo;ll review your conversion funnel, identify your biggest drop-off points, and prioritise the tests most likely to move your conversion rate - starting with a free CRO audit.</p>
-            <div className="cro-cta-btns">
-              <Link href="/contact-us" className="cro-btn-p">Get Free CRO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/seo-services-company" className="cro-btn-s">SEO Services Overview</Link>
+        <div className="cro-orb1" /><div className="cro-orb2" /><div className="cro-orb3" />
+
+        {/* ── HERO ── */}
+        <div className="cro-hero">
+          <div className="cro-hero-content">
+            <span className="cro-eyebrow">Data-Driven CRO Agency · US · Canada · Australia</span>
+            <h1 className="cro-h1">
+              <AuroraText>Convert More Visitors</AuroraText> Without Spending More on Traffic
+            </h1>
+            <p className="cro-hero-sub">
+              1Solutions is a specialist CRO agency with 15+ years of experience turning analytics data into revenue. A/B testing, heatmap analysis, checkout optimisation, and landing page redesign — all backed by statistical evidence, not gut feel.
+            </p>
+            <div className="cro-hero-btns">
+              <a href="#contact" className="cro-btn-primary">
+                Get a Free CRO Audit
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <Link href="/digital-marketing-services/" className="cro-btn-secondary">View All Services</Link>
             </div>
           </div>
+
+          <div className="cro-stats" ref={statsRef}>
+            {[
+              ['Avg Conversion Lift', statsStarted ? '+38%' : '+38%'],
+              ['CRO Clients Served', statsStarted ? '150+' : '150+'],
+              ['A/B Tests Run', statsStarted ? '600+' : '600+'],
+              ['Client Retention', statsStarted ? '97%' : '97%'],
+            ].map(([label, val]) => (
+              <div key={label} className="cro-stat">
+                <div className="cro-stat-l">{label}</div>
+                <div className="cro-stat-v">{val}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="cro-clients-bar">
+            <span className="cro-clients-label">Trusted by Leading Brands</span>
+            <div className="cro-clients-logos">
+              <div className="cro-logos-track">
+                {[
+                  ['/logo/Indian_Express_Logo_full.png','Indian Express'],
+                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],
+                  ['/logo/Uniphore.jpg','Uniphore'],
+                  ['/logo/ICCoLogo.png','ICC'],
+                  ['/logo/Honor_Logo_(2020).svg.png','Honor'],
+                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],
+                  ['/logo/amarujala-print-logo_60e03f7d5b4a8.webp','Amar Ujala'],
+                  ['/logo/Nuance-Symbol-500x281.png','Nuance'],
+                  ['/logo/PHDCCI-Logo-2024.png','PHD Chamber'],
+                  ['/logo/Wilson-logo.svg.png','Wilson'],
+                  ['/logo/977be174b7bcc8708254a2163b534cbe_fgraphic.png','Client'],
+                  ['/logo/india-madeaismartphone2-1747658691.webp','India Made'],
+                  ['/logo/Indian_Express_Logo_full.png','Indian Express2'],
+                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon2'],
+                  ['/logo/Uniphore.jpg','Uniphore2'],
+                  ['/logo/ICCoLogo.png','ICC2'],
+                  ['/logo/Honor_Logo_(2020).svg.png','Honor2'],
+                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv2'],
+                  ['/logo/amarujala-print-logo_60e03f7d5b4a8.webp','Amar Ujala2'],
+                  ['/logo/Nuance-Symbol-500x281.png','Nuance2'],
+                  ['/logo/PHDCCI-Logo-2024.png','PHD Chamber2'],
+                  ['/logo/Wilson-logo.svg.png','Wilson2'],
+                  ['/logo/977be174b7bcc8708254a2163b534cbe_fgraphic.png','Client2'],
+                  ['/logo/india-madeaismartphone2-1747658691.webp','India Made2'],
+                ].map(([src, alt]) => (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img key={alt} src={src} alt={alt.replace(/\d+$/, '')} className="cro-client-logo" />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ── DEFINITION ── */}
+        <section className="cro-sec cro-white">
+          <div className="cro-sec-in" style={{textAlign:'center'}}>
+            <div className={`cro-reveal${visibleSections.has('def') ? ' cro-visible' : ''}`} ref={el => { sectionRefs.current['def'] = el; }}>
+              <span className="cro-sec-ey">Understanding CRO</span>
+              <h2 className="cro-sec-ttl">What Is <AuroraText>Conversion Rate Optimisation?</AuroraText></h2>
+              <p className="cro-sec-desc" style={{margin:'0 auto 32px'}}>A plain-English explanation of CRO and why it is the highest-ROI lever for most businesses that already have traffic.</p>
+            </div>
+            <div className="cro-glass cro-def-box">
+              <p className="cro-def-intro">
+                <strong>Conversion Rate Optimisation (CRO)</strong> is the systematic practice of increasing the percentage of your website visitors who take a desired action — completing a purchase, submitting an enquiry, signing up for a trial, or calling your business. CRO uses quantitative analytics data (what users do on your site) combined with qualitative user research (why they do it) to generate hypotheses, then validates those hypotheses through controlled A/B or multivariate tests. Unlike traffic acquisition, CRO improves the return from every visitor you already have — compounding revenue without increasing your ad spend.
+              </p>
+              <div className="cro-def-aspects">
+                {[
+                  { t: 'The CRO methodology', d: 'Data collection → hypothesis generation → test prioritisation → A/B test launch → statistical analysis → iterate. A rigorous scientific cycle, not a series of opinion-based redesigns.' },
+                  { t: 'Why CRO compounds', d: 'Each winning test becomes the new baseline. The next test starts from a higher conversion rate. Gains stack month after month — a 10% lift compounded over 6 tests is a 77% total improvement.' },
+                  { t: 'CRO vs. more traffic', d: 'Doubling traffic costs twice as much. Doubling your conversion rate from 1% to 2% doubles revenue from the same traffic. CRO is almost always the higher ROI investment for sites with 10,000+ monthly sessions.' },
+                ].map(a => (
+                  <div key={a.t} className="cro-def-aspect">
+                    <div className="cro-def-t">{a.t}</div>
+                    <div className="cro-def-d">{a.d}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </section>
+
+        {/* ── WHY CRO MATTERS ── */}
+        <section className="cro-sec">
+          <div className="cro-sec-in">
+            <div className={`cro-reveal${visibleSections.has('wm') ? ' cro-visible' : ''}`} ref={el => { sectionRefs.current['wm'] = el; }} style={{textAlign:'center',marginBottom:40}}>
+              <span className="cro-sec-ey">The Data</span>
+              <h2 className="cro-sec-ttl">Why <AuroraText>CRO Matters</AuroraText> for Your Business</h2>
+              <p className="cro-sec-desc" style={{margin:'0 auto'}}>The numbers that prove why converting existing visitors beats spending more to acquire new ones.</p>
+            </div>
+            <div className="cro-wm-grid">
+              {[
+                { num: 'Only 2.35%', desc: 'average eCommerce conversion rate globally — meaning 97.65% of visitors leave without buying. CRO captures value from visitors you are already paying to acquire.', src: 'WordStream' },
+                { num: '10× ROI', desc: 'businesses investing in structured CRO typically generate 10× more revenue per visit than those spending the same budget on traffic acquisition alone.', src: 'Forrester Research' },
+                { num: '223%', desc: 'better ROI for companies with a structured CRO programme vs. those relying on gut-feel redesigns. The difference is evidence vs. opinion.', src: 'Econsultancy' },
+              ].map(w => (
+                <div key={w.num} className="cro-wm-card cro-glass">
+                  <div className="cro-wm-num">{w.num}</div>
+                  <div className="cro-wm-desc">{w.desc}</div>
+                  <div className="cro-wm-src">Source: {w.src}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── SERVICES ── */}
+        <section className="cro-sec cro-white" id="services">
+          <div className="cro-sec-in">
+            <div className={`cro-reveal${visibleSections.has('svc') ? ' cro-visible' : ''}`} ref={el => { sectionRefs.current['svc'] = el; }}>
+              <span className="cro-sec-ey">What We Do</span>
+              <h2 className="cro-sec-ttl"><AuroraText>CRO Services</AuroraText> That Drive Measurable Results</h2>
+              <p className="cro-sec-desc">From CRO audit to A/B testing to checkout optimisation — a systematic, data-first process that turns more of your existing visitors into customers.</p>
+            </div>
+            <div className="cro-svc-grid">
+              {SERVICES.map(s => (
+                <div key={s.title} className="cro-svc-card cro-glass">
+                  <div className="cro-svc-icon">
+                    <svg viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.75">
+                      <path d={s.icon} />
+                    </svg>
+                  </div>
+                  <h3 className="cro-svc-t">{s.title}</h3>
+                  <p className="cro-svc-d">{s.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── RESULTS DARK ── */}
+        <section className="cro-results">
+          <div className="cro-res-orb" />
+          <div className="cro-res-in">
+            <div className={`cro-reveal${visibleSections.has('res') ? ' cro-visible' : ''}`} ref={el => { sectionRefs.current['res'] = el; }}>
+              <span className="cro-res-ey">Proven Results</span>
+              <h2 className="cro-res-ttl">Real Conversion Lifts for Real Businesses</h2>
+              <p className="cro-res-sub">Every result below is backed by statistically significant A/B test data — not best-case estimates.</p>
+            </div>
+            <div className="cro-res-grid">
+              {[
+                { metric: '+67%', label: 'Conversion Rate Increase', sub: 'B2B SaaS lead gen, US — landing page + form redesign' },
+                { metric: '2.8×', label: 'Revenue Per Visitor', sub: 'eCommerce retailer, Australia — checkout flow + trust signals' },
+                { metric: '+41%', label: 'Checkout Completions', sub: 'D2C brand, Canada — cart abandonment + UX fixes' },
+              ].map(r => (
+                <div key={r.metric} className="cro-res-card">
+                  <div className="cro-res-metric">{r.metric}</div>
+                  <div className="cro-res-label">{r.label}</div>
+                  <div className="cro-res-sub2">{r.sub}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── PROCESS ── */}
+        <section className="cro-sec">
+          <div className="cro-sec-in">
+            <div className={`cro-reveal${visibleSections.has('proc') ? ' cro-visible' : ''}`} ref={el => { sectionRefs.current['proc'] = el; }} style={{textAlign:'center',marginBottom:48}}>
+              <span className="cro-sec-ey">How We Work</span>
+              <h2 className="cro-sec-ttl">Our <AuroraText>6-Step CRO Process</AuroraText></h2>
+              <p className="cro-sec-desc" style={{margin:'0 auto'}}>Data to hypothesis to test to statistical decision — a rigorous cycle that compounds conversion improvements month after month, with evidence not opinion.</p>
+            </div>
+            <div className="cro-proc-grid">
+              {PROCESS.map(p => (
+                <div key={p.n} className="cro-proc-card cro-glass">
+                  <div className="cro-proc-n">{p.n}</div>
+                  <div className="cro-proc-line" />
+                  <h3 className="cro-proc-t">{p.title}</h3>
+                  <p className="cro-proc-d">{p.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── TOOLS ── */}
+        <section className="cro-sec cro-white">
+          <div className="cro-sec-in">
+            <div className={`cro-reveal${visibleSections.has('tools') ? ' cro-visible' : ''}`} ref={el => { sectionRefs.current['tools'] = el; }}>
+              <span className="cro-sec-ey">Tools & Technology</span>
+              <h2 className="cro-sec-ttl">Our <AuroraText>CRO Technology Stack</AuroraText></h2>
+              <p className="cro-sec-desc">We work with the industry-standard CRO tools — and we select the right tool for your budget and existing stack, not the most expensive option.</p>
+            </div>
+            <div className="cro-tools-wrap">
+              {TOOLS.map(t => (
+                <span key={t} className="cro-tool-pill">
+                  <span className="cro-tool-dot" />
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── WHY 1SOLUTIONS ── */}
+        <section className="cro-sec">
+          <div className="cro-sec-in">
+            <div className={`cro-reveal${visibleSections.has('why') ? ' cro-visible' : ''}`} ref={el => { sectionRefs.current['why'] = el; }}>
+              <span className="cro-sec-ey">Why 1Solutions</span>
+              <h2 className="cro-sec-ttl">Data-Driven CRO, <AuroraText>Not Gut-Feel Redesigns</AuroraText></h2>
+              <p className="cro-sec-desc">We test before we declare winners, run to statistical significance, and report transparently — including failed tests that still generate learning.</p>
+            </div>
+            <div className="cro-why-grid">
+              {WHY.map(w => (
+                <div key={w.title} className="cro-why-card cro-glass">
+                  <div className="cro-why-icon">
+                    <svg viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.75">
+                      <path d={w.icon} />
+                    </svg>
+                  </div>
+                  <h3 className="cro-why-t">{w.title}</h3>
+                  <p className="cro-why-d">{w.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── INDUSTRIES ── */}
+        <section className="cro-sec cro-white">
+          <div className="cro-sec-in">
+            <div className={`cro-reveal${visibleSections.has('ind') ? ' cro-visible' : ''}`} ref={el => { sectionRefs.current['ind'] = el; }} style={{marginBottom:36}}>
+              <span className="cro-sec-ey">Industries We Serve</span>
+              <h2 className="cro-sec-ttl">CRO for <AuroraText>Every Business Model</AuroraText></h2>
+              <p className="cro-sec-desc">We have delivered statistically significant conversion improvements across a wide range of industries, business models, and traffic volumes.</p>
+            </div>
+            <div className="cro-ind-grid">
+              {INDUSTRIES.map(ind => (
+                <div key={ind} className="cro-ind-pill">{ind}</div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── CONTACT ── */}
+        <section className="cro-contact" id="contact">
+          <div className="cro-contact-in">
+            <div>
+              <h2 className="cro-contact-ttl">Get Your Free CRO Audit &amp; Conversion Roadmap</h2>
+              <p className="cro-contact-desc">Tell us about your website and conversion goals. A senior CRO specialist will review your funnel, identify your top 3 drop-off points, and send you a prioritised test roadmap — within 24 hours, at no cost.</p>
+              <div className="cro-benefits-box">
+                {[
+                  { d: 'Your details are kept strictly confidential. We respect your privacy and never share data.' },
+                  { d: 'A senior CRO specialist personally reviews your funnel — no automated audits or generic templates.' },
+                  { d: 'Response within 24 business hours with specific, actionable recommendations for your site.' },
+                  { d: 'No obligation to proceed. We give honest recommendations even if CRO is not right for you yet.' },
+                ].map((b, i) => (
+                  <div key={i} className="cro-ben-item">
+                    <svg className="cro-ben-icon" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.75">
+                      <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    <p className="cro-ben-text">{b.d}</p>
+                  </div>
+                ))}
+                <div className="cro-contact-stats">
+                  {[['150+','CRO Clients'],['600+','A/B Tests'],['97%','Retention']].map(([num, txt]) => (
+                    <div key={txt}>
+                      <div className="cro-cstat-num">{num}</div>
+                      <div className="cro-cstat-txt">{txt}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="cro-form-box">
+              <h3>Request Your Free CRO Audit</h3>
+              <form className="cro-form" onSubmit={handleSubmit}>
+                <div className="cro-form-row">
+                  <div className="cro-fg"><label>Full Name *</label><input name="cro-name" type="text" placeholder="Your full name" required /></div>
+                  <div className="cro-fg"><label>Business Email *</label><input name="cro-email" type="email" placeholder="you@company.com" required /></div>
+                </div>
+                <div className="cro-form-row">
+                  <div className="cro-fg">
+                    <label>Phone Number *</label>
+                    <div className="cro-phone-wrap">
+                      <select aria-label="Country code">
+                        <option value="+1">🇺🇸 +1</option>
+                        <option value="+44">🇬🇧 +44</option>
+                        <option value="+61">🇦🇺 +61</option>
+                        <option value="+1-CA">🇨🇦 +1</option>
+                        <option value="+91">🇮🇳 +91</option>
+                      </select>
+                      <input name="cro-phone" type="tel" placeholder="Phone number" required />
+                    </div>
+                  </div>
+                  <div className="cro-fg"><label>Company / Organisation *</label><input name="cro-company" type="text" placeholder="Your company name" required /></div>
+                </div>
+                <div className="cro-fg full"><label>Website URL (optional)</label><input name="cro-website" type="url" placeholder="https://yourwebsite.com" /></div>
+                <div className="cro-fg full">
+                  <label>What are you trying to improve? *</label>
+                  <textarea name="cro-message" rows={4} placeholder="Tell us your current conversion rate, traffic volume, and where you think visitors are dropping off..." required />
+                </div>
+                <div className="cro-consent">
+                  <input type="checkbox" id="cro-consent" required />
+                  <label htmlFor="cro-consent">I consent to 1Solutions processing my data in accordance with the <Link href="/privacy-policy/">Privacy Policy</Link>.</label>
+                </div>
+                <button type="submit" className="cro-submit" disabled={formSt === 'submitting'}>
+                  {formSt === 'submitting' ? 'Sending...' : 'Get My Free CRO Audit'}
+                </button>
+                {formSt === 'success' && (
+                  <div style={{marginTop:12,padding:'12px 16px',background:'#f0fdf4',border:'1px solid #86efac',borderRadius:8,color:'#166534',fontSize:'0.875rem',fontWeight:500}}>
+                    ✓ Request sent! A CRO specialist will be in touch within 24 hours.
+                  </div>
+                )}
+                {formSt === 'error' && (
+                  <div style={{marginTop:12,padding:'12px 16px',background:'#fef2f2',border:'1px solid #fca5a5',borderRadius:8,color:'#991b1b',fontSize:'0.875rem',fontWeight:500}}>
+                    Something went wrong. Please email us at <a href="mailto:info@1solutions.biz" style={{color:'#991b1b'}}>info@1solutions.biz</a>
+                  </div>
+                )}
+              </form>
+            </div>
+          </div>
+        </section>
+
+        {/* ── AUTHOR BAR (EEAT) ── */}
+        <div className="cro-author-bar">
+          <div className="cro-author-inner">
+            <div className="cro-author-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" /><circle cx="12" cy="7" r="4" />
+              </svg>
+            </div>
+            <p className="cro-author-text">
+              <strong>Written and verified by the 1Solutions CRO Team.</strong> Our conversion specialists have 15+ years of experience across 600+ A/B tests and 150+ client campaigns spanning ecommerce, SaaS, and B2B lead generation. All statistics referenced are sourced from peer-reviewed industry research and our own client data.
+            </p>
+          </div>
+        </div>
+
+        {/* ── FAQ ── */}
+        <section className="cro-sec cro-white" id="faq">
+          <div className="cro-sec-in" style={{maxWidth:860,margin:'0 auto'}}>
+            <div className={`cro-reveal${visibleSections.has('faq') ? ' cro-visible' : ''}`} ref={el => { sectionRefs.current['faq'] = el; }} style={{textAlign:'center',marginBottom:40}}>
+              <span className="cro-sec-ey">Got Questions?</span>
+              <h2 className="cro-sec-ttl"><AuroraText>CRO Frequently Asked Questions</AuroraText></h2>
+              <p className="cro-sec-desc" style={{margin:'0 auto'}}>Straight answers to the most common questions about conversion rate optimisation and A/B testing.</p>
+            </div>
+            <div className="cro-faq-list">
+              {FAQS.map((f, i) => (
+                <div key={i} className={`cro-fitem${openFaq === i ? ' open' : ''}`}>
+                  <button className="cro-fq" onClick={() => setOpenFaq(openFaq === i ? -1 : i)}>
+                    <div className="cro-fq-badge">{i + 1}</div>
+                    <span className="cro-fq-text">{f.q}</span>
+                    <svg className="cro-fq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="6 9 12 15 18 9"/></svg>
+                  </button>
+                  {openFaq === i && <div className="cro-fa">{f.a}</div>}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── FINAL CTA ── */}
+        <section className="cro-cta">
+          <span className="cro-cta-ey">Ready to Convert More of Your Existing Traffic?</span>
+          <h2 className="cro-cta-t">Start Growing Revenue <AuroraText>Without Growing Ad Spend</AuroraText></h2>
+          <p className="cro-cta-s">Join 150+ businesses that trust 1Solutions for data-driven CRO. No lock-in contracts. No gut-feel redesigns. Just statistically validated conversion improvements.</p>
+          <div className="cro-cta-note">
+            <strong>What you get in the free CRO audit:</strong> funnel analysis identifying your top drop-off points, heatmap review of your highest-traffic pages, a prioritised list of 10–15 specific test recommendations, and a 90-day test calendar — delivered within 24 hours, no strings attached.
+          </div>
+          <div className="cro-cta-btns">
+            <a href="#contact" className="cro-btn-primary">
+              Get Free CRO Audit
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <Link href="/seo-services-company/" className="cro-btn-secondary">SEO Services</Link>
+          </div>
+        </section>
+
       </div>
     </>
   );
