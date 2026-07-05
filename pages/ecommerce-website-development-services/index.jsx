@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
 
 const SERVICES = [
   { n:'01', title:'Custom eCommerce Website Development', desc:'Fully bespoke online stores built from the ground up - architected around your catalogue, business model, and conversion goals, not retrofitted into a generic template.', featured:false },
@@ -216,7 +217,7 @@ export default function EcommerceWebsiteDevelopmentServices() {
         <style>{`
           .ecom-page {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 25%, #ede9fe 55%, #f0f9ff 80%, #eef2ff 100%);
+            background: linear-gradient(135deg, #dbeafe 0%, #ede9fe 25%, #e0f2fe 50%, #fef3c7 75%, #fce7f3 100%);
             background-attachment: scroll;
             color: #0f172a;
             line-height: 1.6;
@@ -227,9 +228,9 @@ export default function EcommerceWebsiteDevelopmentServices() {
           .ecom-page *, .ecom-page *::before, .ecom-page *::after { box-sizing: border-box; }
 
           /* Orbs */
-          .ecom-orb-1 { position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.26) 0%,rgba(79,70,229,0.09) 40%,transparent 70%);top:-300px;right:-300px;pointer-events:none;z-index:0;filter:blur(20px); }
-          .ecom-orb-2 { position:absolute;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,0.20) 0%,rgba(124,58,237,0.07) 40%,transparent 70%);bottom:0;left:-250px;pointer-events:none;z-index:0;filter:blur(20px); }
-          .ecom-orb-3 { position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,0.14) 0%,transparent 70%);top:45%;left:-150px;transform:translateY(-50%);pointer-events:none;z-index:0;filter:blur(20px); }
+          .ecom-orb-1 { position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(99,130,255,0.35) 0%,rgba(139,92,246,0.15) 40%,transparent 70%);top:-300px;right:-300px;pointer-events:none;z-index:0;filter:blur(20px); }
+          .ecom-orb-2 { position:absolute;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(251,146,60,0.30) 0%,rgba(245,158,11,0.15) 40%,transparent 70%);bottom:0;left:-250px;pointer-events:none;z-index:0;filter:blur(20px); }
+          .ecom-orb-3 { position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(20,184,166,0.20) 0%,transparent 70%);top:45%;left:-150px;transform:translateY(-50%);pointer-events:none;z-index:0;filter:blur(20px); }
 
           /* Platform badges */
           .ecom-platforms { display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:28px; }
@@ -238,224 +239,224 @@ export default function EcommerceWebsiteDevelopmentServices() {
           .ecom-pb-woo      { background:rgba(91,33,182,0.08); border-color:rgba(91,33,182,0.22); color:#5b21b6; }
           .ecom-pb-magento  { background:rgba(194,65,12,0.08); border-color:rgba(194,65,12,0.22); color:#c2410c; }
           .ecom-pb-opencart { background:rgba(8,145,178,0.08); border-color:rgba(8,145,178,0.22); color:#0e7490; }
-          .ecom-pb-custom   { background:rgba(99,102,241,0.10); border-color:rgba(99,102,241,0.26); color:#4f46e5; }
+          .ecom-pb-custom   { background:rgba(15,52,96,0.10); border-color:rgba(15,52,96,0.26); color:#0F3460; }
 
           /* Hero */
           .ecom-hero-block { background:transparent;position:relative;overflow:hidden; }
-          .ecom-hero-block::before { content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.10) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px); }
+          .ecom-hero-block::before { content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(15,52,96,0.10) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px); }
           .ecom-hero-block::after  { content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,0.12) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px); }
           .ecom-hero-content { position:relative;z-index:2;text-align:center;max-width:900px;margin:0 auto;padding:56px 40px 40px; }
-          .ecom-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#3730a3;margin-bottom:18px; }
-          .ecom-hero-content h1 { font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(90deg,#4f46e5 0%,#6366f1 45%,#7c3aed 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .ecom-hero-content p { font-size:16px;color:#1e1b4b;line-height:1.65;max-width:680px;margin:0 auto 24px; }
-          .ecom-btn-hero { display:inline-block;padding:14px 40px;background:rgba(255,255,255,0.58);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.88);border-radius:50px;color:#4f46e5;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(99,102,241,0.12),inset 0 1px 0 rgba(255,255,255,1); }
-          .ecom-btn-hero:hover { background:rgba(255,255,255,0.90);border-color:rgba(99,102,241,0.50);box-shadow:0 12px 36px rgba(99,102,241,0.20),0 0 0 2px rgba(99,102,241,0.16),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px);color:#4f46e5; }
+          .ecom-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#D97706;margin-bottom:18px; }
+          .ecom-hero-content h1 { font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+          .ecom-hero-content p { font-size:16px;color:#4A6080;line-height:1.65;max-width:680px;margin:0 auto 24px; }
+          .ecom-btn-hero { display:inline-block;padding:14px 40px;background:rgba(255,255,255,0.58);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.88);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(15,52,96,0.12),inset 0 1px 0 rgba(255,255,255,1); }
+          .ecom-btn-hero:hover { background:rgba(255,255,255,0.90);border-color:rgba(15,52,96,0.50);box-shadow:0 12px 36px rgba(15,52,96,0.20),0 0 0 2px rgba(15,52,96,0.16),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px);color:#0F3460; }
 
           /* Stats */
-          .ecom-hero-stats { position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.48);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.88);box-shadow:0 4px 24px rgba(99,102,241,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
-          .ecom-stat-col { padding:18px 20px;text-align:center;border-right:1px solid rgba(99,102,241,0.12); }
+          .ecom-hero-stats { position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.48);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.88);box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
+          .ecom-stat-col { padding:18px 20px;text-align:center;border-right:1px solid rgba(15,52,96,0.12); }
           .ecom-stat-col:last-child { border-right:none; }
-          .ecom-stat-label { font-size:12px;color:#312e81;font-weight:500;margin-bottom:6px; }
-          .ecom-stat-value { font-size:26px;font-weight:900;color:#4f46e5;letter-spacing:-0.5px;line-height:1; }
+          .ecom-stat-label { font-size:12px;color:#4A6080;font-weight:500;margin-bottom:6px; }
+          .ecom-stat-value { font-size:26px;font-weight:900;color:#D97706;letter-spacing:-0.5px;line-height:1; }
 
           /* Clients */
           .ecom-clients-bar { position:relative;z-index:2;padding:20px 40px 60px;max-width:1440px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px; }
-          .ecom-clients-label { font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#3730a3; }
+          .ecom-clients-label { font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#D97706; }
           .ecom-clients-logos { width:100%;overflow:hidden; }
           .ecom-client-logo { height:26px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(100%);opacity:0.5;transition:opacity 0.25s,filter 0.25s; }
           .ecom-client-logo:hover { opacity:0.85;filter:grayscale(0%); }
 
           /* Shared section tokens */
-          .ecom-section-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6366f1;margin-bottom:12px;display:block; }
-          .ecom-section-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#4f46e5 0%,#6366f1 45%,#7c3aed 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin-bottom:10px; }
-          .ecom-section-desc { font-size:15px;color:#1e1b4b;line-height:1.7;max-width:680px;margin-bottom:36px; }
-          .ecom-section-sub  { font-size:16px;color:#1e1b4b;margin:0; }
+          .ecom-section-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:12px;display:block; }
+          .ecom-section-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin-bottom:10px; }
+          .ecom-section-desc { font-size:15px;color:#4A6080;line-height:1.7;max-width:680px;margin-bottom:36px; }
+          .ecom-section-sub  { font-size:16px;color:#4A6080;margin:0; }
 
           /* Services */
-          .ecom-services-section { background:#eef2ff;padding:72px 40px 60px;position:relative;z-index:2;box-shadow:0 -20px 60px rgba(99,102,241,0.10),0 -4px 16px rgba(99,102,241,0.06); }
+          .ecom-services-section { background:#f8fafd;padding:72px 40px 60px;position:relative;z-index:2;box-shadow:0 -20px 60px rgba(15,52,96,0.10),0 -4px 16px rgba(15,52,96,0.06); }
           .ecom-services-inner { max-width:1280px;margin:0 auto; }
           .ecom-services-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:14px; }
-          .ecom-service-card { background:linear-gradient(135deg,rgba(224,231,255,0.58) 0%,rgba(255,255,255,0.82) 60%,rgba(237,233,254,0.42) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.88);border-radius:20px;padding:26px 22px 22px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(99,102,241,0.07),inset 0 1px 0 rgba(255,255,255,0.95);transition:transform 0.22s,box-shadow 0.22s,border-color 0.22s;cursor:default; }
-          .ecom-service-card:hover { transform:translateY(-6px);border-color:rgba(99,102,241,0.40);box-shadow:0 16px 48px rgba(99,102,241,0.14),inset 0 1px 0 rgba(255,255,255,1); }
-          .ecom-service-card.featured { background:linear-gradient(135deg,rgba(237,233,254,0.55) 0%,rgba(255,255,255,0.88) 55%,rgba(224,231,255,0.48) 100%);border-color:rgba(99,102,241,0.20);box-shadow:0 6px 32px rgba(99,102,241,0.10),inset 0 1px 0 rgba(255,255,255,1); }
-          .ecom-service-card:hover .ecom-card-num { color:#6366f1;opacity:0.12; }
-          .ecom-service-card:hover h3 { color:#4f46e5; }
-          .ecom-card-num { position:absolute;top:8px;right:14px;font-size:72px;font-weight:900;line-height:1;color:#4f46e5;opacity:0.055;pointer-events:none;letter-spacing:-4px;user-select:none; }
+          .ecom-service-card { background:linear-gradient(135deg,rgba(219,234,254,0.58) 0%,rgba(255,255,255,0.82) 60%,rgba(237,233,254,0.42) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.88);border-radius:20px;padding:26px 22px 22px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(15,52,96,0.07),inset 0 1px 0 rgba(255,255,255,0.95);transition:transform 0.22s,box-shadow 0.22s,border-color 0.22s;cursor:default; }
+          .ecom-service-card:hover { transform:translateY(-6px);border-color:rgba(15,52,96,0.40);box-shadow:0 16px 48px rgba(15,52,96,0.14),inset 0 1px 0 rgba(255,255,255,1); }
+          .ecom-service-card.featured { background:linear-gradient(135deg,rgba(237,233,254,0.55) 0%,rgba(255,255,255,0.88) 55%,rgba(219,234,254,0.48) 100%);border-color:rgba(15,52,96,0.20);box-shadow:0 6px 32px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1); }
+          .ecom-service-card:hover .ecom-card-num { color:#D97706;opacity:0.12; }
+          .ecom-service-card:hover h3 { color:#0F3460; }
+          .ecom-card-num { position:absolute;top:8px;right:14px;font-size:72px;font-weight:900;line-height:1;color:#0F3460;opacity:0.055;pointer-events:none;letter-spacing:-4px;user-select:none; }
           .ecom-service-card h3 { font-size:15px;font-weight:700;color:#0f172a;line-height:1.3;margin-bottom:8px;position:relative;z-index:1; }
-          .ecom-service-card p  { font-size:13px;color:#1e1b4b;line-height:1.6;position:relative;z-index:1; }
-          .ecom-service-card::before { content:'';position:absolute;left:0;top:12%;height:76%;width:3px;background:linear-gradient(180deg,#6366f1,#7c3aed);border-radius:0 2px 2px 0;transform:scaleY(0);transform-origin:top center;transition:transform 0.3s cubic-bezier(0.22,1,0.36,1); }
+          .ecom-service-card p  { font-size:13px;color:#4A6080;line-height:1.6;position:relative;z-index:1; }
+          .ecom-service-card::before { content:'';position:absolute;left:0;top:12%;height:76%;width:3px;background:linear-gradient(180deg,#0F3460,#D97706);border-radius:0 2px 2px 0;transform:scaleY(0);transform-origin:top center;transition:transform 0.3s cubic-bezier(0.22,1,0.36,1); }
           .ecom-service-card:hover::before { transform:scaleY(1); }
           .ecom-services-footer { text-align:center;margin-top:20px; }
-          .ecom-btn-show-more { display:inline-block;background:#ffffff;border:1.5px solid rgba(99,102,241,0.25);color:#4f46e5;padding:10px 32px;border-radius:20px;font-weight:600;font-size:14px;cursor:pointer;transition:all 0.2s;box-shadow:0 2px 10px rgba(99,102,241,0.08);font-family:inherit; }
-          .ecom-btn-show-more:hover { background:#4f46e5;border-color:#4f46e5;color:#ffffff;box-shadow:0 8px 28px rgba(99,102,241,0.24);transform:translateY(-2px); }
+          .ecom-btn-show-more { display:inline-block;background:#ffffff;border:1.5px solid rgba(15,52,96,0.25);color:#0F3460;padding:10px 32px;border-radius:20px;font-weight:600;font-size:14px;cursor:pointer;transition:all 0.2s;box-shadow:0 2px 10px rgba(15,52,96,0.08);font-family:inherit; }
+          .ecom-btn-show-more:hover { background:#0F3460;border-color:#0F3460;color:#ffffff;box-shadow:0 8px 28px rgba(15,52,96,0.24);transform:translateY(-2px); }
 
           /* Portfolio */
           .ecom-portfolio-section { background:transparent;padding:70px 40px;position:relative;z-index:1; }
-          .ecom-portfolio-wrap { max-width:1280px;margin:0 auto;background:rgba(255,255,255,0.48);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.88);border-radius:24px;padding:44px 44px 50px;box-shadow:0 8px 40px rgba(99,102,241,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
+          .ecom-portfolio-wrap { max-width:1280px;margin:0 auto;background:rgba(255,255,255,0.48);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.88);border-radius:24px;padding:44px 44px 50px;box-shadow:0 8px 40px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
           .ecom-portfolio-header { display:flex;align-items:center;justify-content:space-between;margin-bottom:36px;gap:24px; }
-          .ecom-portfolio-title { font-size:40px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#4f46e5 0%,#6366f1 45%,#7c3aed 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0; }
-          .ecom-btn-portfolio-cta { display:inline-block;padding:13px 26px;background:rgba(255,255,255,0.58);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.88);border-radius:50px;color:#4f46e5;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap;transition:all 0.3s;box-shadow:0 4px 20px rgba(99,102,241,0.10),inset 0 1px 0 rgba(255,255,255,1); }
-          .ecom-btn-portfolio-cta:hover { background:rgba(255,255,255,0.90);border-color:rgba(99,102,241,0.45);transform:translateY(-2px);color:#4f46e5; }
+          .ecom-portfolio-title { font-size:40px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0; }
+          .ecom-btn-portfolio-cta { display:inline-block;padding:13px 26px;background:rgba(255,255,255,0.58);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.88);border-radius:50px;color:#0F3460;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap;transition:all 0.3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1); }
+          .ecom-btn-portfolio-cta:hover { background:rgba(255,255,255,0.90);border-color:rgba(15,52,96,0.45);transform:translateY(-2px);color:#0F3460; }
           .ecom-portfolio-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:24px; }
-          .ecom-pcard { display:flex;flex-direction:column;background:rgba(255,255,255,0.68);backdrop-filter:blur(10px);border:1px solid rgba(99,102,241,0.12);border-radius:12px;overflow:hidden;transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s; }
-          .ecom-pcard:hover { transform:translateY(-4px);border-color:rgba(99,102,241,0.42);box-shadow:0 12px 40px rgba(99,102,241,0.14); }
+          .ecom-pcard { display:flex;flex-direction:column;background:rgba(255,255,255,0.68);backdrop-filter:blur(10px);border:1px solid rgba(15,52,96,0.12);border-radius:12px;overflow:hidden;transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s; }
+          .ecom-pcard:hover { transform:translateY(-4px);border-color:rgba(15,52,96,0.42);box-shadow:0 12px 40px rgba(15,52,96,0.14); }
           .ecom-pcard-thumb { width:100%;aspect-ratio:16/10;overflow:hidden;background:#e0e7ff; }
           .ecom-pcard-thumb img { width:100%;height:100%;object-fit:cover;display:block; }
           .ecom-pcard-body  { padding:18px 20px 20px;flex:1; }
-          .ecom-pcard-platform { display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:8px;background:rgba(99,102,241,0.10);color:#4f46e5;border:1px solid rgba(99,102,241,0.18); }
-          .ecom-pcard-name  { font-size:18px;font-weight:800;color:#4f46e5;margin:0 0 5px; }
-          .ecom-pcard-tech  { font-size:13px;color:#1e1b4b;margin-bottom:5px;line-height:1.4; }
-          .ecom-pcard-cats  { font-size:13px;font-weight:700;color:#6366f1; }
+          .ecom-pcard-platform { display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:8px;background:rgba(15,52,96,0.10);color:#0F3460;border:1px solid rgba(15,52,96,0.18); }
+          .ecom-pcard-name  { font-size:18px;font-weight:800;color:#0F3460;margin:0 0 5px; }
+          .ecom-pcard-tech  { font-size:13px;color:#4A6080;margin-bottom:5px;line-height:1.4; }
+          .ecom-pcard-cats  { font-size:13px;font-weight:700;color:#D97706; }
 
           /* Process */
           .ecom-process-section { background:transparent;padding:80px 40px;position:relative;z-index:1; }
           .ecom-process-top { max-width:1280px;margin:0 auto 56px; }
-          .ecom-process-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#6366f1;margin:0 0 14px; }
-          .ecom-process-main-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#4f46e5 0%,#6366f1 45%,#7c3aed 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
-          .ecom-process-main-desc { font-size:15px;color:#1e1b4b;line-height:1.7;margin:0; }
-          .ecom-process-divider { border:none;border-top:1px solid rgba(99,102,241,0.18);margin:36px 0 0;width:100%; }
+          .ecom-process-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D97706;margin:0 0 14px; }
+          .ecom-process-main-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
+          .ecom-process-main-desc { font-size:15px;color:#4A6080;line-height:1.7;margin:0; }
+          .ecom-process-divider { border:none;border-top:1px solid rgba(15,52,96,0.18);margin:36px 0 0;width:100%; }
           .ecom-process-inner { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:minmax(0,55%) minmax(0,45%);gap:80px;align-items:start; }
           .ecom-process-steps { display:flex;flex-direction:column; }
           .ecom-pstep { display:grid;grid-template-columns:60px 1fr;gap:0 20px;opacity:0;transform:translateY(52px);transition:opacity 0.65s cubic-bezier(0.22,1,0.36,1),transform 0.65s cubic-bezier(0.22,1,0.36,1); }
           .ecom-pstep.visible { opacity:1;transform:translateY(0); }
           .ecom-pstep-left { display:flex;flex-direction:column;align-items:center; }
-          .ecom-pstep-circle { width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,0.68);backdrop-filter:blur(8px);border:2px solid rgba(99,102,241,0.22);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:#4f46e5;flex-shrink:0;transition:background 0.3s,border-color 0.3s; }
-          .ecom-pstep:hover .ecom-pstep-circle { background:rgba(99,102,241,0.15);border-color:#6366f1;color:#6366f1; }
+          .ecom-pstep-circle { width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,0.68);backdrop-filter:blur(8px);border:2px solid rgba(15,52,96,0.22);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:#0F3460;flex-shrink:0;transition:background 0.3s,border-color 0.3s; }
+          .ecom-pstep:hover .ecom-pstep-circle { background:rgba(15,52,96,0.15);border-color:#D97706;color:#D97706; }
           .ecom-pstep-arrow { flex:1;display:flex;flex-direction:column;align-items:center;padding:6px 0;min-height:48px; }
-          .ecom-pstep-arrow::before { content:'';width:2px;flex:1;background:#6366f1;opacity:0.25; }
-          .ecom-pstep-arrow::after { content:'';width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:9px solid #6366f1;opacity:0.45;margin-top:-1px; }
+          .ecom-pstep-arrow::before { content:'';width:2px;flex:1;background:#D97706;opacity:0.25; }
+          .ecom-pstep-arrow::after { content:'';width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:9px solid #D97706;opacity:0.45;margin-top:-1px; }
           .ecom-pstep:last-child .ecom-pstep-arrow { display:none; }
           .ecom-pstep-content { padding:4px 0 44px; }
           .ecom-pstep:last-child .ecom-pstep-content { padding-bottom:0; }
-          .ecom-pstep-title { font-size:22px;font-weight:700;color:#4f46e5;margin:0 0 10px;line-height:1.2; }
-          .ecom-pstep-desc  { font-size:15px;color:#1e1b4b;line-height:1.75;margin:0; }
+          .ecom-pstep-title { font-size:22px;font-weight:700;color:#0F3460;margin:0 0 10px;line-height:1.2; }
+          .ecom-pstep-desc  { font-size:15px;color:#4A6080;line-height:1.75;margin:0; }
           .ecom-process-image-col { position:sticky;top:100px;min-width:0; }
-          .ecom-process-img-wrap { width:100%;max-width:100%;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(99,102,241,0.15);aspect-ratio:4/5;background:#e0e7ff; }
+          .ecom-process-img-wrap { width:100%;max-width:100%;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(15,52,96,0.15);aspect-ratio:4/5;background:#e0e7ff; }
           .ecom-process-img-wrap img { width:100%;height:100%;object-fit:cover;display:block; }
 
           /* Testimonials */
-          .ecom-testi-section { background:#eef2ff;border-top:1px solid rgba(99,102,241,0.10);border-bottom:1px solid rgba(99,102,241,0.10);padding:80px 40px;position:relative;z-index:1; }
+          .ecom-testi-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.10);border-bottom:1px solid rgba(15,52,96,0.10);padding:80px 40px;position:relative;z-index:1; }
           .ecom-testi-inner { max-width:1280px;margin:0 auto; }
           .ecom-section-header-center { text-align:center;margin-bottom:52px; }
           .ecom-testi-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:52px; }
-          .ecom-tcard { background:linear-gradient(135deg,rgba(224,231,255,0.58) 0%,rgba(255,255,255,0.82) 60%,rgba(237,233,254,0.42) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.88);border-radius:20px;padding:32px 28px;box-shadow:0 4px 24px rgba(99,102,241,0.08),inset 0 1px 0 rgba(255,255,255,0.95);display:flex;flex-direction:column;gap:16px;opacity:0;transform:translateY(44px);transition:opacity 0.6s cubic-bezier(0.22,1,0.36,1),transform 0.6s cubic-bezier(0.22,1,0.36,1),box-shadow 0.3s,border-color 0.3s; }
+          .ecom-tcard { background:linear-gradient(135deg,rgba(219,234,254,0.58) 0%,rgba(255,255,255,0.82) 60%,rgba(237,233,254,0.42) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.88);border-radius:20px;padding:32px 28px;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95);display:flex;flex-direction:column;gap:16px;opacity:0;transform:translateY(44px);transition:opacity 0.6s cubic-bezier(0.22,1,0.36,1),transform 0.6s cubic-bezier(0.22,1,0.36,1),box-shadow 0.3s,border-color 0.3s; }
           .ecom-tcard.ecom-tcard-visible { opacity:1;transform:translateY(0); }
-          .ecom-tcard:hover { transform:translateY(-6px)!important;border-color:rgba(99,102,241,0.38);box-shadow:0 16px 48px rgba(99,102,241,0.14),inset 0 1px 0 rgba(255,255,255,1); }
-          .ecom-tcard.featured { background:linear-gradient(135deg,rgba(237,233,254,0.55) 0%,rgba(255,255,255,0.88) 55%,rgba(224,231,255,0.45) 100%);border-color:rgba(99,102,241,0.18);box-shadow:0 6px 32px rgba(99,102,241,0.10),inset 0 1px 0 rgba(255,255,255,1); }
-          .ecom-tcard-stars { font-size:18px;color:#6366f1;letter-spacing:2px; }
+          .ecom-tcard:hover { transform:translateY(-6px)!important;border-color:rgba(15,52,96,0.38);box-shadow:0 16px 48px rgba(15,52,96,0.14),inset 0 1px 0 rgba(255,255,255,1); }
+          .ecom-tcard.featured { background:linear-gradient(135deg,rgba(237,233,254,0.55) 0%,rgba(255,255,255,0.88) 55%,rgba(219,234,254,0.45) 100%);border-color:rgba(15,52,96,0.18);box-shadow:0 6px 32px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1); }
+          .ecom-tcard-stars { font-size:18px;color:#D97706;letter-spacing:2px; }
           .ecom-tcard-text  { font-size:15px;line-height:1.75;color:#374151;margin:0;flex:1; }
           .ecom-tcard.featured .ecom-tcard-text { color:#1f2937; }
           .ecom-tcard-author { display:flex;align-items:center;gap:12px;margin-top:4px; }
           .ecom-tcard-avatar { width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#ffffff;flex-shrink:0; }
-          .ecom-tcard-name  { font-size:14px;font-weight:700;color:#4f46e5; }
+          .ecom-tcard-name  { font-size:14px;font-weight:700;color:#0F3460; }
           .ecom-tcard-role  { font-size:12px;color:#6b7280; }
-          .ecom-testi-stats { display:flex;align-items:center;justify-content:center;gap:0;background:linear-gradient(135deg,rgba(224,231,255,0.55) 0%,rgba(255,255,255,0.78) 50%,rgba(237,233,254,0.42) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:16px;padding:32px 40px;border:1px solid rgba(255,255,255,0.88);box-shadow:0 4px 20px rgba(99,102,241,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
+          .ecom-testi-stats { display:flex;align-items:center;justify-content:center;gap:0;background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.78) 50%,rgba(237,233,254,0.42) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:16px;padding:32px 40px;border:1px solid rgba(255,255,255,0.88);box-shadow:0 4px 20px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
           .ecom-tstat { display:flex;flex-direction:column;align-items:center;gap:4px;flex:1; }
-          .ecom-tstat-num   { font-size:28px;font-weight:800;color:#4f46e5; }
-          .ecom-tstat-label { font-size:13px;color:#1e1b4b;font-weight:500; }
-          .ecom-tstat-divider { width:1px;height:40px;background:rgba(99,102,241,0.18); }
+          .ecom-tstat-num   { font-size:28px;font-weight:800;color:#D97706; }
+          .ecom-tstat-label { font-size:13px;color:#4A6080;font-weight:500; }
+          .ecom-tstat-divider { width:1px;height:40px;background:rgba(15,52,96,0.18); }
 
           /* Why */
-          .ecom-why-section { padding:80px 40px;background:#eef2ff;border-top:1px solid rgba(99,102,241,0.10);border-bottom:1px solid rgba(99,102,241,0.10);position:relative;z-index:1; }
+          .ecom-why-section { padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(15,52,96,0.10);border-bottom:1px solid rgba(15,52,96,0.10);position:relative;z-index:1; }
           .ecom-why-inner { max-width:1280px;margin:0 auto; }
           .ecom-why-grid { display:grid;grid-template-columns:repeat(4,1fr);margin-top:56px;gap:16px; }
-          .ecom-why-card { background:linear-gradient(135deg,rgba(224,231,255,0.58) 0%,rgba(255,255,255,0.82) 60%,rgba(237,233,254,0.42) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.88);border-radius:20px;padding:32px 28px;text-align:left;box-shadow:0 4px 24px rgba(99,102,241,0.07),inset 0 1px 0 rgba(255,255,255,0.95);opacity:0;transform:translateY(36px) scale(0.97);transition:opacity 0.55s cubic-bezier(0.22,1,0.36,1),transform 0.55s cubic-bezier(0.22,1,0.36,1),box-shadow 0.25s,border-color 0.25s; }
+          .ecom-why-card { background:linear-gradient(135deg,rgba(219,234,254,0.58) 0%,rgba(255,255,255,0.82) 60%,rgba(237,233,254,0.42) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.88);border-radius:20px;padding:32px 28px;text-align:left;box-shadow:0 4px 24px rgba(15,52,96,0.07),inset 0 1px 0 rgba(255,255,255,0.95);opacity:0;transform:translateY(36px) scale(0.97);transition:opacity 0.55s cubic-bezier(0.22,1,0.36,1),transform 0.55s cubic-bezier(0.22,1,0.36,1),box-shadow 0.25s,border-color 0.25s; }
           .ecom-why-card.ecom-card-visible { opacity:1;transform:translateY(0) scale(1); }
-          .ecom-why-card:hover { transform:translateY(-6px) scale(1)!important;border-color:rgba(99,102,241,0.38);box-shadow:0 16px 48px rgba(99,102,241,0.14),inset 0 1px 0 rgba(255,255,255,1); }
+          .ecom-why-card:hover { transform:translateY(-6px) scale(1)!important;border-color:rgba(15,52,96,0.38);box-shadow:0 16px 48px rgba(15,52,96,0.14),inset 0 1px 0 rgba(255,255,255,1); }
           .ecom-why-card-header { display:flex;align-items:center;gap:12px;margin-bottom:10px; }
           .ecom-why-icon { width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
-          .ecom-why-icon svg { width:28px;height:28px;fill:#6366f1; }
+          .ecom-why-icon svg { width:28px;height:28px;fill:#D97706; }
           .ecom-why-card h3 { font-size:15px;font-weight:700;color:#0f172a;margin:0;line-height:1.35; }
-          .ecom-why-card p  { font-size:13px;color:#1e1b4b;line-height:1.7;margin:0; }
+          .ecom-why-card p  { font-size:13px;color:#4A6080;line-height:1.7;margin:0; }
 
           /* Engagement */
-          .ecom-engage-section { background:#eef2ff;border-top:1px solid rgba(99,102,241,0.10);border-bottom:1px solid rgba(99,102,241,0.10);padding:80px 40px;position:relative;z-index:1; }
+          .ecom-engage-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.10);border-bottom:1px solid rgba(15,52,96,0.10);padding:80px 40px;position:relative;z-index:1; }
           .ecom-engage-inner { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:stretch; }
           .ecom-engage-left { position:sticky;top:100px;display:flex;flex-direction:column; }
-          .ecom-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#4f46e5 0%,#6366f1 45%,#7c3aed 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
-          .ecom-engage-desc { font-size:15px;color:#1e1b4b;line-height:1.75;margin:0 0 32px; }
-          .ecom-engage-img-wrap { border-radius:14px;overflow:hidden;box-shadow:0 16px 48px rgba(99,102,241,0.14);flex:1;min-height:300px; }
+          .ecom-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
+          .ecom-engage-desc { font-size:15px;color:#4A6080;line-height:1.75;margin:0 0 32px; }
+          .ecom-engage-img-wrap { border-radius:14px;overflow:hidden;box-shadow:0 16px 48px rgba(15,52,96,0.14);flex:1;min-height:300px; }
           .ecom-engage-img-wrap img { width:100%;height:100%;min-height:300px;object-fit:cover;display:block; }
           .ecom-engage-right { display:flex;flex-direction:column;gap:16px; }
-          .ecom-ecard { background:linear-gradient(135deg,rgba(224,231,255,0.58) 0%,rgba(255,255,255,0.82) 60%,rgba(237,233,254,0.42) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.88);border-radius:14px;padding:26px 28px;box-shadow:0 4px 24px rgba(99,102,241,0.07),inset 0 1px 0 rgba(255,255,255,0.95);opacity:0;transform:translateX(40px);transition:opacity 0.55s cubic-bezier(0.22,1,0.36,1),transform 0.55s cubic-bezier(0.22,1,0.36,1),border-color 0.3s,box-shadow 0.3s; }
+          .ecom-ecard { background:linear-gradient(135deg,rgba(219,234,254,0.58) 0%,rgba(255,255,255,0.82) 60%,rgba(237,233,254,0.42) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.88);border-radius:14px;padding:26px 28px;box-shadow:0 4px 24px rgba(15,52,96,0.07),inset 0 1px 0 rgba(255,255,255,0.95);opacity:0;transform:translateX(40px);transition:opacity 0.55s cubic-bezier(0.22,1,0.36,1),transform 0.55s cubic-bezier(0.22,1,0.36,1),border-color 0.3s,box-shadow 0.3s; }
           .ecom-ecard.ecom-ecard-visible { opacity:1;transform:translateX(0); }
-          .ecom-ecard:hover { border-color:rgba(99,102,241,0.40);box-shadow:0 16px 48px rgba(99,102,241,0.14),inset 0 1px 0 rgba(255,255,255,1);transform:translateX(4px); }
+          .ecom-ecard:hover { border-color:rgba(15,52,96,0.40);box-shadow:0 16px 48px rgba(15,52,96,0.14),inset 0 1px 0 rgba(255,255,255,1);transform:translateX(4px); }
           .ecom-ecard-header { display:flex;align-items:center;gap:14px;margin-bottom:10px; }
           .ecom-ecard-icon  { width:44px;height:44px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
-          .ecom-ecard-icon svg { width:26px;height:26px;stroke:#6366f1;fill:none; }
-          .ecom-ecard-title { font-size:18px;font-weight:700;color:#4f46e5;margin:0; }
-          .ecom-ecard-desc  { font-size:14px;color:#1e1b4b;line-height:1.65;margin:0 0 16px; }
+          .ecom-ecard-icon svg { width:26px;height:26px;stroke:#D97706;fill:none; }
+          .ecom-ecard-title { font-size:18px;font-weight:700;color:#0F3460;margin:0; }
+          .ecom-ecard-desc  { font-size:14px;color:#4A6080;line-height:1.65;margin:0 0 16px; }
           .ecom-ecard-features { display:grid;grid-template-columns:1fr 1fr;gap:8px 16px; }
-          .ecom-efeat { display:flex;align-items:center;gap:8px;font-size:13px;color:#312e81;font-weight:500; }
-          .ecom-efeat-check { color:#6366f1;font-size:12px;flex-shrink:0; }
+          .ecom-efeat { display:flex;align-items:center;gap:8px;font-size:13px;color:#4A6080;font-weight:500; }
+          .ecom-efeat-check { color:#D97706;font-size:12px;flex-shrink:0; }
 
           /* Contact */
-          .ecom-contact-section { padding:70px 40px;background:linear-gradient(135deg,rgba(224,231,255,0.72) 0%,rgba(255,255,255,0.65) 40%,rgba(237,233,254,0.68) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.85); }
+          .ecom-contact-section { padding:70px 40px;background:linear-gradient(135deg,rgba(219,234,254,0.72) 0%,rgba(255,255,255,0.65) 40%,rgba(237,233,254,0.68) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.85); }
           .ecom-contact-container { max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;align-items:start;gap:32px; }
           .ecom-contact-left  { padding:0;align-self:start; }
           .ecom-contact-right { align-self:start; }
-          .ecom-contact-title { font-size:48px;font-weight:900;line-height:1.2;margin:0 0 16px;background:linear-gradient(90deg,#4f46e5 0%,#6366f1 45%,#7c3aed 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent; }
-          .ecom-contact-desc  { font-size:14px;color:#1e1b4b;line-height:1.6;margin:0 0 24px; }
-          .ecom-merged-box { background:linear-gradient(135deg,rgba(255,255,255,0.75) 0%,rgba(224,231,255,0.38) 100%);border:1px solid rgba(255,255,255,0.92);border-radius:14px;padding:24px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,1);display:flex;flex-direction:column;gap:20px; }
+          .ecom-contact-title { font-size:48px;font-weight:900;line-height:1.2;margin:0 0 16px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent; }
+          .ecom-contact-desc  { font-size:14px;color:#4A6080;line-height:1.6;margin:0 0 24px; }
+          .ecom-merged-box { background:linear-gradient(135deg,rgba(255,255,255,0.75) 0%,rgba(219,234,254,0.38) 100%);border:1px solid rgba(255,255,255,0.92);border-radius:14px;padding:24px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,1);display:flex;flex-direction:column;gap:20px; }
           .ecom-benefit-item { display:flex;gap:10px;align-items:flex-start; }
           .ecom-benefit-icon-wrap { width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
-          .ecom-benefit-icon { width:20px;height:20px;color:#6366f1;stroke:#6366f1;stroke-width:1.75; }
-          .ecom-benefit-item p { font-size:13px;color:#1e1b4b;margin:0;line-height:1.5; }
-          .ecom-stats-box  { padding-top:32px;border-top:1px solid rgba(99,102,241,0.14); }
+          .ecom-benefit-icon { width:20px;height:20px;color:#D97706;stroke:#D97706;stroke-width:1.75; }
+          .ecom-benefit-item p { font-size:13px;color:#4A6080;margin:0;line-height:1.5; }
+          .ecom-stats-box  { padding-top:32px;border-top:1px solid rgba(15,52,96,0.14); }
           .ecom-stats-grid { display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px; }
-          .ecom-stat-number { font-size:40px;font-weight:900;color:#4f46e5;line-height:1;display:inline-block;margin-bottom:4px; }
-          .ecom-stat-text   { font-size:13px;color:#1e1b4b;line-height:1.4;font-weight:500; }
-          .ecom-form-box { background:linear-gradient(135deg,rgba(255,255,255,0.92) 0%,rgba(224,231,255,0.20) 50%,rgba(255,255,255,0.88) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.95);border-radius:20px;padding:36px;width:100%;box-shadow:0 8px 40px rgba(99,102,241,0.10),inset 0 1px 0 rgba(255,255,255,1); }
+          .ecom-stat-number { font-size:40px;font-weight:900;color:#D97706;line-height:1;display:inline-block;margin-bottom:4px; }
+          .ecom-stat-text   { font-size:13px;color:#4A6080;line-height:1.4;font-weight:500; }
+          .ecom-form-box { background:linear-gradient(135deg,rgba(255,255,255,0.92) 0%,rgba(219,234,254,0.20) 50%,rgba(255,255,255,0.88) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.95);border-radius:20px;padding:36px;width:100%;box-shadow:0 8px 40px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1); }
           .ecom-form-box h3 { font-size:26px;font-weight:700;margin:0 0 28px;color:#0f172a;letter-spacing:-0.5px; }
           .ecom-contact-form { display:flex;flex-direction:column;gap:16px; }
           .ecom-form-row { display:grid;grid-template-columns:1fr 1fr;gap:14px; }
           .ecom-form-group { display:flex;flex-direction:column;gap:6px; }
           .ecom-form-group.full { grid-column:1/-1; }
           .ecom-form-group label { font-size:12px;font-weight:500;color:#0f172a; }
-          .ecom-form-group input,.ecom-form-group textarea,.ecom-form-group select { padding:10px 14px;border:1px solid rgba(99,102,241,0.18);border-radius:6px;font-size:13px;font-family:inherit;color:#0f172a;background:rgba(255,255,255,0.60);box-shadow:inset 0 1px 4px rgba(99,102,241,0.05);transition:border-color 0.2s,background 0.2s; }
-          .ecom-form-group input:focus,.ecom-form-group textarea:focus { outline:none;border-color:#6366f1;background:rgba(255,255,255,0.95);box-shadow:0 0 0 3px rgba(99,102,241,0.12); }
-          .ecom-phone-input { display:flex;border:1px solid rgba(99,102,241,0.18);border-radius:6px;overflow:hidden; }
+          .ecom-form-group input,.ecom-form-group textarea,.ecom-form-group select { padding:10px 14px;border:1px solid rgba(15,52,96,0.18);border-radius:6px;font-size:13px;font-family:inherit;color:#0f172a;background:rgba(255,255,255,0.60);box-shadow:inset 0 1px 4px rgba(15,52,96,0.05);transition:border-color 0.2s,background 0.2s; }
+          .ecom-form-group input:focus,.ecom-form-group textarea:focus { outline:none;border-color:#D97706;background:rgba(255,255,255,0.95);box-shadow:0 0 0 3px rgba(15,52,96,0.12); }
+          .ecom-phone-input { display:flex;border:1px solid rgba(15,52,96,0.18);border-radius:6px;overflow:hidden; }
           .ecom-phone-input select { padding:10px;border:none;background:rgba(255,255,255,0.15);font-size:12px;min-width:75px; }
           .ecom-phone-input input { flex:1;border:none;border-radius:0;padding:10px 14px;box-shadow:none; }
           .ecom-phone-input input:focus { outline:none; }
           .ecom-consent { display:flex;gap:8px;align-items:flex-start;margin-top:8px; }
           .ecom-consent input[type="checkbox"] { margin-top:3px;width:16px;height:16px;cursor:pointer; }
-          .ecom-consent label { font-size:11px;color:#1e1b4b;line-height:1.5;margin:0; }
-          .ecom-consent a { color:#4f46e5;text-decoration:none; }
-          .ecom-submit-btn { padding:14px 28px;background:rgba(79,70,229,0.88);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.35);color:white;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all 0.3s;margin-top:8px;width:100%;box-shadow:0 6px 24px rgba(99,102,241,0.30),inset 0 1px 0 rgba(255,255,255,0.18); }
-          .ecom-submit-btn:hover { background:rgba(79,70,229,0.97);border-color:rgba(99,102,241,0.55);transform:translateY(-2px); }
+          .ecom-consent label { font-size:11px;color:#4A6080;line-height:1.5;margin:0; }
+          .ecom-consent a { color:#0F3460;text-decoration:none; }
+          .ecom-submit-btn { padding:14px 28px;background:rgba(15,52,96,0.85);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.35);color:white;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all 0.3s;margin-top:8px;width:100%;box-shadow:0 6px 24px rgba(15,52,96,0.30),inset 0 1px 0 rgba(255,255,255,0.18); }
+          .ecom-submit-btn:hover { background:rgba(217,119,6,0.92);border-color:rgba(217,119,6,0.55);transform:translateY(-2px); }
 
           /* FAQ */
-          .ecom-faq-section { padding:80px 40px;background:#eef2ff;border-top:1px solid rgba(99,102,241,0.10);position:relative;z-index:1; }
+          .ecom-faq-section { padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(15,52,96,0.10);position:relative;z-index:1; }
           .ecom-faq-inner  { max-width:1280px;margin:0 auto; }
-          .ecom-faq-heading { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#4f46e5 0%,#6366f1 45%,#7c3aed 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 36px; }
+          .ecom-faq-heading { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 36px; }
           .ecom-faq-list { display:flex;flex-direction:column;gap:12px; }
-          .ecom-faq-item { background:linear-gradient(135deg,rgba(224,231,255,0.58) 0%,rgba(255,255,255,0.82) 60%,rgba(237,233,254,0.42) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.88);border-radius:16px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(99,102,241,0.07),inset 0 1px 0 rgba(255,255,255,0.95);transition:border-color 0.2s,box-shadow 0.2s; }
-          .ecom-faq-item.open { border-color:rgba(99,102,241,0.38);box-shadow:0 8px 32px rgba(99,102,241,0.12),inset 0 1px 0 rgba(255,255,255,1); }
-          .ecom-faq-item.open::before { content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#6366f1;border-radius:3px 0 0 3px; }
+          .ecom-faq-item { background:linear-gradient(135deg,rgba(219,234,254,0.58) 0%,rgba(255,255,255,0.82) 60%,rgba(237,233,254,0.42) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.88);border-radius:16px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(15,52,96,0.07),inset 0 1px 0 rgba(255,255,255,0.95);transition:border-color 0.2s,box-shadow 0.2s; }
+          .ecom-faq-item.open { border-color:rgba(15,52,96,0.38);box-shadow:0 8px 32px rgba(15,52,96,0.12),inset 0 1px 0 rgba(255,255,255,1); }
+          .ecom-faq-item.open::before { content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#D97706;border-radius:3px 0 0 3px; }
           .ecom-faq-question { width:100%;background:none;border:none;padding:22px 22px 22px 60px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;text-align:left;gap:16px;font-family:inherit;position:relative; }
-          .ecom-faq-q-badge { position:absolute;left:16px;top:50%;transform:translateY(-50%);width:28px;height:28px;background:rgba(99,102,241,0.10);color:#374151;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:6px;flex-shrink:0;transition:background 0.2s,color 0.2s; }
-          .ecom-faq-item.open .ecom-faq-q-badge { background:#6366f1;color:#fff; }
+          .ecom-faq-q-badge { position:absolute;left:16px;top:50%;transform:translateY(-50%);width:28px;height:28px;background:rgba(15,52,96,0.10);color:#374151;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:6px;flex-shrink:0;transition:background 0.2s,color 0.2s; }
+          .ecom-faq-item.open .ecom-faq-q-badge { background:#D97706;color:#fff; }
           .ecom-faq-question span { font-size:16px;font-weight:600;color:#0f172a;line-height:1.45; }
-          .ecom-faq-item.open .ecom-faq-question span { color:#4f46e5; }
+          .ecom-faq-item.open .ecom-faq-question span { color:#0F3460; }
           .ecom-faq-chevron { width:24px;height:24px;flex-shrink:0;color:#9ca3af;transition:transform 0.3s; }
-          .ecom-faq-item.open .ecom-faq-chevron { transform:rotate(180deg);color:#6366f1; }
+          .ecom-faq-item.open .ecom-faq-chevron { transform:rotate(180deg);color:#D97706; }
           .ecom-faq-answer-wrap { overflow:hidden;transition:max-height 0.35s ease;max-height:0; }
           .ecom-faq-item.open .ecom-faq-answer-wrap { max-height:500px; }
-          .ecom-faq-answer { padding:0 22px 22px 60px;font-size:15px;color:#1e1b4b;line-height:1.8; }
-          .ecom-faq-a-badge { display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:#4f46e5;color:#fff;font-size:12px;font-weight:700;border-radius:6px;margin-right:12px;flex-shrink:0;vertical-align:middle; }
+          .ecom-faq-answer { padding:0 22px 22px 60px;font-size:15px;color:#4A6080;line-height:1.8; }
+          .ecom-faq-a-badge { display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:#0F3460;color:#fff;font-size:12px;font-weight:700;border-radius:6px;margin-right:12px;flex-shrink:0;vertical-align:middle; }
 
           /* Related */
-          .ecom-related-section { background:rgba(224,231,255,0.22);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,0.65);padding:80px 40px; }
+          .ecom-related-section { background:rgba(219,234,254,0.22);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,0.65);padding:80px 40px; }
           .ecom-related-inner { max-width:1280px;margin:0 auto;text-align:center; }
-          .ecom-related-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#3730a3;margin:0 0 14px;display:block; }
-          .ecom-related-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#4f46e5 0%,#6366f1 45%,#7c3aed 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
+          .ecom-related-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D97706;margin:0 0 14px;display:block; }
+          .ecom-related-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
           .ecom-related-sub { font-size:15px;color:#0f172a;line-height:1.7;margin:0 auto;max-width:680px; }
-          .ecom-related-divider { border:none;border-top:1px solid rgba(99,102,241,0.14);margin:40px 0; }
+          .ecom-related-divider { border:none;border-top:1px solid rgba(15,52,96,0.14);margin:40px 0; }
           .ecom-related-tags { display:flex;flex-wrap:wrap;justify-content:center;gap:12px; }
           .ecom-rtag { display:inline-block;padding:11px 22px;border:1.5px solid;border-radius:50px;font-size:14px;font-weight:500;text-decoration:none;transition:all 0.25s; }
           .ecom-rtag:hover { filter:brightness(0.92);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.10); }
-          .ecom-rtag-indigo  { background:rgba(99,102,241,0.10);border-color:rgba(99,102,241,0.30);color:#4338CA; }
+          .ecom-rtag-indigo  { background:rgba(15,52,96,0.10);border-color:rgba(15,52,96,0.30);color:#4338CA; }
           .ecom-rtag-violet  { background:rgba(139,92,246,0.10);border-color:rgba(139,92,246,0.30);color:#6D28D9; }
           .ecom-rtag-green   { background:rgba(34,197,94,0.10);border-color:rgba(34,197,94,0.28);color:#15803D; }
           .ecom-rtag-teal    { background:rgba(20,184,166,0.10);border-color:rgba(20,184,166,0.30);color:#0F766E; }
@@ -504,8 +505,8 @@ export default function EcommerceWebsiteDevelopmentServices() {
             .ecom-hero-stats { grid-template-columns:1fr 1fr;max-width:100%; }
             .ecom-stat-col { padding:14px 12px; }
             .ecom-stat-col:nth-child(2) { border-right:none; }
-            .ecom-stat-col:nth-child(3) { border-top:1px solid rgba(99,102,241,0.12); }
-            .ecom-stat-col:nth-child(4) { border-top:1px solid rgba(99,102,241,0.12);border-right:none; }
+            .ecom-stat-col:nth-child(3) { border-top:1px solid rgba(15,52,96,0.12); }
+            .ecom-stat-col:nth-child(4) { border-top:1px solid rgba(15,52,96,0.12);border-right:none; }
             .ecom-stat-value { font-size:22px; }
             .ecom-clients-bar { padding:16px 20px 36px;gap:12px; }
             .ecom-client-logo { height:20px; }
@@ -540,8 +541,8 @@ export default function EcommerceWebsiteDevelopmentServices() {
             .ecom-portfolio-grid { grid-template-columns:1fr; }
             .ecom-section-title,.ecom-engage-title,.ecom-process-main-title,.ecom-related-title { font-size:30px; }
             .ecom-testi-stats { flex-wrap:wrap;gap:0;padding:24px 20px; }
-            .ecom-tstat { flex:0 0 50%;width:50%;padding:12px 8px;border-bottom:1px solid rgba(99,102,241,0.12); }
-            .ecom-tstat:nth-child(odd) { border-right:1px solid rgba(99,102,241,0.12); }
+            .ecom-tstat { flex:0 0 50%;width:50%;padding:12px 8px;border-bottom:1px solid rgba(15,52,96,0.12); }
+            .ecom-tstat:nth-child(odd) { border-right:1px solid rgba(15,52,96,0.12); }
             .ecom-tstat:nth-last-child(-n+2) { border-bottom:none; }
             .ecom-tstat-divider { display:none; }
             .ecom-form-row { grid-template-columns:1fr; }
@@ -576,7 +577,7 @@ export default function EcommerceWebsiteDevelopmentServices() {
         <div className="ecom-hero-block">
           <div className="ecom-hero-content">
             <span className="ecom-eyebrow">Full-Service eCommerce Development Company</span>
-            <h1>eCommerce Website Development Services - Built to Sell, Engineered to Scale</h1>
+            <h1>eCommerce Website Development Services - <AuroraText>Built to Sell, Engineered to Scale</AuroraText></h1>
             <p>From DTC Shopify stores to enterprise Magento platforms and fully custom-built commerce solutions - 1Solutions has been delivering high-performing online stores for US, Canada, and Australia businesses since 2008. We combine 15+ years of platform expertise with a conversion-first mindset to build stores that don't just look great - they grow your revenue.</p>
             <div className="ecom-platforms">
               {[['Shopify','ecom-pb-shopify'],['WooCommerce','ecom-pb-woo'],['Magento','ecom-pb-magento'],['OpenCart','ecom-pb-opencart'],['Custom Build','ecom-pb-custom']].map(([label,cls]) => (
@@ -623,7 +624,7 @@ export default function EcommerceWebsiteDevelopmentServices() {
           <div className="ecom-services-inner">
             <div className={`ecom-section-reveal${visibleSections.has('services') ? ' ecom-revealed' : ''}`} ref={el => { sectionRefs.current['services'] = el; }}>
               <span className="ecom-section-eyebrow">Our Services</span>
-              <h2 className="ecom-section-title">End-to-End eCommerce Development Services</h2>
+              <h2 className="ecom-section-title">End-to-End <AuroraText>eCommerce Development Services</AuroraText></h2>
               <p className="ecom-section-desc">Whether you need a brand-new store, a platform migration, a custom B2B portal, or a headless commerce rebuild - our team covers every aspect of eCommerce development across all major platforms.</p>
             </div>
             <div className="ecom-services-grid">
@@ -647,14 +648,17 @@ export default function EcommerceWebsiteDevelopmentServices() {
         <section className="ecom-portfolio-section" id="portfolio">
           <div className="ecom-portfolio-wrap">
             <div className="ecom-portfolio-header">
-              <h2 className={`ecom-portfolio-title ecom-section-reveal${visibleSections.has('portfolio') ? ' ecom-revealed' : ''}`} ref={el => { sectionRefs.current['portfolio'] = el; }}>500+ eCommerce Stores<br/>Designed &amp; Developed</h2>
+              <h2 className={`ecom-portfolio-title ecom-section-reveal${visibleSections.has('portfolio') ? ' ecom-revealed' : ''}`} ref={el => { sectionRefs.current['portfolio'] = el; }}><AuroraText>500+</AuroraText> eCommerce Stores<br/>Designed &amp; Developed</h2>
               <Link href="#contact" className="ecom-btn-portfolio-cta">Browse Our Portfolio</Link>
             </div>
             <div className="ecom-portfolio-grid">
               {[
-                { img:'https://placehold.co/800x500/4f46e5/ffffff?text=LuxeFragrance+Co', platform:'Shopify Plus', name:'LuxeFragrance Co.', tech:'Beauty & Lifestyle / Custom Shopify theme, Klaviyo, Recharge subscriptions', cats:'DTC / Subscription bundles / 40% increase in AOV' },
-                { img:'https://placehold.co/800x500/6366f1/ffffff?text=AgriSupply+Direct', platform:'WooCommerce', name:'AgriSupply Direct', tech:'B2B Agriculture / WooCommerce, custom quote system, SAP integration', cats:'B2B / Customer group pricing / ERP sync / Multi-currency' },
-                { img:'https://placehold.co/800x500/7c3aed/ffffff?text=TechZone+Marketplace', platform:'Magento 2', name:'TechZone Marketplace', tech:'Electronics / Magento 2, 80,000+ SKUs, multi-vendor module, Stripe', cats:'Enterprise / Multi-vendor / Advanced filtering / ERP integrated' },
+                { img:'/images/portfolio/aiplusstore.jpg', platform:'WooCommerce', name:'AiPlus Store', tech:'B2C tech accessories / Custom WooCommerce theme, product configurator, Stripe & PayPal', cats:'Consumer Electronics / Custom UX / Fast checkout' },
+                { img:'/images/portfolio/shopsamsin.jpg', platform:'Shopify', name:'ShopSamsin', tech:'Fashion & Lifestyle / Custom Shopify theme, lookbook, Klaviyo, 2-step checkout', cats:'DTC Fashion / Upsell flows / Mobile-first design' },
+                { img:'/images/portfolio/keiyura.jpg', platform:'WooCommerce', name:'Keiyura', tech:'Luxury goods / Bespoke WooCommerce, high-resolution galleries, multi-currency checkout', cats:'Luxury eCommerce / Brand-centric UX / International shipping' },
+                { img:'/images/portfolio/foreverring.jpg', platform:'Shopify Plus', name:'ForeverRing', tech:'Engagement jewellery / Shopify Plus, ring customiser, Klarna BNPL, Google Shopping', cats:'DTC Jewellery / Personalisation / High AOV optimisation' },
+                { img:'/images/portfolio/parfumfrance.jpg', platform:'WooCommerce', name:'Parfum France', tech:'Luxury fragrance / WooCommerce, subscription bundles, Recharge, Trustpilot integration', cats:'Luxury Fragrance / Subscriptions / EU compliance' },
+                { img:'/images/portfolio/305aerosupplies.jpg', platform:'Magento 2', name:'305 Aero Supplies', tech:'B2B aerospace parts / Magento 2, customer group pricing, RFQ module, ERP integration', cats:'B2B / 10,000+ SKUs / Quote system / ERP sync' },
               ].map(p => (
                 <div className="ecom-pcard" key={p.name}>
                   <div className="ecom-pcard-thumb">
@@ -678,7 +682,7 @@ export default function EcommerceWebsiteDevelopmentServices() {
           <div className="ecom-process-top">
             <div className={`ecom-section-reveal${visibleSections.has('process') ? ' ecom-revealed' : ''}`} ref={el => { sectionRefs.current['process'] = el; }}>
               <p className="ecom-process-eyebrow">HOW WE WORK</p>
-              <h2 className="ecom-process-main-title">How We Build Your Online Store</h2>
+              <h2 className="ecom-process-main-title"><AuroraText>How We Build</AuroraText> Your Online Store</h2>
               <p className="ecom-process-main-desc">Our proven 4D delivery framework - used across 500+ eCommerce projects - ensures every store is scoped accurately, built to spec, and launched without surprises. No sprint-based guessing, no scope creep billing.</p>
             </div>
             <hr className="ecom-process-divider" />
@@ -721,14 +725,14 @@ export default function EcommerceWebsiteDevelopmentServices() {
           <div className="ecom-testi-inner">
             <div className={`ecom-section-header-center ecom-section-reveal${visibleSections.has('testi') ? ' ecom-revealed' : ''}`} ref={el => { sectionRefs.current['testi'] = el; }}>
               <span className="ecom-section-eyebrow">Client Reviews</span>
-              <h2 className="ecom-section-title">What Our eCommerce Clients Say</h2>
+              <h2 className="ecom-section-title">What Our <AuroraText>eCommerce Clients Say</AuroraText></h2>
               <p className="ecom-section-sub">Trusted by e-commerce businesses across the US, Canada, Australia, and beyond for 15+ years.</p>
             </div>
             <div className="ecom-testi-grid" ref={testiGridRef}>
               {[
-                { initials:'SR', bg:'#4f46e5', text:'"1Solutions took our Shopify store from a basic theme to a fully custom, conversion-optimised storefront. Our average order value increased by 40% in the first three months post-launch. Outstanding work - they genuinely care about results, not just deliverables."', name:'Sarah Reynolds', role:'Founder, LuxeFragrance Co. - USA', featured:false },
-                { initials:'DJ', bg:'#6366f1', text:'"We needed a complex B2B WooCommerce portal with customer group pricing, SAP integration, and a custom quote system. 1Solutions delivered everything on spec and on time. The project manager was proactive, communicative, and clearly experienced. Highly recommended."', name:'David James', role:'Head of Digital, AgriSupply Direct - Australia', featured:true },
-                { initials:'MF', bg:'#7c3aed', text:'"Our Magento 2 migration from an ageing Magento 1 store was massive - 80,000 SKUs, custom modules, and a tight deadline. 1Solutions handled every detail with zero data loss and a seamless cutover. We\'ve been on a maintenance retainer with them ever since."', name:'Michelle Forbes', role:'eCommerce Director, TechZone - Canada', featured:false },
+                { initials:'SR', bg:'#0F3460', text:'"1Solutions took our Shopify store from a basic theme to a fully custom, conversion-optimised storefront. Our average order value increased by 40% in the first three months post-launch. Outstanding work - they genuinely care about results, not just deliverables."', name:'Sarah Reynolds', role:'Founder, LuxeFragrance Co. - USA', featured:false },
+                { initials:'DJ', bg:'#D97706', text:'"We needed a complex B2B WooCommerce portal with customer group pricing, SAP integration, and a custom quote system. 1Solutions delivered everything on spec and on time. The project manager was proactive, communicative, and clearly experienced. Highly recommended."', name:'David James', role:'Head of Digital, AgriSupply Direct - Australia', featured:true },
+                { initials:'MF', bg:'#0F3460', text:'"Our Magento 2 migration from an ageing Magento 1 store was massive - 80,000 SKUs, custom modules, and a tight deadline. 1Solutions handled every detail with zero data loss and a seamless cutover. We\'ve been on a maintenance retainer with them ever since."', name:'Michelle Forbes', role:'eCommerce Director, TechZone - Canada', featured:false },
               ].map((t,i) => (
                 <div className={`ecom-tcard${t.featured?' featured':''}${visibleTestiCards.includes(i)?' ecom-tcard-visible':''}`} key={t.name}>
                   <div className="ecom-tcard-stars">★★★★★</div>
@@ -762,7 +766,7 @@ export default function EcommerceWebsiteDevelopmentServices() {
           <div className="ecom-why-inner">
             <div className={`ecom-section-reveal${visibleSections.has('why') ? ' ecom-revealed' : ''}`} ref={el => { sectionRefs.current['why'] = el; }} style={{ textAlign:'center',marginBottom:0 }}>
               <span className="ecom-section-eyebrow">Why 1Solutions</span>
-              <h2 className="ecom-section-title">Why eCommerce Businesses Choose 1Solutions</h2>
+              <h2 className="ecom-section-title">Why eCommerce Businesses <AuroraText>Choose 1Solutions</AuroraText></h2>
               <p className="ecom-section-sub" style={{ maxWidth:680,margin:'0 auto' }}>We don't just write code - we build online revenue channels. Here's what makes us different from generic agencies and solo freelancers.</p>
             </div>
             <div className="ecom-why-grid" ref={whyGridRef}>
@@ -785,7 +789,7 @@ export default function EcommerceWebsiteDevelopmentServices() {
             <div className="ecom-engage-left">
               <div className={`ecom-section-reveal${visibleSections.has('engage') ? ' ecom-revealed' : ''}`} ref={el => { sectionRefs.current['engage'] = el; }}>
                 <span className="ecom-section-eyebrow">Engagement Models</span>
-                <h2 className="ecom-engage-title">Flexible Engagement Models for Every Type of Project</h2>
+                <h2 className="ecom-engage-title">Flexible <AuroraText>Engagement Models</AuroraText> for Every Type of Project</h2>
                 <p className="ecom-engage-desc">Whether you're launching a new store, migrating platforms, building a long-term roadmap, or need ongoing development capacity - choose the engagement model that matches your project size and growth stage.</p>
               </div>
               <div className="ecom-engage-img-wrap">
@@ -825,7 +829,7 @@ export default function EcommerceWebsiteDevelopmentServices() {
         <section className="ecom-contact-section" id="contact">
           <div className="ecom-contact-container">
             <div className="ecom-contact-left">
-              <h2 className="ecom-contact-title">Let's Build Your eCommerce Store Together</h2>
+              <h2 className="ecom-contact-title">Let's Build Your <AuroraText>eCommerce Store</AuroraText> Together</h2>
               <p className="ecom-contact-desc">Tell us about your project and we'll respond within 24 hours with a tailored eCommerce development plan - platform recommendation, timeline, and fixed-price quote.</p>
               <div className="ecom-merged-box">
                 <div>
@@ -904,7 +908,7 @@ export default function EcommerceWebsiteDevelopmentServices() {
         {/* ── FAQ ── */}
         <section className="ecom-faq-section" id="faq">
           <div className="ecom-faq-inner">
-            <h2 className="ecom-faq-heading">Frequently Asked Questions</h2>
+            <h2 className="ecom-faq-heading"><AuroraText>Frequently Asked Questions</AuroraText></h2>
             <div className="ecom-faq-list">
               {FAQS.map((faq, i) => (
                 <div className={`ecom-faq-item${openFaq===i?' open':''}`} key={i}>
@@ -926,7 +930,7 @@ export default function EcommerceWebsiteDevelopmentServices() {
         <section className="ecom-related-section">
           <div className="ecom-related-inner">
             <span className="ecom-related-eyebrow">EXPLORE OUR ECOMMERCE ECOSYSTEM</span>
-            <h2 className="ecom-related-title">Platform Services &amp; Related Expertise</h2>
+            <h2 className="ecom-related-title">Platform Services &amp; <AuroraText>Related Expertise</AuroraText></h2>
             <p className="ecom-related-sub">Pair our eCommerce development services with platform-specific expertise, performance optimisation, and digital marketing to build a complete, high-converting online business.</p>
             <hr className="ecom-related-divider" />
             <div className="ecom-related-tags">
