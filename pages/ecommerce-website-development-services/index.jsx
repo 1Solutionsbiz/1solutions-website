@@ -354,9 +354,9 @@ export default function EcommerceWebsiteDevelopmentServices() {
           .ecom-testi-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.10);border-bottom:1px solid rgba(15,52,96,0.10);padding:80px 0;position:relative;z-index:1; }
           .ecom-testi-inner { max-width:1280px;margin:0 auto;padding:0 40px; }
           .ecom-section-header-center { text-align:center;margin-bottom:52px; }
-          .ecom-marq-outer { position:relative;display:flex;flex-direction:column;overflow:hidden;width:100%;gap:12px;margin-top:48px; }
-          .ecom-marq-fade-l { position:absolute;top:0;bottom:0;left:0;width:25%;background:linear-gradient(to right,#f8fafd,transparent);pointer-events:none;z-index:1; }
-          .ecom-marq-fade-r { position:absolute;top:0;bottom:0;right:0;width:25%;background:linear-gradient(to left,#f8fafd,transparent);pointer-events:none;z-index:1; }
+          .ecom-marq-outer { position:relative;display:flex;flex-direction:column;width:100%;gap:12px;margin-top:48px;overflow:hidden; }
+          .ecom-marq-fade-l { position:absolute;top:0;bottom:0;left:0;width:20%;background:linear-gradient(to right,#f8fafd,transparent);pointer-events:none;z-index:2; }
+          .ecom-marq-fade-r { position:absolute;top:0;bottom:0;right:0;width:20%;background:linear-gradient(to left,#f8fafd,transparent);pointer-events:none;z-index:2; }
           .ecom-mcard { position:relative;width:256px;flex-shrink:0;cursor:pointer;overflow:hidden;border-radius:12px;border:1px solid rgba(15,52,96,0.10);padding:16px;background:rgba(248,250,253,0.80);transition:background 0.2s,border-color 0.2s; }
           .ecom-mcard:hover { background:rgba(219,234,254,0.45);border-color:rgba(15,52,96,0.18); }
           .ecom-mcard-header { display:flex;flex-direction:row;align-items:center;gap:10px;margin-bottom:10px; }
