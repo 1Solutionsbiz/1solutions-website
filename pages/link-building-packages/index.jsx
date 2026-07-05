@@ -453,8 +453,34 @@ export default function LinkBuildingPackages() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [statsStarted, setStatsStarted] = useState(false);
+  const [auditSt, setAuditSt] = useState('idle'); // idle | loading | success | error
   const sectionRefs = useRef({});
   const statsRef = useRef(null);
+
+  const _auditSubmit = async (e) => {
+    e.preventDefault();
+    setAuditSt('loading');
+    try {
+      const fd = new FormData(e.target);
+      const token = await new Promise(r => window.grecaptcha.ready(() =>
+        window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', { action: 'contact' }).then(r)));
+      const res = await fetch('/api/contact', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: fd.get('la-name') || '',
+          email: fd.get('la-email') || '',
+          phone: fd.get('la-phone') || '',
+          company: fd.get('la-domain') || '',
+          message: `Domain: ${fd.get('la-domain') || ''}\n\nCompetitors: ${fd.get('la-competitors') || ''}\n\nGoals: ${fd.get('la-goals') || ''}`,
+          source: 'Link Building Packages - Free Link Audit',
+          consent: true,
+          recaptchaToken: token,
+        }),
+      });
+      if (res.ok) { setAuditSt('success'); e.target.reset(); }
+      else { setAuditSt('error'); }
+    } catch { setAuditSt('error'); }
+  };
 
   useEffect(() => {
     if (!statsRef.current) return;
@@ -889,6 +915,36 @@ export default function LinkBuildingPackages() {
           .lbp-author-text{font-size:13px;color:#4A6080;line-height:1.6}
 
           /* ── CTA ── */
+          /* ── AUDIT FORM ── */
+          .lbp-audit-sec{background:#f8fafd;border-top:1px solid rgba(15,52,96,.08);border-bottom:1px solid rgba(15,52,96,.08);padding:80px 40px}
+          .lbp-audit-in{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+          .lbp-audit-copy{}
+          .lbp-audit-copy .lbp-sec-ey{margin-bottom:12px}
+          .lbp-audit-ttl{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;line-height:1.2;color:#111827;margin:0 0 16px;letter-spacing:-.5px}
+          .lbp-audit-desc{font-size:15px;color:#4A6080;line-height:1.8;margin:0 0 28px}
+          .lbp-audit-benefits{display:flex;flex-direction:column;gap:10px}
+          .lbp-audit-benefit{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#374151;line-height:1.6}
+          .lbp-audit-check{width:20px;height:20px;background:#D97706;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+          .lbp-audit-check svg{width:11px;height:11px;stroke:#fff;fill:none}
+          .lbp-audit-form-wrap{background:linear-gradient(135deg,rgba(219,234,254,.55) 0%,rgba(255,255,255,.90) 60%,rgba(237,233,254,.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:24px;padding:36px 32px;box-shadow:0 4px 32px rgba(15,52,96,.10),inset 0 1px 0 rgba(255,255,255,.95)}
+          .lbp-audit-form-ttl{font-size:18px;font-weight:800;color:#0F3460;margin:0 0 24px}
+          .lbp-af-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+          .lbp-af-row.full{grid-template-columns:1fr}
+          .lbp-fg{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
+          .lbp-fg.last{margin-bottom:0}
+          .lbp-fg label{font-size:12px;font-weight:600;color:#374151;letter-spacing:.3px}
+          .lbp-fg input,.lbp-fg textarea,.lbp-fg select{width:100%;padding:10px 14px;border:1.5px solid rgba(15,52,96,.15);border-radius:10px;font-size:14px;color:#0F1F40;background:rgba(255,255,255,.80);outline:none;transition:border-color .2s,box-shadow .2s;font-family:inherit;box-sizing:border-box}
+          .lbp-fg input:focus,.lbp-fg textarea:focus,.lbp-fg select:focus{border-color:#D97706;box-shadow:0 0 0 3px rgba(217,119,6,.12)}
+          .lbp-fg textarea{resize:vertical;min-height:80px}
+          .lbp-audit-btn{width:100%;padding:14px;background:#D97706;border:none;border-radius:50px;color:#fff;font-weight:700;font-size:15px;cursor:pointer;transition:all .25s;box-shadow:0 4px 16px rgba(217,119,6,.30);margin-top:20px;font-family:inherit}
+          .lbp-audit-btn:hover:not(:disabled){background:#B45309;box-shadow:0 0 0 5px rgba(217,119,6,.18),0 8px 24px rgba(217,119,6,.40);transform:translateY(-1px)}
+          .lbp-audit-btn:disabled{opacity:.65;cursor:not-allowed}
+          .lbp-audit-success{text-align:center;padding:24px 0}
+          .lbp-audit-success-icon{width:56px;height:56px;background:#D97706;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+          .lbp-audit-success-icon svg{width:28px;height:28px;stroke:#fff;fill:none}
+          .lbp-audit-success h3{font-size:18px;font-weight:800;color:#0F3460;margin:0 0 8px}
+          .lbp-audit-success p{font-size:14px;color:#4A6080;margin:0}
+          @media(max-width:768px){.lbp-audit-in{grid-template-columns:1fr;gap:36px}.lbp-af-row{grid-template-columns:1fr}.lbp-audit-sec{padding:60px 20px}}
           .lbp-related-section{background:rgba(237,233,254,.18);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.60);padding:80px 40px}
           .lbp-related-inner{max-width:1280px;margin:0 auto;text-align:center}
           .lbp-related-eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#4A6080;margin:0 0 14px;display:block}
@@ -1019,7 +1075,7 @@ export default function LinkBuildingPackages() {
             <h1 className="lbp-h1">Link Building Packages <span className="lbp-hl">That Rank You on Google</span> and Get You Cited by AI</h1>
             <p className="lbp-hero-sub">White-hat link building packages from $350/month. Guest posts, niche edits, digital PR, and AI+GEO citation building - 100% manual outreach, every link tracked live. Built for both traditional rankings and AI-generated answers.</p>
             <div className="lbp-hero-btns">
-              <Link href="/contact-us" className="lbp-btn-hero">Get a Free Backlink Audit</Link>
+              <Link href="#link-audit" className="lbp-btn-hero">Get a Free Backlink Audit</Link>
               <Link href="#pricing" className="lbp-btn-outline">View Packages</Link>
             </div>
           </div>
@@ -1491,6 +1547,84 @@ export default function LinkBuildingPackages() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── FREE LINK AUDIT FORM ── */}
+        <section id="link-audit" className="lbp-audit-sec" aria-labelledby="audit-form-title">
+          <div className="lbp-audit-in">
+            {/* Copy */}
+            <div className="lbp-audit-copy">
+              <span className="lbp-sec-ey">100% Free, No Obligation</span>
+              <h2 className="lbp-audit-ttl" id="audit-form-title">Get Your Free <span className="lbp-hl">Link Building Audit</span></h2>
+              <p className="lbp-audit-desc">Share your domain and top competitors and we will analyse your backlink gap, identify the highest-value link opportunities, check your AI citation presence, and recommend exactly which package will close the gap fastest. Report delivered within 48 hours.</p>
+              <div className="lbp-audit-benefits">
+                {[
+                  'Full backlink profile audit - DR, DA, spam score, referring domains',
+                  'Competitor gap analysis - where they are getting links you are not',
+                  'AI citation presence check across Google AI Overviews and Perplexity',
+                  'Package recommendation matched to your goals and competition level',
+                  'Anchor text strategy map included at no charge',
+                ].map(b => (
+                  <div key={b} className="lbp-audit-benefit">
+                    <div className="lbp-audit-check" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <span>{b}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Form */}
+            <div className="lbp-audit-form-wrap">
+              {auditSt === 'success' ? (
+                <div className="lbp-audit-success">
+                  <div className="lbp-audit-success-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                  <h3>Audit Request Received!</h3>
+                  <p>We will analyse your backlink profile and send your free link audit report within 48 hours. Check your inbox.</p>
+                </div>
+              ) : (
+                <form onSubmit={_auditSubmit} noValidate>
+                  <p className="lbp-audit-form-ttl">Request Your Free Link Audit</p>
+                  <div className="lbp-af-row">
+                    <div className="lbp-fg">
+                      <label htmlFor="la-name">Full Name *</label>
+                      <input id="la-name" name="la-name" type="text" placeholder="Your name" required/>
+                    </div>
+                    <div className="lbp-fg">
+                      <label htmlFor="la-email">Work Email *</label>
+                      <input id="la-email" name="la-email" type="email" placeholder="you@company.com" required/>
+                    </div>
+                  </div>
+                  <div className="lbp-af-row">
+                    <div className="lbp-fg">
+                      <label htmlFor="la-phone">Phone / WhatsApp *</label>
+                      <input id="la-phone" name="la-phone" type="tel" placeholder="+1 555 000 0000" required/>
+                    </div>
+                    <div className="lbp-fg">
+                      <label htmlFor="la-domain">Your Website URL *</label>
+                      <input id="la-domain" name="la-domain" type="url" placeholder="https://yourdomain.com" required/>
+                    </div>
+                  </div>
+                  <div className="lbp-fg">
+                    <label htmlFor="la-competitors">Top 3 Competitors (URLs)</label>
+                    <textarea id="la-competitors" name="la-competitors" rows={3} placeholder="https://competitor1.com&#10;https://competitor2.com&#10;https://competitor3.com"/>
+                  </div>
+                  <div className="lbp-fg last">
+                    <label htmlFor="la-goals">Ranking Goals / Target Keywords</label>
+                    <textarea id="la-goals" name="la-goals" rows={2} placeholder="e.g. We want to rank for [keywords] in [market] and grow organic traffic from X to Y..."/>
+                  </div>
+                  {auditSt === 'error' && (
+                    <p style={{color:'#dc2626',fontSize:13,margin:'12px 0 0',textAlign:'center'}}>Something went wrong. Please try again or email us directly.</p>
+                  )}
+                  <button type="submit" className="lbp-audit-btn" disabled={auditSt === 'loading'}>
+                    {auditSt === 'loading' ? 'Sending...' : 'Get My Free Link Audit →'}
+                  </button>
+                </form>
+              )}
             </div>
           </div>
         </section>
