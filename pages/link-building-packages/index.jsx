@@ -948,7 +948,7 @@ export default function LinkBuildingPackages() {
           .lbp-fg input:focus,.lbp-fg textarea:focus,.lbp-fg select:focus{outline:none;border-color:#D97706;background:rgba(255,255,255,.90);box-shadow:0 0 0 3px rgba(217,119,6,.12)}
           .lbp-fg textarea{resize:vertical}
           .lbp-af-phone-wrap{display:flex;border:1px solid rgba(15,52,96,.15);border-radius:6px;overflow:hidden;background:rgba(255,255,255,.55)}
-          .lbp-af-phone-wrap select{padding:10px;border:none;background:transparent;font-size:12px;min-width:70px;color:#0F1F40;font-family:inherit;flex-shrink:0}
+          .lbp-af-phone-wrap select{padding:10px;border:none;background:transparent;font-size:12px;width:auto!important;min-width:70px;max-width:90px;color:#0F1F40;font-family:inherit;flex-shrink:0}
           .lbp-af-phone-wrap input{flex:1!important;width:auto!important;min-width:0!important;border:none!important;border-radius:0!important;padding:10px 14px!important;box-shadow:none!important;background:rgba(255,255,255,.55)!important;color:#0F1F40!important}
           .lbp-af-phone-wrap input:focus{outline:none!important;box-shadow:none!important;background:rgba(255,255,255,.90)!important;border-color:transparent!important}
           .lbp-af-consent{display:flex;gap:8px;align-items:flex-start}
