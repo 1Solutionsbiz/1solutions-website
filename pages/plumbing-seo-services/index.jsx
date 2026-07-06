@@ -75,7 +75,7 @@ function RazorpayButton({ buttonId }) {
 const PACKAGES = [
   {
     name: 'Starter', slug: 'starter', monthlyPrice: 499, yearlyPrice: 415, yearlySave: 1008,
-    monthlyButtonId: 'pl_TAA38ObJcClDiz',
+    monthlyButtonId: 'pl_TAA38ObJcClDiz', yearlyButtonId: 'pl_TAAKS59mpGju0n',
     desc: 'For single-location plumbers starting local SEO.',
     popular: false,
     features: [
@@ -91,7 +91,7 @@ const PACKAGES = [
   },
   {
     name: 'Growth', slug: 'growth', monthlyPrice: 899, yearlyPrice: 749, yearlySave: 1800,
-    monthlyButtonId: 'pl_TAA58iiRuffFeI',
+    monthlyButtonId: 'pl_TAA58iiRuffFeI', yearlyButtonId: 'pl_TAAMloanIdNImN',
     desc: 'For established plumbers ready to dominate the Maps Pack.',
     popular: true,
     features: [
@@ -109,7 +109,7 @@ const PACKAGES = [
   },
   {
     name: 'Authority', slug: 'authority', monthlyPrice: 1499, yearlyPrice: 1249, yearlySave: 3000,
-    monthlyButtonId: 'pl_TAA6WwLLSjqhoL',
+    monthlyButtonId: 'pl_TAA6WwLLSjqhoL', yearlyButtonId: 'pl_TAAT8Q8Qtp5Zmr',
     desc: 'For multi-location plumbers and highly competitive markets.',
     popular: false,
     features: [
@@ -735,8 +735,8 @@ export default function PlumbingSeoServices() {
                   <div className="pl-billed">{isYearly ? 'Billed annually' : 'Billed monthly'}</div>
                   <div className="pl-save-line">{isYearly ? `Save $${pkg.yearlySave.toLocaleString()} per year` : ' '}</div>
                   <p className="pl-plan-desc">{pkg.desc}</p>
-                  {!isYearly && pkg.monthlyButtonId
-                    ? <RazorpayButton buttonId={pkg.monthlyButtonId}/>
+                  {(isYearly ? pkg.yearlyButtonId : pkg.monthlyButtonId)
+                    ? <RazorpayButton buttonId={isYearly ? pkg.yearlyButtonId : pkg.monthlyButtonId}/>
                     : <a href="#pl-contact" className="pl-cta-card">Get Started →</a>
                   }
                   <div className="pl-card-div"/>
