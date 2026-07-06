@@ -483,7 +483,7 @@ export default function PlumbingSeoServices() {
           .pl-tog-knob{position:absolute;top:4px;left:4px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform .25s;box-shadow:0 1px 4px rgba(0,0,0,.18)}
           .pl-tog-btn.active .pl-tog-knob{transform:translateX(22px)}
           .pl-save-pill{display:inline-flex;align-items:center;background:rgba(217,119,6,.12);color:#B45309;font-size:11px;font-weight:700;padding:2px 9px;border-radius:100px;margin-left:6px}
-          .pl-pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;padding-top:16px}
+          .pl-pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch;padding-top:16px}
           .pl-card{background:linear-gradient(135deg,rgba(219,234,254,.55) 0%,rgba(255,255,255,.80) 60%,rgba(237,233,254,.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:22px;padding:28px 24px;position:relative;display:flex;flex-direction:column;transition:transform .22s,box-shadow .22s,border-color .22s;box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
           .pl-card:hover{transform:translateY(-4px);border-color:rgba(217,119,6,.35);box-shadow:0 16px 48px rgba(15,52,96,.14),inset 0 1px 0 rgba(255,255,255,1)}
           .pl-card-pop{background:linear-gradient(180deg,rgba(217,119,6,.08) 0%,rgba(255,255,255,.82) 50%,rgba(219,234,254,.50) 100%);border-color:rgba(217,119,6,.50);box-shadow:0 0 80px rgba(217,119,6,.16),0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.98);transform:scale(1.03)}
@@ -735,14 +735,14 @@ export default function PlumbingSeoServices() {
                   <div className="pl-billed">{isYearly ? 'Billed annually' : 'Billed monthly'}</div>
                   <div className="pl-save-line">{isYearly ? `Save $${pkg.yearlySave.toLocaleString()} per year` : ' '}</div>
                   <p className="pl-plan-desc">{pkg.desc}</p>
-                  <div className="pl-card-div"/>
-                  <ul className="pl-feat-list">
-                    {pkg.features.map(f => <li key={f}>{f}</li>)}
-                  </ul>
                   {!isYearly && pkg.monthlyButtonId
                     ? <RazorpayButton buttonId={pkg.monthlyButtonId}/>
                     : <a href="#pl-contact" className="pl-cta-card">Get Started →</a>
                   }
+                  <div className="pl-card-div"/>
+                  <ul className="pl-feat-list">
+                    {pkg.features.map(f => <li key={f}>{f}</li>)}
+                  </ul>
                 </div>
               ))}
             </div>
