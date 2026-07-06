@@ -406,12 +406,12 @@ export default function PlumbingSeoServices() {
           .pl-stat-l{font-size:12px;color:#4A6080;font-weight:500}
 
           /* ── DARK SECTION ── */
-          .pl-dark{padding:80px 40px;background:transparent;position:relative;z-index:1}
+          .pl-dark{padding:80px 40px;background:#fff;position:relative;z-index:1}
           .pl-dark-ey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;display:block;margin-bottom:10px}
           .pl-dark-h{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;letter-spacing:-1px;color:#0F1F40;margin-bottom:10px}
           .pl-dark-lead{font-size:15px;color:#4A6080;line-height:1.7;max-width:640px;margin-bottom:40px}
-          .pl-res-card{background:none;border:none;border-radius:20px;padding:32px 20px;text-align:center}
-          .pl-res-card:hover .pl-res-metric{filter:drop-shadow(0 0 12px rgba(34,197,94,0.45))}
+          .pl-res-card{background:linear-gradient(135deg,rgba(240,253,244,.90) 0%,rgba(255,255,255,1) 50%,rgba(254,252,232,.80) 100%);border:1px solid rgba(34,197,94,.18);border-radius:20px;padding:36px 24px;text-align:center;box-shadow:0 4px 24px rgba(34,197,94,.10),0 1px 0 rgba(255,255,255,.95) inset;transition:transform .22s,box-shadow .25s}
+          .pl-res-card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(34,197,94,.18),0 0 0 1px rgba(34,197,94,.25),0 1px 0 rgba(255,255,255,1) inset}
           .pl-res-metric{font-size:clamp(2.6rem,4.5vw,3.6rem);font-weight:900;letter-spacing:-0.04em;line-height:1;margin-bottom:10px;background:linear-gradient(135deg,#22c55e,#fbbf24);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-variant-numeric:tabular-nums}
           .pl-res-label{font-size:13px;font-weight:700;color:#0F1F40;margin-bottom:6px}
           .pl-res-detail{font-size:11px;color:#6b7280;line-height:1.5}
