@@ -583,7 +583,7 @@ export default function PlumbingSeoServices() {
                 Get Your Free Plumbing SEO Audit
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
-              <Link href="/local-seo-packages/" className="pl-btn-s">View Local SEO Packages</Link>
+              <a href="#packages" className="pl-btn-s">View Packages</a>
             </div>
             <div className="pl-stats">
               {STATS_HERO.map(s => (
