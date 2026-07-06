@@ -406,15 +406,17 @@ export default function PlumbingSeoServices() {
           .pl-stat-l{font-size:12px;color:#4A6080;font-weight:500}
 
           /* ── DARK SECTION ── */
-          .pl-dark{padding:80px 40px;background:linear-gradient(135deg,#071e3d 0%,#0F3460 40%,#0a2549 100%);position:relative;z-index:1}
-          .pl-dark-ey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.55);display:block;margin-bottom:10px}
+          @keyframes pl-aurora-drift{0%{transform:translate3d(0,0,0) scale(1)}100%{transform:translate3d(-3%,2%,0) scale(1.08)}}
+          .pl-aurora{position:absolute;inset:-20%;z-index:0;pointer-events:none;filter:blur(50px) saturate(140%);animation:pl-aurora-drift 16s ease-in-out infinite alternate}
+          .pl-dark{padding:80px 40px;background:#07080c;position:relative;z-index:1;overflow:hidden}
+          .pl-dark-ey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45);display:block;margin-bottom:10px}
           .pl-dark-h{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;letter-spacing:-1px;color:#fff;margin-bottom:10px}
-          .pl-dark-lead{font-size:15px;color:rgba(255,255,255,0.65);line-height:1.7;max-width:640px;margin-bottom:40px}
-          .pl-res-card{background:rgba(255,255,255,0.07);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:28px 20px;text-align:center;transition:border-color .2s}
-          .pl-res-card:hover{border-color:rgba(217,119,6,0.50)}
-          .pl-res-metric{font-size:clamp(2.2rem,4vw,3.2rem);font-weight:900;color:#D97706;letter-spacing:-1px;line-height:1;margin-bottom:8px}
+          .pl-dark-lead{font-size:15px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:640px;margin-bottom:40px}
+          .pl-res-card{background:rgba(0,0,0,0.50);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.07);border-radius:20px;padding:32px 20px;text-align:center;transition:border-color .3s,box-shadow .3s}
+          .pl-res-card:hover{border-color:rgba(34,197,94,0.30);box-shadow:0 0 40px rgba(34,197,94,0.08)}
+          .pl-res-metric{font-size:clamp(2.6rem,4.5vw,3.6rem);font-weight:900;letter-spacing:-0.04em;line-height:1;margin-bottom:10px;background:linear-gradient(135deg,#22c55e,#fbbf24);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-variant-numeric:tabular-nums}
           .pl-res-label{font-size:13px;font-weight:700;color:rgba(255,255,255,0.85);margin-bottom:6px}
-          .pl-res-detail{font-size:11px;color:rgba(255,255,255,0.50);line-height:1.5}
+          .pl-res-detail{font-size:11px;color:rgba(255,255,255,0.40);line-height:1.5}
 
           /* ── KEYWORD PILLS ── */
           .pl-pills{display:flex;flex-wrap:wrap;gap:10px}
@@ -589,6 +591,7 @@ export default function PlumbingSeoServices() {
             .pl-related-ttl{font-size:28px}
             /* ── MOBILE PERFORMANCE ── */
             .pl-orb1,.pl-orb2,.pl-orb3{display:none}
+            .pl-aurora{animation:none}
             .pl-glass,.pl-form-box,.pl-trust-box,.pl-stats,.pl-fitem{backdrop-filter:none;-webkit-backdrop-filter:none}
             .pl-btn-p,.pl-btn-s,.pl-submit{backdrop-filter:none;-webkit-backdrop-filter:none}
             .pl-res-card,.pl-pill{backdrop-filter:none;-webkit-backdrop-filter:none}
@@ -683,7 +686,11 @@ export default function PlumbingSeoServices() {
 
         {/* ── RESULTS DARK ── */}
         <section className="pl-dark">
-          <div className="pl-in">
+          <div aria-hidden="true" className="pl-aurora">
+            <div style={{position:'absolute',left:'25%',top:'30%',width:'55%',height:'55%',background:'radial-gradient(circle at center,rgba(34,197,94,0.45) 0%,transparent 70%)',transform:'translate(-50%,-50%)',borderRadius:'50%'}}/>
+            <div style={{position:'absolute',left:'75%',top:'60%',width:'45%',height:'45%',background:'radial-gradient(circle at center,rgba(251,191,36,0.40) 0%,transparent 70%)',transform:'translate(-50%,-50%)',borderRadius:'50%'}}/>
+          </div>
+          <div className="pl-in" style={{position:'relative',zIndex:1}}>
             <div className="pl-reveal" style={{textAlign:'center',marginBottom:48}}>
               <span className="pl-dark-ey">Proven Results</span>
               <h2 className="pl-dark-h"><AuroraText>Real Plumbing SEO Results</AuroraText> — Calls, Rankings, Revenue</h2>
