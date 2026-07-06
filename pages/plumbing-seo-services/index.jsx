@@ -505,8 +505,8 @@ export default function PlumbingSeoServices() {
           .pl-card-pop .pl-feat-list li{border-top-color:rgba(217,119,6,.22)}
           .pl-cta-card{display:block;width:100%;text-align:center;padding:12px;border-radius:50px;font-weight:700;font-size:.875rem;text-decoration:none;background:rgba(15,52,96,.85);color:#fff;transition:all .22s;box-shadow:0 4px 16px rgba(15,52,96,.20)}
           .pl-cta-card:hover{background:rgba(15,52,96,1);transform:translateY(-1px);box-shadow:0 6px 24px rgba(15,52,96,.30)}
-          .pl-rzp-form{width:100%;display:flex;justify-content:center}
-          .pl-rzp-form button{width:100% !important;border-radius:50px !important;padding:12px !important;font-weight:700 !important;font-size:.875rem !important;background:rgba(15,52,96,.85) !important;color:#fff !important;border:none !important;cursor:pointer !important;transition:all .22s !important;box-shadow:0 4px 16px rgba(15,52,96,.20) !important}
+          .pl-rzp-form{width:100%;display:flex;justify-content:flex-start}
+          .pl-rzp-form button{width:auto !important;border-radius:50px !important;padding:12px 28px !important;font-weight:700 !important;font-size:.875rem !important;background:rgba(15,52,96,.85) !important;color:#fff !important;border:none !important;cursor:pointer !important;transition:all .22s !important;box-shadow:0 4px 16px rgba(15,52,96,.20) !important}
           .pl-pkg-trust{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:32px;padding-top:32px;border-top:1px solid rgba(15,52,96,.08)}
           .pl-pkg-trust span{font-size:13px;color:#6b7280;display:flex;align-items:center;gap:6px;font-weight:500}
           /* comparison table */
