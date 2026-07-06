@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { AuroraText } from '../../components/AuroraText';
@@ -44,6 +44,9 @@ const TESTIMONIALS_ROW2 = [
   { initials:'RS', bg:'#0F3460', name:'Raj Sharma', role:'Founder, TechGadgetHub — Magento 2, India/UK', text:'"The Google Shopping feed optimisation brought us into the shopping tab for 200+ product queries we weren\'t appearing in at all. Combined with the product schema, our CTR from search results increased significantly."' },
   { initials:'EM', bg:'#9D174D', name:'Emily Morgan', role:'Digital Director, LittleWonders — Shopify, US', text:'"Baby product SEO is incredibly competitive. The Growth plan\'s content strategy — 2 posts per month targeting parent search intent — built our topical authority systematically. We went from zero blog traffic to 18k monthly organic sessions in 9 months."' },
 ];
+
+const ROW1 = [...TESTIMONIALS_ROW1, ...TESTIMONIALS_ROW1];
+const ROW2 = [...TESTIMONIALS_ROW2, ...TESTIMONIALS_ROW2];
 
 const WHY_REASONS = [
   { n:'01', title:'Organic listings convert 6x better', body:'Purchase-ready shoppers who find you via organic search convert at far higher rates than paid traffic — they\'re actively looking, not being interrupted.' },
@@ -114,16 +117,16 @@ const WHY_CHOOSE = [
 ];
 
 const RELATED_TAGS = [
-  {href:'/seo-services-company',label:'SEO Services Company',cls:'esp-rtag-blue'},
-  {href:'/link-building-packages',label:'Link Building Packages',cls:'esp-rtag-violet'},
-  {href:'/local-seo-packages',label:'Local SEO Packages',cls:'esp-rtag-teal'},
-  {href:'/ecommerce-seo-services',label:'Ecommerce SEO Services',cls:'esp-rtag-indigo'},
-  {href:'/technical-seo-audit',label:'Technical SEO Audit',cls:'esp-rtag-amber'},
-  {href:'/content-marketing-services',label:'Content Marketing',cls:'esp-rtag-green'},
-  {href:'/google-ads-management',label:'Google Ads Management',cls:'esp-rtag-orange'},
-  {href:'/shopify-seo-services',label:'Shopify SEO Services',cls:'esp-rtag-rose'},
-  {href:'/woocommerce-seo-services',label:'WooCommerce SEO',cls:'esp-rtag-slate'},
-  {href:'/ecommerce-website-development-services',label:'Ecommerce Development',cls:'esp-rtag-cyan'},
+  {href:'/seo-services-company/',label:'SEO Services Company',cls:'esp-rtag-blue'},
+  {href:'/link-building-packages/',label:'Link Building Packages',cls:'esp-rtag-violet'},
+  {href:'/local-seo-packages/',label:'Local SEO Packages',cls:'esp-rtag-teal'},
+  {href:'/ecommerce-seo-services/',label:'Ecommerce SEO Services',cls:'esp-rtag-indigo'},
+  {href:'/technical-seo-optimization/',label:'Technical SEO Audit',cls:'esp-rtag-amber'},
+  {href:'/content-marketing-services/',label:'Content Marketing',cls:'esp-rtag-green'},
+  {href:'/ppc-management-services/',label:'Google Ads Management',cls:'esp-rtag-orange'},
+  {href:'/shopify-seo-services/',label:'Shopify SEO Services',cls:'esp-rtag-rose'},
+  {href:'/woocommerce-seo-services/',label:'WooCommerce SEO',cls:'esp-rtag-slate'},
+  {href:'/ecommerce-website-development-services/',label:'Ecommerce Development',cls:'esp-rtag-cyan'},
 ];
 
 const CHECK = (
@@ -136,6 +139,7 @@ export default function EcommerceSeoPackages() {
   const [isYearly, setIsYearly] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
   const [auditSt, setAuditSt] = useState('idle');
+  const recaptchaLoaded = useRef(false);
 
   useEffect(() => {
     const obs = new IntersectionObserver(entries => {
@@ -143,6 +147,16 @@ export default function EcommerceSeoPackages() {
     }, { threshold: 0.08 });
     document.querySelectorAll('.esp-reveal').forEach(el => obs.observe(el));
     return () => obs.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!recaptchaLoaded.current) {
+      const s = document.createElement('script');
+      s.src = 'https://www.google.com/recaptcha/api.js?render=6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs';
+      s.async = true;
+      document.head.appendChild(s);
+      recaptchaLoaded.current = true;
+    }
   }, []);
 
   const _auditSubmit = async (e) => {
@@ -191,10 +205,26 @@ export default function EcommerceSeoPackages() {
         { '@type': 'ListItem', position: 2, name: 'SEO Services', item: 'https://www.1solutions.biz/seo-services-company/' },
         { '@type': 'ListItem', position: 3, name: 'Ecommerce SEO Packages', item: 'https://www.1solutions.biz/ecommerce-seo-packages/' },
       ]},
-      { '@type': 'Service', name: 'Ecommerce SEO Packages', provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz' }, serviceType: 'Ecommerce SEO', areaServed: 'Worldwide', url: 'https://www.1solutions.biz/ecommerce-seo-packages/',
-        offers: PLANS.map(function(p) { return { '@type': 'Offer', name: p.name + ' Ecommerce SEO Package', price: p.monthlyPrice, priceCurrency: 'USD', priceSpecification: { '@type': 'UnitPriceSpecification', price: p.monthlyPrice, priceCurrency: 'USD', unitText: 'month' } }; })
+      { '@type': 'LocalBusiness', name: '1Solutions', url: 'https://www.1solutions.biz',
+        logo: 'https://www.1solutions.biz/images/1solutions-logo.png',
+        sameAs: ['https://www.linkedin.com/company/1solutions/','https://x.com/1solutionsbiz','https://www.facebook.com/1solutionsbiz'],
+        address: { '@type': 'PostalAddress', addressLocality: 'New Delhi', addressCountry: 'IN' },
+        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '142', bestRating: '5' },
       },
-      { '@type': 'FAQPage', mainEntity: FAQS.map(function(f) { return { '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } }; }) },
+      { '@type': 'WebPage',
+        '@id': 'https://www.1solutions.biz/ecommerce-seo-packages/',
+        url: 'https://www.1solutions.biz/ecommerce-seo-packages/',
+        name: 'Ecommerce SEO Packages & Pricing | 1Solutions — Shopify, WooCommerce, Magento',
+        description: 'Ecommerce SEO packages from $599/mo. Specialist SEO for Shopify, WooCommerce, and Magento stores — product page optimisation, technical SEO, schema markup, content, and link building.',
+        dateModified: '2026-07-06', inLanguage: 'en-US',
+      },
+      { '@type': 'Service', name: 'Ecommerce SEO Packages', provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz' }, serviceType: 'Ecommerce SEO', areaServed: 'Worldwide', url: 'https://www.1solutions.biz/ecommerce-seo-packages/',
+        hasOfferCatalog: { '@type': 'OfferCatalog', name: 'Ecommerce SEO Plans', itemListElement: PLANS.map(p => ({ '@type': 'Offer', name: p.name + ' Ecommerce SEO Package', price: p.monthlyPrice, priceCurrency: 'USD', priceSpecification: { '@type': 'UnitPriceSpecification', price: p.monthlyPrice, priceCurrency: 'USD', unitText: 'month' } })) },
+      },
+      { '@type': 'HowTo', name: 'Our Ecommerce SEO Process', description: 'A 6-step systematic ecommerce SEO process from audit to monthly growth.',
+        step: PROCESS_STEPS.map(s => ({ '@type': 'HowToStep', name: s.title, text: s.body })),
+      },
+      { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
     ],
   };
 
@@ -203,160 +233,173 @@ export default function EcommerceSeoPackages() {
       <Head>
         <title>Ecommerce SEO Packages &amp; Pricing | 1Solutions — Shopify, WooCommerce, Magento</title>
         <meta name="description" content="Ecommerce SEO packages from $599/mo. Specialist SEO for Shopify, WooCommerce, and Magento stores — product page optimisation, technical SEO, schema markup, content, and link building." />
-        <meta name="keywords" content="ecommerce seo packages, ecommerce seo pricing, shopify seo packages, woocommerce seo pricing, magento seo packages, ecommerce seo plans" />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.1solutions.biz/ecommerce-seo-packages/" />
         <meta property="og:title" content="Ecommerce SEO Packages &amp; Pricing | 1Solutions" />
         <meta property="og:description" content="Ecommerce SEO packages for Shopify, WooCommerce, and Magento stores. Transparent monthly pricing from $599/mo." />
+        <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.1solutions.biz/ecommerce-seo-packages/" />
         <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <style>{`
-          .esp-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
+          /* ── BASE ── */
+          .esp-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:linear-gradient(135deg,#dbeafe 0%,#ede9fe 25%,#e0f2fe 50%,#fef3c7 75%,#fce7f3 100%);background-attachment:scroll;color:#0F1F40;line-height:1.6;overflow-x:hidden;position:relative}
           .esp-page *,.esp-page *::before,.esp-page *::after{box-sizing:border-box}
-          .esp-reveal{opacity:0;transform:translateY(44px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
-          .esp-visible{opacity:1;transform:none}
+
+          /* ── FIXED ORBS ── */
+          .esp-orb1{position:fixed;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(99,130,255,0.30) 0%,rgba(139,92,246,0.12) 40%,transparent 70%);top:-300px;right:-300px;pointer-events:none;z-index:0;filter:blur(20px)}
+          .esp-orb2{position:fixed;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(251,146,60,0.25) 0%,rgba(245,158,11,0.12) 40%,transparent 70%);bottom:0;left:-250px;pointer-events:none;z-index:0;filter:blur(20px)}
+          .esp-orb3{position:fixed;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(20,184,166,0.18) 0%,transparent 70%);top:45%;left:-150px;transform:translateY(-50%);pointer-events:none;z-index:0;filter:blur(20px)}
+
+          /* ── REVEAL ── */
+          .esp-reveal{opacity:0;transform:translateY(28px);transition:opacity 0.55s cubic-bezier(0.22,1,0.36,1),transform 0.55s cubic-bezier(0.22,1,0.36,1)}
+          .esp-visible{opacity:1;transform:translateY(0)}
+
+          /* ── SHARED SECTION ── */
           .esp-sec{padding:80px 40px;position:relative;z-index:1}
           .esp-sec-in{max-width:1280px;margin:0 auto}
-          .esp-white-sec{background:#fff}
-          .esp-light-sec{background:#f8fafd;border-top:1px solid rgba(15,52,96,.08);border-bottom:1px solid rgba(15,52,96,.08)}
-          .esp-sec-ey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#1D4ED8;display:block;margin-bottom:10px}
-          .esp-sec-ttl{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;letter-spacing:-1px;color:#111827;margin:0 0 16px}
-          .esp-sec-sub{font-size:15px;color:#4A6080;line-height:1.7;max-width:700px;margin:0 0 48px}
-          .esp-dark-sec{padding:80px 40px;background:linear-gradient(135deg,#071e3d 0%,#0c1c44 40%,#0a2549 100%);position:relative;z-index:1}
-          .esp-dark-in{max-width:1280px;margin:0 auto}
-          .esp-dark-ey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.55);display:block;margin-bottom:10px}
-          .esp-dark-ttl{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;letter-spacing:-1px;color:#fff;margin:0 0 16px}
-          .esp-dark-sub{font-size:15px;color:rgba(255,255,255,.65);line-height:1.7;max-width:700px;margin:0 0 48px}
+          .esp-white{background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08)}
+          .esp-ey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:12px;display:block}
+          .esp-ttl{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;letter-spacing:-1px;color:#0F1F40;margin-bottom:10px}
+          .esp-desc{font-size:15px;color:#4A6080;line-height:1.7;max-width:640px;margin-bottom:40px}
 
-          /* Hero */
-          .esp-hero{background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 30%,#e0f2fe 60%,#ede9fe 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .esp-hero-orb1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(29,78,216,.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .esp-hero-orb2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(30,58,138,.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .esp-hero-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}
-          .esp-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500}
-          .esp-bc a{color:#6b7280;text-decoration:none}.esp-bc a:hover{color:#1D4ED8}.esp-bc-sep{color:#d1d5db}
-          .esp-ey-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(29,78,216,.08);border:1px solid rgba(29,78,216,.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#1D4ED8;margin-bottom:28px}
-          .esp-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;color:#0F1F40;margin:0 0 20px;max-width:920px;margin-left:auto;margin-right:auto}
-          .esp-hero-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:640px;margin:0 auto 36px}
-          .esp-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
-          .esp-btn-p{display:inline-flex;align-items:center;gap:8px;background:#1D4ED8;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .25s;box-shadow:0 4px 20px rgba(29,78,216,.28)}
-          .esp-btn-p:hover{background:#1E3A8A;box-shadow:0 8px 32px rgba(29,78,216,.38);transform:translateY(-2px)}
-          .esp-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,.18);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .25s}
-          .esp-btn-s:hover{border-color:#1D4ED8;color:#1D4ED8;transform:translateY(-2px)}
-          .esp-stats-bar{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(29,78,216,.07)}
-          .esp-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(29,78,216,.08)}.esp-stat:last-child{border-right:none}
-          .esp-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .esp-stat-v{font-size:1.6rem;font-weight:900;color:#1D4ED8;letter-spacing:-.5px}
-
-          /* Pricing */
-          .esp-pricing-sec{background:#f8fafd;padding:80px 40px}
-          .esp-pricing-in{max-width:1280px;margin:0 auto}
-          .esp-tog-row{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:48px}
-          .esp-tog-lbl{font-size:15px;font-weight:600;color:#6b7280;transition:color .2s}
-          .esp-tog-lbl.active{color:#0F1F40}
-          .esp-tog-btn{width:50px;height:28px;background:#d1d5db;border-radius:100px;position:relative;cursor:pointer;border:none;padding:0;transition:background .25s;flex-shrink:0}
-          .esp-tog-btn.on{background:#1D4ED8}
-          .esp-tog-knob{position:absolute;top:4px;left:4px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform .25s;box-shadow:0 1px 4px rgba(0,0,0,.18)}
-          .esp-tog-btn.on .esp-tog-knob{transform:translateX(22px)}
-          .esp-save-badge{display:inline-flex;align-items:center;background:rgba(29,78,216,.10);color:#1D4ED8;font-size:11px;font-weight:700;padding:2px 8px;border-radius:100px;margin-left:6px;letter-spacing:.5px}
-          .esp-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
-          .esp-card{background:#fff;border:1.5px solid #e5e9f0;border-radius:24px;padding:32px 28px;position:relative;transition:box-shadow .22s,transform .22s;overflow:hidden}
-          .esp-card:hover{box-shadow:0 12px 40px rgba(29,78,216,.08)}
-          .esp-card-pop{background:linear-gradient(135deg,#1E3A8A 0%,#1D4ED8 100%);border-color:transparent;transform:scale(1.04);box-shadow:0 20px 60px rgba(29,78,216,.25)}
-          .esp-card-pop:hover{transform:scale(1.04) translateY(-4px)}
-          .esp-pop-tag{position:absolute;top:20px;right:20px;background:rgba(255,255,255,.20);color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:100px;letter-spacing:.5px;border:1px solid rgba(255,255,255,.30)}
-          .esp-plan-name{font-size:22px;font-weight:800;color:#0F1F40;margin-bottom:6px}
-          .esp-card-pop .esp-plan-name{color:#fff}
-          .esp-plan-desc{font-size:13px;color:#6b7280;line-height:1.55;margin-bottom:24px}
-          .esp-card-pop .esp-plan-desc{color:rgba(255,255,255,.75)}
-          .esp-price-row{display:flex;align-items:baseline;gap:4px;margin-bottom:4px}
-          .esp-currency{font-size:1.4rem;font-weight:700;color:#1D4ED8}
-          .esp-card-pop .esp-currency{color:rgba(255,255,255,.85)}
-          .esp-amount{font-size:3rem;font-weight:900;letter-spacing:-2px;color:#0F1F40;line-height:1}
-          .esp-card-pop .esp-amount{color:#fff}
-          .esp-per{font-size:13px;color:#9ca3af;font-weight:500;margin-left:2px}
-          .esp-card-pop .esp-per{color:rgba(255,255,255,.65)}
-          .esp-billed{font-size:12px;color:#9ca3af;margin-bottom:4px}
-          .esp-card-pop .esp-billed{color:rgba(255,255,255,.60)}
-          .esp-save-line{font-size:12px;font-weight:700;color:#16a34a;margin-bottom:20px;min-height:18px}
-          .esp-card-pop .esp-save-line{color:#86efac}
-          .esp-cta-card{display:block;width:100%;text-align:center;padding:13px;border-radius:50px;font-weight:700;font-size:.9rem;text-decoration:none;background:#1D4ED8;color:#fff;transition:all .22s;margin-bottom:24px}
-          .esp-cta-card:hover{background:#1E3A8A;transform:translateY(-1px);box-shadow:0 6px 24px rgba(29,78,216,.28)}
-          .esp-card-pop .esp-cta-card{background:#fff;color:#1D4ED8}
-          .esp-card-pop .esp-cta-card:hover{background:#eff6ff}
-          .esp-divider{height:1px;background:#f1f5f9;margin-bottom:20px}
-          .esp-card-pop .esp-divider{background:rgba(255,255,255,.15)}
-          .esp-feat-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
-          .esp-feat-list li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#374151;line-height:1.4}
-          .esp-card-pop .esp-feat-list li{color:rgba(255,255,255,.88)}
-          .esp-feat-list li svg{color:#1D4ED8;flex-shrink:0;margin-top:2px}
-          .esp-card-pop .esp-feat-list li svg{color:#93c5fd}
-          .esp-trust{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:32px;padding-top:32px;border-top:1px solid #e5e9f0}
-          .esp-trust-item{font-size:13px;color:#6b7280;display:flex;align-items:center;gap:6px;font-weight:500}
-
-          /* Cards grid */
-          .esp-3grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-          .esp-2grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-          .esp-glass{background:linear-gradient(135deg,rgba(219,234,254,.55) 0%,rgba(255,255,255,.80) 60%,rgba(237,233,254,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:20px;padding:28px 24px;box-shadow:0 4px 24px rgba(15,52,96,.07),inset 0 1px 0 rgba(255,255,255,.95)}
-          .esp-card-icon{width:44px;height:44px;background:rgba(29,78,216,.10);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
-          .esp-card-icon svg{width:22px;height:22px;stroke:#1D4ED8;fill:none}
+          /* ── GLASS CARD ── */
+          .esp-glass{background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:28px 24px;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95)}
+          .esp-glass:hover{border-color:rgba(217,119,6,0.25);box-shadow:0 8px 36px rgba(15,52,96,0.12),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px)}
+          .esp-glass{transition:border-color 0.22s,box-shadow 0.22s,transform 0.22s}
           .esp-card-ttl{font-size:15px;font-weight:700;color:#0F1F40;margin-bottom:8px}
           .esp-card-body{font-size:13px;color:#4A6080;line-height:1.65}
-          .esp-num-badge{width:40px;height:40px;background:linear-gradient(135deg,#1E3A8A,#1D4ED8);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;font-weight:800;margin-bottom:16px;box-shadow:0 4px 12px rgba(29,78,216,.25)}
-          .esp-eyenum{font-size:11px;font-weight:800;letter-spacing:2px;color:#1D4ED8;margin-bottom:10px}
+          .esp-num-badge{width:40px;height:40px;background:linear-gradient(135deg,#0F3460,#1a4b82);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;font-weight:800;margin-bottom:16px;box-shadow:0 4px 12px rgba(15,52,96,0.25)}
 
-          /* Dark cards */
-          .esp-dark-card{background:rgba(255,255,255,.07);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:28px 24px}
-          .esp-dark-card-icon{width:44px;height:44px;background:rgba(255,255,255,.12);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
-          .esp-dark-card-icon svg{width:22px;height:22px;stroke:rgba(255,255,255,.85);fill:none}
-          .esp-dark-card-ttl{font-size:16px;font-weight:700;color:#fff;margin-bottom:8px}
-          .esp-dark-card-body{font-size:13px;color:rgba(255,255,255,.65);line-height:1.65}
+          /* ── GRIDS ── */
+          .esp-3grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+          .esp-4grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+          .esp-2grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
 
-          /* Platform cards */
-          .esp-platform-card{background:linear-gradient(135deg,rgba(219,234,254,.55) 0%,rgba(255,255,255,.80) 60%,rgba(237,233,254,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:20px;padding:28px 24px;text-align:center;box-shadow:0 4px 24px rgba(15,52,96,.07),inset 0 1px 0 rgba(255,255,255,.95);transition:transform .25s,box-shadow .25s}
-          .esp-platform-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(29,78,216,.12)}
-          .esp-platform-icon{width:48px;height:48px;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;background:rgba(29,78,216,.10);border-radius:12px}
-          .esp-platform-icon svg{width:24px;height:24px;stroke:#1D4ED8;fill:none}
+          /* ── HERO ── */
+          .esp-hero{position:relative;overflow:hidden;z-index:1;padding:72px 40px 0}
+          .esp-hero::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.12) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px)}
+          .esp-hero::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.18) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px)}
+          .esp-hero-content{position:relative;z-index:2;text-align:center;max-width:900px;margin:0 auto}
+          .esp-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500}
+          .esp-bc a{color:#6b7280;text-decoration:none}.esp-bc a:hover{color:#D97706}.esp-bc-sep{color:#d1d5db}
+          .esp-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:18px}
+          .esp-h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;color:#0F1F40}
+          .esp-hero-sub{font-size:16px;color:#3A507A;line-height:1.65;max-width:660px;margin:0 auto 28px}
+          .esp-hero-btns{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:32px}
+          .esp-btn-primary{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:8px;padding:14px 36px;background:rgba(15,52,96,0.85);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.20);border-radius:50px;color:#fff;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 6px 24px rgba(15,52,96,0.25)}
+          .esp-btn-primary:hover{background:rgba(15,52,96,1);border-color:rgba(245,158,11,0.6);transform:translateY(-2px);box-shadow:0 12px 36px rgba(15,52,96,0.30)}
+          .esp-btn-secondary{display:inline-flex;align-items:center;padding:14px 32px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1)}
+          .esp-btn-secondary:hover{background:rgba(255,255,255,0.85);border-color:rgba(245,158,11,0.6);transform:translateY(-2px)}
+
+          /* ── STATS BAR ── */
+          .esp-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95)}
+          .esp-stat{padding:18px 20px;text-align:center;border-right:1px solid rgba(15,52,96,0.10)}
+          .esp-stat:last-child{border-right:none}
+          .esp-stat-l{font-size:12px;color:#4A6080;font-weight:500;margin-bottom:6px}
+          .esp-stat-v{font-size:26px;font-weight:900;color:#D97706;letter-spacing:-0.5px;line-height:1}
+
+          /* ── PRICING ── */
+          .esp-pricing-sec{padding:80px 40px;position:relative;z-index:1}
+          .esp-pricing-in{max-width:1280px;margin:0 auto}
+          .esp-tog-row{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:48px}
+          .esp-tog-lbl{font-size:15px;font-weight:600;color:#6b7280;transition:color 0.2s}
+          .esp-tog-lbl.active{color:#0F1F40}
+          .esp-tog-btn{width:50px;height:28px;background:#d1d5db;border-radius:100px;position:relative;cursor:pointer;border:none;padding:0;transition:background 0.25s;flex-shrink:0}
+          .esp-tog-btn.on{background:#D97706}
+          .esp-tog-knob{position:absolute;top:4px;left:4px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform 0.25s;box-shadow:0 1px 4px rgba(0,0,0,0.18)}
+          .esp-tog-btn.on .esp-tog-knob{transform:translateX(22px)}
+          .esp-save-badge{display:inline-flex;align-items:center;background:rgba(217,119,6,0.12);color:#B45309;font-size:11px;font-weight:700;padding:2px 8px;border-radius:100px;margin-left:6px;letter-spacing:0.5px}
+          .esp-plan-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
+          .esp-plan-card{background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.88) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:24px;padding:32px 28px;position:relative;transition:box-shadow 0.22s,transform 0.22s,border-color 0.22s;overflow:hidden;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95)}
+          .esp-plan-card:hover{box-shadow:0 16px 48px rgba(15,52,96,0.14);transform:translateY(-4px)}
+          .esp-plan-card-pop{background:linear-gradient(135deg,#071e3d 0%,#0F3460 50%,#0a2549 100%);border-color:rgba(217,119,6,0.50);transform:scale(1.03);box-shadow:0 20px 60px rgba(15,52,96,0.28)}
+          .esp-plan-card-pop:hover{transform:scale(1.03) translateY(-4px)}
+          .esp-pop-tag{position:absolute;top:20px;right:20px;background:rgba(217,119,6,0.15);color:#D97706;font-size:11px;font-weight:700;padding:4px 10px;border-radius:100px;letter-spacing:0.5px;border:1px solid rgba(217,119,6,0.30)}
+          .esp-plan-card-pop .esp-pop-tag{background:rgba(217,119,6,0.20);border-color:rgba(217,119,6,0.50)}
+          .esp-plan-name{font-size:22px;font-weight:800;color:#0F1F40;margin-bottom:6px}
+          .esp-plan-card-pop .esp-plan-name{color:#fff}
+          .esp-plan-desc{font-size:13px;color:#4A6080;line-height:1.55;margin-bottom:24px}
+          .esp-plan-card-pop .esp-plan-desc{color:rgba(255,255,255,0.70)}
+          .esp-price-row{display:flex;align-items:baseline;gap:4px;margin-bottom:4px}
+          .esp-currency{font-size:1.4rem;font-weight:700;color:#D97706}
+          .esp-amount{font-size:3rem;font-weight:900;letter-spacing:-2px;color:#0F1F40;line-height:1}
+          .esp-plan-card-pop .esp-currency,.esp-plan-card-pop .esp-amount{color:#fff}
+          .esp-per{font-size:13px;color:#9ca3af;font-weight:500;margin-left:2px}
+          .esp-plan-card-pop .esp-per{color:rgba(255,255,255,0.55)}
+          .esp-billed{font-size:12px;color:#9ca3af;margin-bottom:4px}
+          .esp-plan-card-pop .esp-billed{color:rgba(255,255,255,0.55)}
+          .esp-save-line{font-size:12px;font-weight:700;color:#D97706;margin-bottom:20px;min-height:18px}
+          .esp-plan-card-pop .esp-save-line{color:#fbbf24}
+          .esp-cta-plan{display:block;width:100%;text-align:center;padding:13px;border-radius:50px;font-weight:700;font-size:0.9rem;text-decoration:none;background:rgba(15,52,96,0.85);color:#fff;border:1.5px solid rgba(255,255,255,0.20);transition:all 0.22s;margin-bottom:24px}
+          .esp-cta-plan:hover{background:rgba(15,52,96,1);border-color:rgba(245,158,11,0.6);transform:translateY(-1px)}
+          .esp-plan-card-pop .esp-cta-plan{background:rgba(217,119,6,0.90);border-color:rgba(255,255,255,0.20)}
+          .esp-plan-card-pop .esp-cta-plan:hover{background:#D97706}
+          .esp-plan-divider{height:1px;background:rgba(15,52,96,0.10);margin-bottom:20px}
+          .esp-plan-card-pop .esp-plan-divider{background:rgba(255,255,255,0.15)}
+          .esp-feat-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+          .esp-feat-list li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#374151;line-height:1.4}
+          .esp-plan-card-pop .esp-feat-list li{color:rgba(255,255,255,0.85)}
+          .esp-feat-list li svg{color:#D97706;flex-shrink:0;margin-top:2px}
+          .esp-plan-card-pop .esp-feat-list li svg{color:#fbbf24}
+          .esp-trust{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:32px;padding-top:32px;border-top:1px solid rgba(15,52,96,0.12)}
+          .esp-trust-item{font-size:13px;color:#6b7280;display:flex;align-items:center;gap:6px;font-weight:500}
+          .esp-trust-item svg{color:#D97706}
+
+          /* ── DARK SECTION ── */
+          .esp-dark-sec{padding:80px 40px;background:linear-gradient(135deg,#071e3d 0%,#0F3460 40%,#0a2549 100%);position:relative;z-index:1}
+          .esp-dark-in{max-width:1280px;margin:0 auto}
+          .esp-dark-ey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.55);display:block;margin-bottom:10px}
+          .esp-dark-ttl{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;letter-spacing:-1px;color:#fff;margin-bottom:10px}
+          .esp-dark-desc{font-size:15px;color:rgba(255,255,255,0.65);line-height:1.7;max-width:640px;margin-bottom:40px}
+          .esp-dark-card{background:rgba(255,255,255,0.07);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:28px 24px;transition:border-color 0.2s,background 0.2s}
+          .esp-dark-card:hover{background:rgba(255,255,255,0.10);border-color:rgba(217,119,6,0.40)}
+          .esp-dark-card-num{width:36px;height:36px;background:rgba(217,119,6,0.20);border:1px solid rgba(217,119,6,0.40);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fbbf24;margin-bottom:14px}
+          .esp-dark-card-ttl{font-size:15px;font-weight:700;color:#fff;margin-bottom:8px}
+          .esp-dark-card-body{font-size:13px;color:rgba(255,255,255,0.65);line-height:1.65}
+
+          /* ── RESULTS ── */
+          .esp-results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:40px}
+          .esp-result-card{background:rgba(255,255,255,0.07);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:28px 20px;text-align:center;transition:border-color 0.2s}
+          .esp-result-card:hover{border-color:rgba(217,119,6,0.50)}
+          .esp-result-metric{font-size:clamp(2.2rem,4vw,3.2rem);font-weight:900;color:#D97706;letter-spacing:-1px;line-height:1;margin-bottom:8px}
+          .esp-result-label{font-size:13px;font-weight:700;color:rgba(255,255,255,0.85);margin-bottom:8px}
+          .esp-result-detail{font-size:11px;color:rgba(255,255,255,0.50);line-height:1.5}
+
+          /* ── PLATFORM CARDS ── */
+          .esp-platform-card{background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:24px;box-shadow:0 4px 24px rgba(15,52,96,0.07),inset 0 1px 0 rgba(255,255,255,0.95);transition:transform 0.25s,box-shadow 0.25s,border-color 0.25s}
+          .esp-platform-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(15,52,96,0.12);border-color:rgba(217,119,6,0.30)}
+          .esp-platform-dot{width:10px;height:10px;border-radius:50%;background:#D97706;margin-bottom:14px;box-shadow:0 0 0 3px rgba(217,119,6,0.15)}
           .esp-platform-name{font-size:15px;font-weight:700;color:#0F1F40;margin-bottom:8px}
-          .esp-platform-note{font-size:12px;color:#6b7280;line-height:1.55}
+          .esp-platform-note{font-size:12px;color:#4A6080;line-height:1.6}
 
-          /* Comparison table */
-          .esp-table-wrap{overflow-x:auto;border-radius:16px;border:1px solid rgba(15,52,96,.12);box-shadow:0 4px 24px rgba(15,52,96,.06)}
+          /* ── COMPARISON TABLE ── */
+          .esp-table-wrap{overflow-x:auto;border-radius:16px;border:1px solid rgba(15,52,96,0.12);box-shadow:0 4px 24px rgba(15,52,96,0.06)}
           .esp-table{width:100%;border-collapse:collapse;font-size:13px}
-          .esp-table th{padding:14px 20px;text-align:center;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#6b7280;background:#f8fafd;border-bottom:1px solid rgba(15,52,96,.10)}
+          .esp-table th{padding:14px 20px;text-align:center;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#6b7280;background:#f8fafd;border-bottom:1px solid rgba(15,52,96,0.10)}
           .esp-table th:first-child{text-align:left;color:#0F1F40}
-          .esp-th-pop{background:linear-gradient(135deg,#1E3A8A,#1D4ED8)!important;color:#fff!important}
-          .esp-table td{padding:12px 20px;text-align:center;border-bottom:1px solid rgba(15,52,96,.06);color:#374151}
+          .esp-th-pop{background:linear-gradient(135deg,#0F3460,#1a4b82)!important;color:#fff!important}
+          .esp-table td{padding:12px 20px;text-align:center;border-bottom:1px solid rgba(15,52,96,0.06);color:#374151}
           .esp-table td:first-child{text-align:left;font-weight:600;color:#0F1F40}
           .esp-table tr:last-child td{border-bottom:none}
-          .esp-table tr:hover td{background:rgba(29,78,216,.02)}
-          .esp-td-pop{background:rgba(29,78,216,.04)!important}
-          .esp-chk{color:#16a34a;font-weight:700}
+          .esp-table tr:hover td{background:rgba(15,52,96,0.02)}
+          .esp-td-pop{background:rgba(15,52,96,0.04)!important}
           .esp-dash-cell{color:#d1d5db}
 
-          /* Results */
-          .esp-results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-bottom:48px}
-          .esp-result-card{background:rgba(255,255,255,.07);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:28px 24px;text-align:center}
-          .esp-result-metric{font-size:clamp(2.2rem,4vw,3.5rem);font-weight:900;color:#fff;letter-spacing:-1px;line-height:1;margin-bottom:8px}
-          .esp-result-label{font-size:13px;font-weight:700;color:rgba(255,255,255,.85);margin-bottom:8px}
-          .esp-result-detail{font-size:11px;color:rgba(255,255,255,.50);line-height:1.5}
-          .esp-results-cta{text-align:center}
-          .esp-results-cta a{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);backdrop-filter:blur(12px);border:1.5px solid rgba(255,255,255,.25);color:#fff;padding:14px 32px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .25s}
-          .esp-results-cta a:hover{background:rgba(255,255,255,.20);border-color:rgba(255,255,255,.45);transform:translateY(-2px)}
-
-          /* Testimonials */
-          .esp-testi-sec{padding:72px 0;background:linear-gradient(135deg,#faf8ff 0%,#f7f4ff 50%,#f3f8ff 100%);overflow:hidden}
-          .esp-testi-hd{max-width:1280px;margin:0 auto 40px;padding:0 40px;text-align:center}
-          .esp-trow{overflow:hidden;position:relative}
-          .esp-trow+.esp-trow{margin-top:16px}
-          .esp-tfade-l{position:absolute;left:0;top:0;bottom:0;width:160px;z-index:1;background:linear-gradient(to right,#faf8ff,transparent);pointer-events:none}
-          .esp-tfade-r{position:absolute;right:0;top:0;bottom:0;width:160px;z-index:1;background:linear-gradient(to left,#faf8ff,transparent);pointer-events:none}
+          /* ── TESTIMONIALS ── */
+          .esp-testi-sec{padding:72px 0;background:#f8fafd;overflow:hidden;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08);position:relative;z-index:1}
+          .esp-testi-hd{max-width:1280px;margin:0 auto 0;padding:0 40px;text-align:center}
+          @keyframes esp-marq-l{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+          @keyframes esp-marq-r{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
+          .esp-trow{overflow:hidden;position:relative;margin-bottom:16px}
+          .esp-trow:last-child{margin-bottom:0}
+          .esp-tfade-l{position:absolute;left:0;top:0;bottom:0;width:160px;z-index:1;background:linear-gradient(to right,#f8fafd,transparent);pointer-events:none}
+          .esp-tfade-r{position:absolute;right:0;top:0;bottom:0;width:160px;z-index:1;background:linear-gradient(to left,#f8fafd,transparent);pointer-events:none}
           .esp-ttrack{display:flex;gap:20px;width:max-content;padding-left:20px;animation:esp-marq-l 42s linear infinite}
           .esp-ttrack-rev{display:flex;gap:20px;width:max-content;padding-left:20px;animation:esp-marq-r 42s linear infinite}
           .esp-trow:hover .esp-ttrack,.esp-trow:hover .esp-ttrack-rev{animation-play-state:paused}
-          @keyframes esp-marq-l{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-          @keyframes esp-marq-r{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
-          .esp-tcard{width:440px;flex-shrink:0;background:#fff;border:1px solid rgba(15,52,96,.08);border-radius:16px;padding:20px 24px;box-shadow:0 2px 16px rgba(0,0,0,.05);display:flex;flex-direction:column;gap:12px;user-select:none}
+          .esp-tcard{width:400px;flex-shrink:0;background:#fff;border:1px solid rgba(15,52,96,0.08);border-radius:16px;padding:24px;box-shadow:0 2px 16px rgba(0,0,0,0.05);display:flex;flex-direction:column;gap:12px;user-select:none;transition:border-color 0.2s}
+          .esp-tcard:hover{border-color:rgba(217,119,6,0.30)}
           .esp-tcard-star{color:#F59E0B;font-size:14px}
           .esp-tcard-text{font-size:14px;color:#374151;line-height:1.75;margin:0;flex-grow:1}
           .esp-tcard-author{display:flex;align-items:center;gap:12px;border-top:1px solid #f3f4f6;padding-top:16px}
@@ -364,165 +407,166 @@ export default function EcommerceSeoPackages() {
           .esp-tcard-name{font-weight:700;color:#111827;font-size:13px}
           .esp-tcard-role{color:#9ca3af;font-size:12px;margin-top:1px}
 
-          /* Audit form */
-          .esp-audit-sec{padding:72px 40px;background:linear-gradient(135deg,rgba(254,243,199,.70) 0%,rgba(255,255,255,.60) 40%,rgba(219,234,254,.65) 100%);position:relative;z-index:1;border-top:1px solid rgba(255,255,255,.80)}
-          .esp-audit-in{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;align-items:start;gap:48px}
-          .esp-audit-ttl{font-size:clamp(2rem,3.5vw,2.8rem);font-weight:900;line-height:1.2;margin:0 0 16px;color:#111827}
-          .esp-audit-desc{font-size:14px;color:#4A6080;line-height:1.65;margin:0 0 24px}
-          .esp-audit-benefits-box{background:linear-gradient(135deg,rgba(255,255,255,.70) 0%,rgba(219,234,254,.35) 100%);border:1px solid rgba(255,255,255,.90);border-radius:14px;padding:24px;backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,1);display:flex;flex-direction:column;gap:16px}
-          .esp-audit-ben{display:flex;gap:12px;align-items:flex-start}
-          .esp-audit-ben-icon{width:20px;height:20px;stroke:#D97706;fill:none;flex-shrink:0;margin-top:2px}
-          .esp-audit-ben-text{font-size:13px;color:#4A6080;line-height:1.55}
-          .esp-audit-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-top:20px;border-top:1px solid rgba(15,52,96,.10)}
-          .esp-audit-stat-num{font-size:36px;font-weight:900;color:#0F3460;line-height:1;margin-bottom:4px}
-          .esp-audit-stat-txt{font-size:12px;color:#4A6080;font-weight:500;line-height:1.4}
-          .esp-audit-form-box{background:linear-gradient(135deg,rgba(255,255,255,.88) 0%,rgba(237,233,254,.25) 50%,rgba(255,255,255,.84) 100%);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.92);border-radius:20px;padding:36px;box-shadow:0 8px 40px rgba(15,52,96,.10),inset 0 1px 0 rgba(255,255,255,1)}
-          .esp-audit-form-box h3{font-size:24px;font-weight:700;margin:0 0 24px;color:#0F1F40;letter-spacing:-.5px}
-          .esp-af-form{display:flex;flex-direction:column;gap:16px}
-          .esp-af-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+          /* ── CONTACT FORM ── */
+          .esp-contact-sec{padding:80px 40px;position:relative;z-index:1}
+          .esp-contact-in{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;align-items:start;gap:48px}
+          .esp-contact-left h2{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;line-height:1.2;margin:0 0 16px;color:#0F1F40;letter-spacing:-0.5px}
+          .esp-contact-left p{font-size:14px;color:#4A6080;line-height:1.65;margin:0 0 24px}
+          .esp-trust-box{background:linear-gradient(135deg,rgba(255,255,255,0.70) 0%,rgba(219,234,254,0.35) 100%);border:1.5px solid rgba(217,119,6,0.25);border-radius:16px;padding:24px;backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,1);display:flex;flex-direction:column;gap:14px}
+          .esp-trust-row{display:flex;gap:12px;align-items:flex-start}
+          .esp-trust-row svg{color:#D97706;flex-shrink:0;margin-top:2px}
+          .esp-trust-row span{font-size:13px;color:#4A6080;line-height:1.55}
+          .esp-contact-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-top:20px;border-top:1px solid rgba(15,52,96,0.10)}
+          .esp-cs-num{font-size:32px;font-weight:900;color:#0F3460;line-height:1;margin-bottom:4px}
+          .esp-cs-lbl{font-size:12px;color:#4A6080;font-weight:500;line-height:1.4}
+          .esp-form-box{background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.88) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.92);border-radius:20px;padding:36px;box-shadow:0 8px 40px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1)}
+          .esp-form-box h3{font-size:22px;font-weight:700;margin:0 0 24px;color:#0F1F40;letter-spacing:-0.5px}
+          .esp-form{display:flex;flex-direction:column;gap:16px}
+          .esp-form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
           .esp-fg{display:flex;flex-direction:column;gap:6px}
-          .esp-fg label{font-size:12px;font-weight:500;color:#0F1F40}
-          .esp-fg input,.esp-fg textarea,.esp-fg select{padding:10px 14px;border:1px solid rgba(15,52,96,.15);border-radius:6px;font-size:13px;font-family:inherit;color:#0F1F40;background:rgba(255,255,255,.55);box-shadow:inset 0 1px 4px rgba(15,52,96,.06);transition:border-color .2s,background .2s;box-sizing:border-box;width:100%}
-          .esp-fg input:focus,.esp-fg textarea:focus,.esp-fg select:focus{outline:none;border-color:#D97706;background:rgba(255,255,255,.90);box-shadow:0 0 0 3px rgba(217,119,6,.12)}
+          .esp-fg label{font-size:12px;font-weight:600;color:#0F1F40}
+          .esp-fg input,.esp-fg textarea,.esp-fg select{padding:10px 14px;border:1px solid rgba(15,52,96,0.15);border-radius:8px;font-size:13px;font-family:inherit;color:#0F1F40;background:rgba(255,255,255,0.60);box-shadow:inset 0 1px 4px rgba(15,52,96,0.06);transition:border-color 0.2s,background 0.2s;box-sizing:border-box;width:100%}
+          .esp-fg input:focus,.esp-fg textarea:focus,.esp-fg select:focus{outline:none;border-color:#D97706;background:rgba(255,255,255,0.95);box-shadow:0 0 0 3px rgba(217,119,6,0.12)}
           .esp-fg textarea{resize:vertical}
-          .esp-af-phone-wrap{display:flex;border:1px solid rgba(15,52,96,.15);border-radius:6px;overflow:hidden;background:rgba(255,255,255,.55)}
-          .esp-af-phone-wrap select{padding:10px;border:none;background:transparent;font-size:12px;width:auto!important;min-width:70px;max-width:90px;color:#0F1F40;font-family:inherit;flex-shrink:0}
-          .esp-af-phone-wrap input{flex:1!important;width:auto!important;min-width:0!important;border:none!important;border-radius:0!important;padding:10px 14px!important;box-shadow:none!important;background:rgba(255,255,255,.55)!important;color:#0F1F40!important}
-          .esp-af-phone-wrap input:focus{outline:none!important;box-shadow:none!important;background:rgba(255,255,255,.90)!important;border-color:transparent!important}
-          .esp-af-consent{display:flex;gap:8px;align-items:flex-start}
-          .esp-af-consent input[type="checkbox"]{margin-top:3px;width:16px;height:16px;cursor:pointer;flex-shrink:0}
-          .esp-af-consent label{font-size:11px;color:#4A6080;line-height:1.5;margin:0}
-          .esp-af-consent a{color:#0F3460;text-decoration:none}
-          .esp-audit-submit{padding:14px 28px;background:rgba(15,52,96,.85);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.30);color:#fff;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all .3s;width:100%;box-shadow:0 6px 24px rgba(15,52,96,.25),inset 0 1px 0 rgba(255,255,255,.15)}
-          .esp-audit-submit:hover:not(:disabled){background:rgba(15,52,96,.95);border-color:rgba(245,158,11,.6);transform:translateY(-2px)}
-          .esp-audit-submit:disabled{opacity:.65;cursor:not-allowed}
-          .esp-audit-success-wrap{text-align:center;padding:32px 0}
-          .esp-audit-success-icon{width:64px;height:64px;background:linear-gradient(135deg,#1E3A8A,#1D4ED8);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 8px 24px rgba(29,78,216,.25)}
-          .esp-audit-success-icon svg{width:30px;height:30px;stroke:#fff;fill:none}
-          .esp-audit-success-wrap h3{font-size:20px;font-weight:700;color:#0F1F40;margin:0 0 10px}
-          .esp-audit-success-wrap p{font-size:14px;color:#4A6080;margin:0;line-height:1.6}
-          .esp-val-err{background:rgba(220,38,38,.06);border:1px solid rgba(220,38,38,.20);border-radius:8px;padding:10px 14px;font-size:13px;color:#dc2626;margin-bottom:4px}
+          .esp-phone-wrap{display:flex;border:1px solid rgba(15,52,96,0.15);border-radius:8px;overflow:hidden;background:rgba(255,255,255,0.60)}
+          .esp-phone-wrap select{padding:10px;border:none;background:transparent;font-size:12px;width:auto!important;min-width:70px;max-width:90px;color:#0F1F40;font-family:inherit;flex-shrink:0}
+          .esp-phone-wrap input{flex:1!important;width:auto!important;min-width:0!important;border:none!important;border-radius:0!important;padding:10px 14px!important;box-shadow:none!important;background:rgba(255,255,255,0.60)!important;color:#0F1F40!important}
+          .esp-phone-wrap input:focus{outline:none!important;box-shadow:none!important;background:rgba(255,255,255,0.95)!important;border-color:transparent!important}
+          .esp-consent-row{display:flex;gap:8px;align-items:flex-start}
+          .esp-consent-row input[type="checkbox"]{margin-top:3px;width:16px;height:16px;cursor:pointer;flex-shrink:0;accent-color:#D97706}
+          .esp-consent-row label{font-size:11px;color:#4A6080;line-height:1.5;margin:0}
+          .esp-consent-row a{color:#0F3460;text-decoration:none}
+          .esp-submit{padding:14px 28px;background:rgba(15,52,96,0.85);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.20);color:#fff;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all 0.3s;width:100%;box-shadow:0 6px 24px rgba(15,52,96,0.25),inset 0 1px 0 rgba(255,255,255,0.15)}
+          .esp-submit:hover:not(:disabled){background:rgba(15,52,96,1);border-color:rgba(245,158,11,0.6);transform:translateY(-2px)}
+          .esp-submit:disabled{opacity:0.65;cursor:not-allowed}
+          .esp-success-wrap{text-align:center;padding:32px 0}
+          .esp-success-icon{width:64px;height:64px;background:linear-gradient(135deg,#0F3460,#1a4b82);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 8px 24px rgba(15,52,96,0.25)}
+          .esp-success-icon svg{width:30px;height:30px;stroke:#fff;fill:none}
+          .esp-success-wrap h3{font-size:20px;font-weight:700;color:#0F1F40;margin:0 0 10px}
+          .esp-success-wrap p{font-size:14px;color:#4A6080;margin:0;line-height:1.6}
+          .esp-val-err{background:rgba(220,38,38,0.06);border:1px solid rgba(220,38,38,0.20);border-radius:8px;padding:10px 14px;font-size:13px;color:#dc2626;margin-bottom:4px}
 
-          /* FAQ */
+          /* ── FAQ ── */
           .esp-faq-list{display:flex;flex-direction:column;gap:12px}
-          .esp-fitem{background:linear-gradient(135deg,rgba(219,234,254,.55) 0%,rgba(255,255,255,.80) 60%,rgba(237,233,254,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:16px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(15,52,96,.07),inset 0 1px 0 rgba(255,255,255,.95);transition:border-color .2s,box-shadow .2s}
-          .esp-fitem.open{border-color:rgba(29,78,216,.40);box-shadow:0 8px 32px rgba(15,52,96,.12),inset 0 1px 0 rgba(255,255,255,1)}
-          .esp-fitem.open::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#1D4ED8;border-radius:3px 0 0 3px}
+          .esp-fitem{background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:16px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(15,52,96,0.07),inset 0 1px 0 rgba(255,255,255,0.95);transition:border-color 0.2s,box-shadow 0.2s}
+          .esp-fitem.open{border-color:rgba(217,119,6,0.40);box-shadow:0 8px 32px rgba(15,52,96,0.12),inset 0 1px 0 rgba(255,255,255,1)}
+          .esp-fitem.open::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#D97706;border-radius:3px 0 0 3px}
           .esp-fq{width:100%;background:none;border:none;padding:20px 22px 20px 60px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;text-align:left;gap:16px;font-family:inherit;position:relative}
-          .esp-fq-badge{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:28px;height:28px;background:rgba(15,52,96,.08);color:#374151;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:6px;flex-shrink:0;transition:background .2s,color .2s}
-          .esp-fitem.open .esp-fq-badge{background:#1D4ED8;color:#fff}
+          .esp-fq-badge{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:28px;height:28px;background:rgba(15,52,96,0.08);color:#374151;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:6px;flex-shrink:0;transition:background 0.2s,color 0.2s}
+          .esp-fitem.open .esp-fq-badge{background:#D97706;color:#fff}
           .esp-fq-text{font-size:15px;font-weight:600;color:#0F1F40;line-height:1.45}
-          .esp-fitem.open .esp-fq-text{color:#1D4ED8}
-          .esp-fq-chevron{width:22px;height:22px;flex-shrink:0;color:#9ca3af;transition:transform .3s}
-          .esp-fitem.open .esp-fq-chevron{transform:rotate(180deg);color:#1D4ED8}
+          .esp-fitem.open .esp-fq-text{color:#D97706}
+          .esp-fq-chevron{width:22px;height:22px;flex-shrink:0;color:#9ca3af;transition:transform 0.3s}
+          .esp-fitem.open .esp-fq-chevron{transform:rotate(180deg);color:#D97706}
           .esp-fa{font-size:14px;color:#4b5563;line-height:1.8;padding:0 22px 20px 60px}
 
-          /* Related */
-          .esp-related-sec{background:rgba(237,233,254,.18);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.60);padding:80px 40px}
+          /* ── RELATED ── */
+          .esp-related-sec{background:rgba(237,233,254,0.18);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,0.60);padding:80px 40px;position:relative;z-index:1}
           .esp-related-in{max-width:1280px;margin:0 auto;text-align:center}
-          .esp-related-ey{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#4A6080;margin:0 0 14px;display:block}
+          .esp-related-ey{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A6080;margin:0 0 14px;display:block}
           .esp-related-ttl{font-size:clamp(2rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;color:#111827;margin:0 0 16px}
           .esp-related-sub{font-size:15px;color:#0F1F40;line-height:1.7;margin:0 auto;max-width:680px}
-          .esp-related-divider{border:none;border-top:1px solid rgba(15,52,96,.12);margin:40px 0}
+          .esp-related-divider{border:none;border-top:1px solid rgba(15,52,96,0.12);margin:40px 0}
           .esp-related-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
-          .esp-rtag{display:inline-block;padding:11px 22px;border:1.5px solid;border-radius:50px;font-size:14px;font-weight:500;text-decoration:none;transition:all .25s}
-          .esp-rtag:hover{filter:brightness(.92);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.10)}
-          .esp-rtag-blue{background:rgba(59,130,246,.10);border-color:rgba(59,130,246,.30);color:#1D4ED8}
-          .esp-rtag-violet{background:rgba(139,92,246,.10);border-color:rgba(139,92,246,.30);color:#6D28D9}
-          .esp-rtag-amber{background:rgba(245,158,11,.12);border-color:rgba(245,158,11,.35);color:#B45309}
-          .esp-rtag-teal{background:rgba(20,184,166,.10);border-color:rgba(20,184,166,.30);color:#0F766E}
-          .esp-rtag-rose{background:rgba(244,63,94,.10);border-color:rgba(244,63,94,.30);color:#BE123C}
-          .esp-rtag-green{background:rgba(34,197,94,.10);border-color:rgba(34,197,94,.30);color:#15803D}
-          .esp-rtag-indigo{background:rgba(99,102,241,.10);border-color:rgba(99,102,241,.30);color:#4338CA}
-          .esp-rtag-orange{background:rgba(249,115,22,.10);border-color:rgba(249,115,22,.30);color:#C2410C}
-          .esp-rtag-cyan{background:rgba(6,182,212,.10);border-color:rgba(6,182,212,.30);color:#0E7490}
-          .esp-rtag-slate{background:rgba(100,116,139,.10);border-color:rgba(100,116,139,.30);color:#334155}
+          .esp-rtag{display:inline-block;padding:11px 22px;border:1.5px solid;border-radius:50px;font-size:14px;font-weight:500;text-decoration:none;transition:all 0.25s}
+          .esp-rtag:hover{filter:brightness(0.92);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.10)}
+          .esp-rtag-blue{background:rgba(59,130,246,0.10);border-color:rgba(59,130,246,0.30);color:#1D4ED8}
+          .esp-rtag-violet{background:rgba(139,92,246,0.10);border-color:rgba(139,92,246,0.30);color:#6D28D9}
+          .esp-rtag-amber{background:rgba(245,158,11,0.12);border-color:rgba(245,158,11,0.35);color:#B45309}
+          .esp-rtag-teal{background:rgba(20,184,166,0.10);border-color:rgba(20,184,166,0.30);color:#0F766E}
+          .esp-rtag-rose{background:rgba(244,63,94,0.10);border-color:rgba(244,63,94,0.28);color:#BE123C}
+          .esp-rtag-green{background:rgba(34,197,94,0.10);border-color:rgba(34,197,94,0.28);color:#15803D}
+          .esp-rtag-indigo{background:rgba(99,102,241,0.10);border-color:rgba(99,102,241,0.28);color:#4338CA}
+          .esp-rtag-orange{background:rgba(249,115,22,0.10);border-color:rgba(249,115,22,0.30);color:#C2410C}
+          .esp-rtag-cyan{background:rgba(6,182,212,0.10);border-color:rgba(6,182,212,0.28);color:#0E7490}
+          .esp-rtag-slate{background:rgba(100,116,139,0.10);border-color:rgba(100,116,139,0.28);color:#334155}
 
-          /* Responsive */
+          /* ── RESPONSIVE ── */
           @media(max-width:1024px){
-            .esp-cards{grid-template-columns:1fr;max-width:480px;margin:0 auto}
-            .esp-card-pop{transform:none}.esp-card-pop:hover{transform:translateY(-4px)}
+            .esp-plan-cards{grid-template-columns:1fr;max-width:480px;margin:0 auto}
+            .esp-plan-card-pop{transform:none}.esp-plan-card-pop:hover{transform:translateY(-4px)}
             .esp-3grid{grid-template-columns:repeat(2,1fr)}
             .esp-2grid{grid-template-columns:1fr}
+            .esp-4grid{grid-template-columns:repeat(2,1fr)}
             .esp-results-grid{grid-template-columns:repeat(2,1fr)}
-            .esp-audit-in{grid-template-columns:1fr}
+            .esp-contact-in{grid-template-columns:1fr}
           }
           @media(max-width:768px){
-            .esp-hero{padding:60px 24px 0}
-            .esp-sec{padding:60px 24px}
-            .esp-pricing-sec{padding:60px 24px}
-            .esp-dark-sec{padding:60px 24px}
-            .esp-audit-sec{padding:56px 24px}
-            .esp-related-sec{padding:60px 24px}
+            .esp-hero{padding:56px 24px 0}
+            .esp-sec,.esp-pricing-sec,.esp-dark-sec,.esp-contact-sec,.esp-related-sec,.esp-testi-sec{padding-left:24px;padding-right:24px}
             .esp-testi-hd{padding:0 24px}
-            .esp-stats-bar{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}
+            .esp-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}
             .esp-stat:nth-child(2){border-right:none}
-            .esp-btns{flex-direction:column;align-items:center}
-            .esp-trust{gap:16px}
+            .esp-stat:nth-child(3){border-top:1px solid rgba(15,52,96,0.10)}
+            .esp-stat:nth-child(4){border-top:1px solid rgba(15,52,96,0.10);border-right:none}
+            .esp-hero-btns{flex-direction:column;align-items:center}
             .esp-3grid{grid-template-columns:1fr}
             .esp-results-grid{grid-template-columns:1fr}
-            .esp-af-row{grid-template-columns:1fr}
+            .esp-form-row{grid-template-columns:1fr}
+            .esp-tcard{width:320px}
+            .esp-related-ttl{font-size:28px}
+            .esp-trust{gap:12px}
+          }
+          @media(max-width:480px){
+            .esp-tcard{width:280px;padding:18px}
+            .esp-related-ttl{font-size:24px}
+            .esp-contact-stats{grid-template-columns:1fr 1fr 1fr}
           }
         `}</style>
       </Head>
 
       <div className="esp-page">
+        <div className="esp-orb1"/><div className="esp-orb2"/><div className="esp-orb3"/>
 
-        {/* 1. Hero */}
+        {/* ── HERO ── */}
         <section className="esp-hero">
-          <div className="esp-hero-orb1"/><div className="esp-hero-orb2"/>
-          <div className="esp-hero-in">
+          <div className="esp-hero-content">
             <nav className="esp-bc">
               <Link href="/">Home</Link>
               <span className="esp-bc-sep">/</span>
-              <Link href="/seo-services-company">SEO Services</Link>
+              <Link href="/seo-services-company/">SEO Services</Link>
               <span className="esp-bc-sep">/</span>
-              <span style={{color:'#1D4ED8'}}>Ecommerce SEO Packages</span>
+              <span style={{color:'#D97706'}}>Ecommerce SEO Packages</span>
             </nav>
-            <div className="esp-ey-pill">
-              <span style={{width:6,height:6,borderRadius:'50%',background:'#1D4ED8',display:'inline-block'}}/>
-              Shopify · WooCommerce · Magento · BigCommerce
-            </div>
-            <h1 className="esp-h1">
-              Ecommerce SEO Packages That <AuroraText>Grow Organic Revenue</AuroraText> From Your Online Store
-            </h1>
-            <p className="esp-hero-sub">Complete ecommerce SEO for Shopify, WooCommerce, and Magento stores — product page optimisation, technical SEO, schema markup, content, and link building in one transparent monthly plan.</p>
-            <div className="esp-btns">
-              <a href="#free-audit" className="esp-btn-p">
-                Get a Free Store SEO Audit
+            <span className="esp-eyebrow">Ecommerce SEO Packages · Shopify · WooCommerce · Magento</span>
+            <h1 className="esp-h1">Ecommerce SEO Packages — <AuroraText>Grow Organic Revenue</AuroraText>, Not Just Rankings</h1>
+            <p className="esp-hero-sub">Transparent monthly ecommerce SEO packages for Shopify, WooCommerce, Magento, and BigCommerce stores — covering technical SEO, product page optimisation, link building, and content. All in one plan.</p>
+            <div className="esp-hero-btns">
+              <a href="#contact" className="esp-btn-primary">
+                Get a Free Store Audit
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
-              <a href="#pricing" className="esp-btn-s">See Pricing</a>
+              <a href="#plans" className="esp-btn-secondary">Compare Plans</a>
             </div>
-            <div className="esp-stats-bar">
-              {STATS.map(function(s) { return (
+            <div className="esp-stats">
+              {STATS.map(s => (
                 <div key={s.label} className="esp-stat">
                   <div className="esp-stat-l">{s.label}</div>
                   <div className="esp-stat-v">{s.val}</div>
                 </div>
-              ); })}
+              ))}
             </div>
           </div>
         </section>
 
-        {/* 2. Pricing */}
-        <section className="esp-pricing-sec" id="pricing">
+        {/* ── PRICING PLANS ── */}
+        <section className="esp-pricing-sec" id="plans">
           <div className="esp-pricing-in">
             <div className="esp-reveal" style={{textAlign:'center',marginBottom:8}}>
-              <span className="esp-sec-ey">Pricing Plans</span>
-              <h2 className="esp-sec-ttl" style={{maxWidth:700,margin:'0 auto 12px'}}>Choose Your <AuroraText>Ecommerce SEO Package</AuroraText></h2>
-              <p className="esp-sec-sub" style={{margin:'0 auto 44px',textAlign:'center'}}>All packages include a dedicated account manager, monthly reporting, and a 30-day onboarding plan. No setup fee. Cancel anytime on monthly.</p>
+              <span className="esp-ey">Pricing Plans</span>
+              <h2 className="esp-ttl" style={{maxWidth:700,margin:'0 auto 12px'}}>Choose Your <AuroraText>Ecommerce SEO Package</AuroraText></h2>
+              <p className="esp-desc" style={{margin:'0 auto 44px',textAlign:'center',maxWidth:700}}>All packages include a dedicated account manager, monthly reporting, and a 30-day onboarding plan. No setup fee. Cancel anytime on monthly.</p>
             </div>
             <div className="esp-tog-row">
               <span className={'esp-tog-lbl' + (!isYearly ? ' active' : '')}>Monthly</span>
-              <button className={'esp-tog-btn' + (isYearly ? ' on' : '')} onClick={function(){setIsYearly(!isYearly)}} aria-label="Toggle billing period">
+              <button className={'esp-tog-btn' + (isYearly ? ' on' : '')} onClick={() => setIsYearly(!isYearly)} aria-label="Toggle billing period">
                 <span className="esp-tog-knob"/>
               </button>
               <span className={'esp-tog-lbl' + (isYearly ? ' active' : '')}>Yearly <span className="esp-save-badge">Save 17%</span></span>
             </div>
-            <div className="esp-cards">
-              {PLANS.map(function(plan) { return (
-                <div key={plan.slug} className={'esp-card' + (plan.popular ? ' esp-card-pop' : '')}>
+            <div className="esp-plan-cards">
+              {PLANS.map(plan => (
+                <div key={plan.slug} className={'esp-plan-card' + (plan.popular ? ' esp-plan-card-pop' : '')}>
                   {plan.popular && <span className="esp-pop-tag">Most Popular</span>}
                   <div className="esp-plan-name">{plan.name}</div>
                   <p className="esp-plan-desc">{plan.desc}</p>
@@ -532,119 +576,153 @@ export default function EcommerceSeoPackages() {
                     <span className="esp-per">/mo</span>
                   </div>
                   <div className="esp-billed">{isYearly ? 'Billed annually' : 'Billed monthly'}</div>
-                  <div className="esp-save-line">{isYearly ? 'Save $' + plan.yearlySave.toLocaleString() + ' per year' : ' '}</div>
-                  <Link href="/contact-us" className="esp-cta-card">Get Started →</Link>
-                  <div className="esp-divider"/>
+                  <div className="esp-save-line">{isYearly ? 'Save $' + plan.yearlySave.toLocaleString() + ' per year' : ' '}</div>
+                  <a href="#contact" className="esp-cta-plan">Get Started →</a>
+                  <div className="esp-plan-divider"/>
                   <ul className="esp-feat-list">
-                    {plan.features.map(function(f) { return <li key={f}>{CHECK}<span>{f}</span></li>; })}
+                    {plan.features.map(f => <li key={f}>{CHECK}<span>{f}</span></li>)}
                   </ul>
                 </div>
-              ); })}
+              ))}
             </div>
             <div className="esp-trust">
-              {['No setup fee','Cancel with 30 days notice','Dedicated account manager on all plans','Custom Enterprise plans available'].map(function(t) { return (
+              {['No setup fee','Cancel with 30 days notice','Dedicated account manager on all plans','Custom Enterprise plans available'].map(t => (
                 <span key={t} className="esp-trust-item">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                   {t}
                 </span>
-              ); })}
+              ))}
             </div>
           </div>
         </section>
 
-        {/* 3. What is Ecommerce SEO */}
-        <section className="esp-sec esp-light-sec">
+        {/* ── WHAT'S INCLUDED ── */}
+        <section className="esp-sec esp-white">
           <div className="esp-sec-in">
             <div className="esp-reveal">
-              <span className="esp-sec-ey">Understanding Ecommerce SEO</span>
-              <h2 className="esp-sec-ttl">What Are <AuroraText>Ecommerce SEO Packages</AuroraText>?</h2>
-              <p className="esp-sec-sub">Ecommerce SEO is the discipline of ranking your product and category pages for buying-intent search queries. Unlike generic SEO, it must solve challenges unique to online stores: crawl budget allocation across thousands of SKUs, duplicate content from product variants and faceted navigation, structured data for rich Shopping results, Google Merchant Centre feed optimisation, and category page architecture to capture long-tail demand at scale.</p>
+              <span className="esp-ey">Core Deliverables</span>
+              <h2 className="esp-ttl">{"What's Included in Every"} <AuroraText>Ecommerce SEO Plan</AuroraText></h2>
+              <p className="esp-desc">Every package tier — from Starter to Pro — includes these core deliverables. The scale, depth, and frequency increases with each plan.</p>
             </div>
-            <div className="esp-3grid" style={{marginTop:40}}>
-              {[
-                { title:'Product & Category Pages', body:'Every product page is a potential landing page for a buying-intent query. We optimise titles, descriptions, schema, images, and internal linking across your full catalogue.' },
-                { title:'Technical SEO at Scale', body:'Crawl budget management, Core Web Vitals, duplicate content from variants and filters, XML sitemaps, and faceted navigation configuration — at any catalogue size.' },
-                { title:'Shopping & Schema', body:'Product, Review, Offer, and Breadcrumb schema enables rich Google results — star ratings, price, availability — improving CTR before the visitor even clicks.' },
-              ].map(function(c) { return (
-                <div key={c.title} className="esp-glass esp-reveal">
+            <div className="esp-3grid">
+              {INCLUDED.map((c, i) => (
+                <div key={c.title} className="esp-glass esp-reveal" style={{transitionDelay: `${i * 60}ms`}}>
+                  <div className="esp-num-badge">{String(i+1).padStart(2,'0')}</div>
                   <div className="esp-card-ttl">{c.title}</div>
                   <div className="esp-card-body">{c.body}</div>
                 </div>
-              ); })}
+              ))}
             </div>
           </div>
         </section>
 
-        {/* 4. Why Ecommerce SEO */}
-        <section className="esp-sec esp-white-sec">
+        {/* ── WHY ECOMMERCE SEO MATTERS ── */}
+        <section className="esp-sec">
           <div className="esp-sec-in">
             <div className="esp-reveal">
-              <span className="esp-sec-ey">Why It Works</span>
-              <h2 className="esp-sec-ttl">Why <AuroraText>Ecommerce SEO</AuroraText> Delivers Better ROI Than Paid Ads</h2>
-              <p className="esp-sec-sub">Paid ads stop the moment you stop paying. SEO builds a compounding asset that generates organic revenue month after month.</p>
+              <span className="esp-ey">Why It Works</span>
+              <h2 className="esp-ttl">Why <AuroraText>Ecommerce SEO</AuroraText> Delivers Better ROI Than Paid Ads</h2>
+              <p className="esp-desc">Paid ads stop the moment you stop paying. SEO builds a compounding asset that generates organic revenue month after month.</p>
             </div>
             <div className="esp-3grid">
-              {WHY_REASONS.map(function(r) { return (
-                <div key={r.n} className="esp-glass esp-reveal">
-                  <div className="esp-eyenum">{r.n}</div>
+              {WHY_REASONS.map((r, i) => (
+                <div key={r.n} className="esp-glass esp-reveal" style={{transitionDelay: `${i * 60}ms`}}>
+                  <div className="esp-num-badge">{r.n}</div>
                   <div className="esp-card-ttl">{r.title}</div>
                   <div className="esp-card-body">{r.body}</div>
                 </div>
-              ); })}
+              ))}
             </div>
           </div>
         </section>
 
-        {/* 5. AI Overviews — Dark */}
+        {/* ── RESULTS — DARK ── */}
         <section className="esp-dark-sec">
           <div className="esp-dark-in">
             <div className="esp-reveal" style={{textAlign:'center',marginBottom:48}}>
-              <span className="esp-dark-ey">Future-Proof SEO</span>
-              <h2 className="esp-dark-ttl">Ecommerce SEO for <AuroraText>Google AI Overviews</AuroraText> &amp; AI Shopping</h2>
-              <p className="esp-dark-sub" style={{margin:'0 auto'}}>{"Google's AI is reshaping how shoppers discover products. We optimise your store to appear in AI-generated shopping answers — not just traditional search results."}</p>
+              <span className="esp-dark-ey">Proven Results</span>
+              <h2 className="esp-dark-ttl"><AuroraText>Ecommerce SEO Results</AuroraText>: Real Organic Revenue Growth</h2>
+              <p className="esp-dark-desc" style={{margin:'0 auto'}}>Real metrics from real ecommerce stores — across platforms, regions, and verticals.</p>
+            </div>
+            <div className="esp-results-grid esp-reveal">
+              {RESULTS.map(r => (
+                <div key={r.metric} className="esp-result-card">
+                  <div className="esp-result-metric">{r.metric}</div>
+                  <div className="esp-result-label">{r.label}</div>
+                  <div className="esp-result-detail">{r.detail}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── OUR PROCESS ── */}
+        <section className="esp-sec esp-white">
+          <div className="esp-sec-in">
+            <div className="esp-reveal">
+              <span className="esp-ey">How It Works</span>
+              <h2 className="esp-ttl">Our <AuroraText>Ecommerce SEO Process</AuroraText></h2>
+              <p className="esp-desc">A systematic, repeatable process that coordinates technical fixes, on-page optimisation, content, and link building into one coherent strategy.</p>
+            </div>
+            <div className="esp-3grid">
+              {PROCESS_STEPS.map((s, i) => (
+                <div key={s.n} className="esp-glass esp-reveal" style={{transitionDelay: `${i * 60}ms`}}>
+                  <div className="esp-num-badge">{s.n}</div>
+                  <div className="esp-card-ttl">{s.title}</div>
+                  <div className="esp-card-body">{s.body}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── PLATFORMS ── */}
+        <section className="esp-sec">
+          <div className="esp-sec-in">
+            <div className="esp-reveal">
+              <span className="esp-ey">Platform Support</span>
+              <h2 className="esp-ttl">Ecommerce SEO for <AuroraText>Every Major Platform</AuroraText></h2>
+              <p className="esp-desc">Each ecommerce platform has unique technical SEO characteristics. We apply platform-specific knowledge — not one-size-fits-all tactics.</p>
+            </div>
+            <div className="esp-3grid">
+              {PLATFORMS.map((p, i) => (
+                <div key={p.name} className="esp-platform-card esp-reveal" style={{transitionDelay: `${i * 60}ms`}}>
+                  <div className="esp-platform-dot"/>
+                  <div className="esp-platform-name">{p.name}</div>
+                  <div className="esp-platform-note">{p.note}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── AI & GEO DARK ── */}
+        <section className="esp-dark-sec">
+          <div className="esp-dark-in">
+            <div className="esp-reveal" style={{textAlign:'center',marginBottom:48}}>
+              <span className="esp-dark-ey">AI & GEO Optimisation</span>
+              <h2 className="esp-dark-ttl">Built for <AuroraText>Google AI Overviews</AuroraText> &amp; the Next Era of Search</h2>
+              <p className="esp-dark-desc" style={{margin:'0 auto'}}>{"Google's AI is reshaping how shoppers discover products. We optimise your store to appear in AI-generated shopping answers — not just traditional search results."}</p>
             </div>
             <div className="esp-2grid esp-reveal">
-              {AI_CARDS.map(function(c) { return (
+              {AI_CARDS.map(c => (
                 <div key={c.title} className="esp-dark-card">
-                  <div className="esp-dark-card-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{width:22,height:22}}>
-                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                    </svg>
-                  </div>
+                  <div className="esp-dark-card-num">AI</div>
                   <div className="esp-dark-card-ttl">{c.title}</div>
                   <div className="esp-dark-card-body">{c.body}</div>
                 </div>
-              ); })}
+              ))}
             </div>
           </div>
         </section>
 
-        {/* 6. What Every Package Includes */}
-        <section className="esp-sec esp-light-sec">
+        {/* ── COMPARISON TABLE ── */}
+        <section className="esp-sec esp-white">
           <div className="esp-sec-in">
             <div className="esp-reveal">
-              <span className="esp-sec-ey">Core Deliverables</span>
-              <h2 className="esp-sec-ttl">{"What's Included in Every"} <AuroraText>Ecommerce SEO Plan</AuroraText></h2>
-              <p className="esp-sec-sub">Every package tier — from Starter to Pro — includes these core deliverables. The scale, depth, and frequency increases with each plan.</p>
-            </div>
-            <div className="esp-3grid">
-              {INCLUDED.map(function(c) { return (
-                <div key={c.title} className="esp-glass esp-reveal">
-                  <div className="esp-card-ttl">{c.title}</div>
-                  <div className="esp-card-body">{c.body}</div>
-                </div>
-              ); })}
-            </div>
-          </div>
-        </section>
-
-        {/* 7. Comparison Table */}
-        <section className="esp-sec esp-white-sec">
-          <div className="esp-sec-in">
-            <div className="esp-reveal">
-              <span className="esp-sec-ey">Feature Breakdown</span>
-              <h2 className="esp-sec-ttl"><AuroraText>Package Comparison</AuroraText> at a Glance</h2>
-              <p className="esp-sec-sub">A side-by-side breakdown of what each ecommerce SEO plan includes — so you can choose with confidence.</p>
+              <span className="esp-ey">Feature Breakdown</span>
+              <h2 className="esp-ttl"><AuroraText>Package Comparison</AuroraText> at a Glance</h2>
+              <p className="esp-desc">A side-by-side breakdown of what each ecommerce SEO plan includes — so you can choose with confidence.</p>
             </div>
             <div className="esp-table-wrap esp-reveal">
               <table className="esp-table">
@@ -670,139 +748,51 @@ export default function EcommerceSeoPackages() {
                     ['Account manager','—','✓','✓ (dedicated)'],
                     ['Reporting','Monthly','Fortnightly','Weekly'],
                     ['Support','Email 48hr','Priority 24hr','Phone + Priority'],
-                  ].map(function(row, i) { return (
+                  ].map((row, i) => (
                     <tr key={i}>
                       <td>{row[0]}</td>
                       <td className={row[1]==='—'?'esp-dash-cell':''}>{row[1]}</td>
                       <td className={'esp-td-pop' + (row[2]==='—'?' esp-dash-cell':'')}>{row[2]}</td>
                       <td className={row[3]==='—'?'esp-dash-cell':''}>{row[3]}</td>
                     </tr>
-                  ); })}
+                  ))}
                 </tbody>
               </table>
             </div>
           </div>
         </section>
 
-        {/* 8. Process */}
-        <section className="esp-sec esp-light-sec">
+        {/* ── WHY DIFFERENT ── */}
+        <section className="esp-sec">
           <div className="esp-sec-in">
             <div className="esp-reveal">
-              <span className="esp-sec-ey">How It Works</span>
-              <h2 className="esp-sec-ttl">Our <AuroraText>Ecommerce SEO Process</AuroraText> — Step by Step</h2>
-              <p className="esp-sec-sub">A systematic, repeatable process that coordinates technical fixes, on-page optimisation, content, and link building into one coherent strategy.</p>
+              <span className="esp-ey">Why 1Solutions</span>
+              <h2 className="esp-ttl">Platform-Native <AuroraText>Ecommerce SEO Expertise</AuroraText></h2>
+              <p className="esp-desc">Not all ecommerce SEO agencies are equal. Here is what separates our approach from generic digital marketing.</p>
             </div>
             <div className="esp-3grid">
-              {PROCESS_STEPS.map(function(s) { return (
-                <div key={s.n} className="esp-glass esp-reveal">
-                  <div className="esp-num-badge">{s.n}</div>
-                  <div className="esp-card-ttl">{s.title}</div>
-                  <div className="esp-card-body">{s.body}</div>
-                </div>
-              ); })}
-            </div>
-          </div>
-        </section>
-
-        {/* 9. What Makes Us Different */}
-        <section className="esp-sec esp-white-sec">
-          <div className="esp-sec-in">
-            <div className="esp-reveal">
-              <span className="esp-sec-ey">The 1Solutions Difference</span>
-              <h2 className="esp-sec-ttl">What Makes Our <AuroraText>Ecommerce SEO</AuroraText> Different</h2>
-              <p className="esp-sec-sub">Not all ecommerce SEO agencies are equal. Here is what separates our approach from generic digital marketing.</p>
-            </div>
-            <div className="esp-3grid">
-              {DIFFERENT.map(function(c) { return (
-                <div key={c.title} className="esp-glass esp-reveal">
+              {DIFFERENT.map((c, i) => (
+                <div key={c.title} className="esp-glass esp-reveal" style={{transitionDelay: `${i * 60}ms`}}>
                   <div className="esp-card-ttl">{c.title}</div>
                   <div className="esp-card-body">{c.body}</div>
                 </div>
-              ); })}
+              ))}
             </div>
           </div>
         </section>
 
-        {/* 10. Platforms */}
-        <section className="esp-sec esp-light-sec">
-          <div className="esp-sec-in">
-            <div className="esp-reveal">
-              <span className="esp-sec-ey">Platform Support</span>
-              <h2 className="esp-sec-ttl">Ecommerce SEO for <AuroraText>Every Major Platform</AuroraText></h2>
-              <p className="esp-sec-sub">Each ecommerce platform has unique technical SEO characteristics. We apply platform-specific knowledge — not one-size-fits-all tactics.</p>
-            </div>
-            <div className="esp-3grid">
-              {PLATFORMS.map(function(p) { return (
-                <div key={p.name} className="esp-platform-card esp-reveal">
-                  <div className="esp-platform-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{width:24,height:24}}>
-                      <rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/>
-                    </svg>
-                  </div>
-                  <div className="esp-platform-name">{p.name}</div>
-                  <div className="esp-platform-note">{p.note}</div>
-                </div>
-              ); })}
-            </div>
-          </div>
-        </section>
-
-        {/* 11. Results — Dark */}
-        <section className="esp-dark-sec">
-          <div className="esp-dark-in">
-            <div className="esp-reveal" style={{textAlign:'center',marginBottom:48}}>
-              <span className="esp-dark-ey">Proven Results</span>
-              <h2 className="esp-dark-ttl"><AuroraText>Ecommerce SEO Results</AuroraText>: Real Organic Revenue Growth</h2>
-              <p className="esp-dark-sub" style={{margin:'0 auto'}}>Real metrics from real ecommerce stores — across platforms, regions, and verticals.</p>
-            </div>
-            <div className="esp-results-grid esp-reveal">
-              {RESULTS.map(function(r) { return (
-                <div key={r.metric} className="esp-result-card">
-                  <div className="esp-result-metric">{r.metric}</div>
-                  <div className="esp-result-label">{r.label}</div>
-                  <div className="esp-result-detail">{r.detail}</div>
-                </div>
-              ); })}
-            </div>
-            <div className="esp-results-cta esp-reveal">
-              <a href="#free-audit">
-                Get Similar Results
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* 12. Why Choose Us */}
-        <section className="esp-sec esp-white-sec">
-          <div className="esp-sec-in">
-            <div className="esp-reveal">
-              <span className="esp-sec-ey">Why Choose Us</span>
-              <h2 className="esp-sec-ttl">Why Choose Our <AuroraText>Ecommerce SEO</AuroraText> Service</h2>
-              <p className="esp-sec-sub">180+ ecommerce stores trust 1Solutions with their organic revenue. Here is why they chose us and why they stay.</p>
-            </div>
-            <div className="esp-3grid">
-              {WHY_CHOOSE.map(function(c) { return (
-                <div key={c.title} className="esp-glass esp-reveal">
-                  <div className="esp-card-ttl">{c.title}</div>
-                  <div className="esp-card-body">{c.body}</div>
-                </div>
-              ); })}
-            </div>
-          </div>
-        </section>
-
-        {/* 13. Testimonials */}
+        {/* ── TESTIMONIALS ── */}
         <section className="esp-testi-sec">
-          <div className="esp-testi-hd esp-reveal">
-            <span className="esp-sec-ey">Client Results</span>
-            <h2 className="esp-sec-ttl">What Our <AuroraText>Ecommerce SEO Clients</AuroraText> Say</h2>
+          <div className="esp-testi-hd esp-reveal" style={{marginBottom:40}}>
+            <span className="esp-ey">Client Reviews</span>
+            <h2 className="esp-ttl">What Our <AuroraText>Ecommerce SEO Clients</AuroraText> Say</h2>
+            <p style={{fontSize:15,color:'#4A6080',lineHeight:1.7,maxWidth:600,margin:'0 auto'}}>Trusted by 180+ ecommerce stores across the US, Canada, Australia, and Europe for 15+ years.</p>
           </div>
-          {[TESTIMONIALS_ROW1, TESTIMONIALS_ROW2].map(function(row, ri) { return (
-            <div key={ri} className="esp-trow">
+          <div style={{marginTop:40}}>
+            <div className="esp-trow">
               <div className="esp-tfade-l"/><div className="esp-tfade-r"/>
-              <div className={ri===0?'esp-ttrack':'esp-ttrack-rev'}>
-                {[].concat(row,row).map(function(t,i) { return (
+              <div className="esp-ttrack">
+                {ROW1.map((t, i) => (
                   <div key={i} className="esp-tcard">
                     <div className="esp-tcard-star">★★★★★</div>
                     <p className="esp-tcard-text">{t.text}</p>
@@ -814,72 +804,95 @@ export default function EcommerceSeoPackages() {
                       </div>
                     </div>
                   </div>
-                ); })}
+                ))}
               </div>
             </div>
-          ); })}
+            <div className="esp-trow">
+              <div className="esp-tfade-l"/><div className="esp-tfade-r"/>
+              <div className="esp-ttrack-rev">
+                {ROW2.map((t, i) => (
+                  <div key={i} className="esp-tcard">
+                    <div className="esp-tcard-star">★★★★★</div>
+                    <p className="esp-tcard-text">{t.text}</p>
+                    <div className="esp-tcard-author">
+                      <div className="esp-tcard-avatar" style={{background:t.bg}}>{t.initials}</div>
+                      <div>
+                        <div className="esp-tcard-name">{t.name}</div>
+                        <div className="esp-tcard-role">{t.role}</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </section>
 
-        {/* 14. Free Audit Form */}
-        <section className="esp-audit-sec" id="free-audit">
-          <div className="esp-audit-in">
+        {/* ── CONTACT FORM ── */}
+        <section className="esp-contact-sec" id="contact">
+          <div className="esp-contact-in">
             <div className="esp-reveal">
-              <h2 className="esp-audit-ttl">Get Your Free<br/><AuroraText>Ecommerce SEO Audit</AuroraText></h2>
-              <p className="esp-audit-desc">Tell us about your store and we will review your current SEO health, identify your biggest growth blockers, and recommend the right package — completely free.</p>
-              <div className="esp-audit-benefits-box">
+              <span className="esp-ey">Free Store Audit</span>
+              <h2 className="esp-contact-left" style={{fontSize:'clamp(1.8rem,3.5vw,2.6rem)',fontWeight:900,lineHeight:1.2,margin:'0 0 16px',color:'#0F1F40',letterSpacing:-0.5}}>Get Your Free <AuroraText>Ecommerce SEO Audit</AuroraText></h2>
+              <p style={{fontSize:14,color:'#4A6080',lineHeight:1.65,margin:'0 0 24px'}}>Tell us about your store and we will review your current SEO health, identify your biggest growth blockers, and recommend the right package — completely free.</p>
+              <div className="esp-trust-box">
                 {[
                   'Confidential & no-obligation — your data stays with us',
                   'Reviewed by a senior ecommerce SEO strategist, not a junior',
                   'Audit delivered within 48 hours of your request',
                   'No hard sell — just honest expert advice on your store',
-                ].map(function(b) { return (
-                  <div key={b} className="esp-audit-ben">
-                    <svg className="esp-audit-ben-icon" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                    <span className="esp-audit-ben-text">{b}</span>
+                ].map(b => (
+                  <div key={b} className="esp-trust-row">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>{b}</span>
                   </div>
-                ); })}
-                <div className="esp-audit-stats">
-                  {[['180+','Ecommerce Stores'],['15+','Years Experience'],['94%','Client Retention']].map(function(item) { return (
-                    <div key={item[1]}>
-                      <div className="esp-audit-stat-num">{item[0]}</div>
-                      <div className="esp-audit-stat-txt">{item[1]}</div>
+                ))}
+                <div className="esp-contact-stats">
+                  {[['180+','Ecommerce Stores'],['15+','Years Experience'],['94%','Client Retention']].map(([n,l]) => (
+                    <div key={l}>
+                      <div className="esp-cs-num">{n}</div>
+                      <div className="esp-cs-lbl">{l}</div>
                     </div>
-                  ); })}
+                  ))}
                 </div>
               </div>
             </div>
-            <div className="esp-audit-form-box esp-reveal">
+            <div className="esp-form-box esp-reveal">
               <h3>Request Your Free Audit</h3>
-              {auditSt==='success' ? (
-                <div className="esp-audit-success-wrap">
-                  <div className="esp-audit-success-icon">
+              {auditSt === 'success' ? (
+                <div className="esp-success-wrap">
+                  <div className="esp-success-icon">
                     <svg viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
                   </div>
                   <h3>Audit Request Received!</h3>
                   <p>Thank you. A senior ecommerce SEO strategist will review your store and be in touch within 48 hours.</p>
                 </div>
               ) : (
-                <form className="esp-af-form" onSubmit={_auditSubmit} noValidate>
-                  {auditSt==='validation' && <p className="esp-val-err">Please complete all fields and accept the terms before submitting.</p>}
-                  {auditSt==='error' && <p className="esp-val-err">Something went wrong. Please try again or email us directly.</p>}
-                  <div className="esp-af-row">
+                <form className="esp-form" onSubmit={_auditSubmit} noValidate>
+                  {auditSt === 'validation' && <p className="esp-val-err">Please complete all fields and accept the terms before submitting.</p>}
+                  {auditSt === 'error' && <p className="esp-val-err">Something went wrong. Please try again or email us directly.</p>}
+                  <div className="esp-form-row">
                     <div className="esp-fg">
                       <label htmlFor="ea-name">Full Name *</label>
                       <input id="ea-name" name="ea-name" type="text" placeholder="Jane Smith" required/>
                     </div>
                     <div className="esp-fg">
-                      <label htmlFor="ea-email">Email Address *</label>
+                      <label htmlFor="ea-email">Business Email *</label>
                       <input id="ea-email" name="ea-email" type="email" placeholder="jane@mystore.com" required/>
                     </div>
                   </div>
-                  <div className="esp-af-row">
+                  <div className="esp-form-row">
                     <div className="esp-fg">
                       <label>Phone Number *</label>
-                      <div className="esp-af-phone-wrap">
+                      <div className="esp-phone-wrap">
                         <select name="ea-cc" aria-label="Country code">
-                          <option value="+1">+1</option><option value="+44">+44</option><option value="+61">+61</option>
-                          <option value="+91">+91</option><option value="+971">+971</option><option value="+65">+65</option>
-                          <option value="+49">+49</option><option value="+33">+33</option><option value="+64">+64</option>
+                          <option value="+1">+1 US</option>
+                          <option value="+1">+1 CA</option>
+                          <option value="+61">+61 AU</option>
+                          <option value="+44">+44 GB</option>
+                          <option value="+91">+91 IN</option>
+                          <option value="+971">+971</option>
+                          <option value="+65">+65</option>
                         </select>
                         <input name="ea-phone" type="tel" placeholder="Phone number" required aria-label="Phone number"/>
                       </div>
@@ -912,14 +925,14 @@ export default function EcommerceSeoPackages() {
                     <label htmlFor="ea-goals">Goals &amp; Details *</label>
                     <textarea id="ea-goals" name="ea-goals" rows={4} placeholder="Monthly organic revenue target, current issues, catalogue size..." required/>
                   </div>
-                  <div className="esp-af-consent">
+                  <div className="esp-consent-row">
                     <input type="checkbox" id="esp-consent"/>
                     <label htmlFor="esp-consent">
-                      I agree to the <Link href="/privacy-policy">Privacy Policy</Link> and consent to 1Solutions storing my data to respond to this enquiry. *
+                      I agree to the <Link href="/privacy-policy/">Privacy Policy</Link> and consent to 1Solutions storing my data to respond to this enquiry. *
                     </label>
                   </div>
-                  <button type="submit" className="esp-audit-submit" disabled={auditSt==='loading'}>
-                    {auditSt==='loading' ? 'Sending...' : 'Send My Free Audit Request →'}
+                  <button type="submit" className="esp-submit" disabled={auditSt === 'loading'}>
+                    {auditSt === 'loading' ? 'Sending...' : 'Send My Free Audit Request →'}
                   </button>
                 </form>
               )}
@@ -927,40 +940,40 @@ export default function EcommerceSeoPackages() {
           </div>
         </section>
 
-        {/* 15. FAQ */}
-        <section className="esp-sec esp-white-sec">
-          <div className="esp-sec-in" style={{maxWidth:900}}>
-            <div className="esp-reveal">
-              <span className="esp-sec-ey">Common Questions</span>
-              <h2 className="esp-sec-ttl"><AuroraText>Ecommerce SEO Package</AuroraText> FAQs</h2>
-              <p className="esp-sec-sub">Everything you need to know before choosing an ecommerce SEO package.</p>
+        {/* ── FAQ ── */}
+        <section className="esp-sec esp-white">
+          <div className="esp-sec-in" style={{maxWidth:860,margin:'0 auto'}}>
+            <div className="esp-reveal" style={{textAlign:'center',marginBottom:40}}>
+              <span className="esp-ey">Got Questions?</span>
+              <h2 className="esp-ttl"><AuroraText>Ecommerce SEO Package</AuroraText> FAQs</h2>
+              <p className="esp-desc" style={{margin:'0 auto'}}>Everything you need to know before choosing an ecommerce SEO package.</p>
             </div>
             <div className="esp-faq-list">
-              {FAQS.map(function(f, i) { return (
-                <div key={i} className={'esp-fitem' + (openFaq===i?' open':'')}>
-                  <button className="esp-fq" onClick={function(){setOpenFaq(openFaq===i?-1:i)}}>
+              {FAQS.map((f, i) => (
+                <div key={i} className={'esp-fitem' + (openFaq === i ? ' open' : '')}>
+                  <button className="esp-fq" onClick={() => setOpenFaq(openFaq === i ? -1 : i)}>
                     <span className="esp-fq-badge">{String(i+1).padStart(2,'0')}</span>
                     <span className="esp-fq-text">{f.q}</span>
                     <svg className="esp-fq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                   </button>
-                  {openFaq===i && <div className="esp-fa">{f.a}</div>}
+                  {openFaq === i && <div className="esp-fa">{f.a}</div>}
                 </div>
-              ); })}
+              ))}
             </div>
           </div>
         </section>
 
-        {/* 16. Related Services */}
+        {/* ── RELATED SERVICES ── */}
         <section className="esp-related-sec">
           <div className="esp-related-in esp-reveal">
-            <span className="esp-related-ey">Explore More</span>
+            <span className="esp-related-ey">ECOMMERCE SEO RELATED OFFERINGS</span>
             <h2 className="esp-related-ttl">Explore <AuroraText>Related Services</AuroraText> and Technologies</h2>
-            <p className="esp-related-sub">Ecommerce SEO works best when combined with complementary services. Explore the full 1Solutions digital marketing ecosystem.</p>
+            <p className="esp-related-sub">Pair ecommerce SEO with complementary services to maximise organic revenue across your full digital marketing funnel.</p>
             <hr className="esp-related-divider"/>
             <div className="esp-related-tags">
-              {RELATED_TAGS.map(function(t) { return (
-                <Link key={t.href} href={t.href} className={'esp-rtag ' + t.cls}>{t.label}</Link>
-              ); })}
+              {RELATED_TAGS.map(({href, label, cls}) => (
+                <Link key={href} href={href} className={`esp-rtag ${cls}`}>{label}</Link>
+              ))}
             </div>
           </div>
         </section>
