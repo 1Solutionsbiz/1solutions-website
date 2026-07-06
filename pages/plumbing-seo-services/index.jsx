@@ -22,10 +22,10 @@ const SERVICES = [
 ];
 
 const RESULTS = [
-  { metric:'#1', label:'Maps Pack — "emergency plumber [city]"', detail:'US plumbing company — achieved in 5 months' },
-  { metric:'4.8×', label:'More GBP calls month-over-month', detail:'US plumbing company — 6-month campaign' },
-  { metric:'320%', label:'Organic traffic growth', detail:'Multi-location plumber — 9 months' },
-  { metric:'90d', label:'To page 1 for primary service keywords', detail:'UK plumber — brand-new market entry' },
+  { prefix:'#', target:1,   suffix:'',  decimals:0, label:'Maps Pack — "emergency plumber [city]"', detail:'US plumbing company — achieved in 5 months' },
+  { prefix:'',  target:4.8, suffix:'×', decimals:1, label:'More GBP calls month-over-month',        detail:'US plumbing company — 6-month campaign' },
+  { prefix:'',  target:320, suffix:'%', decimals:0, label:'Organic traffic growth',                  detail:'Multi-location plumber — 9 months' },
+  { prefix:'',  target:90,  suffix:'d', decimals:0, label:'To page 1 for primary service keywords',  detail:'UK plumber — brand-new market entry' },
 ];
 
 const PROCESS = [
@@ -45,6 +45,48 @@ const WHY = [
   { title:'No Lock-In Contracts', body:'Month-to-month engagements only. We earn your business every month through results — not contractual obligations that keep you paying regardless of performance.' },
   { title:'Transparent Monthly Reporting', body:'Clear reports showing GBP call volume, organic lead count, keyword positions, and map pack rankings — all tied directly to the calls and jobs you care about, not vanity traffic metrics.' },
 ];
+
+function useCountUp(target, duration, started) {
+  const [value, setValue] = useState(0);
+  useEffect(() => {
+    if (!started) return;
+    let raf;
+    const start = performance.now();
+    const ease = t => 1 - Math.pow(1 - t, 3);
+    const step = now => {
+      const t = Math.min(1, (now - start) / duration);
+      setValue(target * ease(t));
+      if (t < 1) raf = requestAnimationFrame(step);
+      else setValue(target);
+    };
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
+  }, [started]);
+  return value;
+}
+
+function StatCard({ prefix, target, suffix, decimals, label, detail }) {
+  const [started, setStarted] = useState(false);
+  const ref = useRef(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) { setStarted(true); obs.disconnect(); }
+    }, { threshold: 0.4 });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+  const value = useCountUp(target, 1800, started);
+  const display = decimals > 0 ? value.toFixed(decimals) : Math.floor(value).toLocaleString();
+  return (
+    <div ref={ref} className="pl-res-card">
+      <div className="pl-res-metric">{prefix}{display}{suffix}</div>
+      <div className="pl-res-label">{label}</div>
+      <div className="pl-res-detail">{detail}</div>
+    </div>
+  );
+}
 
 function RazorpayButton({ buttonId }) {
   const formRef = useRef(null);
@@ -649,11 +691,7 @@ export default function PlumbingSeoServices() {
             </div>
             <div className="pl-g4 pl-reveal">
               {RESULTS.map(r => (
-                <div key={r.metric} className="pl-res-card">
-                  <div className="pl-res-metric">{r.metric}</div>
-                  <div className="pl-res-label">{r.label}</div>
-                  <div className="pl-res-detail">{r.detail}</div>
-                </div>
+                <StatCard key={r.label} {...r}/>
               ))}
             </div>
           </div>
