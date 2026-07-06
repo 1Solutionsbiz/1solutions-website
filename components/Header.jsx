@@ -56,6 +56,21 @@ const SERVICES_MENU = [
           { label: 'SEO Audit', href: '/seo-audit-services/' },
           { label: 'Link Building Services', href: '/link-building-services' },
           { label: 'Link Building Packages', href: '/link-building-packages' },
+          { label: 'eCommerce SEO Packages', href: '/ecommerce-seo-packages/' },
+        ],
+      },
+    ],
+  },
+  {
+    group: 'Digital Marketing',
+    sections: [
+      {
+        title: null,
+        links: [
+          { label: 'Performance Marketing', href: '/performance-marketing-agency/' },
+          { label: 'Conversion Rate Optimisation', href: '/conversion-rate-optimization-services/' },
+          { label: 'PPC Management', href: '/ppc-management-services' },
+          { label: 'eCommerce Marketing', href: '/ecommerce-marketing-services' },
         ],
       },
     ],
