@@ -828,14 +828,6 @@ export default function AffordableSeoPackages() {
               ))}
             </div>
           </div>
-          <div className="asp-tbar" role="list" style={{marginLeft:'40px',marginRight:'40px'}}>
-            {[['4.9/5','Average Client Rating'],['127','Verified Reviews'],['10,000+','Keywords on Page 1'],['97%','Client Retention Rate']].map(([n,l],i,arr) => (
-              <span key={l} style={{display:'contents'}}>
-                <div className="asp-tbar-item" role="listitem"><div className="asp-tbar-num">{n}</div><div className="asp-tbar-label">{l}</div></div>
-                {i<arr.length-1 && <div className="asp-tbar-div" aria-hidden="true"/>}
-              </span>
-            ))}
-          </div>
         </section>
 
         {/* ── FAQ ── */}
