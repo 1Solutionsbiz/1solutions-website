@@ -454,37 +454,28 @@ export default function PlumbingSeoServices() {
           .pl-tog-knob{position:absolute;top:4px;left:4px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform .25s;box-shadow:0 1px 4px rgba(0,0,0,.18)}
           .pl-tog-btn.active .pl-tog-knob{transform:translateX(22px)}
           .pl-save-pill{display:inline-flex;align-items:center;background:rgba(217,119,6,.12);color:#B45309;font-size:11px;font-weight:700;padding:2px 9px;border-radius:100px;margin-left:6px}
-          .pl-pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
-          .pl-card{background:linear-gradient(135deg,rgba(219,234,254,.55) 0%,rgba(255,255,255,.80) 60%,rgba(237,233,254,.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:24px;padding:28px 24px;position:relative;transition:transform .22s,box-shadow .22s,border-color .22s;overflow:hidden;box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .pl-card:hover{transform:translateY(-4px);border-color:rgba(217,119,6,.40);box-shadow:0 16px 48px rgba(15,52,96,.14),inset 0 1px 0 rgba(255,255,255,1)}
-          .pl-card-pop{background:linear-gradient(135deg,#0F3460 0%,#1a3a6e 50%,#0a2549 100%);border-color:transparent;transform:scale(1.03);box-shadow:0 20px 60px rgba(15,52,96,.30)}
+          .pl-pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;padding-top:16px}
+          .pl-card{background:linear-gradient(135deg,rgba(219,234,254,.55) 0%,rgba(255,255,255,.80) 60%,rgba(237,233,254,.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:22px;padding:28px 24px;position:relative;display:flex;flex-direction:column;transition:transform .22s,box-shadow .22s,border-color .22s;box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
+          .pl-card:hover{transform:translateY(-4px);border-color:rgba(217,119,6,.35);box-shadow:0 16px 48px rgba(15,52,96,.14),inset 0 1px 0 rgba(255,255,255,1)}
+          .pl-card-pop{background:linear-gradient(180deg,rgba(217,119,6,.08) 0%,rgba(255,255,255,.82) 50%,rgba(219,234,254,.50) 100%);border-color:rgba(217,119,6,.50);box-shadow:0 0 80px rgba(217,119,6,.16),0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.98);transform:scale(1.03)}
           .pl-card-pop:hover{transform:scale(1.03) translateY(-4px)}
-          .pl-pop-tag{position:absolute;top:16px;right:16px;background:rgba(217,119,6,.90);color:#fff;font-size:10px;font-weight:700;padding:3px 9px;border-radius:100px;letter-spacing:.5px}
-          .pl-plan-name{font-size:20px;font-weight:800;color:#0F1F40;margin-bottom:6px}
-          .pl-card-pop .pl-plan-name{color:#fff}
-          .pl-plan-desc{font-size:12px;color:#6b7280;line-height:1.55;margin-bottom:20px}
-          .pl-card-pop .pl-plan-desc{color:rgba(255,255,255,.70)}
-          .pl-price-row{display:flex;align-items:baseline;gap:4px;margin-bottom:4px}
-          .pl-currency{font-size:1.3rem;font-weight:700;color:#D97706}
-          .pl-card-pop .pl-currency,.pl-card-pop .pl-amount{color:#fff}
-          .pl-amount{font-size:2.6rem;font-weight:900;letter-spacing:-2px;color:#0F1F40;line-height:1}
-          .pl-per{font-size:12px;color:#9ca3af;font-weight:500;margin-left:2px}
-          .pl-card-pop .pl-per{color:rgba(255,255,255,.55)}
+          .pl-pop-tag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(120deg,#D97706,#ea580c);color:#fff;font-size:11px;font-weight:700;padding:4px 14px;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;display:inline-flex;align-items:center;gap:5px;box-shadow:0 4px 16px rgba(217,119,6,.45)}
+          .pl-plan-name{font-family:'Courier New',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#6b7280;font-weight:700;margin-bottom:10px}
+          .pl-plan-desc{font-size:13px;color:#4A6080;line-height:1.55;margin:0 0 22px}
+          .pl-price-row{display:flex;align-items:baseline;gap:4px;margin:8px 0 2px}
+          .pl-currency{font-size:1.4rem;font-weight:700;color:#D97706}
+          .pl-amount{font-size:44px;font-weight:800;letter-spacing:-.035em;color:#0F1F40;line-height:1}
+          .pl-per{font-size:14px;color:#9ca3af;font-weight:500;margin-left:4px}
           .pl-billed{font-size:11px;color:#9ca3af;margin-bottom:4px}
-          .pl-card-pop .pl-billed{color:rgba(255,255,255,.45)}
-          .pl-save-line{font-size:11px;font-weight:700;color:#16a34a;min-height:16px;margin-bottom:18px}
-          .pl-card-pop .pl-save-line{color:#86efac}
-          .pl-cta-card{display:block;width:100%;text-align:center;padding:12px;border-radius:50px;font-weight:700;font-size:.875rem;text-decoration:none;background:rgba(15,52,96,.85);color:#fff;transition:all .22s;margin-bottom:20px;box-shadow:0 4px 16px rgba(15,52,96,.20)}
+          .pl-save-line{font-size:11px;font-weight:700;color:#16a34a;min-height:16px;margin-bottom:22px}
+          .pl-card-div{height:1px;background:rgba(15,52,96,.10);margin:0 0 4px}
+          .pl-card-pop .pl-card-div{background:rgba(217,119,6,.25)}
+          .pl-feat-list{list-style:none;padding:0;margin:0 0 24px;flex:1}
+          .pl-feat-list li{padding:9px 0;border-top:1px dashed rgba(15,52,96,.12);font-size:13px;color:#374151;line-height:1.4}
+          .pl-feat-list li::before{content:"✓ ";color:#22c55e;font-weight:700}
+          .pl-card-pop .pl-feat-list li{border-top-color:rgba(217,119,6,.22)}
+          .pl-cta-card{display:block;width:100%;text-align:center;padding:12px;border-radius:50px;font-weight:700;font-size:.875rem;text-decoration:none;background:rgba(15,52,96,.85);color:#fff;transition:all .22s;box-shadow:0 4px 16px rgba(15,52,96,.20)}
           .pl-cta-card:hover{background:rgba(15,52,96,1);transform:translateY(-1px);box-shadow:0 6px 24px rgba(15,52,96,.30)}
-          .pl-card-pop .pl-cta-card{background:rgba(255,255,255,.18);backdrop-filter:blur(12px);border:1.5px solid rgba(255,255,255,.35);color:#fff}
-          .pl-card-pop .pl-cta-card:hover{background:rgba(255,255,255,.28);border-color:rgba(245,158,11,.6)}
-          .pl-card-div{height:1px;background:rgba(15,52,96,.08);margin-bottom:18px}
-          .pl-card-pop .pl-card-div{background:rgba(255,255,255,.15)}
-          .pl-feat-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px}
-          .pl-feat-list li{display:flex;align-items:flex-start;gap:9px;font-size:12px;color:#374151;line-height:1.4}
-          .pl-card-pop .pl-feat-list li{color:rgba(255,255,255,.85)}
-          .pl-feat-list li svg{color:#D97706;flex-shrink:0;margin-top:2px}
-          .pl-card-pop .pl-feat-list li svg{color:#fcd34d}
           .pl-pkg-trust{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:32px;padding-top:32px;border-top:1px solid rgba(15,52,96,.08)}
           .pl-pkg-trust span{font-size:13px;color:#6b7280;display:flex;align-items:center;gap:6px;font-weight:500}
           /* comparison table */
@@ -529,7 +520,7 @@ export default function PlumbingSeoServices() {
             .pl-btn-p,.pl-btn-s,.pl-submit{backdrop-filter:none;-webkit-backdrop-filter:none}
             .pl-res-card,.pl-pill{backdrop-filter:none;-webkit-backdrop-filter:none}
             .pl-related{backdrop-filter:none;-webkit-backdrop-filter:none}
-            .pl-card,.pl-card-pop .pl-cta-card{backdrop-filter:none;-webkit-backdrop-filter:none}
+            .pl-card{backdrop-filter:none;-webkit-backdrop-filter:none}
             .pl-trow:last-child{display:none}
           }
           @media(max-width:480px){
@@ -703,9 +694,8 @@ export default function PlumbingSeoServices() {
             <div className="pl-pkg-grid pl-reveal">
               {PACKAGES.map(pkg => (
                 <div key={pkg.slug} className={`pl-card${pkg.popular ? ' pl-card-pop' : ''}`}>
-                  {pkg.popular && <span className="pl-pop-tag">Most Popular</span>}
+                  {pkg.popular && <span className="pl-pop-tag">✦ Most Popular</span>}
                   <div className="pl-plan-name">{pkg.name}</div>
-                  <p className="pl-plan-desc">{pkg.desc}</p>
                   <div className="pl-price-row">
                     <span className="pl-currency">$</span>
                     <span className="pl-amount">{isYearly ? pkg.yearlyPrice : pkg.monthlyPrice}</span>
@@ -713,16 +703,12 @@ export default function PlumbingSeoServices() {
                   </div>
                   <div className="pl-billed">{isYearly ? 'Billed annually' : 'Billed monthly'}</div>
                   <div className="pl-save-line">{isYearly ? `Save $${pkg.yearlySave.toLocaleString()} per year` : ' '}</div>
-                  <a href="#pl-contact" className="pl-cta-card">Get Started →</a>
+                  <p className="pl-plan-desc">{pkg.desc}</p>
                   <div className="pl-card-div"/>
                   <ul className="pl-feat-list">
-                    {pkg.features.map(f => (
-                      <li key={f}>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                        <span>{f}</span>
-                      </li>
-                    ))}
+                    {pkg.features.map(f => <li key={f}>{f}</li>)}
                   </ul>
+                  <a href="#pl-contact" className="pl-cta-card">Get Started →</a>
                 </div>
               ))}
             </div>
