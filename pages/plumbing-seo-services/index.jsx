@@ -48,72 +48,54 @@ const WHY = [
 
 const PACKAGES = [
   {
-    name: 'Starter',
-    price: '$499',
-    period: '/month',
-    tagline: 'Ideal for single-location plumbers starting local SEO',
+    name: 'Starter', slug: 'starter', monthlyPrice: 499, yearlyPrice: 415, yearlySave: 1008,
+    desc: 'For single-location plumbers starting local SEO.',
     popular: false,
     features: [
-      'GBP optimisation + weekly posts',
-      '5 service/location pages created',
+      '1 location',
+      'GBP optimisation + 4 weekly posts',
+      '5 service/location pages',
       '20 local citation submissions',
-      'Review request email setup',
-      '10 target keywords tracked',
+      '10 target plumbing keywords tracked',
+      'Review monitoring & email alerts',
       'Basic schema markup (LocalBusiness)',
       'Monthly rank & GBP report',
     ],
-    notIncluded: [
-      'SMS review automation',
-      'Competitor gap analysis',
-      'Suburb expansion pages',
-      'Dedicated account manager',
-    ],
-    cta: 'Get Started',
   },
   {
-    name: 'Growth',
-    price: '$899',
-    period: '/month',
-    tagline: 'For established plumbers ready to dominate the Maps Pack',
+    name: 'Growth', slug: 'growth', monthlyPrice: 899, yearlyPrice: 749, yearlySave: 1800,
+    desc: 'For established plumbers ready to dominate the Maps Pack.',
     popular: true,
     features: [
-      'GBP optimisation + Q&A management',
+      '1 location',
+      'GBP fully managed + Q&A + photo strategy',
       'Up to 12 service + suburb pages',
       '40 local citation submissions',
       'SMS + email review automation',
-      '25 target keywords tracked',
+      '25 target plumbing keywords tracked',
       'Full schema markup suite',
       'Competitor gap analysis',
       'Emergency keyword strategy',
       'Monthly rank + call tracking report',
     ],
-    notIncluded: [
-      'Unlimited suburb pages',
-      'Dedicated account manager',
-    ],
-    cta: 'Most Popular — Get Started',
   },
   {
-    name: 'Authority',
-    price: '$1,499',
-    period: '/month',
-    tagline: 'For multi-location plumbers and competitive markets',
+    name: 'Authority', slug: 'authority', monthlyPrice: 1499, yearlyPrice: 1249, yearlySave: 3000,
+    desc: 'For multi-location plumbers and highly competitive markets.',
     popular: false,
     features: [
-      'Full GBP management + photo strategy',
+      'Up to 3 locations',
+      'Full GBP management all locations',
       'Unlimited service + suburb pages',
-      '80+ local citation submissions',
+      '80+ local citations per month',
       'Advanced review velocity system',
-      '50+ target keywords tracked',
+      '50+ keywords tracked across locations',
       'Full schema suite + rich results',
       'Ongoing competitor monitoring',
-      'Emergency + planned keyword strategy',
       '2× monthly content pieces',
       'Weekly rank tracking',
       'Dedicated account manager',
     ],
-    notIncluded: [],
-    cta: 'Get Started',
   },
 ];
 
@@ -164,6 +146,7 @@ const RELATED_TAGS = [
 ];
 
 export default function PlumbingSeoServices() {
+  const [isYearly, setIsYearly] = useState(false);
   const [openFaq, setOpenFaq]   = useState(0);
   const [formSt, setFormSt]     = useState('idle');
   const recaptchaLoaded         = useRef(false);
@@ -463,39 +446,68 @@ export default function PlumbingSeoServices() {
           .pl-rtag-cyan{background:rgba(6,182,212,0.10);border-color:rgba(6,182,212,0.28);color:#0E7490}
 
           /* ── PACKAGES ── */
-          .pl-pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start}
-          .pl-pkg-card{background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:24px;padding:32px 28px;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95);position:relative;display:flex;flex-direction:column;gap:0}
-          .pl-pkg-card.popular{border-color:rgba(217,119,6,0.50);box-shadow:0 12px 48px rgba(217,119,6,0.18),0 4px 24px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1);transform:scale(1.03)}
-          .pl-pkg-badge{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#D97706,#F59E0B);color:#fff;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:50px;margin-bottom:18px;box-shadow:0 4px 12px rgba(217,119,6,0.30)}
-          .pl-pkg-badge-empty{height:29px;margin-bottom:18px}
-          .pl-pkg-name{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#0F3460;margin-bottom:6px}
-          .pl-pkg-price{display:flex;align-items:baseline;gap:3px;margin-bottom:6px}
-          .pl-pkg-amt{font-size:48px;font-weight:900;color:#0F1F40;letter-spacing:-2px;line-height:1}
-          .pl-pkg-per{font-size:14px;color:#6b7280;font-weight:500}
-          .pl-pkg-tagline{font-size:13px;color:#4A6080;line-height:1.5;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid rgba(15,52,96,0.10)}
-          .pl-pkg-features{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-direction:column;gap:10px}
-          .pl-pkg-feat{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:#1e293b;line-height:1.4}
-          .pl-pkg-feat-check{width:18px;height:18px;background:linear-gradient(135deg,#0F3460,#1a4b82);border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
-          .pl-pkg-feat-check svg{width:10px;height:10px;stroke:#fff;fill:none}
-          .pl-pkg-no{display:flex;align-items:center;gap:9px;font-size:13px;color:#9ca3af;line-height:1.4}
-          .pl-pkg-no-x{width:18px;height:18px;background:rgba(156,163,175,0.15);border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-          .pl-pkg-no-x svg{width:10px;height:10px;stroke:#9ca3af;fill:none}
-          .pl-pkg-divider{border:none;border-top:1px dashed rgba(15,52,96,0.12);margin:16px 0}
-          .pl-pkg-cta{display:block;text-align:center;padding:13px 24px;border-radius:50px;font-size:14px;font-weight:700;text-decoration:none;transition:all .3s;margin-top:auto}
-          .pl-pkg-cta-default{background:rgba(15,52,96,0.08);color:#0F3460;border:1.5px solid rgba(15,52,96,0.20)}
-          .pl-pkg-cta-default:hover{background:rgba(15,52,96,0.14);transform:translateY(-2px)}
-          .pl-pkg-cta-popular{background:linear-gradient(135deg,#D97706,#F59E0B);color:#fff;border:1.5px solid transparent;box-shadow:0 6px 20px rgba(217,119,6,0.35)}
-          .pl-pkg-cta-popular:hover{filter:brightness(1.06);transform:translateY(-2px);box-shadow:0 10px 28px rgba(217,119,6,0.40)}
-          .pl-pkg-note{text-align:center;font-size:13px;color:#6b7280;margin-top:28px}
-          .pl-pkg-note strong{color:#0F3460}
+          .pl-tog-row{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:48px}
+          .pl-tog-lbl{font-size:15px;font-weight:600;color:#9ca3af;transition:color .2s}
+          .pl-tog-lbl.on{color:#0F1F40}
+          .pl-tog-btn{width:50px;height:28px;background:#d1d5db;border-radius:100px;position:relative;cursor:pointer;border:none;padding:0;transition:background .25s;flex-shrink:0}
+          .pl-tog-btn.active{background:#0F3460}
+          .pl-tog-knob{position:absolute;top:4px;left:4px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform .25s;box-shadow:0 1px 4px rgba(0,0,0,.18)}
+          .pl-tog-btn.active .pl-tog-knob{transform:translateX(22px)}
+          .pl-save-pill{display:inline-flex;align-items:center;background:rgba(15,52,96,.10);color:#0F3460;font-size:11px;font-weight:700;padding:2px 9px;border-radius:100px;margin-left:6px}
+          .pl-pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
+          .pl-card{background:#fff;border:1.5px solid #e5e9f0;border-radius:24px;padding:32px 28px;position:relative;transition:box-shadow .22s,transform .22s;overflow:hidden}
+          .pl-card:hover{box-shadow:0 12px 40px rgba(15,52,96,.08)}
+          .pl-card-pop{background:linear-gradient(135deg,#071e3d 0%,#0F3460 100%);border-color:transparent;transform:scale(1.04);box-shadow:0 20px 60px rgba(15,52,96,.28)}
+          .pl-card-pop:hover{transform:scale(1.04) translateY(-4px)}
+          .pl-pop-tag{position:absolute;top:20px;right:20px;background:rgba(255,255,255,.18);color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:100px;letter-spacing:.5px;border:1px solid rgba(255,255,255,.28)}
+          .pl-plan-name{font-size:22px;font-weight:800;color:#0F1F40;margin-bottom:6px}
+          .pl-card-pop .pl-plan-name{color:#fff}
+          .pl-plan-desc{font-size:13px;color:#6b7280;line-height:1.55;margin-bottom:24px}
+          .pl-card-pop .pl-plan-desc{color:rgba(255,255,255,.70)}
+          .pl-price-row{display:flex;align-items:baseline;gap:4px;margin-bottom:4px}
+          .pl-currency{font-size:1.4rem;font-weight:700;color:#D97706}
+          .pl-card-pop .pl-currency{color:rgba(255,255,255,.80)}
+          .pl-amount{font-size:3rem;font-weight:900;letter-spacing:-2px;color:#0F1F40;line-height:1}
+          .pl-card-pop .pl-amount{color:#fff}
+          .pl-per{font-size:13px;color:#9ca3af;font-weight:500;margin-left:2px}
+          .pl-card-pop .pl-per{color:rgba(255,255,255,.60)}
+          .pl-billed{font-size:12px;color:#9ca3af;margin-bottom:4px}
+          .pl-card-pop .pl-billed{color:rgba(255,255,255,.55)}
+          .pl-save-line{font-size:12px;font-weight:700;color:#16a34a;min-height:18px;margin-bottom:20px}
+          .pl-card-pop .pl-save-line{color:#86efac}
+          .pl-cta-card{display:block;width:100%;text-align:center;padding:13px;border-radius:50px;font-weight:700;font-size:.9rem;text-decoration:none;background:#0F3460;color:#fff;transition:all .22s;margin-bottom:24px}
+          .pl-cta-card:hover{background:#071e3d;transform:translateY(-1px);box-shadow:0 6px 24px rgba(15,52,96,.28)}
+          .pl-card-pop .pl-cta-card{background:#fff;color:#0F3460}
+          .pl-card-pop .pl-cta-card:hover{background:#e0f2fe}
+          .pl-card-div{height:1px;background:#f1f5f9;margin-bottom:20px}
+          .pl-card-pop .pl-card-div{background:rgba(255,255,255,.15)}
+          .pl-feat-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+          .pl-feat-list li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#374151;line-height:1.4}
+          .pl-card-pop .pl-feat-list li{color:rgba(255,255,255,.88)}
+          .pl-feat-list li svg{color:#D97706;flex-shrink:0;margin-top:2px}
+          .pl-card-pop .pl-feat-list li svg{color:#fde68a}
+          .pl-pkg-trust{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:32px;padding-top:32px;border-top:1px solid #e5e9f0}
+          .pl-pkg-trust span{font-size:13px;color:#6b7280;display:flex;align-items:center;gap:6px;font-weight:500}
+          /* comparison table */
+          .pl-tbl-wrap{overflow-x:auto;margin-top:40px}
+          .pl-tbl{width:100%;border-collapse:collapse;font-size:14px}
+          .pl-tbl th{padding:14px 20px;text-align:left;font-weight:700;font-size:12px;letter-spacing:.5px;text-transform:uppercase;color:#4A6080;background:rgba(15,52,96,.04);border-bottom:2px solid rgba(15,52,96,.10)}
+          .pl-tbl th:first-child{border-radius:12px 0 0 0}.pl-tbl th:last-child{border-radius:0 12px 0 0}
+          .pl-tbl td{padding:13px 20px;border-bottom:1px solid rgba(15,52,96,.07);color:#374151;vertical-align:middle}
+          .pl-tbl td:first-child{font-weight:600;color:#0F1F40}
+          .pl-tbl tr:last-child td{border-bottom:none}
+          .pl-tbl tr:hover td{background:rgba(15,52,96,.02)}
+          .pl-tbl-yes{color:#D97706;font-weight:700}
+          .pl-tbl-no{color:#d1d5db}
+          .pl-tbl-pop{background:rgba(15,52,96,.05);font-weight:600;color:#0F3460}
 
           /* ── RESPONSIVE ── */
           @media(max-width:1024px){
             .pl-g3{grid-template-columns:repeat(2,1fr)}
             .pl-g4{grid-template-columns:repeat(2,1fr)}
             .pl-contact-in{grid-template-columns:1fr}
-            .pl-pkg-grid{grid-template-columns:1fr}
-            .pl-pkg-card.popular{transform:none}
+            .pl-pkg-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}
+            .pl-card-pop{transform:none}.pl-card-pop:hover{transform:translateY(-4px)}
           }
           @media(max-width:768px){
             .pl-hero{padding:56px 24px 0}
@@ -514,7 +526,7 @@ export default function PlumbingSeoServices() {
             .pl-related-ttl{font-size:28px}
             /* ── MOBILE PERFORMANCE ── */
             .pl-orb1,.pl-orb2,.pl-orb3{display:none}
-            .pl-glass,.pl-form-box,.pl-trust-box,.pl-stats,.pl-fitem,.pl-pkg-card{backdrop-filter:none;-webkit-backdrop-filter:none}
+            .pl-glass,.pl-form-box,.pl-trust-box,.pl-stats,.pl-fitem{backdrop-filter:none;-webkit-backdrop-filter:none}
             .pl-btn-p,.pl-btn-s,.pl-submit{backdrop-filter:none;-webkit-backdrop-filter:none}
             .pl-res-card,.pl-pill{backdrop-filter:none;-webkit-backdrop-filter:none}
             .pl-related{backdrop-filter:none;-webkit-backdrop-filter:none}
@@ -670,59 +682,107 @@ export default function PlumbingSeoServices() {
         {/* ── PACKAGES ── */}
         <section className="pl-sec pl-white" id="packages">
           <div className="pl-in">
-            <div className="pl-reveal" style={{textAlign:'center',marginBottom:48}}>
+            <div className="pl-reveal" style={{textAlign:'center'}}>
               <span className="pl-ey">Plumbing SEO Packages</span>
               <h2 className="pl-h2">Simple, Transparent <AuroraText>Plumbing SEO Pricing</AuroraText></h2>
-              <p className="pl-lead" style={{margin:'0 auto'}}>No lock-in contracts. No hidden fees. Cancel any month. All packages include onboarding and a dedicated kick-off call.</p>
+              <p className="pl-lead" style={{margin:'0 auto 44px'}}>No setup fee. No lock-in contracts. Cancel any month. All packages include a kick-off call and onboarding.</p>
+              <div className="pl-tog-row">
+                <span className={`pl-tog-lbl${!isYearly ? ' on' : ''}`}>Monthly</span>
+                <button
+                  className={`pl-tog-btn${isYearly ? ' active' : ''}`}
+                  onClick={() => setIsYearly(v => !v)}
+                  aria-label="Toggle billing period"
+                >
+                  <span className="pl-tog-knob"/>
+                </button>
+                <span className={`pl-tog-lbl${isYearly ? ' on' : ''}`}>
+                  Yearly <span className="pl-save-pill">Save 17%</span>
+                </span>
+              </div>
             </div>
             <div className="pl-pkg-grid pl-reveal">
               {PACKAGES.map(pkg => (
-                <div key={pkg.name} className={`pl-pkg-card${pkg.popular ? ' popular' : ''}`}>
-                  {pkg.popular
-                    ? <div className="pl-pkg-badge">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        Most Popular
-                      </div>
-                    : <div className="pl-pkg-badge-empty"/>
-                  }
-                  <div className="pl-pkg-name">{pkg.name}</div>
-                  <div className="pl-pkg-price">
-                    <span className="pl-pkg-amt">{pkg.price}</span>
-                    <span className="pl-pkg-per">{pkg.period}</span>
+                <div key={pkg.slug} className={`pl-card${pkg.popular ? ' pl-card-pop' : ''}`}>
+                  {pkg.popular && <span className="pl-pop-tag">Most Popular</span>}
+                  <div className="pl-plan-name">{pkg.name}</div>
+                  <p className="pl-plan-desc">{pkg.desc}</p>
+                  <div className="pl-price-row">
+                    <span className="pl-currency">$</span>
+                    <span className="pl-amount">{isYearly ? pkg.yearlyPrice : pkg.monthlyPrice}</span>
+                    <span className="pl-per">/mo</span>
                   </div>
-                  <p className="pl-pkg-tagline">{pkg.tagline}</p>
-                  <ul className="pl-pkg-features">
+                  <div className="pl-billed">{isYearly ? 'Billed annually' : 'Billed monthly'}</div>
+                  <div className="pl-save-line">{isYearly ? `Save $${pkg.yearlySave.toLocaleString()} per year` : ' '}</div>
+                  <a href="#pl-contact" className="pl-cta-card">Get Started →</a>
+                  <div className="pl-card-div"/>
+                  <ul className="pl-feat-list">
                     {pkg.features.map(f => (
-                      <li key={f} className="pl-pkg-feat">
-                        <span className="pl-pkg-feat-check">
-                          <svg viewBox="0 0 24 24" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                        </span>
-                        {f}
+                      <li key={f}>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>{f}</span>
                       </li>
                     ))}
                   </ul>
-                  {pkg.notIncluded.length > 0 && (
-                    <>
-                      <hr className="pl-pkg-divider"/>
-                      {pkg.notIncluded.map(f => (
-                        <div key={f} className="pl-pkg-no" style={{marginBottom:8}}>
-                          <span className="pl-pkg-no-x">
-                            <svg viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                          </span>
-                          {f}
-                        </div>
-                      ))}
-                    </>
-                  )}
-                  <div style={{marginTop:28}}>
-                    <a href="#pl-contact" className={`pl-pkg-cta ${pkg.popular ? 'pl-pkg-cta-popular' : 'pl-pkg-cta-default'}`}>
-                      {pkg.cta} →
-                    </a>
-                  </div>
                 </div>
               ))}
             </div>
-            <p className="pl-pkg-note pl-reveal">All prices in USD. <strong>Month-to-month</strong> — no lock-in contract. Not sure which package fits? <a href="#pl-contact" style={{color:'#D97706',fontWeight:600}}>Get a free audit first →</a></p>
+            <div className="pl-pkg-trust pl-reveal">
+              {['No setup fee','Cancel with 30 days notice','Custom plans for 4+ locations','Free kick-off audit included'].map(t => (
+                <span key={t}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── COMPARISON TABLE ── */}
+        <section className="pl-sec" id="compare">
+          <div className="pl-in">
+            <div className="pl-reveal">
+              <span className="pl-ey">Feature Breakdown</span>
+              <h2 className="pl-h2"><AuroraText>Package Comparison</AuroraText> at a Glance</h2>
+              <p className="pl-lead">See exactly what is included at each tier before you choose.</p>
+              <div className="pl-tbl-wrap">
+                <table className="pl-tbl">
+                  <thead>
+                    <tr>
+                      <th>Feature</th>
+                      <th>Starter — $499/mo</th>
+                      <th className="pl-tbl-pop">Growth — $899/mo ★</th>
+                      <th>Authority — $1,499/mo</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      ['Locations covered','1','1','Up to 3'],
+                      ['GBP posts per month','4','8','12 per location'],
+                      ['Service + suburb pages','5 pages','Up to 12','Unlimited'],
+                      ['Local citations per month','20','40','80+'],
+                      ['Plumbing keywords tracked','10','25','50+'],
+                      ['Review monitoring','Alerts only','Active management','Full management'],
+                      ['SMS + email review automation','—','✓','✓'],
+                      ['Competitor gap analysis','—','✓','✓'],
+                      ['Emergency keyword strategy','—','✓','✓'],
+                      ['Schema markup','Basic','Full suite','Full suite + rich results'],
+                      ['Monthly content pieces','—','—','2×/month'],
+                      ['Dedicated account manager','—','—','✓'],
+                      ['Reporting','Monthly','Monthly + call','Weekly tracking'],
+                    ].map(([feat, ...cols]) => (
+                      <tr key={feat}>
+                        <td>{feat}</td>
+                        {cols.map((v, i) => (
+                          <td key={i} className={i === 1 ? 'pl-tbl-pop' : v === '✓' ? 'pl-tbl-yes' : v === '—' ? 'pl-tbl-no' : ''}>
+                            {v}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </section>
 
