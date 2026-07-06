@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { AuroraText } from '../../components/AuroraText';
-import { Marquee } from '../../components/Marquee';
 
 const ALL_TESTIMONIALS = [
   { initials:'SR', bg:'#0F3460', name:'Sarah Reynolds', role:'LuxeFragrance Co. — USA', text:'"1Solutions rebuilt our Shopify store completely. Average order value increased by 40% in the first three months post-launch."' },
@@ -16,8 +15,8 @@ const ALL_TESTIMONIALS = [
   { initials:'SW', bg:'#0891B2', name:'Sophie Walker', role:'BeautyVault — USA', text:'"Our Shopify redesign actually increased organic traffic 18% in the first month. A rare outcome for any major rebuild."' },
   { initials:'TN', bg:'#16a34a', name:'Tom Nakamura', role:'CraftBrew Direct — USA', text:'"Shopify, Klaviyo, Gorgias, LoyaltyLion — all integrated and automated. What took 3 hours/day now runs automatically."' },
 ];
-const firstRow = ALL_TESTIMONIALS.slice(0, 5);
-const secondRow = ALL_TESTIMONIALS.slice(5);
+const firstRow = [...ALL_TESTIMONIALS.slice(0, 5), ...ALL_TESTIMONIALS.slice(0, 5)];
+const secondRow = [...ALL_TESTIMONIALS.slice(5), ...ALL_TESTIMONIALS.slice(5)];
 
 const SERVICES = [
   { n:'01', title:'Custom eCommerce Website Development', desc:'Fully bespoke online stores built from the ground up - architected around your catalogue, business model, and conversion goals, not retrofitted into a generic template.', featured:false },
@@ -354,16 +353,24 @@ export default function EcommerceWebsiteDevelopmentServices() {
           .ecom-testi-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.10);border-bottom:1px solid rgba(15,52,96,0.10);padding:80px 0;position:relative;z-index:1; }
           .ecom-testi-inner { max-width:1280px;margin:0 auto;padding:0 40px; }
           .ecom-section-header-center { text-align:center;margin-bottom:52px; }
-          .ecom-marq-outer { position:relative;display:flex;flex-direction:column;width:100%;gap:12px;margin-top:48px;overflow:hidden; }
-          .ecom-marq-fade-l { position:absolute;top:0;bottom:0;left:0;width:20%;background:linear-gradient(to right,#f8fafd,transparent);pointer-events:none;z-index:2; }
-          .ecom-marq-fade-r { position:absolute;top:0;bottom:0;right:0;width:20%;background:linear-gradient(to left,#f8fafd,transparent);pointer-events:none;z-index:2; }
-          .ecom-mcard { position:relative;width:256px;flex-shrink:0;cursor:pointer;overflow:hidden;border-radius:12px;border:1px solid rgba(15,52,96,0.10);padding:16px;background:rgba(248,250,253,0.80);transition:background 0.2s,border-color 0.2s; }
-          .ecom-mcard:hover { background:rgba(219,234,254,0.45);border-color:rgba(15,52,96,0.18); }
-          .ecom-mcard-header { display:flex;flex-direction:row;align-items:center;gap:10px;margin-bottom:10px; }
-          .ecom-mcard-avatar { width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;flex-shrink:0; }
-          .ecom-mcard-name { font-size:14px;font-weight:600;color:#0F3460;margin:0; }
-          .ecom-mcard-role { font-size:12px;color:#6b7280;margin:1px 0 0; }
-          .ecom-mcard-body { font-size:13px;line-height:1.65;color:#374151;display:block;margin:0; }
+          @keyframes ecom-marqLeft  { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+          @keyframes ecom-marqRight { 0%{transform:translateX(-50%)} 100%{transform:translateX(0)} }
+          .ecom-trow { overflow:hidden;position:relative;margin-bottom:16px; }
+          .ecom-trow:last-of-type { margin-bottom:0; }
+          .ecom-ttrack { display:flex;gap:20px;width:max-content;animation:ecom-marqLeft 40s linear infinite; }
+          .ecom-ttrack-rev { display:flex;gap:20px;width:max-content;animation:ecom-marqRight 40s linear infinite; }
+          .ecom-trow:hover .ecom-ttrack,.ecom-trow:hover .ecom-ttrack-rev { animation-play-state:paused; }
+          .ecom-tfade-l { position:absolute;left:0;top:0;bottom:0;width:160px;background:linear-gradient(to right,#f8fafd,transparent);pointer-events:none;z-index:1; }
+          .ecom-tfade-r { position:absolute;right:0;top:0;bottom:0;width:160px;background:linear-gradient(to left,#f8fafd,transparent);pointer-events:none;z-index:1; }
+          .ecom-tcard { width:400px;flex-shrink:0;background:#fff;border:1px solid rgba(15,52,96,0.08);border-radius:16px;padding:24px;box-shadow:0 2px 16px rgba(0,0,0,0.05);display:flex;flex-direction:column;gap:12px;user-select:none;transition:border-color 0.2s,box-shadow 0.2s; }
+          .ecom-tcard:hover { border-color:rgba(217,119,6,0.30);box-shadow:0 8px 32px rgba(217,119,6,0.10); }
+          .ecom-tcard-stars { display:flex;gap:2px; }
+          .ecom-tcard-star { color:#F59E0B;font-size:14px; }
+          .ecom-tcard-text { font-size:14px;color:#374151;line-height:1.75;margin:0;flex-grow:1; }
+          .ecom-tcard-footer { display:flex;align-items:center;gap:12px;border-top:1px solid #f3f4f6;padding-top:16px; }
+          .ecom-tcard-avatar { width:40px;height:40px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:13px; }
+          .ecom-tcard-name { font-weight:700;color:#111827;font-size:13px;margin:0 0 2px; }
+          .ecom-tcard-role { color:#9ca3af;font-size:12px;margin:0; }
           .ecom-testi-stats-wrap { margin-top:52px; }
           .ecom-testi-stats { display:flex;align-items:center;justify-content:center;gap:0;background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.78) 50%,rgba(237,233,254,0.42) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:16px;padding:32px 40px;border:1px solid rgba(255,255,255,0.88);box-shadow:0 4px 20px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
           .ecom-tstat { display:flex;flex-direction:column;align-items:center;gap:4px;flex:1; }
@@ -534,7 +541,7 @@ export default function EcommerceWebsiteDevelopmentServices() {
             .ecom-process-top { margin-bottom:36px; }
             .ecom-testi-section { padding:60px 0; }
             .ecom-testi-inner { padding:0 20px; }
-            .ecom-marq-fade-l,.ecom-marq-fade-r { width:15%; }
+            .ecom-tfade-l,.ecom-tfade-r { width:60px; }
             .ecom-why-section { padding:60px 20px; }
             .ecom-why-section .ecom-section-header-center { text-align:left; }
             .ecom-why-grid { grid-template-columns:1fr;margin-top:40px; }
@@ -553,7 +560,7 @@ export default function EcommerceWebsiteDevelopmentServices() {
             .ecom-related-tags { gap:8px; }
             .ecom-rtag { padding:9px 16px;font-size:13px; }
             .ecom-services-grid { grid-template-columns:1fr 1fr;gap:10px; }
-            .ecom-mcard { width:220px; }
+            .ecom-tcard { width:320px; }
             .ecom-portfolio-grid { grid-template-columns:1fr; }
             .ecom-section-title,.ecom-engage-title,.ecom-process-main-title,.ecom-related-title { font-size:30px; }
             .ecom-testi-stats { flex-wrap:wrap;gap:0;padding:24px 20px; }
@@ -576,7 +583,7 @@ export default function EcommerceWebsiteDevelopmentServices() {
             .ecom-portfolio-title { font-size:22px; }
             .ecom-contact-title { font-size:24px; }
             .ecom-engage-title { font-size:26px; }
-            .ecom-mcard { width:200px;padding:14px; }
+            .ecom-tcard { width:280px;padding:18px; }
             .ecom-ecard { padding:20px; }
             .ecom-ecard-features { grid-template-columns:1fr; }
             .ecom-merged-box { padding:18px; }
@@ -745,37 +752,45 @@ export default function EcommerceWebsiteDevelopmentServices() {
               <p className="ecom-section-sub">Trusted by e-commerce businesses across the US, Canada, Australia, and beyond for 15+ years.</p>
             </div>
           </div>
-          <div className="ecom-marq-outer">
-            <Marquee pauseOnHover duration="20s">
-              {firstRow.map((t) => (
-                <figure className="ecom-mcard" key={t.name}>
-                  <div className="ecom-mcard-header">
-                    <div className="ecom-mcard-avatar" style={{background:t.bg}}>{t.initials}</div>
-                    <div>
-                      <figcaption className="ecom-mcard-name">{t.name}</figcaption>
-                      <p className="ecom-mcard-role">{t.role}</p>
+          <div style={{display:'flex',flexDirection:'column',gap:0,marginTop:48}}>
+            <div className="ecom-trow">
+              <div className="ecom-tfade-l" />
+              <div className="ecom-tfade-r" />
+              <div className="ecom-ttrack" style={{paddingLeft:20}}>
+                {firstRow.map((t, i) => (
+                  <div className="ecom-tcard" key={i}>
+                    <div className="ecom-tcard-stars">{[1,2,3,4,5].map(s=><span key={s} className="ecom-tcard-star">★</span>)}</div>
+                    <p className="ecom-tcard-text">{t.text}</p>
+                    <div className="ecom-tcard-footer">
+                      <div className="ecom-tcard-avatar" style={{background:t.bg}}>{t.initials}</div>
+                      <div>
+                        <p className="ecom-tcard-name">{t.name}</p>
+                        <p className="ecom-tcard-role">{t.role}</p>
+                      </div>
                     </div>
                   </div>
-                  <blockquote className="ecom-mcard-body">{t.text}</blockquote>
-                </figure>
-              ))}
-            </Marquee>
-            <Marquee reverse pauseOnHover duration="20s">
-              {secondRow.map((t) => (
-                <figure className="ecom-mcard" key={t.name}>
-                  <div className="ecom-mcard-header">
-                    <div className="ecom-mcard-avatar" style={{background:t.bg}}>{t.initials}</div>
-                    <div>
-                      <figcaption className="ecom-mcard-name">{t.name}</figcaption>
-                      <p className="ecom-mcard-role">{t.role}</p>
+                ))}
+              </div>
+            </div>
+            <div className="ecom-trow">
+              <div className="ecom-tfade-l" />
+              <div className="ecom-tfade-r" />
+              <div className="ecom-ttrack-rev" style={{paddingLeft:20}}>
+                {secondRow.map((t, i) => (
+                  <div className="ecom-tcard" key={i}>
+                    <div className="ecom-tcard-stars">{[1,2,3,4,5].map(s=><span key={s} className="ecom-tcard-star">★</span>)}</div>
+                    <p className="ecom-tcard-text">{t.text}</p>
+                    <div className="ecom-tcard-footer">
+                      <div className="ecom-tcard-avatar" style={{background:t.bg}}>{t.initials}</div>
+                      <div>
+                        <p className="ecom-tcard-name">{t.name}</p>
+                        <p className="ecom-tcard-role">{t.role}</p>
+                      </div>
                     </div>
                   </div>
-                  <blockquote className="ecom-mcard-body">{t.text}</blockquote>
-                </figure>
-              ))}
-            </Marquee>
-            <div className="ecom-marq-fade-l" />
-            <div className="ecom-marq-fade-r" />
+                ))}
+              </div>
+            </div>
           </div>
           <div className="ecom-testi-inner">
             <div className="ecom-testi-stats-wrap">
