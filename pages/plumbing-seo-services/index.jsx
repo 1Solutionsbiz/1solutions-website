@@ -410,8 +410,8 @@ export default function PlumbingSeoServices() {
           .pl-dark-ey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;display:block;margin-bottom:10px}
           .pl-dark-h{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;letter-spacing:-1px;color:#0F1F40;margin-bottom:10px}
           .pl-dark-lead{font-size:15px;color:#4A6080;line-height:1.7;max-width:640px;margin-bottom:40px}
-          .pl-res-card{background:linear-gradient(135deg,rgba(219,234,254,.55) 0%,rgba(255,255,255,.85) 60%,rgba(237,233,254,.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:20px;padding:32px 20px;text-align:center;transition:border-color .3s,box-shadow .3s;box-shadow:0 4px 24px rgba(15,52,96,.07),inset 0 1px 0 rgba(255,255,255,.95)}
-          .pl-res-card:hover{border-color:rgba(34,197,94,0.40);box-shadow:0 8px 32px rgba(15,52,96,.12),inset 0 1px 0 rgba(255,255,255,1)}
+          .pl-res-card{background:none;border:none;border-radius:20px;padding:32px 20px;text-align:center}
+          .pl-res-card:hover .pl-res-metric{filter:drop-shadow(0 0 12px rgba(34,197,94,0.45))}
           .pl-res-metric{font-size:clamp(2.6rem,4.5vw,3.6rem);font-weight:900;letter-spacing:-0.04em;line-height:1;margin-bottom:10px;background:linear-gradient(135deg,#22c55e,#fbbf24);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-variant-numeric:tabular-nums}
           .pl-res-label{font-size:13px;font-weight:700;color:#0F1F40;margin-bottom:6px}
           .pl-res-detail{font-size:11px;color:#6b7280;line-height:1.5}
