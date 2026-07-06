@@ -450,56 +450,55 @@ export default function PlumbingSeoServices() {
           .pl-tog-lbl{font-size:15px;font-weight:600;color:#9ca3af;transition:color .2s}
           .pl-tog-lbl.on{color:#0F1F40}
           .pl-tog-btn{width:50px;height:28px;background:#d1d5db;border-radius:100px;position:relative;cursor:pointer;border:none;padding:0;transition:background .25s;flex-shrink:0}
-          .pl-tog-btn.active{background:#0F3460}
+          .pl-tog-btn.active{background:#D97706}
           .pl-tog-knob{position:absolute;top:4px;left:4px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform .25s;box-shadow:0 1px 4px rgba(0,0,0,.18)}
           .pl-tog-btn.active .pl-tog-knob{transform:translateX(22px)}
-          .pl-save-pill{display:inline-flex;align-items:center;background:rgba(15,52,96,.10);color:#0F3460;font-size:11px;font-weight:700;padding:2px 9px;border-radius:100px;margin-left:6px}
-          .pl-pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
-          .pl-card{background:#fff;border:1.5px solid #e5e9f0;border-radius:24px;padding:32px 28px;position:relative;transition:box-shadow .22s,transform .22s;overflow:hidden}
-          .pl-card:hover{box-shadow:0 12px 40px rgba(15,52,96,.08)}
-          .pl-card-pop{background:linear-gradient(135deg,#071e3d 0%,#0F3460 100%);border-color:transparent;transform:scale(1.04);box-shadow:0 20px 60px rgba(15,52,96,.28)}
-          .pl-card-pop:hover{transform:scale(1.04) translateY(-4px)}
-          .pl-pop-tag{position:absolute;top:20px;right:20px;background:rgba(255,255,255,.18);color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:100px;letter-spacing:.5px;border:1px solid rgba(255,255,255,.28)}
-          .pl-plan-name{font-size:22px;font-weight:800;color:#0F1F40;margin-bottom:6px}
+          .pl-save-pill{display:inline-flex;align-items:center;background:rgba(217,119,6,.12);color:#B45309;font-size:11px;font-weight:700;padding:2px 9px;border-radius:100px;margin-left:6px}
+          .pl-pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
+          .pl-card{background:linear-gradient(135deg,rgba(219,234,254,.55) 0%,rgba(255,255,255,.80) 60%,rgba(237,233,254,.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:24px;padding:28px 24px;position:relative;transition:transform .22s,box-shadow .22s,border-color .22s;overflow:hidden;box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
+          .pl-card:hover{transform:translateY(-4px);border-color:rgba(217,119,6,.40);box-shadow:0 16px 48px rgba(15,52,96,.14),inset 0 1px 0 rgba(255,255,255,1)}
+          .pl-card-pop{background:linear-gradient(135deg,#0F3460 0%,#1a3a6e 50%,#0a2549 100%);border-color:transparent;transform:scale(1.03);box-shadow:0 20px 60px rgba(15,52,96,.30)}
+          .pl-card-pop:hover{transform:scale(1.03) translateY(-4px)}
+          .pl-pop-tag{position:absolute;top:16px;right:16px;background:rgba(217,119,6,.90);color:#fff;font-size:10px;font-weight:700;padding:3px 9px;border-radius:100px;letter-spacing:.5px}
+          .pl-plan-name{font-size:20px;font-weight:800;color:#0F1F40;margin-bottom:6px}
           .pl-card-pop .pl-plan-name{color:#fff}
-          .pl-plan-desc{font-size:13px;color:#6b7280;line-height:1.55;margin-bottom:24px}
+          .pl-plan-desc{font-size:12px;color:#6b7280;line-height:1.55;margin-bottom:20px}
           .pl-card-pop .pl-plan-desc{color:rgba(255,255,255,.70)}
           .pl-price-row{display:flex;align-items:baseline;gap:4px;margin-bottom:4px}
-          .pl-currency{font-size:1.4rem;font-weight:700;color:#D97706}
-          .pl-card-pop .pl-currency{color:rgba(255,255,255,.80)}
-          .pl-amount{font-size:3rem;font-weight:900;letter-spacing:-2px;color:#0F1F40;line-height:1}
-          .pl-card-pop .pl-amount{color:#fff}
-          .pl-per{font-size:13px;color:#9ca3af;font-weight:500;margin-left:2px}
-          .pl-card-pop .pl-per{color:rgba(255,255,255,.60)}
-          .pl-billed{font-size:12px;color:#9ca3af;margin-bottom:4px}
-          .pl-card-pop .pl-billed{color:rgba(255,255,255,.55)}
-          .pl-save-line{font-size:12px;font-weight:700;color:#16a34a;min-height:18px;margin-bottom:20px}
+          .pl-currency{font-size:1.3rem;font-weight:700;color:#D97706}
+          .pl-card-pop .pl-currency,.pl-card-pop .pl-amount{color:#fff}
+          .pl-amount{font-size:2.6rem;font-weight:900;letter-spacing:-2px;color:#0F1F40;line-height:1}
+          .pl-per{font-size:12px;color:#9ca3af;font-weight:500;margin-left:2px}
+          .pl-card-pop .pl-per{color:rgba(255,255,255,.55)}
+          .pl-billed{font-size:11px;color:#9ca3af;margin-bottom:4px}
+          .pl-card-pop .pl-billed{color:rgba(255,255,255,.45)}
+          .pl-save-line{font-size:11px;font-weight:700;color:#16a34a;min-height:16px;margin-bottom:18px}
           .pl-card-pop .pl-save-line{color:#86efac}
-          .pl-cta-card{display:block;width:100%;text-align:center;padding:13px;border-radius:50px;font-weight:700;font-size:.9rem;text-decoration:none;background:#0F3460;color:#fff;transition:all .22s;margin-bottom:24px}
-          .pl-cta-card:hover{background:#071e3d;transform:translateY(-1px);box-shadow:0 6px 24px rgba(15,52,96,.28)}
-          .pl-card-pop .pl-cta-card{background:#fff;color:#0F3460}
-          .pl-card-pop .pl-cta-card:hover{background:#e0f2fe}
-          .pl-card-div{height:1px;background:#f1f5f9;margin-bottom:20px}
+          .pl-cta-card{display:block;width:100%;text-align:center;padding:12px;border-radius:50px;font-weight:700;font-size:.875rem;text-decoration:none;background:rgba(15,52,96,.85);color:#fff;transition:all .22s;margin-bottom:20px;box-shadow:0 4px 16px rgba(15,52,96,.20)}
+          .pl-cta-card:hover{background:rgba(15,52,96,1);transform:translateY(-1px);box-shadow:0 6px 24px rgba(15,52,96,.30)}
+          .pl-card-pop .pl-cta-card{background:rgba(255,255,255,.18);backdrop-filter:blur(12px);border:1.5px solid rgba(255,255,255,.35);color:#fff}
+          .pl-card-pop .pl-cta-card:hover{background:rgba(255,255,255,.28);border-color:rgba(245,158,11,.6)}
+          .pl-card-div{height:1px;background:rgba(15,52,96,.08);margin-bottom:18px}
           .pl-card-pop .pl-card-div{background:rgba(255,255,255,.15)}
-          .pl-feat-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
-          .pl-feat-list li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#374151;line-height:1.4}
-          .pl-card-pop .pl-feat-list li{color:rgba(255,255,255,.88)}
+          .pl-feat-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px}
+          .pl-feat-list li{display:flex;align-items:flex-start;gap:9px;font-size:12px;color:#374151;line-height:1.4}
+          .pl-card-pop .pl-feat-list li{color:rgba(255,255,255,.85)}
           .pl-feat-list li svg{color:#D97706;flex-shrink:0;margin-top:2px}
-          .pl-card-pop .pl-feat-list li svg{color:#fde68a}
-          .pl-pkg-trust{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:32px;padding-top:32px;border-top:1px solid #e5e9f0}
+          .pl-card-pop .pl-feat-list li svg{color:#fcd34d}
+          .pl-pkg-trust{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:32px;padding-top:32px;border-top:1px solid rgba(15,52,96,.08)}
           .pl-pkg-trust span{font-size:13px;color:#6b7280;display:flex;align-items:center;gap:6px;font-weight:500}
           /* comparison table */
-          .pl-tbl-wrap{overflow-x:auto;margin-top:40px}
-          .pl-tbl{width:100%;border-collapse:collapse;font-size:14px}
-          .pl-tbl th{padding:14px 20px;text-align:left;font-weight:700;font-size:12px;letter-spacing:.5px;text-transform:uppercase;color:#4A6080;background:rgba(15,52,96,.04);border-bottom:2px solid rgba(15,52,96,.10)}
-          .pl-tbl th:first-child{border-radius:12px 0 0 0}.pl-tbl th:last-child{border-radius:0 12px 0 0}
-          .pl-tbl td{padding:13px 20px;border-bottom:1px solid rgba(15,52,96,.07);color:#374151;vertical-align:middle}
-          .pl-tbl td:first-child{font-weight:600;color:#0F1F40}
+          .pl-tbl-wrap{overflow-x:auto;border-radius:16px;border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 20px rgba(15,52,96,.08)}
+          .pl-tbl{width:100%;border-collapse:collapse;background:rgba(255,255,255,.75);min-width:600px}
+          .pl-tbl th{background:linear-gradient(135deg,#0F3460 0%,#1a3a6e 100%);color:#fff;font-size:12px;font-weight:700;padding:13px 16px;text-align:center}
+          .pl-tbl th:first-child{text-align:left;border-radius:12px 0 0 0}
+          .pl-tbl th:last-child{border-radius:0 12px 0 0}
+          .pl-tbl td{padding:12px 16px;font-size:12px;color:#374151;border-bottom:1px solid rgba(15,52,96,.06);text-align:center}
+          .pl-tbl td:first-child{text-align:left;font-weight:600;color:#0F1F40}
           .pl-tbl tr:last-child td{border-bottom:none}
-          .pl-tbl tr:hover td{background:rgba(15,52,96,.02)}
-          .pl-tbl-yes{color:#D97706;font-weight:700}
-          .pl-tbl-no{color:#d1d5db}
-          .pl-tbl-pop{background:rgba(15,52,96,.05);font-weight:600;color:#0F3460}
+          .pl-tbl tr:hover td{background:rgba(217,119,6,.03)}
+          .pl-tbl-y{color:#D97706;font-weight:700}
+          .pl-tbl-n{color:#d1d5db}
 
           /* ── RESPONSIVE ── */
           @media(max-width:1024px){
@@ -530,6 +529,7 @@ export default function PlumbingSeoServices() {
             .pl-btn-p,.pl-btn-s,.pl-submit{backdrop-filter:none;-webkit-backdrop-filter:none}
             .pl-res-card,.pl-pill{backdrop-filter:none;-webkit-backdrop-filter:none}
             .pl-related{backdrop-filter:none;-webkit-backdrop-filter:none}
+            .pl-card,.pl-card-pop .pl-cta-card{backdrop-filter:none;-webkit-backdrop-filter:none}
             .pl-trow:last-child{display:none}
           }
           @media(max-width:480px){
@@ -750,7 +750,7 @@ export default function PlumbingSeoServices() {
                     <tr>
                       <th>Feature</th>
                       <th>Starter — $499/mo</th>
-                      <th className="pl-tbl-pop">Growth — $899/mo ★</th>
+                      <th>Growth — $899/mo</th>
                       <th>Authority — $1,499/mo</th>
                     </tr>
                   </thead>
@@ -762,20 +762,18 @@ export default function PlumbingSeoServices() {
                       ['Local citations per month','20','40','80+'],
                       ['Plumbing keywords tracked','10','25','50+'],
                       ['Review monitoring','Alerts only','Active management','Full management'],
-                      ['SMS + email review automation','—','✓','✓'],
-                      ['Competitor gap analysis','—','✓','✓'],
-                      ['Emergency keyword strategy','—','✓','✓'],
+                      ['SMS + email review automation','✗','✓','✓'],
+                      ['Competitor gap analysis','✗','✓','✓'],
+                      ['Emergency keyword strategy','✗','✓','✓'],
                       ['Schema markup','Basic','Full suite','Full suite + rich results'],
-                      ['Monthly content pieces','—','—','2×/month'],
-                      ['Dedicated account manager','—','—','✓'],
+                      ['Monthly content pieces','✗','✗','2×/month'],
+                      ['Dedicated account manager','✗','✗','✓'],
                       ['Reporting','Monthly','Monthly + call','Weekly tracking'],
                     ].map(([feat, ...cols]) => (
                       <tr key={feat}>
                         <td>{feat}</td>
                         {cols.map((v, i) => (
-                          <td key={i} className={i === 1 ? 'pl-tbl-pop' : v === '✓' ? 'pl-tbl-yes' : v === '—' ? 'pl-tbl-no' : ''}>
-                            {v}
-                          </td>
+                          <td key={i} className={v === '✗' ? 'pl-tbl-n' : 'pl-tbl-y'}>{v}</td>
                         ))}
                       </tr>
                     ))}
