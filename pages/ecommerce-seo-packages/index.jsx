@@ -150,13 +150,20 @@ export default function EcommerceSeoPackages() {
   }, []);
 
   useEffect(() => {
-    if (!recaptchaLoaded.current) {
-      const s = document.createElement('script');
-      s.src = 'https://www.google.com/recaptcha/api.js?render=6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs';
-      s.async = true;
-      document.head.appendChild(s);
-      recaptchaLoaded.current = true;
-    }
+    const contact = document.getElementById('contact');
+    if (!contact) return;
+    const rcObs = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && !recaptchaLoaded.current) {
+        const s = document.createElement('script');
+        s.src = 'https://www.google.com/recaptcha/api.js?render=6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs';
+        s.async = true;
+        document.head.appendChild(s);
+        recaptchaLoaded.current = true;
+        rcObs.disconnect();
+      }
+    }, { rootMargin: '300px' });
+    rcObs.observe(contact);
+    return () => rcObs.disconnect();
   }, []);
 
   const _auditSubmit = async (e) => {
@@ -395,8 +402,8 @@ export default function EcommerceSeoPackages() {
           .esp-trow:last-child{margin-bottom:0}
           .esp-tfade-l{position:absolute;left:0;top:0;bottom:0;width:160px;z-index:1;background:linear-gradient(to right,#f8fafd,transparent);pointer-events:none}
           .esp-tfade-r{position:absolute;right:0;top:0;bottom:0;width:160px;z-index:1;background:linear-gradient(to left,#f8fafd,transparent);pointer-events:none}
-          .esp-ttrack{display:flex;gap:20px;width:max-content;padding-left:20px;animation:esp-marq-l 42s linear infinite}
-          .esp-ttrack-rev{display:flex;gap:20px;width:max-content;padding-left:20px;animation:esp-marq-r 42s linear infinite}
+          .esp-ttrack{display:flex;gap:20px;width:max-content;padding-left:20px;animation:esp-marq-l 42s linear infinite;will-change:transform}
+          .esp-ttrack-rev{display:flex;gap:20px;width:max-content;padding-left:20px;animation:esp-marq-r 42s linear infinite;will-change:transform}
           .esp-trow:hover .esp-ttrack,.esp-trow:hover .esp-ttrack-rev{animation-play-state:paused}
           .esp-tcard{width:400px;flex-shrink:0;background:#fff;border:1px solid rgba(15,52,96,0.08);border-radius:16px;padding:24px;box-shadow:0 2px 16px rgba(0,0,0,0.05);display:flex;flex-direction:column;gap:12px;user-select:none;transition:border-color 0.2s}
           .esp-tcard:hover{border-color:rgba(217,119,6,0.30)}
@@ -506,6 +513,14 @@ export default function EcommerceSeoPackages() {
             .esp-tcard{width:320px}
             .esp-related-ttl{font-size:28px}
             .esp-trust{gap:12px}
+            /* ── MOBILE PERFORMANCE: disable expensive GPU effects ── */
+            .esp-orb1,.esp-orb2,.esp-orb3{display:none}
+            .esp-hero::before,.esp-hero::after{display:none}
+            .esp-glass,.esp-plan-card,.esp-fitem,.esp-form-box,.esp-trust-box,.esp-stats,.esp-platform-card{backdrop-filter:none;-webkit-backdrop-filter:none}
+            .esp-btn-primary,.esp-btn-secondary,.esp-submit{backdrop-filter:none;-webkit-backdrop-filter:none}
+            .esp-dark-card{backdrop-filter:none;-webkit-backdrop-filter:none}
+            .esp-related-sec{backdrop-filter:none;-webkit-backdrop-filter:none}
+            .esp-trow:last-child{display:none}
           }
           @media(max-width:480px){
             .esp-tcard{width:280px;padding:18px}
