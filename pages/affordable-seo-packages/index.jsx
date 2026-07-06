@@ -204,10 +204,20 @@ const RESULTS = [
   { prefix: '', target: 15,    suffix: '+', decimals: 0, label: 'Years in SEO',              detail: 'Founded 2008, zero manual penalties' },
 ];
 
-const TESTIMONIALS = [
-  { name: 'James Whitfield', role: 'E-commerce Director, Sydney', avatar: 'JW', color: '#0F3460', stars: 5, text: '"Went from page 4 to page 1 for our main product keywords in 6 months. Organic revenue up 340%. The monthly reports are genuinely useful - not just fluff."' },
-  { name: 'Sarah Mitchell', role: 'Small Business Owner, Colorado', avatar: 'SM', color: '#D97706', stars: 5, text: '"Started on the Starter plan, upgraded to Professional after 3 months because the results were too good to slow down. Best marketing investment I\'ve made."', featured: true },
-  { name: 'Ravi Nair', role: 'Marketing Manager, Toronto', avatar: 'RN', color: '#7c3aed', stars: 5, text: '"15 years of experience shows. They navigated our site through the 2024 core update without a ranking drop while our competitors lost 40% of traffic."' },
+const TESTIMONIALS_ROW1 = [
+  { name: 'James Whitfield', role: 'E-commerce Director, Sydney', avatar: 'JW', bg: '#0F3460', text: '"Went from page 4 to page 1 for our main product keywords in 6 months. Organic revenue up 340%. The monthly reports are genuinely useful — not just fluff."' },
+  { name: 'Sarah Mitchell', role: 'Small Business Owner, Colorado', avatar: 'SM', bg: '#D97706', text: '"Started on the Starter plan, upgraded to Professional after 3 months because the results were too good to slow down. Best marketing investment I\'ve ever made."' },
+  { name: 'Ravi Nair', role: 'Marketing Manager, Toronto', avatar: 'RN', bg: '#7c3aed', text: '"15 years of experience shows. They navigated our site through the 2024 core update without a ranking drop while our competitors lost 40% of traffic."' },
+  { name: 'Emily Thompson', role: 'Founder, London', avatar: 'ET', bg: '#0891b2', text: '"The transparency is what sets them apart. Every link earned, every rank change — documented clearly. We hit page 1 for 12 keywords in our first 4 months."' },
+  { name: 'David Chen', role: 'Head of Digital, Melbourne', avatar: 'DC', bg: '#059669', text: '"We\'d tried two other agencies with poor results. 1Solutions are different — they actually understand search intent and write content that converts, not just ranks."' },
+];
+
+const TESTIMONIALS_ROW2 = [
+  { name: 'Priya Sharma', role: 'Digital Manager, Vancouver', avatar: 'PS', bg: '#7c3aed', text: '"Organic traffic up 280% in 8 months. The E-E-A-T content strategy completely changed how Google sees our site. Our domain authority jumped from 18 to 41."' },
+  { name: 'Michael O\'Brien', role: 'CEO, Dublin', avatar: 'MO', bg: '#D97706', text: '"No contracts, no lock-ins — just results. We\'ve been on the Professional plan for 2 years now. ROI is roughly 6x. I recommend them to every business owner I know."' },
+  { name: 'Anna Kowalski', role: 'E-commerce Lead, New York', avatar: 'AK', bg: '#0F3460', text: '"Schema markup and Core Web Vitals improvements led to rich snippets appearing for 23 of our product pages. CTR went up 67% without any ranking change."' },
+  { name: 'Brendan Walsh', role: 'Marketing Director, Auckland', avatar: 'BW', bg: '#be185d', text: '"Their local SEO work put us in the Maps Pack for every suburb we serve. Phone calls doubled in 4 months. The Google Business Profile optimisation alone paid for the plan."' },
+  { name: 'Liu Wei', role: 'Founder, San Francisco', avatar: 'LW', bg: '#0891b2', text: '"Starting from zero domain authority is tough, but the Enterprise plan accelerated everything. We hit 50 DR in 11 months and rank competitively against sites with 5 years head start."' },
 ];
 
 const PROCESS = [
@@ -326,7 +336,7 @@ export default function AffordableSeoPackages() {
           .asp-reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
           .asp-reveal.asp-vis{opacity:1;transform:translateY(0)}
           /* ── Breadcrumb ── */
-          .asp-bc{display:flex;align-items:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;padding:16px 40px 0;max-width:1280px;margin:0 auto;position:relative;z-index:2;font-weight:500}
+          .asp-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;padding:16px 40px 0;max-width:1280px;margin:0 auto;position:relative;z-index:2;font-weight:500}
           .asp-bc a{color:#6b7280;text-decoration:none}.asp-bc a:hover{color:#D97706}
           .asp-bc-sep{color:#d1d5db}
           /* ── Hero ── */
@@ -437,22 +447,32 @@ export default function AffordableSeoPackages() {
           .asp-pstep:last-child .asp-pstep-r{padding-bottom:0}
           .asp-pstep-title{font-size:18px;font-weight:700;color:#0F3460;margin:0 0 8px}
           .asp-pstep-body{font-size:14px;color:#4A6080;line-height:1.75;margin:0}
-          /* ── Testimonials ── */
-          .asp-tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;margin-bottom:40px}
-          .asp-tcard{background:linear-gradient(135deg,rgba(219,234,254,.55) 0%,rgba(255,255,255,.80) 60%,rgba(237,233,254,.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:20px;padding:30px 26px;display:flex;flex-direction:column;gap:14px;box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95);transition:transform .22s,box-shadow .22s}
-          .asp-tcard:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(15,52,96,.14)}
-          .asp-tcard-feat{background:linear-gradient(135deg,rgba(254,243,199,.50) 0%,rgba(255,255,255,.85) 55%,rgba(219,234,254,.45) 100%);border-color:rgba(217,119,6,.25)}
-          .asp-tstars{font-size:17px;color:#D97706;letter-spacing:2px}
-          .asp-ttext{font-size:14px;line-height:1.75;color:#374151;flex:1;margin:0}
-          .asp-tauthor{display:flex;align-items:center;gap:12px}
-          .asp-tavatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;flex-shrink:0}
-          .asp-tname{font-size:14px;font-weight:700;color:#0F3460}
-          .asp-trole{font-size:12px;color:#6b7280}
-          .asp-tbar{display:flex;background:linear-gradient(135deg,rgba(219,234,254,.50) 0%,rgba(255,255,255,.75) 50%,rgba(237,233,254,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:16px;padding:28px 40px;box-shadow:0 4px 20px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
+          /* ── Testimonials scroll ── */
+          .asp-testi-sec{padding:72px 0;background:linear-gradient(135deg,#f8faff 0%,#f5f3ff 50%,#f0f7ff 100%);overflow:hidden}
+          .asp-testi-hd{text-align:center;margin-bottom:44px;padding:0 40px}
+          .asp-trow{overflow:hidden;position:relative}
+          .asp-trow+.asp-trow{margin-top:16px}
+          .asp-tfade-l{position:absolute;left:0;top:0;bottom:0;width:160px;z-index:1;background:linear-gradient(to right,#f8faff,transparent);pointer-events:none}
+          .asp-tfade-r{position:absolute;right:0;top:0;bottom:0;width:160px;z-index:1;background:linear-gradient(to left,#f8faff,transparent);pointer-events:none}
+          .asp-ttrack{display:flex;gap:20px;width:max-content;padding-left:20px;animation:asp-marq-l 42s linear infinite}
+          .asp-ttrack-rev{display:flex;gap:20px;width:max-content;padding-left:20px;animation:asp-marq-r 42s linear infinite}
+          .asp-trow:hover .asp-ttrack,.asp-trow:hover .asp-ttrack-rev{animation-play-state:paused}
+          @keyframes asp-marq-l{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+          @keyframes asp-marq-r{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
+          @media(prefers-reduced-motion:reduce){.asp-ttrack,.asp-ttrack-rev{animation:none!important}}
+          .asp-tcard{width:420px;flex-shrink:0;background:#fff;border:1px solid rgba(15,52,96,.08);border-radius:16px;padding:20px 24px;box-shadow:0 2px 16px rgba(0,0,0,.05);display:flex;flex-direction:column;gap:12px;user-select:none}
+          .asp-tcard-stars{display:flex;gap:2px}
+          .asp-tcard-star{color:#F59E0B;font-size:14px}
+          .asp-tcard-text{font-size:14px;color:#374151;line-height:1.75;margin:0;flex-grow:1}
+          .asp-tcard-author{display:flex;align-items:center;gap:12px;border-top:1px solid #f3f4f6;padding-top:14px}
+          .asp-tavatar{width:40px;height:40px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:13px}
+          .asp-tname{font-weight:700;color:#111827;font-size:13px}
+          .asp-trole{color:#9ca3af;font-size:12px;margin-top:1px}
+          .asp-tbar{display:flex;align-items:center;justify-content:center;gap:0;background:linear-gradient(135deg,rgba(219,234,254,.50) 0%,rgba(255,255,255,.75) 50%,rgba(237,233,254,.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:16px;padding:32px 40px;border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 20px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95);margin:44px auto 0;max-width:1100px}
           .asp-tbar-item{flex:1;text-align:center}
-          .asp-tbar-num{font-size:26px;font-weight:800;color:#0F3460}
-          .asp-tbar-label{font-size:12px;color:#4A6080;font-weight:500}
-          .asp-tbar-div{width:1px;background:rgba(15,52,96,.12);align-self:stretch}
+          .asp-tbar-num{font-size:28px;font-weight:800;color:#0F3460}
+          .asp-tbar-label{font-size:13px;color:#4A6080;font-weight:500}
+          .asp-tbar-div{width:1px;height:40px;background:rgba(15,52,96,.15);align-self:center}
           /* ── FAQ ── */
           .asp-faq-list{display:flex;flex-direction:column;gap:10px;margin-top:40px}
           .asp-fitem{background:linear-gradient(135deg,rgba(219,234,254,.55) 0%,rgba(255,255,255,.80) 60%,rgba(237,233,254,.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(15,52,96,.06),inset 0 1px 0 rgba(255,255,255,.95);transition:border-color .2s}
@@ -503,27 +523,32 @@ export default function AffordableSeoPackages() {
           .asp-rtag-orange{background:rgba(249,115,22,.09);border-color:rgba(249,115,22,.28);color:#C2410C}
           /* ── Responsive ── */
           @media(max-width:1024px){
-            .asp-g3,.asp-pkg-grid,.asp-tgrid{grid-template-columns:1fr 1fr}
+            .asp-g3,.asp-pkg-grid{grid-template-columns:1fr 1fr}
             .asp-g4,.asp-res-grid{grid-template-columns:repeat(2,1fr)}
             .asp-card-pop{transform:none}
             .asp-card-pop:hover{transform:translateY(-4px)}
             .asp-contact-grid{grid-template-columns:1fr}
+            .asp-tbar{flex-wrap:wrap;gap:16px;padding:24px 20px}
           }
           @media(max-width:768px){
             .asp-bc{padding:12px 20px 0}
             .asp-hero{padding:56px 24px 0}
             .asp-hero::before,.asp-hero::after{display:none}
             .asp-sec{padding:52px 20px}
+            .asp-testi-sec{padding:52px 0}
+            .asp-testi-hd{padding:0 20px}
+            .asp-tcard{width:300px}
+            .asp-tfade-l,.asp-tfade-r{width:48px}
             .asp-stats{grid-template-columns:repeat(2,1fr)}
             .asp-stat:nth-child(2){border-right:none}
             .asp-stat:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}
             .asp-stat:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}
             .asp-logos-bar{padding:16px 20px 28px}
             .asp-glass,.asp-card,.asp-fitem,.asp-form-box{backdrop-filter:none;-webkit-backdrop-filter:none}
-            .asp-g3,.asp-pkg-grid,.asp-tgrid,.asp-g4,.asp-res-grid{grid-template-columns:1fr}
+            .asp-g3,.asp-pkg-grid,.asp-g4,.asp-res-grid{grid-template-columns:1fr}
             .asp-ctable{min-width:540px}
             .asp-frow{grid-template-columns:1fr}
-            .asp-tbar{flex-wrap:wrap;padding:20px}
+            .asp-tbar{flex-wrap:wrap;padding:20px;margin-left:20px;margin-right:20px}
             .asp-tbar-item{flex:0 0 50%;padding:10px}
             .asp-tbar-div{display:none}
           }
@@ -763,36 +788,53 @@ export default function AffordableSeoPackages() {
         </section>
 
         {/* ── TESTIMONIALS ── */}
-        <section className="asp-sec asp-white" id="reviews">
-          <div className="asp-in">
-            <div className="asp-reveal" style={{textAlign:'center'}}>
-              <span className="asp-ey">Client Reviews</span>
-              <h2 className="asp-h2">What Our SEO Clients <AuroraText>Say</AuroraText></h2>
-              <p className="asp-lead" style={{margin:'0 auto'}}>Real results from real clients — no cherry-picked case studies, no inflated metrics.</p>
-            </div>
-            <div className="asp-tgrid">
-              {TESTIMONIALS.map((t, i) => (
-                <div key={t.name} className={`asp-tcard asp-reveal${t.featured?' asp-tcard-feat':''}`} style={{transitionDelay:`${i*120}ms`}}>
-                  <div className="asp-tstars" aria-label="5 stars">{'★'.repeat(t.stars)}</div>
-                  <p className="asp-ttext">{t.text}</p>
-                  <div className="asp-tauthor">
-                    <div className="asp-tavatar" style={{background:t.color}}>{t.avatar}</div>
-                    <div>
-                      <div className="asp-tname">{t.name}</div>
-                      <div className="asp-trole">{t.role}</div>
-                    </div>
+        <section className="asp-testi-sec" id="reviews" aria-labelledby="testi-heading">
+          <div className="asp-testi-hd asp-reveal">
+            <span className="asp-ey">Client Reviews</span>
+            <h2 id="testi-heading" className="asp-h2">What Our SEO Clients <AuroraText>Say</AuroraText></h2>
+            <p className="asp-lead" style={{margin:'0 auto'}}>Real results from real clients — no cherry-picked case studies, no inflated metrics.</p>
+          </div>
+          {/* Row 1 — scrolls left */}
+          <div className="asp-trow">
+            <div className="asp-tfade-l" aria-hidden="true"/>
+            <div className="asp-tfade-r" aria-hidden="true"/>
+            <div className="asp-ttrack" aria-hidden="true">
+              {[...TESTIMONIALS_ROW1,...TESTIMONIALS_ROW1].map((t,i) => (
+                <div key={i} className="asp-tcard">
+                  <div className="asp-tcard-stars">{[1,2,3,4,5].map(s=><span key={s} className="asp-tcard-star">★</span>)}</div>
+                  <p className="asp-tcard-text">{t.text}</p>
+                  <div className="asp-tcard-author">
+                    <div className="asp-tavatar" style={{background:t.bg}}>{t.avatar}</div>
+                    <div><div className="asp-tname">{t.name}</div><div className="asp-trole">{t.role}</div></div>
                   </div>
                 </div>
               ))}
             </div>
-            <div className="asp-tbar" role="list">
-              {[['4.9/5','Average Client Rating'],['127','Verified Reviews'],['10,000+','Keywords on Page 1'],['97%','Client Retention Rate']].map(([n,l],i,arr) => (
-                <span key={l} style={{display:'contents'}}>
-                  <div className="asp-tbar-item" role="listitem"><div className="asp-tbar-num">{n}</div><div className="asp-tbar-label">{l}</div></div>
-                  {i<arr.length-1 && <div className="asp-tbar-div" aria-hidden="true"/>}
-                </span>
+          </div>
+          {/* Row 2 — scrolls right */}
+          <div className="asp-trow">
+            <div className="asp-tfade-l" aria-hidden="true"/>
+            <div className="asp-tfade-r" aria-hidden="true"/>
+            <div className="asp-ttrack-rev" aria-hidden="true">
+              {[...TESTIMONIALS_ROW2,...TESTIMONIALS_ROW2].map((t,i) => (
+                <div key={i} className="asp-tcard">
+                  <div className="asp-tcard-stars">{[1,2,3,4,5].map(s=><span key={s} className="asp-tcard-star">★</span>)}</div>
+                  <p className="asp-tcard-text">{t.text}</p>
+                  <div className="asp-tcard-author">
+                    <div className="asp-tavatar" style={{background:t.bg}}>{t.avatar}</div>
+                    <div><div className="asp-tname">{t.name}</div><div className="asp-trole">{t.role}</div></div>
+                  </div>
+                </div>
               ))}
             </div>
+          </div>
+          <div className="asp-tbar" role="list" style={{marginLeft:'40px',marginRight:'40px'}}>
+            {[['4.9/5','Average Client Rating'],['127','Verified Reviews'],['10,000+','Keywords on Page 1'],['97%','Client Retention Rate']].map(([n,l],i,arr) => (
+              <span key={l} style={{display:'contents'}}>
+                <div className="asp-tbar-item" role="listitem"><div className="asp-tbar-num">{n}</div><div className="asp-tbar-label">{l}</div></div>
+                {i<arr.length-1 && <div className="asp-tbar-div" aria-hidden="true"/>}
+              </span>
+            ))}
           </div>
         </section>
 
