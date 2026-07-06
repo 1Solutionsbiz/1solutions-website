@@ -176,7 +176,7 @@ const STATIC_PAGES = [
   { url: '/law-firm-seo-services',               priority: '0.7', changefreq: 'monthly' },
   { url: '/insurance-seo-services',              priority: '0.7', changefreq: 'monthly' },
   { url: '/home-repair-seo-services',            priority: '0.7', changefreq: 'monthly' },
-  { url: '/plumbing-seo-services',               priority: '0.7', changefreq: 'monthly' },
+  { url: '/plumbing-seo-services',               priority: '0.8', changefreq: 'monthly' },
   { url: '/restaurants-seo-services',            priority: '0.7', changefreq: 'monthly' },
   { url: '/petcare-seo-services',                priority: '0.7', changefreq: 'monthly' },
 

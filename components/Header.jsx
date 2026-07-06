@@ -57,6 +57,7 @@ const SERVICES_MENU = [
           { label: 'Link Building Services', href: '/link-building-services' },
           { label: 'Link Building Packages', href: '/link-building-packages' },
           { label: 'eCommerce SEO Packages', href: '/ecommerce-seo-packages/' },
+          { label: 'Plumbing SEO Services', href: '/plumbing-seo-services/' },
         ],
       },
     ],
