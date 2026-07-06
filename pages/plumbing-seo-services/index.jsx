@@ -46,6 +46,77 @@ const WHY = [
   { title:'Transparent Monthly Reporting', body:'Clear reports showing GBP call volume, organic lead count, keyword positions, and map pack rankings — all tied directly to the calls and jobs you care about, not vanity traffic metrics.' },
 ];
 
+const PACKAGES = [
+  {
+    name: 'Starter',
+    price: '$499',
+    period: '/month',
+    tagline: 'Ideal for single-location plumbers starting local SEO',
+    popular: false,
+    features: [
+      'GBP optimisation + weekly posts',
+      '5 service/location pages created',
+      '20 local citation submissions',
+      'Review request email setup',
+      '10 target keywords tracked',
+      'Basic schema markup (LocalBusiness)',
+      'Monthly rank & GBP report',
+    ],
+    notIncluded: [
+      'SMS review automation',
+      'Competitor gap analysis',
+      'Suburb expansion pages',
+      'Dedicated account manager',
+    ],
+    cta: 'Get Started',
+  },
+  {
+    name: 'Growth',
+    price: '$899',
+    period: '/month',
+    tagline: 'For established plumbers ready to dominate the Maps Pack',
+    popular: true,
+    features: [
+      'GBP optimisation + Q&A management',
+      'Up to 12 service + suburb pages',
+      '40 local citation submissions',
+      'SMS + email review automation',
+      '25 target keywords tracked',
+      'Full schema markup suite',
+      'Competitor gap analysis',
+      'Emergency keyword strategy',
+      'Monthly rank + call tracking report',
+    ],
+    notIncluded: [
+      'Unlimited suburb pages',
+      'Dedicated account manager',
+    ],
+    cta: 'Most Popular — Get Started',
+  },
+  {
+    name: 'Authority',
+    price: '$1,499',
+    period: '/month',
+    tagline: 'For multi-location plumbers and competitive markets',
+    popular: false,
+    features: [
+      'Full GBP management + photo strategy',
+      'Unlimited service + suburb pages',
+      '80+ local citation submissions',
+      'Advanced review velocity system',
+      '50+ target keywords tracked',
+      'Full schema suite + rich results',
+      'Ongoing competitor monitoring',
+      'Emergency + planned keyword strategy',
+      '2× monthly content pieces',
+      'Weekly rank tracking',
+      'Dedicated account manager',
+    ],
+    notIncluded: [],
+    cta: 'Get Started',
+  },
+];
+
 const KEYWORD_TYPES = [
   'Emergency Plumber [City]','Plumber Near Me','Blocked Drain [Suburb]','24 Hour Plumber',
   'Burst Pipe Repair','Water Heater Installation','Drain Cleaning Services','Pipe Relining [City]',
@@ -391,11 +462,40 @@ export default function PlumbingSeoServices() {
           .pl-rtag-slate{background:rgba(100,116,139,0.10);border-color:rgba(100,116,139,0.28);color:#334155}
           .pl-rtag-cyan{background:rgba(6,182,212,0.10);border-color:rgba(6,182,212,0.28);color:#0E7490}
 
+          /* ── PACKAGES ── */
+          .pl-pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start}
+          .pl-pkg-card{background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:24px;padding:32px 28px;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95);position:relative;display:flex;flex-direction:column;gap:0}
+          .pl-pkg-card.popular{border-color:rgba(217,119,6,0.50);box-shadow:0 12px 48px rgba(217,119,6,0.18),0 4px 24px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1);transform:scale(1.03)}
+          .pl-pkg-badge{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#D97706,#F59E0B);color:#fff;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:50px;margin-bottom:18px;box-shadow:0 4px 12px rgba(217,119,6,0.30)}
+          .pl-pkg-badge-empty{height:29px;margin-bottom:18px}
+          .pl-pkg-name{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#0F3460;margin-bottom:6px}
+          .pl-pkg-price{display:flex;align-items:baseline;gap:3px;margin-bottom:6px}
+          .pl-pkg-amt{font-size:48px;font-weight:900;color:#0F1F40;letter-spacing:-2px;line-height:1}
+          .pl-pkg-per{font-size:14px;color:#6b7280;font-weight:500}
+          .pl-pkg-tagline{font-size:13px;color:#4A6080;line-height:1.5;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid rgba(15,52,96,0.10)}
+          .pl-pkg-features{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-direction:column;gap:10px}
+          .pl-pkg-feat{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:#1e293b;line-height:1.4}
+          .pl-pkg-feat-check{width:18px;height:18px;background:linear-gradient(135deg,#0F3460,#1a4b82);border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+          .pl-pkg-feat-check svg{width:10px;height:10px;stroke:#fff;fill:none}
+          .pl-pkg-no{display:flex;align-items:center;gap:9px;font-size:13px;color:#9ca3af;line-height:1.4}
+          .pl-pkg-no-x{width:18px;height:18px;background:rgba(156,163,175,0.15);border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+          .pl-pkg-no-x svg{width:10px;height:10px;stroke:#9ca3af;fill:none}
+          .pl-pkg-divider{border:none;border-top:1px dashed rgba(15,52,96,0.12);margin:16px 0}
+          .pl-pkg-cta{display:block;text-align:center;padding:13px 24px;border-radius:50px;font-size:14px;font-weight:700;text-decoration:none;transition:all .3s;margin-top:auto}
+          .pl-pkg-cta-default{background:rgba(15,52,96,0.08);color:#0F3460;border:1.5px solid rgba(15,52,96,0.20)}
+          .pl-pkg-cta-default:hover{background:rgba(15,52,96,0.14);transform:translateY(-2px)}
+          .pl-pkg-cta-popular{background:linear-gradient(135deg,#D97706,#F59E0B);color:#fff;border:1.5px solid transparent;box-shadow:0 6px 20px rgba(217,119,6,0.35)}
+          .pl-pkg-cta-popular:hover{filter:brightness(1.06);transform:translateY(-2px);box-shadow:0 10px 28px rgba(217,119,6,0.40)}
+          .pl-pkg-note{text-align:center;font-size:13px;color:#6b7280;margin-top:28px}
+          .pl-pkg-note strong{color:#0F3460}
+
           /* ── RESPONSIVE ── */
           @media(max-width:1024px){
             .pl-g3{grid-template-columns:repeat(2,1fr)}
             .pl-g4{grid-template-columns:repeat(2,1fr)}
             .pl-contact-in{grid-template-columns:1fr}
+            .pl-pkg-grid{grid-template-columns:1fr}
+            .pl-pkg-card.popular{transform:none}
           }
           @media(max-width:768px){
             .pl-hero{padding:56px 24px 0}
@@ -414,7 +514,7 @@ export default function PlumbingSeoServices() {
             .pl-related-ttl{font-size:28px}
             /* ── MOBILE PERFORMANCE ── */
             .pl-orb1,.pl-orb2,.pl-orb3{display:none}
-            .pl-glass,.pl-form-box,.pl-trust-box,.pl-stats,.pl-fitem{backdrop-filter:none;-webkit-backdrop-filter:none}
+            .pl-glass,.pl-form-box,.pl-trust-box,.pl-stats,.pl-fitem,.pl-pkg-card{backdrop-filter:none;-webkit-backdrop-filter:none}
             .pl-btn-p,.pl-btn-s,.pl-submit{backdrop-filter:none;-webkit-backdrop-filter:none}
             .pl-res-card,.pl-pill{backdrop-filter:none;-webkit-backdrop-filter:none}
             .pl-related{backdrop-filter:none;-webkit-backdrop-filter:none}
@@ -564,6 +664,65 @@ export default function PlumbingSeoServices() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ── PACKAGES ── */}
+        <section className="pl-sec pl-white" id="packages">
+          <div className="pl-in">
+            <div className="pl-reveal" style={{textAlign:'center',marginBottom:48}}>
+              <span className="pl-ey">Plumbing SEO Packages</span>
+              <h2 className="pl-h2">Simple, Transparent <AuroraText>Plumbing SEO Pricing</AuroraText></h2>
+              <p className="pl-lead" style={{margin:'0 auto'}}>No lock-in contracts. No hidden fees. Cancel any month. All packages include onboarding and a dedicated kick-off call.</p>
+            </div>
+            <div className="pl-pkg-grid pl-reveal">
+              {PACKAGES.map(pkg => (
+                <div key={pkg.name} className={`pl-pkg-card${pkg.popular ? ' popular' : ''}`}>
+                  {pkg.popular
+                    ? <div className="pl-pkg-badge">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        Most Popular
+                      </div>
+                    : <div className="pl-pkg-badge-empty"/>
+                  }
+                  <div className="pl-pkg-name">{pkg.name}</div>
+                  <div className="pl-pkg-price">
+                    <span className="pl-pkg-amt">{pkg.price}</span>
+                    <span className="pl-pkg-per">{pkg.period}</span>
+                  </div>
+                  <p className="pl-pkg-tagline">{pkg.tagline}</p>
+                  <ul className="pl-pkg-features">
+                    {pkg.features.map(f => (
+                      <li key={f} className="pl-pkg-feat">
+                        <span className="pl-pkg-feat-check">
+                          <svg viewBox="0 0 24 24" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        </span>
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                  {pkg.notIncluded.length > 0 && (
+                    <>
+                      <hr className="pl-pkg-divider"/>
+                      {pkg.notIncluded.map(f => (
+                        <div key={f} className="pl-pkg-no" style={{marginBottom:8}}>
+                          <span className="pl-pkg-no-x">
+                            <svg viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                          </span>
+                          {f}
+                        </div>
+                      ))}
+                    </>
+                  )}
+                  <div style={{marginTop:28}}>
+                    <a href="#pl-contact" className={`pl-pkg-cta ${pkg.popular ? 'pl-pkg-cta-popular' : 'pl-pkg-cta-default'}`}>
+                      {pkg.cta} →
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="pl-pkg-note pl-reveal">All prices in USD. <strong>Month-to-month</strong> — no lock-in contract. Not sure which package fits? <a href="#pl-contact" style={{color:'#D97706',fontWeight:600}}>Get a free audit first →</a></p>
           </div>
         </section>
 
