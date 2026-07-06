@@ -109,6 +109,7 @@ const PACKAGES = [
   },
   {
     name: 'Authority', slug: 'authority', monthlyPrice: 1499, yearlyPrice: 1249, yearlySave: 3000,
+    monthlyButtonId: 'pl_TAA6WwLLSjqhoL',
     desc: 'For multi-location plumbers and highly competitive markets.',
     popular: false,
     features: [
