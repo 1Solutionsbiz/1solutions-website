@@ -118,7 +118,7 @@ const PACKAGES = [
   {
     name: 'Starter', slug: 'starter', monthlyPrice: 499, yearlyPrice: 415, yearlySave: 1008,
     monthlyButtonId: 'pl_TAA38ObJcClDiz', yearlyButtonId: 'pl_TAAKS59mpGju0n',
-    desc: 'For single-location plumbers starting local SEO.',
+    desc: 'For single-location plumbers starting local SEO or looking for more calls.',
     popular: false,
     features: [
       '1 location',
