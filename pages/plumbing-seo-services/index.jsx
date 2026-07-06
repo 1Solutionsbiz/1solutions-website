@@ -11,39 +11,39 @@ const STATS_HERO = [
 ];
 
 const SERVICES = [
-  { icon:'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z', title:'Emergency Plumber Keyword Targeting', body:'Dedicated urgency-driven landing pages capturing "emergency plumber near me", "burst pipe repair", "plumber open 24 hours", and "blocked drain [city]" — built to convert panicked homeowners the moment they search.' },
+  { icon:'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z', title:'Emergency Plumber Keyword Targeting', body:'Dedicated urgency-driven landing pages capturing "emergency plumber near me", "burst pipe repair", "plumber open 24 hours", and "blocked drain [city]", built to convert panicked homeowners the moment they search.' },
   { icon:'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z', title:'Google Business Profile Optimisation', body:'Complete GBP setup with plumbing-specific categories, emergency hours, service area configuration, before/after photos, Q&A management, and weekly posts that signal activity to Google and convert profile visitors into callers.' },
-  { icon:'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1', title:'Local Citation Building', body:'Consistent NAP across Angi, HomeAdvisor, Thumbtack, Houzz, BBB, Yelp, and 40+ plumbing-specific directories — the citation foundation that drives map pack rankings and local authority.' },
-  { icon:'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title:'Service-Specific Landing Pages', body:'Dedicated optimised pages for drain cleaning, water heater installation, pipe relining, bathroom plumbing, gas fitting, and emergency services — each targeting its own keyword cluster for maximum coverage.' },
-  { icon:'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z', title:'Review Generation System', body:'Automated post-job review requests via SMS and email, negative review response strategy, and active Google review building — the social proof engine that lifts your map pack ranking and conversion rate simultaneously.' },
-  { icon:'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title:'Competitor Gap Analysis', body:'We identify every keyword your local plumbing competitors rank for that you do not — from "24-hour plumber [suburb]" to "[city] blocked drain specialist" — and build a 90-day roadmap to capture that traffic.' },
-  { icon:'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4', title:'Plumber Schema Markup', body:'LocalBusiness schema with the Plumber service type, emergency availability hours, service area geographic regions, and AggregateRating — giving Google the structured data it needs to feature your business in rich results.' },
-  { icon:'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title:'Monthly Plumber SEO Reporting', body:'Rank tracking for every target keyword, GBP call volume monitoring, map pack position history, organic vs paid lead split, and plain-English revenue attribution — so you always know exactly what SEO is returning.' },
+  { icon:'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1', title:'Local Citation Building', body:'Consistent NAP across Angi, HomeAdvisor, Thumbtack, Houzz, BBB, Yelp, and 40+ plumbing-specific directories, the citation foundation that drives map pack rankings and local authority.' },
+  { icon:'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title:'Service-Specific Landing Pages', body:'Dedicated optimised pages for drain cleaning, water heater installation, pipe relining, bathroom plumbing, gas fitting, and emergency services, each targeting its own keyword cluster for maximum coverage.' },
+  { icon:'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z', title:'Review Generation System', body:'Automated post-job review requests via SMS and email, negative review response strategy, and active Google review building, the social proof engine that lifts your map pack ranking and conversion rate simultaneously.' },
+  { icon:'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title:'Competitor Gap Analysis', body:'We identify every keyword your local plumbing competitors rank for that you do not, from "24-hour plumber [suburb]" to "[city] blocked drain specialist", and build a 90-day roadmap to capture that traffic.' },
+  { icon:'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4', title:'Plumber Schema Markup', body:'LocalBusiness schema with the Plumber service type, emergency availability hours, service area geographic regions, and AggregateRating, giving Google the structured data it needs to feature your business in rich results.' },
+  { icon:'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title:'Monthly Plumber SEO Reporting', body:'Rank tracking for every target keyword, GBP call volume monitoring, map pack position history, organic vs paid lead split, and plain-English revenue attribution, so you always know exactly what SEO is returning.' },
 ];
 
 const RESULTS = [
-  { prefix:'#', target:1,   suffix:'',  decimals:0, label:'Maps Pack — "emergency plumber [city]"', detail:'US plumbing company — achieved in 5 months' },
-  { prefix:'',  target:4.8, suffix:'×', decimals:1, label:'More GBP calls month-over-month',        detail:'US plumbing company — 6-month campaign' },
-  { prefix:'',  target:320, suffix:'%', decimals:0, label:'Organic traffic growth',                  detail:'Multi-location plumber — 9 months' },
-  { prefix:'',  target:90,  suffix:'d', decimals:0, label:'To page 1 for primary service keywords',  detail:'UK plumber — brand-new market entry' },
+  { prefix:'#', target:1,   suffix:'',  decimals:0, label:'Maps Pack, "emergency plumber [city]"', detail:'US plumbing company, achieved in 5 months' },
+  { prefix:'',  target:4.8, suffix:'×', decimals:1, label:'More GBP calls month-over-month',        detail:'US plumbing company, 6-month campaign' },
+  { prefix:'',  target:320, suffix:'%', decimals:0, label:'Organic traffic growth',                  detail:'Multi-location plumber, 9 months' },
+  { prefix:'',  target:90,  suffix:'d', decimals:0, label:'To page 1 for primary service keywords',  detail:'UK plumber, brand-new market entry' },
 ];
 
 const PROCESS = [
-  { n:'01', title:'Plumbing Website + GBP Audit', body:'Full audit of your website and Google Business Profile — identifying technical issues, missing service pages, GBP gaps, citation inconsistencies, and local competitor benchmarks before we touch a single page.' },
-  { n:'02', title:'Keyword Strategy by Search Intent', body:'We map emergency-intent keywords (burst pipe, blocked drain now) separately from planned-service intent (water heater replacement quote) — different landing pages for different buyer mindsets, maximising conversion at every intent level.' },
-  { n:'03', title:'On-Page + GBP Optimisation', body:'Title tags, meta descriptions, H1 structure, service page content, GBP categories, emergency hours, and photo strategy all aligned to your priority plumbing keywords — implemented within the first 30 days.' },
-  { n:'04', title:'Local Citation Building', body:'Consistent NAP submissions across 40+ directories — Angi, HomeAdvisor, Thumbtack, Houzz, and local chamber directories — the backbone of map pack authority that most agencies skip or do poorly.' },
-  { n:'05', title:'Review Acquisition Launch', body:'Automated post-job review request sequences via SMS and email, with response templates and a strategy to reach 50+ Google reviews in the first 90 days — the review velocity benchmark for competitive plumbing markets.' },
-  { n:'06', title:'Ongoing Rank Monitoring & Growth', body:'Monthly rank tracking reports, GBP insights, call attribution, and a rolling 90-day action plan — continuous optimisation as your market evolves, competitors react, and Google updates its local ranking signals.' },
+  { n:'01', title:'Plumbing Website + GBP Audit', body:'Full audit of your website and Google Business Profile, identifying technical issues, missing service pages, GBP gaps, citation inconsistencies, and local competitor benchmarks before we touch a single page.' },
+  { n:'02', title:'Keyword Strategy by Search Intent', body:'We map emergency-intent keywords (burst pipe, blocked drain now) separately from planned-service intent (water heater replacement quote), different landing pages for different buyer mindsets, maximising conversion at every intent level.' },
+  { n:'03', title:'On-Page + GBP Optimisation', body:'Title tags, meta descriptions, H1 structure, service page content, GBP categories, emergency hours, and photo strategy all aligned to your priority plumbing keywords, implemented within the first 30 days.' },
+  { n:'04', title:'Local Citation Building', body:'Consistent NAP submissions across 40+ directories, Angi, HomeAdvisor, Thumbtack, Houzz, and local chamber directories, the backbone of map pack authority that most agencies skip or do poorly.' },
+  { n:'05', title:'Review Acquisition Launch', body:'Automated post-job review request sequences via SMS and email, with response templates and a strategy to reach 50+ Google reviews in the first 90 days, the review velocity benchmark for competitive plumbing markets.' },
+  { n:'06', title:'Ongoing Rank Monitoring & Growth', body:'Monthly rank tracking reports, GBP insights, call attribution, and a rolling 90-day action plan, continuous optimisation as your market evolves, competitors react, and Google updates its local ranking signals.' },
 ];
 
 const WHY = [
-  { title:'Emergency Search Specialists', body:'We understand the urgency mechanics of plumbing searches. Homeowners searching for emergency help behave differently — our landing pages and GBP profiles are tuned for that intent and convert panicked visitors into callers.' },
-  { title:'Plumber Industry Expertise', body:'From gas fitting compliance to water heater regulations, we understand the plumbing trade and write content that builds trust with both homeowners and Google — not generic SEO copy adapted from another industry.' },
-  { title:'Review Velocity Building', body:'Review count and recency are major local ranking signals. We implement automated post-job review systems to get your review count growing consistently — reaching the 50+ benchmark that competitive markets demand.' },
-  { title:'Service-Area Page Creation', body:'We build geo-targeted pages for every suburb, city, or postcode you serve — so you rank for "[service] in [suburb]" across your entire coverage area, not just your home city.' },
-  { title:'No Lock-In Contracts', body:'Month-to-month engagements only. We earn your business every month through results — not contractual obligations that keep you paying regardless of performance.' },
-  { title:'Transparent Monthly Reporting', body:'Clear reports showing GBP call volume, organic lead count, keyword positions, and map pack rankings — all tied directly to the calls and jobs you care about, not vanity traffic metrics.' },
+  { title:'Emergency Search Specialists', body:'We understand the urgency mechanics of plumbing searches. Homeowners searching for emergency help behave differently, our landing pages and GBP profiles are tuned for that intent and convert panicked visitors into callers.' },
+  { title:'Plumber Industry Expertise', body:'From gas fitting compliance to water heater regulations, we understand the plumbing trade and write content that builds trust with both homeowners and Google, not generic SEO copy adapted from another industry.' },
+  { title:'Review Velocity Building', body:'Review count and recency are major local ranking signals. We implement automated post-job review systems to get your review count growing consistently, reaching the 50+ benchmark that competitive markets demand.' },
+  { title:'Service-Area Page Creation', body:'We build geo-targeted pages for every suburb, city, or postcode you serve, so you rank for "[service] in [suburb]" across your entire coverage area, not just your home city.' },
+  { title:'No Lock-In Contracts', body:'Month-to-month engagements only. We earn your business every month through results, not contractual obligations that keep you paying regardless of performance.' },
+  { title:'Transparent Monthly Reporting', body:'Clear reports showing GBP call volume, organic lead count, keyword positions, and map pack rankings, all tied directly to the calls and jobs you care about, not vanity traffic metrics.' },
 ];
 
 function useCountUp(target, duration, started) {
@@ -177,30 +177,30 @@ const KEYWORD_TYPES = [
 ];
 
 const TESTIMONIALS_ROW1 = [
-  { initials:'MP', bg:'#0F3460', name:'Mike Patterson', role:'Owner, Patterson Plumbing — Dallas, TX', text:'"We went from page 4 to #1 in the Maps Pack for "emergency plumber Dallas" in 4 months. The phone rings every day now. Biggest ROI of anything I have tried in 12 years of running this business."' },
-  { initials:'JW', bg:'#1D4ED8', name:'James Walsh', role:'Director, Walsh Plumbing Group — Sydney, AU', text:'"1Solutions built us 28 suburb-specific landing pages targeting every area we service. We now rank page 1 for 34 different location keywords. Our job board is consistently full without spending a dollar on ads."' },
-  { initials:'SR', bg:'#7C3AED', name:'Sarah Reynolds', role:'Marketing Manager, Premier Plumbers — Chicago, IL', text:'"Our review count went from 12 to 87 Google reviews in 5 months using their post-job SMS system. That review velocity alone pushed us from position 7 to position 2 in the local pack. Brilliant execution."' },
-  { initials:'TC', bg:'#0F766E', name:'Tom Crawford', role:'Owner, Crawford Plumbing Services — Manchester, UK', text:'"The emergency keyword strategy changed everything. Dedicated pages for burst pipe, blocked drain, and boiler emergency in every borough. Emergency call revenue is up 240% year-on-year."' },
-  { initials:'AK', bg:'#BE185D', name:'Aaron Kumar', role:'Founder, FastFlow Plumbing — Toronto, CA', text:'"Citation cleanup and GBP optimisation done properly for the first time. We had 3 duplicate listings and inconsistent NAP data everywhere. Fixed in month 1, rankings moved in month 2. Professional and transparent throughout."' },
+  { initials:'MP', bg:'#0F3460', name:'Mike Patterson', role:'Owner, Patterson Plumbing, Dallas, TX', text:'"We went from page 4 to #1 in the Maps Pack for "emergency plumber Dallas" in 4 months. The phone rings every day now. Biggest ROI of anything I have tried in 12 years of running this business."' },
+  { initials:'JW', bg:'#1D4ED8', name:'James Walsh', role:'Director, Walsh Plumbing Group, Sydney, AU', text:'"1Solutions built us 28 suburb-specific landing pages targeting every area we service. We now rank page 1 for 34 different location keywords. Our job board is consistently full without spending a dollar on ads."' },
+  { initials:'SR', bg:'#7C3AED', name:'Sarah Reynolds', role:'Marketing Manager, Premier Plumbers, Chicago, IL', text:'"Our review count went from 12 to 87 Google reviews in 5 months using their post-job SMS system. That review velocity alone pushed us from position 7 to position 2 in the local pack. Brilliant execution."' },
+  { initials:'TC', bg:'#0F766E', name:'Tom Crawford', role:'Owner, Crawford Plumbing Services, Manchester, UK', text:'"The emergency keyword strategy changed everything. Dedicated pages for burst pipe, blocked drain, and boiler emergency in every borough. Emergency call revenue is up 240% year-on-year."' },
+  { initials:'AK', bg:'#BE185D', name:'Aaron Kumar', role:'Founder, FastFlow Plumbing, Toronto, CA', text:'"Citation cleanup and GBP optimisation done properly for the first time. We had 3 duplicate listings and inconsistent NAP data everywhere. Fixed in month 1, rankings moved in month 2. Professional and transparent throughout."' },
 ];
 const TESTIMONIALS_ROW2 = [
-  { initials:'DM', bg:'#1D4ED8', name:'David Morrison', role:'Owner, Morrison Drain Solutions — Houston, TX', text:'"The schema markup work generated rich results showing our emergency hours, rating, and service area directly in Google. Click-through rate on our listings went up 31%. Genuinely impressed by the technical depth."' },
-  { initials:'LB', bg:'#047857', name:'Lisa Brennan', role:'Operations Director, Rapid Plumbers — Melbourne, AU', text:'"We expanded into 3 new suburbs using the service-area page strategy. All three reached page 1 within 6 months. We have since expanded to 8 suburbs and every single one is driving calls consistently."' },
-  { initials:'RH', bg:'#B45309', name:'Rob Hargreaves', role:'Owner, H&H Plumbing — Phoenix, AZ', text:'"Organic leads now account for 58% of new business, up from 12% when we started. Monthly reporting is clear and shows exactly which keywords are driving calls. Well worth the investment."' },
-  { initials:'CL', bg:'#0F3460', name:'Chris Lawson', role:'Founder, Lawson Gas & Plumbing — Bristol, UK', text:'"We had tried two other agencies before 1Solutions. The difference is they understand the plumbing trade — they know what emergency intent looks like and how to structure content that converts panicked homeowners."' },
-  { initials:'NK', bg:'#9D174D', name:'Nadia Khan', role:'Marketing Lead, AquaPro Plumbing — Vancouver, CA', text:'"Competitor gap analysis showed we were missing 40+ keywords our rivals ranked for. 1Solutions built a content plan to capture all of them. We are now outranking two larger competitors on our core service keywords."' },
+  { initials:'DM', bg:'#1D4ED8', name:'David Morrison', role:'Owner, Morrison Drain Solutions, Houston, TX', text:'"The schema markup work generated rich results showing our emergency hours, rating, and service area directly in Google. Click-through rate on our listings went up 31%. Genuinely impressed by the technical depth."' },
+  { initials:'LB', bg:'#047857', name:'Lisa Brennan', role:'Operations Director, Rapid Plumbers, Melbourne, AU', text:'"We expanded into 3 new suburbs using the service-area page strategy. All three reached page 1 within 6 months. We have since expanded to 8 suburbs and every single one is driving calls consistently."' },
+  { initials:'RH', bg:'#B45309', name:'Rob Hargreaves', role:'Owner, H&H Plumbing, Phoenix, AZ', text:'"Organic leads now account for 58% of new business, up from 12% when we started. Monthly reporting is clear and shows exactly which keywords are driving calls. Well worth the investment."' },
+  { initials:'CL', bg:'#0F3460', name:'Chris Lawson', role:'Founder, Lawson Gas & Plumbing, Bristol, UK', text:'"We had tried two other agencies before 1Solutions. The difference is they understand the plumbing trade, they know what emergency intent looks like and how to structure content that converts panicked homeowners."' },
+  { initials:'NK', bg:'#9D174D', name:'Nadia Khan', role:'Marketing Lead, AquaPro Plumbing, Vancouver, CA', text:'"Competitor gap analysis showed we were missing 40+ keywords our rivals ranked for. 1Solutions built a content plan to capture all of them. We are now outranking two larger competitors on our core service keywords."' },
 ];
 const ROW1 = [...TESTIMONIALS_ROW1, ...TESTIMONIALS_ROW1];
 const ROW2 = [...TESTIMONIALS_ROW2, ...TESTIMONIALS_ROW2];
 
 const FAQS = [
-  { q:'How quickly can plumbing SEO generate phone calls?', a:'Google Business Profile optimisation typically starts generating additional calls within 2 to 4 weeks, as GBP is the fastest-moving local ranking signal. For organic website rankings, expect meaningful movement within 3 to 6 months. Emergency keyword positions in competitive markets may take 6 to 9 months to reach the top 3 — but the results compound and do not stop when your ad budget does.' },
-  { q:'Should plumbers run Google Ads alongside SEO?', a:'Yes — especially in the first 6 months while organic rankings build. Google Ads cover emergency-intent searches immediately, ensuring you capture urgent calls while your SEO foundations mature. Once organic rankings are established, many plumbers reduce ad spend significantly. We advise on the right balance for your specific market and competition level.' },
-  { q:'How important is review count for plumbing map pack rankings?', a:'Extremely important. Google uses review count, recency, and star rating as direct local ranking signals. The benchmark for competitive plumbing markets is 4.0+ stars with 50+ reviews. We implement automated post-job review request systems to get you to that benchmark faster than your competitors — typically within 90 days.' },
-  { q:'Do you create separate landing pages for each plumbing service?', a:'Yes. Every major service — drain cleaning, water heater installation and repair, pipe relining, bathroom plumbing, gas fitting, emergency plumbing, and blocked drain clearing — gets its own dedicated, keyword-optimised landing page. This multi-page strategy dramatically increases the total number of keywords you rank for across both organic results and the Maps Pack.' },
+  { q:'How quickly can plumbing SEO generate phone calls?', a:'Google Business Profile optimisation typically starts generating additional calls within 2 to 4 weeks, as GBP is the fastest-moving local ranking signal. For organic website rankings, expect meaningful movement within 3 to 6 months. Emergency keyword positions in competitive markets may take 6 to 9 months to reach the top 3, but the results compound and do not stop when your ad budget does.' },
+  { q:'Should plumbers run Google Ads alongside SEO?', a:'Yes, especially in the first 6 months while organic rankings build. Google Ads cover emergency-intent searches immediately, ensuring you capture urgent calls while your SEO foundations mature. Once organic rankings are established, many plumbers reduce ad spend significantly. We advise on the right balance for your specific market and competition level.' },
+  { q:'How important is review count for plumbing map pack rankings?', a:'Extremely important. Google uses review count, recency, and star rating as direct local ranking signals. The benchmark for competitive plumbing markets is 4.0+ stars with 50+ reviews. We implement automated post-job review request systems to get you to that benchmark faster than your competitors, typically within 90 days.' },
+  { q:'Do you create separate landing pages for each plumbing service?', a:'Yes. Every major service, drain cleaning, water heater installation and repair, pipe relining, bathroom plumbing, gas fitting, emergency plumbing, and blocked drain clearing, gets its own dedicated, keyword-optimised landing page. This multi-page strategy dramatically increases the total number of keywords you rank for across both organic results and the Maps Pack.' },
   { q:'What directories matter most for plumbing businesses?', a:'The highest-impact directories for plumbers are Google Business Profile (by far), Yelp, Angi (formerly Angie\'s List), HomeAdvisor, Houzz, Thumbtack, and BBB. For local authority, citations in your city chamber of commerce and local business directories also matter. We manage all of these with consistent, verified NAP data across every listing.' },
-  { q:'Can you help with multiple plumbing service areas?', a:'Yes. We build individual geo-targeted landing pages for every city, suburb, or postcode you want to rank in — for example, "emergency plumber [suburb A]", "drain cleaning [suburb B]". These service-area pages are one of the most effective ways to expand your ranking footprint across a large coverage area without running ads in each location.' },
-  { q:'How do you measure ROI for plumber SEO?', a:'We track GBP calls with call tracking numbers, organic contact form submissions, keyword position changes for all target terms, and map pack position for emergency keywords. We also help set up Google Analytics 4 goals so you can see organic traffic converting into leads — giving you a clear cost-per-lead from SEO versus other channels for every month of the campaign.' },
+  { q:'Can you help with multiple plumbing service areas?', a:'Yes. We build individual geo-targeted landing pages for every city, suburb, or postcode you want to rank in, for example, "emergency plumber [suburb A]", "drain cleaning [suburb B]". These service-area pages are one of the most effective ways to expand your ranking footprint across a large coverage area without running ads in each location.' },
+  { q:'How do you measure ROI for plumber SEO?', a:'We track GBP calls with call tracking numbers, organic contact form submissions, keyword position changes for all target terms, and map pack position for emergency keywords. We also help set up Google Analytics 4 goals so you can see organic traffic converting into leads, giving you a clear cost-per-lead from SEO versus other channels for every month of the campaign.' },
 ];
 
 const RELATED_TAGS = [
@@ -418,8 +418,8 @@ export default function PlumbingSeoServices() {
 
           /* ── KEYWORD PILLS ── */
           .pl-pills{display:flex;flex-wrap:wrap;gap:10px}
-          .pl-pill{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.85);border-radius:50px;padding:8px 16px;font-size:13px;font-weight:500;color:#0F1F40;box-shadow:0 2px 8px rgba(15,52,96,0.06)}
-          .pl-pill-dot{width:6px;height:6px;border-radius:50%;background:#D97706;flex-shrink:0}
+          .pl-pill{display:inline-flex;align-items:center;gap:7px;border-radius:50px;padding:8px 16px;font-size:13px;font-weight:600;box-shadow:0 2px 10px rgba(0,0,0,0.07)}
+          .pl-pill-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;opacity:.8}
 
           /* ── TESTIMONIALS ── */
           .pl-testi{padding:72px 0;background:#f8fafd;overflow:hidden;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08);position:relative;z-index:1}
@@ -619,7 +619,7 @@ export default function PlumbingSeoServices() {
             </nav>
             <span className="pl-eyebrow">Plumbing SEO · Emergency Keywords · Maps Pack · GBP Optimisation</span>
             <h1 className="pl-h1">Plumbing SEO That Fills Your Calendar<br/>with <AuroraText>Emergency Calls</AuroraText></h1>
-            <p className="pl-hero-sub">1Solutions delivers targeted plumbing SEO that puts your business in front of homeowners at the exact moment they need a plumber — whether it is a burst pipe at midnight or a water heater quote next week. Map pack rankings, emergency keyword pages, and a review engine that keeps calls flowing.</p>
+            <p className="pl-hero-sub">1Solutions delivers targeted plumbing SEO that puts your business in front of homeowners at the exact moment they need a plumber, whether it is a burst pipe at midnight or a water heater quote next week. Map pack rankings, emergency keyword pages, and a review engine that keeps calls flowing.</p>
             <div className="pl-btns">
               <a href="#pl-contact" className="pl-btn-p">
                 Get Your Free Plumbing SEO Audit
@@ -643,16 +643,27 @@ export default function PlumbingSeoServices() {
           <div className="pl-in">
             <div className="pl-reveal">
               <span className="pl-ey">Keywords We Rank You For</span>
-              <h2 className="pl-h2">Every Search Intent Covered — <AuroraText>Emergency to Planned</AuroraText></h2>
-              <p className="pl-lead">Plumbing searches fall into two intent categories. We build dedicated pages for both — emergency (call now) and planned (get a quote) — so you capture every type of potential customer.</p>
+              <h2 className="pl-h2">Every Search Intent Covered: <AuroraText>Emergency to Planned</AuroraText></h2>
+              <p className="pl-lead">Plumbing searches fall into two intent categories. We build dedicated pages for both, emergency (call now) and planned (get a quote), so you capture every type of potential customer.</p>
             </div>
             <div className="pl-pills pl-reveal">
-              {KEYWORD_TYPES.map((k, i) => (
-                <span key={k} className="pl-pill" style={{transitionDelay:`${i*40}ms`}}>
-                  <span className="pl-pill-dot"/>
-                  {k}
-                </span>
-              ))}
+              {KEYWORD_TYPES.map((k, i) => {
+                const palette = [
+                  {bg:'rgba(239,68,68,.10)',border:'rgba(239,68,68,.35)',color:'#991b1b',dot:'#ef4444'},
+                  {bg:'rgba(217,119,6,.10)',border:'rgba(217,119,6,.35)',color:'#92400e',dot:'#D97706'},
+                  {bg:'rgba(34,197,94,.10)',border:'rgba(34,197,94,.35)',color:'#14532d',dot:'#16a34a'},
+                  {bg:'rgba(59,130,246,.10)',border:'rgba(59,130,246,.35)',color:'#1e3a8a',dot:'#3b82f6'},
+                  {bg:'rgba(124,58,237,.10)',border:'rgba(124,58,237,.35)',color:'#4c1d95',dot:'#7c3aed'},
+                  {bg:'rgba(20,184,166,.10)',border:'rgba(20,184,166,.35)',color:'#134e4a',dot:'#14b8a6'},
+                ];
+                const c = palette[i % palette.length];
+                return (
+                  <span key={k} className="pl-pill" style={{transitionDelay:`${i*40}ms`,background:c.bg,border:`1px solid ${c.border}`,color:c.color}}>
+                    <span className="pl-pill-dot" style={{background:c.dot}}/>
+                    {k}
+                  </span>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -663,7 +674,7 @@ export default function PlumbingSeoServices() {
             <div className="pl-reveal">
               <span className="pl-ey">What We Do</span>
               <h2 className="pl-h2">Full-Spectrum <AuroraText>Plumbing SEO Services</AuroraText></h2>
-              <p className="pl-lead">Every component your plumbing business needs to dominate local search — from emergency keyword pages and GBP optimisation to citation building and review velocity systems.</p>
+              <p className="pl-lead">Every component your plumbing business needs to dominate local search, from emergency keyword pages and GBP optimisation to citation building and review velocity systems.</p>
             </div>
             <div className="pl-g3">
               {SERVICES.map((s, i) => (
@@ -686,7 +697,7 @@ export default function PlumbingSeoServices() {
           <div className="pl-in">
             <div className="pl-reveal" style={{textAlign:'center',marginBottom:48}}>
               <span className="pl-dark-ey">Proven Results</span>
-              <h2 className="pl-dark-h"><AuroraText>Real Plumbing SEO Results</AuroraText> — Calls, Rankings, Revenue</h2>
+              <h2 className="pl-dark-h"><AuroraText>Real Plumbing SEO Results</AuroraText>: Calls, Rankings, Revenue</h2>
               <p className="pl-dark-lead" style={{margin:'0 auto'}}>Real metrics from real plumbing businesses across the US, UK, Canada, and Australia.</p>
             </div>
             <div className="pl-g4 pl-reveal">
@@ -703,7 +714,7 @@ export default function PlumbingSeoServices() {
             <div className="pl-reveal">
               <span className="pl-ey">How It Works</span>
               <h2 className="pl-h2">Our <AuroraText>6-Step Plumbing SEO Process</AuroraText></h2>
-              <p className="pl-lead">A structured, repeatable roadmap from initial audit to ongoing call growth — built specifically for plumbing businesses and their unique local search dynamics.</p>
+              <p className="pl-lead">A structured, repeatable roadmap from initial audit to ongoing call growth, built specifically for plumbing businesses and their unique local search dynamics.</p>
             </div>
             <div className="pl-g3">
               {PROCESS.map((p, i) => (
@@ -723,7 +734,7 @@ export default function PlumbingSeoServices() {
             <div className="pl-reveal">
               <span className="pl-ey">Why 1Solutions</span>
               <h2 className="pl-h2">The Plumbing SEO Agency <AuroraText>Built for Local Dominance</AuroraText></h2>
-              <p className="pl-lead">We specialise in the unique search behaviour of homeowners seeking plumbers — and we build every strategy around putting your number in their hand first.</p>
+              <p className="pl-lead">We specialise in the unique search behaviour of homeowners seeking plumbers, and we build every strategy around putting your number in their hand first.</p>
             </div>
             <div className="pl-g3">
               {WHY.map((w, i) => (
@@ -807,9 +818,9 @@ export default function PlumbingSeoServices() {
                   <thead>
                     <tr>
                       <th>Feature</th>
-                      <th>Starter — $499/mo</th>
-                      <th>Growth — $899/mo</th>
-                      <th>Authority — $1,499/mo</th>
+                      <th>Starter · $499/mo</th>
+                      <th>Growth · $899/mo</th>
+                      <th>Authority · $1,499/mo</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -896,14 +907,14 @@ export default function PlumbingSeoServices() {
               <span className="pl-ey">Free Plumbing SEO Audit</span>
               <div className="pl-contact-left">
                 <h2>Get Your Free <AuroraText>Plumbing SEO Audit</AuroraText></h2>
-                <p>We will audit your GBP, website, and local citations — identify every gap between you and your map pack competitors — and deliver a prioritised action plan completely free with no obligation.</p>
+                <p>We will audit your GBP, website, and local citations, identify every gap between you and your map pack competitors, and deliver a prioritised action plan completely free with no obligation.</p>
               </div>
               <div className="pl-trust-box">
                 {[
-                  'Reviewed by a plumbing SEO specialist — not a junior account manager',
+                  'Reviewed by a plumbing SEO specialist, not a junior account manager',
                   'Covers your GBP, website, citations, and competitor benchmarks',
                   'Delivered within 48 hours of your request',
-                  'No hard sell — honest expert advice on your actual gaps',
+                  'No hard sell, honest expert advice on your actual gaps',
                 ].map(b => (
                   <div key={b} className="pl-trust-row">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
