@@ -365,15 +365,27 @@ export default function ConversionRateOptimizationServices() {
           .cro-fa { font-size:14px;color:#4b5563;line-height:1.8;padding:0 22px 20px 60px; }
 
           /* ── RELATED SERVICES ── */
-          .cro-related { background:linear-gradient(135deg,rgba(219,234,254,0.40) 0%,rgba(255,255,255,0.60) 50%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(20px);padding:80px 40px;position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.80); }
-          .cro-related-in { max-width:1280px;margin:0 auto; }
-          .cro-related-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px; }
-          .cro-rcard { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:28px 24px;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95);text-decoration:none;display:flex;flex-direction:column;gap:10px;transition:transform 0.22s,box-shadow 0.22s,border-color 0.22s; }
-          .cro-rcard:hover { transform:translateY(-4px);box-shadow:0 12px 40px rgba(15,52,96,0.13);border-color:rgba(217,119,6,0.30); }
-          .cro-rcard-icon { width:42px;height:42px;background:linear-gradient(135deg,#0F3460,#1d4b82);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
-          .cro-rcard h3 { font-size:15px;font-weight:700;color:#0F1F40;line-height:1.35;margin:0; }
-          .cro-rcard p { font-size:13px;color:#4A6080;line-height:1.6;margin:0;flex:1; }
-          .cro-rcard-link { font-size:13px;font-weight:600;color:#D97706;display:flex;align-items:center;gap:5px;margin-top:4px; }
+          .cro-related { background:rgba(237,233,254,.18);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.60);padding:80px 40px;position:relative;z-index:1; }
+          .cro-related-in { max-width:1280px;margin:0 auto;text-align:center; }
+          .cro-related-ey { font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#4A6080;margin:0 0 14px;display:block; }
+          .cro-related-ttl { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;color:#111827;margin:0 0 16px; }
+          .cro-related-sub { font-size:15px;color:#0F1F40;line-height:1.7;margin:0 auto;max-width:680px; }
+          .cro-related-divider { border:none;border-top:1px solid rgba(15,52,96,.12);margin:40px 0; }
+          .cro-related-tags { display:flex;flex-wrap:wrap;justify-content:center;gap:12px; }
+          .cro-rtag { display:inline-block;padding:11px 22px;border:1.5px solid;border-radius:50px;font-size:14px;font-weight:500;text-decoration:none;transition:all .25s; }
+          .cro-rtag:hover { filter:brightness(.92);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.10); }
+          .cro-rtag-blue   { background:rgba(59,130,246,.10);border-color:rgba(59,130,246,.30);color:#1D4ED8; }
+          .cro-rtag-violet { background:rgba(139,92,246,.10);border-color:rgba(139,92,246,.30);color:#6D28D9; }
+          .cro-rtag-amber  { background:rgba(245,158,11,.12);border-color:rgba(245,158,11,.35);color:#B45309; }
+          .cro-rtag-teal   { background:rgba(20,184,166,.10);border-color:rgba(20,184,166,.30);color:#0F766E; }
+          .cro-rtag-rose   { background:rgba(244,63,94,.10);border-color:rgba(244,63,94,.28);color:#BE123C; }
+          .cro-rtag-green  { background:rgba(34,197,94,.10);border-color:rgba(34,197,94,.28);color:#15803D; }
+          .cro-rtag-indigo { background:rgba(99,102,241,.10);border-color:rgba(99,102,241,.28);color:#4338CA; }
+          .cro-rtag-orange { background:rgba(249,115,22,.10);border-color:rgba(249,115,22,.30);color:#C2410C; }
+          .cro-rtag-cyan   { background:rgba(6,182,212,.10);border-color:rgba(6,182,212,.28);color:#0E7490; }
+          .cro-rtag-slate  { background:rgba(100,116,139,.10);border-color:rgba(100,116,139,.28);color:#334155; }
+          .cro-rtag-sky    { background:rgba(14,165,233,.10);border-color:rgba(14,165,233,.28);color:#0369A1; }
+          .cro-rtag-lime   { background:rgba(132,204,22,.10);border-color:rgba(132,204,22,.28);color:#3F6212; }
 
           /* ── RESPONSIVE ── */
           @media(max-width:1024px) {
@@ -385,7 +397,7 @@ export default function ConversionRateOptimizationServices() {
             .cro-contact-in { grid-template-columns:1fr; }
             .cro-ind-grid { grid-template-columns:repeat(3,1fr); }
             .cro-def-aspects { grid-template-columns:1fr; }
-            .cro-related-grid { grid-template-columns:repeat(2,1fr); }
+            .cro-related-ttl { font-size:30px; }
           }
           @media(max-width:768px) {
             .cro-sec,.cro-results,.cro-contact,.cro-related { padding-left:24px;padding-right:24px; }
@@ -403,7 +415,9 @@ export default function ConversionRateOptimizationServices() {
             .cro-fa { padding:0 18px 18px 52px;font-size:13px; }
             .cro-fq-badge { left:14px; }
             .cro-form-row { grid-template-columns:1fr; }
-            .cro-related-grid { grid-template-columns:1fr; }
+            .cro-related-ttl { font-size:26px; }
+            .cro-related-tags { gap:8px; }
+            .cro-rtag { padding:9px 16px;font-size:13px; }
           }
           @media(max-width:480px) {
             .cro-ind-grid { grid-template-columns:repeat(2,1fr); }
@@ -773,28 +787,26 @@ export default function ConversionRateOptimizationServices() {
         {/* ── RELATED SERVICES ── */}
         <section className="cro-related">
           <div className="cro-related-in">
-            <div style={{textAlign:'center',marginBottom:0}}>
-              <span className="cro-sec-ey">Explore More Services</span>
-              <h2 className="cro-sec-ttl">Related Digital Marketing Services</h2>
-              <p className="cro-sec-desc" style={{margin:'0 auto'}}>CRO works best as part of a broader digital growth strategy. Explore the services that complement your conversion optimisation programme.</p>
-            </div>
-            <div className="cro-related-grid">
+            <span className="cro-related-ey">CRO Related Offerings</span>
+            <h2 className="cro-related-ttl">Explore <AuroraText>Related Services</AuroraText> and Technologies</h2>
+            <p className="cro-related-sub">Pair CRO with complementary digital marketing and development services to maximise revenue from every visitor across your entire growth funnel.</p>
+            <hr className="cro-related-divider" />
+            <div className="cro-related-tags">
               {[
-                { href:'/seo-services-company/', icon:'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title:'SEO Services', desc:'Drive qualified organic traffic from Google with comprehensive search engine optimisation — the traffic CRO converts into revenue.' },
-                { href:'/ppc-management-services/', icon:'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title:'PPC Management', desc:'Data-driven paid search campaigns on Google and Bing — optimised landing pages + CRO testing makes every ad pound work harder.' },
-                { href:'/landing-page-design-services/', icon:'M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z', title:'Landing Page Design', desc:'High-converting landing pages built to CRO best practices — designed, copy-tested, and A/B validated before launch.' },
-                { href:'/ecommerce-website-development-services/', icon:'M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z', title:'eCommerce Development', desc:'eCommerce stores built with conversion in mind from the ground up — Shopify, WooCommerce, and Magento development.' },
-                { href:'/ecommerce-marketing-services/', icon:'M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z', title:'eCommerce Marketing', desc:'Full-funnel ecommerce marketing from traffic acquisition to cart recovery — SEO, PPC, email, and CRO working together.' },
-                { href:'/digital-marketing-services/', icon:'M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7', title:'Digital Marketing Services', desc:'Integrated digital marketing strategy — SEO, PPC, social, content, and CRO aligned to your revenue targets.' },
-              ].map(s => (
-                <Link key={s.href} href={s.href} className="cro-rcard">
-                  <div className="cro-rcard-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d={s.icon}/></svg>
-                  </div>
-                  <h3>{s.title}</h3>
-                  <p>{s.desc}</p>
-                  <span className="cro-rcard-link">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-                </Link>
+                ['SEO Services',                   'blue',    '/seo-services-company/'],
+                ['PPC Management',                 'amber',   '/ppc-management-services/'],
+                ['Landing Page Design',            'violet',  '/landing-page-design-services/'],
+                ['eCommerce Development',          'teal',    '/ecommerce-website-development-services/'],
+                ['eCommerce Marketing',            'orange',  '/ecommerce-marketing-services/'],
+                ['Digital Marketing Services',     'indigo',  '/digital-marketing-services/'],
+                ['Analytics & CRO Services',       'cyan',    '/analytics-cro-services/'],
+                ['UX Research',                    'rose',    '/ux-research/'],
+                ['Content Marketing',              'green',   '/content-marketing-services/'],
+                ['Technical SEO Optimization',     'slate',   '/technical-seo-optimization/'],
+                ['eCommerce SEO',                  'sky',     '/ecommerce-seo-services/'],
+                ['Social Media Marketing',         'lime',    '/social-media-marketing-services/'],
+              ].map(([label, color, href]) => (
+                <Link key={label} href={href} className={`cro-rtag cro-rtag-${color}`}>{label}</Link>
               ))}
             </div>
           </div>
