@@ -46,9 +46,36 @@ const WHY = [
   { title:'Transparent Monthly Reporting', body:'Clear reports showing GBP call volume, organic lead count, keyword positions, and map pack rankings — all tied directly to the calls and jobs you care about, not vanity traffic metrics.' },
 ];
 
+function RazorpayButton({ buttonId }) {
+  const formRef = useRef(null);
+  const loaded = useRef(false);
+  useEffect(() => { loaded.current = false; }, [buttonId]);
+  useEffect(() => {
+    const el = formRef.current;
+    if (!el) return;
+    const inject = () => {
+      if (loaded.current) return;
+      loaded.current = true;
+      el.innerHTML = '';
+      const script = document.createElement('script');
+      script.src = 'https://checkout.razorpay.com/v1/payment-button.js';
+      script.setAttribute('data-payment_button_id', buttonId);
+      script.async = true;
+      el.appendChild(script);
+    };
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) { inject(); observer.disconnect(); }
+    }, { rootMargin: '300px' });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [buttonId]);
+  return <form ref={formRef} className="pl-rzp-form"/>;
+}
+
 const PACKAGES = [
   {
     name: 'Starter', slug: 'starter', monthlyPrice: 499, yearlyPrice: 415, yearlySave: 1008,
+    monthlyButtonId: 'pl_TAA38ObJcClDiz',
     desc: 'For single-location plumbers starting local SEO.',
     popular: false,
     features: [
@@ -64,6 +91,7 @@ const PACKAGES = [
   },
   {
     name: 'Growth', slug: 'growth', monthlyPrice: 899, yearlyPrice: 749, yearlySave: 1800,
+    monthlyButtonId: 'pl_TAA58iiRuffFeI',
     desc: 'For established plumbers ready to dominate the Maps Pack.',
     popular: true,
     features: [
@@ -476,6 +504,8 @@ export default function PlumbingSeoServices() {
           .pl-card-pop .pl-feat-list li{border-top-color:rgba(217,119,6,.22)}
           .pl-cta-card{display:block;width:100%;text-align:center;padding:12px;border-radius:50px;font-weight:700;font-size:.875rem;text-decoration:none;background:rgba(15,52,96,.85);color:#fff;transition:all .22s;box-shadow:0 4px 16px rgba(15,52,96,.20)}
           .pl-cta-card:hover{background:rgba(15,52,96,1);transform:translateY(-1px);box-shadow:0 6px 24px rgba(15,52,96,.30)}
+          .pl-rzp-form{width:100%;display:flex;justify-content:center}
+          .pl-rzp-form button{width:100% !important;border-radius:50px !important;padding:12px !important;font-weight:700 !important;font-size:.875rem !important;background:rgba(15,52,96,.85) !important;color:#fff !important;border:none !important;cursor:pointer !important;transition:all .22s !important;box-shadow:0 4px 16px rgba(15,52,96,.20) !important}
           .pl-pkg-trust{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:32px;padding-top:32px;border-top:1px solid rgba(15,52,96,.08)}
           .pl-pkg-trust span{font-size:13px;color:#6b7280;display:flex;align-items:center;gap:6px;font-weight:500}
           /* comparison table */
@@ -708,7 +738,10 @@ export default function PlumbingSeoServices() {
                   <ul className="pl-feat-list">
                     {pkg.features.map(f => <li key={f}>{f}</li>)}
                   </ul>
-                  <a href="#pl-contact" className="pl-cta-card">Get Started →</a>
+                  {!isYearly && pkg.monthlyButtonId
+                    ? <RazorpayButton buttonId={pkg.monthlyButtonId}/>
+                    : <a href="#pl-contact" className="pl-cta-card">Get Started →</a>
+                  }
                 </div>
               ))}
             </div>
