@@ -103,7 +103,7 @@ function CategoryPage({ category, posts, pageInfo, allCategories, currentAfter, 
 }
 
 // ── SINGLE POST COMPONENT ────────────────────────────────────────────────────
-function SinglePost({ post, relatedPosts }) {
+function SinglePost({ post, relatedPosts, ogImageUrl }) {
   const tocRef     = useRef(null);
   const contentRef = useRef(null);
 
@@ -170,7 +170,9 @@ function SinglePost({ post, relatedPosts }) {
   const slugOverride   = SLUG_META[post.slug] || {};
   const seoTitle       = post.seo?.title       || `${post.title} | 1Solutions`;
   const seoDescription = slugOverride.description || post.seo?.metaDesc || stripHtml(post.excerpt).slice(0, 160);
-  const seoImage       = post.seo?.opengraphImage?.sourceUrl || post.featuredImage?.node?.sourceUrl;
+  // ogImageUrl is pre-built server-side: either the branded /api/og-image URL or
+  // the WordPress featured image URL as fallback.
+  const seoImage = ogImageUrl || post.featuredImage?.node?.sourceUrl;
 
   return (
     <>
@@ -183,7 +185,11 @@ function SinglePost({ post, relatedPosts }) {
         <meta property="og:description" content={post.seo?.opengraphDescription || seoDescription} />
         <meta property="og:url"         content={postUrl} />
         <meta property="og:type"        content="article" />
-        {seoImage && <meta property="og:image" content={seoImage} />}
+        {seoImage && <meta property="og:image"              content={seoImage} />}
+        {seoImage && <meta property="og:image:secure_url"  content={seoImage} />}
+        {seoImage && <meta property="og:image:width"       content="1200" />}
+        {seoImage && <meta property="og:image:height"      content="630" />}
+        {seoImage && <meta property="og:image:type"        content="image/png" />}
         {/* Article meta */}
         <meta property="article:published_time" content={post.date} />
         <meta property="article:modified_time"  content={post.modified} />
@@ -554,8 +560,19 @@ export async function getStaticProps({ params }) {
         return { ...rest, readingTime: content ? getReadingTime(content) : null };
       });
 
+      const _siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.1solutions.biz';
+      const _fallbackImg = post.featuredImage?.node?.sourceUrl || '';
+      const ogImageUrl = process.env.OG_SECRET
+        ? `${_siteUrl}/api/og-image?title=${encodeURIComponent(post.title)}&secret=${process.env.OG_SECRET}`
+        : _fallbackImg;
+
       return {
-        props:      { pageType: 'post', post, relatedPosts: related },
+        props: {
+          pageType: 'post',
+          post,
+          relatedPosts: related,
+          ogImageUrl: ogImageUrl || null,
+        },
         revalidate: 3600,
       };
     }
