@@ -140,6 +140,8 @@ const nextConfig = {
       { source: '/1solutions-difference/',                   destination: '/who-we-are/',                      permanent: true },
 
       // ── Blog post URL redirects ────────────────────────────────────────────
+      { source: '/Blogging-Tips-to-become-a-Traffic-Churning-Blogger',  destination: '/blogging-tips-to-become-a-traffic-churning-blogger', permanent: true },
+      { source: '/Blogging-Tips-to-become-a-Traffic-Churning-Blogger/', destination: '/blogging-tips-to-become-a-traffic-churning-blogger', permanent: true },
       { source: '/how-to-create-facebook-lookalike-audiences-2026-guide',  destination: '/how-to-create-facebook-lookalike-audiences/', permanent: true },
       { source: '/how-to-create-facebook-lookalike-audiences-2026-guide/', destination: '/how-to-create-facebook-lookalike-audiences/', permanent: true },
       { source: '/e-commerce-platforms-2025-choosing-the-right-store-for-your-online-success',  destination: '/best-ecommerce-platforms-guide', permanent: true },
