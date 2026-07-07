@@ -535,11 +535,12 @@ export async function getStaticProps({ params }) {
     const post = await getPostBySlug(params.slug);
 
     if (post) {
-      // Replace staging URLs in post content so all internal links point to the live domain
+      // Replace staging URLs in href attributes only — internal links point to the live domain.
+      // Do NOT replace src attributes — images must stay on the Hostinger media server.
       if (post.content) {
         post.content = post.content.replace(
-          /https?:\/\/midnightblue-lyrebird-831822\.hostingersite\.com/g,
-          'https://www.1solutions.biz'
+          /(href=["'])https?:\/\/midnightblue-lyrebird-831822\.hostingersite\.com/g,
+          '$1https://www.1solutions.biz'
         );
       }
       post.readingTime = getReadingTime(post.content);
