@@ -109,6 +109,8 @@
 ## Enterprise & Industry Solutions
 
 - [Artificial Intelligence Services](https://www.1solutions.biz/artificial-intelligence): AI strategy, model integration, and intelligent product development using LLMs and ML.
+- [AI Agent Development Services](https://www.1solutions.biz/ai-agent-development-services): Custom AI agent development using LangGraph, AutoGen, CrewAI, and LangChain — conversational, autonomous task, RAG knowledge, workflow automation, and multi-agent systems.
+- [AI Chatbot Development Services](https://www.1solutions.biz/ai-chatbot-development-services): Custom AI chatbots for customer support, sales, eCommerce, and internal helpdesks — GPT-4o, Claude, Gemini, RAG pipelines, CRM integrations, and multi-channel deployment (WhatsApp, Slack, Teams, website).
 - [Digital Transformation](https://www.1solutions.biz/digital-transformation): End-to-end digital transformation consulting and implementation for enterprises.
 - [SaaS Application Development](https://www.1solutions.biz/saas-application-development-company): End-to-end SaaS product development from MVP to scale.
 - [ERP Development Company](https://www.1solutions.biz/erp-application-development-company): Custom ERP systems for manufacturing, finance, and operations.
@@ -136,6 +138,8 @@
 - [Technical SEO Optimisation](https://www.1solutions.biz/technical-seo-optimization): Core Web Vitals, crawlability, structured data, and indexation fixes.
 - [SEO Audit Services](https://www.1solutions.biz/seo-audit-services): Comprehensive website audit covering technical, content, and backlink issues.
 - [Link Building Services](https://www.1solutions.biz/link-building-services): White-hat link acquisition through editorial placements and digital PR.
+- [White-Label SEO Services](https://www.1solutions.biz/white-label-seo-services): Full-service white-label SEO for agencies — on-page, technical, link building, content, local, and eCommerce SEO delivered under the agency's brand with an NDA-first, non-poaching model.
+- [White-Label PPC Services](https://www.1solutions.biz/white-label-ppc-services): White-label paid search management for agencies — Google Ads, Meta, Shopping, Performance Max, YouTube, and LinkedIn — branded reports and dedicated account manager, non-poaching guaranteed.
 - [Content Marketing Services](https://www.1solutions.biz/content-marketing-services): Strategic content planning, creation, and distribution for organic growth.
 - [Content & Copywriting Services](https://www.1solutions.biz/content-copywriting-services): SEO blog posts, landing pages, product descriptions, and web copy.
 - [PPC Management Services](https://www.1solutions.biz/ppc-management-services): Google Ads, Shopping, and Performance Max campaign management.
