@@ -11,6 +11,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
         <link rel="preconnect" href="https://www.google.com" crossOrigin="" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
