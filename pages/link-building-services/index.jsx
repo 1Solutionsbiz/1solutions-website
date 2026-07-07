@@ -76,6 +76,15 @@ const jsonLd = {
       ],
     },
     {
+      '@type': 'Organization',
+      '@id': 'https://www.1solutions.biz/#organization',
+      name: '1Solutions',
+      url: 'https://www.1solutions.biz',
+      logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
+      foundingDate: '2008',
+      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '127', bestRating: '5' },
+    },
+    {
       '@type': 'Service',
       name: 'Link Building Services',
       provider: {
@@ -86,7 +95,6 @@ const jsonLd = {
       serviceType: 'Link Building',
       url: 'https://www.1solutions.biz/link-building-services/',
       description: 'Manual outreach link building services from 1Solutions — guest posts, niche edits, and digital PR from DR40+ to DR60+ websites. 50,000+ links built. 15+ years experience.',
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '127', bestRating: '5' },
       areaServed: ['US', 'GB', 'AU', 'CA', 'IN'],
     },
     {

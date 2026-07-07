@@ -99,6 +99,15 @@ const jsonLd = {
       speakable: { '@type':'SpeakableSpecification', cssSelector:['h1','h2'] },
     },
     {
+      '@type': 'Organization',
+      '@id': 'https://www.1solutions.biz/#organization',
+      name: '1Solutions',
+      url: 'https://www.1solutions.biz',
+      logo: { '@type':'ImageObject', url:'https://www.1solutions.biz/images/1solutions-logo.png' },
+      foundingDate: '2008',
+      aggregateRating: { '@type':'AggregateRating', ratingValue:'4.9', reviewCount:'127', bestRating:'5' },
+    },
+    {
       '@type': 'Service',
       name: 'Generative Engine Optimisation Services',
       serviceType: 'Generative Engine Optimisation',
@@ -112,7 +121,6 @@ const jsonLd = {
         foundingDate: '2008',
         areaServed: ['US','GB','AU','CA','IN'],
       },
-      aggregateRating: { '@type':'AggregateRating', ratingValue:'4.9', reviewCount:'127', bestRating:'5' },
     },
     {
       '@type': 'FAQPage',
