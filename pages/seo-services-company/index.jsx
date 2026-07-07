@@ -154,12 +154,12 @@ export default function SeoServices() {
         ],
       },
       {
-        '@type': 'LocalBusiness',
+        '@type': 'Organization',
+        '@id': 'https://www.1solutions.biz/#organization',
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
-        logo: 'https://www.1solutions.biz/images/1solutions-logo.png',
+        logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
         sameAs: ['https://www.linkedin.com/company/1solutions/', 'https://x.com/1solutionsbiz', 'https://www.facebook.com/1solutionsbiz'],
-        address: { '@type': 'PostalAddress', addressLocality: 'New Delhi', addressCountry: 'IN' },
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '142', bestRating: '5' },
       },
       {
