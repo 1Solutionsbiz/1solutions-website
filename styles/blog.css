@@ -356,7 +356,7 @@ body {
 .post-article { width: 100%; }
 
 /* Article body */
-.article-content { font-size: 16px; line-height: 1.9; color: var(--text); margin-bottom: 44px; overflow-wrap: break-word; word-break: break-word; min-width: 0; overflow-x: hidden; }
+.article-content { font-size: 16px; line-height: 1.9; color: var(--text); margin-bottom: 44px; overflow-wrap: break-word; min-width: 0; overflow-x: hidden; }
 .article-content h2 { font-size: clamp(20px,3vw,30px); font-weight: 700; color: var(--primary); margin: 44px 0 14px; letter-spacing: -0.3px; scroll-margin-top: 88px; }
 .article-content h3 { font-size: clamp(17px,2.5vw,22px); font-weight: 700; color: var(--text); margin: 32px 0 10px; scroll-margin-top: 88px; }
 .article-content p  { margin-bottom: 18px; }
@@ -374,8 +374,9 @@ body {
 .article-content video,
 .article-content embed,
 .article-content object { max-width: 100% !important; }
-/* display:block lets overflow-x:auto work on table elements; content still renders as a table grid */
-.article-content table { display: block; width: 100%; min-width: 100%; border-collapse: collapse; margin: 28px 0; border-radius: 10px; overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--border); }
+/* display:block lets overflow-x:auto work on table elements; the table expands to natural
+   content width and scrolls horizontally within the article column */
+.article-content table { display: block; border-collapse: collapse; margin: 28px 0; border-radius: 10px; overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--border); }
 .article-content th   { background: var(--primary); color: white; padding: 12px 16px; text-align: left; font-size: 13px; font-weight: 600; }
 .article-content td   { padding: 11px 16px; border-bottom: 1px solid var(--border); font-size: 14px; }
 .article-content tbody tr:nth-child(even) td { background: rgba(17,65,113,0.03); }
@@ -433,7 +434,7 @@ body {
 .related-card  { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; transition: all 0.25s; background: white; display: flex; flex-direction: column; }
 .related-card:hover { border-color: var(--orange); box-shadow: 0 6px 20px rgba(254,151,0,0.1); transform: translateY(-3px); }
 .related-card-img-wrap { display: block; position: relative; width: 100%; aspect-ratio: 16/9; overflow: hidden; }
-.related-card-img { object-fit: cover; transition: transform 0.3s; }
+.related-card-img { object-fit: cover; object-position: left center; transition: transform 0.3s; }
 .related-card:hover .related-card-img { transform: scale(1.04); }
 .related-card-body { padding: 14px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
 .related-card-cat { display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; padding: 3px 9px; border-radius: 4px; }
