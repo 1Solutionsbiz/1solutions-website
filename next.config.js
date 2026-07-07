@@ -142,6 +142,8 @@ const nextConfig = {
       // ── Blog post URL redirects ────────────────────────────────────────────
       { source: '/how-to-create-facebook-lookalike-audiences-2026-guide',  destination: '/how-to-create-facebook-lookalike-audiences/', permanent: true },
       { source: '/how-to-create-facebook-lookalike-audiences-2026-guide/', destination: '/how-to-create-facebook-lookalike-audiences/', permanent: true },
+      { source: '/e-commerce-platforms-2025-choosing-the-right-store-for-your-online-success',  destination: '/best-ecommerce-platforms-guide', permanent: true },
+      { source: '/e-commerce-platforms-2025-choosing-the-right-store-for-your-online-success/', destination: '/best-ecommerce-platforms-guide', permanent: true },
       { source: '/blog/:slug',          destination: '/:slug',       permanent: true },
       { source: '/blog/category/:slug', destination: '/:slug',       permanent: true },
       { source: '/blog/tag/:slug',      destination: '/tag/:slug',   permanent: true },
