@@ -140,6 +140,8 @@ const nextConfig = {
       { source: '/1solutions-difference/',                   destination: '/who-we-are/',                      permanent: true },
 
       // ── Blog post URL redirects ────────────────────────────────────────────
+      { source: '/how-to-create-facebook-lookalike-audiences-2026-guide',  destination: '/how-to-create-facebook-lookalike-audiences/', permanent: true },
+      { source: '/how-to-create-facebook-lookalike-audiences-2026-guide/', destination: '/how-to-create-facebook-lookalike-audiences/', permanent: true },
       { source: '/blog/:slug',          destination: '/:slug',       permanent: true },
       { source: '/blog/category/:slug', destination: '/:slug',       permanent: true },
       { source: '/blog/tag/:slug',      destination: '/tag/:slug',   permanent: true },
