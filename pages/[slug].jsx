@@ -171,7 +171,10 @@ function SinglePost({ post, relatedPosts, ogImageUrl }) {
   const seoTitle       = post.seo?.title       || `${post.title} | 1Solutions`;
   const seoDescription = slugOverride.description || post.seo?.metaDesc || stripHtml(post.excerpt).slice(0, 160);
   // Use the uploaded WordPress featured image first; fall back to the auto-generated one.
-  const seoImage = post.featuredImage?.node?.sourceUrl || ogImageUrl;
+  const featuredImg  = post.featuredImage?.node;
+  const seoImage     = featuredImg?.sourceUrl || ogImageUrl;
+  const seoImgWidth  = featuredImg?.mediaDetails?.width  || 1200;
+  const seoImgHeight = featuredImg?.mediaDetails?.height || 630;
 
   return (
     <>
@@ -184,10 +187,9 @@ function SinglePost({ post, relatedPosts, ogImageUrl }) {
         <meta property="og:description" content={post.seo?.opengraphDescription || seoDescription} />
         <meta property="og:url"         content={postUrl} />
         <meta property="og:type"        content="article" />
-        {seoImage && <meta key="og-image"      property="og:image"             content={seoImage} />}
-        {seoImage && <meta key="og-image-sec" property="og:image:secure_url" content={seoImage} />}
-        {seoImage && <meta key="og-image-w"   property="og:image:width"      content="1200" />}
-        {seoImage && <meta key="og-image-h"   property="og:image:height"     content="630" />}
+        {seoImage && <meta key="og-image"    property="og:image"        content={seoImage} />}
+        {seoImage && <meta key="og-image-w" property="og:image:width"  content={String(seoImgWidth)} />}
+        {seoImage && <meta key="og-image-h" property="og:image:height" content={String(seoImgHeight)} />}
         {/* Article meta */}
         <meta property="article:published_time" content={post.date} />
         <meta property="article:modified_time"  content={post.modified} />
