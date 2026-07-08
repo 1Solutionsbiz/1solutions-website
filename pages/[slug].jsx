@@ -176,6 +176,9 @@ function SinglePost({ post, relatedPosts, ogImageUrl }) {
   // Only declare dimensions when we know them — wrong values cause Facebook to crop.
   const seoImgWidth  = featuredImg?.mediaDetails?.width  ?? null;
   const seoImgHeight = featuredImg?.mediaDetails?.height ?? null;
+  const seoImgType   = seoImage?.match(/\.png(\?|$)/i) ? 'image/png'
+                     : seoImage?.match(/\.gif(\?|$)/i) ? 'image/gif'
+                     : seoImage ? 'image/jpeg' : null;
 
   return (
     <>
@@ -188,9 +191,10 @@ function SinglePost({ post, relatedPosts, ogImageUrl }) {
         <meta property="og:description" content={post.seo?.opengraphDescription || seoDescription} />
         <meta property="og:url"         content={postUrl} />
         <meta property="og:type"        content="article" />
-        {seoImage && <meta key="og-image"   property="og:image"        content={seoImage} />}
-        {seoImgWidth  && <meta key="og-image-w" property="og:image:width"  content={String(seoImgWidth)} />}
-        {seoImgHeight && <meta key="og-image-h" property="og:image:height" content={String(seoImgHeight)} />}
+        {seoImage && <meta key="og-image"      property="og:image"        content={seoImage} />}
+        {seoImgWidth  && <meta key="og-image-w"    property="og:image:width"  content={String(seoImgWidth)} />}
+        {seoImgHeight && <meta key="og-image-h"    property="og:image:height" content={String(seoImgHeight)} />}
+        {seoImgType   && <meta key="og-image-type" property="og:image:type"   content={seoImgType} />}
         {/* Article meta */}
         <meta property="article:published_time" content={post.date} />
         <meta property="article:modified_time"  content={post.modified} />

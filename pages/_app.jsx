@@ -31,10 +31,10 @@ export default function App({ Component, pageProps }) {
           <meta name="google-site-verification" content="252jFsFhtusIQZlJdn2HMUnYv9qz3uOlvXG4iQ9YdgY" />
           <meta name="twitter:site" content="@1solutionsbiz" />
           <meta property="article:publisher" content="https://www.facebook.com/1solutions" />
-          <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
-          <meta key="og-image-w" property="og:image:width" content="1200" />
-          <meta key="og-image-h" property="og:image:height" content="630" />
-          <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+          <meta key="og-image"      property="og:image"        content="https://www.1solutions.biz/images/banner-1sol.jpg" />
+          <meta key="og-image-w"    property="og:image:width"  content="1200" />
+          <meta key="og-image-h"    property="og:image:height" content="630" />
+          <meta key="og-image-type" property="og:image:type"   content="image/jpeg" />
         </Head>
         <Script id="gtm-init" strategy="lazyOnload">{`
           setTimeout(function(){
