@@ -35,8 +35,12 @@ export default async function handler(req, res) {
   const secret =
     req.method === 'POST' ? req.body?.secret : req.query?.secret;
 
-  // Auth temporarily bypassed for one-time manual cache purge — will be restored immediately.
-  void secret;
+  const validSecret =
+    process.env.REVALIDATE_SECRET || process.env.REVALIDATION_SECRET;
+
+  if (!validSecret || secret !== validSecret) {
+    return res.status(401).json({ message: 'Invalid secret' });
+  }
 
   try {
     const { postSlugs, categorySlugs } = await fetchAllSlugs();
