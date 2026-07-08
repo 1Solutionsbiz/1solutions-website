@@ -173,8 +173,9 @@ function SinglePost({ post, relatedPosts, ogImageUrl }) {
   // Use the uploaded WordPress featured image first; fall back to the auto-generated one.
   const featuredImg  = post.featuredImage?.node;
   const seoImage     = featuredImg?.sourceUrl || ogImageUrl;
-  const seoImgWidth  = featuredImg?.mediaDetails?.width  || 1200;
-  const seoImgHeight = featuredImg?.mediaDetails?.height || 630;
+  // Only declare dimensions when we know them — wrong values cause Facebook to crop.
+  const seoImgWidth  = featuredImg?.mediaDetails?.width  ?? null;
+  const seoImgHeight = featuredImg?.mediaDetails?.height ?? null;
 
   return (
     <>
@@ -187,9 +188,9 @@ function SinglePost({ post, relatedPosts, ogImageUrl }) {
         <meta property="og:description" content={post.seo?.opengraphDescription || seoDescription} />
         <meta property="og:url"         content={postUrl} />
         <meta property="og:type"        content="article" />
-        {seoImage && <meta key="og-image"    property="og:image"        content={seoImage} />}
-        {seoImage && <meta key="og-image-w" property="og:image:width"  content={String(seoImgWidth)} />}
-        {seoImage && <meta key="og-image-h" property="og:image:height" content={String(seoImgHeight)} />}
+        {seoImage && <meta key="og-image"   property="og:image"        content={seoImage} />}
+        {seoImgWidth  && <meta key="og-image-w" property="og:image:width"  content={String(seoImgWidth)} />}
+        {seoImgHeight && <meta key="og-image-h" property="og:image:height" content={String(seoImgHeight)} />}
         {/* Article meta */}
         <meta property="article:published_time" content={post.date} />
         <meta property="article:modified_time"  content={post.modified} />

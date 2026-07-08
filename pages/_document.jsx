@@ -24,6 +24,9 @@ export default function Document() {
         <meta name="theme-color" content="#114171" />
         <meta property="og:site_name" content="1Solutions" />
         <meta property="og:locale" content="en_US" />
+        {process.env.NEXT_PUBLIC_FB_APP_ID && (
+          <meta property="fb:app_id" content={process.env.NEXT_PUBLIC_FB_APP_ID} />
+        )}
       </Head>
       <body>
         <Main />
