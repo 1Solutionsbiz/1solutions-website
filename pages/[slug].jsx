@@ -184,10 +184,10 @@ function SinglePost({ post, relatedPosts, ogImageUrl }) {
         <meta property="og:description" content={post.seo?.opengraphDescription || seoDescription} />
         <meta property="og:url"         content={postUrl} />
         <meta property="og:type"        content="article" />
-        {seoImage && <meta property="og:image"             content={seoImage} />}
-        {seoImage && <meta property="og:image:secure_url" content={seoImage} />}
-        {seoImage && <meta property="og:image:width"      content="1200" />}
-        {seoImage && <meta property="og:image:height"     content="630" />}
+        {seoImage && <meta key="og-image"      property="og:image"             content={seoImage} />}
+        {seoImage && <meta key="og-image-sec" property="og:image:secure_url" content={seoImage} />}
+        {seoImage && <meta key="og-image-w"   property="og:image:width"      content="1200" />}
+        {seoImage && <meta key="og-image-h"   property="og:image:height"     content="630" />}
         {/* Article meta */}
         <meta property="article:published_time" content={post.date} />
         <meta property="article:modified_time"  content={post.modified} />
