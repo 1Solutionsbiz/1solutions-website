@@ -266,6 +266,7 @@ function SinglePost({ post, relatedPosts }) {
                   src={post.featuredImage.node.sourceUrl}
                   alt={post.featuredImage.node.altText || post.title}
                   width={1200} height={630}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 768px, 900px"
                   style={{ width: '100%', height: 'auto', display: 'block' }}
                   priority
                 />

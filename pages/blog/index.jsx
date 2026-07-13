@@ -47,6 +47,7 @@ export default function BlogIndex({ featuredPost, posts, totalPages }) {
                   alt={feat.featuredImage.node.altText || feat.title}
                   width={800}
                   height={600}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   style={{ width: '100%', height: 'auto', display: 'block' }}
                   priority
                 />

@@ -9,6 +9,12 @@ export default function Document() {
         {/* Inter font — self-hosted via Google Fonts CDN */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* WordPress media server — blog featured images (LCP element) */}
+        <link rel="preconnect" href="https://midnightblue-lyrebird-831822.hostingersite.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://midnightblue-lyrebird-831822.hostingersite.com" />
+        {/* Gravatar — author avatars on blog posts */}
+        <link rel="preconnect" href="https://secure.gravatar.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://secure.gravatar.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
           rel="stylesheet"
