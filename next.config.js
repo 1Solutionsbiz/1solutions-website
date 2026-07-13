@@ -159,6 +159,8 @@ const nextConfig = {
       { source: '/10-essential-seo-techniques-for-e-commerce-websites/', destination: '/seo-techniques-for-ecommerce-websites', permanent: true },
       { source: '/10-seo-strategies-for-startups',  destination: '/seo-strategies-for-startups', permanent: true },
       { source: '/10-seo-strategies-for-startups/', destination: '/seo-strategies-for-startups', permanent: true },
+      { source: '/21-must-wordpress-plugins-2016',  destination: '/21-must-have-wordpress-plugins', permanent: true },
+      { source: '/21-must-wordpress-plugins-2016/',  destination: '/21-must-have-wordpress-plugins', permanent: true },
       { source: '/blog/:slug',          destination: '/:slug',       permanent: true },
       { source: '/blog/category/:slug', destination: '/:slug',       permanent: true },
       { source: '/blog/tag/:slug',      destination: '/tag/:slug',   permanent: true },
