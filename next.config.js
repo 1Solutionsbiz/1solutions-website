@@ -5,8 +5,7 @@ const nextConfig = {
   typescript: { ignoreBuildErrors: true },
 
   images: {
-    formats: ['image/avif', 'image/webp'],
-    minimumCacheTTL: 2592000,
+    unoptimized: true,
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
