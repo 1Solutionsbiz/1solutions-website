@@ -285,13 +285,7 @@ export default function MobileAppDevelopment() {
           .mob-orb-1{width:880px;height:880px;background:radial-gradient(circle,rgba(29,78,216,.20) 0%,rgba(59,130,246,.08) 40%,transparent 70%);top:-280px;right:-260px}
           .mob-orb-2{width:780px;height:780px;background:radial-gradient(circle,rgba(22,163,74,.18) 0%,rgba(34,197,94,.08) 40%,transparent 70%);bottom:0;left:-230px}
           .mob-orb-3{width:550px;height:550px;background:radial-gradient(circle,rgba(124,58,237,.14) 0%,transparent 70%);top:42%;left:-120px;transform:translateY(-50%)}
-          .mob-breadcrumb{position:relative;z-index:2;padding:16px 40px 0;max-width:1440px;margin:0 auto}
-          .mob-breadcrumb ol{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0;font-size:13px;color:#6A80A0}
-          .mob-breadcrumb li{display:flex;align-items:center;gap:6px}
-          .mob-breadcrumb li::after{content:'/';opacity:.45}
-          .mob-breadcrumb li:last-child::after{display:none}
-          .mob-breadcrumb a{color:#0F3460;text-decoration:none}
-          .mob-breadcrumb a:hover{text-decoration:underline}
+
           .mob-hero{position:relative;z-index:2;text-align:center;max-width:980px;margin:0 auto;padding:44px 40px 32px}
           .mob-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
           .mob-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(90deg,#0F3460 0%,#1d4ed8 50%,#16a34a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -463,7 +457,7 @@ export default function MobileAppDevelopment() {
           .mob-rtag-amber{background:rgba(245,158,11,.11);border-color:rgba(245,158,11,.32);color:#B45309}
           .mob-rtag-teal{background:rgba(20,184,166,.09);border-color:rgba(20,184,166,.28);color:#0F766E}
           @media(max-width:1024px){.mob-hero h1,.mob-s-title,.mob-faq h2{font-size:36px}.mob-svc-grid{grid-template-columns:repeat(2,1fr)}.mob-stack-grid{grid-template-columns:repeat(2,1fr)}.mob-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.mob-eng-card.feat{transform:none}.mob-eng-card.feat.mob-ev{transform:none}.mob-eng-card.feat.mob-ev:hover{transform:translateY(-4px)}.mob-why-grid{grid-template-columns:repeat(2,1fr)}.mob-tgrid{grid-template-columns:1fr}.mob-contact-grid{grid-template-columns:1fr}}
-          @media(max-width:768px){.mob-breadcrumb{padding:12px 20px 0}.mob-hero{padding:28px 20px 20px}.mob-hero h1{font-size:26px;letter-spacing:-.3px}.mob-stats{grid-template-columns:1fr 1fr}.mob-stat-col:nth-child(2){border-right:none}.mob-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.mob-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.mob-svc-section,.mob-stack-section,.mob-eng-section,.mob-process-section,.mob-testi,.mob-why-section,.mob-faq,.mob-related{padding:52px 20px}.mob-contact{padding:48px 20px}.mob-svc-grid,.mob-stack-grid,.mob-why-grid{grid-template-columns:1fr}.mob-frow{grid-template-columns:1fr}.mob-ctitle{font-size:28px}.mob-s-title{font-size:28px}}
+          @media(max-width:768px){.mob-hero{padding:28px 20px 20px}.mob-hero h1{font-size:26px;letter-spacing:-.3px}.mob-stats{grid-template-columns:1fr 1fr}.mob-stat-col:nth-child(2){border-right:none}.mob-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.mob-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.mob-svc-section,.mob-stack-section,.mob-eng-section,.mob-process-section,.mob-testi,.mob-why-section,.mob-faq,.mob-related{padding:52px 20px}.mob-contact{padding:48px 20px}.mob-svc-grid,.mob-stack-grid,.mob-why-grid{grid-template-columns:1fr}.mob-frow{grid-template-columns:1fr}.mob-ctitle{font-size:28px}.mob-s-title{font-size:28px}}
         `}</style>
       </Head>
 
@@ -471,14 +465,6 @@ export default function MobileAppDevelopment() {
         <div className="mob-orb mob-orb-1" />
         <div className="mob-orb mob-orb-2" />
         <div className="mob-orb mob-orb-3" />
-
-        {/* Breadcrumb */}
-        <nav className="mob-breadcrumb" aria-label="Breadcrumb">
-          <ol>
-            <li><Link href="/">Home</Link></li>
-            <li>Mobile App Development</li>
-          </ol>
-        </nav>
 
         {/* Hero */}
         <section className="mob-hero">
