@@ -312,7 +312,7 @@ export default function MobileAppDevelopment() {
           .mob-s-reveal{opacity:0;transform:translateY(44px);transition:opacity .7s cubic-bezier(0.22,1,.36,1),transform .7s cubic-bezier(0.22,1,.36,1)}
           .mob-s-reveal.mob-revealed{opacity:1;transform:translateY(0)}
           .mob-inner{max-width:1300px;margin:0 auto}
-          .mob-svc-section{background:transparent;padding:72px 40px 60px;position:relative;z-index:1}
+          .mob-svc-section{background:#fff;padding:72px 40px 60px;position:relative;z-index:1}
           .mob-svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
           .mob-svc-card{background:linear-gradient(135deg,rgba(219,234,254,.40) 0%,rgba(255,255,255,.82) 55%,rgba(220,252,231,.30) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:20px;padding:26px 22px 22px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95);opacity:0;transform:translateY(36px);transition:opacity .6s cubic-bezier(0.22,1,.36,1),transform .6s cubic-bezier(0.22,1,.36,1),border-color .2s,box-shadow .2s}
           .mob-svc-card.mob-cv{opacity:1;transform:translateY(0)}
