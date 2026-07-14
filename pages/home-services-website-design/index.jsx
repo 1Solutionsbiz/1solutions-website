@@ -83,7 +83,7 @@ export default function HomeServicesWebsiteDesign() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Home Services Website Design', item: 'https://www.1solutions.biz/home-services-website-design/' },
       ]},
-      { '@type': 'Service', name: 'Home Services Website Design', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Home Services Website Design', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Professional home services website design from 1Solutions - conversion-focused websites for HVAC, plumbing, landscaping, roofing, and contractor businesses.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '112', bestRating: '5' },
       },

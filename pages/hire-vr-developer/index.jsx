@@ -82,7 +82,7 @@ export default function HireVrDeveloper() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Hire VR Developer', item: 'https://www.1solutions.biz/hire-vr-developer/' },
       ]},
-      { '@type': 'Service', name: 'Hire VR Developer', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Hire VR Developer', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Hire dedicated VR/AR developers from 1Solutions - Unity, Unreal Engine, Meta Quest, and Apple Vision Pro specialists.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '58', bestRating: '5' },
       },

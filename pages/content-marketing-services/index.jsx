@@ -53,7 +53,7 @@ export default function ContentMarketingServices() {
         { '@type': 'ListItem', position: 2, name: 'Digital Marketing', item: 'https://www.1solutions.biz/seo-services-company/' },
         { '@type': 'ListItem', position: 3, name: 'Content Marketing Services', item: 'https://www.1solutions.biz/content-marketing-services/' },
       ]},
-      { '@type': 'Service', name: 'Content Marketing Services', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Content Marketing Services', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Content marketing by 1Solutions - SEO blog content, pillar pages, case studies, and content strategy that builds organic traffic and converts readers into leads.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '79', bestRating: '5' },
       },

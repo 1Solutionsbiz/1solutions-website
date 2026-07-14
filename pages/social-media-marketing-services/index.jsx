@@ -53,7 +53,7 @@ export default function SocialMediaMarketingServices() {
         { '@type': 'ListItem', position: 2, name: 'Digital Marketing', item: 'https://www.1solutions.biz/seo-services-company/' },
         { '@type': 'ListItem', position: 3, name: 'Social Media Marketing Services', item: 'https://www.1solutions.biz/social-media-marketing-services/' },
       ]},
-      { '@type': 'Service', name: 'Social Media Marketing Services', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Social Media Marketing Services', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Social media marketing by 1Solutions - content strategy, community management, and organic brand growth across Instagram, LinkedIn, Facebook, X, and TikTok.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '86', bestRating: '5' },
       },

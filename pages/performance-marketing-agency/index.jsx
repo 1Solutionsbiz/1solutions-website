@@ -157,7 +157,7 @@ export default function PerformanceMarketingAgency() {
         inLanguage: 'en-US',
       },
       {
-        '@type': 'Service',
+        '@type': 'ProfessionalService',
         name: 'Performance Marketing Services',
         provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz' },
         serviceType: 'Performance Marketing',
@@ -167,7 +167,7 @@ export default function PerformanceMarketingAgency() {
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
           name: 'Performance Marketing Services',
-          itemListElement: SERVICES.map(s => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: s.title } })),
+          itemListElement: SERVICES.map(s => ({ '@type': 'Offer', itemOffered: { '@type': 'ProfessionalService', name: s.title } })),
         },
       },
       {

@@ -100,7 +100,7 @@ export default function SeoCompanyAustin() {
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '74', bestRating: '5' },
       },
       {
-        '@type': 'Service',
+        '@type': 'ProfessionalService',
         name: 'SEO Services in Austin TX',
         provider: { '@type': 'Organization', name: '1Solutions', url: 'https://1solutions.biz' },
         description: 'Comprehensive SEO services for Austin Texas businesses - technical SEO, on-page optimisation, local SEO, link building, and content strategy to achieve Page 1 Google rankings.',

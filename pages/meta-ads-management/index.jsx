@@ -51,7 +51,7 @@ export default function MetaAdsManagement() {
         { '@type': 'ListItem', position: 2, name: 'Digital Marketing', item: 'https://www.1solutions.biz/seo-services-company/' },
         { '@type': 'ListItem', position: 3, name: 'Meta Ads Management', item: 'https://www.1solutions.biz/meta-ads-management/' },
       ]},
-      { '@type': 'Service', name: 'Meta Ads Management', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Meta Ads Management', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Facebook and Instagram advertising management. Audience strategy, creative, lead generation, and dynamic catalogue ads - optimised for ROAS and CPL.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '78', bestRating: '5' },
       },

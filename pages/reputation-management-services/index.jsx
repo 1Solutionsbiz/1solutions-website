@@ -53,7 +53,7 @@ export default function ReputationManagementServices() {
         { '@type': 'ListItem', position: 2, name: 'Digital Marketing', item: 'https://www.1solutions.biz/seo-services-company/' },
         { '@type': 'ListItem', position: 3, name: 'Reputation Management Services', item: 'https://www.1solutions.biz/reputation-management-services/' },
       ]},
-      { '@type': 'Service', name: 'Reputation Management Services', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Reputation Management Services', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Reputation management by 1Solutions - brand monitoring, review acquisition, negative content suppression, and crisis response for businesses in US, Canada and Australia.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '54', bestRating: '5' },
       },

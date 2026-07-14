@@ -83,7 +83,7 @@ export default function KlaviyoEmailMarketingAgency() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Klaviyo Email Marketing Agency', item: 'https://www.1solutions.biz/klaviyo-email-marketing-agency/' },
       ]},
-      { '@type': 'Service', name: 'Klaviyo Email Marketing Agency', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Klaviyo Email Marketing Agency', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Certified Klaviyo email marketing agency - 1Solutions sets up and manages Klaviyo flows, campaigns, SMS, and segmentation for DTC and e-commerce brands.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '84', bestRating: '5' },
       },

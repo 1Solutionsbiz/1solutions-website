@@ -84,7 +84,7 @@ export default function HireLaravelDeveloper() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Hire Laravel Developer', item: 'https://www.1solutions.biz/hire-laravel-developer/' },
       ]},
-      { '@type': 'Service', name: 'Hire Laravel Developer', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Hire Laravel Developer', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Hire dedicated Laravel developers from 1Solutions - Laravel 11, REST APIs, multi-tenant SaaS, and e-commerce backend experts. Pre-vetted profiles in 48 hours.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '127', bestRating: '5' },
       },

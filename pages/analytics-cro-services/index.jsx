@@ -53,7 +53,7 @@ export default function AnalyticsCroServices() {
         { '@type': 'ListItem', position: 2, name: 'Digital Marketing', item: 'https://www.1solutions.biz/seo-services-company/' },
         { '@type': 'ListItem', position: 3, name: 'Analytics & CRO Services', item: 'https://www.1solutions.biz/analytics-cro-services/' },
       ]},
-      { '@type': 'Service', name: 'Analytics & CRO Services', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Analytics & CRO Services', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Analytics and CRO services by 1Solutions - GA4 setup, funnel analysis, A/B testing, and data-driven conversion rate optimisation for websites and landing pages.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '61', bestRating: '5' },
       },

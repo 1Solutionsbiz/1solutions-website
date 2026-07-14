@@ -112,7 +112,7 @@ const jsonLd = {
       aggregateRating: { '@type':'AggregateRating', ratingValue:'4.9', reviewCount:'84', bestRating:'5' },
     },
     {
-      '@type': 'Service',
+      '@type': 'ProfessionalService',
       name: 'White-Label SEO Services',
       serviceType: 'White-Label SEO',
       url: 'https://www.1solutions.biz/white-label-seo-services/',

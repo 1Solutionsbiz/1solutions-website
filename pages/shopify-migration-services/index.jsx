@@ -84,7 +84,7 @@ export default function ShopifyMigrationServices() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Shopify Migration Services', item: 'https://www.1solutions.biz/shopify-migration-services/' },
       ]},
-      { '@type': 'Service', name: 'Shopify Migration Services', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Shopify Migration Services', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Expert Shopify migration services from 1Solutions - WooCommerce, Magento, BigCommerce, and custom platform migrations with zero data loss and SEO preservation.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '112', bestRating: '5' },
       },

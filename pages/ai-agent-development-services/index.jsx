@@ -110,7 +110,7 @@ const jsonLd = {
       aggregateRating: { '@type':'AggregateRating', ratingValue:'4.9', reviewCount:'94', bestRating:'5' },
     },
     {
-      '@type': 'Service',
+      '@type': 'ProfessionalService',
       name: 'AI Agent Development Services',
       serviceType: 'AI Agent Development',
       url: 'https://www.1solutions.biz/ai-agent-development-services/',

@@ -85,7 +85,7 @@ export default function HirePWADeveloper() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Hire PWA Developer', item: 'https://www.1solutions.biz/hire-pwa-developer/' },
       ]},
-      { '@type': 'Service', name: 'Hire PWA Developer', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Hire PWA Developer', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Hire dedicated Progressive Web App developers from 1Solutions for offline-first, installable web applications.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '62', bestRating: '5' },
       },

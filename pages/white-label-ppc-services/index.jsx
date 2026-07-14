@@ -114,7 +114,7 @@ const jsonLd = {
       aggregateRating: { '@type':'AggregateRating', ratingValue:'4.9', reviewCount:'71', bestRating:'5' },
     },
     {
-      '@type': 'Service',
+      '@type': 'ProfessionalService',
       name: 'White-Label PPC Services',
       serviceType: 'White-Label PPC Management',
       url: 'https://www.1solutions.biz/white-label-ppc-services/',

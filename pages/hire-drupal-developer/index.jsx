@@ -85,7 +85,7 @@ export default function HireDrupalDeveloper() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Hire Drupal Developer', item: 'https://www.1solutions.biz/hire-drupal-developer/' },
       ]},
-      { '@type': 'Service', name: 'Hire Drupal Developer', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Hire Drupal Developer', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Hire pre-vetted Drupal 9 & 10 developers from 1Solutions for dedicated, part-time, or hourly engagements.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '64', bestRating: '5' },
       },

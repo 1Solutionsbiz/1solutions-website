@@ -53,7 +53,7 @@ export default function EmailMarketingServices() {
         { '@type': 'ListItem', position: 2, name: 'Digital Marketing', item: 'https://www.1solutions.biz/seo-services-company/' },
         { '@type': 'ListItem', position: 3, name: 'Email Marketing Services', item: 'https://www.1solutions.biz/email-marketing-services/' },
       ]},
-      { '@type': 'Service', name: 'Email Marketing Services', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Email Marketing Services', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Email marketing by 1Solutions - automated drip campaigns, welcome sequences, cart abandonment, and broadcast emails that drive revenue for eCommerce and B2B.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '72', bestRating: '5' },
       },

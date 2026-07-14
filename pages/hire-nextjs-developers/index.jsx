@@ -82,7 +82,7 @@ export default function HireNextJsDevelopers() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Hire Next.js Developers', item: 'https://www.1solutions.biz/hire-nextjs-developers/' },
       ]},
-      { '@type': 'Service', name: 'Hire Next.js Developers', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Hire Next.js Developers', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Hire dedicated Next.js developers from 1Solutions - App Router, Server Components, TypeScript, and Vercel deployment experts. Pre-vetted profiles in 48 hours.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '84', bestRating: '5' },
       },

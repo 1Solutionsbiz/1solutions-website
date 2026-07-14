@@ -108,7 +108,7 @@ const jsonLd = {
       aggregateRating: { '@type':'AggregateRating', ratingValue:'4.9', reviewCount:'127', bestRating:'5' },
     },
     {
-      '@type': 'Service',
+      '@type': 'ProfessionalService',
       name: 'Generative Engine Optimisation Services',
       serviceType: 'Generative Engine Optimisation',
       url: 'https://www.1solutions.biz/generative-engine-optimization-services/',

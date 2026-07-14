@@ -100,7 +100,7 @@ export default function SeoCompanyVancouver() {
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '86', bestRating: '5' },
       },
       {
-        '@type': 'Service',
+        '@type': 'ProfessionalService',
         name: 'SEO Services in Vancouver',
         provider: { '@type': 'Organization', name: '1Solutions', url: 'https://1solutions.biz' },
         description: 'Comprehensive SEO services for Vancouver businesses - technical SEO, on-page optimisation, local SEO, link building, and content strategy to achieve Page 1 Google rankings.',

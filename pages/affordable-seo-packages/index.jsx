@@ -25,7 +25,7 @@ const SCHEMA = {
       ],
     },
     {
-      '@type': 'Service',
+      '@type': 'ProfessionalService',
       name: 'Monthly SEO Packages',
       url: 'https://www.1solutions.biz/affordable-seo-packages/',
       description: 'Affordable monthly SEO packages starting at $299/month. Includes on-page optimisation, technical SEO, link building, content writing, local SEO, and monthly reporting. No contracts. White-hat only.',

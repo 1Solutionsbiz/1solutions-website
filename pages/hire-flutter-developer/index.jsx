@@ -86,7 +86,7 @@ export default function HireFlutterDeveloper() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Hire Flutter Developer', item: 'https://www.1solutions.biz/hire-flutter-developer/' },
       ]},
-      { '@type': 'Service', name: 'Hire Flutter Developer', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Hire Flutter Developer', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Hire dedicated Flutter developers from 1Solutions for iOS, Android, web, and desktop cross-platform apps.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '78', bestRating: '5' },
       },

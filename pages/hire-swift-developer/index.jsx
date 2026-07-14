@@ -82,7 +82,7 @@ export default function HireSwiftDeveloper() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Hire Swift Developer', item: 'https://www.1solutions.biz/hire-swift-developer/' },
       ]},
-      { '@type': 'Service', name: 'Hire Swift Developer', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Hire Swift Developer', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Hire dedicated Swift developers from 1Solutions - native iOS, SwiftUI, and Apple platform experts.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '83', bestRating: '5' },
       },

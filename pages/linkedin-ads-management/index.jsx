@@ -53,7 +53,7 @@ export default function LinkedinAdsManagement() {
         { '@type': 'ListItem', position: 2, name: 'Digital Marketing', item: 'https://www.1solutions.biz/seo-services-company/' },
         { '@type': 'ListItem', position: 3, name: 'LinkedIn Ads Management', item: 'https://www.1solutions.biz/linkedin-ads-management/' },
       ]},
-      { '@type': 'Service', name: 'LinkedIn Ads Management', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'LinkedIn Ads Management', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'LinkedIn advertising management by 1Solutions - Sponsored Content, Message Ads, Lead Gen Forms, and account-based targeting for B2B businesses.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '74', bestRating: '5' },
       },

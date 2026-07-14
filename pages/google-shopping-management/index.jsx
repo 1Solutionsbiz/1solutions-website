@@ -53,7 +53,7 @@ export default function GoogleShoppingManagement() {
         { '@type': 'ListItem', position: 2, name: 'Digital Marketing', item: 'https://www.1solutions.biz/seo-services-company/' },
         { '@type': 'ListItem', position: 3, name: 'Google Shopping Management', item: 'https://www.1solutions.biz/google-shopping-management/' },
       ]},
-      { '@type': 'Service', name: 'Google Shopping Management', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Google Shopping Management', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Google Shopping campaign management by 1Solutions. Product feed optimisation, Performance Max, and ROAS-focused bidding for eCommerce stores.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '83', bestRating: '5' },
       },

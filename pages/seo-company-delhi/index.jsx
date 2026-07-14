@@ -109,7 +109,7 @@ export default function SeoCompanyDelhi() {
         openingHours: 'Mo-Fr 09:00-18:00',
       },
       {
-        '@type': 'Service',
+        '@type': 'ProfessionalService',
         name: 'SEO Services in Delhi',
         provider: { '@type': 'Organization', name: '1Solutions', url: 'https://1solutions.biz' },
         description: 'Comprehensive SEO services for Delhi businesses - technical SEO, on-page optimisation, local SEO, link building, and content strategy to achieve Page 1 Google rankings.',

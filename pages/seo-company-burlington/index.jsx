@@ -99,7 +99,7 @@ export default function SeoCompanyBurlington() {
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '58', bestRating: '5' },
       },
       {
-        '@type': 'Service',
+        '@type': 'ProfessionalService',
         name: 'SEO Services in Burlington Ontario',
         provider: { '@type': 'Organization', name: '1Solutions', url: 'https://1solutions.biz' },
         description: 'Comprehensive SEO services for Burlington Ontario businesses - technical SEO, on-page optimisation, local SEO, link building, and content strategy to achieve Page 1 Google rankings.',

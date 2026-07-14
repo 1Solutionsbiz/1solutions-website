@@ -85,7 +85,7 @@ export default function HireAppDeveloper() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Hire App Developer', item: 'https://www.1solutions.biz/hire-app-developer/' },
       ]},
-      { '@type': 'Service', name: 'Hire App Developer', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Hire App Developer', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Hire dedicated mobile app developers - iOS, Android, React Native, and Flutter - from 1Solutions.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', reviewCount: '112', bestRating: '5' },
       },

@@ -154,7 +154,7 @@ export default function ConversionRateOptimizationServices() {
         inLanguage: 'en-US',
       },
       {
-        '@type': 'Service',
+        '@type': 'ProfessionalService',
         name: 'Conversion Rate Optimisation Services',
         provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz' },
         serviceType: 'Conversion Rate Optimisation',

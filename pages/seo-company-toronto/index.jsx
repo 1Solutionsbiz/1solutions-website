@@ -100,7 +100,7 @@ export default function SeoCompanyToronto() {
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '132', bestRating: '5' },
       },
       {
-        '@type': 'Service',
+        '@type': 'ProfessionalService',
         name: 'SEO Services in Toronto',
         provider: { '@type': 'Organization', name: '1Solutions', url: 'https://1solutions.biz' },
         description: 'Comprehensive SEO services for Toronto Ontario businesses - technical SEO, on-page optimisation, local SEO, link building, and content strategy to achieve Page 1 Google rankings in the GTA.',

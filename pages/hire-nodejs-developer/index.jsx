@@ -85,7 +85,7 @@ export default function HireNodeJSDeveloper() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Hire Node.js Developer', item: 'https://www.1solutions.biz/hire-nodejs-developer/' },
       ]},
-      { '@type': 'Service', name: 'Hire Node.js Developer', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Hire Node.js Developer', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Hire dedicated Node.js developers from 1Solutions - Express, NestJS, and microservices experts.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '118', bestRating: '5' },
       },

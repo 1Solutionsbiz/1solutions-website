@@ -86,7 +86,7 @@ export default function HireAndroidDeveloper() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Hire Android Developer', item: 'https://www.1solutions.biz/hire-android-developer/' },
       ]},
-      { '@type': 'Service', name: 'Hire Android Developer', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Hire Android Developer', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Hire pre-vetted Android developers from 1Solutions for dedicated, part-time, or hourly engagements.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '87', bestRating: '5' },
       },

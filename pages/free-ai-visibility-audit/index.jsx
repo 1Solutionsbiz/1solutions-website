@@ -248,7 +248,7 @@ export default function FreeAiVisibilityAudit() {
         description: 'Get a free AI visibility audit and discover how your brand appears in ChatGPT, Perplexity, Google AI Overviews, and Bing Copilot. Competitor benchmarks, schema audit, E-E-A-T analysis, and action plan. Delivered in 48 hours.',
         dateModified: '2026-07-08', inLanguage: 'en-US',
       },
-      { '@type': 'Service',
+      { '@type': 'ProfessionalService',
         name: 'Free AI Visibility Audit',
         provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz' },
         description: 'Comprehensive AI visibility audit covering Google AI Overviews, ChatGPT citations, Perplexity, Bing Copilot, schema markup, E-E-A-T signals, competitor benchmarking, and an actionable improvement roadmap.',

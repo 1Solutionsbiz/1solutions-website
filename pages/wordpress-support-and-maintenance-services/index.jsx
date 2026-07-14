@@ -24,7 +24,7 @@ const SCHEMA = {
       aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '138', bestRating: '5' },
     },
     {
-      '@type': 'Service',
+      '@type': 'ProfessionalService',
       name: 'WordPress Support & Maintenance Services',
       url: 'https://www.1solutions.biz/wordpress-support-and-maintenance-services/',
       description: 'Expert WordPress support and maintenance services - WordPress core and plugin updates, malware removal and security hardening, WooCommerce maintenance, daily backups, uptime monitoring, performance optimisation, bug fixes, content updates, and emergency WordPress support.',

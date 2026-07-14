@@ -86,7 +86,7 @@ export default function HirePythonDeveloper() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Hire Python Developer', item: 'https://www.1solutions.biz/hire-python-developer/' },
       ]},
-      { '@type': 'Service', name: 'Hire Python Developer', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Hire Python Developer', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Hire dedicated Python developers from 1Solutions - Django, FastAPI, Flask, and data engineering experts.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '108', bestRating: '5' },
       },

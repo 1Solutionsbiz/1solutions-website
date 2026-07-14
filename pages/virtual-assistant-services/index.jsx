@@ -83,7 +83,7 @@ export default function VirtualAssistantServices() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Virtual Assistant Services', item: 'https://www.1solutions.biz/virtual-assistant-services/' },
       ]},
-      { '@type': 'Service', name: 'Virtual Assistant Services', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Virtual Assistant Services', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Dedicated virtual assistant services from 1Solutions - pre-vetted VAs for business admin, e-commerce operations, customer support, and social media management.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '118', bestRating: '5' },
       },

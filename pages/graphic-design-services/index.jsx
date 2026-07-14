@@ -83,7 +83,7 @@ export default function GraphicDesignServices() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Graphic Design Services', item: 'https://www.1solutions.biz/graphic-design-services/' },
       ]},
-      { '@type': 'Service', name: 'Graphic Design Services', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Graphic Design Services', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Professional graphic design from 1Solutions - brand identity, logo design, print collateral, social media graphics, and packaging design.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '88', bestRating: '5' },
       },

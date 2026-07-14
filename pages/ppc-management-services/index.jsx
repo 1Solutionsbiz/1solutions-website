@@ -60,7 +60,7 @@ export default function PpcManagementServices() {
         foundingDate: '2008',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '91', bestRating: '5' },
       },
-      { '@type': 'Service', name: 'Google Ads PPC Management', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Google Ads PPC Management', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Google Ads PPC management services - Search, Display, Shopping, YouTube, and Performance Max campaigns for US, Canada, and Australia.',
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },

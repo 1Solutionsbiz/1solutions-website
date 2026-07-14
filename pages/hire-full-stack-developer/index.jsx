@@ -85,7 +85,7 @@ export default function HireFullStackDeveloper() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Hire Full Stack Developer', item: 'https://www.1solutions.biz/hire-full-stack-developer/' },
       ]},
-      { '@type': 'Service', name: 'Hire Full Stack Developer', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Hire Full Stack Developer', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Hire dedicated full-stack developers from 1Solutions - MERN, MEAN, Django, Next.js and more.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', reviewCount: '134', bestRating: '5' },
       },

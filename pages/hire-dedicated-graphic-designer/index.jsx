@@ -83,7 +83,7 @@ export default function HireDedicatedGraphicDesigner() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Hire Dedicated Graphic Designer', item: 'https://www.1solutions.biz/hire-dedicated-graphic-designer/' },
       ]},
-      { '@type': 'Service', name: 'Hire Dedicated Graphic Designer', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Hire Dedicated Graphic Designer', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Hire dedicated graphic designers from 1Solutions - brand identity, print design, social media graphics, and marketing collateral. Pre-vetted profiles in 48 hours.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '88', bestRating: '5' },
       },

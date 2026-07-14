@@ -555,7 +555,7 @@ export default function LinkBuildingPackages() {
         author: { '@type': 'Organization', name: '1Solutions Link Building Team' },
       },
       {
-        '@type': 'Service',
+        '@type': 'ProfessionalService',
         name: 'Link Building Packages',
         provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz' },
         serviceType: 'Link Building & AI Citation Building',

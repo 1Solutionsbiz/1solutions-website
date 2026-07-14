@@ -85,7 +85,7 @@ const jsonLd = {
       aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '127', bestRating: '5' },
     },
     {
-      '@type': 'Service',
+      '@type': 'ProfessionalService',
       name: 'Link Building Services',
       provider: {
         '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz',

@@ -86,7 +86,7 @@ export default function HireReactNativeDeveloper() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Hire React Native Developer', item: 'https://www.1solutions.biz/hire-react-native-developer/' },
       ]},
-      { '@type': 'Service', name: 'Hire React Native Developer', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Hire React Native Developer', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Hire dedicated React Native developers from 1Solutions for cross-platform iOS and Android apps.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '89', bestRating: '5' },
       },

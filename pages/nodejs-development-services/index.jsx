@@ -82,7 +82,7 @@ export default function NodeJsDevelopmentServices() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Node.js Development Services', item: 'https://www.1solutions.biz/nodejs-development-services/' },
       ]},
-      { '@type': 'Service', name: 'Node.js Development Services', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Node.js Development Services', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Expert Node.js development from 1Solutions - REST APIs, GraphQL, real-time apps, and microservices for startups and enterprises.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '114', bestRating: '5' },
       },

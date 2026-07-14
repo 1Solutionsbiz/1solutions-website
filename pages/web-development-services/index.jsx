@@ -89,7 +89,7 @@ export default function WebDevelopmentServices() {
         foundingDate: '2008',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '203', bestRating: '5' },
       },
-      { '@type': 'Service', name: 'Web Development Services', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Web Development Services', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Custom web development services from 1Solutions - websites, web applications, e-commerce stores, and SaaS platforms. 1,200+ projects delivered.',
       },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },

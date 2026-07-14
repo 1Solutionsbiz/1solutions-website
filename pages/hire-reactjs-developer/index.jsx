@@ -82,7 +82,7 @@ export default function HireReactJSDeveloper() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Hire React.js Developer', item: 'https://www.1solutions.biz/hire-reactjs-developer/' },
       ]},
-      { '@type': 'Service', name: 'Hire React.js Developer', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Hire React.js Developer', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Hire dedicated React.js developers from 1Solutions - React 18, Next.js, and TypeScript frontend experts.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '127', bestRating: '5' },
       },

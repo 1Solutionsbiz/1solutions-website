@@ -93,7 +93,7 @@ export default function SeoServicesJacksonville() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'SEO Services Jacksonville', item: 'https://www.1solutions.biz/seo-services-jacksonville/' },
       ]},
-      { '@type': 'Service', name: 'SEO Services Jacksonville', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'SEO Services Jacksonville', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Expert SEO services for Jacksonville FL businesses - local SEO, Google Maps optimisation, link building, and technical SEO from 1Solutions.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '112', bestRating: '5' },
         areaServed: { '@type': 'City', name: 'Jacksonville' },

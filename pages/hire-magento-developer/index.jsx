@@ -86,7 +86,7 @@ export default function HireMagentoDeveloper() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Hire Magento Developer', item: 'https://www.1solutions.biz/hire-magento-developer/' },
       ]},
-      { '@type': 'Service', name: 'Hire Magento Developer', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Hire Magento Developer', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Hire dedicated Magento 2 and Adobe Commerce developers from 1Solutions for custom modules, migrations, and enterprise builds.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', reviewCount: '72', bestRating: '5' },
       },

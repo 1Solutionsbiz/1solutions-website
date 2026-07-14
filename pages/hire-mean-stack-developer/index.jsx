@@ -85,7 +85,7 @@ export default function HireMEANStackDeveloper() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Hire MEAN Stack Developer', item: 'https://www.1solutions.biz/hire-mean-stack-developer/' },
       ]},
-      { '@type': 'Service', name: 'Hire MEAN Stack Developer', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Hire MEAN Stack Developer', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Hire dedicated MEAN stack developers from 1Solutions - MongoDB, Express, Angular, and Node.js experts.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', reviewCount: '68', bestRating: '5' },
       },

@@ -53,7 +53,7 @@ export default function PpcAuditServices() {
         { '@type': 'ListItem', position: 2, name: 'Digital Marketing', item: 'https://www.1solutions.biz/seo-services-company/' },
         { '@type': 'ListItem', position: 3, name: 'PPC Audit Services', item: 'https://www.1solutions.biz/ppc-audit-services/' },
       ]},
-      { '@type': 'Service', name: 'PPC Audit Services', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'PPC Audit Services', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'PPC audit by 1Solutions - 100-point Google Ads and Meta Ads review covering wasted spend, Quality Score, audience gaps, and conversion tracking. Delivered in 5 days.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '58', bestRating: '5' },
       },

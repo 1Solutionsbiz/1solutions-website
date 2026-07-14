@@ -130,7 +130,7 @@ const jsonLd = {
       aggregateRating: { '@type':'AggregateRating', ratingValue:'4.9', reviewCount:'112', bestRating:'5' },
     },
     {
-      '@type': 'Service',
+      '@type': 'ProfessionalService',
       name: 'AI Chatbot Development Services',
       serviceType: 'AI Chatbot Development',
       url: 'https://www.1solutions.biz/ai-chatbot-development-services/',

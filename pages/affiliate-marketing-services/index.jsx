@@ -93,7 +93,7 @@ export default function AffiliateMarketingServices() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Affiliate Marketing Services', item: 'https://www.1solutions.biz/affiliate-marketing-services/' },
       ]},
-      { '@type': 'Service', name: 'Affiliate Marketing Services', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Affiliate Marketing Services', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Affiliate marketing services from 1Solutions - affiliate program setup, recruitment, fraud management, and ongoing affiliate channel management.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '84', bestRating: '5' },
       },

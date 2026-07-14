@@ -86,7 +86,7 @@ export default function HireIOSDeveloper() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Hire iOS Developer', item: 'https://www.1solutions.biz/hire-ios-developer/' },
       ]},
-      { '@type': 'Service', name: 'Hire iOS Developer', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Hire iOS Developer', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Hire dedicated iOS developers from 1Solutions - Swift, SwiftUI, and UIKit experts for iPhone, iPad, and Apple Watch.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '96', bestRating: '5' },
       },

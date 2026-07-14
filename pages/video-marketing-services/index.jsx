@@ -53,7 +53,7 @@ export default function VideoMarketingServices() {
         { '@type': 'ListItem', position: 2, name: 'Digital Marketing', item: 'https://www.1solutions.biz/seo-services-company/' },
         { '@type': 'ListItem', position: 3, name: 'Video Marketing Services', item: 'https://www.1solutions.biz/video-marketing-services/' },
       ]},
-      { '@type': 'Service', name: 'Video Marketing Services', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Video Marketing Services', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Video marketing by 1Solutions - YouTube channel strategy, short-form video content for Reels/TikTok, video SEO, and YouTube Ads management.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '49', bestRating: '5' },
       },

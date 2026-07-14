@@ -85,7 +85,7 @@ export default function HireMERNStackDeveloper() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Hire MERN Stack Developer', item: 'https://www.1solutions.biz/hire-mern-stack-developer/' },
       ]},
-      { '@type': 'Service', name: 'Hire MERN Stack Developer', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Hire MERN Stack Developer', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Hire dedicated MERN stack developers from 1Solutions - MongoDB, Express, React, and Node.js experts.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '103', bestRating: '5' },
       },

@@ -83,7 +83,7 @@ export default function HireWebDesigner() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Hire Web Designer', item: 'https://www.1solutions.biz/hire-web-designer/' },
       ]},
-      { '@type': 'Service', name: 'Hire Web Designer', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Hire Web Designer', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Hire dedicated web designers from 1Solutions - conversion-focused, brand-coherent website designers with Figma expertise.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '112', bestRating: '5' },
       },

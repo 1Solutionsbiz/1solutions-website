@@ -83,7 +83,7 @@ export default function HireWebDeveloper() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Hire Web Developer', item: 'https://www.1solutions.biz/hire-web-developer/' },
       ]},
-      { '@type': 'Service', name: 'Hire Web Developer', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Hire Web Developer', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Hire dedicated web developers from 1Solutions - full-stack specialists in React, Node.js, PHP, Python, and cloud deployment.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '168', bestRating: '5' },
       },

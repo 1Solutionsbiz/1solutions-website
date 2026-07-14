@@ -85,7 +85,7 @@ export default function HirePHPDeveloper() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Hire PHP Developer', item: 'https://www.1solutions.biz/hire-php-developer/' },
       ]},
-      { '@type': 'Service', name: 'Hire PHP Developer', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Hire PHP Developer', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Hire dedicated PHP developers from 1Solutions - Laravel, Symfony, and WordPress experts for web applications.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', reviewCount: '142', bestRating: '5' },
       },

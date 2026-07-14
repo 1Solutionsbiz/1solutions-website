@@ -225,7 +225,7 @@ export default function EcommerceSeoPackages() {
         description: 'Ecommerce SEO packages from $599/mo. Specialist SEO for Shopify, WooCommerce, and Magento stores — product page optimisation, technical SEO, schema markup, content, and link building.',
         dateModified: '2026-07-06', inLanguage: 'en-US',
       },
-      { '@type': 'Service', name: 'Ecommerce SEO Packages', provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz' }, serviceType: 'Ecommerce SEO', areaServed: 'Worldwide', url: 'https://www.1solutions.biz/ecommerce-seo-packages/',
+      { '@type': 'ProfessionalService', name: 'Ecommerce SEO Packages', provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz' }, serviceType: 'Ecommerce SEO', areaServed: 'Worldwide', url: 'https://www.1solutions.biz/ecommerce-seo-packages/',
         hasOfferCatalog: { '@type': 'OfferCatalog', name: 'Ecommerce SEO Plans', itemListElement: PLANS.map(p => ({ '@type': 'Offer', name: p.name + ' Ecommerce SEO Package', price: p.monthlyPrice, priceCurrency: 'USD', priceSpecification: { '@type': 'UnitPriceSpecification', price: p.monthlyPrice, priceCurrency: 'USD', unitText: 'month' } })) },
       },
       { '@type': 'HowTo', name: 'Our Ecommerce SEO Process', description: 'A 6-step systematic ecommerce SEO process from audit to monthly growth.',

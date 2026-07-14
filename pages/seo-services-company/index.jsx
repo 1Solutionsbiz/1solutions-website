@@ -172,7 +172,7 @@ export default function SeoServices() {
         inLanguage: 'en-US',
       },
       {
-        '@type': 'Service',
+        '@type': 'ProfessionalService',
         name: 'SEO Services',
         provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz' },
         serviceType: 'Search Engine Optimisation',

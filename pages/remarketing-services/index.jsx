@@ -53,7 +53,7 @@ export default function RemarketingServices() {
         { '@type': 'ListItem', position: 2, name: 'Digital Marketing', item: 'https://www.1solutions.biz/seo-services-company/' },
         { '@type': 'ListItem', position: 3, name: 'Remarketing Services', item: 'https://www.1solutions.biz/remarketing-services/' },
       ]},
-      { '@type': 'Service', name: 'Remarketing & Retargeting Services', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Remarketing & Retargeting Services', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Remarketing and retargeting services by 1Solutions - Google Display, Meta, LinkedIn, and dynamic product remarketing to convert lost visitors.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '67', bestRating: '5' },
       },

@@ -86,7 +86,7 @@ export default function HirePrestaShopDeveloper() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Hire PrestaShop Developer', item: 'https://www.1solutions.biz/hire-prestashop-developer/' },
       ]},
-      { '@type': 'Service', name: 'Hire PrestaShop Developer', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Hire PrestaShop Developer', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Hire dedicated PrestaShop developers from 1Solutions for custom modules, themes, and store builds.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', reviewCount: '55', bestRating: '5' },
       },

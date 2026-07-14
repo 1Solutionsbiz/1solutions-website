@@ -83,7 +83,7 @@ export default function HireDedicatedUiUxDesigner() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
         { '@type': 'ListItem', position: 2, name: 'Hire Dedicated UI/UX Designer', item: 'https://www.1solutions.biz/hire-dedicated-ui-ux-designer/' },
       ]},
-      { '@type': 'Service', name: 'Hire Dedicated UI/UX Designer', provider: { '@type': 'Organization', name: '1Solutions' },
+      { '@type': 'ProfessionalService', name: 'Hire Dedicated UI/UX Designer', provider: { '@type': 'Organization', name: '1Solutions' },
         description: 'Hire dedicated UI/UX designers from 1Solutions - Figma experts in user research, design systems, and accessible product design.',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '96', bestRating: '5' },
       },
