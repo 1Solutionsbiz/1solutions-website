@@ -1,21 +1,22 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
-/* ── Aurora text ─────────────────────────────────────────────────────── */
+const RC_KEY = '6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs';
+
+/* ── Aurora text — distinctive for GEO headings ── */
 function AuroraText({ children }) {
   return (
-    <span style={{background:'linear-gradient(135deg,#f43f5e,#ec4899,#a855f7,#8b5cf6,#3b82f6,#06b6d4)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text',backgroundSize:'200% auto',animation:'geo-aurora 4s linear infinite'}}>{children}</span>
+    <span style={{background:'linear-gradient(135deg,#f43f5e,#a855f7,#3b82f6,#06b6d4)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text',backgroundSize:'200% auto',animation:'geo-aurora 4s linear infinite'}}>{children}</span>
   );
 }
 
-/* ── Static data ──────────────────────────────────────────────────────── */
 const STATS = [
-  { label:'AI Platforms Monitored', val:'8+'  },
-  { label:'GEO Clients',            val:'80+' },
-  { label:'AI Citations Tracked',   val:'5K+' },
-  { label:'Years SEO Experience',   val:'15+' },
+  { label: 'AI Platforms Monitored', val: '8+'  },
+  { label: 'GEO Clients',            val: '80+' },
+  { label: 'AI Citations Tracked',   val: '5K+' },
+  { label: 'Years SEO Experience',   val: '15+' },
 ];
 
 const SERVICES = [
@@ -70,12 +71,16 @@ const FAQS = [
 ];
 
 const RELATED = [
-  { icon:'M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z', title:'Answer Engine Optimisation', href:'/answer-engine-optimization-services', desc:'Optimise for featured snippets, People Also Ask boxes, and voice search — the structured content formats LLMs most reliably cite.' },
-  { icon:'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z', title:'Technical SEO', href:'/technical-seo-optimization', desc:'Core Web Vitals, crawlability, schema markup, and site architecture that help AI crawlers parse and index your content correctly.' },
-  { icon:'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z', title:'Local SEO Services', href:'/local-seo-services', desc:'Build hyper-local topical authority for AI Overviews targeting near-me and location-based queries alongside Google Maps visibility.' },
-  { icon:'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z', title:'Content Marketing', href:'/content-marketing-services', desc:'Long-form authority content, topic cluster strategies, and editorial calendars — the content depth that earns consistent AI citations at scale.' },
-  { icon:'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1', title:'Link Building Services', href:'/link-building-services', desc:'Build domain authority through high-quality editorial backlinks — the trust signal AI engines use to evaluate whether your site is worth citing.' },
-  { icon:'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4', title:'SEO Audit Services', href:'/seo-audit-services', desc:'Full technical and GEO-readiness audit: E-E-A-T gaps, schema markup, content structure, and AI visibility opportunities across your site.' },
+  { href:'/ai-seo-services/',                          label:'AI SEO Services'              },
+  { href:'/seo-services-company/',                     label:'SEO Services'                 },
+  { href:'/content-marketing-services/',               label:'Content Marketing'            },
+  { href:'/link-building-services/',                   label:'Link Building Services'       },
+  { href:'/seo-audit-services/',                       label:'SEO Audit Services'           },
+  { href:'/local-seo-services/',                       label:'Local SEO Services'           },
+  { href:'/technical-seo-optimization/',               label:'Technical SEO'                },
+  { href:'/answer-engine-optimization-services/',      label:'Answer Engine Optimisation'   },
+  { href:'/ppc-management-services/',                  label:'PPC Management'               },
+  { href:'/reputation-management-services/',           label:'Reputation Management'        },
 ];
 
 const jsonLd = {
@@ -84,43 +89,18 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type':'ListItem', position:1, name:'Home',         item:'https://www.1solutions.biz/'                                                   },
-        { '@type':'ListItem', position:2, name:'SEO Services', item:'https://www.1solutions.biz/seo-services-company/'                              },
+        { '@type':'ListItem', position:1, name:'Home',         item:'https://www.1solutions.biz/'                                                    },
+        { '@type':'ListItem', position:2, name:'SEO Services', item:'https://www.1solutions.biz/seo-services-company/'                               },
         { '@type':'ListItem', position:3, name:'Generative Engine Optimisation', item:'https://www.1solutions.biz/generative-engine-optimization-services/' },
       ],
     },
     {
-      '@type': 'WebPage',
-      '@id': 'https://www.1solutions.biz/generative-engine-optimization-services/',
-      url: 'https://www.1solutions.biz/generative-engine-optimization-services/',
-      name: 'Generative Engine Optimisation (GEO) Services | 1Solutions',
-      description: 'Optimise your content for citation in Google AI Overviews, ChatGPT, Perplexity, and Gemini. GEO services from 1Solutions — E-E-A-T, structured data, topical authority.',
-      inLanguage: 'en',
-      speakable: { '@type':'SpeakableSpecification', cssSelector:['h1','h2'] },
-    },
-    {
-      '@type': 'Organization',
-      '@id': 'https://www.1solutions.biz/#organization',
-      name: '1Solutions',
-      url: 'https://www.1solutions.biz',
-      logo: { '@type':'ImageObject', url:'https://www.1solutions.biz/images/1solutions-logo.png' },
-      foundingDate: '2008',
-      aggregateRating: { '@type':'AggregateRating', ratingValue:'4.9', reviewCount:'127', bestRating:'5' },
-    },
-    {
       '@type': 'ProfessionalService',
       name: 'Generative Engine Optimisation Services',
-      serviceType: 'Generative Engine Optimisation',
       url: 'https://www.1solutions.biz/generative-engine-optimization-services/',
       description: 'Optimise content for citation in Google AI Overviews, ChatGPT Search, Perplexity, and Gemini. 8 AI platforms monitored, 80+ GEO clients, 5,000+ citations tracked.',
-      provider: {
-        '@type': 'Organization',
-        name: '1Solutions',
-        url: 'https://www.1solutions.biz',
-        logo: { '@type':'ImageObject', url:'https://www.1solutions.biz/images/1solutions-logo.png' },
-        foundingDate: '2008',
-        areaServed: ['US','GB','AU','CA','IN'],
-      },
+      provider: { '@type':'Organization', name:'1Solutions', url:'https://www.1solutions.biz' },
+      aggregateRating: { '@type':'AggregateRating', ratingValue:'4.9', reviewCount:'127', bestRating:'5' },
     },
     {
       '@type': 'FAQPage',
@@ -129,51 +109,78 @@ const jsonLd = {
     {
       '@type': 'HowTo',
       name: 'How Generative Engine Optimisation Works',
-      step: PROCESS.map((p, i) => ({ '@type':'HowToStep', position:i + 1, name:p.title, text:p.desc })),
+      step: PROCESS.map((p, i) => ({ '@type':'HowToStep', position:i+1, name:p.title, text:p.desc })),
     },
   ],
 };
 
-const RC_KEY = '6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs';
-
 export default function GenerativeEngineOptimizationServices() {
   const [openFaq, setOpenFaq]     = useState(0);
-  const [form, setForm]           = useState({ name:'', email:'', website:'', message:'' });
-  const [formState, setFormState] = useState('idle');
-  const [formError, setFormError] = useState('');
+  const [formSt, setFormSt]       = useState('idle');
+  const recaptchaLoaded           = useRef(false);
 
   useEffect(() => {
     const els = document.querySelectorAll('.geo-reveal');
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('geo-vis'); obs.unobserve(e.target); } });
-    }, { threshold: 0.10 });
+    }, { threshold: 0.08 });
     els.forEach(el => obs.observe(el));
     return () => obs.disconnect();
   }, []);
 
-  async function handleSubmit(e) {
+  useEffect(() => {
+    const contact = document.getElementById('geo-contact');
+    if (!contact) return;
+    const rcObs = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && !recaptchaLoaded.current) {
+        const s = document.createElement('script');
+        s.src = `https://www.google.com/recaptcha/api.js?render=${RC_KEY}`;
+        s.async = true;
+        document.head.appendChild(s);
+        recaptchaLoaded.current = true;
+        rcObs.disconnect();
+      }
+    }, { rootMargin: '300px' });
+    rcObs.observe(contact);
+    return () => rcObs.disconnect();
+  }, []);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!form.name || !form.email || !form.message) return;
-    setFormState('sending');
-    setFormError('');
+    const fd      = new FormData(e.target);
+    const name    = (fd.get('geo-name') || '').trim();
+    const email   = (fd.get('geo-email') || '').trim();
+    const phone   = (fd.get('geo-phone') || '').trim();
+    const company = (fd.get('geo-company') || '').trim();
+    const website = (fd.get('geo-website') || '').trim();
+    const msg     = (fd.get('geo-msg') || '').trim();
+    const consent = document.getElementById('geo-consent')?.checked;
+    if (!name || !email || !phone || !company || !msg || !consent) { setFormSt('validation'); return; }
+    setFormSt('loading');
     try {
-      const recaptchaToken = await new Promise(resolve => {
+      const token = await new Promise(resolve => {
         window.grecaptcha.ready(() => {
           window.grecaptcha.execute(RC_KEY, { action: 'geo_contact' }).then(resolve);
         });
       });
+      const cc  = fd.get('geo-cc') || '';
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name:form.name, email:form.email, company:form.website, service:'Generative Engine Optimisation', message:form.message, consent:true, source:'GEO Services Page', recaptchaToken }),
+        body: JSON.stringify({
+          name, email,
+          phone: (cc ? cc + ' ' : '') + phone,
+          company,
+          message: `Website: ${website || 'Not provided'}\n\n${msg}`,
+          service: 'Generative Engine Optimisation',
+          source:  'GEO Services Page',
+          consent: true,
+          recaptchaToken: token,
+        }),
       });
-      if (!res.ok) { const d = await res.json().catch(() => ({})); throw new Error(d.message || 'Submission failed.'); }
-      setFormState('success');
-    } catch (err) {
-      setFormState('error');
-      setFormError(err.message);
-    }
-  }
+      if (res.ok) { setFormSt('success'); e.target.reset(); } else { setFormSt('error'); }
+    } catch { setFormSt('error'); }
+  };
 
   return (
     <>
@@ -190,144 +197,182 @@ export default function GenerativeEngineOptimizationServices() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <style>{`
           @keyframes geo-aurora{0%{background-position:0% center}100%{background-position:200% center}}
-          .geo-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:linear-gradient(135deg,#dbeafe 0%,#ede9fe 25%,#e0f2fe 50%,#fef3c7 75%,#fce7f3 100%);background-attachment:scroll;color:#0F1F40;line-height:1.6;position:relative;overflow-x:hidden}
+          .geo-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .geo-page *,.geo-page *::before,.geo-page *::after{box-sizing:border-box}
-          .geo-orb{position:absolute;border-radius:50%;pointer-events:none;z-index:0;filter:blur(20px)}
-          .geo-orb1{width:900px;height:900px;background:radial-gradient(circle,rgba(99,130,255,.35) 0%,rgba(139,92,246,.15) 40%,transparent 70%);top:-300px;right:-300px}
-          .geo-orb2{width:800px;height:800px;background:radial-gradient(circle,rgba(251,146,60,.30) 0%,rgba(245,158,11,.15) 40%,transparent 70%);bottom:0;left:-250px}
-          .geo-orb3{width:600px;height:600px;background:radial-gradient(circle,rgba(20,184,166,.20) 0%,transparent 70%);top:45%;left:-150px;transform:translateY(-50%)}
-          .geo-reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+          .geo-reveal{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1)}
           .geo-reveal.geo-vis{opacity:1;transform:translateY(0)}
-          .geo-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;padding:16px 40px 0;max-width:1280px;margin:0 auto;position:relative;z-index:2;font-weight:500}
-          .geo-bc a{color:#6b7280;text-decoration:none}.geo-bc a:hover{color:#D97706}.geo-bc-sep{color:#d1d5db}
-          .geo-hero{position:relative;z-index:1;padding:72px 40px 0;overflow:hidden}
-          .geo-hero-inner{position:relative;z-index:2;text-align:center;max-width:920px;margin:0 auto}
-          .geo-eyebrow{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;display:block;margin-bottom:18px}
-          .geo-h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:18px;color:#0F1F40}
-          .geo-hero-sub{font-size:16px;color:#3A507A;line-height:1.65;max-width:680px;margin:0 auto 28px}
-          .geo-btns{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:32px}
-          .geo-btn-p{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:8px;padding:14px 36px;background:rgba(15,52,96,0.85);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.20);border-radius:50px;color:#fff;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;box-shadow:0 6px 24px rgba(15,52,96,0.25)}
-          .geo-btn-p:hover{background:rgba(15,52,96,1);border-color:rgba(245,158,11,0.6);transform:translateY(-2px);box-shadow:0 12px 36px rgba(15,52,96,0.30)}
-          .geo-btn-s{display:inline-flex;align-items:center;padding:14px 32px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1)}
-          .geo-btn-s:hover{background:rgba(255,255,255,0.85);border-color:rgba(245,158,11,0.6);transform:translateY(-2px)}
-          .geo-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95)}
-          .geo-stat{padding:18px 20px;text-align:center;border-right:1px solid rgba(15,52,96,.10)}.geo-stat:last-child{border-right:none}
-          .geo-stat-v{font-size:26px;font-weight:900;color:#D97706;letter-spacing:-0.5px;line-height:1;margin-bottom:6px}
-          .geo-stat-l{font-size:12px;color:#4A6080;font-weight:500}
-          .geo-sec{padding:80px 40px;position:relative;z-index:1}
+
+          /* ── HERO ── */
+          .geo-hero{background:linear-gradient(135deg,#f0f9ff 0%,#e0e7ff 30%,#ede9fe 65%,#f0f9ff 100%);position:relative;overflow:hidden;padding:80px 40px 0}
+          .geo-orb1{position:absolute;top:-120px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
+          .geo-orb2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(15,52,96,0.08) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
+          .geo-in{max-width:1280px;margin:0 auto;position:relative;z-index:2}
+          .geo-hero-inner{text-align:center;position:relative;z-index:2}
+          .geo-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500}
+          .geo-bc a{color:#6b7280;text-decoration:none}.geo-bc a:hover{color:#D97706}.geo-bc span{color:#d1d5db}
+          .geo-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(15,52,96,0.07);border:1px solid rgba(15,52,96,0.14);border-radius:100px;padding:5px 16px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#114171;margin-bottom:28px}
+          .geo-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1.5px;color:#0F1F40;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
+          .geo-hero-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
+          .geo-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
+          .geo-btn-p{display:inline-flex;align-items:center;gap:8px;background:rgba(15,52,96,0.88);color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(15,52,96,0.25)}
+          .geo-btn-p:hover{background:#0F3460;box-shadow:0 8px 32px rgba(15,52,96,0.35);transform:translateY(-2px)}
+          .geo-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.18);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
+          .geo-btn-s:hover{border-color:#D97706;color:#D97706;transform:translateY(-2px)}
+          .geo-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.90);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(15,52,96,0.08)}
+          .geo-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(15,52,96,0.08)}.geo-stat:last-child{border-right:none}
+          .geo-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
+          .geo-stat-v{font-size:1.6rem;font-weight:900;color:#D97706;letter-spacing:-0.5px}
+
+          /* ── SHARED SECTION STYLES ── */
+          .geo-sec{padding:80px 40px}
           .geo-white{background:#fff}
-          .geo-in{max-width:1280px;margin:0 auto}
+          .geo-light{background:#f8fafd}
           .geo-ey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;display:block;margin-bottom:12px}
           .geo-h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;letter-spacing:-1px;color:#0F1F40;margin-bottom:12px}
           .geo-lead{font-size:15px;color:#4A6080;line-height:1.7;max-width:640px;margin-bottom:40px}
-          .geo-glass{background:linear-gradient(135deg,rgba(219,234,254,.55) 0%,rgba(255,255,255,.80) 60%,rgba(237,233,254,.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:22px;padding:28px 24px;box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95);transition:transform .22s,box-shadow .22s,border-color .22s}
-          .geo-glass:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(15,52,96,.12);border-color:rgba(217,119,6,.30)}
-          .geo-g4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+
+          /* ── SERVICE / PROCESS / WHY CARDS ── */
+          .geo-g4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
           .geo-g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-          .geo-nbadge{width:40px;height:40px;background:linear-gradient(135deg,#0F3460,#1a4b82);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:16px;box-shadow:0 4px 12px rgba(15,52,96,0.25);flex-shrink:0}
-          .geo-card-h{font-size:16px;font-weight:700;color:#0F1F40;margin-bottom:8px}
-          .geo-card-p{font-size:13px;color:#4A6080;line-height:1.65}
-          .geo-step-num{font-family:'Courier New',ui-monospace,monospace;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#6b7280;margin-bottom:12px}
-          .geo-plat-sec{background:linear-gradient(135deg,#0F1F40 0%,#1a3a6b 100%);padding:52px 40px;position:relative;z-index:1;text-align:center}
-          .geo-plat-h{font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:800;color:#fff;margin-bottom:24px}
+          .geo-glass{background:linear-gradient(135deg,rgba(219,234,254,0.50) 0%,rgba(255,255,255,0.88) 60%,rgba(237,233,254,0.30) 100%);border:1px solid rgba(255,255,255,0.88);border-radius:20px;padding:26px 22px;box-shadow:0 4px 24px rgba(15,52,96,0.07),inset 0 1px 0 rgba(255,255,255,0.95);transition:transform .22s,box-shadow .22s,border-color .22s}
+          .geo-glass:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(15,52,96,0.12);border-color:rgba(217,119,6,0.25)}
+          .geo-nbadge{width:38px;height:38px;background:linear-gradient(135deg,#0F3460,#1a4b82);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:14px;box-shadow:0 4px 12px rgba(15,52,96,0.22);flex-shrink:0}
+          .geo-step-num{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#9ca3af;margin-bottom:10px}
+          .geo-card-h{font-size:15px;font-weight:700;color:#0F1F40;margin-bottom:8px}
+          .geo-card-p{font-size:13px;color:#4A6080;line-height:1.65;margin:0}
+
+          /* ── AI PLATFORMS ── */
+          .geo-plat-sec{background:linear-gradient(135deg,#0F1F40 0%,#1a3a6b 100%);padding:56px 40px;text-align:center}
+          .geo-plat-h{font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:800;color:#fff;margin-bottom:28px}
           .geo-pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-          .geo-pill{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;color:#fff;letter-spacing:.02em}
+          .geo-pill{background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.22);border-radius:100px;padding:8px 20px;font-size:13px;font-weight:600;color:#fff}
+
+          /* ── COMPARISON TABLE ── */
           .geo-tbl{width:100%;border-collapse:collapse;margin-top:32px}
-          .geo-tbl th{padding:12px 16px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#4A6080;text-align:left;border-bottom:2px solid rgba(15,52,96,.12)}
-          .geo-tbl td{padding:14px 16px;font-size:14px;color:#374151;border-bottom:1px solid rgba(15,52,96,.06);vertical-align:top;line-height:1.55}
+          .geo-tbl th{padding:12px 16px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#4A6080;text-align:left;border-bottom:2px solid rgba(15,52,96,0.12)}
+          .geo-tbl td{padding:14px 16px;font-size:14px;color:#374151;border-bottom:1px solid rgba(15,52,96,0.06);vertical-align:top;line-height:1.55}
           .geo-tbl tr:last-child td{border-bottom:none}
-          .geo-tbl tr:hover td{background:rgba(219,234,254,.35)}
+          .geo-tbl tr:hover td{background:rgba(219,234,254,0.30)}
           .geo-tbl td:first-child{font-weight:700;color:#0F1F40}
           .geo-tbl td:nth-child(3){color:#D97706;font-weight:600}
-          .geo-flist{display:flex;flex-direction:column;gap:10px;margin-top:40px}
-          .geo-fitem{background:linear-gradient(135deg,rgba(219,234,254,.55) 0%,rgba(255,255,255,.80) 60%,rgba(237,233,254,.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(15,52,96,.06),inset 0 1px 0 rgba(255,255,255,.95);transition:border-color .2s}
-          .geo-fitem.geo-open{border-color:rgba(217,119,6,.35)}
-          .geo-fitem.geo-open::before{content:'';display:block;height:3px;background:#D97706;border-radius:3px 3px 0 0}
+
+          /* ── FAQ ── */
+          .geo-flist{display:flex;flex-direction:column;gap:8px;margin-top:36px}
+          .geo-fitem{background:linear-gradient(135deg,rgba(219,234,254,0.45) 0%,rgba(255,255,255,0.85) 60%,rgba(237,233,254,0.25) 100%);border:1px solid rgba(255,255,255,0.88);border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(15,52,96,0.05);transition:border-color .2s}
+          .geo-fitem.geo-open{border-color:rgba(217,119,6,0.30)}
           .geo-fq{width:100%;background:none;border:none;padding:20px 20px 20px 58px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;text-align:left;gap:14px;font-family:inherit;position:relative}
-          .geo-fq-badge{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:26px;height:26px;background:rgba(15,52,96,.08);color:#374151;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:6px;transition:background .2s,color .2s}
+          .geo-fq-badge{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:26px;height:26px;background:rgba(15,52,96,0.08);color:#374151;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:6px;transition:background .2s,color .2s}
           .geo-fitem.geo-open .geo-fq-badge{background:#D97706;color:#fff}
           .geo-fq-text{font-size:15px;font-weight:600;color:#0F1F40;line-height:1.4}
-          .geo-fitem.geo-open .geo-fq-text{color:#B45309}
+          .geo-fitem.geo-open .geo-fq-text{color:#92400E}
           .geo-fchev{width:22px;height:22px;flex-shrink:0;color:#9ca3af;transition:transform .3s}
           .geo-fitem.geo-open .geo-fchev{transform:rotate(180deg);color:#D97706}
           .geo-fanswer-wrap{overflow:hidden;max-height:0;transition:max-height .35s ease}
           .geo-fitem.geo-open .geo-fanswer-wrap{max-height:600px}
           .geo-fanswer{padding:0 20px 20px 58px;font-size:14px;color:#4b5563;line-height:1.8}
-          .geo-rel-card{display:block;text-decoration:none}.geo-rel-card .geo-glass{height:100%}
-          .geo-rel-card:hover .geo-card-h{color:#D97706}
-          .geo-form-sec{padding:80px 40px;position:relative;z-index:1}
-          .geo-form-card{background:rgba(255,255,255,0.70);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.90);border-radius:28px;padding:52px 48px;box-shadow:0 8px 48px rgba(15,52,96,.10),inset 0 1px 0 rgba(255,255,255,1);max-width:720px;margin:0 auto}
-          .geo-field{display:flex;flex-direction:column;gap:7px;margin-bottom:20px}
-          .geo-label{font-size:13px;font-weight:600;color:#374151}
-          .geo-input{padding:12px 16px;background:rgba(255,255,255,0.80);border:1.5px solid rgba(15,52,96,.15);border-radius:12px;font-size:14px;color:#0F1F40;font-family:inherit;transition:border-color .2s,box-shadow .2s;outline:none}
-          .geo-input:focus{border-color:#D97706;box-shadow:0 0 0 3px rgba(217,119,6,.12)}
-          .geo-textarea{padding:12px 16px;background:rgba(255,255,255,0.80);border:1.5px solid rgba(15,52,96,.15);border-radius:12px;font-size:14px;color:#0F1F40;font-family:inherit;resize:vertical;min-height:120px;transition:border-color .2s,box-shadow .2s;outline:none}
-          .geo-textarea:focus{border-color:#D97706;box-shadow:0 0 0 3px rgba(217,119,6,.12)}
-          .geo-form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-          .geo-submit{width:100%;margin-top:8px;padding:15px 32px;background:rgba(15,52,96,0.88);color:#fff;border:none;border-radius:50px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .3s;box-shadow:0 6px 24px rgba(15,52,96,.22);display:flex;align-items:center;justify-content:center;gap:8px}
-          .geo-submit:hover:not(:disabled){background:rgba(15,52,96,1);transform:translateY(-2px);box-shadow:0 12px 36px rgba(15,52,96,.28)}
+
+          /* ── CONTACT FORM ── */
+          .geo-contact{background:linear-gradient(135deg,rgba(15,52,96,0.05) 0%,rgba(255,255,255,0.92) 50%,rgba(254,243,199,0.18) 100%);padding:90px 40px;position:relative;overflow:hidden}
+          .geo-contact-o1{position:absolute;top:-80px;right:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(15,52,96,0.08) 0%,transparent 70%);pointer-events:none}
+          .geo-contact-o2{position:absolute;bottom:-60px;left:-60px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(217,119,6,0.07) 0%,transparent 70%);pointer-events:none}
+          .geo-contact-grid{max-width:1200px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+          .geo-contact-left h2{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;color:#0F1F40;margin:0 0 16px;line-height:1.15;letter-spacing:-0.5px}
+          .geo-contact-left p{font-size:1rem;color:#4A6080;line-height:1.75;margin:0 0 32px}
+          .geo-perks{display:flex;flex-direction:column;gap:12px}
+          .geo-perk{display:flex;align-items:center;gap:10px;font-size:14px;color:#374151;font-weight:500}
+          .geo-perk svg{flex-shrink:0;color:#D97706}
+          .geo-form-box{background:rgba(255,255,255,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.98);border-radius:20px;padding:36px;box-shadow:0 8px 40px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1)}
+          .geo-form-box h3{font-size:18px;font-weight:800;color:#0F1F40;margin:0 0 22px;letter-spacing:-0.3px}
+          .geo-form{display:flex;flex-direction:column;gap:14px}
+          .geo-row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+          .geo-fg{display:flex;flex-direction:column;gap:5px}
+          .geo-fg label{font-size:12px;font-weight:700;color:#374151;letter-spacing:0.02em;text-transform:uppercase}
+          .geo-fg input,.geo-fg textarea,.geo-fg select{padding:11px 14px;border:1.5px solid #e5e7eb;border-radius:10px;font-size:14px;font-family:inherit;color:#111827;background:#fff;outline:none;transition:border-color .2s,box-shadow .2s;width:100%}
+          .geo-fg input:focus,.geo-fg textarea:focus,.geo-fg select:focus{border-color:#D97706;box-shadow:0 0 0 3px rgba(217,119,6,0.10)}
+          .geo-fg textarea{resize:vertical;min-height:110px}
+          .geo-phone-wrap{display:flex;gap:8px}
+          .geo-phone-wrap select{width:110px;flex-shrink:0}
+          .geo-phone-wrap input{flex:1}
+          .geo-consent{display:flex;align-items:flex-start;gap:10px;font-size:12px;color:#6b7280;line-height:1.55}
+          .geo-consent input[type="checkbox"]{width:16px;height:16px;margin-top:1px;accent-color:#D97706;flex-shrink:0}
+          .geo-consent a{color:#D97706;text-decoration:none}
+          .geo-submit{padding:14px 28px;background:rgba(15,52,96,0.88);border:none;color:#fff;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all .25s;width:100%;box-shadow:0 6px 24px rgba(15,52,96,0.22)}
+          .geo-submit:hover:not(:disabled){background:#0F3460;transform:translateY(-2px);box-shadow:0 8px 32px rgba(15,52,96,0.30)}
           .geo-submit:disabled{opacity:.65;cursor:not-allowed}
-          .geo-success{display:flex;flex-direction:column;align-items:center;gap:16px;padding:24px;text-align:center}
-          .geo-success-icon{width:60px;height:60px;background:rgba(34,197,94,.12);border-radius:50%;display:flex;align-items:center;justify-content:center}
-          .geo-cta-sec{padding:80px 40px;background:linear-gradient(135deg,rgba(254,243,199,.70) 0%,rgba(255,255,255,.60) 40%,rgba(219,234,254,.65) 100%);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.80);position:relative;z-index:1;text-align:center}
-          .geo-cta-h{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;letter-spacing:-1px;color:#0F1F40;margin-bottom:14px}
-          .geo-cta-p{font-size:15px;color:#4A6080;line-height:1.7;max-width:580px;margin:0 auto 32px}
-          @media(max-width:1024px){.geo-g4{grid-template-columns:repeat(2,1fr)}.geo-g3{grid-template-columns:repeat(2,1fr)}}
+          .geo-val-err{font-size:13px;color:#dc2626;background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:10px 14px;margin:0}
+          .geo-success{text-align:center;padding:24px 0}
+          .geo-success-icon{width:56px;height:56px;background:rgba(217,119,6,0.10);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+          .geo-success-icon svg{width:28px;height:28px;stroke:#D97706;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+          .geo-success h3{font-size:20px;font-weight:800;color:#0F1F40;margin:0 0 8px}
+          .geo-success p{font-size:14px;color:#4A6080;margin:0;line-height:1.6}
+
+          /* ── RELATED SERVICES ── */
+          .geo-related{background:linear-gradient(135deg,rgba(219,234,254,0.40) 0%,rgba(255,255,255,0.92) 50%,rgba(254,243,199,0.18) 100%);padding:80px 40px;border-top:1px solid rgba(15,52,96,0.08)}
+          .geo-related-in{max-width:1280px;margin:0 auto;text-align:center}
+          .geo-related-ey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6b7280;margin:0 0 14px;display:block}
+          .geo-related-ttl{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;line-height:1.15;letter-spacing:-0.5px;color:#0F1F40;margin:0 0 14px}
+          .geo-related-sub{font-size:15px;color:#4A6080;line-height:1.7;margin:0 auto 36px;max-width:640px}
+          .geo-related-divider{border:none;border-top:1px solid rgba(15,52,96,0.10);margin:0 0 32px}
+          .geo-related-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+          .geo-rtag{display:inline-flex;align-items:center;padding:10px 20px;border-radius:50px;font-size:13px;font-weight:600;text-decoration:none;transition:all .22s;border:1.5px solid rgba(15,52,96,0.15);background:rgba(15,52,96,0.05);color:#0F3460}
+          .geo-rtag:hover{background:rgba(15,52,96,0.12);border-color:#0F3460;transform:translateY(-2px)}
+
+          /* ── RESPONSIVE ── */
+          @media(max-width:1024px){.geo-g4{grid-template-columns:repeat(2,1fr)}.geo-g3{grid-template-columns:repeat(2,1fr)}.geo-contact-grid{grid-template-columns:1fr}}
           @media(max-width:768px){
-            .geo-bc{padding:12px 20px 0}
-            .geo-hero{padding:56px 24px 0}
-            .geo-sec,.geo-form-sec,.geo-cta-sec,.geo-plat-sec{padding:52px 20px}
-            .geo-stats{grid-template-columns:repeat(2,1fr)}
+            .geo-hero,.geo-sec,.geo-plat-sec,.geo-contact,.geo-related{padding:60px 24px}
+            .geo-hero{padding-top:60px;padding-bottom:0}
+            .geo-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}
             .geo-stat:nth-child(2){border-right:none}
-            .geo-stat:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}
-            .geo-stat:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}
-            .geo-glass,.geo-fitem,.geo-form-card{backdrop-filter:none;-webkit-backdrop-filter:none}
             .geo-g4,.geo-g3{grid-template-columns:1fr}
+            .geo-btns{flex-direction:column;align-items:center}
+            .geo-row2{grid-template-columns:1fr}
             .geo-fq{padding:18px 18px 18px 52px}
             .geo-fanswer{padding:0 18px 18px 52px}
             .geo-fq-badge{left:12px}
-            .geo-form-card{padding:32px 24px}
-            .geo-form-row{grid-template-columns:1fr}
           }
         `}</style>
       </Head>
 
       <div className="geo-page">
-        <div className="geo-orb geo-orb1"/><div className="geo-orb geo-orb2"/><div className="geo-orb geo-orb3"/>
-
-        {/* ── BREADCRUMB ── */}
-        <nav className="geo-bc" aria-label="Breadcrumb">
-          <Link href="/">Home</Link><span className="geo-bc-sep">/</span>
-          <Link href="/seo-services-company/">SEO Services</Link><span className="geo-bc-sep">/</span>
-          <span style={{color:'#D97706'}}>Generative Engine Optimisation</span>
-        </nav>
 
         {/* ── HERO ── */}
         <section className="geo-hero">
-          <div className="geo-hero-inner">
-            <span className="geo-eyebrow">GEO · Google AI Overviews · ChatGPT · Perplexity · Gemini</span>
-            <h1 className="geo-h1">Generative Engine Optimisation<br/><AuroraText>Get Cited in AI Search Answers</AuroraText></h1>
-            <p className="geo-hero-sub">Optimise your content for citation in Google AI Overviews, ChatGPT Search, Perplexity, and Gemini — the new frontier of search visibility where being cited replaces being ranked.</p>
-            <div className="geo-btns">
-              <a href="#contact-form" className="geo-btn-p">
-                Start Your GEO Audit
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <Link href="/answer-engine-optimization-services" className="geo-btn-s">Answer Engine Optimisation</Link>
-            </div>
-            <div className="geo-stats">
-              {STATS.map(s => (
-                <div key={s.label} className="geo-stat">
-                  <div className="geo-stat-v">{s.val}</div>
-                  <div className="geo-stat-l">{s.label}</div>
-                </div>
-              ))}
+          <div className="geo-orb1"/><div className="geo-orb2"/>
+          <div className="geo-in">
+            <div className="geo-hero-inner">
+              <nav className="geo-bc">
+                <Link href="/">Home</Link><span>/</span>
+                <Link href="/seo-services-company/">SEO Services</Link><span>/</span>
+                <span style={{color:'#D97706'}}>Generative Engine Optimisation</span>
+              </nav>
+              <span className="geo-eyebrow">
+                <span style={{width:6,height:6,borderRadius:'50%',background:'#D97706',display:'inline-block'}}/>
+                GEO · Google AI Overviews · ChatGPT · Perplexity · Gemini
+              </span>
+              <h1 className="geo-h1">Generative Engine Optimisation —<br/><AuroraText>Get Cited in AI Search Answers</AuroraText></h1>
+              <p className="geo-hero-sub">Optimise your content for citation in Google AI Overviews, ChatGPT Search, Perplexity, and Gemini — the new frontier of search visibility where being cited replaces being ranked.</p>
+              <div className="geo-btns">
+                <a href="#geo-contact" className="geo-btn-p">
+                  Start Your Free GEO Audit
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <Link href="/ai-seo-services/" className="geo-btn-s">AI SEO Services</Link>
+              </div>
+              <div className="geo-stats">
+                {STATS.map(s => (
+                  <div key={s.label} className="geo-stat">
+                    <div className="geo-stat-v">{s.val}</div>
+                    <div className="geo-stat-l">{s.label}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
         {/* ── SERVICES ── */}
-        <section className="geo-sec" id="services">
+        <section className="geo-sec geo-light" id="services">
           <div className="geo-in">
             <div className="geo-reveal">
               <span className="geo-ey">What We Do</span>
@@ -351,7 +396,7 @@ export default function GenerativeEngineOptimizationServices() {
 
         {/* ── AI PLATFORMS ── */}
         <section className="geo-plat-sec">
-          <div className="geo-in">
+          <div className="geo-in" style={{textAlign:'center'}}>
             <h2 className="geo-plat-h">AI Platforms We Optimise For</h2>
             <div className="geo-pills">{PLATFORMS.map(p => <span key={p} className="geo-pill">{p}</span>)}</div>
           </div>
@@ -389,7 +434,7 @@ export default function GenerativeEngineOptimizationServices() {
         </section>
 
         {/* ── PROCESS ── */}
-        <section className="geo-sec" id="process">
+        <section className="geo-sec geo-light" id="process">
           <div className="geo-in">
             <div className="geo-reveal">
               <span className="geo-ey">How We Work</span>
@@ -434,7 +479,7 @@ export default function GenerativeEngineOptimizationServices() {
         </section>
 
         {/* ── FAQ ── */}
-        <section className="geo-sec" id="faq">
+        <section className="geo-sec geo-light" id="faq">
           <div className="geo-in" style={{maxWidth:900}}>
             <div className="geo-reveal">
               <span className="geo-ey">Common Questions</span>
@@ -445,7 +490,7 @@ export default function GenerativeEngineOptimizationServices() {
               {FAQS.map((f, i) => (
                 <div key={i} className={`geo-fitem${openFaq === i ? ' geo-open' : ''}`}>
                   <button className="geo-fq" onClick={() => setOpenFaq(openFaq === i ? -1 : i)}>
-                    <span className="geo-fq-badge">{String(i + 1).padStart(2, '0')}</span>
+                    <span className="geo-fq-badge">{String(i+1).padStart(2,'0')}</span>
                     <span className="geo-fq-text">{f.q}</span>
                     <svg className="geo-fchev" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9l6 6 6-6"/></svg>
                   </button>
@@ -458,96 +503,107 @@ export default function GenerativeEngineOptimizationServices() {
           </div>
         </section>
 
-        {/* ── RELATED SERVICES ── */}
-        <section className="geo-sec geo-white" id="related-services">
-          <div className="geo-in">
-            <div className="geo-reveal">
-              <span className="geo-ey">Keep Exploring</span>
-              <h2 className="geo-h2">Related <AuroraText>SEO Services</AuroraText></h2>
-              <p className="geo-lead">GEO works best as part of a broader search visibility strategy. These services integrate directly with Generative Engine Optimisation.</p>
-            </div>
-            <div className="geo-g3">
-              {RELATED.map((r, i) => (
-                <Link key={r.href} href={r.href} className="geo-rel-card geo-reveal" style={{transitionDelay:`${i*70}ms`}}>
-                  <div className="geo-glass">
-                    <div className="geo-nbadge">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d={r.icon}/></svg>
-                    </div>
-                    <div className="geo-card-h">{r.title}</div>
-                    <p className="geo-card-p">{r.desc}</p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* ── CONTACT FORM ── */}
-        <section className="geo-form-sec" id="contact-form">
-          <div className="geo-in">
-            <div className="geo-reveal" style={{textAlign:'center',maxWidth:640,margin:'0 auto 40px'}}>
+        <section className="geo-contact" id="geo-contact">
+          <div className="geo-contact-o1"/><div className="geo-contact-o2"/>
+          <div className="geo-contact-grid">
+            <div className="geo-contact-left geo-reveal">
               <span className="geo-ey">Free GEO Audit</span>
-              <h2 className="geo-h2">Start Your <AuroraText>GEO Strategy</AuroraText></h2>
-              <p className="geo-lead" style={{marginBottom:0}}>Tell us your domain and target topics — we&rsquo;ll run a free AI visibility audit and show you exactly where you&rsquo;re missing citations.</p>
+              <h2>Start Getting Cited in AI Search Answers</h2>
+              <p>Tell us your domain and target topics — we&rsquo;ll run a free AI visibility audit and show you exactly where competitors are being cited instead of you, and what it takes to change that.</p>
+              <div className="geo-perks">
+                {[
+                  'AI visibility audit across 8 platforms',
+                  'Competitor citation gap analysis',
+                  'E-E-A-T readiness assessment',
+                  'Content restructuring recommendations',
+                  'Free, no-obligation report',
+                ].map(perk => (
+                  <div key={perk} className="geo-perk">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    {perk}
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="geo-form-card geo-reveal">
-              {formState === 'success' ? (
+
+            <div className="geo-form-box geo-reveal">
+              <h3>Request a Free GEO Audit</h3>
+              {formSt === 'success' ? (
                 <div className="geo-success">
                   <div className="geo-success-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
                   </div>
-                  <h3 style={{fontSize:20,fontWeight:800,color:'#0F1F40',margin:0}}>Message received — thank you!</h3>
-                  <p style={{fontSize:14,color:'#4A6080',margin:0,maxWidth:400}}>We&rsquo;ll review your site and reply with a free AI visibility assessment within one business day.</p>
+                  <h3>Audit Request Received!</h3>
+                  <p>We&rsquo;ll review your AI visibility and reply with a free assessment within one business day.</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} noValidate>
-                  <div className="geo-form-row">
-                    <div className="geo-field">
-                      <label className="geo-label" htmlFor="geo-name">Full Name *</label>
-                      <input id="geo-name" className="geo-input" type="text" required placeholder="Jane Smith" value={form.name} onChange={e => setForm(f => ({...f, name:e.target.value}))} />
+                <form className="geo-form" onSubmit={handleSubmit} noValidate>
+                  {formSt === 'validation' && <p className="geo-val-err">Please complete all required fields and accept the privacy policy before submitting.</p>}
+                  {formSt === 'error' && <p className="geo-val-err">Something went wrong. Please try again or email us at info@1solutions.biz</p>}
+                  <div className="geo-row2">
+                    <div className="geo-fg">
+                      <label htmlFor="geo-name">Full Name *</label>
+                      <input id="geo-name" name="geo-name" type="text" placeholder="Jane Smith" required/>
                     </div>
-                    <div className="geo-field">
-                      <label className="geo-label" htmlFor="geo-email">Email Address *</label>
-                      <input id="geo-email" className="geo-input" type="email" required placeholder="jane@company.com" value={form.email} onChange={e => setForm(f => ({...f, email:e.target.value}))} />
+                    <div className="geo-fg">
+                      <label htmlFor="geo-email">Business Email *</label>
+                      <input id="geo-email" name="geo-email" type="email" placeholder="jane@company.com" required/>
                     </div>
                   </div>
-                  <div className="geo-field">
-                    <label className="geo-label" htmlFor="geo-website">Your Website</label>
-                    <input id="geo-website" className="geo-input" type="url" placeholder="https://yoursite.com" value={form.website} onChange={e => setForm(f => ({...f, website:e.target.value}))} />
+                  <div className="geo-row2">
+                    <div className="geo-fg">
+                      <label>Phone Number *</label>
+                      <div className="geo-phone-wrap">
+                        <select name="geo-cc" aria-label="Country code">
+                          <option value="+1">+1 US</option>
+                          <option value="+1">+1 CA</option>
+                          <option value="+61">+61 AU</option>
+                          <option value="+44">+44 GB</option>
+                          <option value="+91">+91 IN</option>
+                        </select>
+                        <input name="geo-phone" type="tel" placeholder="Phone number" required aria-label="Phone number"/>
+                      </div>
+                    </div>
+                    <div className="geo-fg">
+                      <label htmlFor="geo-company">Company Name *</label>
+                      <input id="geo-company" name="geo-company" type="text" placeholder="Your company name" required/>
+                    </div>
                   </div>
-                  <div className="geo-field">
-                    <label className="geo-label" htmlFor="geo-message">What would you like help with? *</label>
-                    <textarea id="geo-message" className="geo-textarea" required placeholder="Tell us about your current AI search visibility, target keywords, or the AI Overview results you want to appear in..." value={form.message} onChange={e => setForm(f => ({...f, message:e.target.value}))} />
+                  <div className="geo-fg">
+                    <label htmlFor="geo-website">Website URL</label>
+                    <input id="geo-website" name="geo-website" type="url" placeholder="https://yoursite.com"/>
                   </div>
-                  {formState === 'error' && (
-                    <p style={{fontSize:13,color:'#dc2626',marginBottom:12}}>{formError || 'Something went wrong. Please try again.'}</p>
-                  )}
-                  <button type="submit" className="geo-submit" disabled={formState === 'sending'}>
-                    {formState === 'sending' ? 'Sending…' : (
-                      <>Request Free GEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></>
-                    )}
+                  <div className="geo-fg">
+                    <label htmlFor="geo-msg">What would you like help with? *</label>
+                    <textarea id="geo-msg" name="geo-msg" rows={4} placeholder="Current AI visibility concerns, target topics, AI Overviews you want to appear in, competitors you want to outrank..." required/>
+                  </div>
+                  <div className="geo-consent">
+                    <input type="checkbox" id="geo-consent"/>
+                    <label htmlFor="geo-consent">
+                      I agree to the <Link href="/privacy-policy/">Privacy Policy</Link> and consent to 1Solutions storing my data to respond to this enquiry. *
+                    </label>
+                  </div>
+                  <button type="submit" className="geo-submit" disabled={formSt === 'loading'}>
+                    {formSt === 'loading' ? 'Sending...' : 'Request My Free GEO Audit →'}
                   </button>
-                  <p style={{fontSize:12,color:'#9ca3af',textAlign:'center',marginTop:14}}>We respond within one business day. No spam, ever.</p>
                 </form>
               )}
             </div>
           </div>
         </section>
 
-        {/* ── CTA BOTTOM ── */}
-        <section className="geo-cta-sec">
-          <div className="geo-in">
-            <div className="geo-reveal">
-              <span className="geo-ey" style={{display:'block',textAlign:'center',marginBottom:12}}>Ready to Get Cited in AI Search?</span>
-              <h2 className="geo-cta-h">Start Your Generative Engine <AuroraText>Optimisation Strategy</AuroraText></h2>
-              <p className="geo-cta-p">We&rsquo;ll audit your current AI visibility, identify where competitors are cited instead of you, and build a content strategy that earns citations across Google, ChatGPT, and Perplexity.</p>
-              <div className="geo-btns">
-                <a href="#contact-form" className="geo-btn-p">
-                  Get Your Free Audit
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </a>
-                <Link href="/seo-services-company/" className="geo-btn-s">SEO Services Overview</Link>
-              </div>
+        {/* ── RELATED SERVICES ── */}
+        <section className="geo-related">
+          <div className="geo-related-in">
+            <span className="geo-related-ey">Explore Related Services</span>
+            <h2 className="geo-related-ttl">Related SEO &amp; Visibility Services</h2>
+            <p className="geo-related-sub">GEO works best as part of a broader search visibility strategy. These services integrate directly with Generative Engine Optimisation.</p>
+            <hr className="geo-related-divider"/>
+            <div className="geo-related-tags">
+              {RELATED.map(({ href, label }) => (
+                <Link key={href} href={href} className="geo-rtag">{label}</Link>
+              ))}
             </div>
           </div>
         </section>
