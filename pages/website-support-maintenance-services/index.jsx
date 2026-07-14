@@ -270,13 +270,7 @@ export default function WebsiteMaintenanceServices() {
           .sm-orb-1{width:880px;height:880px;background:radial-gradient(circle,rgba(15,118,110,.20) 0%,rgba(20,184,166,.08) 40%,transparent 70%);top:-280px;right:-260px}
           .sm-orb-2{width:780px;height:780px;background:radial-gradient(circle,rgba(217,119,6,.22) 0%,rgba(245,158,11,.10) 40%,transparent 70%);bottom:0;left:-230px}
           .sm-orb-3{width:550px;height:550px;background:radial-gradient(circle,rgba(8,145,178,.14) 0%,transparent 70%);top:42%;left:-120px;transform:translateY(-50%)}
-          .sm-breadcrumb{position:relative;z-index:2;padding:16px 40px 0;max-width:1440px;margin:0 auto}
-          .sm-breadcrumb ol{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0;font-size:13px;color:#6A80A0}
-          .sm-breadcrumb li{display:flex;align-items:center;gap:6px}
-          .sm-breadcrumb li::after{content:'/';opacity:.45}
-          .sm-breadcrumb li:last-child::after{display:none}
-          .sm-breadcrumb a{color:#0F3460;text-decoration:none}
-          .sm-breadcrumb a:hover{text-decoration:underline}
+
           .sm-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
           .sm-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
           .sm-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(90deg,#0F3460 0%,#0f766e 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -450,7 +444,7 @@ export default function WebsiteMaintenanceServices() {
           .sm-rtag-green{background:rgba(22,163,74,.09);border-color:rgba(22,163,74,.28);color:#14532d}
           .sm-rtag-rose{background:rgba(225,29,72,.09);border-color:rgba(225,29,72,.28);color:#9f1239}
           @media(max-width:1024px){.sm-hero h1,.sm-s-title,.sm-faq h2{font-size:36px}.sm-svc-grid{grid-template-columns:repeat(2,1fr)}.sm-stack-grid{grid-template-columns:repeat(2,1fr)}.sm-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.sm-eng-card.feat{transform:none}.sm-eng-card.feat.sm-ev{transform:none}.sm-eng-card.feat.sm-ev:hover{transform:translateY(-4px)}.sm-why-grid{grid-template-columns:repeat(2,1fr)}.sm-tgrid{grid-template-columns:1fr}.sm-contact-grid{grid-template-columns:1fr}}
-          @media(max-width:768px){.sm-breadcrumb{padding:12px 20px 0}.sm-hero{padding:28px 20px 20px}.sm-hero h1{font-size:26px;letter-spacing:-.3px}.sm-stats{grid-template-columns:1fr 1fr}.sm-stat-col:nth-child(2){border-right:none}.sm-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.sm-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.sm-logos{padding:16px 20px 28px}.sm-svc-section,.sm-stack-section,.sm-eng-section,.sm-process-section,.sm-testi,.sm-why-section,.sm-faq,.sm-related{padding:52px 20px}.sm-contact{padding:48px 20px}.sm-svc-grid,.sm-stack-grid,.sm-why-grid{grid-template-columns:1fr}.sm-frow{grid-template-columns:1fr}.sm-ctitle{font-size:28px}.sm-s-title{font-size:28px}}
+          @media(max-width:768px){.sm-hero{padding:28px 20px 20px}.sm-hero h1{font-size:26px;letter-spacing:-.3px}.sm-stats{grid-template-columns:1fr 1fr}.sm-stat-col:nth-child(2){border-right:none}.sm-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.sm-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.sm-logos{padding:16px 20px 28px}.sm-svc-section,.sm-stack-section,.sm-eng-section,.sm-process-section,.sm-testi,.sm-why-section,.sm-faq,.sm-related{padding:52px 20px}.sm-contact{padding:48px 20px}.sm-svc-grid,.sm-stack-grid,.sm-why-grid{grid-template-columns:1fr}.sm-frow{grid-template-columns:1fr}.sm-ctitle{font-size:28px}.sm-s-title{font-size:28px}}
         `}</style>
               <script
           type="application/ld+json"
@@ -474,19 +468,6 @@ export default function WebsiteMaintenanceServices() {
 
       <div className="sm-page">
         <div className="sm-orb sm-orb-1" /><div className="sm-orb sm-orb-2" /><div className="sm-orb sm-orb-3" />
-
-        <nav className="sm-breadcrumb" aria-label="Breadcrumb">
-          <ol itemScope itemType="https://schema.org/BreadcrumbList">
-            <li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement">
-              <Link href="/" itemProp="item"><span itemProp="name">Home</span></Link>
-              <meta itemProp="position" content="1" />
-            </li>
-            <li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement">
-              <span itemProp="name">Website Support & Maintenance Services</span>
-              <meta itemProp="position" content="2" />
-            </li>
-          </ol>
-        </nav>
 
         <section className="sm-hero">
           <span className="sm-eyebrow">Website Support & Maintenance Services</span>
