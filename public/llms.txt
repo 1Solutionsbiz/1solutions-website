@@ -161,7 +161,9 @@
 - [Video Marketing Services](https://www.1solutions.biz/video-marketing-services): Video strategy, production, and YouTube / social distribution.
 - [Voice Search Optimisation](https://www.1solutions.biz/voice-search-optimization-services): Schema markup and content optimisation for voice assistants.
 - [Answer Engine Optimisation](https://www.1solutions.biz/answer-engine-optimization-services): Optimising for AI-generated search answers and featured snippets.
-- [Generative Engine Optimisation](https://www.1solutions.biz/generative-engine-optimization-services): GEO strategies for visibility in ChatGPT, Perplexity, and AI overviews.
+- [AI SEO Services](https://www.1solutions.biz/ai-seo-services): AI-powered SEO using machine learning tools, predictive analytics, and AI content optimisation to improve organic rankings and search visibility.
+- [Generative Engine Optimisation](https://www.1solutions.biz/generative-engine-optimization-services): GEO strategies for citation visibility in ChatGPT Search, Perplexity, Google AI Overviews, and Gemini — E-E-A-T, structured data, and topical authority building.
+- [Free AI Visibility Audit](https://www.1solutions.biz/free-ai-visibility-audit): Free audit of your brand's citation presence across Google AI Overviews, ChatGPT, Perplexity, and Gemini — competitor gap analysis and GEO recommendations included.
 
 ## SEO by Platform
 
@@ -188,6 +190,7 @@
 ## SEO by Location
 
 - [SEO Company Delhi](https://www.1solutions.biz/seo-company-delhi): SEO services for businesses in New Delhi and NCR.
+- [SEO Company Los Angeles](https://www.1solutions.biz/seo-company-los-angeles): SEO services for businesses in Los Angeles, California.
 - [SEO Company Austin](https://www.1solutions.biz/seo-company-austin): SEO services for businesses in Austin, Texas.
 - [SEO Company Toronto](https://www.1solutions.biz/seo-company-toronto): SEO services for businesses in Toronto, Canada.
 - [SEO Company Vancouver](https://www.1solutions.biz/seo-company-vancouver): SEO services for businesses in Vancouver, Canada.

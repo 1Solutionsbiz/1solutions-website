@@ -148,7 +148,9 @@ const STATIC_PAGES = [
   { url: '/seo-training-laxmi-nagar',            priority: '0.7', changefreq: 'monthly' },
   { url: '/voice-search-optimization-services',  priority: '0.7', changefreq: 'monthly' },
   { url: '/answer-engine-optimization-services', priority: '0.7', changefreq: 'monthly' },
-  { url: '/generative-engine-optimization-services', priority: '0.7', changefreq: 'monthly' },
+  { url: '/generative-engine-optimization-services', priority: '0.8', changefreq: 'monthly' },
+  { url: '/ai-seo-services',                     priority: '0.9', changefreq: 'monthly' },
+  { url: '/free-ai-visibility-audit',            priority: '0.8', changefreq: 'monthly' },
   { url: '/ppc-management-services',             priority: '0.8', changefreq: 'monthly' },
   { url: '/ppc-audit-services',                  priority: '0.7', changefreq: 'monthly' },
   { url: '/google-shopping-management',          priority: '0.7', changefreq: 'monthly' },
@@ -193,6 +195,7 @@ const STATIC_PAGES = [
   { url: '/wix-seo-services',                    priority: '0.6', changefreq: 'monthly' },
 
   // SEO by Location
+  { url: '/seo-company-los-angeles',              priority: '0.7', changefreq: 'monthly' },
   { url: '/seo-company-austin',                  priority: '0.7', changefreq: 'monthly' },
   { url: '/seo-company-burlington',              priority: '0.7', changefreq: 'monthly' },
   { url: '/seo-company-delhi',                   priority: '0.7', changefreq: 'monthly' },
