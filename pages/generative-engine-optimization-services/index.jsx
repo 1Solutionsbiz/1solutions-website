@@ -5,49 +5,48 @@ import Link from 'next/link';
 
 const RC_KEY = '6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs';
 
-/* ── Aurora text — distinctive for GEO headings ── */
 function AuroraText({ children }) {
   return (
-    <span style={{background:'linear-gradient(135deg,#f43f5e,#a855f7,#3b82f6,#06b6d4)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text',backgroundSize:'200% auto',animation:'geo-aurora 4s linear infinite'}}>{children}</span>
+    <span style={{background:'linear-gradient(135deg,#4f46e5,#a855f7,#3b82f6,#06b6d4)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text',backgroundSize:'200% auto',animation:'geo-aurora 4s linear infinite'}}>{children}</span>
   );
 }
 
 const STATS = [
   { label: 'AI Platforms Monitored', val: '8+'  },
-  { label: 'GEO Clients',            val: '80+' },
+  { label: 'GEO Clients Served',     val: '80+' },
   { label: 'AI Citations Tracked',   val: '5K+' },
   { label: 'Years SEO Experience',   val: '15+' },
 ];
 
 const SERVICES = [
-  { n:'01', icon:'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title:'GEO Content Restructuring', desc:'Restructure existing content for AI citation — clear entity definitions, authoritative source statements, factual density, and structured claim formats that LLMs prefer to cite.' },
-  { n:'02', icon:'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4', title:'Structured Data for AI', desc:'Schema markup (FAQ, HowTo, Article, Speakable) that signals content structure to AI engines. Properly marked-up content gets parsed and cited more reliably by generative models.' },
-  { n:'03', icon:'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', title:'E-E-A-T Authority Building', desc:'Build the expertise, experience, authoritativeness, and trustworthiness signals that both Google AI Overviews and third-party LLMs (ChatGPT, Claude, Perplexity) use to evaluate source credibility.' },
-  { n:'04', icon:'M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z', title:'AI Visibility Auditing', desc:'Test how your brand and content appears across ChatGPT, Perplexity, Google AI Overviews, Gemini, and Bing Copilot — with a gap analysis identifying where competitors are cited instead of you.' },
-  { n:'05', icon:'M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7', title:'Topical Authority Mapping', desc:'Build comprehensive topic coverage that positions your site as the authoritative source on your subject area — the depth and breadth of coverage LLMs favour when selecting citation sources.' },
-  { n:'06', icon:'M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z', title:'Cited Source Strategy', desc:'Identify the content formats, claim types, and authority signals that make sources most likely to be cited in AI-generated answers — and build content optimised specifically for citation.' },
-  { n:'07', icon:'M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9', title:'Brand Mention Monitoring', desc:"Track your brand's appearance in AI-generated responses across ChatGPT, Perplexity, Google SGE, and Gemini — monitoring citation frequency, sentiment, and accuracy." },
-  { n:'08', icon:'M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title:'GEO Reporting & Analytics', desc:'Monthly reporting on AI visibility metrics — citation appearances, AI Overview presence, brand mention sentiment, and Perplexity citation frequency alongside traditional search metrics.' },
+  { n:'01', title:'GEO Content Restructuring',  desc:'Restructure existing content for AI citation — clear entity definitions, authoritative source statements, factual density, and structured claim formats that LLMs prefer to cite.' },
+  { n:'02', title:'Structured Data for AI',      desc:'Schema markup (FAQ, HowTo, Article, Speakable) that signals content structure to AI engines. Properly marked-up content gets parsed and cited more reliably by generative models.' },
+  { n:'03', title:'E-E-A-T Authority Building',  desc:'Build expertise, experience, authoritativeness, and trustworthiness signals that Google AI Overviews and third-party LLMs (ChatGPT, Claude, Perplexity) use to evaluate source credibility.' },
+  { n:'04', title:'AI Visibility Auditing',      desc:'Test how your brand and content appears across ChatGPT, Perplexity, Google AI Overviews, Gemini, and Bing Copilot — with a gap analysis identifying where competitors are cited instead of you.' },
+  { n:'05', title:'Topical Authority Mapping',   desc:'Build comprehensive topic coverage that positions your site as the authoritative source on your subject area — the depth and breadth of coverage LLMs favour when selecting citation sources.' },
+  { n:'06', title:'Cited Source Strategy',       desc:'Identify the content formats, claim types, and authority signals that make sources most likely to be cited in AI-generated answers — and build content optimised specifically for citation.' },
+  { n:'07', title:'Brand Mention Monitoring',    desc:"Track your brand's appearance in AI-generated responses across ChatGPT, Perplexity, Google SGE, and Gemini — monitoring citation frequency, sentiment, and accuracy." },
+  { n:'08', title:'GEO Reporting & Analytics',   desc:'Monthly reporting on AI visibility metrics — citation appearances, AI Overview presence, brand mention sentiment, and Perplexity citation frequency alongside traditional search metrics.' },
 ];
 
 const PLATFORMS = ['Google AI Overviews','ChatGPT Search','Perplexity AI','Gemini','Bing Copilot','Claude AI','Llama','Grok'];
 
 const PROCESS = [
-  { n:'01', icon:'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4', title:'AI Visibility Audit', desc:'Test your brand and content across major AI engines. Identify where you appear, where competitors appear instead, and what content types are being cited in your niche.' },
-  { n:'02', icon:'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title:'Content Gap Analysis', desc:'Map your content against the questions and topics where AI engines are citing competitors — identify the highest-value gaps to address first by business impact.' },
-  { n:'03', icon:'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z', title:'Content Optimisation', desc:'Restructure existing content for citation-friendliness — clearer claims, better entity definitions, authoritative sourcing, and E-E-A-T signals that AI models reward.' },
-  { n:'04', icon:'M12 6v6m0 0v6m0-6h6m-6 0H6', title:'New Content Creation', desc:'Create comprehensive, citation-worthy content on your most important topics — written for both human readers and AI engine consumption at depth that earns citations.' },
-  { n:'05', icon:'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1', title:'Authority & Link Building', desc:'Build the third-party credibility signals that AI engines use to evaluate source authority — editorial coverage, expert citations, and domain authority improvements.' },
-  { n:'06', icon:'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title:'Monitor & Report', desc:'Monthly AI visibility reporting — citation frequency across platforms, brand mention tracking, and AI presence compared to traditional SEO metrics.' },
+  { step:'01', title:'AI Visibility Audit',       desc:'Test your brand and content across major AI engines. Identify where you appear, where competitors appear instead, and what content types are being cited in your niche.' },
+  { step:'02', title:'Content Gap Analysis',       desc:'Map your content against the questions and topics where AI engines are citing competitors — identify the highest-value gaps to address first by business impact.' },
+  { step:'03', title:'Content Optimisation',       desc:'Restructure existing content for citation-friendliness — clearer claims, better entity definitions, authoritative sourcing, and E-E-A-T signals that AI models reward.' },
+  { step:'04', title:'New Content Creation',        desc:'Create comprehensive, citation-worthy content on your most important topics — written for both human readers and AI engine consumption at depth that earns citations.' },
+  { step:'05', title:'Authority & Link Building',  desc:'Build the third-party credibility signals that AI engines use to evaluate source authority — editorial coverage, expert citations, and domain authority improvements.' },
+  { step:'06', title:'Monitor & Report',            desc:'Monthly AI visibility reporting — citation frequency across platforms, brand mention tracking, and AI presence compared to traditional SEO metrics.' },
 ];
 
 const WHY = [
-  { icon:'M13 10V3L4 14h7v7l9-11h-7z', title:'Early Mover Expertise', desc:'We have been studying and testing GEO since Google AI Overviews launched. Our clients are building citation presence while competitors are still ignoring the shift.' },
-  { icon:'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9', title:'Multi-Platform Approach', desc:'GEO is not just Google. We optimise for citation across ChatGPT, Perplexity, Gemini, Bing Copilot, and emerging AI search engines simultaneously.' },
-  { icon:'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1', title:'SEO + GEO Combined', desc:'GEO works best alongside traditional SEO — not instead of it. We integrate both strategies so your content performs across keyword searches and AI-generated answers.' },
-  { icon:'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title:'Measurable Metrics', desc:'We track concrete AI visibility metrics — citation appearances, AI Overview presence, Perplexity source frequency — so progress is measurable, not theoretical.' },
-  { icon:'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title:'Content-First Execution', desc:'GEO requires high-quality, authoritative content — not technical tricks. Our content specialists write citation-worthy material that earns AI mentions through genuine expertise.' },
-  { icon:'M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z', title:'Transparent Reporting', desc:"Monthly reports covering AI visibility alongside traditional SEO metrics — giving a complete picture of your brand's presence across both search paradigms." },
+  { title:'Early Mover Expertise',    desc:'We have been studying and testing GEO since Google AI Overviews launched. Our clients are building citation presence while competitors are still ignoring the shift.' },
+  { title:'Multi-Platform Approach',  desc:'GEO is not just Google. We optimise for citation across ChatGPT, Perplexity, Gemini, Bing Copilot, and emerging AI search engines simultaneously.' },
+  { title:'SEO + GEO Combined',       desc:'GEO works best alongside traditional SEO — not instead of it. We integrate both strategies so your content performs across keyword searches and AI-generated answers.' },
+  { title:'Measurable Metrics',       desc:'We track concrete AI visibility metrics — citation appearances, AI Overview presence, Perplexity source frequency — so progress is measurable, not theoretical.' },
+  { title:'Content-First Execution',  desc:'GEO requires high-quality, authoritative content — not technical tricks. Our content specialists write citation-worthy material that earns AI mentions through genuine expertise.' },
+  { title:'Transparent Reporting',    desc:"Monthly reports covering AI visibility alongside traditional SEO metrics — giving a complete picture of your brand's presence across both search paradigms." },
 ];
 
 const COMPARE = [
@@ -71,16 +70,16 @@ const FAQS = [
 ];
 
 const RELATED = [
-  { href:'/ai-seo-services/',                          label:'AI SEO Services'              },
-  { href:'/seo-services-company/',                     label:'SEO Services'                 },
-  { href:'/content-marketing-services/',               label:'Content Marketing'            },
-  { href:'/link-building-services/',                   label:'Link Building Services'       },
-  { href:'/seo-audit-services/',                       label:'SEO Audit Services'           },
-  { href:'/local-seo-services/',                       label:'Local SEO Services'           },
-  { href:'/technical-seo-optimization/',               label:'Technical SEO'                },
-  { href:'/answer-engine-optimization-services/',      label:'Answer Engine Optimisation'   },
-  { href:'/ppc-management-services/',                  label:'PPC Management'               },
-  { href:'/reputation-management-services/',           label:'Reputation Management'        },
+  { href:'/ai-seo-services/',                     label:'AI SEO Services',              cls:'geo-rtag-indigo'  },
+  { href:'/seo-services-company/',                label:'SEO Services',                 cls:'geo-rtag-blue'    },
+  { href:'/content-marketing-services/',          label:'Content Marketing',            cls:'geo-rtag-violet'  },
+  { href:'/link-building-services/',              label:'Link Building Services',        cls:'geo-rtag-teal'    },
+  { href:'/seo-audit-services/',                  label:'SEO Audit Services',            cls:'geo-rtag-amber'   },
+  { href:'/local-seo-services/',                  label:'Local SEO Services',            cls:'geo-rtag-green'   },
+  { href:'/technical-seo-optimization/',          label:'Technical SEO',                 cls:'geo-rtag-rose'    },
+  { href:'/answer-engine-optimization-services/', label:'Answer Engine Optimisation',    cls:'geo-rtag-indigo'  },
+  { href:'/ppc-management-services/',             label:'PPC Management',                cls:'geo-rtag-blue'    },
+  { href:'/reputation-management-services/',      label:'Reputation Management',         cls:'geo-rtag-violet'  },
 ];
 
 const jsonLd = {
@@ -115,29 +114,56 @@ const jsonLd = {
 };
 
 export default function GenerativeEngineOptimizationServices() {
-  const [openFaq, setOpenFaq]     = useState(0);
-  const [formSt, setFormSt]       = useState('idle');
-  const recaptchaLoaded           = useRef(false);
+  const [openFaq, setOpenFaq]   = useState(0);
+  const [visCards, setVisCards] = useState([]);
+  const [visSteps, setVisSteps] = useState([]);
+  const [visWhy, setVisWhy]     = useState([]);
+  const [formSt, setFormSt]     = useState('idle');
+  const cardsRef  = useRef(null);
+  const stepRefs  = useRef([]);
+  const whyRef    = useRef(null);
+  const rcLoaded  = useRef(false);
 
   useEffect(() => {
-    const els = document.querySelectorAll('.geo-reveal');
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('geo-vis'); obs.unobserve(e.target); } });
-    }, { threshold: 0.08 });
-    els.forEach(el => obs.observe(el));
-    return () => obs.disconnect();
+    if (!cardsRef.current) return;
+    const o = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) { SERVICES.forEach((_,i) => setTimeout(() => setVisCards(p => p.includes(i) ? p : [...p,i]), i*60)); o.disconnect(); }
+    }, { threshold: 0.05 });
+    o.observe(cardsRef.current);
+    return () => o.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const obs = stepRefs.current.map((el, i) => {
+      if (!el) return null;
+      const o = new IntersectionObserver(([e]) => {
+        if (e.isIntersecting) { setTimeout(() => setVisSteps(p => p.includes(i) ? p : [...p,i]), i*120); o.disconnect(); }
+      }, { threshold: 0.2 });
+      o.observe(el);
+      return o;
+    });
+    return () => obs.forEach(o => o && o.disconnect());
+  }, []);
+
+  useEffect(() => {
+    if (!whyRef.current) return;
+    const o = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) { WHY.forEach((_,i) => setTimeout(() => setVisWhy(p => p.includes(i) ? p : [...p,i]), i*90)); o.disconnect(); }
+    }, { threshold: 0.1 });
+    o.observe(whyRef.current);
+    return () => o.disconnect();
   }, []);
 
   useEffect(() => {
     const contact = document.getElementById('geo-contact');
     if (!contact) return;
     const rcObs = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting && !recaptchaLoaded.current) {
+      if (entries[0].isIntersecting && !rcLoaded.current) {
         const s = document.createElement('script');
         s.src = `https://www.google.com/recaptcha/api.js?render=${RC_KEY}`;
         s.async = true;
         document.head.appendChild(s);
-        recaptchaLoaded.current = true;
+        rcLoaded.current = true;
         rcObs.disconnect();
       }
     }, { rootMargin: '300px' });
@@ -148,28 +174,26 @@ export default function GenerativeEngineOptimizationServices() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const fd      = new FormData(e.target);
-    const name    = (fd.get('geo-name') || '').trim();
-    const email   = (fd.get('geo-email') || '').trim();
-    const phone   = (fd.get('geo-phone') || '').trim();
+    const name    = (fd.get('geo-name')    || '').trim();
+    const email   = (fd.get('geo-email')   || '').trim();
+    const phone   = (fd.get('geo-phone')   || '').trim();
     const company = (fd.get('geo-company') || '').trim();
     const website = (fd.get('geo-website') || '').trim();
-    const msg     = (fd.get('geo-msg') || '').trim();
+    const msg     = (fd.get('geo-msg')     || '').trim();
     const consent = document.getElementById('geo-consent')?.checked;
     if (!name || !email || !phone || !company || !msg || !consent) { setFormSt('validation'); return; }
     setFormSt('loading');
     try {
       const token = await new Promise(resolve => {
-        window.grecaptcha.ready(() => {
-          window.grecaptcha.execute(RC_KEY, { action: 'geo_contact' }).then(resolve);
-        });
+        window.grecaptcha.ready(() => { window.grecaptcha.execute(RC_KEY, { action:'geo_contact' }).then(resolve); });
       });
-      const cc  = fd.get('geo-cc') || '';
+      const cc = fd.get('geo-cc') || '';
       const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        method:'POST',
+        headers:{ 'Content-Type':'application/json' },
         body: JSON.stringify({
           name, email,
-          phone: (cc ? cc + ' ' : '') + phone,
+          phone: (cc ? cc+' ' : '') + phone,
           company,
           message: `Website: ${website || 'Not provided'}\n\n${msg}`,
           service: 'Generative Engine Optimisation',
@@ -186,7 +210,7 @@ export default function GenerativeEngineOptimizationServices() {
     <>
       <Head>
         <title>Generative Engine Optimisation (GEO) Services | Get Cited in AI Search | 1Solutions</title>
-        <meta name="description" content="GEO services that get your content cited in Google AI Overviews, ChatGPT Search, Perplexity & Gemini. E-E-A-T, structured data, topical authority. 80+ GEO clients, 15+ years SEO experience." />
+        <meta name="description" content="GEO services that get your content cited in Google AI Overviews, ChatGPT Search, Perplexity & Gemini. E-E-A-T, structured data, topical authority. 80+ GEO clients, 15+ years experience." />
         <link rel="canonical" href="https://www.1solutions.biz/generative-engine-optimization-services/" />
         <meta property="og:type"        content="website" />
         <meta property="og:title"       content="Generative Engine Optimisation (GEO) Services | 1Solutions" />
@@ -199,137 +223,154 @@ export default function GenerativeEngineOptimizationServices() {
           @keyframes geo-aurora{0%{background-position:0% center}100%{background-position:200% center}}
           .geo-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .geo-page *,.geo-page *::before,.geo-page *::after{box-sizing:border-box}
-          .geo-reveal{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1)}
-          .geo-reveal.geo-vis{opacity:1;transform:translateY(0)}
 
           /* ── HERO ── */
-          .geo-hero{background:linear-gradient(135deg,#f0f9ff 0%,#e0e7ff 30%,#ede9fe 65%,#f0f9ff 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .geo-orb1{position:absolute;top:-120px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .geo-orb2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(15,52,96,0.08) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .geo-in{max-width:1280px;margin:0 auto;position:relative;z-index:2}
-          .geo-hero-inner{text-align:center;position:relative;z-index:2}
+          .geo-hero{background:linear-gradient(135deg,#eef2ff 0%,#e8e4ff 30%,#e0e7ff 65%,#eef2ff 100%);position:relative;overflow:hidden;padding:80px 40px 0}
+          .geo-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.14) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
+          .geo-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(79,70,229,0.08) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
+          .geo-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}
           .geo-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500}
-          .geo-bc a{color:#6b7280;text-decoration:none}.geo-bc a:hover{color:#D97706}.geo-bc span{color:#d1d5db}
-          .geo-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(15,52,96,0.07);border:1px solid rgba(15,52,96,0.14);border-radius:100px;padding:5px 16px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#114171;margin-bottom:28px}
+          .geo-bc a{color:#6b7280;text-decoration:none}.geo-bc a:hover{color:#4f46e5}.geo-bc span{color:#d1d5db}
+          .geo-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(79,70,229,0.08);border:1px solid rgba(79,70,229,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#4f46e5;margin-bottom:28px}
           .geo-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1.5px;color:#0F1F40;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .geo-hero-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
+          .geo-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
           .geo-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
-          .geo-btn-p{display:inline-flex;align-items:center;gap:8px;background:rgba(15,52,96,0.88);color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(15,52,96,0.25)}
-          .geo-btn-p:hover{background:#0F3460;box-shadow:0 8px 32px rgba(15,52,96,0.35);transform:translateY(-2px)}
-          .geo-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.18);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
-          .geo-btn-s:hover{border-color:#D97706;color:#D97706;transform:translateY(-2px)}
-          .geo-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.90);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(15,52,96,0.08)}
-          .geo-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(15,52,96,0.08)}.geo-stat:last-child{border-right:none}
+          .geo-btn-p{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#4f46e5,#6366f1);color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all .25s;box-shadow:0 4px 20px rgba(79,70,229,0.28)}
+          .geo-btn-p:hover{background:linear-gradient(135deg,#3730a3,#4f46e5);box-shadow:0 8px 32px rgba(79,70,229,0.38);transform:translateY(-2px)}
+          .geo-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.18);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all .25s}
+          .geo-btn-s:hover{border-color:#4f46e5;color:#4f46e5;transform:translateY(-2px)}
+          .geo-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.60);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.88);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(79,70,229,0.08)}
+          .geo-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(79,70,229,0.10)}.geo-stat:last-child{border-right:none}
           .geo-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .geo-stat-v{font-size:1.6rem;font-weight:900;color:#D97706;letter-spacing:-0.5px}
+          .geo-stat-v{font-size:1.6rem;font-weight:900;color:#4f46e5;letter-spacing:-0.5px}
 
-          /* ── SHARED SECTION STYLES ── */
-          .geo-sec{padding:80px 40px}
-          .geo-white{background:#fff}
-          .geo-light{background:#f8fafd}
-          .geo-ey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;display:block;margin-bottom:12px}
-          .geo-h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;letter-spacing:-1px;color:#0F1F40;margin-bottom:12px}
-          .geo-lead{font-size:15px;color:#4A6080;line-height:1.7;max-width:640px;margin-bottom:40px}
+          /* ── SECTION SCAFFOLDING ── */
+          .geo-white{background:#fff;padding:80px 40px}
+          .geo-light{background:#f8fafd;padding:80px 40px}
+          .geo-indigo{background:linear-gradient(135deg,#eef2ff 0%,#e8eeff 50%,#eef2ff 100%);padding:80px 40px}
+          .geo-sec-in{max-width:1280px;margin:0 auto}
+          .geo-sec-in-sm{max-width:900px;margin:0 auto}
+          .geo-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#4f46e5;margin-bottom:10px;display:block}
+          .geo-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#3730a3 0%,#4f46e5 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .geo-desc{font-size:15px;color:#4A6080;line-height:1.7;max-width:640px;margin-bottom:44px}
 
-          /* ── SERVICE / PROCESS / WHY CARDS ── */
-          .geo-g4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-          .geo-g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-          .geo-glass{background:linear-gradient(135deg,rgba(219,234,254,0.50) 0%,rgba(255,255,255,0.88) 60%,rgba(237,233,254,0.30) 100%);border:1px solid rgba(255,255,255,0.88);border-radius:20px;padding:26px 22px;box-shadow:0 4px 24px rgba(15,52,96,0.07),inset 0 1px 0 rgba(255,255,255,0.95);transition:transform .22s,box-shadow .22s,border-color .22s}
-          .geo-glass:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(15,52,96,0.12);border-color:rgba(217,119,6,0.25)}
-          .geo-nbadge{width:38px;height:38px;background:linear-gradient(135deg,#0F3460,#1a4b82);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:14px;box-shadow:0 4px 12px rgba(15,52,96,0.22);flex-shrink:0}
-          .geo-step-num{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#9ca3af;margin-bottom:10px}
-          .geo-card-h{font-size:15px;font-weight:700;color:#0F1F40;margin-bottom:8px}
-          .geo-card-p{font-size:13px;color:#4A6080;line-height:1.65;margin:0}
+          /* ── SERVICE CARDS ── */
+          .geo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+          .geo-card{background:linear-gradient(135deg,rgba(238,242,255,0.70) 0%,rgba(255,255,255,0.90) 60%,rgba(224,231,255,0.30) 100%);border:1px solid rgba(255,255,255,0.88);border-radius:20px;padding:26px 22px 22px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(79,70,229,0.06);opacity:0;transform:translateY(20px);transition:opacity .4s ease,transform .4s ease}
+          .geo-card.vis{opacity:1;transform:translateY(0)}.geo-card:hover{transform:translateY(-6px);border-color:rgba(79,70,229,0.20);box-shadow:0 16px 48px rgba(79,70,229,0.09)}
+          .geo-card-num{position:absolute;top:8px;right:14px;font-size:72px;font-weight:900;line-height:1;color:#4f46e5;opacity:0.05;letter-spacing:-4px;pointer-events:none;user-select:none}
+          .geo-card h3{font-size:15px;font-weight:700;color:#0F1F40;margin-bottom:8px;position:relative;z-index:1}
+          .geo-card p{font-size:13px;color:#4A6080;line-height:1.6;position:relative;z-index:1;margin:0}
 
           /* ── AI PLATFORMS ── */
-          .geo-plat-sec{background:linear-gradient(135deg,#0F1F40 0%,#1a3a6b 100%);padding:56px 40px;text-align:center}
-          .geo-plat-h{font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:800;color:#fff;margin-bottom:28px}
+          .geo-plat{background:linear-gradient(135deg,#3730a3 0%,#4f46e5 100%);padding:60px 40px}
+          .geo-plat-in{max-width:1280px;margin:0 auto;text-align:center}
+          .geo-plat h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:900;color:#fff;margin-bottom:32px}
           .geo-pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-          .geo-pill{background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.22);border-radius:100px;padding:8px 20px;font-size:13px;font-weight:600;color:#fff}
+          .geo-pill{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.22);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;color:#fff}
 
           /* ── COMPARISON TABLE ── */
-          .geo-tbl{width:100%;border-collapse:collapse;margin-top:32px}
-          .geo-tbl th{padding:12px 16px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#4A6080;text-align:left;border-bottom:2px solid rgba(15,52,96,0.12)}
-          .geo-tbl td{padding:14px 16px;font-size:14px;color:#374151;border-bottom:1px solid rgba(15,52,96,0.06);vertical-align:top;line-height:1.55}
+          .geo-tbl-wrap{overflow-x:auto;margin-top:32px}
+          .geo-tbl{width:100%;border-collapse:collapse;min-width:600px}
+          .geo-tbl th{padding:12px 16px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#4A6080;text-align:left;border-bottom:2px solid rgba(79,70,229,0.12)}
+          .geo-tbl td{padding:14px 16px;font-size:14px;color:#374151;border-bottom:1px solid rgba(79,70,229,0.06);vertical-align:top;line-height:1.55}
           .geo-tbl tr:last-child td{border-bottom:none}
-          .geo-tbl tr:hover td{background:rgba(219,234,254,0.30)}
+          .geo-tbl tr:hover td{background:rgba(238,242,255,0.60)}
           .geo-tbl td:first-child{font-weight:700;color:#0F1F40}
-          .geo-tbl td:nth-child(3){color:#D97706;font-weight:600}
+          .geo-tbl td:nth-child(3){color:#4f46e5;font-weight:600}
+
+          /* ── PROCESS ── */
+          .geo-steps{display:flex;flex-direction:column;margin-top:44px}
+          .geo-step{display:grid;grid-template-columns:80px 1fr;gap:24px;align-items:flex-start;padding:28px 0;border-bottom:1px solid rgba(79,70,229,0.10);opacity:0;transform:translateX(-20px);transition:opacity .45s ease,transform .45s ease}
+          .geo-step:last-child{border-bottom:none}.geo-step.vis{opacity:1;transform:translateX(0)}
+          .geo-snum{font-size:3rem;font-weight:900;color:rgba(79,70,229,0.15);line-height:1;letter-spacing:-2px}
+          .geo-step h3{font-size:1.1rem;font-weight:800;color:#0F1F40;margin-bottom:6px}
+          .geo-step p{font-size:.9rem;color:#4A6080;line-height:1.7;margin:0}
+
+          /* ── WHY ── */
+          .geo-why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+          .geo-wcard{background:linear-gradient(135deg,#eef2ff 0%,#fff 60%,#e0e7ff 100%);border:1px solid rgba(79,70,229,0.10);border-radius:16px;padding:28px;opacity:0;transform:translateY(16px);transition:opacity .4s ease,transform .4s ease}
+          .geo-wcard.vis{opacity:1;transform:translateY(0)}.geo-wcard:hover{border-color:rgba(79,70,229,0.22);box-shadow:0 8px 32px rgba(79,70,229,0.07)}
+          .geo-dot{width:8px;height:8px;border-radius:50%;background:#4f46e5;margin-bottom:16px}
+          .geo-wcard h3{font-size:1rem;font-weight:800;color:#0F1F40;margin-bottom:10px}
+          .geo-wcard p{font-size:.88rem;color:#4A6080;line-height:1.7;margin:0}
 
           /* ── FAQ ── */
-          .geo-flist{display:flex;flex-direction:column;gap:8px;margin-top:36px}
-          .geo-fitem{background:linear-gradient(135deg,rgba(219,234,254,0.45) 0%,rgba(255,255,255,0.85) 60%,rgba(237,233,254,0.25) 100%);border:1px solid rgba(255,255,255,0.88);border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(15,52,96,0.05);transition:border-color .2s}
-          .geo-fitem.geo-open{border-color:rgba(217,119,6,0.30)}
-          .geo-fq{width:100%;background:none;border:none;padding:20px 20px 20px 58px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;text-align:left;gap:14px;font-family:inherit;position:relative}
-          .geo-fq-badge{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:26px;height:26px;background:rgba(15,52,96,0.08);color:#374151;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:6px;transition:background .2s,color .2s}
-          .geo-fitem.geo-open .geo-fq-badge{background:#D97706;color:#fff}
-          .geo-fq-text{font-size:15px;font-weight:600;color:#0F1F40;line-height:1.4}
-          .geo-fitem.geo-open .geo-fq-text{color:#92400E}
-          .geo-fchev{width:22px;height:22px;flex-shrink:0;color:#9ca3af;transition:transform .3s}
-          .geo-fitem.geo-open .geo-fchev{transform:rotate(180deg);color:#D97706}
-          .geo-fanswer-wrap{overflow:hidden;max-height:0;transition:max-height .35s ease}
-          .geo-fitem.geo-open .geo-fanswer-wrap{max-height:600px}
-          .geo-fanswer{padding:0 20px 20px 58px;font-size:14px;color:#4b5563;line-height:1.8}
+          .geo-fitem{border-bottom:1px solid #e5e7eb}
+          .geo-fq{width:100%;background:none;border:none;text-align:left;padding:22px 0;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;cursor:pointer;font-family:inherit;font-size:1rem;font-weight:700;color:#0F1F40;line-height:1.4}
+          .geo-fq:hover{color:#4f46e5}
+          .geo-ficon{width:22px;height:22px;border:2px solid #e5e7eb;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9ca3af;transition:all .2s;margin-top:2px}
+          .geo-fitem.open .geo-ficon{border-color:#4f46e5;color:#4f46e5;background:rgba(79,70,229,0.06)}
+          .geo-fa{font-size:.92rem;color:#4A6080;line-height:1.8;overflow:hidden;max-height:0;transition:max-height .35s ease,padding-bottom .35s ease}
+          .geo-fitem.open .geo-fa{max-height:600px;padding-bottom:22px}
 
           /* ── CONTACT FORM ── */
-          .geo-contact{background:linear-gradient(135deg,rgba(15,52,96,0.05) 0%,rgba(255,255,255,0.92) 50%,rgba(254,243,199,0.18) 100%);padding:90px 40px;position:relative;overflow:hidden}
-          .geo-contact-o1{position:absolute;top:-80px;right:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(15,52,96,0.08) 0%,transparent 70%);pointer-events:none}
-          .geo-contact-o2{position:absolute;bottom:-60px;left:-60px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(217,119,6,0.07) 0%,transparent 70%);pointer-events:none}
-          .geo-contact-grid{max-width:1200px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
-          .geo-contact-left h2{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;color:#0F1F40;margin:0 0 16px;line-height:1.15;letter-spacing:-0.5px}
-          .geo-contact-left p{font-size:1rem;color:#4A6080;line-height:1.75;margin:0 0 32px}
+          .geo-contact{background:linear-gradient(135deg,rgba(79,70,229,0.05) 0%,rgba(255,255,255,0.92) 50%,rgba(238,242,255,0.40) 100%);padding:90px 40px;position:relative;overflow:hidden}
+          .geo-co1{position:absolute;top:-80px;right:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(79,70,229,0.10) 0%,transparent 70%);pointer-events:none}
+          .geo-co2{position:absolute;bottom:-60px;left:-60px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.08) 0%,transparent 70%);pointer-events:none}
+          .geo-cg{max-width:1200px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+          .geo-cl h2{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;background:linear-gradient(90deg,#3730a3 0%,#4f46e5 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 16px;line-height:1.15;letter-spacing:-0.5px}
+          .geo-cl p{font-size:1rem;color:#4A6080;line-height:1.75;margin:0 0 32px}
           .geo-perks{display:flex;flex-direction:column;gap:12px}
           .geo-perk{display:flex;align-items:center;gap:10px;font-size:14px;color:#374151;font-weight:500}
-          .geo-perk svg{flex-shrink:0;color:#D97706}
-          .geo-form-box{background:rgba(255,255,255,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.98);border-radius:20px;padding:36px;box-shadow:0 8px 40px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1)}
+          .geo-perk svg{flex-shrink:0;color:#4f46e5}
+          .geo-form-box{background:rgba(255,255,255,0.90);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.96);border-radius:20px;padding:36px;box-shadow:0 8px 40px rgba(79,70,229,0.10),inset 0 1px 0 rgba(255,255,255,1)}
           .geo-form-box h3{font-size:18px;font-weight:800;color:#0F1F40;margin:0 0 22px;letter-spacing:-0.3px}
           .geo-form{display:flex;flex-direction:column;gap:14px}
-          .geo-row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+          .geo-r2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
           .geo-fg{display:flex;flex-direction:column;gap:5px}
-          .geo-fg label{font-size:12px;font-weight:700;color:#374151;letter-spacing:0.02em;text-transform:uppercase}
+          .geo-fg label{font-size:12px;font-weight:700;color:#374151;letter-spacing:.02em;text-transform:uppercase}
           .geo-fg input,.geo-fg textarea,.geo-fg select{padding:11px 14px;border:1.5px solid #e5e7eb;border-radius:10px;font-size:14px;font-family:inherit;color:#111827;background:#fff;outline:none;transition:border-color .2s,box-shadow .2s;width:100%}
-          .geo-fg input:focus,.geo-fg textarea:focus,.geo-fg select:focus{border-color:#D97706;box-shadow:0 0 0 3px rgba(217,119,6,0.10)}
+          .geo-fg input:focus,.geo-fg textarea:focus,.geo-fg select:focus{border-color:#4f46e5;box-shadow:0 0 0 3px rgba(79,70,229,0.10)}
           .geo-fg textarea{resize:vertical;min-height:110px}
-          .geo-phone-wrap{display:flex;gap:8px}
-          .geo-phone-wrap select{width:110px;flex-shrink:0}
-          .geo-phone-wrap input{flex:1}
-          .geo-consent{display:flex;align-items:flex-start;gap:10px;font-size:12px;color:#6b7280;line-height:1.55}
-          .geo-consent input[type="checkbox"]{width:16px;height:16px;margin-top:1px;accent-color:#D97706;flex-shrink:0}
-          .geo-consent a{color:#D97706;text-decoration:none}
-          .geo-submit{padding:14px 28px;background:rgba(15,52,96,0.88);border:none;color:#fff;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all .25s;width:100%;box-shadow:0 6px 24px rgba(15,52,96,0.22)}
-          .geo-submit:hover:not(:disabled){background:#0F3460;transform:translateY(-2px);box-shadow:0 8px 32px rgba(15,52,96,0.30)}
-          .geo-submit:disabled{opacity:.65;cursor:not-allowed}
-          .geo-val-err{font-size:13px;color:#dc2626;background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:10px 14px;margin:0}
-          .geo-success{text-align:center;padding:24px 0}
-          .geo-success-icon{width:56px;height:56px;background:rgba(217,119,6,0.10);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
-          .geo-success-icon svg{width:28px;height:28px;stroke:#D97706;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
-          .geo-success h3{font-size:20px;font-weight:800;color:#0F1F40;margin:0 0 8px}
-          .geo-success p{font-size:14px;color:#4A6080;margin:0;line-height:1.6}
+          .geo-pw{display:flex;gap:8px}
+          .geo-pw select{width:110px;flex-shrink:0}
+          .geo-pw input{flex:1}
+          .geo-ck{display:flex;align-items:flex-start;gap:10px;font-size:12px;color:#6b7280;line-height:1.55}
+          .geo-ck input[type="checkbox"]{width:16px;height:16px;margin-top:1px;accent-color:#4f46e5;flex-shrink:0}
+          .geo-ck a{color:#4f46e5;text-decoration:none}
+          .geo-sub{padding:14px 28px;background:linear-gradient(135deg,#4f46e5,#6366f1);border:none;color:#fff;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all .25s;width:100%;box-shadow:0 6px 24px rgba(79,70,229,0.25)}
+          .geo-sub:hover:not(:disabled){background:linear-gradient(135deg,#3730a3,#4f46e5);transform:translateY(-2px);box-shadow:0 8px 32px rgba(79,70,229,0.35)}
+          .geo-sub:disabled{opacity:.65;cursor:not-allowed}
+          .geo-err{font-size:13px;color:#dc2626;background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:10px 14px;margin:0}
+          .geo-ok{text-align:center;padding:24px 0}
+          .geo-ok-ic{width:56px;height:56px;background:rgba(79,70,229,0.10);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+          .geo-ok-ic svg{width:28px;height:28px;stroke:#4f46e5;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+          .geo-ok h3{font-size:20px;font-weight:800;color:#0F1F40;margin:0 0 8px}
+          .geo-ok p{font-size:14px;color:#4A6080;margin:0;line-height:1.6}
 
           /* ── RELATED SERVICES ── */
-          .geo-related{background:linear-gradient(135deg,rgba(219,234,254,0.40) 0%,rgba(255,255,255,0.92) 50%,rgba(254,243,199,0.18) 100%);padding:80px 40px;border-top:1px solid rgba(15,52,96,0.08)}
-          .geo-related-in{max-width:1280px;margin:0 auto;text-align:center}
-          .geo-related-ey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6b7280;margin:0 0 14px;display:block}
+          .geo-related{background:linear-gradient(135deg,rgba(238,242,255,0.60) 0%,rgba(255,255,255,0.90) 50%,rgba(224,231,255,0.30) 100%);padding:80px 40px;border-top:1px solid rgba(79,70,229,0.10)}
+          .geo-ri{max-width:1280px;margin:0 auto;text-align:center}
+          .geo-ri .geo-ey2{color:#6b7280}
           .geo-related-ttl{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;line-height:1.15;letter-spacing:-0.5px;color:#0F1F40;margin:0 0 14px}
           .geo-related-sub{font-size:15px;color:#4A6080;line-height:1.7;margin:0 auto 36px;max-width:640px}
-          .geo-related-divider{border:none;border-top:1px solid rgba(15,52,96,0.10);margin:0 0 32px}
-          .geo-related-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
-          .geo-rtag{display:inline-flex;align-items:center;padding:10px 20px;border-radius:50px;font-size:13px;font-weight:600;text-decoration:none;transition:all .22s;border:1.5px solid rgba(15,52,96,0.15);background:rgba(15,52,96,0.05);color:#0F3460}
-          .geo-rtag:hover{background:rgba(15,52,96,0.12);border-color:#0F3460;transform:translateY(-2px)}
+          .geo-divider{border:none;border-top:1px solid rgba(79,70,229,0.12);margin:0 0 32px}
+          .geo-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+          .geo-rtag{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:50px;font-size:13px;font-weight:600;text-decoration:none;transition:all .22s;border:1.5px solid}
+          .geo-rtag-indigo{background:rgba(79,70,229,0.07);border-color:rgba(79,70,229,0.20);color:#3730a3}.geo-rtag-indigo:hover{background:rgba(79,70,229,0.14);border-color:#4f46e5;transform:translateY(-2px)}
+          .geo-rtag-blue{background:rgba(59,130,246,0.07);border-color:rgba(59,130,246,0.20);color:#1d4ed8}.geo-rtag-blue:hover{background:rgba(59,130,246,0.14);border-color:#3b82f6;transform:translateY(-2px)}
+          .geo-rtag-violet{background:rgba(139,92,246,0.07);border-color:rgba(139,92,246,0.20);color:#5b21b6}.geo-rtag-violet:hover{background:rgba(139,92,246,0.14);border-color:#8b5cf6;transform:translateY(-2px)}
+          .geo-rtag-teal{background:rgba(20,184,166,0.07);border-color:rgba(20,184,166,0.20);color:#0f766e}.geo-rtag-teal:hover{background:rgba(20,184,166,0.14);border-color:#14b8a6;transform:translateY(-2px)}
+          .geo-rtag-amber{background:rgba(217,119,6,0.07);border-color:rgba(217,119,6,0.20);color:#92400e}.geo-rtag-amber:hover{background:rgba(217,119,6,0.14);border-color:#d97706;transform:translateY(-2px)}
+          .geo-rtag-green{background:rgba(34,197,94,0.07);border-color:rgba(34,197,94,0.20);color:#166534}.geo-rtag-green:hover{background:rgba(34,197,94,0.14);border-color:#22c55e;transform:translateY(-2px)}
+          .geo-rtag-rose{background:rgba(244,63,94,0.07);border-color:rgba(244,63,94,0.20);color:#be123c}.geo-rtag-rose:hover{background:rgba(244,63,94,0.14);border-color:#f43f5e;transform:translateY(-2px)}
 
           /* ── RESPONSIVE ── */
-          @media(max-width:1024px){.geo-g4{grid-template-columns:repeat(2,1fr)}.geo-g3{grid-template-columns:repeat(2,1fr)}.geo-contact-grid{grid-template-columns:1fr}}
+          @media(max-width:1024px){
+            .geo-grid{grid-template-columns:repeat(2,1fr)}
+            .geo-why-grid{grid-template-columns:repeat(2,1fr)}
+            .geo-cg{grid-template-columns:1fr}
+          }
           @media(max-width:768px){
-            .geo-hero,.geo-sec,.geo-plat-sec,.geo-contact,.geo-related{padding:60px 24px}
+            .geo-hero,.geo-white,.geo-light,.geo-indigo,.geo-plat,.geo-contact,.geo-related{padding:60px 24px}
             .geo-hero{padding-top:60px;padding-bottom:0}
             .geo-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}
             .geo-stat:nth-child(2){border-right:none}
-            .geo-g4,.geo-g3{grid-template-columns:1fr}
+            .geo-grid,.geo-why-grid{grid-template-columns:1fr}
+            .geo-step{grid-template-columns:56px 1fr}
             .geo-btns{flex-direction:column;align-items:center}
-            .geo-row2{grid-template-columns:1fr}
-            .geo-fq{padding:18px 18px 18px 52px}
-            .geo-fanswer{padding:0 18px 18px 52px}
-            .geo-fq-badge{left:12px}
+            .geo-r2{grid-template-columns:1fr}
           }
         `}</style>
       </Head>
@@ -338,56 +379,49 @@ export default function GenerativeEngineOptimizationServices() {
 
         {/* ── HERO ── */}
         <section className="geo-hero">
-          <div className="geo-orb1"/><div className="geo-orb2"/>
+          <div className="geo-o1"/><div className="geo-o2"/>
           <div className="geo-in">
-            <div className="geo-hero-inner">
-              <nav className="geo-bc">
-                <Link href="/">Home</Link><span>/</span>
-                <Link href="/seo-services-company/">SEO Services</Link><span>/</span>
-                <span style={{color:'#D97706'}}>Generative Engine Optimisation</span>
-              </nav>
-              <span className="geo-eyebrow">
-                <span style={{width:6,height:6,borderRadius:'50%',background:'#D97706',display:'inline-block'}}/>
-                GEO · Google AI Overviews · ChatGPT · Perplexity · Gemini
-              </span>
-              <h1 className="geo-h1">Generative Engine Optimisation —<br/><AuroraText>Get Cited in AI Search Answers</AuroraText></h1>
-              <p className="geo-hero-sub">Optimise your content for citation in Google AI Overviews, ChatGPT Search, Perplexity, and Gemini — the new frontier of search visibility where being cited replaces being ranked.</p>
-              <div className="geo-btns">
-                <a href="#geo-contact" className="geo-btn-p">
-                  Start Your Free GEO Audit
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </a>
-                <Link href="/ai-seo-services/" className="geo-btn-s">AI SEO Services</Link>
-              </div>
-              <div className="geo-stats">
-                {STATS.map(s => (
-                  <div key={s.label} className="geo-stat">
-                    <div className="geo-stat-v">{s.val}</div>
-                    <div className="geo-stat-l">{s.label}</div>
-                  </div>
-                ))}
-              </div>
+            <nav className="geo-bc">
+              <Link href="/">Home</Link><span>/</span>
+              <Link href="/seo-services-company/">SEO Services</Link><span>/</span>
+              <span style={{color:'#4f46e5'}}>Generative Engine Optimisation</span>
+            </nav>
+            <span className="geo-ey">
+              <span style={{width:6,height:6,borderRadius:'50%',background:'#4f46e5',display:'inline-block'}}/>
+              GEO · Google AI Overviews · ChatGPT · Perplexity · Gemini
+            </span>
+            <h1 className="geo-h1">Generative Engine Optimisation &mdash;<br/><AuroraText>Get Cited in AI Search Answers</AuroraText></h1>
+            <p className="geo-sub">Optimise your content for citation in Google AI Overviews, ChatGPT Search, Perplexity, and Gemini &mdash; the new frontier of search visibility where being cited replaces being ranked.</p>
+            <div className="geo-btns">
+              <a href="#geo-contact" className="geo-btn-p">
+                Start Your Free GEO Audit
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <Link href="/ai-seo-services/" className="geo-btn-s">AI SEO Services</Link>
+            </div>
+            <div className="geo-stats">
+              {STATS.map(s => (
+                <div key={s.label} className="geo-stat">
+                  <div className="geo-stat-l">{s.label}</div>
+                  <div className="geo-stat-v">{s.val}</div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* ── SERVICES ── */}
-        <section className="geo-sec geo-light" id="services">
-          <div className="geo-in">
-            <div className="geo-reveal">
-              <span className="geo-ey">What We Do</span>
-              <h2 className="geo-h2">Generative Engine Optimisation <AuroraText>Services</AuroraText></h2>
-              <p className="geo-lead">Content restructuring, E-E-A-T authority building, and AI visibility monitoring — optimising your presence across every major AI search platform.</p>
-            </div>
-            <div className="geo-g4">
-              {SERVICES.map((s, i) => (
-                <div key={s.n} className="geo-glass geo-reveal" style={{transitionDelay:`${i*55}ms`}}>
-                  <div className="geo-nbadge">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d={s.icon}/></svg>
-                  </div>
-                  <div className="geo-step-num">{s.n}</div>
-                  <div className="geo-card-h">{s.title}</div>
-                  <p className="geo-card-p">{s.desc}</p>
+        <section className="geo-light">
+          <div className="geo-sec-in">
+            <span className="geo-ey2">What We Do</span>
+            <h2 className="geo-ttl">Generative Engine Optimisation Services</h2>
+            <p className="geo-desc">Content restructuring, E-E-A-T authority building, and AI visibility monitoring &mdash; optimising your presence across every major AI search platform.</p>
+            <div className="geo-grid" ref={cardsRef}>
+              {SERVICES.map((s,i) => (
+                <div key={s.n} className={`geo-card${visCards.includes(i) ? ' vis' : ''}`}>
+                  <div className="geo-card-num">{s.n}</div>
+                  <h3>{s.title}</h3>
+                  <p>{s.desc}</p>
                 </div>
               ))}
             </div>
@@ -395,28 +429,26 @@ export default function GenerativeEngineOptimizationServices() {
         </section>
 
         {/* ── AI PLATFORMS ── */}
-        <section className="geo-plat-sec">
-          <div className="geo-in" style={{textAlign:'center'}}>
-            <h2 className="geo-plat-h">AI Platforms We Optimise For</h2>
+        <section className="geo-plat">
+          <div className="geo-plat-in">
+            <h2>AI Platforms We Optimise For</h2>
             <div className="geo-pills">{PLATFORMS.map(p => <span key={p} className="geo-pill">{p}</span>)}</div>
           </div>
         </section>
 
         {/* ── GEO vs SEO ── */}
-        <section className="geo-sec geo-white" id="geo-vs-seo">
-          <div className="geo-in" style={{maxWidth:860}}>
-            <div className="geo-reveal">
-              <span className="geo-ey">The Difference</span>
-              <h2 className="geo-h2">GEO vs Traditional <AuroraText>SEO</AuroraText></h2>
-              <p className="geo-lead">Understanding the distinction helps you invest in the right mix of strategies for your current visibility goals.</p>
-            </div>
-            <div className="geo-reveal" style={{overflowX:'auto'}}>
+        <section className="geo-white">
+          <div className="geo-sec-in-sm">
+            <span className="geo-ey2">The Difference</span>
+            <h2 className="geo-ttl">GEO vs Traditional SEO</h2>
+            <p className="geo-desc">Understanding the distinction helps you invest in the right mix of strategies for your current visibility goals.</p>
+            <div className="geo-tbl-wrap">
               <table className="geo-tbl">
                 <thead>
                   <tr>
                     <th>Feature</th>
                     <th>Traditional SEO</th>
-                    <th>Generative Engine Optimisation (GEO)</th>
+                    <th>Generative Engine Optimisation</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -434,44 +466,34 @@ export default function GenerativeEngineOptimizationServices() {
         </section>
 
         {/* ── PROCESS ── */}
-        <section className="geo-sec geo-light" id="process">
-          <div className="geo-in">
-            <div className="geo-reveal">
-              <span className="geo-ey">How We Work</span>
-              <h2 className="geo-h2">Our <AuroraText>GEO Process</AuroraText></h2>
-              <p className="geo-lead">Audit AI visibility, identify citation gaps, optimise content, build authority — and track progress monthly across all major AI search platforms.</p>
-            </div>
-            <div className="geo-g3">
-              {PROCESS.map((p, i) => (
-                <div key={p.n} className="geo-glass geo-reveal" style={{transitionDelay:`${i*70}ms`}}>
-                  <div className="geo-nbadge">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d={p.icon}/></svg>
-                  </div>
-                  <div className="geo-step-num">{p.n}</div>
-                  <div className="geo-card-h">{p.title}</div>
-                  <p className="geo-card-p">{p.desc}</p>
+        <section className="geo-indigo">
+          <div className="geo-sec-in-sm">
+            <span className="geo-ey2">How We Work</span>
+            <h2 className="geo-ttl">Our GEO Process</h2>
+            <p className="geo-desc">Audit AI visibility, identify citation gaps, optimise content, build authority &mdash; and track progress monthly across all major AI search platforms.</p>
+            <div className="geo-steps">
+              {PROCESS.map((p,i) => (
+                <div key={p.step} ref={el => { stepRefs.current[i] = el; }} className={`geo-step${visSteps.includes(i) ? ' vis' : ''}`}>
+                  <div className="geo-snum">{p.step}</div>
+                  <div><h3>{p.title}</h3><p>{p.desc}</p></div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ── WHY 1SOLUTIONS ── */}
-        <section className="geo-sec geo-white" id="why-us">
-          <div className="geo-in">
-            <div className="geo-reveal">
-              <span className="geo-ey">Why 1Solutions</span>
-              <h2 className="geo-h2">GEO Experts — <AuroraText>SEO Foundation Included</AuroraText></h2>
-              <p className="geo-lead">We integrate GEO with your existing SEO strategy — not as a replacement, but as the natural evolution that keeps your brand visible as search changes.</p>
-            </div>
-            <div className="geo-g3">
-              {WHY.map((w, i) => (
-                <div key={w.title} className="geo-glass geo-reveal" style={{transitionDelay:`${i*60}ms`}}>
-                  <div className="geo-nbadge">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d={w.icon}/></svg>
-                  </div>
-                  <div className="geo-card-h">{w.title}</div>
-                  <p className="geo-card-p">{w.desc}</p>
+        {/* ── WHY US ── */}
+        <section className="geo-white">
+          <div className="geo-sec-in">
+            <span className="geo-ey2">Why 1Solutions</span>
+            <h2 className="geo-ttl">GEO Experts &mdash; SEO Foundation Included</h2>
+            <p className="geo-desc">We integrate GEO with your existing SEO strategy &mdash; not as a replacement, but as the natural evolution that keeps your brand visible as search changes.</p>
+            <div className="geo-why-grid" ref={whyRef}>
+              {WHY.map((w,i) => (
+                <div key={w.title} className={`geo-wcard${visWhy.includes(i) ? ' vis' : ''}`}>
+                  <div className="geo-dot"/>
+                  <h3>{w.title}</h3>
+                  <p>{w.desc}</p>
                 </div>
               ))}
             </div>
@@ -479,24 +501,19 @@ export default function GenerativeEngineOptimizationServices() {
         </section>
 
         {/* ── FAQ ── */}
-        <section className="geo-sec geo-light" id="faq">
-          <div className="geo-in" style={{maxWidth:900}}>
-            <div className="geo-reveal">
-              <span className="geo-ey">Common Questions</span>
-              <h2 className="geo-h2">GEO Services <AuroraText>FAQs</AuroraText></h2>
-              <p className="geo-lead">Everything you need to know about Generative Engine Optimisation and AI search visibility.</p>
-            </div>
-            <div className="geo-flist">
-              {FAQS.map((f, i) => (
-                <div key={i} className={`geo-fitem${openFaq === i ? ' geo-open' : ''}`}>
+        <section className="geo-light">
+          <div className="geo-sec-in-sm">
+            <span className="geo-ey2">Got Questions?</span>
+            <h2 className="geo-ttl">GEO Services FAQs</h2>
+            <p className="geo-desc" style={{marginBottom:44}}>Everything you need to know about Generative Engine Optimisation and AI search visibility.</p>
+            <div>
+              {FAQS.map((f,i) => (
+                <div key={i} className={`geo-fitem${openFaq === i ? ' open' : ''}`}>
                   <button className="geo-fq" onClick={() => setOpenFaq(openFaq === i ? -1 : i)}>
-                    <span className="geo-fq-badge">{String(i+1).padStart(2,'0')}</span>
-                    <span className="geo-fq-text">{f.q}</span>
-                    <svg className="geo-fchev" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                    {f.q}
+                    <span className="geo-ficon">{openFaq === i ? '−' : '+'}</span>
                   </button>
-                  <div className="geo-fanswer-wrap">
-                    <div className="geo-fanswer">{f.a}</div>
-                  </div>
+                  <div className="geo-fa" style={openFaq === i ? {maxHeight:600,paddingBottom:22} : {}}>{f.a}</div>
                 </div>
               ))}
             </div>
@@ -505,12 +522,12 @@ export default function GenerativeEngineOptimizationServices() {
 
         {/* ── CONTACT FORM ── */}
         <section className="geo-contact" id="geo-contact">
-          <div className="geo-contact-o1"/><div className="geo-contact-o2"/>
-          <div className="geo-contact-grid">
-            <div className="geo-contact-left geo-reveal">
-              <span className="geo-ey">Free GEO Audit</span>
+          <div className="geo-co1"/><div className="geo-co2"/>
+          <div className="geo-cg">
+            <div className="geo-cl">
+              <span className="geo-ey2">Free GEO Audit</span>
               <h2>Start Getting Cited in AI Search Answers</h2>
-              <p>Tell us your domain and target topics — we&rsquo;ll run a free AI visibility audit and show you exactly where competitors are being cited instead of you, and what it takes to change that.</p>
+              <p>Tell us your domain and target topics &mdash; we&rsquo;ll run a free AI visibility audit and show you exactly where competitors are being cited instead of you, and what it takes to change that.</p>
               <div className="geo-perks">
                 {[
                   'AI visibility audit across 8 platforms',
@@ -527,11 +544,11 @@ export default function GenerativeEngineOptimizationServices() {
               </div>
             </div>
 
-            <div className="geo-form-box geo-reveal">
+            <div className="geo-form-box">
               <h3>Request a Free GEO Audit</h3>
               {formSt === 'success' ? (
-                <div className="geo-success">
-                  <div className="geo-success-icon">
+                <div className="geo-ok">
+                  <div className="geo-ok-ic">
                     <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
                   </div>
                   <h3>Audit Request Received!</h3>
@@ -539,9 +556,9 @@ export default function GenerativeEngineOptimizationServices() {
                 </div>
               ) : (
                 <form className="geo-form" onSubmit={handleSubmit} noValidate>
-                  {formSt === 'validation' && <p className="geo-val-err">Please complete all required fields and accept the privacy policy before submitting.</p>}
-                  {formSt === 'error' && <p className="geo-val-err">Something went wrong. Please try again or email us at info@1solutions.biz</p>}
-                  <div className="geo-row2">
+                  {formSt === 'validation' && <p className="geo-err">Please complete all required fields and accept the privacy policy before submitting.</p>}
+                  {formSt === 'error' && <p className="geo-err">Something went wrong. Please try again or email us at info@1solutions.biz</p>}
+                  <div className="geo-r2">
                     <div className="geo-fg">
                       <label htmlFor="geo-name">Full Name *</label>
                       <input id="geo-name" name="geo-name" type="text" placeholder="Jane Smith" required/>
@@ -551,10 +568,10 @@ export default function GenerativeEngineOptimizationServices() {
                       <input id="geo-email" name="geo-email" type="email" placeholder="jane@company.com" required/>
                     </div>
                   </div>
-                  <div className="geo-row2">
+                  <div className="geo-r2">
                     <div className="geo-fg">
                       <label>Phone Number *</label>
-                      <div className="geo-phone-wrap">
+                      <div className="geo-pw">
                         <select name="geo-cc" aria-label="Country code">
                           <option value="+1">+1 US</option>
                           <option value="+1">+1 CA</option>
@@ -578,13 +595,13 @@ export default function GenerativeEngineOptimizationServices() {
                     <label htmlFor="geo-msg">What would you like help with? *</label>
                     <textarea id="geo-msg" name="geo-msg" rows={4} placeholder="Current AI visibility concerns, target topics, AI Overviews you want to appear in, competitors you want to outrank..." required/>
                   </div>
-                  <div className="geo-consent">
+                  <div className="geo-ck">
                     <input type="checkbox" id="geo-consent"/>
                     <label htmlFor="geo-consent">
                       I agree to the <Link href="/privacy-policy/">Privacy Policy</Link> and consent to 1Solutions storing my data to respond to this enquiry. *
                     </label>
                   </div>
-                  <button type="submit" className="geo-submit" disabled={formSt === 'loading'}>
+                  <button type="submit" className="geo-sub" disabled={formSt === 'loading'}>
                     {formSt === 'loading' ? 'Sending...' : 'Request My Free GEO Audit →'}
                   </button>
                 </form>
@@ -595,14 +612,14 @@ export default function GenerativeEngineOptimizationServices() {
 
         {/* ── RELATED SERVICES ── */}
         <section className="geo-related">
-          <div className="geo-related-in">
-            <span className="geo-related-ey">Explore Related Services</span>
+          <div className="geo-ri">
+            <span className="geo-ey2">Explore Related Services</span>
             <h2 className="geo-related-ttl">Related SEO &amp; Visibility Services</h2>
             <p className="geo-related-sub">GEO works best as part of a broader search visibility strategy. These services integrate directly with Generative Engine Optimisation.</p>
-            <hr className="geo-related-divider"/>
-            <div className="geo-related-tags">
-              {RELATED.map(({ href, label }) => (
-                <Link key={href} href={href} className="geo-rtag">{label}</Link>
+            <hr className="geo-divider"/>
+            <div className="geo-tags">
+              {RELATED.map(({ href, label, cls }) => (
+                <Link key={href} href={href} className={`geo-rtag ${cls}`}>{label}</Link>
               ))}
             </div>
           </div>
