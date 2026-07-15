@@ -78,6 +78,27 @@ const RANKING_FACTORS = [
   },
 ];
 
+const AI_SEARCH_ERA = [
+  {
+    title: 'AI-Generated Local Answers',
+    icon: 'M13 10V3L4 14h7v7l9-11h-7z',
+    desc: "Google's AI Overviews, Gemini, and local answer panels increasingly pull directly from structured Google Business Profile fields - categories, attributes, hours, services, review sentiment, and Q&A - rather than from a website alone. A thin or uncategorised GBP gives these systems nothing to extract, regardless of organic ranking.",
+    tips: ['Complete categories give AI systems a clear match signal', 'Q&A content is answer-shaped and directly extractable', 'Review sentiment becomes a citable trust signal', 'Service descriptions get summarised into AI-generated answers'],
+  },
+  {
+    title: 'GBP Optimization for Local AEO',
+    icon: 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z',
+    desc: 'Local AEO (Answer Engine Optimization) requires the same structured-data discipline that improves 3-pack rankings - complete categories, keyword-rich Q&A, service-level detail, and review depth. We treat every GBP field as a potential AI-citation source, not just a ranking input.',
+    tips: ['Primary + secondary categories mapped to AI-search intent', 'Q&A seeded with direct, answer-shaped responses', 'Service list written in extractable, plain-English detail', 'Review responses reinforce topical and trust signals'],
+  },
+  {
+    title: '3-Pack Rank vs. AI Citation',
+    icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+    desc: 'Ranking in the Maps 3-pack and being cited in an AI Overview are related but distinct outcomes. The 3-pack is proximity- and review-weighted; AI Overview citations weight completeness and answer-shaped content more heavily. Our process now optimises for both outcomes together.',
+    tips: ['Proximity and service-area setup still drive 3-pack rank', 'Completeness and answer-shaped content drive AI citation', 'Both outcomes share the same underlying GBP signals', 'We report on both ranking position and citation visibility'],
+  },
+];
+
 const CHECKLIST = [
   'Claim and verify your Google Business Profile listing',
   'Select the most specific, accurate primary category',
@@ -116,6 +137,13 @@ const WHY = [
   { title: 'Transparent Monthly Reporting', desc: 'You see exactly where your GBP ranks for each target keyword, how many calls and direction requests Google attributed to your profile, and what we are doing next month to improve each metric.' },
 ];
 
+const EEAT = [
+  { title: 'Experience', desc: 'Hands-on management of 500+ Google Business Profiles across 30+ industries since 2009 - including every major GBP interface change and the 2021 Google Business Profile rebrand itself.' },
+  { title: 'Expertise', desc: "Team holds Google Analytics and Google Ads certifications and follows Google's official Business Profile guidelines plus the BrightLocal Local Search Industry Report for current ranking-factor research." },
+  { title: 'Authoritativeness', desc: 'Case-proven results across HVAC, dental, and retail verticals with independently trackable outcomes - Maps 3-pack placement, call volume, direction requests - not self-reported vanity metrics.' },
+  { title: 'Trustworthiness', desc: 'White-hat, Google-guideline-compliant methods only. No fake reviews, no keyword-stuffed business names, no address manipulation. Content last reviewed June 2026 by the 1Solutions Local SEO team.' },
+];
+
 const INDUSTRIES = [
   { name: 'Healthcare & Dental', icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z' },
   { name: 'Home Services', icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' },
@@ -140,6 +168,10 @@ const FAQS = [
   { q: "What is the difference between local SEO and Google Business Profile optimization?", a: "Local SEO is the broader discipline of improving a business's visibility across all local search results - including organic website rankings, local pack rankings, and directory listings. Google Business Profile optimization is a specific subset of local SEO focused entirely on the GBP listing itself: categories, photos, posts, reviews, Q&A, and citation signals that influence map pack rankings. At 1Solutions, we offer both - GBP optimization as a standalone service and as part of a full local SEO strategy." },
   { q: "How much does Google My Business optimization cost?", a: "Google My Business optimization pricing depends on the number of locations, the competitive intensity of your market, and the level of ongoing management required. A single-location GMB optimization retainer covers profile setup, monthly posting, review management, and citation building. Multi-location packages are priced per location with volume discounts. Contact us for a tailored quote - we provide a free GBP audit first so you understand exactly what work is needed before committing." },
   { q: "What are the most important Google Business Profile ranking factors?", a: "Google uses three primary factors to rank businesses in the Maps 3-pack: relevance (how well your GBP matches the search query - driven by categories, descriptions, and services listed), distance (how close your location is to the searcher or the searched location), and prominence (how well-known your business is - driven by review volume and rating, citation consistency, backlinks, and GBP completeness). Of these, relevance and prominence are the most actionable through optimization." },
+  { q: "Does my Google Business Profile affect whether I show up in Google AI Overviews?", a: "Yes. Google's AI Overviews increasingly draw on structured Google Business Profile data - categories, attributes, services, and review content - when answering local-intent queries. A profile that is incomplete or poorly categorised gives these systems nothing to extract, even if the business already ranks well organically." },
+  { q: "What is Local AEO and how is it different from GBP optimization?", a: "Local AEO (Answer Engine Optimization) is the practice of structuring local business information so AI systems - Google AI Overviews, Gemini, Perplexity - can extract and cite it directly. GBP optimization is the primary lever for Local AEO, since categories, Q&A, and review content are the most AI-citable fields a local business controls." },
+  { q: "Can an optimised Google Business Profile get my business cited by AI tools like Gemini or Perplexity?", a: "A complete, actively managed, and well-categorised profile increases the likelihood of citation, since these systems weight completeness, category accuracy, and review-signal strength when selecting which local businesses to surface in AI-generated answers. We treat this as part of ongoing GBP optimisation rather than a separate service." },
+  { q: "Should I optimise for the Google Maps 3-pack or for AI Overview citations?", a: "Both - the underlying signals overlap heavily: categories, reviews, completeness, and Q&A content drive both outcomes. We don't treat 3-pack ranking and AI-citation visibility as separate goals; a properly optimised profile improves both at the same time." },
 ];
 
 export default function GoogleMyBusinessOptimization() {
@@ -159,10 +191,19 @@ export default function GoogleMyBusinessOptimization() {
         ],
       },
       {
+        '@type': 'WebPage',
+        '@id': 'https://www.1solutions.biz/google-my-business-optimization/',
+        url: 'https://www.1solutions.biz/google-my-business-optimization/',
+        name: 'Google My Business Optimization Services',
+        isPartOf: { '@id': 'https://www.1solutions.biz/#organization' },
+      },
+      {
         '@type': 'LocalBusiness',
+        '@id': 'https://www.1solutions.biz/#organization',
         name: '1Solutions',
         url: 'https://1solutions.biz',
         logo: 'https://1solutions.biz/logo/1solutions-logo.png',
+        foundingDate: '2009',
         address: {
           '@type': 'PostalAddress',
           streetAddress: '47, Vijay Block, Laxmi Nagar',
@@ -177,12 +218,17 @@ export default function GoogleMyBusinessOptimization() {
           'https://www.trustpilot.com/review/1solutions.biz',
           'https://g.co/kgs/4BCmrBR',
         ],
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '5',
+          reviewCount: '375',
+        },
       },
       {
         '@type': 'Service',
         name: 'Google My Business Optimization Services',
         provider: { '@type': 'Organization', name: '1Solutions', url: 'https://1solutions.biz' },
-        description: 'Expert Google My Business (Google Business Profile) optimization services - GBP setup, category strategy, photo management, Google Posts, review acquisition, citation building, and monthly reporting to dominate the Google Maps 3-pack.',
+        description: 'Expert Google My Business (Google Business Profile) optimization services - GBP setup, category strategy, photo management, Google Posts, review acquisition, citation building, and monthly reporting to dominate the Google Maps 3-pack and AI Overview local citations.',
         areaServed: ['IN', 'US', 'CA', 'AU', 'GB'],
         serviceType: 'Google Business Profile Optimization',
         dateModified: '2026-06-23',
@@ -213,22 +259,22 @@ export default function GoogleMyBusinessOptimization() {
   return (
     <div className="gmbo-page">
       <Head>
-        <title>Google My Business Optimization Services | 1Solutions</title>
-        <meta name="description" content="Expert Google My Business optimization to rank in the Google Maps 3-pack. GBP setup, photos, posts, reviews & citations. 500+ profiles optimised. Free audit." />
-        <meta name="keywords" content="Google My Business optimization, GMB optimization, Google Business Profile optimization, GBP optimization services, Google Maps optimization, local SEO, Google Maps 3-pack ranking" />
+        <title>Google My Business Optimization Services 2026 | GBP & Local AI Rankings | 1Solutions</title>
+        <meta name="description" content="Google My Business optimization from $199/month. Rank in the Maps 3-pack and get cited in Google AI Overviews & Gemini local answers. GBP setup, reviews, citations, monthly reporting. Free audit." />
+        <meta name="keywords" content="Google My Business optimization, GMB optimization, Google Business Profile optimization, GBP optimization services, Google Maps optimization, local SEO, Google Maps 3-pack ranking, local AEO, AI Overview local citations" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://1solutions.biz/google-my-business-optimization/" />
-        <meta property="og:title" content="Google My Business Optimization Services | GMB Experts | 1Solutions" />
-        <meta property="og:description" content="Dominate the Google Maps 3-pack with expert GMB optimization. 15+ years experience, 500+ profiles optimised. Free Google Business Profile audit." />
-        <meta property="og:url" content="https://1solutions.biz/google-my-business-optimization/" />
+        <link rel="canonical" href="https://www.1solutions.biz/google-my-business-optimization/" />
+        <meta property="og:title" content="Google My Business Optimization 2026 - GBP & Local AI Visibility | 1Solutions" />
+        <meta property="og:description" content="Rank in the Maps 3-pack and get surfaced in AI-generated local answers. 500+ GBP profiles optimized since 2009. Free audit, no commitment." />
+        <meta property="og:url" content="https://www.1solutions.biz/google-my-business-optimization/" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://1solutions.biz/images/google-my-business-optimization-og.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="1Solutions" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Google My Business Optimization Services | 1Solutions" />
-        <meta name="twitter:description" content="Expert GMB optimization to rank in the Google Maps 3-pack. 500+ profiles optimised. Free audit." />
+        <meta name="twitter:title" content="Google My Business Optimization 2026 | 1Solutions" />
+        <meta name="twitter:description" content="Rank in the Maps 3-pack and get cited in Google AI Overviews. 500+ profiles optimized. Free audit." />
         <meta name="twitter:image" content="https://1solutions.biz/images/google-my-business-optimization-og.jpg" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
@@ -478,7 +524,7 @@ export default function GoogleMyBusinessOptimization() {
           </span>
           <h1 className="gmbo-h1">
             <em>Google My Business Optimization</em><br />
-            That Gets You Into the Maps 3-Pack
+            That Gets You Into the Maps 3-Pack &mdash; and Cited by Google AI
           </h1>
           <p className="gmbo-desc">
             1Solutions delivers expert Google My Business optimization (now Google Business Profile) to help local businesses rank in the top 3 of Google Maps - the most visible real estate in local search. Complete GBP management: setup, categories, photos, posts, reviews, citations, and monthly reporting.
@@ -534,7 +580,7 @@ export default function GoogleMyBusinessOptimization() {
           <h2 className="gmbo-h2">What Is <span>Google My Business Optimization?</span></h2>
           <div className="gmbo-def-box">
             <p className="gmbo-def-intro">
-              <strong>Google My Business optimization</strong> (officially Google Business Profile optimization since November 2021) is the process of completing, structuring, and actively managing a business&rsquo;s GBP listing to rank in the <strong>Google Maps 3-pack</strong> - the block of three local business results that appears at the top of Google Search for queries with local intent. It is distinct from general SEO: where website SEO improves organic rankings, GMB optimization directly influences how a business appears in Google Maps and the local knowledge panel.
+              <strong>Google My Business optimization</strong> (officially Google Business Profile optimization since November 2021) is the process of completing, structuring, and actively managing a business&rsquo;s GBP listing to rank in the <strong>Google Maps 3-pack</strong> - the block of three local business results that appears at the top of Google Search for queries with local intent. It is distinct from <Link href="/seo-services-company/">general SEO</Link>: where website SEO improves organic rankings, GMB optimization directly influences how a business appears in Google Maps and the local knowledge panel.
             </p>
             <p className="gmbo-def-intro" style={{ marginBottom: 0 }}>
               Effective Google Business Profile optimization covers eight core areas: business verification and category selection, photo and video strategy, Google Posts management, Q&amp;A seeding, review acquisition and response, citation building, and ongoing performance reporting - all working together to strengthen the three ranking signals Google uses: <strong>relevance</strong>, <strong>distance</strong>, and <strong>prominence</strong>.
@@ -581,6 +627,38 @@ export default function GoogleMyBusinessOptimization() {
           <p className="gmbo-lead">Google uses three factors to decide which businesses appear in the Maps 3-pack. Understanding each factor is the foundation of every GMB optimization strategy we build.</p>
           <div className="gmbo-rank-grid">
             {RANKING_FACTORS.map(rf => (
+              <div key={rf.title} className="gmbo-rank-card">
+                <div className="gmbo-rank-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d={rf.icon} /></svg>
+                </div>
+                <h3 className="gmbo-rank-title">{rf.title}</h3>
+                <p className="gmbo-rank-desc">{rf.desc}</p>
+                <ul className="gmbo-rank-tips">
+                  {rf.tips.map(tip => (
+                    <li key={tip} className="gmbo-rank-tip">
+                      <span className="gmbo-rank-tip-dot" />
+                      {tip}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* GBP in the AI Search Era */}
+      <section className="gmbo-sec" id="ai-search">
+        <div className="gmbo-sec-inner">
+          <span className="gmbo-tag">Google Business Profile in the AI Search Era</span>
+          <h2 className="gmbo-h2">GBP Signals Now Power <span>AI Overviews &amp; Gemini Local Answers</span></h2>
+          <p className="gmbo-lead">
+            The same fields that win the Maps 3-pack - categories, Q&amp;A, reviews, service detail - are now the fields Google&rsquo;s
+            AI systems extract from when answering local-intent queries. Our <Link href="/generative-engine-optimization-services">generative engine optimization</Link> approach
+            treats Google Business Profile as a Local AEO channel, not just a ranking input.
+          </p>
+          <div className="gmbo-rank-grid">
+            {AI_SEARCH_ERA.map(rf => (
               <div key={rf.title} className="gmbo-rank-card">
                 <div className="gmbo-rank-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d={rf.icon} /></svg>
@@ -658,12 +736,29 @@ export default function GoogleMyBusinessOptimization() {
         </div>
       </section>
 
+      {/* E-E-A-T Signals */}
+      <section className="gmbo-sec">
+        <div className="gmbo-sec-inner">
+          <span className="gmbo-tag">E-E-A-T Signals</span>
+          <h2 className="gmbo-h2">E-E-A-T Signals in <span>Our Google Business Profile Work</span></h2>
+          <p className="gmbo-lead">Experience, Expertise, Authoritativeness, and Trustworthiness - the same framework Google&rsquo;s quality raters use - applied to how we manage your Google Business Profile.</p>
+          <div className="gmbo-grid4">
+            {EEAT.map(e => (
+              <div key={e.title} className="gmbo-card">
+                <h3 className="gmbo-card-h">{e.title}</h3>
+                <p className="gmbo-card-p">{e.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Why 1Solutions */}
       <section className="gmbo-sec" id="why-us">
         <div className="gmbo-sec-inner">
           <span className="gmbo-tag">Why Choose 1Solutions</span>
           <h2 className="gmbo-h2">The GMB Agency That <span>Delivers Measurable Rankings</span></h2>
-          <p className="gmbo-lead">We treat Google Business Profile as its own search channel - with its own algorithm, ranking factors, and optimisation playbook. Here is why 500+ businesses trust us with their GBP.</p>
+          <p className="gmbo-lead">We treat Google Business Profile as its own search channel - with its own algorithm, ranking factors, and optimisation playbook. Here is why 500+ businesses trust us with their GBP. Many clients pair GBP work with our <Link href="/link-building-services/">local link building</Link> and <Link href="/content-marketing-services/">content marketing</Link> services for full local authority.</p>
           <div className="gmbo-grid2">
             {WHY.map(w => (
               <div key={w.title} className="gmbo-why-card">
