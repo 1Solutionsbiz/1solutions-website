@@ -229,7 +229,8 @@ body {
 /* ── SINGLE POST ─────────────────────────────────────────── */
 .single-post-wrapper { max-width: 1440px; margin: 0 auto; padding: 60px 40px; }
 .single-post-layout  { display: grid; grid-template-columns: 1fr 290px; gap: 60px; align-items: flex-start; }
-.post-sidebar { position: sticky; top: 88px; display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+.post-sidebar { position: sticky; top: 88px; max-height: calc(100vh - 100px); overflow-y: auto; scrollbar-width: none; display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+.post-sidebar::-webkit-scrollbar { display: none; }
 
 /* TOC widget */
 .toc-widget { background: white; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; box-shadow: 0 2px 12px rgba(17,65,113,0.06); }
