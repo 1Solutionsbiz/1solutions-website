@@ -43,7 +43,7 @@ const INFO_ITEMS = [
       </svg>
     ),
     label: 'Phone',
-    value: '+91 96543 27900',
+    value: '+91 9654327900',
     href: 'tel:+919654327900',
   },
   {

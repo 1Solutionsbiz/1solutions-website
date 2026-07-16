@@ -108,7 +108,7 @@ We encourage you to review these Terms periodically. Your continued use of the S
   {
     id: 'contact',
     title: '13. Contact',
-    body: `If you have any questions about these Terms of Use, please contact us:\n\n1Solutions\nNew Delhi, India\nEmail: info@1solutions.biz\nPhone: +91 96543 27900\nWebsite: https://www.1solutions.biz/contact/`,
+    body: `If you have any questions about these Terms of Use, please contact us:\n\n1Solutions\nNew Delhi, India\nEmail: info@1solutions.biz\nPhone: +91 9654327900\nWebsite: https://www.1solutions.biz/contact/`,
   },
 ];
 
@@ -194,7 +194,7 @@ export default function TermsOfUse() {
                   <div className="tu-contact-card">
                     <p>For any questions about these Terms, please contact our legal team:</p>
                     <p>{'1Solutions\nNew Delhi, India'}</p>
-                    <p>Email: <a href="mailto:info@1solutions.biz">info@1solutions.biz</a> &nbsp;·&nbsp; Phone: <a href="tel:+919654327900">+91 96543 27900</a></p>
+                    <p>Email: <a href="mailto:info@1solutions.biz">info@1solutions.biz</a> &nbsp;·&nbsp; Phone: <a href="tel:+919654327900">+91 9654327900</a></p>
                     <div className="tu-contact-actions">
                       <Link href="/contact/" className="tu-btn tu-btn-primary">Contact Us</Link>
                       <Link href="/privacy-policy/" className="tu-btn tu-btn-outline">Privacy Policy</Link>

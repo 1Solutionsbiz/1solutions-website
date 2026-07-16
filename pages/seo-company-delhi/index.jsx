@@ -88,7 +88,7 @@ export default function SeoCompanyDelhi() {
         '@id': 'https://1solutions.biz/#organization',
         name: '1Solutions - SEO Company in Delhi',
         url: 'https://1solutions.biz',
-        telephone: '+918881SOLUTIONS',
+        telephone: '+919654327900',
         email: 'info@1solutions.biz',
         address: {
           '@type': 'PostalAddress',
@@ -485,7 +485,7 @@ export default function SeoCompanyDelhi() {
                 </div>
                 <div className="dsel-contact-item-text">
                   <strong>WhatsApp / Call</strong>
-                  <a href="tel:+918881SOLUTIONS">+91 888 1SOLUTIONS</a>
+                  <a href="tel:+919654327900">+91 9654327900</a>
                 </div>
               </div>
               <div className="dsel-contact-item">

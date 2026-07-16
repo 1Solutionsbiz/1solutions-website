@@ -214,7 +214,7 @@ export default function RefundPolicy() {
                   <div className="rp-contact-card">
                     <p>To submit a refund request or discuss a billing concern, please contact us:</p>
                     <p>Email: <a href="mailto:info@1solutions.biz">info@1solutions.biz</a> (Subject: "Refund Request - [Your Company] - [Invoice No]")</p>
-                    <p>Phone: <a href="tel:+919654327900">+91 96543 27900</a></p>
+                    <p>Phone: <a href="tel:+919654327900">+91 9654327900</a></p>
                     <p>We acknowledge all requests within 3 business days and aim to resolve most issues within 14 business days.</p>
                     <div className="rp-contact-actions">
                       <Link href="/contact/" className="rp-btn rp-btn-primary">Contact Us</Link>

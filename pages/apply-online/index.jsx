@@ -935,7 +935,7 @@ export default function ApplyOnline() {
                     Reach our HR team directly at{' '}
                     <a href="mailto:info@1solutions.biz">info@1solutions.biz</a>
                     {' '}or call{' '}
-                    <a href="tel:+919654327900">+91 96543 27900</a>.
+                    <a href="tel:+919654327900">+91 9654327900</a>.
                   </p>
                 </div>
                 <div className="ap-sidebar-card">

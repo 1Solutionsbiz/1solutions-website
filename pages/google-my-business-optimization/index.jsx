@@ -758,7 +758,7 @@ export default function GoogleMyBusinessOptimization() {
                 </div>
                 <div className="gmbo-ci-text">
                   <strong>WhatsApp / Call</strong>
-                  <a href="tel:+911solutions">+91 contact via website</a>
+                  <a href="tel:+919654327900">+91 9654327900</a>
                 </div>
               </div>
               <div className="gmbo-ci">

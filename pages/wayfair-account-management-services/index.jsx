@@ -456,7 +456,7 @@ export default function WayfairAccountManagement() {
                 </div>
                 <div className="wayf-contact-item-text">
                   <strong>WhatsApp</strong>
-                  <a href="tel:+18881SOLUTIONS">+1 (888) 1SOLUTIONS</a>
+                  <a href="tel:+919654327900">+91 9654327900</a>
                 </div>
               </div>
               <div className="wayf-contact-item">

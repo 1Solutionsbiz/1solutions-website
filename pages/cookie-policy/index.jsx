@@ -123,7 +123,7 @@ We encourage you to review this page periodically to stay informed about our use
 1Solutions
 New Delhi, India
 Email: info@1solutions.biz
-Phone: +91 96543 27900
+Phone: +91 9654327900
 Website: https://www.1solutions.biz/contact/`,
   },
 ];
@@ -454,7 +454,7 @@ export default function CookiePolicy() {
                       <strong>1Solutions</strong>{'\n'}
                       New Delhi, India{'\n'}
                       Email: <a href="mailto:info@1solutions.biz">info@1solutions.biz</a>{'\n'}
-                      Phone: <a href="tel:+919654327900">+91 96543 27900</a>
+                      Phone: <a href="tel:+919654327900">+91 9654327900</a>
                     </p>
                     <div className="cp-contact-actions">
                       <Link href="/contact/" className="cp-contact-btn cp-contact-btn-primary">
