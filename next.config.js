@@ -80,6 +80,24 @@ const nextConfig = {
       { source: '/graphic-designer',          destination: '/open-positions/',                permanent: true },
       { source: '/graphic-designer/',         destination: '/open-positions/',                permanent: true },
 
+      // ── GSC "Not found (404)" cleanup — old/renamed page slugs still linked externally ──
+      { source: '/app-store-optimization',                    destination: '/app-store-optimization-services/',              permanent: true },
+      { source: '/app-store-optimization/',                   destination: '/app-store-optimization-services/',              permanent: true },
+      { source: '/content-marketing',                         destination: '/content-marketing-services/',                   permanent: true },
+      { source: '/content-marketing/',                        destination: '/content-marketing-services/',                   permanent: true },
+      { source: '/openCart-development-company',              destination: '/opencart-development-company/',                 permanent: true },
+      { source: '/openCart-development-company/',             destination: '/opencart-development-company/',                 permanent: true },
+      { source: '/next-js-development-company',               destination: '/nextjs-development-services/',                  permanent: true },
+      { source: '/next-js-development-company/',              destination: '/nextjs-development-services/',                  permanent: true },
+      { source: '/nodejs-development-company',                destination: '/nodejs-development-services/',                  permanent: true },
+      { source: '/nodejs-development-company/',               destination: '/nodejs-development-services/',                  permanent: true },
+      { source: '/saas-development-company',                  destination: '/saas-application-development-company/',        permanent: true },
+      { source: '/saas-development-company/',                 destination: '/saas-application-development-company/',        permanent: true },
+      { source: '/erp-software-development',                  destination: '/erp-application-development-company/',         permanent: true },
+      { source: '/erp-software-development/',                 destination: '/erp-application-development-company/',         permanent: true },
+      { source: '/snapchat-emoji-meanings-yellow-heart-guide-for-2025',  destination: '/snapchat-emoji-meanings-yellow-heart-guide/', permanent: true },
+      { source: '/snapchat-emoji-meanings-yellow-heart-guide-for-2025/', destination: '/snapchat-emoji-meanings-yellow-heart-guide/', permanent: true },
+
       // ── Old WordPress category pagination ─────────────────────────────────
       { source: '/ecommerce/page/:num/',      destination: '/ecommerce-website-development-services/', permanent: true },
       { source: '/ecommerce/page/:num',       destination: '/ecommerce-website-development-services/', permanent: true },
