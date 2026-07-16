@@ -702,7 +702,7 @@ export default function GoogleMyBusinessOptimization() {
         <div className="gmbo-sec-inner">
           <span className="gmbo-tag">Frequently Asked Questions</span>
           <h2 className="gmbo-h2">Google My Business Optimization <span>FAQs</span></h2>
-          <p className="gmbo-lead" style={{ marginBottom: 32 }}>Honest answers to the most common questions about Google Business Profile optimization and Google Maps rankings.</p>
+          <p className="gmbo-lead" style={{ marginBottom: 32 }}>Honest answers to the most common questions about Google Business Profile optimization and Google Maps rankings. Managing multiple locations? Read our <Link href="/bulk-verification-in-google-business-profile-a-complete-guide/">complete guide to bulk verification in Google Business Profile</Link>.</p>
           <div className="gmbo-faq-list">
             {FAQS.map((f, i) => (
               <div key={i} className={'gmbo-faq-item' + (openFaq === i ? ' open' : '')}>

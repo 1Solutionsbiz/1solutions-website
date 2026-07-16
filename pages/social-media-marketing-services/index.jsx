@@ -182,6 +182,7 @@ export default function SocialMediaMarketingServices() {
       <section className="smkt-sec"><div className="smkt-si2">
         <span className="smkt-tag">Got Questions?</span>
         <h2 className="smkt-h2">Social Media Marketing <span>FAQs</span></h2>
+        <p className="smkt-lead">Not sure where to start? See our <Link href="/top-100-social-media-and-social-networking-sites/">list of the top 100 social media and social networking sites</Link> to map out where your audience actually is.</p>
         <div className="smkt-fl">{FAQS.map((f,i)=><div key={i} className={'smkt-fi'+(openFaq===i?' open':'')}><button className="smkt-fb" onClick={()=>setOpenFaq(openFaq===i?null:i)}><span className="smkt-fq">{f.q}</span><span className="smkt-fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>{openFaq===i&&<div className="smkt-fa">{f.a}</div>}</div>)}</div>
       </div></section>
       <section className="smkt-cta"><div className="smkt-si2">

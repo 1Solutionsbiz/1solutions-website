@@ -176,7 +176,7 @@ export default function LawnCareMarketingServices() {
         </div></section>
         <section className="lcmkt-faq"><div className="lcmkt-faq-in">
           <span className="lcmkt-ey2">Got Questions?</span><h2 className="lcmkt-ttl">Lawn Care Marketing FAQs</h2>
-          <p className="lcmkt-desc" style={{marginBottom:44}}>Answers to the most common lawn care marketing questions.</p>
+          <p className="lcmkt-desc" style={{marginBottom:44}}>Answers to the most common lawn care marketing questions. See our <Link href="/seo-for-lawn-care-businesses-7-tips-to-boost-your-site-rankings/">7 SEO tips for lawn care businesses</Link> for a deeper walkthrough.</p>
           <div>{FAQS.map((f,i) => <div key={i} className={`lcmkt-fitem${openFaq===i?' open':''}`}><button className="lcmkt-fq" onClick={()=>setOpenFaq(openFaq===i?-1:i)}>{f.q}<span className="lcmkt-ficon">{openFaq===i?'−':'+'}</span></button><div className="lcmkt-fa" style={openFaq===i?{maxHeight:600,paddingBottom:22}:{}}>{f.a}</div></div>)}</div>
         </div></section>
         <section className="lcmkt-cta"><div className="lcmkt-cta-o1"/><div className="lcmkt-cta-o2"/>

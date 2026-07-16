@@ -377,7 +377,7 @@ export default function SeoCompanyToronto() {
         <div className="trnt-sec-inner">
           <span className="trnt-tag">Frequently Asked Questions</span>
           <h2 className="trnt-h2">Toronto SEO <span>FAQs</span></h2>
-          <p className="trnt-lead" style={{marginBottom:32}}>Honest answers to the questions Toronto businesses ask most before starting their SEO journey.</p>
+          <p className="trnt-lead" style={{marginBottom:32}}>Honest answers to the questions Toronto businesses ask most before starting their SEO journey. Comparing options? See our <Link href="/top-seo-companies-to-hire-in-canada/">guide to the top SEO companies to hire in Canada</Link>.</p>
           <div className="trnt-faq-list">
             {FAQS.map((f,i) => (
               <div key={i} className={'trnt-faq-item'+(openFaq===i?' open':'')}>

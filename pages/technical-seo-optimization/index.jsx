@@ -182,7 +182,7 @@ export default function TechnicalSeoOptimization() {
         </div></section>
         <section className="tseo-faq"><div className="tseo-faq-in">
           <span className="tseo-ey2">Got Questions?</span><h2 className="tseo-ttl">Technical SEO FAQs</h2>
-          <p className="tseo-desc">Answers to the most common technical SEO questions.</p>
+          <p className="tseo-desc">Answers to the most common technical SEO questions. Curious about content quality signals? See our guides on <Link href="/what-is-a-text-to-html-ratio/">text-to-HTML ratio</Link> and the <Link href="/google-remove-outdated-content-tool-remove-competitor-pages/">Google Remove Outdated Content tool</Link>.</p>
           <div style={{marginTop:44}}>{FAQS.map((f,i) => <div key={i} className={`tseo-fitem${openFaq===i?' open':''}`}><button className="tseo-fq" onClick={()=>setOpenFaq(openFaq===i?-1:i)}>{f.q}<span className="tseo-ficon">{openFaq===i?'−':'+'}</span></button><div className="tseo-fa" style={openFaq===i?{maxHeight:500,paddingBottom:22}:{}}>{f.a}</div></div>)}</div>
         </div></section>
         <section className="tseo-cta"><div className="tseo-cta-o1"/><div className="tseo-cta-o2"/>

@@ -180,7 +180,7 @@ export default function LogoDesignServices() {
         </div></section>
         <section className="logo-faq"><div className="logo-faq-in">
           <span className="logo-ey2">Got Questions?</span><h2 className="logo-ttl">Logo Design FAQs</h2>
-          <p className="logo-desc">Answers to the most common questions about our logo design services.</p>
+          <p className="logo-desc">Answers to the most common questions about our logo design services. Need inspiration first? Browse our <Link href="/25-wordmark-logos-from-famous-brands-with-design-insights/">25 wordmark logos from famous brands</Link>.</p>
           <div style={{marginTop:44}}>{FAQS.map((f,i) => <div key={i} className={`logo-fitem${openFaq===i?' open':''}`}><button className="logo-fq" onClick={()=>setOpenFaq(openFaq===i?-1:i)}>{f.q}<span className="logo-ficon">{openFaq===i?'−':'+'}</span></button><div className="logo-fa" style={openFaq===i?{maxHeight:500,paddingBottom:22}:{}}>{f.a}</div></div>)}</div>
         </div></section>
         <section className="logo-cta"><div className="logo-cta-o1"/><div className="logo-cta-o2"/>
