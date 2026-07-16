@@ -139,8 +139,9 @@ export default function HvacSeoServices() {
           .hvacseo-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           @media(max-width:1024px){.hvacseo-grid{grid-template-columns:repeat(2,1fr)}.hvacseo-why-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.hvacseo-hero,.hvacseo-svc,.hvacseo-sv,.hvacseo-proc,.hvacseo-why,.hvacseo-faq,.hvacseo-cta{padding:60px 24px}.hvacseo-hero{padding-top:60px;padding-bottom:0}.hvacseo-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.hvacseo-stat:nth-child(2){border-right:none}.hvacseo-grid{grid-template-columns:1fr}.hvacseo-why-grid{grid-template-columns:1fr}.hvacseo-step{grid-template-columns:56px 1fr}.hvacseo-btns{flex-direction:column;align-items:center}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <div className="hvacseo-page">

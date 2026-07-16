@@ -139,8 +139,9 @@ export default function SeoServicesForSmallBusiness() {
           .smbbiz-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           @media(max-width:1024px){.smbbiz-grid{grid-template-columns:repeat(2,1fr)}.smbbiz-why-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.smbbiz-hero,.smbbiz-svc,.smbbiz-inc,.smbbiz-proc,.smbbiz-why,.smbbiz-faq,.smbbiz-cta{padding:60px 24px}.smbbiz-hero{padding-top:60px;padding-bottom:0}.smbbiz-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.smbbiz-stat:nth-child(2){border-right:none}.smbbiz-grid{grid-template-columns:1fr}.smbbiz-why-grid{grid-template-columns:1fr}.smbbiz-step{grid-template-columns:56px 1fr}.smbbiz-btns{flex-direction:column;align-items:center}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <div className="smbbiz-page">

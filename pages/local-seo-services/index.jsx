@@ -268,8 +268,9 @@ export default function LocalSeoServices() {
             .lseo-process-step { grid-template-columns: 56px 1fr; }
             .lseo-hero-btns { flex-direction: column; align-items: center; }
           }
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

@@ -137,8 +137,9 @@ export default function ContentMarketingServices() {
           .cmkt-ctp{font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px}
           @media(max-width:900px){.cmkt-g3,.cmkt-rg{grid-template-columns:1fr 1fr}}
           @media(max-width:600px){.cmkt-hero,.cmkt-sec,.cmkt-rb,.cmkt-cta{padding-left:20px;padding-right:20px}.cmkt-hero{padding-top:60px;padding-bottom:50px}.cmkt-g3,.cmkt-rg{grid-template-columns:1fr}.cmkt-bc{padding:12px 20px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <nav className="cmkt-bc"><div className="cmkt-bci"><Link href="/">Home</Link><span className="cmkt-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="cmkt-sep">›</span><span className="cmkt-cur">Content Marketing Services</span></div></nav>

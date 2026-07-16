@@ -445,8 +445,9 @@ export default function WebsiteMaintenanceServices() {
           .sm-rtag-rose{background:rgba(225,29,72,.09);border-color:rgba(225,29,72,.28);color:#9f1239}
           @media(max-width:1024px){.sm-hero h1,.sm-s-title,.sm-faq h2{font-size:36px}.sm-svc-grid{grid-template-columns:repeat(2,1fr)}.sm-stack-grid{grid-template-columns:repeat(2,1fr)}.sm-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.sm-eng-card.feat{transform:none}.sm-eng-card.feat.sm-ev{transform:none}.sm-eng-card.feat.sm-ev:hover{transform:translateY(-4px)}.sm-why-grid{grid-template-columns:repeat(2,1fr)}.sm-tgrid{grid-template-columns:1fr}.sm-contact-grid{grid-template-columns:1fr}}
           @media(max-width:768px){.sm-hero{padding:28px 20px 20px}.sm-hero h1{font-size:26px;letter-spacing:-.3px}.sm-stats{grid-template-columns:1fr 1fr}.sm-stat-col:nth-child(2){border-right:none}.sm-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.sm-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.sm-logos{padding:16px 20px 28px}.sm-svc-section,.sm-stack-section,.sm-eng-section,.sm-process-section,.sm-testi,.sm-why-section,.sm-faq,.sm-related{padding:52px 20px}.sm-contact{padding:48px 20px}.sm-svc-grid,.sm-stack-grid,.sm-why-grid{grid-template-columns:1fr}.sm-frow{grid-template-columns:1fr}.sm-ctitle{font-size:28px}.sm-s-title{font-size:28px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"

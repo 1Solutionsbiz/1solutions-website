@@ -146,8 +146,9 @@ export default function WordPressSeoServices() {
           .wpseo-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.wpseo-grid{grid-template-columns:repeat(2,1fr)}.wpseo-why-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.wpseo-hero,.wpseo-svc,.wpseo-plug,.wpseo-proc,.wpseo-why,.wpseo-faq,.wpseo-cta{padding:60px 24px}.wpseo-hero{padding-top:60px;padding-bottom:0}.wpseo-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.wpseo-stat:nth-child(2){border-right:none}.wpseo-grid{grid-template-columns:1fr}.wpseo-why-grid{grid-template-columns:1fr}.wpseo-step{grid-template-columns:56px 1fr}.wpseo-btns{flex-direction:column;align-items:center}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <div className="wpseo-page">

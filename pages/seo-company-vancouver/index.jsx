@@ -250,8 +250,9 @@ export default function SeoCompanyVancouver() {
           .vanc-cta-btn-s:hover{border-color:rgba(255,255,255,0.70);background:rgba(255,255,255,0.08);}
           @media(max-width:900px){.vanc-grid4{grid-template-columns:1fr 1fr;}.vanc-grid3,.vanc-grid2,.vanc-res-grid{grid-template-columns:1fr 1fr;}.vanc-ind-grid{grid-template-columns:1fr 1fr;}.vanc-contact-grid{grid-template-columns:1fr;gap:40px;}}
           @media(max-width:600px){.vanc-hero,.vanc-sec,.vanc-results,.vanc-cta,.vanc-contact-sec{padding-left:20px;padding-right:20px;}.vanc-hero{padding-top:60px;padding-bottom:50px;}.vanc-grid4,.vanc-grid3,.vanc-grid2,.vanc-res-grid,.vanc-ind-grid{grid-template-columns:1fr;}.vanc-bc{padding:12px 20px;}.vanc-field-row{grid-template-columns:1fr;}.vanc-form-wrap{padding:24px 20px;}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

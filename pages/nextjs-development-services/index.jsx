@@ -451,8 +451,9 @@ export default function NextjsDevelopmentServices() {
           .nx-rtag-rose{background:rgba(225,29,72,.09);border-color:rgba(225,29,72,.28);color:#9f1239}
           @media(max-width:1024px){.nx-hero h1,.nx-s-title,.nx-faq h2{font-size:36px}.nx-svc-grid{grid-template-columns:repeat(2,1fr)}.nx-stack-grid{grid-template-columns:repeat(2,1fr)}.nx-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.nx-eng-card.feat{transform:none}.nx-eng-card.feat.nx-ev{transform:none}.nx-eng-card.feat.nx-ev:hover{transform:translateY(-4px)}.nx-why-grid{grid-template-columns:repeat(2,1fr)}.nx-tgrid{grid-template-columns:1fr}.nx-contact-grid{grid-template-columns:1fr}}
           @media(max-width:768px){.nx-breadcrumb{padding:12px 20px 0}.nx-hero{padding:28px 20px 20px}.nx-hero h1{font-size:26px;letter-spacing:-.3px}.nx-stats{grid-template-columns:1fr 1fr}.nx-stat-col:nth-child(2){border-right:none}.nx-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.nx-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.nx-logos{padding:16px 20px 28px}.nx-svc-section,.nx-stack-section,.nx-eng-section,.nx-process-section,.nx-testi,.nx-why-section,.nx-faq,.nx-related{padding:52px 20px}.nx-contact{padding:48px 20px}.nx-svc-grid,.nx-stack-grid,.nx-why-grid{grid-template-columns:1fr}.nx-frow{grid-template-columns:1fr}.nx-ctitle{font-size:28px}.nx-s-title{font-size:28px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"

@@ -328,8 +328,9 @@ export default function VirtualCTOServices() {
           .vcto-re{background:rgba(22,101,52,.09);border-color:rgba(22,101,52,.28);color:#14532d}
           @media(max-width:1024px){.vcto-hero h1,.vcto-st,.vcto-fq-s h2{font-size:36px}.vcto-sk-g{grid-template-columns:repeat(2,1fr)}.vcto-tec-g{grid-template-columns:repeat(2,1fr)}.vcto-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.vcto-en-c.feat{transform:none}.vcto-en-c.feat.vcto-ev{transform:none}.vcto-en-c.feat.vcto-ev:hover{transform:translateY(-4px)}.vcto-wy-g{grid-template-columns:repeat(2,1fr)}.vcto-tg2{grid-template-columns:1fr}.vcto-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.vcto-bc,.vcto-hero,.vcto-sk-s,.vcto-tec-s,.vcto-en-s,.vcto-pr-s,.vcto-te-s,.vcto-wy-s,.vcto-fq-s,.vcto-rel{padding-left:20px;padding-right:20px}.vcto-hero{padding-top:28px;padding-bottom:20px}.vcto-hero h1{font-size:26px;letter-spacing:-.3px}.vcto-stats{grid-template-columns:1fr 1fr}.vcto-sc:nth-child(2){border-right:none}.vcto-sc:nth-child(3),.vcto-sc:nth-child(4){border-top:1px solid rgba(69,26,3,.10)}.vcto-sc:nth-child(4){border-right:none}.vcto-sk-g,.vcto-tec-g,.vcto-wy-g{grid-template-columns:1fr}.vcto-fr{grid-template-columns:1fr}.vcto-ctt{font-size:28px}.vcto-st{font-size:28px}.vcto-ct-s{padding:48px 20px}.vcto-logos{padding-left:20px;padding-right:20px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"

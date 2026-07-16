@@ -137,8 +137,9 @@ export default function LinkedinAdsManagement() {
           .lkdn-ctp{font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px}
           @media(max-width:900px){.lkdn-g3,.lkdn-rg{grid-template-columns:1fr 1fr}}
           @media(max-width:600px){.lkdn-hero,.lkdn-sec,.lkdn-rb,.lkdn-cta{padding-left:20px;padding-right:20px}.lkdn-hero{padding-top:60px;padding-bottom:50px}.lkdn-g3,.lkdn-rg{grid-template-columns:1fr}.lkdn-bc{padding:12px 20px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <nav className="lkdn-bc"><div className="lkdn-bci"><Link href="/">Home</Link><span className="lkdn-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="lkdn-sep">›</span><span className="lkdn-cur">LinkedIn Ads Management</span></div></nav>

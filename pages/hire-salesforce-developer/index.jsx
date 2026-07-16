@@ -328,8 +328,9 @@ export default function HireSalesforceDeveloper() {
           .hsf-a{background:rgba(202,138,4,.09);border-color:rgba(202,138,4,.28);color:#92400e}
           @media(max-width:1024px){.hsf-hero h1,.hsf-st,.hsf-fq-s h2{font-size:36px}.hsf-sk-g{grid-template-columns:repeat(2,1fr)}.hsf-tec-g{grid-template-columns:repeat(2,1fr)}.hsf-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.hsf-en-c.feat{transform:none}.hsf-en-c.feat.hsf-ev{transform:none}.hsf-en-c.feat.hsf-ev:hover{transform:translateY(-4px)}.hsf-wy-g{grid-template-columns:repeat(2,1fr)}.hsf-tg2{grid-template-columns:1fr}.hsf-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.hsf-bc,.hsf-hero,.hsf-sk-s,.hsf-tec-s,.hsf-en-s,.hsf-pr-s,.hsf-te-s,.hsf-wy-s,.hsf-fq-s,.hsf-rel{padding-left:20px;padding-right:20px}.hsf-hero{padding-top:28px;padding-bottom:20px}.hsf-hero h1{font-size:26px;letter-spacing:-.3px}.hsf-stats{grid-template-columns:1fr 1fr}.hsf-sc:nth-child(2){border-right:none}.hsf-sc:nth-child(3),.hsf-sc:nth-child(4){border-top:1px solid rgba(15,52,96,.10)}.hsf-sc:nth-child(4){border-right:none}.hsf-sk-g,.hsf-tec-g,.hsf-wy-g{grid-template-columns:1fr}.hsf-fr{grid-template-columns:1fr}.hsf-ctt{font-size:28px}.hsf-st{font-size:28px}.hsf-ct-s{padding:48px 20px}.hsf-logos{padding-left:20px;padding-right:20px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"

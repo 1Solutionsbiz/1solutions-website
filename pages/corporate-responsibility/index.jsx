@@ -349,8 +349,9 @@ export default function CorporateResponsibility() {
             .csr-cta { padding: 36px 24px; }
             .csr-certs { padding: 28px 20px; }
           }
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

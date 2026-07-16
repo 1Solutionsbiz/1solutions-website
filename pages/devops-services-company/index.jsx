@@ -451,8 +451,9 @@ export default function DevopsServicesCompany() {
           .dv-rtag-teal{background:rgba(15,118,110,.09);border-color:rgba(15,118,110,.28);color:#0f766e}
           @media(max-width:1024px){.dv-hero h1,.dv-s-title,.dv-faq h2{font-size:36px}.dv-svc-grid{grid-template-columns:repeat(2,1fr)}.dv-stack-grid{grid-template-columns:repeat(2,1fr)}.dv-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.dv-eng-card.feat{transform:none}.dv-eng-card.feat.dv-ev{transform:none}.dv-eng-card.feat.dv-ev:hover{transform:translateY(-4px)}.dv-why-grid{grid-template-columns:repeat(2,1fr)}.dv-tgrid{grid-template-columns:1fr}.dv-contact-grid{grid-template-columns:1fr}}
           @media(max-width:768px){.dv-breadcrumb{padding:12px 20px 0}.dv-hero{padding:28px 20px 20px}.dv-hero h1{font-size:26px;letter-spacing:-.3px}.dv-stats{grid-template-columns:1fr 1fr}.dv-stat-col:nth-child(2){border-right:none}.dv-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.dv-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.dv-logos{padding:16px 20px 28px}.dv-svc-section,.dv-stack-section,.dv-eng-section,.dv-process-section,.dv-testi,.dv-why-section,.dv-faq,.dv-related{padding:52px 20px}.dv-contact{padding:48px 20px}.dv-svc-grid,.dv-stack-grid,.dv-why-grid{grid-template-columns:1fr}.dv-frow{grid-template-columns:1fr}.dv-ctitle{font-size:28px}.dv-s-title{font-size:28px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"

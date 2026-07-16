@@ -328,8 +328,9 @@ export default function OffshoreDevCompany() {
           .od-a{background:rgba(190,18,60,.09);border-color:rgba(190,18,60,.28);color:#9f1239}
           @media(max-width:1024px){.od-hero h1,.od-st,.od-fq-s h2{font-size:36px}.od-sk-g{grid-template-columns:repeat(2,1fr)}.od-tec-g{grid-template-columns:repeat(2,1fr)}.od-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.od-en-c.feat{transform:none}.od-en-c.feat.od-ev{transform:none}.od-en-c.feat.od-ev:hover{transform:translateY(-4px)}.od-wy-g{grid-template-columns:repeat(2,1fr)}.od-tg2{grid-template-columns:1fr}.od-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.od-bc,.od-hero,.od-sk-s,.od-tec-s,.od-en-s,.od-pr-s,.od-te-s,.od-wy-s,.od-fq-s,.od-rel{padding-left:20px;padding-right:20px}.od-hero{padding-top:28px;padding-bottom:20px}.od-hero h1{font-size:26px;letter-spacing:-.3px}.od-stats{grid-template-columns:1fr 1fr}.od-sc:nth-child(2){border-right:none}.od-sc:nth-child(3),.od-sc:nth-child(4){border-top:1px solid rgba(12,35,64,.10)}.od-sc:nth-child(4){border-right:none}.od-sk-g,.od-tec-g,.od-wy-g{grid-template-columns:1fr}.od-fr{grid-template-columns:1fr}.od-ctt{font-size:28px}.od-st{font-size:28px}.od-ct-s{padding:48px 20px}.od-logos{padding-left:20px;padding-right:20px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"

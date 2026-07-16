@@ -249,8 +249,9 @@ export default function SeoCompanyAustin() {
           .aust-cta-btn-s:hover{border-color:rgba(255,255,255,0.70);background:rgba(255,255,255,0.08);}
           @media(max-width:900px){.aust-grid4{grid-template-columns:1fr 1fr;}.aust-grid3,.aust-grid2,.aust-res-grid{grid-template-columns:1fr 1fr;}.aust-ind-grid{grid-template-columns:1fr 1fr;}.aust-contact-grid{grid-template-columns:1fr;gap:40px;}}
           @media(max-width:600px){.aust-hero,.aust-sec,.aust-results,.aust-cta,.aust-contact-sec{padding-left:20px;padding-right:20px;}.aust-hero{padding-top:60px;padding-bottom:50px;}.aust-grid4,.aust-grid3,.aust-grid2,.aust-res-grid,.aust-ind-grid{grid-template-columns:1fr;}.aust-bc{padding:12px 20px;}.aust-field-row{grid-template-columns:1fr;}.aust-form-wrap{padding:24px 20px;}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

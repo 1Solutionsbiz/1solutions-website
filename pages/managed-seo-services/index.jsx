@@ -143,8 +143,9 @@ export default function ManagedSeoServices() {
           .mnseo-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.mnseo-grid{grid-template-columns:repeat(2,1fr)}.mnseo-why-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.mnseo-hero,.mnseo-svc,.mnseo-inc,.mnseo-proc,.mnseo-why,.mnseo-faq,.mnseo-cta{padding:60px 24px}.mnseo-hero{padding-top:60px;padding-bottom:0}.mnseo-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.mnseo-stat:nth-child(2){border-right:none}.mnseo-grid{grid-template-columns:1fr}.mnseo-why-grid{grid-template-columns:1fr}.mnseo-step{grid-template-columns:56px 1fr}.mnseo-btns{flex-direction:column;align-items:center}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <div className="mnseo-page">

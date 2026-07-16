@@ -310,8 +310,9 @@ export default function CaseStudies() {
   .cs-entry-link, .cs-app-link { padding: 10px 20px; font-size: 12px; }
   .cs-filter-bar { padding-top: 28px; }
 }
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

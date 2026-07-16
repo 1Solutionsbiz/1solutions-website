@@ -381,8 +381,9 @@ export default function HireJavaScriptDeveloper() {
           .hj-rtag-rose{background:rgba(225,29,72,.09);border-color:rgba(225,29,72,.28);color:#9f1239}
           @media(max-width:1024px){.hj-hero h1,.hj-s-title,.hj-faq h2{font-size:36px}.hj-skill-grid{grid-template-columns:repeat(2,1fr)}.hj-stack-grid{grid-template-columns:repeat(2,1fr)}.hj-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.hj-eng-card.feat{transform:none}.hj-eng-card.feat.hj-ev{transform:none}.hj-eng-card.feat.hj-ev:hover{transform:translateY(-4px)}.hj-why-grid{grid-template-columns:repeat(2,1fr)}.hj-tgrid{grid-template-columns:1fr}.hj-contact-grid{grid-template-columns:1fr}}
           @media(max-width:768px){.hj-breadcrumb{padding:12px 20px 0}.hj-hero{padding:28px 20px 20px}.hj-hero h1{font-size:26px;letter-spacing:-.3px}.hj-stats{grid-template-columns:1fr 1fr}.hj-stat-col:nth-child(2){border-right:none}.hj-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.hj-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.hj-logos{padding:16px 20px 28px}.hj-skill-section,.hj-stack-section,.hj-eng-section,.hj-process-section,.hj-testi,.hj-why-section,.hj-faq,.hj-related{padding:52px 20px}.hj-contact{padding:48px 20px}.hj-skill-grid,.hj-stack-grid,.hj-why-grid{grid-template-columns:1fr}.hj-frow{grid-template-columns:1fr}.hj-ctitle{font-size:28px}.hj-s-title{font-size:28px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"

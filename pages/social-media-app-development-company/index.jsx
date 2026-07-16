@@ -271,8 +271,9 @@ export default function SocialMediaAppDevelopment() {
           .socm-rd{background:rgba(20,83,45,.09);border-color:rgba(20,83,45,.28);color:#14532d}
           @media(max-width:1024px){.socm-hero h1,.socm-sh,.socm-fq h2{font-size:34px}.socm-sk-g{grid-template-columns:repeat(2,1fr)}.socm-tec-g{grid-template-columns:repeat(2,1fr)}.socm-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.socm-en.feat{transform:none}.socm-en.feat.socm-ev{transform:none}.socm-en.feat.socm-ev:hover{transform:translateY(-4px)}.socm-wy-g{grid-template-columns:repeat(2,1fr)}.socm-tg2{grid-template-columns:1fr}.socm-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.socm-bc,.socm-hero,.socm-sec,.socm-ct,.socm-fq,.socm-rel{padding-left:20px;padding-right:20px}.socm-hero{padding-top:28px;padding-bottom:16px}.socm-hero h1{font-size:26px}.socm-stats{grid-template-columns:1fr 1fr}.socm-sc:nth-child(2){border-right:none}.socm-sc:nth-child(3),.socm-sc:nth-child(4){border-top:1px solid rgba(112,26,117,.10)}.socm-sc:nth-child(4){border-right:none}.socm-sk-g,.socm-tec-g,.socm-wy-g{grid-template-columns:1fr}.socm-fr{grid-template-columns:1fr}.socm-cth{font-size:26px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"

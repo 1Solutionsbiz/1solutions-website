@@ -143,8 +143,9 @@ export default function AnswerEngineOptimizationServices() {
           .aeo-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.aeo-grid{grid-template-columns:repeat(2,1fr)}.aeo-why-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.aeo-hero,.aeo-svc,.aeo-surf,.aeo-proc,.aeo-why,.aeo-faq,.aeo-cta{padding:60px 24px}.aeo-hero{padding-top:60px;padding-bottom:0}.aeo-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.aeo-stat:nth-child(2){border-right:none}.aeo-grid{grid-template-columns:1fr}.aeo-why-grid{grid-template-columns:1fr}.aeo-step{grid-template-columns:56px 1fr}.aeo-btns{flex-direction:column;align-items:center}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <div className="aeo-page">

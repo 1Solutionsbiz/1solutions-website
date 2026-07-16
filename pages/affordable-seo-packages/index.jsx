@@ -552,8 +552,9 @@ export default function AffordableSeoPackages() {
             .asp-tbar-item{flex:0 0 50%;padding:10px}
             .asp-tbar-div{display:none}
           }
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

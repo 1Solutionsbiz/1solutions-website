@@ -137,8 +137,9 @@ export default function EmailMarketingServices() {
           .emkt-ctp{font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px}
           @media(max-width:900px){.emkt-g3,.emkt-rg{grid-template-columns:1fr 1fr}}
           @media(max-width:600px){.emkt-hero,.emkt-sec,.emkt-rb,.emkt-cta{padding-left:20px;padding-right:20px}.emkt-hero{padding-top:60px;padding-bottom:50px}.emkt-g3,.emkt-rg{grid-template-columns:1fr}.emkt-bc{padding:12px 20px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <nav className="emkt-bc"><div className="emkt-bci"><Link href="/">Home</Link><span className="emkt-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="emkt-sep">›</span><span className="emkt-cur">Email Marketing Services</span></div></nav>

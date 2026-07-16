@@ -451,8 +451,9 @@ export default function CloudNativeServices() {
           .cn-rtag-teal{background:rgba(15,118,110,.09);border-color:rgba(15,118,110,.28);color:#0f766e}
           @media(max-width:1024px){.cn-hero h1,.cn-s-title,.cn-faq h2{font-size:36px}.cn-svc-grid{grid-template-columns:repeat(2,1fr)}.cn-stack-grid{grid-template-columns:repeat(2,1fr)}.cn-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.cn-eng-card.feat{transform:none}.cn-eng-card.feat.cn-ev{transform:none}.cn-eng-card.feat.cn-ev:hover{transform:translateY(-4px)}.cn-why-grid{grid-template-columns:repeat(2,1fr)}.cn-tgrid{grid-template-columns:1fr}.cn-contact-grid{grid-template-columns:1fr}}
           @media(max-width:768px){.cn-breadcrumb{padding:12px 20px 0}.cn-hero{padding:28px 20px 20px}.cn-hero h1{font-size:26px;letter-spacing:-.3px}.cn-stats{grid-template-columns:1fr 1fr}.cn-stat-col:nth-child(2){border-right:none}.cn-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.cn-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.cn-logos{padding:16px 20px 28px}.cn-svc-section,.cn-stack-section,.cn-eng-section,.cn-process-section,.cn-testi,.cn-why-section,.cn-faq,.cn-related{padding:52px 20px}.cn-contact{padding:48px 20px}.cn-svc-grid,.cn-stack-grid,.cn-why-grid{grid-template-columns:1fr}.cn-frow{grid-template-columns:1fr}.cn-ctitle{font-size:28px}.cn-s-title{font-size:28px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"

@@ -667,8 +667,9 @@ export default function HtmlEmailDevelopmentServices() {
             .he-merged-box { padding:18px; }
             .he-contact-title { font-size:24px; }
           }
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

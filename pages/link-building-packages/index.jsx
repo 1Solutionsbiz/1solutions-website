@@ -1081,8 +1081,9 @@ export default function LinkBuildingPackages() {
             .lbp-fq-badge{left:12px}
             .lbp-author-inner{flex-direction:column;gap:14px}
           }
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

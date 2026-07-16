@@ -517,8 +517,9 @@ export default function HealthcareSoftwareDevelopment() {
             .hc-ctitle { font-size:28px; }
             .hc-s-title { font-size:28px; }
           }
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

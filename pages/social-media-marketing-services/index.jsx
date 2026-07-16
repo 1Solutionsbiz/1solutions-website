@@ -137,8 +137,9 @@ export default function SocialMediaMarketingServices() {
           .smkt-ctp{font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px}
           @media(max-width:900px){.smkt-g3,.smkt-rg{grid-template-columns:1fr 1fr}}
           @media(max-width:600px){.smkt-hero,.smkt-sec,.smkt-rb,.smkt-cta{padding-left:20px;padding-right:20px}.smkt-hero{padding-top:60px;padding-bottom:50px}.smkt-g3,.smkt-rg{grid-template-columns:1fr}.smkt-bc{padding:12px 20px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <nav className="smkt-bc"><div className="smkt-bci"><Link href="/">Home</Link><span className="smkt-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="smkt-sep">›</span><span className="smkt-cur">Social Media Marketing Services</span></div></nav>

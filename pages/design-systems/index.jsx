@@ -503,8 +503,9 @@ export default function DesignSystemsPage() {
             .ds-callout-inner { grid-template-columns:1fr; }
             .ds-section-title,.ds-process-title,.ds-faq-heading,.ds-contact-title,.ds-related-title { font-size:22px; }
           }
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

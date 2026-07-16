@@ -328,8 +328,9 @@ export default function HireDataScientist() {
           .hds-a{background:rgba(202,138,4,.09);border-color:rgba(202,138,4,.28);color:#92400e}
           @media(max-width:1024px){.hds-hero h1,.hds-st,.hds-fq-s h2{font-size:36px}.hds-sk-g{grid-template-columns:repeat(2,1fr)}.hds-tec-g{grid-template-columns:repeat(2,1fr)}.hds-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.hds-en-c.feat{transform:none}.hds-en-c.feat.hds-ev{transform:none}.hds-en-c.feat.hds-ev:hover{transform:translateY(-4px)}.hds-wy-g{grid-template-columns:repeat(2,1fr)}.hds-tg2{grid-template-columns:1fr}.hds-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.hds-bc,.hds-hero,.hds-sk-s,.hds-tec-s,.hds-en-s,.hds-pr-s,.hds-te-s,.hds-wy-s,.hds-fq-s,.hds-rel{padding-left:20px;padding-right:20px}.hds-hero{padding-top:28px;padding-bottom:20px}.hds-hero h1{font-size:26px;letter-spacing:-.3px}.hds-stats{grid-template-columns:1fr 1fr}.hds-sc:nth-child(2){border-right:none}.hds-sc:nth-child(3),.hds-sc:nth-child(4){border-top:1px solid rgba(15,52,96,.10)}.hds-sc:nth-child(4){border-right:none}.hds-sk-g,.hds-tec-g,.hds-wy-g{grid-template-columns:1fr}.hds-fr{grid-template-columns:1fr}.hds-ctt{font-size:28px}.hds-st{font-size:28px}.hds-ct-s{padding:48px 20px}.hds-logos{padding-left:20px;padding-right:20px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"

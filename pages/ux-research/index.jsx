@@ -474,8 +474,9 @@ export default function UXResearch() {
           @media (max-width:900px) {
             .uxr-page { background-attachment:scroll !important; }
           }
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

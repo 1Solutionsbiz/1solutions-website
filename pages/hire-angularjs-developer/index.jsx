@@ -380,8 +380,9 @@ export default function HireAngularJsDeveloper() {
           .ha-rtag-violet{background:rgba(109,40,217,.09);border-color:rgba(109,40,217,.28);color:#4c1d95}
           @media(max-width:1024px){.ha-hero h1,.ha-s-title,.ha-faq h2{font-size:36px}.ha-skill-grid{grid-template-columns:repeat(2,1fr)}.ha-stack-grid{grid-template-columns:repeat(2,1fr)}.ha-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.ha-eng-card.feat{transform:none}.ha-eng-card.feat.ha-ev{transform:none}.ha-eng-card.feat.ha-ev:hover{transform:translateY(-4px)}.ha-why-grid{grid-template-columns:repeat(2,1fr)}.ha-tgrid{grid-template-columns:1fr}.ha-contact-grid{grid-template-columns:1fr}}
           @media(max-width:768px){.ha-breadcrumb{padding:12px 20px 0}.ha-hero{padding:28px 20px 20px}.ha-hero h1{font-size:26px;letter-spacing:-.3px}.ha-stats{grid-template-columns:1fr 1fr}.ha-stat-col:nth-child(2){border-right:none}.ha-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.ha-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.ha-logos{padding:16px 20px 28px}.ha-skill-section,.ha-stack-section,.ha-eng-section,.ha-process-section,.ha-testi,.ha-why-section,.ha-faq,.ha-related{padding:52px 20px}.ha-contact{padding:48px 20px}.ha-skill-grid,.ha-stack-grid,.ha-why-grid{grid-template-columns:1fr}.ha-frow{grid-template-columns:1fr}.ha-ctitle{font-size:28px}.ha-s-title{font-size:28px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"

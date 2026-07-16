@@ -271,8 +271,9 @@ export default function WellnessSoftware() {
           .wls-rd{background:rgba(20,83,45,.09);border-color:rgba(20,83,45,.28);color:#14532d}
           @media(max-width:1024px){.wls-hero h1,.wls-sh,.wls-fq h2{font-size:34px}.wls-sk-g{grid-template-columns:repeat(2,1fr)}.wls-tec-g{grid-template-columns:repeat(2,1fr)}.wls-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.wls-en.feat{transform:none}.wls-en.feat.wls-ev{transform:none}.wls-en.feat.wls-ev:hover{transform:translateY(-4px)}.wls-wy-g{grid-template-columns:repeat(2,1fr)}.wls-tg2{grid-template-columns:1fr}.wls-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.wls-bc,.wls-hero,.wls-sec,.wls-ct,.wls-fq,.wls-rel{padding-left:20px;padding-right:20px}.wls-hero{padding-top:28px;padding-bottom:16px}.wls-hero h1{font-size:26px}.wls-stats{grid-template-columns:1fr 1fr}.wls-sc:nth-child(2){border-right:none}.wls-sc:nth-child(3),.wls-sc:nth-child(4){border-top:1px solid rgba(74,25,66,.10)}.wls-sc:nth-child(4){border-right:none}.wls-sk-g,.wls-tec-g,.wls-wy-g{grid-template-columns:1fr}.wls-fr{grid-template-columns:1fr}.wls-cth{font-size:26px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"

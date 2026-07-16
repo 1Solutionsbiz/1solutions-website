@@ -446,8 +446,9 @@ export default function GoogleMyBusinessOptimization() {
             .gmbo-form-wrap{padding:24px 20px;}
             .gmbo-author-bar{padding:0 20px 40px;}
           }
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

@@ -160,8 +160,9 @@ export default function EcommerceSeoServices() {
             .eseo-grid3,.eseo-res-grid { grid-template-columns:1fr; }
             .eseo-bc { padding:12px 20px; }
           }
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

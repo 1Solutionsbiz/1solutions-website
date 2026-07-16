@@ -328,8 +328,9 @@ export default function ITOutsourcingServices() {
           .ito-o{background:rgba(146,64,14,.09);border-color:rgba(146,64,14,.28);color:#92400e}
           @media(max-width:1024px){.ito-hero h1,.ito-st,.ito-fq-s h2{font-size:36px}.ito-sk-g{grid-template-columns:repeat(2,1fr)}.ito-tec-g{grid-template-columns:repeat(2,1fr)}.ito-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.ito-en-c.feat{transform:none}.ito-en-c.feat.ito-ev{transform:none}.ito-en-c.feat.ito-ev:hover{transform:translateY(-4px)}.ito-wy-g{grid-template-columns:repeat(2,1fr)}.ito-tg2{grid-template-columns:1fr}.ito-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.ito-bc,.ito-hero,.ito-sk-s,.ito-tec-s,.ito-en-s,.ito-pr-s,.ito-te-s,.ito-wy-s,.ito-fq-s,.ito-rel{padding-left:20px;padding-right:20px}.ito-hero{padding-top:28px;padding-bottom:20px}.ito-hero h1{font-size:26px;letter-spacing:-.3px}.ito-stats{grid-template-columns:1fr 1fr}.ito-sc:nth-child(2){border-right:none}.ito-sc:nth-child(3),.ito-sc:nth-child(4){border-top:1px solid rgba(59,0,24,.10)}.ito-sc:nth-child(4){border-right:none}.ito-sk-g,.ito-tec-g,.ito-wy-g{grid-template-columns:1fr}.ito-fr{grid-template-columns:1fr}.ito-ctt{font-size:28px}.ito-st{font-size:28px}.ito-ct-s{padding:48px 20px}.ito-logos{padding-left:20px;padding-right:20px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"

@@ -143,8 +143,9 @@ export default function PpcManagementServices() {
           .gppc-ctp{font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px}
           @media(max-width:900px){.gppc-g3,.gppc-rg{grid-template-columns:1fr 1fr}}
           @media(max-width:600px){.gppc-hero,.gppc-sec,.gppc-rb,.gppc-cta{padding-left:20px;padding-right:20px}.gppc-hero{padding-top:60px;padding-bottom:50px}.gppc-g3,.gppc-rg{grid-template-columns:1fr}.gppc-bc{padding:12px 20px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <nav className="gppc-bc"><div className="gppc-bci"><Link href="/">Home</Link><span className="gppc-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="gppc-sep">›</span><span className="gppc-cur">Google Ads (PPC)</span></div></nav>

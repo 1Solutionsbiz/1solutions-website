@@ -137,8 +137,9 @@ export default function PpcAuditServices() {
           .ppca-ctp{font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px}
           @media(max-width:900px){.ppca-g3,.ppca-rg{grid-template-columns:1fr 1fr}}
           @media(max-width:600px){.ppca-hero,.ppca-sec,.ppca-rb,.ppca-cta{padding-left:20px;padding-right:20px}.ppca-hero{padding-top:60px;padding-bottom:50px}.ppca-g3,.ppca-rg{grid-template-columns:1fr}.ppca-bc{padding:12px 20px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <nav className="ppca-bc"><div className="ppca-bci"><Link href="/">Home</Link><span className="ppca-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="ppca-sep">›</span><span className="ppca-cur">PPC Audit Services</span></div></nav>

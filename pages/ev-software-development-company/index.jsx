@@ -271,8 +271,9 @@ export default function EVSoftware() {
           .ev-rd{background:rgba(45,27,105,.09);border-color:rgba(45,27,105,.28);color:#2d1b69}
           @media(max-width:1024px){.ev-hero h1,.ev-sh,.ev-fq h2{font-size:34px}.ev-sk-g{grid-template-columns:repeat(2,1fr)}.ev-tec-g{grid-template-columns:repeat(2,1fr)}.ev-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.ev-en.feat{transform:none}.ev-en.feat.ev-ev2{transform:none}.ev-en.feat.ev-ev2:hover{transform:translateY(-4px)}.ev-wy-g{grid-template-columns:repeat(2,1fr)}.ev-tg2{grid-template-columns:1fr}.ev-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.ev-bc,.ev-hero,.ev-sec,.ev-ct,.ev-fq,.ev-rel{padding-left:20px;padding-right:20px}.ev-hero{padding-top:28px;padding-bottom:16px}.ev-hero h1{font-size:26px}.ev-stats{grid-template-columns:1fr 1fr}.ev-sc:nth-child(2){border-right:none}.ev-sc:nth-child(3),.ev-sc:nth-child(4){border-top:1px solid rgba(10,61,46,.10)}.ev-sc:nth-child(4){border-right:none}.ev-sk-g,.ev-tec-g,.ev-wy-g{grid-template-columns:1fr}.ev-fr{grid-template-columns:1fr}.ev-cth{font-size:26px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"

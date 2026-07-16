@@ -272,8 +272,9 @@ export default function SeoCompanyDelhi() {
             .dsel-field-row{grid-template-columns:1fr;}
             .dsel-form-wrap{padding:24px 20px;}
           }
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

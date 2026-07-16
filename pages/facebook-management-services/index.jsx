@@ -140,8 +140,9 @@ export default function FacebookManagementServices() {
           .fbm-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.fbm-grid{grid-template-columns:repeat(2,1fr)}.fbm-why-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.fbm-hero,.fbm-svc,.fbm-cap,.fbm-proc,.fbm-why,.fbm-faq,.fbm-cta{padding:60px 24px}.fbm-hero{padding-top:60px;padding-bottom:0}.fbm-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.fbm-stat:nth-child(2){border-right:none}.fbm-grid{grid-template-columns:1fr}.fbm-why-grid{grid-template-columns:1fr}.fbm-step{grid-template-columns:56px 1fr}.fbm-btns{flex-direction:column;align-items:center}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <div className="fbm-page">

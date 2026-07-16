@@ -140,8 +140,9 @@ export default function LogoDesignServices() {
           .logo-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.logo-grid{grid-template-columns:repeat(2,1fr)}.logo-why-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.logo-hero,.logo-svc,.logo-dlv,.logo-proc,.logo-why,.logo-faq,.logo-cta{padding:60px 24px}.logo-hero{padding-top:60px;padding-bottom:0}.logo-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.logo-stat:nth-child(2){border-right:none}.logo-grid{grid-template-columns:1fr}.logo-why-grid{grid-template-columns:1fr}.logo-step{grid-template-columns:56px 1fr}.logo-btns{flex-direction:column;align-items:center}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <div className="logo-page">

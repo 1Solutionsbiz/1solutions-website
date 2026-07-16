@@ -137,8 +137,9 @@ export default function VideoMarketingServices() {
           .vmkt-ctp{font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px}
           @media(max-width:900px){.vmkt-g3,.vmkt-rg{grid-template-columns:1fr 1fr}}
           @media(max-width:600px){.vmkt-hero,.vmkt-sec,.vmkt-rb,.vmkt-cta{padding-left:20px;padding-right:20px}.vmkt-hero{padding-top:60px;padding-bottom:50px}.vmkt-g3,.vmkt-rg{grid-template-columns:1fr}.vmkt-bc{padding:12px 20px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <nav className="vmkt-bc"><div className="vmkt-bci"><Link href="/">Home</Link><span className="vmkt-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="vmkt-sep">›</span><span className="vmkt-cur">Video Marketing Services</span></div></nav>

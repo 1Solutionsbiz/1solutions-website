@@ -142,8 +142,9 @@ export default function TechnicalSeoOptimization() {
           .tseo-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.tseo-grid{grid-template-columns:repeat(2,1fr)}.tseo-why-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.tseo-hero,.tseo-svc,.tseo-stack,.tseo-proc,.tseo-why,.tseo-faq,.tseo-cta{padding:60px 24px}.tseo-hero{padding-top:60px;padding-bottom:0}.tseo-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.tseo-stat:nth-child(2){border-right:none}.tseo-grid{grid-template-columns:1fr}.tseo-why-grid{grid-template-columns:1fr}.tseo-step{grid-template-columns:56px 1fr}.tseo-btns{flex-direction:column;align-items:center}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <div className="tseo-page">

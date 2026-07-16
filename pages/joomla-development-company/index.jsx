@@ -449,8 +449,9 @@ export default function JoomlaDevelopment() {
           .jo-rtag-rose{background:rgba(225,29,72,.09);border-color:rgba(225,29,72,.28);color:#9f1239}
           @media(max-width:1024px){.jo-hero h1,.jo-s-title,.jo-faq h2{font-size:36px}.jo-svc-grid{grid-template-columns:repeat(2,1fr)}.jo-stack-grid{grid-template-columns:repeat(2,1fr)}.jo-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.jo-eng-card.feat{transform:none}.jo-eng-card.feat.jo-ev{transform:none}.jo-eng-card.feat.jo-ev:hover{transform:translateY(-4px)}.jo-why-grid{grid-template-columns:repeat(2,1fr)}.jo-tgrid{grid-template-columns:1fr}.jo-contact-grid{grid-template-columns:1fr}}
           @media(max-width:768px){.jo-breadcrumb{padding:12px 20px 0}.jo-hero{padding:28px 20px 20px}.jo-hero h1{font-size:26px;letter-spacing:-.3px}.jo-stats{grid-template-columns:1fr 1fr}.jo-stat-col:nth-child(2){border-right:none}.jo-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.jo-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.jo-logos{padding:16px 20px 28px}.jo-svc-section,.jo-stack-section,.jo-eng-section,.jo-process-section,.jo-testi,.jo-why-section,.jo-faq,.jo-related{padding:52px 20px}.jo-contact{padding:48px 20px}.jo-svc-grid,.jo-stack-grid,.jo-why-grid{grid-template-columns:1fr}.jo-frow{grid-template-columns:1fr}.jo-ctitle{font-size:28px}.jo-s-title{font-size:28px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"

@@ -272,8 +272,9 @@ export default function RetailEcommerceSoftware() {
           .rce-rd{background:rgba(124,45,18,.09);border-color:rgba(124,45,18,.28);color:#7c2d12}
           @media(max-width:1024px){.rce-hero h1,.rce-sh,.rce-fq h2{font-size:34px}.rce-sk-g{grid-template-columns:repeat(2,1fr)}.rce-tec-g{grid-template-columns:repeat(2,1fr)}.rce-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.rce-en.feat{transform:none}.rce-en.feat.rce-ev{transform:none}.rce-en.feat.rce-ev:hover{transform:translateY(-4px)}.rce-wy-g{grid-template-columns:repeat(2,1fr)}.rce-tg2{grid-template-columns:1fr}.rce-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.rce-bc,.rce-hero,.rce-sec,.rce-ct,.rce-fq,.rce-rel{padding-left:20px;padding-right:20px}.rce-hero{padding-top:28px;padding-bottom:16px}.rce-hero h1{font-size:26px}.rce-stats{grid-template-columns:1fr 1fr}.rce-sc:nth-child(2){border-right:none}.rce-sc:nth-child(3),.rce-sc:nth-child(4){border-top:1px solid rgba(190,24,93,.10)}.rce-sc:nth-child(4){border-right:none}.rce-sk-g,.rce-tec-g,.rce-wy-g{grid-template-columns:1fr}.rce-fr{grid-template-columns:1fr}.rce-cth{font-size:26px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"

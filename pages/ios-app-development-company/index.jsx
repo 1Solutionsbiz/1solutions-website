@@ -490,8 +490,9 @@ export default function IosAppDevelopment() {
           .io-rtag-sky{background:rgba(14,165,233,.09);border-color:rgba(14,165,233,.28);color:#075985}
           @media(max-width:1024px){.io-hero h1,.io-s-title,.io-faq h2{font-size:36px}.io-svc-grid{grid-template-columns:repeat(2,1fr)}.io-stack-grid{grid-template-columns:repeat(2,1fr)}.io-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.io-eng-card.feat{transform:none}.io-eng-card.feat.io-ev{transform:none}.io-eng-card.feat.io-ev:hover{transform:translateY(-4px)}.io-why-grid{grid-template-columns:repeat(2,1fr)}.io-tgrid{grid-template-columns:1fr}.io-contact-grid{grid-template-columns:1fr}}
           @media(max-width:768px){.io-breadcrumb{padding:12px 20px 0}.io-hero{padding:28px 20px 20px}.io-hero h1{font-size:26px;letter-spacing:-.3px}.io-stats{grid-template-columns:1fr 1fr}.io-stat-col:nth-child(2){border-right:none}.io-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.io-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.io-logos{padding:16px 20px 28px}.io-svc-section,.io-stack-section,.io-eng-section,.io-process-section,.io-testi,.io-why-section,.io-faq,.io-related{padding:52px 20px}.io-contact{padding:48px 20px}.io-svc-grid,.io-stack-grid,.io-why-grid{grid-template-columns:1fr}.io-frow{grid-template-columns:1fr}.io-ctitle{font-size:28px}.io-s-title{font-size:28px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"

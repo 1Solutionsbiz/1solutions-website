@@ -376,7 +376,7 @@ export default function LinkBuildingServices() {
             <div className="lbs-reveal">
               <span className="lbs-ey">Common Questions</span>
               <h2 className="lbs-h2">Link Building Services <AuroraText>FAQs</AuroraText></h2>
-              <p className="lbs-lead">Answers to the most common questions before getting started.</p>
+              <p className="lbs-lead">Answers to the most common questions before getting started. Ready for pricing? See our <Link href="/link-building-packages/">link building packages</Link> for plan details.</p>
             </div>
             <div className="lbs-faq-list">
               {FAQS.map((f, i) => (

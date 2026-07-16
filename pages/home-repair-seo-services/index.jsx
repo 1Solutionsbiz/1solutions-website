@@ -161,8 +161,9 @@ export default function HomeRepairSeoServices() {
             .hrseo-grid3,.hrseo-res-grid { grid-template-columns:1fr; }
             .hrseo-bc { padding:12px 20px; }
           }
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

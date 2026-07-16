@@ -595,8 +595,9 @@ export default function SeoCompanyLosAngeles() {
             .la-related-ttl{font-size:24px}
             .la-g4{grid-template-columns:1fr 1fr}
           }
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

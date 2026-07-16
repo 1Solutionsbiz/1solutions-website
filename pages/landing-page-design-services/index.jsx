@@ -140,8 +140,9 @@ export default function LandingPageDesignServices() {
           .lpd-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.lpd-grid{grid-template-columns:repeat(2,1fr)}.lpd-why-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.lpd-hero,.lpd-svc,.lpd-tools,.lpd-proc,.lpd-why,.lpd-faq,.lpd-cta{padding:60px 24px}.lpd-hero{padding-top:60px;padding-bottom:0}.lpd-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.lpd-stat:nth-child(2){border-right:none}.lpd-grid{grid-template-columns:1fr}.lpd-why-grid{grid-template-columns:1fr}.lpd-step{grid-template-columns:56px 1fr}.lpd-btns{flex-direction:column;align-items:center}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <div className="lpd-page">

@@ -137,8 +137,9 @@ export default function ReputationManagementServices() {
           .repm-ctp{font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px}
           @media(max-width:900px){.repm-g3,.repm-rg{grid-template-columns:1fr 1fr}}
           @media(max-width:600px){.repm-hero,.repm-sec,.repm-rb,.repm-cta{padding-left:20px;padding-right:20px}.repm-hero{padding-top:60px;padding-bottom:50px}.repm-g3,.repm-rg{grid-template-columns:1fr}.repm-bc{padding:12px 20px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <nav className="repm-bc"><div className="repm-bci"><Link href="/">Home</Link><span className="repm-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="repm-sep">›</span><span className="repm-cur">Reputation Management Services</span></div></nav>

@@ -139,8 +139,9 @@ export default function LawnCareMarketingServices() {
           .lcmkt-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           @media(max-width:1024px){.lcmkt-grid{grid-template-columns:repeat(2,1fr)}.lcmkt-why-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.lcmkt-hero,.lcmkt-svc,.lcmkt-ch,.lcmkt-proc,.lcmkt-why,.lcmkt-faq,.lcmkt-cta{padding:60px 24px}.lcmkt-hero{padding-top:60px;padding-bottom:0}.lcmkt-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.lcmkt-stat:nth-child(2){border-right:none}.lcmkt-grid{grid-template-columns:1fr}.lcmkt-why-grid{grid-template-columns:1fr}.lcmkt-step{grid-template-columns:56px 1fr}.lcmkt-btns{flex-direction:column;align-items:center}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <div className="lcmkt-page">

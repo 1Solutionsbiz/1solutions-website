@@ -593,8 +593,9 @@ export default function Portfolio() {
             .pf-section { padding: 40px 20px 60px; }
             .pf-stats { grid-template-columns: repeat(2,1fr); gap: 24px; }
           }
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

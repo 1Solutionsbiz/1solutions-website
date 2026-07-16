@@ -554,8 +554,9 @@ export default function WooCommerceDevelopmentCompany() {
             .woo-ecard-features { grid-template-columns:1fr; }
             .woo-merged-box { padding:18px; }
           }
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

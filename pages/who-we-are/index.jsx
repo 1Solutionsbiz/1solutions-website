@@ -1062,8 +1062,9 @@ export default function WhoWeAre() {
             .au-office-text { padding: 0 28px; }
             .au-office-quote { font-size: 1.15rem; }
           }
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

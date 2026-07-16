@@ -126,8 +126,9 @@ export default function Free45DaySeoTrial() {
           .f45-cta-s{font-size:1.05rem;color:rgba(255,255,255,0.75);line-height:1.75;margin:0 auto 36px;max-width:520px}
           @media(max-width:1024px){.f45-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.f45-hero,.f45-inc,.f45-proc,.f45-elig,.f45-faq,.f45-cta{padding:60px 24px}.f45-hero{padding-top:60px;padding-bottom:0}.f45-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.f45-stat:nth-child(2){border-right:none}.f45-grid{grid-template-columns:1fr}.f45-step{grid-template-columns:56px 1fr}.f45-elist{grid-template-columns:1fr}.f45-btns{flex-direction:column;align-items:center}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <div className="f45-page">

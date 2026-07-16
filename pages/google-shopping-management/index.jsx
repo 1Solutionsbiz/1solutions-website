@@ -137,8 +137,9 @@ export default function GoogleShoppingManagement() {
           .gsho-ctp{font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px}
           @media(max-width:900px){.gsho-g3,.gsho-rg{grid-template-columns:1fr 1fr}}
           @media(max-width:600px){.gsho-hero,.gsho-sec,.gsho-rb,.gsho-cta{padding-left:20px;padding-right:20px}.gsho-hero{padding-top:60px;padding-bottom:50px}.gsho-g3,.gsho-rg{grid-template-columns:1fr}.gsho-bc{padding:12px 20px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <nav className="gsho-bc"><div className="gsho-bci"><Link href="/">Home</Link><span className="gsho-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="gsho-sep">›</span><span className="gsho-cur">Google Shopping Management</span></div></nav>

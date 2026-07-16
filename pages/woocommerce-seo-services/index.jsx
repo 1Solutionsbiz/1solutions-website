@@ -143,8 +143,9 @@ export default function WoocommerceSeoServices() {
           .wcseo-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.wcseo-grid{grid-template-columns:repeat(2,1fr)}.wcseo-why-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.wcseo-hero,.wcseo-svc,.wcseo-plug,.wcseo-proc,.wcseo-why,.wcseo-faq,.wcseo-cta{padding:60px 24px}.wcseo-hero{padding-top:60px;padding-bottom:0}.wcseo-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.wcseo-stat:nth-child(2){border-right:none}.wcseo-grid{grid-template-columns:1fr}.wcseo-why-grid{grid-template-columns:1fr}.wcseo-step{grid-template-columns:56px 1fr}.wcseo-btns{flex-direction:column;align-items:center}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <div className="wcseo-page">

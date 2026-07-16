@@ -137,8 +137,9 @@ export default function RemarketingServices() {
           .remk-ctp{font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px}
           @media(max-width:900px){.remk-g3,.remk-rg{grid-template-columns:1fr 1fr}}
           @media(max-width:600px){.remk-hero,.remk-sec,.remk-rb,.remk-cta{padding-left:20px;padding-right:20px}.remk-hero{padding-top:60px;padding-bottom:50px}.remk-g3,.remk-rg{grid-template-columns:1fr}.remk-bc{padding:12px 20px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <nav className="remk-bc"><div className="remk-bci"><Link href="/">Home</Link><span className="remk-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="remk-sep">›</span><span className="remk-cur">Remarketing Services</span></div></nav>

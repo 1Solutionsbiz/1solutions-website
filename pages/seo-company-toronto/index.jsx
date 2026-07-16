@@ -249,8 +249,9 @@ export default function SeoCompanyToronto() {
           .trnt-cta-btn-s:hover{border-color:rgba(255,255,255,0.70);background:rgba(255,255,255,0.08);}
           @media(max-width:900px){.trnt-grid4{grid-template-columns:1fr 1fr;}.trnt-grid3,.trnt-grid2,.trnt-res-grid{grid-template-columns:1fr 1fr;}.trnt-ind-grid{grid-template-columns:1fr 1fr;}.trnt-contact-grid{grid-template-columns:1fr;gap:40px;}}
           @media(max-width:600px){.trnt-hero,.trnt-sec,.trnt-results,.trnt-cta,.trnt-contact-sec{padding-left:20px;padding-right:20px;}.trnt-hero{padding-top:60px;padding-bottom:50px;}.trnt-grid4,.trnt-grid3,.trnt-grid2,.trnt-res-grid,.trnt-ind-grid{grid-template-columns:1fr;}.trnt-bc{padding:12px 20px;}.trnt-field-row{grid-template-columns:1fr;}.trnt-form-wrap{padding:24px 20px;}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

@@ -544,8 +544,9 @@ export default function HeadlessWordPressDevelopment() {
             .hwp-faq-heading { font-size:28px; }
             .hwp-portfolio-title { font-size:22px; }
           }
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

@@ -469,8 +469,9 @@ export default function PartnerWithUs() {
             .pwu-form { padding: 24px 18px; }
             .pwu-row { grid-template-columns: 1fr; gap: 0; }
           }
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

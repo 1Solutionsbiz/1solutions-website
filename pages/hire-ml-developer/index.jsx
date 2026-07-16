@@ -328,8 +328,9 @@ export default function HireMLDeveloper() {
           .hml-a{background:rgba(202,138,4,.09);border-color:rgba(202,138,4,.28);color:#92400e}
           @media(max-width:1024px){.hml-hero h1,.hml-st,.hml-fq-s h2{font-size:36px}.hml-sk-g{grid-template-columns:repeat(2,1fr)}.hml-tec-g{grid-template-columns:repeat(2,1fr)}.hml-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.hml-en-c.feat{transform:none}.hml-en-c.feat.hml-ev{transform:none}.hml-en-c.feat.hml-ev:hover{transform:translateY(-4px)}.hml-wy-g{grid-template-columns:repeat(2,1fr)}.hml-tg2{grid-template-columns:1fr}.hml-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.hml-bc,.hml-hero,.hml-sk-s,.hml-tec-s,.hml-en-s,.hml-pr-s,.hml-te-s,.hml-wy-s,.hml-fq-s,.hml-rel{padding-left:20px;padding-right:20px}.hml-hero{padding-top:28px;padding-bottom:20px}.hml-hero h1{font-size:26px;letter-spacing:-.3px}.hml-stats{grid-template-columns:1fr 1fr}.hml-sc:nth-child(2){border-right:none}.hml-sc:nth-child(3),.hml-sc:nth-child(4){border-top:1px solid rgba(15,52,96,.10)}.hml-sc:nth-child(4){border-right:none}.hml-sk-g,.hml-tec-g,.hml-wy-g{grid-template-columns:1fr}.hml-fr{grid-template-columns:1fr}.hml-ctt{font-size:28px}.hml-st{font-size:28px}.hml-ct-s{padding:48px 20px}.hml-logos{padding-left:20px;padding-right:20px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"

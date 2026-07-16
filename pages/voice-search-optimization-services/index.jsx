@@ -143,8 +143,9 @@ export default function VoiceSearchOptimizationServices() {
           .vseo-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.vseo-grid{grid-template-columns:repeat(2,1fr)}.vseo-why-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.vseo-hero,.vseo-svc,.vseo-asst,.vseo-proc,.vseo-why,.vseo-faq,.vseo-cta{padding:60px 24px}.vseo-hero{padding-top:60px;padding-bottom:0}.vseo-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.vseo-stat:nth-child(2){border-right:none}.vseo-grid{grid-template-columns:1fr}.vseo-why-grid{grid-template-columns:1fr}.vseo-step{grid-template-columns:56px 1fr}.vseo-btns{flex-direction:column;align-items:center}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <div className="vseo-page">

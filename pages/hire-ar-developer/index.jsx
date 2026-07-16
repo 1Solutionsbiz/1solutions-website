@@ -329,8 +329,9 @@ export default function HireARDeveloper() {
           .har-a{background:rgba(202,138,4,.09);border-color:rgba(202,138,4,.28);color:#92400e}
           @media(max-width:1024px){.har-hero h1,.har-st,.har-fq-s h2{font-size:36px}.har-sk-g{grid-template-columns:repeat(2,1fr)}.har-tec-g{grid-template-columns:repeat(2,1fr)}.har-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.har-en-c.feat{transform:none}.har-en-c.feat.har-ev{transform:none}.har-en-c.feat.har-ev:hover{transform:translateY(-4px)}.har-wy-g{grid-template-columns:repeat(2,1fr)}.har-tg2{grid-template-columns:1fr}.har-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.har-bc,.har-hero,.har-sk-s,.har-tec-s,.har-en-s,.har-pr-s,.har-te-s,.har-wy-s,.har-fq-s,.har-rel{padding-left:20px;padding-right:20px}.har-hero{padding-top:28px;padding-bottom:20px}.har-hero h1{font-size:26px;letter-spacing:-.3px}.har-stats{grid-template-columns:1fr 1fr}.har-sc:nth-child(2){border-right:none}.har-sc:nth-child(3),.har-sc:nth-child(4){border-top:1px solid rgba(15,52,96,.10)}.har-sc:nth-child(4){border-right:none}.har-sk-g,.har-tec-g,.har-wy-g{grid-template-columns:1fr}.har-fr{grid-template-columns:1fr}.har-ctt{font-size:28px}.har-st{font-size:28px}.har-ct-s{padding:48px 20px}.har-logos{padding-left:20px;padding-right:20px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"

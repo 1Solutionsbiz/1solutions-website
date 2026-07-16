@@ -140,8 +140,9 @@ export default function InfographicsDesign() {
           .infog-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.infog-grid{grid-template-columns:repeat(2,1fr)}.infog-why-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.infog-hero,.infog-svc,.infog-fmt,.infog-proc,.infog-why,.infog-faq,.infog-cta{padding:60px 24px}.infog-hero{padding-top:60px;padding-bottom:0}.infog-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.infog-stat:nth-child(2){border-right:none}.infog-grid{grid-template-columns:1fr}.infog-why-grid{grid-template-columns:1fr}.infog-step{grid-template-columns:56px 1fr}.infog-btns{flex-direction:column;align-items:center}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <div className="infog-page">

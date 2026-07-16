@@ -271,8 +271,9 @@ export default function SaaSDevelopment() {
           .sas-rd{background:rgba(20,83,45,.09);border-color:rgba(20,83,45,.28);color:#14532d}
           @media(max-width:1024px){.sas-hero h1,.sas-sh,.sas-fq h2{font-size:34px}.sas-sk-g{grid-template-columns:repeat(2,1fr)}.sas-tec-g{grid-template-columns:repeat(2,1fr)}.sas-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.sas-en.feat{transform:none}.sas-en.feat.sas-ev{transform:none}.sas-en.feat.sas-ev:hover{transform:translateY(-4px)}.sas-wy-g{grid-template-columns:repeat(2,1fr)}.sas-tg2{grid-template-columns:1fr}.sas-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.sas-bc,.sas-hero,.sas-sec,.sas-ct,.sas-fq,.sas-rel{padding-left:20px;padding-right:20px}.sas-hero{padding-top:28px;padding-bottom:16px}.sas-hero h1{font-size:26px}.sas-stats{grid-template-columns:1fr 1fr}.sas-sc:nth-child(2){border-right:none}.sas-sc:nth-child(3),.sas-sc:nth-child(4){border-top:1px solid rgba(15,76,129,.10)}.sas-sc:nth-child(4){border-right:none}.sas-sk-g,.sas-tec-g,.sas-wy-g{grid-template-columns:1fr}.sas-fr{grid-template-columns:1fr}.sas-cth{font-size:26px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"

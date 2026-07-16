@@ -139,8 +139,9 @@ export default function DigitalMarketingServices() {
           .dmhub-cta-s{font-size:1.05rem;color:rgba(255,255,255,0.70);line-height:1.75;margin:0 auto 36px;max-width:520px}
           @media(max-width:1024px){.dmhub-grid{grid-template-columns:repeat(2,1fr)}.dmhub-why-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.dmhub-hero,.dmhub-svc,.dmhub-ind,.dmhub-proc,.dmhub-why,.dmhub-faq,.dmhub-cta{padding:60px 24px}.dmhub-hero{padding-top:60px;padding-bottom:0}.dmhub-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.dmhub-stat:nth-child(2){border-right:none}.dmhub-grid{grid-template-columns:1fr}.dmhub-why-grid{grid-template-columns:1fr}.dmhub-step{grid-template-columns:56px 1fr}.dmhub-btns{flex-direction:column;align-items:center}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <div className="dmhub-page">

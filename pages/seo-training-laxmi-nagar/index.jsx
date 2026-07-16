@@ -139,8 +139,9 @@ export default function SeoTrainingLaxmiNagar() {
           .seotln-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           @media(max-width:1024px){.seotln-grid{grid-template-columns:repeat(2,1fr)}.seotln-why-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.seotln-hero,.seotln-svc,.seotln-tools,.seotln-proc,.seotln-why,.seotln-faq,.seotln-cta{padding:60px 24px}.seotln-hero{padding-top:60px;padding-bottom:0}.seotln-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.seotln-stat:nth-child(2){border-right:none}.seotln-grid{grid-template-columns:1fr}.seotln-why-grid{grid-template-columns:1fr}.seotln-step{grid-template-columns:56px 1fr}.seotln-btns{flex-direction:column;align-items:center}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <div className="seotln-page">

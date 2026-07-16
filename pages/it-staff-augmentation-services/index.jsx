@@ -328,8 +328,9 @@ export default function ITStaffAugmentation() {
           .isa-fu{background:rgba(162,28,175,.09);border-color:rgba(162,28,175,.28);color:#86198f}
           @media(max-width:1024px){.isa-hero h1,.isa-st,.isa-fq-s h2{font-size:36px}.isa-sk-g{grid-template-columns:repeat(2,1fr)}.isa-tec-g{grid-template-columns:repeat(2,1fr)}.isa-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.isa-en-c.feat{transform:none}.isa-en-c.feat.isa-ev{transform:none}.isa-en-c.feat.isa-ev:hover{transform:translateY(-4px)}.isa-wy-g{grid-template-columns:repeat(2,1fr)}.isa-tg2{grid-template-columns:1fr}.isa-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.isa-bc,.isa-hero,.isa-sk-s,.isa-tec-s,.isa-en-s,.isa-pr-s,.isa-te-s,.isa-wy-s,.isa-fq-s,.isa-rel{padding-left:20px;padding-right:20px}.isa-hero{padding-top:28px;padding-bottom:20px}.isa-hero h1{font-size:26px;letter-spacing:-.3px}.isa-stats{grid-template-columns:1fr 1fr}.isa-sc:nth-child(2){border-right:none}.isa-sc:nth-child(3),.isa-sc:nth-child(4){border-top:1px solid rgba(30,27,75,.10)}.isa-sc:nth-child(4){border-right:none}.isa-sk-g,.isa-tec-g,.isa-wy-g{grid-template-columns:1fr}.isa-fr{grid-template-columns:1fr}.isa-ctt{font-size:28px}.isa-st{font-size:28px}.isa-ct-s{padding:48px 20px}.isa-logos{padding-left:20px;padding-right:20px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"

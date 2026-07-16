@@ -273,8 +273,9 @@ export default function RealEstateSoftware() {
           .re-rd{background:rgba(146,64,14,.09);border-color:rgba(146,64,14,.28);color:#92400e}
           @media(max-width:1024px){.re-hero h1,.re-sh,.re-fq h2{font-size:34px}.re-sk-g{grid-template-columns:repeat(2,1fr)}.re-tec-g{grid-template-columns:repeat(2,1fr)}.re-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.re-en.feat{transform:none}.re-en.feat.re-ev{transform:none}.re-en.feat.re-ev:hover{transform:translateY(-4px)}.re-wy-g{grid-template-columns:repeat(2,1fr)}.re-tg2{grid-template-columns:1fr}.re-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.re-bc,.re-hero,.re-sec,.re-ct,.re-fq,.re-rel{padding-left:20px;padding-right:20px}.re-hero{padding-top:28px;padding-bottom:16px}.re-hero h1{font-size:26px}.re-stats{grid-template-columns:1fr 1fr}.re-sc:nth-child(2){border-right:none}.re-sc:nth-child(3),.re-sc:nth-child(4){border-top:1px solid rgba(124,45,18,.10)}.re-sc:nth-child(4){border-right:none}.re-sk-g,.re-tec-g,.re-wy-g{grid-template-columns:1fr}.re-fr{grid-template-columns:1fr}.re-cth{font-size:26px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"

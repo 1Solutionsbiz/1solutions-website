@@ -275,8 +275,9 @@ export default function TravelTourismSoftware() {
           .tt-rd{background:rgba(146,64,14,.09);border-color:rgba(146,64,14,.28);color:#92400e}
           @media(max-width:1024px){.tt-hero h1,.tt-sh,.tt-fq h2{font-size:34px}.tt-sk-g{grid-template-columns:repeat(2,1fr)}.tt-tec-g{grid-template-columns:repeat(2,1fr)}.tt-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.tt-en.feat{transform:none}.tt-en.feat.tt-ev{transform:none}.tt-en.feat.tt-ev:hover{transform:translateY(-4px)}.tt-wy-g{grid-template-columns:repeat(2,1fr)}.tt-tg2{grid-template-columns:1fr}.tt-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.tt-bc,.tt-hero,.tt-sec,.tt-ct,.tt-fq,.tt-rel{padding-left:20px;padding-right:20px}.tt-hero{padding-top:28px;padding-bottom:16px}.tt-hero h1{font-size:26px}.tt-stats{grid-template-columns:1fr 1fr}.tt-sc:nth-child(2){border-right:none}.tt-sc:nth-child(3),.tt-sc:nth-child(4){border-top:1px solid rgba(12,74,110,.10)}.tt-sc:nth-child(4){border-right:none}.tt-sk-g,.tt-tec-g,.tt-wy-g{grid-template-columns:1fr}.tt-fr{grid-template-columns:1fr}.tt-cth{font-size:26px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"

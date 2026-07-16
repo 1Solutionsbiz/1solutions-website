@@ -137,8 +137,9 @@ export default function AnalyticsCroServices() {
           .acro-ctp{font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px}
           @media(max-width:900px){.acro-g3,.acro-rg{grid-template-columns:1fr 1fr}}
           @media(max-width:600px){.acro-hero,.acro-sec,.acro-rb,.acro-cta{padding-left:20px;padding-right:20px}.acro-hero{padding-top:60px;padding-bottom:50px}.acro-g3,.acro-rg{grid-template-columns:1fr}.acro-bc{padding:12px 20px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <nav className="acro-bc"><div className="acro-bci"><Link href="/">Home</Link><span className="acro-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="acro-sep">›</span><span className="acro-cur">Analytics & CRO Services</span></div></nav>

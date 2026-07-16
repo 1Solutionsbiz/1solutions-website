@@ -328,8 +328,9 @@ export default function SoftwareCostOptimization() {
           .sco-a{background:rgba(190,18,60,.09);border-color:rgba(190,18,60,.28);color:#9f1239}
           @media(max-width:1024px){.sco-hero h1,.sco-st,.sco-fq-s h2{font-size:36px}.sco-sk-g{grid-template-columns:repeat(2,1fr)}.sco-tec-g{grid-template-columns:repeat(2,1fr)}.sco-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.sco-en-c.feat{transform:none}.sco-en-c.feat.sco-ev{transform:none}.sco-en-c.feat.sco-ev:hover{transform:translateY(-4px)}.sco-wy-g{grid-template-columns:repeat(2,1fr)}.sco-tg2{grid-template-columns:1fr}.sco-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.sco-bc,.sco-hero,.sco-sk-s,.sco-tec-s,.sco-en-s,.sco-pr-s,.sco-te-s,.sco-wy-s,.sco-fq-s,.sco-rel{padding-left:20px;padding-right:20px}.sco-hero{padding-top:28px;padding-bottom:20px}.sco-hero h1{font-size:26px;letter-spacing:-.3px}.sco-stats{grid-template-columns:1fr 1fr}.sco-sc:nth-child(2){border-right:none}.sco-sc:nth-child(3),.sco-sc:nth-child(4){border-top:1px solid rgba(5,46,22,.10)}.sco-sc:nth-child(4){border-right:none}.sco-sk-g,.sco-tec-g,.sco-wy-g{grid-template-columns:1fr}.sco-fr{grid-template-columns:1fr}.sco-ctt{font-size:28px}.sco-st{font-size:28px}.sco-ct-s{padding:48px 20px}.sco-logos{padding-left:20px;padding-right:20px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"

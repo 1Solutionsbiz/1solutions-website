@@ -552,8 +552,9 @@ export default function ElearningSoftwareDevelopment() {
             .el-ctitle { font-size:28px; }
             .el-s-title { font-size:28px; }
           }
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"

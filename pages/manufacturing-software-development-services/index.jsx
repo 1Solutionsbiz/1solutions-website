@@ -272,8 +272,9 @@ export default function ManufacturingSoftware() {
           .mfg-rd{background:rgba(124,45,18,.09);border-color:rgba(124,45,18,.28);color:#7c2d12}
           @media(max-width:1024px){.mfg-hero h1,.mfg-sh,.mfg-fq h2{font-size:34px}.mfg-sk-g{grid-template-columns:repeat(2,1fr)}.mfg-tec-g{grid-template-columns:repeat(2,1fr)}.mfg-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.mfg-en.feat{transform:none}.mfg-en.feat.mfg-ev{transform:none}.mfg-en.feat.mfg-ev:hover{transform:translateY(-4px)}.mfg-wy-g{grid-template-columns:repeat(2,1fr)}.mfg-tg2{grid-template-columns:1fr}.mfg-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.mfg-bc,.mfg-hero,.mfg-sec,.mfg-ct,.mfg-fq,.mfg-rel{padding-left:20px;padding-right:20px}.mfg-hero{padding-top:28px;padding-bottom:16px}.mfg-hero h1{font-size:26px}.mfg-stats{grid-template-columns:1fr 1fr}.mfg-sc:nth-child(2){border-right:none}.mfg-sc:nth-child(3),.mfg-sc:nth-child(4){border-top:1px solid rgba(120,53,15,.10)}.mfg-sc:nth-child(4){border-right:none}.mfg-sk-g,.mfg-tec-g,.mfg-wy-g{grid-template-columns:1fr}.mfg-fr{grid-template-columns:1fr}.mfg-cth{font-size:26px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"

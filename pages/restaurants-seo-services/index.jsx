@@ -161,8 +161,9 @@ export default function RestaurantsSeoServices() {
             .rtseo-grid3,.rtseo-res-grid { grid-template-columns:1fr; }
             .rtseo-bc { padding:12px 20px; }
           }
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

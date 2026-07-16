@@ -514,8 +514,9 @@ export default function WriteForUs() {
             .wfu-form { padding: 24px 18px; }
             .wfu-guidelines-grid { grid-template-columns: 1fr; }
           }
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

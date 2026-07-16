@@ -140,8 +140,9 @@ export default function EcommerceMarketingServices() {
           .ecmkt-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.ecmkt-grid{grid-template-columns:repeat(2,1fr)}.ecmkt-why-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.ecmkt-hero,.ecmkt-svc,.ecmkt-plat,.ecmkt-proc,.ecmkt-why,.ecmkt-faq,.ecmkt-cta{padding:60px 24px}.ecmkt-hero{padding-top:60px;padding-bottom:0}.ecmkt-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.ecmkt-stat:nth-child(2){border-right:none}.ecmkt-grid{grid-template-columns:1fr}.ecmkt-why-grid{grid-template-columns:1fr}.ecmkt-step{grid-template-columns:56px 1fr}.ecmkt-btns{flex-direction:column;align-items:center}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <div className="ecmkt-page">

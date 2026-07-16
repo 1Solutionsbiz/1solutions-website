@@ -559,8 +559,9 @@ export default function WordPressMaintenance() {
           @media(max-width:1024px){.wm-badge,.wm-btn-ghost,.wm-stats,.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-pstep-circle,.wm-tcard,.wm-wcard,.wm-contact,.wm-cbenefits,.wm-form-box,.wm-submit,.wm-fitem,.wm-related,.wm-why-highlight{backdrop-filter:none !important;-webkit-backdrop-filter:none !important}}
           @media(max-width:768px){.wm-logos-track{animation:none}.wm-page{background:linear-gradient(160deg,#dbeafe 0%,#e8f0fb 100%) !important}.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-tcard,.wm-wcard,.wm-fitem{background:rgba(255,255,255,.95);box-shadow:0 2px 8px rgba(15,52,96,.08)}.wm-stats{background:rgba(255,255,255,.92)}.wm-form-box{background:rgba(255,255,255,.97)}.wm-cbenefits{background:rgba(255,255,255,.94)}.wm-s-reveal,.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-tcard,.wm-wcard,.wm-pstep{opacity:1 !important;transform:none !important;transition:none !important}}
           @media(prefers-reduced-motion:reduce){.wm-logos-track{animation:none}.wm-s-reveal,.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-tcard,.wm-wcard,.wm-pstep{opacity:1 !important;transform:none !important;transition:none !important}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

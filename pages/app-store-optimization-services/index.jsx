@@ -143,8 +143,9 @@ export default function AppStoreOptimizationServices() {
           .aso-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.aso-grid{grid-template-columns:repeat(2,1fr)}.aso-why-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.aso-hero,.aso-svc,.aso-stores,.aso-proc,.aso-why,.aso-faq,.aso-cta{padding:60px 24px}.aso-hero{padding-top:60px;padding-bottom:0}.aso-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.aso-stat:nth-child(2){border-right:none}.aso-grid{grid-template-columns:1fr}.aso-why-grid{grid-template-columns:1fr}.aso-step{grid-template-columns:56px 1fr}.aso-btns{flex-direction:column;align-items:center}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <div className="aso-page">

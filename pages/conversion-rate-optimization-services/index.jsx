@@ -423,8 +423,9 @@ export default function ConversionRateOptimizationServices() {
             .cro-ind-grid { grid-template-columns:repeat(2,1fr); }
             .cro-contact-stats { grid-template-columns:1fr 1fr 1fr; }
           }
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

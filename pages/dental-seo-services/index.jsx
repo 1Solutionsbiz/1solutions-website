@@ -161,8 +161,9 @@ export default function DentalSeoServices() {
             .dnseo-grid3,.dnseo-res-grid { grid-template-columns:1fr; }
             .dnseo-bc { padding:12px 20px; }
           }
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

@@ -602,8 +602,9 @@ export default function ContactPage() {
             .co-row { grid-template-columns: 1fr; }
             .co-form-card { padding: 28px 20px; }
           }
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

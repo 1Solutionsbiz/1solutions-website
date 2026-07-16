@@ -370,8 +370,9 @@ export default function GenerativeEngineOptimizationServices() {
             .geo-btns{flex-direction:column;align-items:center}
             .geo-r2{grid-template-columns:1fr}
           }
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

@@ -143,8 +143,9 @@ export default function WixSeoServices() {
           .wixs-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.wixs-grid{grid-template-columns:repeat(2,1fr)}.wixs-why-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.wixs-hero,.wixs-svc,.wixs-feat,.wixs-proc,.wixs-why,.wixs-faq,.wixs-cta{padding:60px 24px}.wixs-hero{padding-top:60px;padding-bottom:0}.wixs-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.wixs-stat:nth-child(2){border-right:none}.wixs-grid{grid-template-columns:1fr}.wixs-why-grid{grid-template-columns:1fr}.wixs-step{grid-template-columns:56px 1fr}.wixs-btns{flex-direction:column;align-items:center}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <div className="wixs-page">

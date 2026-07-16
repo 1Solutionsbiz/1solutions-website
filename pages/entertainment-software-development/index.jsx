@@ -271,8 +271,9 @@ export default function EntertainmentSoftware() {
           .ent-rd{background:rgba(20,83,45,.09);border-color:rgba(20,83,45,.28);color:#14532d}
           @media(max-width:1024px){.ent-hero h1,.ent-sh,.ent-fq h2{font-size:34px}.ent-sk-g{grid-template-columns:repeat(2,1fr)}.ent-tec-g{grid-template-columns:repeat(2,1fr)}.ent-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.ent-en.feat{transform:none}.ent-en.feat.ent-ev{transform:none}.ent-en.feat.ent-ev:hover{transform:translateY(-4px)}.ent-wy-g{grid-template-columns:repeat(2,1fr)}.ent-tg2{grid-template-columns:1fr}.ent-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.ent-bc,.ent-hero,.ent-sec,.ent-ct,.ent-fq,.ent-rel{padding-left:20px;padding-right:20px}.ent-hero{padding-top:28px;padding-bottom:16px}.ent-hero h1{font-size:26px}.ent-stats{grid-template-columns:1fr 1fr}.ent-sc:nth-child(2){border-right:none}.ent-sc:nth-child(3),.ent-sc:nth-child(4){border-top:1px solid rgba(45,27,105,.10)}.ent-sc:nth-child(4){border-right:none}.ent-sk-g,.ent-tec-g,.ent-wy-g{grid-template-columns:1fr}.ent-fr{grid-template-columns:1fr}.ent-cth{font-size:26px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"

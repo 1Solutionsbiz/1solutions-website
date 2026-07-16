@@ -139,8 +139,9 @@ export default function GooglePenaltyRecoveryServices() {
           .gpr-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           @media(max-width:1024px){.gpr-grid{grid-template-columns:repeat(2,1fr)}.gpr-why-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.gpr-hero,.gpr-svc,.gpr-types,.gpr-proc,.gpr-why,.gpr-faq,.gpr-cta{padding:60px 24px}.gpr-hero{padding-top:60px;padding-bottom:0}.gpr-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.gpr-stat:nth-child(2){border-right:none}.gpr-grid{grid-template-columns:1fr}.gpr-why-grid{grid-template-columns:1fr}.gpr-step{grid-template-columns:56px 1fr}.gpr-btns{flex-direction:column;align-items:center}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <div className="gpr-page">
@@ -162,7 +163,7 @@ export default function GooglePenaltyRecoveryServices() {
           <p className="gpr-desc">From diagnosis to Reconsideration Request - a complete penalty recovery service covering every type of Google manual action and algorithmic penalty.</p>
           <div className="gpr-grid" ref={cardsRef}>{SERVICES.map((s,i) => <div key={s.n} className={`gpr-card${visibleCards.includes(i)?' visible':''}`}><div className="gpr-num">{s.n}</div><h3>{s.title}</h3><p>{s.desc}</p></div>)}</div>
         </div></section>
-        <section className="gpr-types"><div className="gpr-types-in"><h2>Penalty Types We Recover From</h2><div className="gpr-pills">{PENALTIES.map(p => <span key={p} className="gpr-pill">{p}</span>)}</div></div></section>
+        <section className="gpr-types"><div className="gpr-types-in"><h2>Penalty Types We Recover From</h2><div className="gpr-pills">{PENALTIES.map(p => p === 'Penguin / Link Spam' ? <Link key={p} href="/penguin-recovery-service/" className="gpr-pill">{p}</Link> : <span key={p} className="gpr-pill">{p}</span>)}</div></div></section>
         <section className="gpr-proc"><div className="gpr-proc-in">
           <span className="gpr-ey2">Our Approach</span><h2 className="gpr-ttl">Google Penalty Recovery Process</h2>
           <p className="gpr-desc">Diagnosis before treatment - we identify the correct penalty type and root cause before any remediation work begins.</p>

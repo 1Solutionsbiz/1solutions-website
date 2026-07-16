@@ -612,8 +612,9 @@ export default function OpenPositions() {
           @media (max-width: 480px) {
             .op-hero h1 { font-size: 2rem; }
           }
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

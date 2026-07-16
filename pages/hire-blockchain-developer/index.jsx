@@ -329,8 +329,9 @@ export default function HireBlockchainDeveloper() {
           .hbc-a{background:rgba(202,138,4,.09);border-color:rgba(202,138,4,.28);color:#92400e}
           @media(max-width:1024px){.hbc-hero h1,.hbc-st,.hbc-fq-s h2{font-size:36px}.hbc-sk-g{grid-template-columns:repeat(2,1fr)}.hbc-tec-g{grid-template-columns:repeat(2,1fr)}.hbc-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.hbc-en-c.feat{transform:none}.hbc-en-c.feat.hbc-ev{transform:none}.hbc-en-c.feat.hbc-ev:hover{transform:translateY(-4px)}.hbc-wy-g{grid-template-columns:repeat(2,1fr)}.hbc-tg2{grid-template-columns:1fr}.hbc-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.hbc-bc,.hbc-hero,.hbc-sk-s,.hbc-tec-s,.hbc-en-s,.hbc-pr-s,.hbc-te-s,.hbc-wy-s,.hbc-fq-s,.hbc-rel{padding-left:20px;padding-right:20px}.hbc-hero{padding-top:28px;padding-bottom:20px}.hbc-hero h1{font-size:26px;letter-spacing:-.3px}.hbc-stats{grid-template-columns:1fr 1fr}.hbc-sc:nth-child(2){border-right:none}.hbc-sc:nth-child(3),.hbc-sc:nth-child(4){border-top:1px solid rgba(15,52,96,.10)}.hbc-sc:nth-child(4){border-right:none}.hbc-sk-g,.hbc-tec-g,.hbc-wy-g{grid-template-columns:1fr}.hbc-fr{grid-template-columns:1fr}.hbc-ctt{font-size:28px}.hbc-st{font-size:28px}.hbc-ct-s{padding:48px 20px}.hbc-logos{padding-left:20px;padding-right:20px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"

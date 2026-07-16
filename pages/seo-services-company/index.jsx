@@ -434,8 +434,9 @@ export default function SeoServices() {
             .seo-form-row { grid-template-columns:1fr; }
             .seo-cta-btns { flex-direction:column;align-items:center; }
           }
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

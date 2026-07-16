@@ -139,8 +139,9 @@ export default function PenguinRecoveryService() {
           .peng-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           @media(max-width:1024px){.peng-grid{grid-template-columns:repeat(2,1fr)}.peng-why-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.peng-hero,.peng-svc,.peng-lt,.peng-proc,.peng-why,.peng-faq,.peng-cta{padding:60px 24px}.peng-hero{padding-top:60px;padding-bottom:0}.peng-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.peng-stat:nth-child(2){border-right:none}.peng-grid{grid-template-columns:1fr}.peng-why-grid{grid-template-columns:1fr}.peng-step{grid-template-columns:56px 1fr}.peng-btns{flex-direction:column;align-items:center}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <div className="peng-page">

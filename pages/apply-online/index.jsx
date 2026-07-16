@@ -759,8 +759,9 @@ export default function ApplyOnline() {
             .ap-hero { padding: 80px 20px 60px; }
             .ap-hero-chips { grid-template-columns: 1fr; }
           }
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

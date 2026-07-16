@@ -129,8 +129,9 @@ function Custom404() {
           .p4-deco-cloud { font-size: 24px !important; }
           .p4-deco-heart { font-size: 20px !important; }
         }
-      `}
+      
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
 
       <div className="p4-root">

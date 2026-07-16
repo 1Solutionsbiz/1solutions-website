@@ -143,8 +143,9 @@ export default function ShopifySeoServices() {
           .shseo-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.shseo-grid{grid-template-columns:repeat(2,1fr)}.shseo-why-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.shseo-hero,.shseo-svc,.shseo-plat,.shseo-proc,.shseo-why,.shseo-faq,.shseo-cta{padding:60px 24px}.shseo-hero{padding-top:60px;padding-bottom:0}.shseo-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.shseo-stat:nth-child(2){border-right:none}.shseo-grid{grid-template-columns:1fr}.shseo-why-grid{grid-template-columns:1fr}.shseo-step{grid-template-columns:56px 1fr}.shseo-btns{flex-direction:column;align-items:center}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
       <div className="shseo-page">

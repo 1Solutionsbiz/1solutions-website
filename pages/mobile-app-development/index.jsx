@@ -458,8 +458,9 @@ export default function MobileAppDevelopment() {
           .mob-rtag-teal{background:rgba(20,184,166,.09);border-color:rgba(20,184,166,.28);color:#0F766E}
           @media(max-width:1024px){.mob-hero h1,.mob-s-title,.mob-faq h2{font-size:36px}.mob-svc-grid{grid-template-columns:repeat(2,1fr)}.mob-stack-grid{grid-template-columns:repeat(2,1fr)}.mob-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.mob-eng-card.feat{transform:none}.mob-eng-card.feat.mob-ev{transform:none}.mob-eng-card.feat.mob-ev:hover{transform:translateY(-4px)}.mob-why-grid{grid-template-columns:repeat(2,1fr)}.mob-tgrid{grid-template-columns:1fr}.mob-contact-grid{grid-template-columns:1fr}}
           @media(max-width:768px){.mob-hero{padding:28px 20px 20px}.mob-hero h1{font-size:26px;letter-spacing:-.3px}.mob-stats{grid-template-columns:1fr 1fr}.mob-stat-col:nth-child(2){border-right:none}.mob-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.mob-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.mob-svc-section,.mob-stack-section,.mob-eng-section,.mob-process-section,.mob-testi,.mob-why-section,.mob-faq,.mob-related{padding:52px 20px}.mob-contact{padding:48px 20px}.mob-svc-grid,.mob-stack-grid,.mob-why-grid{grid-template-columns:1fr}.mob-frow{grid-template-columns:1fr}.mob-ctitle{font-size:28px}.mob-s-title{font-size:28px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

@@ -271,8 +271,9 @@ export default function AgricultureSoftware() {
           .agr-rd{background:rgba(20,83,45,.09);border-color:rgba(20,83,45,.28);color:#14532d}
           @media(max-width:1024px){.agr-hero h1,.agr-sh,.agr-fq h2{font-size:34px}.agr-sk-g{grid-template-columns:repeat(2,1fr)}.agr-tec-g{grid-template-columns:repeat(2,1fr)}.agr-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.agr-en.feat{transform:none}.agr-en.feat.agr-ev{transform:none}.agr-en.feat.agr-ev:hover{transform:translateY(-4px)}.agr-wy-g{grid-template-columns:repeat(2,1fr)}.agr-tg2{grid-template-columns:1fr}.agr-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.agr-bc,.agr-hero,.agr-sec,.agr-ct,.agr-fq,.agr-rel{padding-left:20px;padding-right:20px}.agr-hero{padding-top:28px;padding-bottom:16px}.agr-hero h1{font-size:26px}.agr-stats{grid-template-columns:1fr 1fr}.agr-sc:nth-child(2){border-right:none}.agr-sc:nth-child(3),.agr-sc:nth-child(4){border-top:1px solid rgba(58,90,19,.10)}.agr-sc:nth-child(4){border-right:none}.agr-sk-g,.agr-tec-g,.agr-wy-g{grid-template-columns:1fr}.agr-fr{grid-template-columns:1fr}.agr-cth{font-size:26px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"

@@ -248,8 +248,9 @@ export default function SeoCompanyBurlington() {
           .burl-cta-btn-s:hover{border-color:rgba(255,255,255,0.70);background:rgba(255,255,255,0.08);}
           @media(max-width:900px){.burl-grid4{grid-template-columns:1fr 1fr;}.burl-grid3,.burl-grid2,.burl-res-grid{grid-template-columns:1fr 1fr;}.burl-ind-grid{grid-template-columns:1fr 1fr;}.burl-contact-grid{grid-template-columns:1fr;gap:40px;}}
           @media(max-width:600px){.burl-hero,.burl-sec,.burl-results,.burl-cta,.burl-contact-sec{padding-left:20px;padding-right:20px;}.burl-hero{padding-top:60px;padding-bottom:50px;}.burl-grid4,.burl-grid3,.burl-grid2,.burl-res-grid,.burl-ind-grid{grid-template-columns:1fr;}.burl-bc{padding:12px 20px;}.burl-field-row{grid-template-columns:1fr;}.burl-form-wrap{padding:24px 20px;}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
       </Head>
 

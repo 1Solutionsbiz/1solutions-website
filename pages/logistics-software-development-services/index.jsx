@@ -272,8 +272,9 @@ export default function LogisticsSoftware() {
           .lgt-rd{background:rgba(190,24,93,.09);border-color:rgba(190,24,93,.28);color:#9d174d}
           @media(max-width:1024px){.lgt-hero h1,.lgt-sh,.lgt-fq h2{font-size:34px}.lgt-sk-g{grid-template-columns:repeat(2,1fr)}.lgt-tec-g{grid-template-columns:repeat(2,1fr)}.lgt-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.lgt-en.feat{transform:none}.lgt-en.feat.lgt-ev{transform:none}.lgt-en.feat.lgt-ev:hover{transform:translateY(-4px)}.lgt-wy-g{grid-template-columns:repeat(2,1fr)}.lgt-tg2{grid-template-columns:1fr}.lgt-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.lgt-bc,.lgt-hero,.lgt-sec,.lgt-ct,.lgt-fq,.lgt-rel{padding-left:20px;padding-right:20px}.lgt-hero{padding-top:28px;padding-bottom:16px}.lgt-hero h1{font-size:26px}.lgt-stats{grid-template-columns:1fr 1fr}.lgt-sc:nth-child(2){border-right:none}.lgt-sc:nth-child(3),.lgt-sc:nth-child(4){border-top:1px solid rgba(20,83,45,.10)}.lgt-sc:nth-child(4){border-right:none}.lgt-sk-g,.lgt-tec-g,.lgt-wy-g{grid-template-columns:1fr}.lgt-fr{grid-template-columns:1fr}.lgt-cth{font-size:26px}}
-        `}
+        
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        `}
         </style>
               <script
           type="application/ld+json"
