@@ -52,6 +52,7 @@ const SECTIONS = [
         { label: 'Artificial Intelligence',      href: '/artificial-intelligence' },
         { label: 'AI Agent Development',         href: '/ai-agent-development-services' },
         { label: 'AI Chatbot Development',       href: '/ai-chatbot-development-services' },
+        { label: 'AI Automation Services',       href: '/ai-automation-services' },
         { label: 'Digital Transformation',       href: '/digital-transformation' },
         { label: 'ERP Development',              href: '/erp-application-development-company' },
         { label: 'CRM Development',              href: '/crm-application-development-company' },

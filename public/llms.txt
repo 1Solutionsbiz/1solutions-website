@@ -110,6 +110,7 @@
 
 - [Artificial Intelligence Services](https://www.1solutions.biz/artificial-intelligence): AI strategy, model integration, and intelligent product development using LLMs and ML.
 - [AI Agent Development Services](https://www.1solutions.biz/ai-agent-development-services): Custom AI agent development using LangGraph, AutoGen, CrewAI, and LangChain — conversational, autonomous task, RAG knowledge, workflow automation, and multi-agent systems.
+- [AI Automation Services](https://www.1solutions.biz/ai-automation-services): End-to-end AI automation solutions — intelligent process automation, AI document processing, data pipeline automation, predictive analytics, CRM and finance automation, and custom AI workflow integration for US, Canada, and Australia businesses.
 - [AI Chatbot Development Services](https://www.1solutions.biz/ai-chatbot-development-services): Custom AI chatbots for customer support, sales, eCommerce, and internal helpdesks — GPT-4o, Claude, Gemini, RAG pipelines, CRM integrations, and multi-channel deployment (WhatsApp, Slack, Teams, website).
 - [Digital Transformation](https://www.1solutions.biz/digital-transformation): End-to-end digital transformation consulting and implementation for enterprises.
 - [SaaS Application Development](https://www.1solutions.biz/saas-application-development-company): End-to-end SaaS product development from MVP to scale.
