@@ -490,7 +490,7 @@ function SinglePost({ post, relatedPosts, ogImageUrl }) {
               <p>Get the latest in web development, SEO, and digital marketing — every Tuesday.</p>
               {nlStatus === 'ok' || nlStatus === 'already' ? (
                 <div className="newsletter-success">
-                  {nlStatus === 'already' ? '✓ You're already subscribed!' : '✓ You're subscribed — see you Tuesday!'}
+                  {nlStatus === 'already' ? "✓ You're already subscribed!" : "✓ You're subscribed — see you Tuesday!"}
                 </div>
               ) : (
                 <form
