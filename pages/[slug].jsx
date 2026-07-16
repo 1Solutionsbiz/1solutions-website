@@ -39,6 +39,9 @@ const SLUG_META = {
   'aio-checklist-20-quick-wins-for-ai-friendly-pages': {
     description: 'AIO checklist — 20 quick wins to get your pages cited in Google AI Overviews. Covers E-E-A-T, structured content, schema markup, and entity signals. Free, actionable guide.',
   },
+  '100-best-instagram-hashtags-for-likes-and-followers': {
+    description: '100+ Instagram hashtags for likes and followers, organized by niche (fitness, food, fashion, travel, business). Copy-paste ready, updated for 2026.',
+  },
 };
 
 // ── CATEGORY PAGE COMPONENT ──────────────────────────────────────────────────
