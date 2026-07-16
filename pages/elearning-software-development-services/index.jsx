@@ -328,7 +328,7 @@ export default function ElearningSoftwareDevelopment() {
           /* Hero */
           .el-hero { position:relative;z-index:2;text-align:center;max-width:940px;margin:0 auto;padding:44px 40px 32px; }
           .el-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px; }
-          .el-hero h1 { font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(90deg,#0F3460 0%,#7c3aed 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+          .el-hero h1 { font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
           .el-hero-desc { font-size:16px;color:#3A507A;line-height:1.65;max-width:720px;margin:0 auto 24px; }
           .el-trust-row { display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px; }
           .el-badge { display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07); }
@@ -358,7 +358,7 @@ export default function ElearningSoftwareDevelopment() {
 
           /* Shared */
           .el-s-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block; }
-          .el-s-title { font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px; }
+          .el-s-title { font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px; }
           .el-s-desc { font-size:15px;color:#4A6080;line-height:1.7; }
           .el-s-reveal { opacity:0;transform:translateY(44px);transition:opacity .7s cubic-bezier(0.22,1,.36,1),transform .7s cubic-bezier(0.22,1,.36,1); }
           .el-s-reveal.el-revealed { opacity:1;transform:translateY(0); }
@@ -466,7 +466,7 @@ export default function ElearningSoftwareDevelopment() {
           /* Contact */
           .el-contact { padding:70px 40px;background:linear-gradient(135deg,rgba(237,233,254,.55) 0%,rgba(255,255,255,.60) 40%,rgba(219,234,254,.65) 100%);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.80);position:relative;z-index:1; }
           .el-contact-grid { max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;gap:32px;align-items:start; }
-          .el-ctitle { font-size:42px;font-weight:900;line-height:1.18;margin:0 0 14px;background:linear-gradient(90deg,#0F3460 0%,#7c3aed 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+          .el-ctitle { font-size:42px;font-weight:900;line-height:1.18;margin:0 0 14px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
           .el-cdesc { font-size:14px;color:#4A6080;line-height:1.6;margin:0 0 22px; }
           .el-cbenefits { background:rgba(255,255,255,.70);border:1px solid rgba(255,255,255,.90);border-radius:14px;padding:22px;backdrop-filter:blur(12px);display:flex;flex-direction:column;gap:14px; }
           .el-cbenefit { display:flex;gap:10px;align-items:flex-start; }
@@ -490,7 +490,7 @@ export default function ElearningSoftwareDevelopment() {
 
           /* FAQ */
           .el-faq { padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(15,52,96,.08);position:relative;z-index:1; }
-          .el-faq h2 { font-size:46px;font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px; }
+          .el-faq h2 { font-size:46px;font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px; }
           .el-faq-sub { font-size:15px;color:#4A6080;margin:0 0 36px; }
           .el-faq-list { display:flex;flex-direction:column;gap:10px; }
           .el-fitem { background:linear-gradient(135deg,rgba(219,234,254,.55) 0%,rgba(255,255,255,.80) 60%,rgba(237,233,254,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(15,52,96,.06);transition:border-color .2s; }
@@ -510,7 +510,7 @@ export default function ElearningSoftwareDevelopment() {
           /* Related */
           .el-related { padding:80px 40px;background:rgba(237,233,254,.18);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.60); }
           .el-related-inner { max-width:1300px;margin:0 auto;text-align:center; }
-          .el-related h2 { font-size:34px;font-weight:900;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 12px; }
+          .el-related h2 { font-size:34px;font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 12px; }
           .el-related-sub { font-size:14px;color:#4A6080;margin:0 auto;max-width:560px; }
           .el-related hr { border:none;border-top:1px solid rgba(15,52,96,.10);margin:32px 0; }
           .el-rtags { display:flex;flex-wrap:wrap;justify-content:center;gap:10px; }
@@ -552,7 +552,9 @@ export default function ElearningSoftwareDevelopment() {
             .el-ctitle { font-size:28px; }
             .el-s-title { font-size:28px; }
           }
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
               <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({

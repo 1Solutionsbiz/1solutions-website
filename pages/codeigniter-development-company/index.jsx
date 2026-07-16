@@ -238,7 +238,7 @@ export default function CodeIgniterDevelopmentCompany() {
           .ci-hero-block::after  { content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(217,119,6,0.11) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px); }
           .ci-hero-content { position:relative;z-index:2;text-align:center;max-width:880px;margin:0 auto;padding:56px 40px 40px; }
           .ci-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#114171;margin-bottom:18px; }
-          .ci-hero-content h1 { font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(90deg,#0F3460 0%,#114171 55%,#1a5a9a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+          .ci-hero-content h1 { font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
           .ci-hero-content p { font-size:16px;color:#1a3050;line-height:1.65;max-width:640px;margin:0 auto 28px; }
           .ci-btn-hero { display:inline-block;padding:14px 40px;background:rgba(255,255,255,0.58);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.88);border-radius:50px;color:#114171;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(17,65,113,0.12),inset 0 1px 0 rgba(255,255,255,1); }
           .ci-btn-hero:hover { background:rgba(255,255,255,0.90);border-color:rgba(17,65,113,0.45);box-shadow:0 12px 36px rgba(17,65,113,0.18),0 0 0 2px rgba(17,65,113,0.14),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px);color:#114171; }
@@ -259,7 +259,7 @@ export default function CodeIgniterDevelopmentCompany() {
 
           /* Shared section tokens */
           .ci-section-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#114171;margin-bottom:12px;display:block; }
-          .ci-section-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#114171 55%,#1a5a9a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin-bottom:10px; }
+          .ci-section-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin-bottom:10px; }
           .ci-section-desc { font-size:15px;color:#1a3050;line-height:1.7;max-width:680px;margin-bottom:36px; }
           .ci-section-sub  { font-size:16px;color:#1a3050;margin:0; }
 
@@ -285,7 +285,7 @@ export default function CodeIgniterDevelopmentCompany() {
           .ci-portfolio-section { background:transparent;padding:70px 40px;position:relative;z-index:1; }
           .ci-portfolio-wrap { max-width:1280px;margin:0 auto;background:rgba(255,255,255,0.48);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.88);border-radius:24px;padding:44px 44px 50px;box-shadow:0 8px 40px rgba(17,65,113,0.07),inset 0 1px 0 rgba(255,255,255,0.95); }
           .ci-portfolio-header { display:flex;align-items:center;justify-content:space-between;margin-bottom:36px;gap:24px; }
-          .ci-portfolio-title { font-size:40px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#114171 55%,#1a5a9a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0; }
+          .ci-portfolio-title { font-size:40px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0; }
           .ci-btn-portfolio-cta { display:inline-block;padding:13px 26px;background:rgba(255,255,255,0.58);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.88);border-radius:50px;color:#114171;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap;transition:all 0.3s;box-shadow:0 4px 20px rgba(17,65,113,0.09),inset 0 1px 0 rgba(255,255,255,1); }
           .ci-btn-portfolio-cta:hover { background:rgba(255,255,255,0.90);border-color:rgba(17,65,113,0.40);transform:translateY(-2px);color:#114171; }
           .ci-portfolio-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:24px; }
@@ -302,7 +302,7 @@ export default function CodeIgniterDevelopmentCompany() {
           .ci-process-section { background:transparent;padding:80px 40px;position:relative;z-index:1; }
           .ci-process-top { max-width:1280px;margin:0 auto 56px; }
           .ci-process-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#114171;margin:0 0 14px; }
-          .ci-process-main-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#114171 55%,#1a5a9a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
+          .ci-process-main-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
           .ci-process-main-desc { font-size:15px;color:#1a3050;line-height:1.7;margin:0; }
           .ci-process-divider { border:none;border-top:1px solid rgba(17,65,113,0.15);margin:36px 0 0;width:100%; }
           .ci-process-inner { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:minmax(0,55%) minmax(0,45%);gap:80px;align-items:start; }
@@ -363,7 +363,7 @@ export default function CodeIgniterDevelopmentCompany() {
           .ci-engage-section { background:#eef3fa;border-top:1px solid rgba(17,65,113,0.09);border-bottom:1px solid rgba(17,65,113,0.09);padding:80px 40px;position:relative;z-index:1; }
           .ci-engage-inner { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:stretch; }
           .ci-engage-left { position:sticky;top:100px;display:flex;flex-direction:column; }
-          .ci-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#114171 55%,#1a5a9a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
+          .ci-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
           .ci-engage-desc { font-size:15px;color:#1a3050;line-height:1.75;margin:0 0 32px; }
           .ci-engage-img-wrap { border-radius:14px;overflow:hidden;box-shadow:0 16px 48px rgba(17,65,113,0.12);flex:1;min-height:300px; }
           .ci-engage-img-wrap img { width:100%;height:100%;min-height:300px;object-fit:cover;display:block; }
@@ -385,7 +385,7 @@ export default function CodeIgniterDevelopmentCompany() {
           .ci-contact-container { max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;align-items:start;gap:32px; }
           .ci-contact-left  { padding:0;align-self:start; }
           .ci-contact-right { align-self:start; }
-          .ci-contact-title { font-size:48px;font-weight:900;line-height:1.2;margin:0 0 16px;background:linear-gradient(90deg,#0F3460 0%,#114171 55%,#1a5a9a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent; }
+          .ci-contact-title { font-size:48px;font-weight:900;line-height:1.2;margin:0 0 16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent; }
           .ci-contact-desc  { font-size:14px;color:#1a3050;line-height:1.6;margin:0 0 24px; }
           .ci-merged-box { background:linear-gradient(135deg,rgba(255,255,255,0.75) 0%,rgba(214,228,247,0.38) 100%);border:1px solid rgba(255,255,255,0.92);border-radius:14px;padding:24px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,1);display:flex;flex-direction:column;gap:20px; }
           .ci-benefit-item { display:flex;gap:10px;align-items:flex-start; }
@@ -419,7 +419,7 @@ export default function CodeIgniterDevelopmentCompany() {
           /* FAQ */
           .ci-faq-section { padding:80px 40px;background:#eef3fa;border-top:1px solid rgba(17,65,113,0.09);position:relative;z-index:1; }
           .ci-faq-inner  { max-width:1280px;margin:0 auto; }
-          .ci-faq-heading { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#114171 55%,#1a5a9a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 36px; }
+          .ci-faq-heading { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 36px; }
           .ci-faq-list { display:flex;flex-direction:column;gap:12px; }
           .ci-faq-item { background:linear-gradient(135deg,rgba(214,228,247,0.58) 0%,rgba(255,255,255,0.82) 60%,rgba(232,237,248,0.42) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.88);border-radius:16px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(17,65,113,0.06),inset 0 1px 0 rgba(255,255,255,0.95);transition:border-color 0.2s,box-shadow 0.2s; }
           .ci-faq-item.open { border-color:rgba(17,65,113,0.32);box-shadow:0 8px 32px rgba(17,65,113,0.10),inset 0 1px 0 rgba(255,255,255,1); }
@@ -440,7 +440,7 @@ export default function CodeIgniterDevelopmentCompany() {
           .ci-related-section { background:rgba(214,228,247,0.22);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,0.65);padding:80px 40px; }
           .ci-related-inner { max-width:1280px;margin:0 auto;text-align:center; }
           .ci-related-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#114171;margin:0 0 14px;display:block; }
-          .ci-related-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#114171 55%,#1a5a9a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
+          .ci-related-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
           .ci-related-sub { font-size:15px;color:#0a1628;line-height:1.7;margin:0 auto;max-width:680px; }
           .ci-related-divider { border:none;border-top:1px solid rgba(17,65,113,0.12);margin:40px 0; }
           .ci-related-tags { display:flex;flex-wrap:wrap;justify-content:center;gap:12px; }
@@ -553,7 +553,9 @@ export default function CodeIgniterDevelopmentCompany() {
             .ci-ecard-features { grid-template-columns:1fr; }
             .ci-merged-box { padding:18px; }
           }
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
 
       <div className="ci-page">

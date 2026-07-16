@@ -238,7 +238,7 @@ export default function OpenCartDevelopmentCompany() {
           .oc-hero-block::after { content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(20,184,166,0.12) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px); }
           .oc-hero-content { position:relative;z-index:2;text-align:center;max-width:860px;margin:0 auto;padding:56px 40px 40px; }
           .oc-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#164e63;margin-bottom:18px; }
-          .oc-hero-content h1 { font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(90deg,#0e7490 0%,#0891b2 55%,#0d9488 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+          .oc-hero-content h1 { font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
           .oc-hero-content p { font-size:16px;color:#1e4a5c;line-height:1.65;max-width:620px;margin:0 auto 28px; }
           .oc-btn-hero { display:inline-block;padding:14px 40px;background:rgba(255,255,255,0.58);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.88);border-radius:50px;color:#0e7490;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(6,182,212,0.12),inset 0 1px 0 rgba(255,255,255,1); }
           .oc-btn-hero:hover { background:rgba(255,255,255,0.90);border-color:rgba(6,182,212,0.50);box-shadow:0 12px 36px rgba(6,182,212,0.18),0 0 0 2px rgba(6,182,212,0.18),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px);color:#0e7490; }
@@ -259,7 +259,7 @@ export default function OpenCartDevelopmentCompany() {
 
           /* Sections shared */
           .oc-section-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#0891b2;margin-bottom:12px;display:block; }
-          .oc-section-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0e7490 0%,#0891b2 55%,#0d9488 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin-bottom:10px; }
+          .oc-section-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin-bottom:10px; }
           .oc-section-desc { font-size:15px;color:#1e4a5c;line-height:1.7;max-width:680px;margin-bottom:36px; }
           .oc-section-sub { font-size:16px;color:#1e4a5c;margin:0; }
 
@@ -285,7 +285,7 @@ export default function OpenCartDevelopmentCompany() {
           .oc-portfolio-section { background:transparent;padding:70px 40px;position:relative;z-index:1; }
           .oc-portfolio-wrap { max-width:1280px;margin:0 auto;background:rgba(255,255,255,0.48);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.88);border-radius:24px;padding:44px 44px 50px;box-shadow:0 8px 40px rgba(6,182,212,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
           .oc-portfolio-header { display:flex;align-items:center;justify-content:space-between;margin-bottom:36px;gap:24px; }
-          .oc-portfolio-title { font-size:40px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0e7490 0%,#0891b2 55%,#0d9488 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0; }
+          .oc-portfolio-title { font-size:40px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0; }
           .oc-btn-portfolio-cta { display:inline-block;padding:13px 26px;background:rgba(255,255,255,0.58);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.88);border-radius:50px;color:#0e7490;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap;transition:all 0.3s;box-shadow:0 4px 20px rgba(6,182,212,0.10),inset 0 1px 0 rgba(255,255,255,1); }
           .oc-btn-portfolio-cta:hover { background:rgba(255,255,255,0.90);border-color:rgba(6,182,212,0.45);transform:translateY(-2px);color:#0e7490; }
           .oc-portfolio-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:24px; }
@@ -302,7 +302,7 @@ export default function OpenCartDevelopmentCompany() {
           .oc-process-section { background:transparent;padding:80px 40px;position:relative;z-index:1; }
           .oc-process-top { max-width:1280px;margin:0 auto 56px; }
           .oc-process-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#0891b2;margin:0 0 14px; }
-          .oc-process-main-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0e7490 0%,#0891b2 55%,#0d9488 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
+          .oc-process-main-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
           .oc-process-main-desc { font-size:15px;color:#1e4a5c;line-height:1.7;margin:0; }
           .oc-process-divider { border:none;border-top:1px solid rgba(6,182,212,0.18);margin:36px 0 0;width:100%; }
           .oc-process-inner { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:minmax(0,55%) minmax(0,45%);gap:80px;align-items:start; }
@@ -363,7 +363,7 @@ export default function OpenCartDevelopmentCompany() {
           .oc-engage-section { background:#ecfeff;border-top:1px solid rgba(6,182,212,0.10);border-bottom:1px solid rgba(6,182,212,0.10);padding:80px 40px;position:relative;z-index:1; }
           .oc-engage-inner { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:stretch; }
           .oc-engage-left { position:sticky;top:100px;display:flex;flex-direction:column; }
-          .oc-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0e7490 0%,#0891b2 55%,#0d9488 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
+          .oc-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
           .oc-engage-desc { font-size:15px;color:#1e4a5c;line-height:1.75;margin:0 0 32px; }
           .oc-engage-img-wrap { border-radius:14px;overflow:hidden;box-shadow:0 16px 48px rgba(6,182,212,0.14);flex:1;min-height:300px; }
           .oc-engage-img-wrap img { width:100%;height:100%;min-height:300px;object-fit:cover;display:block; }
@@ -385,7 +385,7 @@ export default function OpenCartDevelopmentCompany() {
           .oc-contact-container { max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;align-items:start;gap:32px; }
           .oc-contact-left { padding:0;align-self:start; }
           .oc-contact-right { align-self:start; }
-          .oc-contact-title { font-size:48px;font-weight:900;line-height:1.2;margin:0 0 16px;background:linear-gradient(90deg,#0e7490 0%,#0891b2 55%,#0d9488 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent; }
+          .oc-contact-title { font-size:48px;font-weight:900;line-height:1.2;margin:0 0 16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent; }
           .oc-contact-desc { font-size:14px;color:#1e4a5c;line-height:1.6;margin:0 0 24px; }
           .oc-merged-box { background:linear-gradient(135deg,rgba(255,255,255,0.75) 0%,rgba(207,250,254,0.38) 100%);border:1px solid rgba(255,255,255,0.92);border-radius:14px;padding:24px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,1);display:flex;flex-direction:column;gap:20px; }
           .oc-benefit-item { display:flex;gap:10px;align-items:flex-start; }
@@ -419,7 +419,7 @@ export default function OpenCartDevelopmentCompany() {
           /* FAQ */
           .oc-faq-section { padding:80px 40px;background:#ecfeff;border-top:1px solid rgba(6,182,212,0.10);position:relative;z-index:1; }
           .oc-faq-inner { max-width:1280px;margin:0 auto; }
-          .oc-faq-heading { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0e7490 0%,#0891b2 55%,#0d9488 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 36px; }
+          .oc-faq-heading { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 36px; }
           .oc-faq-list { display:flex;flex-direction:column;gap:12px; }
           .oc-faq-item { background:linear-gradient(135deg,rgba(207,250,254,0.58) 0%,rgba(255,255,255,0.82) 60%,rgba(204,251,241,0.42) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.88);border-radius:16px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(6,182,212,0.07),inset 0 1px 0 rgba(255,255,255,0.95);transition:border-color 0.2s,box-shadow 0.2s; }
           .oc-faq-item.open { border-color:rgba(6,182,212,0.38);box-shadow:0 8px 32px rgba(6,182,212,0.12),inset 0 1px 0 rgba(255,255,255,1); }
@@ -440,7 +440,7 @@ export default function OpenCartDevelopmentCompany() {
           .oc-related-section { background:rgba(207,250,254,0.22);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,0.65);padding:80px 40px; }
           .oc-related-inner { max-width:1280px;margin:0 auto;text-align:center; }
           .oc-related-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#155e75;margin:0 0 14px;display:block; }
-          .oc-related-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0e7490 0%,#0891b2 55%,#0d9488 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
+          .oc-related-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
           .oc-related-sub { font-size:15px;color:#0c1a2e;line-height:1.7;margin:0 auto;max-width:680px; }
           .oc-related-divider { border:none;border-top:1px solid rgba(6,182,212,0.14);margin:40px 0; }
           .oc-related-tags { display:flex;flex-wrap:wrap;justify-content:center;gap:12px; }
@@ -553,7 +553,9 @@ export default function OpenCartDevelopmentCompany() {
             .oc-ecard-features { grid-template-columns:1fr; }
             .oc-merged-box { padding:18px; }
           }
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
 
       <div className="oc-page">

@@ -253,7 +253,7 @@ export default function OpenPositions() {
             margin: 0 0 20px;
           }
           .op-gradient-text {
-            background: linear-gradient(90deg, #114171 0%, #FE9700 100%);
+            background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -612,7 +612,9 @@ export default function OpenPositions() {
           @media (max-width: 480px) {
             .op-hero h1 { font-size: 2rem; }
           }
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
 
       <div className="op-page">

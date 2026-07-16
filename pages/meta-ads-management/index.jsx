@@ -72,7 +72,7 @@ export default function MetaAdsManagement() {
           .meta-o2{position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,0.08) 0%,transparent 70%);pointer-events:none;filter:blur(8px)}
           .meta-in{max-width:1200px;margin:0 auto;position:relative;z-index:1}
           .meta-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(45,58,140,0.10);border:1px solid rgba(45,58,140,0.25);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:24px}
-          .meta-h1{font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;background:linear-gradient(90deg,#1a1f6e 0%,${ACCENT} 45%,#7C3AED 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .meta-h1{font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .meta-p{font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:660px}
           .meta-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
           .meta-bp{display:inline-flex;align-items:center;gap:8px;background:${ACCENT};color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(45,58,140,.25)}
@@ -94,7 +94,7 @@ export default function MetaAdsManagement() {
           .meta-si2{max-width:1200px;margin:0 auto}
           .meta-tag{display:block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:12px}
           .meta-h2{font-size:clamp(1.8rem,3vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-.5px;color:#0A1628;margin:0 0 16px}
-          .meta-h2 span{background:linear-gradient(90deg,${ACCENT},#7C3AED);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .meta-h2 span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .meta-lead{font-size:1rem;color:#4b5563;line-height:1.75;max-width:620px;margin:0 0 48px}
           .meta-g3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
           .meta-card{background:linear-gradient(135deg,rgba(224,231,255,.45) 0%,rgba(255,255,255,.85) 60%,rgba(237,233,254,.35) 100%);border:1px solid rgba(255,255,255,.85);border-radius:20px;padding:28px 24px;box-shadow:0 4px 24px rgba(45,58,140,.07),inset 0 1px 0 rgba(255,255,255,.95);transition:transform .22s,box-shadow .22s}
@@ -131,11 +131,13 @@ export default function MetaAdsManagement() {
           .meta-fic svg{width:14px;height:14px;color:${ACCENT}}
           .meta-fa{padding:0 24px 20px;font-size:14px;color:#4b5563;line-height:1.8}
           .meta-cta{background:linear-gradient(135deg,rgba(224,231,255,.70) 0%,rgba(255,255,255,.60) 40%,rgba(237,233,254,.65) 100%);padding:90px 40px;text-align:center}
-          .meta-cth{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-.5px;margin:0 0 18px;background:linear-gradient(90deg,#1a1f6e 0%,${ACCENT} 50%,#7C3AED 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .meta-cth{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-.5px;margin:0 0 18px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .meta-ctp{font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px}
           @media(max-width:900px){.meta-g3,.meta-rg{grid-template-columns:1fr 1fr}}
           @media(max-width:600px){.meta-hero,.meta-sec,.meta-rb,.meta-cta{padding-left:20px;padding-right:20px}.meta-hero{padding-top:60px;padding-bottom:50px}.meta-g3,.meta-rg{grid-template-columns:1fr}.meta-bc{padding:12px 20px}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
       <nav className="meta-bc"><div className="meta-bci"><Link href="/">Home</Link><span className="meta-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="meta-sep">›</span><span className="meta-cur">Meta Ads</span></div></nav>
       <section className="meta-hero"><div className="meta-o1"/><div className="meta-o2"/>

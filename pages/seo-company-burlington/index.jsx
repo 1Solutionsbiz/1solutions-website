@@ -141,7 +141,7 @@ export default function SeoCompanyBurlington() {
           .burl-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(26,61,10,0.08);border:1px solid rgba(26,61,10,0.18);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#1a3d0a;margin-bottom:24px;}
           .burl-eyebrow-dot{width:7px;height:7px;border-radius:50%;background:#358020;display:inline-block;}
           .burl-h1{font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;color:#0A1628;}
-          .burl-h1 span{background:linear-gradient(90deg,#1a3d0a 0%,#358020 55%,#FE9700 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+          .burl-h1 span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
           .burl-desc{font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:680px;}
           .burl-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px;}
           .burl-btn-p{display:inline-flex;align-items:center;gap:8px;background:#1a3d0a;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 6px 24px rgba(26,61,10,0.28);}
@@ -163,7 +163,7 @@ export default function SeoCompanyBurlington() {
           .burl-sec-inner{max-width:1200px;margin:0 auto;}
           .burl-tag{display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#358020;margin-bottom:12px;}
           .burl-h2{font-size:clamp(1.8rem,3vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-0.5px;color:#0A1628;margin:0 0 16px;}
-          .burl-h2 span{background:linear-gradient(90deg,#1a3d0a,#358020);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+          .burl-h2 span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
           .burl-lead{font-size:1rem;color:#4b5563;line-height:1.75;max-width:620px;margin:0 0 48px;}
           .burl-grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
           .burl-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
@@ -215,7 +215,7 @@ export default function SeoCompanyBurlington() {
           .burl-contact-inner{max-width:1200px;margin:0 auto;}
           .burl-contact-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:60px;align-items:start;}
           .burl-info-h{font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:900;color:#0A1628;margin:0 0 16px;line-height:1.25;}
-          .burl-info-h span{background:linear-gradient(90deg,#1a3d0a,#358020);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+          .burl-info-h span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
           .burl-info-p{font-size:1rem;color:#4b5563;line-height:1.75;margin:0 0 28px;}
           .burl-ci{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px;}
           .burl-ci-icon{width:40px;height:40px;border-radius:12px;background:rgba(26,61,10,0.09);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
@@ -248,7 +248,9 @@ export default function SeoCompanyBurlington() {
           .burl-cta-btn-s:hover{border-color:rgba(255,255,255,0.70);background:rgba(255,255,255,0.08);}
           @media(max-width:900px){.burl-grid4{grid-template-columns:1fr 1fr;}.burl-grid3,.burl-grid2,.burl-res-grid{grid-template-columns:1fr 1fr;}.burl-ind-grid{grid-template-columns:1fr 1fr;}.burl-contact-grid{grid-template-columns:1fr;gap:40px;}}
           @media(max-width:600px){.burl-hero,.burl-sec,.burl-results,.burl-cta,.burl-contact-sec{padding-left:20px;padding-right:20px;}.burl-hero{padding-top:60px;padding-bottom:50px;}.burl-grid4,.burl-grid3,.burl-grid2,.burl-res-grid,.burl-ind-grid{grid-template-columns:1fr;}.burl-bc{padding:12px 20px;}.burl-field-row{grid-template-columns:1fr;}.burl-form-wrap{padding:24px 20px;}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
 
       <nav className="burl-bc" aria-label="Breadcrumb">

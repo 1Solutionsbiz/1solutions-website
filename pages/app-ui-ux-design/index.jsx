@@ -183,7 +183,7 @@ export default function AppUiUxDesign() {
           .ux-breadcrumb a:hover { color: #E11D48; }
           .ux-breadcrumb span { color: #d1d5db; }
           .ux-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(225,29,72,0.07); border: 1px solid rgba(225,29,72,0.18); border-radius: 100px; padding: 5px 14px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #BE123C; margin-bottom: 28px; }
-          .ux-hero-h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 900; line-height: 1.1; letter-spacing: -1px; background: linear-gradient(90deg, #0F3460 0%, #E11D48 50%, #A855F7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 20px; max-width: 920px; margin-left: auto; margin-right: auto; }
+          .ux-hero-h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 900; line-height: 1.1; letter-spacing: -1px; background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 20px; max-width: 920px; margin-left: auto; margin-right: auto; }
           .ux-hero-sub { font-size: 1.08rem; color: #4A6080; line-height: 1.75; max-width: 660px; margin: 0 auto 36px; }
           .ux-hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 56px; }
           .ux-btn-primary { display: inline-flex; align-items: center; gap: 8px; background: #E11D48; color: #fff; padding: 14px 30px; border-radius: 50px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all 0.25s; box-shadow: 0 4px 20px rgba(225,29,72,0.28); }
@@ -199,7 +199,7 @@ export default function AppUiUxDesign() {
           .ux-services-section { background: #f8fafd; padding: 80px 40px; box-shadow: 0 -20px 60px rgba(225,29,72,0.05); }
           .ux-services-inner { max-width: 1280px; margin: 0 auto; }
           .ux-section-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #E11D48; margin-bottom: 10px; display: block; }
-          .ux-section-title { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 900; line-height: 1.15; letter-spacing: -1px; background: linear-gradient(90deg, #0F3460 0%, #E11D48 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 10px; }
+          .ux-section-title { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 900; line-height: 1.15; letter-spacing: -1px; background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 10px; }
           .ux-section-desc { font-size: 15px; color: #4A6080; line-height: 1.7; max-width: 640px; margin-bottom: 44px; }
           .ux-services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
           .ux-service-card { background: linear-gradient(135deg, rgba(255,241,242,0.65) 0%, rgba(255,255,255,0.88) 60%, rgba(250,245,255,0.45) 100%); border: 1px solid rgba(255,255,255,0.85); border-radius: 20px; padding: 26px 22px 22px; position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(225,29,72,0.04); opacity: 0; transform: translateY(20px); transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.22s, border-color 0.22s; }
@@ -250,7 +250,7 @@ export default function AppUiUxDesign() {
           .ux-cta-orb1 { position: absolute; top: -80px; right: -80px; width: 360px; height: 360px; border-radius: 50%; background: radial-gradient(circle, rgba(225,29,72,0.09) 0%, transparent 70%); pointer-events: none; }
           .ux-cta-orb2 { position: absolute; bottom: -60px; left: -60px; width: 280px; height: 280px; border-radius: 50%; background: radial-gradient(circle, rgba(168,85,247,0.07) 0%, transparent 70%); pointer-events: none; }
           .ux-cta-inner { max-width: 760px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
-          .ux-cta-title { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; background: linear-gradient(90deg, #0F3460 0%, #E11D48 50%, #A855F7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px; line-height: 1.2; }
+          .ux-cta-title { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px; line-height: 1.2; }
           .ux-cta-sub { font-size: 1.05rem; color: #4A6080; line-height: 1.75; margin: 0 auto 36px; max-width: 520px; }
           .ux-cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
@@ -265,7 +265,9 @@ export default function AppUiUxDesign() {
             .ux-process-step { grid-template-columns: 56px 1fr; }
             .ux-hero-btns { flex-direction: column; align-items: center; }
           }
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
 
       <div className="ux-page">

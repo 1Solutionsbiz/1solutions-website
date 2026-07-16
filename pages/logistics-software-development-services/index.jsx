@@ -146,7 +146,7 @@ export default function LogisticsSoftware() {
           .lgt-bc a{color:${txt};text-decoration:none}
           .lgt-hero{position:relative;z-index:2;text-align:center;max-width:940px;margin:0 auto;padding:44px 40px 28px}
           .lgt-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:${ac};margin-bottom:14px}
-          .lgt-hero h1{font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(90deg,${txt} 0%,${ac} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .lgt-hero h1{font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .lgt-desc{font-size:16px;color:${txt2};line-height:1.65;max-width:720px;margin:0 auto 22px}
           .lgt-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-bottom:24px}
           .lgt-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:5px 13px;font-size:12px;font-weight:600;color:${txt};box-shadow:0 2px 8px rgba(20,83,45,.07)}
@@ -164,7 +164,7 @@ export default function LogisticsSoftware() {
           .lgt-sec-alt{background:rgba(240,253,244,.55);border-top:1px solid rgba(20,83,45,.08);border-bottom:1px solid rgba(20,83,45,.08)}
           .lgt-in{max-width:1300px;margin:0 auto}
           .lgt-sey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
-          .lgt-sh{font-size:44px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(90deg,${txt} 0%,#0f766e 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .lgt-sh{font-size:44px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .lgt-sd{font-size:15px;color:${txt2};line-height:1.7;max-width:700px}
           .lgt-rv{opacity:0;transform:translateY(40px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
           .lgt-rv.lgt-ok{opacity:1;transform:translateY(0)}
@@ -226,7 +226,7 @@ export default function LogisticsSoftware() {
           .lgt-wc p{font-size:12px;color:${txt2};line-height:1.6;margin:0}
           .lgt-ct{padding:64px 40px;background:linear-gradient(135deg,rgba(240,253,244,.55) 0%,rgba(255,255,255,.60) 40%,rgba(240,249,255,.50) 100%);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.80);position:relative;z-index:1}
           .lgt-ct-g{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr;gap:28px;align-items:start}
-          .lgt-cth{font-size:38px;font-weight:900;line-height:1.18;margin:0 0 12px;background:linear-gradient(90deg,${txt} 0%,${ac} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .lgt-cth{font-size:38px;font-weight:900;line-height:1.18;margin:0 0 12px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .lgt-ctd{font-size:14px;color:${txt2};line-height:1.6;margin:0 0 18px}
           .lgt-ben{background:rgba(255,255,255,.70);border:1px solid rgba(255,255,255,.90);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:12px}
           .lgt-be{display:flex;gap:9px;align-items:flex-start}
@@ -247,7 +247,7 @@ export default function LogisticsSoftware() {
           .lgt-sub{width:100%;padding:13px;background:${ac};border:none;color:#fff;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all .25s;box-shadow:0 6px 24px rgba(20,83,45,.25)}
           .lgt-sub:hover{background:${txt};transform:translateY(-2px)}
           .lgt-fq{padding:72px 40px;background:rgba(240,253,244,.55);border-top:1px solid rgba(20,83,45,.08);position:relative;z-index:1}
-          .lgt-fq h2{font-size:42px;font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,${txt} 0%,#0f766e 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
+          .lgt-fq h2{font-size:42px;font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
           .lgt-fq-sub{font-size:15px;color:${txt2};margin:0 0 32px}
           .lgt-fql{display:flex;flex-direction:column;gap:9px}
           .lgt-fi{background:linear-gradient(135deg,rgba(240,253,244,.55) 0%,rgba(255,255,255,.88) 55%,rgba(240,249,255,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(20,83,45,.05);transition:border-color .2s}
@@ -261,7 +261,7 @@ export default function LogisticsSoftware() {
           .lgt-fa{padding:0 18px 18px 52px;font-size:14px;color:#4b5563;line-height:1.8}
           .lgt-rel{padding:64px 40px;background:rgba(240,253,244,.14);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.60)}
           .lgt-ri{max-width:1300px;margin:0 auto;text-align:center}
-          .lgt-ri h2{font-size:30px;font-weight:900;background:linear-gradient(90deg,${txt} 0%,#0f766e 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 10px}
+          .lgt-ri h2{font-size:30px;font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 10px}
           .lgt-ri hr{border:none;border-top:1px solid rgba(20,83,45,.10);margin:24px 0}
           .lgt-rts{display:flex;flex-wrap:wrap;justify-content:center;gap:9px}
           .lgt-rt{display:inline-block;padding:9px 18px;border:1.5px solid;border-radius:50px;font-size:13px;font-weight:500;text-decoration:none;transition:all .22s}
@@ -272,7 +272,9 @@ export default function LogisticsSoftware() {
           .lgt-rd{background:rgba(190,24,93,.09);border-color:rgba(190,24,93,.28);color:#9d174d}
           @media(max-width:1024px){.lgt-hero h1,.lgt-sh,.lgt-fq h2{font-size:34px}.lgt-sk-g{grid-template-columns:repeat(2,1fr)}.lgt-tec-g{grid-template-columns:repeat(2,1fr)}.lgt-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.lgt-en.feat{transform:none}.lgt-en.feat.lgt-ev{transform:none}.lgt-en.feat.lgt-ev:hover{transform:translateY(-4px)}.lgt-wy-g{grid-template-columns:repeat(2,1fr)}.lgt-tg2{grid-template-columns:1fr}.lgt-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.lgt-bc,.lgt-hero,.lgt-sec,.lgt-ct,.lgt-fq,.lgt-rel{padding-left:20px;padding-right:20px}.lgt-hero{padding-top:28px;padding-bottom:16px}.lgt-hero h1{font-size:26px}.lgt-stats{grid-template-columns:1fr 1fr}.lgt-sc:nth-child(2){border-right:none}.lgt-sc:nth-child(3),.lgt-sc:nth-child(4){border-top:1px solid rgba(20,83,45,.10)}.lgt-sc:nth-child(4){border-right:none}.lgt-sk-g,.lgt-tec-g,.lgt-wy-g{grid-template-columns:1fr}.lgt-fr{grid-template-columns:1fr}.lgt-cth{font-size:26px}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
               <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({

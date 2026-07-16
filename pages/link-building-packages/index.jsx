@@ -739,7 +739,7 @@ export default function LinkBuildingPackages() {
           .lbp-why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
           .lbp-why-card{padding:32px 28px;text-align:center;transition:transform .25s,box-shadow .25s,border-color .25s}
           .lbp-why-card:hover{transform:translateY(-6px)}
-          .lbp-why-num{font-size:3.2rem;font-weight:900;background:linear-gradient(90deg,#0F3460,#D97706);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-1.5px;line-height:1;margin-bottom:12px}
+          .lbp-why-num{font-size:3.2rem;font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-1.5px;line-height:1;margin-bottom:12px}
           .lbp-why-desc{font-size:14px;color:#374151;line-height:1.6;margin-bottom:8px}
           .lbp-why-src{font-size:11px;color:#9ca3af;font-style:italic}
 
@@ -880,7 +880,7 @@ export default function LinkBuildingPackages() {
           .lbp-res-orb{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(217,119,6,.18) 0%,transparent 65%);top:-150px;right:-100px;pointer-events:none;filter:blur(30px)}
           .lbp-res-in{max-width:1280px;margin:0 auto;position:relative;z-index:2}
           .lbp-res-ey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:10px;display:block;text-align:center}
-          .lbp-res-ttl{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;text-align:center;margin-bottom:12px;line-height:1.15;background:linear-gradient(90deg,#fff 30%,#fcd34d 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .lbp-res-ttl{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;text-align:center;margin-bottom:12px;line-height:1.15;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .lbp-res-sub{font-size:1rem;color:rgba(255,255,255,.60);text-align:center;max-width:560px;margin:0 auto 52px}
           .lbp-res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
           .lbp-res-card{background:rgba(255,255,255,.07);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:32px;text-align:center;transition:background .25s,border-color .25s}
@@ -1081,7 +1081,9 @@ export default function LinkBuildingPackages() {
             .lbp-fq-badge{left:12px}
             .lbp-author-inner{flex-direction:column;gap:14px}
           }
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
 
       <div className="lbp-page">

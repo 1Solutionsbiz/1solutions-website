@@ -145,7 +145,7 @@ export default function WellnessSoftware() {
           .wls-bc a{color:${txt};text-decoration:none}
           .wls-hero{position:relative;z-index:2;text-align:center;max-width:940px;margin:0 auto;padding:44px 40px 28px}
           .wls-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:${ac2};margin-bottom:14px}
-          .wls-hero h1{font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(90deg,${txt} 0%,${ac2} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .wls-hero h1{font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .wls-desc{font-size:16px;color:${txt2};line-height:1.65;max-width:720px;margin:0 auto 22px}
           .wls-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-bottom:24px}
           .wls-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:5px 13px;font-size:12px;font-weight:600;color:${txt};box-shadow:0 2px 8px rgba(74,25,66,.07)}
@@ -163,7 +163,7 @@ export default function WellnessSoftware() {
           .wls-sec-alt{background:rgba(253,244,255,.55);border-top:1px solid rgba(74,25,66,.08);border-bottom:1px solid rgba(74,25,66,.08)}
           .wls-in{max-width:1300px;margin:0 auto}
           .wls-sey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
-          .wls-sh{font-size:44px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(90deg,${txt} 0%,${ac2} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .wls-sh{font-size:44px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .wls-sd{font-size:15px;color:${txt2};line-height:1.7;max-width:700px}
           .wls-rv{opacity:0;transform:translateY(40px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
           .wls-rv.wls-ok{opacity:1;transform:translateY(0)}
@@ -225,7 +225,7 @@ export default function WellnessSoftware() {
           .wls-wc p{font-size:12px;color:${txt2};line-height:1.6;margin:0}
           .wls-ct{padding:64px 40px;background:linear-gradient(135deg,rgba(253,244,255,.55) 0%,rgba(255,255,255,.60) 40%,rgba(252,231,243,.50) 100%);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.80);position:relative;z-index:1}
           .wls-ct-g{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr;gap:28px;align-items:start}
-          .wls-cth{font-size:38px;font-weight:900;line-height:1.18;margin:0 0 12px;background:linear-gradient(90deg,${txt} 0%,${ac2} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .wls-cth{font-size:38px;font-weight:900;line-height:1.18;margin:0 0 12px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .wls-ctd{font-size:14px;color:${txt2};line-height:1.6;margin:0 0 18px}
           .wls-ben{background:rgba(255,255,255,.70);border:1px solid rgba(255,255,255,.90);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:12px}
           .wls-be{display:flex;gap:9px;align-items:flex-start}
@@ -246,7 +246,7 @@ export default function WellnessSoftware() {
           .wls-sub{width:100%;padding:13px;background:${ac};border:none;color:#fff;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all .25s;box-shadow:0 6px 24px rgba(74,25,66,.25)}
           .wls-sub:hover{background:${txt};transform:translateY(-2px)}
           .wls-fq{padding:72px 40px;background:rgba(253,244,255,.55);border-top:1px solid rgba(74,25,66,.08);position:relative;z-index:1}
-          .wls-fq h2{font-size:42px;font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,${txt} 0%,${ac2} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
+          .wls-fq h2{font-size:42px;font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
           .wls-fq-sub{font-size:15px;color:${txt2};margin:0 0 32px}
           .wls-fql{display:flex;flex-direction:column;gap:9px}
           .wls-fi{background:linear-gradient(135deg,rgba(253,244,255,.55) 0%,rgba(255,255,255,.88) 55%,rgba(252,231,243,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(74,25,66,.05);transition:border-color .2s}
@@ -260,7 +260,7 @@ export default function WellnessSoftware() {
           .wls-fa{padding:0 18px 18px 52px;font-size:14px;color:#4b5563;line-height:1.8}
           .wls-rel{padding:64px 40px;background:rgba(253,244,255,.14);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.60)}
           .wls-ri{max-width:1300px;margin:0 auto;text-align:center}
-          .wls-ri h2{font-size:30px;font-weight:900;background:linear-gradient(90deg,${txt} 0%,${ac2} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 10px}
+          .wls-ri h2{font-size:30px;font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 10px}
           .wls-ri hr{border:none;border-top:1px solid rgba(74,25,66,.10);margin:24px 0}
           .wls-rts{display:flex;flex-wrap:wrap;justify-content:center;gap:9px}
           .wls-rt{display:inline-block;padding:9px 18px;border:1.5px solid;border-radius:50px;font-size:13px;font-weight:500;text-decoration:none;transition:all .22s}
@@ -271,7 +271,9 @@ export default function WellnessSoftware() {
           .wls-rd{background:rgba(20,83,45,.09);border-color:rgba(20,83,45,.28);color:#14532d}
           @media(max-width:1024px){.wls-hero h1,.wls-sh,.wls-fq h2{font-size:34px}.wls-sk-g{grid-template-columns:repeat(2,1fr)}.wls-tec-g{grid-template-columns:repeat(2,1fr)}.wls-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.wls-en.feat{transform:none}.wls-en.feat.wls-ev{transform:none}.wls-en.feat.wls-ev:hover{transform:translateY(-4px)}.wls-wy-g{grid-template-columns:repeat(2,1fr)}.wls-tg2{grid-template-columns:1fr}.wls-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.wls-bc,.wls-hero,.wls-sec,.wls-ct,.wls-fq,.wls-rel{padding-left:20px;padding-right:20px}.wls-hero{padding-top:28px;padding-bottom:16px}.wls-hero h1{font-size:26px}.wls-stats{grid-template-columns:1fr 1fr}.wls-sc:nth-child(2){border-right:none}.wls-sc:nth-child(3),.wls-sc:nth-child(4){border-top:1px solid rgba(74,25,66,.10)}.wls-sc:nth-child(4){border-right:none}.wls-sk-g,.wls-tec-g,.wls-wy-g{grid-template-columns:1fr}.wls-fr{grid-template-columns:1fr}.wls-cth{font-size:26px}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
               <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({

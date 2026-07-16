@@ -83,7 +83,7 @@ export default function DigitalMarketingServices() {
           .dmhub-bc a{color:rgba(255,255,255,0.5);text-decoration:none}.dmhub-bc a:hover{color:#FE9700}.dmhub-bc span{color:rgba(255,255,255,0.25)}
           .dmhub-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(254,151,0,0.12);border:1px solid rgba(254,151,0,0.28);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#FE9700;margin-bottom:28px}
           .dmhub-h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:900;line-height:1.05;letter-spacing:-1.5px;color:#fff;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .dmhub-h1 span{background:linear-gradient(90deg,#FE9700 0%,#FFC14D 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .dmhub-h1 span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .dmhub-sub{font-size:1.08rem;color:rgba(255,255,255,0.70);line-height:1.75;max-width:660px;margin:0 auto 36px}
           .dmhub-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .dmhub-btn-p{display:inline-flex;align-items:center;gap:8px;background:#FE9700;color:#fff;padding:15px 32px;border-radius:50px;font-weight:800;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(254,151,0,0.35)}
@@ -96,7 +96,7 @@ export default function DigitalMarketingServices() {
           .dmhub-stat-v{font-size:1.6rem;font-weight:900;color:#FE9700;letter-spacing:-0.5px}
           .dmhub-svc{background:#f8fafd;padding:80px 40px}.dmhub-svc-in{max-width:1280px;margin:0 auto}
           .dmhub-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#114171;margin-bottom:10px;display:block}
-          .dmhub-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F1F40 0%,#114171 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .dmhub-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .dmhub-desc{font-size:15px;color:#4A6080;line-height:1.7;max-width:640px;margin-bottom:44px}
           .dmhub-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
           .dmhub-card{background:linear-gradient(135deg,rgba(240,246,255,0.65) 0%,rgba(255,255,255,0.88) 60%,rgba(240,246,255,0.25) 100%);border:1px solid rgba(17,65,113,0.08);border-radius:20px;padding:26px 22px 22px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(17,65,113,0.05);opacity:0;transform:translateY(20px);transition:opacity 0.4s ease,transform 0.4s ease;text-decoration:none;display:block}
@@ -139,7 +139,9 @@ export default function DigitalMarketingServices() {
           .dmhub-cta-s{font-size:1.05rem;color:rgba(255,255,255,0.70);line-height:1.75;margin:0 auto 36px;max-width:520px}
           @media(max-width:1024px){.dmhub-grid{grid-template-columns:repeat(2,1fr)}.dmhub-why-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.dmhub-hero,.dmhub-svc,.dmhub-ind,.dmhub-proc,.dmhub-why,.dmhub-faq,.dmhub-cta{padding:60px 24px}.dmhub-hero{padding-top:60px;padding-bottom:0}.dmhub-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.dmhub-stat:nth-child(2){border-right:none}.dmhub-grid{grid-template-columns:1fr}.dmhub-why-grid{grid-template-columns:1fr}.dmhub-step{grid-template-columns:56px 1fr}.dmhub-btns{flex-direction:column;align-items:center}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
       <div className="dmhub-page">
         <section className="dmhub-hero"><div className="dmhub-o1"/><div className="dmhub-o2"/>

@@ -257,7 +257,7 @@ export default function DesignSystemsPage() {
           .ds-hero-block::after { content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,0.16) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px); }
           .ds-hero-content { position:relative;z-index:2;text-align:center;max-width:860px;margin:0 auto;padding:60px 40px 44px; }
           .ds-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#0369A1;margin-bottom:18px; }
-          .ds-hero-content h1 { font-size:52px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:20px;background:linear-gradient(90deg,#0F3460 0%,#0369A1 40%,#059669 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+          .ds-hero-content h1 { font-size:52px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:20px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
           .ds-hero-content p { font-size:17px;color:#3A507A;line-height:1.7;max-width:640px;margin:0 auto 32px; }
           .ds-hero-badges { display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:32px; }
           .ds-badge { background:rgba(255,255,255,0.6);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.85);border-radius:40px;padding:6px 16px;font-size:13px;font-weight:600;color:#0F3460; }
@@ -285,7 +285,7 @@ export default function DesignSystemsPage() {
 
           /* Shared section styles */
           .ds-section-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#0369A1;margin-bottom:12px;display:block; }
-          .ds-section-title { font-size:44px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#0369A1 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin-bottom:12px; }
+          .ds-section-title { font-size:44px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin-bottom:12px; }
           .ds-section-desc { font-size:15px;color:#4A6080;line-height:1.7;max-width:680px;margin-bottom:36px; }
 
           /* Section reveal animation */
@@ -324,7 +324,7 @@ export default function DesignSystemsPage() {
           .ds-process-section { background:transparent;padding:80px 40px;position:relative;z-index:1; }
           .ds-process-top { max-width:1280px;margin:0 auto 52px; }
           .ds-process-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#0369A1;margin:0 0 14px;display:block; }
-          .ds-process-title { font-size:44px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#0369A1 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
+          .ds-process-title { font-size:44px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
           .ds-process-desc { font-size:15px;color:#4A6080;line-height:1.7;margin:0; }
           .ds-process-divider { border:none;border-top:1px solid rgba(15,52,96,0.15);margin:36px 0 0; }
           .ds-process-inner { max-width:1280px;margin:0 auto; }
@@ -374,7 +374,7 @@ export default function DesignSystemsPage() {
           /* FAQ */
           .ds-faq-section { padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);position:relative;z-index:1; }
           .ds-faq-inner { max-width:1280px;margin:0 auto; }
-          .ds-faq-heading { font-size:44px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#0369A1 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 36px; }
+          .ds-faq-heading { font-size:44px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 36px; }
           .ds-faq-list { display:flex;flex-direction:column;gap:12px; }
           .ds-faq-item { background:linear-gradient(135deg,rgba(224,242,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(209,250,229,0.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:16px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(15,52,96,0.07),inset 0 1px 0 rgba(255,255,255,0.95);transition:border-color 0.2s,box-shadow 0.2s; }
           .ds-faq-item.open { border-color:rgba(3,105,161,0.35);box-shadow:0 8px 32px rgba(15,52,96,0.12); }
@@ -394,7 +394,7 @@ export default function DesignSystemsPage() {
           /* Contact */
           .ds-contact-section { padding:80px 40px;background:linear-gradient(135deg,rgba(224,242,254,0.70) 0%,rgba(255,255,255,0.60) 40%,rgba(209,250,229,0.65) 100%);backdrop-filter:blur(20px);position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.80); }
           .ds-contact-container { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;align-items:start;gap:40px; }
-          .ds-contact-title { font-size:44px;font-weight:900;line-height:1.2;margin:0 0 16px;background:linear-gradient(90deg,#0F3460 0%,#0369A1 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent; }
+          .ds-contact-title { font-size:44px;font-weight:900;line-height:1.2;margin:0 0 16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent; }
           .ds-contact-desc { font-size:14px;color:#4A6080;line-height:1.6;margin:0 0 28px; }
           .ds-merged-box { background:linear-gradient(135deg,rgba(255,255,255,0.70) 0%,rgba(224,242,254,0.35) 100%);border:1px solid rgba(255,255,255,0.90);border-radius:14px;padding:24px;backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,1);display:flex;flex-direction:column;gap:20px; }
           .ds-benefit-item { display:flex;gap:10px;align-items:flex-start; }
@@ -429,7 +429,7 @@ export default function DesignSystemsPage() {
           .ds-related-section { background:rgba(224,242,254,0.18);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,0.60);padding:80px 40px; }
           .ds-related-inner { max-width:1280px;margin:0 auto;text-align:center; }
           .ds-related-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A6080;margin:0 0 14px;display:block; }
-          .ds-related-title { font-size:44px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#0369A1 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
+          .ds-related-title { font-size:44px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
           .ds-related-sub { font-size:15px;color:#0F1F40;line-height:1.7;margin:0 auto;max-width:640px; }
           .ds-related-divider { border:none;border-top:1px solid rgba(15,52,96,0.12);margin:40px 0; }
           .ds-related-tags { display:flex;flex-wrap:wrap;justify-content:center;gap:12px; }
@@ -503,7 +503,9 @@ export default function DesignSystemsPage() {
             .ds-callout-inner { grid-template-columns:1fr; }
             .ds-section-title,.ds-process-title,.ds-faq-heading,.ds-contact-title,.ds-related-title { font-size:22px; }
           }
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
 
       <div className="ds-page">

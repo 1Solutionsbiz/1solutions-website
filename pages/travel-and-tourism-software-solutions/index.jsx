@@ -149,7 +149,7 @@ export default function TravelTourismSoftware() {
           .tt-bc a{color:${txt};text-decoration:none}
           .tt-hero{position:relative;z-index:2;text-align:center;max-width:940px;margin:0 auto;padding:44px 40px 28px}
           .tt-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:${ac};margin-bottom:14px}
-          .tt-hero h1{font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(90deg,${txt} 0%,${ac} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .tt-hero h1{font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .tt-desc{font-size:16px;color:${txt2};line-height:1.65;max-width:720px;margin:0 auto 22px}
           .tt-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-bottom:24px}
           .tt-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:5px 13px;font-size:12px;font-weight:600;color:${txt};box-shadow:0 2px 8px rgba(12,74,110,.07)}
@@ -167,7 +167,7 @@ export default function TravelTourismSoftware() {
           .tt-sec-alt{background:rgba(240,249,255,.55);border-top:1px solid rgba(12,74,110,.08);border-bottom:1px solid rgba(12,74,110,.08)}
           .tt-in{max-width:1300px;margin:0 auto}
           .tt-sey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
-          .tt-sh{font-size:44px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(90deg,${txt} 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .tt-sh{font-size:44px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .tt-sd{font-size:15px;color:${txt2};line-height:1.7;max-width:700px}
           .tt-rv{opacity:0;transform:translateY(40px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
           .tt-rv.tt-ok{opacity:1;transform:translateY(0)}
@@ -229,7 +229,7 @@ export default function TravelTourismSoftware() {
           .tt-wc p{font-size:12px;color:${txt2};line-height:1.6;margin:0}
           .tt-ct{padding:64px 40px;background:linear-gradient(135deg,rgba(240,249,255,.55) 0%,rgba(255,255,255,.60) 40%,rgba(224,242,254,.50) 100%);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.80);position:relative;z-index:1}
           .tt-ct-g{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr;gap:28px;align-items:start}
-          .tt-cth{font-size:38px;font-weight:900;line-height:1.18;margin:0 0 12px;background:linear-gradient(90deg,${txt} 0%,${ac} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .tt-cth{font-size:38px;font-weight:900;line-height:1.18;margin:0 0 12px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .tt-ctd{font-size:14px;color:${txt2};line-height:1.6;margin:0 0 18px}
           .tt-ben{background:rgba(255,255,255,.70);border:1px solid rgba(255,255,255,.90);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:12px}
           .tt-be{display:flex;gap:9px;align-items:flex-start}
@@ -250,7 +250,7 @@ export default function TravelTourismSoftware() {
           .tt-sub{width:100%;padding:13px;background:${ac};border:none;color:#fff;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all .25s;box-shadow:0 6px 24px rgba(12,74,110,.25)}
           .tt-sub:hover{background:${txt};transform:translateY(-2px)}
           .tt-fq{padding:72px 40px;background:rgba(240,249,255,.55);border-top:1px solid rgba(12,74,110,.08);position:relative;z-index:1}
-          .tt-fq h2{font-size:42px;font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,${txt} 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
+          .tt-fq h2{font-size:42px;font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
           .tt-fq-sub{font-size:15px;color:${txt2};margin:0 0 32px}
           .tt-fql{display:flex;flex-direction:column;gap:9px}
           .tt-fi{background:linear-gradient(135deg,rgba(240,249,255,.55) 0%,rgba(255,255,255,.88) 55%,rgba(236,254,255,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(12,74,110,.05);transition:border-color .2s}
@@ -264,7 +264,7 @@ export default function TravelTourismSoftware() {
           .tt-fa{padding:0 18px 18px 52px;font-size:14px;color:#4b5563;line-height:1.8}
           .tt-rel{padding:64px 40px;background:rgba(240,249,255,.14);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.60)}
           .tt-ri{max-width:1300px;margin:0 auto;text-align:center}
-          .tt-ri h2{font-size:30px;font-weight:900;background:linear-gradient(90deg,${txt} 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 10px}
+          .tt-ri h2{font-size:30px;font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 10px}
           .tt-ri hr{border:none;border-top:1px solid rgba(12,74,110,.10);margin:24px 0}
           .tt-rts{display:flex;flex-wrap:wrap;justify-content:center;gap:9px}
           .tt-rt{display:inline-block;padding:9px 18px;border:1.5px solid;border-radius:50px;font-size:13px;font-weight:500;text-decoration:none;transition:all .22s}
@@ -275,7 +275,9 @@ export default function TravelTourismSoftware() {
           .tt-rd{background:rgba(146,64,14,.09);border-color:rgba(146,64,14,.28);color:#92400e}
           @media(max-width:1024px){.tt-hero h1,.tt-sh,.tt-fq h2{font-size:34px}.tt-sk-g{grid-template-columns:repeat(2,1fr)}.tt-tec-g{grid-template-columns:repeat(2,1fr)}.tt-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.tt-en.feat{transform:none}.tt-en.feat.tt-ev{transform:none}.tt-en.feat.tt-ev:hover{transform:translateY(-4px)}.tt-wy-g{grid-template-columns:repeat(2,1fr)}.tt-tg2{grid-template-columns:1fr}.tt-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.tt-bc,.tt-hero,.tt-sec,.tt-ct,.tt-fq,.tt-rel{padding-left:20px;padding-right:20px}.tt-hero{padding-top:28px;padding-bottom:16px}.tt-hero h1{font-size:26px}.tt-stats{grid-template-columns:1fr 1fr}.tt-sc:nth-child(2){border-right:none}.tt-sc:nth-child(3),.tt-sc:nth-child(4){border-top:1px solid rgba(12,74,110,.10)}.tt-sc:nth-child(4){border-right:none}.tt-sk-g,.tt-tec-g,.tt-wy-g{grid-template-columns:1fr}.tt-fr{grid-template-columns:1fr}.tt-cth{font-size:26px}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
               <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({

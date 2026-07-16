@@ -247,7 +247,7 @@ export default function GoogleMyBusinessOptimization() {
           .gmbo-g-dot{display:flex;gap:3px;align-items:center;}
           .gmbo-g-dot span{width:7px;height:7px;border-radius:50%;}
           .gmbo-h1{font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;color:#0F1F40;}
-          .gmbo-h1 em{font-style:normal;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+          .gmbo-h1 em{font-style:normal;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
           .gmbo-desc{font-size:1.1rem;color:#3A507A;line-height:1.8;margin:0 0 36px;max-width:680px;}
           .gmbo-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px;}
           .gmbo-btn-p{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);color:#0F3460;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;border:1.5px solid rgba(255,255,255,0.85);box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1);}
@@ -274,7 +274,7 @@ export default function GoogleMyBusinessOptimization() {
           .gmbo-sec-inner{max-width:1200px;margin:0 auto;}
           .gmbo-tag{display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#D97706;margin-bottom:12px;}
           .gmbo-h2{font-size:clamp(1.8rem,3vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-0.5px;color:#0F3460;margin:0 0 16px;}
-          .gmbo-h2 span{background:linear-gradient(90deg,#0F3460,#D97706);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+          .gmbo-h2 span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
           .gmbo-lead{font-size:1rem;color:#4A6080;line-height:1.75;max-width:620px;margin:0 0 48px;}
 
           /* ── Service Cards ── */
@@ -296,7 +296,7 @@ export default function GoogleMyBusinessOptimization() {
           /* ── Stats Why ── */
           .gmbo-stat-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
           .gmbo-stat-card{background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:36px 28px;text-align:center;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95);}
-          .gmbo-sc-num{font-size:3.8rem;font-weight:900;line-height:1;letter-spacing:-2px;margin-bottom:14px;background:linear-gradient(90deg,#0F3460,#D97706);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+          .gmbo-sc-num{font-size:3.8rem;font-weight:900;line-height:1;letter-spacing:-2px;margin-bottom:14px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
           .gmbo-sc-desc{font-size:14.5px;color:#4A6080;line-height:1.7;margin:0 0 10px;}
           .gmbo-sc-source{font-size:11px;color:#6A80A0;font-weight:500;}
 
@@ -393,7 +393,7 @@ export default function GoogleMyBusinessOptimization() {
           .gmbo-contact-inner{max-width:1200px;margin:0 auto;}
           .gmbo-contact-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:60px;align-items:start;}
           .gmbo-info-h{font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:900;color:#0F3460;margin:0 0 16px;line-height:1.25;}
-          .gmbo-info-h span{background:linear-gradient(90deg,#0F3460,#D97706);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+          .gmbo-info-h span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
           .gmbo-info-p{font-size:1rem;color:#4A6080;line-height:1.75;margin:0 0 28px;}
           .gmbo-ci{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px;}
           .gmbo-ci-icon{width:40px;height:40px;border-radius:12px;background:rgba(15,52,96,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
@@ -446,7 +446,9 @@ export default function GoogleMyBusinessOptimization() {
             .gmbo-form-wrap{padding:24px 20px;}
             .gmbo-author-bar{padding:0 20px 40px;}
           }
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
 
       {/* Breadcrumb */}

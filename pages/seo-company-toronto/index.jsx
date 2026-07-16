@@ -142,7 +142,7 @@ export default function SeoCompanyToronto() {
           .trnt-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(110,0,20,0.08);border:1px solid rgba(110,0,20,0.18);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#6e0014;margin-bottom:24px;}
           .trnt-eyebrow-dot{width:7px;height:7px;border-radius:50%;background:#b01a2a;display:inline-block;}
           .trnt-h1{font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;color:#0A1628;}
-          .trnt-h1 span{background:linear-gradient(90deg,#6e0014 0%,#b01a2a 55%,#FE9700 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+          .trnt-h1 span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
           .trnt-desc{font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:680px;}
           .trnt-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px;}
           .trnt-btn-p{display:inline-flex;align-items:center;gap:8px;background:#6e0014;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 6px 24px rgba(110,0,20,0.28);}
@@ -164,7 +164,7 @@ export default function SeoCompanyToronto() {
           .trnt-sec-inner{max-width:1200px;margin:0 auto;}
           .trnt-tag{display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#b01a2a;margin-bottom:12px;}
           .trnt-h2{font-size:clamp(1.8rem,3vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-0.5px;color:#0A1628;margin:0 0 16px;}
-          .trnt-h2 span{background:linear-gradient(90deg,#6e0014,#b01a2a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+          .trnt-h2 span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
           .trnt-lead{font-size:1rem;color:#4b5563;line-height:1.75;max-width:620px;margin:0 0 48px;}
           .trnt-grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
           .trnt-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
@@ -216,7 +216,7 @@ export default function SeoCompanyToronto() {
           .trnt-contact-inner{max-width:1200px;margin:0 auto;}
           .trnt-contact-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:60px;align-items:start;}
           .trnt-info-h{font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:900;color:#0A1628;margin:0 0 16px;line-height:1.25;}
-          .trnt-info-h span{background:linear-gradient(90deg,#6e0014,#b01a2a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+          .trnt-info-h span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
           .trnt-info-p{font-size:1rem;color:#4b5563;line-height:1.75;margin:0 0 28px;}
           .trnt-ci{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px;}
           .trnt-ci-icon{width:40px;height:40px;border-radius:12px;background:rgba(110,0,20,0.09);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
@@ -249,7 +249,9 @@ export default function SeoCompanyToronto() {
           .trnt-cta-btn-s:hover{border-color:rgba(255,255,255,0.70);background:rgba(255,255,255,0.08);}
           @media(max-width:900px){.trnt-grid4{grid-template-columns:1fr 1fr;}.trnt-grid3,.trnt-grid2,.trnt-res-grid{grid-template-columns:1fr 1fr;}.trnt-ind-grid{grid-template-columns:1fr 1fr;}.trnt-contact-grid{grid-template-columns:1fr;gap:40px;}}
           @media(max-width:600px){.trnt-hero,.trnt-sec,.trnt-results,.trnt-cta,.trnt-contact-sec{padding-left:20px;padding-right:20px;}.trnt-hero{padding-top:60px;padding-bottom:50px;}.trnt-grid4,.trnt-grid3,.trnt-grid2,.trnt-res-grid,.trnt-ind-grid{grid-template-columns:1fr;}.trnt-bc{padding:12px 20px;}.trnt-field-row{grid-template-columns:1fr;}.trnt-form-wrap{padding:24px 20px;}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
 
       <nav className="trnt-bc" aria-label="Breadcrumb">

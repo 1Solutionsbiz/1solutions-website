@@ -145,7 +145,7 @@ export default function EntertainmentSoftware() {
           .ent-bc a{color:${txt};text-decoration:none}
           .ent-hero{position:relative;z-index:2;text-align:center;max-width:940px;margin:0 auto;padding:44px 40px 28px}
           .ent-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:${ac2};margin-bottom:14px}
-          .ent-hero h1{font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(90deg,${txt} 0%,${ac2} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .ent-hero h1{font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .ent-desc{font-size:16px;color:${txt2};line-height:1.65;max-width:720px;margin:0 auto 22px}
           .ent-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-bottom:24px}
           .ent-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:5px 13px;font-size:12px;font-weight:600;color:${txt};box-shadow:0 2px 8px rgba(45,27,105,.07)}
@@ -163,7 +163,7 @@ export default function EntertainmentSoftware() {
           .ent-sec-alt{background:rgba(245,243,255,.55);border-top:1px solid rgba(45,27,105,.08);border-bottom:1px solid rgba(45,27,105,.08)}
           .ent-in{max-width:1300px;margin:0 auto}
           .ent-sey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
-          .ent-sh{font-size:44px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(90deg,${txt} 0%,${ac2} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .ent-sh{font-size:44px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .ent-sd{font-size:15px;color:${txt2};line-height:1.7;max-width:700px}
           .ent-rv{opacity:0;transform:translateY(40px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
           .ent-rv.ent-ok{opacity:1;transform:translateY(0)}
@@ -225,7 +225,7 @@ export default function EntertainmentSoftware() {
           .ent-wc p{font-size:12px;color:${txt2};line-height:1.6;margin:0}
           .ent-ct{padding:64px 40px;background:linear-gradient(135deg,rgba(245,243,255,.55) 0%,rgba(255,255,255,.60) 40%,rgba(253,244,255,.50) 100%);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.80);position:relative;z-index:1}
           .ent-ct-g{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr;gap:28px;align-items:start}
-          .ent-cth{font-size:38px;font-weight:900;line-height:1.18;margin:0 0 12px;background:linear-gradient(90deg,${txt} 0%,${ac2} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .ent-cth{font-size:38px;font-weight:900;line-height:1.18;margin:0 0 12px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .ent-ctd{font-size:14px;color:${txt2};line-height:1.6;margin:0 0 18px}
           .ent-ben{background:rgba(255,255,255,.70);border:1px solid rgba(255,255,255,.90);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:12px}
           .ent-be{display:flex;gap:9px;align-items:flex-start}
@@ -246,7 +246,7 @@ export default function EntertainmentSoftware() {
           .ent-sub{width:100%;padding:13px;background:${ac};border:none;color:#fff;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all .25s;box-shadow:0 6px 24px rgba(45,27,105,.25)}
           .ent-sub:hover{background:${txt};transform:translateY(-2px)}
           .ent-fq{padding:72px 40px;background:rgba(245,243,255,.55);border-top:1px solid rgba(45,27,105,.08);position:relative;z-index:1}
-          .ent-fq h2{font-size:42px;font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,${txt} 0%,${ac2} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
+          .ent-fq h2{font-size:42px;font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
           .ent-fq-sub{font-size:15px;color:${txt2};margin:0 0 32px}
           .ent-fql{display:flex;flex-direction:column;gap:9px}
           .ent-fi{background:linear-gradient(135deg,rgba(245,243,255,.55) 0%,rgba(255,255,255,.88) 55%,rgba(253,244,255,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(45,27,105,.05);transition:border-color .2s}
@@ -260,7 +260,7 @@ export default function EntertainmentSoftware() {
           .ent-fa{padding:0 18px 18px 52px;font-size:14px;color:#4b5563;line-height:1.8}
           .ent-rel{padding:64px 40px;background:rgba(245,243,255,.14);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.60)}
           .ent-ri{max-width:1300px;margin:0 auto;text-align:center}
-          .ent-ri h2{font-size:30px;font-weight:900;background:linear-gradient(90deg,${txt} 0%,${ac2} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 10px}
+          .ent-ri h2{font-size:30px;font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 10px}
           .ent-ri hr{border:none;border-top:1px solid rgba(45,27,105,.10);margin:24px 0}
           .ent-rts{display:flex;flex-wrap:wrap;justify-content:center;gap:9px}
           .ent-rt{display:inline-block;padding:9px 18px;border:1.5px solid;border-radius:50px;font-size:13px;font-weight:500;text-decoration:none;transition:all .22s}
@@ -271,7 +271,9 @@ export default function EntertainmentSoftware() {
           .ent-rd{background:rgba(20,83,45,.09);border-color:rgba(20,83,45,.28);color:#14532d}
           @media(max-width:1024px){.ent-hero h1,.ent-sh,.ent-fq h2{font-size:34px}.ent-sk-g{grid-template-columns:repeat(2,1fr)}.ent-tec-g{grid-template-columns:repeat(2,1fr)}.ent-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.ent-en.feat{transform:none}.ent-en.feat.ent-ev{transform:none}.ent-en.feat.ent-ev:hover{transform:translateY(-4px)}.ent-wy-g{grid-template-columns:repeat(2,1fr)}.ent-tg2{grid-template-columns:1fr}.ent-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.ent-bc,.ent-hero,.ent-sec,.ent-ct,.ent-fq,.ent-rel{padding-left:20px;padding-right:20px}.ent-hero{padding-top:28px;padding-bottom:16px}.ent-hero h1{font-size:26px}.ent-stats{grid-template-columns:1fr 1fr}.ent-sc:nth-child(2){border-right:none}.ent-sc:nth-child(3),.ent-sc:nth-child(4){border-top:1px solid rgba(45,27,105,.10)}.ent-sc:nth-child(4){border-right:none}.ent-sk-g,.ent-tec-g,.ent-wy-g{grid-template-columns:1fr}.ent-fr{grid-template-columns:1fr}.ent-cth{font-size:26px}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
               <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({

@@ -142,7 +142,7 @@ export default function SeoCompanyVancouver() {
           .vanc-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(10,66,104,0.08);border:1px solid rgba(10,66,104,0.18);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#0a4268;margin-bottom:24px;}
           .vanc-eyebrow-dot{width:7px;height:7px;border-radius:50%;background:#1a72b0;display:inline-block;}
           .vanc-h1{font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;color:#0A1628;}
-          .vanc-h1 span{background:linear-gradient(90deg,#0a4268 0%,#1a72b0 55%,#FE9700 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+          .vanc-h1 span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
           .vanc-desc{font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:680px;}
           .vanc-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px;}
           .vanc-btn-p{display:inline-flex;align-items:center;gap:8px;background:#0a4268;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 6px 24px rgba(10,66,104,0.28);}
@@ -165,7 +165,7 @@ export default function SeoCompanyVancouver() {
           .vanc-sec-inner{max-width:1200px;margin:0 auto;}
           .vanc-tag{display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#1a72b0;margin-bottom:12px;}
           .vanc-h2{font-size:clamp(1.8rem,3vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-0.5px;color:#0A1628;margin:0 0 16px;}
-          .vanc-h2 span{background:linear-gradient(90deg,#0a4268,#1a72b0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+          .vanc-h2 span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
           .vanc-lead{font-size:1rem;color:#4b5563;line-height:1.75;max-width:620px;margin:0 0 48px;}
           .vanc-grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
           .vanc-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
@@ -217,7 +217,7 @@ export default function SeoCompanyVancouver() {
           .vanc-contact-inner{max-width:1200px;margin:0 auto;}
           .vanc-contact-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:60px;align-items:start;}
           .vanc-info-h{font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:900;color:#0A1628;margin:0 0 16px;line-height:1.25;}
-          .vanc-info-h span{background:linear-gradient(90deg,#0a4268,#1a72b0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+          .vanc-info-h span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
           .vanc-info-p{font-size:1rem;color:#4b5563;line-height:1.75;margin:0 0 28px;}
           .vanc-ci{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px;}
           .vanc-ci-icon{width:40px;height:40px;border-radius:12px;background:rgba(10,66,104,0.09);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
@@ -250,7 +250,9 @@ export default function SeoCompanyVancouver() {
           .vanc-cta-btn-s:hover{border-color:rgba(255,255,255,0.70);background:rgba(255,255,255,0.08);}
           @media(max-width:900px){.vanc-grid4{grid-template-columns:1fr 1fr;}.vanc-grid3,.vanc-grid2,.vanc-res-grid{grid-template-columns:1fr 1fr;}.vanc-ind-grid{grid-template-columns:1fr 1fr;}.vanc-contact-grid{grid-template-columns:1fr;gap:40px;}}
           @media(max-width:600px){.vanc-hero,.vanc-sec,.vanc-results,.vanc-cta,.vanc-contact-sec{padding-left:20px;padding-right:20px;}.vanc-hero{padding-top:60px;padding-bottom:50px;}.vanc-grid4,.vanc-grid3,.vanc-grid2,.vanc-res-grid,.vanc-ind-grid{grid-template-columns:1fr;}.vanc-bc{padding:12px 20px;}.vanc-field-row{grid-template-columns:1fr;}.vanc-form-wrap{padding:24px 20px;}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
 
       <nav className="vanc-bc" aria-label="Breadcrumb">

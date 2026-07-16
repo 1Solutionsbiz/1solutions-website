@@ -279,7 +279,7 @@ export default function NextjsDevelopmentServices() {
           .nx-breadcrumb a:hover{text-decoration:underline}
           .nx-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
           .nx-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
-          .nx-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(90deg,#0F3460 0%,#0070f3 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .nx-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .nx-hero-desc{font-size:16px;color:#3A507A;line-height:1.65;max-width:740px;margin:0 auto 24px}
           .nx-trust-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
           .nx-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07)}
@@ -303,7 +303,7 @@ export default function NextjsDevelopmentServices() {
           .nx-clogo{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
           .nx-clogo:hover{opacity:.85;filter:grayscale(0%)}
           .nx-s-eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
-          .nx-s-title{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .nx-s-title{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .nx-s-desc{font-size:15px;color:#4A6080;line-height:1.7}
           .nx-s-reveal{opacity:0;transform:translateY(44px);transition:opacity .7s cubic-bezier(0.22,1,.36,1),transform .7s cubic-bezier(0.22,1,.36,1)}
           .nx-s-reveal.nx-revealed{opacity:1;transform:translateY(0)}
@@ -397,7 +397,7 @@ export default function NextjsDevelopmentServices() {
           .nx-wcard p{font-size:13px;color:#4A6080;line-height:1.65;margin:0}
           .nx-contact{padding:70px 40px;background:linear-gradient(135deg,rgba(239,246,255,.55) 0%,rgba(255,255,255,.60) 40%,rgba(245,243,255,.55) 100%);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.80);position:relative;z-index:1}
           .nx-contact-grid{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;gap:32px;align-items:start}
-          .nx-ctitle{font-size:42px;font-weight:900;line-height:1.18;margin:0 0 14px;background:linear-gradient(90deg,#0F3460 0%,#0070f3 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .nx-ctitle{font-size:42px;font-weight:900;line-height:1.18;margin:0 0 14px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .nx-cdesc{font-size:14px;color:#4A6080;line-height:1.6;margin:0 0 22px}
           .nx-cbenefits{background:rgba(255,255,255,.70);border:1px solid rgba(255,255,255,.90);border-radius:14px;padding:22px;backdrop-filter:blur(12px);display:flex;flex-direction:column;gap:14px}
           .nx-cbenefit{display:flex;gap:10px;align-items:flex-start}
@@ -419,7 +419,7 @@ export default function NextjsDevelopmentServices() {
           .nx-submit{width:100%;padding:14px;background:#0070f3;border:none;color:#fff;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all .25s;box-shadow:0 6px 24px rgba(0,112,243,.26)}
           .nx-submit:hover{background:#0F3460;transform:translateY(-2px);box-shadow:0 10px 30px rgba(15,52,96,.28)}
           .nx-faq{padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(15,52,96,.08);position:relative;z-index:1}
-          .nx-faq h2{font-size:46px;font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
+          .nx-faq h2{font-size:46px;font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
           .nx-faq-sub{font-size:15px;color:#4A6080;margin:0 0 36px}
           .nx-faq-list{display:flex;flex-direction:column;gap:10px}
           .nx-fitem{background:linear-gradient(135deg,rgba(239,246,255,.50) 0%,rgba(255,255,255,.85) 55%,rgba(245,243,255,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(15,52,96,.06);transition:border-color .2s}
@@ -437,7 +437,7 @@ export default function NextjsDevelopmentServices() {
           .nx-fanswer{padding:0 20px 20px 58px;font-size:14px;color:#4b5563;line-height:1.8}
           .nx-related{padding:80px 40px;background:rgba(239,246,255,.14);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.60)}
           .nx-related-inner{max-width:1300px;margin:0 auto;text-align:center}
-          .nx-related h2{font-size:34px;font-weight:900;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 12px}
+          .nx-related h2{font-size:34px;font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 12px}
           .nx-related-sub{font-size:14px;color:#4A6080;margin:0 auto;max-width:560px}
           .nx-related hr{border:none;border-top:1px solid rgba(15,52,96,.10);margin:32px 0}
           .nx-rtags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
@@ -451,7 +451,9 @@ export default function NextjsDevelopmentServices() {
           .nx-rtag-rose{background:rgba(225,29,72,.09);border-color:rgba(225,29,72,.28);color:#9f1239}
           @media(max-width:1024px){.nx-hero h1,.nx-s-title,.nx-faq h2{font-size:36px}.nx-svc-grid{grid-template-columns:repeat(2,1fr)}.nx-stack-grid{grid-template-columns:repeat(2,1fr)}.nx-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.nx-eng-card.feat{transform:none}.nx-eng-card.feat.nx-ev{transform:none}.nx-eng-card.feat.nx-ev:hover{transform:translateY(-4px)}.nx-why-grid{grid-template-columns:repeat(2,1fr)}.nx-tgrid{grid-template-columns:1fr}.nx-contact-grid{grid-template-columns:1fr}}
           @media(max-width:768px){.nx-breadcrumb{padding:12px 20px 0}.nx-hero{padding:28px 20px 20px}.nx-hero h1{font-size:26px;letter-spacing:-.3px}.nx-stats{grid-template-columns:1fr 1fr}.nx-stat-col:nth-child(2){border-right:none}.nx-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.nx-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.nx-logos{padding:16px 20px 28px}.nx-svc-section,.nx-stack-section,.nx-eng-section,.nx-process-section,.nx-testi,.nx-why-section,.nx-faq,.nx-related{padding:52px 20px}.nx-contact{padding:48px 20px}.nx-svc-grid,.nx-stack-grid,.nx-why-grid{grid-template-columns:1fr}.nx-frow{grid-template-columns:1fr}.nx-ctitle{font-size:28px}.nx-s-title{font-size:28px}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
               <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({

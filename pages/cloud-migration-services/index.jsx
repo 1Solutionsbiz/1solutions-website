@@ -279,7 +279,7 @@ export default function CloudMigrationServices() {
           .cm-breadcrumb a:hover{text-decoration:underline}
           .cm-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
           .cm-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
-          .cm-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(90deg,#0F3460 0%,#0369a1 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .cm-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .cm-hero-desc{font-size:16px;color:#3A507A;line-height:1.65;max-width:740px;margin:0 auto 24px}
           .cm-trust-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
           .cm-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07)}
@@ -303,7 +303,7 @@ export default function CloudMigrationServices() {
           .cm-clogo{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
           .cm-clogo:hover{opacity:.85;filter:grayscale(0%)}
           .cm-s-eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
-          .cm-s-title{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .cm-s-title{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .cm-s-desc{font-size:15px;color:#4A6080;line-height:1.7}
           .cm-s-reveal{opacity:0;transform:translateY(44px);transition:opacity .7s cubic-bezier(0.22,1,.36,1),transform .7s cubic-bezier(0.22,1,.36,1)}
           .cm-s-reveal.cm-revealed{opacity:1;transform:translateY(0)}
@@ -397,7 +397,7 @@ export default function CloudMigrationServices() {
           .cm-wcard p{font-size:13px;color:#4A6080;line-height:1.65;margin:0}
           .cm-contact{padding:70px 40px;background:linear-gradient(135deg,rgba(240,249,255,.55) 0%,rgba(255,255,255,.60) 40%,rgba(240,253,244,.55) 100%);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.80);position:relative;z-index:1}
           .cm-contact-grid{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;gap:32px;align-items:start}
-          .cm-ctitle{font-size:42px;font-weight:900;line-height:1.18;margin:0 0 14px;background:linear-gradient(90deg,#0F3460 0%,#0369a1 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .cm-ctitle{font-size:42px;font-weight:900;line-height:1.18;margin:0 0 14px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .cm-cdesc{font-size:14px;color:#4A6080;line-height:1.6;margin:0 0 22px}
           .cm-cbenefits{background:rgba(255,255,255,.70);border:1px solid rgba(255,255,255,.90);border-radius:14px;padding:22px;backdrop-filter:blur(12px);display:flex;flex-direction:column;gap:14px}
           .cm-cbenefit{display:flex;gap:10px;align-items:flex-start}
@@ -419,7 +419,7 @@ export default function CloudMigrationServices() {
           .cm-submit{width:100%;padding:14px;background:#0369a1;border:none;color:#fff;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all .25s;box-shadow:0 6px 24px rgba(3,105,161,.26)}
           .cm-submit:hover{background:#0F3460;transform:translateY(-2px);box-shadow:0 10px 30px rgba(15,52,96,.28)}
           .cm-faq{padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(15,52,96,.08);position:relative;z-index:1}
-          .cm-faq h2{font-size:46px;font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
+          .cm-faq h2{font-size:46px;font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
           .cm-faq-sub{font-size:15px;color:#4A6080;margin:0 0 36px}
           .cm-faq-list{display:flex;flex-direction:column;gap:10px}
           .cm-fitem{background:linear-gradient(135deg,rgba(240,249,255,.50) 0%,rgba(255,255,255,.85) 55%,rgba(240,253,244,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(15,52,96,.06);transition:border-color .2s}
@@ -437,7 +437,7 @@ export default function CloudMigrationServices() {
           .cm-fanswer{padding:0 20px 20px 58px;font-size:14px;color:#4b5563;line-height:1.8}
           .cm-related{padding:80px 40px;background:rgba(240,249,255,.14);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.60)}
           .cm-related-inner{max-width:1300px;margin:0 auto;text-align:center}
-          .cm-related h2{font-size:34px;font-weight:900;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 12px}
+          .cm-related h2{font-size:34px;font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 12px}
           .cm-related-sub{font-size:14px;color:#4A6080;margin:0 auto;max-width:560px}
           .cm-related hr{border:none;border-top:1px solid rgba(15,52,96,.10);margin:32px 0}
           .cm-rtags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
@@ -451,7 +451,9 @@ export default function CloudMigrationServices() {
           .cm-rtag-teal{background:rgba(15,118,110,.09);border-color:rgba(15,118,110,.28);color:#0f766e}
           @media(max-width:1024px){.cm-hero h1,.cm-s-title,.cm-faq h2{font-size:36px}.cm-svc-grid{grid-template-columns:repeat(2,1fr)}.cm-stack-grid{grid-template-columns:repeat(2,1fr)}.cm-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.cm-eng-card.feat{transform:none}.cm-eng-card.feat.cm-ev{transform:none}.cm-eng-card.feat.cm-ev:hover{transform:translateY(-4px)}.cm-why-grid{grid-template-columns:repeat(2,1fr)}.cm-tgrid{grid-template-columns:1fr}.cm-contact-grid{grid-template-columns:1fr}}
           @media(max-width:768px){.cm-breadcrumb{padding:12px 20px 0}.cm-hero{padding:28px 20px 20px}.cm-hero h1{font-size:26px;letter-spacing:-.3px}.cm-stats{grid-template-columns:1fr 1fr}.cm-stat-col:nth-child(2){border-right:none}.cm-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.cm-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.cm-logos{padding:16px 20px 28px}.cm-svc-section,.cm-stack-section,.cm-eng-section,.cm-process-section,.cm-testi,.cm-why-section,.cm-faq,.cm-related{padding:52px 20px}.cm-contact{padding:48px 20px}.cm-svc-grid,.cm-stack-grid,.cm-why-grid{grid-template-columns:1fr}.cm-frow{grid-template-columns:1fr}.cm-ctitle{font-size:28px}.cm-s-title{font-size:28px}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
               <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({

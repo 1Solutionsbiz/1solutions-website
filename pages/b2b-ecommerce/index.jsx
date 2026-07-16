@@ -244,7 +244,7 @@ export default function B2BEcommerce() {
             font-weight: 900;
             line-height: 1.1;
             letter-spacing: -1px;
-            background: linear-gradient(90deg, #0F3460 0%, #0D9488 50%, #1D4ED8 100%);
+            background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -349,7 +349,7 @@ export default function B2BEcommerce() {
             font-weight: 900;
             line-height: 1.15;
             letter-spacing: -1px;
-            background: linear-gradient(90deg, #0F3460 0%, #0D9488 100%);
+            background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -633,7 +633,7 @@ export default function B2BEcommerce() {
           .b2b-cta-title {
             font-size: clamp(1.8rem, 3.5vw, 2.8rem);
             font-weight: 900;
-            background: linear-gradient(90deg, #0F3460 0%, #0D9488 50%, #1D4ED8 100%);
+            background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -670,7 +670,9 @@ export default function B2BEcommerce() {
             .b2b-process-step { grid-template-columns: 56px 1fr; }
             .b2b-hero-btns { flex-direction: column; align-items: center; }
           }
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
 
       <div className="b2b-page">

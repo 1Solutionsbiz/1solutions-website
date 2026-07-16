@@ -445,7 +445,7 @@ export default function WhoWeAre() {
             max-width: 860px;
           }
           .au-gradient-text {
-            background: linear-gradient(90deg, #114171 0%, #FE9700 100%);
+            background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -1062,7 +1062,9 @@ export default function WhoWeAre() {
             .au-office-text { padding: 0 28px; }
             .au-office-quote { font-size: 1.15rem; }
           }
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
 
       <div className="au-page">

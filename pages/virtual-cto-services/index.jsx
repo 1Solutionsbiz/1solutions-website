@@ -157,7 +157,7 @@ export default function VirtualCTOServices() {
           .vcto-bc a{color:#451a03;text-decoration:none}
           .vcto-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
           .vcto-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#92400e;margin-bottom:14px}
-          .vcto-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(90deg,#451a03 0%,#92400e 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .vcto-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .vcto-desc{font-size:16px;color:#78350f;line-height:1.65;max-width:740px;margin:0 auto 24px}
           .vcto-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
           .vcto-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#451a03;box-shadow:0 2px 8px rgba(69,26,3,.07)}
@@ -181,7 +181,7 @@ export default function VirtualCTOServices() {
           .vcto-cl{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
           .vcto-cl:hover{opacity:.85;filter:grayscale(0%)}
           .vcto-sey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
-          .vcto-st{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(90deg,#451a03 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .vcto-st{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .vcto-sd{font-size:15px;color:#78350f;line-height:1.7}
           .vcto-rv{opacity:0;transform:translateY(44px);transition:opacity .7s cubic-bezier(0.22,1,.36,1),transform .7s cubic-bezier(0.22,1,.36,1)}
           .vcto-rv.vcto-ok{opacity:1;transform:translateY(0)}
@@ -275,7 +275,7 @@ export default function VirtualCTOServices() {
           .vcto-wc p{font-size:13px;color:#78350f;line-height:1.65;margin:0}
           .vcto-ct-s{padding:70px 40px;background:linear-gradient(135deg,rgba(255,251,235,.55) 0%,rgba(255,255,255,.60) 40%,rgba(254,243,199,.55) 100%);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.80);position:relative;z-index:1}
           .vcto-ct-g{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;gap:32px;align-items:start}
-          .vcto-ctt{font-size:42px;font-weight:900;line-height:1.18;margin:0 0 14px;background:linear-gradient(90deg,#451a03 0%,#92400e 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .vcto-ctt{font-size:42px;font-weight:900;line-height:1.18;margin:0 0 14px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .vcto-ctd{font-size:14px;color:#78350f;line-height:1.6;margin:0 0 22px}
           .vcto-ben{background:rgba(255,255,255,.70);border:1px solid rgba(255,255,255,.90);border-radius:14px;padding:22px;backdrop-filter:blur(12px);display:flex;flex-direction:column;gap:14px}
           .vcto-be{display:flex;gap:10px;align-items:flex-start}
@@ -297,7 +297,7 @@ export default function VirtualCTOServices() {
           .vcto-sub{width:100%;padding:14px;background:#92400e;border:none;color:#fff;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all .25s;box-shadow:0 6px 24px rgba(146,64,14,.26)}
           .vcto-sub:hover{background:#451a03;transform:translateY(-2px)}
           .vcto-fq-s{padding:80px 40px;background:#fffbf0;border-top:1px solid rgba(69,26,3,.08);position:relative;z-index:1}
-          .vcto-fq-s h2{font-size:46px;font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,#451a03 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
+          .vcto-fq-s h2{font-size:46px;font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
           .vcto-fq-sub{font-size:15px;color:#78350f;margin:0 0 36px}
           .vcto-fql{display:flex;flex-direction:column;gap:10px}
           .vcto-fi{background:linear-gradient(135deg,rgba(255,251,235,.50) 0%,rgba(255,255,255,.85) 55%,rgba(254,243,199,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(69,26,3,.06);transition:border-color .2s}
@@ -315,7 +315,7 @@ export default function VirtualCTOServices() {
           .vcto-fa{padding:0 20px 20px 58px;font-size:14px;color:#4b5563;line-height:1.8}
           .vcto-rel{padding:80px 40px;background:rgba(255,251,235,.14);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.60)}
           .vcto-ri{max-width:1300px;margin:0 auto;text-align:center}
-          .vcto-ri h2{font-size:34px;font-weight:900;background:linear-gradient(90deg,#451a03 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 12px}
+          .vcto-ri h2{font-size:34px;font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 12px}
           .vcto-rs{font-size:14px;color:#78350f;margin:0 auto;max-width:560px}
           .vcto-ri hr{border:none;border-top:1px solid rgba(69,26,3,.10);margin:32px 0}
           .vcto-rts{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
@@ -328,7 +328,9 @@ export default function VirtualCTOServices() {
           .vcto-re{background:rgba(22,101,52,.09);border-color:rgba(22,101,52,.28);color:#14532d}
           @media(max-width:1024px){.vcto-hero h1,.vcto-st,.vcto-fq-s h2{font-size:36px}.vcto-sk-g{grid-template-columns:repeat(2,1fr)}.vcto-tec-g{grid-template-columns:repeat(2,1fr)}.vcto-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.vcto-en-c.feat{transform:none}.vcto-en-c.feat.vcto-ev{transform:none}.vcto-en-c.feat.vcto-ev:hover{transform:translateY(-4px)}.vcto-wy-g{grid-template-columns:repeat(2,1fr)}.vcto-tg2{grid-template-columns:1fr}.vcto-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.vcto-bc,.vcto-hero,.vcto-sk-s,.vcto-tec-s,.vcto-en-s,.vcto-pr-s,.vcto-te-s,.vcto-wy-s,.vcto-fq-s,.vcto-rel{padding-left:20px;padding-right:20px}.vcto-hero{padding-top:28px;padding-bottom:20px}.vcto-hero h1{font-size:26px;letter-spacing:-.3px}.vcto-stats{grid-template-columns:1fr 1fr}.vcto-sc:nth-child(2){border-right:none}.vcto-sc:nth-child(3),.vcto-sc:nth-child(4){border-top:1px solid rgba(69,26,3,.10)}.vcto-sc:nth-child(4){border-right:none}.vcto-sk-g,.vcto-tec-g,.vcto-wy-g{grid-template-columns:1fr}.vcto-fr{grid-template-columns:1fr}.vcto-ctt{font-size:28px}.vcto-st{font-size:28px}.vcto-ct-s{padding:48px 20px}.vcto-logos{padding-left:20px;padding-right:20px}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
               <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({

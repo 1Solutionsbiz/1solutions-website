@@ -157,7 +157,7 @@ export default function SoftwareCostOptimization() {
           .sco-bc a{color:#052e16;text-decoration:none}
           .sco-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
           .sco-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#166534;margin-bottom:14px}
-          .sco-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(90deg,#052e16 0%,#166534 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .sco-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .sco-desc{font-size:16px;color:#14532d;line-height:1.65;max-width:740px;margin:0 auto 24px}
           .sco-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
           .sco-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#052e16;box-shadow:0 2px 8px rgba(5,46,22,.07)}
@@ -181,7 +181,7 @@ export default function SoftwareCostOptimization() {
           .sco-cl{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
           .sco-cl:hover{opacity:.85;filter:grayscale(0%)}
           .sco-sey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
-          .sco-st{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(90deg,#052e16 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .sco-st{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .sco-sd{font-size:15px;color:#14532d;line-height:1.7}
           .sco-rv{opacity:0;transform:translateY(44px);transition:opacity .7s cubic-bezier(0.22,1,.36,1),transform .7s cubic-bezier(0.22,1,.36,1)}
           .sco-rv.sco-ok{opacity:1;transform:translateY(0)}
@@ -275,7 +275,7 @@ export default function SoftwareCostOptimization() {
           .sco-wc p{font-size:13px;color:#14532d;line-height:1.65;margin:0}
           .sco-ct-s{padding:70px 40px;background:linear-gradient(135deg,rgba(240,253,244,.55) 0%,rgba(255,255,255,.60) 40%,rgba(220,252,231,.55) 100%);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.80);position:relative;z-index:1}
           .sco-ct-g{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;gap:32px;align-items:start}
-          .sco-ctt{font-size:42px;font-weight:900;line-height:1.18;margin:0 0 14px;background:linear-gradient(90deg,#052e16 0%,#166534 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .sco-ctt{font-size:42px;font-weight:900;line-height:1.18;margin:0 0 14px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .sco-ctd{font-size:14px;color:#14532d;line-height:1.6;margin:0 0 22px}
           .sco-ben{background:rgba(255,255,255,.70);border:1px solid rgba(255,255,255,.90);border-radius:14px;padding:22px;backdrop-filter:blur(12px);display:flex;flex-direction:column;gap:14px}
           .sco-be{display:flex;gap:10px;align-items:flex-start}
@@ -297,7 +297,7 @@ export default function SoftwareCostOptimization() {
           .sco-sub{width:100%;padding:14px;background:#166534;border:none;color:#fff;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all .25s;box-shadow:0 6px 24px rgba(22,101,52,.26)}
           .sco-sub:hover{background:#052e16;transform:translateY(-2px)}
           .sco-fq-s{padding:80px 40px;background:#f4fdf6;border-top:1px solid rgba(5,46,22,.08);position:relative;z-index:1}
-          .sco-fq-s h2{font-size:46px;font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,#052e16 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
+          .sco-fq-s h2{font-size:46px;font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
           .sco-fq-sub{font-size:15px;color:#14532d;margin:0 0 36px}
           .sco-fql{display:flex;flex-direction:column;gap:10px}
           .sco-fi{background:linear-gradient(135deg,rgba(240,253,244,.50) 0%,rgba(255,255,255,.85) 55%,rgba(220,252,231,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(5,46,22,.06);transition:border-color .2s}
@@ -315,7 +315,7 @@ export default function SoftwareCostOptimization() {
           .sco-fa{padding:0 20px 20px 58px;font-size:14px;color:#4b5563;line-height:1.8}
           .sco-rel{padding:80px 40px;background:rgba(240,253,244,.14);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.60)}
           .sco-ri{max-width:1300px;margin:0 auto;text-align:center}
-          .sco-ri h2{font-size:34px;font-weight:900;background:linear-gradient(90deg,#052e16 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 12px}
+          .sco-ri h2{font-size:34px;font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 12px}
           .sco-rs{font-size:14px;color:#14532d;margin:0 auto;max-width:560px}
           .sco-ri hr{border:none;border-top:1px solid rgba(5,46,22,.10);margin:32px 0}
           .sco-rts{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
@@ -328,7 +328,9 @@ export default function SoftwareCostOptimization() {
           .sco-a{background:rgba(190,18,60,.09);border-color:rgba(190,18,60,.28);color:#9f1239}
           @media(max-width:1024px){.sco-hero h1,.sco-st,.sco-fq-s h2{font-size:36px}.sco-sk-g{grid-template-columns:repeat(2,1fr)}.sco-tec-g{grid-template-columns:repeat(2,1fr)}.sco-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.sco-en-c.feat{transform:none}.sco-en-c.feat.sco-ev{transform:none}.sco-en-c.feat.sco-ev:hover{transform:translateY(-4px)}.sco-wy-g{grid-template-columns:repeat(2,1fr)}.sco-tg2{grid-template-columns:1fr}.sco-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.sco-bc,.sco-hero,.sco-sk-s,.sco-tec-s,.sco-en-s,.sco-pr-s,.sco-te-s,.sco-wy-s,.sco-fq-s,.sco-rel{padding-left:20px;padding-right:20px}.sco-hero{padding-top:28px;padding-bottom:20px}.sco-hero h1{font-size:26px;letter-spacing:-.3px}.sco-stats{grid-template-columns:1fr 1fr}.sco-sc:nth-child(2){border-right:none}.sco-sc:nth-child(3),.sco-sc:nth-child(4){border-top:1px solid rgba(5,46,22,.10)}.sco-sc:nth-child(4){border-right:none}.sco-sk-g,.sco-tec-g,.sco-wy-g{grid-template-columns:1fr}.sco-fr{grid-template-columns:1fr}.sco-ctt{font-size:28px}.sco-st{font-size:28px}.sco-ct-s{padding:48px 20px}.sco-logos{padding-left:20px;padding-right:20px}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
               <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({

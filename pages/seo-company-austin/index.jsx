@@ -142,7 +142,7 @@ export default function SeoCompanyAustin() {
           .aust-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(122,32,0,0.08);border:1px solid rgba(122,32,0,0.18);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#7a2000;margin-bottom:24px;}
           .aust-eyebrow-dot{width:7px;height:7px;border-radius:50%;background:#c44010;display:inline-block;}
           .aust-h1{font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;color:#0A1628;}
-          .aust-h1 span{background:linear-gradient(90deg,#7a2000 0%,#c44010 55%,#FE9700 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+          .aust-h1 span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
           .aust-desc{font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:680px;}
           .aust-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px;}
           .aust-btn-p{display:inline-flex;align-items:center;gap:8px;background:#7a2000;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 6px 24px rgba(122,32,0,0.28);}
@@ -164,7 +164,7 @@ export default function SeoCompanyAustin() {
           .aust-sec-inner{max-width:1200px;margin:0 auto;}
           .aust-tag{display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#c44010;margin-bottom:12px;}
           .aust-h2{font-size:clamp(1.8rem,3vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-0.5px;color:#0A1628;margin:0 0 16px;}
-          .aust-h2 span{background:linear-gradient(90deg,#7a2000,#c44010);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+          .aust-h2 span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
           .aust-lead{font-size:1rem;color:#4b5563;line-height:1.75;max-width:620px;margin:0 0 48px;}
           .aust-grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
           .aust-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
@@ -216,7 +216,7 @@ export default function SeoCompanyAustin() {
           .aust-contact-inner{max-width:1200px;margin:0 auto;}
           .aust-contact-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:60px;align-items:start;}
           .aust-info-h{font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:900;color:#0A1628;margin:0 0 16px;line-height:1.25;}
-          .aust-info-h span{background:linear-gradient(90deg,#7a2000,#c44010);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+          .aust-info-h span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
           .aust-info-p{font-size:1rem;color:#4b5563;line-height:1.75;margin:0 0 28px;}
           .aust-ci{display:flex;align-items:flex-start;gap:14px;margin-bottom:18px;}
           .aust-ci-icon{width:40px;height:40px;border-radius:12px;background:rgba(122,32,0,0.09);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
@@ -249,7 +249,9 @@ export default function SeoCompanyAustin() {
           .aust-cta-btn-s:hover{border-color:rgba(255,255,255,0.70);background:rgba(255,255,255,0.08);}
           @media(max-width:900px){.aust-grid4{grid-template-columns:1fr 1fr;}.aust-grid3,.aust-grid2,.aust-res-grid{grid-template-columns:1fr 1fr;}.aust-ind-grid{grid-template-columns:1fr 1fr;}.aust-contact-grid{grid-template-columns:1fr;gap:40px;}}
           @media(max-width:600px){.aust-hero,.aust-sec,.aust-results,.aust-cta,.aust-contact-sec{padding-left:20px;padding-right:20px;}.aust-hero{padding-top:60px;padding-bottom:50px;}.aust-grid4,.aust-grid3,.aust-grid2,.aust-res-grid,.aust-ind-grid{grid-template-columns:1fr;}.aust-bc{padding:12px 20px;}.aust-field-row{grid-template-columns:1fr;}.aust-form-wrap{padding:24px 20px;}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
 
       <nav className="aust-bc" aria-label="Breadcrumb">

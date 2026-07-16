@@ -524,7 +524,7 @@ export default function Portfolio() {
           .pf-hero { background: linear-gradient(135deg,rgba(254,243,199,0.55) 0%,rgba(219,234,254,0.35) 100%); padding: 90px 24px 70px; position: relative; overflow: hidden; text-align: center; }
           .pf-hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
           .pf-hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(254,151,0,0.1); border: 1px solid rgba(254,151,0,0.25); border-radius: 100px; padding: 6px 16px; font-size: .8rem; font-weight: 600; color: #92400e; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 22px; }
-          .pf-hero h1 { font-size: clamp(2.2rem,5vw,3.8rem); font-weight: 900; line-height: 1.1; letter-spacing: -.03em; margin-bottom: 18px; background: linear-gradient(90deg,#0F3460 0%,#F59E0B 45%,#7C3AED 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+          .pf-hero h1 { font-size: clamp(2.2rem,5vw,3.8rem); font-weight: 900; line-height: 1.1; letter-spacing: -.03em; margin-bottom: 18px; background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
           .pf-hero-sub { font-size: 1.05rem; line-height: 1.7; color: #6b7280; max-width: 600px; margin: 0 auto 44px; }
           .pf-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 40px; max-width: 800px; margin: 0 auto; padding: 40px 0; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb; }
           .pf-stat { text-align: center; }
@@ -566,7 +566,7 @@ export default function Portfolio() {
           /* ── CTA ── */
           .pf-cta { padding: 80px 40px; background: linear-gradient(135deg,rgba(254,243,199,0.70) 0%,rgba(255,255,255,0.60) 40%,rgba(219,234,254,0.65) 100%); border-top: 1px solid rgba(255,255,255,0.80); position: relative; z-index: 1; }
           .pf-cta-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.15fr; gap: 48px; align-items: start; }
-          .pf-cta-title { font-size: clamp(2rem,3.5vw,3rem); font-weight: 900; line-height: 1.15; margin: 0 0 14px; background: linear-gradient(90deg,#0F3460 0%,#D97706 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+          .pf-cta-title { font-size: clamp(2rem,3.5vw,3rem); font-weight: 900; line-height: 1.15; margin: 0 0 14px; background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
           .pf-cta-desc { font-size: 14px; color: #4A6080; line-height: 1.7; margin: 0 0 28px; }
           .pf-merged-box { background: linear-gradient(135deg,rgba(255,255,255,0.70) 0%,rgba(219,234,254,0.35) 100%); border: 1px solid rgba(255,255,255,0.90); border-radius: 14px; padding: 24px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: inset 0 1px 0 rgba(255,255,255,1); display: flex; flex-direction: column; gap: 20px; }
           .pf-benefit-item { display: flex; gap: 10px; align-items: flex-start; }
@@ -593,7 +593,9 @@ export default function Portfolio() {
             .pf-section { padding: 40px 20px 60px; }
             .pf-stats { grid-template-columns: repeat(2,1fr); gap: 24px; }
           }
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
 
       <div className="pf-page">

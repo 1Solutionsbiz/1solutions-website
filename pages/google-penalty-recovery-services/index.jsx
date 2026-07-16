@@ -82,7 +82,7 @@ export default function GooglePenaltyRecoveryServices() {
           .gpr-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500}
           .gpr-bc a{color:#6b7280;text-decoration:none}.gpr-bc a:hover{color:#DC2626}.gpr-bc span{color:#d1d5db}
           .gpr-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(220,38,38,0.08);border:1px solid rgba(220,38,38,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#DC2626;margin-bottom:28px}
-          .gpr-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(90deg,#7F1D1D 0%,#DC2626 50%,#B91C1C 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
+          .gpr-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
           .gpr-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
           .gpr-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .gpr-btn-p{display:inline-flex;align-items:center;gap:8px;background:#DC2626;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(220,38,38,0.28)}
@@ -95,7 +95,7 @@ export default function GooglePenaltyRecoveryServices() {
           .gpr-stat-v{font-size:1.6rem;font-weight:900;color:#DC2626;letter-spacing:-0.5px}
           .gpr-svc{background:#f8fafd;padding:80px 40px}.gpr-svc-in{max-width:1280px;margin:0 auto}
           .gpr-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#DC2626;margin-bottom:10px;display:block}
-          .gpr-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#7F1D1D 0%,#DC2626 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .gpr-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .gpr-desc{font-size:15px;color:#4A6080;line-height:1.7;max-width:640px;margin-bottom:44px}
           .gpr-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
           .gpr-card{background:linear-gradient(135deg,rgba(255,245,245,0.65) 0%,rgba(255,255,255,0.88) 60%,rgba(254,226,226,0.25) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:26px 22px 22px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(220,38,38,0.05);opacity:0;transform:translateY(20px);transition:opacity 0.4s ease,transform 0.4s ease}
@@ -135,11 +135,13 @@ export default function GooglePenaltyRecoveryServices() {
           .gpr-cta-o1{position:absolute;top:-80px;right:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(220,38,38,0.10) 0%,transparent 70%);pointer-events:none}
           .gpr-cta-o2{position:absolute;bottom:-60px;left:-60px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(127,29,29,0.08) 0%,transparent 70%);pointer-events:none}
           .gpr-cta-in{max-width:760px;margin:0 auto;text-align:center;position:relative;z-index:1}
-          .gpr-cta-t{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;background:linear-gradient(90deg,#7F1D1D 0%,#DC2626 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;line-height:1.2}
+          .gpr-cta-t{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;line-height:1.2}
           .gpr-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           @media(max-width:1024px){.gpr-grid{grid-template-columns:repeat(2,1fr)}.gpr-why-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.gpr-hero,.gpr-svc,.gpr-types,.gpr-proc,.gpr-why,.gpr-faq,.gpr-cta{padding:60px 24px}.gpr-hero{padding-top:60px;padding-bottom:0}.gpr-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.gpr-stat:nth-child(2){border-right:none}.gpr-grid{grid-template-columns:1fr}.gpr-why-grid{grid-template-columns:1fr}.gpr-step{grid-template-columns:56px 1fr}.gpr-btns{flex-direction:column;align-items:center}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
       <div className="gpr-page">
         <section className="gpr-hero"><div className="gpr-o1"/><div className="gpr-o2"/>

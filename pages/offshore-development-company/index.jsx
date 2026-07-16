@@ -157,7 +157,7 @@ export default function OffshoreDevCompany() {
           .od-bc a{color:#0c2340;text-decoration:none}
           .od-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
           .od-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4a6a7a;margin-bottom:14px}
-          .od-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(90deg,#0c2340 0%,#0e7490 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .od-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .od-desc{font-size:16px;color:#2a4a5a;line-height:1.65;max-width:740px;margin:0 auto 24px}
           .od-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
           .od-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0c2340;box-shadow:0 2px 8px rgba(12,35,64,.07)}
@@ -181,7 +181,7 @@ export default function OffshoreDevCompany() {
           .od-cl{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
           .od-cl:hover{opacity:.85;filter:grayscale(0%)}
           .od-sey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
-          .od-st{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(90deg,#0c2340 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .od-st{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .od-sd{font-size:15px;color:#3a5a6a;line-height:1.7}
           .od-rv{opacity:0;transform:translateY(44px);transition:opacity .7s cubic-bezier(0.22,1,.36,1),transform .7s cubic-bezier(0.22,1,.36,1)}
           .od-rv.od-ok{opacity:1;transform:translateY(0)}
@@ -275,7 +275,7 @@ export default function OffshoreDevCompany() {
           .od-wc p{font-size:13px;color:#3a5a6a;line-height:1.65;margin:0}
           .od-ct-s{padding:70px 40px;background:linear-gradient(135deg,rgba(240,253,255,.55) 0%,rgba(255,255,255,.60) 40%,rgba(207,250,254,.55) 100%);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.80);position:relative;z-index:1}
           .od-ct-g{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;gap:32px;align-items:start}
-          .od-ctt{font-size:42px;font-weight:900;line-height:1.18;margin:0 0 14px;background:linear-gradient(90deg,#0c2340 0%,#0e7490 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .od-ctt{font-size:42px;font-weight:900;line-height:1.18;margin:0 0 14px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .od-ctd{font-size:14px;color:#3a5a6a;line-height:1.6;margin:0 0 22px}
           .od-ben{background:rgba(255,255,255,.70);border:1px solid rgba(255,255,255,.90);border-radius:14px;padding:22px;backdrop-filter:blur(12px);display:flex;flex-direction:column;gap:14px}
           .od-be{display:flex;gap:10px;align-items:flex-start}
@@ -297,7 +297,7 @@ export default function OffshoreDevCompany() {
           .od-sub{width:100%;padding:14px;background:#0e7490;border:none;color:#fff;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all .25s;box-shadow:0 6px 24px rgba(14,116,144,.26)}
           .od-sub:hover{background:#0c2340;transform:translateY(-2px)}
           .od-fq-s{padding:80px 40px;background:#f5fdfe;border-top:1px solid rgba(12,35,64,.08);position:relative;z-index:1}
-          .od-fq-s h2{font-size:46px;font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,#0c2340 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
+          .od-fq-s h2{font-size:46px;font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
           .od-fq-sub{font-size:15px;color:#3a5a6a;margin:0 0 36px}
           .od-fql{display:flex;flex-direction:column;gap:10px}
           .od-fi{background:linear-gradient(135deg,rgba(240,253,255,.50) 0%,rgba(255,255,255,.85) 55%,rgba(207,250,254,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(12,35,64,.06);transition:border-color .2s}
@@ -315,7 +315,7 @@ export default function OffshoreDevCompany() {
           .od-fa{padding:0 20px 20px 58px;font-size:14px;color:#4b5563;line-height:1.8}
           .od-rel{padding:80px 40px;background:rgba(240,253,255,.14);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.60)}
           .od-ri{max-width:1300px;margin:0 auto;text-align:center}
-          .od-ri h2{font-size:34px;font-weight:900;background:linear-gradient(90deg,#0c2340 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 12px}
+          .od-ri h2{font-size:34px;font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 12px}
           .od-rs{font-size:14px;color:#3a5a6a;margin:0 auto;max-width:560px}
           .od-ri hr{border:none;border-top:1px solid rgba(12,35,64,.10);margin:32px 0}
           .od-rts{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
@@ -328,7 +328,9 @@ export default function OffshoreDevCompany() {
           .od-a{background:rgba(190,18,60,.09);border-color:rgba(190,18,60,.28);color:#9f1239}
           @media(max-width:1024px){.od-hero h1,.od-st,.od-fq-s h2{font-size:36px}.od-sk-g{grid-template-columns:repeat(2,1fr)}.od-tec-g{grid-template-columns:repeat(2,1fr)}.od-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.od-en-c.feat{transform:none}.od-en-c.feat.od-ev{transform:none}.od-en-c.feat.od-ev:hover{transform:translateY(-4px)}.od-wy-g{grid-template-columns:repeat(2,1fr)}.od-tg2{grid-template-columns:1fr}.od-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.od-bc,.od-hero,.od-sk-s,.od-tec-s,.od-en-s,.od-pr-s,.od-te-s,.od-wy-s,.od-fq-s,.od-rel{padding-left:20px;padding-right:20px}.od-hero{padding-top:28px;padding-bottom:20px}.od-hero h1{font-size:26px;letter-spacing:-.3px}.od-stats{grid-template-columns:1fr 1fr}.od-sc:nth-child(2){border-right:none}.od-sc:nth-child(3),.od-sc:nth-child(4){border-top:1px solid rgba(12,35,64,.10)}.od-sc:nth-child(4){border-right:none}.od-sk-g,.od-tec-g,.od-wy-g{grid-template-columns:1fr}.od-fr{grid-template-columns:1fr}.od-ctt{font-size:28px}.od-st{font-size:28px}.od-ct-s{padding:48px 20px}.od-logos{padding-left:20px;padding-right:20px}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
               <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({

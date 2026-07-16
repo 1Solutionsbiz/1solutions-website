@@ -120,7 +120,7 @@ export default function BookConsultation() {
             line-height: 1.2;
             max-width: 680px;
             margin-bottom: 20px;
-            background: linear-gradient(90deg, #0F3460 0%, #F59E0B 45%, #7C3AED 100%);
+            background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -275,7 +275,9 @@ export default function BookConsultation() {
             .bc-trust-row { gap: 20px; }
             .bc-trust-divider { display: none; }
           }
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
 
       <Script

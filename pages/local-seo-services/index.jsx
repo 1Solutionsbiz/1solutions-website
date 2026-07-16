@@ -181,7 +181,7 @@ export default function LocalSeoServices() {
           .lseo-breadcrumb a:hover { color: #059669; }
           .lseo-breadcrumb span { color: #d1d5db; }
           .lseo-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(5,150,105,0.08); border: 1px solid rgba(5,150,105,0.20); border-radius: 100px; padding: 5px 14px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #047857; margin-bottom: 28px; }
-          .lseo-hero-h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 900; line-height: 1.1; letter-spacing: -1px; background: linear-gradient(90deg, #064E3B 0%, #059669 50%, #0F3460 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 20px; max-width: 900px; margin-left: auto; margin-right: auto; }
+          .lseo-hero-h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 900; line-height: 1.1; letter-spacing: -1px; background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 20px; max-width: 900px; margin-left: auto; margin-right: auto; }
           .lseo-hero-sub { font-size: 1.08rem; color: #4A6080; line-height: 1.75; max-width: 660px; margin: 0 auto 36px; }
           .lseo-hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 56px; }
           .lseo-btn-primary { display: inline-flex; align-items: center; gap: 8px; background: #059669; color: #fff; padding: 14px 30px; border-radius: 50px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all 0.25s; box-shadow: 0 4px 20px rgba(5,150,105,0.28); }
@@ -197,7 +197,7 @@ export default function LocalSeoServices() {
           .lseo-services-section { background: #f8fafd; padding: 80px 40px; box-shadow: 0 -20px 60px rgba(5,150,105,0.07); }
           .lseo-services-inner { max-width: 1280px; margin: 0 auto; }
           .lseo-section-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #059669; margin-bottom: 10px; display: block; }
-          .lseo-section-title { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 900; line-height: 1.15; letter-spacing: -1px; background: linear-gradient(90deg, #064E3B 0%, #059669 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 10px; }
+          .lseo-section-title { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 900; line-height: 1.15; letter-spacing: -1px; background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 10px; }
           .lseo-section-desc { font-size: 15px; color: #4A6080; line-height: 1.7; max-width: 640px; margin-bottom: 44px; }
           .lseo-services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
           .lseo-service-card { background: linear-gradient(135deg, rgba(236,253,245,0.65) 0%, rgba(255,255,255,0.88) 60%, rgba(224,242,254,0.40) 100%); border: 1px solid rgba(255,255,255,0.85); border-radius: 20px; padding: 26px 22px 22px; position: relative; overflow: hidden; box-shadow: 0 4px 24px rgba(5,150,105,0.05); opacity: 0; transform: translateY(20px); transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.22s, border-color 0.22s; }
@@ -252,7 +252,7 @@ export default function LocalSeoServices() {
           .lseo-cta-orb1 { position: absolute; top: -80px; right: -80px; width: 360px; height: 360px; border-radius: 50%; background: radial-gradient(circle, rgba(5,150,105,0.10) 0%, transparent 70%); pointer-events: none; }
           .lseo-cta-orb2 { position: absolute; bottom: -60px; left: -60px; width: 280px; height: 280px; border-radius: 50%; background: radial-gradient(circle, rgba(15,52,96,0.06) 0%, transparent 70%); pointer-events: none; }
           .lseo-cta-inner { max-width: 760px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
-          .lseo-cta-title { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; background: linear-gradient(90deg, #064E3B 0%, #059669 50%, #0F3460 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px; line-height: 1.2; }
+          .lseo-cta-title { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px; line-height: 1.2; }
           .lseo-cta-sub { font-size: 1.05rem; color: #4A6080; line-height: 1.75; margin: 0 auto 36px; max-width: 520px; }
           .lseo-cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
@@ -268,7 +268,9 @@ export default function LocalSeoServices() {
             .lseo-process-step { grid-template-columns: 56px 1fr; }
             .lseo-hero-btns { flex-direction: column; align-items: center; }
           }
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
 
       <div className="lseo-page">

@@ -143,7 +143,7 @@ export default function WalmartAccountManagement() {
           .wlmt-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;}
           .wlmt-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(0,38,90,0.09);border:1px solid rgba(0,38,90,0.20);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#00265a;margin-bottom:24px;}
           .wlmt-h1{font-size:clamp(2.2rem,4vw,3.6rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;color:#0A1628;}
-          .wlmt-h1-accent{background:linear-gradient(90deg,#00265a 0%,#1a5aab 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+          .wlmt-h1-accent{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
           .wlmt-desc{font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:680px;}
           .wlmt-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px;}
           .wlmt-btn-p{display:inline-flex;align-items:center;gap:8px;background:#00265a;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 6px 24px rgba(0,38,90,0.25);}
@@ -165,7 +165,7 @@ export default function WalmartAccountManagement() {
           .wlmt-bg{background:#f8fafd;}
           .wlmt-tag{display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#00265a;margin-bottom:12px;}
           .wlmt-h2{font-size:clamp(1.8rem,3vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-0.5px;color:#0A1628;margin:0 0 16px;}
-          .wlmt-h2 span{background:linear-gradient(90deg,#00265a,#1a5aab);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+          .wlmt-h2 span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
           .wlmt-lead{font-size:1rem;color:#4b5563;line-height:1.75;max-width:620px;margin:0 0 48px;}
           .wlmt-grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
           .wlmt-grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
@@ -211,7 +211,7 @@ export default function WalmartAccountManagement() {
           .wlmt-contact-inner{max-width:1200px;margin:0 auto;}
           .wlmt-contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:start;}
           .wlmt-contact-info-h{font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:900;color:#0A1628;margin:0 0 16px;line-height:1.25;}
-          .wlmt-contact-info-h span{background:linear-gradient(90deg,#00265a,#1a5aab);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+          .wlmt-contact-info-h span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
           .wlmt-contact-info-p{font-size:1rem;color:#4b5563;line-height:1.75;margin:0 0 32px;}
           .wlmt-contact-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px;}
           .wlmt-contact-item-icon{width:40px;height:40px;border-radius:12px;background:rgba(0,38,90,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
@@ -240,7 +240,7 @@ export default function WalmartAccountManagement() {
           @media(max-width:600px){.wlmt-hero,.wlmt-sec,.wlmt-results,.wlmt-cta,.wlmt-contact-sec{padding-left:20px;padding-right:20px;}.wlmt-hero{padding-top:60px;padding-bottom:50px;}.wlmt-grid3,.wlmt-grid4,.wlmt-grid2,.wlmt-res-grid{grid-template-columns:1fr;}.wlmt-bc{padding:12px 20px;}.wlmt-field-row{grid-template-columns:1fr;}.wlmt-form-wrap{padding:24px 20px;}}
           /* ── FAQ ── */
           .wlmt-faq-sec { padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(0,38,90,0.08); }
-          .wlmt-faq-h { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,#00265a 0%,#1a5aab 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 36px;line-height:1.15; }
+          .wlmt-faq-h { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 36px;line-height:1.15; }
           .wlmt-faq-list { display:flex;flex-direction:column;gap:12px; }
           .wlmt-faq-item { background:linear-gradient(135deg,rgba(0,38,90,0.06) 0%,rgba(255,255,255,0.85) 60%,rgba(0,38,90,0.04) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,38,90,0.07);transition:border-color 0.2s;position:relative; }
           .wlmt-faq-item.open { border-color:rgba(0,38,90,0.30); }
@@ -260,7 +260,7 @@ export default function WalmartAccountManagement() {
           .wlmt-rel-sec { background:rgba(0,38,90,0.04);border-top:1px solid rgba(0,38,90,0.08);padding:80px 40px; }
           .wlmt-rel-inner { max-width:1200px;margin:0 auto;text-align:center; }
           .wlmt-rel-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A6080;margin:0 0 14px;display:block; }
-          .wlmt-rel-h { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,#00265a 0%,#1a5aab 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 16px;line-height:1.15; }
+          .wlmt-rel-h { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 16px;line-height:1.15; }
           .wlmt-rel-sub { font-size:15px;color:#0F1F40;line-height:1.7;margin:0 auto;max-width:680px; }
           .wlmt-rel-div { border:none;border-top:1px solid rgba(0,38,90,0.12);margin:40px 0; }
           .wlmt-rel-tags { display:flex;flex-wrap:wrap;justify-content:center;gap:12px; }
@@ -272,7 +272,9 @@ export default function WalmartAccountManagement() {
           .wlmt-rtag-d { background:rgba(217,119,6,0.07);color:#b45309;border-color:rgba(217,119,6,0.22); }
           .wlmt-rtag-e { background:rgba(219,39,119,0.07);color:#be185d;border-color:rgba(219,39,119,0.22); }
           .wlmt-rtag-f { background:rgba(8,145,178,0.07);color:#0e7490;border-color:rgba(8,145,178,0.22); }
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
 
       {/* Breadcrumb */}

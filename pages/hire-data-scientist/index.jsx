@@ -157,7 +157,7 @@ export default function HireDataScientist() {
           .hds-bc a{color:#0F3460;text-decoration:none}
           .hds-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
           .hds-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
-          .hds-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(90deg,#0F3460 0%,#1e40af 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .hds-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .hds-desc{font-size:16px;color:#3A507A;line-height:1.65;max-width:740px;margin:0 auto 24px}
           .hds-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
           .hds-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07)}
@@ -181,7 +181,7 @@ export default function HireDataScientist() {
           .hds-cl{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
           .hds-cl:hover{opacity:.85;filter:grayscale(0%)}
           .hds-sey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
-          .hds-st{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .hds-st{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .hds-sd{font-size:15px;color:#4A6080;line-height:1.7}
           .hds-rv{opacity:0;transform:translateY(44px);transition:opacity .7s cubic-bezier(0.22,1,.36,1),transform .7s cubic-bezier(0.22,1,.36,1)}
           .hds-rv.hds-ok{opacity:1;transform:translateY(0)}
@@ -275,7 +275,7 @@ export default function HireDataScientist() {
           .hds-wc p{font-size:13px;color:#4A6080;line-height:1.65;margin:0}
           .hds-ct-s{padding:70px 40px;background:linear-gradient(135deg,rgba(239,246,255,.55) 0%,rgba(255,255,255,.60) 40%,rgba(219,234,254,.55) 100%);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.80);position:relative;z-index:1}
           .hds-ct-g{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;gap:32px;align-items:start}
-          .hds-ctt{font-size:42px;font-weight:900;line-height:1.18;margin:0 0 14px;background:linear-gradient(90deg,#0F3460 0%,#1e40af 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .hds-ctt{font-size:42px;font-weight:900;line-height:1.18;margin:0 0 14px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .hds-ctd{font-size:14px;color:#4A6080;line-height:1.6;margin:0 0 22px}
           .hds-ben{background:rgba(255,255,255,.70);border:1px solid rgba(255,255,255,.90);border-radius:14px;padding:22px;backdrop-filter:blur(12px);display:flex;flex-direction:column;gap:14px}
           .hds-be{display:flex;gap:10px;align-items:flex-start}
@@ -297,7 +297,7 @@ export default function HireDataScientist() {
           .hds-sub{width:100%;padding:14px;background:#1e40af;border:none;color:#fff;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all .25s;box-shadow:0 6px 24px rgba(30,64,175,.26)}
           .hds-sub:hover{background:#0F3460;transform:translateY(-2px)}
           .hds-fq-s{padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(15,52,96,.08);position:relative;z-index:1}
-          .hds-fq-s h2{font-size:46px;font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
+          .hds-fq-s h2{font-size:46px;font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
           .hds-fq-sub{font-size:15px;color:#4A6080;margin:0 0 36px}
           .hds-fql{display:flex;flex-direction:column;gap:10px}
           .hds-fi{background:linear-gradient(135deg,rgba(239,246,255,.50) 0%,rgba(255,255,255,.85) 55%,rgba(219,234,254,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(15,52,96,.06);transition:border-color .2s}
@@ -315,7 +315,7 @@ export default function HireDataScientist() {
           .hds-fa{padding:0 20px 20px 58px;font-size:14px;color:#4b5563;line-height:1.8}
           .hds-rel{padding:80px 40px;background:rgba(239,246,255,.14);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.60)}
           .hds-ri{max-width:1300px;margin:0 auto;text-align:center}
-          .hds-ri h2{font-size:34px;font-weight:900;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 12px}
+          .hds-ri h2{font-size:34px;font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 12px}
           .hds-rs{font-size:14px;color:#4A6080;margin:0 auto;max-width:560px}
           .hds-ri hr{border:none;border-top:1px solid rgba(15,52,96,.10);margin:32px 0}
           .hds-rts{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
@@ -328,7 +328,9 @@ export default function HireDataScientist() {
           .hds-a{background:rgba(202,138,4,.09);border-color:rgba(202,138,4,.28);color:#92400e}
           @media(max-width:1024px){.hds-hero h1,.hds-st,.hds-fq-s h2{font-size:36px}.hds-sk-g{grid-template-columns:repeat(2,1fr)}.hds-tec-g{grid-template-columns:repeat(2,1fr)}.hds-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.hds-en-c.feat{transform:none}.hds-en-c.feat.hds-ev{transform:none}.hds-en-c.feat.hds-ev:hover{transform:translateY(-4px)}.hds-wy-g{grid-template-columns:repeat(2,1fr)}.hds-tg2{grid-template-columns:1fr}.hds-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.hds-bc,.hds-hero,.hds-sk-s,.hds-tec-s,.hds-en-s,.hds-pr-s,.hds-te-s,.hds-wy-s,.hds-fq-s,.hds-rel{padding-left:20px;padding-right:20px}.hds-hero{padding-top:28px;padding-bottom:20px}.hds-hero h1{font-size:26px;letter-spacing:-.3px}.hds-stats{grid-template-columns:1fr 1fr}.hds-sc:nth-child(2){border-right:none}.hds-sc:nth-child(3),.hds-sc:nth-child(4){border-top:1px solid rgba(15,52,96,.10)}.hds-sc:nth-child(4){border-right:none}.hds-sk-g,.hds-tec-g,.hds-wy-g{grid-template-columns:1fr}.hds-fr{grid-template-columns:1fr}.hds-ctt{font-size:28px}.hds-st{font-size:28px}.hds-ct-s{padding:48px 20px}.hds-logos{padding-left:20px;padding-right:20px}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
               <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({

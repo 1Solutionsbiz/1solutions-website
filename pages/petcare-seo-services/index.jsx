@@ -90,7 +90,7 @@ export default function PetcareSeoServices() {
           .ptseo-orb2 { position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(60,150,0,0.08) 0%,transparent 70%);pointer-events:none;filter:blur(8px); }
           .ptseo-inner { max-width:1200px;margin:0 auto;position:relative;z-index:1; }
           .ptseo-eyebrow { display:inline-flex;align-items:center;gap:8px;background:rgba(26,69,0,0.10);border:1px solid rgba(26,69,0,0.22);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#1a4500;margin-bottom:24px; }
-          .ptseo-h1 { font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;background:linear-gradient(90deg,#1a4500 0%,#2d7500 50%,#1a4500 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+          .ptseo-h1 { font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
           .ptseo-desc { font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:660px; }
           .ptseo-btns { display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px; }
           .ptseo-btn-p { display:inline-flex;align-items:center;gap:8px;background:#1a4500;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 6px 24px rgba(26,69,0,0.28); }
@@ -114,7 +114,7 @@ export default function PetcareSeoServices() {
           .ptseo-sec-inner { max-width:1200px;margin:0 auto; }
           .ptseo-tag { display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#1a4500;margin-bottom:12px; }
           .ptseo-h2 { font-size:clamp(1.8rem,3vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-0.5px;color:#0A1628;margin:0 0 16px; }
-          .ptseo-h2 span { background:linear-gradient(90deg,#1a4500,#2d7500);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+          .ptseo-h2 span { background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
           .ptseo-lead { font-size:1rem;color:#4b5563;line-height:1.75;max-width:620px;margin:0 0 48px; }
           .ptseo-bg { background:#f2f8f0; }
           .ptseo-grid3 { display:grid;grid-template-columns:repeat(3,1fr);gap:24px; }
@@ -152,7 +152,7 @@ export default function PetcareSeoServices() {
           .ptseo-faq-icon svg { width:14px;height:14px;color:#1a4500; }
           .ptseo-faq-a { padding:0 24px 20px;font-size:14px;color:#4b5563;line-height:1.75; }
           .ptseo-cta { background:linear-gradient(135deg,rgba(26,69,0,0.10) 0%,rgba(255,255,255,0.65) 40%,rgba(26,69,0,0.08) 100%);padding:90px 40px;text-align:center;position:relative;overflow:hidden; }
-          .ptseo-cta-h { font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-0.5px;margin:0 0 18px;background:linear-gradient(90deg,#0a1f00 0%,#1a4500 50%,#2d7500 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+          .ptseo-cta-h { font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-0.5px;margin:0 0 18px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
           .ptseo-cta-p { font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px; }
           @media (max-width:900px) { .ptseo-grid3,.ptseo-res-grid { grid-template-columns:1fr 1fr; } }
           @media (max-width:600px) {
@@ -161,7 +161,9 @@ export default function PetcareSeoServices() {
             .ptseo-grid3,.ptseo-res-grid { grid-template-columns:1fr; }
             .ptseo-bc { padding:12px 20px; }
           }
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
 
       <nav className="ptseo-bc" aria-label="Breadcrumb">

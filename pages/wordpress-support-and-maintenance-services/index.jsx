@@ -351,7 +351,7 @@ export default function WordPressMaintenance() {
           .wm-orb-3{width:550px;height:550px;background:radial-gradient(circle,rgba(99,102,241,.14) 0%,transparent 70%);top:42%;left:-120px;transform:translateY(-50%)}
           .wm-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
           .wm-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
-          .wm-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .wm-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .wm-hero-desc{font-size:16px;color:#3A507A;line-height:1.65;max-width:740px;margin:0 auto 24px}
           .wm-trust-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
           .wm-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07)}
@@ -375,7 +375,7 @@ export default function WordPressMaintenance() {
           .wm-clogo{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
           .wm-clogo:hover{opacity:.85;filter:grayscale(0%)}
           .wm-s-eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
-          .wm-s-title{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .wm-s-title{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .wm-s-desc{font-size:15px;color:#4A6080;line-height:1.7}
           .wm-s-reveal{opacity:0;transform:translateY(44px);transition:opacity .7s cubic-bezier(0.22,1,.36,1),transform .7s cubic-bezier(0.22,1,.36,1)}
           .wm-s-reveal.wm-revealed{opacity:1;transform:translateY(0)}
@@ -469,7 +469,7 @@ export default function WordPressMaintenance() {
           .wm-wcard p{font-size:13px;color:#4A6080;line-height:1.65;margin:0}
           .wm-contact{padding:70px 40px;background:linear-gradient(135deg,rgba(254,243,199,.65) 0%,rgba(255,255,255,.60) 40%,rgba(219,234,254,.65) 100%);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.80);position:relative;z-index:1}
           .wm-contact-grid{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;gap:32px;align-items:start}
-          .wm-ctitle{font-size:42px;font-weight:900;line-height:1.18;margin:0 0 14px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .wm-ctitle{font-size:42px;font-weight:900;line-height:1.18;margin:0 0 14px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .wm-cdesc{font-size:14px;color:#4A6080;line-height:1.6;margin:0 0 22px}
           .wm-cbenefits{background:rgba(255,255,255,.70);border:1px solid rgba(255,255,255,.90);border-radius:14px;padding:22px;backdrop-filter:blur(12px);display:flex;flex-direction:column;gap:14px}
           .wm-cbenefit{display:flex;gap:10px;align-items:flex-start}
@@ -492,7 +492,7 @@ export default function WordPressMaintenance() {
           .wm-submit{width:100%;padding:14px;background:rgba(15,52,96,.85);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.30);color:#fff;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all .25s;box-shadow:0 6px 24px rgba(15,52,96,.25),inset 0 1px 0 rgba(255,255,255,.15)}
           .wm-submit:hover{background:rgba(15,52,96,.95);border-color:rgba(245,158,11,.60);transform:translateY(-2px)}
           .wm-faq{padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(15,52,96,.08);position:relative;z-index:1}
-          .wm-faq h2{font-size:46px;font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 8px}
+          .wm-faq h2{font-size:46px;font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 8px}
           .wm-faq-sub{font-size:15px;color:#4A6080;margin:0 0 36px}
           .wm-faq-list{display:flex;flex-direction:column;gap:10px}
           .wm-fitem{background:linear-gradient(135deg,rgba(219,234,254,.50) 0%,rgba(255,255,255,.85) 55%,rgba(253,244,255,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(15,52,96,.06);transition:border-color .2s;position:relative}
@@ -510,7 +510,7 @@ export default function WordPressMaintenance() {
           .wm-fanswer{padding:0 20px 20px 58px;font-size:14px;color:#4b5563;line-height:1.8}
           .wm-related{padding:80px 40px;background:rgba(219,234,254,.14);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.60)}
           .wm-related-inner{max-width:1300px;margin:0 auto;text-align:center}
-          .wm-related h2{font-size:34px;font-weight:900;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 12px}
+          .wm-related h2{font-size:34px;font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 12px}
           .wm-related-sub{font-size:14px;color:#4A6080;margin:0 auto;max-width:560px}
           .wm-related hr{border:none;border-top:1px solid rgba(15,52,96,.10);margin:32px 0}
           .wm-rtags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
@@ -524,7 +524,7 @@ export default function WordPressMaintenance() {
           .wm-rtag-rose{background:rgba(225,29,72,.09);border-color:rgba(225,29,72,.28);color:#9f1239}
           .wm-what-section{background:#EEF3FB;border-top:1px solid rgba(17,65,113,.08);border-bottom:1px solid rgba(17,65,113,.08);padding:72px 40px;position:relative;z-index:1}
           .wm-what-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
-          .wm-what-text h2{font-size:38px;font-weight:900;line-height:1.15;letter-spacing:-.8px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 16px}
+          .wm-what-text h2{font-size:38px;font-weight:900;line-height:1.15;letter-spacing:-.8px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 16px}
           .wm-what-text p{font-size:15px;color:#4A6080;line-height:1.75;margin:0 0 20px}
           .wm-what-text h3{font-size:20px;font-weight:700;color:#114171;margin:24px 0 12px}
           .wm-what-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
@@ -559,7 +559,9 @@ export default function WordPressMaintenance() {
           @media(max-width:1024px){.wm-badge,.wm-btn-ghost,.wm-stats,.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-pstep-circle,.wm-tcard,.wm-wcard,.wm-contact,.wm-cbenefits,.wm-form-box,.wm-submit,.wm-fitem,.wm-related,.wm-why-highlight{backdrop-filter:none !important;-webkit-backdrop-filter:none !important}}
           @media(max-width:768px){.wm-logos-track{animation:none}.wm-page{background:linear-gradient(160deg,#dbeafe 0%,#e8f0fb 100%) !important}.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-tcard,.wm-wcard,.wm-fitem{background:rgba(255,255,255,.95);box-shadow:0 2px 8px rgba(15,52,96,.08)}.wm-stats{background:rgba(255,255,255,.92)}.wm-form-box{background:rgba(255,255,255,.97)}.wm-cbenefits{background:rgba(255,255,255,.94)}.wm-s-reveal,.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-tcard,.wm-wcard,.wm-pstep{opacity:1 !important;transform:none !important;transition:none !important}}
           @media(prefers-reduced-motion:reduce){.wm-logos-track{animation:none}.wm-s-reveal,.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-tcard,.wm-wcard,.wm-pstep{opacity:1 !important;transform:none !important;transition:none !important}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
 
       <div className="wm-page">

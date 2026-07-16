@@ -90,7 +90,7 @@ export default function RestaurantsSeoServices() {
           .rtseo-orb2 { position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(180,0,60,0.08) 0%,transparent 70%);pointer-events:none;filter:blur(8px); }
           .rtseo-inner { max-width:1200px;margin:0 auto;position:relative;z-index:1; }
           .rtseo-eyebrow { display:inline-flex;align-items:center;gap:8px;background:rgba(92,0,32,0.10);border:1px solid rgba(92,0,32,0.22);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#5c0020;margin-bottom:24px; }
-          .rtseo-h1 { font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;background:linear-gradient(90deg,#5c0020 0%,#8c0030 50%,#5c0020 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+          .rtseo-h1 { font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
           .rtseo-desc { font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:660px; }
           .rtseo-btns { display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px; }
           .rtseo-btn-p { display:inline-flex;align-items:center;gap:8px;background:#5c0020;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 6px 24px rgba(92,0,32,0.28); }
@@ -114,7 +114,7 @@ export default function RestaurantsSeoServices() {
           .rtseo-sec-inner { max-width:1200px;margin:0 auto; }
           .rtseo-tag { display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#5c0020;margin-bottom:12px; }
           .rtseo-h2 { font-size:clamp(1.8rem,3vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-0.5px;color:#0A1628;margin:0 0 16px; }
-          .rtseo-h2 span { background:linear-gradient(90deg,#5c0020,#8c0030);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+          .rtseo-h2 span { background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
           .rtseo-lead { font-size:1rem;color:#4b5563;line-height:1.75;max-width:620px;margin:0 0 48px; }
           .rtseo-bg { background:#fdf4f6; }
           .rtseo-grid3 { display:grid;grid-template-columns:repeat(3,1fr);gap:24px; }
@@ -152,7 +152,7 @@ export default function RestaurantsSeoServices() {
           .rtseo-faq-icon svg { width:14px;height:14px;color:#5c0020; }
           .rtseo-faq-a { padding:0 24px 20px;font-size:14px;color:#4b5563;line-height:1.75; }
           .rtseo-cta { background:linear-gradient(135deg,rgba(92,0,32,0.10) 0%,rgba(255,255,255,0.65) 40%,rgba(92,0,32,0.08) 100%);padding:90px 40px;text-align:center;position:relative;overflow:hidden; }
-          .rtseo-cta-h { font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-0.5px;margin:0 0 18px;background:linear-gradient(90deg,#250010 0%,#5c0020 50%,#8c0030 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+          .rtseo-cta-h { font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-0.5px;margin:0 0 18px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
           .rtseo-cta-p { font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px; }
           @media (max-width:900px) { .rtseo-grid3,.rtseo-res-grid { grid-template-columns:1fr 1fr; } }
           @media (max-width:600px) {
@@ -161,7 +161,9 @@ export default function RestaurantsSeoServices() {
             .rtseo-grid3,.rtseo-res-grid { grid-template-columns:1fr; }
             .rtseo-bc { padding:12px 20px; }
           }
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
 
       <nav className="rtseo-bc" aria-label="Breadcrumb">

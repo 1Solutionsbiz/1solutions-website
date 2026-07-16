@@ -147,7 +147,7 @@ export default function RealEstateSoftware() {
           .re-bc a{color:${txt};text-decoration:none}
           .re-hero{position:relative;z-index:2;text-align:center;max-width:940px;margin:0 auto;padding:44px 40px 28px}
           .re-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:${ac};margin-bottom:14px}
-          .re-hero h1{font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(90deg,${txt} 0%,${ac} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .re-hero h1{font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .re-desc{font-size:16px;color:${txt2};line-height:1.65;max-width:720px;margin:0 auto 22px}
           .re-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-bottom:24px}
           .re-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:5px 13px;font-size:12px;font-weight:600;color:${txt};box-shadow:0 2px 8px rgba(124,45,18,.07)}
@@ -165,7 +165,7 @@ export default function RealEstateSoftware() {
           .re-sec-alt{background:rgba(253,244,238,.55);border-top:1px solid rgba(124,45,18,.08);border-bottom:1px solid rgba(124,45,18,.08)}
           .re-in{max-width:1300px;margin:0 auto}
           .re-sey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
-          .re-sh{font-size:44px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(90deg,${txt} 0%,#c2410c 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .re-sh{font-size:44px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .re-sd{font-size:15px;color:${txt2};line-height:1.7;max-width:700px}
           .re-rv{opacity:0;transform:translateY(40px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
           .re-rv.re-ok{opacity:1;transform:translateY(0)}
@@ -227,7 +227,7 @@ export default function RealEstateSoftware() {
           .re-wc p{font-size:12px;color:${txt2};line-height:1.6;margin:0}
           .re-ct{padding:64px 40px;background:linear-gradient(135deg,rgba(253,244,238,.55) 0%,rgba(255,255,255,.60) 40%,rgba(240,249,230,.50) 100%);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.80);position:relative;z-index:1}
           .re-ct-g{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr;gap:28px;align-items:start}
-          .re-cth{font-size:38px;font-weight:900;line-height:1.18;margin:0 0 12px;background:linear-gradient(90deg,${txt} 0%,${ac} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .re-cth{font-size:38px;font-weight:900;line-height:1.18;margin:0 0 12px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .re-ctd{font-size:14px;color:${txt2};line-height:1.6;margin:0 0 18px}
           .re-ben{background:rgba(255,255,255,.70);border:1px solid rgba(255,255,255,.90);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:12px}
           .re-be{display:flex;gap:9px;align-items:flex-start}
@@ -248,7 +248,7 @@ export default function RealEstateSoftware() {
           .re-sub{width:100%;padding:13px;background:${ac};border:none;color:#fff;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all .25s;box-shadow:0 6px 24px rgba(124,45,18,.25)}
           .re-sub:hover{background:${txt};transform:translateY(-2px)}
           .re-fq{padding:72px 40px;background:rgba(253,244,238,.55);border-top:1px solid rgba(124,45,18,.08);position:relative;z-index:1}
-          .re-fq h2{font-size:42px;font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,${txt} 0%,#c2410c 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
+          .re-fq h2{font-size:42px;font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
           .re-fq-sub{font-size:15px;color:${txt2};margin:0 0 32px}
           .re-fql{display:flex;flex-direction:column;gap:9px}
           .re-fi{background:linear-gradient(135deg,rgba(253,244,238,.55) 0%,rgba(255,255,255,.88) 55%,rgba(240,249,230,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(124,45,18,.05);transition:border-color .2s}
@@ -262,7 +262,7 @@ export default function RealEstateSoftware() {
           .re-fa{padding:0 18px 18px 52px;font-size:14px;color:#4b5563;line-height:1.8}
           .re-rel{padding:64px 40px;background:rgba(253,244,238,.14);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.60)}
           .re-ri{max-width:1300px;margin:0 auto;text-align:center}
-          .re-ri h2{font-size:30px;font-weight:900;background:linear-gradient(90deg,${txt} 0%,#c2410c 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 10px}
+          .re-ri h2{font-size:30px;font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 10px}
           .re-ri hr{border:none;border-top:1px solid rgba(124,45,18,.10);margin:24px 0}
           .re-rts{display:flex;flex-wrap:wrap;justify-content:center;gap:9px}
           .re-rt{display:inline-block;padding:9px 18px;border:1.5px solid;border-radius:50px;font-size:13px;font-weight:500;text-decoration:none;transition:all .22s}
@@ -273,7 +273,9 @@ export default function RealEstateSoftware() {
           .re-rd{background:rgba(146,64,14,.09);border-color:rgba(146,64,14,.28);color:#92400e}
           @media(max-width:1024px){.re-hero h1,.re-sh,.re-fq h2{font-size:34px}.re-sk-g{grid-template-columns:repeat(2,1fr)}.re-tec-g{grid-template-columns:repeat(2,1fr)}.re-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.re-en.feat{transform:none}.re-en.feat.re-ev{transform:none}.re-en.feat.re-ev:hover{transform:translateY(-4px)}.re-wy-g{grid-template-columns:repeat(2,1fr)}.re-tg2{grid-template-columns:1fr}.re-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.re-bc,.re-hero,.re-sec,.re-ct,.re-fq,.re-rel{padding-left:20px;padding-right:20px}.re-hero{padding-top:28px;padding-bottom:16px}.re-hero h1{font-size:26px}.re-stats{grid-template-columns:1fr 1fr}.re-sc:nth-child(2){border-right:none}.re-sc:nth-child(3),.re-sc:nth-child(4){border-top:1px solid rgba(124,45,18,.10)}.re-sc:nth-child(4){border-right:none}.re-sk-g,.re-tec-g,.re-wy-g{grid-template-columns:1fr}.re-fr{grid-template-columns:1fr}.re-cth{font-size:26px}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
               <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({

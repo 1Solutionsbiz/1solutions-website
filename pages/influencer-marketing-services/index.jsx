@@ -243,7 +243,7 @@ export default function InfluencerMarketing() {
             font-weight: 900;
             line-height: 1.1;
             letter-spacing: -1px;
-            background: linear-gradient(90deg, #0F3460 0%, #BE185D 45%, #7C3AED 100%);
+            background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -348,7 +348,7 @@ export default function InfluencerMarketing() {
             font-weight: 900;
             line-height: 1.15;
             letter-spacing: -1px;
-            background: linear-gradient(90deg, #0F3460 0%, #BE185D 100%);
+            background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -632,7 +632,7 @@ export default function InfluencerMarketing() {
           .im-cta-title {
             font-size: clamp(1.8rem, 3.5vw, 2.8rem);
             font-weight: 900;
-            background: linear-gradient(90deg, #0F3460 0%, #BE185D 50%, #7C3AED 100%);
+            background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -669,7 +669,9 @@ export default function InfluencerMarketing() {
             .im-process-step { grid-template-columns: 56px 1fr; }
             .im-hero-btns { flex-direction: column; align-items: center; }
           }
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
 
       <div className="im-page">

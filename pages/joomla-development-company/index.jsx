@@ -277,7 +277,7 @@ export default function JoomlaDevelopment() {
           .jo-breadcrumb a:hover{text-decoration:underline}
           .jo-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
           .jo-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
-          .jo-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(90deg,#0F3460 0%,#e11d48 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .jo-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .jo-hero-desc{font-size:16px;color:#3A507A;line-height:1.65;max-width:740px;margin:0 auto 24px}
           .jo-trust-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
           .jo-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07)}
@@ -301,7 +301,7 @@ export default function JoomlaDevelopment() {
           .jo-clogo{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
           .jo-clogo:hover{opacity:.85;filter:grayscale(0%)}
           .jo-s-eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
-          .jo-s-title{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .jo-s-title{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .jo-s-desc{font-size:15px;color:#4A6080;line-height:1.7}
           .jo-s-reveal{opacity:0;transform:translateY(44px);transition:opacity .7s cubic-bezier(0.22,1,.36,1),transform .7s cubic-bezier(0.22,1,.36,1)}
           .jo-s-reveal.jo-revealed{opacity:1;transform:translateY(0)}
@@ -395,7 +395,7 @@ export default function JoomlaDevelopment() {
           .jo-wcard p{font-size:13px;color:#4A6080;line-height:1.65;margin:0}
           .jo-contact{padding:70px 40px;background:linear-gradient(135deg,rgba(255,241,242,.55) 0%,rgba(255,255,255,.60) 40%,rgba(237,233,254,.55) 100%);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.80);position:relative;z-index:1}
           .jo-contact-grid{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;gap:32px;align-items:start}
-          .jo-ctitle{font-size:42px;font-weight:900;line-height:1.18;margin:0 0 14px;background:linear-gradient(90deg,#0F3460 0%,#e11d48 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .jo-ctitle{font-size:42px;font-weight:900;line-height:1.18;margin:0 0 14px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .jo-cdesc{font-size:14px;color:#4A6080;line-height:1.6;margin:0 0 22px}
           .jo-cbenefits{background:rgba(255,255,255,.70);border:1px solid rgba(255,255,255,.90);border-radius:14px;padding:22px;backdrop-filter:blur(12px);display:flex;flex-direction:column;gap:14px}
           .jo-cbenefit{display:flex;gap:10px;align-items:flex-start}
@@ -417,7 +417,7 @@ export default function JoomlaDevelopment() {
           .jo-submit{width:100%;padding:14px;background:#e11d48;border:none;color:#fff;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all .25s;box-shadow:0 6px 24px rgba(225,29,72,.26)}
           .jo-submit:hover{background:#0F3460;transform:translateY(-2px);box-shadow:0 10px 30px rgba(15,52,96,.28)}
           .jo-faq{padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(15,52,96,.08);position:relative;z-index:1}
-          .jo-faq h2{font-size:46px;font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
+          .jo-faq h2{font-size:46px;font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
           .jo-faq-sub{font-size:15px;color:#4A6080;margin:0 0 36px}
           .jo-faq-list{display:flex;flex-direction:column;gap:10px}
           .jo-fitem{background:linear-gradient(135deg,rgba(255,241,242,.50) 0%,rgba(255,255,255,.85) 55%,rgba(237,233,254,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(15,52,96,.06);transition:border-color .2s}
@@ -435,7 +435,7 @@ export default function JoomlaDevelopment() {
           .jo-fanswer{padding:0 20px 20px 58px;font-size:14px;color:#4b5563;line-height:1.8}
           .jo-related{padding:80px 40px;background:rgba(255,241,242,.14);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.60)}
           .jo-related-inner{max-width:1300px;margin:0 auto;text-align:center}
-          .jo-related h2{font-size:34px;font-weight:900;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 12px}
+          .jo-related h2{font-size:34px;font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 12px}
           .jo-related-sub{font-size:14px;color:#4A6080;margin:0 auto;max-width:560px}
           .jo-related hr{border:none;border-top:1px solid rgba(15,52,96,.10);margin:32px 0}
           .jo-rtags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
@@ -449,7 +449,9 @@ export default function JoomlaDevelopment() {
           .jo-rtag-rose{background:rgba(225,29,72,.09);border-color:rgba(225,29,72,.28);color:#9f1239}
           @media(max-width:1024px){.jo-hero h1,.jo-s-title,.jo-faq h2{font-size:36px}.jo-svc-grid{grid-template-columns:repeat(2,1fr)}.jo-stack-grid{grid-template-columns:repeat(2,1fr)}.jo-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.jo-eng-card.feat{transform:none}.jo-eng-card.feat.jo-ev{transform:none}.jo-eng-card.feat.jo-ev:hover{transform:translateY(-4px)}.jo-why-grid{grid-template-columns:repeat(2,1fr)}.jo-tgrid{grid-template-columns:1fr}.jo-contact-grid{grid-template-columns:1fr}}
           @media(max-width:768px){.jo-breadcrumb{padding:12px 20px 0}.jo-hero{padding:28px 20px 20px}.jo-hero h1{font-size:26px;letter-spacing:-.3px}.jo-stats{grid-template-columns:1fr 1fr}.jo-stat-col:nth-child(2){border-right:none}.jo-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.jo-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.jo-logos{padding:16px 20px 28px}.jo-svc-section,.jo-stack-section,.jo-eng-section,.jo-process-section,.jo-testi,.jo-why-section,.jo-faq,.jo-related{padding:52px 20px}.jo-contact{padding:48px 20px}.jo-svc-grid,.jo-stack-grid,.jo-why-grid{grid-template-columns:1fr}.jo-frow{grid-template-columns:1fr}.jo-ctitle{font-size:28px}.jo-s-title{font-size:28px}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
               <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({

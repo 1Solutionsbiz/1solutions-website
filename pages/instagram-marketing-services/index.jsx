@@ -82,7 +82,7 @@ export default function InstagramMarketingServices() {
           .igm-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500}
           .igm-bc a{color:#6b7280;text-decoration:none}.igm-bc a:hover{color:#DB2777}.igm-bc span{color:#d1d5db}
           .igm-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(219,39,119,0.08);border:1px solid rgba(219,39,119,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#DB2777;margin-bottom:28px}
-          .igm-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(90deg,#9D174D 0%,#DB2777 50%,#BE185D 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
+          .igm-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
           .igm-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
           .igm-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .igm-btn-p{display:inline-flex;align-items:center;gap:8px;background:#DB2777;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(219,39,119,0.28)}
@@ -95,7 +95,7 @@ export default function InstagramMarketingServices() {
           .igm-stat-v{font-size:1.6rem;font-weight:900;color:#DB2777;letter-spacing:-0.5px}
           .igm-svc{background:#f8fafd;padding:80px 40px}.igm-svc-in{max-width:1280px;margin:0 auto}
           .igm-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#DB2777;margin-bottom:10px;display:block}
-          .igm-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#9D174D 0%,#DB2777 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .igm-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .igm-desc{font-size:15px;color:#4A6080;line-height:1.7;max-width:640px;margin-bottom:44px}
           .igm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
           .igm-card{background:linear-gradient(135deg,rgba(253,242,248,0.65) 0%,rgba(255,255,255,0.88) 60%,rgba(252,231,243,0.25) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:26px 22px 22px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(219,39,119,0.05);opacity:0;transform:translateY(20px);transition:opacity 0.4s ease,transform 0.4s ease,box-shadow 0.22s}
@@ -135,12 +135,14 @@ export default function InstagramMarketingServices() {
           .igm-cta-o1{position:absolute;top:-80px;right:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(219,39,119,0.10) 0%,transparent 70%);pointer-events:none}
           .igm-cta-o2{position:absolute;bottom:-60px;left:-60px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(157,23,77,0.08) 0%,transparent 70%);pointer-events:none}
           .igm-cta-in{max-width:760px;margin:0 auto;text-align:center;position:relative;z-index:1}
-          .igm-cta-t{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;background:linear-gradient(90deg,#9D174D 0%,#DB2777 50%,#BE185D 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;line-height:1.2}
+          .igm-cta-t{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;line-height:1.2}
           .igm-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           .igm-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.igm-grid{grid-template-columns:repeat(2,1fr)}.igm-why-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.igm-hero,.igm-svc,.igm-fmt,.igm-proc,.igm-why,.igm-faq,.igm-cta{padding:60px 24px}.igm-hero{padding-top:60px;padding-bottom:0}.igm-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.igm-stat:nth-child(2){border-right:none}.igm-grid{grid-template-columns:1fr}.igm-why-grid{grid-template-columns:1fr}.igm-step{grid-template-columns:56px 1fr}.igm-btns{flex-direction:column;align-items:center}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
       <div className="igm-page">
         <section className="igm-hero"><div className="igm-o1"/><div className="igm-o2"/>

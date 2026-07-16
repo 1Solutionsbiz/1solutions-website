@@ -222,7 +222,7 @@ export default function SeoServices() {
           .seo-hero::after { content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.18) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px); }
           .seo-hero-content { position:relative;z-index:2;text-align:center;max-width:860px;margin:0 auto;padding:56px 40px 40px; }
           .seo-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:18px; }
-          .seo-h1 { font-size:clamp(2rem,5vw,3.4rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+          .seo-h1 { font-size:clamp(2rem,5vw,3.4rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
           .seo-hero-sub { font-size:16px;color:#3A507A;line-height:1.65;max-width:640px;margin:0 auto 28px; }
 
           /* ── HERO BUTTON ── */
@@ -256,7 +256,7 @@ export default function SeoServices() {
           .seo-sec-in { max-width:1280px;margin:0 auto; }
           .seo-white { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08); }
           .seo-sec-ey { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:12px;display:block; }
-          .seo-sec-ttl { font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px; }
+          .seo-sec-ttl { font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px; }
           .seo-sec-desc { font-size:15px;color:#4A6080;line-height:1.7;max-width:640px;margin-bottom:40px; }
 
           /* ── REVEAL ── */
@@ -280,7 +280,7 @@ export default function SeoServices() {
           .seo-wm-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:24px; }
           .seo-wm-card { padding:32px 28px;text-align:center;transition:transform 0.25s,box-shadow 0.25s,border-color 0.25s; }
           .seo-wm-card:hover { transform:translateY(-6px);border-color:rgba(217,119,6,0.45) !important;box-shadow:0 16px 48px rgba(15,52,96,0.14),inset 0 1px 0 rgba(255,255,255,1) !important; }
-          .seo-wm-num { font-size:3.2rem;font-weight:900;background:linear-gradient(90deg,#0F3460,#D97706);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-1.5px;line-height:1;margin-bottom:12px; }
+          .seo-wm-num { font-size:3.2rem;font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-1.5px;line-height:1;margin-bottom:12px; }
           .seo-wm-desc { font-size:14px;color:#374151;line-height:1.6;margin-bottom:8px; }
           .seo-wm-src { font-size:11px;color:#9ca3af;font-style:italic; }
 
@@ -300,7 +300,7 @@ export default function SeoServices() {
           .seo-res-orb { position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(217,119,6,0.18) 0%,transparent 65%);top:-150px;right:-100px;pointer-events:none;filter:blur(30px); }
           .seo-res-in { max-width:1280px;margin:0 auto;position:relative;z-index:2; }
           .seo-res-ey { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:10px;display:block;text-align:center; }
-          .seo-res-ttl { font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;text-align:center;margin-bottom:12px;line-height:1.15;background:linear-gradient(90deg,#fff 30%,#fcd34d 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+          .seo-res-ttl { font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;text-align:center;margin-bottom:12px;line-height:1.15;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
           .seo-res-sub { font-size:1rem;color:rgba(255,255,255,0.60);text-align:center;max-width:560px;margin:0 auto 52px; }
           .seo-res-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:24px; }
           .seo-res-card { background:rgba(255,255,255,0.07);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:32px;text-align:center;transition:background 0.25s,border-color 0.25s; }
@@ -356,7 +356,7 @@ export default function SeoServices() {
           /* ── CONTACT ── */
           .seo-contact { padding:72px 40px;background:linear-gradient(135deg,rgba(254,243,199,0.70) 0%,rgba(255,255,255,0.60) 40%,rgba(219,234,254,0.65) 100%);position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.80); }
           .seo-contact-in { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;align-items:start;gap:48px; }
-          .seo-contact-ttl { font-size:clamp(2rem,3.5vw,2.8rem);font-weight:900;line-height:1.2;margin:0 0 16px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+          .seo-contact-ttl { font-size:clamp(2rem,3.5vw,2.8rem);font-weight:900;line-height:1.2;margin:0 0 16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
           .seo-contact-desc { font-size:14px;color:#4A6080;line-height:1.65;margin:0 0 24px; }
           .seo-benefits-box { background:linear-gradient(135deg,rgba(255,255,255,0.70) 0%,rgba(219,234,254,0.35) 100%);border:1px solid rgba(255,255,255,0.90);border-radius:14px;padding:24px;backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,1);display:flex;flex-direction:column;gap:16px; }
           .seo-ben-item { display:flex;gap:12px;align-items:flex-start; }
@@ -395,7 +395,7 @@ export default function SeoServices() {
           /* ── CTA ── */
           .seo-cta { background:linear-gradient(135deg,rgba(254,243,199,0.70) 0%,rgba(255,255,255,0.60) 40%,rgba(219,234,254,0.65) 100%);backdrop-filter:blur(20px);padding:80px 40px;position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.80);text-align:center; }
           .seo-cta-ey { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:16px;display:block; }
-          .seo-cta-t { font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;line-height:1.2; }
+          .seo-cta-t { font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;line-height:1.2; }
           .seo-cta-s { font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 28px;max-width:520px; }
           .seo-pricing-note { background:rgba(255,255,255,0.60);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.85);border-radius:14px;padding:16px 24px;margin:0 auto 32px;max-width:620px;font-size:14px;color:#4A6080;line-height:1.65;text-align:left;box-shadow:0 4px 16px rgba(15,52,96,0.06); }
           .seo-pricing-note strong { color:#0F3460; }
@@ -434,7 +434,9 @@ export default function SeoServices() {
             .seo-form-row { grid-template-columns:1fr; }
             .seo-cta-btns { flex-direction:column;align-items:center; }
           }
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
 
       <div className="seo-page">

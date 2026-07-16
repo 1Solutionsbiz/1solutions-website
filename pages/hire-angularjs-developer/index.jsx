@@ -209,7 +209,7 @@ export default function HireAngularJsDeveloper() {
           .ha-breadcrumb a:hover{text-decoration:underline}
           .ha-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
           .ha-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
-          .ha-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(90deg,#0F3460 0%,#c2185b 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .ha-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .ha-hero-desc{font-size:16px;color:#3A507A;line-height:1.65;max-width:740px;margin:0 auto 24px}
           .ha-trust-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
           .ha-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07)}
@@ -233,7 +233,7 @@ export default function HireAngularJsDeveloper() {
           .ha-clogo{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
           .ha-clogo:hover{opacity:.85;filter:grayscale(0%)}
           .ha-s-eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
-          .ha-s-title{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .ha-s-title{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .ha-s-desc{font-size:15px;color:#4A6080;line-height:1.7}
           .ha-s-reveal{opacity:0;transform:translateY(44px);transition:opacity .7s cubic-bezier(0.22,1,.36,1),transform .7s cubic-bezier(0.22,1,.36,1)}
           .ha-s-reveal.ha-revealed{opacity:1;transform:translateY(0)}
@@ -327,7 +327,7 @@ export default function HireAngularJsDeveloper() {
           .ha-wcard p{font-size:13px;color:#4A6080;line-height:1.65;margin:0}
           .ha-contact{padding:70px 40px;background:linear-gradient(135deg,rgba(255,240,243,.55) 0%,rgba(255,255,255,.60) 40%,rgba(255,245,247,.55) 100%);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.80);position:relative;z-index:1}
           .ha-contact-grid{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;gap:32px;align-items:start}
-          .ha-ctitle{font-size:42px;font-weight:900;line-height:1.18;margin:0 0 14px;background:linear-gradient(90deg,#0F3460 0%,#c2185b 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .ha-ctitle{font-size:42px;font-weight:900;line-height:1.18;margin:0 0 14px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .ha-cdesc{font-size:14px;color:#4A6080;line-height:1.6;margin:0 0 22px}
           .ha-cbenefits{background:rgba(255,255,255,.70);border:1px solid rgba(255,255,255,.90);border-radius:14px;padding:22px;backdrop-filter:blur(12px);display:flex;flex-direction:column;gap:14px}
           .ha-cbenefit{display:flex;gap:10px;align-items:flex-start}
@@ -349,7 +349,7 @@ export default function HireAngularJsDeveloper() {
           .ha-submit{width:100%;padding:14px;background:#c2185b;border:none;color:#fff;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all .25s;box-shadow:0 6px 24px rgba(194,24,91,.26)}
           .ha-submit:hover{background:#0F3460;transform:translateY(-2px)}
           .ha-faq{padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(15,52,96,.08);position:relative;z-index:1}
-          .ha-faq h2{font-size:46px;font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
+          .ha-faq h2{font-size:46px;font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
           .ha-faq-sub{font-size:15px;color:#4A6080;margin:0 0 36px}
           .ha-faq-list{display:flex;flex-direction:column;gap:10px}
           .ha-fitem{background:linear-gradient(135deg,rgba(255,240,243,.50) 0%,rgba(255,255,255,.85) 55%,rgba(255,245,247,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(15,52,96,.06);transition:border-color .2s}
@@ -367,7 +367,7 @@ export default function HireAngularJsDeveloper() {
           .ha-fanswer{padding:0 20px 20px 58px;font-size:14px;color:#4b5563;line-height:1.8}
           .ha-related{padding:80px 40px;background:rgba(255,240,243,.14);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.60)}
           .ha-related-inner{max-width:1300px;margin:0 auto;text-align:center}
-          .ha-related h2{font-size:34px;font-weight:900;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 12px}
+          .ha-related h2{font-size:34px;font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 12px}
           .ha-related-sub{font-size:14px;color:#4A6080;margin:0 auto;max-width:560px}
           .ha-related hr{border:none;border-top:1px solid rgba(15,52,96,.10);margin:32px 0}
           .ha-rtags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
@@ -380,7 +380,9 @@ export default function HireAngularJsDeveloper() {
           .ha-rtag-violet{background:rgba(109,40,217,.09);border-color:rgba(109,40,217,.28);color:#4c1d95}
           @media(max-width:1024px){.ha-hero h1,.ha-s-title,.ha-faq h2{font-size:36px}.ha-skill-grid{grid-template-columns:repeat(2,1fr)}.ha-stack-grid{grid-template-columns:repeat(2,1fr)}.ha-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.ha-eng-card.feat{transform:none}.ha-eng-card.feat.ha-ev{transform:none}.ha-eng-card.feat.ha-ev:hover{transform:translateY(-4px)}.ha-why-grid{grid-template-columns:repeat(2,1fr)}.ha-tgrid{grid-template-columns:1fr}.ha-contact-grid{grid-template-columns:1fr}}
           @media(max-width:768px){.ha-breadcrumb{padding:12px 20px 0}.ha-hero{padding:28px 20px 20px}.ha-hero h1{font-size:26px;letter-spacing:-.3px}.ha-stats{grid-template-columns:1fr 1fr}.ha-stat-col:nth-child(2){border-right:none}.ha-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.ha-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.ha-logos{padding:16px 20px 28px}.ha-skill-section,.ha-stack-section,.ha-eng-section,.ha-process-section,.ha-testi,.ha-why-section,.ha-faq,.ha-related{padding:52px 20px}.ha-contact{padding:48px 20px}.ha-skill-grid,.ha-stack-grid,.ha-why-grid{grid-template-columns:1fr}.ha-frow{grid-template-columns:1fr}.ha-ctitle{font-size:28px}.ha-s-title{font-size:28px}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
               <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({

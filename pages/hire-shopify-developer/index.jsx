@@ -310,7 +310,7 @@ export default function HireShopifyDeveloper() {
           .sh-clogo{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
           .sh-clogo:hover{opacity:.85;filter:grayscale(0%)}
           .sh-s-eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
-          .sh-s-title{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .sh-s-title{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .sh-s-desc{font-size:15px;color:#4A6080;line-height:1.7}
           .sh-s-reveal{opacity:0;transform:translateY(44px);transition:opacity .7s cubic-bezier(0.22,1,.36,1),transform .7s cubic-bezier(0.22,1,.36,1)}
           .sh-s-reveal.sh-revealed{opacity:1;transform:translateY(0)}
@@ -404,7 +404,7 @@ export default function HireShopifyDeveloper() {
           .sh-wcard p{font-size:13px;color:#4A6080;line-height:1.65;margin:0}
           .sh-contact{padding:70px 40px;background:linear-gradient(135deg,rgba(240,253,244,.55) 0%,rgba(255,255,255,.60) 40%,rgba(254,252,232,.55) 100%);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.80);position:relative;z-index:1}
           .sh-contact-grid{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;gap:32px;align-items:start}
-          .sh-ctitle{font-size:42px;font-weight:900;line-height:1.18;margin:0 0 14px;background:linear-gradient(90deg,#0F3460 0%,#5a8a00 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .sh-ctitle{font-size:42px;font-weight:900;line-height:1.18;margin:0 0 14px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .sh-cdesc{font-size:14px;color:#4A6080;line-height:1.6;margin:0 0 22px}
           .sh-cbenefits{background:rgba(255,255,255,.70);border:1px solid rgba(255,255,255,.90);border-radius:14px;padding:22px;backdrop-filter:blur(12px);display:flex;flex-direction:column;gap:14px}
           .sh-cbenefit{display:flex;gap:10px;align-items:flex-start}
@@ -426,7 +426,7 @@ export default function HireShopifyDeveloper() {
           .sh-submit{width:100%;padding:14px;background:#5a8a00;border:none;color:#fff;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all .25s;box-shadow:0 6px 24px rgba(90,138,0,.26)}
           .sh-submit:hover{background:#0F3460;transform:translateY(-2px);box-shadow:0 10px 30px rgba(15,52,96,.28)}
           .sh-faq{padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(15,52,96,.08);position:relative;z-index:1}
-          .sh-faq h2{font-size:46px;font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
+          .sh-faq h2{font-size:46px;font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
           .sh-faq-sub{font-size:15px;color:#4A6080;margin:0 0 36px}
           .sh-faq-list{display:flex;flex-direction:column;gap:10px}
           .sh-fitem{background:linear-gradient(135deg,rgba(240,253,244,.50) 0%,rgba(255,255,255,.85) 55%,rgba(254,252,232,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(15,52,96,.06);transition:border-color .2s}
@@ -444,7 +444,7 @@ export default function HireShopifyDeveloper() {
           .sh-fanswer{padding:0 20px 20px 58px;font-size:14px;color:#4b5563;line-height:1.8}
           .sh-related{padding:80px 40px;background:rgba(240,253,244,.14);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.60)}
           .sh-related-inner{max-width:1300px;margin:0 auto;text-align:center}
-          .sh-related h2{font-size:34px;font-weight:900;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 12px}
+          .sh-related h2{font-size:34px;font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 12px}
           .sh-related-sub{font-size:14px;color:#4A6080;margin:0 auto;max-width:560px}
           .sh-related hr{border:none;border-top:1px solid rgba(15,52,96,.10);margin:32px 0}
           .sh-rtags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
@@ -458,7 +458,9 @@ export default function HireShopifyDeveloper() {
           .sh-rtag-rose{background:rgba(225,29,72,.09);border-color:rgba(225,29,72,.28);color:#9f1239}
           @media(max-width:1024px){.sh-hero h1,.sh-s-title,.sh-faq h2{font-size:36px}.sh-svc-grid{grid-template-columns:repeat(2,1fr)}.sh-stack-grid{grid-template-columns:repeat(2,1fr)}.sh-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.sh-eng-card.feat{transform:none}.sh-eng-card.feat.sh-ev{transform:none}.sh-eng-card.feat.sh-ev:hover{transform:translateY(-4px)}.sh-why-grid{grid-template-columns:repeat(2,1fr)}.sh-tgrid{grid-template-columns:1fr}.sh-contact-grid{grid-template-columns:1fr}}
           @media(max-width:768px){.sh-breadcrumb{padding:12px 20px 0}.sh-hero{padding:28px 20px 20px}.sh-hero h1{font-size:26px;letter-spacing:-.3px}.sh-stats{grid-template-columns:1fr 1fr}.sh-stat-col:nth-child(2){border-right:none}.sh-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.sh-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.sh-logos{padding:16px 20px 28px}.sh-svc-section,.sh-stack-section,.sh-eng-section,.sh-process-section,.sh-testi,.sh-why-section,.sh-faq,.sh-related{padding:52px 20px}.sh-contact{padding:48px 20px}.sh-svc-grid,.sh-stack-grid,.sh-why-grid{grid-template-columns:1fr}.sh-frow{grid-template-columns:1fr}.sh-ctitle{font-size:28px}.sh-s-title{font-size:28px}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
               <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({

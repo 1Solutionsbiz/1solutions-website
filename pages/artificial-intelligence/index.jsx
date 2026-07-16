@@ -78,7 +78,7 @@ export default function ArtificialIntelligence() {
           .aisol-bc a{color:rgba(255,255,255,0.5);text-decoration:none}.aisol-bc a:hover{color:#FE9700}.aisol-bc span{color:rgba(255,255,255,0.25)}
           .aisol-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(14,165,233,0.15);border:1px solid rgba(14,165,233,0.35);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#7dd3fc;margin-bottom:28px}
           .aisol-h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:900;line-height:1.05;letter-spacing:-1.5px;color:#fff;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .aisol-h1 span{background:linear-gradient(90deg,#FE9700 0%,#FFC14D 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .aisol-h1 span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .aisol-sub{font-size:1.08rem;color:rgba(255,255,255,0.70);line-height:1.75;max-width:660px;margin:0 auto 36px}
           .aisol-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .aisol-btn-p{display:inline-flex;align-items:center;gap:8px;background:#FE9700;color:#fff;padding:15px 32px;border-radius:50px;font-weight:800;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(254,151,0,0.35)}
@@ -91,7 +91,7 @@ export default function ArtificialIntelligence() {
           .aisol-stat-v{font-size:1.6rem;font-weight:900;color:#FE9700;letter-spacing:-0.5px}
           .aisol-svc{background:#f8fafd;padding:80px 40px}.aisol-svc-in{max-width:1280px;margin:0 auto}
           .aisol-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#0EA5E9;margin-bottom:10px;display:block}
-          .aisol-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F1F40 0%,#114171 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .aisol-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .aisol-desc{font-size:15px;color:#4A6080;line-height:1.7;max-width:640px;margin-bottom:44px}
           .aisol-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
           .aisol-card{background:linear-gradient(135deg,rgba(240,249,255,0.65) 0%,rgba(255,255,255,0.88) 60%,rgba(240,249,255,0.25) 100%);border:1px solid rgba(14,165,233,0.10);border-radius:20px;padding:26px 22px 22px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(14,165,233,0.05);opacity:0;transform:translateY(20px);transition:opacity 0.4s ease,transform 0.4s ease;text-decoration:none;display:block}
@@ -129,7 +129,9 @@ export default function ArtificialIntelligence() {
           .aisol-cta-s{font-size:1.05rem;color:rgba(255,255,255,0.70);line-height:1.75;margin:0 auto 36px;max-width:520px}
           @media(max-width:1024px){.aisol-grid{grid-template-columns:repeat(2,1fr)}.aisol-why-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.aisol-hero,.aisol-svc,.aisol-proc,.aisol-why,.aisol-faq,.aisol-cta{padding:60px 24px}.aisol-hero{padding-top:60px;padding-bottom:0}.aisol-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.aisol-stat:nth-child(2){border-right:none}.aisol-grid{grid-template-columns:1fr}.aisol-why-grid{grid-template-columns:1fr}.aisol-step{grid-template-columns:56px 1fr}.aisol-btns{flex-direction:column;align-items:center}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
       <div className="aisol-page">
         <section className="aisol-hero"><div className="aisol-o1"/><div className="aisol-o2"/>

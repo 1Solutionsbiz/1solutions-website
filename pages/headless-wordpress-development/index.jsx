@@ -268,7 +268,7 @@ export default function HeadlessWordPressDevelopment() {
           .hwp-hero-block::after { content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,0.13) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px); }
           .hwp-hero-content { position:relative;z-index:2;text-align:center;max-width:860px;margin:0 auto;padding:56px 40px 40px; }
           .hwp-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:18px; }
-          .hwp-hero-content h1 { font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(90deg,#4C1D95 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+          .hwp-hero-content h1 { font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
           .hwp-hero-content p { font-size:16px;color:#3A507A;line-height:1.65;max-width:620px;margin:0 auto 28px; }
           .hwp-btn-hero { display:inline-block;padding:14px 40px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#4C1D95;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(76,29,149,0.10),inset 0 1px 0 rgba(255,255,255,1); }
           .hwp-btn-hero:hover { background:rgba(255,255,255,0.85);border-color:rgba(245,158,11,0.6);box-shadow:0 12px 36px rgba(76,29,149,0.15),0 0 0 2px rgba(245,158,11,0.22),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px);color:#4C1D95; }
@@ -294,7 +294,7 @@ export default function HeadlessWordPressDevelopment() {
 
           /* Shared sections */
           .hwp-section-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:12px;display:block; }
-          .hwp-section-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#4C1D95 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin-bottom:10px; }
+          .hwp-section-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin-bottom:10px; }
           .hwp-section-desc { font-size:15px;color:#4A6080;line-height:1.7;max-width:680px;margin-bottom:36px; }
           .hwp-section-sub { font-size:16px;color:#4A6080;margin:0; }
 
@@ -324,7 +324,7 @@ export default function HeadlessWordPressDevelopment() {
           .hwp-portfolio-section { background:transparent;padding:70px 40px;position:relative;z-index:1; }
           .hwp-portfolio-wrap { max-width:1280px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);border-radius:24px;padding:44px 44px 50px;box-shadow:0 8px 40px rgba(76,29,149,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
           .hwp-portfolio-header { display:flex;align-items:center;justify-content:space-between;margin-bottom:36px;gap:24px; }
-          .hwp-portfolio-title { font-size:40px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#4C1D95 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0; }
+          .hwp-portfolio-title { font-size:40px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0; }
           .hwp-btn-portfolio-cta { display:inline-block;padding:13px 26px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#4C1D95;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap;transition:all 0.3s;box-shadow:0 4px 20px rgba(76,29,149,0.10),inset 0 1px 0 rgba(255,255,255,1); }
           .hwp-btn-portfolio-cta:hover { background:rgba(255,255,255,0.85);border-color:rgba(245,158,11,0.6);transform:translateY(-2px);color:#4C1D95; }
           .hwp-portfolio-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:24px; }
@@ -341,7 +341,7 @@ export default function HeadlessWordPressDevelopment() {
           .hwp-process-section { background:transparent;padding:80px 40px;position:relative;z-index:1; }
           .hwp-process-top { max-width:1280px;margin:0 auto 56px; }
           .hwp-process-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D97706;margin:0 0 14px; }
-          .hwp-process-main-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#4C1D95 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
+          .hwp-process-main-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
           .hwp-process-main-desc { font-size:15px;color:#4A6080;line-height:1.7;margin:0; }
           .hwp-process-divider { border:none;border-top:1px solid rgba(76,29,149,0.15);margin:36px 0 0;width:100%; }
           .hwp-process-inner { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:minmax(0,55%) minmax(0,45%);gap:80px;align-items:start; }
@@ -395,7 +395,7 @@ export default function HeadlessWordPressDevelopment() {
           /* Engagement */
           .hwp-engage-section { padding:80px 40px;position:relative;z-index:1; }
           .hwp-engage-inner { max-width:1280px;margin:0 auto; }
-          .hwp-engage-title { font-size:40px;font-weight:900;line-height:1.15;letter-spacing:-0.8px;background:linear-gradient(90deg,#4C1D95 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
+          .hwp-engage-title { font-size:40px;font-weight:900;line-height:1.15;letter-spacing:-0.8px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
           .hwp-engage-desc { font-size:15px;color:#4A6080;line-height:1.75;max-width:680px; }
           .hwp-eng-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px; }
           .hwp-eng-card { background:linear-gradient(135deg,rgba(237,233,254,0.50) 0%,rgba(255,255,255,0.85) 55%,rgba(254,252,232,0.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:24px;padding:32px 28px;box-shadow:0 4px 24px rgba(76,29,149,0.08),inset 0 1px 0 rgba(255,255,255,0.95);opacity:0;transform:translateY(44px);transition:opacity 0.65s cubic-bezier(0.22,1,0.36,1),transform 0.65s cubic-bezier(0.22,1,0.36,1),border-color 0.2s,box-shadow 0.25s; }
@@ -463,7 +463,7 @@ export default function HeadlessWordPressDevelopment() {
           /* FAQ */
           .hwp-faq-section { background:transparent;padding:80px 40px;position:relative;z-index:1; }
           .hwp-faq-inner { max-width:900px;margin:0 auto; }
-          .hwp-faq-heading { font-size:40px;font-weight:900;letter-spacing:-0.8px;background:linear-gradient(90deg,#4C1D95 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 44px;text-align:center; }
+          .hwp-faq-heading { font-size:40px;font-weight:900;letter-spacing:-0.8px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 44px;text-align:center; }
           .hwp-faq-list { display:flex;flex-direction:column;gap:12px; }
           .hwp-faq-item { background:rgba(255,255,255,0.55);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.85);border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(76,29,149,0.06);transition:box-shadow 0.2s,border-color 0.2s; }
           .hwp-faq-item.open { border-color:rgba(76,29,149,0.25);box-shadow:0 6px 24px rgba(76,29,149,0.10); }
@@ -482,7 +482,7 @@ export default function HeadlessWordPressDevelopment() {
           .hwp-related-section { background:rgba(237,233,254,0.45);border-top:1px solid rgba(76,29,149,0.08);padding:72px 40px 80px;position:relative;z-index:1; }
           .hwp-related-inner { max-width:1280px;margin:0 auto;text-align:center; }
           .hwp-related-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;display:block;margin-bottom:12px; }
-          .hwp-related-title { font-size:40px;font-weight:900;letter-spacing:-0.8px;background:linear-gradient(90deg,#4C1D95 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 12px; }
+          .hwp-related-title { font-size:40px;font-weight:900;letter-spacing:-0.8px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 12px; }
           .hwp-related-sub { font-size:15px;color:#4A6080;max-width:560px;margin:0 auto; }
           .hwp-related-divider { border:none;border-top:1px solid rgba(76,29,149,0.12);margin:28px 0 32px; }
           .hwp-related-tags { display:flex;flex-wrap:wrap;gap:10px;justify-content:center; }
@@ -544,7 +544,9 @@ export default function HeadlessWordPressDevelopment() {
             .hwp-faq-heading { font-size:28px; }
             .hwp-portfolio-title { font-size:22px; }
           }
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
 
       <div className="hwp-page">

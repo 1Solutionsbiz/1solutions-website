@@ -82,7 +82,7 @@ export default function LawnCareMarketingServices() {
           .lcmkt-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500}
           .lcmkt-bc a{color:#6b7280;text-decoration:none}.lcmkt-bc a:hover{color:#15803D}.lcmkt-bc span{color:#d1d5db}
           .lcmkt-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(21,128,61,0.08);border:1px solid rgba(21,128,61,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#15803D;margin-bottom:28px}
-          .lcmkt-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(90deg,#14532D 0%,#15803D 50%,#16A34A 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
+          .lcmkt-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
           .lcmkt-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
           .lcmkt-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .lcmkt-btn-p{display:inline-flex;align-items:center;gap:8px;background:#15803D;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(21,128,61,0.28)}
@@ -95,7 +95,7 @@ export default function LawnCareMarketingServices() {
           .lcmkt-stat-v{font-size:1.6rem;font-weight:900;color:#15803D;letter-spacing:-0.5px}
           .lcmkt-svc{background:#f8fafd;padding:80px 40px}.lcmkt-svc-in{max-width:1280px;margin:0 auto}
           .lcmkt-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#15803D;margin-bottom:10px;display:block}
-          .lcmkt-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#14532D 0%,#15803D 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .lcmkt-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .lcmkt-desc{font-size:15px;color:#4A6080;line-height:1.7;max-width:640px;margin-bottom:44px}
           .lcmkt-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
           .lcmkt-card{background:linear-gradient(135deg,rgba(240,253,244,0.65) 0%,rgba(255,255,255,0.88) 60%,rgba(220,252,231,0.25) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:26px 22px 22px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(21,128,61,0.05);opacity:0;transform:translateY(20px);transition:opacity 0.4s ease,transform 0.4s ease}
@@ -135,11 +135,13 @@ export default function LawnCareMarketingServices() {
           .lcmkt-cta-o1{position:absolute;top:-80px;right:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(21,128,61,0.10) 0%,transparent 70%);pointer-events:none}
           .lcmkt-cta-o2{position:absolute;bottom:-60px;left:-60px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(20,83,45,0.08) 0%,transparent 70%);pointer-events:none}
           .lcmkt-cta-in{max-width:760px;margin:0 auto;text-align:center;position:relative;z-index:1}
-          .lcmkt-cta-t{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;background:linear-gradient(90deg,#14532D 0%,#15803D 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;line-height:1.2}
+          .lcmkt-cta-t{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;line-height:1.2}
           .lcmkt-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           @media(max-width:1024px){.lcmkt-grid{grid-template-columns:repeat(2,1fr)}.lcmkt-why-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.lcmkt-hero,.lcmkt-svc,.lcmkt-ch,.lcmkt-proc,.lcmkt-why,.lcmkt-faq,.lcmkt-cta{padding:60px 24px}.lcmkt-hero{padding-top:60px;padding-bottom:0}.lcmkt-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.lcmkt-stat:nth-child(2){border-right:none}.lcmkt-grid{grid-template-columns:1fr}.lcmkt-why-grid{grid-template-columns:1fr}.lcmkt-step{grid-template-columns:56px 1fr}.lcmkt-btns{flex-direction:column;align-items:center}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
       <div className="lcmkt-page">
         <section className="lcmkt-hero"><div className="lcmkt-o1"/><div className="lcmkt-o2"/>

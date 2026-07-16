@@ -145,7 +145,7 @@ export default function EVSoftware() {
           .ev-bc a{color:${txt};text-decoration:none}
           .ev-hero{position:relative;z-index:2;text-align:center;max-width:940px;margin:0 auto;padding:44px 40px 28px}
           .ev-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:${ac2};margin-bottom:14px}
-          .ev-hero h1{font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(90deg,${txt} 0%,${ac2} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .ev-hero h1{font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .ev-desc{font-size:16px;color:${txt2};line-height:1.65;max-width:720px;margin:0 auto 22px}
           .ev-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-bottom:24px}
           .ev-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:5px 13px;font-size:12px;font-weight:600;color:${txt};box-shadow:0 2px 8px rgba(10,61,46,.07)}
@@ -163,7 +163,7 @@ export default function EVSoftware() {
           .ev-sec-alt{background:rgba(236,253,245,.55);border-top:1px solid rgba(10,61,46,.08);border-bottom:1px solid rgba(10,61,46,.08)}
           .ev-in{max-width:1300px;margin:0 auto}
           .ev-sey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
-          .ev-sh{font-size:44px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(90deg,${txt} 0%,${ac2} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .ev-sh{font-size:44px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .ev-sd{font-size:15px;color:${txt2};line-height:1.7;max-width:700px}
           .ev-rv{opacity:0;transform:translateY(40px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
           .ev-rv.ev-ok{opacity:1;transform:translateY(0)}
@@ -225,7 +225,7 @@ export default function EVSoftware() {
           .ev-wc p{font-size:12px;color:${txt2};line-height:1.6;margin:0}
           .ev-ct{padding:64px 40px;background:linear-gradient(135deg,rgba(236,253,245,.55) 0%,rgba(255,255,255,.60) 40%,rgba(239,246,255,.50) 100%);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.80);position:relative;z-index:1}
           .ev-ct-g{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr;gap:28px;align-items:start}
-          .ev-cth{font-size:38px;font-weight:900;line-height:1.18;margin:0 0 12px;background:linear-gradient(90deg,${txt} 0%,${ac2} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .ev-cth{font-size:38px;font-weight:900;line-height:1.18;margin:0 0 12px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .ev-ctd{font-size:14px;color:${txt2};line-height:1.6;margin:0 0 18px}
           .ev-ben{background:rgba(255,255,255,.70);border:1px solid rgba(255,255,255,.90);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:12px}
           .ev-be{display:flex;gap:9px;align-items:flex-start}
@@ -246,7 +246,7 @@ export default function EVSoftware() {
           .ev-sub{width:100%;padding:13px;background:${ac};border:none;color:#fff;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all .25s;box-shadow:0 6px 24px rgba(10,61,46,.25)}
           .ev-sub:hover{background:${txt};transform:translateY(-2px)}
           .ev-fq{padding:72px 40px;background:rgba(236,253,245,.55);border-top:1px solid rgba(10,61,46,.08);position:relative;z-index:1}
-          .ev-fq h2{font-size:42px;font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,${txt} 0%,${ac2} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
+          .ev-fq h2{font-size:42px;font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
           .ev-fq-sub{font-size:15px;color:${txt2};margin:0 0 32px}
           .ev-fql{display:flex;flex-direction:column;gap:9px}
           .ev-fi{background:linear-gradient(135deg,rgba(236,253,245,.55) 0%,rgba(255,255,255,.88) 55%,rgba(239,246,255,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(10,61,46,.05);transition:border-color .2s}
@@ -260,7 +260,7 @@ export default function EVSoftware() {
           .ev-fa{padding:0 18px 18px 52px;font-size:14px;color:#4b5563;line-height:1.8}
           .ev-rel{padding:64px 40px;background:rgba(236,253,245,.14);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.60)}
           .ev-ri{max-width:1300px;margin:0 auto;text-align:center}
-          .ev-ri h2{font-size:30px;font-weight:900;background:linear-gradient(90deg,${txt} 0%,${ac2} 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 10px}
+          .ev-ri h2{font-size:30px;font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 10px}
           .ev-ri hr{border:none;border-top:1px solid rgba(10,61,46,.10);margin:24px 0}
           .ev-rts{display:flex;flex-wrap:wrap;justify-content:center;gap:9px}
           .ev-rt{display:inline-block;padding:9px 18px;border:1.5px solid;border-radius:50px;font-size:13px;font-weight:500;text-decoration:none;transition:all .22s}
@@ -271,7 +271,9 @@ export default function EVSoftware() {
           .ev-rd{background:rgba(45,27,105,.09);border-color:rgba(45,27,105,.28);color:#2d1b69}
           @media(max-width:1024px){.ev-hero h1,.ev-sh,.ev-fq h2{font-size:34px}.ev-sk-g{grid-template-columns:repeat(2,1fr)}.ev-tec-g{grid-template-columns:repeat(2,1fr)}.ev-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.ev-en.feat{transform:none}.ev-en.feat.ev-ev2{transform:none}.ev-en.feat.ev-ev2:hover{transform:translateY(-4px)}.ev-wy-g{grid-template-columns:repeat(2,1fr)}.ev-tg2{grid-template-columns:1fr}.ev-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.ev-bc,.ev-hero,.ev-sec,.ev-ct,.ev-fq,.ev-rel{padding-left:20px;padding-right:20px}.ev-hero{padding-top:28px;padding-bottom:16px}.ev-hero h1{font-size:26px}.ev-stats{grid-template-columns:1fr 1fr}.ev-sc:nth-child(2){border-right:none}.ev-sc:nth-child(3),.ev-sc:nth-child(4){border-top:1px solid rgba(10,61,46,.10)}.ev-sc:nth-child(4){border-right:none}.ev-sk-g,.ev-tec-g,.ev-wy-g{grid-template-columns:1fr}.ev-fr{grid-template-columns:1fr}.ev-cth{font-size:26px}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
               <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({

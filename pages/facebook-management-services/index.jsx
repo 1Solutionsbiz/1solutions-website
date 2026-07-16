@@ -82,7 +82,7 @@ export default function FacebookManagementServices() {
           .fbm-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500}
           .fbm-bc a{color:#6b7280;text-decoration:none}.fbm-bc a:hover{color:#1877F2}.fbm-bc span{color:#d1d5db}
           .fbm-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(24,119,242,0.08);border:1px solid rgba(24,119,242,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#1877F2;margin-bottom:28px}
-          .fbm-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(90deg,#1E3A8A 0%,#1877F2 50%,#1D4ED8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
+          .fbm-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
           .fbm-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
           .fbm-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .fbm-btn-p{display:inline-flex;align-items:center;gap:8px;background:#1877F2;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(24,119,242,0.28)}
@@ -95,7 +95,7 @@ export default function FacebookManagementServices() {
           .fbm-stat-v{font-size:1.6rem;font-weight:900;color:#1877F2;letter-spacing:-0.5px}
           .fbm-svc{background:#f8fafd;padding:80px 40px}.fbm-svc-in{max-width:1280px;margin:0 auto}
           .fbm-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#1877F2;margin-bottom:10px;display:block}
-          .fbm-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#1E3A8A 0%,#1877F2 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .fbm-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .fbm-desc{font-size:15px;color:#4A6080;line-height:1.7;max-width:640px;margin-bottom:44px}
           .fbm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
           .fbm-card{background:linear-gradient(135deg,rgba(239,246,255,0.65) 0%,rgba(255,255,255,0.88) 60%,rgba(219,234,254,0.25) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:26px 22px 22px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(24,119,242,0.05);opacity:0;transform:translateY(20px);transition:opacity 0.4s ease,transform 0.4s ease,box-shadow 0.22s}
@@ -135,12 +135,14 @@ export default function FacebookManagementServices() {
           .fbm-cta-o1{position:absolute;top:-80px;right:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(24,119,242,0.10) 0%,transparent 70%);pointer-events:none}
           .fbm-cta-o2{position:absolute;bottom:-60px;left:-60px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(30,58,138,0.08) 0%,transparent 70%);pointer-events:none}
           .fbm-cta-in{max-width:760px;margin:0 auto;text-align:center;position:relative;z-index:1}
-          .fbm-cta-t{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;background:linear-gradient(90deg,#1E3A8A 0%,#1877F2 50%,#1D4ED8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;line-height:1.2}
+          .fbm-cta-t{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;line-height:1.2}
           .fbm-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           .fbm-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.fbm-grid{grid-template-columns:repeat(2,1fr)}.fbm-why-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.fbm-hero,.fbm-svc,.fbm-cap,.fbm-proc,.fbm-why,.fbm-faq,.fbm-cta{padding:60px 24px}.fbm-hero{padding-top:60px;padding-bottom:0}.fbm-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.fbm-stat:nth-child(2){border-right:none}.fbm-grid{grid-template-columns:1fr}.fbm-why-grid{grid-template-columns:1fr}.fbm-step{grid-template-columns:56px 1fr}.fbm-btns{flex-direction:column;align-items:center}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
       <div className="fbm-page">
         <section className="fbm-hero"><div className="fbm-o1"/><div className="fbm-o2"/>

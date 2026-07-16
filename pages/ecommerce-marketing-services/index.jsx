@@ -82,7 +82,7 @@ export default function EcommerceMarketingServices() {
           .ecmkt-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500}
           .ecmkt-bc a{color:#6b7280;text-decoration:none}.ecmkt-bc a:hover{color:#0D9488}.ecmkt-bc span{color:#d1d5db}
           .ecmkt-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(13,148,136,0.08);border:1px solid rgba(13,148,136,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#0D9488;margin-bottom:28px}
-          .ecmkt-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(90deg,#134E4A 0%,#0D9488 50%,#0F766E 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
+          .ecmkt-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
           .ecmkt-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
           .ecmkt-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .ecmkt-btn-p{display:inline-flex;align-items:center;gap:8px;background:#0D9488;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(13,148,136,0.28)}
@@ -95,7 +95,7 @@ export default function EcommerceMarketingServices() {
           .ecmkt-stat-v{font-size:1.6rem;font-weight:900;color:#0D9488;letter-spacing:-0.5px}
           .ecmkt-svc{background:#f8fafd;padding:80px 40px}.ecmkt-svc-in{max-width:1280px;margin:0 auto}
           .ecmkt-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#0D9488;margin-bottom:10px;display:block}
-          .ecmkt-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#134E4A 0%,#0D9488 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .ecmkt-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .ecmkt-desc{font-size:15px;color:#4A6080;line-height:1.7;max-width:640px;margin-bottom:44px}
           .ecmkt-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
           .ecmkt-card{background:linear-gradient(135deg,rgba(240,253,250,0.65) 0%,rgba(255,255,255,0.88) 60%,rgba(204,251,241,0.25) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:26px 22px 22px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(13,148,136,0.05);opacity:0;transform:translateY(20px);transition:opacity 0.4s ease,transform 0.4s ease,box-shadow 0.22s}
@@ -135,12 +135,14 @@ export default function EcommerceMarketingServices() {
           .ecmkt-cta-o1{position:absolute;top:-80px;right:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(13,148,136,0.10) 0%,transparent 70%);pointer-events:none}
           .ecmkt-cta-o2{position:absolute;bottom:-60px;left:-60px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(19,78,74,0.08) 0%,transparent 70%);pointer-events:none}
           .ecmkt-cta-in{max-width:760px;margin:0 auto;text-align:center;position:relative;z-index:1}
-          .ecmkt-cta-t{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;background:linear-gradient(90deg,#134E4A 0%,#0D9488 50%,#0F766E 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;line-height:1.2}
+          .ecmkt-cta-t{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;line-height:1.2}
           .ecmkt-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           .ecmkt-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.ecmkt-grid{grid-template-columns:repeat(2,1fr)}.ecmkt-why-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.ecmkt-hero,.ecmkt-svc,.ecmkt-plat,.ecmkt-proc,.ecmkt-why,.ecmkt-faq,.ecmkt-cta{padding:60px 24px}.ecmkt-hero{padding-top:60px;padding-bottom:0}.ecmkt-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.ecmkt-stat:nth-child(2){border-right:none}.ecmkt-grid{grid-template-columns:1fr}.ecmkt-why-grid{grid-template-columns:1fr}.ecmkt-step{grid-template-columns:56px 1fr}.ecmkt-btns{flex-direction:column;align-items:center}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
       <div className="ecmkt-page">
         <section className="ecmkt-hero"><div className="ecmkt-o1"/><div className="ecmkt-o2"/>

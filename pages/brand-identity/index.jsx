@@ -257,7 +257,7 @@ export default function BrandIdentityPage() {
           .bi-hero-block::after { content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.18) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px); }
           .bi-hero-content { position:relative;z-index:2;text-align:center;max-width:860px;margin:0 auto;padding:60px 40px 44px; }
           .bi-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#7C3AED;margin-bottom:18px; }
-          .bi-hero-content h1 { font-size:52px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:20px;background:linear-gradient(90deg,#0F3460 0%,#7C3AED 50%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+          .bi-hero-content h1 { font-size:52px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:20px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
           .bi-hero-content p { font-size:17px;color:#3A507A;line-height:1.7;max-width:640px;margin:0 auto 32px; }
           .bi-hero-badges { display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:32px; }
           .bi-badge { background:rgba(255,255,255,0.6);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.85);border-radius:40px;padding:6px 16px;font-size:13px;font-weight:600;color:#0F3460; }
@@ -285,7 +285,7 @@ export default function BrandIdentityPage() {
 
           /* Shared section styles */
           .bi-section-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7C3AED;margin-bottom:12px;display:block; }
-          .bi-section-title { font-size:44px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#7C3AED 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin-bottom:12px; }
+          .bi-section-title { font-size:44px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin-bottom:12px; }
           .bi-section-desc { font-size:15px;color:#4A6080;line-height:1.7;max-width:680px;margin-bottom:36px; }
 
           /* Section reveal animation */
@@ -324,7 +324,7 @@ export default function BrandIdentityPage() {
           .bi-process-section { background:transparent;padding:80px 40px;position:relative;z-index:1; }
           .bi-process-top { max-width:1280px;margin:0 auto 52px; }
           .bi-process-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#7C3AED;margin:0 0 14px;display:block; }
-          .bi-process-title { font-size:44px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#7C3AED 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
+          .bi-process-title { font-size:44px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
           .bi-process-desc { font-size:15px;color:#4A6080;line-height:1.7;margin:0; }
           .bi-process-divider { border:none;border-top:1px solid rgba(15,52,96,0.15);margin:36px 0 0; }
           .bi-process-inner { max-width:1280px;margin:0 auto; }
@@ -366,7 +366,7 @@ export default function BrandIdentityPage() {
           /* FAQ */
           .bi-faq-section { padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);position:relative;z-index:1; }
           .bi-faq-inner { max-width:1280px;margin:0 auto; }
-          .bi-faq-heading { font-size:44px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#7C3AED 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 36px; }
+          .bi-faq-heading { font-size:44px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 36px; }
           .bi-faq-list { display:flex;flex-direction:column;gap:12px; }
           .bi-faq-item { background:linear-gradient(135deg,rgba(237,233,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(252,231,243,0.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:16px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(15,52,96,0.07),inset 0 1px 0 rgba(255,255,255,0.95);transition:border-color 0.2s,box-shadow 0.2s; }
           .bi-faq-item.open { border-color:rgba(124,58,237,0.35);box-shadow:0 8px 32px rgba(15,52,96,0.12); }
@@ -386,7 +386,7 @@ export default function BrandIdentityPage() {
           /* Contact */
           .bi-contact-section { padding:80px 40px;background:linear-gradient(135deg,rgba(237,233,254,0.70) 0%,rgba(255,255,255,0.60) 40%,rgba(252,231,243,0.65) 100%);backdrop-filter:blur(20px);position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.80); }
           .bi-contact-container { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;align-items:start;gap:40px; }
-          .bi-contact-title { font-size:44px;font-weight:900;line-height:1.2;margin:0 0 16px;background:linear-gradient(90deg,#0F3460 0%,#7C3AED 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent; }
+          .bi-contact-title { font-size:44px;font-weight:900;line-height:1.2;margin:0 0 16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent; }
           .bi-contact-desc { font-size:14px;color:#4A6080;line-height:1.6;margin:0 0 28px; }
           .bi-merged-box { background:linear-gradient(135deg,rgba(255,255,255,0.70) 0%,rgba(237,233,254,0.35) 100%);border:1px solid rgba(255,255,255,0.90);border-radius:14px;padding:24px;backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,1);display:flex;flex-direction:column;gap:20px; }
           .bi-benefit-item { display:flex;gap:10px;align-items:flex-start; }
@@ -421,7 +421,7 @@ export default function BrandIdentityPage() {
           .bi-related-section { background:rgba(237,233,254,0.18);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,0.60);padding:80px 40px; }
           .bi-related-inner { max-width:1280px;margin:0 auto;text-align:center; }
           .bi-related-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A6080;margin:0 0 14px;display:block; }
-          .bi-related-title { font-size:44px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#7C3AED 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
+          .bi-related-title { font-size:44px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
           .bi-related-sub { font-size:15px;color:#0F1F40;line-height:1.7;margin:0 auto;max-width:640px; }
           .bi-related-divider { border:none;border-top:1px solid rgba(15,52,96,0.12);margin:40px 0; }
           .bi-related-tags { display:flex;flex-wrap:wrap;justify-content:center;gap:12px; }
@@ -492,7 +492,9 @@ export default function BrandIdentityPage() {
             .bi-section-title,.bi-process-title,.bi-faq-heading,.bi-contact-title,.bi-related-title { font-size:22px; }
             .bi-tcard { padding:24px 18px; }
           }
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
 
       <div className="bi-page">

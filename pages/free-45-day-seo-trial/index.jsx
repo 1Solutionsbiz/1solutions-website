@@ -76,7 +76,7 @@ export default function Free45DaySeoTrial() {
           .f45-bc a{color:rgba(255,255,255,0.5);text-decoration:none}.f45-bc a:hover{color:#fff}.f45-bc span{color:rgba(255,255,255,0.25)}
           .f45-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(29,78,216,0.3);border:1px solid rgba(99,179,237,0.30);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#93C5FD;margin-bottom:28px}
           .f45-h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:900;line-height:1.05;letter-spacing:-1.5px;color:#fff;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .f45-h1 span{background:linear-gradient(90deg,#60A5FA 0%,#93C5FD 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .f45-h1 span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .f45-sub{font-size:1.1rem;color:rgba(255,255,255,0.75);line-height:1.75;max-width:660px;margin:0 auto 36px}
           .f45-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .f45-btn-p{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#1E3A8A;padding:16px 36px;border-radius:50px;font-weight:800;font-size:1rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 24px rgba(0,0,0,0.30)}
@@ -89,7 +89,7 @@ export default function Free45DaySeoTrial() {
           .f45-stat-v{font-size:1.6rem;font-weight:900;color:#93C5FD;letter-spacing:-0.5px}
           .f45-inc{background:#f8fafd;padding:80px 40px}.f45-inc-in{max-width:1280px;margin:0 auto}
           .f45-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#1D4ED8;margin-bottom:10px;display:block}
-          .f45-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#1E3A8A 0%,#1D4ED8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .f45-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .f45-desc{font-size:15px;color:#4A6080;line-height:1.7;max-width:640px;margin-bottom:44px}
           .f45-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
           .f45-card{background:linear-gradient(135deg,rgba(239,246,255,0.65) 0%,rgba(255,255,255,0.88) 60%,rgba(219,234,254,0.25) 100%);border:1px solid rgba(29,78,216,0.08);border-radius:20px;padding:26px 22px 22px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(29,78,216,0.05);opacity:0;transform:translateY(20px);transition:opacity 0.4s ease,transform 0.4s ease}
@@ -126,7 +126,9 @@ export default function Free45DaySeoTrial() {
           .f45-cta-s{font-size:1.05rem;color:rgba(255,255,255,0.75);line-height:1.75;margin:0 auto 36px;max-width:520px}
           @media(max-width:1024px){.f45-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.f45-hero,.f45-inc,.f45-proc,.f45-elig,.f45-faq,.f45-cta{padding:60px 24px}.f45-hero{padding-top:60px;padding-bottom:0}.f45-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.f45-stat:nth-child(2){border-right:none}.f45-grid{grid-template-columns:1fr}.f45-step{grid-template-columns:56px 1fr}.f45-elist{grid-template-columns:1fr}.f45-btns{flex-direction:column;align-items:center}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
       <div className="f45-page">
         <section className="f45-hero"><div className="f45-o1"/><div className="f45-o2"/>

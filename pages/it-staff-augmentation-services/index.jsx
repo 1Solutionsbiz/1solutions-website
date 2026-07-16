@@ -157,7 +157,7 @@ export default function ITStaffAugmentation() {
           .isa-bc a{color:#1e1b4b;text-decoration:none}
           .isa-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
           .isa-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4338ca;margin-bottom:14px}
-          .isa-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(90deg,#1e1b4b 0%,#4338ca 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .isa-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .isa-desc{font-size:16px;color:#3730a3;line-height:1.65;max-width:740px;margin:0 auto 24px}
           .isa-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
           .isa-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#1e1b4b;box-shadow:0 2px 8px rgba(30,27,75,.07)}
@@ -181,7 +181,7 @@ export default function ITStaffAugmentation() {
           .isa-cl{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
           .isa-cl:hover{opacity:.85;filter:grayscale(0%)}
           .isa-sey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
-          .isa-st{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(90deg,#1e1b4b 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .isa-st{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .isa-sd{font-size:15px;color:#4338ca;opacity:.8;line-height:1.7}
           .isa-rv{opacity:0;transform:translateY(44px);transition:opacity .7s cubic-bezier(0.22,1,.36,1),transform .7s cubic-bezier(0.22,1,.36,1)}
           .isa-rv.isa-ok{opacity:1;transform:translateY(0)}
@@ -275,7 +275,7 @@ export default function ITStaffAugmentation() {
           .isa-wc p{font-size:13px;color:#3730a3;opacity:.8;line-height:1.65;margin:0}
           .isa-ct-s{padding:70px 40px;background:linear-gradient(135deg,rgba(238,242,255,.55) 0%,rgba(255,255,255,.60) 40%,rgba(224,231,255,.55) 100%);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.80);position:relative;z-index:1}
           .isa-ct-g{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;gap:32px;align-items:start}
-          .isa-ctt{font-size:42px;font-weight:900;line-height:1.18;margin:0 0 14px;background:linear-gradient(90deg,#1e1b4b 0%,#4338ca 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .isa-ctt{font-size:42px;font-weight:900;line-height:1.18;margin:0 0 14px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .isa-ctd{font-size:14px;color:#3730a3;opacity:.8;line-height:1.6;margin:0 0 22px}
           .isa-ben{background:rgba(255,255,255,.70);border:1px solid rgba(255,255,255,.90);border-radius:14px;padding:22px;backdrop-filter:blur(12px);display:flex;flex-direction:column;gap:14px}
           .isa-be{display:flex;gap:10px;align-items:flex-start}
@@ -297,7 +297,7 @@ export default function ITStaffAugmentation() {
           .isa-sub{width:100%;padding:14px;background:#4338ca;border:none;color:#fff;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all .25s;box-shadow:0 6px 24px rgba(67,56,202,.26)}
           .isa-sub:hover{background:#1e1b4b;transform:translateY(-2px)}
           .isa-fq-s{padding:80px 40px;background:#f5f4ff;border-top:1px solid rgba(30,27,75,.08);position:relative;z-index:1}
-          .isa-fq-s h2{font-size:46px;font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,#1e1b4b 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
+          .isa-fq-s h2{font-size:46px;font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
           .isa-fq-sub{font-size:15px;color:#3730a3;opacity:.8;margin:0 0 36px}
           .isa-fql{display:flex;flex-direction:column;gap:10px}
           .isa-fi{background:linear-gradient(135deg,rgba(238,242,255,.50) 0%,rgba(255,255,255,.85) 55%,rgba(224,231,255,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(30,27,75,.06);transition:border-color .2s}
@@ -315,7 +315,7 @@ export default function ITStaffAugmentation() {
           .isa-fa{padding:0 20px 20px 58px;font-size:14px;color:#4b5563;line-height:1.8}
           .isa-rel{padding:80px 40px;background:rgba(238,242,255,.14);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.60)}
           .isa-ri{max-width:1300px;margin:0 auto;text-align:center}
-          .isa-ri h2{font-size:34px;font-weight:900;background:linear-gradient(90deg,#1e1b4b 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 12px}
+          .isa-ri h2{font-size:34px;font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 12px}
           .isa-rs{font-size:14px;color:#3730a3;margin:0 auto;max-width:560px;opacity:.8}
           .isa-ri hr{border:none;border-top:1px solid rgba(30,27,75,.10);margin:32px 0}
           .isa-rts{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
@@ -328,7 +328,9 @@ export default function ITStaffAugmentation() {
           .isa-fu{background:rgba(162,28,175,.09);border-color:rgba(162,28,175,.28);color:#86198f}
           @media(max-width:1024px){.isa-hero h1,.isa-st,.isa-fq-s h2{font-size:36px}.isa-sk-g{grid-template-columns:repeat(2,1fr)}.isa-tec-g{grid-template-columns:repeat(2,1fr)}.isa-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.isa-en-c.feat{transform:none}.isa-en-c.feat.isa-ev{transform:none}.isa-en-c.feat.isa-ev:hover{transform:translateY(-4px)}.isa-wy-g{grid-template-columns:repeat(2,1fr)}.isa-tg2{grid-template-columns:1fr}.isa-ct-g{grid-template-columns:1fr}}
           @media(max-width:768px){.isa-bc,.isa-hero,.isa-sk-s,.isa-tec-s,.isa-en-s,.isa-pr-s,.isa-te-s,.isa-wy-s,.isa-fq-s,.isa-rel{padding-left:20px;padding-right:20px}.isa-hero{padding-top:28px;padding-bottom:20px}.isa-hero h1{font-size:26px;letter-spacing:-.3px}.isa-stats{grid-template-columns:1fr 1fr}.isa-sc:nth-child(2){border-right:none}.isa-sc:nth-child(3),.isa-sc:nth-child(4){border-top:1px solid rgba(30,27,75,.10)}.isa-sc:nth-child(4){border-right:none}.isa-sk-g,.isa-tec-g,.isa-wy-g{grid-template-columns:1fr}.isa-fr{grid-template-columns:1fr}.isa-ctt{font-size:28px}.isa-st{font-size:28px}.isa-ct-s{padding:48px 20px}.isa-logos{padding-left:20px;padding-right:20px}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
               <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({

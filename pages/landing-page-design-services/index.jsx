@@ -82,7 +82,7 @@ export default function LandingPageDesignServices() {
           .lpd-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500}
           .lpd-bc a{color:#6b7280;text-decoration:none}.lpd-bc a:hover{color:#C2410C}.lpd-bc span{color:#d1d5db}
           .lpd-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(194,65,12,0.08);border:1px solid rgba(194,65,12,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#C2410C;margin-bottom:28px}
-          .lpd-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(90deg,#9A3412 0%,#C2410C 50%,#7C2D12 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
+          .lpd-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
           .lpd-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
           .lpd-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .lpd-btn-p{display:inline-flex;align-items:center;gap:8px;background:#C2410C;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(194,65,12,0.28)}
@@ -95,7 +95,7 @@ export default function LandingPageDesignServices() {
           .lpd-stat-v{font-size:1.6rem;font-weight:900;color:#C2410C;letter-spacing:-0.5px}
           .lpd-svc{background:#f8fafd;padding:80px 40px}.lpd-svc-in{max-width:1280px;margin:0 auto}
           .lpd-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C2410C;margin-bottom:10px;display:block}
-          .lpd-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#9A3412 0%,#C2410C 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .lpd-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .lpd-desc{font-size:15px;color:#4A6080;line-height:1.7;max-width:640px;margin-bottom:44px}
           .lpd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
           .lpd-card{background:linear-gradient(135deg,rgba(255,247,237,0.65) 0%,rgba(255,255,255,0.88) 60%,rgba(254,215,170,0.25) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:26px 22px 22px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(194,65,12,0.05);opacity:0;transform:translateY(20px);transition:opacity 0.4s ease,transform 0.4s ease,box-shadow 0.22s}
@@ -135,12 +135,14 @@ export default function LandingPageDesignServices() {
           .lpd-cta-o1{position:absolute;top:-80px;right:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(194,65,12,0.10) 0%,transparent 70%);pointer-events:none}
           .lpd-cta-o2{position:absolute;bottom:-60px;left:-60px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(154,52,18,0.08) 0%,transparent 70%);pointer-events:none}
           .lpd-cta-in{max-width:760px;margin:0 auto;text-align:center;position:relative;z-index:1}
-          .lpd-cta-t{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;background:linear-gradient(90deg,#9A3412 0%,#C2410C 50%,#7C2D12 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;line-height:1.2}
+          .lpd-cta-t{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;line-height:1.2}
           .lpd-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           .lpd-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.lpd-grid{grid-template-columns:repeat(2,1fr)}.lpd-why-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){.lpd-hero,.lpd-svc,.lpd-tools,.lpd-proc,.lpd-why,.lpd-faq,.lpd-cta{padding:60px 24px}.lpd-hero{padding-top:60px;padding-bottom:0}.lpd-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.lpd-stat:nth-child(2){border-right:none}.lpd-grid{grid-template-columns:1fr}.lpd-why-grid{grid-template-columns:1fr}.lpd-step{grid-template-columns:56px 1fr}.lpd-btns{flex-direction:column;align-items:center}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
       <div className="lpd-page">
         <section className="lpd-hero"><div className="lpd-o1"/><div className="lpd-o2"/>

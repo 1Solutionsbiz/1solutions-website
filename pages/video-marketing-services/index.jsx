@@ -74,7 +74,7 @@ export default function VideoMarketingServices() {
           .vmkt-o2{position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(155,89,182,0.08) 0%,transparent 70%);pointer-events:none;filter:blur(8px)}
           .vmkt-in{max-width:1200px;margin:0 auto;position:relative;z-index:1}
           .vmkt-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(26,0,40,0.10);border:1px solid rgba(26,0,40,0.25);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:24px}
-          .vmkt-h1{font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;background:linear-gradient(90deg,#0d0018 0%,${ACCENT} 45%,#9b59b6 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .vmkt-h1{font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .vmkt-p{font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:660px}
           .vmkt-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
           .vmkt-bp{display:inline-flex;align-items:center;gap:8px;background:${ACCENT};color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(26,0,40,.25)}
@@ -96,7 +96,7 @@ export default function VideoMarketingServices() {
           .vmkt-si2{max-width:1200px;margin:0 auto}
           .vmkt-tag{display:block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:12px}
           .vmkt-h2{font-size:clamp(1.8rem,3vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-.5px;color:#0A1628;margin:0 0 16px}
-          .vmkt-h2 span{background:linear-gradient(90deg,${ACCENT},#9b59b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .vmkt-h2 span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .vmkt-lead{font-size:1rem;color:#4b5563;line-height:1.75;max-width:620px;margin:0 0 48px}
           .vmkt-g3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
           .vmkt-card{background:linear-gradient(135deg,rgba(26,0,40,.06) 0%,rgba(255,255,255,.88) 60%,rgba(155,89,182,.05) 100%);border:1px solid rgba(255,255,255,.85);border-radius:20px;padding:28px 24px;box-shadow:0 4px 24px rgba(26,0,40,.07),inset 0 1px 0 rgba(255,255,255,.95);transition:transform .22s,box-shadow .22s}
@@ -133,11 +133,13 @@ export default function VideoMarketingServices() {
           .vmkt-fic svg{width:14px;height:14px;color:${ACCENT}}
           .vmkt-fa{padding:0 24px 20px;font-size:14px;color:#4b5563;line-height:1.8}
           .vmkt-cta{background:linear-gradient(135deg,rgba(26,0,40,.10) 0%,rgba(255,255,255,.70) 40%,rgba(155,89,182,.08) 100%);padding:90px 40px;text-align:center}
-          .vmkt-cth{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-.5px;margin:0 0 18px;background:linear-gradient(90deg,#0d0018 0%,${ACCENT} 50%,#9b59b6 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .vmkt-cth{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-.5px;margin:0 0 18px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .vmkt-ctp{font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px}
           @media(max-width:900px){.vmkt-g3,.vmkt-rg{grid-template-columns:1fr 1fr}}
           @media(max-width:600px){.vmkt-hero,.vmkt-sec,.vmkt-rb,.vmkt-cta{padding-left:20px;padding-right:20px}.vmkt-hero{padding-top:60px;padding-bottom:50px}.vmkt-g3,.vmkt-rg{grid-template-columns:1fr}.vmkt-bc{padding:12px 20px}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
       <nav className="vmkt-bc"><div className="vmkt-bci"><Link href="/">Home</Link><span className="vmkt-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="vmkt-sep">›</span><span className="vmkt-cur">Video Marketing Services</span></div></nav>
       <section className="vmkt-hero"><div className="vmkt-o1"/><div className="vmkt-o2"/>

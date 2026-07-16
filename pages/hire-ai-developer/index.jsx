@@ -172,7 +172,7 @@ export default function HireAIDeveloper() {
           .hia-breadcrumb a{color:#0F3460;text-decoration:none}
           .hia-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
           .hia-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
-          .hia-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(90deg,#0F3460 0%,#6d28d9 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .hia-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .hia-hero-desc{font-size:16px;color:#3A507A;line-height:1.65;max-width:740px;margin:0 auto 24px}
           .hia-trust-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
           .hia-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07)}
@@ -196,7 +196,7 @@ export default function HireAIDeveloper() {
           .hia-clogo{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
           .hia-clogo:hover{opacity:.85;filter:grayscale(0%)}
           .hia-s-eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
-          .hia-s-title{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .hia-s-title{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .hia-s-desc{font-size:15px;color:#4A6080;line-height:1.7}
           .hia-s-reveal{opacity:0;transform:translateY(44px);transition:opacity .7s cubic-bezier(0.22,1,.36,1),transform .7s cubic-bezier(0.22,1,.36,1)}
           .hia-s-reveal.hia-revealed{opacity:1;transform:translateY(0)}
@@ -290,7 +290,7 @@ export default function HireAIDeveloper() {
           .hia-wcard p{font-size:13px;color:#4A6080;line-height:1.65;margin:0}
           .hia-ct-sec{padding:70px 40px;background:linear-gradient(135deg,rgba(245,243,255,.55) 0%,rgba(255,255,255,.60) 40%,rgba(237,233,254,.55) 100%);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.80);position:relative;z-index:1}
           .hia-ct-grid{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;gap:32px;align-items:start}
-          .hia-ctitle{font-size:42px;font-weight:900;line-height:1.18;margin:0 0 14px;background:linear-gradient(90deg,#0F3460 0%,#6d28d9 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .hia-ctitle{font-size:42px;font-weight:900;line-height:1.18;margin:0 0 14px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .hia-cdesc{font-size:14px;color:#4A6080;line-height:1.6;margin:0 0 22px}
           .hia-cbenefits{background:rgba(255,255,255,.70);border:1px solid rgba(255,255,255,.90);border-radius:14px;padding:22px;backdrop-filter:blur(12px);display:flex;flex-direction:column;gap:14px}
           .hia-cbenefit{display:flex;gap:10px;align-items:flex-start}
@@ -312,7 +312,7 @@ export default function HireAIDeveloper() {
           .hia-submit{width:100%;padding:14px;background:#6d28d9;border:none;color:#fff;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all .25s;box-shadow:0 6px 24px rgba(109,40,217,.26)}
           .hia-submit:hover{background:#0F3460;transform:translateY(-2px)}
           .hia-fq-sec{padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(15,52,96,.08);position:relative;z-index:1}
-          .hia-fq-sec h2{font-size:46px;font-weight:900;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
+          .hia-fq-sec h2{font-size:46px;font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 8px}
           .hia-fq-sub{font-size:15px;color:#4A6080;margin:0 0 36px}
           .hia-faq-list{display:flex;flex-direction:column;gap:10px}
           .hia-fitem{background:linear-gradient(135deg,rgba(245,243,255,.50) 0%,rgba(255,255,255,.85) 55%,rgba(237,233,254,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(15,52,96,.06);transition:border-color .2s}
@@ -330,7 +330,7 @@ export default function HireAIDeveloper() {
           .hia-fanswer{padding:0 20px 20px 58px;font-size:14px;color:#4b5563;line-height:1.8}
           .hia-rel{padding:80px 40px;background:rgba(245,243,255,.14);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.60)}
           .hia-rel-inner{max-width:1300px;margin:0 auto;text-align:center}
-          .hia-rel h2{font-size:34px;font-weight:900;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 12px}
+          .hia-rel h2{font-size:34px;font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:10px 0 12px}
           .hia-rel-sub{font-size:14px;color:#4A6080;margin:0 auto;max-width:560px}
           .hia-rel hr{border:none;border-top:1px solid rgba(15,52,96,.10);margin:32px 0}
           .hia-rtags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
@@ -343,7 +343,9 @@ export default function HireAIDeveloper() {
           .hia-rtag-a{background:rgba(202,138,4,.09);border-color:rgba(202,138,4,.28);color:#92400e}
           @media(max-width:1024px){.hia-hero h1,.hia-s-title,.hia-fq-sec h2{font-size:36px}.hia-sk-grid{grid-template-columns:repeat(2,1fr)}.hia-st-grid{grid-template-columns:repeat(2,1fr)}.hia-en-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.hia-en-card.feat{transform:none}.hia-en-card.feat.hia-ev{transform:none}.hia-en-card.feat.hia-ev:hover{transform:translateY(-4px)}.hia-wy-grid{grid-template-columns:repeat(2,1fr)}.hia-tgrid{grid-template-columns:1fr}.hia-ct-grid{grid-template-columns:1fr}}
           @media(max-width:768px){.hia-breadcrumb{padding:12px 20px 0}.hia-hero{padding:28px 20px 20px}.hia-hero h1{font-size:26px;letter-spacing:-.3px}.hia-stats{grid-template-columns:1fr 1fr}.hia-stat-col:nth-child(2){border-right:none}.hia-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.hia-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.hia-logos{padding:16px 20px 28px}.hia-sk-sec,.hia-st-sec,.hia-en-sec,.hia-pr-sec,.hia-te-sec,.hia-wy-sec,.hia-fq-sec,.hia-rel{padding:52px 20px}.hia-ct-sec{padding:48px 20px}.hia-sk-grid,.hia-st-grid,.hia-wy-grid{grid-template-columns:1fr}.hia-frow{grid-template-columns:1fr}.hia-ctitle{font-size:28px}.hia-s-title{font-size:28px}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
               <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({

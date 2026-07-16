@@ -74,7 +74,7 @@ export default function ReputationManagementServices() {
           .repm-o2{position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(224,160,96,0.08) 0%,transparent 70%);pointer-events:none;filter:blur(8px)}
           .repm-in{max-width:1200px;margin:0 auto;position:relative;z-index:1}
           .repm-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(45,22,0,0.10);border:1px solid rgba(45,22,0,0.25);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:24px}
-          .repm-h1{font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;background:linear-gradient(90deg,#100800 0%,${ACCENT} 45%,#c87030 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .repm-h1{font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .repm-p{font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:660px}
           .repm-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
           .repm-bp{display:inline-flex;align-items:center;gap:8px;background:${ACCENT};color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(45,22,0,.25)}
@@ -96,7 +96,7 @@ export default function ReputationManagementServices() {
           .repm-si2{max-width:1200px;margin:0 auto}
           .repm-tag{display:block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:12px}
           .repm-h2{font-size:clamp(1.8rem,3vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-.5px;color:#0A1628;margin:0 0 16px}
-          .repm-h2 span{background:linear-gradient(90deg,${ACCENT},#c87030);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .repm-h2 span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .repm-lead{font-size:1rem;color:#4b5563;line-height:1.75;max-width:620px;margin:0 0 48px}
           .repm-g3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
           .repm-card{background:linear-gradient(135deg,rgba(45,22,0,.06) 0%,rgba(255,255,255,.88) 60%,rgba(224,160,96,.05) 100%);border:1px solid rgba(255,255,255,.85);border-radius:20px;padding:28px 24px;box-shadow:0 4px 24px rgba(45,22,0,.07),inset 0 1px 0 rgba(255,255,255,.95);transition:transform .22s,box-shadow .22s}
@@ -133,11 +133,13 @@ export default function ReputationManagementServices() {
           .repm-fic svg{width:14px;height:14px;color:${ACCENT}}
           .repm-fa{padding:0 24px 20px;font-size:14px;color:#4b5563;line-height:1.8}
           .repm-cta{background:linear-gradient(135deg,rgba(45,22,0,.10) 0%,rgba(255,255,255,.70) 40%,rgba(224,160,96,.08) 100%);padding:90px 40px;text-align:center}
-          .repm-cth{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-.5px;margin:0 0 18px;background:linear-gradient(90deg,#100800 0%,${ACCENT} 50%,#c87030 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+          .repm-cth{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-.5px;margin:0 0 18px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .repm-ctp{font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px}
           @media(max-width:900px){.repm-g3,.repm-rg{grid-template-columns:1fr 1fr}}
           @media(max-width:600px){.repm-hero,.repm-sec,.repm-rb,.repm-cta{padding-left:20px;padding-right:20px}.repm-hero{padding-top:60px;padding-bottom:50px}.repm-g3,.repm-rg{grid-template-columns:1fr}.repm-bc{padding:12px 20px}}
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
       <nav className="repm-bc"><div className="repm-bci"><Link href="/">Home</Link><span className="repm-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="repm-sep">›</span><span className="repm-cur">Reputation Management Services</span></div></nav>
       <section className="repm-hero"><div className="repm-o1"/><div className="repm-o2"/>

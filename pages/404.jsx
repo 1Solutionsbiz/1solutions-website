@@ -65,7 +65,7 @@ function Custom404() {
           position: absolute;
           font-family: 'Material Symbols Rounded';
           font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-          background: linear-gradient(to bottom, #F7B2FB 50%, #786EF1 80%, #5588FB 100%);
+          background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -129,7 +129,9 @@ function Custom404() {
           .p4-deco-cloud { font-size: 24px !important; }
           .p4-deco-heart { font-size: 20px !important; }
         }
-      `}</style>
+      `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
 
       <div className="p4-root">
         <main className="p4-main">

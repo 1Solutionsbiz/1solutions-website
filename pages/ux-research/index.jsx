@@ -254,7 +254,7 @@ export default function UXResearch() {
           .uxr-hero { position:relative;overflow:hidden; }
           .uxr-hero-content { position:relative;z-index:2;text-align:center;max-width:900px;margin:0 auto;padding:64px 40px 44px; }
           .uxr-eyebrow { display:inline-block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:20px;background:rgba(255,255,255,0.55);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.70);padding:6px 18px;border-radius:40px; }
-          .uxr-hero-content h1 { font-size:52px;font-weight:900;line-height:1.08;letter-spacing:-1.5px;margin-bottom:18px;background:linear-gradient(100deg,#065f46 0%,#0F3460 45%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+          .uxr-hero-content h1 { font-size:52px;font-weight:900;line-height:1.08;letter-spacing:-1.5px;margin-bottom:18px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
           .uxr-hero-content p { font-size:17px;color:#3A507A;line-height:1.7;max-width:660px;margin:0 auto 32px; }
           .uxr-hero-btns { display:flex;gap:14px;justify-content:center;flex-wrap:wrap; }
           .uxr-btn-primary { display:inline-block;padding:15px 40px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1);position:relative;overflow:hidden; }
@@ -280,7 +280,7 @@ export default function UXResearch() {
           .uxr-services-section { background:#f8fafd;padding:80px 40px 64px;position:relative;z-index:2;box-shadow:0 -20px 60px rgba(15,52,96,0.14),0 -4px 16px rgba(15,52,96,0.08); }
           .uxr-services-inner { max-width:1280px;margin:0 auto; }
           .uxr-section-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#10b981;margin-bottom:12px; }
-          .uxr-section-title { font-size:44px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#10b981 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin-bottom:12px; }
+          .uxr-section-title { font-size:44px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin-bottom:12px; }
           .uxr-section-desc { font-size:15px;color:#4A6080;line-height:1.7;max-width:680px;margin-bottom:40px; }
           .uxr-services-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:16px; }
           .uxr-service-card { background:linear-gradient(135deg,rgba(209,250,229,0.50) 0%,rgba(255,255,255,0.85) 60%,rgba(219,234,254,0.35) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:28px 24px 24px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95);transition:transform 0.22s,box-shadow 0.22s,border-color 0.22s;cursor:default; }
@@ -357,7 +357,7 @@ export default function UXResearch() {
           .uxr-faq-inner { max-width:1280px;margin:0 auto; }
           .uxr-faq-layout { display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start; }
           .uxr-faq-left { position:sticky;top:100px; }
-          .uxr-faq-heading { font-size:44px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#10b981 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
+          .uxr-faq-heading { font-size:44px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
           .uxr-faq-intro { font-size:15px;color:#4A6080;line-height:1.75;margin:0 0 28px; }
           .uxr-faq-contact-nudge { display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:rgba(255,255,255,0.55);backdrop-filter:blur(10px);border:1.5px solid rgba(255,255,255,0.80);border-radius:50px;color:#0F3460;font-weight:600;font-size:14px;text-decoration:none;transition:all 0.3s; }
           .uxr-faq-contact-nudge:hover { background:rgba(255,255,255,0.80);transform:translateY(-2px); }
@@ -383,7 +383,7 @@ export default function UXResearch() {
           /* ── CONTACT ── */
           .uxr-contact-section { padding:72px 40px;background:linear-gradient(135deg,rgba(209,250,229,0.65) 0%,rgba(255,255,255,0.60) 40%,rgba(219,234,254,0.60) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.80); }
           .uxr-contact-container { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr;align-items:start;gap:36px; }
-          .uxr-contact-title { font-size:44px;font-weight:900;line-height:1.2;margin:0 0 16px;background:linear-gradient(90deg,#0F3460 0%,#10b981 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent; }
+          .uxr-contact-title { font-size:44px;font-weight:900;line-height:1.2;margin:0 0 16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent; }
           .uxr-contact-desc { font-size:14px;color:#4A6080;line-height:1.65;margin:0 0 24px; }
           .uxr-contact-perks { display:flex;flex-direction:column;gap:14px;margin-bottom:28px; }
           .uxr-perk { display:flex;align-items:flex-start;gap:10px; }
@@ -416,7 +416,7 @@ export default function UXResearch() {
           .uxr-related-section { background:rgba(209,250,229,0.15);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,0.60);padding:72px 40px; }
           .uxr-related-inner { max-width:1280px;margin:0 auto;text-align:center; }
           .uxr-related-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A6080;margin:0 0 14px;display:block; }
-          .uxr-related-title { font-size:40px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#10b981 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 14px; }
+          .uxr-related-title { font-size:40px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 14px; }
           .uxr-related-sub { font-size:15px;color:#4A6080;line-height:1.7;margin:0 auto 40px;max-width:620px; }
           .uxr-related-divider { border:none;border-top:1px solid rgba(15,52,96,0.10);margin:0 0 36px; }
           .uxr-related-tags { display:flex;flex-wrap:wrap;justify-content:center;gap:10px; }
@@ -474,7 +474,9 @@ export default function UXResearch() {
           @media (max-width:900px) {
             .uxr-page { background-attachment:scroll !important; }
           }
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
 
       <div className="uxr-page">

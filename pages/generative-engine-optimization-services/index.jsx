@@ -249,7 +249,7 @@ export default function GenerativeEngineOptimizationServices() {
           .geo-sec-in{max-width:1280px;margin:0 auto}
           .geo-sec-in-sm{max-width:900px;margin:0 auto}
           .geo-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#4f46e5;margin-bottom:10px;display:block}
-          .geo-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#3730a3 0%,#4f46e5 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+          .geo-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .geo-desc{font-size:15px;color:#4A6080;line-height:1.7;max-width:640px;margin-bottom:44px}
 
           /* ── SERVICE CARDS ── */
@@ -307,7 +307,7 @@ export default function GenerativeEngineOptimizationServices() {
           .geo-co1{position:absolute;top:-80px;right:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(79,70,229,0.10) 0%,transparent 70%);pointer-events:none}
           .geo-co2{position:absolute;bottom:-60px;left:-60px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.08) 0%,transparent 70%);pointer-events:none}
           .geo-cg{max-width:1200px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
-          .geo-cl h2{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;background:linear-gradient(90deg,#3730a3 0%,#4f46e5 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 16px;line-height:1.15;letter-spacing:-0.5px}
+          .geo-cl h2{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 16px;line-height:1.15;letter-spacing:-0.5px}
           .geo-cl p{font-size:1rem;color:#4A6080;line-height:1.75;margin:0 0 32px}
           .geo-perks{display:flex;flex-direction:column;gap:12px}
           .geo-perk{display:flex;align-items:center;gap:10px;font-size:14px;color:#374151;font-weight:500}
@@ -370,7 +370,9 @@ export default function GenerativeEngineOptimizationServices() {
             .geo-btns{flex-direction:column;align-items:center}
             .geo-r2{grid-template-columns:1fr}
           }
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
 
       <div className="geo-page">

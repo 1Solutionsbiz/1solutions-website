@@ -68,7 +68,7 @@ export default function CaseStudies() {
 .cs-hero-orb2{position:absolute;bottom:-60px;left:-60px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,.08) 0%,transparent 70%);pointer-events:none;}
 .cs-hero-inner{max-width:1200px;margin:0 auto;padding:0 48px;position:relative;z-index:1;}
 .cs-eyebrow{color:#D97706;font-size:.82rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:20px;}
-.cs-hero-title{font-size:clamp(2rem,4vw,3.25rem);font-weight:800;line-height:1.2;max-width:720px;margin-bottom:24px;background:linear-gradient(90deg,#0F3460 0%,#F59E0B 45%,#7C3AED 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.cs-hero-title{font-size:clamp(2rem,4vw,3.25rem);font-weight:800;line-height:1.2;max-width:720px;margin-bottom:24px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .cs-hero-sub{color:#4b5563;font-size:1.05rem;max-width:540px;margin-bottom:40px;line-height:1.75;}
 .cs-hero-cta{display:inline-flex;align-items:center;gap:14px;background:rgba(15,52,96,.07);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,.18);border-radius:50px;padding:12px 24px 12px 14px;color:#0F3460;text-decoration:none;font-size:.95rem;font-weight:600;}
 .cs-hero-avatars{display:flex;align-items:center;}
@@ -310,7 +310,9 @@ export default function CaseStudies() {
   .cs-entry-link, .cs-app-link { padding: 10px 20px; font-size: 12px; }
   .cs-filter-bar { padding-top: 28px; }
 }
-        `}</style>
+        `}
+          @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        </style>
       </Head>
 
       {/* ── HERO - original, untouched ── */}
