@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   getPostBySlug, getAllPostSlugs, getRelatedPosts,
   getCategoryWithPosts, getAllCategorySlugs, getCategories, getTotalPostCount,
@@ -109,6 +109,9 @@ function CategoryPage({ category, posts, pageInfo, allCategories, currentAfter, 
 function SinglePost({ post, relatedPosts, ogImageUrl }) {
   const tocRef     = useRef(null);
   const contentRef = useRef(null);
+
+  const [nlEmail, setNlEmail]   = useState('');
+  const [nlStatus, setNlStatus] = useState(null); // null | 'sending' | 'ok' | 'already' | 'error'
 
   const cat      = post.categories?.nodes?.[0];
   const catColor = cat ? getCategoryColor(cat.slug) : 'cat-orange';
@@ -484,11 +487,49 @@ function SinglePost({ post, relatedPosts, ogImageUrl }) {
                 <div className="newsletter-icon">✉</div>
                 <h4>Weekly Insights</h4>
               </div>
-              <p>Get the latest in web development, SEO, and digital marketing - every Tuesday.</p>
-              <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
-                <input type="email" placeholder="Your email address" required />
-                <button type="submit" className="newsletter-btn">Subscribe →</button>
-              </form>
+              <p>Get the latest in web development, SEO, and digital marketing — every Tuesday.</p>
+              {nlStatus === 'ok' || nlStatus === 'already' ? (
+                <div className="newsletter-success">
+                  {nlStatus === 'already' ? '✓ You're already subscribed!' : '✓ You're subscribed — see you Tuesday!'}
+                </div>
+              ) : (
+                <form
+                  className="newsletter-form"
+                  onSubmit={async (e) => {
+                    e.preventDefault();
+                    setNlStatus('sending');
+                    try {
+                      const r = await fetch('/api/newsletter', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email: nlEmail }),
+                      });
+                      const data = await r.json();
+                      if (r.ok) {
+                        setNlStatus(data.message.includes('already') ? 'already' : 'ok');
+                      } else {
+                        setNlStatus('error');
+                      }
+                    } catch (_) {
+                      setNlStatus('error');
+                    }
+                  }}
+                >
+                  <input
+                    type="email"
+                    placeholder="Your email address"
+                    required
+                    value={nlEmail}
+                    onChange={(e) => { setNlEmail(e.target.value); setNlStatus(null); }}
+                  />
+                  <button type="submit" className="newsletter-btn" disabled={nlStatus === 'sending'}>
+                    {nlStatus === 'sending' ? 'Subscribing…' : 'Subscribe →'}
+                  </button>
+                  {nlStatus === 'error' && (
+                    <p className="newsletter-error">Something went wrong — please try again.</p>
+                  )}
+                </form>
+              )}
             </div>
 
             {/* CTA */}
