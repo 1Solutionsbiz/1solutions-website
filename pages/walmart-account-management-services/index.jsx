@@ -220,10 +220,7 @@ export default function WalmartAccountManagement() {
           .wlmt-hero-card-cta:hover{opacity:0.9;transform:translateY(-1px);}
           .wlmt-hero-card-trust{font-size:11px;color:#9ca3af;text-align:center;margin-top:10px;}
 
-          .wlmt-bc{background:#f8fafd;border-bottom:1px solid #edf0f5;padding:10px 40px;}
-          .wlmt-bc-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12px;color:#9ca3af;}
-          .wlmt-bc a{color:#9ca3af;text-decoration:none;}.wlmt-bc a:hover{color:${ACCENT};}
-          .wlmt-bc-sep{color:#d1d5db;}.wlmt-bc-cur{color:#4b5563;font-weight:500;}
+
 
           .wlmt-sec{padding:88px 40px;}
           .wlmt-bg{background:#f8fafd;}
@@ -372,7 +369,7 @@ export default function WalmartAccountManagement() {
 
           @media(max-width:1100px){.wlmt-hero-layout{grid-template-columns:1fr;gap:48px;}.wlmt-hero-card{max-width:480px;}}
           @media(max-width:900px){.wlmt-grid4,.wlmt-why-grid{grid-template-columns:1fr 1fr;}.wlmt-grid3,.wlmt-testi-grid{grid-template-columns:1fr 1fr;}.wlmt-res-grid{grid-template-columns:1fr 1fr;}.wlmt-contact-grid{grid-template-columns:1fr;}.wlmt-grid2{grid-template-columns:1fr;}}
-          @media(max-width:600px){.wlmt-hero,.wlmt-sec,.wlmt-results,.wlmt-cta,.wlmt-contact-sec,.wlmt-faq-sec,.wlmt-rel-sec{padding-left:20px;padding-right:20px;}.wlmt-hero{padding-top:70px;padding-bottom:60px;}.wlmt-grid4,.wlmt-grid3,.wlmt-grid2,.wlmt-res-grid,.wlmt-testi-grid,.wlmt-why-grid{grid-template-columns:1fr;}.wlmt-bc{padding:10px 20px;}.wlmt-field-row{grid-template-columns:1fr;}.wlmt-form-wrap{padding:28px 20px;}.wlmt-stats-grid{grid-template-columns:1fr 1fr;}.wlmt-cta-btns{flex-direction:column;align-items:center;}}
+          @media(max-width:600px){.wlmt-hero,.wlmt-sec,.wlmt-results,.wlmt-cta,.wlmt-contact-sec,.wlmt-faq-sec,.wlmt-rel-sec{padding-left:20px;padding-right:20px;}.wlmt-hero{padding-top:70px;padding-bottom:60px;}.wlmt-grid4,.wlmt-grid3,.wlmt-grid2,.wlmt-res-grid,.wlmt-testi-grid,.wlmt-why-grid{grid-template-columns:1fr;}.wlmt-field-row{grid-template-columns:1fr;}.wlmt-form-wrap{padding:28px 20px;}.wlmt-stats-grid{grid-template-columns:1fr 1fr;}.wlmt-cta-btns{flex-direction:column;align-items:center;}}
         `}</style>
       </Head>
 
@@ -422,17 +419,6 @@ export default function WalmartAccountManagement() {
           </div>
         </div>
       </section>
-
-      {/* Breadcrumb — below hero, not inside it */}
-      <nav className="wlmt-bc">
-        <div className="wlmt-bc-inner">
-          <Link href="/">Home</Link>
-          <span className="wlmt-bc-sep">›</span>
-          <Link href="/ecommerce-marketing-services">Services</Link>
-          <span className="wlmt-bc-sep">›</span>
-          <span className="wlmt-bc-cur">Walmart Marketplace Account Management</span>
-        </div>
-      </nav>
 
       {/* ── CHALLENGES ── */}
       <section className="wlmt-sec wlmt-bg" ref={el => { secRefs.current.challenges = el; }} data-sec="challenges">
