@@ -290,10 +290,29 @@ export default function AIAutomationServices() {
           .aas-tech-title { font-size:40px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#3730a3 0%,#7c3aed 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 12px; }
           .aas-tech-subtitle { font-size:15px;color:#4A6080;line-height:1.6;margin:0; }
           .aas-tech-groups { display:grid;grid-template-columns:repeat(3,1fr);gap:24px; }
-          .aas-tech-group { background:rgba(255,255,255,0.65);backdrop-filter:blur(10px);border:1px solid rgba(55,48,163,0.12);border-radius:12px;padding:22px 24px; }
-          .aas-tech-group-title { font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#7c3aed;margin:0 0 14px; }
+          .aas-tech-group { background:rgba(255,255,255,0.65);backdrop-filter:blur(10px);border:1px solid rgba(0,0,0,0.08);border-radius:12px;padding:22px 24px;border-left-width:3px;border-left-style:solid; }
+          .aas-tech-group-title { font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin:0 0 14px; }
           .aas-tech-tags { display:flex;flex-wrap:wrap;gap:8px; }
-          .aas-tech-tag { display:inline-block;background:rgba(55,48,163,0.07);border:1px solid rgba(55,48,163,0.12);border-radius:6px;padding:5px 12px;font-size:13px;font-weight:500;color:#3730a3; }
+          .aas-tech-tag { display:inline-block;border-radius:6px;padding:5px 12px;font-size:13px;font-weight:500; }
+          /* per-group colour tokens */
+          .aas-tg-violet .aas-tech-group-title { color:#7c3aed; }
+          .aas-tg-violet { border-left-color:#7c3aed; }
+          .aas-tg-violet .aas-tech-tag { background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.20);color:#5b21b6; }
+          .aas-tg-blue .aas-tech-group-title { color:#2563eb; }
+          .aas-tg-blue { border-left-color:#2563eb; }
+          .aas-tg-blue .aas-tech-tag { background:rgba(37,99,235,0.08);border:1px solid rgba(37,99,235,0.20);color:#1d4ed8; }
+          .aas-tg-teal .aas-tech-group-title { color:#0d9488; }
+          .aas-tg-teal { border-left-color:#0d9488; }
+          .aas-tg-teal .aas-tech-tag { background:rgba(13,148,136,0.08);border:1px solid rgba(13,148,136,0.22);color:#0f766e; }
+          .aas-tg-rose .aas-tech-group-title { color:#e11d48; }
+          .aas-tg-rose { border-left-color:#e11d48; }
+          .aas-tg-rose .aas-tech-tag { background:rgba(225,29,72,0.07);border:1px solid rgba(225,29,72,0.20);color:#be123c; }
+          .aas-tg-amber .aas-tech-group-title { color:#d97706; }
+          .aas-tg-amber { border-left-color:#d97706; }
+          .aas-tg-amber .aas-tech-tag { background:rgba(217,119,6,0.08);border:1px solid rgba(217,119,6,0.22);color:#b45309; }
+          .aas-tg-indigo .aas-tech-group-title { color:#4338ca; }
+          .aas-tg-indigo { border-left-color:#4338ca; }
+          .aas-tg-indigo .aas-tech-tag { background:rgba(67,56,202,0.08);border:1px solid rgba(67,56,202,0.20);color:#3730a3; }
 
           /* Process */
           .aas-process-section { background:transparent;padding:80px 40px;position:relative;z-index:1; }
@@ -629,14 +648,14 @@ export default function AIAutomationServices() {
             </div>
             <div className="aas-tech-groups">
               {[
-                { label:'Foundation Models', tags:['Claude 3.7 Sonnet','GPT-4o','Gemini 1.5 Pro','Llama 3.3','Mistral Large','DeepSeek R1'] },
-                { label:'Agent Frameworks', tags:['LangGraph','LangChain','AutoGen','CrewAI','Semantic Kernel','Pydantic AI'] },
-                { label:'Document & Vision AI', tags:['Amazon Textract','Google Document AI','Azure Form Recognizer','PyMuPDF','Tesseract OCR','LayoutLM'] },
-                { label:'Integration & APIs', tags:['Zapier','Make (Integromat)','n8n','REST APIs','GraphQL','Webhooks','Twilio','Slack API'] },
-                { label:'Data & Pipelines', tags:['Apache Airflow','Prefect','dbt','Pandas','PostgreSQL','MongoDB','Redis','Elasticsearch'] },
-                { label:'Cloud & Infrastructure', tags:['AWS','Google Cloud','Azure','Docker','Kubernetes','FastAPI','GitHub Actions','Terraform'] },
+                { label:'Foundation Models',    color:'aas-tg-violet', tags:['Claude 3.7 Sonnet','GPT-4o','Gemini 1.5 Pro','Llama 3.3','Mistral Large','DeepSeek R1'] },
+                { label:'Agent Frameworks',     color:'aas-tg-blue',   tags:['LangGraph','LangChain','AutoGen','CrewAI','Semantic Kernel','Pydantic AI'] },
+                { label:'Document & Vision AI', color:'aas-tg-teal',   tags:['Amazon Textract','Google Document AI','Azure Form Recognizer','PyMuPDF','Tesseract OCR','LayoutLM'] },
+                { label:'Integration & APIs',   color:'aas-tg-rose',   tags:['Zapier','Make (Integromat)','n8n','REST APIs','GraphQL','Webhooks','Twilio','Slack API'] },
+                { label:'Data & Pipelines',     color:'aas-tg-amber',  tags:['Apache Airflow','Prefect','dbt','Pandas','PostgreSQL','MongoDB','Redis','Elasticsearch'] },
+                { label:'Cloud & Infrastructure',color:'aas-tg-indigo', tags:['AWS','Google Cloud','Azure','Docker','Kubernetes','FastAPI','GitHub Actions','Terraform'] },
               ].map(group => (
-                <div className="aas-tech-group" key={group.label}>
+                <div className={`aas-tech-group ${group.color}`} key={group.label}>
                   <div className="aas-tech-group-title">{group.label}</div>
                   <div className="aas-tech-tags">
                     {group.tags.map(tag => <span className="aas-tech-tag" key={tag}>{tag}</span>)}
