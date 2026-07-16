@@ -240,7 +240,7 @@ export default function AIAutomationServices() {
           .aas-hero-block::after { content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(236,72,153,0.14) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px); }
           .aas-hero-content { position:relative;z-index:2;text-align:center;max-width:860px;margin:0 auto;padding:56px 40px 40px; }
           .aas-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:18px; }
-          .aas-hero-content h1 { font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(90deg,#3730a3 0%,#7c3aed 40%,#db2777 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+          .aas-hero-content h1 { font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aas-aurora 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
           .aas-hero-content p { font-size:16px;color:#3A507A;line-height:1.65;max-width:640px;margin:0 auto 28px; }
           .aas-btn-hero { display:inline-block;padding:14px 40px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#3730a3;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(55,48,163,0.10),inset 0 1px 0 rgba(255,255,255,1); }
           .aas-btn-hero:hover { background:rgba(255,255,255,0.85);border-color:rgba(124,58,237,0.5);box-shadow:0 12px 36px rgba(55,48,163,0.15),0 0 0 2px rgba(124,58,237,0.18),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px);color:#3730a3; }
@@ -261,7 +261,7 @@ export default function AIAutomationServices() {
 
           /* Shared section styles */
           .aas-section-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7c3aed;margin-bottom:12px;display:block; }
-          .aas-section-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#3730a3 0%,#7c3aed 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin-bottom:10px; }
+          .aas-section-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aas-aurora 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin-bottom:10px; }
           .aas-section-desc { font-size:15px;color:#4A6080;line-height:1.7;max-width:680px;margin-bottom:36px; }
           .aas-section-sub { font-size:16px;color:#4A6080;margin:0; }
 
@@ -287,7 +287,7 @@ export default function AIAutomationServices() {
           .aas-tech-section { background:transparent;padding:70px 40px;position:relative;z-index:1; }
           .aas-tech-wrap { max-width:1280px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);border-radius:24px;padding:44px 44px 50px;box-shadow:0 8px 40px rgba(55,48,163,0.10),inset 0 1px 0 rgba(255,255,255,0.95); }
           .aas-tech-header { margin-bottom:36px; }
-          .aas-tech-title { font-size:40px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#3730a3 0%,#7c3aed 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 12px; }
+          .aas-tech-title { font-size:40px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aas-aurora 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 12px; }
           .aas-tech-subtitle { font-size:15px;color:#4A6080;line-height:1.6;margin:0; }
           .aas-tech-groups { display:grid;grid-template-columns:repeat(3,1fr);gap:24px; }
           .aas-tech-group { background:rgba(255,255,255,0.65);backdrop-filter:blur(10px);border:1px solid rgba(0,0,0,0.08);border-radius:12px;padding:22px 24px;border-left-width:3px;border-left-style:solid; }
@@ -318,7 +318,7 @@ export default function AIAutomationServices() {
           .aas-process-section { background:transparent;padding:80px 40px;position:relative;z-index:1; }
           .aas-process-top { max-width:1280px;margin:0 auto 56px; }
           .aas-process-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#7c3aed;margin:0 0 14px; }
-          .aas-process-main-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#3730a3 0%,#7c3aed 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
+          .aas-process-main-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aas-aurora 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
           .aas-process-main-desc { font-size:15px;color:#4A6080;line-height:1.7;margin:0; }
           .aas-process-divider { border:none;border-top:1px solid rgba(55,48,163,0.15);margin:36px 0 0;width:100%; }
           .aas-process-inner { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:minmax(0,55%) minmax(0,45%);gap:80px;align-items:start; }
@@ -380,7 +380,7 @@ export default function AIAutomationServices() {
           .aas-engage-section { background:#f8fafd;border-top:1px solid rgba(55,48,163,0.08);border-bottom:1px solid rgba(55,48,163,0.08);padding:80px 40px;position:relative;z-index:1; }
           .aas-engage-inner { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:stretch; }
           .aas-engage-left { position:sticky;top:100px;display:flex;flex-direction:column; }
-          .aas-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#3730a3 0%,#7c3aed 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
+          .aas-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aas-aurora 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
           .aas-engage-desc { font-size:15px;color:#3A507A;line-height:1.75;margin:0 0 32px; }
           .aas-engage-img-wrap { border-radius:14px;overflow:hidden;box-shadow:0 16px 48px rgba(55,48,163,0.15);flex:1;min-height:300px; }
           .aas-engage-img-wrap img { width:100%;height:100%;min-height:300px;object-fit:cover;display:block; }
@@ -401,7 +401,7 @@ export default function AIAutomationServices() {
           /* Contact */
           .aas-contact-section { padding:70px 40px;background:linear-gradient(135deg,rgba(237,233,254,0.80) 0%,rgba(255,255,255,0.60) 40%,rgba(219,234,254,0.70) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.80); }
           .aas-contact-container { max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;align-items:start;gap:32px; }
-          .aas-contact-title { font-size:48px;font-weight:900;line-height:1.2;margin:0 0 16px;background:linear-gradient(90deg,#3730a3 0%,#7c3aed 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent; }
+          .aas-contact-title { font-size:48px;font-weight:900;line-height:1.2;margin:0 0 16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aas-aurora 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent; }
           .aas-contact-desc { font-size:14px;color:#4A6080;line-height:1.6;margin:0 0 24px; }
           .aas-merged-box { background:linear-gradient(135deg,rgba(255,255,255,0.70) 0%,rgba(237,233,254,0.35) 100%);border:1px solid rgba(255,255,255,0.90);border-radius:14px;padding:24px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,1);display:flex;flex-direction:column;gap:20px; }
           .aas-benefit-item { display:flex;gap:10px;align-items:flex-start; }
@@ -436,7 +436,7 @@ export default function AIAutomationServices() {
           /* FAQ */
           .aas-faq-section { padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(55,48,163,0.08);position:relative;z-index:1; }
           .aas-faq-inner { max-width:1280px;margin:0 auto; }
-          .aas-faq-heading { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#3730a3 0%,#7c3aed 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 36px; }
+          .aas-faq-heading { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aas-aurora 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 36px; }
           .aas-faq-list { display:flex;flex-direction:column;gap:12px; }
           .aas-faq-item { background:linear-gradient(135deg,rgba(237,233,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(219,234,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:16px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(55,48,163,0.07),inset 0 1px 0 rgba(255,255,255,0.95);transition:border-color 0.2s,box-shadow 0.2s; }
           .aas-faq-item.open { border-color:rgba(124,58,237,0.35);box-shadow:0 8px 32px rgba(55,48,163,0.12),inset 0 1px 0 rgba(255,255,255,1); }
@@ -457,7 +457,7 @@ export default function AIAutomationServices() {
           .aas-related-section { background:rgba(237,233,254,0.20);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,0.60);padding:80px 40px; }
           .aas-related-inner { max-width:1280px;margin:0 auto;text-align:center; }
           .aas-related-eyebrow { font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A6080;margin:0 0 14px;display:block; }
-          .aas-related-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#3730a3 0%,#7c3aed 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
+          .aas-related-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aas-aurora 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
           .aas-related-sub { font-size:15px;color:#0F1F40;line-height:1.7;margin:0 auto;max-width:680px; }
           .aas-related-divider { border:none;border-top:1px solid rgba(55,48,163,0.12);margin:40px 0; }
           .aas-related-tags { display:flex;flex-wrap:wrap;justify-content:center;gap:12px; }
@@ -480,6 +480,7 @@ export default function AIAutomationServices() {
           .aas-btn-hero-shimmer { position:relative;overflow:hidden; }
           .aas-btn-hero-shimmer::after { content:'';position:absolute;top:-10%;left:-120%;width:80%;height:120%;background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,0.75) 45%,rgba(255,255,255,0.9) 50%,rgba(255,255,255,0.75) 55%,transparent 100%);animation:aas-shimmer 2.5s ease-in-out infinite;pointer-events:none; }
           @keyframes aas-shimmer { 0% { left:-120%; } 35%,100% { left:160%; } }
+          @keyframes aas-aurora { 0%,100% { background-position:0% 50%; } 50% { background-position:100% 50%; } }
 
           /* Section fade-up */
           .aas-section-reveal { opacity:0;transform:translateY(48px);transition:opacity 0.7s cubic-bezier(0.22,1,0.36,1),transform 0.7s cubic-bezier(0.22,1,0.36,1); }
