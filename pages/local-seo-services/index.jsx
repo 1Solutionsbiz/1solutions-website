@@ -374,7 +374,7 @@ export default function LocalSeoServices() {
           <div className="lseo-faq-inner">
             <span className="lseo-section-eyebrow">Got Questions?</span>
             <h2 className="lseo-section-title">Local SEO FAQs</h2>
-            <p className="lseo-section-desc">Straight answers to what businesses ask us most before starting a local SEO campaign.</p>
+            <p className="lseo-section-desc">Straight answers to what businesses ask us most before starting a local SEO campaign. Based in New York City? Read our <Link href="/local-seo-guide-for-small-businesses-in-new-york-city">complete local SEO guide for NYC small businesses</Link> for a full step-by-step breakdown.</p>
             <div className="lseo-faq-list">
               {FAQS.map((f, i) => (
                 <div key={i} className={`lseo-faq-item${openFaq === i ? ' open' : ''}`}>

@@ -1013,7 +1013,7 @@ export default function LocalSeoPackages() {
             <div {...rv('faq')}>
               <span className="lsp-sec-ey">Common Questions</span>
               <h2 className="lsp-sec-ttl" id="faq-title"><AuroraText>Local SEO Package</AuroraText> FAQs</h2>
-              <p className="lsp-sec-desc">Everything you need to know about local SEO packages before choosing a plan.</p>
+              <p className="lsp-sec-desc">Everything you need to know about local SEO packages before choosing a plan. New York City business? See our <Link href="/local-seo-guide-for-small-businesses-in-new-york-city">complete local SEO guide for NYC small businesses</Link> for a deeper walkthrough.</p>
               <div className="lsp-faq-list">
                 {FAQS.map((f,i) => (
                   <div key={i} className={`lsp-fitem${openFaq===i?' open':''}`}>
