@@ -839,7 +839,7 @@ export default function AffordableSeoPackages() {
             <div className="asp-reveal">
               <span className="asp-ey">FAQ</span>
               <h2 className="asp-h2">Frequently Asked Questions About <AuroraText>SEO Packages</AuroraText></h2>
-              <p className="asp-lead">Everything you need to know before choosing a monthly SEO package — answered honestly.</p>
+              <p className="asp-lead">Everything you need to know before choosing a monthly SEO package — answered honestly. Doing some link building yourself? See our <Link href="/top-50-article-submission-sites-list-for-seo-growth/">top 50 article submission sites for SEO growth</Link>.</p>
             </div>
             <div className="asp-faq-list">
               {FAQS.map((f, i) => (

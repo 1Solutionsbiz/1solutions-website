@@ -525,7 +525,7 @@ export default function LocalSeoPackages() {
               <h2 className="lsp-sec-ttl" id="def-title">What Are <AuroraText>Local SEO Packages</AuroraText>?</h2>
               <div className="lsp-glass lsp-def-box">
                 <p className="lsp-def-intro">
-                  <strong>Local SEO packages</strong> are monthly managed services that improve your business's visibility in <strong>Google Maps</strong>, the <strong>local map pack</strong>, and location-based organic search results. Unlike general SEO, local SEO focuses on signals that Google uses to rank businesses for "near me" and city-specific searches — Google Business Profile activity, citation consistency, review velocity, and local link authority. A well-executed local SEO strategy puts your business in front of high-intent buyers at the exact moment they are searching for what you offer in your area.
+                  <strong>Local SEO packages</strong> are monthly managed services that improve your business's visibility in <strong>Google Maps</strong>, the <strong>local map pack</strong>, and location-based organic search results. Unlike general SEO, local SEO focuses on signals that Google uses to rank businesses for "near me" and city-specific searches — Google Business Profile activity, citation consistency, review velocity, and local link authority. A well-executed local SEO strategy puts your business in front of high-intent buyers at the exact moment they are searching for what you offer in your area. Building citations yourself? See our <Link href="/top-100-free-business-listing-directories-in-the-usa/">list of the top 100 free business listing directories in the USA</Link>.
                 </p>
                 <div className="lsp-def-aspects">
                   {[

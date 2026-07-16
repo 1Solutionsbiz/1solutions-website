@@ -283,6 +283,7 @@ export default function EcommerceSeoServices() {
         <div className="eseo-sec-inner">
           <span className="eseo-tag">Got Questions?</span>
           <h2 className="eseo-h2">eCommerce SEO <span>FAQs</span></h2>
+          <p className="eseo-lead">Looking for pricing? See our <Link href="/ecommerce-seo-packages/">affordable eCommerce SEO packages</Link>.</p>
           <div className="eseo-faq-list">
             {FAQS.map((f, i) => (
               <div key={i} className={'eseo-faq-item' + (openFaq === i ? ' open' : '')}>
