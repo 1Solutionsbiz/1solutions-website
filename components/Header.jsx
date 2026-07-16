@@ -46,25 +46,29 @@ const SERVICES_MENU = [
     ],
   },
   {
-    group: 'SEO',
+    group: 'Digital Marketing',
     sections: [
       {
-        title: null,
+        title: 'SEO Services',
         links: [
           { label: 'SEO Services', href: '/seo-services-company' },
-          { label: 'Local SEO', href: '/local-seo-services/' },
           { label: 'SEO Audit', href: '/seo-audit-services/' },
+          { label: 'AI SEO Services', href: '/ai-seo-services/' },
+          { label: 'Generative Engine Optimisation (GEO)', href: '/generative-engine-optimization-services/' },
           { label: 'Link Building Services', href: '/link-building-services' },
           { label: 'Link Building Packages', href: '/link-building-packages' },
           { label: 'eCommerce SEO Packages', href: '/ecommerce-seo-packages/' },
           { label: 'Plumbing SEO Services', href: '/plumbing-seo-services/' },
         ],
       },
-    ],
-  },
-  {
-    group: 'Digital Marketing',
-    sections: [
+      {
+        title: 'Local SEO',
+        links: [
+          { label: 'Local SEO Services', href: '/local-seo-services/' },
+          { label: 'Local SEO Packages', href: '/local-seo-packages/' },
+          { label: 'Google My Business Optimisation', href: '/google-my-business-optimization/' },
+        ],
+      },
       {
         title: null,
         links: [
