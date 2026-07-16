@@ -134,7 +134,11 @@ function SinglePost({ post, relatedPosts, ogImageUrl }) {
 
       a.addEventListener('click', (e) => {
         e.preventDefault();
-        document.getElementById(h.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const el = document.getElementById(h.id);
+        if (el) {
+          const y = el.getBoundingClientRect().top + window.scrollY - 100;
+          window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+        }
       });
 
       toc.appendChild(a);
@@ -144,10 +148,9 @@ function SinglePost({ post, relatedPosts, ogImageUrl }) {
     const links = toc.querySelectorAll('a');
     const HEADER_H = 88;
     const onScroll = () => {
-      let active = null;
+      let active = links[0] || null; // default to first item
       headings.forEach((h, i) => {
-        const top = h.getBoundingClientRect().top + window.scrollY - HEADER_H;
-        if (top <= window.scrollY) active = links[i];
+        if (h.getBoundingClientRect().top <= HEADER_H + 16) active = links[i];
       });
       links.forEach((l) => l.classList.toggle('toc-active', l === active));
     };
@@ -490,7 +493,6 @@ function SinglePost({ post, relatedPosts, ogImageUrl }) {
 
             {/* CTA */}
             <div className="sidebar-cta">
-              <div className="sidebar-cta-badge">1Solutions</div>
               <h4>Ready to Grow Your Business Online?</h4>
               <p>16+ years building digital products and driving measurable growth worldwide.</p>
               <ul className="sidebar-cta-features">
