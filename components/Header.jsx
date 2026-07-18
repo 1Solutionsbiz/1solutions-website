@@ -49,12 +49,29 @@ const SERVICES_MENU = [
     group: 'Digital Marketing',
     sections: [
       {
+        title: 'AI Search Services',
+        links: [
+          { label: 'AI Search Services', href: '/ai-search-services/' },
+          { label: 'Answer Engine Optimization', href: '/answer-engine-optimization-services/' },
+          { label: 'AI SEO Services', href: '/ai-seo-services/' },
+          { label: 'ChatGPT SEO', href: '/chatgpt-seo/' },
+          { label: 'AI Integration Services', href: '/ai-integration-services/' },
+          { label: 'Perplexity AI SEO', href: '/perplexity-ai-seo/' },
+          { label: 'Search Everywhere Optimization', href: '/search-everywhere-optimization/' },
+          { label: 'Generative Engine Optimization', href: '/generative-engine-optimization-services/' },
+          { label: 'Google AI SEO', href: '/google-ai-seo/' },
+          { label: 'SearchGPT SEO', href: '/searchgpt-seo/' },
+          { label: 'Meta AI', href: '/meta-ai-seo/' },
+          { label: 'AI Utilization Review', href: '/ai-utilization-review/' },
+          { label: 'Generative AI Services', href: '/generative-ai-services/' },
+          { label: 'AI Solutions', href: '/ai-solutions/' },
+        ],
+      },
+      {
         title: 'SEO Services',
         links: [
           { label: 'SEO Services', href: '/seo-services-company' },
           { label: 'SEO Audit', href: '/seo-audit-services/' },
-          { label: 'AI SEO Services', href: '/ai-seo-services/' },
-          { label: 'Generative Engine Optimisation (GEO)', href: '/generative-engine-optimization-services/' },
           { label: 'Link Building Services', href: '/link-building-services' },
           { label: 'Link Building Packages', href: '/link-building-packages' },
           { label: 'eCommerce SEO Packages', href: '/ecommerce-seo-packages/' },
