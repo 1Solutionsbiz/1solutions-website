@@ -212,9 +212,7 @@ export default function PerformanceMarketingAgency() {
 
           /* ── HERO ── */
           .pm-hero{position:relative;overflow:hidden;z-index:1;padding:56px 40px 0}
-          .pm-hero-content{position:relative;z-index:2;text-align:center;max-width:900px;margin:0 auto}
-          .pm-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500}
-          .pm-bc a{color:#6b7280;text-decoration:none}.pm-bc a:hover{color:#D97706}.pm-bc span{color:#d1d5db}
+          .pm-hero-content{position:relative;z-index:2;text-align:center;max-width:900px;margin:0 auto}.pm-bc a:hover{color:#D97706}.pm-bc span{color:#d1d5db}
           .pm-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(217,119,6,0.08);border:1px solid rgba(217,119,6,0.20);border-radius:100px;padding:5px 16px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#B45309;margin-bottom:28px}
           .pm-h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:18px;color:#0F1F40}
           .pm-hero-sub{font-size:16px;color:#3A507A;line-height:1.65;max-width:680px;margin:0 auto 32px}
@@ -413,11 +411,6 @@ export default function PerformanceMarketingAgency() {
         {/* ── HERO ── */}
         <section className="pm-hero">
           <div className="pm-hero-content">
-            <nav className="pm-bc">
-              <Link href="/">Home</Link><span>/</span>
-              <Link href="/digital-marketing-services/">Digital Marketing</Link><span>/</span>
-              <span style={{color:'#D97706'}}>Performance Marketing Agency</span>
-            </nav>
             <div className="pm-eyebrow">
               <span style={{width:6,height:6,borderRadius:'50%',background:'#D97706',display:'inline-block'}}/>
               Performance Marketing Agency · Google · Meta · LinkedIn · TikTok

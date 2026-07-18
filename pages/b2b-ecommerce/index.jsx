@@ -210,20 +210,9 @@ export default function B2BEcommerce() {
             z-index: 2;
             text-align: center;
           }
-          .b2b-breadcrumb {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 6px;
-            font-size: 12px;
-            color: #6b7280;
-            margin-bottom: 24px;
-            font-weight: 500;
-          }
-          .b2b-breadcrumb a { color: #6b7280; text-decoration: none; }
-          .b2b-breadcrumb a:hover { color: #0D9488; }
-          .b2b-breadcrumb span { color: #d1d5db; }
+
+
+
           .b2b-eyebrow {
             display: inline-flex;
             align-items: center;
@@ -683,17 +672,6 @@ export default function B2BEcommerce() {
           <div className="b2b-hero-orb1" />
           <div className="b2b-hero-orb2" />
           <div className="b2b-hero-inner">
-            <nav className="b2b-breadcrumb" aria-label="Breadcrumb">
-              <Link href="/">Home</Link>
-              <span>/</span>
-              <span>Services</span>
-              <span>/</span>
-              <span>Ecommerce Solutions</span>
-              <span>/</span>
-              <span>Platform Development</span>
-              <span>/</span>
-              <span style={{ color: '#0D9488' }}>B2B eCommerce</span>
-            </nav>
             <span className="b2b-eyebrow">
               <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#0D9488', display: 'inline-block' }} />
               Platform Development

@@ -136,15 +136,9 @@ export default function TemuAccountManagement() {
       </Head>
 
       <style>{`
-        .temu-page { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a2e; }
+        .temu-page { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a2e; }; text-decoration: none; }
 
-        /* Breadcrumb */
-        .temu-breadcrumb { background: #f8f9fa; border-bottom: 1px solid #e9ecef; padding: 12px 0; }
-        .temu-breadcrumb-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 8px; font-size: 14px; }
-        .temu-breadcrumb a { color: ${ACCENT}; text-decoration: none; }
-        .temu-breadcrumb a:hover { text-decoration: underline; }
-        .temu-breadcrumb-sep { color: #adb5bd; }
-        .temu-breadcrumb-current { color: #6c757d; }
+
 
         /* Hero */
         .temu-hero { background: linear-gradient(135deg, #1f0300 0%, #4f0800 60%, #7a1200 100%); color: #fff; padding: 80px 24px 72px; position: relative; overflow: hidden; }
@@ -308,16 +302,6 @@ export default function TemuAccountManagement() {
         </style>
 
       <div className="temu-page">
-        {/* Breadcrumb */}
-        <nav className="temu-breadcrumb">
-          <div className="temu-breadcrumb-inner">
-            <Link href="/">Home</Link>
-            <span className="temu-breadcrumb-sep">›</span>
-            <Link href="/ecommerce-marketing-services">Marketplace Management</Link>
-            <span className="temu-breadcrumb-sep">›</span>
-            <span className="temu-breadcrumb-current">Temu Account Management</span>
-          </div>
-        </nav>
 
         {/* Hero */}
         <section className="temu-hero">

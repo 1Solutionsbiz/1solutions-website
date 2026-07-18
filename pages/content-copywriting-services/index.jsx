@@ -78,9 +78,7 @@ export default function ContentCopywritingServices() {
           .ccw-hero{background:linear-gradient(135deg,#f8fafc 0%,#e2e8f0 25%,#cbd5e1 60%,#f8fafc 100%);position:relative;overflow:hidden;padding:80px 40px 0}
           .ccw-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(51,65,85,0.10) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
           .ccw-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(30,41,59,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .ccw-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}
-          .ccw-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500}
-          .ccw-bc a{color:#6b7280;text-decoration:none}.ccw-bc a:hover{color:#334155}.ccw-bc span{color:#d1d5db}
+          .ccw-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.ccw-bc a:hover{color:#334155}.ccw-bc span{color:#d1d5db}
           .ccw-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(51,65,85,0.08);border:1px solid rgba(51,65,85,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#334155;margin-bottom:28px}
           .ccw-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
           .ccw-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
@@ -148,7 +146,6 @@ export default function ContentCopywritingServices() {
       <div className="ccw-page">
         <section className="ccw-hero"><div className="ccw-o1"/><div className="ccw-o2"/>
           <div className="ccw-in">
-            <nav className="ccw-bc"><Link href="/">Home</Link><span>/</span><Link href="/digital-marketing-services">Digital Marketing</Link><span>/</span><span style={{color:'#334155'}}>Content &amp; Copywriting</span></nav>
             <span className="ccw-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#334155',display:'inline-block'}}/> Website · Blog · Email · Ads · SEO</span>
             <h1 className="ccw-h1">Content &amp; Copywriting Services - Words That Rank, Engage, and Convert</h1>
             <p className="ccw-sub">Human-written website copy, SEO blog content, email sequences, ad copy, and product descriptions - all produced by specialist copywriters who understand your audience, your sector, and your goals.</p>

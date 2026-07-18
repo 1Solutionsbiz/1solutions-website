@@ -104,12 +104,11 @@ export default function HomeRepairSeoServices() {
           .hrseo-stat-item:last-child { border-right:none; }
           .hrseo-stat-num { font-size:1.6rem;font-weight:900;color:#4a2800;line-height:1;letter-spacing:-1px; }
           .hrseo-stat-lbl { font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px; }
-          .hrseo-bc { background:#f8fafd;border-bottom:1px solid #edf0f5;padding:12px 40px; }
-          .hrseo-bc-inner { max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12.5px;color:#6b7280; }
-          .hrseo-bc a { color:#6b7280;text-decoration:none; }
-          .hrseo-bc a:hover { color:#4a2800; }
-          .hrseo-bc-sep { color:#d1d5db; }
-          .hrseo-bc-cur { color:#4a2800;font-weight:500; }
+
+
+
+
+
           .hrseo-sec { padding:80px 40px; }
           .hrseo-sec-inner { max-width:1200px;margin:0 auto; }
           .hrseo-tag { display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#4a2800;margin-bottom:12px; }
@@ -159,23 +158,12 @@ export default function HomeRepairSeoServices() {
             .hrseo-hero,.hrseo-sec,.hrseo-results,.hrseo-cta { padding-left:20px;padding-right:20px; }
             .hrseo-hero { padding-top:60px;padding-bottom:50px; }
             .hrseo-grid3,.hrseo-res-grid { grid-template-columns:1fr; }
-            .hrseo-bc { padding:12px 20px; }
           }
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
-
-      <nav className="hrseo-bc" aria-label="Breadcrumb">
-        <div className="hrseo-bc-inner">
-          <Link href="/">Home</Link>
-          <span className="hrseo-bc-sep">›</span>
-          <Link href="/seo-services-company/">SEO Services</Link>
-          <span className="hrseo-bc-sep">›</span>
-          <span className="hrseo-bc-cur">Home Repair SEO Services</span>
-        </div>
-      </nav>
 
       <section className="hrseo-hero">
         <div className="hrseo-orb1" /><div className="hrseo-orb2" />

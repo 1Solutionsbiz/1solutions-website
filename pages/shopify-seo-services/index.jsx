@@ -81,9 +81,7 @@ export default function ShopifySeoServices() {
           .shseo-hero{background:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 25%,#dcfce7 60%,#f0fdf4 100%);position:relative;overflow:hidden;padding:80px 40px 0}
           .shseo-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(0,128,96,0.13) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
           .shseo-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(4,120,87,0.08) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .shseo-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}
-          .shseo-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500}
-          .shseo-bc a{color:#6b7280;text-decoration:none}.shseo-bc a:hover{color:#008060}.shseo-bc span{color:#d1d5db}
+          .shseo-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.shseo-bc a:hover{color:#008060}.shseo-bc span{color:#d1d5db}
           .shseo-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(0,128,96,0.08);border:1px solid rgba(0,128,96,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#006E52;margin-bottom:28px}
           .shseo-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
           .shseo-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
@@ -152,7 +150,6 @@ export default function ShopifySeoServices() {
         <section className="shseo-hero">
           <div className="shseo-o1"/><div className="shseo-o2"/>
           <div className="shseo-in">
-            <nav className="shseo-bc"><Link href="/">Home</Link><span>/</span><Link href="/seo-services-company">SEO Services</Link><span>/</span><span style={{color:'#008060'}}>Shopify SEO</span></nav>
             <span className="shseo-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#008060',display:'inline-block'}}/> Shopify · Shopify Plus · Google Shopping</span>
             <h1 className="shseo-h1">Shopify SEO Services That Drive Organic Revenue</h1>
             <p className="shseo-sub">Fix Shopify&rsquo;s duplicate URL issues, optimise every product and collection page, and build the domain authority your store needs to outrank competitors on high-intent keywords.</p>

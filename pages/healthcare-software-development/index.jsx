@@ -281,14 +281,11 @@ export default function HealthcareSoftwareDevelopment() {
           .hc-orb-2 { width:780px;height:780px;background:radial-gradient(circle,rgba(217,119,6,.25) 0%,rgba(245,158,11,.12) 40%,transparent 70%);bottom:0;left:-230px; }
           .hc-orb-3 { width:550px;height:550px;background:radial-gradient(circle,rgba(99,102,241,.18) 0%,transparent 70%);top:42%;left:-120px;transform:translateY(-50%); }
 
-          /* Breadcrumb */
-          .hc-breadcrumb { position:relative;z-index:2;padding:16px 40px 0;max-width:1440px;margin:0 auto; }
-          .hc-breadcrumb ol { display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0;font-size:13px;color:#6A80A0; }
-          .hc-breadcrumb li { display:flex;align-items:center;gap:6px; }
-          .hc-breadcrumb li::after { content:'/';opacity:.45; }
-          .hc-breadcrumb li:last-child::after { display:none; }
-          .hc-breadcrumb a { color:#0F3460;text-decoration:none; }
-          .hc-breadcrumb a:hover { text-decoration:underline; }
+
+
+
+
+
 
           /* Hero */
           .hc-hero { position:relative;z-index:2;text-align:center;max-width:900px;margin:0 auto;padding:44px 40px 32px; }
@@ -502,7 +499,6 @@ export default function HealthcareSoftwareDevelopment() {
             .hc-contact-grid { grid-template-columns:1fr; }
           }
           @media(max-width:768px){
-            .hc-breadcrumb { padding:12px 20px 0; }
             .hc-hero { padding:28px 20px 20px; }
             .hc-hero h1 { font-size:26px;letter-spacing:-.3px; }
             .hc-stats { grid-template-columns:1fr 1fr; }
@@ -527,20 +523,6 @@ export default function HealthcareSoftwareDevelopment() {
         <div className="hc-orb hc-orb-1" />
         <div className="hc-orb hc-orb-2" />
         <div className="hc-orb hc-orb-3" />
-
-        {/* ── BREADCRUMB ── */}
-        <nav className="hc-breadcrumb" aria-label="Breadcrumb">
-          <ol itemScope itemType="https://schema.org/BreadcrumbList">
-            <li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement">
-              <Link href="/" itemProp="item"><span itemProp="name">Home</span></Link>
-              <meta itemProp="position" content="1" />
-            </li>
-            <li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement">
-              <span itemProp="name">Healthcare Software Development</span>
-              <meta itemProp="position" content="2" />
-            </li>
-          </ol>
-        </nav>
 
         {/* ── HERO ── */}
         <section className="hc-hero">

@@ -78,9 +78,7 @@ export default function LandingPageDesignServices() {
           .lpd-hero{background:linear-gradient(135deg,#fff7ed 0%,#fed7aa 25%,#fdba74 60%,#fff7ed 100%);position:relative;overflow:hidden;padding:80px 40px 0}
           .lpd-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(194,65,12,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
           .lpd-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(154,52,18,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .lpd-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}
-          .lpd-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500}
-          .lpd-bc a{color:#6b7280;text-decoration:none}.lpd-bc a:hover{color:#C2410C}.lpd-bc span{color:#d1d5db}
+          .lpd-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.lpd-bc a:hover{color:#C2410C}.lpd-bc span{color:#d1d5db}
           .lpd-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(194,65,12,0.08);border:1px solid rgba(194,65,12,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#C2410C;margin-bottom:28px}
           .lpd-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
           .lpd-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
@@ -148,7 +146,6 @@ export default function LandingPageDesignServices() {
       <div className="lpd-page">
         <section className="lpd-hero"><div className="lpd-o1"/><div className="lpd-o2"/>
           <div className="lpd-in">
-            <nav className="lpd-bc"><Link href="/">Home</Link><span>/</span><Link href="/app-ui-ux-design">Design Services</Link><span>/</span><span style={{color:'#C2410C'}}>Landing Page Design</span></nav>
             <span className="lpd-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#C2410C',display:'inline-block'}}/> PPC · Lead Gen · A/B Testing</span>
             <h1 className="lpd-h1">Landing Page Design Services - Pages Built to Convert, Not Just Impress</h1>
             <p className="lpd-sub">Conversion-first landing page design with integrated copywriting - for PPC campaigns, lead generation, sales, and events. 400+ pages built with an average +35% conversion rate lift.</p>

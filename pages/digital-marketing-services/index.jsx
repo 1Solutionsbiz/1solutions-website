@@ -78,9 +78,7 @@ export default function DigitalMarketingServices() {
           .dmhub-hero{background:linear-gradient(135deg,#0F1F40 0%,#1a2e5a 40%,#114171 80%,#0F1F40 100%);position:relative;overflow:hidden;padding:80px 40px 0}
           .dmhub-o1{position:absolute;top:-100px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(17,65,113,0.60) 0%,transparent 65%);pointer-events:none;filter:blur(40px)}
           .dmhub-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(254,151,0,0.08) 0%,transparent 65%);pointer-events:none;filter:blur(40px)}
-          .dmhub-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}
-          .dmhub-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:24px;font-weight:500}
-          .dmhub-bc a{color:rgba(255,255,255,0.5);text-decoration:none}.dmhub-bc a:hover{color:#FE9700}.dmhub-bc span{color:rgba(255,255,255,0.25)}
+          .dmhub-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.dmhub-bc a:hover{color:#FE9700}.dmhub-bc span{color:rgba(255,255,255,0.25)}
           .dmhub-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(254,151,0,0.12);border:1px solid rgba(254,151,0,0.28);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#FE9700;margin-bottom:28px}
           .dmhub-h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:900;line-height:1.05;letter-spacing:-1.5px;color:#fff;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
           .dmhub-h1 span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -147,7 +145,6 @@ export default function DigitalMarketingServices() {
       <div className="dmhub-page">
         <section className="dmhub-hero"><div className="dmhub-o1"/><div className="dmhub-o2"/>
           <div className="dmhub-in">
-            <nav className="dmhub-bc"><Link href="/">Home</Link><span>/</span><span style={{color:'#FE9700'}}>Digital Marketing Services</span></nav>
             <span className="dmhub-badge"><span style={{width:6,height:6,borderRadius:'50%',background:'#FE9700',display:'inline-block'}}/> SEO · PPC · Social · Content · Email · Ecommerce</span>
             <h1 className="dmhub-h1">Digital Marketing Services - <span>Measurable Growth</span> Across Every Channel</h1>
             <p className="dmhub-sub">A full-service digital marketing agency with 15+ years of experience - SEO, Google Ads, social media marketing, content, email, ecommerce, and Amazon marketing across 600+ clients in 40+ industries.</p>

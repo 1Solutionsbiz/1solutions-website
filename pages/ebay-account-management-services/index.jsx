@@ -156,11 +156,7 @@ export default function EbayAccountManagement() {
           .ebay-stat-item{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(122,0,0,0.08);}
           .ebay-stat-item:last-child{border-right:none;}
           .ebay-stat-num{font-size:1.9rem;font-weight:900;color:#7a0000;line-height:1;letter-spacing:-1px;}
-          .ebay-stat-lbl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px;}
-          .ebay-bc{background:#f8fafd;border-bottom:1px solid #edf0f5;padding:12px 40px;}
-          .ebay-bc-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12.5px;color:#6b7280;}
-          .ebay-bc a{color:#6b7280;text-decoration:none;}.ebay-bc a:hover{color:#7a0000;}
-          .ebay-bc-sep{color:#d1d5db;}.ebay-bc-cur{color:#7a0000;font-weight:500;}
+          .ebay-stat-lbl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px;}.ebay-bc a:hover{color:#7a0000;}.ebay-bc-cur{color:#7a0000;font-weight:500;}
           .ebay-sec{padding:80px 40px;}
           .ebay-bg{background:#f8fafd;}
           .ebay-tag{display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#7a0000;margin-bottom:12px;}
@@ -277,17 +273,6 @@ export default function EbayAccountManagement() {
         `}
         </style>
       </Head>
-
-      {/* Breadcrumb */}
-      <nav className="ebay-bc">
-        <div className="ebay-bc-inner">
-          <Link href="/">Home</Link>
-          <span className="ebay-bc-sep">›</span>
-          <Link href="/ecommerce-marketing-services">Services</Link>
-          <span className="ebay-bc-sep">›</span>
-          <span className="ebay-bc-cur">eBay Account Management Services</span>
-        </div>
-      </nav>
 
       {/* Hero */}
       <section className="ebay-hero">

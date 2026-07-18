@@ -155,11 +155,7 @@ export default function SeoCompanyVancouver() {
           .vanc-stat-item{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(10,66,104,0.08);}
           .vanc-stat-item:last-child{border-right:none;}
           .vanc-stat-num{font-size:1.9rem;font-weight:900;color:#0a4268;line-height:1;letter-spacing:-1px;}
-          .vanc-stat-lbl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px;}
-          .vanc-bc{background:#f8fafd;border-bottom:1px solid #edf0f5;padding:12px 40px;}
-          .vanc-bc-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12.5px;color:#6b7280;}
-          .vanc-bc a{color:#6b7280;text-decoration:none;}.vanc-bc a:hover{color:#0a4268;}
-          .vanc-bc-sep{color:#d1d5db;}.vanc-bc-cur{color:#0a4268;font-weight:500;}
+          .vanc-stat-lbl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px;}.vanc-bc a:hover{color:#0a4268;}.vanc-bc-cur{color:#0a4268;font-weight:500;}
           .vanc-sec{padding:80px 40px;}
           .vanc-bg{background:#f8fafd;}
           .vanc-sec-inner{max-width:1200px;margin:0 auto;}
@@ -255,14 +251,6 @@ export default function SeoCompanyVancouver() {
         `}
         </style>
       </Head>
-
-      <nav className="vanc-bc" aria-label="Breadcrumb">
-        <div className="vanc-bc-inner">
-          <Link href="/">Home</Link><span className="vanc-bc-sep">›</span>
-          <Link href="/seo-services-company/">SEO Services</Link><span className="vanc-bc-sep">›</span>
-          <span className="vanc-bc-cur">SEO Company in Vancouver</span>
-        </div>
-      </nav>
 
       <section className="vanc-hero">
         <div className="vanc-orb1" /><div className="vanc-orb2" />

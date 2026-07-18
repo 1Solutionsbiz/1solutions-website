@@ -73,9 +73,7 @@ export default function ArtificialIntelligence() {
           .aisol-hero{background:linear-gradient(135deg,#0F1F40 0%,#0c2340 40%,#0e3a5c 80%,#0F1F40 100%);position:relative;overflow:hidden;padding:80px 40px 0}
           .aisol-o1{position:absolute;top:-100px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(14,165,233,0.20) 0%,transparent 65%);pointer-events:none;filter:blur(40px)}
           .aisol-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(254,151,0,0.08) 0%,transparent 65%);pointer-events:none;filter:blur(40px)}
-          .aisol-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}
-          .aisol-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:24px;font-weight:500}
-          .aisol-bc a{color:rgba(255,255,255,0.5);text-decoration:none}.aisol-bc a:hover{color:#FE9700}.aisol-bc span{color:rgba(255,255,255,0.25)}
+          .aisol-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.aisol-bc a:hover{color:#FE9700}.aisol-bc span{color:rgba(255,255,255,0.25)}
           .aisol-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(14,165,233,0.15);border:1px solid rgba(14,165,233,0.35);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#7dd3fc;margin-bottom:28px}
           .aisol-h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:900;line-height:1.05;letter-spacing:-1.5px;color:#fff;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
           .aisol-h1 span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -137,7 +135,6 @@ export default function ArtificialIntelligence() {
       <div className="aisol-page">
         <section className="aisol-hero"><div className="aisol-o1"/><div className="aisol-o2"/>
           <div className="aisol-in">
-            <nav className="aisol-bc"><Link href="/">Home</Link><span>/</span><span style={{color:'#FE9700'}}>AI Solutions</span></nav>
             <span className="aisol-badge"><span style={{width:6,height:6,borderRadius:'50%',background:'#7dd3fc',display:'inline-block'}}/> ARTIFICIAL INTELLIGENCE</span>
             <h1 className="aisol-h1">Build Smarter Products with <span>AI Solutions</span></h1>
             <p className="aisol-sub">From machine learning models and NLP to computer vision and AI automation - we help businesses integrate artificial intelligence into products, workflows, and decisions that drive measurable outcomes.</p>

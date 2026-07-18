@@ -104,12 +104,11 @@ export default function DentalSeoServices() {
           .dnseo-stat-item:last-child { border-right:none; }
           .dnseo-stat-num { font-size:1.6rem;font-weight:900;color:#005566;line-height:1;letter-spacing:-1px; }
           .dnseo-stat-lbl { font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px; }
-          .dnseo-bc { background:#f8fafd;border-bottom:1px solid #edf0f5;padding:12px 40px; }
-          .dnseo-bc-inner { max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12.5px;color:#6b7280; }
-          .dnseo-bc a { color:#6b7280;text-decoration:none; }
-          .dnseo-bc a:hover { color:#005566; }
-          .dnseo-bc-sep { color:#d1d5db; }
-          .dnseo-bc-cur { color:#005566;font-weight:500; }
+
+
+
+
+
           .dnseo-sec { padding:80px 40px; }
           .dnseo-sec-inner { max-width:1200px;margin:0 auto; }
           .dnseo-tag { display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#005566;margin-bottom:12px; }
@@ -159,23 +158,12 @@ export default function DentalSeoServices() {
             .dnseo-hero,.dnseo-sec,.dnseo-results,.dnseo-cta { padding-left:20px;padding-right:20px; }
             .dnseo-hero { padding-top:60px;padding-bottom:50px; }
             .dnseo-grid3,.dnseo-res-grid { grid-template-columns:1fr; }
-            .dnseo-bc { padding:12px 20px; }
           }
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
-
-      <nav className="dnseo-bc" aria-label="Breadcrumb">
-        <div className="dnseo-bc-inner">
-          <Link href="/">Home</Link>
-          <span className="dnseo-bc-sep">›</span>
-          <Link href="/seo-services-company/">SEO Services</Link>
-          <span className="dnseo-bc-sep">›</span>
-          <span className="dnseo-bc-cur">Dental SEO Services</span>
-        </div>
-      </nav>
 
       <section className="dnseo-hero">
         <div className="dnseo-orb1" /><div className="dnseo-orb2" />

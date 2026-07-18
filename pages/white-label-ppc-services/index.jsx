@@ -196,9 +196,7 @@ export default function WhiteLabelPPCServices() {
           .wlp-orb2{width:800px;height:800px;background:radial-gradient(circle,rgba(251,146,60,.30) 0%,rgba(245,158,11,.15) 40%,transparent 70%);bottom:0;left:-250px}
           .wlp-orb3{width:600px;height:600px;background:radial-gradient(circle,rgba(20,184,166,.20) 0%,transparent 70%);top:45%;left:-150px;transform:translateY(-50%)}
           .wlp-reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
-          .wlp-reveal.wlp-vis{opacity:1;transform:translateY(0)}
-          .wlp-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;padding:16px 40px 0;max-width:1280px;margin:0 auto;position:relative;z-index:2;font-weight:500}
-          .wlp-bc a{color:#6b7280;text-decoration:none}.wlp-bc a:hover{color:#D97706}.wlp-bc-sep{color:#d1d5db}
+          .wlp-reveal.wlp-vis{opacity:1;transform:translateY(0)}.wlp-bc a:hover{color:#D97706}.wlp-bc-sep{color:#d1d5db}
           .wlp-hero{position:relative;z-index:1;padding:72px 40px 0}
           .wlp-hero-inner{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto}
           .wlp-eyebrow{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;display:block;margin-bottom:18px}
@@ -285,7 +283,6 @@ export default function WhiteLabelPPCServices() {
           .wlp-cta-p{font-size:15px;color:#4A6080;line-height:1.7;max-width:580px;margin:0 auto 32px}
           @media(max-width:1024px){.wlp-g4{grid-template-columns:repeat(2,1fr)}.wlp-g3{grid-template-columns:repeat(2,1fr)}.wlp-trust-inner{grid-template-columns:1fr 1fr}.wlp-del-list{grid-template-columns:1fr}}
           @media(max-width:768px){
-            .wlp-bc{padding:12px 20px 0}
             .wlp-hero{padding:56px 24px 0}
             .wlp-sec,.wlp-form-sec,.wlp-cta-sec,.wlp-trust-sec,.wlp-plat-sec{padding:52px 20px}
             .wlp-stats{grid-template-columns:repeat(2,1fr)}
@@ -306,13 +303,6 @@ export default function WhiteLabelPPCServices() {
 
       <div className="wlp-page">
         <div className="wlp-orb wlp-orb1"/><div className="wlp-orb wlp-orb2"/><div className="wlp-orb wlp-orb3"/>
-
-        {/* ── BREADCRUMB ── */}
-        <nav className="wlp-bc" aria-label="Breadcrumb">
-          <Link href="/">Home</Link><span className="wlp-bc-sep">/</span>
-          <Link href="/ppc-management-services/">PPC Services</Link><span className="wlp-bc-sep">/</span>
-          <span style={{color:'#D97706'}}>White-Label PPC Services</span>
-        </nav>
 
         {/* ── HERO ── */}
         <section className="wlp-hero">

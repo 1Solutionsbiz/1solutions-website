@@ -160,11 +160,7 @@ export default function AmazonAccountManagement() {
           .amzn-stat-item{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(107,58,0,0.08);}
           .amzn-stat-item:last-child{border-right:none;}
           .amzn-stat-num{font-size:1.9rem;font-weight:900;color:#6b3a00;line-height:1;letter-spacing:-1px;}
-          .amzn-stat-lbl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px;}
-          .amzn-bc{background:#f8fafd;border-bottom:1px solid #edf0f5;padding:12px 40px;}
-          .amzn-bc-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12.5px;color:#6b7280;}
-          .amzn-bc a{color:#6b7280;text-decoration:none;}.amzn-bc a:hover{color:#6b3a00;}
-          .amzn-bc-sep{color:#d1d5db;}.amzn-bc-cur{color:#6b3a00;font-weight:500;}
+          .amzn-stat-lbl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px;}.amzn-bc a:hover{color:#6b3a00;}.amzn-bc-cur{color:#6b3a00;font-weight:500;}
           .amzn-sec{padding:80px 40px;}
           .amzn-bg{background:#f8fafd;}
           .amzn-tag{display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#6b3a00;margin-bottom:12px;}
@@ -281,17 +277,6 @@ export default function AmazonAccountManagement() {
         `}
         </style>
       </Head>
-
-      {/* Breadcrumb */}
-      <nav className="amzn-bc">
-        <div className="amzn-bc-inner">
-          <Link href="/">Home</Link>
-          <span className="amzn-bc-sep">›</span>
-          <Link href="/ecommerce-marketing-services">Services</Link>
-          <span className="amzn-bc-sep">›</span>
-          <span className="amzn-bc-cur">Amazon Account Management Services</span>
-        </div>
-      </nav>
 
       {/* Hero */}
       <section className="amzn-hero">

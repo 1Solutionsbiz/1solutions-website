@@ -212,9 +212,7 @@ export default function AiSeoServices() {
           .aiseo-hero{background:linear-gradient(135deg,#eef2ff 0%,#f0f9ff 35%,#e0e7ff 70%,#eef2ff 100%);position:relative;overflow:hidden;padding:80px 40px 0}
           .aiseo-orb1{position:absolute;top:-120px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.13) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
           .aiseo-orb2{position:absolute;bottom:0;left:-100px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(14,165,233,0.09) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .aiseo-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}
-          .aiseo-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500}
-          .aiseo-bc a{color:#6b7280;text-decoration:none}.aiseo-bc a:hover{color:#6366f1}.aiseo-bc span{color:#d1d5db}
+          .aiseo-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.aiseo-bc a:hover{color:#6366f1}.aiseo-bc span{color:#d1d5db}
           .aiseo-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.22);border-radius:100px;padding:5px 16px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#4f46e5;margin-bottom:28px}
           .aiseo-pulse{width:7px;height:7px;border-radius:50%;background:#6366f1;display:inline-block;animation:aiseo-pulse 2s ease-in-out infinite}
           @keyframes aiseo-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.6;transform:scale(0.85)}}
@@ -352,11 +350,6 @@ export default function AiSeoServices() {
         <section className="aiseo-hero">
           <div className="aiseo-orb1"/><div className="aiseo-orb2"/>
           <div className="aiseo-in">
-            <nav className="aiseo-bc">
-              <Link href="/">Home</Link><span>/</span>
-              <Link href="/seo-services-company">SEO Services</Link><span>/</span>
-              <span style={{color:'#4f46e5'}}>AI SEO Services</span>
-            </nav>
             <span className="aiseo-ey">
               <span className="aiseo-pulse"/>
               AI-Powered · Machine Learning · NLP · Predictive Analytics

@@ -87,11 +87,7 @@ export default function PpcAuditServices() {
           .ppca-si{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(61,40,0,.08)}
           .ppca-si:last-child{border-right:none}
           .ppca-sn{font-size:1.9rem;font-weight:900;color:${ACCENT};line-height:1;letter-spacing:-1px}
-          .ppca-sl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px}
-          .ppca-bc{background:#f8fafd;border-bottom:1px solid #edf0f5;padding:12px 40px}
-          .ppca-bci{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12.5px;color:#6b7280}
-          .ppca-bci a{color:#6b7280;text-decoration:none}.ppca-bci a:hover{color:${ACCENT}}
-          .ppca-sep{color:#d1d5db}.ppca-cur{color:${ACCENT};font-weight:500}
+          .ppca-sl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px}.ppca-bci a:hover{color:${ACCENT}}.ppca-cur{color:${ACCENT};font-weight:500}
           .ppca-sec{padding:80px 40px}.ppca-bg{background:#f8fafd}
           .ppca-si2{max-width:1200px;margin:0 auto}
           .ppca-tag{display:block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:12px}
@@ -142,7 +138,6 @@ export default function PpcAuditServices() {
         `}
         </style>
       </Head>
-      <nav className="ppca-bc"><div className="ppca-bci"><Link href="/">Home</Link><span className="ppca-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="ppca-sep">›</span><span className="ppca-cur">PPC Audit Services</span></div></nav>
       <section className="ppca-hero"><div className="ppca-o1"/><div className="ppca-o2"/>
         <div className="ppca-in">
           <span className="ppca-ey">100-Point PPC Audit - Google Ads · Meta Ads · Conversion Tracking · Delivered in 5 Days</span>

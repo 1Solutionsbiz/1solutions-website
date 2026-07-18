@@ -149,12 +149,11 @@ export default function VirtualCTOServices() {
           .vcto-o1{width:860px;height:860px;background:radial-gradient(circle,rgba(146,64,14,.18) 0%,rgba(217,119,6,.07) 40%,transparent 70%);top:-260px;right:-240px}
           .vcto-o2{width:760px;height:760px;background:radial-gradient(circle,rgba(3,105,161,.13) 0%,rgba(14,116,144,.05) 40%,transparent 70%);bottom:0;left:-220px}
           .vcto-o3{width:520px;height:520px;background:radial-gradient(circle,rgba(22,101,52,.10) 0%,transparent 70%);top:44%;left:-100px;transform:translateY(-50%)}
-          .vcto-bc{position:relative;z-index:2;padding:16px 40px 0;max-width:1440px;margin:0 auto}
-          .vcto-bc ol{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0;font-size:13px;color:#92400e}
-          .vcto-bc li{display:flex;align-items:center;gap:6px}
-          .vcto-bc li::after{content:'/';opacity:.45}
-          .vcto-bc li:last-child::after{display:none}
-          .vcto-bc a{color:#451a03;text-decoration:none}
+
+
+
+
+
           .vcto-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
           .vcto-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#92400e;margin-bottom:14px}
           .vcto-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -353,7 +352,6 @@ export default function VirtualCTOServices() {
 </Head>
       <div className="vcto-page">
         <div className="vcto-orb vcto-o1" /><div className="vcto-orb vcto-o2" /><div className="vcto-orb vcto-o3" />
-        <nav className="vcto-bc" aria-label="Breadcrumb"><ol itemScope itemType="https://schema.org/BreadcrumbList"><li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement"><Link href="/" itemProp="item"><span itemProp="name">Home</span></Link><meta itemProp="position" content="1" /></li><li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement"><span itemProp="name">Virtual CTO Services</span><meta itemProp="position" content="2" /></li></ol></nav>
         <section className="vcto-hero">
           <span className="vcto-ey">Virtual CTO Services</span>
           <h1>Virtual CTO Services - Fractional CTO Advisory for Startups & Scale-Ups</h1>

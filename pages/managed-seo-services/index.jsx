@@ -81,9 +81,7 @@ export default function ManagedSeoServices() {
           .mnseo-hero{background:linear-gradient(135deg,#f0fdfa 0%,#ccfbf1 25%,#d1fae5 60%,#f0fdf4 100%);position:relative;overflow:hidden;padding:80px 40px 0}
           .mnseo-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(15,118,110,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
           .mnseo-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(19,78,74,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .mnseo-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}
-          .mnseo-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500}
-          .mnseo-bc a{color:#6b7280;text-decoration:none}.mnseo-bc a:hover{color:#0F766E}.mnseo-bc span{color:#d1d5db}
+          .mnseo-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.mnseo-bc a:hover{color:#0F766E}.mnseo-bc span{color:#d1d5db}
           .mnseo-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(15,118,110,0.08);border:1px solid rgba(15,118,110,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#0F766E;margin-bottom:28px}
           .mnseo-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
           .mnseo-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
@@ -151,7 +149,6 @@ export default function ManagedSeoServices() {
       <div className="mnseo-page">
         <section className="mnseo-hero"><div className="mnseo-o1"/><div className="mnseo-o2"/>
           <div className="mnseo-in">
-            <nav className="mnseo-bc"><Link href="/">Home</Link><span>/</span><Link href="/seo-services-company">SEO Services</Link><span>/</span><span style={{color:'#0F766E'}}>Managed SEO</span></nav>
             <span className="mnseo-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#0F766E',display:'inline-block'}}/> Dedicated Manager · Monthly Retainer · No Lock-In</span>
             <h1 className="mnseo-h1">Managed SEO Services - Dedicated SEO Partnership That Grows Your Traffic</h1>
             <p className="mnseo-sub">Monthly managed SEO with a dedicated account manager - technical maintenance, content, link building, and clear reporting. One retainer, everything covered, no chasing separate agencies.</p>

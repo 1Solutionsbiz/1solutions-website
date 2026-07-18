@@ -169,9 +169,8 @@ export default function WorkCulture() {
           .wc-orb-1 { width:500px; height:500px; background:rgba(5,150,105,0.08); top:-120px; right:-100px; }
           .wc-orb-2 { width:350px; height:350px; background:rgba(17,65,113,0.08); bottom:-60px; left:-60px; }
           .wc-hero-inner { max-width:1100px; margin:0 auto; position:relative; z-index:1; }
-          .wc-breadcrumb { display:flex; align-items:center; gap:6px; font-size:.82rem; color:#6b7280; margin-bottom:20px; flex-wrap:wrap; }
-          .wc-breadcrumb a { color:#114171; text-decoration:none; font-weight:500; }
-          .wc-breadcrumb a:hover { text-decoration:underline; }
+
+
           .wc-hero h1 { font-size:clamp(2rem,4vw,3rem); font-weight:800; line-height:1.14; letter-spacing:-.025em; color:#0F1F40; margin:0 0 14px; }
           .wc-hero-sub { font-size:1rem; line-height:1.65; color:#374151; max-width:540px; margin:0; }
           .wc-hero-meta { font-size:.88rem; color:#6b7280; display:flex; align-items:center; gap:18px; flex-wrap:wrap; margin-top:14px; }
@@ -219,10 +218,6 @@ export default function WorkCulture() {
         <div className="wc-hero">
           <div className="wc-orb wc-orb-1" /><div className="wc-orb wc-orb-2" />
           <div className="wc-hero-inner">
-            <nav className="wc-breadcrumb" aria-label="Breadcrumb">
-              <Link href="/">Home</Link><span style={{color:'#d1d5db'}}>›</span>
-              <span>Work Culture</span>
-            </nav>
             <h1>Work Culture</h1>
             <p className="wc-hero-sub">How we work, what we value, and what you can expect as part of the 1Solutions team.</p>
             <div className="wc-hero-meta">

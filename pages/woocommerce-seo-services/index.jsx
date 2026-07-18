@@ -81,9 +81,7 @@ export default function WoocommerceSeoServices() {
           .wcseo-hero{background:linear-gradient(135deg,#faf5ff 0%,#ede9fe 25%,#f3e8ff 60%,#fdf4ff 100%);position:relative;overflow:hidden;padding:80px 40px 0}
           .wcseo-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(109,40,217,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
           .wcseo-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(126,34,206,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .wcseo-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}
-          .wcseo-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500}
-          .wcseo-bc a{color:#6b7280;text-decoration:none}.wcseo-bc a:hover{color:#7E22CE}.wcseo-bc span{color:#d1d5db}
+          .wcseo-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.wcseo-bc a:hover{color:#7E22CE}.wcseo-bc span{color:#d1d5db}
           .wcseo-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(109,40,217,0.08);border:1px solid rgba(109,40,217,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6D28D9;margin-bottom:28px}
           .wcseo-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
           .wcseo-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
@@ -151,7 +149,6 @@ export default function WoocommerceSeoServices() {
       <div className="wcseo-page">
         <section className="wcseo-hero"><div className="wcseo-o1"/><div className="wcseo-o2"/>
           <div className="wcseo-in">
-            <nav className="wcseo-bc"><Link href="/">Home</Link><span>/</span><Link href="/seo-services-company">SEO Services</Link><span>/</span><span style={{color:'#7E22CE'}}>WooCommerce SEO</span></nav>
             <span className="wcseo-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#7E22CE',display:'inline-block'}}/> WordPress · WooCommerce · Revenue-Focused</span>
             <h1 className="wcseo-h1">WooCommerce SEO Services That Drive Organic Revenue</h1>
             <p className="wcseo-sub">Fix faceted navigation, resolve duplicate content, and optimise every product and category page - specialist WooCommerce SEO that connects organic rankings directly to your store&rsquo;s revenue.</p>

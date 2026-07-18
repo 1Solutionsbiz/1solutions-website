@@ -149,12 +149,11 @@ export default function ITOutsourcingServices() {
           .ito-o1{width:860px;height:860px;background:radial-gradient(circle,rgba(190,18,60,.18) 0%,rgba(244,63,94,.07) 40%,transparent 70%);top:-260px;right:-240px}
           .ito-o2{width:760px;height:760px;background:radial-gradient(circle,rgba(217,119,6,.15) 0%,rgba(251,191,36,.06) 40%,transparent 70%);bottom:0;left:-220px}
           .ito-o3{width:520px;height:520px;background:radial-gradient(circle,rgba(3,105,161,.10) 0%,transparent 70%);top:44%;left:-100px;transform:translateY(-50%)}
-          .ito-bc{position:relative;z-index:2;padding:16px 40px 0;max-width:1440px;margin:0 auto}
-          .ito-bc ol{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0;font-size:13px;color:#9f1239}
-          .ito-bc li{display:flex;align-items:center;gap:6px}
-          .ito-bc li::after{content:'/';opacity:.45}
-          .ito-bc li:last-child::after{display:none}
-          .ito-bc a{color:#3b0018;text-decoration:none}
+
+
+
+
+
           .ito-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
           .ito-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#be123c;margin-bottom:14px}
           .ito-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -353,7 +352,6 @@ export default function ITOutsourcingServices() {
 </Head>
       <div className="ito-page">
         <div className="ito-orb ito-o1" /><div className="ito-orb ito-o2" /><div className="ito-orb ito-o3" />
-        <nav className="ito-bc" aria-label="Breadcrumb"><ol itemScope itemType="https://schema.org/BreadcrumbList"><li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement"><Link href="/" itemProp="item"><span itemProp="name">Home</span></Link><meta itemProp="position" content="1" /></li><li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement"><span itemProp="name">IT Outsourcing Services</span><meta itemProp="position" content="2" /></li></ol></nav>
         <section className="ito-hero">
           <span className="ito-ey">IT Outsourcing Services</span>
           <h1>IT Outsourcing Services - Software Development, Cloud, QA & DevOps</h1>

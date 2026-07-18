@@ -143,10 +143,7 @@ export default function LinkBuildingServices() {
           /* ── Reveal ── */
           .lbs-reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
           .lbs-reveal.lbs-vis{opacity:1;transform:translateY(0)}
-          /* ── Breadcrumb ── */
-          .lbs-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;padding:16px 40px 0;max-width:1280px;margin:0 auto;position:relative;z-index:2;font-weight:500}
-          .lbs-bc a{color:#6b7280;text-decoration:none}.lbs-bc a:hover{color:#D97706}
-          .lbs-bc-sep{color:#d1d5db}
+          /* ── Breadcrumb ── */.lbs-bc a:hover{color:#D97706}
           /* ── Hero ── */
           .lbs-hero{position:relative;z-index:1;padding:72px 40px 0;overflow:hidden}
           .lbs-hero::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.10) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px)}
@@ -213,7 +210,6 @@ export default function LinkBuildingServices() {
             .lbs-g4{grid-template-columns:repeat(2,1fr)}
           }
           @media(max-width:768px){
-            .lbs-bc{padding:12px 20px 0}
             .lbs-hero{padding:56px 24px 0}
             .lbs-hero::before,.lbs-hero::after{display:none}
             .lbs-sec{padding:52px 20px}
@@ -233,15 +229,6 @@ export default function LinkBuildingServices() {
 
       <div className="lbs-page">
         <div className="lbs-orb lbs-orb1"/><div className="lbs-orb lbs-orb2"/><div className="lbs-orb lbs-orb3"/>
-
-        {/* ── BREADCRUMB ── */}
-        <nav className="lbs-bc" aria-label="Breadcrumb">
-          <Link href="/">Home</Link>
-          <span className="lbs-bc-sep">/</span>
-          <Link href="/seo-services-company/">SEO Services</Link>
-          <span className="lbs-bc-sep">/</span>
-          <span style={{color:'#D97706'}}>Link Building Services</span>
-        </nav>
 
         {/* ── HERO ── */}
         <section className="lbs-hero">

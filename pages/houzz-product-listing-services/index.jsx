@@ -136,14 +136,9 @@ export default function HouzzProductListingServices() {
       </Head>
 
       <style>{`
-        .houz-page { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a2e; }
+        .houz-page { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a2e; }; text-decoration: none; }
 
-        .houz-breadcrumb { background: #f8f9fa; border-bottom: 1px solid #e9ecef; padding: 12px 0; }
-        .houz-breadcrumb-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 8px; font-size: 14px; }
-        .houz-breadcrumb a { color: ${ACCENT}; text-decoration: none; }
-        .houz-breadcrumb a:hover { text-decoration: underline; }
-        .houz-breadcrumb-sep { color: #adb5bd; }
-        .houz-breadcrumb-current { color: #6c757d; }
+
 
         .houz-hero { background: linear-gradient(135deg, #031400 0%, #0a3300 60%, #155200 100%); color: #fff; padding: 80px 24px 72px; position: relative; overflow: hidden; }
         .houz-hero-orb1 { position: absolute; top: -80px; right: -80px; width: 400px; height: 400px; background: rgba(${ACCENT_RGB}, 0.5); border-radius: 50%; filter: blur(80px); pointer-events: none; }
@@ -298,15 +293,6 @@ export default function HouzzProductListingServices() {
         </style>
 
       <div className="houz-page">
-        <nav className="houz-breadcrumb">
-          <div className="houz-breadcrumb-inner">
-            <Link href="/">Home</Link>
-            <span className="houz-breadcrumb-sep">›</span>
-            <Link href="/ecommerce-marketing-services">Marketplace Management</Link>
-            <span className="houz-breadcrumb-sep">›</span>
-            <span className="houz-breadcrumb-current">Houzz Product Listing Services</span>
-          </div>
-        </nav>
 
         <section className="houz-hero">
           <div className="houz-hero-orb1" />

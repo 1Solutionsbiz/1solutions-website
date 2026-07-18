@@ -541,10 +541,6 @@ export default function WhoWeAre() {
             font-weight: 500;
             letter-spacing: 0.03em;
           }
-          .au-marquee-sep {
-            color: #FE9700 !important;
-            padding: 0 4px !important;
-          }
           @keyframes au-scroll {
             from { transform: translateX(0); }
             to { transform: translateX(-50%); }

@@ -287,9 +287,7 @@ export default function EcommerceSeoPackages() {
           .esp-hero{position:relative;overflow:hidden;z-index:1;padding:72px 40px 0}
           .esp-hero::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.12) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px)}
           .esp-hero::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.18) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px)}
-          .esp-hero-content{position:relative;z-index:2;text-align:center;max-width:900px;margin:0 auto}
-          .esp-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500}
-          .esp-bc a{color:#6b7280;text-decoration:none}.esp-bc a:hover{color:#D97706}.esp-bc-sep{color:#d1d5db}
+          .esp-hero-content{position:relative;z-index:2;text-align:center;max-width:900px;margin:0 auto}.esp-bc a:hover{color:#D97706}.esp-bc-sep{color:#d1d5db}
           .esp-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:18px}
           .esp-h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;color:#0F1F40}
           .esp-hero-sub{font-size:16px;color:#3A507A;line-height:1.65;max-width:660px;margin:0 auto 28px}
@@ -536,13 +534,6 @@ export default function EcommerceSeoPackages() {
         {/* ── HERO ── */}
         <section className="esp-hero">
           <div className="esp-hero-content">
-            <nav className="esp-bc">
-              <Link href="/">Home</Link>
-              <span className="esp-bc-sep">/</span>
-              <Link href="/seo-services-company/">SEO Services</Link>
-              <span className="esp-bc-sep">/</span>
-              <span style={{color:'#D97706'}}>Ecommerce SEO Packages</span>
-            </nav>
             <span className="esp-eyebrow">Ecommerce SEO Packages · Shopify · WooCommerce · Magento</span>
             <h1 className="esp-h1">Ecommerce SEO Packages — <AuroraText>Grow Organic Revenue</AuroraText>, Not Just Rankings</h1>
             <p className="esp-hero-sub">Transparent monthly ecommerce SEO packages for Shopify, WooCommerce, Magento, and BigCommerce stores — covering technical SEO, product page optimisation, link building, and content. All in one plan.</p>

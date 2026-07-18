@@ -335,10 +335,7 @@ export default function AffordableSeoPackages() {
           /* ── Reveal ── */
           .asp-reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
           .asp-reveal.asp-vis{opacity:1;transform:translateY(0)}
-          /* ── Breadcrumb ── */
-          .asp-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;padding:16px 40px 0;max-width:1280px;margin:0 auto;position:relative;z-index:2;font-weight:500}
-          .asp-bc a{color:#6b7280;text-decoration:none}.asp-bc a:hover{color:#D97706}
-          .asp-bc-sep{color:#d1d5db}
+          /* ── Breadcrumb ── */.asp-bc a:hover{color:#D97706}
           /* ── Hero ── */
           .asp-hero{position:relative;z-index:1;padding:72px 40px 0;overflow:hidden}
           .asp-hero::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.10) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px)}
@@ -531,7 +528,6 @@ export default function AffordableSeoPackages() {
             .asp-tbar{flex-wrap:wrap;gap:16px;padding:24px 20px}
           }
           @media(max-width:768px){
-            .asp-bc{padding:12px 20px 0}
             .asp-hero{padding:56px 24px 0}
             .asp-hero::before,.asp-hero::after{display:none}
             .asp-sec{padding:52px 20px}
@@ -566,13 +562,6 @@ export default function AffordableSeoPackages() {
         {/* ── HERO ── */}
         <section className="asp-hero">
           <div className="asp-hero-inner">
-            <nav className="asp-bc" aria-label="Breadcrumb">
-              <Link href="/">Home</Link>
-              <span className="asp-bc-sep">/</span>
-              <Link href="/seo-services-company/">SEO Services</Link>
-              <span className="asp-bc-sep">/</span>
-              <span style={{color:'#D97706'}}>Affordable SEO Packages</span>
-            </nav>
             <span className="asp-eyebrow">Monthly SEO Packages · Transparent Pricing · No Lock-in Contracts</span>
             <h1 className="asp-h1">Affordable SEO Packages That Rank Your Business on <AuroraText>Page 1 of Google</AuroraText></h1>
             <p className="asp-hero-sub">Starting at $299/month. White-hat only. No contracts. Trusted by 500+ businesses across the US, Canada, and Australia — with 15+ years of proven ranking results.</p>

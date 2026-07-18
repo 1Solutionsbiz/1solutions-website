@@ -136,14 +136,9 @@ export default function HomeDepotAccountManagement() {
       </Head>
 
       <style>{`
-        .hdep-page { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a2e; }
+        .hdep-page { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a2e; }; text-decoration: none; }
 
-        .hdep-breadcrumb { background: #f8f9fa; border-bottom: 1px solid #e9ecef; padding: 12px 0; }
-        .hdep-breadcrumb-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 8px; font-size: 14px; }
-        .hdep-breadcrumb a { color: ${ACCENT}; text-decoration: none; }
-        .hdep-breadcrumb a:hover { text-decoration: underline; }
-        .hdep-breadcrumb-sep { color: #adb5bd; }
-        .hdep-breadcrumb-current { color: #6c757d; }
+
 
         .hdep-hero { background: linear-gradient(135deg, #250900 0%, #5c1800 60%, #8a2800 100%); color: #fff; padding: 80px 24px 72px; position: relative; overflow: hidden; }
         .hdep-hero-orb1 { position: absolute; top: -80px; right: -80px; width: 400px; height: 400px; background: rgba(${ACCENT_RGB}, 0.35); border-radius: 50%; filter: blur(80px); pointer-events: none; }
@@ -298,15 +293,6 @@ export default function HomeDepotAccountManagement() {
         </style>
 
       <div className="hdep-page">
-        <nav className="hdep-breadcrumb">
-          <div className="hdep-breadcrumb-inner">
-            <Link href="/">Home</Link>
-            <span className="hdep-breadcrumb-sep">›</span>
-            <Link href="/ecommerce-marketing-services">Marketplace Management</Link>
-            <span className="hdep-breadcrumb-sep">›</span>
-            <span className="hdep-breadcrumb-current">Home Depot Marketplace Management</span>
-          </div>
-        </nav>
 
         <section className="hdep-hero">
           <div className="hdep-hero-orb1" />

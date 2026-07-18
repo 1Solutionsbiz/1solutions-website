@@ -104,12 +104,11 @@ export default function PetcareSeoServices() {
           .ptseo-stat-item:last-child { border-right:none; }
           .ptseo-stat-num { font-size:1.5rem;font-weight:900;color:#1a4500;line-height:1;letter-spacing:-1px; }
           .ptseo-stat-lbl { font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px; }
-          .ptseo-bc { background:#f8fafd;border-bottom:1px solid #edf0f5;padding:12px 40px; }
-          .ptseo-bc-inner { max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12.5px;color:#6b7280; }
-          .ptseo-bc a { color:#6b7280;text-decoration:none; }
-          .ptseo-bc a:hover { color:#1a4500; }
-          .ptseo-bc-sep { color:#d1d5db; }
-          .ptseo-bc-cur { color:#1a4500;font-weight:500; }
+
+
+
+
+
           .ptseo-sec { padding:80px 40px; }
           .ptseo-sec-inner { max-width:1200px;margin:0 auto; }
           .ptseo-tag { display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#1a4500;margin-bottom:12px; }
@@ -159,23 +158,12 @@ export default function PetcareSeoServices() {
             .ptseo-hero,.ptseo-sec,.ptseo-results,.ptseo-cta { padding-left:20px;padding-right:20px; }
             .ptseo-hero { padding-top:60px;padding-bottom:50px; }
             .ptseo-grid3,.ptseo-res-grid { grid-template-columns:1fr; }
-            .ptseo-bc { padding:12px 20px; }
           }
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
-
-      <nav className="ptseo-bc" aria-label="Breadcrumb">
-        <div className="ptseo-bc-inner">
-          <Link href="/">Home</Link>
-          <span className="ptseo-bc-sep">›</span>
-          <Link href="/seo-services-company/">SEO Services</Link>
-          <span className="ptseo-bc-sep">›</span>
-          <span className="ptseo-bc-cur">Pet Care SEO Services</span>
-        </div>
-      </nav>
 
       <section className="ptseo-hero">
         <div className="ptseo-orb1" /><div className="ptseo-orb2" />

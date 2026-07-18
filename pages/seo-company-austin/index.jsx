@@ -155,11 +155,7 @@ export default function SeoCompanyAustin() {
           .aust-stat-item{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(122,32,0,0.08);}
           .aust-stat-item:last-child{border-right:none;}
           .aust-stat-num{font-size:1.9rem;font-weight:900;color:#7a2000;line-height:1;letter-spacing:-1px;}
-          .aust-stat-lbl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px;}
-          .aust-bc{background:#f8fafd;border-bottom:1px solid #edf0f5;padding:12px 40px;}
-          .aust-bc-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12.5px;color:#6b7280;}
-          .aust-bc a{color:#6b7280;text-decoration:none;}.aust-bc a:hover{color:#7a2000;}
-          .aust-bc-sep{color:#d1d5db;}.aust-bc-cur{color:#7a2000;font-weight:500;}
+          .aust-stat-lbl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px;}.aust-bc a:hover{color:#7a2000;}.aust-bc-cur{color:#7a2000;font-weight:500;}
           .aust-sec{padding:80px 40px;}.aust-bg{background:#f8fafd;}
           .aust-sec-inner{max-width:1200px;margin:0 auto;}
           .aust-tag{display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#c44010;margin-bottom:12px;}
@@ -254,14 +250,6 @@ export default function SeoCompanyAustin() {
         `}
         </style>
       </Head>
-
-      <nav className="aust-bc" aria-label="Breadcrumb">
-        <div className="aust-bc-inner">
-          <Link href="/">Home</Link><span className="aust-bc-sep">›</span>
-          <Link href="/seo-services-company/">SEO Services</Link><span className="aust-bc-sep">›</span>
-          <span className="aust-bc-cur">SEO Company in Austin</span>
-        </div>
-      </nav>
 
       <section className="aust-hero">
         <div className="aust-orb1" /><div className="aust-orb2" />

@@ -93,11 +93,7 @@ export default function PpcManagementServices() {
           .gppc-si{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(21,87,160,.08)}
           .gppc-si:last-child{border-right:none}
           .gppc-sn{font-size:1.9rem;font-weight:900;color:${ACCENT};line-height:1;letter-spacing:-1px}
-          .gppc-sl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px}
-          .gppc-bc{background:#f8fafd;border-bottom:1px solid #edf0f5;padding:12px 40px}
-          .gppc-bci{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12.5px;color:#6b7280}
-          .gppc-bci a{color:#6b7280;text-decoration:none}.gppc-bci a:hover{color:${ACCENT}}
-          .gppc-sep{color:#d1d5db}.gppc-cur{color:${ACCENT};font-weight:500}
+          .gppc-sl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px}.gppc-bci a:hover{color:${ACCENT}}.gppc-cur{color:${ACCENT};font-weight:500}
           .gppc-sec{padding:80px 40px}.gppc-bg{background:#f8fafd}
           .gppc-si2{max-width:1200px;margin:0 auto}
           .gppc-tag{display:block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:12px}
@@ -148,7 +144,6 @@ export default function PpcManagementServices() {
         `}
         </style>
       </Head>
-      <nav className="gppc-bc"><div className="gppc-bci"><Link href="/">Home</Link><span className="gppc-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="gppc-sep">›</span><span className="gppc-cur">Google Ads (PPC)</span></div></nav>
       <section className="gppc-hero"><div className="gppc-o1"/><div className="gppc-o2"/>
         <div className="gppc-in">
           <span className="gppc-ey">Google Partner - Search · Display · Shopping · YouTube</span>

@@ -78,9 +78,7 @@ export default function LogoDesignServices() {
           .logo-hero{background:linear-gradient(135deg,#fffbeb 0%,#fef3c7 25%,#fde68a 60%,#fffbeb 100%);position:relative;overflow:hidden;padding:80px 40px 0}
           .logo-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(180,83,9,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
           .logo-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(120,53,15,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .logo-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}
-          .logo-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500}
-          .logo-bc a{color:#6b7280;text-decoration:none}.logo-bc a:hover{color:#B45309}.logo-bc span{color:#d1d5db}
+          .logo-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.logo-bc a:hover{color:#B45309}.logo-bc span{color:#d1d5db}
           .logo-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(180,83,9,0.08);border:1px solid rgba(180,83,9,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#B45309;margin-bottom:28px}
           .logo-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
           .logo-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
@@ -148,7 +146,6 @@ export default function LogoDesignServices() {
       <div className="logo-page">
         <section className="logo-hero"><div className="logo-o1"/><div className="logo-o2"/>
           <div className="logo-in">
-            <nav className="logo-bc"><Link href="/">Home</Link><span>/</span><Link href="/app-ui-ux-design">Design Services</Link><span>/</span><span style={{color:'#B45309'}}>Logo Design</span></nav>
             <span className="logo-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#B45309',display:'inline-block'}}/> Custom Design · Full Ownership · Vector Files</span>
             <h1 className="logo-h1">Professional Logo Design Services - Brands That Get Remembered</h1>
             <p className="logo-sub">Custom logo design built on brand strategy - not templates. 500+ logos designed across all industries, with full IP ownership and every format you need delivered on completion.</p>

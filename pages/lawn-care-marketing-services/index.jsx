@@ -78,9 +78,7 @@ export default function LawnCareMarketingServices() {
           .lcmkt-hero{background:linear-gradient(135deg,#f0fdf4 0%,#dcfce7 30%,#bbf7d0 65%,#f0fdf4 100%);position:relative;overflow:hidden;padding:80px 40px 0}
           .lcmkt-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(21,128,61,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
           .lcmkt-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(20,83,45,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .lcmkt-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}
-          .lcmkt-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500}
-          .lcmkt-bc a{color:#6b7280;text-decoration:none}.lcmkt-bc a:hover{color:#15803D}.lcmkt-bc span{color:#d1d5db}
+          .lcmkt-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.lcmkt-bc a:hover{color:#15803D}.lcmkt-bc span{color:#d1d5db}
           .lcmkt-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(21,128,61,0.08);border:1px solid rgba(21,128,61,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#15803D;margin-bottom:28px}
           .lcmkt-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
           .lcmkt-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
@@ -147,7 +145,6 @@ export default function LawnCareMarketingServices() {
       <div className="lcmkt-page">
         <section className="lcmkt-hero"><div className="lcmkt-o1"/><div className="lcmkt-o2"/>
           <div className="lcmkt-in">
-            <nav className="lcmkt-bc"><Link href="/">Home</Link><span>/</span><Link href="/digital-marketing-services">Digital Marketing</Link><span>/</span><span style={{color:'#15803D'}}>Lawn Care Marketing</span></nav>
             <span className="lcmkt-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#15803D',display:'inline-block'}}/> Local SEO · Google Ads · Facebook Ads · Seasonal Campaigns</span>
             <h1 className="lcmkt-h1">Lawn Care Marketing Services - More Customers, More Route Density</h1>
             <p className="lcmkt-sub">Digital marketing built specifically for lawn care, landscaping, and garden maintenance businesses - local SEO, Google Ads, review generation, and seasonal campaigns that fill your schedule and build recurring customer revenue.</p>

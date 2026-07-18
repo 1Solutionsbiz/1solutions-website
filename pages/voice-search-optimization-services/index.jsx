@@ -81,9 +81,7 @@ export default function VoiceSearchOptimizationServices() {
           .vseo-hero{background:linear-gradient(135deg,#f0f9ff 0%,#bae6fd 25%,#e0f2fe 60%,#f0f9ff 100%);position:relative;overflow:hidden;padding:80px 40px 0}
           .vseo-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(2,132,199,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
           .vseo-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(7,89,133,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .vseo-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}
-          .vseo-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500}
-          .vseo-bc a{color:#6b7280;text-decoration:none}.vseo-bc a:hover{color:#0284C7}.vseo-bc span{color:#d1d5db}
+          .vseo-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.vseo-bc a:hover{color:#0284C7}.vseo-bc span{color:#d1d5db}
           .vseo-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(2,132,199,0.08);border:1px solid rgba(2,132,199,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#0284C7;margin-bottom:28px}
           .vseo-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
           .vseo-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
@@ -151,7 +149,6 @@ export default function VoiceSearchOptimizationServices() {
       <div className="vseo-page">
         <section className="vseo-hero"><div className="vseo-o1"/><div className="vseo-o2"/>
           <div className="vseo-in">
-            <nav className="vseo-bc"><Link href="/">Home</Link><span>/</span><Link href="/seo-services-company">SEO Services</Link><span>/</span><span style={{color:'#0284C7'}}>Voice Search Optimisation</span></nav>
             <span className="vseo-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#0284C7',display:'inline-block'}}/> Featured Snippets · Conversational SEO · Local Voice</span>
             <h1 className="vseo-h1">Voice Search Optimisation Services - Rank for What People Say, Not Just Type</h1>
             <p className="vseo-sub">Featured snippet capture, conversational content, FAQ schema, and local voice SEO - optimising your presence for Google Assistant, Alexa, Siri, and Cortana voice queries.</p>

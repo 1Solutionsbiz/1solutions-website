@@ -207,9 +207,7 @@ export default function LocalSeoPackages() {
           .lsp-hero{background:linear-gradient(135deg,#ecfeff 0%,#cffafe 25%,#e0f2fe 55%,#dbeafe 85%,#ede9fe 100%);position:relative;overflow:hidden;padding:80px 40px 0}
           .lsp-hero-orb1{position:absolute;top:-120px;right:-100px;width:580px;height:580px;border-radius:50%;background:radial-gradient(circle,rgba(8,145,178,.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
           .lsp-hero-orb2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,.08) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .lsp-hero-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}
-          .lsp-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500}
-          .lsp-bc a{color:#6b7280;text-decoration:none}.lsp-bc a:hover{color:#0891B2}.lsp-bc span{color:#d1d5db}
+          .lsp-hero-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.lsp-bc a:hover{color:#0891B2}.lsp-bc span{color:#d1d5db}
           .lsp-hero-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(8,145,178,.08);border:1px solid rgba(8,145,178,.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#0891B2;margin-bottom:28px}
           .lsp-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;color:#111827;margin-bottom:20px;max-width:920px;margin-left:auto;margin-right:auto}
           .lsp-hero-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
@@ -481,11 +479,6 @@ export default function LocalSeoPackages() {
           <div className="lsp-hero-orb1" aria-hidden="true"/>
           <div className="lsp-hero-orb2" aria-hidden="true"/>
           <div className="lsp-hero-in">
-            <nav className="lsp-bc" aria-label="Breadcrumb">
-              <Link href="/">Home</Link><span>/</span>
-              <Link href="/local-seo-services">Local SEO</Link><span>/</span>
-              <span style={{color:'#0891B2'}}>Local SEO Packages</span>
-            </nav>
             <span className="lsp-hero-ey">
               <span style={{width:6,height:6,borderRadius:'50%',background:'#0891B2',display:'inline-block'}} aria-hidden="true"/>
               Google Maps · Google Business Profile · Citation Building · Review Management

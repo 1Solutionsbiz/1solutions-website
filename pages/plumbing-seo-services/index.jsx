@@ -386,9 +386,7 @@ export default function PlumbingSeoServices() {
           .pl-hero{position:relative;z-index:1;padding:72px 40px 0;overflow:hidden}
           .pl-hero::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.10) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px)}
           .pl-hero::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.16) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px)}
-          .pl-hero-inner{position:relative;z-index:2;text-align:center;max-width:920px;margin:0 auto}
-          .pl-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500}
-          .pl-bc a{color:#6b7280;text-decoration:none}.pl-bc a:hover{color:#D97706}.pl-bc-sep{color:#d1d5db}
+          .pl-hero-inner{position:relative;z-index:2;text-align:center;max-width:920px;margin:0 auto}.pl-bc a:hover{color:#D97706}.pl-bc-sep{color:#d1d5db}
           .pl-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:18px}
           .pl-h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:18px;color:#0F1F40}
           .pl-hero-sub{font-size:16px;color:#3A507A;line-height:1.65;max-width:660px;margin:0 auto 28px}
@@ -613,13 +611,6 @@ export default function PlumbingSeoServices() {
         {/* ── HERO ── */}
         <section className="pl-hero">
           <div className="pl-hero-inner">
-            <nav className="pl-bc" aria-label="Breadcrumb">
-              <Link href="/">Home</Link>
-              <span className="pl-bc-sep">/</span>
-              <Link href="/seo-services-company/">SEO Services</Link>
-              <span className="pl-bc-sep">/</span>
-              <span style={{color:'#D97706'}}>Plumbing SEO Services</span>
-            </nav>
             <span className="pl-eyebrow">Plumbing SEO · Emergency Keywords · Maps Pack · GBP Optimisation</span>
             <h1 className="pl-h1">Plumbing SEO That Fills Your Calendar<br/>with <AuroraText>Emergency Calls</AuroraText></h1>
             <p className="pl-hero-sub">1Solutions delivers targeted plumbing SEO that puts your business in front of homeowners at the exact moment they need a plumber, whether it is a burst pipe at midnight or a water heater quote next week. Map pack rankings, emergency keyword pages, and a review engine that keeps calls flowing.</p>

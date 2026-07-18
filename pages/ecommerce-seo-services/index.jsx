@@ -104,12 +104,11 @@ export default function EcommerceSeoServices() {
           .eseo-stat-item:last-child { border-right:none; }
           .eseo-stat-num { font-size:1.9rem;font-weight:900;color:#7C2D12;line-height:1;letter-spacing:-1px; }
           .eseo-stat-lbl { font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px; }
-          .eseo-bc { background:#f8fafd;border-bottom:1px solid #edf0f5;padding:12px 40px; }
-          .eseo-bc-inner { max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12.5px;color:#6b7280; }
-          .eseo-bc a { color:#6b7280;text-decoration:none; }
-          .eseo-bc a:hover { color:#D97706; }
-          .eseo-bc-sep { color:#d1d5db; }
-          .eseo-bc-cur { color:#7C2D12;font-weight:500; }
+
+
+
+
+
           .eseo-sec { padding:80px 40px; }
           .eseo-sec-inner { max-width:1200px;margin:0 auto; }
           .eseo-tag { display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#D97706;margin-bottom:12px; }
@@ -158,23 +157,12 @@ export default function EcommerceSeoServices() {
             .eseo-hero,.eseo-sec,.eseo-results,.eseo-cta { padding-left:20px;padding-right:20px; }
             .eseo-hero { padding-top:60px;padding-bottom:50px; }
             .eseo-grid3,.eseo-res-grid { grid-template-columns:1fr; }
-            .eseo-bc { padding:12px 20px; }
           }
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
-
-      <nav className="eseo-bc" aria-label="Breadcrumb">
-        <div className="eseo-bc-inner">
-          <Link href="/">Home</Link>
-          <span className="eseo-bc-sep">›</span>
-          <Link href="/seo-services-company/">SEO Services</Link>
-          <span className="eseo-bc-sep">›</span>
-          <span className="eseo-bc-cur">eCommerce SEO</span>
-        </div>
-      </nav>
 
       <section className="eseo-hero">
         <div className="eseo-orb1" /><div className="eseo-orb2" />

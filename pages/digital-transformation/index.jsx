@@ -73,9 +73,7 @@ export default function DigitalTransformation() {
           .dtrans-hero{background:linear-gradient(135deg,#0F1F40 0%,#1a2e5a 40%,#114171 80%,#0F1F40 100%);position:relative;overflow:hidden;padding:80px 40px 0}
           .dtrans-o1{position:absolute;top:-100px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.25) 0%,transparent 65%);pointer-events:none;filter:blur(40px)}
           .dtrans-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(254,151,0,0.08) 0%,transparent 65%);pointer-events:none;filter:blur(40px)}
-          .dtrans-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}
-          .dtrans-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:24px;font-weight:500}
-          .dtrans-bc a{color:rgba(255,255,255,0.5);text-decoration:none}.dtrans-bc a:hover{color:#FE9700}.dtrans-bc span{color:rgba(255,255,255,0.25)}
+          .dtrans-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.dtrans-bc a:hover{color:#FE9700}.dtrans-bc span{color:rgba(255,255,255,0.25)}
           .dtrans-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(99,102,241,0.15);border:1px solid rgba(99,102,241,0.35);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#a5b4fc;margin-bottom:28px}
           .dtrans-h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:900;line-height:1.05;letter-spacing:-1.5px;color:#fff;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
           .dtrans-h1 span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -137,7 +135,6 @@ export default function DigitalTransformation() {
       <div className="dtrans-page">
         <section className="dtrans-hero"><div className="dtrans-o1"/><div className="dtrans-o2"/>
           <div className="dtrans-in">
-            <nav className="dtrans-bc"><Link href="/">Home</Link><span>/</span><span style={{color:'#FE9700'}}>Digital Transformation</span></nav>
             <span className="dtrans-badge"><span style={{width:6,height:6,borderRadius:'50%',background:'#a5b4fc',display:'inline-block'}}/> DIGITAL TRANSFORMATION</span>
             <h1 className="dtrans-h1">Modernize Your Business for the <span>Digital Age</span></h1>
             <p className="dtrans-sub">Legacy systems, manual processes, and disconnected tools are holding your business back. We help you transform - from strategy and architecture through implementation and adoption.</p>

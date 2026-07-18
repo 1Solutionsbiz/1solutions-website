@@ -87,11 +87,7 @@ export default function RemarketingServices() {
           .remk-si{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(128,0,64,.08)}
           .remk-si:last-child{border-right:none}
           .remk-sn{font-size:1.9rem;font-weight:900;color:${ACCENT};line-height:1;letter-spacing:-1px}
-          .remk-sl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px}
-          .remk-bc{background:#f8fafd;border-bottom:1px solid #edf0f5;padding:12px 40px}
-          .remk-bci{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12.5px;color:#6b7280}
-          .remk-bci a{color:#6b7280;text-decoration:none}.remk-bci a:hover{color:${ACCENT}}
-          .remk-sep{color:#d1d5db}.remk-cur{color:${ACCENT};font-weight:500}
+          .remk-sl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px}.remk-bci a:hover{color:${ACCENT}}.remk-cur{color:${ACCENT};font-weight:500}
           .remk-sec{padding:80px 40px}.remk-bg{background:#f8fafd}
           .remk-si2{max-width:1200px;margin:0 auto}
           .remk-tag{display:block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:12px}
@@ -142,7 +138,6 @@ export default function RemarketingServices() {
         `}
         </style>
       </Head>
-      <nav className="remk-bc"><div className="remk-bci"><Link href="/">Home</Link><span className="remk-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="remk-sep">›</span><span className="remk-cur">Remarketing Services</span></div></nav>
       <section className="remk-hero"><div className="remk-o1"/><div className="remk-o2"/>
         <div className="remk-in">
           <span className="remk-ey">Retargeting - Google · Meta · LinkedIn · YouTube · Dynamic Product Ads</span>

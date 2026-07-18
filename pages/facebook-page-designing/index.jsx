@@ -78,9 +78,7 @@ export default function FacebookPageDesigning() {
           .fbpd-hero{background:linear-gradient(135deg,#f0f9ff 0%,#bae6fd 25%,#7dd3fc 50%,#f0f9ff 100%);position:relative;overflow:hidden;padding:80px 40px 0}
           .fbpd-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(3,105,161,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
           .fbpd-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(7,89,133,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .fbpd-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}
-          .fbpd-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500}
-          .fbpd-bc a{color:#6b7280;text-decoration:none}.fbpd-bc a:hover{color:#0369A1}.fbpd-bc span{color:#d1d5db}
+          .fbpd-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.fbpd-bc a:hover{color:#0369A1}.fbpd-bc span{color:#d1d5db}
           .fbpd-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(3,105,161,0.08);border:1px solid rgba(3,105,161,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#0369A1;margin-bottom:28px}
           .fbpd-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
           .fbpd-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
@@ -148,7 +146,6 @@ export default function FacebookPageDesigning() {
       <div className="fbpd-page">
         <section className="fbpd-hero"><div className="fbpd-o1"/><div className="fbpd-o2"/>
           <div className="fbpd-in">
-            <nav className="fbpd-bc"><Link href="/">Home</Link><span>/</span><Link href="/social-media-marketing-services">Social Media</Link><span>/</span><span style={{color:'#0369A1'}}>Facebook Page Design</span></nav>
             <span className="fbpd-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#0369A1',display:'inline-block'}}/> Cover Photo · Templates · Ad Creative</span>
             <h1 className="fbpd-h1">Facebook Page Designing - Make Your First Impression Count</h1>
             <p className="fbpd-sub">Professional Facebook Business Page design - cover photos, post templates, ad creatives, and full page setup - ensuring your Facebook presence looks as credible as your business deserves.</p>

@@ -81,9 +81,7 @@ export default function AppStoreOptimizationServices() {
           .aso-hero{background:linear-gradient(135deg,#faf5ff 0%,#ede9fe 25%,#e9d5ff 60%,#fdf4ff 100%);position:relative;overflow:hidden;padding:80px 40px 0}
           .aso-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(147,51,234,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
           .aso-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(91,33,182,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .aso-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}
-          .aso-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500}
-          .aso-bc a{color:#6b7280;text-decoration:none}.aso-bc a:hover{color:#9333EA}.aso-bc span{color:#d1d5db}
+          .aso-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.aso-bc a:hover{color:#9333EA}.aso-bc span{color:#d1d5db}
           .aso-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(147,51,234,0.08);border:1px solid rgba(147,51,234,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#7C3AED;margin-bottom:28px}
           .aso-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
           .aso-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
@@ -151,7 +149,6 @@ export default function AppStoreOptimizationServices() {
       <div className="aso-page">
         <section className="aso-hero"><div className="aso-o1"/><div className="aso-o2"/>
           <div className="aso-in">
-            <nav className="aso-bc"><Link href="/">Home</Link><span>/</span><Link href="/react-native-app-development">Mobile Development</Link><span>/</span><span style={{color:'#9333EA'}}>App Store Optimisation</span></nav>
             <span className="aso-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#9333EA',display:'inline-block'}}/> iOS App Store · Google Play · A/B Testing</span>
             <h1 className="aso-h1">App Store Optimisation Services That Grow Organic Installs</h1>
             <p className="aso-sub">Keyword research, metadata optimisation, screenshot strategy, rating management, and A/B testing for iOS and Android - ASO that converts more store visitors into installs.</p>

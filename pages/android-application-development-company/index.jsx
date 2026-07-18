@@ -316,14 +316,11 @@ export default function AndroidAppDevelopment() {
           .an-orb-2 { width:780px;height:780px;background:radial-gradient(circle,rgba(217,119,6,.22) 0%,rgba(245,158,11,.10) 40%,transparent 70%);bottom:0;left:-230px; }
           .an-orb-3 { width:550px;height:550px;background:radial-gradient(circle,rgba(59,130,246,.16) 0%,transparent 70%);top:42%;left:-120px;transform:translateY(-50%); }
 
-          /* Breadcrumb */
-          .an-breadcrumb { position:relative;z-index:2;padding:16px 40px 0;max-width:1440px;margin:0 auto; }
-          .an-breadcrumb ol { display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0;font-size:13px;color:#6A80A0; }
-          .an-breadcrumb li { display:flex;align-items:center;gap:6px; }
-          .an-breadcrumb li::after { content:'/';opacity:.45; }
-          .an-breadcrumb li:last-child::after { display:none; }
-          .an-breadcrumb a { color:#0F3460;text-decoration:none; }
-          .an-breadcrumb a:hover { text-decoration:underline; }
+
+
+
+
+
 
           /* Hero */
           .an-hero { position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px; }
@@ -537,7 +534,6 @@ export default function AndroidAppDevelopment() {
             .an-contact-grid { grid-template-columns:1fr; }
           }
           @media(max-width:768px){
-            .an-breadcrumb { padding:12px 20px 0; }
             .an-hero { padding:28px 20px 20px; }
             .an-hero h1 { font-size:26px;letter-spacing:-.3px; }
             .an-stats { grid-template-columns:1fr 1fr; }
@@ -580,20 +576,6 @@ export default function AndroidAppDevelopment() {
         <div className="an-orb an-orb-1" />
         <div className="an-orb an-orb-2" />
         <div className="an-orb an-orb-3" />
-
-        {/* ── BREADCRUMB ── */}
-        <nav className="an-breadcrumb" aria-label="Breadcrumb">
-          <ol itemScope itemType="https://schema.org/BreadcrumbList">
-            <li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement">
-              <Link href="/" itemProp="item"><span itemProp="name">Home</span></Link>
-              <meta itemProp="position" content="1" />
-            </li>
-            <li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement">
-              <span itemProp="name">Android Application Development Company</span>
-              <meta itemProp="position" content="2" />
-            </li>
-          </ol>
-        </nav>
 
         {/* ── HERO ── */}
         <section className="an-hero">

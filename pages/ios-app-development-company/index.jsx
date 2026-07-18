@@ -309,13 +309,12 @@ export default function IosAppDevelopment() {
           .io-orb-1{width:880px;height:880px;background:radial-gradient(circle,rgba(29,78,216,.22) 0%,rgba(59,130,246,.10) 40%,transparent 70%);top:-280px;right:-260px}
           .io-orb-2{width:780px;height:780px;background:radial-gradient(circle,rgba(217,119,6,.22) 0%,rgba(245,158,11,.10) 40%,transparent 70%);bottom:0;left:-230px}
           .io-orb-3{width:550px;height:550px;background:radial-gradient(circle,rgba(168,85,247,.16) 0%,transparent 70%);top:42%;left:-120px;transform:translateY(-50%)}
-          .io-breadcrumb{position:relative;z-index:2;padding:16px 40px 0;max-width:1440px;margin:0 auto}
-          .io-breadcrumb ol{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0;font-size:13px;color:#6A80A0}
-          .io-breadcrumb li{display:flex;align-items:center;gap:6px}
-          .io-breadcrumb li::after{content:'/';opacity:.45}
-          .io-breadcrumb li:last-child::after{display:none}
-          .io-breadcrumb a{color:#0F3460;text-decoration:none}
-          .io-breadcrumb a:hover{text-decoration:underline}
+
+
+
+
+
+
           .io-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
           .io-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
           .io-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -516,19 +515,6 @@ export default function IosAppDevelopment() {
 
       <div className="io-page">
         <div className="io-orb io-orb-1" /><div className="io-orb io-orb-2" /><div className="io-orb io-orb-3" />
-
-        <nav className="io-breadcrumb" aria-label="Breadcrumb">
-          <ol itemScope itemType="https://schema.org/BreadcrumbList">
-            <li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement">
-              <Link href="/" itemProp="item"><span itemProp="name">Home</span></Link>
-              <meta itemProp="position" content="1" />
-            </li>
-            <li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement">
-              <span itemProp="name">iOS App Development Company</span>
-              <meta itemProp="position" content="2" />
-            </li>
-          </ol>
-        </nav>
 
         <section className="io-hero">
           <span className="io-eyebrow">iOS App Development Company</span>

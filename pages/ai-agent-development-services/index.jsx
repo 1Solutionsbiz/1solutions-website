@@ -192,10 +192,7 @@ export default function AIAgentDevelopmentServices() {
           .aad-orb2{width:800px;height:800px;background:radial-gradient(circle,rgba(251,146,60,.30) 0%,rgba(245,158,11,.15) 40%,transparent 70%);bottom:0;left:-250px}
           .aad-orb3{width:600px;height:600px;background:radial-gradient(circle,rgba(20,184,166,.20) 0%,transparent 70%);top:45%;left:-150px;transform:translateY(-50%)}
           .aad-reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
-          .aad-reveal.aad-vis{opacity:1;transform:translateY(0)}
-          /* Breadcrumb */
-          .aad-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;padding:16px 40px 0;max-width:1280px;margin:0 auto;position:relative;z-index:2;font-weight:500}
-          .aad-bc a{color:#6b7280;text-decoration:none}.aad-bc a:hover{color:#D97706}.aad-bc-sep{color:#d1d5db}
+          .aad-reveal.aad-vis{opacity:1;transform:translateY(0)}.aad-bc a:hover{color:#D97706}.aad-bc-sep{color:#d1d5db}
           /* Hero */
           .aad-hero{position:relative;z-index:1;padding:72px 40px 0}
           .aad-hero-inner{position:relative;z-index:2;text-align:center;max-width:940px;margin:0 auto}
@@ -281,7 +278,6 @@ export default function AIAgentDevelopmentServices() {
           /* Responsive */
           @media(max-width:1024px){.aad-g4{grid-template-columns:repeat(2,1fr)}.aad-g3{grid-template-columns:repeat(2,1fr)}.aad-stack-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){
-            .aad-bc{padding:12px 20px 0}
             .aad-hero{padding:56px 24px 0}
             .aad-sec,.aad-form-sec,.aad-cta-sec{padding:52px 20px}
             .aad-stats{grid-template-columns:repeat(2,1fr)}
@@ -301,13 +297,6 @@ export default function AIAgentDevelopmentServices() {
 
       <div className="aad-page">
         <div className="aad-orb aad-orb1"/><div className="aad-orb aad-orb2"/><div className="aad-orb aad-orb3"/>
-
-        {/* ── BREADCRUMB ── */}
-        <nav className="aad-bc" aria-label="Breadcrumb">
-          <Link href="/">Home</Link><span className="aad-bc-sep">/</span>
-          <Link href="/artificial-intelligence/">Artificial Intelligence</Link><span className="aad-bc-sep">/</span>
-          <span style={{color:'#D97706'}}>AI Agent Development Services</span>
-        </nav>
 
         {/* ── HERO ── */}
         <section className="aad-hero">

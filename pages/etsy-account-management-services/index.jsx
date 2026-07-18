@@ -156,11 +156,7 @@ export default function EtsyAccountManagement() {
           .etsy-stat-item{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(120,50,0,0.08);}
           .etsy-stat-item:last-child{border-right:none;}
           .etsy-stat-num{font-size:1.9rem;font-weight:900;color:#783200;line-height:1;letter-spacing:-1px;}
-          .etsy-stat-lbl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px;}
-          .etsy-bc{background:#f8fafd;border-bottom:1px solid #edf0f5;padding:12px 40px;}
-          .etsy-bc-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12.5px;color:#6b7280;}
-          .etsy-bc a{color:#6b7280;text-decoration:none;}.etsy-bc a:hover{color:#783200;}
-          .etsy-bc-sep{color:#d1d5db;}.etsy-bc-cur{color:#783200;font-weight:500;}
+          .etsy-stat-lbl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px;}.etsy-bc a:hover{color:#783200;}.etsy-bc-cur{color:#783200;font-weight:500;}
           .etsy-sec{padding:80px 40px;}
           .etsy-bg{background:#f8fafd;}
           .etsy-tag{display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#783200;margin-bottom:12px;}
@@ -277,17 +273,6 @@ export default function EtsyAccountManagement() {
         `}
         </style>
       </Head>
-
-      {/* Breadcrumb */}
-      <nav className="etsy-bc">
-        <div className="etsy-bc-inner">
-          <Link href="/">Home</Link>
-          <span className="etsy-bc-sep">›</span>
-          <Link href="/ecommerce-marketing-services">Services</Link>
-          <span className="etsy-bc-sep">›</span>
-          <span className="etsy-bc-cur">Etsy Shop Management Services</span>
-        </div>
-      </nav>
 
       {/* Hero */}
       <section className="etsy-hero">

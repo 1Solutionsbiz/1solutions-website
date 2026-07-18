@@ -138,11 +138,7 @@ export default function SocialMediaAppDevelopment() {
           .socm-orb{position:absolute;border-radius:50%;pointer-events:none;z-index:0;filter:blur(20px)}
           .socm-o1{width:800px;height:800px;background:radial-gradient(circle,rgba(112,26,117,.16) 0%,transparent 70%);top:-220px;right:-200px}
           .socm-o2{width:700px;height:700px;background:radial-gradient(circle,rgba(162,28,175,.12) 0%,transparent 70%);bottom:0;left:-200px}
-          .socm-o3{width:480px;height:480px;background:radial-gradient(circle,rgba(217,119,6,.08) 0%,transparent 70%);top:42%;left:-90px}
-          .socm-bc{position:relative;z-index:2;padding:16px 40px 0;max-width:1440px;margin:0 auto}
-          .socm-bc ol{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0;font-size:13px;color:${ac2}}
-          .socm-bc li{display:flex;align-items:center;gap:6px}.socm-bc li::after{content:'/';opacity:.45}.socm-bc li:last-child::after{display:none}
-          .socm-bc a{color:${txt};text-decoration:none}
+          .socm-o3{width:480px;height:480px;background:radial-gradient(circle,rgba(217,119,6,.08) 0%,transparent 70%);top:42%;left:-90px}}.socm-bc li::after{content:'/';opacity:.45}.socm-bc li:last-child::after{display:none};text-decoration:none}
           .socm-hero{position:relative;z-index:2;text-align:center;max-width:940px;margin:0 auto;padding:44px 40px 28px}
           .socm-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:${ac2};margin-bottom:14px}
           .socm-hero h1{font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -296,7 +292,6 @@ export default function SocialMediaAppDevelopment() {
 </Head>
       <div className="socm-page">
         <div className="socm-orb socm-o1" /><div className="socm-orb socm-o2" /><div className="socm-orb socm-o3" />
-        <nav className="socm-bc" aria-label="Breadcrumb"><ol itemScope itemType="https://schema.org/BreadcrumbList"><li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement"><Link href="/" itemProp="item"><span itemProp="name">Home</span></Link><meta itemProp="position" content="1" /></li><li><span>Industries</span></li><li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement"><span itemProp="name">Social Media App Development</span><meta itemProp="position" content="3" /></li></ol></nav>
         <section className="socm-hero">
           <span className="socm-ey">Social Media Industry</span>
           <h1>Social Media App Development Company - Niche Social Networks, Creator Platforms & Community Apps</h1>

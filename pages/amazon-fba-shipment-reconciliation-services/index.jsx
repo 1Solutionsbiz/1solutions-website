@@ -136,14 +136,9 @@ export default function FBAReconciliation() {
       </Head>
 
       <style>{`
-        .fbar-page { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a2e; }
+        .fbar-page { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a2e; }; text-decoration: none; }
 
-        .fbar-breadcrumb { background: #f8f9fa; border-bottom: 1px solid #e9ecef; padding: 12px 0; }
-        .fbar-breadcrumb-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 8px; font-size: 14px; }
-        .fbar-breadcrumb a { color: ${ACCENT}; text-decoration: none; }
-        .fbar-breadcrumb a:hover { text-decoration: underline; }
-        .fbar-breadcrumb-sep { color: #adb5bd; }
-        .fbar-breadcrumb-current { color: #6c757d; }
+
 
         .fbar-hero { background: linear-gradient(135deg, #001919 0%, #004040 60%, #006060 100%); color: #fff; padding: 80px 24px 72px; position: relative; overflow: hidden; }
         .fbar-hero-orb1 { position: absolute; top: -80px; right: -80px; width: 400px; height: 400px; background: rgba(${ACCENT_RGB}, 0.4); border-radius: 50%; filter: blur(80px); pointer-events: none; }
@@ -298,15 +293,6 @@ export default function FBAReconciliation() {
         </style>
 
       <div className="fbar-page">
-        <nav className="fbar-breadcrumb">
-          <div className="fbar-breadcrumb-inner">
-            <Link href="/">Home</Link>
-            <span className="fbar-breadcrumb-sep">›</span>
-            <Link href="/amazon-account-management-services">Amazon Services</Link>
-            <span className="fbar-breadcrumb-sep">›</span>
-            <span className="fbar-breadcrumb-current">FBA Shipment Reconciliation</span>
-          </div>
-        </nav>
 
         <section className="fbar-hero">
           <div className="fbar-hero-orb1" />

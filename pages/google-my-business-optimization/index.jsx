@@ -308,11 +308,7 @@ export default function GoogleMyBusinessOptimization() {
           .gmbo-stat-num{font-size:1.9rem;font-weight:900;color:#D97706;line-height:1;letter-spacing:-1px;}
           .gmbo-stat-lbl{font-size:11px;color:#4A6080;font-weight:500;line-height:1.4;text-align:center;margin-top:4px;}
 
-          /* ── Breadcrumb ── */
-          .gmbo-bc{background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.70);padding:12px 40px;}
-          .gmbo-bc-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12.5px;color:#6A80A0;}
-          .gmbo-bc a{color:#6A80A0;text-decoration:none;}.gmbo-bc a:hover{color:#D97706;}
-          .gmbo-bc-sep{color:#c0cfe0;}.gmbo-bc-cur{color:#D97706;font-weight:500;}
+          /* ── Breadcrumb ── */.gmbo-bc a:hover{color:#D97706;}.gmbo-bc-cur{color:#D97706;font-weight:500;}
 
           /* ── Sections ── */
           .gmbo-sec{padding:80px 40px;}
@@ -487,7 +483,6 @@ export default function GoogleMyBusinessOptimization() {
             .gmbo-hero{padding-top:60px;padding-bottom:50px;}
             .gmbo-grid4,.gmbo-grid3,.gmbo-grid2,.gmbo-stat-cards,.gmbo-res-grid,.gmbo-ind-grid,.gmbo-rank-grid{grid-template-columns:1fr;}
             .gmbo-def-aspects{grid-template-columns:1fr;}
-            .gmbo-bc{padding:12px 20px;}
             .gmbo-field-row{grid-template-columns:1fr;}
             .gmbo-form-wrap{padding:24px 20px;}
             .gmbo-author-bar{padding:0 20px 40px;}
@@ -497,17 +492,6 @@ export default function GoogleMyBusinessOptimization() {
         `}
         </style>
       </Head>
-
-      {/* Breadcrumb */}
-      <nav className="gmbo-bc" aria-label="Breadcrumb">
-        <div className="gmbo-bc-inner">
-          <Link href="/">Home</Link>
-          <span className="gmbo-bc-sep">›</span>
-          <Link href="/local-seo-services/">Local SEO</Link>
-          <span className="gmbo-bc-sep">›</span>
-          <span className="gmbo-bc-cur">Google My Business Optimization</span>
-        </div>
-      </nav>
 
       {/* Hero */}
       <section className="gmbo-hero">

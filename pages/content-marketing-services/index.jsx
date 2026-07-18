@@ -87,11 +87,7 @@ export default function ContentMarketingServices() {
           .cmkt-si{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(0,51,51,.08)}
           .cmkt-si:last-child{border-right:none}
           .cmkt-sn{font-size:1.9rem;font-weight:900;color:${ACCENT};line-height:1;letter-spacing:-1px}
-          .cmkt-sl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px}
-          .cmkt-bc{background:#f8fafd;border-bottom:1px solid #edf0f5;padding:12px 40px}
-          .cmkt-bci{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12.5px;color:#6b7280}
-          .cmkt-bci a{color:#6b7280;text-decoration:none}.cmkt-bci a:hover{color:${ACCENT}}
-          .cmkt-sep{color:#d1d5db}.cmkt-cur{color:${ACCENT};font-weight:500}
+          .cmkt-sl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px}.cmkt-bci a:hover{color:${ACCENT}}.cmkt-cur{color:${ACCENT};font-weight:500}
           .cmkt-sec{padding:80px 40px}.cmkt-bg{background:#f8fafd}
           .cmkt-si2{max-width:1200px;margin:0 auto}
           .cmkt-tag{display:block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:12px}
@@ -142,7 +138,6 @@ export default function ContentMarketingServices() {
         `}
         </style>
       </Head>
-      <nav className="cmkt-bc"><div className="cmkt-bci"><Link href="/">Home</Link><span className="cmkt-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="cmkt-sep">›</span><span className="cmkt-cur">Content Marketing Services</span></div></nav>
       <section className="cmkt-hero"><div className="cmkt-o1"/><div className="cmkt-o2"/>
         <div className="cmkt-in">
           <span className="cmkt-ey">Content Marketing - SEO Blog Writing · Pillar Pages · Case Studies · Strategy</span>

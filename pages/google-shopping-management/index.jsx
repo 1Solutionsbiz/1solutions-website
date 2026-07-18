@@ -87,11 +87,7 @@ export default function GoogleShoppingManagement() {
           .gsho-si{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(0,109,44,.08)}
           .gsho-si:last-child{border-right:none}
           .gsho-sn{font-size:1.9rem;font-weight:900;color:${ACCENT};line-height:1;letter-spacing:-1px}
-          .gsho-sl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px}
-          .gsho-bc{background:#f8fafd;border-bottom:1px solid #edf0f5;padding:12px 40px}
-          .gsho-bci{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12.5px;color:#6b7280}
-          .gsho-bci a{color:#6b7280;text-decoration:none}.gsho-bci a:hover{color:${ACCENT}}
-          .gsho-sep{color:#d1d5db}.gsho-cur{color:${ACCENT};font-weight:500}
+          .gsho-sl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px}.gsho-bci a:hover{color:${ACCENT}}.gsho-cur{color:${ACCENT};font-weight:500}
           .gsho-sec{padding:80px 40px}.gsho-bg{background:#f8fafd}
           .gsho-si2{max-width:1200px;margin:0 auto}
           .gsho-tag{display:block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:12px}
@@ -142,7 +138,6 @@ export default function GoogleShoppingManagement() {
         `}
         </style>
       </Head>
-      <nav className="gsho-bc"><div className="gsho-bci"><Link href="/">Home</Link><span className="gsho-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="gsho-sep">›</span><span className="gsho-cur">Google Shopping Management</span></div></nav>
       <section className="gsho-hero"><div className="gsho-o1"/><div className="gsho-o2"/>
         <div className="gsho-in">
           <span className="gsho-ey">eCommerce Advertising - Feed Optimisation · Shopping · Performance Max · ROAS</span>

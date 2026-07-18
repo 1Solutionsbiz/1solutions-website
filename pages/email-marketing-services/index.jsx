@@ -87,11 +87,7 @@ export default function EmailMarketingServices() {
           .emkt-si{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(107,0,35,.08)}
           .emkt-si:last-child{border-right:none}
           .emkt-sn{font-size:1.9rem;font-weight:900;color:${ACCENT};line-height:1;letter-spacing:-1px}
-          .emkt-sl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px}
-          .emkt-bc{background:#f8fafd;border-bottom:1px solid #edf0f5;padding:12px 40px}
-          .emkt-bci{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12.5px;color:#6b7280}
-          .emkt-bci a{color:#6b7280;text-decoration:none}.emkt-bci a:hover{color:${ACCENT}}
-          .emkt-sep{color:#d1d5db}.emkt-cur{color:${ACCENT};font-weight:500}
+          .emkt-sl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px}.emkt-bci a:hover{color:${ACCENT}}.emkt-cur{color:${ACCENT};font-weight:500}
           .emkt-sec{padding:80px 40px}.emkt-bg{background:#f8fafd}
           .emkt-si2{max-width:1200px;margin:0 auto}
           .emkt-tag{display:block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:12px}
@@ -142,7 +138,6 @@ export default function EmailMarketingServices() {
         `}
         </style>
       </Head>
-      <nav className="emkt-bc"><div className="emkt-bci"><Link href="/">Home</Link><span className="emkt-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="emkt-sep">›</span><span className="emkt-cur">Email Marketing Services</span></div></nav>
       <section className="emkt-hero"><div className="emkt-o1"/><div className="emkt-o2"/>
         <div className="emkt-in">
           <span className="emkt-ey">Email Marketing - Klaviyo · Mailchimp · HubSpot · ActiveCampaign · Automation</span>

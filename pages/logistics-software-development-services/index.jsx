@@ -139,11 +139,7 @@ export default function LogisticsSoftware() {
           .lgt-orb{position:absolute;border-radius:50%;pointer-events:none;z-index:0;filter:blur(20px)}
           .lgt-o1{width:800px;height:800px;background:radial-gradient(circle,rgba(20,83,45,.16) 0%,transparent 70%);top:-220px;right:-200px}
           .lgt-o2{width:700px;height:700px;background:radial-gradient(circle,rgba(15,118,110,.13) 0%,transparent 70%);bottom:0;left:-200px}
-          .lgt-o3{width:480px;height:480px;background:radial-gradient(circle,rgba(12,74,110,.08) 0%,transparent 70%);top:42%;left:-90px}
-          .lgt-bc{position:relative;z-index:2;padding:16px 40px 0;max-width:1440px;margin:0 auto}
-          .lgt-bc ol{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0;font-size:13px;color:${ac}}
-          .lgt-bc li{display:flex;align-items:center;gap:6px}.lgt-bc li::after{content:'/';opacity:.45}.lgt-bc li:last-child::after{display:none}
-          .lgt-bc a{color:${txt};text-decoration:none}
+          .lgt-o3{width:480px;height:480px;background:radial-gradient(circle,rgba(12,74,110,.08) 0%,transparent 70%);top:42%;left:-90px}}.lgt-bc li::after{content:'/';opacity:.45}.lgt-bc li:last-child::after{display:none};text-decoration:none}
           .lgt-hero{position:relative;z-index:2;text-align:center;max-width:940px;margin:0 auto;padding:44px 40px 28px}
           .lgt-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:${ac};margin-bottom:14px}
           .lgt-hero h1{font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -297,7 +293,6 @@ export default function LogisticsSoftware() {
 </Head>
       <div className="lgt-page">
         <div className="lgt-orb lgt-o1" /><div className="lgt-orb lgt-o2" /><div className="lgt-orb lgt-o3" />
-        <nav className="lgt-bc" aria-label="Breadcrumb"><ol itemScope itemType="https://schema.org/BreadcrumbList"><li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement"><Link href="/" itemProp="item"><span itemProp="name">Home</span></Link><meta itemProp="position" content="1" /></li><li><span>Industries</span></li><li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement"><span itemProp="name">Logistics Software</span><meta itemProp="position" content="3" /></li></ol></nav>
         <section className="lgt-hero">
           <span className="lgt-ey">Logistics & Supply Chain Industry</span>
           <h1>Logistics Software Development - TMS, WMS, Last-Mile & Fleet Management</h1>

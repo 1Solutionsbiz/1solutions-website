@@ -164,11 +164,7 @@ export default function SeoCompanyDelhi() {
           .dsel-stat-item{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(12,36,97,0.08);}
           .dsel-stat-item:last-child{border-right:none;}
           .dsel-stat-num{font-size:1.9rem;font-weight:900;color:#0c2461;line-height:1;letter-spacing:-1px;}
-          .dsel-stat-lbl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px;}
-          .dsel-bc{background:#f8fafd;border-bottom:1px solid #edf0f5;padding:12px 40px;}
-          .dsel-bc-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12.5px;color:#6b7280;}
-          .dsel-bc a{color:#6b7280;text-decoration:none;}.dsel-bc a:hover{color:#0c2461;}
-          .dsel-bc-sep{color:#d1d5db;}.dsel-bc-cur{color:#0c2461;font-weight:500;}
+          .dsel-stat-lbl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px;}.dsel-bc a:hover{color:#0c2461;}.dsel-bc-cur{color:#0c2461;font-weight:500;}
           .dsel-sec{padding:80px 40px;}
           .dsel-bg{background:#f8fafd;}
           .dsel-sec-inner{max-width:1200px;margin:0 auto;}
@@ -268,7 +264,6 @@ export default function SeoCompanyDelhi() {
             .dsel-hero,.dsel-sec,.dsel-results,.dsel-cta,.dsel-contact-sec{padding-left:20px;padding-right:20px;}
             .dsel-hero{padding-top:60px;padding-bottom:50px;}
             .dsel-grid4,.dsel-grid3,.dsel-grid2,.dsel-res-grid,.dsel-ind-grid{grid-template-columns:1fr;}
-            .dsel-bc{padding:12px 20px;}
             .dsel-field-row{grid-template-columns:1fr;}
             .dsel-form-wrap{padding:24px 20px;}
           }
@@ -277,17 +272,6 @@ export default function SeoCompanyDelhi() {
         `}
         </style>
       </Head>
-
-      {/* Breadcrumb */}
-      <nav className="dsel-bc" aria-label="Breadcrumb">
-        <div className="dsel-bc-inner">
-          <Link href="/">Home</Link>
-          <span className="dsel-bc-sep">›</span>
-          <Link href="/seo-services-company/">SEO Services</Link>
-          <span className="dsel-bc-sep">›</span>
-          <span className="dsel-bc-cur">SEO Company in Delhi</span>
-        </div>
-      </nav>
 
       {/* Hero */}
       <section className="dsel-hero">

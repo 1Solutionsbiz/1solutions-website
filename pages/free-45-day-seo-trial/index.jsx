@@ -71,9 +71,7 @@ export default function Free45DaySeoTrial() {
           .f45-hero{background:linear-gradient(135deg,#0F1F40 0%,#1E3A8A 40%,#1D4ED8 80%,#0F1F40 100%);position:relative;overflow:hidden;padding:80px 40px 0}
           .f45-o1{position:absolute;top:-100px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(29,78,216,0.35) 0%,transparent 65%);pointer-events:none;filter:blur(40px)}
           .f45-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(30,58,138,0.25) 0%,transparent 65%);pointer-events:none;filter:blur(40px)}
-          .f45-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}
-          .f45-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:24px;font-weight:500}
-          .f45-bc a{color:rgba(255,255,255,0.5);text-decoration:none}.f45-bc a:hover{color:#fff}.f45-bc span{color:rgba(255,255,255,0.25)}
+          .f45-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.f45-bc a:hover{color:#fff}.f45-bc span{color:rgba(255,255,255,0.25)}
           .f45-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(29,78,216,0.3);border:1px solid rgba(99,179,237,0.30);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#93C5FD;margin-bottom:28px}
           .f45-h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:900;line-height:1.05;letter-spacing:-1.5px;color:#fff;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
           .f45-h1 span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -134,7 +132,6 @@ export default function Free45DaySeoTrial() {
       <div className="f45-page">
         <section className="f45-hero"><div className="f45-o1"/><div className="f45-o2"/>
           <div className="f45-in">
-            <nav className="f45-bc"><Link href="/">Home</Link><span>/</span><span>Free 45-Day SEO Trial</span></nav>
             <span className="f45-badge"><span style={{width:6,height:6,borderRadius:'50%',background:'#60A5FA',display:'inline-block'}}/> Zero Payment · Zero Commitment · Real Results</span>
             <h1 className="f45-h1">Try Our SEO - <span>45 Days Free.</span><br/>Results First, Then Decide.</h1>
             <p className="f45-sub">A full SEO audit, keyword research, competitor analysis, and 5 on-page optimisations implemented on your live site - completely free for 45 days. No payment, no contract, no catch.</p>

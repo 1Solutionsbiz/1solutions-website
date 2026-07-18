@@ -210,19 +210,9 @@ export default function InfluencerMarketing() {
             z-index: 2;
             text-align: center;
           }
-          .im-breadcrumb {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            font-size: 12px;
-            color: #6b7280;
-            margin-bottom: 24px;
-            font-weight: 500;
-          }
-          .im-breadcrumb a { color: #6b7280; text-decoration: none; }
-          .im-breadcrumb a:hover { color: #BE185D; }
-          .im-breadcrumb span { color: #d1d5db; }
+
+
+
           .im-eyebrow {
             display: inline-flex;
             align-items: center;
@@ -682,17 +672,6 @@ export default function InfluencerMarketing() {
           <div className="im-hero-orb1" />
           <div className="im-hero-orb2" />
           <div className="im-hero-inner">
-            <nav className="im-breadcrumb" aria-label="Breadcrumb">
-              <Link href="/">Home</Link>
-              <span>/</span>
-              <span>Services</span>
-              <span>/</span>
-              <span>Ecommerce Solutions</span>
-              <span>/</span>
-              <span>Ecommerce Marketing</span>
-              <span>/</span>
-              <span style={{ color: '#BE185D' }}>Influencer Marketing</span>
-            </nav>
             <span className="im-eyebrow">
               <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#BE185D', display: 'inline-block' }} />
               Ecommerce Marketing

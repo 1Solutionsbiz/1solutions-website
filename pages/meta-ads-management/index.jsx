@@ -85,11 +85,7 @@ export default function MetaAdsManagement() {
           .meta-si{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(45,58,140,.08)}
           .meta-si:last-child{border-right:none}
           .meta-sn{font-size:1.9rem;font-weight:900;color:${ACCENT};line-height:1;letter-spacing:-1px}
-          .meta-sl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px}
-          .meta-bc{background:#f8fafd;border-bottom:1px solid #edf0f5;padding:12px 40px}
-          .meta-bci{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12.5px;color:#6b7280}
-          .meta-bci a{color:#6b7280;text-decoration:none}.meta-bci a:hover{color:${ACCENT}}
-          .meta-sep{color:#d1d5db}.meta-cur{color:${ACCENT};font-weight:500}
+          .meta-sl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px}.meta-bci a:hover{color:${ACCENT}}.meta-cur{color:${ACCENT};font-weight:500}
           .meta-sec{padding:80px 40px}.meta-bg{background:#f8fafd}
           .meta-si2{max-width:1200px;margin:0 auto}
           .meta-tag{display:block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:12px}
@@ -140,7 +136,6 @@ export default function MetaAdsManagement() {
         `}
         </style>
       </Head>
-      <nav className="meta-bc"><div className="meta-bci"><Link href="/">Home</Link><span className="meta-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="meta-sep">›</span><span className="meta-cur">Meta Ads</span></div></nav>
       <section className="meta-hero"><div className="meta-o1"/><div className="meta-o2"/>
         <div className="meta-in">
           <span className="meta-ey">Meta Business Partner - Facebook · Instagram · WhatsApp</span>

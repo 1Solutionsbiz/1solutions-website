@@ -78,9 +78,7 @@ export default function InstagramMarketingServices() {
           .igm-hero{background:linear-gradient(135deg,#fdf2f8 0%,#fce7f3 25%,#fbcfe8 60%,#fdf2f8 100%);position:relative;overflow:hidden;padding:80px 40px 0}
           .igm-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(219,39,119,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
           .igm-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(157,23,77,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .igm-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}
-          .igm-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500}
-          .igm-bc a{color:#6b7280;text-decoration:none}.igm-bc a:hover{color:#DB2777}.igm-bc span{color:#d1d5db}
+          .igm-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.igm-bc a:hover{color:#DB2777}.igm-bc span{color:#d1d5db}
           .igm-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(219,39,119,0.08);border:1px solid rgba(219,39,119,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#DB2777;margin-bottom:28px}
           .igm-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
           .igm-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
@@ -148,7 +146,6 @@ export default function InstagramMarketingServices() {
       <div className="igm-page">
         <section className="igm-hero"><div className="igm-o1"/><div className="igm-o2"/>
           <div className="igm-in">
-            <nav className="igm-bc"><Link href="/">Home</Link><span>/</span><Link href="/social-media-marketing-services">Social Media</Link><span>/</span><span style={{color:'#DB2777'}}>Instagram Marketing</span></nav>
             <span className="igm-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#DB2777',display:'inline-block'}}/> Reels · Feed · Shopping · Ads</span>
             <h1 className="igm-h1">Instagram Marketing Services - Reels, Growth & Sales for Your Brand</h1>
             <p className="igm-sub">Content strategy, Reels production, Instagram Ads, Shopping integration, and community management - everything your Instagram needs to grow an engaged audience and drive real business results.</p>

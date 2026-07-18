@@ -150,12 +150,11 @@ export default function HireARDeveloper() {
           .har-o1{width:860px;height:860px;background:radial-gradient(circle,rgba(13,148,136,.20) 0%,rgba(20,184,166,.08) 40%,transparent 70%);top:-260px;right:-240px}
           .har-o2{width:760px;height:760px;background:radial-gradient(circle,rgba(217,119,6,.15) 0%,rgba(251,191,36,.06) 40%,transparent 70%);bottom:0;left:-220px}
           .har-o3{width:520px;height:520px;background:radial-gradient(circle,rgba(3,105,161,.12) 0%,transparent 70%);top:44%;left:-100px;transform:translateY(-50%)}
-          .har-bc{position:relative;z-index:2;padding:16px 40px 0;max-width:1440px;margin:0 auto}
-          .har-bc ol{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0;font-size:13px;color:#6A80A0}
-          .har-bc li{display:flex;align-items:center;gap:6px}
-          .har-bc li::after{content:'/';opacity:.45}
-          .har-bc li:last-child::after{display:none}
-          .har-bc a{color:#0F3460;text-decoration:none}
+
+
+
+
+
           .har-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
           .har-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
           .har-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -354,7 +353,6 @@ export default function HireARDeveloper() {
 </Head>
       <div className="har-page">
         <div className="har-orb har-o1" /><div className="har-orb har-o2" /><div className="har-orb har-o3" />
-        <nav className="har-bc" aria-label="Breadcrumb"><ol itemScope itemType="https://schema.org/BreadcrumbList"><li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement"><Link href="/" itemProp="item"><span itemProp="name">Home</span></Link><meta itemProp="position" content="1" /></li><li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement"><span itemProp="name">Hire AR Developer</span><meta itemProp="position" content="2" /></li></ol></nav>
         <section className="har-hero">
           <span className="har-ey">Hire AR Developer</span>
           <h1>Hire Expert AR Developers - ARKit, ARCore, WebAR & HoloLens</h1>

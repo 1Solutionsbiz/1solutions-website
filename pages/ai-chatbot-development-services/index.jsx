@@ -212,9 +212,7 @@ export default function AIChatbotDevelopmentServices() {
           .acd-orb2{width:800px;height:800px;background:radial-gradient(circle,rgba(251,146,60,.30) 0%,rgba(245,158,11,.15) 40%,transparent 70%);bottom:0;left:-250px}
           .acd-orb3{width:600px;height:600px;background:radial-gradient(circle,rgba(20,184,166,.20) 0%,transparent 70%);top:45%;left:-150px;transform:translateY(-50%)}
           .acd-reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
-          .acd-reveal.acd-vis{opacity:1;transform:translateY(0)}
-          .acd-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;padding:16px 40px 0;max-width:1280px;margin:0 auto;position:relative;z-index:2;font-weight:500}
-          .acd-bc a{color:#6b7280;text-decoration:none}.acd-bc a:hover{color:#D97706}.acd-bc-sep{color:#d1d5db}
+          .acd-reveal.acd-vis{opacity:1;transform:translateY(0)}.acd-bc a:hover{color:#D97706}.acd-bc-sep{color:#d1d5db}
           .acd-hero{position:relative;z-index:1;padding:72px 40px 0}
           .acd-hero-inner{position:relative;z-index:2;text-align:center;max-width:940px;margin:0 auto}
           .acd-eyebrow{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;display:block;margin-bottom:18px}
@@ -304,7 +302,6 @@ export default function AIChatbotDevelopmentServices() {
           .acd-cta-p{font-size:15px;color:#4A6080;line-height:1.7;max-width:580px;margin:0 auto 32px}
           @media(max-width:1024px){.acd-g4{grid-template-columns:repeat(2,1fr)}.acd-g3{grid-template-columns:repeat(2,1fr)}.acd-vs-grid{grid-template-columns:1fr}}
           @media(max-width:768px){
-            .acd-bc{padding:12px 20px 0}
             .acd-hero{padding:56px 24px 0}
             .acd-sec,.acd-form-sec,.acd-cta-sec,.acd-plat-sec{padding:52px 20px}
             .acd-stats{grid-template-columns:repeat(2,1fr)}
@@ -324,13 +321,6 @@ export default function AIChatbotDevelopmentServices() {
 
       <div className="acd-page">
         <div className="acd-orb acd-orb1"/><div className="acd-orb acd-orb2"/><div className="acd-orb acd-orb3"/>
-
-        {/* ── BREADCRUMB ── */}
-        <nav className="acd-bc" aria-label="Breadcrumb">
-          <Link href="/">Home</Link><span className="acd-bc-sep">/</span>
-          <Link href="/artificial-intelligence/">Artificial Intelligence</Link><span className="acd-bc-sep">/</span>
-          <span style={{color:'#D97706'}}>AI Chatbot Development Services</span>
-        </nav>
 
         {/* ── HERO ── */}
         <section className="acd-hero">

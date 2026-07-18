@@ -136,14 +136,9 @@ export default function FlipkartAccountManagement() {
       </Head>
 
       <style>{`
-        .flpk-page { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a2e; }
+        .flpk-page { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a2e; }; text-decoration: none; }
 
-        .flpk-breadcrumb { background: #f8f9fa; border-bottom: 1px solid #e9ecef; padding: 12px 0; }
-        .flpk-breadcrumb-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 8px; font-size: 14px; }
-        .flpk-breadcrumb a { color: ${ACCENT}; text-decoration: none; }
-        .flpk-breadcrumb a:hover { text-decoration: underline; }
-        .flpk-breadcrumb-sep { color: #adb5bd; }
-        .flpk-breadcrumb-current { color: #6c757d; }
+
 
         .flpk-hero { background: linear-gradient(135deg, #000b2d 0%, #001e6e 60%, #0030a0 100%); color: #fff; padding: 80px 24px 72px; position: relative; overflow: hidden; }
         .flpk-hero-orb1 { position: absolute; top: -80px; right: -80px; width: 400px; height: 400px; background: rgba(${ACCENT_RGB}, 0.4); border-radius: 50%; filter: blur(80px); pointer-events: none; }
@@ -298,15 +293,6 @@ export default function FlipkartAccountManagement() {
         </style>
 
       <div className="flpk-page">
-        <nav className="flpk-breadcrumb">
-          <div className="flpk-breadcrumb-inner">
-            <Link href="/">Home</Link>
-            <span className="flpk-breadcrumb-sep">›</span>
-            <Link href="/ecommerce-marketing-services">Marketplace Management</Link>
-            <span className="flpk-breadcrumb-sep">›</span>
-            <span className="flpk-breadcrumb-current">Flipkart Account Management</span>
-          </div>
-        </nav>
 
         <section className="flpk-hero">
           <div className="flpk-hero-orb1" />

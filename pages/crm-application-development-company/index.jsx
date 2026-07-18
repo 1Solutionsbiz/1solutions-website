@@ -316,14 +316,11 @@ export default function CrmApplicationDevelopment() {
           .cr-orb-2 { width:780px;height:780px;background:radial-gradient(circle,rgba(217,119,6,.22) 0%,rgba(245,158,11,.10) 40%,transparent 70%);bottom:0;left:-230px; }
           .cr-orb-3 { width:550px;height:550px;background:radial-gradient(circle,rgba(99,102,241,.16) 0%,transparent 70%);top:42%;left:-120px;transform:translateY(-50%); }
 
-          /* Breadcrumb */
-          .cr-breadcrumb { position:relative;z-index:2;padding:16px 40px 0;max-width:1440px;margin:0 auto; }
-          .cr-breadcrumb ol { display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0;font-size:13px;color:#6A80A0; }
-          .cr-breadcrumb li { display:flex;align-items:center;gap:6px; }
-          .cr-breadcrumb li::after { content:'/';opacity:.45; }
-          .cr-breadcrumb li:last-child::after { display:none; }
-          .cr-breadcrumb a { color:#0F3460;text-decoration:none; }
-          .cr-breadcrumb a:hover { text-decoration:underline; }
+
+
+
+
+
 
           /* Hero */
           .cr-hero { position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px; }
@@ -537,7 +534,6 @@ export default function CrmApplicationDevelopment() {
             .cr-contact-grid { grid-template-columns:1fr; }
           }
           @media(max-width:768px){
-            .cr-breadcrumb { padding:12px 20px 0; }
             .cr-hero { padding:28px 20px 20px; }
             .cr-hero h1 { font-size:26px;letter-spacing:-.3px; }
             .cr-stats { grid-template-columns:1fr 1fr; }
@@ -580,20 +576,6 @@ export default function CrmApplicationDevelopment() {
         <div className="cr-orb cr-orb-1" />
         <div className="cr-orb cr-orb-2" />
         <div className="cr-orb cr-orb-3" />
-
-        {/* ── BREADCRUMB ── */}
-        <nav className="cr-breadcrumb" aria-label="Breadcrumb">
-          <ol itemScope itemType="https://schema.org/BreadcrumbList">
-            <li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement">
-              <Link href="/" itemProp="item"><span itemProp="name">Home</span></Link>
-              <meta itemProp="position" content="1" />
-            </li>
-            <li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement">
-              <span itemProp="name">CRM Application Development Company</span>
-              <meta itemProp="position" content="2" />
-            </li>
-          </ol>
-        </nav>
 
         {/* ── HERO ── */}
         <section className="cr-hero">

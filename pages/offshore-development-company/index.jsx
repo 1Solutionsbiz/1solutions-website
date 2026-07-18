@@ -149,12 +149,11 @@ export default function OffshoreDevCompany() {
           .od-o1{width:860px;height:860px;background:radial-gradient(circle,rgba(14,116,144,.20) 0%,rgba(6,182,212,.08) 40%,transparent 70%);top:-260px;right:-240px}
           .od-o2{width:760px;height:760px;background:radial-gradient(circle,rgba(217,119,6,.15) 0%,rgba(251,191,36,.06) 40%,transparent 70%);bottom:0;left:-220px}
           .od-o3{width:520px;height:520px;background:radial-gradient(circle,rgba(15,118,110,.12) 0%,transparent 70%);top:44%;left:-100px;transform:translateY(-50%)}
-          .od-bc{position:relative;z-index:2;padding:16px 40px 0;max-width:1440px;margin:0 auto}
-          .od-bc ol{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0;font-size:13px;color:#5a7a8a}
-          .od-bc li{display:flex;align-items:center;gap:6px}
-          .od-bc li::after{content:'/';opacity:.45}
-          .od-bc li:last-child::after{display:none}
-          .od-bc a{color:#0c2340;text-decoration:none}
+
+
+
+
+
           .od-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
           .od-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4a6a7a;margin-bottom:14px}
           .od-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -353,7 +352,6 @@ export default function OffshoreDevCompany() {
 </Head>
       <div className="od-page">
         <div className="od-orb od-o1" /><div className="od-orb od-o2" /><div className="od-orb od-o3" />
-        <nav className="od-bc" aria-label="Breadcrumb"><ol itemScope itemType="https://schema.org/BreadcrumbList"><li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement"><Link href="/" itemProp="item"><span itemProp="name">Home</span></Link><meta itemProp="position" content="1" /></li><li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement"><span itemProp="name">Offshore Development Company</span><meta itemProp="position" content="2" /></li></ol></nav>
         <section className="od-hero">
           <span className="od-ey">Offshore Software Development</span>
           <h1>Offshore Development Company - Dedicated Teams at 60–70% Below Western Rates</h1>

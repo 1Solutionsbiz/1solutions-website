@@ -206,20 +206,9 @@ export default function ReactNativeAppDevelopment() {
             z-index: 2;
             text-align: center;
           }
-          .rn-breadcrumb {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 6px;
-            font-size: 12px;
-            color: #6b7280;
-            margin-bottom: 24px;
-            font-weight: 500;
-          }
-          .rn-breadcrumb a { color: #6b7280; text-decoration: none; }
-          .rn-breadcrumb a:hover { color: #D97706; }
-          .rn-breadcrumb span { color: #d1d5db; }
+
+
+
           .rn-eyebrow {
             display: inline-flex;
             align-items: center;
@@ -449,15 +438,6 @@ export default function ReactNativeAppDevelopment() {
           <div className="rn-hero-orb1" />
           <div className="rn-hero-orb2" />
           <div className="rn-hero-inner">
-            <nav className="rn-breadcrumb" aria-label="Breadcrumb">
-              <Link href="/">Home</Link>
-              <span>/</span>
-              <span>Services</span>
-              <span>/</span>
-              <span>Mobile Development</span>
-              <span>/</span>
-              <span style={{ color: '#D97706' }}>React Native</span>
-            </nav>
             <span className="rn-eyebrow">
               <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#D97706', display: 'inline-block' }} />
               Cross-Platform Mobile Apps

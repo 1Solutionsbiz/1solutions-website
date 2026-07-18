@@ -87,11 +87,7 @@ export default function SocialMediaMarketingServices() {
           .smkt-si{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(30,10,64,.08)}
           .smkt-si:last-child{border-right:none}
           .smkt-sn{font-size:1.9rem;font-weight:900;color:${ACCENT};line-height:1;letter-spacing:-1px}
-          .smkt-sl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px}
-          .smkt-bc{background:#f8fafd;border-bottom:1px solid #edf0f5;padding:12px 40px}
-          .smkt-bci{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12.5px;color:#6b7280}
-          .smkt-bci a{color:#6b7280;text-decoration:none}.smkt-bci a:hover{color:${ACCENT}}
-          .smkt-sep{color:#d1d5db}.smkt-cur{color:${ACCENT};font-weight:500}
+          .smkt-sl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px}.smkt-bci a:hover{color:${ACCENT}}.smkt-cur{color:${ACCENT};font-weight:500}
           .smkt-sec{padding:80px 40px}.smkt-bg{background:#f8fafd}
           .smkt-si2{max-width:1200px;margin:0 auto}
           .smkt-tag{display:block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:12px}
@@ -142,7 +138,6 @@ export default function SocialMediaMarketingServices() {
         `}
         </style>
       </Head>
-      <nav className="smkt-bc"><div className="smkt-bci"><Link href="/">Home</Link><span className="smkt-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="smkt-sep">›</span><span className="smkt-cur">Social Media Marketing Services</span></div></nav>
       <section className="smkt-hero"><div className="smkt-o1"/><div className="smkt-o2"/>
         <div className="smkt-in">
           <span className="smkt-ey">Organic Social - Instagram · LinkedIn · Facebook · TikTok · X</span>

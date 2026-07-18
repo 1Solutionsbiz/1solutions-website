@@ -998,12 +998,11 @@ export default function LinkBuildingPackages() {
           .lbp-btn-s:hover{background:rgba(255,255,255,.85);border-color:rgba(245,158,11,.6);transform:translateY(-2px)}
 
           /* ── BREADCRUMB ── */
-          .lbp-breadcrumb{position:relative;z-index:2;padding:12px 40px 0;max-width:1280px;margin:0 auto}
-          .lbp-breadcrumb-nav{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:12px;color:#6A80A0}
-          .lbp-breadcrumb-nav a{color:#0F3460;text-decoration:none;font-weight:500;transition:color .2s}
-          .lbp-breadcrumb-nav a:hover{color:#D97706}
-          .lbp-breadcrumb-sep{color:#9ca3af;font-size:10px}
-          .lbp-breadcrumb-cur{color:#4A6080;font-weight:600}
+
+
+
+
+
 
           /* ── TESTIMONIALS ── */
           .lbp-testi-sec{padding:72px 0;background:linear-gradient(135deg,#faf8ff 0%,#f7f4ff 50%,#f3f8ff 100%);overflow:hidden}
@@ -1054,7 +1053,6 @@ export default function LinkBuildingPackages() {
           @media(max-width:1024px){.lbp-testi-stats{flex-wrap:wrap;gap:16px;padding:24px 20px}}
           @media(max-width:600px){.lbp-tfade-l,.lbp-tfade-r{width:48px!important}.lbp-testi-hd{padding:0 20px!important}.lbp-testi-sec{padding:52px 0}.lbp-tcard{width:300px}}
           @media(max-width:768px){
-            .lbp-breadcrumb{padding:10px 20px 0}
             .lbp-related{padding:14px 20px}
             .lbp-sec,.lbp-results,.lbp-cta,.lbp-ai-sec,.lbp-related-section{padding-left:20px;padding-right:20px}
             .lbp-related-title{font-size:28px}

@@ -87,11 +87,7 @@ export default function ReputationManagementServices() {
           .repm-si{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(45,22,0,.08)}
           .repm-si:last-child{border-right:none}
           .repm-sn{font-size:1.9rem;font-weight:900;color:${ACCENT};line-height:1;letter-spacing:-1px}
-          .repm-sl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px}
-          .repm-bc{background:#f8fafd;border-bottom:1px solid #edf0f5;padding:12px 40px}
-          .repm-bci{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12.5px;color:#6b7280}
-          .repm-bci a{color:#6b7280;text-decoration:none}.repm-bci a:hover{color:${ACCENT}}
-          .repm-sep{color:#d1d5db}.repm-cur{color:${ACCENT};font-weight:500}
+          .repm-sl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px}.repm-bci a:hover{color:${ACCENT}}.repm-cur{color:${ACCENT};font-weight:500}
           .repm-sec{padding:80px 40px}.repm-bg{background:#f8fafd}
           .repm-si2{max-width:1200px;margin:0 auto}
           .repm-tag{display:block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:12px}
@@ -142,7 +138,6 @@ export default function ReputationManagementServices() {
         `}
         </style>
       </Head>
-      <nav className="repm-bc"><div className="repm-bci"><Link href="/">Home</Link><span className="repm-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="repm-sep">›</span><span className="repm-cur">Reputation Management Services</span></div></nav>
       <section className="repm-hero"><div className="repm-o1"/><div className="repm-o2"/>
         <div className="repm-in">
           <span className="repm-ey">Reputation Management - Brand Monitoring · Review Management · Suppression · Crisis Response</span>

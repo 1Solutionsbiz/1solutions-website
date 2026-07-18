@@ -81,9 +81,7 @@ export default function AnswerEngineOptimizationServices() {
           .aeo-hero{background:linear-gradient(135deg,#f0fdf4 0%,#bbf7d0 25%,#d1fae5 60%,#f0fdf4 100%);position:relative;overflow:hidden;padding:80px 40px 0}
           .aeo-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(22,163,74,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
           .aeo-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(6,78,59,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .aeo-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}
-          .aeo-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500}
-          .aeo-bc a{color:#6b7280;text-decoration:none}.aeo-bc a:hover{color:#16A34A}.aeo-bc span{color:#d1d5db}
+          .aeo-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.aeo-bc a:hover{color:#16A34A}.aeo-bc span{color:#d1d5db}
           .aeo-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(22,163,74,0.08);border:1px solid rgba(22,163,74,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#15803D;margin-bottom:28px}
           .aeo-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
           .aeo-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
@@ -151,7 +149,6 @@ export default function AnswerEngineOptimizationServices() {
       <div className="aeo-page">
         <section className="aeo-hero"><div className="aeo-o1"/><div className="aeo-o2"/>
           <div className="aeo-in">
-            <nav className="aeo-bc"><Link href="/">Home</Link><span>/</span><Link href="/seo-services-company">SEO Services</Link><span>/</span><span style={{color:'#16A34A'}}>Answer Engine Optimisation</span></nav>
             <span className="aeo-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#16A34A',display:'inline-block'}}/> Featured Snippets · People Also Ask · Position Zero</span>
             <h1 className="aeo-h1">Answer Engine Optimisation - Be the Answer, Not Just a Result</h1>
             <p className="aeo-sub">Featured snippet capture, People Also Ask targeting, FAQ schema, and knowledge panel optimisation - building your presence across the answer surfaces that appear above traditional search results.</p>

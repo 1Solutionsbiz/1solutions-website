@@ -87,11 +87,7 @@ export default function VideoMarketingServices() {
           .vmkt-si{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(26,0,40,.08)}
           .vmkt-si:last-child{border-right:none}
           .vmkt-sn{font-size:1.9rem;font-weight:900;color:${ACCENT};line-height:1;letter-spacing:-1px}
-          .vmkt-sl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px}
-          .vmkt-bc{background:#f8fafd;border-bottom:1px solid #edf0f5;padding:12px 40px}
-          .vmkt-bci{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12.5px;color:#6b7280}
-          .vmkt-bci a{color:#6b7280;text-decoration:none}.vmkt-bci a:hover{color:${ACCENT}}
-          .vmkt-sep{color:#d1d5db}.vmkt-cur{color:${ACCENT};font-weight:500}
+          .vmkt-sl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px}.vmkt-bci a:hover{color:${ACCENT}}.vmkt-cur{color:${ACCENT};font-weight:500}
           .vmkt-sec{padding:80px 40px}.vmkt-bg{background:#f8fafd}
           .vmkt-si2{max-width:1200px;margin:0 auto}
           .vmkt-tag{display:block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:12px}
@@ -142,7 +138,6 @@ export default function VideoMarketingServices() {
         `}
         </style>
       </Head>
-      <nav className="vmkt-bc"><div className="vmkt-bci"><Link href="/">Home</Link><span className="vmkt-sep">›</span><Link href="/seo-services-company/">Digital Marketing</Link><span className="vmkt-sep">›</span><span className="vmkt-cur">Video Marketing Services</span></div></nav>
       <section className="vmkt-hero"><div className="vmkt-o1"/><div className="vmkt-o2"/>
         <div className="vmkt-in">
           <span className="vmkt-ey">Video Marketing - YouTube Strategy · Video SEO · Reels · TikTok · Shorts · YouTube Ads</span>

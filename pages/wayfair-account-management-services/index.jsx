@@ -156,11 +156,7 @@ export default function WayfairAccountManagement() {
           .wayf-stat-item{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(53,0,66,0.08);}
           .wayf-stat-item:last-child{border-right:none;}
           .wayf-stat-num{font-size:1.9rem;font-weight:900;color:#350042;line-height:1;letter-spacing:-1px;}
-          .wayf-stat-lbl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px;}
-          .wayf-bc{background:#f8fafd;border-bottom:1px solid #edf0f5;padding:12px 40px;}
-          .wayf-bc-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12.5px;color:#6b7280;}
-          .wayf-bc a{color:#6b7280;text-decoration:none;}.wayf-bc a:hover{color:#350042;}
-          .wayf-bc-sep{color:#d1d5db;}.wayf-bc-cur{color:#350042;font-weight:500;}
+          .wayf-stat-lbl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px;}.wayf-bc a:hover{color:#350042;}.wayf-bc-cur{color:#350042;font-weight:500;}
           .wayf-sec{padding:80px 40px;}
           .wayf-bg{background:#f8fafd;}
           .wayf-tag{display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#350042;margin-bottom:12px;}
@@ -277,17 +273,6 @@ export default function WayfairAccountManagement() {
         `}
         </style>
       </Head>
-
-      {/* Breadcrumb */}
-      <nav className="wayf-bc">
-        <div className="wayf-bc-inner">
-          <Link href="/">Home</Link>
-          <span className="wayf-bc-sep">›</span>
-          <Link href="/ecommerce-marketing-services">Services</Link>
-          <span className="wayf-bc-sep">›</span>
-          <span className="wayf-bc-cur">Wayfair Supplier Account Management</span>
-        </div>
-      </nav>
 
       {/* Hero */}
       <section className="wayf-hero">

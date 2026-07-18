@@ -104,12 +104,11 @@ export default function LawFirmSeoServices() {
           .lwseo-stat-item:last-child { border-right:none; }
           .lwseo-stat-num { font-size:1.4rem;font-weight:900;color:#0a1a3d;line-height:1;letter-spacing:-1px; }
           .lwseo-stat-lbl { font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px; }
-          .lwseo-bc { background:#f8fafd;border-bottom:1px solid #edf0f5;padding:12px 40px; }
-          .lwseo-bc-inner { max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12.5px;color:#6b7280; }
-          .lwseo-bc a { color:#6b7280;text-decoration:none; }
-          .lwseo-bc a:hover { color:#0a1a3d; }
-          .lwseo-bc-sep { color:#d1d5db; }
-          .lwseo-bc-cur { color:#0a1a3d;font-weight:500; }
+
+
+
+
+
           .lwseo-sec { padding:80px 40px; }
           .lwseo-sec-inner { max-width:1200px;margin:0 auto; }
           .lwseo-tag { display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#0a1a3d;margin-bottom:12px; }
@@ -159,23 +158,12 @@ export default function LawFirmSeoServices() {
             .lwseo-hero,.lwseo-sec,.lwseo-results,.lwseo-cta { padding-left:20px;padding-right:20px; }
             .lwseo-hero { padding-top:60px;padding-bottom:50px; }
             .lwseo-grid3,.lwseo-res-grid { grid-template-columns:1fr; }
-            .lwseo-bc { padding:12px 20px; }
           }
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
-
-      <nav className="lwseo-bc" aria-label="Breadcrumb">
-        <div className="lwseo-bc-inner">
-          <Link href="/">Home</Link>
-          <span className="lwseo-bc-sep">›</span>
-          <Link href="/seo-services-company/">SEO Services</Link>
-          <span className="lwseo-bc-sep">›</span>
-          <span className="lwseo-bc-cur">Law Firm SEO Services</span>
-        </div>
-      </nav>
 
       <section className="lwseo-hero">
         <div className="lwseo-orb1" /><div className="lwseo-orb2" />

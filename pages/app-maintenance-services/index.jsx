@@ -212,20 +212,9 @@ export default function AppMaintenanceServices() {
             z-index: 2;
             text-align: center;
           }
-          .am-breadcrumb {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 6px;
-            font-size: 12px;
-            color: #6b7280;
-            margin-bottom: 24px;
-            font-weight: 500;
-          }
-          .am-breadcrumb a { color: #6b7280; text-decoration: none; }
-          .am-breadcrumb a:hover { color: #6D28D9; }
-          .am-breadcrumb span { color: #d1d5db; }
+
+
+
           .am-eyebrow {
             display: inline-flex;
             align-items: center;
@@ -435,15 +424,6 @@ export default function AppMaintenanceServices() {
           <div className="am-hero-orb1" />
           <div className="am-hero-orb2" />
           <div className="am-hero-inner">
-            <nav className="am-breadcrumb" aria-label="Breadcrumb">
-              <Link href="/">Home</Link>
-              <span>/</span>
-              <span>Services</span>
-              <span>/</span>
-              <span>Mobile Development</span>
-              <span>/</span>
-              <span style={{ color: '#6D28D9' }}>App Maintenance</span>
-            </nav>
             <span className="am-eyebrow">
               <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#6D28D9', display: 'inline-block' }} />
               Mobile Development

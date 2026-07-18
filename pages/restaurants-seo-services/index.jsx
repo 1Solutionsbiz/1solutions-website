@@ -104,12 +104,11 @@ export default function RestaurantsSeoServices() {
           .rtseo-stat-item:last-child { border-right:none; }
           .rtseo-stat-num { font-size:1.5rem;font-weight:900;color:#5c0020;line-height:1;letter-spacing:-1px; }
           .rtseo-stat-lbl { font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px; }
-          .rtseo-bc { background:#f8fafd;border-bottom:1px solid #edf0f5;padding:12px 40px; }
-          .rtseo-bc-inner { max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:12.5px;color:#6b7280; }
-          .rtseo-bc a { color:#6b7280;text-decoration:none; }
-          .rtseo-bc a:hover { color:#5c0020; }
-          .rtseo-bc-sep { color:#d1d5db; }
-          .rtseo-bc-cur { color:#5c0020;font-weight:500; }
+
+
+
+
+
           .rtseo-sec { padding:80px 40px; }
           .rtseo-sec-inner { max-width:1200px;margin:0 auto; }
           .rtseo-tag { display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#5c0020;margin-bottom:12px; }
@@ -159,23 +158,12 @@ export default function RestaurantsSeoServices() {
             .rtseo-hero,.rtseo-sec,.rtseo-results,.rtseo-cta { padding-left:20px;padding-right:20px; }
             .rtseo-hero { padding-top:60px;padding-bottom:50px; }
             .rtseo-grid3,.rtseo-res-grid { grid-template-columns:1fr; }
-            .rtseo-bc { padding:12px 20px; }
           }
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
-
-      <nav className="rtseo-bc" aria-label="Breadcrumb">
-        <div className="rtseo-bc-inner">
-          <Link href="/">Home</Link>
-          <span className="rtseo-bc-sep">›</span>
-          <Link href="/seo-services-company/">SEO Services</Link>
-          <span className="rtseo-bc-sep">›</span>
-          <span className="rtseo-bc-cur">Restaurant SEO Services</span>
-        </div>
-      </nav>
 
       <section className="rtseo-hero">
         <div className="rtseo-orb1" /><div className="rtseo-orb2" />

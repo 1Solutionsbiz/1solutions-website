@@ -268,13 +268,12 @@ export default function HireShopifyDeveloper() {
           .sh-page *,.sh-page *::before,.sh-page *::after{box-sizing:border-box}
           .sh-orb-1,.sh-orb-2,.sh-orb-3{display:none}
           .sh-hero-wrap{background:linear-gradient(150deg,#07102a 0%,#0c1c44 30%,#122f6a 60%,#1a4a8c 100%)}
-          .sh-breadcrumb{position:relative;z-index:2;padding:20px 80px 0;max-width:1380px;margin:0 auto}
-          .sh-breadcrumb ol{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0;font-size:13px;color:rgba(255,255,255,.40)}
-          .sh-breadcrumb li{display:flex;align-items:center;gap:6px}
-          .sh-breadcrumb li::after{content:'/';opacity:.45}
-          .sh-breadcrumb li:last-child::after{display:none}
-          .sh-breadcrumb a{color:rgba(255,255,255,.55);text-decoration:none}
-          .sh-breadcrumb a:hover{color:#fff;text-decoration:none}
+
+
+
+
+
+
           .sh-hero{position:relative;z-index:2;max-width:1380px;margin:0 auto;padding:52px 80px 80px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
           .sh-hero h1{font-size:clamp(44px,5.2vw,78px);font-weight:900;line-height:1.05;letter-spacing:-2.5px;margin:0 0 24px;color:#fff;background:none;-webkit-text-fill-color:#fff}
           .sh-hero-desc{font-size:18px;color:rgba(255,255,255,.72);line-height:1.72;max-width:480px;margin:0 0 40px}
@@ -484,18 +483,6 @@ export default function HireShopifyDeveloper() {
 
       <div className="sh-page">
         <div className="sh-hero-wrap">
-          <nav className="sh-breadcrumb" aria-label="Breadcrumb">
-            <ol itemScope itemType="https://schema.org/BreadcrumbList">
-              <li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement">
-                <Link href="/" itemProp="item"><span itemProp="name">Home</span></Link>
-                <meta itemProp="position" content="1" />
-              </li>
-              <li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement">
-                <span itemProp="name">Hire Shopify Developer</span>
-                <meta itemProp="position" content="2" />
-              </li>
-            </ol>
-          </nav>
 
           <section className="sh-hero">
             <div className="sh-hero-left">

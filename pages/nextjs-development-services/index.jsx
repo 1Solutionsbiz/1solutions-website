@@ -270,13 +270,12 @@ export default function NextjsDevelopmentServices() {
           .nx-orb-1{width:880px;height:880px;background:radial-gradient(circle,rgba(0,112,243,.20) 0%,rgba(59,130,246,.08) 40%,transparent 70%);top:-280px;right:-260px}
           .nx-orb-2{width:780px;height:780px;background:radial-gradient(circle,rgba(217,119,6,.22) 0%,rgba(245,158,11,.10) 40%,transparent 70%);bottom:0;left:-230px}
           .nx-orb-3{width:550px;height:550px;background:radial-gradient(circle,rgba(168,85,247,.14) 0%,transparent 70%);top:42%;left:-120px;transform:translateY(-50%)}
-          .nx-breadcrumb{position:relative;z-index:2;padding:16px 40px 0;max-width:1440px;margin:0 auto}
-          .nx-breadcrumb ol{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0;font-size:13px;color:#6A80A0}
-          .nx-breadcrumb li{display:flex;align-items:center;gap:6px}
-          .nx-breadcrumb li::after{content:'/';opacity:.45}
-          .nx-breadcrumb li:last-child::after{display:none}
-          .nx-breadcrumb a{color:#0F3460;text-decoration:none}
-          .nx-breadcrumb a:hover{text-decoration:underline}
+
+
+
+
+
+
           .nx-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
           .nx-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
           .nx-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -477,19 +476,6 @@ export default function NextjsDevelopmentServices() {
 
       <div className="nx-page">
         <div className="nx-orb nx-orb-1" /><div className="nx-orb nx-orb-2" /><div className="nx-orb nx-orb-3" />
-
-        <nav className="nx-breadcrumb" aria-label="Breadcrumb">
-          <ol itemScope itemType="https://schema.org/BreadcrumbList">
-            <li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement">
-              <Link href="/" itemProp="item"><span itemProp="name">Home</span></Link>
-              <meta itemProp="position" content="1" />
-            </li>
-            <li itemScope itemType="https://schema.org/ListItem" itemProp="itemListElement">
-              <span itemProp="name">Next.js Development Services</span>
-              <meta itemProp="position" content="2" />
-            </li>
-          </ol>
-        </nav>
 
         <section className="nx-hero">
           <span className="nx-eyebrow">Next.js Development Services</span>

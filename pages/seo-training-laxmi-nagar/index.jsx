@@ -78,9 +78,7 @@ export default function SeoTrainingLaxmiNagar() {
           .seotln-hero{background:linear-gradient(135deg,#fff7ed 0%,#ffedd5 30%,#fed7aa 65%,#fff7ed 100%);position:relative;overflow:hidden;padding:80px 40px 0}
           .seotln-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(234,88,12,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
           .seotln-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(154,52,18,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .seotln-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}
-          .seotln-bc{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;font-size:12px;color:#6b7280;margin-bottom:24px;font-weight:500}
-          .seotln-bc a{color:#6b7280;text-decoration:none}.seotln-bc a:hover{color:#EA580C}.seotln-bc span{color:#d1d5db}
+          .seotln-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.seotln-bc a:hover{color:#EA580C}.seotln-bc span{color:#d1d5db}
           .seotln-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(234,88,12,0.08);border:1px solid rgba(234,88,12,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#EA580C;margin-bottom:28px}
           .seotln-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
           .seotln-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
@@ -147,7 +145,6 @@ export default function SeoTrainingLaxmiNagar() {
       <div className="seotln-page">
         <section className="seotln-hero"><div className="seotln-o1"/><div className="seotln-o2"/>
           <div className="seotln-in">
-            <nav className="seotln-bc"><Link href="/">Home</Link><span>/</span><span style={{color:'#EA580C'}}>SEO Training Laxmi Nagar</span></nav>
             <span className="seotln-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#EA580C',display:'inline-block'}}/> Laxmi Nagar · Delhi · Small Batches · Placement Support</span>
             <h1 className="seotln-h1">SEO Training in Laxmi Nagar - Professional SEO Course by Practitioners</h1>
             <p className="seotln-sub">Professional SEO training in Laxmi Nagar, Delhi - taught by working SEO professionals, not academics. Small batches of 8–12 students, live project work, SEO tools training, and 30-day post-course mentorship.</p>

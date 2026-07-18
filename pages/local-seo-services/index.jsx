@@ -176,10 +176,9 @@ export default function LocalSeoServices() {
           .lseo-hero-orb1 { position: absolute; top: -100px; right: -100px; width: 560px; height: 560px; border-radius: 50%; background: radial-gradient(circle, rgba(5,150,105,0.13) 0%, transparent 65%); pointer-events: none; filter: blur(30px); }
           .lseo-hero-orb2 { position: absolute; bottom: 0; left: -80px; width: 440px; height: 440px; border-radius: 50%; background: radial-gradient(circle, rgba(6,95,70,0.08) 0%, transparent 65%); pointer-events: none; filter: blur(30px); }
           .lseo-hero-inner { max-width: 1280px; margin: 0 auto; position: relative; z-index: 2; text-align: center; }
-          .lseo-breadcrumb { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 6px; font-size: 12px; color: #6b7280; margin-bottom: 24px; font-weight: 500; }
-          .lseo-breadcrumb a { color: #6b7280; text-decoration: none; }
-          .lseo-breadcrumb a:hover { color: #059669; }
-          .lseo-breadcrumb span { color: #d1d5db; }
+
+
+
           .lseo-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(5,150,105,0.08); border: 1px solid rgba(5,150,105,0.20); border-radius: 100px; padding: 5px 14px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #047857; margin-bottom: 28px; }
           .lseo-hero-h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 900; line-height: 1.1; letter-spacing: -1px; background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 20px; max-width: 900px; margin-left: auto; margin-right: auto; }
           .lseo-hero-sub { font-size: 1.08rem; color: #4A6080; line-height: 1.75; max-width: 660px; margin: 0 auto 36px; }
@@ -278,11 +277,6 @@ export default function LocalSeoServices() {
         <section className="lseo-hero">
           <div className="lseo-hero-orb1" /><div className="lseo-hero-orb2" />
           <div className="lseo-hero-inner">
-            <nav className="lseo-breadcrumb" aria-label="Breadcrumb">
-              <Link href="/">Home</Link><span>/</span>
-              <Link href="/seo-services-company">SEO Services</Link><span>/</span>
-              <span style={{ color: '#059669' }}>Local SEO</span>
-            </nav>
             <span className="lseo-eyebrow">
               <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#059669', display: 'inline-block' }} />
               US · Canada · Australia
