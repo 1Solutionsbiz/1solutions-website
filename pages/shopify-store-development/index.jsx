@@ -276,7 +276,7 @@ export default function ShopifyStoreDevelopment() {
           .shopify-portfolio-title { font-size:40px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0; }
           .shopify-btn-portfolio-cta { display:inline-block;padding:13px 26px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#114171;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap;transition:all 0.3s;box-shadow:0 4px 20px rgba(17,65,113,0.10),inset 0 1px 0 rgba(255,255,255,1); }
           .shopify-btn-portfolio-cta:hover { background:rgba(255,255,255,0.85);border-color:rgba(254,151,0,0.6);transform:translateY(-2px);color:#114171; }
-          .shopify-portfolio-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:24px; }
+          .shopify-portfolio-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:24px; }
           .shopify-pcard { display:flex;flex-direction:column;background:rgba(255,255,255,0.65);backdrop-filter:blur(10px);border:1px solid rgba(17,65,113,0.12);border-radius:12px;overflow:hidden;transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s; }
           .shopify-pcard:hover { transform:translateY(-4px);border-color:rgba(254,151,0,0.5);box-shadow:0 12px 40px rgba(0,0,0,0.12); }
           .shopify-pcard-thumb { width:100%;aspect-ratio:16/10;overflow:hidden;background:#eee; }
@@ -648,6 +648,7 @@ export default function ShopifyStoreDevelopment() {
                 { img:'/images/portfolio/aiplusstore.jpg', name:'AI+ Store - Shopify eCommerce', tech:'Consumer Electronics / Shopify, Liquid, UI/UX Design', cats:'eCommerce / Smartphones / Product Catalogue / DTC', url:'https://aiplusstore.com/' },
                 { img:'/images/portfolio/keiyura.jpg', name:'Keiyura - Artisanal Jewellery', tech:'Fashion & Jewellery / Shopify, Liquid, UI/UX Design', cats:'eCommerce / Handcrafted / Lookbook / Collections', url:'https://keiyura.com/' },
                 { img:'/images/portfolio/305aerosupplies.jpg', name:'305 Aero Supplies', tech:'Electronics & IT / Shopify, Liquid, eCommerce', cats:'eCommerce / Hardware / Software / IT Solutions', url:'https://305aerosupplies.com/' },
+                { img:'/images/portfolio/nadamoo.jpg', name:"NadaMoo! - Dairy-Free Ice Cream", tech:'Food & Beverage / Shopify, Liquid, UI/UX Design', cats:"eCommerce / Organic / DTC / Dairy-Free / Health Food", url:'https://nadamoo.com/' },
               ].map(p => (
                 <a className="shopify-pcard" key={p.name} href={p.url} target="_blank" rel="noopener noreferrer" style={{textDecoration:'none',color:'inherit'}}>
                   <div className="shopify-pcard-thumb">
