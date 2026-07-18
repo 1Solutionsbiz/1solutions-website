@@ -80,13 +80,11 @@ export default function WebflowDevelopmentServices() {
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
-  const [visibleECards, setVisibleECards] = useState([]);
   const stepRefs = useRef([]);
   const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
-  const eCardsRef = useRef(null);
 
   useEffect(() => {
     const observers = stepRefs.current.map((el, i) => {
@@ -145,21 +143,6 @@ export default function WebflowDevelopmentServices() {
       { threshold: 0.1 }
     );
     obs.observe(testiGridRef.current);
-    return () => obs.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!eCardsRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          [0,1,2,3].forEach(i => setTimeout(() => setVisibleECards(p => p.includes(i)?p:[...p,i]), i * 130));
-          obs.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-    obs.observe(eCardsRef.current);
     return () => obs.disconnect();
   }, []);
 
@@ -405,27 +388,35 @@ export default function WebflowDevelopmentServices() {
           .wf-why-card h3 { font-size:15px;font-weight:700;color:#0F1F40;margin:0;line-height:1.35; }
           .wf-why-card p { font-size:13px;color:#4A6080;line-height:1.7;margin:0; }
 
-          /* Engagement */
+          /* Engagement Table */
           .wf-engage-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08);padding:80px 40px;position:relative;z-index:1; }
-          .wf-engage-inner { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:stretch; }
-          .wf-engage-left { position:sticky;top:100px;display:flex;flex-direction:column; }
-          .wf-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
-          .wf-engage-desc { font-size:15px;color:#3A507A;line-height:1.75;margin:0 0 32px; }
-          .wf-engage-img-wrap { border-radius:14px;overflow:hidden;box-shadow:0 16px 48px rgba(15,52,96,0.15);flex:1;min-height:300px; }
-          .wf-engage-img-wrap img { width:100%;height:100%;min-height:300px;object-fit:cover;display:block; }
-          .wf-engage-right { display:flex;flex-direction:column;gap:16px; }
-          .wf-ecard { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:14px;padding:26px 28px;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95);opacity:0;transform:translateX(40px);transition:opacity 0.55s cubic-bezier(0.22,1,0.36,1),transform 0.55s cubic-bezier(0.22,1,0.36,1),background 0.3s,border-color 0.3s; }
-          .wf-ecard:hover { border-color:rgba(217,119,6,0.45);box-shadow:0 16px 48px rgba(15,52,96,0.14),inset 0 1px 0 rgba(255,255,255,1);transform:translateX(4px); }
-          .wf-ecard.wf-ecard-visible { opacity:1;transform:translateX(0); }
-          .wf-ecard.wf-ecard-visible:hover { transform:translateX(4px); }
-          .wf-ecard-header { display:flex;align-items:center;gap:14px;margin-bottom:10px; }
-          .wf-ecard-icon { width:44px;height:44px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
-          .wf-ecard-icon svg { width:26px;height:26px;stroke:#D97706;fill:none; }
-          .wf-ecard-title { font-size:18px;font-weight:700;color:#0F3460;margin:0; }
-          .wf-ecard-desc { font-size:14px;color:#3A507A;line-height:1.65;margin:0 0 16px; }
-          .wf-ecard-features { display:grid;grid-template-columns:1fr 1fr;gap:8px 16px; }
-          .wf-efeat { display:flex;align-items:center;gap:8px;font-size:13px;color:#2A3F6F;font-weight:500; }
-          .wf-efeat-check { color:#D97706;font-size:12px;flex-shrink:0; }
+          .wf-engage-inner { max-width:1280px;margin:0 auto; }
+          .wf-engage-header { text-align:center;margin-bottom:52px; }
+          .wf-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 14px; }
+          .wf-engage-desc { font-size:15px;color:#3A507A;line-height:1.7;max-width:640px;margin:0 auto; }
+          .wf-table-wrap { background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);border-radius:24px;box-shadow:0 8px 40px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,0.95);overflow-x:auto; }
+          .wf-cmp-table { width:100%;border-collapse:collapse;min-width:680px; }
+          .wf-cmp-table thead tr { border-bottom:2px solid rgba(15,52,96,0.10); }
+          .wf-cmp-th { padding:30px 20px 26px;text-align:center;vertical-align:top; }
+          .wf-cmp-th:first-child { text-align:left;padding-left:32px;min-width:180px; }
+          .wf-cmp-th.wf-th-feat { background:linear-gradient(180deg,rgba(254,243,199,0.55) 0%,rgba(255,255,255,0.20) 100%);border-left:1px solid rgba(217,119,6,0.20);border-right:1px solid rgba(217,119,6,0.20); }
+          .wf-popular-badge { display:inline-block;font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:#D97706;color:#fff;padding:3px 10px;border-radius:20px;margin-bottom:10px; }
+          .wf-plan-badge { display:inline-block;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:10px;background:rgba(15,52,96,0.08);color:#4A6080; }
+          .wf-cmp-plan-name { display:block;font-size:15px;font-weight:800;color:#0F3460;margin-bottom:4px;line-height:1.3; }
+          .wf-cmp-th.wf-th-feat .wf-cmp-plan-name { color:#D97706; }
+          .wf-cmp-plan-price { display:block;font-size:12px;color:#6B7280;font-weight:500; }
+          .wf-cmp-table tbody tr { border-bottom:1px solid rgba(15,52,96,0.06);transition:background 0.15s; }
+          .wf-cmp-table tbody tr:last-child { border-bottom:none; }
+          .wf-cmp-table tbody tr:nth-child(odd) { background:rgba(15,52,96,0.018); }
+          .wf-cmp-table tbody tr:hover { background:rgba(99,130,255,0.05); }
+          .wf-cmp-td { padding:15px 20px;text-align:center;vertical-align:middle;font-size:13px;color:#4A6080; }
+          .wf-cmp-td:first-child { text-align:left;padding-left:32px;font-size:13px;font-weight:600;color:#1e293b; }
+          .wf-cmp-td.wf-th-feat { background:rgba(254,243,199,0.22);border-left:1px solid rgba(217,119,6,0.15);border-right:1px solid rgba(217,119,6,0.15); }
+          .wf-tick { color:#16a34a;font-size:17px;line-height:1; }
+          .wf-cross { color:#d1d5db;font-size:16px;line-height:1; }
+          .wf-addon { display:inline-block;font-size:11px;color:#D97706;font-weight:600;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.28);border-radius:4px;padding:2px 8px;white-space:nowrap; }
+          .wf-td-text { font-size:12px;color:#4A6080;white-space:nowrap; }
+          .wf-td-text.hi { color:#0F3460;font-weight:600; }
 
           /* Contact */
           .wf-contact-section { padding:70px 40px;background:linear-gradient(135deg,rgba(254,243,199,0.70) 0%,rgba(255,255,255,0.60) 40%,rgba(219,234,254,0.65) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.80); }
@@ -801,55 +792,69 @@ export default function WebflowDevelopmentServices() {
         {/* ── ENGAGEMENT MODELS ── */}
         <section className="wf-engage-section" id="engagement">
           <div className="wf-engage-inner">
-            <div className="wf-engage-left">
+            <div className="wf-engage-header">
               <span className="wf-section-eyebrow">How We Engage</span>
               <h2 className="wf-engage-title">Flexible Webflow Engagement Models</h2>
-              <p className="wf-engage-desc">Whether you need a one-time website build, a migration from WordPress, or an ongoing Webflow partner for monthly updates and new feature builds — we have an engagement model that fits.</p>
-              <div className="wf-engage-img-wrap">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/office.png" alt="1Solutions team working on Webflow projects" />
-              </div>
+              <p className="wf-engage-desc">Whether you need a one-time build, a WordPress migration, or an ongoing Webflow partner — pick the model that fits your team and budget.</p>
             </div>
-            <div className="wf-engage-right" ref={eCardsRef}>
-              {[
-                {
-                  icon:<svg viewBox="0 0 24 24" strokeWidth="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>,
-                  title:'Fixed-Price Project',
-                  desc:'Ideal for new Webflow builds and migrations. Fully scoped, designed, and delivered at a fixed cost with a clear timeline.',
-                  features:['Custom Figma design','Full Webflow development','CMS configuration','SEO setup & handoff'],
-                },
-                {
-                  icon:<svg viewBox="0 0 24 24" strokeWidth="1.5"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="10"/></svg>,
-                  title:'Monthly Retainer',
-                  desc:'Perfect for growing businesses that need ongoing Webflow support — content updates, new sections, A/B testing, and performance monitoring.',
-                  features:['Priority support','Monthly dev hours','Content updates','Performance reviews'],
-                },
-                {
-                  icon:<svg viewBox="0 0 24 24" strokeWidth="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
-                  title:'Dedicated Webflow Developer',
-                  desc:'A senior Webflow developer embedded in your team on a part-time or full-time basis — ideal for SaaS marketing teams with constant launch cadences.',
-                  features:['Dedicated resource','Slack integration','Daily standups','Flexible scaling'],
-                },
-                {
-                  icon:<svg viewBox="0 0 24 24" strokeWidth="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>,
-                  title:'Webflow Consulting',
-                  desc:'Strategic guidance for in-house teams — Webflow architecture review, CMS structure planning, animation strategy, and performance audits.',
-                  features:['Architecture review','CMS planning','Performance audit','Team training'],
-                },
-              ].map((e,i) => (
-                <div className={`wf-ecard${visibleECards.includes(i) ? ' wf-ecard-visible' : ''}`} key={e.title} style={{ transitionDelay:`${i * 0.1}s` }}>
-                  <div className="wf-ecard-header">
-                    <div className="wf-ecard-icon">{e.icon}</div>
-                    <h3 className="wf-ecard-title">{e.title}</h3>
-                  </div>
-                  <p className="wf-ecard-desc">{e.desc}</p>
-                  <div className="wf-ecard-features">
-                    {e.features.map(f => (
-                      <div className="wf-efeat" key={f}><span className="wf-efeat-check">✦</span>{f}</div>
-                    ))}
-                  </div>
-                </div>
-              ))}
+
+            <div className="wf-table-wrap">
+              <table className="wf-cmp-table">
+                <thead>
+                  <tr>
+                    <th className="wf-cmp-th"><span style={{fontSize:'12px',fontWeight:600,color:'#6B7280',textTransform:'uppercase',letterSpacing:'1px'}}>Feature</span></th>
+                    <th className="wf-cmp-th">
+                      <span className="wf-plan-badge">One-time</span>
+                      <span className="wf-cmp-plan-name">Fixed-Price Project</span>
+                      <span className="wf-cmp-plan-price">From $4,000</span>
+                    </th>
+                    <th className="wf-cmp-th">
+                      <span className="wf-plan-badge">Ongoing</span>
+                      <span className="wf-cmp-plan-name">Monthly Retainer</span>
+                      <span className="wf-cmp-plan-price">From $1,200/mo</span>
+                    </th>
+                    <th className="wf-cmp-th wf-th-feat">
+                      <span className="wf-popular-badge">Most Popular</span>
+                      <span className="wf-cmp-plan-name">Dedicated Developer</span>
+                      <span className="wf-cmp-plan-price">From $3,500/mo</span>
+                    </th>
+                    <th className="wf-cmp-th">
+                      <span className="wf-plan-badge">Advisory</span>
+                      <span className="wf-cmp-plan-name">Webflow Consulting</span>
+                      <span className="wf-cmp-plan-price">From $500/session</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Best For',          'New builds & migrations', 'Growing businesses', 'SaaS marketing teams', 'In-house dev teams'],
+                    ['Timeline',          '4–8 weeks', 'Ongoing', 'Ongoing', '1–2 weeks'],
+                    ['Custom Figma Design', '✓', 'add-on', '✓', '✕'],
+                    ['Webflow Development','✓', '✓', '✓', '✕'],
+                    ['CMS Setup & Training','✓', '✓', '✓', '✕'],
+                    ['SEO Configuration',  '✓', '✓', '✓', '✕'],
+                    ['Priority Support',   '✕', '✓', '✓', '✕'],
+                    ['Dedicated Developer','✕', '✕', '✓', '✕'],
+                    ['Monthly Dev Hours',  '✕', '✓', '✓', '✕'],
+                    ['Flexible Scope',     '✕', '✓', '✓', '✕'],
+                    ['Architecture Review','✕', '✕', '✕', '✓'],
+                    ['Team Training',      '✕', '✕', '✕', '✓'],
+                  ].map(([label, ...cols]) => (
+                    <tr key={label}>
+                      <td className="wf-cmp-td">{label}</td>
+                      {cols.map((v, ci) => {
+                        const featured = ci === 2;
+                        let cell;
+                        if (v === '✓')      cell = <span className="wf-tick">✓</span>;
+                        else if (v === '✕') cell = <span className="wf-cross">—</span>;
+                        else if (v === 'add-on') cell = <span className="wf-addon">Add-on</span>;
+                        else                cell = <span className="wf-td-text hi">{v}</span>;
+                        return <td key={ci} className={`wf-cmp-td${featured ? ' wf-th-feat' : ''}`}>{cell}</td>;
+                      })}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </section>
