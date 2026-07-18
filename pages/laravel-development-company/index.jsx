@@ -79,13 +79,11 @@ export default function LaravelDevelopmentCompany() {
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
-  const [visibleECards, setVisibleECards] = useState([]);
   const stepRefs = useRef([]);
   const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
-  const eCardsRef = useRef(null);
 
   useEffect(() => {
     const observers = stepRefs.current.map((el, i) => {
@@ -147,20 +145,6 @@ export default function LaravelDevelopmentCompany() {
     return () => obs.disconnect();
   }, []);
 
-  useEffect(() => {
-    if (!eCardsRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          [0,1,2,3].forEach(i => setTimeout(() => setVisibleECards(p => p.includes(i)?p:[...p,i]), i * 130));
-          obs.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-    obs.observe(eCardsRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   useEffect(() => {
     const keys = Object.keys(sectionRefs.current);
@@ -346,24 +330,8 @@ export default function LaravelDevelopmentCompany() {
           .lv-why-card p { font-size:13px;color:#4A6080;line-height:1.7;margin:0; }
 
           .lv-engage-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08);padding:80px 40px;position:relative;z-index:1; }
-          .lv-engage-inner { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:stretch; }
-          .lv-engage-left { position:sticky;top:100px;display:flex;flex-direction:column; }
           .lv-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
           .lv-engage-desc { font-size:15px;color:#3A507A;line-height:1.75;margin:0 0 32px; }
-          .lv-engage-img-wrap { border-radius:14px;overflow:hidden;box-shadow:0 16px 48px rgba(15,52,96,0.15);flex:1;min-height:300px; }
-          .lv-engage-img-wrap img { width:100%;height:100%;min-height:300px;object-fit:cover;display:block; }
-          .lv-engage-right { display:flex;flex-direction:column;gap:16px; }
-          .lv-ecard { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:14px;padding:26px 28px;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95);opacity:0;transform:translateX(40px);transition:opacity 0.55s cubic-bezier(0.22,1,0.36,1),transform 0.55s cubic-bezier(0.22,1,0.36,1),background 0.3s,border-color 0.3s; }
-          .lv-ecard.lv-ecard-visible { opacity:1;transform:translateX(0); }
-          .lv-ecard.lv-ecard-visible:hover { border-color:rgba(217,119,6,0.45);box-shadow:0 16px 48px rgba(15,52,96,0.14),inset 0 1px 0 rgba(255,255,255,1);transform:translateX(4px); }
-          .lv-ecard-header { display:flex;align-items:center;gap:14px;margin-bottom:10px; }
-          .lv-ecard-icon { width:44px;height:44px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
-          .lv-ecard-icon svg { width:26px;height:26px;stroke:#D97706;fill:none; }
-          .lv-ecard-title { font-size:18px;font-weight:700;color:#0F3460;margin:0; }
-          .lv-ecard-desc { font-size:14px;color:#3A507A;line-height:1.65;margin:0 0 16px; }
-          .lv-ecard-features { display:grid;grid-template-columns:1fr 1fr;gap:8px 16px; }
-          .lv-efeat { display:flex;align-items:center;gap:8px;font-size:13px;color:#2A3F6F;font-weight:500; }
-          .lv-efeat-check { color:#D97706;font-size:12px;flex-shrink:0; }
 
           .lv-contact-section { padding:70px 40px;background:linear-gradient(135deg,rgba(254,243,199,0.70) 0%,rgba(255,255,255,0.60) 40%,rgba(219,234,254,0.65) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.80); }
           .lv-contact-container { max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;align-items:start;gap:32px; }
@@ -456,8 +424,6 @@ export default function LaravelDevelopmentCompany() {
             .lv-services-grid { grid-template-columns:repeat(2,1fr); }
             .lv-why-grid { grid-template-columns:repeat(2,1fr); }
             .lv-tech-groups { grid-template-columns:repeat(2,1fr); }
-            .lv-engage-inner { grid-template-columns:1fr; }
-            .lv-engage-left { position:static; }
             .lv-process-inner { grid-template-columns:1fr; }
             .lv-process-image-col { display:none; }
           }
@@ -520,8 +486,6 @@ export default function LaravelDevelopmentCompany() {
             .lv-contact-title { font-size:24px; }
             .lv-engage-title { font-size:26px; }
             .lv-tcard { padding:24px 20px; }
-            .lv-ecard { padding:20px; }
-            .lv-ecard-features { grid-template-columns:1fr; }
             .lv-merged-box { padding:18px; }
           }
         
@@ -735,43 +699,67 @@ export default function LaravelDevelopmentCompany() {
         </section>
 
         {/* ── ENGAGEMENT MODELS ── */}
-        <section className="lv-engage-section">
+        <section className="lv-engage-section" id="engagement">
           <div className="lv-engage-inner">
-            <div className="lv-engage-left">
-              <div className={`lv-section-reveal${visibleSections.has('engage') ? ' lv-revealed' : ''}`} ref={el => { sectionRefs.current['engage'] = el; }}>
-                <span className="lv-section-eyebrow">Engagement Models</span>
-                <h2 className="lv-engage-title">Flexible Engagement Models Built Around You</h2>
-                <p className="lv-engage-desc">We adapt to your project size, timeline, and budget. Whether you need a dedicated Laravel team, a fixed-price build, or flexible T&M, we provide full transparency and accountability at every step.</p>
-              </div>
-              <div className="lv-engage-img-wrap">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/Partner-with-us.jpg" alt="Partner With 1Solutions" />
-              </div>
+            <div className="lv-engage-header">
+              <span className="lv-section-eyebrow">How We Engage</span>
+              <h2 className="lv-engage-title">Flexible Engagement Models</h2>
+              <p className="lv-engage-desc">Pick the model that fits your project, team, and budget — every plan includes a free discovery call and NDA on request.</p>
             </div>
-            <div className="lv-engage-right" ref={eCardsRef}>
-              {[
-                { title:'Dedicated Team', desc:'Hire a full-time dedicated Laravel team - a senior developer, front-end engineer, and project manager working exclusively on your application with weekly reporting and demos.', features:['Cost-effective Approach','Less Admin Overhead','Rapid Feature Velocity','Timely Reporting'],
-                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> },
-                { title:'Fixed-Price', desc:'Ideal for clearly scoped Laravel projects - new applications, API builds, or migrations. Agreed deliverables, timeline, and cost upfront. No surprises, no hidden fees.', features:['Full Budget Control','Easy Management','No Hidden Costs','On-time Delivery'],
-                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> },
-                { title:'Time & Material', desc:'For evolving Laravel products where requirements change over time. Perfect for SaaS startups in discovery or ongoing feature development. Pay only for hours worked.', features:['Maximum Flexibility','Reduced Risk','Iterative Development','Full Transparency'],
-                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> },
-                { title:'Offshore Development', desc:'Leverage our New Delhi-based Laravel team for significant cost savings without quality compromise. Senior developers at offshore rates with US/AU timezone overlap available.', features:['Access to Expert Talent','Shared Responsibility','Managed Team','Cost-Efficient'],
-                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> },
-              ].map((e,i) => (
-                <div className={`lv-ecard${visibleECards.includes(i)?' lv-ecard-visible':''}`} key={e.title}>
-                  <div className="lv-ecard-header">
-                    <div className="lv-ecard-icon">{e.icon}</div>
-                    <h3 className="lv-ecard-title">{e.title}</h3>
-                  </div>
-                  <p className="lv-ecard-desc">{e.desc}</p>
-                  <div className="lv-ecard-features">
-                    {e.features.map(f => (
-                      <div className="lv-efeat" key={f}><span className="lv-efeat-check">✔</span>{f}</div>
-                    ))}
-                  </div>
-                </div>
-              ))}
+
+            <div className="lv-table-wrap">
+              <table className="lv-cmp-table">
+                <thead>
+                  <tr>
+                    <th className="lv-cmp-th"><span style={{fontSize:'12px',fontWeight:600,color:'#6B7280',textTransform:'uppercase',letterSpacing:'1px'}}>Feature</span></th>
+                    <th className="lv-cmp-th">
+                      <span className="lv-plan-badge">One-time</span>
+                      <span className="lv-cmp-plan-name">Fixed-Price</span>
+                      <span className="lv-cmp-plan-price">Project-based</span>
+                    </th>
+                    <th className="lv-cmp-th">
+                      <span className="lv-plan-badge">Flexible</span>
+                      <span className="lv-cmp-plan-name">Time &amp; Material</span>
+                      <span className="lv-cmp-plan-price">Hourly / weekly</span>
+                    </th>
+                    <th className="lv-cmp-th lv-th-feat">
+                      <span className="lv-popular-badge">Most Popular</span>
+                      <span className="lv-cmp-plan-name">Dedicated Team</span>
+                      <span className="lv-cmp-plan-price">From $3,000/mo</span>
+                    </th>
+                    <th className="lv-cmp-th">
+                      <span className="lv-plan-badge">Cost-efficient</span>
+                      <span className="lv-cmp-plan-name">Offshore Model</span>
+                      <span className="lv-cmp-plan-price">From $2,000/mo</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Best For',               'Scoped builds',      'Evolving projects',  'Long-term products', 'Cost savings'],
+                    ['Timeline',               '4–12 weeks',          'Flexible',           'Ongoing',            'Ongoing'],
+                    ['Budget Predictability',  '✓',                 'Flexible',           '✓',                '✓'],
+                    ['Scope Changes Mid-way',  '✕',                 '✓',                '✓',                '✓'],
+                    ['Dedicated Developer',    '✕',                 '✕',                '✓',                '✓'],
+                    ['Priority Support',       '✕',                 '✓',                '✓',                '✕'],
+                    ['Daily Standups',         '✕',                 '✕',                '✓',                '✓'],
+                    ['NDA & IP Protection',    '✓',                 '✓',                '✓',                '✓'],
+                    ['Free Discovery Call',    '✓',                 '✓',                '✓',                '✓'],
+                  ].map(([label, ...cols]) => (
+                    <tr key={label}>
+                      <td className="lv-cmp-td">{label}</td>
+                      {cols.map((v, ci) => {
+                        const featured = ci === 2;
+                        let cell;
+                        if (v === '✓')      cell = <span className="lv-tick">✓</span>;
+                        else if (v === '✕') cell = <span className="lv-cross">—</span>;
+                        else                cell = <span className="lv-td-text hi">{v}</span>;
+                        return <td key={ci} className={`lv-cmp-td${featured ? ' lv-th-feat' : ''}`}>{cell}</td>;
+                      })}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </section>

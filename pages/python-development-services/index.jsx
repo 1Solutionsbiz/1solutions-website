@@ -79,13 +79,11 @@ export default function PythonDevelopmentServices() {
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
-  const [visibleECards, setVisibleECards] = useState([]);
   const stepRefs = useRef([]);
   const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
-  const eCardsRef = useRef(null);
 
   useEffect(() => {
     const observers = stepRefs.current.map((el, i) => {
@@ -147,20 +145,6 @@ export default function PythonDevelopmentServices() {
     return () => obs.disconnect();
   }, []);
 
-  useEffect(() => {
-    if (!eCardsRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          [0,1,2,3].forEach(i => setTimeout(() => setVisibleECards(p => p.includes(i)?p:[...p,i]), i * 130));
-          obs.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-    obs.observe(eCardsRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   useEffect(() => {
     const keys = Object.keys(sectionRefs.current);
@@ -356,27 +340,35 @@ export default function PythonDevelopmentServices() {
           .py-why-card h3 { font-size:15px;font-weight:700;color:#0F1F40;margin:0;line-height:1.35; }
           .py-why-card p { font-size:13px;color:#4A6080;line-height:1.7;margin:0; }
 
-          /* Engagement */
+          /* Engagement Table */
           .py-engage-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08);padding:80px 40px;position:relative;z-index:1; }
-          .py-engage-inner { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:stretch; }
-          .py-engage-left { position:sticky;top:100px;display:flex;flex-direction:column; }
-          .py-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
-          .py-engage-desc { font-size:15px;color:#3A507A;line-height:1.75;margin:0 0 32px; }
-          .py-engage-img-wrap { border-radius:14px;overflow:hidden;box-shadow:0 16px 48px rgba(15,52,96,0.15);flex:1;min-height:300px; }
-          .py-engage-img-wrap img { width:100%;height:100%;min-height:300px;object-fit:cover;display:block; }
-          .py-engage-right { display:flex;flex-direction:column;gap:16px; }
-          .py-ecard { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:14px;padding:26px 28px;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95);opacity:0;transform:translateX(40px);transition:opacity 0.55s cubic-bezier(0.22,1,0.36,1),transform 0.55s cubic-bezier(0.22,1,0.36,1),background 0.3s,border-color 0.3s; }
-          .py-ecard:hover { border-color:rgba(217,119,6,0.45);box-shadow:0 16px 48px rgba(15,52,96,0.14),inset 0 1px 0 rgba(255,255,255,1);transform:translateX(4px); }
-          .py-ecard.py-ecard-visible { opacity:1;transform:translateX(0); }
-          .py-ecard.py-ecard-visible:hover { transform:translateX(4px); }
-          .py-ecard-header { display:flex;align-items:center;gap:14px;margin-bottom:10px; }
-          .py-ecard-icon { width:44px;height:44px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
-          .py-ecard-icon svg { width:26px;height:26px;stroke:#D97706;fill:none; }
-          .py-ecard-title { font-size:18px;font-weight:700;color:#0F3460;margin:0; }
-          .py-ecard-desc { font-size:14px;color:#3A507A;line-height:1.65;margin:0 0 16px; }
-          .py-ecard-features { display:grid;grid-template-columns:1fr 1fr;gap:8px 16px; }
-          .py-efeat { display:flex;align-items:center;gap:8px;font-size:13px;color:#2A3F6F;font-weight:500; }
-          .py-efeat-check { color:#D97706;font-size:12px;flex-shrink:0; }
+          .py-engage-inner { max-width:1280px;margin:0 auto; }
+          .py-engage-header { text-align:center;margin-bottom:52px; }
+          .py-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 14px; }
+          .py-engage-desc { font-size:15px;color:#3A507A;line-height:1.7;max-width:640px;margin:0 auto; }
+          .py-table-wrap { background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);border-radius:24px;box-shadow:0 8px 40px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,0.95);overflow-x:auto; }
+          .py-cmp-table { width:100%;border-collapse:collapse;min-width:680px; }
+          .py-cmp-table thead tr { border-bottom:2px solid rgba(15,52,96,0.10); }
+          .py-cmp-th { padding:30px 20px 26px;text-align:center;vertical-align:top; }
+          .py-cmp-th:first-child { text-align:left;padding-left:32px;min-width:180px; }
+          .py-cmp-th.py-th-feat { background:linear-gradient(180deg,rgba(254,243,199,0.55) 0%,rgba(255,255,255,0.20) 100%);border-left:1px solid rgba(217,119,6,0.20);border-right:1px solid rgba(217,119,6,0.20); }
+          .py-popular-badge { display:inline-block;font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:#D97706;color:#fff;padding:3px 10px;border-radius:20px;margin-bottom:10px; }
+          .py-plan-badge { display:inline-block;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:10px;background:rgba(15,52,96,0.08);color:#4A6080; }
+          .py-cmp-plan-name { display:block;font-size:15px;font-weight:800;color:#0F3460;margin-bottom:4px;line-height:1.3; }
+          .py-cmp-th.py-th-feat .py-cmp-plan-name { color:#D97706; }
+          .py-cmp-plan-price { display:block;font-size:12px;color:#6B7280;font-weight:500; }
+          .py-cmp-table tbody tr { border-bottom:1px solid rgba(15,52,96,0.06);transition:background 0.15s; }
+          .py-cmp-table tbody tr:last-child { border-bottom:none; }
+          .py-cmp-table tbody tr:nth-child(odd) { background:rgba(15,52,96,0.018); }
+          .py-cmp-table tbody tr:hover { background:rgba(99,130,255,0.05); }
+          .py-cmp-td { padding:15px 20px;text-align:center;vertical-align:middle;font-size:13px;color:#4A6080; }
+          .py-cmp-td:first-child { text-align:left;padding-left:32px;font-size:13px;font-weight:600;color:#1e293b; }
+          .py-cmp-td.py-th-feat { background:rgba(254,243,199,0.22);border-left:1px solid rgba(217,119,6,0.15);border-right:1px solid rgba(217,119,6,0.15); }
+          .py-tick { color:#16a34a;font-size:17px;line-height:1; }
+          .py-cross { color:#d1d5db;font-size:16px;line-height:1; }
+          .py-addon { display:inline-block;font-size:11px;color:#D97706;font-weight:600;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.28);border-radius:4px;padding:2px 8px;white-space:nowrap; }
+          .py-td-text { font-size:12px;color:#4A6080;white-space:nowrap; }
+          .py-td-text.hi { color:#0F3460;font-weight:600; }
 
           /* Contact */
           .py-contact-section { padding:70px 40px;background:linear-gradient(135deg,rgba(254,243,199,0.70) 0%,rgba(255,255,255,0.60) 40%,rgba(219,234,254,0.65) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.80); }
@@ -476,8 +468,6 @@ export default function PythonDevelopmentServices() {
             .py-services-grid { grid-template-columns:repeat(2,1fr); }
             .py-why-grid { grid-template-columns:repeat(2,1fr); }
             .py-tech-groups { grid-template-columns:repeat(2,1fr); }
-            .py-engage-inner { grid-template-columns:1fr; }
-            .py-engage-left { position:static; }
             .py-process-inner { grid-template-columns:1fr; }
             .py-process-image-col { display:none; }
           }
@@ -541,8 +531,6 @@ export default function PythonDevelopmentServices() {
             .py-contact-title { font-size:24px; }
             .py-engage-title { font-size:26px; }
             .py-tcard { padding:24px 20px; }
-            .py-ecard { padding:20px; }
-            .py-ecard-features { grid-template-columns:1fr; }
             .py-merged-box { padding:18px; }
           }
         
@@ -756,43 +744,67 @@ export default function PythonDevelopmentServices() {
         </section>
 
         {/* ── ENGAGEMENT MODELS ── */}
-        <section className="py-engage-section">
+        <section className="py-engage-section" id="engagement">
           <div className="py-engage-inner">
-            <div className="py-engage-left">
-              <div className={`py-section-reveal${visibleSections.has('engage') ? ' py-revealed' : ''}`} ref={el => { sectionRefs.current['engage'] = el; }}>
-                <span className="py-section-eyebrow">Engagement Models</span>
-                <h2 className="py-engage-title">Flexible Engagement Models Built Around You</h2>
-                <p className="py-engage-desc">We adapt to your project, timeline, and budget. Whether you need a dedicated Python team, a fixed-price build, or flexible T&M, we offer full transparency at every step.</p>
-              </div>
-              <div className="py-engage-img-wrap">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/Partner-with-us.jpg" alt="Partner With 1Solutions" />
-              </div>
+            <div className="py-engage-header">
+              <span className="py-section-eyebrow">How We Engage</span>
+              <h2 className="py-engage-title">Flexible Engagement Models</h2>
+              <p className="py-engage-desc">Pick the model that fits your project, team, and budget — every plan includes a free discovery call and NDA on request.</p>
             </div>
-            <div className="py-engage-right" ref={eCardsRef}>
-              {[
-                { title:'Dedicated Team', desc:'Hire a full-time dedicated Python team - a senior developer, ML engineer, or data scientist working exclusively on your product with a dedicated project manager.', features:['Cost-effective Approach','Less Admin Overhead','Rapid Iteration','Timely Reporting'],
-                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> },
-                { title:'Fixed-Price', desc:'Ideal for clearly scoped Python projects - automation tools, APIs, data dashboards. We agree on deliverables, timeline, and cost upfront. No surprises.', features:['Full Budget Control','Easy Management','No Hidden Costs','On-time Delivery'],
-                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> },
-                { title:'Time & Material', desc:'For evolving Python projects - ML experiments, iterative product development, or ongoing data engineering. Pay only for hours worked with full visibility.', features:['Maximum Flexibility','Reduced Risk','Iterative Development','Full Transparency'],
-                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> },
-                { title:'Offshore Development', desc:'Leverage our New Delhi-based Python team for significant cost savings. US/AU timezone overlap available. Expert developers at offshore rates without quality compromise.', features:['Access to Expert Talent','Shared Responsibility','Managed Team','Cost-Efficient'],
-                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> },
-              ].map((e,i) => (
-                <div className={`py-ecard${visibleECards.includes(i)?' py-ecard-visible':''}`} key={e.title}>
-                  <div className="py-ecard-header">
-                    <div className="py-ecard-icon">{e.icon}</div>
-                    <h3 className="py-ecard-title">{e.title}</h3>
-                  </div>
-                  <p className="py-ecard-desc">{e.desc}</p>
-                  <div className="py-ecard-features">
-                    {e.features.map(f => (
-                      <div className="py-efeat" key={f}><span className="py-efeat-check">✔</span>{f}</div>
-                    ))}
-                  </div>
-                </div>
-              ))}
+
+            <div className="py-table-wrap">
+              <table className="py-cmp-table">
+                <thead>
+                  <tr>
+                    <th className="py-cmp-th"><span style={{fontSize:'12px',fontWeight:600,color:'#6B7280',textTransform:'uppercase',letterSpacing:'1px'}}>Feature</span></th>
+                    <th className="py-cmp-th">
+                      <span className="py-plan-badge">One-time</span>
+                      <span className="py-cmp-plan-name">Fixed-Price</span>
+                      <span className="py-cmp-plan-price">Project-based</span>
+                    </th>
+                    <th className="py-cmp-th">
+                      <span className="py-plan-badge">Flexible</span>
+                      <span className="py-cmp-plan-name">Time &amp; Material</span>
+                      <span className="py-cmp-plan-price">Hourly / weekly</span>
+                    </th>
+                    <th className="py-cmp-th py-th-feat">
+                      <span className="py-popular-badge">Most Popular</span>
+                      <span className="py-cmp-plan-name">Dedicated Team</span>
+                      <span className="py-cmp-plan-price">From $3,000/mo</span>
+                    </th>
+                    <th className="py-cmp-th">
+                      <span className="py-plan-badge">Cost-efficient</span>
+                      <span className="py-cmp-plan-name">Offshore Model</span>
+                      <span className="py-cmp-plan-price">From $2,000/mo</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Best For',               'Scoped builds',      'Evolving projects',  'Long-term products', 'Cost savings'],
+                    ['Timeline',               '4–12 weeks',          'Flexible',           'Ongoing',            'Ongoing'],
+                    ['Budget Predictability',  '✓',                 'Flexible',           '✓',                '✓'],
+                    ['Scope Changes Mid-way',  '✕',                 '✓',                '✓',                '✓'],
+                    ['Dedicated Developer',    '✕',                 '✕',                '✓',                '✓'],
+                    ['Priority Support',       '✕',                 '✓',                '✓',                '✕'],
+                    ['Daily Standups',         '✕',                 '✕',                '✓',                '✓'],
+                    ['NDA & IP Protection',    '✓',                 '✓',                '✓',                '✓'],
+                    ['Free Discovery Call',    '✓',                 '✓',                '✓',                '✓'],
+                  ].map(([label, ...cols]) => (
+                    <tr key={label}>
+                      <td className="py-cmp-td">{label}</td>
+                      {cols.map((v, ci) => {
+                        const featured = ci === 2;
+                        let cell;
+                        if (v === '✓')      cell = <span className="py-tick">✓</span>;
+                        else if (v === '✕') cell = <span className="py-cross">—</span>;
+                        else                cell = <span className="py-td-text hi">{v}</span>;
+                        return <td key={ci} className={`py-cmp-td${featured ? ' py-th-feat' : ''}`}>{cell}</td>;
+                      })}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </section>

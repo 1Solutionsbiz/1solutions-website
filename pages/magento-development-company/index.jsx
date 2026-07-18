@@ -80,13 +80,11 @@ export default function MagentoDevelopmentCompany() {
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
-  const [visibleECards, setVisibleECards] = useState([]);
   const stepRefs = useRef([]);
   const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
-  const eCardsRef = useRef(null);
 
   useEffect(() => {
     const observers = stepRefs.current.map((el, i) => {
@@ -146,20 +144,6 @@ export default function MagentoDevelopmentCompany() {
     return () => obs.disconnect();
   }, []);
 
-  useEffect(() => {
-    if (!eCardsRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          [0,1,2,3].forEach(i => setTimeout(() => setVisibleECards(p => p.includes(i)?p:[...p,i]), i * 130));
-          obs.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-    obs.observe(eCardsRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   useEffect(() => {
     const keys = Object.keys(sectionRefs.current);
@@ -359,26 +343,35 @@ export default function MagentoDevelopmentCompany() {
           .mag-why-card h3 { font-size:15px;font-weight:700;color:#1c0a00;margin:0;line-height:1.35; }
           .mag-why-card p { font-size:13px;color:#57340a;line-height:1.7;margin:0; }
 
-          /* Engagement */
-          .mag-engage-section { background:#fff7ed;border-top:1px solid rgba(194,65,12,0.08);border-bottom:1px solid rgba(194,65,12,0.08);padding:80px 40px;position:relative;z-index:1; }
-          .mag-engage-inner { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:stretch; }
-          .mag-engage-left { position:sticky;top:100px;display:flex;flex-direction:column; }
-          .mag-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
-          .mag-engage-desc { font-size:15px;color:#57340a;line-height:1.75;margin:0 0 32px; }
-          .mag-engage-img-wrap { border-radius:14px;overflow:hidden;box-shadow:0 16px 48px rgba(194,65,12,0.14);flex:1;min-height:300px; }
-          .mag-engage-img-wrap img { width:100%;height:100%;min-height:300px;object-fit:cover;display:block; }
-          .mag-engage-right { display:flex;flex-direction:column;gap:16px; }
-          .mag-ecard { background:linear-gradient(135deg,rgba(255,237,213,0.60) 0%,rgba(255,255,255,0.85) 60%,rgba(254,243,199,0.45) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.90);border-radius:14px;padding:26px 28px;box-shadow:0 4px 24px rgba(194,65,12,0.07),inset 0 1px 0 rgba(255,255,255,0.95);opacity:0;transform:translateX(40px);transition:opacity 0.55s cubic-bezier(0.22,1,0.36,1),transform 0.55s cubic-bezier(0.22,1,0.36,1),border-color 0.3s,box-shadow 0.3s; }
-          .mag-ecard.mag-ecard-visible { opacity:1;transform:translateX(0); }
-          .mag-ecard:hover { border-color:rgba(194,65,12,0.38);box-shadow:0 16px 48px rgba(194,65,12,0.14),inset 0 1px 0 rgba(255,255,255,1);transform:translateX(4px); }
-          .mag-ecard-header { display:flex;align-items:center;gap:14px;margin-bottom:10px; }
-          .mag-ecard-icon { width:44px;height:44px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
-          .mag-ecard-icon svg { width:26px;height:26px;stroke:#c2410c;fill:none; }
-          .mag-ecard-title { font-size:18px;font-weight:700;color:#9a3412;margin:0; }
-          .mag-ecard-desc { font-size:14px;color:#57340a;line-height:1.65;margin:0 0 16px; }
-          .mag-ecard-features { display:grid;grid-template-columns:1fr 1fr;gap:8px 16px; }
-          .mag-efeat { display:flex;align-items:center;gap:8px;font-size:13px;color:#7c2d12;font-weight:500; }
-          .mag-efeat-check { color:#c2410c;font-size:12px;flex-shrink:0; }
+          /* Engagement Table */
+          .mag-engage-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08);padding:80px 40px;position:relative;z-index:1; }
+          .mag-engage-inner { max-width:1280px;margin:0 auto; }
+          .mag-engage-header { text-align:center;margin-bottom:52px; }
+          .mag-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 14px; }
+          .mag-engage-desc { font-size:15px;color:#3A507A;line-height:1.7;max-width:640px;margin:0 auto; }
+          .mag-table-wrap { background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);border-radius:24px;box-shadow:0 8px 40px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,0.95);overflow-x:auto; }
+          .mag-cmp-table { width:100%;border-collapse:collapse;min-width:680px; }
+          .mag-cmp-table thead tr { border-bottom:2px solid rgba(15,52,96,0.10); }
+          .mag-cmp-th { padding:30px 20px 26px;text-align:center;vertical-align:top; }
+          .mag-cmp-th:first-child { text-align:left;padding-left:32px;min-width:180px; }
+          .mag-cmp-th.mag-th-feat { background:linear-gradient(180deg,rgba(254,243,199,0.55) 0%,rgba(255,255,255,0.20) 100%);border-left:1px solid rgba(217,119,6,0.20);border-right:1px solid rgba(217,119,6,0.20); }
+          .mag-popular-badge { display:inline-block;font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:#D97706;color:#fff;padding:3px 10px;border-radius:20px;margin-bottom:10px; }
+          .mag-plan-badge { display:inline-block;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:10px;background:rgba(15,52,96,0.08);color:#4A6080; }
+          .mag-cmp-plan-name { display:block;font-size:15px;font-weight:800;color:#0F3460;margin-bottom:4px;line-height:1.3; }
+          .mag-cmp-th.mag-th-feat .mag-cmp-plan-name { color:#D97706; }
+          .mag-cmp-plan-price { display:block;font-size:12px;color:#6B7280;font-weight:500; }
+          .mag-cmp-table tbody tr { border-bottom:1px solid rgba(15,52,96,0.06);transition:background 0.15s; }
+          .mag-cmp-table tbody tr:last-child { border-bottom:none; }
+          .mag-cmp-table tbody tr:nth-child(odd) { background:rgba(15,52,96,0.018); }
+          .mag-cmp-table tbody tr:hover { background:rgba(99,130,255,0.05); }
+          .mag-cmp-td { padding:15px 20px;text-align:center;vertical-align:middle;font-size:13px;color:#4A6080; }
+          .mag-cmp-td:first-child { text-align:left;padding-left:32px;font-size:13px;font-weight:600;color:#1e293b; }
+          .mag-cmp-td.mag-th-feat { background:rgba(254,243,199,0.22);border-left:1px solid rgba(217,119,6,0.15);border-right:1px solid rgba(217,119,6,0.15); }
+          .mag-tick { color:#16a34a;font-size:17px;line-height:1; }
+          .mag-cross { color:#d1d5db;font-size:16px;line-height:1; }
+          .mag-addon { display:inline-block;font-size:11px;color:#D97706;font-weight:600;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.28);border-radius:4px;padding:2px 8px;white-space:nowrap; }
+          .mag-td-text { font-size:12px;color:#4A6080;white-space:nowrap; }
+          .mag-td-text.hi { color:#0F3460;font-weight:600; }
 
           /* Contact */
           .mag-contact-section { padding:70px 40px;background:linear-gradient(135deg,rgba(255,237,213,0.75) 0%,rgba(255,255,255,0.65) 40%,rgba(254,243,199,0.70) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.85); }
@@ -480,8 +473,6 @@ export default function MagentoDevelopmentCompany() {
             .mag-why-grid { grid-template-columns:repeat(2,1fr); }
             .mag-portfolio-grid { grid-template-columns:repeat(2,1fr); }
             .mag-portfolio-wrap { padding:32px 28px 40px; }
-            .mag-engage-inner { grid-template-columns:1fr; }
-            .mag-engage-left { position:static; }
             .mag-process-inner { grid-template-columns:1fr; }
             .mag-process-image-col { display:none; }
           }
@@ -549,8 +540,6 @@ export default function MagentoDevelopmentCompany() {
             .mag-contact-title { font-size:24px; }
             .mag-engage-title { font-size:26px; }
             .mag-tcard { padding:24px 20px; }
-            .mag-ecard { padding:20px; }
-            .mag-ecard-features { grid-template-columns:1fr; }
             .mag-merged-box { padding:18px; }
           }
         
@@ -766,43 +755,67 @@ export default function MagentoDevelopmentCompany() {
         </section>
 
         {/* ── ENGAGEMENT MODELS ── */}
-        <section className="mag-engage-section">
+        <section className="mag-engage-section" id="engagement">
           <div className="mag-engage-inner">
-            <div className="mag-engage-left">
-              <div className={`mag-section-reveal${visibleSections.has('engage') ? ' mag-revealed' : ''}`} ref={el => { sectionRefs.current['engage'] = el; }}>
-                <span className="mag-section-eyebrow">Engagement Models</span>
-                <h2 className="mag-engage-title">Flexible Engagement Models Built Around You</h2>
-                <p className="mag-engage-desc">Whether you need a full Magento build, a migration, an ongoing development partner, or a dedicated extension team - we offer engagement models that match your scale, timeline, and budget.</p>
-              </div>
-              <div className="mag-engage-img-wrap">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/Partner-with-us.jpg" alt="Partner With 1Solutions" />
-              </div>
+            <div className="mag-engage-header">
+              <span className="mag-section-eyebrow">How We Engage</span>
+              <h2 className="mag-engage-title">Flexible Engagement Models</h2>
+              <p className="mag-engage-desc">Pick the model that fits your project, team, and budget — every plan includes a free discovery call and NDA on request.</p>
             </div>
-            <div className="mag-engage-right" ref={eCardsRef}>
-              {[
-                { title:'Dedicated Team', desc:'Hire a full-time dedicated Magento development team - certified developers and a project manager working exclusively on your store for as long as you need.', features:['Full Magento Expertise','Dedicated Project Manager','Transparent Reporting','Scalable Team Size'],
-                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> },
-                { title:'Fixed-Price Project', desc:'For well-defined Magento builds and migrations with a clear scope. We agree on deliverables, timeline, and cost upfront - no surprises, no overruns.', features:['Complete Budget Control','Defined Deliverables','No Hidden Costs','On-time Launch'],
-                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> },
-                { title:'Time & Material', desc:'For complex or evolving Magento projects where requirements emerge iteratively. Pay for hours worked with full sprint-level visibility into progress and spend.', features:['Maximum Flexibility','Iterative Development','Sprint Reviews','Transparent Billing'],
-                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> },
-                { title:'Managed Support Retainer', desc:'Ongoing monthly retainer covering security patches, performance monitoring, Magento upgrades, bug fixes, and new feature development for live stores.', features:['Priority Security Patches','Performance Monitoring','Monthly Development Hours','Dedicated SLA'],
-                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> },
-              ].map((e,i) => (
-                <div className={`mag-ecard${visibleECards.includes(i)?' mag-ecard-visible':''}`} key={e.title}>
-                  <div className="mag-ecard-header">
-                    <div className="mag-ecard-icon">{e.icon}</div>
-                    <h3 className="mag-ecard-title">{e.title}</h3>
-                  </div>
-                  <p className="mag-ecard-desc">{e.desc}</p>
-                  <div className="mag-ecard-features">
-                    {e.features.map(f => (
-                      <div className="mag-efeat" key={f}><span className="mag-efeat-check">✔</span>{f}</div>
-                    ))}
-                  </div>
-                </div>
-              ))}
+
+            <div className="mag-table-wrap">
+              <table className="mag-cmp-table">
+                <thead>
+                  <tr>
+                    <th className="mag-cmp-th"><span style={{fontSize:'12px',fontWeight:600,color:'#6B7280',textTransform:'uppercase',letterSpacing:'1px'}}>Feature</span></th>
+                    <th className="mag-cmp-th">
+                      <span className="mag-plan-badge">One-time</span>
+                      <span className="mag-cmp-plan-name">Fixed-Price</span>
+                      <span className="mag-cmp-plan-price">Project-based</span>
+                    </th>
+                    <th className="mag-cmp-th">
+                      <span className="mag-plan-badge">Flexible</span>
+                      <span className="mag-cmp-plan-name">Time &amp; Material</span>
+                      <span className="mag-cmp-plan-price">Hourly / weekly</span>
+                    </th>
+                    <th className="mag-cmp-th mag-th-feat">
+                      <span className="mag-popular-badge">Most Popular</span>
+                      <span className="mag-cmp-plan-name">Dedicated Team</span>
+                      <span className="mag-cmp-plan-price">From $3,000/mo</span>
+                    </th>
+                    <th className="mag-cmp-th">
+                      <span className="mag-plan-badge">Cost-efficient</span>
+                      <span className="mag-cmp-plan-name">Offshore Model</span>
+                      <span className="mag-cmp-plan-price">From $2,000/mo</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Best For',               'Scoped builds',      'Evolving projects',  'Long-term products', 'Cost savings'],
+                    ['Timeline',               '4–12 weeks',          'Flexible',           'Ongoing',            'Ongoing'],
+                    ['Budget Predictability',  '✓',                 'Flexible',           '✓',                '✓'],
+                    ['Scope Changes Mid-way',  '✕',                 '✓',                '✓',                '✓'],
+                    ['Dedicated Developer',    '✕',                 '✕',                '✓',                '✓'],
+                    ['Priority Support',       '✕',                 '✓',                '✓',                '✕'],
+                    ['Daily Standups',         '✕',                 '✕',                '✓',                '✓'],
+                    ['NDA & IP Protection',    '✓',                 '✓',                '✓',                '✓'],
+                    ['Free Discovery Call',    '✓',                 '✓',                '✓',                '✓'],
+                  ].map(([label, ...cols]) => (
+                    <tr key={label}>
+                      <td className="mag-cmp-td">{label}</td>
+                      {cols.map((v, ci) => {
+                        const featured = ci === 2;
+                        let cell;
+                        if (v === '✓')      cell = <span className="mag-tick">✓</span>;
+                        else if (v === '✕') cell = <span className="mag-cross">—</span>;
+                        else                cell = <span className="mag-td-text hi">{v}</span>;
+                        return <td key={ci} className={`mag-cmp-td${featured ? ' mag-th-feat' : ''}`}>{cell}</td>;
+                      })}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </section>

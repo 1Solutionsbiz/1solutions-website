@@ -80,13 +80,11 @@ export default function HeadlessWordPressDevelopment() {
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
-  const [visibleECards, setVisibleECards] = useState([]);
   const stepRefs = useRef([]);
   const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
-  const eCardsRef = useRef(null);
 
   useEffect(() => {
     const observers = stepRefs.current.map((el, i) => {
@@ -146,20 +144,6 @@ export default function HeadlessWordPressDevelopment() {
     return () => obs.disconnect();
   }, []);
 
-  useEffect(() => {
-    if (!eCardsRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          [0,1,2,3].forEach(i => setTimeout(() => setVisibleECards(p => p.includes(i)?p:[...p,i]), i * 130));
-          obs.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-    obs.observe(eCardsRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   useEffect(() => {
     const keys = Object.keys(sectionRefs.current);
@@ -392,38 +376,35 @@ export default function HeadlessWordPressDevelopment() {
           .hwp-why-card h3 { font-size:14px;font-weight:700;color:#0F1F40;line-height:1.35;margin:0; }
           .hwp-why-card p { font-size:13px;color:#4A6080;line-height:1.65;margin:0; }
 
-          /* Engagement */
-          .hwp-engage-section { padding:80px 40px;position:relative;z-index:1; }
+          /* Engagement Table */
+          .hwp-engage-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08);padding:80px 40px;position:relative;z-index:1; }
           .hwp-engage-inner { max-width:1280px;margin:0 auto; }
-          .hwp-engage-title { font-size:40px;font-weight:900;line-height:1.15;letter-spacing:-0.8px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
-          .hwp-engage-desc { font-size:15px;color:#4A6080;line-height:1.75;max-width:680px; }
-          .hwp-eng-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px; }
-          .hwp-eng-card { background:linear-gradient(135deg,rgba(237,233,254,0.50) 0%,rgba(255,255,255,0.85) 55%,rgba(254,252,232,0.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:24px;padding:32px 28px;box-shadow:0 4px 24px rgba(76,29,149,0.08),inset 0 1px 0 rgba(255,255,255,0.95);opacity:0;transform:translateY(44px);transition:opacity 0.65s cubic-bezier(0.22,1,0.36,1),transform 0.65s cubic-bezier(0.22,1,0.36,1),border-color 0.2s,box-shadow 0.25s; }
-          .hwp-eng-card.hwp-eng-ev { opacity:1;transform:translateY(0); }
-          .hwp-eng-card.hwp-eng-ev:hover { border-color:rgba(76,29,149,0.25);box-shadow:0 16px 48px rgba(76,29,149,0.14); }
-          .hwp-eng-card.feat { background:linear-gradient(135deg,rgba(254,243,199,0.52) 0%,rgba(255,255,255,0.87) 55%,rgba(237,233,254,0.45) 100%);border-color:rgba(217,119,6,0.28);box-shadow:0 8px 32px rgba(217,119,6,0.12),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-8px); }
-          .hwp-eng-card.feat.hwp-eng-ev { transform:translateY(-8px); }
-          .hwp-eng-card.feat.hwp-eng-ev:hover { transform:translateY(-12px); }
-          .hwp-eng-badge { display:inline-block;font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:5px 12px;border-radius:100px;border:1px solid;margin-bottom:18px; }
-          .hwp-eng-icon { width:48px;height:48px;background:rgba(76,29,149,0.07);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;transition:background 0.2s; }
-          .hwp-eng-card.hwp-eng-ev:hover .hwp-eng-icon { background:rgba(76,29,149,0.14); }
-          .hwp-eng-card.feat .hwp-eng-icon { background:rgba(217,119,6,0.10); }
-          .hwp-eng-icon svg { fill:#4C1D95;transition:fill 0.2s; }
-          .hwp-eng-card.feat .hwp-eng-icon svg { fill:#D97706; }
-          .hwp-eng-name { font-size:22px;font-weight:900;color:#4C1D95;margin:0 0 6px;letter-spacing:-0.3px; }
-          .hwp-eng-headline { font-size:13px;font-weight:600;color:#D97706;margin-bottom:12px; }
-          .hwp-eng-desc { font-size:14px;color:#4A6080;line-height:1.7;margin-bottom:18px; }
-          .hwp-eng-list-label { font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#6A80A0;margin-bottom:8px; }
-          .hwp-eng-list { list-style:none;padding:0;margin:0 0 18px;display:flex;flex-direction:column;gap:7px; }
-          .hwp-eng-list li { display:flex;align-items:flex-start;gap:8px;font-size:13px;color:#374151;line-height:1.5; }
-          .hwp-eng-list li::before { content:'✓';font-weight:800;color:#4C1D95;flex-shrink:0;margin-top:1px; }
-          .hwp-eng-process { font-size:12px;color:#6A80A0;padding-top:14px;border-top:1px solid rgba(76,29,149,0.08); }
-          .hwp-eng-process strong { color:#4C1D95; }
-          .hwp-eng-timeline { display:inline-block;font-size:11px;font-weight:600;color:#D97706;margin-top:6px; }
-          .hwp-eng-cta { display:block;margin-top:18px;padding:11px;border-radius:50px;font-size:13px;font-weight:700;text-align:center;text-decoration:none;transition:all 0.22s;background:rgba(76,29,149,0.09);color:#4C1D95;border:1.5px solid rgba(76,29,149,0.18); }
-          .hwp-eng-cta:hover { background:#4C1D95;color:#fff; }
-          .hwp-eng-card.feat .hwp-eng-cta { background:#7C3AED;color:#fff;border-color:#7C3AED; }
-          .hwp-eng-card.feat .hwp-eng-cta:hover { background:#4C1D95;border-color:#4C1D95; }
+          .hwp-engage-header { text-align:center;margin-bottom:52px; }
+          .hwp-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 14px; }
+          .hwp-engage-desc { font-size:15px;color:#3A507A;line-height:1.7;max-width:640px;margin:0 auto; }
+          .hwp-table-wrap { background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);border-radius:24px;box-shadow:0 8px 40px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,0.95);overflow-x:auto; }
+          .hwp-cmp-table { width:100%;border-collapse:collapse;min-width:680px; }
+          .hwp-cmp-table thead tr { border-bottom:2px solid rgba(15,52,96,0.10); }
+          .hwp-cmp-th { padding:30px 20px 26px;text-align:center;vertical-align:top; }
+          .hwp-cmp-th:first-child { text-align:left;padding-left:32px;min-width:180px; }
+          .hwp-cmp-th.hwp-th-feat { background:linear-gradient(180deg,rgba(254,243,199,0.55) 0%,rgba(255,255,255,0.20) 100%);border-left:1px solid rgba(217,119,6,0.20);border-right:1px solid rgba(217,119,6,0.20); }
+          .hwp-popular-badge { display:inline-block;font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:#D97706;color:#fff;padding:3px 10px;border-radius:20px;margin-bottom:10px; }
+          .hwp-plan-badge { display:inline-block;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:10px;background:rgba(15,52,96,0.08);color:#4A6080; }
+          .hwp-cmp-plan-name { display:block;font-size:15px;font-weight:800;color:#0F3460;margin-bottom:4px;line-height:1.3; }
+          .hwp-cmp-th.hwp-th-feat .hwp-cmp-plan-name { color:#D97706; }
+          .hwp-cmp-plan-price { display:block;font-size:12px;color:#6B7280;font-weight:500; }
+          .hwp-cmp-table tbody tr { border-bottom:1px solid rgba(15,52,96,0.06);transition:background 0.15s; }
+          .hwp-cmp-table tbody tr:last-child { border-bottom:none; }
+          .hwp-cmp-table tbody tr:nth-child(odd) { background:rgba(15,52,96,0.018); }
+          .hwp-cmp-table tbody tr:hover { background:rgba(99,130,255,0.05); }
+          .hwp-cmp-td { padding:15px 20px;text-align:center;vertical-align:middle;font-size:13px;color:#4A6080; }
+          .hwp-cmp-td:first-child { text-align:left;padding-left:32px;font-size:13px;font-weight:600;color:#1e293b; }
+          .hwp-cmp-td.hwp-th-feat { background:rgba(254,243,199,0.22);border-left:1px solid rgba(217,119,6,0.15);border-right:1px solid rgba(217,119,6,0.15); }
+          .hwp-tick { color:#16a34a;font-size:17px;line-height:1; }
+          .hwp-cross { color:#d1d5db;font-size:16px;line-height:1; }
+          .hwp-addon { display:inline-block;font-size:11px;color:#D97706;font-weight:600;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.28);border-radius:4px;padding:2px 8px;white-space:nowrap; }
+          .hwp-td-text { font-size:12px;color:#4A6080;white-space:nowrap; }
+          .hwp-td-text.hi { color:#0F3460;font-weight:600; }
 
           /* Contact */
           .hwp-contact-section { background:linear-gradient(135deg,#4C1D95 0%,#312E81 60%,#1E1B4B 100%);padding:80px 40px;position:relative;z-index:2;overflow:hidden; }
@@ -755,61 +736,67 @@ export default function HeadlessWordPressDevelopment() {
         </section>
 
         {/* ── ENGAGEMENT MODELS ── */}
-        <section className="hwp-engage-section">
+        <section className="hwp-engage-section" id="engagement">
           <div className="hwp-engage-inner">
-            <div className={`hwp-section-reveal${visibleSections.has('engage') ? ' hwp-revealed' : ''}`} ref={el => { sectionRefs.current['engage'] = el; }}>
-              <span className="hwp-section-eyebrow">How to Hire</span>
-              <h2 className="hwp-engage-title">Engagement Models for Headless WordPress</h2>
-              <p className="hwp-engage-desc">Hire a dedicated headless developer for an ongoing roadmap, engage on a fixed-price project for a complete decoupled build, or take out a monthly retainer for ongoing improvements and support, whichever matches your project and budget.</p>
+            <div className="hwp-engage-header">
+              <span className="hwp-section-eyebrow">How We Engage</span>
+              <h2 className="hwp-engage-title">Flexible Engagement Models</h2>
+              <p className="hwp-engage-desc">Pick the model that fits your project, team, and budget — every plan includes a free discovery call and NDA on request.</p>
             </div>
-            <div className="hwp-eng-grid" ref={eCardsRef}>
-              {[
-                {
-                  id:'dedicated', feat:true,
-                  badge:'Most Popular', badgeColor:'#D97706',
-                  iconPath:'M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z',
-                  name:'Dedicated Developer',
-                  headline:'A full-time headless WordPress developer working exclusively on your project.',
-                  desc:'A dedicated Next.js and WPGraphQL developer working as an extension of your team. Full access to your codebase, Vercel deployments, and WordPress admin. Significantly lower cost than a local agency retainer or a full-time in-house hire.',
-                  bestFor:['Ongoing headless WordPress roadmap','Agencies needing a white-label Next.js developer','Performance-critical platforms needing continuous work','Replacing an expensive local agency at lower cost'],
-                  process:'Discovery, developer matching, sprint delivery, ongoing roadmap',
-                  timeline:'Developer available within 5 to 7 business days',
-                },
-                {
-                  id:'fixed', feat:false,
-                  badge:'Defined Scope', badgeColor:'#7C3AED',
-                  iconPath:'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z',
-                  name:'Fixed-Price Project',
-                  headline:'Agreed price, agreed scope, delivered on a fixed schedule.',
-                  desc:'Best for a well-defined headless WordPress build with a clear specification. Fixed price covering WPGraphQL setup, Next.js frontend, Vercel deployment, and launch. No scope creep, no surprise invoices.',
-                  bestFor:['New headless WordPress build from scratch','Traditional WordPress to headless migration','Headless WooCommerce storefront build','One-time performance and architecture overhaul'],
-                  process:'Detailed spec, fixed quote, milestone delivery, UAT, launch',
-                  timeline:'Best for 6 to 20 week projects',
-                },
-                {
-                  id:'retainer', feat:false,
-                  badge:'Flexible Ongoing', badgeColor:'#a855f7',
-                  iconPath:'M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z',
-                  name:'Monthly Retainer',
-                  headline:'Monthly headless dev hours for ongoing changes and improvements.',
-                  desc:'A monthly bank of Next.js and WPGraphQL developer hours for feature additions, content model changes, performance work, dependency updates, and emergency support, without a full dedicated team. Transparent hours reporting each month.',
-                  bestFor:['Live headless sites needing regular feature work','WPGraphQL schema updates and ACF changes','Core Web Vitals and performance monitoring','Flexible support without a full-time commitment'],
-                  process:'Monthly hours bank, ticket-based prioritisation, hours report, rolling rollover',
-                  timeline:'Start within 3 to 5 business days',
-                },
-              ].map((m, i) => (
-                <div key={m.id} className={`hwp-eng-card${m.feat ? ' feat' : ''}${visibleECards.includes(i) ? ' hwp-eng-ev' : ''}`} style={{ transitionDelay:`${i * 100}ms` }}>
-                  <span className="hwp-eng-badge" style={{ color:m.badgeColor, borderColor:m.badgeColor+'44', background:m.badgeColor+'14' }}>{m.badge}</span>
-                  <div className="hwp-eng-icon"><svg viewBox="0 0 24 24" width="26" height="26"><path d={m.iconPath} /></svg></div>
-                  <div className="hwp-eng-name">{m.name}</div>
-                  <div className="hwp-eng-headline">{m.headline}</div>
-                  <div className="hwp-eng-desc">{m.desc}</div>
-                  <div className="hwp-eng-list-label">Best for</div>
-                  <ul className="hwp-eng-list">{m.bestFor.map(b => <li key={b}>{b}</li>)}</ul>
-                  <div className="hwp-eng-process"><strong>Process:</strong> {m.process}<br /><span className="hwp-eng-timeline">{m.timeline}</span></div>
-                  <Link href="#contact" className="hwp-eng-cta">Get a free estimate</Link>
-                </div>
-              ))}
+
+            <div className="hwp-table-wrap">
+              <table className="hwp-cmp-table">
+                <thead>
+                  <tr>
+                    <th className="hwp-cmp-th"><span style={{fontSize:'12px',fontWeight:600,color:'#6B7280',textTransform:'uppercase',letterSpacing:'1px'}}>Feature</span></th>
+                    <th className="hwp-cmp-th">
+                      <span className="hwp-plan-badge">One-time</span>
+                      <span className="hwp-cmp-plan-name">Fixed-Price</span>
+                      <span className="hwp-cmp-plan-price">Project-based</span>
+                    </th>
+                    <th className="hwp-cmp-th">
+                      <span className="hwp-plan-badge">Flexible</span>
+                      <span className="hwp-cmp-plan-name">Time &amp; Material</span>
+                      <span className="hwp-cmp-plan-price">Hourly / weekly</span>
+                    </th>
+                    <th className="hwp-cmp-th hwp-th-feat">
+                      <span className="hwp-popular-badge">Most Popular</span>
+                      <span className="hwp-cmp-plan-name">Dedicated Team</span>
+                      <span className="hwp-cmp-plan-price">From $3,000/mo</span>
+                    </th>
+                    <th className="hwp-cmp-th">
+                      <span className="hwp-plan-badge">Cost-efficient</span>
+                      <span className="hwp-cmp-plan-name">Offshore Model</span>
+                      <span className="hwp-cmp-plan-price">From $2,000/mo</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Best For',               'Scoped builds',      'Evolving projects',  'Long-term products', 'Cost savings'],
+                    ['Timeline',               '4–12 weeks',          'Flexible',           'Ongoing',            'Ongoing'],
+                    ['Budget Predictability',  '✓',                 'Flexible',           '✓',                '✓'],
+                    ['Scope Changes Mid-way',  '✕',                 '✓',                '✓',                '✓'],
+                    ['Dedicated Developer',    '✕',                 '✕',                '✓',                '✓'],
+                    ['Priority Support',       '✕',                 '✓',                '✓',                '✕'],
+                    ['Daily Standups',         '✕',                 '✕',                '✓',                '✓'],
+                    ['NDA & IP Protection',    '✓',                 '✓',                '✓',                '✓'],
+                    ['Free Discovery Call',    '✓',                 '✓',                '✓',                '✓'],
+                  ].map(([label, ...cols]) => (
+                    <tr key={label}>
+                      <td className="hwp-cmp-td">{label}</td>
+                      {cols.map((v, ci) => {
+                        const featured = ci === 2;
+                        let cell;
+                        if (v === '✓')      cell = <span className="hwp-tick">✓</span>;
+                        else if (v === '✕') cell = <span className="hwp-cross">—</span>;
+                        else                cell = <span className="hwp-td-text hi">{v}</span>;
+                        return <td key={ci} className={`hwp-cmp-td${featured ? ' hwp-th-feat' : ''}`}>{cell}</td>;
+                      })}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </section>

@@ -98,13 +98,11 @@ export default function HtmlEmailDevelopmentServices() {
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
-  const [visibleECards, setVisibleECards] = useState([]);
   const stepRefs = useRef([]);
   const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
-  const eCardsRef = useRef(null);
 
   useEffect(() => {
     const observers = stepRefs.current.map((el, i) => {
@@ -164,20 +162,6 @@ export default function HtmlEmailDevelopmentServices() {
     return () => obs.disconnect();
   }, []);
 
-  useEffect(() => {
-    if (!eCardsRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          [0,1,2,3].forEach(i => setTimeout(() => setVisibleECards(p => p.includes(i) ? p : [...p, i]), i * 130));
-          obs.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-    obs.observe(eCardsRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   useEffect(() => {
     const keys = Object.keys(sectionRefs.current);
@@ -487,26 +471,35 @@ export default function HtmlEmailDevelopmentServices() {
           .he-why-card h3 { font-size:15px;font-weight:700;color:#0F1F40;margin:0;line-height:1.35; }
           .he-why-card p { font-size:13px;color:#4A6080;line-height:1.7;margin:0; }
 
-          /* Engagement */
+          /* Engagement Table */
           .he-engage-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08);padding:80px 40px;position:relative;z-index:1; }
-          .he-engage-inner { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:stretch; }
-          .he-engage-left { position:sticky;top:100px;display:flex;flex-direction:column; }
-          .he-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
-          .he-engage-desc { font-size:15px;color:#3A507A;line-height:1.75;margin:0 0 32px; }
-          .he-engage-img-wrap { border-radius:14px;overflow:hidden;box-shadow:0 16px 48px rgba(15,52,96,0.15);flex:1;min-height:300px; }
-          .he-engage-img-wrap img { width:100%;height:100%;min-height:300px;object-fit:cover;display:block; }
-          .he-engage-right { display:flex;flex-direction:column;gap:16px; }
-          .he-ecard { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:14px;padding:26px 28px;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95);opacity:0;transform:translateX(40px);transition:opacity 0.55s cubic-bezier(0.22,1,0.36,1),transform 0.55s cubic-bezier(0.22,1,0.36,1),border-color 0.3s; }
-          .he-ecard.he-ecard-visible { opacity:1;transform:translateX(0); }
-          .he-ecard:hover { border-color:rgba(217,119,6,0.45);box-shadow:0 16px 48px rgba(15,52,96,0.14),inset 0 1px 0 rgba(255,255,255,1);transform:translateX(4px); }
-          .he-ecard-header { display:flex;align-items:center;gap:14px;margin-bottom:10px; }
-          .he-ecard-icon { width:44px;height:44px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
-          .he-ecard-icon svg { width:26px;height:26px;stroke:#D97706;fill:none; }
-          .he-ecard-title { font-size:18px;font-weight:700;color:#0F3460;margin:0; }
-          .he-ecard-desc { font-size:14px;color:#3A507A;line-height:1.65;margin:0 0 16px; }
-          .he-ecard-features { display:grid;grid-template-columns:1fr 1fr;gap:8px 16px; }
-          .he-efeat { display:flex;align-items:center;gap:8px;font-size:13px;color:#2A3F6F;font-weight:500; }
-          .he-efeat-check { color:#D97706;font-size:12px;flex-shrink:0; }
+          .he-engage-inner { max-width:1280px;margin:0 auto; }
+          .he-engage-header { text-align:center;margin-bottom:52px; }
+          .he-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 14px; }
+          .he-engage-desc { font-size:15px;color:#3A507A;line-height:1.7;max-width:640px;margin:0 auto; }
+          .he-table-wrap { background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);border-radius:24px;box-shadow:0 8px 40px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,0.95);overflow-x:auto; }
+          .he-cmp-table { width:100%;border-collapse:collapse;min-width:680px; }
+          .he-cmp-table thead tr { border-bottom:2px solid rgba(15,52,96,0.10); }
+          .he-cmp-th { padding:30px 20px 26px;text-align:center;vertical-align:top; }
+          .he-cmp-th:first-child { text-align:left;padding-left:32px;min-width:180px; }
+          .he-cmp-th.he-th-feat { background:linear-gradient(180deg,rgba(254,243,199,0.55) 0%,rgba(255,255,255,0.20) 100%);border-left:1px solid rgba(217,119,6,0.20);border-right:1px solid rgba(217,119,6,0.20); }
+          .he-popular-badge { display:inline-block;font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:#D97706;color:#fff;padding:3px 10px;border-radius:20px;margin-bottom:10px; }
+          .he-plan-badge { display:inline-block;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:10px;background:rgba(15,52,96,0.08);color:#4A6080; }
+          .he-cmp-plan-name { display:block;font-size:15px;font-weight:800;color:#0F3460;margin-bottom:4px;line-height:1.3; }
+          .he-cmp-th.he-th-feat .he-cmp-plan-name { color:#D97706; }
+          .he-cmp-plan-price { display:block;font-size:12px;color:#6B7280;font-weight:500; }
+          .he-cmp-table tbody tr { border-bottom:1px solid rgba(15,52,96,0.06);transition:background 0.15s; }
+          .he-cmp-table tbody tr:last-child { border-bottom:none; }
+          .he-cmp-table tbody tr:nth-child(odd) { background:rgba(15,52,96,0.018); }
+          .he-cmp-table tbody tr:hover { background:rgba(99,130,255,0.05); }
+          .he-cmp-td { padding:15px 20px;text-align:center;vertical-align:middle;font-size:13px;color:#4A6080; }
+          .he-cmp-td:first-child { text-align:left;padding-left:32px;font-size:13px;font-weight:600;color:#1e293b; }
+          .he-cmp-td.he-th-feat { background:rgba(254,243,199,0.22);border-left:1px solid rgba(217,119,6,0.15);border-right:1px solid rgba(217,119,6,0.15); }
+          .he-tick { color:#16a34a;font-size:17px;line-height:1; }
+          .he-cross { color:#d1d5db;font-size:16px;line-height:1; }
+          .he-addon { display:inline-block;font-size:11px;color:#D97706;font-weight:600;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.28);border-radius:4px;padding:2px 8px;white-space:nowrap; }
+          .he-td-text { font-size:12px;color:#4A6080;white-space:nowrap; }
+          .he-td-text.hi { color:#0F3460;font-weight:600; }
 
           /* Contact */
           .he-contact-section { padding:70px 40px;background:linear-gradient(135deg,rgba(254,243,199,0.70) 0%,rgba(255,255,255,0.60) 40%,rgba(219,234,254,0.65) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.80); }
@@ -593,8 +586,6 @@ export default function HtmlEmailDevelopmentServices() {
             .he-why-grid { grid-template-columns:repeat(2,1fr); }
             .he-tech-grid { grid-template-columns:repeat(2,1fr); }
             .he-industry-grid { grid-template-columns:repeat(2,1fr); }
-            .he-engage-inner { grid-template-columns:1fr; }
-            .he-engage-left { position:static; }
             .he-process-inner { grid-template-columns:1fr; }
             .he-process-image-col { display:none; }
           }
@@ -662,8 +653,6 @@ export default function HtmlEmailDevelopmentServices() {
             .he-tech-grid { grid-template-columns:1fr; }
             .he-industry-grid { grid-template-columns:1fr; }
             .he-tcard { padding:24px 20px; }
-            .he-ecard { padding:20px; }
-            .he-ecard-features { grid-template-columns:1fr; }
             .he-merged-box { padding:18px; }
             .he-contact-title { font-size:24px; }
           }
@@ -964,41 +953,67 @@ export default function HtmlEmailDevelopmentServices() {
         </section>
 
         {/* ── ENGAGEMENT MODELS ── */}
-        <section className="he-engage-section">
+        <section className="he-engage-section" id="engagement">
           <div className="he-engage-inner">
-            <div className="he-engage-left">
-              <div className={`he-section-reveal${visibleSections.has('engage') ? ' he-revealed' : ''}`} ref={el => { sectionRefs.current['engage'] = el; }}>
-                <span className="he-section-eyebrow">Engagement Models</span>
-                <h2 className="he-engage-title">Flexible Engagement Models Built Around You</h2>
-                <p className="he-engage-desc">Whether you need a single template, a full suite, or ongoing monthly support — we offer engagement models that fit your send schedule, team size, and budget. Full transparency at every step.</p>
-              </div>
-              <div className="he-engage-img-wrap">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/Partner-with-us.jpg" alt="Partner With 1Solutions for Email Development" />
-              </div>
+            <div className="he-engage-header">
+              <span className="he-section-eyebrow">How We Engage</span>
+              <h2 className="he-engage-title">Flexible Engagement Models</h2>
+              <p className="he-engage-desc">Pick the model that fits your project, team, and budget — every plan includes a free discovery call and NDA on request.</p>
             </div>
-            <div className="he-engage-right" ref={eCardsRef}>
-              {[
-                { title:'One-Off Template', desc:'A single HTML email template — designed, hand-coded, and tested across 90+ clients. Perfect for a hero campaign, a new transactional trigger, or a seasonal send.', features:['Design mockup for approval','Hand-coded HTML','90+ client testing','ESP-ready delivery'],
-                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> },
-                { title:'Template Suite', desc:'A set of 5–20 branded email templates — welcome series, cart abandonment, receipts, newsletters — built to a consistent design system and delivered as a complete library.', features:['Consistent design system','Suite in 3–4 weeks','All ESP formats','Handoff guide included'],
-                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg> },
-                { title:'Monthly Retainer', desc:'Ongoing HTML email development support for teams who send regularly — new templates, edits, A/B variants, dark mode updates, and priority 2–3 day turnaround.', features:['Priority 2–3 day turnaround','New + edited templates','A/B variant builds','Dark mode maintenance'],
-                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg> },
-                { title:'Offshore Team', desc:'Dedicated offshore email developers from our New Delhi team — significant cost savings with no quality compromise. US/AU timezone overlap available on request.', features:['Cost-efficient','Dedicated developer','Full timezone overlap','Managed delivery'],
-                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> },
-              ].map((e, i) => (
-                <div className={`he-ecard${visibleECards.includes(i) ? ' he-ecard-visible' : ''}`} key={e.title}>
-                  <div className="he-ecard-header">
-                    <div className="he-ecard-icon">{e.icon}</div>
-                    <h3 className="he-ecard-title">{e.title}</h3>
-                  </div>
-                  <p className="he-ecard-desc">{e.desc}</p>
-                  <div className="he-ecard-features">
-                    {e.features.map(f => <div className="he-efeat" key={f}><span className="he-efeat-check">✔</span>{f}</div>)}
-                  </div>
-                </div>
-              ))}
+
+            <div className="he-table-wrap">
+              <table className="he-cmp-table">
+                <thead>
+                  <tr>
+                    <th className="he-cmp-th"><span style={{fontSize:'12px',fontWeight:600,color:'#6B7280',textTransform:'uppercase',letterSpacing:'1px'}}>Feature</span></th>
+                    <th className="he-cmp-th">
+                      <span className="he-plan-badge">One-time</span>
+                      <span className="he-cmp-plan-name">Fixed-Price</span>
+                      <span className="he-cmp-plan-price">Project-based</span>
+                    </th>
+                    <th className="he-cmp-th">
+                      <span className="he-plan-badge">Flexible</span>
+                      <span className="he-cmp-plan-name">Time &amp; Material</span>
+                      <span className="he-cmp-plan-price">Hourly / weekly</span>
+                    </th>
+                    <th className="he-cmp-th he-th-feat">
+                      <span className="he-popular-badge">Most Popular</span>
+                      <span className="he-cmp-plan-name">Dedicated Team</span>
+                      <span className="he-cmp-plan-price">From $3,000/mo</span>
+                    </th>
+                    <th className="he-cmp-th">
+                      <span className="he-plan-badge">Cost-efficient</span>
+                      <span className="he-cmp-plan-name">Offshore Model</span>
+                      <span className="he-cmp-plan-price">From $2,000/mo</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Best For',               'Scoped builds',      'Evolving projects',  'Long-term products', 'Cost savings'],
+                    ['Timeline',               '4–12 weeks',          'Flexible',           'Ongoing',            'Ongoing'],
+                    ['Budget Predictability',  '✓',                 'Flexible',           '✓',                '✓'],
+                    ['Scope Changes Mid-way',  '✕',                 '✓',                '✓',                '✓'],
+                    ['Dedicated Developer',    '✕',                 '✕',                '✓',                '✓'],
+                    ['Priority Support',       '✕',                 '✓',                '✓',                '✕'],
+                    ['Daily Standups',         '✕',                 '✕',                '✓',                '✓'],
+                    ['NDA & IP Protection',    '✓',                 '✓',                '✓',                '✓'],
+                    ['Free Discovery Call',    '✓',                 '✓',                '✓',                '✓'],
+                  ].map(([label, ...cols]) => (
+                    <tr key={label}>
+                      <td className="he-cmp-td">{label}</td>
+                      {cols.map((v, ci) => {
+                        const featured = ci === 2;
+                        let cell;
+                        if (v === '✓')      cell = <span className="he-tick">✓</span>;
+                        else if (v === '✕') cell = <span className="he-cross">—</span>;
+                        else                cell = <span className="he-td-text hi">{v}</span>;
+                        return <td key={ci} className={`he-cmp-td${featured ? ' he-th-feat' : ''}`}>{cell}</td>;
+                      })}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </section>

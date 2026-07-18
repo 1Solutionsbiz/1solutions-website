@@ -80,13 +80,11 @@ export default function AIAutomationServices() {
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
-  const [visibleECards, setVisibleECards] = useState([]);
   const stepRefs = useRef([]);
   const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
-  const eCardsRef = useRef(null);
 
   useEffect(() => {
     const observers = stepRefs.current.map((el, i) => {
@@ -148,20 +146,6 @@ export default function AIAutomationServices() {
     return () => obs.disconnect();
   }, []);
 
-  useEffect(() => {
-    if (!eCardsRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          [0,1,2,3].forEach(i => setTimeout(() => setVisibleECards(p => p.includes(i)?p:[...p,i]), i * 130));
-          obs.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-    obs.observe(eCardsRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   useEffect(() => {
     const keys = Object.keys(sectionRefs.current);
@@ -376,27 +360,35 @@ export default function AIAutomationServices() {
           .aas-why-card h3 { font-size:15px;font-weight:700;color:#0F1F40;margin:0;line-height:1.35; }
           .aas-why-card p { font-size:13px;color:#4A6080;line-height:1.7;margin:0; }
 
-          /* Engagement */
-          .aas-engage-section { background:#f8fafd;border-top:1px solid rgba(55,48,163,0.08);border-bottom:1px solid rgba(55,48,163,0.08);padding:80px 40px;position:relative;z-index:1; }
-          .aas-engage-inner { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:stretch; }
-          .aas-engage-left { position:sticky;top:100px;display:flex;flex-direction:column; }
-          .aas-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aas-aurora 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
-          .aas-engage-desc { font-size:15px;color:#3A507A;line-height:1.75;margin:0 0 32px; }
-          .aas-engage-img-wrap { border-radius:14px;overflow:hidden;box-shadow:0 16px 48px rgba(55,48,163,0.15);flex:1;min-height:300px; }
-          .aas-engage-img-wrap img { width:100%;height:100%;min-height:300px;object-fit:cover;display:block; }
-          .aas-engage-right { display:flex;flex-direction:column;gap:16px; }
-          .aas-ecard { background:linear-gradient(135deg,rgba(237,233,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(219,234,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:14px;padding:26px 28px;box-shadow:0 4px 24px rgba(55,48,163,0.07),inset 0 1px 0 rgba(255,255,255,0.95);opacity:0;transform:translateX(40px);transition:opacity 0.55s cubic-bezier(0.22,1,0.36,1),transform 0.55s cubic-bezier(0.22,1,0.36,1),background 0.3s,border-color 0.3s; }
-          .aas-ecard:hover { border-color:rgba(124,58,237,0.40);box-shadow:0 16px 48px rgba(55,48,163,0.14),inset 0 1px 0 rgba(255,255,255,1);transform:translateX(4px); }
-          .aas-ecard.aas-ecard-visible { opacity:1;transform:translateX(0); }
-          .aas-ecard.aas-ecard-visible:hover { transform:translateX(4px); }
-          .aas-ecard-header { display:flex;align-items:center;gap:14px;margin-bottom:10px; }
-          .aas-ecard-icon { width:44px;height:44px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
-          .aas-ecard-icon svg { width:26px;height:26px;stroke:#7c3aed;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round; }
-          .aas-ecard-title { font-size:18px;font-weight:700;color:#3730a3;margin:0; }
-          .aas-ecard-desc { font-size:14px;color:#3A507A;line-height:1.65;margin:0 0 16px; }
-          .aas-ecard-features { display:grid;grid-template-columns:1fr 1fr;gap:8px 16px; }
-          .aas-efeat { display:flex;align-items:center;gap:8px;font-size:13px;color:#2A3F6F;font-weight:500; }
-          .aas-efeat-check { color:#7c3aed;font-size:12px;flex-shrink:0; }
+          /* Engagement Table */
+          .aas-engage-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08);padding:80px 40px;position:relative;z-index:1; }
+          .aas-engage-inner { max-width:1280px;margin:0 auto; }
+          .aas-engage-header { text-align:center;margin-bottom:52px; }
+          .aas-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 14px; }
+          .aas-engage-desc { font-size:15px;color:#3A507A;line-height:1.7;max-width:640px;margin:0 auto; }
+          .aas-table-wrap { background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);border-radius:24px;box-shadow:0 8px 40px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,0.95);overflow-x:auto; }
+          .aas-cmp-table { width:100%;border-collapse:collapse;min-width:680px; }
+          .aas-cmp-table thead tr { border-bottom:2px solid rgba(15,52,96,0.10); }
+          .aas-cmp-th { padding:30px 20px 26px;text-align:center;vertical-align:top; }
+          .aas-cmp-th:first-child { text-align:left;padding-left:32px;min-width:180px; }
+          .aas-cmp-th.aas-th-feat { background:linear-gradient(180deg,rgba(254,243,199,0.55) 0%,rgba(255,255,255,0.20) 100%);border-left:1px solid rgba(217,119,6,0.20);border-right:1px solid rgba(217,119,6,0.20); }
+          .aas-popular-badge { display:inline-block;font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:#D97706;color:#fff;padding:3px 10px;border-radius:20px;margin-bottom:10px; }
+          .aas-plan-badge { display:inline-block;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:10px;background:rgba(15,52,96,0.08);color:#4A6080; }
+          .aas-cmp-plan-name { display:block;font-size:15px;font-weight:800;color:#0F3460;margin-bottom:4px;line-height:1.3; }
+          .aas-cmp-th.aas-th-feat .aas-cmp-plan-name { color:#D97706; }
+          .aas-cmp-plan-price { display:block;font-size:12px;color:#6B7280;font-weight:500; }
+          .aas-cmp-table tbody tr { border-bottom:1px solid rgba(15,52,96,0.06);transition:background 0.15s; }
+          .aas-cmp-table tbody tr:last-child { border-bottom:none; }
+          .aas-cmp-table tbody tr:nth-child(odd) { background:rgba(15,52,96,0.018); }
+          .aas-cmp-table tbody tr:hover { background:rgba(99,130,255,0.05); }
+          .aas-cmp-td { padding:15px 20px;text-align:center;vertical-align:middle;font-size:13px;color:#4A6080; }
+          .aas-cmp-td:first-child { text-align:left;padding-left:32px;font-size:13px;font-weight:600;color:#1e293b; }
+          .aas-cmp-td.aas-th-feat { background:rgba(254,243,199,0.22);border-left:1px solid rgba(217,119,6,0.15);border-right:1px solid rgba(217,119,6,0.15); }
+          .aas-tick { color:#16a34a;font-size:17px;line-height:1; }
+          .aas-cross { color:#d1d5db;font-size:16px;line-height:1; }
+          .aas-addon { display:inline-block;font-size:11px;color:#D97706;font-weight:600;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.28);border-radius:4px;padding:2px 8px;white-space:nowrap; }
+          .aas-td-text { font-size:12px;color:#4A6080;white-space:nowrap; }
+          .aas-td-text.hi { color:#0F3460;font-weight:600; }
 
           /* Contact */
           .aas-contact-section { padding:70px 40px;background:linear-gradient(135deg,rgba(237,233,254,0.80) 0%,rgba(255,255,255,0.60) 40%,rgba(219,234,254,0.70) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.80); }
@@ -497,8 +489,6 @@ export default function AIAutomationServices() {
             .aas-services-grid { grid-template-columns:repeat(2,1fr); }
             .aas-why-grid { grid-template-columns:repeat(2,1fr); }
             .aas-tech-groups { grid-template-columns:repeat(2,1fr); }
-            .aas-engage-inner { grid-template-columns:1fr; }
-            .aas-engage-left { position:static; }
             .aas-process-inner { grid-template-columns:1fr; }
             .aas-process-image-col { display:none; }
           }
@@ -562,8 +552,6 @@ export default function AIAutomationServices() {
             .aas-contact-title { font-size:24px; }
             .aas-engage-title { font-size:26px; }
             .aas-tcard { padding:24px 20px; }
-            .aas-ecard { padding:20px; }
-            .aas-ecard-features { grid-template-columns:1fr; }
             .aas-merged-box { padding:18px; }
           }
         `}</style>
@@ -775,64 +763,67 @@ export default function AIAutomationServices() {
         </section>
 
         {/* ── ENGAGEMENT MODELS ── */}
-        <section className="aas-engage-section">
+        <section className="aas-engage-section" id="engagement">
           <div className="aas-engage-inner">
-            <div className="aas-engage-left">
-              <div className={`aas-section-reveal${visibleSections.has('engage') ? ' aas-revealed' : ''}`} ref={el => { sectionRefs.current['engage'] = el; }}>
-                <span className="aas-section-eyebrow">Engagement Models</span>
-                <h2 className="aas-engage-title">Flexible Ways to Work With Us</h2>
-                <p className="aas-engage-desc">Whether you need a single automation built fast or an ongoing AI engineering partner — we have an engagement model that fits your budget, timeline, and team structure.</p>
-              </div>
-              <div className="aas-engage-img-wrap">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/office.png" alt="1Solutions AI automation team collaboration" />
-              </div>
+            <div className="aas-engage-header">
+              <span className="aas-section-eyebrow">How We Engage</span>
+              <h2 className="aas-engage-title">Flexible Engagement Models</h2>
+              <p className="aas-engage-desc">Pick the model that fits your project, team, and budget — every plan includes a free discovery call and NDA on request.</p>
             </div>
-            <div className="aas-engage-right" ref={eCardsRef}>
-              {[
-                {
-                  title:'Fixed-Price Project',
-                  desc:'Best for well-defined automation projects with clear inputs, outputs, and scope. We scope, price, and deliver — no retainers, no surprise invoices.',
-                  features:['Detailed spec before development','Fixed price guarantee','2-week sprint demos','Full handover & documentation'],
-                  icon:'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z',
-                },
-                {
-                  title:'Dedicated AI Team',
-                  desc:'A dedicated team of AI engineers, data scientists, and a project manager working exclusively on your automation roadmap — from 3 months to ongoing.',
-                  features:['Senior AI engineer + PM assigned','Daily standups & weekly reviews','Flexible scope adjustment','Ongoing roadmap execution'],
-                  icon:'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z',
-                },
-                {
-                  title:'AI Audit & Strategy',
-                  desc:'A focused 2-week engagement where our AI architects map your processes, identify automation opportunities, and deliver a prioritised roadmap with projected ROI for each initiative.',
-                  features:['Process mapping workshop','ROI model for each opportunity','Technology recommendations','Prioritised implementation roadmap'],
-                  icon:'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01',
-                },
-                {
-                  title:'Maintenance & Support',
-                  desc:'SLA-backed support plans to keep your automations running at peak performance — monitoring, bug fixes, model updates, and performance tuning as your business evolves.',
-                  features:['24/7 monitoring & alerting','Monthly performance reports','Model retraining & updates','Priority bug resolution'],
-                  icon:'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15',
-                },
-              ].map((card, i) => (
-                <div key={card.title} className={`aas-ecard${visibleECards.includes(i) ? ' aas-ecard-visible' : ''}`}>
-                  <div className="aas-ecard-header">
-                    <div className="aas-ecard-icon">
-                      <svg viewBox="0 0 24 24"><path d={card.icon} /></svg>
-                    </div>
-                    <h3 className="aas-ecard-title">{card.title}</h3>
-                  </div>
-                  <p className="aas-ecard-desc">{card.desc}</p>
-                  <div className="aas-ecard-features">
-                    {card.features.map(f => (
-                      <div className="aas-efeat" key={f}>
-                        <span className="aas-efeat-check">✓</span>
-                        <span>{f}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
+
+            <div className="aas-table-wrap">
+              <table className="aas-cmp-table">
+                <thead>
+                  <tr>
+                    <th className="aas-cmp-th"><span style={{fontSize:'12px',fontWeight:600,color:'#6B7280',textTransform:'uppercase',letterSpacing:'1px'}}>Feature</span></th>
+                    <th className="aas-cmp-th">
+                      <span className="aas-plan-badge">One-time</span>
+                      <span className="aas-cmp-plan-name">Fixed-Price</span>
+                      <span className="aas-cmp-plan-price">Project-based</span>
+                    </th>
+                    <th className="aas-cmp-th">
+                      <span className="aas-plan-badge">Flexible</span>
+                      <span className="aas-cmp-plan-name">Time &amp; Material</span>
+                      <span className="aas-cmp-plan-price">Hourly / weekly</span>
+                    </th>
+                    <th className="aas-cmp-th aas-th-feat">
+                      <span className="aas-popular-badge">Most Popular</span>
+                      <span className="aas-cmp-plan-name">Dedicated Team</span>
+                      <span className="aas-cmp-plan-price">From $3,000/mo</span>
+                    </th>
+                    <th className="aas-cmp-th">
+                      <span className="aas-plan-badge">Cost-efficient</span>
+                      <span className="aas-cmp-plan-name">Offshore Model</span>
+                      <span className="aas-cmp-plan-price">From $2,000/mo</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Best For',               'Scoped builds',      'Evolving projects',  'Long-term products', 'Cost savings'],
+                    ['Timeline',               '4–12 weeks',          'Flexible',           'Ongoing',            'Ongoing'],
+                    ['Budget Predictability',  '✓',                 'Flexible',           '✓',                '✓'],
+                    ['Scope Changes Mid-way',  '✕',                 '✓',                '✓',                '✓'],
+                    ['Dedicated Developer',    '✕',                 '✕',                '✓',                '✓'],
+                    ['Priority Support',       '✕',                 '✓',                '✓',                '✕'],
+                    ['Daily Standups',         '✕',                 '✕',                '✓',                '✓'],
+                    ['NDA & IP Protection',    '✓',                 '✓',                '✓',                '✓'],
+                    ['Free Discovery Call',    '✓',                 '✓',                '✓',                '✓'],
+                  ].map(([label, ...cols]) => (
+                    <tr key={label}>
+                      <td className="aas-cmp-td">{label}</td>
+                      {cols.map((v, ci) => {
+                        const featured = ci === 2;
+                        let cell;
+                        if (v === '✓')      cell = <span className="aas-tick">✓</span>;
+                        else if (v === '✕') cell = <span className="aas-cross">—</span>;
+                        else                cell = <span className="aas-td-text hi">{v}</span>;
+                        return <td key={ci} className={`aas-cmp-td${featured ? ' aas-th-feat' : ''}`}>{cell}</td>;
+                      })}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </section>

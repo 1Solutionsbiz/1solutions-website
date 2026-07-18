@@ -80,13 +80,11 @@ export default function CodeIgniterDevelopmentCompany() {
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
-  const [visibleECards, setVisibleECards] = useState([]);
   const stepRefs = useRef([]);
   const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
-  const eCardsRef = useRef(null);
 
   useEffect(() => {
     const observers = stepRefs.current.map((el, i) => {
@@ -146,20 +144,6 @@ export default function CodeIgniterDevelopmentCompany() {
     return () => obs.disconnect();
   }, []);
 
-  useEffect(() => {
-    if (!eCardsRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          [0,1,2,3].forEach(i => setTimeout(() => setVisibleECards(p => p.includes(i)?p:[...p,i]), i * 130));
-          obs.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-    obs.observe(eCardsRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   useEffect(() => {
     const keys = Object.keys(sectionRefs.current);
@@ -359,26 +343,35 @@ export default function CodeIgniterDevelopmentCompany() {
           .ci-why-card h3 { font-size:15px;font-weight:700;color:#0a1628;margin:0;line-height:1.35; }
           .ci-why-card p  { font-size:13px;color:#1a3050;line-height:1.7;margin:0; }
 
-          /* Engagement */
-          .ci-engage-section { background:#eef3fa;border-top:1px solid rgba(17,65,113,0.09);border-bottom:1px solid rgba(17,65,113,0.09);padding:80px 40px;position:relative;z-index:1; }
-          .ci-engage-inner { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:stretch; }
-          .ci-engage-left { position:sticky;top:100px;display:flex;flex-direction:column; }
-          .ci-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
-          .ci-engage-desc { font-size:15px;color:#1a3050;line-height:1.75;margin:0 0 32px; }
-          .ci-engage-img-wrap { border-radius:14px;overflow:hidden;box-shadow:0 16px 48px rgba(17,65,113,0.12);flex:1;min-height:300px; }
-          .ci-engage-img-wrap img { width:100%;height:100%;min-height:300px;object-fit:cover;display:block; }
-          .ci-engage-right { display:flex;flex-direction:column;gap:16px; }
-          .ci-ecard { background:linear-gradient(135deg,rgba(214,228,247,0.58) 0%,rgba(255,255,255,0.82) 60%,rgba(232,237,248,0.42) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.88);border-radius:14px;padding:26px 28px;box-shadow:0 4px 24px rgba(17,65,113,0.06),inset 0 1px 0 rgba(255,255,255,0.95);opacity:0;transform:translateX(40px);transition:opacity 0.55s cubic-bezier(0.22,1,0.36,1),transform 0.55s cubic-bezier(0.22,1,0.36,1),border-color 0.3s,box-shadow 0.3s; }
-          .ci-ecard.ci-ecard-visible { opacity:1;transform:translateX(0); }
-          .ci-ecard:hover { border-color:rgba(17,65,113,0.35);box-shadow:0 16px 48px rgba(17,65,113,0.12),inset 0 1px 0 rgba(255,255,255,1);transform:translateX(4px); }
-          .ci-ecard-header { display:flex;align-items:center;gap:14px;margin-bottom:10px; }
-          .ci-ecard-icon  { width:44px;height:44px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
-          .ci-ecard-icon svg { width:26px;height:26px;stroke:#114171;fill:none; }
-          .ci-ecard-title { font-size:18px;font-weight:700;color:#114171;margin:0; }
-          .ci-ecard-desc  { font-size:14px;color:#1a3050;line-height:1.65;margin:0 0 16px; }
-          .ci-ecard-features { display:grid;grid-template-columns:1fr 1fr;gap:8px 16px; }
-          .ci-efeat { display:flex;align-items:center;gap:8px;font-size:13px;color:#1a3050;font-weight:500; }
-          .ci-efeat-check { color:#D97706;font-size:12px;flex-shrink:0; }
+          /* Engagement Table */
+          .ci-engage-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08);padding:80px 40px;position:relative;z-index:1; }
+          .ci-engage-inner { max-width:1280px;margin:0 auto; }
+          .ci-engage-header { text-align:center;margin-bottom:52px; }
+          .ci-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 14px; }
+          .ci-engage-desc { font-size:15px;color:#3A507A;line-height:1.7;max-width:640px;margin:0 auto; }
+          .ci-table-wrap { background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);border-radius:24px;box-shadow:0 8px 40px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,0.95);overflow-x:auto; }
+          .ci-cmp-table { width:100%;border-collapse:collapse;min-width:680px; }
+          .ci-cmp-table thead tr { border-bottom:2px solid rgba(15,52,96,0.10); }
+          .ci-cmp-th { padding:30px 20px 26px;text-align:center;vertical-align:top; }
+          .ci-cmp-th:first-child { text-align:left;padding-left:32px;min-width:180px; }
+          .ci-cmp-th.ci-th-feat { background:linear-gradient(180deg,rgba(254,243,199,0.55) 0%,rgba(255,255,255,0.20) 100%);border-left:1px solid rgba(217,119,6,0.20);border-right:1px solid rgba(217,119,6,0.20); }
+          .ci-popular-badge { display:inline-block;font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:#D97706;color:#fff;padding:3px 10px;border-radius:20px;margin-bottom:10px; }
+          .ci-plan-badge { display:inline-block;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:10px;background:rgba(15,52,96,0.08);color:#4A6080; }
+          .ci-cmp-plan-name { display:block;font-size:15px;font-weight:800;color:#0F3460;margin-bottom:4px;line-height:1.3; }
+          .ci-cmp-th.ci-th-feat .ci-cmp-plan-name { color:#D97706; }
+          .ci-cmp-plan-price { display:block;font-size:12px;color:#6B7280;font-weight:500; }
+          .ci-cmp-table tbody tr { border-bottom:1px solid rgba(15,52,96,0.06);transition:background 0.15s; }
+          .ci-cmp-table tbody tr:last-child { border-bottom:none; }
+          .ci-cmp-table tbody tr:nth-child(odd) { background:rgba(15,52,96,0.018); }
+          .ci-cmp-table tbody tr:hover { background:rgba(99,130,255,0.05); }
+          .ci-cmp-td { padding:15px 20px;text-align:center;vertical-align:middle;font-size:13px;color:#4A6080; }
+          .ci-cmp-td:first-child { text-align:left;padding-left:32px;font-size:13px;font-weight:600;color:#1e293b; }
+          .ci-cmp-td.ci-th-feat { background:rgba(254,243,199,0.22);border-left:1px solid rgba(217,119,6,0.15);border-right:1px solid rgba(217,119,6,0.15); }
+          .ci-tick { color:#16a34a;font-size:17px;line-height:1; }
+          .ci-cross { color:#d1d5db;font-size:16px;line-height:1; }
+          .ci-addon { display:inline-block;font-size:11px;color:#D97706;font-weight:600;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.28);border-radius:4px;padding:2px 8px;white-space:nowrap; }
+          .ci-td-text { font-size:12px;color:#4A6080;white-space:nowrap; }
+          .ci-td-text.hi { color:#0F3460;font-weight:600; }
 
           /* Contact */
           .ci-contact-section { padding:70px 40px;background:linear-gradient(135deg,rgba(214,228,247,0.72) 0%,rgba(255,255,255,0.65) 40%,rgba(232,237,248,0.68) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.85); }
@@ -480,8 +473,6 @@ export default function CodeIgniterDevelopmentCompany() {
             .ci-why-grid { grid-template-columns:repeat(2,1fr); }
             .ci-portfolio-grid { grid-template-columns:repeat(2,1fr); }
             .ci-portfolio-wrap { padding:32px 28px 40px; }
-            .ci-engage-inner { grid-template-columns:1fr; }
-            .ci-engage-left { position:static; }
             .ci-process-inner { grid-template-columns:1fr; }
             .ci-process-image-col { display:none; }
           }
@@ -549,8 +540,6 @@ export default function CodeIgniterDevelopmentCompany() {
             .ci-contact-title { font-size:24px; }
             .ci-engage-title { font-size:26px; }
             .ci-tcard { padding:24px 20px; }
-            .ci-ecard { padding:20px; }
-            .ci-ecard-features { grid-template-columns:1fr; }
             .ci-merged-box { padding:18px; }
           }
         
@@ -766,43 +755,67 @@ export default function CodeIgniterDevelopmentCompany() {
         </section>
 
         {/* ── ENGAGEMENT MODELS ── */}
-        <section className="ci-engage-section">
+        <section className="ci-engage-section" id="engagement">
           <div className="ci-engage-inner">
-            <div className="ci-engage-left">
-              <div className={`ci-section-reveal${visibleSections.has('engage') ? ' ci-revealed' : ''}`} ref={el => { sectionRefs.current['engage'] = el; }}>
-                <span className="ci-section-eyebrow">Engagement Models</span>
-                <h2 className="ci-engage-title">Flexible Engagement Models to Fit Your Project</h2>
-                <p className="ci-engage-desc">Whether you need a new CodeIgniter application, a legacy upgrade, a dedicated PHP team, or ongoing maintenance - we offer engagement models structured around your project type and budget.</p>
-              </div>
-              <div className="ci-engage-img-wrap">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/Partner-with-us.jpg" alt="Partner With 1Solutions" />
-              </div>
+            <div className="ci-engage-header">
+              <span className="ci-section-eyebrow">How We Engage</span>
+              <h2 className="ci-engage-title">Flexible Engagement Models</h2>
+              <p className="ci-engage-desc">Pick the model that fits your project, team, and budget — every plan includes a free discovery call and NDA on request.</p>
             </div>
-            <div className="ci-engage-right" ref={eCardsRef}>
-              {[
-                { title:'Dedicated PHP Team', desc:'A full-time dedicated team of CodeIgniter developers and a project manager working exclusively on your application - ideal for long-term products and growing platforms.', features:['Dedicated Developers','PM Included','Weekly Reports','Scalable Team'],
-                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> },
-                { title:'Fixed-Price Project', desc:'For new builds, legacy upgrades, or migrations with a well-defined scope. Agree on deliverables, timeline, and total cost before work begins - no surprise invoices.', features:['Full Budget Certainty','Clear Deliverables','Milestone Payments','On-time Delivery'],
-                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> },
-                { title:'Time & Material', desc:'For evolving applications where requirements are likely to change. Full sprint-level transparency - pay only for hours worked with maximum flexibility to reprioritise as needed.', features:['Maximum Flexibility','No Scope Lock-in','Sprint Reviews','Transparent Billing'],
-                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> },
-                { title:'Maintenance Retainer', desc:'Ongoing monthly retainer for security patches, CodeIgniter version updates, performance monitoring, bug fixes, and new feature development for live applications.', features:['Security Patching','Bug Fix SLA','Monthly Dev Hours','Priority Support'],
-                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> },
-              ].map((e,i) => (
-                <div className={`ci-ecard${visibleECards.includes(i)?' ci-ecard-visible':''}`} key={e.title}>
-                  <div className="ci-ecard-header">
-                    <div className="ci-ecard-icon">{e.icon}</div>
-                    <h3 className="ci-ecard-title">{e.title}</h3>
-                  </div>
-                  <p className="ci-ecard-desc">{e.desc}</p>
-                  <div className="ci-ecard-features">
-                    {e.features.map(f => (
-                      <div className="ci-efeat" key={f}><span className="ci-efeat-check">✔</span>{f}</div>
-                    ))}
-                  </div>
-                </div>
-              ))}
+
+            <div className="ci-table-wrap">
+              <table className="ci-cmp-table">
+                <thead>
+                  <tr>
+                    <th className="ci-cmp-th"><span style={{fontSize:'12px',fontWeight:600,color:'#6B7280',textTransform:'uppercase',letterSpacing:'1px'}}>Feature</span></th>
+                    <th className="ci-cmp-th">
+                      <span className="ci-plan-badge">One-time</span>
+                      <span className="ci-cmp-plan-name">Fixed-Price</span>
+                      <span className="ci-cmp-plan-price">Project-based</span>
+                    </th>
+                    <th className="ci-cmp-th">
+                      <span className="ci-plan-badge">Flexible</span>
+                      <span className="ci-cmp-plan-name">Time &amp; Material</span>
+                      <span className="ci-cmp-plan-price">Hourly / weekly</span>
+                    </th>
+                    <th className="ci-cmp-th ci-th-feat">
+                      <span className="ci-popular-badge">Most Popular</span>
+                      <span className="ci-cmp-plan-name">Dedicated Team</span>
+                      <span className="ci-cmp-plan-price">From $3,000/mo</span>
+                    </th>
+                    <th className="ci-cmp-th">
+                      <span className="ci-plan-badge">Cost-efficient</span>
+                      <span className="ci-cmp-plan-name">Offshore Model</span>
+                      <span className="ci-cmp-plan-price">From $2,000/mo</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Best For',               'Scoped builds',      'Evolving projects',  'Long-term products', 'Cost savings'],
+                    ['Timeline',               '4–12 weeks',          'Flexible',           'Ongoing',            'Ongoing'],
+                    ['Budget Predictability',  '✓',                 'Flexible',           '✓',                '✓'],
+                    ['Scope Changes Mid-way',  '✕',                 '✓',                '✓',                '✓'],
+                    ['Dedicated Developer',    '✕',                 '✕',                '✓',                '✓'],
+                    ['Priority Support',       '✕',                 '✓',                '✓',                '✕'],
+                    ['Daily Standups',         '✕',                 '✕',                '✓',                '✓'],
+                    ['NDA & IP Protection',    '✓',                 '✓',                '✓',                '✓'],
+                    ['Free Discovery Call',    '✓',                 '✓',                '✓',                '✓'],
+                  ].map(([label, ...cols]) => (
+                    <tr key={label}>
+                      <td className="ci-cmp-td">{label}</td>
+                      {cols.map((v, ci) => {
+                        const featured = ci === 2;
+                        let cell;
+                        if (v === '✓')      cell = <span className="ci-tick">✓</span>;
+                        else if (v === '✕') cell = <span className="ci-cross">—</span>;
+                        else                cell = <span className="ci-td-text hi">{v}</span>;
+                        return <td key={ci} className={`ci-cmp-td${featured ? ' ci-th-feat' : ''}`}>{cell}</td>;
+                      })}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </section>

@@ -118,13 +118,11 @@ export default function WordPressDevelopmentCompany() {
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
-  const [visibleECards, setVisibleECards] = useState([]);
   const stepRefs = useRef([]);
   const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
-  const eCardsRef = useRef(null);
 
   // Scroll-reveal for process steps
   useEffect(() => {
@@ -191,20 +189,6 @@ export default function WordPressDevelopmentCompany() {
   }, []);
 
   // Engagement cards staggered slide-in
-  useEffect(() => {
-    if (!eCardsRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          [0,1,2,3].forEach(i => setTimeout(() => setVisibleECards(p => p.includes(i)?p:[...p,i]), i * 130));
-          obs.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-    obs.observe(eCardsRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   // Section heading fade-up
   useEffect(() => {
@@ -424,25 +408,35 @@ export default function WordPressDevelopmentCompany() {
           .wp-why-card h3 { font-size:15px;font-weight:700;color:#0F1F40;margin:0;line-height:1.35; }
           .wp-why-card p { font-size:13px;color:#4A6080;line-height:1.7;margin:0; }
 
-          /* Engagement */
+          /* Engagement Table */
           .wp-engage-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08);padding:80px 40px;position:relative;z-index:1; }
-          .wp-engage-inner { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:stretch; }
-          .wp-engage-left { position:sticky;top:100px;display:flex;flex-direction:column; }
-          .wp-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
-          .wp-engage-desc { font-size:15px;color:#3A507A;line-height:1.75;margin:0 0 32px; }
-          .wp-engage-img-wrap { border-radius:14px;overflow:hidden;box-shadow:0 16px 48px rgba(15,52,96,0.15);flex:1;min-height:300px; }
-          .wp-engage-img-wrap img { width:100%;height:100%;min-height:300px;object-fit:cover;display:block; }
-          .wp-engage-right { display:flex;flex-direction:column;gap:16px; }
-          .wp-ecard { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:14px;padding:26px 28px;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95);transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s; }
-          .wp-ecard:hover { border-color:rgba(217,119,6,0.45);box-shadow:0 16px 48px rgba(15,52,96,0.14),inset 0 1px 0 rgba(255,255,255,1);transform:translateX(4px); }
-          .wp-ecard-header { display:flex;align-items:center;gap:14px;margin-bottom:10px; }
-          .wp-ecard-icon { width:44px;height:44px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
-          .wp-ecard-icon svg { width:26px;height:26px;stroke:#D97706;fill:none; }
-          .wp-ecard-title { font-size:18px;font-weight:700;color:#0F3460;margin:0; }
-          .wp-ecard-desc { font-size:14px;color:#3A507A;line-height:1.65;margin:0 0 16px; }
-          .wp-ecard-features { display:grid;grid-template-columns:1fr 1fr;gap:8px 16px; }
-          .wp-efeat { display:flex;align-items:center;gap:8px;font-size:13px;color:#2A3F6F;font-weight:500; }
-          .wp-efeat-check { color:#D97706;font-size:12px;flex-shrink:0; }
+          .wp-engage-inner { max-width:1280px;margin:0 auto; }
+          .wp-engage-header { text-align:center;margin-bottom:52px; }
+          .wp-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 14px; }
+          .wp-engage-desc { font-size:15px;color:#3A507A;line-height:1.7;max-width:640px;margin:0 auto; }
+          .wp-table-wrap { background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);border-radius:24px;box-shadow:0 8px 40px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,0.95);overflow-x:auto; }
+          .wp-cmp-table { width:100%;border-collapse:collapse;min-width:680px; }
+          .wp-cmp-table thead tr { border-bottom:2px solid rgba(15,52,96,0.10); }
+          .wp-cmp-th { padding:30px 20px 26px;text-align:center;vertical-align:top; }
+          .wp-cmp-th:first-child { text-align:left;padding-left:32px;min-width:180px; }
+          .wp-cmp-th.wp-th-feat { background:linear-gradient(180deg,rgba(254,243,199,0.55) 0%,rgba(255,255,255,0.20) 100%);border-left:1px solid rgba(217,119,6,0.20);border-right:1px solid rgba(217,119,6,0.20); }
+          .wp-popular-badge { display:inline-block;font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:#D97706;color:#fff;padding:3px 10px;border-radius:20px;margin-bottom:10px; }
+          .wp-plan-badge { display:inline-block;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:10px;background:rgba(15,52,96,0.08);color:#4A6080; }
+          .wp-cmp-plan-name { display:block;font-size:15px;font-weight:800;color:#0F3460;margin-bottom:4px;line-height:1.3; }
+          .wp-cmp-th.wp-th-feat .wp-cmp-plan-name { color:#D97706; }
+          .wp-cmp-plan-price { display:block;font-size:12px;color:#6B7280;font-weight:500; }
+          .wp-cmp-table tbody tr { border-bottom:1px solid rgba(15,52,96,0.06);transition:background 0.15s; }
+          .wp-cmp-table tbody tr:last-child { border-bottom:none; }
+          .wp-cmp-table tbody tr:nth-child(odd) { background:rgba(15,52,96,0.018); }
+          .wp-cmp-table tbody tr:hover { background:rgba(99,130,255,0.05); }
+          .wp-cmp-td { padding:15px 20px;text-align:center;vertical-align:middle;font-size:13px;color:#4A6080; }
+          .wp-cmp-td:first-child { text-align:left;padding-left:32px;font-size:13px;font-weight:600;color:#1e293b; }
+          .wp-cmp-td.wp-th-feat { background:rgba(254,243,199,0.22);border-left:1px solid rgba(217,119,6,0.15);border-right:1px solid rgba(217,119,6,0.15); }
+          .wp-tick { color:#16a34a;font-size:17px;line-height:1; }
+          .wp-cross { color:#d1d5db;font-size:16px;line-height:1; }
+          .wp-addon { display:inline-block;font-size:11px;color:#D97706;font-weight:600;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.28);border-radius:4px;padding:2px 8px;white-space:nowrap; }
+          .wp-td-text { font-size:12px;color:#4A6080;white-space:nowrap; }
+          .wp-td-text.hi { color:#0F3460;font-weight:600; }
 
           /* Contact */
           .wp-contact-section { padding:70px 40px;background:linear-gradient(135deg,rgba(254,243,199,0.70) 0%,rgba(255,255,255,0.60) 40%,rgba(219,234,254,0.65) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.80); }
@@ -619,15 +613,6 @@ export default function WordPressDevelopmentCompany() {
           }
 
           /* Engagement cards staggered slide-in from right */
-          .wp-ecard {
-            opacity:0;
-            transform:translateX(40px);
-            transition:opacity 0.55s cubic-bezier(0.22,1,0.36,1), transform 0.55s cubic-bezier(0.22,1,0.36,1), background 0.3s, border-color 0.3s;
-          }
-          .wp-ecard.wp-ecard-visible {
-            opacity:1;
-            transform:translateX(0);
-          }
 
           /* Mobile background fix - background-attachment:fixed is broken on iOS Safari AND Chrome for iOS */
           @media (max-width:900px) {
@@ -644,8 +629,6 @@ export default function WordPressDevelopmentCompany() {
             .wp-why-grid { grid-template-columns:repeat(2,1fr); }
             .wp-portfolio-grid { grid-template-columns:repeat(2,1fr); }
             .wp-portfolio-wrap { padding:32px 28px 40px; }
-            .wp-engage-inner { grid-template-columns:1fr; }
-            .wp-engage-left { position:static; }
             .wp-process-inner { grid-template-columns:1fr; }
             .wp-process-image-col { display:none; }
           }
@@ -718,8 +701,6 @@ export default function WordPressDevelopmentCompany() {
             .wp-contact-title { font-size:24px; }
             .wp-engage-title { font-size:26px; }
             .wp-tcard { padding:24px 20px; }
-            .wp-ecard { padding:20px; }
-            .wp-ecard-features { grid-template-columns:1fr; }
             .wp-merged-box { padding:18px; }
           }
 
@@ -1131,45 +1112,67 @@ export default function WordPressDevelopmentCompany() {
         </section>
 
         {/* ── ENGAGEMENT MODELS ── */}
-        <section className="wp-engage-section">
+        <section className="wp-engage-section" id="engagement">
           <div className="wp-engage-inner">
-            <div className="wp-engage-left">
-              <div className={`wp-section-reveal${visibleSections.has('engage') ? ' wp-revealed' : ''}`} ref={el => { sectionRefs.current['engage'] = el; }}>
-              <span className="wp-section-eyebrow">Engagement Models</span>
-              <h2 className="wp-engage-title">Flexible Engagement Models Built Around You</h2>
-              <p className="wp-engage-desc">Client satisfaction is our top priority. We offer flexible engagement models so you can choose the approach that best fits your project, timeline, and budget - with full transparency at every step.</p>
-              </div>
-              <div className="wp-engage-img-wrap">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/Partner-with-us.jpg" alt="Partner With 1Solutions" />
-              </div>
+            <div className="wp-engage-header">
+              <span className="wp-section-eyebrow">How We Engage</span>
+              <h2 className="wp-engage-title">Flexible Engagement Models</h2>
+              <p className="wp-engage-desc">Pick the model that fits your project, team, and budget — every plan includes a free discovery call and NDA on request.</p>
             </div>
-            <div className="wp-engage-right" ref={eCardsRef}>
-              {[
-                { title:'Dedicated Team', desc:'Hire a full-time dedicated WordPress team for long-term projects. We deploy a project manager and certified developers who work exclusively on your product.', features:['Cost-effective Approach','Less Administrative Overhead','Quick-paced Development','Timely Reporting'],
-                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> },
-                { title:'Fixed-Price', desc:'Ideal for well-defined projects with a clear scope. We agree on deliverables, timeline, and cost upfront - no surprises, no hidden fees.', features:['Complete Budget Control','Ease of Management','No Hidden Costs','On-time Delivery'],
-                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> },
-                { title:'Time & Material', desc:'Perfect for evolving projects where requirements change. Pay only for the hours worked with full visibility into progress and spend.', features:['Maximum Flexibility','Reduced Risk','Iterative Development','On-time Product Delivery'],
-                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> },
-                { title:'Offshore Development', desc:'Leverage our New Delhi-based team for significant cost savings without compromising quality. Expert developers, US/AU timezone overlap available.', features:['Access to Expert Talent','Shared Responsibility','Managed Team','Cost-Efficient'],
-                  icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> },
-              ].map((e,i) => (
-                <div className={`wp-ecard${visibleECards.includes(i)?' wp-ecard-visible':''}`} key={e.title}>
-                  <div className="wp-ecard-header">
-                    <div className="wp-ecard-icon">
-                      {e.icon}
-                    </div>
-                    <h3 className="wp-ecard-title">{e.title}</h3>
-                  </div>
-                  <p className="wp-ecard-desc">{e.desc}</p>
-                  <div className="wp-ecard-features">
-                    {e.features.map(f => (
-                      <div className="wp-efeat" key={f}><span className="wp-efeat-check">✔</span>{f}</div>
-                    ))}
-                  </div>
-                </div>
-              ))}
+
+            <div className="wp-table-wrap">
+              <table className="wp-cmp-table">
+                <thead>
+                  <tr>
+                    <th className="wp-cmp-th"><span style={{fontSize:'12px',fontWeight:600,color:'#6B7280',textTransform:'uppercase',letterSpacing:'1px'}}>Feature</span></th>
+                    <th className="wp-cmp-th">
+                      <span className="wp-plan-badge">One-time</span>
+                      <span className="wp-cmp-plan-name">Fixed-Price</span>
+                      <span className="wp-cmp-plan-price">Project-based</span>
+                    </th>
+                    <th className="wp-cmp-th">
+                      <span className="wp-plan-badge">Flexible</span>
+                      <span className="wp-cmp-plan-name">Time &amp; Material</span>
+                      <span className="wp-cmp-plan-price">Hourly / weekly</span>
+                    </th>
+                    <th className="wp-cmp-th wp-th-feat">
+                      <span className="wp-popular-badge">Most Popular</span>
+                      <span className="wp-cmp-plan-name">Dedicated Team</span>
+                      <span className="wp-cmp-plan-price">From $3,000/mo</span>
+                    </th>
+                    <th className="wp-cmp-th">
+                      <span className="wp-plan-badge">Cost-efficient</span>
+                      <span className="wp-cmp-plan-name">Offshore Model</span>
+                      <span className="wp-cmp-plan-price">From $2,000/mo</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Best For',               'Scoped builds',      'Evolving projects',  'Long-term products', 'Cost savings'],
+                    ['Timeline',               '4–12 weeks',          'Flexible',           'Ongoing',            'Ongoing'],
+                    ['Budget Predictability',  '✓',                 'Flexible',           '✓',                '✓'],
+                    ['Scope Changes Mid-way',  '✕',                 '✓',                '✓',                '✓'],
+                    ['Dedicated Developer',    '✕',                 '✕',                '✓',                '✓'],
+                    ['Priority Support',       '✕',                 '✓',                '✓',                '✕'],
+                    ['Daily Standups',         '✕',                 '✕',                '✓',                '✓'],
+                    ['NDA & IP Protection',    '✓',                 '✓',                '✓',                '✓'],
+                    ['Free Discovery Call',    '✓',                 '✓',                '✓',                '✓'],
+                  ].map(([label, ...cols]) => (
+                    <tr key={label}>
+                      <td className="wp-cmp-td">{label}</td>
+                      {cols.map((v, ci) => {
+                        const featured = ci === 2;
+                        let cell;
+                        if (v === '✓')      cell = <span className="wp-tick">✓</span>;
+                        else if (v === '✕') cell = <span className="wp-cross">—</span>;
+                        else                cell = <span className="wp-td-text hi">{v}</span>;
+                        return <td key={ci} className={`wp-cmp-td${featured ? ' wp-th-feat' : ''}`}>{cell}</td>;
+                      })}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </section>
