@@ -328,10 +328,33 @@ export default function DrupalDevelopmentCompany() {
           .dr-why-icon svg { width:28px;height:28px;fill:#D97706; }
           .dr-why-card h3 { font-size:15px;font-weight:700;color:#0F1F40;margin:0;line-height:1.35; }
           .dr-why-card p { font-size:13px;color:#4A6080;line-height:1.7;margin:0; }
-
           .dr-engage-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08);padding:80px 40px;position:relative;z-index:1; }
-          .dr-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 16px; }
-          .dr-engage-desc { font-size:15px;color:#3A507A;line-height:1.75;margin:0 0 32px; }
+          .dr-engage-inner { max-width:1280px;margin:0 auto; }
+          .dr-engage-header { text-align:center;margin-bottom:52px; }
+          .dr-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 14px; }
+          .dr-engage-desc { font-size:15px;color:#3A507A;line-height:1.7;max-width:640px;margin:0 auto; }
+          .dr-table-wrap { background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);border-radius:24px;box-shadow:0 8px 40px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,0.95);overflow-x:auto; }
+          .dr-cmp-table { width:100%;border-collapse:collapse;min-width:680px; }
+          .dr-cmp-table thead tr { border-bottom:2px solid rgba(15,52,96,0.10); }
+          .dr-cmp-th { padding:30px 20px 26px;text-align:center;vertical-align:top; }
+          .dr-cmp-th:first-child { text-align:left;padding-left:32px;min-width:180px; }
+          .dr-cmp-th.dr-th-feat { background:linear-gradient(180deg,rgba(254,243,199,0.55) 0%,rgba(255,255,255,0.20) 100%);border-left:1px solid rgba(217,119,6,0.20);border-right:1px solid rgba(217,119,6,0.20); }
+          .dr-popular-badge { display:inline-block;font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:#D97706;color:#fff;padding:3px 10px;border-radius:20px;margin-bottom:10px; }
+          .dr-plan-badge { display:inline-block;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:10px;background:rgba(15,52,96,0.08);color:#4A6080; }
+          .dr-cmp-plan-name { display:block;font-size:15px;font-weight:800;color:#0F3460;margin-bottom:4px;line-height:1.3; }
+          .dr-cmp-th.dr-th-feat .dr-cmp-plan-name { color:#D97706; }
+          .dr-cmp-plan-price { display:block;font-size:12px;color:#6B7280;font-weight:500; }
+          .dr-cmp-table tbody tr { border-bottom:1px solid rgba(15,52,96,0.06);transition:background 0.15s; }
+          .dr-cmp-table tbody tr:last-child { border-bottom:none; }
+          .dr-cmp-table tbody tr:nth-child(odd) { background:rgba(15,52,96,0.018); }
+          .dr-cmp-table tbody tr:hover { background:rgba(99,130,255,0.05); }
+          .dr-cmp-td { padding:15px 20px;text-align:center;vertical-align:middle;font-size:13px;color:#4A6080; }
+          .dr-cmp-td:first-child { text-align:left;padding-left:32px;font-size:13px;font-weight:600;color:#1e293b; }
+          .dr-cmp-td.dr-th-feat { background:rgba(254,243,199,0.22);border-left:1px solid rgba(217,119,6,0.15);border-right:1px solid rgba(217,119,6,0.15); }
+          .dr-tick { color:#16a34a;font-size:17px;line-height:1; }
+          .dr-cross { color:#d1d5db;font-size:16px;line-height:1; }
+          .dr-td-text { font-size:12px;color:#4A6080;white-space:nowrap; }
+          .dr-td-text.hi { color:#0F3460;font-weight:600; }
 
           .dr-contact-section { padding:70px 40px;background:linear-gradient(135deg,rgba(254,243,199,0.70) 0%,rgba(255,255,255,0.60) 40%,rgba(219,234,254,0.65) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.80); }
           .dr-contact-container { max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;align-items:start;gap:32px; }
