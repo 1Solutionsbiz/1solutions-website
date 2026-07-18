@@ -64,6 +64,12 @@ const nextConfig = {
 
   async redirects() {
     return [
+      // ── GSC "Failed" pages — missing blog posts, redirect to relevant service pages ──
+      { source: '/quality-guest-posting-sites',                         destination: '/link-building-services/',                       permanent: true },
+      { source: '/quality-guest-posting-sites/',                        destination: '/link-building-services/',                       permanent: true },
+      { source: '/best-hosting-providers-for-your-ecommerce-store',     destination: '/ecommerce-website-development-services/',       permanent: true },
+      { source: '/best-hosting-providers-for-your-ecommerce-store/',    destination: '/ecommerce-website-development-services/',       permanent: true },
+
       // ── Common alias URLs ─────────────────────────────────────────────────
       { source: '/about',                     destination: '/who-we-are/',                    permanent: true },
       { source: '/about/',                    destination: '/who-we-are/',                    permanent: true },
