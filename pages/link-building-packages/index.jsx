@@ -784,49 +784,43 @@ export default function LinkBuildingPackages() {
           .lbp-tog-knob{position:absolute;top:4px;left:4px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform .25s;box-shadow:0 1px 4px rgba(0,0,0,.18)}
           .lbp-tog-btn.on .lbp-tog-knob{transform:translateX(22px)}
           .lbp-save-badge{display:inline-flex;align-items:center;background:rgba(217,119,6,.12);color:#B45309;font-size:11px;font-weight:700;padding:2px 8px;border-radius:100px;margin-left:6px}
-          .lbp-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:start}
+          .lbp-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:start;padding-top:20px}
           .lbp-card{background:linear-gradient(135deg,rgba(219,234,254,.55) 0%,rgba(255,255,255,.80) 60%,rgba(237,233,254,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:24px;padding:28px 24px;position:relative;transition:transform .22s,box-shadow .22s,border-color .22s;overflow:hidden;box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
           .lbp-card:hover{transform:translateY(-4px);border-color:rgba(217,119,6,.40);box-shadow:0 16px 48px rgba(15,52,96,.14),inset 0 1px 0 rgba(255,255,255,1)}
-          .lbp-card-pop{background:linear-gradient(135deg,#0F3460 0%,#1a3a6e 50%,#0a2549 100%);border-color:transparent;transform:scale(1.03);box-shadow:0 20px 60px rgba(15,52,96,.30)}
-          .lbp-card-pop:hover{transform:scale(1.03) translateY(-4px)}
-          .lbp-card-elite{background:linear-gradient(135deg,#1e1b4b 0%,#2e1065 50%,#1e1b4b 100%);border:1px solid rgba(139,92,246,.40);box-shadow:0 4px 24px rgba(139,92,246,.20),inset 0 1px 0 rgba(139,92,246,.20)}
+          .lbp-card-pop{background:linear-gradient(135deg,rgba(255,251,235,0.92) 0%,rgba(255,255,255,0.98) 50%,rgba(255,249,219,0.85) 100%);border-color:rgba(217,119,6,0.55);transform:scale(1.03);box-shadow:0 20px 60px rgba(217,119,6,0.16),0 0 0 2px rgba(217,119,6,0.14);overflow:visible}
+          .lbp-card-pop:hover{transform:scale(1.03) translateY(-4px);box-shadow:0 28px 72px rgba(217,119,6,0.22),0 0 0 2px rgba(217,119,6,0.20)}
+          .lbp-card-elite{background:linear-gradient(135deg,#1e1b4b 0%,#2e1065 50%,#1e1b4b 100%);border:1px solid rgba(139,92,246,.40);box-shadow:0 4px 24px rgba(139,92,246,.20),inset 0 1px 0 rgba(139,92,246,.20);overflow:visible}
           .lbp-card-elite:hover{border-color:rgba(139,92,246,.70);box-shadow:0 16px 48px rgba(139,92,246,.30),inset 0 1px 0 rgba(139,92,246,.25);transform:translateY(-4px)}
-          .lbp-pop-tag{position:absolute;top:16px;right:16px;background:rgba(217,119,6,.90);color:#fff;font-size:10px;font-weight:700;padding:3px 9px;border-radius:100px;letter-spacing:.5px}
-          .lbp-elite-tag{position:absolute;top:16px;right:16px;background:linear-gradient(135deg,#7c3aed,#4f46e5);color:#fff;font-size:10px;font-weight:700;padding:3px 9px;border-radius:100px;letter-spacing:.5px}
+          .lbp-pop-tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#D97706,#F59E0B);color:#fff;font-size:10px;font-weight:700;padding:3px 12px;border-radius:100px;letter-spacing:.5px;white-space:nowrap;box-shadow:0 4px 12px rgba(217,119,6,0.30)}
+          .lbp-elite-tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#7c3aed,#4f46e5);color:#fff;font-size:10px;font-weight:700;padding:3px 12px;border-radius:100px;letter-spacing:.5px;white-space:nowrap;box-shadow:0 4px 12px rgba(124,58,237,0.30)}
           .lbp-plan-name{font-size:20px;font-weight:800;color:#0F1F40;margin-bottom:6px}
-          .lbp-card-pop .lbp-plan-name,.lbp-card-elite .lbp-plan-name{color:#fff}
+          .lbp-card-elite .lbp-plan-name{color:#fff}
           .lbp-plan-desc{font-size:12px;color:#6b7280;line-height:1.55;margin-bottom:20px}
-          .lbp-card-pop .lbp-plan-desc{color:rgba(255,255,255,.70)}
           .lbp-card-elite .lbp-plan-desc{color:rgba(255,255,255,.65)}
           .lbp-price-row{display:flex;align-items:baseline;gap:4px;margin-bottom:4px}
           .lbp-currency{font-size:1.3rem;font-weight:700;color:#D97706}
           .lbp-amount{font-size:2.6rem;font-weight:900;letter-spacing:-2px;color:#0F1F40;line-height:1}
-          .lbp-card-pop .lbp-amount,.lbp-card-pop .lbp-currency{color:#fff}
           .lbp-card-elite .lbp-amount{color:#fff}.lbp-card-elite .lbp-currency{color:#c4b5fd}
           .lbp-per{font-size:12px;color:#9ca3af;font-weight:500;margin-left:2px}
-          .lbp-card-pop .lbp-per,.lbp-card-elite .lbp-per{color:rgba(255,255,255,.55)}
+          .lbp-card-elite .lbp-per{color:rgba(255,255,255,.55)}
           .lbp-billed{font-size:11px;color:#9ca3af;margin-bottom:4px}
-          .lbp-card-pop .lbp-billed,.lbp-card-elite .lbp-billed{color:rgba(255,255,255,.45)}
+          .lbp-card-elite .lbp-billed{color:rgba(255,255,255,.45)}
           .lbp-save-line{font-size:11px;font-weight:700;color:#16a34a;margin-bottom:18px;min-height:16px}
-          .lbp-card-pop .lbp-save-line{color:#86efac}
           .lbp-card-elite .lbp-save-line{color:#a78bfa}
           .lbp-rzp-wrap{width:100%;margin-bottom:20px;display:flex;justify-content:center}
           .lbp-rzp-wrap form{width:100%}
           .lbp-cta-card{display:block;width:100%;text-align:center;padding:12px;border-radius:50px;font-weight:700;font-size:.875rem;text-decoration:none;background:rgba(15,52,96,.85);color:#fff;transition:all .22s;margin-bottom:20px;box-shadow:0 4px 16px rgba(15,52,96,.20)}
           .lbp-cta-card:hover{background:rgba(15,52,96,1);transform:translateY(-1px);box-shadow:0 6px 24px rgba(15,52,96,.30)}
-          .lbp-card-pop .lbp-cta-card{background:rgba(255,255,255,.18);backdrop-filter:blur(12px);border:1.5px solid rgba(255,255,255,.35);color:#fff}
-          .lbp-card-pop .lbp-cta-card:hover{background:rgba(255,255,255,.28);border-color:rgba(245,158,11,.6)}
+          .lbp-card-pop .lbp-cta-card{background:linear-gradient(135deg,#D97706,#F59E0B);border:none;color:#fff;box-shadow:0 6px 20px rgba(217,119,6,0.35)}
+          .lbp-card-pop .lbp-cta-card:hover{background:linear-gradient(135deg,#B45309,#D97706);box-shadow:0 8px 28px rgba(217,119,6,0.45)}
           .lbp-card-elite .lbp-cta-card{background:linear-gradient(135deg,#7c3aed,#4f46e5);border:none;color:#fff;box-shadow:0 4px 16px rgba(124,58,237,.40)}
           .lbp-card-elite .lbp-cta-card:hover{background:linear-gradient(135deg,#6d28d9,#4338ca);box-shadow:0 8px 28px rgba(124,58,237,.55)}
           .lbp-divider{height:1px;background:rgba(15,52,96,.08);margin-bottom:18px}
-          .lbp-card-pop .lbp-divider{background:rgba(255,255,255,.15)}
           .lbp-card-elite .lbp-divider{background:rgba(139,92,246,.20)}
           .lbp-feat-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px}
           .lbp-feat-list li{display:flex;align-items:flex-start;gap:9px;font-size:12px;color:#374151;line-height:1.4}
-          .lbp-card-pop .lbp-feat-list li{color:rgba(255,255,255,.85)}
           .lbp-card-elite .lbp-feat-list li{color:rgba(255,255,255,.80)}
           .lbp-feat-list li svg{color:#D97706}
-          .lbp-card-pop .lbp-feat-list li svg{color:#fcd34d}
           .lbp-card-elite .lbp-feat-list li svg{color:#c4b5fd}
           .lbp-trust{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:32px;padding-top:28px;border-top:1px solid rgba(15,52,96,.08)}
           .lbp-trust span{font-size:13px;color:#4A6080;display:flex;align-items:center;gap:6px;font-weight:500}

@@ -230,38 +230,28 @@ export default function LocalSeoPackages() {
           .lsp-tog-knob{position:absolute;top:4px;left:4px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform .25s;box-shadow:0 1px 4px rgba(0,0,0,.18)}
           .lsp-tog-btn.on .lsp-tog-knob{transform:translateX(22px)}
           .lsp-save-badge{display:inline-flex;align-items:center;background:rgba(8,145,178,.10);color:#0891B2;font-size:11px;font-weight:700;padding:2px 8px;border-radius:100px;margin-left:6px}
-          .lsp-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
+          .lsp-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;padding-top:20px}
           .lsp-card{background:#fff;border:1.5px solid #e5e9f0;border-radius:24px;padding:32px 28px;position:relative;transition:box-shadow .22s,transform .22s;overflow:hidden}
           .lsp-card:hover{box-shadow:0 12px 40px rgba(8,145,178,.08)}
-          .lsp-card-pop{background:linear-gradient(135deg,#164E63 0%,#0891B2 100%);border-color:transparent;transform:scale(1.04);box-shadow:0 20px 60px rgba(8,145,178,.25)}
-          .lsp-card-pop:hover{transform:scale(1.04) translateY(-4px)}
-          .lsp-pop-tag{position:absolute;top:20px;right:20px;background:rgba(255,255,255,.20);color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:100px;letter-spacing:.5px;border:1px solid rgba(255,255,255,.30)}
+          .lsp-card-pop{background:linear-gradient(135deg,rgba(224,242,254,0.85) 0%,rgba(255,255,255,0.98) 50%,rgba(207,250,254,0.65) 100%);border-color:rgba(8,145,178,0.55);transform:scale(1.04);box-shadow:0 20px 60px rgba(8,145,178,0.16),0 0 0 2px rgba(8,145,178,0.14);overflow:visible}
+          .lsp-card-pop:hover{transform:scale(1.04) translateY(-4px);box-shadow:0 28px 72px rgba(8,145,178,0.22),0 0 0 2px rgba(8,145,178,0.20)}
+          .lsp-pop-tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#0891B2,#06B6D4);color:#fff;font-size:11px;font-weight:700;padding:4px 14px;border-radius:100px;letter-spacing:.5px;white-space:nowrap;box-shadow:0 4px 12px rgba(8,145,178,0.30)}
           .lsp-plan-name{font-size:22px;font-weight:800;color:#0F1F40;margin-bottom:6px}
-          .lsp-card-pop .lsp-plan-name{color:#fff}
           .lsp-plan-desc{font-size:13px;color:#6b7280;line-height:1.55;margin-bottom:24px}
-          .lsp-card-pop .lsp-plan-desc{color:rgba(255,255,255,.75)}
           .lsp-price-row{display:flex;align-items:baseline;gap:4px;margin-bottom:4px}
           .lsp-currency{font-size:1.4rem;font-weight:700;color:#0891B2}
-          .lsp-card-pop .lsp-currency{color:rgba(255,255,255,.85)}
           .lsp-amount{font-size:3rem;font-weight:900;letter-spacing:-2px;color:#0F1F40;line-height:1}
-          .lsp-card-pop .lsp-amount{color:#fff}
           .lsp-per{font-size:13px;color:#9ca3af;font-weight:500;margin-left:2px}
-          .lsp-card-pop .lsp-per{color:rgba(255,255,255,.65)}
           .lsp-billed{font-size:12px;color:#9ca3af;margin-bottom:4px}
-          .lsp-card-pop .lsp-billed{color:rgba(255,255,255,.60)}
           .lsp-save-line{font-size:12px;font-weight:700;color:#16a34a;margin-bottom:20px;min-height:18px}
-          .lsp-card-pop .lsp-save-line{color:#86efac}
           .lsp-cta-card{display:block;width:100%;text-align:center;padding:13px;border-radius:50px;font-weight:700;font-size:.9rem;text-decoration:none;background:#0891B2;color:#fff;transition:all .22s;margin-bottom:24px}
           .lsp-cta-card:hover{background:#164E63;transform:translateY(-1px);box-shadow:0 6px 24px rgba(8,145,178,.28)}
-          .lsp-card-pop .lsp-cta-card{background:#fff;color:#0891B2}
-          .lsp-card-pop .lsp-cta-card:hover{background:#ecfeff}
+          .lsp-card-pop .lsp-cta-card{background:linear-gradient(135deg,#0891B2,#06B6D4);color:#fff;box-shadow:0 6px 20px rgba(8,145,178,0.30)}
+          .lsp-card-pop .lsp-cta-card:hover{background:linear-gradient(135deg,#164E63,#0891B2);box-shadow:0 8px 28px rgba(8,145,178,0.40)}
           .lsp-card-div{height:1px;background:#f1f5f9;margin-bottom:20px}
-          .lsp-card-pop .lsp-card-div{background:rgba(255,255,255,.15)}
           .lsp-feat-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
           .lsp-feat-list li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#374151;line-height:1.4}
-          .lsp-card-pop .lsp-feat-list li{color:rgba(255,255,255,.88)}
           .lsp-feat-list li svg{color:#0891B2}
-          .lsp-card-pop .lsp-feat-list li svg{color:#a5f3fc}
           .lsp-trust{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:32px;padding-top:32px;border-top:1px solid #e5e9f0}
           .lsp-trust span{font-size:13px;color:#6b7280;display:flex;align-items:center;gap:6px;font-weight:500}
 

@@ -315,38 +315,30 @@ export default function EcommerceSeoPackages() {
           .esp-tog-knob{position:absolute;top:4px;left:4px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform 0.25s;box-shadow:0 1px 4px rgba(0,0,0,0.18)}
           .esp-tog-btn.on .esp-tog-knob{transform:translateX(22px)}
           .esp-save-badge{display:inline-flex;align-items:center;background:rgba(217,119,6,0.12);color:#B45309;font-size:11px;font-weight:700;padding:2px 8px;border-radius:100px;margin-left:6px;letter-spacing:0.5px}
-          .esp-plan-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
+          .esp-plan-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;padding-top:20px}
           .esp-plan-card{background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.88) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:24px;padding:32px 28px;position:relative;transition:box-shadow 0.22s,transform 0.22s,border-color 0.22s;overflow:hidden;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95)}
           .esp-plan-card:hover{box-shadow:0 16px 48px rgba(15,52,96,0.14);transform:translateY(-4px)}
-          .esp-plan-card-pop{background:linear-gradient(135deg,#071e3d 0%,#0F3460 50%,#0a2549 100%);border-color:rgba(217,119,6,0.50);transform:scale(1.03);box-shadow:0 20px 60px rgba(15,52,96,0.28)}
-          .esp-plan-card-pop:hover{transform:scale(1.03) translateY(-4px)}
-          .esp-pop-tag{position:absolute;top:20px;right:20px;background:rgba(217,119,6,0.15);color:#D97706;font-size:11px;font-weight:700;padding:4px 10px;border-radius:100px;letter-spacing:0.5px;border:1px solid rgba(217,119,6,0.30)}
-          .esp-plan-card-pop .esp-pop-tag{background:rgba(217,119,6,0.20);border-color:rgba(217,119,6,0.50)}
+          .esp-plan-card-pop{background:linear-gradient(135deg,rgba(255,251,235,0.92) 0%,rgba(255,255,255,0.98) 50%,rgba(255,249,219,0.85) 100%);border-color:rgba(217,119,6,0.55);transform:scale(1.03);box-shadow:0 20px 60px rgba(217,119,6,0.16),0 0 0 2px rgba(217,119,6,0.14);overflow:visible}
+          .esp-plan-card-pop:hover{transform:scale(1.03) translateY(-4px);box-shadow:0 28px 72px rgba(217,119,6,0.22),0 0 0 2px rgba(217,119,6,0.20)}
+          .esp-pop-tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#D97706,#F59E0B);color:#fff;font-size:11px;font-weight:700;padding:4px 14px;border-radius:100px;letter-spacing:0.5px;white-space:nowrap;box-shadow:0 4px 12px rgba(217,119,6,0.30)}
           .esp-plan-name{font-size:22px;font-weight:800;color:#0F1F40;margin-bottom:6px}
-          .esp-plan-card-pop .esp-plan-name{color:#fff}
           .esp-plan-desc{font-size:13px;color:#4A6080;line-height:1.55;margin-bottom:24px}
-          .esp-plan-card-pop .esp-plan-desc{color:rgba(255,255,255,0.70)}
           .esp-price-row{display:flex;align-items:baseline;gap:4px;margin-bottom:4px}
           .esp-currency{font-size:1.4rem;font-weight:700;color:#D97706}
           .esp-amount{font-size:3rem;font-weight:900;letter-spacing:-2px;color:#0F1F40;line-height:1}
-          .esp-plan-card-pop .esp-currency,.esp-plan-card-pop .esp-amount{color:#fff}
           .esp-per{font-size:13px;color:#9ca3af;font-weight:500;margin-left:2px}
-          .esp-plan-card-pop .esp-per{color:rgba(255,255,255,0.55)}
           .esp-billed{font-size:12px;color:#9ca3af;margin-bottom:4px}
-          .esp-plan-card-pop .esp-billed{color:rgba(255,255,255,0.55)}
           .esp-save-line{font-size:12px;font-weight:700;color:#D97706;margin-bottom:20px;min-height:18px}
-          .esp-plan-card-pop .esp-save-line{color:#fbbf24}
+          .esp-plan-card-pop .esp-save-line{color:#D97706}
           .esp-cta-plan{display:block;width:100%;text-align:center;padding:13px;border-radius:50px;font-weight:700;font-size:0.9rem;text-decoration:none;background:rgba(15,52,96,0.85);color:#fff;border:1.5px solid rgba(255,255,255,0.20);transition:all 0.22s;margin-bottom:24px}
           .esp-cta-plan:hover{background:rgba(15,52,96,1);border-color:rgba(245,158,11,0.6);transform:translateY(-1px)}
-          .esp-plan-card-pop .esp-cta-plan{background:rgba(217,119,6,0.90);border-color:rgba(255,255,255,0.20)}
-          .esp-plan-card-pop .esp-cta-plan:hover{background:#D97706}
+          .esp-plan-card-pop .esp-cta-plan{background:linear-gradient(135deg,#D97706,#F59E0B);border-color:transparent;color:#fff;box-shadow:0 6px 20px rgba(217,119,6,0.35)}
+          .esp-plan-card-pop .esp-cta-plan:hover{background:linear-gradient(135deg,#B45309,#D97706);box-shadow:0 8px 28px rgba(217,119,6,0.45)}
           .esp-plan-divider{height:1px;background:rgba(15,52,96,0.10);margin-bottom:20px}
-          .esp-plan-card-pop .esp-plan-divider{background:rgba(255,255,255,0.15)}
+          .esp-plan-card-pop .esp-plan-divider{background:rgba(217,119,6,0.15)}
           .esp-feat-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
           .esp-feat-list li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#374151;line-height:1.4}
-          .esp-plan-card-pop .esp-feat-list li{color:rgba(255,255,255,0.85)}
           .esp-feat-list li svg{color:#D97706;flex-shrink:0;margin-top:2px}
-          .esp-plan-card-pop .esp-feat-list li svg{color:#fbbf24}
           .esp-trust{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:32px;padding-top:32px;border-top:1px solid rgba(15,52,96,0.12)}
           .esp-trust-item{font-size:13px;color:#6b7280;display:flex;align-items:center;gap:6px;font-weight:500}
           .esp-trust-item svg{color:#D97706}

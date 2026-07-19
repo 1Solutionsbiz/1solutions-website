@@ -76,6 +76,25 @@ const WHY = [
   { icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', title: 'White-Hat Only', desc: 'Every tactic we use aligns with Google guidelines. Your rankings are built to last, not to disappear after the next update.' },
 ];
 
+const RELATED = [
+  { href:'/local-seo-services/', label:'Local SEO Services' },
+  { href:'/technical-seo-optimization/', label:'Technical SEO' },
+  { href:'/ecommerce-seo-services/', label:'Ecommerce SEO' },
+  { href:'/link-building-services/', label:'Link Building' },
+  { href:'/content-marketing-services/', label:'Content Marketing' },
+  { href:'/affordable-seo-packages/', label:'SEO Packages & Pricing' },
+  { href:'/google-my-business-optimization/', label:'Google My Business' },
+  { href:'/enterprise-seo-services/', label:'Enterprise SEO' },
+  { href:'/white-label-seo-services/', label:'White-Label SEO' },
+  { href:'/seo-audit-services/', label:'SEO Audit Services' },
+  { href:'/managed-seo-services/', label:'Managed SEO' },
+  { href:'/ai-seo-services/', label:'AI SEO Services' },
+  { href:'/ecommerce-seo-packages/', label:'Ecommerce SEO Packages' },
+  { href:'/dental-seo-services/', label:'Dental SEO' },
+  { href:'/perplexity-ai-seo/', label:'Perplexity AI SEO' },
+  { href:'/shopify-seo-services/', label:'Shopify SEO' },
+];
+
 const FAQS = [
   { q: 'What is SEO and why does my business need it?', a: "SEO (Search Engine Optimisation) is the practice of improving a website's visibility in organic (non-paid) search engine results. When someone searches for a product or service you offer, SEO determines whether your website appears at the top of the results or on page 5. 68% of all online experiences begin with a search engine, and 53% of all website traffic comes from organic search. Without SEO, you are invisible to the majority of potential customers actively looking for what you sell. SEO is the highest long-term ROI marketing channel for most businesses - generating qualified traffic long after the work is done." },
   { q: 'How long does SEO take to show results?', a: 'Most clients see meaningful movement in rankings and organic traffic within 3 to 6 months. Competitive industries or technically complex sites may take longer. The timeline depends on three factors: your current domain authority, the competitiveness of your target keywords, and the speed at which technical fixes and content can be implemented. We set honest expectations upfront and show you progress at every step - with monthly reports tracking keyword rankings, organic traffic, and revenue-impacting metrics.' },
@@ -385,26 +404,6 @@ export default function SeoServices() {
           .seo-submit { padding:14px 28px;background:rgba(15,52,96,0.85);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.30);color:#fff;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all 0.3s;margin-top:8px;width:100%;box-shadow:0 6px 24px rgba(15,52,96,0.25),inset 0 1px 0 rgba(255,255,255,0.15); }
           .seo-submit:hover { background:rgba(15,52,96,0.95);border-color:rgba(245,158,11,0.6);transform:translateY(-2px); }
 
-          /* ── AUTHOR BAR ── */
-          .seo-author-bar { background:linear-gradient(135deg,rgba(254,243,199,0.50) 0%,rgba(255,255,255,0.60) 40%,rgba(219,234,254,0.45) 100%);border-top:1px solid rgba(217,119,6,0.15);border-bottom:1px solid rgba(217,119,6,0.15);padding:20px 40px;position:relative;z-index:1; }
-          .seo-author-inner { max-width:860px;margin:0 auto;display:flex;align-items:center;gap:16px; }
-          .seo-author-icon { width:44px;height:44px;background:linear-gradient(135deg,#0F3460,#1a3a6e);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
-          .seo-author-text { font-size:13px;color:#4A6080;line-height:1.55; }
-          .seo-author-text strong { color:#0F3460; }
-
-          /* ── CTA ── */
-          .seo-cta { background:linear-gradient(135deg,rgba(254,243,199,0.70) 0%,rgba(255,255,255,0.60) 40%,rgba(219,234,254,0.65) 100%);backdrop-filter:blur(20px);padding:80px 40px;position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.80);text-align:center; }
-          .seo-cta-ey { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:16px;display:block; }
-          .seo-cta-t { font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;line-height:1.2; }
-          .seo-cta-s { font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 28px;max-width:520px; }
-          .seo-pricing-note { background:rgba(255,255,255,0.60);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.85);border-radius:14px;padding:16px 24px;margin:0 auto 32px;max-width:620px;font-size:14px;color:#4A6080;line-height:1.65;text-align:left;box-shadow:0 4px 16px rgba(15,52,96,0.06); }
-          .seo-pricing-note strong { color:#0F3460; }
-          .seo-cta-btns { display:flex;gap:14px;justify-content:center;flex-wrap:wrap; }
-          .seo-btn-p { display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:rgba(15,52,96,0.85);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.20);color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 6px 24px rgba(15,52,96,0.25); }
-          .seo-btn-p:hover { background:rgba(15,52,96,1);border-color:rgba(245,158,11,0.6);transform:translateY(-2px);box-shadow:0 12px 36px rgba(15,52,96,0.30); }
-          .seo-btn-s { display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);color:#0F3460;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1); }
-          .seo-btn-s:hover { background:rgba(255,255,255,0.85);border-color:rgba(245,158,11,0.6);transform:translateY(-2px); }
-
           /* ── RESPONSIVE ── */
           @media(max-width:1024px) {
             .seo-svc-grid { grid-template-columns:repeat(2,1fr); }
@@ -416,7 +415,7 @@ export default function SeoServices() {
             .seo-ind-grid { grid-template-columns:repeat(3,1fr); }
           }
           @media(max-width:768px) {
-            .seo-sec,.seo-results,.seo-contact,.seo-cta,.seo-author-bar { padding-left:24px;padding-right:24px; }
+            .seo-sec,.seo-results,.seo-contact,.seo-related { padding-left:24px;padding-right:24px; }
             .seo-hero-content { padding:36px 20px 24px; }
             .seo-h1 { font-size:clamp(1.7rem,6vw,2.4rem); }
             .seo-clients-bar { padding:16px 20px 36px;gap:12px; }
@@ -432,9 +431,18 @@ export default function SeoServices() {
             .seo-fa { padding:0 18px 18px 52px;font-size:13px; }
             .seo-fq-badge { left:14px; }
             .seo-form-row { grid-template-columns:1fr; }
-            .seo-cta-btns { flex-direction:column;align-items:center; }
           }
         
+          /* ── RELATED SERVICES ── */
+          .seo-related{padding:72px 40px;background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08)}
+          .seo-related-in{max-width:860px;margin:0 auto;text-align:center}
+          .seo-related-ey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:14px;display:block}
+          .seo-related-ttl{font-size:clamp(1.4rem,3vw,2rem);font-weight:900;color:#0F1F40;margin-bottom:12px;letter-spacing:-.5px}
+          .seo-related-sub{font-size:14px;color:#4A6080;line-height:1.7;max-width:620px;margin:0 auto 24px}
+          .seo-related-divider{border:none;border-top:1px solid rgba(15,52,96,0.10);margin:0 auto 28px;width:60px}
+          .seo-related-tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+          .seo-rtag{display:inline-flex;align-items:center;padding:8px 16px;background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);border:1px solid rgba(15,52,96,0.12);border-radius:100px;font-size:13px;font-weight:600;color:#0F3460;text-decoration:none;transition:all 0.2s;box-shadow:0 2px 8px rgba(15,52,96,0.06)}
+          .seo-rtag:hover{background:#fff;border-color:rgba(217,119,6,0.45);color:#D97706;transform:translateY(-2px);box-shadow:0 6px 20px rgba(15,52,96,0.10)}
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
@@ -755,33 +763,18 @@ export default function SeoServices() {
             </div>
           </div>
         </section>
-
-        {/* ── AUTHOR BAR ── */}
-        <div className="seo-author-bar">
-          <div className="seo-author-inner">
-            <div className="seo-author-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
-              </svg>
+        {/* ── RELATED SERVICES ── */}
+        <section className="seo-related">
+          <div className="seo-related-in">
+            <span className="seo-related-ey">Explore Related Services</span>
+            <h2 className="seo-related-ttl">Related SEO &amp; Digital Marketing Services</h2>
+            <p className="seo-related-sub">Explore our full range of search, content, and digital marketing solutions designed to grow your online visibility.</p>
+            <hr className="seo-related-divider"/>
+            <div className="seo-related-tags">
+              {RELATED.map(({ href, label }) => (
+                <Link key={href} href={href} className="seo-rtag">{label}</Link>
+              ))}
             </div>
-            <p className="seo-author-text">Written and reviewed by the <strong>1Solutions SEO Strategy Team</strong> - 15+ years of search engine optimisation experience across 500+ campaigns in US, Canada, and Australia. Updated June 2025 to reflect the latest Google algorithm guidance and E-E-A-T best practices.</p>
-          </div>
-        </div>
-
-        {/* ── CTA ── */}
-        <section className="seo-cta">
-          <span className="seo-cta-ey">Ready to Rank?</span>
-          <h2 className="seo-cta-t">Start Growing Your Organic Traffic Today</h2>
-          <p className="seo-cta-s">Join 500+ businesses that trust 1Solutions for their SEO. No lock-in contracts. Just results.</p>
-          <div className="seo-pricing-note">
-            <strong>How much does SEO cost?</strong> Our SEO services start from <strong>$799/month</strong> for SMBs. Enterprise and custom programmes are scoped after a free audit. Every engagement begins with a free 200-point audit - <Link href="/affordable-seo-packages/" style={{color:'#D97706',fontWeight:600}}>view our SEO packages</Link> or contact us for a custom quote.
-          </div>
-          <div className="seo-cta-btns">
-            <a href="#contact" className="seo-btn-p">
-              Get My Free SEO Audit
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <Link href="/affordable-seo-packages/" className="seo-btn-s">View SEO Packages</Link>
           </div>
         </section>
       </div>
