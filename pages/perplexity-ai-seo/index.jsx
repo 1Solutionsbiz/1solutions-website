@@ -121,18 +121,6 @@ const RELATED = [
   { href: '/link-building-services/', label: 'Link Building Services' },
 ];
 
-const ENGAGE_ROWS = [
-  { feature: 'Ideal Project Type', fp: 'Defined scope', tm: 'Evolving scope', ded: 'Long-term growth', off: 'Budget-focused' },
-  { feature: 'Pricing Model', fp: 'Fixed monthly', tm: 'Hourly / T&M', ded: 'Monthly retainer', off: 'Cost-efficient' },
-  { feature: 'Team Structure', fp: 'Shared team', tm: 'Shared team', ded: 'Dedicated to you', off: 'Offshore team' },
-  { feature: 'Flexibility', fp: 'Low', tm: 'High', ded: 'Very High', off: 'Medium' },
-  { feature: 'Citation Monitoring', fp: '✓', tm: '✓', ded: '✓', off: '✓' },
-  { feature: 'Monthly Reporting', fp: '✓', tm: '✓', ded: '✓', off: '✓' },
-  { feature: 'Dedicated Strategist', fp: '✗', tm: '✗', ded: '✓', off: '✗' },
-  { feature: 'Custom Schema Build', fp: '✗', tm: '✓', ded: '✓', off: '✓' },
-  { feature: 'Priority Response', fp: '48h', tm: '24h', ded: 'Same day', off: '48h' },
-];
-
 function StarIcon() {
   return (
     <svg width="14" height="14" viewBox="0 0 24 24" fill="#D97706" stroke="none">
@@ -285,8 +273,11 @@ export default function PerplexityAiSeo() {
 
           /* ── HERO ── */
           .plx-hero{background:linear-gradient(135deg,#eef6ff 0%,#f0faf8 35%,#e8f4fd 70%,#eef6ff 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .plx-orb1{position:absolute;top:-120px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(15,52,96,0.10) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .plx-orb2{position:absolute;bottom:0;left:-100px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(217,119,6,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
+          .plx-aurora { position:absolute; inset:-15%; z-index:0; pointer-events:none; filter:blur(70px) saturate(150%); animation:plx-aurora-drift 20s ease-in-out infinite alternate; }
+          .plx-aurora-b1 { position:absolute; left:20%; top:30%; width:65%; height:65%; border-radius:50%; background:radial-gradient(circle at center,rgba(15,52,96,0.28) 0%,transparent 70%); transform:translate(-50%,-50%); }
+          .plx-aurora-b2 { position:absolute; left:78%; top:22%; width:48%; height:48%; border-radius:50%; background:radial-gradient(circle at center,rgba(217,119,6,0.20) 0%,transparent 70%); transform:translate(-50%,-50%); }
+          .plx-aurora-b3 { position:absolute; left:50%; top:82%; width:55%; height:55%; border-radius:50%; background:radial-gradient(circle at center,rgba(26,82,118,0.16) 0%,transparent 70%); transform:translate(-50%,-50%); }
+          @keyframes plx-aurora-drift { 0%{transform:translate3d(0,0,0) scale(1)} 100%{transform:translate3d(-4%,3%,0) scale(1.10)} }
           .plx-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}
           .plx-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(15,52,96,0.07);border:1px solid rgba(15,52,96,0.15);border-radius:100px;padding:5px 16px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#0F3460;margin-bottom:28px}
           .plx-pulse{width:7px;height:7px;border-radius:50%;background:#D97706;display:inline-block;animation:plx-pulse 2s ease-in-out infinite}
@@ -369,28 +360,23 @@ export default function PerplexityAiSeo() {
           .plx-engage-header{text-align:center;margin-bottom:52px}
           .plx-engage-title{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#0F3460 0%,#1a5276 50%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 14px}
           .plx-engage-desc{font-size:15px;color:#3A507A;line-height:1.7;max-width:640px;margin:0 auto}
-          .plx-table-wrap{background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);border-radius:24px;box-shadow:0 8px 40px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,0.95);overflow-x:auto}
-          .plx-cmp-table{width:100%;border-collapse:collapse;min-width:680px}
-          .plx-cmp-table thead tr{border-bottom:2px solid rgba(15,52,96,0.10)}
-          .plx-cmp-th{padding:30px 20px 26px;text-align:center;vertical-align:top}
-          .plx-cmp-th:first-child{text-align:left;padding-left:32px;min-width:180px}
-          .plx-cmp-th.plx-th-feat{background:linear-gradient(180deg,rgba(254,243,199,0.55) 0%,rgba(255,255,255,0.20) 100%);border-left:1px solid rgba(217,119,6,0.20);border-right:1px solid rgba(217,119,6,0.20)}
-          .plx-popular-badge{display:inline-block;font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:#D97706;color:#fff;padding:3px 10px;border-radius:20px;margin-bottom:10px}
-          .plx-plan-badge{display:inline-block;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:10px;background:rgba(15,52,96,0.08);color:#4A6080}
-          .plx-cmp-plan-name{display:block;font-size:15px;font-weight:800;color:#0F3460;margin-bottom:4px;line-height:1.3}
-          .plx-cmp-th.plx-th-feat .plx-cmp-plan-name{color:#D97706}
-          .plx-cmp-plan-price{display:block;font-size:12px;color:#6B7280;font-weight:500}
-          .plx-cmp-table tbody tr{border-bottom:1px solid rgba(15,52,96,0.06);transition:background 0.15s}
-          .plx-cmp-table tbody tr:last-child{border-bottom:none}
-          .plx-cmp-table tbody tr:nth-child(odd){background:rgba(15,52,96,0.018)}
-          .plx-cmp-table tbody tr:hover{background:rgba(15,52,96,0.04)}
-          .plx-cmp-td{padding:15px 20px;text-align:center;vertical-align:middle;font-size:13px;color:#4A6080}
-          .plx-cmp-td:first-child{text-align:left;padding-left:32px;font-size:13px;font-weight:600;color:#1e293b}
-          .plx-cmp-td.plx-th-feat{background:rgba(254,243,199,0.22);border-left:1px solid rgba(217,119,6,0.15);border-right:1px solid rgba(217,119,6,0.15)}
-          .plx-tick{color:#16a34a;font-size:17px;line-height:1}
-          .plx-cross{color:#d1d5db;font-size:16px;line-height:1}
-          .plx-td-text{font-size:12px;color:#4A6080;white-space:nowrap}
-          .plx-td-text.hi{color:#0F3460;font-weight:600}
+          .plx-plans-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:start; }
+          .plx-pcard { display:flex;flex-direction:column;height:100%;padding:30px 26px;border-radius:20px;border:1.5px solid rgba(15,52,96,0.12);background:rgba(255,255,255,0.80);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);position:relative; }
+          .plx-pcard--feat { border-color:rgba(217,119,6,0.40);background:linear-gradient(180deg,rgba(254,243,199,0.35) 0%,rgba(255,255,255,0.90) 100%);box-shadow:0 0 60px rgba(217,119,6,0.12),0 8px 40px rgba(15,52,96,0.08); }
+          .plx-pcard-pop { position:absolute;top:-13px;left:50%;transform:translateX(-50%);padding:4px 14px;border-radius:100px;background:linear-gradient(90deg,#0F3460,#1a5276 50%,#D97706);color:#fff;font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;box-shadow:0 4px 16px rgba(217,119,6,0.28); }
+          .plx-pcard-badge { display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:#6B7280;background:rgba(15,52,96,0.06);padding:4px 12px;border-radius:100px;margin-bottom:14px; }
+          .plx-pcard-name { display:block;font-size:17px;font-weight:800;color:#0F3460;margin-bottom:10px;line-height:1.3; }
+          .plx-pcard--feat .plx-pcard-name { color:#b45309; }
+          .plx-pcard-blurb { font-size:13px;color:#4A6080;line-height:1.7;margin:0 0 20px; }
+          .plx-pcard-features { list-style:none;padding:0;margin:0 0 24px;flex:1; }
+          .plx-pcard-features li { padding:8px 0;border-top:1px dashed rgba(15,52,96,0.10);font-size:13.5px;color:#374151;display:flex;align-items:flex-start;gap:8px; }
+          .plx-pcard-features li::before { content:'✓';color:#16a34a;font-weight:700;flex-shrink:0; }
+          .plx-pcard-cta { display:block;padding:12px 20px;background:rgba(15,52,96,0.07);border:1.5px solid rgba(15,52,96,0.18);border-radius:50px;color:#0F3460;font-size:13.5px;font-weight:700;text-decoration:none;text-align:center;transition:all 0.2s;margin-top:auto; }
+          .plx-pcard-cta:hover { background:rgba(15,52,96,0.12);transform:translateY(-1px);text-decoration:none; }
+          .plx-pcard-cta--feat { background:linear-gradient(135deg,#0F3460,#1a5276);border-color:transparent;color:#fff;box-shadow:0 4px 20px rgba(15,52,96,0.28); }
+          .plx-pcard-cta--feat:hover { background:linear-gradient(135deg,#0a2444,#0F3460);box-shadow:0 6px 28px rgba(15,52,96,0.38);color:#fff; }
+          @media(max-width:1024px){ .plx-plans-grid { grid-template-columns:repeat(2,1fr); } }
+          @media(max-width:600px){ .plx-plans-grid { grid-template-columns:1fr; } }
 
           /* ── FAQ ── */
           .plx-faq{background:#fff;padding:80px 40px}.plx-faq-in{max-width:860px;margin:0 auto}
@@ -468,7 +454,11 @@ export default function PerplexityAiSeo() {
 
         {/* ── HERO ── */}
         <section className="plx-hero">
-          <div className="plx-orb1"/><div className="plx-orb2"/>
+          <div className="plx-aurora" aria-hidden="true">
+            <div className="plx-aurora-b1" />
+            <div className="plx-aurora-b2" />
+            <div className="plx-aurora-b3" />
+          </div>
           <div className="plx-in">
             <span className="plx-eyebrow">
               <span className="plx-pulse"/>
@@ -597,53 +587,59 @@ export default function PerplexityAiSeo() {
               <h2 className="plx-engage-title">Choose the Right Model for Your Business</h2>
               <p className="plx-engage-desc">From fixed-scope projects to fully dedicated Perplexity SEO teams — we adapt to how you work and what your goals require.</p>
             </div>
-            <div className="plx-table-wrap">
-              <table className="plx-cmp-table">
-                <thead>
-                  <tr>
-                    <th className="plx-cmp-th"></th>
-                    <th className="plx-cmp-th">
-                      <span className="plx-plan-badge">Fixed Price</span>
-                      <span className="plx-cmp-plan-name">Fixed-Price Project</span>
-                      <span className="plx-cmp-plan-price">Defined scope &amp; budget</span>
-                    </th>
-                    <th className="plx-cmp-th">
-                      <span className="plx-plan-badge">T&amp;M</span>
-                      <span className="plx-cmp-plan-name">Time &amp; Materials</span>
-                      <span className="plx-cmp-plan-price">Hourly, flexible scope</span>
-                    </th>
-                    <th className="plx-cmp-th plx-th-feat">
-                      <span className="plx-popular-badge">Most Popular</span>
-                      <span className="plx-cmp-plan-name">Dedicated Team</span>
-                      <span className="plx-cmp-plan-price">Exclusive monthly retainer</span>
-                    </th>
-                    <th className="plx-cmp-th">
-                      <span className="plx-plan-badge">Offshore</span>
-                      <span className="plx-cmp-plan-name">Offshore SEO</span>
-                      <span className="plx-cmp-plan-price">Cost-effective delivery</span>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {ENGAGE_ROWS.map(row => (
-                    <tr key={row.feature}>
-                      <td className="plx-cmp-td">{row.feature}</td>
-                      <td className="plx-cmp-td">
-                        {row.fp === '✓' ? <span className="plx-tick">✓</span> : row.fp === '✗' ? <span className="plx-cross">✗</span> : <span className={`plx-td-text${row.fp === row.ded ? ' hi' : ''}`}>{row.fp}</span>}
-                      </td>
-                      <td className="plx-cmp-td">
-                        {row.tm === '✓' ? <span className="plx-tick">✓</span> : row.tm === '✗' ? <span className="plx-cross">✗</span> : <span className="plx-td-text">{row.tm}</span>}
-                      </td>
-                      <td className="plx-cmp-td plx-th-feat">
-                        {row.ded === '✓' ? <span className="plx-tick">✓</span> : row.ded === '✗' ? <span className="plx-cross">✗</span> : <span className="plx-td-text hi">{row.ded}</span>}
-                      </td>
-                      <td className="plx-cmp-td">
-                        {row.off === '✓' ? <span className="plx-tick">✓</span> : row.off === '✗' ? <span className="plx-cross">✗</span> : <span className="plx-td-text">{row.off}</span>}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="plx-plans-grid">
+              <article className="plx-pcard">
+                <span className="plx-pcard-badge">One-time</span>
+                <span className="plx-pcard-name">Fixed-Price Project</span>
+                <p className="plx-pcard-blurb">Defined scope &amp; budget — ideal for clearly-scoped builds with a fixed timeline and deliverables.</p>
+                <ul className="plx-pcard-features">
+                  <li>Shared specialist team</li>
+                  <li>Fixed scope &amp; deliverables</li>
+                  <li>Budget predictability</li>
+                  <li>Monthly progress report</li>
+                  <li>NDA on request</li>
+                </ul>
+                <a href="#contact" className="plx-pcard-cta">Get a Quote</a>
+              </article>
+              <article className="plx-pcard">
+                <span className="plx-pcard-badge">Flexible</span>
+                <span className="plx-pcard-name">Time &amp; Materials</span>
+                <p className="plx-pcard-blurb">Scale with evolving requirements — pay for what's delivered, adjust scope any sprint.</p>
+                <ul className="plx-pcard-features">
+                  <li>Shared specialist team</li>
+                  <li>Flexible, evolving scope</li>
+                  <li>Bi-weekly reporting</li>
+                  <li>Priority task queue</li>
+                  <li>NDA on request</li>
+                </ul>
+                <a href="#contact" className="plx-pcard-cta">Get a Quote</a>
+              </article>
+              <article className="plx-pcard plx-pcard--feat">
+                <span className="plx-pcard-pop">✦ Most Popular</span>
+                <span className="plx-pcard-name">Dedicated Team</span>
+                <p className="plx-pcard-blurb">Your extended team — specialists embedded in your workflow, committed to your long-term growth.</p>
+                <ul className="plx-pcard-features">
+                  <li>Dedicated senior specialists</li>
+                  <li>Exclusive monthly retainer</li>
+                  <li>Daily standups &amp; tracking</li>
+                  <li>Same-day support response</li>
+                  <li>NDA &amp; full IP protection</li>
+                </ul>
+                <a href="#contact" className="plx-pcard-cta plx-pcard-cta--feat">Get Started</a>
+              </article>
+              <article className="plx-pcard">
+                <span className="plx-pcard-badge">Cost-efficient</span>
+                <span className="plx-pcard-name">Offshore Model</span>
+                <p className="plx-pcard-blurb">Maximum ROI with our expert offshore team — senior-level quality at budget-friendly rates.</p>
+                <ul className="plx-pcard-features">
+                  <li>Expert offshore team</li>
+                  <li>Cost-effective delivery</li>
+                  <li>Monthly progress report</li>
+                  <li>Budget-focused pricing</li>
+                  <li>NDA on request</li>
+                </ul>
+                <a href="#contact" className="plx-pcard-cta">Get a Quote</a>
+              </article>
             </div>
           </div>
         </section>

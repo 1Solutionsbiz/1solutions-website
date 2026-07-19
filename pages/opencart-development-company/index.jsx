@@ -212,9 +212,11 @@ export default function OpenCartDevelopmentCompany() {
           .oc-page *, .oc-page *::before, .oc-page *::after { box-sizing: border-box; }
 
           /* Orbs */
-          .oc-orb-1 { position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(6,182,212,0.28) 0%,rgba(8,145,178,0.10) 40%,transparent 70%);top:-300px;right:-300px;pointer-events:none;z-index:0;filter:blur(20px); }
-          .oc-orb-2 { position:absolute;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(20,184,166,0.22) 0%,rgba(13,148,136,0.08) 40%,transparent 70%);bottom:0;left:-250px;pointer-events:none;z-index:0;filter:blur(20px); }
-          .oc-orb-3 { position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.14) 0%,transparent 70%);top:45%;left:-150px;transform:translateY(-50%);pointer-events:none;z-index:0;filter:blur(20px); }
+          .oc-aurora { position:absolute; inset:-15%; z-index:0; pointer-events:none; filter:blur(70px) saturate(150%); animation:oc-aurora-drift 20s ease-in-out infinite alternate; }
+          .oc-aurora-b1 { position:absolute; left:20%; top:30%; width:65%; height:65%; border-radius:50%; background:radial-gradient(circle at center,rgba(15,52,96,0.28) 0%,transparent 70%); transform:translate(-50%,-50%); }
+          .oc-aurora-b2 { position:absolute; left:78%; top:22%; width:48%; height:48%; border-radius:50%; background:radial-gradient(circle at center,rgba(217,119,6,0.20) 0%,transparent 70%); transform:translate(-50%,-50%); }
+          .oc-aurora-b3 { position:absolute; left:50%; top:82%; width:55%; height:55%; border-radius:50%; background:radial-gradient(circle at center,rgba(26,82,118,0.16) 0%,transparent 70%); transform:translate(-50%,-50%); }
+          @keyframes oc-aurora-drift { 0%{transform:translate3d(0,0,0) scale(1)} 100%{transform:translate3d(-4%,3%,0) scale(1.10)} }
 
           /* Hero */
           .oc-hero-block { background:transparent;position:relative;overflow:hidden; }
@@ -349,29 +351,23 @@ export default function OpenCartDevelopmentCompany() {
           .oc-engage-header { text-align:center;margin-bottom:52px; }
           .oc-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 14px; }
           .oc-engage-desc { font-size:15px;color:#3A507A;line-height:1.7;max-width:640px;margin:0 auto; }
-          .oc-table-wrap { background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);border-radius:24px;box-shadow:0 8px 40px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,0.95);overflow-x:auto; }
-          .oc-cmp-table { width:100%;border-collapse:collapse;min-width:680px; }
-          .oc-cmp-table thead tr { border-bottom:2px solid rgba(15,52,96,0.10); }
-          .oc-cmp-th { padding:30px 20px 26px;text-align:center;vertical-align:top; }
-          .oc-cmp-th:first-child { text-align:left;padding-left:32px;min-width:180px; }
-          .oc-cmp-th.oc-th-feat { background:linear-gradient(180deg,rgba(254,243,199,0.55) 0%,rgba(255,255,255,0.20) 100%);border-left:1px solid rgba(217,119,6,0.20);border-right:1px solid rgba(217,119,6,0.20); }
-          .oc-popular-badge { display:inline-block;font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:#D97706;color:#fff;padding:3px 10px;border-radius:20px;margin-bottom:10px; }
-          .oc-plan-badge { display:inline-block;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:10px;background:rgba(15,52,96,0.08);color:#4A6080; }
-          .oc-cmp-plan-name { display:block;font-size:15px;font-weight:800;color:#0F3460;margin-bottom:4px;line-height:1.3; }
-          .oc-cmp-th.oc-th-feat .oc-cmp-plan-name { color:#D97706; }
-          .oc-cmp-plan-price { display:block;font-size:12px;color:#6B7280;font-weight:500; }
-          .oc-cmp-table tbody tr { border-bottom:1px solid rgba(15,52,96,0.06);transition:background 0.15s; }
-          .oc-cmp-table tbody tr:last-child { border-bottom:none; }
-          .oc-cmp-table tbody tr:nth-child(odd) { background:rgba(15,52,96,0.018); }
-          .oc-cmp-table tbody tr:hover { background:rgba(99,130,255,0.05); }
-          .oc-cmp-td { padding:15px 20px;text-align:center;vertical-align:middle;font-size:13px;color:#4A6080; }
-          .oc-cmp-td:first-child { text-align:left;padding-left:32px;font-size:13px;font-weight:600;color:#1e293b; }
-          .oc-cmp-td.oc-th-feat { background:rgba(254,243,199,0.22);border-left:1px solid rgba(217,119,6,0.15);border-right:1px solid rgba(217,119,6,0.15); }
-          .oc-tick { color:#16a34a;font-size:17px;line-height:1; }
-          .oc-cross { color:#d1d5db;font-size:16px;line-height:1; }
-          .oc-addon { display:inline-block;font-size:11px;color:#D97706;font-weight:600;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.28);border-radius:4px;padding:2px 8px;white-space:nowrap; }
-          .oc-td-text { font-size:12px;color:#4A6080;white-space:nowrap; }
-          .oc-td-text.hi { color:#0F3460;font-weight:600; }
+          .oc-plans-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:start; }
+          .oc-pcard { display:flex;flex-direction:column;height:100%;padding:30px 26px;border-radius:20px;border:1.5px solid rgba(15,52,96,0.12);background:rgba(255,255,255,0.80);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);position:relative; }
+          .oc-pcard--feat { border-color:rgba(217,119,6,0.40);background:linear-gradient(180deg,rgba(254,243,199,0.35) 0%,rgba(255,255,255,0.90) 100%);box-shadow:0 0 60px rgba(217,119,6,0.12),0 8px 40px rgba(15,52,96,0.08); }
+          .oc-pcard-pop { position:absolute;top:-13px;left:50%;transform:translateX(-50%);padding:4px 14px;border-radius:100px;background:linear-gradient(90deg,#0F3460,#1a5276 50%,#D97706);color:#fff;font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;box-shadow:0 4px 16px rgba(217,119,6,0.28); }
+          .oc-pcard-badge { display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:#6B7280;background:rgba(15,52,96,0.06);padding:4px 12px;border-radius:100px;margin-bottom:14px; }
+          .oc-pcard-name { display:block;font-size:17px;font-weight:800;color:#0F3460;margin-bottom:10px;line-height:1.3; }
+          .oc-pcard--feat .oc-pcard-name { color:#b45309; }
+          .oc-pcard-blurb { font-size:13px;color:#4A6080;line-height:1.7;margin:0 0 20px; }
+          .oc-pcard-features { list-style:none;padding:0;margin:0 0 24px;flex:1; }
+          .oc-pcard-features li { padding:8px 0;border-top:1px dashed rgba(15,52,96,0.10);font-size:13.5px;color:#374151;display:flex;align-items:flex-start;gap:8px; }
+          .oc-pcard-features li::before { content:'✓';color:#16a34a;font-weight:700;flex-shrink:0; }
+          .oc-pcard-cta { display:block;padding:12px 20px;background:rgba(15,52,96,0.07);border:1.5px solid rgba(15,52,96,0.18);border-radius:50px;color:#0F3460;font-size:13.5px;font-weight:700;text-decoration:none;text-align:center;transition:all 0.2s;margin-top:auto; }
+          .oc-pcard-cta:hover { background:rgba(15,52,96,0.12);transform:translateY(-1px);text-decoration:none; }
+          .oc-pcard-cta--feat { background:linear-gradient(135deg,#0F3460,#1a5276);border-color:transparent;color:#fff;box-shadow:0 4px 20px rgba(15,52,96,0.28); }
+          .oc-pcard-cta--feat:hover { background:linear-gradient(135deg,#0a2444,#0F3460);box-shadow:0 6px 28px rgba(15,52,96,0.38);color:#fff; }
+          @media(max-width:1024px){ .oc-plans-grid { grid-template-columns:repeat(2,1fr); } }
+          @media(max-width:600px){ .oc-plans-grid { grid-template-columns:1fr; } }
 
           /* Contact */
           .oc-contact-section { padding:70px 40px;background:linear-gradient(135deg,rgba(207,250,254,0.72) 0%,rgba(255,255,255,0.65) 40%,rgba(204,251,241,0.68) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.85); }
@@ -549,9 +545,11 @@ export default function OpenCartDevelopmentCompany() {
       </Head>
 
       <div className="oc-page">
-        <div className="oc-orb-1" />
-        <div className="oc-orb-2" />
-        <div className="oc-orb-3" />
+        <div className="oc-aurora" aria-hidden="true">
+          <div className="oc-aurora-b1" />
+          <div className="oc-aurora-b2" />
+          <div className="oc-aurora-b3" />
+        </div>
 
         {/* ── HERO ── */}
         <div className="oc-hero-block">
@@ -763,59 +761,59 @@ export default function OpenCartDevelopmentCompany() {
               <p className="oc-engage-desc">Pick the model that fits your project, team, and budget — every plan includes a free discovery call and NDA on request.</p>
             </div>
 
-            <div className="oc-table-wrap">
-              <table className="oc-cmp-table">
-                <thead>
-                  <tr>
-                    <th className="oc-cmp-th"><span style={{fontSize:'12px',fontWeight:600,color:'#6B7280',textTransform:'uppercase',letterSpacing:'1px'}}>Feature</span></th>
-                    <th className="oc-cmp-th">
-                      <span className="oc-plan-badge">One-time</span>
-                      <span className="oc-cmp-plan-name">Fixed-Price</span>
-                      <span className="oc-cmp-plan-price">Project-based</span>
-                    </th>
-                    <th className="oc-cmp-th">
-                      <span className="oc-plan-badge">Flexible</span>
-                      <span className="oc-cmp-plan-name">Time &amp; Material</span>
-                      <span className="oc-cmp-plan-price">Hourly / weekly</span>
-                    </th>
-                    <th className="oc-cmp-th oc-th-feat">
-                      <span className="oc-popular-badge">Most Popular</span>
-                      <span className="oc-cmp-plan-name">Dedicated Team</span>
-                      <span className="oc-cmp-plan-price">From $3,000/mo</span>
-                    </th>
-                    <th className="oc-cmp-th">
-                      <span className="oc-plan-badge">Cost-efficient</span>
-                      <span className="oc-cmp-plan-name">Offshore Model</span>
-                      <span className="oc-cmp-plan-price">From $2,000/mo</span>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    ['Best For',               'Scoped builds',      'Evolving projects',  'Long-term products', 'Cost savings'],
-                    ['Timeline',               '4–12 weeks',          'Flexible',           'Ongoing',            'Ongoing'],
-                    ['Budget Predictability',  '✓',                 'Flexible',           '✓',                '✓'],
-                    ['Scope Changes Mid-way',  '✕',                 '✓',                '✓',                '✓'],
-                    ['Dedicated Developer',    '✕',                 '✕',                '✓',                '✓'],
-                    ['Priority Support',       '✕',                 '✓',                '✓',                '✕'],
-                    ['Daily Standups',         '✕',                 '✕',                '✓',                '✓'],
-                    ['NDA & IP Protection',    '✓',                 '✓',                '✓',                '✓'],
-                    ['Free Discovery Call',    '✓',                 '✓',                '✓',                '✓'],
-                  ].map(([label, ...cols]) => (
-                    <tr key={label}>
-                      <td className="oc-cmp-td">{label}</td>
-                      {cols.map((v, ci) => {
-                        const featured = ci === 2;
-                        let cell;
-                        if (v === '✓')      cell = <span className="oc-tick">✓</span>;
-                        else if (v === '✕') cell = <span className="oc-cross">—</span>;
-                        else                cell = <span className="oc-td-text hi">{v}</span>;
-                        return <td key={ci} className={`oc-cmp-td${featured ? ' oc-th-feat' : ''}`}>{cell}</td>;
-                      })}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="oc-plans-grid">
+              <article className="oc-pcard">
+                <span className="oc-pcard-badge">One-time</span>
+                <span className="oc-pcard-name">Fixed-Price Project</span>
+                <p className="oc-pcard-blurb">Defined scope &amp; budget — ideal for clearly-scoped builds with a fixed timeline and deliverables.</p>
+                <ul className="oc-pcard-features">
+                  <li>Shared specialist team</li>
+                  <li>Fixed scope &amp; deliverables</li>
+                  <li>Budget predictability</li>
+                  <li>Monthly progress report</li>
+                  <li>NDA on request</li>
+                </ul>
+                <a href="#contact" className="oc-pcard-cta">Get a Quote</a>
+              </article>
+              <article className="oc-pcard">
+                <span className="oc-pcard-badge">Flexible</span>
+                <span className="oc-pcard-name">Time &amp; Materials</span>
+                <p className="oc-pcard-blurb">Scale with evolving requirements — pay for what's delivered, adjust scope any sprint.</p>
+                <ul className="oc-pcard-features">
+                  <li>Shared specialist team</li>
+                  <li>Flexible, evolving scope</li>
+                  <li>Bi-weekly reporting</li>
+                  <li>Priority task queue</li>
+                  <li>NDA on request</li>
+                </ul>
+                <a href="#contact" className="oc-pcard-cta">Get a Quote</a>
+              </article>
+              <article className="oc-pcard oc-pcard--feat">
+                <span className="oc-pcard-pop">✦ Most Popular</span>
+                <span className="oc-pcard-name">Dedicated Team</span>
+                <p className="oc-pcard-blurb">Your extended team — specialists embedded in your workflow, committed to your long-term growth.</p>
+                <ul className="oc-pcard-features">
+                  <li>Dedicated senior specialists</li>
+                  <li>Exclusive monthly retainer</li>
+                  <li>Daily standups &amp; tracking</li>
+                  <li>Same-day support response</li>
+                  <li>NDA &amp; full IP protection</li>
+                </ul>
+                <a href="#contact" className="oc-pcard-cta oc-pcard-cta--feat">Get Started</a>
+              </article>
+              <article className="oc-pcard">
+                <span className="oc-pcard-badge">Cost-efficient</span>
+                <span className="oc-pcard-name">Offshore Model</span>
+                <p className="oc-pcard-blurb">Maximum ROI with our expert offshore team — senior-level quality at budget-friendly rates.</p>
+                <ul className="oc-pcard-features">
+                  <li>Expert offshore team</li>
+                  <li>Cost-effective delivery</li>
+                  <li>Monthly progress report</li>
+                  <li>Budget-focused pricing</li>
+                  <li>NDA on request</li>
+                </ul>
+                <a href="#contact" className="oc-pcard-cta">Get a Quote</a>
+              </article>
             </div>
           </div>
         </section>

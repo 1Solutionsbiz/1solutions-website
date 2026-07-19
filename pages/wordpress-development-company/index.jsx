@@ -279,9 +279,11 @@ export default function WordPressDevelopmentCompany() {
           .wp-page *, .wp-page *::before, .wp-page *::after { box-sizing: border-box; }
 
           /* Orbs */
-          .wp-orb-1 { position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(99,130,255,0.35) 0%,rgba(139,92,246,0.15) 40%,transparent 70%);top:-300px;right:-300px;pointer-events:none;z-index:0;filter:blur(20px); }
-          .wp-orb-2 { position:absolute;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(251,146,60,0.30) 0%,rgba(245,158,11,0.15) 40%,transparent 70%);bottom:0;left:-250px;pointer-events:none;z-index:0;filter:blur(20px); }
-          .wp-orb-3 { position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(20,184,166,0.20) 0%,transparent 70%);top:45%;left:-150px;transform:translateY(-50%);pointer-events:none;z-index:0;filter:blur(20px); }
+          .wp-aurora { position:absolute; inset:-15%; z-index:0; pointer-events:none; filter:blur(70px) saturate(150%); animation:wp-aurora-drift 20s ease-in-out infinite alternate; }
+          .wp-aurora-b1 { position:absolute; left:20%; top:30%; width:65%; height:65%; border-radius:50%; background:radial-gradient(circle at center,rgba(15,52,96,0.28) 0%,transparent 70%); transform:translate(-50%,-50%); }
+          .wp-aurora-b2 { position:absolute; left:78%; top:22%; width:48%; height:48%; border-radius:50%; background:radial-gradient(circle at center,rgba(217,119,6,0.20) 0%,transparent 70%); transform:translate(-50%,-50%); }
+          .wp-aurora-b3 { position:absolute; left:50%; top:82%; width:55%; height:55%; border-radius:50%; background:radial-gradient(circle at center,rgba(26,82,118,0.16) 0%,transparent 70%); transform:translate(-50%,-50%); }
+          @keyframes wp-aurora-drift { 0%{transform:translate3d(0,0,0) scale(1)} 100%{transform:translate3d(-4%,3%,0) scale(1.10)} }
 
           /* Hero */
           .wp-hero-block { background:transparent;position:relative;overflow:hidden; }
@@ -414,29 +416,23 @@ export default function WordPressDevelopmentCompany() {
           .wp-engage-header { text-align:center;margin-bottom:52px; }
           .wp-engage-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin:0 0 14px; }
           .wp-engage-desc { font-size:15px;color:#3A507A;line-height:1.7;max-width:640px;margin:0 auto; }
-          .wp-table-wrap { background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);border-radius:24px;box-shadow:0 8px 40px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,0.95);overflow-x:auto; }
-          .wp-cmp-table { width:100%;border-collapse:collapse;min-width:680px; }
-          .wp-cmp-table thead tr { border-bottom:2px solid rgba(15,52,96,0.10); }
-          .wp-cmp-th { padding:30px 20px 26px;text-align:center;vertical-align:top; }
-          .wp-cmp-th:first-child { text-align:left;padding-left:32px;min-width:180px; }
-          .wp-cmp-th.wp-th-feat { background:linear-gradient(180deg,rgba(254,243,199,0.55) 0%,rgba(255,255,255,0.20) 100%);border-left:1px solid rgba(217,119,6,0.20);border-right:1px solid rgba(217,119,6,0.20); }
-          .wp-popular-badge { display:inline-block;font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:#D97706;color:#fff;padding:3px 10px;border-radius:20px;margin-bottom:10px; }
-          .wp-plan-badge { display:inline-block;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:10px;background:rgba(15,52,96,0.08);color:#4A6080; }
-          .wp-cmp-plan-name { display:block;font-size:15px;font-weight:800;color:#0F3460;margin-bottom:4px;line-height:1.3; }
-          .wp-cmp-th.wp-th-feat .wp-cmp-plan-name { color:#D97706; }
-          .wp-cmp-plan-price { display:block;font-size:12px;color:#6B7280;font-weight:500; }
-          .wp-cmp-table tbody tr { border-bottom:1px solid rgba(15,52,96,0.06);transition:background 0.15s; }
-          .wp-cmp-table tbody tr:last-child { border-bottom:none; }
-          .wp-cmp-table tbody tr:nth-child(odd) { background:rgba(15,52,96,0.018); }
-          .wp-cmp-table tbody tr:hover { background:rgba(99,130,255,0.05); }
-          .wp-cmp-td { padding:15px 20px;text-align:center;vertical-align:middle;font-size:13px;color:#4A6080; }
-          .wp-cmp-td:first-child { text-align:left;padding-left:32px;font-size:13px;font-weight:600;color:#1e293b; }
-          .wp-cmp-td.wp-th-feat { background:rgba(254,243,199,0.22);border-left:1px solid rgba(217,119,6,0.15);border-right:1px solid rgba(217,119,6,0.15); }
-          .wp-tick { color:#16a34a;font-size:17px;line-height:1; }
-          .wp-cross { color:#d1d5db;font-size:16px;line-height:1; }
-          .wp-addon { display:inline-block;font-size:11px;color:#D97706;font-weight:600;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.28);border-radius:4px;padding:2px 8px;white-space:nowrap; }
-          .wp-td-text { font-size:12px;color:#4A6080;white-space:nowrap; }
-          .wp-td-text.hi { color:#0F3460;font-weight:600; }
+          .wp-plans-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:start; }
+          .wp-pcard { display:flex;flex-direction:column;height:100%;padding:30px 26px;border-radius:20px;border:1.5px solid rgba(15,52,96,0.12);background:rgba(255,255,255,0.80);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);position:relative; }
+          .wp-pcard--feat { border-color:rgba(217,119,6,0.40);background:linear-gradient(180deg,rgba(254,243,199,0.35) 0%,rgba(255,255,255,0.90) 100%);box-shadow:0 0 60px rgba(217,119,6,0.12),0 8px 40px rgba(15,52,96,0.08); }
+          .wp-pcard-pop { position:absolute;top:-13px;left:50%;transform:translateX(-50%);padding:4px 14px;border-radius:100px;background:linear-gradient(90deg,#0F3460,#1a5276 50%,#D97706);color:#fff;font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;box-shadow:0 4px 16px rgba(217,119,6,0.28); }
+          .wp-pcard-badge { display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;color:#6B7280;background:rgba(15,52,96,0.06);padding:4px 12px;border-radius:100px;margin-bottom:14px; }
+          .wp-pcard-name { display:block;font-size:17px;font-weight:800;color:#0F3460;margin-bottom:10px;line-height:1.3; }
+          .wp-pcard--feat .wp-pcard-name { color:#b45309; }
+          .wp-pcard-blurb { font-size:13px;color:#4A6080;line-height:1.7;margin:0 0 20px; }
+          .wp-pcard-features { list-style:none;padding:0;margin:0 0 24px;flex:1; }
+          .wp-pcard-features li { padding:8px 0;border-top:1px dashed rgba(15,52,96,0.10);font-size:13.5px;color:#374151;display:flex;align-items:flex-start;gap:8px; }
+          .wp-pcard-features li::before { content:'✓';color:#16a34a;font-weight:700;flex-shrink:0; }
+          .wp-pcard-cta { display:block;padding:12px 20px;background:rgba(15,52,96,0.07);border:1.5px solid rgba(15,52,96,0.18);border-radius:50px;color:#0F3460;font-size:13.5px;font-weight:700;text-decoration:none;text-align:center;transition:all 0.2s;margin-top:auto; }
+          .wp-pcard-cta:hover { background:rgba(15,52,96,0.12);transform:translateY(-1px);text-decoration:none; }
+          .wp-pcard-cta--feat { background:linear-gradient(135deg,#0F3460,#1a5276);border-color:transparent;color:#fff;box-shadow:0 4px 20px rgba(15,52,96,0.28); }
+          .wp-pcard-cta--feat:hover { background:linear-gradient(135deg,#0a2444,#0F3460);box-shadow:0 6px 28px rgba(15,52,96,0.38);color:#fff; }
+          @media(max-width:1024px){ .wp-plans-grid { grid-template-columns:repeat(2,1fr); } }
+          @media(max-width:600px){ .wp-plans-grid { grid-template-columns:1fr; } }
 
           /* Contact */
           .wp-contact-section { padding:70px 40px;background:linear-gradient(135deg,rgba(254,243,199,0.70) 0%,rgba(255,255,255,0.60) 40%,rgba(219,234,254,0.65) 100%);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:relative;z-index:1;border-top:1px solid rgba(255,255,255,0.80); }
@@ -784,9 +780,11 @@ export default function WordPressDevelopmentCompany() {
 
       <div className="wp-page">
         {/* Orbs */}
-        <div className="wp-orb-1" />
-        <div className="wp-orb-2" />
-        <div className="wp-orb-3" />
+        <div className="wp-aurora" aria-hidden="true">
+          <div className="wp-aurora-b1" />
+          <div className="wp-aurora-b2" />
+          <div className="wp-aurora-b3" />
+        </div>
 
         {/* ── HERO ── */}
         <div className="wp-hero-block">
@@ -1120,59 +1118,59 @@ export default function WordPressDevelopmentCompany() {
               <p className="wp-engage-desc">Pick the model that fits your project, team, and budget — every plan includes a free discovery call and NDA on request.</p>
             </div>
 
-            <div className="wp-table-wrap">
-              <table className="wp-cmp-table">
-                <thead>
-                  <tr>
-                    <th className="wp-cmp-th"><span style={{fontSize:'12px',fontWeight:600,color:'#6B7280',textTransform:'uppercase',letterSpacing:'1px'}}>Feature</span></th>
-                    <th className="wp-cmp-th">
-                      <span className="wp-plan-badge">One-time</span>
-                      <span className="wp-cmp-plan-name">Fixed-Price</span>
-                      <span className="wp-cmp-plan-price">Project-based</span>
-                    </th>
-                    <th className="wp-cmp-th">
-                      <span className="wp-plan-badge">Flexible</span>
-                      <span className="wp-cmp-plan-name">Time &amp; Material</span>
-                      <span className="wp-cmp-plan-price">Hourly / weekly</span>
-                    </th>
-                    <th className="wp-cmp-th wp-th-feat">
-                      <span className="wp-popular-badge">Most Popular</span>
-                      <span className="wp-cmp-plan-name">Dedicated Team</span>
-                      <span className="wp-cmp-plan-price">From $3,000/mo</span>
-                    </th>
-                    <th className="wp-cmp-th">
-                      <span className="wp-plan-badge">Cost-efficient</span>
-                      <span className="wp-cmp-plan-name">Offshore Model</span>
-                      <span className="wp-cmp-plan-price">From $2,000/mo</span>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    ['Best For',               'Scoped builds',      'Evolving projects',  'Long-term products', 'Cost savings'],
-                    ['Timeline',               '4–12 weeks',          'Flexible',           'Ongoing',            'Ongoing'],
-                    ['Budget Predictability',  '✓',                 'Flexible',           '✓',                '✓'],
-                    ['Scope Changes Mid-way',  '✕',                 '✓',                '✓',                '✓'],
-                    ['Dedicated Developer',    '✕',                 '✕',                '✓',                '✓'],
-                    ['Priority Support',       '✕',                 '✓',                '✓',                '✕'],
-                    ['Daily Standups',         '✕',                 '✕',                '✓',                '✓'],
-                    ['NDA & IP Protection',    '✓',                 '✓',                '✓',                '✓'],
-                    ['Free Discovery Call',    '✓',                 '✓',                '✓',                '✓'],
-                  ].map(([label, ...cols]) => (
-                    <tr key={label}>
-                      <td className="wp-cmp-td">{label}</td>
-                      {cols.map((v, ci) => {
-                        const featured = ci === 2;
-                        let cell;
-                        if (v === '✓')      cell = <span className="wp-tick">✓</span>;
-                        else if (v === '✕') cell = <span className="wp-cross">—</span>;
-                        else                cell = <span className="wp-td-text hi">{v}</span>;
-                        return <td key={ci} className={`wp-cmp-td${featured ? ' wp-th-feat' : ''}`}>{cell}</td>;
-                      })}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="wp-plans-grid">
+              <article className="wp-pcard">
+                <span className="wp-pcard-badge">One-time</span>
+                <span className="wp-pcard-name">Fixed-Price Project</span>
+                <p className="wp-pcard-blurb">Defined scope &amp; budget — ideal for clearly-scoped builds with a fixed timeline and deliverables.</p>
+                <ul className="wp-pcard-features">
+                  <li>Shared specialist team</li>
+                  <li>Fixed scope &amp; deliverables</li>
+                  <li>Budget predictability</li>
+                  <li>Monthly progress report</li>
+                  <li>NDA on request</li>
+                </ul>
+                <a href="#contact" className="wp-pcard-cta">Get a Quote</a>
+              </article>
+              <article className="wp-pcard">
+                <span className="wp-pcard-badge">Flexible</span>
+                <span className="wp-pcard-name">Time &amp; Materials</span>
+                <p className="wp-pcard-blurb">Scale with evolving requirements — pay for what's delivered, adjust scope any sprint.</p>
+                <ul className="wp-pcard-features">
+                  <li>Shared specialist team</li>
+                  <li>Flexible, evolving scope</li>
+                  <li>Bi-weekly reporting</li>
+                  <li>Priority task queue</li>
+                  <li>NDA on request</li>
+                </ul>
+                <a href="#contact" className="wp-pcard-cta">Get a Quote</a>
+              </article>
+              <article className="wp-pcard wp-pcard--feat">
+                <span className="wp-pcard-pop">✦ Most Popular</span>
+                <span className="wp-pcard-name">Dedicated Team</span>
+                <p className="wp-pcard-blurb">Your extended team — specialists embedded in your workflow, committed to your long-term growth.</p>
+                <ul className="wp-pcard-features">
+                  <li>Dedicated senior specialists</li>
+                  <li>Exclusive monthly retainer</li>
+                  <li>Daily standups &amp; tracking</li>
+                  <li>Same-day support response</li>
+                  <li>NDA &amp; full IP protection</li>
+                </ul>
+                <a href="#contact" className="wp-pcard-cta wp-pcard-cta--feat">Get Started</a>
+              </article>
+              <article className="wp-pcard">
+                <span className="wp-pcard-badge">Cost-efficient</span>
+                <span className="wp-pcard-name">Offshore Model</span>
+                <p className="wp-pcard-blurb">Maximum ROI with our expert offshore team — senior-level quality at budget-friendly rates.</p>
+                <ul className="wp-pcard-features">
+                  <li>Expert offshore team</li>
+                  <li>Cost-effective delivery</li>
+                  <li>Monthly progress report</li>
+                  <li>Budget-focused pricing</li>
+                  <li>NDA on request</li>
+                </ul>
+                <a href="#contact" className="wp-pcard-cta">Get a Quote</a>
+              </article>
             </div>
           </div>
         </section>
