@@ -241,42 +241,37 @@ export default function LocalSeoPackages() {
           .lsp-hstat-v{font-size:1.65rem;font-weight:900;color:#0891B2;letter-spacing:-.5px}
 
           /* ── PRICING ── */
-          .lsp-pricing-sec{background:linear-gradient(135deg,#06060c 0%,#0a0b14 50%,#06060c 100%);border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04)}
-          .lsp-pricing-sec .lsp-sec-ey{color:#a78bfa}
-          .lsp-pricing-sec .lsp-sec-ttl{color:#f4f4f6}
-          .lsp-pricing-sec .lsp-sec-desc{color:rgba(255,255,255,.50)}
+          .lsp-pricing-sec{background:linear-gradient(135deg,#f0eefa 0%,#f5f3ff 50%,#eff4ff 100%);border-top:1px solid rgba(124,58,237,.08);border-bottom:1px solid rgba(124,58,237,.08)}
+          .lsp-pricing-sec .lsp-sec-ey{color:#7c3aed}
           .lsp-tog-row{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:48px}
-          .lsp-tog-lbl{font-size:15px;font-weight:600;color:rgba(255,255,255,.40);transition:color .2s}
-          .lsp-tog-lbl.active{color:#f4f4f6}
-          .lsp-tog-btn{width:50px;height:28px;background:#2a2a3a;border-radius:100px;position:relative;cursor:pointer;border:none;padding:0;transition:background .25s;flex-shrink:0}
+          .lsp-tog-lbl{font-size:15px;font-weight:600;color:#6b7280;transition:color .2s}
+          .lsp-tog-lbl.active{color:#0F1F40}
+          .lsp-tog-btn{width:50px;height:28px;background:#d1d5db;border-radius:100px;position:relative;cursor:pointer;border:none;padding:0;transition:background .25s;flex-shrink:0}
           .lsp-tog-btn.on{background:#7c3aed}
           .lsp-tog-knob{position:absolute;top:4px;left:4px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform .25s;box-shadow:0 1px 4px rgba(0,0,0,.18)}
           .lsp-tog-btn.on .lsp-tog-knob{transform:translateX(22px)}
-          .lsp-save-badge{display:inline-flex;align-items:center;background:rgba(124,58,237,.25);color:#c4b5fd;font-size:11px;font-weight:700;padding:2px 8px;border-radius:100px;margin-left:6px}
-          .lsp-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:stretch;padding-top:20px}
-          .lsp-card{position:relative;display:flex;flex-direction:column;padding:28px 22px;border-radius:22px;border:1px solid #2a2a3a;background:#0e0e13;color:#f4f4f6;transition:border-color .2s,box-shadow .2s,transform .2s}
-          .lsp-card:hover{border-color:#3a3a4a;box-shadow:0 8px 32px rgba(0,0,0,.50);transform:translateY(-3px)}
-          .lsp-card-pop{border-color:rgba(124,58,237,0.55);background:linear-gradient(180deg,rgba(124,58,237,0.08),#0e0e13);box-shadow:0 0 80px rgba(124,58,237,0.20);overflow:visible}
-          .lsp-card-pop:hover{border-color:rgba(124,58,237,0.80);box-shadow:0 0 100px rgba(124,58,237,0.30);transform:translateY(-4px)}
-          .lsp-pop-tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);padding:4px 14px;border-radius:999px;background:linear-gradient(120deg,#7c3aed,#ec4899,#06b6d4);color:#fff;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;display:inline-flex;align-items:center;gap:5px;white-space:nowrap;box-shadow:0 6px 24px rgba(236,72,153,0.40)}
-          .lsp-tier-label{font-family:ui-monospace,SFMono-Regular,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#a3a3b2;margin-bottom:8px}
-          .lsp-price-big{font-size:44px;font-weight:800;letter-spacing:-.035em;color:#f4f4f6;line-height:1;margin:0 0 6px}
-          .lsp-price-unit{font-size:14px;color:#6b6b7a;font-weight:500;margin-left:4px;letter-spacing:0}
-          .lsp-plan-desc{font-size:13px;color:#a3a3b2;line-height:1.6;margin:0 0 16px}
-          .lsp-billed{font-size:12px;color:#6b6b7a;margin-bottom:4px}
-          .lsp-save-line{font-size:12px;font-weight:700;color:#22c55e;margin-bottom:20px;min-height:18px}
-          @keyframes lsp-grad-shift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-          .lsp-cta-card{position:relative;display:flex;align-items:center;justify-content:center;width:100%;text-align:center;padding:11px 18px;border-radius:10px;font-weight:600;font-size:.9rem;text-decoration:none;color:#f4f4f6;background:linear-gradient(180deg,#1a1a26,#0e0e16);border:1px solid rgba(255,255,255,.08);box-shadow:0 0 24px rgba(124,58,237,0.45);transition:box-shadow .2s,transform .16s;margin-bottom:24px;overflow:hidden;z-index:0}
-          .lsp-cta-card::before{content:'';position:absolute;inset:-2px;border-radius:12px;background:linear-gradient(120deg,#7c3aed,#ec4899,#06b6d4);background-size:300% 300%;z-index:-1;filter:blur(12px);opacity:0.55;animation:lsp-grad-shift 5s ease infinite}
-          .lsp-cta-card:hover{box-shadow:0 0 48px rgba(124,58,237,0.55),0 0 96px rgba(236,72,153,0.25);transform:translateY(-1px);color:#fff}
-          .lsp-card-div{height:1px;background:rgba(255,255,255,.06);margin-bottom:20px}
+          .lsp-save-badge{display:inline-flex;align-items:center;background:rgba(124,58,237,.10);color:#7c3aed;font-size:11px;font-weight:700;padding:2px 8px;border-radius:100px;margin-left:6px}
+          .lsp-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:stretch;padding-top:20px}
+          .lsp-card{position:relative;display:flex;flex-direction:column;padding:28px 24px;border-radius:22px;border:1.5px solid rgba(0,0,0,.08);background:#fff;color:#111827;box-shadow:0 2px 16px rgba(0,0,0,.06);transition:box-shadow .2s,transform .2s}
+          .lsp-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.10);transform:translateY(-3px)}
+          .lsp-card-pop{background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#7c3aed,#ec4899,#06b6d4) border-box;border:2px solid transparent;box-shadow:0 0 40px rgba(124,58,237,.15),0 4px 24px rgba(0,0,0,.08);overflow:visible}
+          .lsp-card-pop:hover{box-shadow:0 0 60px rgba(124,58,237,.25),0 8px 32px rgba(0,0,0,.12);transform:translateY(-4px)}
+          .lsp-pop-tag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);padding:5px 16px;border-radius:999px;background:linear-gradient(120deg,#7c3aed,#ec4899,#06b6d4);color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;box-shadow:0 4px 16px rgba(124,58,237,.40)}
+          .lsp-tier-label{font-family:ui-monospace,SFMono-Regular,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#6b7280;margin-bottom:8px}
+          .lsp-price-big{font-size:48px;font-weight:800;letter-spacing:-.04em;color:#111827;line-height:1;margin:0 0 4px}
+          .lsp-price-unit{font-size:15px;color:#9ca3af;font-weight:500;margin-left:4px;letter-spacing:0}
+          .lsp-billed{font-size:12px;color:#9ca3af;margin-bottom:2px}
+          .lsp-save-line{font-size:12px;font-weight:700;color:#16a34a;margin-bottom:16px;min-height:18px}
+          .lsp-plan-desc{font-size:14px;color:#4b5563;line-height:1.6;margin:0 0 20px}
+          .lsp-cta-card{display:flex;align-items:center;justify-content:center;width:100%;text-align:center;padding:12px 20px;border-radius:12px;font-weight:700;font-size:.95rem;text-decoration:none;color:#111827;background:#fff;border:1.5px solid rgba(0,0,0,.12);transition:all .2s;margin-top:24px}
+          .lsp-cta-card:hover{border-color:rgba(124,58,237,.50);color:#7c3aed;background:rgba(124,58,237,.04);box-shadow:0 4px 20px rgba(124,58,237,.12);transform:translateY(-1px)}
+          .lsp-card-div{border:none;border-top:1.5px dashed #e5e7eb;margin:0 0 20px}
           .lsp-feat-list{list-style:none;padding:0;margin:0;flex:1}
-          .lsp-feat-list li{padding:9px 0;border-top:1px dashed rgba(255,255,255,.08);font-size:13px;color:#a3a3b2;line-height:1.5}
-          .lsp-feat-list li:first-child{border-top:none}
-          .lsp-feat-list li::before{content:'✓  ';color:#22c55e;font-weight:700}
-          .lsp-trust{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,.06)}
-          .lsp-trust span{font-size:13px;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:6px;font-weight:500}
-          .lsp-trust span svg{stroke:rgba(255,255,255,.30)}
+          .lsp-feat-list li{padding:10px 0;border-bottom:1px dashed #f3f4f6;font-size:14px;color:#374151;line-height:1.5;display:flex;align-items:baseline;gap:8px}
+          .lsp-feat-list li:last-child{border-bottom:none}
+          .lsp-feat-list li::before{content:'✓';color:#22c55e;font-weight:700;font-size:15px;flex-shrink:0}
+          .lsp-trust{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:40px;padding-top:32px;border-top:1px solid rgba(0,0,0,.08)}
+          .lsp-trust span{font-size:13px;color:#6b7280;display:flex;align-items:center;gap:6px;font-weight:500}
 
           /* ── DEFINITION ── */
           .lsp-def-box{padding:36px;max-width:1040px;margin:0 auto}
@@ -627,14 +622,14 @@ export default function LocalSeoPackages() {
                     <div className="lsp-price-big">
                       ${isYearly ? plan.yearlyPrice : plan.monthlyPrice}<span className="lsp-price-unit">/mo</span>
                     </div>
-                    <p className="lsp-plan-desc">{plan.desc}</p>
                     <div className="lsp-billed">{isYearly ? 'Billed annually' : 'Billed monthly'}</div>
                     <div className="lsp-save-line">{isYearly ? `Save $${plan.yearlySave.toLocaleString()} per year` : ' '}</div>
-                    <Link href="/contact-us" className="lsp-cta-card">Get Started →</Link>
+                    <p className="lsp-plan-desc">{plan.desc}</p>
                     <div className="lsp-card-div"/>
                     <ul className="lsp-feat-list">
                       {plan.features.map(f => <li key={f}>{f}</li>)}
                     </ul>
+                    <Link href="/contact-us" className="lsp-cta-card">Get Started →</Link>
                   </div>
                 ))}
               </div>
