@@ -266,8 +266,8 @@ export default function LocalSeoPackages() {
           .lsp-cta-card{display:flex;align-items:center;justify-content:center;width:100%;text-align:center;padding:12px 20px;border-radius:12px;font-weight:700;font-size:.95rem;text-decoration:none;color:#111827;background:#fff;border:1.5px solid rgba(0,0,0,.12);transition:all .2s;margin-top:24px}
           .lsp-cta-card:hover{border-color:rgba(124,58,237,.50);color:#7c3aed;background:rgba(124,58,237,.04);box-shadow:0 4px 20px rgba(124,58,237,.12);transform:translateY(-1px)}
           .lsp-card-div{border:none;border-top:1.5px dashed #e5e7eb;margin:0 0 20px}
-          .lsp-feat-list{list-style:none;padding:0;margin:0;flex:1}
-          .lsp-feat-list li{padding:8px 0;border-bottom:1px dashed #f3f4f6;font-size:12.5px;color:#374151;line-height:1.5;display:flex;align-items:flex-start;gap:6px}
+          .lsp-feat-list{list-style:none;padding:0;margin:0;flex:1;text-align:left}
+          .lsp-feat-list li{padding:8px 0;border-bottom:1px dashed #f3f4f6;font-size:12.5px;color:#374151;line-height:1.5;display:flex;align-items:flex-start;gap:6px;text-align:left}
           .lsp-feat-list li:last-child{border-bottom:none}
           .lsp-feat-list li::before{content:'✓';color:#22c55e;font-weight:700;font-size:13px;flex-shrink:0;margin-top:1px}
           .lsp-trust{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:40px;padding-top:32px;border-top:1px solid rgba(0,0,0,.08)}
