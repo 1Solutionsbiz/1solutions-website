@@ -116,6 +116,16 @@ const nextConfig = {
       { source: '/website-support-',                           destination: '/website-support-maintenance-services/',        permanent: true },
       { source: '/sitemap_index.xml',                          destination: '/sitemap/',                                     permanent: true },
       { source: '/index.php',                                  destination: '/',                                             permanent: true },
+      { source: '/python-development-company',              destination: '/python-development-services',              permanent: true },
+      { source: '/python-development-company/',             destination: '/python-development-services/',             permanent: true },
+      { source: '/node-js-development-company',             destination: '/nodejs-development-services',              permanent: true },
+      { source: '/node-js-development-company/',            destination: '/nodejs-development-services/',             permanent: true },
+      { source: '/website-design-and-development',          destination: '/website-design',                           permanent: true },
+      { source: '/website-design-and-development/',         destination: '/website-design/',                          permanent: true },
+      { source: '/hire-node-js-developer',                  destination: '/hire-nodejs-developer',                    permanent: true },
+      { source: '/hire-node-js-developer/',                 destination: '/hire-nodejs-developer/',                   permanent: true },
+      { source: '/ecommerce-website-development',           destination: '/ecommerce-website-development-services',   permanent: true },
+      { source: '/ecommerce-website-development/',          destination: '/ecommerce-website-development-services/',  permanent: true },
 
       // ── Old WordPress category pagination ─────────────────────────────────
       // (more specific patterns BEFORE the bare /content/ and /website/ redirects below)
