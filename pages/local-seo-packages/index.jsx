@@ -216,7 +216,7 @@ export default function LocalSeoPackages() {
           .lsp-sec-in{max-width:1280px;margin:0 auto}
           .lsp-white-sec{background:#fff}
           .lsp-light-sec{background:#f8fafd;border-top:1px solid rgba(15,52,96,.08);border-bottom:1px solid rgba(15,52,96,.08)}
-          .lsp-dark-sec{background:linear-gradient(135deg,#071e3d 0%,#0F3460 40%,#0a2549 100%);position:relative;overflow:hidden}
+          .lsp-dark-sec{background:#f8fafd;border-top:1px solid rgba(15,52,96,.08);border-bottom:1px solid rgba(15,52,96,.08);position:relative;overflow:hidden}
           .lsp-sec-ey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#0891B2;margin-bottom:12px;display:block}
           .lsp-sec-ttl{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;letter-spacing:-1px;color:#111827;margin-bottom:10px}
           .lsp-sec-desc{font-size:15px;color:#4A6080;line-height:1.7;max-width:640px;margin-bottom:40px}
@@ -292,17 +292,17 @@ export default function LocalSeoPackages() {
           .lsp-why-d{font-size:13.5px;color:#4A6080;line-height:1.7;margin:0}
 
           /* ── AI DARK SECTION ── */
-          .lsp-ai-orb{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(8,145,178,.18) 0%,transparent 65%);top:-150px;right:-100px;pointer-events:none;filter:blur(30px)}
+          .lsp-ai-orb{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(8,145,178,.06) 0%,transparent 65%);top:-150px;right:-100px;pointer-events:none;filter:blur(30px)}
           .lsp-ai-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:48px}
-          .lsp-ai-card{background:rgba(255,255,255,.07);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:32px;transition:background .25s,border-color .25s}
-          .lsp-ai-card:hover{background:rgba(255,255,255,.11);border-color:rgba(8,145,178,.45);transform:translateY(-4px)}
-          .lsp-ai-icon{width:48px;height:48px;background:rgba(8,145,178,.20);border:1px solid rgba(8,145,178,.35);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
-          .lsp-ai-icon svg{width:24px;height:24px;stroke:#38bdf8;fill:none}
-          .lsp-ai-t{font-size:17px;font-weight:700;color:#fff;margin-bottom:10px}
-          .lsp-ai-d{font-size:14px;color:rgba(255,255,255,.70);line-height:1.7}
-          .lsp-dark-ey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.50);margin-bottom:12px;display:block;text-align:center}
-          .lsp-dark-ttl{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;text-align:center;margin-bottom:12px;line-height:1.15;color:#fff}
-          .lsp-dark-desc{font-size:15px;color:rgba(255,255,255,.60);text-align:center;max-width:560px;margin:0 auto}
+          .lsp-ai-card{background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border:1px solid rgba(15,52,96,.09);border-radius:20px;padding:32px;box-shadow:0 2px 16px rgba(15,52,96,.06);transition:background .25s,border-color .25s,transform .25s}
+          .lsp-ai-card:hover{background:#fff;border-color:rgba(8,145,178,.30);box-shadow:0 8px 32px rgba(8,145,178,.10);transform:translateY(-4px)}
+          .lsp-ai-icon{width:48px;height:48px;background:rgba(8,145,178,.10);border:1px solid rgba(8,145,178,.20);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+          .lsp-ai-icon svg{width:24px;height:24px;stroke:#0891B2;fill:none}
+          .lsp-ai-t{font-size:17px;font-weight:700;color:#0F1F40;margin-bottom:10px}
+          .lsp-ai-d{font-size:14px;color:#4A6080;line-height:1.7}
+          .lsp-dark-ey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#0891B2;margin-bottom:12px;display:block;text-align:center}
+          .lsp-dark-ttl{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;text-align:center;margin-bottom:12px;line-height:1.15;color:#111827}
+          .lsp-dark-desc{font-size:15px;color:#4A6080;text-align:center;max-width:560px;margin:0 auto}
 
           /* ── COMPARISON TABLE ── */
           .lsp-table-wrap{overflow-x:auto;margin-top:40px}
@@ -347,12 +347,12 @@ export default function LocalSeoPackages() {
 
           /* ── RESULTS (DARK) ── */
           .lsp-res-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-          .lsp-res-card{background:rgba(255,255,255,.07);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:32px;text-align:center;transition:background .25s,border-color .25s}
-          .lsp-res-card:hover{background:rgba(255,255,255,.11);border-color:rgba(8,145,178,.45)}
-          .lsp-res-metric{font-size:2.8rem;font-weight:900;color:#a5f3fc;margin-bottom:6px;line-height:1;letter-spacing:-1.5px}
-          .lsp-res-label{font-size:14px;color:rgba(255,255,255,.80);font-weight:600;margin-bottom:6px}
-          .lsp-res-sub{font-size:12px;color:rgba(255,255,255,.50);line-height:1.5}
-          .lsp-cs-cta{display:inline-flex;align-items:center;gap:8px;background:#0891B2;border:1.5px solid #0891B2;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;box-shadow:0 4px 20px rgba(8,145,178,.35);padding:14px 32px;margin-top:48px}
+          .lsp-res-card{background:#fff;border:1.5px solid rgba(15,52,96,.08);border-radius:20px;padding:32px;text-align:center;box-shadow:0 2px 12px rgba(15,52,96,.06);transition:box-shadow .25s,border-color .25s,transform .25s}
+          .lsp-res-card:hover{border-color:rgba(8,145,178,.30);box-shadow:0 8px 32px rgba(8,145,178,.12);transform:translateY(-3px)}
+          .lsp-res-metric{font-size:2.8rem;font-weight:900;color:#0891B2;margin-bottom:6px;line-height:1;letter-spacing:-1.5px}
+          .lsp-res-label{font-size:14px;color:#0F1F40;font-weight:700;margin-bottom:6px}
+          .lsp-res-sub{font-size:12px;color:#6b7280;line-height:1.5}
+          .lsp-cs-cta{display:inline-flex;align-items:center;gap:8px;background:#0891B2;border:1.5px solid #0891B2;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;box-shadow:0 4px 20px rgba(8,145,178,.25);padding:14px 32px;margin-top:48px}
           .lsp-cs-cta:hover{background:#164E63;border-color:#164E63;box-shadow:0 0 0 6px rgba(8,145,178,.20),0 8px 32px rgba(8,145,178,.55);transform:translateY(-2px)}
 
           /* ── TESTIMONIALS ── */
