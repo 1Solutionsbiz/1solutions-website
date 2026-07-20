@@ -53,6 +53,25 @@ const PLANS = [
       'Fortnightly report + strategy call',
     ],
   },
+  {
+    name: 'Enterprise', slug: 'enterprise', monthlyPrice: 1699, yearlyPrice: 1409, yearlySave: 3480,
+    desc: 'For multi-location brands needing a fully managed local authority programme.',
+    popular: false,
+    features: [
+      'Up to 8 locations',
+      'All GBP profiles fully managed + strategy',
+      '50+ keywords across all locations',
+      '200 citations per month (all locations)',
+      '16 GBP posts per month per location',
+      'Full review management + reputation strategy',
+      '10 local link placements per month',
+      'Custom landing page strategy & execution',
+      'Weekly competitor intelligence',
+      'Senior dedicated account manager',
+      'Weekly performance dashboard',
+      'AI Overview optimisation — priority',
+    ],
+  },
 ];
 
 const FAQS = [
@@ -222,38 +241,42 @@ export default function LocalSeoPackages() {
           .lsp-hstat-v{font-size:1.65rem;font-weight:900;color:#0891B2;letter-spacing:-.5px}
 
           /* ── PRICING ── */
+          .lsp-pricing-sec{background:linear-gradient(135deg,#06060c 0%,#0a0b14 50%,#06060c 100%);border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04)}
+          .lsp-pricing-sec .lsp-sec-ey{color:#a78bfa}
+          .lsp-pricing-sec .lsp-sec-ttl{color:#f4f4f6}
+          .lsp-pricing-sec .lsp-sec-desc{color:rgba(255,255,255,.50)}
           .lsp-tog-row{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:48px}
-          .lsp-tog-lbl{font-size:15px;font-weight:600;color:#6b7280;transition:color .2s}
-          .lsp-tog-lbl.active{color:#0F1F40}
-          .lsp-tog-btn{width:50px;height:28px;background:#d1d5db;border-radius:100px;position:relative;cursor:pointer;border:none;padding:0;transition:background .25s;flex-shrink:0}
-          .lsp-tog-btn.on{background:#0891B2}
+          .lsp-tog-lbl{font-size:15px;font-weight:600;color:rgba(255,255,255,.40);transition:color .2s}
+          .lsp-tog-lbl.active{color:#f4f4f6}
+          .lsp-tog-btn{width:50px;height:28px;background:#2a2a3a;border-radius:100px;position:relative;cursor:pointer;border:none;padding:0;transition:background .25s;flex-shrink:0}
+          .lsp-tog-btn.on{background:#7c3aed}
           .lsp-tog-knob{position:absolute;top:4px;left:4px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform .25s;box-shadow:0 1px 4px rgba(0,0,0,.18)}
           .lsp-tog-btn.on .lsp-tog-knob{transform:translateX(22px)}
-          .lsp-save-badge{display:inline-flex;align-items:center;background:rgba(8,145,178,.10);color:#0891B2;font-size:11px;font-weight:700;padding:2px 8px;border-radius:100px;margin-left:6px}
-          .lsp-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;padding-top:20px}
-          .lsp-card{background:#fff;border:1.5px solid #e5e9f0;border-radius:24px;padding:32px 28px;position:relative;transition:box-shadow .22s,transform .22s;overflow:hidden}
-          .lsp-card:hover{box-shadow:0 12px 40px rgba(8,145,178,.08)}
-          .lsp-card-pop{background:linear-gradient(135deg,rgba(224,242,254,0.85) 0%,rgba(255,255,255,0.98) 50%,rgba(207,250,254,0.65) 100%);border-color:rgba(8,145,178,0.55);transform:scale(1.04);box-shadow:0 20px 60px rgba(8,145,178,0.16),0 0 0 2px rgba(8,145,178,0.14);overflow:visible}
-          .lsp-card-pop:hover{transform:scale(1.04) translateY(-4px);box-shadow:0 28px 72px rgba(8,145,178,0.22),0 0 0 2px rgba(8,145,178,0.20)}
-          .lsp-pop-tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#0891B2,#06B6D4);color:#fff;font-size:11px;font-weight:700;padding:4px 14px;border-radius:100px;letter-spacing:.5px;white-space:nowrap;box-shadow:0 4px 12px rgba(8,145,178,0.30)}
-          .lsp-plan-name{font-size:22px;font-weight:800;color:#0F1F40;margin-bottom:6px}
-          .lsp-plan-desc{font-size:13px;color:#6b7280;line-height:1.55;margin-bottom:24px}
-          .lsp-price-row{display:flex;align-items:baseline;gap:4px;margin-bottom:4px}
-          .lsp-currency{font-size:1.4rem;font-weight:700;color:#0891B2}
-          .lsp-amount{font-size:3rem;font-weight:900;letter-spacing:-2px;color:#0F1F40;line-height:1}
-          .lsp-per{font-size:13px;color:#9ca3af;font-weight:500;margin-left:2px}
-          .lsp-billed{font-size:12px;color:#9ca3af;margin-bottom:4px}
-          .lsp-save-line{font-size:12px;font-weight:700;color:#16a34a;margin-bottom:20px;min-height:18px}
-          .lsp-cta-card{display:block;width:100%;text-align:center;padding:13px;border-radius:50px;font-weight:700;font-size:.9rem;text-decoration:none;background:#0891B2;color:#fff;transition:all .22s;margin-bottom:24px}
-          .lsp-cta-card:hover{background:#164E63;transform:translateY(-1px);box-shadow:0 6px 24px rgba(8,145,178,.28)}
-          .lsp-card-pop .lsp-cta-card{background:linear-gradient(135deg,#0891B2,#06B6D4);color:#fff;box-shadow:0 6px 20px rgba(8,145,178,0.30)}
-          .lsp-card-pop .lsp-cta-card:hover{background:linear-gradient(135deg,#164E63,#0891B2);box-shadow:0 8px 28px rgba(8,145,178,0.40)}
-          .lsp-card-div{height:1px;background:#f1f5f9;margin-bottom:20px}
-          .lsp-feat-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
-          .lsp-feat-list li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#374151;line-height:1.4}
-          .lsp-feat-list li svg{color:#0891B2}
-          .lsp-trust{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:32px;padding-top:32px;border-top:1px solid #e5e9f0}
-          .lsp-trust span{font-size:13px;color:#6b7280;display:flex;align-items:center;gap:6px;font-weight:500}
+          .lsp-save-badge{display:inline-flex;align-items:center;background:rgba(124,58,237,.25);color:#c4b5fd;font-size:11px;font-weight:700;padding:2px 8px;border-radius:100px;margin-left:6px}
+          .lsp-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:stretch;padding-top:20px}
+          .lsp-card{position:relative;display:flex;flex-direction:column;padding:28px 22px;border-radius:22px;border:1px solid #2a2a3a;background:#0e0e13;color:#f4f4f6;transition:border-color .2s,box-shadow .2s,transform .2s}
+          .lsp-card:hover{border-color:#3a3a4a;box-shadow:0 8px 32px rgba(0,0,0,.50);transform:translateY(-3px)}
+          .lsp-card-pop{border-color:rgba(124,58,237,0.55);background:linear-gradient(180deg,rgba(124,58,237,0.08),#0e0e13);box-shadow:0 0 80px rgba(124,58,237,0.20);overflow:visible}
+          .lsp-card-pop:hover{border-color:rgba(124,58,237,0.80);box-shadow:0 0 100px rgba(124,58,237,0.30);transform:translateY(-4px)}
+          .lsp-pop-tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);padding:4px 14px;border-radius:999px;background:linear-gradient(120deg,#7c3aed,#ec4899,#06b6d4);color:#fff;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;display:inline-flex;align-items:center;gap:5px;white-space:nowrap;box-shadow:0 6px 24px rgba(236,72,153,0.40)}
+          .lsp-tier-label{font-family:ui-monospace,SFMono-Regular,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#a3a3b2;margin-bottom:8px}
+          .lsp-price-big{font-size:44px;font-weight:800;letter-spacing:-.035em;color:#f4f4f6;line-height:1;margin:0 0 6px}
+          .lsp-price-unit{font-size:14px;color:#6b6b7a;font-weight:500;margin-left:4px;letter-spacing:0}
+          .lsp-plan-desc{font-size:13px;color:#a3a3b2;line-height:1.6;margin:0 0 16px}
+          .lsp-billed{font-size:12px;color:#6b6b7a;margin-bottom:4px}
+          .lsp-save-line{font-size:12px;font-weight:700;color:#22c55e;margin-bottom:20px;min-height:18px}
+          @keyframes lsp-grad-shift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+          .lsp-cta-card{position:relative;display:flex;align-items:center;justify-content:center;width:100%;text-align:center;padding:11px 18px;border-radius:10px;font-weight:600;font-size:.9rem;text-decoration:none;color:#f4f4f6;background:linear-gradient(180deg,#1a1a26,#0e0e16);border:1px solid rgba(255,255,255,.08);box-shadow:0 0 24px rgba(124,58,237,0.45);transition:box-shadow .2s,transform .16s;margin-bottom:24px;overflow:hidden;z-index:0}
+          .lsp-cta-card::before{content:'';position:absolute;inset:-2px;border-radius:12px;background:linear-gradient(120deg,#7c3aed,#ec4899,#06b6d4);background-size:300% 300%;z-index:-1;filter:blur(12px);opacity:0.55;animation:lsp-grad-shift 5s ease infinite}
+          .lsp-cta-card:hover{box-shadow:0 0 48px rgba(124,58,237,0.55),0 0 96px rgba(236,72,153,0.25);transform:translateY(-1px);color:#fff}
+          .lsp-card-div{height:1px;background:rgba(255,255,255,.06);margin-bottom:20px}
+          .lsp-feat-list{list-style:none;padding:0;margin:0;flex:1}
+          .lsp-feat-list li{padding:9px 0;border-top:1px dashed rgba(255,255,255,.08);font-size:13px;color:#a3a3b2;line-height:1.5}
+          .lsp-feat-list li:first-child{border-top:none}
+          .lsp-feat-list li::before{content:'✓  ';color:#22c55e;font-weight:700}
+          .lsp-trust{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,.06)}
+          .lsp-trust span{font-size:13px;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:6px;font-weight:500}
+          .lsp-trust span svg{stroke:rgba(255,255,255,.30)}
 
           /* ── DEFINITION ── */
           .lsp-def-box{padding:36px;max-width:1040px;margin:0 auto}
@@ -431,14 +454,15 @@ export default function LocalSeoPackages() {
           .lsp-rtag-slate{background:rgba(100,116,139,.10);border-color:rgba(100,116,139,.30);color:#334155}
 
           /* ── RESPONSIVE ── */
+          @media(max-width:1200px){
+            .lsp-cards{grid-template-columns:repeat(2,1fr)}
+          }
           @media(max-width:1024px){
             .lsp-why-grid{grid-template-columns:repeat(2,1fr)}
             .lsp-qual-grid{grid-template-columns:repeat(2,1fr)}
             .lsp-proc-grid{grid-template-columns:repeat(2,1fr)}
             .lsp-ai-grid{grid-template-columns:1fr}
             .lsp-res-grid{grid-template-columns:repeat(2,1fr)}
-            .lsp-cards{grid-template-columns:1fr;max-width:480px;margin:0 auto}
-            .lsp-card-pop{transform:none}.lsp-card-pop:hover{transform:translateY(-4px)}
             .lsp-audit-in{grid-template-columns:1fr}
             .lsp-ind-grid{grid-template-columns:repeat(3,1fr)}
             .lsp-def-aspects{grid-template-columns:1fr}
@@ -451,8 +475,9 @@ export default function LocalSeoPackages() {
             .lsp-hero-btns{flex-direction:column;align-items:center}
             .lsp-why-grid,.lsp-qual-grid,.lsp-proc-grid{grid-template-columns:1fr}
             .lsp-res-grid{grid-template-columns:1fr;max-width:360px;margin-left:auto;margin-right:auto}
+            .lsp-cards{grid-template-columns:1fr;max-width:420px;margin:0 auto}
             .lsp-ind-grid{grid-template-columns:repeat(2,1fr)}
-            .lsp-trust{gap:16px}
+            .lsp-trust{gap:16px;flex-direction:column;align-items:center}
             .lsp-audit-sec{padding:56px 24px}
             .lsp-af-row{grid-template-columns:1fr}
             .lsp-testi-hd{padding:0 24px}
@@ -583,7 +608,7 @@ export default function LocalSeoPackages() {
         </section>
 
         {/* ── PRICING ── */}
-        <section id="pricing" className="lsp-sec lsp-light-sec" aria-labelledby="pricing-title">
+        <section id="pricing" className="lsp-sec lsp-pricing-sec" aria-labelledby="pricing-title">
           <div className="lsp-sec-in">
             <div {...rv('pricing')} style={{textAlign:'center'}}>
               <span className="lsp-sec-ey">Pricing Plans</span>
@@ -597,26 +622,24 @@ export default function LocalSeoPackages() {
               <div className="lsp-cards">
                 {PLANS.map(plan => (
                   <div key={plan.slug} className={`lsp-card${plan.popular ? ' lsp-card-pop' : ''}`}>
-                    {plan.popular && <span className="lsp-pop-tag">Most Popular</span>}
-                    <div className="lsp-plan-name">{plan.name}</div>
-                    <p className="lsp-plan-desc">{plan.desc}</p>
-                    <div className="lsp-price-row">
-                      <span className="lsp-currency">$</span>
-                      <span className="lsp-amount">{isYearly ? plan.yearlyPrice : plan.monthlyPrice}</span>
-                      <span className="lsp-per">/mo</span>
+                    {plan.popular && <span className="lsp-pop-tag">✦ Most Popular</span>}
+                    <div className="lsp-tier-label">{plan.name}</div>
+                    <div className="lsp-price-big">
+                      ${isYearly ? plan.yearlyPrice : plan.monthlyPrice}<span className="lsp-price-unit">/mo</span>
                     </div>
+                    <p className="lsp-plan-desc">{plan.desc}</p>
                     <div className="lsp-billed">{isYearly ? 'Billed annually' : 'Billed monthly'}</div>
                     <div className="lsp-save-line">{isYearly ? `Save $${plan.yearlySave.toLocaleString()} per year` : ' '}</div>
                     <Link href="/contact-us" className="lsp-cta-card">Get Started →</Link>
                     <div className="lsp-card-div"/>
                     <ul className="lsp-feat-list">
-                      {plan.features.map(f => <li key={f}>{CHECK_ICON}<span>{f}</span></li>)}
+                      {plan.features.map(f => <li key={f}>{f}</li>)}
                     </ul>
                   </div>
                 ))}
               </div>
               <div className="lsp-trust">
-                {['No setup fee','Cancel with 30 days notice','Custom plans for 4+ locations','All plans include GBP management'].map(t => (
+                {['No setup fee','Cancel with 30 days notice','Custom plans for 9+ locations','All plans include GBP management'].map(t => (
                   <span key={t}>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                     {t}
@@ -642,22 +665,23 @@ export default function LocalSeoPackages() {
                       <th>Starter — $349/mo</th>
                       <th className="lsp-pop-col">Growth — $599/mo ★</th>
                       <th>Multi-Location — $999/mo</th>
+                      <th>Enterprise — $1,699/mo</th>
                     </tr>
                   </thead>
                   <tbody>
                     {[
-                      ['Locations covered','1','1','Up to 3'],
-                      ['GBP posts per month','4','8','12 per location'],
-                      ['Local keywords tracked','5','15','30+'],
-                      ['Citations built / cleaned','25 cleanup','50 build + cleanup','100/mo all locations'],
-                      ['Review monitoring','Alerts only','Active management','Full management'],
-                      ['Review generation strategy','—','✓','✓'],
-                      ['Local link placements','—','3/mo','6/mo'],
-                      ['Local landing pages','—','1/mo','Full strategy'],
-                      ['Competitor tracking','—','Monthly','Fortnightly'],
-                      ['Account manager','—','—','Dedicated'],
-                      ['Strategy call','—','Monthly','Fortnightly'],
-                      ['AI Overview optimisation','Basic','✓','✓'],
+                      ['Locations covered','1','1','Up to 3','Up to 8'],
+                      ['GBP posts per month','4','8','12 per location','16 per location'],
+                      ['Local keywords tracked','5','15','30+','50+'],
+                      ['Citations built / cleaned','25 cleanup','50 build + cleanup','100/mo all locations','200/mo all locations'],
+                      ['Review monitoring','Alerts only','Active management','Full management','Full + reputation strategy'],
+                      ['Review generation strategy','—','✓','✓','✓ + advanced'],
+                      ['Local link placements','—','3/mo','6/mo','10/mo'],
+                      ['Local landing pages','—','1/mo','Full strategy','Custom strategy & execution'],
+                      ['Competitor tracking','—','Monthly','Fortnightly','Weekly'],
+                      ['Account manager','—','—','Dedicated','Senior dedicated'],
+                      ['Strategy call','—','Monthly','Fortnightly','Weekly'],
+                      ['AI Overview optimisation','Basic','✓','✓','Priority'],
                     ].map(([feat,...cols]) => (
                       <tr key={feat}>
                         <td>{feat}</td>
