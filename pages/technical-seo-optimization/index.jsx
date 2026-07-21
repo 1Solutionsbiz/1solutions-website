@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'Technical SEO Audit', desc: 'Comprehensive 150-point technical audit - crawlability, indexation, site architecture, canonical tags, hreflang, Core Web Vitals, JavaScript rendering, and security signals.' },
@@ -43,13 +45,6 @@ const FAQS = [
   { q: 'What is the difference between technical SEO and on-page SEO?', a: 'Technical SEO covers the infrastructure layer - how search engines access, render, and index your site. On-page SEO covers the content layer - title tags, headings, keyword targeting, internal links. Both matter, but technical issues must be fixed first because on-page optimisation on pages that cannot be crawled or indexed has zero impact. Our standard process is technical audit and fixes before on-page work - because fixing a crawlability block can unlock more ranking improvement than months of on-page optimisation.' },
 ];
 
-const STATS = [
-  { label: 'Technical Audits Completed', val: '600+' },
-  { label: 'Years Experience', val: '15+' },
-  { label: 'Audit Checkpoints', val: '150+' },
-  { label: 'Client Retention', val: '96%' },
-];
-
 export default function TechnicalSeoOptimization() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleCards, setVisibleCards] = useState([]);
@@ -77,22 +72,6 @@ export default function TechnicalSeoOptimization() {
         <style>{`
           .tseo-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .tseo-page *,.tseo-page *::before,.tseo-page *::after{box-sizing:border-box}
-          .tseo-hero{background:linear-gradient(135deg,#f0f4ff 0%,#dbe4ff 25%,#e8ecff 60%,#f5f7ff 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .tseo-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .tseo-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(30,58,95,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .tseo-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.tseo-bc a:hover{color:#2563EB}.tseo-bc span{color:#d1d5db}
-          .tseo-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(37,99,235,0.08);border:1px solid rgba(37,99,235,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#1D4ED8;margin-bottom:28px}
-          .tseo-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .tseo-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
-          .tseo-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
-          .tseo-btn-p{display:inline-flex;align-items:center;gap:8px;background:#2563EB;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(37,99,235,0.28)}
-          .tseo-btn-p:hover{background:#1D4ED8;box-shadow:0 8px 32px rgba(37,99,235,0.38);transform:translateY(-2px)}
-          .tseo-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.18);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
-          .tseo-btn-s:hover{border-color:#2563EB;color:#2563EB;transform:translateY(-2px)}
-          .tseo-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(37,99,235,0.07)}
-          .tseo-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(37,99,235,0.08)}.tseo-stat:last-child{border-right:none}
-          .tseo-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .tseo-stat-v{font-size:1.6rem;font-weight:900;color:#2563EB;letter-spacing:-0.5px}
           .tseo-svc{background:#f8fafd;padding:80px 40px}.tseo-svc-in{max-width:1280px;margin:0 auto}
           .tseo-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#2563EB;margin-bottom:10px;display:block}
           .tseo-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
@@ -139,25 +118,26 @@ export default function TechnicalSeoOptimization() {
           .tseo-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           .tseo-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.tseo-grid{grid-template-columns:repeat(2,1fr)}.tseo-why-grid{grid-template-columns:repeat(2,1fr)}}
-          @media(max-width:768px){.tseo-hero,.tseo-svc,.tseo-stack,.tseo-proc,.tseo-why,.tseo-faq,.tseo-cta{padding:60px 24px}.tseo-hero{padding-top:60px;padding-bottom:0}.tseo-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.tseo-stat:nth-child(2){border-right:none}.tseo-grid{grid-template-columns:1fr}.tseo-why-grid{grid-template-columns:1fr}.tseo-step{grid-template-columns:56px 1fr}.tseo-btns{flex-direction:column;align-items:center}}
+          @media(max-width:768px){.tseo-svc,.tseo-stack,.tseo-proc,.tseo-why,.tseo-faq,.tseo-cta{padding:60px 24px}.tseo-grid{grid-template-columns:1fr}.tseo-why-grid{grid-template-columns:1fr}.tseo-step{grid-template-columns:56px 1fr}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
       <div className="tseo-page">
-        <section className="tseo-hero"><div className="tseo-o1"/><div className="tseo-o2"/>
-          <div className="tseo-in">
-            <span className="tseo-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#2563EB',display:'inline-block'}}/> Core Web Vitals · Crawl · JS SEO</span>
-            <h1 className="tseo-h1">Technical SEO Optimisation That Fixes What Blocks Your Rankings</h1>
-            <p className="tseo-sub">Engineering-level technical SEO - crawl budget analysis, Core Web Vitals fixes, JavaScript rendering, structured data, and site architecture - the foundation every high-performing SEO strategy is built on.</p>
-            <div className="tseo-btns">
-              <Link href="/contact-us" className="tseo-btn-p">Get a Technical SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/seo-audit-services" className="tseo-btn-s">Full SEO Audit</Link>
-            </div>
-            <div className="tseo-stats">{STATS.map(s => <div key={s.label} className="tseo-stat"><div className="tseo-stat-l">{s.label}</div><div className="tseo-stat-v">{s.val}</div></div>)}</div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Core Web Vitals · Crawl · JS SEO"
+          title={<>Technical SEO Optimisation That <AuroraText>Fixes What Blocks Your Rankings</AuroraText></>}
+          subtext="Engineering-level technical SEO - crawl budget analysis, Core Web Vitals fixes, JavaScript rendering, structured data, and site architecture - the foundation every high-performing SEO strategy is built on."
+          primaryCta={{ label: 'Get a Technical SEO Audit', href: '/contact-us' }}
+          secondaryCta={{ label: 'Full SEO Audit', href: '/seo-audit-services' }}
+          stats={[
+            { label: 'Technical Audits Completed', value: '600', suffix: '+' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'Audit Checkpoints', value: '150', suffix: '+' },
+            { label: 'Client Retention', value: '96', suffix: '%' },
+          ]}
+        />
         <section className="tseo-svc"><div className="tseo-svc-in">
           <span className="tseo-ey2">What We Fix</span><h2 className="tseo-ttl">Technical SEO Services</h2>
           <p className="tseo-desc">Every technical layer that influences how Google crawls, renders, and ranks your website - diagnosed and fixed with developer-ready specifications.</p>

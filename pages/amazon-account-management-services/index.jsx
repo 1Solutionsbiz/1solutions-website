@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const ACCENT = '#6b3a00';
 const RGB = '107,58,0';
@@ -103,15 +105,6 @@ const steps = [
   { title: 'Monthly Business Review', desc: 'Full performance report with revenue attribution, PPC performance, keyword rank movement, and next-month roadmap.' },
 ];
 
-const stats = [
-  { num: '$2.8M+', lbl: 'Amazon revenue managed per month' },
-  { num: '340+', lbl: 'Amazon seller accounts managed' },
-  { num: '68%', lbl: 'avg ACoS reduction in 90 days' },
-  { num: '4.7×', lbl: 'avg revenue growth in 12 months' },
-];
-
-const trust = ['Seller Central certified', 'White-hat only', 'No lock-in contracts', 'Dedicated account manager'];
-
 const FAQS = [
   { q: 'How long before we see results from Amazon account management?', a: 'PPC improvements are typically visible within 2 to 4 weeks as we restructure campaigns and refine bid strategy. Organic listing ranking improvements take 6 to 12 weeks as Amazon indexes the updated content and the conversion rate data accumulates. Most clients see measurable revenue growth within the first 60 days of our engagement.' },
   { q: 'Do you manage Amazon accounts for sellers in the US, UK, Canada, and Australia?', a: 'Yes. We manage Amazon Seller Central accounts across all major Amazon marketplaces including amazon.com, amazon.co.uk, amazon.ca, amazon.com.au, and amazon.de. Our team understands the nuances of each marketplace including VAT requirements, local compliance, and category-specific rules.' },
@@ -142,25 +135,8 @@ export default function AmazonAccountManagement() {
         <style>{`
           *{box-sizing:border-box;}
           body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;}
-          .amzn-hero{position:relative;overflow:hidden;padding:100px 40px 90px;background:linear-gradient(135deg,rgba(107,58,0,0.08) 0%,rgba(255,255,255,0.75) 50%,rgba(107,58,0,0.05) 100%);}
-          .amzn-orb1{position:absolute;top:-120px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(107,58,0,0.10) 0%,transparent 70%);pointer-events:none;filter:blur(12px);}
           .amzn-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;}
-          .amzn-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(107,58,0,0.09);border:1px solid rgba(107,58,0,0.20);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#6b3a00;margin-bottom:24px;}
-          .amzn-h1{font-size:clamp(2.2rem,4vw,3.6rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;color:#0A1628;}
-          .amzn-h1-accent{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-          .amzn-desc{font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:680px;}
-          .amzn-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px;}
-          .amzn-btn-p{display:inline-flex;align-items:center;gap:8px;background:#6b3a00;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 6px 24px rgba(107,58,0,0.25);}
-          .amzn-btn-p:hover{opacity:0.9;transform:translateY(-2px);}
-          .amzn-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.7);color:#6b3a00;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;border:1.5px solid rgba(107,58,0,0.20);transition:all 0.25s;backdrop-filter:blur(8px);}
-          .amzn-btn-s:hover{background:#fff;transform:translateY(-2px);}
-          .amzn-trust{display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-bottom:48px;}
-          .amzn-badge{display:flex;align-items:center;gap:6px;font-size:12px;color:#6b7280;font-weight:500;}
-          .amzn-stats-bar{display:flex;border:1px solid rgba(107,58,0,0.10);border-radius:16px;background:rgba(255,255,255,0.80);backdrop-filter:blur(12px);overflow:hidden;max-width:680px;}
-          .amzn-stat-item{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(107,58,0,0.08);}
-          .amzn-stat-item:last-child{border-right:none;}
-          .amzn-stat-num{font-size:1.9rem;font-weight:900;color:#6b3a00;line-height:1;letter-spacing:-1px;}
-          .amzn-stat-lbl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px;}.amzn-bc a:hover{color:#6b3a00;}.amzn-bc-cur{color:#6b3a00;font-weight:500;}
+          .amzn-bc a:hover{color:#6b3a00;}.amzn-bc-cur{color:#6b3a00;font-weight:500;}
           .amzn-sec{padding:80px 40px;}
           .amzn-bg{background:#f8fafd;}
           .amzn-tag{display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#6b3a00;margin-bottom:12px;}
@@ -237,7 +213,7 @@ export default function AmazonAccountManagement() {
           .amzn-cta-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#6b3a00;padding:14px 32px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;}
           .amzn-cta-btn:hover{transform:translateY(-2px);opacity:0.95;}
           @media(max-width:900px){.amzn-grid3,.amzn-grid4{grid-template-columns:1fr 1fr;}.amzn-grid2{grid-template-columns:1fr;}.amzn-contact-grid{grid-template-columns:1fr;}.amzn-res-grid{grid-template-columns:1fr 1fr;}}
-          @media(max-width:600px){.amzn-hero,.amzn-sec,.amzn-results,.amzn-cta,.amzn-contact-sec{padding-left:20px;padding-right:20px;}.amzn-hero{padding-top:60px;padding-bottom:50px;}.amzn-grid3,.amzn-grid4,.amzn-grid2,.amzn-res-grid{grid-template-columns:1fr;}.amzn-bc{padding:12px 20px;}.amzn-field-row{grid-template-columns:1fr;}.amzn-form-wrap{padding:24px 20px;}}
+          @media(max-width:600px){.amzn-sec,.amzn-results,.amzn-cta,.amzn-contact-sec{padding-left:20px;padding-right:20px;}.amzn-grid3,.amzn-grid4,.amzn-grid2,.amzn-res-grid{grid-template-columns:1fr;}.amzn-bc{padding:12px 20px;}.amzn-field-row{grid-template-columns:1fr;}.amzn-form-wrap{padding:24px 20px;}}
           /* ── FAQ ── */
           .amzn-faq-sec { padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(107,58,0,0.08); }
           .amzn-faq-h { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 36px;line-height:1.15; }
@@ -279,38 +255,19 @@ export default function AmazonAccountManagement() {
       </Head>
 
       {/* Hero */}
-      <section className="amzn-hero">
-        <div className="amzn-orb1" />
-        <div className="amzn-inner">
-          <div className="amzn-eyebrow">Amazon Marketplace Management</div>
-          <h1 className="amzn-h1">
-            Amazon Account Management That <span className="amzn-h1-accent">Grows Your Revenue</span> Month Over Month
-          </h1>
-          <p className="amzn-desc">
-            1Solutions manages every aspect of your Amazon Seller Central account - listings, PPC, account health, FBA, and Brand Registry - so you can focus on your products while we focus on your growth.
-          </p>
-          <div className="amzn-trust">
-            {trust.map((t, i) => (
-              <span key={i} className="amzn-badge">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b3a00" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 13l4 4L19 7"/></svg>
-                {t}
-              </span>
-            ))}
-          </div>
-          <div className="amzn-btns">
-            <Link href="#contact" className="amzn-btn-p">Get Free Amazon Audit</Link>
-            <Link href="#services" className="amzn-btn-s">See What We Manage</Link>
-          </div>
-          <div className="amzn-stats-bar">
-            {stats.map((s, i) => (
-              <div key={i} className="amzn-stat-item">
-                <span className="amzn-stat-num">{s.num}</span>
-                <span className="amzn-stat-lbl">{s.lbl}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="Amazon Marketplace Management · Seller Central Certified · White-Hat Only"
+        title={<>Amazon Account Management That <AuroraText>Grows Your Revenue</AuroraText> Month Over Month</>}
+        subtext="1Solutions manages every aspect of your Amazon Seller Central account - listings, PPC, account health, FBA, and Brand Registry - so you can focus on your products while we focus on your growth."
+        primaryCta={{ label: 'Get Free Amazon Audit', href: '#contact' }}
+        secondaryCta={{ label: 'See What We Manage', href: '#services' }}
+        stats={[
+          { label: 'Amazon revenue managed per month', value: '8', prefix: '$2.', suffix: 'M+' },
+          { label: 'Amazon seller accounts managed', value: '340', suffix: '+' },
+          { label: 'avg ACoS reduction in 90 days', value: '68', suffix: '%' },
+          { label: 'avg revenue growth in 12 months', value: '7', prefix: '4.', suffix: '×' },
+        ]}
+      />
 
       {/* Challenges */}
       <section className="amzn-sec amzn-bg">

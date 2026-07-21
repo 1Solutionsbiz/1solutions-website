@@ -2,22 +2,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-
-function useCountUp(target, duration = 1800) {
-  const [count, setCount] = useState(0);
-  const raf = useRef(null);
-  const start = (t) => {
-    const s = performance.now();
-    const step = (now) => {
-      const p = Math.min((now - s) / duration, 1);
-      setCount(Math.floor(p * t));
-      if (p < 1) raf.current = requestAnimationFrame(step);
-    };
-    raf.current = requestAnimationFrame(step);
-  };
-  useEffect(() => () => cancelAnimationFrame(raf.current), []);
-  return [count, start];
-}
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const ACCENT = '#3d0070';
 const SKILLS = [
@@ -59,12 +45,7 @@ export default function HirePHPDeveloper() {
   const enR  = useRef(null); const [enV,  setEnV]  = useState(false);
   const whR  = useRef(null); const [whV,  setWhV]  = useState(false);
   const prR  = useRef(null); const [prV,  setPrV]  = useState(false);
-  const stGr = useRef(null); const [stV,  setStV]  = useState(false);
 
-  const [c1, s1] = useCountUp(70);
-  const [c2, s2] = useCountUp(350);
-  const [c3, s3] = useCountUp(48);
-  const [c4, s4] = useCountUp(7);
   const [openFaq, setOpenFaq] = useState(null);
 
   useEffect(() => {
@@ -73,9 +54,7 @@ export default function HirePHPDeveloper() {
     const o2 = obs(enR,  setEnV);  if (enR.current)  o2.observe(enR.current);
     const o3 = obs(whR,  setWhV);  if (whR.current)  o3.observe(whR.current);
     const o4 = obs(prR,  setPrV);  if (prR.current)  o4.observe(prR.current);
-    const o5 = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStV(true); s1(70); s2(350); s3(48); s4(7); o5.disconnect(); } }, { threshold: 0.2 });
-    if (stGr.current) o5.observe(stGr.current);
-    return () => [o1, o2, o3, o4, o5].forEach(o => o.disconnect());
+    return () => [o1, o2, o3, o4].forEach(o => o.disconnect());
   }, []);
 
   const LD = {
@@ -101,10 +80,6 @@ export default function HirePHPDeveloper() {
         <link rel="canonical" href="https://www.1solutions.biz/hire-php-developer/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
-          .hphp-hero{background:linear-gradient(135deg,${ACCENT} 0%,#220040 60%,#330060 100%);color:#fff;padding:100px 20px 80px;text-align:center}
-          .hphp-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin:0 0 18px;line-height:1.15}
-          .hphp-hero p{font-size:1.15rem;max-width:620px;margin:0 auto 36px;opacity:.88;line-height:1.7}
-          .hphp-hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           .hphp-btn-primary{background:#FE9700;color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s}
           .hphp-btn-primary:hover{opacity:.88}
           .hphp-btn-outline{border:2px solid rgba(255,255,255,.7);color:#fff;padding:13px 28px;border-radius:8px;font-weight:600;font-size:1rem;text-decoration:none;transition:border-color .2s}
@@ -134,10 +109,6 @@ export default function HirePHPDeveloper() {
           .hphp-step-n{width:48px;height:48px;border-radius:50%;background:${ACCENT};color:#fff;font-size:1.1rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
           .hphp-step h3{font-size:1rem;font-weight:700;color:#111;margin:0 0 8px}
           .hphp-step p{color:#666;font-size:.9rem;line-height:1.6;margin:0}
-          .hphp-stats{background:${ACCENT};padding:60px 20px;color:#fff}
-          .hphp-stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;max-width:900px;margin:0 auto;text-align:center}
-          .hphp-stat-val{font-size:2.8rem;font-weight:900;line-height:1}
-          .hphp-stat-label{font-size:.95rem;opacity:.82;margin-top:6px}
           .hphp-faq{max-width:760px;margin:0 auto}
           .hphp-faq-item{border-bottom:1px solid #e5e5e5;padding:20px 0}
           .hphp-faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;color:#111;font-size:1rem;gap:12px}
@@ -147,18 +118,22 @@ export default function HirePHPDeveloper() {
           .hphp-cta{background:linear-gradient(135deg,${ACCENT},#220040);padding:80px 20px;text-align:center;color:#fff}
           .hphp-cta h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin:0 0 16px}
           .hphp-cta p{font-size:1.08rem;opacity:.88;max-width:560px;margin:0 auto 36px;line-height:1.7}
-          @media(max-width:600px){.hphp-hero{padding:80px 18px 60px}.hphp-stats-grid{grid-template-columns:1fr 1fr}}
         `}</style>
       </Head>
 
-      <section className="hphp-hero">
-        <h1>Hire PHP Developers<br/>Laravel, Symfony &amp; WordPress Experts</h1>
-        <p>Pre-vetted PHP 8.x engineers for web applications, APIs, and CMS platforms. Clean code, tested, and production-ready. Profiles in 48 hours.</p>
-        <div className="hphp-hero-btns">
-          <Link href="/contact-us" className="hphp-btn-primary">Hire a PHP Developer →</Link>
-          <Link href="/portfolio" className="hphp-btn-outline">View Portfolio</Link>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="Hire PHP Developer · Laravel, Symfony & WordPress"
+        title={<>Hire PHP Developers <AuroraText>Laravel, Symfony &amp; WordPress Experts</AuroraText></>}
+        subtext="Pre-vetted PHP 8.x engineers for web applications, APIs, and CMS platforms. Clean code, tested, and production-ready. Profiles in 48 hours."
+        primaryCta={{ label: 'Hire a PHP Developer', href: '/contact-us' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        stats={[
+          { label: 'PHP Developers', value: '70', suffix: '+' },
+          { label: 'PHP Projects Delivered', value: '350', suffix: '+' },
+          { label: 'Client Satisfaction', value: '48', prefix: '4.', suffix: '/5' },
+          { label: 'Avg Onboarding', value: '7', suffix: ' Days' },
+        ]}
+      />
 
       <section className="hphp-sec" ref={skR}>
         <div className="hphp-wrap">
@@ -196,15 +171,6 @@ export default function HirePHPDeveloper() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="hphp-stats" ref={stGr}>
-        <div className="hphp-stats-grid">
-          <div><div className="hphp-stat-val">{stV ? c1 : 0}+</div><div className="hphp-stat-label">PHP Developers</div></div>
-          <div><div className="hphp-stat-val">{stV ? c2 : 0}+</div><div className="hphp-stat-label">PHP Projects Delivered</div></div>
-          <div><div className="hphp-stat-val">4.{stV ? c3 : 0}/5</div><div className="hphp-stat-label">Client Satisfaction</div></div>
-          <div><div className="hphp-stat-val">{stV ? c4 : 0} Days</div><div className="hphp-stat-label">Avg Onboarding</div></div>
         </div>
       </section>
 

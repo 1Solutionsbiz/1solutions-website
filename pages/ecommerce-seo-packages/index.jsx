@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const PLANS = [
   { name:'Starter', slug:'starter', monthlyPrice:599, yearlyPrice:499, yearlySave:1200, desc:'For small ecommerce stores ready to start building organic visibility.', popular:false,
@@ -21,13 +22,6 @@ const FAQS = [
   { q:'Do I need to give you access to my website?', a:'Yes - we need read and write access to implement on-page optimisations, technical fixes, and content changes. We work with Shopify, WooCommerce, Magento, BigCommerce, and most major ecommerce platforms. For platforms where direct access is not possible or desired, we can provide detailed implementation instructions for your development team to action. We also need Google Search Console and Google Analytics 4 access to monitor performance - we will request these during onboarding.' },
   { q:'Can I switch plans or cancel?', a:'Yes. You can upgrade your plan at any time and the change takes effect from the next billing cycle. Downgrades are processed at the next renewal date. Monthly contracts can be cancelled with 30 days notice. Annual contracts can be cancelled at the end of the annual term. There are no long-term lock-in requirements beyond the billing period you choose. We find that clients who stick with SEO for 12+ months see substantially compounding returns, which is why we offer a significant discount on annual packages.' },
   { q:'What ecommerce platforms do you support?', a:'We work with all major ecommerce platforms: Shopify and Shopify Plus; WooCommerce; Magento 2 (Adobe Commerce); BigCommerce; OpenCart; PrestaShop; Wix eCommerce; Squarespace Commerce; and custom-built platforms. Each platform has different technical SEO considerations - for example, Shopify\'s canonical URL handling, Magento\'s faceted navigation configuration, and WooCommerce\'s WordPress-specific optimisations. We apply platform-specific knowledge to every account rather than treating all sites the same.' },
-];
-
-const STATS = [
-  { label:'Ecommerce Stores', val:'180+' },
-  { label:'Avg Revenue Growth', val:'+62%' },
-  { label:'Years Experience', val:'15+' },
-  { label:'Client Retention', val:'94%' },
 ];
 
 const TESTIMONIALS_ROW1 = [
@@ -283,26 +277,7 @@ export default function EcommerceSeoPackages() {
           .esp-4grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
           .esp-2grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
 
-          /* ── HERO ── */
-          .esp-hero{position:relative;overflow:hidden;z-index:1;padding:72px 40px 0}
-          .esp-hero::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.12) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px)}
-          .esp-hero::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.18) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px)}
-          .esp-hero-content{position:relative;z-index:2;text-align:center;max-width:900px;margin:0 auto}.esp-bc a:hover{color:#D97706}.esp-bc-sep{color:#d1d5db}
-          .esp-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:18px}
-          .esp-h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;color:#0F1F40}
-          .esp-hero-sub{font-size:16px;color:#3A507A;line-height:1.65;max-width:660px;margin:0 auto 28px}
-          .esp-hero-btns{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:32px}
-          .esp-btn-primary{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:8px;padding:14px 36px;background:rgba(15,52,96,0.85);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.20);border-radius:50px;color:#fff;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 6px 24px rgba(15,52,96,0.25)}
-          .esp-btn-primary:hover{background:rgba(15,52,96,1);border-color:rgba(245,158,11,0.6);transform:translateY(-2px);box-shadow:0 12px 36px rgba(15,52,96,0.30)}
-          .esp-btn-secondary{display:inline-flex;align-items:center;padding:14px 32px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1)}
-          .esp-btn-secondary:hover{background:rgba(255,255,255,0.85);border-color:rgba(245,158,11,0.6);transform:translateY(-2px)}
-
-          /* ── STATS BAR ── */
-          .esp-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95)}
-          .esp-stat{padding:18px 20px;text-align:center;border-right:1px solid rgba(15,52,96,0.10)}
-          .esp-stat:last-child{border-right:none}
-          .esp-stat-l{font-size:12px;color:#4A6080;font-weight:500;margin-bottom:6px}
-          .esp-stat-v{font-size:26px;font-weight:900;color:#D97706;letter-spacing:-0.5px;line-height:1}
+          .esp-bc a:hover{color:#D97706}.esp-bc-sep{color:#d1d5db}
 
           /* ── PRICING ── */
           .esp-pricing-sec{padding:80px 40px;position:relative;z-index:1}
@@ -489,14 +464,8 @@ export default function EcommerceSeoPackages() {
             .esp-contact-in{grid-template-columns:1fr}
           }
           @media(max-width:768px){
-            .esp-hero{padding:56px 24px 0}
             .esp-sec,.esp-pricing-sec,.esp-dark-sec,.esp-contact-sec,.esp-related-sec,.esp-testi-sec{padding-left:24px;padding-right:24px}
             .esp-testi-hd{padding:0 24px}
-            .esp-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}
-            .esp-stat:nth-child(2){border-right:none}
-            .esp-stat:nth-child(3){border-top:1px solid rgba(15,52,96,0.10)}
-            .esp-stat:nth-child(4){border-top:1px solid rgba(15,52,96,0.10);border-right:none}
-            .esp-hero-btns{flex-direction:column;align-items:center}
             .esp-3grid{grid-template-columns:1fr}
             .esp-results-grid{grid-template-columns:1fr}
             .esp-form-row{grid-template-columns:1fr}
@@ -505,9 +474,8 @@ export default function EcommerceSeoPackages() {
             .esp-trust{gap:12px}
             /* ── MOBILE PERFORMANCE: disable expensive GPU effects ── */
             .esp-orb1,.esp-orb2,.esp-orb3{display:none}
-            .esp-hero::before,.esp-hero::after{display:none}
-            .esp-glass,.esp-plan-card,.esp-fitem,.esp-form-box,.esp-trust-box,.esp-stats,.esp-platform-card{backdrop-filter:none;-webkit-backdrop-filter:none}
-            .esp-btn-primary,.esp-btn-secondary,.esp-submit{backdrop-filter:none;-webkit-backdrop-filter:none}
+            .esp-glass,.esp-plan-card,.esp-fitem,.esp-form-box,.esp-trust-box,.esp-platform-card{backdrop-filter:none;-webkit-backdrop-filter:none}
+            .esp-submit{backdrop-filter:none;-webkit-backdrop-filter:none}
             .esp-dark-card{backdrop-filter:none;-webkit-backdrop-filter:none}
             .esp-related-sec{backdrop-filter:none;-webkit-backdrop-filter:none}
             .esp-trow:last-child{display:none}
@@ -524,28 +492,19 @@ export default function EcommerceSeoPackages() {
         <div className="esp-orb1"/><div className="esp-orb2"/><div className="esp-orb3"/>
 
         {/* ── HERO ── */}
-        <section className="esp-hero">
-          <div className="esp-hero-content">
-            <span className="esp-eyebrow">Ecommerce SEO Packages · Shopify · WooCommerce · Magento</span>
-            <h1 className="esp-h1">Ecommerce SEO Packages — <AuroraText>Grow Organic Revenue</AuroraText>, Not Just Rankings</h1>
-            <p className="esp-hero-sub">Transparent monthly ecommerce SEO packages for Shopify, WooCommerce, Magento, and BigCommerce stores — covering technical SEO, product page optimisation, link building, and content. All in one plan.</p>
-            <div className="esp-hero-btns">
-              <a href="#contact" className="esp-btn-primary">
-                Get a Free Store Audit
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <a href="#plans" className="esp-btn-secondary">Compare Plans</a>
-            </div>
-            <div className="esp-stats">
-              {STATS.map(s => (
-                <div key={s.label} className="esp-stat">
-                  <div className="esp-stat-l">{s.label}</div>
-                  <div className="esp-stat-v">{s.val}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Ecommerce SEO Packages · Shopify · WooCommerce · Magento"
+          title={<>Ecommerce SEO Packages — <AuroraText>Grow Organic Revenue</AuroraText>, Not Just Rankings</>}
+          subtext="Transparent monthly ecommerce SEO packages for Shopify, WooCommerce, Magento, and BigCommerce stores — covering technical SEO, product page optimisation, link building, and content. All in one plan."
+          primaryCta={{ label: 'Get a Free Store Audit', href: '#contact' }}
+          secondaryCta={{ label: 'Compare Plans', href: '#plans' }}
+          stats={[
+            { label: 'Ecommerce Stores', value: '180', suffix: '+' },
+            { label: 'Avg Revenue Growth', value: '62', prefix: '+', suffix: '%' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'Client Retention', value: '94', suffix: '%' },
+          ]}
+        />
 
         {/* ── PRICING PLANS ── */}
         <section className="esp-pricing-sec" id="plans">
