@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Keyword Research & Strategy', desc: "In-depth analysis of how Toronto customers search for your services - high-intent buying queries, GTA-specific local modifiers, and the competitive keyword gaps your Toronto rivals are not targeting." },
@@ -135,27 +137,7 @@ export default function SeoCompanyToronto() {
         <style>{`
           *{box-sizing:border-box;}
           body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;}
-          .trnt-hero{position:relative;overflow:hidden;padding:90px 40px 80px;background:linear-gradient(135deg,rgba(254,226,226,0.65) 0%,rgba(255,255,255,0.78) 50%,rgba(255,228,230,0.55) 100%);}
-          .trnt-orb1{position:absolute;top:-100px;right:-100px;width:580px;height:580px;border-radius:50%;background:radial-gradient(circle,rgba(110,0,20,0.10) 0%,transparent 70%);pointer-events:none;filter:blur(12px);}
-          .trnt-orb2{position:absolute;bottom:-80px;left:-80px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(176,26,42,0.07) 0%,transparent 70%);pointer-events:none;filter:blur(10px);}
-          .trnt-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;}
-          .trnt-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(110,0,20,0.08);border:1px solid rgba(110,0,20,0.18);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#6e0014;margin-bottom:24px;}
-          .trnt-eyebrow-dot{width:7px;height:7px;border-radius:50%;background:#b01a2a;display:inline-block;}
-          .trnt-h1{font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;color:#0A1628;}
-          .trnt-h1 span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-          .trnt-desc{font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:680px;}
-          .trnt-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px;}
-          .trnt-btn-p{display:inline-flex;align-items:center;gap:8px;background:#6e0014;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 6px 24px rgba(110,0,20,0.28);}
-          .trnt-btn-p:hover{background:#8a001a;transform:translateY(-2px);}
-          .trnt-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.75);color:#6e0014;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;border:1.5px solid rgba(110,0,20,0.18);transition:all 0.25s;backdrop-filter:blur(8px);}
-          .trnt-btn-s:hover{background:#fff;transform:translateY(-2px);}
-          .trnt-trust{display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-bottom:48px;}
-          .trnt-badge{display:flex;align-items:center;gap:6px;font-size:12px;color:#6b7280;font-weight:500;}
-          .trnt-stats-bar{display:flex;border:1px solid rgba(110,0,20,0.10);border-radius:16px;background:rgba(255,255,255,0.80);backdrop-filter:blur(12px);overflow:hidden;max-width:700px;}
-          .trnt-stat-item{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(110,0,20,0.08);}
-          .trnt-stat-item:last-child{border-right:none;}
-          .trnt-stat-num{font-size:1.9rem;font-weight:900;color:#6e0014;line-height:1;letter-spacing:-1px;}
-          .trnt-stat-lbl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px;}.trnt-bc a:hover{color:#6e0014;}.trnt-bc-cur{color:#6e0014;font-weight:500;}
+          .trnt-bc a:hover{color:#6e0014;}.trnt-bc-cur{color:#6e0014;font-weight:500;}
           .trnt-sec{padding:80px 40px;}.trnt-bg{background:#f8fafd;}
           .trnt-sec-inner{max-width:1200px;margin:0 auto;}
           .trnt-tag{display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#b01a2a;margin-bottom:12px;}
@@ -244,35 +226,26 @@ export default function SeoCompanyToronto() {
           .trnt-cta-btn-s{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;border:2px solid rgba(255,255,255,0.35);transition:all 0.25s;}
           .trnt-cta-btn-s:hover{border-color:rgba(255,255,255,0.70);background:rgba(255,255,255,0.08);}
           @media(max-width:900px){.trnt-grid4{grid-template-columns:1fr 1fr;}.trnt-grid3,.trnt-grid2,.trnt-res-grid{grid-template-columns:1fr 1fr;}.trnt-ind-grid{grid-template-columns:1fr 1fr;}.trnt-contact-grid{grid-template-columns:1fr;gap:40px;}}
-          @media(max-width:600px){.trnt-hero,.trnt-sec,.trnt-results,.trnt-cta,.trnt-contact-sec{padding-left:20px;padding-right:20px;}.trnt-hero{padding-top:60px;padding-bottom:50px;}.trnt-grid4,.trnt-grid3,.trnt-grid2,.trnt-res-grid,.trnt-ind-grid{grid-template-columns:1fr;}.trnt-bc{padding:12px 20px;}.trnt-field-row{grid-template-columns:1fr;}.trnt-form-wrap{padding:24px 20px;}}
+          @media(max-width:600px){.trnt-sec,.trnt-results,.trnt-cta,.trnt-contact-sec{padding-left:20px;padding-right:20px;}.trnt-grid4,.trnt-grid3,.trnt-grid2,.trnt-res-grid,.trnt-ind-grid{grid-template-columns:1fr;}.trnt-bc{padding:12px 20px;}.trnt-field-row{grid-template-columns:1fr;}.trnt-form-wrap{padding:24px 20px;}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
 
-      <section className="trnt-hero">
-        <div className="trnt-orb1" /><div className="trnt-orb2" />
-        <div className="trnt-inner">
-          <span className="trnt-eyebrow"><span className="trnt-eyebrow-dot" />SEO Company in Toronto, Ontario</span>
-          <h1 className="trnt-h1">Top-Ranked <span>SEO Company in Toronto</span><br />That Delivers Page 1 Rankings</h1>
-          <p className="trnt-desc">1Solutions is a results-driven SEO company in Toronto with 15+ years of experience helping Toronto and GTA businesses rank on Page 1 of Google. From technical SEO and local search to link building and content strategy - we build organic visibility that generates leads in Canada's most competitive digital market.</p>
-          <div className="trnt-btns">
-            <a href="#contact" className="trnt-btn-p">Get a Free SEO Audit<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            <Link href="/affordable-seo-packages/" className="trnt-btn-s">View SEO Packages →</Link>
-          </div>
-          <div className="trnt-trust">
-            {['GTA market specialists','White-hat SEO only','No lock-in contracts','Monthly ranking reports'].map(t => (
-              <span key={t} className="trnt-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6e0014" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>{t}</span>
-            ))}
-          </div>
-          <div className="trnt-stats-bar">
-            {[{num:'500+',lbl:'Clients Served'},{num:'15+',lbl:'Years Experience'},{num:'Page 1',lbl:'Rankings'},{num:'97%',lbl:'Retention Rate'}].map(s => (
-              <div key={s.lbl} className="trnt-stat-item"><span className="trnt-stat-num">{s.num}</span><span className="trnt-stat-lbl">{s.lbl}</span></div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="SEO Company in Toronto, Ontario · GTA Market Specialists"
+        title={<>Top-Ranked <AuroraText>SEO Company in Toronto</AuroraText> That Delivers Page 1 Rankings</>}
+        subtext="1Solutions is a results-driven SEO company in Toronto with 15+ years of experience helping Toronto and GTA businesses rank on Page 1 of Google. From technical SEO and local search to link building and content strategy - we build organic visibility that generates leads in Canada's most competitive digital market."
+        primaryCta={{ label: 'Get a Free SEO Audit', href: '#contact' }}
+        secondaryCta={{ label: 'View SEO Packages', href: '/affordable-seo-packages/' }}
+        stats={[
+          { label: 'Clients Served', value: '500', suffix: '+' },
+          { label: 'Years Experience', value: '15', suffix: '+' },
+          { label: 'Rankings', value: '1', prefix: 'Page ' },
+          { label: 'Retention Rate', value: '97', suffix: '%' },
+        ]}
+      />
 
       <section className="trnt-sec trnt-bg" id="services">
         <div className="trnt-sec-inner">

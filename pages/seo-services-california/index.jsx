@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'California Local SEO', desc: 'Google Business Profile optimisation, local citation building, and geo-targeted content for every California market - from Los Angeles to Sacramento, San Diego to the Bay Area.' },
@@ -53,13 +55,6 @@ const FAQS = [
   { q: 'Do you work with California businesses remotely?', a: 'Yes, entirely remotely. All our SEO work is delivered remotely - strategy, implementation, content, reporting, and communication. We work across time zones with California clients through asynchronous updates and monthly or bi-weekly calls. The majority of our US client base is managed remotely with no impact on quality or communication. Most clients find that monthly reporting calls and a shared tracking dashboard provide all the visibility they need.' },
   { q: 'What makes California SEO different from SEO in other states?', a: 'California is the most competitive state for SEO in several industries - technology, legal, real estate, and healthcare in particular. The LA and SF Bay Area markets are among the most contested local search environments in the country. At the same time, California\'s diverse geography creates significant opportunity in less contested markets - Central Valley cities, Inland Empire, and North California - where quality SEO produces faster results. We tailor strategy to your specific California market, not a one-size-fits-all approach.' },
   { q: 'Do you offer SEO audits for California businesses?', a: 'Yes. We offer comprehensive SEO audits covering technical health, on-page optimisation, backlink profile, keyword gap analysis, competitor benchmarking, and local SEO signals - tailored to your California market and industry. Audits are available as a standalone service or as the first phase of an ongoing programme. The audit provides a prioritised action plan so you can see exactly what is holding your California rankings back and what the highest-impact fixes are.' },
-];
-
-const STATS = [
-  { label: 'SEO Clients Served', val: '500+' },
-  { label: 'Years Experience', val: '15+' },
-  { label: 'Industries Covered', val: '40+' },
-  { label: 'Client Retention', val: '97%' },
 ];
 
 const RESULTS = [
@@ -161,23 +156,10 @@ export default function SeoServicesCalifornia() {
           .calseo-page { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #0F1F40; line-height: 1.6; overflow-x: hidden; }
           .calseo-page *, .calseo-page *::before, .calseo-page *::after { box-sizing: border-box; }
 
-          .calseo-hero { background: linear-gradient(135deg, #0F1F40 0%, #1a2e5a 40%, #114171 80%, #0a1628 100%); position: relative; overflow: hidden; padding: 80px 40px 0; }
-          .calseo-orb1 { position: absolute; top: -100px; right: -100px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(17,65,113,0.60) 0%, transparent 65%); pointer-events: none; filter: blur(40px); }
-          .calseo-orb2 { position: absolute; bottom: 0; left: -80px; width: 440px; height: 440px; border-radius: 50%; background: radial-gradient(circle, rgba(254,151,0,0.08) 0%, transparent 65%); pointer-events: none; filter: blur(40px); }
-          .calseo-hero-in { max-width: 1280px; margin: 0 auto; position: relative; z-index: 2; text-align: center; }
-          .calseo-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(254,151,0,0.12); border: 1px solid rgba(254,151,0,0.28); border-radius: 100px; padding: 5px 14px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #FE9700; margin-bottom: 28px; }
-          .calseo-h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 900; line-height: 1.08; letter-spacing: -1.5px; color: #fff; margin-bottom: 20px; max-width: 900px; margin-left: auto; margin-right: auto; }
-          .calseo-h1 span { background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-          .calseo-sub { font-size: 1.08rem; color: rgba(255,255,255,0.70); line-height: 1.75; max-width: 660px; margin: 0 auto 36px; }
-          .calseo-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 56px; }
           .calseo-btn-p { display: inline-flex; align-items: center; gap: 8px; background: #FE9700; color: #fff; padding: 15px 32px; border-radius: 50px; font-weight: 800; font-size: 0.95rem; text-decoration: none; transition: all 0.25s; box-shadow: 0 4px 20px rgba(254,151,0,0.35); }
           .calseo-btn-p:hover { background: #e08700; box-shadow: 0 8px 36px rgba(254,151,0,0.50); transform: translateY(-2px); }
           .calseo-btn-s { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.22); color: #fff; padding: 15px 28px; border-radius: 50px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all 0.25s; }
           .calseo-btn-s:hover { border-color: rgba(254,151,0,0.60); background: rgba(254,151,0,0.10); transform: translateY(-2px); }
-          .calseo-stats { display: grid; grid-template-columns: repeat(4, 1fr); max-width: 900px; margin: 0 auto; background: rgba(255,255,255,0.06); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.10); border-radius: 20px 20px 0 0; }
-          .calseo-stat { padding: 20px 24px; text-align: center; border-right: 1px solid rgba(255,255,255,0.07); } .calseo-stat:last-child { border-right: none; }
-          .calseo-stat-l { font-size: 11px; color: rgba(255,255,255,0.45); font-weight: 500; margin-bottom: 4px; }
-          .calseo-stat-v { font-size: 1.6rem; font-weight: 900; color: #FE9700; letter-spacing: -0.5px; }
 
           .calseo-svc { background: #f8fafd; padding: 80px 40px; }
           .calseo-svc-in { max-width: 1280px; margin: 0 auto; }
@@ -253,16 +235,12 @@ export default function SeoServicesCalifornia() {
 
           @media (max-width: 1024px) { .calseo-grid { grid-template-columns: repeat(2, 1fr); } .calseo-why-grid { grid-template-columns: repeat(2, 1fr); } .calseo-results-grid { grid-template-columns: repeat(2, 1fr); } .calseo-cities-grid { grid-template-columns: repeat(4, 1fr); } }
           @media (max-width: 768px) {
-            .calseo-hero { padding: 60px 24px 0; }
             .calseo-svc, .calseo-cities, .calseo-results, .calseo-proc, .calseo-why, .calseo-faq, .calseo-cta { padding: 60px 24px; }
-            .calseo-stats { grid-template-columns: repeat(2, 1fr); border-radius: 16px 16px 0 0; }
-            .calseo-stat:nth-child(2) { border-right: none; }
             .calseo-grid { grid-template-columns: 1fr; }
             .calseo-why-grid { grid-template-columns: 1fr; }
             .calseo-results-grid { grid-template-columns: 1fr; }
             .calseo-cities-grid { grid-template-columns: repeat(2, 1fr); }
             .calseo-step { grid-template-columns: 56px 1fr; }
-            .calseo-btns { flex-direction: column; align-items: center; }
           }
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
@@ -271,32 +249,19 @@ export default function SeoServicesCalifornia() {
       </Head>
 
       <div className="calseo-page">
-        <section className="calseo-hero">
-          <div className="calseo-orb1" /><div className="calseo-orb2" />
-          <div className="calseo-hero-in">
-            <span className="calseo-badge">
-              <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#FE9700', display: 'inline-block' }} />
-              SEO Services - California
-            </span>
-            <h1 className="calseo-h1">SEO Services for <span>California Businesses</span></h1>
-            <p className="calseo-sub">Rank higher on Google across Los Angeles, San Francisco, San Diego, and every California market that matters to your business. 15+ years of SEO experience, 500+ clients, no lock-in contracts.</p>
-            <div className="calseo-btns">
-              <Link href="/contact-us" className="calseo-btn-p">
-                Get a Free SEO Audit
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
-              </Link>
-              <Link href="/affordable-seo-packages" className="calseo-btn-s">View SEO Packages</Link>
-            </div>
-            <div className="calseo-stats">
-              {STATS.map(s => (
-                <div key={s.label} className="calseo-stat">
-                  <div className="calseo-stat-l">{s.label}</div>
-                  <div className="calseo-stat-v">{s.val}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="SEO Services · California"
+          title={<>SEO Services for <AuroraText>California Businesses</AuroraText></>}
+          subtext="Rank higher on Google across Los Angeles, San Francisco, San Diego, and every California market that matters to your business. 15+ years of SEO experience, 500+ clients, no lock-in contracts."
+          primaryCta={{ label: 'Get a Free SEO Audit', href: '/contact-us' }}
+          secondaryCta={{ label: 'View SEO Packages', href: '/affordable-seo-packages' }}
+          stats={[
+            { label: 'SEO Clients Served', value: '500', suffix: '+' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'Industries Covered', value: '40', suffix: '+' },
+            { label: 'Client Retention', value: '97', suffix: '%' },
+          ]}
+        />
 
         <section className="calseo-svc">
           <div className="calseo-svc-in">

@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'ASO Audit & Competitive Analysis', desc: 'Full app store presence audit - keyword rankings, conversion rate, rating health, visual asset quality, and competitor benchmarking across the App Store and Google Play.' },
@@ -44,13 +46,6 @@ const FAQS = [
   { q: 'Do you handle ASO for games as well as utility apps?', a: 'Yes. Game ASO and utility app ASO share core principles but differ in keyword strategy (game genres, character names, and gameplay mechanics become keywords) and visual strategy (games rely heavily on gameplay video previews and in-game screenshots rather than feature benefit screenshots). We have optimised ASO for casual games, mid-core games, and hyper-casual games alongside productivity, healthcare, fitness, and ecommerce apps.' },
 ];
 
-const STATS = [
-  { label: 'Apps Optimised', val: '300+' },
-  { label: 'Avg Organic Install Lift', val: '+180%' },
-  { label: 'Stores Covered', val: 'iOS & Android' },
-  { label: 'Client Retention', val: '93%' },
-];
-
 export default function AppStoreOptimizationServices() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleCards, setVisibleCards] = useState([]);
@@ -78,22 +73,10 @@ export default function AppStoreOptimizationServices() {
         <style>{`
           .aso-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .aso-page *,.aso-page *::before,.aso-page *::after{box-sizing:border-box}
-          .aso-hero{background:linear-gradient(135deg,#faf5ff 0%,#ede9fe 25%,#e9d5ff 60%,#fdf4ff 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .aso-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(147,51,234,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .aso-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(91,33,182,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .aso-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.aso-bc a:hover{color:#9333EA}.aso-bc span{color:#d1d5db}
-          .aso-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(147,51,234,0.08);border:1px solid rgba(147,51,234,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#7C3AED;margin-bottom:28px}
-          .aso-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .aso-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
-          .aso-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .aso-btn-p{display:inline-flex;align-items:center;gap:8px;background:#9333EA;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(147,51,234,0.28)}
           .aso-btn-p:hover{background:#7C3AED;box-shadow:0 8px 32px rgba(147,51,234,0.38);transform:translateY(-2px)}
           .aso-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.18);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
           .aso-btn-s:hover{border-color:#9333EA;color:#9333EA;transform:translateY(-2px)}
-          .aso-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(147,51,234,0.07)}
-          .aso-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(147,51,234,0.08)}.aso-stat:last-child{border-right:none}
-          .aso-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .aso-stat-v{font-size:1.6rem;font-weight:900;color:#9333EA;letter-spacing:-0.5px}
           .aso-svc{background:#f8fafd;padding:80px 40px}.aso-svc-in{max-width:1280px;margin:0 auto}
           .aso-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#9333EA;margin-bottom:10px;display:block}
           .aso-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
@@ -140,25 +123,26 @@ export default function AppStoreOptimizationServices() {
           .aso-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           .aso-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.aso-grid{grid-template-columns:repeat(2,1fr)}.aso-why-grid{grid-template-columns:repeat(2,1fr)}}
-          @media(max-width:768px){.aso-hero,.aso-svc,.aso-stores,.aso-proc,.aso-why,.aso-faq,.aso-cta{padding:60px 24px}.aso-hero{padding-top:60px;padding-bottom:0}.aso-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.aso-stat:nth-child(2){border-right:none}.aso-grid{grid-template-columns:1fr}.aso-why-grid{grid-template-columns:1fr}.aso-step{grid-template-columns:56px 1fr}.aso-btns{flex-direction:column;align-items:center}}
+          @media(max-width:768px){.aso-svc,.aso-stores,.aso-proc,.aso-why,.aso-faq,.aso-cta{padding:60px 24px}.aso-grid{grid-template-columns:1fr}.aso-why-grid{grid-template-columns:1fr}.aso-step{grid-template-columns:56px 1fr}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
       <div className="aso-page">
-        <section className="aso-hero"><div className="aso-o1"/><div className="aso-o2"/>
-          <div className="aso-in">
-            <span className="aso-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#9333EA',display:'inline-block'}}/> iOS App Store · Google Play · A/B Testing</span>
-            <h1 className="aso-h1">App Store Optimisation Services That Grow Organic Installs</h1>
-            <p className="aso-sub">Keyword research, metadata optimisation, screenshot strategy, rating management, and A/B testing for iOS and Android - ASO that converts more store visitors into installs.</p>
-            <div className="aso-btns">
-              <Link href="/contact-us" className="aso-btn-p">Get a Free ASO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/react-native-app-development" className="aso-btn-s">App Development</Link>
-            </div>
-            <div className="aso-stats">{STATS.map(s => <div key={s.label} className="aso-stat"><div className="aso-stat-l">{s.label}</div><div className="aso-stat-v">{s.val}</div></div>)}</div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="iOS App Store · Google Play · A/B Testing"
+          title={<>App Store Optimisation Services That <AuroraText>Grow Organic Installs</AuroraText></>}
+          subtext="Keyword research, metadata optimisation, screenshot strategy, rating management, and A/B testing for iOS and Android - ASO that converts more store visitors into installs."
+          primaryCta={{ label: 'Get a Free ASO Audit', href: '/contact-us' }}
+          secondaryCta={{ label: 'App Development', href: '/react-native-app-development' }}
+          stats={[
+            { label: 'Apps Optimised', value: '300', suffix: '+' },
+            { label: 'Avg Organic Install Lift', value: '180', prefix: '+', suffix: '%' },
+            { label: 'Stores Covered', value: '2', suffix: '' },
+            { label: 'Client Retention', value: '93', suffix: '%' },
+          ]}
+        />
         <section className="aso-svc"><div className="aso-svc-in">
           <span className="aso-ey2">What We Do</span><h2 className="aso-ttl">App Store Optimisation Services</h2>
           <p className="aso-desc">Every ASO layer - keywords, metadata, visuals, ratings, and conversion testing - across both Apple App Store and Google Play.</p>

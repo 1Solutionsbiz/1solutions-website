@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'Google Business Profile Optimisation', desc: 'Full GBP setup or takeover — categories, attributes, photos, Q&A, weekly posts, and service menu — tuned to the signals that determine map pack position.' },
@@ -77,13 +79,6 @@ const RELATED = [
   { href: '/ecommerce-seo-services/', label: 'Ecommerce SEO' },
 ];
 
-const STATS = [
-  { v: '300+', l: 'Local SEO Clients' },
-  { v: '15+', l: 'Years Experience' },
-  { v: '#1', l: 'Map Pack Rankings' },
-  { v: '97%', l: 'Client Retention' },
-];
-
 const CHECK = (
   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{color:'#D97706',flexShrink:0,marginTop:2}} aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
 );
@@ -156,34 +151,6 @@ export default function LocalSeoServices() {
           .lseo-orb1{position:fixed;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(15,52,96,0.10) 0%,transparent 70%);top:-100px;right:-200px;pointer-events:none;z-index:0;filter:blur(20px)}
           .lseo-orb2{position:fixed;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(217,119,6,0.08) 0%,transparent 70%);bottom:0;left:-100px;pointer-events:none;z-index:0;filter:blur(20px)}
           .lseo-orb3{position:fixed;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(26,82,118,0.12) 0%,transparent 70%);top:45%;left:-150px;pointer-events:none;z-index:0;filter:blur(20px)}
-
-          /* ── HERO ── */
-          .lseo-hero{position:relative;z-index:1}
-          .lseo-hero-block{background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.70) 40%,rgba(237,233,254,0.45) 100%);padding:90px 40px 0;position:relative;overflow:hidden}
-          .lseo-aurora{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
-          .lseo-b1,.lseo-b2,.lseo-b3{position:absolute;border-radius:50%;filter:blur(70px) saturate(150%);will-change:transform}
-          .lseo-b1{width:620px;height:520px;top:-80px;left:-100px;background:rgba(15,52,96,0.28);animation:lseo-drift 20s ease-in-out infinite alternate}
-          .lseo-b2{width:500px;height:460px;top:60px;right:-60px;background:rgba(217,119,6,0.20);animation:lseo-drift 20s ease-in-out infinite alternate-reverse}
-          .lseo-b3{width:400px;height:380px;bottom:-60px;left:30%;background:rgba(26,82,118,0.16);animation:lseo-drift 20s ease-in-out infinite alternate}
-          @keyframes lseo-drift{to{transform:translate3d(-4%,3%,0) scale(1.10)}}
-          .lseo-hero-in{max-width:1100px;margin:0 auto;text-align:center;position:relative;z-index:2}
-          .lseo-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(15,52,96,0.07);border:1px solid rgba(15,52,96,0.15);border-radius:100px;padding:5px 16px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#0F3460;margin-bottom:28px}
-          .lseo-h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;line-height:1.08;letter-spacing:-1.5px;color:#0F1F40;margin-bottom:22px;max-width:900px;margin-left:auto;margin-right:auto}
-          .lseo-h1 em{font-style:normal;background:linear-gradient(135deg,#D97706,#F59E0B,#EF4444,#D97706);background-size:300%;animation:lseo-grd 5s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          @keyframes lseo-grd{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-          .lseo-hero-sub{font-size:1.08rem;color:#4A6080;line-height:1.8;max-width:680px;margin:0 auto 38px}
-          .lseo-hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:60px}
-          .lseo-btn-p{display:inline-flex;align-items:center;gap:8px;background:rgba(15,52,96,0.90);backdrop-filter:blur(12px);border:1.5px solid rgba(255,255,255,0.20);color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 6px 24px rgba(15,52,96,0.25)}
-          .lseo-btn-p:hover{background:#0F3460;border-color:rgba(217,119,6,0.55);transform:translateY(-2px);box-shadow:0 12px 36px rgba(15,52,96,0.30)}
-          .lseo-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(255,255,255,0.85);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 16px rgba(15,52,96,0.08)}
-          .lseo-btn-s:hover{background:rgba(255,255,255,0.90);border-color:rgba(217,119,6,0.50);color:#D97706;transform:translateY(-2px)}
-
-          /* ── STATS BAR ── */
-          .lseo-stats{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.90);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95);position:relative;z-index:2}
-          .lseo-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(15,52,96,0.08)}
-          .lseo-stat:last-child{border-right:none}
-          .lseo-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .lseo-stat-v{font-size:1.7rem;font-weight:900;color:#D97706;letter-spacing:-0.5px}
 
           /* ── SHARED SECTION STYLES ── */
           .lseo-sec{padding:80px 40px;position:relative;z-index:1}
@@ -302,19 +269,13 @@ export default function LocalSeoServices() {
             .lseo-contact-in{grid-template-columns:1fr;gap:40px}
           }
           @media(max-width:768px){
-            .lseo-hero-block{padding:60px 24px 0}
             .lseo-sec{padding:60px 24px}
             .lseo-dark,.lseo-testi,.lseo-contact{padding:60px 24px}
-            .lseo-stats{grid-template-columns:repeat(2,1fr)}
-            .lseo-stat:nth-child(2){border-right:none}
-            .lseo-stat:nth-child(3){border-top:1px solid rgba(15,52,96,0.08)}
-            .lseo-stat:nth-child(4){border-top:1px solid rgba(15,52,96,0.08);border-right:none}
             .lseo-svc-grid{grid-template-columns:1fr}
             .lseo-proc-grid{grid-template-columns:1fr}
             .lseo-why-grid{grid-template-columns:1fr}
             .lseo-res-grid{grid-template-columns:repeat(2,1fr)}
             .lseo-ind-grid{grid-template-columns:repeat(2,1fr)}
-            .lseo-hero-btns{flex-direction:column;align-items:center}
             .lseo-form-row{grid-template-columns:1fr}
           }
         `}</style>
@@ -324,36 +285,19 @@ export default function LocalSeoServices() {
         <div className="lseo-orb1"/><div className="lseo-orb2"/><div className="lseo-orb3"/>
 
         {/* ── HERO ── */}
-        <section className="lseo-hero">
-          <div className="lseo-hero-block">
-            <div className="lseo-aurora">
-              <div className="lseo-b1"/><div className="lseo-b2"/><div className="lseo-b3"/>
-            </div>
-            <div className="lseo-hero-in">
-              <span className="lseo-ey">
-                <span style={{width:6,height:6,borderRadius:'50%',background:'#D97706',display:'inline-block'}}/>
-                Google Maps Pack Experts · US · Canada · Australia
-              </span>
-              <h1 className="lseo-h1">Rank in the <em>Google Maps Pack</em><br/>and Dominate Local Search</h1>
-              <p className="lseo-hero-sub">GBP optimisation, citation building, review strategy, and geo-targeted location pages that drive real foot traffic, calls, and direction requests — not just rankings on a spreadsheet.</p>
-              <div className="lseo-hero-btns">
-                <Link href="/contact-us" className="lseo-btn-p">
-                  Get a Free Local SEO Audit
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </Link>
-                <Link href="/local-seo-packages/#pricing" className="lseo-btn-s">View Local SEO Packages</Link>
-              </div>
-            </div>
-          </div>
-          <div className="lseo-stats">
-            {STATS.map(s => (
-              <div key={s.l} className="lseo-stat">
-                <div className="lseo-stat-l">{s.l}</div>
-                <div className="lseo-stat-v">{s.v}</div>
-              </div>
-            ))}
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Google Maps Pack Experts · US · Canada · Australia"
+          title={<>Rank in the <AuroraText>Google Maps Pack</AuroraText> and Dominate Local Search</>}
+          subtext="GBP optimisation, citation building, review strategy, and geo-targeted location pages that drive real foot traffic, calls, and direction requests - not just rankings on a spreadsheet."
+          primaryCta={{ label: 'Get a Free Local SEO Audit', href: '/contact-us' }}
+          secondaryCta={{ label: 'View Local SEO Packages', href: '/local-seo-packages/#pricing' }}
+          stats={[
+            { label: 'Local SEO Clients', value: '300', suffix: '+' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'Map Pack Rankings', value: '1', prefix: '#' },
+            { label: 'Client Retention', value: '97', suffix: '%' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="lseo-sec" style={{background:'#f8fafd'}}>

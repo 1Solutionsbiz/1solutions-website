@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'Search Engine Optimisation (SEO)', desc: 'Organic search rankings that drive qualified traffic without per-click cost - technical SEO, on-page optimisation, content strategy, link building, and local SEO - the long-term organic growth engine for your business.', href: '/seo-services-company' },
@@ -44,13 +46,6 @@ const FAQS = [
   { q: 'Do you sign long-term contracts for digital marketing?', a: 'No. Our digital marketing services operate on a month-to-month basis with 30 days notice to cancel. We earn your continued investment through results - not by locking you into contracts. Annual plans are available at a discount for clients who prefer the financial commitment and certainty, but the choice is entirely yours. For new clients, we strongly recommend starting with a 3-month commitment to give campaigns enough time to pass the initial learning period - digital marketing requires time to optimise, and results in month 1 do not reflect what a well-optimised campaign produces in months 4 to 6.' },
 ];
 
-const STATS = [
-  { label: 'Clients Served', val: '600+' },
-  { label: 'Industries Covered', val: '40+' },
-  { label: 'Years Experience', val: '15+' },
-  { label: 'Client Retention', val: '89%' },
-];
-
 export default function DigitalMarketingServices() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleCards, setVisibleCards] = useState([]);
@@ -75,23 +70,12 @@ export default function DigitalMarketingServices() {
         <style>{`
           .dmhub-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .dmhub-page *,.dmhub-page *::before,.dmhub-page *::after{box-sizing:border-box}
-          .dmhub-hero{background:linear-gradient(135deg,#0F1F40 0%,#1a2e5a 40%,#114171 80%,#0F1F40 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .dmhub-o1{position:absolute;top:-100px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(17,65,113,0.60) 0%,transparent 65%);pointer-events:none;filter:blur(40px)}
-          .dmhub-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(254,151,0,0.08) 0%,transparent 65%);pointer-events:none;filter:blur(40px)}
-          .dmhub-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.dmhub-bc a:hover{color:#FE9700}.dmhub-bc span{color:rgba(255,255,255,0.25)}
-          .dmhub-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(254,151,0,0.12);border:1px solid rgba(254,151,0,0.28);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#FE9700;margin-bottom:28px}
-          .dmhub-h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:900;line-height:1.05;letter-spacing:-1.5px;color:#fff;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .dmhub-h1 span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .dmhub-sub{font-size:1.08rem;color:rgba(255,255,255,0.70);line-height:1.75;max-width:660px;margin:0 auto 36px}
+          .dmhub-bc a:hover{color:#FE9700}.dmhub-bc span{color:rgba(255,255,255,0.25)}
           .dmhub-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .dmhub-btn-p{display:inline-flex;align-items:center;gap:8px;background:#FE9700;color:#fff;padding:15px 32px;border-radius:50px;font-weight:800;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(254,151,0,0.35)}
           .dmhub-btn-p:hover{background:#e08700;box-shadow:0 8px 36px rgba(254,151,0,0.50);transform:translateY(-2px)}
           .dmhub-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border:1.5px solid rgba(255,255,255,0.22);color:#fff;padding:15px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
           .dmhub-btn-s:hover{border-color:rgba(254,151,0,0.60);background:rgba(254,151,0,0.10);transform:translateY(-2px)}
-          .dmhub-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.06);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.10);border-radius:20px 20px 0 0}
-          .dmhub-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(255,255,255,0.07)}.dmhub-stat:last-child{border-right:none}
-          .dmhub-stat-l{font-size:11px;color:rgba(255,255,255,0.45);font-weight:500;margin-bottom:4px}
-          .dmhub-stat-v{font-size:1.6rem;font-weight:900;color:#FE9700;letter-spacing:-0.5px}
           .dmhub-svc{background:#f8fafd;padding:80px 40px}.dmhub-svc-in{max-width:1280px;margin:0 auto}
           .dmhub-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#114171;margin-bottom:10px;display:block}
           .dmhub-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
@@ -136,25 +120,26 @@ export default function DigitalMarketingServices() {
           .dmhub-cta-t{font-size:clamp(2rem,4vw,3rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:16px}
           .dmhub-cta-s{font-size:1.05rem;color:rgba(255,255,255,0.70);line-height:1.75;margin:0 auto 36px;max-width:520px}
           @media(max-width:1024px){.dmhub-grid{grid-template-columns:repeat(2,1fr)}.dmhub-why-grid{grid-template-columns:repeat(2,1fr)}}
-          @media(max-width:768px){.dmhub-hero,.dmhub-svc,.dmhub-ind,.dmhub-proc,.dmhub-why,.dmhub-faq,.dmhub-cta{padding:60px 24px}.dmhub-hero{padding-top:60px;padding-bottom:0}.dmhub-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.dmhub-stat:nth-child(2){border-right:none}.dmhub-grid{grid-template-columns:1fr}.dmhub-why-grid{grid-template-columns:1fr}.dmhub-step{grid-template-columns:56px 1fr}.dmhub-btns{flex-direction:column;align-items:center}}
+          @media(max-width:768px){.dmhub-svc,.dmhub-ind,.dmhub-proc,.dmhub-why,.dmhub-faq,.dmhub-cta{padding:60px 24px}.dmhub-grid{grid-template-columns:1fr}.dmhub-why-grid{grid-template-columns:1fr}.dmhub-step{grid-template-columns:56px 1fr}.dmhub-btns{flex-direction:column;align-items:center}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
       <div className="dmhub-page">
-        <section className="dmhub-hero"><div className="dmhub-o1"/><div className="dmhub-o2"/>
-          <div className="dmhub-in">
-            <span className="dmhub-badge"><span style={{width:6,height:6,borderRadius:'50%',background:'#FE9700',display:'inline-block'}}/> SEO · PPC · Social · Content · Email · Ecommerce</span>
-            <h1 className="dmhub-h1">Digital Marketing Services - <span>Measurable Growth</span> Across Every Channel</h1>
-            <p className="dmhub-sub">A full-service digital marketing agency with 15+ years of experience - SEO, Google Ads, social media marketing, content, email, ecommerce, and Amazon marketing across 600+ clients in 40+ industries.</p>
-            <div className="dmhub-btns">
-              <Link href="/contact-us" className="dmhub-btn-p">Get a Free Digital Marketing Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/free-45-day-seo-trial" className="dmhub-btn-s">Try SEO Free for 45 Days</Link>
-            </div>
-            <div className="dmhub-stats">{STATS.map(s => <div key={s.label} className="dmhub-stat"><div className="dmhub-stat-l">{s.label}</div><div className="dmhub-stat-v">{s.val}</div></div>)}</div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="SEO · PPC · Social · Content · Email · Ecommerce"
+          title={<>Digital Marketing Services - <AuroraText>Measurable Growth</AuroraText> Across Every Channel</>}
+          subtext="A full-service digital marketing agency with 15+ years of experience - SEO, Google Ads, social media marketing, content, email, ecommerce, and Amazon marketing across 600+ clients in 40+ industries."
+          primaryCta={{ label: 'Get a Free Digital Marketing Audit', href: '/contact-us' }}
+          secondaryCta={{ label: 'Try SEO Free for 45 Days', href: '/free-45-day-seo-trial' }}
+          stats={[
+            { label: 'Clients Served', value: '600', suffix: '+' },
+            { label: 'Industries Covered', value: '40', suffix: '+' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'Client Retention', value: '89', suffix: '%' },
+          ]}
+        />
         <section className="dmhub-svc"><div className="dmhub-svc-in">
           <span className="dmhub-ey2">Our Services</span><h2 className="dmhub-ttl">Digital Marketing Services</h2>
           <p className="dmhub-desc">Every digital marketing channel - organic and paid - with genuine expertise across SEO, PPC, social, content, email, ecommerce, and Amazon.</p>

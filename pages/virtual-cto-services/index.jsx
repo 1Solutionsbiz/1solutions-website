@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -88,25 +90,13 @@ const FAQS = [
   { q: 'How quickly can a Virtual CTO engagement start?', a: 'Sprint engagements begin within 7 days of contract. Fractional CTO retainers: onboarding and current state assessment begin within 10–14 days of contract signing. Due diligence engagements can begin within 3–5 days for time-sensitive M&A processes.' },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => { if (!start) return; const num = parseInt(target.replace(/\D/g, ''), 10); if (!num) return; let t0 = null; const step = ts => { if (!t0) t0 = ts; const p = Math.min((ts - t0) / duration, 1); setCount(Math.floor((1 - Math.pow(1 - p, 3)) * num)); if (p < 1) requestAnimationFrame(step); }; requestAnimationFrame(step); }, [start, target, duration]);
-  return count;
-}
-function StatItem({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');  return (<div className="vcto-sc"><div className="vcto-sv">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div><div className="vcto-sl">{label}</div></div>);
-}
-
 export default function VirtualCTOServices() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [ss, setSs] = useState(false);
   const [vis, setVis] = useState(new Set());
   const [vSk, setVSk] = useState([]); const [vEn, setVEn] = useState([]); const [vWh, setVWh] = useState([]); const [vTe, setVTe] = useState([]); const [vSt, setVSt] = useState([]);
-  const stR = useRef(null); const secR = useRef({});
+  const secR = useRef({});
   const skR = useRef(null); const enR = useRef(null); const whR = useRef(null); const teR = useRef(null); const stGr = useRef(null);
-  useEffect(() => { if (!stR.current) return; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setSs(true); o.disconnect(); } }, { threshold: 0.4 }); o.observe(stR.current); return () => o.disconnect(); }, []);
   useEffect(() => { const pairs = [[skR, SERVICES.length, setVSk],[enR, 3, setVEn],[whR, WHY_CARDS.length, setVWh],[teR, 3, setVTe],[stGr, TECH_STACK.length, setVSt]]; const obs = pairs.map(([ref, count, setter]) => { if (!ref.current) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { Array.from({ length: count }, (_, i) => setTimeout(() => setter(p => p.includes(i) ? p : [...p, i]), i * 80)); o.disconnect(); } }, { threshold: 0.05 }); o.observe(ref.current); return o; }); return () => obs.forEach(o => o?.disconnect()); }, []);
   useEffect(() => { const ks = Object.keys(secR.current); const obs = ks.map(k => { const el = secR.current[k]; if (!el) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVis(p => new Set([...p, k])); o.disconnect(); } }, { threshold: 0.1 }); o.observe(el); return o; }); return () => obs.forEach(o => o?.disconnect()); }, []);
   const visServices = showAll ? SERVICES : SERVICES.slice(0, 6);
@@ -154,31 +144,6 @@ export default function VirtualCTOServices() {
 
 
 
-          .vcto-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
-          .vcto-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#92400e;margin-bottom:14px}
-          .vcto-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .vcto-desc{font-size:16px;color:#78350f;line-height:1.65;max-width:740px;margin:0 auto 24px}
-          .vcto-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
-          .vcto-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#451a03;box-shadow:0 2px 8px rgba(69,26,3,.07)}
-          .vcto-dot{width:7px;height:7px;border-radius:50%;background:#92400e;flex-shrink:0}
-          .vcto-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .vcto-p{display:inline-block;padding:14px 36px;background:#92400e;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(146,64,14,.28)}
-          .vcto-p:hover{background:#451a03;transform:translateY(-2px)}
-          .vcto-g{display:inline-block;padding:14px 36px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#451a03;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .vcto-g:hover{background:rgba(255,255,255,.85);border-color:rgba(146,64,14,.5);transform:translateY(-2px)}
-          .vcto-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:28px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(69,26,3,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .vcto-sc{padding:18px 16px;text-align:center;border-right:1px solid rgba(69,26,3,.10)}
-          .vcto-sc:last-child{border-right:none}
-          .vcto-sv{font-size:28px;font-weight:900;color:#92400e;letter-spacing:-.5px;line-height:1}
-          .vcto-sl{font-size:11px;color:#78350f;font-weight:500;margin-top:5px}
-          .vcto-logos{position:relative;z-index:2;padding:24px 40px 52px;display:flex;flex-direction:column;align-items:center;gap:14px}
-          .vcto-ll{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#78350f}
-          .vcto-lw{width:100%;overflow:hidden}
-          .vcto-lt{display:flex;align-items:center;gap:60px;width:max-content;animation:vcto-mq 28s linear infinite}
-          .vcto-lt:hover{animation-play-state:paused}
-          @keyframes vcto-mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-          .vcto-cl{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
-          .vcto-cl:hover{opacity:.85;filter:grayscale(0%)}
           .vcto-sey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
           .vcto-st{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .vcto-sd{font-size:15px;color:#78350f;line-height:1.7}
@@ -325,8 +290,8 @@ export default function VirtualCTOServices() {
           .vcto-rc{background:rgba(14,116,144,.09);border-color:rgba(14,116,144,.28);color:#155e75}
           .vcto-rd{background:rgba(67,56,202,.09);border-color:rgba(67,56,202,.28);color:#3730a3}
           .vcto-re{background:rgba(22,101,52,.09);border-color:rgba(22,101,52,.28);color:#14532d}
-          @media(max-width:1024px){.vcto-hero h1,.vcto-st,.vcto-fq-s h2{font-size:36px}.vcto-sk-g{grid-template-columns:repeat(2,1fr)}.vcto-tec-g{grid-template-columns:repeat(2,1fr)}.vcto-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.vcto-en-c.feat{transform:none}.vcto-en-c.feat.vcto-ev{transform:none}.vcto-en-c.feat.vcto-ev:hover{transform:translateY(-4px)}.vcto-wy-g{grid-template-columns:repeat(2,1fr)}.vcto-tg2{grid-template-columns:1fr}.vcto-ct-g{grid-template-columns:1fr}}
-          @media(max-width:768px){.vcto-bc,.vcto-hero,.vcto-sk-s,.vcto-tec-s,.vcto-en-s,.vcto-pr-s,.vcto-te-s,.vcto-wy-s,.vcto-fq-s,.vcto-rel{padding-left:20px;padding-right:20px}.vcto-hero{padding-top:28px;padding-bottom:20px}.vcto-hero h1{font-size:26px;letter-spacing:-.3px}.vcto-stats{grid-template-columns:1fr 1fr}.vcto-sc:nth-child(2){border-right:none}.vcto-sc:nth-child(3),.vcto-sc:nth-child(4){border-top:1px solid rgba(69,26,3,.10)}.vcto-sc:nth-child(4){border-right:none}.vcto-sk-g,.vcto-tec-g,.vcto-wy-g{grid-template-columns:1fr}.vcto-fr{grid-template-columns:1fr}.vcto-ctt{font-size:28px}.vcto-st{font-size:28px}.vcto-ct-s{padding:48px 20px}.vcto-logos{padding-left:20px;padding-right:20px}}
+          @media(max-width:1024px){.vcto-st,.vcto-fq-s h2{font-size:36px}.vcto-sk-g{grid-template-columns:repeat(2,1fr)}.vcto-tec-g{grid-template-columns:repeat(2,1fr)}.vcto-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.vcto-en-c.feat{transform:none}.vcto-en-c.feat.vcto-ev{transform:none}.vcto-en-c.feat.vcto-ev:hover{transform:translateY(-4px)}.vcto-wy-g{grid-template-columns:repeat(2,1fr)}.vcto-tg2{grid-template-columns:1fr}.vcto-ct-g{grid-template-columns:1fr}}
+          @media(max-width:768px){.vcto-bc,.vcto-sk-s,.vcto-tec-s,.vcto-en-s,.vcto-pr-s,.vcto-te-s,.vcto-wy-s,.vcto-fq-s,.vcto-rel{padding-left:20px;padding-right:20px}.vcto-sk-g,.vcto-tec-g,.vcto-wy-g{grid-template-columns:1fr}.vcto-fr{grid-template-columns:1fr}.vcto-ctt{font-size:28px}.vcto-st{font-size:28px}.vcto-ct-s{padding:48px 20px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
@@ -352,15 +317,19 @@ export default function VirtualCTOServices() {
 </Head>
       <div className="vcto-page">
         <div className="vcto-orb vcto-o1" /><div className="vcto-orb vcto-o2" /><div className="vcto-orb vcto-o3" />
-        <section className="vcto-hero">
-          <span className="vcto-ey">Virtual CTO Services</span>
-          <h1>Virtual CTO Services - Fractional CTO Advisory for Startups & Scale-Ups</h1>
-          <p className="vcto-desc">Fractional and Virtual CTO advisory - technology strategy, architecture review, technical due diligence, engineering team building, AI/ML roadmap, vendor selection, security compliance, and CTO transition planning. India-based, US/UK/AU-experienced. 6–24 hours/week. 50–70% below full-time CTO cost. NDA from day one.</p>
-          <div className="vcto-tr">{['Technology Strategy & Roadmap','Architecture Review & Design','Technical Due Diligence (M&A)','Team Building & Hiring Advisory','Board-Ready Technology Reports'].map(b => (<div className="vcto-badge" key={b}><span className="vcto-dot" />{b}</div>))}</div>
-          <div className="vcto-ctas"><Link href="#contact" className="vcto-p">Discuss Your Virtual CTO Needs</Link><Link href="#engagement" className="vcto-g">View Engagement Models →</Link></div>
-        </section>
-        <div className="vcto-stats" ref={stR}>{[['50+','vCTO Engagements'],['15+','Years Tech Leadership'],['M&A','Due Diligence Done'],['50-70%','vs Full-Time CTO Cost']].map(([v, l]) => (<StatItem key={l} label={l} val={v} started={ss} />))}</div>
-        <div className="vcto-logos"><span className="vcto-ll">Technology Leaders Served - US, UK, Australia, Canada</span><div className="vcto-lw"><div className="vcto-lt">{[['/logo/Indian_Express_Logo_full.png','Indian Express'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],['/logo/Uniphore.jpg','Uniphore'],['/logo/ICCoLogo.png','ICC'],['/logo/Honor_Logo_(2020).svg.png','Honor'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],['/logo/Indian_Express_Logo_full.png','Indian Express 2'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon 2'],['/logo/Uniphore.jpg','Uniphore 2'],['/logo/ICCoLogo.png','ICC 2'],['/logo/Honor_Logo_(2020).svg.png','Honor 2'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv 2']].map(([src, alt]) => (<img key={alt} src={src} alt={alt.replace(/ \d$/, '')} className="vcto-cl" />))}</div></div></div>
+        <ServiceHero
+          eyebrow="Virtual CTO Services · India-Based, US/UK/AU-Experienced"
+          title={<>Virtual CTO Services - <AuroraText>Fractional CTO Advisory for Startups & Scale-Ups</AuroraText></>}
+          subtext="Fractional and Virtual CTO advisory - technology strategy, architecture review, technical due diligence, engineering team building, AI/ML roadmap, vendor selection, security compliance, and CTO transition planning. India-based, US/UK/AU-experienced. 6–24 hours/week. 50–70% below full-time CTO cost. NDA from day one."
+          primaryCta={{ label: 'Discuss Your Virtual CTO Needs', href: '#contact' }}
+          secondaryCta={{ label: 'View Engagement Models', href: '#engagement' }}
+          stats={[
+            { label: 'vCTO Engagements', value: '50', suffix: '+' },
+            { label: 'Years Tech Leadership', value: '15', suffix: '+' },
+            { label: 'Due Diligence Turnaround', value: '4', prefix: '2-', suffix: ' Weeks' },
+            { label: 'vs Full-Time CTO Cost', value: '70', prefix: '50-', suffix: '%' },
+          ]}
+        />
         <section className="vcto-sk-s" aria-labelledby="vcto-sk-h"><div className="vcto-in"><div className={`vcto-rv${vis.has('sk') ? ' vcto-ok' : ''}`} ref={el => { secR.current['sk'] = el; }}><span className="vcto-sey">Virtual CTO Services</span><h2 id="vcto-sk-h" className="vcto-st">What Your Virtual CTO Delivers</h2><p className="vcto-sd" style={{ maxWidth: 720 }}>Technology strategy, architecture, team building, due diligence, vendor selection, product-technology alignment, security and compliance advisory, engineering culture improvement, and CTO transition planning - the full mandate of a CTO, fractional.</p></div><div className="vcto-sk-g" ref={skR}>{visServices.map((s, i) => (<div key={s.n} className={`vcto-sk-c${s.feat ? ' feat' : ''}${vSk.includes(i) ? ' vcto-cv' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}><span className="vcto-sk-n">{s.n}</span><h3>{s.title}</h3><p>{s.desc}</p></div>))}</div>{SERVICES.length > 6 && (<div className="vcto-sm"><button className="vcto-bm" onClick={() => setShowAll(p => !p)}>{showAll ? 'Show fewer ↑' : `Show all ${SERVICES.length} services ↓`}</button></div>)}</div></section>
         <section className="vcto-tec-s" aria-labelledby="vcto-tec-h"><div className="vcto-in"><div className={`vcto-rv${vis.has('stk') ? ' vcto-ok' : ''}`} ref={el => { secR.current['stk'] = el; }}><span className="vcto-sey">Technology Expertise</span><h2 id="vcto-tec-h" className="vcto-st">Technology Domains Your Virtual CTO Covers</h2><p className="vcto-sd" style={{ maxWidth: 680 }}>Cloud strategy, architecture patterns, engineering leadership, security and compliance, AI and data strategy, dev tooling, full-stack technologies, and due diligence frameworks - not just advisory, but practitioner depth.</p></div><div className="vcto-tec-g" ref={stGr}>{TECH_STACK.map((grp, i) => (<div key={grp.group} className={`vcto-tec-c${vSt.includes(i) ? ' vcto-sv2' : ''}`} style={{ transitionDelay: `${i * 60}ms` }}><div className="vcto-tg" style={{ color: grp.color, borderBottomColor: grp.color + '33' }}>{grp.group}</div><div className="vcto-pills">{grp.items.map(item => <span key={item} className="vcto-pill" style={{ color: grp.color, background: grp.color + '12', borderColor: grp.color + '30' }}>{item}</span>)}</div></div>))}</div></div></section>
         <section id="engagement" className="vcto-en-s" aria-labelledby="vcto-en-h"><div className="vcto-in"><div className={`vcto-rv${vis.has('eng') ? ' vcto-ok' : ''}`} ref={el => { secR.current['eng'] = el; }}><span className="vcto-sey">Engagement Models</span><h2 id="vcto-en-h" className="vcto-st">Virtual CTO Engagement Models</h2><p className="vcto-sd" style={{ maxWidth: 680 }}>Fractional CTO retainer (ongoing strategic leadership), Virtual CTO Sprint (10-week fixed-scope), or Technical Due Diligence (2–4 week M&A or fundraising advisory).</p></div><div className="vcto-en-g" ref={enR}>{ENGAGEMENT_MODELS.map((m, i) => (<div key={m.id} className={`vcto-en-c${m.feat ? ' feat' : ''}${vEn.includes(i) ? ' vcto-ev' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}><span className="vcto-en-b" style={{ color: m.badgeColor, borderColor: m.badgeColor + '44', background: m.badgeColor + '14' }}>{m.badge}</span><div className="vcto-en-i"><svg viewBox="0 0 24 24" width="26" height="26"><path d={m.iconPath} /></svg></div><div className="vcto-en-n">{m.name}</div><div className="vcto-en-h">{m.headline}</div><div className="vcto-en-d">{m.desc}</div><div className="vcto-en-ll">Best for</div><ul className="vcto-en-li">{m.bestFor.map(b => <li key={b}>{b}</li>)}</ul><div className="vcto-en-p"><strong>Process:</strong> {m.process}<br /><span className="vcto-en-tl">{m.timeline}</span></div><Link href="#contact" className="vcto-en-a">Get a free proposal →</Link></div>))}</div></div></section>

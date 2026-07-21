@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'User Interviews', desc: 'One-on-one qualitative sessions to uncover goals, pain points, mental models, and decision-making behaviours that quantitative data can never reveal.' },
@@ -90,59 +92,15 @@ const LD = {
   ],
 };
 
-// Count-up hook
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const numTarget = parseInt(String(target).replace(/\D/g, ''), 10);
-    if (!numTarget) return;
-    let startTime = null;
-    const step = (ts) => {
-      if (!startTime) startTime = ts;
-      const progress = Math.min((ts - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * numTarget));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function AnimatedStat({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = String(val).replace(/[\d,]/g, '');
-  const display = started ? num + suffix : val;  return (
-    <div className="uxr-stat-col">
-      <div className="uxr-stat-value">{display}</div>
-      <div className="uxr-stat-label">{label}</div>
-    </div>
-  );
-}
-
 export default function UXResearch() {
   const [openFaq, setOpenFaq] = useState(0);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSteps, setVisibleSteps] = useState([]);
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleSections, setVisibleSections] = useState(new Set());
 
-  const statsRef = useRef(null);
   const stepRefs = useRef([]);
   const whyGridRef = useRef(null);
   const sectionRefs = useRef({});
-
-  // Count-up trigger
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setStatsStarted(true); obs.disconnect(); } },
-      { threshold: 0.4 }
-    );
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   // Process steps reveal
   useEffect(() => {
@@ -250,31 +208,6 @@ export default function UXResearch() {
           .uxr-orb-2 { position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,0.22) 0%,rgba(99,102,241,0.08) 40%,transparent 70%);bottom:60px;left:-200px;pointer-events:none;z-index:0;filter:blur(22px); }
           .uxr-orb-3 { position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.16) 0%,transparent 70%);top:55%;right:-100px;transform:translateY(-50%);pointer-events:none;z-index:0;filter:blur(22px); }
 
-          /* ── HERO ── */
-          .uxr-hero { position:relative;overflow:hidden; }
-          .uxr-hero-content { position:relative;z-index:2;text-align:center;max-width:900px;margin:0 auto;padding:64px 40px 44px; }
-          .uxr-eyebrow { display:inline-block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:20px;background:rgba(255,255,255,0.55);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.70);padding:6px 18px;border-radius:40px; }
-          .uxr-hero-content h1 { font-size:52px;font-weight:900;line-height:1.08;letter-spacing:-1.5px;margin-bottom:18px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .uxr-hero-content p { font-size:17px;color:#3A507A;line-height:1.7;max-width:660px;margin:0 auto 32px; }
-          .uxr-hero-btns { display:flex;gap:14px;justify-content:center;flex-wrap:wrap; }
-          .uxr-btn-primary { display:inline-block;padding:15px 40px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1);position:relative;overflow:hidden; }
-          .uxr-btn-primary::after { content:'';position:absolute;top:-10%;left:-120%;width:80%;height:120%;background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,0.75) 45%,rgba(255,255,255,0.9) 50%,rgba(255,255,255,0.75) 55%,transparent 100%);animation:uxr-shimmer 2.8s ease-in-out infinite;pointer-events:none; }
-          @keyframes uxr-shimmer { 0%{left:-120%} 35%,100%{left:160%} }
-          .uxr-btn-primary:hover { background:rgba(255,255,255,0.85);border-color:rgba(16,185,129,0.5);box-shadow:0 12px 36px rgba(15,52,96,0.15),0 0 0 2px rgba(16,185,129,0.18),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px);color:#0F3460; }
-          .uxr-btn-secondary { display:inline-block;padding:14px 36px;border:1.5px solid rgba(15,52,96,0.22);border-radius:50px;color:#0F3460;font-weight:600;font-size:15px;text-decoration:none;transition:all 0.3s; }
-          .uxr-btn-secondary:hover { background:rgba(255,255,255,0.60);border-color:#0F3460;transform:translateY(-2px); }
-
-          /* Stats bar */
-          .uxr-stats-bar { position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:0 auto;background:rgba(255,255,255,0.50);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.90);box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,1); }
-          .uxr-stat-col { padding:20px 24px;text-align:center;border-right:1px solid rgba(15,52,96,0.10); }
-          .uxr-stat-col:last-child { border-right:none; }
-          .uxr-stat-value { font-size:28px;font-weight:900;color:#10b981;letter-spacing:-0.5px;line-height:1;margin-bottom:5px; }
-          .uxr-stat-label { font-size:12px;color:#4A6080;font-weight:500; }
-
-          /* Trust badges */
-          .uxr-trust-bar { position:relative;z-index:2;display:flex;gap:20px;justify-content:center;flex-wrap:wrap;padding:24px 40px 56px; }
-          .uxr-trust-badge { display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.55);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.75);border-radius:40px;padding:8px 18px;font-size:13px;font-weight:600;color:#2A3F6F; }
-          .uxr-trust-badge svg { width:16px;height:16px;fill:#10b981;flex-shrink:0; }
 
           /* ── SERVICES ── */
           .uxr-services-section { background:#f8fafd;padding:80px 40px 64px;position:relative;z-index:2;box-shadow:0 -20px 60px rgba(15,52,96,0.14),0 -4px 16px rgba(15,52,96,0.08); }
@@ -443,14 +376,6 @@ export default function UXResearch() {
           }
           @media (max-width:768px) {
             .uxr-page { overflow-x:hidden; }
-            .uxr-hero-content { padding:44px 20px 28px; }
-            .uxr-hero-content h1 { font-size:30px;letter-spacing:-0.4px; }
-            .uxr-hero-content p { font-size:15px; }
-            .uxr-stats-bar { grid-template-columns:1fr 1fr; }
-            .uxr-stat-col:nth-child(2) { border-right:none; }
-            .uxr-stat-col:nth-child(3) { border-top:1px solid rgba(15,52,96,0.10); }
-            .uxr-stat-col:nth-child(4) { border-top:1px solid rgba(15,52,96,0.10);border-right:none; }
-            .uxr-trust-bar { padding:16px 20px 36px;gap:10px; }
             .uxr-services-section { padding:52px 20px 44px; }
             .uxr-why-section { padding:60px 20px; }
             .uxr-why-grid { grid-template-columns:1fr;margin-top:36px; }
@@ -465,11 +390,9 @@ export default function UXResearch() {
             .uxr-related-tags { gap:8px; }
           }
           @media (max-width:480px) {
-            .uxr-hero-content h1 { font-size:24px; }
             .uxr-services-grid { grid-template-columns:1fr; }
             .uxr-section-title,.uxr-faq-heading,.uxr-contact-title,.uxr-related-title { font-size:24px; }
             .uxr-contact-stats { grid-template-columns:1fr 1fr; }
-            .uxr-hero-btns { flex-direction:column;align-items:center; }
           }
           @media (max-width:900px) {
             .uxr-page { background-attachment:scroll !important; }
@@ -486,43 +409,19 @@ export default function UXResearch() {
         <div className="uxr-orb-3" />
 
         {/* ── HERO ── */}
-        <div className="uxr-hero">
-          <div className="uxr-hero-content">
-            <span className="uxr-eyebrow">UX Research Agency - 16+ Years Experience</span>
-            <h1>UX Research That Replaces Guesswork With Evidence</h1>
-            <p>We uncover what your users actually need through structured research - interviews, usability tests, journey maps, and heuristic audits that feed directly into design decisions.</p>
-            <div className="uxr-hero-btns">
-              <Link href="#contact" className="uxr-btn-primary">Get a Free Research Consultation</Link>
-              <Link href="/portfolio" className="uxr-btn-secondary">View Our Work →</Link>
-            </div>
-          </div>
-
-          <div className="uxr-stats-bar" ref={statsRef}>
-            {[
-              ['250+ Research Projects', '250+'],
-              ['5,000+ Users Tested', '5000+'],
-              ['16+ Years Experience', '16+'],
-              ['45% Avg Satisfaction Lift', '45%'],
-            ].map(([label, val]) => (
-              <AnimatedStat key={label} label={label} val={val} started={statsStarted} />
-            ))}
-          </div>
-
-          <div className="uxr-trust-bar">
-            {[
-              'Moderated & Unmoderated Testing',
-              'Remote Research Worldwide',
-              'Mixed-Methods Approach',
-              'Actionable Insight Reports',
-              'Design-Ready Recommendations',
-            ].map(badge => (
-              <div className="uxr-trust-badge" key={badge}>
-                <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-                {badge}
-              </div>
-            ))}
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="UX Research Agency · 16+ Years Experience"
+          title={<>UX Research That <AuroraText>Replaces Guesswork With Evidence</AuroraText></>}
+          subtext="We uncover what your users actually need through structured research - interviews, usability tests, journey maps, and heuristic audits that feed directly into design decisions."
+          primaryCta={{ label: 'Get a Free Research Consultation', href: '#contact' }}
+          secondaryCta={{ label: 'View Our Work', href: '/portfolio' }}
+          stats={[
+            { label: 'Research Projects', value: '250', suffix: '+' },
+            { label: 'Users Tested', value: '5,000', suffix: '+' },
+            { label: 'Years Experience', value: '16', suffix: '+' },
+            { label: 'Avg Satisfaction Lift', value: '45', suffix: '%' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="uxr-services-section" id="services">

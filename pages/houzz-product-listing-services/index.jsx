@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const ACCENT = '#0a3300';
 const ACCENT_MID = '#2d8000';
@@ -140,27 +142,6 @@ export default function HouzzProductListingServices() {
 
 
 
-        .houz-hero { background: linear-gradient(135deg, #031400 0%, #0a3300 60%, #155200 100%); color: #fff; padding: 80px 24px 72px; position: relative; overflow: hidden; }
-        .houz-hero-orb1 { position: absolute; top: -80px; right: -80px; width: 400px; height: 400px; background: rgba(${ACCENT_RGB}, 0.5); border-radius: 50%; filter: blur(80px); pointer-events: none; }
-        .houz-hero-orb2 { position: absolute; bottom: -100px; left: -60px; width: 300px; height: 300px; background: rgba(45,128,0,0.25); border-radius: 50%; filter: blur(60px); pointer-events: none; }
-        .houz-hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
-        .houz-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; padding: 6px 16px; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 24px; }
-        .houz-eyebrow-dot { width: 6px; height: 6px; background: #86efac; border-radius: 50%; }
-        .houz-hero h1 { font-size: clamp(28px, 4vw, 52px); font-weight: 800; line-height: 1.15; max-width: 860px; margin: 0 0 24px; }
-        .houz-hero-desc { font-size: 18px; line-height: 1.7; max-width: 760px; opacity: 0.9; margin-bottom: 40px; }
-        .houz-stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.15); border-radius: 12px; overflow: hidden; margin-bottom: 40px; }
-        .houz-stat { background: rgba(255,255,255,0.08); padding: 20px 16px; text-align: center; }
-        .houz-stat-num { font-size: 28px; font-weight: 800; color: #fff; display: block; }
-        .houz-stat-label { font-size: 12px; opacity: 0.75; margin-top: 4px; display: block; }
-        .houz-hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 36px; }
-        .houz-btn-primary { background: #fff; color: ${ACCENT}; padding: 14px 28px; border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: none; cursor: pointer; transition: transform 0.2s; }
-        .houz-btn-primary:hover { transform: translateY(-2px); }
-        .houz-btn-secondary { background: transparent; color: #fff; padding: 14px 28px; border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: 2px solid rgba(255,255,255,0.4); cursor: pointer; transition: border-color 0.2s; }
-        .houz-btn-secondary:hover { border-color: #fff; }
-        .houz-trust-badges { display: flex; flex-wrap: wrap; gap: 12px; }
-        .houz-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; padding: 6px 12px; font-size: 13px; }
-        .houz-badge-check { color: #86efac; font-size: 14px; }
-
         .houz-challenges { padding: 80px 24px; background: #fff; }
         .houz-section-inner { max-width: 1200px; margin: 0 auto; }
         .houz-section-label { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: ${ACCENT}; margin-bottom: 12px; }
@@ -241,7 +222,6 @@ export default function HouzzProductListingServices() {
         @media (max-width: 900px) {
           .houz-challenges-grid { grid-template-columns: repeat(2, 1fr); }
           .houz-services-grid { grid-template-columns: repeat(2, 1fr); }
-          .houz-stats-bar { grid-template-columns: repeat(2, 1fr); }
           .houz-contact-grid { grid-template-columns: 1fr; gap: 40px; }
           .houz-cases-grid { grid-template-columns: 1fr; }
           .houz-results-grid { grid-template-columns: 1fr; gap: 24px; }
@@ -294,35 +274,19 @@ export default function HouzzProductListingServices() {
 
       <div className="houz-page">
 
-        <section className="houz-hero">
-          <div className="houz-hero-orb1" />
-          <div className="houz-hero-orb2" />
-          <div className="houz-hero-inner">
-            <div className="houz-eyebrow">
-              <span className="houz-eyebrow-dot" />
-              Houzz Product Listing Management
-            </div>
-            <h1>Houzz Product Listing Services That Reach Interior Designers and Luxury Homeowners</h1>
-            <p className="houz-hero-desc">
-              Houzz has 65 million monthly users - including 3 million home design professionals who actively source and specify products for their clients. 1Solutions creates and optimises your Houzz product listings to meet the aesthetic and technical standards that design professionals expect, and manages your Houzz Pro presence for consistent product discovery and sales.
-            </p>
-            <div className="houz-stats-bar">
-              <div className="houz-stat"><span className="houz-stat-num">65M</span><span className="houz-stat-label">Monthly Houzz users</span></div>
-              <div className="houz-stat"><span className="houz-stat-num">3M+</span><span className="houz-stat-label">Home design professionals on Houzz</span></div>
-              <div className="houz-stat"><span className="houz-stat-num">$1,500+</span><span className="houz-stat-label">Avg order value on Houzz</span></div>
-              <div className="houz-stat"><span className="houz-stat-num">2.4×</span><span className="houz-stat-label">avg product revenue growth</span></div>
-            </div>
-            <div className="houz-hero-ctas">
-              <Link href="#contact" className="houz-btn-primary">Get a Free Houzz Listing Review →</Link>
-              <Link href="#services" className="houz-btn-secondary">Explore Services</Link>
-            </div>
-            <div className="houz-trust-badges">
-              {['Houzz Pro expertise', 'Interior design audience specialists', 'Premium imagery standards', 'No lock-in contracts'].map(b => (
-                <span key={b} className="houz-badge"><span className="houz-badge-check">✓</span>{b}</span>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Houzz Product Listing Management · Houzz Pro Experts · No Lock-In Contracts"
+          title={<>Houzz Product Listing Services That Reach <AuroraText>Interior Designers and Luxury Homeowners</AuroraText></>}
+          subtext="Houzz has 65 million monthly users - including 3 million home design professionals who actively source and specify products for their clients. 1Solutions creates and optimises your Houzz product listings to meet the aesthetic and technical standards that design professionals expect, and manages your Houzz Pro presence for consistent product discovery and sales."
+          primaryCta={{ label: 'Get a Free Houzz Listing Review →', href: '#contact' }}
+          secondaryCta={{ label: 'Explore Services', href: '#services' }}
+          stats={[
+            { label: 'Monthly Houzz Users', value: '65', suffix: 'M' },
+            { label: 'Home Design Professionals on Houzz', value: '3', suffix: 'M+' },
+            { label: 'Avg Order Value on Houzz', value: '1,500', prefix: '$', suffix: '+' },
+            { label: 'Avg Product Revenue Growth', value: '4', prefix: '2.', suffix: '×' },
+          ]}
+        />
 
         <section className="houz-challenges">
           <div className="houz-section-inner">

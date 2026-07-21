@@ -2,22 +2,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-
-function useCountUp(target, duration = 1800) {
-  const [count, setCount] = useState(0);
-  const raf = useRef(null);
-  const start = (t) => {
-    const s = performance.now();
-    const step = (now) => {
-      const p = Math.min((now - s) / duration, 1);
-      setCount(Math.floor(p * t));
-      if (p < 1) raf.current = requestAnimationFrame(step);
-    };
-    raf.current = requestAnimationFrame(step);
-  };
-  useEffect(() => () => cancelAnimationFrame(raf.current), []);
-  return [count, start];
-}
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const ACCENT = '#7c3aed';
 const SKILLS = [
@@ -60,9 +46,6 @@ export default function GraphicDesignServices() {
   const enR  = useRef(null); const [enV, setEnV] = useState(false);
   const whR  = useRef(null); const [whV, setWhV] = useState(false);
   const prR  = useRef(null); const [prV, setPrV] = useState(false);
-  const stGr = useRef(null); const [stV, setStV] = useState(false);
-  const [c1, s1] = useCountUp(500); const [c2, s2] = useCountUp(15);
-  const [c3, s3] = useCountUp(49);  const [c4, s4] = useCountUp(48);
   const [openFaq, setOpenFaq] = useState(null);
 
   useEffect(() => {
@@ -71,9 +54,7 @@ export default function GraphicDesignServices() {
     const o2 = obs(enR, setEnV); if (enR.current) o2.observe(enR.current);
     const o3 = obs(whR, setWhV); if (whR.current) o3.observe(whR.current);
     const o4 = obs(prR, setPrV); if (prR.current) o4.observe(prR.current);
-    const o5 = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStV(true); s1(500); s2(15); s3(49); s4(48); o5.disconnect(); } }, { threshold: 0.2 });
-    if (stGr.current) o5.observe(stGr.current);
-    return () => [o1, o2, o3, o4, o5].forEach(o => o.disconnect());
+    return () => [o1, o2, o3, o4].forEach(o => o.disconnect());
   }, []);
 
   const LD = {
@@ -99,14 +80,8 @@ export default function GraphicDesignServices() {
         <link rel="canonical" href="https://www.1solutions.biz/graphic-design-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
-          .gds-hero{background:linear-gradient(135deg,${ACCENT} 0%,#3b1a7a 60%,#52249e 100%);color:#fff;padding:100px 20px 80px;text-align:center}
-          .gds-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin:0 0 18px;line-height:1.15}
-          .gds-hero p{font-size:1.15rem;max-width:620px;margin:0 auto 36px;opacity:.88;line-height:1.7}
-          .gds-hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           .gds-btn-primary{background:#FE9700;color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s}
           .gds-btn-primary:hover{opacity:.88}
-          .gds-btn-outline{border:2px solid rgba(255,255,255,.7);color:#fff;padding:13px 28px;border-radius:8px;font-weight:600;font-size:1rem;text-decoration:none;transition:border-color .2s}
-          .gds-btn-outline:hover{border-color:#fff}
           .gds-sec{padding:70px 20px}.gds-sec-alt{background:#faf5ff}
           .gds-wrap{max-width:1100px;margin:0 auto}
           .gds-sec-title{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:800;color:#111;text-align:center;margin:0 0 12px}
@@ -131,10 +106,6 @@ export default function GraphicDesignServices() {
           .gds-step-n{width:48px;height:48px;border-radius:50%;background:${ACCENT};color:#fff;font-size:1.1rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
           .gds-step h3{font-size:1rem;font-weight:700;color:#111;margin:0 0 8px}
           .gds-step p{color:#666;font-size:.9rem;line-height:1.6;margin:0}
-          .gds-stats{background:${ACCENT};padding:60px 20px;color:#fff}
-          .gds-stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;max-width:900px;margin:0 auto;text-align:center}
-          .gds-stat-val{font-size:2.8rem;font-weight:900;line-height:1}
-          .gds-stat-label{font-size:.95rem;opacity:.82;margin-top:6px}
           .gds-faq{max-width:760px;margin:0 auto}
           .gds-faq-item{border-bottom:1px solid #e5e5e5;padding:20px 0}
           .gds-faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;color:#111;font-size:1rem;gap:12px}
@@ -144,17 +115,21 @@ export default function GraphicDesignServices() {
           .gds-cta{background:linear-gradient(135deg,${ACCENT},#3b1a7a);padding:80px 20px;text-align:center;color:#fff}
           .gds-cta h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin:0 0 16px}
           .gds-cta p{font-size:1.08rem;opacity:.88;max-width:560px;margin:0 auto 36px;line-height:1.7}
-          @media(max-width:600px){.gds-hero{padding:80px 18px 60px}.gds-stats-grid{grid-template-columns:1fr 1fr}}
         `}</style>
       </Head>
-      <section className="gds-hero">
-        <h1>Graphic Design Services<br/>Brand Identity, Print &amp; Digital Design</h1>
-        <p>We create compelling visual identities, marketing collateral, social media graphics, packaging, and print materials that make your brand memorable. From a single logo to a full brand system - design that works across every touchpoint.</p>
-        <div className="gds-hero-btns">
-          <Link href="/contact-us" className="gds-btn-primary">Get a Free Design Quote →</Link>
-          <Link href="/portfolio" className="gds-btn-outline">View Portfolio</Link>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="Graphic Design Services · Brand Identity Specialists"
+        title={<>Graphic Design Services - <AuroraText>Brand Identity, Print &amp; Digital Design</AuroraText></>}
+        subtext="We create compelling visual identities, marketing collateral, social media graphics, packaging, and print materials that make your brand memorable. From a single logo to a full brand system - design that works across every touchpoint."
+        primaryCta={{ label: 'Get a Free Design Quote', href: '/contact-us' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        stats={[
+          { label: 'Design Projects Delivered', value: '500', suffix: '+' },
+          { label: 'Years Experience', value: '15', suffix: '+' },
+          { label: 'Client Satisfaction', value: '9', prefix: '4.', suffix: '/5' },
+          { label: 'Social Graphics Turnaround', value: '48', suffix: 'hr' },
+        ]}
+      />
       <section className="gds-sec" ref={skR}>
         <div className="gds-wrap">
           <h2 className="gds-sec-title">Design Skills &amp; Services</h2>
@@ -174,14 +149,6 @@ export default function GraphicDesignServices() {
           <h2 className="gds-sec-title">Why Choose 1Solutions for Graphic Design?</h2>
           <p className="gds-sec-sub">We treat design as a business tool, not a decoration exercise.</p>
           <div className="gds-why-grid">{WHY.map((w, i) => <div key={w.h} className={`gds-why-item${whV ? ' gds-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
-        </div>
-      </section>
-      <section className="gds-stats" ref={stGr}>
-        <div className="gds-stats-grid">
-          <div><div className="gds-stat-val">{stV ? c1 : 0}+</div><div className="gds-stat-label">Design Projects Delivered</div></div>
-          <div><div className="gds-stat-val">{stV ? c2 : 0}+</div><div className="gds-stat-label">Years Experience</div></div>
-          <div><div className="gds-stat-val">4.{stV ? c3 : 0}/5</div><div className="gds-stat-label">Client Satisfaction</div></div>
-          <div><div className="gds-stat-val">{stV ? c4 : 0}hr</div><div className="gds-stat-label">Social Graphics Turnaround</div></div>
         </div>
       </section>
       <section className="gds-sec gds-sec-alt" ref={prR}>

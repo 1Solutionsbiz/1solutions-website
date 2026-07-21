@@ -2,22 +2,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-
-function useCountUp(target, duration = 1800) {
-  const [count, setCount] = useState(0);
-  const raf = useRef(null);
-  const start = (t) => {
-    const s = performance.now();
-    const step = (now) => {
-      const p = Math.min((now - s) / duration, 1);
-      setCount(Math.floor(p * t));
-      if (p < 1) raf.current = requestAnimationFrame(step);
-    };
-    raf.current = requestAnimationFrame(step);
-  };
-  useEffect(() => () => cancelAnimationFrame(raf.current), []);
-  return [count, start];
-}
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const ACCENT = '#1a0050';
 const SKILLS = [
@@ -59,9 +45,6 @@ export default function HireTrendingDeveloper() {
   const enR  = useRef(null); const [enV, setEnV] = useState(false);
   const whR  = useRef(null); const [whV, setWhV] = useState(false);
   const prR  = useRef(null); const [prV, setPrV] = useState(false);
-  const stGr = useRef(null); const [stV, setStV] = useState(false);
-  const [c1, s1] = useCountUp(60); const [c2, s2] = useCountUp(250);
-  const [c3, s3] = useCountUp(49); const [c4, s4] = useCountUp(7);
   const [openFaq, setOpenFaq] = useState(null);
 
   useEffect(() => {
@@ -70,9 +53,7 @@ export default function HireTrendingDeveloper() {
     const o2 = obs(enR, setEnV); if (enR.current) o2.observe(enR.current);
     const o3 = obs(whR, setWhV); if (whR.current) o3.observe(whR.current);
     const o4 = obs(prR, setPrV); if (prR.current) o4.observe(prR.current);
-    const o5 = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStV(true); s1(60); s2(250); s3(49); s4(7); o5.disconnect(); } }, { threshold: 0.2 });
-    if (stGr.current) o5.observe(stGr.current);
-    return () => [o1, o2, o3, o4, o5].forEach(o => o.disconnect());
+    return () => [o1, o2, o3, o4].forEach(o => o.disconnect());
   }, []);
 
   const LD = {
@@ -98,10 +79,6 @@ export default function HireTrendingDeveloper() {
         <link rel="canonical" href="https://www.1solutions.biz/hire-trending-developer/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
-          .htrd-hero{background:linear-gradient(135deg,${ACCENT} 0%,#0d002e 60%,#14003d 100%);color:#fff;padding:100px 20px 80px;text-align:center}
-          .htrd-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin:0 0 18px;line-height:1.15}
-          .htrd-hero p{font-size:1.15rem;max-width:620px;margin:0 auto 36px;opacity:.88;line-height:1.7}
-          .htrd-hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           .htrd-btn-primary{background:#FE9700;color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s}
           .htrd-btn-primary:hover{opacity:.88}
           .htrd-btn-outline{border:2px solid rgba(255,255,255,.7);color:#fff;padding:13px 28px;border-radius:8px;font-weight:600;font-size:1rem;text-decoration:none;transition:border-color .2s}
@@ -130,10 +107,6 @@ export default function HireTrendingDeveloper() {
           .htrd-step-n{width:48px;height:48px;border-radius:50%;background:${ACCENT};color:#fff;font-size:1.1rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
           .htrd-step h3{font-size:1rem;font-weight:700;color:#111;margin:0 0 8px}
           .htrd-step p{color:#666;font-size:.9rem;line-height:1.6;margin:0}
-          .htrd-stats{background:${ACCENT};padding:60px 20px;color:#fff}
-          .htrd-stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;max-width:900px;margin:0 auto;text-align:center}
-          .htrd-stat-val{font-size:2.8rem;font-weight:900;line-height:1}
-          .htrd-stat-label{font-size:.95rem;opacity:.82;margin-top:6px}
           .htrd-faq{max-width:760px;margin:0 auto}
           .htrd-faq-item{border-bottom:1px solid #e5e5e5;padding:20px 0}
           .htrd-faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;color:#111;font-size:1rem;gap:12px}
@@ -143,17 +116,23 @@ export default function HireTrendingDeveloper() {
           .htrd-cta{background:linear-gradient(135deg,${ACCENT},#0d002e);padding:80px 20px;text-align:center;color:#fff}
           .htrd-cta h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin:0 0 16px}
           .htrd-cta p{font-size:1.08rem;opacity:.88;max-width:560px;margin:0 auto 36px;line-height:1.7}
-          @media(max-width:600px){.htrd-hero{padding:80px 18px 60px}.htrd-stats-grid{grid-template-columns:1fr 1fr}}
         `}</style>
       </Head>
-      <section className="htrd-hero">
-        <h1>Hire Trending Technology Developers<br/>AI, Web3, Rust &amp; Edge Specialists</h1>
-        <p>Pre-vetted engineers who have shipped production projects with Generative AI, LLM integration, Web3, WebAssembly, and edge computing - not just followed the hype. Profiles in 48 hours.</p>
-        <div className="htrd-hero-btns">
-          <Link href="/contact-us" className="htrd-btn-primary">Hire a Specialist Developer →</Link>
-          <Link href="/portfolio" className="htrd-btn-outline">View Portfolio</Link>
-        </div>
-      </section>
+
+      <ServiceHero
+        eyebrow="Hire Trending Technology Developer · AI, Web3 &amp; Edge"
+        title={<>Hire Trending Technology Developers <AuroraText>AI, Web3, Rust &amp; Edge Specialists</AuroraText></>}
+        subtext="Pre-vetted engineers who have shipped production projects with Generative AI, LLM integration, Web3, WebAssembly, and edge computing - not just followed the hype. Profiles in 48 hours."
+        primaryCta={{ label: 'Hire a Specialist Developer', href: '/contact-us' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        stats={[
+          { label: 'Emerging Tech Specialists', value: '60', suffix: '+' },
+          { label: 'Innovative Projects', value: '250', suffix: '+' },
+          { label: 'Client Satisfaction', value: '49', prefix: '4.', suffix: '/5' },
+          { label: 'Avg Onboarding', value: '7', suffix: ' Days' },
+        ]}
+      />
+
       <section className="htrd-sec" ref={skR}>
         <div className="htrd-wrap">
           <h2 className="htrd-sec-title">Trending Technologies We Cover</h2>
@@ -173,14 +152,6 @@ export default function HireTrendingDeveloper() {
           <h2 className="htrd-sec-title">Why Hire Trending Tech Developers from 1Solutions?</h2>
           <p className="htrd-sec-sub">We place practitioners, not theorists - engineers who have done it in production.</p>
           <div className="htrd-why-grid">{WHY.map((w, i) => <div key={w.h} className={`htrd-why-item${whV ? ' htrd-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
-        </div>
-      </section>
-      <section className="htrd-stats" ref={stGr}>
-        <div className="htrd-stats-grid">
-          <div><div className="htrd-stat-val">{stV ? c1 : 0}+</div><div className="htrd-stat-label">Emerging Tech Specialists</div></div>
-          <div><div className="htrd-stat-val">{stV ? c2 : 0}+</div><div className="htrd-stat-label">Innovative Projects</div></div>
-          <div><div className="htrd-stat-val">4.{stV ? c3 : 0}/5</div><div className="htrd-stat-label">Client Satisfaction</div></div>
-          <div><div className="htrd-stat-val">{stV ? c4 : 0} Days</div><div className="htrd-stat-label">Avg Onboarding</div></div>
         </div>
       </section>
       <section className="htrd-sec htrd-sec-alt" ref={prR}>

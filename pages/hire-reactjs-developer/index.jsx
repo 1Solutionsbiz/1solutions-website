@@ -2,22 +2,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-
-function useCountUp(target, duration = 1800) {
-  const [count, setCount] = useState(0);
-  const raf = useRef(null);
-  const start = (t) => {
-    const s = performance.now();
-    const step = (now) => {
-      const p = Math.min((now - s) / duration, 1);
-      setCount(Math.floor(p * t));
-      if (p < 1) raf.current = requestAnimationFrame(step);
-    };
-    raf.current = requestAnimationFrame(step);
-  };
-  useEffect(() => () => cancelAnimationFrame(raf.current), []);
-  return [count, start];
-}
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const ACCENT = '#005038';
 const SKILLS = [
@@ -59,9 +45,6 @@ export default function HireReactJSDeveloper() {
   const enR  = useRef(null); const [enV, setEnV] = useState(false);
   const whR  = useRef(null); const [whV, setWhV] = useState(false);
   const prR  = useRef(null); const [prV, setPrV] = useState(false);
-  const stGr = useRef(null); const [stV, setStV] = useState(false);
-  const [c1, s1] = useCountUp(70); const [c2, s2] = useCountUp(310);
-  const [c3, s3] = useCountUp(49); const [c4, s4] = useCountUp(7);
   const [openFaq, setOpenFaq] = useState(null);
 
   useEffect(() => {
@@ -70,9 +53,7 @@ export default function HireReactJSDeveloper() {
     const o2 = obs(enR, setEnV); if (enR.current) o2.observe(enR.current);
     const o3 = obs(whR, setWhV); if (whR.current) o3.observe(whR.current);
     const o4 = obs(prR, setPrV); if (prR.current) o4.observe(prR.current);
-    const o5 = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStV(true); s1(70); s2(310); s3(49); s4(7); o5.disconnect(); } }, { threshold: 0.2 });
-    if (stGr.current) o5.observe(stGr.current);
-    return () => [o1, o2, o3, o4, o5].forEach(o => o.disconnect());
+    return () => [o1, o2, o3, o4].forEach(o => o.disconnect());
   }, []);
 
   const LD = {
@@ -98,10 +79,6 @@ export default function HireReactJSDeveloper() {
         <link rel="canonical" href="https://www.1solutions.biz/hire-reactjs-developer/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
-          .hrjs-hero{background:linear-gradient(135deg,${ACCENT} 0%,#002a1e 60%,#003d2c 100%);color:#fff;padding:100px 20px 80px;text-align:center}
-          .hrjs-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin:0 0 18px;line-height:1.15}
-          .hrjs-hero p{font-size:1.15rem;max-width:620px;margin:0 auto 36px;opacity:.88;line-height:1.7}
-          .hrjs-hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           .hrjs-btn-primary{background:#FE9700;color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s}
           .hrjs-btn-primary:hover{opacity:.88}
           .hrjs-btn-outline{border:2px solid rgba(255,255,255,.7);color:#fff;padding:13px 28px;border-radius:8px;font-weight:600;font-size:1rem;text-decoration:none;transition:border-color .2s}
@@ -130,10 +107,6 @@ export default function HireReactJSDeveloper() {
           .hrjs-step-n{width:48px;height:48px;border-radius:50%;background:${ACCENT};color:#fff;font-size:1.1rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
           .hrjs-step h3{font-size:1rem;font-weight:700;color:#111;margin:0 0 8px}
           .hrjs-step p{color:#666;font-size:.9rem;line-height:1.6;margin:0}
-          .hrjs-stats{background:${ACCENT};padding:60px 20px;color:#fff}
-          .hrjs-stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;max-width:900px;margin:0 auto;text-align:center}
-          .hrjs-stat-val{font-size:2.8rem;font-weight:900;line-height:1}
-          .hrjs-stat-label{font-size:.95rem;opacity:.82;margin-top:6px}
           .hrjs-faq{max-width:760px;margin:0 auto}
           .hrjs-faq-item{border-bottom:1px solid #e5e5e5;padding:20px 0}
           .hrjs-faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;color:#111;font-size:1rem;gap:12px}
@@ -143,17 +116,23 @@ export default function HireReactJSDeveloper() {
           .hrjs-cta{background:linear-gradient(135deg,${ACCENT},#002a1e);padding:80px 20px;text-align:center;color:#fff}
           .hrjs-cta h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin:0 0 16px}
           .hrjs-cta p{font-size:1.08rem;opacity:.88;max-width:560px;margin:0 auto 36px;line-height:1.7}
-          @media(max-width:600px){.hrjs-hero{padding:80px 18px 60px}.hrjs-stats-grid{grid-template-columns:1fr 1fr}}
         `}</style>
       </Head>
-      <section className="hrjs-hero">
-        <h1>Hire React.js Developers<br/>React 18, Next.js &amp; TypeScript Experts</h1>
-        <p>Pre-vetted React engineers who build fast, accessible, and maintainable frontends - Server Components, streaming SSR, and green Core Web Vitals as standard. Profiles in 48 hours.</p>
-        <div className="hrjs-hero-btns">
-          <Link href="/contact-us" className="hrjs-btn-primary">Hire a React.js Developer →</Link>
-          <Link href="/portfolio" className="hrjs-btn-outline">View Portfolio</Link>
-        </div>
-      </section>
+
+      <ServiceHero
+        eyebrow="Hire React.js Developer · React 18 &amp; Next.js Experts"
+        title={<>Hire React.js Developers <AuroraText>React 18, Next.js &amp; TypeScript Experts</AuroraText></>}
+        subtext="Pre-vetted React engineers who build fast, accessible, and maintainable frontends - Server Components, streaming SSR, and green Core Web Vitals as standard. Profiles in 48 hours."
+        primaryCta={{ label: 'Hire a React.js Developer', href: '/contact-us' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        stats={[
+          { label: 'React Developers', value: '70', suffix: '+' },
+          { label: 'React Projects Delivered', value: '310', suffix: '+' },
+          { label: 'Client Satisfaction', value: '49', prefix: '4.', suffix: '/5' },
+          { label: 'Avg Onboarding', value: '7', suffix: ' Days' },
+        ]}
+      />
+
       <section className="hrjs-sec" ref={skR}>
         <div className="hrjs-wrap">
           <h2 className="hrjs-sec-title">Skills &amp; Tech Stack</h2>
@@ -173,14 +152,6 @@ export default function HireReactJSDeveloper() {
           <h2 className="hrjs-sec-title">Why Hire React.js Developers from 1Solutions?</h2>
           <p className="hrjs-sec-sub">We place engineers who have shipped production React apps with millions of users - not just side projects.</p>
           <div className="hrjs-why-grid">{WHY.map((w, i) => <div key={w.h} className={`hrjs-why-item${whV ? ' hrjs-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
-        </div>
-      </section>
-      <section className="hrjs-stats" ref={stGr}>
-        <div className="hrjs-stats-grid">
-          <div><div className="hrjs-stat-val">{stV ? c1 : 0}+</div><div className="hrjs-stat-label">React Developers</div></div>
-          <div><div className="hrjs-stat-val">{stV ? c2 : 0}+</div><div className="hrjs-stat-label">React Projects Delivered</div></div>
-          <div><div className="hrjs-stat-val">4.{stV ? c3 : 0}/5</div><div className="hrjs-stat-label">Client Satisfaction</div></div>
-          <div><div className="hrjs-stat-val">{stV ? c4 : 0} Days</div><div className="hrjs-stat-label">Avg Onboarding</div></div>
         </div>
       </section>
       <section className="hrjs-sec hrjs-sec-alt" ref={prR}>

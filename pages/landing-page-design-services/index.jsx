@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'Lead Generation Landing Pages', desc: 'High-converting lead capture pages - optimised headline, benefit-driven copy, social proof placement, trust signals, and form design engineered to maximise enquiry and sign-up conversion rate.' },
@@ -44,13 +46,6 @@ const FAQS = [
   { q: 'Can you design multiple variants for A/B testing?', a: 'Yes. We design and build A/B test variants as part of landing page projects - typically a control (primary design) and one or two challenger variants testing specific hypotheses: headline copy, hero image, CTA button copy and colour, form length, or page structure. Each variant is built to the same quality standard as the control and set up in your testing platform (Google Optimize, Optimizely, VWO, or Unbounce\'s native testing). We document the hypothesis, expected impact, and required sample size for each test before launch.' },
 ];
 
-const STATS = [
-  { label: 'Landing Pages Built', val: '400+' },
-  { label: 'Avg Conversion Lift', val: '+35%' },
-  { label: 'Years Experience', val: '15+' },
-  { label: 'Client Retention', val: '92%' },
-];
-
 export default function LandingPageDesignServices() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleCards, setVisibleCards] = useState([]);
@@ -75,22 +70,10 @@ export default function LandingPageDesignServices() {
         <style>{`
           .lpd-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .lpd-page *,.lpd-page *::before,.lpd-page *::after{box-sizing:border-box}
-          .lpd-hero{background:linear-gradient(135deg,#fff7ed 0%,#fed7aa 25%,#fdba74 60%,#fff7ed 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .lpd-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(194,65,12,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .lpd-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(154,52,18,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .lpd-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.lpd-bc a:hover{color:#C2410C}.lpd-bc span{color:#d1d5db}
-          .lpd-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(194,65,12,0.08);border:1px solid rgba(194,65,12,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#C2410C;margin-bottom:28px}
-          .lpd-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .lpd-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
-          .lpd-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .lpd-btn-p{display:inline-flex;align-items:center;gap:8px;background:#C2410C;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(194,65,12,0.28)}
           .lpd-btn-p:hover{background:#9A3412;box-shadow:0 8px 32px rgba(194,65,12,0.38);transform:translateY(-2px)}
           .lpd-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.18);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
           .lpd-btn-s:hover{border-color:#C2410C;color:#C2410C;transform:translateY(-2px)}
-          .lpd-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(194,65,12,0.07)}
-          .lpd-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(194,65,12,0.08)}.lpd-stat:last-child{border-right:none}
-          .lpd-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .lpd-stat-v{font-size:1.6rem;font-weight:900;color:#C2410C;letter-spacing:-0.5px}
           .lpd-svc{background:#f8fafd;padding:80px 40px}.lpd-svc-in{max-width:1280px;margin:0 auto}
           .lpd-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C2410C;margin-bottom:10px;display:block}
           .lpd-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
@@ -137,25 +120,26 @@ export default function LandingPageDesignServices() {
           .lpd-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           .lpd-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.lpd-grid{grid-template-columns:repeat(2,1fr)}.lpd-why-grid{grid-template-columns:repeat(2,1fr)}}
-          @media(max-width:768px){.lpd-hero,.lpd-svc,.lpd-tools,.lpd-proc,.lpd-why,.lpd-faq,.lpd-cta{padding:60px 24px}.lpd-hero{padding-top:60px;padding-bottom:0}.lpd-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.lpd-stat:nth-child(2){border-right:none}.lpd-grid{grid-template-columns:1fr}.lpd-why-grid{grid-template-columns:1fr}.lpd-step{grid-template-columns:56px 1fr}.lpd-btns{flex-direction:column;align-items:center}}
+          @media(max-width:768px){.lpd-svc,.lpd-tools,.lpd-proc,.lpd-why,.lpd-faq,.lpd-cta{padding:60px 24px}.lpd-grid{grid-template-columns:1fr}.lpd-why-grid{grid-template-columns:1fr}.lpd-step{grid-template-columns:56px 1fr}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
       <div className="lpd-page">
-        <section className="lpd-hero"><div className="lpd-o1"/><div className="lpd-o2"/>
-          <div className="lpd-in">
-            <span className="lpd-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#C2410C',display:'inline-block'}}/> PPC · Lead Gen · A/B Testing</span>
-            <h1 className="lpd-h1">Landing Page Design Services - Pages Built to Convert, Not Just Impress</h1>
-            <p className="lpd-sub">Conversion-first landing page design with integrated copywriting - for PPC campaigns, lead generation, sales, and events. 400+ pages built with an average +35% conversion rate lift.</p>
-            <div className="lpd-btns">
-              <Link href="/contact-us" className="lpd-btn-p">Get a Landing Page Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/conversion-rate-optimization-services" className="lpd-btn-s">CRO Services</Link>
-            </div>
-            <div className="lpd-stats">{STATS.map(s => <div key={s.label} className="lpd-stat"><div className="lpd-stat-l">{s.label}</div><div className="lpd-stat-v">{s.val}</div></div>)}</div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="PPC · Lead Gen · A/B Testing"
+          title={<>Landing Page Design Services - Pages <AuroraText>Built to Convert</AuroraText>, Not Just Impress</>}
+          subtext="Conversion-first landing page design with integrated copywriting - for PPC campaigns, lead generation, sales, and events. 400+ pages built with an average +35% conversion rate lift."
+          primaryCta={{ label: 'Get a Landing Page Quote', href: '/contact-us' }}
+          secondaryCta={{ label: 'CRO Services', href: '/conversion-rate-optimization-services' }}
+          stats={[
+            { label: 'Landing Pages Built', value: '400', suffix: '+' },
+            { label: 'Avg Conversion Lift', value: '35', prefix: '+', suffix: '%' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'Client Retention', value: '92', suffix: '%' },
+          ]}
+        />
         <section className="lpd-svc"><div className="lpd-svc-in">
           <span className="lpd-ey2">What We Build</span><h2 className="lpd-ttl">Landing Page Design Services</h2>
           <p className="lpd-desc">Every type of landing page - lead gen, sales, PPC, SaaS, events, and A/B variants - designed and built to convert.</p>

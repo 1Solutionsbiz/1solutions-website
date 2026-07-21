@@ -2,13 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { AuroraText } from '../../components/AuroraText';
-
-const STATS_HERO = [
-  { val: '93%',  label: 'LA consumers search online before buying locally' },
-  { val: '18M+', label: 'Monthly searches in Greater Los Angeles' },
-  { val: '67%',  label: 'Clicks go to the top 3 organic results' },
-  { val: '5×',   label: 'Average ROI from organic SEO vs paid ads' },
-];
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { icon:'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z', title:'Local SEO Los Angeles', body:'Dominate the Google Maps Pack and local 3-pack for every high-intent neighbourhood search across LA County, from Hollywood and West Hollywood to Santa Monica, Pasadena, and Long Beach. GBP optimisation, citation building, and geo-targeted landing pages included.' },
@@ -378,26 +372,7 @@ export default function SeoCompanyLosAngeles() {
           .la-g3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
           .la-g4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 
-          /* ── HERO ── */
-          .la-hero{position:relative;z-index:1;padding:72px 40px 0;overflow:hidden}
-          .la-hero::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.10) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px)}
-          .la-hero::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.16) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px)}
-          .la-hero-inner{position:relative;z-index:2;text-align:center;max-width:920px;margin:0 auto}.la-bc a:hover{color:#D97706}.la-bc-sep{color:#d1d5db}
-          .la-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:18px}
-          .la-h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:18px;color:#0F1F40}
-          .la-hero-sub{font-size:16px;color:#3A507A;line-height:1.65;max-width:660px;margin:0 auto 28px}
-          .la-btns{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:32px}
-          .la-btn-p{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:8px;padding:14px 36px;background:rgba(15,52,96,0.85);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.20);border-radius:50px;color:#fff;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;box-shadow:0 6px 24px rgba(15,52,96,0.25)}
-          .la-btn-p:hover{background:rgba(15,52,96,1);border-color:rgba(245,158,11,0.6);transform:translateY(-2px);box-shadow:0 12px 36px rgba(15,52,96,0.30)}
-          .la-btn-s{display:inline-flex;align-items:center;padding:14px 32px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1)}
-          .la-btn-s:hover{background:rgba(255,255,255,0.85);border-color:rgba(245,158,11,0.6);transform:translateY(-2px)}
-
-          /* ── STATS BAR ── */
-          .la-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95)}
-          .la-stat{padding:18px 20px;text-align:center;border-right:1px solid rgba(15,52,96,0.10)}
-          .la-stat:last-child{border-right:none}
-          .la-stat-v{font-size:26px;font-weight:900;color:#D97706;letter-spacing:-0.5px;line-height:1;margin-bottom:6px}
-          .la-stat-l{font-size:12px;color:#4A6080;font-weight:500}
+          .la-bc a:hover{color:#D97706}.la-bc-sep{color:#d1d5db}
 
           /* ── DARK SECTION ── */
           .la-dark{padding:80px 40px;background:#fff;position:relative;z-index:1}
@@ -565,15 +540,8 @@ export default function SeoCompanyLosAngeles() {
             .la-card-pop{transform:none}.la-card-pop:hover{transform:translateY(-4px)}
           }
           @media(max-width:768px){
-            .la-hero{padding:56px 24px 0}
-            .la-hero::before,.la-hero::after{display:none}
             .la-sec,.la-dark,.la-contact-sec,.la-related,.la-testi{padding-left:24px;padding-right:24px}
             .la-testi-hd{padding:0 24px}
-            .la-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}
-            .la-stat:nth-child(2){border-right:none}
-            .la-stat:nth-child(3){border-top:1px solid rgba(15,52,96,0.10)}
-            .la-stat:nth-child(4){border-top:1px solid rgba(15,52,96,0.10);border-right:none}
-            .la-btns{flex-direction:column;align-items:center}
             .la-g3{grid-template-columns:1fr}
             .la-g4{grid-template-columns:repeat(2,1fr)}
             .la-row2{grid-template-columns:1fr}
@@ -581,8 +549,8 @@ export default function SeoCompanyLosAngeles() {
             .la-related-ttl{font-size:28px}
             /* ── MOBILE PERFORMANCE ── */
             .la-orb1,.la-orb2,.la-orb3{display:none}
-            .la-glass,.la-form-box,.la-trust-box,.la-stats,.la-fitem{backdrop-filter:none;-webkit-backdrop-filter:none}
-            .la-btn-p,.la-btn-s,.la-submit{backdrop-filter:none;-webkit-backdrop-filter:none}
+            .la-glass,.la-form-box,.la-trust-box,.la-fitem{backdrop-filter:none;-webkit-backdrop-filter:none}
+            .la-submit{backdrop-filter:none;-webkit-backdrop-filter:none}
             .la-res-card,.la-pill{backdrop-filter:none;-webkit-backdrop-filter:none}
             .la-related{backdrop-filter:none;-webkit-backdrop-filter:none}
             .la-card{backdrop-filter:none;-webkit-backdrop-filter:none}
@@ -603,28 +571,19 @@ export default function SeoCompanyLosAngeles() {
         <div className="la-orb1"/><div className="la-orb2"/><div className="la-orb3"/>
 
         {/* ── HERO ── */}
-        <section className="la-hero">
-          <div className="la-hero-inner">
-            <span className="la-eyebrow">SEO Company Los Angeles · LA SEO Agency · Local SEO · Technical SEO</span>
-            <h1 className="la-h1">The SEO Company Los Angeles<br/>Businesses Choose to <AuroraText>Own Page 1</AuroraText></h1>
-            <p className="la-hero-sub">1Solutions is a specialist LA SEO agency with 15+ years ranking businesses across Los Angeles — from Hollywood and Beverly Hills to Santa Monica and Long Beach. We deliver local SEO, technical SEO, and content strategies built specifically for the competitive LA market, with transparent reporting and no lock-in contracts.</p>
-            <div className="la-btns">
-              <a href="#la-contact" className="la-btn-p">
-                Get Your Free LA SEO Audit
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <a href="#packages" className="la-btn-s">View Packages</a>
-            </div>
-            <div className="la-stats">
-              {STATS_HERO.map(s => (
-                <div key={s.label} className="la-stat">
-                  <div className="la-stat-v">{s.val}</div>
-                  <div className="la-stat-l">{s.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="SEO Company Los Angeles · LA SEO Agency · Local SEO · Technical SEO"
+          title={<>The SEO Company Los Angeles Businesses Choose to <AuroraText>Own Page 1</AuroraText></>}
+          subtext="1Solutions is a specialist LA SEO agency with 15+ years ranking businesses across Los Angeles — from Hollywood and Beverly Hills to Santa Monica and Long Beach. We deliver local SEO, technical SEO, and content strategies built specifically for the competitive LA market, with transparent reporting and no lock-in contracts."
+          primaryCta={{ label: 'Get Your Free LA SEO Audit', href: '#la-contact' }}
+          secondaryCta={{ label: 'View Packages', href: '#packages' }}
+          stats={[
+            { label: 'LA consumers search online before buying locally', value: '93', suffix: '%' },
+            { label: 'Monthly searches in Greater Los Angeles', value: '18', suffix: 'M+' },
+            { label: 'Clicks go to the top 3 organic results', value: '67', suffix: '%' },
+            { label: 'Average ROI from organic SEO vs paid ads', value: '5', suffix: '×' },
+          ]}
+        />
 
         {/* ── KEYWORD TYPES ── */}
         <section className="la-sec la-white">

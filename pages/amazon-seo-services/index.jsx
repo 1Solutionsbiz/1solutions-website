@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const RECAPTCHA_KEY = '6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs';
 
@@ -44,13 +46,6 @@ const FAQS = [
   { q: 'Do you work with FBA and FBM sellers?', a: 'Yes. We work with both Fulfilled by Amazon (FBA) and Fulfilled by Merchant (FBM) sellers, as well as Seller Fulfilled Prime (SFP) and Vendor Central accounts. FBA products generally have a ranking advantage due to Prime badge eligibility and Amazon\'s fulfilment reliability signals - we factor this into our strategy. For FBM sellers competing in categories dominated by FBA, we focus on price competitiveness, review quality, and listing quality to close the gap. For Vendor Central (1P) accounts, keyword and content optimisation follows similar principles but the platform interface differs.' },
   { q: 'Can you help with Amazon account suspensions or listing suppressions?', a: 'Yes. Amazon account health issues and listing suppressions are handled as part of our Amazon SEO service or as standalone consultancy. Listing suppressions are commonly caused by: image policy violations (incorrect background, dimensions, or prohibited content); pricing errors (price too high relative to recent history); missing required attributes; or policy violations in content. We identify the root cause, prepare the corrected listing, and guide the reinstatement or appeal process. For full account suspensions, we prepare Plan of Action (POA) documents - but complex suspensions may require Amazon-specialist legal support beyond our scope.' },
   { q: 'Do you offer Amazon SEO for new product launches?', a: 'Yes. Amazon new product launches require a specific approach because the listing has no sales history, review history, or organic ranking. Our launch strategy includes: keyword research and fully optimised listing before the first sale; a PPC launch campaign to generate initial sales velocity; early review generation using Amazon Vine (if enrolled in Brand Registry); pricing strategy to remain competitive in the initial ranking phase; and an off-Amazon traffic strategy (Facebook ads, email campaigns with Amazon Attribution links) to drive external traffic that boosts ranking. A well-executed 60-day launch period can establish sustainable organic rankings that reduce long-term reliance on PPC.' },
-];
-
-const STATS = [
-  { label: 'Amazon Products Optimised', val: '2,000+' },
-  { label: 'Avg Sales Rank Improvement', val: '+68%' },
-  { label: 'Years Amazon Experience', val: '10+' },
-  { label: 'Client Retention', val: '91%' },
 ];
 
 const RELATED = [
@@ -201,24 +196,6 @@ export default function AmazonSeoServices() {
           .amazseo-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .amazseo-page *,.amazseo-page *::before,.amazseo-page *::after{box-sizing:border-box}
 
-          /* ── HERO ── */
-          .amazseo-hero{background:linear-gradient(135deg,#fffbeb 0%,#fef3c7 30%,#fde68a 65%,#fffbeb 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .amazseo-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(217,119,6,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .amazseo-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(146,64,14,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .amazseo-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.amazseo-bc a:hover{color:#D97706}.amazseo-bc span{color:#d1d5db}
-          .amazseo-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(217,119,6,0.08);border:1px solid rgba(217,119,6,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#D97706;margin-bottom:28px}
-          .amazseo-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .amazseo-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
-          .amazseo-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
-          .amazseo-btn-p{display:inline-flex;align-items:center;gap:8px;background:#D97706;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(217,119,6,0.28)}
-          .amazseo-btn-p:hover{background:#92400E;box-shadow:0 8px 32px rgba(217,119,6,0.38);transform:translateY(-2px)}
-          .amazseo-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.18);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
-          .amazseo-btn-s:hover{border-color:#D97706;color:#D97706;transform:translateY(-2px)}
-          .amazseo-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(217,119,6,0.07)}
-          .amazseo-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(217,119,6,0.08)}.amazseo-stat:last-child{border-right:none}
-          .amazseo-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .amazseo-stat-v{font-size:1.6rem;font-weight:900;color:#D97706;letter-spacing:-0.5px}
-
           /* ── SERVICES ── */
           .amazseo-svc{background:#f8fafd;padding:80px 40px}.amazseo-svc-in{max-width:1280px;margin:0 auto}
           .amazseo-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
@@ -321,14 +298,10 @@ export default function AmazonSeoServices() {
           /* ── RESPONSIVE ── */
           @media(max-width:1024px){.amazseo-grid{grid-template-columns:repeat(2,1fr)}.amazseo-why-grid{grid-template-columns:repeat(2,1fr)}.amazseo-contact-in{grid-template-columns:1fr}}
           @media(max-width:768px){
-            .amazseo-hero,.amazseo-svc,.amazseo-tools,.amazseo-proc,.amazseo-why,.amazseo-faq,.amazseo-contact,.amazseo-related{padding:60px 24px}
-            .amazseo-hero{padding-top:60px;padding-bottom:0}
-            .amazseo-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}
-            .amazseo-stat:nth-child(2){border-right:none}
+            .amazseo-svc,.amazseo-tools,.amazseo-proc,.amazseo-why,.amazseo-faq,.amazseo-contact,.amazseo-related{padding:60px 24px}
             .amazseo-grid{grid-template-columns:1fr}
             .amazseo-why-grid{grid-template-columns:1fr}
             .amazseo-step{grid-template-columns:56px 1fr}
-            .amazseo-btns{flex-direction:column;align-items:center}
             .amazseo-row2{grid-template-columns:1fr}
           }
         
@@ -339,31 +312,19 @@ export default function AmazonSeoServices() {
       <div className="amazseo-page">
 
         {/* ── HERO ── */}
-        <section className="amazseo-hero"><div className="amazseo-o1"/><div className="amazseo-o2"/>
-          <div className="amazseo-in">
-            <span className="amazseo-ey">
-              <span style={{width:6,height:6,borderRadius:'50%',background:'#D97706',display:'inline-block'}}/>
-              Listing Optimisation · PPC · A+ Content · Brand Store
-            </span>
-            <h1 className="amazseo-h1">Amazon SEO Services - Rank Higher, Sell More on Amazon</h1>
-            <p className="amazseo-sub">Product listing optimisation, keyword research, A+ Content, Sponsored Ads management, and Brand Store design - everything needed to dominate Amazon search results and convert browsers into buyers.</p>
-            <div className="amazseo-btns">
-              <a href="#amazseo-contact" className="amazseo-btn-p">
-                Get a Free Amazon SEO Audit
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <Link href="/amazon-account-management-services" className="amazseo-btn-s">Amazon Account Management</Link>
-            </div>
-            <div className="amazseo-stats">
-              {STATS.map(s => (
-                <div key={s.label} className="amazseo-stat">
-                  <div className="amazseo-stat-l">{s.label}</div>
-                  <div className="amazseo-stat-v">{s.val}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Listing Optimisation · PPC · A+ Content · Brand Store"
+          title={<>Amazon SEO Services - <AuroraText>Rank Higher, Sell More on Amazon</AuroraText></>}
+          subtext="Product listing optimisation, keyword research, A+ Content, Sponsored Ads management, and Brand Store design - everything needed to dominate Amazon search results and convert browsers into buyers."
+          primaryCta={{ label: 'Get a Free Amazon SEO Audit', href: '#amazseo-contact' }}
+          secondaryCta={{ label: 'Amazon Account Management', href: '/amazon-account-management-services' }}
+          stats={[
+            { label: 'Amazon Products Optimised', value: '2,000', suffix: '+' },
+            { label: 'Avg Sales Rank Improvement', value: '68', prefix: '+', suffix: '%' },
+            { label: 'Years Amazon Experience', value: '10', suffix: '+' },
+            { label: 'Client Retention', value: '91', suffix: '%' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="amazseo-svc"><div className="amazseo-svc-in">

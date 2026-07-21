@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -88,25 +90,13 @@ const FAQS = [
   { q: 'How do you approach AR 3D asset creation and optimisation?', a: "High-poly to game-ready conversion (Blender/Maya), polygon reduction to mobile budgets (10K–50K triangles), PBR texture baking and atlasing, LOD generation, USDZ for ARKit/QuickLook, GLB/glTF for WebAR/ARCore, CAD-to-AR pipeline from STEP/IGES files, and GPU performance profiling on target device hardware." },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => { if (!start) return; const num = parseInt(target.replace(/\D/g, ''), 10); if (!num) return; let t0 = null; const step = ts => { if (!t0) t0 = ts; const p = Math.min((ts - t0) / duration, 1); setCount(Math.floor((1 - Math.pow(1 - p, 3)) * num)); if (p < 1) requestAnimationFrame(step); }; requestAnimationFrame(step); }, [start, target, duration]);
-  return count;
-}
-function StatItem({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');  return (<div className="har-sc"><div className="har-sv">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div><div className="har-sl">{label}</div></div>);
-}
-
 export default function HireARDeveloper() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [ss, setSs] = useState(false);
   const [vis, setVis] = useState(new Set());
   const [vSk, setVSk] = useState([]); const [vEn, setVEn] = useState([]); const [vWh, setVWh] = useState([]); const [vTe, setVTe] = useState([]); const [vSt, setVSt] = useState([]);
-  const stR = useRef(null); const secR = useRef({});
+  const secR = useRef({});
   const skR = useRef(null); const enR = useRef(null); const whR = useRef(null); const teR = useRef(null); const stGr = useRef(null);
-  useEffect(() => { if (!stR.current) return; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setSs(true); o.disconnect(); } }, { threshold: 0.4 }); o.observe(stR.current); return () => o.disconnect(); }, []);
   useEffect(() => { const pairs = [[skR, SKILLS.length, setVSk],[enR, 3, setVEn],[whR, WHY_CARDS.length, setVWh],[teR, 3, setVTe],[stGr, TECH_STACK.length, setVSt]]; const obs = pairs.map(([ref, count, setter]) => { if (!ref.current) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { Array.from({ length: count }, (_, i) => setTimeout(() => setter(p => p.includes(i) ? p : [...p, i]), i * 80)); o.disconnect(); } }, { threshold: 0.05 }); o.observe(ref.current); return o; }); return () => obs.forEach(o => o?.disconnect()); }, []);
   useEffect(() => { const ks = Object.keys(secR.current); const obs = ks.map(k => { const el = secR.current[k]; if (!el) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVis(p => new Set([...p, k])); o.disconnect(); } }, { threshold: 0.1 }); o.observe(el); return o; }); return () => obs.forEach(o => o?.disconnect()); }, []);
   const visSkills = showAll ? SKILLS : SKILLS.slice(0, 6);
@@ -155,31 +145,6 @@ export default function HireARDeveloper() {
 
 
 
-          .har-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
-          .har-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
-          .har-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .har-desc{font-size:16px;color:#3A507A;line-height:1.65;max-width:740px;margin:0 auto 24px}
-          .har-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
-          .har-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07)}
-          .har-dot{width:7px;height:7px;border-radius:50%;background:#0d9488;flex-shrink:0}
-          .har-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .har-p{display:inline-block;padding:14px 36px;background:#0d9488;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(13,148,136,.28)}
-          .har-p:hover{background:#0F3460;transform:translateY(-2px)}
-          .har-g{display:inline-block;padding:14px 36px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .har-g:hover{background:rgba(255,255,255,.85);border-color:rgba(13,148,136,.5);transform:translateY(-2px)}
-          .har-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:28px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .har-sc{padding:18px 16px;text-align:center;border-right:1px solid rgba(15,52,96,.10)}
-          .har-sc:last-child{border-right:none}
-          .har-sv{font-size:28px;font-weight:900;color:#0d9488;letter-spacing:-.5px;line-height:1}
-          .har-sl{font-size:11px;color:#4A6080;font-weight:500;margin-top:5px}
-          .har-logos{position:relative;z-index:2;padding:24px 40px 52px;display:flex;flex-direction:column;align-items:center;gap:14px}
-          .har-ll{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6A80A0}
-          .har-lw{width:100%;overflow:hidden}
-          .har-lt{display:flex;align-items:center;gap:60px;width:max-content;animation:har-mq 28s linear infinite}
-          .har-lt:hover{animation-play-state:paused}
-          @keyframes har-mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-          .har-cl{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
-          .har-cl:hover{opacity:.85;filter:grayscale(0%)}
           .har-sey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
           .har-st{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .har-sd{font-size:15px;color:#4A6080;line-height:1.7}
@@ -326,8 +291,8 @@ export default function HireARDeveloper() {
           .har-b{background:rgba(30,64,175,.09);border-color:rgba(30,64,175,.28);color:#1e3a8a}
           .har-o{background:rgba(249,115,22,.09);border-color:rgba(249,115,22,.28);color:#c2410c}
           .har-a{background:rgba(202,138,4,.09);border-color:rgba(202,138,4,.28);color:#92400e}
-          @media(max-width:1024px){.har-hero h1,.har-st,.har-fq-s h2{font-size:36px}.har-sk-g{grid-template-columns:repeat(2,1fr)}.har-tec-g{grid-template-columns:repeat(2,1fr)}.har-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.har-en-c.feat{transform:none}.har-en-c.feat.har-ev{transform:none}.har-en-c.feat.har-ev:hover{transform:translateY(-4px)}.har-wy-g{grid-template-columns:repeat(2,1fr)}.har-tg2{grid-template-columns:1fr}.har-ct-g{grid-template-columns:1fr}}
-          @media(max-width:768px){.har-bc,.har-hero,.har-sk-s,.har-tec-s,.har-en-s,.har-pr-s,.har-te-s,.har-wy-s,.har-fq-s,.har-rel{padding-left:20px;padding-right:20px}.har-hero{padding-top:28px;padding-bottom:20px}.har-hero h1{font-size:26px;letter-spacing:-.3px}.har-stats{grid-template-columns:1fr 1fr}.har-sc:nth-child(2){border-right:none}.har-sc:nth-child(3),.har-sc:nth-child(4){border-top:1px solid rgba(15,52,96,.10)}.har-sc:nth-child(4){border-right:none}.har-sk-g,.har-tec-g,.har-wy-g{grid-template-columns:1fr}.har-fr{grid-template-columns:1fr}.har-ctt{font-size:28px}.har-st{font-size:28px}.har-ct-s{padding:48px 20px}.har-logos{padding-left:20px;padding-right:20px}}
+          @media(max-width:1024px){.har-st,.har-fq-s h2{font-size:36px}.har-sk-g{grid-template-columns:repeat(2,1fr)}.har-tec-g{grid-template-columns:repeat(2,1fr)}.har-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.har-en-c.feat{transform:none}.har-en-c.feat.har-ev{transform:none}.har-en-c.feat.har-ev:hover{transform:translateY(-4px)}.har-wy-g{grid-template-columns:repeat(2,1fr)}.har-tg2{grid-template-columns:1fr}.har-ct-g{grid-template-columns:1fr}}
+          @media(max-width:768px){.har-bc,.har-sk-s,.har-tec-s,.har-en-s,.har-pr-s,.har-te-s,.har-wy-s,.har-fq-s,.har-rel{padding-left:20px;padding-right:20px}.har-sk-g,.har-tec-g,.har-wy-g{grid-template-columns:1fr}.har-fr{grid-template-columns:1fr}.har-ctt{font-size:28px}.har-st{font-size:28px}.har-ct-s{padding:48px 20px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
@@ -353,15 +318,19 @@ export default function HireARDeveloper() {
 </Head>
       <div className="har-page">
         <div className="har-orb har-o1" /><div className="har-orb har-o2" /><div className="har-orb har-o3" />
-        <section className="har-hero">
-          <span className="har-ey">Hire AR Developer</span>
-          <h1>Hire Expert AR Developers - ARKit, ARCore, WebAR & HoloLens</h1>
-          <p className="har-desc">Hire pre-vetted AR developers specialising in ARKit (iOS), ARCore (Android), Unity AR Foundation, WebAR (8thWall), Microsoft HoloLens 2, Apple Vision Pro visionOS, and industrial AR applications. Mobile AR, enterprise MR, or WebAR campaigns - dedicated, part-time, or fixed-scope. Start in 3–5 business days.</p>
-          <div className="har-tr">{['ARKit / ARCore','Unity AR Foundation','WebAR (8thWall)','HoloLens 2','Apple Vision Pro'].map(b => (<div className="har-badge" key={b}><span className="har-dot" />{b}</div>))}</div>
-          <div className="har-ctas"><Link href="#contact" className="har-p">Hire an AR Developer</Link><Link href="#engagement" className="har-g">View Engagement Models →</Link></div>
-        </section>
-        <div className="har-stats" ref={stR}>{[['50+','AR Projects Delivered'],['15+','Years Dev Experience'],['48hr','Avg Developer Match'],['98%','Client Retention']].map(([v, l]) => (<StatItem key={l} label={l} val={v} started={ss} />))}</div>
-        <div className="har-logos"><span className="har-ll">Trusted by AR & XR Product Teams</span><div className="har-lw"><div className="har-lt">{[['/logo/Indian_Express_Logo_full.png','Indian Express'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],['/logo/Uniphore.jpg','Uniphore'],['/logo/ICCoLogo.png','ICC'],['/logo/Honor_Logo_(2020).svg.png','Honor'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],['/logo/Indian_Express_Logo_full.png','Indian Express 2'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon 2'],['/logo/Uniphore.jpg','Uniphore 2'],['/logo/ICCoLogo.png','ICC 2'],['/logo/Honor_Logo_(2020).svg.png','Honor 2'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv 2']].map(([src, alt]) => (<img key={alt} src={src} alt={alt.replace(/ \d$/, '')} className="har-cl" />))}</div></div></div>
+        <ServiceHero
+          eyebrow="Hire AR Developer"
+          title={<>Hire Expert AR Developers - <AuroraText>ARKit, ARCore, WebAR & HoloLens</AuroraText></>}
+          subtext="Hire pre-vetted AR developers specialising in ARKit (iOS), ARCore (Android), Unity AR Foundation, WebAR (8thWall), Microsoft HoloLens 2, Apple Vision Pro visionOS, and industrial AR applications. Mobile AR, enterprise MR, or WebAR campaigns - dedicated, part-time, or fixed-scope. Start in 3–5 business days."
+          primaryCta={{ label: 'Hire an AR Developer', href: '#contact' }}
+          secondaryCta={{ label: 'View Engagement Models', href: '#engagement' }}
+          stats={[
+            { label: 'AR Projects Delivered', value: '50', suffix: '+' },
+            { label: 'Years Dev Experience', value: '15', suffix: '+' },
+            { label: 'Avg Developer Match', value: '48', suffix: 'hr' },
+            { label: 'Client Retention', value: '98', suffix: '%' },
+          ]}
+        />
         <section className="har-sk-s" aria-labelledby="har-sk-h"><div className="har-in"><div className={`har-rv${vis.has('sk') ? ' har-ok' : ''}`} ref={el => { secR.current['sk'] = el; }}><span className="har-sey">What Our AR Developers Build</span><h2 id="har-sk-h" className="har-st">AR Skills & Expertise</h2><p className="har-sd" style={{ maxWidth: 720 }}>Mobile AR (ARKit/ARCore), Unity AR Foundation, WebAR (8thWall), Microsoft HoloLens 2, Apple Vision Pro visionOS, AR e-commerce (virtual try-on), industrial AR, spatial anchors, 3D asset optimisation, and AR analytics integration.</p></div><div className="har-sk-g" ref={skR}>{visSkills.map((s, i) => (<div key={s.n} className={`har-sk-c${s.feat ? ' feat' : ''}${vSk.includes(i) ? ' har-cv' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}><span className="har-sk-n">{s.n}</span><h3>{s.title}</h3><p>{s.desc}</p></div>))}</div>{SKILLS.length > 6 && (<div className="har-sm"><button className="har-bm" onClick={() => setShowAll(p => !p)}>{showAll ? 'Show fewer ↑' : `Show all ${SKILLS.length} areas ↓`}</button></div>)}</div></section>
         <section className="har-tec-s" aria-labelledby="har-tec-h"><div className="har-in"><div className={`har-rv${vis.has('stk') ? ' har-ok' : ''}`} ref={el => { secR.current['stk'] = el; }}><span className="har-sey">Technology Stack</span><h2 id="har-tec-h" className="har-st">AR Tools & Technologies</h2><p className="har-sd" style={{ maxWidth: 680 }}>ARKit, ARCore, Unity AR Foundation, RealityKit, 8thWall, Three.js + WebXR, MRTK, Azure Spatial Anchors, visionOS SwiftUI, C#, Swift, JavaScript, Blender, USDZ, GLB/glTF, and the full XR development stack.</p></div><div className="har-tec-g" ref={stGr}>{TECH_STACK.map((grp, i) => (<div key={grp.group} className={`har-tec-c${vSt.includes(i) ? ' har-sv2' : ''}`} style={{ transitionDelay: `${i * 60}ms` }}><div className="har-tg" style={{ color: grp.color, borderBottomColor: grp.color + '33' }}>{grp.group}</div><div className="har-pills">{grp.items.map(item => <span key={item} className="har-pill" style={{ color: grp.color, background: grp.color + '12', borderColor: grp.color + '30' }}>{item}</span>)}</div></div>))}</div></div></section>
         <section id="engagement" className="har-en-s" aria-labelledby="har-en-h"><div className="har-in"><div className={`har-rv${vis.has('eng') ? ' har-ok' : ''}`} ref={el => { secR.current['eng'] = el; }}><span className="har-sey">Engagement Models</span><h2 id="har-en-h" className="har-st">How to Hire an AR Developer</h2><p className="har-sd" style={{ maxWidth: 680 }}>Full-time dedicated AR engineer, part-time specialist, or fixed-scope AR project - structured for your platform and spatial computing stage.</p></div><div className="har-en-g" ref={enR}>{ENGAGEMENT_MODELS.map((m, i) => (<div key={m.id} className={`har-en-c${m.feat ? ' feat' : ''}${vEn.includes(i) ? ' har-ev' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}><span className="har-en-b" style={{ color: m.badgeColor, borderColor: m.badgeColor + '44', background: m.badgeColor + '14' }}>{m.badge}</span><div className="har-en-i"><svg viewBox="0 0 24 24" width="26" height="26"><path d={m.icon} /></svg></div><div className="har-en-n">{m.name}</div><div className="har-en-h">{m.headline}</div><div className="har-en-d">{m.desc}</div><div className="har-en-ll">Best for</div><ul className="har-en-li">{m.bestFor.map(b => <li key={b}>{b}</li>)}</ul><div className="har-en-p"><strong>Process:</strong> {m.process}<br /><span className="har-en-tl">{m.timeline}</span></div><Link href="#contact" className="har-en-a">Get a free estimate →</Link></div>))}</div></div></section>

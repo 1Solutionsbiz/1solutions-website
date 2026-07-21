@@ -1,6 +1,8 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n:'01', title:'AI Content Generation Systems', desc:'Design and build scalable AI content pipelines — blog posts, product descriptions, email campaigns, social content, and SEO articles generated at scale with human editorial oversight and brand voice consistency.' },
@@ -30,53 +32,8 @@ const RELATED = [
   { href:'/content-marketing-services/', label:'Content Marketing' },
 ];
 
-const STATS = [
-  ['GenAI Projects Delivered','120+'],
-  ['AI Models Worked With','20+'],
-  ['Years Tech Experience','15+'],
-  ['Client Retention','97%'],
-];
-
-function useCountUp(target, dur=1800, start=false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const n = parseInt(target.replace(/\D/g,''), 10);
-    if (!n) return;
-    let t0 = null;
-    const step = ts => {
-      if (!t0) t0 = ts;
-      const p = Math.min((ts - t0) / dur, 1);
-      setCount(Math.floor((1 - Math.pow(1-p,3)) * n));
-      if (p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, dur]);
-  return count;
-}
-
-function Stat({ label, val, started }) {
-  const n = useCountUp(val, 1800, started);
-  const sfx = val.replace(/[\d,]/g,'');
-  return (
-    <div className="genas-stat-col">
-      <div className="genas-stat-val">{started ? n + sfx : val}</div>
-      <div className="genas-stat-lbl">{label}</div>
-    </div>
-  );
-}
-
 export default function Page() {
   const [openFaq, setOpenFaq] = useState(0);
-  const [started, setStarted] = useState(false);
-  const statsRef = useRef(null);
-
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStarted(true); obs.disconnect(); } }, { threshold:0.5 });
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   return (
     <>
@@ -99,24 +56,8 @@ export default function Page() {
           mainEntity:FAQS.map(f=>({'@type':'Question',name:f.q,acceptedAnswer:{'@type':'Answer',text:f.a}})),
         }) }} />
         <style>{`
-          .genas-hero{background:linear-gradient(135deg,#0F3460 0%,#1a1a5e 40%,#0F3460 100%);padding:80px 40px 0;position:relative;overflow:hidden}
-          .genas-hero-orb{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(217,119,6,0.18) 0%,transparent 65%);top:-180px;right:-100px;pointer-events:none;filter:blur(40px)}
-          .genas-hero-inner{max-width:1280px;margin:0 auto;padding-bottom:60px}
-          .genas-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.85);margin-bottom:24px}
-          .genas-h1{font-size:clamp(2rem,4vw,3.2rem);font-weight:900;line-height:1.1;letter-spacing:-1px;color:#fff;margin:0 0 18px}
-          .genas-h1 span{background:linear-gradient(90deg,#FCD34D,#F97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .genas-sub{font-size:1.05rem;color:rgba(255,255,255,0.75);line-height:1.75;margin:0 0 34px;max-width:600px}
-          .genas-btns{display:flex;gap:14px;flex-wrap:wrap}
           .genas-btn-p{display:inline-flex;align-items:center;gap:8px;background:#D97706;color:#fff;padding:13px 28px;border-radius:50px;font-weight:700;font-size:0.93rem;text-decoration:none;transition:all .25s;box-shadow:0 4px 20px rgba(217,119,6,0.35)}
           .genas-btn-p:hover{background:#B45309;transform:translateY(-2px)}
-          .genas-btn-g{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.10);backdrop-filter:blur(12px);border:1.5px solid rgba(255,255,255,0.25);color:#fff;padding:13px 28px;border-radius:50px;font-weight:700;font-size:0.93rem;text-decoration:none;transition:all .25s}
-          .genas-btn-g:hover{background:rgba(255,255,255,0.18);transform:translateY(-2px)}
-          .genas-stats{background:rgba(255,255,255,0.06);border-top:1px solid rgba(255,255,255,0.10);padding:20px 40px}
-          .genas-stats-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
-          .genas-stat-col{text-align:center;padding:16px;border-right:1px solid rgba(255,255,255,0.10)}
-          .genas-stat-col:last-child{border-right:none}
-          .genas-stat-val{font-size:1.9rem;font-weight:900;color:#fff;letter-spacing:-1px}
-          .genas-stat-lbl{font-size:11px;color:rgba(255,255,255,0.50);font-weight:500;text-transform:uppercase;letter-spacing:1px;margin-top:4px}
           .genas-svc{background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);padding:80px 40px}
           .genas-svc-inner{max-width:1280px;margin:0 auto}
           .genas-sec-ey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;display:block;margin-bottom:12px}
@@ -147,34 +88,25 @@ export default function Page() {
           .genas-rel-tag:hover{border-color:#D97706;color:#D97706;background:#fff;transform:translateY(-2px);box-shadow:0 4px 16px rgba(15,52,96,0.08)}
           @media(max-width:1024px){.genas-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){
-            .genas-hero,.genas-svc,.genas-faq,.genas-cta,.genas-related{padding:60px 20px}
-            .genas-stats,.genas-stats-inner{padding:16px 20px}
-            .genas-stats-inner{grid-template-columns:repeat(2,1fr)}
+            .genas-svc,.genas-faq,.genas-cta,.genas-related{padding:60px 20px}
             .genas-grid{grid-template-columns:1fr}
           }
         `}</style>
       </Head>
 
-      <section className="genas-hero">
-        <div className="genas-hero-orb" />
-        <div className="genas-hero-inner">
-          <span className="genas-eyebrow">
-            <span style={{width:6,height:6,borderRadius:'50%',background:'#D97706',display:'inline-block'}} />
-            1Solutions AI Practice
-          </span>
-          <h1 className="genas-h1">Generative AI Services<br /><span>Build with Generative AI</span></h1>
-          <p className="genas-sub">From AI content pipelines to image generation workflows, RAG applications, and multi-modal AI products — we design, build, and deploy generative AI solutions that create real business value.</p>
-          <div className="genas-btns">
-            <Link href="#contact" className="genas-btn-p">Get a Free Consultation →</Link>
-            <Link href="#services" className="genas-btn-g">View Services</Link>
-          </div>
-        </div>
-        <div className="genas-stats" ref={statsRef}>
-          <div className="genas-stats-inner">
-            {STATS.map(([lbl, val]) => <Stat key={lbl} label={lbl} val={val} started={started} />)}
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="1Solutions AI Practice"
+        title={<>Generative AI Services - <AuroraText>Build with Generative AI</AuroraText></>}
+        subtext="From AI content pipelines to image generation workflows, RAG applications, and multi-modal AI products — we design, build, and deploy generative AI solutions that create real business value."
+        primaryCta={{ label: 'Get a Free Consultation', href: '#contact' }}
+        secondaryCta={{ label: 'View Services', href: '#services' }}
+        stats={[
+          { label: 'GenAI Projects Delivered', value: '120', suffix: '+' },
+          { label: 'AI Models Worked With', value: '20', suffix: '+' },
+          { label: 'Years Tech Experience', value: '15', suffix: '+' },
+          { label: 'Client Retention', value: '97', suffix: '%' },
+        ]}
+      />
 
       <section className="genas-svc" id="services">
         <div className="genas-svc-inner">

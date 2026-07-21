@@ -2,22 +2,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-
-function useCountUp(target, duration = 1800) {
-  const [count, setCount] = useState(0);
-  const raf = useRef(null);
-  const start = (t) => {
-    const s = performance.now();
-    const step = (now) => {
-      const p = Math.min((now - s) / duration, 1);
-      setCount(Math.floor(p * t));
-      if (p < 1) raf.current = requestAnimationFrame(step);
-    };
-    raf.current = requestAnimationFrame(step);
-  };
-  useEffect(() => () => cancelAnimationFrame(raf.current), []);
-  return [count, start];
-}
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const ACCENT = '#e8511a';
 const SKILLS = [
@@ -60,9 +46,6 @@ export default function KlaviyoEmailMarketingAgency() {
   const enR  = useRef(null); const [enV, setEnV] = useState(false);
   const whR  = useRef(null); const [whV, setWhV] = useState(false);
   const prR  = useRef(null); const [prV, setPrV] = useState(false);
-  const stGr = useRef(null); const [stV, setStV] = useState(false);
-  const [c1, s1] = useCountUp(100); const [c2, s2] = useCountUp(35);
-  const [c3, s3] = useCountUp(49);  const [c4, s4] = useCountUp(12);
   const [openFaq, setOpenFaq] = useState(null);
 
   useEffect(() => {
@@ -71,9 +54,7 @@ export default function KlaviyoEmailMarketingAgency() {
     const o2 = obs(enR, setEnV); if (enR.current) o2.observe(enR.current);
     const o3 = obs(whR, setWhV); if (whR.current) o3.observe(whR.current);
     const o4 = obs(prR, setPrV); if (prR.current) o4.observe(prR.current);
-    const o5 = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStV(true); s1(100); s2(35); s3(49); s4(12); o5.disconnect(); } }, { threshold: 0.2 });
-    if (stGr.current) o5.observe(stGr.current);
-    return () => [o1, o2, o3, o4, o5].forEach(o => o.disconnect());
+    return () => [o1, o2, o3, o4].forEach(o => o.disconnect());
   }, []);
 
   const LD = {
@@ -99,14 +80,8 @@ export default function KlaviyoEmailMarketingAgency() {
         <link rel="canonical" href="https://www.1solutions.biz/klaviyo-email-marketing-agency/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
-          .kla-hero{background:linear-gradient(135deg,${ACCENT} 0%,#8c2c08 60%,#b33e12 100%);color:#fff;padding:100px 20px 80px;text-align:center}
-          .kla-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin:0 0 18px;line-height:1.15}
-          .kla-hero p{font-size:1.15rem;max-width:620px;margin:0 auto 36px;opacity:.88;line-height:1.7}
-          .kla-hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           .kla-btn-primary{background:#FE9700;color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s}
           .kla-btn-primary:hover{opacity:.88}
-          .kla-btn-outline{border:2px solid rgba(255,255,255,.7);color:#fff;padding:13px 28px;border-radius:8px;font-weight:600;font-size:1rem;text-decoration:none;transition:border-color .2s}
-          .kla-btn-outline:hover{border-color:#fff}
           .kla-sec{padding:70px 20px}.kla-sec-alt{background:#fff7f3}
           .kla-wrap{max-width:1100px;margin:0 auto}
           .kla-sec-title{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:800;color:#111;text-align:center;margin:0 0 12px}
@@ -131,10 +106,6 @@ export default function KlaviyoEmailMarketingAgency() {
           .kla-step-n{width:48px;height:48px;border-radius:50%;background:${ACCENT};color:#fff;font-size:1.1rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
           .kla-step h3{font-size:1rem;font-weight:700;color:#111;margin:0 0 8px}
           .kla-step p{color:#666;font-size:.9rem;line-height:1.6;margin:0}
-          .kla-stats{background:${ACCENT};padding:60px 20px;color:#fff}
-          .kla-stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;max-width:900px;margin:0 auto;text-align:center}
-          .kla-stat-val{font-size:2.8rem;font-weight:900;line-height:1}
-          .kla-stat-label{font-size:.95rem;opacity:.82;margin-top:6px}
           .kla-faq{max-width:760px;margin:0 auto}
           .kla-faq-item{border-bottom:1px solid #e5e5e5;padding:20px 0}
           .kla-faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;color:#111;font-size:1rem;gap:12px}
@@ -144,17 +115,21 @@ export default function KlaviyoEmailMarketingAgency() {
           .kla-cta{background:linear-gradient(135deg,${ACCENT},#8c2c08);padding:80px 20px;text-align:center;color:#fff}
           .kla-cta h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin:0 0 16px}
           .kla-cta p{font-size:1.08rem;opacity:.88;max-width:560px;margin:0 auto 36px;line-height:1.7}
-          @media(max-width:600px){.kla-hero{padding:80px 18px 60px}.kla-stats-grid{grid-template-columns:1fr 1fr}}
         `}</style>
       </Head>
-      <section className="kla-hero">
-        <h1>Klaviyo Email Marketing Agency<br/>Flows, Campaigns &amp; SMS That Drive E-Commerce Revenue</h1>
-        <p>We set up and optimise Klaviyo for DTC and e-commerce brands - from welcome series and abandoned cart flows to post-purchase sequences and SMS campaigns. Certified Klaviyo partners with 15+ years of e-commerce experience.</p>
-        <div className="kla-hero-btns">
-          <Link href="/contact-us" className="kla-btn-primary">Get a Free Klaviyo Audit →</Link>
-          <Link href="/portfolio" className="kla-btn-outline">View Portfolio</Link>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="Klaviyo Email Marketing Agency · Certified Klaviyo Partners"
+        title={<>Flows, Campaigns &amp; SMS That Drive <AuroraText>E-Commerce Revenue</AuroraText></>}
+        subtext="We set up and optimise Klaviyo for DTC and e-commerce brands - from welcome series and abandoned cart flows to post-purchase sequences and SMS campaigns. Certified Klaviyo partners with 15+ years of e-commerce experience."
+        primaryCta={{ label: 'Get a Free Klaviyo Audit →', href: '/contact-us' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        stats={[
+          { label: 'Klaviyo Brands Managed', value: '100', suffix: '+' },
+          { label: 'Avg Email Revenue Share', value: '35', suffix: '%' },
+          { label: 'Client Satisfaction', value: '9', prefix: '4.', suffix: '/5' },
+          { label: 'Avg Flows Built Per Account', value: '12' },
+        ]}
+      />
       <section className="kla-sec" ref={skR}>
         <div className="kla-wrap">
           <h2 className="kla-sec-title">Klaviyo Skills &amp; Services</h2>
@@ -174,14 +149,6 @@ export default function KlaviyoEmailMarketingAgency() {
           <h2 className="kla-sec-title">Why Choose 1Solutions as Your Klaviyo Agency?</h2>
           <p className="kla-sec-sub">We treat email as a revenue channel, not a broadcast tool - every decision is tied to measurable business outcomes.</p>
           <div className="kla-why-grid">{WHY.map((w, i) => <div key={w.h} className={`kla-why-item${whV ? ' kla-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
-        </div>
-      </section>
-      <section className="kla-stats" ref={stGr}>
-        <div className="kla-stats-grid">
-          <div><div className="kla-stat-val">{stV ? c1 : 0}+</div><div className="kla-stat-label">Klaviyo Brands Managed</div></div>
-          <div><div className="kla-stat-val">{stV ? c2 : 0}%</div><div className="kla-stat-label">Avg Email Revenue Share</div></div>
-          <div><div className="kla-stat-val">4.{stV ? c3 : 0}/5</div><div className="kla-stat-label">Client Satisfaction</div></div>
-          <div><div className="kla-stat-val">{stV ? c4 : 0}</div><div className="kla-stat-label">Avg Flows Built Per Account</div></div>
         </div>
       </section>
       <section className="kla-sec kla-sec-alt" ref={prR}>

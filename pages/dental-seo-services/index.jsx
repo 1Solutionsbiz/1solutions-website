@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Dentist Keyword Strategy', desc: 'Comprehensive keyword mapping across general dentistry, cosmetic dentistry, dental implants, Invisalign, emergency dental, teeth whitening, orthodontist, and periodontics - targeting every treatment a patient searches for at every stage of their decision journey.' },
@@ -85,29 +87,10 @@ export default function DentalSeoServices() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           * { box-sizing: border-box; }
-          .dnseo-hero { position:relative;overflow:hidden;padding:100px 40px 90px;background:linear-gradient(135deg,rgba(0,85,102,0.10) 0%,rgba(255,255,255,0.72) 50%,rgba(0,85,102,0.06) 100%); }
-          .dnseo-orb1 { position:absolute;top:-120px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(0,85,102,0.13) 0%,transparent 70%);pointer-events:none;filter:blur(10px); }
-          .dnseo-orb2 { position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(0,150,180,0.08) 0%,transparent 70%);pointer-events:none;filter:blur(8px); }
-          .dnseo-inner { max-width:1200px;margin:0 auto;position:relative;z-index:1; }
-          .dnseo-eyebrow { display:inline-flex;align-items:center;gap:8px;background:rgba(0,85,102,0.10);border:1px solid rgba(0,85,102,0.22);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#005566;margin-bottom:24px; }
-          .dnseo-h1 { font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .dnseo-desc { font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:660px; }
-          .dnseo-btns { display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px; }
           .dnseo-btn-p { display:inline-flex;align-items:center;gap:8px;background:#005566;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 6px 24px rgba(0,85,102,0.28); }
           .dnseo-btn-p:hover { background:#007a8c;transform:translateY(-2px); }
           .dnseo-btn-s { display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.7);color:#005566;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;border:1.5px solid rgba(0,85,102,0.20);transition:all 0.25s;backdrop-filter:blur(8px); }
           .dnseo-btn-s:hover { background:#fff;transform:translateY(-2px); }
-          .dnseo-trust { display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-bottom:48px; }
-          .dnseo-badge { display:flex;align-items:center;gap:6px;font-size:12px;color:#6b7280;font-weight:500; }
-          .dnseo-stats-bar { display:flex;border:1px solid rgba(0,85,102,0.12);border-radius:16px;background:rgba(255,255,255,0.75);backdrop-filter:blur(12px);overflow:hidden;max-width:720px; }
-          .dnseo-stat-item { flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(0,85,102,0.08); }
-          .dnseo-stat-item:last-child { border-right:none; }
-          .dnseo-stat-num { font-size:1.6rem;font-weight:900;color:#005566;line-height:1;letter-spacing:-1px; }
-          .dnseo-stat-lbl { font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px; }
-
-
-
-
 
           .dnseo-sec { padding:80px 40px; }
           .dnseo-sec-inner { max-width:1200px;margin:0 auto; }
@@ -155,8 +138,7 @@ export default function DentalSeoServices() {
           .dnseo-cta-p { font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px; }
           @media (max-width:900px) { .dnseo-grid3,.dnseo-res-grid { grid-template-columns:1fr 1fr; } }
           @media (max-width:600px) {
-            .dnseo-hero,.dnseo-sec,.dnseo-results,.dnseo-cta { padding-left:20px;padding-right:20px; }
-            .dnseo-hero { padding-top:60px;padding-bottom:50px; }
+            .dnseo-sec,.dnseo-results,.dnseo-cta { padding-left:20px;padding-right:20px; }
             .dnseo-grid3,.dnseo-res-grid { grid-template-columns:1fr; }
           }
         
@@ -165,45 +147,19 @@ export default function DentalSeoServices() {
         </style>
       </Head>
 
-      <section className="dnseo-hero">
-        <div className="dnseo-orb1" /><div className="dnseo-orb2" />
-        <div className="dnseo-inner">
-          <span className="dnseo-eyebrow">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
-            Dental SEO - General · Cosmetic · Implants · Orthodontics
-          </span>
-          <h1 className="dnseo-h1">Dental SEO Services That Fill<br/>Your Patient Appointment Book</h1>
-          <p className="dnseo-desc">1Solutions builds dental SEO strategies that attract high-value patients searching for implants, cosmetic dentistry, Invisalign, and emergency dental care. Treatment-specific pages, GBP dominance, and compliant review systems - engineered to grow new patient numbers month after month.</p>
-          <div className="dnseo-btns">
-            <a href="#contact" className="dnseo-btn-p">
-              Get Your Free Dental SEO Audit
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <Link href="/affordable-seo-packages/" className="dnseo-btn-s">View SEO Packages</Link>
-          </div>
-          <div className="dnseo-trust">
-            {['Dental Industry Specialists','HIPAA-Aware Marketing','Treatment-Level Coverage','New Patient Attribution'].map(t => (
-              <span key={t} className="dnseo-badge">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#005566" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                {t}
-              </span>
-            ))}
-          </div>
-          <div className="dnseo-stats-bar">
-            {[
-              { num:'77%', lbl:'of patients search online before booking a dentist' },
-              { num:'$3,000+', lbl:'avg cosmetic dental case value' },
-              { num:'65%', lbl:'click GBP listings for dentist searches' },
-              { num:'4.9×', lbl:'avg ROI for dental SEO' },
-            ].map(s => (
-              <div key={s.lbl} className="dnseo-stat-item">
-                <span className="dnseo-stat-num">{s.num}</span>
-                <span className="dnseo-stat-lbl">{s.lbl}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="Dental SEO - General · Cosmetic · Implants · Orthodontics"
+        title={<>Dental SEO Services That Fill <AuroraText>Your Patient Appointment Book</AuroraText></>}
+        subtext="1Solutions builds dental SEO strategies that attract high-value patients searching for implants, cosmetic dentistry, Invisalign, and emergency dental care. Treatment-specific pages, GBP dominance, and compliant review systems - engineered to grow new patient numbers month after month."
+        primaryCta={{ label: 'Get Your Free Dental SEO Audit', href: '#contact' }}
+        secondaryCta={{ label: 'View SEO Packages', href: '/affordable-seo-packages/' }}
+        stats={[
+          { label: 'Patients Search Online First', value: '77', suffix: '%' },
+          { label: 'Avg Cosmetic Case Value', value: '3,000', prefix: '$', suffix: '+' },
+          { label: 'Click GBP Listings First', value: '65', suffix: '%' },
+          { label: 'Avg Dental SEO ROI', value: '9', prefix: '4.', suffix: '×' },
+        ]}
+      />
 
       <section className="dnseo-sec dnseo-bg" id="services">
         <div className="dnseo-sec-inner">

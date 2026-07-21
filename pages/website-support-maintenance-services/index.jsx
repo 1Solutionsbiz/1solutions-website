@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -153,58 +155,21 @@ const FAQS = [
   { q: 'What CMS platforms do you support?', a: 'We maintain WordPress, WooCommerce, Joomla, Drupal, Magento, OpenCart, PrestaShop, and custom-built PHP, Laravel, Next.js, and React websites. For each platform we maintain current expertise in its update cycles, security advisories, and known vulnerability patterns. If your website runs on a platform not listed here, contact us - we assess each situation individually.' },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const num = parseInt(target.replace(/\D/g, ''), 10);
-    if (!num) return;
-    let t0 = null;
-    const step = ts => {
-      if (!t0) t0 = ts;
-      const p = Math.min((ts - t0) / duration, 1);
-      setCount(Math.floor((1 - Math.pow(1 - p, 3)) * num));
-      if (p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function StatItem({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');  return (
-    <div className="sm-stat-col">
-      <div className="sm-stat-val">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div>
-      <div className="sm-stat-label">{label}</div>
-    </div>
-  );
-}
-
 export default function WebsiteMaintenanceServices() {
   const [showAllSvc, setShowAllSvc] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleSvcCards, setVisibleSvcCards] = useState([]);
   const [visibleEngCards, setVisibleEngCards] = useState([]);
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const [visibleStackCards, setVisibleStackCards] = useState([]);
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const svcGridRef = useRef(null);
   const engGridRef = useRef(null);
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
   const stackGridRef = useRef(null);
-
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStatsStarted(true); obs.disconnect(); } }, { threshold: 0.4 });
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   useEffect(() => {
     const pairs = [[svcGridRef, SERVICES.length, setVisibleSvcCards],[engGridRef, 3, setVisibleEngCards],[whyGridRef, WHY_CARDS.length, setVisibleWhyCards],[testiGridRef, 3, setVisibleTestiCards],[stackGridRef, TECH_STACK.length, setVisibleStackCards]];
@@ -271,31 +236,6 @@ export default function WebsiteMaintenanceServices() {
           .sm-orb-2{width:780px;height:780px;background:radial-gradient(circle,rgba(217,119,6,.22) 0%,rgba(245,158,11,.10) 40%,transparent 70%);bottom:0;left:-230px}
           .sm-orb-3{width:550px;height:550px;background:radial-gradient(circle,rgba(8,145,178,.14) 0%,transparent 70%);top:42%;left:-120px;transform:translateY(-50%)}
 
-          .sm-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
-          .sm-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
-          .sm-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .sm-hero-desc{font-size:16px;color:#3A507A;line-height:1.65;max-width:740px;margin:0 auto 24px}
-          .sm-trust-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
-          .sm-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07)}
-          .sm-badge-dot{width:7px;height:7px;border-radius:50%;background:#0f766e;flex-shrink:0}
-          .sm-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .sm-btn-primary{display:inline-block;padding:14px 36px;background:#0f766e;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(15,118,110,.28)}
-          .sm-btn-primary:hover{background:#0F3460;transform:translateY(-2px)}
-          .sm-btn-ghost{display:inline-block;padding:14px 36px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .sm-btn-ghost:hover{background:rgba(255,255,255,.85);border-color:rgba(15,118,110,.5);transform:translateY(-2px)}
-          .sm-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:28px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .sm-stat-col{padding:18px 16px;text-align:center;border-right:1px solid rgba(15,52,96,.10)}
-          .sm-stat-col:last-child{border-right:none}
-          .sm-stat-val{font-size:28px;font-weight:900;color:#0f766e;letter-spacing:-.5px;line-height:1}
-          .sm-stat-label{font-size:11px;color:#4A6080;font-weight:500;margin-top:5px}
-          .sm-logos{position:relative;z-index:2;padding:24px 40px 52px;display:flex;flex-direction:column;align-items:center;gap:14px}
-          .sm-logos-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6A80A0}
-          .sm-logos-wrap{width:100%;overflow:hidden}
-          .sm-logos-track{display:flex;align-items:center;gap:60px;width:max-content;animation:sm-marquee 28s linear infinite}
-          .sm-logos-track:hover{animation-play-state:paused}
-          @keyframes sm-marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-          .sm-clogo{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
-          .sm-clogo:hover{opacity:.85;filter:grayscale(0%)}
           .sm-s-eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
           .sm-s-title{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .sm-s-desc{font-size:15px;color:#4A6080;line-height:1.7}
@@ -443,8 +383,8 @@ export default function WebsiteMaintenanceServices() {
           .sm-rtag-teal{background:rgba(20,184,166,.09);border-color:rgba(20,184,166,.28);color:#0F766E}
           .sm-rtag-green{background:rgba(22,163,74,.09);border-color:rgba(22,163,74,.28);color:#14532d}
           .sm-rtag-rose{background:rgba(225,29,72,.09);border-color:rgba(225,29,72,.28);color:#9f1239}
-          @media(max-width:1024px){.sm-hero h1,.sm-s-title,.sm-faq h2{font-size:36px}.sm-svc-grid{grid-template-columns:repeat(2,1fr)}.sm-stack-grid{grid-template-columns:repeat(2,1fr)}.sm-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.sm-eng-card.feat{transform:none}.sm-eng-card.feat.sm-ev{transform:none}.sm-eng-card.feat.sm-ev:hover{transform:translateY(-4px)}.sm-why-grid{grid-template-columns:repeat(2,1fr)}.sm-tgrid{grid-template-columns:1fr}.sm-contact-grid{grid-template-columns:1fr}}
-          @media(max-width:768px){.sm-hero{padding:28px 20px 20px}.sm-hero h1{font-size:26px;letter-spacing:-.3px}.sm-stats{grid-template-columns:1fr 1fr}.sm-stat-col:nth-child(2){border-right:none}.sm-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.sm-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.sm-logos{padding:16px 20px 28px}.sm-svc-section,.sm-stack-section,.sm-eng-section,.sm-process-section,.sm-testi,.sm-why-section,.sm-faq,.sm-related{padding:52px 20px}.sm-contact{padding:48px 20px}.sm-svc-grid,.sm-stack-grid,.sm-why-grid{grid-template-columns:1fr}.sm-frow{grid-template-columns:1fr}.sm-ctitle{font-size:28px}.sm-s-title{font-size:28px}}
+          @media(max-width:1024px){.sm-s-title,.sm-faq h2{font-size:36px}.sm-svc-grid{grid-template-columns:repeat(2,1fr)}.sm-stack-grid{grid-template-columns:repeat(2,1fr)}.sm-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.sm-eng-card.feat{transform:none}.sm-eng-card.feat.sm-ev{transform:none}.sm-eng-card.feat.sm-ev:hover{transform:translateY(-4px)}.sm-why-grid{grid-template-columns:repeat(2,1fr)}.sm-tgrid{grid-template-columns:1fr}.sm-contact-grid{grid-template-columns:1fr}}
+          @media(max-width:768px){.sm-svc-section,.sm-stack-section,.sm-eng-section,.sm-process-section,.sm-testi,.sm-why-section,.sm-faq,.sm-related{padding:52px 20px}.sm-contact{padding:48px 20px}.sm-svc-grid,.sm-stack-grid,.sm-why-grid{grid-template-columns:1fr}.sm-frow{grid-template-columns:1fr}.sm-ctitle{font-size:28px}.sm-s-title{font-size:28px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
@@ -472,38 +412,19 @@ export default function WebsiteMaintenanceServices() {
       <div className="sm-page">
         <div className="sm-orb sm-orb-1" /><div className="sm-orb sm-orb-2" /><div className="sm-orb sm-orb-3" />
 
-        <section className="sm-hero">
-          <span className="sm-eyebrow">Website Support & Maintenance Services</span>
-          <h1>Website Maintenance Services - Security, Updates, Uptime & Performance</h1>
-          <p className="sm-hero-desc">Monthly website maintenance retainers for businesses that need their website kept secure, fast, and running. CMS updates, security patching, daily backups, uptime monitoring, Core Web Vitals, bug fixes, and monthly development hours - all CMS platforms supported.</p>
-          <div className="sm-trust-row">
-            {['200+ Websites Maintained','All CMS Platforms','Security-First Approach','24/7 Uptime Monitoring','15+ Years Experience'].map(b => (
-              <div className="sm-badge" key={b}><span className="sm-badge-dot" />{b}</div>
-            ))}
-          </div>
-          <div className="sm-ctas">
-            <Link href="#contact" className="sm-btn-primary">Get a Maintenance Quote</Link>
-            <Link href="#plans" className="sm-btn-ghost">View Care Plans →</Link>
-          </div>
-        </section>
-
-        <div className="sm-stats" ref={statsRef}>
-          {[['200+','Websites Maintained'],['15+','Years Experience'],['99.9%','Avg Uptime Achieved'],['98%','Client Retention']].map(([v, l]) => (
-            <StatItem key={l} label={l} val={v} started={statsStarted} />
-          ))}
-        </div>
-
-        <div className="sm-logos">
-          <span className="sm-logos-label">Trusted by Leading Businesses</span>
-          <div className="sm-logos-wrap">
-            <div className="sm-logos-track">
-              {[['/logo/Indian_Express_Logo_full.png','Indian Express'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],['/logo/Uniphore.jpg','Uniphore'],['/logo/ICCoLogo.png','ICC'],['/logo/Honor_Logo_(2020).svg.png','Honor'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],['/logo/Indian_Express_Logo_full.png','Indian Express 2'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon 2'],['/logo/Uniphore.jpg','Uniphore 2'],['/logo/ICCoLogo.png','ICC 2'],['/logo/Honor_Logo_(2020).svg.png','Honor 2'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv 2']].map(([src, alt]) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img key={alt} src={src} alt={alt.replace(/ \d$/, '')} className="sm-clogo" />
-              ))}
-            </div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="Website Support & Maintenance Services · 15+ Years Experience"
+          title={<>Website Maintenance Services - <AuroraText>Security, Updates, Uptime & Performance</AuroraText></>}
+          subtext="Monthly website maintenance retainers for businesses that need their website kept secure, fast, and running. CMS updates, security patching, daily backups, uptime monitoring, Core Web Vitals, bug fixes, and monthly development hours - all CMS platforms supported."
+          primaryCta={{ label: 'Get a Maintenance Quote', href: '#contact' }}
+          secondaryCta={{ label: 'View Care Plans', href: '#plans' }}
+          stats={[
+            { label: 'Websites Maintained', value: '200', suffix: '+' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'Avg Uptime Achieved', value: '9', prefix: '99.', suffix: '%' },
+            { label: 'Client Retention', value: '98', suffix: '%' },
+          ]}
+        />
 
         <section className="sm-svc-section" aria-labelledby="sm-svc-heading">
           <div className="sm-inner">

@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -151,58 +153,21 @@ const FAQS = [
   { q: 'Do you offer ongoing Joomla maintenance and support?', a: 'Yes. Our Joomla maintenance retainers cover monthly core and extension updates, security patch application within 48 hours of release, monthly security scan reports, uptime monitoring, daily automated backup verification, performance monitoring (PageSpeed, Core Web Vitals), and a set number of hours each month for content updates, design changes, and new feature additions. We also offer emergency response for hacked or down Joomla sites with a 4-hour SLA for critical incidents.' },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const num = parseInt(target.replace(/\D/g, ''), 10);
-    if (!num) return;
-    let t0 = null;
-    const step = ts => {
-      if (!t0) t0 = ts;
-      const p = Math.min((ts - t0) / duration, 1);
-      setCount(Math.floor((1 - Math.pow(1 - p, 3)) * num));
-      if (p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function StatItem({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');  return (
-    <div className="jo-stat-col">
-      <div className="jo-stat-val">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div>
-      <div className="jo-stat-label">{label}</div>
-    </div>
-  );
-}
-
 export default function JoomlaDevelopment() {
   const [showAllSvc, setShowAllSvc] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleSvcCards, setVisibleSvcCards] = useState([]);
   const [visibleEngCards, setVisibleEngCards] = useState([]);
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const [visibleStackCards, setVisibleStackCards] = useState([]);
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const svcGridRef = useRef(null);
   const engGridRef = useRef(null);
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
   const stackGridRef = useRef(null);
-
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStatsStarted(true); obs.disconnect(); } }, { threshold: 0.4 });
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   useEffect(() => {
     const pairs = [[svcGridRef, SERVICES.length, setVisibleSvcCards],[engGridRef, 3, setVisibleEngCards],[whyGridRef, WHY_CARDS.length, setVisibleWhyCards],[testiGridRef, 3, setVisibleTestiCards],[stackGridRef, TECH_STACK.length, setVisibleStackCards]];
@@ -274,31 +239,6 @@ export default function JoomlaDevelopment() {
 
 
 
-          .jo-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
-          .jo-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
-          .jo-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .jo-hero-desc{font-size:16px;color:#3A507A;line-height:1.65;max-width:740px;margin:0 auto 24px}
-          .jo-trust-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
-          .jo-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07)}
-          .jo-badge-dot{width:7px;height:7px;border-radius:50%;background:#e11d48;flex-shrink:0}
-          .jo-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .jo-btn-primary{display:inline-block;padding:14px 36px;background:#e11d48;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(225,29,72,.28)}
-          .jo-btn-primary:hover{background:#0F3460;transform:translateY(-2px)}
-          .jo-btn-ghost{display:inline-block;padding:14px 36px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .jo-btn-ghost:hover{background:rgba(255,255,255,.85);border-color:rgba(225,29,72,.5);transform:translateY(-2px)}
-          .jo-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:28px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .jo-stat-col{padding:18px 16px;text-align:center;border-right:1px solid rgba(15,52,96,.10)}
-          .jo-stat-col:last-child{border-right:none}
-          .jo-stat-val{font-size:28px;font-weight:900;color:#e11d48;letter-spacing:-.5px;line-height:1}
-          .jo-stat-label{font-size:11px;color:#4A6080;font-weight:500;margin-top:5px}
-          .jo-logos{position:relative;z-index:2;padding:24px 40px 52px;display:flex;flex-direction:column;align-items:center;gap:14px}
-          .jo-logos-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6A80A0}
-          .jo-logos-wrap{width:100%;overflow:hidden}
-          .jo-logos-track{display:flex;align-items:center;gap:60px;width:max-content;animation:jo-marquee 28s linear infinite}
-          .jo-logos-track:hover{animation-play-state:paused}
-          @keyframes jo-marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-          .jo-clogo{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
-          .jo-clogo:hover{opacity:.85;filter:grayscale(0%)}
           .jo-s-eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
           .jo-s-title{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .jo-s-desc{font-size:15px;color:#4A6080;line-height:1.7}
@@ -446,8 +386,8 @@ export default function JoomlaDevelopment() {
           .jo-rtag-teal{background:rgba(20,184,166,.09);border-color:rgba(20,184,166,.28);color:#0F766E}
           .jo-rtag-green{background:rgba(22,163,74,.09);border-color:rgba(22,163,74,.28);color:#14532d}
           .jo-rtag-rose{background:rgba(225,29,72,.09);border-color:rgba(225,29,72,.28);color:#9f1239}
-          @media(max-width:1024px){.jo-hero h1,.jo-s-title,.jo-faq h2{font-size:36px}.jo-svc-grid{grid-template-columns:repeat(2,1fr)}.jo-stack-grid{grid-template-columns:repeat(2,1fr)}.jo-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.jo-eng-card.feat{transform:none}.jo-eng-card.feat.jo-ev{transform:none}.jo-eng-card.feat.jo-ev:hover{transform:translateY(-4px)}.jo-why-grid{grid-template-columns:repeat(2,1fr)}.jo-tgrid{grid-template-columns:1fr}.jo-contact-grid{grid-template-columns:1fr}}
-          @media(max-width:768px){.jo-breadcrumb{padding:12px 20px 0}.jo-hero{padding:28px 20px 20px}.jo-hero h1{font-size:26px;letter-spacing:-.3px}.jo-stats{grid-template-columns:1fr 1fr}.jo-stat-col:nth-child(2){border-right:none}.jo-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.jo-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.jo-logos{padding:16px 20px 28px}.jo-svc-section,.jo-stack-section,.jo-eng-section,.jo-process-section,.jo-testi,.jo-why-section,.jo-faq,.jo-related{padding:52px 20px}.jo-contact{padding:48px 20px}.jo-svc-grid,.jo-stack-grid,.jo-why-grid{grid-template-columns:1fr}.jo-frow{grid-template-columns:1fr}.jo-ctitle{font-size:28px}.jo-s-title{font-size:28px}}
+          @media(max-width:1024px){.jo-s-title,.jo-faq h2{font-size:36px}.jo-svc-grid{grid-template-columns:repeat(2,1fr)}.jo-stack-grid{grid-template-columns:repeat(2,1fr)}.jo-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.jo-eng-card.feat{transform:none}.jo-eng-card.feat.jo-ev{transform:none}.jo-eng-card.feat.jo-ev:hover{transform:translateY(-4px)}.jo-why-grid{grid-template-columns:repeat(2,1fr)}.jo-tgrid{grid-template-columns:1fr}.jo-contact-grid{grid-template-columns:1fr}}
+          @media(max-width:768px){.jo-breadcrumb{padding:12px 20px 0}.jo-svc-section,.jo-stack-section,.jo-eng-section,.jo-process-section,.jo-testi,.jo-why-section,.jo-faq,.jo-related{padding:52px 20px}.jo-contact{padding:48px 20px}.jo-svc-grid,.jo-stack-grid,.jo-why-grid{grid-template-columns:1fr}.jo-frow{grid-template-columns:1fr}.jo-ctitle{font-size:28px}.jo-s-title{font-size:28px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
@@ -475,38 +415,19 @@ export default function JoomlaDevelopment() {
       <div className="jo-page">
         <div className="jo-orb jo-orb-1" /><div className="jo-orb jo-orb-2" /><div className="jo-orb jo-orb-3" />
 
-        <section className="jo-hero">
-          <span className="jo-eyebrow">Joomla Development Company</span>
-          <h1>Expert Joomla Development - Custom Templates, Components & Joomla 5 Upgrades</h1>
-          <p className="jo-hero-desc">We build, upgrade, and maintain Joomla websites - custom templates from scratch, bespoke MVC components and plugins, multilingual portals, eCommerce, Joomla 3.x to 5.x upgrades, and security hardening. 15+ years of Joomla expertise for businesses worldwide.</p>
-          <div className="jo-trust-row">
-            {['100+ Joomla Projects','Joomla 4.x & 5.x Experts','Custom Templates & Components','15+ Years Experience','Security Hardening Included'].map(b => (
-              <div className="jo-badge" key={b}><span className="jo-badge-dot" />{b}</div>
-            ))}
-          </div>
-          <div className="jo-ctas">
-            <Link href="#contact" className="jo-btn-primary">Start Your Joomla Project</Link>
-            <Link href="#engagement" className="jo-btn-ghost">View Engagement Models →</Link>
-          </div>
-        </section>
-
-        <div className="jo-stats" ref={statsRef}>
-          {[['100+','Joomla Projects'],['15+','Years Experience'],['50+','Custom Extensions Built'],['98%','Client Retention']].map(([v, l]) => (
-            <StatItem key={l} label={l} val={v} started={statsStarted} />
-          ))}
-        </div>
-
-        <div className="jo-logos">
-          <span className="jo-logos-label">Trusted by Leading Organisations</span>
-          <div className="jo-logos-wrap">
-            <div className="jo-logos-track">
-              {[['/logo/Indian_Express_Logo_full.png','Indian Express'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],['/logo/Uniphore.jpg','Uniphore'],['/logo/ICCoLogo.png','ICC'],['/logo/Honor_Logo_(2020).svg.png','Honor'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],['/logo/Indian_Express_Logo_full.png','Indian Express 2'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon 2'],['/logo/Uniphore.jpg','Uniphore 2'],['/logo/ICCoLogo.png','ICC 2'],['/logo/Honor_Logo_(2020).svg.png','Honor 2'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv 2']].map(([src, alt]) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img key={alt} src={src} alt={alt.replace(/ \d$/, '')} className="jo-clogo" />
-              ))}
-            </div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="Joomla Development Company · Joomla 4.x & 5.x Experts · Security Hardening Included"
+          title={<>Expert Joomla Development - <AuroraText>Custom Templates, Components &amp; Joomla 5 Upgrades</AuroraText></>}
+          subtext="We build, upgrade, and maintain Joomla websites - custom templates from scratch, bespoke MVC components and plugins, multilingual portals, eCommerce, Joomla 3.x to 5.x upgrades, and security hardening. 15+ years of Joomla expertise for businesses worldwide."
+          primaryCta={{ label: 'Start Your Joomla Project', href: '#contact' }}
+          secondaryCta={{ label: 'View Engagement Models', href: '#engagement' }}
+          stats={[
+            { label: 'Joomla Projects', value: '100', suffix: '+' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'Custom Extensions Built', value: '50', suffix: '+' },
+            { label: 'Client Retention', value: '98', suffix: '%' },
+          ]}
+        />
 
         <section className="jo-svc-section" aria-labelledby="jo-svc-heading">
           <div className="jo-inner">

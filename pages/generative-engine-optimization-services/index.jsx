@@ -2,21 +2,10 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const RC_KEY = '6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs';
-
-function AuroraText({ children }) {
-  return (
-    <span style={{background:'linear-gradient(135deg,#4f46e5,#a855f7,#3b82f6,#06b6d4)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text',backgroundSize:'200% auto',animation:'geo-aurora 4s linear infinite'}}>{children}</span>
-  );
-}
-
-const STATS = [
-  { label: 'AI Platforms Monitored', val: '8+'  },
-  { label: 'GEO Clients Served',     val: '80+' },
-  { label: 'AI Citations Tracked',   val: '5K+' },
-  { label: 'Years SEO Experience',   val: '15+' },
-];
 
 const SERVICES = [
   { n:'01', title:'GEO Content Restructuring',  desc:'Restructure existing content for AI citation — clear entity definitions, authoritative source statements, factual density, and structured claim formats that LLMs prefer to cite.' },
@@ -220,28 +209,10 @@ export default function GenerativeEngineOptimizationServices() {
         <meta name="twitter:card"       content="summary_large_image" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <style>{`
-          @keyframes geo-aurora{0%{background-position:0% center}100%{background-position:200% center}}
           .geo-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .geo-page *,.geo-page *::before,.geo-page *::after{box-sizing:border-box}
 
           /* ── HERO ── */
-          .geo-hero{background:linear-gradient(135deg,#eef2ff 0%,#e8e4ff 30%,#e0e7ff 65%,#eef2ff 100%);position:relative;overflow:hidden;padding:60px 40px 0}
-          .geo-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.14) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .geo-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(79,70,229,0.08) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .geo-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}
-          .geo-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(79,70,229,0.08);border:1px solid rgba(79,70,229,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#4f46e5;margin-bottom:20px}
-          .geo-h1{font-size:clamp(2rem,4.5vw,3.4rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;color:#0F1F40;margin-bottom:16px;max-width:820px;margin-left:auto;margin-right:auto}
-          .geo-sub{font-size:1rem;color:#4A6080;line-height:1.7;max-width:580px;margin:0 auto 28px}
-          .geo-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:44px}
-          .geo-btn-p{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#4f46e5,#6366f1);color:#fff;padding:13px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all .25s;box-shadow:0 4px 20px rgba(79,70,229,0.28)}
-          .geo-btn-p:hover{background:linear-gradient(135deg,#3730a3,#4f46e5);box-shadow:0 8px 32px rgba(79,70,229,0.38);transform:translateY(-2px)}
-          .geo-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.18);color:#0F3460;padding:13px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all .25s}
-          .geo-btn-s:hover{border-color:#4f46e5;color:#4f46e5;transform:translateY(-2px)}
-          .geo-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:860px;margin:0 auto;background:rgba(255,255,255,0.60);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.88);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(79,70,229,0.08)}
-          .geo-stat{padding:18px 20px;text-align:center;border-right:1px solid rgba(79,70,229,0.10)}.geo-stat:last-child{border-right:none}
-          .geo-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .geo-stat-v{font-size:1.5rem;font-weight:900;color:#4f46e5;letter-spacing:-0.5px}
-
           /* ── SECTION SCAFFOLDING ── */
           .geo-white{background:#fff;padding:80px 40px}
           .geo-light{background:#f8fafd;padding:80px 40px}
@@ -361,13 +332,9 @@ export default function GenerativeEngineOptimizationServices() {
             .geo-cg{grid-template-columns:1fr}
           }
           @media(max-width:768px){
-            .geo-hero,.geo-white,.geo-light,.geo-indigo,.geo-plat,.geo-contact,.geo-related{padding:60px 24px}
-            .geo-hero{padding-top:60px;padding-bottom:0}
-            .geo-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}
-            .geo-stat:nth-child(2){border-right:none}
+            .geo-white,.geo-light,.geo-indigo,.geo-plat,.geo-contact,.geo-related{padding:60px 24px}
             .geo-grid,.geo-why-grid{grid-template-columns:1fr}
             .geo-step{grid-template-columns:56px 1fr}
-            .geo-btns{flex-direction:column;align-items:center}
             .geo-r2{grid-template-columns:1fr}
           }
         
@@ -379,32 +346,19 @@ export default function GenerativeEngineOptimizationServices() {
       <div className="geo-page">
 
         {/* ── HERO ── */}
-        <section className="geo-hero">
-          <div className="geo-o1"/><div className="geo-o2"/>
-          <div className="geo-in">
-            <span className="geo-ey">
-              <span style={{width:6,height:6,borderRadius:'50%',background:'#4f46e5',display:'inline-block'}}/>
-              Generative Engine Optimisation Services
-            </span>
-            <h1 className="geo-h1"><AuroraText>Get Cited in AI Search Answers</AuroraText><br/>with Expert GEO Services</h1>
-            <p className="geo-sub">Optimise your content to appear in Google AI Overviews, ChatGPT Search, Perplexity, and Gemini &mdash; where being cited replaces being ranked.</p>
-            <div className="geo-btns">
-              <a href="#geo-contact" className="geo-btn-p">
-                Start Your Free GEO Audit
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <Link href="/ai-seo-services/" className="geo-btn-s">AI SEO Services</Link>
-            </div>
-            <div className="geo-stats">
-              {STATS.map(s => (
-                <div key={s.label} className="geo-stat">
-                  <div className="geo-stat-l">{s.label}</div>
-                  <div className="geo-stat-v">{s.val}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Generative Engine Optimisation Services"
+          title={<><AuroraText>Get Cited in AI Search Answers</AuroraText> with Expert GEO Services</>}
+          subtext="Optimise your content to appear in Google AI Overviews, ChatGPT Search, Perplexity, and Gemini — where being cited replaces being ranked."
+          primaryCta={{ label: 'Start Your Free GEO Audit', href: '#geo-contact' }}
+          secondaryCta={{ label: 'AI SEO Services', href: '/ai-seo-services/' }}
+          stats={[
+            { label: 'AI Platforms Monitored', value: '8', suffix: '+' },
+            { label: 'GEO Clients Served', value: '80', suffix: '+' },
+            { label: 'AI Citations Tracked', value: '5', suffix: 'K+' },
+            { label: 'Years SEO Experience', value: '15', suffix: '+' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="geo-light">

@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 /* ─── Schema ─────────────────────────────────────────────────── */
 const SCHEMA = {
@@ -185,40 +187,10 @@ const FAQS = [
   { q: 'Do you build for Android TV and Wear OS as well as phones?', a: 'Yes. We develop for the full Android platform spectrum: Android TV (Leanback library, D-pad navigation, content recommendations, Android TV channels), Wear OS (health and fitness apps, watch face complications, Tiles for glanceable content, Wear Compose UI), and Android Auto (media and messaging apps via the Android for Cars App Library). We also build for Android tablets and foldables. If your product needs to span multiple Google surfaces, we build all of them from a shared Kotlin codebase with platform-specific UI layers.' },
 ];
 
-/* ─── Hooks ──────────────────────────────────────────────────── */
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const num = parseInt(target.replace(/\D/g, ''), 10);
-    if (!num) return;
-    let t0 = null;
-    const step = ts => {
-      if (!t0) t0 = ts;
-      const p = Math.min((ts - t0) / duration, 1);
-      setCount(Math.floor((1 - Math.pow(1 - p, 3)) * num));
-      if (p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function StatItem({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');  return (
-    <div className="an-stat-col">
-      <div className="an-stat-val">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div>
-      <div className="an-stat-label">{label}</div>
-    </div>
-  );
-}
-
 /* ─── Component ──────────────────────────────────────────────── */
 export default function AndroidAppDevelopment() {
   const [showAllSvc, setShowAllSvc] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleSvcCards, setVisibleSvcCards] = useState([]);
   const [visibleEngCards, setVisibleEngCards] = useState([]);
@@ -226,20 +198,12 @@ export default function AndroidAppDevelopment() {
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const [visibleStackCards, setVisibleStackCards] = useState([]);
 
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const svcGridRef = useRef(null);
   const engGridRef = useRef(null);
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
   const stackGridRef = useRef(null);
-
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStatsStarted(true); obs.disconnect(); } }, { threshold: 0.4 });
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   useEffect(() => {
     const pairs = [
@@ -321,37 +285,6 @@ export default function AndroidAppDevelopment() {
 
 
 
-
-          /* Hero */
-          .an-hero { position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px; }
-          .an-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px; }
-          .an-hero h1 { font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .an-hero-desc { font-size:16px;color:#3A507A;line-height:1.65;max-width:740px;margin:0 auto 24px; }
-          .an-trust-row { display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px; }
-          .an-badge { display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07); }
-          .an-badge-dot { width:7px;height:7px;border-radius:50%;background:#16a34a;flex-shrink:0; }
-          .an-ctas { display:flex;flex-wrap:wrap;gap:12px;justify-content:center; }
-          .an-btn-primary { display:inline-block;padding:14px 36px;background:#16a34a;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(22,163,74,.30); }
-          .an-btn-primary:hover { background:#0F3460;transform:translateY(-2px); }
-          .an-btn-ghost { display:inline-block;padding:14px 36px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s; }
-          .an-btn-ghost:hover { background:rgba(255,255,255,.85);border-color:rgba(22,163,74,.5);transform:translateY(-2px); }
-
-          /* Stats */
-          .an-stats { position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:28px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95); }
-          .an-stat-col { padding:18px 16px;text-align:center;border-right:1px solid rgba(15,52,96,.10); }
-          .an-stat-col:last-child { border-right:none; }
-          .an-stat-val { font-size:28px;font-weight:900;color:#16a34a;letter-spacing:-.5px;line-height:1; }
-          .an-stat-label { font-size:11px;color:#4A6080;font-weight:500;margin-top:5px; }
-
-          /* Logos */
-          .an-logos { position:relative;z-index:2;padding:24px 40px 52px;display:flex;flex-direction:column;align-items:center;gap:14px; }
-          .an-logos-label { font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6A80A0; }
-          .an-logos-wrap { width:100%;overflow:hidden; }
-          .an-logos-track { display:flex;align-items:center;gap:60px;width:max-content;animation:an-marquee 28s linear infinite; }
-          .an-logos-track:hover { animation-play-state:paused; }
-          @keyframes an-marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-          .an-clogo { height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s; }
-          .an-clogo:hover { opacity:.85;filter:grayscale(0%); }
 
           /* Shared */
           .an-s-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block; }
@@ -522,7 +455,7 @@ export default function AndroidAppDevelopment() {
 
           /* Responsive */
           @media(max-width:1024px){
-            .an-hero h1,.an-s-title,.an-faq h2 { font-size:36px; }
+            .an-s-title,.an-faq h2 { font-size:36px; }
             .an-svc-grid { grid-template-columns:repeat(2,1fr); }
             .an-stack-grid { grid-template-columns:repeat(2,1fr); }
             .an-eng-grid { grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto; }
@@ -534,13 +467,6 @@ export default function AndroidAppDevelopment() {
             .an-contact-grid { grid-template-columns:1fr; }
           }
           @media(max-width:768px){
-            .an-hero { padding:28px 20px 20px; }
-            .an-hero h1 { font-size:26px;letter-spacing:-.3px; }
-            .an-stats { grid-template-columns:1fr 1fr; }
-            .an-stat-col:nth-child(2) { border-right:none; }
-            .an-stat-col:nth-child(3) { border-top:1px solid rgba(15,52,96,.10); }
-            .an-stat-col:nth-child(4) { border-top:1px solid rgba(15,52,96,.10);border-right:none; }
-            .an-logos { padding:16px 20px 28px; }
             .an-svc-section,.an-stack-section,.an-eng-section,.an-process-section,.an-testi,.an-why-section,.an-faq,.an-related { padding:52px 20px; }
             .an-contact { padding:48px 20px; }
             .an-svc-grid,.an-stack-grid,.an-why-grid { grid-template-columns:1fr; }
@@ -578,53 +504,19 @@ export default function AndroidAppDevelopment() {
         <div className="an-orb an-orb-3" />
 
         {/* ── HERO ── */}
-        <section className="an-hero">
-          <span className="an-eyebrow">Android Application Development Company</span>
-          <h1>Native Android Apps in Kotlin - Built for Performance, Scale & the Play Store</h1>
-          <p className="an-hero-desc">We build production-quality native Android applications in Kotlin and Jetpack Compose - from consumer MVPs to enterprise mobility platforms. Phone, tablet, foldable, Android TV, and Wear OS. Play Store-ready, pixel-perfect, and architected to scale.</p>
-          <div className="an-trust-row">
-            {['150+ Android Apps Shipped','Kotlin & Jetpack Compose','Phone · Tablet · TV · Wear OS','15+ Years Experience','Play Store Ready'].map(b => (
-              <div className="an-badge" key={b}><span className="an-badge-dot" />{b}</div>
-            ))}
-          </div>
-          <div className="an-ctas">
-            <Link href="#contact" className="an-btn-primary">Start Your Android Project</Link>
-            <Link href="#engagement" className="an-btn-ghost">View Engagement Models →</Link>
-          </div>
-        </section>
-
-        {/* ── STATS ── */}
-        <div className="an-stats" ref={statsRef}>
-          {[['150+','Android Apps Shipped'],['15+','Years Experience'],['500M+','App Installs'],['98%','Client Retention']].map(([v, l]) => (
-            <StatItem key={l} label={l} val={v} started={statsStarted} />
-          ))}
-        </div>
-
-        {/* ── CLIENT LOGOS ── */}
-        <div className="an-logos">
-          <span className="an-logos-label">Trusted by Leading Organisations</span>
-          <div className="an-logos-wrap">
-            <div className="an-logos-track">
-              {[
-                ['/logo/Indian_Express_Logo_full.png','Indian Express'],
-                ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],
-                ['/logo/Uniphore.jpg','Uniphore'],
-                ['/logo/ICCoLogo.png','ICC'],
-                ['/logo/Honor_Logo_(2020).svg.png','Honor'],
-                ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],
-                ['/logo/Indian_Express_Logo_full.png','Indian Express 2'],
-                ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon 2'],
-                ['/logo/Uniphore.jpg','Uniphore 2'],
-                ['/logo/ICCoLogo.png','ICC 2'],
-                ['/logo/Honor_Logo_(2020).svg.png','Honor 2'],
-                ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv 2'],
-              ].map(([src, alt]) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img key={alt} src={src} alt={alt.replace(/ \d$/, '')} className="an-clogo" />
-              ))}
-            </div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="Android Application Development Company · Kotlin & Jetpack Compose"
+          title={<>Native Android Apps in Kotlin - Built for <AuroraText>Performance, Scale & the Play Store</AuroraText></>}
+          subtext="We build production-quality native Android applications in Kotlin and Jetpack Compose - from consumer MVPs to enterprise mobility platforms. Phone, tablet, foldable, Android TV, and Wear OS. Play Store-ready, pixel-perfect, and architected to scale."
+          primaryCta={{ label: 'Start Your Android Project', href: '#contact' }}
+          secondaryCta={{ label: 'View Engagement Models →', href: '#engagement' }}
+          stats={[
+            { label: 'Android Apps Shipped', value: '150', suffix: '+' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'App Installs', value: '500', suffix: 'M+' },
+            { label: 'Client Retention', value: '98', suffix: '%' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="an-svc-section" aria-labelledby="an-svc-heading">

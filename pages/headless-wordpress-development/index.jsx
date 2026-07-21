@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n:'01', title:'WordPress as Headless CMS', desc:'Decouple your WordPress CMS from the presentation layer. Use the familiar WP admin for content while serving it via API to any frontend framework.', featured:false },
@@ -41,47 +43,14 @@ const WHY = [
   { icon:<svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>, title:'Long-Term Partnership', desc:'97% client retention rate. We don\'t disappear after launch. Our maintenance plans, support retainers, and growth partnerships keep us invested in your success.' },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const numTarget = parseInt(target.replace(/\D/g, ''), 10);
-    if (!numTarget) return;
-    let startTime = null;
-    const step = (ts) => {
-      if (!startTime) startTime = ts;
-      const progress = Math.min((ts - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * numTarget));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function AnimatedStat({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');
-  const hasComma = val.includes(',');
-  const display = started ? (hasComma ? num.toLocaleString() : num) + suffix : val;  return (
-    <div className="hwp-stat-col">
-      <div className="hwp-stat-label">{label}</div>
-      <div className="hwp-stat-value">{display}</div>
-    </div>
-  );
-}
-
 export default function HeadlessWordPressDevelopment() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleSteps, setVisibleSteps] = useState([]);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const stepRefs = useRef([]);
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
@@ -102,16 +71,6 @@ export default function HeadlessWordPressDevelopment() {
       return obs;
     });
     return () => observers.forEach(o => o && o.disconnect());
-  }, []);
-
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setStatsStarted(true); obs.disconnect(); } },
-      { threshold: 0.5 }
-    );
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
   }, []);
 
   useEffect(() => {
@@ -247,36 +206,6 @@ export default function HeadlessWordPressDevelopment() {
           .hwp-aurora-b2 { position:absolute; left:78%; top:22%; width:48%; height:48%; border-radius:50%; background:radial-gradient(circle at center,rgba(217,119,6,0.20) 0%,transparent 70%); transform:translate(-50%,-50%); }
           .hwp-aurora-b3 { position:absolute; left:50%; top:82%; width:55%; height:55%; border-radius:50%; background:radial-gradient(circle at center,rgba(26,82,118,0.16) 0%,transparent 70%); transform:translate(-50%,-50%); }
           @keyframes hwp-aurora-drift { 0%{transform:translate3d(0,0,0) scale(1)} 100%{transform:translate3d(-4%,3%,0) scale(1.10)} }
-
-          /* Hero */
-          .hwp-hero-block { background:transparent;position:relative;overflow:hidden; }
-          .hwp-hero-block::before { content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,0.10) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px); }
-          .hwp-hero-block::after { content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,0.13) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px); }
-          .hwp-hero-content { position:relative;z-index:2;text-align:center;max-width:860px;margin:0 auto;padding:56px 40px 40px; }
-          .hwp-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:18px; }
-          .hwp-hero-content h1 { font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .hwp-hero-content p { font-size:16px;color:#3A507A;line-height:1.65;max-width:620px;margin:0 auto 28px; }
-          .hwp-btn-hero { display:inline-block;padding:14px 40px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#4C1D95;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(76,29,149,0.10),inset 0 1px 0 rgba(255,255,255,1); }
-          .hwp-btn-hero:hover { background:rgba(255,255,255,0.85);border-color:rgba(245,158,11,0.6);box-shadow:0 12px 36px rgba(76,29,149,0.15),0 0 0 2px rgba(245,158,11,0.22),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px);color:#4C1D95; }
-          .hwp-btn-hero-shimmer { animation:hwp-shimmer 2.8s ease-in-out infinite; }
-          @keyframes hwp-shimmer { 0%,100%{box-shadow:0 4px 20px rgba(76,29,149,0.10),inset 0 1px 0 rgba(255,255,255,1);} 50%{box-shadow:0 4px 32px rgba(76,29,149,0.22),0 0 0 3px rgba(245,158,11,0.18),inset 0 1px 0 rgba(255,255,255,1);} }
-
-          /* Stats */
-          .hwp-hero-stats { position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);box-shadow:0 4px 24px rgba(76,29,149,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
-          .hwp-stat-col { padding:18px 20px;text-align:center;border-right:1px solid rgba(76,29,149,0.10); }
-          .hwp-stat-col:last-child { border-right:none; }
-          .hwp-stat-label { font-size:12px;color:#4A6080;font-weight:500;margin-bottom:6px; }
-          .hwp-stat-value { font-size:26px;font-weight:900;color:#D97706;letter-spacing:-0.5px;line-height:1; }
-
-          /* Client logo marquee */
-          .hwp-clients-bar { position:relative;z-index:2;padding:20px 40px 60px;max-width:1440px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px; }
-          .hwp-clients-label { font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6A80A0; }
-          .hwp-clients-logos { width:100%;overflow:hidden; }
-          .hwp-logos-track { display:flex;align-items:center;gap:60px;width:max-content;animation:hwp-marquee 28s linear infinite; }
-          .hwp-logos-track:hover { animation-play-state:paused; }
-          @keyframes hwp-marquee { 0%{transform:translateX(0);} 100%{transform:translateX(-50%);} }
-          .hwp-client-logo { height:26px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(100%);opacity:0.5;transition:opacity 0.25s,filter 0.25s; }
-          .hwp-client-logo:hover { opacity:0.85;filter:grayscale(0%); }
 
           /* Shared sections */
           .hwp-section-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:12px;display:block; }
@@ -500,20 +429,14 @@ export default function HeadlessWordPressDevelopment() {
             .hwp-portfolio-wrap { padding:24px 20px 32px;border-radius:16px; }
             .hwp-portfolio-header { flex-direction:column;align-items:flex-start;gap:14px; }
             .hwp-portfolio-title { font-size:26px; }
-            .hwp-hero-content { padding:40px 20px 28px; }
-            .hwp-hero-content h1 { font-size:32px; }
-            .hwp-hero-stats { grid-template-columns:repeat(2,1fr); }
             .hwp-services-section { padding:52px 20px 40px; }
             .hwp-services-grid { grid-template-columns:1fr 1fr;gap:10px; }
             .hwp-section-title,.hwp-engage-title,.hwp-process-main-title,.hwp-related-title { font-size:30px; }
             .hwp-form-row { grid-template-columns:1fr; }
             .hwp-contact-section { padding:52px 20px; }
-            .hwp-clients-bar { padding:16px 20px 36px;gap:12px; }
-            .hwp-client-logo { height:20px; }
           }
           @media (max-width:540px) {
             .hwp-portfolio-grid { grid-template-columns:1fr; }
-            .hwp-hero-stats { grid-template-columns:repeat(2,1fr); }
             .hwp-services-grid { grid-template-columns:1fr; }
             .hwp-why-grid { grid-template-columns:1fr; }
             .hwp-engage-grid { grid-template-columns:1fr; }
@@ -535,59 +458,18 @@ export default function HeadlessWordPressDevelopment() {
         </div>
 
         {/* ── HERO ── */}
-        <section className="hwp-hero-block">
-          <div className="hwp-hero-content">
-            <span className="hwp-eyebrow">Headless CMS · WPGraphQL · Next.js · React</span>
-            <h1>Headless WordPress<br/>Development Company</h1>
-            <p>We build lightning-fast, fully decoupled WordPress websites using Next.js and WPGraphQL, delivering 90+ PageSpeed scores, perfect Core Web Vitals, and unlimited frontend flexibility for businesses worldwide.</p>
-            <Link href="#contact" className="hwp-btn-hero hwp-btn-hero-shimmer">Get a Free Consultation Now</Link>
-          </div>
-          <div className="hwp-hero-stats" ref={statsRef}>
-            {[
-              { label:'WordPress Projects', val:'500+' },
-              { label:'Headless Builds', val:'80+' },
-              { label:'Client Retention', val:'97%' },
-              { label:'Years Experience', val:'15+' },
-            ].map(s => <AnimatedStat key={s.label} label={s.label} val={s.val} started={statsStarted} />)}
-          </div>
-          <div className="hwp-clients-bar">
-            <span className="hwp-clients-label">Trusted by Leading Brands</span>
-            <div className="hwp-clients-logos">
-              <div className="hwp-logos-track">
-                {[
-                  ['/logo/Indian_Express_Logo_full.png','Indian Express'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],
-                  ['/logo/Uniphore.jpg','Uniphore'],
-                  ['/logo/ICCoLogo.png','ICC'],
-                  ['/logo/Honor_Logo_(2020).svg.png','Honor'],
-                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],
-                  ['/logo/amarujala-print-logo_60e03f7d5b4a8.webp','Amar Ujala'],
-                  ['/logo/Nuance-Symbol-500x281.png','Nuance'],
-                  ['/logo/PHDCCI-Logo-2024.png','PHD Chamber'],
-                  ['/logo/Wilson-logo.svg.png','Wilson'],
-                  ['/logo/977be174b7bcc8708254a2163b534cbe_fgraphic.png','Client'],
-                  ['/logo/india-madeaismartphone2-1747658691.webp','India Made'],
-                  /* duplicate for seamless loop */
-                  ['/logo/Indian_Express_Logo_full.png','Indian Express2'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon2'],
-                  ['/logo/Uniphore.jpg','Uniphore2'],
-                  ['/logo/ICCoLogo.png','ICC2'],
-                  ['/logo/Honor_Logo_(2020).svg.png','Honor2'],
-                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv2'],
-                  ['/logo/amarujala-print-logo_60e03f7d5b4a8.webp','Amar Ujala2'],
-                  ['/logo/Nuance-Symbol-500x281.png','Nuance2'],
-                  ['/logo/PHDCCI-Logo-2024.png','PHD Chamber2'],
-                  ['/logo/Wilson-logo.svg.png','Wilson2'],
-                  ['/logo/977be174b7bcc8708254a2163b534cbe_fgraphic.png','Client2'],
-                  ['/logo/india-madeaismartphone2-1747658691.webp','India Made2'],
-                ].map(([src,alt]) => (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img key={alt} src={src} alt={alt.replace(/\d+$/,'')} className="hwp-client-logo" />
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Headless CMS · WPGraphQL · Next.js · React"
+          title={<>Headless WordPress <AuroraText>Development Company</AuroraText></>}
+          subtext="We build lightning-fast, fully decoupled WordPress websites using Next.js and WPGraphQL, delivering 90+ PageSpeed scores, perfect Core Web Vitals, and unlimited frontend flexibility for businesses worldwide."
+          primaryCta={{ label: 'Get a Free Consultation Now', href: '#contact' }}
+          stats={[
+            { label: 'WordPress Projects', value: '500', suffix: '+' },
+            { label: 'Headless Builds', value: '80', suffix: '+' },
+            { label: 'Client Retention', value: '97', suffix: '%' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="hwp-services-section">

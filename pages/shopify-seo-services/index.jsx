@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'Shopify Technical SEO Audit', desc: 'Full audit of your Shopify store - duplicate content from URL parameters, canonical tag issues, collection/product URL structure, Shopify theme speed, and app-generated bloat.' },
@@ -44,13 +46,6 @@ const FAQS = [
   { q: 'Do you offer Shopify SEO for international stores using Shopify Markets?', a: 'Yes. Shopify Markets requires careful hreflang implementation, geo-targeting configuration in Google Search Console, and market-specific keyword strategy. We have optimised Shopify Markets setups for stores selling across US, UK, Canada, and Australia markets - handling both subdirectory and subdomain configurations.' },
 ];
 
-const STATS = [
-  { label: 'Shopify Stores Optimised', val: '500+' },
-  { label: 'Years Experience', val: '15+' },
-  { label: 'Avg Organic Traffic Lift', val: '+280%' },
-  { label: 'Client Retention', val: '96%' },
-];
-
 export default function ShopifySeoServices() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleCards, setVisibleCards] = useState([]);
@@ -78,22 +73,11 @@ export default function ShopifySeoServices() {
         <style>{`
           .shseo-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .shseo-page *,.shseo-page *::before,.shseo-page *::after{box-sizing:border-box}
-          .shseo-hero{background:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 25%,#dcfce7 60%,#f0fdf4 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .shseo-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(0,128,96,0.13) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .shseo-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(4,120,87,0.08) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .shseo-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.shseo-bc a:hover{color:#008060}.shseo-bc span{color:#d1d5db}
-          .shseo-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(0,128,96,0.08);border:1px solid rgba(0,128,96,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#006E52;margin-bottom:28px}
-          .shseo-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .shseo-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
-          .shseo-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
+          .shseo-bc a:hover{color:#008060}.shseo-bc span{color:#d1d5db}
           .shseo-btn-p{display:inline-flex;align-items:center;gap:8px;background:#008060;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(0,128,96,0.28)}
           .shseo-btn-p:hover{background:#006E52;box-shadow:0 8px 32px rgba(0,128,96,0.38);transform:translateY(-2px)}
           .shseo-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.18);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
           .shseo-btn-s:hover{border-color:#008060;color:#008060;transform:translateY(-2px)}
-          .shseo-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(0,128,96,0.08)}
-          .shseo-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(0,128,96,0.08)}.shseo-stat:last-child{border-right:none}
-          .shseo-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .shseo-stat-v{font-size:1.6rem;font-weight:900;color:#008060;letter-spacing:-0.5px}
           .shseo-svc{background:#f8fafd;padding:80px 40px}.shseo-svc-in{max-width:1280px;margin:0 auto}
           .shseo-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#008060;margin-bottom:10px;display:block}
           .shseo-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
@@ -140,26 +124,26 @@ export default function ShopifySeoServices() {
           .shseo-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           .shseo-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.shseo-grid{grid-template-columns:repeat(2,1fr)}.shseo-why-grid{grid-template-columns:repeat(2,1fr)}}
-          @media(max-width:768px){.shseo-hero,.shseo-svc,.shseo-plat,.shseo-proc,.shseo-why,.shseo-faq,.shseo-cta{padding:60px 24px}.shseo-hero{padding-top:60px;padding-bottom:0}.shseo-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.shseo-stat:nth-child(2){border-right:none}.shseo-grid{grid-template-columns:1fr}.shseo-why-grid{grid-template-columns:1fr}.shseo-step{grid-template-columns:56px 1fr}.shseo-btns{flex-direction:column;align-items:center}}
+          @media(max-width:768px){.shseo-svc,.shseo-plat,.shseo-proc,.shseo-why,.shseo-faq,.shseo-cta{padding:60px 24px}.shseo-grid{grid-template-columns:1fr}.shseo-why-grid{grid-template-columns:1fr}.shseo-step{grid-template-columns:56px 1fr}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
       <div className="shseo-page">
-        <section className="shseo-hero">
-          <div className="shseo-o1"/><div className="shseo-o2"/>
-          <div className="shseo-in">
-            <span className="shseo-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#008060',display:'inline-block'}}/> Shopify · Shopify Plus · Google Shopping</span>
-            <h1 className="shseo-h1">Shopify SEO Services That Drive Organic Revenue</h1>
-            <p className="shseo-sub">Fix Shopify&rsquo;s duplicate URL issues, optimise every product and collection page, and build the domain authority your store needs to outrank competitors on high-intent keywords.</p>
-            <div className="shseo-btns">
-              <Link href="/contact-us" className="shseo-btn-p">Get a Free Shopify SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/shopify-store-development" className="shseo-btn-s">Shopify Development</Link>
-            </div>
-            <div className="shseo-stats">{STATS.map(s => <div key={s.label} className="shseo-stat"><div className="shseo-stat-l">{s.label}</div><div className="shseo-stat-v">{s.val}</div></div>)}</div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Shopify · Shopify Plus · Google Shopping"
+          title={<>Shopify SEO Services That <AuroraText>Drive Organic Revenue</AuroraText></>}
+          subtext="Fix Shopify's duplicate URL issues, optimise every product and collection page, and build the domain authority your store needs to outrank competitors on high-intent keywords."
+          primaryCta={{ label: 'Get a Free Shopify SEO Audit', href: '/contact-us' }}
+          secondaryCta={{ label: 'Shopify Development', href: '/shopify-store-development' }}
+          stats={[
+            { label: 'Shopify Stores Optimised', value: '500', suffix: '+' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'Avg Organic Traffic Lift', value: '280', prefix: '+', suffix: '%' },
+            { label: 'Client Retention', value: '96', suffix: '%' },
+          ]}
+        />
         <section className="shseo-svc"><div className="shseo-svc-in">
           <span className="shseo-ey2">What We Do</span><h2 className="shseo-ttl">Shopify SEO Services</h2>
           <p className="shseo-desc">Platform-specific SEO that fixes Shopify&rsquo;s structural issues first, then builds organic traffic and revenue through proven on-page and off-page strategy.</p>

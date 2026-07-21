@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -77,25 +79,13 @@ const FAQS = [
   { q: 'Can you modernise our existing travel platform?', a: 'Yes - we modernise legacy booking platforms using a strangler fig approach: API layer first, then incremental migration of modules (search, booking, payment, back-office) without a big-bang rewrite. First modernised capability typically live in 6–8 weeks.' },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => { if (!start) return; const n = parseInt(target.replace(/\D/g, ''), 10); if (!n) return; let t0 = null; const s = ts => { if (!t0) t0 = ts; const p = Math.min((ts - t0) / duration, 1); setCount(Math.floor((1 - Math.pow(1 - p, 3)) * n)); if (p < 1) requestAnimationFrame(s); }; requestAnimationFrame(s); }, [start, target, duration]);
-  return count;
-}
-function StatItem({ label, val, started }) {
-  const n = useCountUp(val, 1800, started);
-  const sfx = val.replace(/[\d,]/g, '');  return (<div className="tt-sc"><div className="tt-sv">{started ? n + sfx : val}</div><div className="tt-sl">{label}</div></div>);
-}
-
 export default function TravelTourismSoftware() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [ss, setSs] = useState(false);
   const [vis, setVis] = useState(new Set());
   const [vSk, setVSk] = useState([]); const [vEn, setVEn] = useState([]); const [vWh, setVWh] = useState([]); const [vTe, setVTe] = useState([]); const [vSt, setVSt] = useState([]);
-  const stR = useRef(null); const secR = useRef({});
+  const secR = useRef({});
   const skR = useRef(null); const enR = useRef(null); const whR = useRef(null); const teR = useRef(null); const stGr = useRef(null);
-  useEffect(() => { if (!stR.current) return; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setSs(true); o.disconnect(); } }, { threshold: 0.4 }); o.observe(stR.current); return () => o.disconnect(); }, []);
   useEffect(() => {
     const pairs = [[skR, SOLUTIONS.length, setVSk], [enR, 3, setVEn], [whR, WHY.length, setVWh], [teR, 3, setVTe], [stGr, TECH_STACK.length, setVSt]];
     const obs = pairs.map(([ref, count, setter]) => { if (!ref.current) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { Array.from({ length: count }, (_, i) => setTimeout(() => setter(p => p.includes(i) ? p : [...p, i]), i * 75)); o.disconnect(); } }, { threshold: 0.05 }); o.observe(ref.current); return o; });
@@ -143,22 +133,6 @@ export default function TravelTourismSoftware() {
           .tt-o1{width:800px;height:800px;background:radial-gradient(circle,rgba(12,74,110,.18) 0%,transparent 70%);top:-220px;right:-200px}
           .tt-o2{width:700px;height:700px;background:radial-gradient(circle,rgba(217,119,6,.14) 0%,transparent 70%);bottom:0;left:-200px}
           .tt-o3{width:480px;height:480px;background:radial-gradient(circle,rgba(20,83,45,.10) 0%,transparent 70%);top:42%;left:-90px}}.tt-bc li::after{content:'/';opacity:.45}.tt-bc li:last-child::after{display:none};text-decoration:none}
-          .tt-hero{position:relative;z-index:2;text-align:center;max-width:940px;margin:0 auto;padding:44px 40px 28px}
-          .tt-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:${ac};margin-bottom:14px}
-          .tt-hero h1{font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .tt-desc{font-size:16px;color:${txt2};line-height:1.65;max-width:720px;margin:0 auto 22px}
-          .tt-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-bottom:24px}
-          .tt-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:5px 13px;font-size:12px;font-weight:600;color:${txt};box-shadow:0 2px 8px rgba(12,74,110,.07)}
-          .tt-dot{width:7px;height:7px;border-radius:50%;background:${ac};flex-shrink:0}
-          .tt-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .tt-p{display:inline-block;padding:13px 34px;background:${ac};color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(12,74,110,.28)}
-          .tt-p:hover{background:${txt};transform:translateY(-2px)}
-          .tt-g{display:inline-block;padding:13px 34px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:${txt};font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .tt-g:hover{background:rgba(255,255,255,.85);border-color:rgba(12,74,110,.5);transform:translateY(-2px)}
-          .tt-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:920px;margin:26px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(12,74,110,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .tt-sc{padding:18px 16px;text-align:center;border-right:1px solid rgba(12,74,110,.10)}.tt-sc:last-child{border-right:none}
-          .tt-sv{font-size:28px;font-weight:900;color:${ac};letter-spacing:-.5px;line-height:1}
-          .tt-sl{font-size:11px;color:${txt2};font-weight:500;margin-top:5px}
           .tt-sec{padding:72px 40px;position:relative;z-index:1}
           .tt-sec-alt{background:rgba(240,249,255,.55);border-top:1px solid rgba(12,74,110,.08);border-bottom:1px solid rgba(12,74,110,.08)}
           .tt-in{max-width:1300px;margin:0 auto}
@@ -269,8 +243,8 @@ export default function TravelTourismSoftware() {
           .tt-rb{background:rgba(190,18,60,.09);border-color:rgba(190,18,60,.28);color:#9f1239}
           .tt-rc{background:rgba(22,101,52,.09);border-color:rgba(22,101,52,.28);color:#14532d}
           .tt-rd{background:rgba(146,64,14,.09);border-color:rgba(146,64,14,.28);color:#92400e}
-          @media(max-width:1024px){.tt-hero h1,.tt-sh,.tt-fq h2{font-size:34px}.tt-sk-g{grid-template-columns:repeat(2,1fr)}.tt-tec-g{grid-template-columns:repeat(2,1fr)}.tt-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.tt-en.feat{transform:none}.tt-en.feat.tt-ev{transform:none}.tt-en.feat.tt-ev:hover{transform:translateY(-4px)}.tt-wy-g{grid-template-columns:repeat(2,1fr)}.tt-tg2{grid-template-columns:1fr}.tt-ct-g{grid-template-columns:1fr}}
-          @media(max-width:768px){.tt-bc,.tt-hero,.tt-sec,.tt-ct,.tt-fq,.tt-rel{padding-left:20px;padding-right:20px}.tt-hero{padding-top:28px;padding-bottom:16px}.tt-hero h1{font-size:26px}.tt-stats{grid-template-columns:1fr 1fr}.tt-sc:nth-child(2){border-right:none}.tt-sc:nth-child(3),.tt-sc:nth-child(4){border-top:1px solid rgba(12,74,110,.10)}.tt-sc:nth-child(4){border-right:none}.tt-sk-g,.tt-tec-g,.tt-wy-g{grid-template-columns:1fr}.tt-fr{grid-template-columns:1fr}.tt-cth{font-size:26px}}
+          @media(max-width:1024px){.tt-sh,.tt-fq h2{font-size:34px}.tt-sk-g{grid-template-columns:repeat(2,1fr)}.tt-tec-g{grid-template-columns:repeat(2,1fr)}.tt-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.tt-en.feat{transform:none}.tt-en.feat.tt-ev{transform:none}.tt-en.feat.tt-ev:hover{transform:translateY(-4px)}.tt-wy-g{grid-template-columns:repeat(2,1fr)}.tt-tg2{grid-template-columns:1fr}.tt-ct-g{grid-template-columns:1fr}}
+          @media(max-width:768px){.tt-bc,.tt-sec,.tt-ct,.tt-fq,.tt-rel{padding-left:20px;padding-right:20px}.tt-sk-g,.tt-tec-g,.tt-wy-g{grid-template-columns:1fr}.tt-fr{grid-template-columns:1fr}.tt-cth{font-size:26px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
@@ -296,14 +270,19 @@ export default function TravelTourismSoftware() {
 </Head>
       <div className="tt-page">
         <div className="tt-orb tt-o1" /><div className="tt-orb tt-o2" /><div className="tt-orb tt-o3" />
-        <section className="tt-hero">
-          <span className="tt-ey">Travel & Tourism Industry</span>
-          <h1>Travel & Tourism Software Development - OTA, Hotel PMS & GDS Integration</h1>
-          <p className="tt-desc">Custom travel technology for OTAs, hotel groups, tour operators, DMOs, and travel startups - online booking engines, GDS integration (Amadeus, Sabre, Travelport), hotel PMS, travel CRM, dynamic pricing, and mobile apps. 120+ travel projects. 15+ years.</p>
-          <div className="tt-tr">{['OTA & Booking Platform','Hotel PMS Development','GDS / NDC Integration','Dynamic Pricing Engine','Travel Mobile Apps'].map(b => (<div className="tt-badge" key={b}><span className="tt-dot" />{b}</div>))}</div>
-          <div className="tt-ctas"><Link href="#contact" className="tt-p">Discuss Your Travel Platform</Link><Link href="#solutions" className="tt-g">View Solutions →</Link></div>
-        </section>
-        <div className="tt-stats" ref={stR}>{[['120+','Travel Projects'],['15+','Years Dev Experience'],['99.9%','Platform Uptime SLA'],['40%','Avg Booking Conversion Lift']].map(([v, l]) => <StatItem key={l} label={l} val={v} started={ss} />)}</div>
+        <ServiceHero
+          eyebrow="Travel & Tourism Industry · GDS / NDC Integration Specialists"
+          title={<>Travel & Tourism Software Development - <AuroraText>OTA, Hotel PMS & GDS Integration</AuroraText></>}
+          subtext="Custom travel technology for OTAs, hotel groups, tour operators, DMOs, and travel startups - online booking engines, GDS integration (Amadeus, Sabre, Travelport), hotel PMS, travel CRM, dynamic pricing, and mobile apps. 120+ travel projects. 15+ years."
+          primaryCta={{ label: 'Discuss Your Travel Platform', href: '#contact' }}
+          secondaryCta={{ label: 'View Solutions', href: '#solutions' }}
+          stats={[
+            { label: 'Travel Projects', value: '120', suffix: '+' },
+            { label: 'Years Dev Experience', value: '15', suffix: '+' },
+            { label: 'Platform Uptime SLA', value: '9', prefix: '99.', suffix: '%' },
+            { label: 'Avg Booking Conversion Lift', value: '40', suffix: '%' },
+          ]}
+        />
         <section id="solutions" className="tt-sec"><div className="tt-in"><div className={`tt-rv${vis.has('sk') ? ' tt-ok' : ''}`} ref={el => { secR.current['sk'] = el; }}><span className="tt-sey">Travel Technology Solutions</span><h2 className="tt-sh">What We Build for Travel & Tourism</h2><p className="tt-sd">Booking engines, hotel PMS, GDS integration, tour operator software, travel CRM, dynamic pricing, mobile apps, and corporate travel management - the complete travel tech stack.</p></div><div className="tt-sk-g" ref={skR}>{visS.map((s, i) => (<div key={s.n} className={`tt-card${s.feat ? ' feat' : ''}${vSk.includes(i) ? ' tt-cv' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}><span className="tt-cn">{s.n}</span><h3>{s.title}</h3><p>{s.desc}</p></div>))}</div>{SOLUTIONS.length > 6 && <div className="tt-sm"><button className="tt-bm" onClick={() => setShowAll(p => !p)}>{showAll ? 'Show fewer ↑' : `Show all ${SOLUTIONS.length} solutions ↓`}</button></div>}</div></section>
         <section className="tt-sec tt-sec-alt"><div className="tt-in"><div className={`tt-rv${vis.has('stk') ? ' tt-ok' : ''}`} ref={el => { secR.current['stk'] = el; }}><span className="tt-sey">Technology Stack</span><h2 className="tt-sh">Travel Technology We Work With</h2><p className="tt-sd">React/Next.js, Node.js, Elasticsearch, Redis, Amadeus, Sabre, Stripe, AWS, and the full modern travel API ecosystem.</p></div><div className="tt-tec-g" ref={stGr}>{TECH_STACK.map((g, i) => (<div key={g.group} className={`tt-tc2${vSt.includes(i) ? ' tt-sv2' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}><div className="tt-tg" style={{ color: g.color, borderBottomColor: g.color + '33' }}>{g.group}</div><div className="tt-pills">{g.items.map(it => <span key={it} className="tt-pill" style={{ color: g.color, background: g.color + '12', borderColor: g.color + '30' }}>{it}</span>)}</div></div>))}</div></div></section>
         <section className="tt-sec"><div className="tt-in"><div className={`tt-rv${vis.has('eng') ? ' tt-ok' : ''}`} ref={el => { secR.current['eng'] = el; }}><span className="tt-sey">Engagement Models</span><h2 className="tt-sh">How We Work with Travel Companies</h2><p className="tt-sd">Custom platform build, rapid API integration, or legacy modernisation - structured for your timeline and commercial model.</p></div><div className="tt-en-g" ref={enR}>{ENGAGEMENT.map((m, i) => (<div key={m.id} className={`tt-en${m.feat ? ' feat' : ''}${vEn.includes(i) ? ' tt-ev' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><span className="tt-en-b" style={{ color: m.bc, borderColor: m.bc + '44', background: m.bc + '14' }}>{m.badge}</span><div className="tt-en-i"><svg viewBox="0 0 24 24" width="24" height="24" fill={m.feat ? '#D97706' : ac}><path d={m.icon} /></svg></div><div className="tt-en-n">{m.name}</div><div className="tt-en-h">{m.headline}</div><div className="tt-en-d">{m.desc}</div><div className="tt-en-ll">Best for</div><ul className="tt-en-li">{m.best.map(b => <li key={b}>{b}</li>)}</ul><span className="tt-en-tl">{m.tl}</span><Link href="#contact" className="tt-en-a">Get a free estimate →</Link></div>))}</div></div></section>

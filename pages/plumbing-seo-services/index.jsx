@@ -2,13 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { AuroraText } from '../../components/AuroraText';
-
-const STATS_HERO = [
-  { val: '97%',  label: 'Homeowners search online for a plumber' },
-  { val: '$350+',label: 'Average plumber job value' },
-  { val: '68%',  label: 'Click Maps Pack for emergency searches' },
-  { val: '3×',   label: 'More leads from local SEO vs paid ads' },
-];
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { icon:'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z', title:'Emergency Plumber Keyword Targeting', body:'Dedicated urgency-driven landing pages capturing "emergency plumber near me", "burst pipe repair", "plumber open 24 hours", and "blocked drain [city]", built to convert panicked homeowners the moment they search.' },
@@ -382,27 +376,6 @@ export default function PlumbingSeoServices() {
           .pl-g3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
           .pl-g4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 
-          /* ── HERO ── */
-          .pl-hero{position:relative;z-index:1;padding:72px 40px 0;overflow:hidden}
-          .pl-hero::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.10) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px)}
-          .pl-hero::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.16) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px)}
-          .pl-hero-inner{position:relative;z-index:2;text-align:center;max-width:920px;margin:0 auto}.pl-bc a:hover{color:#D97706}.pl-bc-sep{color:#d1d5db}
-          .pl-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:18px}
-          .pl-h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:18px;color:#0F1F40}
-          .pl-hero-sub{font-size:16px;color:#3A507A;line-height:1.65;max-width:660px;margin:0 auto 28px}
-          .pl-btns{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:32px}
-          .pl-btn-p{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:8px;padding:14px 36px;background:rgba(15,52,96,0.85);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.20);border-radius:50px;color:#fff;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;box-shadow:0 6px 24px rgba(15,52,96,0.25)}
-          .pl-btn-p:hover{background:rgba(15,52,96,1);border-color:rgba(245,158,11,0.6);transform:translateY(-2px);box-shadow:0 12px 36px rgba(15,52,96,0.30)}
-          .pl-btn-s{display:inline-flex;align-items:center;padding:14px 32px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1)}
-          .pl-btn-s:hover{background:rgba(255,255,255,0.85);border-color:rgba(245,158,11,0.6);transform:translateY(-2px)}
-
-          /* ── STATS BAR ── */
-          .pl-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95)}
-          .pl-stat{padding:18px 20px;text-align:center;border-right:1px solid rgba(15,52,96,0.10)}
-          .pl-stat:last-child{border-right:none}
-          .pl-stat-v{font-size:26px;font-weight:900;color:#D97706;letter-spacing:-0.5px;line-height:1;margin-bottom:6px}
-          .pl-stat-l{font-size:12px;color:#4A6080;font-weight:500}
-
           /* ── DARK SECTION ── */
           .pl-dark{padding:80px 40px;background:#fff;position:relative;z-index:1}
           .pl-dark-ey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;display:block;margin-bottom:10px}
@@ -571,15 +544,8 @@ export default function PlumbingSeoServices() {
             .pl-card-pop{transform:none}.pl-card-pop:hover{transform:translateY(-4px)}
           }
           @media(max-width:768px){
-            .pl-hero{padding:56px 24px 0}
-            .pl-hero::before,.pl-hero::after{display:none}
             .pl-sec,.pl-dark,.pl-contact-sec,.pl-related,.pl-testi{padding-left:24px;padding-right:24px}
             .pl-testi-hd{padding:0 24px}
-            .pl-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}
-            .pl-stat:nth-child(2){border-right:none}
-            .pl-stat:nth-child(3){border-top:1px solid rgba(15,52,96,0.10)}
-            .pl-stat:nth-child(4){border-top:1px solid rgba(15,52,96,0.10);border-right:none}
-            .pl-btns{flex-direction:column;align-items:center}
             .pl-g3{grid-template-columns:1fr}
             .pl-g4{grid-template-columns:repeat(2,1fr)}
             .pl-row2{grid-template-columns:1fr}
@@ -587,8 +553,8 @@ export default function PlumbingSeoServices() {
             .pl-related-ttl{font-size:28px}
             /* ── MOBILE PERFORMANCE ── */
             .pl-orb1,.pl-orb2,.pl-orb3{display:none}
-.pl-glass,.pl-form-box,.pl-trust-box,.pl-stats,.pl-fitem{backdrop-filter:none;-webkit-backdrop-filter:none}
-            .pl-btn-p,.pl-btn-s,.pl-submit{backdrop-filter:none;-webkit-backdrop-filter:none}
+.pl-glass,.pl-form-box,.pl-trust-box,.pl-fitem{backdrop-filter:none;-webkit-backdrop-filter:none}
+            .pl-submit{backdrop-filter:none;-webkit-backdrop-filter:none}
             .pl-res-card,.pl-pill{backdrop-filter:none;-webkit-backdrop-filter:none}
             .pl-related{backdrop-filter:none;-webkit-backdrop-filter:none}
             .pl-card{backdrop-filter:none;-webkit-backdrop-filter:none}
@@ -609,28 +575,19 @@ export default function PlumbingSeoServices() {
         <div className="pl-orb1"/><div className="pl-orb2"/><div className="pl-orb3"/>
 
         {/* ── HERO ── */}
-        <section className="pl-hero">
-          <div className="pl-hero-inner">
-            <span className="pl-eyebrow">Plumbing SEO · Emergency Keywords · Maps Pack · GBP Optimisation</span>
-            <h1 className="pl-h1">Plumbing SEO That Fills Your Calendar<br/>with <AuroraText>Emergency Calls</AuroraText></h1>
-            <p className="pl-hero-sub">1Solutions delivers targeted plumbing SEO that puts your business in front of homeowners at the exact moment they need a plumber, whether it is a burst pipe at midnight or a water heater quote next week. Map pack rankings, emergency keyword pages, and a review engine that keeps calls flowing.</p>
-            <div className="pl-btns">
-              <a href="#pl-contact" className="pl-btn-p">
-                Get Your Free Plumbing SEO Audit
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <a href="#packages" className="pl-btn-s">View Packages</a>
-            </div>
-            <div className="pl-stats">
-              {STATS_HERO.map(s => (
-                <div key={s.label} className="pl-stat">
-                  <div className="pl-stat-v">{s.val}</div>
-                  <div className="pl-stat-l">{s.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Plumbing SEO · Emergency Keywords · Maps Pack · GBP Optimisation"
+          title={<>Plumbing SEO That Fills Your Calendar with <AuroraText>Emergency Calls</AuroraText></>}
+          subtext="1Solutions delivers targeted plumbing SEO that puts your business in front of homeowners at the exact moment they need a plumber, whether it is a burst pipe at midnight or a water heater quote next week. Map pack rankings, emergency keyword pages, and a review engine that keeps calls flowing."
+          primaryCta={{ label: 'Get Your Free Plumbing SEO Audit', href: '#pl-contact' }}
+          secondaryCta={{ label: 'View Packages', href: '#packages' }}
+          stats={[
+            { label: 'Homeowners search online for a plumber', value: '97', suffix: '%' },
+            { label: 'Average plumber job value', value: '350', prefix: '$', suffix: '+' },
+            { label: 'Click Maps Pack for emergency searches', value: '68', suffix: '%' },
+            { label: 'More leads from local SEO vs paid ads', value: '3', suffix: '×' },
+          ]}
+        />
 
         {/* ── KEYWORD TYPES ── */}
         <section className="pl-sec pl-white">

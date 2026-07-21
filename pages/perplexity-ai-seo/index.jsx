@@ -1,15 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const RECAPTCHA_KEY = '6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs';
-
-const STATS = [
-  { label: 'Brands Cited in Perplexity', val: '200+' },
-  { label: 'Avg Citation Rate Increase', val: '+65%' },
-  { label: 'AI Search Optimisation Experience', val: '3+ Yrs' },
-  { label: 'Pages Optimised for AI Sources', val: '1,000+' },
-];
 
 const SERVICES = [
   { n: '01', title: 'Perplexity Source Optimisation', desc: 'Restructuring your existing content to match Perplexity\'s source selection criteria — clear factual claims, authoritative structure, and the semantic signals that make pages the go-to citation for AI-generated answers in your niche.' },
@@ -271,29 +266,6 @@ export default function PerplexityAiSeo() {
           .plx-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .plx-page *,.plx-page *::before,.plx-page *::after{box-sizing:border-box}
 
-          /* ── HERO ── */
-          .plx-hero{background:linear-gradient(135deg,#eef6ff 0%,#f0faf8 35%,#e8f4fd 70%,#eef6ff 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .plx-aurora { position:absolute; inset:-15%; z-index:0; pointer-events:none; filter:blur(70px) saturate(150%); animation:plx-aurora-drift 20s ease-in-out infinite alternate; }
-          .plx-aurora-b1 { position:absolute; left:20%; top:30%; width:65%; height:65%; border-radius:50%; background:radial-gradient(circle at center,rgba(15,52,96,0.28) 0%,transparent 70%); transform:translate(-50%,-50%); }
-          .plx-aurora-b2 { position:absolute; left:78%; top:22%; width:48%; height:48%; border-radius:50%; background:radial-gradient(circle at center,rgba(217,119,6,0.20) 0%,transparent 70%); transform:translate(-50%,-50%); }
-          .plx-aurora-b3 { position:absolute; left:50%; top:82%; width:55%; height:55%; border-radius:50%; background:radial-gradient(circle at center,rgba(26,82,118,0.16) 0%,transparent 70%); transform:translate(-50%,-50%); }
-          @keyframes plx-aurora-drift { 0%{transform:translate3d(0,0,0) scale(1)} 100%{transform:translate3d(-4%,3%,0) scale(1.10)} }
-          .plx-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}
-          .plx-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(15,52,96,0.07);border:1px solid rgba(15,52,96,0.15);border-radius:100px;padding:5px 16px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#0F3460;margin-bottom:28px}
-          .plx-pulse{width:7px;height:7px;border-radius:50%;background:#D97706;display:inline-block;animation:plx-pulse 2s ease-in-out infinite}
-          @keyframes plx-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.6;transform:scale(0.85)}}
-          .plx-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1.5px;background:linear-gradient(135deg,#0F3460 0%,#1a5276 40%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .plx-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
-          .plx-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
-          .plx-btn-p{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#0F3460,#1a5276);color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(15,52,96,0.30)}
-          .plx-btn-p:hover{background:linear-gradient(135deg,#0a2444,#0F3460);box-shadow:0 8px 32px rgba(15,52,96,0.42);transform:translateY(-2px)}
-          .plx-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.20);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
-          .plx-btn-s:hover{border-color:#0F3460;background:rgba(255,255,255,0.85);transform:translateY(-2px)}
-          .plx-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.65);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.90);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(15,52,96,0.08)}
-          .plx-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(15,52,96,0.08)}.plx-stat:last-child{border-right:none}
-          .plx-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .plx-stat-v{font-size:1.6rem;font-weight:900;color:#0F3460;letter-spacing:-0.5px}
-
           /* ── SECTION SHARED ── */
           .plx-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
           .plx-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#0F3460 0%,#1a5276 50%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
@@ -437,14 +409,10 @@ export default function PerplexityAiSeo() {
           /* ── RESPONSIVE ── */
           @media(max-width:1024px){.plx-grid{grid-template-columns:repeat(2,1fr)}.plx-why-grid{grid-template-columns:repeat(2,1fr)}.plx-testi-grid{grid-template-columns:1fr}.plx-contact-in{grid-template-columns:1fr}}
           @media(max-width:768px){
-            .plx-hero,.plx-svc,.plx-tools,.plx-proc,.plx-ind,.plx-why,.plx-testi,.plx-engage-section,.plx-faq,.plx-contact,.plx-related{padding:60px 24px}
-            .plx-hero{padding-top:60px;padding-bottom:0}
-            .plx-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}
-            .plx-stat:nth-child(2){border-right:none}
+            .plx-svc,.plx-tools,.plx-proc,.plx-ind,.plx-why,.plx-testi,.plx-engage-section,.plx-faq,.plx-contact,.plx-related{padding:60px 24px}
             .plx-grid{grid-template-columns:1fr}
             .plx-why-grid{grid-template-columns:1fr}
             .plx-step{grid-template-columns:56px 1fr}
-            .plx-btns{flex-direction:column;align-items:center}
             .plx-row2{grid-template-columns:1fr}
           }
         `}</style>
@@ -453,36 +421,19 @@ export default function PerplexityAiSeo() {
       <div className="plx-page">
 
         {/* ── HERO ── */}
-        <section className="plx-hero">
-          <div className="plx-aurora" aria-hidden="true">
-            <div className="plx-aurora-b1" />
-            <div className="plx-aurora-b2" />
-            <div className="plx-aurora-b3" />
-          </div>
-          <div className="plx-in">
-            <span className="plx-eyebrow">
-              <span className="plx-pulse"/>
-              AI Source Visibility &middot; Citation Optimisation &middot; E-E-A-T &middot; Answer Engine SEO
-            </span>
-            <h1 className="plx-h1">Perplexity AI SEO — Become a Cited Source in AI-Generated Answers</h1>
-            <p className="plx-sub">Specialist Perplexity AI SEO services — content optimisation, E-E-A-T signal building, structured data, and citation monitoring to make your brand the trusted source Perplexity chooses when it answers questions in your niche.</p>
-            <div className="plx-btns">
-              <a href="#plx-contact" className="plx-btn-p">
-                Get a Free Perplexity Audit
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <Link href="/ai-seo-services/" className="plx-btn-s">All AI SEO Services</Link>
-            </div>
-            <div className="plx-stats">
-              {STATS.map(s => (
-                <div key={s.label} className="plx-stat">
-                  <div className="plx-stat-l">{s.label}</div>
-                  <div className="plx-stat-v">{s.val}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="AI Source Visibility · Citation Optimisation · E-E-A-T · Answer Engine SEO"
+          title={<>Perplexity AI SEO — <AuroraText>Become a Cited Source</AuroraText> in AI-Generated Answers</>}
+          subtext="Specialist Perplexity AI SEO services — content optimisation, E-E-A-T signal building, structured data, and citation monitoring to make your brand the trusted source Perplexity chooses when it answers questions in your niche."
+          primaryCta={{ label: 'Get a Free Perplexity Audit', href: '#plx-contact' }}
+          secondaryCta={{ label: 'All AI SEO Services', href: '/ai-seo-services/' }}
+          stats={[
+            { label: 'Brands Cited in Perplexity', value: '200', suffix: '+' },
+            { label: 'Avg Citation Rate Increase', value: '65', prefix: '+', suffix: '%' },
+            { label: 'AI Search Optimisation Experience', value: '3', suffix: '+ Yrs' },
+            { label: 'Pages Optimised for AI Sources', value: '1,000', suffix: '+' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="plx-svc">

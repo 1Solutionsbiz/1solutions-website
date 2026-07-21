@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n:'01', title:'Custom Shopify Store Development', desc:'Fully bespoke Shopify stores built from the ground up - tailored to your brand, products, and conversion goals.', featured:false },
@@ -41,49 +43,14 @@ const WHY = [
   { icon:<svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>, title:'Long-Term Partnership', desc:'97% client retention rate. We don\'t disappear after launch - maintenance plans, support retainers, and growth partnerships keep us invested in your success.' },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const numTarget = parseInt(target.replace(/\D/g, ''), 10);
-    if (!numTarget) return;
-    let startTime = null;
-    const step = (ts) => {
-      if (!startTime) startTime = ts;
-      const progress = Math.min((ts - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * numTarget));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function AnimatedStat({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');
-  const hasComma = val.includes(',');
-  const display = started
-    ? (hasComma ? num.toLocaleString() : num) + suffix
-    : val;  return (
-    <div className="shopify-stat-col">
-      <div className="shopify-stat-label">{label}</div>
-      <div className="shopify-stat-value">{display}</div>
-    </div>
-  );
-}
-
 export default function ShopifyStoreDevelopment() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleSteps, setVisibleSteps] = useState([]);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const stepRefs = useRef([]);
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
@@ -104,16 +71,6 @@ export default function ShopifyStoreDevelopment() {
       return obs;
     });
     return () => observers.forEach(o => o && o.disconnect());
-  }, []);
-
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setStatsStarted(true); obs.disconnect(); } },
-      { threshold: 0.5 }
-    );
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
   }, []);
 
   useEffect(() => {
@@ -221,31 +178,6 @@ export default function ShopifyStoreDevelopment() {
           .shopify-aurora-b2 { position:absolute; left:78%; top:22%; width:48%; height:48%; border-radius:50%; background:radial-gradient(circle at center,rgba(217,119,6,0.20) 0%,transparent 70%); transform:translate(-50%,-50%); }
           .shopify-aurora-b3 { position:absolute; left:50%; top:82%; width:55%; height:55%; border-radius:50%; background:radial-gradient(circle at center,rgba(26,82,118,0.16) 0%,transparent 70%); transform:translate(-50%,-50%); }
           @keyframes shopify-aurora-drift { 0%{transform:translate3d(0,0,0) scale(1)} 100%{transform:translate3d(-4%,3%,0) scale(1.10)} }
-
-          /* Hero */
-          .shopify-hero-block { background:transparent;position:relative;overflow:hidden; }
-          .shopify-hero-block::before { content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(17,65,113,0.10) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px); }
-          .shopify-hero-block::after { content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.15) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px); }
-          .shopify-hero-content { position:relative;z-index:2;text-align:center;max-width:860px;margin:0 auto;padding:56px 40px 40px; }
-          .shopify-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:18px; }
-          .shopify-hero-content h1 { font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .shopify-hero-content p { font-size:16px;color:#3A507A;line-height:1.65;max-width:620px;margin:0 auto 28px; }
-          .shopify-btn-hero { display:inline-block;padding:14px 40px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#114171;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(17,65,113,0.10),inset 0 1px 0 rgba(255,255,255,1); }
-          .shopify-btn-hero:hover { background:rgba(255,255,255,0.85);border-color:rgba(254,151,0,0.6);box-shadow:0 12px 36px rgba(17,65,113,0.15),0 0 0 2px rgba(254,151,0,0.22),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px);color:#114171; }
-
-          /* Stats */
-          .shopify-hero-stats { position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);box-shadow:0 4px 24px rgba(17,65,113,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
-          .shopify-stat-col { padding:18px 20px;text-align:center;border-right:1px solid rgba(17,65,113,0.10); }
-          .shopify-stat-col:last-child { border-right:none; }
-          .shopify-stat-label { font-size:12px;color:#4A6080;font-weight:500;margin-bottom:6px; }
-          .shopify-stat-value { font-size:26px;font-weight:900;color:#FE9700;letter-spacing:-0.5px;line-height:1; }
-
-          /* Clients */
-          .shopify-clients-bar { position:relative;z-index:2;padding:20px 40px 60px;max-width:1440px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px; }
-          .shopify-clients-label { font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6A80A0; }
-          .shopify-clients-logos { width:100%;overflow:hidden; }
-          .shopify-client-logo { height:26px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(100%);opacity:0.5;transition:opacity 0.25s,filter 0.25s; }
-          .shopify-client-logo:hover { opacity:0.85;filter:grayscale(0%); }
 
           /* Sections shared */
           .shopify-section-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#FE9700;margin-bottom:12px;display:block; }
@@ -452,23 +384,12 @@ export default function ShopifyStoreDevelopment() {
           .shopify-rtag-emerald { background:rgba(17,65,113,0.10);border-color:rgba(17,65,113,0.28);color:#114171; }
           .shopify-rtag-slate   { background:rgba(100,116,139,0.10);border-color:rgba(100,116,139,0.28);color:#334155; }
 
-          /* Shimmer CTA */
-          .shopify-btn-hero-shimmer { position:relative;overflow:hidden; }
-          .shopify-btn-hero-shimmer::after { content:'';position:absolute;top:-10%;left:-120%;width:80%;height:120%;background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,0.75) 45%,rgba(255,255,255,0.9) 50%,rgba(255,255,255,0.75) 55%,transparent 100%);animation:shopify-shimmer-sweep 2.5s ease-in-out infinite;pointer-events:none; }
-          @keyframes shopify-shimmer-sweep { 0%{left:-120%} 35%,100%{left:160%} }
-
           /* Section reveal */
           .shopify-section-reveal { opacity:0;transform:translateY(48px);transition:opacity 0.7s cubic-bezier(0.22,1,0.36,1),transform 0.7s cubic-bezier(0.22,1,0.36,1); }
           .shopify-section-reveal.shopify-revealed { opacity:1;transform:translateY(0); }
 
-          /* Logo marquee */
-          .shopify-logos-track { display:flex;align-items:center;gap:60px;width:max-content;animation:shopify-marquee 28s linear infinite; }
-          .shopify-logos-track:hover { animation-play-state:paused; }
-          @keyframes shopify-marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-
           /* Responsive */
           @media (max-width:1024px) {
-            .shopify-hero-content h1 { font-size:40px; }
             .shopify-services-grid { grid-template-columns:repeat(2,1fr); }
             .shopify-why-grid { grid-template-columns:repeat(2,1fr); }
             .shopify-portfolio-grid { grid-template-columns:repeat(2,1fr); }
@@ -478,17 +399,6 @@ export default function ShopifyStoreDevelopment() {
           }
           @media (max-width:768px) {
             .shopify-page { overflow-x:hidden; }
-            .shopify-hero-content { padding:36px 20px 24px; }
-            .shopify-hero-content h1 { font-size:28px;letter-spacing:-0.3px; }
-            .shopify-hero-content p { font-size:15px; }
-            .shopify-hero-stats { grid-template-columns:1fr 1fr;max-width:100%; }
-            .shopify-stat-col { padding:14px 12px; }
-            .shopify-stat-col:nth-child(2) { border-right:none; }
-            .shopify-stat-col:nth-child(3) { border-top:1px solid rgba(17,65,113,0.10); }
-            .shopify-stat-col:nth-child(4) { border-top:1px solid rgba(17,65,113,0.10);border-right:none; }
-            .shopify-stat-value { font-size:22px; }
-            .shopify-clients-bar { padding:16px 20px 36px;gap:12px; }
-            .shopify-client-logo { height:20px; }
             .shopify-services-section { padding:48px 20px 40px; }
             .shopify-portfolio-section { padding:48px 16px; }
             .shopify-portfolio-wrap { padding:24px 20px 32px;border-radius:16px; }
@@ -529,7 +439,6 @@ export default function ShopifyStoreDevelopment() {
             .shopify-stat-number { font-size:28px; }
           }
           @media (max-width:480px) {
-            .shopify-hero-content h1 { font-size:24px; }
             .shopify-section-title,.shopify-engage-title,.shopify-process-main-title,.shopify-related-title { font-size:26px; }
             .shopify-services-grid { grid-template-columns:1fr; }
             .shopify-service-card { padding:20px 18px 18px; }
@@ -556,58 +465,18 @@ export default function ShopifyStoreDevelopment() {
         </div>
 
         {/* ── HERO ── */}
-        <div className="shopify-hero-block">
-          <div className="shopify-hero-content">
-            <span className="shopify-eyebrow">Expert Shopify Store Development Company</span>
-            <h1>Shopify Store Development Services - Launch, Grow & Scale Your Online Store</h1>
-            <p>Build high-converting, lightning-fast Shopify stores with 1Solutions' expert Shopify development services. From custom themes to Shopify Plus and bespoke app development - we deliver stores that drive real revenue for businesses across the US, Canada, and Australia.</p>
-            <Link href="#contact" className="shopify-btn-hero shopify-btn-hero-shimmer">Get a Free Shopify Consultation</Link>
-          </div>
-
-          <div className="shopify-hero-stats" ref={statsRef}>
-            {[['Shopify Stores Built','200+'],['E-Commerce Experts','50+'],['Projects Delivered','1,200+'],['Years in Business','15+']].map(([label,val]) => (
-              <AnimatedStat key={label} label={label} val={val} started={statsStarted} />
-            ))}
-          </div>
-
-          <div className="shopify-clients-bar">
-            <span className="shopify-clients-label">Trusted by Leading Brands</span>
-            <div className="shopify-clients-logos">
-              <div className="shopify-logos-track">
-                {[
-                  ['/logo/Indian_Express_Logo_full.png','Indian Express'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],
-                  ['/logo/Uniphore.jpg','Uniphore'],
-                  ['/logo/ICCoLogo.png','ICC'],
-                  ['/logo/Honor_Logo_(2020).svg.png','Honor'],
-                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],
-                  ['/logo/amarujala-print-logo_60e03f7d5b4a8.webp','Amar Ujala'],
-                  ['/logo/Nuance-Symbol-500x281.png','Nuance'],
-                  ['/logo/PHDCCI-Logo-2024.png','PHD Chamber'],
-                  ['/logo/Wilson-logo.svg.png','Wilson'],
-                  ['/logo/977be174b7bcc8708254a2163b534cbe_fgraphic.png','Client'],
-                  ['/logo/india-madeaismartphone2-1747658691.webp','India Made'],
-                  /* duplicate for seamless loop */
-                  ['/logo/Indian_Express_Logo_full.png','Indian Express2'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon2'],
-                  ['/logo/Uniphore.jpg','Uniphore2'],
-                  ['/logo/ICCoLogo.png','ICC2'],
-                  ['/logo/Honor_Logo_(2020).svg.png','Honor2'],
-                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv2'],
-                  ['/logo/amarujala-print-logo_60e03f7d5b4a8.webp','Amar Ujala2'],
-                  ['/logo/Nuance-Symbol-500x281.png','Nuance2'],
-                  ['/logo/PHDCCI-Logo-2024.png','PHD Chamber2'],
-                  ['/logo/Wilson-logo.svg.png','Wilson2'],
-                  ['/logo/977be174b7bcc8708254a2163b534cbe_fgraphic.png','Client2'],
-                  ['/logo/india-madeaismartphone2-1747658691.webp','India Made2'],
-                ].map(([src,alt]) => (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img key={alt} src={src} alt={alt.replace(/\d+$/,'')} className="shopify-client-logo" />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="Expert Shopify Store Development Company"
+          title={<>Shopify Store Development Services - <AuroraText>Launch, Grow & Scale Your Online Store</AuroraText></>}
+          subtext="Build high-converting, lightning-fast Shopify stores with 1Solutions' expert Shopify development services. From custom themes to Shopify Plus and bespoke app development - we deliver stores that drive real revenue for businesses across the US, Canada, and Australia."
+          primaryCta={{ label: 'Get a Free Shopify Consultation', href: '#contact' }}
+          stats={[
+            { label: 'Shopify Stores Built', value: '200', suffix: '+' },
+            { label: 'E-Commerce Experts', value: '50', suffix: '+' },
+            { label: 'Projects Delivered', value: '1,200', suffix: '+' },
+            { label: 'Years in Business', value: '15', suffix: '+' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="shopify-services-section">

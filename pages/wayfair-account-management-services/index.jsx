@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const challenges = [
   {
@@ -100,15 +102,6 @@ const steps = [
   { title: 'Monthly Performance Review', desc: 'Full monthly performance review covering revenue, return rate, on-time delivery, CastleGate inventory, advertising ROI, and a clear action plan for the next 30 days.' },
 ];
 
-const stats = [
-  { num: '22M', lbl: 'Active Wayfair customers' },
-  { num: '$12B+', lbl: 'Wayfair annual revenue' },
-  { num: '3.1×', lbl: 'avg supplier revenue growth' },
-  { num: 'CastleGate', lbl: 'fulfilment enabled for 95% of clients' },
-];
-
-const trust = ['Wayfair Partner Home experts', 'CastleGate certified setup', 'No lock-in contracts', 'Dedicated account manager'];
-
 const FAQS = [
   { q: 'How do I become an approved Wayfair supplier?', a: 'Wayfair supplier applications are submitted through the Partner Home portal. The review process evaluates your product catalogue, pricing, fulfilment capability, and product data quality. Having professional product photography, complete attribute data, and a clear fulfilment model (dropship or CastleGate) significantly improves approval speed. We manage the full application and onboarding process for new suppliers.' },
   { q: 'What is CastleGate and do I need it to succeed on Wayfair?', a: "CastleGate is Wayfair's fulfilment network - you send inventory to Wayfair's warehouses and they handle delivery to customers, typically within 2 days. CastleGate listings receive significantly higher search ranking and conversion rates due to the faster delivery promise. While not mandatory, we strongly recommend CastleGate for your top-selling SKUs as it is one of the most powerful ranking levers on the platform." },
@@ -138,25 +131,8 @@ export default function WayfairAccountManagement() {
         <style>{`
           *{box-sizing:border-box;}
           body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;}
-          .wayf-hero{position:relative;overflow:hidden;padding:100px 40px 90px;background:linear-gradient(135deg,rgba(53,0,66,0.08) 0%,rgba(255,255,255,0.75) 50%,rgba(53,0,66,0.05) 100%);}
-          .wayf-orb1{position:absolute;top:-120px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(53,0,66,0.10) 0%,transparent 70%);pointer-events:none;filter:blur(12px);}
           .wayf-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;}
-          .wayf-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(53,0,66,0.09);border:1px solid rgba(53,0,66,0.20);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#350042;margin-bottom:24px;}
-          .wayf-h1{font-size:clamp(2.2rem,4vw,3.6rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;color:#0A1628;}
-          .wayf-h1-accent{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-          .wayf-desc{font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:680px;}
-          .wayf-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px;}
-          .wayf-btn-p{display:inline-flex;align-items:center;gap:8px;background:#350042;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 6px 24px rgba(53,0,66,0.25);}
-          .wayf-btn-p:hover{opacity:0.9;transform:translateY(-2px);}
-          .wayf-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.7);color:#350042;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;border:1.5px solid rgba(53,0,66,0.20);transition:all 0.25s;backdrop-filter:blur(8px);}
-          .wayf-btn-s:hover{background:#fff;transform:translateY(-2px);}
-          .wayf-trust{display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-bottom:48px;}
-          .wayf-badge{display:flex;align-items:center;gap:6px;font-size:12px;color:#6b7280;font-weight:500;}
-          .wayf-stats-bar{display:flex;border:1px solid rgba(53,0,66,0.10);border-radius:16px;background:rgba(255,255,255,0.80);backdrop-filter:blur(12px);overflow:hidden;max-width:680px;}
-          .wayf-stat-item{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(53,0,66,0.08);}
-          .wayf-stat-item:last-child{border-right:none;}
-          .wayf-stat-num{font-size:1.9rem;font-weight:900;color:#350042;line-height:1;letter-spacing:-1px;}
-          .wayf-stat-lbl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px;}.wayf-bc a:hover{color:#350042;}.wayf-bc-cur{color:#350042;font-weight:500;}
+          .wayf-bc a:hover{color:#350042;}.wayf-bc-cur{color:#350042;font-weight:500;}
           .wayf-sec{padding:80px 40px;}
           .wayf-bg{background:#f8fafd;}
           .wayf-tag{display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#350042;margin-bottom:12px;}
@@ -233,7 +209,7 @@ export default function WayfairAccountManagement() {
           .wayf-cta-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#350042;padding:14px 32px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;}
           .wayf-cta-btn:hover{transform:translateY(-2px);opacity:0.95;}
           @media(max-width:900px){.wayf-grid3,.wayf-grid4{grid-template-columns:1fr 1fr;}.wayf-grid2{grid-template-columns:1fr;}.wayf-contact-grid{grid-template-columns:1fr;}.wayf-res-grid{grid-template-columns:1fr 1fr;}}
-          @media(max-width:600px){.wayf-hero,.wayf-sec,.wayf-results,.wayf-cta,.wayf-contact-sec{padding-left:20px;padding-right:20px;}.wayf-hero{padding-top:60px;padding-bottom:50px;}.wayf-grid3,.wayf-grid4,.wayf-grid2,.wayf-res-grid{grid-template-columns:1fr;}.wayf-bc{padding:12px 20px;}.wayf-field-row{grid-template-columns:1fr;}.wayf-form-wrap{padding:24px 20px;}}
+          @media(max-width:600px){.wayf-sec,.wayf-results,.wayf-cta,.wayf-contact-sec{padding-left:20px;padding-right:20px;}.wayf-grid3,.wayf-grid4,.wayf-grid2,.wayf-res-grid{grid-template-columns:1fr;}.wayf-bc{padding:12px 20px;}.wayf-field-row{grid-template-columns:1fr;}.wayf-form-wrap{padding:24px 20px;}}
           /* ── FAQ ── */
           .wayf-faq-sec { padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(53,0,66,0.08); }
           .wayf-faq-h { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 36px;line-height:1.15; }
@@ -275,38 +251,19 @@ export default function WayfairAccountManagement() {
       </Head>
 
       {/* Hero */}
-      <section className="wayf-hero">
-        <div className="wayf-orb1" />
-        <div className="wayf-inner">
-          <div className="wayf-eyebrow">Wayfair Supplier Management</div>
-          <h1 className="wayf-h1">
-            Wayfair Supplier Management That Drives <span className="wayf-h1-accent">Consistent Home Goods Orders</span>
-          </h1>
-          <p className="wayf-desc">
-            Wayfair is North America's largest online home goods retailer, with 22 million active customers. 1Solutions manages your complete Wayfair supplier presence - from Partner Home setup to CastleGate fulfilment and listing quality - driving consistent purchase orders month after month.
-          </p>
-          <div className="wayf-trust">
-            {trust.map((t, i) => (
-              <span key={i} className="wayf-badge">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#350042" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 13l4 4L19 7"/></svg>
-                {t}
-              </span>
-            ))}
-          </div>
-          <div className="wayf-btns">
-            <Link href="#contact" className="wayf-btn-p">Get Free Wayfair Consultation</Link>
-            <Link href="#services" className="wayf-btn-s">See What We Manage</Link>
-          </div>
-          <div className="wayf-stats-bar">
-            {stats.map((s, i) => (
-              <div key={i} className="wayf-stat-item">
-                <span className="wayf-stat-num">{s.num}</span>
-                <span className="wayf-stat-lbl">{s.lbl}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="Wayfair Supplier Management"
+        title={<>Wayfair Supplier Management That Drives <AuroraText>Consistent Home Goods Orders</AuroraText></>}
+        subtext="Wayfair is North America's largest online home goods retailer, with 22 million active customers. 1Solutions manages your complete Wayfair supplier presence - from Partner Home setup to CastleGate fulfilment and listing quality - driving consistent purchase orders month after month."
+        primaryCta={{ label: 'Get Free Wayfair Consultation', href: '#contact' }}
+        secondaryCta={{ label: 'See What We Manage', href: '#services' }}
+        stats={[
+          { label: 'Active Wayfair customers', value: '22', suffix: 'M' },
+          { label: 'Wayfair annual revenue', value: '12', prefix: '$', suffix: 'B+' },
+          { label: 'Avg supplier revenue growth', value: '1', prefix: '3.', suffix: '×' },
+          { label: 'CastleGate fulfilment enabled for clients', value: '95', suffix: '%' },
+        ]}
+      />
 
       {/* Challenges */}
       <section className="wayf-sec wayf-bg">

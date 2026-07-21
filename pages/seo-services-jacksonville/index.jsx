@@ -2,22 +2,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-
-function useCountUp(target, duration = 1800) {
-  const [count, setCount] = useState(0);
-  const raf = useRef(null);
-  const start = (t) => {
-    const s = performance.now();
-    const step = (now) => {
-      const p = Math.min((now - s) / duration, 1);
-      setCount(Math.floor(p * t));
-      if (p < 1) raf.current = requestAnimationFrame(step);
-    };
-    raf.current = requestAnimationFrame(step);
-  };
-  useEffect(() => () => cancelAnimationFrame(raf.current), []);
-  return [count, start];
-}
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const ACCENT = '#114171';
 const SKILLS = [
@@ -70,9 +56,6 @@ export default function SeoServicesJacksonville() {
   const enR  = useRef(null); const [enV, setEnV] = useState(false);
   const whR  = useRef(null); const [whV, setWhV] = useState(false);
   const prR  = useRef(null); const [prV, setPrV] = useState(false);
-  const stGr = useRef(null); const [stV, setStV] = useState(false);
-  const [c1, s1] = useCountUp(300); const [c2, s2] = useCountUp(15);
-  const [c3, s3] = useCountUp(49);  const [c4, s4] = useCountUp(45);
   const [openFaq, setOpenFaq] = useState(null);
 
   useEffect(() => {
@@ -81,9 +64,7 @@ export default function SeoServicesJacksonville() {
     const o2 = obs(enR, setEnV); if (enR.current) o2.observe(enR.current);
     const o3 = obs(whR, setWhV); if (whR.current) o3.observe(whR.current);
     const o4 = obs(prR, setPrV); if (prR.current) o4.observe(prR.current);
-    const o5 = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStV(true); s1(300); s2(15); s3(49); s4(45); o5.disconnect(); } }, { threshold: 0.2 });
-    if (stGr.current) o5.observe(stGr.current);
-    return () => [o1, o2, o3, o4, o5].forEach(o => o.disconnect());
+    return () => [o1, o2, o3, o4].forEach(o => o.disconnect());
   }, []);
 
   const LD = {
@@ -115,14 +96,8 @@ export default function SeoServicesJacksonville() {
         <link rel="canonical" href="https://www.1solutions.biz/seo-services-jacksonville/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
-          .jax-hero{background:linear-gradient(135deg,${ACCENT} 0%,#0a2d4a 60%,#0d3c62 100%);color:#fff;padding:100px 20px 80px;text-align:center}
-          .jax-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin:0 0 18px;line-height:1.15}
-          .jax-hero p{font-size:1.15rem;max-width:640px;margin:0 auto 36px;opacity:.88;line-height:1.7}
-          .jax-hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           .jax-btn-primary{background:#FE9700;color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s}
           .jax-btn-primary:hover{opacity:.88}
-          .jax-btn-outline{border:2px solid rgba(255,255,255,.7);color:#fff;padding:13px 28px;border-radius:8px;font-weight:600;font-size:1rem;text-decoration:none;transition:border-color .2s}
-          .jax-btn-outline:hover{border-color:#fff}
           .jax-sec{padding:70px 20px}.jax-sec-alt{background:#f0f7ff}
           .jax-wrap{max-width:1100px;margin:0 auto}
           .jax-sec-title{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:800;color:#111;text-align:center;margin:0 0 12px}
@@ -147,10 +122,6 @@ export default function SeoServicesJacksonville() {
           .jax-step-n{width:48px;height:48px;border-radius:50%;background:${ACCENT};color:#fff;font-size:1.1rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
           .jax-step h3{font-size:1rem;font-weight:700;color:#111;margin:0 0 8px}
           .jax-step p{color:#666;font-size:.9rem;line-height:1.6;margin:0}
-          .jax-stats{background:${ACCENT};padding:60px 20px;color:#fff}
-          .jax-stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;max-width:900px;margin:0 auto;text-align:center}
-          .jax-stat-val{font-size:2.8rem;font-weight:900;line-height:1}
-          .jax-stat-label{font-size:.95rem;opacity:.82;margin-top:6px}
           .jax-faq{max-width:760px;margin:0 auto}
           .jax-faq-item{border-bottom:1px solid #e5e5e5;padding:20px 0}
           .jax-faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;color:#111;font-size:1rem;gap:12px}
@@ -160,17 +131,21 @@ export default function SeoServicesJacksonville() {
           .jax-cta{background:linear-gradient(135deg,${ACCENT},#0a2d4a);padding:80px 20px;text-align:center;color:#fff}
           .jax-cta h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin:0 0 16px}
           .jax-cta p{font-size:1.08rem;opacity:.88;max-width:560px;margin:0 auto 36px;line-height:1.7}
-          @media(max-width:600px){.jax-hero{padding:80px 18px 60px}.jax-stats-grid{grid-template-columns:1fr 1fr}}
         `}</style>
       </Head>
-      <section className="jax-hero">
-        <h1>SEO Services Jacksonville, FL - Rank Higher &amp; Grow Your Jacksonville Business</h1>
-        <p>We help Jacksonville businesses dominate Google search results - local SEO, technical optimisation, content strategy, and link building that drives real enquiries and sales. 15+ years of SEO expertise, 300+ businesses ranked.</p>
-        <div className="jax-hero-btns">
-          <Link href="/contact-us" className="jax-btn-primary">Get a Free Jacksonville SEO Audit →</Link>
-          <Link href="/local-seo-packages" className="jax-btn-outline">View SEO Packages</Link>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="SEO Services · Jacksonville, FL"
+        title={<>SEO Services Jacksonville, FL - <AuroraText>Rank Higher &amp; Grow Your Jacksonville Business</AuroraText></>}
+        subtext="We help Jacksonville businesses dominate Google search results - local SEO, technical optimisation, content strategy, and link building that drives real enquiries and sales. 15+ years of SEO expertise, 300+ businesses ranked."
+        primaryCta={{ label: 'Get a Free Jacksonville SEO Audit', href: '/contact-us' }}
+        secondaryCta={{ label: 'View SEO Packages', href: '/local-seo-packages' }}
+        stats={[
+          { label: 'Businesses Ranked', value: '300', suffix: '+' },
+          { label: 'Years SEO Experience', value: '15', suffix: '+' },
+          { label: 'Client Satisfaction', value: '9', prefix: '4.', suffix: '/5' },
+          { label: 'Free Trial Available', value: '45', suffix: '-Day' },
+        ]}
+      />
       <section className="jax-sec" ref={skR}>
         <div className="jax-wrap">
           <h2 className="jax-sec-title">Jacksonville SEO Services We Provide</h2>
@@ -190,14 +165,6 @@ export default function SeoServicesJacksonville() {
           <h2 className="jax-sec-title">Why Jacksonville Businesses Choose 1Solutions</h2>
           <p className="jax-sec-sub">We bring 15+ years of SEO experience to the Jacksonville market - results-driven, transparent, and contract-free.</p>
           <div className="jax-why-grid">{WHY.map((w, i) => <div key={w.h} className={`jax-why-item${whV ? ' jax-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
-        </div>
-      </section>
-      <section className="jax-stats" ref={stGr}>
-        <div className="jax-stats-grid">
-          <div><div className="jax-stat-val">{stV ? c1 : 0}+</div><div className="jax-stat-label">Businesses Ranked</div></div>
-          <div><div className="jax-stat-val">{stV ? c2 : 0}+</div><div className="jax-stat-label">Years SEO Experience</div></div>
-          <div><div className="jax-stat-val">4.{stV ? c3 : 0}/5</div><div className="jax-stat-label">Client Satisfaction</div></div>
-          <div><div className="jax-stat-val">{stV ? c4 : 0}-Day</div><div className="jax-stat-label">Free Trial Available</div></div>
         </div>
       </section>
       <section className="jax-sec jax-sec-alt" ref={prR}>

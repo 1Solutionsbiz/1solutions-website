@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -88,25 +90,13 @@ const FAQS = [
   { q: 'What is your replacement guarantee?', a: 'If a team member leaves or is not the right fit, we replace within 5 business days at no additional recruitment cost. We also conduct quarterly performance reviews and provide salary benchmarking to retain the best team members long-term.' },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => { if (!start) return; const num = parseInt(target.replace(/\D/g, ''), 10); if (!num) return; let t0 = null; const step = ts => { if (!t0) t0 = ts; const p = Math.min((ts - t0) / duration, 1); setCount(Math.floor((1 - Math.pow(1 - p, 3)) * num)); if (p < 1) requestAnimationFrame(step); }; requestAnimationFrame(step); }, [start, target, duration]);
-  return count;
-}
-function StatItem({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');  return (<div className="od-sc"><div className="od-sv">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div><div className="od-sl">{label}</div></div>);
-}
-
 export default function OffshoreDevCompany() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [ss, setSs] = useState(false);
   const [vis, setVis] = useState(new Set());
   const [vSk, setVSk] = useState([]); const [vEn, setVEn] = useState([]); const [vWh, setVWh] = useState([]); const [vTe, setVTe] = useState([]); const [vSt, setVSt] = useState([]);
-  const stR = useRef(null); const secR = useRef({});
+  const secR = useRef({});
   const skR = useRef(null); const enR = useRef(null); const whR = useRef(null); const teR = useRef(null); const stGr = useRef(null);
-  useEffect(() => { if (!stR.current) return; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setSs(true); o.disconnect(); } }, { threshold: 0.4 }); o.observe(stR.current); return () => o.disconnect(); }, []);
   useEffect(() => { const pairs = [[skR, SERVICES.length, setVSk],[enR, 3, setVEn],[whR, WHY_CARDS.length, setVWh],[teR, 3, setVTe],[stGr, TECH_STACK.length, setVSt]]; const obs = pairs.map(([ref, count, setter]) => { if (!ref.current) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { Array.from({ length: count }, (_, i) => setTimeout(() => setter(p => p.includes(i) ? p : [...p, i]), i * 80)); o.disconnect(); } }, { threshold: 0.05 }); o.observe(ref.current); return o; }); return () => obs.forEach(o => o?.disconnect()); }, []);
   useEffect(() => { const ks = Object.keys(secR.current); const obs = ks.map(k => { const el = secR.current[k]; if (!el) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVis(p => new Set([...p, k])); o.disconnect(); } }, { threshold: 0.1 }); o.observe(el); return o; }); return () => obs.forEach(o => o?.disconnect()); }, []);
   const visServices = showAll ? SERVICES : SERVICES.slice(0, 6);
@@ -154,31 +144,6 @@ export default function OffshoreDevCompany() {
 
 
 
-          .od-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
-          .od-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4a6a7a;margin-bottom:14px}
-          .od-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .od-desc{font-size:16px;color:#2a4a5a;line-height:1.65;max-width:740px;margin:0 auto 24px}
-          .od-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
-          .od-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0c2340;box-shadow:0 2px 8px rgba(12,35,64,.07)}
-          .od-dot{width:7px;height:7px;border-radius:50%;background:#0e7490;flex-shrink:0}
-          .od-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .od-p{display:inline-block;padding:14px 36px;background:#0e7490;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(14,116,144,.28)}
-          .od-p:hover{background:#0c2340;transform:translateY(-2px)}
-          .od-g{display:inline-block;padding:14px 36px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#0c2340;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .od-g:hover{background:rgba(255,255,255,.85);border-color:rgba(14,116,144,.5);transform:translateY(-2px)}
-          .od-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:28px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(12,35,64,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .od-sc{padding:18px 16px;text-align:center;border-right:1px solid rgba(12,35,64,.10)}
-          .od-sc:last-child{border-right:none}
-          .od-sv{font-size:28px;font-weight:900;color:#0e7490;letter-spacing:-.5px;line-height:1}
-          .od-sl{font-size:11px;color:#4a6a7a;font-weight:500;margin-top:5px}
-          .od-logos{position:relative;z-index:2;padding:24px 40px 52px;display:flex;flex-direction:column;align-items:center;gap:14px}
-          .od-ll{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#5a7a8a}
-          .od-lw{width:100%;overflow:hidden}
-          .od-lt{display:flex;align-items:center;gap:60px;width:max-content;animation:od-mq 28s linear infinite}
-          .od-lt:hover{animation-play-state:paused}
-          @keyframes od-mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-          .od-cl{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
-          .od-cl:hover{opacity:.85;filter:grayscale(0%)}
           .od-sey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
           .od-st{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .od-sd{font-size:15px;color:#3a5a6a;line-height:1.7}
@@ -325,8 +290,8 @@ export default function OffshoreDevCompany() {
           .od-fu{background:rgba(162,28,175,.09);border-color:rgba(162,28,175,.28);color:#86198f}
           .od-o{background:rgba(180,83,9,.09);border-color:rgba(180,83,9,.28);color:#92400e}
           .od-a{background:rgba(190,18,60,.09);border-color:rgba(190,18,60,.28);color:#9f1239}
-          @media(max-width:1024px){.od-hero h1,.od-st,.od-fq-s h2{font-size:36px}.od-sk-g{grid-template-columns:repeat(2,1fr)}.od-tec-g{grid-template-columns:repeat(2,1fr)}.od-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.od-en-c.feat{transform:none}.od-en-c.feat.od-ev{transform:none}.od-en-c.feat.od-ev:hover{transform:translateY(-4px)}.od-wy-g{grid-template-columns:repeat(2,1fr)}.od-tg2{grid-template-columns:1fr}.od-ct-g{grid-template-columns:1fr}}
-          @media(max-width:768px){.od-bc,.od-hero,.od-sk-s,.od-tec-s,.od-en-s,.od-pr-s,.od-te-s,.od-wy-s,.od-fq-s,.od-rel{padding-left:20px;padding-right:20px}.od-hero{padding-top:28px;padding-bottom:20px}.od-hero h1{font-size:26px;letter-spacing:-.3px}.od-stats{grid-template-columns:1fr 1fr}.od-sc:nth-child(2){border-right:none}.od-sc:nth-child(3),.od-sc:nth-child(4){border-top:1px solid rgba(12,35,64,.10)}.od-sc:nth-child(4){border-right:none}.od-sk-g,.od-tec-g,.od-wy-g{grid-template-columns:1fr}.od-fr{grid-template-columns:1fr}.od-ctt{font-size:28px}.od-st{font-size:28px}.od-ct-s{padding:48px 20px}.od-logos{padding-left:20px;padding-right:20px}}
+          @media(max-width:1024px){.od-st,.od-fq-s h2{font-size:36px}.od-sk-g{grid-template-columns:repeat(2,1fr)}.od-tec-g{grid-template-columns:repeat(2,1fr)}.od-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.od-en-c.feat{transform:none}.od-en-c.feat.od-ev{transform:none}.od-en-c.feat.od-ev:hover{transform:translateY(-4px)}.od-wy-g{grid-template-columns:repeat(2,1fr)}.od-tg2{grid-template-columns:1fr}.od-ct-g{grid-template-columns:1fr}}
+          @media(max-width:768px){.od-bc,.od-sk-s,.od-tec-s,.od-en-s,.od-pr-s,.od-te-s,.od-wy-s,.od-fq-s,.od-rel{padding-left:20px;padding-right:20px}.od-sk-g,.od-tec-g,.od-wy-g{grid-template-columns:1fr}.od-fr{grid-template-columns:1fr}.od-ctt{font-size:28px}.od-st{font-size:28px}.od-ct-s{padding:48px 20px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
@@ -352,15 +317,19 @@ export default function OffshoreDevCompany() {
 </Head>
       <div className="od-page">
         <div className="od-orb od-o1" /><div className="od-orb od-o2" /><div className="od-orb od-o3" />
-        <section className="od-hero">
-          <span className="od-ey">Offshore Software Development</span>
-          <h1>Offshore Development Company - Dedicated Teams at 60–70% Below Western Rates</h1>
-          <p className="od-desc">1Solutions is an offshore software development company based in India with 15+ years serving clients in the US, UK, Australia, and Canada. Dedicated offshore teams, staff augmentation, and fixed-price project delivery - senior developers, DevOps engineers, mobile specialists, QA, and data scientists at significantly lower cost than hiring locally.</p>
-          <div className="od-tr">{['Dedicated Offshore Teams','Staff Augmentation','Fixed-Price Projects','React / Node / Python / Mobile','60–70% Cost Savings'].map(b => (<div className="od-badge" key={b}><span className="od-dot" />{b}</div>))}</div>
-          <div className="od-ctas"><Link href="#contact" className="od-p">Build Your Offshore Team</Link><Link href="#engagement" className="od-g">View Engagement Models →</Link></div>
-        </section>
-        <div className="od-stats" ref={stR}>{[['500+','Projects Delivered'],['15+','Years Offshore Delivery'],['98%','Client Retention'],['60-70%','Cost Savings vs Local']].map(([v, l]) => (<StatItem key={l} label={l} val={v} started={ss} />))}</div>
-        <div className="od-logos"><span className="od-ll">Trusted by Businesses in US, UK, Australia, Canada</span><div className="od-lw"><div className="od-lt">{[['/logo/Indian_Express_Logo_full.png','Indian Express'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],['/logo/Uniphore.jpg','Uniphore'],['/logo/ICCoLogo.png','ICC'],['/logo/Honor_Logo_(2020).svg.png','Honor'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],['/logo/Indian_Express_Logo_full.png','Indian Express 2'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon 2'],['/logo/Uniphore.jpg','Uniphore 2'],['/logo/ICCoLogo.png','ICC 2'],['/logo/Honor_Logo_(2020).svg.png','Honor 2'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv 2']].map(([src, alt]) => (<img key={alt} src={src} alt={alt.replace(/ \d$/, '')} className="od-cl" />))}</div></div></div>
+        <ServiceHero
+          eyebrow="Offshore Software Development · 60–70% Below Western Rates"
+          title={<>Offshore Development Company - <AuroraText>Dedicated Teams at 60–70% Below Western Rates</AuroraText></>}
+          subtext="1Solutions is an offshore software development company based in India with 15+ years serving clients in the US, UK, Australia, and Canada. Dedicated offshore teams, staff augmentation, and fixed-price project delivery - senior developers, DevOps engineers, mobile specialists, QA, and data scientists at significantly lower cost than hiring locally."
+          primaryCta={{ label: 'Build Your Offshore Team', href: '#contact' }}
+          secondaryCta={{ label: 'View Engagement Models', href: '#engagement' }}
+          stats={[
+            { label: 'Projects Delivered', value: '500', suffix: '+' },
+            { label: 'Years Offshore Delivery', value: '15', suffix: '+' },
+            { label: 'Client Retention', value: '98', suffix: '%' },
+            { label: 'Cost Savings vs Local', value: '70', prefix: '60-', suffix: '%' },
+          ]}
+        />
         <section className="od-sk-s" aria-labelledby="od-sk-h"><div className="od-in"><div className={`od-rv${vis.has('sk') ? ' od-ok' : ''}`} ref={el => { secR.current['sk'] = el; }}><span className="od-sey">Offshore Development Services</span><h2 id="od-sk-h" className="od-st">What Our Offshore Teams Deliver</h2><p className="od-sd" style={{ maxWidth: 720 }}>Dedicated offshore teams, staff augmentation, project delivery, QA, mobile, web, cloud, AI/ML, and CMS development - all at offshore economics with the quality and communication standards of a local team.</p></div><div className="od-sk-g" ref={skR}>{visServices.map((s, i) => (<div key={s.n} className={`od-sk-c${s.feat ? ' feat' : ''}${vSk.includes(i) ? ' od-cv' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}><span className="od-sk-n">{s.n}</span><h3>{s.title}</h3><p>{s.desc}</p></div>))}</div>{SERVICES.length > 6 && (<div className="od-sm"><button className="od-bm" onClick={() => setShowAll(p => !p)}>{showAll ? 'Show fewer ↑' : `Show all ${SERVICES.length} services ↓`}</button></div>)}</div></section>
         <section className="od-tec-s" aria-labelledby="od-tec-h"><div className="od-in"><div className={`od-rv${vis.has('stk') ? ' od-ok' : ''}`} ref={el => { secR.current['stk'] = el; }}><span className="od-sey">Technology Stack</span><h2 id="od-tec-h" className="od-st">Technologies Our Offshore Teams Cover</h2><p className="od-sd" style={{ maxWidth: 680 }}>React, Next.js, Angular, Node.js, Python, PHP, Java, .NET, Flutter, React Native, PostgreSQL, MongoDB, AWS, Azure, GCP, Kubernetes, Terraform, ML/AI, and CMS platforms.</p></div><div className="od-tec-g" ref={stGr}>{TECH_STACK.map((grp, i) => (<div key={grp.group} className={`od-tec-c${vSt.includes(i) ? ' od-sv2' : ''}`} style={{ transitionDelay: `${i * 60}ms` }}><div className="od-tg" style={{ color: grp.color, borderBottomColor: grp.color + '33' }}>{grp.group}</div><div className="od-pills">{grp.items.map(item => <span key={item} className="od-pill" style={{ color: grp.color, background: grp.color + '12', borderColor: grp.color + '30' }}>{item}</span>)}</div></div>))}</div></div></section>
         <section id="engagement" className="od-en-s" aria-labelledby="od-en-h"><div className="od-in"><div className={`od-rv${vis.has('eng') ? ' od-ok' : ''}`} ref={el => { secR.current['eng'] = el; }}><span className="od-sey">Engagement Models</span><h2 id="od-en-h" className="od-st">How to Engage Our Offshore Team</h2><p className="od-sd" style={{ maxWidth: 680 }}>Three offshore engagement models - dedicated team, staff augmentation, or fixed-price project - structured to match your development stage, team size, and budget requirements.</p></div><div className="od-en-g" ref={enR}>{ENGAGEMENT_MODELS.map((m, i) => (<div key={m.id} className={`od-en-c${m.feat ? ' feat' : ''}${vEn.includes(i) ? ' od-ev' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}><span className="od-en-b" style={{ color: m.badgeColor, borderColor: m.badgeColor + '44', background: m.badgeColor + '14' }}>{m.badge}</span><div className="od-en-i"><svg viewBox="0 0 24 24" width="26" height="26"><path d={m.icon} /></svg></div><div className="od-en-n">{m.name}</div><div className="od-en-h">{m.headline}</div><div className="od-en-d">{m.desc}</div><div className="od-en-ll">Best for</div><ul className="od-en-li">{m.bestFor.map(b => <li key={b}>{b}</li>)}</ul><div className="od-en-p"><strong>Process:</strong> {m.process}<br /><span className="od-en-tl">{m.timeline}</span></div><Link href="#contact" className="od-en-a">Get a free estimate →</Link></div>))}</div></div></section>

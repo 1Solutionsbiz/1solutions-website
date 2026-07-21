@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -88,32 +90,13 @@ const FAQS = [
   { q: 'Do your AI developers work with fine-tuning?', a: "Yes - OpenAI fine-tuning API (GPT-4o-mini), LoRA/QLoRA fine-tuning of open-source models (Llama 3, Mistral, Phi-3) with HuggingFace PEFT. We also advise honestly when RAG or prompt engineering is a better solution than fine-tuning for your specific use case." },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const num = parseInt(target.replace(/\D/g, ''), 10);
-    if (!num) return;
-    let t0 = null;
-    const step = ts => { if (!t0) t0 = ts; const p = Math.min((ts - t0) / duration, 1); setCount(Math.floor((1 - Math.pow(1 - p, 3)) * num)); if (p < 1) requestAnimationFrame(step); };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-function StatItem({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');  return (<div className="hia-stat-col"><div className="hia-stat-val">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div><div className="hia-stat-label">{label}</div></div>);
-}
-
 export default function HireAIDeveloper() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [vis, setVis] = useState(new Set());
   const [vSk, setVSk] = useState([]); const [vEn, setVEn] = useState([]); const [vWh, setVWh] = useState([]); const [vTe, setVTe] = useState([]); const [vSt, setVSt] = useState([]);
-  const statsRef = useRef(null); const secRefs = useRef({});
+  const secRefs = useRef({});
   const skRef = useRef(null); const enRef = useRef(null); const whRef = useRef(null); const teRef = useRef(null); const stRef = useRef(null);
-  useEffect(() => { if (!statsRef.current) return; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStatsStarted(true); o.disconnect(); } }, { threshold: 0.4 }); o.observe(statsRef.current); return () => o.disconnect(); }, []);
   useEffect(() => {
     const pairs = [[skRef, SKILLS.length, setVSk],[enRef, 3, setVEn],[whRef, WHY_CARDS.length, setVWh],[teRef, 3, setVTe],[stRef, TECH_STACK.length, setVSt]];
     const obs = pairs.map(([ref, count, setter]) => { if (!ref.current) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { Array.from({ length: count }, (_, i) => setTimeout(() => setter(p => p.includes(i) ? p : [...p, i]), i * 80)); o.disconnect(); } }, { threshold: 0.05 }); o.observe(ref.current); return o; });
@@ -169,31 +152,6 @@ export default function HireAIDeveloper() {
 
 
 
-          .hia-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
-          .hia-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
-          .hia-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .hia-hero-desc{font-size:16px;color:#3A507A;line-height:1.65;max-width:740px;margin:0 auto 24px}
-          .hia-trust-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
-          .hia-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07)}
-          .hia-badge-dot{width:7px;height:7px;border-radius:50%;background:#6d28d9;flex-shrink:0}
-          .hia-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .hia-btn-primary{display:inline-block;padding:14px 36px;background:#6d28d9;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(109,40,217,.28)}
-          .hia-btn-primary:hover{background:#0F3460;transform:translateY(-2px)}
-          .hia-btn-ghost{display:inline-block;padding:14px 36px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .hia-btn-ghost:hover{background:rgba(255,255,255,.85);border-color:rgba(109,40,217,.5);transform:translateY(-2px)}
-          .hia-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:28px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .hia-stat-col{padding:18px 16px;text-align:center;border-right:1px solid rgba(15,52,96,.10)}
-          .hia-stat-col:last-child{border-right:none}
-          .hia-stat-val{font-size:28px;font-weight:900;color:#6d28d9;letter-spacing:-.5px;line-height:1}
-          .hia-stat-label{font-size:11px;color:#4A6080;font-weight:500;margin-top:5px}
-          .hia-logos{position:relative;z-index:2;padding:24px 40px 52px;display:flex;flex-direction:column;align-items:center;gap:14px}
-          .hia-logos-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6A80A0}
-          .hia-logos-wrap{width:100%;overflow:hidden}
-          .hia-logos-track{display:flex;align-items:center;gap:60px;width:max-content;animation:hia-mq 28s linear infinite}
-          .hia-logos-track:hover{animation-play-state:paused}
-          @keyframes hia-mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-          .hia-clogo{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
-          .hia-clogo:hover{opacity:.85;filter:grayscale(0%)}
           .hia-s-eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
           .hia-s-title{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .hia-s-desc{font-size:15px;color:#4A6080;line-height:1.7}
@@ -340,8 +298,8 @@ export default function HireAIDeveloper() {
           .hia-rtag-b{background:rgba(30,64,175,.09);border-color:rgba(30,64,175,.28);color:#1e3a8a}
           .hia-rtag-g{background:rgba(22,163,74,.09);border-color:rgba(22,163,74,.28);color:#14532d}
           .hia-rtag-a{background:rgba(202,138,4,.09);border-color:rgba(202,138,4,.28);color:#92400e}
-          @media(max-width:1024px){.hia-hero h1,.hia-s-title,.hia-fq-sec h2{font-size:36px}.hia-sk-grid{grid-template-columns:repeat(2,1fr)}.hia-st-grid{grid-template-columns:repeat(2,1fr)}.hia-en-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.hia-en-card.feat{transform:none}.hia-en-card.feat.hia-ev{transform:none}.hia-en-card.feat.hia-ev:hover{transform:translateY(-4px)}.hia-wy-grid{grid-template-columns:repeat(2,1fr)}.hia-tgrid{grid-template-columns:1fr}.hia-ct-grid{grid-template-columns:1fr}}
-          @media(max-width:768px){.hia-breadcrumb{padding:12px 20px 0}.hia-hero{padding:28px 20px 20px}.hia-hero h1{font-size:26px;letter-spacing:-.3px}.hia-stats{grid-template-columns:1fr 1fr}.hia-stat-col:nth-child(2){border-right:none}.hia-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.hia-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.hia-logos{padding:16px 20px 28px}.hia-sk-sec,.hia-st-sec,.hia-en-sec,.hia-pr-sec,.hia-te-sec,.hia-wy-sec,.hia-fq-sec,.hia-rel{padding:52px 20px}.hia-ct-sec{padding:48px 20px}.hia-sk-grid,.hia-st-grid,.hia-wy-grid{grid-template-columns:1fr}.hia-frow{grid-template-columns:1fr}.hia-ctitle{font-size:28px}.hia-s-title{font-size:28px}}
+          @media(max-width:1024px){.hia-s-title,.hia-fq-sec h2{font-size:36px}.hia-sk-grid{grid-template-columns:repeat(2,1fr)}.hia-st-grid{grid-template-columns:repeat(2,1fr)}.hia-en-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.hia-en-card.feat{transform:none}.hia-en-card.feat.hia-ev{transform:none}.hia-en-card.feat.hia-ev:hover{transform:translateY(-4px)}.hia-wy-grid{grid-template-columns:repeat(2,1fr)}.hia-tgrid{grid-template-columns:1fr}.hia-ct-grid{grid-template-columns:1fr}}
+          @media(max-width:768px){.hia-breadcrumb{padding:12px 20px 0}.hia-sk-sec,.hia-st-sec,.hia-en-sec,.hia-pr-sec,.hia-te-sec,.hia-wy-sec,.hia-fq-sec,.hia-rel{padding:52px 20px}.hia-ct-sec{padding:48px 20px}.hia-sk-grid,.hia-st-grid,.hia-wy-grid{grid-template-columns:1fr}.hia-frow{grid-template-columns:1fr}.hia-ctitle{font-size:28px}.hia-s-title{font-size:28px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
@@ -367,15 +325,19 @@ export default function HireAIDeveloper() {
 </Head>
       <div className="hia-page">
         <div className="hia-orb hia-orb-1" /><div className="hia-orb hia-orb-2" /><div className="hia-orb hia-orb-3" />
-        <section className="hia-hero">
-          <span className="hia-eyebrow">Hire AI Developer</span>
-          <h1>Hire Expert AI Developers - LLM, RAG, Agents & Generative AI</h1>
-          <p className="hia-hero-desc">Hire pre-vetted AI developers specialising in LLM integration (GPT-4o, Claude 3.5, Gemini), RAG pipeline design, AI agents (LangChain, LangGraph), vector databases (Pinecone, pgvector), fine-tuning, and production AI product development. Dedicated, part-time, or hourly. Start in 3–5 business days.</p>
-          <div className="hia-trust-row">{['GPT-4o / Claude 3.5','RAG Pipelines','AI Agents','LangChain / LangGraph','Vector Databases'].map(b => (<div className="hia-badge" key={b}><span className="hia-badge-dot" />{b}</div>))}</div>
-          <div className="hia-ctas"><Link href="#contact" className="hia-btn-primary">Hire an AI Developer</Link><Link href="#engagement" className="hia-btn-ghost">View Engagement Models →</Link></div>
-        </section>
-        <div className="hia-stats" ref={statsRef}>{[['80+','AI Products Built'],['15+','Years Dev Experience'],['48hr','Avg Developer Match'],['98%','Client Retention']].map(([v, l]) => (<StatItem key={l} label={l} val={v} started={statsStarted} />))}</div>
-        <div className="hia-logos"><span className="hia-logos-label">Trusted by AI-Forward Engineering Teams</span><div className="hia-logos-wrap"><div className="hia-logos-track">{[['/logo/Indian_Express_Logo_full.png','Indian Express'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],['/logo/Uniphore.jpg','Uniphore'],['/logo/ICCoLogo.png','ICC'],['/logo/Honor_Logo_(2020).svg.png','Honor'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],['/logo/Indian_Express_Logo_full.png','Indian Express 2'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon 2'],['/logo/Uniphore.jpg','Uniphore 2'],['/logo/ICCoLogo.png','ICC 2'],['/logo/Honor_Logo_(2020).svg.png','Honor 2'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv 2']].map(([src, alt]) => (<img key={alt} src={src} alt={alt.replace(/ \d$/, '')} className="hia-clogo" />))}</div></div></div>
+        <ServiceHero
+          eyebrow="Hire AI Developer"
+          title={<>Hire Expert AI Developers - <AuroraText>LLM, RAG, Agents & Generative AI</AuroraText></>}
+          subtext="Hire pre-vetted AI developers specialising in LLM integration (GPT-4o, Claude 3.5, Gemini), RAG pipeline design, AI agents (LangChain, LangGraph), vector databases (Pinecone, pgvector), fine-tuning, and production AI product development. Dedicated, part-time, or hourly. Start in 3–5 business days."
+          primaryCta={{ label: 'Hire an AI Developer', href: '#contact' }}
+          secondaryCta={{ label: 'View Engagement Models', href: '#engagement' }}
+          stats={[
+            { label: 'AI Products Built', value: '80', suffix: '+' },
+            { label: 'Years Dev Experience', value: '15', suffix: '+' },
+            { label: 'Avg Developer Match', value: '48', suffix: 'hr' },
+            { label: 'Client Retention', value: '98', suffix: '%' },
+          ]}
+        />
         <section className="hia-sk-sec" aria-labelledby="hia-sk-h"><div className="hia-inner"><div className={`hia-s-reveal${vis.has('sk') ? ' hia-revealed' : ''}`} ref={el => { secRefs.current['sk'] = el; }}><span className="hia-s-eyebrow">What Our AI Developers Build</span><h2 id="hia-sk-h" className="hia-s-title">AI Development Skills & Expertise</h2><p className="hia-s-desc" style={{ maxWidth: 720 }}>LLM integration, RAG systems, AI agents, prompt engineering, fine-tuning, conversational AI, semantic search, AI microservices, multimodal AI, and AI architecture advisory.</p></div><div className="hia-sk-grid" ref={skRef}>{visSkills.map((s, i) => (<div key={s.n} className={`hia-sk-card${s.feat ? ' feat' : ''}${vSk.includes(i) ? ' hia-cv' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}><span className="hia-sk-num">{s.n}</span><h3>{s.title}</h3><p>{s.desc}</p></div>))}</div>{SKILLS.length > 6 && (<div className="hia-sk-more"><button className="hia-btn-more" onClick={() => setShowAll(p => !p)}>{showAll ? 'Show fewer ↑' : `Show all ${SKILLS.length} AI capabilities ↓`}</button></div>)}</div></section>
         <section className="hia-st-sec" aria-labelledby="hia-st-h"><div className="hia-inner"><div className={`hia-s-reveal${vis.has('stk') ? ' hia-revealed' : ''}`} ref={el => { secRefs.current['stk'] = el; }}><span className="hia-s-eyebrow">AI Technology Stack</span><h2 id="hia-st-h" className="hia-s-title">AI Tools & Technologies</h2><p className="hia-s-desc" style={{ maxWidth: 680 }}>OpenAI GPT-4o, Claude 3.5, Gemini, AWS Bedrock, LangChain, LangGraph, LlamaIndex, Pinecone, pgvector, Weaviate, HuggingFace, vLLM, FastAPI, Vercel AI SDK, RAGAS, LangSmith, and the full AI engineering stack.</p></div><div className="hia-st-grid" ref={stRef}>{TECH_STACK.map((grp, i) => (<div key={grp.group} className={`hia-st-card${vSt.includes(i) ? ' hia-sv' : ''}`} style={{ transitionDelay: `${i * 60}ms` }}><div className="hia-st-group" style={{ color: grp.color, borderBottomColor: grp.color + '33' }}>{grp.group}</div><div className="hia-st-pills">{grp.items.map(item => <span key={item} className="hia-pill" style={{ color: grp.color, background: grp.color + '12', borderColor: grp.color + '30' }}>{item}</span>)}</div></div>))}</div></div></section>
         <section id="engagement" className="hia-en-sec" aria-labelledby="hia-en-h"><div className="hia-inner"><div className={`hia-s-reveal${vis.has('eng') ? ' hia-revealed' : ''}`} ref={el => { secRefs.current['eng'] = el; }}><span className="hia-s-eyebrow">Engagement Models</span><h2 id="hia-en-h" className="hia-s-title">How to Hire an AI Developer</h2><p className="hia-s-desc" style={{ maxWidth: 680 }}>Full-time dedicated AI developer, part-time AI engagement, or hourly/project-based AI sprint - choose the model that fits your AI product stage.</p></div><div className="hia-en-grid" ref={enRef}>{ENGAGEMENT_MODELS.map((m, i) => (<div key={m.id} className={`hia-en-card${m.feat ? ' feat' : ''}${vEn.includes(i) ? ' hia-ev' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}><span className="hia-en-badge" style={{ color: m.badgeColor, borderColor: m.badgeColor + '44', background: m.badgeColor + '14' }}>{m.badge}</span><div className="hia-en-icon"><svg viewBox="0 0 24 24" width="26" height="26"><path d={m.icon} /></svg></div><div className="hia-en-name">{m.name}</div><div className="hia-en-headline">{m.headline}</div><div className="hia-en-desc">{m.desc}</div><div className="hia-en-list-label">Best for</div><ul className="hia-en-list">{m.bestFor.map(b => <li key={b}>{b}</li>)}</ul><div className="hia-en-proc"><strong>Process:</strong> {m.process}<br /><span className="hia-en-tl">{m.timeline}</span></div><Link href="#contact" className="hia-en-cta">Get a free estimate →</Link></div>))}</div></div></section>

@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 /* ── Aurora text ─────────────────────────────────────────────────────── */
 function AuroraText({ children }) {
@@ -9,14 +10,6 @@ function AuroraText({ children }) {
     <span style={{background:'linear-gradient(135deg,#f43f5e,#ec4899,#a855f7,#8b5cf6,#3b82f6,#06b6d4)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text',backgroundSize:'200% auto',animation:'lbs-aurora 4s linear infinite'}}>{children}</span>
   );
 }
-
-/* ── Static data ──────────────────────────────────────────────────────── */
-const STATS = [
-  { label: 'Links Built',    val: '50,000+' },
-  { label: 'Avg DR',        val: 'DR50+'    },
-  { label: 'Years',         val: '15+'      },
-  { label: 'Retention',     val: '92%'      },
-];
 
 const SERVICES = [
   { n:'01', icon:'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z', title:'Guest Post Placements', body:'Original content written in your niche, published on real DR40+ websites with contextual links back to your target pages. Full editorial control, niche-relevant anchor text, live links indexed within weeks.' },
@@ -144,25 +137,12 @@ export default function LinkBuildingServices() {
           .lbs-reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
           .lbs-reveal.lbs-vis{opacity:1;transform:translateY(0)}
           /* ── Breadcrumb ── */.lbs-bc a:hover{color:#D97706}
-          /* ── Hero ── */
-          .lbs-hero{position:relative;z-index:1;padding:72px 40px 0;overflow:hidden}
-          .lbs-hero::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.10) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px)}
-          .lbs-hero::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.16) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px)}
-          .lbs-hero-inner{position:relative;z-index:2;text-align:center;max-width:920px;margin:0 auto}
-          .lbs-eyebrow{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;display:block;margin-bottom:18px}
-          .lbs-h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:18px;color:#0F1F40}
-          .lbs-hero-sub{font-size:16px;color:#3A507A;line-height:1.65;max-width:660px;margin:0 auto 28px}
+          /* ── Hero CTA buttons (reused in final CTA section) ── */
           .lbs-btns{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:32px}
           .lbs-btn-p{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:8px;padding:14px 36px;background:rgba(15,52,96,0.85);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.20);border-radius:50px;color:#fff;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;box-shadow:0 6px 24px rgba(15,52,96,0.25)}
           .lbs-btn-p:hover{background:rgba(15,52,96,1);border-color:rgba(245,158,11,0.6);transform:translateY(-2px);box-shadow:0 12px 36px rgba(15,52,96,0.30)}
           .lbs-btn-s{display:inline-flex;align-items:center;padding:14px 32px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1)}
           .lbs-btn-s:hover{background:rgba(255,255,255,0.85);border-color:rgba(245,158,11,0.6);transform:translateY(-2px)}
-          /* ── Stats bar ── */
-          .lbs-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95)}
-          .lbs-stat{padding:18px 20px;text-align:center;border-right:1px solid rgba(15,52,96,.10)}
-          .lbs-stat:last-child{border-right:none}
-          .lbs-stat-v{font-size:26px;font-weight:900;color:#D97706;letter-spacing:-0.5px;line-height:1;margin-bottom:6px}
-          .lbs-stat-l{font-size:12px;color:#4A6080;font-weight:500}
           /* ── Section ── */
           .lbs-sec{padding:80px 40px;position:relative;z-index:1}
           .lbs-white{background:#fff}
@@ -210,14 +190,8 @@ export default function LinkBuildingServices() {
             .lbs-g4{grid-template-columns:repeat(2,1fr)}
           }
           @media(max-width:768px){
-            .lbs-hero{padding:56px 24px 0}
-            .lbs-hero::before,.lbs-hero::after{display:none}
             .lbs-sec{padding:52px 20px}
             .lbs-cta-sec{padding:52px 20px}
-            .lbs-stats{grid-template-columns:repeat(2,1fr)}
-            .lbs-stat:nth-child(2){border-right:none}
-            .lbs-stat:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}
-            .lbs-stat:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}
             .lbs-glass,.lbs-fitem{backdrop-filter:none;-webkit-backdrop-filter:none}
             .lbs-g3,.lbs-g4,.lbs-g2{grid-template-columns:1fr}
             .lbs-fq{padding:18px 18px 18px 52px}
@@ -231,28 +205,19 @@ export default function LinkBuildingServices() {
         <div className="lbs-orb lbs-orb1"/><div className="lbs-orb lbs-orb2"/><div className="lbs-orb lbs-orb3"/>
 
         {/* ── HERO ── */}
-        <section className="lbs-hero">
-          <div className="lbs-hero-inner">
-            <span className="lbs-eyebrow">Link Building · DR40–DR60+ · Manual Outreach · White-Hat Only</span>
-            <h1 className="lbs-h1">Link Building Services That<br/>Move Rankings with <AuroraText>Real Authority</AuroraText></h1>
-            <p className="lbs-hero-sub">We build high-authority backlinks through 100% manual outreach — guest posts on niche-relevant DR40+ sites, niche edits in existing indexed content, and digital PR placements. Every link reported, every placement tracked live.</p>
-            <div className="lbs-btns">
-              <Link href="/link-building-packages/#pricing" className="lbs-btn-p">
-                View Packages
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </Link>
-              <Link href="/contact-us" className="lbs-btn-s">Talk to a Specialist</Link>
-            </div>
-            <div className="lbs-stats">
-              {STATS.map(s => (
-                <div key={s.label} className="lbs-stat">
-                  <div className="lbs-stat-v">{s.val}</div>
-                  <div className="lbs-stat-l">{s.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Link Building · DR40–DR60+ · Manual Outreach · White-Hat Only"
+          title={<>Link Building Services That Move Rankings with <AuroraText>Real Authority</AuroraText></>}
+          subtext="We build high-authority backlinks through 100% manual outreach — guest posts on niche-relevant DR40+ sites, niche edits in existing indexed content, and digital PR placements. Every link reported, every placement tracked live."
+          primaryCta={{ label: 'View Packages', href: '/link-building-packages/#pricing' }}
+          secondaryCta={{ label: 'Talk to a Specialist', href: '/contact-us' }}
+          stats={[
+            { label: 'Links Built', value: '50,000', suffix: '+' },
+            { label: 'Avg DR', value: '50', prefix: 'DR', suffix: '+' },
+            { label: 'Years', value: '15', suffix: '+' },
+            { label: 'Retention', value: '92', suffix: '%' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="lbs-sec" id="services">

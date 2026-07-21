@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -88,25 +90,13 @@ const FAQS = [
   { q: 'What Salesforce test coverage do your developers maintain?', a: "Minimum 90%+ Apex test coverage (Salesforce requires 75% but this is a floor not a target), bulk testing (200+ records), negative case and error handling tests, test data factories (not hardcoded data), SeeAllData=false for isolation, and PMD static analysis on all Apex before deployment." },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => { if (!start) return; const num = parseInt(target.replace(/\D/g, ''), 10); if (!num) return; let t0 = null; const step = ts => { if (!t0) t0 = ts; const p = Math.min((ts - t0) / duration, 1); setCount(Math.floor((1 - Math.pow(1 - p, 3)) * num)); if (p < 1) requestAnimationFrame(step); }; requestAnimationFrame(step); }, [start, target, duration]);
-  return count;
-}
-function StatItem({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');  return (<div className="hsf-sc"><div className="hsf-sv">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div><div className="hsf-sl">{label}</div></div>);
-}
-
 export default function HireSalesforceDeveloper() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [ss, setSs] = useState(false);
   const [vis, setVis] = useState(new Set());
   const [vSk, setVSk] = useState([]); const [vEn, setVEn] = useState([]); const [vWh, setVWh] = useState([]); const [vTe, setVTe] = useState([]); const [vSt, setVSt] = useState([]);
-  const stR = useRef(null); const secR = useRef({});
+  const secR = useRef({});
   const skR = useRef(null); const enR = useRef(null); const whR = useRef(null); const teR = useRef(null); const stGr = useRef(null);
-  useEffect(() => { if (!stR.current) return; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setSs(true); o.disconnect(); } }, { threshold: 0.4 }); o.observe(stR.current); return () => o.disconnect(); }, []);
   useEffect(() => { const pairs = [[skR, SKILLS.length, setVSk],[enR, 3, setVEn],[whR, WHY_CARDS.length, setVWh],[teR, 3, setVTe],[stGr, TECH_STACK.length, setVSt]]; const obs = pairs.map(([ref, count, setter]) => { if (!ref.current) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { Array.from({ length: count }, (_, i) => setTimeout(() => setter(p => p.includes(i) ? p : [...p, i]), i * 80)); o.disconnect(); } }, { threshold: 0.05 }); o.observe(ref.current); return o; }); return () => obs.forEach(o => o?.disconnect()); }, []);
   useEffect(() => { const ks = Object.keys(secR.current); const obs = ks.map(k => { const el = secR.current[k]; if (!el) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVis(p => new Set([...p, k])); o.disconnect(); } }, { threshold: 0.1 }); o.observe(el); return o; }); return () => obs.forEach(o => o?.disconnect()); }, []);
   const visSkills = showAll ? SKILLS : SKILLS.slice(0, 6);
@@ -154,31 +144,6 @@ export default function HireSalesforceDeveloper() {
 
 
 
-          .hsf-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
-          .hsf-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
-          .hsf-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .hsf-desc{font-size:16px;color:#3A507A;line-height:1.65;max-width:740px;margin:0 auto 24px}
-          .hsf-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
-          .hsf-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07)}
-          .hsf-dot{width:7px;height:7px;border-radius:50%;background:#0284c7;flex-shrink:0}
-          .hsf-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .hsf-p{display:inline-block;padding:14px 36px;background:#0284c7;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(2,132,199,.28)}
-          .hsf-p:hover{background:#0F3460;transform:translateY(-2px)}
-          .hsf-g{display:inline-block;padding:14px 36px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .hsf-g:hover{background:rgba(255,255,255,.85);border-color:rgba(2,132,199,.5);transform:translateY(-2px)}
-          .hsf-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:28px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .hsf-sc{padding:18px 16px;text-align:center;border-right:1px solid rgba(15,52,96,.10)}
-          .hsf-sc:last-child{border-right:none}
-          .hsf-sv{font-size:28px;font-weight:900;color:#0284c7;letter-spacing:-.5px;line-height:1}
-          .hsf-sl{font-size:11px;color:#4A6080;font-weight:500;margin-top:5px}
-          .hsf-logos{position:relative;z-index:2;padding:24px 40px 52px;display:flex;flex-direction:column;align-items:center;gap:14px}
-          .hsf-ll{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6A80A0}
-          .hsf-lw{width:100%;overflow:hidden}
-          .hsf-lt{display:flex;align-items:center;gap:60px;width:max-content;animation:hsf-mq 28s linear infinite}
-          .hsf-lt:hover{animation-play-state:paused}
-          @keyframes hsf-mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-          .hsf-cl{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
-          .hsf-cl:hover{opacity:.85;filter:grayscale(0%)}
           .hsf-sey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
           .hsf-st{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .hsf-sd{font-size:15px;color:#4A6080;line-height:1.7}
@@ -325,8 +290,8 @@ export default function HireSalesforceDeveloper() {
           .hsf-v{background:rgba(109,40,217,.09);border-color:rgba(109,40,217,.28);color:#4c1d95}
           .hsf-g2{background:rgba(22,163,74,.09);border-color:rgba(22,163,74,.28);color:#14532d}
           .hsf-a{background:rgba(202,138,4,.09);border-color:rgba(202,138,4,.28);color:#92400e}
-          @media(max-width:1024px){.hsf-hero h1,.hsf-st,.hsf-fq-s h2{font-size:36px}.hsf-sk-g{grid-template-columns:repeat(2,1fr)}.hsf-tec-g{grid-template-columns:repeat(2,1fr)}.hsf-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.hsf-en-c.feat{transform:none}.hsf-en-c.feat.hsf-ev{transform:none}.hsf-en-c.feat.hsf-ev:hover{transform:translateY(-4px)}.hsf-wy-g{grid-template-columns:repeat(2,1fr)}.hsf-tg2{grid-template-columns:1fr}.hsf-ct-g{grid-template-columns:1fr}}
-          @media(max-width:768px){.hsf-bc,.hsf-hero,.hsf-sk-s,.hsf-tec-s,.hsf-en-s,.hsf-pr-s,.hsf-te-s,.hsf-wy-s,.hsf-fq-s,.hsf-rel{padding-left:20px;padding-right:20px}.hsf-hero{padding-top:28px;padding-bottom:20px}.hsf-hero h1{font-size:26px;letter-spacing:-.3px}.hsf-stats{grid-template-columns:1fr 1fr}.hsf-sc:nth-child(2){border-right:none}.hsf-sc:nth-child(3),.hsf-sc:nth-child(4){border-top:1px solid rgba(15,52,96,.10)}.hsf-sc:nth-child(4){border-right:none}.hsf-sk-g,.hsf-tec-g,.hsf-wy-g{grid-template-columns:1fr}.hsf-fr{grid-template-columns:1fr}.hsf-ctt{font-size:28px}.hsf-st{font-size:28px}.hsf-ct-s{padding:48px 20px}.hsf-logos{padding-left:20px;padding-right:20px}}
+          @media(max-width:1024px){.hsf-st,.hsf-fq-s h2{font-size:36px}.hsf-sk-g{grid-template-columns:repeat(2,1fr)}.hsf-tec-g{grid-template-columns:repeat(2,1fr)}.hsf-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.hsf-en-c.feat{transform:none}.hsf-en-c.feat.hsf-ev{transform:none}.hsf-en-c.feat.hsf-ev:hover{transform:translateY(-4px)}.hsf-wy-g{grid-template-columns:repeat(2,1fr)}.hsf-tg2{grid-template-columns:1fr}.hsf-ct-g{grid-template-columns:1fr}}
+          @media(max-width:768px){.hsf-bc,.hsf-sk-s,.hsf-tec-s,.hsf-en-s,.hsf-pr-s,.hsf-te-s,.hsf-wy-s,.hsf-fq-s,.hsf-rel{padding-left:20px;padding-right:20px}.hsf-sk-g,.hsf-tec-g,.hsf-wy-g{grid-template-columns:1fr}.hsf-fr{grid-template-columns:1fr}.hsf-ctt{font-size:28px}.hsf-st{font-size:28px}.hsf-ct-s{padding:48px 20px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
@@ -352,15 +317,19 @@ export default function HireSalesforceDeveloper() {
 </Head>
       <div className="hsf-page">
         <div className="hsf-orb hsf-o1" /><div className="hsf-orb hsf-o2" /><div className="hsf-orb hsf-o3" />
-        <section className="hsf-hero">
-          <span className="hsf-ey">Hire Salesforce Developer</span>
-          <h1>Hire Certified Salesforce Developers - Apex, LWC, Flow & CPQ</h1>
-          <p className="hsf-desc">Hire pre-vetted, certified Salesforce developers specialising in Apex, Lightning Web Components (LWC), Flow automation, Sales Cloud, Service Cloud, CPQ, Experience Cloud, and Salesforce integrations. Dedicated, part-time, or fixed-scope. Start in 3–5 business days.</p>
-          <div className="hsf-tr">{['Apex & LWC','Flow Automation','Sales & Service Cloud','CPQ','Salesforce Integrations'].map(b => (<div className="hsf-badge" key={b}><span className="hsf-dot" />{b}</div>))}</div>
-          <div className="hsf-ctas"><Link href="#contact" className="hsf-p">Hire a Salesforce Developer</Link><Link href="#engagement" className="hsf-g">View Engagement Models →</Link></div>
-        </section>
-        <div className="hsf-stats" ref={stR}>{[['120+','Salesforce Projects'],['15+','Years Dev Experience'],['48hr','Avg Developer Match'],['98%','Client Retention']].map(([v, l]) => (<StatItem key={l} label={l} val={v} started={ss} />))}</div>
-        <div className="hsf-logos"><span className="hsf-ll">Trusted by Salesforce Engineering Teams</span><div className="hsf-lw"><div className="hsf-lt">{[['/logo/Indian_Express_Logo_full.png','Indian Express'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],['/logo/Uniphore.jpg','Uniphore'],['/logo/ICCoLogo.png','ICC'],['/logo/Honor_Logo_(2020).svg.png','Honor'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],['/logo/Indian_Express_Logo_full.png','Indian Express 2'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon 2'],['/logo/Uniphore.jpg','Uniphore 2'],['/logo/ICCoLogo.png','ICC 2'],['/logo/Honor_Logo_(2020).svg.png','Honor 2'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv 2']].map(([src, alt]) => (<img key={alt} src={src} alt={alt.replace(/ \d$/, '')} className="hsf-cl" />))}</div></div></div>
+        <ServiceHero
+          eyebrow="Hire Salesforce Developer"
+          title={<>Hire Certified Salesforce Developers <AuroraText>Apex, LWC, Flow &amp; CPQ</AuroraText></>}
+          subtext="Hire pre-vetted, certified Salesforce developers specialising in Apex, Lightning Web Components (LWC), Flow automation, Sales Cloud, Service Cloud, CPQ, Experience Cloud, and Salesforce integrations. Dedicated, part-time, or fixed-scope. Start in 3-5 business days."
+          primaryCta={{ label: 'Hire a Salesforce Developer', href: '#contact' }}
+          secondaryCta={{ label: 'View Engagement Models', href: '#engagement' }}
+          stats={[
+            { label: 'Salesforce Projects', value: '120', suffix: '+' },
+            { label: 'Years Dev Experience', value: '15', suffix: '+' },
+            { label: 'Avg Developer Match', value: '48', suffix: 'hr' },
+            { label: 'Client Retention', value: '98', suffix: '%' },
+          ]}
+        />
         <section className="hsf-sk-s" aria-labelledby="hsf-sk-h"><div className="hsf-in"><div className={`hsf-rv${vis.has('sk') ? ' hsf-ok' : ''}`} ref={el => { secR.current['sk'] = el; }}><span className="hsf-sey">What Our Developers Build</span><h2 id="hsf-sk-h" className="hsf-st">Salesforce Skills & Expertise</h2><p className="hsf-sd" style={{ maxWidth: 720 }}>Apex classes and triggers, Lightning Web Components, Flow automation, Salesforce integrations, Sales Cloud and Service Cloud configuration, Experience Cloud portals, CPQ implementation, Einstein Analytics, and Salesforce DevOps.</p></div><div className="hsf-sk-g" ref={skR}>{visSkills.map((s, i) => (<div key={s.n} className={`hsf-sk-c${s.feat ? ' feat' : ''}${vSk.includes(i) ? ' hsf-cv' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}><span className="hsf-sk-n">{s.n}</span><h3>{s.title}</h3><p>{s.desc}</p></div>))}</div>{SKILLS.length > 6 && (<div className="hsf-sm"><button className="hsf-bm" onClick={() => setShowAll(p => !p)}>{showAll ? 'Show fewer ↑' : `Show all ${SKILLS.length} areas ↓`}</button></div>)}</div></section>
         <section className="hsf-tec-s" aria-labelledby="hsf-tec-h"><div className="hsf-in"><div className={`hsf-rv${vis.has('stk') ? ' hsf-ok' : ''}`} ref={el => { secR.current['stk'] = el; }}><span className="hsf-sey">Technology Stack</span><h2 id="hsf-tec-h" className="hsf-st">Salesforce Tools & Technologies</h2><p className="hsf-sd" style={{ maxWidth: 680 }}>Apex, Salesforce CLI, LWC, SLDS, Flow Builder, Gearset, Copado, MuleSoft, Boomi, Salesforce CPQ, Marketing Cloud, CRM Analytics, PMD, Jest, GitHub Actions, and the full Salesforce DX toolchain.</p></div><div className="hsf-tec-g" ref={stGr}>{TECH_STACK.map((grp, i) => (<div key={grp.group} className={`hsf-tec-c${vSt.includes(i) ? ' hsf-sv2' : ''}`} style={{ transitionDelay: `${i * 60}ms` }}><div className="hsf-tg" style={{ color: grp.color, borderBottomColor: grp.color + '33' }}>{grp.group}</div><div className="hsf-pills">{grp.items.map(item => <span key={item} className="hsf-pill" style={{ color: grp.color, background: grp.color + '12', borderColor: grp.color + '30' }}>{item}</span>)}</div></div>))}</div></div></section>
         <section id="engagement" className="hsf-en-s" aria-labelledby="hsf-en-h"><div className="hsf-in"><div className={`hsf-rv${vis.has('eng') ? ' hsf-ok' : ''}`} ref={el => { secR.current['eng'] = el; }}><span className="hsf-sey">Engagement Models</span><h2 id="hsf-en-h" className="hsf-st">How to Hire a Salesforce Developer</h2><p className="hsf-sd" style={{ maxWidth: 680 }}>Full-time dedicated Salesforce developer, part-time specialist, or fixed-scope project - structured for your org stage and Salesforce investment.</p></div><div className="hsf-en-g" ref={enR}>{ENGAGEMENT_MODELS.map((m, i) => (<div key={m.id} className={`hsf-en-c${m.feat ? ' feat' : ''}${vEn.includes(i) ? ' hsf-ev' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}><span className="hsf-en-b" style={{ color: m.badgeColor, borderColor: m.badgeColor + '44', background: m.badgeColor + '14' }}>{m.badge}</span><div className="hsf-en-i"><svg viewBox="0 0 24 24" width="26" height="26"><path d={m.icon} /></svg></div><div className="hsf-en-n">{m.name}</div><div className="hsf-en-h">{m.headline}</div><div className="hsf-en-d">{m.desc}</div><div className="hsf-en-ll">Best for</div><ul className="hsf-en-li">{m.bestFor.map(b => <li key={b}>{b}</li>)}</ul><div className="hsf-en-p"><strong>Process:</strong> {m.process}<br /><span className="hsf-en-tl">{m.timeline}</span></div><Link href="#contact" className="hsf-en-a">Get a free estimate →</Link></div>))}</div></div></section>

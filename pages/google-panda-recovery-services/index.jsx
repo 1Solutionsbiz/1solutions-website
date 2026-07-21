@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'Panda / Helpful Content Penalty Diagnosis', desc: 'Correlate your traffic drop with confirmed Google Panda or Helpful Content Update dates - confirming whether your site was impacted and by which update iteration, to inform the correct recovery strategy.' },
@@ -44,13 +46,6 @@ const FAQS = [
   { q: 'Do you work with sites that have large amounts of AI content?', a: 'Yes - we have worked with sites that deployed large volumes of AI-generated content and subsequently saw significant ranking declines. The recovery approach involves: auditing all AI content against quality criteria (depth, accuracy, E-E-A-T, user value); rewriting or substantially enhancing the pages worth keeping; consolidating near-duplicate AI content; and removing or noindexing pages that cannot be improved to an acceptable standard. We also implement content quality review processes to prevent the same issue recurring. If the volume of affected content is very large, we prioritise by traffic and authority potential and work through the backlog systematically.' },
 ];
 
-const STATS = [
-  { label: 'Panda / HC Recoveries', val: '150+' },
-  { label: 'Avg Traffic Restored', val: '79%' },
-  { label: 'Years Experience', val: '15+' },
-  { label: 'Success Rate', val: '88%' },
-];
-
 export default function GooglePandaRecoveryServices() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleCards, setVisibleCards] = useState([]);
@@ -76,22 +71,10 @@ export default function GooglePandaRecoveryServices() {
         <style>{`
           .panda-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .panda-page *,.panda-page *::before,.panda-page *::after{box-sizing:border-box}
-          .panda-hero{background:linear-gradient(135deg,#f0fdfa 0%,#ccfbf1 30%,#99f6e4 65%,#f0fdfa 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .panda-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(15,118,110,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .panda-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(19,78,74,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .panda-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.panda-bc a:hover{color:#0F766E}.panda-bc span{color:#d1d5db}
-          .panda-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(15,118,110,0.08);border:1px solid rgba(15,118,110,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#0F766E;margin-bottom:28px}
-          .panda-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .panda-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
-          .panda-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .panda-btn-p{display:inline-flex;align-items:center;gap:8px;background:#0F766E;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(15,118,110,0.28)}
           .panda-btn-p:hover{background:#134E4A;box-shadow:0 8px 32px rgba(15,118,110,0.38);transform:translateY(-2px)}
           .panda-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.18);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
           .panda-btn-s:hover{border-color:#0F766E;color:#0F766E;transform:translateY(-2px)}
-          .panda-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(15,118,110,0.07)}
-          .panda-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(15,118,110,0.08)}.panda-stat:last-child{border-right:none}
-          .panda-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .panda-stat-v{font-size:1.6rem;font-weight:900;color:#0F766E;letter-spacing:-0.5px}
           .panda-svc{background:#f8fafd;padding:80px 40px}.panda-svc-in{max-width:1280px;margin:0 auto}
           .panda-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#0F766E;margin-bottom:10px;display:block}
           .panda-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
@@ -137,25 +120,26 @@ export default function GooglePandaRecoveryServices() {
           .panda-cta-t{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;line-height:1.2}
           .panda-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           @media(max-width:1024px){.panda-grid{grid-template-columns:repeat(2,1fr)}.panda-why-grid{grid-template-columns:repeat(2,1fr)}}
-          @media(max-width:768px){.panda-hero,.panda-svc,.panda-signals,.panda-proc,.panda-why,.panda-faq,.panda-cta{padding:60px 24px}.panda-hero{padding-top:60px;padding-bottom:0}.panda-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.panda-stat:nth-child(2){border-right:none}.panda-grid{grid-template-columns:1fr}.panda-why-grid{grid-template-columns:1fr}.panda-step{grid-template-columns:56px 1fr}.panda-btns{flex-direction:column;align-items:center}}
+          @media(max-width:768px){.panda-svc,.panda-signals,.panda-proc,.panda-why,.panda-faq,.panda-cta{padding:60px 24px}.panda-grid{grid-template-columns:1fr}.panda-why-grid{grid-template-columns:1fr}.panda-step{grid-template-columns:56px 1fr}.panda-btns{flex-direction:column;align-items:center}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
       <div className="panda-page">
-        <section className="panda-hero"><div className="panda-o1"/><div className="panda-o2"/>
-          <div className="panda-in">
-            <span className="panda-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#0F766E',display:'inline-block'}}/> Thin Content · Helpful Content Update · E-E-A-T</span>
-            <h1 className="panda-h1">Google Panda Recovery Services - Fix Thin Content &amp; Restore Lost Rankings</h1>
-            <p className="panda-sub">Specialist Google Panda and Helpful Content Update recovery - content quality audits, E-E-A-T content rewriting, consolidation strategy, and thin content removal to recover your organic traffic after a content quality penalty.</p>
-            <div className="panda-btns">
-              <Link href="/contact-us" className="panda-btn-p">Get a Free Content Quality Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/google-penalty-recovery-services" className="panda-btn-s">All Penalty Recovery Services</Link>
-            </div>
-            <div className="panda-stats">{STATS.map(s => <div key={s.label} className="panda-stat"><div className="panda-stat-l">{s.label}</div><div className="panda-stat-v">{s.val}</div></div>)}</div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Thin Content · Helpful Content Update · E-E-A-T"
+          title={<>Google Panda Recovery Services - Fix <AuroraText>Thin Content &amp; Restore Lost Rankings</AuroraText></>}
+          subtext="Specialist Google Panda and Helpful Content Update recovery - content quality audits, E-E-A-T content rewriting, consolidation strategy, and thin content removal to recover your organic traffic after a content quality penalty."
+          primaryCta={{ label: 'Get a Free Content Quality Audit', href: '/contact-us' }}
+          secondaryCta={{ label: 'All Penalty Recovery Services', href: '/google-penalty-recovery-services' }}
+          stats={[
+            { label: 'Panda / HC Recoveries', value: '150', suffix: '+' },
+            { label: 'Avg Traffic Restored', value: '79', suffix: '%' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'Success Rate', value: '88', suffix: '%' },
+          ]}
+        />
         <section className="panda-svc"><div className="panda-svc-in">
           <span className="panda-ey2">What We Do</span><h2 className="panda-ttl">Google Panda &amp; Helpful Content Recovery Services</h2>
           <p className="panda-desc">From content audit to E-E-A-T rewriting - a complete Panda and Helpful Content recovery service targeting every content quality signal Google uses to rank or suppress your site.</p>

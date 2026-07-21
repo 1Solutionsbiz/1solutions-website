@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'Photography Website SEO Audit', desc: 'A complete SEO audit of your photography website - covering page speed (critical for image-heavy sites), technical health, keyword rankings, Google Business Profile, and competitor positioning - identifying every opportunity to rank higher and attract more enquiries.' },
@@ -44,13 +46,6 @@ const FAQS = [
   { q: 'Do you work with photographers outside of the UK?', a: 'Yes. We work with photographers in the UK, US, Australia, Canada, and other English-speaking markets. The SEO principles are the same across markets - local keyword targeting, Google Business Profile optimisation, portfolio page SEO, and content strategy - though the competitive landscape, search volumes, and local directory landscape differ by region. We tailor our approach to the specific market you operate in. For photographers in highly competitive markets (New York, Los Angeles, Sydney, London), we are transparent about the longer timeline and higher investment required to reach page 1 for primary keywords.' },
 ];
 
-const STATS = [
-  { label: 'Photographer Clients', val: '120+' },
-  { label: 'Avg Enquiry Growth', val: '+82%' },
-  { label: 'Years Experience', val: '12+' },
-  { label: 'Client Retention', val: '91%' },
-];
-
 export default function PhotographySeoServices() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleCards, setVisibleCards] = useState([]);
@@ -75,22 +70,11 @@ export default function PhotographySeoServices() {
         <style>{`
           .phseo-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .phseo-page *,.phseo-page *::before,.phseo-page *::after{box-sizing:border-box}
-          .phseo-hero{background:linear-gradient(135deg,#fdf4ff 0%,#fae8ff 30%,#f5d0fe 65%,#fdf4ff 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .phseo-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(168,85,247,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .phseo-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(107,33,168,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .phseo-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.phseo-bc a:hover{color:#A855F7}.phseo-bc span{color:#d1d5db}
-          .phseo-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(168,85,247,0.08);border:1px solid rgba(168,85,247,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#A855F7;margin-bottom:28px}
-          .phseo-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .phseo-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
           .phseo-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .phseo-btn-p{display:inline-flex;align-items:center;gap:8px;background:#A855F7;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(168,85,247,0.28)}
           .phseo-btn-p:hover{background:#6B21A8;box-shadow:0 8px 32px rgba(168,85,247,0.38);transform:translateY(-2px)}
           .phseo-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.18);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
           .phseo-btn-s:hover{border-color:#A855F7;color:#A855F7;transform:translateY(-2px)}
-          .phseo-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(168,85,247,0.07)}
-          .phseo-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(168,85,247,0.08)}.phseo-stat:last-child{border-right:none}
-          .phseo-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .phseo-stat-v{font-size:1.6rem;font-weight:900;color:#A855F7;letter-spacing:-0.5px}
           .phseo-svc{background:#f8fafd;padding:80px 40px}.phseo-svc-in{max-width:1280px;margin:0 auto}
           .phseo-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#A855F7;margin-bottom:10px;display:block}
           .phseo-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
@@ -136,25 +120,26 @@ export default function PhotographySeoServices() {
           .phseo-cta-t{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;line-height:1.2}
           .phseo-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           @media(max-width:1024px){.phseo-grid{grid-template-columns:repeat(2,1fr)}.phseo-why-grid{grid-template-columns:repeat(2,1fr)}}
-          @media(max-width:768px){.phseo-hero,.phseo-svc,.phseo-niches,.phseo-proc,.phseo-why,.phseo-faq,.phseo-cta{padding:60px 24px}.phseo-hero{padding-top:60px;padding-bottom:0}.phseo-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.phseo-stat:nth-child(2){border-right:none}.phseo-grid{grid-template-columns:1fr}.phseo-why-grid{grid-template-columns:1fr}.phseo-step{grid-template-columns:56px 1fr}.phseo-btns{flex-direction:column;align-items:center}}
+          @media(max-width:768px){.phseo-svc,.phseo-niches,.phseo-proc,.phseo-why,.phseo-faq,.phseo-cta{padding:60px 24px}.phseo-grid{grid-template-columns:1fr}.phseo-why-grid{grid-template-columns:1fr}.phseo-step{grid-template-columns:56px 1fr}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
       <div className="phseo-page">
-        <section className="phseo-hero"><div className="phseo-o1"/><div className="phseo-o2"/>
-          <div className="phseo-in">
-            <span className="phseo-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#A855F7',display:'inline-block'}}/> Local SEO · Image SEO · Portfolio Optimisation · GBP</span>
-            <h1 className="phseo-h1">Photography SEO Services - Rank Higher &amp; Book More Clients from Google</h1>
-            <p className="phseo-sub">SEO services built specifically for photographers - local search optimisation, portfolio page SEO, image optimisation, and content strategy to generate consistent enquiries from organic search.</p>
-            <div className="phseo-btns">
-              <Link href="/contact-us" className="phseo-btn-p">Get a Free Photography SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/local-seo-services" className="phseo-btn-s">Local SEO Services</Link>
-            </div>
-            <div className="phseo-stats">{STATS.map(s => <div key={s.label} className="phseo-stat"><div className="phseo-stat-l">{s.label}</div><div className="phseo-stat-v">{s.val}</div></div>)}</div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Local SEO · Image SEO · Portfolio Optimisation · GBP"
+          title={<>Photography SEO Services - Rank Higher &amp; <AuroraText>Book More Clients from Google</AuroraText></>}
+          subtext="SEO services built specifically for photographers - local search optimisation, portfolio page SEO, image optimisation, and content strategy to generate consistent enquiries from organic search."
+          primaryCta={{ label: 'Get a Free Photography SEO Audit', href: '/contact-us' }}
+          secondaryCta={{ label: 'Local SEO Services', href: '/local-seo-services' }}
+          stats={[
+            { label: 'Photographer Clients', value: '120', suffix: '+' },
+            { label: 'Avg Enquiry Growth', value: '82', prefix: '+', suffix: '%' },
+            { label: 'Years Experience', value: '12', suffix: '+' },
+            { label: 'Client Retention', value: '91', suffix: '%' },
+          ]}
+        />
         <section className="phseo-svc"><div className="phseo-svc-in">
           <span className="phseo-ey2">What We Do</span><h2 className="phseo-ttl">Photography SEO Services</h2>
           <p className="phseo-desc">Every SEO service a photographer needs - from image optimisation to local map pack visibility and content strategy that attracts ideal clients.</p>

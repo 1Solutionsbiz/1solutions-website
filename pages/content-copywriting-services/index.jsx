@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'Website Copywriting', desc: 'SEO-optimised website copy - homepage, service pages, about pages, and landing pages - written to convert visitors into leads and rank for target keywords without reading like it was written for an algorithm.' },
@@ -44,13 +46,6 @@ const FAQS = [
   { q: 'How are copywriting projects priced?', a: 'Copywriting is priced per project or on a monthly retainer, depending on volume and consistency requirements. Per-project pricing is based on word count, research complexity, revision rounds, and turnaround time. Monthly retainer pricing is available for businesses with ongoing content needs - providing a fixed volume of content per month at a reduced per-piece rate compared to ad hoc commissioning. We provide a detailed quote after receiving a brief - so please share your content requirements and we can confirm pricing and timelines.' },
 ];
 
-const STATS = [
-  { label: 'Content Pieces Produced', val: '15,000+' },
-  { label: 'Industries Covered', val: '40+' },
-  { label: 'Years Experience', val: '15+' },
-  { label: 'Client Retention', val: '93%' },
-];
-
 export default function ContentCopywritingServices() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleCards, setVisibleCards] = useState([]);
@@ -75,22 +70,11 @@ export default function ContentCopywritingServices() {
         <style>{`
           .ccw-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .ccw-page *,.ccw-page *::before,.ccw-page *::after{box-sizing:border-box}
-          .ccw-hero{background:linear-gradient(135deg,#f8fafc 0%,#e2e8f0 25%,#cbd5e1 60%,#f8fafc 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .ccw-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(51,65,85,0.10) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .ccw-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(30,41,59,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .ccw-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.ccw-bc a:hover{color:#334155}.ccw-bc span{color:#d1d5db}
-          .ccw-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(51,65,85,0.08);border:1px solid rgba(51,65,85,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#334155;margin-bottom:28px}
-          .ccw-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .ccw-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
-          .ccw-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
+          .ccw-bc a:hover{color:#334155}.ccw-bc span{color:#d1d5db}
           .ccw-btn-p{display:inline-flex;align-items:center;gap:8px;background:#334155;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(51,65,85,0.28)}
           .ccw-btn-p:hover{background:#1E293B;box-shadow:0 8px 32px rgba(51,65,85,0.38);transform:translateY(-2px)}
           .ccw-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.18);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
           .ccw-btn-s:hover{border-color:#334155;color:#334155;transform:translateY(-2px)}
-          .ccw-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(51,65,85,0.07)}
-          .ccw-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(51,65,85,0.08)}.ccw-stat:last-child{border-right:none}
-          .ccw-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .ccw-stat-v{font-size:1.6rem;font-weight:900;color:#334155;letter-spacing:-0.5px}
           .ccw-svc{background:#f8fafd;padding:80px 40px}.ccw-svc-in{max-width:1280px;margin:0 auto}
           .ccw-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#334155;margin-bottom:10px;display:block}
           .ccw-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
@@ -137,25 +121,26 @@ export default function ContentCopywritingServices() {
           .ccw-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           .ccw-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.ccw-grid{grid-template-columns:repeat(2,1fr)}.ccw-why-grid{grid-template-columns:repeat(2,1fr)}}
-          @media(max-width:768px){.ccw-hero,.ccw-svc,.ccw-types,.ccw-proc,.ccw-why,.ccw-faq,.ccw-cta{padding:60px 24px}.ccw-hero{padding-top:60px;padding-bottom:0}.ccw-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.ccw-stat:nth-child(2){border-right:none}.ccw-grid{grid-template-columns:1fr}.ccw-why-grid{grid-template-columns:1fr}.ccw-step{grid-template-columns:56px 1fr}.ccw-btns{flex-direction:column;align-items:center}}
+          @media(max-width:768px){.ccw-svc,.ccw-types,.ccw-proc,.ccw-why,.ccw-faq,.ccw-cta{padding:60px 24px}.ccw-grid{grid-template-columns:1fr}.ccw-why-grid{grid-template-columns:1fr}.ccw-step{grid-template-columns:56px 1fr}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
       <div className="ccw-page">
-        <section className="ccw-hero"><div className="ccw-o1"/><div className="ccw-o2"/>
-          <div className="ccw-in">
-            <span className="ccw-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#334155',display:'inline-block'}}/> Website · Blog · Email · Ads · SEO</span>
-            <h1 className="ccw-h1">Content &amp; Copywriting Services - Words That Rank, Engage, and Convert</h1>
-            <p className="ccw-sub">Human-written website copy, SEO blog content, email sequences, ad copy, and product descriptions - all produced by specialist copywriters who understand your audience, your sector, and your goals.</p>
-            <div className="ccw-btns">
-              <Link href="/contact-us" className="ccw-btn-p">Get a Copywriting Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/seo-services-company" className="ccw-btn-s">SEO Services</Link>
-            </div>
-            <div className="ccw-stats">{STATS.map(s => <div key={s.label} className="ccw-stat"><div className="ccw-stat-l">{s.label}</div><div className="ccw-stat-v">{s.val}</div></div>)}</div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Website · Blog · Email · Ads · SEO"
+          title={<>Content &amp; Copywriting Services - <AuroraText>Words That Rank, Engage, and Convert</AuroraText></>}
+          subtext="Human-written website copy, SEO blog content, email sequences, ad copy, and product descriptions - all produced by specialist copywriters who understand your audience, your sector, and your goals."
+          primaryCta={{ label: 'Get a Copywriting Quote', href: '/contact-us' }}
+          secondaryCta={{ label: 'SEO Services', href: '/seo-services-company' }}
+          stats={[
+            { label: 'Content Pieces Produced', value: '15,000', suffix: '+' },
+            { label: 'Industries Covered', value: '40', suffix: '+' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'Client Retention', value: '93', suffix: '%' },
+          ]}
+        />
         <section className="ccw-svc"><div className="ccw-svc-in">
           <span className="ccw-ey2">What We Write</span><h2 className="ccw-ttl">Content &amp; Copywriting Services</h2>
           <p className="ccw-desc">Website copy, SEO content, emails, ads, and product descriptions - all written by specialists with industry depth and editorial expertise.</p>

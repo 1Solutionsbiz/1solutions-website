@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'iOS App UI Design', desc: 'Native iOS interfaces following Apple Human Interface Guidelines - SF Symbols, fluid transitions, and haptic-aware interactions that feel unmistakably at home on iPhone and iPad.' },
@@ -111,37 +113,6 @@ const PROCESS_STEPS = [
   },
 ];
 
-// Count-up hook
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const numTarget = parseInt(String(target).replace(/\D/g, ''), 10);
-    if (!numTarget) return;
-    let startTime = null;
-    const step = (ts) => {
-      if (!startTime) startTime = ts;
-      const progress = Math.min((ts - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * numTarget));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function AnimatedStat({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = String(val).replace(/[\d,.★]/g, '');
-  const display = started ? num + suffix : val;  return (
-    <div className="mad-stat-col">
-      <div className="mad-stat-label">{label}</div>
-      <div className="mad-stat-value">{val.includes('★') ? val : display}</div>
-    </div>
-  );
-}
-
 const LD = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -174,12 +145,10 @@ const LD = {
 export default function MobileAppDesign() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleSteps, setVisibleSteps] = useState([]);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const stepRefs = useRef([]);
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
@@ -201,17 +170,6 @@ export default function MobileAppDesign() {
       return obs;
     });
     return () => observers.forEach(o => o && o.disconnect());
-  }, []);
-
-  // Stats count-up trigger
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setStatsStarted(true); obs.disconnect(); } },
-      { threshold: 0.5 }
-    );
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
   }, []);
 
   // Why cards staggered reveal
@@ -317,40 +275,6 @@ export default function MobileAppDesign() {
           .mad-orb-1 { position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,0.28) 0%,rgba(99,102,241,0.12) 40%,transparent 70%);top:-300px;right:-300px;pointer-events:none;z-index:0;filter:blur(20px); }
           .mad-orb-2 { position:absolute;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(251,146,60,0.26) 0%,rgba(245,158,11,0.12) 40%,transparent 70%);bottom:0;left:-250px;pointer-events:none;z-index:0;filter:blur(20px); }
           .mad-orb-3 { position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.16) 0%,transparent 70%);top:45%;left:-150px;transform:translateY(-50%);pointer-events:none;z-index:0;filter:blur(20px); }
-
-          /* Hero */
-          .mad-hero-block { background:transparent;position:relative;overflow:hidden; }
-          .mad-hero-block::before { content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,0.12) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px); }
-          .mad-hero-block::after { content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.16) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px); }
-          .mad-hero-content { position:relative;z-index:2;text-align:center;max-width:880px;margin:0 auto;padding:60px 40px 40px; }
-          .mad-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:18px; }
-          .mad-hero-content h1 { font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .mad-hero-content p { font-size:16px;color:#3A507A;line-height:1.65;max-width:640px;margin:0 auto 28px; }
-          .mad-btn-hero { display:inline-block;padding:14px 40px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1);position:relative;overflow:hidden; }
-          .mad-btn-hero::after { content:'';position:absolute;top:-10%;left:-120%;width:80%;height:120%;background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,0.75) 45%,rgba(255,255,255,0.9) 50%,rgba(255,255,255,0.75) 55%,transparent 100%);animation:mad-shimmer 2.5s ease-in-out infinite;pointer-events:none; }
-          @keyframes mad-shimmer { 0%{left:-120%} 35%,100%{left:160%} }
-          .mad-btn-hero:hover { background:rgba(255,255,255,0.85);border-color:rgba(124,58,237,0.5);box-shadow:0 12px 36px rgba(15,52,96,0.15),0 0 0 2px rgba(124,58,237,0.18),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px);color:#0F3460; }
-
-          /* Hero platform badges */
-          .mad-platform-badges { display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:28px; }
-          .mad-badge { display:inline-flex;align-items:center;gap:6px;padding:6px 16px;background:rgba(255,255,255,0.50);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.80);border-radius:40px;font-size:12px;font-weight:600;color:#0F3460; }
-
-          /* Stats bar */
-          .mad-hero-stats { position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
-          .mad-stat-col { padding:18px 20px;text-align:center;border-right:1px solid rgba(15,52,96,0.10); }
-          .mad-stat-col:last-child { border-right:none; }
-          .mad-stat-label { font-size:12px;color:#4A6080;font-weight:500;margin-bottom:6px; }
-          .mad-stat-value { font-size:26px;font-weight:900;color:#7C3AED;letter-spacing:-0.5px;line-height:1; }
-
-          /* Clients strip */
-          .mad-clients-bar { position:relative;z-index:2;padding:20px 40px 60px;max-width:1440px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px; }
-          .mad-clients-label { font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6A80A0; }
-          .mad-clients-logos { width:100%;overflow:hidden; }
-          .mad-logos-track { display:flex;align-items:center;gap:60px;width:max-content;animation:mad-marquee 30s linear infinite; }
-          .mad-logos-track:hover { animation-play-state:paused; }
-          @keyframes mad-marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-          .mad-client-logo { height:26px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(100%);opacity:0.5;transition:opacity 0.25s,filter 0.25s; }
-          .mad-client-logo:hover { opacity:0.85;filter:grayscale(0%); }
 
           /* Shared section styles */
           .mad-section-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7C3AED;margin-bottom:12px;display:block; }
@@ -533,7 +457,6 @@ export default function MobileAppDesign() {
 
           /* Responsive */
           @media (max-width:1024px) {
-            .mad-hero-content h1 { font-size:40px; }
             .mad-services-grid { grid-template-columns:repeat(2,1fr); }
             .mad-why-grid { grid-template-columns:repeat(2,1fr); }
             .mad-platform-grid { grid-template-columns:1fr; }
@@ -543,16 +466,6 @@ export default function MobileAppDesign() {
           }
           @media (max-width:768px) {
             .mad-page { overflow-x:hidden; }
-            .mad-hero-content { padding:36px 20px 24px; }
-            .mad-hero-content h1 { font-size:28px;letter-spacing:-0.3px; }
-            .mad-hero-content p { font-size:15px; }
-            .mad-hero-stats { grid-template-columns:1fr 1fr;max-width:100%; }
-            .mad-stat-col { padding:14px 12px; }
-            .mad-stat-col:nth-child(2) { border-right:none; }
-            .mad-stat-col:nth-child(3) { border-top:1px solid rgba(15,52,96,0.10); }
-            .mad-stat-col:nth-child(4) { border-top:1px solid rgba(15,52,96,0.10);border-right:none; }
-            .mad-stat-value { font-size:22px; }
-            .mad-clients-bar { padding:16px 20px 36px;gap:12px; }
             .mad-services-section { padding:48px 20px 40px; }
             .mad-services-grid { grid-template-columns:1fr 1fr;gap:10px; }
             .mad-platforms-section { padding:48px 20px; }
@@ -585,7 +498,6 @@ export default function MobileAppDesign() {
             .mad-section-title,.mad-process-main-title,.mad-related-title { font-size:30px; }
           }
           @media (max-width:480px) {
-            .mad-hero-content h1 { font-size:24px; }
             .mad-section-title,.mad-process-main-title,.mad-related-title { font-size:26px; }
             .mad-services-grid { grid-template-columns:1fr; }
             .mad-service-card { padding:20px 18px 18px; }
@@ -610,56 +522,18 @@ export default function MobileAppDesign() {
         <div className="mad-orb-3" />
 
         {/* ── HERO ── */}
-        <div className="mad-hero-block">
-          <div className="mad-hero-content">
-            <span className="mad-eyebrow">Mobile App Design Company - iOS &amp; Android</span>
-            <h1>Mobile App Design That Delights Users and Drives Retention</h1>
-            <p>Intuitive, beautiful iOS and Android app designs rooted in platform guidelines and user psychology. From concept to pixel-perfect Figma handoff.</p>
-            <div className="mad-platform-badges">
-              <span className="mad-badge">Apple HIG Certified</span>
-              <span className="mad-badge">Material Design 3</span>
-              <span className="mad-badge">Figma Handoff</span>
-              <span className="mad-badge">WCAG AA Accessible</span>
-            </div>
-            <Link href="#contact" className="mad-btn-hero">Get a Free App Design Consultation</Link>
-          </div>
-
-          <div className="mad-hero-stats" ref={statsRef}>
-            {[
-              ['Apps Designed', '200+'],
-              ['Avg App Store Rating', '4.8★'],
-              ['Years Experience', '16+'],
-              ['Higher Retention', '35%'],
-            ].map(([label, val]) => (
-              <AnimatedStat key={label} label={label} val={val} started={statsStarted} />
-            ))}
-          </div>
-
-          <div className="mad-clients-bar">
-            <span className="mad-clients-label">Trusted by Leading Brands</span>
-            <div className="mad-clients-logos">
-              <div className="mad-logos-track">
-                {[
-                  ['/logo/Indian_Express_Logo_full.png', 'Indian Express'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png', 'Verizon'],
-                  ['/logo/Uniphore.jpg', 'Uniphore'],
-                  ['/logo/ICCoLogo.png', 'ICC'],
-                  ['/logo/Honor_Logo_(2020).svg.png', 'Honor'],
-                  ['/logo/Zuari-Finserv-logo-new.png', 'Zuari Finserv'],
-                  ['/logo/Indian_Express_Logo_full.png', 'Indian Express2'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png', 'Verizon2'],
-                  ['/logo/Uniphore.jpg', 'Uniphore2'],
-                  ['/logo/ICCoLogo.png', 'ICC2'],
-                  ['/logo/Honor_Logo_(2020).svg.png', 'Honor2'],
-                  ['/logo/Zuari-Finserv-logo-new.png', 'Zuari Finserv2'],
-                ].map(([src, alt]) => (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img key={alt} src={src} alt={alt.replace(/\d+$/, '')} className="mad-client-logo" />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="Mobile App Design Company · iOS & Android · Apple HIG · Material Design 3"
+          title={<>Mobile App Design That <AuroraText>Delights Users and Drives Retention</AuroraText></>}
+          subtext="Intuitive, beautiful iOS and Android app designs rooted in platform guidelines and user psychology. From concept to pixel-perfect Figma handoff."
+          primaryCta={{ label: 'Get a Free App Design Consultation', href: '#contact' }}
+          stats={[
+            { label: 'Apps Designed', value: '200', suffix: '+' },
+            { label: 'Avg App Store Rating', value: '8', prefix: '4.', suffix: '★' },
+            { label: 'Years Experience', value: '16', suffix: '+' },
+            { label: 'Higher Retention', value: '35', suffix: '%' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="mad-services-section">

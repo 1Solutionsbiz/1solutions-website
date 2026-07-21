@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Practice Area Keyword Targeting', desc: 'In-depth keyword mapping for personal injury, car accident lawyer, medical malpractice, family law attorney, DUI defense, criminal lawyer, immigration attorney, estate planning, bankruptcy attorney, and workers compensation - targeting every case type at every stage of the search funnel.' },
@@ -85,29 +87,10 @@ export default function LawFirmSeoServices() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           * { box-sizing: border-box; }
-          .lwseo-hero { position:relative;overflow:hidden;padding:100px 40px 90px;background:linear-gradient(135deg,rgba(10,26,61,0.10) 0%,rgba(255,255,255,0.72) 50%,rgba(10,26,61,0.06) 100%); }
-          .lwseo-orb1 { position:absolute;top:-120px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(10,26,61,0.14) 0%,transparent 70%);pointer-events:none;filter:blur(10px); }
-          .lwseo-orb2 { position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(30,70,150,0.08) 0%,transparent 70%);pointer-events:none;filter:blur(8px); }
-          .lwseo-inner { max-width:1200px;margin:0 auto;position:relative;z-index:1; }
-          .lwseo-eyebrow { display:inline-flex;align-items:center;gap:8px;background:rgba(10,26,61,0.10);border:1px solid rgba(10,26,61,0.22);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#0a1a3d;margin-bottom:24px; }
-          .lwseo-h1 { font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .lwseo-desc { font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:660px; }
-          .lwseo-btns { display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px; }
           .lwseo-btn-p { display:inline-flex;align-items:center;gap:8px;background:#0a1a3d;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 6px 24px rgba(10,26,61,0.30); }
           .lwseo-btn-p:hover { background:#1a3a7a;transform:translateY(-2px); }
           .lwseo-btn-s { display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.7);color:#0a1a3d;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;border:1.5px solid rgba(10,26,61,0.20);transition:all 0.25s;backdrop-filter:blur(8px); }
           .lwseo-btn-s:hover { background:#fff;transform:translateY(-2px); }
-          .lwseo-trust { display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-bottom:48px; }
-          .lwseo-badge { display:flex;align-items:center;gap:6px;font-size:12px;color:#6b7280;font-weight:500; }
-          .lwseo-stats-bar { display:flex;border:1px solid rgba(10,26,61,0.12);border-radius:16px;background:rgba(255,255,255,0.75);backdrop-filter:blur(12px);overflow:hidden;max-width:720px; }
-          .lwseo-stat-item { flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(10,26,61,0.08); }
-          .lwseo-stat-item:last-child { border-right:none; }
-          .lwseo-stat-num { font-size:1.4rem;font-weight:900;color:#0a1a3d;line-height:1;letter-spacing:-1px; }
-          .lwseo-stat-lbl { font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px; }
-
-
-
-
 
           .lwseo-sec { padding:80px 40px; }
           .lwseo-sec-inner { max-width:1200px;margin:0 auto; }
@@ -155,8 +138,7 @@ export default function LawFirmSeoServices() {
           .lwseo-cta-p { font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px; }
           @media (max-width:900px) { .lwseo-grid3,.lwseo-res-grid { grid-template-columns:1fr 1fr; } }
           @media (max-width:600px) {
-            .lwseo-hero,.lwseo-sec,.lwseo-results,.lwseo-cta { padding-left:20px;padding-right:20px; }
-            .lwseo-hero { padding-top:60px;padding-bottom:50px; }
+            .lwseo-sec,.lwseo-results,.lwseo-cta { padding-left:20px;padding-right:20px; }
             .lwseo-grid3,.lwseo-res-grid { grid-template-columns:1fr; }
           }
         
@@ -165,45 +147,19 @@ export default function LawFirmSeoServices() {
         </style>
       </Head>
 
-      <section className="lwseo-hero">
-        <div className="lwseo-orb1" /><div className="lwseo-orb2" />
-        <div className="lwseo-inner">
-          <span className="lwseo-eyebrow">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-            Law Firm SEO - Personal Injury · Family Law · Criminal Defense
-          </span>
-          <h1 className="lwseo-h1">Law Firm SEO That Generates<br/>High-Value Client Cases</h1>
-          <p className="lwseo-desc">1Solutions builds law firm SEO strategies that rank for the highest-value legal keywords in your market - putting your firm in front of potential clients at the exact moment they need legal representation. Practice area pages, authority content, and legal directory dominance for attorneys who want to grow.</p>
-          <div className="lwseo-btns">
-            <a href="#contact" className="lwseo-btn-p">
-              Get Your Free Law Firm SEO Audit
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <Link href="/affordable-seo-packages/" className="lwseo-btn-s">View SEO Packages</Link>
-          </div>
-          <div className="lwseo-trust">
-            {['Legal Industry Specialists','Practice Area Page Experts','Avvo + Directory Mastery','No Lock-in Contracts'].map(t => (
-              <span key={t} className="lwseo-badge">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0a1a3d" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                {t}
-              </span>
-            ))}
-          </div>
-          <div className="lwseo-stats-bar">
-            {[
-              { num:'$54–$300', lbl:'avg CPC for legal keywords - highest of any vertical' },
-              { num:'96%', lbl:'of people seeking legal advice start with search' },
-              { num:'$40B+', lbl:'personal injury legal fees generated annually (US)' },
-              { num:'12:1', lbl:'avg ROI for law firm SEO investment' },
-            ].map(s => (
-              <div key={s.lbl} className="lwseo-stat-item">
-                <span className="lwseo-stat-num">{s.num}</span>
-                <span className="lwseo-stat-lbl">{s.lbl}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="Law Firm SEO · Legal Industry Specialists · No Lock-in Contracts"
+        title={<>Law Firm SEO That Generates <AuroraText>High-Value Client Cases</AuroraText></>}
+        subtext="1Solutions builds law firm SEO strategies that rank for the highest-value legal keywords in your market - putting your firm in front of potential clients at the exact moment they need legal representation. Practice area pages, authority content, and legal directory dominance for attorneys who want to grow."
+        primaryCta={{ label: 'Get Your Free Law Firm SEO Audit', href: '#contact' }}
+        secondaryCta={{ label: 'View SEO Packages', href: '/affordable-seo-packages/' }}
+        stats={[
+          { label: 'Avg CPC for legal keywords - highest of any vertical', value: '300', prefix: '$54–$' },
+          { label: 'Of people seeking legal advice start with search', value: '96', suffix: '%' },
+          { label: 'Personal injury legal fees generated annually (US)', value: '40', prefix: '$', suffix: 'B+' },
+          { label: 'Avg ROI for law firm SEO investment', value: '12', suffix: ':1' },
+        ]}
+      />
 
       <section className="lwseo-sec lwseo-bg" id="services">
         <div className="lwseo-sec-inner">

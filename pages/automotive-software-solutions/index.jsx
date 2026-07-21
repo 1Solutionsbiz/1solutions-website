@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 /* ─── Schema ─────────────────────────────────────────────────── */
 const SCHEMA = {
@@ -185,40 +187,10 @@ const FAQS = [
   { q: 'Do you offer post-launch support and OTA update management for automotive software?', a: 'Yes - all projects include a 30-day hypercare period post-launch. We provide OTA firmware and software update management following TUF/Uptane standards, real-time fleet monitoring and alerting, intrusion detection system management, security patch delivery, and tiered SLA-backed engineering support. Our Enterprise plan offers 24/7 coverage with a 4-hour critical response SLA.' },
 ];
 
-/* ─── Hooks ──────────────────────────────────────────────────── */
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const num = parseInt(target.replace(/\D/g, ''), 10);
-    if (!num) return;
-    let t0 = null;
-    const step = ts => {
-      if (!t0) t0 = ts;
-      const p = Math.min((ts - t0) / duration, 1);
-      setCount(Math.floor((1 - Math.pow(1 - p, 3)) * num));
-      if (p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function StatItem({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');  return (
-    <div className="av-stat-col">
-      <div className="av-stat-val">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div>
-      <div className="av-stat-label">{label}</div>
-    </div>
-  );
-}
-
 /* ─── Component ──────────────────────────────────────────────── */
 export default function AutomotiveSoftwareSolutions() {
   const [showAllSvc, setShowAllSvc] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleSvcCards, setVisibleSvcCards] = useState([]);
   const [visibleEngCards, setVisibleEngCards] = useState([]);
@@ -226,20 +198,12 @@ export default function AutomotiveSoftwareSolutions() {
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const [visibleStackCards, setVisibleStackCards] = useState([]);
 
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const svcGridRef = useRef(null);
   const engGridRef = useRef(null);
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
   const stackGridRef = useRef(null);
-
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStatsStarted(true); obs.disconnect(); } }, { threshold: 0.4 });
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   useEffect(() => {
     const pairs = [
@@ -321,37 +285,6 @@ export default function AutomotiveSoftwareSolutions() {
 
 
 
-
-          /* Hero */
-          .av-hero { position:relative;z-index:2;text-align:center;max-width:920px;margin:0 auto;padding:44px 40px 32px; }
-          .av-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px; }
-          .av-hero h1 { font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .av-hero-desc { font-size:16px;color:#3A507A;line-height:1.65;max-width:700px;margin:0 auto 24px; }
-          .av-trust-row { display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px; }
-          .av-badge { display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07); }
-          .av-badge-dot { width:7px;height:7px;border-radius:50%;background:#dc2626;flex-shrink:0; }
-          .av-ctas { display:flex;flex-wrap:wrap;gap:12px;justify-content:center; }
-          .av-btn-primary { display:inline-block;padding:14px 36px;background:#0F3460;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(15,52,96,.25); }
-          .av-btn-primary:hover { background:#dc2626;transform:translateY(-2px); }
-          .av-btn-ghost { display:inline-block;padding:14px 36px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s; }
-          .av-btn-ghost:hover { background:rgba(255,255,255,.85);border-color:rgba(220,38,38,.5);transform:translateY(-2px); }
-
-          /* Stats */
-          .av-stats { position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:28px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95); }
-          .av-stat-col { padding:18px 16px;text-align:center;border-right:1px solid rgba(15,52,96,.10); }
-          .av-stat-col:last-child { border-right:none; }
-          .av-stat-val { font-size:28px;font-weight:900;color:#dc2626;letter-spacing:-.5px;line-height:1; }
-          .av-stat-label { font-size:11px;color:#4A6080;font-weight:500;margin-top:5px; }
-
-          /* Logos */
-          .av-logos { position:relative;z-index:2;padding:24px 40px 52px;display:flex;flex-direction:column;align-items:center;gap:14px; }
-          .av-logos-label { font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6A80A0; }
-          .av-logos-wrap { width:100%;overflow:hidden; }
-          .av-logos-track { display:flex;align-items:center;gap:60px;width:max-content;animation:av-marquee 28s linear infinite; }
-          .av-logos-track:hover { animation-play-state:paused; }
-          @keyframes av-marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-          .av-clogo { height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s; }
-          .av-clogo:hover { opacity:.85;filter:grayscale(0%); }
 
           /* Shared */
           .av-s-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block; }
@@ -522,7 +455,7 @@ export default function AutomotiveSoftwareSolutions() {
 
           /* Responsive */
           @media(max-width:1024px){
-            .av-hero h1,.av-s-title,.av-faq h2 { font-size:36px; }
+            .av-s-title,.av-faq h2 { font-size:36px; }
             .av-svc-grid { grid-template-columns:repeat(2,1fr); }
             .av-stack-grid { grid-template-columns:repeat(2,1fr); }
             .av-eng-grid { grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto; }
@@ -534,13 +467,6 @@ export default function AutomotiveSoftwareSolutions() {
             .av-contact-grid { grid-template-columns:1fr; }
           }
           @media(max-width:768px){
-            .av-hero { padding:28px 20px 20px; }
-            .av-hero h1 { font-size:26px;letter-spacing:-.3px; }
-            .av-stats { grid-template-columns:1fr 1fr; }
-            .av-stat-col:nth-child(2) { border-right:none; }
-            .av-stat-col:nth-child(3) { border-top:1px solid rgba(15,52,96,.10); }
-            .av-stat-col:nth-child(4) { border-top:1px solid rgba(15,52,96,.10);border-right:none; }
-            .av-logos { padding:16px 20px 28px; }
             .av-svc-section,.av-stack-section,.av-eng-section,.av-process-section,.av-testi,.av-why-section,.av-faq,.av-related { padding:52px 20px; }
             .av-contact { padding:48px 20px; }
             .av-svc-grid,.av-stack-grid,.av-why-grid { grid-template-columns:1fr; }
@@ -578,53 +504,19 @@ export default function AutomotiveSoftwareSolutions() {
         <div className="av-orb av-orb-3" />
 
         {/* ── HERO ── */}
-        <section className="av-hero">
-          <span className="av-eyebrow">Automotive Software Development Company</span>
-          <h1>Automotive Software Development - Connected, Intelligent &amp; Road-Ready</h1>
-          <p className="av-hero-desc">We engineer connected vehicle platforms, ADAS software, fleet management systems, EV solutions, and dealership management platforms for OEMs, Tier 1 suppliers, fleet operators, and automotive startups across the US, UK, Europe, and Australia.</p>
-          <div className="av-trust-row">
-            {['ISO 26262 Experience','AUTOSAR Compliant','15+ Years Experience','60+ Automotive Clients','Full-Stack Delivery'].map(b => (
-              <div className="av-badge" key={b}><span className="av-badge-dot" />{b}</div>
-            ))}
-          </div>
-          <div className="av-ctas">
-            <Link href="#contact" className="av-btn-primary">Start Your Automotive Project</Link>
-            <Link href="#engagement" className="av-btn-ghost">View Engagement Models →</Link>
-          </div>
-        </section>
-
-        {/* ── STATS ── */}
-        <div className="av-stats" ref={statsRef}>
-          {[['60+','Automotive Clients'],['200+','Projects Delivered'],['15+','Years Experience'],['97%','Client Retention']].map(([v, l]) => (
-            <StatItem key={l} label={l} val={v} started={statsStarted} />
-          ))}
-        </div>
-
-        {/* ── CLIENT LOGOS ── */}
-        <div className="av-logos">
-          <span className="av-logos-label">Trusted by Leading Organisations</span>
-          <div className="av-logos-wrap">
-            <div className="av-logos-track">
-              {[
-                ['/logo/Indian_Express_Logo_full.png','Indian Express'],
-                ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],
-                ['/logo/Uniphore.jpg','Uniphore'],
-                ['/logo/ICCoLogo.png','ICC'],
-                ['/logo/Honor_Logo_(2020).svg.png','Honor'],
-                ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],
-                ['/logo/Indian_Express_Logo_full.png','Indian Express 2'],
-                ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon 2'],
-                ['/logo/Uniphore.jpg','Uniphore 2'],
-                ['/logo/ICCoLogo.png','ICC 2'],
-                ['/logo/Honor_Logo_(2020).svg.png','Honor 2'],
-                ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv 2'],
-              ].map(([src, alt]) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img key={alt} src={src} alt={alt.replace(/ \d$/, '')} className="av-clogo" />
-              ))}
-            </div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="Automotive Software Development Company · ISO 26262 · AUTOSAR Compliant"
+          title={<>Automotive Software Development - <AuroraText>Connected, Intelligent & Road-Ready</AuroraText></>}
+          subtext="We engineer connected vehicle platforms, ADAS software, fleet management systems, EV solutions, and dealership management platforms for OEMs, Tier 1 suppliers, fleet operators, and automotive startups across the US, UK, Europe, and Australia."
+          primaryCta={{ label: 'Start Your Automotive Project', href: '#contact' }}
+          secondaryCta={{ label: 'View Engagement Models →', href: '#engagement' }}
+          stats={[
+            { label: 'Automotive Clients', value: '60', suffix: '+' },
+            { label: 'Projects Delivered', value: '200', suffix: '+' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'Client Retention', value: '97', suffix: '%' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="av-svc-section" aria-labelledby="av-svc-heading">

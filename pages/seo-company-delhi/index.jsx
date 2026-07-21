@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Keyword Research & Strategy', desc: 'In-depth analysis of how Delhi customers search for your services - high-intent buying queries, local neighbourhood terms, and competitive gaps your rivals are missing.' },
@@ -144,27 +146,7 @@ export default function SeoCompanyDelhi() {
         <style>{`
           *{box-sizing:border-box;}
           body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;}
-          .dsel-hero{position:relative;overflow:hidden;padding:90px 40px 80px;background:linear-gradient(135deg,rgba(224,231,255,0.60) 0%,rgba(255,255,255,0.75) 50%,rgba(219,234,254,0.55) 100%);}
-          .dsel-orb1{position:absolute;top:-100px;right:-100px;width:580px;height:580px;border-radius:50%;background:radial-gradient(circle,rgba(12,36,97,0.10) 0%,transparent 70%);pointer-events:none;filter:blur(12px);}
-          .dsel-orb2{position:absolute;bottom:-80px;left:-80px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(29,86,208,0.07) 0%,transparent 70%);pointer-events:none;filter:blur(10px);}
-          .dsel-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;}
-          .dsel-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(12,36,97,0.08);border:1px solid rgba(12,36,97,0.18);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#0c2461;margin-bottom:24px;}
-          .dsel-eyebrow-dot{width:7px;height:7px;border-radius:50%;background:#1d56d0;display:inline-block;}
-          .dsel-h1{font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;color:#0A1628;}
-          .dsel-h1 span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-          .dsel-desc{font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:680px;}
-          .dsel-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px;}
-          .dsel-btn-p{display:inline-flex;align-items:center;gap:8px;background:#0c2461;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 6px 24px rgba(12,36,97,0.28);}
-          .dsel-btn-p:hover{background:#0f2d78;transform:translateY(-2px);}
-          .dsel-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.75);color:#0c2461;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;border:1.5px solid rgba(12,36,97,0.18);transition:all 0.25s;backdrop-filter:blur(8px);}
-          .dsel-btn-s:hover{background:#fff;transform:translateY(-2px);}
-          .dsel-trust{display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-bottom:48px;}
-          .dsel-badge{display:flex;align-items:center;gap:6px;font-size:12px;color:#6b7280;font-weight:500;}
-          .dsel-stats-bar{display:flex;border:1px solid rgba(12,36,97,0.10);border-radius:16px;background:rgba(255,255,255,0.80);backdrop-filter:blur(12px);overflow:hidden;max-width:700px;}
-          .dsel-stat-item{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(12,36,97,0.08);}
-          .dsel-stat-item:last-child{border-right:none;}
-          .dsel-stat-num{font-size:1.9rem;font-weight:900;color:#0c2461;line-height:1;letter-spacing:-1px;}
-          .dsel-stat-lbl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px;}.dsel-bc a:hover{color:#0c2461;}.dsel-bc-cur{color:#0c2461;font-weight:500;}
+          .dsel-bc a:hover{color:#0c2461;}.dsel-bc-cur{color:#0c2461;font-weight:500;}
           .dsel-sec{padding:80px 40px;}
           .dsel-bg{background:#f8fafd;}
           .dsel-sec-inner{max-width:1200px;margin:0 auto;}
@@ -261,8 +243,7 @@ export default function SeoCompanyDelhi() {
             .dsel-contact-grid{grid-template-columns:1fr;gap:40px;}
           }
           @media(max-width:600px){
-            .dsel-hero,.dsel-sec,.dsel-results,.dsel-cta,.dsel-contact-sec{padding-left:20px;padding-right:20px;}
-            .dsel-hero{padding-top:60px;padding-bottom:50px;}
+            .dsel-sec,.dsel-results,.dsel-cta,.dsel-contact-sec{padding-left:20px;padding-right:20px;}
             .dsel-grid4,.dsel-grid3,.dsel-grid2,.dsel-res-grid,.dsel-ind-grid{grid-template-columns:1fr;}
             .dsel-field-row{grid-template-columns:1fr;}
             .dsel-form-wrap{padding:24px 20px;}
@@ -274,50 +255,19 @@ export default function SeoCompanyDelhi() {
       </Head>
 
       {/* Hero */}
-      <section className="dsel-hero">
-        <div className="dsel-orb1" /><div className="dsel-orb2" />
-        <div className="dsel-inner">
-          <span className="dsel-eyebrow">
-            <span className="dsel-eyebrow-dot" />
-            SEO Company in Delhi &amp; NCR
-          </span>
-          <h1 className="dsel-h1">
-            Top-Ranked <span>SEO Company in Delhi</span><br />
-            That Delivers Page 1 Rankings
-          </h1>
-          <p className="dsel-desc">
-            1Solutions is a results-driven SEO company in Delhi with 15+ years of experience helping Delhi NCR businesses rank on Page 1 of Google. From technical SEO and local search to link building and content strategy - we build organic visibility that generates leads, not just traffic.
-          </p>
-          <div className="dsel-btns">
-            <a href="#contact" className="dsel-btn-p">
-              Get a Free SEO Audit
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <Link href="/affordable-seo-packages/" className="dsel-btn-s">View SEO Packages →</Link>
-          </div>
-          <div className="dsel-trust">
-            {['Delhi NCR team', 'White-hat SEO only', 'No lock-in contracts', 'Monthly ranking reports'].map(t => (
-              <span key={t} className="dsel-badge">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0c2461" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                {t}
-              </span>
-            ))}
-          </div>
-          <div className="dsel-stats-bar">
-            {[
-              { num: '500+', lbl: 'SEO Clients Served' },
-              { num: '15+', lbl: 'Years Experience' },
-              { num: 'Page 1', lbl: 'Rankings Delivered' },
-              { num: '97%', lbl: 'Client Retention' },
-            ].map(s => (
-              <div key={s.lbl} className="dsel-stat-item">
-                <span className="dsel-stat-num">{s.num}</span>
-                <span className="dsel-stat-lbl">{s.lbl}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="SEO Company in Delhi & NCR · White-Hat Only"
+        title={<>Top-Ranked <AuroraText>SEO Company in Delhi</AuroraText> That Delivers Page 1 Rankings</>}
+        subtext="1Solutions is a results-driven SEO company in Delhi with 15+ years of experience helping Delhi NCR businesses rank on Page 1 of Google. From technical SEO and local search to link building and content strategy - we build organic visibility that generates leads, not just traffic."
+        primaryCta={{ label: 'Get a Free SEO Audit', href: '#contact' }}
+        secondaryCta={{ label: 'View SEO Packages', href: '/affordable-seo-packages/' }}
+        stats={[
+          { label: 'SEO Clients Served', value: '500', suffix: '+' },
+          { label: 'Years Experience', value: '15', suffix: '+' },
+          { label: 'Rankings Delivered', value: '1', prefix: 'Page ' },
+          { label: 'Client Retention', value: '97', suffix: '%' },
+        ]}
+      />
 
       {/* SEO Services */}
       <section className="dsel-sec dsel-bg" id="services">

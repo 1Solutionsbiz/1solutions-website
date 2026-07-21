@@ -2,22 +2,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-
-function useCountUp(target, duration = 1800) {
-  const [count, setCount] = useState(0);
-  const raf = useRef(null);
-  const start = (t) => {
-    const s = performance.now();
-    const step = (now) => {
-      const p = Math.min((now - s) / duration, 1);
-      setCount(Math.floor(p * t));
-      if (p < 1) raf.current = requestAnimationFrame(step);
-    };
-    raf.current = requestAnimationFrame(step);
-  };
-  useEffect(() => () => cancelAnimationFrame(raf.current), []);
-  return [count, start];
-}
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const ACCENT = '#065f46';
 const SKILLS = [
@@ -60,9 +46,6 @@ export default function VirtualAssistantServices() {
   const enR  = useRef(null); const [enV, setEnV] = useState(false);
   const whR  = useRef(null); const [whV, setWhV] = useState(false);
   const prR  = useRef(null); const [prV, setPrV] = useState(false);
-  const stGr = useRef(null); const [stV, setStV] = useState(false);
-  const [c1, s1] = useCountUp(200); const [c2, s2] = useCountUp(500);
-  const [c3, s3] = useCountUp(49);  const [c4, s4] = useCountUp(7);
   const [openFaq, setOpenFaq] = useState(null);
 
   useEffect(() => {
@@ -71,9 +54,7 @@ export default function VirtualAssistantServices() {
     const o2 = obs(enR, setEnV); if (enR.current) o2.observe(enR.current);
     const o3 = obs(whR, setWhV); if (whR.current) o3.observe(whR.current);
     const o4 = obs(prR, setPrV); if (prR.current) o4.observe(prR.current);
-    const o5 = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStV(true); s1(200); s2(500); s3(49); s4(7); o5.disconnect(); } }, { threshold: 0.2 });
-    if (stGr.current) o5.observe(stGr.current);
-    return () => [o1, o2, o3, o4, o5].forEach(o => o.disconnect());
+    return () => [o1, o2, o3, o4].forEach(o => o.disconnect());
   }, []);
 
   const LD = {
@@ -99,14 +80,8 @@ export default function VirtualAssistantServices() {
         <link rel="canonical" href="https://www.1solutions.biz/virtual-assistant-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
-          .vas-hero{background:linear-gradient(135deg,${ACCENT} 0%,#022c22 60%,#064e3b 100%);color:#fff;padding:100px 20px 80px;text-align:center}
-          .vas-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin:0 0 18px;line-height:1.15}
-          .vas-hero p{font-size:1.15rem;max-width:620px;margin:0 auto 36px;opacity:.88;line-height:1.7}
-          .vas-hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           .vas-btn-primary{background:#FE9700;color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s}
           .vas-btn-primary:hover{opacity:.88}
-          .vas-btn-outline{border:2px solid rgba(255,255,255,.7);color:#fff;padding:13px 28px;border-radius:8px;font-weight:600;font-size:1rem;text-decoration:none;transition:border-color .2s}
-          .vas-btn-outline:hover{border-color:#fff}
           .vas-sec{padding:70px 20px}.vas-sec-alt{background:#f0fdf4}
           .vas-wrap{max-width:1100px;margin:0 auto}
           .vas-sec-title{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:800;color:#111;text-align:center;margin:0 0 12px}
@@ -131,10 +106,6 @@ export default function VirtualAssistantServices() {
           .vas-step-n{width:48px;height:48px;border-radius:50%;background:${ACCENT};color:#fff;font-size:1.1rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
           .vas-step h3{font-size:1rem;font-weight:700;color:#111;margin:0 0 8px}
           .vas-step p{color:#666;font-size:.9rem;line-height:1.6;margin:0}
-          .vas-stats{background:${ACCENT};padding:60px 20px;color:#fff}
-          .vas-stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;max-width:900px;margin:0 auto;text-align:center}
-          .vas-stat-val{font-size:2.8rem;font-weight:900;line-height:1}
-          .vas-stat-label{font-size:.95rem;opacity:.82;margin-top:6px}
           .vas-faq{max-width:760px;margin:0 auto}
           .vas-faq-item{border-bottom:1px solid #e5e5e5;padding:20px 0}
           .vas-faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;color:#111;font-size:1rem;gap:12px}
@@ -144,17 +115,21 @@ export default function VirtualAssistantServices() {
           .vas-cta{background:linear-gradient(135deg,${ACCENT},#022c22);padding:80px 20px;text-align:center;color:#fff}
           .vas-cta h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin:0 0 16px}
           .vas-cta p{font-size:1.08rem;opacity:.88;max-width:560px;margin:0 auto 36px;line-height:1.7}
-          @media(max-width:600px){.vas-hero{padding:80px 18px 60px}.vas-stats-grid{grid-template-columns:1fr 1fr}}
         `}</style>
       </Head>
-      <section className="vas-hero">
-        <h1>Virtual Assistant Services<br/>Dedicated VAs for Business, E-Commerce &amp; Admin</h1>
-        <p>Hire pre-vetted, dedicated virtual assistants trained in business admin, e-commerce operations, customer support, social media, and research. Full-time or part-time, your VA starts within 7 days - saving you 20+ hours a week.</p>
-        <div className="vas-hero-btns">
-          <Link href="/contact-us" className="vas-btn-primary">Hire a Virtual Assistant →</Link>
-          <Link href="/contact-us" className="vas-btn-outline">Learn More</Link>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="Virtual Assistant Services · Pre-Vetted & Dedicated VAs"
+        title={<>Virtual Assistant Services - <AuroraText>Dedicated VAs for Business, E-Commerce & Admin</AuroraText></>}
+        subtext="Hire pre-vetted, dedicated virtual assistants trained in business admin, e-commerce operations, customer support, social media, and research. Full-time or part-time, your VA starts within 7 days - saving you 20+ hours a week."
+        primaryCta={{ label: 'Hire a Virtual Assistant', href: '/contact-us' }}
+        secondaryCta={{ label: 'Learn More', href: '/contact-us' }}
+        stats={[
+          { label: 'Virtual Assistants', value: '200', suffix: '+' },
+          { label: 'Clients Served', value: '500', suffix: '+' },
+          { label: 'Client Satisfaction', value: '9', prefix: '4.', suffix: '/5' },
+          { label: 'Days to Start', value: '7', suffix: ' Days' },
+        ]}
+      />
       <section className="vas-sec" ref={skR}>
         <div className="vas-wrap">
           <h2 className="vas-sec-title">Skills &amp; Task Coverage</h2>
@@ -174,14 +149,6 @@ export default function VirtualAssistantServices() {
           <h2 className="vas-sec-title">Why Hire a Virtual Assistant from 1Solutions?</h2>
           <p className="vas-sec-sub">We don't just find you a VA - we manage them, train them, and guarantee their performance.</p>
           <div className="vas-why-grid">{WHY.map((w, i) => <div key={w.h} className={`vas-why-item${whV ? ' vas-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
-        </div>
-      </section>
-      <section className="vas-stats" ref={stGr}>
-        <div className="vas-stats-grid">
-          <div><div className="vas-stat-val">{stV ? c1 : 0}+</div><div className="vas-stat-label">Virtual Assistants</div></div>
-          <div><div className="vas-stat-val">{stV ? c2 : 0}+</div><div className="vas-stat-label">Clients Served</div></div>
-          <div><div className="vas-stat-val">4.{stV ? c3 : 0}/5</div><div className="vas-stat-label">Client Satisfaction</div></div>
-          <div><div className="vas-stat-val">{stV ? c4 : 0} Days</div><div className="vas-stat-label">Days to Start</div></div>
         </div>
       </section>
       <section className="vas-sec vas-sec-alt" ref={prR}>

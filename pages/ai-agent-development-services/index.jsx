@@ -2,6 +2,8 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText as SharedAuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 function AuroraText({ children }) {
   return (
@@ -10,13 +12,6 @@ function AuroraText({ children }) {
 }
 
 /* ── Data ─────────────────────────────────────────────────────────────── */
-const STATS = [
-  { label:'AI Agents Built',      val:'100+' },
-  { label:'LLMs Integrated',      val:'10+'  },
-  { label:'Industries Served',    val:'15+'  },
-  { label:'Years AI Experience',  val:'5+'   },
-];
-
 const AGENTS = [
   { n:'01', icon:'M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z', title:'Conversational AI Agents', desc:'Customer support, internal helpdesk, and sales assistants that hold context across long conversations and integrate with your CRM, ticketing system, and knowledge base.' },
   { n:'02', icon:'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H4a2 2 0 01-2-2V5a2 2 0 012-2h16a2 2 0 012 2v10a2 2 0 01-2 2h-1', title:'Autonomous Task Agents', desc:'Self-directed agents that plan and execute multi-step tasks without supervision — research, data collection, report generation, and workflow completion from a single prompt.' },
@@ -193,22 +188,11 @@ export default function AIAgentDevelopmentServices() {
           .aad-orb3{width:600px;height:600px;background:radial-gradient(circle,rgba(20,184,166,.20) 0%,transparent 70%);top:45%;left:-150px;transform:translateY(-50%)}
           .aad-reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
           .aad-reveal.aad-vis{opacity:1;transform:translateY(0)}.aad-bc a:hover{color:#D97706}.aad-bc-sep{color:#d1d5db}
-          /* Hero */
-          .aad-hero{position:relative;z-index:1;padding:72px 40px 0}
-          .aad-hero-inner{position:relative;z-index:2;text-align:center;max-width:940px;margin:0 auto}
-          .aad-eyebrow{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;display:block;margin-bottom:18px}
-          .aad-h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:18px;color:#0F1F40}
-          .aad-hero-sub{font-size:16px;color:#3A507A;line-height:1.65;max-width:700px;margin:0 auto 28px}
           .aad-btns{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:32px}
           .aad-btn-p{position:relative;display:inline-flex;align-items:center;gap:8px;padding:14px 36px;background:rgba(15,52,96,0.85);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.20);border-radius:50px;color:#fff;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;box-shadow:0 6px 24px rgba(15,52,96,0.25)}
           .aad-btn-p:hover{background:rgba(15,52,96,1);border-color:rgba(245,158,11,0.6);transform:translateY(-2px);box-shadow:0 12px 36px rgba(15,52,96,0.30)}
           .aad-btn-s{display:inline-flex;align-items:center;padding:14px 32px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1)}
           .aad-btn-s:hover{background:rgba(255,255,255,0.85);border-color:rgba(245,158,11,0.6);transform:translateY(-2px)}
-          /* Stats bar */
-          .aad-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95)}
-          .aad-stat{padding:18px 20px;text-align:center;border-right:1px solid rgba(15,52,96,.10)}.aad-stat:last-child{border-right:none}
-          .aad-stat-v{font-size:26px;font-weight:900;color:#D97706;letter-spacing:-0.5px;line-height:1;margin-bottom:6px}
-          .aad-stat-l{font-size:12px;color:#4A6080;font-weight:500}
           /* Sections */
           .aad-sec{padding:80px 40px;position:relative;z-index:1}
           .aad-white{background:#fff}
@@ -278,12 +262,7 @@ export default function AIAgentDevelopmentServices() {
           /* Responsive */
           @media(max-width:1024px){.aad-g4{grid-template-columns:repeat(2,1fr)}.aad-g3{grid-template-columns:repeat(2,1fr)}.aad-stack-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){
-            .aad-hero{padding:56px 24px 0}
             .aad-sec,.aad-form-sec,.aad-cta-sec{padding:52px 20px}
-            .aad-stats{grid-template-columns:repeat(2,1fr)}
-            .aad-stat:nth-child(2){border-right:none}
-            .aad-stat:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}
-            .aad-stat:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}
             .aad-glass,.aad-fitem,.aad-form-card,.aad-stack-card{backdrop-filter:none;-webkit-backdrop-filter:none}
             .aad-g4,.aad-g3,.aad-g2,.aad-stack-grid{grid-template-columns:1fr}
             .aad-fq{padding:18px 18px 18px 52px}
@@ -299,28 +278,19 @@ export default function AIAgentDevelopmentServices() {
         <div className="aad-orb aad-orb1"/><div className="aad-orb aad-orb2"/><div className="aad-orb aad-orb3"/>
 
         {/* ── HERO ── */}
-        <section className="aad-hero">
-          <div className="aad-hero-inner">
-            <span className="aad-eyebrow">AI Agents · LangGraph · AutoGen · GPT-4o · Claude · Gemini</span>
-            <h1 className="aad-h1">AI Agent Development Services<br/>Built for <AuroraText>Production, Not Demos</AuroraText></h1>
-            <p className="aad-hero-sub">We design, build, and deploy custom AI agents — conversational agents, autonomous task agents, RAG knowledge systems, and multi-agent pipelines — that work reliably in the real world, not just in a sandbox.</p>
-            <div className="aad-btns">
-              <a href="#contact-form" className="aad-btn-p">
-                Discuss Your Agent Project
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <Link href="/artificial-intelligence/" className="aad-btn-s">All AI Services</Link>
-            </div>
-            <div className="aad-stats">
-              {STATS.map(s => (
-                <div key={s.label} className="aad-stat">
-                  <div className="aad-stat-v">{s.val}</div>
-                  <div className="aad-stat-l">{s.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="AI Agents · LangGraph · AutoGen · GPT-4o · Claude · Gemini"
+          title={<>AI Agent Development Services — Built for <SharedAuroraText>Production, Not Demos</SharedAuroraText></>}
+          subtext="We design, build, and deploy custom AI agents — conversational agents, autonomous task agents, RAG knowledge systems, and multi-agent pipelines — that work reliably in the real world, not just in a sandbox."
+          primaryCta={{ label: 'Discuss Your Agent Project', href: '#contact-form' }}
+          secondaryCta={{ label: 'All AI Services', href: '/artificial-intelligence/' }}
+          stats={[
+            { label: 'AI Agents Built', value: '100', suffix: '+' },
+            { label: 'LLMs Integrated', value: '10', suffix: '+' },
+            { label: 'Industries Served', value: '15', suffix: '+' },
+            { label: 'Years AI Experience', value: '5', suffix: '+' },
+          ]}
+        />
 
         {/* ── AGENT TYPES ── */}
         <section className="aad-sec" id="services">

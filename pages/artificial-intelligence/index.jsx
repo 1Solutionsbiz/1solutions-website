@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'Custom AI Model Development', desc: 'Building, training, and deploying custom machine learning models for your specific use case - classification, regression, recommendation, anomaly detection, forecasting, and ranking models trained on your data.', href: '/contact-us' },
@@ -39,13 +41,6 @@ const FAQS = [
   { q: 'How do you ensure AI model accuracy and reliability?', a: 'We start by agreeing performance targets before development begins - precision, recall, accuracy, and business-level metrics specific to the use case. We use hold-out test sets and cross-validation to evaluate model performance on unseen data. After deployment, we monitor model performance in production, track data distribution shifts, and schedule retraining cycles. We also implement confidence thresholds and human-in-the-loop fallbacks for high-stakes decisions.' },
 ];
 
-const STATS = [
-  { label: 'AI Projects', val: '50+' },
-  { label: 'Years Experience', val: '15+' },
-  { label: 'Industries', val: '40+' },
-  { label: 'Client Retention', val: '97%' },
-];
-
 export default function ArtificialIntelligence() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleCards, setVisibleCards] = useState([]);
@@ -70,23 +65,11 @@ export default function ArtificialIntelligence() {
         <style>{`
           .aisol-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .aisol-page *,.aisol-page *::before,.aisol-page *::after{box-sizing:border-box}
-          .aisol-hero{background:linear-gradient(135deg,#0F1F40 0%,#0c2340 40%,#0e3a5c 80%,#0F1F40 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .aisol-o1{position:absolute;top:-100px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(14,165,233,0.20) 0%,transparent 65%);pointer-events:none;filter:blur(40px)}
-          .aisol-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(254,151,0,0.08) 0%,transparent 65%);pointer-events:none;filter:blur(40px)}
-          .aisol-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.aisol-bc a:hover{color:#FE9700}.aisol-bc span{color:rgba(255,255,255,0.25)}
-          .aisol-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(14,165,233,0.15);border:1px solid rgba(14,165,233,0.35);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#7dd3fc;margin-bottom:28px}
-          .aisol-h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:900;line-height:1.05;letter-spacing:-1.5px;color:#fff;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .aisol-h1 span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .aisol-sub{font-size:1.08rem;color:rgba(255,255,255,0.70);line-height:1.75;max-width:660px;margin:0 auto 36px}
-          .aisol-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .aisol-btn-p{display:inline-flex;align-items:center;gap:8px;background:#FE9700;color:#fff;padding:15px 32px;border-radius:50px;font-weight:800;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(254,151,0,0.35)}
           .aisol-btn-p:hover{background:#e08700;box-shadow:0 8px 36px rgba(254,151,0,0.50);transform:translateY(-2px)}
           .aisol-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border:1.5px solid rgba(255,255,255,0.22);color:#fff;padding:15px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
           .aisol-btn-s:hover{border-color:rgba(254,151,0,0.60);background:rgba(254,151,0,0.10);transform:translateY(-2px)}
-          .aisol-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.06);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.10);border-radius:20px 20px 0 0}
-          .aisol-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(255,255,255,0.07)}.aisol-stat:last-child{border-right:none}
-          .aisol-stat-l{font-size:11px;color:rgba(255,255,255,0.45);font-weight:500;margin-bottom:4px}
-          .aisol-stat-v{font-size:1.6rem;font-weight:900;color:#FE9700;letter-spacing:-0.5px}
+          .aisol-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           .aisol-svc{background:#f8fafd;padding:80px 40px}.aisol-svc-in{max-width:1280px;margin:0 auto}
           .aisol-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#0EA5E9;margin-bottom:10px;display:block}
           .aisol-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
@@ -126,25 +109,26 @@ export default function ArtificialIntelligence() {
           .aisol-cta-t{font-size:clamp(2rem,4vw,3rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:16px}
           .aisol-cta-s{font-size:1.05rem;color:rgba(255,255,255,0.70);line-height:1.75;margin:0 auto 36px;max-width:520px}
           @media(max-width:1024px){.aisol-grid{grid-template-columns:repeat(2,1fr)}.aisol-why-grid{grid-template-columns:repeat(2,1fr)}}
-          @media(max-width:768px){.aisol-hero,.aisol-svc,.aisol-proc,.aisol-why,.aisol-faq,.aisol-cta{padding:60px 24px}.aisol-hero{padding-top:60px;padding-bottom:0}.aisol-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.aisol-stat:nth-child(2){border-right:none}.aisol-grid{grid-template-columns:1fr}.aisol-why-grid{grid-template-columns:1fr}.aisol-step{grid-template-columns:56px 1fr}.aisol-btns{flex-direction:column;align-items:center}}
+          @media(max-width:768px){.aisol-svc,.aisol-proc,.aisol-why,.aisol-faq,.aisol-cta{padding:60px 24px}.aisol-grid{grid-template-columns:1fr}.aisol-why-grid{grid-template-columns:1fr}.aisol-step{grid-template-columns:56px 1fr}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
       <div className="aisol-page">
-        <section className="aisol-hero"><div className="aisol-o1"/><div className="aisol-o2"/>
-          <div className="aisol-in">
-            <span className="aisol-badge"><span style={{width:6,height:6,borderRadius:'50%',background:'#7dd3fc',display:'inline-block'}}/> ARTIFICIAL INTELLIGENCE</span>
-            <h1 className="aisol-h1">Build Smarter Products with <span>AI Solutions</span></h1>
-            <p className="aisol-sub">From machine learning models and NLP to computer vision and AI automation - we help businesses integrate artificial intelligence into products, workflows, and decisions that drive measurable outcomes.</p>
-            <div className="aisol-btns">
-              <Link href="/contact-us" className="aisol-btn-p">Explore AI Solutions <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/case-studies" className="aisol-btn-s">View Our Work</Link>
-            </div>
-            <div className="aisol-stats">{STATS.map(s => <div key={s.label} className="aisol-stat"><div className="aisol-stat-l">{s.label}</div><div className="aisol-stat-v">{s.val}</div></div>)}</div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Artificial Intelligence"
+          title={<>Build Smarter Products with <AuroraText>AI Solutions</AuroraText></>}
+          subtext="From machine learning models and NLP to computer vision and AI automation - we help businesses integrate artificial intelligence into products, workflows, and decisions that drive measurable outcomes."
+          primaryCta={{ label: 'Explore AI Solutions', href: '/contact-us' }}
+          secondaryCta={{ label: 'View Our Work', href: '/case-studies' }}
+          stats={[
+            { label: 'AI Projects', value: '50', suffix: '+' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'Industries', value: '40', suffix: '+' },
+            { label: 'Client Retention', value: '97', suffix: '%' },
+          ]}
+        />
         <section className="aisol-svc"><div className="aisol-svc-in">
           <span className="aisol-ey2">Our Services</span><h2 className="aisol-ttl">AI Development Services</h2>
           <p className="aisol-desc">Custom ML models, NLP, computer vision, generative AI integrations, predictive analytics, and AI automation - end-to-end AI delivery from use case discovery to production deployment.</p>

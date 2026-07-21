@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -88,53 +90,21 @@ const FAQS = [
   { q: 'What frameworks do your JavaScript developers specialise in?', a: "Frontend: React/Next.js, Vue 3/Nuxt 3, Angular 15+, Svelte/SvelteKit, Remix. Backend: Node.js with NestJS, Express, or Fastify. Full-stack: Next.js App Router, T3 Stack (Next.js/TypeScript/tRPC/Prisma). Testing: Jest, Vitest, Playwright, Testing Library." },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const num = parseInt(target.replace(/\D/g, ''), 10);
-    if (!num) return;
-    let t0 = null;
-    const step = ts => { if (!t0) t0 = ts; const p = Math.min((ts - t0) / duration, 1); setCount(Math.floor((1 - Math.pow(1 - p, 3)) * num)); if (p < 1) requestAnimationFrame(step); };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function StatItem({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');  return (
-    <div className="hj-stat-col">
-      <div className="hj-stat-val">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div>
-      <div className="hj-stat-label">{label}</div>
-    </div>
-  );
-}
-
 export default function HireJavaScriptDeveloper() {
   const [showAllSkills, setShowAllSkills] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleSkillCards, setVisibleSkillCards] = useState([]);
   const [visibleEngCards, setVisibleEngCards] = useState([]);
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const [visibleStackCards, setVisibleStackCards] = useState([]);
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const skillGridRef = useRef(null);
   const engGridRef = useRef(null);
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
   const stackGridRef = useRef(null);
-
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStatsStarted(true); obs.disconnect(); } }, { threshold: 0.4 });
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   useEffect(() => {
     const pairs = [[skillGridRef, SKILLS.length, setVisibleSkillCards],[engGridRef, 3, setVisibleEngCards],[whyGridRef, WHY_CARDS.length, setVisibleWhyCards],[testiGridRef, 3, setVisibleTestiCards],[stackGridRef, TECH_STACK.length, setVisibleStackCards]];
@@ -206,31 +176,6 @@ export default function HireJavaScriptDeveloper() {
 
 
 
-          .hj-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
-          .hj-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
-          .hj-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .hj-hero-desc{font-size:16px;color:#3A507A;line-height:1.65;max-width:740px;margin:0 auto 24px}
-          .hj-trust-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
-          .hj-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07)}
-          .hj-badge-dot{width:7px;height:7px;border-radius:50%;background:#ca8a04;flex-shrink:0}
-          .hj-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .hj-btn-primary{display:inline-block;padding:14px 36px;background:#ca8a04;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(202,138,4,.28)}
-          .hj-btn-primary:hover{background:#0F3460;transform:translateY(-2px)}
-          .hj-btn-ghost{display:inline-block;padding:14px 36px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .hj-btn-ghost:hover{background:rgba(255,255,255,.85);border-color:rgba(202,138,4,.5);transform:translateY(-2px)}
-          .hj-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:28px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .hj-stat-col{padding:18px 16px;text-align:center;border-right:1px solid rgba(15,52,96,.10)}
-          .hj-stat-col:last-child{border-right:none}
-          .hj-stat-val{font-size:28px;font-weight:900;color:#ca8a04;letter-spacing:-.5px;line-height:1}
-          .hj-stat-label{font-size:11px;color:#4A6080;font-weight:500;margin-top:5px}
-          .hj-logos{position:relative;z-index:2;padding:24px 40px 52px;display:flex;flex-direction:column;align-items:center;gap:14px}
-          .hj-logos-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6A80A0}
-          .hj-logos-wrap{width:100%;overflow:hidden}
-          .hj-logos-track{display:flex;align-items:center;gap:60px;width:max-content;animation:hj-marquee 28s linear infinite}
-          .hj-logos-track:hover{animation-play-state:paused}
-          @keyframes hj-marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-          .hj-clogo{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
-          .hj-clogo:hover{opacity:.85;filter:grayscale(0%)}
           .hj-s-eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
           .hj-s-title{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .hj-s-desc{font-size:15px;color:#4A6080;line-height:1.7}
@@ -378,8 +323,8 @@ export default function HireJavaScriptDeveloper() {
           .hj-rtag-green{background:rgba(22,163,74,.09);border-color:rgba(22,163,74,.28);color:#14532d}
           .hj-rtag-violet{background:rgba(109,40,217,.09);border-color:rgba(109,40,217,.28);color:#4c1d95}
           .hj-rtag-rose{background:rgba(225,29,72,.09);border-color:rgba(225,29,72,.28);color:#9f1239}
-          @media(max-width:1024px){.hj-hero h1,.hj-s-title,.hj-faq h2{font-size:36px}.hj-skill-grid{grid-template-columns:repeat(2,1fr)}.hj-stack-grid{grid-template-columns:repeat(2,1fr)}.hj-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.hj-eng-card.feat{transform:none}.hj-eng-card.feat.hj-ev{transform:none}.hj-eng-card.feat.hj-ev:hover{transform:translateY(-4px)}.hj-why-grid{grid-template-columns:repeat(2,1fr)}.hj-tgrid{grid-template-columns:1fr}.hj-contact-grid{grid-template-columns:1fr}}
-          @media(max-width:768px){.hj-breadcrumb{padding:12px 20px 0}.hj-hero{padding:28px 20px 20px}.hj-hero h1{font-size:26px;letter-spacing:-.3px}.hj-stats{grid-template-columns:1fr 1fr}.hj-stat-col:nth-child(2){border-right:none}.hj-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.hj-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.hj-logos{padding:16px 20px 28px}.hj-skill-section,.hj-stack-section,.hj-eng-section,.hj-process-section,.hj-testi,.hj-why-section,.hj-faq,.hj-related{padding:52px 20px}.hj-contact{padding:48px 20px}.hj-skill-grid,.hj-stack-grid,.hj-why-grid{grid-template-columns:1fr}.hj-frow{grid-template-columns:1fr}.hj-ctitle{font-size:28px}.hj-s-title{font-size:28px}}
+          @media(max-width:1024px){.hj-s-title,.hj-faq h2{font-size:36px}.hj-skill-grid{grid-template-columns:repeat(2,1fr)}.hj-stack-grid{grid-template-columns:repeat(2,1fr)}.hj-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.hj-eng-card.feat{transform:none}.hj-eng-card.feat.hj-ev{transform:none}.hj-eng-card.feat.hj-ev:hover{transform:translateY(-4px)}.hj-why-grid{grid-template-columns:repeat(2,1fr)}.hj-tgrid{grid-template-columns:1fr}.hj-contact-grid{grid-template-columns:1fr}}
+          @media(max-width:768px){.hj-breadcrumb{padding:12px 20px 0}.hj-skill-section,.hj-stack-section,.hj-eng-section,.hj-process-section,.hj-testi,.hj-why-section,.hj-faq,.hj-related{padding:52px 20px}.hj-contact{padding:48px 20px}.hj-skill-grid,.hj-stack-grid,.hj-why-grid{grid-template-columns:1fr}.hj-frow{grid-template-columns:1fr}.hj-ctitle{font-size:28px}.hj-s-title{font-size:28px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
@@ -405,32 +350,19 @@ export default function HireJavaScriptDeveloper() {
 </Head>
       <div className="hj-page">
         <div className="hj-orb hj-orb-1" /><div className="hj-orb hj-orb-2" /><div className="hj-orb hj-orb-3" />
-        <section className="hj-hero">
-          <span className="hj-eyebrow">Hire JavaScript Developer</span>
-          <h1>Hire Expert JavaScript Developers - React, Node.js & TypeScript</h1>
-          <p className="hj-hero-desc">Hire pre-vetted full-stack JavaScript engineers with deep expertise in React, Next.js, Node.js, Vue.js, Angular, and TypeScript. Dedicated developers available for full-time, part-time, or hourly engagement. Start in 3–5 business days.</p>
-          <div className="hj-trust-row">
-            {['React & Next.js','Node.js / NestJS','Vue 3 / Nuxt 3','TypeScript Strict','Angular 15+'].map(b => (<div className="hj-badge" key={b}><span className="hj-badge-dot" />{b}</div>))}
-          </div>
-          <div className="hj-ctas">
-            <Link href="#contact" className="hj-btn-primary">Hire a JavaScript Developer</Link>
-            <Link href="#engagement" className="hj-btn-ghost">View Engagement Models →</Link>
-          </div>
-        </section>
-        <div className="hj-stats" ref={statsRef}>
-          {[['200+','JS Projects Delivered'],['15+','Years JS Experience'],['48hr','Avg Developer Match'],['98%','Client Retention']].map(([v, l]) => (<StatItem key={l} label={l} val={v} started={statsStarted} />))}
-        </div>
-        <div className="hj-logos">
-          <span className="hj-logos-label">Trusted by Engineering Teams Worldwide</span>
-          <div className="hj-logos-wrap">
-            <div className="hj-logos-track">
-              {[['/logo/Indian_Express_Logo_full.png','Indian Express'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],['/logo/Uniphore.jpg','Uniphore'],['/logo/ICCoLogo.png','ICC'],['/logo/Honor_Logo_(2020).svg.png','Honor'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],['/logo/Indian_Express_Logo_full.png','Indian Express 2'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon 2'],['/logo/Uniphore.jpg','Uniphore 2'],['/logo/ICCoLogo.png','ICC 2'],['/logo/Honor_Logo_(2020).svg.png','Honor 2'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv 2']].map(([src, alt]) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img key={alt} src={src} alt={alt.replace(/ \d$/, '')} className="hj-clogo" />
-              ))}
-            </div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="Hire JavaScript Developer"
+          title={<>Hire Expert JavaScript Developers <AuroraText>React, Node.js &amp; TypeScript</AuroraText></>}
+          subtext="Hire pre-vetted full-stack JavaScript engineers with deep expertise in React, Next.js, Node.js, Vue.js, Angular, and TypeScript. Dedicated developers available for full-time, part-time, or hourly engagement. Start in 3-5 business days."
+          primaryCta={{ label: 'Hire a JavaScript Developer', href: '#contact' }}
+          secondaryCta={{ label: 'View Engagement Models', href: '#engagement' }}
+          stats={[
+            { label: 'JS Projects Delivered', value: '200', suffix: '+' },
+            { label: 'Years JS Experience', value: '15', suffix: '+' },
+            { label: 'Avg Developer Match', value: '48', suffix: 'hr' },
+            { label: 'Client Retention', value: '98', suffix: '%' },
+          ]}
+        />
         <section className="hj-skill-section" aria-labelledby="hj-skill-heading">
           <div className="hj-inner">
             <div className={`hj-s-reveal${visibleSections.has('sk') ? ' hj-revealed' : ''}`} ref={el => { sectionRefs.current['sk'] = el; }}>

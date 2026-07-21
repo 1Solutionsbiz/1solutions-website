@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -153,58 +155,21 @@ const FAQS = [
   { q: 'How quickly can you set up a CI/CD pipeline or DevOps environment?', a: "A basic CI/CD pipeline for an existing application takes 1–2 weeks. A complete DevOps environment including IaC, Kubernetes cluster, CI/CD pipeline, and monitoring takes 4–8 weeks. A full enterprise DevOps transformation with multi-account cloud setup and developer platform takes 12–20 weeks. We deliver in phases - your team sees working automation at the end of the first sprint, not after months of invisible work." },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const num = parseInt(target.replace(/\D/g, ''), 10);
-    if (!num) return;
-    let t0 = null;
-    const step = ts => {
-      if (!t0) t0 = ts;
-      const p = Math.min((ts - t0) / duration, 1);
-      setCount(Math.floor((1 - Math.pow(1 - p, 3)) * num));
-      if (p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function StatItem({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');  return (
-    <div className="dv-stat-col">
-      <div className="dv-stat-val">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div>
-      <div className="dv-stat-label">{label}</div>
-    </div>
-  );
-}
-
 export default function DevopsServicesCompany() {
   const [showAllSvc, setShowAllSvc] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleSvcCards, setVisibleSvcCards] = useState([]);
   const [visibleEngCards, setVisibleEngCards] = useState([]);
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const [visibleStackCards, setVisibleStackCards] = useState([]);
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const svcGridRef = useRef(null);
   const engGridRef = useRef(null);
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
   const stackGridRef = useRef(null);
-
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStatsStarted(true); obs.disconnect(); } }, { threshold: 0.4 });
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   useEffect(() => {
     const pairs = [[svcGridRef, SERVICES.length, setVisibleSvcCards],[engGridRef, 3, setVisibleEngCards],[whyGridRef, WHY_CARDS.length, setVisibleWhyCards],[testiGridRef, 3, setVisibleTestiCards],[stackGridRef, TECH_STACK.length, setVisibleStackCards]];
@@ -276,31 +241,6 @@ export default function DevopsServicesCompany() {
 
 
 
-          .dv-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
-          .dv-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
-          .dv-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .dv-hero-desc{font-size:16px;color:#3A507A;line-height:1.65;max-width:740px;margin:0 auto 24px}
-          .dv-trust-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
-          .dv-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07)}
-          .dv-badge-dot{width:7px;height:7px;border-radius:50%;background:#b45309;flex-shrink:0}
-          .dv-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .dv-btn-primary{display:inline-block;padding:14px 36px;background:#b45309;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(180,83,9,.28)}
-          .dv-btn-primary:hover{background:#0F3460;transform:translateY(-2px)}
-          .dv-btn-ghost{display:inline-block;padding:14px 36px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .dv-btn-ghost:hover{background:rgba(255,255,255,.85);border-color:rgba(180,83,9,.5);transform:translateY(-2px)}
-          .dv-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:28px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .dv-stat-col{padding:18px 16px;text-align:center;border-right:1px solid rgba(15,52,96,.10)}
-          .dv-stat-col:last-child{border-right:none}
-          .dv-stat-val{font-size:28px;font-weight:900;color:#b45309;letter-spacing:-.5px;line-height:1}
-          .dv-stat-label{font-size:11px;color:#4A6080;font-weight:500;margin-top:5px}
-          .dv-logos{position:relative;z-index:2;padding:24px 40px 52px;display:flex;flex-direction:column;align-items:center;gap:14px}
-          .dv-logos-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6A80A0}
-          .dv-logos-wrap{width:100%;overflow:hidden}
-          .dv-logos-track{display:flex;align-items:center;gap:60px;width:max-content;animation:dv-marquee 28s linear infinite}
-          .dv-logos-track:hover{animation-play-state:paused}
-          @keyframes dv-marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-          .dv-clogo{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
-          .dv-clogo:hover{opacity:.85;filter:grayscale(0%)}
           .dv-s-eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
           .dv-s-title{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .dv-s-desc{font-size:15px;color:#4A6080;line-height:1.7}
@@ -448,8 +388,8 @@ export default function DevopsServicesCompany() {
           .dv-rtag-violet{background:rgba(124,58,237,.09);border-color:rgba(124,58,237,.28);color:#6D28D9}
           .dv-rtag-rose{background:rgba(225,29,72,.09);border-color:rgba(225,29,72,.28);color:#9f1239}
           .dv-rtag-teal{background:rgba(15,118,110,.09);border-color:rgba(15,118,110,.28);color:#0f766e}
-          @media(max-width:1024px){.dv-hero h1,.dv-s-title,.dv-faq h2{font-size:36px}.dv-svc-grid{grid-template-columns:repeat(2,1fr)}.dv-stack-grid{grid-template-columns:repeat(2,1fr)}.dv-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.dv-eng-card.feat{transform:none}.dv-eng-card.feat.dv-ev{transform:none}.dv-eng-card.feat.dv-ev:hover{transform:translateY(-4px)}.dv-why-grid{grid-template-columns:repeat(2,1fr)}.dv-tgrid{grid-template-columns:1fr}.dv-contact-grid{grid-template-columns:1fr}}
-          @media(max-width:768px){.dv-breadcrumb{padding:12px 20px 0}.dv-hero{padding:28px 20px 20px}.dv-hero h1{font-size:26px;letter-spacing:-.3px}.dv-stats{grid-template-columns:1fr 1fr}.dv-stat-col:nth-child(2){border-right:none}.dv-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.dv-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.dv-logos{padding:16px 20px 28px}.dv-svc-section,.dv-stack-section,.dv-eng-section,.dv-process-section,.dv-testi,.dv-why-section,.dv-faq,.dv-related{padding:52px 20px}.dv-contact{padding:48px 20px}.dv-svc-grid,.dv-stack-grid,.dv-why-grid{grid-template-columns:1fr}.dv-frow{grid-template-columns:1fr}.dv-ctitle{font-size:28px}.dv-s-title{font-size:28px}}
+          @media(max-width:1024px){.dv-s-title,.dv-faq h2{font-size:36px}.dv-svc-grid{grid-template-columns:repeat(2,1fr)}.dv-stack-grid{grid-template-columns:repeat(2,1fr)}.dv-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.dv-eng-card.feat{transform:none}.dv-eng-card.feat.dv-ev{transform:none}.dv-eng-card.feat.dv-ev:hover{transform:translateY(-4px)}.dv-why-grid{grid-template-columns:repeat(2,1fr)}.dv-tgrid{grid-template-columns:1fr}.dv-contact-grid{grid-template-columns:1fr}}
+          @media(max-width:768px){.dv-breadcrumb{padding:12px 20px 0}.dv-svc-section,.dv-stack-section,.dv-eng-section,.dv-process-section,.dv-testi,.dv-why-section,.dv-faq,.dv-related{padding:52px 20px}.dv-contact{padding:48px 20px}.dv-svc-grid,.dv-stack-grid,.dv-why-grid{grid-template-columns:1fr}.dv-frow{grid-template-columns:1fr}.dv-ctitle{font-size:28px}.dv-s-title{font-size:28px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
@@ -477,38 +417,19 @@ export default function DevopsServicesCompany() {
       <div className="dv-page">
         <div className="dv-orb dv-orb-1" /><div className="dv-orb dv-orb-2" /><div className="dv-orb dv-orb-3" />
 
-        <section className="dv-hero">
-          <span className="dv-eyebrow">DevOps Services Company</span>
-          <h1>DevOps Services - CI/CD Pipelines, Terraform IaC, Kubernetes & Cloud Automation</h1>
-          <p className="dv-hero-desc">End-to-end DevOps engineering services - automated CI/CD pipelines, infrastructure as code with Terraform and Pulumi, Kubernetes container orchestration, cloud DevOps on AWS, Azure, and GCP, DevSecOps security automation, monitoring and observability, site reliability engineering, and dedicated DevOps engineers for businesses worldwide.</p>
-          <div className="dv-trust-row">
-            {['GitHub Actions & GitLab CI','Terraform & Pulumi IaC','Kubernetes EKS/AKS/GKE','AWS, Azure & GCP','DevSecOps Built-In'].map(b => (
-              <div className="dv-badge" key={b}><span className="dv-badge-dot" />{b}</div>
-            ))}
-          </div>
-          <div className="dv-ctas">
-            <Link href="#contact" className="dv-btn-primary">Start Your DevOps Transformation</Link>
-            <Link href="#engagement" className="dv-btn-ghost">View Engagement Models →</Link>
-          </div>
-        </section>
-
-        <div className="dv-stats" ref={statsRef}>
-          {[['200+','DevOps Projects Delivered'],['15+','Years Cloud Experience'],['99.99%','SLA Achieved'],['98%','Client Retention']].map(([v, l]) => (
-            <StatItem key={l} label={l} val={v} started={statsStarted} />
-          ))}
-        </div>
-
-        <div className="dv-logos">
-          <span className="dv-logos-label">Trusted by Engineering Teams Worldwide</span>
-          <div className="dv-logos-wrap">
-            <div className="dv-logos-track">
-              {[['/logo/Indian_Express_Logo_full.png','Indian Express'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],['/logo/Uniphore.jpg','Uniphore'],['/logo/ICCoLogo.png','ICC'],['/logo/Honor_Logo_(2020).svg.png','Honor'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],['/logo/Indian_Express_Logo_full.png','Indian Express 2'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon 2'],['/logo/Uniphore.jpg','Uniphore 2'],['/logo/ICCoLogo.png','ICC 2'],['/logo/Honor_Logo_(2020).svg.png','Honor 2'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv 2']].map(([src, alt]) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img key={alt} src={src} alt={alt.replace(/ \d$/, '')} className="dv-clogo" />
-              ))}
-            </div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="DevOps Services Company · AWS, Azure & GCP · DevSecOps Built-In"
+          title={<>DevOps Services - <AuroraText>CI/CD Pipelines, Terraform IaC, Kubernetes &amp; Cloud Automation</AuroraText></>}
+          subtext="End-to-end DevOps engineering services - automated CI/CD pipelines, infrastructure as code with Terraform and Pulumi, Kubernetes container orchestration, cloud DevOps on AWS, Azure, and GCP, DevSecOps security automation, monitoring and observability, site reliability engineering, and dedicated DevOps engineers for businesses worldwide."
+          primaryCta={{ label: 'Start Your DevOps Transformation', href: '#contact' }}
+          secondaryCta={{ label: 'View Engagement Models', href: '#engagement' }}
+          stats={[
+            { label: 'DevOps Projects Delivered', value: '200', suffix: '+' },
+            { label: 'Years Cloud Experience', value: '15', suffix: '+' },
+            { label: 'SLA Achieved', value: '99', suffix: '.99%' },
+            { label: 'Client Retention', value: '98', suffix: '%' },
+          ]}
+        />
 
         <section className="dv-svc-section" aria-labelledby="dv-svc-heading">
           <div className="dv-inner">

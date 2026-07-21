@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const AUDIT_AREAS = [
   { n: '01', title: 'Technical SEO Audit', desc: 'Crawlability, indexation, canonical tags, redirect chains, Core Web Vitals, mobile usability, HTTPS, hreflang, and site architecture - a 150-point technical health check.' },
@@ -64,13 +66,6 @@ const FAQS = [
     q: 'How much does an SEO audit cost?',
     a: 'SEO audit pricing depends on site size and depth required. A standard business website audit (under 500 pages) starts from $1,500–$3,000 and includes all 8 audit areas, the full report, and a presentation call. Large ecommerce or enterprise sites (1,000–50,000+ pages) are quoted individually based on crawl scope. We provide a fixed price quote with a clear scope - no surprise invoices after delivery.',
   },
-];
-
-const STATS = [
-  { label: 'Audits Completed', val: '500+' },
-  { label: 'Years Experience', val: '15+' },
-  { label: 'Audit Checkpoints', val: '150+' },
-  { label: 'Days to Delivery', val: '7–10' },
 ];
 
 export default function SeoAuditServices() {
@@ -166,26 +161,10 @@ export default function SeoAuditServices() {
           .saud-page { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #0F1F40; line-height: 1.6; overflow-x: hidden; }
           .saud-page *, .saud-page *::before, .saud-page *::after { box-sizing: border-box; }
 
-          .saud-hero { background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 25%, #e0e7ff 60%, #faf5ff 100%); position: relative; overflow: hidden; padding: 80px 40px 0; }
-          .saud-hero-orb1 { position: absolute; top: -100px; right: -100px; width: 560px; height: 560px; border-radius: 50%; background: radial-gradient(circle, rgba(124,58,237,0.12) 0%, transparent 65%); pointer-events: none; filter: blur(30px); }
-          .saud-hero-orb2 { position: absolute; bottom: 0; left: -80px; width: 440px; height: 440px; border-radius: 50%; background: radial-gradient(circle, rgba(76,29,149,0.08) 0%, transparent 65%); pointer-events: none; filter: blur(30px); }
-          .saud-hero-inner { max-width: 1280px; margin: 0 auto; position: relative; z-index: 2; text-align: center; }
-
-
-
-          .saud-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(124,58,237,0.08); border: 1px solid rgba(124,58,237,0.20); border-radius: 100px; padding: 5px 14px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #6D28D9; margin-bottom: 28px; }
-          .saud-hero-h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 900; line-height: 1.1; letter-spacing: -1px; background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 20px; max-width: 900px; margin-left: auto; margin-right: auto; }
-          .saud-hero-sub { font-size: 1.08rem; color: #4A6080; line-height: 1.75; max-width: 660px; margin: 0 auto 36px; }
-          .saud-hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 56px; }
           .saud-btn-primary { display: inline-flex; align-items: center; gap: 8px; background: #7C3AED; color: #fff; padding: 14px 30px; border-radius: 50px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all 0.25s; box-shadow: 0 4px 20px rgba(124,58,237,0.28); }
           .saud-btn-primary:hover { background: #6D28D9; box-shadow: 0 8px 32px rgba(124,58,237,0.38); transform: translateY(-2px); }
           .saud-btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.65); backdrop-filter: blur(12px); border: 1.5px solid rgba(15,52,96,0.18); color: #0F3460; padding: 14px 30px; border-radius: 50px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all 0.25s; }
           .saud-btn-secondary:hover { border-color: #7C3AED; color: #7C3AED; transform: translateY(-2px); }
-          .saud-stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); max-width: 900px; margin: 0 auto; background: rgba(255,255,255,0.55); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.85); border-radius: 20px 20px 0 0; box-shadow: 0 4px 24px rgba(124,58,237,0.07); }
-          .saud-stat { padding: 20px 24px; text-align: center; border-right: 1px solid rgba(124,58,237,0.08); }
-          .saud-stat:last-child { border-right: none; }
-          .saud-stat-label { font-size: 11px; color: #6b7280; font-weight: 500; margin-bottom: 4px; }
-          .saud-stat-val { font-size: 1.6rem; font-weight: 900; color: #7C3AED; letter-spacing: -0.5px; }
 
           .saud-services-section { background: #f8fafd; padding: 80px 40px; box-shadow: 0 -20px 60px rgba(124,58,237,0.06); }
           .saud-services-inner { max-width: 1280px; margin: 0 auto; }
@@ -242,14 +221,10 @@ export default function SeoAuditServices() {
 
           @media (max-width: 1024px) { .saud-services-grid { grid-template-columns: repeat(2, 1fr); } .saud-deliv-grid { grid-template-columns: repeat(2, 1fr); } }
           @media (max-width: 768px) {
-            .saud-hero { padding: 60px 24px 0; }
             .saud-services-section, .saud-deliv-section, .saud-process-section, .saud-faq-section, .saud-cta-section { padding: 60px 24px; }
-            .saud-stats-bar { grid-template-columns: repeat(2, 1fr); border-radius: 16px 16px 0 0; }
-            .saud-stat:nth-child(2) { border-right: none; }
             .saud-services-grid { grid-template-columns: 1fr; }
             .saud-deliv-grid { grid-template-columns: 1fr; }
             .saud-process-step { grid-template-columns: 56px 1fr; }
-            .saud-hero-btns { flex-direction: column; align-items: center; }
           }
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
@@ -258,32 +233,19 @@ export default function SeoAuditServices() {
       </Head>
 
       <div className="saud-page">
-        <section className="saud-hero">
-          <div className="saud-hero-orb1" /><div className="saud-hero-orb2" />
-          <div className="saud-hero-inner">
-            <span className="saud-eyebrow">
-              <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#7C3AED', display: 'inline-block' }} />
-              150-Point Audit · US · Canada · Australia
-            </span>
-            <h1 className="saud-hero-h1">SEO Audit That Finds What Is Holding Your Site Back</h1>
-            <p className="saud-hero-sub">Comprehensive 150-point SEO audit - technical health, on-page quality, backlink profile, content gaps, and competitor benchmarking - with a prioritised 90-day action plan and a live walkthrough call included.</p>
-            <div className="saud-hero-btns">
-              <Link href="/contact-us" className="saud-btn-primary">
-                Request an SEO Audit
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </Link>
-              <Link href="/affordable-seo-packages" className="saud-btn-secondary">View SEO Packages</Link>
-            </div>
-            <div className="saud-stats-bar">
-              {STATS.map(s => (
-                <div key={s.label} className="saud-stat">
-                  <div className="saud-stat-label">{s.label}</div>
-                  <div className="saud-stat-val">{s.val}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="150-Point Audit · US · Canada · Australia"
+          title={<>SEO Audit That Finds What Is <AuroraText>Holding Your Site Back</AuroraText></>}
+          subtext="Comprehensive 150-point SEO audit - technical health, on-page quality, backlink profile, content gaps, and competitor benchmarking - with a prioritised 90-day action plan and a live walkthrough call included."
+          primaryCta={{ label: 'Request an SEO Audit', href: '/contact-us' }}
+          secondaryCta={{ label: 'View SEO Packages', href: '/affordable-seo-packages' }}
+          stats={[
+            { label: 'Audits Completed', value: '500', suffix: '+' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'Audit Checkpoints', value: '150', suffix: '+' },
+            { label: 'Days to Delivery', value: '10', prefix: '7–' },
+          ]}
+        />
 
         <section className="saud-services-section">
           <div className="saud-services-inner">

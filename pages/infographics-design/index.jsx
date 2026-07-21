@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'Statistical Infographics', desc: 'Data visualisation infographics - turning complex statistics, survey results, research findings, and numeric data into clear, visually compelling stories that audiences actually engage with.' },
@@ -44,13 +46,6 @@ const FAQS = [
   { q: 'Can infographics be animated or interactive?', a: 'Yes. Animated infographics (typically MP4 or GIF format) work well for social media - motion draws attention in feeds and increases stop-scroll rates. Interactive HTML infographics allow users to hover for data details, filter by category, or scroll through animated data reveals - ideal for high-traffic blog posts and resource pages. Both formats require longer production time and are priced separately from static infographics. We recommend static infographics for most link building and social media use cases, with animation reserved for hero content pieces where the production investment is justified by the distribution strategy.' },
 ];
 
-const STATS = [
-  { label: 'Infographics Designed', val: '1,000+' },
-  { label: 'Average Shares per Piece', val: '280+' },
-  { label: 'Years Experience', val: '15+' },
-  { label: 'Client Satisfaction', val: '97%' },
-];
-
 export default function InfographicsDesign() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleCards, setVisibleCards] = useState([]);
@@ -75,22 +70,10 @@ export default function InfographicsDesign() {
         <style>{`
           .infog-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .infog-page *,.infog-page *::before,.infog-page *::after{box-sizing:border-box}
-          .infog-hero{background:linear-gradient(135deg,#fdf4ff 0%,#f5d0fe 25%,#e879f9 40%,#fdf4ff 100%);background:linear-gradient(135deg,#fdf4ff 0%,#fae8ff 30%,#f0abfc 60%,#fdf4ff 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .infog-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(190,24,93,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .infog-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(157,23,77,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .infog-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.infog-bc a:hover{color:#BE185D}.infog-bc span{color:#d1d5db}
-          .infog-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(190,24,93,0.08);border:1px solid rgba(190,24,93,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#BE185D;margin-bottom:28px}
-          .infog-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .infog-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
-          .infog-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .infog-btn-p{display:inline-flex;align-items:center;gap:8px;background:#BE185D;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(190,24,93,0.28)}
           .infog-btn-p:hover{background:#9D174D;box-shadow:0 8px 32px rgba(190,24,93,0.38);transform:translateY(-2px)}
           .infog-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.18);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
           .infog-btn-s:hover{border-color:#BE185D;color:#BE185D;transform:translateY(-2px)}
-          .infog-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(190,24,93,0.07)}
-          .infog-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(190,24,93,0.08)}.infog-stat:last-child{border-right:none}
-          .infog-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .infog-stat-v{font-size:1.6rem;font-weight:900;color:#BE185D;letter-spacing:-0.5px}
           .infog-svc{background:#f8fafd;padding:80px 40px}.infog-svc-in{max-width:1280px;margin:0 auto}
           .infog-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#BE185D;margin-bottom:10px;display:block}
           .infog-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
@@ -137,25 +120,26 @@ export default function InfographicsDesign() {
           .infog-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           .infog-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.infog-grid{grid-template-columns:repeat(2,1fr)}.infog-why-grid{grid-template-columns:repeat(2,1fr)}}
-          @media(max-width:768px){.infog-hero,.infog-svc,.infog-fmt,.infog-proc,.infog-why,.infog-faq,.infog-cta{padding:60px 24px}.infog-hero{padding-top:60px;padding-bottom:0}.infog-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.infog-stat:nth-child(2){border-right:none}.infog-grid{grid-template-columns:1fr}.infog-why-grid{grid-template-columns:1fr}.infog-step{grid-template-columns:56px 1fr}.infog-btns{flex-direction:column;align-items:center}}
+          @media(max-width:768px){.infog-svc,.infog-fmt,.infog-proc,.infog-why,.infog-faq,.infog-cta{padding:60px 24px}.infog-grid{grid-template-columns:1fr}.infog-why-grid{grid-template-columns:1fr}.infog-step{grid-template-columns:56px 1fr}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
       <div className="infog-page">
-        <section className="infog-hero"><div className="infog-o1"/><div className="infog-o2"/>
-          <div className="infog-in">
-            <span className="infog-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#BE185D',display:'inline-block'}}/> Data Visualisation · Social · Link Building</span>
-            <h1 className="infog-h1">Infographics Design Services - Data That Gets Shared</h1>
-            <p className="infog-sub">Professional infographic design for content marketing, link building, social media, and corporate communications - 1,000+ infographics designed that earn shares, backlinks, and attention.</p>
-            <div className="infog-btns">
-              <Link href="/contact-us" className="infog-btn-p">Get an Infographic Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/content-copywriting-services" className="infog-btn-s">Content &amp; Copywriting</Link>
-            </div>
-            <div className="infog-stats">{STATS.map(s => <div key={s.label} className="infog-stat"><div className="infog-stat-l">{s.label}</div><div className="infog-stat-v">{s.val}</div></div>)}</div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Data Visualisation · Social · Link Building"
+          title={<>Infographics Design Services - <AuroraText>Data That Gets Shared</AuroraText></>}
+          subtext="Professional infographic design for content marketing, link building, social media, and corporate communications - 1,000+ infographics designed that earn shares, backlinks, and attention."
+          primaryCta={{ label: 'Get an Infographic Quote', href: '/contact-us' }}
+          secondaryCta={{ label: 'Content & Copywriting', href: '/content-copywriting-services' }}
+          stats={[
+            { label: 'Infographics Designed', value: '1,000', suffix: '+' },
+            { label: 'Average Shares per Piece', value: '280', suffix: '+' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'Client Satisfaction', value: '97', suffix: '%' },
+          ]}
+        />
         <section className="infog-svc"><div className="infog-svc-in">
           <span className="infog-ey2">What We Design</span><h2 className="infog-ttl">Infographics Design Services</h2>
           <p className="infog-desc">Statistical, process, timeline, comparison, geographic, and social infographics - designed for every platform and purpose.</p>

@@ -2,22 +2,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-
-function useCountUp(target, duration = 1800) {
-  const [count, setCount] = useState(0);
-  const raf = useRef(null);
-  const start = (t) => {
-    const s = performance.now();
-    const step = (now) => {
-      const p = Math.min((now - s) / duration, 1);
-      setCount(Math.floor(p * t));
-      if (p < 1) raf.current = requestAnimationFrame(step);
-    };
-    raf.current = requestAnimationFrame(step);
-  };
-  useEffect(() => () => cancelAnimationFrame(raf.current), []);
-  return [count, start];
-}
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const ACCENT = '#3a2000';
 const SKILLS = [
@@ -60,9 +46,6 @@ export default function HireWebDeveloper() {
   const enR  = useRef(null); const [enV, setEnV] = useState(false);
   const whR  = useRef(null); const [whV, setWhV] = useState(false);
   const prR  = useRef(null); const [prV, setPrV] = useState(false);
-  const stGr = useRef(null); const [stV, setStV] = useState(false);
-  const [c1, s1] = useCountUp(120); const [c2, s2] = useCountUp(550);
-  const [c3, s3] = useCountUp(49); const [c4, s4] = useCountUp(7);
   const [openFaq, setOpenFaq] = useState(null);
 
   useEffect(() => {
@@ -71,9 +54,7 @@ export default function HireWebDeveloper() {
     const o2 = obs(enR, setEnV); if (enR.current) o2.observe(enR.current);
     const o3 = obs(whR, setWhV); if (whR.current) o3.observe(whR.current);
     const o4 = obs(prR, setPrV); if (prR.current) o4.observe(prR.current);
-    const o5 = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStV(true); s1(120); s2(550); s3(49); s4(7); o5.disconnect(); } }, { threshold: 0.2 });
-    if (stGr.current) o5.observe(stGr.current);
-    return () => [o1, o2, o3, o4, o5].forEach(o => o.disconnect());
+    return () => [o1, o2, o3, o4].forEach(o => o.disconnect());
   }, []);
 
   const LD = {
@@ -99,10 +80,6 @@ export default function HireWebDeveloper() {
         <link rel="canonical" href="https://www.1solutions.biz/hire-web-developer/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
-          .hwdev-hero{background:linear-gradient(135deg,${ACCENT} 0%,#1e1000 60%,#2a1800 100%);color:#fff;padding:100px 20px 80px;text-align:center}
-          .hwdev-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin:0 0 18px;line-height:1.15}
-          .hwdev-hero p{font-size:1.15rem;max-width:620px;margin:0 auto 36px;opacity:.88;line-height:1.7}
-          .hwdev-hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           .hwdev-btn-primary{background:#FE9700;color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s}
           .hwdev-btn-primary:hover{opacity:.88}
           .hwdev-btn-outline{border:2px solid rgba(255,255,255,.7);color:#fff;padding:13px 28px;border-radius:8px;font-weight:600;font-size:1rem;text-decoration:none;transition:border-color .2s}
@@ -131,10 +108,6 @@ export default function HireWebDeveloper() {
           .hwdev-step-n{width:48px;height:48px;border-radius:50%;background:${ACCENT};color:#fff;font-size:1.1rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
           .hwdev-step h3{font-size:1rem;font-weight:700;color:#111;margin:0 0 8px}
           .hwdev-step p{color:#666;font-size:.9rem;line-height:1.6;margin:0}
-          .hwdev-stats{background:${ACCENT};padding:60px 20px;color:#fff}
-          .hwdev-stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;max-width:900px;margin:0 auto;text-align:center}
-          .hwdev-stat-val{font-size:2.8rem;font-weight:900;line-height:1}
-          .hwdev-stat-label{font-size:.95rem;opacity:.82;margin-top:6px}
           .hwdev-faq{max-width:760px;margin:0 auto}
           .hwdev-faq-item{border-bottom:1px solid #e5e5e5;padding:20px 0}
           .hwdev-faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;color:#111;font-size:1rem;gap:12px}
@@ -144,17 +117,23 @@ export default function HireWebDeveloper() {
           .hwdev-cta{background:linear-gradient(135deg,${ACCENT},#1e1000);padding:80px 20px;text-align:center;color:#fff}
           .hwdev-cta h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin:0 0 16px}
           .hwdev-cta p{font-size:1.08rem;opacity:.88;max-width:560px;margin:0 auto 36px;line-height:1.7}
-          @media(max-width:600px){.hwdev-hero{padding:80px 18px 60px}.hwdev-stats-grid{grid-template-columns:1fr 1fr}}
         `}</style>
       </Head>
-      <section className="hwdev-hero">
-        <h1>Hire Web Developers<br/>Full-Stack React, Node.js &amp; PHP Experts</h1>
-        <p>Pre-vetted web developers who build scalable, secure, and high-performance web applications - from solo developers to full squads. Profiles in 48 hours.</p>
-        <div className="hwdev-hero-btns">
-          <Link href="/contact-us" className="hwdev-btn-primary">Hire a Web Developer →</Link>
-          <Link href="/portfolio" className="hwdev-btn-outline">View Portfolio</Link>
-        </div>
-      </section>
+
+      <ServiceHero
+        eyebrow="Hire Web Developer · Full-Stack React, Node.js &amp; PHP"
+        title={<>Hire Web Developers <AuroraText>Full-Stack React, Node.js &amp; PHP Experts</AuroraText></>}
+        subtext="Pre-vetted web developers who build scalable, secure, and high-performance web applications - from solo developers to full squads. Profiles in 48 hours."
+        primaryCta={{ label: 'Hire a Web Developer', href: '/contact-us' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        stats={[
+          { label: 'Web Developers', value: '120', suffix: '+' },
+          { label: 'Web Projects Delivered', value: '550', suffix: '+' },
+          { label: 'Client Satisfaction', value: '49', prefix: '4.', suffix: '/5' },
+          { label: 'Avg Onboarding', value: '7', suffix: ' Days' },
+        ]}
+      />
+
       <section className="hwdev-sec" ref={skR}>
         <div className="hwdev-wrap">
           <h2 className="hwdev-sec-title">Skills &amp; Tech Stack</h2>
@@ -174,14 +153,6 @@ export default function HireWebDeveloper() {
           <h2 className="hwdev-sec-title">Why Hire Web Developers from 1Solutions?</h2>
           <p className="hwdev-sec-sub">We place engineers who write production-grade web applications - not portfolios.</p>
           <div className="hwdev-why-grid">{WHY.map((w, i) => <div key={w.h} className={`hwdev-why-item${whV ? ' hwdev-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
-        </div>
-      </section>
-      <section className="hwdev-stats" ref={stGr}>
-        <div className="hwdev-stats-grid">
-          <div><div className="hwdev-stat-val">{stV ? c1 : 0}+</div><div className="hwdev-stat-label">Web Developers</div></div>
-          <div><div className="hwdev-stat-val">{stV ? c2 : 0}+</div><div className="hwdev-stat-label">Web Projects Delivered</div></div>
-          <div><div className="hwdev-stat-val">4.{stV ? c3 : 0}/5</div><div className="hwdev-stat-label">Client Satisfaction</div></div>
-          <div><div className="hwdev-stat-val">{stV ? c4 : 0} Days</div><div className="hwdev-stat-label">Avg Onboarding</div></div>
         </div>
       </section>
       <section className="hwdev-sec hwdev-sec-alt" ref={prR}>

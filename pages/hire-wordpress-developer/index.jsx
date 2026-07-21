@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 /* ─── Schema ─────────────────────────────────────────────────── */
 const SCHEMA = {
@@ -184,40 +186,10 @@ const FAQS = [
   { q: 'Do you provide WordPress maintenance and support after project completion?', a: 'Yes. All project deliveries include a 30-day post-launch support period. We also offer ongoing WordPress maintenance plans covering core, theme, and plugin updates, daily automated backups, uptime monitoring, security scanning, monthly performance reports, and developer support hours for content updates and minor feature additions. Support plans start with a defined monthly hour bank and SLA response time.' },
 ];
 
-/* ─── Hooks ──────────────────────────────────────────────────── */
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const num = parseInt(target.replace(/\D/g, ''), 10);
-    if (!num) return;
-    let t0 = null;
-    const step = ts => {
-      if (!t0) t0 = ts;
-      const p = Math.min((ts - t0) / duration, 1);
-      setCount(Math.floor((1 - Math.pow(1 - p, 3)) * num));
-      if (p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function StatItem({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');  return (
-    <div className="hw-stat-col">
-      <div className="hw-stat-val">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div>
-      <div className="hw-stat-label">{label}</div>
-    </div>
-  );
-}
-
 /* ─── Component ──────────────────────────────────────────────── */
 export default function HireWordPressDeveloper() {
   const [showAllSvc, setShowAllSvc] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleSvcCards, setVisibleSvcCards] = useState([]);
   const [visibleEngCards, setVisibleEngCards] = useState([]);
@@ -225,20 +197,12 @@ export default function HireWordPressDeveloper() {
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const [visibleStackCards, setVisibleStackCards] = useState([]);
 
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const svcGridRef = useRef(null);
   const engGridRef = useRef(null);
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
   const stackGridRef = useRef(null);
-
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStatsStarted(true); obs.disconnect(); } }, { threshold: 0.4 });
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   useEffect(() => {
     const pairs = [
@@ -320,37 +284,6 @@ export default function HireWordPressDeveloper() {
 
 
 
-
-          /* Hero */
-          .hw-hero { position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px; }
-          .hw-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px; }
-          .hw-hero h1 { font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .hw-hero-desc { font-size:16px;color:#3A507A;line-height:1.65;max-width:740px;margin:0 auto 24px; }
-          .hw-trust-row { display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px; }
-          .hw-badge { display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07); }
-          .hw-badge-dot { width:7px;height:7px;border-radius:50%;background:#0073aa;flex-shrink:0; }
-          .hw-ctas { display:flex;flex-wrap:wrap;gap:12px;justify-content:center; }
-          .hw-btn-primary { display:inline-block;padding:14px 36px;background:#0073aa;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(0,115,170,.30); }
-          .hw-btn-primary:hover { background:#0F3460;transform:translateY(-2px); }
-          .hw-btn-ghost { display:inline-block;padding:14px 36px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s; }
-          .hw-btn-ghost:hover { background:rgba(255,255,255,.85);border-color:rgba(0,115,170,.5);transform:translateY(-2px); }
-
-          /* Stats */
-          .hw-stats { position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:28px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95); }
-          .hw-stat-col { padding:18px 16px;text-align:center;border-right:1px solid rgba(15,52,96,.10); }
-          .hw-stat-col:last-child { border-right:none; }
-          .hw-stat-val { font-size:28px;font-weight:900;color:#0073aa;letter-spacing:-.5px;line-height:1; }
-          .hw-stat-label { font-size:11px;color:#4A6080;font-weight:500;margin-top:5px; }
-
-          /* Logos */
-          .hw-logos { position:relative;z-index:2;padding:24px 40px 52px;display:flex;flex-direction:column;align-items:center;gap:14px; }
-          .hw-logos-label { font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6A80A0; }
-          .hw-logos-wrap { width:100%;overflow:hidden; }
-          .hw-logos-track { display:flex;align-items:center;gap:60px;width:max-content;animation:hw-marquee 28s linear infinite; }
-          .hw-logos-track:hover { animation-play-state:paused; }
-          @keyframes hw-marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-          .hw-clogo { height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s; }
-          .hw-clogo:hover { opacity:.85;filter:grayscale(0%); }
 
           /* Shared */
           .hw-s-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block; }
@@ -521,7 +454,7 @@ export default function HireWordPressDeveloper() {
 
           /* Responsive */
           @media(max-width:1024px){
-            .hw-hero h1,.hw-s-title,.hw-faq h2 { font-size:36px; }
+            .hw-s-title,.hw-faq h2 { font-size:36px; }
             .hw-svc-grid { grid-template-columns:repeat(2,1fr); }
             .hw-stack-grid { grid-template-columns:repeat(2,1fr); }
             .hw-eng-grid { grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto; }
@@ -533,13 +466,6 @@ export default function HireWordPressDeveloper() {
             .hw-contact-grid { grid-template-columns:1fr; }
           }
           @media(max-width:768px){
-            .hw-hero { padding:28px 20px 20px; }
-            .hw-hero h1 { font-size:26px;letter-spacing:-.3px; }
-            .hw-stats { grid-template-columns:1fr 1fr; }
-            .hw-stat-col:nth-child(2) { border-right:none; }
-            .hw-stat-col:nth-child(3) { border-top:1px solid rgba(15,52,96,.10); }
-            .hw-stat-col:nth-child(4) { border-top:1px solid rgba(15,52,96,.10);border-right:none; }
-            .hw-logos { padding:16px 20px 28px; }
             .hw-svc-section,.hw-stack-section,.hw-eng-section,.hw-process-section,.hw-testi,.hw-why-section,.hw-faq,.hw-related { padding:52px 20px; }
             .hw-contact { padding:48px 20px; }
             .hw-svc-grid,.hw-stack-grid,.hw-why-grid { grid-template-columns:1fr; }
@@ -577,53 +503,19 @@ export default function HireWordPressDeveloper() {
         <div className="hw-orb hw-orb-3" />
 
         {/* ── HERO ── */}
-        <section className="hw-hero">
-          <span className="hw-eyebrow">Hire WordPress Developer</span>
-          <h1>Hire Expert WordPress Developers - Vetted, Senior &amp; Ready in 48 Hours</h1>
-          <p className="hw-hero-desc">Hire dedicated WordPress developers for custom theme and plugin development, WooCommerce stores, headless WordPress with Next.js, Gutenberg block development, migrations, and ongoing maintenance - on a dedicated, fixed-price, or hourly basis. 15+ years of WordPress expertise across the US, UK, and Australia.</p>
-          <div className="hw-trust-row">
-            {['Senior, Vetted Developers','WordPress Coding Standards','Ready in 48 Hours','Full IP Ownership','No Lock-in Contracts'].map(b => (
-              <div className="hw-badge" key={b}><span className="hw-badge-dot" />{b}</div>
-            ))}
-          </div>
-          <div className="hw-ctas">
-            <Link href="#contact" className="hw-btn-primary">Hire a WordPress Developer</Link>
-            <Link href="#engagement" className="hw-btn-ghost">View Engagement Models →</Link>
-          </div>
-        </section>
-
-        {/* ── STATS ── */}
-        <div className="hw-stats" ref={statsRef}>
-          {[['200+','WordPress Projects'],['15+','Years Experience'],['48hr','Hire Ready'],['98%','Client Retention']].map(([v, l]) => (
-            <StatItem key={l} label={l} val={v} started={statsStarted} />
-          ))}
-        </div>
-
-        {/* ── CLIENT LOGOS ── */}
-        <div className="hw-logos">
-          <span className="hw-logos-label">Trusted by Leading Organisations</span>
-          <div className="hw-logos-wrap">
-            <div className="hw-logos-track">
-              {[
-                ['/logo/Indian_Express_Logo_full.png','Indian Express'],
-                ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],
-                ['/logo/Uniphore.jpg','Uniphore'],
-                ['/logo/ICCoLogo.png','ICC'],
-                ['/logo/Honor_Logo_(2020).svg.png','Honor'],
-                ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],
-                ['/logo/Indian_Express_Logo_full.png','Indian Express 2'],
-                ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon 2'],
-                ['/logo/Uniphore.jpg','Uniphore 2'],
-                ['/logo/ICCoLogo.png','ICC 2'],
-                ['/logo/Honor_Logo_(2020).svg.png','Honor 2'],
-                ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv 2'],
-              ].map(([src, alt]) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img key={alt} src={src} alt={alt.replace(/ \d$/, '')} className="hw-clogo" />
-              ))}
-            </div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="Hire WordPress Developer"
+          title={<>Hire Expert WordPress Developers <AuroraText>Vetted, Senior &amp; Ready in 48 Hours</AuroraText></>}
+          subtext="Hire dedicated WordPress developers for custom theme and plugin development, WooCommerce stores, headless WordPress with Next.js, Gutenberg block development, migrations, and ongoing maintenance - on a dedicated, fixed-price, or hourly basis. 15+ years of WordPress expertise across the US, UK, and Australia."
+          primaryCta={{ label: 'Hire a WordPress Developer', href: '#contact' }}
+          secondaryCta={{ label: 'View Engagement Models', href: '#engagement' }}
+          stats={[
+            { label: 'WordPress Projects', value: '200', suffix: '+' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'Hire Ready', value: '48', suffix: 'hr' },
+            { label: 'Client Retention', value: '98', suffix: '%' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="hw-svc-section" aria-labelledby="hw-svc-heading">

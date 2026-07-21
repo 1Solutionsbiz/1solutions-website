@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 function AuroraText({ children }) {
   return (
@@ -10,13 +11,6 @@ function AuroraText({ children }) {
 }
 
 /* ── Data ─────────────────────────────────────────────────────────────── */
-const STATS = [
-  { label:'Agency Partners',       val:'120+' },
-  { label:'White-Label Reports',   val:'5,000+' },
-  { label:'Countries Served',      val:'18+'  },
-  { label:'Years SEO Experience',  val:'15+'  },
-];
-
 const SERVICES = [
   { n:'01', icon:'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title:'On-Page SEO', desc:'Title tags, meta descriptions, header hierarchy, schema markup, internal linking, and content optimisation — all executed in your client\'s brand name, reported under yours.' },
   { n:'02', icon:'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z', title:'Technical SEO', desc:'Core Web Vitals, crawlability, site architecture, canonicalisation, structured data, log file analysis, and index coverage — the foundations that make everything else work.' },
@@ -195,20 +189,11 @@ export default function WhiteLabelSEOServices() {
           .wls-orb3{width:600px;height:600px;background:radial-gradient(circle,rgba(20,184,166,.20) 0%,transparent 70%);top:45%;left:-150px;transform:translateY(-50%)}
           .wls-reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
           .wls-reveal.wls-vis{opacity:1;transform:translateY(0)}.wls-bc a:hover{color:#D97706}.wls-bc-sep{color:#d1d5db}
-          .wls-hero{position:relative;z-index:1;padding:72px 40px 0}
-          .wls-hero-inner{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto}
-          .wls-eyebrow{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;display:block;margin-bottom:18px}
-          .wls-h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:18px;color:#0F1F40}
-          .wls-hero-sub{font-size:16px;color:#3A507A;line-height:1.65;max-width:720px;margin:0 auto 28px}
           .wls-btns{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:32px}
           .wls-btn-p{position:relative;display:inline-flex;align-items:center;gap:8px;padding:14px 36px;background:rgba(15,52,96,0.85);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.20);border-radius:50px;color:#fff;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;box-shadow:0 6px 24px rgba(15,52,96,0.25)}
           .wls-btn-p:hover{background:rgba(15,52,96,1);border-color:rgba(245,158,11,0.6);transform:translateY(-2px);box-shadow:0 12px 36px rgba(15,52,96,0.30)}
           .wls-btn-s{display:inline-flex;align-items:center;padding:14px 32px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1)}
           .wls-btn-s:hover{background:rgba(255,255,255,0.85);border-color:rgba(245,158,11,0.6);transform:translateY(-2px)}
-          .wls-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95)}
-          .wls-stat{padding:18px 20px;text-align:center;border-right:1px solid rgba(15,52,96,.10)}.wls-stat:last-child{border-right:none}
-          .wls-stat-v{font-size:26px;font-weight:900;color:#D97706;letter-spacing:-0.5px;line-height:1;margin-bottom:6px}
-          .wls-stat-l{font-size:12px;color:#4A6080;font-weight:500}
           .wls-sec{padding:80px 40px;position:relative;z-index:1}
           .wls-white{background:#fff}
           .wls-in{max-width:1280px;margin:0 auto}
@@ -276,12 +261,7 @@ export default function WhiteLabelSEOServices() {
           .wls-cta-p{font-size:15px;color:#4A6080;line-height:1.7;max-width:580px;margin:0 auto 32px}
           @media(max-width:1024px){.wls-g4{grid-template-columns:repeat(2,1fr)}.wls-g3{grid-template-columns:repeat(2,1fr)}.wls-trust-inner{grid-template-columns:1fr 1fr}.wls-del-list{grid-template-columns:1fr}}
           @media(max-width:768px){
-            .wls-hero{padding:56px 24px 0}
             .wls-sec,.wls-form-sec,.wls-cta-sec,.wls-trust-sec{padding:52px 20px}
-            .wls-stats{grid-template-columns:repeat(2,1fr)}
-            .wls-stat:nth-child(2){border-right:none}
-            .wls-stat:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}
-            .wls-stat:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}
             .wls-glass,.wls-fitem,.wls-form-card{backdrop-filter:none;-webkit-backdrop-filter:none}
             .wls-g4,.wls-g3,.wls-g2,.wls-who-grid,.wls-del-list{grid-template-columns:1fr}
             .wls-trust-inner{grid-template-columns:1fr}
@@ -298,28 +278,19 @@ export default function WhiteLabelSEOServices() {
         <div className="wls-orb wls-orb1"/><div className="wls-orb wls-orb2"/><div className="wls-orb wls-orb3"/>
 
         {/* ── HERO ── */}
-        <section className="wls-hero">
-          <div className="wls-hero-inner">
-            <span className="wls-eyebrow">For Agencies · Web Studios · Consultants · Resellers</span>
-            <h1 className="wls-h1">White-Label SEO Services<br/><AuroraText>Your Brand. Our Execution.</AuroraText></h1>
-            <p className="wls-hero-sub">Offer full-service SEO to your clients without building an in-house team. We deliver — technical SEO, content, link building, and reporting — all under your agency brand. Your clients see your logo. They never see ours.</p>
-            <div className="wls-btns">
-              <a href="#partner-form" className="wls-btn-p">
-                Become a Partner
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <a href="#how-it-works" className="wls-btn-s">See How It Works</a>
-            </div>
-            <div className="wls-stats">
-              {STATS.map(s => (
-                <div key={s.label} className="wls-stat">
-                  <div className="wls-stat-v">{s.val}</div>
-                  <div className="wls-stat-l">{s.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="For Agencies · Web Studios · Consultants · Resellers"
+          title={<>White-Label SEO Services — <AuroraText>Your Brand. Our Execution.</AuroraText></>}
+          subtext="Offer full-service SEO to your clients without building an in-house team. We deliver — technical SEO, content, link building, and reporting — all under your agency brand. Your clients see your logo. They never see ours."
+          primaryCta={{ label: 'Become a Partner', href: '#partner-form' }}
+          secondaryCta={{ label: 'See How It Works', href: '#how-it-works' }}
+          stats={[
+            { label: 'Agency Partners', value: '120', suffix: '+' },
+            { label: 'White-Label Reports', value: '5,000', suffix: '+' },
+            { label: 'Countries Served', value: '18', suffix: '+' },
+            { label: 'Years SEO Experience', value: '15', suffix: '+' },
+          ]}
+        />
 
         {/* ── TRUST STRIP ── */}
         <section className="wls-trust-sec">

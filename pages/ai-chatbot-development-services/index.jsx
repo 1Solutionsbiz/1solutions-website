@@ -2,6 +2,8 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText as SharedAuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 function AuroraText({ children }) {
   return (
@@ -10,13 +12,6 @@ function AuroraText({ children }) {
 }
 
 /* ── Data ─────────────────────────────────────────────────────────────── */
-const STATS = [
-  { label:'Chatbots Deployed',    val:'200+' },
-  { label:'Avg Response Accuracy', val:'94%' },
-  { label:'Industries Served',    val:'20+'  },
-  { label:'Years AI Experience',  val:'5+'   },
-];
-
 const CHATBOTS = [
   { n:'01', icon:'M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z', title:'Customer Support Chatbots', desc:'24/7 first-line support that resolves common issues, handles tickets, processes returns, and escalates to human agents — with full context — when it hits its limit.' },
   { n:'02', icon:'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title:'Sales & Lead Generation Chatbots', desc:'Qualify inbound leads 24/7, answer product questions, personalise responses based on user behaviour, and book demos directly into your sales team\'s calendar.' },
@@ -213,20 +208,11 @@ export default function AIChatbotDevelopmentServices() {
           .acd-orb3{width:600px;height:600px;background:radial-gradient(circle,rgba(20,184,166,.20) 0%,transparent 70%);top:45%;left:-150px;transform:translateY(-50%)}
           .acd-reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
           .acd-reveal.acd-vis{opacity:1;transform:translateY(0)}.acd-bc a:hover{color:#D97706}.acd-bc-sep{color:#d1d5db}
-          .acd-hero{position:relative;z-index:1;padding:72px 40px 0}
-          .acd-hero-inner{position:relative;z-index:2;text-align:center;max-width:940px;margin:0 auto}
-          .acd-eyebrow{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;display:block;margin-bottom:18px}
-          .acd-h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:18px;color:#0F1F40}
-          .acd-hero-sub{font-size:16px;color:#3A507A;line-height:1.65;max-width:700px;margin:0 auto 28px}
           .acd-btns{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:32px}
           .acd-btn-p{position:relative;display:inline-flex;align-items:center;gap:8px;padding:14px 36px;background:rgba(15,52,96,0.85);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.20);border-radius:50px;color:#fff;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;box-shadow:0 6px 24px rgba(15,52,96,0.25)}
           .acd-btn-p:hover{background:rgba(15,52,96,1);border-color:rgba(245,158,11,0.6);transform:translateY(-2px);box-shadow:0 12px 36px rgba(15,52,96,0.30)}
           .acd-btn-s{display:inline-flex;align-items:center;padding:14px 32px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1)}
           .acd-btn-s:hover{background:rgba(255,255,255,0.85);border-color:rgba(245,158,11,0.6);transform:translateY(-2px)}
-          .acd-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95)}
-          .acd-stat{padding:18px 20px;text-align:center;border-right:1px solid rgba(15,52,96,.10)}.acd-stat:last-child{border-right:none}
-          .acd-stat-v{font-size:26px;font-weight:900;color:#D97706;letter-spacing:-0.5px;line-height:1;margin-bottom:6px}
-          .acd-stat-l{font-size:12px;color:#4A6080;font-weight:500}
           .acd-sec{padding:80px 40px;position:relative;z-index:1}
           .acd-white{background:#fff}
           .acd-in{max-width:1280px;margin:0 auto}
@@ -302,12 +288,7 @@ export default function AIChatbotDevelopmentServices() {
           .acd-cta-p{font-size:15px;color:#4A6080;line-height:1.7;max-width:580px;margin:0 auto 32px}
           @media(max-width:1024px){.acd-g4{grid-template-columns:repeat(2,1fr)}.acd-g3{grid-template-columns:repeat(2,1fr)}.acd-vs-grid{grid-template-columns:1fr}}
           @media(max-width:768px){
-            .acd-hero{padding:56px 24px 0}
             .acd-sec,.acd-form-sec,.acd-cta-sec,.acd-plat-sec{padding:52px 20px}
-            .acd-stats{grid-template-columns:repeat(2,1fr)}
-            .acd-stat:nth-child(2){border-right:none}
-            .acd-stat:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}
-            .acd-stat:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}
             .acd-glass,.acd-fitem,.acd-form-card{backdrop-filter:none;-webkit-backdrop-filter:none}
             .acd-g4,.acd-g3,.acd-g2{grid-template-columns:1fr}
             .acd-fq{padding:18px 18px 18px 52px}
@@ -323,28 +304,19 @@ export default function AIChatbotDevelopmentServices() {
         <div className="acd-orb acd-orb1"/><div className="acd-orb acd-orb2"/><div className="acd-orb acd-orb3"/>
 
         {/* ── HERO ── */}
-        <section className="acd-hero">
-          <div className="acd-hero-inner">
-            <span className="acd-eyebrow">AI Chatbots · GPT-4o · Claude · RAG · CRM Integrations · WhatsApp</span>
-            <h1 className="acd-h1">AI Chatbot Development Services<br/>for <AuroraText>Support, Sales & Beyond</AuroraText></h1>
-            <p className="acd-hero-sub">We build custom AI chatbots that understand natural language, integrate with your existing tools, and resolve real customer queries — not just answer FAQs from a fixed list.</p>
-            <div className="acd-btns">
-              <a href="#contact-form" className="acd-btn-p">
-                Discuss Your Chatbot
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <Link href="/ai-agent-development-services/" className="acd-btn-s">Need an AI Agent Instead?</Link>
-            </div>
-            <div className="acd-stats">
-              {STATS.map(s => (
-                <div key={s.label} className="acd-stat">
-                  <div className="acd-stat-v">{s.val}</div>
-                  <div className="acd-stat-l">{s.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="AI Chatbots · GPT-4o · Claude · RAG · CRM Integrations · WhatsApp"
+          title={<>AI Chatbot Development Services for <SharedAuroraText>Support, Sales & Beyond</SharedAuroraText></>}
+          subtext="We build custom AI chatbots that understand natural language, integrate with your existing tools, and resolve real customer queries — not just answer FAQs from a fixed list."
+          primaryCta={{ label: 'Discuss Your Chatbot', href: '#contact-form' }}
+          secondaryCta={{ label: 'Need an AI Agent Instead?', href: '/ai-agent-development-services/' }}
+          stats={[
+            { label: 'Chatbots Deployed', value: '200', suffix: '+' },
+            { label: 'Avg Response Accuracy', value: '94', suffix: '%' },
+            { label: 'Industries Served', value: '20', suffix: '+' },
+            { label: 'Years AI Experience', value: '5', suffix: '+' },
+          ]}
+        />
 
         {/* ── CHATBOT TYPES ── */}
         <section className="acd-sec" id="services">

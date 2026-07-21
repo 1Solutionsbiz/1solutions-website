@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'Enterprise Technical SEO', desc: 'Crawl budget management, log file analysis, JavaScript rendering, Core Web Vitals at scale, and site architecture for sites with 100K to 10M+ URLs.' },
@@ -42,13 +44,6 @@ const FAQS = [
   { q: 'How do you measure the ROI of enterprise SEO?', a: 'We build organic revenue attribution models using GA4 assisted conversions, CRM data matching (where available), and pipeline influence analysis. For ecommerce, we track direct organic-attributed revenue. For lead gen, we model organic-to-pipeline contribution. All reporting ties back to business value - not just keywords and traffic.' },
   { q: 'Do you provide dedicated account management?', a: 'Yes. Every enterprise engagement includes a dedicated Senior SEO Strategist (your primary point of contact), a Technical SEO Lead, and access to specialist resources (content, digital PR, analytics) as required. You have direct access - not an account manager who relays messages.' },
   { q: 'What is the minimum engagement for enterprise SEO?', a: 'Enterprise SEO engagements start at a 6-month initial term, with monthly retainer pricing based on site complexity, keyword footprint, and deliverable scope. We provide a detailed scoping document and fixed monthly pricing at proposal stage - no ambiguous "as-needed" billing.' },
-];
-
-const STATS = [
-  { label: 'Enterprise Clients', val: '200+' },
-  { label: 'Years Experience', val: '15+' },
-  { label: 'Keywords Tracked', val: '10M+' },
-  { label: 'Client Retention', val: '96%' },
 ];
 
 export default function EnterpriseSeoServices() {
@@ -101,22 +96,12 @@ export default function EnterpriseSeoServices() {
         <style>{`
           .eseo-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .eseo-page *,.eseo-page *::before,.eseo-page *::after{box-sizing:border-box}
-          .eseo-hero{background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 25%,#e0e7ff 60%,#f0f9ff 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .eseo-orb1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(30,58,138,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .eseo-orb2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(29,78,216,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .eseo-inner{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.eseo-bc a:hover{color:#1D4ED8}.eseo-bc span{color:#d1d5db}
-          .eseo-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(30,58,138,0.08);border:1px solid rgba(30,58,138,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#1E3A8A;margin-bottom:28px}
-          .eseo-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .eseo-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
+          .eseo-bc a:hover{color:#1D4ED8}.eseo-bc span{color:#d1d5db}
           .eseo-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .eseo-btn-p{display:inline-flex;align-items:center;gap:8px;background:#1D4ED8;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(29,78,216,0.28)}
           .eseo-btn-p:hover{background:#1E40AF;box-shadow:0 8px 32px rgba(29,78,216,0.38);transform:translateY(-2px)}
           .eseo-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.18);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
           .eseo-btn-s:hover{border-color:#1D4ED8;color:#1D4ED8;transform:translateY(-2px)}
-          .eseo-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(29,78,216,0.08)}
-          .eseo-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(29,78,216,0.08)}.eseo-stat:last-child{border-right:none}
-          .eseo-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .eseo-stat-v{font-size:1.6rem;font-weight:900;color:#1D4ED8;letter-spacing:-0.5px}
           .eseo-svc{background:#f8fafd;padding:80px 40px}
           .eseo-svc-in{max-width:1280px;margin:0 auto}
           .eseo-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#1D4ED8;margin-bottom:10px;display:block}
@@ -166,26 +151,26 @@ export default function EnterpriseSeoServices() {
           .eseo-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           .eseo-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.eseo-grid{grid-template-columns:repeat(2,1fr)}.eseo-why-grid{grid-template-columns:repeat(2,1fr)}}
-          @media(max-width:768px){.eseo-hero,.eseo-svc,.eseo-caps,.eseo-proc,.eseo-why,.eseo-faq,.eseo-cta{padding:60px 24px}.eseo-hero{padding-top:60px;padding-bottom:0}.eseo-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.eseo-stat:nth-child(2){border-right:none}.eseo-grid{grid-template-columns:1fr}.eseo-why-grid{grid-template-columns:1fr}.eseo-step{grid-template-columns:56px 1fr}.eseo-btns{flex-direction:column;align-items:center}}
+          @media(max-width:768px){.eseo-svc,.eseo-caps,.eseo-proc,.eseo-why,.eseo-faq,.eseo-cta{padding:60px 24px}.eseo-grid{grid-template-columns:1fr}.eseo-why-grid{grid-template-columns:1fr}.eseo-step{grid-template-columns:56px 1fr}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
       <div className="eseo-page">
-        <section className="eseo-hero">
-          <div className="eseo-orb1"/><div className="eseo-orb2"/>
-          <div className="eseo-inner">
-            <span className="eseo-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#1D4ED8',display:'inline-block'}}/> Large-Scale SEO · Global Delivery</span>
-            <h1 className="eseo-h1">Enterprise SEO Services for Complex, Large-Scale Websites</h1>
-            <p className="eseo-sub">Technical SEO at scale, international SEO, JavaScript framework audits, crawl budget optimisation, and C-suite reporting - built for sites with 100K to 10M+ pages.</p>
-            <div className="eseo-btns">
-              <Link href="/contact-us" className="eseo-btn-p">Request Enterprise SEO Proposal <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/seo-audit-services" className="eseo-btn-s">Get an Enterprise SEO Audit</Link>
-            </div>
-            <div className="eseo-stats">{STATS.map(s => <div key={s.label} className="eseo-stat"><div className="eseo-stat-l">{s.label}</div><div className="eseo-stat-v">{s.val}</div></div>)}</div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Large-Scale SEO · Global Delivery"
+          title={<>Enterprise SEO Services for <AuroraText>Complex, Large-Scale Websites</AuroraText></>}
+          subtext="Technical SEO at scale, international SEO, JavaScript framework audits, crawl budget optimisation, and C-suite reporting - built for sites with 100K to 10M+ pages."
+          primaryCta={{ label: 'Request Enterprise SEO Proposal', href: '/contact-us' }}
+          secondaryCta={{ label: 'Get an Enterprise SEO Audit', href: '/seo-audit-services' }}
+          stats={[
+            { label: 'Enterprise Clients', value: '200', suffix: '+' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'Keywords Tracked', value: '10', suffix: 'M+' },
+            { label: 'Client Retention', value: '96', suffix: '%' },
+          ]}
+        />
 
         <section className="eseo-svc">
           <div className="eseo-svc-in">

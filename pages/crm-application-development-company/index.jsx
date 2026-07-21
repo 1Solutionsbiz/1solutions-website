@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 /* ─── Schema ─────────────────────────────────────────────────── */
 const SCHEMA = {
@@ -185,40 +187,10 @@ const FAQS = [
   { q: 'Do you offer ongoing support and feature development after launch?', a: 'Yes - all CRM projects include a 30-day post-launch hypercare period with prioritised bug fix SLA. We then offer ongoing support plans covering security patches, performance optimisation, third-party API updates as provider APIs change, and feature development sprints. Our dedicated team model is particularly well-suited for post-launch CRM evolution - your team continues on a sprint cadence delivering the next roadmap features as your business grows.' },
 ];
 
-/* ─── Hooks ──────────────────────────────────────────────────── */
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const num = parseInt(target.replace(/\D/g, ''), 10);
-    if (!num) return;
-    let t0 = null;
-    const step = ts => {
-      if (!t0) t0 = ts;
-      const p = Math.min((ts - t0) / duration, 1);
-      setCount(Math.floor((1 - Math.pow(1 - p, 3)) * num));
-      if (p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function StatItem({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');  return (
-    <div className="cr-stat-col">
-      <div className="cr-stat-val">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div>
-      <div className="cr-stat-label">{label}</div>
-    </div>
-  );
-}
-
 /* ─── Component ──────────────────────────────────────────────── */
 export default function CrmApplicationDevelopment() {
   const [showAllSvc, setShowAllSvc] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleSvcCards, setVisibleSvcCards] = useState([]);
   const [visibleEngCards, setVisibleEngCards] = useState([]);
@@ -226,20 +198,12 @@ export default function CrmApplicationDevelopment() {
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const [visibleStackCards, setVisibleStackCards] = useState([]);
 
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const svcGridRef = useRef(null);
   const engGridRef = useRef(null);
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
   const stackGridRef = useRef(null);
-
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStatsStarted(true); obs.disconnect(); } }, { threshold: 0.4 });
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   useEffect(() => {
     const pairs = [
@@ -322,36 +286,6 @@ export default function CrmApplicationDevelopment() {
 
 
 
-          /* Hero */
-          .cr-hero { position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px; }
-          .cr-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px; }
-          .cr-hero h1 { font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .cr-hero-desc { font-size:16px;color:#3A507A;line-height:1.65;max-width:740px;margin:0 auto 24px; }
-          .cr-trust-row { display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px; }
-          .cr-badge { display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07); }
-          .cr-badge-dot { width:7px;height:7px;border-radius:50%;background:#0891b2;flex-shrink:0; }
-          .cr-ctas { display:flex;flex-wrap:wrap;gap:12px;justify-content:center; }
-          .cr-btn-primary { display:inline-block;padding:14px 36px;background:#0891b2;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(8,145,178,.30); }
-          .cr-btn-primary:hover { background:#0F3460;transform:translateY(-2px); }
-          .cr-btn-ghost { display:inline-block;padding:14px 36px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s; }
-          .cr-btn-ghost:hover { background:rgba(255,255,255,.85);border-color:rgba(8,145,178,.5);transform:translateY(-2px); }
-
-          /* Stats */
-          .cr-stats { position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:28px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95); }
-          .cr-stat-col { padding:18px 16px;text-align:center;border-right:1px solid rgba(15,52,96,.10); }
-          .cr-stat-col:last-child { border-right:none; }
-          .cr-stat-val { font-size:28px;font-weight:900;color:#0891b2;letter-spacing:-.5px;line-height:1; }
-          .cr-stat-label { font-size:11px;color:#4A6080;font-weight:500;margin-top:5px; }
-
-          /* Logos */
-          .cr-logos { position:relative;z-index:2;padding:24px 40px 52px;display:flex;flex-direction:column;align-items:center;gap:14px; }
-          .cr-logos-label { font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6A80A0; }
-          .cr-logos-wrap { width:100%;overflow:hidden; }
-          .cr-logos-track { display:flex;align-items:center;gap:60px;width:max-content;animation:cr-marquee 28s linear infinite; }
-          .cr-logos-track:hover { animation-play-state:paused; }
-          @keyframes cr-marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-          .cr-clogo { height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s; }
-          .cr-clogo:hover { opacity:.85;filter:grayscale(0%); }
 
           /* Shared */
           .cr-s-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block; }
@@ -522,7 +456,7 @@ export default function CrmApplicationDevelopment() {
 
           /* Responsive */
           @media(max-width:1024px){
-            .cr-hero h1,.cr-s-title,.cr-faq h2 { font-size:36px; }
+            .cr-s-title,.cr-faq h2 { font-size:36px; }
             .cr-svc-grid { grid-template-columns:repeat(2,1fr); }
             .cr-stack-grid { grid-template-columns:repeat(2,1fr); }
             .cr-eng-grid { grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto; }
@@ -534,13 +468,6 @@ export default function CrmApplicationDevelopment() {
             .cr-contact-grid { grid-template-columns:1fr; }
           }
           @media(max-width:768px){
-            .cr-hero { padding:28px 20px 20px; }
-            .cr-hero h1 { font-size:26px;letter-spacing:-.3px; }
-            .cr-stats { grid-template-columns:1fr 1fr; }
-            .cr-stat-col:nth-child(2) { border-right:none; }
-            .cr-stat-col:nth-child(3) { border-top:1px solid rgba(15,52,96,.10); }
-            .cr-stat-col:nth-child(4) { border-top:1px solid rgba(15,52,96,.10);border-right:none; }
-            .cr-logos { padding:16px 20px 28px; }
             .cr-svc-section,.cr-stack-section,.cr-eng-section,.cr-process-section,.cr-testi,.cr-why-section,.cr-faq,.cr-related { padding:52px 20px; }
             .cr-contact { padding:48px 20px; }
             .cr-svc-grid,.cr-stack-grid,.cr-why-grid { grid-template-columns:1fr; }
@@ -578,53 +505,19 @@ export default function CrmApplicationDevelopment() {
         <div className="cr-orb cr-orb-3" />
 
         {/* ── HERO ── */}
-        <section className="cr-hero">
-          <span className="cr-eyebrow">CRM Application Development Company</span>
-          <h1>Custom CRM Development - Built Around Your Sales, Marketing &amp; Service Workflows</h1>
-          <p className="cr-hero-desc">We build custom CRM applications that replace expensive off-the-shelf platforms and match your exact pipeline, customer data model, and team hierarchy - with sales automation, marketing workflows, AI lead scoring, ERP integration, mobile apps, and white-label multi-tenant architecture.</p>
-          <div className="cr-trust-row">
-            {['150+ CRM Projects','No Per-Seat Licensing','GDPR & CCPA Compliant','15+ Years Experience','Full IP Ownership'].map(b => (
-              <div className="cr-badge" key={b}><span className="cr-badge-dot" />{b}</div>
-            ))}
-          </div>
-          <div className="cr-ctas">
-            <Link href="#contact" className="cr-btn-primary">Start Your CRM Project</Link>
-            <Link href="#engagement" className="cr-btn-ghost">View Engagement Models →</Link>
-          </div>
-        </section>
-
-        {/* ── STATS ── */}
-        <div className="cr-stats" ref={statsRef}>
-          {[['150+','CRM Projects'],['15+','Years Experience'],['50+','Integrations Built'],['98%','Client Retention']].map(([v, l]) => (
-            <StatItem key={l} label={l} val={v} started={statsStarted} />
-          ))}
-        </div>
-
-        {/* ── CLIENT LOGOS ── */}
-        <div className="cr-logos">
-          <span className="cr-logos-label">Trusted by Leading Organisations</span>
-          <div className="cr-logos-wrap">
-            <div className="cr-logos-track">
-              {[
-                ['/logo/Indian_Express_Logo_full.png','Indian Express'],
-                ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],
-                ['/logo/Uniphore.jpg','Uniphore'],
-                ['/logo/ICCoLogo.png','ICC'],
-                ['/logo/Honor_Logo_(2020).svg.png','Honor'],
-                ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],
-                ['/logo/Indian_Express_Logo_full.png','Indian Express 2'],
-                ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon 2'],
-                ['/logo/Uniphore.jpg','Uniphore 2'],
-                ['/logo/ICCoLogo.png','ICC 2'],
-                ['/logo/Honor_Logo_(2020).svg.png','Honor 2'],
-                ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv 2'],
-              ].map(([src, alt]) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img key={alt} src={src} alt={alt.replace(/ \d$/, '')} className="cr-clogo" />
-              ))}
-            </div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="CRM Application Development Company · No Per-Seat Licensing · GDPR & CCPA Compliant"
+          title={<>Custom CRM Development - <AuroraText>Built Around Your Sales, Marketing &amp; Service Workflows</AuroraText></>}
+          subtext="We build custom CRM applications that replace expensive off-the-shelf platforms and match your exact pipeline, customer data model, and team hierarchy - with sales automation, marketing workflows, AI lead scoring, ERP integration, mobile apps, and white-label multi-tenant architecture."
+          primaryCta={{ label: 'Start Your CRM Project', href: '#contact' }}
+          secondaryCta={{ label: 'View Engagement Models', href: '#engagement' }}
+          stats={[
+            { label: 'CRM Projects', value: '150', suffix: '+' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'Integrations Built', value: '50', suffix: '+' },
+            { label: 'Client Retention', value: '98', suffix: '%' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="cr-svc-section" aria-labelledby="cr-svc-heading">

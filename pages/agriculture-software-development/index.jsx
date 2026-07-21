@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -73,25 +75,13 @@ const FAQS = [
   { q: 'Can you integrate with farm accounting software like MYOB or Xero?', a: 'Yes - MYOB, Xero, QuickBooks, and SAP integration. Paddock-level costs, crop enterprise budgets, inventory management, seasonal payroll, and BAS/GST (AU) or VAT (UK) reporting all feeding from the farm management system to the accounting platform.' },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => { if (!start) return; const n = parseInt(target.replace(/\D/g, ''), 10); if (!n) return; let t0 = null; const s = ts => { if (!t0) t0 = ts; const p = Math.min((ts - t0) / duration, 1); setCount(Math.floor((1 - Math.pow(1 - p, 3)) * n)); if (p < 1) requestAnimationFrame(s); }; requestAnimationFrame(s); }, [start, target, duration]);
-  return count;
-}
-function StatItem({ label, val, started }) {
-  const n = useCountUp(val, 1800, started);
-  const sfx = val.replace(/[\d,]/g, '');  return (<div className="agr-sc"><div className="agr-sv">{started ? n + sfx : val}</div><div className="agr-sl">{label}</div></div>);
-}
-
 export default function AgricultureSoftware() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [ss, setSs] = useState(false);
   const [vis, setVis] = useState(new Set());
   const [vSk, setVSk] = useState([]); const [vEn, setVEn] = useState([]); const [vWh, setVWh] = useState([]); const [vTe, setVTe] = useState([]); const [vSt, setVSt] = useState([]);
-  const stR = useRef(null); const secR = useRef({});
+  const secR = useRef({});
   const skR = useRef(null); const enR = useRef(null); const whR = useRef(null); const teR = useRef(null); const stGr = useRef(null);
-  useEffect(() => { if (!stR.current) return; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setSs(true); o.disconnect(); } }, { threshold: 0.4 }); o.observe(stR.current); return () => o.disconnect(); }, []);
   useEffect(() => {
     const pairs = [[skR, SOLUTIONS.length, setVSk], [enR, 3, setVEn], [whR, WHY.length, setVWh], [teR, 3, setVTe], [stGr, TECH_STACK.length, setVSt]];
     const obs = pairs.map(([ref, count, setter]) => { if (!ref.current) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { Array.from({ length: count }, (_, i) => setTimeout(() => setter(p => p.includes(i) ? p : [...p, i]), i * 75)); o.disconnect(); } }, { threshold: 0.05 }); o.observe(ref.current); return o; });
@@ -139,22 +129,6 @@ export default function AgricultureSoftware() {
           .agr-o1{width:800px;height:800px;background:radial-gradient(circle,rgba(58,90,19,.16) 0%,transparent 70%);top:-220px;right:-200px}
           .agr-o2{width:700px;height:700px;background:radial-gradient(circle,rgba(180,83,9,.12) 0%,transparent 70%);bottom:0;left:-200px}
           .agr-o3{width:480px;height:480px;background:radial-gradient(circle,rgba(3,105,161,.08) 0%,transparent 70%);top:42%;left:-90px}}.agr-bc li::after{content:'/';opacity:.45}.agr-bc li:last-child::after{display:none};text-decoration:none}
-          .agr-hero{position:relative;z-index:2;text-align:center;max-width:940px;margin:0 auto;padding:44px 40px 28px}
-          .agr-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:${ac};margin-bottom:14px}
-          .agr-hero h1{font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .agr-desc{font-size:16px;color:${txt2};line-height:1.65;max-width:720px;margin:0 auto 22px}
-          .agr-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-bottom:24px}
-          .agr-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:5px 13px;font-size:12px;font-weight:600;color:${txt};box-shadow:0 2px 8px rgba(58,90,19,.07)}
-          .agr-dot{width:7px;height:7px;border-radius:50%;background:${ac};flex-shrink:0}
-          .agr-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .agr-p{display:inline-block;padding:13px 34px;background:${ac};color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(58,90,19,.28)}
-          .agr-p:hover{background:${txt};transform:translateY(-2px)}
-          .agr-g{display:inline-block;padding:13px 34px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:${txt};font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .agr-g:hover{background:rgba(255,255,255,.85);border-color:rgba(58,90,19,.5);transform:translateY(-2px)}
-          .agr-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:920px;margin:26px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(58,90,19,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .agr-sc{padding:18px 16px;text-align:center;border-right:1px solid rgba(58,90,19,.10)}.agr-sc:last-child{border-right:none}
-          .agr-sv{font-size:28px;font-weight:900;color:${ac};letter-spacing:-.5px;line-height:1}
-          .agr-sl{font-size:11px;color:${txt2};font-weight:500;margin-top:5px}
           .agr-sec{padding:72px 40px;position:relative;z-index:1}
           .agr-sec-alt{background:rgba(241,248,233,.55);border-top:1px solid rgba(58,90,19,.08);border-bottom:1px solid rgba(58,90,19,.08)}
           .agr-in{max-width:1300px;margin:0 auto}
@@ -265,8 +239,8 @@ export default function AgricultureSoftware() {
           .agr-rb{background:rgba(12,74,110,.09);border-color:rgba(12,74,110,.28);color:#0c4a6e}
           .agr-rc{background:rgba(120,53,15,.09);border-color:rgba(120,53,15,.28);color:#78350f}
           .agr-rd{background:rgba(20,83,45,.09);border-color:rgba(20,83,45,.28);color:#14532d}
-          @media(max-width:1024px){.agr-hero h1,.agr-sh,.agr-fq h2{font-size:34px}.agr-sk-g{grid-template-columns:repeat(2,1fr)}.agr-tec-g{grid-template-columns:repeat(2,1fr)}.agr-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.agr-en.feat{transform:none}.agr-en.feat.agr-ev{transform:none}.agr-en.feat.agr-ev:hover{transform:translateY(-4px)}.agr-wy-g{grid-template-columns:repeat(2,1fr)}.agr-tg2{grid-template-columns:1fr}.agr-ct-g{grid-template-columns:1fr}}
-          @media(max-width:768px){.agr-bc,.agr-hero,.agr-sec,.agr-ct,.agr-fq,.agr-rel{padding-left:20px;padding-right:20px}.agr-hero{padding-top:28px;padding-bottom:16px}.agr-hero h1{font-size:26px}.agr-stats{grid-template-columns:1fr 1fr}.agr-sc:nth-child(2){border-right:none}.agr-sc:nth-child(3),.agr-sc:nth-child(4){border-top:1px solid rgba(58,90,19,.10)}.agr-sc:nth-child(4){border-right:none}.agr-sk-g,.agr-tec-g,.agr-wy-g{grid-template-columns:1fr}.agr-fr{grid-template-columns:1fr}.agr-cth{font-size:26px}}
+          @media(max-width:1024px){.agr-sh,.agr-fq h2{font-size:34px}.agr-sk-g{grid-template-columns:repeat(2,1fr)}.agr-tec-g{grid-template-columns:repeat(2,1fr)}.agr-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.agr-en.feat{transform:none}.agr-en.feat.agr-ev{transform:none}.agr-en.feat.agr-ev:hover{transform:translateY(-4px)}.agr-wy-g{grid-template-columns:repeat(2,1fr)}.agr-tg2{grid-template-columns:1fr}.agr-ct-g{grid-template-columns:1fr}}
+          @media(max-width:768px){.agr-bc,.agr-sec,.agr-ct,.agr-fq,.agr-rel{padding-left:20px;padding-right:20px}.agr-sk-g,.agr-tec-g,.agr-wy-g{grid-template-columns:1fr}.agr-fr{grid-template-columns:1fr}.agr-cth{font-size:26px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
@@ -292,14 +266,19 @@ export default function AgricultureSoftware() {
 </Head>
       <div className="agr-page">
         <div className="agr-orb agr-o1" /><div className="agr-orb agr-o2" /><div className="agr-orb agr-o3" />
-        <section className="agr-hero">
-          <span className="agr-ey">Agriculture & AgriTech Industry</span>
-          <h1>Agriculture Software Development - Farm Management, IoT Precision Farming & AgriTech</h1>
-          <p className="agr-desc">Custom AgriTech for corporate farms, cooperatives, agri-marketplaces, and food companies - farm management systems, IoT precision agriculture, crop monitoring, livestock management, supply chain traceability, and drone analytics. 60+ AgriTech projects. 15+ years.</p>
-          <div className="agr-tr">{['Farm Management System','Precision Agriculture IoT','Crop Monitoring & AI','Livestock Management','Agri-Marketplace'].map(b => (<div className="agr-badge" key={b}><span className="agr-dot" />{b}</div>))}</div>
-          <div className="agr-ctas"><Link href="#contact" className="agr-p">Discuss Your AgriTech Project</Link><Link href="#solutions" className="agr-g">View Solutions →</Link></div>
-        </section>
-        <div className="agr-stats" ref={stR}>{[['60+','AgriTech Projects'],['15+','Years Dev Experience'],['22%','Avg Input Cost Reduction'],['99.9%','Platform Uptime SLA']].map(([v, l]) => <StatItem key={l} label={l} val={v} started={ss} />)}</div>
+        <ServiceHero
+          eyebrow="Agriculture & AgriTech Industry"
+          title={<>Agriculture Software Development - Farm Management, <AuroraText>IoT Precision Farming & AgriTech</AuroraText></>}
+          subtext="Custom AgriTech for corporate farms, cooperatives, agri-marketplaces, and food companies - farm management systems, IoT precision agriculture, crop monitoring, livestock management, supply chain traceability, and drone analytics. 60+ AgriTech projects. 15+ years."
+          primaryCta={{ label: 'Discuss Your AgriTech Project', href: '#contact' }}
+          secondaryCta={{ label: 'View Solutions →', href: '#solutions' }}
+          stats={[
+            { label: 'AgriTech Projects', value: '60', suffix: '+' },
+            { label: 'Years Dev Experience', value: '15', suffix: '+' },
+            { label: 'Avg Input Cost Reduction', value: '22', suffix: '%' },
+            { label: 'Platform Uptime SLA', value: '9', prefix: '99.', suffix: '%' },
+          ]}
+        />
         <section id="solutions" className="agr-sec"><div className="agr-in"><div className={`agr-rv${vis.has('sk') ? ' agr-ok' : ''}`} ref={el => { secR.current['sk'] = el; }}><span className="agr-sey">AgriTech Solutions</span><h2 className="agr-sh">What We Build for Agriculture</h2><p className="agr-sd">Farm management systems, precision agriculture IoT, crop monitoring, livestock management, agri-marketplaces, traceability, irrigation, drone analytics, weather intelligence, and agricultural ERP integration.</p></div><div className="agr-sk-g" ref={skR}>{visS.map((s, i) => (<div key={s.n} className={`agr-card${s.feat ? ' feat' : ''}${vSk.includes(i) ? ' agr-cv' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}><span className="agr-cn">{s.n}</span><h3>{s.title}</h3><p>{s.desc}</p></div>))}</div>{SOLUTIONS.length > 6 && <div className="agr-sm"><button className="agr-bm" onClick={() => setShowAll(p => !p)}>{showAll ? 'Show fewer ↑' : `Show all ${SOLUTIONS.length} solutions ↓`}</button></div>}</div></section>
         <section className="agr-sec agr-sec-alt"><div className="agr-in"><div className={`agr-rv${vis.has('stk') ? ' agr-ok' : ''}`} ref={el => { secR.current['stk'] = el; }}><span className="agr-sey">Technology Stack</span><h2 className="agr-sh">AgriTech Technology We Work With</h2><p className="agr-sd">MQTT/LoRaWAN IoT, Sentinel satellite imagery, React Native offline apps, Python ML, PostGIS, AWS IoT, and the full precision agriculture tech ecosystem.</p></div><div className="agr-tec-g" ref={stGr}>{TECH_STACK.map((g, i) => (<div key={g.group} className={`agr-tc2${vSt.includes(i) ? ' agr-sv2' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}><div className="agr-tg" style={{ color: g.color, borderBottomColor: g.color + '33' }}>{g.group}</div><div className="agr-pills">{g.items.map(it => <span key={it} className="agr-pill" style={{ color: g.color, background: g.color + '12', borderColor: g.color + '30' }}>{it}</span>)}</div></div>))}</div></div></section>
         <section className="agr-sec"><div className="agr-in"><div className={`agr-rv${vis.has('eng') ? ' agr-ok' : ''}`} ref={el => { secR.current['eng'] = el; }}><span className="agr-sey">Engagement Models</span><h2 className="agr-sh">How We Work with Agriculture Companies</h2><p className="agr-sd">Custom AgriTech platform, IoT sensor integration, or traceability and compliance system - structured for farming environments and seasonal delivery cycles.</p></div><div className="agr-en-g" ref={enR}>{ENGAGEMENT.map((m, i) => (<div key={m.id} className={`agr-en${m.feat ? ' feat' : ''}${vEn.includes(i) ? ' agr-ev' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><span className="agr-en-b" style={{ color: m.bc, borderColor: m.bc + '44', background: m.bc + '14' }}>{m.badge}</span><div className="agr-en-i"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke={m.feat ? '#D97706' : ac} strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d={m.icon} /></svg></div><div className="agr-en-n">{m.name}</div><div className="agr-en-h">{m.headline}</div><div className="agr-en-d">{m.desc}</div><div className="agr-en-ll">Best for</div><ul className="agr-en-li">{m.best.map(b => <li key={b}>{b}</li>)}</ul><span className="agr-en-tl">{m.tl}</span><Link href="#contact" className="agr-en-a">Get a free estimate →</Link></div>))}</div></div></section>

@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const ACCENT = '#003333';
 const SERVICES = [
@@ -69,25 +71,11 @@ export default function ContentMarketingServices() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           *{box-sizing:border-box}
-          .cmkt-hero{position:relative;overflow:hidden;padding:100px 40px 90px;background:linear-gradient(135deg,rgba(0,51,51,0.08) 0%,rgba(255,255,255,0.75) 50%,rgba(77,182,172,0.07) 100%)}
-          .cmkt-o1{position:absolute;top:-120px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(0,51,51,0.12) 0%,transparent 70%);pointer-events:none;filter:blur(10px)}
-          .cmkt-o2{position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(77,182,172,0.08) 0%,transparent 70%);pointer-events:none;filter:blur(8px)}
-          .cmkt-in{max-width:1200px;margin:0 auto;position:relative;z-index:1}
-          .cmkt-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(0,51,51,0.10);border:1px solid rgba(0,51,51,0.25);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:24px}
-          .cmkt-h1{font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .cmkt-p{font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:660px}
-          .cmkt-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
           .cmkt-bp{display:inline-flex;align-items:center;gap:8px;background:${ACCENT};color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(0,51,51,.25)}
           .cmkt-bp:hover{background:#001a1a;transform:translateY(-2px)}
           .cmkt-bs{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.7);color:${ACCENT};padding:14px 28px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;border:1.5px solid rgba(0,51,51,.18);transition:all .25s;backdrop-filter:blur(8px)}
           .cmkt-bs:hover{background:#fff;transform:translateY(-2px)}
-          .cmkt-tr{display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-bottom:48px}
-          .cmkt-badge{display:flex;align-items:center;gap:6px;font-size:12px;color:#6b7280;font-weight:500}
-          .cmkt-sbar{display:flex;border:1px solid rgba(0,51,51,.10);border-radius:16px;background:rgba(255,255,255,.75);backdrop-filter:blur(12px);overflow:hidden;max-width:680px}
-          .cmkt-si{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(0,51,51,.08)}
-          .cmkt-si:last-child{border-right:none}
-          .cmkt-sn{font-size:1.9rem;font-weight:900;color:${ACCENT};line-height:1;letter-spacing:-1px}
-          .cmkt-sl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px}.cmkt-bci a:hover{color:${ACCENT}}.cmkt-cur{color:${ACCENT};font-weight:500}
+          .cmkt-bci a:hover{color:${ACCENT}}.cmkt-cur{color:${ACCENT};font-weight:500}
           .cmkt-sec{padding:80px 40px}.cmkt-bg{background:#f8fafd}
           .cmkt-si2{max-width:1200px;margin:0 auto}
           .cmkt-tag{display:block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:12px}
@@ -132,25 +120,25 @@ export default function ContentMarketingServices() {
           .cmkt-cth{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-.5px;margin:0 0 18px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .cmkt-ctp{font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px}
           @media(max-width:900px){.cmkt-g3,.cmkt-rg{grid-template-columns:1fr 1fr}}
-          @media(max-width:600px){.cmkt-hero,.cmkt-sec,.cmkt-rb,.cmkt-cta{padding-left:20px;padding-right:20px}.cmkt-hero{padding-top:60px;padding-bottom:50px}.cmkt-g3,.cmkt-rg{grid-template-columns:1fr}.cmkt-bc{padding:12px 20px}}
+          @media(max-width:600px){.cmkt-sec,.cmkt-rb,.cmkt-cta{padding-left:20px;padding-right:20px}.cmkt-g3,.cmkt-rg{grid-template-columns:1fr}.cmkt-bc{padding:12px 20px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
-      <section className="cmkt-hero"><div className="cmkt-o1"/><div className="cmkt-o2"/>
-        <div className="cmkt-in">
-          <span className="cmkt-ey">Content Marketing - SEO Blog Writing · Pillar Pages · Case Studies · Strategy</span>
-          <h1 className="cmkt-h1">Content Marketing That Ranks on Google and Converts Readers Into Leads</h1>
-          <p className="cmkt-p">1Solutions produces SEO-first content that builds topical authority, drives sustainable organic traffic, and converts readers into leads - written by human specialists who understand your industry.</p>
-          <div className="cmkt-btns">
-            <Link href="/contact-us" className="cmkt-bp">Get a Free Content Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-            <Link href="/contact-us" className="cmkt-bs">Discuss Your Content Strategy</Link>
-          </div>
-          <div className="cmkt-tr">{['Human writers only','SEO-first approach','Content audit included','No AI-generated filler'].map(t=><span key={t} className="cmkt-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={ACCENT} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>{t}</span>)}</div>
-          <div className="cmkt-sbar">{[{num:'380%',lbl:'Avg Traffic Growth'},{num:'15+',lbl:'Years Experience'},{num:'62',lbl:'Top-3 Rankings'},{num:'4.1×',lbl:'Lead Growth'}].map(s=><div key={s.lbl} className="cmkt-si"><span className="cmkt-sn">{s.num}</span><span className="cmkt-sl">{s.lbl}</span></div>)}</div>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="Content Marketing - SEO Blog Writing · Pillar Pages · Case Studies · Strategy"
+        title={<>Content Marketing That <AuroraText>Ranks on Google and Converts Readers Into Leads</AuroraText></>}
+        subtext="1Solutions produces SEO-first content that builds topical authority, drives sustainable organic traffic, and converts readers into leads - written by human specialists who understand your industry."
+        primaryCta={{ label: 'Get a Free Content Audit', href: '/contact-us' }}
+        secondaryCta={{ label: 'Discuss Your Content Strategy', href: '/contact-us' }}
+        stats={[
+          { label: 'Avg Traffic Growth', value: '380', suffix: '%' },
+          { label: 'Years Experience', value: '15', suffix: '+' },
+          { label: 'Top-3 Rankings', value: '62' },
+          { label: 'Lead Growth', value: '1', prefix: '4.', suffix: '×' },
+        ]}
+      />
       <section className="cmkt-sec cmkt-bg"><div className="cmkt-si2">
         <span className="cmkt-tag">What We Deliver</span>
         <h2 className="cmkt-h2">Full-Funnel <span>Content Marketing Services</span></h2>

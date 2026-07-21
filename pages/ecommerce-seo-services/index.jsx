@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z', title: 'Product Page SEO', desc: 'Title tag, meta description, schema markup, image alt text, and conversion copy optimisation for every product - at scale, even for catalogues with thousands of SKUs.' },
@@ -85,29 +87,10 @@ export default function EcommerceSeoServices() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           * { box-sizing: border-box; }
-          .eseo-hero { position:relative;overflow:hidden;padding:100px 40px 90px;background:linear-gradient(135deg,rgba(254,243,199,0.55) 0%,rgba(255,255,255,0.70) 50%,rgba(237,233,254,0.45) 100%); }
-          .eseo-orb1 { position:absolute;top:-120px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(254,151,0,0.12) 0%,transparent 70%);pointer-events:none;filter:blur(10px); }
-          .eseo-orb2 { position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,0.08) 0%,transparent 70%);pointer-events:none;filter:blur(8px); }
-          .eseo-inner { max-width:1200px;margin:0 auto;position:relative;z-index:1; }
-          .eseo-eyebrow { display:inline-flex;align-items:center;gap:8px;background:rgba(254,151,0,0.10);border:1px solid rgba(254,151,0,0.25);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#D97706;margin-bottom:24px; }
-          .eseo-h1 { font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .eseo-desc { font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:660px; }
-          .eseo-btns { display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px; }
           .eseo-btn-p { display:inline-flex;align-items:center;gap:8px;background:#7C2D12;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 6px 24px rgba(124,45,18,0.25); }
           .eseo-btn-p:hover { background:#92400e;transform:translateY(-2px); }
           .eseo-btn-s { display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.7);color:#7C2D12;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;border:1.5px solid rgba(124,45,18,0.18);transition:all 0.25s;backdrop-filter:blur(8px); }
           .eseo-btn-s:hover { background:#fff;transform:translateY(-2px); }
-          .eseo-trust { display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-bottom:48px; }
-          .eseo-badge { display:flex;align-items:center;gap:6px;font-size:12px;color:#6b7280;font-weight:500; }
-          .eseo-stats-bar { display:flex;border:1px solid rgba(124,45,18,0.10);border-radius:16px;background:rgba(255,255,255,0.75);backdrop-filter:blur(12px);overflow:hidden;max-width:680px; }
-          .eseo-stat-item { flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(124,45,18,0.08); }
-          .eseo-stat-item:last-child { border-right:none; }
-          .eseo-stat-num { font-size:1.9rem;font-weight:900;color:#7C2D12;line-height:1;letter-spacing:-1px; }
-          .eseo-stat-lbl { font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px; }
-
-
-
-
 
           .eseo-sec { padding:80px 40px; }
           .eseo-sec-inner { max-width:1200px;margin:0 auto; }
@@ -154,8 +137,7 @@ export default function EcommerceSeoServices() {
           .eseo-cta-p { font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px; }
           @media (max-width:900px) { .eseo-grid3,.eseo-res-grid { grid-template-columns:1fr 1fr; } }
           @media (max-width:600px) {
-            .eseo-hero,.eseo-sec,.eseo-results,.eseo-cta { padding-left:20px;padding-right:20px; }
-            .eseo-hero { padding-top:60px;padding-bottom:50px; }
+            .eseo-sec,.eseo-results,.eseo-cta { padding-left:20px;padding-right:20px; }
             .eseo-grid3,.eseo-res-grid { grid-template-columns:1fr; }
           }
         
@@ -164,40 +146,19 @@ export default function EcommerceSeoServices() {
         </style>
       </Head>
 
-      <section className="eseo-hero">
-        <div className="eseo-orb1" /><div className="eseo-orb2" />
-        <div className="eseo-inner">
-          <span className="eseo-eyebrow">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
-            eCommerce SEO - Shopify · WooCommerce · Magento
-          </span>
-          <h1 className="eseo-h1">eCommerce SEO That Drives<br/>Product Sales, Not Just Traffic</h1>
-          <p className="eseo-desc">1Solutions delivers eCommerce SEO that connects buyers to your products at the exact moment they are ready to purchase - through product page optimisation, category architecture, structured data, and scalable technical fixes across Shopify, WooCommerce, and Magento.</p>
-          <div className="eseo-btns">
-            <a href="#contact" className="eseo-btn-p">
-              Get a Free eCommerce SEO Audit
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <Link href="/affordable-seo-packages/" className="eseo-btn-s">View SEO Packages</Link>
-          </div>
-          <div className="eseo-trust">
-            {['Platform-specific expertise','Revenue-first approach','No lock-in contracts','Monthly reporting'].map(t => (
-              <span key={t} className="eseo-badge">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D97706" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                {t}
-              </span>
-            ))}
-          </div>
-          <div className="eseo-stats-bar">
-            {[{ num:'200+', lbl:'eCommerce Stores Optimised' },{ num:'15+', lbl:'Years Experience' },{ num:'4.1×', lbl:'Avg Organic Revenue Growth' },{ num:'97%', lbl:'Client Retention' }].map(s => (
-              <div key={s.lbl} className="eseo-stat-item">
-                <span className="eseo-stat-num">{s.num}</span>
-                <span className="eseo-stat-lbl">{s.lbl}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="eCommerce SEO - Shopify · WooCommerce · Magento"
+        title={<>eCommerce SEO That Drives <AuroraText>Product Sales, Not Just Traffic</AuroraText></>}
+        subtext="1Solutions delivers eCommerce SEO that connects buyers to your products at the exact moment they are ready to purchase - through product page optimisation, category architecture, structured data, and scalable technical fixes across Shopify, WooCommerce, and Magento."
+        primaryCta={{ label: 'Get a Free eCommerce SEO Audit', href: '#contact' }}
+        secondaryCta={{ label: 'View SEO Packages', href: '/affordable-seo-packages/' }}
+        stats={[
+          { label: 'eCommerce Stores Optimised', value: '200', suffix: '+' },
+          { label: 'Years Experience', value: '15', suffix: '+' },
+          { label: 'Avg Organic Revenue Growth', value: '1', prefix: '4.', suffix: '×' },
+          { label: 'Client Retention', value: '97', suffix: '%' },
+        ]}
+      />
 
       <section className="eseo-sec eseo-bg" id="services">
         <div className="eseo-sec-inner">

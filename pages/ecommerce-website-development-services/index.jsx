@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const ALL_TESTIMONIALS = [
   { initials:'SR', bg:'#0F3460', name:'Sarah Reynolds', role:'LuxeFragrance Co. — USA', text:'"1Solutions rebuilt our Shopify store completely. Average order value increased by 40% in the first three months post-launch."' },
@@ -56,47 +57,14 @@ const WHY = [
   { icon:<svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>, title:'Long-Term Partnership Focus', desc:'97% client retention rate. We remain invested in your growth beyond launch - through maintenance retainers, ongoing SEO, feature roadmaps, and scale-up support as your business grows.' },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const numTarget = parseInt(target.replace(/\D/g, ''), 10);
-    if (!numTarget) return;
-    let startTime = null;
-    const step = (ts) => {
-      if (!startTime) startTime = ts;
-      const progress = Math.min((ts - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * numTarget));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function AnimatedStat({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');
-  const hasComma = val.includes(',');
-  const display = started ? (hasComma ? num.toLocaleString() : num) + suffix : val;  return (
-    <div className="ecom-stat-col">
-      <div className="ecom-stat-label">{label}</div>
-      <div className="ecom-stat-value">{display}</div>
-    </div>
-  );
-}
-
 export default function EcommerceWebsiteDevelopmentServices() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleSteps, setVisibleSteps] = useState([]);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const stepRefs = useRef([]);
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
@@ -117,16 +85,6 @@ export default function EcommerceWebsiteDevelopmentServices() {
       return obs;
     });
     return () => observers.forEach(o => o && o.disconnect());
-  }, []);
-
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setStatsStarted(true); obs.disconnect(); } },
-      { threshold: 0.5 }
-    );
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
   }, []);
 
   useEffect(() => {
@@ -234,38 +192,7 @@ export default function EcommerceWebsiteDevelopmentServices() {
           @keyframes ecom-aurora-drift { 0%{transform:translate3d(0,0,0) scale(1)} 100%{transform:translate3d(-4%,3%,0) scale(1.10)} }
 
           /* Platform badges */
-          .ecom-platforms { display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:28px; }
-          .ecom-platform-badge { display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:50px;font-size:12px;font-weight:600;letter-spacing:0.02em;border:1px solid;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px); }
-          .ecom-pb-shopify  { background:rgba(6,95,70,0.08); border-color:rgba(6,95,70,0.22); color:#065F46; }
-          .ecom-pb-woo      { background:rgba(91,33,182,0.08); border-color:rgba(91,33,182,0.22); color:#5b21b6; }
-          .ecom-pb-magento  { background:rgba(194,65,12,0.08); border-color:rgba(194,65,12,0.22); color:#c2410c; }
-          .ecom-pb-opencart { background:rgba(8,145,178,0.08); border-color:rgba(8,145,178,0.22); color:#0e7490; }
-          .ecom-pb-custom   { background:rgba(15,52,96,0.10); border-color:rgba(15,52,96,0.26); color:#0F3460; }
 
-          /* Hero */
-          .ecom-hero-block { background:transparent;position:relative;overflow:hidden; }
-          .ecom-hero-block::before { content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(15,52,96,0.10) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px); }
-          .ecom-hero-block::after  { content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,0.12) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px); }
-          .ecom-hero-content { position:relative;z-index:2;text-align:center;max-width:900px;margin:0 auto;padding:56px 40px 40px; }
-          .ecom-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#D97706;margin-bottom:18px; }
-          .ecom-hero-content h1 { font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .ecom-hero-content p { font-size:16px;color:#4A6080;line-height:1.65;max-width:680px;margin:0 auto 24px; }
-          .ecom-btn-hero { display:inline-block;padding:14px 40px;background:rgba(255,255,255,0.58);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.88);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(15,52,96,0.12),inset 0 1px 0 rgba(255,255,255,1); }
-          .ecom-btn-hero:hover { background:rgba(255,255,255,0.90);border-color:rgba(15,52,96,0.50);box-shadow:0 12px 36px rgba(15,52,96,0.20),0 0 0 2px rgba(15,52,96,0.16),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px);color:#0F3460; }
-
-          /* Stats */
-          .ecom-hero-stats { position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.48);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.88);box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
-          .ecom-stat-col { padding:18px 20px;text-align:center;border-right:1px solid rgba(15,52,96,0.12); }
-          .ecom-stat-col:last-child { border-right:none; }
-          .ecom-stat-label { font-size:12px;color:#4A6080;font-weight:500;margin-bottom:6px; }
-          .ecom-stat-value { font-size:26px;font-weight:900;color:#D97706;letter-spacing:-0.5px;line-height:1; }
-
-          /* Clients */
-          .ecom-clients-bar { position:relative;z-index:2;padding:20px 40px 60px;max-width:1440px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px; }
-          .ecom-clients-label { font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#D97706; }
-          .ecom-clients-logos { width:100%;overflow:hidden; }
-          .ecom-client-logo { height:26px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(100%);opacity:0.5;transition:opacity 0.25s,filter 0.25s; }
-          .ecom-client-logo:hover { opacity:0.85;filter:grayscale(0%); }
 
           /* Shared section tokens */
           .ecom-section-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:12px;display:block; }
@@ -481,22 +408,15 @@ export default function EcommerceWebsiteDevelopmentServices() {
           .ecom-rtag-slate   { background:rgba(100,116,139,0.10);border-color:rgba(100,116,139,0.28);color:#334155; }
 
           /* Shimmer */
-          .ecom-btn-hero-shimmer { position:relative;overflow:hidden; }
-          .ecom-btn-hero-shimmer::after { content:'';position:absolute;top:-10%;left:-120%;width:80%;height:120%;background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,0.78) 45%,rgba(255,255,255,0.92) 50%,rgba(255,255,255,0.78) 55%,transparent 100%);animation:ecom-shimmer-sweep 2.5s ease-in-out infinite;pointer-events:none; }
-          @keyframes ecom-shimmer-sweep { 0%{left:-120%} 35%,100%{left:160%} }
 
           /* Section reveal */
           .ecom-section-reveal { opacity:0;transform:translateY(48px);transition:opacity 0.7s cubic-bezier(0.22,1,0.36,1),transform 0.7s cubic-bezier(0.22,1,0.36,1); }
           .ecom-section-reveal.ecom-revealed { opacity:1;transform:translateY(0); }
 
           /* Logo marquee */
-          .ecom-logos-track { display:flex;align-items:center;gap:60px;width:max-content;animation:ecom-marquee 28s linear infinite; }
-          .ecom-logos-track:hover { animation-play-state:paused; }
-          @keyframes ecom-marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
 
           /* Responsive */
           @media (max-width:1024px) {
-            .ecom-hero-content h1 { font-size:40px; }
             .ecom-services-grid { grid-template-columns:repeat(2,1fr); }
             .ecom-why-grid { grid-template-columns:repeat(2,1fr); }
             .ecom-portfolio-grid { grid-template-columns:repeat(2,1fr); }
@@ -506,19 +426,6 @@ export default function EcommerceWebsiteDevelopmentServices() {
           }
           @media (max-width:768px) {
             .ecom-page { overflow-x:hidden; }
-            .ecom-hero-content { padding:36px 20px 24px; }
-            .ecom-hero-content h1 { font-size:28px;letter-spacing:-0.3px; }
-            .ecom-hero-content p { font-size:15px; }
-            .ecom-platforms { gap:6px; }
-            .ecom-platform-badge { font-size:11px;padding:5px 10px; }
-            .ecom-hero-stats { grid-template-columns:1fr 1fr;max-width:100%; }
-            .ecom-stat-col { padding:14px 12px; }
-            .ecom-stat-col:nth-child(2) { border-right:none; }
-            .ecom-stat-col:nth-child(3) { border-top:1px solid rgba(15,52,96,0.12); }
-            .ecom-stat-col:nth-child(4) { border-top:1px solid rgba(15,52,96,0.12);border-right:none; }
-            .ecom-stat-value { font-size:22px; }
-            .ecom-clients-bar { padding:16px 20px 36px;gap:12px; }
-            .ecom-client-logo { height:20px; }
             .ecom-services-section { padding:48px 20px 40px; }
             .ecom-portfolio-section { padding:48px 16px; }
             .ecom-portfolio-wrap { padding:24px 20px 32px;border-radius:16px; }
@@ -560,7 +467,6 @@ export default function EcommerceWebsiteDevelopmentServices() {
             .ecom-stat-number { font-size:28px; }
           }
           @media (max-width:480px) {
-            .ecom-hero-content h1 { font-size:24px; }
             .ecom-section-title,.ecom-engage-title,.ecom-process-main-title,.ecom-related-title { font-size:26px; }
             .ecom-services-grid { grid-template-columns:1fr; }
             .ecom-service-card { padding:20px 18px 18px; }
@@ -587,50 +493,18 @@ export default function EcommerceWebsiteDevelopmentServices() {
         </div>
 
         {/* ── HERO ── */}
-        <div className="ecom-hero-block">
-          <div className="ecom-hero-content">
-            <span className="ecom-eyebrow">Full-Service eCommerce Development Company</span>
-            <h1>eCommerce Website Development Services - <AuroraText>Built to Sell, Engineered to Scale</AuroraText></h1>
-            <p>From DTC Shopify stores to enterprise Magento platforms and fully custom-built commerce solutions - 1Solutions has been delivering high-performing online stores for US, Canada, and Australia businesses since 2008. We combine 15+ years of platform expertise with a conversion-first mindset to build stores that don't just look great - they grow your revenue.</p>
-            <div className="ecom-platforms">
-              {[['Shopify','ecom-pb-shopify'],['WooCommerce','ecom-pb-woo'],['Magento','ecom-pb-magento'],['OpenCart','ecom-pb-opencart'],['Custom Build','ecom-pb-custom']].map(([label,cls]) => (
-                <span className={`ecom-platform-badge ${cls}`} key={label}>{label}</span>
-              ))}
-            </div>
-            <Link href="#contact" className="ecom-btn-hero ecom-btn-hero-shimmer">Get a Free eCommerce Consultation</Link>
-          </div>
-
-          <div className="ecom-hero-stats" ref={statsRef}>
-            {[['Online Stores Built','500+'],['e-Commerce Experts','50+'],['Projects Delivered','1,200+'],['Years in Business','15+']].map(([label,val]) => (
-              <AnimatedStat key={label} label={label} val={val} started={statsStarted} />
-            ))}
-          </div>
-
-          <div className="ecom-clients-bar">
-            <span className="ecom-clients-label">Trusted by Leading Brands</span>
-            <div className="ecom-clients-logos">
-              <div className="ecom-logos-track">
-                {[
-                  ['/logo/Indian_Express_Logo_full.png','Indian Express'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],
-                  ['/logo/Uniphore.jpg','Uniphore'],
-                  ['/logo/ICCoLogo.png','ICC'],
-                  ['/logo/Honor_Logo_(2020).svg.png','Honor'],
-                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],
-                  ['/logo/Indian_Express_Logo_full.png','Indian Express2'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon2'],
-                  ['/logo/Uniphore.jpg','Uniphore2'],
-                  ['/logo/ICCoLogo.png','ICC2'],
-                  ['/logo/Honor_Logo_(2020).svg.png','Honor2'],
-                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv2'],
-                ].map(([src,alt]) => (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img key={alt} src={src} alt={alt.replace(/\d+$/,'')} className="ecom-client-logo" />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="Full-Service eCommerce Development Company · Shopify · WooCommerce · Magento"
+          title={<>eCommerce Website Development Services - <AuroraText>Built to Sell, Engineered to Scale</AuroraText></>}
+          subtext="From DTC Shopify stores to enterprise Magento platforms and fully custom-built commerce solutions - 1Solutions has been delivering high-performing online stores for US, Canada, and Australia businesses since 2008. We combine 15+ years of platform expertise with a conversion-first mindset to build stores that don't just look great - they grow your revenue."
+          primaryCta={{ label: 'Get a Free eCommerce Consultation', href: '#contact' }}
+          stats={[
+            { label: 'Online Stores Built', value: '500', suffix: '+' },
+            { label: 'e-Commerce Experts', value: '50', suffix: '+' },
+            { label: 'Projects Delivered', value: '1,200', suffix: '+' },
+            { label: 'Years in Business', value: '15', suffix: '+' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="ecom-services-section">

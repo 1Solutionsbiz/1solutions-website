@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'Influencer Strategy & Campaign Planning', desc: 'Data-backed campaign blueprints aligned to your brand goals, target audience, and budget - built before a single creator is approached.' },
@@ -72,13 +74,6 @@ const FAQS = [
     q: 'What types of ecommerce products work best with influencer marketing?',
     a: 'Visually driven product categories see the strongest results: fashion and apparel, beauty and skincare, health and wellness, home décor, food and beverage, fitness equipment, baby and parenting products, and pet care. Products with clear visual transformation (before/after) or strong lifestyle association perform especially well on Instagram and TikTok. That said, even B2B and tech products can succeed on YouTube and LinkedIn with the right creator type. During our discovery call, we\'ll assess your product\'s fit and recommend the optimal platform mix.',
   },
-];
-
-const STATS = [
-  { label: 'Creators in Network', val: '50,000+' },
-  { label: 'Campaigns Delivered', val: '300+' },
-  { label: 'Average Engagement Rate', val: '4.8%' },
-  { label: 'Client Retention', val: '94%' },
 ];
 
 export default function InfluencerMarketing() {
@@ -184,78 +179,6 @@ export default function InfluencerMarketing() {
           }
           .im-page *, .im-page *::before, .im-page *::after { box-sizing: border-box; }
 
-          /* ── Hero ── */
-          .im-hero {
-            background: linear-gradient(135deg, #fdf2f8 0%, #ede9fe 30%, #e0f2fe 60%, #fef3c7 100%);
-            position: relative;
-            overflow: hidden;
-            padding: 80px 40px 0;
-          }
-          .im-hero-orb1 {
-            position: absolute; top: -120px; right: -120px;
-            width: 600px; height: 600px; border-radius: 50%;
-            background: radial-gradient(circle, rgba(190,24,93,0.12) 0%, transparent 65%);
-            pointer-events: none; filter: blur(30px);
-          }
-          .im-hero-orb2 {
-            position: absolute; bottom: 0; left: -100px;
-            width: 500px; height: 500px; border-radius: 50%;
-            background: radial-gradient(circle, rgba(109,40,217,0.10) 0%, transparent 65%);
-            pointer-events: none; filter: blur(30px);
-          }
-          .im-hero-inner {
-            max-width: 1280px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-            text-align: center;
-          }
-
-
-
-          .im-eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(190,24,93,0.08);
-            border: 1px solid rgba(190,24,93,0.18);
-            border-radius: 100px;
-            padding: 5px 14px;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: #BE185D;
-            margin-bottom: 28px;
-          }
-          .im-hero-h1 {
-            font-size: clamp(2.2rem, 5vw, 3.6rem);
-            font-weight: 900;
-            line-height: 1.1;
-            letter-spacing: -1px;
-            background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 20px;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-          }
-          .im-hero-sub {
-            font-size: 1.08rem;
-            color: #4A6080;
-            line-height: 1.75;
-            max-width: 640px;
-            margin: 0 auto 36px;
-          }
-          .im-hero-btns {
-            display: flex;
-            gap: 14px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 56px;
-          }
           .im-btn-primary {
             display: inline-flex;
             align-items: center;
@@ -295,27 +218,6 @@ export default function InfluencerMarketing() {
             color: #BE185D;
             transform: translateY(-2px);
           }
-
-          /* Stats bar */
-          .im-stats-bar {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            max-width: 900px;
-            margin: 0 auto;
-            background: rgba(255,255,255,0.50);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255,255,255,0.85);
-            border-radius: 20px 20px 0 0;
-            box-shadow: 0 4px 24px rgba(15,52,96,0.08);
-          }
-          .im-stat {
-            padding: 20px 24px;
-            text-align: center;
-            border-right: 1px solid rgba(15,52,96,0.08);
-          }
-          .im-stat:last-child { border-right: none; }
-          .im-stat-label { font-size: 11px; color: #6b7280; font-weight: 500; margin-bottom: 4px; }
-          .im-stat-val { font-size: 1.6rem; font-weight: 900; color: #BE185D; letter-spacing: -0.5px; }
 
           /* ── Services ── */
           .im-services-section {
@@ -649,15 +551,11 @@ export default function InfluencerMarketing() {
             .im-why-grid { grid-template-columns: repeat(2, 1fr); }
           }
           @media (max-width: 768px) {
-            .im-hero { padding: 60px 24px 0; }
             .im-services-section, .im-platforms-section, .im-process-section,
             .im-why-section, .im-faq-section, .im-cta-section { padding: 60px 24px; }
-            .im-stats-bar { grid-template-columns: repeat(2, 1fr); border-radius: 16px 16px 0 0; }
-            .im-stat:nth-child(2) { border-right: none; }
             .im-services-grid { grid-template-columns: 1fr; }
             .im-why-grid { grid-template-columns: 1fr; }
             .im-process-step { grid-template-columns: 56px 1fr; }
-            .im-hero-btns { flex-direction: column; align-items: center; }
           }
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
@@ -668,41 +566,19 @@ export default function InfluencerMarketing() {
       <div className="im-page">
 
         {/* ── HERO ── */}
-        <section className="im-hero">
-          <div className="im-hero-orb1" />
-          <div className="im-hero-orb2" />
-          <div className="im-hero-inner">
-            <span className="im-eyebrow">
-              <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#BE185D', display: 'inline-block' }} />
-              Ecommerce Marketing
-            </span>
-            <h1 className="im-hero-h1">
-              Influencer Marketing Services That Drive Real Ecommerce Growth
-            </h1>
-            <p className="im-hero-sub">
-              We connect ecommerce brands with the right creators - not just the biggest ones. Data-backed influencer campaigns on Instagram, TikTok, YouTube, and more, built for measurable ROI.
-            </p>
-            <div className="im-hero-btns">
-              <Link href="/contact-us" className="im-btn-primary">
-                Get a Free Strategy Call
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </Link>
-              <Link href="/case-studies" className="im-btn-secondary">
-                View Our Work
-              </Link>
-            </div>
-
-            {/* Stats bar */}
-            <div className="im-stats-bar">
-              {STATS.map(s => (
-                <div key={s.label} className="im-stat">
-                  <div className="im-stat-label">{s.label}</div>
-                  <div className="im-stat-val">{s.val}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Ecommerce Marketing"
+          title={<>Influencer Marketing Services That Drive <AuroraText>Real Ecommerce Growth</AuroraText></>}
+          subtext="We connect ecommerce brands with the right creators - not just the biggest ones. Data-backed influencer campaigns on Instagram, TikTok, YouTube, and more, built for measurable ROI."
+          primaryCta={{ label: 'Get a Free Strategy Call', href: '/contact-us' }}
+          secondaryCta={{ label: 'View Our Work', href: '/case-studies' }}
+          stats={[
+            { label: 'Creators in Network', value: '50,000', suffix: '+' },
+            { label: 'Campaigns Delivered', value: '300', suffix: '+' },
+            { label: 'Average Engagement Rate', value: '8', prefix: '4.', suffix: '%' },
+            { label: 'Client Retention', value: '94', suffix: '%' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="im-services-section">

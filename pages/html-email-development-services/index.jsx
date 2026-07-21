@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n:'01', title:'Custom HTML Email Templates', desc:'Hand-coded, pixel-perfect email templates built from scratch to match your brand — no drag-and-drop, no bloated builders, no rendering surprises.', featured:false },
@@ -59,47 +61,14 @@ const INDUSTRIES = [
   { icon:'⚖️', title:'Professional Services', desc:'Client communications, proposal follow-ups, invoice emails, and newsletter campaigns for agencies and consulting firms.' },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const numTarget = parseInt(String(target).replace(/\D/g, ''), 10);
-    if (!numTarget) return;
-    let startTime = null;
-    const step = (ts) => {
-      if (!startTime) startTime = ts;
-      const progress = Math.min((ts - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * numTarget));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function AnimatedStat({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,.]/g, '');
-  const display = started ? num + suffix : val;
-  return (
-    <div className="he-stat-col">
-      <div className="he-stat-label">{label}</div>
-      <div className="he-stat-value">{display}</div>
-    </div>
-  );
-}
-
 export default function HtmlEmailDevelopmentServices() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleSteps, setVisibleSteps] = useState([]);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const stepRefs = useRef([]);
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
@@ -120,16 +89,6 @@ export default function HtmlEmailDevelopmentServices() {
       return obs;
     });
     return () => observers.forEach(o => o && o.disconnect());
-  }, []);
-
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setStatsStarted(true); obs.disconnect(); } },
-      { threshold: 0.5 }
-    );
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
   }, []);
 
   useEffect(() => {
@@ -305,37 +264,6 @@ export default function HtmlEmailDevelopmentServices() {
           .he-aurora-b2 { position:absolute; left:78%; top:22%; width:48%; height:48%; border-radius:50%; background:radial-gradient(circle at center,rgba(217,119,6,0.20) 0%,transparent 70%); transform:translate(-50%,-50%); }
           .he-aurora-b3 { position:absolute; left:50%; top:82%; width:55%; height:55%; border-radius:50%; background:radial-gradient(circle at center,rgba(26,82,118,0.16) 0%,transparent 70%); transform:translate(-50%,-50%); }
           @keyframes he-aurora-drift { 0%{transform:translate3d(0,0,0) scale(1)} 100%{transform:translate3d(-4%,3%,0) scale(1.10)} }
-
-          /* Hero */
-          .he-hero-block { background:transparent;position:relative;overflow:hidden; }
-          .he-hero-block::before { content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.12) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px); }
-          .he-hero-block::after { content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.18) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px); }
-          .he-hero-content { position:relative;z-index:2;text-align:center;max-width:860px;margin:0 auto;padding:56px 40px 40px; }
-          .he-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:18px; }
-          .he-hero-content h1 { font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .he-hero-content p { font-size:16px;color:#3A507A;line-height:1.65;max-width:620px;margin:0 auto 28px; }
-          .he-btn-hero { display:inline-block;padding:14px 40px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1); }
-          .he-btn-hero:hover { background:rgba(255,255,255,0.85);border-color:rgba(245,158,11,0.6);box-shadow:0 12px 36px rgba(15,52,96,0.15),0 0 0 2px rgba(245,158,11,0.22),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px);color:#0F3460; }
-          .he-btn-hero-shimmer { position:relative;overflow:hidden; }
-          .he-btn-hero-shimmer::after { content:'';position:absolute;top:-10%;left:-120%;width:80%;height:120%;background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,0.75) 45%,rgba(255,255,255,0.9) 50%,rgba(255,255,255,0.75) 55%,transparent 100%);animation:he-shimmer 2.5s ease-in-out infinite;pointer-events:none; }
-          @keyframes he-shimmer { 0% { left:-120%; } 35%,100% { left:160%; } }
-
-          /* Stats bar */
-          .he-hero-stats { position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
-          .he-stat-col { padding:18px 20px;text-align:center;border-right:1px solid rgba(15,52,96,0.10); }
-          .he-stat-col:last-child { border-right:none; }
-          .he-stat-label { font-size:12px;color:#4A6080;font-weight:500;margin-bottom:6px; }
-          .he-stat-value { font-size:26px;font-weight:900;color:#D97706;letter-spacing:-0.5px;line-height:1; }
-
-          /* Client logos */
-          .he-clients-bar { position:relative;z-index:2;padding:20px 40px 60px;max-width:1440px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px; }
-          .he-clients-label { font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6A80A0; }
-          .he-clients-logos { width:100%;overflow:hidden; }
-          .he-logos-track { display:flex;align-items:center;gap:60px;width:max-content;animation:he-marquee 28s linear infinite; }
-          .he-logos-track:hover { animation-play-state:paused; }
-          @keyframes he-marquee { 0% { transform:translateX(0); } 100% { transform:translateX(-50%); } }
-          .he-client-logo { height:26px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(100%);opacity:0.5;transition:opacity 0.25s,filter 0.25s; }
-          .he-client-logo:hover { opacity:0.85;filter:grayscale(0%); }
 
           /* Shared section styles */
           .he-section-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:12px;display:block; }
@@ -577,7 +505,6 @@ export default function HtmlEmailDevelopmentServices() {
             .he-page { background-attachment:scroll !important;background:linear-gradient(160deg,#dbeafe 0%,#ede9fe 30%,#e0f2fe 55%,#fef3c7 78%,#fce7f3 100%) !important; }
           }
           @media (max-width:1024px) {
-            .he-hero-content h1 { font-size:40px; }
             .he-services-grid { grid-template-columns:repeat(2,1fr); }
             .he-why-grid { grid-template-columns:repeat(2,1fr); }
             .he-tech-grid { grid-template-columns:repeat(2,1fr); }
@@ -586,16 +513,6 @@ export default function HtmlEmailDevelopmentServices() {
             .he-process-image-col { display:none; }
           }
           @media (max-width:768px) {
-            .he-hero-content { padding:36px 20px 24px; }
-            .he-hero-content h1 { font-size:28px;letter-spacing:-0.3px; }
-            .he-hero-content p { font-size:15px; }
-            .he-hero-stats { grid-template-columns:1fr 1fr;max-width:100%; }
-            .he-stat-col { padding:14px 12px; }
-            .he-stat-col:nth-child(2) { border-right:none; }
-            .he-stat-col:nth-child(3) { border-top:1px solid rgba(15,52,96,0.10); }
-            .he-stat-col:nth-child(4) { border-top:1px solid rgba(15,52,96,0.10);border-right:none; }
-            .he-stat-value { font-size:22px; }
-            .he-clients-bar { padding:16px 20px 36px;gap:12px; }
             .he-def-section { padding:60px 20px; }
             .he-def-block { padding:28px 20px; }
             .he-def-title { font-size:24px; }
@@ -640,7 +557,6 @@ export default function HtmlEmailDevelopmentServices() {
             .he-section-title,.he-engage-title,.he-process-main-title,.he-related-title { font-size:30px; }
           }
           @media (max-width:480px) {
-            .he-hero-content h1 { font-size:24px; }
             .he-section-title,.he-engage-title,.he-process-main-title,.he-related-title { font-size:26px; }
             .he-services-grid { grid-template-columns:1fr; }
             .he-service-card { padding:20px 18px 18px; }
@@ -666,51 +582,18 @@ export default function HtmlEmailDevelopmentServices() {
         </div>
 
         {/* ── HERO ── */}
-        <div className="he-hero-block">
-          <div className="he-hero-content">
-            <span className="he-eyebrow">Professional HTML Email Development · Since 2008</span>
-            <h1>HTML Email Development Services — Pixel-Perfect Emails That Render Everywhere</h1>
-            <p>Hand-coded, responsive HTML email templates tested across 90+ email clients. From transactional triggers to full campaign suites — built for Klaviyo, Mailchimp, HubSpot, Salesforce MC, and every major ESP.</p>
-            <Link href="#contact" className="he-btn-hero he-btn-hero-shimmer">Get a Free Email Template Quote</Link>
-          </div>
-          <div className="he-hero-stats" ref={statsRef}>
-            {[['Email Templates Built','150+'],['ESPs Supported','12+'],['Email Clients Tested','90+'],['Client Satisfaction','4.9/5']].map(([label, val]) => (
-              <AnimatedStat key={label} label={label} val={val} started={statsStarted} />
-            ))}
-          </div>
-          <div className="he-clients-bar">
-            <span className="he-clients-label">Trusted by Leading Brands</span>
-            <div className="he-clients-logos">
-              <div className="he-logos-track">
-                {[
-                  ['/logo/Indian_Express_Logo_full.png','Indian Express'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],
-                  ['/logo/Uniphore.jpg','Uniphore'],
-                  ['/logo/ICCoLogo.png','ICC'],
-                  ['/logo/Honor_Logo_(2020).svg.png','Honor'],
-                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],
-                  ['/logo/amarujala-print-logo_60e03f7d5b4a8.webp','Amar Ujala'],
-                  ['/logo/Nuance-Symbol-500x281.png','Nuance'],
-                  ['/logo/PHDCCI-Logo-2024.png','PHD Chamber'],
-                  ['/logo/Wilson-logo.svg.png','Wilson'],
-                  ['/logo/Indian_Express_Logo_full.png','Indian Express2'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon2'],
-                  ['/logo/Uniphore.jpg','Uniphore2'],
-                  ['/logo/ICCoLogo.png','ICC2'],
-                  ['/logo/Honor_Logo_(2020).svg.png','Honor2'],
-                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv2'],
-                  ['/logo/amarujala-print-logo_60e03f7d5b4a8.webp','Amar Ujala2'],
-                  ['/logo/Nuance-Symbol-500x281.png','Nuance2'],
-                  ['/logo/PHDCCI-Logo-2024.png','PHD Chamber2'],
-                  ['/logo/Wilson-logo.svg.png','Wilson2'],
-                ].map(([src, alt]) => (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img key={alt} src={src} alt={alt.replace(/\d+$/, '')} className="he-client-logo" />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="Professional HTML Email Development · Since 2008"
+          title={<>HTML Email Development Services — <AuroraText>Pixel-Perfect Emails That Render Everywhere</AuroraText></>}
+          subtext="Hand-coded, responsive HTML email templates tested across 90+ email clients. From transactional triggers to full campaign suites — built for Klaviyo, Mailchimp, HubSpot, Salesforce MC, and every major ESP."
+          primaryCta={{ label: 'Get a Free Email Template Quote', href: '#contact' }}
+          stats={[
+            { label: 'Email Templates Built', value: '150', suffix: '+' },
+            { label: 'ESPs Supported', value: '12', suffix: '+' },
+            { label: 'Email Clients Tested', value: '90', suffix: '+' },
+            { label: 'Client Satisfaction', value: '9', prefix: '4.', suffix: '/5' },
+          ]}
+        />
 
         {/* ── DEFINITION ── */}
         <section className="he-def-section">

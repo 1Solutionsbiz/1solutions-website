@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n:'01', title:'Intelligent Process Automation', desc:'Replace rule-based RPA with AI-driven automation that handles exceptions, adapts to process changes, and reasons through ambiguous scenarios without human intervention.', featured:false },
@@ -40,48 +42,14 @@ const WHY = [
   { icon:<svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>, title:'Continuous Improvement', desc:'AI automation improves with use. We set up feedback loops, monitoring dashboards, and quarterly optimisation reviews so your automations get better — not stale — over time.' },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const numTarget = parseInt(target.replace(/\D/g, ''), 10);
-    if (!numTarget) return;
-    let startTime = null;
-    const step = (ts) => {
-      if (!startTime) startTime = ts;
-      const progress = Math.min((ts - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * numTarget));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function AnimatedStat({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');
-  const hasComma = val.includes(',');
-  const display = started ? (hasComma ? num.toLocaleString() : num) + suffix : val;
-  return (
-    <div className="aas-stat-col">
-      <div className="aas-stat-label">{label}</div>
-      <div className="aas-stat-value">{display}</div>
-    </div>
-  );
-}
-
 export default function AIAutomationServices() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleSteps, setVisibleSteps] = useState([]);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const stepRefs = useRef([]);
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
@@ -102,16 +70,6 @@ export default function AIAutomationServices() {
       return obs;
     });
     return () => observers.forEach(o => o && o.disconnect());
-  }, []);
-
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setStatsStarted(true); obs.disconnect(); } },
-      { threshold: 0.5 }
-    );
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
   }, []);
 
   useEffect(() => {
@@ -219,31 +177,6 @@ export default function AIAutomationServices() {
           .aas-aurora-b2 { position:absolute; left:78%; top:22%; width:48%; height:48%; border-radius:50%; background:radial-gradient(circle at center,rgba(217,119,6,0.20) 0%,transparent 70%); transform:translate(-50%,-50%); }
           .aas-aurora-b3 { position:absolute; left:50%; top:82%; width:55%; height:55%; border-radius:50%; background:radial-gradient(circle at center,rgba(26,82,118,0.16) 0%,transparent 70%); transform:translate(-50%,-50%); }
           @keyframes aas-aurora-drift { 0%{transform:translate3d(0,0,0) scale(1)} 100%{transform:translate3d(-4%,3%,0) scale(1.10)} }
-
-          /* Hero */
-          .aas-hero-block { background:transparent;position:relative;overflow:hidden; }
-          .aas-hero-block::before { content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,0.14) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px); }
-          .aas-hero-block::after { content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(236,72,153,0.14) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px); }
-          .aas-hero-content { position:relative;z-index:2;text-align:center;max-width:860px;margin:0 auto;padding:56px 40px 40px; }
-          .aas-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:18px; }
-          .aas-hero-content h1 { font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aas-aurora 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .aas-hero-content p { font-size:16px;color:#3A507A;line-height:1.65;max-width:640px;margin:0 auto 28px; }
-          .aas-btn-hero { display:inline-block;padding:14px 40px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#3730a3;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(55,48,163,0.10),inset 0 1px 0 rgba(255,255,255,1); }
-          .aas-btn-hero:hover { background:rgba(255,255,255,0.85);border-color:rgba(124,58,237,0.5);box-shadow:0 12px 36px rgba(55,48,163,0.15),0 0 0 2px rgba(124,58,237,0.18),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px);color:#3730a3; }
-
-          /* Stats bar */
-          .aas-hero-stats { position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);box-shadow:0 4px 24px rgba(55,48,163,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
-          .aas-stat-col { padding:18px 20px;text-align:center;border-right:1px solid rgba(55,48,163,0.10); }
-          .aas-stat-col:last-child { border-right:none; }
-          .aas-stat-label { font-size:12px;color:#4A6080;font-weight:500;margin-bottom:6px; }
-          .aas-stat-value { font-size:26px;font-weight:900;color:#7c3aed;letter-spacing:-0.5px;line-height:1; }
-
-          /* Clients */
-          .aas-clients-bar { position:relative;z-index:2;padding:20px 40px 60px;max-width:1440px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px; }
-          .aas-clients-label { font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6A80A0; }
-          .aas-clients-logos { width:100%;overflow:hidden; }
-          .aas-client-logo { height:26px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(100%);opacity:0.5;transition:opacity 0.25s,filter 0.25s; }
-          .aas-client-logo:hover { opacity:0.85;filter:grayscale(0%); }
 
           /* Shared section styles */
           .aas-section-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7c3aed;margin-bottom:12px;display:block; }
@@ -464,24 +397,14 @@ export default function AIAutomationServices() {
           .aas-rtag-slate   { background:rgba(100,116,139,0.10);border-color:rgba(100,116,139,0.28);color:#334155; }
           .aas-rtag-orange  { background:rgba(249,115,22,0.10);border-color:rgba(249,115,22,0.30);color:#C2410C; }
 
-          /* Shimmer */
-          .aas-btn-hero-shimmer { position:relative;overflow:hidden; }
-          .aas-btn-hero-shimmer::after { content:'';position:absolute;top:-10%;left:-120%;width:80%;height:120%;background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,0.75) 45%,rgba(255,255,255,0.9) 50%,rgba(255,255,255,0.75) 55%,transparent 100%);animation:aas-shimmer 2.5s ease-in-out infinite;pointer-events:none; }
-          @keyframes aas-shimmer { 0% { left:-120%; } 35%,100% { left:160%; } }
           @keyframes aas-aurora { 0%,100% { background-position:0% 50%; } 50% { background-position:100% 50%; } }
 
           /* Section fade-up */
           .aas-section-reveal { opacity:0;transform:translateY(48px);transition:opacity 0.7s cubic-bezier(0.22,1,0.36,1),transform 0.7s cubic-bezier(0.22,1,0.36,1); }
           .aas-section-reveal.aas-revealed { opacity:1;transform:translateY(0); }
 
-          /* Marquee */
-          .aas-logos-track { display:flex;align-items:center;gap:60px;width:max-content;animation:aas-marquee 28s linear infinite; }
-          .aas-logos-track:hover { animation-play-state:paused; }
-          @keyframes aas-marquee { 0% { transform:translateX(0); } 100% { transform:translateX(-50%); } }
-
           /* Responsive */
           @media (max-width:1024px) {
-            .aas-hero-content h1 { font-size:40px; }
             .aas-services-grid { grid-template-columns:repeat(2,1fr); }
             .aas-why-grid { grid-template-columns:repeat(2,1fr); }
             .aas-tech-groups { grid-template-columns:repeat(2,1fr); }
@@ -490,16 +413,6 @@ export default function AIAutomationServices() {
           }
           @media (max-width:768px) {
             .aas-page { overflow-x:hidden; }
-            .aas-hero-content { padding:36px 20px 24px; }
-            .aas-hero-content h1 { font-size:28px;letter-spacing:-0.3px; }
-            .aas-hero-content p { font-size:15px; }
-            .aas-hero-stats { grid-template-columns:1fr 1fr;max-width:100%; }
-            .aas-stat-col { padding:14px 12px; }
-            .aas-stat-col:nth-child(2) { border-right:none; }
-            .aas-stat-col:nth-child(3) { border-top:1px solid rgba(55,48,163,0.10); }
-            .aas-stat-col:nth-child(4) { border-top:1px solid rgba(55,48,163,0.10);border-right:none; }
-            .aas-stat-value { font-size:22px; }
-            .aas-clients-bar { padding:16px 20px 36px;gap:12px; }
             .aas-services-section { padding:48px 20px 40px; }
             .aas-tech-section { padding:48px 16px; }
             .aas-tech-wrap { padding:24px 20px 32px;border-radius:16px; }
@@ -539,7 +452,6 @@ export default function AIAutomationServices() {
             .aas-tech-title { font-size:26px; }
           }
           @media (max-width:480px) {
-            .aas-hero-content h1 { font-size:24px; }
             .aas-section-title,.aas-engage-title,.aas-process-main-title,.aas-related-title { font-size:26px; }
             .aas-services-grid { grid-template-columns:1fr; }
             .aas-service-card { padding:20px 18px 18px; }
@@ -561,45 +473,18 @@ export default function AIAutomationServices() {
         </div>
 
         {/* ── HERO ── */}
-        <div className="aas-hero-block">
-          <div className="aas-hero-content">
-            <span className="aas-eyebrow">AI Automation Company — US, Canada & Australia</span>
-            <h1>AI Automation Services That Eliminate Manual Work and Scale Your Operations</h1>
-            <p>From intelligent document processing and AI chatbots to end-to-end workflow automation — 1Solutions builds production-grade AI systems that run reliably, save thousands of hours, and deliver measurable ROI within months.</p>
-            <Link href="#contact" className="aas-btn-hero aas-btn-hero-shimmer">Get a Free Automation Audit</Link>
-          </div>
-
-          <div className="aas-hero-stats" ref={statsRef}>
-            {[['Automations Delivered','150+'],['Hours Saved / Month','10,000+'],['Industries Served','20+'],['Client Retention','97%']].map(([label,val]) => (
-              <AnimatedStat key={label} label={label} val={val} started={statsStarted} />
-            ))}
-          </div>
-
-          <div className="aas-clients-bar">
-            <span className="aas-clients-label">Trusted by Leading Brands</span>
-            <div className="aas-clients-logos">
-              <div className="aas-logos-track">
-                {[
-                  ['/logo/Indian_Express_Logo_full.png','Indian Express'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],
-                  ['/logo/Uniphore.jpg','Uniphore'],
-                  ['/logo/ICCoLogo.png','ICC'],
-                  ['/logo/Honor_Logo_(2020).svg.png','Honor'],
-                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],
-                  ['/logo/Indian_Express_Logo_full.png','Indian Express2'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon2'],
-                  ['/logo/Uniphore.jpg','Uniphore2'],
-                  ['/logo/ICCoLogo.png','ICC2'],
-                  ['/logo/Honor_Logo_(2020).svg.png','Honor2'],
-                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv2'],
-                ].map(([src,alt]) => (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img key={alt} src={src} alt={alt.replace(/\d+$/,'')} className="aas-client-logo" />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="AI Automation Company — US, Canada & Australia"
+          title={<>AI Automation Services That <AuroraText>Eliminate Manual Work</AuroraText> and Scale Your Operations</>}
+          subtext="From intelligent document processing and AI chatbots to end-to-end workflow automation — 1Solutions builds production-grade AI systems that run reliably, save thousands of hours, and deliver measurable ROI within months."
+          primaryCta={{ label: 'Get a Free Automation Audit', href: '#contact' }}
+          stats={[
+            { label: 'Automations Delivered', value: '150', suffix: '+' },
+            { label: 'Hours Saved / Month', value: '10,000', suffix: '+' },
+            { label: 'Industries Served', value: '20', suffix: '+' },
+            { label: 'Client Retention', value: '97', suffix: '%' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="aas-services-section">

@@ -2,6 +2,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const ACCENT = '#0071CE';
 const DARK   = '#001d3d';
@@ -23,13 +25,6 @@ const services = [
   { icon: 'M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z', title: 'Category Taxonomy & Attribute Management', desc: "Correct category assignment and complete attribute data are critical for Walmart search. We ensure every item is mapped to the right taxonomy and has full attribute coverage per Walmart's spec sheets." },
   { icon: 'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z', title: 'Review & Rating Management', desc: "Walmart's review system significantly impacts conversion and search rank. We implement structured review generation strategies and respond to customer feedback to build your seller reputation." },
   { icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'Monthly Performance Reporting', desc: 'Detailed monthly reports covering sales velocity, item quality scores, ad performance, competitor pricing, and WFS inventory — with a clear action plan for the next 30 days.' },
-];
-
-const stats = [
-  { num: '120', suffix: 'M+', lbl: 'Walmart.com monthly visitors' },
-  { num: '82', suffix: 'B+', lbl: 'Walmart eCommerce GMV (2024)' },
-  { num: '43', suffix: 'x', lbl: 'avg revenue growth · 8 months' },
-  { num: '98', suffix: '%', lbl: 'listing approval rate' },
 ];
 
 const results = [
@@ -90,56 +85,21 @@ const FAQS = [
   { q: 'What seller account access do you need to manage our Walmart account?', a: 'We work with the minimum access level required. For most engagements we request secondary user access within your Seller Center account, which you can revoke at any time. We never ask for your primary login credentials and operate under strict data security protocols throughout the engagement.' },
 ];
 
-const trust = ['Walmart Seller Center Experts', 'WFS-Certified Setup', 'No Lock-In Contracts', 'Dedicated Account Manager'];
-
-function useCountUp(target, duration, active) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!active) return;
-    const n = parseInt(String(target).replace(/\D/g, ''), 10);
-    if (!n) return;
-    let t0 = null;
-    const tick = (ts) => {
-      if (!t0) t0 = ts;
-      const p = Math.min((ts - t0) / duration, 1);
-      setCount(Math.floor((1 - Math.pow(1 - p, 3)) * n));
-      if (p < 1) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-  }, [active, target, duration]);
-  return count;
-}
-
-function StatCard({ num, suffix, lbl, active }) {
-  const val = useCountUp(num, 1800, active);
-  return (
-    <div className="wlmt-stat-item">
-      <span className="wlmt-stat-num">{active ? val : num}{suffix}</span>
-      <span className="wlmt-stat-lbl">{lbl}</span>
-    </div>
-  );
-}
-
 export default function WalmartAccountManagement() {
   const [form, setForm]       = useState({ name: '', email: '', company: '', revenue: 'Not yet on Walmart', message: '' });
   const [sent, setSent]       = useState(false);
   const [sending, setSending] = useState(false);
   const [openFaq, setOpenFaq] = useState(null);
-  const [statsActive, setStatsActive] = useState(false);
   const [visibleSecs, setVisibleSecs] = useState(new Set());
-  const statsRef = useRef(null);
   const secRefs  = useRef({});
 
   useEffect(() => {
-    const statObs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStatsActive(true); statObs.disconnect(); } }, { threshold: 0.3 });
-    if (statsRef.current) statObs.observe(statsRef.current);
-
     const obs = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) setVisibleSecs(prev => new Set([...prev, e.target.dataset.sec])); });
     }, { threshold: 0.1 });
     Object.values(secRefs.current).forEach(el => { if (el) obs.observe(el); });
 
-    return () => { statObs.disconnect(); obs.disconnect(); };
+    return () => { obs.disconnect(); };
   }, []);
 
   async function handleSubmit(e) {
@@ -188,40 +148,7 @@ export default function WalmartAccountManagement() {
           *{box-sizing:border-box;margin:0;padding:0;}
           body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;}
 
-          .wlmt-hero{position:relative;overflow:hidden;padding:110px 40px 100px;background:linear-gradient(135deg,rgba(${RGB},0.09) 0%,rgba(255,255,255,0.97) 45%,rgba(0,29,61,0.06) 100%);}
-          .wlmt-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 40%,rgba(${RGB},0.07) 0%,transparent 70%);pointer-events:none;}
-          .wlmt-hero-dots{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(${RGB},0.14) 1px,transparent 1px);background-size:32px 32px;pointer-events:none;opacity:0.45;}
-          .wlmt-orb1{position:absolute;top:-180px;right:-180px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(${RGB},0.13) 0%,transparent 70%);pointer-events:none;filter:blur(20px);}
-          .wlmt-orb2{position:absolute;bottom:-120px;left:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(0,29,61,0.09) 0%,transparent 70%);pointer-events:none;filter:blur(16px);}
           .wlmt-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2;}
-          .wlmt-hero-layout{display:grid;grid-template-columns:1fr 420px;gap:64px;align-items:center;}
-          .wlmt-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(${RGB},0.09);border:1px solid rgba(${RGB},0.22);border-radius:50px;padding:6px 18px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:24px;}
-          .wlmt-eyebrow-dot{width:6px;height:6px;border-radius:50%;background:${ACCENT};animation:wlmt-pulse 2s ease infinite;}
-          @keyframes wlmt-pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(1.5);}}
-          .wlmt-h1{font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.1;letter-spacing:-1.5px;color:#0A1628;margin-bottom:24px;}
-          .wlmt-h1-accent{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-          .wlmt-desc{font-size:1.1rem;color:#4b5563;line-height:1.8;margin-bottom:32px;max-width:600px;}
-          .wlmt-trust{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:36px;}
-          .wlmt-badge{display:flex;align-items:center;gap:6px;font-size:12px;color:#374151;font-weight:600;}
-          .wlmt-badge svg{color:${ACCENT};}
-          .wlmt-btns{display:flex;gap:14px;flex-wrap:wrap;}
-          .wlmt-btn-p{display:inline-flex;align-items:center;gap:8px;background:${ACCENT};color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 8px 28px rgba(${RGB},0.30);}
-          .wlmt-btn-p:hover{opacity:0.9;transform:translateY(-2px);box-shadow:0 12px 36px rgba(${RGB},0.38);}
-          .wlmt-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.75);color:${ACCENT};padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;border:1.5px solid rgba(${RGB},0.25);transition:all 0.25s;backdrop-filter:blur(8px);}
-          .wlmt-btn-s:hover{background:#fff;transform:translateY(-2px);}
-
-          .wlmt-hero-card{background:rgba(255,255,255,0.88);backdrop-filter:blur(16px);border:1px solid rgba(${RGB},0.15);border-radius:24px;padding:36px;box-shadow:0 8px 40px rgba(${RGB},0.12),inset 0 1px 0 rgba(255,255,255,0.95);}
-          .wlmt-hero-card-title{font-size:12px;font-weight:700;color:${ACCENT};text-transform:uppercase;letter-spacing:0.12em;margin-bottom:22px;}
-          .wlmt-stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(${RGB},0.08);border-radius:16px;overflow:hidden;margin-bottom:22px;}
-          .wlmt-stat-item{background:#fff;display:flex;flex-direction:column;padding:20px;gap:4px;}
-          .wlmt-stat-num{font-size:2rem;font-weight:900;color:${ACCENT};line-height:1;letter-spacing:-1px;}
-          .wlmt-stat-lbl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;}
-          .wlmt-hero-card-cta{display:block;text-align:center;background:${ACCENT};color:#fff;padding:13px 20px;border-radius:50px;font-weight:700;font-size:0.9rem;text-decoration:none;transition:opacity 0.2s,transform 0.2s;}
-          .wlmt-hero-card-cta:hover{opacity:0.9;transform:translateY(-1px);}
-          .wlmt-hero-card-trust{font-size:11px;color:#9ca3af;text-align:center;margin-top:10px;}
-
-
-
           .wlmt-sec{padding:88px 40px;}
           .wlmt-bg{background:#f8fafd;}
           .wlmt-bg2{background:linear-gradient(135deg,rgba(${RGB},0.03) 0%,rgba(255,255,255,1) 50%,rgba(0,29,61,0.03) 100%);}
@@ -367,58 +294,25 @@ export default function WalmartAccountManagement() {
 
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 
-          @media(max-width:1100px){.wlmt-hero-layout{grid-template-columns:1fr;gap:48px;}.wlmt-hero-card{max-width:480px;}}
           @media(max-width:900px){.wlmt-grid4,.wlmt-why-grid{grid-template-columns:1fr 1fr;}.wlmt-grid3,.wlmt-testi-grid{grid-template-columns:1fr 1fr;}.wlmt-res-grid{grid-template-columns:1fr 1fr;}.wlmt-contact-grid{grid-template-columns:1fr;}.wlmt-grid2{grid-template-columns:1fr;}}
-          @media(max-width:600px){.wlmt-hero,.wlmt-sec,.wlmt-results,.wlmt-cta,.wlmt-contact-sec,.wlmt-faq-sec,.wlmt-rel-sec{padding-left:20px;padding-right:20px;}.wlmt-hero{padding-top:70px;padding-bottom:60px;}.wlmt-grid4,.wlmt-grid3,.wlmt-grid2,.wlmt-res-grid,.wlmt-testi-grid,.wlmt-why-grid{grid-template-columns:1fr;}.wlmt-field-row{grid-template-columns:1fr;}.wlmt-form-wrap{padding:28px 20px;}.wlmt-stats-grid{grid-template-columns:1fr 1fr;}.wlmt-cta-btns{flex-direction:column;align-items:center;}}
+          @media(max-width:600px){.wlmt-sec,.wlmt-results,.wlmt-cta,.wlmt-contact-sec,.wlmt-faq-sec,.wlmt-rel-sec{padding-left:20px;padding-right:20px;}.wlmt-grid4,.wlmt-grid3,.wlmt-grid2,.wlmt-res-grid,.wlmt-testi-grid,.wlmt-why-grid{grid-template-columns:1fr;}.wlmt-field-row{grid-template-columns:1fr;}.wlmt-form-wrap{padding:28px 20px;}.wlmt-cta-btns{flex-direction:column;align-items:center;}}
         `}</style>
       </Head>
 
       {/* ── HERO ── */}
-      <section className="wlmt-hero">
-        <div className="wlmt-hero-dots" />
-        <div className="wlmt-orb1" />
-        <div className="wlmt-orb2" />
-        <div className="wlmt-inner">
-          <div className="wlmt-hero-layout">
-            <div>
-              <div className="wlmt-eyebrow">
-                <span className="wlmt-eyebrow-dot" />
-                Walmart Marketplace Management
-              </div>
-              <h1 className="wlmt-h1">
-                Walmart Account Management That Puts Your Brand in Front of{' '}
-                <span className="wlmt-h1-accent">120M Monthly Shoppers</span>
-              </h1>
-              <p className="wlmt-desc">
-                Walmart is the fastest-growing US marketplace — and most sellers leave enormous revenue on the table by running it like a secondary channel. 1Solutions manages your full Walmart seller presence to capture market share while your competitors sleep.
-              </p>
-              <div className="wlmt-trust">
-                {trust.map((t, i) => (
-                  <span key={i} className="wlmt-badge">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 13l4 4L19 7"/></svg>
-                    {t}
-                  </span>
-                ))}
-              </div>
-              <div className="wlmt-btns">
-                <Link href="#contact" className="wlmt-btn-p">Get Free Walmart Audit →</Link>
-                <Link href="#services" className="wlmt-btn-s">See What We Manage</Link>
-              </div>
-            </div>
-
-            <div className="wlmt-hero-card" ref={statsRef}>
-              <div className="wlmt-hero-card-title">Walmart Marketplace at a Glance</div>
-              <div className="wlmt-stats-grid">
-                {stats.map((s, i) => (
-                  <StatCard key={i} num={s.num} suffix={s.suffix} lbl={s.lbl} active={statsActive} />
-                ))}
-              </div>
-              <Link href="#contact" className="wlmt-hero-card-cta">Start Your Free Walmart Audit →</Link>
-              <div className="wlmt-hero-card-trust">No commitment · Response within 24 hours</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="Walmart Marketplace Management"
+        title={<>Walmart Account Management That Puts Your Brand in Front of <AuroraText>120M Monthly Shoppers</AuroraText></>}
+        subtext="Walmart is the fastest-growing US marketplace — and most sellers leave enormous revenue on the table by running it like a secondary channel. 1Solutions manages your full Walmart seller presence to capture market share while your competitors sleep."
+        primaryCta={{ label: 'Get Free Walmart Audit', href: '#contact' }}
+        secondaryCta={{ label: 'See What We Manage', href: '#services' }}
+        stats={[
+          { label: 'Walmart.com monthly visitors', value: '120', suffix: 'M+' },
+          { label: 'Walmart eCommerce GMV (2024)', value: '82', suffix: 'B+' },
+          { label: 'Avg revenue growth · 8 months', value: '43', suffix: 'x' },
+          { label: 'Listing approval rate', value: '98', suffix: '%' },
+        ]}
+      />
 
       {/* ── CHALLENGES ── */}
       <section className="wlmt-sec wlmt-bg" ref={el => { secRefs.current.challenges = el; }} data-sec="challenges">

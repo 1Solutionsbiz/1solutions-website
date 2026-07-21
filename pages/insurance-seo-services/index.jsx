@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Insurance Keyword Strategy', desc: 'Comprehensive keyword mapping across auto insurance, home insurance, life insurance quotes, health insurance broker, commercial insurance, business liability, renters insurance, and umbrella policies - segmented by buyer intent stage so each page attracts the right prospect at the right moment.' },
@@ -85,29 +87,10 @@ export default function InsuranceSeoServices() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           * { box-sizing: border-box; }
-          .inseo-hero { position:relative;overflow:hidden;padding:100px 40px 90px;background:linear-gradient(135deg,rgba(0,24,51,0.10) 0%,rgba(255,255,255,0.72) 50%,rgba(0,24,51,0.06) 100%); }
-          .inseo-orb1 { position:absolute;top:-120px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(0,24,51,0.14) 0%,transparent 70%);pointer-events:none;filter:blur(10px); }
-          .inseo-orb2 { position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(0,60,120,0.08) 0%,transparent 70%);pointer-events:none;filter:blur(8px); }
-          .inseo-inner { max-width:1200px;margin:0 auto;position:relative;z-index:1; }
-          .inseo-eyebrow { display:inline-flex;align-items:center;gap:8px;background:rgba(0,24,51,0.10);border:1px solid rgba(0,24,51,0.22);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#001833;margin-bottom:24px; }
-          .inseo-h1 { font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .inseo-desc { font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:660px; }
-          .inseo-btns { display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px; }
           .inseo-btn-p { display:inline-flex;align-items:center;gap:8px;background:#001833;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 6px 24px rgba(0,24,51,0.30); }
           .inseo-btn-p:hover { background:#003366;transform:translateY(-2px); }
           .inseo-btn-s { display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.7);color:#001833;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;border:1.5px solid rgba(0,24,51,0.20);transition:all 0.25s;backdrop-filter:blur(8px); }
           .inseo-btn-s:hover { background:#fff;transform:translateY(-2px); }
-          .inseo-trust { display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-bottom:48px; }
-          .inseo-badge { display:flex;align-items:center;gap:6px;font-size:12px;color:#6b7280;font-weight:500; }
-          .inseo-stats-bar { display:flex;border:1px solid rgba(0,24,51,0.12);border-radius:16px;background:rgba(255,255,255,0.75);backdrop-filter:blur(12px);overflow:hidden;max-width:720px; }
-          .inseo-stat-item { flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(0,24,51,0.08); }
-          .inseo-stat-item:last-child { border-right:none; }
-          .inseo-stat-num { font-size:1.4rem;font-weight:900;color:#001833;line-height:1;letter-spacing:-1px; }
-          .inseo-stat-lbl { font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px; }
-
-
-
-
 
           .inseo-sec { padding:80px 40px; }
           .inseo-sec-inner { max-width:1200px;margin:0 auto; }
@@ -155,8 +138,7 @@ export default function InsuranceSeoServices() {
           .inseo-cta-p { font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px; }
           @media (max-width:900px) { .inseo-grid3,.inseo-res-grid { grid-template-columns:1fr 1fr; } }
           @media (max-width:600px) {
-            .inseo-hero,.inseo-sec,.inseo-results,.inseo-cta { padding-left:20px;padding-right:20px; }
-            .inseo-hero { padding-top:60px;padding-bottom:50px; }
+            .inseo-sec,.inseo-results,.inseo-cta { padding-left:20px;padding-right:20px; }
             .inseo-grid3,.inseo-res-grid { grid-template-columns:1fr; }
           }
         
@@ -165,45 +147,19 @@ export default function InsuranceSeoServices() {
         </style>
       </Head>
 
-      <section className="inseo-hero">
-        <div className="inseo-orb1" /><div className="inseo-orb2" />
-        <div className="inseo-inner">
-          <span className="inseo-eyebrow">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-            Insurance SEO - Auto · Home · Life · Health · Commercial
-          </span>
-          <h1 className="inseo-h1">Insurance SEO That Drives Qualified<br/>Policy Buyers to Your Agency</h1>
-          <p className="inseo-desc">1Solutions builds insurance SEO strategies that attract high-intent buyers researching auto, home, life, health, and commercial insurance - putting your agency in front of qualified prospects before they request a quote. YMYL-compliant content, GBP optimisation, and product-level keyword depth for independent and captive agents.</p>
-          <div className="inseo-btns">
-            <a href="#contact" className="inseo-btn-p">
-              Get Your Free Insurance SEO Audit
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <Link href="/affordable-seo-packages/" className="inseo-btn-s">View SEO Packages</Link>
-          </div>
-          <div className="inseo-trust">
-            {['Insurance SEO Authority','YMYL Best Practices','Product-Level Keyword Depth','No Lock-in Contracts'].map(t => (
-              <span key={t} className="inseo-badge">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#001833" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                {t}
-              </span>
-            ))}
-          </div>
-          <div className="inseo-stats-bar">
-            {[
-              { num:'$50–$140', lbl:'avg CPC for insurance keywords - #1 most expensive vertical' },
-              { num:'74%', lbl:'of insurance buyers start with an online search' },
-              { num:'3×', lbl:'more inbound leads for agents using SEO' },
-              { num:'$1,200+', lbl:'avg lifetime value per insured client' },
-            ].map(s => (
-              <div key={s.lbl} className="inseo-stat-item">
-                <span className="inseo-stat-num">{s.num}</span>
-                <span className="inseo-stat-lbl">{s.lbl}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="Insurance SEO · YMYL Compliant · Auto · Home · Life · Health · Commercial"
+        title={<>Insurance SEO That Drives <AuroraText>Qualified Policy Buyers</AuroraText> to Your Agency</>}
+        subtext="1Solutions builds insurance SEO strategies that attract high-intent buyers researching auto, home, life, health, and commercial insurance - putting your agency in front of qualified prospects before they request a quote. YMYL-compliant content, GBP optimisation, and product-level keyword depth for independent and captive agents."
+        primaryCta={{ label: 'Get Your Free Insurance SEO Audit', href: '#contact' }}
+        secondaryCta={{ label: 'View SEO Packages', href: '/affordable-seo-packages/' }}
+        stats={[
+          { label: 'Avg Insurance Keyword CPC', value: '140', prefix: '$50–$' },
+          { label: 'Buyers Who Search Online First', value: '74', suffix: '%' },
+          { label: 'More Leads for SEO Agents', value: '3', suffix: '×' },
+          { label: 'Avg Client Lifetime Value', value: '1,200', prefix: '$', suffix: '+' },
+        ]}
+      />
 
       <section className="inseo-sec inseo-bg" id="services">
         <div className="inseo-sec-inner">

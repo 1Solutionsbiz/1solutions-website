@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'Landing Page Design', desc: 'High-converting pages built around a single compelling call to action - crafted to capture leads and drive purchases.' },
@@ -107,38 +109,6 @@ const PROCESS_STEPS = [
   },
 ];
 
-// Count-up hook
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const numTarget = parseInt(String(target).replace(/\D/g, ''), 10);
-    if (!numTarget) return;
-    let startTime = null;
-    const step = (ts) => {
-      if (!startTime) startTime = ts;
-      const progress = Math.min((ts - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * numTarget));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function AnimatedStat({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = String(val).replace(/[\d,]/g, '');
-  const hasComma = String(val).includes(',');
-  const display = started ? (hasComma ? num.toLocaleString() : num) + suffix : val;  return (
-    <div className="wd-stat-col">
-      <div className="wd-stat-label">{label}</div>
-      <div className="wd-stat-value">{display}</div>
-    </div>
-  );
-}
-
 const LD = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -171,12 +141,10 @@ const LD = {
 export default function WebsiteDesign() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleSteps, setVisibleSteps] = useState([]);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const stepRefs = useRef([]);
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
@@ -198,17 +166,6 @@ export default function WebsiteDesign() {
       return obs;
     });
     return () => observers.forEach(o => o && o.disconnect());
-  }, []);
-
-  // Stats count-up trigger
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setStatsStarted(true); obs.disconnect(); } },
-      { threshold: 0.5 }
-    );
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
   }, []);
 
   // Why cards staggered reveal
@@ -314,36 +271,6 @@ export default function WebsiteDesign() {
           .wd-orb-1 { position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(99,130,255,0.32) 0%,rgba(139,92,246,0.14) 40%,transparent 70%);top:-300px;right:-300px;pointer-events:none;z-index:0;filter:blur(20px); }
           .wd-orb-2 { position:absolute;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(251,146,60,0.28) 0%,rgba(245,158,11,0.14) 40%,transparent 70%);bottom:0;left:-250px;pointer-events:none;z-index:0;filter:blur(20px); }
           .wd-orb-3 { position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(20,184,166,0.18) 0%,transparent 70%);top:45%;left:-150px;transform:translateY(-50%);pointer-events:none;z-index:0;filter:blur(20px); }
-
-          /* Hero */
-          .wd-hero-block { background:transparent;position:relative;overflow:hidden; }
-          .wd-hero-block::before { content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.11) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px); }
-          .wd-hero-block::after { content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.16) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px); }
-          .wd-hero-content { position:relative;z-index:2;text-align:center;max-width:880px;margin:0 auto;padding:60px 40px 40px; }
-          .wd-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:18px; }
-          .wd-hero-content h1 { font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .wd-hero-content p { font-size:16px;color:#3A507A;line-height:1.65;max-width:640px;margin:0 auto 28px; }
-          .wd-btn-hero { display:inline-block;padding:14px 40px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1);position:relative;overflow:hidden; }
-          .wd-btn-hero::after { content:'';position:absolute;top:-10%;left:-120%;width:80%;height:120%;background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,0.75) 45%,rgba(255,255,255,0.9) 50%,rgba(255,255,255,0.75) 55%,transparent 100%);animation:wd-shimmer 2.5s ease-in-out infinite;pointer-events:none; }
-          @keyframes wd-shimmer { 0%{left:-120%} 35%,100%{left:160%} }
-          .wd-btn-hero:hover { background:rgba(255,255,255,0.85);border-color:rgba(245,158,11,0.6);box-shadow:0 12px 36px rgba(15,52,96,0.15),0 0 0 2px rgba(245,158,11,0.22),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px);color:#0F3460; }
-
-          /* Stats bar */
-          .wd-hero-stats { position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
-          .wd-stat-col { padding:18px 20px;text-align:center;border-right:1px solid rgba(15,52,96,0.10); }
-          .wd-stat-col:last-child { border-right:none; }
-          .wd-stat-label { font-size:12px;color:#4A6080;font-weight:500;margin-bottom:6px; }
-          .wd-stat-value { font-size:26px;font-weight:900;color:#D97706;letter-spacing:-0.5px;line-height:1; }
-
-          /* Clients strip */
-          .wd-clients-bar { position:relative;z-index:2;padding:20px 40px 60px;max-width:1440px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px; }
-          .wd-clients-label { font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6A80A0; }
-          .wd-clients-logos { width:100%;overflow:hidden; }
-          .wd-logos-track { display:flex;align-items:center;gap:60px;width:max-content;animation:wd-marquee 28s linear infinite; }
-          .wd-logos-track:hover { animation-play-state:paused; }
-          @keyframes wd-marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-          .wd-client-logo { height:26px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(100%);opacity:0.5;transition:opacity 0.25s,filter 0.25s; }
-          .wd-client-logo:hover { opacity:0.85;filter:grayscale(0%); }
 
           /* Shared section styles */
           .wd-section-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:12px;display:block; }
@@ -508,7 +435,6 @@ export default function WebsiteDesign() {
 
           /* Responsive */
           @media (max-width:1024px) {
-            .wd-hero-content h1 { font-size:40px; }
             .wd-services-grid { grid-template-columns:repeat(2,1fr); }
             .wd-why-grid { grid-template-columns:repeat(2,1fr); }
             .wd-process-inner { grid-template-columns:1fr; }
@@ -517,16 +443,6 @@ export default function WebsiteDesign() {
           }
           @media (max-width:768px) {
             .wd-page { overflow-x:hidden; }
-            .wd-hero-content { padding:36px 20px 24px; }
-            .wd-hero-content h1 { font-size:28px;letter-spacing:-0.3px; }
-            .wd-hero-content p { font-size:15px; }
-            .wd-hero-stats { grid-template-columns:1fr 1fr;max-width:100%; }
-            .wd-stat-col { padding:14px 12px; }
-            .wd-stat-col:nth-child(2) { border-right:none; }
-            .wd-stat-col:nth-child(3) { border-top:1px solid rgba(15,52,96,0.10); }
-            .wd-stat-col:nth-child(4) { border-top:1px solid rgba(15,52,96,0.10);border-right:none; }
-            .wd-stat-value { font-size:22px; }
-            .wd-clients-bar { padding:16px 20px 36px;gap:12px; }
             .wd-services-section { padding:48px 20px 40px; }
             .wd-services-grid { grid-template-columns:1fr 1fr;gap:10px; }
             .wd-process-section { padding:60px 20px; }
@@ -558,7 +474,6 @@ export default function WebsiteDesign() {
             .wd-section-title,.wd-process-main-title,.wd-related-title { font-size:30px; }
           }
           @media (max-width:480px) {
-            .wd-hero-content h1 { font-size:24px; }
             .wd-section-title,.wd-process-main-title,.wd-related-title { font-size:26px; }
             .wd-services-grid { grid-template-columns:1fr; }
             .wd-service-card { padding:20px 18px 18px; }
@@ -582,50 +497,18 @@ export default function WebsiteDesign() {
         <div className="wd-orb-3" />
 
         {/* ── HERO ── */}
-        <div className="wd-hero-block">
-          <div className="wd-hero-content">
-            <span className="wd-eyebrow">Conversion-Focused Website Design Company</span>
-            <h1>Conversion-Focused Website Design That Turns Visitors Into Customers</h1>
-            <p>We design websites that don&apos;t just look great - they convert. From landing pages to enterprise portals, every pixel is crafted for performance.</p>
-            <Link href="#contact" className="wd-btn-hero">Get a Free Design Consultation</Link>
-          </div>
-
-          <div className="wd-hero-stats" ref={statsRef}>
-            {[
-              ['Websites Designed', '500+'],
-              ['Client Satisfaction', '97%'],
-              ['Years Experience', '16+'],
-              ['Avg Conversion Lift', '40%'],
-            ].map(([label, val]) => (
-              <AnimatedStat key={label} label={label} val={val} started={statsStarted} />
-            ))}
-          </div>
-
-          <div className="wd-clients-bar">
-            <span className="wd-clients-label">Trusted by Leading Brands</span>
-            <div className="wd-clients-logos">
-              <div className="wd-logos-track">
-                {[
-                  ['/logo/Indian_Express_Logo_full.png', 'Indian Express'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png', 'Verizon'],
-                  ['/logo/Uniphore.jpg', 'Uniphore'],
-                  ['/logo/ICCoLogo.png', 'ICC'],
-                  ['/logo/Honor_Logo_(2020).svg.png', 'Honor'],
-                  ['/logo/Zuari-Finserv-logo-new.png', 'Zuari Finserv'],
-                  ['/logo/Indian_Express_Logo_full.png', 'Indian Express2'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png', 'Verizon2'],
-                  ['/logo/Uniphore.jpg', 'Uniphore2'],
-                  ['/logo/ICCoLogo.png', 'ICC2'],
-                  ['/logo/Honor_Logo_(2020).svg.png', 'Honor2'],
-                  ['/logo/Zuari-Finserv-logo-new.png', 'Zuari Finserv2'],
-                ].map(([src, alt]) => (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img key={alt} src={src} alt={alt.replace(/\d+$/, '')} className="wd-client-logo" />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="Conversion-Focused Website Design Company"
+          title={<>Conversion-Focused Website Design That <AuroraText>Turns Visitors Into Customers</AuroraText></>}
+          subtext="We design websites that don't just look great - they convert. From landing pages to enterprise portals, every pixel is crafted for performance."
+          primaryCta={{ label: 'Get a Free Design Consultation', href: '#contact' }}
+          stats={[
+            { label: 'Websites Designed', value: '500', suffix: '+' },
+            { label: 'Client Satisfaction', value: '97', suffix: '%' },
+            { label: 'Years Experience', value: '16', suffix: '+' },
+            { label: 'Avg Conversion Lift', value: '40', suffix: '%' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="wd-services-section">

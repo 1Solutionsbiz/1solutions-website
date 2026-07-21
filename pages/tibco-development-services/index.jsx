@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -153,58 +155,21 @@ const FAQS = [
   { q: 'Can you provide ongoing TIBCO administration and support?', a: "Yes. 1Solutions provides ongoing TIBCO administration on a retainer - TIBCO Administrator monitoring, BusinessWorks deployment lifecycle management, EMS queue and topic management, capacity monitoring, incident response for production integration failures, hotfix deployment, version patching, and quarterly health reviews. We also provide L2/L3 support escalation for organisations with internal L1 support teams." },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const num = parseInt(target.replace(/\D/g, ''), 10);
-    if (!num) return;
-    let t0 = null;
-    const step = ts => {
-      if (!t0) t0 = ts;
-      const p = Math.min((ts - t0) / duration, 1);
-      setCount(Math.floor((1 - Math.pow(1 - p, 3)) * num));
-      if (p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function StatItem({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');  return (
-    <div className="tb-stat-col">
-      <div className="tb-stat-val">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div>
-      <div className="tb-stat-label">{label}</div>
-    </div>
-  );
-}
-
 export default function TibcoDevelopmentServices() {
   const [showAllSvc, setShowAllSvc] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleSvcCards, setVisibleSvcCards] = useState([]);
   const [visibleEngCards, setVisibleEngCards] = useState([]);
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const [visibleStackCards, setVisibleStackCards] = useState([]);
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const svcGridRef = useRef(null);
   const engGridRef = useRef(null);
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
   const stackGridRef = useRef(null);
-
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStatsStarted(true); obs.disconnect(); } }, { threshold: 0.4 });
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   useEffect(() => {
     const pairs = [[svcGridRef, SERVICES.length, setVisibleSvcCards],[engGridRef, 3, setVisibleEngCards],[whyGridRef, WHY_CARDS.length, setVisibleWhyCards],[testiGridRef, 3, setVisibleTestiCards],[stackGridRef, TECH_STACK.length, setVisibleStackCards]];
@@ -276,31 +241,6 @@ export default function TibcoDevelopmentServices() {
 
 
 
-          .tb-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
-          .tb-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
-          .tb-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .tb-hero-desc{font-size:16px;color:#3A507A;line-height:1.65;max-width:740px;margin:0 auto 24px}
-          .tb-trust-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
-          .tb-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07)}
-          .tb-badge-dot{width:7px;height:7px;border-radius:50%;background:#db2777;flex-shrink:0}
-          .tb-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .tb-btn-primary{display:inline-block;padding:14px 36px;background:#db2777;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(219,39,119,.28)}
-          .tb-btn-primary:hover{background:#0F3460;transform:translateY(-2px)}
-          .tb-btn-ghost{display:inline-block;padding:14px 36px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .tb-btn-ghost:hover{background:rgba(255,255,255,.85);border-color:rgba(219,39,119,.5);transform:translateY(-2px)}
-          .tb-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:28px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .tb-stat-col{padding:18px 16px;text-align:center;border-right:1px solid rgba(15,52,96,.10)}
-          .tb-stat-col:last-child{border-right:none}
-          .tb-stat-val{font-size:28px;font-weight:900;color:#db2777;letter-spacing:-.5px;line-height:1}
-          .tb-stat-label{font-size:11px;color:#4A6080;font-weight:500;margin-top:5px}
-          .tb-logos{position:relative;z-index:2;padding:24px 40px 52px;display:flex;flex-direction:column;align-items:center;gap:14px}
-          .tb-logos-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6A80A0}
-          .tb-logos-wrap{width:100%;overflow:hidden}
-          .tb-logos-track{display:flex;align-items:center;gap:60px;width:max-content;animation:tb-marquee 28s linear infinite}
-          .tb-logos-track:hover{animation-play-state:paused}
-          @keyframes tb-marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-          .tb-clogo{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
-          .tb-clogo:hover{opacity:.85;filter:grayscale(0%)}
           .tb-s-eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
           .tb-s-title{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .tb-s-desc{font-size:15px;color:#4A6080;line-height:1.7}
@@ -448,8 +388,8 @@ export default function TibcoDevelopmentServices() {
           .tb-rtag-violet{background:rgba(124,58,237,.09);border-color:rgba(124,58,237,.28);color:#6D28D9}
           .tb-rtag-green{background:rgba(22,163,74,.09);border-color:rgba(22,163,74,.28);color:#14532d}
           .tb-rtag-teal{background:rgba(8,145,178,.09);border-color:rgba(8,145,178,.28);color:#0e7490}
-          @media(max-width:1024px){.tb-hero h1,.tb-s-title,.tb-faq h2{font-size:36px}.tb-svc-grid{grid-template-columns:repeat(2,1fr)}.tb-stack-grid{grid-template-columns:repeat(2,1fr)}.tb-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.tb-eng-card.feat{transform:none}.tb-eng-card.feat.tb-ev{transform:none}.tb-eng-card.feat.tb-ev:hover{transform:translateY(-4px)}.tb-why-grid{grid-template-columns:repeat(2,1fr)}.tb-tgrid{grid-template-columns:1fr}.tb-contact-grid{grid-template-columns:1fr}}
-          @media(max-width:768px){.tb-breadcrumb{padding:12px 20px 0}.tb-hero{padding:28px 20px 20px}.tb-hero h1{font-size:26px;letter-spacing:-.3px}.tb-stats{grid-template-columns:1fr 1fr}.tb-stat-col:nth-child(2){border-right:none}.tb-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.tb-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.tb-logos{padding:16px 20px 28px}.tb-svc-section,.tb-stack-section,.tb-eng-section,.tb-process-section,.tb-testi,.tb-why-section,.tb-faq,.tb-related{padding:52px 20px}.tb-contact{padding:48px 20px}.tb-svc-grid,.tb-stack-grid,.tb-why-grid{grid-template-columns:1fr}.tb-frow{grid-template-columns:1fr}.tb-ctitle{font-size:28px}.tb-s-title{font-size:28px}}
+          @media(max-width:1024px){.tb-s-title,.tb-faq h2{font-size:36px}.tb-svc-grid{grid-template-columns:repeat(2,1fr)}.tb-stack-grid{grid-template-columns:repeat(2,1fr)}.tb-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.tb-eng-card.feat{transform:none}.tb-eng-card.feat.tb-ev{transform:none}.tb-eng-card.feat.tb-ev:hover{transform:translateY(-4px)}.tb-why-grid{grid-template-columns:repeat(2,1fr)}.tb-tgrid{grid-template-columns:1fr}.tb-contact-grid{grid-template-columns:1fr}}
+          @media(max-width:768px){.tb-breadcrumb{padding:12px 20px 0}.tb-svc-section,.tb-stack-section,.tb-eng-section,.tb-process-section,.tb-testi,.tb-why-section,.tb-faq,.tb-related{padding:52px 20px}.tb-contact{padding:48px 20px}.tb-svc-grid,.tb-stack-grid,.tb-why-grid{grid-template-columns:1fr}.tb-frow{grid-template-columns:1fr}.tb-ctitle{font-size:28px}.tb-s-title{font-size:28px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
@@ -477,38 +417,19 @@ export default function TibcoDevelopmentServices() {
       <div className="tb-page">
         <div className="tb-orb tb-orb-1" /><div className="tb-orb tb-orb-2" /><div className="tb-orb tb-orb-3" />
 
-        <section className="tb-hero">
-          <span className="tb-eyebrow">TIBCO Development Services</span>
-          <h1>TIBCO Development - BusinessWorks, EMS, BPM, Spotfire & Migration Services</h1>
-          <p className="tb-hero-desc">Expert TIBCO development services - TIBCO BusinessWorks 5.x and BWCE integration, TIBCO EMS messaging architecture, TIBCO BPM business process automation, Spotfire analytics, TIBCO Cloud Integration, TIBCO to MuleSoft/Boomi migration, performance tuning, and dedicated TIBCO engineering teams for enterprises worldwide.</p>
-          <div className="tb-trust-row">
-            {['TIBCO BusinessWorks 5.x & BWCE','TIBCO EMS & Rendezvous','TIBCO BPM & Spotfire','TIBCO to MuleSoft/Boomi Migration','15+ Years Experience'].map(b => (
-              <div className="tb-badge" key={b}><span className="tb-badge-dot" />{b}</div>
-            ))}
-          </div>
-          <div className="tb-ctas">
-            <Link href="#contact" className="tb-btn-primary">Discuss Your TIBCO Project</Link>
-            <Link href="#engagement" className="tb-btn-ghost">View Engagement Models →</Link>
-          </div>
-        </section>
-
-        <div className="tb-stats" ref={statsRef}>
-          {[['80+','TIBCO Integrations Built'],['15+','Years Middleware Experience'],['500M+','Messages Processed Daily'],['98%','Client Retention']].map(([v, l]) => (
-            <StatItem key={l} label={l} val={v} started={statsStarted} />
-          ))}
-        </div>
-
-        <div className="tb-logos">
-          <span className="tb-logos-label">Trusted by Enterprise Clients Worldwide</span>
-          <div className="tb-logos-wrap">
-            <div className="tb-logos-track">
-              {[['/logo/Indian_Express_Logo_full.png','Indian Express'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],['/logo/Uniphore.jpg','Uniphore'],['/logo/ICCoLogo.png','ICC'],['/logo/Honor_Logo_(2020).svg.png','Honor'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],['/logo/Indian_Express_Logo_full.png','Indian Express 2'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon 2'],['/logo/Uniphore.jpg','Uniphore 2'],['/logo/ICCoLogo.png','ICC 2'],['/logo/Honor_Logo_(2020).svg.png','Honor 2'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv 2']].map(([src, alt]) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img key={alt} src={src} alt={alt.replace(/ \d$/, '')} className="tb-clogo" />
-              ))}
-            </div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="TIBCO Development Services · 15+ Years Middleware Experience"
+          title={<>TIBCO Development - <AuroraText>BusinessWorks, EMS, BPM, Spotfire & Migration Services</AuroraText></>}
+          subtext="Expert TIBCO development services - TIBCO BusinessWorks 5.x and BWCE integration, TIBCO EMS messaging architecture, TIBCO BPM business process automation, Spotfire analytics, TIBCO Cloud Integration, TIBCO to MuleSoft/Boomi migration, performance tuning, and dedicated TIBCO engineering teams for enterprises worldwide."
+          primaryCta={{ label: 'Discuss Your TIBCO Project', href: '#contact' }}
+          secondaryCta={{ label: 'View Engagement Models', href: '#engagement' }}
+          stats={[
+            { label: 'TIBCO Integrations Built', value: '80', suffix: '+' },
+            { label: 'Years Middleware Experience', value: '15', suffix: '+' },
+            { label: 'Messages Processed Daily', value: '500', suffix: 'M+' },
+            { label: 'Client Retention', value: '98', suffix: '%' },
+          ]}
+        />
 
         <section className="tb-svc-section" aria-labelledby="tb-svc-heading">
           <div className="tb-inner">

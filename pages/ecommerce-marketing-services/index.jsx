@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'Ecommerce SEO', desc: 'Category page SEO, product page optimisation, schema markup for products and reviews, site architecture improvements, faceted navigation management, and long-tail keyword targeting for high-intent shoppers.' },
@@ -44,13 +46,6 @@ const FAQS = [
   { q: 'How do you measure ecommerce marketing ROI?', a: 'We measure ecommerce marketing ROI through GA4 ecommerce tracking - attributing revenue to channels and campaigns with purchase event tracking, transaction IDs, and revenue data. Key metrics we report on: total revenue by channel; ROAS (return on ad spend) by campaign and channel; organic revenue from SEO (segmented from paid); email-attributed revenue; conversion rate by device, traffic source, and landing page; average order value trends; customer acquisition cost (CAC); and customer lifetime value (LTV) where data allows. We set up proper attribution modelling so you understand which channels are genuinely driving sales - not just getting the last click.' },
 ];
 
-const STATS = [
-  { label: 'Ecommerce Stores Managed', val: '180+' },
-  { label: 'Avg Revenue Growth', val: '+62%' },
-  { label: 'Years Ecommerce Experience', val: '12+' },
-  { label: 'Client Retention', val: '92%' },
-];
-
 export default function EcommerceMarketingServices() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleCards, setVisibleCards] = useState([]);
@@ -75,22 +70,11 @@ export default function EcommerceMarketingServices() {
         <style>{`
           .ecmkt-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .ecmkt-page *,.ecmkt-page *::before,.ecmkt-page *::after{box-sizing:border-box}
-          .ecmkt-hero{background:linear-gradient(135deg,#f0fdfa 0%,#ccfbf1 25%,#99f6e4 60%,#f0fdfa 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .ecmkt-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(13,148,136,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .ecmkt-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(15,118,110,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .ecmkt-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.ecmkt-bc a:hover{color:#0D9488}.ecmkt-bc span{color:#d1d5db}
-          .ecmkt-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(13,148,136,0.08);border:1px solid rgba(13,148,136,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#0D9488;margin-bottom:28px}
-          .ecmkt-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .ecmkt-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
-          .ecmkt-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
+          .ecmkt-bc a:hover{color:#0D9488}.ecmkt-bc span{color:#d1d5db}
           .ecmkt-btn-p{display:inline-flex;align-items:center;gap:8px;background:#0D9488;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(13,148,136,0.28)}
           .ecmkt-btn-p:hover{background:#0F766E;box-shadow:0 8px 32px rgba(13,148,136,0.38);transform:translateY(-2px)}
           .ecmkt-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.18);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
           .ecmkt-btn-s:hover{border-color:#0D9488;color:#0D9488;transform:translateY(-2px)}
-          .ecmkt-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(13,148,136,0.07)}
-          .ecmkt-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(13,148,136,0.08)}.ecmkt-stat:last-child{border-right:none}
-          .ecmkt-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .ecmkt-stat-v{font-size:1.6rem;font-weight:900;color:#0D9488;letter-spacing:-0.5px}
           .ecmkt-svc{background:#f8fafd;padding:80px 40px}.ecmkt-svc-in{max-width:1280px;margin:0 auto}
           .ecmkt-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#0D9488;margin-bottom:10px;display:block}
           .ecmkt-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
@@ -137,25 +121,26 @@ export default function EcommerceMarketingServices() {
           .ecmkt-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           .ecmkt-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.ecmkt-grid{grid-template-columns:repeat(2,1fr)}.ecmkt-why-grid{grid-template-columns:repeat(2,1fr)}}
-          @media(max-width:768px){.ecmkt-hero,.ecmkt-svc,.ecmkt-plat,.ecmkt-proc,.ecmkt-why,.ecmkt-faq,.ecmkt-cta{padding:60px 24px}.ecmkt-hero{padding-top:60px;padding-bottom:0}.ecmkt-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.ecmkt-stat:nth-child(2){border-right:none}.ecmkt-grid{grid-template-columns:1fr}.ecmkt-why-grid{grid-template-columns:1fr}.ecmkt-step{grid-template-columns:56px 1fr}.ecmkt-btns{flex-direction:column;align-items:center}}
+          @media(max-width:768px){.ecmkt-svc,.ecmkt-plat,.ecmkt-proc,.ecmkt-why,.ecmkt-faq,.ecmkt-cta{padding:60px 24px}.ecmkt-grid{grid-template-columns:1fr}.ecmkt-why-grid{grid-template-columns:1fr}.ecmkt-step{grid-template-columns:56px 1fr}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
       <div className="ecmkt-page">
-        <section className="ecmkt-hero"><div className="ecmkt-o1"/><div className="ecmkt-o2"/>
-          <div className="ecmkt-in">
-            <span className="ecmkt-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#0D9488',display:'inline-block'}}/> SEO · Shopping · Paid Social · Email</span>
-            <h1 className="ecmkt-h1">Ecommerce Marketing Services - More Traffic, More Revenue, More Repeat Customers</h1>
-            <p className="ecmkt-sub">Full-service ecommerce marketing - SEO, Google Shopping, paid social, email automation, and CRO - all coordinated by one team with a single focus: growing your online store revenue.</p>
-            <div className="ecmkt-btns">
-              <Link href="/contact-us" className="ecmkt-btn-p">Get an Ecommerce Marketing Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/conversion-rate-optimization-services" className="ecmkt-btn-s">CRO Services</Link>
-            </div>
-            <div className="ecmkt-stats">{STATS.map(s => <div key={s.label} className="ecmkt-stat"><div className="ecmkt-stat-l">{s.label}</div><div className="ecmkt-stat-v">{s.val}</div></div>)}</div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="SEO · Shopping · Paid Social · Email"
+          title={<>Ecommerce Marketing Services - <AuroraText>More Traffic, More Revenue, More Repeat Customers</AuroraText></>}
+          subtext="Full-service ecommerce marketing - SEO, Google Shopping, paid social, email automation, and CRO - all coordinated by one team with a single focus: growing your online store revenue."
+          primaryCta={{ label: 'Get an Ecommerce Marketing Quote', href: '/contact-us' }}
+          secondaryCta={{ label: 'CRO Services', href: '/conversion-rate-optimization-services' }}
+          stats={[
+            { label: 'Ecommerce Stores Managed', value: '180', suffix: '+' },
+            { label: 'Avg Revenue Growth', value: '62', prefix: '+', suffix: '%' },
+            { label: 'Years Ecommerce Experience', value: '12', suffix: '+' },
+            { label: 'Client Retention', value: '92', suffix: '%' },
+          ]}
+        />
         <section className="ecmkt-svc"><div className="ecmkt-svc-in">
           <span className="ecmkt-ey2">What We Do</span><h2 className="ecmkt-ttl">Ecommerce Marketing Services</h2>
           <p className="ecmkt-desc">From organic search to paid ads, email flows to marketplace management - every channel an ecommerce store needs to grow revenue.</p>

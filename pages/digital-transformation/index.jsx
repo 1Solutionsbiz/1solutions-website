@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'Cloud Migration & Modernisation', desc: 'Moving legacy on-premise systems to AWS, Azure, or GCP - infrastructure assessment, migration planning, data migration, cutover, and post-migration optimisation. Reduce infrastructure costs, improve reliability, and unlock cloud-native capabilities.', href: '/devops-services-company' },
@@ -39,13 +41,6 @@ const FAQS = [
   { q: 'What industries do you specialise in for digital transformation?', a: 'We have delivered digital transformation projects across manufacturing, retail and ecommerce, professional services (legal, accounting, consulting), healthcare, logistics, financial services, and education. While the business contexts differ, the underlying transformation patterns - cloud migration, process automation, integration, data platforms - are consistent across industries, and we apply that experience to your sector.' },
 ];
 
-const STATS = [
-  { label: 'Transformations', val: '150+' },
-  { label: 'Years Experience', val: '15+' },
-  { label: 'Industries', val: '40+' },
-  { label: 'Client Retention', val: '97%' },
-];
-
 export default function DigitalTransformation() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleCards, setVisibleCards] = useState([]);
@@ -70,23 +65,12 @@ export default function DigitalTransformation() {
         <style>{`
           .dtrans-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .dtrans-page *,.dtrans-page *::before,.dtrans-page *::after{box-sizing:border-box}
-          .dtrans-hero{background:linear-gradient(135deg,#0F1F40 0%,#1a2e5a 40%,#114171 80%,#0F1F40 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .dtrans-o1{position:absolute;top:-100px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.25) 0%,transparent 65%);pointer-events:none;filter:blur(40px)}
-          .dtrans-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(254,151,0,0.08) 0%,transparent 65%);pointer-events:none;filter:blur(40px)}
-          .dtrans-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.dtrans-bc a:hover{color:#FE9700}.dtrans-bc span{color:rgba(255,255,255,0.25)}
-          .dtrans-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(99,102,241,0.15);border:1px solid rgba(99,102,241,0.35);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#a5b4fc;margin-bottom:28px}
-          .dtrans-h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:900;line-height:1.05;letter-spacing:-1.5px;color:#fff;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .dtrans-h1 span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .dtrans-sub{font-size:1.08rem;color:rgba(255,255,255,0.70);line-height:1.75;max-width:660px;margin:0 auto 36px}
+          .dtrans-bc a:hover{color:#FE9700}.dtrans-bc span{color:rgba(255,255,255,0.25)}
           .dtrans-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .dtrans-btn-p{display:inline-flex;align-items:center;gap:8px;background:#FE9700;color:#fff;padding:15px 32px;border-radius:50px;font-weight:800;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(254,151,0,0.35)}
           .dtrans-btn-p:hover{background:#e08700;box-shadow:0 8px 36px rgba(254,151,0,0.50);transform:translateY(-2px)}
           .dtrans-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border:1.5px solid rgba(255,255,255,0.22);color:#fff;padding:15px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
           .dtrans-btn-s:hover{border-color:rgba(254,151,0,0.60);background:rgba(254,151,0,0.10);transform:translateY(-2px)}
-          .dtrans-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.06);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.10);border-radius:20px 20px 0 0}
-          .dtrans-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(255,255,255,0.07)}.dtrans-stat:last-child{border-right:none}
-          .dtrans-stat-l{font-size:11px;color:rgba(255,255,255,0.45);font-weight:500;margin-bottom:4px}
-          .dtrans-stat-v{font-size:1.6rem;font-weight:900;color:#FE9700;letter-spacing:-0.5px}
           .dtrans-svc{background:#f8fafd;padding:80px 40px}.dtrans-svc-in{max-width:1280px;margin:0 auto}
           .dtrans-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6366F1;margin-bottom:10px;display:block}
           .dtrans-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
@@ -126,25 +110,26 @@ export default function DigitalTransformation() {
           .dtrans-cta-t{font-size:clamp(2rem,4vw,3rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:16px}
           .dtrans-cta-s{font-size:1.05rem;color:rgba(255,255,255,0.70);line-height:1.75;margin:0 auto 36px;max-width:520px}
           @media(max-width:1024px){.dtrans-grid{grid-template-columns:repeat(2,1fr)}.dtrans-why-grid{grid-template-columns:repeat(2,1fr)}}
-          @media(max-width:768px){.dtrans-hero,.dtrans-svc,.dtrans-proc,.dtrans-why,.dtrans-faq,.dtrans-cta{padding:60px 24px}.dtrans-hero{padding-top:60px;padding-bottom:0}.dtrans-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.dtrans-stat:nth-child(2){border-right:none}.dtrans-grid{grid-template-columns:1fr}.dtrans-why-grid{grid-template-columns:1fr}.dtrans-step{grid-template-columns:56px 1fr}.dtrans-btns{flex-direction:column;align-items:center}}
+          @media(max-width:768px){.dtrans-svc,.dtrans-proc,.dtrans-why,.dtrans-faq,.dtrans-cta{padding:60px 24px}.dtrans-grid{grid-template-columns:1fr}.dtrans-why-grid{grid-template-columns:1fr}.dtrans-step{grid-template-columns:56px 1fr}.dtrans-btns{flex-direction:column;align-items:center}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
       <div className="dtrans-page">
-        <section className="dtrans-hero"><div className="dtrans-o1"/><div className="dtrans-o2"/>
-          <div className="dtrans-in">
-            <span className="dtrans-badge"><span style={{width:6,height:6,borderRadius:'50%',background:'#a5b4fc',display:'inline-block'}}/> DIGITAL TRANSFORMATION</span>
-            <h1 className="dtrans-h1">Modernize Your Business for the <span>Digital Age</span></h1>
-            <p className="dtrans-sub">Legacy systems, manual processes, and disconnected tools are holding your business back. We help you transform - from strategy and architecture through implementation and adoption.</p>
-            <div className="dtrans-btns">
-              <Link href="/contact-us" className="dtrans-btn-p">Start Your Transformation <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/case-studies" className="dtrans-btn-s">View Case Studies</Link>
-            </div>
-            <div className="dtrans-stats">{STATS.map(s => <div key={s.label} className="dtrans-stat"><div className="dtrans-stat-l">{s.label}</div><div className="dtrans-stat-v">{s.val}</div></div>)}</div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Digital Transformation"
+          title={<>Modernize Your Business for the <AuroraText>Digital Age</AuroraText></>}
+          subtext="Legacy systems, manual processes, and disconnected tools are holding your business back. We help you transform - from strategy and architecture through implementation and adoption."
+          primaryCta={{ label: 'Start Your Transformation', href: '/contact-us' }}
+          secondaryCta={{ label: 'View Case Studies', href: '/case-studies' }}
+          stats={[
+            { label: 'Transformations', value: '150', suffix: '+' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'Industries', value: '40', suffix: '+' },
+            { label: 'Client Retention', value: '97', suffix: '%' },
+          ]}
+        />
         <section className="dtrans-svc"><div className="dtrans-svc-in">
           <span className="dtrans-ey2">Our Services</span><h2 className="dtrans-ttl">Digital Transformation Services</h2>
           <p className="dtrans-desc">From cloud migration and process automation to legacy overhauls and API integrations - end-to-end transformation delivered in phases that deliver business value at every milestone.</p>

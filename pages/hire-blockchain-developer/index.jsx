@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -88,25 +90,13 @@ const FAQS = [
   { q: 'What Web3 frontend libraries do your blockchain developers use?', a: "ethers.js v6 or viem for contract interaction, wagmi (React hooks) for wallet and contract state management, RainbowKit or ConnectKit for wallet UI, The Graph for blockchain data queries, and Next.js or React as the application framework." },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => { if (!start) return; const num = parseInt(target.replace(/\D/g, ''), 10); if (!num) return; let t0 = null; const step = ts => { if (!t0) t0 = ts; const p = Math.min((ts - t0) / duration, 1); setCount(Math.floor((1 - Math.pow(1 - p, 3)) * num)); if (p < 1) requestAnimationFrame(step); }; requestAnimationFrame(step); }, [start, target, duration]);
-  return count;
-}
-function StatItem({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');  return (<div className="hbc-sc"><div className="hbc-sv">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div><div className="hbc-sl">{label}</div></div>);
-}
-
 export default function HireBlockchainDeveloper() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [ss, setSs] = useState(false);
   const [vis, setVis] = useState(new Set());
   const [vSk, setVSk] = useState([]); const [vEn, setVEn] = useState([]); const [vWh, setVWh] = useState([]); const [vTe, setVTe] = useState([]); const [vSt, setVSt] = useState([]);
-  const stR = useRef(null); const secR = useRef({});
+  const secR = useRef({});
   const skR = useRef(null); const enR = useRef(null); const whR = useRef(null); const teR = useRef(null); const stGr = useRef(null);
-  useEffect(() => { if (!stR.current) return; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setSs(true); o.disconnect(); } }, { threshold: 0.4 }); o.observe(stR.current); return () => o.disconnect(); }, []);
   useEffect(() => { const pairs = [[skR, SKILLS.length, setVSk],[enR, 3, setVEn],[whR, WHY_CARDS.length, setVWh],[teR, 3, setVTe],[stGr, TECH_STACK.length, setVSt]]; const obs = pairs.map(([ref, count, setter]) => { if (!ref.current) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { Array.from({ length: count }, (_, i) => setTimeout(() => setter(p => p.includes(i) ? p : [...p, i]), i * 80)); o.disconnect(); } }, { threshold: 0.05 }); o.observe(ref.current); return o; }); return () => obs.forEach(o => o?.disconnect()); }, []);
   useEffect(() => { const ks = Object.keys(secR.current); const obs = ks.map(k => { const el = secR.current[k]; if (!el) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVis(p => new Set([...p, k])); o.disconnect(); } }, { threshold: 0.1 }); o.observe(el); return o; }); return () => obs.forEach(o => o?.disconnect()); }, []);
   const visSkills = showAll ? SKILLS : SKILLS.slice(0, 6);
@@ -155,31 +145,6 @@ export default function HireBlockchainDeveloper() {
 
 
 
-          .hbc-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
-          .hbc-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
-          .hbc-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .hbc-desc{font-size:16px;color:#3A507A;line-height:1.65;max-width:740px;margin:0 auto 24px}
-          .hbc-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
-          .hbc-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07)}
-          .hbc-dot{width:7px;height:7px;border-radius:50%;background:#f97316;flex-shrink:0}
-          .hbc-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .hbc-p{display:inline-block;padding:14px 36px;background:#f97316;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(249,115,22,.28)}
-          .hbc-p:hover{background:#0F3460;transform:translateY(-2px)}
-          .hbc-g{display:inline-block;padding:14px 36px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .hbc-g:hover{background:rgba(255,255,255,.85);border-color:rgba(249,115,22,.5);transform:translateY(-2px)}
-          .hbc-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:28px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .hbc-sc{padding:18px 16px;text-align:center;border-right:1px solid rgba(15,52,96,.10)}
-          .hbc-sc:last-child{border-right:none}
-          .hbc-sv{font-size:28px;font-weight:900;color:#f97316;letter-spacing:-.5px;line-height:1}
-          .hbc-sl{font-size:11px;color:#4A6080;font-weight:500;margin-top:5px}
-          .hbc-logos{position:relative;z-index:2;padding:24px 40px 52px;display:flex;flex-direction:column;align-items:center;gap:14px}
-          .hbc-ll{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6A80A0}
-          .hbc-lw{width:100%;overflow:hidden}
-          .hbc-lt{display:flex;align-items:center;gap:60px;width:max-content;animation:hbc-mq 28s linear infinite}
-          .hbc-lt:hover{animation-play-state:paused}
-          @keyframes hbc-mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-          .hbc-cl{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
-          .hbc-cl:hover{opacity:.85;filter:grayscale(0%)}
           .hbc-sey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
           .hbc-st{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .hbc-sd{font-size:15px;color:#4A6080;line-height:1.7}
@@ -326,8 +291,8 @@ export default function HireBlockchainDeveloper() {
           .hbc-b{background:rgba(30,64,175,.09);border-color:rgba(30,64,175,.28);color:#1e3a8a}
           .hbc-g2{background:rgba(22,163,74,.09);border-color:rgba(22,163,74,.28);color:#14532d}
           .hbc-a{background:rgba(202,138,4,.09);border-color:rgba(202,138,4,.28);color:#92400e}
-          @media(max-width:1024px){.hbc-hero h1,.hbc-st,.hbc-fq-s h2{font-size:36px}.hbc-sk-g{grid-template-columns:repeat(2,1fr)}.hbc-tec-g{grid-template-columns:repeat(2,1fr)}.hbc-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.hbc-en-c.feat{transform:none}.hbc-en-c.feat.hbc-ev{transform:none}.hbc-en-c.feat.hbc-ev:hover{transform:translateY(-4px)}.hbc-wy-g{grid-template-columns:repeat(2,1fr)}.hbc-tg2{grid-template-columns:1fr}.hbc-ct-g{grid-template-columns:1fr}}
-          @media(max-width:768px){.hbc-bc,.hbc-hero,.hbc-sk-s,.hbc-tec-s,.hbc-en-s,.hbc-pr-s,.hbc-te-s,.hbc-wy-s,.hbc-fq-s,.hbc-rel{padding-left:20px;padding-right:20px}.hbc-hero{padding-top:28px;padding-bottom:20px}.hbc-hero h1{font-size:26px;letter-spacing:-.3px}.hbc-stats{grid-template-columns:1fr 1fr}.hbc-sc:nth-child(2){border-right:none}.hbc-sc:nth-child(3),.hbc-sc:nth-child(4){border-top:1px solid rgba(15,52,96,.10)}.hbc-sc:nth-child(4){border-right:none}.hbc-sk-g,.hbc-tec-g,.hbc-wy-g{grid-template-columns:1fr}.hbc-fr{grid-template-columns:1fr}.hbc-ctt{font-size:28px}.hbc-st{font-size:28px}.hbc-ct-s{padding:48px 20px}.hbc-logos{padding-left:20px;padding-right:20px}}
+          @media(max-width:1024px){.hbc-st,.hbc-fq-s h2{font-size:36px}.hbc-sk-g{grid-template-columns:repeat(2,1fr)}.hbc-tec-g{grid-template-columns:repeat(2,1fr)}.hbc-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.hbc-en-c.feat{transform:none}.hbc-en-c.feat.hbc-ev{transform:none}.hbc-en-c.feat.hbc-ev:hover{transform:translateY(-4px)}.hbc-wy-g{grid-template-columns:repeat(2,1fr)}.hbc-tg2{grid-template-columns:1fr}.hbc-ct-g{grid-template-columns:1fr}}
+          @media(max-width:768px){.hbc-bc,.hbc-sk-s,.hbc-tec-s,.hbc-en-s,.hbc-pr-s,.hbc-te-s,.hbc-wy-s,.hbc-fq-s,.hbc-rel{padding-left:20px;padding-right:20px}.hbc-sk-g,.hbc-tec-g,.hbc-wy-g{grid-template-columns:1fr}.hbc-fr{grid-template-columns:1fr}.hbc-ctt{font-size:28px}.hbc-st{font-size:28px}.hbc-ct-s{padding:48px 20px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
@@ -353,15 +318,19 @@ export default function HireBlockchainDeveloper() {
 </Head>
       <div className="hbc-page">
         <div className="hbc-orb hbc-o1" /><div className="hbc-orb hbc-o2" /><div className="hbc-orb hbc-o3" />
-        <section className="hbc-hero">
-          <span className="hbc-ey">Hire Blockchain Developer</span>
-          <h1>Hire Expert Blockchain Developers - Solidity, DeFi, NFT & Web3</h1>
-          <p className="hbc-desc">Hire pre-vetted blockchain developers specialising in Solidity smart contracts, DeFi protocol development, NFT platforms, Web3 frontends (wagmi/ethers.js), Ethereum, Layer 2 (Arbitrum, Base, Optimism), Polygon, and Solana. Dedicated, part-time, or fixed-scope. Start in 3–5 business days.</p>
-          <div className="hbc-tr">{['Solidity Smart Contracts','DeFi Protocols','NFT Platforms','wagmi / ethers.js','Layer 2 Networks'].map(b => (<div className="hbc-badge" key={b}><span className="hbc-dot" />{b}</div>))}</div>
-          <div className="hbc-ctas"><Link href="#contact" className="hbc-p">Hire a Blockchain Developer</Link><Link href="#engagement" className="hbc-g">View Engagement Models →</Link></div>
-        </section>
-        <div className="hbc-stats" ref={stR}>{[['60+','Blockchain Projects'],['15+','Years Dev Experience'],['48hr','Avg Developer Match'],['98%','Client Retention']].map(([v, l]) => (<StatItem key={l} label={l} val={v} started={ss} />))}</div>
-        <div className="hbc-logos"><span className="hbc-ll">Trusted by Web3 Engineering Teams</span><div className="hbc-lw"><div className="hbc-lt">{[['/logo/Indian_Express_Logo_full.png','Indian Express'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],['/logo/Uniphore.jpg','Uniphore'],['/logo/ICCoLogo.png','ICC'],['/logo/Honor_Logo_(2020).svg.png','Honor'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],['/logo/Indian_Express_Logo_full.png','Indian Express 2'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon 2'],['/logo/Uniphore.jpg','Uniphore 2'],['/logo/ICCoLogo.png','ICC 2'],['/logo/Honor_Logo_(2020).svg.png','Honor 2'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv 2']].map(([src, alt]) => (<img key={alt} src={src} alt={alt.replace(/ \d$/, '')} className="hbc-cl" />))}</div></div></div>
+        <ServiceHero
+          eyebrow="Hire Blockchain Developer"
+          title={<>Hire Expert Blockchain Developers - <AuroraText>Solidity, DeFi, NFT & Web3</AuroraText></>}
+          subtext="Hire pre-vetted blockchain developers specialising in Solidity smart contracts, DeFi protocol development, NFT platforms, Web3 frontends (wagmi/ethers.js), Ethereum, Layer 2 (Arbitrum, Base, Optimism), Polygon, and Solana. Dedicated, part-time, or fixed-scope. Start in 3–5 business days."
+          primaryCta={{ label: 'Hire a Blockchain Developer', href: '#contact' }}
+          secondaryCta={{ label: 'View Engagement Models', href: '#engagement' }}
+          stats={[
+            { label: 'Blockchain Projects', value: '60', suffix: '+' },
+            { label: 'Years Dev Experience', value: '15', suffix: '+' },
+            { label: 'Avg Developer Match', value: '48', suffix: 'hr' },
+            { label: 'Client Retention', value: '98', suffix: '%' },
+          ]}
+        />
         <section className="hbc-sk-s" aria-labelledby="hbc-sk-h"><div className="hbc-in"><div className={`hbc-rv${vis.has('sk') ? ' hbc-ok' : ''}`} ref={el => { secR.current['sk'] = el; }}><span className="hbc-sey">What Our Developers Build</span><h2 id="hbc-sk-h" className="hbc-st">Blockchain Skills & Expertise</h2><p className="hbc-sd" style={{ maxWidth: 720 }}>Solidity smart contracts, DeFi protocols, NFT platforms, Web3 frontends, smart contract security, Layer 2 deployment, Solana programs, DAO governance, blockchain indexing, and architecture consulting.</p></div><div className="hbc-sk-g" ref={skR}>{visSkills.map((s, i) => (<div key={s.n} className={`hbc-sk-c${s.feat ? ' feat' : ''}${vSk.includes(i) ? ' hbc-cv' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}><span className="hbc-sk-n">{s.n}</span><h3>{s.title}</h3><p>{s.desc}</p></div>))}</div>{SKILLS.length > 6 && (<div className="hbc-sm"><button className="hbc-bm" onClick={() => setShowAll(p => !p)}>{showAll ? 'Show fewer ↑' : `Show all ${SKILLS.length} areas ↓`}</button></div>)}</div></section>
         <section className="hbc-tec-s" aria-labelledby="hbc-tec-h"><div className="hbc-in"><div className={`hbc-rv${vis.has('stk') ? ' hbc-ok' : ''}`} ref={el => { secR.current['stk'] = el; }}><span className="hbc-sey">Technology Stack</span><h2 id="hbc-tec-h" className="hbc-st">Blockchain Tools & Technologies</h2><p className="hbc-sd" style={{ maxWidth: 680 }}>Solidity 0.8.x, OpenZeppelin, Hardhat, Foundry, Rust / Anchor (Solana), ethers.js v6, viem, wagmi, RainbowKit, The Graph, Chainlink, Slither, Foundry fuzzing, IPFS/Arweave, and the full Web3 stack.</p></div><div className="hbc-tec-g" ref={stGr}>{TECH_STACK.map((grp, i) => (<div key={grp.group} className={`hbc-tec-c${vSt.includes(i) ? ' hbc-sv2' : ''}`} style={{ transitionDelay: `${i * 60}ms` }}><div className="hbc-tg" style={{ color: grp.color, borderBottomColor: grp.color + '33' }}>{grp.group}</div><div className="hbc-pills">{grp.items.map(item => <span key={item} className="hbc-pill" style={{ color: grp.color, background: grp.color + '12', borderColor: grp.color + '30' }}>{item}</span>)}</div></div>))}</div></div></section>
         <section id="engagement" className="hbc-en-s" aria-labelledby="hbc-en-h"><div className="hbc-in"><div className={`hbc-rv${vis.has('eng') ? ' hbc-ok' : ''}`} ref={el => { secR.current['eng'] = el; }}><span className="hbc-sey">Engagement Models</span><h2 id="hbc-en-h" className="hbc-st">How to Hire a Blockchain Developer</h2><p className="hbc-sd" style={{ maxWidth: 680 }}>Full-time dedicated blockchain developer, part-time engagement, or fixed-scope project - choose the model that fits your Web3 project stage.</p></div><div className="hbc-en-g" ref={enR}>{ENGAGEMENT_MODELS.map((m, i) => (<div key={m.id} className={`hbc-en-c${m.feat ? ' feat' : ''}${vEn.includes(i) ? ' hbc-ev' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}><span className="hbc-en-b" style={{ color: m.badgeColor, borderColor: m.badgeColor + '44', background: m.badgeColor + '14' }}>{m.badge}</span><div className="hbc-en-i"><svg viewBox="0 0 24 24" width="26" height="26"><path d={m.icon} /></svg></div><div className="hbc-en-n">{m.name}</div><div className="hbc-en-h">{m.headline}</div><div className="hbc-en-d">{m.desc}</div><div className="hbc-en-ll">Best for</div><ul className="hbc-en-li">{m.bestFor.map(b => <li key={b}>{b}</li>)}</ul><div className="hbc-en-p"><strong>Process:</strong> {m.process}<br /><span className="hbc-en-tl">{m.timeline}</span></div><Link href="#contact" className="hbc-en-a">Get a free estimate →</Link></div>))}</div></div></section>

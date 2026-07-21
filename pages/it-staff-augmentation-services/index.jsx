@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -88,25 +90,13 @@ const FAQS = [
   { q: 'What is the minimum engagement period?', a: 'We recommend a 3-month minimum to allow for onboarding ramp-up and full productivity measurement. After 3 months, the engagement is month-to-month with 30 days notice to scale down or exit. No long-term lock-in.' },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => { if (!start) return; const num = parseInt(target.replace(/\D/g, ''), 10); if (!num) return; let t0 = null; const step = ts => { if (!t0) t0 = ts; const p = Math.min((ts - t0) / duration, 1); setCount(Math.floor((1 - Math.pow(1 - p, 3)) * num)); if (p < 1) requestAnimationFrame(step); }; requestAnimationFrame(step); }, [start, target, duration]);
-  return count;
-}
-function StatItem({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');  return (<div className="isa-sc"><div className="isa-sv">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div><div className="isa-sl">{label}</div></div>);
-}
-
 export default function ITStaffAugmentation() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [ss, setSs] = useState(false);
   const [vis, setVis] = useState(new Set());
   const [vSk, setVSk] = useState([]); const [vEn, setVEn] = useState([]); const [vWh, setVWh] = useState([]); const [vTe, setVTe] = useState([]); const [vSt, setVSt] = useState([]);
-  const stR = useRef(null); const secR = useRef({});
+  const secR = useRef({});
   const skR = useRef(null); const enR = useRef(null); const whR = useRef(null); const teR = useRef(null); const stGr = useRef(null);
-  useEffect(() => { if (!stR.current) return; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setSs(true); o.disconnect(); } }, { threshold: 0.4 }); o.observe(stR.current); return () => o.disconnect(); }, []);
   useEffect(() => { const pairs = [[skR, SERVICES.length, setVSk],[enR, 3, setVEn],[whR, WHY_CARDS.length, setVWh],[teR, 3, setVTe],[stGr, TECH_STACK.length, setVSt]]; const obs = pairs.map(([ref, count, setter]) => { if (!ref.current) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { Array.from({ length: count }, (_, i) => setTimeout(() => setter(p => p.includes(i) ? p : [...p, i]), i * 80)); o.disconnect(); } }, { threshold: 0.05 }); o.observe(ref.current); return o; }); return () => obs.forEach(o => o?.disconnect()); }, []);
   useEffect(() => { const ks = Object.keys(secR.current); const obs = ks.map(k => { const el = secR.current[k]; if (!el) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVis(p => new Set([...p, k])); o.disconnect(); } }, { threshold: 0.1 }); o.observe(el); return o; }); return () => obs.forEach(o => o?.disconnect()); }, []);
   const visServices = showAll ? SERVICES : SERVICES.slice(0, 6);
@@ -154,31 +144,6 @@ export default function ITStaffAugmentation() {
 
 
 
-          .isa-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
-          .isa-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4338ca;margin-bottom:14px}
-          .isa-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .isa-desc{font-size:16px;color:#3730a3;line-height:1.65;max-width:740px;margin:0 auto 24px}
-          .isa-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
-          .isa-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#1e1b4b;box-shadow:0 2px 8px rgba(30,27,75,.07)}
-          .isa-dot{width:7px;height:7px;border-radius:50%;background:#4338ca;flex-shrink:0}
-          .isa-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .isa-p{display:inline-block;padding:14px 36px;background:#4338ca;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(67,56,202,.28)}
-          .isa-p:hover{background:#1e1b4b;transform:translateY(-2px)}
-          .isa-g{display:inline-block;padding:14px 36px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#1e1b4b;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .isa-g:hover{background:rgba(255,255,255,.85);border-color:rgba(67,56,202,.5);transform:translateY(-2px)}
-          .isa-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:28px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(30,27,75,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .isa-sc{padding:18px 16px;text-align:center;border-right:1px solid rgba(30,27,75,.10)}
-          .isa-sc:last-child{border-right:none}
-          .isa-sv{font-size:28px;font-weight:900;color:#4338ca;letter-spacing:-.5px;line-height:1}
-          .isa-sl{font-size:11px;color:#4338ca;font-weight:500;margin-top:5px;opacity:.7}
-          .isa-logos{position:relative;z-index:2;padding:24px 40px 52px;display:flex;flex-direction:column;align-items:center;gap:14px}
-          .isa-ll{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6366f1}
-          .isa-lw{width:100%;overflow:hidden}
-          .isa-lt{display:flex;align-items:center;gap:60px;width:max-content;animation:isa-mq 28s linear infinite}
-          .isa-lt:hover{animation-play-state:paused}
-          @keyframes isa-mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-          .isa-cl{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
-          .isa-cl:hover{opacity:.85;filter:grayscale(0%)}
           .isa-sey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
           .isa-st{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .isa-sd{font-size:15px;color:#4338ca;opacity:.8;line-height:1.7}
@@ -325,8 +290,8 @@ export default function ITStaffAugmentation() {
           .isa-o{background:rgba(180,83,9,.09);border-color:rgba(180,83,9,.28);color:#92400e}
           .isa-a{background:rgba(190,18,60,.09);border-color:rgba(190,18,60,.28);color:#9f1239}
           .isa-fu{background:rgba(162,28,175,.09);border-color:rgba(162,28,175,.28);color:#86198f}
-          @media(max-width:1024px){.isa-hero h1,.isa-st,.isa-fq-s h2{font-size:36px}.isa-sk-g{grid-template-columns:repeat(2,1fr)}.isa-tec-g{grid-template-columns:repeat(2,1fr)}.isa-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.isa-en-c.feat{transform:none}.isa-en-c.feat.isa-ev{transform:none}.isa-en-c.feat.isa-ev:hover{transform:translateY(-4px)}.isa-wy-g{grid-template-columns:repeat(2,1fr)}.isa-tg2{grid-template-columns:1fr}.isa-ct-g{grid-template-columns:1fr}}
-          @media(max-width:768px){.isa-bc,.isa-hero,.isa-sk-s,.isa-tec-s,.isa-en-s,.isa-pr-s,.isa-te-s,.isa-wy-s,.isa-fq-s,.isa-rel{padding-left:20px;padding-right:20px}.isa-hero{padding-top:28px;padding-bottom:20px}.isa-hero h1{font-size:26px;letter-spacing:-.3px}.isa-stats{grid-template-columns:1fr 1fr}.isa-sc:nth-child(2){border-right:none}.isa-sc:nth-child(3),.isa-sc:nth-child(4){border-top:1px solid rgba(30,27,75,.10)}.isa-sc:nth-child(4){border-right:none}.isa-sk-g,.isa-tec-g,.isa-wy-g{grid-template-columns:1fr}.isa-fr{grid-template-columns:1fr}.isa-ctt{font-size:28px}.isa-st{font-size:28px}.isa-ct-s{padding:48px 20px}.isa-logos{padding-left:20px;padding-right:20px}}
+          @media(max-width:1024px){.isa-st,.isa-fq-s h2{font-size:36px}.isa-sk-g{grid-template-columns:repeat(2,1fr)}.isa-tec-g{grid-template-columns:repeat(2,1fr)}.isa-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.isa-en-c.feat{transform:none}.isa-en-c.feat.isa-ev{transform:none}.isa-en-c.feat.isa-ev:hover{transform:translateY(-4px)}.isa-wy-g{grid-template-columns:repeat(2,1fr)}.isa-tg2{grid-template-columns:1fr}.isa-ct-g{grid-template-columns:1fr}}
+          @media(max-width:768px){.isa-bc,.isa-sk-s,.isa-tec-s,.isa-en-s,.isa-pr-s,.isa-te-s,.isa-wy-s,.isa-fq-s,.isa-rel{padding-left:20px;padding-right:20px}.isa-sk-g,.isa-tec-g,.isa-wy-g{grid-template-columns:1fr}.isa-fr{grid-template-columns:1fr}.isa-ctt{font-size:28px}.isa-st{font-size:28px}.isa-ct-s{padding:48px 20px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
@@ -352,15 +317,19 @@ export default function ITStaffAugmentation() {
 </Head>
       <div className="isa-page">
         <div className="isa-orb isa-o1" /><div className="isa-orb isa-o2" /><div className="isa-orb isa-o3" />
-        <section className="isa-hero">
-          <span className="isa-ey">IT Staff Augmentation</span>
-          <h1>IT Staff Augmentation Services - Add Expert Developers to Your Team in 5–7 Days</h1>
-          <p className="isa-desc">Augment your engineering team with pre-vetted offshore developers - frontend, backend, full-stack, mobile, DevOps, QA, data engineering, and AI/ML specialists embedded directly in your team, working in your tools, under your management. 60–70% below US/UK hiring cost. No recruitment fee. Available in 5–7 business days.</p>
-          <div className="isa-tr">{['5–7 Day Onboarding','Frontend / Backend / Mobile','DevOps / QA / AI-ML','You Manage Directly','60–70% Cost Savings'].map(b => (<div className="isa-badge" key={b}><span className="isa-dot" />{b}</div>))}</div>
-          <div className="isa-ctas"><Link href="#contact" className="isa-p">Augment Your Team Now</Link><Link href="#engagement" className="isa-g">View Engagement Models →</Link></div>
-        </section>
-        <div className="isa-stats" ref={stR}>{[['300+','Developers Placed'],['5-7','Days to Onboard'],['60-70%','Cost Saving vs Local'],['98%','Client Retention']].map(([v, l]) => (<StatItem key={l} label={l} val={v} started={ss} />))}</div>
-        <div className="isa-logos"><span className="isa-ll">Engineering Teams Augmented Across US, UK, Australia</span><div className="isa-lw"><div className="isa-lt">{[['/logo/Indian_Express_Logo_full.png','Indian Express'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],['/logo/Uniphore.jpg','Uniphore'],['/logo/ICCoLogo.png','ICC'],['/logo/Honor_Logo_(2020).svg.png','Honor'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],['/logo/Indian_Express_Logo_full.png','Indian Express 2'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon 2'],['/logo/Uniphore.jpg','Uniphore 2'],['/logo/ICCoLogo.png','ICC 2'],['/logo/Honor_Logo_(2020).svg.png','Honor 2'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv 2']].map(([src, alt]) => (<img key={alt} src={src} alt={alt.replace(/ \d$/, '')} className="isa-cl" />))}</div></div></div>
+        <ServiceHero
+          eyebrow="IT Staff Augmentation · 5–7 Day Onboarding · 60–70% Cost Savings"
+          title={<>IT Staff Augmentation Services - <AuroraText>Add Expert Developers to Your Team</AuroraText> in 5–7 Days</>}
+          subtext="Augment your engineering team with pre-vetted offshore developers - frontend, backend, full-stack, mobile, DevOps, QA, data engineering, and AI/ML specialists embedded directly in your team, working in your tools, under your management. 60–70% below US/UK hiring cost. No recruitment fee. Available in 5–7 business days."
+          primaryCta={{ label: 'Augment Your Team Now', href: '#contact' }}
+          secondaryCta={{ label: 'View Engagement Models', href: '#engagement' }}
+          stats={[
+            { label: 'Developers Placed', value: '300', suffix: '+' },
+            { label: 'Days to Onboard', value: '7', prefix: '5-' },
+            { label: 'Cost Saving vs Local', value: '70', prefix: '60-', suffix: '%' },
+            { label: 'Client Retention', value: '98', suffix: '%' },
+          ]}
+        />
         <section className="isa-sk-s" aria-labelledby="isa-sk-h"><div className="isa-in"><div className={`isa-rv${vis.has('sk') ? ' isa-ok' : ''}`} ref={el => { secR.current['sk'] = el; }}><span className="isa-sey">Augmentation Services</span><h2 id="isa-sk-h" className="isa-st">Developer Roles Available for Augmentation</h2><p className="isa-sd" style={{ maxWidth: 720 }}>Frontend, backend, full-stack, mobile, DevOps, QA, data engineering, AI/ML, software architect, and tech lead augmentation - individual developers or squads, full-time or part-time.</p></div><div className="isa-sk-g" ref={skR}>{visServices.map((s, i) => (<div key={s.n} className={`isa-sk-c${s.feat ? ' feat' : ''}${vSk.includes(i) ? ' isa-cv' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}><span className="isa-sk-n">{s.n}</span><h3>{s.title}</h3><p>{s.desc}</p></div>))}</div>{SERVICES.length > 6 && (<div className="isa-sm"><button className="isa-bm" onClick={() => setShowAll(p => !p)}>{showAll ? 'Show fewer ↑' : `Show all ${SERVICES.length} roles ↓`}</button></div>)}</div></section>
         <section className="isa-tec-s" aria-labelledby="isa-tec-h"><div className="isa-in"><div className={`isa-rv${vis.has('stk') ? ' isa-ok' : ''}`} ref={el => { secR.current['stk'] = el; }}><span className="isa-sey">Technology Coverage</span><h2 id="isa-tec-h" className="isa-st">Technologies Our Augmented Developers Cover</h2><p className="isa-sd" style={{ maxWidth: 680 }}>React, Next.js, Angular, Node.js, Python, PHP, Java, .NET, Flutter, React Native, AWS, Kubernetes, Terraform, dbt, LangChain, PyTorch - specialists across the full modern software stack.</p></div><div className="isa-tec-g" ref={stGr}>{TECH_STACK.map((grp, i) => (<div key={grp.group} className={`isa-tec-c${vSt.includes(i) ? ' isa-sv2' : ''}`} style={{ transitionDelay: `${i * 60}ms` }}><div className="isa-tg" style={{ color: grp.color, borderBottomColor: grp.color + '33' }}>{grp.group}</div><div className="isa-pills">{grp.items.map(item => <span key={item} className="isa-pill" style={{ color: grp.color, background: grp.color + '12', borderColor: grp.color + '30' }}>{item}</span>)}</div></div>))}</div></div></section>
         <section id="engagement" className="isa-en-s" aria-labelledby="isa-en-h"><div className="isa-in"><div className={`isa-rv${vis.has('eng') ? ' isa-ok' : ''}`} ref={el => { secR.current['eng'] = el; }}><span className="isa-sey">Engagement Models</span><h2 id="isa-en-h" className="isa-st">Staff Augmentation Engagement Options</h2><p className="isa-sd" style={{ maxWidth: 680 }}>Full-time developer augmentation, part-time specialist access, or an augmented squad of 3–8 developers - structured to match your delivery timeline and team growth objectives.</p></div><div className="isa-en-g" ref={enR}>{ENGAGEMENT_MODELS.map((m, i) => (<div key={m.id} className={`isa-en-c${m.feat ? ' feat' : ''}${vEn.includes(i) ? ' isa-ev' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}><span className="isa-en-b" style={{ color: m.badgeColor, borderColor: m.badgeColor + '44', background: m.badgeColor + '14' }}>{m.badge}</span><div className="isa-en-i"><svg viewBox="0 0 24 24" width="26" height="26"><path d={m.icon} /></svg></div><div className="isa-en-n">{m.name}</div><div className="isa-en-h">{m.headline}</div><div className="isa-en-d">{m.desc}</div><div className="isa-en-ll">Best for</div><ul className="isa-en-li">{m.bestFor.map(b => <li key={b}>{b}</li>)}</ul><div className="isa-en-p"><strong>Process:</strong> {m.process}<br /><span className="isa-en-tl">{m.timeline}</span></div><Link href="#contact" className="isa-en-a">Get a free estimate →</Link></div>))}</div></div></section>

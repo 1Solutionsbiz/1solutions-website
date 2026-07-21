@@ -1,15 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const RECAPTCHA_KEY = '6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs';
-
-const STATS = [
-  { label: 'Sites Audited with AI', val: '500+' },
-  { label: 'Avg Organic Traffic Growth', val: '+74%' },
-  { label: 'AI Tools Integrated', val: '15+' },
-  { label: 'Years SEO Experience', val: '15+' },
-];
 
 const SERVICES = [
   { n: '01', title: 'AI-Powered Keyword Research', desc: 'Machine learning keyword clustering, semantic topic mapping, and intent classification at scale — identifying keyword opportunities, gaps, and cannibalisations across thousands of terms in hours, not days.' },
@@ -208,26 +203,6 @@ export default function AiSeoServices() {
           .aiseo-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .aiseo-page *,.aiseo-page *::before,.aiseo-page *::after{box-sizing:border-box}
 
-          /* ── HERO ── */
-          .aiseo-hero{background:linear-gradient(135deg,#eef2ff 0%,#f0f9ff 35%,#e0e7ff 70%,#eef2ff 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .aiseo-orb1{position:absolute;top:-120px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.13) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .aiseo-orb2{position:absolute;bottom:0;left:-100px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(14,165,233,0.09) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .aiseo-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.aiseo-bc a:hover{color:#6366f1}.aiseo-bc span{color:#d1d5db}
-          .aiseo-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.22);border-radius:100px;padding:5px 16px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#4f46e5;margin-bottom:28px}
-          .aiseo-pulse{width:7px;height:7px;border-radius:50%;background:#6366f1;display:inline-block;animation:aiseo-pulse 2s ease-in-out infinite}
-          @keyframes aiseo-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.6;transform:scale(0.85)}}
-          .aiseo-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1.5px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .aiseo-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
-          .aiseo-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
-          .aiseo-btn-p{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#4f46e5,#6366f1);color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(99,102,241,0.30)}
-          .aiseo-btn-p:hover{background:linear-gradient(135deg,#3730a3,#4f46e5);box-shadow:0 8px 32px rgba(99,102,241,0.42);transform:translateY(-2px)}
-          .aiseo-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(99,102,241,0.22);color:#4f46e5;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
-          .aiseo-btn-s:hover{border-color:#6366f1;background:rgba(255,255,255,0.85);transform:translateY(-2px)}
-          .aiseo-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.60);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.90);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(99,102,241,0.08)}
-          .aiseo-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(99,102,241,0.08)}.aiseo-stat:last-child{border-right:none}
-          .aiseo-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .aiseo-stat-v{font-size:1.6rem;font-weight:900;color:#4f46e5;letter-spacing:-0.5px}
-
           /* ── SECTION SHARED ── */
           .aiseo-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6366f1;margin-bottom:10px;display:block}
           .aiseo-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
@@ -328,14 +303,10 @@ export default function AiSeoServices() {
           /* ── RESPONSIVE ── */
           @media(max-width:1024px){.aiseo-grid{grid-template-columns:repeat(2,1fr)}.aiseo-why-grid{grid-template-columns:repeat(2,1fr)}.aiseo-contact-in{grid-template-columns:1fr}}
           @media(max-width:768px){
-            .aiseo-hero,.aiseo-svc,.aiseo-tools,.aiseo-proc,.aiseo-why,.aiseo-faq,.aiseo-contact,.aiseo-related{padding:60px 24px}
-            .aiseo-hero{padding-top:60px;padding-bottom:0}
-            .aiseo-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}
-            .aiseo-stat:nth-child(2){border-right:none}
+            .aiseo-svc,.aiseo-tools,.aiseo-proc,.aiseo-why,.aiseo-faq,.aiseo-contact,.aiseo-related{padding:60px 24px}
             .aiseo-grid{grid-template-columns:1fr}
             .aiseo-why-grid{grid-template-columns:1fr}
             .aiseo-step{grid-template-columns:56px 1fr}
-            .aiseo-btns{flex-direction:column;align-items:center}
             .aiseo-row2{grid-template-columns:1fr}
           }
         
@@ -347,32 +318,19 @@ export default function AiSeoServices() {
       <div className="aiseo-page">
 
         {/* ── HERO ── */}
-        <section className="aiseo-hero">
-          <div className="aiseo-orb1"/><div className="aiseo-orb2"/>
-          <div className="aiseo-in">
-            <span className="aiseo-ey">
-              <span className="aiseo-pulse"/>
-              AI-Powered · Machine Learning · NLP · Predictive Analytics
-            </span>
-            <h1 className="aiseo-h1">AI SEO Services — Smarter SEO, Faster Results</h1>
-            <p className="aiseo-sub">Machine learning keyword research, NLP content optimisation, AI-driven technical audits, and predictive rank forecasting — the full power of artificial intelligence applied to search engine optimisation.</p>
-            <div className="aiseo-btns">
-              <a href="#aiseo-contact" className="aiseo-btn-p">
-                Get a Free AI SEO Audit
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <Link href="/seo-services-company" className="aiseo-btn-s">All SEO Services</Link>
-            </div>
-            <div className="aiseo-stats">
-              {STATS.map(s => (
-                <div key={s.label} className="aiseo-stat">
-                  <div className="aiseo-stat-l">{s.label}</div>
-                  <div className="aiseo-stat-v">{s.val}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="AI-Powered · Machine Learning · NLP · Predictive Analytics"
+          title={<>AI SEO Services — <AuroraText>Smarter SEO, Faster Results</AuroraText></>}
+          subtext="Machine learning keyword research, NLP content optimisation, AI-driven technical audits, and predictive rank forecasting — the full power of artificial intelligence applied to search engine optimisation."
+          primaryCta={{ label: 'Get a Free AI SEO Audit', href: '#aiseo-contact' }}
+          secondaryCta={{ label: 'All SEO Services', href: '/seo-services-company' }}
+          stats={[
+            { label: 'Sites Audited with AI', value: '500', suffix: '+' },
+            { label: 'Avg Organic Traffic Growth', value: '74', prefix: '+', suffix: '%' },
+            { label: 'AI Tools Integrated', value: '15', suffix: '+' },
+            { label: 'Years SEO Experience', value: '15', suffix: '+' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="aiseo-svc">

@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const ACCENT = '#5c1800';
 const ACCENT_MID = '#b04200';
@@ -140,27 +142,6 @@ export default function HomeDepotAccountManagement() {
 
 
 
-        .hdep-hero { background: linear-gradient(135deg, #250900 0%, #5c1800 60%, #8a2800 100%); color: #fff; padding: 80px 24px 72px; position: relative; overflow: hidden; }
-        .hdep-hero-orb1 { position: absolute; top: -80px; right: -80px; width: 400px; height: 400px; background: rgba(${ACCENT_RGB}, 0.35); border-radius: 50%; filter: blur(80px); pointer-events: none; }
-        .hdep-hero-orb2 { position: absolute; bottom: -100px; left: -60px; width: 300px; height: 300px; background: rgba(176,66,0,0.22); border-radius: 50%; filter: blur(60px); pointer-events: none; }
-        .hdep-hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
-        .hdep-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; padding: 6px 16px; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 24px; }
-        .hdep-eyebrow-dot { width: 6px; height: 6px; background: #fb923c; border-radius: 50%; }
-        .hdep-hero h1 { font-size: clamp(28px, 4vw, 52px); font-weight: 800; line-height: 1.15; max-width: 860px; margin: 0 0 24px; }
-        .hdep-hero-desc { font-size: 18px; line-height: 1.7; max-width: 760px; opacity: 0.9; margin-bottom: 40px; }
-        .hdep-stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.15); border-radius: 12px; overflow: hidden; margin-bottom: 40px; }
-        .hdep-stat { background: rgba(255,255,255,0.08); padding: 20px 16px; text-align: center; }
-        .hdep-stat-num { font-size: 28px; font-weight: 800; color: #fff; display: block; }
-        .hdep-stat-label { font-size: 12px; opacity: 0.75; margin-top: 4px; display: block; }
-        .hdep-hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 36px; }
-        .hdep-btn-primary { background: #fff; color: ${ACCENT}; padding: 14px 28px; border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: none; cursor: pointer; transition: transform 0.2s; }
-        .hdep-btn-primary:hover { transform: translateY(-2px); }
-        .hdep-btn-secondary { background: transparent; color: #fff; padding: 14px 28px; border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: 2px solid rgba(255,255,255,0.4); cursor: pointer; transition: border-color 0.2s; }
-        .hdep-btn-secondary:hover { border-color: #fff; }
-        .hdep-trust-badges { display: flex; flex-wrap: wrap; gap: 12px; }
-        .hdep-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; padding: 6px 12px; font-size: 13px; }
-        .hdep-badge-check { color: #4ade80; font-size: 14px; }
-
         .hdep-challenges { padding: 80px 24px; background: #fff; }
         .hdep-section-inner { max-width: 1200px; margin: 0 auto; }
         .hdep-section-label { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: ${ACCENT}; margin-bottom: 12px; }
@@ -241,7 +222,6 @@ export default function HomeDepotAccountManagement() {
         @media (max-width: 900px) {
           .hdep-challenges-grid { grid-template-columns: repeat(2, 1fr); }
           .hdep-services-grid { grid-template-columns: repeat(2, 1fr); }
-          .hdep-stats-bar { grid-template-columns: repeat(2, 1fr); }
           .hdep-contact-grid { grid-template-columns: 1fr; gap: 40px; }
           .hdep-cases-grid { grid-template-columns: 1fr; }
           .hdep-results-grid { grid-template-columns: 1fr; gap: 24px; }
@@ -294,35 +274,19 @@ export default function HomeDepotAccountManagement() {
 
       <div className="hdep-page">
 
-        <section className="hdep-hero">
-          <div className="hdep-hero-orb1" />
-          <div className="hdep-hero-orb2" />
-          <div className="hdep-hero-inner">
-            <div className="hdep-eyebrow">
-              <span className="hdep-eyebrow-dot" />
-              Home Depot Marketplace Management
-            </div>
-            <h1>Home Depot Marketplace Management for Brands Reaching 50M+ Monthly Pro Shoppers</h1>
-            <p className="hdep-hero-desc">
-              Home Depot's marketplace reaches over 50 million monthly visitors - including professional contractors, builders, and serious DIY homeowners. 1Solutions manages your Home Depot supplier or marketplace account to ensure your products meet their strict data standards, rank in search, and consistently convert at the shelf level.
-            </p>
-            <div className="hdep-stats-bar">
-              <div className="hdep-stat"><span className="hdep-stat-num">50M+</span><span className="hdep-stat-label">Monthly Home Depot visitors</span></div>
-              <div className="hdep-stat"><span className="hdep-stat-num">$34B+</span><span className="hdep-stat-label">HomeDepot.com annual revenue</span></div>
-              <div className="hdep-stat"><span className="hdep-stat-num">DSV</span><span className="hdep-stat-label">Setup for 96% of our clients</span></div>
-              <div className="hdep-stat"><span className="hdep-stat-num">2.8×</span><span className="hdep-stat-label">avg revenue growth in 9 months</span></div>
-            </div>
-            <div className="hdep-hero-ctas">
-              <Link href="#contact" className="hdep-btn-primary">Get a Free Supplier Consultation →</Link>
-              <Link href="#services" className="hdep-btn-secondary">Explore Services</Link>
-            </div>
-            <div className="hdep-trust-badges">
-              {['Home Depot supplier expertise', 'DSV & EDI compliance', 'Product data specialists', 'No lock-in contracts'].map(b => (
-                <span key={b} className="hdep-badge"><span className="hdep-badge-check">✓</span>{b}</span>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Home Depot Marketplace Management"
+          title={<>Home Depot Marketplace Management <AuroraText>for Brands Reaching 50M+ Monthly Pro Shoppers</AuroraText></>}
+          subtext="Home Depot's marketplace reaches over 50 million monthly visitors - including professional contractors, builders, and serious DIY homeowners. 1Solutions manages your Home Depot supplier or marketplace account to ensure your products meet their strict data standards, rank in search, and consistently convert at the shelf level."
+          primaryCta={{ label: 'Get a Free Supplier Consultation', href: '#contact' }}
+          secondaryCta={{ label: 'Explore Services', href: '#services' }}
+          stats={[
+            { label: 'Monthly Home Depot Visitors', value: '50', suffix: 'M+' },
+            { label: 'HomeDepot.com Annual Revenue', value: '34', prefix: '$', suffix: 'B+' },
+            { label: 'Clients Set Up With DSV', value: '96', suffix: '%' },
+            { label: 'Avg Revenue Growth in 9 Months', value: '8', prefix: '2.', suffix: '×' },
+          ]}
+        />
 
         <section className="hdep-challenges">
           <div className="hdep-section-inner">

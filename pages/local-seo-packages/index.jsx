@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const PLANS = [
   {
@@ -221,24 +222,6 @@ export default function LocalSeoPackages() {
           .lsp-sec-ttl{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;letter-spacing:-1px;color:#111827;margin-bottom:10px}
           .lsp-sec-desc{font-size:15px;color:#4A6080;line-height:1.7;max-width:640px;margin-bottom:40px}
           .lsp-glass{background:linear-gradient(135deg,rgba(219,234,254,.55) 0%,rgba(255,255,255,.80) 60%,rgba(237,233,254,.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:20px;box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-
-          /* ── HERO ── */
-          .lsp-hero{background:linear-gradient(135deg,#ecfeff 0%,#cffafe 25%,#e0f2fe 55%,#dbeafe 85%,#ede9fe 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .lsp-hero-orb1{position:absolute;top:-120px;right:-100px;width:580px;height:580px;border-radius:50%;background:radial-gradient(circle,rgba(8,145,178,.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .lsp-hero-orb2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,.08) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .lsp-hero-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.lsp-bc a:hover{color:#0891B2}.lsp-bc span{color:#d1d5db}
-          .lsp-hero-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(8,145,178,.08);border:1px solid rgba(8,145,178,.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#0891B2;margin-bottom:28px}
-          .lsp-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;color:#111827;margin-bottom:20px;max-width:920px;margin-left:auto;margin-right:auto}
-          .lsp-hero-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
-          .lsp-hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
-          .lsp-btn-primary{display:inline-flex;align-items:center;gap:8px;background:#0891B2;color:#fff;padding:14px 32px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .25s;box-shadow:0 4px 20px rgba(8,145,178,.28)}
-          .lsp-btn-primary:hover{background:#164E63;box-shadow:0 8px 32px rgba(8,145,178,.40);transform:translateY(-2px)}
-          .lsp-btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,.18);color:#0F3460;padding:14px 32px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .25s}
-          .lsp-btn-ghost:hover{border-color:#0891B2;color:#0891B2;transform:translateY(-2px)}
-          .lsp-hero-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(8,145,178,.07)}
-          .lsp-hstat{padding:20px 24px;text-align:center;border-right:1px solid rgba(8,145,178,.08)}.lsp-hstat:last-child{border-right:none}
-          .lsp-hstat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .lsp-hstat-v{font-size:1.65rem;font-weight:900;color:#0891B2;letter-spacing:-.5px}
 
           /* ── PRICING ── */
           .lsp-pricing-sec{background:linear-gradient(135deg,#f0eefa 0%,#f5f3ff 50%,#eff4ff 100%);border-top:1px solid rgba(124,58,237,.08);border-bottom:1px solid rgba(124,58,237,.08)}
@@ -464,10 +447,6 @@ export default function LocalSeoPackages() {
           }
           @media(max-width:768px){
             .lsp-sec{padding:60px 24px}
-            .lsp-hero{padding:60px 24px 0}
-            .lsp-hero-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}
-            .lsp-hstat:nth-child(2){border-right:none}
-            .lsp-hero-btns{flex-direction:column;align-items:center}
             .lsp-why-grid,.lsp-qual-grid,.lsp-proc-grid{grid-template-columns:1fr}
             .lsp-res-grid{grid-template-columns:1fr;max-width:360px;margin-left:auto;margin-right:auto}
             .lsp-cards{grid-template-columns:1fr;max-width:420px;margin:0 auto}
@@ -485,40 +464,19 @@ export default function LocalSeoPackages() {
       <div className="lsp-page">
 
         {/* ── HERO ── */}
-        <section className="lsp-hero" aria-label="Hero">
-          <div className="lsp-hero-orb1" aria-hidden="true"/>
-          <div className="lsp-hero-orb2" aria-hidden="true"/>
-          <div className="lsp-hero-in">
-            <span className="lsp-hero-ey">
-              <span style={{width:6,height:6,borderRadius:'50%',background:'#0891B2',display:'inline-block'}} aria-hidden="true"/>
-              Google Maps · Google Business Profile · Citation Building · Review Management
-            </span>
-            <h1 className="lsp-h1">
-              Local SEO Packages That <AuroraText>Rank You in Google Maps</AuroraText> and AI Search
-            </h1>
-            <p className="lsp-hero-sub">Transparent local SEO pricing for single and multi-location businesses — Google Business Profile management, citation building, review generation, and local link building. One monthly plan. Real results.</p>
-            <div className="lsp-hero-btns">
-              <Link href="#free-audit" className="lsp-btn-primary">
-                Get a Free Local SEO Audit
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </Link>
-              <Link href="#pricing" className="lsp-btn-ghost">See Pricing Plans</Link>
-            </div>
-            <div className="lsp-hero-stats" aria-label="Key statistics">
-              {[
-                {l:'Local Businesses',v:'300+'},
-                {l:'Map Pack Avg Position',v:'Top 3'},
-                {l:'Years Experience',v:'15+'},
-                {l:'Client Retention',v:'93%'},
-              ].map(s => (
-                <div key={s.l} className="lsp-hstat">
-                  <div className="lsp-hstat-l">{s.l}</div>
-                  <div className="lsp-hstat-v">{s.v}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Google Maps · Google Business Profile · Citation Building · Review Management"
+          title={<>Local SEO Packages That <AuroraText>Rank You in Google Maps</AuroraText> and AI Search</>}
+          subtext="Transparent local SEO pricing for single and multi-location businesses - Google Business Profile management, citation building, review generation, and local link building. One monthly plan. Real results."
+          primaryCta={{ label: 'Get a Free Local SEO Audit', href: '#free-audit' }}
+          secondaryCta={{ label: 'See Pricing Plans', href: '#pricing' }}
+          stats={[
+            { label: 'Local Businesses', value: '300', suffix: '+' },
+            { label: 'Map Pack Avg Position', value: '3', prefix: 'Top ' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'Client Retention', value: '93', suffix: '%' },
+          ]}
+        />
 
         {/* ── WHAT IS LOCAL SEO ── */}
         <section className="lsp-sec lsp-light-sec" aria-labelledby="def-title">

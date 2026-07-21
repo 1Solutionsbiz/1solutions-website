@@ -2,22 +2,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-
-function useCountUp(target, duration = 1800) {
-  const [count, setCount] = useState(0);
-  const raf = useRef(null);
-  const start = (t) => {
-    const s = performance.now();
-    const step = (now) => {
-      const p = Math.min((now - s) / duration, 1);
-      setCount(Math.floor(p * t));
-      if (p < 1) raf.current = requestAnimationFrame(step);
-    };
-    raf.current = requestAnimationFrame(step);
-  };
-  useEffect(() => () => cancelAnimationFrame(raf.current), []);
-  return [count, start];
-}
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const ACCENT = '#5e0050';
 const SKILLS = [
@@ -60,9 +46,6 @@ export default function HireDedicatedUiUxDesigner() {
   const enR  = useRef(null); const [enV, setEnV] = useState(false);
   const whR  = useRef(null); const [whV, setWhV] = useState(false);
   const prR  = useRef(null); const [prV, setPrV] = useState(false);
-  const stGr = useRef(null); const [stV, setStV] = useState(false);
-  const [c1, s1] = useCountUp(40); const [c2, s2] = useCountUp(220);
-  const [c3, s3] = useCountUp(49); const [c4, s4] = useCountUp(7);
   const [openFaq, setOpenFaq] = useState(null);
 
   useEffect(() => {
@@ -71,9 +54,7 @@ export default function HireDedicatedUiUxDesigner() {
     const o2 = obs(enR, setEnV); if (enR.current) o2.observe(enR.current);
     const o3 = obs(whR, setWhV); if (whR.current) o3.observe(whR.current);
     const o4 = obs(prR, setPrV); if (prR.current) o4.observe(prR.current);
-    const o5 = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStV(true); s1(40); s2(220); s3(49); s4(7); o5.disconnect(); } }, { threshold: 0.2 });
-    if (stGr.current) o5.observe(stGr.current);
-    return () => [o1, o2, o3, o4, o5].forEach(o => o.disconnect());
+    return () => [o1, o2, o3, o4].forEach(o => o.disconnect());
   }, []);
 
   const LD = {
@@ -99,10 +80,6 @@ export default function HireDedicatedUiUxDesigner() {
         <link rel="canonical" href="https://www.1solutions.biz/hire-dedicated-ui-ux-designer/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
-          .huiux-hero{background:linear-gradient(135deg,${ACCENT} 0%,#2e0028 60%,#420038 100%);color:#fff;padding:100px 20px 80px;text-align:center}
-          .huiux-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin:0 0 18px;line-height:1.15}
-          .huiux-hero p{font-size:1.15rem;max-width:620px;margin:0 auto 36px;opacity:.88;line-height:1.7}
-          .huiux-hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           .huiux-btn-primary{background:#FE9700;color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s}
           .huiux-btn-primary:hover{opacity:.88}
           .huiux-btn-outline{border:2px solid rgba(255,255,255,.7);color:#fff;padding:13px 28px;border-radius:8px;font-weight:600;font-size:1rem;text-decoration:none;transition:border-color .2s}
@@ -131,10 +108,6 @@ export default function HireDedicatedUiUxDesigner() {
           .huiux-step-n{width:48px;height:48px;border-radius:50%;background:${ACCENT};color:#fff;font-size:1.1rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
           .huiux-step h3{font-size:1rem;font-weight:700;color:#111;margin:0 0 8px}
           .huiux-step p{color:#666;font-size:.9rem;line-height:1.6;margin:0}
-          .huiux-stats{background:${ACCENT};padding:60px 20px;color:#fff}
-          .huiux-stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;max-width:900px;margin:0 auto;text-align:center}
-          .huiux-stat-val{font-size:2.8rem;font-weight:900;line-height:1}
-          .huiux-stat-label{font-size:.95rem;opacity:.82;margin-top:6px}
           .huiux-faq{max-width:760px;margin:0 auto}
           .huiux-faq-item{border-bottom:1px solid #e5e5e5;padding:20px 0}
           .huiux-faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;color:#111;font-size:1rem;gap:12px}
@@ -144,17 +117,23 @@ export default function HireDedicatedUiUxDesigner() {
           .huiux-cta{background:linear-gradient(135deg,${ACCENT},#2e0028);padding:80px 20px;text-align:center;color:#fff}
           .huiux-cta h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin:0 0 16px}
           .huiux-cta p{font-size:1.08rem;opacity:.88;max-width:560px;margin:0 auto 36px;line-height:1.7}
-          @media(max-width:600px){.huiux-hero{padding:80px 18px 60px}.huiux-stats-grid{grid-template-columns:1fr 1fr}}
         `}</style>
       </Head>
-      <section className="huiux-hero">
-        <h1>Hire Dedicated UI/UX Designers<br/>Figma &amp; User Research Specialists</h1>
-        <p>Pre-vetted designers who combine rigorous user research with conversion-focused visual design - building products people actually enjoy using. Profiles in 48 hours.</p>
-        <div className="huiux-hero-btns">
-          <Link href="/contact-us" className="huiux-btn-primary">Hire a UI/UX Designer →</Link>
-          <Link href="/portfolio" className="huiux-btn-outline">View Portfolio</Link>
-        </div>
-      </section>
+
+      <ServiceHero
+        eyebrow="Hire Dedicated UI/UX Designer · Figma &amp; User Research"
+        title={<>Hire Dedicated UI/UX Designers <AuroraText>Figma &amp; User Research Specialists</AuroraText></>}
+        subtext="Pre-vetted designers who combine rigorous user research with conversion-focused visual design - building products people actually enjoy using. Profiles in 48 hours."
+        primaryCta={{ label: 'Hire a UI/UX Designer', href: '/contact-us' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        stats={[
+          { label: 'UI/UX Designers', value: '40', suffix: '+' },
+          { label: 'Products Designed', value: '220', suffix: '+' },
+          { label: 'Client Satisfaction', value: '49', prefix: '4.', suffix: '/5' },
+          { label: 'Avg Onboarding', value: '7', suffix: ' Days' },
+        ]}
+      />
+
       <section className="huiux-sec" ref={skR}>
         <div className="huiux-wrap">
           <h2 className="huiux-sec-title">Design Skills &amp; Tools</h2>
@@ -174,14 +153,6 @@ export default function HireDedicatedUiUxDesigner() {
           <h2 className="huiux-sec-title">Why Hire UI/UX Designers from 1Solutions?</h2>
           <p className="huiux-sec-sub">We place designers who treat UX as a business discipline, not a decoration layer.</p>
           <div className="huiux-why-grid">{WHY.map((w, i) => <div key={w.h} className={`huiux-why-item${whV ? ' huiux-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
-        </div>
-      </section>
-      <section className="huiux-stats" ref={stGr}>
-        <div className="huiux-stats-grid">
-          <div><div className="huiux-stat-val">{stV ? c1 : 0}+</div><div className="huiux-stat-label">UI/UX Designers</div></div>
-          <div><div className="huiux-stat-val">{stV ? c2 : 0}+</div><div className="huiux-stat-label">Products Designed</div></div>
-          <div><div className="huiux-stat-val">4.{stV ? c3 : 0}/5</div><div className="huiux-stat-label">Client Satisfaction</div></div>
-          <div><div className="huiux-stat-val">{stV ? c4 : 0} Days</div><div className="huiux-stat-label">Avg Onboarding</div></div>
         </div>
       </section>
       <section className="huiux-sec huiux-sec-alt" ref={prR}>

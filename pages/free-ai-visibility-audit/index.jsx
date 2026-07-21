@@ -3,13 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { AuroraText } from '../../components/AuroraText';
-
-const STATS_HERO = [
-  { val: '62%',  label: 'Of Google searches now show AI Overviews' },
-  { val: '10+',  label: 'AI platforms we check in your audit' },
-  { val: '48h',  label: 'Audit delivered within 48 hours' },
-  { val: '$0',   label: 'Completely free — no strings attached' },
-];
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const AUDIT_SIGNALS = [
   'Google AI Overviews', 'ChatGPT Citations', 'Perplexity.ai Answers',
@@ -309,27 +303,6 @@ export default function FreeAiVisibilityAudit() {
           .pl-g3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
           .pl-g4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 
-          /* ── HERO ── */
-          .pl-hero{position:relative;z-index:1;padding:72px 40px 0;overflow:hidden}
-          .pl-hero::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.10) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px)}
-          .pl-hero::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.16) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px)}
-          .pl-hero-inner{position:relative;z-index:2;text-align:center;max-width:920px;margin:0 auto}.pl-bc a:hover{color:#D97706}.pl-bc-sep{color:#d1d5db}
-          .pl-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:18px}
-          .pl-h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:18px;color:#0F1F40}
-          .pl-hero-sub{font-size:16px;color:#3A507A;line-height:1.65;max-width:660px;margin:0 auto 28px}
-          .pl-btns{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:32px}
-          .pl-btn-p{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:8px;padding:14px 36px;background:rgba(15,52,96,0.85);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.20);border-radius:50px;color:#fff;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;box-shadow:0 6px 24px rgba(15,52,96,0.25)}
-          .pl-btn-p:hover{background:rgba(15,52,96,1);border-color:rgba(245,158,11,0.6);transform:translateY(-2px);box-shadow:0 12px 36px rgba(15,52,96,0.30)}
-          .pl-btn-s{display:inline-flex;align-items:center;padding:14px 32px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1)}
-          .pl-btn-s:hover{background:rgba(255,255,255,0.85);border-color:rgba(245,158,11,0.6);transform:translateY(-2px)}
-
-          /* ── STATS BAR ── */
-          .pl-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95)}
-          .pl-stat{padding:18px 20px;text-align:center;border-right:1px solid rgba(15,52,96,0.10)}
-          .pl-stat:last-child{border-right:none}
-          .pl-stat-v{font-size:26px;font-weight:900;color:#D97706;letter-spacing:-0.5px;line-height:1;margin-bottom:6px}
-          .pl-stat-l{font-size:12px;color:#4A6080;font-weight:500}
-
           /* ── DARK / RESULTS ── */
           .pl-dark{padding:80px 40px;background:#fff;position:relative;z-index:1}
           .pl-dark-ey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;display:block;margin-bottom:10px}
@@ -367,10 +340,6 @@ export default function FreeAiVisibilityAudit() {
           .pl-tcard-name{font-weight:700;color:#111827;font-size:13px}
           .pl-tcard-role{color:#9ca3af;font-size:11px;margin-top:1px}
 
-          /* ── FREE BADGE ── */
-          .aiv-free-badge{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(34,197,94,0.15),rgba(34,197,94,0.08));border:1.5px solid rgba(34,197,94,0.35);border-radius:50px;padding:6px 16px;font-size:12px;font-weight:700;color:#15803D;margin-bottom:20px}
-          .aiv-free-dot{width:7px;height:7px;border-radius:50%;background:#22c55e;animation:aiv-pulse 2s ease-in-out infinite}
-          @keyframes aiv-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.3)}}
 
           /* ── UTM NOTICE ── */
           .aiv-utm-notice{display:inline-flex;align-items:center;gap:6px;background:rgba(217,119,6,0.08);border:1px solid rgba(217,119,6,0.25);border-radius:8px;padding:6px 12px;font-size:11px;color:#92400e;font-weight:600;margin-bottom:12px}
@@ -454,22 +423,15 @@ export default function FreeAiVisibilityAudit() {
             .pl-contact-in{grid-template-columns:1fr}
           }
           @media(max-width:768px){
-            .pl-hero{padding:56px 24px 0}
-            .pl-hero::before,.pl-hero::after{display:none}
             .pl-sec,.pl-dark,.pl-contact-sec,.pl-related,.pl-testi{padding-left:24px;padding-right:24px}
             .pl-testi-hd{padding:0 24px}
-            .pl-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}
-            .pl-stat:nth-child(2){border-right:none}
-            .pl-stat:nth-child(3){border-top:1px solid rgba(15,52,96,0.10)}
-            .pl-stat:nth-child(4){border-top:1px solid rgba(15,52,96,0.10);border-right:none}
-            .pl-btns{flex-direction:column;align-items:center}
             .pl-g3{grid-template-columns:1fr}
             .pl-g4{grid-template-columns:repeat(2,1fr)}
             .pl-row2{grid-template-columns:1fr}
             .pl-tcard{width:300px}
             .pl-orb1,.pl-orb2,.pl-orb3{display:none}
-            .pl-glass,.pl-form-box,.pl-trust-box,.pl-stats,.pl-fitem{backdrop-filter:none;-webkit-backdrop-filter:none}
-            .pl-btn-p,.pl-btn-s,.pl-submit{backdrop-filter:none;-webkit-backdrop-filter:none}
+            .pl-glass,.pl-form-box,.pl-trust-box,.pl-fitem{backdrop-filter:none;-webkit-backdrop-filter:none}
+            .pl-submit{backdrop-filter:none;-webkit-backdrop-filter:none}
             .pl-related{backdrop-filter:none;-webkit-backdrop-filter:none}
             .pl-trow:last-child{display:none}
           }
@@ -487,32 +449,19 @@ export default function FreeAiVisibilityAudit() {
         <div className="pl-orb1"/><div className="pl-orb2"/><div className="pl-orb3"/>
 
         {/* ── HERO ── */}
-        <section className="pl-hero">
-          <div className="pl-hero-inner">
-            <div className="aiv-free-badge">
-              <span className="aiv-free-dot"/>
-              100% Free · No Credit Card · No Obligation
-            </div>
-            <span className="pl-eyebrow">AI Overviews · ChatGPT · Perplexity · Bing Copilot · Gemini</span>
-            <h1 className="pl-h1">Is Your Business Visible<br/>in <AuroraText>AI Search Results?</AuroraText></h1>
-            <p className="pl-hero-sub">62% of Google searches now show AI-generated answers. Millions of buyers ask ChatGPT and Perplexity for recommendations every day. Find out if your brand is being cited — or being ignored — with a free, expert AI visibility audit from 1Solutions.</p>
-            <div className="pl-btns">
-              <a href="#aiv-contact" className="pl-btn-p">
-                Claim Your Free AI Audit
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <a href="#what-we-audit" className="pl-btn-s">See What We Audit</a>
-            </div>
-            <div className="pl-stats">
-              {STATS_HERO.map(s => (
-                <div key={s.label} className="pl-stat">
-                  <div className="pl-stat-v">{s.val}</div>
-                  <div className="pl-stat-l">{s.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="AI Overviews · ChatGPT · Perplexity · Gemini · 100% Free, No Credit Card"
+          title={<>Is Your Business Visible in <AuroraText>AI Search Results?</AuroraText></>}
+          subtext="62% of Google searches now show AI-generated answers. Millions of buyers ask ChatGPT and Perplexity for recommendations every day. Find out if your brand is being cited — or being ignored — with a free, expert AI visibility audit from 1Solutions."
+          primaryCta={{ label: 'Claim Your Free AI Audit', href: '#aiv-contact' }}
+          secondaryCta={{ label: 'See What We Audit', href: '#what-we-audit' }}
+          stats={[
+            { label: 'Of Google Searches Now Show AI Overviews', value: '62', suffix: '%' },
+            { label: 'AI Platforms We Check In Your Audit', value: '10', suffix: '+' },
+            { label: 'Audit Delivered Within', value: '48', suffix: 'h' },
+            { label: 'Completely Free — No Strings Attached', value: '0', prefix: '$' },
+          ]}
+        />
 
         {/* ── AI SIGNALS WE CHECK ── */}
         <section className="pl-sec pl-white">

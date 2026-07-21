@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n:'01', title:'Custom OpenCart Store Development', desc:'Fully bespoke OpenCart stores built from the ground up - designed around your catalogue, brand, and business goals for maximum performance and conversion.', featured:false },
@@ -41,47 +43,14 @@ const WHY = [
   { icon:<svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>, title:'Long-Term Partnership', desc:'97% client retention rate. We remain invested in your success beyond launch through maintenance plans, support retainers, and ongoing growth partnerships.' },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const numTarget = parseInt(target.replace(/\D/g, ''), 10);
-    if (!numTarget) return;
-    let startTime = null;
-    const step = (ts) => {
-      if (!startTime) startTime = ts;
-      const progress = Math.min((ts - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * numTarget));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function AnimatedStat({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');
-  const hasComma = val.includes(',');
-  const display = started ? (hasComma ? num.toLocaleString() : num) + suffix : val;  return (
-    <div className="oc-stat-col">
-      <div className="oc-stat-label">{label}</div>
-      <div className="oc-stat-value">{display}</div>
-    </div>
-  );
-}
-
 export default function OpenCartDevelopmentCompany() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleSteps, setVisibleSteps] = useState([]);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const stepRefs = useRef([]);
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
@@ -102,16 +71,6 @@ export default function OpenCartDevelopmentCompany() {
       return obs;
     });
     return () => observers.forEach(o => o && o.disconnect());
-  }, []);
-
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setStatsStarted(true); obs.disconnect(); } },
-      { threshold: 0.5 }
-    );
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
   }, []);
 
   useEffect(() => {
@@ -217,31 +176,6 @@ export default function OpenCartDevelopmentCompany() {
           .oc-aurora-b2 { position:absolute; left:78%; top:22%; width:48%; height:48%; border-radius:50%; background:radial-gradient(circle at center,rgba(217,119,6,0.20) 0%,transparent 70%); transform:translate(-50%,-50%); }
           .oc-aurora-b3 { position:absolute; left:50%; top:82%; width:55%; height:55%; border-radius:50%; background:radial-gradient(circle at center,rgba(26,82,118,0.16) 0%,transparent 70%); transform:translate(-50%,-50%); }
           @keyframes oc-aurora-drift { 0%{transform:translate3d(0,0,0) scale(1)} 100%{transform:translate3d(-4%,3%,0) scale(1.10)} }
-
-          /* Hero */
-          .oc-hero-block { background:transparent;position:relative;overflow:hidden; }
-          .oc-hero-block::before { content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(6,182,212,0.10) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px); }
-          .oc-hero-block::after { content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(20,184,166,0.12) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px); }
-          .oc-hero-content { position:relative;z-index:2;text-align:center;max-width:860px;margin:0 auto;padding:56px 40px 40px; }
-          .oc-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#164e63;margin-bottom:18px; }
-          .oc-hero-content h1 { font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .oc-hero-content p { font-size:16px;color:#1e4a5c;line-height:1.65;max-width:620px;margin:0 auto 28px; }
-          .oc-btn-hero { display:inline-block;padding:14px 40px;background:rgba(255,255,255,0.58);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.88);border-radius:50px;color:#0e7490;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(6,182,212,0.12),inset 0 1px 0 rgba(255,255,255,1); }
-          .oc-btn-hero:hover { background:rgba(255,255,255,0.90);border-color:rgba(6,182,212,0.50);box-shadow:0 12px 36px rgba(6,182,212,0.18),0 0 0 2px rgba(6,182,212,0.18),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px);color:#0e7490; }
-
-          /* Stats */
-          .oc-hero-stats { position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.48);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.88);box-shadow:0 4px 24px rgba(6,182,212,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
-          .oc-stat-col { padding:18px 20px;text-align:center;border-right:1px solid rgba(6,182,212,0.12); }
-          .oc-stat-col:last-child { border-right:none; }
-          .oc-stat-label { font-size:12px;color:#164e63;font-weight:500;margin-bottom:6px; }
-          .oc-stat-value { font-size:26px;font-weight:900;color:#0891b2;letter-spacing:-0.5px;line-height:1; }
-
-          /* Clients */
-          .oc-clients-bar { position:relative;z-index:2;padding:20px 40px 60px;max-width:1440px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px; }
-          .oc-clients-label { font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#155e75; }
-          .oc-clients-logos { width:100%;overflow:hidden; }
-          .oc-client-logo { height:26px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(100%);opacity:0.5;transition:opacity 0.25s,filter 0.25s; }
-          .oc-client-logo:hover { opacity:0.85;filter:grayscale(0%); }
 
           /* Sections shared */
           .oc-section-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#0891b2;margin-bottom:12px;display:block; }
@@ -448,23 +382,12 @@ export default function OpenCartDevelopmentCompany() {
           .oc-rtag-emerald { background:rgba(16,185,129,0.10);border-color:rgba(16,185,129,0.28);color:#065F46; }
           .oc-rtag-slate   { background:rgba(100,116,139,0.10);border-color:rgba(100,116,139,0.28);color:#334155; }
 
-          /* Shimmer */
-          .oc-btn-hero-shimmer { position:relative;overflow:hidden; }
-          .oc-btn-hero-shimmer::after { content:'';position:absolute;top:-10%;left:-120%;width:80%;height:120%;background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,0.78) 45%,rgba(255,255,255,0.92) 50%,rgba(255,255,255,0.78) 55%,transparent 100%);animation:oc-shimmer-sweep 2.5s ease-in-out infinite;pointer-events:none; }
-          @keyframes oc-shimmer-sweep { 0%{left:-120%} 35%,100%{left:160%} }
-
           /* Section reveal */
           .oc-section-reveal { opacity:0;transform:translateY(48px);transition:opacity 0.7s cubic-bezier(0.22,1,0.36,1),transform 0.7s cubic-bezier(0.22,1,0.36,1); }
           .oc-section-reveal.oc-revealed { opacity:1;transform:translateY(0); }
 
-          /* Logo marquee */
-          .oc-logos-track { display:flex;align-items:center;gap:60px;width:max-content;animation:oc-marquee 28s linear infinite; }
-          .oc-logos-track:hover { animation-play-state:paused; }
-          @keyframes oc-marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-
           /* Responsive */
           @media (max-width:1024px) {
-            .oc-hero-content h1 { font-size:40px; }
             .oc-services-grid { grid-template-columns:repeat(2,1fr); }
             .oc-why-grid { grid-template-columns:repeat(2,1fr); }
             .oc-portfolio-grid { grid-template-columns:repeat(2,1fr); }
@@ -474,17 +397,6 @@ export default function OpenCartDevelopmentCompany() {
           }
           @media (max-width:768px) {
             .oc-page { overflow-x:hidden; }
-            .oc-hero-content { padding:36px 20px 24px; }
-            .oc-hero-content h1 { font-size:28px;letter-spacing:-0.3px; }
-            .oc-hero-content p { font-size:15px; }
-            .oc-hero-stats { grid-template-columns:1fr 1fr;max-width:100%; }
-            .oc-stat-col { padding:14px 12px; }
-            .oc-stat-col:nth-child(2) { border-right:none; }
-            .oc-stat-col:nth-child(3) { border-top:1px solid rgba(6,182,212,0.12); }
-            .oc-stat-col:nth-child(4) { border-top:1px solid rgba(6,182,212,0.12);border-right:none; }
-            .oc-stat-value { font-size:22px; }
-            .oc-clients-bar { padding:16px 20px 36px;gap:12px; }
-            .oc-client-logo { height:20px; }
             .oc-services-section { padding:48px 20px 40px; }
             .oc-portfolio-section { padding:48px 16px; }
             .oc-portfolio-wrap { padding:24px 20px 32px;border-radius:16px; }
@@ -525,7 +437,6 @@ export default function OpenCartDevelopmentCompany() {
             .oc-stat-number { font-size:28px; }
           }
           @media (max-width:480px) {
-            .oc-hero-content h1 { font-size:24px; }
             .oc-section-title,.oc-engage-title,.oc-process-main-title,.oc-related-title { font-size:26px; }
             .oc-services-grid { grid-template-columns:1fr; }
             .oc-service-card { padding:20px 18px 18px; }
@@ -552,45 +463,18 @@ export default function OpenCartDevelopmentCompany() {
         </div>
 
         {/* ── HERO ── */}
-        <div className="oc-hero-block">
-          <div className="oc-hero-content">
-            <span className="oc-eyebrow">Expert OpenCart Development Company</span>
-            <h1>OpenCart Development Services - Fast, Affordable, and Built to Sell</h1>
-            <p>Build powerful, lightweight, and SEO-optimised OpenCart stores with 1Solutions' expert development team. From custom themes and bespoke extensions to platform migrations and multi-store setups - we deliver OpenCart solutions that drive real results for businesses across the US, Canada, and Australia.</p>
-            <Link href="#contact" className="oc-btn-hero oc-btn-hero-shimmer">Get a Free OpenCart Consultation</Link>
-          </div>
-
-          <div className="oc-hero-stats" ref={statsRef}>
-            {[['OpenCart Stores Built','100+'],['E-Commerce Experts','50+'],['Projects Delivered','1,200+'],['Years in Business','15+']].map(([label,val]) => (
-              <AnimatedStat key={label} label={label} val={val} started={statsStarted} />
-            ))}
-          </div>
-
-          <div className="oc-clients-bar">
-            <span className="oc-clients-label">Trusted by Leading Brands</span>
-            <div className="oc-clients-logos">
-              <div className="oc-logos-track">
-                {[
-                  ['/logo/Indian_Express_Logo_full.png','Indian Express'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],
-                  ['/logo/Uniphore.jpg','Uniphore'],
-                  ['/logo/ICCoLogo.png','ICC'],
-                  ['/logo/Honor_Logo_(2020).svg.png','Honor'],
-                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],
-                  ['/logo/Indian_Express_Logo_full.png','Indian Express2'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon2'],
-                  ['/logo/Uniphore.jpg','Uniphore2'],
-                  ['/logo/ICCoLogo.png','ICC2'],
-                  ['/logo/Honor_Logo_(2020).svg.png','Honor2'],
-                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv2'],
-                ].map(([src,alt]) => (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img key={alt} src={src} alt={alt.replace(/\d+$/,'')} className="oc-client-logo" />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="Expert OpenCart Development Company"
+          title={<>OpenCart Development Services - <AuroraText>Fast, Affordable, and Built to Sell</AuroraText></>}
+          subtext="Build powerful, lightweight, and SEO-optimised OpenCart stores with 1Solutions' expert development team. From custom themes and bespoke extensions to platform migrations and multi-store setups - we deliver OpenCart solutions that drive real results for businesses across the US, Canada, and Australia."
+          primaryCta={{ label: 'Get a Free OpenCart Consultation', href: '#contact' }}
+          stats={[
+            { label: 'OpenCart Stores Built', value: '100', suffix: '+' },
+            { label: 'E-Commerce Experts', value: '50', suffix: '+' },
+            { label: 'Projects Delivered', value: '1,200', suffix: '+' },
+            { label: 'Years in Business', value: '15', suffix: '+' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="oc-services-section">

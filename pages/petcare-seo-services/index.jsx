@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Veterinary Keyword Strategy', desc: 'Comprehensive keyword mapping across vet near me, emergency vet, cat vet, dog specialist, low-cost vet, exotic animal vet, and specialist referral terms - ensuring your practice appears for every search a pet owner makes when their animal needs care.' },
@@ -85,29 +87,10 @@ export default function PetcareSeoServices() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           * { box-sizing: border-box; }
-          .ptseo-hero { position:relative;overflow:hidden;padding:100px 40px 90px;background:linear-gradient(135deg,rgba(26,69,0,0.10) 0%,rgba(255,255,255,0.72) 50%,rgba(26,69,0,0.06) 100%); }
-          .ptseo-orb1 { position:absolute;top:-120px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(26,69,0,0.13) 0%,transparent 70%);pointer-events:none;filter:blur(10px); }
-          .ptseo-orb2 { position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(60,150,0,0.08) 0%,transparent 70%);pointer-events:none;filter:blur(8px); }
-          .ptseo-inner { max-width:1200px;margin:0 auto;position:relative;z-index:1; }
-          .ptseo-eyebrow { display:inline-flex;align-items:center;gap:8px;background:rgba(26,69,0,0.10);border:1px solid rgba(26,69,0,0.22);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#1a4500;margin-bottom:24px; }
-          .ptseo-h1 { font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .ptseo-desc { font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:660px; }
-          .ptseo-btns { display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px; }
           .ptseo-btn-p { display:inline-flex;align-items:center;gap:8px;background:#1a4500;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 6px 24px rgba(26,69,0,0.28); }
           .ptseo-btn-p:hover { background:#2d7500;transform:translateY(-2px); }
           .ptseo-btn-s { display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.7);color:#1a4500;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;border:1.5px solid rgba(26,69,0,0.20);transition:all 0.25s;backdrop-filter:blur(8px); }
           .ptseo-btn-s:hover { background:#fff;transform:translateY(-2px); }
-          .ptseo-trust { display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-bottom:48px; }
-          .ptseo-badge { display:flex;align-items:center;gap:6px;font-size:12px;color:#6b7280;font-weight:500; }
-          .ptseo-stats-bar { display:flex;border:1px solid rgba(26,69,0,0.12);border-radius:16px;background:rgba(255,255,255,0.75);backdrop-filter:blur(12px);overflow:hidden;max-width:720px; }
-          .ptseo-stat-item { flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(26,69,0,0.08); }
-          .ptseo-stat-item:last-child { border-right:none; }
-          .ptseo-stat-num { font-size:1.5rem;font-weight:900;color:#1a4500;line-height:1;letter-spacing:-1px; }
-          .ptseo-stat-lbl { font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px; }
-
-
-
-
 
           .ptseo-sec { padding:80px 40px; }
           .ptseo-sec-inner { max-width:1200px;margin:0 auto; }
@@ -155,8 +138,7 @@ export default function PetcareSeoServices() {
           .ptseo-cta-p { font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px; }
           @media (max-width:900px) { .ptseo-grid3,.ptseo-res-grid { grid-template-columns:1fr 1fr; } }
           @media (max-width:600px) {
-            .ptseo-hero,.ptseo-sec,.ptseo-results,.ptseo-cta { padding-left:20px;padding-right:20px; }
-            .ptseo-hero { padding-top:60px;padding-bottom:50px; }
+            .ptseo-sec,.ptseo-results,.ptseo-cta { padding-left:20px;padding-right:20px; }
             .ptseo-grid3,.ptseo-res-grid { grid-template-columns:1fr; }
           }
         
@@ -165,45 +147,19 @@ export default function PetcareSeoServices() {
         </style>
       </Head>
 
-      <section className="ptseo-hero">
-        <div className="ptseo-orb1" /><div className="ptseo-orb2" />
-        <div className="ptseo-inner">
-          <span className="ptseo-eyebrow">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
-            Pet Care SEO - Vet · Grooming · Boarding · Daycare
-          </span>
-          <h1 className="ptseo-h1">Pet Care SEO That Brings More<br/>Loyal Pet Owners to Your Door</h1>
-          <p className="ptseo-desc">1Solutions builds pet care SEO strategies that put your vet clinic, grooming salon, or boarding facility in front of pet owners exactly when they need you - from urgent emergency vet searches to summer boarding bookings. Local SEO, GBP dominance, and seasonal campaigns built for the pet industry.</p>
-          <div className="ptseo-btns">
-            <a href="#contact" className="ptseo-btn-p">
-              Get Your Free Pet Care SEO Audit
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <Link href="/affordable-seo-packages/" className="ptseo-btn-s">View SEO Packages</Link>
-          </div>
-          <div className="ptseo-trust">
-            {['Pet Industry SEO Expertise','Seasonal Campaign Strategy','Multi-Service Coverage','No Lock-in Contracts'].map(t => (
-              <span key={t} className="ptseo-badge">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a4500" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                {t}
-              </span>
-            ))}
-          </div>
-          <div className="ptseo-stats-bar">
-            {[
-              { num:'$150B+', lbl:'Pet industry revenue in the US (2024)' },
-              { num:'82%', lbl:'of pet owners search online for vet services' },
-              { num:'74%', lbl:'increase in emergency vet searches since 2020' },
-              { num:'28%', lbl:'growth in pet boarding searches each summer' },
-            ].map(s => (
-              <div key={s.lbl} className="ptseo-stat-item">
-                <span className="ptseo-stat-num">{s.num}</span>
-                <span className="ptseo-stat-lbl">{s.lbl}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="Pet Care SEO - Vet · Grooming · Boarding · Daycare"
+        title={<>Pet Care SEO That Brings <AuroraText>More Loyal Pet Owners</AuroraText> to Your Door</>}
+        subtext="1Solutions builds pet care SEO strategies that put your vet clinic, grooming salon, or boarding facility in front of pet owners exactly when they need you - from urgent emergency vet searches to summer boarding bookings. Local SEO, GBP dominance, and seasonal campaigns built for the pet industry."
+        primaryCta={{ label: 'Get Your Free Pet Care SEO Audit', href: '#contact' }}
+        secondaryCta={{ label: 'View SEO Packages', href: '/affordable-seo-packages/' }}
+        stats={[
+          { label: 'US Pet Industry Revenue (2024)', value: '150', prefix: '$', suffix: 'B+' },
+          { label: 'Pet Owners Who Search Online for Vets', value: '82', suffix: '%' },
+          { label: 'Emergency Vet Search Growth Since 2020', value: '74', suffix: '%' },
+          { label: 'Boarding Search Growth Each Summer', value: '28', suffix: '%' },
+        ]}
+      />
 
       <section className="ptseo-sec ptseo-bg" id="services">
         <div className="ptseo-sec-inner">

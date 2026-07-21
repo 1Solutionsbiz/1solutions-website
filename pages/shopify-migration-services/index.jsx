@@ -2,22 +2,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-
-function useCountUp(target, duration = 1800) {
-  const [count, setCount] = useState(0);
-  const raf = useRef(null);
-  const start = (t) => {
-    const s = performance.now();
-    const step = (now) => {
-      const p = Math.min((now - s) / duration, 1);
-      setCount(Math.floor(p * t));
-      if (p < 1) raf.current = requestAnimationFrame(step);
-    };
-    raf.current = requestAnimationFrame(step);
-  };
-  useEffect(() => () => cancelAnimationFrame(raf.current), []);
-  return [count, start];
-}
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const ACCENT = '#6d28d9';
 const SKILLS = [
@@ -61,9 +47,6 @@ export default function ShopifyMigrationServices() {
   const enR  = useRef(null); const [enV, setEnV] = useState(false);
   const whR  = useRef(null); const [whV, setWhV] = useState(false);
   const prR  = useRef(null); const [prV, setPrV] = useState(false);
-  const stGr = useRef(null); const [stV, setStV] = useState(false);
-  const [c1, s1] = useCountUp(60);  const [c2, s2] = useCountUp(300);
-  const [c3, s3] = useCountUp(49);  const [c4, s4] = useCountUp(30);
   const [openFaq, setOpenFaq] = useState(null);
 
   useEffect(() => {
@@ -72,9 +55,7 @@ export default function ShopifyMigrationServices() {
     const o2 = obs(enR, setEnV); if (enR.current) o2.observe(enR.current);
     const o3 = obs(whR, setWhV); if (whR.current) o3.observe(whR.current);
     const o4 = obs(prR, setPrV); if (prR.current) o4.observe(prR.current);
-    const o5 = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStV(true); s1(60); s2(300); s3(49); s4(30); o5.disconnect(); } }, { threshold: 0.2 });
-    if (stGr.current) o5.observe(stGr.current);
-    return () => [o1, o2, o3, o4, o5].forEach(o => o.disconnect());
+    return () => [o1, o2, o3, o4].forEach(o => o.disconnect());
   }, []);
 
   const LD = {
@@ -100,14 +81,8 @@ export default function ShopifyMigrationServices() {
         <link rel="canonical" href="https://www.1solutions.biz/shopify-migration-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
-          .sms-hero{background:linear-gradient(135deg,${ACCENT} 0%,#3b0764 60%,#4c1d95 100%);color:#fff;padding:100px 20px 80px;text-align:center}
-          .sms-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin:0 0 18px;line-height:1.15}
-          .sms-hero p{font-size:1.15rem;max-width:640px;margin:0 auto 36px;opacity:.88;line-height:1.7}
-          .sms-hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           .sms-btn-primary{background:#FE9700;color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s}
           .sms-btn-primary:hover{opacity:.88}
-          .sms-btn-outline{border:2px solid rgba(255,255,255,.7);color:#fff;padding:13px 28px;border-radius:8px;font-weight:600;font-size:1rem;text-decoration:none;transition:border-color .2s}
-          .sms-btn-outline:hover{border-color:#fff}
           .sms-sec{padding:70px 20px}.sms-sec-alt{background:#f5f3ff}
           .sms-wrap{max-width:1100px;margin:0 auto}
           .sms-sec-title{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:800;color:#111;text-align:center;margin:0 0 12px}
@@ -132,10 +107,6 @@ export default function ShopifyMigrationServices() {
           .sms-step-n{width:48px;height:48px;border-radius:50%;background:${ACCENT};color:#fff;font-size:1.1rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
           .sms-step h3{font-size:1rem;font-weight:700;color:#111;margin:0 0 8px}
           .sms-step p{color:#666;font-size:.9rem;line-height:1.6;margin:0}
-          .sms-stats{background:${ACCENT};padding:60px 20px;color:#fff}
-          .sms-stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;max-width:900px;margin:0 auto;text-align:center}
-          .sms-stat-val{font-size:2.8rem;font-weight:900;line-height:1}
-          .sms-stat-label{font-size:.95rem;opacity:.82;margin-top:6px}
           .sms-faq{max-width:760px;margin:0 auto}
           .sms-faq-item{border-bottom:1px solid #e5e5e5;padding:20px 0}
           .sms-faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;color:#111;font-size:1rem;gap:12px}
@@ -145,17 +116,21 @@ export default function ShopifyMigrationServices() {
           .sms-cta{background:linear-gradient(135deg,${ACCENT},#3b0764);padding:80px 20px;text-align:center;color:#fff}
           .sms-cta h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin:0 0 16px}
           .sms-cta p{font-size:1.08rem;opacity:.88;max-width:560px;margin:0 auto 36px;line-height:1.7}
-          @media(max-width:600px){.sms-hero{padding:80px 18px 60px}.sms-stats-grid{grid-template-columns:1fr 1fr}}
         `}</style>
       </Head>
-      <section className="sms-hero">
-        <h1>Shopify Migration Services<br/>Move to Shopify Without Losing SEO or Data</h1>
-        <p>We migrate WooCommerce, Magento, BigCommerce, PrestaShop, and custom-built stores to Shopify with zero data loss, full URL redirect mapping, and ranking preservation. 15+ years of e-commerce migration experience across US, Canada, and Australia.</p>
-        <div className="sms-hero-btns">
-          <Link href="/contact-us" className="sms-btn-primary">Get a Free Migration Audit →</Link>
-          <Link href="/portfolio" className="sms-btn-outline">View Portfolio</Link>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="Shopify Migration Services"
+        title={<>Move to Shopify <AuroraText>Without Losing SEO or Data</AuroraText></>}
+        subtext="We migrate WooCommerce, Magento, BigCommerce, PrestaShop, and custom-built stores to Shopify with zero data loss, full URL redirect mapping, and ranking preservation. 15+ years of e-commerce migration experience across US, Canada, and Australia."
+        primaryCta={{ label: 'Get a Free Migration Audit', href: '/contact-us' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        stats={[
+          { label: 'Shopify Migrations', value: '60', suffix: '+' },
+          { label: 'Stores Migrated', value: '300', suffix: '+' },
+          { label: 'Client Satisfaction', value: '9', prefix: '4.', suffix: '/5' },
+          { label: 'Post-Launch Support', value: '30', suffix: ' Days' },
+        ]}
+      />
       <section className="sms-sec" ref={skR}>
         <div className="sms-wrap">
           <h2 className="sms-sec-title">Migration Capabilities</h2>
@@ -175,14 +150,6 @@ export default function ShopifyMigrationServices() {
           <h2 className="sms-sec-title">Why Choose 1Solutions for Your Shopify Migration?</h2>
           <p className="sms-sec-sub">We have migrated 300+ stores and know exactly what breaks - and how to prevent it.</p>
           <div className="sms-why-grid">{WHY.map((w, i) => <div key={w.h} className={`sms-why-item${whV ? ' sms-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
-        </div>
-      </section>
-      <section className="sms-stats" ref={stGr}>
-        <div className="sms-stats-grid">
-          <div><div className="sms-stat-val">{stV ? c1 : 0}+</div><div className="sms-stat-label">Shopify Migrations</div></div>
-          <div><div className="sms-stat-val">{stV ? c2 : 0}+</div><div className="sms-stat-label">Stores Migrated</div></div>
-          <div><div className="sms-stat-val">4.{stV ? c3 : 0}/5</div><div className="sms-stat-label">Client Satisfaction</div></div>
-          <div><div className="sms-stat-val">{stV ? c4 : 0} Days</div><div className="sms-stat-label">Post-Launch Support</div></div>
         </div>
       </section>
       <section className="sms-sec sms-sec-alt" ref={prR}>

@@ -2,22 +2,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-
-function useCountUp(target, duration = 1800) {
-  const [count, setCount] = useState(0);
-  const raf = useRef(null);
-  const start = (t) => {
-    const s = performance.now();
-    const step = (now) => {
-      const p = Math.min((now - s) / duration, 1);
-      setCount(Math.floor(p * t));
-      if (p < 1) raf.current = requestAnimationFrame(step);
-    };
-    raf.current = requestAnimationFrame(step);
-  };
-  useEffect(() => () => cancelAnimationFrame(raf.current), []);
-  return [count, start];
-}
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const ACCENT = '#6d1800';
 const SKILLS = [
@@ -60,12 +46,6 @@ export default function HireMagentoDeveloper() {
   const enR  = useRef(null); const [enV,  setEnV]  = useState(false);
   const whR  = useRef(null); const [whV,  setWhV]  = useState(false);
   const prR  = useRef(null); const [prV,  setPrV]  = useState(false);
-  const stGr = useRef(null); const [stV,  setStV]  = useState(false);
-
-  const [c1, s1] = useCountUp(35);
-  const [c2, s2] = useCountUp(150);
-  const [c3, s3] = useCountUp(48);
-  const [c4, s4] = useCountUp(7);
   const [openFaq, setOpenFaq] = useState(null);
 
   useEffect(() => {
@@ -74,9 +54,7 @@ export default function HireMagentoDeveloper() {
     const o2 = obs(enR,  setEnV);  if (enR.current)  o2.observe(enR.current);
     const o3 = obs(whR,  setWhV);  if (whR.current)  o3.observe(whR.current);
     const o4 = obs(prR,  setPrV);  if (prR.current)  o4.observe(prR.current);
-    const o5 = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStV(true); s1(35); s2(150); s3(48); s4(7); o5.disconnect(); } }, { threshold: 0.2 });
-    if (stGr.current) o5.observe(stGr.current);
-    return () => [o1, o2, o3, o4, o5].forEach(o => o.disconnect());
+    return () => [o1, o2, o3, o4].forEach(o => o.disconnect());
   }, []);
 
   const LD = {
@@ -105,10 +83,6 @@ export default function HireMagentoDeveloper() {
         <link rel="canonical" href="https://www.1solutions.biz/hire-magento-developer/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
-          .hmag-hero{background:linear-gradient(135deg,${ACCENT} 0%,#3d0c00 60%,#580f00 100%);color:#fff;padding:100px 20px 80px;text-align:center}
-          .hmag-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin:0 0 18px;line-height:1.15}
-          .hmag-hero p{font-size:1.15rem;max-width:620px;margin:0 auto 36px;opacity:.88;line-height:1.7}
-          .hmag-hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           .hmag-btn-primary{background:#FE9700;color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s}
           .hmag-btn-primary:hover{opacity:.88}
           .hmag-btn-outline{border:2px solid rgba(255,255,255,.7);color:#fff;padding:13px 28px;border-radius:8px;font-weight:600;font-size:1rem;text-decoration:none;transition:border-color .2s}
@@ -138,10 +112,6 @@ export default function HireMagentoDeveloper() {
           .hmag-step-n{width:48px;height:48px;border-radius:50%;background:${ACCENT};color:#fff;font-size:1.1rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
           .hmag-step h3{font-size:1rem;font-weight:700;color:#111;margin:0 0 8px}
           .hmag-step p{color:#666;font-size:.9rem;line-height:1.6;margin:0}
-          .hmag-stats{background:${ACCENT};padding:60px 20px;color:#fff}
-          .hmag-stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;max-width:900px;margin:0 auto;text-align:center}
-          .hmag-stat-val{font-size:2.8rem;font-weight:900;line-height:1}
-          .hmag-stat-label{font-size:.95rem;opacity:.82;margin-top:6px}
           .hmag-faq{max-width:760px;margin:0 auto}
           .hmag-faq-item{border-bottom:1px solid #e5e5e5;padding:20px 0}
           .hmag-faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;color:#111;font-size:1rem;gap:12px}
@@ -151,18 +121,22 @@ export default function HireMagentoDeveloper() {
           .hmag-cta{background:linear-gradient(135deg,${ACCENT},#3d0c00);padding:80px 20px;text-align:center;color:#fff}
           .hmag-cta h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin:0 0 16px}
           .hmag-cta p{font-size:1.08rem;opacity:.88;max-width:560px;margin:0 auto 36px;line-height:1.7}
-          @media(max-width:600px){.hmag-hero{padding:80px 18px 60px}.hmag-stats-grid{grid-template-columns:1fr 1fr}}
         `}</style>
       </Head>
 
-      <section className="hmag-hero">
-        <h1>Hire Magento Developers<br/>Enterprise eCommerce Expertise</h1>
-        <p>Pre-vetted Magento 2 and Adobe Commerce specialists for custom modules, platform migrations, PWA storefronts, and ERP integrations. Profiles in 48 hours.</p>
-        <div className="hmag-hero-btns">
-          <Link href="/contact-us" className="hmag-btn-primary">Hire a Magento Developer →</Link>
-          <Link href="/portfolio" className="hmag-btn-outline">View Portfolio</Link>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="Hire Magento Developer · Enterprise eCommerce"
+        title={<>Hire Magento Developers <AuroraText>Enterprise eCommerce Expertise</AuroraText></>}
+        subtext="Pre-vetted Magento 2 and Adobe Commerce specialists for custom modules, platform migrations, PWA storefronts, and ERP integrations. Profiles in 48 hours."
+        primaryCta={{ label: 'Hire a Magento Developer', href: '/contact-us' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        stats={[
+          { label: 'Magento Developers', value: '35', suffix: '+' },
+          { label: 'Magento Stores Delivered', value: '150', suffix: '+' },
+          { label: 'Client Satisfaction', value: '48', prefix: '4.', suffix: '/5' },
+          { label: 'Average Onboarding', value: '7', suffix: ' Days' },
+        ]}
+      />
 
       <section className="hmag-sec" ref={skR}>
         <div className="hmag-wrap">
@@ -204,15 +178,6 @@ export default function HireMagentoDeveloper() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="hmag-stats" ref={stGr}>
-        <div className="hmag-stats-grid">
-          <div><div className="hmag-stat-val">{stV ? c1 : 0}+</div><div className="hmag-stat-label">Magento Developers</div></div>
-          <div><div className="hmag-stat-val">{stV ? c2 : 0}+</div><div className="hmag-stat-label">Magento Stores Delivered</div></div>
-          <div><div className="hmag-stat-val">4.{stV ? c3 : 0}/5</div><div className="hmag-stat-label">Client Satisfaction</div></div>
-          <div><div className="hmag-stat-val">{stV ? c4 : 0} Days</div><div className="hmag-stat-label">Average Onboarding</div></div>
         </div>
       </section>
 

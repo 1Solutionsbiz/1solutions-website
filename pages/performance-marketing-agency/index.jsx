@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: 'Google Ads (PPC)', desc: 'Search, Display, and YouTube campaigns with full-funnel keyword strategy, Quality Score optimisation, and ROAS-focused bid management across every stage of the purchase journey.' },
@@ -61,13 +62,6 @@ const FAQS = [
   { q: 'How do you measure performance marketing ROI?', a: 'We measure performance marketing ROI through a layered attribution framework that goes beyond last-click metrics. Primary KPIs depend on your business model: eCommerce clients use ROAS (revenue divided by ad spend) and new customer acquisition cost; B2B lead generation clients use cost-per-lead, cost-per-qualified-opportunity, and pipeline influenced by paid channels. We set up GA4 goal tracking for all conversion actions, implement Meta CAPI for server-side attribution, and build a unified Looker Studio dashboard that shows performance across all channels in one view. Monthly reporting covers: ad spend by channel, conversion volume, cost-per-result, ROAS trend, and revenue attribution. We also track view-through conversions and assisted conversions to capture the full value of upper-funnel spend that does not appear in last-click attribution models.' },
   { q: 'Can performance marketing work for B2B businesses?', a: 'Yes — performance marketing is highly effective for B2B, but the strategy differs significantly from B2C. B2B buying cycles are longer (weeks to months), decision-making involves multiple stakeholders, and the conversion event is typically a form submission or demo request rather than a purchase. LinkedIn Ads is the primary B2B performance channel — it offers precise professional targeting (job title, company size, industry, seniority) that Google and Meta cannot match for B2B audiences. Google Search is also highly effective for capturing B2B intent queries. For B2B, we focus on: LinkedIn Lead Gen Forms and Message Ads for top-of-funnel, Google Search for branded and category-intent keywords, retargeting across both platforms to nurture the long buying cycle, and content offers (whitepapers, case studies, webinars) as conversion assets rather than direct product CTAs. B2B performance marketing KPIs we optimise against: cost-per-lead, cost-per-SQL, and pipeline influenced.' },
   { q: 'What happens to my campaigns if I pause spend?', a: 'Pausing ad spend has different implications depending on the channel and duration of the pause. For Google Ads: campaigns paused for less than 2 weeks typically resume with minimal learning loss — the auction algorithms retain their optimisation data. Pauses of 4+ weeks can reset machine learning, requiring a partial re-learning period when campaigns restart. For Meta Ads: ad sets enter a new learning phase when reactivated — this can mean 7–14 days of elevated costs while the algorithm re-establishes delivery optimisation. Campaign history (creative performance data, audience exclusions, negative keywords) is always retained regardless of pause duration. The practical impact on ROAS: expect 15–30% performance degradation for the first 2–3 weeks after reactivation. For seasonal businesses or those with intermittent budgets, we structure campaigns specifically to minimise re-learning costs on restart.' },
-];
-
-const STATS_HERO = [
-  { num: '200+', lbl: 'Campaigns Managed' },
-  { num: '4.2×', lbl: 'Avg. Client ROAS' },
-  { num: '$50M+', lbl: 'Ad Spend Managed' },
-  { num: '97%', lbl: 'Client Retention' },
 ];
 
 export default function PerformanceMarketingAgency() {
@@ -209,22 +203,6 @@ export default function PerformanceMarketingAgency() {
           /* ── REVEAL ── */
           .pm-reveal{opacity:0;transform:translateY(28px);transition:opacity 0.55s cubic-bezier(0.22,1,0.36,1),transform 0.55s cubic-bezier(0.22,1,0.36,1)}
           .pm-visible{opacity:1;transform:translateY(0)}
-
-          /* ── HERO ── */
-          .pm-hero{position:relative;overflow:hidden;z-index:1;padding:56px 40px 0}
-          .pm-hero-content{position:relative;z-index:2;text-align:center;max-width:900px;margin:0 auto}.pm-bc a:hover{color:#D97706}.pm-bc span{color:#d1d5db}
-          .pm-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(217,119,6,0.08);border:1px solid rgba(217,119,6,0.20);border-radius:100px;padding:5px 16px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#B45309;margin-bottom:28px}
-          .pm-h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:18px;color:#0F1F40}
-          .pm-hero-sub{font-size:16px;color:#3A507A;line-height:1.65;max-width:680px;margin:0 auto 32px}
-          .pm-hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:48px}
-          .pm-btn-primary{display:inline-flex;align-items:center;gap:8px;background:#0F3460;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(15,52,96,0.28)}
-          .pm-btn-primary:hover{background:#0a2549;box-shadow:0 8px 32px rgba(15,52,96,0.38);transform:translateY(-2px)}
-          .pm-btn-secondary{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.18);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
-          .pm-btn-secondary:hover{border-color:#D97706;color:#D97706;transform:translateY(-2px)}
-          .pm-stats-bar{display:grid;grid-template-columns:repeat(4,1fr);max-width:860px;margin:0 auto;background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(15,52,96,0.08)}
-          .pm-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(15,52,96,0.08)}.pm-stat:last-child{border-right:none}
-          .pm-stat-v{font-size:1.6rem;font-weight:900;color:#D97706;letter-spacing:-0.5px;margin-bottom:4px}
-          .pm-stat-l{font-size:11px;color:#6b7280;font-weight:500}
 
           /* ── SECTIONS ── */
           .pm-sec{padding:80px 40px;position:relative;z-index:1}
@@ -379,13 +357,7 @@ export default function PerformanceMarketingAgency() {
             .pm-related-ttl{font-size:32px}
           }
           @media(max-width:768px){
-            .pm-hero,.pm-sec,.pm-results,.pm-tools,.pm-contact,.pm-related{padding-left:24px;padding-right:24px}
-            .pm-hero{padding-top:36px}
-            .pm-h1{font-size:clamp(1.7rem,6vw,2.2rem)}
-            .pm-stats-bar{grid-template-columns:repeat(2,1fr)}
-            .pm-stat:nth-child(2){border-right:none}
-            .pm-stat:nth-child(3){border-top:1px solid rgba(15,52,96,0.08)}
-            .pm-stat:nth-child(4){border-top:1px solid rgba(15,52,96,0.08);border-right:none}
+            .pm-sec,.pm-results,.pm-tools,.pm-contact,.pm-related{padding-left:24px;padding-right:24px}
             .pm-svc-grid,.pm-proc-grid,.pm-why-grid{grid-template-columns:1fr}
             .pm-form-row{grid-template-columns:1fr}
             .pm-fq{padding:18px 18px 18px 52px}
@@ -397,7 +369,6 @@ export default function PerformanceMarketingAgency() {
             .pm-rtag{padding:9px 16px;font-size:13px}
           }
           @media(max-width:480px){
-            .pm-hero-btns{flex-direction:column;align-items:center}
             .pm-contact-stats{justify-content:center}
           }
         `}</style>
@@ -409,35 +380,19 @@ export default function PerformanceMarketingAgency() {
         <div className="pm-orb3" />
 
         {/* ── HERO ── */}
-        <section className="pm-hero">
-          <div className="pm-hero-content">
-            <div className="pm-eyebrow">
-              <span style={{width:6,height:6,borderRadius:'50%',background:'#D97706',display:'inline-block'}}/>
-              Performance Marketing Agency · Google · Meta · LinkedIn · TikTok
-            </div>
-            <h1 className="pm-h1">
-              <AuroraText>Performance Marketing</AuroraText> Agency — Pay for Results, Not Promises
-            </h1>
-            <p className="pm-hero-sub">
-              Data-driven Google Ads, Meta Ads, programmatic display, paid social, and shopping campaigns — managed by a team that ties every pound of media spend to measurable revenue. Trusted by 200+ businesses across the US, Canada, Australia, and the UK.
-            </p>
-            <div className="pm-hero-btns">
-              <a href="#contact" className="pm-btn-primary">
-                Get a Free Account Audit
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <Link href="/case-studies/" className="pm-btn-secondary">View Case Studies</Link>
-            </div>
-            <div className="pm-stats-bar">
-              {STATS_HERO.map(s => (
-                <div key={s.lbl} className="pm-stat">
-                  <div className="pm-stat-v">{s.num}</div>
-                  <div className="pm-stat-l">{s.lbl}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Performance Marketing Agency · Google · Meta · LinkedIn · TikTok"
+          title={<><AuroraText>Performance Marketing</AuroraText> Agency — Pay for Results, Not Promises</>}
+          subtext="Data-driven Google Ads, Meta Ads, programmatic display, paid social, and shopping campaigns — managed by a team that ties every pound of media spend to measurable revenue. Trusted by 200+ businesses across the US, Canada, Australia, and the UK."
+          primaryCta={{ label: 'Get a Free Account Audit', href: '#contact' }}
+          secondaryCta={{ label: 'View Case Studies', href: '/case-studies/' }}
+          stats={[
+            { label: 'Campaigns Managed', value: '200', suffix: '+' },
+            { label: 'Avg. Client ROAS', value: '2', prefix: '4.', suffix: '×' },
+            { label: 'Ad Spend Managed', value: '50', prefix: '$', suffix: 'M+' },
+            { label: 'Client Retention', value: '97', suffix: '%' },
+          ]}
+        />
 
         {/* ── DEFINITION ── */}
         <section className="pm-sec pm-white">

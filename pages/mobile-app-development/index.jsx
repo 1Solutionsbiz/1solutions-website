@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -163,26 +165,9 @@ const WHY_CARDS = [
   { dot: '#a855f7', title: 'Post-Launch Partnership', body: 'We handle OS updates, Crashlytics monitoring, App Store rating responses, and feature roadmap planning - not just the initial build.' },
 ];
 
-function useCounter(target, started, duration = 1800) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!started) return;
-    const start = performance.now();
-    const tick = (now) => {
-      const p = Math.min((now - start) / duration, 1);
-      const ease = p < 0.5 ? 2 * p * p : -1 + (4 - 2 * p) * p;
-      setCount(Math.round(ease * target));
-      if (p < 1) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-  }, [started, target, duration]);
-  return count;
-}
-
 export default function MobileAppDevelopment() {
   const [showAllSvc, setShowAllSvc] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleSvcCards, setVisibleSvcCards] = useState([]);
   const [visibleEngCards, setVisibleEngCards] = useState([]);
@@ -192,25 +177,12 @@ export default function MobileAppDevelopment() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', platform: '', message: '' });
   const [formStatus, setFormStatus] = useState('');
 
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const svcGridRef = useRef(null);
   const engGridRef = useRef(null);
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
   const stackGridRef = useRef(null);
-
-  const c1 = useCounter(180, statsStarted);
-  const c2 = useCounter(15, statsStarted);
-  const c3 = useCounter(49, statsStarted);
-  const c4 = useCounter(98, statsStarted);
-
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStatsStarted(true); obs.disconnect(); } }, { threshold: 0.4 });
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   useEffect(() => {
     const pairs = [
@@ -286,26 +258,6 @@ export default function MobileAppDevelopment() {
           .mob-orb-2{width:780px;height:780px;background:radial-gradient(circle,rgba(22,163,74,.18) 0%,rgba(34,197,94,.08) 40%,transparent 70%);bottom:0;left:-230px}
           .mob-orb-3{width:550px;height:550px;background:radial-gradient(circle,rgba(124,58,237,.14) 0%,transparent 70%);top:42%;left:-120px;transform:translateY(-50%)}
 
-          .mob-hero{position:relative;z-index:2;text-align:center;max-width:980px;margin:0 auto;padding:44px 40px 32px}
-          .mob-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
-          .mob-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .mob-hero-desc{font-size:16px;color:#3A507A;line-height:1.65;max-width:760px;margin:0 auto 24px}
-          .mob-trust-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
-          .mob-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07)}
-          .mob-badge-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
-          .mob-platform-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
-          .mob-platform-pill{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.65);backdrop-filter:blur(12px);border:1.5px solid rgba(255,255,255,.90);border-radius:50px;padding:8px 18px;font-size:13px;font-weight:700;color:#0F3460;box-shadow:0 2px 10px rgba(15,52,96,.08)}
-          .mob-platform-pill svg{flex-shrink:0}
-          .mob-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .mob-btn-primary{display:inline-block;padding:14px 36px;background:#1d4ed8;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(29,78,216,.30)}
-          .mob-btn-primary:hover{background:#0F3460;transform:translateY(-2px)}
-          .mob-btn-ghost{display:inline-block;padding:14px 36px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .mob-btn-ghost:hover{background:rgba(255,255,255,.85);border-color:rgba(29,78,216,.5);transform:translateY(-2px)}
-          .mob-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:28px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .mob-stat-col{padding:18px 16px;text-align:center;border-right:1px solid rgba(15,52,96,.10)}
-          .mob-stat-col:last-child{border-right:none}
-          .mob-stat-val{font-size:28px;font-weight:900;color:#1d4ed8;letter-spacing:-.5px;line-height:1}
-          .mob-stat-label{font-size:11px;color:#4A6080;font-weight:500;margin-top:5px}
           .mob-s-eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
           .mob-s-title{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .mob-s-desc{font-size:15px;color:#4A6080;line-height:1.7}
@@ -456,8 +408,8 @@ export default function MobileAppDevelopment() {
           .mob-rtag-violet{background:rgba(139,92,246,.09);border-color:rgba(139,92,246,.28);color:#6D28D9}
           .mob-rtag-amber{background:rgba(245,158,11,.11);border-color:rgba(245,158,11,.32);color:#B45309}
           .mob-rtag-teal{background:rgba(20,184,166,.09);border-color:rgba(20,184,166,.28);color:#0F766E}
-          @media(max-width:1024px){.mob-hero h1,.mob-s-title,.mob-faq h2{font-size:36px}.mob-svc-grid{grid-template-columns:repeat(2,1fr)}.mob-stack-grid{grid-template-columns:repeat(2,1fr)}.mob-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.mob-eng-card.feat{transform:none}.mob-eng-card.feat.mob-ev{transform:none}.mob-eng-card.feat.mob-ev:hover{transform:translateY(-4px)}.mob-why-grid{grid-template-columns:repeat(2,1fr)}.mob-tgrid{grid-template-columns:1fr}.mob-contact-grid{grid-template-columns:1fr}}
-          @media(max-width:768px){.mob-hero{padding:28px 20px 20px}.mob-hero h1{font-size:26px;letter-spacing:-.3px}.mob-stats{grid-template-columns:1fr 1fr}.mob-stat-col:nth-child(2){border-right:none}.mob-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.mob-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.mob-svc-section,.mob-stack-section,.mob-eng-section,.mob-process-section,.mob-testi,.mob-why-section,.mob-faq,.mob-related{padding:52px 20px}.mob-contact{padding:48px 20px}.mob-svc-grid,.mob-stack-grid,.mob-why-grid{grid-template-columns:1fr}.mob-frow{grid-template-columns:1fr}.mob-ctitle{font-size:28px}.mob-s-title{font-size:28px}}
+          @media(max-width:1024px){.mob-s-title,.mob-faq h2{font-size:36px}.mob-svc-grid{grid-template-columns:repeat(2,1fr)}.mob-stack-grid{grid-template-columns:repeat(2,1fr)}.mob-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.mob-eng-card.feat{transform:none}.mob-eng-card.feat.mob-ev{transform:none}.mob-eng-card.feat.mob-ev:hover{transform:translateY(-4px)}.mob-why-grid{grid-template-columns:repeat(2,1fr)}.mob-tgrid{grid-template-columns:1fr}.mob-contact-grid{grid-template-columns:1fr}}
+          @media(max-width:768px){.mob-svc-section,.mob-stack-section,.mob-eng-section,.mob-process-section,.mob-testi,.mob-why-section,.mob-faq,.mob-related{padding:52px 20px}.mob-contact{padding:48px 20px}.mob-svc-grid,.mob-stack-grid,.mob-why-grid{grid-template-columns:1fr}.mob-frow{grid-template-columns:1fr}.mob-ctitle{font-size:28px}.mob-s-title{font-size:28px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
@@ -470,67 +422,19 @@ export default function MobileAppDevelopment() {
         <div className="mob-orb mob-orb-3" />
 
         {/* Hero */}
-        <section className="mob-hero">
-          <span className="mob-eyebrow">Mobile App Development Company</span>
-          <h1>iOS · Android · Flutter · React&nbsp;Native</h1>
-          <p className="mob-hero-desc">
-            End-to-end mobile app development from idea to App Store. Native iOS in Swift, native Android in Kotlin, cross-platform Flutter and React Native - 180+ apps shipped, 15+ years experience, biweekly device builds.
-          </p>
-
-          <div className="mob-platform-pills">
-            {[
-              { label: 'iOS (Swift)', color: '#1d4ed8' },
-              { label: 'Android (Kotlin)', color: '#16a34a' },
-              { label: 'Flutter', color: '#0ea5e9' },
-              { label: 'React Native', color: '#7c3aed' },
-            ].map(({ label, color }) => (
-              <span key={label} className="mob-platform-pill">
-                <span style={{ width: 8, height: 8, borderRadius: '50%', background: color, display: 'inline-block' }} />
-                {label}
-              </span>
-            ))}
-          </div>
-
-          <div className="mob-trust-row">
-            {[
-              { dot: '#1d4ed8', text: '180+ Apps Shipped' },
-              { dot: '#16a34a', text: '4.9/5 Client Rating' },
-              { dot: '#D97706', text: '15+ Years Experience' },
-              { dot: '#7c3aed', text: '100% IP Ownership' },
-              { dot: '#0ea5e9', text: 'Biweekly Device Builds' },
-            ].map(({ dot, text }) => (
-              <span key={text} className="mob-badge">
-                <span className="mob-badge-dot" style={{ background: dot }} />
-                {text}
-              </span>
-            ))}
-          </div>
-
-          <div className="mob-ctas">
-            <Link href="/book-consultation/" className="mob-btn-primary">Get a Free App Estimate</Link>
-            <Link href="/portfolio/" className="mob-btn-ghost">View App Portfolio</Link>
-          </div>
-        </section>
-
-        {/* Stats */}
-        <div className="mob-stats" ref={statsRef}>
-          <div className="mob-stat-col">
-            <div className="mob-stat-val">{c1}+</div>
-            <div className="mob-stat-label">Apps Shipped</div>
-          </div>
-          <div className="mob-stat-col">
-            <div className="mob-stat-val">{c2}+</div>
-            <div className="mob-stat-label">Years Experience</div>
-          </div>
-          <div className="mob-stat-col">
-            <div className="mob-stat-val">4.{c3 > 49 ? 9 : Math.floor(c3 / 5)}/5</div>
-            <div className="mob-stat-label">App Store Avg Rating</div>
-          </div>
-          <div className="mob-stat-col">
-            <div className="mob-stat-val">{c4}%</div>
-            <div className="mob-stat-label">On-Time Delivery</div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="Mobile App Development Company · iOS · Android · Flutter · React Native"
+          title={<>Mobile App Development for <AuroraText>iOS, Android, Flutter & React Native</AuroraText></>}
+          subtext="End-to-end mobile app development from idea to App Store. Native iOS in Swift, native Android in Kotlin, cross-platform Flutter and React Native - 180+ apps shipped, 15+ years experience, biweekly device builds."
+          primaryCta={{ label: 'Get a Free App Estimate', href: '/book-consultation/' }}
+          secondaryCta={{ label: 'View App Portfolio', href: '/portfolio/' }}
+          stats={[
+            { label: 'Apps Shipped', value: '180', suffix: '+' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'App Store Avg Rating', value: '9', prefix: '4.', suffix: '/5' },
+            { label: 'On-Time Delivery', value: '98', suffix: '%' },
+          ]}
+        />
 
         {/* Services */}
         <section className="mob-svc-section">

@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'Facebook Page Setup & Optimisation', desc: 'Complete Facebook Business Page setup - category selection, contact details, business description, CTA button, and URL customisation - or full audit and optimisation of your existing page.' },
@@ -44,13 +46,6 @@ const FAQS = [
   { q: 'Can you refresh an existing Facebook page design?', a: 'Yes. Page design refresh is common - particularly ahead of a rebrand, new campaign, or seasonal promotion. A refresh typically involves: updating the cover photo for the new campaign or season; reviewing and updating page copy for current messaging; creating new ad creative templates for current offers; and reviewing profile picture for any brand updates. A full page refresh can be completed in 2 to 3 business days for established brands with clear visual guidelines.' },
 ];
 
-const STATS = [
-  { label: 'Facebook Pages Designed', val: '400+' },
-  { label: 'Avg Page CTR Improvement', val: '+42%' },
-  { label: 'Years Experience', val: '12+' },
-  { label: 'Client Satisfaction', val: '97%' },
-];
-
 export default function FacebookPageDesigning() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleCards, setVisibleCards] = useState([]);
@@ -75,22 +70,10 @@ export default function FacebookPageDesigning() {
         <style>{`
           .fbpd-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .fbpd-page *,.fbpd-page *::before,.fbpd-page *::after{box-sizing:border-box}
-          .fbpd-hero{background:linear-gradient(135deg,#f0f9ff 0%,#bae6fd 25%,#7dd3fc 50%,#f0f9ff 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .fbpd-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(3,105,161,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .fbpd-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(7,89,133,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .fbpd-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.fbpd-bc a:hover{color:#0369A1}.fbpd-bc span{color:#d1d5db}
-          .fbpd-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(3,105,161,0.08);border:1px solid rgba(3,105,161,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#0369A1;margin-bottom:28px}
-          .fbpd-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .fbpd-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
-          .fbpd-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .fbpd-btn-p{display:inline-flex;align-items:center;gap:8px;background:#0369A1;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(3,105,161,0.28)}
           .fbpd-btn-p:hover{background:#0C4A6E;box-shadow:0 8px 32px rgba(3,105,161,0.38);transform:translateY(-2px)}
           .fbpd-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.18);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
           .fbpd-btn-s:hover{border-color:#0369A1;color:#0369A1;transform:translateY(-2px)}
-          .fbpd-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(3,105,161,0.07)}
-          .fbpd-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(3,105,161,0.08)}.fbpd-stat:last-child{border-right:none}
-          .fbpd-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .fbpd-stat-v{font-size:1.6rem;font-weight:900;color:#0369A1;letter-spacing:-0.5px}
           .fbpd-svc{background:#f8fafd;padding:80px 40px}.fbpd-svc-in{max-width:1280px;margin:0 auto}
           .fbpd-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#0369A1;margin-bottom:10px;display:block}
           .fbpd-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
@@ -137,25 +120,26 @@ export default function FacebookPageDesigning() {
           .fbpd-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           .fbpd-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.fbpd-grid{grid-template-columns:repeat(2,1fr)}.fbpd-why-grid{grid-template-columns:repeat(2,1fr)}}
-          @media(max-width:768px){.fbpd-hero,.fbpd-svc,.fbpd-spec,.fbpd-proc,.fbpd-why,.fbpd-faq,.fbpd-cta{padding:60px 24px}.fbpd-hero{padding-top:60px;padding-bottom:0}.fbpd-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.fbpd-stat:nth-child(2){border-right:none}.fbpd-grid{grid-template-columns:1fr}.fbpd-why-grid{grid-template-columns:1fr}.fbpd-step{grid-template-columns:56px 1fr}.fbpd-btns{flex-direction:column;align-items:center}}
+          @media(max-width:768px){.fbpd-svc,.fbpd-spec,.fbpd-proc,.fbpd-why,.fbpd-faq,.fbpd-cta{padding:60px 24px}.fbpd-grid{grid-template-columns:1fr}.fbpd-why-grid{grid-template-columns:1fr}.fbpd-step{grid-template-columns:56px 1fr}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
       <div className="fbpd-page">
-        <section className="fbpd-hero"><div className="fbpd-o1"/><div className="fbpd-o2"/>
-          <div className="fbpd-in">
-            <span className="fbpd-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#0369A1',display:'inline-block'}}/> Cover Photo · Templates · Ad Creative</span>
-            <h1 className="fbpd-h1">Facebook Page Designing - Make Your First Impression Count</h1>
-            <p className="fbpd-sub">Professional Facebook Business Page design - cover photos, post templates, ad creatives, and full page setup - ensuring your Facebook presence looks as credible as your business deserves.</p>
-            <div className="fbpd-btns">
-              <Link href="/contact-us" className="fbpd-btn-p">Get a Facebook Page Designed <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/facebook-management-services" className="fbpd-btn-s">Facebook Management</Link>
-            </div>
-            <div className="fbpd-stats">{STATS.map(s => <div key={s.label} className="fbpd-stat"><div className="fbpd-stat-l">{s.label}</div><div className="fbpd-stat-v">{s.val}</div></div>)}</div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Cover Photo · Templates · Ad Creative"
+          title={<>Facebook Page Designing - Make Your <AuroraText>First Impression Count</AuroraText></>}
+          subtext="Professional Facebook Business Page design - cover photos, post templates, ad creatives, and full page setup - ensuring your Facebook presence looks as credible as your business deserves."
+          primaryCta={{ label: 'Get a Facebook Page Designed', href: '/contact-us' }}
+          secondaryCta={{ label: 'Facebook Management', href: '/facebook-management-services' }}
+          stats={[
+            { label: 'Facebook Pages Designed', value: '400', suffix: '+' },
+            { label: 'Avg Page CTR Improvement', value: '42', prefix: '+', suffix: '%' },
+            { label: 'Years Experience', value: '12', suffix: '+' },
+            { label: 'Client Satisfaction', value: '97', suffix: '%' },
+          ]}
+        />
         <section className="fbpd-svc"><div className="fbpd-svc-in">
           <span className="fbpd-ey2">What We Design</span><h2 className="fbpd-ttl">Facebook Page Design Services</h2>
           <p className="fbpd-desc">Every visual element of your Facebook Business Page - designed to Meta specifications, consistent with your brand, and built to make a strong first impression.</p>

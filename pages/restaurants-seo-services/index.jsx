@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Restaurant Keyword Targeting', desc: 'Comprehensive keyword mapping across restaurants near me, best [cuisine] in [city], [cuisine] takeaway, romantic dinner [city], family restaurant [suburb], best brunch spots, date night restaurants, and food delivery keywords - capturing every dining intent from spontaneous searches to planned special occasions.' },
@@ -85,29 +87,10 @@ export default function RestaurantsSeoServices() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           * { box-sizing: border-box; }
-          .rtseo-hero { position:relative;overflow:hidden;padding:100px 40px 90px;background:linear-gradient(135deg,rgba(92,0,32,0.10) 0%,rgba(255,255,255,0.72) 50%,rgba(92,0,32,0.06) 100%); }
-          .rtseo-orb1 { position:absolute;top:-120px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(92,0,32,0.14) 0%,transparent 70%);pointer-events:none;filter:blur(10px); }
-          .rtseo-orb2 { position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(180,0,60,0.08) 0%,transparent 70%);pointer-events:none;filter:blur(8px); }
-          .rtseo-inner { max-width:1200px;margin:0 auto;position:relative;z-index:1; }
-          .rtseo-eyebrow { display:inline-flex;align-items:center;gap:8px;background:rgba(92,0,32,0.10);border:1px solid rgba(92,0,32,0.22);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#5c0020;margin-bottom:24px; }
-          .rtseo-h1 { font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .rtseo-desc { font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:660px; }
-          .rtseo-btns { display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px; }
           .rtseo-btn-p { display:inline-flex;align-items:center;gap:8px;background:#5c0020;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 6px 24px rgba(92,0,32,0.28); }
           .rtseo-btn-p:hover { background:#8c0030;transform:translateY(-2px); }
           .rtseo-btn-s { display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.7);color:#5c0020;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;border:1.5px solid rgba(92,0,32,0.20);transition:all 0.25s;backdrop-filter:blur(8px); }
           .rtseo-btn-s:hover { background:#fff;transform:translateY(-2px); }
-          .rtseo-trust { display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-bottom:48px; }
-          .rtseo-badge { display:flex;align-items:center;gap:6px;font-size:12px;color:#6b7280;font-weight:500; }
-          .rtseo-stats-bar { display:flex;border:1px solid rgba(92,0,32,0.12);border-radius:16px;background:rgba(255,255,255,0.75);backdrop-filter:blur(12px);overflow:hidden;max-width:720px; }
-          .rtseo-stat-item { flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(92,0,32,0.08); }
-          .rtseo-stat-item:last-child { border-right:none; }
-          .rtseo-stat-num { font-size:1.5rem;font-weight:900;color:#5c0020;line-height:1;letter-spacing:-1px; }
-          .rtseo-stat-lbl { font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px; }
-
-
-
-
 
           .rtseo-sec { padding:80px 40px; }
           .rtseo-sec-inner { max-width:1200px;margin:0 auto; }
@@ -155,8 +138,7 @@ export default function RestaurantsSeoServices() {
           .rtseo-cta-p { font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px; }
           @media (max-width:900px) { .rtseo-grid3,.rtseo-res-grid { grid-template-columns:1fr 1fr; } }
           @media (max-width:600px) {
-            .rtseo-hero,.rtseo-sec,.rtseo-results,.rtseo-cta { padding-left:20px;padding-right:20px; }
-            .rtseo-hero { padding-top:60px;padding-bottom:50px; }
+            .rtseo-sec,.rtseo-results,.rtseo-cta { padding-left:20px;padding-right:20px; }
             .rtseo-grid3,.rtseo-res-grid { grid-template-columns:1fr; }
           }
         
@@ -165,45 +147,19 @@ export default function RestaurantsSeoServices() {
         </style>
       </Head>
 
-      <section className="rtseo-hero">
-        <div className="rtseo-orb1" /><div className="rtseo-orb2" />
-        <div className="rtseo-inner">
-          <span className="rtseo-eyebrow">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
-            Restaurant SEO - Dine-In · Takeaway · Delivery · Occasions
-          </span>
-          <h1 className="rtseo-h1">Restaurant SEO That Packs<br/>Your Tables With Local Diners</h1>
-          <p className="rtseo-desc">1Solutions builds restaurant SEO strategies that put your eatery at the top of local search when hungry diners are choosing where to eat. Cuisine-specific pages, GBP menu integration, TripAdvisor and review platform management, and seasonal campaigns that fill tables for every occasion.</p>
-          <div className="rtseo-btns">
-            <a href="#contact" className="rtseo-btn-p">
-              Get Your Free Restaurant SEO Audit
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <Link href="/affordable-seo-packages/" className="rtseo-btn-s">View SEO Packages</Link>
-          </div>
-          <div className="rtseo-trust">
-            {['Restaurant Industry SEO Expertise','GBP Menu Integration','Review Platform Mastery','Seasonal Campaign Execution'].map(t => (
-              <span key={t} className="rtseo-badge">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5c0020" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                {t}
-              </span>
-            ))}
-          </div>
-          <div className="rtseo-stats-bar">
-            {[
-              { num:'86%', lbl:'of diners research restaurants online before visiting' },
-              { num:'$290B', lbl:'US restaurant industry revenue (2024)' },
-              { num:'200%', lbl:'growth in restaurant mobile searches in 3 years' },
-              { num:'5×', lbl:'more clicks for top map pack restaurant vs position 4' },
-            ].map(s => (
-              <div key={s.lbl} className="rtseo-stat-item">
-                <span className="rtseo-stat-num">{s.num}</span>
-                <span className="rtseo-stat-lbl">{s.lbl}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="Restaurant SEO · Dine-In · Takeaway · Delivery · Occasions"
+        title={<>Restaurant SEO That <AuroraText>Packs Your Tables</AuroraText> With Local Diners</>}
+        subtext="1Solutions builds restaurant SEO strategies that put your eatery at the top of local search when hungry diners are choosing where to eat. Cuisine-specific pages, GBP menu integration, TripAdvisor and review platform management, and seasonal campaigns that fill tables for every occasion."
+        primaryCta={{ label: 'Get Your Free Restaurant SEO Audit', href: '#contact' }}
+        secondaryCta={{ label: 'View SEO Packages', href: '/affordable-seo-packages/' }}
+        stats={[
+          { label: 'of diners research restaurants online before visiting', value: '86', suffix: '%' },
+          { label: 'US restaurant industry revenue (2024)', value: '290', prefix: '$', suffix: 'B' },
+          { label: 'growth in restaurant mobile searches in 3 years', value: '200', suffix: '%' },
+          { label: 'more clicks for top map pack restaurant vs position 4', value: '5', suffix: '×' },
+        ]}
+      />
 
       <section className="rtseo-sec rtseo-bg" id="services">
         <div className="rtseo-sec-inner">

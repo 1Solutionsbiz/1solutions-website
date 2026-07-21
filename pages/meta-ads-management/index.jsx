@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const ACCENT = '#2d3a8c';
 const SERVICES = [
@@ -67,25 +69,11 @@ export default function MetaAdsManagement() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           *{box-sizing:border-box}
-          .meta-hero{position:relative;overflow:hidden;padding:100px 40px 90px;background:linear-gradient(135deg,rgba(224,231,255,0.55) 0%,rgba(255,255,255,0.70) 50%,rgba(237,233,254,0.45) 100%)}
-          .meta-o1{position:absolute;top:-120px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(45,58,140,0.12) 0%,transparent 70%);pointer-events:none;filter:blur(10px)}
-          .meta-o2{position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,0.08) 0%,transparent 70%);pointer-events:none;filter:blur(8px)}
-          .meta-in{max-width:1200px;margin:0 auto;position:relative;z-index:1}
-          .meta-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(45,58,140,0.10);border:1px solid rgba(45,58,140,0.25);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:24px}
-          .meta-h1{font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .meta-p{font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:660px}
-          .meta-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
           .meta-bp{display:inline-flex;align-items:center;gap:8px;background:${ACCENT};color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(45,58,140,.25)}
           .meta-bp:hover{background:#1e2870;transform:translateY(-2px)}
           .meta-bs{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.7);color:${ACCENT};padding:14px 28px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;border:1.5px solid rgba(45,58,140,.18);transition:all .25s}
           .meta-bs:hover{background:#fff;transform:translateY(-2px)}
-          .meta-tr{display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-bottom:48px}
-          .meta-badge{display:flex;align-items:center;gap:6px;font-size:12px;color:#6b7280;font-weight:500}
-          .meta-sbar{display:flex;border:1px solid rgba(45,58,140,.10);border-radius:16px;background:rgba(255,255,255,.75);backdrop-filter:blur(12px);overflow:hidden;max-width:680px}
-          .meta-si{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(45,58,140,.08)}
-          .meta-si:last-child{border-right:none}
-          .meta-sn{font-size:1.9rem;font-weight:900;color:${ACCENT};line-height:1;letter-spacing:-1px}
-          .meta-sl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px}.meta-bci a:hover{color:${ACCENT}}.meta-cur{color:${ACCENT};font-weight:500}
+          .meta-bci a:hover{color:${ACCENT}}.meta-cur{color:${ACCENT};font-weight:500}
           .meta-sec{padding:80px 40px}.meta-bg{background:#f8fafd}
           .meta-si2{max-width:1200px;margin:0 auto}
           .meta-tag{display:block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:12px}
@@ -130,25 +118,25 @@ export default function MetaAdsManagement() {
           .meta-cth{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-.5px;margin:0 0 18px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .meta-ctp{font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px}
           @media(max-width:900px){.meta-g3,.meta-rg{grid-template-columns:1fr 1fr}}
-          @media(max-width:600px){.meta-hero,.meta-sec,.meta-rb,.meta-cta{padding-left:20px;padding-right:20px}.meta-hero{padding-top:60px;padding-bottom:50px}.meta-g3,.meta-rg{grid-template-columns:1fr}.meta-bc{padding:12px 20px}}
+          @media(max-width:600px){.meta-sec,.meta-rb,.meta-cta{padding-left:20px;padding-right:20px}.meta-g3,.meta-rg{grid-template-columns:1fr}.meta-bc{padding:12px 20px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
-      <section className="meta-hero"><div className="meta-o1"/><div className="meta-o2"/>
-        <div className="meta-in">
-          <span className="meta-ey">Meta Business Partner - Facebook · Instagram · WhatsApp</span>
-          <h1 className="meta-h1">Meta Ads That Build Audiences<br/>and Drive Profitable Conversions</h1>
-          <p className="meta-p">1Solutions manages Facebook and Instagram advertising campaigns that move buyers through your funnel - from brand awareness to purchase - using precise audience targeting, high-performing creative, and weekly optimisation.</p>
-          <div className="meta-btns">
-            <Link href="/contact-us" className="meta-bp">Get a Free Meta Ads Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-            <Link href="/contact-us" className="meta-bs">Discuss Your Campaigns</Link>
-          </div>
-          <div className="meta-tr">{['CAPI implementation','Creative strategy included','Flat management fee','You own your account'].map(t=><span key={t} className="meta-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={ACCENT} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>{t}</span>)}</div>
-          <div className="meta-sbar">{[{num:'350+',lbl:'Meta Ad Clients'},{num:'15+',lbl:'Years Experience'},{num:'4.2×',lbl:'Avg ROAS'},{num:'97%',lbl:'Retention Rate'}].map(s=><div key={s.lbl} className="meta-si"><span className="meta-sn">{s.num}</span><span className="meta-sl">{s.lbl}</span></div>)}</div>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="Meta Business Partner · Facebook · Instagram · WhatsApp"
+        title={<>Meta Ads That Build Audiences and Drive <AuroraText>Profitable Conversions</AuroraText></>}
+        subtext="1Solutions manages Facebook and Instagram advertising campaigns that move buyers through your funnel - from brand awareness to purchase - using precise audience targeting, high-performing creative, and weekly optimisation."
+        primaryCta={{ label: 'Get a Free Meta Ads Audit', href: '/contact-us' }}
+        secondaryCta={{ label: 'Discuss Your Campaigns', href: '/contact-us' }}
+        stats={[
+          { label: 'Meta Ad Clients', value: '350', suffix: '+' },
+          { label: 'Years Experience', value: '15', suffix: '+' },
+          { label: 'Avg ROAS', value: '2', prefix: '4.', suffix: '×' },
+          { label: 'Retention Rate', value: '97', suffix: '%' },
+        ]}
+      />
       <section className="meta-sec meta-bg"><div className="meta-si2"><span className="meta-tag">What We Manage</span><h2 className="meta-h2">Full-Funnel <span>Meta Advertising Services</span></h2><p className="meta-lead">Every Meta ad format and objective - built, tested, and optimised for your audience and conversion goals.</p><div className="meta-g3">{SERVICES.map(s=><div key={s.title} className="meta-card"><div className="meta-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d={s.icon}/></svg></div><h3 className="meta-ch">{s.title}</h3><p className="meta-cp">{s.desc}</p></div>)}</div></div></section>
       <section className="meta-rb"><div className="meta-ri"><span className="meta-rt">Client Results</span><h2 className="meta-rh">Meta Ads Results That Compound Over Time</h2><div className="meta-rg">{RESULTS.map(r=><div key={r.label} className="meta-rc"><div className="meta-rm" style={{color:r.color}}>{r.metric}</div><div className="meta-rl">{r.label}</div><div className="meta-rs">{r.sub}</div></div>)}</div></div></section>
       <section className="meta-sec"><div className="meta-si2"><span className="meta-tag">Why 1Solutions</span><h2 className="meta-h2">The Meta Ads Agency <span>That Invests in Creative</span></h2><p className="meta-lead">We know that on Meta, the creative is the targeting. Every campaign starts with a scroll-stopping hook.</p><div className="meta-g3">{WHY.map(w=><div key={w.title} className="meta-wc"><div className="meta-wck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><h3 className="meta-wh">{w.title}</h3><p className="meta-wp">{w.desc}</p></div>)}</div></div></section>

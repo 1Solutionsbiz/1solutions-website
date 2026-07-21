@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'Dedicated SEO Account Management', desc: 'A single dedicated SEO account manager who understands your business, communicates proactively, and coordinates all SEO activity - no ticket queues, no chasing different specialists.' },
@@ -44,13 +46,6 @@ const FAQS = [
   { q: 'How do you measure managed SEO success?', a: 'We track multiple layers of SEO performance: keyword ranking movements (positions for target keywords tracked weekly); organic traffic (sessions, users, and pageviews from organic search in GA4); organic conversions (enquiries, leads, sales, or revenue attributed to organic search); and SEO visibility (indexed pages, impressions, and click-through rate in GSC). Every monthly report covers all four layers with trend analysis. We also track competitor rankings to contextualise your progress within your competitive environment.' },
 ];
 
-const STATS = [
-  { label: 'Managed SEO Clients', val: '300+' },
-  { label: 'Years Experience', val: '15+' },
-  { label: 'Avg Traffic Growth (12mo)', val: '+240%' },
-  { label: 'Retention Rate', val: '94%' },
-];
-
 export default function ManagedSeoServices() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleCards, setVisibleCards] = useState([]);
@@ -78,22 +73,10 @@ export default function ManagedSeoServices() {
         <style>{`
           .mnseo-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .mnseo-page *,.mnseo-page *::before,.mnseo-page *::after{box-sizing:border-box}
-          .mnseo-hero{background:linear-gradient(135deg,#f0fdfa 0%,#ccfbf1 25%,#d1fae5 60%,#f0fdf4 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .mnseo-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(15,118,110,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .mnseo-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(19,78,74,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .mnseo-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.mnseo-bc a:hover{color:#0F766E}.mnseo-bc span{color:#d1d5db}
-          .mnseo-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(15,118,110,0.08);border:1px solid rgba(15,118,110,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#0F766E;margin-bottom:28px}
-          .mnseo-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .mnseo-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
-          .mnseo-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .mnseo-btn-p{display:inline-flex;align-items:center;gap:8px;background:#0F766E;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(15,118,110,0.28)}
           .mnseo-btn-p:hover{background:#134E4A;box-shadow:0 8px 32px rgba(15,118,110,0.38);transform:translateY(-2px)}
           .mnseo-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.18);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
           .mnseo-btn-s:hover{border-color:#0F766E;color:#0F766E;transform:translateY(-2px)}
-          .mnseo-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(15,118,110,0.07)}
-          .mnseo-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(15,118,110,0.08)}.mnseo-stat:last-child{border-right:none}
-          .mnseo-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .mnseo-stat-v{font-size:1.6rem;font-weight:900;color:#0F766E;letter-spacing:-0.5px}
           .mnseo-svc{background:#f8fafd;padding:80px 40px}.mnseo-svc-in{max-width:1280px;margin:0 auto}
           .mnseo-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#0F766E;margin-bottom:10px;display:block}
           .mnseo-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
@@ -140,25 +123,26 @@ export default function ManagedSeoServices() {
           .mnseo-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           .mnseo-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.mnseo-grid{grid-template-columns:repeat(2,1fr)}.mnseo-why-grid{grid-template-columns:repeat(2,1fr)}}
-          @media(max-width:768px){.mnseo-hero,.mnseo-svc,.mnseo-inc,.mnseo-proc,.mnseo-why,.mnseo-faq,.mnseo-cta{padding:60px 24px}.mnseo-hero{padding-top:60px;padding-bottom:0}.mnseo-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.mnseo-stat:nth-child(2){border-right:none}.mnseo-grid{grid-template-columns:1fr}.mnseo-why-grid{grid-template-columns:1fr}.mnseo-step{grid-template-columns:56px 1fr}.mnseo-btns{flex-direction:column;align-items:center}}
+          @media(max-width:768px){.mnseo-svc,.mnseo-inc,.mnseo-proc,.mnseo-why,.mnseo-faq,.mnseo-cta{padding:60px 24px}.mnseo-grid{grid-template-columns:1fr}.mnseo-why-grid{grid-template-columns:1fr}.mnseo-step{grid-template-columns:56px 1fr}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
       <div className="mnseo-page">
-        <section className="mnseo-hero"><div className="mnseo-o1"/><div className="mnseo-o2"/>
-          <div className="mnseo-in">
-            <span className="mnseo-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#0F766E',display:'inline-block'}}/> Dedicated Manager · Monthly Retainer · No Lock-In</span>
-            <h1 className="mnseo-h1">Managed SEO Services - Dedicated SEO Partnership That Grows Your Traffic</h1>
-            <p className="mnseo-sub">Monthly managed SEO with a dedicated account manager - technical maintenance, content, link building, and clear reporting. One retainer, everything covered, no chasing separate agencies.</p>
-            <div className="mnseo-btns">
-              <Link href="/contact-us" className="mnseo-btn-p">Start Managed SEO <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/seo-audit-services" className="mnseo-btn-s">SEO Audit First</Link>
-            </div>
-            <div className="mnseo-stats">{STATS.map(s => <div key={s.label} className="mnseo-stat"><div className="mnseo-stat-l">{s.label}</div><div className="mnseo-stat-v">{s.val}</div></div>)}</div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Dedicated Manager · Monthly Retainer · No Lock-In"
+          title={<>Managed SEO Services - <AuroraText>Dedicated SEO Partnership</AuroraText> That Grows Your Traffic</>}
+          subtext="Monthly managed SEO with a dedicated account manager - technical maintenance, content, link building, and clear reporting. One retainer, everything covered, no chasing separate agencies."
+          primaryCta={{ label: 'Start Managed SEO', href: '/contact-us' }}
+          secondaryCta={{ label: 'SEO Audit First', href: '/seo-audit-services' }}
+          stats={[
+            { label: 'Managed SEO Clients', value: '300', suffix: '+' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'Avg Traffic Growth (12mo)', value: '240', prefix: '+', suffix: '%' },
+            { label: 'Retention Rate', value: '94', suffix: '%' },
+          ]}
+        />
         <section className="mnseo-svc"><div className="mnseo-svc-in">
           <span className="mnseo-ey2">What&rsquo;s Included</span><h2 className="mnseo-ttl">Managed SEO Services</h2>
           <p className="mnseo-desc">Every component of a full-service SEO programme - coordinated by one dedicated account manager, executed by in-house specialists.</p>

@@ -1,38 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
-
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const numTarget = parseInt(target.replace(/\D/g, ''), 10);
-    if (!numTarget) return;
-    let startTime = null;
-    const step = (ts) => {
-      if (!startTime) startTime = ts;
-      const progress = Math.min((ts - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * numTarget));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function AnimatedStat({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');
-  const hasComma = val.includes(',');
-  const display = started ? (hasComma ? num.toLocaleString() : num) + suffix : val;
-  return (
-    <div className="seo-stat">
-      <div className="seo-stat-l">{label}</div>
-      <div className="seo-stat-v">{display}</div>
-    </div>
-  );
-}
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Technical SEO', desc: 'Site architecture, crawlability, Core Web Vitals, schema markup, and indexation - we fix the foundations Google rewards.' },
@@ -118,19 +88,10 @@ const FAQS = [
   { q: 'Do you provide white-label SEO for agencies?', a: "Yes. We offer white-label SEO services for digital marketing agencies, web design firms, and PR agencies who want to offer SEO under their own brand. Under a white-label arrangement, all reports, communications, and deliverables are unbranded - your clients see only your agency's branding. We have over 20 agency partners who resell our SEO services. White-label pricing is the same as our standard packages. Contact us to discuss agency partnership arrangements and volume pricing." },
 ];
 
-const STATS_HERO = [
-  { num: '500+', lbl: 'SEO Projects Delivered' },
-  { num: '15+',  lbl: 'Years of Experience' },
-  { num: '97%',  lbl: 'Client Retention Rate' },
-  { num: '3×',   lbl: 'Avg. Traffic Growth' },
-];
-
 export default function SeoServices() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleSections, setVisibleSections] = useState(new Set());
-  const [statsStarted, setStatsStarted] = useState(false);
   const sectionRefs = useRef({});
-  const statsRef = useRef(null);
 
   useEffect(() => {
     const keys = Object.keys(sectionRefs.current);
@@ -150,16 +111,6 @@ export default function SeoServices() {
       return obs;
     });
     return () => observers.forEach(o => o && o.disconnect());
-  }, []);
-
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setStatsStarted(true); obs.disconnect(); } },
-      { threshold: 0.5 }
-    );
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
   }, []);
 
   const jsonLd = {
@@ -234,41 +185,6 @@ export default function SeoServices() {
           .seo-orb1 { position:fixed;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(99,130,255,0.30) 0%,rgba(139,92,246,0.12) 40%,transparent 70%);top:-300px;right:-300px;pointer-events:none;z-index:0;filter:blur(20px); }
           .seo-orb2 { position:fixed;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(251,146,60,0.25) 0%,rgba(245,158,11,0.12) 40%,transparent 70%);bottom:0;left:-250px;pointer-events:none;z-index:0;filter:blur(20px); }
           .seo-orb3 { position:fixed;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(20,184,166,0.18) 0%,transparent 70%);top:45%;left:-150px;transform:translateY(-50%);pointer-events:none;z-index:0;filter:blur(20px); }
-
-          /* ── HERO ── */
-          .seo-hero { position:relative;overflow:hidden;z-index:1; }
-          .seo-hero::before { content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.12) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px); }
-          .seo-hero::after { content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.18) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px); }
-          .seo-hero-content { position:relative;z-index:2;text-align:center;max-width:860px;margin:0 auto;padding:56px 40px 40px; }
-          .seo-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:18px; }
-          .seo-h1 { font-size:clamp(2rem,5vw,3.4rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .seo-hero-sub { font-size:16px;color:#3A507A;line-height:1.65;max-width:640px;margin:0 auto 28px; }
-
-          /* ── HERO BUTTON ── */
-          .seo-hero-btns { display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:32px; }
-          .seo-btn-hero { position:relative;overflow:hidden;display:inline-flex;align-items:center;padding:14px 40px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1); }
-          .seo-btn-hero:hover { background:rgba(255,255,255,0.85);border-color:rgba(245,158,11,0.6);box-shadow:0 12px 36px rgba(15,52,96,0.15),0 0 0 2px rgba(245,158,11,0.22),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px);color:#0F3460; }
-          .seo-btn-hero::after { content:'';position:absolute;top:-10%;left:-120%;width:80%;height:120%;background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,0.75) 45%,rgba(255,255,255,0.9) 50%,rgba(255,255,255,0.75) 55%,transparent 100%);animation:seo-shimmer 2.5s ease-in-out infinite;pointer-events:none; }
-          @keyframes seo-shimmer { 0% { left:-120%; } 35%,100% { left:160%; } }
-          .seo-btn-outline { display:inline-flex;align-items:center;padding:14px 32px;background:transparent;border:1.5px solid rgba(15,52,96,0.25);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s; }
-          .seo-btn-outline:hover { border-color:rgba(217,119,6,0.5);color:#D97706;transform:translateY(-2px); }
-
-          /* ── CLIENTS BAR ── */
-          .seo-clients-bar { position:relative;z-index:2;padding:20px 40px 60px;max-width:1440px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px; }
-          .seo-clients-label { font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6A80A0; }
-          .seo-clients-logos { width:100%;overflow:hidden; }
-          .seo-logos-track { display:flex;align-items:center;gap:60px;width:max-content;animation:seo-marquee 28s linear infinite; }
-          .seo-logos-track:hover { animation-play-state:paused; }
-          @keyframes seo-marquee { 0% { transform:translateX(0); } 100% { transform:translateX(-50%); } }
-          .seo-client-logo { height:26px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(100%);opacity:0.5;transition:opacity 0.25s,filter 0.25s; }
-          .seo-client-logo:hover { opacity:0.85;filter:grayscale(0%); }
-
-          /* ── STATS BAR ── */
-          .seo-stats { position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
-          .seo-stat { padding:18px 20px;text-align:center;border-right:1px solid rgba(15,52,96,0.10); }
-          .seo-stat:last-child { border-right:none; }
-          .seo-stat-l { font-size:12px;color:#4A6080;font-weight:500;margin-bottom:6px; }
-          .seo-stat-v { font-size:26px;font-weight:900;color:#D97706;letter-spacing:-0.5px;line-height:1; }
 
           /* ── SHARED SECTION ── */
           .seo-sec { padding:80px 40px;position:relative;z-index:1; }
@@ -416,13 +332,6 @@ export default function SeoServices() {
           }
           @media(max-width:768px) {
             .seo-sec,.seo-results,.seo-contact,.seo-related { padding-left:24px;padding-right:24px; }
-            .seo-hero-content { padding:36px 20px 24px; }
-            .seo-h1 { font-size:clamp(1.7rem,6vw,2.4rem); }
-            .seo-clients-bar { padding:16px 20px 36px;gap:12px; }
-            .seo-stats { grid-template-columns:repeat(2,1fr);max-width:100%; }
-            .seo-stat:nth-child(2) { border-right:none; }
-            .seo-stat:nth-child(3) { border-top:1px solid rgba(15,52,96,0.10); }
-            .seo-stat:nth-child(4) { border-top:1px solid rgba(15,52,96,0.10);border-right:none; }
             .seo-svc-grid,.seo-why-grid,.seo-proc-grid { grid-template-columns:1fr; }
             .seo-def-aspects { grid-template-columns:1fr; }
             .seo-ind-grid { grid-template-columns:repeat(2,1fr); }
@@ -453,60 +362,19 @@ export default function SeoServices() {
         <div className="seo-orb1"/><div className="seo-orb2"/><div className="seo-orb3"/>
 
         {/* ── HERO ── */}
-        <div className="seo-hero">
-          <div className="seo-hero-content">
-            <span className="seo-eyebrow">Trusted SEO Company - US · Canada · Australia</span>
-            <h1 className="seo-h1">SEO Services That Rank Your Business at the Top of Google</h1>
-            <p className="seo-hero-sub">1Solutions is a 15-year-old SEO agency delivering measurable, sustainable organic growth for businesses across the US, Canada, and Australia. From technical foundations to authority links - we cover every dimension of modern search.</p>
-            <div className="seo-hero-btns">
-              <a href="#contact" className="seo-btn-hero">Get a Free SEO Audit Now</a>
-              <Link href="/affordable-seo-packages/" className="seo-btn-outline">View Plans</Link>
-            </div>
-          </div>
-
-          <div className="seo-stats" ref={statsRef}>
-            {[['SEO Projects Delivered','500+'],['Years of Experience','15+'],['Client Retention Rate','97%'],['Avg. Traffic Growth','3×']].map(([label,val]) => (
-              <AnimatedStat key={label} label={label} val={val} started={statsStarted} />
-            ))}
-          </div>
-
-          <div className="seo-clients-bar">
-            <span className="seo-clients-label">Trusted by Leading Brands</span>
-            <div className="seo-clients-logos">
-              <div className="seo-logos-track">
-                {[
-                  ['/logo/Indian_Express_Logo_full.png','Indian Express'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],
-                  ['/logo/Uniphore.jpg','Uniphore'],
-                  ['/logo/ICCoLogo.png','ICC'],
-                  ['/logo/Honor_Logo_(2020).svg.png','Honor'],
-                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],
-                  ['/logo/amarujala-print-logo_60e03f7d5b4a8.webp','Amar Ujala'],
-                  ['/logo/Nuance-Symbol-500x281.png','Nuance'],
-                  ['/logo/PHDCCI-Logo-2024.png','PHD Chamber'],
-                  ['/logo/Wilson-logo.svg.png','Wilson'],
-                  ['/logo/977be174b7bcc8708254a2163b534cbe_fgraphic.png','Client'],
-                  ['/logo/india-madeaismartphone2-1747658691.webp','India Made'],
-                  ['/logo/Indian_Express_Logo_full.png','Indian Express2'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon2'],
-                  ['/logo/Uniphore.jpg','Uniphore2'],
-                  ['/logo/ICCoLogo.png','ICC2'],
-                  ['/logo/Honor_Logo_(2020).svg.png','Honor2'],
-                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv2'],
-                  ['/logo/amarujala-print-logo_60e03f7d5b4a8.webp','Amar Ujala2'],
-                  ['/logo/Nuance-Symbol-500x281.png','Nuance2'],
-                  ['/logo/PHDCCI-Logo-2024.png','PHD Chamber2'],
-                  ['/logo/Wilson-logo.svg.png','Wilson2'],
-                  ['/logo/977be174b7bcc8708254a2163b534cbe_fgraphic.png','Client2'],
-                  ['/logo/india-madeaismartphone2-1747658691.webp','India Made2'],
-                ].map(([src, alt]) => (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img key={alt} src={src} alt={alt.replace(/\d+$/, '')} className="seo-client-logo" />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="Trusted SEO Company - US · Canada · Australia"
+          title={<>SEO Services That <AuroraText>Rank Your Business at the Top of Google</AuroraText></>}
+          subtext="1Solutions is a 15-year-old SEO agency delivering measurable, sustainable organic growth for businesses across the US, Canada, and Australia. From technical foundations to authority links - we cover every dimension of modern search."
+          primaryCta={{ label: 'Get a Free SEO Audit Now', href: '#contact' }}
+          secondaryCta={{ label: 'View Plans', href: '/affordable-seo-packages/' }}
+          stats={[
+            { label: 'SEO Projects Delivered', value: '500', suffix: '+' },
+            { label: 'Years of Experience', value: '15', suffix: '+' },
+            { label: 'Client Retention Rate', value: '97', suffix: '%' },
+            { label: 'Avg. Traffic Growth', value: '3', suffix: '×' },
+          ]}
+        />
 
         {/* ── DEFINITION ── */}
         <section className="seo-sec seo-white">

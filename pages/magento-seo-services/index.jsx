@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'Magento Technical SEO Audit', desc: 'In-depth audit covering crawl budget, layered navigation, duplicate content from faceted URLs, canonical tags, XML sitemaps, robots.txt, and Core Web Vitals on Magento 2 and Adobe Commerce.' },
@@ -44,13 +46,6 @@ const FAQS = [
   { q: 'How long does Magento SEO take to show results?', a: 'Technical fixes on Magento stores typically show crawl and indexation improvements within 3 to 6 weeks. Keyword ranking improvements for existing pages usually appear within 8 to 16 weeks following on-page optimisation. Large catalogues take longer because Googlebot needs time to re-crawl and re-index pages after changes. We track GSC crawl stats weekly post-implementation so you can see progress building from the first month.' },
 ];
 
-const STATS = [
-  { label: 'Magento Stores Optimised', val: '150+' },
-  { label: 'Years Experience', val: '15+' },
-  { label: 'Avg Traffic Growth', val: '+285%' },
-  { label: 'Client Retention', val: '94%' },
-];
-
 export default function MagentoSeoServices() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleCards, setVisibleCards] = useState([]);
@@ -79,22 +74,10 @@ export default function MagentoSeoServices() {
         <style>{`
           .mgseo-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .mgseo-page *,.mgseo-page *::before,.mgseo-page *::after{box-sizing:border-box}
-          .mgseo-hero{background:linear-gradient(135deg,#fff7ed 0%,#fed7aa 25%,#fde8d0 60%,#fffbf5 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .mgseo-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(194,65,12,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .mgseo-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(234,88,12,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .mgseo-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.mgseo-bc a:hover{color:#C2410C}.mgseo-bc span{color:#d1d5db}
-          .mgseo-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(194,65,12,0.08);border:1px solid rgba(194,65,12,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#9A3412;margin-bottom:28px}
-          .mgseo-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .mgseo-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
-          .mgseo-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .mgseo-btn-p{display:inline-flex;align-items:center;gap:8px;background:#C2410C;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(194,65,12,0.28)}
           .mgseo-btn-p:hover{background:#9A3412;box-shadow:0 8px 32px rgba(194,65,12,0.38);transform:translateY(-2px)}
           .mgseo-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.18);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
           .mgseo-btn-s:hover{border-color:#C2410C;color:#C2410C;transform:translateY(-2px)}
-          .mgseo-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(194,65,12,0.07)}
-          .mgseo-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(194,65,12,0.08)}.mgseo-stat:last-child{border-right:none}
-          .mgseo-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .mgseo-stat-v{font-size:1.6rem;font-weight:900;color:#C2410C;letter-spacing:-0.5px}
           .mgseo-svc{background:#f8fafd;padding:80px 40px}.mgseo-svc-in{max-width:1280px;margin:0 auto}
           .mgseo-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C2410C;margin-bottom:10px;display:block}
           .mgseo-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
@@ -141,26 +124,26 @@ export default function MagentoSeoServices() {
           .mgseo-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           .mgseo-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.mgseo-grid{grid-template-columns:repeat(2,1fr)}.mgseo-why-grid{grid-template-columns:repeat(2,1fr)}}
-          @media(max-width:768px){.mgseo-hero,.mgseo-svc,.mgseo-plat,.mgseo-proc,.mgseo-why,.mgseo-faq,.mgseo-cta{padding:60px 24px}.mgseo-hero{padding-top:60px;padding-bottom:0}.mgseo-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.mgseo-stat:nth-child(2){border-right:none}.mgseo-grid{grid-template-columns:1fr}.mgseo-why-grid{grid-template-columns:1fr}.mgseo-step{grid-template-columns:56px 1fr}.mgseo-btns{flex-direction:column;align-items:center}}
+          @media(max-width:768px){.mgseo-svc,.mgseo-plat,.mgseo-proc,.mgseo-why,.mgseo-faq,.mgseo-cta{padding:60px 24px}.mgseo-grid{grid-template-columns:1fr}.mgseo-why-grid{grid-template-columns:1fr}.mgseo-step{grid-template-columns:56px 1fr}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
       <div className="mgseo-page">
-        <section className="mgseo-hero">
-          <div className="mgseo-o1"/><div className="mgseo-o2"/>
-          <div className="mgseo-in">
-            <span className="mgseo-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#C2410C',display:'inline-block'}}/> Magento 2 · Adobe Commerce · PWA Studio</span>
-            <h1 className="mgseo-h1">Magento SEO Services for Large Ecommerce Catalogues</h1>
-            <p className="mgseo-sub">Fix layered navigation, resolve duplicate content, and drive organic revenue growth on Magento 2 and Adobe Commerce - with platform-native technical expertise and scalable processes.</p>
-            <div className="mgseo-btns">
-              <Link href="/contact-us" className="mgseo-btn-p">Get a Free Magento SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/magento-development-company" className="mgseo-btn-s">Magento Development</Link>
-            </div>
-            <div className="mgseo-stats">{STATS.map(s => <div key={s.label} className="mgseo-stat"><div className="mgseo-stat-l">{s.label}</div><div className="mgseo-stat-v">{s.val}</div></div>)}</div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Magento 2 · Adobe Commerce · PWA Studio"
+          title={<>Magento SEO Services for <AuroraText>Large Ecommerce Catalogues</AuroraText></>}
+          subtext="Fix layered navigation, resolve duplicate content, and drive organic revenue growth on Magento 2 and Adobe Commerce - with platform-native technical expertise and scalable processes."
+          primaryCta={{ label: 'Get a Free Magento SEO Audit', href: '/contact-us' }}
+          secondaryCta={{ label: 'Magento Development', href: '/magento-development-company' }}
+          stats={[
+            { label: 'Magento Stores Optimised', value: '150', suffix: '+' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'Avg Traffic Growth', value: '285', prefix: '+', suffix: '%' },
+            { label: 'Client Retention', value: '94', suffix: '%' },
+          ]}
+        />
         <section className="mgseo-svc"><div className="mgseo-svc-in">
           <span className="mgseo-ey2">What We Do</span><h2 className="mgseo-ttl">Magento SEO Services</h2>
           <p className="mgseo-desc">Every Magento SEO layer - technical, on-page, content, and authority - handled by specialists who know the platform at code level.</p>

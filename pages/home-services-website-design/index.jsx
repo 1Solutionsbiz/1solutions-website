@@ -2,22 +2,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-
-function useCountUp(target, duration = 1800) {
-  const [count, setCount] = useState(0);
-  const raf = useRef(null);
-  const start = (t) => {
-    const s = performance.now();
-    const step = (now) => {
-      const p = Math.min((now - s) / duration, 1);
-      setCount(Math.floor(p * t));
-      if (p < 1) raf.current = requestAnimationFrame(step);
-    };
-    raf.current = requestAnimationFrame(step);
-  };
-  useEffect(() => () => cancelAnimationFrame(raf.current), []);
-  return [count, start];
-}
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const ACCENT = '#0f4c75';
 const SKILLS = [
@@ -60,9 +46,6 @@ export default function HomeServicesWebsiteDesign() {
   const enR  = useRef(null); const [enV, setEnV] = useState(false);
   const whR  = useRef(null); const [whV, setWhV] = useState(false);
   const prR  = useRef(null); const [prV, setPrV] = useState(false);
-  const stGr = useRef(null); const [stV, setStV] = useState(false);
-  const [c1, s1] = useCountUp(200); const [c2, s2] = useCountUp(15);
-  const [c3, s3] = useCountUp(49);  const [c4, s4] = useCountUp(3);
   const [openFaq, setOpenFaq] = useState(null);
 
   useEffect(() => {
@@ -71,9 +54,7 @@ export default function HomeServicesWebsiteDesign() {
     const o2 = obs(enR, setEnV); if (enR.current) o2.observe(enR.current);
     const o3 = obs(whR, setWhV); if (whR.current) o3.observe(whR.current);
     const o4 = obs(prR, setPrV); if (prR.current) o4.observe(prR.current);
-    const o5 = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStV(true); s1(200); s2(15); s3(49); s4(3); o5.disconnect(); } }, { threshold: 0.2 });
-    if (stGr.current) o5.observe(stGr.current);
-    return () => [o1, o2, o3, o4, o5].forEach(o => o.disconnect());
+    return () => [o1, o2, o3, o4].forEach(o => o.disconnect());
   }, []);
 
   const LD = {
@@ -99,14 +80,8 @@ export default function HomeServicesWebsiteDesign() {
         <link rel="canonical" href="https://www.1solutions.biz/home-services-website-design/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
-          .hsd-hero{background:linear-gradient(135deg,${ACCENT} 0%,#072a44 60%,#0d3d5e 100%);color:#fff;padding:100px 20px 80px;text-align:center}
-          .hsd-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin:0 0 18px;line-height:1.15}
-          .hsd-hero p{font-size:1.15rem;max-width:620px;margin:0 auto 36px;opacity:.88;line-height:1.7}
-          .hsd-hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           .hsd-btn-primary{background:#FE9700;color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s}
           .hsd-btn-primary:hover{opacity:.88}
-          .hsd-btn-outline{border:2px solid rgba(255,255,255,.7);color:#fff;padding:13px 28px;border-radius:8px;font-weight:600;font-size:1rem;text-decoration:none;transition:border-color .2s}
-          .hsd-btn-outline:hover{border-color:#fff}
           .hsd-sec{padding:70px 20px}.hsd-sec-alt{background:#f0f7ff}
           .hsd-wrap{max-width:1100px;margin:0 auto}
           .hsd-sec-title{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:800;color:#111;text-align:center;margin:0 0 12px}
@@ -131,10 +106,6 @@ export default function HomeServicesWebsiteDesign() {
           .hsd-step-n{width:48px;height:48px;border-radius:50%;background:${ACCENT};color:#fff;font-size:1.1rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
           .hsd-step h3{font-size:1rem;font-weight:700;color:#111;margin:0 0 8px}
           .hsd-step p{color:#666;font-size:.9rem;line-height:1.6;margin:0}
-          .hsd-stats{background:${ACCENT};padding:60px 20px;color:#fff}
-          .hsd-stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;max-width:900px;margin:0 auto;text-align:center}
-          .hsd-stat-val{font-size:2.8rem;font-weight:900;line-height:1}
-          .hsd-stat-label{font-size:.95rem;opacity:.82;margin-top:6px}
           .hsd-faq{max-width:760px;margin:0 auto}
           .hsd-faq-item{border-bottom:1px solid #e5e5e5;padding:20px 0}
           .hsd-faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;color:#111;font-size:1rem;gap:12px}
@@ -144,17 +115,21 @@ export default function HomeServicesWebsiteDesign() {
           .hsd-cta{background:linear-gradient(135deg,${ACCENT},#072a44);padding:80px 20px;text-align:center;color:#fff}
           .hsd-cta h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin:0 0 16px}
           .hsd-cta p{font-size:1.08rem;opacity:.88;max-width:560px;margin:0 auto 36px;line-height:1.7}
-          @media(max-width:600px){.hsd-hero{padding:80px 18px 60px}.hsd-stats-grid{grid-template-columns:1fr 1fr}}
         `}</style>
       </Head>
-      <section className="hsd-hero">
-        <h1>Home Services Website Design<br/>Websites Built to Book Jobs and Generate Calls</h1>
-        <p>We design and build professional websites for HVAC, plumbing, landscaping, roofing, cleaning, and other home service businesses - optimised for local SEO, click-to-call, and online booking to turn visitors into paying customers.</p>
-        <div className="hsd-hero-btns">
-          <Link href="/contact-us" className="hsd-btn-primary">Get a Free Website Quote →</Link>
-          <Link href="/portfolio" className="hsd-btn-outline">View Portfolio</Link>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="Home Services Website Design"
+        title={<>Websites <AuroraText>Built to Book Jobs</AuroraText> and Generate Calls</>}
+        subtext="We design and build professional websites for HVAC, plumbing, landscaping, roofing, cleaning, and other home service businesses - optimised for local SEO, click-to-call, and online booking to turn visitors into paying customers."
+        primaryCta={{ label: 'Get a Free Website Quote →', href: '/contact-us' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        stats={[
+          { label: 'Home Service Websites Built', value: '200', suffix: '+' },
+          { label: 'Years Experience', value: '15', suffix: '+' },
+          { label: 'Client Satisfaction', value: '9', prefix: '4.', suffix: '/5' },
+          { label: 'Avg Time to Launch', value: '3', suffix: ' Weeks' },
+        ]}
+      />
       <section className="hsd-sec" ref={skR}>
         <div className="hsd-wrap">
           <h2 className="hsd-sec-title">What We Build Into Every Home Services Website</h2>
@@ -174,14 +149,6 @@ export default function HomeServicesWebsiteDesign() {
           <h2 className="hsd-sec-title">Why Home Service Businesses Choose 1Solutions</h2>
           <p className="hsd-sec-sub">We understand the home services market - your buyers, your competition, and what it takes to win local search.</p>
           <div className="hsd-why-grid">{WHY.map((w, i) => <div key={w.h} className={`hsd-why-item${whV ? ' hsd-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
-        </div>
-      </section>
-      <section className="hsd-stats" ref={stGr}>
-        <div className="hsd-stats-grid">
-          <div><div className="hsd-stat-val">{stV ? c1 : 0}+</div><div className="hsd-stat-label">Home Service Websites Built</div></div>
-          <div><div className="hsd-stat-val">{stV ? c2 : 0}+</div><div className="hsd-stat-label">Years Experience</div></div>
-          <div><div className="hsd-stat-val">4.{stV ? c3 : 0}/5</div><div className="hsd-stat-label">Client Satisfaction</div></div>
-          <div><div className="hsd-stat-val">{stV ? c4 : 0} Weeks</div><div className="hsd-stat-label">Avg Time to Launch</div></div>
         </div>
       </section>
       <section className="hsd-sec hsd-sec-alt" ref={prR}>

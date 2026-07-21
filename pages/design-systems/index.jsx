@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n:'01', title:'Design Token Architecture', desc:'Spacing, colour, typography, shadow, and motion tokens structured for multi-platform output - web, iOS, Android, and beyond - using a single source of truth.', featured:false },
@@ -42,38 +44,6 @@ const PROCESS_STEPS = [
   { title:'Handoff & Training', desc:'We run a structured handoff session with your design and engineering leads - walking through the token system, component API, contribution process, and versioning strategy. We also provide recorded walkthroughs and written governance documentation for future reference.' },
 ];
 
-// Count-up hook
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const numTarget = parseInt(target.replace(/\D/g, ''), 10);
-    if (!numTarget) return;
-    let startTime = null;
-    const step = (ts) => {
-      if (!startTime) startTime = ts;
-      const progress = Math.min((ts - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * numTarget));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function AnimatedStat({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');
-  const hasComma = val.includes(',');
-  const display = started ? (hasComma ? num.toLocaleString() : num) + suffix : val;  return (
-    <div className="ds-stat-col">
-      <div className="ds-stat-label">{label}</div>
-      <div className="ds-stat-value">{display}</div>
-    </div>
-  );
-}
-
 const LD = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -106,12 +76,10 @@ const LD = {
 export default function DesignSystemsPage() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleSteps, setVisibleSteps] = useState([]);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleServiceCards, setVisibleServiceCards] = useState([]);
   const stepRefs = useRef([]);
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const whyGridRef = useRef(null);
   const serviceGridRef = useRef(null);
@@ -133,17 +101,6 @@ export default function DesignSystemsPage() {
       return obs;
     });
     return () => observers.forEach(o => o && o.disconnect());
-  }, []);
-
-  // Stats count-up trigger
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setStatsStarted(true); obs.disconnect(); } },
-      { threshold: 0.5 }
-    );
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
   }, []);
 
   // Why cards staggered reveal
@@ -250,38 +207,6 @@ export default function DesignSystemsPage() {
           .ds-orb-1 { position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(14,165,233,0.22) 0%,rgba(99,102,241,0.10) 40%,transparent 70%);top:-300px;right:-300px;pointer-events:none;z-index:0;filter:blur(30px); }
           .ds-orb-2 { position:absolute;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,0.18) 0%,rgba(6,182,212,0.08) 40%,transparent 70%);bottom:0;left:-250px;pointer-events:none;z-index:0;filter:blur(30px); }
           .ds-orb-3 { position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.12) 0%,transparent 70%);top:45%;right:10%;pointer-events:none;z-index:0;filter:blur(35px); }
-
-          /* Hero */
-          .ds-hero-block { background:transparent;position:relative;overflow:hidden; }
-          .ds-hero-block::before { content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(14,165,233,0.14) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px); }
-          .ds-hero-block::after { content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,0.16) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px); }
-          .ds-hero-content { position:relative;z-index:2;text-align:center;max-width:860px;margin:0 auto;padding:60px 40px 44px; }
-          .ds-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#0369A1;margin-bottom:18px; }
-          .ds-hero-content h1 { font-size:52px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:20px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .ds-hero-content p { font-size:17px;color:#3A507A;line-height:1.7;max-width:640px;margin:0 auto 32px; }
-          .ds-hero-badges { display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:32px; }
-          .ds-badge { background:rgba(255,255,255,0.6);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.85);border-radius:40px;padding:6px 16px;font-size:13px;font-weight:600;color:#0F3460; }
-          .ds-btn-hero { display:inline-block;padding:15px 44px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1);position:relative;overflow:hidden; }
-          .ds-btn-hero::after { content:'';position:absolute;top:-10%;left:-120%;width:80%;height:120%;background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,0.75) 45%,rgba(255,255,255,0.9) 50%,rgba(255,255,255,0.75) 55%,transparent 100%);animation:ds-shimmer 2.5s ease-in-out infinite;pointer-events:none; }
-          @keyframes ds-shimmer { 0%{left:-120%} 35%,100%{left:160%} }
-          .ds-btn-hero:hover { background:rgba(255,255,255,0.85);border-color:rgba(3,105,161,0.5);box-shadow:0 12px 36px rgba(15,52,96,0.15),0 0 0 2px rgba(3,105,161,0.18),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px);color:#0F3460; }
-
-          /* Stats strip */
-          .ds-hero-stats { position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
-          .ds-stat-col { padding:18px 20px;text-align:center;border-right:1px solid rgba(15,52,96,0.10); }
-          .ds-stat-col:last-child { border-right:none; }
-          .ds-stat-label { font-size:12px;color:#4A6080;font-weight:500;margin-bottom:6px; }
-          .ds-stat-value { font-size:26px;font-weight:900;color:#0369A1;letter-spacing:-0.5px;line-height:1; }
-
-          /* Clients bar */
-          .ds-clients-bar { position:relative;z-index:2;padding:20px 40px 60px;max-width:1440px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px; }
-          .ds-clients-label { font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6A80A0; }
-          .ds-clients-logos { width:100%;overflow:hidden; }
-          .ds-logos-track { display:flex;align-items:center;gap:60px;width:max-content;animation:ds-marquee 28s linear infinite; }
-          .ds-logos-track:hover { animation-play-state:paused; }
-          @keyframes ds-marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-          .ds-client-logo { height:26px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(100%);opacity:0.5;transition:opacity 0.25s,filter 0.25s; }
-          .ds-client-logo:hover { opacity:0.85;filter:grayscale(0%); }
 
           /* Shared section styles */
           .ds-section-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#0369A1;margin-bottom:12px;display:block; }
@@ -449,22 +374,12 @@ export default function DesignSystemsPage() {
 
           /* Mobile */
           @media (max-width:1024px) {
-            .ds-hero-content h1 { font-size:40px; }
             .ds-services-grid { grid-template-columns:repeat(2,1fr); }
             .ds-why-grid { grid-template-columns:repeat(2,1fr); }
             .ds-testi-grid { grid-template-columns:repeat(2,1fr); }
             .ds-callout-inner { grid-template-columns:repeat(2,1fr);gap:24px; }
           }
           @media (max-width:768px) {
-            .ds-hero-content { padding:40px 20px 28px; }
-            .ds-hero-content h1 { font-size:28px;letter-spacing:-0.3px; }
-            .ds-hero-content p { font-size:15px; }
-            .ds-hero-stats { grid-template-columns:1fr 1fr; }
-            .ds-stat-col { padding:14px 12px; }
-            .ds-stat-col:nth-child(2) { border-right:none; }
-            .ds-stat-col:nth-child(3) { border-top:1px solid rgba(15,52,96,0.10); }
-            .ds-stat-col:nth-child(4) { border-top:1px solid rgba(15,52,96,0.10);border-right:none; }
-            .ds-stat-value { font-size:22px; }
             .ds-services-section { padding:48px 20px 40px; }
             .ds-services-grid { grid-template-columns:1fr 1fr;gap:10px; }
             .ds-why-section { padding:60px 20px; }
@@ -495,10 +410,8 @@ export default function DesignSystemsPage() {
             .ds-stat-number { font-size:28px; }
             .ds-section-title,.ds-process-title,.ds-faq-heading,.ds-contact-title,.ds-related-title { font-size:28px; }
             .ds-related-section { padding:60px 20px; }
-            .ds-clients-bar { padding:16px 20px 36px; }
           }
           @media (max-width:480px) {
-            .ds-hero-content h1 { font-size:24px; }
             .ds-services-grid { grid-template-columns:1fr; }
             .ds-callout-inner { grid-template-columns:1fr; }
             .ds-section-title,.ds-process-title,.ds-faq-heading,.ds-contact-title,.ds-related-title { font-size:22px; }
@@ -515,51 +428,18 @@ export default function DesignSystemsPage() {
         <div className="ds-orb-3" />
 
         {/* ── HERO ── */}
-        <div className="ds-hero-block">
-          <div className="ds-hero-content">
-            <span className="ds-eyebrow">Design Systems Agency - 16+ Years Experience</span>
-            <h1>Design Systems That Scale With Your Product</h1>
-            <p>We build structured, documented design systems - from atomic tokens to full component libraries - so your team ships faster with pixel-perfect consistency.</p>
-            <div className="ds-hero-badges">
-              <span className="ds-badge">&#10003; Figma + Code Libraries</span>
-              <span className="ds-badge">&#10003; WCAG 2.2 Accessibility</span>
-              <span className="ds-badge">&#10003; Storybook Documentation</span>
-              <span className="ds-badge">&#10003; Token Architecture Included</span>
-            </div>
-            <Link href="#contact" className="ds-btn-hero">Start Your Design System Project</Link>
-          </div>
-
-          <div className="ds-hero-stats" ref={statsRef}>
-            {[['Design Systems Built','80+'],['Faster Development','3×'],['Years Experience','16+'],['Consistency Score','99%']].map(([label,val]) => (
-              <AnimatedStat key={label} label={label} val={val} started={statsStarted} />
-            ))}
-          </div>
-
-          <div className="ds-clients-bar">
-            <span className="ds-clients-label">Trusted by Leading Brands</span>
-            <div className="ds-clients-logos">
-              <div className="ds-logos-track">
-                {[
-                  ['/logo/Indian_Express_Logo_full.png','Indian Express'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],
-                  ['/logo/Uniphore.jpg','Uniphore'],
-                  ['/logo/ICCoLogo.png','ICC'],
-                  ['/logo/Honor_Logo_(2020).svg.png','Honor'],
-                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],
-                  ['/logo/Indian_Express_Logo_full.png','Indian Express2'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon2'],
-                  ['/logo/Uniphore.jpg','Uniphore2'],
-                  ['/logo/ICCoLogo.png','ICC2'],
-                  ['/logo/Honor_Logo_(2020).svg.png','Honor2'],
-                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv2'],
-                ].map(([src, alt]) => (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img key={alt} src={src} alt={alt.replace(/\d+$/, '')} className="ds-client-logo" />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="Design Systems Agency - 16+ Years Experience"
+          title={<>Design Systems That <AuroraText>Scale With Your Product</AuroraText></>}
+          subtext="We build structured, documented design systems - from atomic tokens to full component libraries - so your team ships faster with pixel-perfect consistency."
+          primaryCta={{ label: 'Start Your Design System Project', href: '#contact' }}
+          stats={[
+            { label: 'Design Systems Built', value: '80', suffix: '+' },
+            { label: 'Faster Development', value: '3', suffix: '×' },
+            { label: 'Years Experience', value: '16', suffix: '+' },
+            { label: 'Consistency Score', value: '99', suffix: '%' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="ds-services-section">

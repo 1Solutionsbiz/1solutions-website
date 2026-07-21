@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Keyword Research & Strategy', desc: "In-depth analysis of how Vancouver customers search for your services - high-intent buying queries, neighbourhood-level terms, and competitive keyword gaps your Vancouver rivals are missing." },
@@ -135,27 +137,7 @@ export default function SeoCompanyVancouver() {
         <style>{`
           *{box-sizing:border-box;}
           body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;}
-          .vanc-hero{position:relative;overflow:hidden;padding:90px 40px 80px;background:linear-gradient(135deg,rgba(219,234,254,0.65) 0%,rgba(255,255,255,0.78) 50%,rgba(207,250,254,0.55) 100%);}
-          .vanc-orb1{position:absolute;top:-100px;right:-100px;width:580px;height:580px;border-radius:50%;background:radial-gradient(circle,rgba(10,66,104,0.10) 0%,transparent 70%);pointer-events:none;filter:blur(12px);}
-          .vanc-orb2{position:absolute;bottom:-80px;left:-80px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(26,114,176,0.07) 0%,transparent 70%);pointer-events:none;filter:blur(10px);}
-          .vanc-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;}
-          .vanc-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(10,66,104,0.08);border:1px solid rgba(10,66,104,0.18);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#0a4268;margin-bottom:24px;}
-          .vanc-eyebrow-dot{width:7px;height:7px;border-radius:50%;background:#1a72b0;display:inline-block;}
-          .vanc-h1{font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;color:#0A1628;}
-          .vanc-h1 span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-          .vanc-desc{font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:680px;}
-          .vanc-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px;}
-          .vanc-btn-p{display:inline-flex;align-items:center;gap:8px;background:#0a4268;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 6px 24px rgba(10,66,104,0.28);}
-          .vanc-btn-p:hover{background:#0d5280;transform:translateY(-2px);}
-          .vanc-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.75);color:#0a4268;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;border:1.5px solid rgba(10,66,104,0.18);transition:all 0.25s;backdrop-filter:blur(8px);}
-          .vanc-btn-s:hover{background:#fff;transform:translateY(-2px);}
-          .vanc-trust{display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-bottom:48px;}
-          .vanc-badge{display:flex;align-items:center;gap:6px;font-size:12px;color:#6b7280;font-weight:500;}
-          .vanc-stats-bar{display:flex;border:1px solid rgba(10,66,104,0.10);border-radius:16px;background:rgba(255,255,255,0.80);backdrop-filter:blur(12px);overflow:hidden;max-width:700px;}
-          .vanc-stat-item{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(10,66,104,0.08);}
-          .vanc-stat-item:last-child{border-right:none;}
-          .vanc-stat-num{font-size:1.9rem;font-weight:900;color:#0a4268;line-height:1;letter-spacing:-1px;}
-          .vanc-stat-lbl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px;}.vanc-bc a:hover{color:#0a4268;}.vanc-bc-cur{color:#0a4268;font-weight:500;}
+          .vanc-bc a:hover{color:#0a4268;}.vanc-bc-cur{color:#0a4268;font-weight:500;}
           .vanc-sec{padding:80px 40px;}
           .vanc-bg{background:#f8fafd;}
           .vanc-sec-inner{max-width:1200px;margin:0 auto;}
@@ -245,35 +227,26 @@ export default function SeoCompanyVancouver() {
           .vanc-cta-btn-s{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;border:2px solid rgba(255,255,255,0.35);transition:all 0.25s;}
           .vanc-cta-btn-s:hover{border-color:rgba(255,255,255,0.70);background:rgba(255,255,255,0.08);}
           @media(max-width:900px){.vanc-grid4{grid-template-columns:1fr 1fr;}.vanc-grid3,.vanc-grid2,.vanc-res-grid{grid-template-columns:1fr 1fr;}.vanc-ind-grid{grid-template-columns:1fr 1fr;}.vanc-contact-grid{grid-template-columns:1fr;gap:40px;}}
-          @media(max-width:600px){.vanc-hero,.vanc-sec,.vanc-results,.vanc-cta,.vanc-contact-sec{padding-left:20px;padding-right:20px;}.vanc-hero{padding-top:60px;padding-bottom:50px;}.vanc-grid4,.vanc-grid3,.vanc-grid2,.vanc-res-grid,.vanc-ind-grid{grid-template-columns:1fr;}.vanc-bc{padding:12px 20px;}.vanc-field-row{grid-template-columns:1fr;}.vanc-form-wrap{padding:24px 20px;}}
+          @media(max-width:600px){.vanc-sec,.vanc-results,.vanc-cta,.vanc-contact-sec{padding-left:20px;padding-right:20px;}.vanc-grid4,.vanc-grid3,.vanc-grid2,.vanc-res-grid,.vanc-ind-grid{grid-template-columns:1fr;}.vanc-bc{padding:12px 20px;}.vanc-field-row{grid-template-columns:1fr;}.vanc-form-wrap{padding:24px 20px;}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
 
-      <section className="vanc-hero">
-        <div className="vanc-orb1" /><div className="vanc-orb2" />
-        <div className="vanc-inner">
-          <span className="vanc-eyebrow"><span className="vanc-eyebrow-dot" />SEO Company in Vancouver, BC</span>
-          <h1 className="vanc-h1">Top-Ranked <span>SEO Company in Vancouver</span><br />That Delivers Page 1 Rankings</h1>
-          <p className="vanc-desc">1Solutions is a results-driven SEO company in Vancouver with 15+ years of experience helping Metro Vancouver businesses rank on Page 1 of Google. From technical SEO and local search to link building and content strategy - we build organic visibility that generates qualified leads, not just traffic numbers.</p>
-          <div className="vanc-btns">
-            <a href="#contact" className="vanc-btn-p">Get a Free SEO Audit<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-            <Link href="/affordable-seo-packages/" className="vanc-btn-s">View SEO Packages →</Link>
-          </div>
-          <div className="vanc-trust">
-            {['Metro Vancouver specialists','White-hat SEO only','No lock-in contracts','Monthly ranking reports'].map(t => (
-              <span key={t} className="vanc-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0a4268" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>{t}</span>
-            ))}
-          </div>
-          <div className="vanc-stats-bar">
-            {[{num:'500+',lbl:'Clients Served'},{num:'15+',lbl:'Years Experience'},{num:'Page 1',lbl:'Rankings'},{num:'97%',lbl:'Retention Rate'}].map(s => (
-              <div key={s.lbl} className="vanc-stat-item"><span className="vanc-stat-num">{s.num}</span><span className="vanc-stat-lbl">{s.lbl}</span></div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="SEO Company in Vancouver, BC · Metro Vancouver Specialists"
+        title={<>Top-Ranked <AuroraText>SEO Company in Vancouver</AuroraText> That Delivers Page 1 Rankings</>}
+        subtext="1Solutions is a results-driven SEO company in Vancouver with 15+ years of experience helping Metro Vancouver businesses rank on Page 1 of Google. From technical SEO and local search to link building and content strategy - we build organic visibility that generates qualified leads, not just traffic numbers."
+        primaryCta={{ label: 'Get a Free SEO Audit', href: '#contact' }}
+        secondaryCta={{ label: 'View SEO Packages', href: '/affordable-seo-packages/' }}
+        stats={[
+          { label: 'Clients Served', value: '500', suffix: '+' },
+          { label: 'Years Experience', value: '15', suffix: '+' },
+          { label: 'Rankings', value: '1', prefix: 'Page ' },
+          { label: 'Retention Rate', value: '97', suffix: '%' },
+        ]}
+      />
 
       <section className="vanc-sec vanc-bg" id="services">
         <div className="vanc-sec-inner">

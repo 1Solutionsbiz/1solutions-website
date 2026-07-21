@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -88,25 +90,13 @@ const FAQS = [
   { q: 'Can your ML developers build recommendation systems?', a: "Yes. Collaborative filtering (ALS, BPR), content-based (embedding similarity), two-tower neural networks (user + item embedding towers), sequential recommendation (BERT4Rec), and multi-stage retrieval + ranking pipelines with FAISS for ANN retrieval and sub-10ms serving latency." },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => { if (!start) return; const num = parseInt(target.replace(/\D/g, ''), 10); if (!num) return; let t0 = null; const step = ts => { if (!t0) t0 = ts; const p = Math.min((ts - t0) / duration, 1); setCount(Math.floor((1 - Math.pow(1 - p, 3)) * num)); if (p < 1) requestAnimationFrame(step); }; requestAnimationFrame(step); }, [start, target, duration]);
-  return count;
-}
-function StatItem({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');  return (<div className="hml-sc"><div className="hml-sv">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div><div className="hml-sl">{label}</div></div>);
-}
-
 export default function HireMLDeveloper() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [ss, setSs] = useState(false);
   const [vis, setVis] = useState(new Set());
   const [vSk, setVSk] = useState([]); const [vEn, setVEn] = useState([]); const [vWh, setVWh] = useState([]); const [vTe, setVTe] = useState([]); const [vSt, setVSt] = useState([]);
-  const stR = useRef(null); const secR = useRef({});
+  const secR = useRef({});
   const skR = useRef(null); const enR = useRef(null); const whR = useRef(null); const teR = useRef(null); const stGr = useRef(null);
-  useEffect(() => { if (!stR.current) return; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setSs(true); o.disconnect(); } }, { threshold: 0.4 }); o.observe(stR.current); return () => o.disconnect(); }, []);
   useEffect(() => { const pairs = [[skR, SKILLS.length, setVSk],[enR, 3, setVEn],[whR, WHY_CARDS.length, setVWh],[teR, 3, setVTe],[stGr, TECH_STACK.length, setVSt]]; const obs = pairs.map(([ref, count, setter]) => { if (!ref.current) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { Array.from({ length: count }, (_, i) => setTimeout(() => setter(p => p.includes(i) ? p : [...p, i]), i * 80)); o.disconnect(); } }, { threshold: 0.05 }); o.observe(ref.current); return o; }); return () => obs.forEach(o => o?.disconnect()); }, []);
   useEffect(() => { const ks = Object.keys(secR.current); const obs = ks.map(k => { const el = secR.current[k]; if (!el) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVis(p => new Set([...p, k])); o.disconnect(); } }, { threshold: 0.1 }); o.observe(el); return o; }); return () => obs.forEach(o => o?.disconnect()); }, []);
   const visSkills = showAll ? SKILLS : SKILLS.slice(0, 6);
@@ -154,31 +144,6 @@ export default function HireMLDeveloper() {
 
 
 
-          .hml-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
-          .hml-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
-          .hml-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .hml-desc{font-size:16px;color:#3A507A;line-height:1.65;max-width:740px;margin:0 auto 24px}
-          .hml-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
-          .hml-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07)}
-          .hml-dot{width:7px;height:7px;border-radius:50%;background:#a21caf;flex-shrink:0}
-          .hml-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .hml-p{display:inline-block;padding:14px 36px;background:#a21caf;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(162,28,175,.28)}
-          .hml-p:hover{background:#0F3460;transform:translateY(-2px)}
-          .hml-g{display:inline-block;padding:14px 36px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .hml-g:hover{background:rgba(255,255,255,.85);border-color:rgba(162,28,175,.5);transform:translateY(-2px)}
-          .hml-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:28px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .hml-sc{padding:18px 16px;text-align:center;border-right:1px solid rgba(15,52,96,.10)}
-          .hml-sc:last-child{border-right:none}
-          .hml-sv{font-size:28px;font-weight:900;color:#a21caf;letter-spacing:-.5px;line-height:1}
-          .hml-sl{font-size:11px;color:#4A6080;font-weight:500;margin-top:5px}
-          .hml-logos{position:relative;z-index:2;padding:24px 40px 52px;display:flex;flex-direction:column;align-items:center;gap:14px}
-          .hml-ll{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6A80A0}
-          .hml-lw{width:100%;overflow:hidden}
-          .hml-lt{display:flex;align-items:center;gap:60px;width:max-content;animation:hml-mq 28s linear infinite}
-          .hml-lt:hover{animation-play-state:paused}
-          @keyframes hml-mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-          .hml-cl{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
-          .hml-cl:hover{opacity:.85;filter:grayscale(0%)}
           .hml-sey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
           .hml-st{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .hml-sd{font-size:15px;color:#4A6080;line-height:1.7}
@@ -325,8 +290,8 @@ export default function HireMLDeveloper() {
           .hml-b{background:rgba(30,64,175,.09);border-color:rgba(30,64,175,.28);color:#1e3a8a}
           .hml-o{background:rgba(249,115,22,.09);border-color:rgba(249,115,22,.28);color:#c2410c}
           .hml-a{background:rgba(202,138,4,.09);border-color:rgba(202,138,4,.28);color:#92400e}
-          @media(max-width:1024px){.hml-hero h1,.hml-st,.hml-fq-s h2{font-size:36px}.hml-sk-g{grid-template-columns:repeat(2,1fr)}.hml-tec-g{grid-template-columns:repeat(2,1fr)}.hml-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.hml-en-c.feat{transform:none}.hml-en-c.feat.hml-ev{transform:none}.hml-en-c.feat.hml-ev:hover{transform:translateY(-4px)}.hml-wy-g{grid-template-columns:repeat(2,1fr)}.hml-tg2{grid-template-columns:1fr}.hml-ct-g{grid-template-columns:1fr}}
-          @media(max-width:768px){.hml-bc,.hml-hero,.hml-sk-s,.hml-tec-s,.hml-en-s,.hml-pr-s,.hml-te-s,.hml-wy-s,.hml-fq-s,.hml-rel{padding-left:20px;padding-right:20px}.hml-hero{padding-top:28px;padding-bottom:20px}.hml-hero h1{font-size:26px;letter-spacing:-.3px}.hml-stats{grid-template-columns:1fr 1fr}.hml-sc:nth-child(2){border-right:none}.hml-sc:nth-child(3),.hml-sc:nth-child(4){border-top:1px solid rgba(15,52,96,.10)}.hml-sc:nth-child(4){border-right:none}.hml-sk-g,.hml-tec-g,.hml-wy-g{grid-template-columns:1fr}.hml-fr{grid-template-columns:1fr}.hml-ctt{font-size:28px}.hml-st{font-size:28px}.hml-ct-s{padding:48px 20px}.hml-logos{padding-left:20px;padding-right:20px}}
+          @media(max-width:1024px){.hml-st,.hml-fq-s h2{font-size:36px}.hml-sk-g{grid-template-columns:repeat(2,1fr)}.hml-tec-g{grid-template-columns:repeat(2,1fr)}.hml-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.hml-en-c.feat{transform:none}.hml-en-c.feat.hml-ev{transform:none}.hml-en-c.feat.hml-ev:hover{transform:translateY(-4px)}.hml-wy-g{grid-template-columns:repeat(2,1fr)}.hml-tg2{grid-template-columns:1fr}.hml-ct-g{grid-template-columns:1fr}}
+          @media(max-width:768px){.hml-bc,.hml-sk-s,.hml-tec-s,.hml-en-s,.hml-pr-s,.hml-te-s,.hml-wy-s,.hml-fq-s,.hml-rel{padding-left:20px;padding-right:20px}.hml-sk-g,.hml-tec-g,.hml-wy-g{grid-template-columns:1fr}.hml-fr{grid-template-columns:1fr}.hml-ctt{font-size:28px}.hml-st{font-size:28px}.hml-ct-s{padding:48px 20px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
@@ -352,15 +317,19 @@ export default function HireMLDeveloper() {
 </Head>
       <div className="hml-page">
         <div className="hml-orb hml-o1" /><div className="hml-orb hml-o2" /><div className="hml-orb hml-o3" />
-        <section className="hml-hero">
-          <span className="hml-ey">Hire ML Developer</span>
-          <h1>Hire Expert ML Developers - PyTorch, TensorFlow, MLOps & Production ML</h1>
-          <p className="hml-desc">Hire pre-vetted ML developers specialising in supervised learning, deep learning (PyTorch, TensorFlow), computer vision, NLP, time-series forecasting, recommendation systems, MLOps, and production ML deployment. Dedicated, part-time, or fixed-scope. Start in 3–5 business days.</p>
-          <div className="hml-tr">{['PyTorch / TensorFlow','Computer Vision','NLP & Transformers','Time-Series Forecasting','MLOps'].map(b => (<div className="hml-badge" key={b}><span className="hml-dot" />{b}</div>))}</div>
-          <div className="hml-ctas"><Link href="#contact" className="hml-p">Hire an ML Developer</Link><Link href="#engagement" className="hml-g">View Engagement Models →</Link></div>
-        </section>
-        <div className="hml-stats" ref={stR}>{[['90+','ML Models in Production'],['15+','Years Dev Experience'],['48hr','Avg Developer Match'],['98%','Client Retention']].map(([v, l]) => (<StatItem key={l} label={l} val={v} started={ss} />))}</div>
-        <div className="hml-logos"><span className="hml-ll">Trusted by ML & AI Product Teams</span><div className="hml-lw"><div className="hml-lt">{[['/logo/Indian_Express_Logo_full.png','Indian Express'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],['/logo/Uniphore.jpg','Uniphore'],['/logo/ICCoLogo.png','ICC'],['/logo/Honor_Logo_(2020).svg.png','Honor'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],['/logo/Indian_Express_Logo_full.png','Indian Express 2'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon 2'],['/logo/Uniphore.jpg','Uniphore 2'],['/logo/ICCoLogo.png','ICC 2'],['/logo/Honor_Logo_(2020).svg.png','Honor 2'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv 2']].map(([src, alt]) => (<img key={alt} src={src} alt={alt.replace(/ \d$/, '')} className="hml-cl" />))}</div></div></div>
+        <ServiceHero
+          eyebrow="Hire ML Developer"
+          title={<>Hire Expert ML Developers <AuroraText>PyTorch, TensorFlow &amp; Production ML</AuroraText></>}
+          subtext="Hire pre-vetted ML developers specialising in supervised learning, deep learning (PyTorch, TensorFlow), computer vision, NLP, time-series forecasting, recommendation systems, MLOps, and production ML deployment. Dedicated, part-time, or fixed-scope. Start in 3-5 business days."
+          primaryCta={{ label: 'Hire an ML Developer', href: '#contact' }}
+          secondaryCta={{ label: 'View Engagement Models', href: '#engagement' }}
+          stats={[
+            { label: 'ML Models in Production', value: '90', suffix: '+' },
+            { label: 'Years Dev Experience', value: '15', suffix: '+' },
+            { label: 'Avg Developer Match', value: '48', suffix: 'hr' },
+            { label: 'Client Retention', value: '98', suffix: '%' },
+          ]}
+        />
         <section className="hml-sk-s" aria-labelledby="hml-sk-h"><div className="hml-in"><div className={`hml-rv${vis.has('sk') ? ' hml-ok' : ''}`} ref={el => { secR.current['sk'] = el; }}><span className="hml-sey">What Our ML Developers Build</span><h2 id="hml-sk-h" className="hml-st">ML Skills & Expertise</h2><p className="hml-sd" style={{ maxWidth: 720 }}>Supervised learning, deep learning, computer vision, NLP, time-series forecasting, recommendation systems, anomaly detection, MLOps infrastructure, edge ML, and ML architecture consulting.</p></div><div className="hml-sk-g" ref={skR}>{visSkills.map((s, i) => (<div key={s.n} className={`hml-sk-c${s.feat ? ' feat' : ''}${vSk.includes(i) ? ' hml-cv' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}><span className="hml-sk-n">{s.n}</span><h3>{s.title}</h3><p>{s.desc}</p></div>))}</div>{SKILLS.length > 6 && (<div className="hml-sm"><button className="hml-bm" onClick={() => setShowAll(p => !p)}>{showAll ? 'Show fewer ↑' : `Show all ${SKILLS.length} areas ↓`}</button></div>)}</div></section>
         <section className="hml-tec-s" aria-labelledby="hml-tec-h"><div className="hml-in"><div className={`hml-rv${vis.has('stk') ? ' hml-ok' : ''}`} ref={el => { secR.current['stk'] = el; }}><span className="hml-sey">Technology Stack</span><h2 id="hml-tec-h" className="hml-st">ML Tools & Frameworks</h2><p className="hml-sd" style={{ maxWidth: 680 }}>PyTorch, TensorFlow/Keras, scikit-learn, XGBoost, Hugging Face Transformers, YOLO v8, Detectron2, MLflow, Weights & Biases, Kubeflow, FastAPI, Triton, ONNX, FAISS, SageMaker, Vertex AI, and Evidently AI.</p></div><div className="hml-tec-g" ref={stGr}>{TECH_STACK.map((grp, i) => (<div key={grp.group} className={`hml-tec-c${vSt.includes(i) ? ' hml-sv2' : ''}`} style={{ transitionDelay: `${i * 60}ms` }}><div className="hml-tg" style={{ color: grp.color, borderBottomColor: grp.color + '33' }}>{grp.group}</div><div className="hml-pills">{grp.items.map(item => <span key={item} className="hml-pill" style={{ color: grp.color, background: grp.color + '12', borderColor: grp.color + '30' }}>{item}</span>)}</div></div>))}</div></div></section>
         <section id="engagement" className="hml-en-s" aria-labelledby="hml-en-h"><div className="hml-in"><div className={`hml-rv${vis.has('eng') ? ' hml-ok' : ''}`} ref={el => { secR.current['eng'] = el; }}><span className="hml-sey">Engagement Models</span><h2 id="hml-en-h" className="hml-st">How to Hire an ML Developer</h2><p className="hml-sd" style={{ maxWidth: 680 }}>Full-time dedicated ML engineer, part-time specialist, or fixed-scope ML project - structured for your ML maturity and engineering stage.</p></div><div className="hml-en-g" ref={enR}>{ENGAGEMENT_MODELS.map((m, i) => (<div key={m.id} className={`hml-en-c${m.feat ? ' feat' : ''}${vEn.includes(i) ? ' hml-ev' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}><span className="hml-en-b" style={{ color: m.badgeColor, borderColor: m.badgeColor + '44', background: m.badgeColor + '14' }}>{m.badge}</span><div className="hml-en-i"><svg viewBox="0 0 24 24" width="26" height="26"><path d={m.icon} /></svg></div><div className="hml-en-n">{m.name}</div><div className="hml-en-h">{m.headline}</div><div className="hml-en-d">{m.desc}</div><div className="hml-en-ll">Best for</div><ul className="hml-en-li">{m.bestFor.map(b => <li key={b}>{b}</li>)}</ul><div className="hml-en-p"><strong>Process:</strong> {m.process}<br /><span className="hml-en-tl">{m.timeline}</span></div><Link href="#contact" className="hml-en-a">Get a free estimate →</Link></div>))}</div></div></section>

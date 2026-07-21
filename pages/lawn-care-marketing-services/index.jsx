@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'Local SEO for Lawn Care', desc: 'Dominate local search for lawn care, landscaping, and garden maintenance services in your area - Google Business Profile optimisation, local citation building, and geo-targeted keyword strategy to capture customers searching near them.' },
@@ -44,13 +46,6 @@ const FAQS = [
   { q: 'Can you help with pricing and service packaging for marketing?', a: 'Yes, as part of our strategy work. How you price and package services significantly affects marketing effectiveness - bundled seasonal programmes (spring clean-up + summer mowing + fall aeration) are much easier to market profitably than one-off jobs, because they build predictable recurring revenue and allow better route planning. We advise on service packaging, upsell sequences, and pricing positioning as part of building your marketing strategy. We do not set your prices - but we can share what pricing structures work best for marketing campaigns and customer acquisition economics in your market.' },
 ];
 
-const STATS = [
-  { label: 'Lawn Care Clients', val: '80+' },
-  { label: 'Avg Lead Volume Growth', val: '+3.4×' },
-  { label: 'Years Experience', val: '12+' },
-  { label: 'Client Retention', val: '90%' },
-];
-
 export default function LawnCareMarketingServices() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleCards, setVisibleCards] = useState([]);
@@ -75,22 +70,11 @@ export default function LawnCareMarketingServices() {
         <style>{`
           .lcmkt-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .lcmkt-page *,.lcmkt-page *::before,.lcmkt-page *::after{box-sizing:border-box}
-          .lcmkt-hero{background:linear-gradient(135deg,#f0fdf4 0%,#dcfce7 30%,#bbf7d0 65%,#f0fdf4 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .lcmkt-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(21,128,61,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .lcmkt-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(20,83,45,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .lcmkt-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.lcmkt-bc a:hover{color:#15803D}.lcmkt-bc span{color:#d1d5db}
-          .lcmkt-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(21,128,61,0.08);border:1px solid rgba(21,128,61,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#15803D;margin-bottom:28px}
-          .lcmkt-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .lcmkt-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
           .lcmkt-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .lcmkt-btn-p{display:inline-flex;align-items:center;gap:8px;background:#15803D;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(21,128,61,0.28)}
           .lcmkt-btn-p:hover{background:#14532D;box-shadow:0 8px 32px rgba(21,128,61,0.38);transform:translateY(-2px)}
           .lcmkt-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.18);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
           .lcmkt-btn-s:hover{border-color:#15803D;color:#15803D;transform:translateY(-2px)}
-          .lcmkt-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(21,128,61,0.07)}
-          .lcmkt-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(21,128,61,0.08)}.lcmkt-stat:last-child{border-right:none}
-          .lcmkt-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .lcmkt-stat-v{font-size:1.6rem;font-weight:900;color:#15803D;letter-spacing:-0.5px}
           .lcmkt-svc{background:#f8fafd;padding:80px 40px}.lcmkt-svc-in{max-width:1280px;margin:0 auto}
           .lcmkt-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#15803D;margin-bottom:10px;display:block}
           .lcmkt-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
@@ -136,25 +120,26 @@ export default function LawnCareMarketingServices() {
           .lcmkt-cta-t{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;line-height:1.2}
           .lcmkt-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           @media(max-width:1024px){.lcmkt-grid{grid-template-columns:repeat(2,1fr)}.lcmkt-why-grid{grid-template-columns:repeat(2,1fr)}}
-          @media(max-width:768px){.lcmkt-hero,.lcmkt-svc,.lcmkt-ch,.lcmkt-proc,.lcmkt-why,.lcmkt-faq,.lcmkt-cta{padding:60px 24px}.lcmkt-hero{padding-top:60px;padding-bottom:0}.lcmkt-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.lcmkt-stat:nth-child(2){border-right:none}.lcmkt-grid{grid-template-columns:1fr}.lcmkt-why-grid{grid-template-columns:1fr}.lcmkt-step{grid-template-columns:56px 1fr}.lcmkt-btns{flex-direction:column;align-items:center}}
+          @media(max-width:768px){.lcmkt-svc,.lcmkt-ch,.lcmkt-proc,.lcmkt-why,.lcmkt-faq,.lcmkt-cta{padding:60px 24px}.lcmkt-grid{grid-template-columns:1fr}.lcmkt-why-grid{grid-template-columns:1fr}.lcmkt-step{grid-template-columns:56px 1fr}.lcmkt-btns{flex-direction:column;align-items:center}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
       <div className="lcmkt-page">
-        <section className="lcmkt-hero"><div className="lcmkt-o1"/><div className="lcmkt-o2"/>
-          <div className="lcmkt-in">
-            <span className="lcmkt-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#15803D',display:'inline-block'}}/> Local SEO · Google Ads · Facebook Ads · Seasonal Campaigns</span>
-            <h1 className="lcmkt-h1">Lawn Care Marketing Services - More Customers, More Route Density</h1>
-            <p className="lcmkt-sub">Digital marketing built specifically for lawn care, landscaping, and garden maintenance businesses - local SEO, Google Ads, review generation, and seasonal campaigns that fill your schedule and build recurring customer revenue.</p>
-            <div className="lcmkt-btns">
-              <Link href="/contact-us" className="lcmkt-btn-p">Get a Free Lawn Care Marketing Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/local-seo-services" className="lcmkt-btn-s">Local SEO Services</Link>
-            </div>
-            <div className="lcmkt-stats">{STATS.map(s => <div key={s.label} className="lcmkt-stat"><div className="lcmkt-stat-l">{s.label}</div><div className="lcmkt-stat-v">{s.val}</div></div>)}</div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Local SEO · Google Ads · Facebook Ads · Seasonal Campaigns"
+          title={<>Lawn Care Marketing Services - <AuroraText>More Customers</AuroraText>, More Route Density</>}
+          subtext="Digital marketing built specifically for lawn care, landscaping, and garden maintenance businesses - local SEO, Google Ads, review generation, and seasonal campaigns that fill your schedule and build recurring customer revenue."
+          primaryCta={{ label: 'Get a Free Lawn Care Marketing Audit', href: '/contact-us' }}
+          secondaryCta={{ label: 'Local SEO Services', href: '/local-seo-services' }}
+          stats={[
+            { label: 'Lawn Care Clients', value: '80', suffix: '+' },
+            { label: 'Avg Lead Volume Growth', value: '4', prefix: '+3.', suffix: '×' },
+            { label: 'Years Experience', value: '12', suffix: '+' },
+            { label: 'Client Retention', value: '90', suffix: '%' },
+          ]}
+        />
         <section className="lcmkt-svc"><div className="lcmkt-svc-in">
           <span className="lcmkt-ey2">What We Do</span><h2 className="lcmkt-ttl">Lawn Care Marketing Services</h2>
           <p className="lcmkt-desc">Every marketing channel a lawn care business needs - from local map pack visibility to seasonal paid campaigns and customer retention.</p>

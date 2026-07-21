@@ -2,22 +2,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-
-function useCountUp(target, duration = 1800) {
-  const [count, setCount] = useState(0);
-  const raf = useRef(null);
-  const start = (t) => {
-    const s = performance.now();
-    const step = (now) => {
-      const p = Math.min((now - s) / duration, 1);
-      setCount(Math.floor(p * t));
-      if (p < 1) raf.current = requestAnimationFrame(step);
-    };
-    raf.current = requestAnimationFrame(step);
-  };
-  useEffect(() => () => cancelAnimationFrame(raf.current), []);
-  return [count, start];
-}
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const ACCENT = '#215732';
 const SKILLS = [
@@ -59,9 +45,6 @@ export default function NodeJsDevelopmentServices() {
   const enR  = useRef(null); const [enV, setEnV] = useState(false);
   const whR  = useRef(null); const [whV, setWhV] = useState(false);
   const prR  = useRef(null); const [prV, setPrV] = useState(false);
-  const stGr = useRef(null); const [stV, setStV] = useState(false);
-  const [c1, s1] = useCountUp(80); const [c2, s2] = useCountUp(500);
-  const [c3, s3] = useCountUp(49); const [c4, s4] = useCountUp(15);
   const [openFaq, setOpenFaq] = useState(null);
 
   useEffect(() => {
@@ -70,9 +53,7 @@ export default function NodeJsDevelopmentServices() {
     const o2 = obs(enR, setEnV); if (enR.current) o2.observe(enR.current);
     const o3 = obs(whR, setWhV); if (whR.current) o3.observe(whR.current);
     const o4 = obs(prR, setPrV); if (prR.current) o4.observe(prR.current);
-    const o5 = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStV(true); s1(80); s2(500); s3(49); s4(15); o5.disconnect(); } }, { threshold: 0.2 });
-    if (stGr.current) o5.observe(stGr.current);
-    return () => [o1, o2, o3, o4, o5].forEach(o => o.disconnect());
+    return () => [o1, o2, o3, o4].forEach(o => o.disconnect());
   }, []);
 
   const LD = {
@@ -98,14 +79,8 @@ export default function NodeJsDevelopmentServices() {
         <link rel="canonical" href="https://www.1solutions.biz/nodejs-development-services/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
-          .njs-hero{background:linear-gradient(135deg,${ACCENT} 0%,#0d2b1a 60%,#163d24 100%);color:#fff;padding:100px 20px 80px;text-align:center}
-          .njs-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin:0 0 18px;line-height:1.15}
-          .njs-hero p{font-size:1.15rem;max-width:620px;margin:0 auto 36px;opacity:.88;line-height:1.7}
-          .njs-hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           .njs-btn-primary{background:#FE9700;color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s}
           .njs-btn-primary:hover{opacity:.88}
-          .njs-btn-outline{border:2px solid rgba(255,255,255,.7);color:#fff;padding:13px 28px;border-radius:8px;font-weight:600;font-size:1rem;text-decoration:none;transition:border-color .2s}
-          .njs-btn-outline:hover{border-color:#fff}
           .njs-sec{padding:70px 20px}.njs-sec-alt{background:#f0fdf4}
           .njs-wrap{max-width:1100px;margin:0 auto}
           .njs-sec-title{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:800;color:#111;text-align:center;margin:0 0 12px}
@@ -130,10 +105,6 @@ export default function NodeJsDevelopmentServices() {
           .njs-step-n{width:48px;height:48px;border-radius:50%;background:${ACCENT};color:#fff;font-size:1.1rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
           .njs-step h3{font-size:1rem;font-weight:700;color:#111;margin:0 0 8px}
           .njs-step p{color:#666;font-size:.9rem;line-height:1.6;margin:0}
-          .njs-stats{background:${ACCENT};padding:60px 20px;color:#fff}
-          .njs-stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;max-width:900px;margin:0 auto;text-align:center}
-          .njs-stat-val{font-size:2.8rem;font-weight:900;line-height:1}
-          .njs-stat-label{font-size:.95rem;opacity:.82;margin-top:6px}
           .njs-faq{max-width:760px;margin:0 auto}
           .njs-faq-item{border-bottom:1px solid #e5e5e5;padding:20px 0}
           .njs-faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;color:#111;font-size:1rem;gap:12px}
@@ -143,17 +114,21 @@ export default function NodeJsDevelopmentServices() {
           .njs-cta{background:linear-gradient(135deg,${ACCENT},#0d2b1a);padding:80px 20px;text-align:center;color:#fff}
           .njs-cta h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin:0 0 16px}
           .njs-cta p{font-size:1.08rem;opacity:.88;max-width:560px;margin:0 auto 36px;line-height:1.7}
-          @media(max-width:600px){.njs-hero{padding:80px 18px 60px}.njs-stats-grid{grid-template-columns:1fr 1fr}}
         `}</style>
       </Head>
-      <section className="njs-hero">
-        <h1>Node.js Development Services<br/>Scalable APIs, Real-Time Apps &amp; Microservices</h1>
-        <p>We build high-performance Node.js backends, REST and GraphQL APIs, real-time applications, and microservices architectures - deployed on AWS, GCP, or Azure. 15+ years of server-side expertise trusted by startups and enterprises across the US, Canada, and Australia.</p>
-        <div className="njs-hero-btns">
-          <Link href="/contact-us" className="njs-btn-primary">Get a Free Node.js Consultation →</Link>
-          <Link href="/portfolio" className="njs-btn-outline">View Portfolio</Link>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="Node.js Development Services"
+        title={<>Node.js Development - <AuroraText>Scalable APIs, Real-Time Apps & Microservices</AuroraText></>}
+        subtext="We build high-performance Node.js backends, REST and GraphQL APIs, real-time applications, and microservices architectures - deployed on AWS, GCP, or Azure. 15+ years of server-side expertise trusted by startups and enterprises across the US, Canada, and Australia."
+        primaryCta={{ label: 'Get a Free Node.js Consultation', href: '/contact-us' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        stats={[
+          { label: 'Node.js APIs Built', value: '80', suffix: '+' },
+          { label: 'Microservices Deployed', value: '500', suffix: '+' },
+          { label: 'Client Satisfaction', value: '9', prefix: '4.', suffix: '/5' },
+          { label: 'Years Experience', value: '15', suffix: '+' },
+        ]}
+      />
       <section className="njs-sec" ref={skR}>
         <div className="njs-wrap">
           <h2 className="njs-sec-title">Skills &amp; Tech Stack</h2>
@@ -173,14 +148,6 @@ export default function NodeJsDevelopmentServices() {
           <h2 className="njs-sec-title">Why Choose 1Solutions for Node.js Development?</h2>
           <p className="njs-sec-sub">We build backends that scale, not just backends that work in a demo.</p>
           <div className="njs-why-grid">{WHY.map((w, i) => <div key={w.h} className={`njs-why-item${whV ? ' njs-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
-        </div>
-      </section>
-      <section className="njs-stats" ref={stGr}>
-        <div className="njs-stats-grid">
-          <div><div className="njs-stat-val">{stV ? c1 : 0}+</div><div className="njs-stat-label">Node.js APIs Built</div></div>
-          <div><div className="njs-stat-val">{stV ? c2 : 0}+</div><div className="njs-stat-label">Microservices Deployed</div></div>
-          <div><div className="njs-stat-val">4.{stV ? c3 : 0}/5</div><div className="njs-stat-label">Client Satisfaction</div></div>
-          <div><div className="njs-stat-val">{stV ? c4 : 0}+</div><div className="njs-stat-label">Years Experience</div></div>
         </div>
       </section>
       <section className="njs-sec njs-sec-alt" ref={prR}>

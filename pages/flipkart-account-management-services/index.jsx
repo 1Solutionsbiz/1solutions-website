@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const ACCENT = '#001e6e';
 const ACCENT_MID = '#1a6bcd';
@@ -140,27 +142,6 @@ export default function FlipkartAccountManagement() {
 
 
 
-        .flpk-hero { background: linear-gradient(135deg, #000b2d 0%, #001e6e 60%, #0030a0 100%); color: #fff; padding: 80px 24px 72px; position: relative; overflow: hidden; }
-        .flpk-hero-orb1 { position: absolute; top: -80px; right: -80px; width: 400px; height: 400px; background: rgba(${ACCENT_RGB}, 0.4); border-radius: 50%; filter: blur(80px); pointer-events: none; }
-        .flpk-hero-orb2 { position: absolute; bottom: -100px; left: -60px; width: 300px; height: 300px; background: rgba(26,107,205,0.25); border-radius: 50%; filter: blur(60px); pointer-events: none; }
-        .flpk-hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
-        .flpk-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; padding: 6px 16px; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 24px; }
-        .flpk-eyebrow-dot { width: 6px; height: 6px; background: #fbbf24; border-radius: 50%; }
-        .flpk-hero h1 { font-size: clamp(28px, 4vw, 52px); font-weight: 800; line-height: 1.15; max-width: 860px; margin: 0 0 24px; }
-        .flpk-hero-desc { font-size: 18px; line-height: 1.7; max-width: 760px; opacity: 0.9; margin-bottom: 40px; }
-        .flpk-stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.15); border-radius: 12px; overflow: hidden; margin-bottom: 40px; }
-        .flpk-stat { background: rgba(255,255,255,0.08); padding: 20px 16px; text-align: center; }
-        .flpk-stat-num { font-size: 28px; font-weight: 800; color: #fff; display: block; }
-        .flpk-stat-label { font-size: 12px; opacity: 0.75; margin-top: 4px; display: block; }
-        .flpk-hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 36px; }
-        .flpk-btn-primary { background: #fff; color: ${ACCENT}; padding: 14px 28px; border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: none; cursor: pointer; transition: transform 0.2s; }
-        .flpk-btn-primary:hover { transform: translateY(-2px); }
-        .flpk-btn-secondary { background: transparent; color: #fff; padding: 14px 28px; border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: 2px solid rgba(255,255,255,0.4); cursor: pointer; transition: border-color 0.2s; }
-        .flpk-btn-secondary:hover { border-color: #fff; }
-        .flpk-trust-badges { display: flex; flex-wrap: wrap; gap: 12px; }
-        .flpk-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; padding: 6px 12px; font-size: 13px; }
-        .flpk-badge-check { color: #4ade80; font-size: 14px; }
-
         .flpk-challenges { padding: 80px 24px; background: #fff; }
         .flpk-section-inner { max-width: 1200px; margin: 0 auto; }
         .flpk-section-label { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: ${ACCENT}; margin-bottom: 12px; }
@@ -241,7 +222,6 @@ export default function FlipkartAccountManagement() {
         @media (max-width: 900px) {
           .flpk-challenges-grid { grid-template-columns: repeat(2, 1fr); }
           .flpk-services-grid { grid-template-columns: repeat(2, 1fr); }
-          .flpk-stats-bar { grid-template-columns: repeat(2, 1fr); }
           .flpk-contact-grid { grid-template-columns: 1fr; gap: 40px; }
           .flpk-cases-grid { grid-template-columns: 1fr; }
           .flpk-results-grid { grid-template-columns: 1fr; gap: 24px; }
@@ -294,35 +274,19 @@ export default function FlipkartAccountManagement() {
 
       <div className="flpk-page">
 
-        <section className="flpk-hero">
-          <div className="flpk-hero-orb1" />
-          <div className="flpk-hero-orb2" />
-          <div className="flpk-hero-inner">
-            <div className="flpk-eyebrow">
-              <span className="flpk-eyebrow-dot" />
-              Flipkart Seller Management
-            </div>
-            <h1>Flipkart Account Management for India's #1 Marketplace</h1>
-            <p className="flpk-hero-desc">
-              Flipkart commands over 35% of India's eCommerce market with 400M+ registered users. 1Solutions manages your Flipkart Seller Hub account end-to-end - from listing optimisation and F-Assured certification to Flipkart Ads and Flipkart Fulfillment (FBF) - driving sustainable sales growth on India's most competitive marketplace.
-            </p>
-            <div className="flpk-stats-bar">
-              <div className="flpk-stat"><span className="flpk-stat-num">400M+</span><span className="flpk-stat-label">Flipkart registered users</span></div>
-              <div className="flpk-stat"><span className="flpk-stat-num">35%</span><span className="flpk-stat-label">India eCommerce market share</span></div>
-              <div className="flpk-stat"><span className="flpk-stat-num">$23B+</span><span className="flpk-stat-label">Flipkart annual GMV</span></div>
-              <div className="flpk-stat"><span className="flpk-stat-num">F-Assured</span><span className="flpk-stat-label">Achieved for 91% of clients</span></div>
-            </div>
-            <div className="flpk-hero-ctas">
-              <Link href="#contact" className="flpk-btn-primary">Get a Free Flipkart Audit →</Link>
-              <Link href="#services" className="flpk-btn-secondary">Explore Services</Link>
-            </div>
-            <div className="flpk-trust-badges">
-              {['Flipkart Seller Hub expertise', 'F-Assured specialists', 'FBF logistics management', 'No lock-in contracts'].map(b => (
-                <span key={b} className="flpk-badge"><span className="flpk-badge-check">✓</span>{b}</span>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Flipkart Seller Management"
+          title={<>Flipkart Account Management for <AuroraText>India's #1 Marketplace</AuroraText></>}
+          subtext="Flipkart commands over 35% of India's eCommerce market with 400M+ registered users. 1Solutions manages your Flipkart Seller Hub account end-to-end - from listing optimisation and F-Assured certification to Flipkart Ads and Flipkart Fulfillment (FBF) - driving sustainable sales growth on India's most competitive marketplace."
+          primaryCta={{ label: 'Get a Free Flipkart Audit', href: '#contact' }}
+          secondaryCta={{ label: 'Explore Services', href: '#services' }}
+          stats={[
+            { label: 'Flipkart Registered Users', value: '400', suffix: 'M+' },
+            { label: 'India eCommerce Market Share', value: '35', suffix: '%' },
+            { label: 'Flipkart Annual GMV', value: '23', prefix: '$', suffix: 'B+' },
+            { label: 'Clients Achieving F-Assured', value: '91', suffix: '%' },
+          ]}
+        />
 
         <section className="flpk-challenges">
           <div className="flpk-section-inner">

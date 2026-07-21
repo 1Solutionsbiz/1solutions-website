@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const ACCENT = '#1a0028';
 const SERVICES = [
@@ -69,25 +71,12 @@ export default function VideoMarketingServices() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           *{box-sizing:border-box}
-          .vmkt-hero{position:relative;overflow:hidden;padding:100px 40px 90px;background:linear-gradient(135deg,rgba(26,0,40,0.08) 0%,rgba(255,255,255,0.75) 50%,rgba(155,89,182,0.07) 100%)}
-          .vmkt-o1{position:absolute;top:-120px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(26,0,40,0.12) 0%,transparent 70%);pointer-events:none;filter:blur(10px)}
-          .vmkt-o2{position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(155,89,182,0.08) 0%,transparent 70%);pointer-events:none;filter:blur(8px)}
           .vmkt-in{max-width:1200px;margin:0 auto;position:relative;z-index:1}
-          .vmkt-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(26,0,40,0.10);border:1px solid rgba(26,0,40,0.25);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:24px}
-          .vmkt-h1{font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .vmkt-p{font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:660px}
-          .vmkt-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
           .vmkt-bp{display:inline-flex;align-items:center;gap:8px;background:${ACCENT};color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(26,0,40,.25)}
           .vmkt-bp:hover{background:#0d0018;transform:translateY(-2px)}
           .vmkt-bs{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.7);color:${ACCENT};padding:14px 28px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;border:1.5px solid rgba(26,0,40,.18);transition:all .25s;backdrop-filter:blur(8px)}
           .vmkt-bs:hover{background:#fff;transform:translateY(-2px)}
-          .vmkt-tr{display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-bottom:48px}
-          .vmkt-badge{display:flex;align-items:center;gap:6px;font-size:12px;color:#6b7280;font-weight:500}
-          .vmkt-sbar{display:flex;border:1px solid rgba(26,0,40,.10);border-radius:16px;background:rgba(255,255,255,.75);backdrop-filter:blur(12px);overflow:hidden;max-width:680px}
-          .vmkt-si{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(26,0,40,.08)}
-          .vmkt-si:last-child{border-right:none}
-          .vmkt-sn{font-size:1.9rem;font-weight:900;color:${ACCENT};line-height:1;letter-spacing:-1px}
-          .vmkt-sl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px}.vmkt-bci a:hover{color:${ACCENT}}.vmkt-cur{color:${ACCENT};font-weight:500}
+          .vmkt-bci a:hover{color:${ACCENT}}.vmkt-cur{color:${ACCENT};font-weight:500}
           .vmkt-sec{padding:80px 40px}.vmkt-bg{background:#f8fafd}
           .vmkt-si2{max-width:1200px;margin:0 auto}
           .vmkt-tag{display:block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:12px}
@@ -132,25 +121,25 @@ export default function VideoMarketingServices() {
           .vmkt-cth{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-.5px;margin:0 0 18px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .vmkt-ctp{font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px}
           @media(max-width:900px){.vmkt-g3,.vmkt-rg{grid-template-columns:1fr 1fr}}
-          @media(max-width:600px){.vmkt-hero,.vmkt-sec,.vmkt-rb,.vmkt-cta{padding-left:20px;padding-right:20px}.vmkt-hero{padding-top:60px;padding-bottom:50px}.vmkt-g3,.vmkt-rg{grid-template-columns:1fr}.vmkt-bc{padding:12px 20px}}
+          @media(max-width:600px){.vmkt-sec,.vmkt-rb,.vmkt-cta{padding-left:20px;padding-right:20px}.vmkt-g3,.vmkt-rg{grid-template-columns:1fr}.vmkt-bc{padding:12px 20px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
-      <section className="vmkt-hero"><div className="vmkt-o1"/><div className="vmkt-o2"/>
-        <div className="vmkt-in">
-          <span className="vmkt-ey">Video Marketing - YouTube Strategy · Video SEO · Reels · TikTok · Shorts · YouTube Ads</span>
-          <h1 className="vmkt-h1">Video Marketing That Builds Authority and Drives Conversions</h1>
-          <p className="vmkt-p">1Solutions builds video marketing programs that grow YouTube channels, rank in search, dominate short-form feeds, and convert viewers into customers - with strategy, scripts, SEO, and YouTube Ads working together.</p>
-          <div className="vmkt-btns">
-            <Link href="/contact-us" className="vmkt-bp">Get a Free Video Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-            <Link href="/contact-us" className="vmkt-bs">Discuss Your Video Strategy</Link>
-          </div>
-          <div className="vmkt-tr">{['Scripts included','YouTube SEO optimised','YouTube Ads integration','Cross-platform distribution'].map(t=><span key={t} className="vmkt-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={ACCENT} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>{t}</span>)}</div>
-          <div className="vmkt-sbar">{[{num:'2.8M',lbl:'Views in 90 Days'},{num:'3.1×',lbl:'Traffic from Video'},{num:'58%',lbl:'Lower CPV'},{num:'15+',lbl:'Years Experience'}].map(s=><div key={s.lbl} className="vmkt-si"><span className="vmkt-sn">{s.num}</span><span className="vmkt-sl">{s.lbl}</span></div>)}</div>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="Video Marketing · YouTube Strategy · Video SEO · YouTube Ads"
+        title={<>Video Marketing That <AuroraText>Builds Authority and Drives Conversions</AuroraText></>}
+        subtext="1Solutions builds video marketing programs that grow YouTube channels, rank in search, dominate short-form feeds, and convert viewers into customers - with strategy, scripts, SEO, and YouTube Ads working together."
+        primaryCta={{ label: 'Get a Free Video Audit', href: '/contact-us' }}
+        secondaryCta={{ label: 'Discuss Your Video Strategy', href: '/contact-us' }}
+        stats={[
+          { label: 'Views in 90 Days', value: '8', prefix: '2.', suffix: 'M' },
+          { label: 'Traffic from Video', value: '1', prefix: '3.', suffix: '×' },
+          { label: 'Lower CPV', value: '58', suffix: '%' },
+          { label: 'Years Experience', value: '15', suffix: '+' },
+        ]}
+      />
       <section className="vmkt-sec vmkt-bg"><div className="vmkt-si2">
         <span className="vmkt-tag">What We Deliver</span>
         <h2 className="vmkt-h2">Complete <span>Video Marketing Services</span></h2>

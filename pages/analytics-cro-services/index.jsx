@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const ACCENT = '#002d3d';
 const SERVICES = [
@@ -69,25 +71,11 @@ export default function AnalyticsCroServices() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           *{box-sizing:border-box}
-          .acro-hero{position:relative;overflow:hidden;padding:100px 40px 90px;background:linear-gradient(135deg,rgba(0,45,61,0.08) 0%,rgba(255,255,255,0.75) 50%,rgba(56,178,200,0.07) 100%)}
-          .acro-o1{position:absolute;top:-120px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(0,45,61,0.12) 0%,transparent 70%);pointer-events:none;filter:blur(10px)}
-          .acro-o2{position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(56,178,200,0.08) 0%,transparent 70%);pointer-events:none;filter:blur(8px)}
-          .acro-in{max-width:1200px;margin:0 auto;position:relative;z-index:1}
-          .acro-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(0,45,61,0.10);border:1px solid rgba(0,45,61,0.25);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:24px}
-          .acro-h1{font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .acro-p{font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:660px}
-          .acro-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
           .acro-bp{display:inline-flex;align-items:center;gap:8px;background:${ACCENT};color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(0,45,61,.25)}
           .acro-bp:hover{background:#001520;transform:translateY(-2px)}
           .acro-bs{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.7);color:${ACCENT};padding:14px 28px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;border:1.5px solid rgba(0,45,61,.18);transition:all .25s;backdrop-filter:blur(8px)}
           .acro-bs:hover{background:#fff;transform:translateY(-2px)}
-          .acro-tr{display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-bottom:48px}
-          .acro-badge{display:flex;align-items:center;gap:6px;font-size:12px;color:#6b7280;font-weight:500}
-          .acro-sbar{display:flex;border:1px solid rgba(0,45,61,.10);border-radius:16px;background:rgba(255,255,255,.75);backdrop-filter:blur(12px);overflow:hidden;max-width:680px}
-          .acro-si{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(0,45,61,.08)}
-          .acro-si:last-child{border-right:none}
-          .acro-sn{font-size:1.9rem;font-weight:900;color:${ACCENT};line-height:1;letter-spacing:-1px}
-          .acro-sl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px}.acro-bci a:hover{color:${ACCENT}}.acro-cur{color:${ACCENT};font-weight:500}
+          .acro-bci a:hover{color:${ACCENT}}.acro-cur{color:${ACCENT};font-weight:500}
           .acro-sec{padding:80px 40px}.acro-bg{background:#f8fafd}
           .acro-si2{max-width:1200px;margin:0 auto}
           .acro-tag{display:block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:12px}
@@ -132,25 +120,25 @@ export default function AnalyticsCroServices() {
           .acro-cth{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-.5px;margin:0 0 18px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .acro-ctp{font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px}
           @media(max-width:900px){.acro-g3,.acro-rg{grid-template-columns:1fr 1fr}}
-          @media(max-width:600px){.acro-hero,.acro-sec,.acro-rb,.acro-cta{padding-left:20px;padding-right:20px}.acro-hero{padding-top:60px;padding-bottom:50px}.acro-g3,.acro-rg{grid-template-columns:1fr}.acro-bc{padding:12px 20px}}
+          @media(max-width:600px){.acro-sec,.acro-rb,.acro-cta{padding-left:20px;padding-right:20px}.acro-g3,.acro-rg{grid-template-columns:1fr}.acro-bc{padding:12px 20px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
-      <section className="acro-hero"><div className="acro-o1"/><div className="acro-o2"/>
-        <div className="acro-in">
-          <span className="acro-ey">Analytics & CRO - GA4 · GTM · A/B Testing · Funnel Analysis · Heatmaps</span>
-          <h1 className="acro-h1">Analytics & CRO That Turns More of Your Existing Traffic Into Revenue</h1>
-          <p className="acro-p">1Solutions implements accurate analytics, identifies conversion bottlenecks, and runs data-driven A/B tests that systematically improve your conversion rate - so every traffic source delivers more revenue without more spend.</p>
-          <div className="acro-btns">
-            <Link href="/contact-us" className="acro-bp">Get a Free Analytics Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-            <Link href="/contact-us" className="acro-bs">Discuss Your CRO Strategy</Link>
-          </div>
-          <div className="acro-tr">{['GA4 specialists','Testing-first culture','No vanity metrics','Integrated with all channels'].map(t=><span key={t} className="acro-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={ACCENT} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>{t}</span>)}</div>
-          <div className="acro-sbar">{[{num:'74%',lbl:'Checkout Uplift'},{num:'2.4×',lbl:'Lead Form Growth'},{num:'41%',lbl:'Bounce Rate Reduction'},{num:'15+',lbl:'Years Experience'}].map(s=><div key={s.lbl} className="acro-si"><span className="acro-sn">{s.num}</span><span className="acro-sl">{s.lbl}</span></div>)}</div>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="Analytics & CRO - GA4 · GTM · A/B Testing · Funnel Analysis · Heatmaps"
+        title={<>Analytics & CRO That <AuroraText>Turns More of Your Existing Traffic Into Revenue</AuroraText></>}
+        subtext="1Solutions implements accurate analytics, identifies conversion bottlenecks, and runs data-driven A/B tests that systematically improve your conversion rate - so every traffic source delivers more revenue without more spend."
+        primaryCta={{ label: 'Get a Free Analytics Audit', href: '/contact-us' }}
+        secondaryCta={{ label: 'Discuss Your CRO Strategy', href: '/contact-us' }}
+        stats={[
+          { label: 'Checkout Uplift', value: '74', suffix: '%' },
+          { label: 'Lead Form Growth', value: '4', prefix: '2.', suffix: '×' },
+          { label: 'Bounce Rate Reduction', value: '41', suffix: '%' },
+          { label: 'Years Experience', value: '15', suffix: '+' },
+        ]}
+      />
       <section className="acro-sec acro-bg"><div className="acro-si2">
         <span className="acro-tag">What We Deliver</span>
         <h2 className="acro-h2">Complete <span>Analytics & CRO Services</span></h2>

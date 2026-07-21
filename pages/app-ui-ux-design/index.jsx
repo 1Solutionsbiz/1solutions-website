@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'User Research & Persona Development', desc: 'We interview real users, analyse behavioural data, and build evidence-based personas - so design decisions are grounded in how your users actually think and behave.' },
@@ -69,13 +71,6 @@ const FAQS = [
     q: 'Can you redesign an existing app rather than design from scratch?',
     a: 'Yes - app redesigns are a common engagement for us. The process starts with a UX audit of your existing app: reviewing analytics, conducting user interviews, and running a heuristic evaluation against established UX principles. This gives us a clear picture of what\'s working, what\'s not, and why. We then design improvements in prioritised phases - focusing on the highest-impact UX issues first. We can redesign the full app, specific user journeys, or individual feature areas depending on your budget and priorities.',
   },
-];
-
-const STATS = [
-  { label: 'Apps Designed', val: '200+' },
-  { label: 'Avg App Store Rating', val: '4.7★' },
-  { label: 'Avg Retention Improvement', val: '+35%' },
-  { label: 'Years of Product Design', val: '15+' },
 ];
 
 export default function AppUiUxDesign() {
@@ -174,26 +169,10 @@ export default function AppUiUxDesign() {
           .ux-page { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #0F1F40; line-height: 1.6; overflow-x: hidden; }
           .ux-page *, .ux-page *::before, .ux-page *::after { box-sizing: border-box; }
 
-          .ux-hero { background: linear-gradient(135deg, #fff1f2 0%, #fce7f3 30%, #fdf4ff 65%, #faf5ff 100%); position: relative; overflow: hidden; padding: 80px 40px 0; }
-          .ux-hero-orb1 { position: absolute; top: -100px; right: -100px; width: 560px; height: 560px; border-radius: 50%; background: radial-gradient(circle, rgba(225,29,72,0.11) 0%, transparent 65%); pointer-events: none; filter: blur(30px); }
-          .ux-hero-orb2 { position: absolute; bottom: 0; left: -80px; width: 440px; height: 440px; border-radius: 50%; background: radial-gradient(circle, rgba(168,85,247,0.08) 0%, transparent 65%); pointer-events: none; filter: blur(30px); }
-          .ux-hero-inner { max-width: 1280px; margin: 0 auto; position: relative; z-index: 2; text-align: center; }
-
-
-
-          .ux-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(225,29,72,0.07); border: 1px solid rgba(225,29,72,0.18); border-radius: 100px; padding: 5px 14px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #BE123C; margin-bottom: 28px; }
-          .ux-hero-h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 900; line-height: 1.1; letter-spacing: -1px; background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 20px; max-width: 920px; margin-left: auto; margin-right: auto; }
-          .ux-hero-sub { font-size: 1.08rem; color: #4A6080; line-height: 1.75; max-width: 660px; margin: 0 auto 36px; }
-          .ux-hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 56px; }
           .ux-btn-primary { display: inline-flex; align-items: center; gap: 8px; background: #E11D48; color: #fff; padding: 14px 30px; border-radius: 50px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all 0.25s; box-shadow: 0 4px 20px rgba(225,29,72,0.28); }
           .ux-btn-primary:hover { background: #BE123C; box-shadow: 0 8px 32px rgba(225,29,72,0.38); transform: translateY(-2px); }
           .ux-btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.65); backdrop-filter: blur(12px); border: 1.5px solid rgba(15,52,96,0.18); color: #0F3460; padding: 14px 30px; border-radius: 50px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: all 0.25s; }
           .ux-btn-secondary:hover { border-color: #E11D48; color: #E11D48; transform: translateY(-2px); }
-          .ux-stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); max-width: 900px; margin: 0 auto; background: rgba(255,255,255,0.55); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.85); border-radius: 20px 20px 0 0; box-shadow: 0 4px 24px rgba(225,29,72,0.07); }
-          .ux-stat { padding: 20px 24px; text-align: center; border-right: 1px solid rgba(225,29,72,0.08); }
-          .ux-stat:last-child { border-right: none; }
-          .ux-stat-label { font-size: 11px; color: #6b7280; font-weight: 500; margin-bottom: 4px; }
-          .ux-stat-val { font-size: 1.6rem; font-weight: 900; color: #E11D48; letter-spacing: -0.5px; }
 
           .ux-services-section { background: #f8fafd; padding: 80px 40px; box-shadow: 0 -20px 60px rgba(225,29,72,0.05); }
           .ux-services-inner { max-width: 1280px; margin: 0 auto; }
@@ -255,14 +234,10 @@ export default function AppUiUxDesign() {
 
           @media (max-width: 1024px) { .ux-services-grid { grid-template-columns: repeat(2, 1fr); } .ux-why-grid { grid-template-columns: repeat(2, 1fr); } }
           @media (max-width: 768px) {
-            .ux-hero { padding: 60px 24px 0; }
             .ux-services-section, .ux-tools-section, .ux-process-section, .ux-why-section, .ux-faq-section, .ux-cta-section { padding: 60px 24px; }
-            .ux-stats-bar { grid-template-columns: repeat(2, 1fr); border-radius: 16px 16px 0 0; }
-            .ux-stat:nth-child(2) { border-right: none; }
             .ux-services-grid { grid-template-columns: 1fr; }
             .ux-why-grid { grid-template-columns: 1fr; }
             .ux-process-step { grid-template-columns: 56px 1fr; }
-            .ux-hero-btns { flex-direction: column; align-items: center; }
           }
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
@@ -271,32 +246,19 @@ export default function AppUiUxDesign() {
       </Head>
 
       <div className="ux-page">
-        <section className="ux-hero">
-          <div className="ux-hero-orb1" /><div className="ux-hero-orb2" />
-          <div className="ux-hero-inner">
-            <span className="ux-eyebrow">
-              <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#E11D48', display: 'inline-block' }} />
-              Mobile Development
-            </span>
-            <h1 className="ux-hero-h1">App UI/UX Design Services That Turn Users Into Loyal Customers</h1>
-            <p className="ux-hero-sub">Research-driven mobile app design for iOS and Android - from user flows and wireframes to pixel-perfect UI, prototypes, and design systems. Built for engagement, retention, and conversion.</p>
-            <div className="ux-hero-btns">
-              <Link href="/contact-us" className="ux-btn-primary">
-                Start a Design Project
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </Link>
-              <Link href="/react-native-app-development" className="ux-btn-secondary">See React Native Services</Link>
-            </div>
-            <div className="ux-stats-bar">
-              {STATS.map(s => (
-                <div key={s.label} className="ux-stat">
-                  <div className="ux-stat-label">{s.label}</div>
-                  <div className="ux-stat-val">{s.val}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Mobile Development"
+          title={<>App UI/UX Design Services That <AuroraText>Turn Users Into Loyal Customers</AuroraText></>}
+          subtext="Research-driven mobile app design for iOS and Android - from user flows and wireframes to pixel-perfect UI, prototypes, and design systems. Built for engagement, retention, and conversion."
+          primaryCta={{ label: 'Start a Design Project', href: '/contact-us' }}
+          secondaryCta={{ label: 'See React Native Services', href: '/react-native-app-development' }}
+          stats={[
+            { label: 'Apps Designed', value: '200', suffix: '+' },
+            { label: 'Avg App Store Rating', value: '7', prefix: '4.', suffix: '★' },
+            { label: 'Avg Retention Improvement', value: '35', prefix: '+', suffix: '%' },
+            { label: 'Years of Product Design', value: '15', suffix: '+' },
+          ]}
+        />
 
         <section className="ux-services-section">
           <div className="ux-services-inner">

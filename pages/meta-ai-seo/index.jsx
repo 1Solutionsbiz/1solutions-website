@@ -1,6 +1,8 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n:'01', title:'Meta AI Brand Visibility Audit', desc:"Audit your brand's current presence in Meta AI responses across Facebook, Instagram, and WhatsApp — identifying citation gaps, competitor visibility, and the content signals to improve." },
@@ -30,53 +32,8 @@ const RELATED = [
   { href:'/seo-services-company/', label:'SEO Services' },
 ];
 
-const STATS = [
-  ['Brands Optimised for Meta AI','80+'],
-  ['Meta Platforms Covered','4'],
-  ['Years Social SEO Experience','15+'],
-  ['Client Retention','97%'],
-];
-
-function useCountUp(target, dur=1800, start=false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const n = parseInt(target.replace(/\D/g,''), 10);
-    if (!n) return;
-    let t0 = null;
-    const step = ts => {
-      if (!t0) t0 = ts;
-      const p = Math.min((ts - t0) / dur, 1);
-      setCount(Math.floor((1 - Math.pow(1-p,3)) * n));
-      if (p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, dur]);
-  return count;
-}
-
-function Stat({ label, val, started }) {
-  const n = useCountUp(val, 1800, started);
-  const sfx = val.replace(/[\d,]/g,'');
-  return (
-    <div className="mais-stat-col">
-      <div className="mais-stat-val">{started ? n + sfx : val}</div>
-      <div className="mais-stat-lbl">{label}</div>
-    </div>
-  );
-}
-
 export default function Page() {
   const [openFaq, setOpenFaq] = useState(0);
-  const [started, setStarted] = useState(false);
-  const statsRef = useRef(null);
-
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStarted(true); obs.disconnect(); } }, { threshold:0.5 });
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   return (
     <>
@@ -99,24 +56,8 @@ export default function Page() {
           mainEntity:FAQS.map(f=>({'@type':'Question',name:f.q,acceptedAnswer:{'@type':'Answer',text:f.a}})),
         }) }} />
         <style>{`
-          .mais-hero{background:linear-gradient(135deg,#0F3460 0%,#1a1a5e 40%,#0F3460 100%);padding:80px 40px 0;position:relative;overflow:hidden}
-          .mais-hero-orb{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(217,119,6,0.18) 0%,transparent 65%);top:-180px;right:-100px;pointer-events:none;filter:blur(40px)}
-          .mais-hero-inner{max-width:1280px;margin:0 auto;padding-bottom:60px}
-          .mais-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.85);margin-bottom:24px}
-          .mais-h1{font-size:clamp(2rem,4vw,3.2rem);font-weight:900;line-height:1.1;letter-spacing:-1px;color:#fff;margin:0 0 18px}
-          .mais-h1 span{background:linear-gradient(90deg,#FCD34D,#F97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .mais-sub{font-size:1.05rem;color:rgba(255,255,255,0.75);line-height:1.75;margin:0 0 34px;max-width:600px}
-          .mais-btns{display:flex;gap:14px;flex-wrap:wrap}
           .mais-btn-p{display:inline-flex;align-items:center;gap:8px;background:#D97706;color:#fff;padding:13px 28px;border-radius:50px;font-weight:700;font-size:0.93rem;text-decoration:none;transition:all .25s;box-shadow:0 4px 20px rgba(217,119,6,0.35)}
           .mais-btn-p:hover{background:#B45309;transform:translateY(-2px)}
-          .mais-btn-g{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.10);backdrop-filter:blur(12px);border:1.5px solid rgba(255,255,255,0.25);color:#fff;padding:13px 28px;border-radius:50px;font-weight:700;font-size:0.93rem;text-decoration:none;transition:all .25s}
-          .mais-btn-g:hover{background:rgba(255,255,255,0.18);transform:translateY(-2px)}
-          .mais-stats{background:rgba(255,255,255,0.06);border-top:1px solid rgba(255,255,255,0.10);padding:20px 40px}
-          .mais-stats-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
-          .mais-stat-col{text-align:center;padding:16px;border-right:1px solid rgba(255,255,255,0.10)}
-          .mais-stat-col:last-child{border-right:none}
-          .mais-stat-val{font-size:1.9rem;font-weight:900;color:#fff;letter-spacing:-1px}
-          .mais-stat-lbl{font-size:11px;color:rgba(255,255,255,0.50);font-weight:500;text-transform:uppercase;letter-spacing:1px;margin-top:4px}
           .mais-svc{background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);padding:80px 40px}
           .mais-svc-inner{max-width:1280px;margin:0 auto}
           .mais-sec-ey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;display:block;margin-bottom:12px}
@@ -147,34 +88,25 @@ export default function Page() {
           .mais-rel-tag:hover{border-color:#D97706;color:#D97706;background:#fff;transform:translateY(-2px);box-shadow:0 4px 16px rgba(15,52,96,0.08)}
           @media(max-width:1024px){.mais-grid{grid-template-columns:repeat(2,1fr)}}
           @media(max-width:768px){
-            .mais-hero,.mais-svc,.mais-faq,.mais-cta,.mais-related{padding:60px 20px}
-            .mais-stats,.mais-stats-inner{padding:16px 20px}
-            .mais-stats-inner{grid-template-columns:repeat(2,1fr)}
+            .mais-svc,.mais-faq,.mais-cta,.mais-related{padding:60px 20px}
             .mais-grid{grid-template-columns:1fr}
           }
         `}</style>
       </Head>
 
-      <section className="mais-hero">
-        <div className="mais-hero-orb" />
-        <div className="mais-hero-inner">
-          <span className="mais-eyebrow">
-            <span style={{width:6,height:6,borderRadius:'50%',background:'#D97706',display:'inline-block'}} />
-            1Solutions AI Practice
-          </span>
-          <h1 className="mais-h1">Meta AI SEO Services<br /><span>Get Found in Meta AI</span></h1>
-          <p className="mais-sub">Meta AI is built into Facebook, Instagram, WhatsApp, and Messenger — reaching 3 billion people. When users ask Meta AI about products, services, and brands in your industry, we make sure your brand is part of the answer.</p>
-          <div className="mais-btns">
-            <Link href="#contact" className="mais-btn-p">Get a Free Consultation →</Link>
-            <Link href="#services" className="mais-btn-g">View Services</Link>
-          </div>
-        </div>
-        <div className="mais-stats" ref={statsRef}>
-          <div className="mais-stats-inner">
-            {STATS.map(([lbl, val]) => <Stat key={lbl} label={lbl} val={val} started={started} />)}
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="1Solutions AI Practice"
+        title={<>Meta AI SEO Services — <AuroraText>Get Found in Meta AI</AuroraText></>}
+        subtext="Meta AI is built into Facebook, Instagram, WhatsApp, and Messenger — reaching 3 billion people. When users ask Meta AI about products, services, and brands in your industry, we make sure your brand is part of the answer."
+        primaryCta={{ label: 'Get a Free Consultation', href: '#contact' }}
+        secondaryCta={{ label: 'View Services', href: '#services' }}
+        stats={[
+          { label: 'Brands Optimised for Meta AI', value: '80', suffix: '+' },
+          { label: 'Meta Platforms Covered', value: '4' },
+          { label: 'Years Social SEO Experience', value: '15', suffix: '+' },
+          { label: 'Client Retention', value: '97', suffix: '%' },
+        ]}
+      />
 
       <section className="mais-svc" id="services">
         <div className="mais-svc-inner">

@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n:'01', title:'Custom PHP Web Application Development', desc:'Bespoke PHP applications built around your business logic — scalable architecture, clean codebase, and long-term maintainability delivered from day one.', featured:false },
@@ -73,55 +75,14 @@ const TESTIMONIALS = [
   { name:'James Thornton', role:'VP Engineering, B2B SaaS — Canada', rating:5, text:'We\'ve used 1Solutions as our PHP development partner for 3 years across 5 projects. Consistent quality, transparent communication, and they actually care about code maintainability — not just shipping features.' },
 ];
 
-const STATS = [
-  ['PHP Projects','300+'],
-  ['PHP Developers','25+'],
-  ['Years of PHP','15+'],
-  ['Client Retention','97%'],
-];
-
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const numTarget = parseInt(target.replace(/\D/g,''), 10);
-    if (!numTarget) return;
-    let startTime = null;
-    const step = ts => {
-      if (!startTime) startTime = ts;
-      const progress = Math.min((ts - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * numTarget));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function AnimatedStat({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g,'');
-  const hasComma = val.includes(',');
-  const display = started ? (hasComma ? num.toLocaleString() : num) + suffix : val;
-  return (
-    <div className="php-stat-col">
-      <div className="php-stat-label">{label}</div>
-      <div className="php-stat-value">{display}</div>
-    </div>
-  );
-}
-
 export default function PhpDevelopmentServices() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleSteps, setVisibleSteps] = useState([]);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const stepRefs = useRef([]);
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
@@ -142,16 +103,6 @@ export default function PhpDevelopmentServices() {
       return obs;
     });
     return () => observers.forEach(o => o && o.disconnect());
-  }, []);
-
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setStatsStarted(true); obs.disconnect(); } },
-      { threshold: 0.5 }
-    );
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
   }, []);
 
   useEffect(() => {
@@ -280,34 +231,6 @@ export default function PhpDevelopmentServices() {
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
           .php-section-reveal { opacity:0;transform:translateY(24px);transition:opacity 0.55s ease,transform 0.55s ease; }
           .php-revealed { opacity:1;transform:translateY(0); }
-
-          /* Hero */
-          .php-hero { background:linear-gradient(135deg,#0F3460 0%,#1a1a5e 40%,#0F3460 100%);padding:90px 40px 0;position:relative;overflow:hidden; }
-          .php-aurora { position:absolute; inset:-15%; z-index:0; pointer-events:none; filter:blur(70px) saturate(150%); animation:php-aurora-drift 20s ease-in-out infinite alternate; }
-          .php-aurora-b1 { position:absolute; left:20%; top:30%; width:65%; height:65%; border-radius:50%; background:radial-gradient(circle at center,rgba(99,130,255,0.38) 0%,transparent 70%); transform:translate(-50%,-50%); }
-          .php-aurora-b2 { position:absolute; left:78%; top:22%; width:48%; height:48%; border-radius:50%; background:radial-gradient(circle at center,rgba(217,119,6,0.28) 0%,transparent 70%); transform:translate(-50%,-50%); }
-          .php-aurora-b3 { position:absolute; left:50%; top:82%; width:55%; height:55%; border-radius:50%; background:radial-gradient(circle at center,rgba(139,92,246,0.22) 0%,transparent 70%); transform:translate(-50%,-50%); }
-          @keyframes php-aurora-drift { 0%{transform:translate3d(0,0,0) scale(1)} 100%{transform:translate3d(-4%,3%,0) scale(1.10)} }
-          .php-hero-inner { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding-bottom:60px; }
-          .php-hero-eyebrow { display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.85);margin-bottom:28px; }
-          .php-hero-h1 { font-size:clamp(2rem,4vw,3.2rem);font-weight:900;line-height:1.1;letter-spacing:-1px;color:#fff;margin:0 0 20px; }
-          .php-hero-h1 span { background:linear-gradient(90deg,#A78BFA,#60A5FA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .php-hero-sub { font-size:1.05rem;color:rgba(255,255,255,0.72);line-height:1.75;margin:0 0 36px;max-width:540px; }
-          .php-hero-btns { display:flex;gap:14px;flex-wrap:wrap; }
-          .php-btn-primary { display:inline-flex;align-items:center;gap:8px;background:#D97706;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(217,119,6,0.35); }
-          .php-btn-primary:hover { background:#B45309;box-shadow:0 8px 32px rgba(217,119,6,0.45);transform:translateY(-2px); }
-          .php-btn-ghost { display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.10);backdrop-filter:blur(12px);border:1.5px solid rgba(255,255,255,0.25);color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s; }
-          .php-btn-ghost:hover { background:rgba(255,255,255,0.18);transform:translateY(-2px); }
-          .php-hero-right { display:flex;flex-direction:column;gap:16px; }
-          .php-hero-card { background:rgba(255,255,255,0.08);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.15);border-radius:16px;padding:20px 24px; }
-          .php-hero-card h3 { font-size:13px;font-weight:700;color:rgba(255,255,255,0.55);text-transform:uppercase;letter-spacing:1px;margin:0 0 8px; }
-          .php-hero-card p { font-size:15px;font-weight:600;color:#fff;margin:0;line-height:1.4; }
-          .php-stats-row { background:rgba(255,255,255,0.06);border-top:1px solid rgba(255,255,255,0.10);padding:20px 40px;margin-top:0; }
-          .php-stats-inner { max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr); }
-          .php-stat-col { text-align:center;padding:16px;border-right:1px solid rgba(255,255,255,0.10); }
-          .php-stat-col:last-child { border-right:none; }
-          .php-stat-label { font-size:11px;color:rgba(255,255,255,0.50);font-weight:500;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px; }
-          .php-stat-value { font-size:1.9rem;font-weight:900;color:#fff;letter-spacing:-1px; }
 
           /* Section eyebrow / title shared */
           .php-section-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:12px;display:block; }
@@ -462,10 +385,6 @@ export default function PhpDevelopmentServices() {
             .php-process-image-col { display:none; }
           }
           @media (max-width:768px) {
-            .php-hero { padding:60px 24px 0; }
-            .php-hero-inner { grid-template-columns:1fr; }
-            .php-hero-right { display:none; }
-            .php-stats-inner { grid-template-columns:repeat(2,1fr); }
             .php-services-section,.php-process-section,.php-tech-section,.php-industries-section,.php-why-section,.php-testi-section,.php-engage-section,.php-contact-section,.php-faq-section,.php-related-section { padding:60px 20px; }
             .php-services-grid,.php-why-grid,.php-industries-grid,.php-tech-grid { grid-template-columns:1fr; }
             .php-contact-container { grid-template-columns:1fr; }
@@ -481,51 +400,19 @@ export default function PhpDevelopmentServices() {
 
       <div>
         {/* ── HERO ── */}
-        <section className="php-hero" id="hero">
-          <div className="php-aurora" aria-hidden="true">
-            <div className="php-aurora-b1" />
-            <div className="php-aurora-b2" />
-            <div className="php-aurora-b3" />
-          </div>
-          <div className="php-hero-inner">
-            <div className="php-hero-left">
-              <div className={`php-section-reveal${visibleSections.has('hero') ? ' php-revealed' : ''}`} ref={el => { sectionRefs.current['hero'] = el; }}>
-                <span className="php-hero-eyebrow">
-                  <span style={{ width:6,height:6,borderRadius:'50%',background:'#D97706',display:'inline-block' }} />
-                  PHP Development Since 2008
-                </span>
-                <h1 className="php-hero-h1">
-                  PHP Development Services<br /><span>Built to Last</span>
-                </h1>
-                <p className="php-hero-sub">Custom PHP web applications, Laravel APIs, and legacy modernisation — delivered clean, secure, and fully documented for US, Canada, and Australia.</p>
-                <div className="php-hero-btns">
-                  <Link href="#contact" className="php-btn-primary">Start a PHP Project →</Link>
-                  <Link href="#engagement" className="php-btn-ghost">View Engagement Models</Link>
-                </div>
-              </div>
-            </div>
-            <div className="php-hero-right">
-              {[
-                { h:'300+ PHP Projects', p:'Delivered since 2008 across US, CA, AU' },
-                { h:'Laravel & Symfony Specialists', p:'Framework-first, clean architecture approach' },
-                { h:'OWASP Security by Default', p:'Every project audited against OWASP Top 10' },
-                { h:'97% Client Retention', p:'Long-term partnerships, not one-off projects' },
-              ].map(c => (
-                <div className="php-hero-card" key={c.h}>
-                  <h3>{c.h}</h3>
-                  <p>{c.p}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="php-stats-row" ref={statsRef}>
-            <div className="php-stats-inner">
-              {STATS.map(([label, val]) => (
-                <AnimatedStat key={label} label={label} val={val} started={statsStarted} />
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="PHP Development Since 2008"
+          title={<>PHP Development Services <AuroraText>Built to Last</AuroraText></>}
+          subtext="Custom PHP web applications, Laravel APIs, and legacy modernisation — delivered clean, secure, and fully documented for US, Canada, and Australia."
+          primaryCta={{ label: 'Start a PHP Project', href: '#contact' }}
+          secondaryCta={{ label: 'View Engagement Models', href: '#engagement' }}
+          stats={[
+            { label: 'PHP Projects', value: '300', suffix: '+' },
+            { label: 'PHP Developers', value: '25', suffix: '+' },
+            { label: 'Years of PHP', value: '15', suffix: '+' },
+            { label: 'Client Retention', value: '97', suffix: '%' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="php-services-section" id="services">

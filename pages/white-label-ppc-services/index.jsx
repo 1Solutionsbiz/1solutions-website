@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 function AuroraText({ children }) {
   return (
@@ -10,12 +11,6 @@ function AuroraText({ children }) {
 }
 
 /* ── Data ─────────────────────────────────────────────────────────────── */
-const STATS = [
-  { label:'Agency Partners',       val:'90+'      },
-  { label:'Monthly Ad Spend Mgd',  val:'$2M+'     },
-  { label:'Avg Client ROAS Lift',  val:'38%'      },
-  { label:'Certified Specialists', val:'Google · Meta' },
-];
 
 const SERVICES = [
   { n:'01', icon:'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title:'Google Search Ads', desc:'Keyword strategy, ad copy, bid management, Quality Score optimisation, and negative keyword hygiene — managed to your client\'s CPA or ROAS target, reported under your brand.' },
@@ -197,20 +192,11 @@ export default function WhiteLabelPPCServices() {
           .wlp-orb3{width:600px;height:600px;background:radial-gradient(circle,rgba(20,184,166,.20) 0%,transparent 70%);top:45%;left:-150px;transform:translateY(-50%)}
           .wlp-reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
           .wlp-reveal.wlp-vis{opacity:1;transform:translateY(0)}.wlp-bc a:hover{color:#D97706}.wlp-bc-sep{color:#d1d5db}
-          .wlp-hero{position:relative;z-index:1;padding:72px 40px 0}
-          .wlp-hero-inner{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto}
-          .wlp-eyebrow{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;display:block;margin-bottom:18px}
-          .wlp-h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:18px;color:#0F1F40}
-          .wlp-hero-sub{font-size:16px;color:#3A507A;line-height:1.65;max-width:720px;margin:0 auto 28px}
           .wlp-btns{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:32px}
           .wlp-btn-p{position:relative;display:inline-flex;align-items:center;gap:8px;padding:14px 36px;background:rgba(15,52,96,0.85);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.20);border-radius:50px;color:#fff;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;box-shadow:0 6px 24px rgba(15,52,96,0.25)}
           .wlp-btn-p:hover{background:rgba(15,52,96,1);border-color:rgba(245,158,11,0.6);transform:translateY(-2px);box-shadow:0 12px 36px rgba(15,52,96,0.30)}
           .wlp-btn-s{display:inline-flex;align-items:center;padding:14px 32px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1)}
           .wlp-btn-s:hover{background:rgba(255,255,255,0.85);border-color:rgba(245,158,11,0.6);transform:translateY(-2px)}
-          .wlp-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:1000px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95)}
-          .wlp-stat{padding:18px 20px;text-align:center;border-right:1px solid rgba(15,52,96,.10)}.wlp-stat:last-child{border-right:none}
-          .wlp-stat-v{font-size:22px;font-weight:900;color:#D97706;letter-spacing:-0.5px;line-height:1;margin-bottom:6px}
-          .wlp-stat-l{font-size:12px;color:#4A6080;font-weight:500}
           .wlp-sec{padding:80px 40px;position:relative;z-index:1}
           .wlp-white{background:#fff}
           .wlp-in{max-width:1280px;margin:0 auto}
@@ -283,12 +269,7 @@ export default function WhiteLabelPPCServices() {
           .wlp-cta-p{font-size:15px;color:#4A6080;line-height:1.7;max-width:580px;margin:0 auto 32px}
           @media(max-width:1024px){.wlp-g4{grid-template-columns:repeat(2,1fr)}.wlp-g3{grid-template-columns:repeat(2,1fr)}.wlp-trust-inner{grid-template-columns:1fr 1fr}.wlp-del-list{grid-template-columns:1fr}}
           @media(max-width:768px){
-            .wlp-hero{padding:56px 24px 0}
             .wlp-sec,.wlp-form-sec,.wlp-cta-sec,.wlp-trust-sec,.wlp-plat-sec{padding:52px 20px}
-            .wlp-stats{grid-template-columns:repeat(2,1fr)}
-            .wlp-stat:nth-child(2){border-right:none}
-            .wlp-stat:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}
-            .wlp-stat:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}
             .wlp-glass,.wlp-fitem,.wlp-form-card{backdrop-filter:none;-webkit-backdrop-filter:none}
             .wlp-g4,.wlp-g3,.wlp-g2,.wlp-who-grid,.wlp-del-list{grid-template-columns:1fr}
             .wlp-trust-inner{grid-template-columns:1fr}
@@ -305,28 +286,19 @@ export default function WhiteLabelPPCServices() {
         <div className="wlp-orb wlp-orb1"/><div className="wlp-orb wlp-orb2"/><div className="wlp-orb wlp-orb3"/>
 
         {/* ── HERO ── */}
-        <section className="wlp-hero">
-          <div className="wlp-hero-inner">
-            <span className="wlp-eyebrow">Google Ads · Meta · Shopping · YouTube · LinkedIn · Your Brand</span>
-            <h1 className="wlp-h1">White-Label PPC Services<br/><AuroraText>Your Brand. Our Campaigns.</AuroraText></h1>
-            <p className="wlp-hero-sub">Resell Google Ads, Meta, Shopping, and LinkedIn management under your agency brand. We run the campaigns, optimise the spend, and deliver branded reports — your clients see your logo, not ours.</p>
-            <div className="wlp-btns">
-              <a href="#partner-form" className="wlp-btn-p">
-                Become a Partner
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <a href="#how-it-works" className="wlp-btn-s">See How It Works</a>
-            </div>
-            <div className="wlp-stats">
-              {STATS.map(s => (
-                <div key={s.label} className="wlp-stat">
-                  <div className="wlp-stat-v">{s.val}</div>
-                  <div className="wlp-stat-l">{s.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Google Ads · Meta · Shopping · YouTube · LinkedIn · Your Brand"
+          title={<>White-Label PPC Services - <AuroraText>Your Brand. Our Campaigns.</AuroraText></>}
+          subtext="Resell Google Ads, Meta, Shopping, and LinkedIn management under your agency brand. We run the campaigns, optimise the spend, and deliver branded reports — your clients see your logo, not ours."
+          primaryCta={{ label: 'Become a Partner', href: '#partner-form' }}
+          secondaryCta={{ label: 'See How It Works', href: '#how-it-works' }}
+          stats={[
+            { label: 'Agency Partners', value: '90', suffix: '+' },
+            { label: 'Monthly Ad Spend Mgd', value: '2', prefix: '$', suffix: 'M+' },
+            { label: 'Avg Client ROAS Lift', value: '38', suffix: '%' },
+            { label: 'Ad Platforms Managed', value: '7' },
+          ]}
+        />
 
         {/* ── TRUST STRIP ── */}
         <section className="wlp-trust-sec">

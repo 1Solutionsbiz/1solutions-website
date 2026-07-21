@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const INCLUDED = [
   { n: '01', title: 'Full SEO Audit (Worth $499)', desc: 'A comprehensive technical, on-page, and backlink audit of your website - identifying every ranking blocker, crawl issue, content gap, and competitor advantage. Delivered in a detailed PDF report within 5 business days.' },
@@ -39,13 +41,6 @@ const FAQS = [
   { q: 'Can I apply for a trial if I have had bad SEO experiences before?', a: 'Yes - in fact, businesses that have been burned by poor SEO work in the past are exactly who this trial is designed for. Previous bad SEO experiences often leave sites with technical debt, thin content, or backlink profiles that need cleaning up before new work can produce results. We audit all of this in the first week and give you an honest assessment of what state your site is in. If previous SEO work has left issues that need fixing before meaningful progress is possible, we tell you - and explain what that remediation involves as part of a full paid programme. The trial gives you a risk-free way to evaluate our quality and approach before committing to any spend.' },
 ];
 
-const STATS = [
-  { label: 'Trials Run', val: '400+' },
-  { label: 'Trial-to-Client Rate', val: '72%' },
-  { label: 'Avg Ranking Improvement', val: '+28 pos' },
-  { label: 'NPS Score', val: '94' },
-];
-
 export default function Free45DaySeoTrial() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleCards, setVisibleCards] = useState([]);
@@ -68,23 +63,10 @@ export default function Free45DaySeoTrial() {
         <style>{`
           .f45-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .f45-page *,.f45-page *::before,.f45-page *::after{box-sizing:border-box}
-          .f45-hero{background:linear-gradient(135deg,#0F1F40 0%,#1E3A8A 40%,#1D4ED8 80%,#0F1F40 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .f45-o1{position:absolute;top:-100px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(29,78,216,0.35) 0%,transparent 65%);pointer-events:none;filter:blur(40px)}
-          .f45-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(30,58,138,0.25) 0%,transparent 65%);pointer-events:none;filter:blur(40px)}
-          .f45-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.f45-bc a:hover{color:#fff}.f45-bc span{color:rgba(255,255,255,0.25)}
-          .f45-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(29,78,216,0.3);border:1px solid rgba(99,179,237,0.30);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#93C5FD;margin-bottom:28px}
-          .f45-h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:900;line-height:1.05;letter-spacing:-1.5px;color:#fff;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .f45-h1 span{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .f45-sub{font-size:1.1rem;color:rgba(255,255,255,0.75);line-height:1.75;max-width:660px;margin:0 auto 36px}
-          .f45-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .f45-btn-p{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#1E3A8A;padding:16px 36px;border-radius:50px;font-weight:800;font-size:1rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 24px rgba(0,0,0,0.30)}
           .f45-btn-p:hover{background:#EFF6FF;box-shadow:0 8px 40px rgba(0,0,0,0.40);transform:translateY(-2px)}
           .f45-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.10);border:1.5px solid rgba(255,255,255,0.25);color:#fff;padding:16px 30px;border-radius:50px;font-weight:700;font-size:1rem;text-decoration:none;transition:all 0.25s}
           .f45-btn-s:hover{border-color:rgba(255,255,255,0.50);background:rgba(255,255,255,0.18);transform:translateY(-2px)}
-          .f45-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.06);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:20px 20px 0 0}
-          .f45-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(255,255,255,0.08)}.f45-stat:last-child{border-right:none}
-          .f45-stat-l{font-size:11px;color:rgba(255,255,255,0.5);font-weight:500;margin-bottom:4px}
-          .f45-stat-v{font-size:1.6rem;font-weight:900;color:#93C5FD;letter-spacing:-0.5px}
           .f45-inc{background:#f8fafd;padding:80px 40px}.f45-inc-in{max-width:1280px;margin:0 auto}
           .f45-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#1D4ED8;margin-bottom:10px;display:block}
           .f45-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
@@ -123,25 +105,26 @@ export default function Free45DaySeoTrial() {
           .f45-cta-t{font-size:clamp(2rem,4vw,3.2rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:16px}
           .f45-cta-s{font-size:1.05rem;color:rgba(255,255,255,0.75);line-height:1.75;margin:0 auto 36px;max-width:520px}
           @media(max-width:1024px){.f45-grid{grid-template-columns:repeat(2,1fr)}}
-          @media(max-width:768px){.f45-hero,.f45-inc,.f45-proc,.f45-elig,.f45-faq,.f45-cta{padding:60px 24px}.f45-hero{padding-top:60px;padding-bottom:0}.f45-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.f45-stat:nth-child(2){border-right:none}.f45-grid{grid-template-columns:1fr}.f45-step{grid-template-columns:56px 1fr}.f45-elist{grid-template-columns:1fr}.f45-btns{flex-direction:column;align-items:center}}
+          @media(max-width:768px){.f45-inc,.f45-proc,.f45-elig,.f45-faq,.f45-cta{padding:60px 24px}.f45-grid{grid-template-columns:1fr}.f45-step{grid-template-columns:56px 1fr}.f45-elist{grid-template-columns:1fr}.f45-btns{flex-direction:column;align-items:center}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
       <div className="f45-page">
-        <section className="f45-hero"><div className="f45-o1"/><div className="f45-o2"/>
-          <div className="f45-in">
-            <span className="f45-badge"><span style={{width:6,height:6,borderRadius:'50%',background:'#60A5FA',display:'inline-block'}}/> Zero Payment · Zero Commitment · Real Results</span>
-            <h1 className="f45-h1">Try Our SEO - <span>45 Days Free.</span><br/>Results First, Then Decide.</h1>
-            <p className="f45-sub">A full SEO audit, keyword research, competitor analysis, and 5 on-page optimisations implemented on your live site - completely free for 45 days. No payment, no contract, no catch.</p>
-            <div className="f45-btns">
-              <Link href="/contact-us" className="f45-btn-p">Apply for the Free Trial <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/seo-services-company" className="f45-btn-s">See Full SEO Services</Link>
-            </div>
-            <div className="f45-stats">{STATS.map(s => <div key={s.label} className="f45-stat"><div className="f45-stat-l">{s.label}</div><div className="f45-stat-v">{s.val}</div></div>)}</div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Zero Payment · Zero Commitment · Real Results"
+          title={<>Try Our SEO - <AuroraText>45 Days Free.</AuroraText> Results First, Then Decide.</>}
+          subtext="A full SEO audit, keyword research, competitor analysis, and 5 on-page optimisations implemented on your live site - completely free for 45 days. No payment, no contract, no catch."
+          primaryCta={{ label: 'Apply for the Free Trial', href: '/contact-us' }}
+          secondaryCta={{ label: 'See Full SEO Services', href: '/seo-services-company' }}
+          stats={[
+            { label: 'Trials Run', value: '400', suffix: '+' },
+            { label: 'Trial-to-Client Rate', value: '72', suffix: '%' },
+            { label: 'Avg Ranking Improvement', value: '28', prefix: '+', suffix: ' pos' },
+            { label: 'NPS Score', value: '94' },
+          ]}
+        />
         <section className="f45-inc"><div className="f45-inc-in">
           <span className="f45-ey2">What You Get - Free</span><h2 className="f45-ttl">Everything Included in Your Free 45-Day Trial</h2>
           <p className="f45-desc">Not a demo. Not a surface-level audit. Real deliverables, real implementation, real tracking - delivered free for 45 days.</p>

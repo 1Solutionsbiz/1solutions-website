@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'Penguin Penalty Diagnosis', desc: 'Correlate your traffic drop with confirmed Google Penguin and Link Spam Update dates - confirming whether your site was impacted and whether the cause is inbound links, outbound link patterns, or anchor text manipulation.' },
@@ -44,13 +46,6 @@ const FAQS = [
   { q: 'What is a link removal outreach campaign?', a: 'Link removal outreach involves contacting the webmasters of toxic linking sites and requesting removal of the specific link pointing to your site. This is considered best practice before disavowing because: for manual action Reconsideration Requests, Google expects evidence that you attempted removal before resorting to disavow; removal is sometimes successful (particularly for lower-volume link farms that respond to legal-sounding removal requests); and it demonstrates genuine remediation effort to Google. In practice, response rates to link removal outreach are often low (10 to 30%) and many webmaster emails are unresponsive or bounce. This is why disavow is the primary recovery mechanism - but outreach should be documented and attempted first for manual action cases.' },
 ];
 
-const STATS = [
-  { label: 'Penguin Recoveries', val: '180+' },
-  { label: 'Toxic Links Disavowed', val: '500K+' },
-  { label: 'Years Experience', val: '15+' },
-  { label: 'Recovery Success Rate', val: '90%' },
-];
-
 export default function PenguinRecoveryService() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleCards, setVisibleCards] = useState([]);
@@ -75,22 +70,11 @@ export default function PenguinRecoveryService() {
         <style>{`
           .peng-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .peng-page *,.peng-page *::before,.peng-page *::after{box-sizing:border-box}
-          .peng-hero{background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 30%,#bfdbfe 65%,#eff6ff 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .peng-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .peng-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(30,58,138,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .peng-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.peng-bc a:hover{color:#2563EB}.peng-bc span{color:#d1d5db}
-          .peng-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(37,99,235,0.08);border:1px solid rgba(37,99,235,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#2563EB;margin-bottom:28px}
-          .peng-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .peng-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
           .peng-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .peng-btn-p{display:inline-flex;align-items:center;gap:8px;background:#2563EB;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(37,99,235,0.28)}
           .peng-btn-p:hover{background:#1E3A8A;box-shadow:0 8px 32px rgba(37,99,235,0.38);transform:translateY(-2px)}
           .peng-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.18);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
           .peng-btn-s:hover{border-color:#2563EB;color:#2563EB;transform:translateY(-2px)}
-          .peng-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(37,99,235,0.07)}
-          .peng-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(37,99,235,0.08)}.peng-stat:last-child{border-right:none}
-          .peng-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .peng-stat-v{font-size:1.6rem;font-weight:900;color:#2563EB;letter-spacing:-0.5px}
           .peng-svc{background:#f8fafd;padding:80px 40px}.peng-svc-in{max-width:1280px;margin:0 auto}
           .peng-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#2563EB;margin-bottom:10px;display:block}
           .peng-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
@@ -136,25 +120,26 @@ export default function PenguinRecoveryService() {
           .peng-cta-t{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;line-height:1.2}
           .peng-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           @media(max-width:1024px){.peng-grid{grid-template-columns:repeat(2,1fr)}.peng-why-grid{grid-template-columns:repeat(2,1fr)}}
-          @media(max-width:768px){.peng-hero,.peng-svc,.peng-lt,.peng-proc,.peng-why,.peng-faq,.peng-cta{padding:60px 24px}.peng-hero{padding-top:60px;padding-bottom:0}.peng-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.peng-stat:nth-child(2){border-right:none}.peng-grid{grid-template-columns:1fr}.peng-why-grid{grid-template-columns:1fr}.peng-step{grid-template-columns:56px 1fr}.peng-btns{flex-direction:column;align-items:center}}
+          @media(max-width:768px){.peng-svc,.peng-lt,.peng-proc,.peng-why,.peng-faq,.peng-cta{padding:60px 24px}.peng-grid{grid-template-columns:1fr}.peng-why-grid{grid-template-columns:1fr}.peng-step{grid-template-columns:56px 1fr}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
       <div className="peng-page">
-        <section className="peng-hero"><div className="peng-o1"/><div className="peng-o2"/>
-          <div className="peng-in">
-            <span className="peng-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#2563EB',display:'inline-block'}}/> Backlink Audit · Disavow · Link Removal · Link Spam</span>
-            <h1 className="peng-h1">Google Penguin Recovery Service - Toxic Link Audit &amp; Disavow</h1>
-            <p className="peng-sub">Specialist Penguin and Link Spam Update recovery - comprehensive toxic backlink audit, conservative disavow file preparation, link removal outreach, and clean authority link building to restore your organic rankings.</p>
-            <div className="peng-btns">
-              <Link href="/contact-us" className="peng-btn-p">Get a Free Backlink Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/google-penalty-recovery-services" className="peng-btn-s">All Penalty Recovery Services</Link>
-            </div>
-            <div className="peng-stats">{STATS.map(s => <div key={s.label} className="peng-stat"><div className="peng-stat-l">{s.label}</div><div className="peng-stat-v">{s.val}</div></div>)}</div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Backlink Audit · Disavow · Link Removal · Link Spam"
+          title={<>Google Penguin Recovery Service - <AuroraText>Toxic Link Audit &amp; Disavow</AuroraText></>}
+          subtext="Specialist Penguin and Link Spam Update recovery - comprehensive toxic backlink audit, conservative disavow file preparation, link removal outreach, and clean authority link building to restore your organic rankings."
+          primaryCta={{ label: 'Get a Free Backlink Audit', href: '/contact-us' }}
+          secondaryCta={{ label: 'All Penalty Recovery Services', href: '/google-penalty-recovery-services' }}
+          stats={[
+            { label: 'Penguin Recoveries', value: '180', suffix: '+' },
+            { label: 'Toxic Links Disavowed', value: '500', suffix: 'K+' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'Recovery Success Rate', value: '90', suffix: '%' },
+          ]}
+        />
         <section className="peng-svc"><div className="peng-svc-in">
           <span className="peng-ey2">What We Do</span><h2 className="peng-ttl">Penguin &amp; Link Spam Recovery Services</h2>
           <p className="peng-desc">From backlink audit to clean link building - a complete Penguin recovery service covering every stage of toxic link identification, removal, and authority rebuilding.</p>

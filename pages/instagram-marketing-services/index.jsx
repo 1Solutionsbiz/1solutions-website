@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'Instagram Content Strategy', desc: 'Monthly content strategy - content pillars, post themes, Reels topics, Stories series, and campaign calendar aligned to your brand identity and growth objectives.' },
@@ -44,13 +46,6 @@ const FAQS = [
   { q: 'How do you measure Instagram marketing success?', a: 'We track multiple performance layers: reach and impressions (how many people see your content); engagement rate (likes, comments, saves, shares as a percentage of reach - more meaningful than raw numbers); follower growth rate; profile visits (traffic to your profile page); website clicks (traffic from Instagram bio link, Stories link, and shoppable posts); and for ad campaigns, CTR, CPC, CPM, and ROAS. Every monthly report covers all these metrics with trend analysis and a qualitative assessment of content performance by format and theme.' },
 ];
 
-const STATS = [
-  { label: 'Instagram Accounts Managed', val: '150+' },
-  { label: 'Avg Engagement Rate', val: '4.8%' },
-  { label: 'Reels Produced', val: '2,000+' },
-  { label: 'Client Retention', val: '90%' },
-];
-
 export default function InstagramMarketingServices() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleCards, setVisibleCards] = useState([]);
@@ -75,22 +70,10 @@ export default function InstagramMarketingServices() {
         <style>{`
           .igm-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .igm-page *,.igm-page *::before,.igm-page *::after{box-sizing:border-box}
-          .igm-hero{background:linear-gradient(135deg,#fdf2f8 0%,#fce7f3 25%,#fbcfe8 60%,#fdf2f8 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .igm-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(219,39,119,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .igm-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(157,23,77,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .igm-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.igm-bc a:hover{color:#DB2777}.igm-bc span{color:#d1d5db}
-          .igm-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(219,39,119,0.08);border:1px solid rgba(219,39,119,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#DB2777;margin-bottom:28px}
-          .igm-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .igm-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
-          .igm-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .igm-btn-p{display:inline-flex;align-items:center;gap:8px;background:#DB2777;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(219,39,119,0.28)}
           .igm-btn-p:hover{background:#BE185D;box-shadow:0 8px 32px rgba(219,39,119,0.38);transform:translateY(-2px)}
           .igm-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.18);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
           .igm-btn-s:hover{border-color:#DB2777;color:#DB2777;transform:translateY(-2px)}
-          .igm-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(219,39,119,0.07)}
-          .igm-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(219,39,119,0.08)}.igm-stat:last-child{border-right:none}
-          .igm-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .igm-stat-v{font-size:1.6rem;font-weight:900;color:#DB2777;letter-spacing:-0.5px}
           .igm-svc{background:#f8fafd;padding:80px 40px}.igm-svc-in{max-width:1280px;margin:0 auto}
           .igm-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#DB2777;margin-bottom:10px;display:block}
           .igm-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
@@ -137,25 +120,26 @@ export default function InstagramMarketingServices() {
           .igm-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           .igm-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.igm-grid{grid-template-columns:repeat(2,1fr)}.igm-why-grid{grid-template-columns:repeat(2,1fr)}}
-          @media(max-width:768px){.igm-hero,.igm-svc,.igm-fmt,.igm-proc,.igm-why,.igm-faq,.igm-cta{padding:60px 24px}.igm-hero{padding-top:60px;padding-bottom:0}.igm-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.igm-stat:nth-child(2){border-right:none}.igm-grid{grid-template-columns:1fr}.igm-why-grid{grid-template-columns:1fr}.igm-step{grid-template-columns:56px 1fr}.igm-btns{flex-direction:column;align-items:center}}
+          @media(max-width:768px){.igm-svc,.igm-fmt,.igm-proc,.igm-why,.igm-faq,.igm-cta{padding:60px 24px}.igm-grid{grid-template-columns:1fr}.igm-why-grid{grid-template-columns:1fr}.igm-step{grid-template-columns:56px 1fr}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
       <div className="igm-page">
-        <section className="igm-hero"><div className="igm-o1"/><div className="igm-o2"/>
-          <div className="igm-in">
-            <span className="igm-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#DB2777',display:'inline-block'}}/> Reels · Feed · Shopping · Ads</span>
-            <h1 className="igm-h1">Instagram Marketing Services - Reels, Growth & Sales for Your Brand</h1>
-            <p className="igm-sub">Content strategy, Reels production, Instagram Ads, Shopping integration, and community management - everything your Instagram needs to grow an engaged audience and drive real business results.</p>
-            <div className="igm-btns">
-              <Link href="/contact-us" className="igm-btn-p">Get an Instagram Marketing Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/facebook-management-services" className="igm-btn-s">Facebook Management</Link>
-            </div>
-            <div className="igm-stats">{STATS.map(s => <div key={s.label} className="igm-stat"><div className="igm-stat-l">{s.label}</div><div className="igm-stat-v">{s.val}</div></div>)}</div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Reels · Feed · Shopping · Ads"
+          title={<>Instagram Marketing Services — <AuroraText>Reels, Growth &amp; Sales</AuroraText> for Your Brand</>}
+          subtext="Content strategy, Reels production, Instagram Ads, Shopping integration, and community management - everything your Instagram needs to grow an engaged audience and drive real business results."
+          primaryCta={{ label: 'Get an Instagram Marketing Quote', href: '/contact-us' }}
+          secondaryCta={{ label: 'Facebook Management', href: '/facebook-management-services' }}
+          stats={[
+            { label: 'Instagram Accounts Managed', value: '150', suffix: '+' },
+            { label: 'Avg Engagement Rate', value: '8', prefix: '4.', suffix: '%' },
+            { label: 'Reels Produced', value: '2,000', suffix: '+' },
+            { label: 'Client Retention', value: '90', suffix: '%' },
+          ]}
+        />
         <section className="igm-svc"><div className="igm-svc-in">
           <span className="igm-ey2">What We Do</span><h2 className="igm-ttl">Instagram Marketing Services</h2>
           <p className="igm-desc">Feed content, Reels, Stories, Shopping, and Ads - full Instagram management from content creation to paid growth.</p>

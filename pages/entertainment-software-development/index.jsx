@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -73,25 +75,13 @@ const FAQS = [
   { q: 'What video player technology do you use?', a: 'Video.js, Shaka Player, and hls.js for web; AVFoundation / AVPlayer for iOS; ExoPlayer for Android; and custom SDKs for Smart TV (Samsung Tizen, LG webOS). Choice depends on your DRM requirements and target devices.' },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => { if (!start) return; const n = parseInt(target.replace(/\D/g, ''), 10); if (!n) return; let t0 = null; const s = ts => { if (!t0) t0 = ts; const p = Math.min((ts - t0) / duration, 1); setCount(Math.floor((1 - Math.pow(1 - p, 3)) * n)); if (p < 1) requestAnimationFrame(s); }; requestAnimationFrame(s); }, [start, target, duration]);
-  return count;
-}
-function StatItem({ label, val, started }) {
-  const n = useCountUp(val, 1800, started);
-  const sfx = val.replace(/[\d,]/g, '');  return (<div className="ent-sc"><div className="ent-sv">{started ? n + sfx : val}</div><div className="ent-sl">{label}</div></div>);
-}
-
 export default function EntertainmentSoftware() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [ss, setSs] = useState(false);
   const [vis, setVis] = useState(new Set());
   const [vSk, setVSk] = useState([]); const [vEn, setVEn] = useState([]); const [vWh, setVWh] = useState([]); const [vTe, setVTe] = useState([]); const [vSt, setVSt] = useState([]);
-  const stR = useRef(null); const secR = useRef({});
+  const secR = useRef({});
   const skR = useRef(null); const enR = useRef(null); const whR = useRef(null); const teR = useRef(null); const stGr = useRef(null);
-  useEffect(() => { if (!stR.current) return; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setSs(true); o.disconnect(); } }, { threshold: 0.4 }); o.observe(stR.current); return () => o.disconnect(); }, []);
   useEffect(() => {
     const pairs = [[skR, SOLUTIONS.length, setVSk], [enR, 3, setVEn], [whR, WHY.length, setVWh], [teR, 3, setVTe], [stGr, TECH_STACK.length, setVSt]];
     const obs = pairs.map(([ref, count, setter]) => { if (!ref.current) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { Array.from({ length: count }, (_, i) => setTimeout(() => setter(p => p.includes(i) ? p : [...p, i]), i * 75)); o.disconnect(); } }, { threshold: 0.05 }); o.observe(ref.current); return o; });
@@ -139,22 +129,6 @@ export default function EntertainmentSoftware() {
           .ent-o1{width:800px;height:800px;background:radial-gradient(circle,rgba(45,27,105,.16) 0%,transparent 70%);top:-220px;right:-200px}
           .ent-o2{width:700px;height:700px;background:radial-gradient(circle,rgba(162,28,175,.12) 0%,transparent 70%);bottom:0;left:-200px}
           .ent-o3{width:480px;height:480px;background:radial-gradient(circle,rgba(217,119,6,.08) 0%,transparent 70%);top:42%;left:-90px}}.ent-bc li::after{content:'/';opacity:.45}.ent-bc li:last-child::after{display:none};text-decoration:none}
-          .ent-hero{position:relative;z-index:2;text-align:center;max-width:940px;margin:0 auto;padding:44px 40px 28px}
-          .ent-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:${ac2};margin-bottom:14px}
-          .ent-hero h1{font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .ent-desc{font-size:16px;color:${txt2};line-height:1.65;max-width:720px;margin:0 auto 22px}
-          .ent-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-bottom:24px}
-          .ent-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:5px 13px;font-size:12px;font-weight:600;color:${txt};box-shadow:0 2px 8px rgba(45,27,105,.07)}
-          .ent-dot{width:7px;height:7px;border-radius:50%;background:${ac2};flex-shrink:0}
-          .ent-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .ent-p{display:inline-block;padding:13px 34px;background:${ac};color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(45,27,105,.28)}
-          .ent-p:hover{background:${txt};transform:translateY(-2px)}
-          .ent-g{display:inline-block;padding:13px 34px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:${txt};font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .ent-g:hover{background:rgba(255,255,255,.85);border-color:rgba(45,27,105,.5);transform:translateY(-2px)}
-          .ent-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:920px;margin:26px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(45,27,105,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .ent-sc{padding:18px 16px;text-align:center;border-right:1px solid rgba(45,27,105,.10)}.ent-sc:last-child{border-right:none}
-          .ent-sv{font-size:28px;font-weight:900;color:${ac2};letter-spacing:-.5px;line-height:1}
-          .ent-sl{font-size:11px;color:${txt2};font-weight:500;margin-top:5px}
           .ent-sec{padding:72px 40px;position:relative;z-index:1}
           .ent-sec-alt{background:rgba(245,243,255,.55);border-top:1px solid rgba(45,27,105,.08);border-bottom:1px solid rgba(45,27,105,.08)}
           .ent-in{max-width:1300px;margin:0 auto}
@@ -265,8 +239,8 @@ export default function EntertainmentSoftware() {
           .ent-rb{background:rgba(162,28,175,.09);border-color:rgba(162,28,175,.28);color:#7c2d8b}
           .ent-rc{background:rgba(120,53,15,.09);border-color:rgba(120,53,15,.28);color:#78350f}
           .ent-rd{background:rgba(20,83,45,.09);border-color:rgba(20,83,45,.28);color:#14532d}
-          @media(max-width:1024px){.ent-hero h1,.ent-sh,.ent-fq h2{font-size:34px}.ent-sk-g{grid-template-columns:repeat(2,1fr)}.ent-tec-g{grid-template-columns:repeat(2,1fr)}.ent-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.ent-en.feat{transform:none}.ent-en.feat.ent-ev{transform:none}.ent-en.feat.ent-ev:hover{transform:translateY(-4px)}.ent-wy-g{grid-template-columns:repeat(2,1fr)}.ent-tg2{grid-template-columns:1fr}.ent-ct-g{grid-template-columns:1fr}}
-          @media(max-width:768px){.ent-bc,.ent-hero,.ent-sec,.ent-ct,.ent-fq,.ent-rel{padding-left:20px;padding-right:20px}.ent-hero{padding-top:28px;padding-bottom:16px}.ent-hero h1{font-size:26px}.ent-stats{grid-template-columns:1fr 1fr}.ent-sc:nth-child(2){border-right:none}.ent-sc:nth-child(3),.ent-sc:nth-child(4){border-top:1px solid rgba(45,27,105,.10)}.ent-sc:nth-child(4){border-right:none}.ent-sk-g,.ent-tec-g,.ent-wy-g{grid-template-columns:1fr}.ent-fr{grid-template-columns:1fr}.ent-cth{font-size:26px}}
+          @media(max-width:1024px){.ent-sh,.ent-fq h2{font-size:34px}.ent-sk-g{grid-template-columns:repeat(2,1fr)}.ent-tec-g{grid-template-columns:repeat(2,1fr)}.ent-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.ent-en.feat{transform:none}.ent-en.feat.ent-ev{transform:none}.ent-en.feat.ent-ev:hover{transform:translateY(-4px)}.ent-wy-g{grid-template-columns:repeat(2,1fr)}.ent-tg2{grid-template-columns:1fr}.ent-ct-g{grid-template-columns:1fr}}
+          @media(max-width:768px){.ent-bc,.ent-sec,.ent-ct,.ent-fq,.ent-rel{padding-left:20px;padding-right:20px}.ent-sk-g,.ent-tec-g,.ent-wy-g{grid-template-columns:1fr}.ent-fr{grid-template-columns:1fr}.ent-cth{font-size:26px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
@@ -292,14 +266,19 @@ export default function EntertainmentSoftware() {
 </Head>
       <div className="ent-page">
         <div className="ent-orb ent-o1" /><div className="ent-orb ent-o2" /><div className="ent-orb ent-o3" />
-        <section className="ent-hero">
-          <span className="ent-ey">Entertainment & Media Industry</span>
-          <h1>Entertainment Software Development - OTT Streaming, Media Tech & Digital Ticketing</h1>
-          <p className="ent-desc">Custom software for studios, broadcasters, labels, event companies, and gaming platforms - OTT video streaming, music and podcast apps, media asset management, AI recommendation engines, digital ticketing, and fan engagement. 70+ media projects. 15+ years.</p>
-          <div className="ent-tr">{['OTT Streaming Platform','AI Recommendations','Music & Royalties','Digital Ticketing','Live Streaming'].map(b => (<div className="ent-badge" key={b}><span className="ent-dot" />{b}</div>))}</div>
-          <div className="ent-ctas"><Link href="#contact" className="ent-p">Discuss Your Entertainment Project</Link><Link href="#solutions" className="ent-g">View Solutions →</Link></div>
-        </section>
-        <div className="ent-stats" ref={stR}>{[['70+','Media & Entertainment Projects'],['15+','Years Dev Experience'],['38%','Avg Session Length Increase'],['99.9%','Platform Uptime SLA']].map(([v, l]) => <StatItem key={l} label={l} val={v} started={ss} />)}</div>
+        <ServiceHero
+          eyebrow="Entertainment & Media Industry · OTT · Music · Ticketing"
+          title={<>Entertainment Software Development - <AuroraText>OTT Streaming, Media Tech &amp; Digital Ticketing</AuroraText></>}
+          subtext="Custom software for studios, broadcasters, labels, event companies, and gaming platforms - OTT video streaming, music and podcast apps, media asset management, AI recommendation engines, digital ticketing, and fan engagement. 70+ media projects. 15+ years."
+          primaryCta={{ label: 'Discuss Your Entertainment Project', href: '#contact' }}
+          secondaryCta={{ label: 'View Solutions', href: '#solutions' }}
+          stats={[
+            { label: 'Media & Entertainment Projects', value: '70', suffix: '+' },
+            { label: 'Years Dev Experience', value: '15', suffix: '+' },
+            { label: 'Avg Session Length Increase', value: '38', suffix: '%' },
+            { label: 'Platform Uptime SLA', value: '99', prefix: '', suffix: '.9%' },
+          ]}
+        />
         <section id="solutions" className="ent-sec"><div className="ent-in"><div className={`ent-rv${vis.has('sk') ? ' ent-ok' : ''}`} ref={el => { secR.current['sk'] = el; }}><span className="ent-sey">Media & Entertainment Solutions</span><h2 className="ent-sh">What We Build for Entertainment</h2><p className="ent-sd">OTT streaming, music streaming, media asset management, recommendation engines, gaming portals, digital ticketing, live streaming, fan engagement, rights management, and media analytics.</p></div><div className="ent-sk-g" ref={skR}>{visS.map((s, i) => (<div key={s.n} className={`ent-card${s.feat ? ' feat' : ''}${vSk.includes(i) ? ' ent-cv' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}><span className="ent-cn">{s.n}</span><h3>{s.title}</h3><p>{s.desc}</p></div>))}</div>{SOLUTIONS.length > 6 && <div className="ent-sm"><button className="ent-bm" onClick={() => setShowAll(p => !p)}>{showAll ? 'Show fewer ↑' : `Show all ${SOLUTIONS.length} solutions ↓`}</button></div>}</div></section>
         <section className="ent-sec ent-sec-alt"><div className="ent-in"><div className={`ent-rv${vis.has('stk') ? ' ent-ok' : ''}`} ref={el => { secR.current['stk'] = el; }}><span className="ent-sey">Technology Stack</span><h2 className="ent-sh">Entertainment Technology We Use</h2><p className="ent-sd">HLS/DASH streaming, multi-DRM, FFmpeg, CDN, React Native, WebRTC, AI recommendation models, DDEX, and the full entertainment tech ecosystem.</p></div><div className="ent-tec-g" ref={stGr}>{TECH_STACK.map((g, i) => (<div key={g.group} className={`ent-tc2${vSt.includes(i) ? ' ent-sv2' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}><div className="ent-tg" style={{ color: g.color, borderBottomColor: g.color + '33' }}>{g.group}</div><div className="ent-pills">{g.items.map(it => <span key={it} className="ent-pill" style={{ color: g.color, background: g.color + '12', borderColor: g.color + '30' }}>{it}</span>)}</div></div>))}</div></div></section>
         <section className="ent-sec"><div className="ent-in"><div className={`ent-rv${vis.has('eng') ? ' ent-ok' : ''}`} ref={el => { secR.current['eng'] = el; }}><span className="ent-sey">Engagement Models</span><h2 className="ent-sh">How We Work with Entertainment Companies</h2><p className="ent-sd">Full OTT platform build, targeted feature delivery, or pre-launch performance and scale engineering - matched to your project stage and timeline.</p></div><div className="ent-en-g" ref={enR}>{ENGAGEMENT.map((m, i) => (<div key={m.id} className={`ent-en${m.feat ? ' feat' : ''}${vEn.includes(i) ? ' ent-ev' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><span className="ent-en-b" style={{ color: m.bc, borderColor: m.bc + '44', background: m.bc + '14' }}>{m.badge}</span><div className="ent-en-i"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke={m.feat ? '#D97706' : ac2} strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d={m.icon} /></svg></div><div className="ent-en-n">{m.name}</div><div className="ent-en-h">{m.headline}</div><div className="ent-en-d">{m.desc}</div><div className="ent-en-ll">Best for</div><ul className="ent-en-li">{m.best.map(b => <li key={b}>{b}</li>)}</ul><span className="ent-en-tl">{m.tl}</span><Link href="#contact" className="ent-en-a">Get a free estimate →</Link></div>))}</div></div></section>

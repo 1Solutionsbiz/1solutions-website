@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 /* ─── Schema ─────────────────────────────────────────────────── */
 const SCHEMA = {
@@ -185,40 +187,10 @@ const FAQS = [
   { q: 'Do you build Flutter web apps as well as mobile?', a: 'Yes. Flutter supports web deployment using either the CanvasKit renderer (best visual fidelity and animation quality) or the HTML renderer (better SEO and initial load speed for content-heavy pages). We build adaptive Flutter apps that reflow intelligently from mobile to tablet to desktop breakpoints. Flutter web works particularly well for dashboard-style web apps, internal tools, and admin panels that share a codebase with an existing Flutter mobile app - eliminating the need for a separate React or Vue web frontend.' },
 ];
 
-/* ─── Hooks ──────────────────────────────────────────────────── */
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const num = parseInt(target.replace(/\D/g, ''), 10);
-    if (!num) return;
-    let t0 = null;
-    const step = ts => {
-      if (!t0) t0 = ts;
-      const p = Math.min((ts - t0) / duration, 1);
-      setCount(Math.floor((1 - Math.pow(1 - p, 3)) * num));
-      if (p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function StatItem({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');  return (
-    <div className="fl-stat-col">
-      <div className="fl-stat-val">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div>
-      <div className="fl-stat-label">{label}</div>
-    </div>
-  );
-}
-
 /* ─── Component ──────────────────────────────────────────────── */
 export default function FlutterAppDevelopment() {
   const [showAllSvc, setShowAllSvc] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleSvcCards, setVisibleSvcCards] = useState([]);
   const [visibleEngCards, setVisibleEngCards] = useState([]);
@@ -226,20 +198,12 @@ export default function FlutterAppDevelopment() {
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const [visibleStackCards, setVisibleStackCards] = useState([]);
 
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const svcGridRef = useRef(null);
   const engGridRef = useRef(null);
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
   const stackGridRef = useRef(null);
-
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStatsStarted(true); obs.disconnect(); } }, { threshold: 0.4 });
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   useEffect(() => {
     const pairs = [
@@ -321,37 +285,6 @@ export default function FlutterAppDevelopment() {
 
 
 
-
-          /* Hero */
-          .fl-hero { position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px; }
-          .fl-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px; }
-          .fl-hero h1 { font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .fl-hero-desc { font-size:16px;color:#3A507A;line-height:1.65;max-width:740px;margin:0 auto 24px; }
-          .fl-trust-row { display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px; }
-          .fl-badge { display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07); }
-          .fl-badge-dot { width:7px;height:7px;border-radius:50%;background:#0ea5e9;flex-shrink:0; }
-          .fl-ctas { display:flex;flex-wrap:wrap;gap:12px;justify-content:center; }
-          .fl-btn-primary { display:inline-block;padding:14px 36px;background:#0ea5e9;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(14,165,233,.30); }
-          .fl-btn-primary:hover { background:#0F3460;transform:translateY(-2px); }
-          .fl-btn-ghost { display:inline-block;padding:14px 36px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s; }
-          .fl-btn-ghost:hover { background:rgba(255,255,255,.85);border-color:rgba(14,165,233,.5);transform:translateY(-2px); }
-
-          /* Stats */
-          .fl-stats { position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:28px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95); }
-          .fl-stat-col { padding:18px 16px;text-align:center;border-right:1px solid rgba(15,52,96,.10); }
-          .fl-stat-col:last-child { border-right:none; }
-          .fl-stat-val { font-size:28px;font-weight:900;color:#0ea5e9;letter-spacing:-.5px;line-height:1; }
-          .fl-stat-label { font-size:11px;color:#4A6080;font-weight:500;margin-top:5px; }
-
-          /* Logos */
-          .fl-logos { position:relative;z-index:2;padding:24px 40px 52px;display:flex;flex-direction:column;align-items:center;gap:14px; }
-          .fl-logos-label { font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6A80A0; }
-          .fl-logos-wrap { width:100%;overflow:hidden; }
-          .fl-logos-track { display:flex;align-items:center;gap:60px;width:max-content;animation:fl-marquee 28s linear infinite; }
-          .fl-logos-track:hover { animation-play-state:paused; }
-          @keyframes fl-marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-          .fl-clogo { height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s; }
-          .fl-clogo:hover { opacity:.85;filter:grayscale(0%); }
 
           /* Shared */
           .fl-s-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block; }
@@ -522,7 +455,7 @@ export default function FlutterAppDevelopment() {
 
           /* Responsive */
           @media(max-width:1024px){
-            .fl-hero h1,.fl-s-title,.fl-faq h2 { font-size:36px; }
+            .fl-s-title,.fl-faq h2 { font-size:36px; }
             .fl-svc-grid { grid-template-columns:repeat(2,1fr); }
             .fl-stack-grid { grid-template-columns:repeat(2,1fr); }
             .fl-eng-grid { grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto; }
@@ -534,13 +467,6 @@ export default function FlutterAppDevelopment() {
             .fl-contact-grid { grid-template-columns:1fr; }
           }
           @media(max-width:768px){
-            .fl-hero { padding:28px 20px 20px; }
-            .fl-hero h1 { font-size:26px;letter-spacing:-.3px; }
-            .fl-stats { grid-template-columns:1fr 1fr; }
-            .fl-stat-col:nth-child(2) { border-right:none; }
-            .fl-stat-col:nth-child(3) { border-top:1px solid rgba(15,52,96,.10); }
-            .fl-stat-col:nth-child(4) { border-top:1px solid rgba(15,52,96,.10);border-right:none; }
-            .fl-logos { padding:16px 20px 28px; }
             .fl-svc-section,.fl-stack-section,.fl-eng-section,.fl-process-section,.fl-testi,.fl-why-section,.fl-faq,.fl-related { padding:52px 20px; }
             .fl-contact { padding:48px 20px; }
             .fl-svc-grid,.fl-stack-grid,.fl-why-grid { grid-template-columns:1fr; }
@@ -578,53 +504,19 @@ export default function FlutterAppDevelopment() {
         <div className="fl-orb fl-orb-3" />
 
         {/* ── HERO ── */}
-        <section className="fl-hero">
-          <span className="fl-eyebrow">Flutter App Development Services</span>
-          <h1>Cross-Platform Flutter Apps - Built Once, Shipped Everywhere</h1>
-          <p className="fl-hero-desc">We build production-quality Flutter applications for iOS, Android, web, and desktop from a single Dart codebase - delivering native performance, 60fps animations, and pixel-perfect UI at 40–60% lower cost than separate native development. From MVP to enterprise-scale Flutter apps.</p>
-          <div className="fl-trust-row">
-            {['100+ Flutter Apps Shipped','iOS + Android + Web + Desktop','60fps Native Performance','15+ Years Experience','App Store & Play Store Ready'].map(b => (
-              <div className="fl-badge" key={b}><span className="fl-badge-dot" />{b}</div>
-            ))}
-          </div>
-          <div className="fl-ctas">
-            <Link href="#contact" className="fl-btn-primary">Start Your Flutter Project</Link>
-            <Link href="#engagement" className="fl-btn-ghost">View Engagement Models →</Link>
-          </div>
-        </section>
-
-        {/* ── STATS ── */}
-        <div className="fl-stats" ref={statsRef}>
-          {[['100+','Flutter Apps Shipped'],['15+','Years Experience'],['50M+','App Downloads'],['98%','Client Retention']].map(([v, l]) => (
-            <StatItem key={l} label={l} val={v} started={statsStarted} />
-          ))}
-        </div>
-
-        {/* ── CLIENT LOGOS ── */}
-        <div className="fl-logos">
-          <span className="fl-logos-label">Trusted by Leading Organisations</span>
-          <div className="fl-logos-wrap">
-            <div className="fl-logos-track">
-              {[
-                ['/logo/Indian_Express_Logo_full.png','Indian Express'],
-                ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],
-                ['/logo/Uniphore.jpg','Uniphore'],
-                ['/logo/ICCoLogo.png','ICC'],
-                ['/logo/Honor_Logo_(2020).svg.png','Honor'],
-                ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],
-                ['/logo/Indian_Express_Logo_full.png','Indian Express 2'],
-                ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon 2'],
-                ['/logo/Uniphore.jpg','Uniphore 2'],
-                ['/logo/ICCoLogo.png','ICC 2'],
-                ['/logo/Honor_Logo_(2020).svg.png','Honor 2'],
-                ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv 2'],
-              ].map(([src, alt]) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img key={alt} src={src} alt={alt.replace(/ \d$/, '')} className="fl-clogo" />
-              ))}
-            </div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="Flutter App Development Services · 15+ Years Experience"
+          title={<>Cross-Platform Flutter Apps - <AuroraText>Built Once, Shipped Everywhere</AuroraText></>}
+          subtext="We build production-quality Flutter applications for iOS, Android, web, and desktop from a single Dart codebase - delivering native performance, 60fps animations, and pixel-perfect UI at 40–60% lower cost than separate native development. From MVP to enterprise-scale Flutter apps."
+          primaryCta={{ label: 'Start Your Flutter Project', href: '#contact' }}
+          secondaryCta={{ label: 'View Engagement Models', href: '#engagement' }}
+          stats={[
+            { label: 'Flutter Apps Shipped', value: '100', suffix: '+' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'App Downloads', value: '50', suffix: 'M+' },
+            { label: 'Client Retention', value: '98', suffix: '%' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="fl-svc-section" aria-labelledby="fl-svc-heading">

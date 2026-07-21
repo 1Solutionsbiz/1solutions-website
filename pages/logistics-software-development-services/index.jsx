@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -74,25 +76,13 @@ const FAQS = [
   { q: 'Do you build multi-client platforms for 3PLs?', a: 'Yes - WMS and TMS platforms with full tenant isolation per 3PL client: separate inventory, pick rules, labelling, customer portals, billing rates, and EDI configurations. Clients can see their own data only; the 3PL sees consolidated reporting across all clients. Onboarding a new client is configuration, not a code change.' },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => { if (!start) return; const n = parseInt(target.replace(/\D/g, ''), 10); if (!n) return; let t0 = null; const s = ts => { if (!t0) t0 = ts; const p = Math.min((ts - t0) / duration, 1); setCount(Math.floor((1 - Math.pow(1 - p, 3)) * n)); if (p < 1) requestAnimationFrame(s); }; requestAnimationFrame(s); }, [start, target, duration]);
-  return count;
-}
-function StatItem({ label, val, started }) {
-  const n = useCountUp(val, 1800, started);
-  const sfx = val.replace(/[\d,]/g, '');  return (<div className="lgt-sc"><div className="lgt-sv">{started ? n + sfx : val}</div><div className="lgt-sl">{label}</div></div>);
-}
-
 export default function LogisticsSoftware() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [ss, setSs] = useState(false);
   const [vis, setVis] = useState(new Set());
   const [vSk, setVSk] = useState([]); const [vEn, setVEn] = useState([]); const [vWh, setVWh] = useState([]); const [vTe, setVTe] = useState([]); const [vSt, setVSt] = useState([]);
-  const stR = useRef(null); const secR = useRef({});
+  const secR = useRef({});
   const skR = useRef(null); const enR = useRef(null); const whR = useRef(null); const teR = useRef(null); const stGr = useRef(null);
-  useEffect(() => { if (!stR.current) return; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setSs(true); o.disconnect(); } }, { threshold: 0.4 }); o.observe(stR.current); return () => o.disconnect(); }, []);
   useEffect(() => {
     const pairs = [[skR, SOLUTIONS.length, setVSk], [enR, 3, setVEn], [whR, WHY.length, setVWh], [teR, 3, setVTe], [stGr, TECH_STACK.length, setVSt]];
     const obs = pairs.map(([ref, count, setter]) => { if (!ref.current) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { Array.from({ length: count }, (_, i) => setTimeout(() => setter(p => p.includes(i) ? p : [...p, i]), i * 75)); o.disconnect(); } }, { threshold: 0.05 }); o.observe(ref.current); return o; });
@@ -140,22 +130,6 @@ export default function LogisticsSoftware() {
           .lgt-o1{width:800px;height:800px;background:radial-gradient(circle,rgba(20,83,45,.16) 0%,transparent 70%);top:-220px;right:-200px}
           .lgt-o2{width:700px;height:700px;background:radial-gradient(circle,rgba(15,118,110,.13) 0%,transparent 70%);bottom:0;left:-200px}
           .lgt-o3{width:480px;height:480px;background:radial-gradient(circle,rgba(12,74,110,.08) 0%,transparent 70%);top:42%;left:-90px}}.lgt-bc li::after{content:'/';opacity:.45}.lgt-bc li:last-child::after{display:none};text-decoration:none}
-          .lgt-hero{position:relative;z-index:2;text-align:center;max-width:940px;margin:0 auto;padding:44px 40px 28px}
-          .lgt-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:${ac};margin-bottom:14px}
-          .lgt-hero h1{font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .lgt-desc{font-size:16px;color:${txt2};line-height:1.65;max-width:720px;margin:0 auto 22px}
-          .lgt-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-bottom:24px}
-          .lgt-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:5px 13px;font-size:12px;font-weight:600;color:${txt};box-shadow:0 2px 8px rgba(20,83,45,.07)}
-          .lgt-dot{width:7px;height:7px;border-radius:50%;background:${ac};flex-shrink:0}
-          .lgt-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .lgt-p{display:inline-block;padding:13px 34px;background:${ac};color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(20,83,45,.28)}
-          .lgt-p:hover{background:${txt};transform:translateY(-2px)}
-          .lgt-g{display:inline-block;padding:13px 34px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:${txt};font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .lgt-g:hover{background:rgba(255,255,255,.85);border-color:rgba(20,83,45,.5);transform:translateY(-2px)}
-          .lgt-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:920px;margin:26px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(20,83,45,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .lgt-sc{padding:18px 16px;text-align:center;border-right:1px solid rgba(20,83,45,.10)}.lgt-sc:last-child{border-right:none}
-          .lgt-sv{font-size:28px;font-weight:900;color:${ac};letter-spacing:-.5px;line-height:1}
-          .lgt-sl{font-size:11px;color:${txt2};font-weight:500;margin-top:5px}
           .lgt-sec{padding:72px 40px;position:relative;z-index:1}
           .lgt-sec-alt{background:rgba(240,253,244,.55);border-top:1px solid rgba(20,83,45,.08);border-bottom:1px solid rgba(20,83,45,.08)}
           .lgt-in{max-width:1300px;margin:0 auto}
@@ -266,8 +240,8 @@ export default function LogisticsSoftware() {
           .lgt-rb{background:rgba(120,53,15,.09);border-color:rgba(120,53,15,.28);color:#78350f}
           .lgt-rc{background:rgba(12,74,110,.09);border-color:rgba(12,74,110,.28);color:#0c4a6e}
           .lgt-rd{background:rgba(190,24,93,.09);border-color:rgba(190,24,93,.28);color:#9d174d}
-          @media(max-width:1024px){.lgt-hero h1,.lgt-sh,.lgt-fq h2{font-size:34px}.lgt-sk-g{grid-template-columns:repeat(2,1fr)}.lgt-tec-g{grid-template-columns:repeat(2,1fr)}.lgt-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.lgt-en.feat{transform:none}.lgt-en.feat.lgt-ev{transform:none}.lgt-en.feat.lgt-ev:hover{transform:translateY(-4px)}.lgt-wy-g{grid-template-columns:repeat(2,1fr)}.lgt-tg2{grid-template-columns:1fr}.lgt-ct-g{grid-template-columns:1fr}}
-          @media(max-width:768px){.lgt-bc,.lgt-hero,.lgt-sec,.lgt-ct,.lgt-fq,.lgt-rel{padding-left:20px;padding-right:20px}.lgt-hero{padding-top:28px;padding-bottom:16px}.lgt-hero h1{font-size:26px}.lgt-stats{grid-template-columns:1fr 1fr}.lgt-sc:nth-child(2){border-right:none}.lgt-sc:nth-child(3),.lgt-sc:nth-child(4){border-top:1px solid rgba(20,83,45,.10)}.lgt-sc:nth-child(4){border-right:none}.lgt-sk-g,.lgt-tec-g,.lgt-wy-g{grid-template-columns:1fr}.lgt-fr{grid-template-columns:1fr}.lgt-cth{font-size:26px}}
+          @media(max-width:1024px){.lgt-sh,.lgt-fq h2{font-size:34px}.lgt-sk-g{grid-template-columns:repeat(2,1fr)}.lgt-tec-g{grid-template-columns:repeat(2,1fr)}.lgt-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.lgt-en.feat{transform:none}.lgt-en.feat.lgt-ev{transform:none}.lgt-en.feat.lgt-ev:hover{transform:translateY(-4px)}.lgt-wy-g{grid-template-columns:repeat(2,1fr)}.lgt-tg2{grid-template-columns:1fr}.lgt-ct-g{grid-template-columns:1fr}}
+          @media(max-width:768px){.lgt-bc,.lgt-sec,.lgt-ct,.lgt-fq,.lgt-rel{padding-left:20px;padding-right:20px}.lgt-sk-g,.lgt-tec-g,.lgt-wy-g{grid-template-columns:1fr}.lgt-fr{grid-template-columns:1fr}.lgt-cth{font-size:26px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
@@ -293,14 +267,19 @@ export default function LogisticsSoftware() {
 </Head>
       <div className="lgt-page">
         <div className="lgt-orb lgt-o1" /><div className="lgt-orb lgt-o2" /><div className="lgt-orb lgt-o3" />
-        <section className="lgt-hero">
-          <span className="lgt-ey">Logistics & Supply Chain Industry</span>
-          <h1>Logistics Software Development - TMS, WMS, Last-Mile & Fleet Management</h1>
-          <p className="lgt-desc">Custom logistics technology for 3PLs, carriers, retailers, and supply chain companies - Transportation Management Systems (TMS), Warehouse Management Systems (WMS), last-mile delivery platforms, route optimisation, fleet management, carrier integrations, and supply chain visibility. 100+ logistics projects. 15+ years.</p>
-          <div className="lgt-tr">{['TMS Development','WMS Development','Last-Mile Delivery','Route Optimisation','Carrier API Integration'].map(b => (<div className="lgt-badge" key={b}><span className="lgt-dot" />{b}</div>))}</div>
-          <div className="lgt-ctas"><Link href="#contact" className="lgt-p">Discuss Your Logistics Platform</Link><Link href="#solutions" className="lgt-g">View Solutions →</Link></div>
-        </section>
-        <div className="lgt-stats" ref={stR}>{[['100+','Logistics Projects'],['15+','Years Dev Experience'],['22%','Avg Cost-per-Delivery Reduction'],['99.9%','Platform Uptime SLA']].map(([v, l]) => <StatItem key={l} label={l} val={v} started={ss} />)}</div>
+        <ServiceHero
+          eyebrow="Logistics & Supply Chain Industry · TMS · WMS · Route Optimisation"
+          title={<>Logistics Software Development - <AuroraText>TMS, WMS, Last-Mile & Fleet Management</AuroraText></>}
+          subtext="Custom logistics technology for 3PLs, carriers, retailers, and supply chain companies - Transportation Management Systems (TMS), Warehouse Management Systems (WMS), last-mile delivery platforms, route optimisation, fleet management, carrier integrations, and supply chain visibility. 100+ logistics projects. 15+ years."
+          primaryCta={{ label: 'Discuss Your Logistics Platform', href: '#contact' }}
+          secondaryCta={{ label: 'View Solutions', href: '#solutions' }}
+          stats={[
+            { label: 'Logistics Projects', value: '100', suffix: '+' },
+            { label: 'Years Dev Experience', value: '15', suffix: '+' },
+            { label: 'Avg Cost-per-Delivery Reduction', value: '22', suffix: '%' },
+            { label: 'Platform Uptime SLA', value: '9', prefix: '99.', suffix: '%' },
+          ]}
+        />
         <section id="solutions" className="lgt-sec"><div className="lgt-in"><div className={`lgt-rv${vis.has('sk') ? ' lgt-ok' : ''}`} ref={el => { secR.current['sk'] = el; }}><span className="lgt-sey">Logistics Technology Solutions</span><h2 className="lgt-sh">What We Build for Logistics & Supply Chain</h2><p className="lgt-sd">TMS, WMS, last-mile delivery, route optimisation, fleet management, freight forwarding software, carrier integrations, supply chain visibility, 3PL platforms, and logistics analytics.</p></div><div className="lgt-sk-g" ref={skR}>{visS.map((s, i) => (<div key={s.n} className={`lgt-card${s.feat ? ' feat' : ''}${vSk.includes(i) ? ' lgt-cv' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}><span className="lgt-cn">{s.n}</span><h3>{s.title}</h3><p>{s.desc}</p></div>))}</div>{SOLUTIONS.length > 6 && <div className="lgt-sm"><button className="lgt-bm" onClick={() => setShowAll(p => !p)}>{showAll ? 'Show fewer ↑' : `Show all ${SOLUTIONS.length} solutions ↓`}</button></div>}</div></section>
         <section className="lgt-sec lgt-sec-alt"><div className="lgt-in"><div className={`lgt-rv${vis.has('stk') ? ' lgt-ok' : ''}`} ref={el => { secR.current['stk'] = el; }}><span className="lgt-sey">Technology Stack</span><h2 className="lgt-sh">Logistics Technology We Work With</h2><p className="lgt-sd">React Native, Node.js, Google OR-Tools, FedEx/UPS/DHL APIs, Samsara telematics, PostGIS, AWS IoT, and the full logistics integration ecosystem.</p></div><div className="lgt-tec-g" ref={stGr}>{TECH_STACK.map((g, i) => (<div key={g.group} className={`lgt-tc2${vSt.includes(i) ? ' lgt-sv2' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}><div className="lgt-tg" style={{ color: g.color, borderBottomColor: g.color + '33' }}>{g.group}</div><div className="lgt-pills">{g.items.map(it => <span key={it} className="lgt-pill" style={{ color: g.color, background: g.color + '12', borderColor: g.color + '30' }}>{it}</span>)}</div></div>))}</div></div></section>
         <section className="lgt-sec"><div className="lgt-in"><div className={`lgt-rv${vis.has('eng') ? ' lgt-ok' : ''}`} ref={el => { secR.current['eng'] = el; }}><span className="lgt-sey">Engagement Models</span><h2 className="lgt-sh">How We Work with Logistics Companies</h2><p className="lgt-sd">Custom TMS/WMS build, last-mile delivery platform, or carrier and ERP integration sprint - structured for operational environments and phased rollouts.</p></div><div className="lgt-en-g" ref={enR}>{ENGAGEMENT.map((m, i) => (<div key={m.id} className={`lgt-en${m.feat ? ' feat' : ''}${vEn.includes(i) ? ' lgt-ev' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><span className="lgt-en-b" style={{ color: m.bc, borderColor: m.bc + '44', background: m.bc + '14' }}>{m.badge}</span><div className="lgt-en-i"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke={m.feat ? '#D97706' : ac} strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d={m.icon} /></svg></div><div className="lgt-en-n">{m.name}</div><div className="lgt-en-h">{m.headline}</div><div className="lgt-en-d">{m.desc}</div><div className="lgt-en-ll">Best for</div><ul className="lgt-en-li">{m.best.map(b => <li key={b}>{b}</li>)}</ul><span className="lgt-en-tl">{m.tl}</span><Link href="#contact" className="lgt-en-a">Get a free estimate →</Link></div>))}</div></div></section>

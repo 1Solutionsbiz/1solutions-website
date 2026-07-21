@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -73,25 +75,13 @@ const FAQS = [
   { q: 'What tech stack do you use for SaaS products?', a: 'Frontend: React/Next.js with TypeScript. Backend: Node.js/NestJS or Python/Django/FastAPI. Database: PostgreSQL (with RLS). Auth: Auth0, Clerk, or NextAuth.js. Billing: Stripe. Analytics: Segment, Amplitude. Deployment: Kubernetes on AWS or GCP. CI/CD: GitHub Actions.' },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => { if (!start) return; const n = parseInt(target.replace(/\D/g, ''), 10); if (!n) return; let t0 = null; const s = ts => { if (!t0) t0 = ts; const p = Math.min((ts - t0) / duration, 1); setCount(Math.floor((1 - Math.pow(1 - p, 3)) * n)); if (p < 1) requestAnimationFrame(s); }; requestAnimationFrame(s); }, [start, target, duration]);
-  return count;
-}
-function StatItem({ label, val, started }) {
-  const n = useCountUp(val, 1800, started);
-  const sfx = val.replace(/[\d,]/g, '');  return (<div className="sas-sc"><div className="sas-sv">{started ? n + sfx : val}</div><div className="sas-sl">{label}</div></div>);
-}
-
 export default function SaaSDevelopment() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [ss, setSs] = useState(false);
   const [vis, setVis] = useState(new Set());
   const [vSk, setVSk] = useState([]); const [vEn, setVEn] = useState([]); const [vWh, setVWh] = useState([]); const [vTe, setVTe] = useState([]); const [vSt, setVSt] = useState([]);
-  const stR = useRef(null); const secR = useRef({});
+  const secR = useRef({});
   const skR = useRef(null); const enR = useRef(null); const whR = useRef(null); const teR = useRef(null); const stGr = useRef(null);
-  useEffect(() => { if (!stR.current) return; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setSs(true); o.disconnect(); } }, { threshold: 0.4 }); o.observe(stR.current); return () => o.disconnect(); }, []);
   useEffect(() => {
     const pairs = [[skR, SOLUTIONS.length, setVSk], [enR, 3, setVEn], [whR, WHY.length, setVWh], [teR, 3, setVTe], [stGr, TECH_STACK.length, setVSt]];
     const obs = pairs.map(([ref, count, setter]) => { if (!ref.current) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { Array.from({ length: count }, (_, i) => setTimeout(() => setter(p => p.includes(i) ? p : [...p, i]), i * 75)); o.disconnect(); } }, { threshold: 0.05 }); o.observe(ref.current); return o; });
@@ -139,22 +129,6 @@ export default function SaaSDevelopment() {
           .sas-o1{width:800px;height:800px;background:radial-gradient(circle,rgba(15,76,129,.16) 0%,transparent 70%);top:-220px;right:-200px}
           .sas-o2{width:700px;height:700px;background:radial-gradient(circle,rgba(29,78,216,.12) 0%,transparent 70%);bottom:0;left:-200px}
           .sas-o3{width:480px;height:480px;background:radial-gradient(circle,rgba(217,119,6,.08) 0%,transparent 70%);top:42%;left:-90px}}.sas-bc li::after{content:'/';opacity:.45}.sas-bc li:last-child::after{display:none};text-decoration:none}
-          .sas-hero{position:relative;z-index:2;text-align:center;max-width:940px;margin:0 auto;padding:44px 40px 28px}
-          .sas-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:${ac};margin-bottom:14px}
-          .sas-hero h1{font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .sas-desc{font-size:16px;color:${txt2};line-height:1.65;max-width:720px;margin:0 auto 22px}
-          .sas-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-bottom:24px}
-          .sas-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:5px 13px;font-size:12px;font-weight:600;color:${txt};box-shadow:0 2px 8px rgba(15,76,129,.07)}
-          .sas-dot{width:7px;height:7px;border-radius:50%;background:${ac2};flex-shrink:0}
-          .sas-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .sas-p{display:inline-block;padding:13px 34px;background:${ac};color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(15,76,129,.28)}
-          .sas-p:hover{background:${txt};transform:translateY(-2px)}
-          .sas-g{display:inline-block;padding:13px 34px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:${txt};font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .sas-g:hover{background:rgba(255,255,255,.85);border-color:rgba(15,76,129,.5);transform:translateY(-2px)}
-          .sas-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:920px;margin:26px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(15,76,129,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .sas-sc{padding:18px 16px;text-align:center;border-right:1px solid rgba(15,76,129,.10)}.sas-sc:last-child{border-right:none}
-          .sas-sv{font-size:28px;font-weight:900;color:${ac2};letter-spacing:-.5px;line-height:1}
-          .sas-sl{font-size:11px;color:${txt2};font-weight:500;margin-top:5px}
           .sas-sec{padding:72px 40px;position:relative;z-index:1}
           .sas-sec-alt{background:rgba(239,246,255,.55);border-top:1px solid rgba(15,76,129,.08);border-bottom:1px solid rgba(15,76,129,.08)}
           .sas-in{max-width:1300px;margin:0 auto}
@@ -265,8 +239,8 @@ export default function SaaSDevelopment() {
           .sas-rb{background:rgba(45,27,105,.09);border-color:rgba(45,27,105,.28);color:#2d1b69}
           .sas-rc{background:rgba(120,53,15,.09);border-color:rgba(120,53,15,.28);color:#78350f}
           .sas-rd{background:rgba(20,83,45,.09);border-color:rgba(20,83,45,.28);color:#14532d}
-          @media(max-width:1024px){.sas-hero h1,.sas-sh,.sas-fq h2{font-size:34px}.sas-sk-g{grid-template-columns:repeat(2,1fr)}.sas-tec-g{grid-template-columns:repeat(2,1fr)}.sas-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.sas-en.feat{transform:none}.sas-en.feat.sas-ev{transform:none}.sas-en.feat.sas-ev:hover{transform:translateY(-4px)}.sas-wy-g{grid-template-columns:repeat(2,1fr)}.sas-tg2{grid-template-columns:1fr}.sas-ct-g{grid-template-columns:1fr}}
-          @media(max-width:768px){.sas-bc,.sas-hero,.sas-sec,.sas-ct,.sas-fq,.sas-rel{padding-left:20px;padding-right:20px}.sas-hero{padding-top:28px;padding-bottom:16px}.sas-hero h1{font-size:26px}.sas-stats{grid-template-columns:1fr 1fr}.sas-sc:nth-child(2){border-right:none}.sas-sc:nth-child(3),.sas-sc:nth-child(4){border-top:1px solid rgba(15,76,129,.10)}.sas-sc:nth-child(4){border-right:none}.sas-sk-g,.sas-tec-g,.sas-wy-g{grid-template-columns:1fr}.sas-fr{grid-template-columns:1fr}.sas-cth{font-size:26px}}
+          @media(max-width:1024px){.sas-sh,.sas-fq h2{font-size:34px}.sas-sk-g{grid-template-columns:repeat(2,1fr)}.sas-tec-g{grid-template-columns:repeat(2,1fr)}.sas-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.sas-en.feat{transform:none}.sas-en.feat.sas-ev{transform:none}.sas-en.feat.sas-ev:hover{transform:translateY(-4px)}.sas-wy-g{grid-template-columns:repeat(2,1fr)}.sas-tg2{grid-template-columns:1fr}.sas-ct-g{grid-template-columns:1fr}}
+          @media(max-width:768px){.sas-bc,.sas-sec,.sas-ct,.sas-fq,.sas-rel{padding-left:20px;padding-right:20px}.sas-sk-g,.sas-tec-g,.sas-wy-g{grid-template-columns:1fr}.sas-fr{grid-template-columns:1fr}.sas-cth{font-size:26px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
@@ -292,14 +266,19 @@ export default function SaaSDevelopment() {
 </Head>
       <div className="sas-page">
         <div className="sas-orb sas-o1" /><div className="sas-orb sas-o2" /><div className="sas-orb sas-o3" />
-        <section className="sas-hero">
-          <span className="sas-ey">SaaS Industry</span>
-          <h1>SaaS Application Development Company - B2B SaaS, Multi-Tenant Architecture & Stripe Billing</h1>
-          <p className="sas-desc">1Solutions builds B2B and B2C SaaS products - multi-tenant architecture (PostgreSQL RLS, schema-per-tenant), Stripe subscription billing, SSO/SAML enterprise auth, self-serve onboarding, integrations marketplace, white-labelling, and SOC 2 compliance. 80+ SaaS products shipped. 15+ years.</p>
-          <div className="sas-tr">{['Multi-Tenant Architecture','Stripe Subscription Billing','SSO/SAML Enterprise Auth','Self-Serve Onboarding','SOC 2 Compliance'].map(b => (<div className="sas-badge" key={b}><span className="sas-dot" />{b}</div>))}</div>
-          <div className="sas-ctas"><Link href="#contact" className="sas-p">Discuss Your SaaS Product</Link><Link href="#solutions" className="sas-g">View Solutions →</Link></div>
-        </section>
-        <div className="sas-stats" ref={stR}>{[['80+','SaaS Products Shipped'],['15+','Years Dev Experience'],['$1M+','Avg ARR Reached by Clients'],['99.9%','Platform Uptime SLA']].map(([v, l]) => <StatItem key={l} label={l} val={v} started={ss} />)}</div>
+        <ServiceHero
+          eyebrow="SaaS Industry"
+          title={<>SaaS Application Development Company - <AuroraText>B2B SaaS, Multi-Tenant Architecture & Stripe Billing</AuroraText></>}
+          subtext="1Solutions builds B2B and B2C SaaS products - multi-tenant architecture (PostgreSQL RLS, schema-per-tenant), Stripe subscription billing, SSO/SAML enterprise auth, self-serve onboarding, integrations marketplace, white-labelling, and SOC 2 compliance. 80+ SaaS products shipped. 15+ years."
+          primaryCta={{ label: 'Discuss Your SaaS Product', href: '#contact' }}
+          secondaryCta={{ label: 'View Solutions', href: '#solutions' }}
+          stats={[
+            { label: 'SaaS Products Shipped', value: '80', suffix: '+' },
+            { label: 'Years Dev Experience', value: '15', suffix: '+' },
+            { label: 'Avg ARR Reached by Clients', value: '1', prefix: '$', suffix: 'M+' },
+            { label: 'Platform Uptime SLA', value: '9', prefix: '99.', suffix: '%' },
+          ]}
+        />
         <section id="solutions" className="sas-sec"><div className="sas-in"><div className={`sas-rv${vis.has('sk') ? ' sas-ok' : ''}`} ref={el => { secR.current['sk'] = el; }}><span className="sas-sey">SaaS Solutions</span><h2 className="sas-sh">What We Build for SaaS Companies</h2><p className="sas-sd">SaaS MVP, multi-tenancy architecture, Stripe billing, onboarding flows, integrations, white-labelling, analytics, admin tooling, performance, and SOC 2 compliance engineering.</p></div><div className="sas-sk-g" ref={skR}>{visS.map((s, i) => (<div key={s.n} className={`sas-card${s.feat ? ' feat' : ''}${vSk.includes(i) ? ' sas-cv' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}><span className="sas-cn">{s.n}</span><h3>{s.title}</h3><p>{s.desc}</p></div>))}</div>{SOLUTIONS.length > 6 && <div className="sas-sm"><button className="sas-bm" onClick={() => setShowAll(p => !p)}>{showAll ? 'Show fewer ↑' : `Show all ${SOLUTIONS.length} solutions ↓`}</button></div>}</div></section>
         <section className="sas-sec sas-sec-alt"><div className="sas-in"><div className={`sas-rv${vis.has('stk') ? ' sas-ok' : ''}`} ref={el => { secR.current['stk'] = el; }}><span className="sas-sey">Technology Stack</span><h2 className="sas-sh">SaaS Technology We Use</h2><p className="sas-sd">React/Next.js, Node.js/NestJS, PostgreSQL with RLS, Stripe, Auth0/Clerk, Kubernetes, Segment, and the full modern SaaS stack.</p></div><div className="sas-tec-g" ref={stGr}>{TECH_STACK.map((g, i) => (<div key={g.group} className={`sas-tc2${vSt.includes(i) ? ' sas-sv2' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}><div className="sas-tg" style={{ color: g.color, borderBottomColor: g.color + '33' }}>{g.group}</div><div className="sas-pills">{g.items.map(it => <span key={it} className="sas-pill" style={{ color: g.color, background: g.color + '12', borderColor: g.color + '30' }}>{it}</span>)}</div></div>))}</div></div></section>
         <section className="sas-sec"><div className="sas-in"><div className={`sas-rv${vis.has('eng') ? ' sas-ok' : ''}`} ref={el => { secR.current['eng'] = el; }}><span className="sas-sey">Engagement Models</span><h2 className="sas-sh">How We Work with SaaS Companies</h2><p className="sas-sd">Full SaaS product build, scale and modernisation engineering, or independent technical audit - matched to your product stage.</p></div><div className="sas-en-g" ref={enR}>{ENGAGEMENT.map((m, i) => (<div key={m.id} className={`sas-en${m.feat ? ' feat' : ''}${vEn.includes(i) ? ' sas-ev' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><span className="sas-en-b" style={{ color: m.bc, borderColor: m.bc + '44', background: m.bc + '14' }}>{m.badge}</span><div className="sas-en-i"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke={m.feat ? '#D97706' : ac2} strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d={m.icon} /></svg></div><div className="sas-en-n">{m.name}</div><div className="sas-en-h">{m.headline}</div><div className="sas-en-d">{m.desc}</div><div className="sas-en-ll">Best for</div><ul className="sas-en-li">{m.best.map(b => <li key={b}>{b}</li>)}</ul><span className="sas-en-tl">{m.tl}</span><Link href="#contact" className="sas-en-a">Get a free estimate →</Link></div>))}</div></div></section>

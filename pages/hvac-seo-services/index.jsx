@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'HVAC Local SEO', desc: 'Dominate local search for HVAC installation, repair, and maintenance in your service area - Google Business Profile optimisation, citation building, and geo-targeted keyword strategy for "AC repair near me," "heating installation," and emergency HVAC searches.' },
@@ -44,13 +46,6 @@ const FAQS = [
   { q: 'Can you help HVAC companies market maintenance plans?', a: 'Yes. Annual maintenance plans are one of the best growth levers for an HVAC company because they create predictable recurring revenue, smooth seasonal demand volatility, and increase customer lifetime value dramatically. We build maintenance plan marketing through: email campaigns to previous residential customers offering a maintenance plan at a compelling annual price; post-installation follow-up sequences that move customers from a one-time installation to an annual plan; seasonal campaigns (spring and autumn) that use the natural tune-up reminder as a lead-in to selling the annual plan; and content marketing (blog posts, emails) that educates homeowners on the value of annual HVAC servicing. A well-run maintenance plan campaign can add significant recurring revenue without requiring any new customer acquisition.' },
 ];
 
-const STATS = [
-  { label: 'HVAC Clients', val: '95+' },
-  { label: 'Avg Lead Growth', val: '+2.9×' },
-  { label: 'Years Experience', val: '12+' },
-  { label: 'Client Retention', val: '93%' },
-];
-
 export default function HvacSeoServices() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleCards, setVisibleCards] = useState([]);
@@ -75,22 +70,11 @@ export default function HvacSeoServices() {
         <style>{`
           .hvacseo-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .hvacseo-page *,.hvacseo-page *::before,.hvacseo-page *::after{box-sizing:border-box}
-          .hvacseo-hero{background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 30%,#bfdbfe 65%,#eff6ff 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .hvacseo-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .hvacseo-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(29,78,216,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .hvacseo-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.hvacseo-bc a:hover{color:#3B82F6}.hvacseo-bc span{color:#d1d5db}
-          .hvacseo-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#3B82F6;margin-bottom:28px}
-          .hvacseo-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .hvacseo-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
           .hvacseo-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .hvacseo-btn-p{display:inline-flex;align-items:center;gap:8px;background:#3B82F6;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(59,130,246,0.28)}
           .hvacseo-btn-p:hover{background:#1E3A8A;box-shadow:0 8px 32px rgba(59,130,246,0.38);transform:translateY(-2px)}
           .hvacseo-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.18);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
           .hvacseo-btn-s:hover{border-color:#3B82F6;color:#3B82F6;transform:translateY(-2px)}
-          .hvacseo-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(59,130,246,0.07)}
-          .hvacseo-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(59,130,246,0.08)}.hvacseo-stat:last-child{border-right:none}
-          .hvacseo-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .hvacseo-stat-v{font-size:1.6rem;font-weight:900;color:#3B82F6;letter-spacing:-0.5px}
           .hvacseo-svc{background:#f8fafd;padding:80px 40px}.hvacseo-svc-in{max-width:1280px;margin:0 auto}
           .hvacseo-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#3B82F6;margin-bottom:10px;display:block}
           .hvacseo-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
@@ -136,25 +120,26 @@ export default function HvacSeoServices() {
           .hvacseo-cta-t{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;line-height:1.2}
           .hvacseo-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           @media(max-width:1024px){.hvacseo-grid{grid-template-columns:repeat(2,1fr)}.hvacseo-why-grid{grid-template-columns:repeat(2,1fr)}}
-          @media(max-width:768px){.hvacseo-hero,.hvacseo-svc,.hvacseo-sv,.hvacseo-proc,.hvacseo-why,.hvacseo-faq,.hvacseo-cta{padding:60px 24px}.hvacseo-hero{padding-top:60px;padding-bottom:0}.hvacseo-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.hvacseo-stat:nth-child(2){border-right:none}.hvacseo-grid{grid-template-columns:1fr}.hvacseo-why-grid{grid-template-columns:1fr}.hvacseo-step{grid-template-columns:56px 1fr}.hvacseo-btns{flex-direction:column;align-items:center}}
+          @media(max-width:768px){.hvacseo-svc,.hvacseo-sv,.hvacseo-proc,.hvacseo-why,.hvacseo-faq,.hvacseo-cta{padding:60px 24px}.hvacseo-grid{grid-template-columns:1fr}.hvacseo-why-grid{grid-template-columns:1fr}.hvacseo-step{grid-template-columns:56px 1fr}.hvacseo-btns{flex-direction:column;align-items:center}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
       <div className="hvacseo-page">
-        <section className="hvacseo-hero"><div className="hvacseo-o1"/><div className="hvacseo-o2"/>
-          <div className="hvacseo-in">
-            <span className="hvacseo-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#3B82F6',display:'inline-block'}}/> Local SEO · Emergency HVAC Ads · Review Generation</span>
-            <h1 className="hvacseo-h1">HVAC SEO Services - More Leads, More Calls, More Jobs</h1>
-            <p className="hvacseo-sub">SEO and digital marketing built specifically for HVAC companies - local map pack dominance, emergency call campaigns, seasonal marketing, and review generation that generates consistent high-quality HVAC leads.</p>
-            <div className="hvacseo-btns">
-              <Link href="/contact-us" className="hvacseo-btn-p">Get a Free HVAC Marketing Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/local-seo-services" className="hvacseo-btn-s">Local SEO Services</Link>
-            </div>
-            <div className="hvacseo-stats">{STATS.map(s => <div key={s.label} className="hvacseo-stat"><div className="hvacseo-stat-l">{s.label}</div><div className="hvacseo-stat-v">{s.val}</div></div>)}</div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Local SEO · Emergency HVAC Ads · Review Generation"
+          title={<>HVAC SEO Services - <AuroraText>More Leads, More Calls, More Jobs</AuroraText></>}
+          subtext="SEO and digital marketing built specifically for HVAC companies - local map pack dominance, emergency call campaigns, seasonal marketing, and review generation that generates consistent high-quality HVAC leads."
+          primaryCta={{ label: 'Get a Free HVAC Marketing Audit', href: '/contact-us' }}
+          secondaryCta={{ label: 'Local SEO Services', href: '/local-seo-services' }}
+          stats={[
+            { label: 'HVAC Clients', value: '95', suffix: '+' },
+            { label: 'Avg Lead Growth', value: '9', prefix: '+2.', suffix: '×' },
+            { label: 'Years Experience', value: '12', suffix: '+' },
+            { label: 'Client Retention', value: '93', suffix: '%' },
+          ]}
+        />
         <section className="hvacseo-svc"><div className="hvacseo-svc-in">
           <span className="hvacseo-ey2">What We Do</span><h2 className="hvacseo-ttl">HVAC SEO &amp; Digital Marketing Services</h2>
           <p className="hvacseo-desc">Every digital marketing channel an HVAC company needs - local visibility, emergency call ads, content, review management, and maintenance plan campaigns.</p>

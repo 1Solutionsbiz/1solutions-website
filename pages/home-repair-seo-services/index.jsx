@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title: 'Handyman Keyword Research', desc: 'Comprehensive keyword mapping covering handyman near me, home repair, odd jobs, fixture installation, drywall repair, tile work, and seasonal maintenance terms - so every search that leads to a job booking lands on your site first.' },
@@ -85,29 +87,10 @@ export default function HomeRepairSeoServices() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           * { box-sizing: border-box; }
-          .hrseo-hero { position:relative;overflow:hidden;padding:100px 40px 90px;background:linear-gradient(135deg,rgba(74,40,0,0.10) 0%,rgba(255,255,255,0.72) 50%,rgba(74,40,0,0.06) 100%); }
-          .hrseo-orb1 { position:absolute;top:-120px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(74,40,0,0.13) 0%,transparent 70%);pointer-events:none;filter:blur(10px); }
-          .hrseo-orb2 { position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(180,100,0,0.08) 0%,transparent 70%);pointer-events:none;filter:blur(8px); }
-          .hrseo-inner { max-width:1200px;margin:0 auto;position:relative;z-index:1; }
-          .hrseo-eyebrow { display:inline-flex;align-items:center;gap:8px;background:rgba(74,40,0,0.10);border:1px solid rgba(74,40,0,0.22);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#4a2800;margin-bottom:24px; }
-          .hrseo-h1 { font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .hrseo-desc { font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:660px; }
-          .hrseo-btns { display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px; }
           .hrseo-btn-p { display:inline-flex;align-items:center;gap:8px;background:#4a2800;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 6px 24px rgba(74,40,0,0.28); }
           .hrseo-btn-p:hover { background:#6a3a00;transform:translateY(-2px); }
           .hrseo-btn-s { display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.7);color:#4a2800;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;border:1.5px solid rgba(74,40,0,0.20);transition:all 0.25s;backdrop-filter:blur(8px); }
           .hrseo-btn-s:hover { background:#fff;transform:translateY(-2px); }
-          .hrseo-trust { display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-bottom:48px; }
-          .hrseo-badge { display:flex;align-items:center;gap:6px;font-size:12px;color:#6b7280;font-weight:500; }
-          .hrseo-stats-bar { display:flex;border:1px solid rgba(74,40,0,0.12);border-radius:16px;background:rgba(255,255,255,0.75);backdrop-filter:blur(12px);overflow:hidden;max-width:720px; }
-          .hrseo-stat-item { flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(74,40,0,0.08); }
-          .hrseo-stat-item:last-child { border-right:none; }
-          .hrseo-stat-num { font-size:1.6rem;font-weight:900;color:#4a2800;line-height:1;letter-spacing:-1px; }
-          .hrseo-stat-lbl { font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px; }
-
-
-
-
 
           .hrseo-sec { padding:80px 40px; }
           .hrseo-sec-inner { max-width:1200px;margin:0 auto; }
@@ -155,8 +138,7 @@ export default function HomeRepairSeoServices() {
           .hrseo-cta-p { font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px; }
           @media (max-width:900px) { .hrseo-grid3,.hrseo-res-grid { grid-template-columns:1fr 1fr; } }
           @media (max-width:600px) {
-            .hrseo-hero,.hrseo-sec,.hrseo-results,.hrseo-cta { padding-left:20px;padding-right:20px; }
-            .hrseo-hero { padding-top:60px;padding-bottom:50px; }
+            .hrseo-sec,.hrseo-results,.hrseo-cta { padding-left:20px;padding-right:20px; }
             .hrseo-grid3,.hrseo-res-grid { grid-template-columns:1fr; }
           }
         
@@ -165,45 +147,19 @@ export default function HomeRepairSeoServices() {
         </style>
       </Head>
 
-      <section className="hrseo-hero">
-        <div className="hrseo-orb1" /><div className="hrseo-orb2" />
-        <div className="hrseo-inner">
-          <span className="hrseo-eyebrow">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
-            Home Repair SEO - Handyman · Contractor · Renovation
-          </span>
-          <h1 className="hrseo-h1">Home Repair SEO That Turns<br/>Local Searches Into Booked Jobs</h1>
-          <p className="hrseo-desc">1Solutions builds home repair SEO strategies that put your business in front of homeowners at every stage - from the first Google search to the moment they pick up the phone. Trade-specific pages, GBP optimisation, and seasonal campaigns built for the home services industry.</p>
-          <div className="hrseo-btns">
-            <a href="#contact" className="hrseo-btn-p">
-              Get Your Free Home Services SEO Audit
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <Link href="/affordable-seo-packages/" className="hrseo-btn-s">View SEO Packages</Link>
-          </div>
-          <div className="hrseo-trust">
-            {['Home Services Niche Expertise','Seasonal Campaigns Built-In','Trade-Specific Landing Pages','No Lock-in Contracts'].map(t => (
-              <span key={t} className="hrseo-badge">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4a2800" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                {t}
-              </span>
-            ))}
-          </div>
-          <div className="hrseo-stats-bar">
-            {[
-              { num:'86%', lbl:'of homeowners use search to find contractors' },
-              { num:'$1,200', lbl:'avg home repair project value' },
-              { num:'78%', lbl:'of home services leads from local search' },
-              { num:'72%', lbl:'of searchers call within 5 minutes' },
-            ].map(s => (
-              <div key={s.lbl} className="hrseo-stat-item">
-                <span className="hrseo-stat-num">{s.num}</span>
-                <span className="hrseo-stat-lbl">{s.lbl}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="Home Repair SEO - Handyman · Contractor · Renovation"
+        title={<>Home Repair SEO That Turns <AuroraText>Local Searches Into Booked Jobs</AuroraText></>}
+        subtext="1Solutions builds home repair SEO strategies that put your business in front of homeowners at every stage - from the first Google search to the moment they pick up the phone. Trade-specific pages, GBP optimisation, and seasonal campaigns built for the home services industry."
+        primaryCta={{ label: 'Get Your Free Home Services SEO Audit', href: '#contact' }}
+        secondaryCta={{ label: 'View SEO Packages', href: '/affordable-seo-packages/' }}
+        stats={[
+          { label: 'Homeowners Who Search for Contractors', value: '86', suffix: '%' },
+          { label: 'Avg Home Repair Project Value', value: '1,200', prefix: '$' },
+          { label: 'Home Services Leads From Local Search', value: '78', suffix: '%' },
+          { label: 'Searchers Call Within 5 Minutes', value: '72', suffix: '%' },
+        ]}
+      />
 
       <section className="hrseo-sec hrseo-bg" id="services">
         <div className="hrseo-sec-inner">

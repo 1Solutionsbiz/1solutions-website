@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'Bug Fixing & Crash Resolution', desc: 'Rapid identification and resolution of bugs, crashes, and functional defects - with root cause analysis to prevent recurrence, not just one-time patches.' },
@@ -76,13 +78,6 @@ const FAQS = [
     q: 'Can I scale up my maintenance plan if my needs change?',
     a: 'Yes - our maintenance plans are designed to flex with your needs. You can upgrade your plan at any time if your app grows in complexity, you launch new features, or you need a faster SLA. You can also add one-off development hours outside your monthly block when you have a larger feature request. We review your usage with you monthly and proactively recommend adjustments if your actual needs are consistently above or below your current plan scope. There are no lock-in periods - you can cancel with 30 days\' notice.',
   },
-];
-
-const STATS = [
-  { label: 'Apps Actively Maintained', val: '200+' },
-  { label: 'Uptime SLA', val: '99.9%' },
-  { label: 'Avg Response (Critical)', val: '<4 hrs' },
-  { label: 'Avg Client Partnership', val: '5+ yrs' },
 ];
 
 export default function AppMaintenanceServices() {
@@ -186,78 +181,6 @@ export default function AppMaintenanceServices() {
           }
           .am-page *, .am-page *::before, .am-page *::after { box-sizing: border-box; }
 
-          /* ── Hero ── */
-          .am-hero {
-            background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 25%, #e0e7ff 55%, #f0f9ff 100%);
-            position: relative;
-            overflow: hidden;
-            padding: 80px 40px 0;
-          }
-          .am-hero-orb1 {
-            position: absolute; top: -100px; right: -100px;
-            width: 560px; height: 560px; border-radius: 50%;
-            background: radial-gradient(circle, rgba(109,40,217,0.12) 0%, transparent 65%);
-            pointer-events: none; filter: blur(30px);
-          }
-          .am-hero-orb2 {
-            position: absolute; bottom: 0; left: -80px;
-            width: 440px; height: 440px; border-radius: 50%;
-            background: radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 65%);
-            pointer-events: none; filter: blur(30px);
-          }
-          .am-hero-inner {
-            max-width: 1280px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-            text-align: center;
-          }
-
-
-
-          .am-eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(109,40,217,0.07);
-            border: 1px solid rgba(109,40,217,0.18);
-            border-radius: 100px;
-            padding: 5px 14px;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: #6D28D9;
-            margin-bottom: 28px;
-          }
-          .am-hero-h1 {
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
-            font-weight: 900;
-            line-height: 1.1;
-            letter-spacing: -1px;
-            background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 20px;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-          }
-          .am-hero-sub {
-            font-size: 1.08rem;
-            color: #4A6080;
-            line-height: 1.75;
-            max-width: 660px;
-            margin: 0 auto 36px;
-          }
-          .am-hero-btns {
-            display: flex;
-            gap: 14px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 56px;
-          }
           .am-btn-primary {
             display: inline-flex;
             align-items: center;
@@ -293,21 +216,6 @@ export default function AppMaintenanceServices() {
             transition: all 0.25s;
           }
           .am-btn-secondary:hover { border-color: #6D28D9; color: #6D28D9; transform: translateY(-2px); }
-          .am-stats-bar {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            max-width: 900px;
-            margin: 0 auto;
-            background: rgba(255,255,255,0.55);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255,255,255,0.85);
-            border-radius: 20px 20px 0 0;
-            box-shadow: 0 4px 24px rgba(109,40,217,0.07);
-          }
-          .am-stat { padding: 20px 24px; text-align: center; border-right: 1px solid rgba(109,40,217,0.08); }
-          .am-stat:last-child { border-right: none; }
-          .am-stat-label { font-size: 11px; color: #6b7280; font-weight: 500; margin-bottom: 4px; }
-          .am-stat-val { font-size: 1.6rem; font-weight: 900; color: #6D28D9; letter-spacing: -0.5px; }
 
           /* ── Services ── */
           .am-services-section { background: #f8fafd; padding: 80px 40px; box-shadow: 0 -20px 60px rgba(109,40,217,0.06); }
@@ -401,15 +309,11 @@ export default function AppMaintenanceServices() {
             .am-why-grid { grid-template-columns: repeat(2, 1fr); }
           }
           @media (max-width: 768px) {
-            .am-hero { padding: 60px 24px 0; }
             .am-services-section, .am-process-section, .am-why-section,
             .am-faq-section, .am-cta-section { padding: 60px 24px; }
-            .am-stats-bar { grid-template-columns: repeat(2, 1fr); border-radius: 16px 16px 0 0; }
-            .am-stat:nth-child(2) { border-right: none; }
             .am-services-grid { grid-template-columns: 1fr; }
             .am-why-grid { grid-template-columns: 1fr; }
             .am-process-step { grid-template-columns: 56px 1fr; }
-            .am-hero-btns { flex-direction: column; align-items: center; }
           }
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
@@ -420,39 +324,19 @@ export default function AppMaintenanceServices() {
       <div className="am-page">
 
         {/* ── HERO ── */}
-        <section className="am-hero">
-          <div className="am-hero-orb1" />
-          <div className="am-hero-orb2" />
-          <div className="am-hero-inner">
-            <span className="am-eyebrow">
-              <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#6D28D9', display: 'inline-block' }} />
-              Mobile Development
-            </span>
-            <h1 className="am-hero-h1">
-              App Maintenance &amp; Support Services That Keep Your App Running Flawlessly
-            </h1>
-            <p className="am-hero-sub">
-              Proactive maintenance plans for mobile and web apps - bug fixing, OS compatibility, security patching, performance monitoring, and App Store compliance. Built for businesses that can&rsquo;t afford downtime.
-            </p>
-            <div className="am-hero-btns">
-              <Link href="/contact-us" className="am-btn-primary">
-                Get a Maintenance Plan
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </Link>
-              <Link href="/website-support-maintenance-services" className="am-btn-secondary">
-                See Website Maintenance
-              </Link>
-            </div>
-            <div className="am-stats-bar">
-              {STATS.map(s => (
-                <div key={s.label} className="am-stat">
-                  <div className="am-stat-label">{s.label}</div>
-                  <div className="am-stat-val">{s.val}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Mobile Development"
+          title={<>App Maintenance & Support Services That <AuroraText>Keep Your App Running Flawlessly</AuroraText></>}
+          subtext="Proactive maintenance plans for mobile and web apps - bug fixing, OS compatibility, security patching, performance monitoring, and App Store compliance. Built for businesses that can't afford downtime."
+          primaryCta={{ label: 'Get a Maintenance Plan', href: '/contact-us' }}
+          secondaryCta={{ label: 'See Website Maintenance', href: '/website-support-maintenance-services' }}
+          stats={[
+            { label: 'Apps Actively Maintained', value: '200', suffix: '+' },
+            { label: 'Uptime SLA', value: '9', prefix: '99.', suffix: '%' },
+            { label: 'Avg Response (Critical)', value: '4', prefix: '<', suffix: ' hrs' },
+            { label: 'Avg Client Partnership', value: '5', suffix: '+ yrs' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="am-services-section">

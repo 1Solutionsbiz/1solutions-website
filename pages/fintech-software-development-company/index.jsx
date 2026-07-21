@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 /* ─── Schema ─────────────────────────────────────────────────── */
 const SCHEMA = {
@@ -185,40 +187,10 @@ const FAQS = [
   { q: 'Can you build AI-powered fraud detection and credit scoring into fintech software?', a: "Yes. We have built real-time fraud detection systems using gradient boosting, neural networks, and rule-based engines operating at sub-100ms latency. We also develop alternative credit scoring models using transaction history, cash flow analysis, and behavioural data, as well as AI-powered AML transaction monitoring. We use TensorFlow, PyTorch, and scikit-learn on PCI DSS-compliant cloud infrastructure." },
 ];
 
-/* ─── Hooks ──────────────────────────────────────────────────── */
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const num = parseInt(target.replace(/\D/g, ''), 10);
-    if (!num) return;
-    let t0 = null;
-    const step = ts => {
-      if (!t0) t0 = ts;
-      const p = Math.min((ts - t0) / duration, 1);
-      setCount(Math.floor((1 - Math.pow(1 - p, 3)) * num));
-      if (p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function StatItem({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');  return (
-    <div className="ft-stat-col">
-      <div className="ft-stat-val">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div>
-      <div className="ft-stat-label">{label}</div>
-    </div>
-  );
-}
-
 /* ─── Component ──────────────────────────────────────────────── */
 export default function FintechSoftwareDevelopment() {
   const [showAllSvc, setShowAllSvc] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleSvcCards, setVisibleSvcCards] = useState([]);
   const [visibleEngCards, setVisibleEngCards] = useState([]);
@@ -226,20 +198,12 @@ export default function FintechSoftwareDevelopment() {
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const [visibleStackCards, setVisibleStackCards] = useState([]);
 
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const svcGridRef = useRef(null);
   const engGridRef = useRef(null);
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
   const stackGridRef = useRef(null);
-
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStatsStarted(true); obs.disconnect(); } }, { threshold: 0.4 });
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   useEffect(() => {
     const pairs = [
@@ -321,37 +285,6 @@ export default function FintechSoftwareDevelopment() {
 
 
 
-
-          /* Hero */
-          .ft-hero { position:relative;z-index:2;text-align:center;max-width:900px;margin:0 auto;padding:44px 40px 32px; }
-          .ft-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px; }
-          .ft-hero h1 { font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .ft-hero-desc { font-size:16px;color:#3A507A;line-height:1.65;max-width:680px;margin:0 auto 24px; }
-          .ft-trust-row { display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px; }
-          .ft-badge { display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07); }
-          .ft-badge-dot { width:7px;height:7px;border-radius:50%;background:#6366f1;flex-shrink:0; }
-          .ft-ctas { display:flex;flex-wrap:wrap;gap:12px;justify-content:center; }
-          .ft-btn-primary { display:inline-block;padding:14px 36px;background:#0F3460;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(15,52,96,.25); }
-          .ft-btn-primary:hover { background:#6366f1;transform:translateY(-2px); }
-          .ft-btn-ghost { display:inline-block;padding:14px 36px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s; }
-          .ft-btn-ghost:hover { background:rgba(255,255,255,.85);border-color:rgba(99,102,241,.5);transform:translateY(-2px); }
-
-          /* Stats */
-          .ft-stats { position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:28px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95); }
-          .ft-stat-col { padding:18px 16px;text-align:center;border-right:1px solid rgba(15,52,96,.10); }
-          .ft-stat-col:last-child { border-right:none; }
-          .ft-stat-val { font-size:28px;font-weight:900;color:#6366f1;letter-spacing:-.5px;line-height:1; }
-          .ft-stat-label { font-size:11px;color:#4A6080;font-weight:500;margin-top:5px; }
-
-          /* Logos */
-          .ft-logos { position:relative;z-index:2;padding:24px 40px 52px;display:flex;flex-direction:column;align-items:center;gap:14px; }
-          .ft-logos-label { font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6A80A0; }
-          .ft-logos-wrap { width:100%;overflow:hidden; }
-          .ft-logos-track { display:flex;align-items:center;gap:60px;width:max-content;animation:ft-marquee 28s linear infinite; }
-          .ft-logos-track:hover { animation-play-state:paused; }
-          @keyframes ft-marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-          .ft-clogo { height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s; }
-          .ft-clogo:hover { opacity:.85;filter:grayscale(0%); }
 
           /* Shared */
           .ft-s-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block; }
@@ -522,7 +455,7 @@ export default function FintechSoftwareDevelopment() {
 
           /* Responsive */
           @media(max-width:1024px){
-            .ft-hero h1,.ft-s-title,.ft-faq h2 { font-size:36px; }
+            .ft-s-title,.ft-faq h2 { font-size:36px; }
             .ft-svc-grid { grid-template-columns:repeat(2,1fr); }
             .ft-stack-grid { grid-template-columns:repeat(2,1fr); }
             .ft-eng-grid { grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto; }
@@ -534,13 +467,6 @@ export default function FintechSoftwareDevelopment() {
             .ft-contact-grid { grid-template-columns:1fr; }
           }
           @media(max-width:768px){
-            .ft-hero { padding:28px 20px 20px; }
-            .ft-hero h1 { font-size:26px;letter-spacing:-.3px; }
-            .ft-stats { grid-template-columns:1fr 1fr; }
-            .ft-stat-col:nth-child(2) { border-right:none; }
-            .ft-stat-col:nth-child(3) { border-top:1px solid rgba(15,52,96,.10); }
-            .ft-stat-col:nth-child(4) { border-top:1px solid rgba(15,52,96,.10);border-right:none; }
-            .ft-logos { padding:16px 20px 28px; }
             .ft-svc-section,.ft-stack-section,.ft-eng-section,.ft-process-section,.ft-testi,.ft-why-section,.ft-faq,.ft-related { padding:52px 20px; }
             .ft-contact { padding:48px 20px; }
             .ft-svc-grid,.ft-stack-grid,.ft-why-grid { grid-template-columns:1fr; }
@@ -578,53 +504,19 @@ export default function FintechSoftwareDevelopment() {
         <div className="ft-orb ft-orb-3" />
 
         {/* ── HERO ── */}
-        <section className="ft-hero">
-          <span className="ft-eyebrow">Fintech Software Development Company</span>
-          <h1>Custom Fintech Software Development - PCI DSS Compliant, Secure &amp; Scalable</h1>
-          <p className="ft-hero-desc">We design and build digital banking platforms, payment gateways, neobank solutions, investment apps, lending systems, InsurTech, and blockchain products for fintech startups, banks, and financial institutions across the US, UK, Australia, and Canada.</p>
-          <div className="ft-trust-row">
-            {['PCI DSS Compliant','SOC 2 Type II','15+ Years Experience','100+ Fintech Clients','End-to-End Development'].map(b => (
-              <div className="ft-badge" key={b}><span className="ft-badge-dot" />{b}</div>
-            ))}
-          </div>
-          <div className="ft-ctas">
-            <Link href="#contact" className="ft-btn-primary">Start Your Fintech Project</Link>
-            <Link href="#engagement" className="ft-btn-ghost">View Engagement Models →</Link>
-          </div>
-        </section>
-
-        {/* ── STATS ── */}
-        <div className="ft-stats" ref={statsRef}>
-          {[['100+','Fintech Clients'],['300+','Projects Delivered'],['15+','Years Experience'],['98%','Client Retention']].map(([v, l]) => (
-            <StatItem key={l} label={l} val={v} started={statsStarted} />
-          ))}
-        </div>
-
-        {/* ── CLIENT LOGOS ── */}
-        <div className="ft-logos">
-          <span className="ft-logos-label">Trusted by Leading Organisations</span>
-          <div className="ft-logos-wrap">
-            <div className="ft-logos-track">
-              {[
-                ['/logo/Indian_Express_Logo_full.png','Indian Express'],
-                ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],
-                ['/logo/Uniphore.jpg','Uniphore'],
-                ['/logo/ICCoLogo.png','ICC'],
-                ['/logo/Honor_Logo_(2020).svg.png','Honor'],
-                ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],
-                ['/logo/Indian_Express_Logo_full.png','Indian Express 2'],
-                ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon 2'],
-                ['/logo/Uniphore.jpg','Uniphore 2'],
-                ['/logo/ICCoLogo.png','ICC 2'],
-                ['/logo/Honor_Logo_(2020).svg.png','Honor 2'],
-                ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv 2'],
-              ].map(([src, alt]) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img key={alt} src={src} alt={alt.replace(/ \d$/, '')} className="ft-clogo" />
-              ))}
-            </div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="Fintech Software Development Company · PCI DSS Compliant · SOC 2 Type II"
+          title={<>Custom Fintech Software Development - <AuroraText>PCI DSS Compliant, Secure &amp; Scalable</AuroraText></>}
+          subtext="We design and build digital banking platforms, payment gateways, neobank solutions, investment apps, lending systems, InsurTech, and blockchain products for fintech startups, banks, and financial institutions across the US, UK, Australia, and Canada."
+          primaryCta={{ label: 'Start Your Fintech Project', href: '#contact' }}
+          secondaryCta={{ label: 'View Engagement Models', href: '#engagement' }}
+          stats={[
+            { label: 'Fintech Clients', value: '100', suffix: '+' },
+            { label: 'Projects Delivered', value: '300', suffix: '+' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'Client Retention', value: '98', suffix: '%' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="ft-svc-section" aria-labelledby="ft-svc-heading">

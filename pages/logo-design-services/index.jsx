@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'Brand Logo Design', desc: 'Custom logo design from scratch - wordmarks, lettermarks, pictorial marks, abstract marks, mascots, and combination marks - crafted to communicate your brand personality and values.' },
@@ -44,13 +46,6 @@ const FAQS = [
   { q: 'What information do you need to start a logo design project?', a: 'To start a logo design project we need: your business name (and any preferred abbreviations); a clear description of what you do and who your customers are; your brand personality (3 to 5 adjectives describing how you want to be perceived); competitor logos to reference (for differentiation); any design preferences - styles you like, colours you want to include or avoid, fonts that feel right or wrong; and intended use cases (digital only, print heavy, embroidery, signage). The more detail you provide in the brief, the more precisely the initial concepts will match your vision.' },
 ];
 
-const STATS = [
-  { label: 'Logos Designed', val: '500+' },
-  { label: 'Years Experience', val: '15+' },
-  { label: 'Industries Served', val: '20+' },
-  { label: 'Client Satisfaction', val: '98%' },
-];
-
 export default function LogoDesignServices() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleCards, setVisibleCards] = useState([]);
@@ -75,22 +70,10 @@ export default function LogoDesignServices() {
         <style>{`
           .logo-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .logo-page *,.logo-page *::before,.logo-page *::after{box-sizing:border-box}
-          .logo-hero{background:linear-gradient(135deg,#fffbeb 0%,#fef3c7 25%,#fde68a 60%,#fffbeb 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .logo-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(180,83,9,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .logo-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(120,53,15,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .logo-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.logo-bc a:hover{color:#B45309}.logo-bc span{color:#d1d5db}
-          .logo-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(180,83,9,0.08);border:1px solid rgba(180,83,9,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#B45309;margin-bottom:28px}
-          .logo-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .logo-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
-          .logo-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .logo-btn-p{display:inline-flex;align-items:center;gap:8px;background:#B45309;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(180,83,9,0.28)}
           .logo-btn-p:hover{background:#92400E;box-shadow:0 8px 32px rgba(180,83,9,0.38);transform:translateY(-2px)}
           .logo-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.18);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
           .logo-btn-s:hover{border-color:#B45309;color:#B45309;transform:translateY(-2px)}
-          .logo-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(180,83,9,0.07)}
-          .logo-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(180,83,9,0.08)}.logo-stat:last-child{border-right:none}
-          .logo-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .logo-stat-v{font-size:1.6rem;font-weight:900;color:#B45309;letter-spacing:-0.5px}
           .logo-svc{background:#f8fafd;padding:80px 40px}.logo-svc-in{max-width:1280px;margin:0 auto}
           .logo-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#B45309;margin-bottom:10px;display:block}
           .logo-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
@@ -137,25 +120,26 @@ export default function LogoDesignServices() {
           .logo-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           .logo-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.logo-grid{grid-template-columns:repeat(2,1fr)}.logo-why-grid{grid-template-columns:repeat(2,1fr)}}
-          @media(max-width:768px){.logo-hero,.logo-svc,.logo-dlv,.logo-proc,.logo-why,.logo-faq,.logo-cta{padding:60px 24px}.logo-hero{padding-top:60px;padding-bottom:0}.logo-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.logo-stat:nth-child(2){border-right:none}.logo-grid{grid-template-columns:1fr}.logo-why-grid{grid-template-columns:1fr}.logo-step{grid-template-columns:56px 1fr}.logo-btns{flex-direction:column;align-items:center}}
+          @media(max-width:768px){.logo-svc,.logo-dlv,.logo-proc,.logo-why,.logo-faq,.logo-cta{padding:60px 24px}.logo-grid{grid-template-columns:1fr}.logo-why-grid{grid-template-columns:1fr}.logo-step{grid-template-columns:56px 1fr}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
       <div className="logo-page">
-        <section className="logo-hero"><div className="logo-o1"/><div className="logo-o2"/>
-          <div className="logo-in">
-            <span className="logo-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#B45309',display:'inline-block'}}/> Custom Design · Full Ownership · Vector Files</span>
-            <h1 className="logo-h1">Professional Logo Design Services - Brands That Get Remembered</h1>
-            <p className="logo-sub">Custom logo design built on brand strategy - not templates. 500+ logos designed across all industries, with full IP ownership and every format you need delivered on completion.</p>
-            <div className="logo-btns">
-              <Link href="/contact-us" className="logo-btn-p">Start Your Logo Project <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/app-ui-ux-design" className="logo-btn-s">UI/UX Design Services</Link>
-            </div>
-            <div className="logo-stats">{STATS.map(s => <div key={s.label} className="logo-stat"><div className="logo-stat-l">{s.label}</div><div className="logo-stat-v">{s.val}</div></div>)}</div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Custom Design · Full Ownership · Vector Files"
+          title={<>Professional Logo Design Services - <AuroraText>Brands That Get Remembered</AuroraText></>}
+          subtext="Custom logo design built on brand strategy - not templates. 500+ logos designed across all industries, with full IP ownership and every format you need delivered on completion."
+          primaryCta={{ label: 'Start Your Logo Project', href: '/contact-us' }}
+          secondaryCta={{ label: 'UI/UX Design Services', href: '/app-ui-ux-design' }}
+          stats={[
+            { label: 'Logos Designed', value: '500', suffix: '+' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'Industries Served', value: '20', suffix: '+' },
+            { label: 'Client Satisfaction', value: '98', suffix: '%' },
+          ]}
+        />
         <section className="logo-svc"><div className="logo-svc-in">
           <span className="logo-ey2">What We Offer</span><h2 className="logo-ttl">Logo Design Services</h2>
           <p className="logo-desc">From startup wordmarks to full brand identity systems - every logo design service you need under one roof.</p>

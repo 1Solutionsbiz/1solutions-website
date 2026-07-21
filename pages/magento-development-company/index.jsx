@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n:'01', title:'Custom Magento Store Development', desc:'Fully bespoke Magento 2 stores built from the ground up - designed around your catalogue, brand, and business model for maximum conversion.', featured:false },
@@ -41,47 +43,14 @@ const WHY = [
   { icon:<svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>, title:'Long-Term Partnership', desc:'97% client retention rate. We stay invested in your success through maintenance plans, support retainers, and ongoing growth partnerships.' },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const numTarget = parseInt(target.replace(/\D/g, ''), 10);
-    if (!numTarget) return;
-    let startTime = null;
-    const step = (ts) => {
-      if (!startTime) startTime = ts;
-      const progress = Math.min((ts - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * numTarget));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function AnimatedStat({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');
-  const hasComma = val.includes(',');
-  const display = started ? (hasComma ? num.toLocaleString() : num) + suffix : val;  return (
-    <div className="mag-stat-col">
-      <div className="mag-stat-label">{label}</div>
-      <div className="mag-stat-value">{display}</div>
-    </div>
-  );
-}
-
 export default function MagentoDevelopmentCompany() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleSteps, setVisibleSteps] = useState([]);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const stepRefs = useRef([]);
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
@@ -102,16 +71,6 @@ export default function MagentoDevelopmentCompany() {
       return obs;
     });
     return () => observers.forEach(o => o && o.disconnect());
-  }, []);
-
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setStatsStarted(true); obs.disconnect(); } },
-      { threshold: 0.5 }
-    );
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
   }, []);
 
   useEffect(() => {
@@ -217,31 +176,6 @@ export default function MagentoDevelopmentCompany() {
           .mag-aurora-b2 { position:absolute; left:78%; top:22%; width:48%; height:48%; border-radius:50%; background:radial-gradient(circle at center,rgba(217,119,6,0.20) 0%,transparent 70%); transform:translate(-50%,-50%); }
           .mag-aurora-b3 { position:absolute; left:50%; top:82%; width:55%; height:55%; border-radius:50%; background:radial-gradient(circle at center,rgba(26,82,118,0.16) 0%,transparent 70%); transform:translate(-50%,-50%); }
           @keyframes mag-aurora-drift { 0%{transform:translate3d(0,0,0) scale(1)} 100%{transform:translate3d(-4%,3%,0) scale(1.10)} }
-
-          /* Hero */
-          .mag-hero-block { background:transparent;position:relative;overflow:hidden; }
-          .mag-hero-block::before { content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(234,88,12,0.10) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px); }
-          .mag-hero-block::after { content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(217,119,6,0.12) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px); }
-          .mag-hero-content { position:relative;z-index:2;text-align:center;max-width:860px;margin:0 auto;padding:56px 40px 40px; }
-          .mag-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#7c2d12;margin-bottom:18px; }
-          .mag-hero-content h1 { font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .mag-hero-content p { font-size:16px;color:#57340a;line-height:1.65;max-width:620px;margin:0 auto 28px; }
-          .mag-btn-hero { display:inline-block;padding:14px 40px;background:rgba(255,255,255,0.60);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.90);border-radius:50px;color:#9a3412;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(194,65,12,0.12),inset 0 1px 0 rgba(255,255,255,1); }
-          .mag-btn-hero:hover { background:rgba(255,255,255,0.90);border-color:rgba(194,65,12,0.50);box-shadow:0 12px 36px rgba(194,65,12,0.18),0 0 0 2px rgba(194,65,12,0.18),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px);color:#9a3412; }
-
-          /* Stats */
-          .mag-hero-stats { position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.50);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.90);box-shadow:0 4px 24px rgba(194,65,12,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
-          .mag-stat-col { padding:18px 20px;text-align:center;border-right:1px solid rgba(194,65,12,0.10); }
-          .mag-stat-col:last-child { border-right:none; }
-          .mag-stat-label { font-size:12px;color:#7c4a1e;font-weight:500;margin-bottom:6px; }
-          .mag-stat-value { font-size:26px;font-weight:900;color:#c2410c;letter-spacing:-0.5px;line-height:1; }
-
-          /* Clients */
-          .mag-clients-bar { position:relative;z-index:2;padding:20px 40px 60px;max-width:1440px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px; }
-          .mag-clients-label { font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#92400e; }
-          .mag-clients-logos { width:100%;overflow:hidden; }
-          .mag-client-logo { height:26px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(100%);opacity:0.5;transition:opacity 0.25s,filter 0.25s; }
-          .mag-client-logo:hover { opacity:0.85;filter:grayscale(0%); }
 
           /* Sections shared */
           .mag-section-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#c2410c;margin-bottom:12px;display:block; }
@@ -448,23 +382,12 @@ export default function MagentoDevelopmentCompany() {
           .mag-rtag-emerald { background:rgba(16,185,129,0.10);border-color:rgba(16,185,129,0.28);color:#065F46; }
           .mag-rtag-slate   { background:rgba(100,116,139,0.10);border-color:rgba(100,116,139,0.28);color:#334155; }
 
-          /* Shimmer */
-          .mag-btn-hero-shimmer { position:relative;overflow:hidden; }
-          .mag-btn-hero-shimmer::after { content:'';position:absolute;top:-10%;left:-120%;width:80%;height:120%;background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,0.78) 45%,rgba(255,255,255,0.92) 50%,rgba(255,255,255,0.78) 55%,transparent 100%);animation:mag-shimmer-sweep 2.5s ease-in-out infinite;pointer-events:none; }
-          @keyframes mag-shimmer-sweep { 0%{left:-120%} 35%,100%{left:160%} }
-
           /* Section reveal */
           .mag-section-reveal { opacity:0;transform:translateY(48px);transition:opacity 0.7s cubic-bezier(0.22,1,0.36,1),transform 0.7s cubic-bezier(0.22,1,0.36,1); }
           .mag-section-reveal.mag-revealed { opacity:1;transform:translateY(0); }
 
-          /* Logo marquee */
-          .mag-logos-track { display:flex;align-items:center;gap:60px;width:max-content;animation:mag-marquee 28s linear infinite; }
-          .mag-logos-track:hover { animation-play-state:paused; }
-          @keyframes mag-marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-
           /* Responsive */
           @media (max-width:1024px) {
-            .mag-hero-content h1 { font-size:40px; }
             .mag-services-grid { grid-template-columns:repeat(2,1fr); }
             .mag-why-grid { grid-template-columns:repeat(2,1fr); }
             .mag-portfolio-grid { grid-template-columns:repeat(2,1fr); }
@@ -474,17 +397,6 @@ export default function MagentoDevelopmentCompany() {
           }
           @media (max-width:768px) {
             .mag-page { overflow-x:hidden; }
-            .mag-hero-content { padding:36px 20px 24px; }
-            .mag-hero-content h1 { font-size:28px;letter-spacing:-0.3px; }
-            .mag-hero-content p { font-size:15px; }
-            .mag-hero-stats { grid-template-columns:1fr 1fr;max-width:100%; }
-            .mag-stat-col { padding:14px 12px; }
-            .mag-stat-col:nth-child(2) { border-right:none; }
-            .mag-stat-col:nth-child(3) { border-top:1px solid rgba(194,65,12,0.10); }
-            .mag-stat-col:nth-child(4) { border-top:1px solid rgba(194,65,12,0.10);border-right:none; }
-            .mag-stat-value { font-size:22px; }
-            .mag-clients-bar { padding:16px 20px 36px;gap:12px; }
-            .mag-client-logo { height:20px; }
             .mag-services-section { padding:48px 20px 40px; }
             .mag-portfolio-section { padding:48px 16px; }
             .mag-portfolio-wrap { padding:24px 20px 32px;border-radius:16px; }
@@ -525,7 +437,6 @@ export default function MagentoDevelopmentCompany() {
             .mag-stat-number { font-size:28px; }
           }
           @media (max-width:480px) {
-            .mag-hero-content h1 { font-size:24px; }
             .mag-section-title,.mag-engage-title,.mag-process-main-title,.mag-related-title { font-size:26px; }
             .mag-services-grid { grid-template-columns:1fr; }
             .mag-service-card { padding:20px 18px 18px; }
@@ -552,45 +463,18 @@ export default function MagentoDevelopmentCompany() {
         </div>
 
         {/* ── HERO ── */}
-        <div className="mag-hero-block">
-          <div className="mag-hero-content">
-            <span className="mag-eyebrow">Expert Magento Development Company</span>
-            <h1>Magento Development Services - Enterprise E-Commerce Built to Scale</h1>
-            <p>Build powerful, scalable Magento 2 and Adobe Commerce stores with 1Solutions' expert development team. From custom extensions and B2B portals to platform migrations and PWA storefronts - we deliver enterprise e-commerce that drives serious revenue for US, Canadian, and Australian businesses.</p>
-            <Link href="#contact" className="mag-btn-hero mag-btn-hero-shimmer">Get a Free Magento Consultation</Link>
-          </div>
-
-          <div className="mag-hero-stats" ref={statsRef}>
-            {[['Magento Stores Built','150+'],['E-Commerce Experts','50+'],['Projects Delivered','1,200+'],['Years in Business','15+']].map(([label,val]) => (
-              <AnimatedStat key={label} label={label} val={val} started={statsStarted} />
-            ))}
-          </div>
-
-          <div className="mag-clients-bar">
-            <span className="mag-clients-label">Trusted by Leading Brands</span>
-            <div className="mag-clients-logos">
-              <div className="mag-logos-track">
-                {[
-                  ['/logo/Indian_Express_Logo_full.png','Indian Express'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],
-                  ['/logo/Uniphore.jpg','Uniphore'],
-                  ['/logo/ICCoLogo.png','ICC'],
-                  ['/logo/Honor_Logo_(2020).svg.png','Honor'],
-                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],
-                  ['/logo/Indian_Express_Logo_full.png','Indian Express2'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon2'],
-                  ['/logo/Uniphore.jpg','Uniphore2'],
-                  ['/logo/ICCoLogo.png','ICC2'],
-                  ['/logo/Honor_Logo_(2020).svg.png','Honor2'],
-                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv2'],
-                ].map(([src,alt]) => (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img key={alt} src={src} alt={alt.replace(/\d+$/,'')} className="mag-client-logo" />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="Expert Magento Development Company"
+          title={<>Magento Development Services - <AuroraText>Enterprise E-Commerce Built to Scale</AuroraText></>}
+          subtext="Build powerful, scalable Magento 2 and Adobe Commerce stores with 1Solutions' expert development team. From custom extensions and B2B portals to platform migrations and PWA storefronts - we deliver enterprise e-commerce that drives serious revenue for US, Canadian, and Australian businesses."
+          primaryCta={{ label: 'Get a Free Magento Consultation', href: '#contact' }}
+          stats={[
+            { label: 'Magento Stores Built', value: '150', suffix: '+' },
+            { label: 'E-Commerce Experts', value: '50', suffix: '+' },
+            { label: 'Projects Delivered', value: '1,200', suffix: '+' },
+            { label: 'Years in Business', value: '15', suffix: '+' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="mag-services-section">

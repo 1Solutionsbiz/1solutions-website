@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const OPTIMIZATIONS = [
   {
@@ -284,30 +286,6 @@ export default function GoogleMyBusinessOptimization() {
           /* ── Page wrapper ── */
           .gmbo-page{background:linear-gradient(135deg,#dbeafe 0%,#ede9fe 25%,#e0f2fe 50%,#fef3c7 75%,#fce7f3 100%);min-height:100vh;}
 
-          /* ── Hero ── */
-          .gmbo-hero{position:relative;overflow:hidden;padding:90px 40px 80px;background:transparent;}
-          .gmbo-orb1{position:absolute;top:-120px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(99,130,255,0.30) 0%,rgba(139,92,246,0.12) 40%,transparent 70%);pointer-events:none;filter:blur(20px);}
-          .gmbo-orb2{position:absolute;bottom:-80px;left:-80px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(251,146,60,0.28) 0%,rgba(245,158,11,0.12) 40%,transparent 70%);pointer-events:none;filter:blur(20px);}
-          .gmbo-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;}
-          .gmbo-eyebrow{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.55);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.85);border-radius:50px;padding:6px 18px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A6080;margin-bottom:24px;box-shadow:0 2px 10px rgba(15,52,96,0.08);}
-          .gmbo-g-dot{display:flex;gap:3px;align-items:center;}
-          .gmbo-g-dot span{width:7px;height:7px;border-radius:50%;}
-          .gmbo-h1{font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;color:#0F1F40;}
-          .gmbo-h1 em{font-style:normal;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-          .gmbo-desc{font-size:1.1rem;color:#3A507A;line-height:1.8;margin:0 0 36px;max-width:680px;}
-          .gmbo-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px;}
-          .gmbo-btn-p{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);color:#0F3460;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;border:1.5px solid rgba(255,255,255,0.85);box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1);}
-          .gmbo-btn-p:hover{background:rgba(255,255,255,0.85);border-color:rgba(245,158,11,0.60);transform:translateY(-2px);box-shadow:0 12px 36px rgba(15,52,96,0.15),inset 0 1px 0 rgba(255,255,255,1);}
-          .gmbo-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.40);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#0F3460;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;border:1.5px solid rgba(255,255,255,0.70);transition:all 0.25s;}
-          .gmbo-btn-s:hover{background:rgba(255,255,255,0.70);transform:translateY(-2px);}
-          .gmbo-trust{display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-bottom:48px;}
-          .gmbo-badge{display:flex;align-items:center;gap:6px;font-size:12px;color:#4A6080;font-weight:500;}
-          .gmbo-stats-bar{display:flex;border:1px solid rgba(255,255,255,0.85);border-radius:16px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);overflow:hidden;max-width:680px;box-shadow:0 4px 20px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95);}
-          .gmbo-stat-item{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(15,52,96,0.10);}
-          .gmbo-stat-item:last-child{border-right:none;}
-          .gmbo-stat-num{font-size:1.9rem;font-weight:900;color:#D97706;line-height:1;letter-spacing:-1px;}
-          .gmbo-stat-lbl{font-size:11px;color:#4A6080;font-weight:500;line-height:1.4;text-align:center;margin-top:4px;}
-
           /* ── Breadcrumb ── */.gmbo-bc a:hover{color:#D97706;}.gmbo-bc-cur{color:#D97706;font-weight:500;}
 
           /* ── Sections ── */
@@ -329,7 +307,8 @@ export default function GoogleMyBusinessOptimization() {
           .gmbo-card-p{font-size:13.5px;color:#4A6080;line-height:1.7;margin:0;}
 
           /* ── Key Takeaways ── */
-          .gmbo-takeaways{background:rgba(217,119,6,0.06);border:1px solid rgba(217,119,6,0.20);border-radius:16px;padding:20px 24px;margin-bottom:36px;max-width:680px;}
+          .gmbo-takeaways-outer{max-width:680px;margin:0 auto;padding:40px 40px 0;}
+          .gmbo-takeaways{background:rgba(217,119,6,0.06);border:1px solid rgba(217,119,6,0.20);border-radius:16px;padding:20px 24px;max-width:680px;}
           .gmbo-takeaways-label{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D97706;margin-bottom:12px;display:block;}
           .gmbo-takeaways ul{margin:0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:7px;}
           .gmbo-takeaways li{font-size:13.5px;color:#374151;line-height:1.6;}
@@ -479,8 +458,8 @@ export default function GoogleMyBusinessOptimization() {
             .gmbo-checklist-grid{grid-template-columns:1fr;}
           }
           @media(max-width:600px){
-            .gmbo-hero,.gmbo-sec,.gmbo-results,.gmbo-cta,.gmbo-contact-sec{padding-left:20px;padding-right:20px;}
-            .gmbo-hero{padding-top:60px;padding-bottom:50px;}
+            .gmbo-sec,.gmbo-results,.gmbo-cta,.gmbo-contact-sec{padding-left:20px;padding-right:20px;}
+            .gmbo-takeaways-outer{padding-left:20px;padding-right:20px;}
             .gmbo-grid4,.gmbo-grid3,.gmbo-grid2,.gmbo-stat-cards,.gmbo-res-grid,.gmbo-ind-grid,.gmbo-rank-grid{grid-template-columns:1fr;}
             .gmbo-def-aspects{grid-template-columns:1fr;}
             .gmbo-field-row{grid-template-columns:1fr;}
@@ -494,68 +473,33 @@ export default function GoogleMyBusinessOptimization() {
       </Head>
 
       {/* Hero */}
-      <section className="gmbo-hero">
-        <div className="gmbo-orb1" /><div className="gmbo-orb2" />
-        <div className="gmbo-inner">
-          <span className="gmbo-eyebrow">
-            <span className="gmbo-g-dot">
-              <span style={{ background: '#4285f4' }} />
-              <span style={{ background: '#ea4335' }} />
-              <span style={{ background: '#fbbc04' }} />
-              <span style={{ background: '#34a853' }} />
-            </span>
-            Google My Business Optimization Experts
-          </span>
-          <h1 className="gmbo-h1">
-            <em>Google My Business Optimization</em><br />
-            That Gets You Into the Maps 3-Pack &mdash; and Cited by Google AI
-          </h1>
-          <p className="gmbo-desc">
-            1Solutions delivers expert Google My Business optimization (now Google Business Profile) to help local businesses rank in the top 3 of Google Maps - the most visible real estate in local search. Complete GBP management: setup, categories, photos, posts, reviews, citations, and monthly reporting.
-          </p>
-          <div className="gmbo-btns">
-            <a href="#contact" className="gmbo-btn-p">
-              Get a Free GBP Audit
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <Link href="/local-seo-services/" className="gmbo-btn-s">See Local SEO Services →</Link>
-          </div>
+      <ServiceHero
+        eyebrow="Google My Business Optimization Experts · GBP Certified Team"
+        title={<><AuroraText>Google My Business Optimization</AuroraText> That Gets You Into the Maps 3-Pack &mdash; and Cited by Google AI</>}
+        subtext="1Solutions delivers expert Google My Business optimization (now Google Business Profile) to help local businesses rank in the top 3 of Google Maps - the most visible real estate in local search. Complete GBP management: setup, categories, photos, posts, reviews, citations, and monthly reporting."
+        primaryCta={{ label: 'Get a Free GBP Audit', href: '#contact' }}
+        secondaryCta={{ label: 'See Local SEO Services', href: '/local-seo-services/' }}
+        stats={[
+          { label: 'GBP Profiles Optimised', value: '500', suffix: '+' },
+          { label: 'Years Experience', value: '15', suffix: '+' },
+          { label: 'Rankings Achieved', value: '3', suffix: '-Pack' },
+          { label: 'Client Retention', value: '97', suffix: '%' },
+        ]}
+      />
 
-          {/* Key Takeaways - AI Overview & featured snippet signal */}
-          <div className="gmbo-takeaways">
-            <span className="gmbo-takeaways-label">Key Takeaways</span>
-            <ul>
-              <li><strong>Google My Business optimization</strong> = completing and actively managing your GBP listing to rank in the Maps 3-pack</li>
-              <li>Google&rsquo;s 3 ranking factors: <strong>relevance</strong>, <strong>distance</strong>, and <strong>prominence</strong></li>
-              <li>Typical results: <strong>6–12 weeks</strong> for lower-competition keywords; 3–5 months for competitive markets</li>
-              <li>Core elements: categories, photos, reviews, posts, citations, Q&amp;A, and business description</li>
-              <li>Service-area businesses can rank in the Maps 3-pack <strong>without a public address</strong></li>
-            </ul>
-          </div>
-
-          <div className="gmbo-trust">
-            {['GBP certified team', '15+ years local SEO', 'No lock-in contracts', 'Monthly ranking reports'].map(t => (
-              <span key={t} className="gmbo-badge">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34a853" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                {t}
-              </span>
-            ))}
-          </div>
-          <div className="gmbo-stats-bar">
-            {[
-              { num: '500+', lbl: 'GBP Profiles Optimised' },
-              { num: '15+', lbl: 'Years Experience' },
-              { num: '3-Pack', lbl: 'Rankings Achieved' },
-              { num: '97%', lbl: 'Client Retention' },
-            ].map(s => (
-              <div key={s.lbl} className="gmbo-stat-item">
-                <span className="gmbo-stat-num">{s.num}</span>
-                <span className="gmbo-stat-lbl">{s.lbl}</span>
-              </div>
-            ))}
-          </div>
+      {/* Key Takeaways - AI Overview & featured snippet signal */}
+      <div className="gmbo-takeaways-outer">
+        <div className="gmbo-takeaways">
+          <span className="gmbo-takeaways-label">Key Takeaways</span>
+          <ul>
+            <li><strong>Google My Business optimization</strong> = completing and actively managing your GBP listing to rank in the Maps 3-pack</li>
+            <li>Google&rsquo;s 3 ranking factors: <strong>relevance</strong>, <strong>distance</strong>, and <strong>prominence</strong></li>
+            <li>Typical results: <strong>6–12 weeks</strong> for lower-competition keywords; 3–5 months for competitive markets</li>
+            <li>Core elements: categories, photos, reviews, posts, citations, Q&amp;A, and business description</li>
+            <li>Service-area businesses can rank in the Maps 3-pack <strong>without a public address</strong></li>
+          </ul>
         </div>
-      </section>
+      </div>
 
       {/* What Is GMB Optimization - definition for AI Overviews */}
       <section className="gmbo-sec gmbo-bg">

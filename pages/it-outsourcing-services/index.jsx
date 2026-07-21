@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -88,25 +90,13 @@ const FAQS = [
   { q: 'How long does it take to start an IT outsourcing engagement?', a: 'Discovery and team formation: 2–4 weeks. Onboarding sprint: 2 weeks. First full sprint delivery: week 4–6 from contract signing. Application maintenance coverage begins within 2–3 weeks. Fixed-price project kick-off within 1–2 weeks.' },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => { if (!start) return; const num = parseInt(target.replace(/\D/g, ''), 10); if (!num) return; let t0 = null; const step = ts => { if (!t0) t0 = ts; const p = Math.min((ts - t0) / duration, 1); setCount(Math.floor((1 - Math.pow(1 - p, 3)) * num)); if (p < 1) requestAnimationFrame(step); }; requestAnimationFrame(step); }, [start, target, duration]);
-  return count;
-}
-function StatItem({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');  return (<div className="ito-sc"><div className="ito-sv">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div><div className="ito-sl">{label}</div></div>);
-}
-
 export default function ITOutsourcingServices() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [ss, setSs] = useState(false);
   const [vis, setVis] = useState(new Set());
   const [vSk, setVSk] = useState([]); const [vEn, setVEn] = useState([]); const [vWh, setVWh] = useState([]); const [vTe, setVTe] = useState([]); const [vSt, setVSt] = useState([]);
-  const stR = useRef(null); const secR = useRef({});
+  const secR = useRef({});
   const skR = useRef(null); const enR = useRef(null); const whR = useRef(null); const teR = useRef(null); const stGr = useRef(null);
-  useEffect(() => { if (!stR.current) return; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setSs(true); o.disconnect(); } }, { threshold: 0.4 }); o.observe(stR.current); return () => o.disconnect(); }, []);
   useEffect(() => { const pairs = [[skR, SERVICES.length, setVSk],[enR, 3, setVEn],[whR, WHY_CARDS.length, setVWh],[teR, 3, setVTe],[stGr, TECH_STACK.length, setVSt]]; const obs = pairs.map(([ref, count, setter]) => { if (!ref.current) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { Array.from({ length: count }, (_, i) => setTimeout(() => setter(p => p.includes(i) ? p : [...p, i]), i * 80)); o.disconnect(); } }, { threshold: 0.05 }); o.observe(ref.current); return o; }); return () => obs.forEach(o => o?.disconnect()); }, []);
   useEffect(() => { const ks = Object.keys(secR.current); const obs = ks.map(k => { const el = secR.current[k]; if (!el) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVis(p => new Set([...p, k])); o.disconnect(); } }, { threshold: 0.1 }); o.observe(el); return o; }); return () => obs.forEach(o => o?.disconnect()); }, []);
   const visServices = showAll ? SERVICES : SERVICES.slice(0, 6);
@@ -154,31 +144,6 @@ export default function ITOutsourcingServices() {
 
 
 
-          .ito-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
-          .ito-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#be123c;margin-bottom:14px}
-          .ito-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .ito-desc{font-size:16px;color:#881337;line-height:1.65;max-width:740px;margin:0 auto 24px}
-          .ito-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
-          .ito-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#3b0018;box-shadow:0 2px 8px rgba(59,0,24,.07)}
-          .ito-dot{width:7px;height:7px;border-radius:50%;background:#be123c;flex-shrink:0}
-          .ito-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .ito-p{display:inline-block;padding:14px 36px;background:#be123c;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(190,18,60,.28)}
-          .ito-p:hover{background:#3b0018;transform:translateY(-2px)}
-          .ito-g{display:inline-block;padding:14px 36px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#3b0018;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .ito-g:hover{background:rgba(255,255,255,.85);border-color:rgba(190,18,60,.5);transform:translateY(-2px)}
-          .ito-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:28px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(59,0,24,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .ito-sc{padding:18px 16px;text-align:center;border-right:1px solid rgba(59,0,24,.10)}
-          .ito-sc:last-child{border-right:none}
-          .ito-sv{font-size:28px;font-weight:900;color:#be123c;letter-spacing:-.5px;line-height:1}
-          .ito-sl{font-size:11px;color:#9f1239;font-weight:500;margin-top:5px}
-          .ito-logos{position:relative;z-index:2;padding:24px 40px 52px;display:flex;flex-direction:column;align-items:center;gap:14px}
-          .ito-ll{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#9f1239}
-          .ito-lw{width:100%;overflow:hidden}
-          .ito-lt{display:flex;align-items:center;gap:60px;width:max-content;animation:ito-mq 28s linear infinite}
-          .ito-lt:hover{animation-play-state:paused}
-          @keyframes ito-mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-          .ito-cl{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
-          .ito-cl:hover{opacity:.85;filter:grayscale(0%)}
           .ito-sey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
           .ito-st{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .ito-sd{font-size:15px;color:#881337;line-height:1.7}
@@ -325,8 +290,8 @@ export default function ITOutsourcingServices() {
           .ito-v{background:rgba(67,56,202,.09);border-color:rgba(67,56,202,.28);color:#3730a3}
           .ito-g2{background:rgba(22,101,52,.09);border-color:rgba(22,101,52,.28);color:#14532d}
           .ito-o{background:rgba(146,64,14,.09);border-color:rgba(146,64,14,.28);color:#92400e}
-          @media(max-width:1024px){.ito-hero h1,.ito-st,.ito-fq-s h2{font-size:36px}.ito-sk-g{grid-template-columns:repeat(2,1fr)}.ito-tec-g{grid-template-columns:repeat(2,1fr)}.ito-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.ito-en-c.feat{transform:none}.ito-en-c.feat.ito-ev{transform:none}.ito-en-c.feat.ito-ev:hover{transform:translateY(-4px)}.ito-wy-g{grid-template-columns:repeat(2,1fr)}.ito-tg2{grid-template-columns:1fr}.ito-ct-g{grid-template-columns:1fr}}
-          @media(max-width:768px){.ito-bc,.ito-hero,.ito-sk-s,.ito-tec-s,.ito-en-s,.ito-pr-s,.ito-te-s,.ito-wy-s,.ito-fq-s,.ito-rel{padding-left:20px;padding-right:20px}.ito-hero{padding-top:28px;padding-bottom:20px}.ito-hero h1{font-size:26px;letter-spacing:-.3px}.ito-stats{grid-template-columns:1fr 1fr}.ito-sc:nth-child(2){border-right:none}.ito-sc:nth-child(3),.ito-sc:nth-child(4){border-top:1px solid rgba(59,0,24,.10)}.ito-sc:nth-child(4){border-right:none}.ito-sk-g,.ito-tec-g,.ito-wy-g{grid-template-columns:1fr}.ito-fr{grid-template-columns:1fr}.ito-ctt{font-size:28px}.ito-st{font-size:28px}.ito-ct-s{padding:48px 20px}.ito-logos{padding-left:20px;padding-right:20px}}
+          @media(max-width:1024px){.ito-st,.ito-fq-s h2{font-size:36px}.ito-sk-g{grid-template-columns:repeat(2,1fr)}.ito-tec-g{grid-template-columns:repeat(2,1fr)}.ito-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.ito-en-c.feat{transform:none}.ito-en-c.feat.ito-ev{transform:none}.ito-en-c.feat.ito-ev:hover{transform:translateY(-4px)}.ito-wy-g{grid-template-columns:repeat(2,1fr)}.ito-tg2{grid-template-columns:1fr}.ito-ct-g{grid-template-columns:1fr}}
+          @media(max-width:768px){.ito-bc,.ito-sk-s,.ito-tec-s,.ito-en-s,.ito-pr-s,.ito-te-s,.ito-wy-s,.ito-fq-s,.ito-rel{padding-left:20px;padding-right:20px}.ito-sk-g,.ito-tec-g,.ito-wy-g{grid-template-columns:1fr}.ito-fr{grid-template-columns:1fr}.ito-ctt{font-size:28px}.ito-st{font-size:28px}.ito-ct-s{padding:48px 20px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
@@ -352,15 +317,19 @@ export default function ITOutsourcingServices() {
 </Head>
       <div className="ito-page">
         <div className="ito-orb ito-o1" /><div className="ito-orb ito-o2" /><div className="ito-orb ito-o3" />
-        <section className="ito-hero">
-          <span className="ito-ey">IT Outsourcing Services</span>
-          <h1>IT Outsourcing Services - Software Development, Cloud, QA & DevOps</h1>
-          <p className="ito-desc">Outsource software development, cloud infrastructure management, QA and testing, DevOps, AI/ML engineering, data engineering, mobile development, and application maintenance to 1Solutions - a trusted India-based IT outsourcing company with 15+ years serving clients in the US, UK, Australia, and Canada. SLA-backed, NDA-protected, 60–70% below local hiring costs.</p>
-          <div className="ito-tr">{['Software Development Outsourcing','Cloud & DevOps Outsourcing','QA & Testing Outsourcing','AI / ML / Data Engineering','SLA-Backed & NDA-Protected'].map(b => (<div className="ito-badge" key={b}><span className="ito-dot" />{b}</div>))}</div>
-          <div className="ito-ctas"><Link href="#contact" className="ito-p">Discuss Your Outsourcing Needs</Link><Link href="#engagement" className="ito-g">View Engagement Models →</Link></div>
-        </section>
-        <div className="ito-stats" ref={stR}>{[['500+','Projects Outsourced'],['15+','Years IT Outsourcing'],['98%','Client Retention'],['60-70%','Cost vs Local Teams']].map(([v, l]) => (<StatItem key={l} label={l} val={v} started={ss} />))}</div>
-        <div className="ito-logos"><span className="ito-ll">IT Outsourcing Clients in US, UK, Australia, Canada</span><div className="ito-lw"><div className="ito-lt">{[['/logo/Indian_Express_Logo_full.png','Indian Express'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],['/logo/Uniphore.jpg','Uniphore'],['/logo/ICCoLogo.png','ICC'],['/logo/Honor_Logo_(2020).svg.png','Honor'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],['/logo/Indian_Express_Logo_full.png','Indian Express 2'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon 2'],['/logo/Uniphore.jpg','Uniphore 2'],['/logo/ICCoLogo.png','ICC 2'],['/logo/Honor_Logo_(2020).svg.png','Honor 2'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv 2']].map(([src, alt]) => (<img key={alt} src={src} alt={alt.replace(/ \d$/, '')} className="ito-cl" />))}</div></div></div>
+        <ServiceHero
+          eyebrow="IT Outsourcing Services · SLA-Backed & NDA-Protected"
+          title={<>IT Outsourcing Services - <AuroraText>Software Development, Cloud, QA &amp; DevOps</AuroraText></>}
+          subtext="Outsource software development, cloud infrastructure management, QA and testing, DevOps, AI/ML engineering, data engineering, mobile development, and application maintenance to 1Solutions - a trusted India-based IT outsourcing company with 15+ years serving clients in the US, UK, Australia, and Canada. SLA-backed, NDA-protected, 60–70% below local hiring costs."
+          primaryCta={{ label: 'Discuss Your Outsourcing Needs', href: '#contact' }}
+          secondaryCta={{ label: 'View Engagement Models', href: '#engagement' }}
+          stats={[
+            { label: 'Projects Outsourced', value: '500', suffix: '+' },
+            { label: 'Years IT Outsourcing', value: '15', suffix: '+' },
+            { label: 'Client Retention', value: '98', suffix: '%' },
+            { label: 'Cost vs Local Teams', value: '70', prefix: '60-', suffix: '%' },
+          ]}
+        />
         <section className="ito-sk-s" aria-labelledby="ito-sk-h"><div className="ito-in"><div className={`ito-rv${vis.has('sk') ? ' ito-ok' : ''}`} ref={el => { secR.current['sk'] = el; }}><span className="ito-sey">IT Outsourcing Services</span><h2 id="ito-sk-h" className="ito-st">IT Functions We Outsource</h2><p className="ito-sd" style={{ maxWidth: 720 }}>Software development, cloud management, QA, DevOps, AI/ML, mobile, data engineering, e-commerce, application maintenance, and legacy system modernisation - all delivered by specialist offshore teams with defined SLAs.</p></div><div className="ito-sk-g" ref={skR}>{visServices.map((s, i) => (<div key={s.n} className={`ito-sk-c${s.feat ? ' feat' : ''}${vSk.includes(i) ? ' ito-cv' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}><span className="ito-sk-n">{s.n}</span><h3>{s.title}</h3><p>{s.desc}</p></div>))}</div>{SERVICES.length > 6 && (<div className="ito-sm"><button className="ito-bm" onClick={() => setShowAll(p => !p)}>{showAll ? 'Show fewer ↑' : `Show all ${SERVICES.length} services ↓`}</button></div>)}</div></section>
         <section className="ito-tec-s" aria-labelledby="ito-tec-h"><div className="ito-in"><div className={`ito-rv${vis.has('stk') ? ' ito-ok' : ''}`} ref={el => { secR.current['stk'] = el; }}><span className="ito-sey">Technology Coverage</span><h2 id="ito-tec-h" className="ito-st">Technologies Our Outsourced Teams Cover</h2><p className="ito-sd" style={{ maxWidth: 680 }}>React, Next.js, Angular, Node.js, Python, PHP, Java, .NET, Flutter, Swift, Kotlin, AWS, Kubernetes, Terraform, dbt, LangChain, PyTorch, Shopify, Magento - the full modern IT stack.</p></div><div className="ito-tec-g" ref={stGr}>{TECH_STACK.map((grp, i) => (<div key={grp.group} className={`ito-tec-c${vSt.includes(i) ? ' ito-sv2' : ''}`} style={{ transitionDelay: `${i * 60}ms` }}><div className="ito-tg" style={{ color: grp.color, borderBottomColor: grp.color + '33' }}>{grp.group}</div><div className="ito-pills">{grp.items.map(item => <span key={item} className="ito-pill" style={{ color: grp.color, background: grp.color + '12', borderColor: grp.color + '30' }}>{item}</span>)}</div></div>))}</div></div></section>
         <section id="engagement" className="ito-en-s" aria-labelledby="ito-en-h"><div className="ito-in"><div className={`ito-rv${vis.has('eng') ? ' ito-ok' : ''}`} ref={el => { secR.current['eng'] = el; }}><span className="ito-sey">Engagement Models</span><h2 id="ito-en-h" className="ito-st">IT Outsourcing Engagement Models</h2><p className="ito-sd" style={{ maxWidth: 680 }}>Dedicated outsourced team, SLA-backed application maintenance, or fixed-price project - structured for your delivery model and risk appetite.</p></div><div className="ito-en-g" ref={enR}>{ENGAGEMENT_MODELS.map((m, i) => (<div key={m.id} className={`ito-en-c${m.feat ? ' feat' : ''}${vEn.includes(i) ? ' ito-ev' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}><span className="ito-en-b" style={{ color: m.badgeColor, borderColor: m.badgeColor + '44', background: m.badgeColor + '14' }}>{m.badge}</span><div className="ito-en-i"><svg viewBox="0 0 24 24" width="26" height="26"><path d={m.icon} /></svg></div><div className="ito-en-n">{m.name}</div><div className="ito-en-h">{m.headline}</div><div className="ito-en-d">{m.desc}</div><div className="ito-en-ll">Best for</div><ul className="ito-en-li">{m.bestFor.map(b => <li key={b}>{b}</li>)}</ul><div className="ito-en-p"><strong>Process:</strong> {m.process}<br /><span className="ito-en-tl">{m.timeline}</span></div><Link href="#contact" className="ito-en-a">Get a free estimate →</Link></div>))}</div></div></section>

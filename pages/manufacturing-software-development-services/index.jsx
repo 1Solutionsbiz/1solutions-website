@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -74,25 +76,13 @@ const FAQS = [
   { q: 'Can you connect our machines to a real-time dashboard?', a: 'Yes - we connect to PLCs and controllers via OPC-UA, MQTT, or Modbus; collect cycle counts, alarm states, energy, and quality data; buffer at the edge; and display real-time OEE, downtime events, and alarms on dashboards that plant managers and operators can see from any device.' },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => { if (!start) return; const n = parseInt(target.replace(/\D/g, ''), 10); if (!n) return; let t0 = null; const s = ts => { if (!t0) t0 = ts; const p = Math.min((ts - t0) / duration, 1); setCount(Math.floor((1 - Math.pow(1 - p, 3)) * n)); if (p < 1) requestAnimationFrame(s); }; requestAnimationFrame(s); }, [start, target, duration]);
-  return count;
-}
-function StatItem({ label, val, started }) {
-  const n = useCountUp(val, 1800, started);
-  const sfx = val.replace(/[\d,]/g, '');  return (<div className="mfg-sc"><div className="mfg-sv">{started ? n + sfx : val}</div><div className="mfg-sl">{label}</div></div>);
-}
-
 export default function ManufacturingSoftware() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [ss, setSs] = useState(false);
   const [vis, setVis] = useState(new Set());
   const [vSk, setVSk] = useState([]); const [vEn, setVEn] = useState([]); const [vWh, setVWh] = useState([]); const [vTe, setVTe] = useState([]); const [vSt, setVSt] = useState([]);
-  const stR = useRef(null); const secR = useRef({});
+  const secR = useRef({});
   const skR = useRef(null); const enR = useRef(null); const whR = useRef(null); const teR = useRef(null); const stGr = useRef(null);
-  useEffect(() => { if (!stR.current) return; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setSs(true); o.disconnect(); } }, { threshold: 0.4 }); o.observe(stR.current); return () => o.disconnect(); }, []);
   useEffect(() => {
     const pairs = [[skR, SOLUTIONS.length, setVSk], [enR, 3, setVEn], [whR, WHY.length, setVWh], [teR, 3, setVTe], [stGr, TECH_STACK.length, setVSt]];
     const obs = pairs.map(([ref, count, setter]) => { if (!ref.current) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { Array.from({ length: count }, (_, i) => setTimeout(() => setter(p => p.includes(i) ? p : [...p, i]), i * 75)); o.disconnect(); } }, { threshold: 0.05 }); o.observe(ref.current); return o; });
@@ -140,22 +130,6 @@ export default function ManufacturingSoftware() {
           .mfg-o1{width:800px;height:800px;background:radial-gradient(circle,rgba(120,53,15,.16) 0%,transparent 70%);top:-220px;right:-200px}
           .mfg-o2{width:700px;height:700px;background:radial-gradient(circle,rgba(180,83,9,.13) 0%,transparent 70%);bottom:0;left:-200px}
           .mfg-o3{width:480px;height:480px;background:radial-gradient(circle,rgba(5,150,105,.08) 0%,transparent 70%);top:42%;left:-90px}}.mfg-bc li::after{content:'/';opacity:.45}.mfg-bc li:last-child::after{display:none};text-decoration:none}
-          .mfg-hero{position:relative;z-index:2;text-align:center;max-width:940px;margin:0 auto;padding:44px 40px 28px}
-          .mfg-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:${ac};margin-bottom:14px}
-          .mfg-hero h1{font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .mfg-desc{font-size:16px;color:${txt2};line-height:1.65;max-width:720px;margin:0 auto 22px}
-          .mfg-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-bottom:24px}
-          .mfg-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:5px 13px;font-size:12px;font-weight:600;color:${txt};box-shadow:0 2px 8px rgba(120,53,15,.07)}
-          .mfg-dot{width:7px;height:7px;border-radius:50%;background:${ac};flex-shrink:0}
-          .mfg-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .mfg-p{display:inline-block;padding:13px 34px;background:${ac};color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(120,53,15,.28)}
-          .mfg-p:hover{background:${txt};transform:translateY(-2px)}
-          .mfg-g{display:inline-block;padding:13px 34px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:${txt};font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .mfg-g:hover{background:rgba(255,255,255,.85);border-color:rgba(120,53,15,.5);transform:translateY(-2px)}
-          .mfg-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:920px;margin:26px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(120,53,15,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .mfg-sc{padding:18px 16px;text-align:center;border-right:1px solid rgba(120,53,15,.10)}.mfg-sc:last-child{border-right:none}
-          .mfg-sv{font-size:28px;font-weight:900;color:${ac};letter-spacing:-.5px;line-height:1}
-          .mfg-sl{font-size:11px;color:${txt2};font-weight:500;margin-top:5px}
           .mfg-sec{padding:72px 40px;position:relative;z-index:1}
           .mfg-sec-alt{background:rgba(253,246,238,.55);border-top:1px solid rgba(120,53,15,.08);border-bottom:1px solid rgba(120,53,15,.08)}
           .mfg-in{max-width:1300px;margin:0 auto}
@@ -266,8 +240,8 @@ export default function ManufacturingSoftware() {
           .mfg-rb{background:rgba(22,101,52,.09);border-color:rgba(22,101,52,.28);color:#14532d}
           .mfg-rc{background:rgba(12,74,110,.09);border-color:rgba(12,74,110,.28);color:#0c4a6e}
           .mfg-rd{background:rgba(124,45,18,.09);border-color:rgba(124,45,18,.28);color:#7c2d12}
-          @media(max-width:1024px){.mfg-hero h1,.mfg-sh,.mfg-fq h2{font-size:34px}.mfg-sk-g{grid-template-columns:repeat(2,1fr)}.mfg-tec-g{grid-template-columns:repeat(2,1fr)}.mfg-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.mfg-en.feat{transform:none}.mfg-en.feat.mfg-ev{transform:none}.mfg-en.feat.mfg-ev:hover{transform:translateY(-4px)}.mfg-wy-g{grid-template-columns:repeat(2,1fr)}.mfg-tg2{grid-template-columns:1fr}.mfg-ct-g{grid-template-columns:1fr}}
-          @media(max-width:768px){.mfg-bc,.mfg-hero,.mfg-sec,.mfg-ct,.mfg-fq,.mfg-rel{padding-left:20px;padding-right:20px}.mfg-hero{padding-top:28px;padding-bottom:16px}.mfg-hero h1{font-size:26px}.mfg-stats{grid-template-columns:1fr 1fr}.mfg-sc:nth-child(2){border-right:none}.mfg-sc:nth-child(3),.mfg-sc:nth-child(4){border-top:1px solid rgba(120,53,15,.10)}.mfg-sc:nth-child(4){border-right:none}.mfg-sk-g,.mfg-tec-g,.mfg-wy-g{grid-template-columns:1fr}.mfg-fr{grid-template-columns:1fr}.mfg-cth{font-size:26px}}
+          @media(max-width:1024px){.mfg-sh,.mfg-fq h2{font-size:34px}.mfg-sk-g{grid-template-columns:repeat(2,1fr)}.mfg-tec-g{grid-template-columns:repeat(2,1fr)}.mfg-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.mfg-en.feat{transform:none}.mfg-en.feat.mfg-ev{transform:none}.mfg-en.feat.mfg-ev:hover{transform:translateY(-4px)}.mfg-wy-g{grid-template-columns:repeat(2,1fr)}.mfg-tg2{grid-template-columns:1fr}.mfg-ct-g{grid-template-columns:1fr}}
+          @media(max-width:768px){.mfg-bc,.mfg-sec,.mfg-ct,.mfg-fq,.mfg-rel{padding-left:20px;padding-right:20px}.mfg-sk-g,.mfg-tec-g,.mfg-wy-g{grid-template-columns:1fr}.mfg-fr{grid-template-columns:1fr}.mfg-cth{font-size:26px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
@@ -293,14 +267,19 @@ export default function ManufacturingSoftware() {
 </Head>
       <div className="mfg-page">
         <div className="mfg-orb mfg-o1" /><div className="mfg-orb mfg-o2" /><div className="mfg-orb mfg-o3" />
-        <section className="mfg-hero">
-          <span className="mfg-ey">Manufacturing Industry</span>
-          <h1>Manufacturing Software Development - MES, IIoT, ERP Integration & QMS</h1>
-          <p className="mfg-desc">Custom manufacturing technology for plant managers, IT leaders, and operations teams - Manufacturing Execution Systems (MES), ERP integration (SAP, Oracle, Dynamics), IIoT factory monitoring, predictive maintenance, QMS, supply chain visibility, and OEE analytics. 90+ manufacturing projects. 15+ years.</p>
-          <div className="mfg-tr">{['MES Development','IIoT & Industry 4.0','ERP Integration (SAP/Oracle)','Quality Management (QMS)','Predictive Maintenance'].map(b => (<div className="mfg-badge" key={b}><span className="mfg-dot" />{b}</div>))}</div>
-          <div className="mfg-ctas"><Link href="#contact" className="mfg-p">Discuss Your Manufacturing Project</Link><Link href="#solutions" className="mfg-g">View Solutions →</Link></div>
-        </section>
-        <div className="mfg-stats" ref={stR}>{[['90+','Manufacturing Projects'],['15+','Years Dev Experience'],['38%','Avg Unplanned Downtime Reduction'],['99.9%','Platform Uptime SLA']].map(([v, l]) => <StatItem key={l} label={l} val={v} started={ss} />)}</div>
+        <ServiceHero
+          eyebrow="Manufacturing Industry · MES · IIoT · ERP Integration"
+          title={<>Manufacturing Software Development - <AuroraText>MES, IIoT, ERP Integration & QMS</AuroraText></>}
+          subtext="Custom manufacturing technology for plant managers, IT leaders, and operations teams - Manufacturing Execution Systems (MES), ERP integration (SAP, Oracle, Dynamics), IIoT factory monitoring, predictive maintenance, QMS, supply chain visibility, and OEE analytics. 90+ manufacturing projects. 15+ years."
+          primaryCta={{ label: 'Discuss Your Manufacturing Project', href: '#contact' }}
+          secondaryCta={{ label: 'View Solutions', href: '#solutions' }}
+          stats={[
+            { label: 'Manufacturing Projects', value: '90', suffix: '+' },
+            { label: 'Years Dev Experience', value: '15', suffix: '+' },
+            { label: 'Avg Unplanned Downtime Reduction', value: '38', suffix: '%' },
+            { label: 'Platform Uptime SLA', value: '9', prefix: '99.', suffix: '%' },
+          ]}
+        />
         <section id="solutions" className="mfg-sec"><div className="mfg-in"><div className={`mfg-rv${vis.has('sk') ? ' mfg-ok' : ''}`} ref={el => { secR.current['sk'] = el; }}><span className="mfg-sey">Manufacturing Technology Solutions</span><h2 className="mfg-sh">What We Build for Manufacturing</h2><p className="mfg-sd">MES, ERP integration, production scheduling, QMS, IIoT monitoring, predictive maintenance, supply chain visibility, traceability, digital work instructions, and OEE analytics.</p></div><div className="mfg-sk-g" ref={skR}>{visS.map((s, i) => (<div key={s.n} className={`mfg-card${s.feat ? ' feat' : ''}${vSk.includes(i) ? ' mfg-cv' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}><span className="mfg-cn">{s.n}</span><h3>{s.title}</h3><p>{s.desc}</p></div>))}</div>{SOLUTIONS.length > 6 && <div className="mfg-sm"><button className="mfg-bm" onClick={() => setShowAll(p => !p)}>{showAll ? 'Show fewer ↑' : `Show all ${SOLUTIONS.length} solutions ↓`}</button></div>}</div></section>
         <section className="mfg-sec mfg-sec-alt"><div className="mfg-in"><div className={`mfg-rv${vis.has('stk') ? ' mfg-ok' : ''}`} ref={el => { secR.current['stk'] = el; }}><span className="mfg-sey">Technology Stack</span><h2 className="mfg-sh">Manufacturing Technology We Work With</h2><p className="mfg-sd">OPC-UA, MQTT, Node.js, Python, SAP BAPI, Oracle REST, Dynamics 365 API, InfluxDB, AWS IoT, and the full industrial connectivity ecosystem.</p></div><div className="mfg-tec-g" ref={stGr}>{TECH_STACK.map((g, i) => (<div key={g.group} className={`mfg-tc2${vSt.includes(i) ? ' mfg-sv2' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}><div className="mfg-tg" style={{ color: g.color, borderBottomColor: g.color + '33' }}>{g.group}</div><div className="mfg-pills">{g.items.map(it => <span key={it} className="mfg-pill" style={{ color: g.color, background: g.color + '12', borderColor: g.color + '30' }}>{it}</span>)}</div></div>))}</div></div></section>
         <section className="mfg-sec"><div className="mfg-in"><div className={`mfg-rv${vis.has('eng') ? ' mfg-ok' : ''}`} ref={el => { secR.current['eng'] = el; }}><span className="mfg-sey">Engagement Models</span><h2 className="mfg-sh">How We Work with Manufacturers</h2><p className="mfg-sd">Custom MES build, IIoT/predictive maintenance platform, or ERP integration sprint - structured for factory environments and phased production rollouts.</p></div><div className="mfg-en-g" ref={enR}>{ENGAGEMENT.map((m, i) => (<div key={m.id} className={`mfg-en${m.feat ? ' feat' : ''}${vEn.includes(i) ? ' mfg-ev' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><span className="mfg-en-b" style={{ color: m.bc, borderColor: m.bc + '44', background: m.bc + '14' }}>{m.badge}</span><div className="mfg-en-i"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke={m.feat ? '#D97706' : ac} strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d={m.icon} /></svg></div><div className="mfg-en-n">{m.name}</div><div className="mfg-en-h">{m.headline}</div><div className="mfg-en-d">{m.desc}</div><div className="mfg-en-ll">Best for</div><ul className="mfg-en-li">{m.best.map(b => <li key={b}>{b}</li>)}</ul><span className="mfg-en-tl">{m.tl}</span><Link href="#contact" className="mfg-en-a">Get a free estimate →</Link></div>))}</div></div></section>

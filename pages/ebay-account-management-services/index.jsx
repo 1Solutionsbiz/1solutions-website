@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const challenges = [
   {
@@ -100,15 +102,6 @@ const steps = [
   { title: 'Monthly Review', desc: 'Full monthly performance report with sales attribution, Promoted Listings ROI, seller health score, and a clear action plan for the next 30 days.' },
 ];
 
-const stats = [
-  { num: '182M', lbl: 'Active eBay buyers globally' },
-  { num: 'Top Rated', lbl: 'Seller status for 94% of clients' },
-  { num: '2.9×', lbl: 'avg sales velocity improvement' },
-  { num: '15+ yrs', lbl: 'eBay marketplace expertise' },
-];
-
-const trust = ['Cassini SEO specialists', 'TRS status experts', 'No lock-in contracts', 'Dedicated account manager'];
-
 const FAQS = [
   { q: 'What is the Cassini algorithm and how does it affect my eBay listings?', a: "Cassini is eBay's search engine. It ranks listings based on a combination of listing quality (title keywords, item specifics, description completeness), seller performance metrics (feedback score, defect rate, late shipment rate), pricing competitiveness, and conversion rate. Sellers who optimise only for keywords while ignoring seller performance consistently see their listings buried despite good content." },
   { q: 'What are the requirements for Top Rated Seller status?', a: 'To achieve Top Rated Seller status, you need a minimum of 100 transactions and $1,000 in sales in the past 12 months, a defect rate below 0.5 percent, a late shipment rate below 3 percent, and cases closed without seller resolution below 0.3 percent. TRS status provides a 10 percent final value fee discount and the gold TRS badge in search results, which measurably increases click-through rate.' },
@@ -138,25 +131,8 @@ export default function EbayAccountManagement() {
         <style>{`
           *{box-sizing:border-box;}
           body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;}
-          .ebay-hero{position:relative;overflow:hidden;padding:100px 40px 90px;background:linear-gradient(135deg,rgba(122,0,0,0.08) 0%,rgba(255,255,255,0.75) 50%,rgba(122,0,0,0.05) 100%);}
-          .ebay-orb1{position:absolute;top:-120px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(122,0,0,0.10) 0%,transparent 70%);pointer-events:none;filter:blur(12px);}
           .ebay-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;}
-          .ebay-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(122,0,0,0.09);border:1px solid rgba(122,0,0,0.20);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#7a0000;margin-bottom:24px;}
-          .ebay-h1{font-size:clamp(2.2rem,4vw,3.6rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;color:#0A1628;}
-          .ebay-h1-accent{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-          .ebay-desc{font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:680px;}
-          .ebay-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px;}
-          .ebay-btn-p{display:inline-flex;align-items:center;gap:8px;background:#7a0000;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 6px 24px rgba(122,0,0,0.25);}
-          .ebay-btn-p:hover{opacity:0.9;transform:translateY(-2px);}
-          .ebay-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.7);color:#7a0000;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;border:1.5px solid rgba(122,0,0,0.20);transition:all 0.25s;backdrop-filter:blur(8px);}
-          .ebay-btn-s:hover{background:#fff;transform:translateY(-2px);}
-          .ebay-trust{display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-bottom:48px;}
-          .ebay-badge{display:flex;align-items:center;gap:6px;font-size:12px;color:#6b7280;font-weight:500;}
-          .ebay-stats-bar{display:flex;border:1px solid rgba(122,0,0,0.10);border-radius:16px;background:rgba(255,255,255,0.80);backdrop-filter:blur(12px);overflow:hidden;max-width:680px;}
-          .ebay-stat-item{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(122,0,0,0.08);}
-          .ebay-stat-item:last-child{border-right:none;}
-          .ebay-stat-num{font-size:1.9rem;font-weight:900;color:#7a0000;line-height:1;letter-spacing:-1px;}
-          .ebay-stat-lbl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px;}.ebay-bc a:hover{color:#7a0000;}.ebay-bc-cur{color:#7a0000;font-weight:500;}
+          .ebay-bc a:hover{color:#7a0000;}.ebay-bc-cur{color:#7a0000;font-weight:500;}
           .ebay-sec{padding:80px 40px;}
           .ebay-bg{background:#f8fafd;}
           .ebay-tag{display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#7a0000;margin-bottom:12px;}
@@ -233,7 +209,7 @@ export default function EbayAccountManagement() {
           .ebay-cta-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#7a0000;padding:14px 32px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;}
           .ebay-cta-btn:hover{transform:translateY(-2px);opacity:0.95;}
           @media(max-width:900px){.ebay-grid3,.ebay-grid4{grid-template-columns:1fr 1fr;}.ebay-grid2{grid-template-columns:1fr;}.ebay-contact-grid{grid-template-columns:1fr;}.ebay-res-grid{grid-template-columns:1fr 1fr;}}
-          @media(max-width:600px){.ebay-hero,.ebay-sec,.ebay-results,.ebay-cta,.ebay-contact-sec{padding-left:20px;padding-right:20px;}.ebay-hero{padding-top:60px;padding-bottom:50px;}.ebay-grid3,.ebay-grid4,.ebay-grid2,.ebay-res-grid{grid-template-columns:1fr;}.ebay-bc{padding:12px 20px;}.ebay-field-row{grid-template-columns:1fr;}.ebay-form-wrap{padding:24px 20px;}}
+          @media(max-width:600px){.ebay-sec,.ebay-results,.ebay-cta,.ebay-contact-sec{padding-left:20px;padding-right:20px;}.ebay-grid3,.ebay-grid4,.ebay-grid2,.ebay-res-grid{grid-template-columns:1fr;}.ebay-bc{padding:12px 20px;}.ebay-field-row{grid-template-columns:1fr;}.ebay-form-wrap{padding:24px 20px;}}
           /* ── FAQ ── */
           .ebay-faq-sec { padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(122,0,0,0.08); }
           .ebay-faq-h { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 36px;line-height:1.15; }
@@ -275,38 +251,19 @@ export default function EbayAccountManagement() {
       </Head>
 
       {/* Hero */}
-      <section className="ebay-hero">
-        <div className="ebay-orb1" />
-        <div className="ebay-inner">
-          <div className="ebay-eyebrow">eBay Seller Management</div>
-          <h1 className="ebay-h1">
-            eBay Account Management That <span className="ebay-h1-accent">Maximises Sales Velocity</span> and Seller Status
-          </h1>
-          <p className="ebay-desc">
-            eBay's Cassini algorithm rewards sellers who optimise listing quality, fulfilment speed, and return policy. 1Solutions manages your entire eBay seller presence - from store structure to promoted listings - to drive consistent monthly growth.
-          </p>
-          <div className="ebay-trust">
-            {trust.map((t, i) => (
-              <span key={i} className="ebay-badge">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7a0000" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 13l4 4L19 7"/></svg>
-                {t}
-              </span>
-            ))}
-          </div>
-          <div className="ebay-btns">
-            <Link href="#contact" className="ebay-btn-p">Get Free eBay Store Audit</Link>
-            <Link href="#services" className="ebay-btn-s">See What We Manage</Link>
-          </div>
-          <div className="ebay-stats-bar">
-            {stats.map((s, i) => (
-              <div key={i} className="ebay-stat-item">
-                <span className="ebay-stat-num">{s.num}</span>
-                <span className="ebay-stat-lbl">{s.lbl}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="eBay Seller Management · Cassini SEO Specialists · TRS Status Experts"
+        title={<>eBay Account Management That <AuroraText>Maximises Sales Velocity</AuroraText> and Seller Status</>}
+        subtext="eBay's Cassini algorithm rewards sellers who optimise listing quality, fulfilment speed, and return policy. 1Solutions manages your entire eBay seller presence - from store structure to promoted listings - to drive consistent monthly growth."
+        primaryCta={{ label: 'Get Free eBay Store Audit', href: '#contact' }}
+        secondaryCta={{ label: 'See What We Manage', href: '#services' }}
+        stats={[
+          { label: 'Active eBay Buyers Globally', value: '182', suffix: 'M' },
+          { label: 'Clients Reach Top Rated Status', value: '94', suffix: '%' },
+          { label: 'Avg Sales Velocity Improvement', value: '9', prefix: '2.', suffix: '×' },
+          { label: 'Years eBay Marketplace Expertise', value: '15', suffix: '+' },
+        ]}
+      />
 
       {/* Challenges */}
       <section className="ebay-sec ebay-bg">

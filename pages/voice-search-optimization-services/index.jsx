@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'Voice Search Keyword Research', desc: 'Conversational, long-tail, and question-based keyword research - who, what, where, when, why, and how queries that match how people speak to Alexa, Siri, Google Assistant, and Cortana.' },
@@ -44,13 +46,6 @@ const FAQS = [
   { q: 'What is Speakable schema and do I need it?', a: 'Speakable schema (schema.org/SpeakableSpecification) is a structured data type that tells Google which sections of a web page are most appropriate for text-to-speech playback - i.e., which parts should be read aloud by voice assistants. It was primarily designed for news publishers but has broader application for any content-heavy site. Implementing Speakable schema signals to Google Assistant exactly which sections of your content are the most relevant spoken-answer portions. It is particularly valuable for: news and media sites; how-to and instructional content; and FAQ pages. While not required for basic voice SEO, it is a useful signal that complements FAQPage and HowTo schema.' },
 ];
 
-const STATS = [
-  { label: 'Featured Snippets Captured', val: '1,200+' },
-  { label: 'Years Experience', val: '15+' },
-  { label: 'Voice Query Types Covered', val: '8+' },
-  { label: 'Client Retention', val: '92%' },
-];
-
 export default function VoiceSearchOptimizationServices() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleCards, setVisibleCards] = useState([]);
@@ -78,22 +73,11 @@ export default function VoiceSearchOptimizationServices() {
         <style>{`
           .vseo-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .vseo-page *,.vseo-page *::before,.vseo-page *::after{box-sizing:border-box}
-          .vseo-hero{background:linear-gradient(135deg,#f0f9ff 0%,#bae6fd 25%,#e0f2fe 60%,#f0f9ff 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .vseo-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(2,132,199,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .vseo-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(7,89,133,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .vseo-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.vseo-bc a:hover{color:#0284C7}.vseo-bc span{color:#d1d5db}
-          .vseo-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(2,132,199,0.08);border:1px solid rgba(2,132,199,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#0284C7;margin-bottom:28px}
-          .vseo-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .vseo-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
-          .vseo-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
+          .vseo-bc a:hover{color:#0284C7}.vseo-bc span{color:#d1d5db}
           .vseo-btn-p{display:inline-flex;align-items:center;gap:8px;background:#0284C7;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(2,132,199,0.28)}
           .vseo-btn-p:hover{background:#0369A1;box-shadow:0 8px 32px rgba(2,132,199,0.38);transform:translateY(-2px)}
           .vseo-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.18);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
           .vseo-btn-s:hover{border-color:#0284C7;color:#0284C7;transform:translateY(-2px)}
-          .vseo-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(2,132,199,0.07)}
-          .vseo-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(2,132,199,0.08)}.vseo-stat:last-child{border-right:none}
-          .vseo-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .vseo-stat-v{font-size:1.6rem;font-weight:900;color:#0284C7;letter-spacing:-0.5px}
           .vseo-svc{background:#f8fafd;padding:80px 40px}.vseo-svc-in{max-width:1280px;margin:0 auto}
           .vseo-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#0284C7;margin-bottom:10px;display:block}
           .vseo-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
@@ -140,25 +124,26 @@ export default function VoiceSearchOptimizationServices() {
           .vseo-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           .vseo-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.vseo-grid{grid-template-columns:repeat(2,1fr)}.vseo-why-grid{grid-template-columns:repeat(2,1fr)}}
-          @media(max-width:768px){.vseo-hero,.vseo-svc,.vseo-asst,.vseo-proc,.vseo-why,.vseo-faq,.vseo-cta{padding:60px 24px}.vseo-hero{padding-top:60px;padding-bottom:0}.vseo-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.vseo-stat:nth-child(2){border-right:none}.vseo-grid{grid-template-columns:1fr}.vseo-why-grid{grid-template-columns:1fr}.vseo-step{grid-template-columns:56px 1fr}.vseo-btns{flex-direction:column;align-items:center}}
+          @media(max-width:768px){.vseo-svc,.vseo-asst,.vseo-proc,.vseo-why,.vseo-faq,.vseo-cta{padding:60px 24px}.vseo-grid{grid-template-columns:1fr}.vseo-why-grid{grid-template-columns:1fr}.vseo-step{grid-template-columns:56px 1fr}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
       <div className="vseo-page">
-        <section className="vseo-hero"><div className="vseo-o1"/><div className="vseo-o2"/>
-          <div className="vseo-in">
-            <span className="vseo-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#0284C7',display:'inline-block'}}/> Featured Snippets · Conversational SEO · Local Voice</span>
-            <h1 className="vseo-h1">Voice Search Optimisation Services - Rank for What People Say, Not Just Type</h1>
-            <p className="vseo-sub">Featured snippet capture, conversational content, FAQ schema, and local voice SEO - optimising your presence for Google Assistant, Alexa, Siri, and Cortana voice queries.</p>
-            <div className="vseo-btns">
-              <Link href="/contact-us" className="vseo-btn-p">Start Voice SEO <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/local-seo-services" className="vseo-btn-s">Local SEO Services</Link>
-            </div>
-            <div className="vseo-stats">{STATS.map(s => <div key={s.label} className="vseo-stat"><div className="vseo-stat-l">{s.label}</div><div className="vseo-stat-v">{s.val}</div></div>)}</div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Featured Snippets · Conversational SEO · Local Voice"
+          title={<>Voice Search Optimisation Services - <AuroraText>Rank for What People Say, Not Just Type</AuroraText></>}
+          subtext="Featured snippet capture, conversational content, FAQ schema, and local voice SEO - optimising your presence for Google Assistant, Alexa, Siri, and Cortana voice queries."
+          primaryCta={{ label: 'Start Voice SEO', href: '/contact-us' }}
+          secondaryCta={{ label: 'Local SEO Services', href: '/local-seo-services' }}
+          stats={[
+            { label: 'Featured Snippets Captured', value: '1,200', suffix: '+' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'Voice Query Types Covered', value: '8', suffix: '+' },
+            { label: 'Client Retention', value: '92', suffix: '%' },
+          ]}
+        />
         <section className="vseo-svc"><div className="vseo-svc-in">
           <span className="vseo-ey2">What We Do</span><h2 className="vseo-ttl">Voice Search Optimisation Services</h2>
           <p className="vseo-desc">Question keyword research, conversational content, featured snippet targeting, and schema markup - everything needed to appear in spoken search results.</p>

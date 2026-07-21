@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const ACCENT = '#004040';
 const ACCENT_MID = '#009999';
@@ -140,27 +142,6 @@ export default function FBAReconciliation() {
 
 
 
-        .fbar-hero { background: linear-gradient(135deg, #001919 0%, #004040 60%, #006060 100%); color: #fff; padding: 80px 24px 72px; position: relative; overflow: hidden; }
-        .fbar-hero-orb1 { position: absolute; top: -80px; right: -80px; width: 400px; height: 400px; background: rgba(${ACCENT_RGB}, 0.4); border-radius: 50%; filter: blur(80px); pointer-events: none; }
-        .fbar-hero-orb2 { position: absolute; bottom: -100px; left: -60px; width: 300px; height: 300px; background: rgba(0,153,153,0.2); border-radius: 50%; filter: blur(60px); pointer-events: none; }
-        .fbar-hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
-        .fbar-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; padding: 6px 16px; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 24px; }
-        .fbar-eyebrow-dot { width: 6px; height: 6px; background: #4ade80; border-radius: 50%; }
-        .fbar-hero h1 { font-size: clamp(28px, 4vw, 52px); font-weight: 800; line-height: 1.15; max-width: 860px; margin: 0 0 24px; }
-        .fbar-hero-desc { font-size: 18px; line-height: 1.7; max-width: 760px; opacity: 0.9; margin-bottom: 40px; }
-        .fbar-stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.15); border-radius: 12px; overflow: hidden; margin-bottom: 40px; }
-        .fbar-stat { background: rgba(255,255,255,0.08); padding: 20px 16px; text-align: center; }
-        .fbar-stat-num { font-size: 28px; font-weight: 800; color: #fff; display: block; }
-        .fbar-stat-label { font-size: 12px; opacity: 0.75; margin-top: 4px; display: block; }
-        .fbar-hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 36px; }
-        .fbar-btn-primary { background: #fff; color: ${ACCENT}; padding: 14px 28px; border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: none; cursor: pointer; transition: transform 0.2s; }
-        .fbar-btn-primary:hover { transform: translateY(-2px); }
-        .fbar-btn-secondary { background: transparent; color: #fff; padding: 14px 28px; border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: 2px solid rgba(255,255,255,0.4); cursor: pointer; transition: border-color 0.2s; }
-        .fbar-btn-secondary:hover { border-color: #fff; }
-        .fbar-trust-badges { display: flex; flex-wrap: wrap; gap: 12px; }
-        .fbar-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; padding: 6px 12px; font-size: 13px; }
-        .fbar-badge-check { color: #4ade80; font-size: 14px; }
-
         .fbar-challenges { padding: 80px 24px; background: #fff; }
         .fbar-section-inner { max-width: 1200px; margin: 0 auto; }
         .fbar-section-label { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: ${ACCENT}; margin-bottom: 12px; }
@@ -241,7 +222,6 @@ export default function FBAReconciliation() {
         @media (max-width: 900px) {
           .fbar-challenges-grid { grid-template-columns: repeat(2, 1fr); }
           .fbar-services-grid { grid-template-columns: repeat(2, 1fr); }
-          .fbar-stats-bar { grid-template-columns: repeat(2, 1fr); }
           .fbar-contact-grid { grid-template-columns: 1fr; gap: 40px; }
           .fbar-cases-grid { grid-template-columns: 1fr; }
           .fbar-results-grid { grid-template-columns: 1fr; gap: 24px; }
@@ -294,35 +274,19 @@ export default function FBAReconciliation() {
 
       <div className="fbar-page">
 
-        <section className="fbar-hero">
-          <div className="fbar-hero-orb1" />
-          <div className="fbar-hero-orb2" />
-          <div className="fbar-hero-inner">
-            <div className="fbar-eyebrow">
-              <span className="fbar-eyebrow-dot" />
-              Amazon FBA Reconciliation
-            </div>
-            <h1>Amazon FBA Reconciliation Services That Recover Money Amazon Owes You</h1>
-            <p className="fbar-hero-desc">
-              Amazon loses, damages, or miscounts FBA inventory every single month - and most sellers never claim the reimbursements they are owed. 1Solutions audits your FBA shipments, identifies every discrepancy, files claims on your behalf, and follows up until the money is recovered.
-            </p>
-            <div className="fbar-stats-bar">
-              <div className="fbar-stat"><span className="fbar-stat-num">$3.2M+</span><span className="fbar-stat-label">Recovered for FBA sellers</span></div>
-              <div className="fbar-stat"><span className="fbar-stat-num">87%</span><span className="fbar-stat-label">Average claim approval rate</span></div>
-              <div className="fbar-stat"><span className="fbar-stat-num">1-3%</span><span className="fbar-stat-label">of FBA revenue lost monthly on average</span></div>
-              <div className="fbar-stat"><span className="fbar-stat-num">60-day</span><span className="fbar-stat-label">Maximum claim window (time-sensitive)</span></div>
-            </div>
-            <div className="fbar-hero-ctas">
-              <Link href="#contact" className="fbar-btn-primary">Find Out What Amazon Owes You →</Link>
-              <Link href="#services" className="fbar-btn-secondary">Explore Services</Link>
-            </div>
-            <div className="fbar-trust-badges">
-              {['Amazon Seller Central expertise', 'No recovery no fee option', 'Claims filed within 48 hours', 'Dedicated reconciliation specialist'].map(b => (
-                <span key={b} className="fbar-badge"><span className="fbar-badge-check">✓</span>{b}</span>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Amazon FBA Reconciliation · No Recovery No Fee"
+          title={<>Amazon FBA Reconciliation Services That <AuroraText>Recover Money Amazon Owes You</AuroraText></>}
+          subtext="Amazon loses, damages, or miscounts FBA inventory every single month - and most sellers never claim the reimbursements they are owed. 1Solutions audits your FBA shipments, identifies every discrepancy, files claims on your behalf, and follows up until the money is recovered."
+          primaryCta={{ label: 'Find Out What Amazon Owes You →', href: '#contact' }}
+          secondaryCta={{ label: 'Explore Services', href: '#services' }}
+          stats={[
+            { label: 'Recovered for FBA Sellers', value: '2', prefix: '$3.', suffix: 'M+' },
+            { label: 'Average Claim Approval Rate', value: '87', suffix: '%' },
+            { label: 'of FBA Revenue Lost Monthly', value: '3', prefix: '1-', suffix: '%' },
+            { label: 'Maximum Claim Window', value: '60', suffix: '-day' },
+          ]}
+        />
 
         <section className="fbar-challenges">
           <div className="fbar-section-inner">

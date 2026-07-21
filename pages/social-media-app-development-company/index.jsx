@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -73,25 +75,13 @@ const FAQS = [
   { q: 'What tech stack do you use for social media apps?', a: 'Frontend: React Native (iOS/Android) and Next.js (web). Backend: Node.js/NestJS, GraphQL, Kafka, Redis. Video: FFmpeg, AWS Elemental, HLS. Real-time: Socket.io, WebRTC. Payments: Stripe Connect. Moderation: AWS Rekognition, OpenAI. Cloud: AWS or GCP with Kubernetes.' },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => { if (!start) return; const n = parseInt(target.replace(/\D/g, ''), 10); if (!n) return; let t0 = null; const s = ts => { if (!t0) t0 = ts; const p = Math.min((ts - t0) / duration, 1); setCount(Math.floor((1 - Math.pow(1 - p, 3)) * n)); if (p < 1) requestAnimationFrame(s); }; requestAnimationFrame(s); }, [start, target, duration]);
-  return count;
-}
-function StatItem({ label, val, started }) {
-  const n = useCountUp(val, 1800, started);
-  const sfx = val.replace(/[\d,]/g, '');  return (<div className="socm-sc"><div className="socm-sv">{started ? n + sfx : val}</div><div className="socm-sl">{label}</div></div>);
-}
-
 export default function SocialMediaAppDevelopment() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [ss, setSs] = useState(false);
   const [vis, setVis] = useState(new Set());
   const [vSk, setVSk] = useState([]); const [vEn, setVEn] = useState([]); const [vWh, setVWh] = useState([]); const [vTe, setVTe] = useState([]); const [vSt, setVSt] = useState([]);
-  const stR = useRef(null); const secR = useRef({});
+  const secR = useRef({});
   const skR = useRef(null); const enR = useRef(null); const whR = useRef(null); const teR = useRef(null); const stGr = useRef(null);
-  useEffect(() => { if (!stR.current) return; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setSs(true); o.disconnect(); } }, { threshold: 0.4 }); o.observe(stR.current); return () => o.disconnect(); }, []);
   useEffect(() => {
     const pairs = [[skR, SOLUTIONS.length, setVSk], [enR, 3, setVEn], [whR, WHY.length, setVWh], [teR, 3, setVTe], [stGr, TECH_STACK.length, setVSt]];
     const obs = pairs.map(([ref, count, setter]) => { if (!ref.current) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { Array.from({ length: count }, (_, i) => setTimeout(() => setter(p => p.includes(i) ? p : [...p, i]), i * 75)); o.disconnect(); } }, { threshold: 0.05 }); o.observe(ref.current); return o; });
@@ -139,22 +129,6 @@ export default function SocialMediaAppDevelopment() {
           .socm-o1{width:800px;height:800px;background:radial-gradient(circle,rgba(112,26,117,.16) 0%,transparent 70%);top:-220px;right:-200px}
           .socm-o2{width:700px;height:700px;background:radial-gradient(circle,rgba(162,28,175,.12) 0%,transparent 70%);bottom:0;left:-200px}
           .socm-o3{width:480px;height:480px;background:radial-gradient(circle,rgba(217,119,6,.08) 0%,transparent 70%);top:42%;left:-90px}}.socm-bc li::after{content:'/';opacity:.45}.socm-bc li:last-child::after{display:none};text-decoration:none}
-          .socm-hero{position:relative;z-index:2;text-align:center;max-width:940px;margin:0 auto;padding:44px 40px 28px}
-          .socm-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:${ac2};margin-bottom:14px}
-          .socm-hero h1{font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .socm-desc{font-size:16px;color:${txt2};line-height:1.65;max-width:720px;margin:0 auto 22px}
-          .socm-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-bottom:24px}
-          .socm-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:5px 13px;font-size:12px;font-weight:600;color:${txt};box-shadow:0 2px 8px rgba(112,26,117,.07)}
-          .socm-dot{width:7px;height:7px;border-radius:50%;background:${ac2};flex-shrink:0}
-          .socm-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .socm-p{display:inline-block;padding:13px 34px;background:${ac};color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(112,26,117,.28)}
-          .socm-p:hover{background:${txt};transform:translateY(-2px)}
-          .socm-g{display:inline-block;padding:13px 34px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:${txt};font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .socm-g:hover{background:rgba(255,255,255,.85);border-color:rgba(112,26,117,.5);transform:translateY(-2px)}
-          .socm-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:920px;margin:26px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(112,26,117,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .socm-sc{padding:18px 16px;text-align:center;border-right:1px solid rgba(112,26,117,.10)}.socm-sc:last-child{border-right:none}
-          .socm-sv{font-size:28px;font-weight:900;color:${ac2};letter-spacing:-.5px;line-height:1}
-          .socm-sl{font-size:11px;color:${txt2};font-weight:500;margin-top:5px}
           .socm-sec{padding:72px 40px;position:relative;z-index:1}
           .socm-sec-alt{background:rgba(253,244,255,.55);border-top:1px solid rgba(112,26,117,.08);border-bottom:1px solid rgba(112,26,117,.08)}
           .socm-in{max-width:1300px;margin:0 auto}
@@ -265,8 +239,8 @@ export default function SocialMediaAppDevelopment() {
           .socm-rb{background:rgba(45,27,105,.09);border-color:rgba(45,27,105,.28);color:#2d1b69}
           .socm-rc{background:rgba(120,53,15,.09);border-color:rgba(120,53,15,.28);color:#78350f}
           .socm-rd{background:rgba(20,83,45,.09);border-color:rgba(20,83,45,.28);color:#14532d}
-          @media(max-width:1024px){.socm-hero h1,.socm-sh,.socm-fq h2{font-size:34px}.socm-sk-g{grid-template-columns:repeat(2,1fr)}.socm-tec-g{grid-template-columns:repeat(2,1fr)}.socm-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.socm-en.feat{transform:none}.socm-en.feat.socm-ev{transform:none}.socm-en.feat.socm-ev:hover{transform:translateY(-4px)}.socm-wy-g{grid-template-columns:repeat(2,1fr)}.socm-tg2{grid-template-columns:1fr}.socm-ct-g{grid-template-columns:1fr}}
-          @media(max-width:768px){.socm-bc,.socm-hero,.socm-sec,.socm-ct,.socm-fq,.socm-rel{padding-left:20px;padding-right:20px}.socm-hero{padding-top:28px;padding-bottom:16px}.socm-hero h1{font-size:26px}.socm-stats{grid-template-columns:1fr 1fr}.socm-sc:nth-child(2){border-right:none}.socm-sc:nth-child(3),.socm-sc:nth-child(4){border-top:1px solid rgba(112,26,117,.10)}.socm-sc:nth-child(4){border-right:none}.socm-sk-g,.socm-tec-g,.socm-wy-g{grid-template-columns:1fr}.socm-fr{grid-template-columns:1fr}.socm-cth{font-size:26px}}
+          @media(max-width:1024px){.socm-sh,.socm-fq h2{font-size:34px}.socm-sk-g{grid-template-columns:repeat(2,1fr)}.socm-tec-g{grid-template-columns:repeat(2,1fr)}.socm-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.socm-en.feat{transform:none}.socm-en.feat.socm-ev{transform:none}.socm-en.feat.socm-ev:hover{transform:translateY(-4px)}.socm-wy-g{grid-template-columns:repeat(2,1fr)}.socm-tg2{grid-template-columns:1fr}.socm-ct-g{grid-template-columns:1fr}}
+          @media(max-width:768px){.socm-bc,.socm-sec,.socm-ct,.socm-fq,.socm-rel{padding-left:20px;padding-right:20px}.socm-sk-g,.socm-tec-g,.socm-wy-g{grid-template-columns:1fr}.socm-fr{grid-template-columns:1fr}.socm-cth{font-size:26px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
@@ -292,14 +266,19 @@ export default function SocialMediaAppDevelopment() {
 </Head>
       <div className="socm-page">
         <div className="socm-orb socm-o1" /><div className="socm-orb socm-o2" /><div className="socm-orb socm-o3" />
-        <section className="socm-hero">
-          <span className="socm-ey">Social Media Industry</span>
-          <h1>Social Media App Development Company - Niche Social Networks, Creator Platforms & Community Apps</h1>
-          <p className="socm-desc">Custom social media and community app development - niche social networks, short-form video platforms (Reels/TikTok-style), creator monetisation tools, fan engagement apps, social commerce, real-time messaging, and AI-assisted content moderation. 55+ social app projects. 15+ years.</p>
-          <div className="socm-tr">{['Niche Social Network','Short-Form Video','Creator Monetisation','Social Commerce','Content Moderation'].map(b => (<div className="socm-badge" key={b}><span className="socm-dot" />{b}</div>))}</div>
-          <div className="socm-ctas"><Link href="#contact" className="socm-p">Discuss Your Social Platform</Link><Link href="#solutions" className="socm-g">View Solutions →</Link></div>
-        </section>
-        <div className="socm-stats" ref={stR}>{[['55+','Social App Projects'],['15+','Years Dev Experience'],['61%','Avg DAU Time Increase'],['99.9%','Platform Uptime SLA']].map(([v, l]) => <StatItem key={l} label={l} val={v} started={ss} />)}</div>
+        <ServiceHero
+          eyebrow="Social Media Industry"
+          title={<>Social Media App Development Company - <AuroraText>Niche Social Networks, Creator Platforms & Community Apps</AuroraText></>}
+          subtext="Custom social media and community app development - niche social networks, short-form video platforms (Reels/TikTok-style), creator monetisation tools, fan engagement apps, social commerce, real-time messaging, and AI-assisted content moderation. 55+ social app projects. 15+ years."
+          primaryCta={{ label: 'Discuss Your Social Platform', href: '#contact' }}
+          secondaryCta={{ label: 'View Solutions', href: '#solutions' }}
+          stats={[
+            { label: 'Social App Projects', value: '55', suffix: '+' },
+            { label: 'Years Dev Experience', value: '15', suffix: '+' },
+            { label: 'Avg DAU Time Increase', value: '61', suffix: '%' },
+            { label: 'Platform Uptime SLA', value: '9', prefix: '99.', suffix: '%' },
+          ]}
+        />
         <section id="solutions" className="socm-sec"><div className="socm-in"><div className={`socm-rv${vis.has('sk') ? ' socm-ok' : ''}`} ref={el => { secR.current['sk'] = el; }}><span className="socm-sey">Social Media Solutions</span><h2 className="socm-sh">What We Build for Social Platforms</h2><p className="socm-sd">Niche social networks, short-form video, creator monetisation, fan engagement, social commerce, messaging, content moderation, live streaming, social graph, and analytics dashboards.</p></div><div className="socm-sk-g" ref={skR}>{visS.map((s, i) => (<div key={s.n} className={`socm-card${s.feat ? ' feat' : ''}${vSk.includes(i) ? ' socm-cv' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}><span className="socm-cn">{s.n}</span><h3>{s.title}</h3><p>{s.desc}</p></div>))}</div>{SOLUTIONS.length > 6 && <div className="socm-sm"><button className="socm-bm" onClick={() => setShowAll(p => !p)}>{showAll ? 'Show fewer ↑' : `Show all ${SOLUTIONS.length} solutions ↓`}</button></div>}</div></section>
         <section className="socm-sec socm-sec-alt"><div className="socm-in"><div className={`socm-rv${vis.has('stk') ? ' socm-ok' : ''}`} ref={el => { secR.current['stk'] = el; }}><span className="socm-sey">Technology Stack</span><h2 className="socm-sh">Social Media Technology We Use</h2><p className="socm-sd">React Native, Redis fan-out feed architecture, Kafka event streaming, FFmpeg video pipeline, Stripe Connect creator payouts, AWS Rekognition moderation, and the full social tech stack.</p></div><div className="socm-tec-g" ref={stGr}>{TECH_STACK.map((g, i) => (<div key={g.group} className={`socm-tc2${vSt.includes(i) ? ' socm-sv2' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}><div className="socm-tg" style={{ color: g.color, borderBottomColor: g.color + '33' }}>{g.group}</div><div className="socm-pills">{g.items.map(it => <span key={it} className="socm-pill" style={{ color: g.color, background: g.color + '12', borderColor: g.color + '30' }}>{it}</span>)}</div></div>))}</div></div></section>
         <section className="socm-sec"><div className="socm-in"><div className={`socm-rv${vis.has('eng') ? ' socm-ok' : ''}`} ref={el => { secR.current['eng'] = el; }}><span className="socm-sey">Engagement Models</span><h2 className="socm-sh">How We Work with Social Platforms</h2><p className="socm-sd">Full social platform build, short-form video feature addition, or content moderation system - matched to your stage and growth ambitions.</p></div><div className="socm-en-g" ref={enR}>{ENGAGEMENT.map((m, i) => (<div key={m.id} className={`socm-en${m.feat ? ' feat' : ''}${vEn.includes(i) ? ' socm-ev' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><span className="socm-en-b" style={{ color: m.bc, borderColor: m.bc + '44', background: m.bc + '14' }}>{m.badge}</span><div className="socm-en-i"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke={m.feat ? '#D97706' : ac2} strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d={m.icon} /></svg></div><div className="socm-en-n">{m.name}</div><div className="socm-en-h">{m.headline}</div><div className="socm-en-d">{m.desc}</div><div className="socm-en-ll">Best for</div><ul className="socm-en-li">{m.best.map(b => <li key={b}>{b}</li>)}</ul><span className="socm-en-tl">{m.tl}</span><Link href="#contact" className="socm-en-a">Get a free estimate →</Link></div>))}</div></div></section>
