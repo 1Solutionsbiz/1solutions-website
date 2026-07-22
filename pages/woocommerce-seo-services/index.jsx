@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'WooCommerce Technical SEO Audit', desc: 'Comprehensive audit of your WooCommerce store - duplicate content, faceted navigation, pagination, canonical tags, Core Web Vitals, plugin conflicts, and crawl budget analysis.' },
@@ -44,13 +46,6 @@ const FAQS = [
   { q: 'How do you measure the ROI of WooCommerce SEO?', a: 'We configure GA4 ecommerce tracking to attribute revenue to organic search specifically - not just traffic. Monthly reports show: organic revenue and transactions; organic conversion rate vs other channels; average order value from organic; and top-performing organic landing pages by revenue. We also track keyword ranking movements for your highest-revenue product and category pages to show the relationship between SEO improvements and sales outcomes.' },
 ];
 
-const STATS = [
-  { label: 'WooCommerce Stores Optimised', val: '400+' },
-  { label: 'Years Experience', val: '15+' },
-  { label: 'Avg Organic Traffic Lift', val: '+320%' },
-  { label: 'Client Retention', val: '95%' },
-];
-
 export default function WoocommerceSeoServices() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleCards, setVisibleCards] = useState([]);
@@ -78,22 +73,11 @@ export default function WoocommerceSeoServices() {
         <style>{`
           .wcseo-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .wcseo-page *,.wcseo-page *::before,.wcseo-page *::after{box-sizing:border-box}
-          .wcseo-hero{background:linear-gradient(135deg,#faf5ff 0%,#ede9fe 25%,#f3e8ff 60%,#fdf4ff 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .wcseo-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(109,40,217,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .wcseo-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(126,34,206,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
           .wcseo-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.wcseo-bc a:hover{color:#7E22CE}.wcseo-bc span{color:#d1d5db}
-          .wcseo-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(109,40,217,0.08);border:1px solid rgba(109,40,217,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6D28D9;margin-bottom:28px}
-          .wcseo-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .wcseo-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
-          .wcseo-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .wcseo-btn-p{display:inline-flex;align-items:center;gap:8px;background:#7E22CE;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(126,34,206,0.28)}
           .wcseo-btn-p:hover{background:#6D28D9;box-shadow:0 8px 32px rgba(126,34,206,0.38);transform:translateY(-2px)}
           .wcseo-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.18);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
           .wcseo-btn-s:hover{border-color:#7E22CE;color:#7E22CE;transform:translateY(-2px)}
-          .wcseo-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(109,40,217,0.07)}
-          .wcseo-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(109,40,217,0.08)}.wcseo-stat:last-child{border-right:none}
-          .wcseo-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .wcseo-stat-v{font-size:1.6rem;font-weight:900;color:#7E22CE;letter-spacing:-0.5px}
           .wcseo-svc{background:#f8fafd;padding:80px 40px}.wcseo-svc-in{max-width:1280px;margin:0 auto}
           .wcseo-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7E22CE;margin-bottom:10px;display:block}
           .wcseo-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
@@ -140,25 +124,26 @@ export default function WoocommerceSeoServices() {
           .wcseo-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           .wcseo-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.wcseo-grid{grid-template-columns:repeat(2,1fr)}.wcseo-why-grid{grid-template-columns:repeat(2,1fr)}}
-          @media(max-width:768px){.wcseo-hero,.wcseo-svc,.wcseo-plug,.wcseo-proc,.wcseo-why,.wcseo-faq,.wcseo-cta{padding:60px 24px}.wcseo-hero{padding-top:60px;padding-bottom:0}.wcseo-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.wcseo-stat:nth-child(2){border-right:none}.wcseo-grid{grid-template-columns:1fr}.wcseo-why-grid{grid-template-columns:1fr}.wcseo-step{grid-template-columns:56px 1fr}.wcseo-btns{flex-direction:column;align-items:center}}
+          @media(max-width:768px){.wcseo-svc,.wcseo-plug,.wcseo-proc,.wcseo-why,.wcseo-faq,.wcseo-cta{padding:60px 24px}.wcseo-grid{grid-template-columns:1fr}.wcseo-why-grid{grid-template-columns:1fr}.wcseo-step{grid-template-columns:56px 1fr}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
       <div className="wcseo-page">
-        <section className="wcseo-hero"><div className="wcseo-o1"/><div className="wcseo-o2"/>
-          <div className="wcseo-in">
-            <span className="wcseo-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#7E22CE',display:'inline-block'}}/> WordPress · WooCommerce · Revenue-Focused</span>
-            <h1 className="wcseo-h1">WooCommerce SEO Services That Drive Organic Revenue</h1>
-            <p className="wcseo-sub">Fix faceted navigation, resolve duplicate content, and optimise every product and category page - specialist WooCommerce SEO that connects organic rankings directly to your store&rsquo;s revenue.</p>
-            <div className="wcseo-btns">
-              <Link href="/contact-us" className="wcseo-btn-p">Get a Free WooCommerce SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/woocommerce-development-company" className="wcseo-btn-s">WooCommerce Development</Link>
-            </div>
-            <div className="wcseo-stats">{STATS.map(s => <div key={s.label} className="wcseo-stat"><div className="wcseo-stat-l">{s.label}</div><div className="wcseo-stat-v">{s.val}</div></div>)}</div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="WordPress · WooCommerce · Revenue-Focused"
+          title={<>WooCommerce SEO Services That <AuroraText>Drive Organic Revenue</AuroraText></>}
+          subtext="Fix faceted navigation, resolve duplicate content, and optimise every product and category page - specialist WooCommerce SEO that connects organic rankings directly to your store's revenue."
+          primaryCta={{ label: 'Get a Free WooCommerce SEO Audit', href: '/contact-us' }}
+          secondaryCta={{ label: 'WooCommerce Development', href: '/woocommerce-development-company' }}
+          stats={[
+            { label: 'WooCommerce Stores Optimised', value: '400', suffix: '+' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'Avg Organic Traffic Lift', value: '320', prefix: '+', suffix: '%' },
+            { label: 'Client Retention', value: '95', suffix: '%' },
+          ]}
+        />
         <section className="wcseo-svc"><div className="wcseo-svc-in">
           <span className="wcseo-ey2">What We Do</span><h2 className="wcseo-ttl">WooCommerce SEO Services</h2>
           <p className="wcseo-desc">From fixing structural issues to building long-term organic authority - every WooCommerce SEO layer handled by specialists who know WordPress and ecommerce.</p>

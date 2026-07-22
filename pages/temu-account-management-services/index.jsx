@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const ACCENT = '#4f0800';
 const ACCENT_MID = '#b03000';
@@ -140,28 +142,6 @@ export default function TemuAccountManagement() {
 
 
 
-        /* Hero */
-        .temu-hero { background: linear-gradient(135deg, #1f0300 0%, #4f0800 60%, #7a1200 100%); color: #fff; padding: 80px 24px 72px; position: relative; overflow: hidden; }
-        .temu-hero-orb1 { position: absolute; top: -80px; right: -80px; width: 400px; height: 400px; background: rgba(${ACCENT_RGB}, 0.3); border-radius: 50%; filter: blur(80px); pointer-events: none; }
-        .temu-hero-orb2 { position: absolute; bottom: -100px; left: -60px; width: 300px; height: 300px; background: rgba(176, 48, 0, 0.2); border-radius: 50%; filter: blur(60px); pointer-events: none; }
-        .temu-hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
-        .temu-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; padding: 6px 16px; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 24px; }
-        .temu-eyebrow-dot { width: 6px; height: 6px; background: #ff6b35; border-radius: 50%; }
-        .temu-hero h1 { font-size: clamp(28px, 4vw, 52px); font-weight: 800; line-height: 1.15; max-width: 860px; margin: 0 0 24px; }
-        .temu-hero-desc { font-size: 18px; line-height: 1.7; max-width: 760px; opacity: 0.9; margin-bottom: 40px; }
-        .temu-stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.15); border-radius: 12px; overflow: hidden; margin-bottom: 40px; }
-        .temu-stat { background: rgba(255,255,255,0.08); padding: 20px 16px; text-align: center; }
-        .temu-stat-num { font-size: 28px; font-weight: 800; color: #fff; display: block; }
-        .temu-stat-label { font-size: 12px; opacity: 0.75; margin-top: 4px; display: block; }
-        .temu-hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 36px; }
-        .temu-btn-primary { background: #fff; color: ${ACCENT}; padding: 14px 28px; border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: none; cursor: pointer; transition: transform 0.2s; }
-        .temu-btn-primary:hover { transform: translateY(-2px); }
-        .temu-btn-secondary { background: transparent; color: #fff; padding: 14px 28px; border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: 2px solid rgba(255,255,255,0.4); cursor: pointer; transition: border-color 0.2s; }
-        .temu-btn-secondary:hover { border-color: #fff; }
-        .temu-trust-badges { display: flex; flex-wrap: wrap; gap: 12px; }
-        .temu-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; padding: 6px 12px; font-size: 13px; }
-        .temu-badge-check { color: #4ade80; font-size: 14px; }
-
         /* Challenges */
         .temu-challenges { padding: 80px 24px; background: #fff; }
         .temu-section-inner { max-width: 1200px; margin: 0 auto; }
@@ -249,7 +229,6 @@ export default function TemuAccountManagement() {
         @media (max-width: 900px) {
           .temu-challenges-grid { grid-template-columns: repeat(2, 1fr); }
           .temu-services-grid { grid-template-columns: repeat(2, 1fr); }
-          .temu-stats-bar { grid-template-columns: repeat(2, 1fr); }
           .temu-contact-grid { grid-template-columns: 1fr; gap: 40px; }
           .temu-cases-grid { grid-template-columns: 1fr; }
           .temu-results-grid { grid-template-columns: 1fr; gap: 24px; }
@@ -258,7 +237,6 @@ export default function TemuAccountManagement() {
         @media (max-width: 600px) {
           .temu-challenges-grid { grid-template-columns: 1fr; }
           .temu-services-grid { grid-template-columns: 1fr; }
-          .temu-stats-bar { grid-template-columns: repeat(2, 1fr); }
           .temu-process-grid { grid-template-columns: 1fr; }
         }
         /* ── FAQ ── */
@@ -304,35 +282,19 @@ export default function TemuAccountManagement() {
       <div className="temu-page">
 
         {/* Hero */}
-        <section className="temu-hero">
-          <div className="temu-hero-orb1" />
-          <div className="temu-hero-orb2" />
-          <div className="temu-hero-inner">
-            <div className="temu-eyebrow">
-              <span className="temu-eyebrow-dot" />
-              Temu Seller Management
-            </div>
-            <h1>Temu Marketplace Management for Brands Competing in the New Price-First Market</h1>
-            <p className="temu-hero-desc">
-              Temu has grown to 100M+ US users in under two years, reshaping consumer price expectations across every category. 1Solutions helps brands launch, optimise, and scale on Temu with a strategy built around the platform's unique consignment and marketplace models, pricing dynamics, and GMV-based ranking algorithm.
-            </p>
-            <div className="temu-stats-bar">
-              <div className="temu-stat"><span className="temu-stat-num">100M+</span><span className="temu-stat-label">Temu US users in 2 years</span></div>
-              <div className="temu-stat"><span className="temu-stat-num">$15B+</span><span className="temu-stat-label">Temu global GMV (2023)</span></div>
-              <div className="temu-stat"><span className="temu-stat-num">Top 10</span><span className="temu-stat-label">Shopping app worldwide</span></div>
-              <div className="temu-stat"><span className="temu-stat-num">3.2×</span><span className="temu-stat-label">avg GMV growth in 5 months</span></div>
-            </div>
-            <div className="temu-hero-ctas">
-              <Link href="#contact" className="temu-btn-primary">Get a Free Temu Assessment →</Link>
-              <Link href="#services" className="temu-btn-secondary">Explore Services</Link>
-            </div>
-            <div className="temu-trust-badges">
-              {['Temu certified partner', 'Cross-border logistics expertise', 'US market localisation', 'No lock-in contracts'].map(b => (
-                <span key={b} className="temu-badge"><span className="temu-badge-check">✓</span>{b}</span>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Temu Seller Management · Certified Partner · No Lock-In"
+          title={<>Temu Marketplace Management for Brands <AuroraText>Competing in the New Price-First Market</AuroraText></>}
+          subtext="Temu has grown to 100M+ US users in under two years, reshaping consumer price expectations across every category. 1Solutions helps brands launch, optimise, and scale on Temu with a strategy built around the platform's unique consignment and marketplace models, pricing dynamics, and GMV-based ranking algorithm."
+          primaryCta={{ label: 'Get a Free Temu Assessment', href: '#contact' }}
+          secondaryCta={{ label: 'Explore Services', href: '#services' }}
+          stats={[
+            { label: 'Temu US users in 2 years', value: '100', suffix: 'M+' },
+            { label: 'Temu global GMV (2023)', value: '15', prefix: '$', suffix: 'B+' },
+            { label: 'Shopping app worldwide', value: '10', prefix: 'Top ' },
+            { label: 'avg GMV growth in 5 months', value: '2', prefix: '3.', suffix: '×' },
+          ]}
+        />
 
         {/* Challenges */}
         <section className="temu-challenges">

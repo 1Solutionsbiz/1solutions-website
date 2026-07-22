@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -75,25 +77,13 @@ const FAQS = [
   { q: 'Can you modernise a legacy real estate platform?', a: 'Yes - we modernise legacy portals and PMS platforms using an incremental approach: API-first redesign, mobile responsiveness upgrade, MLS data pipeline modernisation, payment stack upgrade, and cloud migration. First modernised capability typically live in 6–8 weeks.' },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => { if (!start) return; const n = parseInt(target.replace(/\D/g, ''), 10); if (!n) return; let t0 = null; const s = ts => { if (!t0) t0 = ts; const p = Math.min((ts - t0) / duration, 1); setCount(Math.floor((1 - Math.pow(1 - p, 3)) * n)); if (p < 1) requestAnimationFrame(s); }; requestAnimationFrame(s); }, [start, target, duration]);
-  return count;
-}
-function StatItem({ label, val, started }) {
-  const n = useCountUp(val, 1800, started);
-  const sfx = val.replace(/[\d,]/g, '');  return (<div className="re-sc"><div className="re-sv">{started ? n + sfx : val}</div><div className="re-sl">{label}</div></div>);
-}
-
 export default function RealEstateSoftware() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [ss, setSs] = useState(false);
   const [vis, setVis] = useState(new Set());
   const [vSk, setVSk] = useState([]); const [vEn, setVEn] = useState([]); const [vWh, setVWh] = useState([]); const [vTe, setVTe] = useState([]); const [vSt, setVSt] = useState([]);
-  const stR = useRef(null); const secR = useRef({});
+  const secR = useRef({});
   const skR = useRef(null); const enR = useRef(null); const whR = useRef(null); const teR = useRef(null); const stGr = useRef(null);
-  useEffect(() => { if (!stR.current) return; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setSs(true); o.disconnect(); } }, { threshold: 0.4 }); o.observe(stR.current); return () => o.disconnect(); }, []);
   useEffect(() => {
     const pairs = [[skR, SOLUTIONS.length, setVSk], [enR, 3, setVEn], [whR, WHY.length, setVWh], [teR, 3, setVTe], [stGr, TECH_STACK.length, setVSt]];
     const obs = pairs.map(([ref, count, setter]) => { if (!ref.current) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { Array.from({ length: count }, (_, i) => setTimeout(() => setter(p => p.includes(i) ? p : [...p, i]), i * 75)); o.disconnect(); } }, { threshold: 0.05 }); o.observe(ref.current); return o; });
@@ -141,22 +131,6 @@ export default function RealEstateSoftware() {
           .re-o1{width:800px;height:800px;background:radial-gradient(circle,rgba(124,45,18,.16) 0%,transparent 70%);top:-220px;right:-200px}
           .re-o2{width:700px;height:700px;background:radial-gradient(circle,rgba(180,83,9,.13) 0%,transparent 70%);bottom:0;left:-200px}
           .re-o3{width:480px;height:480px;background:radial-gradient(circle,rgba(5,150,105,.08) 0%,transparent 70%);top:42%;left:-90px}}.re-bc li::after{content:'/';opacity:.45}.re-bc li:last-child::after{display:none};text-decoration:none}
-          .re-hero{position:relative;z-index:2;text-align:center;max-width:940px;margin:0 auto;padding:44px 40px 28px}
-          .re-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:${ac};margin-bottom:14px}
-          .re-hero h1{font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .re-desc{font-size:16px;color:${txt2};line-height:1.65;max-width:720px;margin:0 auto 22px}
-          .re-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-bottom:24px}
-          .re-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:5px 13px;font-size:12px;font-weight:600;color:${txt};box-shadow:0 2px 8px rgba(124,45,18,.07)}
-          .re-dot{width:7px;height:7px;border-radius:50%;background:${ac};flex-shrink:0}
-          .re-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .re-p{display:inline-block;padding:13px 34px;background:${ac};color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(124,45,18,.28)}
-          .re-p:hover{background:${txt};transform:translateY(-2px)}
-          .re-g{display:inline-block;padding:13px 34px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:${txt};font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .re-g:hover{background:rgba(255,255,255,.85);border-color:rgba(124,45,18,.5);transform:translateY(-2px)}
-          .re-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:920px;margin:26px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(124,45,18,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .re-sc{padding:18px 16px;text-align:center;border-right:1px solid rgba(124,45,18,.10)}.re-sc:last-child{border-right:none}
-          .re-sv{font-size:28px;font-weight:900;color:${ac};letter-spacing:-.5px;line-height:1}
-          .re-sl{font-size:11px;color:${txt2};font-weight:500;margin-top:5px}
           .re-sec{padding:72px 40px;position:relative;z-index:1}
           .re-sec-alt{background:rgba(253,244,238,.55);border-top:1px solid rgba(124,45,18,.08);border-bottom:1px solid rgba(124,45,18,.08)}
           .re-in{max-width:1300px;margin:0 auto}
@@ -267,8 +241,8 @@ export default function RealEstateSoftware() {
           .re-rb{background:rgba(12,74,110,.09);border-color:rgba(12,74,110,.28);color:#0c4a6e}
           .re-rc{background:rgba(22,101,52,.09);border-color:rgba(22,101,52,.28);color:#14532d}
           .re-rd{background:rgba(146,64,14,.09);border-color:rgba(146,64,14,.28);color:#92400e}
-          @media(max-width:1024px){.re-hero h1,.re-sh,.re-fq h2{font-size:34px}.re-sk-g{grid-template-columns:repeat(2,1fr)}.re-tec-g{grid-template-columns:repeat(2,1fr)}.re-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.re-en.feat{transform:none}.re-en.feat.re-ev{transform:none}.re-en.feat.re-ev:hover{transform:translateY(-4px)}.re-wy-g{grid-template-columns:repeat(2,1fr)}.re-tg2{grid-template-columns:1fr}.re-ct-g{grid-template-columns:1fr}}
-          @media(max-width:768px){.re-bc,.re-hero,.re-sec,.re-ct,.re-fq,.re-rel{padding-left:20px;padding-right:20px}.re-hero{padding-top:28px;padding-bottom:16px}.re-hero h1{font-size:26px}.re-stats{grid-template-columns:1fr 1fr}.re-sc:nth-child(2){border-right:none}.re-sc:nth-child(3),.re-sc:nth-child(4){border-top:1px solid rgba(124,45,18,.10)}.re-sc:nth-child(4){border-right:none}.re-sk-g,.re-tec-g,.re-wy-g{grid-template-columns:1fr}.re-fr{grid-template-columns:1fr}.re-cth{font-size:26px}}
+          @media(max-width:1024px){.re-sh,.re-fq h2{font-size:34px}.re-sk-g{grid-template-columns:repeat(2,1fr)}.re-tec-g{grid-template-columns:repeat(2,1fr)}.re-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.re-en.feat{transform:none}.re-en.feat.re-ev{transform:none}.re-en.feat.re-ev:hover{transform:translateY(-4px)}.re-wy-g{grid-template-columns:repeat(2,1fr)}.re-tg2{grid-template-columns:1fr}.re-ct-g{grid-template-columns:1fr}}
+          @media(max-width:768px){.re-bc,.re-sec,.re-ct,.re-fq,.re-rel{padding-left:20px;padding-right:20px}.re-sk-g,.re-tec-g,.re-wy-g{grid-template-columns:1fr}.re-fr{grid-template-columns:1fr}.re-cth{font-size:26px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
@@ -294,14 +268,19 @@ export default function RealEstateSoftware() {
 </Head>
       <div className="re-page">
         <div className="re-orb re-o1" /><div className="re-orb re-o2" /><div className="re-orb re-o3" />
-        <section className="re-hero">
-          <span className="re-ey">Real Estate Industry</span>
-          <h1>Real Estate Software Development - Property Portals, MLS/IDX & PropTech Apps</h1>
-          <p className="re-desc">Custom PropTech for property portals, real estate agencies, PMS providers, and CRE firms - MLS/IDX integration, property search engines, real estate CRM, property management systems, virtual tours, and mobile apps. 110+ real estate projects. 15+ years.</p>
-          <div className="re-tr">{['Property Listing Portal','MLS / IDX Integration','Real Estate CRM','Property Management (PMS)','PropTech Mobile Apps'].map(b => (<div className="re-badge" key={b}><span className="re-dot" />{b}</div>))}</div>
-          <div className="re-ctas"><Link href="#contact" className="re-p">Discuss Your Real Estate Platform</Link><Link href="#solutions" className="re-g">View Solutions →</Link></div>
-        </section>
-        <div className="re-stats" ref={stR}>{[['110+','Real Estate Projects'],['15+','Years Dev Experience'],['99.9%','Platform Uptime SLA'],['35%','Avg Lead Conversion Lift']].map(([v, l]) => <StatItem key={l} label={l} val={v} started={ss} />)}</div>
+        <ServiceHero
+          eyebrow="Real Estate Industry · MLS/IDX · PropTech"
+          title={<>Real Estate Software Development - <AuroraText>Property Portals, MLS/IDX &amp; PropTech Apps</AuroraText></>}
+          subtext="Custom PropTech for property portals, real estate agencies, PMS providers, and CRE firms - MLS/IDX integration, property search engines, real estate CRM, property management systems, virtual tours, and mobile apps. 110+ real estate projects. 15+ years."
+          primaryCta={{ label: 'Discuss Your Real Estate Platform', href: '#contact' }}
+          secondaryCta={{ label: 'View Solutions', href: '#solutions' }}
+          stats={[
+            { label: 'Real Estate Projects', value: '110', suffix: '+' },
+            { label: 'Years Dev Experience', value: '15', suffix: '+' },
+            { label: 'Platform Uptime SLA', value: '99', suffix: '.9%' },
+            { label: 'Avg Lead Conversion Lift', value: '35', suffix: '%' },
+          ]}
+        />
         <section id="solutions" className="re-sec"><div className="re-in"><div className={`re-rv${vis.has('sk') ? ' re-ok' : ''}`} ref={el => { secR.current['sk'] = el; }}><span className="re-sey">PropTech Solutions</span><h2 className="re-sh">What We Build for Real Estate</h2><p className="re-sd">Property portals, MLS/IDX integration, CRM, PMS, virtual tours, CRE deal management, PropTech mobile apps, mortgage calculators, and investment analytics.</p></div><div className="re-sk-g" ref={skR}>{visS.map((s, i) => (<div key={s.n} className={`re-card${s.feat ? ' feat' : ''}${vSk.includes(i) ? ' re-cv' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}><span className="re-cn">{s.n}</span><h3>{s.title}</h3><p>{s.desc}</p></div>))}</div>{SOLUTIONS.length > 6 && <div className="re-sm"><button className="re-bm" onClick={() => setShowAll(p => !p)}>{showAll ? 'Show fewer ↑' : `Show all ${SOLUTIONS.length} solutions ↓`}</button></div>}</div></section>
         <section className="re-sec re-sec-alt"><div className="re-in"><div className={`re-rv${vis.has('stk') ? ' re-ok' : ''}`} ref={el => { secR.current['stk'] = el; }}><span className="re-sey">Technology Stack</span><h2 className="re-sh">Real Estate Technology We Work With</h2><p className="re-sd">React/Next.js, PostgreSQL/PostGIS, Elasticsearch, MLS/RESO APIs, Mapbox, Stripe ACH, AWS, and the modern PropTech integration ecosystem.</p></div><div className="re-tec-g" ref={stGr}>{TECH_STACK.map((g, i) => (<div key={g.group} className={`re-tc2${vSt.includes(i) ? ' re-sv2' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}><div className="re-tg" style={{ color: g.color, borderBottomColor: g.color + '33' }}>{g.group}</div><div className="re-pills">{g.items.map(it => <span key={it} className="re-pill" style={{ color: g.color, background: g.color + '12', borderColor: g.color + '30' }}>{it}</span>)}</div></div>))}</div></div></section>
         <section className="re-sec"><div className="re-in"><div className={`re-rv${vis.has('eng') ? ' re-ok' : ''}`} ref={el => { secR.current['eng'] = el; }}><span className="re-sey">Engagement Models</span><h2 className="re-sh">How We Work with Real Estate Companies</h2><p className="re-sd">Custom portal build, property management system, or MLS/IDX integration sprint - structured for your budget and timeline.</p></div><div className="re-en-g" ref={enR}>{ENGAGEMENT.map((m, i) => (<div key={m.id} className={`re-en${m.feat ? ' feat' : ''}${vEn.includes(i) ? ' re-ev' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><span className="re-en-b" style={{ color: m.bc, borderColor: m.bc + '44', background: m.bc + '14' }}>{m.badge}</span><div className="re-en-i"><svg viewBox="0 0 24 24" width="24" height="24" fill={m.feat ? '#D97706' : ac}><path d={m.icon} /></svg></div><div className="re-en-n">{m.name}</div><div className="re-en-h">{m.headline}</div><div className="re-en-d">{m.desc}</div><div className="re-en-ll">Best for</div><ul className="re-en-li">{m.best.map(b => <li key={b}>{b}</li>)}</ul><span className="re-en-tl">{m.tl}</span><Link href="#contact" className="re-en-a">Get a free estimate →</Link></div>))}</div></div></section>

@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -88,25 +90,13 @@ const FAQS = [
   { q: 'Can your data scientists work with our data warehouse?', a: "Yes. Snowflake (window functions, QUALIFY, FLATTEN, Time Travel), BigQuery (UNNEST, BigQuery ML, partitioned/clustered tables), Redshift (Spectrum, DISTKEY/SORTKEY optimisation), and PostgreSQL. Also dbt for modular, tested SQL transformations on top of your data warehouse." },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => { if (!start) return; const num = parseInt(target.replace(/\D/g, ''), 10); if (!num) return; let t0 = null; const step = ts => { if (!t0) t0 = ts; const p = Math.min((ts - t0) / duration, 1); setCount(Math.floor((1 - Math.pow(1 - p, 3)) * num)); if (p < 1) requestAnimationFrame(step); }; requestAnimationFrame(step); }, [start, target, duration]);
-  return count;
-}
-function StatItem({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');  return (<div className="hds-sc"><div className="hds-sv">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div><div className="hds-sl">{label}</div></div>);
-}
-
 export default function HireDataScientist() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [ss, setSs] = useState(false);
   const [vis, setVis] = useState(new Set());
   const [vSk, setVSk] = useState([]); const [vEn, setVEn] = useState([]); const [vWh, setVWh] = useState([]); const [vTe, setVTe] = useState([]); const [vSt, setVSt] = useState([]);
-  const stR = useRef(null); const secR = useRef({});
+  const secR = useRef({});
   const skR = useRef(null); const enR = useRef(null); const whR = useRef(null); const teR = useRef(null); const stGr = useRef(null);
-  useEffect(() => { if (!stR.current) return; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setSs(true); o.disconnect(); } }, { threshold: 0.4 }); o.observe(stR.current); return () => o.disconnect(); }, []);
   useEffect(() => { const pairs = [[skR, SKILLS.length, setVSk],[enR, 3, setVEn],[whR, WHY_CARDS.length, setVWh],[teR, 3, setVTe],[stGr, TECH_STACK.length, setVSt]]; const obs = pairs.map(([ref, count, setter]) => { if (!ref.current) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { Array.from({ length: count }, (_, i) => setTimeout(() => setter(p => p.includes(i) ? p : [...p, i]), i * 80)); o.disconnect(); } }, { threshold: 0.05 }); o.observe(ref.current); return o; }); return () => obs.forEach(o => o?.disconnect()); }, []);
   useEffect(() => { const ks = Object.keys(secR.current); const obs = ks.map(k => { const el = secR.current[k]; if (!el) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVis(p => new Set([...p, k])); o.disconnect(); } }, { threshold: 0.1 }); o.observe(el); return o; }); return () => obs.forEach(o => o?.disconnect()); }, []);
   const visSkills = showAll ? SKILLS : SKILLS.slice(0, 6);
@@ -154,31 +144,6 @@ export default function HireDataScientist() {
 
 
 
-          .hds-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
-          .hds-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
-          .hds-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .hds-desc{font-size:16px;color:#3A507A;line-height:1.65;max-width:740px;margin:0 auto 24px}
-          .hds-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
-          .hds-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07)}
-          .hds-dot{width:7px;height:7px;border-radius:50%;background:#1e40af;flex-shrink:0}
-          .hds-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .hds-p{display:inline-block;padding:14px 36px;background:#1e40af;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(30,64,175,.28)}
-          .hds-p:hover{background:#0F3460;transform:translateY(-2px)}
-          .hds-g{display:inline-block;padding:14px 36px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .hds-g:hover{background:rgba(255,255,255,.85);border-color:rgba(30,64,175,.5);transform:translateY(-2px)}
-          .hds-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:28px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .hds-sc{padding:18px 16px;text-align:center;border-right:1px solid rgba(15,52,96,.10)}
-          .hds-sc:last-child{border-right:none}
-          .hds-sv{font-size:28px;font-weight:900;color:#1e40af;letter-spacing:-.5px;line-height:1}
-          .hds-sl{font-size:11px;color:#4A6080;font-weight:500;margin-top:5px}
-          .hds-logos{position:relative;z-index:2;padding:24px 40px 52px;display:flex;flex-direction:column;align-items:center;gap:14px}
-          .hds-ll{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6A80A0}
-          .hds-lw{width:100%;overflow:hidden}
-          .hds-lt{display:flex;align-items:center;gap:60px;width:max-content;animation:hds-mq 28s linear infinite}
-          .hds-lt:hover{animation-play-state:paused}
-          @keyframes hds-mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-          .hds-cl{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
-          .hds-cl:hover{opacity:.85;filter:grayscale(0%)}
           .hds-sey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
           .hds-st{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .hds-sd{font-size:15px;color:#4A6080;line-height:1.7}
@@ -325,8 +290,8 @@ export default function HireDataScientist() {
           .hds-fu{background:rgba(162,28,175,.09);border-color:rgba(162,28,175,.28);color:#86198f}
           .hds-o{background:rgba(249,115,22,.09);border-color:rgba(249,115,22,.28);color:#c2410c}
           .hds-a{background:rgba(202,138,4,.09);border-color:rgba(202,138,4,.28);color:#92400e}
-          @media(max-width:1024px){.hds-hero h1,.hds-st,.hds-fq-s h2{font-size:36px}.hds-sk-g{grid-template-columns:repeat(2,1fr)}.hds-tec-g{grid-template-columns:repeat(2,1fr)}.hds-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.hds-en-c.feat{transform:none}.hds-en-c.feat.hds-ev{transform:none}.hds-en-c.feat.hds-ev:hover{transform:translateY(-4px)}.hds-wy-g{grid-template-columns:repeat(2,1fr)}.hds-tg2{grid-template-columns:1fr}.hds-ct-g{grid-template-columns:1fr}}
-          @media(max-width:768px){.hds-bc,.hds-hero,.hds-sk-s,.hds-tec-s,.hds-en-s,.hds-pr-s,.hds-te-s,.hds-wy-s,.hds-fq-s,.hds-rel{padding-left:20px;padding-right:20px}.hds-hero{padding-top:28px;padding-bottom:20px}.hds-hero h1{font-size:26px;letter-spacing:-.3px}.hds-stats{grid-template-columns:1fr 1fr}.hds-sc:nth-child(2){border-right:none}.hds-sc:nth-child(3),.hds-sc:nth-child(4){border-top:1px solid rgba(15,52,96,.10)}.hds-sc:nth-child(4){border-right:none}.hds-sk-g,.hds-tec-g,.hds-wy-g{grid-template-columns:1fr}.hds-fr{grid-template-columns:1fr}.hds-ctt{font-size:28px}.hds-st{font-size:28px}.hds-ct-s{padding:48px 20px}.hds-logos{padding-left:20px;padding-right:20px}}
+          @media(max-width:1024px){.hds-st,.hds-fq-s h2{font-size:36px}.hds-sk-g{grid-template-columns:repeat(2,1fr)}.hds-tec-g{grid-template-columns:repeat(2,1fr)}.hds-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.hds-en-c.feat{transform:none}.hds-en-c.feat.hds-ev{transform:none}.hds-en-c.feat.hds-ev:hover{transform:translateY(-4px)}.hds-wy-g{grid-template-columns:repeat(2,1fr)}.hds-tg2{grid-template-columns:1fr}.hds-ct-g{grid-template-columns:1fr}}
+          @media(max-width:768px){.hds-bc,.hds-sk-s,.hds-tec-s,.hds-en-s,.hds-pr-s,.hds-te-s,.hds-wy-s,.hds-fq-s,.hds-rel{padding-left:20px;padding-right:20px}.hds-sk-g,.hds-tec-g,.hds-wy-g{grid-template-columns:1fr}.hds-fr{grid-template-columns:1fr}.hds-ctt{font-size:28px}.hds-st{font-size:28px}.hds-ct-s{padding:48px 20px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
@@ -352,15 +317,19 @@ export default function HireDataScientist() {
 </Head>
       <div className="hds-page">
         <div className="hds-orb hds-o1" /><div className="hds-orb hds-o2" /><div className="hds-orb hds-o3" />
-        <section className="hds-hero">
-          <span className="hds-ey">Hire Data Scientist</span>
-          <h1>Hire Expert Data Scientists - Python, SQL, A/B Testing & Predictive Modelling</h1>
-          <p className="hds-desc">Hire pre-vetted data scientists specialising in EDA, statistical analysis, A/B testing and experimentation design, predictive modelling, customer analytics, Python, R, SQL (Snowflake, BigQuery, Redshift), and Tableau/Looker dashboards. Dedicated, part-time, or fixed-scope. Start in 3–5 business days.</p>
-          <div className="hds-tr">{['EDA & Statistical Analysis','A/B Testing & Experimentation','Predictive Modelling','Python / R','SQL & Data Warehouses'].map(b => (<div className="hds-badge" key={b}><span className="hds-dot" />{b}</div>))}</div>
-          <div className="hds-ctas"><Link href="#contact" className="hds-p">Hire a Data Scientist</Link><Link href="#engagement" className="hds-g">View Engagement Models →</Link></div>
-        </section>
-        <div className="hds-stats" ref={stR}>{[['110+','Data Science Projects'],['15+','Years Dev Experience'],['48hr','Avg Scientist Match'],['98%','Client Retention']].map(([v, l]) => (<StatItem key={l} label={l} val={v} started={ss} />))}</div>
-        <div className="hds-logos"><span className="hds-ll">Trusted by Data & Analytics Teams</span><div className="hds-lw"><div className="hds-lt">{[['/logo/Indian_Express_Logo_full.png','Indian Express'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],['/logo/Uniphore.jpg','Uniphore'],['/logo/ICCoLogo.png','ICC'],['/logo/Honor_Logo_(2020).svg.png','Honor'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],['/logo/Indian_Express_Logo_full.png','Indian Express 2'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon 2'],['/logo/Uniphore.jpg','Uniphore 2'],['/logo/ICCoLogo.png','ICC 2'],['/logo/Honor_Logo_(2020).svg.png','Honor 2'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv 2']].map(([src, alt]) => (<img key={alt} src={src} alt={alt.replace(/ \d$/, '')} className="hds-cl" />))}</div></div></div>
+        <ServiceHero
+          eyebrow="Hire Data Scientist · Python · SQL · A/B Testing"
+          title={<>Hire Expert Data Scientists - <AuroraText>Python, SQL, A/B Testing &amp; Predictive Modelling</AuroraText></>}
+          subtext="Hire pre-vetted data scientists specialising in EDA, statistical analysis, A/B testing and experimentation design, predictive modelling, customer analytics, Python, R, SQL (Snowflake, BigQuery, Redshift), and Tableau/Looker dashboards. Dedicated, part-time, or fixed-scope. Start in 3–5 business days."
+          primaryCta={{ label: 'Hire a Data Scientist', href: '#contact' }}
+          secondaryCta={{ label: 'View Engagement Models', href: '#engagement' }}
+          stats={[
+            { label: 'Data Science Projects', value: '110', suffix: '+' },
+            { label: 'Years Dev Experience', value: '15', suffix: '+' },
+            { label: 'Avg Scientist Match', value: '48', suffix: 'hr' },
+            { label: 'Client Retention', value: '98', suffix: '%' },
+          ]}
+        />
         <section className="hds-sk-s" aria-labelledby="hds-sk-h"><div className="hds-in"><div className={`hds-rv${vis.has('sk') ? ' hds-ok' : ''}`} ref={el => { secR.current['sk'] = el; }}><span className="hds-sey">What Our Data Scientists Do</span><h2 id="hds-sk-h" className="hds-st">Data Science Skills & Expertise</h2><p className="hds-sd" style={{ maxWidth: 720 }}>EDA, statistical analysis, A/B testing, predictive modelling, SQL analytics, data visualisation, customer analytics, financial analytics, Python and R data science stack, and data strategy consulting.</p></div><div className="hds-sk-g" ref={skR}>{visSkills.map((s, i) => (<div key={s.n} className={`hds-sk-c${s.feat ? ' feat' : ''}${vSk.includes(i) ? ' hds-cv' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}><span className="hds-sk-n">{s.n}</span><h3>{s.title}</h3><p>{s.desc}</p></div>))}</div>{SKILLS.length > 6 && (<div className="hds-sm"><button className="hds-bm" onClick={() => setShowAll(p => !p)}>{showAll ? 'Show fewer ↑' : `Show all ${SKILLS.length} areas ↓`}</button></div>)}</div></section>
         <section className="hds-tec-s" aria-labelledby="hds-tec-h"><div className="hds-in"><div className={`hds-rv${vis.has('stk') ? ' hds-ok' : ''}`} ref={el => { secR.current['stk'] = el; }}><span className="hds-sey">Technology Stack</span><h2 id="hds-tec-h" className="hds-st">Data Science Tools & Technologies</h2><p className="hds-sd" style={{ maxWidth: 680 }}>Python (Pandas, NumPy, scikit-learn, statsmodels, PyMC), SQL (Snowflake, BigQuery, Redshift, dbt), R (ggplot2, survival, lme4), Tableau, Looker, Power BI, XGBoost, SHAP, Prophet, Plotly, and Evidently AI.</p></div><div className="hds-tec-g" ref={stGr}>{TECH_STACK.map((grp, i) => (<div key={grp.group} className={`hds-tec-c${vSt.includes(i) ? ' hds-sv2' : ''}`} style={{ transitionDelay: `${i * 60}ms` }}><div className="hds-tg" style={{ color: grp.color, borderBottomColor: grp.color + '33' }}>{grp.group}</div><div className="hds-pills">{grp.items.map(item => <span key={item} className="hds-pill" style={{ color: grp.color, background: grp.color + '12', borderColor: grp.color + '30' }}>{item}</span>)}</div></div>))}</div></div></section>
         <section id="engagement" className="hds-en-s" aria-labelledby="hds-en-h"><div className="hds-in"><div className={`hds-rv${vis.has('eng') ? ' hds-ok' : ''}`} ref={el => { secR.current['eng'] = el; }}><span className="hds-sey">Engagement Models</span><h2 id="hds-en-h" className="hds-st">How to Hire a Data Scientist</h2><p className="hds-sd" style={{ maxWidth: 680 }}>Full-time dedicated data scientist, part-time specialist, or fixed-scope analytical project - structured for your data maturity and analytical objectives.</p></div><div className="hds-en-g" ref={enR}>{ENGAGEMENT_MODELS.map((m, i) => (<div key={m.id} className={`hds-en-c${m.feat ? ' feat' : ''}${vEn.includes(i) ? ' hds-ev' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}><span className="hds-en-b" style={{ color: m.badgeColor, borderColor: m.badgeColor + '44', background: m.badgeColor + '14' }}>{m.badge}</span><div className="hds-en-i"><svg viewBox="0 0 24 24" width="26" height="26"><path d={m.icon} /></svg></div><div className="hds-en-n">{m.name}</div><div className="hds-en-h">{m.headline}</div><div className="hds-en-d">{m.desc}</div><div className="hds-en-ll">Best for</div><ul className="hds-en-li">{m.bestFor.map(b => <li key={b}>{b}</li>)}</ul><div className="hds-en-p"><strong>Process:</strong> {m.process}<br /><span className="hds-en-tl">{m.timeline}</span></div><Link href="#contact" className="hds-en-a">Get a free estimate →</Link></div>))}</div></div></section>

@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const challenges = [
   {
@@ -100,15 +102,6 @@ const steps = [
   { title: 'Monthly Analytics Review', desc: 'Monthly performance review covering revenue by listing, conversion rate trends, Etsy Ads ROI, Star Seller metrics, and a clear action plan for the next 30 days.' },
 ];
 
-const stats = [
-  { num: '96M', lbl: 'Active Etsy buyers globally' },
-  { num: 'Star Seller', lbl: 'status achieved for 89% of clients' },
-  { num: '3.4×', lbl: 'avg shop revenue growth' },
-  { num: '$13.2B', lbl: 'Etsy GMS (2024)' },
-];
-
-const trust = ['Etsy SEO specialists', 'Star Seller strategy experts', 'No lock-in contracts', 'Dedicated account manager'];
-
 const FAQS = [
   { q: 'How is Etsy SEO different from Google SEO?', a: "Etsy's Aleph algorithm uses listing tags, titles, and attributes as its primary ranking signals - very different from Google's link-based authority model. On Etsy, the right 13 tags and a keyword-rich title can move a listing from page 10 to page 1 within weeks. Etsy SEO is highly tag-specific, buyer-intent driven, and changes seasonally, requiring ongoing optimisation rather than a one-time fix." },
   { q: 'What exactly does Star Seller status require?', a: 'Star Seller requires three metrics to all be met simultaneously over a rolling 3-month window: a message response rate of 95 percent or higher (first message responded to within 24 hours), an on-time shipping and tracking rate of 95 percent or higher, and an average review rating of 4.8 stars or above. All three must be maintained consistently - failing any single metric removes the badge.' },
@@ -138,25 +131,8 @@ export default function EtsyAccountManagement() {
         <style>{`
           *{box-sizing:border-box;}
           body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;}
-          .etsy-hero{position:relative;overflow:hidden;padding:100px 40px 90px;background:linear-gradient(135deg,rgba(120,50,0,0.08) 0%,rgba(255,255,255,0.75) 50%,rgba(120,50,0,0.05) 100%);}
-          .etsy-orb1{position:absolute;top:-120px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(120,50,0,0.10) 0%,transparent 70%);pointer-events:none;filter:blur(12px);}
           .etsy-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;}
-          .etsy-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(120,50,0,0.09);border:1px solid rgba(120,50,0,0.20);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#783200;margin-bottom:24px;}
-          .etsy-h1{font-size:clamp(2.2rem,4vw,3.6rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;color:#0A1628;}
-          .etsy-h1-accent{background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-          .etsy-desc{font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:680px;}
-          .etsy-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px;}
-          .etsy-btn-p{display:inline-flex;align-items:center;gap:8px;background:#783200;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 6px 24px rgba(120,50,0,0.25);}
-          .etsy-btn-p:hover{opacity:0.9;transform:translateY(-2px);}
-          .etsy-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.7);color:#783200;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;border:1.5px solid rgba(120,50,0,0.20);transition:all 0.25s;backdrop-filter:blur(8px);}
-          .etsy-btn-s:hover{background:#fff;transform:translateY(-2px);}
-          .etsy-trust{display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-bottom:48px;}
-          .etsy-badge{display:flex;align-items:center;gap:6px;font-size:12px;color:#6b7280;font-weight:500;}
-          .etsy-stats-bar{display:flex;border:1px solid rgba(120,50,0,0.10);border-radius:16px;background:rgba(255,255,255,0.80);backdrop-filter:blur(12px);overflow:hidden;max-width:680px;}
-          .etsy-stat-item{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(120,50,0,0.08);}
-          .etsy-stat-item:last-child{border-right:none;}
-          .etsy-stat-num{font-size:1.9rem;font-weight:900;color:#783200;line-height:1;letter-spacing:-1px;}
-          .etsy-stat-lbl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px;}.etsy-bc a:hover{color:#783200;}.etsy-bc-cur{color:#783200;font-weight:500;}
+          .etsy-bc a:hover{color:#783200;}.etsy-bc-cur{color:#783200;font-weight:500;}
           .etsy-sec{padding:80px 40px;}
           .etsy-bg{background:#f8fafd;}
           .etsy-tag{display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#783200;margin-bottom:12px;}
@@ -233,7 +209,7 @@ export default function EtsyAccountManagement() {
           .etsy-cta-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#783200;padding:14px 32px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;}
           .etsy-cta-btn:hover{transform:translateY(-2px);opacity:0.95;}
           @media(max-width:900px){.etsy-grid3,.etsy-grid4{grid-template-columns:1fr 1fr;}.etsy-grid2{grid-template-columns:1fr;}.etsy-contact-grid{grid-template-columns:1fr;}.etsy-res-grid{grid-template-columns:1fr 1fr;}}
-          @media(max-width:600px){.etsy-hero,.etsy-sec,.etsy-results,.etsy-cta,.etsy-contact-sec{padding-left:20px;padding-right:20px;}.etsy-hero{padding-top:60px;padding-bottom:50px;}.etsy-grid3,.etsy-grid4,.etsy-grid2,.etsy-res-grid{grid-template-columns:1fr;}.etsy-bc{padding:12px 20px;}.etsy-field-row{grid-template-columns:1fr;}.etsy-form-wrap{padding:24px 20px;}}
+          @media(max-width:600px){.etsy-sec,.etsy-results,.etsy-cta,.etsy-contact-sec{padding-left:20px;padding-right:20px;}.etsy-grid3,.etsy-grid4,.etsy-grid2,.etsy-res-grid{grid-template-columns:1fr;}.etsy-bc{padding:12px 20px;}.etsy-field-row{grid-template-columns:1fr;}.etsy-form-wrap{padding:24px 20px;}}
           /* ── FAQ ── */
           .etsy-faq-sec { padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(120,50,0,0.08); }
           .etsy-faq-h { font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 36px;line-height:1.15; }
@@ -275,38 +251,19 @@ export default function EtsyAccountManagement() {
       </Head>
 
       {/* Hero */}
-      <section className="etsy-hero">
-        <div className="etsy-orb1" />
-        <div className="etsy-inner">
-          <div className="etsy-eyebrow">Etsy Seller Management</div>
-          <h1 className="etsy-h1">
-            Etsy Shop Management That Gets Your Products Found by <span className="etsy-h1-accent">Millions of Ready Buyers</span>
-          </h1>
-          <p className="etsy-desc">
-            Etsy has 96 million active buyers searching for unique, handmade, and vintage products. 1Solutions optimises your Etsy shop for the platform's unique search algorithm, manages your Etsy Ads, and builds the shop credibility that drives repeat purchases.
-          </p>
-          <div className="etsy-trust">
-            {trust.map((t, i) => (
-              <span key={i} className="etsy-badge">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#783200" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 13l4 4L19 7"/></svg>
-                {t}
-              </span>
-            ))}
-          </div>
-          <div className="etsy-btns">
-            <Link href="#contact" className="etsy-btn-p">Get Free Etsy Shop Review</Link>
-            <Link href="#services" className="etsy-btn-s">See What We Manage</Link>
-          </div>
-          <div className="etsy-stats-bar">
-            {stats.map((s, i) => (
-              <div key={i} className="etsy-stat-item">
-                <span className="etsy-stat-num">{s.num}</span>
-                <span className="etsy-stat-lbl">{s.lbl}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="Etsy Seller Management · Star Seller Strategy · No Lock-In"
+        title={<>Etsy Shop Management That Gets Your Products Found by <AuroraText>Millions of Ready Buyers</AuroraText></>}
+        subtext="Etsy has 96 million active buyers searching for unique, handmade, and vintage products. 1Solutions optimises your Etsy shop for the platform's unique search algorithm, manages your Etsy Ads, and builds the shop credibility that drives repeat purchases."
+        primaryCta={{ label: 'Get Free Etsy Shop Review', href: '#contact' }}
+        secondaryCta={{ label: 'See What We Manage', href: '#services' }}
+        stats={[
+          { label: 'Active Etsy buyers globally', value: '96', suffix: 'M' },
+          { label: 'Clients achieving Star Seller status', value: '89', suffix: '%' },
+          { label: 'Avg shop revenue growth', value: '4', prefix: '3.', suffix: '×' },
+          { label: 'Etsy GMS (2024)', value: '2', prefix: '$13.', suffix: 'B' },
+        ]}
+      />
 
       {/* Challenges */}
       <section className="etsy-sec etsy-bg">

@@ -3,6 +3,8 @@ import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n:'01', title:'Custom WordPress Development', desc:'Fully tailored WordPress websites built from scratch, aligned with your brand and business goals.', featured:false },
@@ -75,51 +77,14 @@ const INDUSTRIES = [
   { icon:'⚖️', title:'Professional Services',    desc:'Authority-building websites for law firms, consulting agencies, accounting practices, and B2B service providers.' },
 ];
 
-// Count-up hook
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const numTarget = parseInt(target.replace(/\D/g, ''), 10);
-    if (!numTarget) return;
-    let startTime = null;
-    const step = (ts) => {
-      if (!startTime) startTime = ts;
-      const progress = Math.min((ts - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-      setCount(Math.floor(eased * numTarget));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-// Individual stat with count-up
-function AnimatedStat({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, ''); // e.g. '+' or '%'
-  const hasComma = val.includes(',');
-  const display = started
-    ? (hasComma ? num.toLocaleString() : num) + suffix
-    : val;  return (
-    <div className="wp-stat-col" key={label}>
-      <div className="wp-stat-label">{label}</div>
-      <div className="wp-stat-value">{display}</div>
-    </div>
-  );
-}
-
 export default function WordPressDevelopmentCompany() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleSteps, setVisibleSteps] = useState([]);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const stepRefs = useRef([]);
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
@@ -141,17 +106,6 @@ export default function WordPressDevelopmentCompany() {
       return obs;
     });
     return () => observers.forEach(o => o && o.disconnect());
-  }, []);
-
-  // Count-up trigger when stats enter viewport
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setStatsStarted(true); obs.disconnect(); } },
-      { threshold: 0.5 }
-    );
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
   }, []);
 
   // Why cards staggered reveal
@@ -284,31 +238,6 @@ export default function WordPressDevelopmentCompany() {
           .wp-aurora-b2 { position:absolute; left:78%; top:22%; width:48%; height:48%; border-radius:50%; background:radial-gradient(circle at center,rgba(217,119,6,0.20) 0%,transparent 70%); transform:translate(-50%,-50%); }
           .wp-aurora-b3 { position:absolute; left:50%; top:82%; width:55%; height:55%; border-radius:50%; background:radial-gradient(circle at center,rgba(26,82,118,0.16) 0%,transparent 70%); transform:translate(-50%,-50%); }
           @keyframes wp-aurora-drift { 0%{transform:translate3d(0,0,0) scale(1)} 100%{transform:translate3d(-4%,3%,0) scale(1.10)} }
-
-          /* Hero */
-          .wp-hero-block { background:transparent;position:relative;overflow:hidden; }
-          .wp-hero-block::before { content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.12) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px); }
-          .wp-hero-block::after { content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.18) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px); }
-          .wp-hero-content { position:relative;z-index:2;text-align:center;max-width:860px;margin:0 auto;padding:56px 40px 40px; }
-          .wp-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:18px; }
-          .wp-hero-content h1 { font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .wp-hero-content p { font-size:16px;color:#3A507A;line-height:1.65;max-width:620px;margin:0 auto 28px; }
-          .wp-btn-hero { display:inline-block;padding:14px 40px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1); }
-          .wp-btn-hero:hover { background:rgba(255,255,255,0.85);border-color:rgba(245,158,11,0.6);box-shadow:0 12px 36px rgba(15,52,96,0.15),0 0 0 2px rgba(245,158,11,0.22),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px);color:#0F3460; }
-
-          /* Stats */
-          .wp-hero-stats { position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
-          .wp-stat-col { padding:18px 20px;text-align:center;border-right:1px solid rgba(15,52,96,0.10); }
-          .wp-stat-col:last-child { border-right:none; }
-          .wp-stat-label { font-size:12px;color:#4A6080;font-weight:500;margin-bottom:6px; }
-          .wp-stat-value { font-size:26px;font-weight:900;color:#D97706;letter-spacing:-0.5px;line-height:1; }
-
-          /* Clients */
-          .wp-clients-bar { position:relative;z-index:2;padding:20px 40px 60px;max-width:1440px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px; }
-          .wp-clients-label { font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6A80A0; }
-          .wp-clients-logos { width:100%;overflow:hidden; }
-          .wp-client-logo { height:26px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(100%);opacity:0.5;transition:opacity 0.25s,filter 0.25s; }
-          .wp-client-logo:hover { opacity:0.85;filter:grayscale(0%); }
 
           /* Sections shared */
           .wp-section-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:12px;display:block; }
@@ -519,24 +448,6 @@ export default function WordPressDevelopmentCompany() {
           .wp-rtag-emerald { background:rgba(16,185,129,0.10);border-color:rgba(16,185,129,0.28);color:#065F46; }
           .wp-rtag-sky     { background:rgba(14,165,233,0.10);border-color:rgba(14,165,233,0.28);color:#0369A1; }
 
-          /* CTA shimmer - wider, brighter sweep */
-          .wp-btn-hero-shimmer {
-            position:relative;
-            overflow:hidden;
-          }
-          .wp-btn-hero-shimmer::after {
-            content:'';
-            position:absolute;
-            top:-10%;left:-120%;width:80%;height:120%;
-            background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,0.75) 45%,rgba(255,255,255,0.9) 50%,rgba(255,255,255,0.75) 55%,transparent 100%);
-            animation:wp-shimmer-sweep 2.5s ease-in-out infinite;
-            pointer-events:none;
-          }
-          @keyframes wp-shimmer-sweep {
-            0% { left:-120%; }
-            35%,100% { left:160%; }
-          }
-
           /* Section fade-up - bigger lift */
           .wp-section-reveal {
             opacity:0;
@@ -577,26 +488,6 @@ export default function WordPressDevelopmentCompany() {
             transform:scaleY(1);
           }
 
-          /* Client logo marquee */
-          .wp-clients-logos {
-            overflow:hidden;
-            width:100%;
-          }
-          .wp-logos-track {
-            display:flex;
-            align-items:center;
-            gap:60px;
-            width:max-content;
-            animation:wp-marquee 28s linear infinite;
-          }
-          .wp-logos-track:hover {
-            animation-play-state:paused;
-          }
-          @keyframes wp-marquee {
-            0% { transform:translateX(0); }
-            100% { transform:translateX(-50%); }
-          }
-
           /* Testimonial cards staggered reveal */
           .wp-tcard {
             opacity:0;
@@ -620,7 +511,6 @@ export default function WordPressDevelopmentCompany() {
 
           /* Responsive */
           @media (max-width:1024px) {
-            .wp-hero-content h1 { font-size:40px; }
             .wp-services-grid { grid-template-columns:repeat(2,1fr); }
             .wp-why-grid { grid-template-columns:repeat(2,1fr); }
             .wp-portfolio-grid { grid-template-columns:repeat(2,1fr); }
@@ -630,18 +520,6 @@ export default function WordPressDevelopmentCompany() {
           }
           @media (max-width:768px) {
             .wp-page { overflow-x:hidden; }
-            .wp-hero-content { padding:36px 20px 24px; }
-            .wp-hero-content h1 { font-size:28px;letter-spacing:-0.3px; }
-            .wp-hero-content p { font-size:15px; }
-            .wp-hero-stats { grid-template-columns:1fr 1fr;max-width:100%; }
-            .wp-stat-col { padding:14px 12px; }
-            .wp-stat-col:nth-child(2) { border-right:none; }
-            .wp-stat-col:nth-child(3) { border-top:1px solid rgba(15,52,96,0.10); }
-            .wp-stat-col:nth-child(4) { border-top:1px solid rgba(15,52,96,0.10);border-right:none; }
-            .wp-stat-value { font-size:22px; }
-            .wp-clients-bar { padding:16px 20px 36px;gap:12px; }
-            .wp-clients-logos { gap:16px; }
-            .wp-client-logo { height:20px; }
             .wp-services-section { padding:48px 20px 40px; }
             .wp-portfolio-section { padding:48px 16px; }
             .wp-portfolio-wrap { padding:24px 20px 32px;border-radius:16px; }
@@ -686,7 +564,6 @@ export default function WordPressDevelopmentCompany() {
             .wp-stat-number { font-size:28px; }
           }
           @media (max-width:480px) {
-            .wp-hero-content h1 { font-size:24px; }
             .wp-section-title,.wp-engage-title,.wp-process-main-title,.wp-related-title { font-size:26px; }
             .wp-services-grid { grid-template-columns:1fr; }
             .wp-service-card { padding:20px 18px 18px; }
@@ -787,58 +664,32 @@ export default function WordPressDevelopmentCompany() {
         </div>
 
         {/* ── HERO ── */}
-        <div className="wp-hero-block">
-          <div className="wp-hero-content">
-            <span className="wp-eyebrow">Expert WordPress Development Company · Since 2008</span>
-            <h1>WordPress Development Company - Custom Builds, WooCommerce &amp; Enterprise Solutions</h1>
-            <p>Build high-performing, secure, and SEO-optimized websites with 1Solutions. Our dedicated WordPress development team delivers custom sites, WooCommerce stores, and headless WordPress solutions - on time, on budget, for clients in the US, Canada, and Australia.</p>
-            <Link href="#contact" className="wp-btn-hero wp-btn-hero-shimmer">Get a Free Consultation</Link>
-          </div>
-
-          <div className="wp-hero-stats" ref={statsRef}>
-            {[['Clients Served','500+'],['WordPress Experts','50+'],['Projects Delivered','1,200+'],['Years in Business','15+']].map(([label,val]) => (
-              <AnimatedStat key={label} label={label} val={val} started={statsStarted} />
-            ))}
-          </div>
-
-          <div className="wp-clients-bar">
-            <span className="wp-clients-label">Trusted by Leading Brands</span>
-            <div className="wp-clients-logos">
-              <div className="wp-logos-track">
-                {[
-                  ['/logo/Indian_Express_Logo_full.png','Indian Express'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],
-                  ['/logo/Uniphore.jpg','Uniphore'],
-                  ['/logo/ICCoLogo.png','ICC'],
-                  ['/logo/Honor_Logo_(2020).svg.png','Honor'],
-                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],
-                  ['/logo/amarujala-print-logo_60e03f7d5b4a8.webp','Amar Ujala'],
-                  ['/logo/Nuance-Symbol-500x281.png','Nuance'],
-                  ['/logo/PHDCCI-Logo-2024.png','PHD Chamber'],
-                  ['/logo/Wilson-logo.svg.png','Wilson'],
-                  ['/logo/977be174b7bcc8708254a2163b534cbe_fgraphic.png','Client'],
-                  ['/logo/india-madeaismartphone2-1747658691.webp','India Made'],
-                  /* duplicate for seamless loop */
-                  ['/logo/Indian_Express_Logo_full.png','Indian Express2'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon2'],
-                  ['/logo/Uniphore.jpg','Uniphore2'],
-                  ['/logo/ICCoLogo.png','ICC2'],
-                  ['/logo/Honor_Logo_(2020).svg.png','Honor2'],
-                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv2'],
-                  ['/logo/amarujala-print-logo_60e03f7d5b4a8.webp','Amar Ujala2'],
-                  ['/logo/Nuance-Symbol-500x281.png','Nuance2'],
-                  ['/logo/PHDCCI-Logo-2024.png','PHD Chamber2'],
-                  ['/logo/Wilson-logo.svg.png','Wilson2'],
-                  ['/logo/977be174b7bcc8708254a2163b534cbe_fgraphic.png','Client2'],
-                  ['/logo/india-madeaismartphone2-1747658691.webp','India Made2'],
-                ].map(([src,alt]) => (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img key={alt} src={src} alt={alt.replace(/\d+$/,'')} className="wp-client-logo" />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="Expert WordPress Development Company · Since 2008"
+          title={<>WordPress Development Company - <AuroraText>Custom Builds, WooCommerce &amp; Enterprise Solutions</AuroraText></>}
+          subtext="Build high-performing, secure, and SEO-optimized websites with 1Solutions. Our dedicated WordPress development team delivers custom sites, WooCommerce stores, and headless WordPress solutions - on time, on budget, for clients in the US, Canada, and Australia."
+          primaryCta={{ label: 'Get a Free Consultation', href: '#contact' }}
+          stats={[
+            { label: 'Clients Served', value: '500', suffix: '+' },
+            { label: 'WordPress Experts', value: '50', suffix: '+' },
+            { label: 'Projects Delivered', value: '1,200', suffix: '+' },
+            { label: 'Years in Business', value: '15', suffix: '+' },
+          ]}
+          logos={[
+            ['/logo/Indian_Express_Logo_full.png','Indian Express'],
+            ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],
+            ['/logo/Uniphore.jpg','Uniphore'],
+            ['/logo/ICCoLogo.png','ICC'],
+            ['/logo/Honor_Logo_(2020).svg.png','Honor'],
+            ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],
+            ['/logo/amarujala-print-logo_60e03f7d5b4a8.webp','Amar Ujala'],
+            ['/logo/Nuance-Symbol-500x281.png','Nuance'],
+            ['/logo/PHDCCI-Logo-2024.png','PHD Chamber'],
+            ['/logo/Wilson-logo.svg.png','Wilson'],
+            ['/logo/977be174b7bcc8708254a2163b534cbe_fgraphic.png','Client'],
+            ['/logo/india-madeaismartphone2-1747658691.webp','India Made'],
+          ]}
+        />
 
         {/* ── DEFINITION BLOCK ── */}
         <section className="wp-def-section">

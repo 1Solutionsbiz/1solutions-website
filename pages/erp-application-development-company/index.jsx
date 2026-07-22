@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 /* ─── Schema ─────────────────────────────────────────────────── */
 const SCHEMA = {
@@ -185,40 +187,10 @@ const FAQS = [
   { q: 'Do you offer ERP support and feature development after launch?', a: 'Yes - all ERP projects include a 30-day hypercare period post go-live with prioritised SLA support. We then offer ongoing support plans covering security patches, database performance optimisation, third-party API updates as provider APIs evolve, regulatory compliance updates (tax rule changes, payroll updates), and feature development sprints. Our dedicated team model is ideal for post-launch ERP evolution - your team continues on a sprint cadence delivering the next roadmap modules as your business grows.' },
 ];
 
-/* ─── Hooks ──────────────────────────────────────────────────── */
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const num = parseInt(target.replace(/\D/g, ''), 10);
-    if (!num) return;
-    let t0 = null;
-    const step = ts => {
-      if (!t0) t0 = ts;
-      const p = Math.min((ts - t0) / duration, 1);
-      setCount(Math.floor((1 - Math.pow(1 - p, 3)) * num));
-      if (p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function StatItem({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');  return (
-    <div className="er-stat-col">
-      <div className="er-stat-val">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div>
-      <div className="er-stat-label">{label}</div>
-    </div>
-  );
-}
-
 /* ─── Component ──────────────────────────────────────────────── */
 export default function ErpApplicationDevelopment() {
   const [showAllSvc, setShowAllSvc] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleSvcCards, setVisibleSvcCards] = useState([]);
   const [visibleEngCards, setVisibleEngCards] = useState([]);
@@ -226,20 +198,12 @@ export default function ErpApplicationDevelopment() {
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const [visibleStackCards, setVisibleStackCards] = useState([]);
 
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const svcGridRef = useRef(null);
   const engGridRef = useRef(null);
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
   const stackGridRef = useRef(null);
-
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStatsStarted(true); obs.disconnect(); } }, { threshold: 0.4 });
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   useEffect(() => {
     const pairs = [
@@ -323,35 +287,8 @@ export default function ErpApplicationDevelopment() {
 
 
           /* Hero */
-          .er-hero { position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px; }
-          .er-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px; }
-          .er-hero h1 { font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .er-hero-desc { font-size:16px;color:#3A507A;line-height:1.65;max-width:740px;margin:0 auto 24px; }
-          .er-trust-row { display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px; }
-          .er-badge { display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07); }
-          .er-badge-dot { width:7px;height:7px;border-radius:50%;background:#ea580c;flex-shrink:0; }
-          .er-ctas { display:flex;flex-wrap:wrap;gap:12px;justify-content:center; }
-          .er-btn-primary { display:inline-block;padding:14px 36px;background:#ea580c;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(234,88,12,.30); }
-          .er-btn-primary:hover { background:#0F3460;transform:translateY(-2px); }
-          .er-btn-ghost { display:inline-block;padding:14px 36px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s; }
-          .er-btn-ghost:hover { background:rgba(255,255,255,.85);border-color:rgba(234,88,12,.5);transform:translateY(-2px); }
-
-          /* Stats */
-          .er-stats { position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:28px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95); }
-          .er-stat-col { padding:18px 16px;text-align:center;border-right:1px solid rgba(15,52,96,.10); }
-          .er-stat-col:last-child { border-right:none; }
-          .er-stat-val { font-size:28px;font-weight:900;color:#ea580c;letter-spacing:-.5px;line-height:1; }
-          .er-stat-label { font-size:11px;color:#4A6080;font-weight:500;margin-top:5px; }
 
           /* Logos */
-          .er-logos { position:relative;z-index:2;padding:24px 40px 52px;display:flex;flex-direction:column;align-items:center;gap:14px; }
-          .er-logos-label { font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6A80A0; }
-          .er-logos-wrap { width:100%;overflow:hidden; }
-          .er-logos-track { display:flex;align-items:center;gap:60px;width:max-content;animation:er-marquee 28s linear infinite; }
-          .er-logos-track:hover { animation-play-state:paused; }
-          @keyframes er-marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-          .er-clogo { height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s; }
-          .er-clogo:hover { opacity:.85;filter:grayscale(0%); }
 
           /* Shared */
           .er-s-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block; }
@@ -522,7 +459,7 @@ export default function ErpApplicationDevelopment() {
 
           /* Responsive */
           @media(max-width:1024px){
-            .er-hero h1,.er-s-title,.er-faq h2 { font-size:36px; }
+            .er-s-title,.er-faq h2 { font-size:36px; }
             .er-svc-grid { grid-template-columns:repeat(2,1fr); }
             .er-stack-grid { grid-template-columns:repeat(2,1fr); }
             .er-eng-grid { grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto; }
@@ -534,13 +471,6 @@ export default function ErpApplicationDevelopment() {
             .er-contact-grid { grid-template-columns:1fr; }
           }
           @media(max-width:768px){
-            .er-hero { padding:28px 20px 20px; }
-            .er-hero h1 { font-size:26px;letter-spacing:-.3px; }
-            .er-stats { grid-template-columns:1fr 1fr; }
-            .er-stat-col:nth-child(2) { border-right:none; }
-            .er-stat-col:nth-child(3) { border-top:1px solid rgba(15,52,96,.10); }
-            .er-stat-col:nth-child(4) { border-top:1px solid rgba(15,52,96,.10);border-right:none; }
-            .er-logos { padding:16px 20px 28px; }
             .er-svc-section,.er-stack-section,.er-eng-section,.er-process-section,.er-testi,.er-why-section,.er-faq,.er-related { padding:52px 20px; }
             .er-contact { padding:48px 20px; }
             .er-svc-grid,.er-stack-grid,.er-why-grid { grid-template-columns:1fr; }
@@ -578,53 +508,19 @@ export default function ErpApplicationDevelopment() {
         <div className="er-orb er-orb-3" />
 
         {/* ── HERO ── */}
-        <section className="er-hero">
-          <span className="er-eyebrow">ERP Application Development Company</span>
-          <h1>Custom ERP Development - Unified Operations, Zero Licensing Fees</h1>
-          <p className="er-hero-desc">We build custom ERP systems that unify your finance, inventory, manufacturing, procurement, HR, and supply chain on a single platform - built around your business processes, not a rigid off-the-shelf template. Replace SAP, Oracle, or legacy ERP licensing with a platform you fully own.</p>
-          <div className="er-trust-row">
-            {['120+ ERP Projects','No Licensing Fees','SOC 2 Ready','15+ Years Experience','GAAP / IFRS Compliant'].map(b => (
-              <div className="er-badge" key={b}><span className="er-badge-dot" />{b}</div>
-            ))}
-          </div>
-          <div className="er-ctas">
-            <Link href="#contact" className="er-btn-primary">Start Your ERP Project</Link>
-            <Link href="#engagement" className="er-btn-ghost">View Engagement Models →</Link>
-          </div>
-        </section>
-
-        {/* ── STATS ── */}
-        <div className="er-stats" ref={statsRef}>
-          {[['120+','ERP Projects'],['15+','Years Experience'],['60+','Integrations Built'],['98%','Client Retention']].map(([v, l]) => (
-            <StatItem key={l} label={l} val={v} started={statsStarted} />
-          ))}
-        </div>
-
-        {/* ── CLIENT LOGOS ── */}
-        <div className="er-logos">
-          <span className="er-logos-label">Trusted by Leading Organisations</span>
-          <div className="er-logos-wrap">
-            <div className="er-logos-track">
-              {[
-                ['/logo/Indian_Express_Logo_full.png','Indian Express'],
-                ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],
-                ['/logo/Uniphore.jpg','Uniphore'],
-                ['/logo/ICCoLogo.png','ICC'],
-                ['/logo/Honor_Logo_(2020).svg.png','Honor'],
-                ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],
-                ['/logo/Indian_Express_Logo_full.png','Indian Express 2'],
-                ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon 2'],
-                ['/logo/Uniphore.jpg','Uniphore 2'],
-                ['/logo/ICCoLogo.png','ICC 2'],
-                ['/logo/Honor_Logo_(2020).svg.png','Honor 2'],
-                ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv 2'],
-              ].map(([src, alt]) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img key={alt} src={src} alt={alt.replace(/ \d$/, '')} className="er-clogo" />
-              ))}
-            </div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="ERP Application Development · No Licensing Fees · SOC 2 Ready"
+          title={<>Custom ERP Development - <AuroraText>Unified Operations, Zero Licensing Fees</AuroraText></>}
+          subtext="We build custom ERP systems that unify your finance, inventory, manufacturing, procurement, HR, and supply chain on a single platform - built around your business processes, not a rigid off-the-shelf template. Replace SAP, Oracle, or legacy ERP licensing with a platform you fully own."
+          primaryCta={{ label: 'Start Your ERP Project', href: '#contact' }}
+          secondaryCta={{ label: 'View Engagement Models', href: '#engagement' }}
+          stats={[
+            { label: 'ERP Projects', value: '120', suffix: '+' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'Integrations Built', value: '60', suffix: '+' },
+            { label: 'Client Retention', value: '98', suffix: '%' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="er-svc-section" aria-labelledby="er-svc-heading">

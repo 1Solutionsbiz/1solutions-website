@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const ACCENT = '#1557a0';
 const SERVICES = [
@@ -75,25 +77,12 @@ export default function PpcManagementServices() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           *{box-sizing:border-box}
-          .gppc-hero{position:relative;overflow:hidden;padding:100px 40px 90px;background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.70) 50%,rgba(224,231,255,0.45) 100%)}
-          .gppc-o1{position:absolute;top:-120px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(21,87,160,0.12) 0%,transparent 70%);pointer-events:none;filter:blur(10px)}
-          .gppc-o2{position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.08) 0%,transparent 70%);pointer-events:none;filter:blur(8px)}
           .gppc-in{max-width:1200px;margin:0 auto;position:relative;z-index:1}
-          .gppc-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(21,87,160,0.10);border:1px solid rgba(21,87,160,0.25);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:24px}
-          .gppc-h1{font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .gppc-p{font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:660px}
-          .gppc-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
           .gppc-bp{display:inline-flex;align-items:center;gap:8px;background:${ACCENT};color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(21,87,160,.25)}
           .gppc-bp:hover{background:#0d4a8a;transform:translateY(-2px)}
           .gppc-bs{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.7);color:${ACCENT};padding:14px 28px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;border:1.5px solid rgba(21,87,160,.18);transition:all .25s;backdrop-filter:blur(8px)}
           .gppc-bs:hover{background:#fff;transform:translateY(-2px)}
-          .gppc-tr{display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-bottom:48px}
-          .gppc-badge{display:flex;align-items:center;gap:6px;font-size:12px;color:#6b7280;font-weight:500}
-          .gppc-sbar{display:flex;border:1px solid rgba(21,87,160,.10);border-radius:16px;background:rgba(255,255,255,.75);backdrop-filter:blur(12px);overflow:hidden;max-width:680px}
-          .gppc-si{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(21,87,160,.08)}
-          .gppc-si:last-child{border-right:none}
-          .gppc-sn{font-size:1.9rem;font-weight:900;color:${ACCENT};line-height:1;letter-spacing:-1px}
-          .gppc-sl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px}.gppc-bci a:hover{color:${ACCENT}}.gppc-cur{color:${ACCENT};font-weight:500}
+          .gppc-bci a:hover{color:${ACCENT}}.gppc-cur{color:${ACCENT};font-weight:500}
           .gppc-sec{padding:80px 40px}.gppc-bg{background:#f8fafd}
           .gppc-si2{max-width:1200px;margin:0 auto}
           .gppc-tag{display:block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:12px}
@@ -138,25 +127,25 @@ export default function PpcManagementServices() {
           .gppc-cth{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-.5px;margin:0 0 18px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .gppc-ctp{font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px}
           @media(max-width:900px){.gppc-g3,.gppc-rg{grid-template-columns:1fr 1fr}}
-          @media(max-width:600px){.gppc-hero,.gppc-sec,.gppc-rb,.gppc-cta{padding-left:20px;padding-right:20px}.gppc-hero{padding-top:60px;padding-bottom:50px}.gppc-g3,.gppc-rg{grid-template-columns:1fr}.gppc-bc{padding:12px 20px}}
+          @media(max-width:600px){.gppc-sec,.gppc-rb,.gppc-cta{padding-left:20px;padding-right:20px}.gppc-g3,.gppc-rg{grid-template-columns:1fr}.gppc-bc{padding:12px 20px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
-      <section className="gppc-hero"><div className="gppc-o1"/><div className="gppc-o2"/>
-        <div className="gppc-in">
-          <span className="gppc-ey">Google Partner - Search · Display · Shopping · YouTube</span>
-          <h1 className="gppc-h1">Google Ads Management That<br/>Turns Budget Into Revenue</h1>
-          <p className="gppc-p">1Solutions manages Google Ads campaigns that drive qualified leads and sales - not just clicks. Search, Shopping, Display, YouTube, and Performance Max, all optimised weekly for your CPA and ROAS targets.</p>
-          <div className="gppc-btns">
-            <Link href="/contact-us" className="gppc-bp">Get a Free PPC Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-            <Link href="/contact-us" className="gppc-bs">Discuss Your Campaigns</Link>
-          </div>
-          <div className="gppc-tr">{['Flat management fee','You own your account','No long-term lock-in','Weekly optimisation'].map(t=><span key={t} className="gppc-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={ACCENT} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>{t}</span>)}</div>
-          <div className="gppc-sbar">{[{num:'400+',lbl:'PPC Clients'},{num:'15+',lbl:'Years Experience'},{num:'3.8×',lbl:'Avg ROAS'},{num:'97%',lbl:'Retention Rate'}].map(s=><div key={s.lbl} className="gppc-si"><span className="gppc-sn">{s.num}</span><span className="gppc-sl">{s.lbl}</span></div>)}</div>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="Google Partner - Search · Display · Shopping · YouTube"
+        title={<>Google Ads Management That <AuroraText>Turns Budget Into Revenue</AuroraText></>}
+        subtext="1Solutions manages Google Ads campaigns that drive qualified leads and sales - not just clicks. Search, Shopping, Display, YouTube, and Performance Max, all optimised weekly for your CPA and ROAS targets."
+        primaryCta={{ label: 'Get a Free PPC Audit', href: '/contact-us' }}
+        secondaryCta={{ label: 'Discuss Your Campaigns', href: '/contact-us' }}
+        stats={[
+          { label: 'PPC Clients', value: '400', suffix: '+' },
+          { label: 'Years Experience', value: '15', suffix: '+' },
+          { label: 'Avg ROAS', value: '8', prefix: '3.', suffix: '×' },
+          { label: 'Retention Rate', value: '97', suffix: '%' },
+        ]}
+      />
       <section className="gppc-sec gppc-bg"><div className="gppc-si2">
         <span className="gppc-tag">What We Manage</span>
         <h2 className="gppc-h2">Full-Funnel <span>Google Ads Services</span></h2>

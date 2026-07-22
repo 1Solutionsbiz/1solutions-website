@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'Custom B2B eCommerce Platform Development', desc: 'Fully bespoke B2B portals built from the ground up - tailored to your buyer workflows, product catalogue complexity, and sales process.' },
@@ -72,13 +74,6 @@ const FAQS = [
     q: 'Do you work with manufacturers, wholesalers, and distributors in the US, Canada, and Australia?',
     a: 'Yes - these are our core B2B client types. We\'ve built B2B portals for manufacturers selling direct to trade customers, wholesale distributors managing complex account hierarchies, importers and brand owners running dealer or reseller portals, and industrial suppliers with large SKU counts and complex pricing structures. We work remotely with clients across the US, Canada, and Australia, with full project management, regular video calls, and a dedicated single point of contact throughout.',
   },
-];
-
-const STATS = [
-  { label: 'B2B Projects Delivered', val: '80+' },
-  { label: 'Average Reorder Rate', val: '68%' },
-  { label: 'Integrations Built', val: '40+' },
-  { label: 'Client Retention', val: '96%' },
 ];
 
 export default function B2BEcommerce() {
@@ -184,78 +179,6 @@ export default function B2BEcommerce() {
           }
           .b2b-page *, .b2b-page *::before, .b2b-page *::after { box-sizing: border-box; }
 
-          /* ── Hero ── */
-          .b2b-hero {
-            background: linear-gradient(135deg, #ecfdf5 0%, #e0f2fe 35%, #eff6ff 65%, #f0fdfa 100%);
-            position: relative;
-            overflow: hidden;
-            padding: 80px 40px 0;
-          }
-          .b2b-hero-orb1 {
-            position: absolute; top: -120px; right: -100px;
-            width: 580px; height: 580px; border-radius: 50%;
-            background: radial-gradient(circle, rgba(13,148,136,0.12) 0%, transparent 65%);
-            pointer-events: none; filter: blur(30px);
-          }
-          .b2b-hero-orb2 {
-            position: absolute; bottom: 0; left: -100px;
-            width: 460px; height: 460px; border-radius: 50%;
-            background: radial-gradient(circle, rgba(29,78,216,0.09) 0%, transparent 65%);
-            pointer-events: none; filter: blur(30px);
-          }
-          .b2b-hero-inner {
-            max-width: 1280px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-            text-align: center;
-          }
-
-
-
-          .b2b-eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(13,148,136,0.08);
-            border: 1px solid rgba(13,148,136,0.20);
-            border-radius: 100px;
-            padding: 5px 14px;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: #0D9488;
-            margin-bottom: 28px;
-          }
-          .b2b-hero-h1 {
-            font-size: clamp(2.2rem, 5vw, 3.6rem);
-            font-weight: 900;
-            line-height: 1.1;
-            letter-spacing: -1px;
-            background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 20px;
-            max-width: 920px;
-            margin-left: auto;
-            margin-right: auto;
-          }
-          .b2b-hero-sub {
-            font-size: 1.08rem;
-            color: #4A6080;
-            line-height: 1.75;
-            max-width: 660px;
-            margin: 0 auto 36px;
-          }
-          .b2b-hero-btns {
-            display: flex;
-            gap: 14px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 56px;
-          }
           .b2b-btn-primary {
             display: inline-flex;
             align-items: center;
@@ -295,27 +218,6 @@ export default function B2BEcommerce() {
             color: #0D9488;
             transform: translateY(-2px);
           }
-
-          /* Stats bar */
-          .b2b-stats-bar {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            max-width: 900px;
-            margin: 0 auto;
-            background: rgba(255,255,255,0.55);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255,255,255,0.85);
-            border-radius: 20px 20px 0 0;
-            box-shadow: 0 4px 24px rgba(13,148,136,0.08);
-          }
-          .b2b-stat {
-            padding: 20px 24px;
-            text-align: center;
-            border-right: 1px solid rgba(13,148,136,0.08);
-          }
-          .b2b-stat:last-child { border-right: none; }
-          .b2b-stat-label { font-size: 11px; color: #6b7280; font-weight: 500; margin-bottom: 4px; }
-          .b2b-stat-val { font-size: 1.6rem; font-weight: 900; color: #0D9488; letter-spacing: -0.5px; }
 
           /* ── Services ── */
           .b2b-services-section {
@@ -649,15 +551,11 @@ export default function B2BEcommerce() {
             .b2b-why-grid { grid-template-columns: repeat(2, 1fr); }
           }
           @media (max-width: 768px) {
-            .b2b-hero { padding: 60px 24px 0; }
             .b2b-services-section, .b2b-platforms-section, .b2b-process-section,
             .b2b-why-section, .b2b-faq-section, .b2b-cta-section { padding: 60px 24px; }
-            .b2b-stats-bar { grid-template-columns: repeat(2, 1fr); border-radius: 16px 16px 0 0; }
-            .b2b-stat:nth-child(2) { border-right: none; }
             .b2b-services-grid { grid-template-columns: 1fr; }
             .b2b-why-grid { grid-template-columns: 1fr; }
             .b2b-process-step { grid-template-columns: 56px 1fr; }
-            .b2b-hero-btns { flex-direction: column; align-items: center; }
           }
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
@@ -668,40 +566,19 @@ export default function B2BEcommerce() {
       <div className="b2b-page">
 
         {/* ── HERO ── */}
-        <section className="b2b-hero">
-          <div className="b2b-hero-orb1" />
-          <div className="b2b-hero-orb2" />
-          <div className="b2b-hero-inner">
-            <span className="b2b-eyebrow">
-              <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#0D9488', display: 'inline-block' }} />
-              Platform Development
-            </span>
-            <h1 className="b2b-hero-h1">
-              B2B eCommerce Development Services Built for Scale
-            </h1>
-            <p className="b2b-hero-sub">
-              Custom wholesale portals, tiered pricing engines, ERP integrations, and buyer self-service platforms built for manufacturers, wholesalers, and distributors across the US, Canada, and Australia.
-            </p>
-            <div className="b2b-hero-btns">
-              <Link href="/contact-us" className="b2b-btn-primary">
-                Get a Free Discovery Call
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </Link>
-              <Link href="/ecommerce-website-development-services" className="b2b-btn-secondary">
-                Explore Ecommerce Services
-              </Link>
-            </div>
-
-            <div className="b2b-stats-bar">
-              {STATS.map(s => (
-                <div key={s.label} className="b2b-stat">
-                  <div className="b2b-stat-label">{s.label}</div>
-                  <div className="b2b-stat-val">{s.val}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Platform Development"
+          title={<>B2B eCommerce Development Services <AuroraText>Built for Scale</AuroraText></>}
+          subtext="Custom wholesale portals, tiered pricing engines, ERP integrations, and buyer self-service platforms built for manufacturers, wholesalers, and distributors across the US, Canada, and Australia."
+          primaryCta={{ label: 'Get a Free Discovery Call', href: '/contact-us' }}
+          secondaryCta={{ label: 'Explore Ecommerce Services', href: '/ecommerce-website-development-services' }}
+          stats={[
+            { label: 'B2B Projects Delivered', value: '80', suffix: '+' },
+            { label: 'Average Reorder Rate', value: '68', suffix: '%' },
+            { label: 'Integrations Built', value: '40', suffix: '+' },
+            { label: 'Client Retention', value: '96', suffix: '%' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="b2b-services-section">

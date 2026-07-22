@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const ACCENT = '#800040';
 const SERVICES = [
@@ -69,25 +71,12 @@ export default function RemarketingServices() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           *{box-sizing:border-box}
-          .remk-hero{position:relative;overflow:hidden;padding:100px 40px 90px;background:linear-gradient(135deg,rgba(128,0,64,0.08) 0%,rgba(255,255,255,0.75) 50%,rgba(200,80,120,0.07) 100%)}
-          .remk-o1{position:absolute;top:-120px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(128,0,64,0.12) 0%,transparent 70%);pointer-events:none;filter:blur(10px)}
-          .remk-o2{position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(200,80,120,0.08) 0%,transparent 70%);pointer-events:none;filter:blur(8px)}
           .remk-in{max-width:1200px;margin:0 auto;position:relative;z-index:1}
-          .remk-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(128,0,64,0.10);border:1px solid rgba(128,0,64,0.25);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:24px}
-          .remk-h1{font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .remk-p{font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:660px}
-          .remk-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
           .remk-bp{display:inline-flex;align-items:center;gap:8px;background:${ACCENT};color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(128,0,64,.25)}
           .remk-bp:hover{background:#5a0030;transform:translateY(-2px)}
           .remk-bs{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.7);color:${ACCENT};padding:14px 28px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;border:1.5px solid rgba(128,0,64,.18);transition:all .25s;backdrop-filter:blur(8px)}
           .remk-bs:hover{background:#fff;transform:translateY(-2px)}
-          .remk-tr{display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-bottom:48px}
-          .remk-badge{display:flex;align-items:center;gap:6px;font-size:12px;color:#6b7280;font-weight:500}
-          .remk-sbar{display:flex;border:1px solid rgba(128,0,64,.10);border-radius:16px;background:rgba(255,255,255,.75);backdrop-filter:blur(12px);overflow:hidden;max-width:680px}
-          .remk-si{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(128,0,64,.08)}
-          .remk-si:last-child{border-right:none}
-          .remk-sn{font-size:1.9rem;font-weight:900;color:${ACCENT};line-height:1;letter-spacing:-1px}
-          .remk-sl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px}.remk-bci a:hover{color:${ACCENT}}.remk-cur{color:${ACCENT};font-weight:500}
+          .remk-bci a:hover{color:${ACCENT}}.remk-cur{color:${ACCENT};font-weight:500}
           .remk-sec{padding:80px 40px}.remk-bg{background:#f8fafd}
           .remk-si2{max-width:1200px;margin:0 auto}
           .remk-tag{display:block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:12px}
@@ -132,25 +121,25 @@ export default function RemarketingServices() {
           .remk-cth{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-.5px;margin:0 0 18px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .remk-ctp{font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px}
           @media(max-width:900px){.remk-g3,.remk-rg{grid-template-columns:1fr 1fr}}
-          @media(max-width:600px){.remk-hero,.remk-sec,.remk-rb,.remk-cta{padding-left:20px;padding-right:20px}.remk-hero{padding-top:60px;padding-bottom:50px}.remk-g3,.remk-rg{grid-template-columns:1fr}.remk-bc{padding:12px 20px}}
+          @media(max-width:600px){.remk-sec,.remk-rb,.remk-cta{padding-left:20px;padding-right:20px}.remk-g3,.remk-rg{grid-template-columns:1fr}.remk-bc{padding:12px 20px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
-      <section className="remk-hero"><div className="remk-o1"/><div className="remk-o2"/>
-        <div className="remk-in">
-          <span className="remk-ey">Retargeting - Google · Meta · LinkedIn · YouTube · Dynamic Product Ads</span>
-          <h1 className="remk-h1">Remarketing Campaigns That Turn Lost Visitors Into Customers</h1>
-          <p className="remk-p">1Solutions manages cross-channel remarketing campaigns that re-engage the 97% of visitors who leave without converting - with audience-specific creative, dynamic product ads, and funnel-stage sequencing.</p>
-          <div className="remk-btns">
-            <Link href="/contact-us" className="remk-bp">Get a Free Remarketing Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-            <Link href="/contact-us" className="remk-bs">Discuss Your Retargeting Strategy</Link>
-          </div>
-          <div className="remk-tr">{['Cross-channel coverage','Dynamic product ads','Privacy-compliant setup','Flat management fee'].map(t=><span key={t} className="remk-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={ACCENT} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>{t}</span>)}</div>
-          <div className="remk-sbar">{[{num:'5.2×',lbl:'Cart Recovery ROAS'},{num:'44%',lbl:'Lower CPA'},{num:'4',lbl:'Channels Covered'},{num:'97%',lbl:'Visitor Recovery Focus'}].map(s=><div key={s.lbl} className="remk-si"><span className="remk-sn">{s.num}</span><span className="remk-sl">{s.lbl}</span></div>)}</div>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="Retargeting - Google · Meta · LinkedIn · YouTube"
+        title={<>Remarketing Campaigns That <AuroraText>Turn Lost Visitors Into Customers</AuroraText></>}
+        subtext="1Solutions manages cross-channel remarketing campaigns that re-engage the 97% of visitors who leave without converting - with audience-specific creative, dynamic product ads, and funnel-stage sequencing."
+        primaryCta={{ label: 'Get a Free Remarketing Audit', href: '/contact-us' }}
+        secondaryCta={{ label: 'Discuss Your Retargeting Strategy', href: '/contact-us' }}
+        stats={[
+          { label: 'Cart Recovery ROAS', value: '2', prefix: '5.', suffix: '×' },
+          { label: 'Lower CPA', value: '44', suffix: '%' },
+          { label: 'Channels Covered', value: '4' },
+          { label: 'Visitor Recovery Focus', value: '97', suffix: '%' },
+        ]}
+      />
       <section className="remk-sec remk-bg"><div className="remk-si2">
         <span className="remk-tag">What We Manage</span>
         <h2 className="remk-h2">Complete Cross-Channel <span>Remarketing Services</span></h2>

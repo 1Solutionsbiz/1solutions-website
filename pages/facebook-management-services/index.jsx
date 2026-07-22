@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'Facebook Page Management', desc: 'End-to-end Facebook page management - content calendar, post creation, scheduling, community management, comment and message responses, and ongoing performance monitoring.' },
@@ -44,13 +46,6 @@ const FAQS = [
   { q: 'Can you manage Facebook for ecommerce businesses?', a: 'Yes - ecommerce is a significant portion of our Facebook management client base. Ecommerce Facebook management includes: Facebook Shop setup and catalogue management; dynamic product ads (DPA) targeting users who viewed or abandoned products; catalogue-based retargeting; collection ad formats; and Facebook Checkout integration where available. We also coordinate Facebook advertising with Google Shopping and other paid channels for consistent cross-platform coverage.' },
 ];
 
-const STATS = [
-  { label: 'Facebook Pages Managed', val: '200+' },
-  { label: 'Avg Engagement Growth', val: '+3.2×' },
-  { label: 'Years Experience', val: '12+' },
-  { label: 'Client Retention', val: '91%' },
-];
-
 export default function FacebookManagementServices() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleCards, setVisibleCards] = useState([]);
@@ -75,22 +70,10 @@ export default function FacebookManagementServices() {
         <style>{`
           .fbm-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .fbm-page *,.fbm-page *::before,.fbm-page *::after{box-sizing:border-box}
-          .fbm-hero{background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 25%,#bfdbfe 60%,#eff6ff 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .fbm-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(24,119,242,0.12) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .fbm-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(22,111,229,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .fbm-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.fbm-bc a:hover{color:#1877F2}.fbm-bc span{color:#d1d5db}
-          .fbm-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(24,119,242,0.08);border:1px solid rgba(24,119,242,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#1877F2;margin-bottom:28px}
-          .fbm-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .fbm-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
-          .fbm-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .fbm-btn-p{display:inline-flex;align-items:center;gap:8px;background:#1877F2;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(24,119,242,0.28)}
           .fbm-btn-p:hover{background:#166FE5;box-shadow:0 8px 32px rgba(24,119,242,0.38);transform:translateY(-2px)}
           .fbm-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.18);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
           .fbm-btn-s:hover{border-color:#1877F2;color:#1877F2;transform:translateY(-2px)}
-          .fbm-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(24,119,242,0.07)}
-          .fbm-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(24,119,242,0.08)}.fbm-stat:last-child{border-right:none}
-          .fbm-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .fbm-stat-v{font-size:1.6rem;font-weight:900;color:#1877F2;letter-spacing:-0.5px}
           .fbm-svc{background:#f8fafd;padding:80px 40px}.fbm-svc-in{max-width:1280px;margin:0 auto}
           .fbm-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#1877F2;margin-bottom:10px;display:block}
           .fbm-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
@@ -137,25 +120,26 @@ export default function FacebookManagementServices() {
           .fbm-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           .fbm-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.fbm-grid{grid-template-columns:repeat(2,1fr)}.fbm-why-grid{grid-template-columns:repeat(2,1fr)}}
-          @media(max-width:768px){.fbm-hero,.fbm-svc,.fbm-cap,.fbm-proc,.fbm-why,.fbm-faq,.fbm-cta{padding:60px 24px}.fbm-hero{padding-top:60px;padding-bottom:0}.fbm-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.fbm-stat:nth-child(2){border-right:none}.fbm-grid{grid-template-columns:1fr}.fbm-why-grid{grid-template-columns:1fr}.fbm-step{grid-template-columns:56px 1fr}.fbm-btns{flex-direction:column;align-items:center}}
+          @media(max-width:768px){.fbm-svc,.fbm-cap,.fbm-proc,.fbm-why,.fbm-faq,.fbm-cta{padding:60px 24px}.fbm-grid{grid-template-columns:1fr}.fbm-why-grid{grid-template-columns:1fr}.fbm-step{grid-template-columns:56px 1fr}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
       <div className="fbm-page">
-        <section className="fbm-hero"><div className="fbm-o1"/><div className="fbm-o2"/>
-          <div className="fbm-in">
-            <span className="fbm-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#1877F2',display:'inline-block'}}/> Page Management · Ads · Community</span>
-            <h1 className="fbm-h1">Facebook Management Services - Content, Ads & Community Under One Roof</h1>
-            <p className="fbm-sub">End-to-end Facebook management - content strategy, post creation, community management, and paid advertising - handled by a dedicated social media team so you can focus on your business.</p>
-            <div className="fbm-btns">
-              <Link href="/contact-us" className="fbm-btn-p">Get a Facebook Management Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/instagram-marketing-services" className="fbm-btn-s">Instagram Marketing</Link>
-            </div>
-            <div className="fbm-stats">{STATS.map(s => <div key={s.label} className="fbm-stat"><div className="fbm-stat-l">{s.label}</div><div className="fbm-stat-v">{s.val}</div></div>)}</div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Page Management · Ads · Community"
+          title={<>Facebook Management Services - <AuroraText>Content, Ads &amp; Community Under One Roof</AuroraText></>}
+          subtext="End-to-end Facebook management - content strategy, post creation, community management, and paid advertising - handled by a dedicated social media team so you can focus on your business."
+          primaryCta={{ label: 'Get a Facebook Management Quote', href: '/contact-us' }}
+          secondaryCta={{ label: 'Instagram Marketing', href: '/instagram-marketing-services' }}
+          stats={[
+            { label: 'Facebook Pages Managed', value: '200', suffix: '+' },
+            { label: 'Avg Engagement Growth', value: '2', prefix: '+3.', suffix: '×' },
+            { label: 'Years Experience', value: '12', suffix: '+' },
+            { label: 'Client Retention', value: '91', suffix: '%' },
+          ]}
+        />
         <section className="fbm-svc"><div className="fbm-svc-in">
           <span className="fbm-ey2">What We Do</span><h2 className="fbm-ttl">Facebook Management Services</h2>
           <p className="fbm-desc">Page management, content creation, paid ads, community engagement, and ecommerce integration - everything your Facebook presence needs.</p>

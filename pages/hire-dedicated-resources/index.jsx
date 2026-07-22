@@ -2,6 +2,8 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { useState, useEffect, useRef } from 'react'
+import { AuroraText } from '../../components/AuroraText'
+import ServiceHero from '../../components/sections/ServiceHero'
 
 const ACCENT = '#114171'
 const AMBER = '#FE9700'
@@ -234,15 +236,6 @@ export default function HireDedicatedResources() {
         <link rel="canonical" href="https://www.1solutions.biz/hire-dedicated-resources/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
-          /* Hero */
-          .hdr-hero{background:linear-gradient(135deg,#dbeafe 0%,#ede9fe 25%,#e0f2fe 50%,#fef3c7 100%);color:#0F1F40;padding:100px 20px 80px;text-align:center;position:relative;overflow:hidden}
-          .hdr-hero::before{content:'';position:absolute;top:-40%;left:-20%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(17,65,113,0.08) 0%,transparent 70%);pointer-events:none}
-          .hdr-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin:0 0 20px;line-height:1.15;position:relative;color:#0F1F40}
-          .hdr-hero h1 span{color:${AMBER}}
-          .hdr-hero p{font-size:1.12rem;max-width:640px;margin:0 auto 36px;color:#374151;line-height:1.75;position:relative}
-          .hdr-hero-badges{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:40px;position:relative}
-          .hdr-badge{background:rgba(255,255,255,0.8);backdrop-filter:blur(10px);border:1px solid rgba(17,65,113,0.15);border-radius:40px;padding:6px 16px;font-size:.85rem;font-weight:600;color:#114171}
-          .hdr-hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
           .hdr-btn-primary{background:#114171;color:#fff;padding:15px 36px;border-radius:100px;font-weight:700;font-size:1rem;text-decoration:none;transition:all .25s;display:inline-block}
           .hdr-btn-primary:hover{background:#0d3260;transform:translateY(-2px);box-shadow:0 8px 24px rgba(17,65,113,.3)}
           .hdr-btn-outline{background:rgba(255,255,255,0.7);color:#114171;padding:14px 30px;border-radius:100px;font-weight:600;font-size:1rem;text-decoration:none;transition:all .25s;border:2px solid rgba(17,65,113,0.3);backdrop-filter:blur(8px);display:inline-block}
@@ -323,30 +316,25 @@ export default function HireDedicatedResources() {
           .hdr-btn-white:hover{background:rgba(255,255,255,.95);transform:translateY(-2px)}
 
           @media(max-width:768px){
-            .hdr-hero h1{font-size:1.8rem}
             .hdr-why-grid{grid-template-columns:1fr}
-          }
-          @media(max-width:480px){
-            .hdr-hero{padding:80px 18px 60px}
           }
         `}</style>
       </Head>
 
       {/* ── Hero ── */}
-      <section className="hdr-hero">
-        <h1>Hire <span>Dedicated Resources</span><br />Developers, Designers &amp; Digital Experts</h1>
-        <p>Scale your team with pre-vetted full-time, part-time, or hourly professionals from 1Solutions. Onboard in 7 days. No lock-in contracts.</p>
-        <div className="hdr-hero-badges">
-          <span className="hdr-badge">&#10003; 150+ Vetted Professionals</span>
-          <span className="hdr-badge">&#10003; Profiles in 48 Hours</span>
-          <span className="hdr-badge">&#10003; NDA &amp; IP Protected</span>
-          <span className="hdr-badge">&#10003; Month-to-Month Flexibility</span>
-        </div>
-        <div className="hdr-hero-btns">
-          <Link href="/contact-us" className="hdr-btn-primary">Hire a Resource Now →</Link>
-          <Link href="/portfolio" className="hdr-btn-outline">View Our Work</Link>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="Hire Dedicated Resources · NDA & IP Protected"
+        title={<>Hire Dedicated Resources <AuroraText>Developers, Designers &amp; Digital Experts</AuroraText></>}
+        subtext="Scale your team with pre-vetted full-time, part-time, or hourly professionals from 1Solutions. Onboard in 7 days. No lock-in contracts."
+        primaryCta={{ label: 'Hire a Resource Now', href: '/contact-us' }}
+        secondaryCta={{ label: 'View Our Work', href: '/portfolio' }}
+        stats={[
+          { label: 'Vetted Professionals', value: '150', suffix: '+' },
+          { label: 'Profile Turnaround', value: '48', suffix: 'hr' },
+          { label: 'Resource Categories', value: '9', suffix: '+' },
+          { label: 'Days to Onboard', value: '7', suffix: ' Days' },
+        ]}
+      />
 
       {/* ── Resource Types ── */}
       <section className="hdr-sec" ref={rtR}>

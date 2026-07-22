@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -153,58 +155,21 @@ const FAQS = [
   { q: 'How long does it take to build a cloud native application?', a: "A cloud native greenfield SaaS MVP - microservices on Kubernetes with CI/CD and monitoring - takes 12–20 weeks. Re-architecting an existing monolith with the Strangler Fig pattern takes 6–18 months depending on size and team velocity. A serverless API backend takes 4–8 weeks. A Kafka event streaming pipeline takes 8–16 weeks. We provide detailed timelines after the architecture discovery phase." },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const num = parseInt(target.replace(/\D/g, ''), 10);
-    if (!num) return;
-    let t0 = null;
-    const step = ts => {
-      if (!t0) t0 = ts;
-      const p = Math.min((ts - t0) / duration, 1);
-      setCount(Math.floor((1 - Math.pow(1 - p, 3)) * num));
-      if (p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function StatItem({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');  return (
-    <div className="cn-stat-col">
-      <div className="cn-stat-val">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div>
-      <div className="cn-stat-label">{label}</div>
-    </div>
-  );
-}
-
 export default function CloudNativeServices() {
   const [showAllSvc, setShowAllSvc] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleSvcCards, setVisibleSvcCards] = useState([]);
   const [visibleEngCards, setVisibleEngCards] = useState([]);
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const [visibleStackCards, setVisibleStackCards] = useState([]);
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const svcGridRef = useRef(null);
   const engGridRef = useRef(null);
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
   const stackGridRef = useRef(null);
-
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStatsStarted(true); obs.disconnect(); } }, { threshold: 0.4 });
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   useEffect(() => {
     const pairs = [[svcGridRef, SERVICES.length, setVisibleSvcCards],[engGridRef, 3, setVisibleEngCards],[whyGridRef, WHY_CARDS.length, setVisibleWhyCards],[testiGridRef, 3, setVisibleTestiCards],[stackGridRef, TECH_STACK.length, setVisibleStackCards]];
@@ -276,31 +241,6 @@ export default function CloudNativeServices() {
 
 
 
-          .cn-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
-          .cn-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
-          .cn-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .cn-hero-desc{font-size:16px;color:#3A507A;line-height:1.65;max-width:740px;margin:0 auto 24px}
-          .cn-trust-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
-          .cn-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07)}
-          .cn-badge-dot{width:7px;height:7px;border-radius:50%;background:#9333ea;flex-shrink:0}
-          .cn-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .cn-btn-primary{display:inline-block;padding:14px 36px;background:#9333ea;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(147,51,234,.28)}
-          .cn-btn-primary:hover{background:#0F3460;transform:translateY(-2px)}
-          .cn-btn-ghost{display:inline-block;padding:14px 36px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .cn-btn-ghost:hover{background:rgba(255,255,255,.85);border-color:rgba(147,51,234,.5);transform:translateY(-2px)}
-          .cn-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:28px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .cn-stat-col{padding:18px 16px;text-align:center;border-right:1px solid rgba(15,52,96,.10)}
-          .cn-stat-col:last-child{border-right:none}
-          .cn-stat-val{font-size:28px;font-weight:900;color:#9333ea;letter-spacing:-.5px;line-height:1}
-          .cn-stat-label{font-size:11px;color:#4A6080;font-weight:500;margin-top:5px}
-          .cn-logos{position:relative;z-index:2;padding:24px 40px 52px;display:flex;flex-direction:column;align-items:center;gap:14px}
-          .cn-logos-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6A80A0}
-          .cn-logos-wrap{width:100%;overflow:hidden}
-          .cn-logos-track{display:flex;align-items:center;gap:60px;width:max-content;animation:cn-marquee 28s linear infinite}
-          .cn-logos-track:hover{animation-play-state:paused}
-          @keyframes cn-marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-          .cn-clogo{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
-          .cn-clogo:hover{opacity:.85;filter:grayscale(0%)}
           .cn-s-eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
           .cn-s-title{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .cn-s-desc{font-size:15px;color:#4A6080;line-height:1.7}
@@ -448,8 +388,8 @@ export default function CloudNativeServices() {
           .cn-rtag-green{background:rgba(22,163,74,.09);border-color:rgba(22,163,74,.28);color:#14532d}
           .cn-rtag-rose{background:rgba(225,29,72,.09);border-color:rgba(225,29,72,.28);color:#9f1239}
           .cn-rtag-teal{background:rgba(15,118,110,.09);border-color:rgba(15,118,110,.28);color:#0f766e}
-          @media(max-width:1024px){.cn-hero h1,.cn-s-title,.cn-faq h2{font-size:36px}.cn-svc-grid{grid-template-columns:repeat(2,1fr)}.cn-stack-grid{grid-template-columns:repeat(2,1fr)}.cn-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.cn-eng-card.feat{transform:none}.cn-eng-card.feat.cn-ev{transform:none}.cn-eng-card.feat.cn-ev:hover{transform:translateY(-4px)}.cn-why-grid{grid-template-columns:repeat(2,1fr)}.cn-tgrid{grid-template-columns:1fr}.cn-contact-grid{grid-template-columns:1fr}}
-          @media(max-width:768px){.cn-breadcrumb{padding:12px 20px 0}.cn-hero{padding:28px 20px 20px}.cn-hero h1{font-size:26px;letter-spacing:-.3px}.cn-stats{grid-template-columns:1fr 1fr}.cn-stat-col:nth-child(2){border-right:none}.cn-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.cn-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.cn-logos{padding:16px 20px 28px}.cn-svc-section,.cn-stack-section,.cn-eng-section,.cn-process-section,.cn-testi,.cn-why-section,.cn-faq,.cn-related{padding:52px 20px}.cn-contact{padding:48px 20px}.cn-svc-grid,.cn-stack-grid,.cn-why-grid{grid-template-columns:1fr}.cn-frow{grid-template-columns:1fr}.cn-ctitle{font-size:28px}.cn-s-title{font-size:28px}}
+          @media(max-width:1024px){.cn-s-title,.cn-faq h2{font-size:36px}.cn-svc-grid{grid-template-columns:repeat(2,1fr)}.cn-stack-grid{grid-template-columns:repeat(2,1fr)}.cn-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.cn-eng-card.feat{transform:none}.cn-eng-card.feat.cn-ev{transform:none}.cn-eng-card.feat.cn-ev:hover{transform:translateY(-4px)}.cn-why-grid{grid-template-columns:repeat(2,1fr)}.cn-tgrid{grid-template-columns:1fr}.cn-contact-grid{grid-template-columns:1fr}}
+          @media(max-width:768px){.cn-breadcrumb{padding:12px 20px 0}.cn-svc-section,.cn-stack-section,.cn-eng-section,.cn-process-section,.cn-testi,.cn-why-section,.cn-faq,.cn-related{padding:52px 20px}.cn-contact{padding:48px 20px}.cn-svc-grid,.cn-stack-grid,.cn-why-grid{grid-template-columns:1fr}.cn-frow{grid-template-columns:1fr}.cn-ctitle{font-size:28px}.cn-s-title{font-size:28px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
@@ -477,38 +417,19 @@ export default function CloudNativeServices() {
       <div className="cn-page">
         <div className="cn-orb cn-orb-1" /><div className="cn-orb cn-orb-2" /><div className="cn-orb cn-orb-3" />
 
-        <section className="cn-hero">
-          <span className="cn-eyebrow">Cloud Native Services</span>
-          <h1>Cloud Native Development - Microservices, Kubernetes, Kafka & Serverless</h1>
-          <p className="cn-hero-desc">Expert cloud native development services - microservices architecture and development, Kubernetes containerisation and orchestration, Apache Kafka event streaming, serverless application development, Istio service mesh, GitOps with ArgoCD, cloud native security, full-stack observability, and dedicated cloud native engineering teams for businesses worldwide.</p>
-          <div className="cn-trust-row">
-            {['Microservices & DDD','Kubernetes EKS/AKS/GKE','Apache Kafka','Serverless (Lambda/Functions)','GitOps with ArgoCD'].map(b => (
-              <div className="cn-badge" key={b}><span className="cn-badge-dot" />{b}</div>
-            ))}
-          </div>
-          <div className="cn-ctas">
-            <Link href="#contact" className="cn-btn-primary">Build Your Cloud Native Platform</Link>
-            <Link href="#engagement" className="cn-btn-ghost">View Engagement Models →</Link>
-          </div>
-        </section>
-
-        <div className="cn-stats" ref={statsRef}>
-          {[['100+','Cloud Native Projects'],['15+','Years Distributed Systems'],['10x','Scalability Achieved'],['98%','Client Retention']].map(([v, l]) => (
-            <StatItem key={l} label={l} val={v} started={statsStarted} />
-          ))}
-        </div>
-
-        <div className="cn-logos">
-          <span className="cn-logos-label">Trusted by Engineering Teams Building at Scale</span>
-          <div className="cn-logos-wrap">
-            <div className="cn-logos-track">
-              {[['/logo/Indian_Express_Logo_full.png','Indian Express'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],['/logo/Uniphore.jpg','Uniphore'],['/logo/ICCoLogo.png','ICC'],['/logo/Honor_Logo_(2020).svg.png','Honor'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],['/logo/Indian_Express_Logo_full.png','Indian Express 2'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon 2'],['/logo/Uniphore.jpg','Uniphore 2'],['/logo/ICCoLogo.png','ICC 2'],['/logo/Honor_Logo_(2020).svg.png','Honor 2'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv 2']].map(([src, alt]) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img key={alt} src={src} alt={alt.replace(/ \d$/, '')} className="cn-clogo" />
-              ))}
-            </div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="Cloud Native Services · Kubernetes · Kafka · Serverless"
+          title={<>Cloud Native Development - <AuroraText>Microservices, Kubernetes, Kafka &amp; Serverless</AuroraText></>}
+          subtext="Expert cloud native development services - microservices architecture and development, Kubernetes containerisation and orchestration, Apache Kafka event streaming, serverless application development, Istio service mesh, GitOps with ArgoCD, cloud native security, full-stack observability, and dedicated cloud native engineering teams for businesses worldwide."
+          primaryCta={{ label: 'Build Your Cloud Native Platform', href: '#contact' }}
+          secondaryCta={{ label: 'View Engagement Models', href: '#engagement' }}
+          stats={[
+            { label: 'Cloud Native Projects', value: '100', suffix: '+' },
+            { label: 'Years Distributed Systems', value: '15', suffix: '+' },
+            { label: 'Scalability Achieved', value: '10', suffix: 'x' },
+            { label: 'Client Retention', value: '98', suffix: '%' },
+          ]}
+        />
 
         <section className="cn-svc-section" aria-labelledby="cn-svc-heading">
           <div className="cn-inner">

@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -153,58 +155,21 @@ const FAQS = [
   { q: 'Do you provide post-migration managed services?', a: "Yes. Post-migration we offer managed cloud services - infrastructure monitoring, cost optimisation reviews, security posture reviews, patch management, backup and DR testing, and scaling event management. We also provide full architecture documentation and operational runbooks. Managed services are available on a monthly retainer." },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const num = parseInt(target.replace(/\D/g, ''), 10);
-    if (!num) return;
-    let t0 = null;
-    const step = ts => {
-      if (!t0) t0 = ts;
-      const p = Math.min((ts - t0) / duration, 1);
-      setCount(Math.floor((1 - Math.pow(1 - p, 3)) * num));
-      if (p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function StatItem({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');  return (
-    <div className="cm-stat-col">
-      <div className="cm-stat-val">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div>
-      <div className="cm-stat-label">{label}</div>
-    </div>
-  );
-}
-
 export default function CloudMigrationServices() {
   const [showAllSvc, setShowAllSvc] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleSvcCards, setVisibleSvcCards] = useState([]);
   const [visibleEngCards, setVisibleEngCards] = useState([]);
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const [visibleStackCards, setVisibleStackCards] = useState([]);
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const svcGridRef = useRef(null);
   const engGridRef = useRef(null);
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
   const stackGridRef = useRef(null);
-
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStatsStarted(true); obs.disconnect(); } }, { threshold: 0.4 });
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   useEffect(() => {
     const pairs = [[svcGridRef, SERVICES.length, setVisibleSvcCards],[engGridRef, 3, setVisibleEngCards],[whyGridRef, WHY_CARDS.length, setVisibleWhyCards],[testiGridRef, 3, setVisibleTestiCards],[stackGridRef, TECH_STACK.length, setVisibleStackCards]];
@@ -276,31 +241,6 @@ export default function CloudMigrationServices() {
 
 
 
-          .cm-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
-          .cm-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
-          .cm-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .cm-hero-desc{font-size:16px;color:#3A507A;line-height:1.65;max-width:740px;margin:0 auto 24px}
-          .cm-trust-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
-          .cm-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07)}
-          .cm-badge-dot{width:7px;height:7px;border-radius:50%;background:#0369a1;flex-shrink:0}
-          .cm-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .cm-btn-primary{display:inline-block;padding:14px 36px;background:#0369a1;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(3,105,161,.28)}
-          .cm-btn-primary:hover{background:#0F3460;transform:translateY(-2px)}
-          .cm-btn-ghost{display:inline-block;padding:14px 36px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .cm-btn-ghost:hover{background:rgba(255,255,255,.85);border-color:rgba(3,105,161,.5);transform:translateY(-2px)}
-          .cm-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:28px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .cm-stat-col{padding:18px 16px;text-align:center;border-right:1px solid rgba(15,52,96,.10)}
-          .cm-stat-col:last-child{border-right:none}
-          .cm-stat-val{font-size:28px;font-weight:900;color:#0369a1;letter-spacing:-.5px;line-height:1}
-          .cm-stat-label{font-size:11px;color:#4A6080;font-weight:500;margin-top:5px}
-          .cm-logos{position:relative;z-index:2;padding:24px 40px 52px;display:flex;flex-direction:column;align-items:center;gap:14px}
-          .cm-logos-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6A80A0}
-          .cm-logos-wrap{width:100%;overflow:hidden}
-          .cm-logos-track{display:flex;align-items:center;gap:60px;width:max-content;animation:cm-marquee 28s linear infinite}
-          .cm-logos-track:hover{animation-play-state:paused}
-          @keyframes cm-marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-          .cm-clogo{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
-          .cm-clogo:hover{opacity:.85;filter:grayscale(0%)}
           .cm-s-eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
           .cm-s-title{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .cm-s-desc{font-size:15px;color:#4A6080;line-height:1.7}
@@ -448,8 +388,8 @@ export default function CloudMigrationServices() {
           .cm-rtag-green{background:rgba(22,163,74,.09);border-color:rgba(22,163,74,.28);color:#14532d}
           .cm-rtag-rose{background:rgba(225,29,72,.09);border-color:rgba(225,29,72,.28);color:#9f1239}
           .cm-rtag-teal{background:rgba(15,118,110,.09);border-color:rgba(15,118,110,.28);color:#0f766e}
-          @media(max-width:1024px){.cm-hero h1,.cm-s-title,.cm-faq h2{font-size:36px}.cm-svc-grid{grid-template-columns:repeat(2,1fr)}.cm-stack-grid{grid-template-columns:repeat(2,1fr)}.cm-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.cm-eng-card.feat{transform:none}.cm-eng-card.feat.cm-ev{transform:none}.cm-eng-card.feat.cm-ev:hover{transform:translateY(-4px)}.cm-why-grid{grid-template-columns:repeat(2,1fr)}.cm-tgrid{grid-template-columns:1fr}.cm-contact-grid{grid-template-columns:1fr}}
-          @media(max-width:768px){.cm-breadcrumb{padding:12px 20px 0}.cm-hero{padding:28px 20px 20px}.cm-hero h1{font-size:26px;letter-spacing:-.3px}.cm-stats{grid-template-columns:1fr 1fr}.cm-stat-col:nth-child(2){border-right:none}.cm-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.cm-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.cm-logos{padding:16px 20px 28px}.cm-svc-section,.cm-stack-section,.cm-eng-section,.cm-process-section,.cm-testi,.cm-why-section,.cm-faq,.cm-related{padding:52px 20px}.cm-contact{padding:48px 20px}.cm-svc-grid,.cm-stack-grid,.cm-why-grid{grid-template-columns:1fr}.cm-frow{grid-template-columns:1fr}.cm-ctitle{font-size:28px}.cm-s-title{font-size:28px}}
+          @media(max-width:1024px){.cm-s-title,.cm-faq h2{font-size:36px}.cm-svc-grid{grid-template-columns:repeat(2,1fr)}.cm-stack-grid{grid-template-columns:repeat(2,1fr)}.cm-eng-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.cm-eng-card.feat{transform:none}.cm-eng-card.feat.cm-ev{transform:none}.cm-eng-card.feat.cm-ev:hover{transform:translateY(-4px)}.cm-why-grid{grid-template-columns:repeat(2,1fr)}.cm-tgrid{grid-template-columns:1fr}.cm-contact-grid{grid-template-columns:1fr}}
+          @media(max-width:768px){.cm-breadcrumb{padding:12px 20px 0}.cm-svc-section,.cm-stack-section,.cm-eng-section,.cm-process-section,.cm-testi,.cm-why-section,.cm-faq,.cm-related{padding:52px 20px}.cm-contact{padding:48px 20px}.cm-svc-grid,.cm-stack-grid,.cm-why-grid{grid-template-columns:1fr}.cm-frow{grid-template-columns:1fr}.cm-ctitle{font-size:28px}.cm-s-title{font-size:28px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
@@ -477,38 +417,19 @@ export default function CloudMigrationServices() {
       <div className="cm-page">
         <div className="cm-orb cm-orb-1" /><div className="cm-orb cm-orb-2" /><div className="cm-orb cm-orb-3" />
 
-        <section className="cm-hero">
-          <span className="cm-eyebrow">Cloud Migration Services</span>
-          <h1>Cloud Migration Services - AWS, Azure & GCP Migration Done Right</h1>
-          <p className="cm-hero-desc">End-to-end cloud migration services - cloud readiness assessment and 6R strategy, lift and shift rehost, application re-platforming, database migration, AWS Landing Zone and Azure Landing Zone setup, hybrid cloud design, cloud cost optimisation, disaster recovery in cloud, and post-migration managed services for businesses worldwide.</p>
-          <div className="cm-trust-row">
-            {['AWS, Azure & GCP Certified','6R Migration Strategy','Zero Data Loss Record','IaC with Terraform','30–50% Cost Reduction'].map(b => (
-              <div className="cm-badge" key={b}><span className="cm-badge-dot" />{b}</div>
-            ))}
-          </div>
-          <div className="cm-ctas">
-            <Link href="#contact" className="cm-btn-primary">Start Your Cloud Migration</Link>
-            <Link href="#engagement" className="cm-btn-ghost">View Engagement Models →</Link>
-          </div>
-        </section>
-
-        <div className="cm-stats" ref={statsRef}>
-          {[['150+','Cloud Migrations Delivered'],['15+','Years Cloud Experience'],['40%','Avg Cost Reduction'],['98%','Client Retention']].map(([v, l]) => (
-            <StatItem key={l} label={l} val={v} started={statsStarted} />
-          ))}
-        </div>
-
-        <div className="cm-logos">
-          <span className="cm-logos-label">Trusted by Businesses Migrating to Cloud</span>
-          <div className="cm-logos-wrap">
-            <div className="cm-logos-track">
-              {[['/logo/Indian_Express_Logo_full.png','Indian Express'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],['/logo/Uniphore.jpg','Uniphore'],['/logo/ICCoLogo.png','ICC'],['/logo/Honor_Logo_(2020).svg.png','Honor'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],['/logo/Indian_Express_Logo_full.png','Indian Express 2'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon 2'],['/logo/Uniphore.jpg','Uniphore 2'],['/logo/ICCoLogo.png','ICC 2'],['/logo/Honor_Logo_(2020).svg.png','Honor 2'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv 2']].map(([src, alt]) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img key={alt} src={src} alt={alt.replace(/ \d$/, '')} className="cm-clogo" />
-              ))}
-            </div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="Cloud Migration Services · AWS, Azure & GCP Certified"
+          title={<>Cloud Migration Services - <AuroraText>AWS, Azure &amp; GCP Migration Done Right</AuroraText></>}
+          subtext="End-to-end cloud migration services - cloud readiness assessment and 6R strategy, lift and shift rehost, application re-platforming, database migration, AWS Landing Zone and Azure Landing Zone setup, hybrid cloud design, cloud cost optimisation, disaster recovery in cloud, and post-migration managed services for businesses worldwide."
+          primaryCta={{ label: 'Start Your Cloud Migration', href: '#contact' }}
+          secondaryCta={{ label: 'View Engagement Models', href: '#engagement' }}
+          stats={[
+            { label: 'Cloud Migrations Delivered', value: '150', suffix: '+' },
+            { label: 'Years Cloud Experience', value: '15', suffix: '+' },
+            { label: 'Avg Cost Reduction', value: '40', suffix: '%' },
+            { label: 'Client Retention', value: '98', suffix: '%' },
+          ]}
+        />
 
         <section className="cm-svc-section" aria-labelledby="cm-svc-heading">
           <div className="cm-inner">

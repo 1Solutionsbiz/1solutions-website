@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n:'01', title:'Custom WooCommerce Store Development', desc:'Fully bespoke WooCommerce stores built from scratch - tailored to your brand, product catalogue, and conversion goals.', featured:false },
@@ -41,47 +43,14 @@ const WHY = [
   { icon:<svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>, title:'Long-Term Partnership', desc:'97% client retention rate. We don\'t disappear after launch - maintenance plans, support retainers, and growth partnerships keep us invested in your success.' },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const numTarget = parseInt(target.replace(/\D/g, ''), 10);
-    if (!numTarget) return;
-    let startTime = null;
-    const step = (ts) => {
-      if (!startTime) startTime = ts;
-      const progress = Math.min((ts - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * numTarget));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function AnimatedStat({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');
-  const hasComma = val.includes(',');
-  const display = started ? (hasComma ? num.toLocaleString() : num) + suffix : val;  return (
-    <div className="woo-stat-col">
-      <div className="woo-stat-label">{label}</div>
-      <div className="woo-stat-value">{display}</div>
-    </div>
-  );
-}
-
 export default function WooCommerceDevelopmentCompany() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleSteps, setVisibleSteps] = useState([]);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const stepRefs = useRef([]);
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
@@ -102,16 +71,6 @@ export default function WooCommerceDevelopmentCompany() {
       return obs;
     });
     return () => observers.forEach(o => o && o.disconnect());
-  }, []);
-
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setStatsStarted(true); obs.disconnect(); } },
-      { threshold: 0.5 }
-    );
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
   }, []);
 
   useEffect(() => {
@@ -217,31 +176,6 @@ export default function WooCommerceDevelopmentCompany() {
           .woo-aurora-b2 { position:absolute; left:78%; top:22%; width:48%; height:48%; border-radius:50%; background:radial-gradient(circle at center,rgba(217,119,6,0.20) 0%,transparent 70%); transform:translate(-50%,-50%); }
           .woo-aurora-b3 { position:absolute; left:50%; top:82%; width:55%; height:55%; border-radius:50%; background:radial-gradient(circle at center,rgba(26,82,118,0.16) 0%,transparent 70%); transform:translate(-50%,-50%); }
           @keyframes woo-aurora-drift { 0%{transform:translate3d(0,0,0) scale(1)} 100%{transform:translate3d(-4%,3%,0) scale(1.10)} }
-
-          /* Hero */
-          .woo-hero-block { background:transparent;position:relative;overflow:hidden; }
-          .woo-hero-block::before { content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,0.12) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px); }
-          .woo-hero-block::after { content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(217,70,239,0.12) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px); }
-          .woo-hero-content { position:relative;z-index:2;text-align:center;max-width:860px;margin:0 auto;padding:56px 40px 40px; }
-          .woo-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:18px; }
-          .woo-hero-content h1 { font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .woo-hero-content p { font-size:16px;color:#3A507A;line-height:1.65;max-width:620px;margin:0 auto 28px; }
-          .woo-btn-hero { display:inline-block;padding:14px 40px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#5b21b6;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(91,33,182,0.10),inset 0 1px 0 rgba(255,255,255,1); }
-          .woo-btn-hero:hover { background:rgba(255,255,255,0.85);border-color:rgba(245,158,11,0.6);box-shadow:0 12px 36px rgba(91,33,182,0.15),0 0 0 2px rgba(245,158,11,0.22),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px);color:#5b21b6; }
-
-          /* Stats */
-          .woo-hero-stats { position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);box-shadow:0 4px 24px rgba(91,33,182,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
-          .woo-stat-col { padding:18px 20px;text-align:center;border-right:1px solid rgba(91,33,182,0.10); }
-          .woo-stat-col:last-child { border-right:none; }
-          .woo-stat-label { font-size:12px;color:#4A6080;font-weight:500;margin-bottom:6px; }
-          .woo-stat-value { font-size:26px;font-weight:900;color:#D97706;letter-spacing:-0.5px;line-height:1; }
-
-          /* Clients */
-          .woo-clients-bar { position:relative;z-index:2;padding:20px 40px 60px;max-width:1440px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px; }
-          .woo-clients-label { font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6A80A0; }
-          .woo-clients-logos { width:100%;overflow:hidden; }
-          .woo-client-logo { height:26px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(100%);opacity:0.5;transition:opacity 0.25s,filter 0.25s; }
-          .woo-client-logo:hover { opacity:0.85;filter:grayscale(0%); }
 
           /* Sections shared */
           .woo-section-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:12px;display:block; }
@@ -449,23 +383,12 @@ export default function WooCommerceDevelopmentCompany() {
           .woo-rtag-fuchsia { background:rgba(217,70,239,0.10);border-color:rgba(217,70,239,0.28);color:#86198F; }
           .woo-rtag-slate   { background:rgba(100,116,139,0.10);border-color:rgba(100,116,139,0.28);color:#334155; }
 
-          /* Shimmer */
-          .woo-btn-hero-shimmer { position:relative;overflow:hidden; }
-          .woo-btn-hero-shimmer::after { content:'';position:absolute;top:-10%;left:-120%;width:80%;height:120%;background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,0.75) 45%,rgba(255,255,255,0.9) 50%,rgba(255,255,255,0.75) 55%,transparent 100%);animation:woo-shimmer-sweep 2.5s ease-in-out infinite;pointer-events:none; }
-          @keyframes woo-shimmer-sweep { 0%{left:-120%} 35%,100%{left:160%} }
-
           /* Section reveal */
           .woo-section-reveal { opacity:0;transform:translateY(48px);transition:opacity 0.7s cubic-bezier(0.22,1,0.36,1),transform 0.7s cubic-bezier(0.22,1,0.36,1); }
           .woo-section-reveal.woo-revealed { opacity:1;transform:translateY(0); }
 
-          /* Logo marquee */
-          .woo-logos-track { display:flex;align-items:center;gap:60px;width:max-content;animation:woo-marquee 28s linear infinite; }
-          .woo-logos-track:hover { animation-play-state:paused; }
-          @keyframes woo-marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-
           /* Responsive */
           @media (max-width:1024px) {
-            .woo-hero-content h1 { font-size:40px; }
             .woo-services-grid { grid-template-columns:repeat(2,1fr); }
             .woo-why-grid { grid-template-columns:repeat(2,1fr); }
             .woo-portfolio-grid { grid-template-columns:repeat(2,1fr); }
@@ -475,17 +398,6 @@ export default function WooCommerceDevelopmentCompany() {
           }
           @media (max-width:768px) {
             .woo-page { overflow-x:hidden; }
-            .woo-hero-content { padding:36px 20px 24px; }
-            .woo-hero-content h1 { font-size:28px;letter-spacing:-0.3px; }
-            .woo-hero-content p { font-size:15px; }
-            .woo-hero-stats { grid-template-columns:1fr 1fr;max-width:100%; }
-            .woo-stat-col { padding:14px 12px; }
-            .woo-stat-col:nth-child(2) { border-right:none; }
-            .woo-stat-col:nth-child(3) { border-top:1px solid rgba(91,33,182,0.10); }
-            .woo-stat-col:nth-child(4) { border-top:1px solid rgba(91,33,182,0.10);border-right:none; }
-            .woo-stat-value { font-size:22px; }
-            .woo-clients-bar { padding:16px 20px 36px;gap:12px; }
-            .woo-client-logo { height:20px; }
             .woo-services-section { padding:48px 20px 40px; }
             .woo-portfolio-section { padding:48px 16px; }
             .woo-portfolio-wrap { padding:24px 20px 32px;border-radius:16px; }
@@ -526,7 +438,6 @@ export default function WooCommerceDevelopmentCompany() {
             .woo-stat-number { font-size:28px; }
           }
           @media (max-width:480px) {
-            .woo-hero-content h1 { font-size:24px; }
             .woo-section-title,.woo-engage-title,.woo-process-main-title,.woo-related-title { font-size:26px; }
             .woo-services-grid { grid-template-columns:1fr; }
             .woo-service-card { padding:20px 18px 18px; }
@@ -553,45 +464,18 @@ export default function WooCommerceDevelopmentCompany() {
         </div>
 
         {/* ── HERO ── */}
-        <div className="woo-hero-block">
-          <div className="woo-hero-content">
-            <span className="woo-eyebrow">Expert WooCommerce Development Company</span>
-            <h1>WooCommerce Development Services - Build a Scalable, High-Converting Online Store</h1>
-            <p>Build powerful, SEO-optimised WooCommerce stores with 1Solutions' expert development services. From custom themes and bespoke plugins to B2B portals and platform migrations - we deliver WooCommerce solutions that drive real revenue for businesses across the US, Canada, and Australia.</p>
-            <Link href="#contact" className="woo-btn-hero woo-btn-hero-shimmer">Get a Free WooCommerce Consultation</Link>
-          </div>
-
-          <div className="woo-hero-stats" ref={statsRef}>
-            {[['WooCommerce Stores','300+'],['E-Commerce Experts','50+'],['Projects Delivered','1,200+'],['Years in Business','15+']].map(([label,val]) => (
-              <AnimatedStat key={label} label={label} val={val} started={statsStarted} />
-            ))}
-          </div>
-
-          <div className="woo-clients-bar">
-            <span className="woo-clients-label">Trusted by Leading Brands</span>
-            <div className="woo-clients-logos">
-              <div className="woo-logos-track">
-                {[
-                  ['/logo/Indian_Express_Logo_full.png','Indian Express'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],
-                  ['/logo/Uniphore.jpg','Uniphore'],
-                  ['/logo/ICCoLogo.png','ICC'],
-                  ['/logo/Honor_Logo_(2020).svg.png','Honor'],
-                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],
-                  ['/logo/Indian_Express_Logo_full.png','Indian Express2'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon2'],
-                  ['/logo/Uniphore.jpg','Uniphore2'],
-                  ['/logo/ICCoLogo.png','ICC2'],
-                  ['/logo/Honor_Logo_(2020).svg.png','Honor2'],
-                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv2'],
-                ].map(([src,alt]) => (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img key={alt} src={src} alt={alt.replace(/\d+$/,'')} className="woo-client-logo" />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="Expert WooCommerce Development Company"
+          title={<>WooCommerce Development Services - <AuroraText>Build a Scalable, High-Converting Online Store</AuroraText></>}
+          subtext="Build powerful, SEO-optimised WooCommerce stores with 1Solutions' expert development services. From custom themes and bespoke plugins to B2B portals and platform migrations - we deliver WooCommerce solutions that drive real revenue for businesses across the US, Canada, and Australia."
+          primaryCta={{ label: 'Get a Free WooCommerce Consultation', href: '#contact' }}
+          stats={[
+            { label: 'WooCommerce Stores', value: '300', suffix: '+' },
+            { label: 'E-Commerce Experts', value: '50', suffix: '+' },
+            { label: 'Projects Delivered', value: '1,200', suffix: '+' },
+            { label: 'Years in Business', value: '15', suffix: '+' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="woo-services-section">

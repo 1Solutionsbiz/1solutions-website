@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -206,60 +208,21 @@ const FAQS = [
   { q: 'Do you offer white-label WordPress maintenance for agencies?', a: 'Yes. We provide white-label WordPress maintenance for digital agencies - maintaining your clients\' WordPress and WooCommerce sites under your agency brand, with reports using your logo, communication via your branded portal or email, and all client-facing documentation white-labelled. Agencies consolidate multiple client sites under a single retainer with a custom per-site rate. Our Professional plan is popular with agencies who want a 4-hour emergency SLA and 8 developer hours per client site per month.' },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const num = parseInt(target.replace(/\D/g, ''), 10);
-    if (!num) return;
-    let t0 = null;
-    const step = ts => {
-      if (!t0) t0 = ts;
-      const p = Math.min((ts - t0) / duration, 1);
-      setCount(Math.floor((1 - Math.pow(1 - p, 3)) * num));
-      if (p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function StatItem({ label, val, started }) {
-  const canAnimate = started && !val.includes('.');
-  const num = useCountUp(val, 1800, canAnimate);
-  const suffix = val.replace(/^[\d,.]+/, '');
-  const display = (canAnimate && num > 0) ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val;  return (
-    <div className="wm-stat-col">
-      <div className="wm-stat-val">{display}</div>
-      <div className="wm-stat-label">{label}</div>
-    </div>
-  );
-}
-
 export default function WordPressMaintenance() {
   const [showAllSvc, setShowAllSvc] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleSvcCards, setVisibleSvcCards] = useState([]);
   const [visibleEngCards, setVisibleEngCards] = useState([]);
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const [visibleStackCards, setVisibleStackCards] = useState([]);
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const svcGridRef = useRef(null);
   const engGridRef = useRef(null);
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
   const stackGridRef = useRef(null);
-
-  useEffect(() => {
-    if (!statsRef.current || window.innerWidth <= 768) return;
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStatsStarted(true); obs.disconnect(); } }, { threshold: 0.4 });
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   useEffect(() => {
     const isMobile = window.innerWidth <= 768;
@@ -349,31 +312,6 @@ export default function WordPressMaintenance() {
           .wm-orb-1{width:900px;height:900px;background:radial-gradient(circle,rgba(99,130,255,0.30) 0%,rgba(139,92,246,0.12) 40%,transparent 70%);top:-300px;right:-300px}
           .wm-orb-2{width:780px;height:780px;background:radial-gradient(circle,rgba(217,119,6,.22) 0%,rgba(245,158,11,.10) 40%,transparent 70%);bottom:0;left:-230px}
           .wm-orb-3{width:550px;height:550px;background:radial-gradient(circle,rgba(99,102,241,.14) 0%,transparent 70%);top:42%;left:-120px;transform:translateY(-50%)}
-          .wm-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
-          .wm-eyebrow{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:14px}
-          .wm-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .wm-hero-desc{font-size:16px;color:#3A507A;line-height:1.65;max-width:740px;margin:0 auto 24px}
-          .wm-trust-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
-          .wm-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#0F3460;box-shadow:0 2px 8px rgba(15,52,96,.07)}
-          .wm-badge-dot{width:7px;height:7px;border-radius:50%;background:#D97706;flex-shrink:0}
-          .wm-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .wm-btn-primary{display:inline-block;padding:14px 36px;background:#114171;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(17,65,113,.28)}
-          .wm-btn-primary:hover{background:#0F3460;transform:translateY(-2px)}
-          .wm-btn-ghost{display:inline-block;padding:14px 36px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .wm-btn-ghost:hover{background:rgba(255,255,255,.85);border-color:rgba(17,65,113,.5);transform:translateY(-2px)}
-          .wm-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:28px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .wm-stat-col{padding:18px 16px;text-align:center;border-right:1px solid rgba(15,52,96,.10)}
-          .wm-stat-col:last-child{border-right:none}
-          .wm-stat-val{font-size:28px;font-weight:900;color:#D97706;letter-spacing:-.5px;line-height:1}
-          .wm-stat-label{font-size:11px;color:#4A6080;font-weight:500;margin-top:5px}
-          .wm-logos{position:relative;z-index:2;padding:24px 40px 52px;display:flex;flex-direction:column;align-items:center;gap:14px}
-          .wm-logos-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6A80A0}
-          .wm-logos-wrap{width:100%;overflow:hidden}
-          .wm-logos-track{display:flex;align-items:center;gap:60px;width:max-content;animation:wm-marquee 28s linear infinite;will-change:transform}
-          .wm-logos-track:hover{animation-play-state:paused}
-          @keyframes wm-marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-          .wm-clogo{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
-          .wm-clogo:hover{opacity:.85;filter:grayscale(0%)}
           .wm-s-eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
           .wm-s-title{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .wm-s-desc{font-size:15px;color:#4A6080;line-height:1.7}
@@ -551,14 +489,14 @@ export default function WordPressMaintenance() {
           .wm-cmp-check{color:#114171;font-weight:800}
           .wm-cmp-dash{color:#9ca3af}
           @media(max-width:1280px){.wm-stack-grid{grid-template-columns:repeat(3,1fr)}.wm-why-grid{grid-template-columns:repeat(3,1fr)}}
-          @media(max-width:1024px){.wm-page{overflow-x:hidden}.wm-hero h1{font-size:36px}.wm-s-title{font-size:34px;letter-spacing:-.5px}.wm-faq h2{font-size:34px}.wm-ctitle{font-size:34px}.wm-what-text h2{font-size:30px}.wm-svc-grid{grid-template-columns:repeat(2,1fr)}.wm-stack-grid{grid-template-columns:repeat(2,1fr)}.wm-eng-grid{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}.wm-eng-card.feat{transform:none}.wm-eng-card.feat.wm-ev{transform:none}.wm-eng-card.feat.wm-ev:hover{transform:translateY(-4px)}.wm-why-grid{grid-template-columns:repeat(2,1fr)}.wm-tgrid{grid-template-columns:repeat(2,1fr)}.wm-contact-grid{grid-template-columns:1fr}.wm-cmp-table{font-size:13px}}
-          @media(max-width:768px){.wm-hero{padding:28px 20px 20px}.wm-hero h1{font-size:26px;letter-spacing:-.3px}.wm-hero-desc{font-size:14px}.wm-ctas{flex-direction:column;align-items:center;gap:10px}.wm-btn-primary,.wm-btn-ghost{width:100%;max-width:320px;text-align:center;padding:13px 24px}.wm-stats{grid-template-columns:1fr 1fr}.wm-stat-col:nth-child(2){border-right:none}.wm-stat-col:nth-child(3){border-top:1px solid rgba(15,52,96,.10)}.wm-stat-col:nth-child(4){border-top:1px solid rgba(15,52,96,.10);border-right:none}.wm-logos{padding:16px 20px 28px}.wm-svc-section,.wm-stack-section,.wm-eng-section,.wm-process-section,.wm-testi,.wm-why-section,.wm-faq,.wm-related,.wm-what-section,.wm-cmp-section{padding:52px 20px}.wm-contact{padding:44px 20px}.wm-s-title{font-size:26px;letter-spacing:-.4px}.wm-s-eyebrow{font-size:10px}.wm-s-desc{font-size:14px}.wm-ctitle{font-size:26px}.wm-faq h2{font-size:26px}.wm-faq-sub{font-size:13px}.wm-svc-grid{grid-template-columns:1fr}.wm-stack-grid{grid-template-columns:repeat(2,1fr);gap:12px}.wm-eng-grid{max-width:100%}.wm-why-grid{grid-template-columns:repeat(2,1fr);gap:12px}.wm-tgrid{grid-template-columns:1fr;gap:16px}.wm-what-inner{grid-template-columns:1fr;gap:28px}.wm-what-text h2{font-size:24px}.wm-what-text p{font-size:14px}.wm-why-highlight{padding:20px 20px 20px 24px;margin-top:28px}.wm-why-highlight h3{font-size:17px}.wm-why-highlight p{font-size:14px}.wm-cmp-section .wm-inner{overflow-x:auto;-webkit-overflow-scrolling:touch;width:100%}.wm-cmp-table{min-width:540px;font-size:12px}.wm-cmp-table th,.wm-cmp-table td{padding:10px 12px}.wm-pstep-title{font-size:17px}.wm-pstep-desc{font-size:14px}.wm-frow{grid-template-columns:1fr}.wm-form-box{padding:24px 20px}.wm-contact-grid{gap:28px}.wm-fq{padding:16px 16px 16px 50px}.wm-fq-badge{left:12px;width:24px;height:24px;font-size:10px}.wm-fq span{font-size:14px}.wm-fanswer{padding:0 16px 16px 50px;font-size:13px}.wm-rtag{padding:8px 14px;font-size:13px}}
-          @media(max-width:480px){.wm-hero h1{font-size:22px}.wm-hero-desc{font-size:13px}.wm-badge{font-size:10px;padding:4px 8px;gap:5px}.wm-badge-dot{width:6px;height:6px}.wm-btn-primary,.wm-btn-ghost{font-size:14px;padding:12px 20px}.wm-stat-val{font-size:20px}.wm-stat-label{font-size:10px}.wm-stat-col{padding:14px 10px}.wm-s-title{font-size:20px}.wm-faq h2{font-size:20px}.wm-ctitle{font-size:20px}.wm-what-text h2{font-size:20px}.wm-stack-grid{grid-template-columns:1fr}.wm-why-grid{grid-template-columns:1fr}.wm-svc-card h3{font-size:15px}.wm-svc-card p{font-size:12px}.wm-eng-card{padding:24px 20px}.wm-pstep{grid-template-columns:48px 1fr;gap:0 14px}.wm-pstep-circle{width:44px;height:44px;font-size:16px}.wm-pstep-title{font-size:16px}.wm-pstep-desc{font-size:13px}.wm-fq{padding:14px 14px 14px 46px}.wm-fq-badge{left:10px;width:22px;height:22px;font-size:9px}.wm-fq span{font-size:13px}.wm-fanswer{padding:0 14px 14px 46px;font-size:12px}.wm-form-box{padding:18px 14px}.wm-form-box h3{font-size:18px}.wm-wcard h3{font-size:13px}.wm-wcard p{font-size:12px}}
-          @media(max-width:360px){.wm-hero h1{font-size:19px}.wm-s-title{font-size:18px}.wm-faq h2{font-size:18px}.wm-ctitle{font-size:18px}.wm-stat-col{padding:12px 8px}.wm-stat-val{font-size:18px}.wm-btn-primary,.wm-btn-ghost{font-size:13px;padding:11px 16px}.wm-pstep{grid-template-columns:44px 1fr;gap:0 10px}.wm-pstep-circle{width:40px;height:40px;font-size:14px}}
+          @media(max-width:1024px){.wm-page{overflow-x:hidden}.wm-s-title{font-size:34px;letter-spacing:-.5px}.wm-faq h2{font-size:34px}.wm-ctitle{font-size:34px}.wm-what-text h2{font-size:30px}.wm-svc-grid{grid-template-columns:repeat(2,1fr)}.wm-stack-grid{grid-template-columns:repeat(2,1fr)}.wm-eng-grid{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}.wm-eng-card.feat{transform:none}.wm-eng-card.feat.wm-ev{transform:none}.wm-eng-card.feat.wm-ev:hover{transform:translateY(-4px)}.wm-why-grid{grid-template-columns:repeat(2,1fr)}.wm-tgrid{grid-template-columns:repeat(2,1fr)}.wm-contact-grid{grid-template-columns:1fr}.wm-cmp-table{font-size:13px}}
+          @media(max-width:768px){.wm-svc-section,.wm-stack-section,.wm-eng-section,.wm-process-section,.wm-testi,.wm-why-section,.wm-faq,.wm-related,.wm-what-section,.wm-cmp-section{padding:52px 20px}.wm-contact{padding:44px 20px}.wm-s-title{font-size:26px;letter-spacing:-.4px}.wm-s-eyebrow{font-size:10px}.wm-s-desc{font-size:14px}.wm-ctitle{font-size:26px}.wm-faq h2{font-size:26px}.wm-faq-sub{font-size:13px}.wm-svc-grid{grid-template-columns:1fr}.wm-stack-grid{grid-template-columns:repeat(2,1fr);gap:12px}.wm-eng-grid{max-width:100%}.wm-why-grid{grid-template-columns:repeat(2,1fr);gap:12px}.wm-tgrid{grid-template-columns:1fr;gap:16px}.wm-what-inner{grid-template-columns:1fr;gap:28px}.wm-what-text h2{font-size:24px}.wm-what-text p{font-size:14px}.wm-why-highlight{padding:20px 20px 20px 24px;margin-top:28px}.wm-why-highlight h3{font-size:17px}.wm-why-highlight p{font-size:14px}.wm-cmp-section .wm-inner{overflow-x:auto;-webkit-overflow-scrolling:touch;width:100%}.wm-cmp-table{min-width:540px;font-size:12px}.wm-cmp-table th,.wm-cmp-table td{padding:10px 12px}.wm-pstep-title{font-size:17px}.wm-pstep-desc{font-size:14px}.wm-frow{grid-template-columns:1fr}.wm-form-box{padding:24px 20px}.wm-contact-grid{gap:28px}.wm-fq{padding:16px 16px 16px 50px}.wm-fq-badge{left:12px;width:24px;height:24px;font-size:10px}.wm-fq span{font-size:14px}.wm-fanswer{padding:0 16px 16px 50px;font-size:13px}.wm-rtag{padding:8px 14px;font-size:13px}}
+          @media(max-width:480px){.wm-s-title{font-size:20px}.wm-faq h2{font-size:20px}.wm-ctitle{font-size:20px}.wm-what-text h2{font-size:20px}.wm-stack-grid{grid-template-columns:1fr}.wm-why-grid{grid-template-columns:1fr}.wm-svc-card h3{font-size:15px}.wm-svc-card p{font-size:12px}.wm-eng-card{padding:24px 20px}.wm-pstep{grid-template-columns:48px 1fr;gap:0 14px}.wm-pstep-circle{width:44px;height:44px;font-size:16px}.wm-pstep-title{font-size:16px}.wm-pstep-desc{font-size:13px}.wm-fq{padding:14px 14px 14px 46px}.wm-fq-badge{left:10px;width:22px;height:22px;font-size:9px}.wm-fq span{font-size:13px}.wm-fanswer{padding:0 14px 14px 46px;font-size:12px}.wm-form-box{padding:18px 14px}.wm-form-box h3{font-size:18px}.wm-wcard h3{font-size:13px}.wm-wcard p{font-size:12px}}
+          @media(max-width:360px){.wm-s-title{font-size:18px}.wm-faq h2{font-size:18px}.wm-ctitle{font-size:18px}.wm-pstep{grid-template-columns:44px 1fr;gap:0 10px}.wm-pstep-circle{width:40px;height:40px;font-size:14px}}
           @media(max-width:1024px){.wm-orb{display:none}}
-          @media(max-width:1024px){.wm-badge,.wm-btn-ghost,.wm-stats,.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-pstep-circle,.wm-tcard,.wm-wcard,.wm-contact,.wm-cbenefits,.wm-form-box,.wm-submit,.wm-fitem,.wm-related,.wm-why-highlight{backdrop-filter:none !important;-webkit-backdrop-filter:none !important}}
-          @media(max-width:768px){.wm-logos-track{animation:none}.wm-page{background:linear-gradient(160deg,#dbeafe 0%,#e8f0fb 100%) !important}.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-tcard,.wm-wcard,.wm-fitem{background:rgba(255,255,255,.95);box-shadow:0 2px 8px rgba(15,52,96,.08)}.wm-stats{background:rgba(255,255,255,.92)}.wm-form-box{background:rgba(255,255,255,.97)}.wm-cbenefits{background:rgba(255,255,255,.94)}.wm-s-reveal,.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-tcard,.wm-wcard,.wm-pstep{opacity:1 !important;transform:none !important;transition:none !important}}
-          @media(prefers-reduced-motion:reduce){.wm-logos-track{animation:none}.wm-s-reveal,.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-tcard,.wm-wcard,.wm-pstep{opacity:1 !important;transform:none !important;transition:none !important}}
+          @media(max-width:1024px){.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-pstep-circle,.wm-tcard,.wm-wcard,.wm-contact,.wm-cbenefits,.wm-form-box,.wm-submit,.wm-fitem,.wm-related,.wm-why-highlight{backdrop-filter:none !important;-webkit-backdrop-filter:none !important}}
+          @media(max-width:768px){.wm-page{background:linear-gradient(160deg,#dbeafe 0%,#e8f0fb 100%) !important}.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-tcard,.wm-wcard,.wm-fitem{background:rgba(255,255,255,.95);box-shadow:0 2px 8px rgba(15,52,96,.08)}.wm-form-box{background:rgba(255,255,255,.97)}.wm-cbenefits{background:rgba(255,255,255,.94)}.wm-s-reveal,.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-tcard,.wm-wcard,.wm-pstep{opacity:1 !important;transform:none !important;transition:none !important}}
+          @media(prefers-reduced-motion:reduce){.wm-s-reveal,.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-tcard,.wm-wcard,.wm-pstep{opacity:1 !important;transform:none !important;transition:none !important}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
@@ -570,37 +508,19 @@ export default function WordPressMaintenance() {
 
 
 
-        <section className="wm-hero">
-          <span className="wm-eyebrow">WordPress Maintenance & Support Services</span>
-          <h1>WordPress Maintenance Services - Secure, Updated & Fully Supported</h1>
-          <p className="wm-hero-desc">Professional WordPress maintenance services for businesses worldwide - all plugin and core updates tested on a staging site before production, security hardening and malware removal, WooCommerce checkout testing, daily off-site backups, 24/7 uptime monitoring, and emergency WordPress support. 15+ years, 150+ sites maintained.</p>
-          <div className="wm-trust-row">
-            {['150+ WordPress Sites Maintained','WooCommerce Specialists','Updates on Staging First','Malware Removal Included'].map(b => (
-              <div className="wm-badge" key={b}><span className="wm-badge-dot" />{b}</div>
-            ))}
-          </div>
-          <div className="wm-ctas">
-            <Link href="#contact" className="wm-btn-primary">Get a WordPress Maintenance Plan</Link>
-            <Link href="#plans" className="wm-btn-ghost">View Plans →</Link>
-          </div>
-        </section>
-
-        <div className="wm-stats" ref={statsRef}>
-          {[['150+','WordPress Sites'],['15+','Years Experience'],['99.9%','Avg Uptime Achieved'],['98%','Client Retention']].map(([v, l]) => (
-            <StatItem key={l} label={l} val={v} started={statsStarted} />
-          ))}
-        </div>
-
-        <div className="wm-logos">
-          <span className="wm-logos-label">Trusted by Leading Businesses</span>
-          <div className="wm-logos-wrap">
-            <div className="wm-logos-track">
-              {[['/logo/Indian_Express_Logo_full.png','Indian Express'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],['/logo/Uniphore.jpg','Uniphore'],['/logo/ICCoLogo.png','ICC'],['/logo/Honor_Logo_(2020).svg.png','Honor'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],['/logo/Indian_Express_Logo_full.png','Indian Express 2'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon 2'],['/logo/Uniphore.jpg','Uniphore 2'],['/logo/ICCoLogo.png','ICC 2'],['/logo/Honor_Logo_(2020).svg.png','Honor 2'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv 2']].map(([src, alt]) => (
-                <Image key={alt} src={src} alt={alt.replace(/ \d$/, '')} width={110} height={24} className="wm-clogo" loading="lazy" style={{ width: 'auto', height: '24px', maxWidth: '110px' }} />
-              ))}
-            </div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="WordPress Maintenance & Support Services"
+          title={<>WordPress Maintenance Services - <AuroraText>Secure, Updated & Fully Supported</AuroraText></>}
+          subtext="Professional WordPress maintenance services for businesses worldwide - all plugin and core updates tested on a staging site before production, security hardening and malware removal, WooCommerce checkout testing, daily off-site backups, 24/7 uptime monitoring, and emergency WordPress support. 15+ years, 150+ sites maintained."
+          primaryCta={{ label: 'Get a WordPress Maintenance Plan', href: '#contact' }}
+          secondaryCta={{ label: 'View Plans', href: '#plans' }}
+          stats={[
+            { label: 'WordPress Sites', value: '150', suffix: '+' },
+            { label: 'Years Experience', value: '15', suffix: '+' },
+            { label: 'Avg Uptime Achieved', value: '99', suffix: '.9%' },
+            { label: 'Client Retention', value: '98', suffix: '%' },
+          ]}
+        />
 
         <section className="wm-what-section" aria-labelledby="wm-what-heading">
           <div className="wm-what-inner">

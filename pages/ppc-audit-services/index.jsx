@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const ACCENT = '#3d2800';
 const SERVICES = [
@@ -69,25 +71,12 @@ export default function PpcAuditServices() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           *{box-sizing:border-box}
-          .ppca-hero{position:relative;overflow:hidden;padding:100px 40px 90px;background:linear-gradient(135deg,rgba(61,40,0,0.08) 0%,rgba(255,255,255,0.75) 50%,rgba(200,132,42,0.07) 100%)}
-          .ppca-o1{position:absolute;top:-120px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(61,40,0,0.12) 0%,transparent 70%);pointer-events:none;filter:blur(10px)}
-          .ppca-o2{position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(200,132,42,0.08) 0%,transparent 70%);pointer-events:none;filter:blur(8px)}
           .ppca-in{max-width:1200px;margin:0 auto;position:relative;z-index:1}
-          .ppca-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(61,40,0,0.10);border:1px solid rgba(61,40,0,0.25);border-radius:50px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:24px}
-          .ppca-h1{font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin:0 0 24px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .ppca-p{font-size:1.1rem;color:#4b5563;line-height:1.8;margin:0 0 36px;max-width:660px}
-          .ppca-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
           .ppca-bp{display:inline-flex;align-items:center;gap:8px;background:${ACCENT};color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(61,40,0,.25)}
           .ppca-bp:hover{background:#1a1000;transform:translateY(-2px)}
           .ppca-bs{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.7);color:${ACCENT};padding:14px 28px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;border:1.5px solid rgba(61,40,0,.18);transition:all .25s;backdrop-filter:blur(8px)}
           .ppca-bs:hover{background:#fff;transform:translateY(-2px)}
-          .ppca-tr{display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-bottom:48px}
-          .ppca-badge{display:flex;align-items:center;gap:6px;font-size:12px;color:#6b7280;font-weight:500}
-          .ppca-sbar{display:flex;border:1px solid rgba(61,40,0,.10);border-radius:16px;background:rgba(255,255,255,.75);backdrop-filter:blur(12px);overflow:hidden;max-width:680px}
-          .ppca-si{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 16px;border-right:1px solid rgba(61,40,0,.08)}
-          .ppca-si:last-child{border-right:none}
-          .ppca-sn{font-size:1.9rem;font-weight:900;color:${ACCENT};line-height:1;letter-spacing:-1px}
-          .ppca-sl{font-size:11px;color:#6b7280;font-weight:500;line-height:1.4;text-align:center;margin-top:4px}.ppca-bci a:hover{color:${ACCENT}}.ppca-cur{color:${ACCENT};font-weight:500}
+          .ppca-bci a:hover{color:${ACCENT}}.ppca-cur{color:${ACCENT};font-weight:500}
           .ppca-sec{padding:80px 40px}.ppca-bg{background:#f8fafd}
           .ppca-si2{max-width:1200px;margin:0 auto}
           .ppca-tag{display:block;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:${ACCENT};margin-bottom:12px}
@@ -132,25 +121,25 @@ export default function PpcAuditServices() {
           .ppca-cth{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.2;letter-spacing:-.5px;margin:0 0 18px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
           .ppca-ctp{font-size:1.05rem;color:#4b5563;line-height:1.75;margin:0 0 36px}
           @media(max-width:900px){.ppca-g3,.ppca-rg{grid-template-columns:1fr 1fr}}
-          @media(max-width:600px){.ppca-hero,.ppca-sec,.ppca-rb,.ppca-cta{padding-left:20px;padding-right:20px}.ppca-hero{padding-top:60px;padding-bottom:50px}.ppca-g3,.ppca-rg{grid-template-columns:1fr}.ppca-bc{padding:12px 20px}}
+          @media(max-width:600px){.ppca-sec,.ppca-rb,.ppca-cta{padding-left:20px;padding-right:20px}.ppca-g3,.ppca-rg{grid-template-columns:1fr}.ppca-bc{padding:12px 20px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
-      <section className="ppca-hero"><div className="ppca-o1"/><div className="ppca-o2"/>
-        <div className="ppca-in">
-          <span className="ppca-ey">100-Point PPC Audit - Google Ads · Meta Ads · Conversion Tracking · Delivered in 5 Days</span>
-          <h1 className="ppca-h1">PPC Audit That Finds Where Your Ad Budget Is Being Wasted</h1>
-          <p className="ppca-p">1Solutions delivers a comprehensive 100-point PPC audit covering Google Ads and Meta Ads - identifying wasted spend, tracking errors, audience gaps, and structural issues that are costing you ROAS right now.</p>
-          <div className="ppca-btns">
-            <Link href="/contact-us" className="ppca-bp">Request a PPC Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-            <Link href="/contact-us" className="ppca-bs">Ask About the Audit</Link>
-          </div>
-          <div className="ppca-tr">{['100-point framework','Delivered in 5 days','Read-only access only','No obligation to proceed'].map(t=><span key={t} className="ppca-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={ACCENT} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>{t}</span>)}</div>
-          <div className="ppca-sbar">{[{num:'500+',lbl:'Accounts Audited'},{num:'15+',lbl:'Years Experience'},{num:'41%',lbl:'Avg Waste Found'},{num:'5',lbl:'Day Delivery'}].map(s=><div key={s.lbl} className="ppca-si"><span className="ppca-sn">{s.num}</span><span className="ppca-sl">{s.lbl}</span></div>)}</div>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="100-Point PPC Audit - Google Ads · Meta Ads · Conversion Tracking"
+        title={<>PPC Audit That Finds Where Your <AuroraText>Ad Budget Is Being Wasted</AuroraText></>}
+        subtext="1Solutions delivers a comprehensive 100-point PPC audit covering Google Ads and Meta Ads - identifying wasted spend, tracking errors, audience gaps, and structural issues that are costing you ROAS right now."
+        primaryCta={{ label: 'Request a PPC Audit', href: '/contact-us' }}
+        secondaryCta={{ label: 'Ask About the Audit', href: '/contact-us' }}
+        stats={[
+          { label: 'Accounts Audited', value: '500', suffix: '+' },
+          { label: 'Years Experience', value: '15', suffix: '+' },
+          { label: 'Avg Waste Found', value: '41', suffix: '%' },
+          { label: 'Day Delivery', value: '5' },
+        ]}
+      />
       <section className="ppca-sec ppca-bg"><div className="ppca-si2">
         <span className="ppca-tag">What We Audit</span>
         <h2 className="ppca-h2">100-Point <span>PPC Audit Coverage</span></h2>

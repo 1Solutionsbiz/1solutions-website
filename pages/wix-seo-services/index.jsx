@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'Wix Technical SEO Audit', desc: 'Full audit of your Wix site - indexation settings, URL structure, canonical tags, sitemap quality, robots.txt, mobile performance, Core Web Vitals, and Wix-specific SEO limitations.' },
@@ -44,13 +46,6 @@ const FAQS = [
   { q: 'Do you offer one-time Wix SEO setup or ongoing monthly SEO?', a: 'Both options are available. A one-time Wix SEO setup includes a full technical audit, on-page optimisation, GSC and Analytics configuration, schema markup, and a keyword and content strategy document. Ongoing monthly SEO adds link building, content creation, monitoring, and reporting - compounding organic growth over time. We recommend at least a 6-month engagement for meaningful organic traffic growth, but offer one-time setup for businesses that want to self-manage after an initial professional optimisation.' },
 ];
 
-const STATS = [
-  { label: 'Wix Sites Optimised', val: '200+' },
-  { label: 'Years Experience', val: '10+' },
-  { label: 'Avg Organic Traffic Lift', val: '+160%' },
-  { label: 'Client Retention', val: '90%' },
-];
-
 export default function WixSeoServices() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleCards, setVisibleCards] = useState([]);
@@ -78,22 +73,10 @@ export default function WixSeoServices() {
         <style>{`
           .wixs-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}
           .wixs-page *,.wixs-page *::before,.wixs-page *::after{box-sizing:border-box}
-          .wixs-hero{background:linear-gradient(135deg,#fffbeb 0%,#fef3c7 25%,#fde68a 40%,#fffdf0 100%);position:relative;overflow:hidden;padding:80px 40px 0}
-          .wixs-o1{position:absolute;top:-100px;right:-100px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(180,83,9,0.11) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .wixs-o2{position:absolute;bottom:0;left:-80px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(217,119,6,0.07) 0%,transparent 65%);pointer-events:none;filter:blur(30px)}
-          .wixs-in{max-width:1280px;margin:0 auto;position:relative;z-index:2;text-align:center}.wixs-bc a:hover{color:#B45309}.wixs-bc span{color:#d1d5db}
-          .wixs-ey{display:inline-flex;align-items:center;gap:8px;background:rgba(180,83,9,0.08);border:1px solid rgba(180,83,9,0.20);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#92400E;margin-bottom:28px}
-          .wixs-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;max-width:900px;margin-left:auto;margin-right:auto}
-          .wixs-sub{font-size:1.08rem;color:#4A6080;line-height:1.75;max-width:660px;margin:0 auto 36px}
-          .wixs-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
           .wixs-btn-p{display:inline-flex;align-items:center;gap:8px;background:#B45309;color:#fff;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 20px rgba(180,83,9,0.28)}
           .wixs-btn-p:hover{background:#92400E;box-shadow:0 8px 32px rgba(180,83,9,0.38);transform:translateY(-2px)}
           .wixs-btn-s{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.65);backdrop-filter:blur(12px);border:1.5px solid rgba(15,52,96,0.18);color:#0F3460;padding:14px 30px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s}
           .wixs-btn-s:hover{border-color:#B45309;color:#B45309;transform:translateY(-2px)}
-          .wixs-stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.55);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.85);border-radius:20px 20px 0 0;box-shadow:0 4px 24px rgba(180,83,9,0.07)}
-          .wixs-stat{padding:20px 24px;text-align:center;border-right:1px solid rgba(180,83,9,0.08)}.wixs-stat:last-child{border-right:none}
-          .wixs-stat-l{font-size:11px;color:#6b7280;font-weight:500;margin-bottom:4px}
-          .wixs-stat-v{font-size:1.6rem;font-weight:900;color:#B45309;letter-spacing:-0.5px}
           .wixs-svc{background:#f8fafd;padding:80px 40px}.wixs-svc-in{max-width:1280px;margin:0 auto}
           .wixs-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#B45309;margin-bottom:10px;display:block}
           .wixs-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
@@ -140,25 +123,26 @@ export default function WixSeoServices() {
           .wixs-cta-s{font-size:1.05rem;color:#4A6080;line-height:1.75;margin:0 auto 36px;max-width:520px}
           .wixs-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           @media(max-width:1024px){.wixs-grid{grid-template-columns:repeat(2,1fr)}.wixs-why-grid{grid-template-columns:repeat(2,1fr)}}
-          @media(max-width:768px){.wixs-hero,.wixs-svc,.wixs-feat,.wixs-proc,.wixs-why,.wixs-faq,.wixs-cta{padding:60px 24px}.wixs-hero{padding-top:60px;padding-bottom:0}.wixs-stats{grid-template-columns:repeat(2,1fr);border-radius:16px 16px 0 0}.wixs-stat:nth-child(2){border-right:none}.wixs-grid{grid-template-columns:1fr}.wixs-why-grid{grid-template-columns:1fr}.wixs-step{grid-template-columns:56px 1fr}.wixs-btns{flex-direction:column;align-items:center}}
+          @media(max-width:768px){.wixs-svc,.wixs-feat,.wixs-proc,.wixs-why,.wixs-faq,.wixs-cta{padding:60px 24px}.wixs-grid{grid-template-columns:1fr}.wixs-why-grid{grid-template-columns:1fr}.wixs-step{grid-template-columns:56px 1fr}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
         </style>
       </Head>
       <div className="wixs-page">
-        <section className="wixs-hero"><div className="wixs-o1"/><div className="wixs-o2"/>
-          <div className="wixs-in">
-            <span className="wixs-ey"><span style={{width:6,height:6,borderRadius:'50%',background:'#B45309',display:'inline-block'}}/> Wix Editor · Wix Studio · Wix Stores</span>
-            <h1 className="wixs-h1">Wix SEO Services That Get Your Website Ranking on Google</h1>
-            <p className="wixs-sub">Technical setup, on-page optimisation, local SEO, and content strategy - specialist SEO for Wix websites that drives real organic traffic, not just impressions.</p>
-            <div className="wixs-btns">
-              <Link href="/contact-us" className="wixs-btn-p">Get a Free Wix SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/local-seo-services/" className="wixs-btn-s">Local SEO Services</Link>
-            </div>
-            <div className="wixs-stats">{STATS.map(s => <div key={s.label} className="wixs-stat"><div className="wixs-stat-l">{s.label}</div><div className="wixs-stat-v">{s.val}</div></div>)}</div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Wix Editor · Wix Studio · Wix Stores"
+          title={<>Wix SEO Services That Get Your <AuroraText>Website Ranking on Google</AuroraText></>}
+          subtext="Technical setup, on-page optimisation, local SEO, and content strategy - specialist SEO for Wix websites that drives real organic traffic, not just impressions."
+          primaryCta={{ label: 'Get a Free Wix SEO Audit', href: '/contact-us' }}
+          secondaryCta={{ label: 'Local SEO Services', href: '/local-seo-services/' }}
+          stats={[
+            { label: 'Wix Sites Optimised', value: '200', suffix: '+' },
+            { label: 'Years Experience', value: '10', suffix: '+' },
+            { label: 'Avg Organic Traffic Lift', value: '160', prefix: '+', suffix: '%' },
+            { label: 'Client Retention', value: '90', suffix: '%' },
+          ]}
+        />
         <section className="wixs-svc"><div className="wixs-svc-in">
           <span className="wixs-ey2">What We Do</span><h2 className="wixs-ttl">Wix SEO Services</h2>
           <p className="wixs-desc">Every SEO layer your Wix site needs - from technical configuration to content strategy - handled by specialists who know the platform&rsquo;s capabilities and limitations.</p>

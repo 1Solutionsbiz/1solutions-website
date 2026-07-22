@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'Low-Fidelity Wireframes', desc: 'Rapid hand-sketch-style wireframes to explore layout options and user flows before any commitment to visual design.' },
@@ -90,59 +92,15 @@ const LD = {
   ],
 };
 
-// Count-up hook
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const numTarget = parseInt(String(target).replace(/\D/g, ''), 10);
-    if (!numTarget) return;
-    let startTime = null;
-    const step = (ts) => {
-      if (!startTime) startTime = ts;
-      const progress = Math.min((ts - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * numTarget));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function AnimatedStat({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = String(val).replace(/[\d,]/g, '');
-  const display = started ? num + suffix : val;  return (
-    <div className="ps-stat-col">
-      <div className="ps-stat-value">{display}</div>
-      <div className="ps-stat-label">{label}</div>
-    </div>
-  );
-}
-
 export default function PrototypingServices() {
   const [openFaq, setOpenFaq] = useState(0);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSteps, setVisibleSteps] = useState([]);
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleSections, setVisibleSections] = useState(new Set());
 
-  const statsRef = useRef(null);
   const stepRefs = useRef([]);
   const whyGridRef = useRef(null);
   const sectionRefs = useRef({});
-
-  // Count-up trigger
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setStatsStarted(true); obs.disconnect(); } },
-      { threshold: 0.4 }
-    );
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   // Process steps reveal
   useEffect(() => {
@@ -249,32 +207,6 @@ export default function PrototypingServices() {
           .ps-orb-1 { position:absolute;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.30) 0%,rgba(139,92,246,0.12) 40%,transparent 70%);top:-280px;right:-250px;pointer-events:none;z-index:0;filter:blur(22px); }
           .ps-orb-2 { position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.25) 0%,rgba(234,179,8,0.10) 40%,transparent 70%);bottom:100px;left:-220px;pointer-events:none;z-index:0;filter:blur(22px); }
           .ps-orb-3 { position:absolute;width:550px;height:550px;border-radius:50%;background:radial-gradient(circle,rgba(20,184,166,0.18) 0%,transparent 70%);top:50%;right:-120px;transform:translateY(-50%);pointer-events:none;z-index:0;filter:blur(22px); }
-
-          /* ── HERO ── */
-          .ps-hero { position:relative;overflow:hidden;padding:0; }
-          .ps-hero-content { position:relative;z-index:2;text-align:center;max-width:880px;margin:0 auto;padding:64px 40px 44px; }
-          .ps-eyebrow { display:inline-block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#4A6080;margin-bottom:20px;background:rgba(255,255,255,0.55);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.70);padding:6px 18px;border-radius:40px; }
-          .ps-hero-content h1 { font-size:52px;font-weight:900;line-height:1.08;letter-spacing:-1.5px;margin-bottom:18px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .ps-hero-content p { font-size:17px;color:#3A507A;line-height:1.7;max-width:640px;margin:0 auto 32px; }
-          .ps-hero-btns { display:flex;gap:14px;justify-content:center;flex-wrap:wrap; }
-          .ps-btn-primary { display:inline-block;padding:15px 40px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1);position:relative;overflow:hidden; }
-          .ps-btn-primary::after { content:'';position:absolute;top:-10%;left:-120%;width:80%;height:120%;background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,0.75) 45%,rgba(255,255,255,0.9) 50%,rgba(255,255,255,0.75) 55%,transparent 100%);animation:ps-shimmer 2.8s ease-in-out infinite;pointer-events:none; }
-          @keyframes ps-shimmer { 0%{left:-120%} 35%,100%{left:160%} }
-          .ps-btn-primary:hover { background:rgba(255,255,255,0.85);border-color:rgba(99,102,241,0.5);box-shadow:0 12px 36px rgba(15,52,96,0.15),0 0 0 2px rgba(99,102,241,0.18),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px);color:#0F3460; }
-          .ps-btn-secondary { display:inline-block;padding:14px 36px;border:1.5px solid rgba(15,52,96,0.22);border-radius:50px;color:#0F3460;font-weight:600;font-size:15px;text-decoration:none;transition:all 0.3s; }
-          .ps-btn-secondary:hover { background:rgba(255,255,255,0.60);border-color:#0F3460;transform:translateY(-2px); }
-
-          /* Stats bar */
-          .ps-stats-bar { position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:0 auto;background:rgba(255,255,255,0.50);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.90);box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,1); }
-          .ps-stat-col { padding:20px 24px;text-align:center;border-right:1px solid rgba(15,52,96,0.10); }
-          .ps-stat-col:last-child { border-right:none; }
-          .ps-stat-value { font-size:28px;font-weight:900;color:#D97706;letter-spacing:-0.5px;line-height:1;margin-bottom:5px; }
-          .ps-stat-label { font-size:12px;color:#4A6080;font-weight:500; }
-
-          /* Trust badges */
-          .ps-trust-bar { position:relative;z-index:2;display:flex;gap:20px;justify-content:center;flex-wrap:wrap;padding:24px 40px 56px; }
-          .ps-trust-badge { display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.55);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.75);border-radius:40px;padding:8px 18px;font-size:13px;font-weight:600;color:#2A3F6F; }
-          .ps-trust-badge svg { width:16px;height:16px;fill:#44973D;flex-shrink:0; }
 
           /* ── SERVICES ── */
           .ps-services-section { background:#f8fafd;padding:80px 40px 64px;position:relative;z-index:2;box-shadow:0 -20px 60px rgba(15,52,96,0.14),0 -4px 16px rgba(15,52,96,0.08); }
@@ -439,14 +371,6 @@ export default function PrototypingServices() {
           }
           @media (max-width:768px) {
             .ps-page { overflow-x:hidden; }
-            .ps-hero-content { padding:44px 20px 28px; }
-            .ps-hero-content h1 { font-size:30px;letter-spacing:-0.4px; }
-            .ps-hero-content p { font-size:15px; }
-            .ps-stats-bar { grid-template-columns:1fr 1fr; }
-            .ps-stat-col:nth-child(2) { border-right:none; }
-            .ps-stat-col:nth-child(3) { border-top:1px solid rgba(15,52,96,0.10); }
-            .ps-stat-col:nth-child(4) { border-top:1px solid rgba(15,52,96,0.10);border-right:none; }
-            .ps-trust-bar { padding:16px 20px 36px;gap:10px; }
             .ps-services-section { padding:52px 20px 44px; }
             .ps-why-section { padding:60px 20px; }
             .ps-why-grid { grid-template-columns:1fr;margin-top:36px; }
@@ -461,11 +385,9 @@ export default function PrototypingServices() {
             .ps-related-tags { gap:8px; }
           }
           @media (max-width:480px) {
-            .ps-hero-content h1 { font-size:24px; }
             .ps-services-grid { grid-template-columns:1fr; }
             .ps-section-title,.ps-faq-heading,.ps-contact-title,.ps-related-title { font-size:24px; }
             .ps-contact-stats { grid-template-columns:1fr 1fr; }
-            .ps-hero-btns { flex-direction:column;align-items:center; }
           }
           @media (max-width:900px) {
             .ps-page { background-attachment:scroll !important; }
@@ -482,43 +404,19 @@ export default function PrototypingServices() {
         <div className="ps-orb-3" />
 
         {/* ── HERO ── */}
-        <div className="ps-hero">
-          <div className="ps-hero-content">
-            <span className="ps-eyebrow">UX Prototyping Agency - 16+ Years Experience</span>
-            <h1>Prototyping That Validates Ideas Before You Write a Line of Code</h1>
-            <p>From low-fi wireframes to pixel-perfect interactive prototypes, we help you test concepts, align stakeholders, and ship with confidence - not guesswork.</p>
-            <div className="ps-hero-btns">
-              <Link href="#contact" className="ps-btn-primary">Get a Free Prototype Consultation</Link>
-              <Link href="/portfolio" className="ps-btn-secondary">View Our Work →</Link>
-            </div>
-          </div>
-
-          <div className="ps-stats-bar" ref={statsRef}>
-            {[
-              ['400+ Prototypes Delivered', '400+'],
-              ['60% Faster Sign-Off', '60%'],
-              ['16+ Years Experience', '16+'],
-              ['90% Fewer Revisions', '90%'],
-            ].map(([label, val]) => (
-              <AnimatedStat key={label} label={label} val={val} started={statsStarted} />
-            ))}
-          </div>
-
-          <div className="ps-trust-bar">
-            {[
-              'Figma-Native Workflow',
-              'Clickable Prototypes via URL',
-              'Moderated Usability Testing',
-              'Developer-Ready Handoff',
-              'Fixed-Price Engagements',
-            ].map(badge => (
-              <div className="ps-trust-badge" key={badge}>
-                <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
-                {badge}
-              </div>
-            ))}
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="UX Prototyping Agency · Figma-Native · Developer-Ready Handoff"
+          title={<>Prototyping That Validates Ideas <AuroraText>Before You Write a Line of Code</AuroraText></>}
+          subtext="From low-fi wireframes to pixel-perfect interactive prototypes, we help you test concepts, align stakeholders, and ship with confidence - not guesswork."
+          primaryCta={{ label: 'Get a Free Prototype Consultation', href: '#contact' }}
+          secondaryCta={{ label: 'View Our Work', href: '/portfolio' }}
+          stats={[
+            { label: 'Prototypes Delivered', value: '400', suffix: '+' },
+            { label: 'Faster Sign-Off', value: '60', suffix: '%' },
+            { label: 'Years Experience', value: '16', suffix: '+' },
+            { label: 'Fewer Revisions', value: '90', suffix: '%' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="ps-services-section" id="services">

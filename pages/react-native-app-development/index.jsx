@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n: '01', title: 'Custom React Native App Development', desc: 'Fully bespoke iOS and Android apps from a single codebase - built to your exact specification with native look, feel, and performance.' },
@@ -70,13 +72,6 @@ const FAQS = [
     q: 'Do you provide ongoing support and maintenance after the app launches?',
     a: 'Yes - we offer structured post-launch support through our App Maintenance retainer plans. All new apps include a complimentary 30-day hypercare period for bug fixes and minor adjustments. Beyond that, our maintenance plans cover: iOS and Android OS update compatibility, React Native version upgrades, bug fixing, performance monitoring, third-party library updates, and App Store compliance as Apple and Google update their requirements. Maintenance is recommended for all live apps - platform requirements change frequently and unattended apps can be removed from stores.',
   },
-];
-
-const STATS = [
-  { label: 'Apps Built & Shipped', val: '100+' },
-  { label: 'Avg App Store Rating', val: '4.8★' },
-  { label: 'Cost Saving vs Dual Native', val: '~40%' },
-  { label: 'On-Time Delivery Rate', val: '96%' },
 ];
 
 export default function ReactNativeAppDevelopment() {
@@ -180,78 +175,6 @@ export default function ReactNativeAppDevelopment() {
           }
           .rn-page *, .rn-page *::before, .rn-page *::after { box-sizing: border-box; }
 
-          /* ── Hero ── */
-          .rn-hero {
-            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 25%, #fff7ed 55%, #eff6ff 100%);
-            position: relative;
-            overflow: hidden;
-            padding: 80px 40px 0;
-          }
-          .rn-hero-orb1 {
-            position: absolute; top: -100px; right: -100px;
-            width: 560px; height: 560px; border-radius: 50%;
-            background: radial-gradient(circle, rgba(245,158,11,0.14) 0%, transparent 65%);
-            pointer-events: none; filter: blur(30px);
-          }
-          .rn-hero-orb2 {
-            position: absolute; bottom: 0; left: -80px;
-            width: 440px; height: 440px; border-radius: 50%;
-            background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 65%);
-            pointer-events: none; filter: blur(30px);
-          }
-          .rn-hero-inner {
-            max-width: 1280px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-            text-align: center;
-          }
-
-
-
-          .rn-eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(245,158,11,0.08);
-            border: 1px solid rgba(245,158,11,0.22);
-            border-radius: 100px;
-            padding: 5px 14px;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: #D97706;
-            margin-bottom: 28px;
-          }
-          .rn-hero-h1 {
-            font-size: clamp(2.2rem, 5vw, 3.6rem);
-            font-weight: 900;
-            line-height: 1.1;
-            letter-spacing: -1px;
-            background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 20px;
-            max-width: 920px;
-            margin-left: auto;
-            margin-right: auto;
-          }
-          .rn-hero-sub {
-            font-size: 1.08rem;
-            color: #4A6080;
-            line-height: 1.75;
-            max-width: 660px;
-            margin: 0 auto 36px;
-          }
-          .rn-hero-btns {
-            display: flex;
-            gap: 14px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 56px;
-          }
           .rn-btn-primary {
             display: inline-flex;
             align-items: center;
@@ -291,21 +214,6 @@ export default function ReactNativeAppDevelopment() {
             color: #D97706;
             transform: translateY(-2px);
           }
-          .rn-stats-bar {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            max-width: 900px;
-            margin: 0 auto;
-            background: rgba(255,255,255,0.55);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255,255,255,0.85);
-            border-radius: 20px 20px 0 0;
-            box-shadow: 0 4px 24px rgba(217,119,6,0.07);
-          }
-          .rn-stat { padding: 20px 24px; text-align: center; border-right: 1px solid rgba(217,119,6,0.08); }
-          .rn-stat:last-child { border-right: none; }
-          .rn-stat-label { font-size: 11px; color: #6b7280; font-weight: 500; margin-bottom: 4px; }
-          .rn-stat-val { font-size: 1.6rem; font-weight: 900; color: #D97706; letter-spacing: -0.5px; }
 
           /* ── Services ── */
           .rn-services-section { background: #f8fafd; padding: 80px 40px; box-shadow: 0 -20px 60px rgba(217,119,6,0.06); }
@@ -415,15 +323,11 @@ export default function ReactNativeAppDevelopment() {
             .rn-why-grid { grid-template-columns: repeat(2, 1fr); }
           }
           @media (max-width: 768px) {
-            .rn-hero { padding: 60px 24px 0; }
             .rn-services-section, .rn-cap-section, .rn-process-section,
             .rn-why-section, .rn-faq-section, .rn-cta-section { padding: 60px 24px; }
-            .rn-stats-bar { grid-template-columns: repeat(2, 1fr); border-radius: 16px 16px 0 0; }
-            .rn-stat:nth-child(2) { border-right: none; }
             .rn-services-grid { grid-template-columns: 1fr; }
             .rn-why-grid { grid-template-columns: 1fr; }
             .rn-process-step { grid-template-columns: 56px 1fr; }
-            .rn-hero-btns { flex-direction: column; align-items: center; }
           }
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
@@ -434,39 +338,19 @@ export default function ReactNativeAppDevelopment() {
       <div className="rn-page">
 
         {/* ── HERO ── */}
-        <section className="rn-hero">
-          <div className="rn-hero-orb1" />
-          <div className="rn-hero-orb2" />
-          <div className="rn-hero-inner">
-            <span className="rn-eyebrow">
-              <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#D97706', display: 'inline-block' }} />
-              Cross-Platform Mobile Apps
-            </span>
-            <h1 className="rn-hero-h1">
-              React Native App Development for iOS &amp; Android
-            </h1>
-            <p className="rn-hero-sub">
-              One codebase, two platforms, native performance. We build custom React Native apps for startups and established businesses across the US, Canada, and Australia - from concept to App Store launch.
-            </p>
-            <div className="rn-hero-btns">
-              <Link href="/contact-us" className="rn-btn-primary">
-                Get a Free App Consultation
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </Link>
-              <Link href="/ios-app-development-company" className="rn-btn-secondary">
-                Explore Mobile Services
-              </Link>
-            </div>
-            <div className="rn-stats-bar">
-              {STATS.map(s => (
-                <div key={s.label} className="rn-stat">
-                  <div className="rn-stat-label">{s.label}</div>
-                  <div className="rn-stat-val">{s.val}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServiceHero
+          eyebrow="Cross-Platform Mobile Apps"
+          title={<>React Native App Development for <AuroraText>iOS &amp; Android</AuroraText></>}
+          subtext="One codebase, two platforms, native performance. We build custom React Native apps for startups and established businesses across the US, Canada, and Australia - from concept to App Store launch."
+          primaryCta={{ label: 'Get a Free App Consultation', href: '/contact-us' }}
+          secondaryCta={{ label: 'Explore Mobile Services', href: '/ios-app-development-company' }}
+          stats={[
+            { label: 'Apps Built & Shipped', value: '100', suffix: '+' },
+            { label: 'Avg App Store Rating', value: '8', prefix: '4.', suffix: '★' },
+            { label: 'Cost Saving vs Dual Native', value: '40', prefix: '~', suffix: '%' },
+            { label: 'On-Time Delivery Rate', value: '96', suffix: '%' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="rn-services-section">

@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n:'01', title:'Logo Design', desc:'Wordmarks, lettermarks, emblems, and combination marks crafted with full usage guidelines, colour variations, and scalability from favicon to billboard.', featured:false },
@@ -42,38 +44,6 @@ const PROCESS_STEPS = [
   { title:'Guidelines & Delivery', desc:'We build the comprehensive brand guidelines document, produce the full file package, and hand everything over with a walk-through call to ensure your team can apply the brand with confidence from day one.' },
 ];
 
-// Count-up hook
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const numTarget = parseInt(target.replace(/\D/g, ''), 10);
-    if (!numTarget) return;
-    let startTime = null;
-    const step = (ts) => {
-      if (!startTime) startTime = ts;
-      const progress = Math.min((ts - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * numTarget));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function AnimatedStat({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');
-  const hasComma = val.includes(',');
-  const display = started ? (hasComma ? num.toLocaleString() : num) + suffix : val;  return (
-    <div className="bi-stat-col">
-      <div className="bi-stat-label">{label}</div>
-      <div className="bi-stat-value">{display}</div>
-    </div>
-  );
-}
-
 const LD = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -106,12 +76,10 @@ const LD = {
 export default function BrandIdentityPage() {
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleSteps, setVisibleSteps] = useState([]);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleServiceCards, setVisibleServiceCards] = useState([]);
   const stepRefs = useRef([]);
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const whyGridRef = useRef(null);
   const serviceGridRef = useRef(null);
@@ -133,17 +101,6 @@ export default function BrandIdentityPage() {
       return obs;
     });
     return () => observers.forEach(o => o && o.disconnect());
-  }, []);
-
-  // Stats count-up trigger
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setStatsStarted(true); obs.disconnect(); } },
-      { threshold: 0.5 }
-    );
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
   }, []);
 
   // Why cards staggered reveal
@@ -250,38 +207,6 @@ export default function BrandIdentityPage() {
           .bi-orb-1 { position:absolute;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(217,70,239,0.22) 0%,rgba(139,92,246,0.10) 40%,transparent 70%);top:-300px;right:-300px;pointer-events:none;z-index:0;filter:blur(30px); }
           .bi-orb-2 { position:absolute;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(251,146,60,0.22) 0%,rgba(245,158,11,0.10) 40%,transparent 70%);bottom:0;left:-250px;pointer-events:none;z-index:0;filter:blur(30px); }
           .bi-orb-3 { position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,0.15) 0%,transparent 70%);top:50%;left:30%;transform:translateY(-50%);pointer-events:none;z-index:0;filter:blur(30px); }
-
-          /* Hero */
-          .bi-hero-block { background:transparent;position:relative;overflow:hidden; }
-          .bi-hero-block::before { content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(217,70,239,0.12) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px); }
-          .bi-hero-block::after { content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.18) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px); }
-          .bi-hero-content { position:relative;z-index:2;text-align:center;max-width:860px;margin:0 auto;padding:60px 40px 44px; }
-          .bi-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#7C3AED;margin-bottom:18px; }
-          .bi-hero-content h1 { font-size:52px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:20px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .bi-hero-content p { font-size:17px;color:#3A507A;line-height:1.7;max-width:640px;margin:0 auto 32px; }
-          .bi-hero-badges { display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:32px; }
-          .bi-badge { background:rgba(255,255,255,0.6);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.85);border-radius:40px;padding:6px 16px;font-size:13px;font-weight:600;color:#0F3460; }
-          .bi-btn-hero { display:inline-block;padding:15px 44px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:50px;color:#0F3460;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,1);position:relative;overflow:hidden; }
-          .bi-btn-hero::after { content:'';position:absolute;top:-10%;left:-120%;width:80%;height:120%;background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,0.75) 45%,rgba(255,255,255,0.9) 50%,rgba(255,255,255,0.75) 55%,transparent 100%);animation:bi-shimmer 2.5s ease-in-out infinite;pointer-events:none; }
-          @keyframes bi-shimmer { 0%{left:-120%} 35%,100%{left:160%} }
-          .bi-btn-hero:hover { background:rgba(255,255,255,0.85);border-color:rgba(124,58,237,0.5);box-shadow:0 12px 36px rgba(15,52,96,0.15),0 0 0 2px rgba(124,58,237,0.18),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px);color:#0F3460; }
-
-          /* Stats strip */
-          .bi-hero-stats { position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
-          .bi-stat-col { padding:18px 20px;text-align:center;border-right:1px solid rgba(15,52,96,0.10); }
-          .bi-stat-col:last-child { border-right:none; }
-          .bi-stat-label { font-size:12px;color:#4A6080;font-weight:500;margin-bottom:6px; }
-          .bi-stat-value { font-size:26px;font-weight:900;color:#7C3AED;letter-spacing:-0.5px;line-height:1; }
-
-          /* Clients bar */
-          .bi-clients-bar { position:relative;z-index:2;padding:20px 40px 60px;max-width:1440px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px; }
-          .bi-clients-label { font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6A80A0; }
-          .bi-clients-logos { width:100%;overflow:hidden; }
-          .bi-logos-track { display:flex;align-items:center;gap:60px;width:max-content;animation:bi-marquee 28s linear infinite; }
-          .bi-logos-track:hover { animation-play-state:paused; }
-          @keyframes bi-marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-          .bi-client-logo { height:26px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(100%);opacity:0.5;transition:opacity 0.25s,filter 0.25s; }
-          .bi-client-logo:hover { opacity:0.85;filter:grayscale(0%); }
 
           /* Shared section styles */
           .bi-section-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7C3AED;margin-bottom:12px;display:block; }
@@ -442,21 +367,11 @@ export default function BrandIdentityPage() {
 
           /* Mobile */
           @media (max-width:1024px) {
-            .bi-hero-content h1 { font-size:40px; }
             .bi-services-grid { grid-template-columns:repeat(2,1fr); }
             .bi-why-grid { grid-template-columns:repeat(2,1fr); }
             .bi-testi-grid { grid-template-columns:repeat(2,1fr); }
           }
           @media (max-width:768px) {
-            .bi-hero-content { padding:40px 20px 28px; }
-            .bi-hero-content h1 { font-size:28px;letter-spacing:-0.3px; }
-            .bi-hero-content p { font-size:15px; }
-            .bi-hero-stats { grid-template-columns:1fr 1fr; }
-            .bi-stat-col { padding:14px 12px; }
-            .bi-stat-col:nth-child(2) { border-right:none; }
-            .bi-stat-col:nth-child(3) { border-top:1px solid rgba(15,52,96,0.10); }
-            .bi-stat-col:nth-child(4) { border-top:1px solid rgba(15,52,96,0.10);border-right:none; }
-            .bi-stat-value { font-size:22px; }
             .bi-services-section { padding:48px 20px 40px; }
             .bi-services-grid { grid-template-columns:1fr 1fr;gap:10px; }
             .bi-why-section { padding:60px 20px; }
@@ -484,10 +399,8 @@ export default function BrandIdentityPage() {
             .bi-stat-number { font-size:28px; }
             .bi-section-title,.bi-process-title,.bi-faq-heading,.bi-contact-title,.bi-related-title { font-size:28px; }
             .bi-related-section { padding:60px 20px; }
-            .bi-clients-bar { padding:16px 20px 36px; }
           }
           @media (max-width:480px) {
-            .bi-hero-content h1 { font-size:24px; }
             .bi-services-grid { grid-template-columns:1fr; }
             .bi-section-title,.bi-process-title,.bi-faq-heading,.bi-contact-title,.bi-related-title { font-size:22px; }
             .bi-tcard { padding:24px 18px; }
@@ -504,51 +417,18 @@ export default function BrandIdentityPage() {
         <div className="bi-orb-3" />
 
         {/* ── HERO ── */}
-        <div className="bi-hero-block">
-          <div className="bi-hero-content">
-            <span className="bi-eyebrow">Brand Identity Design Agency - 16+ Years</span>
-            <h1>Brand Identity Design That Makes You Unmistakable</h1>
-            <p>We craft brand identities that resonate - from logo mark to colour palette to type system. Everything your audience needs to recognise and trust you instantly.</p>
-            <div className="bi-hero-badges">
-              <span className="bi-badge">&#10003; 300+ Brands Crafted</span>
-              <span className="bi-badge">&#10003; 50+ Industries</span>
-              <span className="bi-badge">&#10003; Full Source Files Delivered</span>
-              <span className="bi-badge">&#10003; WCAG Accessibility Included</span>
-            </div>
-            <Link href="#contact" className="bi-btn-hero">Start Your Brand Identity Project</Link>
-          </div>
-
-          <div className="bi-hero-stats" ref={statsRef}>
-            {[['Brands Crafted','300+'],['Years Experience','16+'],['Client Satisfaction','97%'],['Industries Served','50+']].map(([label,val]) => (
-              <AnimatedStat key={label} label={label} val={val} started={statsStarted} />
-            ))}
-          </div>
-
-          <div className="bi-clients-bar">
-            <span className="bi-clients-label">Trusted by Leading Brands</span>
-            <div className="bi-clients-logos">
-              <div className="bi-logos-track">
-                {[
-                  ['/logo/Indian_Express_Logo_full.png','Indian Express'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],
-                  ['/logo/Uniphore.jpg','Uniphore'],
-                  ['/logo/ICCoLogo.png','ICC'],
-                  ['/logo/Honor_Logo_(2020).svg.png','Honor'],
-                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],
-                  ['/logo/Indian_Express_Logo_full.png','Indian Express2'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon2'],
-                  ['/logo/Uniphore.jpg','Uniphore2'],
-                  ['/logo/ICCoLogo.png','ICC2'],
-                  ['/logo/Honor_Logo_(2020).svg.png','Honor2'],
-                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv2'],
-                ].map(([src,alt]) => (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img key={alt} src={src} alt={alt.replace(/\d+$/, '')} className="bi-client-logo" />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="Brand Identity Design Agency - 16+ Years · Full Source Files · WCAG Accessible"
+          title={<>Brand Identity Design That Makes You <AuroraText>Unmistakable</AuroraText></>}
+          subtext="We craft brand identities that resonate - from logo mark to colour palette to type system. Everything your audience needs to recognise and trust you instantly."
+          primaryCta={{ label: 'Start Your Brand Identity Project', href: '#contact' }}
+          stats={[
+            { label: 'Brands Crafted', value: '300', suffix: '+' },
+            { label: 'Years Experience', value: '16', suffix: '+' },
+            { label: 'Client Satisfaction', value: '97', suffix: '%' },
+            { label: 'Industries Served', value: '50', suffix: '+' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="bi-services-section">

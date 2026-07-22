@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
   { n:'01', title:'Custom CodeIgniter Application Development', desc:'Bespoke web applications built from the ground up on CodeIgniter - fast, secure, and architected for maintainability. No bloated frameworks, no unnecessary overhead.', featured:false },
@@ -41,47 +43,14 @@ const WHY = [
   { icon:<svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>, title:'Long-Term Partnership', desc:'97% client retention rate. We build long-term relationships - not one-shot projects. Post-launch, we remain your CodeIgniter partner for maintenance, upgrades, and new features.' },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!start) return;
-    const numTarget = parseInt(target.replace(/\D/g, ''), 10);
-    if (!numTarget) return;
-    let startTime = null;
-    const step = (ts) => {
-      if (!startTime) startTime = ts;
-      const progress = Math.min((ts - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.floor(eased * numTarget));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [start, target, duration]);
-  return count;
-}
-
-function AnimatedStat({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');
-  const hasComma = val.includes(',');
-  const display = started ? (hasComma ? num.toLocaleString() : num) + suffix : val;  return (
-    <div className="ci-stat-col">
-      <div className="ci-stat-label">{label}</div>
-      <div className="ci-stat-value">{display}</div>
-    </div>
-  );
-}
-
 export default function CodeIgniterDevelopmentCompany() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleSteps, setVisibleSteps] = useState([]);
-  const [statsStarted, setStatsStarted] = useState(false);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
   const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const stepRefs = useRef([]);
-  const statsRef = useRef(null);
   const sectionRefs = useRef({});
   const whyGridRef = useRef(null);
   const testiGridRef = useRef(null);
@@ -102,16 +71,6 @@ export default function CodeIgniterDevelopmentCompany() {
       return obs;
     });
     return () => observers.forEach(o => o && o.disconnect());
-  }, []);
-
-  useEffect(() => {
-    if (!statsRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setStatsStarted(true); obs.disconnect(); } },
-      { threshold: 0.5 }
-    );
-    obs.observe(statsRef.current);
-    return () => obs.disconnect();
   }, []);
 
   useEffect(() => {
@@ -217,31 +176,6 @@ export default function CodeIgniterDevelopmentCompany() {
           .ci-aurora-b2 { position:absolute; left:78%; top:22%; width:48%; height:48%; border-radius:50%; background:radial-gradient(circle at center,rgba(217,119,6,0.20) 0%,transparent 70%); transform:translate(-50%,-50%); }
           .ci-aurora-b3 { position:absolute; left:50%; top:82%; width:55%; height:55%; border-radius:50%; background:radial-gradient(circle at center,rgba(26,82,118,0.16) 0%,transparent 70%); transform:translate(-50%,-50%); }
           @keyframes ci-aurora-drift { 0%{transform:translate3d(0,0,0) scale(1)} 100%{transform:translate3d(-4%,3%,0) scale(1.10)} }
-
-          /* Hero */
-          .ci-hero-block { background:transparent;position:relative;overflow:hidden; }
-          .ci-hero-block::before { content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(17,65,113,0.09) 0%,transparent 70%);top:-120px;left:-80px;pointer-events:none;filter:blur(40px); }
-          .ci-hero-block::after  { content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(217,119,6,0.11) 0%,transparent 70%);bottom:-60px;right:-60px;pointer-events:none;filter:blur(40px); }
-          .ci-hero-content { position:relative;z-index:2;text-align:center;max-width:880px;margin:0 auto;padding:56px 40px 40px; }
-          .ci-eyebrow { display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#114171;margin-bottom:18px; }
-          .ci-hero-content h1 { font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
-          .ci-hero-content p { font-size:16px;color:#1a3050;line-height:1.65;max-width:640px;margin:0 auto 28px; }
-          .ci-btn-hero { display:inline-block;padding:14px 40px;background:rgba(255,255,255,0.58);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.88);border-radius:50px;color:#114171;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(17,65,113,0.12),inset 0 1px 0 rgba(255,255,255,1); }
-          .ci-btn-hero:hover { background:rgba(255,255,255,0.90);border-color:rgba(17,65,113,0.45);box-shadow:0 12px 36px rgba(17,65,113,0.18),0 0 0 2px rgba(17,65,113,0.14),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px);color:#114171; }
-
-          /* Stats */
-          .ci-hero-stats { position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;background:rgba(255,255,255,0.48);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.88);box-shadow:0 4px 24px rgba(17,65,113,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
-          .ci-stat-col { padding:18px 20px;text-align:center;border-right:1px solid rgba(17,65,113,0.12); }
-          .ci-stat-col:last-child { border-right:none; }
-          .ci-stat-label { font-size:12px;color:#1a3050;font-weight:500;margin-bottom:6px; }
-          .ci-stat-value { font-size:26px;font-weight:900;color:#114171;letter-spacing:-0.5px;line-height:1; }
-
-          /* Clients */
-          .ci-clients-bar { position:relative;z-index:2;padding:20px 40px 60px;max-width:1440px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px; }
-          .ci-clients-label { font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#114171; }
-          .ci-clients-logos { width:100%;overflow:hidden; }
-          .ci-client-logo { height:26px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(100%);opacity:0.5;transition:opacity 0.25s,filter 0.25s; }
-          .ci-client-logo:hover { opacity:0.85;filter:grayscale(0%); }
 
           /* Shared section tokens */
           .ci-section-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#114171;margin-bottom:12px;display:block; }
@@ -448,23 +382,12 @@ export default function CodeIgniterDevelopmentCompany() {
           .ci-rtag-slate  { background:rgba(100,116,139,0.10); border-color:rgba(100,116,139,0.28); color:#334155; }
           .ci-rtag-emerald{ background:rgba(16,185,129,0.10); border-color:rgba(16,185,129,0.28); color:#065F46; }
 
-          /* Shimmer */
-          .ci-btn-hero-shimmer { position:relative;overflow:hidden; }
-          .ci-btn-hero-shimmer::after { content:'';position:absolute;top:-10%;left:-120%;width:80%;height:120%;background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,0.78) 45%,rgba(255,255,255,0.92) 50%,rgba(255,255,255,0.78) 55%,transparent 100%);animation:ci-shimmer-sweep 2.5s ease-in-out infinite;pointer-events:none; }
-          @keyframes ci-shimmer-sweep { 0%{left:-120%} 35%,100%{left:160%} }
-
           /* Section reveal */
           .ci-section-reveal { opacity:0;transform:translateY(48px);transition:opacity 0.7s cubic-bezier(0.22,1,0.36,1),transform 0.7s cubic-bezier(0.22,1,0.36,1); }
           .ci-section-reveal.ci-revealed { opacity:1;transform:translateY(0); }
 
-          /* Logo marquee */
-          .ci-logos-track { display:flex;align-items:center;gap:60px;width:max-content;animation:ci-marquee 28s linear infinite; }
-          .ci-logos-track:hover { animation-play-state:paused; }
-          @keyframes ci-marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-
           /* Responsive */
           @media (max-width:1024px) {
-            .ci-hero-content h1 { font-size:40px; }
             .ci-services-grid { grid-template-columns:repeat(2,1fr); }
             .ci-why-grid { grid-template-columns:repeat(2,1fr); }
             .ci-portfolio-grid { grid-template-columns:repeat(2,1fr); }
@@ -474,17 +397,6 @@ export default function CodeIgniterDevelopmentCompany() {
           }
           @media (max-width:768px) {
             .ci-page { overflow-x:hidden; }
-            .ci-hero-content { padding:36px 20px 24px; }
-            .ci-hero-content h1 { font-size:28px;letter-spacing:-0.3px; }
-            .ci-hero-content p { font-size:15px; }
-            .ci-hero-stats { grid-template-columns:1fr 1fr;max-width:100%; }
-            .ci-stat-col { padding:14px 12px; }
-            .ci-stat-col:nth-child(2) { border-right:none; }
-            .ci-stat-col:nth-child(3) { border-top:1px solid rgba(17,65,113,0.10); }
-            .ci-stat-col:nth-child(4) { border-top:1px solid rgba(17,65,113,0.10);border-right:none; }
-            .ci-stat-value { font-size:22px; }
-            .ci-clients-bar { padding:16px 20px 36px;gap:12px; }
-            .ci-client-logo { height:20px; }
             .ci-services-section { padding:48px 20px 40px; }
             .ci-portfolio-section { padding:48px 16px; }
             .ci-portfolio-wrap { padding:24px 20px 32px;border-radius:16px; }
@@ -525,7 +437,6 @@ export default function CodeIgniterDevelopmentCompany() {
             .ci-stat-number { font-size:28px; }
           }
           @media (max-width:480px) {
-            .ci-hero-content h1 { font-size:24px; }
             .ci-section-title,.ci-engage-title,.ci-process-main-title,.ci-related-title { font-size:26px; }
             .ci-services-grid { grid-template-columns:1fr; }
             .ci-service-card { padding:20px 18px 18px; }
@@ -552,45 +463,18 @@ export default function CodeIgniterDevelopmentCompany() {
         </div>
 
         {/* ── HERO ── */}
-        <div className="ci-hero-block">
-          <div className="ci-hero-content">
-            <span className="ci-eyebrow">Expert CodeIgniter Development Company</span>
-            <h1>CodeIgniter Development Services - Fast, Lean PHP Applications That Scale</h1>
-            <p>Build robust, high-performance web applications, REST APIs, and custom portals on CodeIgniter with 1Solutions' expert PHP development team. 15+ years of CodeIgniter expertise serving US, Canada, and Australia businesses - on-time, on-budget, and built to last.</p>
-            <Link href="#contact" className="ci-btn-hero ci-btn-hero-shimmer">Get a Free CodeIgniter Consultation</Link>
-          </div>
-
-          <div className="ci-hero-stats" ref={statsRef}>
-            {[['PHP Applications Built','300+'],['PHP Experts','50+'],['Projects Delivered','1,200+'],['Years in Business','15+']].map(([label,val]) => (
-              <AnimatedStat key={label} label={label} val={val} started={statsStarted} />
-            ))}
-          </div>
-
-          <div className="ci-clients-bar">
-            <span className="ci-clients-label">Trusted by Leading Brands</span>
-            <div className="ci-clients-logos">
-              <div className="ci-logos-track">
-                {[
-                  ['/logo/Indian_Express_Logo_full.png','Indian Express'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],
-                  ['/logo/Uniphore.jpg','Uniphore'],
-                  ['/logo/ICCoLogo.png','ICC'],
-                  ['/logo/Honor_Logo_(2020).svg.png','Honor'],
-                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],
-                  ['/logo/Indian_Express_Logo_full.png','Indian Express2'],
-                  ['/logo/Verizon_2015_logo_-vector.svg.png','Verizon2'],
-                  ['/logo/Uniphore.jpg','Uniphore2'],
-                  ['/logo/ICCoLogo.png','ICC2'],
-                  ['/logo/Honor_Logo_(2020).svg.png','Honor2'],
-                  ['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv2'],
-                ].map(([src,alt]) => (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img key={alt} src={src} alt={alt.replace(/\d+$/,'')} className="ci-client-logo" />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+        <ServiceHero
+          eyebrow="Expert CodeIgniter Development Company"
+          title={<>CodeIgniter Development Services - <AuroraText>Fast, Lean PHP Applications That Scale</AuroraText></>}
+          subtext="Build robust, high-performance web applications, REST APIs, and custom portals on CodeIgniter with 1Solutions' expert PHP development team. 15+ years of CodeIgniter expertise serving US, Canada, and Australia businesses - on-time, on-budget, and built to last."
+          primaryCta={{ label: 'Get a Free CodeIgniter Consultation', href: '#contact' }}
+          stats={[
+            { label: 'PHP Applications Built', value: '300', suffix: '+' },
+            { label: 'PHP Experts', value: '50', suffix: '+' },
+            { label: 'Projects Delivered', value: '1,200', suffix: '+' },
+            { label: 'Years in Business', value: '15', suffix: '+' },
+          ]}
+        />
 
         {/* ── SERVICES ── */}
         <section className="ci-services-section">

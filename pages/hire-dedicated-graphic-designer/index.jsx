@@ -2,22 +2,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-
-function useCountUp(target, duration = 1800) {
-  const [count, setCount] = useState(0);
-  const raf = useRef(null);
-  const start = (t) => {
-    const s = performance.now();
-    const step = (now) => {
-      const p = Math.min((now - s) / duration, 1);
-      setCount(Math.floor(p * t));
-      if (p < 1) raf.current = requestAnimationFrame(step);
-    };
-    raf.current = requestAnimationFrame(step);
-  };
-  useEffect(() => () => cancelAnimationFrame(raf.current), []);
-  return [count, start];
-}
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const ACCENT = '#7c3aed';
 const SKILLS = [
@@ -60,9 +46,6 @@ export default function HireDedicatedGraphicDesigner() {
   const enR  = useRef(null); const [enV, setEnV] = useState(false);
   const whR  = useRef(null); const [whV, setWhV] = useState(false);
   const prR  = useRef(null); const [prV, setPrV] = useState(false);
-  const stGr = useRef(null); const [stV, setStV] = useState(false);
-  const [c1, s1] = useCountUp(50); const [c2, s2] = useCountUp(400);
-  const [c3, s3] = useCountUp(49); const [c4, s4] = useCountUp(7);
   const [openFaq, setOpenFaq] = useState(null);
 
   useEffect(() => {
@@ -71,9 +54,7 @@ export default function HireDedicatedGraphicDesigner() {
     const o2 = obs(enR, setEnV); if (enR.current) o2.observe(enR.current);
     const o3 = obs(whR, setWhV); if (whR.current) o3.observe(whR.current);
     const o4 = obs(prR, setPrV); if (prR.current) o4.observe(prR.current);
-    const o5 = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStV(true); s1(50); s2(400); s3(49); s4(7); o5.disconnect(); } }, { threshold: 0.2 });
-    if (stGr.current) o5.observe(stGr.current);
-    return () => [o1, o2, o3, o4, o5].forEach(o => o.disconnect());
+    return () => [o1, o2, o3, o4].forEach(o => o.disconnect());
   }, []);
 
   const LD = {
@@ -99,10 +80,6 @@ export default function HireDedicatedGraphicDesigner() {
         <link rel="canonical" href="https://www.1solutions.biz/hire-dedicated-graphic-designer/" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
-          .hgd-hero{background:linear-gradient(135deg,${ACCENT} 0%,#3b1a7a 60%,#4c1d95 100%);color:#fff;padding:100px 20px 80px;text-align:center}
-          .hgd-hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin:0 0 18px;line-height:1.15}
-          .hgd-hero p{font-size:1.15rem;max-width:620px;margin:0 auto 36px;opacity:.88;line-height:1.7}
-          .hgd-hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
           .hgd-btn-primary{background:#FE9700;color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s}
           .hgd-btn-primary:hover{opacity:.88}
           .hgd-btn-outline{border:2px solid rgba(255,255,255,.7);color:#fff;padding:13px 28px;border-radius:8px;font-weight:600;font-size:1rem;text-decoration:none;transition:border-color .2s}
@@ -131,10 +108,6 @@ export default function HireDedicatedGraphicDesigner() {
           .hgd-step-n{width:48px;height:48px;border-radius:50%;background:${ACCENT};color:#fff;font-size:1.1rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
           .hgd-step h3{font-size:1rem;font-weight:700;color:#111;margin:0 0 8px}
           .hgd-step p{color:#666;font-size:.9rem;line-height:1.6;margin:0}
-          .hgd-stats{background:${ACCENT};padding:60px 20px;color:#fff}
-          .hgd-stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;max-width:900px;margin:0 auto;text-align:center}
-          .hgd-stat-val{font-size:2.8rem;font-weight:900;line-height:1}
-          .hgd-stat-label{font-size:.95rem;opacity:.82;margin-top:6px}
           .hgd-faq{max-width:760px;margin:0 auto}
           .hgd-faq-item{border-bottom:1px solid #e5e5e5;padding:20px 0}
           .hgd-faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;color:#111;font-size:1rem;gap:12px}
@@ -144,17 +117,21 @@ export default function HireDedicatedGraphicDesigner() {
           .hgd-cta{background:linear-gradient(135deg,${ACCENT},#3b1a7a);padding:80px 20px;text-align:center;color:#fff}
           .hgd-cta h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin:0 0 16px}
           .hgd-cta p{font-size:1.08rem;opacity:.88;max-width:560px;margin:0 auto 36px;line-height:1.7}
-          @media(max-width:600px){.hgd-hero{padding:80px 18px 60px}.hgd-stats-grid{grid-template-columns:1fr 1fr}}
         `}</style>
       </Head>
-      <section className="hgd-hero">
-        <h1>Hire Dedicated Graphic Designers<br/>Brand, Print &amp; Digital Design Experts</h1>
-        <p>Pre-vetted graphic designers who create compelling brand identities, marketing collateral, social media graphics, packaging, and print materials. Not freelancers - dedicated professionals who become part of your team. Profiles in 48 hours.</p>
-        <div className="hgd-hero-btns">
-          <Link href="/contact-us" className="hgd-btn-primary">Hire a Graphic Designer →</Link>
-          <Link href="/portfolio" className="hgd-btn-outline">View Portfolio</Link>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="Hire Graphic Designer · Brand, Print & Digital"
+        title={<>Hire Dedicated Graphic Designers <AuroraText>Brand, Print &amp; Digital Design Experts</AuroraText></>}
+        subtext="Pre-vetted graphic designers who create compelling brand identities, marketing collateral, social media graphics, packaging, and print materials. Not freelancers - dedicated professionals who become part of your team. Profiles in 48 hours."
+        primaryCta={{ label: 'Hire a Graphic Designer', href: '/contact-us' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        stats={[
+          { label: 'Graphic Designers', value: '50', suffix: '+' },
+          { label: 'Design Projects Delivered', value: '400', suffix: '+' },
+          { label: 'Client Satisfaction', value: '49', prefix: '4.', suffix: '/5' },
+          { label: 'Days to First Deliverable', value: '7', suffix: ' Days' },
+        ]}
+      />
       <section className="hgd-sec" ref={skR}>
         <div className="hgd-wrap">
           <h2 className="hgd-sec-title">Design Skills &amp; Tools</h2>
@@ -174,14 +151,6 @@ export default function HireDedicatedGraphicDesigner() {
           <h2 className="hgd-sec-title">Why Hire Graphic Designers from 1Solutions?</h2>
           <p className="hgd-sec-sub">We place designers who treat visual communication as a business discipline - not just aesthetics.</p>
           <div className="hgd-why-grid">{WHY.map((w, i) => <div key={w.h} className={`hgd-why-item${whV ? ' hgd-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
-        </div>
-      </section>
-      <section className="hgd-stats" ref={stGr}>
-        <div className="hgd-stats-grid">
-          <div><div className="hgd-stat-val">{stV ? c1 : 0}+</div><div className="hgd-stat-label">Graphic Designers</div></div>
-          <div><div className="hgd-stat-val">{stV ? c2 : 0}+</div><div className="hgd-stat-label">Design Projects Delivered</div></div>
-          <div><div className="hgd-stat-val">4.{stV ? c3 : 0}/5</div><div className="hgd-stat-label">Client Satisfaction</div></div>
-          <div><div className="hgd-stat-val">{stV ? c4 : 0} Days</div><div className="hgd-stat-label">Days to First Deliverable</div></div>
         </div>
       </section>
       <section className="hgd-sec hgd-sec-alt" ref={prR}>

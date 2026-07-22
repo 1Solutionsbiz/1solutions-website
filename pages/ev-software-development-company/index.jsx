@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -73,25 +75,13 @@ const FAQS = [
   { q: 'Do you support V2G (vehicle-to-grid) software development?', a: 'Yes - bidirectional charger communication (CHAdeMO, ISO 15118-2), grid dispatch integration (aggregator API), charge/discharge schedule optimisation, grid service revenue tracking, and fleet battery aggregation for virtual power plant (VPP) participation.' },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => { if (!start) return; const n = parseInt(target.replace(/\D/g, ''), 10); if (!n) return; let t0 = null; const s = ts => { if (!t0) t0 = ts; const p = Math.min((ts - t0) / duration, 1); setCount(Math.floor((1 - Math.pow(1 - p, 3)) * n)); if (p < 1) requestAnimationFrame(s); }; requestAnimationFrame(s); }, [start, target, duration]);
-  return count;
-}
-function StatItem({ label, val, started }) {
-  const n = useCountUp(val, 1800, started);
-  const sfx = val.replace(/[\d,]/g, '');  return (<div className="ev-sc"><div className="ev-sv">{started ? n + sfx : val}</div><div className="ev-sl">{label}</div></div>);
-}
-
 export default function EVSoftware() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [ss, setSs] = useState(false);
   const [vis, setVis] = useState(new Set());
   const [vSk, setVSk] = useState([]); const [vEn, setVEn] = useState([]); const [vWh, setVWh] = useState([]); const [vTe, setVTe] = useState([]); const [vSt, setVSt] = useState([]);
-  const stR = useRef(null); const secR = useRef({});
+  const secR = useRef({});
   const skR = useRef(null); const enR = useRef(null); const whR = useRef(null); const teR = useRef(null); const stGr = useRef(null);
-  useEffect(() => { if (!stR.current) return; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setSs(true); o.disconnect(); } }, { threshold: 0.4 }); o.observe(stR.current); return () => o.disconnect(); }, []);
   useEffect(() => {
     const pairs = [[skR, SOLUTIONS.length, setVSk], [enR, 3, setVEn], [whR, WHY.length, setVWh], [teR, 3, setVTe], [stGr, TECH_STACK.length, setVSt]];
     const obs = pairs.map(([ref, count, setter]) => { if (!ref.current) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { Array.from({ length: count }, (_, i) => setTimeout(() => setter(p => p.includes(i) ? p : [...p, i]), i * 75)); o.disconnect(); } }, { threshold: 0.05 }); o.observe(ref.current); return o; });
@@ -139,22 +129,6 @@ export default function EVSoftware() {
           .ev-o1{width:800px;height:800px;background:radial-gradient(circle,rgba(10,61,46,.16) 0%,transparent 70%);top:-220px;right:-200px}
           .ev-o2{width:700px;height:700px;background:radial-gradient(circle,rgba(3,105,161,.12) 0%,transparent 70%);bottom:0;left:-200px}
           .ev-o3{width:480px;height:480px;background:radial-gradient(circle,rgba(217,119,6,.08) 0%,transparent 70%);top:42%;left:-90px}}.ev-bc li::after{content:'/';opacity:.45}.ev-bc li:last-child::after{display:none};text-decoration:none}
-          .ev-hero{position:relative;z-index:2;text-align:center;max-width:940px;margin:0 auto;padding:44px 40px 28px}
-          .ev-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:${ac2};margin-bottom:14px}
-          .ev-hero h1{font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .ev-desc{font-size:16px;color:${txt2};line-height:1.65;max-width:720px;margin:0 auto 22px}
-          .ev-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-bottom:24px}
-          .ev-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:5px 13px;font-size:12px;font-weight:600;color:${txt};box-shadow:0 2px 8px rgba(10,61,46,.07)}
-          .ev-dot{width:7px;height:7px;border-radius:50%;background:${ac2};flex-shrink:0}
-          .ev-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .ev-p{display:inline-block;padding:13px 34px;background:${ac};color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(10,61,46,.28)}
-          .ev-p:hover{background:${txt};transform:translateY(-2px)}
-          .ev-g{display:inline-block;padding:13px 34px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:${txt};font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .ev-g:hover{background:rgba(255,255,255,.85);border-color:rgba(10,61,46,.5);transform:translateY(-2px)}
-          .ev-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:920px;margin:26px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(10,61,46,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .ev-sc{padding:18px 16px;text-align:center;border-right:1px solid rgba(10,61,46,.10)}.ev-sc:last-child{border-right:none}
-          .ev-sv{font-size:28px;font-weight:900;color:${ac2};letter-spacing:-.5px;line-height:1}
-          .ev-sl{font-size:11px;color:${txt2};font-weight:500;margin-top:5px}
           .ev-sec{padding:72px 40px;position:relative;z-index:1}
           .ev-sec-alt{background:rgba(236,253,245,.55);border-top:1px solid rgba(10,61,46,.08);border-bottom:1px solid rgba(10,61,46,.08)}
           .ev-in{max-width:1300px;margin:0 auto}
@@ -265,8 +239,8 @@ export default function EVSoftware() {
           .ev-rb{background:rgba(12,74,110,.09);border-color:rgba(12,74,110,.28);color:#0c4a6e}
           .ev-rc{background:rgba(120,53,15,.09);border-color:rgba(120,53,15,.28);color:#78350f}
           .ev-rd{background:rgba(45,27,105,.09);border-color:rgba(45,27,105,.28);color:#2d1b69}
-          @media(max-width:1024px){.ev-hero h1,.ev-sh,.ev-fq h2{font-size:34px}.ev-sk-g{grid-template-columns:repeat(2,1fr)}.ev-tec-g{grid-template-columns:repeat(2,1fr)}.ev-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.ev-en.feat{transform:none}.ev-en.feat.ev-ev2{transform:none}.ev-en.feat.ev-ev2:hover{transform:translateY(-4px)}.ev-wy-g{grid-template-columns:repeat(2,1fr)}.ev-tg2{grid-template-columns:1fr}.ev-ct-g{grid-template-columns:1fr}}
-          @media(max-width:768px){.ev-bc,.ev-hero,.ev-sec,.ev-ct,.ev-fq,.ev-rel{padding-left:20px;padding-right:20px}.ev-hero{padding-top:28px;padding-bottom:16px}.ev-hero h1{font-size:26px}.ev-stats{grid-template-columns:1fr 1fr}.ev-sc:nth-child(2){border-right:none}.ev-sc:nth-child(3),.ev-sc:nth-child(4){border-top:1px solid rgba(10,61,46,.10)}.ev-sc:nth-child(4){border-right:none}.ev-sk-g,.ev-tec-g,.ev-wy-g{grid-template-columns:1fr}.ev-fr{grid-template-columns:1fr}.ev-cth{font-size:26px}}
+          @media(max-width:1024px){.ev-sh,.ev-fq h2{font-size:34px}.ev-sk-g{grid-template-columns:repeat(2,1fr)}.ev-tec-g{grid-template-columns:repeat(2,1fr)}.ev-en-g{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}.ev-en.feat{transform:none}.ev-en.feat.ev-ev2{transform:none}.ev-en.feat.ev-ev2:hover{transform:translateY(-4px)}.ev-wy-g{grid-template-columns:repeat(2,1fr)}.ev-tg2{grid-template-columns:1fr}.ev-ct-g{grid-template-columns:1fr}}
+          @media(max-width:768px){.ev-bc,.ev-sec,.ev-ct,.ev-fq,.ev-rel{padding-left:20px;padding-right:20px}.ev-sk-g,.ev-tec-g,.ev-wy-g{grid-template-columns:1fr}.ev-fr{grid-template-columns:1fr}.ev-cth{font-size:26px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
@@ -292,14 +266,19 @@ export default function EVSoftware() {
 </Head>
       <div className="ev-page">
         <div className="ev-orb ev-o1" /><div className="ev-orb ev-o2" /><div className="ev-orb ev-o3" />
-        <section className="ev-hero">
-          <span className="ev-ey">Electric Vehicle Industry</span>
-          <h1>EV Software Development Company - OCPP Charging, Fleet Electrification & Energy Management</h1>
-          <p className="ev-desc">Custom electric vehicle and clean energy software - OCPP 1.6 and 2.0.1 charge station management, EV driver apps, fleet electrification platforms, energy management systems, battery analytics, V2G integration, and OCPI roaming. 45+ EV projects. 15+ years.</p>
-          <div className="ev-tr">{['OCPP 1.6 & 2.0.1 CSMS','EV Driver App','Fleet Electrification','Energy Management','V2G Integration'].map(b => (<div className="ev-badge" key={b}><span className="ev-dot" />{b}</div>))}</div>
-          <div className="ev-ctas"><Link href="#contact" className="ev-p">Discuss Your EV Project</Link><Link href="#solutions" className="ev-g">View Solutions →</Link></div>
-        </section>
-        <div className="ev-stats" ref={stR}>{[['45+','EV & Clean Energy Projects'],['15+','Years Dev Experience'],['31%','Avg Charging Cost Reduction'],['99.9%','Platform Uptime SLA']].map(([v, l]) => <StatItem key={l} label={l} val={v} started={ss} />)}</div>
+        <ServiceHero
+          eyebrow="Electric Vehicle Industry · OCPP · Fleet Electrification"
+          title={<>EV Software Development Company - <AuroraText>OCPP Charging, Fleet Electrification &amp; Energy Management</AuroraText></>}
+          subtext="Custom electric vehicle and clean energy software - OCPP 1.6 and 2.0.1 charge station management, EV driver apps, fleet electrification platforms, energy management systems, battery analytics, V2G integration, and OCPI roaming. 45+ EV projects. 15+ years."
+          primaryCta={{ label: 'Discuss Your EV Project', href: '#contact' }}
+          secondaryCta={{ label: 'View Solutions', href: '#solutions' }}
+          stats={[
+            { label: 'EV & Clean Energy Projects', value: '45', suffix: '+' },
+            { label: 'Years Dev Experience', value: '15', suffix: '+' },
+            { label: 'Avg Charging Cost Reduction', value: '31', suffix: '%' },
+            { label: 'Platform Uptime SLA', value: '99', suffix: '.9%' },
+          ]}
+        />
         <section id="solutions" className="ev-sec"><div className="ev-in"><div className={`ev-rv${vis.has('sk') ? ' ev-ok' : ''}`} ref={el => { secR.current['sk'] = el; }}><span className="ev-sey">EV Solutions</span><h2 className="ev-sh">What We Build for EV & Clean Energy</h2><p className="ev-sd">CSMS, EV driver apps, fleet electrification, energy management, charge network operator back-office, battery analytics, V2G, EV telematics, OCPI roaming, and EV analytics dashboards.</p></div><div className="ev-sk-g" ref={skR}>{visS.map((s, i) => (<div key={s.n} className={`ev-card${s.feat ? ' feat' : ''}${vSk.includes(i) ? ' ev-cv' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}><span className="ev-cn">{s.n}</span><h3>{s.title}</h3><p>{s.desc}</p></div>))}</div>{SOLUTIONS.length > 6 && <div className="ev-sm"><button className="ev-bm" onClick={() => setShowAll(p => !p)}>{showAll ? 'Show fewer ↑' : `Show all ${SOLUTIONS.length} solutions ↓`}</button></div>}</div></section>
         <section className="ev-sec ev-sec-alt"><div className="ev-in"><div className={`ev-rv${vis.has('stk') ? ' ev-ok' : ''}`} ref={el => { secR.current['stk'] = el; }}><span className="ev-sey">Technology Stack</span><h2 className="ev-sh">EV Technology We Use</h2><p className="ev-sd">OCPP/OCPI protocols, WebSocket CSMS architecture, IoT telemetry, React Native EV apps, Mapbox for charge maps, and the full clean energy tech stack.</p></div><div className="ev-tec-g" ref={stGr}>{TECH_STACK.map((g, i) => (<div key={g.group} className={`ev-tc2${vSt.includes(i) ? ' ev-sv2' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}><div className="ev-tg" style={{ color: g.color, borderBottomColor: g.color + '33' }}>{g.group}</div><div className="ev-pills">{g.items.map(it => <span key={it} className="ev-pill" style={{ color: g.color, background: g.color + '12', borderColor: g.color + '30' }}>{it}</span>)}</div></div>))}</div></div></section>
         <section className="ev-sec"><div className="ev-in"><div className={`ev-rv${vis.has('eng') ? ' ev-ok' : ''}`} ref={el => { secR.current['eng'] = el; }}><span className="ev-sey">Engagement Models</span><h2 className="ev-sh">How We Work with EV Companies</h2><p className="ev-sd">Full charge network platform, electric fleet management, or energy management system - structured for the operational nature of EV infrastructure.</p></div><div className="ev-en-g" ref={enR}>{ENGAGEMENT.map((m, i) => (<div key={m.id} className={`ev-en${m.feat ? ' feat' : ''}${vEn.includes(i) ? ' ev-ev2' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><span className="ev-en-b" style={{ color: m.bc, borderColor: m.bc + '44', background: m.bc + '14' }}>{m.badge}</span><div className="ev-en-i"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke={m.feat ? '#D97706' : ac2} strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d={m.icon} /></svg></div><div className="ev-en-n">{m.name}</div><div className="ev-en-h">{m.headline}</div><div className="ev-en-d">{m.desc}</div><div className="ev-en-ll">Best for</div><ul className="ev-en-li">{m.best.map(b => <li key={b}>{b}</li>)}</ul><span className="ev-en-tl">{m.tl}</span><Link href="#contact" className="ev-en-a">Get a free estimate →</Link></div>))}</div></div></section>

@@ -2,6 +2,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { AuroraText } from '../../components/AuroraText';
+import ServiceHero from '../../components/sections/ServiceHero';
 
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -88,25 +90,13 @@ const FAQS = [
   { q: 'What is the ROI of offshore team transition?', a: 'A 5-person senior development team costs $1,100,000–$1,500,000/year all-in (US market). The equivalent offshore team through 1Solutions: $200,000–$350,000/year. Annual saving: $750,000–$1,150,000. Transition cost: $50,000–$120,000 one-time. Payback period: 1–2 months of savings.' },
 ];
 
-function useCountUp(target, duration = 1800, start = false) {
-  const [count, setCount] = useState(0);
-  useEffect(() => { if (!start) return; const num = parseInt(target.replace(/\D/g, ''), 10); if (!num) return; let t0 = null; const step = ts => { if (!t0) t0 = ts; const p = Math.min((ts - t0) / duration, 1); setCount(Math.floor((1 - Math.pow(1 - p, 3)) * num)); if (p < 1) requestAnimationFrame(step); }; requestAnimationFrame(step); }, [start, target, duration]);
-  return count;
-}
-function StatItem({ label, val, started }) {
-  const num = useCountUp(val, 1800, started);
-  const suffix = val.replace(/[\d,]/g, '');  return (<div className="sco-sc"><div className="sco-sv">{started ? (val.includes(',') ? num.toLocaleString() : num) + suffix : val}</div><div className="sco-sl">{label}</div></div>);
-}
-
 export default function SoftwareCostOptimization() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
-  const [ss, setSs] = useState(false);
   const [vis, setVis] = useState(new Set());
   const [vSk, setVSk] = useState([]); const [vEn, setVEn] = useState([]); const [vWh, setVWh] = useState([]); const [vTe, setVTe] = useState([]); const [vSt, setVSt] = useState([]);
-  const stR = useRef(null); const secR = useRef({});
+  const secR = useRef({});
   const skR = useRef(null); const enR = useRef(null); const whR = useRef(null); const teR = useRef(null); const stGr = useRef(null);
-  useEffect(() => { if (!stR.current) return; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setSs(true); o.disconnect(); } }, { threshold: 0.4 }); o.observe(stR.current); return () => o.disconnect(); }, []);
   useEffect(() => { const pairs = [[skR, SERVICES.length, setVSk],[enR, 3, setVEn],[whR, WHY_CARDS.length, setVWh],[teR, 3, setVTe],[stGr, TECH_STACK.length, setVSt]]; const obs = pairs.map(([ref, count, setter]) => { if (!ref.current) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { Array.from({ length: count }, (_, i) => setTimeout(() => setter(p => p.includes(i) ? p : [...p, i]), i * 80)); o.disconnect(); } }, { threshold: 0.05 }); o.observe(ref.current); return o; }); return () => obs.forEach(o => o?.disconnect()); }, []);
   useEffect(() => { const ks = Object.keys(secR.current); const obs = ks.map(k => { const el = secR.current[k]; if (!el) return null; const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVis(p => new Set([...p, k])); o.disconnect(); } }, { threshold: 0.1 }); o.observe(el); return o; }); return () => obs.forEach(o => o?.disconnect()); }, []);
   const visServices = showAll ? SERVICES : SERVICES.slice(0, 6);
@@ -154,31 +144,6 @@ export default function SoftwareCostOptimization() {
 
 
 
-          .sco-hero{position:relative;z-index:2;text-align:center;max-width:960px;margin:0 auto;padding:44px 40px 32px}
-          .sco-ey{display:block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#166534;margin-bottom:14px}
-          .sco-hero h1{font-size:50px;font-weight:900;line-height:1.09;letter-spacing:-1.5px;margin-bottom:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-          .sco-desc{font-size:16px;color:#14532d;line-height:1.65;max-width:740px;margin:0 auto 24px}
-          .sco-tr{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:26px}
-          .sco-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.60);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.85);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:#052e16;box-shadow:0 2px 8px rgba(5,46,22,.07)}
-          .sco-dot{width:7px;height:7px;border-radius:50%;background:#166534;flex-shrink:0}
-          .sco-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-          .sco-p{display:inline-block;padding:14px 36px;background:#166534;color:#fff;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s;box-shadow:0 6px 24px rgba(22,101,52,.28)}
-          .sco-p:hover{background:#052e16;transform:translateY(-2px)}
-          .sco-g{display:inline-block;padding:14px 36px;background:rgba(255,255,255,.55);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.85);border-radius:50px;color:#052e16;font-weight:700;font-size:15px;text-decoration:none;transition:all .25s}
-          .sco-g:hover{background:rgba(255,255,255,.85);border-color:rgba(22,101,52,.5);transform:translateY(-2px)}
-          .sco-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);max-width:940px;margin:28px auto 0;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);box-shadow:0 4px 24px rgba(5,46,22,.08),inset 0 1px 0 rgba(255,255,255,.95)}
-          .sco-sc{padding:18px 16px;text-align:center;border-right:1px solid rgba(5,46,22,.10)}
-          .sco-sc:last-child{border-right:none}
-          .sco-sv{font-size:28px;font-weight:900;color:#166534;letter-spacing:-.5px;line-height:1}
-          .sco-sl{font-size:11px;color:#14532d;font-weight:500;margin-top:5px}
-          .sco-logos{position:relative;z-index:2;padding:24px 40px 52px;display:flex;flex-direction:column;align-items:center;gap:14px}
-          .sco-ll{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#14532d}
-          .sco-lw{width:100%;overflow:hidden}
-          .sco-lt{display:flex;align-items:center;gap:60px;width:max-content;animation:sco-mq 28s linear infinite}
-          .sco-lt:hover{animation-play-state:paused}
-          @keyframes sco-mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-          .sco-cl{height:24px;width:auto;max-width:110px;object-fit:contain;filter:grayscale(100%);opacity:.45;transition:opacity .25s,filter .25s}
-          .sco-cl:hover{opacity:.85;filter:grayscale(0%)}
           .sco-sey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:10px;display:block}
           .sco-st{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .sco-sd{font-size:15px;color:#14532d;line-height:1.7}
@@ -325,8 +290,8 @@ export default function SoftwareCostOptimization() {
           .sco-c{background:rgba(14,116,144,.09);border-color:rgba(14,116,144,.28);color:#155e75}
           .sco-o{background:rgba(180,83,9,.09);border-color:rgba(180,83,9,.28);color:#92400e}
           .sco-a{background:rgba(190,18,60,.09);border-color:rgba(190,18,60,.28);color:#9f1239}
-          @media(max-width:1024px){.sco-hero h1,.sco-st,.sco-fq-s h2{font-size:36px}.sco-sk-g{grid-template-columns:repeat(2,1fr)}.sco-tec-g{grid-template-columns:repeat(2,1fr)}.sco-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.sco-en-c.feat{transform:none}.sco-en-c.feat.sco-ev{transform:none}.sco-en-c.feat.sco-ev:hover{transform:translateY(-4px)}.sco-wy-g{grid-template-columns:repeat(2,1fr)}.sco-tg2{grid-template-columns:1fr}.sco-ct-g{grid-template-columns:1fr}}
-          @media(max-width:768px){.sco-bc,.sco-hero,.sco-sk-s,.sco-tec-s,.sco-en-s,.sco-pr-s,.sco-te-s,.sco-wy-s,.sco-fq-s,.sco-rel{padding-left:20px;padding-right:20px}.sco-hero{padding-top:28px;padding-bottom:20px}.sco-hero h1{font-size:26px;letter-spacing:-.3px}.sco-stats{grid-template-columns:1fr 1fr}.sco-sc:nth-child(2){border-right:none}.sco-sc:nth-child(3),.sco-sc:nth-child(4){border-top:1px solid rgba(5,46,22,.10)}.sco-sc:nth-child(4){border-right:none}.sco-sk-g,.sco-tec-g,.sco-wy-g{grid-template-columns:1fr}.sco-fr{grid-template-columns:1fr}.sco-ctt{font-size:28px}.sco-st{font-size:28px}.sco-ct-s{padding:48px 20px}.sco-logos{padding-left:20px;padding-right:20px}}
+          @media(max-width:1024px){.sco-st,.sco-fq-s h2{font-size:36px}.sco-sk-g{grid-template-columns:repeat(2,1fr)}.sco-tec-g{grid-template-columns:repeat(2,1fr)}.sco-en-g{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.sco-en-c.feat{transform:none}.sco-en-c.feat.sco-ev{transform:none}.sco-en-c.feat.sco-ev:hover{transform:translateY(-4px)}.sco-wy-g{grid-template-columns:repeat(2,1fr)}.sco-tg2{grid-template-columns:1fr}.sco-ct-g{grid-template-columns:1fr}}
+          @media(max-width:768px){.sco-bc,.sco-sk-s,.sco-tec-s,.sco-en-s,.sco-pr-s,.sco-te-s,.sco-wy-s,.sco-fq-s,.sco-rel{padding-left:20px;padding-right:20px}.sco-sk-g,.sco-tec-g,.sco-wy-g{grid-template-columns:1fr}.sco-fr{grid-template-columns:1fr}.sco-ctt{font-size:28px}.sco-st{font-size:28px}.sco-ct-s{padding:48px 20px}}
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         `}
@@ -352,15 +317,19 @@ export default function SoftwareCostOptimization() {
 </Head>
       <div className="sco-page">
         <div className="sco-orb sco-o1" /><div className="sco-orb sco-o2" /><div className="sco-orb sco-o3" />
-        <section className="sco-hero">
-          <span className="sco-ey">Cost Optimization</span>
-          <h1>Software Development Cost Optimization - Reduce Engineering Spend by 40–65%</h1>
-          <p className="sco-desc">Systematically reduce software development costs through offshore team transition (60–70% labour saving), cloud infrastructure optimisation (20–40% cloud bill reduction), technical debt elimination, test automation ROI, and process efficiency - without slowing delivery. Free cost audit with quantified savings roadmap.</p>
-          <div className="sco-tr">{['Offshore Transition - 60–70% Labour Saving','Cloud Cost Reduction - 20–40%','Technical Debt Elimination','Test Automation ROI','Free Cost Audit'].map(b => (<div className="sco-badge" key={b}><span className="sco-dot" />{b}</div>))}</div>
-          <div className="sco-ctas"><Link href="#contact" className="sco-p">Get Your Free Cost Audit</Link><Link href="#engagement" className="sco-g">View Engagement Options →</Link></div>
-        </section>
-        <div className="sco-stats" ref={stR}>{[['40-65%','Typical Cost Reduction'],['20-40%','Cloud Bill Saving'],['60-70%','Labour Cost Saving'],['6mo','Full Savings Realised']].map(([v, l]) => (<StatItem key={l} label={l} val={v} started={ss} />))}</div>
-        <div className="sco-logos"><span className="sco-ll">Engineering Cost Reduction Delivered for Companies in US, UK, Australia</span><div className="sco-lw"><div className="sco-lt">{[['/logo/Indian_Express_Logo_full.png','Indian Express'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon'],['/logo/Uniphore.jpg','Uniphore'],['/logo/ICCoLogo.png','ICC'],['/logo/Honor_Logo_(2020).svg.png','Honor'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv'],['/logo/Indian_Express_Logo_full.png','Indian Express 2'],['/logo/Verizon_2015_logo_-vector.svg.png','Verizon 2'],['/logo/Uniphore.jpg','Uniphore 2'],['/logo/ICCoLogo.png','ICC 2'],['/logo/Honor_Logo_(2020).svg.png','Honor 2'],['/logo/Zuari-Finserv-logo-new.png','Zuari Finserv 2']].map(([src, alt]) => (<img key={alt} src={src} alt={alt.replace(/ \d$/, '')} className="sco-cl" />))}</div></div></div>
+        <ServiceHero
+          eyebrow="Cost Optimization · Offshore Transition · Cloud Savings"
+          title={<>Software Development Cost Optimization - <AuroraText>Reduce Engineering Spend by 40–65%</AuroraText></>}
+          subtext="Systematically reduce software development costs through offshore team transition (60–70% labour saving), cloud infrastructure optimisation (20–40% cloud bill reduction), technical debt elimination, test automation ROI, and process efficiency - without slowing delivery. Free cost audit with quantified savings roadmap."
+          primaryCta={{ label: 'Get Your Free Cost Audit', href: '#contact' }}
+          secondaryCta={{ label: 'View Engagement Options', href: '#engagement' }}
+          stats={[
+            { label: 'Typical Cost Reduction', value: '5', prefix: '40-6', suffix: '%' },
+            { label: 'Cloud Bill Saving', value: '0', prefix: '20-4', suffix: '%' },
+            { label: 'Labour Cost Saving', value: '0', prefix: '60-7', suffix: '%' },
+            { label: 'Full Savings Realised', value: '6', suffix: 'mo' },
+          ]}
+        />
         <section className="sco-sk-s" aria-labelledby="sco-sk-h"><div className="sco-in"><div className={`sco-rv${vis.has('sk') ? ' sco-ok' : ''}`} ref={el => { secR.current['sk'] = el; }}><span className="sco-sey">Cost Optimization Services</span><h2 id="sco-sk-h" className="sco-st">How We Reduce Your Software Development Costs</h2><p className="sco-sd" style={{ maxWidth: 720 }}>Offshore team transition, cloud optimisation, technical debt remediation, test automation, process automation, tooling audit, architecture rationalisation, vendor renegotiation, sprint efficiency, and comprehensive cost audits.</p></div><div className="sco-sk-g" ref={skR}>{visServices.map((s, i) => (<div key={s.n} className={`sco-sk-c${s.feat ? ' feat' : ''}${vSk.includes(i) ? ' sco-cv' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}><span className="sco-sk-n">{s.n}</span><h3>{s.title}</h3><p>{s.desc}</p></div>))}</div>{SERVICES.length > 6 && (<div className="sco-sm"><button className="sco-bm" onClick={() => setShowAll(p => !p)}>{showAll ? 'Show fewer ↑' : `Show all ${SERVICES.length} services ↓`}</button></div>)}</div></section>
         <section className="sco-tec-s" aria-labelledby="sco-tec-h"><div className="sco-in"><div className={`sco-rv${vis.has('stk') ? ' sco-ok' : ''}`} ref={el => { secR.current['stk'] = el; }}><span className="sco-sey">Tools & Platforms</span><h2 id="sco-tec-h" className="sco-st">Tools We Use to Optimise Your Engineering Costs</h2><p className="sco-sd" style={{ maxWidth: 680 }}>AWS Cost Explorer, Infracost, Terraform, Cypress, SonarQube, GitHub Actions, Prometheus, Grafana, Structurizr, Jira/Linear DORA metrics, and cloud cost management platforms.</p></div><div className="sco-tec-g" ref={stGr}>{TECH_STACK.map((grp, i) => (<div key={grp.group} className={`sco-tec-c${vSt.includes(i) ? ' sco-sv2' : ''}`} style={{ transitionDelay: `${i * 60}ms` }}><div className="sco-tg" style={{ color: grp.color, borderBottomColor: grp.color + '33' }}>{grp.group}</div><div className="sco-pills">{grp.items.map(item => <span key={item} className="sco-pill" style={{ color: grp.color, background: grp.color + '12', borderColor: grp.color + '30' }}>{item}</span>)}</div></div>))}</div></div></section>
         <section id="engagement" className="sco-en-s" aria-labelledby="sco-en-h"><div className="sco-in"><div className={`sco-rv${vis.has('eng') ? ' sco-ok' : ''}`} ref={el => { secR.current['eng'] = el; }}><span className="sco-sey">Engagement Options</span><h2 id="sco-en-h" className="sco-st">Cost Optimization Engagement Options</h2><p className="sco-sd" style={{ maxWidth: 680 }}>Start with a 2–3 week cost audit, target a specific quick win (cloud), or commission a full 6-month optimisation programme across all cost levers.</p></div><div className="sco-en-g" ref={enR}>{ENGAGEMENT_MODELS.map((m, i) => (<div key={m.id} className={`sco-en-c${m.feat ? ' feat' : ''}${vEn.includes(i) ? ' sco-ev' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}><span className="sco-en-b" style={{ color: m.badgeColor, borderColor: m.badgeColor + '44', background: m.badgeColor + '14' }}>{m.badge}</span><div className="sco-en-i"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke={m.feat ? '#D97706' : '#052e16'} strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d={m.icon} /></svg></div><div className="sco-en-n">{m.name}</div><div className="sco-en-h">{m.headline}</div><div className="sco-en-d">{m.desc}</div><div className="sco-en-ll">Best for</div><ul className="sco-en-li">{m.bestFor.map(b => <li key={b}>{b}</li>)}</ul><div className="sco-en-p"><strong>Process:</strong> {m.process}<br /><span className="sco-en-tl">{m.timeline}</span></div><Link href="#contact" className="sco-en-a">Get a free estimate →</Link></div>))}</div></div></section>
