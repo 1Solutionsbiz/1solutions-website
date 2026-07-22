@@ -233,7 +233,7 @@ export default async function handler(req, res) {
         <p style="font-size:15px;margin:0;">
           <a href="https://www.1solutions.biz/open-positions/" style="color:#1a1aa8;text-decoration:underline;">View open positions</a>
           &nbsp;&nbsp;|&nbsp;&nbsp;
-          <a href="https://www.1solutions.biz/portfolio/" style="color:#1a1aa8;text-decoration:underline;">View our portfolio</a>
+          <a href="https://www.1solutions.biz/contact-us/" style="color:#1a1aa8;text-decoration:underline;">Contact Us</a>
         </p>
       </td>
     </tr>
