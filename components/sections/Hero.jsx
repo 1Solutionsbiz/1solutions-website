@@ -289,7 +289,7 @@ export default function Hero() {
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 2 }}>
 
           <h1 className="hero-stagger-1" style={{ fontSize: 'clamp(36px, 4.5vw, 62px)', fontWeight: 900, lineHeight: 1.1, marginBottom: '20px', letterSpacing: '-1.5px', color: '#fff' }}>
-            We Engineer Products.<br />We Drive Growth.
+            We Engineer Products.<br /><AuroraText>We Drive Growth.</AuroraText>
           </h1>
 
           <p className="hero-stagger-2 hero-desc" style={{
