@@ -46,6 +46,18 @@ const stories = [
     tags: ['WordPress', 'Custom Theme', 'UI/UX Design'],
     img: '/images/work-skinlaser.png',
   },
+  {
+    company: 'Parfum France', industry: 'Beauty & Fragrance / eCommerce',
+    desc: 'Premium Shopify fragrance boutique bringing French parfumerie to a global audience — immersive design with rich product storytelling and curated gift sets.',
+    tags: ['Shopify', 'Liquid', 'UI/UX Design'],
+    img: '/images/portfolio/parfumfrance.jpg',
+  },
+  {
+    company: 'VNS Group of Institutions', industry: 'Education',
+    desc: 'Comprehensive website for a multi-faculty institution in Bhopal — covering Engineering, Pharmacy, Management, Nursing, and Education across a 50+ acre campus established in 1994.',
+    tags: ['WordPress', 'Custom Theme', 'UI/UX Design'],
+    img: '/images/portfolio/vns.webp',
+  },
 ]
 
 const growthStats = [
@@ -118,12 +130,9 @@ export default function WhyUs() {
         .pf-explore:hover { border-color: #FE9700; color: #FE9700; }
 
         /* Bento rows */
-        /* 2fr/1fr + a vertically-stacked pair — heights derive from each card's own
-           aspect-ratio (never from grid stretch) so landscape screenshots never get
-           squeezed into a portrait box and cropped down to a sliver. */
-        .pf-row1 { display: grid; grid-template-columns: 2fr 1fr; gap: 10px; margin-bottom: 10px; align-items: start; }
-        .pf-row1-stack { display: flex; flex-direction: column; gap: 10px; }
-        .pf-row2 { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
+        /* Uniform 3×3 grid — every cell is the same rectangular shape, so each
+           screenshot sits in a box matching its own aspect ratio (no stretch, no crop). */
+        .pf-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 
         /* Card base — browser-chrome frame so crops never eat logos/headlines on the sides */
         .pf-card { position: relative; display: flex; flex-direction: column; border-radius: 14px; overflow: hidden; background: #0b1530; border: 1px solid rgba(255,255,255,.08); box-shadow: 0 8px 24px rgba(0,0,0,.25); transition: transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s; }
@@ -162,21 +171,16 @@ export default function WhyUs() {
 
         /* Responsive */
         @media (max-width:1100px) {
-          .pf-row1 { grid-template-columns: 1fr; }
-          .pf-row1-stack { flex-direction: row; }
-          .pf-row1-stack .pf-card { flex: 1; }
-          .pf-row2 { grid-template-columns: repeat(2,1fr); }
+          .pf-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width:768px) {
           .pf-section { padding: 64px 24px; }
           .pf-header { flex-direction: column; align-items: flex-start; }
-          .pf-row1-stack { flex-direction: column; }
-          .pf-row2 { grid-template-columns: 1fr 1fr; }
           .whyus-growth-sec { padding: 64px 24px; }
           .whyus-facts-layout { grid-template-columns: 1fr; gap: 32px; }
         }
-        @media (max-width:500px) {
-          .pf-row2 { grid-template-columns: 1fr; }
+        @media (max-width:560px) {
+          .pf-grid { grid-template-columns: 1fr; }
           .whyus-stats-grid { grid-template-columns: 1fr; }
           .whyus-stat-circle { width: 110px !important; height: 110px !important; }
           .whyus-stat-val { font-size: 36px !important; }
@@ -202,19 +206,10 @@ export default function WhyUs() {
             <Link href="/case-studies" className="pf-explore">Explore All Projects →</Link>
           </div>
 
-          {/* Row 1: featured + a stacked pair (heights self-derive, never stretched to match) */}
-          <div className="pf-row1">
-            <PortfolioCard story={stories[0]} index={1} />
-            <div className="pf-row1-stack">
-              <PortfolioCard story={stories[1]} index={2} />
-              <PortfolioCard story={stories[2]} index={3} />
-            </div>
-          </div>
-
-          {/* Row 2: 4 equal */}
-          <div className="pf-row2">
-            {stories.slice(3).map((s, i) => (
-              <PortfolioCard key={s.company} story={s} index={i + 4} />
+          {/* 3×3 grid of uniform rectangular cards */}
+          <div className="pf-grid">
+            {stories.map((s, i) => (
+              <PortfolioCard key={s.company} story={s} index={i + 1} />
             ))}
           </div>
 
