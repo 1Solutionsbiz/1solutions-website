@@ -4,6 +4,8 @@ import { useEffect } from 'react';
 import { Inter } from 'next/font/google';
 import BlogHeader from '../components/blog/BlogHeader';
 import BlogFooter from '../components/blog/BlogFooter';
+import WhatsAppButton from '../components/WhatsAppButton';
+import ExitIntentPopup from '../components/ExitIntentPopup';
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
 const RC_SRC = 'https://www.google.com/recaptcha/api.js?render=6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs';
@@ -75,6 +77,8 @@ export default function App({ Component, pageProps }) {
         <Component {...pageProps} />
       </main>
       <BlogFooter />
+      <WhatsAppButton />
+      <ExitIntentPopup />
     </>
   );
 }

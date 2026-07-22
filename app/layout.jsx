@@ -3,6 +3,8 @@ import '../styles/globals.css'
 import '../styles/blog.css'
 import Header from '@/components/blog/BlogHeader'
 import Footer from '@/components/blog/BlogFooter'
+import WhatsAppButton from '@/components/WhatsAppButton'
+import ExitIntentPopup from '@/components/ExitIntentPopup'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' })
 
@@ -29,6 +31,8 @@ export default function RootLayout({ children }) {
         <Header />
         <main>{children}</main>
         <Footer />
+        <WhatsAppButton />
+        <ExitIntentPopup />
       </body>
     </html>
   )
