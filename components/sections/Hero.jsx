@@ -1,7 +1,6 @@
 'use client'
 import Link from 'next/link'
 import { useState, useEffect, useRef } from 'react'
-import AuroraText from '../ui/AuroraText'
 
 const metrics = [
   { value: '500+', label: 'Projects Delivered' },
@@ -36,6 +35,34 @@ const BLOBS = [
 // ASCII field config (AsciiHero "bare" variant settings)
 const CHAR_RAMP = " .`'\",:;Il!i><~+_-?][}{z1)(|/tfjrxnuvczXYUJCLTQ0OZmwqpdbkhaos*#MW&8%B@$"
 const PALETTE   = ['#a78bfa', '#ec8499', '#67e8f9', '#fbbf24']
+
+function TypewriterLine({ text }) {
+  const measureRef = useRef(null)
+  const [width, setWidth] = useState(null)
+
+  useEffect(() => {
+    const measure = () => {
+      if (measureRef.current) setWidth(measureRef.current.offsetWidth)
+    }
+    measure()
+    window.addEventListener('resize', measure)
+    return () => window.removeEventListener('resize', measure)
+  }, [])
+
+  return (
+    <>
+      <span ref={measureRef} aria-hidden="true" style={{ position: 'absolute', visibility: 'hidden', whiteSpace: 'nowrap', pointerEvents: 'none' }}>
+        {text}
+      </span>
+      <span
+        className="hero-typewriter"
+        style={width ? { '--tw': `${width}px` } : { opacity: 0 }}
+      >
+        {text}
+      </span>
+    </>
+  )
+}
 
 export default function Hero() {
   const [priHov, setPriHov] = useState(false)
@@ -213,6 +240,25 @@ export default function Hero() {
           0%   { transform: translateX(0); }
           100% { transform: translateX(-50%); }
         }
+        @keyframes heroTypeReveal {
+          from { width: 0; }
+          to   { width: var(--tw); }
+        }
+        @keyframes heroCaretBlink {
+          0%, 100% { border-color: rgba(255,255,255,0.75); }
+          50%      { border-color: transparent; }
+        }
+        .hero-typewriter {
+          display: inline-block;
+          overflow: hidden;
+          white-space: nowrap;
+          vertical-align: bottom;
+          border-right: 3px solid rgba(255,255,255,0.75);
+          width: 0;
+          animation:
+            heroTypeReveal 1.3s steps(17, end) 1s both,
+            heroCaretBlink 0.85s step-end infinite;
+        }
         .hero-stagger-1 { animation: heroStagger 0.8s cubic-bezier(0.22,1,0.36,1) 0.08s both; }
         .hero-stagger-2 { animation: heroStagger 0.8s cubic-bezier(0.22,1,0.36,1) 0.22s both; }
         .hero-stagger-3 { animation: heroStagger 0.8s cubic-bezier(0.22,1,0.36,1) 0.37s both; }
@@ -236,6 +282,7 @@ export default function Hero() {
             animation: none !important; opacity: 1 !important; filter: none !important; transform: none !important;
           }
           .hero-logos-track { animation: none !important; }
+          .hero-typewriter { animation: none !important; width: var(--tw, auto) !important; opacity: 1 !important; border-right: none !important; }
         }
         @media (max-width: 768px) {
           .hero-section { padding: 64px 20px 56px !important; }
@@ -289,7 +336,7 @@ export default function Hero() {
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 2 }}>
 
           <h1 className="hero-stagger-1" style={{ fontSize: 'clamp(36px, 4.5vw, 62px)', fontWeight: 900, lineHeight: 1.1, marginBottom: '20px', letterSpacing: '-1.5px', color: '#fff' }}>
-            We Engineer Products.<br /><AuroraText>We Drive Growth.</AuroraText>
+            We Engineer Products.<br /><TypewriterLine text="We Drive Growth." />
           </h1>
 
           <p className="hero-stagger-2 hero-desc" style={{
