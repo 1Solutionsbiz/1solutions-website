@@ -36,30 +36,80 @@ const BLOBS = [
 const CHAR_RAMP = " .`'\",:;Il!i><~+_-?][}{z1)(|/tfjrxnuvczXYUJCLTQ0OZmwqpdbkhaos*#MW&8%B@$"
 const PALETTE   = ['#a78bfa', '#ec8499', '#67e8f9', '#fbbf24']
 
-function TypewriterLine({ text }) {
-  const measureRef = useRef(null)
-  const [width, setWidth] = useState(null)
+const HEADLINE_PAIRS = [
+  ['We Engineer Products.',  'We Drive Growth.'],
+  ['We Build Websites.',     'We Grow Businesses.'],
+  ['We Create Experiences.', 'We Deliver Results.'],
+  ['We Develop Solutions.',  'We Scale Brands.'],
+  ['We Optimise Visibility.','We Increase Revenue.'],
+  ['We Design Innovation.',  'We Deliver Excellence.'],
+  ['We Power Digital.',      'We Accelerate Growth.'],
+  ['We Build Trust.',        'We Win Customers.'],
+]
+
+const TYPE_MS       = 45
+const DELETE_MS      = 22
+const LINE_PAUSE_MS  = 250
+const PAIR_HOLD_MS   = 2200
+
+function RotatingHeadline({ pairs }) {
+  // Initial counts equal the full first pair so SSR/first paint renders the
+  // complete original heading (SEO + no-JS friendly) — animation only takes
+  // over once mounted, after the first pair has already held on screen.
+  const [pairIndex, setPairIndex]   = useState(0)
+  const [line1Count, setLine1Count] = useState(pairs[0][0].length)
+  const [line2Count, setLine2Count] = useState(pairs[0][1].length)
+  const [phase, setPhase]           = useState('holding')
+  const [mounted, setMounted]       = useState(false)
+  const reducedMotion = useRef(false)
 
   useEffect(() => {
-    const measure = () => {
-      if (measureRef.current) setWidth(measureRef.current.offsetWidth)
-    }
-    measure()
-    window.addEventListener('resize', measure)
-    return () => window.removeEventListener('resize', measure)
+    setMounted(true)
+    reducedMotion.current = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   }, [])
+
+  useEffect(() => {
+    if (!mounted || reducedMotion.current) return
+    const [l1, l2] = pairs[pairIndex]
+    let timer
+    if (phase === 'typing1') {
+      timer = line1Count < l1.length
+        ? setTimeout(() => setLine1Count((c) => c + 1), TYPE_MS)
+        : setTimeout(() => setPhase('typing2'), LINE_PAUSE_MS)
+    } else if (phase === 'typing2') {
+      timer = line2Count < l2.length
+        ? setTimeout(() => setLine2Count((c) => c + 1), TYPE_MS)
+        : setTimeout(() => setPhase('holding'), 0)
+    } else if (phase === 'holding') {
+      timer = setTimeout(() => setPhase('deleting2'), PAIR_HOLD_MS)
+    } else if (phase === 'deleting2') {
+      timer = line2Count > 0
+        ? setTimeout(() => setLine2Count((c) => c - 1), DELETE_MS)
+        : setTimeout(() => setPhase('deleting1'), LINE_PAUSE_MS)
+    } else {
+      timer = line1Count > 0
+        ? setTimeout(() => setLine1Count((c) => c - 1), DELETE_MS)
+        : setTimeout(() => {
+            setPairIndex((i) => (i + 1) % pairs.length)
+            setPhase('typing1')
+          }, LINE_PAUSE_MS)
+    }
+    return () => clearTimeout(timer)
+  }, [mounted, phase, line1Count, line2Count, pairIndex, pairs])
+
+  const [l1, l2] = pairs[pairIndex]
+  const animating  = mounted && !reducedMotion.current
+  const line1Text  = animating ? l1.slice(0, line1Count) : l1
+  const line2Text  = animating ? l2.slice(0, line2Count) : l2
+  const caretOnLine1 = animating && (phase === 'typing1' || phase === 'deleting1')
 
   return (
     <>
-      <span ref={measureRef} aria-hidden="true" style={{ position: 'absolute', visibility: 'hidden', whiteSpace: 'nowrap', pointerEvents: 'none' }}>
-        {text}
-      </span>
-      <span
-        className="hero-typewriter"
-        style={width ? { '--tw': `${width}px` } : { opacity: 0 }}
-      >
-        {text}
-      </span>
+      {line1Text}
+      {caretOnLine1 && <span className="hero-caret" aria-hidden="true" />}
+      <br />
+      {line2Text}
+      {animating && !caretOnLine1 && <span className="hero-caret" aria-hidden="true" />}
     </>
   )
 }
@@ -240,24 +290,18 @@ export default function Hero() {
           0%   { transform: translateX(0); }
           100% { transform: translateX(-50%); }
         }
-        @keyframes heroTypeReveal {
-          from { width: 0; }
-          to   { width: var(--tw); }
-        }
         @keyframes heroCaretBlink {
-          0%, 100% { border-color: rgba(255,255,255,0.75); }
-          50%      { border-color: transparent; }
+          0%, 100% { opacity: 1; }
+          50%      { opacity: 0; }
         }
-        .hero-typewriter {
+        .hero-caret {
           display: inline-block;
-          overflow: hidden;
-          white-space: nowrap;
-          vertical-align: bottom;
-          border-right: 3px solid rgba(255,255,255,0.75);
-          width: 0;
-          animation:
-            heroTypeReveal 1.3s steps(17, end) 1s both,
-            heroCaretBlink 0.85s step-end infinite;
+          width: 3px;
+          height: 0.82em;
+          background: rgba(255,255,255,0.8);
+          margin-left: 3px;
+          vertical-align: -0.08em;
+          animation: heroCaretBlink 0.85s step-end infinite;
         }
         .hero-stagger-1 { animation: heroStagger 0.8s cubic-bezier(0.22,1,0.36,1) 0.08s both; }
         .hero-stagger-2 { animation: heroStagger 0.8s cubic-bezier(0.22,1,0.36,1) 0.22s both; }
@@ -282,7 +326,7 @@ export default function Hero() {
             animation: none !important; opacity: 1 !important; filter: none !important; transform: none !important;
           }
           .hero-logos-track { animation: none !important; }
-          .hero-typewriter { animation: none !important; width: var(--tw, auto) !important; opacity: 1 !important; border-right: none !important; }
+          .hero-caret { display: none !important; }
         }
         @media (max-width: 768px) {
           .hero-section { padding: 64px 20px 56px !important; }
@@ -336,7 +380,7 @@ export default function Hero() {
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 2 }}>
 
           <h1 className="hero-stagger-1" style={{ fontSize: 'clamp(36px, 4.5vw, 62px)', fontWeight: 900, lineHeight: 1.1, marginBottom: '20px', letterSpacing: '-1.5px', color: '#fff' }}>
-            We Engineer Products.<br /><TypewriterLine text="We Drive Growth." />
+            <RotatingHeadline pairs={HEADLINE_PAIRS} />
           </h1>
 
           <p className="hero-stagger-2 hero-desc" style={{

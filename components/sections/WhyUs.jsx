@@ -54,6 +54,35 @@ const growthStats = [
   { value: '200+', label: 'Satisfied clients across 25+ countries',    image: '/images/Partner-with-us.jpg', color: null },
 ]
 
+function PortfolioCard({ story: s, index }) {
+  return (
+    <div className="pf-card">
+      <div className="pf-browserbar">
+        <span className="pf-dot pf-dot-r" /><span className="pf-dot pf-dot-y" /><span className="pf-dot pf-dot-g" />
+        <span className="pf-urlpill">
+          <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="10" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+          {s.company}
+        </span>
+      </div>
+      <div className="pf-imgwrap">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={s.img} alt={s.company} className="pf-card-img" />
+        <span className="pf-num">0{index}</span>
+        <div className="pf-bottom">
+          <div className="pf-industry">{s.industry}</div>
+          <div className="pf-company">{s.company}</div>
+        </div>
+        <div className="pf-overlay">
+          <div className="pf-otags">{s.tags.map(t => <span key={t} className="pf-otag">{t}</span>)}</div>
+          <div className="pf-oname">{s.company}</div>
+          <p className="pf-odesc">{s.desc}</p>
+          <Link href="/case-studies" className="pf-olink">View Case Study →</Link>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function WhyUs() {
   const [growthInView, setGrowthInView] = useState(false)
   const growthRef = useRef(null)
@@ -89,13 +118,23 @@ export default function WhyUs() {
         .pf-explore:hover { border-color: #FE9700; color: #FE9700; }
 
         /* Bento rows */
-        .pf-row1 { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 10px; height: 430px; margin-bottom: 10px; }
-        .pf-row2 { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; height: 280px; }
+        /* 2fr/1fr + a vertically-stacked pair — heights derive from each card's own
+           aspect-ratio (never from grid stretch) so landscape screenshots never get
+           squeezed into a portrait box and cropped down to a sliver. */
+        .pf-row1 { display: grid; grid-template-columns: 2fr 1fr; gap: 10px; margin-bottom: 10px; align-items: start; }
+        .pf-row1-stack { display: flex; flex-direction: column; gap: 10px; }
+        .pf-row2 { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
 
-        /* Card base */
-        .pf-card { position: relative; border-radius: 14px; overflow: hidden; }
-        .pf-card-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .65s cubic-bezier(.22,1,.36,1); }
-        .pf-card:hover .pf-card-img { transform: scale(1.08); }
+        /* Card base — browser-chrome frame so crops never eat logos/headlines on the sides */
+        .pf-card { position: relative; display: flex; flex-direction: column; border-radius: 14px; overflow: hidden; background: #0b1530; border: 1px solid rgba(255,255,255,.08); box-shadow: 0 8px 24px rgba(0,0,0,.25); transition: transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s; }
+        .pf-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(0,0,0,.4); }
+        .pf-browserbar { display: flex; align-items: center; gap: 6px; padding: 9px 12px; background: rgba(255,255,255,.04); border-bottom: 1px solid rgba(255,255,255,.07); flex-shrink: 0; }
+        .pf-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+        .pf-dot-r { background: #ff5f57; } .pf-dot-y { background: #febc2e; } .pf-dot-g { background: #28c840; }
+        .pf-urlpill { margin-left: 8px; display: flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 600; color: rgba(255,255,255,.42); background: rgba(255,255,255,.05); padding: 3px 10px 3px 8px; border-radius: 20px; letter-spacing: .2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .pf-imgwrap { position: relative; aspect-ratio: 16/10; overflow: hidden; flex: 1; }
+        .pf-card-img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform .65s cubic-bezier(.22,1,.36,1); }
+        .pf-card:hover .pf-card-img { transform: scale(1.06); }
 
         /* Number badge */
         .pf-num { position: absolute; top: 14px; left: 14px; z-index: 3; min-width: 32px; height: 32px; padding: 0 8px; border-radius: 20px; background: rgba(255,255,255,.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,.18); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: rgba(255,255,255,.7); letter-spacing: .5px; }
@@ -123,25 +162,21 @@ export default function WhyUs() {
 
         /* Responsive */
         @media (max-width:1100px) {
-          .pf-row1 { grid-template-columns: 1fr 1fr; height: auto; }
-          .pf-row1 .pf-card:first-child { grid-column: span 2; height: 340px; }
-          .pf-row1 .pf-card:not(:first-child) { height: 220px; }
-          .pf-row2 { grid-template-columns: repeat(2,1fr); height: auto; }
-          .pf-row2 .pf-card { height: 210px; }
+          .pf-row1 { grid-template-columns: 1fr; }
+          .pf-row1-stack { flex-direction: row; }
+          .pf-row1-stack .pf-card { flex: 1; }
+          .pf-row2 { grid-template-columns: repeat(2,1fr); }
         }
         @media (max-width:768px) {
           .pf-section { padding: 64px 24px; }
           .pf-header { flex-direction: column; align-items: flex-start; }
-          .pf-row1 { grid-template-columns: 1fr; }
-          .pf-row1 .pf-card { grid-column: span 1 !important; height: 240px !important; }
+          .pf-row1-stack { flex-direction: column; }
           .pf-row2 { grid-template-columns: 1fr 1fr; }
-          .pf-row2 .pf-card { height: 180px; }
           .whyus-growth-sec { padding: 64px 24px; }
           .whyus-facts-layout { grid-template-columns: 1fr; gap: 32px; }
         }
         @media (max-width:500px) {
           .pf-row2 { grid-template-columns: 1fr; }
-          .pf-row2 .pf-card { height: 200px; }
           .whyus-stats-grid { grid-template-columns: 1fr; }
           .whyus-stat-circle { width: 110px !important; height: 110px !important; }
           .whyus-stat-val { font-size: 36px !important; }
@@ -167,45 +202,19 @@ export default function WhyUs() {
             <Link href="/case-studies" className="pf-explore">Explore All Projects →</Link>
           </div>
 
-          {/* Row 1: wide + 2 tall */}
+          {/* Row 1: featured + a stacked pair (heights self-derive, never stretched to match) */}
           <div className="pf-row1">
-            {stories.slice(0, 3).map((s, i) => (
-              <div key={s.company} className="pf-card">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={s.img} alt={s.company} className="pf-card-img" />
-                <span className="pf-num">0{i + 1}</span>
-                <div className="pf-bottom">
-                  <div className="pf-industry">{s.industry}</div>
-                  <div className="pf-company">{s.company}</div>
-                </div>
-                <div className="pf-overlay">
-                  <div className="pf-otags">{s.tags.map(t => <span key={t} className="pf-otag">{t}</span>)}</div>
-                  <div className="pf-oname">{s.company}</div>
-                  <p className="pf-odesc">{s.desc}</p>
-                  <Link href="/case-studies" className="pf-olink">View Case Study →</Link>
-                </div>
-              </div>
-            ))}
+            <PortfolioCard story={stories[0]} index={1} />
+            <div className="pf-row1-stack">
+              <PortfolioCard story={stories[1]} index={2} />
+              <PortfolioCard story={stories[2]} index={3} />
+            </div>
           </div>
 
           {/* Row 2: 4 equal */}
           <div className="pf-row2">
             {stories.slice(3).map((s, i) => (
-              <div key={s.company} className="pf-card">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={s.img} alt={s.company} className="pf-card-img" />
-                <span className="pf-num">0{i + 4}</span>
-                <div className="pf-bottom">
-                  <div className="pf-industry">{s.industry}</div>
-                  <div className="pf-company">{s.company}</div>
-                </div>
-                <div className="pf-overlay">
-                  <div className="pf-otags">{s.tags.map(t => <span key={t} className="pf-otag">{t}</span>)}</div>
-                  <div className="pf-oname">{s.company}</div>
-                  <p className="pf-odesc">{s.desc}</p>
-                  <Link href="/case-studies" className="pf-olink">View Case Study →</Link>
-                </div>
-              </div>
+              <PortfolioCard key={s.company} story={s} index={i + 4} />
             ))}
           </div>
 
