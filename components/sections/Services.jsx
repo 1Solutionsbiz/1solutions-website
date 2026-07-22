@@ -8,7 +8,7 @@ const services = [
     id: 'web',
     label: 'Digital Transformation',
     headline: 'Digital Transformation',
-    desc: 'Digitize and automate complex workflows with our responsive software solutions. Modernity, experience, scalability, security, performance — all check.',
+    desc: 'Digitize and automate complex workflows with our responsive software solutions. Modernity, experience, scalability, security, performance - all check.',
     tags: ['React', 'Next.js', 'Node.js', '.NET', 'Vue.js', 'Angular'],
     cta: 'Elevate Your Digital Journey',
     href: '/digital-transformation',
@@ -282,7 +282,7 @@ export default function Services() {
                   }}>
                     {s.label}
                   </span>
-                  {/* Arrow — visible on active and on hover via CSS */}
+                  {/* Arrow - visible on active and on hover via CSS */}
                   <span className="svc-tab-arrow" style={{
                     opacity: isActive ? 1 : 0,
                     fontSize: '15px', fontWeight: 700,
@@ -307,7 +307,7 @@ export default function Services() {
               animation: 'svcPanelIn 0.42s cubic-bezier(0.22,1,0.36,1) both',
             }}
           >
-            {/* Backlight — accent-color glow blob below the card */}
+            {/* Backlight - accent-color glow blob below the card */}
             <div
               aria-hidden="true"
               style={{
@@ -322,7 +322,7 @@ export default function Services() {
                 pointerEvents: 'none',
               }}
             />
-            {/* Gradient card — overflow:hidden only clips its own content */}
+            {/* Gradient card - overflow:hidden only clips its own content */}
             <div className="svc-img-wrap" style={{
               position: 'relative', zIndex: 1,
               borderRadius: '24px', overflow: 'hidden',

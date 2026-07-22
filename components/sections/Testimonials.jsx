@@ -3,7 +3,7 @@ import AuroraText from '../ui/AuroraText'
 
 const testimonials = [
   {
-    text: "1Solutions didn't just build our platform — they understood our vision and scaled it to handle 10x growth. Execution was flawless from day one.",
+    text: "1Solutions didn't just build our platform - they understood our vision and scaled it to handle 10x growth. Execution was flawless from day one.",
     name: 'Akshay Kumar',
     title: 'Founder, TechStart Ventures',
     initials: 'AK',
@@ -24,7 +24,7 @@ const testimonials = [
     color: '#0E7490',
   },
   {
-    text: "We needed a full redesign in 6 weeks before our funding round. They nailed it — on time, on brand, and better than we imagined.",
+    text: "We needed a full redesign in 6 weeks before our funding round. They nailed it - on time, on brand, and better than we imagined.",
     name: 'Sarah Mitchell',
     title: 'Head of Digital, Sunrise Media',
     initials: 'SM',
@@ -174,7 +174,7 @@ export default function Testimonials() {
           </p>
         </div>
 
-        {/* Row 1 — scrolls left */}
+        {/* Row 1 - scrolls left */}
         <div className="testi-row" style={{ marginBottom: '16px', position: 'relative' }}>
           <div className="testi-fade" style={{
             position: 'absolute', left: 0, top: 0, bottom: 0, zIndex: 1,
@@ -189,7 +189,7 @@ export default function Testimonials() {
           </div>
         </div>
 
-        {/* Row 2 — scrolls right */}
+        {/* Row 2 - scrolls right */}
         <div className="testi-row" style={{ position: 'relative' }}>
           <div className="testi-fade" style={{
             position: 'absolute', left: 0, top: 0, bottom: 0, zIndex: 1,

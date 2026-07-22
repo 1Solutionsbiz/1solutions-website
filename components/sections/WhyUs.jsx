@@ -6,55 +6,55 @@ import AuroraText from '../ui/AuroraText'
 const stories = [
   {
     company: 'AI+ SmartPhones', industry: 'Consumer Electronics / eCommerce',
-    desc: 'Full-featured Shopify store for AI+ SmartPhones — a consumer electronics brand selling Nova series 5G smartphones, NovaPods, and NovaWatches across India.',
+    desc: 'Full-featured Shopify store for AI+ SmartPhones - a consumer electronics brand selling Nova series 5G smartphones, NovaPods, and NovaWatches across India.',
     tags: ['Shopify', 'Liquid', 'UI/UX Design'],
     img: '/images/work-aiplusstore.png',
   },
   {
     company: 'Comtradesol Advisory', industry: 'Financial Services',
-    desc: 'Corporate website for Comtradesol Advisory Services — a Gurgaon-based firm offering trade finance, debt syndication, equity advisory, and credit rating solutions.',
+    desc: 'Corporate website for Comtradesol Advisory Services - a Gurgaon-based firm offering trade finance, debt syndication, equity advisory, and credit rating solutions.',
     tags: ['WordPress', 'Custom Theme', 'UI/UX Design'],
     img: '/images/work-comtradesol.png',
   },
   {
     company: 'Keiyura Jewellery', industry: 'Fashion & Jewellery / eCommerce',
-    desc: 'Elegant Shopify store for a handcrafted jewellery brand — featuring lookbooks, curated collections, and a storytelling-led shopping experience.',
+    desc: 'Elegant Shopify store for a handcrafted jewellery brand - featuring lookbooks, curated collections, and a storytelling-led shopping experience.',
     tags: ['Shopify', 'Liquid', 'UI/UX Design'],
     img: '/images/work-keiyura.png',
   },
   {
     company: 'Mount Systems', industry: 'IT & Security Solutions',
-    desc: 'Corporate website for Mount Systems — a complete IT and security solutions provider offering end-to-end technology and security services to businesses.',
+    desc: 'Corporate website for Mount Systems - a complete IT and security solutions provider offering end-to-end technology and security services to businesses.',
     tags: ['WordPress', 'Custom Theme', 'UI/UX Design'],
     img: '/images/work-mountsystems.png',
   },
   {
     company: 'RNG Foundation', industry: 'Media & Journalism',
-    desc: "Award portal for India's most prestigious journalism honours — the Ramnath Goenka Excellence in Journalism Awards, administered by the Indian Express Group.",
+    desc: "Award portal for India's most prestigious journalism honours - the Ramnath Goenka Excellence in Journalism Awards, administered by the Indian Express Group.",
     tags: ['WordPress', 'Custom Theme', 'UI/UX Design'],
     img: '/images/work-rng.png',
   },
   {
     company: 'Samsin Streetwear', industry: 'Fashion & Apparel / eCommerce',
-    desc: 'Minimalist Shopify store for a streetwear label selling tops, bottoms, and headwear — with VIP subscriber access and flash-sale promotions.',
+    desc: 'Minimalist Shopify store for a streetwear label selling tops, bottoms, and headwear - with VIP subscriber access and flash-sale promotions.',
     tags: ['Shopify', 'Liquid', 'Email Marketing'],
     img: '/images/work-shopsamsin.png',
   },
   {
     company: 'Skin Laser Centre', industry: 'Healthcare / Dermatology',
-    desc: "Clinical website for Dr. Paul's Skin Laser Centre, Delhi — a 23-year-old dermatology practice specialising in vitiligo, acne, hair transplants, and advanced laser treatments.",
+    desc: "Clinical website for Dr. Paul's Skin Laser Centre, Delhi - a 23-year-old dermatology practice specialising in vitiligo, acne, hair transplants, and advanced laser treatments.",
     tags: ['WordPress', 'Custom Theme', 'UI/UX Design'],
     img: '/images/work-skinlaser.png',
   },
   {
     company: 'Parfum France', industry: 'Beauty & Fragrance / eCommerce',
-    desc: 'Premium Shopify fragrance boutique bringing French parfumerie to a global audience — immersive design with rich product storytelling and curated gift sets.',
+    desc: 'Premium Shopify fragrance boutique bringing French parfumerie to a global audience - immersive design with rich product storytelling and curated gift sets.',
     tags: ['Shopify', 'Liquid', 'UI/UX Design'],
     img: '/images/portfolio/parfumfrance.jpg',
   },
   {
     company: 'VNS Group of Institutions', industry: 'Education',
-    desc: 'Comprehensive website for a multi-faculty institution in Bhopal — covering Engineering, Pharmacy, Management, Nursing, and Education across a 50+ acre campus established in 1994.',
+    desc: 'Comprehensive website for a multi-faculty institution in Bhopal - covering Engineering, Pharmacy, Management, Nursing, and Education across a 50+ acre campus established in 1994.',
     tags: ['WordPress', 'Custom Theme', 'UI/UX Design'],
     img: '/images/portfolio/vns.webp',
   },
@@ -66,7 +66,7 @@ const growthStats = [
   { value: '200+', label: 'Satisfied clients across 25+ countries',    image: '/images/Partner-with-us.jpg', color: null },
 ]
 
-function PortfolioCard({ story: s, index }) {
+function PortfolioCard({ story: s }) {
   return (
     <div className="pf-card">
       <div className="pf-browserbar">
@@ -79,7 +79,6 @@ function PortfolioCard({ story: s, index }) {
       <div className="pf-imgwrap">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={s.img} alt={s.company} className="pf-card-img" />
-        <span className="pf-num">0{index}</span>
         <div className="pf-bottom">
           <div className="pf-industry">{s.industry}</div>
           <div className="pf-company">{s.company}</div>
@@ -130,11 +129,11 @@ export default function WhyUs() {
         .pf-explore:hover { border-color: #FE9700; color: #FE9700; }
 
         /* Bento rows */
-        /* Uniform 3×3 grid — every cell is the same rectangular shape, so each
+        /* Uniform 3×3 grid - every cell is the same rectangular shape, so each
            screenshot sits in a box matching its own aspect ratio (no stretch, no crop). */
         .pf-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 
-        /* Card base — browser-chrome frame so crops never eat logos/headlines on the sides */
+        /* Card base - browser-chrome frame so crops never eat logos/headlines on the sides */
         .pf-card { position: relative; display: flex; flex-direction: column; border-radius: 14px; overflow: hidden; background: #0b1530; border: 1px solid rgba(255,255,255,.08); box-shadow: 0 8px 24px rgba(0,0,0,.25); transition: transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s; }
         .pf-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(0,0,0,.4); }
         .pf-browserbar { display: flex; align-items: center; gap: 6px; padding: 9px 12px; background: rgba(255,255,255,.04); border-bottom: 1px solid rgba(255,255,255,.07); flex-shrink: 0; }
@@ -144,9 +143,6 @@ export default function WhyUs() {
         .pf-imgwrap { position: relative; aspect-ratio: 16/10; overflow: hidden; flex: 1; }
         .pf-card-img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform .65s cubic-bezier(.22,1,.36,1); }
         .pf-card:hover .pf-card-img { transform: scale(1.06); }
-
-        /* Number badge */
-        .pf-num { position: absolute; top: 14px; left: 14px; z-index: 3; min-width: 32px; height: 32px; padding: 0 8px; border-radius: 20px; background: rgba(255,255,255,.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,.18); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: rgba(255,255,255,.7); letter-spacing: .5px; }
 
         /* Bottom label (default visible) */
         .pf-bottom { position: absolute; bottom: 0; left: 0; right: 0; z-index: 2; background: linear-gradient(transparent,rgba(4,9,22,.88) 100%); padding: 40px 18px 18px; transition: opacity .3s; }
@@ -208,8 +204,8 @@ export default function WhyUs() {
 
           {/* 3×3 grid of uniform rectangular cards */}
           <div className="pf-grid">
-            {stories.map((s, i) => (
-              <PortfolioCard key={s.company} story={s} index={i + 1} />
+            {stories.map((s) => (
+              <PortfolioCard key={s.company} story={s} />
             ))}
           </div>
 

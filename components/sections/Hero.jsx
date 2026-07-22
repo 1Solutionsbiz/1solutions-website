@@ -54,7 +54,7 @@ const PAIR_HOLD_MS   = 2200
 
 function RotatingHeadline({ pairs }) {
   // Initial counts equal the full first pair so SSR/first paint renders the
-  // complete original heading (SEO + no-JS friendly) — animation only takes
+  // complete original heading (SEO + no-JS friendly) - animation only takes
   // over once mounted, after the first pair has already held on screen.
   const [pairIndex, setPairIndex]   = useState(0)
   const [line1Count, setLine1Count] = useState(pairs[0][0].length)
@@ -121,7 +121,7 @@ export default function Hero() {
   const blobRefs  = useRef([])
   const canvasRef = useRef(null)
 
-  // Layer 1 — Aurora lava-lamp blobs (direct DOM mutations)
+  // Layer 1 - Aurora lava-lamp blobs (direct DOM mutations)
   useEffect(() => {
     const REPULSION = 0.18
     const state = BLOBS.map((b) => ({
@@ -168,7 +168,7 @@ export default function Hero() {
     return () => cancelAnimationFrame(raf)
   }, [])
 
-  // Layer 2 — AsciiHero bare variant (canvas over Aurora)
+  // Layer 2 - AsciiHero bare variant (canvas over Aurora)
   useEffect(() => {
     const canvas = canvasRef.current
     const host   = heroRef.current
@@ -351,7 +351,7 @@ export default function Hero() {
         overflow: 'hidden',
       }}>
 
-        {/* Layer 1 — Aurora lava-lamp blobs */}
+        {/* Layer 1 - Aurora lava-lamp blobs */}
         <div aria-hidden="true" style={{
           position: 'absolute', inset: '-20%',
           zIndex: 0, pointerEvents: 'none',
@@ -369,7 +369,7 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* Layer 2 — AsciiHero bare variant canvas */}
+        {/* Layer 2 - AsciiHero bare variant canvas */}
         <canvas ref={canvasRef} aria-hidden="true" style={{
           position: 'absolute', inset: 0,
           width: '100%', height: '100%',
@@ -387,7 +387,7 @@ export default function Hero() {
             fontSize: '18px', color: 'rgba(255,255,255,0.78)',
             maxWidth: '680px', lineHeight: 1.8, margin: '0 auto',
           }}>
-            From custom web &amp; mobile platforms to performance marketing and SEO —
+            From custom web &amp; mobile platforms to performance marketing and SEO -
             one team that builds your technology and scales your revenue.
           </p>
 

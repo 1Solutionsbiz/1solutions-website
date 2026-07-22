@@ -49,7 +49,7 @@ export default function ContactCTA() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
               {[
                 { path: 'M3 11h18v11a2 2 0 01-2 2H5a2 2 0 01-2-2V11zM7 11V7a5 5 0 0110 0v4', text: 'Your project details are confidential. We respect your privacy.' },
-                { path: 'M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 3a4 4 0 100 8 4 4 0 000-8z', text: 'A real expert reviews your requirements — not automated responses.' },
+                { path: 'M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 3a4 4 0 100 8 4 4 0 000-8z', text: 'A real expert reviews your requirements - not automated responses.' },
                 { path: 'M12 2a10 10 0 100 20A10 10 0 0012 2zM12 6v6l4 2', text: 'Quick response within 24 business hours.' },
                 { path: 'M20 6L9 17l-5-5', text: 'No obligation to proceed. Let\'s just talk.' },
               ].map((b, i) => (
