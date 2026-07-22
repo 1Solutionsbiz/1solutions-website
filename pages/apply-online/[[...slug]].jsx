@@ -24,6 +24,33 @@ const POSITIONS = [
 
 const POSITION_NAMES = POSITIONS.map((p) => p.title);
 
+// URL slug for a position, e.g. "Social Media Manager" -> "social-media-manager-opening".
+// Matches the hand-authored `id` fields used on /open-positions/ for the same roles.
+function slugify(title) {
+  return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
+const SLUGGABLE_POSITIONS = POSITIONS.filter((p) => p.title !== 'Other / General Application');
+
+export async function getStaticPaths() {
+  const paths = [
+    { params: { slug: [] } },
+    ...SLUGGABLE_POSITIONS.map((p) => ({ params: { slug: [`${slugify(p.title)}-opening`] } })),
+  ];
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  const slugParts = params?.slug || [];
+  if (slugParts.length === 0) {
+    return { props: { initialPositionTitle: null, slugPath: null } };
+  }
+  const slug = slugParts[0];
+  const match = SLUGGABLE_POSITIONS.find((p) => `${slugify(p.title)}-opening` === slug);
+  if (!match) return { notFound: true };
+  return { props: { initialPositionTitle: match.title, slugPath: slug } };
+}
+
 const EXPERIENCE = [
   'Fresher (0–1 year)',
   '1–2 years',
@@ -79,7 +106,7 @@ const INITIAL_FORM = {
   consent: false,
 };
 
-export default function ApplyOnline() {
+export default function ApplyOnline({ initialPositionTitle, slugPath }) {
   const router = useRouter();
   const [form, setForm] = useState(INITIAL_FORM);
   const [status, setStatus] = useState('idle'); // idle | loading | success | error
@@ -87,8 +114,14 @@ export default function ApplyOnline() {
   const [selectedPosition, setSelectedPosition] = useState(null);
   const formRef = useRef(null);
 
-  // Pre-fill position from ?position= query param (linked from /open-positions/)
+  // Pre-fill position: prefer the URL slug (/apply-online/<slug>-opening/),
+  // fall back to a legacy ?position= query param for any old links still in the wild.
   useEffect(() => {
+    if (initialPositionTitle) {
+      setSelectedPosition(initialPositionTitle);
+      setForm((prev) => ({ ...prev, position: initialPositionTitle }));
+      return;
+    }
     if (!router.isReady) return;
     const qpos = router.query.position;
     if (qpos) {
@@ -98,7 +131,17 @@ export default function ApplyOnline() {
       setSelectedPosition(match);
       setForm((prev) => ({ ...prev, position: match }));
     }
-  }, [router.isReady, router.query.position]);
+  }, [initialPositionTitle, router.isReady, router.query.position]);
+
+  const pageTitle = initialPositionTitle
+    ? `Apply for ${initialPositionTitle} | Careers at 1Solutions`
+    : 'Apply Online | Careers at 1Solutions - Join Our Team';
+  const metaDescription = initialPositionTitle
+    ? `Apply for the ${initialPositionTitle} role at 1Solutions, a 15-year-old web development and digital marketing agency in New Delhi. Submit your application online today.`
+    : 'Join 1Solutions - a 15-year-old web development agency in New Delhi hiring WordPress, Laravel, Python, React developers, SEO executives, designers, and more. Apply online today.';
+  const canonicalUrl = slugPath
+    ? `https://www.1solutions.biz/apply-online/${slugPath}/`
+    : 'https://www.1solutions.biz/apply-online/';
 
   function handleChange(e) {
     const { name, value, type, checked } = e.target;
@@ -140,12 +183,9 @@ export default function ApplyOnline() {
   return (
     <>
       <Head>
-        <title>Apply Online | Careers at 1Solutions - Join Our Team</title>
-        <meta
-          name="description"
-          content="Join 1Solutions - a 15-year-old web development agency in New Delhi hiring WordPress, Laravel, Python, React developers, SEO executives, designers, and more. Apply online today."
-        />
-        <link rel="canonical" href="https://www.1solutions.biz/apply-online/" />
+        <title>{pageTitle}</title>
+        <meta name="description" content={metaDescription} />
+        <link rel="canonical" href={canonicalUrl} />
         <style>{`
           /* ─── Base ─── */
           .ap-page {

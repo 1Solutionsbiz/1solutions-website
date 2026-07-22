@@ -73,8 +73,8 @@ const nextConfig = {
       { source: '/careers/',                  destination: '/open-positions/',                permanent: true },
 
       // ── Dead job-board landing pages (old direct job URLs, now 404 — still linked from external job boards) ──
-      { source: '/business-development-manager',  destination: '/apply-online/?position=Business%20Development%20Manager', permanent: true },
-      { source: '/business-development-manager/', destination: '/apply-online/?position=Business%20Development%20Manager', permanent: true },
+      { source: '/business-development-manager',  destination: '/apply-online/business-development-manager-opening/', permanent: true },
+      { source: '/business-development-manager/', destination: '/apply-online/business-development-manager-opening/', permanent: true },
       { source: '/performance-marketing-executive',  destination: '/open-positions/',             permanent: true },
       { source: '/performance-marketing-executive/', destination: '/open-positions/',             permanent: true },
       { source: '/graphic-designer',          destination: '/open-positions/',                permanent: true },

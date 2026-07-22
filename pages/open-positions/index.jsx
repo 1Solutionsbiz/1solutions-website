@@ -768,11 +768,11 @@ export default function OpenPositions() {
 
                       <div className="op-apply-row">
                         <div className="op-apply-note">
-                          <strong>To apply:</strong> click the button and select{' '}
-                          <strong>&ldquo;{job.title}&rdquo;</strong> from the position dropdown.
+                          <strong>To apply:</strong> click the button below - the{' '}
+                          <strong>&ldquo;{job.title}&rdquo;</strong> role is pre-filled for you.
                         </div>
                         <Link
-                          href={`/apply-online/?position=${encodeURIComponent(job.title)}`}
+                          href={`/apply-online/${job.id}-opening/`}
                           className="op-apply-btn"
                         >
                           Apply for this Role
