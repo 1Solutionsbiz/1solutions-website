@@ -21,6 +21,16 @@ const RESULTS = [
   { metric: '4.8×', label: 'Increase in organic leads', sub: 'Delhi healthcare services - 7 months', color: '#059669' },
 ];
 
+const TESTIMONIALS = [
+  { name: 'Rohan Mehta', role: 'Director, South Delhi Real Estate Group', rating: 5, text: '1Solutions took our real estate portal from page 4 to the top 3 for every high-intent Delhi property keyword we cared about. Inbound enquiries from organic search have more than tripled in under a year.' },
+  { name: 'Priya Kapoor', role: 'Founder, Gurugram Wellness Clinic', rating: 5, text: 'Our Google Business Profile and local rankings were invisible before 1Solutions. Now we show up in the Maps 3-pack for every neighbourhood we serve, and walk-in patients regularly mention finding us on Google.' },
+  { name: 'Vikram Chawla', role: 'CEO, Okhla B2B Manufacturing', rating: 5, text: 'Honest timelines, clear monthly reporting, and rankings that have actually held through two Google core updates. 1Solutions is the first SEO agency in Delhi that treated our account like a long-term partnership, not a quick sale.' },
+];
+
+// Row 2 is the same reviews rotated by one position (and scrolled in reverse)
+// so the two marquee rows never show identical cards lined up together.
+const TESTIMONIALS_ROW2 = [TESTIMONIALS[1], TESTIMONIALS[2], TESTIMONIALS[0]];
+
 const PROCESS = [
   { n: '01', title: 'Free Delhi SEO Audit', desc: 'We audit your website for technical health, current keyword rankings, backlink profile, competitor positions, and the specific gaps holding your Delhi business back from Page 1.' },
   { n: '02', title: 'Keyword & Market Research', desc: 'Deep analysis of how Delhi customers search for your services - mapping every high-intent query, local modifier, and competitor keyword gap into a prioritised ranking roadmap.' },
@@ -172,6 +182,26 @@ export default function SeoCompanyDelhi() {
           .dsel-res-metric{font-size:3.5rem;font-weight:900;line-height:1;margin-bottom:10px;letter-spacing:-2px;}
           .dsel-res-label{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px;}
           .dsel-res-sub{font-size:12.5px;color:rgba(255,255,255,0.50);}
+          .dsel-testi-section{background:#fff;border-top:1px solid rgba(12,36,97,0.06);padding:90px 0;overflow:hidden;}
+          .dsel-testi-inner{max-width:1200px;margin:0 auto;padding:0 40px;}
+          .dsel-testi-marquee-outer{position:relative;margin-top:44px;}
+          .dsel-testi-marquee-wrap{overflow:hidden;margin-bottom:20px;}
+          .dsel-testi-marquee-wrap:last-child{margin-bottom:0;}
+          .dsel-testi-track{display:flex;gap:20px;width:max-content;animation:dselTestiScroll 32s linear infinite;}
+          .dsel-testi-track--rev{animation-name:dselTestiScrollRev;}
+          .dsel-testi-marquee-wrap:hover .dsel-testi-track{animation-play-state:paused;}
+          @keyframes dselTestiScroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+          @keyframes dselTestiScrollRev{from{transform:translateX(-50%);}to{transform:translateX(0);}}
+          @media(prefers-reduced-motion:reduce){.dsel-testi-track{animation:none !important;}}
+          .dsel-testi-fade{position:absolute;top:0;bottom:0;width:120px;z-index:1;pointer-events:none;}
+          .dsel-testi-fade--l{left:0;background:linear-gradient(to right,#fff,transparent);}
+          .dsel-testi-fade--r{right:0;background:linear-gradient(to left,#fff,transparent);}
+          .dsel-testi-card{width:400px;flex-shrink:0;background:linear-gradient(135deg,rgba(224,231,255,0.45) 0%,rgba(255,255,255,0.90) 60%,rgba(219,234,254,0.35) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:28px;box-shadow:0 4px 24px rgba(12,36,97,0.07);user-select:none;}
+          .dsel-testi-stars{color:#D97706;font-size:15px;margin-bottom:12px;letter-spacing:1px;}
+          .dsel-testi-text{font-size:14px;color:#1e293b;line-height:1.75;margin:0 0 18px;font-style:italic;}
+          .dsel-testi-name{font-size:13px;font-weight:700;color:#0c2461;}
+          .dsel-testi-role{font-size:12px;color:#6B7280;margin-top:2px;}
+          @media(max-width:600px){.dsel-testi-fade{width:48px;}}
           .dsel-why-card{background:linear-gradient(135deg,rgba(224,231,255,0.45) 0%,rgba(255,255,255,0.90) 60%,rgba(219,234,254,0.35) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:32px 28px;box-shadow:0 4px 24px rgba(12,36,97,0.07);}
           .dsel-why-check{width:36px;height:36px;border-radius:10px;background:rgba(12,36,97,0.08);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
           .dsel-why-check svg{width:18px;height:18px;color:#0c2461;}
@@ -227,14 +257,24 @@ export default function SeoCompanyDelhi() {
           .dsel-sent p{color:#4b5563;font-size:1rem;line-height:1.7;margin:0;}
           .dsel-submit-btn{width:100%;padding:14px;background:#0c2461;color:#fff;border:none;border-radius:50px;font-weight:700;font-size:1rem;cursor:pointer;transition:opacity 0.2s;margin-top:4px;}
           .dsel-submit-btn:hover{opacity:0.88;}
-          .dsel-cta{background:linear-gradient(135deg,#060d2e 0%,#0c2461 100%);padding:80px 40px;text-align:center;}
-          .dsel-cta h2{font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;color:#fff;margin:0 0 16px;line-height:1.2;}
-          .dsel-cta p{font-size:1rem;color:rgba(255,255,255,0.80);margin:0 0 32px;max-width:560px;margin-left:auto;margin-right:auto;}
-          .dsel-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-          .dsel-cta-btn-p{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#0c2461;padding:14px 32px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.25s;}
-          .dsel-cta-btn-p:hover{transform:translateY(-2px);opacity:0.95;}
-          .dsel-cta-btn-s{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.95rem;text-decoration:none;border:2px solid rgba(255,255,255,0.35);transition:all 0.25s;}
-          .dsel-cta-btn-s:hover{border-color:rgba(255,255,255,0.70);background:rgba(255,255,255,0.08);}
+          .dsel-related-section{background:linear-gradient(135deg,#f7e9d7 0%,#fbe3ea 35%,#f3e6f5 60%,#e2e3f7 100%);border-top:1px solid rgba(12,36,97,0.08);padding:70px 40px;}
+          .dsel-related-inner{max-width:1200px;margin:0 auto;}
+          .dsel-related-title{font-size:1.5rem;font-weight:800;color:#0A1628;margin:0 0 8px;}
+          .dsel-related-desc{font-size:14px;color:#4b5563;margin:0 0 28px;line-height:1.6;}
+          .dsel-related-tags{display:flex;flex-wrap:wrap;gap:10px;}
+          .dsel-related-tag{display:inline-flex;align-items:center;padding:9px 18px;border-radius:50px;font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s;}
+          .dsel-related-tag--0{background:rgba(79,70,229,0.08);border:1.5px solid rgba(79,70,229,0.24);color:#4338CA;}
+          .dsel-related-tag--0:hover{background:#4F46E5;border-color:#4F46E5;color:#fff;transform:translateY(-2px);box-shadow:0 6px 18px rgba(79,70,229,0.28);}
+          .dsel-related-tag--1{background:rgba(124,58,237,0.08);border:1.5px solid rgba(124,58,237,0.24);color:#6D28D9;}
+          .dsel-related-tag--1:hover{background:#7C3AED;border-color:#7C3AED;color:#fff;transform:translateY(-2px);box-shadow:0 6px 18px rgba(124,58,237,0.28);}
+          .dsel-related-tag--2{background:rgba(13,148,136,0.08);border:1.5px solid rgba(13,148,136,0.24);color:#0F766E;}
+          .dsel-related-tag--2:hover{background:#0D9488;border-color:#0D9488;color:#fff;transform:translateY(-2px);box-shadow:0 6px 18px rgba(13,148,136,0.28);}
+          .dsel-related-tag--3{background:rgba(2,132,199,0.08);border:1.5px solid rgba(2,132,199,0.24);color:#0369A1;}
+          .dsel-related-tag--3:hover{background:#0284C7;border-color:#0284C7;color:#fff;transform:translateY(-2px);box-shadow:0 6px 18px rgba(2,132,199,0.28);}
+          .dsel-related-tag--4{background:rgba(219,39,119,0.08);border:1.5px solid rgba(219,39,119,0.24);color:#BE185D;}
+          .dsel-related-tag--4:hover{background:#DB2777;border-color:#DB2777;color:#fff;transform:translateY(-2px);box-shadow:0 6px 18px rgba(219,39,119,0.28);}
+          .dsel-related-tag--5{background:rgba(217,119,6,0.08);border:1.5px solid rgba(217,119,6,0.24);color:#B45309;}
+          .dsel-related-tag--5:hover{background:#D97706;border-color:#D97706;color:#fff;transform:translateY(-2px);box-shadow:0 6px 18px rgba(217,119,6,0.28);}
           @media(max-width:900px){
             .dsel-grid4{grid-template-columns:1fr 1fr;}
             .dsel-grid3,.dsel-grid2{grid-template-columns:1fr 1fr;}
@@ -243,7 +283,8 @@ export default function SeoCompanyDelhi() {
             .dsel-contact-grid{grid-template-columns:1fr;gap:40px;}
           }
           @media(max-width:600px){
-            .dsel-sec,.dsel-results,.dsel-cta,.dsel-contact-sec{padding-left:20px;padding-right:20px;}
+            .dsel-sec,.dsel-results,.dsel-related-section,.dsel-contact-sec{padding-left:20px;padding-right:20px;}
+            .dsel-testi-section{padding:60px 0;}
             .dsel-grid4,.dsel-grid3,.dsel-grid2,.dsel-res-grid,.dsel-ind-grid{grid-template-columns:1fr;}
             .dsel-field-row{grid-template-columns:1fr;}
             .dsel-form-wrap{padding:24px 20px;}
@@ -300,6 +341,45 @@ export default function SeoCompanyDelhi() {
                 <div className="dsel-res-sub">{r.sub}</div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="dsel-testi-section" id="testimonials">
+        <div className="dsel-testi-inner">
+          <span className="dsel-tag">Client Reviews</span>
+          <h2 className="dsel-h2">What Our <span>Delhi Clients Say</span></h2>
+          <p className="dsel-lead" style={{ marginBottom: 0 }}>Trusted by real estate, healthcare, and B2B businesses across Delhi NCR.</p>
+        </div>
+        <div className="dsel-testi-marquee-outer">
+          <div className="dsel-testi-fade dsel-testi-fade--l" />
+          <div className="dsel-testi-fade dsel-testi-fade--r" />
+
+          <div className="dsel-testi-marquee-wrap">
+            <div className="dsel-testi-track">
+              {[...TESTIMONIALS, ...TESTIMONIALS].map((t, i) => (
+                <div className="dsel-testi-card" key={`row1-${t.name}-${i}`}>
+                  <div className="dsel-testi-stars">{'★'.repeat(t.rating)}</div>
+                  <p className="dsel-testi-text">"{t.text}"</p>
+                  <div className="dsel-testi-name">{t.name}</div>
+                  <div className="dsel-testi-role">{t.role}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="dsel-testi-marquee-wrap">
+            <div className="dsel-testi-track dsel-testi-track--rev">
+              {[...TESTIMONIALS_ROW2, ...TESTIMONIALS_ROW2].map((t, i) => (
+                <div className="dsel-testi-card" key={`row2-${t.name}-${i}`}>
+                  <div className="dsel-testi-stars">{'★'.repeat(t.rating)}</div>
+                  <p className="dsel-testi-text">"{t.text}"</p>
+                  <div className="dsel-testi-name">{t.name}</div>
+                  <div className="dsel-testi-role">{t.role}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -498,17 +578,26 @@ export default function SeoCompanyDelhi() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="dsel-cta">
-        <div className="dsel-sec-inner">
-          <h2>Ready to Rank Above Your Delhi Competitors?</h2>
-          <p>Join 500+ businesses across India that trust 1Solutions to build and sustain Page 1 organic rankings on Google.</p>
-          <div className="dsel-cta-btns">
-            <a href="#contact" className="dsel-cta-btn-p">
-              Get Free SEO Audit
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <Link href="/affordable-seo-packages/" className="dsel-cta-btn-s">View SEO Packages</Link>
+      {/* Related Services */}
+      <section className="dsel-related-section">
+        <div className="dsel-related-inner">
+          <span className="dsel-tag">Delhi SEO Related Offerings</span>
+          <h2 className="dsel-related-title">Explore Related Services</h2>
+          <p className="dsel-related-desc">Pair our Delhi SEO expertise with related services to build a complete digital growth strategy.</p>
+          <div className="dsel-related-tags">
+            {[
+              ['Local SEO Services', 'local-seo-services'],
+              ['Technical SEO', 'technical-seo-optimization'],
+              ['Link Building Services', 'link-building-services'],
+              ['Content Marketing', 'content-marketing-services'],
+              ['eCommerce SEO', 'ecommerce-seo-services'],
+              ['PPC Management', 'ppc-management-services'],
+              ['Affordable SEO Packages', 'affordable-seo-packages'],
+              ['SEO Audit Services', 'seo-audit-services'],
+              ['Web Development', 'web-development-services'],
+            ].map(([label, href], ti) => (
+              <Link key={label} href={`/${href}/`} className={`dsel-related-tag dsel-related-tag--${ti % 6}`}>{label}</Link>
+            ))}
           </div>
         </div>
       </section>
