@@ -127,7 +127,7 @@ export default function WayfairAccountManagement() {
         <title>Wayfair Supplier Account Management Services | 1Solutions</title>
         <meta name="description" content="Grow your Wayfair supplier business with 1Solutions. We manage your Partner Home account, CastleGate fulfillment, product listing quality, pricing strategy," />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://1solutions.biz/wayfair-account-management-services/" />
+        <link rel="canonical" href="https://www.1solutions.biz/wayfair-account-management-services/" />
         <style>{`
           *{box-sizing:border-box;}
           body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;}

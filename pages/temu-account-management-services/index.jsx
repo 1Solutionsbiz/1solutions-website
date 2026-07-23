@@ -134,7 +134,7 @@ export default function TemuAccountManagement() {
       <Head>
         <title>Temu Marketplace Account Management Services | 1Solutions</title>
         <meta name="description" content="Grow on Temu marketplace with 1Solutions. We manage your Temu seller account, listing optimisation, pricing strategy, GMV growth, and US market positioning." />
-        <link rel="canonical" href="https://1solutions.biz/temu-account-management-services/" />
+        <link rel="canonical" href="https://www.1solutions.biz/temu-account-management-services/" />
       </Head>
 
       <style>{`

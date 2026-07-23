@@ -134,7 +134,7 @@ export default function HouzzProductListingServices() {
       <Head>
         <title>Houzz Product Listing Services | 1Solutions</title>
         <meta name="description" content="Reach interior designers and homeowners on Houzz with 1Solutions. We create optimised Houzz product listings, manage your Houzz Pro shop, and run Houzz" />
-        <link rel="canonical" href="https://1solutions.biz/houzz-product-listing-services/" />
+        <link rel="canonical" href="https://www.1solutions.biz/houzz-product-listing-services/" />
       </Head>
 
       <style>{`

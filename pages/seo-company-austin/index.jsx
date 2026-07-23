@@ -79,15 +79,15 @@ export default function SeoCompanyAustin() {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://1solutions.biz/' },
-          { '@type': 'ListItem', position: 2, name: 'SEO Services', item: 'https://1solutions.biz/seo-services-company/' },
-          { '@type': 'ListItem', position: 3, name: 'SEO Company in Austin', item: 'https://1solutions.biz/seo-company-austin/' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
+          { '@type': 'ListItem', position: 2, name: 'SEO Services', item: 'https://www.1solutions.biz/seo-services-company/' },
+          { '@type': 'ListItem', position: 3, name: 'SEO Company in Austin', item: 'https://www.1solutions.biz/seo-company-austin/' },
         ],
       },
       {
         '@type': 'LocalBusiness',
         name: '1Solutions - SEO Company in Austin',
-        url: 'https://1solutions.biz',
+        url: 'https://www.1solutions.biz',
         email: 'info@1solutions.biz',
         address: { '@type': 'PostalAddress', addressLocality: 'Austin', addressRegion: 'TX', addressCountry: 'US' },
         areaServed: [
@@ -104,7 +104,7 @@ export default function SeoCompanyAustin() {
       {
         '@type': 'ProfessionalService',
         name: 'SEO Services in Austin TX',
-        provider: { '@type': 'Organization', name: '1Solutions', url: 'https://1solutions.biz' },
+        provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz' },
         description: 'Comprehensive SEO services for Austin Texas businesses - technical SEO, on-page optimisation, local SEO, link building, and content strategy to achieve Page 1 Google rankings.',
         areaServed: { '@type': 'City', name: 'Austin' },
         serviceType: 'Search Engine Optimisation',
@@ -128,10 +128,10 @@ export default function SeoCompanyAustin() {
         <meta name="description" content="Looking for the best SEO company in Austin TX? 1Solutions delivers Page 1 Google rankings for Austin businesses - technical SEO, local SEO, link building &" />
         <meta name="keywords" content="SEO company in Austin, SEO agency Austin, SEO services Austin TX, best SEO company Austin, Austin SEO, search engine optimization Austin Texas" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://1solutions.biz/seo-company-austin/" />
+        <link rel="canonical" href="https://www.1solutions.biz/seo-company-austin/" />
         <meta property="og:title" content="SEO Company in Austin TX | Best Austin SEO Agency | 1Solutions" />
         <meta property="og:description" content="Top SEO company in Austin TX with 15+ years experience. We help Austin businesses rank on Page 1 of Google. Get your free SEO audit today." />
-        <meta property="og:url" content="https://1solutions.biz/seo-company-austin/" />
+        <meta property="og:url" content="https://www.1solutions.biz/seo-company-austin/" />
         <meta property="og:type" content="website" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

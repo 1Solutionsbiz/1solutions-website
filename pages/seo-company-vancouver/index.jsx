@@ -79,15 +79,15 @@ export default function SeoCompanyVancouver() {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://1solutions.biz/' },
-          { '@type': 'ListItem', position: 2, name: 'SEO Services', item: 'https://1solutions.biz/seo-services-company/' },
-          { '@type': 'ListItem', position: 3, name: 'SEO Company in Vancouver', item: 'https://1solutions.biz/seo-company-vancouver/' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
+          { '@type': 'ListItem', position: 2, name: 'SEO Services', item: 'https://www.1solutions.biz/seo-services-company/' },
+          { '@type': 'ListItem', position: 3, name: 'SEO Company in Vancouver', item: 'https://www.1solutions.biz/seo-company-vancouver/' },
         ],
       },
       {
         '@type': 'LocalBusiness',
         name: '1Solutions - SEO Company in Vancouver',
-        url: 'https://1solutions.biz',
+        url: 'https://www.1solutions.biz',
         email: 'info@1solutions.biz',
         address: { '@type': 'PostalAddress', addressLocality: 'Vancouver', addressRegion: 'BC', addressCountry: 'CA' },
         areaServed: [
@@ -104,7 +104,7 @@ export default function SeoCompanyVancouver() {
       {
         '@type': 'ProfessionalService',
         name: 'SEO Services in Vancouver',
-        provider: { '@type': 'Organization', name: '1Solutions', url: 'https://1solutions.biz' },
+        provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz' },
         description: 'Comprehensive SEO services for Vancouver businesses - technical SEO, on-page optimisation, local SEO, link building, and content strategy to achieve Page 1 Google rankings.',
         areaServed: { '@type': 'City', name: 'Vancouver' },
         serviceType: 'Search Engine Optimisation',
@@ -128,10 +128,10 @@ export default function SeoCompanyVancouver() {
         <meta name="description" content="Looking for the best SEO company in Vancouver? 1Solutions delivers Page 1 Google rankings for Vancouver businesses - technical SEO, local SEO, link building" />
         <meta name="keywords" content="SEO company in Vancouver, SEO agency Vancouver, SEO services Vancouver, best SEO company Vancouver, Vancouver SEO, search engine optimization Vancouver BC" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://1solutions.biz/seo-company-vancouver/" />
+        <link rel="canonical" href="https://www.1solutions.biz/seo-company-vancouver/" />
         <meta property="og:title" content="SEO Company in Vancouver | Best SEO Agency Metro Vancouver | 1Solutions" />
         <meta property="og:description" content="Top SEO company in Vancouver with 15+ years experience. We help Vancouver businesses rank on Page 1 of Google. Get your free SEO audit today." />
-        <meta property="og:url" content="https://1solutions.biz/seo-company-vancouver/" />
+        <meta property="og:url" content="https://www.1solutions.biz/seo-company-vancouver/" />
         <meta property="og:type" content="website" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

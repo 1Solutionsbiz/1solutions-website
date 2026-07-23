@@ -134,7 +134,7 @@ export default function FBAReconciliation() {
       <Head>
         <title>Amazon FBA Shipment Reconciliation Services | 1Solutions</title>
         <meta name="description" content="Recover lost FBA revenue with 1Solutions. We audit Amazon FBA shipments, file reimbursement claims for lost and damaged inventory, and recover money Amazon" />
-        <link rel="canonical" href="https://1solutions.biz/amazon-fba-shipment-reconciliation-services/" />
+        <link rel="canonical" href="https://www.1solutions.biz/amazon-fba-shipment-reconciliation-services/" />
       </Head>
 
       <style>{`

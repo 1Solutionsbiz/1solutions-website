@@ -134,7 +134,7 @@ export default function FlipkartAccountManagement() {
       <Head>
         <title>Flipkart Seller Account Management Services | 1Solutions</title>
         <meta name="description" content="Grow on Flipkart with 1Solutions. We manage Flipkart Seller Hub, listing optimisation, F-Assured certification, Flipkart Ads, Flipkart Fulfillment (FBF)," />
-        <link rel="canonical" href="https://1solutions.biz/flipkart-account-management-services/" />
+        <link rel="canonical" href="https://www.1solutions.biz/flipkart-account-management-services/" />
       </Head>
 
       <style>{`

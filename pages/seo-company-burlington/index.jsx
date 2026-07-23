@@ -79,15 +79,15 @@ export default function SeoCompanyBurlington() {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://1solutions.biz/' },
-          { '@type': 'ListItem', position: 2, name: 'SEO Services', item: 'https://1solutions.biz/seo-services-company/' },
-          { '@type': 'ListItem', position: 3, name: 'SEO Company in Burlington', item: 'https://1solutions.biz/seo-company-burlington/' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
+          { '@type': 'ListItem', position: 2, name: 'SEO Services', item: 'https://www.1solutions.biz/seo-services-company/' },
+          { '@type': 'ListItem', position: 3, name: 'SEO Company in Burlington', item: 'https://www.1solutions.biz/seo-company-burlington/' },
         ],
       },
       {
         '@type': 'LocalBusiness',
         name: '1Solutions - SEO Company in Burlington Ontario',
-        url: 'https://1solutions.biz',
+        url: 'https://www.1solutions.biz',
         email: 'info@1solutions.biz',
         address: { '@type': 'PostalAddress', addressLocality: 'Burlington', addressRegion: 'ON', addressCountry: 'CA' },
         areaServed: [
@@ -103,7 +103,7 @@ export default function SeoCompanyBurlington() {
       {
         '@type': 'ProfessionalService',
         name: 'SEO Services in Burlington Ontario',
-        provider: { '@type': 'Organization', name: '1Solutions', url: 'https://1solutions.biz' },
+        provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz' },
         description: 'Comprehensive SEO services for Burlington Ontario businesses - technical SEO, on-page optimisation, local SEO, link building, and content strategy to achieve Page 1 Google rankings.',
         areaServed: { '@type': 'City', name: 'Burlington' },
         serviceType: 'Search Engine Optimisation',
@@ -127,10 +127,10 @@ export default function SeoCompanyBurlington() {
         <meta name="description" content="Looking for the best SEO company in Burlington Ontario? 1Solutions delivers Page 1 Google rankings for Burlington businesses - technical SEO, local SEO," />
         <meta name="keywords" content="SEO company in Burlington, SEO agency Burlington Ontario, SEO services Burlington, best SEO company Burlington ON, Burlington SEO, search engine optimization Burlington Ontario" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://1solutions.biz/seo-company-burlington/" />
+        <link rel="canonical" href="https://www.1solutions.biz/seo-company-burlington/" />
         <meta property="og:title" content="SEO Company in Burlington Ontario | Best Burlington SEO Agency | 1Solutions" />
         <meta property="og:description" content="Top SEO company in Burlington ON with 15+ years experience. We help Burlington businesses rank on Page 1 of Google. Get your free SEO audit today." />
-        <meta property="og:url" content="https://1solutions.biz/seo-company-burlington/" />
+        <meta property="og:url" content="https://www.1solutions.biz/seo-company-burlington/" />
         <meta property="og:type" content="website" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`

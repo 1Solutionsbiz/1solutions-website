@@ -94,16 +94,16 @@ export default function SeoCompanyDelhi() {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://1solutions.biz/' },
-          { '@type': 'ListItem', position: 2, name: 'SEO Services', item: 'https://1solutions.biz/seo-services-company/' },
-          { '@type': 'ListItem', position: 3, name: 'SEO Company in Delhi', item: 'https://1solutions.biz/seo-company-delhi/' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.1solutions.biz/' },
+          { '@type': 'ListItem', position: 2, name: 'SEO Services', item: 'https://www.1solutions.biz/seo-services-company/' },
+          { '@type': 'ListItem', position: 3, name: 'SEO Company in Delhi', item: 'https://www.1solutions.biz/seo-company-delhi/' },
         ],
       },
       {
         '@type': 'LocalBusiness',
-        '@id': 'https://1solutions.biz/#organization',
+        '@id': 'https://www.1solutions.biz/#organization',
         name: '1Solutions - SEO Company in Delhi',
-        url: 'https://1solutions.biz',
+        url: 'https://www.1solutions.biz',
         telephone: '+919654327900',
         email: 'info@1solutions.biz',
         address: {
@@ -127,7 +127,7 @@ export default function SeoCompanyDelhi() {
       {
         '@type': 'ProfessionalService',
         name: 'SEO Services in Delhi',
-        provider: { '@type': 'Organization', name: '1Solutions', url: 'https://1solutions.biz' },
+        provider: { '@type': 'Organization', name: '1Solutions', url: 'https://www.1solutions.biz' },
         description: 'Comprehensive SEO services for Delhi businesses - technical SEO, on-page optimisation, local SEO, link building, and content strategy to achieve Page 1 Google rankings.',
         areaServed: { '@type': 'City', name: 'New Delhi' },
         serviceType: 'Search Engine Optimisation',
@@ -151,10 +151,10 @@ export default function SeoCompanyDelhi() {
         <meta name="description" content="Looking for the best SEO company in Delhi? 1Solutions delivers Page 1 rankings for Delhi businesses - technical SEO, local SEO, link building, and content" />
         <meta name="keywords" content="SEO company in Delhi, SEO agency Delhi, SEO services Delhi, best SEO company Delhi, SEO company Delhi NCR, search engine optimization Delhi" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://1solutions.biz/seo-company-delhi/" />
+        <link rel="canonical" href="https://www.1solutions.biz/seo-company-delhi/" />
         <meta property="og:title" content="SEO Company in Delhi | Best SEO Agency Delhi NCR | 1Solutions" />
         <meta property="og:description" content="Top SEO company in Delhi with 15+ years experience. We help Delhi businesses rank on Page 1 of Google through ethical, data-driven SEO strategies." />
-        <meta property="og:url" content="https://1solutions.biz/seo-company-delhi/" />
+        <meta property="og:url" content="https://www.1solutions.biz/seo-company-delhi/" />
         <meta property="og:type" content="website" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
