@@ -232,8 +232,6 @@ export default async function handler(req, res) {
         </p>
         <p style="font-size:15px;margin:0;">
           <a href="https://www.1solutions.biz/open-positions/" style="color:#1a1aa8;text-decoration:underline;">View open positions</a>
-          &nbsp;&nbsp;|&nbsp;&nbsp;
-          <a href="https://www.1solutions.biz/contact-us/" style="color:#1a1aa8;text-decoration:underline;">Contact Us</a>
         </p>
       </td>
     </tr>
@@ -255,7 +253,17 @@ export default async function handler(req, res) {
   <!-- Below-card footer -->
   <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:580px;">
     <tr>
-      <td align="center" style="padding:16px 20px 0;">
+      <td align="center" style="padding:20px 20px 4px;">
+        <a href="https://www.linkedin.com/company/1solutions/" target="_blank" rel="noopener noreferrer" style="display:inline-block;text-decoration:none;">
+          <img src="https://www.1solutions.biz/images/linkedin-icon.png" width="32" height="32" alt="Follow 1Solutions on LinkedIn" style="display:block;border:0;border-radius:8px;" />
+        </a>
+        <p style="font-size:12px;color:#6b7280;margin:8px 0 0;">
+          Follow us on <a href="https://www.linkedin.com/company/1solutions/" target="_blank" rel="noopener noreferrer" style="color:#114171;font-weight:600;text-decoration:none;">LinkedIn</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" style="padding:12px 20px 0;">
         <p style="font-size:12px;color:#9ca3af;line-height:1.65;margin:0;">
           This email was sent to ${esc(email)} because you applied for a role on 1solutions.biz.
         </p>

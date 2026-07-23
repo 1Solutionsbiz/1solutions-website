@@ -7,7 +7,15 @@ const MOBILE_FALLBACK_MS = 40000
 const EXCLUDED_PATH_PREFIXES = ['/apply-online', '/thank-you', '/contact-us']
 const RC_SRC = 'https://www.google.com/recaptcha/api.js?render=6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs'
 
-const INITIAL_FORM = { name: '', email: '', phone: '', consent: false }
+const INITIAL_FORM = { name: '', email: '', phone: '', interest: '', consent: false }
+
+const INTEREST_OPTIONS = [
+  'Web & App Development',
+  'Digital Marketing & SEO',
+  'eCommerce Development (Shopify/WooCommerce)',
+  'Hire a Dedicated Developer',
+  'General Enquiry',
+]
 
 export default function ExitIntentPopup() {
   const [visible, setVisible] = useState(false)
@@ -95,12 +103,14 @@ export default function ExitIntentPopup() {
           }
         }, 200)
       })
+      const { interest, ...rest } = form
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          ...form,
-          message: 'Requested a free strategy call via the exit-intent popup.',
+          ...rest,
+          service: interest,
+          message: `Requested a free strategy call via the exit-intent popup. Interested in: ${interest || 'not specified'}.`,
           source: 'Exit-Intent Popup',
           recaptchaToken,
         }),
@@ -144,12 +154,21 @@ export default function ExitIntentPopup() {
         .eip-close:hover { background: rgba(255,255,255,0.28); }
         .eip-body { padding: 24px 28px 28px; }
         .eip-field { margin-bottom: 12px; }
-        .eip-field input[type="text"], .eip-field input[type="email"], .eip-field input[type="tel"] {
+        .eip-field input[type="text"], .eip-field input[type="email"], .eip-field input[type="tel"], .eip-field select {
           width: 100%; padding: 11px 14px; border: 1.5px solid #e5e7eb; border-radius: 10px;
           font-size: 14px; font-family: inherit; outline: none; transition: border-color 0.2s;
-          box-sizing: border-box;
+          box-sizing: border-box; background: #fff; color: #1a1a2e;
         }
-        .eip-field input:focus { border-color: #114171; }
+        .eip-field select { appearance: none; -webkit-appearance: none;
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%236b7280'%3E%3Cpath fill-rule='evenodd' d='M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z' clip-rule='evenodd'/%3E%3C/svg%3E");
+          background-repeat: no-repeat; background-position: right 12px center; background-size: 16px;
+          padding-right: 36px;
+        }
+        .eip-field select:invalid { color: #6b7280; }
+        .eip-field input:focus, .eip-field select:focus { border-color: #114171; }
+        .eip-linkedin { display: flex; align-items: center; gap: 8px; justify-content: center; margin-top: 16px; font-size: 12.5px; color: #6b7280; text-decoration: none; }
+        .eip-linkedin:hover { color: #114171; }
+        .eip-linkedin svg { flex-shrink: 0; }
         .eip-submit {
           width: 100%; padding: 13px; border: none; border-radius: 10px;
           background: linear-gradient(135deg, #FE9700 0%, #F59E0B 100%); color: #fff;
@@ -200,6 +219,14 @@ export default function ExitIntentPopup() {
                 <div className="eip-field">
                   <input type="tel" name="phone" placeholder="Phone Number (optional)" value={form.phone} onChange={handleChange} />
                 </div>
+                <div className="eip-field">
+                  <select name="interest" value={form.interest} onChange={handleChange} required>
+                    <option value="" disabled>What can we help with?</option>
+                    {INTEREST_OPTIONS.map((opt) => (
+                      <option value={opt} key={opt}>{opt}</option>
+                    ))}
+                  </select>
+                </div>
                 <label className="eip-consent">
                   <input type="checkbox" name="consent" checked={form.consent} onChange={handleChange} required />
                   I agree to be contacted about my project. No spam, ever.
@@ -210,6 +237,15 @@ export default function ExitIntentPopup() {
                 <button type="submit" className="eip-submit" disabled={status === 'loading'}>
                   {status === 'loading' ? 'Sending...' : 'Claim My Free Call'}
                 </button>
+                <a
+                  className="eip-linkedin"
+                  href="https://www.linkedin.com/company/1solutions/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.722-2.004 1.418-.103.25-.129.599-.129.948v5.439h-3.554s.043-8.811 0-9.726h3.554v1.375c.427-.659 1.191-1.597 2.898-1.597 2.117 0 3.704 1.384 3.704 4.362v5.586zM5.337 9.433c-1.144 0-1.915-.748-1.915-1.686 0-.955.768-1.686 1.959-1.686 1.19 0 1.916.73 1.916 1.686 0 .938-.726 1.686-1.96 1.686zm1.6 11.019H3.738V9.726h3.199v10.726zM22.224 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.224 0z"/></svg>
+                  Prefer LinkedIn? Follow 1Solutions
+                </a>
               </form>
             </>
           )}
