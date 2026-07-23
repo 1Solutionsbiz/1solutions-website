@@ -62,6 +62,14 @@ const INDUSTRIES = [
   { icon: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', name: 'IT & SaaS Companies' },
   { icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4', name: 'Hospitality & Hotels' },
   { icon: 'M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z', name: 'Manufacturing & B2B' },
+  { icon: 'M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0zM13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1', name: 'Automotive & Dealerships' },
+  { icon: 'M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z', name: 'Restaurants & Food Delivery' },
+  { icon: 'M3 10h18M7 15h1m4 0h1m-7 4h12a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', name: 'Finance & Insurance' },
+  { icon: 'M12 19l9 2-9-18-9 18 9-2zm0 0v-8', name: 'Travel & Tourism' },
+  { icon: 'M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z', name: 'Fashion & Apparel' },
+  { icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065zM15 12a3 3 0 11-6 0 3 3 0 016 0z', name: 'Home Services & Contractors' },
+  { icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-6.857 2.286L12 21l-2.286-6.714L3 12l6.714-2.143L12 3z', name: 'Fitness & Wellness' },
+  { icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z', name: 'Logistics & Supply Chain' },
 ];
 
 const AREAS = [
@@ -216,9 +224,9 @@ export default function SeoCompanyDelhi() {
           .dsel-proc-h{font-size:1rem;font-weight:700;color:#0A1628;margin:0 0 10px;}
           .dsel-proc-p{font-size:13.5px;color:#4b5563;line-height:1.7;margin:0;}
           .dsel-ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
-          .dsel-ind-card{background:#fff;border:1px solid #edf0f5;border-radius:14px;padding:20px 16px;display:flex;align-items:center;gap:12px;transition:border-color 0.2s,box-shadow 0.2s;}
-          .dsel-ind-card:hover{border-color:rgba(12,36,97,0.20);box-shadow:0 4px 16px rgba(12,36,97,0.08);}
-          .dsel-ind-icon{width:36px;height:36px;border-radius:10px;background:rgba(12,36,97,0.06);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+          .dsel-ind-card{background:linear-gradient(135deg,rgba(224,231,255,0.45) 0%,rgba(255,255,255,0.90) 60%,rgba(219,234,254,0.35) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:14px;padding:20px 16px;display:flex;align-items:center;gap:12px;box-shadow:0 4px 24px rgba(12,36,97,0.07),inset 0 1px 0 rgba(255,255,255,0.95);transition:transform 0.22s,box-shadow 0.22s,border-color 0.22s;}
+          .dsel-ind-card:hover{transform:translateY(-4px);border-color:rgba(29,86,208,0.25);box-shadow:0 12px 36px rgba(12,36,97,0.12);}
+          .dsel-ind-icon{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,rgba(12,36,97,0.12),rgba(29,86,208,0.05));display:flex;align-items:center;justify-content:center;flex-shrink:0;}
           .dsel-ind-icon svg{width:18px;height:18px;color:#0c2461;}
           .dsel-ind-name{font-size:13.5px;font-weight:600;color:#0A1628;line-height:1.3;}
           .dsel-areas-wrap{display:flex;flex-wrap:wrap;gap:10px;}
