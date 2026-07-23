@@ -162,6 +162,10 @@ export default function SeoCompanyDelhi() {
         <link rel="canonical" href="https://www.1solutions.biz/seo-company-delhi/" />
         <meta property="og:title" content="SEO Company in Delhi | Best SEO Agency Delhi NCR | 1Solutions" />
         <meta property="og:description" content="Top SEO company in Delhi with 15+ years experience. We help Delhi businesses rank on Page 1 of Google through ethical, data-driven SEO strategies." />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/api/og-service?title=SEO%20Company%20in%20Delhi%20%7C%20Best%20SEO%20Agency%20Delhi%20NCR" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/png" />
         <meta property="og:url" content="https://www.1solutions.biz/seo-company-delhi/" />
         <meta property="og:type" content="website" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
