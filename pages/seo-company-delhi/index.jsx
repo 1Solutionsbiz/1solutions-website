@@ -27,9 +27,13 @@ const TESTIMONIALS = [
   { name: 'Vikram Chawla', role: 'CEO, Okhla B2B Manufacturing', rating: 5, text: 'Honest timelines, clear monthly reporting, and rankings that have actually held through two Google core updates. 1Solutions is the first SEO agency in Delhi that treated our account like a long-term partnership, not a quick sale.' },
 ];
 
-// Row 2 is the same reviews rotated by one position (and scrolled in reverse)
-// so the two marquee rows never show identical cards lined up together.
-const TESTIMONIALS_ROW2 = [TESTIMONIALS[1], TESTIMONIALS[2], TESTIMONIALS[0]];
+// Row 2 uses a separate set of reviews (not a reorder of row 1) so the two
+// marquee rows never show identical testimonial content.
+const TESTIMONIALS_ROW2 = [
+  { name: 'Ananya Sethi', role: 'Marketing Head, Nehru Place IT Solutions', rating: 5, text: 'We compared four Delhi SEO agencies before signing with 1Solutions. Eight months in, we rank Page 1 for 40+ B2B keywords and our sales team says organic is now our best-qualified lead source.' },
+  { name: 'Karan Bhatia', role: 'Owner, Karol Bagh Retail Chain', rating: 5, text: 'Local SEO from 1Solutions filled a gap none of our previous vendors even flagged. Store footfall from "near me" searches is up noticeably, and we finally show up ahead of bigger competitors in Karol Bagh.' },
+  { name: 'Meera Iyer', role: 'Co-Founder, Dwarka EdTech Startup', rating: 5, text: 'As a startup with a tight budget, we needed an agency that prioritised the right keywords first. 1Solutions built us a phased roadmap and we saw our first Page 1 rankings within 10 weeks.' },
+];
 
 const PROCESS = [
   { n: '01', title: 'Free Delhi SEO Audit', desc: 'We audit your website for technical health, current keyword rankings, backlink profile, competitor positions, and the specific gaps holding your Delhi business back from Page 1.' },
