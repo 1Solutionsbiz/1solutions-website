@@ -305,7 +305,7 @@ export default function WordPressDevelopmentCompany() {
           .wp-testi-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08);padding:80px 0;position:relative;z-index:1;overflow:hidden; }
           .wp-testi-inner { max-width:1280px;margin:0 auto;padding:0 40px; }
           .wp-section-header-center { text-align:center;margin-bottom:52px; }
-          .wp-testi-marquee-outer { position:relative;margin-bottom:52px; }
+          .wp-testi-marquee-outer { position:relative; }
           .wp-testi-marquee-wrap { overflow:hidden;margin-bottom:20px; }
           .wp-testi-marquee-wrap:last-child { margin-bottom:0; }
           .wp-testi-track { display:flex;gap:20px;width:max-content;animation:wpTestiScroll 32s linear infinite; }
@@ -327,11 +327,6 @@ export default function WordPressDevelopmentCompany() {
           .wp-tcard-avatar { width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#ffffff;flex-shrink:0; }
           .wp-tcard-name { font-size:14px;font-weight:700;color:#0F3460; }
           .wp-tcard-role { font-size:12px;color:#6b7280; }
-          .wp-testi-stats { display:flex;align-items:center;justify-content:center;gap:0;background:linear-gradient(135deg,rgba(219,234,254,0.50) 0%,rgba(255,255,255,0.75) 50%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:16px;padding:32px 40px;border:1px solid rgba(255,255,255,0.85);box-shadow:0 4px 20px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
-          .wp-tstat { display:flex;flex-direction:column;align-items:center;gap:4px;flex:1; }
-          .wp-tstat-num { font-size:28px;font-weight:800;color:#0F3460; }
-          .wp-tstat-label { font-size:13px;color:#4A6080;font-weight:500; }
-          .wp-tstat-divider { width:1px;height:40px;background:rgba(15,52,96,0.15); }
 
           /* Why */
           .wp-why-section { padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08);position:relative;z-index:1; }
@@ -549,11 +544,6 @@ export default function WordPressDevelopmentCompany() {
             .wp-services-grid { grid-template-columns:1fr 1fr;gap:10px; }
             .wp-portfolio-grid { grid-template-columns:1fr; }
             .wp-section-title,.wp-engage-title,.wp-process-main-title,.wp-related-title { font-size:30px; }
-            .wp-testi-stats { flex-wrap:wrap;gap:0;padding:24px 20px; }
-            .wp-tstat { flex:0 0 50%;width:50%;padding:12px 8px;border-bottom:1px solid rgba(15,52,96,0.10); }
-            .wp-tstat:nth-child(odd) { border-right:1px solid rgba(15,52,96,0.10); }
-            .wp-tstat:nth-last-child(-n+2) { border-bottom:none; }
-            .wp-tstat-divider { display:none; }
             .wp-form-row { grid-template-columns:1fr; }
             .wp-stats-grid { grid-template-columns:1fr 1fr 1fr; }
             .wp-stat-number { font-size:28px; }
@@ -940,20 +930,6 @@ export default function WordPressDevelopmentCompany() {
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
-
-          <div className="wp-testi-inner">
-            <div className="wp-testi-stats">
-              {[['4.9/5','Average Rating'],['200+','Verified Reviews'],['98%','Client Satisfaction'],['85%','Repeat Clients']].map(([num,label],i,arr) => (
-                <>
-                  <div className="wp-tstat" key={label}>
-                    <span className="wp-tstat-num">{num}</span>
-                    <span className="wp-tstat-label">{label}</span>
-                  </div>
-                  {i < arr.length-1 && <div className="wp-tstat-divider" key={`d${i}`} />}
-                </>
-              ))}
             </div>
           </div>
         </section>
