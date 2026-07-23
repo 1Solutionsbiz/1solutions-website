@@ -77,17 +77,25 @@ const INDUSTRIES = [
   { icon:'⚖️', title:'Professional Services',    desc:'Authority-building websites for law firms, consulting agencies, accounting practices, and B2B service providers.' },
 ];
 
+const WP_TESTIMONIALS = [
+  { initials:'JM', bg:'#1a4a7a', text:'"1Solutions transformed our outdated website into a high-converting WooCommerce store. Sales increased by 40% within three months of launch. Absolutely outstanding work."', name:'James Mitchell', role:'CEO, RetailEdge - USA', featured:false },
+  { initials:'SR', bg:'#0F3460', text:'"Professional, fast, and incredibly detail-oriented. They built our entire WordPress site from scratch with custom plugins and it works flawlessly. Best development partner we\'ve ever had."', name:'Sarah Reynolds', role:'Founder, GreenLeaf Co. - Australia', featured:true },
+  { initials:'DL', bg:'#2d5a8e', text:'"We\'ve worked with 1Solutions on four projects over three years. Consistent quality, on-time delivery, and excellent communication. They truly understand our business goals."', name:'Daniel Lowe', role:'CTO, NorthTech - Canada', featured:false },
+];
+
+// Row 2 is the same reviews rotated by one position (and scrolled in reverse)
+// so the two marquee rows never show identical cards lined up together.
+const WP_TESTIMONIALS_ROW2 = [WP_TESTIMONIALS[1], WP_TESTIMONIALS[2], WP_TESTIMONIALS[0]];
+
 export default function WordPressDevelopmentCompany() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleSteps, setVisibleSteps] = useState([]);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
-  const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const stepRefs = useRef([]);
   const sectionRefs = useRef({});
   const whyGridRef = useRef(null);
-  const testiGridRef = useRef(null);
 
   // Scroll-reveal for process steps
   useEffect(() => {
@@ -126,21 +134,6 @@ export default function WordPressDevelopmentCompany() {
     return () => obs.disconnect();
   }, []);
 
-  // Testimonial cards staggered reveal
-  useEffect(() => {
-    if (!testiGridRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          [0,1,2].forEach(i => setTimeout(() => setVisibleTestiCards(p => p.includes(i)?p:[...p,i]), i * 150));
-          obs.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-    obs.observe(testiGridRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   // Engagement cards staggered slide-in
 
@@ -306,13 +299,26 @@ export default function WordPressDevelopmentCompany() {
           .wp-process-img-wrap { width:100%;max-width:100%;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(15,52,96,0.15);aspect-ratio:4/5;background:#e8edf5; }
           .wp-process-img-wrap img { width:100%;height:100%;object-fit:cover;display:block; }
 
-          /* Testimonials */
-          .wp-testi-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08);padding:80px 40px;position:relative;z-index:1; }
-          .wp-testi-inner { max-width:1280px;margin:0 auto; }
+          /* Testimonials — MagicUI-style marquee (inlined: this Pages Router
+             page never loads globals.css, so the shared Marquee component's
+             .mq-outer/.mq-inner classes would silently do nothing here) */
+          .wp-testi-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08);padding:80px 0;position:relative;z-index:1;overflow:hidden; }
+          .wp-testi-inner { max-width:1280px;margin:0 auto;padding:0 40px; }
           .wp-section-header-center { text-align:center;margin-bottom:52px; }
-          .wp-testi-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:52px; }
-          .wp-tcard { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:32px 28px;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95);display:flex;flex-direction:column;gap:16px;transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s; }
-          .wp-tcard:hover { transform:translateY(-6px);border-color:rgba(217,119,6,0.40);box-shadow:0 16px 48px rgba(15,52,96,0.14),inset 0 1px 0 rgba(255,255,255,1); }
+          .wp-testi-marquee-outer { position:relative;margin-bottom:52px; }
+          .wp-testi-marquee-wrap { overflow:hidden;margin-bottom:20px; }
+          .wp-testi-marquee-wrap:last-child { margin-bottom:0; }
+          .wp-testi-track { display:flex;gap:20px;width:max-content;animation:wpTestiScroll 32s linear infinite; }
+          .wp-testi-track--rev { animation-name:wpTestiScrollRev; }
+          .wp-testi-marquee-wrap:hover .wp-testi-track { animation-play-state:paused; }
+          @keyframes wpTestiScroll { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+          @keyframes wpTestiScrollRev { from { transform:translateX(-50%); } to { transform:translateX(0); } }
+          @media (prefers-reduced-motion:reduce) { .wp-testi-track { animation:none !important; } }
+          .wp-testi-fade { position:absolute;top:0;bottom:0;width:120px;z-index:1;pointer-events:none; }
+          .wp-testi-fade--l { left:0;background:linear-gradient(to right,#f8fafd,transparent); }
+          .wp-testi-fade--r { right:0;background:linear-gradient(to left,#f8fafd,transparent); }
+          @media (max-width:600px) { .wp-testi-fade { width:48px; } }
+          .wp-tcard { width:400px;flex-shrink:0;user-select:none;background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:32px 28px;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95);display:flex;flex-direction:column;gap:16px; }
           .wp-tcard.featured { background:linear-gradient(135deg,rgba(254,243,199,0.50) 0%,rgba(255,255,255,0.85) 55%,rgba(219,234,254,0.45) 100%);border-color:rgba(217,119,6,0.25);box-shadow:0 6px 32px rgba(217,119,6,0.10),inset 0 1px 0 rgba(255,255,255,1); }
           .wp-tcard-stars { font-size:18px;color:#D97706;letter-spacing:2px; }
           .wp-tcard-text { font-size:15px;line-height:1.75;color:#374151;margin:0;flex:1; }
@@ -488,16 +494,6 @@ export default function WordPressDevelopmentCompany() {
             transform:scaleY(1);
           }
 
-          /* Testimonial cards staggered reveal */
-          .wp-tcard {
-            opacity:0;
-            transform:translateY(44px);
-            transition:opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s, border-color 0.3s;
-          }
-          .wp-tcard.wp-tcard-visible {
-            opacity:1;
-            transform:translateY(0);
-          }
 
           /* Engagement cards staggered slide-in from right */
 
@@ -551,7 +547,6 @@ export default function WordPressDevelopmentCompany() {
             .wp-related-tags { justify-content:center;gap:8px; }
             .wp-rtag { padding:9px 16px;font-size:13px; }
             .wp-services-grid { grid-template-columns:1fr 1fr;gap:10px; }
-            .wp-testi-grid { grid-template-columns:1fr; }
             .wp-portfolio-grid { grid-template-columns:1fr; }
             .wp-section-title,.wp-engage-title,.wp-process-main-title,.wp-related-title { font-size:30px; }
             .wp-testi-stats { flex-wrap:wrap;gap:0;padding:24px 20px; }
@@ -905,25 +900,50 @@ export default function WordPressDevelopmentCompany() {
               <h2 className="wp-section-title">Know What Our Customers Say</h2>
               <p className="wp-section-sub">Trusted by businesses across the US, Canada, Australia and beyond for 15+ years.</p>
             </div>
-            <div className="wp-testi-grid" ref={testiGridRef}>
-              {[
-                { initials:'JM', bg:'#1a4a7a', text:'"1Solutions transformed our outdated website into a high-converting WooCommerce store. Sales increased by 40% within three months of launch. Absolutely outstanding work."', name:'James Mitchell', role:'CEO, RetailEdge - USA', featured:false },
-                { initials:'SR', bg:'#0F3460', text:'"Professional, fast, and incredibly detail-oriented. They built our entire WordPress site from scratch with custom plugins and it works flawlessly. Best development partner we\'ve ever had."', name:'Sarah Reynolds', role:'Founder, GreenLeaf Co. - Australia', featured:true },
-                { initials:'DL', bg:'#2d5a8e', text:'"We\'ve worked with 1Solutions on four projects over three years. Consistent quality, on-time delivery, and excellent communication. They truly understand our business goals."', name:'Daniel Lowe', role:'CTO, NorthTech - Canada', featured:false },
-              ].map((t,i) => (
-                <div className={`wp-tcard${t.featured?' featured':''}${visibleTestiCards.includes(i)?' wp-tcard-visible':''}`} key={t.name}>
-                  <div className="wp-tcard-stars">★★★★★</div>
-                  <p className="wp-tcard-text">{t.text}</p>
-                  <div className="wp-tcard-author">
-                    <div className="wp-tcard-avatar" style={{ background:t.bg }}>{t.initials}</div>
-                    <div>
-                      <div className="wp-tcard-name">{t.name}</div>
-                      <div className="wp-tcard-role">{t.role}</div>
+          </div>
+
+          <div className="wp-testi-marquee-outer">
+            <div className="wp-testi-fade wp-testi-fade--l" />
+            <div className="wp-testi-fade wp-testi-fade--r" />
+
+            <div className="wp-testi-marquee-wrap">
+              <div className="wp-testi-track">
+                {[...WP_TESTIMONIALS, ...WP_TESTIMONIALS].map((t, i) => (
+                  <div className={`wp-tcard${t.featured ? ' featured' : ''}`} key={`row1-${t.name}-${i}`}>
+                    <div className="wp-tcard-stars">★★★★★</div>
+                    <p className="wp-tcard-text">{t.text}</p>
+                    <div className="wp-tcard-author">
+                      <div className="wp-tcard-avatar" style={{ background:t.bg }}>{t.initials}</div>
+                      <div>
+                        <div className="wp-tcard-name">{t.name}</div>
+                        <div className="wp-tcard-role">{t.role}</div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
+
+            <div className="wp-testi-marquee-wrap">
+              <div className="wp-testi-track wp-testi-track--rev">
+                {[...WP_TESTIMONIALS_ROW2, ...WP_TESTIMONIALS_ROW2].map((t, i) => (
+                  <div className={`wp-tcard${t.featured ? ' featured' : ''}`} key={`row2-${t.name}-${i}`}>
+                    <div className="wp-tcard-stars">★★★★★</div>
+                    <p className="wp-tcard-text">{t.text}</p>
+                    <div className="wp-tcard-author">
+                      <div className="wp-tcard-avatar" style={{ background:t.bg }}>{t.initials}</div>
+                      <div>
+                        <div className="wp-tcard-name">{t.name}</div>
+                        <div className="wp-tcard-role">{t.role}</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="wp-testi-inner">
             <div className="wp-testi-stats">
               {[['4.9/5','Average Rating'],['200+','Verified Reviews'],['98%','Client Satisfaction'],['85%','Repeat Clients']].map(([num,label],i,arr) => (
                 <>
