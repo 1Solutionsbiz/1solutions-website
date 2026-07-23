@@ -75,17 +75,19 @@ const TESTIMONIALS = [
   { name:'James Thornton', role:'VP Engineering, B2B SaaS — Canada', rating:5, text:'We\'ve used 1Solutions as our PHP development partner for 3 years across 5 projects. Consistent quality, transparent communication, and they actually care about code maintainability — not just shipping features.' },
 ];
 
+// Row 2 is the same reviews rotated by one position (and scrolled in reverse)
+// so the two marquee rows never show identical cards lined up together.
+const TESTIMONIALS_ROW2 = [TESTIMONIALS[1], TESTIMONIALS[2], TESTIMONIALS[0]];
+
 export default function PhpDevelopmentServices() {
   const [showAll, setShowAll] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
   const [visibleSteps, setVisibleSteps] = useState([]);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
-  const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const stepRefs = useRef([]);
   const sectionRefs = useRef({});
   const whyGridRef = useRef(null);
-  const testiGridRef = useRef(null);
 
   useEffect(() => {
     const observers = stepRefs.current.map((el, i) => {
@@ -119,21 +121,6 @@ export default function PhpDevelopmentServices() {
       { threshold: 0.1 }
     );
     obs.observe(whyGridRef.current);
-    return () => obs.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!testiGridRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          [0,1,2].forEach(i => setTimeout(() => setVisibleTestiCards(p => p.includes(i)?p:[...p,i]), i * 150));
-          obs.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-    obs.observe(testiGridRef.current);
     return () => obs.disconnect();
   }, []);
 
@@ -293,16 +280,28 @@ export default function PhpDevelopmentServices() {
           .php-why-card h3 { font-size:15px;font-weight:700;color:#0F1F40;margin:0;line-height:1.35; }
           .php-why-card p { font-size:13px;color:#4A6080;line-height:1.7;margin:0; }
 
-          /* Testimonials */
-          .php-testi-section { background:#fff;border-top:1px solid rgba(15,52,96,0.06);padding:90px 40px; }
-          .php-testi-inner { max-width:1280px;margin:0 auto; }
-          .php-testi-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px; }
-          .php-testi-card { background:linear-gradient(135deg,rgba(219,234,254,0.45) 0%,rgba(255,255,255,0.90) 60%,rgba(254,243,199,0.30) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:28px;box-shadow:0 4px 24px rgba(15,52,96,0.06);opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease; }
-          .php-testi-card.visible { opacity:1;transform:translateY(0); }
+          /* Testimonials — MagicUI-style marquee (styles inlined here since this
+             Pages Router page never loads globals.css, unlike the App Router tree) */
+          .php-testi-section { background:#fff;border-top:1px solid rgba(15,52,96,0.06);padding:90px 0; overflow:hidden; }
+          .php-testi-inner { max-width:1280px;margin:0 auto;padding:0 40px; }
+          .php-testi-marquee-outer { position:relative;margin-top:44px; }
+          .php-testi-marquee-wrap { overflow:hidden;margin-bottom:20px; }
+          .php-testi-marquee-wrap:last-child { margin-bottom:0; }
+          .php-testi-track { display:flex;gap:20px;width:max-content;animation:phpTestiScroll 32s linear infinite; }
+          .php-testi-track--rev { animation-name:phpTestiScrollRev; }
+          .php-testi-marquee-wrap:hover .php-testi-track { animation-play-state:paused; }
+          @keyframes phpTestiScroll { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+          @keyframes phpTestiScrollRev { from { transform:translateX(-50%); } to { transform:translateX(0); } }
+          @media (prefers-reduced-motion:reduce) { .php-testi-track { animation:none !important; } }
+          .php-testi-fade { position:absolute;top:0;bottom:0;width:120px;z-index:1;pointer-events:none; }
+          .php-testi-fade--l { left:0;background:linear-gradient(to right,#fff,transparent); }
+          .php-testi-fade--r { right:0;background:linear-gradient(to left,#fff,transparent); }
+          .php-testi-card { width:400px;flex-shrink:0;background:linear-gradient(135deg,rgba(219,234,254,0.45) 0%,rgba(255,255,255,0.90) 60%,rgba(254,243,199,0.30) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:28px;box-shadow:0 4px 24px rgba(15,52,96,0.06);user-select:none; }
           .php-testi-stars { color:#D97706;font-size:15px;margin-bottom:12px;letter-spacing:1px; }
           .php-testi-text { font-size:14px;color:#1e293b;line-height:1.75;margin:0 0 18px;font-style:italic; }
           .php-testi-name { font-size:13px;font-weight:700;color:#0F3460; }
           .php-testi-role { font-size:12px;color:#6B7280;margin-top:2px; }
+          @media (max-width:600px) { .php-testi-fade { width:48px; } }
 
           /* Engagement Table */
           .php-engage-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08);padding:80px 40px;position:relative;z-index:1; }
@@ -380,7 +379,6 @@ export default function PhpDevelopmentServices() {
             .php-why-grid { grid-template-columns:repeat(2,1fr); }
             .php-industries-grid { grid-template-columns:repeat(2,1fr); }
             .php-tech-grid { grid-template-columns:repeat(2,1fr); }
-            .php-testi-grid { grid-template-columns:1fr; }
             .php-process-inner { grid-template-columns:1fr; }
             .php-process-image-col { display:none; }
           }
@@ -538,15 +536,35 @@ export default function PhpDevelopmentServices() {
               <h2 className="php-section-title">What Our PHP Clients Say</h2>
               <p className="php-section-desc">Trusted by businesses across the US, Canada, and Australia for 15+ years of PHP development.</p>
             </div>
-            <div className="php-testi-grid" ref={testiGridRef}>
-              {TESTIMONIALS.map((t, i) => (
-                <div className={`php-testi-card${visibleTestiCards.includes(i) ? ' visible' : ''}`} key={t.name} style={{ transitionDelay:`${i * 0.12}s` }}>
-                  <div className="php-testi-stars">{'★'.repeat(t.rating)}</div>
-                  <p className="php-testi-text">"{t.text}"</p>
-                  <div className="php-testi-name">{t.name}</div>
-                  <div className="php-testi-role">{t.role}</div>
-                </div>
-              ))}
+          </div>
+          <div className="php-testi-marquee-outer">
+            <div className="php-testi-fade php-testi-fade--l" />
+            <div className="php-testi-fade php-testi-fade--r" />
+
+            <div className="php-testi-marquee-wrap">
+              <div className="php-testi-track">
+                {[...TESTIMONIALS, ...TESTIMONIALS].map((t, i) => (
+                  <div className="php-testi-card" key={`row1-${t.name}-${i}`}>
+                    <div className="php-testi-stars">{'★'.repeat(t.rating)}</div>
+                    <p className="php-testi-text">"{t.text}"</p>
+                    <div className="php-testi-name">{t.name}</div>
+                    <div className="php-testi-role">{t.role}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="php-testi-marquee-wrap">
+              <div className="php-testi-track php-testi-track--rev">
+                {[...TESTIMONIALS_ROW2, ...TESTIMONIALS_ROW2].map((t, i) => (
+                  <div className="php-testi-card" key={`row2-${t.name}-${i}`}>
+                    <div className="php-testi-stars">{'★'.repeat(t.rating)}</div>
+                    <p className="php-testi-text">"{t.text}"</p>
+                    <div className="php-testi-name">{t.name}</div>
+                    <div className="php-testi-role">{t.role}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
