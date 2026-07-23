@@ -5,10 +5,19 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
-  const { email } = req.body || {};
+  const { email, recaptchaToken } = req.body || {};
 
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return res.status(400).json({ message: 'A valid email address is required.' });
+  }
+
+  if (!recaptchaToken) {
+    return res.status(400).json({ message: 'reCAPTCHA verification missing.' });
+  }
+  const captchaRes = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`, { method: 'POST' });
+  const captchaData = await captchaRes.json();
+  if (!captchaData.success || captchaData.score < 0.5) {
+    return res.status(400).json({ message: 'reCAPTCHA check failed. Please try again.' });
   }
 
   const apiKey = process.env.BREVO_API_KEY;

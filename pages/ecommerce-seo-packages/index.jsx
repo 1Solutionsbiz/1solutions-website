@@ -11,6 +11,8 @@ const PLANS = [
     features:['Up to 200 products/SKUs optimised','Full technical SEO (monthly)','30 target keywords tracked','Product & category page optimisation','Schema markup (Product, Review, Breadcrumb)','2 SEO blog posts per month','5 link placements per month','Google Shopping feed optimisation','Monthly competitor analysis','Conversion rate recommendations','Fortnightly reporting','Priority support (24hr response)'] },
   { name:'Pro', slug:'pro', monthlyPrice:1799, yearlyPrice:1499, yearlySave:3600, desc:'For established stores scaling SEO across large catalogues and multiple markets.', popular:false,
     features:['Unlimited products/SKUs','Advanced technical SEO (weekly monitoring)','60+ keywords tracked','Full content strategy & execution','Full schema suite','4 SEO blog posts per month','12 link placements per month','Google Shopping + Performance Max','International SEO (up to 3 markets)','Quarterly CRO audit','Dedicated account manager','Weekly reporting','Phone + priority support'] },
+  { name:'AI+ Pro', slug:'ai-plus-pro', monthlyPrice:2999, yearlyPrice:2499, yearlySave:6000, desc:'For category-leading stores that need full AI search visibility alongside traditional SEO.', popular:false,
+    features:['Everything in Pro, plus:','AI search optimisation (Google AI Overviews, Perplexity, ChatGPT shopping)','E-E-A-T authority-building program','llms.txt & AI crawler access management','90+ keywords tracked','6 SEO blog posts per month','20 link placements per month','International SEO (up to 5 markets)','Real-time AI-mention visibility tracking','Dedicated senior strategist','Weekly reporting + monthly strategy call','24/7 priority support'] },
 ];
 
 const FAQS = [
@@ -290,7 +292,7 @@ export default function EcommerceSeoPackages() {
           .esp-tog-knob{position:absolute;top:4px;left:4px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform 0.25s;box-shadow:0 1px 4px rgba(0,0,0,0.18)}
           .esp-tog-btn.on .esp-tog-knob{transform:translateX(22px)}
           .esp-save-badge{display:inline-flex;align-items:center;background:rgba(217,119,6,0.12);color:#B45309;font-size:11px;font-weight:700;padding:2px 8px;border-radius:100px;margin-left:6px;letter-spacing:0.5px}
-          .esp-plan-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;padding-top:20px}
+          .esp-plan-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:start;padding-top:20px}
           .esp-plan-card{background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.88) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,0.85);border-radius:24px;padding:32px 28px;position:relative;transition:box-shadow 0.22s,transform 0.22s,border-color 0.22s;overflow:hidden;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95)}
           .esp-plan-card:hover{box-shadow:0 16px 48px rgba(15,52,96,0.14);transform:translateY(-4px)}
           .esp-plan-card-pop{background:linear-gradient(135deg,rgba(255,251,235,0.92) 0%,rgba(255,255,255,0.98) 50%,rgba(255,249,219,0.85) 100%);border-color:rgba(217,119,6,0.55);transform:scale(1.03);box-shadow:0 20px 60px rgba(217,119,6,0.16),0 0 0 2px rgba(217,119,6,0.14);overflow:visible}
@@ -455,7 +457,7 @@ export default function EcommerceSeoPackages() {
 
           /* ── RESPONSIVE ── */
           @media(max-width:1024px){
-            .esp-plan-cards{grid-template-columns:1fr;max-width:480px;margin:0 auto}
+            .esp-plan-cards{grid-template-columns:repeat(2,1fr);max-width:680px;margin:0 auto}
             .esp-plan-card-pop{transform:none}.esp-plan-card-pop:hover{transform:translateY(-4px)}
             .esp-3grid{grid-template-columns:repeat(2,1fr)}
             .esp-2grid{grid-template-columns:1fr}
@@ -467,6 +469,7 @@ export default function EcommerceSeoPackages() {
             .esp-sec,.esp-pricing-sec,.esp-dark-sec,.esp-contact-sec,.esp-related-sec,.esp-testi-sec{padding-left:24px;padding-right:24px}
             .esp-testi-hd{padding:0 24px}
             .esp-3grid{grid-template-columns:1fr}
+            .esp-plan-cards{grid-template-columns:1fr;max-width:480px}
             .esp-results-grid{grid-template-columns:1fr}
             .esp-form-row{grid-template-columns:1fr}
             .esp-tcard{width:320px}

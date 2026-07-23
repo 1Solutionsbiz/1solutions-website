@@ -499,10 +499,16 @@ function SinglePost({ post, relatedPosts, ogImageUrl }) {
                     e.preventDefault();
                     setNlStatus('sending');
                     try {
+                      const recaptchaToken = await new Promise((resolve, reject) => {
+                        if (!window.grecaptcha) { reject(new Error('recaptcha not ready')); return; }
+                        window.grecaptcha.ready(() => {
+                          window.grecaptcha.execute('6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs', { action: 'newsletter' }).then(resolve);
+                        });
+                      });
                       const r = await fetch('/api/newsletter', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ email: nlEmail }),
+                        body: JSON.stringify({ email: nlEmail, recaptchaToken }),
                       });
                       const data = await r.json();
                       if (r.ok) {
