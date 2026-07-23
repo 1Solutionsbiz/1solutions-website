@@ -249,13 +249,38 @@ export default function PhpDevelopmentServices() {
           .php-process-image-col img { width:100%;border-radius:20px;box-shadow:0 24px 72px rgba(15,52,96,0.12); }
 
           /* Tech Stack */
-          .php-tech-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);padding:90px 40px; }
+          .php-tech-section { background:linear-gradient(135deg,#f7e9d7 0%,#fbe3ea 35%,#f3e6f5 60%,#e2e3f7 100%);border-top:1px solid rgba(15,52,96,0.08);padding:90px 40px; }
           .php-tech-inner { max-width:1280px;margin:0 auto; }
           .php-tech-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px; }
           .php-tech-group { background:rgba(255,255,255,0.70);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.85);border-radius:16px;padding:24px; }
-          .php-tech-group-title { font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#D97706;margin:0 0 14px; }
+          .php-tech-group-title { font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin:0 0 14px; }
           .php-tech-pills { display:flex;flex-wrap:wrap;gap:8px; }
-          .php-tech-pill { font-size:12px;font-weight:600;color:#0F3460;background:rgba(15,52,96,0.07);border:1px solid rgba(15,52,96,0.12);border-radius:50px;padding:5px 13px;white-space:nowrap; }
+          .php-tech-pill { font-size:12px;font-weight:600;border-radius:50px;padding:5px 13px;white-space:nowrap;transition:transform 0.15s,box-shadow 0.15s; }
+          .php-tech-pill:hover { transform:translateY(-2px); }
+
+          .php-tech-group--0 .php-tech-group-title { color:#4F46E5; }
+          .php-tech-group--0 .php-tech-pill { color:#4338CA;background:rgba(79,70,229,0.09);border:1px solid rgba(79,70,229,0.22); }
+          .php-tech-group--0 .php-tech-pill:hover { background:rgba(79,70,229,0.16);box-shadow:0 6px 16px rgba(79,70,229,0.18); }
+
+          .php-tech-group--1 .php-tech-group-title { color:#7C3AED; }
+          .php-tech-group--1 .php-tech-pill { color:#6D28D9;background:rgba(124,58,237,0.09);border:1px solid rgba(124,58,237,0.22); }
+          .php-tech-group--1 .php-tech-pill:hover { background:rgba(124,58,237,0.16);box-shadow:0 6px 16px rgba(124,58,237,0.18); }
+
+          .php-tech-group--2 .php-tech-group-title { color:#0D9488; }
+          .php-tech-group--2 .php-tech-pill { color:#0F766E;background:rgba(13,148,136,0.09);border:1px solid rgba(13,148,136,0.22); }
+          .php-tech-group--2 .php-tech-pill:hover { background:rgba(13,148,136,0.16);box-shadow:0 6px 16px rgba(13,148,136,0.18); }
+
+          .php-tech-group--3 .php-tech-group-title { color:#0284C7; }
+          .php-tech-group--3 .php-tech-pill { color:#0369A1;background:rgba(2,132,199,0.09);border:1px solid rgba(2,132,199,0.22); }
+          .php-tech-group--3 .php-tech-pill:hover { background:rgba(2,132,199,0.16);box-shadow:0 6px 16px rgba(2,132,199,0.18); }
+
+          .php-tech-group--4 .php-tech-group-title { color:#DB2777; }
+          .php-tech-group--4 .php-tech-pill { color:#BE185D;background:rgba(219,39,119,0.09);border:1px solid rgba(219,39,119,0.22); }
+          .php-tech-group--4 .php-tech-pill:hover { background:rgba(219,39,119,0.16);box-shadow:0 6px 16px rgba(219,39,119,0.18); }
+
+          .php-tech-group--5 .php-tech-group-title { color:#D97706; }
+          .php-tech-group--5 .php-tech-pill { color:#B45309;background:rgba(217,119,6,0.09);border:1px solid rgba(217,119,6,0.22); }
+          .php-tech-group--5 .php-tech-pill:hover { background:rgba(217,119,6,0.16);box-shadow:0 6px 16px rgba(217,119,6,0.18); }
 
           /* Industries */
           .php-industries-section { background:#fff;border-top:1px solid rgba(15,52,96,0.06);padding:90px 40px; }
@@ -365,13 +390,30 @@ export default function PhpDevelopmentServices() {
           .php-faq-item.open .php-faq-a { max-height:500px;padding-bottom:22px; }
 
           /* Related */
-          .php-related-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);padding:70px 40px; }
+          .php-related-section { background:linear-gradient(135deg,#f7e9d7 0%,#fbe3ea 35%,#f3e6f5 60%,#e2e3f7 100%);border-top:1px solid rgba(15,52,96,0.08);padding:70px 40px; }
           .php-related-inner { max-width:1280px;margin:0 auto; }
           .php-related-title { font-size:1.5rem;font-weight:800;color:#0F1F40;margin:0 0 8px; }
           .php-related-desc { font-size:14px;color:#4A6080;margin:0 0 28px;line-height:1.6; }
           .php-related-tags { display:flex;flex-wrap:wrap;gap:10px; }
-          .php-related-tag { display:inline-flex;align-items:center;padding:9px 18px;border-radius:50px;font-size:13px;font-weight:600;text-decoration:none;background:rgba(255,255,255,0.80);border:1.5px solid rgba(15,52,96,0.12);color:#0F3460;transition:all 0.2s; }
-          .php-related-tag:hover { border-color:#D97706;color:#D97706;background:#fff;transform:translateY(-2px);box-shadow:0 4px 16px rgba(15,52,96,0.08); }
+          .php-related-tag { display:inline-flex;align-items:center;padding:9px 18px;border-radius:50px;font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s; }
+
+          .php-related-tag--0 { background:rgba(79,70,229,0.08);border:1.5px solid rgba(79,70,229,0.24);color:#4338CA; }
+          .php-related-tag--0:hover { background:#4F46E5;border-color:#4F46E5;color:#fff;transform:translateY(-2px);box-shadow:0 6px 18px rgba(79,70,229,0.28); }
+
+          .php-related-tag--1 { background:rgba(124,58,237,0.08);border:1.5px solid rgba(124,58,237,0.24);color:#6D28D9; }
+          .php-related-tag--1:hover { background:#7C3AED;border-color:#7C3AED;color:#fff;transform:translateY(-2px);box-shadow:0 6px 18px rgba(124,58,237,0.28); }
+
+          .php-related-tag--2 { background:rgba(13,148,136,0.08);border:1.5px solid rgba(13,148,136,0.24);color:#0F766E; }
+          .php-related-tag--2:hover { background:#0D9488;border-color:#0D9488;color:#fff;transform:translateY(-2px);box-shadow:0 6px 18px rgba(13,148,136,0.28); }
+
+          .php-related-tag--3 { background:rgba(2,132,199,0.08);border:1.5px solid rgba(2,132,199,0.24);color:#0369A1; }
+          .php-related-tag--3:hover { background:#0284C7;border-color:#0284C7;color:#fff;transform:translateY(-2px);box-shadow:0 6px 18px rgba(2,132,199,0.28); }
+
+          .php-related-tag--4 { background:rgba(219,39,119,0.08);border:1.5px solid rgba(219,39,119,0.24);color:#BE185D; }
+          .php-related-tag--4:hover { background:#DB2777;border-color:#DB2777;color:#fff;transform:translateY(-2px);box-shadow:0 6px 18px rgba(219,39,119,0.28); }
+
+          .php-related-tag--5 { background:rgba(217,119,6,0.08);border:1.5px solid rgba(217,119,6,0.24);color:#B45309; }
+          .php-related-tag--5:hover { background:#D97706;border-color:#D97706;color:#fff;transform:translateY(-2px);box-shadow:0 6px 18px rgba(217,119,6,0.28); }
 
           /* Responsive */
           @media (max-width:1024px) {
@@ -474,8 +516,8 @@ export default function PhpDevelopmentServices() {
               <p className="php-section-desc">We stay current across the full PHP ecosystem — choosing the right framework, database, and tooling for each project's requirements.</p>
             </div>
             <div className="php-tech-grid">
-              {TECH_STACK.map(g => (
-                <div className="php-tech-group" key={g.group}>
+              {TECH_STACK.map((g, gi) => (
+                <div className={`php-tech-group php-tech-group--${gi % 6}`} key={g.group}>
                   <p className="php-tech-group-title">{g.group}</p>
                   <div className="php-tech-pills">
                     {g.items.map(item => <span className="php-tech-pill" key={item}>{item}</span>)}
@@ -727,8 +769,8 @@ export default function PhpDevelopmentServices() {
                 ['Hire PHP Developer','hire-php-developer'],
                 ['API Development','web-development-services'],
                 ['Web Development','web-development-services'],
-              ].map(([label, href]) => (
-                <Link key={label} href={`/${href}`} className="php-related-tag">{label}</Link>
+              ].map(([label, href], ti) => (
+                <Link key={label} href={`/${href}`} className={`php-related-tag php-related-tag--${ti % 6}`}>{label}</Link>
               ))}
             </div>
           </div>
