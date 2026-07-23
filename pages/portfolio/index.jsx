@@ -151,7 +151,7 @@ const PROJECTS = [
     industry: 'Food & Beverage',
     tech: ['Shopify', 'Liquid', 'UI/UX Design'],
     desc: "Shopify store for NadaMoo! - America's leading dairy-free coconut milk ice cream brand. 30+ flavours in pints, bars, and minis. Certified organic, non-GMO, soy-free, and gluten-free — sold in 10,000+ stores nationwide.",
-    image: '/images/portfolio/nadamoo.jpg',
+    image: '/images/portfolio/nadamoo.png',
     url: 'https://nadamoo.com/',
     featured: false,
   },
