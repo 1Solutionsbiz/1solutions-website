@@ -226,8 +226,8 @@ export default function SeoCompanyDelhi() {
           .dsel-ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
           .dsel-ind-card{background:linear-gradient(135deg,rgba(224,231,255,0.45) 0%,rgba(255,255,255,0.90) 60%,rgba(219,234,254,0.35) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:14px;padding:20px 16px;display:flex;align-items:center;gap:12px;box-shadow:0 4px 24px rgba(12,36,97,0.07),inset 0 1px 0 rgba(255,255,255,0.95);transition:transform 0.22s,box-shadow 0.22s,border-color 0.22s;}
           .dsel-ind-card:hover{transform:translateY(-4px);border-color:rgba(29,86,208,0.25);box-shadow:0 12px 36px rgba(12,36,97,0.12);}
-          .dsel-ind-icon{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,rgba(12,36,97,0.12),rgba(29,86,208,0.05));display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-          .dsel-ind-icon svg{width:18px;height:18px;color:#0c2461;}
+          .dsel-ind-icon{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,rgba(254,151,0,0.16),rgba(254,151,0,0.06));display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+          .dsel-ind-icon svg{width:18px;height:18px;color:#FE9700;}
           .dsel-ind-name{font-size:13.5px;font-weight:600;color:#0A1628;line-height:1.3;}
           .dsel-areas-wrap{display:flex;flex-wrap:wrap;gap:10px;}
           .dsel-area-tag{background:rgba(12,36,97,0.06);border:1px solid rgba(12,36,97,0.12);border-radius:50px;padding:6px 16px;font-size:13px;font-weight:500;color:#0c2461;}
