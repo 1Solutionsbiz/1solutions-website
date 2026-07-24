@@ -63,15 +63,6 @@ const RESULTS = [
   { prefix:'',  target:15,  suffix:'+', decimals:0, label:'Years of search expertise behind every audit',detail:'1Solutions founded 2009, SEO specialists' },
 ];
 
-const PROCESS = [
-  { n:'01', title:'Submit Your Details', body:'Fill out the form with your business name, website URL, and the AI search queries most important to your business. The more context you provide, the more targeted and useful your audit will be.' },
-  { n:'02', title:'15-Minute Discovery Call', body:'Our AI visibility specialist schedules a short call to understand your business goals, target audience, and competitive landscape before the audit begins. This ensures we benchmark against the right competitors and queries.' },
-  { n:'03', title:'10-Platform AI Sweep', body:'We systematically query Google AI Overviews, ChatGPT, Perplexity, Bing Copilot, Gemini, Claude, and other emerging AI platforms with your target keywords, documenting every citation, mention, and absence.' },
-  { n:'04', title:'Competitor Benchmarking', body:'We run the identical query set for your top 5 competitors, mapping their AI visibility footprint against yours. This reveals the precise gaps in your strategy and the exact moves your competitors are making that you are not.' },
-  { n:'05', title:'Gap & Opportunity Mapping', body:'We analyse why competitors appear where you do not — correlating their schema, content format, E-E-A-T signals, and entity presence with their AI citation rates. This turns observations into actionable, evidence-backed recommendations.' },
-  { n:'06', title:'Report & Action Plan Delivery', body:'You receive a detailed audit report covering your current AI visibility score, competitor benchmarks, identified gaps, and a prioritised action plan with specific next steps. Delivered to your inbox within 48 hours of our call.' },
-];
-
 const WHY = [
   { icon:'M13 10V3L4 14h7v7l9-11h-7z', title:'AI-First Methodology', body:'We built our AI visibility audit framework specifically for the era of generative search. We are not retrofitting old SEO audits — we are running systematic, structured tests across every major AI platform to map your actual visibility footprint.' },
   { icon:'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z', title:'Human Analysts, Not Bots', body:'Every audit is conducted by an experienced search specialist, not an automated tool. AI platforms behave differently depending on how queries are phrased and who is asking. Our analysts use real accounts and natural query patterns to surface results that automated scrapers miss.' },
@@ -80,25 +71,6 @@ const WHY = [
   { icon:'M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z', title:'Zero Obligation, Zero Upsell Pressure', body:'This is a genuine free audit, not a lead bait-and-switch. You will receive a real report with real findings. If you want help implementing the recommendations, we are here. If you want to implement them yourself, that is completely fine too — no hard sell.' },
   { icon:'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z', title:'Actionable, Not Academic', body:'We write our reports for business owners, not SEO theorists. Every finding is linked to a specific action. Every recommendation includes the expected impact and effort level. You will know exactly what to do first and why it will move the needle for your AI visibility.' },
 ];
-
-const TESTIMONIALS_ROW1 = [
-  { initials:'RS', bg:'#0F3460', name:'Rachel Singh', role:'CEO, ClearPath Legal, London, UK', text:'"The AI audit revealed we were completely invisible in ChatGPT and Perplexity for our core practice areas, while two smaller competitors were being cited constantly. Having a report that showed us exactly why was genuinely eye-opening. We fixed the schema gaps and saw citation improvement within weeks."' },
-  { initials:'MJ', bg:'#1D4ED8', name:'Marcus Johnson', role:'Marketing Director, Apex Accounting, Chicago, IL', text:'"We assumed our SEO was solid because we ranked well on Google. The AI visibility audit showed a completely different picture — 0 mentions in any AI platform for our core services. The action plan was specific and immediately implementable. Invaluable for where search is heading."' },
-  { initials:'PW', bg:'#7C3AED', name:'Priya Watts', role:'Founder, NutriBalance, Sydney, AU', text:'"1Solutions audited our AI visibility and found that our main competitor was being recommended by ChatGPT 8 times more often. The content gap analysis showed us exactly which topics to write about. Six months later, we are appearing in ChatGPT answers regularly for our target queries."' },
-  { initials:'DK', bg:'#0F766E', name:'Daniel Kim', role:'Head of Growth, SaaS Ventures, Toronto, CA', text:'"The competitor benchmarking section was worth the audit alone. Seeing exactly where our rivals appear in AI results — and why — gave us a 3-month content roadmap that we would never have built without this data. Everything was actionable, not theoretical."' },
-  { initials:'SB', bg:'#BE185D', name:'Sophie Brennan', role:'Owner, Meridian Physiotherapy, Manchester, UK', text:'"As a local service business I had no idea AI search would affect me. The audit showed Google AI Overviews were already showing competitors ahead of us for 6 of our 8 target services. The schema fixes alone moved us into 3 AI Overview panels within a month."' },
-];
-
-const TESTIMONIALS_ROW2 = [
-  { initials:'TC', bg:'#1D4ED8', name:'Thomas Crawford', role:'Digital Manager, Crawford Group, Melbourne, AU', text:'"We had done traditional SEO audits before but never specifically for AI visibility. The 1Solutions audit is a different beast entirely — it shows you the AI reality, not the traditional SERP reality. Those two things are increasingly divergent and this audit helps you see both clearly."' },
-  { initials:'AN', bg:'#047857', name:'Alicia Nguyen', role:'CMO, FreshBrand Agency, San Francisco, CA', text:'"Our clients were asking why competitors appeared in ChatGPT answers and they did not. The 1Solutions AI audit gave us the answer and a plan. We have since run audits for 4 of our own clients using the methodology 1Solutions taught us in the report."' },
-  { initials:'BH', bg:'#B45309', name:'Ben Harrison', role:'Founder, Clover Finance, Dublin, IE', text:'"The E-E-A-T section of the audit was a revelation. We had plenty of content but almost no author credentials, no expertise signals, nothing that tells AI platforms we are trustworthy sources. Fixed those gaps and our Perplexity citation rate improved dramatically."' },
-  { initials:'LC', bg:'#0F3460', name:'Laura Chen', role:'Head of SEO, TechStack Inc, Austin, TX', text:'"The Knowledge Graph entity section was something I had read about but never truly understood until I saw our audit. Our entity was miscategorised and missing key attributes. Once fixed, our brand started appearing correctly in AI-generated company descriptions across multiple platforms."' },
-  { initials:'JO', bg:'#9D174D', name:'James O\'Brien', role:'Owner, O\'Brien Architecture, Dublin, IE', text:'"Completely free, genuinely thorough, and delivered in 48 hours as promised. I was sceptical it would be a thinly veiled sales pitch. It was not. The audit had real data, real competitor comparisons, and a real prioritised action plan. Outstanding value."' },
-];
-
-const ROW1 = [...TESTIMONIALS_ROW1, ...TESTIMONIALS_ROW1];
-const ROW2 = [...TESTIMONIALS_ROW2, ...TESTIMONIALS_ROW2];
 
 const FAQS = [
   { q:'What exactly is AI visibility and why does it matter?', a:'AI visibility refers to how often and how prominently your brand, website, or content appears in answers generated by AI-powered platforms — including Google AI Overviews, ChatGPT, Perplexity, Bing Copilot, and Google Gemini. As of 2026, over 62% of Google searches trigger an AI Overview, and millions of users consult AI chatbots daily for product and service recommendations. If your business is not appearing in these AI answers, you are invisible to a rapidly growing segment of your target audience, regardless of how well you rank in traditional search.' },
@@ -412,10 +384,6 @@ export default function FreeAiVisibilityAudit() {
         ],
         url: 'https://www.1solutions.biz/free-ai-visibility-audit/',
       },
-      { '@type': 'HowTo', name: 'How Our Free AI Visibility Audit Works',
-        description: 'Our 6-step process from form submission to personalised audit report delivery.',
-        step: PROCESS.map(s => ({ '@type': 'HowToStep', name: s.title, text: s.body })),
-      },
       { '@type': 'FAQPage', mainEntity: FAQS.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
     ],
   };
@@ -460,7 +428,7 @@ export default function FreeAiVisibilityAudit() {
           .pl-g4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 
           /* ── WHAT'S INSIDE YOUR REPORT ── */
-          .aiv-report-sec{padding:90px 40px;position:relative;z-index:1}
+          .aiv-report-sec{padding:90px 40px;position:relative;z-index:1;background:linear-gradient(180deg,#fdfeff 0%,#f7f9fd 100%)}
           .aiv-report-hd{text-align:center;max-width:760px;margin:0 auto 56px}
           .aiv-report-ttl{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;color:#111827;letter-spacing:-1px;margin:0 0 20px}
           .aiv-report-sub{font-size:16px;color:#6b7280;line-height:1.75;margin:0}
@@ -525,28 +493,6 @@ export default function FreeAiVisibilityAudit() {
           .pl-pills{display:flex;flex-wrap:wrap;gap:10px}
           .pl-pill{display:inline-flex;align-items:center;gap:7px;border-radius:50px;padding:8px 16px;font-size:13px;font-weight:600;box-shadow:0 2px 10px rgba(0,0,0,0.07)}
           .pl-pill-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;opacity:.8}
-
-          /* ── TESTIMONIALS ── */
-          .pl-testi{padding:72px 0;background:#f8fafd;overflow:hidden;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08);position:relative;z-index:1}
-          .pl-testi-hd{max-width:1280px;margin:0 auto 40px;padding:0 40px;text-align:center}
-          @keyframes pl-marqL{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-          @keyframes pl-marqR{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
-          .pl-trow{overflow:hidden;position:relative;margin-bottom:16px}
-          .pl-trow:last-child{margin-bottom:0}
-          .pl-tfade-l{position:absolute;left:0;top:0;bottom:0;width:160px;z-index:1;background:linear-gradient(to right,#f8fafd,transparent);pointer-events:none}
-          .pl-tfade-r{position:absolute;right:0;top:0;bottom:0;width:160px;z-index:1;background:linear-gradient(to left,#f8fafd,transparent);pointer-events:none}
-          .pl-ttrack{display:flex;gap:20px;width:max-content;padding-left:20px;animation:pl-marqL 44s linear infinite;will-change:transform}
-          .pl-ttrack-rev{display:flex;gap:20px;width:max-content;padding-left:20px;animation:pl-marqR 44s linear infinite;will-change:transform}
-          .pl-trow:hover .pl-ttrack,.pl-trow:hover .pl-ttrack-rev{animation-play-state:paused}
-          .pl-tcard{width:420px;flex-shrink:0;background:#fff;border:1px solid rgba(15,52,96,0.08);border-radius:16px;padding:24px;box-shadow:0 2px 16px rgba(0,0,0,0.05);display:flex;flex-direction:column;gap:12px;user-select:none;transition:border-color .2s}
-          .pl-tcard:hover{border-color:rgba(217,119,6,0.30)}
-          .pl-tcard-stars{color:#F59E0B;font-size:14px}
-          .pl-tcard-text{font-size:14px;color:#374151;line-height:1.75;margin:0;flex-grow:1}
-          .pl-tcard-author{display:flex;align-items:center;gap:12px;border-top:1px solid #f3f4f6;padding-top:14px}
-          .pl-tcard-av{width:38px;height:38px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px}
-          .pl-tcard-name{font-weight:700;color:#111827;font-size:13px}
-          .pl-tcard-role{color:#9ca3af;font-size:11px;margin-top:1px}
-
 
           /* ── UTM NOTICE ── */
           .aiv-utm-notice{display:inline-flex;align-items:center;gap:6px;background:rgba(217,119,6,0.08);border:1px solid rgba(217,119,6,0.25);border-radius:8px;padding:6px 12px;font-size:11px;color:#92400e;font-weight:600;margin-bottom:12px}
@@ -631,24 +577,20 @@ export default function FreeAiVisibilityAudit() {
             .aiv-report-grid{grid-template-columns:1fr 1fr}
           }
           @media(max-width:768px){
-            .pl-sec,.pl-dark,.pl-contact-sec,.pl-related,.pl-testi{padding-left:24px;padding-right:24px}
-            .pl-testi-hd{padding:0 24px}
+            .pl-sec,.pl-dark,.pl-contact-sec,.pl-related{padding-left:24px;padding-right:24px}
             .pl-g3{grid-template-columns:1fr}
             .pl-g4{grid-template-columns:repeat(2,1fr)}
             .pl-row2{grid-template-columns:1fr}
-            .pl-tcard{width:300px}
             .pl-orb1,.pl-orb2,.pl-orb3{display:none}
             .pl-glass,.pl-form-box,.pl-trust-box,.pl-fitem{backdrop-filter:none;-webkit-backdrop-filter:none}
             .pl-submit{backdrop-filter:none;-webkit-backdrop-filter:none}
             .pl-related{backdrop-filter:none;-webkit-backdrop-filter:none}
-            .pl-trow:last-child{display:none}
             .aiv-report-sec{padding:60px 24px}
             .aiv-report-grid{grid-template-columns:1fr}
             .aiv-report-card{height:auto;padding-bottom:0}
             .aiv-report-mockwrap{align-items:stretch}
           }
           @media(max-width:480px){
-            .pl-tcard{width:270px;padding:18px}
             .pl-g4{grid-template-columns:1fr 1fr}
             .aiv-stat-grid{grid-template-columns:1fr}
           }
@@ -674,6 +616,7 @@ export default function FreeAiVisibilityAudit() {
             { label: 'Audit Delivered Within', value: '48', suffix: 'h' },
             { label: 'Completely Free — No Strings Attached', value: '0', prefix: '$' },
           ]}
+          showLogos={false}
         />
 
         {/* ── WHAT'S INSIDE YOUR REPORT ── */}
@@ -768,26 +711,6 @@ export default function FreeAiVisibilityAudit() {
           </div>
         </section>
 
-        {/* ── PROCESS ── */}
-        <section className="pl-sec pl-white" id="process">
-          <div className="pl-in">
-            <div className="pl-reveal">
-              <span className="pl-ey">How It Works</span>
-              <h2 className="pl-h2">From Sign-Up to <AuroraText>Report in 48 Hours</AuroraText></h2>
-              <p className="pl-lead">A clear, transparent 6-step process. No lengthy onboarding, no jargon-filled questionnaires — just a fast, focused audit delivered by experienced specialists.</p>
-            </div>
-            <div className="pl-g3">
-              {PROCESS.map((p, i) => (
-                <div key={p.n} className="pl-glass pl-reveal" style={{transitionDelay:`${i*60}ms`}}>
-                  <div className="pl-nbadge">{p.n}</div>
-                  <div className="pl-card-h">{p.title}</div>
-                  <div className="pl-card-p">{p.body}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* ── WHY 1SOLUTIONS ── */}
         <section className="pl-sec" id="why-us">
           <div className="pl-in">
@@ -806,53 +729,6 @@ export default function FreeAiVisibilityAudit() {
                   <div className="pl-card-p">{w.body}</div>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── TESTIMONIALS ── */}
-        <section className="pl-testi">
-          <div className="pl-testi-hd pl-reveal">
-            <span className="pl-ey">Client Reviews</span>
-            <h2 className="pl-h2">What Businesses Say After Their <AuroraText>AI Visibility Audit</AuroraText></h2>
-            <p style={{fontSize:15,color:'#4A6080',lineHeight:1.7,maxWidth:600,margin:'0 auto'}}>From legal firms to SaaS companies, the AI visibility audit delivers insights that traditional SEO tools simply cannot show.</p>
-          </div>
-          <div style={{marginTop:40}}>
-            <div className="pl-trow">
-              <div className="pl-tfade-l"/><div className="pl-tfade-r"/>
-              <div className="pl-ttrack">
-                {ROW1.map((t, i) => (
-                  <div key={i} className="pl-tcard">
-                    <div className="pl-tcard-stars">★★★★★</div>
-                    <p className="pl-tcard-text">{t.text}</p>
-                    <div className="pl-tcard-author">
-                      <div className="pl-tcard-av" style={{background:t.bg}}>{t.initials}</div>
-                      <div>
-                        <div className="pl-tcard-name">{t.name}</div>
-                        <div className="pl-tcard-role">{t.role}</div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="pl-trow">
-              <div className="pl-tfade-l"/><div className="pl-tfade-r"/>
-              <div className="pl-ttrack-rev">
-                {ROW2.map((t, i) => (
-                  <div key={i} className="pl-tcard">
-                    <div className="pl-tcard-stars">★★★★★</div>
-                    <p className="pl-tcard-text">{t.text}</p>
-                    <div className="pl-tcard-author">
-                      <div className="pl-tcard-av" style={{background:t.bg}}>{t.initials}</div>
-                      <div>
-                        <div className="pl-tcard-name">{t.name}</div>
-                        <div className="pl-tcard-role">{t.role}</div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </section>

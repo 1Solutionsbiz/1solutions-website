@@ -55,6 +55,7 @@ export default function ServiceHero({
   secondaryCta,
   stats,
   logos = DEFAULT_LOGOS,
+  showLogos = true,
 }) {
   const [statsStarted, setStatsStarted] = useState(false);
   const statsRef = useRef(null);
@@ -141,17 +142,19 @@ export default function ServiceHero({
           </div>
         )}
 
-        <div className="svh-clients-bar">
-          <span className="svh-clients-label">Trusted by Leading Brands</span>
-          <div className="svh-clients-logos">
-            <div className="svh-logos-track">
-              {logosDoubled.map(([src, alt], i) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img key={`${alt}-${i}`} src={src} alt={alt} className="svh-client-logo" />
-              ))}
+        {showLogos && (
+          <div className="svh-clients-bar">
+            <span className="svh-clients-label">Trusted by Leading Brands</span>
+            <div className="svh-clients-logos">
+              <div className="svh-logos-track">
+                {logosDoubled.map(([src, alt], i) => (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img key={`${alt}-${i}`} src={src} alt={alt} className="svh-client-logo" />
+                ))}
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </>
   );
