@@ -58,13 +58,6 @@ const WHAT_WE_AUDIT = [
   { icon:'M13 10V3L4 14h7v7l9-11h-7z', title:'Action Plan & Priority Roadmap', body:'Every audit concludes with a prioritised, specific action plan. Not a generic checklist — a ranked list of the fixes and content investments that will move the needle fastest for your specific business, industry, and competitive landscape. Implement it yourself or let us handle it for you.' },
 ];
 
-const RESULTS = [
-  { prefix:'',  target:3,   suffix:'×', decimals:0, label:'More AI citations after optimisation',       detail:'Average across clients who implemented recommendations' },
-  { prefix:'',  target:62,  suffix:'%', decimals:0, label:'Of Google searches show AI Overviews now',   detail:'As of 2026, Google Search Labs data' },
-  { prefix:'',  target:48,  suffix:'h', decimals:0, label:'Report delivered within',                    detail:'From form submission to audit in your inbox' },
-  { prefix:'',  target:15,  suffix:'+', decimals:0, label:'Years of search expertise behind every audit',detail:'1Solutions founded 2009, SEO specialists' },
-];
-
 const WHY = [
   { icon:'M13 10V3L4 14h7v7l9-11h-7z', title:'AI-First Methodology', body:'We built our AI visibility audit framework specifically for the era of generative search. We are not retrofitting old SEO audits — we are running systematic, structured tests across every major AI platform to map your actual visibility footprint.' },
   { icon:'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z', title:'Human Analysts, Not Bots', body:'Every audit is conducted by an experienced search specialist, not an automated tool. AI platforms behave differently depending on how queries are phrased and who is asking. Our analysts use real accounts and natural query patterns to surface results that automated scrapers miss.' },
@@ -94,48 +87,6 @@ const RELATED_TAGS = [
   { href:'/seo-audit-services/',         label:'SEO Audit Services',          cls:'pl-rtag-orange' },
   { href:'/google-my-business-optimization/', label:'Google Business Profile', cls:'pl-rtag-rose' },
 ];
-
-function useCountUp(target, duration, started) {
-  const [value, setValue] = useState(0);
-  useEffect(() => {
-    if (!started) return;
-    let raf;
-    const start = performance.now();
-    const ease = t => 1 - Math.pow(1 - t, 3);
-    const step = now => {
-      const t = Math.min(1, (now - start) / duration);
-      setValue(target * ease(t));
-      if (t < 1) raf = requestAnimationFrame(step);
-      else setValue(target);
-    };
-    raf = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(raf);
-  }, [started]);
-  return value;
-}
-
-function StatCard({ prefix, target, suffix, decimals, label, detail }) {
-  const [started, setStarted] = useState(false);
-  const ref = useRef(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) { setStarted(true); obs.disconnect(); }
-    }, { threshold: 0.4 });
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
-  const value = useCountUp(target, 1800, started);
-  const display = decimals > 0 ? value.toFixed(decimals) : Math.floor(value).toLocaleString();
-  return (
-    <div ref={ref} className="pl-res-card">
-      <div className="pl-res-metric">{prefix}{display}{suffix}</div>
-      <div className="pl-res-label">{label}</div>
-      <div className="pl-res-detail">{detail}</div>
-    </div>
-  );
-}
 
 function ReportMock({ type }) {
   if (type === 'score') {
@@ -432,7 +383,6 @@ export default function FreeAiVisibilityAudit() {
           .pl-card-p{font-size:13px;color:#4A6080;line-height:1.65}
           .pl-nbadge{width:40px;height:40px;background:linear-gradient(135deg,#0F3460,#1a4b82);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;font-weight:800;margin-bottom:16px;box-shadow:0 4px 12px rgba(15,52,96,0.25)}
           .pl-g3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-          .pl-g4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 
           /* ── WHAT'S INSIDE YOUR REPORT ── */
           .aiv-report-sec{padding:90px 40px;position:relative;z-index:1;background:linear-gradient(180deg,#fdfeff 0%,#f7f9fd 100%)}
@@ -484,17 +434,6 @@ export default function FreeAiVisibilityAudit() {
           .aiv-plat-row{display:grid;grid-template-columns:1fr .8fr .8fr;align-items:center;padding:12px 0;border-bottom:1px solid #f6f7fa;font-size:12px;color:#374151;font-weight:600}
           .aiv-plat-name{display:flex;align-items:center;gap:8px;font-weight:700;color:#111827}
           .aiv-plat-dot{width:16px;height:16px;border-radius:5px;flex-shrink:0}
-
-          /* ── DARK / RESULTS ── */
-          .pl-dark{padding:80px 40px;background:#fff;position:relative;z-index:1}
-          .pl-dark-ey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;display:block;margin-bottom:10px}
-          .pl-dark-h{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.15;letter-spacing:-1px;color:#0F1F40;margin-bottom:10px}
-          .pl-dark-lead{font-size:15px;color:#4A6080;line-height:1.7;max-width:640px;margin-bottom:40px}
-          .pl-res-card{background:linear-gradient(135deg,rgba(240,253,244,.90) 0%,rgba(255,255,255,1) 50%,rgba(254,252,232,.80) 100%);border:1px solid rgba(34,197,94,.18);border-radius:20px;padding:36px 24px;text-align:center;box-shadow:0 4px 24px rgba(34,197,94,.10),0 1px 0 rgba(255,255,255,.95) inset;transition:transform .22s,box-shadow .25s}
-          .pl-res-card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(34,197,94,.18),0 0 0 1px rgba(34,197,94,.25),0 1px 0 rgba(255,255,255,1) inset}
-          .pl-res-metric{font-size:clamp(2.6rem,4.5vw,3.6rem);font-weight:900;letter-spacing:-0.04em;line-height:1;margin-bottom:10px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-variant-numeric:tabular-nums}
-          .pl-res-label{font-size:13px;font-weight:700;color:#0F1F40;margin-bottom:6px}
-          .pl-res-detail{font-size:11px;color:#6b7280;line-height:1.5}
 
           /* ── AI PLATFORM LOGOS ── */
           .aiv-platforms-row{display:flex;flex-wrap:wrap;justify-content:center;gap:36px}
@@ -581,14 +520,12 @@ export default function FreeAiVisibilityAudit() {
           /* ── RESPONSIVE ── */
           @media(max-width:1024px){
             .pl-g3{grid-template-columns:repeat(2,1fr)}
-            .pl-g4{grid-template-columns:repeat(2,1fr)}
             .pl-contact-in{grid-template-columns:1fr}
             .aiv-report-grid{grid-template-columns:1fr 1fr}
           }
           @media(max-width:768px){
-            .pl-sec,.pl-dark,.pl-contact-sec,.pl-related{padding-left:24px;padding-right:24px}
+            .pl-sec,.pl-contact-sec,.pl-related{padding-left:24px;padding-right:24px}
             .pl-g3{grid-template-columns:1fr}
-            .pl-g4{grid-template-columns:repeat(2,1fr)}
             .pl-row2{grid-template-columns:1fr}
             .pl-orb1,.pl-orb2,.pl-orb3{display:none}
             .pl-glass,.pl-form-box,.pl-trust-box,.pl-fitem{backdrop-filter:none;-webkit-backdrop-filter:none}
@@ -600,7 +537,6 @@ export default function FreeAiVisibilityAudit() {
             .aiv-report-mockwrap{align-items:stretch}
           }
           @media(max-width:480px){
-            .pl-g4{grid-template-columns:1fr 1fr}
             .aiv-stat-grid{grid-template-columns:1fr}
           }
         
@@ -688,22 +624,6 @@ export default function FreeAiVisibilityAudit() {
                   <div className="pl-card-h">{s.title}</div>
                   <div className="pl-card-p">{s.body}</div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── RESULTS ── */}
-        <section className="pl-dark">
-          <div className="pl-in">
-            <div className="pl-reveal" style={{textAlign:'center',marginBottom:48}}>
-              <span className="pl-dark-ey">Why It Matters Now</span>
-              <h2 className="pl-dark-h"><AuroraText>AI Search is Already Driving Decisions</AuroraText></h2>
-              <p className="pl-dark-lead" style={{margin:'0 auto'}}>Businesses that optimise for AI visibility today will dominate the recommendations their competitors' customers see tomorrow.</p>
-            </div>
-            <div className="pl-g4 pl-reveal">
-              {RESULTS.map(r => (
-                <StatCard key={r.label} {...r}/>
               ))}
             </div>
           </div>
