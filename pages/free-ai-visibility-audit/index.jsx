@@ -394,11 +394,11 @@ export default function FreeAiVisibilityAudit() {
           .aiv-report-card:hover{transform:translateY(-4px);box-shadow:0 20px 48px rgba(15,23,42,0.12)}
           .aiv-report-pill{display:inline-flex;align-items:center;background:#fff;border-radius:999px;padding:9px 18px;font-size:13.5px;font-weight:700;margin-bottom:22px;box-shadow:0 3px 10px rgba(15,23,42,0.08);width:fit-content}
           .aiv-report-body{font-size:1.2rem;font-weight:800;color:#0F1F40;line-height:1.42;margin:0 0 24px;letter-spacing:-.2px}
-          .aiv-report-mockwrap{margin-top:auto;flex:1;min-height:0;display:flex;align-items:flex-end}
+          .aiv-report-mockwrap{margin-top:auto;flex:1;min-height:0;display:flex}
           .aiv-report-cta-wrap{text-align:center;margin-top:52px}
           .aiv-report-cta{display:inline-block;padding:16px 40px;border-radius:999px;background:linear-gradient(120deg,#f97316,#ec4899,#7c3aed);color:#fff;font-weight:700;font-size:16px;text-decoration:none;box-shadow:0 12px 32px rgba(124,58,237,0.30);transition:transform .25s,box-shadow .25s}
           .aiv-report-cta:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(124,58,237,0.38)}
-          .aiv-mock{background:#fff;border-radius:16px 16px 0 0;border:1px solid rgba(15,23,42,0.06);box-shadow:0 -4px 24px rgba(15,23,42,0.07);padding:22px 22px 0;width:100%}
+          .aiv-mock{background:#fff;border-radius:16px 16px 0 0;border:1px solid rgba(15,23,42,0.06);box-shadow:0 -4px 24px rgba(15,23,42,0.07);padding:22px 22px 0;width:100%;height:100%;display:flex;flex-direction:column;box-sizing:border-box;overflow:hidden}
           .aiv-score-top{display:flex;align-items:center;gap:16px;padding-bottom:16px}
           .aiv-ring-wrap{position:relative;width:80px;height:80px;flex-shrink:0}
           .aiv-ring-wrap svg{width:100%;height:100%}
@@ -407,7 +407,7 @@ export default function FreeAiVisibilityAudit() {
           .aiv-ring-sub{font-size:9px;color:#9ca3af;font-weight:600;margin-top:2px}
           .aiv-score-h{font-size:14px;font-weight:800;color:#111827;margin-bottom:4px}
           .aiv-score-p{font-size:11.5px;color:#6b7280;line-height:1.5}
-          .aiv-score-tags{display:flex;flex-wrap:wrap;gap:8px;padding:14px 0 18px;border-top:1px solid #f1f3f7}
+          .aiv-score-tags{display:flex;flex-wrap:wrap;gap:8px;padding:14px 0 18px;border-top:1px solid #f1f3f7;margin-top:auto}
           .aiv-score-tag{display:inline-flex;align-items:center;gap:4px;background:#f5f6fa;border-radius:8px;padding:6px 10px;font-size:11px;font-weight:600;color:#374151}
           .aiv-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding-bottom:20px}
           .aiv-stat-tile{border-radius:12px;padding:14px}
@@ -534,7 +534,7 @@ export default function FreeAiVisibilityAudit() {
             .aiv-report-sec{padding:60px 24px}
             .aiv-report-grid{grid-template-columns:1fr}
             .aiv-report-card{height:auto;padding-bottom:0}
-            .aiv-report-mockwrap{align-items:stretch}
+            .aiv-mock{height:auto}
           }
           @media(max-width:480px){
             .aiv-stat-grid{grid-template-columns:1fr}
