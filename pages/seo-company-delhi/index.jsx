@@ -189,6 +189,14 @@ export default function SeoCompanyDelhi() {
           .dsel-icon svg{width:22px;height:22px;color:#0c2461;}
           .dsel-card-h{font-size:1rem;font-weight:700;color:#0A1628;margin:0 0 10px;line-height:1.3;}
           .dsel-card-p{font-size:13.5px;color:#4b5563;line-height:1.7;margin:0;}
+          .dsel-def-box{background:linear-gradient(135deg,rgba(224,231,255,0.45) 0%,rgba(255,255,255,0.90) 60%,rgba(219,234,254,0.35) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:24px;padding:40px;box-shadow:0 4px 24px rgba(12,36,97,0.07),inset 0 1px 0 rgba(255,255,255,0.95);}
+          .dsel-def-intro{font-size:1.02rem;color:#374151;line-height:1.8;margin:0 0 28px;padding-bottom:28px;border-bottom:1px solid rgba(12,36,97,0.08);}
+          .dsel-def-intro strong{color:#0c2461;}
+          .dsel-def-aspects{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+          .dsel-def-aspect{background:rgba(255,255,255,0.6);border:1px solid rgba(12,36,97,0.10);border-radius:14px;padding:20px;transition:border-color 0.2s;}
+          .dsel-def-aspect:hover{border-color:rgba(254,151,0,0.35);}
+          .dsel-def-t{font-weight:700;color:#0c2461;font-size:14px;margin-bottom:6px;}
+          .dsel-def-d{font-size:13px;color:#4b5563;line-height:1.6;}
           .dsel-results{background:linear-gradient(135deg,#060d2e 0%,#0c2461 100%);padding:64px 40px;}
           .dsel-results-inner{max-width:1200px;margin:0 auto;}
           .dsel-res-tag{display:block;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(147,197,253,0.80);margin-bottom:12px;text-align:center;}
@@ -297,6 +305,8 @@ export default function SeoCompanyDelhi() {
             .dsel-res-grid{grid-template-columns:1fr 1fr;}
             .dsel-ind-grid{grid-template-columns:1fr 1fr;}
             .dsel-contact-grid{grid-template-columns:1fr;gap:40px;}
+            .dsel-def-aspects{grid-template-columns:1fr;}
+            .dsel-def-box{padding:28px;}
           }
           @media(max-width:600px){
             .dsel-sec,.dsel-results,.dsel-related-section,.dsel-contact-sec{padding-left:20px;padding-right:20px;}
@@ -304,6 +314,7 @@ export default function SeoCompanyDelhi() {
             .dsel-grid4,.dsel-grid3,.dsel-grid2,.dsel-res-grid,.dsel-ind-grid{grid-template-columns:1fr;}
             .dsel-field-row{grid-template-columns:1fr;}
             .dsel-form-wrap{padding:24px 20px;}
+            .dsel-def-box{padding:22px;}
           }
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
@@ -325,6 +336,30 @@ export default function SeoCompanyDelhi() {
           { label: 'Client Retention', value: '97', suffix: '%' },
         ]}
       />
+
+      {/* What Is SEO */}
+      <section className="dsel-sec" id="what-is-seo">
+        <div className="dsel-sec-inner">
+          <span className="dsel-tag">Understanding SEO</span>
+          <h2 className="dsel-h2">What Is <span>SEO in Delhi</span> and How Does It Work?</h2>
+          <p className="dsel-lead">A plain-English explanation of what SEO is and how an SEO company in Delhi turns it into rankings, traffic, and leads for your business.</p>
+          <div className="dsel-def-box">
+            <p className="dsel-def-intro"><strong>SEO (Search Engine Optimisation)</strong> is the practice of improving your website&apos;s visibility in Google&apos;s organic, non-paid search results so your business appears when Delhi customers search for the products or services you offer. In a market as competitive as Delhi NCR, hundreds of businesses are often chasing the same customer for terms like &quot;SEO company Delhi&quot; or &quot;SEO services Delhi&quot; - SEO is what determines who Google shows first. It works by aligning your website&apos;s technical foundation, on-page content, and off-site authority signals with the ranking criteria Google uses to decide which pages best answer a given search, including proximity and relevance to the searcher&apos;s location. Unlike paid ads that stop the moment you stop spending, organic rankings from SEO Delhi campaigns compound over time - a well-optimised page keeps generating enquiries for months or years after the work is done.</p>
+            <div className="dsel-def-aspects">
+              {[
+                { t: 'The three pillars of SEO', d: 'Technical SEO (site speed, crawlability, structure), On-page SEO (content, keywords, schema), and Off-page SEO (backlinks, local citations, authority). A Delhi SEO company has to get all three right for rankings to hold.' },
+                { t: 'How Google ranks Delhi businesses', d: 'Google weighs relevance, authority, and proximity - which is why local signals like your Google Business Profile, Delhi-specific citations, and reviews matter as much as on-site content for local SEO Delhi searches.' },
+                { t: 'Why SEO Delhi results compound', d: "Every optimised page, backlink, and technical fix adds permanently to your site's authority. SEO momentum builds month over month, so the longer you invest with an SEO company in Delhi, the cheaper each new ranking becomes." },
+              ].map(a => (
+                <div key={a.t} className="dsel-def-aspect">
+                  <div className="dsel-def-t">{a.t}</div>
+                  <div className="dsel-def-d">{a.d}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* SEO Services */}
       <section className="dsel-sec dsel-bg" id="services">
