@@ -19,15 +19,15 @@ const TOP_QUERIES = [
   { q: 'How do businesses improve citations in Google AI Overviews for competitive keywords?', rank: '#2' },
 ];
 const MISSED_QUERIES = [
-  { q: 'Which digital marketing agency offers the most transparent AI visibility audits?', leader: 'Vertex Digital', color: '#ef4444' },
-  { q: 'What SEO company provides clear monthly reporting for small businesses?', leader: 'Northwind Co', color: '#f97316' },
-  { q: 'Who are the top-rated SEO agencies for eCommerce brands?', leader: 'BrightPath SEO', color: '#0ea5e9' },
+  { q: 'Which digital marketing agency offers the most transparent AI visibility audits?', leader: '1Solutions', initials: '1S', color: '#ef4444' },
+  { q: 'What SEO company provides clear monthly reporting for small businesses?', leader: 'The SEO Doctors', initials: 'SD', color: '#f97316' },
+  { q: 'Who are the top-rated SEO agencies for eCommerce brands?', leader: 'LinkBuildingGuru', initials: 'LG', color: '#0ea5e9' },
 ];
 const LEADERBOARD_ROWS = [
   { rank: 1, brand: 'You', mentions: 25, pct: 100, you: true, color: '#0F3460' },
-  { rank: 2, brand: 'Vertex Digital', mentions: 8, pct: 32, color: '#ef4444' },
-  { rank: 3, brand: 'Northwind Co', mentions: 5, pct: 20, color: '#f97316' },
-  { rank: 4, brand: 'BrightPath SEO', mentions: 5, pct: 20, color: '#0ea5e9' },
+  { rank: 2, brand: '1Solutions', initials: '1S', mentions: 8, pct: 32, color: '#ef4444' },
+  { rank: 3, brand: 'The SEO Doctors', initials: 'SD', mentions: 5, pct: 20, color: '#f97316' },
+  { rank: 4, brand: 'LinkBuildingGuru', initials: 'LG', mentions: 5, pct: 20, color: '#0ea5e9' },
 ];
 const PLATFORM_ROWS = [
   { name: 'ChatGPT', visibility: '86.67%', pos: 2, color: '#10a37f' },
@@ -240,7 +240,7 @@ function ReportMock({ type }) {
             {MISSED_QUERIES.map((r, i) => (
               <div key={i} className="aiv-table-row">
                 <span className="aiv-table-q">{r.q}</span>
-                <span className="aiv-leader-chip"><span className="aiv-leader-badge" style={{ background: r.color }}>{r.leader[0]}</span>{r.leader}</span>
+                <span className="aiv-leader-chip"><span className="aiv-leader-badge" style={{ background: r.color }}>{r.initials || r.leader[0]}</span>{r.leader}</span>
               </div>
             ))}
           </div>
@@ -257,7 +257,7 @@ function ReportMock({ type }) {
             {LEADERBOARD_ROWS.map(r => (
               <div key={r.rank} className="aiv-lb-row">
                 <span className="aiv-lb-rank">{r.rank}</span>
-                <span className="aiv-lb-brand"><span className="aiv-leader-badge" style={{ background: r.color }}>{r.brand[0]}</span>{r.brand}{r.you && <em>(You)</em>}</span>
+                <span className="aiv-lb-brand"><span className="aiv-leader-badge" style={{ background: r.color }}>{r.initials || r.brand[0]}</span>{r.brand}{r.you && <em>(You)</em>}</span>
                 <span className="aiv-lb-mentions">{r.mentions}</span>
                 <span className="aiv-lb-bar-wrap"><span className="aiv-lb-bar" style={{ width: `${r.pct}%`, background: r.you ? '#2563eb' : '#d1d5db' }} /></span>
               </div>
