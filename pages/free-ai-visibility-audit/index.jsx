@@ -388,9 +388,8 @@ export default function FreeAiVisibilityAudit() {
           .pl-icon svg{width:20px;height:20px;color:#0F3460}
           .pl-card-h{font-size:15px;font-weight:700;color:#0F1F40;margin-bottom:8px}
           .pl-card-p{font-size:13px;color:#4A6080;line-height:1.65}
-          .pl-nbadge{width:40px;height:40px;background:linear-gradient(135deg,#0F3460,#1a4b82);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;font-weight:800;margin-bottom:16px;box-shadow:0 4px 12px rgba(15,52,96,0.25)}
-          .pl-why-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
-          .pl-why-head .pl-nbadge{margin-bottom:0;flex-shrink:0}
+          .pl-why-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+          .pl-why-icon{width:22px;height:22px;color:#0F3460;flex-shrink:0}
           .pl-why-head .pl-card-h{margin-bottom:0}
           .pl-g3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 
@@ -630,10 +629,10 @@ export default function FreeAiVisibilityAudit() {
         {/* ── WHAT WE AUDIT ── */}
         <section className="pl-sec" id="what-we-audit">
           <div className="pl-in">
-            <div className="pl-reveal">
+            <div className="pl-reveal" style={{textAlign:'center'}}>
               <span className="pl-ey">What's Included</span>
               <h2 className="pl-h2">8 Dimensions of <AuroraText>AI Visibility</AuroraText> We Audit</h2>
-              <p className="pl-lead">A comprehensive sweep across every factor that determines whether AI platforms cite, recommend, or ignore your business when your target customers ask for help.</p>
+              <p className="pl-lead" style={{margin:'0 auto'}}>A comprehensive sweep across every factor that determines whether AI platforms cite, recommend, or ignore your business when your target customers ask for help.</p>
             </div>
             <div className="pl-g3">
               {WHAT_WE_AUDIT.map((s, i) => (
@@ -654,18 +653,16 @@ export default function FreeAiVisibilityAudit() {
         {/* ── WHY 1SOLUTIONS ── */}
         <section className="pl-sec pl-white" id="why-us">
           <div className="pl-in">
-            <div className="pl-reveal">
+            <div className="pl-reveal" style={{textAlign:'center'}}>
               <span className="pl-ey">Why 1Solutions</span>
               <h2 className="pl-h2">The AI Visibility Audit <AuroraText>Built by Search Veterans</AuroraText></h2>
-              <p className="pl-lead">15 years of search expertise applied to the newest frontier in digital marketing — AI-generated answers and recommendations.</p>
+              <p className="pl-lead" style={{margin:'0 auto'}}>15 years of search expertise applied to the newest frontier in digital marketing — AI-generated answers and recommendations.</p>
             </div>
             <div className="pl-g3">
               {WHY.map((w, i) => (
                 <div key={w.title} className="pl-glass pl-reveal" style={{transitionDelay:`${i*60}ms`, background:w.bg}}>
                   <div className="pl-why-head">
-                    <div className="pl-nbadge">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d={w.icon}/></svg>
-                    </div>
+                    <svg className="pl-why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d={w.icon}/></svg>
                     <div className="pl-card-h">{w.title}</div>
                   </div>
                   <div className="pl-card-p">{w.body}</div>
