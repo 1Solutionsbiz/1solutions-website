@@ -4,14 +4,21 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { AuroraText } from '../../components/AuroraText';
 import ServiceHero from '../../components/sections/ServiceHero';
+import { SiClaude, SiGooglegemini, SiPerplexity, SiGoogle } from 'react-icons/si';
 
+// Matches each platform's real app-icon style: dark tile for brands whose
+// own icon is black/near-black (ChatGPT, Perplexity), white tile with the
+// brand's own accent color for the rest. ChatGPT and Copilot have no
+// freely-licensed logo mark available (Simple Icons does not publish
+// official OpenAI/Microsoft Copilot brand assets), so those two fall back
+// to a monogram instead of `icon`.
 const AI_PLATFORMS = [
-  { name: 'ChatGPT', mono: 'GPT', color: '#10a37f' },
-  { name: 'Claude', mono: 'C', color: '#D97757' },
-  { name: 'Gemini', mono: 'G', color: '#4285F4' },
-  { name: 'Perplexity', mono: 'P', color: '#20808D' },
-  { name: 'Copilot', mono: 'CP', color: '#0078D4' },
-  { name: 'AI Overviews', mono: 'AI', color: '#EA4335' },
+  { name: 'ChatGPT', mono: 'GPT', bg: '#0D0D0D', fg: '#fff' },
+  { name: 'Claude', icon: SiClaude, bg: '#fff', fg: '#D97757', border: true },
+  { name: 'Gemini', icon: SiGooglegemini, bg: '#fff', fg: 'url(#geminiIconGrad)', border: true },
+  { name: 'Perplexity', icon: SiPerplexity, bg: '#0E0E0E', fg: '#fff' },
+  { name: 'Copilot', mono: 'CP', bg: '#fff', fg: '#0078D4', border: true },
+  { name: 'AI Overviews', icon: SiGoogle, bg: '#fff', fg: '#4285F4', border: true },
 ];
 
 // ── "What's Inside Your Report" mock-panel sample data ──────────────────
@@ -438,7 +445,8 @@ export default function FreeAiVisibilityAudit() {
           /* ── AI PLATFORM LOGOS ── */
           .aiv-platforms-row{display:flex;flex-wrap:wrap;justify-content:center;gap:36px}
           .aiv-platform-item{display:flex;flex-direction:column;align-items:center;gap:12px}
-          .aiv-platform-badge{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:15px;letter-spacing:-.5px;box-shadow:0 10px 24px rgba(15,23,42,0.16);transition:transform .25s}
+          .aiv-platform-badge{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;letter-spacing:-.5px;box-shadow:0 10px 24px rgba(15,23,42,0.13);transition:transform .25s}
+          .aiv-platform-badge-bordered{border:1px solid rgba(15,23,42,0.08)}
           .aiv-platform-item:hover .aiv-platform-badge{transform:translateY(-4px)}
           .aiv-platform-name{font-size:13px;font-weight:700;color:#0F1F40}
 
@@ -594,10 +602,21 @@ export default function FreeAiVisibilityAudit() {
               <h2 className="pl-h2">Every AI Platform Your Customers Use: <AuroraText>All in One Audit</AuroraText></h2>
               <p className="pl-lead">We systematically test your brand visibility across every major AI platform and search signal — not just one or two. If a potential customer is using it to find businesses like yours, we check it.</p>
             </div>
+            <svg width="0" height="0" style={{ position: 'absolute' }}>
+              <defs>
+                <linearGradient id="geminiIconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#4285F4" />
+                  <stop offset="50%" stopColor="#9168C0" />
+                  <stop offset="100%" stopColor="#D96570" />
+                </linearGradient>
+              </defs>
+            </svg>
             <div className="aiv-platforms-row pl-reveal">
               {AI_PLATFORMS.map(p => (
                 <div key={p.name} className="aiv-platform-item">
-                  <div className="aiv-platform-badge" style={{ background: p.color }}>{p.mono}</div>
+                  <div className={`aiv-platform-badge${p.border ? ' aiv-platform-badge-bordered' : ''}`} style={{ background: p.bg, color: p.fg }}>
+                    {p.icon ? <p.icon style={{ fill: p.fg }} size={28} /> : p.mono}
+                  </div>
                   <span className="aiv-platform-name">{p.name}</span>
                 </div>
               ))}
@@ -630,7 +649,7 @@ export default function FreeAiVisibilityAudit() {
         </section>
 
         {/* ── WHY 1SOLUTIONS ── */}
-        <section className="pl-sec" id="why-us">
+        <section className="pl-sec pl-white" id="why-us">
           <div className="pl-in">
             <div className="pl-reveal">
               <span className="pl-ey">Why 1Solutions</span>
