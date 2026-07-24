@@ -5,11 +5,13 @@ import { useRouter } from 'next/router';
 import { AuroraText } from '../../components/AuroraText';
 import ServiceHero from '../../components/sections/ServiceHero';
 
-const AUDIT_SIGNALS = [
-  'Google AI Overviews', 'ChatGPT Citations', 'Perplexity.ai Answers',
-  'Bing Copilot Responses', 'Google Gemini', 'Claude AI Mentions',
-  'Knowledge Panel', 'E-E-A-T Signals', 'Schema & Structured Data',
-  'Featured Snippets', 'People Also Ask', 'Voice Search Presence',
+const AI_PLATFORMS = [
+  { name: 'ChatGPT', mono: 'GPT', color: '#10a37f' },
+  { name: 'Claude', mono: 'C', color: '#D97757' },
+  { name: 'Gemini', mono: 'G', color: '#4285F4' },
+  { name: 'Perplexity', mono: 'P', color: '#20808D' },
+  { name: 'Copilot', mono: 'CP', color: '#0078D4' },
+  { name: 'AI Overviews', mono: 'AI', color: '#EA4335' },
 ];
 
 // ── "What's Inside Your Report" mock-panel sample data ──────────────────
@@ -494,10 +496,12 @@ export default function FreeAiVisibilityAudit() {
           .pl-res-label{font-size:13px;font-weight:700;color:#0F1F40;margin-bottom:6px}
           .pl-res-detail{font-size:11px;color:#6b7280;line-height:1.5}
 
-          /* ── PILLS ── */
-          .pl-pills{display:flex;flex-wrap:wrap;gap:10px}
-          .pl-pill{display:inline-flex;align-items:center;gap:7px;border-radius:50px;padding:8px 16px;font-size:13px;font-weight:600;box-shadow:0 2px 10px rgba(0,0,0,0.07)}
-          .pl-pill-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;opacity:.8}
+          /* ── AI PLATFORM LOGOS ── */
+          .aiv-platforms-row{display:flex;flex-wrap:wrap;justify-content:center;gap:36px}
+          .aiv-platform-item{display:flex;flex-direction:column;align-items:center;gap:12px}
+          .aiv-platform-badge{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:15px;letter-spacing:-.5px;box-shadow:0 10px 24px rgba(15,23,42,0.16);transition:transform .25s}
+          .aiv-platform-item:hover .aiv-platform-badge{transform:translateY(-4px)}
+          .aiv-platform-name{font-size:13px;font-weight:700;color:#0F1F40}
 
           /* ── UTM NOTICE ── */
           .aiv-utm-notice{display:inline-flex;align-items:center;gap:6px;background:rgba(217,119,6,0.08);border:1px solid rgba(217,119,6,0.25);border-radius:8px;padding:6px 12px;font-size:11px;color:#92400e;font-weight:600;margin-bottom:12px}
@@ -654,24 +658,13 @@ export default function FreeAiVisibilityAudit() {
               <h2 className="pl-h2">Every AI Platform Your Customers Use: <AuroraText>All in One Audit</AuroraText></h2>
               <p className="pl-lead">We systematically test your brand visibility across every major AI platform and search signal — not just one or two. If a potential customer is using it to find businesses like yours, we check it.</p>
             </div>
-            <div className="pl-pills pl-reveal">
-              {AUDIT_SIGNALS.map((k, i) => {
-                const palette = [
-                  {bg:'rgba(239,68,68,.10)',border:'rgba(239,68,68,.35)',color:'#991b1b',dot:'#ef4444'},
-                  {bg:'rgba(217,119,6,.10)',border:'rgba(217,119,6,.35)',color:'#92400e',dot:'#D97706'},
-                  {bg:'rgba(34,197,94,.10)',border:'rgba(34,197,94,.35)',color:'#14532d',dot:'#16a34a'},
-                  {bg:'rgba(59,130,246,.10)',border:'rgba(59,130,246,.35)',color:'#1e3a8a',dot:'#3b82f6'},
-                  {bg:'rgba(124,58,237,.10)',border:'rgba(124,58,237,.35)',color:'#4c1d95',dot:'#7c3aed'},
-                  {bg:'rgba(20,184,166,.10)',border:'rgba(20,184,166,.35)',color:'#134e4a',dot:'#14b8a6'},
-                ];
-                const c = palette[i % palette.length];
-                return (
-                  <span key={k} className="pl-pill" style={{background:c.bg,border:`1px solid ${c.border}`,color:c.color}}>
-                    <span className="pl-pill-dot" style={{background:c.dot}}/>
-                    {k}
-                  </span>
-                );
-              })}
+            <div className="aiv-platforms-row pl-reveal">
+              {AI_PLATFORMS.map(p => (
+                <div key={p.name} className="aiv-platform-item">
+                  <div className="aiv-platform-badge" style={{ background: p.color }}>{p.mono}</div>
+                  <span className="aiv-platform-name">{p.name}</span>
+                </div>
+              ))}
             </div>
           </div>
         </section>
