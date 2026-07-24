@@ -31,6 +31,8 @@ async function sendGraphEmail(token, { to, subject, html, replyTo }) {
       subject,
       body: { contentType: 'HTML', content: html },
       toRecipients,
+      from: { emailAddress: { address: SENDER, name: '1Solutions' } },
+      sender: { emailAddress: { address: SENDER, name: '1Solutions' } },
       ...(replyTo ? { replyTo: [{ emailAddress: { address: replyTo } }] } : {}),
     },
     saveToSentItems: false,
