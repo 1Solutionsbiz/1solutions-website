@@ -54,17 +54,6 @@ const REPORT_CARDS = [
   { pill: '#be185d', bg: 'linear-gradient(165deg,#fce7f3 0%,#fbcfe8 100%)', label: 'Rankings Across Platforms', body: 'Track how your brand performs on ChatGPT, Perplexity, Google AI Overviews, and more.', mock: 'platforms' },
 ];
 
-const WHAT_WE_AUDIT = [
-  { icon:'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', title:'Google AI Overview Presence', body:'We test your target keywords across Google and identify whether your brand, content, or website appears in AI-generated overviews. We benchmark your current appearance rate against top competitors and flag exactly what is suppressing your visibility.' },
-  { icon:'M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-4 4H9v-4z', title:'LLM Citation Analysis', body:'We query ChatGPT, Perplexity, Claude, and Bing Copilot with your target industry questions and document whether your brand is mentioned, cited as a source, or entirely absent. You will see exactly how often AI recommends your competitors over you.' },
-  { icon:'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4', title:'Schema & Structured Data Health', body:'AI systems rely on structured data to understand what your business does and who it serves. We audit your schema markup coverage — Organisation, LocalBusiness, FAQ, HowTo, Product, Service — and identify missing markup that is costing you AI citations.' },
-  { icon:'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', title:'E-E-A-T & Authority Signals', body:'Google and AI platforms prioritise sources that demonstrate Experience, Expertise, Authoritativeness, and Trustworthiness. We audit your author bios, credentials, citations, backlink profile, and brand mentions to identify E-E-A-T gaps suppressing your visibility.' },
-  { icon:'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title:'Competitor AI Visibility Benchmark', body:'We run the same AI platform queries for your top 5 competitors and map where they appear and you do not. This reveals the specific content topics, formats, and authority signals driving your competitors into AI answers, giving you a direct blueprint to follow.' },
-  { icon:'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2', title:'Content Gap Analysis for AI', body:'We identify the questions, topics, and search queries where AI platforms are citing competitors instead of you. These gaps become your highest-priority content opportunities — producing the right content in the right format to earn AI citations for queries you should already own.' },
-  { icon:'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9', title:'Knowledge Graph & Entity Presence', body:'Your business entity in Google\'s Knowledge Graph directly influences how AI describes and recommends you. We audit whether your entity exists, whether it is correctly categorised, and whether your brand attributes are accurate, fixing misinformation that causes AI to underrepresent or misrepresent your business.' },
-  { icon:'M13 10V3L4 14h7v7l9-11h-7z', title:'Action Plan & Priority Roadmap', body:'Every audit concludes with a prioritised, specific action plan. Not a generic checklist — a ranked list of the fixes and content investments that will move the needle fastest for your specific business, industry, and competitive landscape. Implement it yourself or let us handle it for you.' },
-];
-
 const WHY = [
   { bg:'linear-gradient(165deg,#ede9fe 0%,#ddd6fe 100%)', icon:'M13 10V3L4 14h7v7l9-11h-7z', title:'AI-First Methodology', body:'We built our AI visibility audit framework specifically for the era of generative search. We are not retrofitting old SEO audits — we are running systematic, structured tests across every major AI platform to map your actual visibility footprint.' },
   { bg:'linear-gradient(165deg,#dbeafe 0%,#bfdbfe 100%)', icon:'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z', title:'Human Analysts, Not Bots', body:'Every audit is conducted by an experienced search specialist, not an automated tool. AI platforms behave differently depending on how queries are phrased and who is asking. Our analysts use real accounts and natural query patterns to surface results that automated scrapers miss.' },
@@ -384,8 +373,6 @@ export default function FreeAiVisibilityAudit() {
           .pl-lead{font-size:15px;color:#4A6080;line-height:1.7;max-width:640px;margin-bottom:40px}
           .pl-glass{background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:28px 24px;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95);transition:border-color .22s,box-shadow .22s,transform .22s}
           .pl-glass:hover{border-color:rgba(217,119,6,0.25);box-shadow:0 8px 36px rgba(15,52,96,0.12),inset 0 1px 0 rgba(255,255,255,1);transform:translateY(-3px)}
-          .pl-icon{width:44px;height:44px;background:linear-gradient(135deg,rgba(15,52,96,0.10),rgba(15,52,96,0.06));border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;flex-shrink:0}
-          .pl-icon svg{width:20px;height:20px;color:#0F3460}
           .pl-card-h{font-size:15px;font-weight:700;color:#0F1F40;margin-bottom:8px}
           .pl-card-p{font-size:13px;color:#4A6080;line-height:1.65}
           .pl-why-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
@@ -564,7 +551,7 @@ export default function FreeAiVisibilityAudit() {
           title={<>Is Your Business Visible in <AuroraText>AI Search Results?</AuroraText></>}
           subtext="62% of Google searches now show AI-generated answers. Millions of buyers ask ChatGPT and Perplexity for recommendations every day. Find out if your brand is being cited — or being ignored — with a free, expert AI visibility audit from 1Solutions."
           primaryCta={{ label: 'Claim Your Free AI Audit', href: '#aiv-contact' }}
-          secondaryCta={{ label: 'See What We Audit', href: '#what-we-audit' }}
+          secondaryCta={{ label: 'See What We Audit', href: '#whats-inside' }}
           stats={[
             { label: 'Of Google Searches Now Show AI Overviews', value: '62', suffix: '%' },
             { label: 'AI Platforms We Check In Your Audit', value: '10', suffix: '+' },
@@ -620,30 +607,6 @@ export default function FreeAiVisibilityAudit() {
                     {p.icon ? <p.icon style={{ fill: p.fg }} size={28} /> : p.mono}
                   </div>
                   <span className="aiv-platform-name">{p.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── WHAT WE AUDIT ── */}
-        <section className="pl-sec" id="what-we-audit">
-          <div className="pl-in">
-            <div className="pl-reveal" style={{textAlign:'center'}}>
-              <span className="pl-ey">What's Included</span>
-              <h2 className="pl-h2">8 Dimensions of <AuroraText>AI Visibility</AuroraText> We Audit</h2>
-              <p className="pl-lead" style={{margin:'0 auto'}}>A comprehensive sweep across every factor that determines whether AI platforms cite, recommend, or ignore your business when your target customers ask for help.</p>
-            </div>
-            <div className="pl-g3">
-              {WHAT_WE_AUDIT.map((s, i) => (
-                <div key={s.title} className="pl-glass pl-reveal" style={{transitionDelay:`${i*60}ms`}}>
-                  <div className="pl-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-                      <path d={s.icon}/>
-                    </svg>
-                  </div>
-                  <div className="pl-card-h">{s.title}</div>
-                  <div className="pl-card-p">{s.body}</div>
                 </div>
               ))}
             </div>
