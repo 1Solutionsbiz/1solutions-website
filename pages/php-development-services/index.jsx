@@ -212,7 +212,12 @@ export default function PhpDevelopmentServices() {
         <meta property="og:title" content="PHP Development Services | Laravel & Custom PHP | 1Solutions" />
         <meta property="og:description" content="Custom PHP & Laravel web application development. Clean code, security-first, fully documented. Serving US, Canada & Australia since 2008." />
         <meta property="og:url" content="https://www.1solutions.biz/php-development-services/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-php-development-services.png" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="632" />
+        <meta key="og-image-type" property="og:image:type" content="image/png" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-php-development-services.png" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <style>{`
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}

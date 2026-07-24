@@ -120,8 +120,12 @@ export default function LinkBuildingServices() {
         <meta property="og:title" content="Link Building Services | 1Solutions" />
         <meta property="og:description" content="Manual outreach link building. Guest posts on DR40–DR60+ sites, niche edits, digital PR. 50,000+ links built over 15 years. White-hat only." />
         <meta property="og:url" content="https://www.1solutions.biz/link-building-services/" />
-        <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-link-building-services.png" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/png" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-link-building-services.png" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <style>{`
           @keyframes lbs-aurora{0%{background-position:0% center}100%{background-position:200% center}}
