@@ -12,13 +12,37 @@ const AUDIT_SIGNALS = [
   'Featured Snippets', 'People Also Ask', 'Voice Search Presence',
 ];
 
-const REPORT_CONTENTS = [
-  { icon:'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title:'AI Visibility Score', body:'A single, clear score out of 100 showing how consistently your brand is mentioned across the AI platforms and queries that matter most to your business — a benchmark you can track and watch improve over time.' },
-  { icon:'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6', title:'Overall Rank & Visibility Trend', body:'See exactly where you stand today against your category, plus the direction you are heading — so you know whether your AI presence is growing, holding steady, or already slipping behind competitors.' },
-  { icon:'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title:'Top Queries Where You Already Rank', body:'The specific high-intent questions and search queries where AI platforms are already citing your business — so you know exactly what is working today and can double down on it.' },
-  { icon:'M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z', title:'Missed Opportunities', body:'The queries where your competitors are being recommended and your brand is completely absent from the answer — the highest-priority gaps we recommend you close first.' },
-  { icon:'M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4-4 4 4 0 004 4zm6 0a4 4 0 10-4-4', title:'Competitor Leaderboard', body:'A side-by-side comparison of how often you and your top 5 competitors are mentioned across the same set of AI queries, so you know precisely who you are up against and by how much.' },
-  { icon:'M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm10 0h6v6h-6v-6z', title:'Rankings Across Every Platform', body:'A platform-by-platform breakdown covering ChatGPT, Perplexity, Google AI Overviews, Gemini, and Bing Copilot — because your visibility can vary significantly from one AI engine to the next.' },
+// ── "What's Inside Your Report" mock-panel sample data ──────────────────
+const TOP_QUERIES = [
+  { q: 'Which SEO agency in Delhi delivers the fastest Page 1 rankings for local businesses?', rank: '#1' },
+  { q: 'What is the best way to track brand visibility inside ChatGPT and Perplexity answers?', rank: '#1' },
+  { q: 'How do businesses improve citations in Google AI Overviews for competitive keywords?', rank: '#2' },
+];
+const MISSED_QUERIES = [
+  { q: 'Which digital marketing agency offers the most transparent AI visibility audits?', leader: 'Vertex Digital', color: '#ef4444' },
+  { q: 'What SEO company provides clear monthly reporting for small businesses?', leader: 'Northwind Co', color: '#f97316' },
+  { q: 'Who are the top-rated SEO agencies for eCommerce brands?', leader: 'BrightPath SEO', color: '#0ea5e9' },
+];
+const LEADERBOARD_ROWS = [
+  { rank: 1, brand: 'You', mentions: 25, pct: 100, you: true, color: '#0F3460' },
+  { rank: 2, brand: 'Vertex Digital', mentions: 8, pct: 32, color: '#ef4444' },
+  { rank: 3, brand: 'Northwind Co', mentions: 5, pct: 20, color: '#f97316' },
+  { rank: 4, brand: 'BrightPath SEO', mentions: 5, pct: 20, color: '#0ea5e9' },
+];
+const PLATFORM_ROWS = [
+  { name: 'ChatGPT', visibility: '86.67%', pos: 2, color: '#10a37f' },
+  { name: 'Gemini', visibility: '80.00%', pos: 2, color: '#4285f4' },
+  { name: 'Claude', visibility: '80.00%', pos: 2, color: '#d97757' },
+  { name: 'Perplexity', visibility: '80.00%', pos: 2, color: '#20808d' },
+];
+
+const REPORT_CARDS = [
+  { pill: '#6d28d9', bg: 'linear-gradient(165deg,#ede9fe 0%,#ddd6fe 100%)', label: 'AI Visibility Score', body: 'Get a clear score showing how often AI mentions your brand across the queries that matter most.', mock: 'score' },
+  { pill: '#1d4ed8', bg: 'linear-gradient(165deg,#dbeafe 0%,#bfdbfe 100%)', label: 'Overall Rank & Visibility Insights', body: "Understand your overall position, visibility trends, and what's influencing your performance.", mock: 'rank' },
+  { pill: '#15803d', bg: 'linear-gradient(165deg,#dcfce7 0%,#bbf7d0 100%)', label: 'Top Queries Where You Rank', body: 'Identify the high-intent queries where your site appears in AI answers today.', mock: 'queries' },
+  { pill: '#92400e', bg: 'linear-gradient(165deg,#fdf3dd 0%,#fbe8b8 100%)', label: 'Missed Opportunities', body: 'Spot important queries where competitors lead and your brand is missing from AI results.', mock: 'missed' },
+  { pill: '#c2410c', bg: 'linear-gradient(165deg,#fde8dc 0%,#fbd0b5 100%)', label: 'Competitor Leaderboard', body: 'Compare how often competitors appear in AI answers across your niche queries.', mock: 'leaderboard' },
+  { pill: '#be185d', bg: 'linear-gradient(165deg,#fce7f3 0%,#fbcfe8 100%)', label: 'Rankings Across Platforms', body: 'Track how your brand performs on ChatGPT, Perplexity, Google AI Overviews, and more.', mock: 'platforms' },
 ];
 
 const WHAT_WE_AUDIT = [
@@ -135,6 +159,129 @@ function StatCard({ prefix, target, suffix, decimals, label, detail }) {
       <div className="pl-res-metric">{prefix}{display}{suffix}</div>
       <div className="pl-res-label">{label}</div>
       <div className="pl-res-detail">{detail}</div>
+    </div>
+  );
+}
+
+function ReportMock({ type }) {
+  if (type === 'score') {
+    return (
+      <div className="aiv-mock">
+        <div className="aiv-score-top">
+          <div className="aiv-ring-wrap">
+            <svg viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="42" fill="none" stroke="#eef0f6" strokeWidth="10" />
+              <circle cx="50" cy="50" r="42" fill="none" stroke="url(#aivScoreGrad)" strokeWidth="10" strokeDasharray="263.9" strokeDashoffset="45" strokeLinecap="round" transform="rotate(-90 50 50)" />
+              <defs>
+                <linearGradient id="aivScoreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#f97316" /><stop offset="100%" stopColor="#7c3aed" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <div className="aiv-ring-center"><span className="aiv-ring-num">83</span><span className="aiv-ring-sub">out of 100</span></div>
+          </div>
+          <div>
+            <div className="aiv-score-h">AI Visibility Score</div>
+            <div className="aiv-score-p">You&apos;re showing up consistently in AI search. Continue tracking to strengthen visibility score even further.</div>
+          </div>
+        </div>
+        <div className="aiv-score-tags">
+          {['Visibility Analysis', 'Competitors', 'Platforms', 'Quick Wins'].map(t => (
+            <span key={t} className="aiv-score-tag">{t} ↓</span>
+          ))}
+        </div>
+      </div>
+    );
+  }
+  if (type === 'rank') {
+    const stats = [
+      { label: 'AVG POSITION', value: '2.1', sub: 'Average position across all queries', bg: '#ede9fe' },
+      { label: 'COMPETITOR GAP', value: '0× behind', sub: 'Ranking gap to nearest competitor', bg: '#fce7f3' },
+      { label: 'YOUR RANK', value: '#1', sub: 'Your position among competitors', bg: '#dbeafe' },
+      { label: 'TOTAL MENTIONS', value: '18', sub: 'AI citations tracked this period', bg: '#dcfce7' },
+    ];
+    return (
+      <div className="aiv-mock">
+        <div className="aiv-stat-grid">
+          {stats.map(s => (
+            <div key={s.label} className="aiv-stat-tile" style={{ background: s.bg }}>
+              <div className="aiv-stat-label">{s.label}</div>
+              <div className="aiv-stat-value">{s.value}</div>
+              <div className="aiv-stat-sub">{s.sub}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+  if (type === 'queries') {
+    return (
+      <div className="aiv-mock">
+        <div className="aiv-table">
+          <div className="aiv-table-head"><span>PROMPT</span><span>RANK</span></div>
+          <div className="aiv-table-body">
+            {TOP_QUERIES.map((r, i) => (
+              <div key={i} className="aiv-table-row">
+                <span className="aiv-table-q">{r.q}</span>
+                <span className="aiv-table-rank aiv-rank-good">{r.rank}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+  if (type === 'missed') {
+    return (
+      <div className="aiv-mock">
+        <div className="aiv-table">
+          <div className="aiv-table-head"><span>PROMPT</span><span>LEADER</span></div>
+          <div className="aiv-table-body">
+            {MISSED_QUERIES.map((r, i) => (
+              <div key={i} className="aiv-table-row">
+                <span className="aiv-table-q">{r.q}</span>
+                <span className="aiv-leader-chip"><span className="aiv-leader-badge" style={{ background: r.color }}>{r.leader[0]}</span>{r.leader}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+  if (type === 'leaderboard') {
+    return (
+      <div className="aiv-mock">
+        <div className="aiv-table">
+          <div className="aiv-table-head aiv-lb-head"><span>RANK</span><span>BRAND</span><span>MENTIONS</span><span>VISIBILITY</span></div>
+          <div className="aiv-table-body">
+            {LEADERBOARD_ROWS.map(r => (
+              <div key={r.rank} className="aiv-lb-row">
+                <span className="aiv-lb-rank">{r.rank}</span>
+                <span className="aiv-lb-brand"><span className="aiv-leader-badge" style={{ background: r.color }}>{r.brand[0]}</span>{r.brand}{r.you && <em>(You)</em>}</span>
+                <span className="aiv-lb-mentions">{r.mentions}</span>
+                <span className="aiv-lb-bar-wrap"><span className="aiv-lb-bar" style={{ width: `${r.pct}%`, background: r.you ? '#2563eb' : '#d1d5db' }} /></span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+  // platforms
+  return (
+    <div className="aiv-mock">
+      <div className="aiv-table">
+        <div className="aiv-table-head aiv-plat-head"><span>PLATFORM</span><span>VISIBILITY</span><span>AVG POS.</span></div>
+        <div className="aiv-table-body">
+          {PLATFORM_ROWS.map(p => (
+            <div key={p.name} className="aiv-plat-row">
+              <span className="aiv-plat-name"><span className="aiv-plat-dot" style={{ background: p.color }} />{p.name}</span>
+              <span>{p.visibility}</span>
+              <span>{p.pos}</span>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
@@ -312,6 +459,57 @@ export default function FreeAiVisibilityAudit() {
           .pl-g3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
           .pl-g4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 
+          /* ── WHAT'S INSIDE YOUR REPORT ── */
+          .aiv-report-sec{padding:90px 40px;position:relative;z-index:1}
+          .aiv-report-hd{text-align:center;max-width:760px;margin:0 auto 56px}
+          .aiv-report-ttl{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;color:#111827;letter-spacing:-1px;margin:0 0 20px}
+          .aiv-report-sub{font-size:16px;color:#6b7280;line-height:1.75;margin:0}
+          .aiv-report-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+          .aiv-report-card{border-radius:24px;padding:36px 32px 0;overflow:hidden;display:flex;flex-direction:column;position:relative;height:520px;transition:transform .25s,box-shadow .25s}
+          .aiv-report-card:hover{transform:translateY(-4px);box-shadow:0 20px 48px rgba(15,23,42,0.12)}
+          .aiv-report-pill{display:inline-flex;align-items:center;background:#fff;border-radius:999px;padding:9px 18px;font-size:13.5px;font-weight:700;margin-bottom:22px;box-shadow:0 3px 10px rgba(15,23,42,0.08);width:fit-content}
+          .aiv-report-body{font-size:1.2rem;font-weight:800;color:#0F1F40;line-height:1.42;margin:0 0 24px;letter-spacing:-.2px}
+          .aiv-report-mockwrap{margin-top:auto;flex:1;min-height:0;display:flex;align-items:flex-end}
+          .aiv-report-cta-wrap{text-align:center;margin-top:52px}
+          .aiv-report-cta{display:inline-block;padding:16px 40px;border-radius:999px;background:linear-gradient(120deg,#f97316,#ec4899,#7c3aed);color:#fff;font-weight:700;font-size:16px;text-decoration:none;box-shadow:0 12px 32px rgba(124,58,237,0.30);transition:transform .25s,box-shadow .25s}
+          .aiv-report-cta:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(124,58,237,0.38)}
+          .aiv-mock{background:#fff;border-radius:16px 16px 0 0;border:1px solid rgba(15,23,42,0.06);box-shadow:0 -4px 24px rgba(15,23,42,0.07);padding:22px 22px 0;width:100%}
+          .aiv-score-top{display:flex;align-items:center;gap:16px;padding-bottom:16px}
+          .aiv-ring-wrap{position:relative;width:80px;height:80px;flex-shrink:0}
+          .aiv-ring-wrap svg{width:100%;height:100%}
+          .aiv-ring-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+          .aiv-ring-num{font-size:20px;font-weight:800;color:#111827;line-height:1}
+          .aiv-ring-sub{font-size:9px;color:#9ca3af;font-weight:600;margin-top:2px}
+          .aiv-score-h{font-size:14px;font-weight:800;color:#111827;margin-bottom:4px}
+          .aiv-score-p{font-size:11.5px;color:#6b7280;line-height:1.5}
+          .aiv-score-tags{display:flex;flex-wrap:wrap;gap:8px;padding:14px 0 18px;border-top:1px solid #f1f3f7}
+          .aiv-score-tag{display:inline-flex;align-items:center;gap:4px;background:#f5f6fa;border-radius:8px;padding:6px 10px;font-size:11px;font-weight:600;color:#374151}
+          .aiv-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding-bottom:20px}
+          .aiv-stat-tile{border-radius:12px;padding:14px}
+          .aiv-stat-label{font-size:9.5px;font-weight:700;color:#6b7280;letter-spacing:.06em;margin-bottom:6px}
+          .aiv-stat-value{font-size:19px;font-weight:800;color:#111827;margin-bottom:4px}
+          .aiv-stat-sub{font-size:10px;color:#6b7280;line-height:1.4}
+          .aiv-table{padding-bottom:14px;width:100%}
+          .aiv-table-head{display:grid;grid-template-columns:1fr auto;gap:10px;font-size:10px;font-weight:700;color:#9ca3af;letter-spacing:.06em;padding-bottom:10px;border-bottom:1px solid #f1f3f7}
+          .aiv-table-row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid #f6f7fa}
+          .aiv-table-q{font-size:11.5px;color:#374151;line-height:1.5}
+          .aiv-table-rank{font-size:12px;font-weight:800;color:#111827;background:#f1f3f7;border-radius:6px;padding:3px 8px;white-space:nowrap}
+          .aiv-rank-good{color:#15803d;background:#dcfce7}
+          .aiv-leader-chip{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:#374151;white-space:nowrap}
+          .aiv-leader-badge{width:18px;height:18px;border-radius:5px;color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+          .aiv-lb-head{grid-template-columns:.5fr 1.4fr .8fr 1fr}
+          .aiv-lb-row{display:grid;grid-template-columns:.5fr 1.4fr .8fr 1fr;align-items:center;gap:8px;padding:11px 0;border-bottom:1px solid #f6f7fa;font-size:11.5px;color:#374151}
+          .aiv-lb-rank{font-weight:800;color:#9ca3af}
+          .aiv-lb-brand{display:flex;align-items:center;gap:6px;font-weight:700;color:#111827}
+          .aiv-lb-brand em{font-style:normal;color:#2563eb;font-size:10px;margin-left:2px}
+          .aiv-lb-mentions{font-weight:700}
+          .aiv-lb-bar-wrap{background:#f1f3f7;border-radius:6px;height:6px;overflow:hidden}
+          .aiv-lb-bar{display:block;height:100%;border-radius:6px}
+          .aiv-plat-head{grid-template-columns:1fr .8fr .8fr}
+          .aiv-plat-row{display:grid;grid-template-columns:1fr .8fr .8fr;align-items:center;padding:12px 0;border-bottom:1px solid #f6f7fa;font-size:12px;color:#374151;font-weight:600}
+          .aiv-plat-name{display:flex;align-items:center;gap:8px;font-weight:700;color:#111827}
+          .aiv-plat-dot{width:16px;height:16px;border-radius:5px;flex-shrink:0}
+
           /* ── DARK / RESULTS ── */
           .pl-dark{padding:80px 40px;background:#fff;position:relative;z-index:1}
           .pl-dark-ey{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;display:block;margin-bottom:10px}
@@ -430,6 +628,7 @@ export default function FreeAiVisibilityAudit() {
             .pl-g3{grid-template-columns:repeat(2,1fr)}
             .pl-g4{grid-template-columns:repeat(2,1fr)}
             .pl-contact-in{grid-template-columns:1fr}
+            .aiv-report-grid{grid-template-columns:1fr 1fr}
           }
           @media(max-width:768px){
             .pl-sec,.pl-dark,.pl-contact-sec,.pl-related,.pl-testi{padding-left:24px;padding-right:24px}
@@ -443,10 +642,15 @@ export default function FreeAiVisibilityAudit() {
             .pl-submit{backdrop-filter:none;-webkit-backdrop-filter:none}
             .pl-related{backdrop-filter:none;-webkit-backdrop-filter:none}
             .pl-trow:last-child{display:none}
+            .aiv-report-sec{padding:60px 24px}
+            .aiv-report-grid{grid-template-columns:1fr}
+            .aiv-report-card{height:auto;padding-bottom:0}
+            .aiv-report-mockwrap{align-items:stretch}
           }
           @media(max-width:480px){
             .pl-tcard{width:270px;padding:18px}
             .pl-g4{grid-template-columns:1fr 1fr}
+            .aiv-stat-grid{grid-template-columns:1fr}
           }
         
           @keyframes aurora-text{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
@@ -473,25 +677,23 @@ export default function FreeAiVisibilityAudit() {
         />
 
         {/* ── WHAT'S INSIDE YOUR REPORT ── */}
-        <section className="pl-sec" id="whats-inside">
+        <section className="aiv-report-sec" id="whats-inside">
           <div className="pl-in">
-            <div className="pl-reveal">
-              <span className="pl-ey">What You&apos;ll Receive</span>
-              <h2 className="pl-h2">What&apos;s Inside Your <AuroraText>Free AI Visibility Report</AuroraText></h2>
-              <p className="pl-lead">Your audit covers the exact queries your customers ask AI platforms about businesses like yours — showing where you already win, where competitors are winning instead, and exactly what closes the gap.</p>
+            <div className="aiv-report-hd pl-reveal">
+              <h2 className="aiv-report-ttl">What&apos;s Inside Your Report</h2>
+              <p className="aiv-report-sub">Your free AI visibility audit includes data on the top queries your customers search for, and summarises where your brand shows up, who leads when you are missing, and what to improve to earn more mentions and citations.</p>
             </div>
-            <div className="pl-g3">
-              {REPORT_CONTENTS.map((r, i) => (
-                <div key={r.title} className="pl-glass pl-reveal" style={{transitionDelay:`${i*60}ms`}}>
-                  <div className="pl-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-                      <path d={r.icon}/>
-                    </svg>
-                  </div>
-                  <div className="pl-card-h">{r.title}</div>
-                  <div className="pl-card-p">{r.body}</div>
+            <div className="aiv-report-grid">
+              {REPORT_CARDS.map((c, i) => (
+                <div key={c.label} className="aiv-report-card pl-reveal" style={{ background: c.bg, transitionDelay: `${i * 60}ms` }}>
+                  <span className="aiv-report-pill" style={{ color: c.pill }}>{c.label}</span>
+                  <p className="aiv-report-body">{c.body}</p>
+                  <div className="aiv-report-mockwrap"><ReportMock type={c.mock} /></div>
                 </div>
               ))}
+            </div>
+            <div className="aiv-report-cta-wrap">
+              <a href="#aiv-contact" className="aiv-report-cta">Get My Free Report</a>
             </div>
           </div>
         </section>
