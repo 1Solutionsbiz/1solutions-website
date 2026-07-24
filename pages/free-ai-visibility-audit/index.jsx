@@ -12,6 +12,15 @@ const AUDIT_SIGNALS = [
   'Featured Snippets', 'People Also Ask', 'Voice Search Presence',
 ];
 
+const REPORT_CONTENTS = [
+  { icon:'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title:'AI Visibility Score', body:'A single, clear score out of 100 showing how consistently your brand is mentioned across the AI platforms and queries that matter most to your business — a benchmark you can track and watch improve over time.' },
+  { icon:'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6', title:'Overall Rank & Visibility Trend', body:'See exactly where you stand today against your category, plus the direction you are heading — so you know whether your AI presence is growing, holding steady, or already slipping behind competitors.' },
+  { icon:'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', title:'Top Queries Where You Already Rank', body:'The specific high-intent questions and search queries where AI platforms are already citing your business — so you know exactly what is working today and can double down on it.' },
+  { icon:'M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z', title:'Missed Opportunities', body:'The queries where your competitors are being recommended and your brand is completely absent from the answer — the highest-priority gaps we recommend you close first.' },
+  { icon:'M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4-4 4 4 0 004 4zm6 0a4 4 0 10-4-4', title:'Competitor Leaderboard', body:'A side-by-side comparison of how often you and your top 5 competitors are mentioned across the same set of AI queries, so you know precisely who you are up against and by how much.' },
+  { icon:'M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm10 0h6v6h-6v-6z', title:'Rankings Across Every Platform', body:'A platform-by-platform breakdown covering ChatGPT, Perplexity, Google AI Overviews, Gemini, and Bing Copilot — because your visibility can vary significantly from one AI engine to the next.' },
+];
+
 const WHAT_WE_AUDIT = [
   { icon:'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', title:'Google AI Overview Presence', body:'We test your target keywords across Google and identify whether your brand, content, or website appears in AI-generated overviews. We benchmark your current appearance rate against top competitors and flag exactly what is suppressing your visibility.' },
   { icon:'M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-4 4H9v-4z', title:'LLM Citation Analysis', body:'We query ChatGPT, Perplexity, Claude, and Bing Copilot with your target industry questions and document whether your brand is mentioned, cited as a source, or entirely absent. You will see exactly how often AI recommends your competitors over you.' },
@@ -462,6 +471,30 @@ export default function FreeAiVisibilityAudit() {
             { label: 'Completely Free — No Strings Attached', value: '0', prefix: '$' },
           ]}
         />
+
+        {/* ── WHAT'S INSIDE YOUR REPORT ── */}
+        <section className="pl-sec" id="whats-inside">
+          <div className="pl-in">
+            <div className="pl-reveal">
+              <span className="pl-ey">What You&apos;ll Receive</span>
+              <h2 className="pl-h2">What&apos;s Inside Your <AuroraText>Free AI Visibility Report</AuroraText></h2>
+              <p className="pl-lead">Your audit covers the exact queries your customers ask AI platforms about businesses like yours — showing where you already win, where competitors are winning instead, and exactly what closes the gap.</p>
+            </div>
+            <div className="pl-g3">
+              {REPORT_CONTENTS.map((r, i) => (
+                <div key={r.title} className="pl-glass pl-reveal" style={{transitionDelay:`${i*60}ms`}}>
+                  <div className="pl-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                      <path d={r.icon}/>
+                    </svg>
+                  </div>
+                  <div className="pl-card-h">{r.title}</div>
+                  <div className="pl-card-p">{r.body}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* ── AI SIGNALS WE CHECK ── */}
         <section className="pl-sec pl-white">
