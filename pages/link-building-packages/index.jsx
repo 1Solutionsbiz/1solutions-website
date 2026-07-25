@@ -365,31 +365,37 @@ const RESULTS = [
 
 const WHYS = [
   {
+    bg: 'linear-gradient(165deg,#ede9fe 0%,#ddd6fe 100%)',
     icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z',
     title: '100% Manual Outreach',
     desc: 'Every link is acquired through human-led outreach. No automated tools, no scraped lists, no mass email blasts - genuine editor relationships at scale.',
   },
   {
+    bg: 'linear-gradient(165deg,#dbeafe 0%,#bfdbfe 100%)',
     icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z',
     title: 'Full Transparency',
     desc: 'Live link tracker updated as each link goes live. Monthly reports include URL, DR, traffic, anchor text, and target page for every single placement.',
   },
   {
+    bg: 'linear-gradient(165deg,#dcfce7 0%,#bbf7d0 100%)',
     icon: 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z',
     title: 'AI+GEO Ready',
     desc: 'Our AI+GEO Elite plan targets the sources ChatGPT, Perplexity, and Google AI Overviews cite - building citation authority alongside traditional rankings.',
   },
   {
+    bg: 'linear-gradient(165deg,#fdf3dd 0%,#fbe8b8 100%)',
     icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
     title: '15+ Years of Outreach',
     desc: 'Founded in 2008, our link building team has built over 50,000 backlinks across 1,000+ campaigns in a wide range of niches and markets.',
   },
   {
+    bg: 'linear-gradient(165deg,#fde8dc 0%,#fbd0b5 100%)',
     icon: 'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6',
     title: 'Strategy-First Approach',
     desc: "We don't just build links - we build the right links, to the right pages, with the right anchors, based on your ranking targets, backlink gap, and AI visibility goals.",
   },
   {
+    bg: 'linear-gradient(165deg,#fce7f3 0%,#fbcfe8 100%)',
     icon: 'M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3',
     title: 'No Long-Term Contracts',
     desc: "Monthly plans require only 30 days' notice to cancel. No lock-in, no cancellation fees. Yearly plans offer a 17% discount with flexible mid-year adjustment.",
@@ -882,9 +888,9 @@ export default function LinkBuildingPackages() {
           .lbp-why-ch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
           .lbp-why-ch-card{padding:28px 24px;text-align:left;transition:transform .25s,box-shadow .25s,border-color .25s}
           .lbp-why-ch-card:hover{transform:translateY(-6px);border-color:rgba(217,119,6,.40) !important;box-shadow:0 16px 48px rgba(15,52,96,.14),inset 0 1px 0 rgba(255,255,255,1) !important}
-          .lbp-why-ch-icon{width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
-          .lbp-why-ch-icon svg{width:26px;height:26px;stroke:#D97706;fill:none}
-          .lbp-why-ch-t{font-size:15px;font-weight:700;color:#0F1F40;margin-bottom:6px}
+          .lbp-why-ch-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+          .lbp-why-ch-icon{width:22px;height:22px;stroke:#0F1F40;fill:none;flex-shrink:0}
+          .lbp-why-ch-t{font-size:15px;font-weight:700;color:#0F1F40;margin:0}
           .lbp-why-ch-d{font-size:13px;color:#4A6080;line-height:1.65}
 
           /* ── FAQ ── */
@@ -1493,13 +1499,13 @@ export default function LinkBuildingPackages() {
             </div>
             <div className="lbp-why-ch-grid">
               {WHYS.map(w => (
-                <div key={w.title} className="lbp-why-ch-card lbp-glass">
-                  <div className="lbp-why-ch-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <div key={w.title} className="lbp-why-ch-card lbp-glass" style={{background:w.bg}}>
+                  <div className="lbp-why-ch-head">
+                    <svg className="lbp-why-ch-icon" viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       <path d={w.icon}/>
                     </svg>
+                    <div className="lbp-why-ch-t">{w.title}</div>
                   </div>
-                  <div className="lbp-why-ch-t">{w.title}</div>
                   <div className="lbp-why-ch-d">{w.desc}</div>
                 </div>
               ))}
