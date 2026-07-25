@@ -81,6 +81,87 @@ const AREAS = [
   'Ghaziabad', 'Greater Noida',
 ];
 
+const SEO_PACKAGES = [
+  {
+    slug: 'starter',
+    name: 'Starter',
+    price: '15,000',
+    desc: 'For small Delhi businesses taking their first serious step into SEO.',
+    features: [
+      '10 target keywords tracked',
+      'On-page SEO for up to 5 pages',
+      'Monthly technical SEO audit',
+      'Google Business Profile optimisation',
+      '5 quality backlinks per month',
+      'Monthly performance report',
+    ],
+  },
+  {
+    slug: 'growth',
+    name: 'Growth',
+    price: '25,000',
+    popular: true,
+    desc: 'For growing Delhi businesses ready to compete for Page 1.',
+    features: [
+      '25 target keywords tracked',
+      'On-page SEO for up to 15 pages',
+      'Technical SEO fixes included',
+      'Local SEO for up to 3 locations',
+      '10 quality backlinks per month',
+      '2 SEO blog articles per month',
+      'Monthly report + strategy call',
+    ],
+  },
+  {
+    slug: 'authority',
+    name: 'Authority',
+    price: '45,000',
+    desc: 'For businesses competing in crowded Delhi NCR markets.',
+    features: [
+      '50 target keywords tracked',
+      'Full-site on-page optimisation',
+      'Advanced technical SEO',
+      'Local SEO for up to 5 locations',
+      '20 quality backlinks per month',
+      '4 SEO blog articles per month',
+      'Dedicated account manager',
+      'Monthly report + strategy call',
+      'Competitor gap analysis',
+    ],
+  },
+  {
+    slug: 'enterprise',
+    name: 'Enterprise',
+    price: '75,000',
+    desc: 'For large businesses and multi-location, aggressive growth targets.',
+    features: [
+      '100+ target keywords tracked',
+      'Unlimited on-page optimisation',
+      'Priority technical SEO',
+      'Local SEO for unlimited locations',
+      '35+ quality backlinks per month',
+      '8 SEO blog articles per month',
+      'Dedicated senior strategist',
+      'Weekly check-ins',
+      'Competitor gap analysis + market research',
+    ],
+  },
+];
+
+const PACKAGE_COMPARISON = [
+  ['Target keywords tracked', '10', '25', '50', '100+'],
+  ['Pages optimised (on-page SEO)', '5', '15', 'Full site', 'Unlimited'],
+  ['Technical SEO audit', 'Monthly', 'Monthly', 'Advanced', 'Priority'],
+  ['Google Business Profile optimisation', '✓', '✓', '✓', '✓'],
+  ['Local SEO locations covered', '1', 'Up to 3', 'Up to 5', 'Unlimited'],
+  ['Backlinks per month', '5', '10', '20', '35+'],
+  ['SEO blog articles per month', '✗', '2', '4', '8'],
+  ['Competitor gap analysis', '✗', '✗', '✓', '✓ + market research'],
+  ['Dedicated account manager', '✗', '✗', '✓', 'Senior strategist'],
+  ['Strategy call', '✗', 'Monthly', 'Monthly', 'Weekly check-ins'],
+  ['Performance reporting', 'Monthly', 'Monthly', 'Monthly', 'Monthly'],
+];
+
 const FAQS = [
   { q: "How much does SEO cost in Delhi?", a: "Our Delhi SEO packages start at INR 15,000 per month for small businesses and local SEO. Comprehensive packages for competitive industries range from INR 30,000 to INR 1,00,000 per month depending on industry competition, keyword volume, and growth targets. We provide a tailored quote after your free SEO audit - no guesswork." },
   { q: "How long does it take to rank on Google in Delhi?", a: "Low-competition local keywords typically show ranking movement within 2 to 3 months. Mid-competition terms take 3 to 5 months. High-competition Delhi categories like real estate, legal, and healthcare usually require 6 to 9 months of consistent work. We give honest timelines in your free audit based on real competitor data - not optimistic promises to win the sale." },
@@ -189,6 +270,38 @@ export default function SeoCompanyDelhi() {
           .dsel-icon svg{width:22px;height:22px;color:#0c2461;}
           .dsel-card-h{font-size:1rem;font-weight:700;color:#0A1628;margin:0 0 10px;line-height:1.3;}
           .dsel-card-p{font-size:13.5px;color:#4b5563;line-height:1.7;margin:0;}
+
+          /* Packages */
+          .dsel-pkg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:start;}
+          .dsel-pkg-card{background:linear-gradient(135deg,rgba(224,231,255,0.45) 0%,rgba(255,255,255,0.90) 60%,rgba(219,234,254,0.35) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:24px;padding:28px 24px;position:relative;transition:transform 0.22s,box-shadow 0.22s,border-color 0.22s;box-shadow:0 4px 24px rgba(12,36,97,0.07),inset 0 1px 0 rgba(255,255,255,0.95);}
+          .dsel-pkg-card:hover{transform:translateY(-6px);border-color:rgba(29,86,208,0.25);box-shadow:0 16px 48px rgba(12,36,97,0.12);}
+          .dsel-pkg-pop{background:linear-gradient(135deg,rgba(255,251,235,0.92) 0%,rgba(255,255,255,0.98) 50%,rgba(255,249,219,0.85) 100%);border-color:rgba(217,119,6,0.55);box-shadow:0 20px 60px rgba(217,119,6,0.16),0 0 0 2px rgba(217,119,6,0.14);}
+          .dsel-pkg-pop:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 28px 72px rgba(217,119,6,0.22),0 0 0 2px rgba(217,119,6,0.20);}
+          .dsel-pkg-tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#D97706,#F59E0B);color:#fff;font-size:10px;font-weight:700;padding:3px 12px;border-radius:100px;letter-spacing:.5px;white-space:nowrap;box-shadow:0 4px 12px rgba(217,119,6,0.30);}
+          .dsel-pkg-name{font-size:20px;font-weight:800;color:#0A1628;margin-bottom:6px;}
+          .dsel-pkg-desc{font-size:12.5px;color:#6b7280;line-height:1.55;margin-bottom:20px;min-height:38px;}
+          .dsel-pkg-price-row{display:flex;align-items:baseline;gap:4px;margin-bottom:18px;}
+          .dsel-pkg-currency{font-size:1.1rem;font-weight:700;color:#1d56d0;}
+          .dsel-pkg-amount{font-size:2.2rem;font-weight:900;letter-spacing:-1px;color:#0A1628;line-height:1;}
+          .dsel-pkg-per{font-size:12px;color:#9ca3af;font-weight:500;margin-left:2px;}
+          .dsel-pkg-cta{display:block;width:100%;text-align:center;padding:12px;border-radius:50px;font-weight:700;font-size:0.875rem;text-decoration:none;background:#0c2461;color:#fff;transition:all 0.22s;box-shadow:0 4px 16px rgba(12,36,97,0.20);box-sizing:border-box;}
+          .dsel-pkg-cta:hover{opacity:0.9;transform:translateY(-1px);}
+          .dsel-pkg-pop .dsel-pkg-cta{background:linear-gradient(135deg,#D97706,#F59E0B);box-shadow:0 6px 20px rgba(217,119,6,0.35);}
+          .dsel-pkg-divider{height:1px;background:rgba(12,36,97,0.08);margin:20px 0 18px;}
+          .dsel-pkg-feat-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px;}
+          .dsel-pkg-feat-list li{display:flex;align-items:flex-start;gap:9px;font-size:12.5px;color:#374151;line-height:1.4;}
+          .dsel-pkg-feat-list li svg{color:#1d56d0;flex-shrink:0;margin-top:2px;}
+          .dsel-pkg-pop .dsel-pkg-feat-list li svg{color:#D97706;}
+
+          /* Package comparison table */
+          .dsel-tbl-wrap{overflow-x:auto;border-radius:16px;border:1px solid rgba(255,255,255,0.85);box-shadow:0 4px 20px rgba(12,36,97,0.08);}
+          .dsel-tbl{width:100%;border-collapse:collapse;background:rgba(255,255,255,0.85);min-width:700px;}
+          .dsel-tbl th{background:linear-gradient(135deg,#0c2461 0%,#1a3a6e 100%);color:#fff;font-size:12px;font-weight:700;padding:13px 16px;text-align:center;line-height:1.5;}
+          .dsel-tbl th:first-child{text-align:left;}
+          .dsel-tbl td{padding:12px 16px;font-size:12.5px;color:#374151;border-bottom:1px solid rgba(12,36,97,0.06);text-align:center;}
+          .dsel-tbl td:first-child{text-align:left;font-weight:600;color:#0A1628;}
+          .dsel-tbl-y{color:#1d56d0;font-weight:700;}
+          .dsel-tbl-n{color:#d1d5db;}
           .dsel-def-box{background:linear-gradient(135deg,rgba(224,231,255,0.45) 0%,rgba(255,255,255,0.90) 60%,rgba(219,234,254,0.35) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:24px;padding:40px;box-shadow:0 4px 24px rgba(12,36,97,0.07),inset 0 1px 0 rgba(255,255,255,0.95);}
           .dsel-def-intro{font-size:1.02rem;color:#374151;line-height:1.8;margin:0 0 28px;padding-bottom:28px;border-bottom:1px solid rgba(12,36,97,0.08);}
           .dsel-def-intro strong{color:#0c2461;}
@@ -304,6 +417,7 @@ export default function SeoCompanyDelhi() {
             .dsel-grid3,.dsel-grid2{grid-template-columns:1fr 1fr;}
             .dsel-res-grid{grid-template-columns:1fr 1fr;}
             .dsel-ind-grid{grid-template-columns:1fr 1fr;}
+            .dsel-pkg-grid{grid-template-columns:1fr 1fr;}
             .dsel-contact-grid{grid-template-columns:1fr;gap:40px;}
             .dsel-def-aspects{grid-template-columns:1fr;}
             .dsel-def-box{padding:28px;}
@@ -312,6 +426,7 @@ export default function SeoCompanyDelhi() {
             .dsel-sec,.dsel-results,.dsel-related-section,.dsel-contact-sec{padding-left:20px;padding-right:20px;}
             .dsel-testi-section{padding:60px 0;}
             .dsel-grid4,.dsel-grid3,.dsel-grid2,.dsel-res-grid,.dsel-ind-grid{grid-template-columns:1fr;}
+            .dsel-pkg-grid{grid-template-columns:1fr;max-width:400px;margin-left:auto;margin-right:auto;}
             .dsel-field-row{grid-template-columns:1fr;}
             .dsel-form-wrap{padding:24px 20px;}
             .dsel-def-box{padding:22px;}
@@ -328,7 +443,7 @@ export default function SeoCompanyDelhi() {
         title={<>Top-Ranked <AuroraText>SEO Company in Delhi</AuroraText> That Delivers Page 1 Rankings</>}
         subtext="1Solutions is a results-driven SEO company in Delhi with 15+ years of experience helping Delhi NCR businesses rank on Page 1 of Google. From technical SEO and local search to link building and content strategy - we build organic visibility that generates leads, not just traffic."
         primaryCta={{ label: 'Get a Free SEO Audit', href: '#contact' }}
-        secondaryCta={{ label: 'View SEO Packages', href: '/affordable-seo-packages/' }}
+        secondaryCta={{ label: 'View SEO Packages', href: '#packages' }}
         stats={[
           { label: 'SEO Clients Served', value: '500', suffix: '+' },
           { label: 'Years Experience', value: '15', suffix: '+' },
@@ -375,6 +490,71 @@ export default function SeoCompanyDelhi() {
                 <p className="dsel-card-p">{s.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SEO Packages */}
+      <section className="dsel-sec" id="packages">
+        <div className="dsel-sec-inner">
+          <span className="dsel-tag">Transparent Pricing</span>
+          <h2 className="dsel-h2">Delhi <span>SEO Packages</span> Built for Every Stage</h2>
+          <p className="dsel-lead">Four straightforward monthly packages - no hidden fees, no long-term lock-in. Every plan includes 100% white-hat SEO and a monthly performance report.</p>
+          <div className="dsel-pkg-grid">
+            {SEO_PACKAGES.map(p => (
+              <div key={p.slug} className={`dsel-pkg-card${p.popular ? ' dsel-pkg-pop' : ''}`}>
+                {p.popular && <span className="dsel-pkg-tag">Most Popular</span>}
+                <div className="dsel-pkg-name">{p.name}</div>
+                <p className="dsel-pkg-desc">{p.desc}</p>
+                <div className="dsel-pkg-price-row">
+                  <span className="dsel-pkg-currency">INR</span>
+                  <span className="dsel-pkg-amount">{p.price}</span>
+                  <span className="dsel-pkg-per">/mo</span>
+                </div>
+                <a href="#contact" className="dsel-pkg-cta">Get Started</a>
+                <div className="dsel-pkg-divider" />
+                <ul className="dsel-pkg-feat-list">
+                  {p.features.map(f => (
+                    <li key={f}>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                      <span>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Package Comparison */}
+      <section className="dsel-sec dsel-bg" id="package-comparison">
+        <div className="dsel-sec-inner">
+          <span className="dsel-tag">Plan Comparison</span>
+          <h2 className="dsel-h2"><span>Package Comparison</span> at a Glance</h2>
+          <p className="dsel-lead">See exactly what's included at every level so you can pick the right starting point for your Delhi SEO goals.</p>
+          <div className="dsel-tbl-wrap">
+            <table className="dsel-tbl">
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Starter<br />INR 15,000/mo</th>
+                  <th>Growth<br />INR 25,000/mo</th>
+                  <th>Authority<br />INR 45,000/mo</th>
+                  <th>Enterprise<br />INR 75,000/mo</th>
+                </tr>
+              </thead>
+              <tbody>
+                {PACKAGE_COMPARISON.map(([feat, ...cols]) => (
+                  <tr key={feat}>
+                    <td>{feat}</td>
+                    {cols.map((val, i) => (
+                      <td key={i} className={val === '✗' ? 'dsel-tbl-n' : 'dsel-tbl-y'}>{val}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
