@@ -16,7 +16,7 @@ const SERVICES = [
 ];
 
 const RESULTS = [
-  { metric: '310%', label: 'Organic traffic growth', sub: 'Delhi real estate portal - 10 months', color: '#0c2461' },
+  { metric: '310%', label: 'Organic traffic growth', sub: 'Delhi real estate portal - 10 months', color: '#60A5FA' },
   { metric: 'Top 3', label: 'Google positions for 80+ keywords', sub: 'Delhi B2B manufacturer - 9 months', color: '#FE9700' },
   { metric: '4.8×', label: 'Increase in organic leads', sub: 'Delhi healthcare services - 7 months', color: '#059669' },
 ];
