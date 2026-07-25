@@ -885,13 +885,13 @@ export default function LinkBuildingPackages() {
           .lbp-res-sub2{font-size:11px;color:rgba(255,255,255,.40);font-style:italic}
 
           /* ── WHY CHOOSE ── */
-          .lbp-why-ch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-          .lbp-why-ch-card{padding:28px 24px;text-align:left;transition:transform .25s,box-shadow .25s,border-color .25s}
+          .lbp-why-ch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+          .lbp-why-ch-card{padding:40px 32px;min-height:220px;text-align:left;transition:transform .25s,box-shadow .25s,border-color .25s}
           .lbp-why-ch-card:hover{transform:translateY(-6px);border-color:rgba(217,119,6,.40) !important;box-shadow:0 16px 48px rgba(15,52,96,.14),inset 0 1px 0 rgba(255,255,255,1) !important}
-          .lbp-why-ch-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-          .lbp-why-ch-icon{width:22px;height:22px;stroke:#0F1F40;fill:none;flex-shrink:0}
-          .lbp-why-ch-t{font-size:15px;font-weight:700;color:#0F1F40;margin:0}
-          .lbp-why-ch-d{font-size:13px;color:#4A6080;line-height:1.65}
+          .lbp-why-ch-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+          .lbp-why-ch-icon{width:26px;height:26px;stroke:#0F1F40;fill:none;flex-shrink:0}
+          .lbp-why-ch-t{font-size:17px;font-weight:700;color:#0F1F40;margin:0}
+          .lbp-why-ch-d{font-size:14px;color:#4A6080;line-height:1.75}
 
           /* ── FAQ ── */
           .lbp-faq-list{display:flex;flex-direction:column;gap:10px}
