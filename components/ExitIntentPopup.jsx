@@ -209,7 +209,7 @@ export default function ExitIntentPopup() {
                   See exactly how we&apos;d grow your website and revenue - no obligation, 30 minutes with a real expert.
                 </p>
               </div>
-              <form className="eip-body" onSubmit={handleSubmit} noValidate>
+              <form className="eip-body" onSubmit={handleSubmit}>
                 <div className="eip-field">
                   <input type="text" name="name" placeholder="Full Name" value={form.name} onChange={handleChange} required />
                 </div>
@@ -217,7 +217,7 @@ export default function ExitIntentPopup() {
                   <input type="email" name="email" placeholder="Email Address" value={form.email} onChange={handleChange} required />
                 </div>
                 <div className="eip-field">
-                  <input type="tel" name="phone" placeholder="Phone Number (optional)" value={form.phone} onChange={handleChange} />
+                  <input type="tel" name="phone" placeholder="Phone Number" value={form.phone} onChange={handleChange} required />
                 </div>
                 <div className="eip-field">
                   <select name="interest" value={form.interest} onChange={handleChange} required>
