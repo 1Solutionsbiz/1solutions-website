@@ -355,7 +355,14 @@ export default function SeoCompanyDelhi() {
           .dsel-ind-icon svg{width:18px;height:18px;color:#FE9700;}
           .dsel-ind-name{font-size:13.5px;font-weight:600;color:#0A1628;line-height:1.3;}
           .dsel-areas-wrap{display:flex;flex-wrap:wrap;gap:10px;}
-          .dsel-area-tag{background:rgba(12,36,97,0.06);border:1px solid rgba(12,36,97,0.12);border-radius:50px;padding:6px 16px;font-size:13px;font-weight:500;color:#0c2461;}
+          .dsel-area-tag{border-radius:50px;padding:6px 16px;font-size:13px;font-weight:600;transition:transform 0.18s,box-shadow 0.18s;}
+          .dsel-area-tag:hover{transform:translateY(-2px);}
+          .dsel-area-tag--0{background:rgba(79,70,229,0.08);border:1px solid rgba(79,70,229,0.24);color:#4338CA;}
+          .dsel-area-tag--1{background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.24);color:#6D28D9;}
+          .dsel-area-tag--2{background:rgba(13,148,136,0.08);border:1px solid rgba(13,148,136,0.24);color:#0F766E;}
+          .dsel-area-tag--3{background:rgba(2,132,199,0.08);border:1px solid rgba(2,132,199,0.24);color:#0369A1;}
+          .dsel-area-tag--4{background:rgba(219,39,119,0.08);border:1px solid rgba(219,39,119,0.24);color:#BE185D;}
+          .dsel-area-tag--5{background:rgba(217,119,6,0.08);border:1px solid rgba(217,119,6,0.24);color:#B45309;}
           .dsel-faq-list{display:flex;flex-direction:column;gap:10px;}
           .dsel-faq-item{background:linear-gradient(135deg,rgba(224,231,255,0.40) 0%,rgba(255,255,255,0.88) 60%,rgba(219,234,254,0.30) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(12,36,97,0.06);position:relative;transition:border-color 0.2s;}
           .dsel-faq-item.open{border-color:rgba(29,86,208,0.28);}
@@ -620,7 +627,7 @@ export default function SeoCompanyDelhi() {
         <div className="dsel-sec-inner" style={{textAlign:'center'}}>
           <span className="dsel-tag">Why Choose 1Solutions</span>
           <h2 className="dsel-h2">The Delhi SEO Agency <span>That Makes Rankings Last</span></h2>
-          <p className="dsel-lead" style={{margin:'0 auto 48px'}}>We build SEO foundations that outlast algorithm updates and deliver compounding organic growth - not short-term spikes that disappear when Google updates.</p>
+          <p className="dsel-lead" style={{margin:'0 auto 48px', maxWidth:720}}>We build SEO foundations that outlast algorithm updates and deliver compounding organic growth - not short-term spikes that disappear when Google updates.</p>
           <div className="dsel-grid2" style={{textAlign:'left'}}>
             {WHY.map(w => (
               <div key={w.title} className="dsel-why-card" style={{background:w.bg}}>
@@ -637,11 +644,11 @@ export default function SeoCompanyDelhi() {
 
       {/* Process */}
       <section className="dsel-sec dsel-bg" id="process">
-        <div className="dsel-sec-inner">
+        <div className="dsel-sec-inner" style={{textAlign:'center'}}>
           <span className="dsel-tag">How We Work</span>
           <h2 className="dsel-h2">Our <span>6-Step Delhi SEO Process</span></h2>
-          <p className="dsel-lead">A structured, transparent methodology that compounds organic growth over time - from your first free audit to sustained Page 1 dominance.</p>
-          <div className="dsel-grid3">
+          <p className="dsel-lead" style={{margin:'0 auto 48px'}}>A structured, transparent methodology that compounds organic growth over time - from your first free audit to sustained Page 1 dominance.</p>
+          <div className="dsel-grid3" style={{textAlign:'left'}}>
             {PROCESS.map(p => (
               <div key={p.n}>
                 <div className="dsel-proc-num">{p.n}</div>
@@ -656,11 +663,11 @@ export default function SeoCompanyDelhi() {
 
       {/* Industries */}
       <section className="dsel-sec">
-        <div className="dsel-sec-inner">
+        <div className="dsel-sec-inner" style={{textAlign:'center'}}>
           <span className="dsel-tag">Delhi Industries We Serve</span>
           <h2 className="dsel-h2">SEO for <span>Every Delhi Business Sector</span></h2>
-          <p className="dsel-lead">From Connaught Place retail to Gurugram tech startups - we deliver SEO strategies built around the specific competitive landscape of your Delhi industry.</p>
-          <div className="dsel-ind-grid">
+          <p className="dsel-lead" style={{margin:'0 auto 48px'}}>From Connaught Place retail to Gurugram tech startups - we deliver SEO strategies built around the specific competitive landscape of your Delhi industry.</p>
+          <div className="dsel-ind-grid" style={{textAlign:'left'}}>
             {INDUSTRIES.map(ind => (
               <div key={ind.name} className="dsel-ind-card">
                 <div className="dsel-ind-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d={ind.icon} /></svg></div>
@@ -673,16 +680,16 @@ export default function SeoCompanyDelhi() {
 
       {/* Areas Served */}
       <section className="dsel-sec dsel-bg">
-        <div className="dsel-sec-inner">
+        <div className="dsel-sec-inner" style={{textAlign:'center'}}>
           <span className="dsel-tag">Areas We Cover</span>
           <h2 className="dsel-h2">SEO Services Across <span>Delhi &amp; NCR</span></h2>
-          <p className="dsel-lead">We serve businesses throughout the Delhi National Capital Region - from the central business districts to the growing satellite cities of the NCR corridor.</p>
-          <div className="dsel-areas-wrap">
-            {AREAS.map(area => (
-              <span key={area} className="dsel-area-tag">{area}</span>
+          <p className="dsel-lead" style={{margin:'0 auto 48px'}}>We serve businesses throughout the Delhi National Capital Region - from the central business districts to the growing satellite cities of the NCR corridor.</p>
+          <div className="dsel-areas-wrap" style={{justifyContent:'center'}}>
+            {AREAS.map((area, ai) => (
+              <span key={area} className={`dsel-area-tag dsel-area-tag--${ai % 6}`}>{area}</span>
             ))}
           </div>
-          <p style={{ marginTop: 32, fontSize: '0.95rem', color: '#6b7280', lineHeight: 1.7, maxWidth: 720 }}>
+          <p style={{ marginTop: 32, fontSize: '0.95rem', color: '#6b7280', lineHeight: 1.7, maxWidth: 780, marginLeft: 'auto', marginRight: 'auto' }}>
             Whether your business is headquartered in South Delhi, operates out of a Gurugram tech park, or serves customers across the entire NCR region - our Delhi SEO strategies are built around your specific geographic target market and local competition intensity.
           </p>
         </div>
@@ -814,10 +821,12 @@ export default function SeoCompanyDelhi() {
       {/* Related Services */}
       <section className="dsel-related-section">
         <div className="dsel-related-inner">
-          <span className="dsel-tag">Delhi SEO Related Offerings</span>
-          <h2 className="dsel-related-title">Explore Related Services</h2>
-          <p className="dsel-related-desc">Pair our Delhi SEO expertise with related services to build a complete digital growth strategy.</p>
-          <div className="dsel-related-tags">
+          <div style={{textAlign:'center'}}>
+            <span className="dsel-tag">Delhi SEO Related Offerings</span>
+            <h2 className="dsel-related-title">Explore Related Services</h2>
+            <p className="dsel-related-desc">Pair our Delhi SEO expertise with related services to build a complete digital growth strategy.</p>
+          </div>
+          <div className="dsel-related-tags" style={{justifyContent:'center'}}>
             {[
               ['Local SEO Services', 'local-seo-services'],
               ['Technical SEO', 'technical-seo-optimization'],
