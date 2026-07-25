@@ -45,12 +45,12 @@ const PROCESS = [
 ];
 
 const WHY = [
-  { title: 'Delhi Market Expertise', desc: "We understand Delhi's competitive digital landscape - from the startup density in Gurugram to the retail concentration in Connaught Place. Our strategy is built on real Delhi search data, not generic templates." },
-  { title: '15+ Years SEO Experience', desc: "Founded in 2009, 1Solutions has navigated every major Google update - Panda, Penguin, Hummingbird, BERT, and Helpful Content - delivering consistent rankings for clients across Delhi NCR." },
-  { title: 'Dedicated Account Manager', desc: 'Every Delhi client has one point of contact who understands your business, reports to you monthly, and is reachable when you need answers - no rotating account teams, no offshore handoffs.' },
-  { title: 'White-Hat SEO Only', desc: "No shortcuts. We build rankings through technical excellence, content quality, and genuine authority building - methods that last well beyond the next algorithm update and never put your domain at risk." },
-  { title: 'Transparent Reporting', desc: 'You see exactly what we did, what moved, and what it generated. Keyword rankings, organic sessions, and lead attribution in a clear monthly report - no smoke and mirrors.' },
-  { title: 'No Lock-In Contracts', desc: "Month-to-month engagements because our results earn your continued business. You stay because your Delhi rankings keep climbing - not because a contract traps you." },
+  { bg:'linear-gradient(165deg,#ede9fe 0%,#ddd6fe 100%)', icon:'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z', title: 'Delhi Market Expertise', desc: "We understand Delhi's competitive digital landscape - from the startup density in Gurugram to the retail concentration in Connaught Place. Our strategy is built on real Delhi search data, not generic templates." },
+  { bg:'linear-gradient(165deg,#dbeafe 0%,#bfdbfe 100%)', icon:'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', title: '15+ Years SEO Experience', desc: "Founded in 2009, 1Solutions has navigated every major Google update - Panda, Penguin, Hummingbird, BERT, and Helpful Content - delivering consistent rankings for clients across Delhi NCR." },
+  { bg:'linear-gradient(165deg,#dcfce7 0%,#bbf7d0 100%)', icon:'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z', title: 'Dedicated Account Manager', desc: 'Every Delhi client has one point of contact who understands your business, reports to you monthly, and is reachable when you need answers - no rotating account teams, no offshore handoffs.' },
+  { bg:'linear-gradient(165deg,#fdf3dd 0%,#fbe8b8 100%)', icon:'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', title: 'White-Hat SEO Only', desc: "No shortcuts. We build rankings through technical excellence, content quality, and genuine authority building - methods that last well beyond the next algorithm update and never put your domain at risk." },
+  { bg:'linear-gradient(165deg,#fde8dc 0%,#fbd0b5 100%)', icon:'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z', title: 'Transparent Reporting', desc: 'You see exactly what we did, what moved, and what it generated. Keyword rankings, organic sessions, and lead attribution in a clear monthly report - no smoke and mirrors.' },
+  { bg:'linear-gradient(165deg,#fce7f3 0%,#fbcfe8 100%)', icon:'M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z', title: 'No Lock-In Contracts', desc: "Month-to-month engagements because our results earn your continued business. You stay because your Delhi rankings keep climbing - not because a contract traps you." },
 ];
 
 const INDUSTRIES = [
@@ -226,10 +226,10 @@ export default function SeoCompanyDelhi() {
           .dsel-testi-name{font-size:13px;font-weight:700;color:#0c2461;}
           .dsel-testi-role{font-size:12px;color:#6B7280;margin-top:2px;}
           @media(max-width:600px){.dsel-testi-fade{width:48px;}}
-          .dsel-why-card{background:linear-gradient(135deg,rgba(224,231,255,0.45) 0%,rgba(255,255,255,0.90) 60%,rgba(219,234,254,0.35) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:32px 28px;box-shadow:0 4px 24px rgba(12,36,97,0.07);}
-          .dsel-why-check{width:36px;height:36px;border-radius:10px;background:rgba(12,36,97,0.08);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
-          .dsel-why-check svg{width:18px;height:18px;color:#0c2461;}
-          .dsel-why-h{font-size:15px;font-weight:700;color:#0A1628;margin:0 0 8px;}
+          .dsel-why-card{border-radius:20px;padding:32px 28px;box-shadow:0 4px 24px rgba(12,36,97,0.07);}
+          .dsel-why-head{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+          .dsel-why-icon{width:22px;height:22px;color:#0c2461;flex-shrink:0;}
+          .dsel-why-h{font-size:15px;font-weight:700;color:#0A1628;margin:0;}
           .dsel-why-p{font-size:13.5px;color:#4b5563;line-height:1.7;margin:0;}
           .dsel-proc-num{font-size:3.5rem;font-weight:900;color:rgba(12,36,97,0.07);line-height:1;margin-bottom:8px;letter-spacing:-2px;}
           .dsel-proc-line{width:40px;height:3px;background:linear-gradient(90deg,#0c2461,rgba(29,86,208,0.30));border-radius:2px;margin-bottom:16px;}
@@ -437,15 +437,17 @@ export default function SeoCompanyDelhi() {
 
       {/* Why 1Solutions */}
       <section className="dsel-sec" id="why-us">
-        <div className="dsel-sec-inner">
+        <div className="dsel-sec-inner" style={{textAlign:'center'}}>
           <span className="dsel-tag">Why Choose 1Solutions</span>
           <h2 className="dsel-h2">The Delhi SEO Agency <span>That Makes Rankings Last</span></h2>
-          <p className="dsel-lead">We build SEO foundations that outlast algorithm updates and deliver compounding organic growth - not short-term spikes that disappear when Google updates.</p>
-          <div className="dsel-grid2">
+          <p className="dsel-lead" style={{margin:'0 auto 48px'}}>We build SEO foundations that outlast algorithm updates and deliver compounding organic growth - not short-term spikes that disappear when Google updates.</p>
+          <div className="dsel-grid2" style={{textAlign:'left'}}>
             {WHY.map(w => (
-              <div key={w.title} className="dsel-why-card">
-                <div className="dsel-why-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-                <h3 className="dsel-why-h">{w.title}</h3>
+              <div key={w.title} className="dsel-why-card" style={{background:w.bg}}>
+                <div className="dsel-why-head">
+                  <svg className="dsel-why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d={w.icon}/></svg>
+                  <h3 className="dsel-why-h">{w.title}</h3>
+                </div>
                 <p className="dsel-why-p">{w.desc}</p>
               </div>
             ))}
