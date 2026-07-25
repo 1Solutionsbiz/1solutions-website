@@ -454,11 +454,11 @@ export default function SeoCompanyDelhi() {
 
       {/* What Is SEO */}
       <section className="dsel-sec" id="what-is-seo">
-        <div className="dsel-sec-inner">
+        <div className="dsel-sec-inner" style={{textAlign:'center'}}>
           <span className="dsel-tag">Understanding SEO</span>
           <h2 className="dsel-h2">What Is <span>SEO in Delhi</span> and How Does It Work?</h2>
-          <p className="dsel-lead">A plain-English explanation of what SEO is and how an SEO company in Delhi turns it into rankings, traffic, and leads for your business.</p>
-          <div className="dsel-def-box">
+          <p className="dsel-lead" style={{margin:'0 auto 48px'}}>In a market where hundreds of Delhi businesses compete for the same search terms, SEO decides who gets found first - and who stays invisible. Here&apos;s exactly how it works, and what it takes to win Page 1 in Delhi NCR.</p>
+          <div className="dsel-def-box" style={{textAlign:'left'}}>
             <p className="dsel-def-intro"><strong>SEO (Search Engine Optimisation)</strong> is the practice of improving your website&apos;s visibility in Google&apos;s organic, non-paid search results so your business appears when Delhi customers search for the products or services you offer. In a market as competitive as Delhi NCR, hundreds of businesses are often chasing the same customer for terms like &quot;SEO company Delhi&quot; or &quot;SEO services Delhi&quot; - SEO is what determines who Google shows first. It works by aligning your website&apos;s technical foundation, on-page content, and off-site authority signals with the ranking criteria Google uses to decide which pages best answer a given search, including proximity and relevance to the searcher&apos;s location. Unlike paid ads that stop the moment you stop spending, organic rankings from SEO Delhi campaigns compound over time - a well-optimised page keeps generating enquiries for months or years after the work is done.</p>
             <div className="dsel-def-aspects">
               {[
