@@ -177,6 +177,7 @@ export default function Hero() {
     if (!ctx) return
 
     let raf = 0, lastFrame = 0
+    let running = true
     let cols = 0, rows = 0, cellW = 0, cellH = 0
     let baseField = new Float32Array(0)
     const mouse = { x: -9999, y: -9999 }
@@ -219,6 +220,7 @@ export default function Hero() {
     }
 
     const render = (t) => {
+      if (!running) return
       if (t - lastFrame < FRAME_MS) { raf = requestAnimationFrame(render); return }
       lastFrame = t
       if (!cols || !rows) { resize(); raf = requestAnimationFrame(render); return }
@@ -271,9 +273,35 @@ export default function Hero() {
     resize()
     window.addEventListener('mousemove', onMove, { passive: true })
     raf = requestAnimationFrame(render)
+
+    // This loop is expensive (thousands of ctx.fillText calls per frame) and
+    // was running forever once mounted — even scrolled off-screen or with
+    // the tab backgrounded. Same-site tabs often share one Chrome renderer
+    // process, so an idle homepage tab left open could burn CPU badly
+    // enough to make an unrelated tab on the same site sluggish or
+    // unresponsive. Pause whenever hidden and resume only when both the
+    // tab is active and the hero is actually in view.
+    let intersecting = true
+    const resume = () => {
+      if (running) return
+      running = true
+      lastFrame = 0
+      raf = requestAnimationFrame(render)
+    }
+    const pause = () => { running = false; cancelAnimationFrame(raf) }
+    const evaluate = () => {
+      if (intersecting && document.visibilityState === 'visible') resume()
+      else pause()
+    }
+    const io = new IntersectionObserver(([entry]) => { intersecting = entry.isIntersecting; evaluate() })
+    io.observe(host)
+    document.addEventListener('visibilitychange', evaluate)
+
     return () => {
       cancelAnimationFrame(raf)
       ro.disconnect()
+      io.disconnect()
+      document.removeEventListener('visibilitychange', evaluate)
       window.removeEventListener('mousemove', onMove)
     }
   }, [])
