@@ -189,7 +189,9 @@ const nextConfig = {
       { source: '/Online-Reputation-Monitoring-Tips-For-Small-Business/',  destination: '/online-reputation-monitoring-tips-for-small-business', permanent: true },
       { source: '/21-must-wordpress-plugins-2016',  destination: '/21-must-have-wordpress-plugins', permanent: true },
       { source: '/21-must-wordpress-plugins-2016/',  destination: '/21-must-have-wordpress-plugins', permanent: true },
-      { source: '/blog/:slug',          destination: '/:slug',       permanent: true },
+      // Excludes 'feed' — that's the real /blog/feed RSS route, not a
+      // migrated old-style WordPress post URL.
+      { source: '/blog/:slug((?!feed).*)', destination: '/:slug',   permanent: true },
       { source: '/blog/category/:slug', destination: '/:slug',       permanent: true },
       { source: '/blog/tag/:slug',      destination: '/tag/:slug',   permanent: true },
     ];

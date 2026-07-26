@@ -21,6 +21,7 @@ export default function Document() {
         <link rel="icon" href="/favicon.ico?v=2" sizes="any" />
         <link rel="icon" type="image/png" href="/images/1solutions-favicon.png?v=2" />
         <link rel="apple-touch-icon" href="/images/1solutions-favicon.png?v=2" />
+        <link rel="alternate" type="application/rss+xml" title="1Solutions Blog RSS Feed" href="/blog/feed" />
         <meta name="theme-color" content="#114171" />
         <meta property="og:site_name" content="1Solutions" />
         <meta property="og:locale" content="en_US" />
