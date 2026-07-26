@@ -189,7 +189,18 @@ export default function Hero() {
     const SPOTLIGHT_RADIUS  = 10
     const RIPPLE_STRENGTH   = 1.4
     const RIPPLE_RADIUS     = 6
-    const FRAME_MS          = 50
+    // 10fps (was 20fps) - halves the fillText call rate. This loop's cost is
+    // cols*rows*fps, and it was still burning a full CPU core whenever the
+    // hero was genuinely on-screen (the off-screen/hidden-tab pause added
+    // separately doesn't help when the homepage is open and visible, e.g.
+    // in its own window next to another tab), so the per-frame cost itself
+    // needed to come down, not just how often it's allowed to run.
+    const FRAME_MS          = 100
+    // Hard cap on grid resolution regardless of viewport size, so an
+    // ultra-wide/4K screen can't multiply the per-frame cost far beyond
+    // what a normal laptop hero pays.
+    const MAX_COLS          = 100
+    const MAX_ROWS          = 36
 
     const seed = () => {
       baseField = new Float32Array(cols * rows)
@@ -214,8 +225,12 @@ export default function Hero() {
       ctx.textBaseline = 'top'
       cellW = ctx.measureText('M').width || FONT_SIZE * 0.6
       cellH = FONT_SIZE * 1.15
-      cols  = Math.max(1, Math.floor(rect.width  / cellW))
-      rows  = Math.max(1, Math.floor(rect.height / cellH))
+      cols  = Math.min(MAX_COLS, Math.max(1, Math.floor(rect.width  / cellW)))
+      rows  = Math.min(MAX_ROWS, Math.max(1, Math.floor(rect.height / cellH)))
+      // When capped, stretch cell size to still cover the full width/height
+      // (coarser grid, no uncovered edge) instead of leaving a gap.
+      cellW = rect.width  / cols
+      cellH = rect.height / rows
       seed()
     }
 
