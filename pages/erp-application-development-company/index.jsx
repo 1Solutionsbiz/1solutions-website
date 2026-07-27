@@ -788,14 +788,13 @@ export default function ErpApplicationDevelopment() {
             <div className="er-rtags">
               {[
                 ['/crm-application-development-company/', 'CRM Application Development', 'er-rtag-teal'],
-                ['/custom-software-development/', 'Custom Software Development', 'er-rtag-orange'],
-                ['/saas-development-company/', 'SaaS Development Company', 'er-rtag-violet'],
-                ['/ai-ml-development/', 'AI / ML Development', 'er-rtag-amber'],
+                ['/saas-application-development-company/', 'SaaS Development Company', 'er-rtag-violet'],
+                ['/ai-solutions/', 'AI / ML Development', 'er-rtag-amber'],
                 ['/mobile-app-development/', 'Mobile App Development', 'er-rtag-blue'],
                 ['/fintech-software-development-company/', 'Fintech Software Development', 'er-rtag-violet'],
                 ['/healthcare-software-development/', 'Healthcare Software Development', 'er-rtag-green'],
-                ['/react-js-development-company/', 'React.js Development', 'er-rtag-blue'],
-                ['/node-js-development-company/', 'Node.js Development', 'er-rtag-green'],
+                ['/hire-reactjs-developer/', 'React.js Development', 'er-rtag-blue'],
+                ['/nodejs-development-services/', 'Node.js Development', 'er-rtag-green'],
                 ['/api-development-company/', 'API Development & Integration', 'er-rtag-teal'],
               ].map(([href, label, cls]) => (
                 <Link key={href} href={href} className={`er-rtag ${cls}`}>{label}</Link>

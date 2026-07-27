@@ -783,15 +783,14 @@ export default function CrmApplicationDevelopment() {
             <hr />
             <div className="cr-rtags">
               {[
-                ['/custom-software-development/', 'Custom Software Development', 'cr-rtag-cyan'],
-                ['/saas-development-company/', 'SaaS Development Company', 'cr-rtag-violet'],
-                ['/erp-software-development/', 'ERP Software Development', 'cr-rtag-amber'],
-                ['/ai-ml-development/', 'AI / ML Development', 'cr-rtag-amber'],
+                ['/saas-application-development-company/', 'SaaS Development Company', 'cr-rtag-violet'],
+                ['/erp-application-development-company/', 'ERP Software Development', 'cr-rtag-amber'],
+                ['/ai-solutions/', 'AI / ML Development', 'cr-rtag-amber'],
                 ['/mobile-app-development/', 'Mobile App Development', 'cr-rtag-blue'],
                 ['/fintech-software-development-company/', 'Fintech Software Development', 'cr-rtag-violet'],
                 ['/healthcare-software-development/', 'Healthcare Software Development', 'cr-rtag-green'],
-                ['/react-js-development-company/', 'React.js Development', 'cr-rtag-blue'],
-                ['/node-js-development-company/', 'Node.js Development', 'cr-rtag-green'],
+                ['/hire-reactjs-developer/', 'React.js Development', 'cr-rtag-blue'],
+                ['/nodejs-development-services/', 'Node.js Development', 'cr-rtag-green'],
                 ['/api-development-company/', 'API Development & Integration', 'cr-rtag-teal'],
               ].map(([href, label, cls]) => (
                 <Link key={href} href={href} className={`cr-rtag ${cls}`}>{label}</Link>

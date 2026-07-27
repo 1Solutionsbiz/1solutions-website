@@ -788,8 +788,7 @@ export default function HireWordPressDeveloper() {
                 ['/woocommerce-development-company/', 'WooCommerce Development', 'hw-rtag-navy'],
                 ['/wordpress-development-company/', 'WordPress Development Company', 'hw-rtag-navy'],
                 ['/ecommerce-website-development/', 'eCommerce Development', 'hw-rtag-teal'],
-                ['/custom-software-development/', 'Custom Software Development', 'hw-rtag-violet'],
-                ['/react-js-development-company/', 'React.js Development', 'hw-rtag-blue'],
+                ['/hire-reactjs-developer/', 'React.js Development', 'hw-rtag-blue'],
                 ['/web-design-company/', 'Web Design Company', 'hw-rtag-amber'],
               ].map(([href, label, cls]) => (
                 <Link key={href} href={href} className={`hw-rtag ${cls}`}>{label}</Link>

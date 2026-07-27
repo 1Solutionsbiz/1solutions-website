@@ -786,10 +786,9 @@ export default function FintechSoftwareDevelopment() {
                 ['/ecommerce-website-development/', 'eCommerce Development', 'ft-rtag-blue'],
                 ['/mobile-app-development/', 'Mobile App Development', 'ft-rtag-violet'],
                 ['/blockchain-development/', 'Blockchain Development', 'ft-rtag-indigo'],
-                ['/custom-software-development/', 'Custom Software Development', 'ft-rtag-amber'],
-                ['/ai-ml-development/', 'AI / ML Development', 'ft-rtag-teal'],
-                ['/react-js-development-company/', 'React.js Development', 'ft-rtag-blue'],
-                ['/node-js-development-company/', 'Node.js Development', 'ft-rtag-green'],
+                ['/ai-solutions/', 'AI / ML Development', 'ft-rtag-teal'],
+                ['/hire-reactjs-developer/', 'React.js Development', 'ft-rtag-blue'],
+                ['/nodejs-development-services/', 'Node.js Development', 'ft-rtag-green'],
                 ['/python-development-company/', 'Python Development', 'ft-rtag-indigo'],
                 ['/api-development-company/', 'API Development', 'ft-rtag-violet'],
               ].map(([href, label, cls]) => (

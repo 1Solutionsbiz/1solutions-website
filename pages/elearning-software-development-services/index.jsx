@@ -786,12 +786,11 @@ export default function ElearningSoftwareDevelopment() {
                 ['/fintech-software-development-company/', 'Fintech Software Development', 'el-rtag-violet'],
                 ['/automotive-software-solutions/', 'Automotive Software Solutions', 'el-rtag-red'],
                 ['/mobile-app-development/', 'Mobile App Development', 'el-rtag-blue'],
-                ['/ai-ml-development/', 'AI / ML Development', 'el-rtag-amber'],
-                ['/custom-software-development/', 'Custom Software Development', 'el-rtag-teal'],
-                ['/react-js-development-company/', 'React.js Development', 'el-rtag-blue'],
+                ['/ai-solutions/', 'AI / ML Development', 'el-rtag-amber'],
+                ['/hire-reactjs-developer/', 'React.js Development', 'el-rtag-blue'],
                 ['/python-development-company/', 'Python Development', 'el-rtag-violet'],
-                ['/node-js-development-company/', 'Node.js Development', 'el-rtag-green'],
-                ['/saas-development-company/', 'SaaS Development', 'el-rtag-amber'],
+                ['/nodejs-development-services/', 'Node.js Development', 'el-rtag-green'],
+                ['/saas-application-development-company/', 'SaaS Development', 'el-rtag-amber'],
               ].map(([href, label, cls]) => (
                 <Link key={href} href={href} className={`el-rtag ${cls}`}>{label}</Link>
               ))}

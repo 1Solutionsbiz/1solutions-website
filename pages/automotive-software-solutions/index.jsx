@@ -786,11 +786,10 @@ export default function AutomotiveSoftwareSolutions() {
                 ['/fintech-software-development-company/', 'Fintech Software Development', 'av-rtag-violet'],
                 ['/iot-development/', 'IoT Development', 'av-rtag-teal'],
                 ['/mobile-app-development/', 'Mobile App Development', 'av-rtag-blue'],
-                ['/ai-ml-development/', 'AI / ML Development', 'av-rtag-amber'],
-                ['/custom-software-development/', 'Custom Software Development', 'av-rtag-red'],
-                ['/react-js-development-company/', 'React.js Development', 'av-rtag-blue'],
+                ['/ai-solutions/', 'AI / ML Development', 'av-rtag-amber'],
+                ['/hire-reactjs-developer/', 'React.js Development', 'av-rtag-blue'],
                 ['/python-development-company/', 'Python Development', 'av-rtag-violet'],
-                ['/node-js-development-company/', 'Node.js Development', 'av-rtag-green'],
+                ['/nodejs-development-services/', 'Node.js Development', 'av-rtag-green'],
                 ['/api-development-company/', 'API Development', 'av-rtag-teal'],
               ].map(([href, label, cls]) => (
                 <Link key={href} href={href} className={`av-rtag ${cls}`}>{label}</Link>
