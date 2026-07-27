@@ -28,10 +28,10 @@ const SVC_PILLARS = [
         services: [
           { name: 'iOS App Development',     desc: 'Native Swift & Xcode apps',           href: '/ios-app-development-company/' },
           { name: 'Android Development',     desc: 'Native Kotlin applications',           href: '/android-application-development-company/' },
-          { name: 'React Native',            desc: 'Cross-platform mobile apps',           href: '/#services' },
+          { name: 'React Native',            desc: 'Cross-platform mobile apps',           href: '/react-native-app-development/' },
           { name: 'Flutter Development',     desc: 'Beautiful cross-platform UIs',         href: '/flutter-app-development-services/' },
-          { name: 'App UI/UX Design',        desc: 'Intuitive mobile experiences',         href: '/#services' },
-          { name: 'App Maintenance',         desc: 'Ongoing updates & support',            href: '/#services' },
+          { name: 'App UI/UX Design',        desc: 'Intuitive mobile experiences',         href: '/app-ui-ux-design/' },
+          { name: 'App Maintenance',         desc: 'Ongoing updates & support',            href: '/app-maintenance-services/' },
         ],
       },
       {
@@ -70,12 +70,12 @@ const SVC_PILLARS = [
       {
         id: 'paid', label: 'Paid Advertising',
         services: [
-          { name: 'Google Ads (PPC)',        desc: 'Search & display campaign management', href: '/#services' },
-          { name: 'Meta Ads',                desc: 'Facebook & Instagram advertising',     href: '/#services' },
-          { name: 'LinkedIn Ads',            desc: 'B2B lead generation campaigns',        href: '/#services' },
-          { name: 'Google Shopping',         desc: 'eCommerce product listing ads',        href: '/#services' },
-          { name: 'Remarketing',             desc: 'Retarget and convert lost visitors',   href: '/#services' },
-          { name: 'PPC Audit',               desc: 'Optimise your existing ad spend',      href: '/#services' },
+          { name: 'Google Ads (PPC)',        desc: 'Search & display campaign management', href: '/ppc-management-services/' },
+          { name: 'Meta Ads',                desc: 'Facebook & Instagram advertising',     href: '/meta-ads-management/' },
+          { name: 'LinkedIn Ads',            desc: 'B2B lead generation campaigns',        href: '/linkedin-ads-management/' },
+          { name: 'Google Shopping',         desc: 'eCommerce product listing ads',        href: '/google-shopping-management/' },
+          { name: 'Remarketing',             desc: 'Retarget and convert lost visitors',   href: '/remarketing-services/' },
+          { name: 'PPC Audit',               desc: 'Optimise your existing ad spend',      href: '/ppc-audit-services/' },
         ],
       },
       {
@@ -123,13 +123,13 @@ const SVC_PILLARS = [
           { name: 'Magento Development',     desc: 'Enterprise Magento 2 solutions',       href: '/magento-development-company/' },
           { name: 'OpenCart Development',    desc: 'Scalable OpenCart storefronts',        href: '/opencart-development-company/' },
           { name: 'eCommerce Development',   desc: 'Custom end-to-end store builds',       href: '/ecommerce-website-development-services/' },
-          { name: 'B2B eCommerce',           desc: 'Wholesale & trade portal solutions',   href: '/#services' },
+          { name: 'B2B eCommerce',           desc: 'Wholesale & trade portal solutions',   href: '/b2b-ecommerce/' },
         ],
       },
       {
         id: 'store-opt', label: 'Store Optimization',
         services: [
-          { name: 'Conversion Rate Optimization', desc: 'Turn visitors into buyers',       href: '/#services' },
+          { name: 'Conversion Rate Optimization', desc: 'Turn visitors into buyers',       href: '/conversion-rate-optimization-services/' },
           { name: 'Site Speed Optimization', desc: 'Faster stores, better conversions',    href: '/#services' },
           { name: 'Product Page SEO',        desc: 'Rank product pages on Google',         href: '/#services' },
           { name: 'Checkout Optimization',   desc: 'Reduce cart abandonment',              href: '/#services' },
@@ -145,7 +145,7 @@ const SVC_PILLARS = [
           { name: 'eCommerce SEO',           desc: 'Organic traffic for your store',       href: '/ecommerce-seo-services/' },
           { name: 'Email Automation',        desc: 'Cart recovery & lifecycle emails',     href: '/email-marketing-services/' },
           { name: 'Social Commerce',         desc: 'Sell on Instagram & Facebook',         href: '/social-media-marketing-services/' },
-          { name: 'Influencer Marketing',    desc: 'Build brand trust at scale',           href: '/#services' },
+          { name: 'Influencer Marketing',    desc: 'Build brand trust at scale',           href: '/influencer-marketing-services/' },
         ],
       },
       {
