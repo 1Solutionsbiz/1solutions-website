@@ -234,8 +234,7 @@ body {
 /* ── SINGLE POST ─────────────────────────────────────────── */
 .single-post-wrapper { max-width: 1440px; margin: 0 auto; padding: 60px 40px; }
 .single-post-layout  { display: grid; grid-template-columns: 1fr 290px; gap: 60px; align-items: flex-start; }
-.post-sidebar { position: sticky; top: 88px; max-height: calc(100vh - 100px); overflow-y: auto; scrollbar-width: none; display: flex; flex-direction: column; gap: 20px; min-width: 0; }
-.post-sidebar::-webkit-scrollbar { display: none; }
+.post-sidebar { position: sticky; top: 88px; display: flex; flex-direction: column; gap: 20px; min-width: 0; }
 
 /* TOC widget */
 .toc-widget { background: white; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; box-shadow: 0 2px 12px rgba(17,65,113,0.06); }
@@ -474,11 +473,8 @@ body {
 /* ── RESPONSIVE ──────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .single-post-layout { grid-template-columns: 1fr; }
-  /* Sidebar always visible below article on mobile; TOC handled by toggle button.
-     max-height/overflow-y from the desktop sticky rule must be reset here too -
-     otherwise the stacked widgets stay clipped to a viewport-height box with a
-     hidden scrollbar even though the sidebar is no longer sticky. */
-  .post-sidebar { position: static; display: flex; max-height: none; overflow-y: visible; }
+  /* Sidebar always visible below article on mobile; TOC handled by toggle button */
+  .post-sidebar { position: static; display: flex; }
   .toc-widget { display: none; }    /* TOC is accessible via the toggle button */
   .toc-toggle { display: block; }
   .featured-article { grid-template-columns: 1fr; gap: 28px; }
