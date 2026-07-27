@@ -83,6 +83,7 @@ const STATIC_PAGES = [
   { url: '/social-media-app-development-company', priority: '0.7', changefreq: 'monthly' },
   { url: '/erp-application-development-company', priority: '0.7', changefreq: 'monthly' },
   { url: '/crm-application-development-company', priority: '0.7', changefreq: 'monthly' },
+  { url: '/api-development-company', priority: '0.7', changefreq: 'monthly' },
   { url: '/artificial-intelligence',              priority: '0.8', changefreq: 'monthly' },
   { url: '/ai-agent-development-services',       priority: '0.9', changefreq: 'monthly' },
   { url: '/ai-chatbot-development-services',     priority: '0.9', changefreq: 'monthly' },

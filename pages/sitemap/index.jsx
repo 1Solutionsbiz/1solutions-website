@@ -63,6 +63,7 @@ const SECTIONS = [
         { label: 'Digital Transformation',       href: '/digital-transformation/' },
         { label: 'ERP Development',              href: '/erp-application-development-company/' },
         { label: 'CRM Development',              href: '/crm-application-development-company/' },
+        { label: 'API Development',              href: '/api-development-company/' },
         { label: 'SaaS Application Development', href: '/saas-application-development-company/' },
       ],
       [

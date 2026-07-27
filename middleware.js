@@ -21,7 +21,7 @@ const SLASH_PAGES = new Set([
   'affiliate-marketing-services', 'affordable-seo-packages', 'agriculture-software-development',
   'ai-agent-development-services', 'ai-automation-services', 'ai-chatbot-development-services',
   'ai-integration-services', 'ai-search-services', 'ai-seo-services', 'ai-solutions',
-  'ai-utilization-review', 'amazon-account-management-services',
+  'ai-utilization-review', 'amazon-account-management-services', 'api-development-company',
   'amazon-fba-shipment-reconciliation-services', 'amazon-seo-services', 'analytics-cro-services',
   'android-application-development-company', 'answer-engine-optimization-services',
   'app-maintenance-services', 'app-store-optimization-services', 'app-ui-ux-design',
