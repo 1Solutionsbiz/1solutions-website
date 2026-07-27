@@ -16,7 +16,7 @@ const SVC_PILLARS = [
           { name: 'WordPress Development',   desc: 'Custom themes, plugins & CMS',       href: '/wordpress-development-company/' },
           { name: 'Laravel Development',     desc: 'Robust PHP Laravel solutions',        href: '/laravel-development-company/' },
           { name: 'Python Development',      desc: 'Django & Flask web applications',     href: '/python-development-services/' },
-          { name: 'PHP Development',         desc: 'Bespoke PHP web applications',        href: '/#services' },
+          { name: 'PHP Development',         desc: 'Bespoke PHP web applications',        href: '/php-development-services/' },
           { name: 'CodeIgniter Development', desc: 'Lightweight PHP web apps',            href: '/codeigniter-development-company/' },
           { name: 'Drupal Development',      desc: 'Enterprise CMS platforms',            href: '/drupal-development-company/' },
           { name: 'Next.js Development',     desc: 'Fast, SEO-optimised React apps',      href: '/nextjs-development-services/' },
