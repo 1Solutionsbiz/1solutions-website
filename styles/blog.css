@@ -20,7 +20,12 @@
   --white:      #ffffff;
 }
 
-html, body { overflow-x: hidden; }
+/* overflow-x guard lives on html ONLY, not body: setting it on body too
+   makes body itself establish an independent scroll container (since
+   html already claims the viewport-level overflow propagation), which
+   becomes the nearest scroll container for descendants and breaks
+   position:sticky against the real viewport (e.g. .post-sidebar below). */
+html { overflow-x: hidden; }
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -469,8 +474,11 @@ body {
 /* ── RESPONSIVE ──────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .single-post-layout { grid-template-columns: 1fr; }
-  /* Sidebar always visible below article on mobile; TOC handled by toggle button */
-  .post-sidebar { position: static; display: flex; }
+  /* Sidebar always visible below article on mobile; TOC handled by toggle button.
+     max-height/overflow-y from the desktop sticky rule must be reset here too -
+     otherwise the stacked widgets stay clipped to a viewport-height box with a
+     hidden scrollbar even though the sidebar is no longer sticky. */
+  .post-sidebar { position: static; display: flex; max-height: none; overflow-y: visible; }
   .toc-widget { display: none; }    /* TOC is accessible via the toggle button */
   .toc-toggle { display: block; }
   .featured-article { grid-template-columns: 1fr; gap: 28px; }
