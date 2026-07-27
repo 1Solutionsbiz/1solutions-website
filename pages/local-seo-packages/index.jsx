@@ -110,12 +110,12 @@ const RELATED_TAGS = [
   {href:'/link-building-packages/',label:'Link Building Packages',cls:'lsp-rtag-violet'},
   {href:'/local-seo-services/',label:'Local SEO Services',cls:'lsp-rtag-teal'},
   {href:'/ecommerce-seo-services/',label:'E-Commerce SEO',cls:'lsp-rtag-amber'},
-  {href:'/technical-seo-audit',label:'Technical SEO Audit',cls:'lsp-rtag-indigo'},
+  {href:'/technical-seo-optimization/',label:'Technical SEO Audit',cls:'lsp-rtag-indigo'},
   {href:'/content-marketing-services/',label:'Content Marketing',cls:'lsp-rtag-green'},
-  {href:'/google-ads-management',label:'Google Ads Management',cls:'lsp-rtag-orange'},
-  {href:'/social-media-marketing',label:'Social Media Marketing',cls:'lsp-rtag-rose'},
+  {href:'/ppc-management-services/',label:'Google Ads Management',cls:'lsp-rtag-orange'},
+  {href:'/social-media-marketing-services/',label:'Social Media Marketing',cls:'lsp-rtag-rose'},
   {href:'/wordpress-development-company/',label:'WordPress Development',cls:'lsp-rtag-slate'},
-  {href:'/web-design-services',label:'Web Design Services',cls:'lsp-rtag-cyan'},
+  {href:'/website-design/',label:'Web Design Services',cls:'lsp-rtag-cyan'},
 ];
 
 export default function LocalSeoPackages() {
