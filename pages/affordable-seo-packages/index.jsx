@@ -79,12 +79,21 @@ const SCHEMA = {
           description: 'Enterprise monthly SEO package - up to 60 keywords, unlimited pages, 35–50 monthly backlinks, 8 blog articles, dedicated account manager, and monthly reporting.',
           url: 'https://www.1solutions.biz/affordable-seo-packages/',
         },
+        {
+          '@type': 'Offer',
+          name: 'Enterprise AI+ SEO Package',
+          price: '1999',
+          priceCurrency: 'USD',
+          priceSpecification: { '@type': 'UnitPriceSpecification', price: '1999', priceCurrency: 'USD', unitText: 'MON' },
+          description: 'Enterprise AI+ monthly SEO package - unlimited keywords and pages, 60–80 monthly backlinks, 12 blog articles, AI Overview / GEO optimisation, LLM citation building, dedicated AI+GEO strategist, and monthly reporting.',
+          url: 'https://www.1solutions.biz/affordable-seo-packages/',
+        },
       ],
     },
     {
       '@type': 'FAQPage',
       mainEntity: [
-        { '@type': 'Question', name: 'How much do monthly SEO packages cost?', acceptedAnswer: { '@type': 'Answer', text: 'Monthly SEO packages from 1Solutions start at $299/month for the Starter plan (up to 10 keywords), $599/month for the Professional plan (up to 25 keywords), and $999/month for the Enterprise plan (up to 60 keywords). Annual billing saves 20%. There are no setup fees and no long-term contracts.' } },
+        { '@type': 'Question', name: 'How much do monthly SEO packages cost?', acceptedAnswer: { '@type': 'Answer', text: 'Monthly SEO packages from 1Solutions start at $299/month for the Starter plan (up to 10 keywords), $599/month for the Professional plan (up to 25 keywords), $999/month for the Enterprise plan (up to 60 keywords), and $1,999/month for the Enterprise AI+ plan (unlimited keywords plus AI Overview and GEO optimisation). Annual billing saves 20%. There are no setup fees and no long-term contracts.' } },
         { '@type': 'Question', name: 'What is included in a monthly SEO package?', acceptedAnswer: { '@type': 'Answer', text: 'A monthly SEO package from 1Solutions includes: keyword research and tracking, on-page optimisation, technical SEO (Core Web Vitals, crawlability, site speed), manual link building, SEO content writing, local SEO and Google Business Profile optimisation, XML sitemap and robots.txt management, Google Analytics 4 and Search Console setup, and a monthly performance report.' } },
         { '@type': 'Question', name: 'How long does SEO take to show results?', acceptedAnswer: { '@type': 'Answer', text: 'Most clients see meaningful keyword ranking improvements within 3–6 months. SEO compounds over time - the results in month 12 are significantly stronger than month 3. We provide monthly reports so you can track progress at every stage.' } },
         { '@type': 'Question', name: 'Do you guarantee first-page Google rankings?', acceptedAnswer: { '@type': 'Answer', text: "No ethical SEO agency can guarantee specific rankings. What we guarantee is white-hat, Google-compliant SEO work to the highest standard, transparent monthly reporting, and measurable progress. We have ranked 500+ businesses across 50+ industries over 15 years." } },
@@ -150,31 +159,54 @@ const PACKAGES = [
       { label: 'Dedicated Account Manager', yes: true },
     ],
   },
+  {
+    id: 'enterprise-ai', name: 'Enterprise AI+', tag: 'AI-Powered', ai: true,
+    price: { monthly: 1999, annual: 1599 },
+    desc: 'For brands that need maximum visibility across Google, ChatGPT, and AI Overviews.',
+    features: [
+      { label: 'Keywords Targeted', value: 'Unlimited' },
+      { label: 'On-Page Optimisation', value: 'Unlimited' },
+      { label: 'Monthly Backlinks', value: '60–80' },
+      { label: 'Blog / Content Articles', value: '12 / month' },
+      { label: 'Technical SEO Audit', yes: true },
+      { label: 'Google Analytics 4 & Search Console', yes: true },
+      { label: 'Local SEO & Google Business Profile', yes: true },
+      { label: 'Keyword Rank Tracking', yes: true },
+      { label: 'Schema Markup Implementation', yes: true },
+      { label: 'Competitor Gap Analysis', yes: true },
+      { label: 'Dedicated Account Manager', yes: true },
+      { label: 'AI Overview / GEO Optimisation', yes: true },
+      { label: 'ChatGPT & Perplexity Citation Building', yes: true },
+      { label: 'Dedicated AI+GEO Strategist', yes: true },
+    ],
+  },
 ];
 
 const COMPARE_ROWS = [
-  { label: 'Monthly Price', s: '$299/mo', p: '$599/mo', e: '$999/mo', highlight: true },
-  { label: 'Annual Price (save 20%)', s: '$239/mo', p: '$479/mo', e: '$799/mo' },
-  { label: 'Setup Fee', s: 'None', p: 'None', e: 'None' },
-  { label: 'Contract', s: 'Month-to-month', p: 'Month-to-month', e: 'Month-to-month' },
-  { label: 'Keywords Targeted', s: 'Up to 10', p: 'Up to 25', e: 'Up to 60', highlight: true },
-  { label: 'Pages Optimised', s: '10 pages', p: '25 pages', e: 'Unlimited' },
-  { label: 'Backlinks / Month', s: '5–8', p: '15–20', e: '35–50', highlight: true },
-  { label: 'Blog Articles / Month', s: '2', p: '4', e: '8' },
-  { label: 'Technical SEO Audit', s: true, p: true, e: true },
-  { label: 'On-Page Optimisation', s: true, p: true, e: true },
-  { label: 'Keyword Rank Tracking', s: true, p: true, e: true },
-  { label: 'Google Analytics 4 Setup', s: true, p: true, e: true },
-  { label: 'Search Console Integration', s: true, p: true, e: true },
-  { label: 'Local SEO / GBP Optimisation', s: true, p: true, e: true },
-  { label: 'XML Sitemap & Robots.txt', s: true, p: true, e: true },
-  { label: 'Core Web Vitals Fixes', s: true, p: true, e: true },
-  { label: 'Schema / Structured Data', s: false, p: true, e: true },
-  { label: 'Competitor Gap Analysis', s: false, p: true, e: true },
-  { label: 'E-E-A-T Content Strategy', s: false, p: true, e: true },
-  { label: 'Dedicated Account Manager', s: false, p: false, e: true },
-  { label: 'Monthly Performance Report', s: true, p: true, e: true },
-  { label: 'Ideal For', s: 'Local / small biz', p: 'Growing businesses', e: 'Enterprise / national', highlight: true },
+  { label: 'Monthly Price', s: '$299/mo', p: '$599/mo', e: '$999/mo', x: '$1,999/mo', highlight: true },
+  { label: 'Annual Price (save 20%)', s: '$239/mo', p: '$479/mo', e: '$799/mo', x: '$1,599/mo' },
+  { label: 'Setup Fee', s: 'None', p: 'None', e: 'None', x: 'None' },
+  { label: 'Contract', s: 'Month-to-month', p: 'Month-to-month', e: 'Month-to-month', x: 'Month-to-month' },
+  { label: 'Keywords Targeted', s: 'Up to 10', p: 'Up to 25', e: 'Up to 60', x: 'Unlimited', highlight: true },
+  { label: 'Pages Optimised', s: '10 pages', p: '25 pages', e: 'Unlimited', x: 'Unlimited' },
+  { label: 'Backlinks / Month', s: '5–8', p: '15–20', e: '35–50', x: '60–80', highlight: true },
+  { label: 'Blog Articles / Month', s: '2', p: '4', e: '8', x: '12' },
+  { label: 'Technical SEO Audit', s: true, p: true, e: true, x: true },
+  { label: 'On-Page Optimisation', s: true, p: true, e: true, x: true },
+  { label: 'Keyword Rank Tracking', s: true, p: true, e: true, x: true },
+  { label: 'Google Analytics 4 Setup', s: true, p: true, e: true, x: true },
+  { label: 'Search Console Integration', s: true, p: true, e: true, x: true },
+  { label: 'Local SEO / GBP Optimisation', s: true, p: true, e: true, x: true },
+  { label: 'XML Sitemap & Robots.txt', s: true, p: true, e: true, x: true },
+  { label: 'Core Web Vitals Fixes', s: true, p: true, e: true, x: true },
+  { label: 'Schema / Structured Data', s: false, p: true, e: true, x: true },
+  { label: 'Competitor Gap Analysis', s: false, p: true, e: true, x: true },
+  { label: 'E-E-A-T Content Strategy', s: false, p: true, e: true, x: true },
+  { label: 'Dedicated Account Manager', s: false, p: false, e: true, x: true },
+  { label: 'AI Overview / GEO Optimisation', s: false, p: false, e: false, x: true },
+  { label: 'ChatGPT & Perplexity Citation Building', s: false, p: false, e: false, x: true },
+  { label: 'Monthly Performance Report', s: true, p: true, e: true, x: true },
+  { label: 'Ideal For', s: 'Local / small biz', p: 'Growing businesses', e: 'Enterprise / national', x: 'AI-driven brands', highlight: true },
 ];
 
 const INCLUDED = [
@@ -229,7 +261,7 @@ const PROCESS = [
 ];
 
 const FAQS = [
-  { q: 'How much do monthly SEO packages cost?', a: 'Our monthly SEO packages start at $299/month for the Starter plan, $599/month for Professional, and $999/month for Enterprise. Annual billing saves 20% - the Professional plan at $479/month (annual) saves $1,440/year. There are no setup fees and no lock-in contracts.' },
+  { q: 'How much do monthly SEO packages cost?', a: 'Our monthly SEO packages start at $299/month for the Starter plan, $599/month for Professional, $999/month for Enterprise, and $1,999/month for Enterprise AI+. Annual billing saves 20% - the Professional plan at $479/month (annual) saves $1,440/year. There are no setup fees and no lock-in contracts.' },
   { q: 'What is included in a monthly SEO package?', a: 'Every 1Solutions SEO package includes: keyword research and tracking, on-page optimisation, technical SEO (Core Web Vitals, crawlability, site speed), manual link building, SEO content writing (blog articles), local SEO and Google Business Profile management, XML sitemap and robots.txt, GA4 and Search Console setup, and a monthly performance report. Higher plans add schema markup, competitor analysis, and a dedicated account manager.' },
   { q: 'How long does SEO take to show results?', a: 'Most clients see measurable keyword ranking movement within 3–4 months. Meaningful organic traffic increases typically arrive by month 5–6. Competitive national keywords can take 9–12 months. SEO is a long-term compounding investment - the results in month 12 are significantly stronger than month 3. We show you progress every month via rank tracking reports.' },
   { q: 'Do you guarantee first-page rankings?', a: "No ethical SEO agency can guarantee specific rankings - Google's algorithm processes 200+ signals and is not controllable by any third party. Agencies that promise guaranteed rankings typically use black-hat tactics that result in Google penalties long-term. What we guarantee: white-hat work compliant with Google's guidelines, transparent monthly reporting, and measurable progress. We have ranked 500+ businesses across 50+ industries over 15 years without a single manual penalty." },
@@ -312,7 +344,7 @@ export default function AffordableSeoPackages() {
     <>
       <Head>
         <title>Monthly SEO Packages | Prices from $299/mo | 1Solutions</title>
-        <meta name="description" content="Transparent monthly SEO packages from $299/mo. Starter, Professional & Enterprise plans — on-page SEO, link building, content & local SEO included. No contracts." />
+        <meta name="description" content="Transparent monthly SEO packages from $299/mo. Starter, Professional, Enterprise & Enterprise AI+ plans — on-page SEO, link building, content, local SEO & AI/GEO optimisation included. No contracts." />
         <link rel="canonical" href="https://www.1solutions.biz/affordable-seo-packages/" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Monthly SEO Packages | Prices from $299/mo | 1Solutions" />
@@ -321,7 +353,7 @@ export default function AffordableSeoPackages() {
         <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Monthly SEO Packages from $299/mo | 1Solutions" />
-        <meta name="twitter:description" content="White-hat monthly SEO packages. 3 plans, transparent pricing, no contracts. Free SEO audit included." />
+        <meta name="twitter:description" content="White-hat monthly SEO packages. 4 plans, transparent pricing, no contracts. Free SEO audit included." />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
         <style>{`
           /* ── Base ── */
@@ -390,12 +422,20 @@ export default function AffordableSeoPackages() {
           .asp-tog-btn.asp-active{background:linear-gradient(135deg,#D97706,#ea580c);color:#fff;box-shadow:0 2px 12px rgba(217,119,6,.35)}
           .asp-save-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(217,119,6,.12);color:#92400e;border:1px solid rgba(217,119,6,.25);font-size:12px;font-weight:700;padding:5px 12px;border-radius:100px}
           /* ── Pricing cards ── */
-          .asp-pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch;padding-top:16px}
+          .asp-pkg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:stretch;padding-top:16px}
           .asp-card{background:linear-gradient(135deg,rgba(219,234,254,.55) 0%,rgba(255,255,255,.80) 60%,rgba(237,233,254,.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:22px;padding:28px 24px;position:relative;display:flex;flex-direction:column;transition:transform .22s,box-shadow .22s,border-color .22s;box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
           .asp-card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(15,52,96,.14)}
           .asp-card-pop{background:linear-gradient(180deg,rgba(217,119,6,.08) 0%,rgba(255,255,255,.82) 50%,rgba(219,234,254,.50) 100%);border-color:rgba(217,119,6,.50);box-shadow:0 0 80px rgba(217,119,6,.16),0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.98);transform:scale(1.03)}
           .asp-card-pop:hover{transform:scale(1.03) translateY(-4px)}
           .asp-pop-tag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(120deg,#D97706,#ea580c);color:#fff;font-size:11px;font-weight:700;padding:4px 14px;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;box-shadow:0 4px 16px rgba(217,119,6,.45)}
+          .asp-card-ai{background:linear-gradient(180deg,rgba(124,58,237,.08) 0%,rgba(255,255,255,.82) 50%,rgba(237,233,254,.50) 100%);border-color:rgba(124,58,237,.45);box-shadow:0 0 70px rgba(124,58,237,.14),0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.98)}
+          .asp-card-ai:hover{box-shadow:0 0 90px rgba(124,58,237,.20),0 14px 40px rgba(15,52,96,.14)}
+          .asp-ai-tag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(120deg,#7c3aed,#4f46e5);color:#fff;font-size:11px;font-weight:700;padding:4px 14px;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;box-shadow:0 4px 16px rgba(124,58,237,.40)}
+          .asp-card-ai .asp-currency{color:#7c3aed}
+          .asp-card-ai .asp-save-line{color:#7c3aed}
+          .asp-card-ai .asp-cta-card{background:linear-gradient(135deg,#7c3aed,#4f46e5)}
+          .asp-card-ai .asp-cta-card:hover{background:linear-gradient(135deg,#6d28d9,#4338ca)}
+          .asp-card-ai .asp-feat-list li::before{color:#7c3aed}
           .asp-plan-name{font-family:'Courier New',ui-monospace,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#6b7280;font-weight:700;margin-bottom:10px}
           .asp-price-row{display:flex;align-items:flex-end;gap:2px;margin-bottom:4px}
           .asp-currency{font-size:22px;font-weight:800;color:#0F1F40;align-self:flex-start;margin-top:6px}
@@ -419,6 +459,8 @@ export default function AffordableSeoPackages() {
           .asp-ctable thead th:first-child{text-align:left;border-radius:12px 0 0 0}
           .asp-ctable thead th:last-child{border-radius:0 12px 0 0}
           .asp-ctable thead th.asp-fcol{background:rgba(217,119,6,.10);color:#B45309;border-bottom-color:rgba(217,119,6,.30)}
+          .asp-ctable thead th.asp-acol{background:rgba(124,58,237,.10);color:#5b21b6;border-bottom-color:rgba(124,58,237,.30)}
+          .asp-ctable tbody td.asp-acol{background:rgba(237,233,254,.30)}
           .asp-ctable tbody tr.asp-hl td{background:rgba(15,52,96,.03)}
           .asp-ctable tbody td{padding:11px 18px;font-size:13px;color:#374151;border-bottom:1px solid rgba(15,52,96,.06);text-align:center}
           .asp-ctable tbody td:first-child{text-align:left;font-weight:500;color:#0F1F40}
@@ -663,7 +705,7 @@ export default function AffordableSeoPackages() {
             <div className="asp-reveal" style={{textAlign:'center'}}>
               <span className="asp-ey">SEO Pricing</span>
               <h2 className="asp-h2">Monthly SEO Packages <AuroraText>& Pricing</AuroraText></h2>
-              <p className="asp-lead" style={{margin:'0 auto 32px'}}>Three transparent plans — no hidden fees, no lock-in contracts, no surprises. All plans include a free SEO audit at sign-up.</p>
+              <p className="asp-lead" style={{margin:'0 auto 32px'}}>Four transparent plans — no hidden fees, no lock-in contracts, no surprises. All plans include a free SEO audit at sign-up.</p>
             </div>
             <div className="asp-tog-row">
               <div className="asp-tog">
@@ -677,8 +719,8 @@ export default function AffordableSeoPackages() {
                 const price = pkg.price[billing];
                 const annualSave = (pkg.price.monthly - pkg.price.annual) * 12;
                 return (
-                  <div key={pkg.id} className={`asp-card${pkg.featured?' asp-card-pop':''}`}>
-                    {pkg.tag && <span className="asp-pop-tag">✦ {pkg.tag}</span>}
+                  <div key={pkg.id} className={`asp-card${pkg.featured?' asp-card-pop':''}${pkg.ai?' asp-card-ai':''}`}>
+                    {pkg.tag && <span className={pkg.ai?'asp-ai-tag':'asp-pop-tag'}>✦ {pkg.tag}</span>}
                     <div className="asp-plan-name">{pkg.name}</div>
                     <div className="asp-price-row">
                       <span className="asp-currency">$</span>
@@ -721,6 +763,7 @@ export default function AffordableSeoPackages() {
                     <th scope="col">Starter<br/><small style={{fontWeight:500,color:'#4A6080'}}>$299/mo</small></th>
                     <th scope="col" className="asp-fcol">Professional<br/><small style={{fontWeight:500,color:'#B45309'}}>$599/mo ★</small></th>
                     <th scope="col">Enterprise<br/><small style={{fontWeight:500,color:'#4A6080'}}>$999/mo</small></th>
+                    <th scope="col" className="asp-acol">Enterprise AI+<br/><small style={{fontWeight:500,color:'#5b21b6'}}>$1,999/mo</small></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -730,6 +773,7 @@ export default function AffordableSeoPackages() {
                       <td><TCell v={row.s}/></td>
                       <td className="asp-fcol"><TCell v={row.p}/></td>
                       <td><TCell v={row.e}/></td>
+                      <td className="asp-acol"><TCell v={row.x}/></td>
                     </tr>
                   ))}
                 </tbody>
@@ -886,6 +930,7 @@ export default function AffordableSeoPackages() {
                     <option>Starter — $299/month</option>
                     <option>Professional — $599/month</option>
                     <option>Enterprise — $999/month</option>
+                    <option>Enterprise AI+ — $1,999/month</option>
                     <option>Not sure — send me a recommendation</option>
                   </select>
                 </div>
