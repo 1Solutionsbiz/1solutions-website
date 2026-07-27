@@ -121,8 +121,8 @@ export default function GraphicDesignServices() {
         eyebrow="Graphic Design Services · Brand Identity Specialists"
         title={<>Graphic Design Services - <AuroraText>Brand Identity, Print &amp; Digital Design</AuroraText></>}
         subtext="We create compelling visual identities, marketing collateral, social media graphics, packaging, and print materials that make your brand memorable. From a single logo to a full brand system - design that works across every touchpoint."
-        primaryCta={{ label: 'Get a Free Design Quote', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Get a Free Design Quote', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'Design Projects Delivered', value: '500', suffix: '+' },
           { label: 'Years Experience', value: '15', suffix: '+' },
@@ -169,7 +169,7 @@ export default function GraphicDesignServices() {
         <div className="gds-wrap">
           <h2>Ready to Elevate Your Brand with Professional Design?</h2>
           <p>Share your design brief and we'll quote within 24 hours - fixed price, no hourly surprises.</p>
-          <Link href="/contact-us" className="gds-btn-primary">Get a Free Design Quote →</Link>
+          <Link href="/contact-us/" className="gds-btn-primary">Get a Free Design Quote →</Link>
         </div>
       </section>
     </>

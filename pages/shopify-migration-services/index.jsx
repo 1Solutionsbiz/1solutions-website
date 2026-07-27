@@ -122,8 +122,8 @@ export default function ShopifyMigrationServices() {
         eyebrow="Shopify Migration Services"
         title={<>Move to Shopify <AuroraText>Without Losing SEO or Data</AuroraText></>}
         subtext="We migrate WooCommerce, Magento, BigCommerce, PrestaShop, and custom-built stores to Shopify with zero data loss, full URL redirect mapping, and ranking preservation. 15+ years of e-commerce migration experience across US, Canada, and Australia."
-        primaryCta={{ label: 'Get a Free Migration Audit', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Get a Free Migration Audit', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'Shopify Migrations', value: '60', suffix: '+' },
           { label: 'Stores Migrated', value: '300', suffix: '+' },
@@ -170,7 +170,7 @@ export default function ShopifyMigrationServices() {
         <div className="sms-wrap">
           <h2>Ready to Migrate to Shopify?</h2>
           <p>Get a free migration audit - we'll review your current platform, map your data, and deliver a no-obligation plan within 48 hours.</p>
-          <Link href="/contact-us" className="sms-btn-primary">Get Your Free Migration Audit →</Link>
+          <Link href="/contact-us/" className="sms-btn-primary">Get Your Free Migration Audit →</Link>
         </div>
       </section>
     </>

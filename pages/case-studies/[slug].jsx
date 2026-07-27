@@ -515,7 +515,7 @@ export default function CaseStudyPage({ project, prev, next }) {
         <nav className="ct-breadcrumb" aria-label="Breadcrumb">
           <Link href="/">Home</Link>
           <span className="ct-breadcrumb-sep">›</span>
-          <Link href="/case-studies">Case Studies</Link>
+          <Link href="/case-studies/">Case Studies</Link>
           <span className="ct-breadcrumb-sep">›</span>
           <span style={{ color: '#fff' }}>{project.title}</span>
         </nav>
@@ -683,7 +683,7 @@ export default function CaseStudyPage({ project, prev, next }) {
             <div className="ct-cta-card-orb" />
             <h3>Got a project in mind?</h3>
             <p>Tell us what you need - we'll bring strategy, design, and engineering to make it happen.</p>
-            <Link href="/contact-us" className="ct-cta-card-btn">
+            <Link href="/contact-us/" className="ct-cta-card-btn">
               Start Your Project
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </Link>
@@ -708,7 +708,7 @@ export default function CaseStudyPage({ project, prev, next }) {
           )}
 
           {/* Back link */}
-          <Link href="/case-studies" className="ct-back">
+          <Link href="/case-studies/" className="ct-back">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             All Case Studies
           </Link>
@@ -726,11 +726,11 @@ export default function CaseStudyPage({ project, prev, next }) {
             Tell us about your goals. Our team will bring strategy, design, and engineering together to deliver real results.
           </p>
           <div className="ct-cta-btns">
-            <Link href="/contact-us" className="ct-cta-b1">
+            <Link href="/contact-us/" className="ct-cta-b1">
               Start a Project
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </Link>
-            <Link href="/case-studies" className="ct-cta-b2">
+            <Link href="/case-studies/" className="ct-cta-b2">
               More Case Studies
             </Link>
           </div>

@@ -129,7 +129,7 @@ export default function ContactCTA() {
                 <input type="checkbox" id="consent" required style={{ marginTop: '2px', flexShrink: 0, accentColor: '#0F3460' }} />
                 <label htmlFor="consent" style={{ fontSize: '12px', color: '#6b7280', lineHeight: 1.5, cursor: 'pointer' }}>
                   I consent that my personal data will be processed according to{' '}
-                  <a href="/privacy-policy" style={{ color: '#0F3460', fontWeight: 600 }}>1Solutions privacy policy</a>
+                  <a href="/privacy-policy/" style={{ color: '#0F3460', fontWeight: 600 }}>1Solutions privacy policy</a>
                 </label>
               </div>
 

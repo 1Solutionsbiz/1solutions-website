@@ -317,7 +317,7 @@ export default function AmazonSeoServices() {
           title={<>Amazon SEO Services - <AuroraText>Rank Higher, Sell More on Amazon</AuroraText></>}
           subtext="Product listing optimisation, keyword research, A+ Content, Sponsored Ads management, and Brand Store design - everything needed to dominate Amazon search results and convert browsers into buyers."
           primaryCta={{ label: 'Get a Free Amazon SEO Audit', href: '#amazseo-contact' }}
-          secondaryCta={{ label: 'Amazon Account Management', href: '/amazon-account-management-services' }}
+          secondaryCta={{ label: 'Amazon Account Management', href: '/amazon-account-management-services/' }}
           stats={[
             { label: 'Amazon Products Optimised', value: '2,000', suffix: '+' },
             { label: 'Avg Sales Rank Improvement', value: '68', prefix: '+', suffix: '%' },

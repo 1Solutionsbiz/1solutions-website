@@ -125,8 +125,8 @@ export default function HireLaravelDeveloper() {
         eyebrow="Hire Laravel Developer · Laravel 11, REST APIs &amp; SaaS"
         title={<>Hire Laravel Developers <AuroraText>Laravel 11, REST APIs &amp; SaaS Experts</AuroraText></>}
         subtext="Pre-vetted Laravel engineers who build robust PHP applications, REST and GraphQL APIs, multi-tenant SaaS platforms, and e-commerce backends - clean architecture, comprehensive test coverage, and production-ready code. Profiles in 48 hours."
-        primaryCta={{ label: 'Hire a Laravel Developer', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Hire a Laravel Developer', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'Laravel Developers', value: '80', suffix: '+' },
           { label: 'Laravel Projects Delivered', value: '350', suffix: '+' },
@@ -174,7 +174,7 @@ export default function HireLaravelDeveloper() {
         <div className="hlv-wrap">
           <h2>Ready to Hire Your Laravel Developer?</h2>
           <p>Share your Laravel project requirements and receive matched developer profiles within 48 hours &mdash; no commitment required.</p>
-          <Link href="/contact-us" className="hlv-btn-primary">Get Started Today &rarr;</Link>
+          <Link href="/contact-us/" className="hlv-btn-primary">Get Started Today &rarr;</Link>
         </div>
       </section>
     </>

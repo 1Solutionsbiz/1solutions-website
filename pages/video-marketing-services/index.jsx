@@ -131,8 +131,8 @@ export default function VideoMarketingServices() {
         eyebrow="Video Marketing · YouTube Strategy · Video SEO · YouTube Ads"
         title={<>Video Marketing That <AuroraText>Builds Authority and Drives Conversions</AuroraText></>}
         subtext="1Solutions builds video marketing programs that grow YouTube channels, rank in search, dominate short-form feeds, and convert viewers into customers - with strategy, scripts, SEO, and YouTube Ads working together."
-        primaryCta={{ label: 'Get a Free Video Audit', href: '/contact-us' }}
-        secondaryCta={{ label: 'Discuss Your Video Strategy', href: '/contact-us' }}
+        primaryCta={{ label: 'Get a Free Video Audit', href: '/contact-us/' }}
+        secondaryCta={{ label: 'Discuss Your Video Strategy', href: '/contact-us/' }}
         stats={[
           { label: 'Views in 90 Days', value: '8', prefix: '2.', suffix: 'M' },
           { label: 'Traffic from Video', value: '1', prefix: '3.', suffix: '×' },
@@ -173,8 +173,8 @@ export default function VideoMarketingServices() {
         <h2 className="vmkt-cth">Get a Free Video Marketing Audit</h2>
         <p className="vmkt-ctp">We will review your YouTube channel or video presence, identify content and SEO gaps, and share a video strategy roadmap - completely free.</p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
-          <Link href="/contact-us" className="vmkt-bp">Request Free Video Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-          <Link href="/contact-us" className="vmkt-bs">Talk to a Video Specialist</Link>
+          <Link href="/contact-us/" className="vmkt-bp">Request Free Video Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+          <Link href="/contact-us/" className="vmkt-bs">Talk to a Video Specialist</Link>
         </div>
       </div></section>
     </>

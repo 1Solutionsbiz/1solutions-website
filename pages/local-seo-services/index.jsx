@@ -289,7 +289,7 @@ export default function LocalSeoServices() {
           eyebrow="Google Maps Pack Experts · US · Canada · Australia"
           title={<>Rank in the <AuroraText>Google Maps Pack</AuroraText> and Dominate Local Search</>}
           subtext="GBP optimisation, citation building, review strategy, and geo-targeted location pages that drive real foot traffic, calls, and direction requests - not just rankings on a spreadsheet."
-          primaryCta={{ label: 'Get a Free Local SEO Audit', href: '/contact-us' }}
+          primaryCta={{ label: 'Get a Free Local SEO Audit', href: '/contact-us/' }}
           secondaryCta={{ label: 'View Local SEO Packages', href: '/local-seo-packages/#pricing' }}
           stats={[
             { label: 'Local SEO Clients', value: '300', suffix: '+' },

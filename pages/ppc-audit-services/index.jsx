@@ -131,8 +131,8 @@ export default function PpcAuditServices() {
         eyebrow="100-Point PPC Audit - Google Ads · Meta Ads · Conversion Tracking"
         title={<>PPC Audit That Finds Where Your <AuroraText>Ad Budget Is Being Wasted</AuroraText></>}
         subtext="1Solutions delivers a comprehensive 100-point PPC audit covering Google Ads and Meta Ads - identifying wasted spend, tracking errors, audience gaps, and structural issues that are costing you ROAS right now."
-        primaryCta={{ label: 'Request a PPC Audit', href: '/contact-us' }}
-        secondaryCta={{ label: 'Ask About the Audit', href: '/contact-us' }}
+        primaryCta={{ label: 'Request a PPC Audit', href: '/contact-us/' }}
+        secondaryCta={{ label: 'Ask About the Audit', href: '/contact-us/' }}
         stats={[
           { label: 'Accounts Audited', value: '500', suffix: '+' },
           { label: 'Years Experience', value: '15', suffix: '+' },
@@ -173,8 +173,8 @@ export default function PpcAuditServices() {
         <h2 className="ppca-cth">Request a PPC Audit - Delivered in 5 Days</h2>
         <p className="ppca-ctp">We will review your Google Ads and Meta Ads accounts across 100 checkpoints - and deliver a prioritised action plan with specific fixes your team can implement immediately.</p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
-          <Link href="/contact-us" className="ppca-bp">Request PPC Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-          <Link href="/contact-us" className="ppca-bs">Talk to a PPC Specialist</Link>
+          <Link href="/contact-us/" className="ppca-bp">Request PPC Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+          <Link href="/contact-us/" className="ppca-bs">Talk to a PPC Specialist</Link>
         </div>
       </div></section>
     </>

@@ -1482,7 +1482,7 @@ export default function LinkBuildingPackages() {
               ))}
             </div>
             <div className="lbp-cs-cta-row">
-              <Link href="/contact-us" className="lbp-cs-cta">
+              <Link href="/contact-us/" className="lbp-cs-cta">
                 Get Similar Results for Your Business
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </Link>
@@ -1656,7 +1656,7 @@ export default function LinkBuildingPackages() {
                     </div>
                     <div className="lbp-af-consent">
                       <input type="checkbox" id="la-consent" required/>
-                      <label htmlFor="la-consent">I consent that my personal data will be processed according to <a href="/privacy-policy">1Solutions privacy policy</a></label>
+                      <label htmlFor="la-consent">I consent that my personal data will be processed according to <a href="/privacy-policy/">1Solutions privacy policy</a></label>
                     </div>
                     {auditSt === 'validation' && (
                       <p style={{color:'#dc2626',fontSize:13,margin:0,textAlign:'center'}}>Please fill in all required fields and accept the privacy policy.</p>

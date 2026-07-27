@@ -121,8 +121,8 @@ export default function KlaviyoEmailMarketingAgency() {
         eyebrow="Klaviyo Email Marketing Agency · Certified Klaviyo Partners"
         title={<>Flows, Campaigns &amp; SMS That Drive <AuroraText>E-Commerce Revenue</AuroraText></>}
         subtext="We set up and optimise Klaviyo for DTC and e-commerce brands - from welcome series and abandoned cart flows to post-purchase sequences and SMS campaigns. Certified Klaviyo partners with 15+ years of e-commerce experience."
-        primaryCta={{ label: 'Get a Free Klaviyo Audit →', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Get a Free Klaviyo Audit →', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'Klaviyo Brands Managed', value: '100', suffix: '+' },
           { label: 'Avg Email Revenue Share', value: '35', suffix: '%' },
@@ -169,7 +169,7 @@ export default function KlaviyoEmailMarketingAgency() {
         <div className="kla-wrap">
           <h2>Ready to Turn Email Into Your Top Revenue Channel?</h2>
           <p>Get a free Klaviyo audit - we&apos;ll review your account, identify revenue gaps, and deliver a prioritised optimisation plan within 48 hours.</p>
-          <Link href="/contact-us" className="kla-btn-primary">Get Your Free Klaviyo Audit →</Link>
+          <Link href="/contact-us/" className="kla-btn-primary">Get Your Free Klaviyo Audit →</Link>
         </div>
       </section>
     </>

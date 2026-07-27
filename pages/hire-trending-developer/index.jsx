@@ -123,8 +123,8 @@ export default function HireTrendingDeveloper() {
         eyebrow="Hire Trending Technology Developer · AI, Web3 &amp; Edge"
         title={<>Hire Trending Technology Developers <AuroraText>AI, Web3, Rust &amp; Edge Specialists</AuroraText></>}
         subtext="Pre-vetted engineers who have shipped production projects with Generative AI, LLM integration, Web3, WebAssembly, and edge computing - not just followed the hype. Profiles in 48 hours."
-        primaryCta={{ label: 'Hire a Specialist Developer', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Hire a Specialist Developer', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'Emerging Tech Specialists', value: '60', suffix: '+' },
           { label: 'Innovative Projects', value: '250', suffix: '+' },
@@ -172,7 +172,7 @@ export default function HireTrendingDeveloper() {
         <div className="htrd-wrap">
           <h2>Ready to Hire Your Specialist Developer?</h2>
           <p>Share the technology and use case - we will match you with a practitioner who has shipped it in production. Profiles in 48 hours.</p>
-          <Link href="/contact-us" className="htrd-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us/" className="htrd-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

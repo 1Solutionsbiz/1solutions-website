@@ -124,8 +124,8 @@ export default function HireDedicatedUiUxDesigner() {
         eyebrow="Hire Dedicated UI/UX Designer · Figma &amp; User Research"
         title={<>Hire Dedicated UI/UX Designers <AuroraText>Figma &amp; User Research Specialists</AuroraText></>}
         subtext="Pre-vetted designers who combine rigorous user research with conversion-focused visual design - building products people actually enjoy using. Profiles in 48 hours."
-        primaryCta={{ label: 'Hire a UI/UX Designer', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Hire a UI/UX Designer', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'UI/UX Designers', value: '40', suffix: '+' },
           { label: 'Products Designed', value: '220', suffix: '+' },
@@ -173,7 +173,7 @@ export default function HireDedicatedUiUxDesigner() {
         <div className="huiux-wrap">
           <h2>Ready to Hire Your Dedicated UI/UX Designer?</h2>
           <p>Share your product goals and receive matched designer profiles with portfolios within 48 hours - no commitment required.</p>
-          <Link href="/contact-us" className="huiux-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us/" className="huiux-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

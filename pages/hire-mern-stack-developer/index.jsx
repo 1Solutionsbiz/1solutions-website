@@ -124,8 +124,8 @@ export default function HireMERNStackDeveloper() {
         eyebrow="Hire MERN Stack Developer · MongoDB, Express, React, Node.js"
         title={<>Hire MERN Stack Developers <AuroraText>MongoDB · Express · React · Node.js</AuroraText></>}
         subtext="Pre-vetted engineers who build full-stack JavaScript products from database to React UI - with Next.js, TypeScript, and real-time capabilities. Profiles in 48 hours."
-        primaryCta={{ label: 'Hire a MERN Stack Developer', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Hire a MERN Stack Developer', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'MERN Developers', value: '55', suffix: '+' },
           { label: 'Projects Delivered', value: '220', suffix: '+' },
@@ -210,7 +210,7 @@ export default function HireMERNStackDeveloper() {
         <div className="hmern-wrap">
           <h2>Ready to Hire Your MERN Stack Developer?</h2>
           <p>Share your stack and requirements - receive matched developer profiles within 48 hours, no commitment required.</p>
-          <Link href="/contact-us" className="hmern-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us/" className="hmern-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

@@ -452,7 +452,7 @@ export default function Hero() {
 
           <div className="hero-stagger-4 hero-btns" style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link
-              href="/contact-us"
+              href="/contact-us/"
               onMouseEnter={() => setPriHov(true)}
               onMouseLeave={() => setPriHov(false)}
               style={{
@@ -470,7 +470,7 @@ export default function Hero() {
               Book Free Strategy Call
             </Link>
             <Link
-              href="/case-studies"
+              href="/case-studies/"
               onMouseEnter={() => setSecHov(true)}
               onMouseLeave={() => setSecHov(false)}
               style={{

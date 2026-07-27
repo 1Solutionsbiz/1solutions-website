@@ -131,8 +131,8 @@ export default function HvacSeoServices() {
           eyebrow="Local SEO · Emergency HVAC Ads · Review Generation"
           title={<>HVAC SEO Services - <AuroraText>More Leads, More Calls, More Jobs</AuroraText></>}
           subtext="SEO and digital marketing built specifically for HVAC companies - local map pack dominance, emergency call campaigns, seasonal marketing, and review generation that generates consistent high-quality HVAC leads."
-          primaryCta={{ label: 'Get a Free HVAC Marketing Audit', href: '/contact-us' }}
-          secondaryCta={{ label: 'Local SEO Services', href: '/local-seo-services' }}
+          primaryCta={{ label: 'Get a Free HVAC Marketing Audit', href: '/contact-us/' }}
+          secondaryCta={{ label: 'Local SEO Services', href: '/local-seo-services/' }}
           stats={[
             { label: 'HVAC Clients', value: '95', suffix: '+' },
             { label: 'Avg Lead Growth', value: '9', prefix: '+2.', suffix: '×' },
@@ -167,8 +167,8 @@ export default function HvacSeoServices() {
             <h2 className="hvacseo-cta-t">Get a Free HVAC Marketing Audit</h2>
             <p className="hvacseo-cta-s">We&rsquo;ll audit your Google Business Profile, local rankings, competitor positioning, and current lead volume - then show you the fastest path to more HVAC calls.</p>
             <div className="hvacseo-btns">
-              <Link href="/contact-us" className="hvacseo-btn-p">Request a Free HVAC Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/lawn-care-marketing-services" className="hvacseo-btn-s">Lawn Care Marketing</Link>
+              <Link href="/contact-us/" className="hvacseo-btn-p">Request a Free HVAC Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/lawn-care-marketing-services/" className="hvacseo-btn-s">Lawn Care Marketing</Link>
             </div>
           </div>
         </section>

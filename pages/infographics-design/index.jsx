@@ -131,8 +131,8 @@ export default function InfographicsDesign() {
           eyebrow="Data Visualisation · Social · Link Building"
           title={<>Infographics Design Services - <AuroraText>Data That Gets Shared</AuroraText></>}
           subtext="Professional infographic design for content marketing, link building, social media, and corporate communications - 1,000+ infographics designed that earn shares, backlinks, and attention."
-          primaryCta={{ label: 'Get an Infographic Quote', href: '/contact-us' }}
-          secondaryCta={{ label: 'Content & Copywriting', href: '/content-copywriting-services' }}
+          primaryCta={{ label: 'Get an Infographic Quote', href: '/contact-us/' }}
+          secondaryCta={{ label: 'Content & Copywriting', href: '/content-copywriting-services/' }}
           stats={[
             { label: 'Infographics Designed', value: '1,000', suffix: '+' },
             { label: 'Average Shares per Piece', value: '280', suffix: '+' },
@@ -170,8 +170,8 @@ export default function InfographicsDesign() {
             <h2 className="infog-cta-t">Get Your Infographic Designed</h2>
             <p className="infog-cta-s">Tell us what data or topic you want to visualise - we&rsquo;ll send you a quote and timeline within 24 hours.</p>
             <div className="infog-cta-btns">
-              <Link href="/contact-us" className="infog-btn-p">Get an Infographic Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/content-copywriting-services" className="infog-btn-s">Content &amp; Copywriting</Link>
+              <Link href="/contact-us/" className="infog-btn-p">Get an Infographic Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/content-copywriting-services/" className="infog-btn-s">Content &amp; Copywriting</Link>
             </div>
           </div>
         </section>

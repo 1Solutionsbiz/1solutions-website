@@ -130,8 +130,8 @@ export default function ReputationManagementServices() {
         eyebrow="Reputation Management · Real-Time Monitoring · Crisis Response"
         title={<>Reputation Management That <AuroraText>Protects and Builds Your Brand</AuroraText> Online</>}
         subtext="1Solutions manages your online reputation across every platform - monitoring brand mentions in real time, building positive review volume, suppressing negative content from search results, and deploying crisis responses that protect your business when it matters most."
-        primaryCta={{ label: 'Get a Free Reputation Audit', href: '/contact-us' }}
-        secondaryCta={{ label: 'Discuss Your Reputation', href: '/contact-us' }}
+        primaryCta={{ label: 'Get a Free Reputation Audit', href: '/contact-us/' }}
+        secondaryCta={{ label: 'Discuss Your Reputation', href: '/contact-us/' }}
         stats={[
           { label: 'Rating Rebuilt', value: '6', prefix: '4.', suffix: '★' },
           { label: 'Positive Sentiment', value: '89', suffix: '%' },
@@ -172,8 +172,8 @@ export default function ReputationManagementServices() {
         <h2 className="repm-cth">Get a Free Reputation Audit</h2>
         <p className="repm-ctp">We will review your current online reputation - Google search results, review platform scores, and social sentiment - and share a clear strategy for protection and improvement.</p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
-          <Link href="/contact-us" className="repm-bp">Request Free Reputation Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-          <Link href="/contact-us" className="repm-bs">Talk to a Reputation Specialist</Link>
+          <Link href="/contact-us/" className="repm-bp">Request Free Reputation Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+          <Link href="/contact-us/" className="repm-bs">Talk to a Reputation Specialist</Link>
         </div>
       </div></section>
     </>

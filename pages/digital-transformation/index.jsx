@@ -5,14 +5,14 @@ import { AuroraText } from '../../components/AuroraText';
 import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
-  { n: '01', title: 'Cloud Migration & Modernisation', desc: 'Moving legacy on-premise systems to AWS, Azure, or GCP - infrastructure assessment, migration planning, data migration, cutover, and post-migration optimisation. Reduce infrastructure costs, improve reliability, and unlock cloud-native capabilities.', href: '/devops-services-company' },
-  { n: '02', title: 'Process Automation & RPA', desc: 'Identifying and automating repetitive manual processes using robotic process automation (RPA) and workflow automation tools - AP processing, data entry, report generation, customer onboarding, and compliance workflows.', href: '/contact-us' },
-  { n: '03', title: 'Legacy System Overhaul', desc: 'Replacing or re-architecting outdated ERP, CRM, and custom systems - API-first architecture, microservices, and modern tech stacks that are maintainable, scalable, and integrate with current tools.', href: '/contact-us' },
-  { n: '04', title: 'Data & Analytics Platforms', desc: 'Building data warehouses, BI dashboards, and analytics infrastructure - centralising data from disparate systems into a single source of truth that drives data-backed business decisions.', href: '/contact-us' },
-  { n: '05', title: 'Customer Experience Transformation', desc: 'Redesigning customer-facing digital touchpoints - web, mobile, and self-service portals - from legacy monoliths to fast, personalised, omnichannel experiences that increase satisfaction and retention.', href: '/contact-us' },
-  { n: '06', title: 'Digital Workplace & Collaboration', desc: 'Implementing modern workplace tools - Microsoft 365, SharePoint, Teams, and document management systems - that replace paper-based processes and disconnected communication.', href: '/contact-us' },
-  { n: '07', title: 'API Integration & Connected Systems', desc: 'Connecting siloed business systems through API layers and integration platforms - so your CRM, ERP, ecommerce, and marketing tools share data in real time without manual exports.', href: '/contact-us' },
-  { n: '08', title: 'Change Management & Adoption', desc: 'Digital transformation fails without adoption. We embed change management into every project - training programmes, internal communications, and user onboarding that ensure your team actually uses the new systems.', href: '/contact-us' },
+  { n: '01', title: 'Cloud Migration & Modernisation', desc: 'Moving legacy on-premise systems to AWS, Azure, or GCP - infrastructure assessment, migration planning, data migration, cutover, and post-migration optimisation. Reduce infrastructure costs, improve reliability, and unlock cloud-native capabilities.', href: '/devops-services-company/' },
+  { n: '02', title: 'Process Automation & RPA', desc: 'Identifying and automating repetitive manual processes using robotic process automation (RPA) and workflow automation tools - AP processing, data entry, report generation, customer onboarding, and compliance workflows.', href: '/contact-us/' },
+  { n: '03', title: 'Legacy System Overhaul', desc: 'Replacing or re-architecting outdated ERP, CRM, and custom systems - API-first architecture, microservices, and modern tech stacks that are maintainable, scalable, and integrate with current tools.', href: '/contact-us/' },
+  { n: '04', title: 'Data & Analytics Platforms', desc: 'Building data warehouses, BI dashboards, and analytics infrastructure - centralising data from disparate systems into a single source of truth that drives data-backed business decisions.', href: '/contact-us/' },
+  { n: '05', title: 'Customer Experience Transformation', desc: 'Redesigning customer-facing digital touchpoints - web, mobile, and self-service portals - from legacy monoliths to fast, personalised, omnichannel experiences that increase satisfaction and retention.', href: '/contact-us/' },
+  { n: '06', title: 'Digital Workplace & Collaboration', desc: 'Implementing modern workplace tools - Microsoft 365, SharePoint, Teams, and document management systems - that replace paper-based processes and disconnected communication.', href: '/contact-us/' },
+  { n: '07', title: 'API Integration & Connected Systems', desc: 'Connecting siloed business systems through API layers and integration platforms - so your CRM, ERP, ecommerce, and marketing tools share data in real time without manual exports.', href: '/contact-us/' },
+  { n: '08', title: 'Change Management & Adoption', desc: 'Digital transformation fails without adoption. We embed change management into every project - training programmes, internal communications, and user onboarding that ensure your team actually uses the new systems.', href: '/contact-us/' },
 ];
 
 const PROCESS = [
@@ -121,8 +121,8 @@ export default function DigitalTransformation() {
           eyebrow="Digital Transformation"
           title={<>Modernize Your Business for the <AuroraText>Digital Age</AuroraText></>}
           subtext="Legacy systems, manual processes, and disconnected tools are holding your business back. We help you transform - from strategy and architecture through implementation and adoption."
-          primaryCta={{ label: 'Start Your Transformation', href: '/contact-us' }}
-          secondaryCta={{ label: 'View Case Studies', href: '/case-studies' }}
+          primaryCta={{ label: 'Start Your Transformation', href: '/contact-us/' }}
+          secondaryCta={{ label: 'View Case Studies', href: '/case-studies/' }}
           stats={[
             { label: 'Transformations', value: '150', suffix: '+' },
             { label: 'Years Experience', value: '15', suffix: '+' },
@@ -155,8 +155,8 @@ export default function DigitalTransformation() {
             <h2 className="dtrans-cta-t">Ready to Modernize Your Business?</h2>
             <p className="dtrans-cta-s">Tell us about your current systems, your goals, and your constraints - we&rsquo;ll assess where you are and build a transformation roadmap that delivers early wins while building toward your target state.</p>
             <div className="dtrans-btns">
-              <Link href="/contact-us" className="dtrans-btn-p">Start Your Transformation <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/case-studies" className="dtrans-btn-s">View Case Studies</Link>
+              <Link href="/contact-us/" className="dtrans-btn-p">Start Your Transformation <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/case-studies/" className="dtrans-btn-s">View Case Studies</Link>
             </div>
           </div>
         </section>

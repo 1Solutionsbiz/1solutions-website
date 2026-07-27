@@ -214,7 +214,7 @@ export default function LinkBuildingServices() {
           title={<>Link Building Services That Move Rankings with <AuroraText>Real Authority</AuroraText></>}
           subtext="We build high-authority backlinks through 100% manual outreach — guest posts on niche-relevant DR40+ sites, niche edits in existing indexed content, and digital PR placements. Every link reported, every placement tracked live."
           primaryCta={{ label: 'View Packages', href: '/link-building-packages/#pricing' }}
-          secondaryCta={{ label: 'Talk to a Specialist', href: '/contact-us' }}
+          secondaryCta={{ label: 'Talk to a Specialist', href: '/contact-us/' }}
           stats={[
             { label: 'Links Built', value: '50,000', suffix: '+' },
             { label: 'Avg DR', value: '50', prefix: 'DR', suffix: '+' },
@@ -363,7 +363,7 @@ export default function LinkBuildingServices() {
                   View Packages
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </Link>
-                <Link href="/contact-us" className="lbs-btn-s">Talk to a Specialist</Link>
+                <Link href="/contact-us/" className="lbs-btn-s">Talk to a Specialist</Link>
               </div>
             </div>
           </div>

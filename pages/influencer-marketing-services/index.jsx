@@ -570,8 +570,8 @@ export default function InfluencerMarketing() {
           eyebrow="Ecommerce Marketing"
           title={<>Influencer Marketing Services That Drive <AuroraText>Real Ecommerce Growth</AuroraText></>}
           subtext="We connect ecommerce brands with the right creators - not just the biggest ones. Data-backed influencer campaigns on Instagram, TikTok, YouTube, and more, built for measurable ROI."
-          primaryCta={{ label: 'Get a Free Strategy Call', href: '/contact-us' }}
-          secondaryCta={{ label: 'View Our Work', href: '/case-studies' }}
+          primaryCta={{ label: 'Get a Free Strategy Call', href: '/contact-us/' }}
+          secondaryCta={{ label: 'View Our Work', href: '/case-studies/' }}
           stats={[
             { label: 'Creators in Network', value: '50,000', suffix: '+' },
             { label: 'Campaigns Delivered', value: '300', suffix: '+' },
@@ -721,11 +721,11 @@ export default function InfluencerMarketing() {
               Book a free 30-minute strategy call. We&rsquo;ll review your brand, recommend the right creator tier and platform mix, and give you a no-obligation campaign outline.
             </p>
             <div className="im-cta-btns">
-              <Link href="/contact-us" className="im-btn-primary">
+              <Link href="/contact-us/" className="im-btn-primary">
                 Book a Free Strategy Call
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </Link>
-              <Link href="/social-media-marketing-services" className="im-btn-secondary">
+              <Link href="/social-media-marketing-services/" className="im-btn-secondary">
                 Explore Social Media Services
               </Link>
             </div>

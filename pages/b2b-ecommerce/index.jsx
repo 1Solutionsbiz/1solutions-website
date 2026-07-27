@@ -570,8 +570,8 @@ export default function B2BEcommerce() {
           eyebrow="Platform Development"
           title={<>B2B eCommerce Development Services <AuroraText>Built for Scale</AuroraText></>}
           subtext="Custom wholesale portals, tiered pricing engines, ERP integrations, and buyer self-service platforms built for manufacturers, wholesalers, and distributors across the US, Canada, and Australia."
-          primaryCta={{ label: 'Get a Free Discovery Call', href: '/contact-us' }}
-          secondaryCta={{ label: 'Explore Ecommerce Services', href: '/ecommerce-website-development-services' }}
+          primaryCta={{ label: 'Get a Free Discovery Call', href: '/contact-us/' }}
+          secondaryCta={{ label: 'Explore Ecommerce Services', href: '/ecommerce-website-development-services/' }}
           stats={[
             { label: 'B2B Projects Delivered', value: '80', suffix: '+' },
             { label: 'Average Reorder Rate', value: '68', suffix: '%' },
@@ -722,11 +722,11 @@ export default function B2BEcommerce() {
               Book a free 30-minute discovery call. We&rsquo;ll map your buyer workflows, identify the right platform, and give you a no-obligation project outline with timeline and cost range.
             </p>
             <div className="b2b-cta-btns">
-              <Link href="/contact-us" className="b2b-btn-primary">
+              <Link href="/contact-us/" className="b2b-btn-primary">
                 Book a Free Discovery Call
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </Link>
-              <Link href="/woocommerce-development-company" className="b2b-btn-secondary">
+              <Link href="/woocommerce-development-company/" className="b2b-btn-secondary">
                 See WooCommerce Services
               </Link>
             </div>

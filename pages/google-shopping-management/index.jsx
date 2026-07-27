@@ -129,8 +129,8 @@ export default function GoogleShoppingManagement() {
         eyebrow="eCommerce Advertising - Feed Optimisation · Shopping · Performance Max · ROAS"
         title={<>Google Shopping Ads That Put Your Products in Front of <AuroraText>Ready-to-Buy Customers</AuroraText></>}
         subtext="1Solutions manages Google Shopping campaigns that drive eCommerce revenue - with feed-first optimisation, granular campaign structures, and ROAS-focused bidding that converts browsers into buyers."
-        primaryCta={{ label: 'Get a Free Feed Audit', href: '/contact-us' }}
-        secondaryCta={{ label: 'Discuss Your Shopping Campaigns', href: '/contact-us' }}
+        primaryCta={{ label: 'Get a Free Feed Audit', href: '/contact-us/' }}
+        secondaryCta={{ label: 'Discuss Your Shopping Campaigns', href: '/contact-us/' }}
         stats={[
           { label: 'eCommerce Clients', value: '300', suffix: '+' },
           { label: 'Years Experience', value: '15', suffix: '+' },
@@ -171,8 +171,8 @@ export default function GoogleShoppingManagement() {
         <h2 className="gsho-cth">Get a Free Google Shopping Feed Audit</h2>
         <p className="gsho-ctp">We will review your product feed, Merchant Center account, and existing Shopping campaigns - identifying where ROAS is being lost and what to fix first.</p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
-          <Link href="/contact-us" className="gsho-bp">Request Free Shopping Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-          <Link href="/contact-us" className="gsho-bs">Talk to a Shopping Specialist</Link>
+          <Link href="/contact-us/" className="gsho-bp">Request Free Shopping Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+          <Link href="/contact-us/" className="gsho-bs">Talk to a Shopping Specialist</Link>
         </div>
       </div></section>
     </>

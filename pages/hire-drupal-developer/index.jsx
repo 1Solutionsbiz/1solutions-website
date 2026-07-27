@@ -127,8 +127,8 @@ export default function HireDrupalDeveloper() {
         eyebrow="Hire Drupal Developer · Drupal 9 &amp; 10 Experts"
         title={<>Hire Drupal Developers <AuroraText>for Enterprise CMS Builds</AuroraText></>}
         subtext="Pre-vetted Drupal 9 &amp; 10 specialists for module development, migrations, headless builds, and enterprise platform work. Profiles in 48 hours."
-        primaryCta={{ label: 'Hire a Drupal Developer', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Hire a Drupal Developer', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'Drupal Developers', value: '30', suffix: '+' },
           { label: 'Drupal Sites Delivered', value: '120', suffix: '+' },
@@ -218,7 +218,7 @@ export default function HireDrupalDeveloper() {
         <div className="hdd-wrap">
           <h2>Ready to Hire Your Drupal Developer?</h2>
           <p>Share your requirements and we will match you with a pre-screened Drupal specialist within 48 hours.</p>
-          <Link href="/contact-us" className="hdd-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us/" className="hdd-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

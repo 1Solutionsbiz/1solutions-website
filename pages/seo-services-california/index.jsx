@@ -253,8 +253,8 @@ export default function SeoServicesCalifornia() {
           eyebrow="SEO Services · California"
           title={<>SEO Services for <AuroraText>California Businesses</AuroraText></>}
           subtext="Rank higher on Google across Los Angeles, San Francisco, San Diego, and every California market that matters to your business. 15+ years of SEO experience, 500+ clients, no lock-in contracts."
-          primaryCta={{ label: 'Get a Free SEO Audit', href: '/contact-us' }}
-          secondaryCta={{ label: 'View SEO Packages', href: '/affordable-seo-packages' }}
+          primaryCta={{ label: 'Get a Free SEO Audit', href: '/contact-us/' }}
+          secondaryCta={{ label: 'View SEO Packages', href: '/affordable-seo-packages/' }}
           stats={[
             { label: 'SEO Clients Served', value: '500', suffix: '+' },
             { label: 'Years Experience', value: '15', suffix: '+' },
@@ -374,11 +374,11 @@ export default function SeoServicesCalifornia() {
             <h2 className="calseo-cta-ttl">Get Your Free <span>California SEO Audit</span></h2>
             <p className="calseo-cta-sub">We&rsquo;ll audit your current rankings, technical health, backlink profile, and competitors - and deliver a clear action plan for growing your California organic search presence.</p>
             <div className="calseo-cta-btns">
-              <Link href="/contact-us" className="calseo-btn-p">
+              <Link href="/contact-us/" className="calseo-btn-p">
                 Request Free SEO Audit
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
               </Link>
-              <Link href="/affordable-seo-packages" className="calseo-btn-s">View SEO Packages</Link>
+              <Link href="/affordable-seo-packages/" className="calseo-btn-s">View SEO Packages</Link>
             </div>
           </div>
         </section>

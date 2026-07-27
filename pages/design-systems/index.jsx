@@ -634,7 +634,7 @@ export default function DesignSystemsPage() {
                   </div>
                   <div className="ds-consent">
                     <input type="checkbox" id="ds-consent" required />
-                    <label htmlFor="ds-consent">I consent that my personal data will be processed according to <Link href="/privacy-policy">1Solutions privacy policy</Link></label>
+                    <label htmlFor="ds-consent">I consent that my personal data will be processed according to <Link href="/privacy-policy/">1Solutions privacy policy</Link></label>
                   </div>
                   <button type="submit" className="ds-submit-btn">Send My Design System Brief</button>
                   {_sfSt === 'success' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#f0fdf4',border:'1px solid #86efac',borderRadius:'8px',color:'#166534',fontSize:'0.875rem',fontWeight:500}}>&#10003; Message sent! We&apos;ll get back to you within 24 hours.</div>}{_sfSt === 'error' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#fef2f2',border:'1px solid #fca5a5',borderRadius:'8px',color:'#991b1b',fontSize:'0.875rem',fontWeight:500}}>Something went wrong. Please email info@1solutions.biz</div>}

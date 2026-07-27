@@ -123,8 +123,8 @@ export default function HireSwiftDeveloper() {
         eyebrow="Hire Swift Developer · Native iOS &amp; Apple Platform"
         title={<>Hire Swift Developers <AuroraText>Native iOS &amp; Apple Platform Specialists</AuroraText></>}
         subtext="Pre-vetted Swift engineers who build polished, performant iOS apps using SwiftUI, UIKit, and the full Apple SDK. Profiles in 48 hours."
-        primaryCta={{ label: 'Hire a Swift Developer', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Hire a Swift Developer', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'Swift Developers', value: '35', suffix: '+' },
           { label: 'iOS Apps Delivered', value: '140', suffix: '+' },
@@ -172,7 +172,7 @@ export default function HireSwiftDeveloper() {
         <div className="hswft-wrap">
           <h2>Ready to Hire Your Swift Developer?</h2>
           <p>Share your iOS requirements and receive matched Swift specialist profiles within 48 hours - no commitment required.</p>
-          <Link href="/contact-us" className="hswft-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us/" className="hswft-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

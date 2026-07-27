@@ -134,8 +134,8 @@ export default function OpencartSeoServices() {
           eyebrow="OpenCart 3.x · 4.x · Multi-Store"
           title={<>OpenCart SEO Services That Grow Your Store&rsquo;s <AuroraText>Organic Traffic</AuroraText></>}
           subtext="Fix URL structure issues, resolve duplicate content, and optimise product and category pages - platform-specialist SEO for OpenCart stores that drives measurable organic revenue growth."
-          primaryCta={{ label: 'Get a Free OpenCart SEO Audit', href: '/contact-us' }}
-          secondaryCta={{ label: 'OpenCart Development', href: '/opencart-development-company' }}
+          primaryCta={{ label: 'Get a Free OpenCart SEO Audit', href: '/contact-us/' }}
+          secondaryCta={{ label: 'OpenCart Development', href: '/opencart-development-company/' }}
           stats={[
             { label: 'OpenCart Stores Optimised', value: '100', suffix: '+' },
             { label: 'Years Experience', value: '15', suffix: '+' },
@@ -173,8 +173,8 @@ export default function OpencartSeoServices() {
             <h2 className="ocseo-cta-t">Get Your Free OpenCart SEO Audit</h2>
             <p className="ocseo-cta-s">We&rsquo;ll audit your URL structure, duplicate content, page speed, and keyword gaps - and send you a prioritised action plan, completely free.</p>
             <div className="ocseo-cta-btns">
-              <Link href="/contact-us" className="ocseo-btn-p">Get Free OpenCart SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/ecommerce-seo-services" className="ocseo-btn-s">Ecommerce SEO Services</Link>
+              <Link href="/contact-us/" className="ocseo-btn-p">Get Free OpenCart SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/ecommerce-seo-services/" className="ocseo-btn-s">Ecommerce SEO Services</Link>
             </div>
           </div>
         </section>

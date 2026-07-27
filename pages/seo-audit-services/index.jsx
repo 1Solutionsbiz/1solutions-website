@@ -237,8 +237,8 @@ export default function SeoAuditServices() {
           eyebrow="150-Point Audit · US · Canada · Australia"
           title={<>SEO Audit That Finds What Is <AuroraText>Holding Your Site Back</AuroraText></>}
           subtext="Comprehensive 150-point SEO audit - technical health, on-page quality, backlink profile, content gaps, and competitor benchmarking - with a prioritised 90-day action plan and a live walkthrough call included."
-          primaryCta={{ label: 'Request an SEO Audit', href: '/contact-us' }}
-          secondaryCta={{ label: 'View SEO Packages', href: '/affordable-seo-packages' }}
+          primaryCta={{ label: 'Request an SEO Audit', href: '/contact-us/' }}
+          secondaryCta={{ label: 'View SEO Packages', href: '/affordable-seo-packages/' }}
           stats={[
             { label: 'Audits Completed', value: '500', suffix: '+' },
             { label: 'Years Experience', value: '15', suffix: '+' },
@@ -322,11 +322,11 @@ export default function SeoAuditServices() {
             <h2 className="saud-cta-title">Request Your Comprehensive SEO Audit</h2>
             <p className="saud-cta-sub">150-point analysis. Prioritised action plan. Live walkthrough call included. Delivered in 7 to 10 business days - fixed price, no surprises.</p>
             <div className="saud-cta-btns">
-              <Link href="/contact-us" className="saud-btn-primary">
+              <Link href="/contact-us/" className="saud-btn-primary">
                 Request an SEO Audit
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </Link>
-              <Link href="/affordable-seo-packages" className="saud-btn-secondary">View SEO Packages</Link>
+              <Link href="/affordable-seo-packages/" className="saud-btn-secondary">View SEO Packages</Link>
             </div>
           </div>
         </section>

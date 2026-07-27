@@ -125,8 +125,8 @@ export default function HireReactNativeDeveloper() {
         eyebrow="Hire React Native Developer · iOS &amp; Android"
         title={<>Hire React Native Developers <AuroraText>iOS &amp; Android from One Codebase</AuroraText></>}
         subtext="Pre-vetted React Native engineers with native module experience - shipping polished cross-platform apps to the App Store and Google Play. Profiles in 48 hours."
-        primaryCta={{ label: 'Hire a React Native Developer', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Hire a React Native Developer', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'RN Developers', value: '45', suffix: '+' },
           { label: 'Apps Delivered', value: '190', suffix: '+' },
@@ -174,7 +174,7 @@ export default function HireReactNativeDeveloper() {
         <div className="hrnd-wrap">
           <h2>Ready to Hire Your React Native Developer?</h2>
           <p>Share your requirements and receive matched React Native specialist profiles within 48 hours - no commitment required.</p>
-          <Link href="/contact-us" className="hrnd-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us/" className="hrnd-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

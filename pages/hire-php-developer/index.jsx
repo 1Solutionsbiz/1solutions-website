@@ -125,8 +125,8 @@ export default function HirePHPDeveloper() {
         eyebrow="Hire PHP Developer · Laravel, Symfony & WordPress"
         title={<>Hire PHP Developers <AuroraText>Laravel, Symfony &amp; WordPress Experts</AuroraText></>}
         subtext="Pre-vetted PHP 8.x engineers for web applications, APIs, and CMS platforms. Clean code, tested, and production-ready. Profiles in 48 hours."
-        primaryCta={{ label: 'Hire a PHP Developer', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Hire a PHP Developer', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'PHP Developers', value: '70', suffix: '+' },
           { label: 'PHP Projects Delivered', value: '350', suffix: '+' },
@@ -211,7 +211,7 @@ export default function HirePHPDeveloper() {
         <div className="hphp-wrap">
           <h2>Ready to Hire Your PHP Developer?</h2>
           <p>Share your requirements and receive matched PHP specialist profiles within 48 hours - no commitment required.</p>
-          <Link href="/contact-us" className="hphp-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us/" className="hphp-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

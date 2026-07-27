@@ -137,8 +137,8 @@ export default function SeoServicesJacksonville() {
         eyebrow="SEO Services · Jacksonville, FL"
         title={<>SEO Services Jacksonville, FL - <AuroraText>Rank Higher &amp; Grow Your Jacksonville Business</AuroraText></>}
         subtext="We help Jacksonville businesses dominate Google search results - local SEO, technical optimisation, content strategy, and link building that drives real enquiries and sales. 15+ years of SEO expertise, 300+ businesses ranked."
-        primaryCta={{ label: 'Get a Free Jacksonville SEO Audit', href: '/contact-us' }}
-        secondaryCta={{ label: 'View SEO Packages', href: '/local-seo-packages' }}
+        primaryCta={{ label: 'Get a Free Jacksonville SEO Audit', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View SEO Packages', href: '/local-seo-packages/' }}
         stats={[
           { label: 'Businesses Ranked', value: '300', suffix: '+' },
           { label: 'Years SEO Experience', value: '15', suffix: '+' },
@@ -185,7 +185,7 @@ export default function SeoServicesJacksonville() {
         <div className="jax-wrap">
           <h2>Ready to Dominate Jacksonville Search Results?</h2>
           <p>Get a free Jacksonville SEO audit - we'll review your rankings, identify your biggest opportunities, and deliver an action plan within 48 hours.</p>
-          <Link href="/contact-us" className="jax-btn-primary">Get Your Free Jacksonville SEO Audit →</Link>
+          <Link href="/contact-us/" className="jax-btn-primary">Get Your Free Jacksonville SEO Audit →</Link>
         </div>
       </section>
     </>

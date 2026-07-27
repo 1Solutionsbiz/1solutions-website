@@ -503,7 +503,7 @@ export default function HeadlessWordPressDevelopment() {
           <div className="hwp-portfolio-wrap">
             <div className="hwp-portfolio-header">
               <h2 className={`hwp-portfolio-title hwp-section-reveal${visibleSections.has('portfolio') ? ' hwp-revealed' : ''}`} ref={el => { sectionRefs.current['portfolio'] = el; }}>WordPress Projects<br/>Delivered</h2>
-              <Link href="/portfolio" className="hwp-btn-portfolio-cta">Browse Our Portfolio</Link>
+              <Link href="/portfolio/" className="hwp-btn-portfolio-cta">Browse Our Portfolio</Link>
             </div>
             <div className="hwp-portfolio-grid">
               {[
@@ -739,7 +739,7 @@ export default function HeadlessWordPressDevelopment() {
                   <div className="hwp-form-group full"><label>Message*</label><textarea name="sf-message" placeholder="Tell us about your headless WordPress project..." rows={6} required /></div>
                   <div className="hwp-consent">
                     <input type="checkbox" id="hwp-consent" required />
-                    <label htmlFor="hwp-consent">I consent that my personal data will be processed according to <Link href="/privacy-policy">1Solutions privacy policy</Link></label>
+                    <label htmlFor="hwp-consent">I consent that my personal data will be processed according to <Link href="/privacy-policy/">1Solutions privacy policy</Link></label>
                   </div>
                   <button type="submit" className="hwp-submit-btn">Submit</button>
                   {_sfSt === 'success' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#f0fdf4',border:'1px solid #86efac',borderRadius:'8px',color:'#166534',fontSize:'0.875rem',fontWeight:500}}>&#10003; Message sent! We&apos;ll get back to you within 24 hours.</div>}{_sfSt === 'error' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#fef2f2',border:'1px solid #fca5a5',borderRadius:'8px',color:'#991b1b',fontSize:'0.875rem',fontWeight:500}}>Something went wrong. Please email info@1solutions.biz</div>}

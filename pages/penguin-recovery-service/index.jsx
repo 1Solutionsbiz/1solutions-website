@@ -131,8 +131,8 @@ export default function PenguinRecoveryService() {
           eyebrow="Backlink Audit · Disavow · Link Removal · Link Spam"
           title={<>Google Penguin Recovery Service - <AuroraText>Toxic Link Audit &amp; Disavow</AuroraText></>}
           subtext="Specialist Penguin and Link Spam Update recovery - comprehensive toxic backlink audit, conservative disavow file preparation, link removal outreach, and clean authority link building to restore your organic rankings."
-          primaryCta={{ label: 'Get a Free Backlink Audit', href: '/contact-us' }}
-          secondaryCta={{ label: 'All Penalty Recovery Services', href: '/google-penalty-recovery-services' }}
+          primaryCta={{ label: 'Get a Free Backlink Audit', href: '/contact-us/' }}
+          secondaryCta={{ label: 'All Penalty Recovery Services', href: '/google-penalty-recovery-services/' }}
           stats={[
             { label: 'Penguin Recoveries', value: '180', suffix: '+' },
             { label: 'Toxic Links Disavowed', value: '500', suffix: 'K+' },
@@ -167,8 +167,8 @@ export default function PenguinRecoveryService() {
             <h2 className="peng-cta-t">Get a Free Backlink Profile Audit</h2>
             <p className="peng-cta-s">Share your domain - we&rsquo;ll pull your full backlink profile, identify the toxic links, and outline a recovery plan including disavow strategy and clean link building.</p>
             <div className="peng-btns">
-              <Link href="/contact-us" className="peng-btn-p">Request a Free Backlink Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/link-building-packages" className="peng-btn-s">Link Building Packages</Link>
+              <Link href="/contact-us/" className="peng-btn-p">Request a Free Backlink Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/link-building-packages/" className="peng-btn-s">Link Building Packages</Link>
             </div>
           </div>
         </section>

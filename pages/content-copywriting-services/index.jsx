@@ -132,8 +132,8 @@ export default function ContentCopywritingServices() {
           eyebrow="Website · Blog · Email · Ads · SEO"
           title={<>Content &amp; Copywriting Services - <AuroraText>Words That Rank, Engage, and Convert</AuroraText></>}
           subtext="Human-written website copy, SEO blog content, email sequences, ad copy, and product descriptions - all produced by specialist copywriters who understand your audience, your sector, and your goals."
-          primaryCta={{ label: 'Get a Copywriting Quote', href: '/contact-us' }}
-          secondaryCta={{ label: 'SEO Services', href: '/seo-services-company' }}
+          primaryCta={{ label: 'Get a Copywriting Quote', href: '/contact-us/' }}
+          secondaryCta={{ label: 'SEO Services', href: '/seo-services-company/' }}
           stats={[
             { label: 'Content Pieces Produced', value: '15,000', suffix: '+' },
             { label: 'Industries Covered', value: '40', suffix: '+' },
@@ -171,8 +171,8 @@ export default function ContentCopywritingServices() {
             <h2 className="ccw-cta-t">Start Your Content &amp; Copywriting Project</h2>
             <p className="ccw-cta-s">Share your content brief - type of content, audience, goals, and any examples you like - and we&rsquo;ll confirm writer match, timeline, and pricing within one business day.</p>
             <div className="ccw-cta-btns">
-              <Link href="/contact-us" className="ccw-btn-p">Get a Copywriting Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/infographics-design" className="ccw-btn-s">Infographics Design</Link>
+              <Link href="/contact-us/" className="ccw-btn-p">Get a Copywriting Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/infographics-design/" className="ccw-btn-s">Infographics Design</Link>
             </div>
           </div>
         </section>

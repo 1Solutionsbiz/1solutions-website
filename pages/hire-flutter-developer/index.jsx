@@ -128,8 +128,8 @@ export default function HireFlutterDeveloper() {
         eyebrow="Hire Flutter Developer · Dart &amp; Flutter 3.x Experts"
         title={<>Hire Flutter Developers <AuroraText>One Codebase, Every Platform</AuroraText></>}
         subtext="Pre-vetted Dart &amp; Flutter 3.x experts delivering iOS, Android, web, and desktop apps from a single high-performance codebase. Profiles in 48 hours."
-        primaryCta={{ label: 'Hire a Flutter Developer', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Hire a Flutter Developer', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'Flutter Developers', value: '45', suffix: '+' },
           { label: 'Flutter Apps Delivered', value: '180', suffix: '+' },
@@ -219,7 +219,7 @@ export default function HireFlutterDeveloper() {
         <div className="hflut-wrap">
           <h2>Ready to Hire Your Flutter Developer?</h2>
           <p>Share your requirements and receive matched Flutter specialist profiles within 48 hours - no commitment required.</p>
-          <Link href="/contact-us" className="hflut-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us/" className="hflut-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

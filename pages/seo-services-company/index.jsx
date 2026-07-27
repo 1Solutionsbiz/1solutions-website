@@ -600,7 +600,7 @@ export default function SeoServices() {
                   <div className="seo-fg full"><label>Tell Us More*</label><textarea placeholder="Describe your goals, target market, or any SEO challenges you are facing..." rows={5} required/></div>
                   <div className="seo-consent">
                     <input type="checkbox" id="seo-consent" required/>
-                    <label htmlFor="seo-consent">I consent that my personal data will be processed according to <Link href="/privacy-policy">1Solutions privacy policy</Link></label>
+                    <label htmlFor="seo-consent">I consent that my personal data will be processed according to <Link href="/privacy-policy/">1Solutions privacy policy</Link></label>
                   </div>
                   <button type="submit" className="seo-submit">Get My Free SEO Audit</button>
                 </form>

@@ -547,7 +547,7 @@ function SinglePost({ post, relatedPosts, ogImageUrl }) {
                 <li>✓ SEO &amp; Digital Marketing</li>
                 <li>✓ Dedicated Resource Teams</li>
               </ul>
-              <Link href="/contact-us" className="sidebar-cta-btn">Book Free Consultation →</Link>
+              <Link href="/contact-us/" className="sidebar-cta-btn">Book Free Consultation →</Link>
             </div>
 
           </aside>

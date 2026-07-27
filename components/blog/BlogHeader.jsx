@@ -307,14 +307,14 @@ const INDUSTRIES = [
 
 /* ── About Us mega menu data ─────────────────────────────────────── */
 const ABOUT_ITEMS = [
-  { name: 'Who We Are',    desc: 'Our story, mission, values & the team behind 1Solutions.',      href: '/who-we-are',     icon: 'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z' },
-  { name: 'Work Culture',  desc: 'What makes 1Solutions a great place to work and grow.',         href: '/work-culture',   icon: 'M17 20h5v-2a3 3 0 0 0-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 0 1 5.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 0 1 9.288 0M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0z' },
-  { name: 'Open Positions',desc: 'Explore current openings and join our growing team.',           href: '/open-positions', icon: 'M21 13.255A23.931 23.931 0 0 1 12 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2m4 6h.01M5 20h14a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2z' },
-  { name: 'Apply Online',  desc: 'Submit your application and start your journey with us.',       href: '/apply-online',   icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414a1 1 0 0 1 .293.707V19a2 2 0 0 1-2 2z' },
-  { name: 'Privacy Policy',desc: 'How we collect, use, and protect your personal data.',          href: '/privacy-policy', icon: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' },
-  { name: 'Terms of Use',  desc: 'Read our terms and conditions of service.',                     href: '/terms-of-use',   icon: 'M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 0-2-2h2a2 2 0 0 0 2 2m-3 7h6m-6 4h4' },
-  { name: 'Cookie Policy', desc: 'How we use cookies to improve your experience.',                href: '/cookie-policy',  icon: 'M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm-1-9a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm4 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-7-1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z' },
-  { name: 'Refund Policy', desc: 'Our refund, cancellation and dispute resolution policy.',       href: '/refund-policy',  icon: 'M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H6a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3z' },
+  { name: 'Who We Are',    desc: 'Our story, mission, values & the team behind 1Solutions.',      href: '/who-we-are/',     icon: 'M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z' },
+  { name: 'Work Culture',  desc: 'What makes 1Solutions a great place to work and grow.',         href: '/work-culture/',   icon: 'M17 20h5v-2a3 3 0 0 0-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 0 1 5.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 0 1 9.288 0M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0z' },
+  { name: 'Open Positions',desc: 'Explore current openings and join our growing team.',           href: '/open-positions/', icon: 'M21 13.255A23.931 23.931 0 0 1 12 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2m4 6h.01M5 20h14a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2z' },
+  { name: 'Apply Online',  desc: 'Submit your application and start your journey with us.',       href: '/apply-online/',   icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414a1 1 0 0 1 .293.707V19a2 2 0 0 1-2 2z' },
+  { name: 'Privacy Policy',desc: 'How we collect, use, and protect your personal data.',          href: '/privacy-policy/', icon: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' },
+  { name: 'Terms of Use',  desc: 'Read our terms and conditions of service.',                     href: '/terms-of-use/',   icon: 'M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 0-2-2h2a2 2 0 0 0 2 2m-3 7h6m-6 4h4' },
+  { name: 'Cookie Policy', desc: 'How we use cookies to improve your experience.',                href: '/cookie-policy/',  icon: 'M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm-1-9a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm4 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-7-1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z' },
+  { name: 'Refund Policy', desc: 'Our refund, cancellation and dispute resolution policy.',       href: '/refund-policy/',  icon: 'M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H6a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3z' },
 ];
 
 export default function BlogHeader() {
@@ -417,8 +417,8 @@ export default function BlogHeader() {
                 </button>
               </li>
 
-              <li><Link href="/portfolio"    onClick={close}>Portfolio</Link></li>
-              <li><Link href="/case-studies" onClick={close}>Case Studies</Link></li>
+              <li><Link href="/portfolio/"    onClick={close}>Portfolio</Link></li>
+              <li><Link href="/case-studies/" onClick={close}>Case Studies</Link></li>
               <li><Link href="/blog"         onClick={close}>Insights</Link></li>
 
               {/* ── About Us ── */}
@@ -438,7 +438,7 @@ export default function BlogHeader() {
           </nav>
 
           <div className="bh-cta-wrap">
-            <Link href="/contact-us" className="bh-cta" onClick={close}>Contact Us →</Link>
+            <Link href="/contact-us/" className="bh-cta" onClick={close}>Contact Us →</Link>
           </div>
 
           <button
@@ -529,7 +529,7 @@ export default function BlogHeader() {
             <div className="bh-ind-footer">
               <div className="bh-ind-footer-left">
                 <span className="bh-ind-footer-text">Not sure which service fits your needs?</span>
-                <Link href="/contact-us" className="bh-ind-footer-cta" onClick={close}>Talk to our team →</Link>
+                <Link href="/contact-us/" className="bh-ind-footer-cta" onClick={close}>Talk to our team →</Link>
               </div>
               <div className="bh-ind-footer-right">
                 <a href="mailto:info@1solutions.biz" className="bh-ind-footer-contact">
@@ -575,7 +575,7 @@ export default function BlogHeader() {
             <div className="bh-ind-footer">
               <div className="bh-ind-footer-left">
                 <span className="bh-ind-footer-text">Ready to get started?</span>
-                <Link href="/contact-us" className="bh-ind-footer-cta" onClick={close}>Let&apos;s Talk →</Link>
+                <Link href="/contact-us/" className="bh-ind-footer-cta" onClick={close}>Let&apos;s Talk →</Link>
               </div>
               <div className="bh-ind-footer-right">
                 <a href="mailto:info@1solutions.biz" className="bh-ind-footer-contact">
@@ -620,7 +620,7 @@ export default function BlogHeader() {
             <div className="bh-ind-footer">
               <div className="bh-ind-footer-left">
                 <span className="bh-ind-footer-text">Ready to get started?</span>
-                <Link href="/contact-us" className="bh-ind-footer-cta" onClick={close}>Let&apos;s Talk →</Link>
+                <Link href="/contact-us/" className="bh-ind-footer-cta" onClick={close}>Let&apos;s Talk →</Link>
               </div>
               <div className="bh-ind-footer-right">
                 <a href="mailto:info@1solutions.biz" className="bh-ind-footer-contact">
@@ -690,8 +690,8 @@ export default function BlogHeader() {
           )}
         </div>
 
-        <Link href="/portfolio"    onClick={close}>Portfolio</Link>
-        <Link href="/case-studies" onClick={close}>Case Studies</Link>
+        <Link href="/portfolio/"    onClick={close}>Portfolio</Link>
+        <Link href="/case-studies/" onClick={close}>Case Studies</Link>
         <Link href="/blog"         onClick={close}>Insights</Link>
 
         {/* About Us accordion */}
@@ -729,7 +729,7 @@ export default function BlogHeader() {
           </a>
         </div>
 
-        <Link href="/contact-us" className="bh-mob-cta" onClick={close}>Contact Us →</Link>
+        <Link href="/contact-us/" className="bh-mob-cta" onClick={close}>Contact Us →</Link>
       </nav>
     </>
   );

@@ -250,8 +250,8 @@ export default function AppUiUxDesign() {
           eyebrow="Mobile Development"
           title={<>App UI/UX Design Services That <AuroraText>Turn Users Into Loyal Customers</AuroraText></>}
           subtext="Research-driven mobile app design for iOS and Android - from user flows and wireframes to pixel-perfect UI, prototypes, and design systems. Built for engagement, retention, and conversion."
-          primaryCta={{ label: 'Start a Design Project', href: '/contact-us' }}
-          secondaryCta={{ label: 'See React Native Services', href: '/react-native-app-development' }}
+          primaryCta={{ label: 'Start a Design Project', href: '/contact-us/' }}
+          secondaryCta={{ label: 'See React Native Services', href: '/react-native-app-development/' }}
           stats={[
             { label: 'Apps Designed', value: '200', suffix: '+' },
             { label: 'Avg App Store Rating', value: '7', prefix: '4.', suffix: '★' },
@@ -347,11 +347,11 @@ export default function AppUiUxDesign() {
             <h2 className="ux-cta-title">Ready to Design an App Your Users Actually Love?</h2>
             <p className="ux-cta-sub">Book a free 30-minute design consultation. We&rsquo;ll review your app concept, identify the highest UX risks, and outline a design approach - no obligation.</p>
             <div className="ux-cta-btns">
-              <Link href="/contact-us" className="ux-btn-primary">
+              <Link href="/contact-us/" className="ux-btn-primary">
                 Book a Free Design Consultation
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </Link>
-              <Link href="/react-native-app-development" className="ux-btn-secondary">Build the App Too</Link>
+              <Link href="/react-native-app-development/" className="ux-btn-secondary">Build the App Too</Link>
             </div>
           </div>
         </section>

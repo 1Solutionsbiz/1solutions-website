@@ -106,15 +106,15 @@ const CHECK_ICON = (
 );
 
 const RELATED_TAGS = [
-  {href:'/seo-services-company',label:'SEO Services Company',cls:'lsp-rtag-blue'},
-  {href:'/link-building-packages',label:'Link Building Packages',cls:'lsp-rtag-violet'},
-  {href:'/local-seo-services',label:'Local SEO Services',cls:'lsp-rtag-teal'},
-  {href:'/ecommerce-seo-services',label:'E-Commerce SEO',cls:'lsp-rtag-amber'},
+  {href:'/seo-services-company/',label:'SEO Services Company',cls:'lsp-rtag-blue'},
+  {href:'/link-building-packages/',label:'Link Building Packages',cls:'lsp-rtag-violet'},
+  {href:'/local-seo-services/',label:'Local SEO Services',cls:'lsp-rtag-teal'},
+  {href:'/ecommerce-seo-services/',label:'E-Commerce SEO',cls:'lsp-rtag-amber'},
   {href:'/technical-seo-audit',label:'Technical SEO Audit',cls:'lsp-rtag-indigo'},
-  {href:'/content-marketing-services',label:'Content Marketing',cls:'lsp-rtag-green'},
+  {href:'/content-marketing-services/',label:'Content Marketing',cls:'lsp-rtag-green'},
   {href:'/google-ads-management',label:'Google Ads Management',cls:'lsp-rtag-orange'},
   {href:'/social-media-marketing',label:'Social Media Marketing',cls:'lsp-rtag-rose'},
-  {href:'/wordpress-development-company',label:'WordPress Development',cls:'lsp-rtag-slate'},
+  {href:'/wordpress-development-company/',label:'WordPress Development',cls:'lsp-rtag-slate'},
   {href:'/web-design-services',label:'Web Design Services',cls:'lsp-rtag-cyan'},
 ];
 
@@ -587,7 +587,7 @@ export default function LocalSeoPackages() {
                     <ul className="lsp-feat-list">
                       {plan.features.map(f => <li key={f}>{f}</li>)}
                     </ul>
-                    <Link href="/contact-us" className="lsp-cta-card">Get Started →</Link>
+                    <Link href="/contact-us/" className="lsp-cta-card">Get Started →</Link>
                   </div>
                 ))}
               </div>
@@ -949,7 +949,7 @@ export default function LocalSeoPackages() {
                     </div>
                     <div className="lsp-af-consent">
                       <input type="checkbox" id="lsp-consent" required/>
-                      <label htmlFor="lsp-consent">I consent that my personal data will be processed according to <Link href="/privacy-policy">1Solutions privacy policy</Link></label>
+                      <label htmlFor="lsp-consent">I consent that my personal data will be processed according to <Link href="/privacy-policy/">1Solutions privacy policy</Link></label>
                     </div>
                     {auditSt === 'validation' && (
                       <p style={{color:'#dc2626',fontSize:13,margin:0,textAlign:'center'}}>Please fill in all required fields and accept the privacy policy.</p>

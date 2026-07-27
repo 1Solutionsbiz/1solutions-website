@@ -123,8 +123,8 @@ export default function HireVrDeveloper() {
         eyebrow="Hire VR Developer · Unity, Unreal &amp; Meta Quest"
         title={<>Hire VR Developers <AuroraText>Unity, Unreal &amp; Meta Quest Specialists</AuroraText></>}
         subtext="Pre-vetted XR engineers who build immersive VR/AR experiences for Meta Quest, Apple Vision Pro, HTC Vive, and WebXR - with 90fps performance as standard. Profiles in 48 hours."
-        primaryCta={{ label: 'Hire a VR Developer', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Hire a VR Developer', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'VR/AR Developers', value: '28', suffix: '+' },
           { label: 'XR Projects Delivered', value: '95', suffix: '+' },
@@ -172,7 +172,7 @@ export default function HireVrDeveloper() {
         <div className="hvrd-wrap">
           <h2>Ready to Hire Your VR Developer?</h2>
           <p>Share your XR vision and receive matched VR developer profiles with demo links within 48 hours - no commitment required.</p>
-          <Link href="/contact-us" className="hvrd-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us/" className="hvrd-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

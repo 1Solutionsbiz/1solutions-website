@@ -130,8 +130,8 @@ export default function GooglePenaltyRecoveryServices() {
           eyebrow="Manual Actions · Algorithmic Penalties · Disavow"
           title={<>Google Penalty Recovery Services - Diagnose, Fix &amp; <AuroraText>Restore Lost Rankings</AuroraText></>}
           subtext="Expert Google penalty recovery for manual actions and algorithmic penalties - toxic backlink audits, disavow file preparation, Reconsideration Requests, and content quality remediation to restore your organic traffic."
-          primaryCta={{ label: 'Get an Emergency Penalty Audit', href: '/contact-us' }}
-          secondaryCta={{ label: 'SEO Audit Services', href: '/seo-audit-services' }}
+          primaryCta={{ label: 'Get an Emergency Penalty Audit', href: '/contact-us/' }}
+          secondaryCta={{ label: 'SEO Audit Services', href: '/seo-audit-services/' }}
           stats={[
             { label: 'Penalties Recovered', value: '200', suffix: '+' },
             { label: 'Avg Traffic Restored', value: '84', suffix: '%' },
@@ -166,8 +166,8 @@ export default function GooglePenaltyRecoveryServices() {
             <h2 className="gpr-cta-t">Get a Free Penalty Diagnosis</h2>
             <p className="gpr-cta-s">Share your domain and the date your traffic dropped - we&rsquo;ll diagnose the penalty type, identify the root cause, and outline a recovery plan within 48 hours.</p>
             <div className="gpr-btns">
-              <Link href="/contact-us" className="gpr-btn-p">Request a Free Penalty Diagnosis <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/seo-audit-services" className="gpr-btn-s">SEO Audit Services</Link>
+              <Link href="/contact-us/" className="gpr-btn-p">Request a Free Penalty Diagnosis <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/seo-audit-services/" className="gpr-btn-s">SEO Audit Services</Link>
             </div>
           </div>
         </section>

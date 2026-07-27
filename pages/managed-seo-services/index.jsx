@@ -134,8 +134,8 @@ export default function ManagedSeoServices() {
           eyebrow="Dedicated Manager · Monthly Retainer · No Lock-In"
           title={<>Managed SEO Services - <AuroraText>Dedicated SEO Partnership</AuroraText> That Grows Your Traffic</>}
           subtext="Monthly managed SEO with a dedicated account manager - technical maintenance, content, link building, and clear reporting. One retainer, everything covered, no chasing separate agencies."
-          primaryCta={{ label: 'Start Managed SEO', href: '/contact-us' }}
-          secondaryCta={{ label: 'SEO Audit First', href: '/seo-audit-services' }}
+          primaryCta={{ label: 'Start Managed SEO', href: '/contact-us/' }}
+          secondaryCta={{ label: 'SEO Audit First', href: '/seo-audit-services/' }}
           stats={[
             { label: 'Managed SEO Clients', value: '300', suffix: '+' },
             { label: 'Years Experience', value: '15', suffix: '+' },
@@ -173,8 +173,8 @@ export default function ManagedSeoServices() {
             <h2 className="mnseo-cta-t">Start Your Managed SEO Partnership</h2>
             <p className="mnseo-cta-s">Free strategy call - we&rsquo;ll review your current SEO, assess your competition, and recommend the right retainer level for your goals.</p>
             <div className="mnseo-cta-btns">
-              <Link href="/contact-us" className="mnseo-btn-p">Book a Strategy Call <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/seo-services-company" className="mnseo-btn-s">SEO Services Overview</Link>
+              <Link href="/contact-us/" className="mnseo-btn-p">Book a Strategy Call <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/seo-services-company/" className="mnseo-btn-s">SEO Services Overview</Link>
             </div>
           </div>
         </section>

@@ -416,8 +416,8 @@ export default function CorporateResponsibility() {
           <h2>Partner with Us for Good</h2>
           <p>If you're an NGO, educational institution, or community organisation looking for digital support, we'd love to hear from you.</p>
           <div className="csr-cta-btns">
-            <Link href="/partner-with-us" className="csr-btn-primary">Explore Partnerships</Link>
-            <Link href="/contact-us" className="csr-btn-outline">Get in Touch</Link>
+            <Link href="/partner-with-us/" className="csr-btn-primary">Explore Partnerships</Link>
+            <Link href="/contact-us/" className="csr-btn-outline">Get in Touch</Link>
           </div>
         </div>
 

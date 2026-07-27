@@ -102,34 +102,34 @@ const ROLE_HOVER = [
 ]
 
 const RESOURCE_TYPES = [
-  { iconKey: 'frontend',  title: 'Frontend Developers',       href: '/hire-reactjs-developer',        desc: 'React.js, Next.js, Angular, Vue.js, TypeScript specialists who build pixel-perfect, performant UIs.',                                            tags: ['React', 'Next.js', 'Angular', 'Vue.js'] },
-  { iconKey: 'backend',   title: 'Backend Developers',        href: '/hire-nodejs-developer',         desc: 'Node.js, Python, PHP, .NET, and Java engineers for APIs, microservices, and server-side systems.',                                              tags: ['Node.js', 'Python', 'PHP', '.NET'] },
-  { iconKey: 'mobile',    title: 'Mobile App Developers',     href: '/hire-flutter-developer',        desc: 'iOS, Android, Flutter, and React Native experts for cross-platform and native mobile applications.',                                             tags: ['Flutter', 'React Native', 'iOS', 'Android'] },
-  { iconKey: 'ecommerce', title: 'eCommerce Developers',      href: '/hire-shopify-developer',        desc: 'Shopify, WooCommerce, Magento, and BigCommerce developers to build and scale your online store.',                                               tags: ['Shopify', 'WooCommerce', 'Magento'] },
-  { iconKey: 'ai',        title: 'AI / ML Engineers',         href: '/hire-ml-developer',             desc: 'Python-based AI, LLM integration, NLP, computer vision, and predictive analytics specialists.',                                                 tags: ['Python', 'TensorFlow', 'LLMs', 'NLP'] },
-  { iconKey: 'cloud',     title: 'Cloud & DevOps Engineers',  href: '/devops-services-company',       desc: 'AWS, Azure, GCP, Kubernetes, and CI/CD experts to modernise and automate your infrastructure.',                                                 tags: ['AWS', 'Azure', 'Docker', 'Kubernetes'] },
-  { iconKey: 'design',    title: 'UI/UX Designers',           href: '/hire-dedicated-ui-ux-designer', desc: 'Figma-first product designers who deliver wireframes, prototypes, and design systems aligned with your brand.',                                  tags: ['Figma', 'Prototyping', 'Design Systems'] },
-  { iconKey: 'marketing', title: 'Digital Marketing Experts', href: '/digital-marketing-services',    desc: 'SEO strategists, PPC managers, content writers, and social media specialists to grow your visibility and ROI.',                                   tags: ['SEO', 'Google Ads', 'Meta Ads', 'Content'] },
-  { iconKey: 'qa',        title: 'QA Engineers',              href: '/contact-us',                    desc: 'Manual and automation QA testers using Selenium, Playwright, and Cypress for thorough quality assurance.',                                       tags: ['Playwright', 'Cypress', 'Selenium'] },
+  { iconKey: 'frontend',  title: 'Frontend Developers',       href: '/hire-reactjs-developer/',        desc: 'React.js, Next.js, Angular, Vue.js, TypeScript specialists who build pixel-perfect, performant UIs.',                                            tags: ['React', 'Next.js', 'Angular', 'Vue.js'] },
+  { iconKey: 'backend',   title: 'Backend Developers',        href: '/hire-nodejs-developer/',         desc: 'Node.js, Python, PHP, .NET, and Java engineers for APIs, microservices, and server-side systems.',                                              tags: ['Node.js', 'Python', 'PHP', '.NET'] },
+  { iconKey: 'mobile',    title: 'Mobile App Developers',     href: '/hire-flutter-developer/',        desc: 'iOS, Android, Flutter, and React Native experts for cross-platform and native mobile applications.',                                             tags: ['Flutter', 'React Native', 'iOS', 'Android'] },
+  { iconKey: 'ecommerce', title: 'eCommerce Developers',      href: '/hire-shopify-developer/',        desc: 'Shopify, WooCommerce, Magento, and BigCommerce developers to build and scale your online store.',                                               tags: ['Shopify', 'WooCommerce', 'Magento'] },
+  { iconKey: 'ai',        title: 'AI / ML Engineers',         href: '/hire-ml-developer/',             desc: 'Python-based AI, LLM integration, NLP, computer vision, and predictive analytics specialists.',                                                 tags: ['Python', 'TensorFlow', 'LLMs', 'NLP'] },
+  { iconKey: 'cloud',     title: 'Cloud & DevOps Engineers',  href: '/devops-services-company/',       desc: 'AWS, Azure, GCP, Kubernetes, and CI/CD experts to modernise and automate your infrastructure.',                                                 tags: ['AWS', 'Azure', 'Docker', 'Kubernetes'] },
+  { iconKey: 'design',    title: 'UI/UX Designers',           href: '/hire-dedicated-ui-ux-designer/', desc: 'Figma-first product designers who deliver wireframes, prototypes, and design systems aligned with your brand.',                                  tags: ['Figma', 'Prototyping', 'Design Systems'] },
+  { iconKey: 'marketing', title: 'Digital Marketing Experts', href: '/digital-marketing-services/',    desc: 'SEO strategists, PPC managers, content writers, and social media specialists to grow your visibility and ROI.',                                   tags: ['SEO', 'Google Ads', 'Meta Ads', 'Content'] },
+  { iconKey: 'qa',        title: 'QA Engineers',              href: '/contact-us/',                    desc: 'Manual and automation QA testers using Selenium, Playwright, and Cypress for thorough quality assurance.',                                       tags: ['Playwright', 'Cypress', 'Selenium'] },
 ]
 
 const POPULAR_ROLES = [
-  { label: 'Hire React.js Developer',    href: '/hire-reactjs-developer' },
-  { label: 'Hire Node.js Developer',     href: '/hire-nodejs-developer' },
-  { label: 'Hire Flutter Developer',     href: '/hire-flutter-developer' },
-  { label: 'Hire Python Developer',      href: '/hire-python-developer' },
-  { label: 'Hire Shopify Developer',     href: '/hire-shopify-developer' },
+  { label: 'Hire React.js Developer',    href: '/hire-reactjs-developer/' },
+  { label: 'Hire Node.js Developer',     href: '/hire-nodejs-developer/' },
+  { label: 'Hire Flutter Developer',     href: '/hire-flutter-developer/' },
+  { label: 'Hire Python Developer',      href: '/hire-python-developer/' },
+  { label: 'Hire Shopify Developer',     href: '/hire-shopify-developer/' },
   { label: 'Hire UI/UX Designer',        href: '/hire-ui-ux-designer' },
-  { label: 'Hire WordPress Developer',   href: '/hire-wordpress-developer' },
-  { label: 'Hire Full-Stack Developer',  href: '/hire-full-stack-developer' },
-  { label: 'Hire Android Developer',     href: '/hire-android-developer' },
-  { label: 'Hire iOS Developer',         href: '/hire-ios-developer' },
-  { label: 'Hire React Native Developer',href: '/hire-react-native-developer' },
-  { label: 'Hire Data Scientist',        href: '/hire-data-scientist' },
-  { label: 'Hire Magento Developer',     href: '/hire-magento-developer' },
-  { label: 'Hire Blockchain Developer',  href: '/hire-blockchain-developer' },
-  { label: 'Hire Angular Developer',     href: '/hire-angularjs-developer' },
-  { label: 'Hire PHP Developer',         href: '/hire-php-developer' },
+  { label: 'Hire WordPress Developer',   href: '/hire-wordpress-developer/' },
+  { label: 'Hire Full-Stack Developer',  href: '/hire-full-stack-developer/' },
+  { label: 'Hire Android Developer',     href: '/hire-android-developer/' },
+  { label: 'Hire iOS Developer',         href: '/hire-ios-developer/' },
+  { label: 'Hire React Native Developer',href: '/hire-react-native-developer/' },
+  { label: 'Hire Data Scientist',        href: '/hire-data-scientist/' },
+  { label: 'Hire Magento Developer',     href: '/hire-magento-developer/' },
+  { label: 'Hire Blockchain Developer',  href: '/hire-blockchain-developer/' },
+  { label: 'Hire Angular Developer',     href: '/hire-angularjs-developer/' },
+  { label: 'Hire PHP Developer',         href: '/hire-php-developer/' },
 ]
 
 const MODELS = [
@@ -326,8 +326,8 @@ export default function HireDedicatedResources() {
         eyebrow="Hire Dedicated Resources · NDA & IP Protected"
         title={<>Hire Dedicated Resources <AuroraText>Developers, Designers &amp; Digital Experts</AuroraText></>}
         subtext="Scale your team with pre-vetted full-time, part-time, or hourly professionals from 1Solutions. Onboard in 7 days. No lock-in contracts."
-        primaryCta={{ label: 'Hire a Resource Now', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Our Work', href: '/portfolio' }}
+        primaryCta={{ label: 'Hire a Resource Now', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Our Work', href: '/portfolio/' }}
         stats={[
           { label: 'Vetted Professionals', value: '150', suffix: '+' },
           { label: 'Profile Turnaround', value: '48', suffix: 'hr' },
@@ -487,8 +487,8 @@ export default function HireDedicatedResources() {
           <h2>Ready to Hire Your Dedicated Team?</h2>
           <p>Share your requirements and receive matched professional profiles within 48 hours - no commitment required to start the conversation.</p>
           <div className="hdr-cta-btns">
-            <Link href="/contact-us" className="hdr-btn-amber">Get Matched Profiles →</Link>
-            <Link href="/who-we-are" className="hdr-btn-white">About 1Solutions</Link>
+            <Link href="/contact-us/" className="hdr-btn-amber">Get Matched Profiles →</Link>
+            <Link href="/who-we-are/" className="hdr-btn-white">About 1Solutions</Link>
           </div>
         </div>
       </section>

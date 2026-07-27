@@ -134,8 +134,8 @@ export default function AppStoreOptimizationServices() {
           eyebrow="iOS App Store · Google Play · A/B Testing"
           title={<>App Store Optimisation Services That <AuroraText>Grow Organic Installs</AuroraText></>}
           subtext="Keyword research, metadata optimisation, screenshot strategy, rating management, and A/B testing for iOS and Android - ASO that converts more store visitors into installs."
-          primaryCta={{ label: 'Get a Free ASO Audit', href: '/contact-us' }}
-          secondaryCta={{ label: 'App Development', href: '/react-native-app-development' }}
+          primaryCta={{ label: 'Get a Free ASO Audit', href: '/contact-us/' }}
+          secondaryCta={{ label: 'App Development', href: '/react-native-app-development/' }}
           stats={[
             { label: 'Apps Optimised', value: '300', suffix: '+' },
             { label: 'Avg Organic Install Lift', value: '180', prefix: '+', suffix: '%' },
@@ -173,8 +173,8 @@ export default function AppStoreOptimizationServices() {
             <h2 className="aso-cta-t">Get Your Free ASO Audit</h2>
             <p className="aso-cta-s">We&rsquo;ll review your app&rsquo;s keyword rankings, metadata quality, visual assets, and competitor position - and send you a prioritised action plan free.</p>
             <div className="aso-cta-btns">
-              <Link href="/contact-us" className="aso-btn-p">Get Free ASO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/react-native-app-development" className="aso-btn-s">React Native App Development</Link>
+              <Link href="/contact-us/" className="aso-btn-p">Get Free ASO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/react-native-app-development/" className="aso-btn-s">React Native App Development</Link>
             </div>
           </div>
         </section>

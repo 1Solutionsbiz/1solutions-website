@@ -124,8 +124,8 @@ export default function HirePWADeveloper() {
         eyebrow="Hire PWA Developer · Progressive Web App Experts"
         title={<>Hire PWA Developers <AuroraText>App-Like Experiences on the Web</AuroraText></>}
         subtext="Pre-vetted Progressive Web App specialists - offline-first architecture, Web Push, home screen install, and Lighthouse 100 targets. Profiles in 48 hours."
-        primaryCta={{ label: 'Hire a PWA Developer', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Hire a PWA Developer', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'PWA Developers', value: '30', suffix: '+' },
           { label: 'PWAs Delivered', value: '110', suffix: '+' },
@@ -210,7 +210,7 @@ export default function HirePWADeveloper() {
         <div className="hpwa-wrap">
           <h2>Ready to Hire Your PWA Developer?</h2>
           <p>Share your requirements and receive matched PWA specialist profiles within 48 hours - no commitment required.</p>
-          <Link href="/contact-us" className="hpwa-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us/" className="hpwa-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

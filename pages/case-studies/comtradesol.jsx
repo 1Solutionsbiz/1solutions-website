@@ -411,7 +411,7 @@ export default function ComtradesolCaseStudy() {
         <nav className="csc-breadcrumb" aria-label="Breadcrumb">
           <Link href="/">Home</Link>
           <span>›</span>
-          <Link href="/case-studies">Case Studies</Link>
+          <Link href="/case-studies/">Case Studies</Link>
           <span>›</span>
           <span style={{ color: '#fff' }}>Comtradesol</span>
         </nav>
@@ -604,16 +604,16 @@ export default function ComtradesolCaseStudy() {
 
           <div className="csc-sidebar-card">
             <h3>Need a Similar Website?</h3>
-            <Link href="/contact-us" className="csc-sidebar-link" style={{ marginBottom: '10px' }}>
+            <Link href="/contact-us/" className="csc-sidebar-link" style={{ marginBottom: '10px' }}>
               Start Your Project
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </Link>
-            <Link href="/wordpress-development-company" className="csc-sidebar-link secondary">
+            <Link href="/wordpress-development-company/" className="csc-sidebar-link secondary">
               WordPress Services
             </Link>
           </div>
 
-          <Link href="/case-studies" className="csc-next-case">
+          <Link href="/case-studies/" className="csc-next-case">
             <div className="csc-next-label">← Back to</div>
             <div className="csc-next-title">All Case Studies</div>
             <div className="csc-next-arrow">→</div>
@@ -631,11 +631,11 @@ export default function ComtradesolCaseStudy() {
           We've helped financial firms, startups, and enterprises across India build digital presences that drive real business outcomes.
         </p>
         <div className="csc-cta-btns">
-          <Link href="/contact-us" className="csc-cta-primary">
+          <Link href="/contact-us/" className="csc-cta-primary">
             Start Your Project
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </Link>
-          <Link href="/case-studies" className="csc-cta-secondary">
+          <Link href="/case-studies/" className="csc-cta-secondary">
             More Case Studies
           </Link>
         </div>

@@ -131,8 +131,8 @@ export default function AffiliateMarketingServices() {
         eyebrow="Affiliate Marketing Services"
         title={<>Affiliate Marketing Services - Build a <AuroraText>Performance-Based Revenue Channel</AuroraText></>}
         subtext="We set up and manage affiliate programs that drive sales on pure performance - you only pay for results. From programme architecture and affiliate recruitment to compliance and payout management, we run every part of your affiliate channel."
-        primaryCta={{ label: 'Get a Free Affiliate Audit →', href: '/contact-us' }}
-        secondaryCta={{ label: 'Learn More', href: '/contact-us' }}
+        primaryCta={{ label: 'Get a Free Affiliate Audit →', href: '/contact-us/' }}
+        secondaryCta={{ label: 'Learn More', href: '/contact-us/' }}
         stats={[
           { label: 'Affiliate Programs Managed', value: '50', suffix: '+' },
           { label: 'Years Experience', value: '15', suffix: '+' },
@@ -179,7 +179,7 @@ export default function AffiliateMarketingServices() {
         <div className="aff-wrap">
           <h2>Ready to Build Your Affiliate Channel?</h2>
           <p>Get a free affiliate program audit - we'll review your current setup (or design one from scratch) and deliver a launch plan within 48 hours.</p>
-          <Link href="/contact-us" className="aff-btn-primary">Get a Free Affiliate Audit →</Link>
+          <Link href="/contact-us/" className="aff-btn-primary">Get a Free Affiliate Audit →</Link>
         </div>
       </section>
     </>

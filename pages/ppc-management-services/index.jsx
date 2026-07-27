@@ -137,8 +137,8 @@ export default function PpcManagementServices() {
         eyebrow="Google Partner - Search · Display · Shopping · YouTube"
         title={<>Google Ads Management That <AuroraText>Turns Budget Into Revenue</AuroraText></>}
         subtext="1Solutions manages Google Ads campaigns that drive qualified leads and sales - not just clicks. Search, Shopping, Display, YouTube, and Performance Max, all optimised weekly for your CPA and ROAS targets."
-        primaryCta={{ label: 'Get a Free PPC Audit', href: '/contact-us' }}
-        secondaryCta={{ label: 'Discuss Your Campaigns', href: '/contact-us' }}
+        primaryCta={{ label: 'Get a Free PPC Audit', href: '/contact-us/' }}
+        secondaryCta={{ label: 'Discuss Your Campaigns', href: '/contact-us/' }}
         stats={[
           { label: 'PPC Clients', value: '400', suffix: '+' },
           { label: 'Years Experience', value: '15', suffix: '+' },
@@ -179,8 +179,8 @@ export default function PpcManagementServices() {
         <h2 className="gppc-cth">Get a Free Google Ads Audit</h2>
         <p className="gppc-ctp">We will review your campaigns, identify wasted spend, and share a clear plan for improving ROAS and reducing CPA - completely free.</p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
-          <Link href="/contact-us" className="gppc-bp">Request Free PPC Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-          <Link href="/contact-us" className="gppc-bs">Talk to a PPC Specialist</Link>
+          <Link href="/contact-us/" className="gppc-bp">Request Free PPC Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+          <Link href="/contact-us/" className="gppc-bs">Talk to a PPC Specialist</Link>
         </div>
       </div></section>
     </>

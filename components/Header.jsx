@@ -9,13 +9,13 @@ const SERVICES_MENU = [
       {
         title: 'Platform Development',
         links: [
-          { label: 'B2B eCommerce', href: '/b2b-ecommerce' },
+          { label: 'B2B eCommerce', href: '/b2b-ecommerce/' },
         ],
       },
       {
         title: 'Ecommerce Marketing',
         links: [
-          { label: 'Influencer Marketing', href: '/influencer-marketing-services' },
+          { label: 'Influencer Marketing', href: '/influencer-marketing-services/' },
         ],
       },
     ],
@@ -26,8 +26,8 @@ const SERVICES_MENU = [
       {
         title: null,
         links: [
-          { label: 'WordPress Development', href: '/wordpress-development-company' },
-          { label: 'PHP Development', href: '/php-development-services' },
+          { label: 'WordPress Development', href: '/wordpress-development-company/' },
+          { label: 'PHP Development', href: '/php-development-services/' },
         ],
       },
     ],
@@ -38,9 +38,9 @@ const SERVICES_MENU = [
       {
         title: null,
         links: [
-          { label: 'React Native / Cross-Platform', href: '/react-native-app-development' },
-          { label: 'App UI/UX Design', href: '/app-ui-ux-design' },
-          { label: 'App Maintenance', href: '/app-maintenance-services' },
+          { label: 'React Native / Cross-Platform', href: '/react-native-app-development/' },
+          { label: 'App UI/UX Design', href: '/app-ui-ux-design/' },
+          { label: 'App Maintenance', href: '/app-maintenance-services/' },
         ],
       },
     ],
@@ -70,10 +70,10 @@ const SERVICES_MENU = [
       {
         title: 'SEO Services',
         links: [
-          { label: 'SEO Services', href: '/seo-services-company' },
+          { label: 'SEO Services', href: '/seo-services-company/' },
           { label: 'SEO Audit', href: '/seo-audit-services/' },
-          { label: 'Link Building Services', href: '/link-building-services' },
-          { label: 'Link Building Packages', href: '/link-building-packages' },
+          { label: 'Link Building Services', href: '/link-building-services/' },
+          { label: 'Link Building Packages', href: '/link-building-packages/' },
           { label: 'eCommerce SEO Packages', href: '/ecommerce-seo-packages/' },
           { label: 'Plumbing SEO Services', href: '/plumbing-seo-services/' },
         ],
@@ -91,8 +91,8 @@ const SERVICES_MENU = [
         links: [
           { label: 'Performance Marketing', href: '/performance-marketing-agency/' },
           { label: 'Conversion Rate Optimisation', href: '/conversion-rate-optimization-services/' },
-          { label: 'PPC Management', href: '/ppc-management-services' },
-          { label: 'eCommerce Marketing', href: '/ecommerce-marketing-services' },
+          { label: 'PPC Management', href: '/ppc-management-services/' },
+          { label: 'eCommerce Marketing', href: '/ecommerce-marketing-services/' },
         ],
       },
     ],

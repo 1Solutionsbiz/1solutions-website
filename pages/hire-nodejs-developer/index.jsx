@@ -124,8 +124,8 @@ export default function HireNodeJSDeveloper() {
         eyebrow="Hire Node.js Developer · Express &amp; NestJS Experts"
         title={<>Hire Node.js Developers <AuroraText>Scalable Backends, Built Right</AuroraText></>}
         subtext="Pre-vetted Express and NestJS engineers for high-throughput APIs, microservices, real-time systems, and serverless architectures. Profiles in 48 hours."
-        primaryCta={{ label: 'Hire a Node.js Developer', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Hire a Node.js Developer', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'Node.js Developers', value: '65', suffix: '+' },
           { label: 'APIs & Services Built', value: '280', suffix: '+' },
@@ -210,7 +210,7 @@ export default function HireNodeJSDeveloper() {
         <div className="hnjs-wrap">
           <h2>Ready to Hire Your Node.js Developer?</h2>
           <p>Share your API requirements and receive matched Node.js specialist profiles within 48 hours - no commitment required.</p>
-          <Link href="/contact-us" className="hnjs-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us/" className="hnjs-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

@@ -162,8 +162,8 @@ export default function EnterpriseSeoServices() {
           eyebrow="Large-Scale SEO · Global Delivery"
           title={<>Enterprise SEO Services for <AuroraText>Complex, Large-Scale Websites</AuroraText></>}
           subtext="Technical SEO at scale, international SEO, JavaScript framework audits, crawl budget optimisation, and C-suite reporting - built for sites with 100K to 10M+ pages."
-          primaryCta={{ label: 'Request Enterprise SEO Proposal', href: '/contact-us' }}
-          secondaryCta={{ label: 'Get an Enterprise SEO Audit', href: '/seo-audit-services' }}
+          primaryCta={{ label: 'Request Enterprise SEO Proposal', href: '/contact-us/' }}
+          secondaryCta={{ label: 'Get an Enterprise SEO Audit', href: '/seo-audit-services/' }}
           stats={[
             { label: 'Enterprise Clients', value: '200', suffix: '+' },
             { label: 'Years Experience', value: '15', suffix: '+' },
@@ -230,8 +230,8 @@ export default function EnterpriseSeoServices() {
             <h2 className="eseo-cta-t">Request Your Enterprise SEO Proposal</h2>
             <p className="eseo-cta-s">Tell us your site scale, platforms, and growth objectives - we&rsquo;ll build a scoped proposal with clear deliverables and fixed monthly pricing.</p>
             <div className="eseo-cta-btns">
-              <Link href="/contact-us" className="eseo-btn-p">Request Enterprise SEO Proposal <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/seo-audit-services" className="eseo-btn-s">Start with an SEO Audit</Link>
+              <Link href="/contact-us/" className="eseo-btn-p">Request Enterprise SEO Proposal <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/seo-audit-services/" className="eseo-btn-s">Start with an SEO Audit</Link>
             </div>
           </div>
         </section>

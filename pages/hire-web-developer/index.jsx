@@ -124,8 +124,8 @@ export default function HireWebDeveloper() {
         eyebrow="Hire Web Developer · Full-Stack React, Node.js &amp; PHP"
         title={<>Hire Web Developers <AuroraText>Full-Stack React, Node.js &amp; PHP Experts</AuroraText></>}
         subtext="Pre-vetted web developers who build scalable, secure, and high-performance web applications - from solo developers to full squads. Profiles in 48 hours."
-        primaryCta={{ label: 'Hire a Web Developer', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Hire a Web Developer', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'Web Developers', value: '120', suffix: '+' },
           { label: 'Web Projects Delivered', value: '550', suffix: '+' },
@@ -173,7 +173,7 @@ export default function HireWebDeveloper() {
         <div className="hwdev-wrap">
           <h2>Ready to Hire Your Web Developer?</h2>
           <p>Share your project requirements and receive matched web developer profiles within 48 hours - no commitment required.</p>
-          <Link href="/contact-us" className="hwdev-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us/" className="hwdev-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

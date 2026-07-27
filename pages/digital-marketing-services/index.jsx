@@ -5,14 +5,14 @@ import { AuroraText } from '../../components/AuroraText';
 import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
-  { n: '01', title: 'Search Engine Optimisation (SEO)', desc: 'Organic search rankings that drive qualified traffic without per-click cost - technical SEO, on-page optimisation, content strategy, link building, and local SEO - the long-term organic growth engine for your business.', href: '/seo-services-company' },
+  { n: '01', title: 'Search Engine Optimisation (SEO)', desc: 'Organic search rankings that drive qualified traffic without per-click cost - technical SEO, on-page optimisation, content strategy, link building, and local SEO - the long-term organic growth engine for your business.', href: '/seo-services-company/' },
   { n: '02', title: 'Pay-Per-Click Advertising (PPC)', desc: 'Google Ads and Bing Ads campaigns for immediate visibility on high-intent search queries - keyword strategy, ad copywriting, bid management, landing page optimisation, and conversion tracking for measurable, scalable paid growth.', href: '/contact' },
-  { n: '03', title: 'Social Media Marketing', desc: 'Facebook, Instagram, LinkedIn, and YouTube management - organic content strategy, paid social advertising, community management, and audience growth campaigns that build brand presence and generate leads from social platforms.', href: '/facebook-management-services' },
-  { n: '04', title: 'Content Marketing', desc: 'SEO-optimised blog content, pillar pages, case studies, white papers, and email newsletters - building topical authority, attracting organic traffic, and nurturing prospects through the buying journey with valuable content.', href: '/content-copywriting-services' },
+  { n: '03', title: 'Social Media Marketing', desc: 'Facebook, Instagram, LinkedIn, and YouTube management - organic content strategy, paid social advertising, community management, and audience growth campaigns that build brand presence and generate leads from social platforms.', href: '/facebook-management-services/' },
+  { n: '04', title: 'Content Marketing', desc: 'SEO-optimised blog content, pillar pages, case studies, white papers, and email newsletters - building topical authority, attracting organic traffic, and nurturing prospects through the buying journey with valuable content.', href: '/content-copywriting-services/' },
   { n: '05', title: 'Email Marketing', desc: 'Lead nurturing sequences, promotional campaigns, abandoned cart recovery, and customer retention emails - segmented, personalised email marketing that generates revenue from your existing subscriber list.', href: '/contact' },
-  { n: '06', title: 'Ecommerce Marketing', desc: 'Full-funnel ecommerce marketing - Google Shopping, Meta Shopping, email and SMS, SEO, and CRO - for Shopify, WooCommerce, Magento, and BigCommerce stores. Revenue growth across every touchpoint of the customer journey.', href: '/ecommerce-marketing-services' },
-  { n: '07', title: 'Amazon Marketing', desc: 'Amazon SEO, Sponsored Products, Sponsored Brands, A+ Content, and Brand Store design - everything needed to rank higher in Amazon search, win the Buy Box, and convert browsers into buyers on the world\'s largest product marketplace.', href: '/amazon-seo-services' },
-  { n: '08', title: 'Reputation Management', desc: 'Monitoring, managing, and improving your online reputation - Google review management, negative content suppression, brand monitoring, and proactive review generation strategies that protect and strengthen your brand perception.', href: '/reputation-management-services' },
+  { n: '06', title: 'Ecommerce Marketing', desc: 'Full-funnel ecommerce marketing - Google Shopping, Meta Shopping, email and SMS, SEO, and CRO - for Shopify, WooCommerce, Magento, and BigCommerce stores. Revenue growth across every touchpoint of the customer journey.', href: '/ecommerce-marketing-services/' },
+  { n: '07', title: 'Amazon Marketing', desc: 'Amazon SEO, Sponsored Products, Sponsored Brands, A+ Content, and Brand Store design - everything needed to rank higher in Amazon search, win the Buy Box, and convert browsers into buyers on the world\'s largest product marketplace.', href: '/amazon-seo-services/' },
+  { n: '08', title: 'Reputation Management', desc: 'Monitoring, managing, and improving your online reputation - Google review management, negative content suppression, brand monitoring, and proactive review generation strategies that protect and strengthen your brand perception.', href: '/reputation-management-services/' },
 ];
 
 const INDUSTRIES = ['Ecommerce & Retail', 'SaaS & Technology', 'Healthcare & Medical', 'Legal & Professional Services', 'Real Estate', 'Home Services (HVAC, Plumbing, Lawn Care)', 'Hospitality & Travel', 'Education & Training', 'Finance & Insurance', 'Manufacturing & B2B'];
@@ -131,8 +131,8 @@ export default function DigitalMarketingServices() {
           eyebrow="SEO · PPC · Social · Content · Email · Ecommerce"
           title={<>Digital Marketing Services - <AuroraText>Measurable Growth</AuroraText> Across Every Channel</>}
           subtext="A full-service digital marketing agency with 15+ years of experience - SEO, Google Ads, social media marketing, content, email, ecommerce, and Amazon marketing across 600+ clients in 40+ industries."
-          primaryCta={{ label: 'Get a Free Digital Marketing Audit', href: '/contact-us' }}
-          secondaryCta={{ label: 'Try SEO Free for 45 Days', href: '/free-45-day-seo-trial' }}
+          primaryCta={{ label: 'Get a Free Digital Marketing Audit', href: '/contact-us/' }}
+          secondaryCta={{ label: 'Try SEO Free for 45 Days', href: '/free-45-day-seo-trial/' }}
           stats={[
             { label: 'Clients Served', value: '600', suffix: '+' },
             { label: 'Industries Covered', value: '40', suffix: '+' },
@@ -166,8 +166,8 @@ export default function DigitalMarketingServices() {
             <h2 className="dmhub-cta-t">Ready to Grow Through Digital Marketing?</h2>
             <p className="dmhub-cta-s">Tell us your goals, your budget, and your timeline - we&rsquo;ll recommend the right digital marketing mix and show you exactly what we would do.</p>
             <div className="dmhub-btns">
-              <Link href="/contact-us" className="dmhub-btn-p">Get a Free Digital Marketing Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/free-45-day-seo-trial" className="dmhub-btn-s">Try SEO Free - 45 Days</Link>
+              <Link href="/contact-us/" className="dmhub-btn-p">Get a Free Digital Marketing Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/free-45-day-seo-trial/" className="dmhub-btn-s">Try SEO Free - 45 Days</Link>
             </div>
           </div>
         </section>

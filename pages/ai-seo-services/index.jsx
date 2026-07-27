@@ -323,7 +323,7 @@ export default function AiSeoServices() {
           title={<>AI SEO Services — <AuroraText>Smarter SEO, Faster Results</AuroraText></>}
           subtext="Machine learning keyword research, NLP content optimisation, AI-driven technical audits, and predictive rank forecasting — the full power of artificial intelligence applied to search engine optimisation."
           primaryCta={{ label: 'Get a Free AI SEO Audit', href: '#aiseo-contact' }}
-          secondaryCta={{ label: 'All SEO Services', href: '/seo-services-company' }}
+          secondaryCta={{ label: 'All SEO Services', href: '/seo-services-company/' }}
           stats={[
             { label: 'Sites Audited with AI', value: '500', suffix: '+' },
             { label: 'Avg Organic Traffic Growth', value: '74', prefix: '+', suffix: '%' },

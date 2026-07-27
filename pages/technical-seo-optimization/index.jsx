@@ -129,8 +129,8 @@ export default function TechnicalSeoOptimization() {
           eyebrow="Core Web Vitals · Crawl · JS SEO"
           title={<>Technical SEO Optimisation That <AuroraText>Fixes What Blocks Your Rankings</AuroraText></>}
           subtext="Engineering-level technical SEO - crawl budget analysis, Core Web Vitals fixes, JavaScript rendering, structured data, and site architecture - the foundation every high-performing SEO strategy is built on."
-          primaryCta={{ label: 'Get a Technical SEO Audit', href: '/contact-us' }}
-          secondaryCta={{ label: 'Full SEO Audit', href: '/seo-audit-services' }}
+          primaryCta={{ label: 'Get a Technical SEO Audit', href: '/contact-us/' }}
+          secondaryCta={{ label: 'Full SEO Audit', href: '/seo-audit-services/' }}
           stats={[
             { label: 'Technical Audits Completed', value: '600', suffix: '+' },
             { label: 'Years Experience', value: '15', suffix: '+' },
@@ -168,8 +168,8 @@ export default function TechnicalSeoOptimization() {
             <h2 className="tseo-cta-t">Get Your Technical SEO Audit</h2>
             <p className="tseo-cta-s">150-point technical audit - crawl health, Core Web Vitals, JS rendering, structured data, and architecture - with a prioritised, developer-ready action plan.</p>
             <div className="tseo-cta-btns">
-              <Link href="/contact-us" className="tseo-btn-p">Get Technical SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/seo-services-company" className="tseo-btn-s">SEO Services Overview</Link>
+              <Link href="/contact-us/" className="tseo-btn-p">Get Technical SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/seo-services-company/" className="tseo-btn-s">SEO Services Overview</Link>
             </div>
           </div>
         </section>

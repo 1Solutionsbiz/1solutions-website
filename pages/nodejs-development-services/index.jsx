@@ -120,8 +120,8 @@ export default function NodeJsDevelopmentServices() {
         eyebrow="Node.js Development Services"
         title={<>Node.js Development - <AuroraText>Scalable APIs, Real-Time Apps & Microservices</AuroraText></>}
         subtext="We build high-performance Node.js backends, REST and GraphQL APIs, real-time applications, and microservices architectures - deployed on AWS, GCP, or Azure. 15+ years of server-side expertise trusted by startups and enterprises across the US, Canada, and Australia."
-        primaryCta={{ label: 'Get a Free Node.js Consultation', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Get a Free Node.js Consultation', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'Node.js APIs Built', value: '80', suffix: '+' },
           { label: 'Microservices Deployed', value: '500', suffix: '+' },
@@ -168,7 +168,7 @@ export default function NodeJsDevelopmentServices() {
         <div className="njs-wrap">
           <h2>Ready to Build a High-Performance Node.js Backend?</h2>
           <p>Share your API requirements and we'll deliver an architecture proposal and fixed-price quote within 48 hours.</p>
-          <Link href="/contact-us" className="njs-btn-primary">Get a Free Node.js Consultation →</Link>
+          <Link href="/contact-us/" className="njs-btn-primary">Get a Free Node.js Consultation →</Link>
         </div>
       </section>
     </>

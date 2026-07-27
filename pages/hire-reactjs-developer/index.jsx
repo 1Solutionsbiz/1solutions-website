@@ -123,8 +123,8 @@ export default function HireReactJSDeveloper() {
         eyebrow="Hire React.js Developer · React 18 &amp; Next.js Experts"
         title={<>Hire React.js Developers <AuroraText>React 18, Next.js &amp; TypeScript Experts</AuroraText></>}
         subtext="Pre-vetted React engineers who build fast, accessible, and maintainable frontends - Server Components, streaming SSR, and green Core Web Vitals as standard. Profiles in 48 hours."
-        primaryCta={{ label: 'Hire a React.js Developer', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Hire a React.js Developer', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'React Developers', value: '70', suffix: '+' },
           { label: 'React Projects Delivered', value: '310', suffix: '+' },
@@ -172,7 +172,7 @@ export default function HireReactJSDeveloper() {
         <div className="hrjs-wrap">
           <h2>Ready to Hire Your React.js Developer?</h2>
           <p>Share your requirements and receive matched React specialist profiles within 48 hours - no commitment required.</p>
-          <Link href="/contact-us" className="hrjs-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us/" className="hrjs-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

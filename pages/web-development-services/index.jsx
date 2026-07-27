@@ -126,8 +126,8 @@ export default function WebDevelopmentServices() {
         eyebrow="Web Development Services · 15+ Years Experience"
         title={<>Web Development Services - <AuroraText>Custom Websites, Web Apps & E-Commerce</AuroraText></>}
         subtext="We design and build custom websites, web applications, e-commerce stores, and SaaS platforms that perform under real-world traffic and convert visitors into customers. 15+ years, 1,200+ projects delivered for businesses across the US, Canada, and Australia."
-        primaryCta={{ label: 'Get a Free Web Development Quote', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Get a Free Web Development Quote', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'Projects Delivered', value: '1,200', suffix: '+' },
           { label: 'Years Experience', value: '15', suffix: '+' },
@@ -174,7 +174,7 @@ export default function WebDevelopmentServices() {
         <div className="wds-wrap">
           <h2>Ready to Build Your Website or Web Application?</h2>
           <p>Tell us about your project and we'll deliver a detailed proposal with timeline and fixed price within 48 hours - no commitment required.</p>
-          <Link href="/contact-us" className="wds-btn-primary">Get a Free Web Development Quote →</Link>
+          <Link href="/contact-us/" className="wds-btn-primary">Get a Free Web Development Quote →</Link>
         </div>
       </section>
     </>

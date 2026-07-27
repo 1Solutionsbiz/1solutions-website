@@ -130,8 +130,8 @@ export default function LinkedinAdsManagement() {
         eyebrow="B2B Advertising · Sponsored Content · InMail · Lead Gen Forms · ABM"
         title={<>LinkedIn Ads That <AuroraText>Fill Your B2B Pipeline</AuroraText></>}
         subtext="1Solutions manages LinkedIn advertising campaigns that reach the exact decision-makers your sales team wants to talk to - by job title, company, seniority, and industry - and convert them into qualified leads."
-        primaryCta={{ label: 'Get a Free LinkedIn Audit', href: '/contact-us' }}
-        secondaryCta={{ label: 'Discuss Your B2B Campaigns', href: '/contact-us' }}
+        primaryCta={{ label: 'Get a Free LinkedIn Audit', href: '/contact-us/' }}
+        secondaryCta={{ label: 'Discuss Your B2B Campaigns', href: '/contact-us/' }}
         stats={[
           { label: 'B2B Clients', value: '200', suffix: '+' },
           { label: 'Years Experience', value: '15', suffix: '+' },
@@ -172,8 +172,8 @@ export default function LinkedinAdsManagement() {
         <h2 className="lkdn-cth">Get a Free LinkedIn Ads Audit</h2>
         <p className="lkdn-ctp">We will review your LinkedIn campaigns (or help you build from scratch), identify audience and creative gaps, and share a clear plan for reducing cost per MQL - completely free.</p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
-          <Link href="/contact-us" className="lkdn-bp">Request Free LinkedIn Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-          <Link href="/contact-us" className="lkdn-bs">Talk to a LinkedIn Specialist</Link>
+          <Link href="/contact-us/" className="lkdn-bp">Request Free LinkedIn Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+          <Link href="/contact-us/" className="lkdn-bs">Talk to a LinkedIn Specialist</Link>
         </div>
       </div></section>
     </>

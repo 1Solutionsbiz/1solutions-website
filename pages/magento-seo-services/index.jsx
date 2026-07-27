@@ -135,8 +135,8 @@ export default function MagentoSeoServices() {
           eyebrow="Magento 2 · Adobe Commerce · PWA Studio"
           title={<>Magento SEO Services for <AuroraText>Large Ecommerce Catalogues</AuroraText></>}
           subtext="Fix layered navigation, resolve duplicate content, and drive organic revenue growth on Magento 2 and Adobe Commerce - with platform-native technical expertise and scalable processes."
-          primaryCta={{ label: 'Get a Free Magento SEO Audit', href: '/contact-us' }}
-          secondaryCta={{ label: 'Magento Development', href: '/magento-development-company' }}
+          primaryCta={{ label: 'Get a Free Magento SEO Audit', href: '/contact-us/' }}
+          secondaryCta={{ label: 'Magento Development', href: '/magento-development-company/' }}
           stats={[
             { label: 'Magento Stores Optimised', value: '150', suffix: '+' },
             { label: 'Years Experience', value: '15', suffix: '+' },
@@ -174,8 +174,8 @@ export default function MagentoSeoServices() {
             <h2 className="mgseo-cta-t">Get Your Free Magento SEO Audit</h2>
             <p className="mgseo-cta-s">We&rsquo;ll audit your layered navigation, duplicate content issues, page speed, and organic keyword gaps - free, with a prioritised action plan.</p>
             <div className="mgseo-cta-btns">
-              <Link href="/contact-us" className="mgseo-btn-p">Get Free Magento SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/ecommerce-seo-services" className="mgseo-btn-s">Ecommerce SEO Services</Link>
+              <Link href="/contact-us/" className="mgseo-btn-p">Get Free Magento SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/ecommerce-seo-services/" className="mgseo-btn-s">Ecommerce SEO Services</Link>
             </div>
           </div>
         </section>

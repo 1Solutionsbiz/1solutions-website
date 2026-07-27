@@ -121,8 +121,8 @@ export default function HomeServicesWebsiteDesign() {
         eyebrow="Home Services Website Design"
         title={<>Websites <AuroraText>Built to Book Jobs</AuroraText> and Generate Calls</>}
         subtext="We design and build professional websites for HVAC, plumbing, landscaping, roofing, cleaning, and other home service businesses - optimised for local SEO, click-to-call, and online booking to turn visitors into paying customers."
-        primaryCta={{ label: 'Get a Free Website Quote →', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Get a Free Website Quote →', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'Home Service Websites Built', value: '200', suffix: '+' },
           { label: 'Years Experience', value: '15', suffix: '+' },
@@ -169,7 +169,7 @@ export default function HomeServicesWebsiteDesign() {
         <div className="hsd-wrap">
           <h2>Ready to Get a Website That Books More Jobs?</h2>
           <p>Tell us about your home service business and we&apos;ll deliver a fixed-price proposal within 24 hours - no contracts, no hourly billing.</p>
-          <Link href="/contact-us" className="hsd-btn-primary">Get a Free Website Quote →</Link>
+          <Link href="/contact-us/" className="hsd-btn-primary">Get a Free Website Quote →</Link>
         </div>
       </section>
     </>

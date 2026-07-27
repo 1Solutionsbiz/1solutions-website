@@ -5,14 +5,14 @@ import { AuroraText } from '../../components/AuroraText';
 import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
-  { n: '01', title: 'Custom AI Model Development', desc: 'Building, training, and deploying custom machine learning models for your specific use case - classification, regression, recommendation, anomaly detection, forecasting, and ranking models trained on your data.', href: '/contact-us' },
-  { n: '02', title: 'Natural Language Processing (NLP)', desc: 'Text classification, sentiment analysis, entity recognition, document parsing, chatbots, and language models - NLP solutions that extract value from unstructured text data at scale.', href: '/contact-us' },
-  { n: '03', title: 'Computer Vision', desc: 'Image and video analysis solutions - object detection, image classification, OCR, defect detection, and visual inspection - for manufacturing quality control, retail, security, and healthcare applications.', href: '/contact-us' },
-  { n: '04', title: 'Generative AI Integration', desc: 'Integrating large language models (GPT-4, Claude, Gemini) and image generation APIs into products and workflows - AI content generation, document summarisation, code generation, and intelligent assistants built on foundation models.', href: '/contact-us' },
-  { n: '05', title: 'AI-Powered Automation', desc: 'Automating complex decision-making processes that previously required human judgement - document processing, approval workflows, fraud detection, customer support routing, and intelligent data extraction.', href: '/contact-us' },
-  { n: '06', title: 'Predictive Analytics', desc: 'Forecasting models for demand prediction, churn prediction, pricing optimisation, inventory management, and financial modelling - turning historical data into forward-looking intelligence that improves operational decisions.', href: '/contact-us' },
-  { n: '07', title: 'Recommendation Systems', desc: 'Personalisation engines for ecommerce, content platforms, and SaaS products - collaborative filtering, content-based filtering, and hybrid recommendation models that increase engagement and revenue per user.', href: '/contact-us' },
-  { n: '08', title: 'AI Strategy & Consulting', desc: 'Identifying the highest-value AI opportunities in your business, assessing data readiness, selecting the right approaches, and building a phased AI roadmap - for organisations that want to invest in AI strategically rather than ad hoc.', href: '/contact-us' },
+  { n: '01', title: 'Custom AI Model Development', desc: 'Building, training, and deploying custom machine learning models for your specific use case - classification, regression, recommendation, anomaly detection, forecasting, and ranking models trained on your data.', href: '/contact-us/' },
+  { n: '02', title: 'Natural Language Processing (NLP)', desc: 'Text classification, sentiment analysis, entity recognition, document parsing, chatbots, and language models - NLP solutions that extract value from unstructured text data at scale.', href: '/contact-us/' },
+  { n: '03', title: 'Computer Vision', desc: 'Image and video analysis solutions - object detection, image classification, OCR, defect detection, and visual inspection - for manufacturing quality control, retail, security, and healthcare applications.', href: '/contact-us/' },
+  { n: '04', title: 'Generative AI Integration', desc: 'Integrating large language models (GPT-4, Claude, Gemini) and image generation APIs into products and workflows - AI content generation, document summarisation, code generation, and intelligent assistants built on foundation models.', href: '/contact-us/' },
+  { n: '05', title: 'AI-Powered Automation', desc: 'Automating complex decision-making processes that previously required human judgement - document processing, approval workflows, fraud detection, customer support routing, and intelligent data extraction.', href: '/contact-us/' },
+  { n: '06', title: 'Predictive Analytics', desc: 'Forecasting models for demand prediction, churn prediction, pricing optimisation, inventory management, and financial modelling - turning historical data into forward-looking intelligence that improves operational decisions.', href: '/contact-us/' },
+  { n: '07', title: 'Recommendation Systems', desc: 'Personalisation engines for ecommerce, content platforms, and SaaS products - collaborative filtering, content-based filtering, and hybrid recommendation models that increase engagement and revenue per user.', href: '/contact-us/' },
+  { n: '08', title: 'AI Strategy & Consulting', desc: 'Identifying the highest-value AI opportunities in your business, assessing data readiness, selecting the right approaches, and building a phased AI roadmap - for organisations that want to invest in AI strategically rather than ad hoc.', href: '/contact-us/' },
 ];
 
 const PROCESS = [
@@ -120,8 +120,8 @@ export default function ArtificialIntelligence() {
           eyebrow="Artificial Intelligence"
           title={<>Build Smarter Products with <AuroraText>AI Solutions</AuroraText></>}
           subtext="From machine learning models and NLP to computer vision and AI automation - we help businesses integrate artificial intelligence into products, workflows, and decisions that drive measurable outcomes."
-          primaryCta={{ label: 'Explore AI Solutions', href: '/contact-us' }}
-          secondaryCta={{ label: 'View Our Work', href: '/case-studies' }}
+          primaryCta={{ label: 'Explore AI Solutions', href: '/contact-us/' }}
+          secondaryCta={{ label: 'View Our Work', href: '/case-studies/' }}
           stats={[
             { label: 'AI Projects', value: '50', suffix: '+' },
             { label: 'Years Experience', value: '15', suffix: '+' },
@@ -154,8 +154,8 @@ export default function ArtificialIntelligence() {
             <h2 className="aisol-cta-t">Ready to Build with AI?</h2>
             <p className="aisol-cta-s">Tell us your use case, your data situation, and your goals - we&rsquo;ll assess feasibility, recommend the right approach, and scope a proof of concept that validates the AI before full investment.</p>
             <div className="aisol-btns">
-              <Link href="/contact-us" className="aisol-btn-p">Explore AI Solutions <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/case-studies" className="aisol-btn-s">View Our Work</Link>
+              <Link href="/contact-us/" className="aisol-btn-p">Explore AI Solutions <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/case-studies/" className="aisol-btn-s">View Our Work</Link>
             </div>
           </div>
         </section>

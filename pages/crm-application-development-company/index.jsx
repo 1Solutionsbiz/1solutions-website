@@ -740,7 +740,7 @@ export default function CrmApplicationDevelopment() {
                 </div>
                 <div className="cr-consent">
                   <input id="cr-consent" type="checkbox" required />
-                  <label htmlFor="cr-consent">I agree to the <Link href="/privacy-policy">Privacy Policy</Link>. An NDA is available on request before we review your sales workflows or existing CRM data.</label>
+                  <label htmlFor="cr-consent">I agree to the <Link href="/privacy-policy/">Privacy Policy</Link>. An NDA is available on request before we review your sales workflows or existing CRM data.</label>
                 </div>
                 <button type="submit" className="cr-submit">Get Free CRM Discovery Call →</button>
                   {_sfSt === 'success' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#f0fdf4',border:'1px solid #86efac',borderRadius:'8px',color:'#166534',fontSize:'0.875rem',fontWeight:500}}>&#10003; Message sent! We&apos;ll get back to you within 24 hours.</div>}{_sfSt === 'error' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#fef2f2',border:'1px solid #fca5a5',borderRadius:'8px',color:'#991b1b',fontSize:'0.875rem',fontWeight:500}}>Something went wrong. Please email info@1solutions.biz</div>}

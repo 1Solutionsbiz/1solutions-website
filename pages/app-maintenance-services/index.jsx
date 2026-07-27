@@ -328,8 +328,8 @@ export default function AppMaintenanceServices() {
           eyebrow="Mobile Development"
           title={<>App Maintenance & Support Services That <AuroraText>Keep Your App Running Flawlessly</AuroraText></>}
           subtext="Proactive maintenance plans for mobile and web apps - bug fixing, OS compatibility, security patching, performance monitoring, and App Store compliance. Built for businesses that can't afford downtime."
-          primaryCta={{ label: 'Get a Maintenance Plan', href: '/contact-us' }}
-          secondaryCta={{ label: 'See Website Maintenance', href: '/website-support-maintenance-services' }}
+          primaryCta={{ label: 'Get a Maintenance Plan', href: '/contact-us/' }}
+          secondaryCta={{ label: 'See Website Maintenance', href: '/website-support-maintenance-services/' }}
           stats={[
             { label: 'Apps Actively Maintained', value: '200', suffix: '+' },
             { label: 'Uptime SLA', value: '9', prefix: '99.', suffix: '%' },
@@ -441,11 +441,11 @@ export default function AppMaintenanceServices() {
               Get a free app health audit - we&rsquo;ll review your current app, identify risks, and recommend the right maintenance plan for your needs. No commitment required.
             </p>
             <div className="am-cta-btns">
-              <Link href="/contact-us" className="am-btn-primary">
+              <Link href="/contact-us/" className="am-btn-primary">
                 Get a Free App Audit
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </Link>
-              <Link href="/react-native-app-development" className="am-btn-secondary">
+              <Link href="/react-native-app-development/" className="am-btn-secondary">
                 Build a New App
               </Link>
             </div>

@@ -131,8 +131,8 @@ export default function LawnCareMarketingServices() {
           eyebrow="Local SEO · Google Ads · Facebook Ads · Seasonal Campaigns"
           title={<>Lawn Care Marketing Services - <AuroraText>More Customers</AuroraText>, More Route Density</>}
           subtext="Digital marketing built specifically for lawn care, landscaping, and garden maintenance businesses - local SEO, Google Ads, review generation, and seasonal campaigns that fill your schedule and build recurring customer revenue."
-          primaryCta={{ label: 'Get a Free Lawn Care Marketing Audit', href: '/contact-us' }}
-          secondaryCta={{ label: 'Local SEO Services', href: '/local-seo-services' }}
+          primaryCta={{ label: 'Get a Free Lawn Care Marketing Audit', href: '/contact-us/' }}
+          secondaryCta={{ label: 'Local SEO Services', href: '/local-seo-services/' }}
           stats={[
             { label: 'Lawn Care Clients', value: '80', suffix: '+' },
             { label: 'Avg Lead Volume Growth', value: '4', prefix: '+3.', suffix: '×' },
@@ -167,8 +167,8 @@ export default function LawnCareMarketingServices() {
             <h2 className="lcmkt-cta-t">Get a Free Lawn Care Marketing Audit</h2>
             <p className="lcmkt-cta-s">We&rsquo;ll audit your local search visibility, Google Business Profile, competitor positioning, and ad opportunities - then recommend the marketing mix most likely to generate ROI for your operation.</p>
             <div className="lcmkt-btns">
-              <Link href="/contact-us" className="lcmkt-btn-p">Request a Free Marketing Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/hvac-seo-services" className="lcmkt-btn-s">HVAC SEO Services</Link>
+              <Link href="/contact-us/" className="lcmkt-btn-p">Request a Free Marketing Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/hvac-seo-services/" className="lcmkt-btn-s">HVAC SEO Services</Link>
             </div>
           </div>
         </section>

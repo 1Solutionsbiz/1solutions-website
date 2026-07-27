@@ -125,8 +125,8 @@ export default function HireAppDeveloper() {
         eyebrow="Hire App Developer · iOS, Android, Flutter, React Native"
         title={<>Hire Mobile App Developers <AuroraText>Across Every Platform</AuroraText></>}
         subtext="iOS, Android, Flutter, and React Native experts - pre-vetted, available immediately, and matched to your requirements in 48 hours."
-        primaryCta={{ label: 'Hire an App Developer', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Hire an App Developer', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'Mobile Developers', value: '80', suffix: '+' },
           { label: 'Mobile Apps Delivered', value: '400', suffix: '+' },
@@ -216,7 +216,7 @@ export default function HireAppDeveloper() {
         <div className="hapd-wrap">
           <h2>Ready to Hire Your App Developer?</h2>
           <p>Share your requirements and receive matched developer profiles within 48 hours - no commitment required to view profiles.</p>
-          <Link href="/contact-us" className="hapd-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us/" className="hapd-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

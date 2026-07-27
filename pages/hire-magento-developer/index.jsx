@@ -128,8 +128,8 @@ export default function HireMagentoDeveloper() {
         eyebrow="Hire Magento Developer · Enterprise eCommerce"
         title={<>Hire Magento Developers <AuroraText>Enterprise eCommerce Expertise</AuroraText></>}
         subtext="Pre-vetted Magento 2 and Adobe Commerce specialists for custom modules, platform migrations, PWA storefronts, and ERP integrations. Profiles in 48 hours."
-        primaryCta={{ label: 'Hire a Magento Developer', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Hire a Magento Developer', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'Magento Developers', value: '35', suffix: '+' },
           { label: 'Magento Stores Delivered', value: '150', suffix: '+' },
@@ -219,7 +219,7 @@ export default function HireMagentoDeveloper() {
         <div className="hmag-wrap">
           <h2>Ready to Hire Your Magento Developer?</h2>
           <p>Share your requirements and receive matched Magento specialist profiles within 48 hours - no commitment required to view CVs.</p>
-          <Link href="/contact-us" className="hmag-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us/" className="hmag-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

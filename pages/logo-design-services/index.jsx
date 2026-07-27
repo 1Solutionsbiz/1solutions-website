@@ -131,8 +131,8 @@ export default function LogoDesignServices() {
           eyebrow="Custom Design · Full Ownership · Vector Files"
           title={<>Professional Logo Design Services - <AuroraText>Brands That Get Remembered</AuroraText></>}
           subtext="Custom logo design built on brand strategy - not templates. 500+ logos designed across all industries, with full IP ownership and every format you need delivered on completion."
-          primaryCta={{ label: 'Start Your Logo Project', href: '/contact-us' }}
-          secondaryCta={{ label: 'UI/UX Design Services', href: '/app-ui-ux-design' }}
+          primaryCta={{ label: 'Start Your Logo Project', href: '/contact-us/' }}
+          secondaryCta={{ label: 'UI/UX Design Services', href: '/app-ui-ux-design/' }}
           stats={[
             { label: 'Logos Designed', value: '500', suffix: '+' },
             { label: 'Years Experience', value: '15', suffix: '+' },
@@ -170,8 +170,8 @@ export default function LogoDesignServices() {
             <h2 className="logo-cta-t">Start Your Logo Design Project</h2>
             <p className="logo-cta-s">Tell us about your business and brand goals - we&rsquo;ll send you a tailored quote and timeline within 24 hours.</p>
             <div className="logo-cta-btns">
-              <Link href="/contact-us" className="logo-btn-p">Get a Logo Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/app-ui-ux-design" className="logo-btn-s">UI/UX Design Services</Link>
+              <Link href="/contact-us/" className="logo-btn-p">Get a Logo Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/app-ui-ux-design/" className="logo-btn-s">UI/UX Design Services</Link>
             </div>
           </div>
         </section>

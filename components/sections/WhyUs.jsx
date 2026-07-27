@@ -87,7 +87,7 @@ function PortfolioCard({ story: s }) {
           <div className="pf-otags">{s.tags.map(t => <span key={t} className="pf-otag">{t}</span>)}</div>
           <div className="pf-oname">{s.company}</div>
           <p className="pf-odesc">{s.desc}</p>
-          <Link href="/case-studies" className="pf-olink">View Case Study →</Link>
+          <Link href="/case-studies/" className="pf-olink">View Case Study →</Link>
         </div>
       </div>
     </div>
@@ -199,7 +199,7 @@ export default function WhyUs() {
                 <AuroraText>Speaks for Itself</AuroraText>
               </h2>
             </div>
-            <Link href="/case-studies" className="pf-explore">Explore All Projects →</Link>
+            <Link href="/case-studies/" className="pf-explore">Explore All Projects →</Link>
           </div>
 
           {/* 3×3 grid of uniform rectangular cards */}

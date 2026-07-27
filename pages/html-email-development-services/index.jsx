@@ -957,7 +957,7 @@ export default function HtmlEmailDevelopmentServices() {
                   <div className="he-form-group full"><label>Message*</label><textarea name="sf-message" placeholder="Tell us about your ESP, template type, and send volume..." rows={6} required /></div>
                   <div className="he-consent">
                     <input type="checkbox" id="he-consent" required />
-                    <label htmlFor="he-consent">I consent that my personal data will be processed according to <Link href="/privacy-policy">1Solutions privacy policy</Link></label>
+                    <label htmlFor="he-consent">I consent that my personal data will be processed according to <Link href="/privacy-policy/">1Solutions privacy policy</Link></label>
                   </div>
                   <button type="submit" className="he-submit-btn" disabled={_sfSt === 'loading'}>
                     {_sfSt === 'loading' ? 'Sending...' : 'Submit'}

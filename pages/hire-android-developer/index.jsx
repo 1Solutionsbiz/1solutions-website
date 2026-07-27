@@ -129,8 +129,8 @@ export default function HireAndroidDeveloper() {
         eyebrow="Hire Android Developer · Kotlin & Java Experts"
         title={<>Hire Android Developers <AuroraText>Built for Your Product</AuroraText></>}
         subtext="Pre-vetted Kotlin & Java experts available for dedicated, part-time, or hourly engagements. Matched within 48 hours - onboarded in 7 days."
-        primaryCta={{ label: 'Hire an Android Developer', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Hire an Android Developer', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'Android Developers', value: '50', suffix: '+' },
           { label: 'Android Apps Delivered', value: '200', suffix: '+' },
@@ -226,7 +226,7 @@ export default function HireAndroidDeveloper() {
         <div className="had-wrap">
           <h2>Ready to Hire Your Android Developer?</h2>
           <p>Share your requirements and we will match you with the right developer within 48 hours - no commitment required.</p>
-          <Link href="/contact-us" className="had-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us/" className="had-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

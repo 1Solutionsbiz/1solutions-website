@@ -130,8 +130,8 @@ export default function EmailMarketingServices() {
         eyebrow="Email Marketing - Klaviyo · Mailchimp · HubSpot · ActiveCampaign · Automation"
         title={<>Email Marketing That <AuroraText>Nurtures Leads and Drives Repeat Revenue</AuroraText></>}
         subtext="1Solutions builds email marketing programs that work while you sleep - automated welcome sequences, cart recovery flows, and nurture campaigns that turn subscribers into customers and customers into loyal advocates."
-        primaryCta={{ label: 'Get a Free Email Audit', href: '/contact-us' }}
-        secondaryCta={{ label: 'Discuss Your Email Program', href: '/contact-us' }}
+        primaryCta={{ label: 'Get a Free Email Audit', href: '/contact-us/' }}
+        secondaryCta={{ label: 'Discuss Your Email Program', href: '/contact-us/' }}
         stats={[
           { label: 'Revenue from Email', value: '28', suffix: '%' },
           { label: 'Welcome Open Rate', value: '52', suffix: '%' },
@@ -172,8 +172,8 @@ export default function EmailMarketingServices() {
         <h2 className="emkt-cth">Get a Free Email Marketing Audit</h2>
         <p className="emkt-ctp">We will review your current email program, deliverability health, automation flows, and list segmentation - and share a revenue roadmap for your email channel.</p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
-          <Link href="/contact-us" className="emkt-bp">Request Free Email Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-          <Link href="/contact-us" className="emkt-bs">Talk to an Email Specialist</Link>
+          <Link href="/contact-us/" className="emkt-bp">Request Free Email Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+          <Link href="/contact-us/" className="emkt-bs">Talk to an Email Specialist</Link>
         </div>
       </div></section>
     </>

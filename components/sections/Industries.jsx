@@ -4,14 +4,14 @@ import { useState, useEffect, useRef } from 'react'
 import AuroraText from '../ui/AuroraText'
 
 const industries = [
-  { name: 'Education', href: '/elearning-software-development-services', img: '/images/industry-education.jpg', items: ['Student Information Management System','E-Learning Portal System','Custom LMS Development','Campus Administration & Operations System'] },
-  { name: 'Real Estate', href: '/real-estate-software-development', img: '/images/industry-real-estate.jpg', items: ['Property Management System','Virtual Tour Solutions','CRM for Real Estate','Real Estate Analytics Platform'] },
-  { name: 'Manufacturing', href: '/manufacturing-software-development-services', img: '/images/industry-manufacturing.jpg', items: ['Production Management System','Supply Chain Optimization','IoT Integration Solutions','Quality Control Systems'] },
-  { name: 'Travel', href: '/travel-and-tourism-software-solutions', img: '/images/industry-travel.jpg', items: ['Booking & Reservation System','Travel Portal Development','Itinerary Management','Customer Experience Platform'] },
-  { name: 'Social Media', href: '/social-media-app-development-company', img: '/images/industry-social-media.jpg', items: ['Social Platform Development','Content Management Tools','Community Building Solutions','Analytics & Engagement Tracking'] },
-  { name: 'Wellness', href: '/wellness-software-development', img: '/images/industry-wellness.jpg', items: ['Health Tracking Applications','Fitness Management System','Telemedicine Platform','Wellness Analytics'] },
-  { name: 'Agriculture', href: '/agriculture-software-development', img: '/images/industry-agriculture.jpg', items: ['Farm Management System','Crop Monitoring Solutions','AgriTech Platform','Harvest Optimization Tools'] },
-  { name: 'Automotive', href: '/automotive-software-solutions', img: '/images/industry-automotive.jpg', items: ['Dealer Management System','Fleet Management Solutions','Vehicle Tracking & Telematics','Connected Car Platforms'] },
+  { name: 'Education', href: '/elearning-software-development-services/', img: '/images/industry-education.jpg', items: ['Student Information Management System','E-Learning Portal System','Custom LMS Development','Campus Administration & Operations System'] },
+  { name: 'Real Estate', href: '/real-estate-software-development/', img: '/images/industry-real-estate.jpg', items: ['Property Management System','Virtual Tour Solutions','CRM for Real Estate','Real Estate Analytics Platform'] },
+  { name: 'Manufacturing', href: '/manufacturing-software-development-services/', img: '/images/industry-manufacturing.jpg', items: ['Production Management System','Supply Chain Optimization','IoT Integration Solutions','Quality Control Systems'] },
+  { name: 'Travel', href: '/travel-and-tourism-software-solutions/', img: '/images/industry-travel.jpg', items: ['Booking & Reservation System','Travel Portal Development','Itinerary Management','Customer Experience Platform'] },
+  { name: 'Social Media', href: '/social-media-app-development-company/', img: '/images/industry-social-media.jpg', items: ['Social Platform Development','Content Management Tools','Community Building Solutions','Analytics & Engagement Tracking'] },
+  { name: 'Wellness', href: '/wellness-software-development/', img: '/images/industry-wellness.jpg', items: ['Health Tracking Applications','Fitness Management System','Telemedicine Platform','Wellness Analytics'] },
+  { name: 'Agriculture', href: '/agriculture-software-development/', img: '/images/industry-agriculture.jpg', items: ['Farm Management System','Crop Monitoring Solutions','AgriTech Platform','Harvest Optimization Tools'] },
+  { name: 'Automotive', href: '/automotive-software-solutions/', img: '/images/industry-automotive.jpg', items: ['Dealer Management System','Fleet Management Solutions','Vehicle Tracking & Telematics','Connected Car Platforms'] },
 ]
 
 export default function Industries() {

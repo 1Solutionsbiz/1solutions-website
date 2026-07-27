@@ -125,8 +125,8 @@ export default function HirePrestaShopDeveloper() {
         eyebrow="Hire PrestaShop Developer · Modules &amp; Store Builds"
         title={<>Hire PrestaShop Developers <AuroraText>Custom Modules &amp; Store Builds</AuroraText></>}
         subtext="Pre-vetted PrestaShop 1.7 &amp; 8 specialists for custom module development, theme builds, platform migrations, and multi-store setups. Profiles in 48 hours."
-        primaryCta={{ label: 'Hire a PrestaShop Developer', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Hire a PrestaShop Developer', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'PrestaShop Developers', value: '25', suffix: '+' },
           { label: 'Stores Delivered', value: '90', suffix: '+' },
@@ -211,7 +211,7 @@ export default function HirePrestaShopDeveloper() {
         <div className="hpres-wrap">
           <h2>Ready to Hire Your PrestaShop Developer?</h2>
           <p>Share your store requirements and receive matched PrestaShop specialist profiles within 48 hours.</p>
-          <Link href="/contact-us" className="hpres-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us/" className="hpres-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

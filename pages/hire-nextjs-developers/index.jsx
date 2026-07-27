@@ -123,8 +123,8 @@ export default function HireNextJsDevelopers() {
         eyebrow="Hire Next.js Developers · App Router &amp; Vercel Experts"
         title={<>Hire Next.js Developers <AuroraText>App Router, Server Components &amp; Vercel Experts</AuroraText></>}
         subtext="Pre-vetted Next.js engineers who build fast, scalable, and SEO-optimised full-stack applications - App Router, React Server Components, streaming SSR, and edge-deployed. Profiles in 48 hours."
-        primaryCta={{ label: 'Hire a Next.js Developer', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Hire a Next.js Developer', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'Next.js Developers', value: '60', suffix: '+' },
           { label: 'Next.js Projects Delivered', value: '250', suffix: '+' },
@@ -172,7 +172,7 @@ export default function HireNextJsDevelopers() {
         <div className="hnjs-wrap">
           <h2>Ready to Hire Your Next.js Developer?</h2>
           <p>Share your App Router, data layer, and deployment requirements - receive matched Next.js specialist profiles within 48 hours.</p>
-          <Link href="/contact-us" className="hnjs-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us/" className="hnjs-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

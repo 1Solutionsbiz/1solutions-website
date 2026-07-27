@@ -132,8 +132,8 @@ export default function EcommerceMarketingServices() {
           eyebrow="SEO · Shopping · Paid Social · Email"
           title={<>Ecommerce Marketing Services - <AuroraText>More Traffic, More Revenue, More Repeat Customers</AuroraText></>}
           subtext="Full-service ecommerce marketing - SEO, Google Shopping, paid social, email automation, and CRO - all coordinated by one team with a single focus: growing your online store revenue."
-          primaryCta={{ label: 'Get an Ecommerce Marketing Quote', href: '/contact-us' }}
-          secondaryCta={{ label: 'CRO Services', href: '/conversion-rate-optimization-services' }}
+          primaryCta={{ label: 'Get an Ecommerce Marketing Quote', href: '/contact-us/' }}
+          secondaryCta={{ label: 'CRO Services', href: '/conversion-rate-optimization-services/' }}
           stats={[
             { label: 'Ecommerce Stores Managed', value: '180', suffix: '+' },
             { label: 'Avg Revenue Growth', value: '62', prefix: '+', suffix: '%' },
@@ -171,8 +171,8 @@ export default function EcommerceMarketingServices() {
             <h2 className="ecmkt-cta-t">Start Your Ecommerce Marketing Partnership</h2>
             <p className="ecmkt-cta-s">We&rsquo;ll audit your current ecommerce performance, identify the highest-ROI growth opportunities, and build a multi-channel strategy around your revenue targets.</p>
             <div className="ecmkt-cta-btns">
-              <Link href="/contact-us" className="ecmkt-btn-p">Get an Ecommerce Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/seo-services-company" className="ecmkt-btn-s">SEO Services</Link>
+              <Link href="/contact-us/" className="ecmkt-btn-p">Get an Ecommerce Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/seo-services-company/" className="ecmkt-btn-s">SEO Services</Link>
             </div>
           </div>
         </section>

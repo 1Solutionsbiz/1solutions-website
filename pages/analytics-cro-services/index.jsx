@@ -130,8 +130,8 @@ export default function AnalyticsCroServices() {
         eyebrow="Analytics & CRO - GA4 · GTM · A/B Testing · Funnel Analysis · Heatmaps"
         title={<>Analytics & CRO That <AuroraText>Turns More of Your Existing Traffic Into Revenue</AuroraText></>}
         subtext="1Solutions implements accurate analytics, identifies conversion bottlenecks, and runs data-driven A/B tests that systematically improve your conversion rate - so every traffic source delivers more revenue without more spend."
-        primaryCta={{ label: 'Get a Free Analytics Audit', href: '/contact-us' }}
-        secondaryCta={{ label: 'Discuss Your CRO Strategy', href: '/contact-us' }}
+        primaryCta={{ label: 'Get a Free Analytics Audit', href: '/contact-us/' }}
+        secondaryCta={{ label: 'Discuss Your CRO Strategy', href: '/contact-us/' }}
         stats={[
           { label: 'Checkout Uplift', value: '74', suffix: '%' },
           { label: 'Lead Form Growth', value: '4', prefix: '2.', suffix: '×' },
@@ -172,8 +172,8 @@ export default function AnalyticsCroServices() {
         <h2 className="acro-cth">Get a Free Analytics & CRO Audit</h2>
         <p className="acro-ctp">We will review your GA4 setup, identify tracking gaps, analyse your conversion funnel, and share the highest-impact CRO opportunities for your website - completely free.</p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
-          <Link href="/contact-us" className="acro-bp">Request Free CRO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-          <Link href="/contact-us" className="acro-bs">Talk to a CRO Specialist</Link>
+          <Link href="/contact-us/" className="acro-bp">Request Free CRO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+          <Link href="/contact-us/" className="acro-bs">Talk to a CRO Specialist</Link>
         </div>
       </div></section>
     </>

@@ -124,8 +124,8 @@ export default function HireWebDesigner() {
         eyebrow="Hire Web Designer · Conversion-Focused &amp; Brand-Coherent"
         title={<>Hire Web Designers <AuroraText>Conversion-Focused &amp; Brand-Coherent</AuroraText></>}
         subtext="Pre-vetted web designers who build beautiful, high-converting websites - from Figma wireframes to pixel-perfect developer handoff. Profiles in 48 hours."
-        primaryCta={{ label: 'Hire a Web Designer', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Hire a Web Designer', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'Web Designers', value: '55', suffix: '+' },
           { label: 'Websites Designed', value: '280', suffix: '+' },
@@ -173,7 +173,7 @@ export default function HireWebDesigner() {
         <div className="hwdes-wrap">
           <h2>Ready to Hire Your Web Designer?</h2>
           <p>Share your brand and goals - receive matched web designer profiles with portfolios within 48 hours. No commitment required.</p>
-          <Link href="/contact-us" className="hwdes-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us/" className="hwdes-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

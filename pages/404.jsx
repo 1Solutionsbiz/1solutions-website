@@ -190,7 +190,7 @@ function Custom404() {
                 <span className="p4-card-arrow">›</span>
               </Link>
 
-              <Link href="/contact-us" className="p4-card">
+              <Link href="/contact-us/" className="p4-card">
                 <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
                   <div className="p4-card-icon" style={{ background: 'linear-gradient(135deg, #FE9700 0%, #FFC14D 100%)' }}>
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">

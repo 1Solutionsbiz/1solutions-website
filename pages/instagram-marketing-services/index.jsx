@@ -131,8 +131,8 @@ export default function InstagramMarketingServices() {
           eyebrow="Reels · Feed · Shopping · Ads"
           title={<>Instagram Marketing Services — <AuroraText>Reels, Growth &amp; Sales</AuroraText> for Your Brand</>}
           subtext="Content strategy, Reels production, Instagram Ads, Shopping integration, and community management - everything your Instagram needs to grow an engaged audience and drive real business results."
-          primaryCta={{ label: 'Get an Instagram Marketing Quote', href: '/contact-us' }}
-          secondaryCta={{ label: 'Facebook Management', href: '/facebook-management-services' }}
+          primaryCta={{ label: 'Get an Instagram Marketing Quote', href: '/contact-us/' }}
+          secondaryCta={{ label: 'Facebook Management', href: '/facebook-management-services/' }}
           stats={[
             { label: 'Instagram Accounts Managed', value: '150', suffix: '+' },
             { label: 'Avg Engagement Rate', value: '8', prefix: '4.', suffix: '%' },
@@ -170,8 +170,8 @@ export default function InstagramMarketingServices() {
             <h2 className="igm-cta-t">Start Your Instagram Marketing Strategy</h2>
             <p className="igm-cta-s">We&rsquo;ll audit your current Instagram profile and competitor landscape - and build a strategy around the content formats and tactics that will grow your specific audience.</p>
             <div className="igm-cta-btns">
-              <Link href="/contact-us" className="igm-btn-p">Get an Instagram Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/social-media-marketing-services" className="igm-btn-s">Social Media Overview</Link>
+              <Link href="/contact-us/" className="igm-btn-p">Get an Instagram Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/social-media-marketing-services/" className="igm-btn-s">Social Media Overview</Link>
             </div>
           </div>
         </section>

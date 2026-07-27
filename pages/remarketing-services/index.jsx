@@ -131,8 +131,8 @@ export default function RemarketingServices() {
         eyebrow="Retargeting - Google · Meta · LinkedIn · YouTube"
         title={<>Remarketing Campaigns That <AuroraText>Turn Lost Visitors Into Customers</AuroraText></>}
         subtext="1Solutions manages cross-channel remarketing campaigns that re-engage the 97% of visitors who leave without converting - with audience-specific creative, dynamic product ads, and funnel-stage sequencing."
-        primaryCta={{ label: 'Get a Free Remarketing Audit', href: '/contact-us' }}
-        secondaryCta={{ label: 'Discuss Your Retargeting Strategy', href: '/contact-us' }}
+        primaryCta={{ label: 'Get a Free Remarketing Audit', href: '/contact-us/' }}
+        secondaryCta={{ label: 'Discuss Your Retargeting Strategy', href: '/contact-us/' }}
         stats={[
           { label: 'Cart Recovery ROAS', value: '2', prefix: '5.', suffix: '×' },
           { label: 'Lower CPA', value: '44', suffix: '%' },
@@ -173,8 +173,8 @@ export default function RemarketingServices() {
         <h2 className="remk-cth">Get a Free Remarketing Audit</h2>
         <p className="remk-ctp">We will review your current remarketing setup, identify missed audience segments, and share a cross-channel strategy for converting more of the traffic you are already paying for.</p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
-          <Link href="/contact-us" className="remk-bp">Request Free Remarketing Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-          <Link href="/contact-us" className="remk-bs">Talk to a Retargeting Specialist</Link>
+          <Link href="/contact-us/" className="remk-bp">Request Free Remarketing Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+          <Link href="/contact-us/" className="remk-bs">Talk to a Retargeting Specialist</Link>
         </div>
       </div></section>
     </>

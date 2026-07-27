@@ -135,8 +135,8 @@ export default function VoiceSearchOptimizationServices() {
           eyebrow="Featured Snippets · Conversational SEO · Local Voice"
           title={<>Voice Search Optimisation Services - <AuroraText>Rank for What People Say, Not Just Type</AuroraText></>}
           subtext="Featured snippet capture, conversational content, FAQ schema, and local voice SEO - optimising your presence for Google Assistant, Alexa, Siri, and Cortana voice queries."
-          primaryCta={{ label: 'Start Voice SEO', href: '/contact-us' }}
-          secondaryCta={{ label: 'Local SEO Services', href: '/local-seo-services' }}
+          primaryCta={{ label: 'Start Voice SEO', href: '/contact-us/' }}
+          secondaryCta={{ label: 'Local SEO Services', href: '/local-seo-services/' }}
           stats={[
             { label: 'Featured Snippets Captured', value: '1,200', suffix: '+' },
             { label: 'Years Experience', value: '15', suffix: '+' },
@@ -174,8 +174,8 @@ export default function VoiceSearchOptimizationServices() {
             <h2 className="vseo-cta-t">Start Your Voice Search SEO Strategy</h2>
             <p className="vseo-cta-s">We&rsquo;ll identify your most valuable voice search opportunities, map featured snippet targets, and build the conversational content strategy that earns spoken search visibility.</p>
             <div className="vseo-cta-btns">
-              <Link href="/contact-us" className="vseo-btn-p">Start Voice SEO Strategy <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/seo-services-company" className="vseo-btn-s">SEO Services Overview</Link>
+              <Link href="/contact-us/" className="vseo-btn-p">Start Voice SEO Strategy <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/seo-services-company/" className="vseo-btn-s">SEO Services Overview</Link>
             </div>
           </div>
         </section>

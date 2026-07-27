@@ -130,8 +130,8 @@ export default function ContentMarketingServices() {
         eyebrow="Content Marketing - SEO Blog Writing · Pillar Pages · Case Studies · Strategy"
         title={<>Content Marketing That <AuroraText>Ranks on Google and Converts Readers Into Leads</AuroraText></>}
         subtext="1Solutions produces SEO-first content that builds topical authority, drives sustainable organic traffic, and converts readers into leads - written by human specialists who understand your industry."
-        primaryCta={{ label: 'Get a Free Content Audit', href: '/contact-us' }}
-        secondaryCta={{ label: 'Discuss Your Content Strategy', href: '/contact-us' }}
+        primaryCta={{ label: 'Get a Free Content Audit', href: '/contact-us/' }}
+        secondaryCta={{ label: 'Discuss Your Content Strategy', href: '/contact-us/' }}
         stats={[
           { label: 'Avg Traffic Growth', value: '380', suffix: '%' },
           { label: 'Years Experience', value: '15', suffix: '+' },
@@ -172,8 +172,8 @@ export default function ContentMarketingServices() {
         <h2 className="cmkt-cth">Get a Free Content Audit</h2>
         <p className="cmkt-ctp">We will review your existing content, identify keyword gaps and optimisation opportunities, and share a content strategy roadmap - completely free.</p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
-          <Link href="/contact-us" className="cmkt-bp">Request Free Content Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-          <Link href="/contact-us" className="cmkt-bs">Talk to a Content Strategist</Link>
+          <Link href="/contact-us/" className="cmkt-bp">Request Free Content Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+          <Link href="/contact-us/" className="cmkt-bs">Talk to a Content Strategist</Link>
         </div>
       </div></section>
     </>

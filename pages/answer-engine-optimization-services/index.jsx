@@ -134,8 +134,8 @@ export default function AnswerEngineOptimizationServices() {
           eyebrow="Featured Snippets · People Also Ask · Position Zero"
           title={<>Answer Engine Optimisation - <AuroraText>Be the Answer, Not Just a Result</AuroraText></>}
           subtext="Featured snippet capture, People Also Ask targeting, FAQ schema, and knowledge panel optimisation - building your presence across the answer surfaces that appear above traditional search results."
-          primaryCta={{ label: 'Start AEO Strategy', href: '/contact-us' }}
-          secondaryCta={{ label: 'Generative Engine Optimisation', href: '/generative-engine-optimization-services' }}
+          primaryCta={{ label: 'Start AEO Strategy', href: '/contact-us/' }}
+          secondaryCta={{ label: 'Generative Engine Optimisation', href: '/generative-engine-optimization-services/' }}
           stats={[
             { label: 'Featured Snippets Won', value: '1,400', suffix: '+' },
             { label: 'PAA Appearances Tracked', value: '8,000', suffix: '+' },
@@ -173,8 +173,8 @@ export default function AnswerEngineOptimizationServices() {
             <h2 className="aeo-cta-t">Start Your Answer Engine Optimisation Strategy</h2>
             <p className="aeo-cta-s">We&rsquo;ll identify your featured snippet and PAA opportunities, restructure your content for answer selection, and implement the schema markup that earns rich results.</p>
             <div className="aeo-cta-btns">
-              <Link href="/contact-us" className="aeo-btn-p">Start AEO Strategy <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/seo-services-company" className="aeo-btn-s">SEO Services Overview</Link>
+              <Link href="/contact-us/" className="aeo-btn-p">Start AEO Strategy <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/seo-services-company/" className="aeo-btn-s">SEO Services Overview</Link>
             </div>
           </div>
         </section>

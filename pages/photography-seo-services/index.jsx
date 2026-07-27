@@ -131,8 +131,8 @@ export default function PhotographySeoServices() {
           eyebrow="Local SEO · Image SEO · Portfolio Optimisation · GBP"
           title={<>Photography SEO Services - Rank Higher &amp; <AuroraText>Book More Clients from Google</AuroraText></>}
           subtext="SEO services built specifically for photographers - local search optimisation, portfolio page SEO, image optimisation, and content strategy to generate consistent enquiries from organic search."
-          primaryCta={{ label: 'Get a Free Photography SEO Audit', href: '/contact-us' }}
-          secondaryCta={{ label: 'Local SEO Services', href: '/local-seo-services' }}
+          primaryCta={{ label: 'Get a Free Photography SEO Audit', href: '/contact-us/' }}
+          secondaryCta={{ label: 'Local SEO Services', href: '/local-seo-services/' }}
           stats={[
             { label: 'Photographer Clients', value: '120', suffix: '+' },
             { label: 'Avg Enquiry Growth', value: '82', prefix: '+', suffix: '%' },
@@ -167,8 +167,8 @@ export default function PhotographySeoServices() {
             <h2 className="phseo-cta-t">Get a Free Photography Website SEO Audit</h2>
             <p className="phseo-cta-s">We&rsquo;ll audit your website, your Google Business Profile, and your local keyword rankings - and show you exactly what to fix to generate more organic enquiries.</p>
             <div className="phseo-btns">
-              <Link href="/contact-us" className="phseo-btn-p">Request a Free Photography SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/local-seo-packages" className="phseo-btn-s">Local SEO Packages</Link>
+              <Link href="/contact-us/" className="phseo-btn-p">Request a Free Photography SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/local-seo-packages/" className="phseo-btn-s">Local SEO Packages</Link>
             </div>
           </div>
         </section>

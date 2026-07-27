@@ -735,7 +735,7 @@ export default function DrupalDevelopmentCompany() {
                   <div className="dr-form-group full"><label>Message*</label><textarea name="sf-message" placeholder="Describe your Drupal project requirements..." rows={6} required /></div>
                   <div className="dr-consent">
                     <input type="checkbox" id="dr-consent" required />
-                    <label htmlFor="dr-consent">I consent that my personal data will be processed according to <Link href="/privacy-policy">1Solutions privacy policy</Link></label>
+                    <label htmlFor="dr-consent">I consent that my personal data will be processed according to <Link href="/privacy-policy/">1Solutions privacy policy</Link></label>
                   </div>
                   <button type="submit" className="dr-submit-btn">Submit</button>
                   {_sfSt === 'success' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#f0fdf4',border:'1px solid #86efac',borderRadius:'8px',color:'#166534',fontSize:'0.875rem',fontWeight:500}}>&#10003; Message sent! We&apos;ll get back to you within 24 hours.</div>}{_sfSt === 'error' && <div style={{marginTop:'12px',padding:'12px 16px',background:'#fef2f2',border:'1px solid #fca5a5',borderRadius:'8px',color:'#991b1b',fontSize:'0.875rem',fontWeight:500}}>Something went wrong. Please email info@1solutions.biz</div>}

@@ -135,8 +135,8 @@ export default function ShopifySeoServices() {
           eyebrow="Shopify · Shopify Plus · Google Shopping"
           title={<>Shopify SEO Services That <AuroraText>Drive Organic Revenue</AuroraText></>}
           subtext="Fix Shopify's duplicate URL issues, optimise every product and collection page, and build the domain authority your store needs to outrank competitors on high-intent keywords."
-          primaryCta={{ label: 'Get a Free Shopify SEO Audit', href: '/contact-us' }}
-          secondaryCta={{ label: 'Shopify Development', href: '/shopify-store-development' }}
+          primaryCta={{ label: 'Get a Free Shopify SEO Audit', href: '/contact-us/' }}
+          secondaryCta={{ label: 'Shopify Development', href: '/shopify-store-development/' }}
           stats={[
             { label: 'Shopify Stores Optimised', value: '500', suffix: '+' },
             { label: 'Years Experience', value: '15', suffix: '+' },
@@ -174,8 +174,8 @@ export default function ShopifySeoServices() {
             <h2 className="shseo-cta-t">Get Your Free Shopify SEO Audit</h2>
             <p className="shseo-cta-s">We&rsquo;ll audit your store&rsquo;s technical health, duplicate URL issues, product page optimisation, and keyword gaps - free, with a clear action plan.</p>
             <div className="shseo-cta-btns">
-              <Link href="/contact-us" className="shseo-btn-p">Get Free Shopify SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/ecommerce-seo-services" className="shseo-btn-s">Ecommerce SEO Services</Link>
+              <Link href="/contact-us/" className="shseo-btn-p">Get Free Shopify SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/ecommerce-seo-services/" className="shseo-btn-s">Ecommerce SEO Services</Link>
             </div>
           </div>
         </section>

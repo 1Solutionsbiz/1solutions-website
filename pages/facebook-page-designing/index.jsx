@@ -131,8 +131,8 @@ export default function FacebookPageDesigning() {
           eyebrow="Cover Photo · Templates · Ad Creative"
           title={<>Facebook Page Designing - Make Your <AuroraText>First Impression Count</AuroraText></>}
           subtext="Professional Facebook Business Page design - cover photos, post templates, ad creatives, and full page setup - ensuring your Facebook presence looks as credible as your business deserves."
-          primaryCta={{ label: 'Get a Facebook Page Designed', href: '/contact-us' }}
-          secondaryCta={{ label: 'Facebook Management', href: '/facebook-management-services' }}
+          primaryCta={{ label: 'Get a Facebook Page Designed', href: '/contact-us/' }}
+          secondaryCta={{ label: 'Facebook Management', href: '/facebook-management-services/' }}
           stats={[
             { label: 'Facebook Pages Designed', value: '400', suffix: '+' },
             { label: 'Avg Page CTR Improvement', value: '42', prefix: '+', suffix: '%' },
@@ -170,8 +170,8 @@ export default function FacebookPageDesigning() {
             <h2 className="fbpd-cta-t">Get Your Facebook Page Professionally Designed</h2>
             <p className="fbpd-cta-s">Share your brand assets and goals - we&rsquo;ll deliver a complete Facebook page design package within 3 to 5 business days.</p>
             <div className="fbpd-cta-btns">
-              <Link href="/contact-us" className="fbpd-btn-p">Get a Facebook Page Design Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/facebook-management-services" className="fbpd-btn-s">Facebook Management Services</Link>
+              <Link href="/contact-us/" className="fbpd-btn-p">Get a Facebook Page Design Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/facebook-management-services/" className="fbpd-btn-s">Facebook Management Services</Link>
             </div>
           </div>
         </section>

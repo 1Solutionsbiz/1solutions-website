@@ -125,8 +125,8 @@ export default function HirePythonDeveloper() {
         eyebrow="Hire Python Developer · Django, FastAPI &amp; Flask"
         title={<>Hire Python Developers <AuroraText>Django, FastAPI &amp; Flask Experts</AuroraText></>}
         subtext="Pre-vetted Python engineers for web applications, high-performance APIs, data pipelines, and ML inference services. Profiles in 48 hours."
-        primaryCta={{ label: 'Hire a Python Developer', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Hire a Python Developer', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'Python Developers', value: '55', suffix: '+' },
           { label: 'Python Projects Delivered', value: '240', suffix: '+' },
@@ -211,7 +211,7 @@ export default function HirePythonDeveloper() {
         <div className="hpy-wrap">
           <h2>Ready to Hire Your Python Developer?</h2>
           <p>Share your stack and requirements - receive matched Python specialist profiles within 48 hours, no commitment required.</p>
-          <Link href="/contact-us" className="hpy-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us/" className="hpy-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

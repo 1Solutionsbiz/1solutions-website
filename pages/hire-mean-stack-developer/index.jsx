@@ -124,8 +124,8 @@ export default function HireMEANStackDeveloper() {
         eyebrow="Hire MEAN Stack Developer · MongoDB, Express, Angular, Node.js"
         title={<>Hire MEAN Stack Developers <AuroraText>MongoDB · Express · Angular · Node.js</AuroraText></>}
         subtext="Pre-vetted engineers who own the full MEAN stack - from MongoDB schemas to Angular UI - and ship production-grade apps with TypeScript throughout. Profiles in 48 hours."
-        primaryCta={{ label: 'Hire a MEAN Stack Developer', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Hire a MEAN Stack Developer', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'MEAN Developers', value: '40', suffix: '+' },
           { label: 'Projects Delivered', value: '160', suffix: '+' },
@@ -210,7 +210,7 @@ export default function HireMEANStackDeveloper() {
         <div className="hmean-wrap">
           <h2>Ready to Hire Your MEAN Stack Developer?</h2>
           <p>Share your requirements and receive matched developer profiles within 48 hours - no commitment required.</p>
-          <Link href="/contact-us" className="hmean-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us/" className="hmean-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

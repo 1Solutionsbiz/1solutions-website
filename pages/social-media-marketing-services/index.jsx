@@ -130,8 +130,8 @@ export default function SocialMediaMarketingServices() {
         eyebrow="Organic Social - Instagram · LinkedIn · Facebook · TikTok · X"
         title={<>Social Media Marketing That Builds <AuroraText>Real Brand Authority</AuroraText></>}
         subtext="1Solutions manages organic social media marketing that builds genuine audience relationships, establishes brand authority, and converts followers into customers - across every platform where your audience spends time."
-        primaryCta={{ label: 'Get a Free Social Audit', href: '/contact-us' }}
-        secondaryCta={{ label: 'Discuss Your Social Strategy', href: '/contact-us' }}
+        primaryCta={{ label: 'Get a Free Social Audit', href: '/contact-us/' }}
+        secondaryCta={{ label: 'Discuss Your Social Strategy', href: '/contact-us/' }}
         stats={[
           { label: 'Follower Growth', value: '8', prefix: '4.', suffix: '×' },
           { label: 'Years Experience', value: '15', suffix: '+' },
@@ -173,8 +173,8 @@ export default function SocialMediaMarketingServices() {
         <h2 className="smkt-cth">Get a Free Social Media Audit</h2>
         <p className="smkt-ctp">We will review your current social profiles, content performance, and audience quality - and share a platform-specific strategy for building genuine brand authority and inbound leads.</p>
         <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap'}}>
-          <Link href="/contact-us" className="smkt-bp">Request Free Social Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-          <Link href="/contact-us" className="smkt-bs">Talk to a Social Media Specialist</Link>
+          <Link href="/contact-us/" className="smkt-bp">Request Free Social Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+          <Link href="/contact-us/" className="smkt-bs">Talk to a Social Media Specialist</Link>
         </div>
       </div></section>
     </>

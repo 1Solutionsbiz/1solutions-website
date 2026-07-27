@@ -131,8 +131,8 @@ export default function FacebookManagementServices() {
           eyebrow="Page Management · Ads · Community"
           title={<>Facebook Management Services - <AuroraText>Content, Ads &amp; Community Under One Roof</AuroraText></>}
           subtext="End-to-end Facebook management - content strategy, post creation, community management, and paid advertising - handled by a dedicated social media team so you can focus on your business."
-          primaryCta={{ label: 'Get a Facebook Management Quote', href: '/contact-us' }}
-          secondaryCta={{ label: 'Instagram Marketing', href: '/instagram-marketing-services' }}
+          primaryCta={{ label: 'Get a Facebook Management Quote', href: '/contact-us/' }}
+          secondaryCta={{ label: 'Instagram Marketing', href: '/instagram-marketing-services/' }}
           stats={[
             { label: 'Facebook Pages Managed', value: '200', suffix: '+' },
             { label: 'Avg Engagement Growth', value: '2', prefix: '+3.', suffix: '×' },
@@ -170,8 +170,8 @@ export default function FacebookManagementServices() {
             <h2 className="fbm-cta-t">Start Your Facebook Management Partnership</h2>
             <p className="fbm-cta-s">We&rsquo;ll audit your current Facebook presence, identify the biggest growth opportunities, and build a management plan tailored to your goals.</p>
             <div className="fbm-cta-btns">
-              <Link href="/contact-us" className="fbm-btn-p">Get a Facebook Management Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/social-media-marketing-services" className="fbm-btn-s">Social Media Overview</Link>
+              <Link href="/contact-us/" className="fbm-btn-p">Get a Facebook Management Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/social-media-marketing-services/" className="fbm-btn-s">Social Media Overview</Link>
             </div>
           </div>
         </section>

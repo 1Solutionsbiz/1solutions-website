@@ -123,8 +123,8 @@ export default function HireDedicatedGraphicDesigner() {
         eyebrow="Hire Graphic Designer · Brand, Print & Digital"
         title={<>Hire Dedicated Graphic Designers <AuroraText>Brand, Print &amp; Digital Design Experts</AuroraText></>}
         subtext="Pre-vetted graphic designers who create compelling brand identities, marketing collateral, social media graphics, packaging, and print materials. Not freelancers - dedicated professionals who become part of your team. Profiles in 48 hours."
-        primaryCta={{ label: 'Hire a Graphic Designer', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Hire a Graphic Designer', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'Graphic Designers', value: '50', suffix: '+' },
           { label: 'Design Projects Delivered', value: '400', suffix: '+' },
@@ -171,7 +171,7 @@ export default function HireDedicatedGraphicDesigner() {
         <div className="hgd-wrap">
           <h2>Ready to Hire Your Dedicated Graphic Designer?</h2>
           <p>Share your design brief and receive matched graphic designer profiles with portfolios within 48 hours - no commitment required.</p>
-          <Link href="/contact-us" className="hgd-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us/" className="hgd-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>

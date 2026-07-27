@@ -582,7 +582,7 @@ export default function GoogleMyBusinessOptimization() {
           <h2 className="gmbo-h2">GBP Signals Now Power <span>AI Overviews &amp; Gemini Local Answers</span></h2>
           <p className="gmbo-lead">
             The same fields that win the Maps 3-pack - categories, Q&amp;A, reviews, service detail - are now the fields Google&rsquo;s
-            AI systems extract from when answering local-intent queries. Our <Link href="/generative-engine-optimization-services">generative engine optimization</Link> approach
+            AI systems extract from when answering local-intent queries. Our <Link href="/generative-engine-optimization-services/">generative engine optimization</Link> approach
             treats Google Business Profile as a Local AEO channel, not just a ranking input.
           </p>
           <div className="gmbo-rank-grid">

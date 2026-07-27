@@ -409,7 +409,7 @@ export default function PrototypingServices() {
           title={<>Prototyping That Validates Ideas <AuroraText>Before You Write a Line of Code</AuroraText></>}
           subtext="From low-fi wireframes to pixel-perfect interactive prototypes, we help you test concepts, align stakeholders, and ship with confidence - not guesswork."
           primaryCta={{ label: 'Get a Free Prototype Consultation', href: '#contact' }}
-          secondaryCta={{ label: 'View Our Work', href: '/portfolio' }}
+          secondaryCta={{ label: 'View Our Work', href: '/portfolio/' }}
           stats={[
             { label: 'Prototypes Delivered', value: '400', suffix: '+' },
             { label: 'Faster Sign-Off', value: '60', suffix: '%' },
@@ -662,7 +662,7 @@ export default function PrototypingServices() {
                     <input type="checkbox" id="ps-consent" required />
                     <label htmlFor="ps-consent">
                       I consent to 1Solutions processing my data in accordance with their{' '}
-                      <Link href="/privacy-policy">Privacy Policy</Link>.
+                      <Link href="/privacy-policy/">Privacy Policy</Link>.
                     </label>
                   </div>
                   <button type="submit" className="ps-submit-btn">Send My Brief →</button>

@@ -135,8 +135,8 @@ export default function WoocommerceSeoServices() {
           eyebrow="WordPress · WooCommerce · Revenue-Focused"
           title={<>WooCommerce SEO Services That <AuroraText>Drive Organic Revenue</AuroraText></>}
           subtext="Fix faceted navigation, resolve duplicate content, and optimise every product and category page - specialist WooCommerce SEO that connects organic rankings directly to your store's revenue."
-          primaryCta={{ label: 'Get a Free WooCommerce SEO Audit', href: '/contact-us' }}
-          secondaryCta={{ label: 'WooCommerce Development', href: '/woocommerce-development-company' }}
+          primaryCta={{ label: 'Get a Free WooCommerce SEO Audit', href: '/contact-us/' }}
+          secondaryCta={{ label: 'WooCommerce Development', href: '/woocommerce-development-company/' }}
           stats={[
             { label: 'WooCommerce Stores Optimised', value: '400', suffix: '+' },
             { label: 'Years Experience', value: '15', suffix: '+' },
@@ -174,8 +174,8 @@ export default function WoocommerceSeoServices() {
             <h2 className="wcseo-cta-t">Get Your Free WooCommerce SEO Audit</h2>
             <p className="wcseo-cta-s">We&rsquo;ll audit your store&rsquo;s faceted navigation, duplicate content, product page quality, and keyword gaps - free, with a prioritised action plan.</p>
             <div className="wcseo-cta-btns">
-              <Link href="/contact-us" className="wcseo-btn-p">Get Free WooCommerce SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/ecommerce-seo-services" className="wcseo-btn-s">Ecommerce SEO Services</Link>
+              <Link href="/contact-us/" className="wcseo-btn-p">Get Free WooCommerce SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/ecommerce-seo-services/" className="wcseo-btn-s">Ecommerce SEO Services</Link>
             </div>
           </div>
         </section>

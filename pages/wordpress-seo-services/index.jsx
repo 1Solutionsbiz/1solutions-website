@@ -138,8 +138,8 @@ export default function WordPressSeoServices() {
           eyebrow="Yoast · Rank Math · Core Web Vitals"
           title={<>WordPress SEO Services That <AuroraText>Grow Organic Traffic</AuroraText></>}
           subtext="Technical audits, plugin configuration, Core Web Vitals optimisation, and content strategy - specialist WordPress SEO that fixes the platform-specific issues holding your site back."
-          primaryCta={{ label: 'Get a Free WordPress SEO Audit', href: '/contact-us' }}
-          secondaryCta={{ label: 'WordPress Development', href: '/wordpress-development-company' }}
+          primaryCta={{ label: 'Get a Free WordPress SEO Audit', href: '/contact-us/' }}
+          secondaryCta={{ label: 'WordPress Development', href: '/wordpress-development-company/' }}
           stats={[
             { label: 'WordPress Sites Optimised', value: '800', suffix: '+' },
             { label: 'Years Experience', value: '15', suffix: '+' },
@@ -177,8 +177,8 @@ export default function WordPressSeoServices() {
             <h2 className="wpseo-cta-t">Get Your Free WordPress SEO Audit</h2>
             <p className="wpseo-cta-s">We&rsquo;ll review your WordPress site&rsquo;s technical health, plugin setup, Core Web Vitals, and keyword rankings - and send you a priority action plan free.</p>
             <div className="wpseo-cta-btns">
-              <Link href="/contact-us" className="wpseo-btn-p">Get Free WordPress SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/affordable-seo-packages" className="wpseo-btn-s">View SEO Packages</Link>
+              <Link href="/contact-us/" className="wpseo-btn-p">Get Free WordPress SEO Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/affordable-seo-packages/" className="wpseo-btn-s">View SEO Packages</Link>
             </div>
           </div>
         </section>

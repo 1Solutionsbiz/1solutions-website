@@ -116,8 +116,8 @@ export default function Free45DaySeoTrial() {
           eyebrow="Zero Payment · Zero Commitment · Real Results"
           title={<>Try Our SEO - <AuroraText>45 Days Free.</AuroraText> Results First, Then Decide.</>}
           subtext="A full SEO audit, keyword research, competitor analysis, and 5 on-page optimisations implemented on your live site - completely free for 45 days. No payment, no contract, no catch."
-          primaryCta={{ label: 'Apply for the Free Trial', href: '/contact-us' }}
-          secondaryCta={{ label: 'See Full SEO Services', href: '/seo-services-company' }}
+          primaryCta={{ label: 'Apply for the Free Trial', href: '/contact-us/' }}
+          secondaryCta={{ label: 'See Full SEO Services', href: '/seo-services-company/' }}
           stats={[
             { label: 'Trials Run', value: '400', suffix: '+' },
             { label: 'Trial-to-Client Rate', value: '72', suffix: '%' },
@@ -149,8 +149,8 @@ export default function Free45DaySeoTrial() {
             <h2 className="f45-cta-t">Ready to see what SEO can do for your site?</h2>
             <p className="f45-cta-s">Apply for the free 45-day trial. We review every application and respond within 48 hours. Limited to 5–8 new trials per month.</p>
             <div className="f45-btns">
-              <Link href="/contact-us" className="f45-btn-p">Apply for Your Free Trial Now <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
-              <Link href="/affordable-seo-packages" className="f45-btn-s">View SEO Packages</Link>
+              <Link href="/contact-us/" className="f45-btn-p">Apply for Your Free Trial Now <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
+              <Link href="/affordable-seo-packages/" className="f45-btn-s">View SEO Packages</Link>
             </div>
           </div>
         </section>

@@ -328,7 +328,7 @@ export default function CaseStudies() {
           <p className="cs-hero-sub">
             15+ years of delivering measurable results for clients across US, Canada, Australia and beyond.
           </p>
-          <a href="/contact-us" className="cs-hero-cta">
+          <a href="/contact-us/" className="cs-hero-cta">
             <span className="cs-hero-avatars">
               {[
                 { initials: 'AT', bg: '#FE9700' },
@@ -449,11 +449,11 @@ export default function CaseStudies() {
           <h2 className="cs-cta-h">Ready to build your success story?</h2>
           <p className="cs-cta-s">Tell us about your project. We&rsquo;ll bring strategy, design, and engineering to make it happen.</p>
           <div className="cs-cta-btns">
-            <Link href="/contact-us" className="cs-cta-b1">
+            <Link href="/contact-us/" className="cs-cta-b1">
               Start a Project
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </Link>
-            <Link href="/portfolio" className="cs-cta-b2">View Full Portfolio</Link>
+            <Link href="/portfolio/" className="cs-cta-b2">View Full Portfolio</Link>
           </div>
         </div>
       </section>

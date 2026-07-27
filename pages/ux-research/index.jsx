@@ -414,7 +414,7 @@ export default function UXResearch() {
           title={<>UX Research That <AuroraText>Replaces Guesswork With Evidence</AuroraText></>}
           subtext="We uncover what your users actually need through structured research - interviews, usability tests, journey maps, and heuristic audits that feed directly into design decisions."
           primaryCta={{ label: 'Get a Free Research Consultation', href: '#contact' }}
-          secondaryCta={{ label: 'View Our Work', href: '/portfolio' }}
+          secondaryCta={{ label: 'View Our Work', href: '/portfolio/' }}
           stats={[
             { label: 'Research Projects', value: '250', suffix: '+' },
             { label: 'Users Tested', value: '5,000', suffix: '+' },
@@ -675,7 +675,7 @@ export default function UXResearch() {
                     <input type="checkbox" id="uxr-consent" required />
                     <label htmlFor="uxr-consent">
                       I consent to 1Solutions processing my data in accordance with their{' '}
-                      <Link href="/privacy-policy">Privacy Policy</Link>.
+                      <Link href="/privacy-policy/">Privacy Policy</Link>.
                     </label>
                   </div>
                   <button type="submit" className="uxr-submit-btn">Send My Research Brief →</button>

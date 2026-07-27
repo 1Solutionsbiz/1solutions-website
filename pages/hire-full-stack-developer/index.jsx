@@ -127,8 +127,8 @@ export default function HireFullStackDeveloper() {
         eyebrow="Hire Full Stack Developer · MERN, MEAN &amp; Django"
         title={<>Hire Full Stack Developers <AuroraText>Who Own the Whole Product</AuroraText></>}
         subtext="Pre-vetted MERN, MEAN, Django, and Next.js engineers who deliver from database schema to pixel-perfect UI. Profiles in 48 hours."
-        primaryCta={{ label: 'Hire a Full Stack Developer', href: '/contact-us' }}
-        secondaryCta={{ label: 'View Portfolio', href: '/portfolio' }}
+        primaryCta={{ label: 'Hire a Full Stack Developer', href: '/contact-us/' }}
+        secondaryCta={{ label: 'View Portfolio', href: '/portfolio/' }}
         stats={[
           { label: 'Full Stack Developers', value: '100', suffix: '+' },
           { label: 'Projects Delivered', value: '500', suffix: '+' },
@@ -218,7 +218,7 @@ export default function HireFullStackDeveloper() {
         <div className="hfsd-wrap">
           <h2>Ready to Hire Your Full Stack Developer?</h2>
           <p>Share your requirements and receive matched developer profiles within 48 hours - no commitment required to view CVs.</p>
-          <Link href="/contact-us" className="hfsd-btn-primary">Get Started Today →</Link>
+          <Link href="/contact-us/" className="hfsd-btn-primary">Get Started Today →</Link>
         </div>
       </section>
     </>
