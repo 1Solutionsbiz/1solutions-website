@@ -73,7 +73,7 @@ export default function App({ Component, pageProps }) {
           }, 5000);
         `}</Script>
       <BlogHeader />
-      <main className={inter.className} style={{ minHeight: '70vh', overflowX: 'hidden' }}>
+      <main className={inter.className} style={{ minHeight: '70vh' }}>
         <Component {...pageProps} />
       </main>
       <BlogFooter />
