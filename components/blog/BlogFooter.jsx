@@ -7,68 +7,71 @@ const COLS = [
   {
     heading: 'Company',
     links: [
-      ['Who We Are',          '/who-we-are'],
-      ['Work Culture',        '/work-culture'],
-      ['Corporate Responsibility', '/corporate-responsibility'],
-      ['Partner with Us',     '/partner-with-us'],
-      ['Write for Us',        '/write-for-us'],
-      ['Join Our Team',       '/open-positions'],
-      ['Contact Us',          '/contact-us'],
+      ['Who We Are',          '/who-we-are/'],
+      ['Work Culture',        '/work-culture/'],
+      ['Corporate Responsibility', '/corporate-responsibility/'],
+      ['Partner with Us',     '/partner-with-us/'],
+      ['Write for Us',        '/write-for-us/'],
+      ['Join Our Team',       '/open-positions/'],
+      ['Contact Us',          '/contact-us/'],
     ],
   },
   {
     heading: 'For Startups & SMBs',
     links: [
-      ['WordPress Development',  '/wordpress-development-company'],
-      ['Next.js Development',    '/nextjs-development-services'],
-      ['Mobile App Development', '/android-application-development-company'],
-      ['eCommerce Development',  '/ecommerce-website-development-services'],
-      ['UI/UX Design',           '/website-design'],
-      ['SEO Services',           '/seo-services-company'],
-      ['PPC Management',         '/ppc-management-services'],
-      ['Email Marketing',        '/email-marketing-services'],
+      ['WordPress Development',  '/wordpress-development-company/'],
+      ['Next.js Development',    '/nextjs-development-services/'],
+      ['Mobile App Development', '/android-application-development-company/'],
+      ['eCommerce Development',  '/ecommerce-website-development-services/'],
+      ['UI/UX Design',           '/website-design/'],
+      ['SEO Services',           '/seo-services-company/'],
+      ['PPC Management',         '/ppc-management-services/'],
+      ['Email Marketing',        '/email-marketing-services/'],
     ],
   },
   {
     heading: 'For Enterprises',
     links: [
-      ['Cloud Migration',        '/cloud-migration-services'],
-      ['DevOps Services',        '/devops-services-company'],
-      ['ERP Development',        '/erp-application-development-company'],
-      ['CRM Development',        '/crm-application-development-company'],
-      ['Staff Augmentation',     '/it-staff-augmentation-services'],
-      ['Offshore Development',   '/offshore-development-company'],
-      ['Virtual CTO',            '/virtual-cto-services'],
-      ['IT Outsourcing',         '/it-outsourcing-services'],
+      ['Cloud Migration',        '/cloud-migration-services/'],
+      ['DevOps Services',        '/devops-services-company/'],
+      ['ERP Development',        '/erp-application-development-company/'],
+      ['CRM Development',        '/crm-application-development-company/'],
+      ['Staff Augmentation',     '/it-staff-augmentation-services/'],
+      ['Offshore Development',   '/offshore-development-company/'],
+      ['Virtual CTO',            '/virtual-cto-services/'],
+      ['IT Outsourcing',         '/it-outsourcing-services/'],
     ],
   },
   {
     heading: 'For Developers & Agencies',
     links: [
-      ['Hire React Developer',      '/hire-reactjs-developer'],
-      ['Hire Node.js Developer',    '/hire-nodejs-developer'],
-      ['Hire WordPress Developer',  '/hire-wordpress-developer'],
-      ['Hire Python Developer',     '/hire-python-developer'],
-      ['Hire Shopify Developer',    '/hire-shopify-developer'],
+      ['Hire React Developer',      '/hire-reactjs-developer/'],
+      ['Hire Node.js Developer',    '/hire-nodejs-developer/'],
+      ['Hire WordPress Developer',  '/hire-wordpress-developer/'],
+      ['Hire Python Developer',     '/hire-python-developer/'],
+      ['Hire Shopify Developer',    '/hire-shopify-developer/'],
+      // Not trailing-slashed on purpose: this slug itself is a renamed
+      // redirect (next.config.js -> /hire-dedicated-ui-ux-designer), not
+      // a page with a trailing-slash canonical.
       ['Hire UI/UX Designer',       '/hire-ui-ux-designer'],
-      ['Hire Full Stack Developer', '/hire-full-stack-developer'],
+      ['Hire Full Stack Developer', '/hire-full-stack-developer/'],
     ],
   },
 ];
 
 const TRUST_BADGES = [
   { src: '/images/dmca.png',            alt: 'DMCA Protected',          href: 'https://www.dmca.com' },
-  { src: '/images/iso.png',              alt: 'ISO 9001:2015 Certified', href: '/who-we-are' },
-  { src: '/images/msme.png',            alt: 'MSME Registered',         href: '/who-we-are' },
+  { src: '/images/iso.png',              alt: 'ISO 9001:2015 Certified', href: '/who-we-are/' },
+  { src: '/images/msme.png',            alt: 'MSME Registered',         href: '/who-we-are/' },
   { src: '/images/trustpilot.svg',      alt: 'Trustpilot',              href: 'https://www.trustpilot.com/review/1solutions.biz', nofollow: true },
   { src: '/images/gmb.png',             alt: 'Google Business Profile', href: 'https://g.co/kgs/4BCmrBR', nofollow: true },
 ];
 
 const BOTTOM_NAV = [
-  ['Terms and Conditions', '/terms-of-use'],
-  ['Privacy Policy',       '/privacy-policy'],
-  ['Cookie Policy',        '/cookie-policy'],
-  ['Refund Policy',        '/refund-policy'],
+  ['Terms and Conditions', '/terms-of-use/'],
+  ['Privacy Policy',       '/privacy-policy/'],
+  ['Cookie Policy',        '/cookie-policy/'],
+  ['Refund Policy',        '/refund-policy/'],
 ];
 
 const SOCIAL = [
@@ -146,7 +149,7 @@ export default function BlogFooter() {
       {/* ── SITEMAP + RATING + SOCIAL STRIP ── */}
       <div className="bf-search-strip">
         <div className="bf-inner bf-search-inner">
-          <Link href="/sitemap" className="bf-sitemap-link">Sitemap</Link>
+          <Link href="/sitemap/" className="bf-sitemap-link">Sitemap</Link>
           <div className="bf-rating-badge">
             <span className="bf-rating-stars">★★★★★</span>
             <span className="bf-rating-text">Rated 5/5 by 375 clients</span>
