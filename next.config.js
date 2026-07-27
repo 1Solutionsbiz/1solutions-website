@@ -190,8 +190,11 @@ const nextConfig = {
       { source: '/21-must-wordpress-plugins-2016',  destination: '/21-must-have-wordpress-plugins', permanent: true },
       { source: '/21-must-wordpress-plugins-2016/',  destination: '/21-must-have-wordpress-plugins', permanent: true },
       // Excludes 'feed' — that's the real /blog/feed RSS route, not a
-      // migrated old-style WordPress post URL.
-      { source: '/blog/:slug((?!feed).*)', destination: '/:slug',   permanent: true },
+      // migrated old-style WordPress post URL. Must stay restricted to a
+      // single path segment ([^/]+, not .*) or it also swallows multi-
+      // segment paths like /blog/page/2 (pagination), redirecting them to
+      // a nonexistent /page/2 and 404ing.
+      { source: '/blog/:slug((?!feed)[^/]+)', destination: '/:slug', permanent: true },
       { source: '/blog/category/:slug', destination: '/:slug',       permanent: true },
       { source: '/blog/tag/:slug',      destination: '/tag/:slug',   permanent: true },
     ];
