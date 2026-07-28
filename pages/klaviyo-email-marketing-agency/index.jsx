@@ -78,6 +78,18 @@ export default function KlaviyoEmailMarketingAgency() {
         <title>Klaviyo Email Marketing Agency | 1Solutions</title>
         <meta name="description" content="1Solutions is a certified Klaviyo email marketing agency. We set up Klaviyo flows, design email campaigns, build segments, and drive revenue through email &" />
         <link rel="canonical" href="https://www.1solutions.biz/klaviyo-email-marketing-agency/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Klaviyo Email Marketing Agency | 1Solutions" />
+        <meta property="og:description" content="1Solutions is a certified Klaviyo email marketing agency. We set up Klaviyo flows, design email campaigns, build segments, and drive revenue through email &amp;" />
+        <meta property="og:url" content="https://www.1solutions.biz/klaviyo-email-marketing-agency/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-klaviyo-email-marketing-agency.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Klaviyo Email Marketing Agency" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-klaviyo-email-marketing-agency.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Klaviyo Email Marketing Agency" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           .kla-btn-primary{background:#FE9700;color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s}

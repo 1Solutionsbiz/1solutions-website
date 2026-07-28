@@ -68,6 +68,18 @@ export default function VideoMarketingServices() {
         <title>Video Marketing Services | 1Solutions</title>
         <meta name="description" content="Video marketing by 1Solutions - YouTube channel strategy, short-form video content for Reels/TikTok, video SEO, and YouTube Ads management." />
         <link rel="canonical" href="https://www.1solutions.biz/video-marketing-services/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Video Marketing Services | 1Solutions" />
+        <meta property="og:description" content="Video marketing by 1Solutions - YouTube channel strategy, short-form video content for Reels/TikTok, video SEO, and YouTube Ads management." />
+        <meta property="og:url" content="https://www.1solutions.biz/video-marketing-services/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-video-marketing-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Video Marketing Services" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-video-marketing-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Video Marketing Services" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           *{box-sizing:border-box}

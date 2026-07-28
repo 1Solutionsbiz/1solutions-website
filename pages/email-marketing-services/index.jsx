@@ -68,6 +68,18 @@ export default function EmailMarketingServices() {
         <title>Email Marketing Services | 1Solutions</title>
         <meta name="description" content="Email marketing by 1Solutions - automated drip campaigns, welcome sequences, cart abandonment, and broadcast emails that drive revenue for eCommerce and B2B." />
         <link rel="canonical" href="https://www.1solutions.biz/email-marketing-services/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Email Marketing Services | 1Solutions" />
+        <meta property="og:description" content="Email marketing by 1Solutions - automated drip campaigns, welcome sequences, cart abandonment, and broadcast emails that drive revenue for eCommerce and B2B." />
+        <meta property="og:url" content="https://www.1solutions.biz/email-marketing-services/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-email-marketing-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Email Marketing Services" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-email-marketing-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Email Marketing Services" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           *{box-sizing:border-box}

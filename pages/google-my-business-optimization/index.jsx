@@ -270,14 +270,17 @@ export default function GoogleMyBusinessOptimization() {
         <meta property="og:description" content="Rank in the Maps 3-pack and get surfaced in AI-generated local answers. 500+ GBP profiles optimized since 2009. Free audit, no commitment." />
         <meta property="og:url" content="https://www.1solutions.biz/google-my-business-optimization/" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://1solutions.biz/images/google-my-business-optimization-og.jpg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-google-my-business-optimization.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Google My Business Optimization — rank in the Maps 3-pack" />
         <meta property="og:site_name" content="1Solutions" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Google My Business Optimization 2026 | 1Solutions" />
         <meta name="twitter:description" content="Rank in the Maps 3-pack and get cited in Google AI Overviews. 500+ profiles optimized. Free audit." />
-        <meta name="twitter:image" content="https://1solutions.biz/images/google-my-business-optimization-og.jpg" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-google-my-business-optimization.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Google My Business Optimization — rank in the Maps 3-pack" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           *{box-sizing:border-box;}

@@ -240,12 +240,18 @@ export default function HtmlEmailDevelopmentServices() {
         <meta property="og:description" content="Hand-coded HTML email templates tested across 90+ email clients. Klaviyo, Mailchimp, HubSpot, Outlook-proof, dark mode ready. Get a free quote." />
         <meta property="og:url" content="https://www.1solutions.biz/html-email-development-services/" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.1solutions.biz/BG-1Solutions.png" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-html-email-development-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions HTML Email Development Services — hand-coded, tested across 90+ email clients" />
         <meta property="og:site_name" content="1Solutions" />
         <meta property="og:locale" content="en_US" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="HTML Email Development Services | 1Solutions" />
         <meta name="twitter:description" content="Hand-coded HTML email templates tested across 90+ email clients for Klaviyo, Mailchimp, HubSpot & more." />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-html-email-development-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions HTML Email Development Services — hand-coded, tested across 90+ email clients" />
         <style>{`
           .he-page {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;

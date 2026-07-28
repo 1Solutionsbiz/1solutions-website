@@ -188,7 +188,14 @@ export default function PerformanceMarketingAgency() {
         <meta property="og:description" content="Data-driven performance marketing — Google Ads, Meta Ads, retargeting, and shopping campaigns optimised for measurable ROI. 200+ clients, 4.2× avg ROAS. Free account audit." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.1solutions.biz/performance-marketing-agency/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-performance-marketing-agency.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Performance Marketing Agency — Google Ads, Meta Ads &amp; paid social for measurable ROI" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-performance-marketing-agency.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Performance Marketing Agency — Google Ads, Meta Ads &amp; paid social for measurable ROI" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <style>{`
           /* ── BASE ── */

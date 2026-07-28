@@ -66,6 +66,18 @@ export default function MetaAdsManagement() {
         <title>Meta Ads Management | 1Solutions</title>
         <meta name="description" content="Facebook and Instagram advertising management by 1Solutions. Audience strategy, creative, lead generation, and catalogue ads optimised for ROAS and CPL." />
         <link rel="canonical" href="https://www.1solutions.biz/meta-ads-management/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Meta Ads Management | 1Solutions" />
+        <meta property="og:description" content="Facebook and Instagram advertising management by 1Solutions. Audience strategy, creative, lead generation, and catalogue ads optimised for ROAS and CPL." />
+        <meta property="og:url" content="https://www.1solutions.biz/meta-ads-management/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-meta-ads-management.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Meta Ads Management" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-meta-ads-management.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Meta Ads Management" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           *{box-sizing:border-box}

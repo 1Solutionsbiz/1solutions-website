@@ -163,9 +163,16 @@ export default function InfluencerMarketing() {
         <meta property="og:title" content="Influencer Marketing Services for Ecommerce | 1Solutions" />
         <meta property="og:description" content="End-to-end influencer marketing campaigns that drive real ecommerce growth. Strategy, creator discovery, execution & transparent ROI reporting." />
         <meta property="og:url" content="https://www.1solutions.biz/influencer-marketing-services/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-influencer-marketing-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Influencer Marketing Services" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Influencer Marketing Services | 1Solutions" />
         <meta name="twitter:description" content="Ecommerce influencer marketing - strategy to ROI. Instagram, TikTok, YouTube. US, Canada & Australia." />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-influencer-marketing-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Influencer Marketing Services" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

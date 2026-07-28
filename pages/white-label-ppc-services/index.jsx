@@ -179,8 +179,14 @@ export default function WhiteLabelPPCServices() {
         <meta property="og:title"       content="White-Label PPC Services for Agencies | 1Solutions" />
         <meta property="og:description" content="Resell Google Ads, Meta & Shopping under your brand. Branded reports, non-poaching NDA, dedicated account manager. 90+ agency partners." />
         <meta property="og:url"         content="https://www.1solutions.biz/white-label-ppc-services/" />
-        <meta property="og:image"       content="https://www.1solutions.biz/images/banner-1sol.jpg" />
+        <meta key="og-image" property="og:image"       content="https://www.1solutions.biz/images/og-white-label-ppc-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type"  content="image/jpeg" />
+        <meta property="og:image:alt"   content="1Solutions White-Label PPC Services — resell Google &amp; Meta Ads under your brand" />
         <meta name="twitter:card"       content="summary_large_image" />
+        <meta name="twitter:image"      content="https://www.1solutions.biz/images/og-white-label-ppc-services.jpg" />
+        <meta name="twitter:image:alt"  content="1Solutions White-Label PPC Services — resell Google &amp; Meta Ads under your brand" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <style>{`
           @keyframes wlp-aurora{0%{background-position:0% center}100%{background-position:200% center}}
