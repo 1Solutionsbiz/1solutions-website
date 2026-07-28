@@ -120,6 +120,7 @@ export default function ApplyOnline({ initialPositionTitle, slugPath }) {
     if (initialPositionTitle) {
       setSelectedPosition(initialPositionTitle);
       setForm((prev) => ({ ...prev, position: initialPositionTitle }));
+      formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       return;
     }
     if (!router.isReady) return;
@@ -146,12 +147,6 @@ export default function ApplyOnline({ initialPositionTitle, slugPath }) {
   function handleChange(e) {
     const { name, value, type, checked } = e.target;
     setForm((prev) => ({ ...prev, [name]: type === 'checkbox' ? checked : value }));
-  }
-
-  function applyForPosition(title) {
-    setSelectedPosition(title);
-    setForm((prev) => ({ ...prev, position: title }));
-    formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   async function handleSubmit(e) {
@@ -903,15 +898,15 @@ export default function ApplyOnline({ initialPositionTitle, slugPath }) {
                       {pos.exp}
                     </span>
                   </div>
-                  <button
+                  <Link
+                    href={`/apply-online/${slugify(pos.title)}-opening/`}
                     className="ap-pos-apply"
-                    onClick={() => applyForPosition(pos.title)}
                   >
                     Apply for this role
                     <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13">
                       <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
                     </svg>
-                  </button>
+                  </Link>
                 </div>
               ))}
             </div>
