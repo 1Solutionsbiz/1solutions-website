@@ -68,7 +68,14 @@ export default function OpencartSeoServices() {
         <link rel="canonical" href="https://www.1solutions.biz/opencart-seo-services/" />
         <meta property="og:title" content="OpenCart SEO Services | 1Solutions" />
         <meta property="og:url" content="https://www.1solutions.biz/opencart-seo-services/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-opencart-seo-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions OpenCart SEO Services — SEO experts for OpenCart stores" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-opencart-seo-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions OpenCart SEO Services — SEO experts for OpenCart stores" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <style>{`
           .ocseo-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}

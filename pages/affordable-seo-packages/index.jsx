@@ -350,10 +350,16 @@ export default function AffordableSeoPackages() {
         <meta property="og:title" content="Monthly SEO Packages | Prices from $299/mo | 1Solutions" />
         <meta property="og:description" content="Affordable monthly SEO packages starting at $299/month. White-hat only. No contracts. 15+ years, 500+ clients, 97% retention. Get a free SEO audit today." />
         <meta property="og:url" content="https://www.1solutions.biz/affordable-seo-packages/" />
-        <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-affordable-seo-packages.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Affordable SEO Packages — more growth, less spend" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Monthly SEO Packages from $299/mo | 1Solutions" />
         <meta name="twitter:description" content="White-hat monthly SEO packages. 4 plans, transparent pricing, no contracts. Free SEO audit included." />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-affordable-seo-packages.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Affordable SEO Packages — more growth, less spend" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
         <style>{`
           /* ── Base ── */

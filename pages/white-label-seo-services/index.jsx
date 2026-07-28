@@ -176,8 +176,14 @@ export default function WhiteLabelSEOServices() {
         <meta property="og:title"       content="White-Label SEO Services for Agencies | 1Solutions" />
         <meta property="og:description" content="Resell SEO under your brand. Branded reports, dedicated account manager, strict non-poaching policy. 120+ agency partners." />
         <meta property="og:url"         content="https://www.1solutions.biz/white-label-seo-services/" />
-        <meta property="og:image"       content="https://www.1solutions.biz/images/banner-1sol.jpg" />
+        <meta key="og-image" property="og:image"       content="https://www.1solutions.biz/images/og-white-label-seo-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type"  content="image/jpeg" />
+        <meta property="og:image:alt"   content="1Solutions White-Label SEO Services — resell SEO under your brand" />
         <meta name="twitter:card"       content="summary_large_image" />
+        <meta name="twitter:image"      content="https://www.1solutions.biz/images/og-white-label-seo-services.jpg" />
+        <meta name="twitter:image:alt"  content="1Solutions White-Label SEO Services — resell SEO under your brand" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <style>{`
           @keyframes wls-aurora{0%{background-position:0% center}100%{background-position:200% center}}

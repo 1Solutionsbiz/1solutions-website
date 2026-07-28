@@ -139,7 +139,14 @@ export default function LocalSeoServices() {
         <meta property="og:title" content="Local SEO Services | Google Maps Pack Experts | 1Solutions" />
         <meta property="og:description" content="Dominate the Google Maps 3-pack. GBP optimisation, citations, review strategy & location pages for US, Canada & Australia businesses." />
         <meta property="og:url" content="https://www.1solutions.biz/local-seo-services/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-local-seo-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Local SEO Services — Google Maps 3-pack experts" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-local-seo-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Local SEO Services — Google Maps 3-pack experts" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <style>{`
           .lseo-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}

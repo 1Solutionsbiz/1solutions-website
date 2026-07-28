@@ -84,6 +84,18 @@ export default function EcommerceSeoServices() {
         <title>eCommerce SEO Services | 1Solutions</title>
         <meta name="description" content="eCommerce SEO for Shopify, WooCommerce, and Magento. Product & category page optimisation, technical SEO, structured data, and Google Shopping feed management." />
         <link rel="canonical" href="https://www.1solutions.biz/ecommerce-seo-services/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="eCommerce SEO Services | 1Solutions" />
+        <meta property="og:description" content="eCommerce SEO for Shopify, WooCommerce, and Magento. Product & category page optimisation, technical SEO, structured data, and Google Shopping feed management." />
+        <meta property="og:url" content="https://www.1solutions.biz/ecommerce-seo-services/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-ecommerce-seo-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions eCommerce SEO Services — more product sales, not just traffic" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-ecommerce-seo-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions eCommerce SEO Services — more product sales, not just traffic" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           * { box-sizing: border-box; }

@@ -635,14 +635,16 @@ export default function LinkBuildingPackages() {
         <meta property="og:description" content="White-hat link building packages from $350/month. DR40–DR90 guest posts, niche edits, digital PR, and AI+GEO citation building. Live link tracker on every plan." />
         <meta property="og:url" content="https://www.1solutions.biz/link-building-packages/" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.1solutions.biz/images/link-building-packages-og.jpg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-link-building-packages.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
         <meta property="og:image:alt" content="Link Building Packages by 1Solutions - Starting $350/month" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Link Building Packages 2026 | AI+GEO & SEO Backlinks | 1Solutions" />
         <meta name="twitter:description" content="White-hat link building from $350/month. DR40–DR90 guest posts, niche edits, digital PR and AI+GEO citation building. Manual outreach, fully tracked." />
-        <meta name="twitter:image" content="https://www.1solutions.biz/images/link-building-packages-og.jpg" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-link-building-packages.jpg" />
+        <meta name="twitter:image:alt" content="Link Building Packages by 1Solutions - Starting $350/month" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <style>{`
           /* ── BASE ── */

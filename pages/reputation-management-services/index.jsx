@@ -68,6 +68,18 @@ export default function ReputationManagementServices() {
         <title>Reputation Management Services | 1Solutions</title>
         <meta name="description" content="Reputation management by 1Solutions - brand monitoring, review acquisition, negative content suppression, and crisis response for businesses in US, Canada &" />
         <link rel="canonical" href="https://www.1solutions.biz/reputation-management-services/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Reputation Management Services | 1Solutions" />
+        <meta property="og:description" content="Reputation management by 1Solutions - brand monitoring, review acquisition, negative content suppression, and crisis response for businesses in US, Canada &" />
+        <meta property="og:url" content="https://www.1solutions.biz/reputation-management-services/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-reputation-management-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Reputation Management Services — protect and improve your online reputation" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-reputation-management-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Reputation Management Services — protect and improve your online reputation" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           *{box-sizing:border-box}
