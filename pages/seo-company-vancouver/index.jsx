@@ -133,6 +133,14 @@ export default function SeoCompanyVancouver() {
         <meta property="og:description" content="Top SEO company in Vancouver with 15+ years experience. We help Vancouver businesses rank on Page 1 of Google. Get your free SEO audit today." />
         <meta property="og:url" content="https://www.1solutions.biz/seo-company-vancouver/" />
         <meta property="og:type" content="website" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-seo-company-vancouver.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions SEO Company in Vancouver" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-seo-company-vancouver.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions SEO Company in Vancouver" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           *{box-sizing:border-box;}

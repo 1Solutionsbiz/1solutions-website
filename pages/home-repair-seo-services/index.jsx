@@ -84,6 +84,18 @@ export default function HomeRepairSeoServices() {
         <title>Home Repair SEO Services | 1Solutions</title>
         <meta name="description" content="Grow your home repair business with SEO from 1Solutions. Rank for handyman, home services, contractor, renovation, and repair keywords in your local market." />
         <link rel="canonical" href="https://www.1solutions.biz/home-repair-seo-services/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Home Repair SEO Services | 1Solutions" />
+        <meta property="og:description" content="Grow your home repair business with SEO from 1Solutions. Rank for handyman, home services, contractor, renovation, and repair keywords in your local market." />
+        <meta property="og:url" content="https://www.1solutions.biz/home-repair-seo-services/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-home-repair-seo-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Home Repair SEO Services" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-home-repair-seo-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Home Repair SEO Services" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           * { box-sizing: border-box; }

@@ -133,6 +133,14 @@ export default function SeoCompanyToronto() {
         <meta property="og:description" content="Top SEO company in Toronto with 15+ years experience. We help Toronto and GTA businesses rank on Page 1 of Google. Get your free SEO audit today." />
         <meta property="og:url" content="https://www.1solutions.biz/seo-company-toronto/" />
         <meta property="og:type" content="website" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-seo-company-toronto.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions SEO Company in Toronto" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-seo-company-toronto.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions SEO Company in Toronto" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           *{box-sizing:border-box;}

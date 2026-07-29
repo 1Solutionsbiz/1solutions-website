@@ -330,10 +330,16 @@ export default function SeoCompanyLosAngeles() {
         <meta property="og:description" content="Top-rated LA SEO agency. We help Los Angeles businesses rank on page 1 of Google. Local SEO, technical SEO, content marketing, and link building. Free audit." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.1solutions.biz/seo-company-los-angeles/" />
-        <meta property="og:image" content="https://www.1solutions.biz/images/og-seo-los-angeles.jpg" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-seo-company-los-angeles.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions SEO Company Los Angeles" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="SEO Company Los Angeles | 1Solutions" />
         <meta name="twitter:description" content="Top-rated SEO company in Los Angeles. Page 1 rankings for LA businesses through local SEO, technical SEO, and content marketing." />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-seo-company-los-angeles.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions SEO Company Los Angeles" />
         <meta name="geo.region" content="US-CA" />
         <meta name="geo.placename" content="Los Angeles" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
