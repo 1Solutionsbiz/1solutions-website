@@ -130,7 +130,14 @@ export default function HireDataScientist() {
         <meta property="og:title" content="Hire Data Scientist | Python, SQL, A/B Testing | 1Solutions" />
         <meta property="og:description" content="Hire vetted data scientists - EDA, hypothesis testing, A/B testing, predictive modelling, customer analytics, Python, SQL, Tableau, Snowflake, BigQuery." />
         <meta property="og:url" content="https://www.1solutions.biz/hire-data-scientist/" />
-        <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-hire-data-scientist.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Hire Data Scientist" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-hire-data-scientist.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Hire Data Scientist" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
         <style>{`
           .hds-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 20%,#ede9fe 50%,#fef3c7 75%,#f0f9ff 100%);color:#0F1F40;line-height:1.6;position:relative;overflow-x:hidden}

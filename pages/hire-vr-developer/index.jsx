@@ -77,6 +77,18 @@ export default function HireVrDeveloper() {
         <title>Hire VR Developer | 1Solutions</title>
         <meta name="description" content="Hire dedicated VR/AR developers from 1Solutions. Unity, Unreal Engine 5, Meta Quest, Apple Vision Pro, and WebXR specialists. Pre-vetted profiles in 48 hours." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-vr-developer/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Hire VR Developer | 1Solutions" />
+        <meta property="og:description" content="Hire dedicated VR/AR developers from 1Solutions. Unity, Unreal Engine 5, Meta Quest, Apple Vision Pro, and WebXR specialists. Pre-vetted profiles in 48 hours." />
+        <meta property="og:url" content="https://www.1solutions.biz/hire-vr-developer/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-hire-vr-developer.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Hire VR Developer" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-hire-vr-developer.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Hire VR Developer" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           .hvrd-btn-primary{background:#FE9700;color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s}

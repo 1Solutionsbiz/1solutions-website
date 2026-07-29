@@ -234,6 +234,18 @@ export default function HireDedicatedResources() {
         <title>Hire Dedicated Resources - Developers, Designers | 1Solutions</title>
         <meta name="description" content="Hire dedicated developers, designers, and digital marketing experts from 1Solutions. Pre-vetted professionals on full-time, part-time, or hourly engagements." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-dedicated-resources/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Hire Dedicated Resources - Developers, Designers | 1Solutions" />
+        <meta property="og:description" content="Hire dedicated developers, designers, and digital marketing experts from 1Solutions. Pre-vetted professionals on full-time, part-time, or hourly engagements." />
+        <meta property="og:url" content="https://www.1solutions.biz/hire-dedicated-resources/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-hire-dedicated-resources.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Hire Dedicated Resources" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-hire-dedicated-resources.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Hire Dedicated Resources" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           .hdr-btn-primary{background:#114171;color:#fff;padding:15px 36px;border-radius:100px;font-weight:700;font-size:1rem;text-decoration:none;transition:all .25s;display:inline-block}

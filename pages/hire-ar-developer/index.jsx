@@ -131,7 +131,14 @@ export default function HireARDeveloper() {
         <meta property="og:title" content="Hire AR Developer | ARKit, ARCore, WebAR, HoloLens | 1Solutions" />
         <meta property="og:description" content="Hire vetted AR developers - ARKit, ARCore, Unity AR Foundation, 8thWall WebAR, HoloLens 2, Apple Vision Pro. Mobile AR, WebAR, enterprise MR, industrial AR." />
         <meta property="og:url" content="https://www.1solutions.biz/hire-ar-developer/" />
-        <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-hire-ar-developer.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Hire AR Developer" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-hire-ar-developer.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Hire AR Developer" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
         <style>{`
           .har-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:linear-gradient(135deg,#f0fdfa 0%,#ccfbf1 20%,#f0fdf4 50%,#fef3c7 75%,#f0f9ff 100%);color:#0F1F40;line-height:1.6;position:relative;overflow-x:hidden}

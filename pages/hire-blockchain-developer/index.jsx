@@ -131,7 +131,14 @@ export default function HireBlockchainDeveloper() {
         <meta property="og:title" content="Hire Blockchain Developer | Solidity, DeFi, NFT, Web3 | 1Solutions" />
         <meta property="og:description" content="Hire vetted blockchain developers - Solidity, DeFi, NFT, wagmi, ethers.js, Ethereum, Polygon, Solana, Layer 2. Dedicated, part-time, or fixed-scope. 15+ years dev experience." />
         <meta property="og:url" content="https://www.1solutions.biz/hire-blockchain-developer/" />
-        <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-hire-blockchain-developer.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Hire Blockchain Developer" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-hire-blockchain-developer.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Hire Blockchain Developer" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
         <style>{`
           .hbc-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:linear-gradient(135deg,#fff7ed 0%,#ffedd5 20%,#fff5f0 50%,#fef3c7 75%,#f0f9ff 100%);color:#0F1F40;line-height:1.6;position:relative;overflow-x:hidden}
