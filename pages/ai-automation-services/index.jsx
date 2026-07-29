@@ -576,7 +576,7 @@ export default function AIAutomationServices() {
             <div className="aas-process-image-col">
               <div className="aas-process-img-wrap">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/office.png" alt="1Solutions AI automation team" />
+                <img src="/images/ai-automation-services.png" alt="1Solutions AI Automation Services — automate smarter, grow faster" />
               </div>
             </div>
           </div>
