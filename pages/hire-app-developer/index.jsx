@@ -80,6 +80,18 @@ export default function HireAppDeveloper() {
         <title>Hire App Developer | 1Solutions</title>
         <meta name="description" content="Hire dedicated mobile app developers from 1Solutions. iOS, Android, Flutter, and React Native experts available for immediate engagement. Profiles in 48 hours." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-app-developer/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Hire App Developer | 1Solutions" />
+        <meta property="og:description" content="Hire dedicated mobile app developers from 1Solutions. iOS, Android, Flutter, and React Native experts available for immediate engagement. Profiles in 48 hours." />
+        <meta property="og:url" content="https://www.1solutions.biz/hire-app-developer/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-hire-app-developer.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Hire App Developer" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-hire-app-developer.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Hire App Developer" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           .hapd-btn-primary{background:#FE9700;color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s}

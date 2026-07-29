@@ -78,6 +78,18 @@ export default function HireReactNativeDeveloper() {
         <title>Hire React Native Developer | 1Solutions</title>
         <meta name="description" content="Hire dedicated React Native developers from 1Solutions. Cross-platform iOS and Android experts with native module experience. Pre-vetted talent." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-react-native-developer/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Hire React Native Developer | 1Solutions" />
+        <meta property="og:description" content="Hire dedicated React Native developers from 1Solutions. Cross-platform iOS and Android experts with native module experience. Pre-vetted talent." />
+        <meta property="og:url" content="https://www.1solutions.biz/hire-react-native-developer/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-hire-react-native-developer.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Hire React Native Developer" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-hire-react-native-developer.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Hire React Native Developer" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           .hrnd-btn-primary{background:#FE9700;color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s}

@@ -77,6 +77,18 @@ export default function HireMEANStackDeveloper() {
         <title>Hire MEAN Stack Developer | 1Solutions</title>
         <meta name="description" content="Hire dedicated MEAN stack developers from 1Solutions. MongoDB, Express, Angular & Node.js experts for enterprise web apps. Pre-vetted talent." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-mean-stack-developer/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Hire MEAN Stack Developer | 1Solutions" />
+        <meta property="og:description" content="Hire dedicated MEAN stack developers from 1Solutions. MongoDB, Express, Angular & Node.js experts for enterprise web apps. Pre-vetted talent." />
+        <meta property="og:url" content="https://www.1solutions.biz/hire-mean-stack-developer/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-hire-mean-stack-developer.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Hire MEAN Stack Developer" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-hire-mean-stack-developer.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Hire MEAN Stack Developer" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           .hmean-btn-primary{background:#FE9700;color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s}

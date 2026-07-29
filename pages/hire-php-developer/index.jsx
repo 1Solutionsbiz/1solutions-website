@@ -78,6 +78,18 @@ export default function HirePHPDeveloper() {
         <title>Hire PHP Developer | 1Solutions</title>
         <meta name="description" content="Hire dedicated PHP developers from 1Solutions. Laravel, Symfony, WordPress, and PHP 8.x experts for web applications and APIs. Pre-vetted talent." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-php-developer/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Hire PHP Developer | 1Solutions" />
+        <meta property="og:description" content="Hire dedicated PHP developers from 1Solutions. Laravel, Symfony, WordPress, and PHP 8.x experts for web applications and APIs. Pre-vetted talent." />
+        <meta property="og:url" content="https://www.1solutions.biz/hire-php-developer/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-hire-php-developer.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Hire PHP Developer" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-hire-php-developer.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Hire PHP Developer" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           .hphp-btn-primary{background:#FE9700;color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s}

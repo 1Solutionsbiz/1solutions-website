@@ -161,7 +161,14 @@ export default function HireAngularJsDeveloper() {
         <meta property="og:title" content="Hire Angular Developer | RxJS, NgRx, TypeScript | 1Solutions" />
         <meta property="og:description" content="Hire vetted Angular developers - Angular 2–17, RxJS, NgRx, TypeScript strict, Angular Material, AngularJS migration. Dedicated, part-time, or hourly. 15+ years experience." />
         <meta property="og:url" content="https://www.1solutions.biz/hire-angularjs-developer/" />
-        <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-hire-angularjs-developer.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Hire Angular Developer — build fast modern applications" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-hire-angularjs-developer.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Hire Angular Developer — build fast modern applications" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
         <style>{`
           .ha-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:linear-gradient(135deg,#fff0f3 0%,#ffe4ec 20%,#fff5f7 50%,#fef3c7 75%,#f0f9ff 100%);color:#0F1F40;line-height:1.6;position:relative;overflow-x:hidden}

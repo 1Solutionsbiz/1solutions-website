@@ -78,6 +78,18 @@ export default function HirePythonDeveloper() {
         <title>Hire Python Developer | 1Solutions</title>
         <meta name="description" content="Hire dedicated Python developers from 1Solutions. Django, FastAPI, Flask, and data engineering experts. Pre-vetted engineers available immediately." />
         <link rel="canonical" href="https://www.1solutions.biz/hire-python-developer/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Hire Python Developer | 1Solutions" />
+        <meta property="og:description" content="Hire dedicated Python developers from 1Solutions. Django, FastAPI, Flask, and data engineering experts. Pre-vetted engineers available immediately." />
+        <meta property="og:url" content="https://www.1solutions.biz/hire-python-developer/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-hire-python-developer.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Hire Python Developer" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-hire-python-developer.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Hire Python Developer" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           .hpy-btn-primary{background:#FE9700;color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s}

@@ -267,7 +267,14 @@ export default function HireWordPressDeveloper() {
         <meta property="og:title" content="Hire WordPress Developer | 1Solutions" />
         <meta property="og:description" content="Hire senior WordPress developers for custom theme, plugin, WooCommerce, headless WP & migration projects. 15+ years | 200+ WP projects | Ready in 48 hours." />
         <meta property="og:url" content="https://www.1solutions.biz/hire-wordpress-developer/" />
-        <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-hire-wordpress-developer.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Hire WordPress Developer" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-hire-wordpress-developer.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Hire WordPress Developer" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
         <style>{`
           .hw-page { font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; background:linear-gradient(135deg,#dbeafe 0%,#ede9fe 25%,#e0f2fe 50%,#fef3c7 75%,#fce7f3 100%); background-attachment:scroll; color:#0F1F40; line-height:1.6; position:relative; overflow-x:hidden; }

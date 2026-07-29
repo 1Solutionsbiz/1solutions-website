@@ -226,7 +226,14 @@ export default function HireShopifyDeveloper() {
         <meta property="og:title" content="Hire Shopify Developer | 1Solutions" />
         <meta property="og:description" content="Dedicated Shopify developers - custom themes, Shopify Plus, private app development, platform migration, Headless Shopify, ERP integrations, and monthly retainers." />
         <meta property="og:url" content="https://www.1solutions.biz/hire-shopify-developer/" />
-        <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-hire-shopify-developer.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Hire Shopify Developer" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-hire-shopify-developer.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Hire Shopify Developer" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
         <style>{`
           .sh-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#111827;line-height:1.6;position:relative;overflow-x:hidden}
