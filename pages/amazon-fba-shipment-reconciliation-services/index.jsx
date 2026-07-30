@@ -135,6 +135,18 @@ export default function FBAReconciliation() {
         <title>Amazon FBA Shipment Reconciliation Services | 1Solutions</title>
         <meta name="description" content="Recover lost FBA revenue with 1Solutions. We audit Amazon FBA shipments, file reimbursement claims for lost and damaged inventory, and recover money Amazon" />
         <link rel="canonical" href="https://www.1solutions.biz/amazon-fba-shipment-reconciliation-services/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Amazon FBA Shipment Reconciliation Services | 1Solutions" />
+        <meta property="og:description" content="Recover lost FBA revenue with 1Solutions. We audit Amazon FBA shipments, file reimbursement claims for lost and damaged inventory, and recover money Amazon" />
+        <meta property="og:url" content="https://www.1solutions.biz/amazon-fba-shipment-reconciliation-services/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-amazon-fba-shipment-reconciliation-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Amazon FBA Shipment Reconciliation Services" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-amazon-fba-shipment-reconciliation-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Amazon FBA Shipment Reconciliation Services" />
       </Head>
 
       <style>{`

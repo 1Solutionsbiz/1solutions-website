@@ -44,6 +44,14 @@ export default function Page() {
         <meta property="og:title" content={`AI Integration Services | Connect AI Tools to Your Business | 1Solutions`} />
         <meta property="og:description" content={`AI integration services — connect OpenAI, Claude, Gemini, and custom AI models to your website, CRM, and workflows. Expert API integration for US, Canada & Australia.`} />
         <meta property="og:url" content="https://www.1solutions.biz/ai-integration-services/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-ai-integration-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions AI Integration Services" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-ai-integration-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions AI Integration Services" />
         <meta name="robots" content="index, follow" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           '@context':'https://schema.org',

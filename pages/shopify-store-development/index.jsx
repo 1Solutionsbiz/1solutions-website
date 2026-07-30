@@ -159,6 +159,14 @@ export default function ShopifyStoreDevelopment() {
         <meta property="og:title" content="Shopify Store Development Company | 1Solutions" />
         <meta property="og:description" content="Build high-converting, fast, and SEO-optimized Shopify stores with 1Solutions' expert Shopify development services." />
         <meta property="og:url" content="https://www.1solutions.biz/shopify-store-development/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-shopify-store-development.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Shopify Store Development" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-shopify-store-development.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Shopify Store Development" />
         <style>{`
           .shopify-page {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;

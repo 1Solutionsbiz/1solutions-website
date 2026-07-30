@@ -157,6 +157,14 @@ export default function MagentoDevelopmentCompany() {
         <meta property="og:title" content="Magento Development Company | 1Solutions" />
         <meta property="og:description" content="Build enterprise-grade Magento 2 and Adobe Commerce stores with 1Solutions' expert Magento development services for US, Canada & Australia." />
         <meta property="og:url" content="https://www.1solutions.biz/magento-development-company/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-magento-development-company.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Magento Development Company" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-magento-development-company.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Magento Development Company" />
         <style>{`
           .mag-page {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;

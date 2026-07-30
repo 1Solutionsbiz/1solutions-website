@@ -199,6 +199,14 @@ export default function WebflowDevelopmentServices() {
         <meta property="og:description" content="Certified Webflow agency delivering custom websites, CMS, e-commerce, and animations for US, Canada & Australia businesses. 200+ Webflow sites delivered." />
         <meta property="og:url" content="https://www.1solutions.biz/webflow-development-services/" />
         <meta property="og:type" content="website" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-webflow-development-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Webflow Development Services" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-webflow-development-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Webflow Development Services" />
         <meta name="geo.region" content="US" />
         <meta name="geo.placename" content="United States" />
         <script

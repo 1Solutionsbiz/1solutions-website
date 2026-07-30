@@ -157,6 +157,14 @@ export default function WooCommerceDevelopmentCompany() {
         <meta property="og:title" content="WooCommerce Development Company | 1Solutions" />
         <meta property="og:description" content="Build high-converting, scalable WooCommerce stores with 1Solutions' expert WooCommerce development services for US, Canada & Australia." />
         <meta property="og:url" content="https://www.1solutions.biz/woocommerce-development-company/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-woocommerce-development-company.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions WooCommerce Development Company" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-woocommerce-development-company.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions WooCommerce Development Company" />
         <style>{`
           .woo-page {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;

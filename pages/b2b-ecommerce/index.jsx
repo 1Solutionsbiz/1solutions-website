@@ -163,9 +163,16 @@ export default function B2BEcommerce() {
         <meta property="og:title" content="B2B eCommerce Development Services | 1Solutions" />
         <meta property="og:description" content="Custom B2B eCommerce platforms built for manufacturers, wholesalers & distributors. Tiered pricing, ERP integration, bulk ordering & buyer self-service portals." />
         <meta property="og:url" content="https://www.1solutions.biz/b2b-ecommerce" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-b2b-ecommerce.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions B2B eCommerce Development" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="B2B eCommerce Development | 1Solutions" />
         <meta name="twitter:description" content="Wholesale portals, ERP integration, tiered pricing & buyer self-service. B2B eCommerce built for scale." />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-b2b-ecommerce.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions B2B eCommerce Development" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

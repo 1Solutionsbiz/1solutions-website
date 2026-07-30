@@ -182,9 +182,16 @@ export default function HeadlessWordPressDevelopment() {
         <meta property="og:description" content="Build blazing-fast, SEO-optimized headless WordPress websites with 1Solutions. Expert Next.js and WPGraphQL development for global clients." />
         <meta property="og:url" content="https://www.1solutions.biz/headless-wordpress-development/" />
         <meta property="og:type" content="website" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-headless-wordpress-development.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Headless WordPress Development" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Headless WordPress Development | 1Solutions" />
         <meta name="twitter:description" content="Expert headless WordPress development using Next.js and WPGraphQL. Blazing fast, fully SEO-optimized decoupled CMS solutions." />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-headless-wordpress-development.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Headless WordPress Development" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
         <style>{`

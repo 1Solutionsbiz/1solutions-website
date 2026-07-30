@@ -128,6 +128,18 @@ export default function EbayAccountManagement() {
         <meta name="description" content="Maximise eBay sales with 1Solutions. We manage your eBay store, listing optimisation, Promoted Listings, Top Rated Seller strategy, and Cassini SEO for" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.1solutions.biz/ebay-account-management-services/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="eBay Account Management Services | 1Solutions" />
+        <meta property="og:description" content="Maximise eBay sales with 1Solutions. We manage your eBay store, listing optimisation, Promoted Listings, Top Rated Seller strategy, and Cassini SEO for" />
+        <meta property="og:url" content="https://www.1solutions.biz/ebay-account-management-services/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-ebay-account-management-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions eBay Account Management Services" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-ebay-account-management-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions eBay Account Management Services" />
         <style>{`
           *{box-sizing:border-box;}
           body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;}

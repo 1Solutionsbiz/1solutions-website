@@ -158,6 +158,14 @@ export default function LaravelDevelopmentCompany() {
         <meta property="og:title" content="Laravel Development Company | 1Solutions" />
         <meta property="og:description" content="Custom Laravel web applications, SaaS platforms, REST APIs, and e-commerce solutions. 15+ years of PHP & Laravel expertise for US, Canada & Australia." />
         <meta property="og:url" content="https://www.1solutions.biz/laravel-development-company/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-laravel-development-company.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Laravel Development Company" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-laravel-development-company.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Laravel Development Company" />
         <style>{`
           .lv-page {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;

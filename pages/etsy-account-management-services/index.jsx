@@ -128,6 +128,18 @@ export default function EtsyAccountManagement() {
         <meta name="description" content="Grow your Etsy shop with 1Solutions. We optimise listings with Etsy SEO tags, manage Etsy Ads, pursue Star Seller status, and build your shop into a" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.1solutions.biz/etsy-account-management-services/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Etsy Shop Management Services | 1Solutions" />
+        <meta property="og:description" content="Grow your Etsy shop with 1Solutions. We optimise listings with Etsy SEO tags, manage Etsy Ads, pursue Star Seller status, and build your shop into a" />
+        <meta property="og:url" content="https://www.1solutions.biz/etsy-account-management-services/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-etsy-account-management-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Etsy Shop Management Services" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-etsy-account-management-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Etsy Shop Management Services" />
         <style>{`
           *{box-sizing:border-box;}
           body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;}

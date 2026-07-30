@@ -79,6 +79,18 @@ export default function ShopifyMigrationServices() {
         <title>Shopify Migration Services | 1Solutions</title>
         <meta name="description" content="Expert Shopify migration services from 1Solutions. We migrate WooCommerce, Magento, BigCommerce, and custom stores to Shopify with zero data loss, SEO" />
         <link rel="canonical" href="https://www.1solutions.biz/shopify-migration-services/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Shopify Migration Services | 1Solutions" />
+        <meta property="og:description" content="Expert Shopify migration services from 1Solutions. We migrate WooCommerce, Magento, BigCommerce, and custom stores to Shopify with zero data loss, SEO" />
+        <meta property="og:url" content="https://www.1solutions.biz/shopify-migration-services/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-shopify-migration-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Shopify Migration Services" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-shopify-migration-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Shopify Migration Services" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           .sms-btn-primary{background:#FE9700;color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s}

@@ -161,7 +161,14 @@ export default function ReactNativeAppDevelopment() {
         <meta property="og:title" content="React Native App Development Services | 1Solutions" />
         <meta property="og:description" content="Custom iOS & Android apps from a single React Native codebase. 40% lower cost, same native performance. US, Canada & Australia." />
         <meta property="og:url" content="https://www.1solutions.biz/react-native-app-development" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-react-native-app-development.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions React Native App Development" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-react-native-app-development.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions React Native App Development" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

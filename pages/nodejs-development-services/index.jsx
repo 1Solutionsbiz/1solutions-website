@@ -77,6 +77,18 @@ export default function NodeJsDevelopmentServices() {
         <title>Node.js Development Services | 1Solutions</title>
         <meta name="description" content="Expert Node.js development services from 1Solutions. We build scalable REST APIs, real-time applications, microservices, and full-stack Node." />
         <link rel="canonical" href="https://www.1solutions.biz/nodejs-development-services/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Node.js Development Services | 1Solutions" />
+        <meta property="og:description" content="Expert Node.js development services from 1Solutions. We build scalable REST APIs, real-time applications, microservices, and full-stack Node." />
+        <meta property="og:url" content="https://www.1solutions.biz/nodejs-development-services/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-nodejs-development-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Node.js Development Services" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-nodejs-development-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Node.js Development Services" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           .njs-btn-primary{background:#FE9700;color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s}

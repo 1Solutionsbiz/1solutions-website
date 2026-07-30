@@ -135,6 +135,18 @@ export default function HouzzProductListingServices() {
         <title>Houzz Product Listing Services | 1Solutions</title>
         <meta name="description" content="Reach interior designers and homeowners on Houzz with 1Solutions. We create optimised Houzz product listings, manage your Houzz Pro shop, and run Houzz" />
         <link rel="canonical" href="https://www.1solutions.biz/houzz-product-listing-services/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Houzz Product Listing Services | 1Solutions" />
+        <meta property="og:description" content="Reach interior designers and homeowners on Houzz with 1Solutions. We create optimised Houzz product listings, manage your Houzz Pro shop, and run Houzz" />
+        <meta property="og:url" content="https://www.1solutions.biz/houzz-product-listing-services/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-houzz-product-listing-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Houzz Product Listing Services" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-houzz-product-listing-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Houzz Product Listing Services" />
       </Head>
 
       <style>{`

@@ -135,6 +135,18 @@ export default function TemuAccountManagement() {
         <title>Temu Marketplace Account Management Services | 1Solutions</title>
         <meta name="description" content="Grow on Temu marketplace with 1Solutions. We manage your Temu seller account, listing optimisation, pricing strategy, GMV growth, and US market positioning." />
         <link rel="canonical" href="https://www.1solutions.biz/temu-account-management-services/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Temu Marketplace Account Management Services | 1Solutions" />
+        <meta property="og:description" content="Grow on Temu marketplace with 1Solutions. We manage your Temu seller account, listing optimisation, pricing strategy, GMV growth, and US market positioning." />
+        <meta property="og:url" content="https://www.1solutions.biz/temu-account-management-services/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-temu-account-management-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Temu Marketplace Account Management" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-temu-account-management-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Temu Marketplace Account Management" />
       </Head>
 
       <style>{`

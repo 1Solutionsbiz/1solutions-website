@@ -60,7 +60,14 @@ export default function DigitalTransformation() {
         <link rel="canonical" href="https://www.1solutions.biz/digital-transformation/" />
         <meta property="og:title" content="Digital Transformation Services | 1Solutions" />
         <meta property="og:url" content="https://www.1solutions.biz/digital-transformation/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-digital-transformation.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Digital Transformation Services" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-digital-transformation.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Digital Transformation Services" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <style>{`
           .dtrans-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}

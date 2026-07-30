@@ -132,6 +132,18 @@ export default function AmazonAccountManagement() {
         <meta name="description" content="Expert Amazon account management by 1Solutions. We handle Seller Central, listing optimization, PPC advertising, account health, Brand Registry, FBA" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.1solutions.biz/amazon-account-management-services/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Amazon Account Management Services | 1Solutions" />
+        <meta property="og:description" content="Expert Amazon account management by 1Solutions. We handle Seller Central, listing optimization, PPC advertising, account health, Brand Registry, FBA" />
+        <meta property="og:url" content="https://www.1solutions.biz/amazon-account-management-services/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-amazon-account-management-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Amazon Account Management Services" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-amazon-account-management-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Amazon Account Management Services" />
         <style>{`
           *{box-sizing:border-box;}
           body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;}

@@ -157,6 +157,14 @@ export default function OpenCartDevelopmentCompany() {
         <meta property="og:title" content="OpenCart Development Company | 1Solutions" />
         <meta property="og:description" content="Build fast, scalable, and SEO-optimised OpenCart stores with 1Solutions' expert OpenCart development services for US, Canada & Australia." />
         <meta property="og:url" content="https://www.1solutions.biz/opencart-development-company/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-opencart-development-company.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions OpenCart Development Company" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-opencart-development-company.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions OpenCart Development Company" />
         <style>{`
           .oc-page {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;

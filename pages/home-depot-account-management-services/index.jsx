@@ -135,6 +135,18 @@ export default function HomeDepotAccountManagement() {
         <title>Home Depot Marketplace Account Management Services | 1Solutions</title>
         <meta name="description" content="Grow on Home Depot Marketplace with 1Solutions. We manage supplier accounts, product data compliance, Direct Shipment Vendor (DSV) setup, listing" />
         <link rel="canonical" href="https://www.1solutions.biz/home-depot-account-management-services/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Home Depot Marketplace Account Management Services | 1Solutions" />
+        <meta property="og:description" content="Grow on Home Depot Marketplace with 1Solutions. We manage supplier accounts, product data compliance, Direct Shipment Vendor (DSV) setup, listing" />
+        <meta property="og:url" content="https://www.1solutions.biz/home-depot-account-management-services/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-home-depot-account-management-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Home Depot Marketplace Account Management" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-home-depot-account-management-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Home Depot Marketplace Account Management" />
       </Head>
 
       <style>{`

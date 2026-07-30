@@ -158,6 +158,14 @@ export default function AIAutomationServices() {
         <meta property="og:title" content="AI Automation Services | 1Solutions" />
         <meta property="og:description" content="Custom AI automation solutions that eliminate repetitive work, reduce errors, and scale your operations — built for US, Canada & Australia businesses." />
         <meta property="og:url" content="https://www.1solutions.biz/ai-automation-services/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-ai-automation-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions AI Automation Services" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-ai-automation-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions AI Automation Services" />
         <style>{`
           .aas-page {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
