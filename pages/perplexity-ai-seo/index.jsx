@@ -260,7 +260,14 @@ export default function PerplexityAiSeo() {
         <meta property="og:title" content="Perplexity AI SEO Services | Get Cited in Perplexity AI Answers | 1Solutions" />
         <meta property="og:description" content="Perplexity AI SEO — content optimisation, structured data, E-E-A-T signal building, and citation monitoring to make your brand a trusted Perplexity source." />
         <meta property="og:url" content="https://www.1solutions.biz/perplexity-ai-seo/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-perplexity-ai-seo.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Perplexity AI SEO Services" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-perplexity-ai-seo.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Perplexity AI SEO Services" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <style>{`
           .plx-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}

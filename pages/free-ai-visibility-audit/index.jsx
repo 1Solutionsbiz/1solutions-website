@@ -348,12 +348,14 @@ export default function FreeAiVisibilityAudit() {
         <meta property="og:description" content="Discover how your brand appears in ChatGPT, Perplexity, Google AI Overviews, and Bing Copilot. Free audit, competitor benchmark, and action plan. Delivered in 48 hours." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.1solutions.biz/free-ai-visibility-audit/" />
-        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-free-ai-visibility-audit.png" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-free-ai-visibility-audit.jpg" />
         <meta key="og-image-w" property="og:image:width" content="1200" />
         <meta key="og-image-h" property="og:image:height" content="630" />
-        <meta key="og-image-type" property="og:image:type" content="image/png" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Free AI Visibility Audit — discover your AI search presence" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-free-ai-visibility-audit.png" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-free-ai-visibility-audit.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Free AI Visibility Audit — discover your AI search presence" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <style>{`
           /* ── Reuses pl- classes from global blog.css for shared elements ── */

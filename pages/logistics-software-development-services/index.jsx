@@ -121,7 +121,14 @@ export default function LogisticsSoftware() {
         <meta property="og:title" content="Logistics Software Development Services | 1Solutions" />
         <meta property="og:description" content="TMS, WMS, last-mile delivery, route optimisation, fleet management, and carrier integrations. 100+ logistics projects." />
         <meta property="og:url" content="https://www.1solutions.biz/logistics-software-development-services/" />
-        <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-logistics-software-development-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Logistics Software Development" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-logistics-software-development-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Logistics Software Development" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
         <style>{`
           .lgt-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:linear-gradient(135deg,#f0fdf4 0%,#dcfce7 20%,#f0fdf9 50%,#fef9c3 75%,#f0f9ff 100%);color:${txt};line-height:1.6;position:relative;overflow-x:hidden}

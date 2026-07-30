@@ -67,7 +67,14 @@ export default function TechnicalSeoOptimization() {
         <link rel="canonical" href="https://www.1solutions.biz/technical-seo-optimization/" />
         <meta property="og:title" content="Technical SEO Optimisation | 1Solutions" />
         <meta property="og:url" content="https://www.1solutions.biz/technical-seo-optimization/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-technical-seo-optimization.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Technical SEO Optimization" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-technical-seo-optimization.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Technical SEO Optimization" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <style>{`
           .tseo-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0F1F40;line-height:1.6;overflow-x:hidden}

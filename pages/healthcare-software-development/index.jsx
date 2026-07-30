@@ -233,7 +233,14 @@ export default function HealthcareSoftwareDevelopment() {
         <meta property="og:title" content="Healthcare Software Development Company | 1Solutions" />
         <meta property="og:description" content="HIPAA-compliant healthcare software development - EHR, telemedicine, patient portals, medical billing, HL7 FHIR & AI-powered clinical tools. 15+ years, 50+ healthcare clients." />
         <meta property="og:url" content="https://www.1solutions.biz/healthcare-software-development/" />
-        <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-healthcare-software-development.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Healthcare Software Development" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-healthcare-software-development.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Healthcare Software Development" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
         <style>{`
           .hc-page { font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; background:linear-gradient(135deg,#dbeafe 0%,#ede9fe 25%,#e0f2fe 50%,#fef3c7 75%,#fce7f3 100%); background-attachment:scroll; color:#0F1F40; line-height:1.6; position:relative; overflow-x:hidden; }

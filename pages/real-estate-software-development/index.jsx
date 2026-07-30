@@ -122,7 +122,14 @@ export default function RealEstateSoftware() {
         <meta property="og:title" content="Real Estate Software Development | 1Solutions" />
         <meta property="og:description" content="Property portals, MLS/IDX integration, PMS, PropTech apps, and CRE platforms. 110+ real estate projects." />
         <meta property="og:url" content="https://www.1solutions.biz/real-estate-software-development/" />
-        <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-real-estate-software-development.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Real Estate Software Development" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-real-estate-software-development.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Real Estate Software Development" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
         <style>{`
           .re-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:linear-gradient(135deg,#fdf6f0 0%,#fef3e2 20%,#fdf4ee 50%,#f0f9e8 75%,#e8f4f8 100%);color:${txt};line-height:1.6;position:relative;overflow-x:hidden}

@@ -44,6 +44,14 @@ export default function Page() {
         <meta property="og:title" content={`ChatGPT SEO Services | Get Cited in ChatGPT Answers | 1Solutions`} />
         <meta property="og:description" content={`ChatGPT SEO services — optimise your brand to appear as a cited source in ChatGPT responses and OpenAI SearchGPT. Expert AI citation optimization for US & Australia.`} />
         <meta property="og:url" content="https://www.1solutions.biz/chatgpt-seo/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-chatgpt-seo.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions ChatGPT SEO Services" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-chatgpt-seo.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions ChatGPT SEO Services" />
         <meta name="robots" content="index, follow" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           '@context':'https://schema.org',

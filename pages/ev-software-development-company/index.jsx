@@ -120,7 +120,14 @@ export default function EVSoftware() {
         <meta property="og:title" content="EV Software Development Company | OCPP, Fleet EV, Energy Management | 1Solutions" />
         <meta property="og:description" content="OCPP-compliant CSMS, EV driver apps, fleet electrification, energy management systems, battery analytics, and V2G integration. 45+ EV and clean energy projects." />
         <meta property="og:url" content="https://www.1solutions.biz/ev-software-development-company/" />
-        <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-ev-software-development-company.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions EV Software Development" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-ev-software-development-company.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions EV Software Development" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
         <style>{`
           .ev-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 20%,#ecfdf5 50%,#fef9c3 75%,#eff6ff 100%);color:${txt};line-height:1.6;position:relative;overflow-x:hidden}

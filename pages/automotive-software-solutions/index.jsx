@@ -268,7 +268,14 @@ export default function AutomotiveSoftwareSolutions() {
         <meta property="og:title" content="Automotive Software Development Company | 1Solutions" />
         <meta property="og:description" content="Custom automotive software - connected vehicles, ADAS, fleet management, EV software, telematics & dealership management systems. ISO 26262 | 15+ years | 60+ automotive clients." />
         <meta property="og:url" content="https://www.1solutions.biz/automotive-software-solutions/" />
-        <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-automotive-software-solutions.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Automotive Software Solutions" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-automotive-software-solutions.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Automotive Software Solutions" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
         <style>{`
           .av-page { font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; background:linear-gradient(135deg,#dbeafe 0%,#ede9fe 25%,#e0f2fe 50%,#fef3c7 75%,#fce7f3 100%); background-attachment:scroll; color:#0F1F40; line-height:1.6; position:relative; overflow-x:hidden; }

@@ -78,6 +78,18 @@ export default function GraphicDesignServices() {
         <title>Graphic Design Services | 1Solutions</title>
         <meta name="description" content="Professional graphic design services from 1Solutions. Brand identity, logo design, marketing collateral, packaging, social media graphics, and presentation" />
         <link rel="canonical" href="https://www.1solutions.biz/graphic-design-services/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Graphic Design Services | 1Solutions" />
+        <meta property="og:description" content="Professional graphic design services from 1Solutions. Brand identity, logo design, marketing collateral, packaging, social media graphics, and presentation" />
+        <meta property="og:url" content="https://www.1solutions.biz/graphic-design-services/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-graphic-design-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Graphic Design Services" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-graphic-design-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Graphic Design Services" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           .gds-btn-primary{background:#FE9700;color:#fff;padding:14px 32px;border-radius:8px;font-weight:700;font-size:1rem;text-decoration:none;transition:opacity .2s}

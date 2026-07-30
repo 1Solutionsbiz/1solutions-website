@@ -191,6 +191,14 @@ export default function DesignSystemsPage() {
         <meta property="og:title" content="Design Systems Agency | Scalable Component Libraries | 1Solutions" />
         <meta property="og:description" content="We build structured, documented design systems - from atomic tokens to full component libraries - so your team ships faster with pixel-perfect consistency." />
         <meta property="og:url" content="https://www.1solutions.biz/design-systems/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-design-systems.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Design Systems" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-design-systems.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Design Systems" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           .ds-page {

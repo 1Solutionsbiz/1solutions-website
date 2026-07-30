@@ -191,6 +191,14 @@ export default function BrandIdentityPage() {
         <meta property="og:title" content="Brand Identity Design | Logo, Colours &amp; Typography Systems | 1Solutions" />
         <meta property="og:description" content="We craft brand identities that resonate - logo, colour palette, typography, and guidelines - so your audience recognises and trusts you instantly." />
         <meta property="og:url" content="https://www.1solutions.biz/brand-identity/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-brand-identity.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Brand Identity Design" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-brand-identity.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Brand Identity Design" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           .bi-page {

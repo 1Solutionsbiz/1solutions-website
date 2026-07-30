@@ -258,6 +258,14 @@ export default function MobileAppDesign() {
         <meta property="og:title" content="Mobile App Design Company | iOS &amp; Android UI/UX Design | 1Solutions" />
         <meta property="og:description" content="Intuitive, beautiful iOS and Android app designs rooted in platform guidelines and user psychology. From concept to pixel-perfect Figma handoff." />
         <meta property="og:url" content="https://www.1solutions.biz/mobile-app-design" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-mobile-app-design.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Mobile App Design" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-mobile-app-design.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Mobile App Design" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           .mad-page {

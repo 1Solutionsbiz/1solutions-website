@@ -121,7 +121,14 @@ export default function ManufacturingSoftware() {
         <meta property="og:title" content="Manufacturing Software Development Services | 1Solutions" />
         <meta property="og:description" content="MES, IIoT, ERP integration, predictive maintenance, QMS, and OEE analytics. 90+ manufacturing projects." />
         <meta property="og:url" content="https://www.1solutions.biz/manufacturing-software-development-services/" />
-        <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-manufacturing-software-development-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Manufacturing Software Development" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-manufacturing-software-development-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Manufacturing Software Development" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
         <style>{`
           .mfg-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:linear-gradient(135deg,#fdf6ee 0%,#fef3e2 20%,#fdf8f0 50%,#f0f4e8 75%,#e8f0f8 100%);color:${txt};line-height:1.6;position:relative;overflow-x:hidden}

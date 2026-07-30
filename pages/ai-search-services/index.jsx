@@ -44,6 +44,14 @@ export default function Page() {
         <meta property="og:title" content={`AI Search Services | ChatGPT, Perplexity & AI Visibility | 1Solutions`} />
         <meta property="og:description" content={`AI search optimization services — get cited in ChatGPT, Perplexity, Google AI Overviews, SearchGPT & Meta AI. 15+ years experience, US, Canada & Australia.`} />
         <meta property="og:url" content="https://www.1solutions.biz/ai-search-services/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-ai-search-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions AI Search Services" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-ai-search-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions AI Search Services" />
         <meta name="robots" content="index, follow" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           '@context':'https://schema.org',

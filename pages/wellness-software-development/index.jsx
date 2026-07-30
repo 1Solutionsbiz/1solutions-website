@@ -120,7 +120,14 @@ export default function WellnessSoftware() {
         <meta property="og:title" content="Wellness Software Development | Digital Health & Wellbeing Tech | 1Solutions" />
         <meta property="og:description" content="Mental health apps, fitness coaching platforms, corporate wellness portals, nutrition apps, wearable integration, and HIPAA compliance. 65+ digital wellness projects." />
         <meta property="og:url" content="https://www.1solutions.biz/wellness-software-development/" />
-        <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-wellness-software-development.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Wellness Software Development" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-wellness-software-development.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Wellness Software Development" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
         <style>{`
           .wls-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:linear-gradient(135deg,#fdf4ff 0%,#f5d0fe 20%,#fdf4ff 50%,#fce7f3 75%,#fef3c7 100%);color:${txt};line-height:1.6;position:relative;overflow-x:hidden}

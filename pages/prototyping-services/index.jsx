@@ -191,6 +191,14 @@ export default function PrototypingServices() {
         <meta property="og:title" content="Prototyping Services | Interactive Wireframes & User Flows | 1Solutions" />
         <meta property="og:description" content="Validate ideas before writing a line of code. 400+ prototypes delivered. 60% faster stakeholder sign-off. Figma-native workflow." />
         <meta property="og:url" content="https://www.1solutions.biz/prototyping-services" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-prototyping-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Prototyping Services" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-prototyping-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Prototyping Services" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
         <style>{`
           .ps-page {

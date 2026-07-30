@@ -121,7 +121,14 @@ export default function RetailEcommerceSoftware() {
         <meta property="og:title" content="Retail & eCommerce Software Development | 1Solutions" />
         <meta property="og:description" content="Headless commerce, marketplace platforms, OMS, POS integration, loyalty, and AI personalisation. 150+ retail/eCommerce projects." />
         <meta property="og:url" content="https://www.1solutions.biz/retail-ecommerce-software-development/" />
-        <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-retail-ecommerce-software-development.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Retail &amp; Ecommerce Software Development" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-retail-ecommerce-software-development.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Retail &amp; Ecommerce Software Development" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
         <style>{`
           .rce-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:linear-gradient(135deg,#fff0f6 0%,#fce7f3 20%,#fff5fb 50%,#fef3c7 75%,#f0fdf4 100%);color:${txt};line-height:1.6;position:relative;overflow-x:hidden}
