@@ -121,10 +121,28 @@ export function middleware(request) {
   let targetHost = host === '1solutions.biz' ? 'www.1solutions.biz' : nextUrl.host;
   let targetPathname = nextUrl.pathname;
 
+  const hasTrailingSlash = nextUrl.pathname.endsWith('/') && nextUrl.pathname !== '/';
   // Exact match only (no leading/trailing slash) — see SLASH_PAGES comment.
-  const slug = nextUrl.pathname.slice(1);
-  if (!nextUrl.pathname.endsWith('/') && SLASH_PAGES.has(slug)) {
+  const slug = hasTrailingSlash ? nextUrl.pathname.slice(1, -1) : nextUrl.pathname.slice(1);
+
+  if (!hasTrailingSlash && SLASH_PAGES.has(slug)) {
+    // Known static page requested without its slash — add it.
     targetPathname = `${nextUrl.pathname}/`;
+  } else if (hasTrailingSlash && /^case-studies\/[^/]+$/.test(slug)) {
+    // Case study detail pages (pages/case-studies/[slug].jsx) canonicalize
+    // WITHOUT a trailing slash. The sitemap used to append one anyway, so
+    // Google indexed both /case-studies/<id> and /case-studies/<id>/ as
+    // separate URLs, splitting rankings between them. Redirecting the slash
+    // variant here lets Google consolidate onto the one the page itself
+    // declares as canonical.
+    targetPathname = `/${slug}`;
+  } else if (hasTrailingSlash && !slug.includes('/') && !SLASH_PAGES.has(slug)) {
+    // Single-segment path not in the static-page allowlist — i.e. a blog
+    // post or WordPress category served by pages/[slug].jsx, which also
+    // canonicalizes WITHOUT a trailing slash (same root cause as above: the
+    // sitemap and RSS feed used to append one). Strip it so the URL matches
+    // its own canonical instead of competing with it for rankings.
+    targetPathname = `/${slug}`;
   }
 
   if (targetHost !== nextUrl.host || targetPathname !== nextUrl.pathname) {

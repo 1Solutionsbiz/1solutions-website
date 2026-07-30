@@ -93,7 +93,7 @@ export default function CaseStudyPage({ project, prev, next }) {
   return (
     <>
       <Head>
-        <title>{project.title} - {project.industry} Case Study | 1Solutions</title>
+        <title>{`${project.title} - ${project.industry} Case Study | 1Solutions`}</title>
         <meta name="description" content={`See how 1Solutions delivered a ${project.category.toLowerCase()} solution for ${project.title} in the ${project.industry} sector. ${project.desc}`} />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`https://www.1solutions.biz/case-studies/${project.id}`} />

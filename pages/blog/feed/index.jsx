@@ -16,7 +16,8 @@ function buildFeed(posts) {
   const now = new Date().toUTCString();
 
   const items = posts.map((post) => {
-    const link = `${SITE}/${post.slug}/`;
+    // No trailing slash — matches the post's own canonical (pages/[slug].jsx).
+    const link = `${SITE}/${post.slug}`;
     const pubDate = new Date(post.date).toUTCString();
     const description = stripHtml(post.excerpt).slice(0, 500);
     const categories = (post.categories?.nodes || [])

@@ -109,9 +109,6 @@ const nextConfig = {
       // ── Old WordPress theme template URLs ─────────────────────────────────
       { source: '/wcf-template/:path*',       destination: '/',                               permanent: true },
 
-      // ── Case study subpages ───────────────────────────────────────────────
-      { source: '/case-studies/:slug',        destination: '/case-studies/',                  permanent: true },
-
       // ── Page renames ──────────────────────────────────────────────────────
       { source: '/hire-dedicated-web-designer',  destination: '/hire-web-designer/',             permanent: true },
       { source: '/hire-dedicated-web-designer/', destination: '/hire-web-designer/',            permanent: true },

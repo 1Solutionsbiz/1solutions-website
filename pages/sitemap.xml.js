@@ -336,19 +336,28 @@ function escapeXml(str) {
 function buildSitemap(staticPages, posts) {
   const today = new Date().toISOString().split('T')[0];
 
+  // Case study detail pages (/case-studies/<id>) canonicalize WITHOUT a
+  // trailing slash (see pages/case-studies/[slug].jsx) — unlike every other
+  // static page here, which canonicalizes WITH one. Submitting the wrong
+  // form in the sitemap contradicts each page's own canonical tag and is
+  // exactly how Google ends up indexing both URL variants for the same page.
+  const isCaseStudyDetail = (url) => /^\/case-studies\/[^/]+$/.test(url);
+
   const staticEntries = staticPages.map(({ url, priority, changefreq }) => `
   <url>
-    <loc>${SITE}${escapeXml(url)}/</loc>
+    <loc>${SITE}${escapeXml(url)}${isCaseStudyDetail(url) ? '' : '/'}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
   </url>`).join('');
 
+  // Blog posts canonicalize WITHOUT a trailing slash too (see
+  // pages/[slug].jsx) — same reasoning as case study details above.
   const postEntries = posts.map(({ slug, modified, date }) => {
     const lastmod = (modified || date || today).split('T')[0];
     return `
   <url>
-    <loc>${SITE}/${escapeXml(slug)}/</loc>
+    <loc>${SITE}/${escapeXml(slug)}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
