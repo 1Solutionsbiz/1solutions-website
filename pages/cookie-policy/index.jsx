@@ -138,6 +138,18 @@ export default function CookiePolicy() {
           content="1Solutions Cookie Policy - how we use cookies, what types we use, and how you can manage or disable them on our website."
         />
         <link rel="canonical" href="https://www.1solutions.biz/cookie-policy/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Cookie Policy | 1Solutions" />
+        <meta property="og:description" content="1Solutions Cookie Policy - how we use cookies, what types we use, and how you can manage or disable them on our website." />
+        <meta property="og:url" content="https://www.1solutions.biz/cookie-policy/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-cookie-policy.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Cookie Policy" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-cookie-policy.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Cookie Policy" />
         <style>{`
           /* ─── Base ─── */
           .cp-page {

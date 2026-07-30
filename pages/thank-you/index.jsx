@@ -9,6 +9,18 @@ export default function ThankYou() {
         <meta name="description" content="Thank you for contacting 1Solutions. We've received your message and will respond within 24 hours." />
         <meta name="robots" content="noindex, nofollow" />
         <link rel="canonical" href="https://www.1solutions.biz/thank-you/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Thank You | We'll Be In Touch | 1Solutions" />
+        <meta property="og:description" content="Thank you for contacting 1Solutions. We've received your message and will respond within 24 hours." />
+        <meta property="og:url" content="https://www.1solutions.biz/thank-you/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-thank-you.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Thank You" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-thank-you.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Thank You" />
         <style>{`
           /* ── Page shell ─────────────────────────────── */
           .ty-page {

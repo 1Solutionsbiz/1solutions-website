@@ -116,6 +116,15 @@ export default function PartnerWithUs() {
         <link rel="canonical" href={`${siteUrl}/partner-with-us/`} />
         <meta property="og:title" content="Partner with Us | 1Solutions" />
         <meta property="og:description" content="Technology, referral, white-label, and enterprise partnerships. Join 1Solutions' growing partner network." />
+        <meta property="og:url" content={`${siteUrl}/partner-with-us/`} />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-partner-with-us.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Partner With Us" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-partner-with-us.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Partner With Us" />
         <meta name="robots" content="index, follow" />
         <style>{`
           /* ── Partner with Us - prefix: pwu- ── */

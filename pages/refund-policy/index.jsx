@@ -130,6 +130,18 @@ export default function RefundPolicy() {
         <title>Refund Policy | 1Solutions</title>
         <meta name="description" content="1Solutions Refund Policy - when refunds apply, how to request one, and what to expect from cancelled or disputed projects." />
         <link rel="canonical" href="https://www.1solutions.biz/refund-policy/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Refund Policy | 1Solutions" />
+        <meta property="og:description" content="1Solutions Refund Policy - when refunds apply, how to request one, and what to expect from cancelled or disputed projects." />
+        <meta property="og:url" content="https://www.1solutions.biz/refund-policy/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-refund-policy.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Refund Policy" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-refund-policy.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Refund Policy" />
         <style>{`
           .rp-page { font-family:'Inter',sans-serif; color:#1a1a2e; background:#f8fafc; }
           .rp-hero { background:linear-gradient(135deg,#fef3c7 0%,#fce7f3 30%,#dbeafe 60%,#ede9fe 100%); padding:80px 24px 60px; position:relative; overflow:hidden; }

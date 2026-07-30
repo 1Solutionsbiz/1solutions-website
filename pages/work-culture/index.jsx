@@ -162,6 +162,18 @@ export default function WorkCulture() {
         <title>Work Culture | 1Solutions - How We Work & Who We Are</title>
         <meta name="description" content="1Solutions Work Culture - our values, communication standards, DEI commitments, leave policy, and code of conduct for our team in New Delhi." />
         <link rel="canonical" href="https://www.1solutions.biz/work-culture/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Work Culture | 1Solutions - How We Work & Who We Are" />
+        <meta property="og:description" content="1Solutions Work Culture - our values, communication standards, DEI commitments, leave policy, and code of conduct for our team in New Delhi." />
+        <meta property="og:url" content="https://www.1solutions.biz/work-culture/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-work-culture.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Work Culture" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-work-culture.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Work Culture" />
         <style>{`
           .wc-page { font-family:'Inter',sans-serif; color:#1a1a2e; background:#f8fafc; }
           .wc-hero { background:linear-gradient(135deg,#f0fdf4 0%,#dbeafe 30%,#ede9fe 60%,#fef3c7 100%); padding:80px 24px 60px; position:relative; overflow:hidden; }

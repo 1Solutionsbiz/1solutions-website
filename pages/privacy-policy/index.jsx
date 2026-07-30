@@ -170,6 +170,18 @@ export default function PrivacyPolicy() {
         <title>Privacy Policy | 1Solutions</title>
         <meta name="description" content="1Solutions Privacy Policy - how we collect, use, and protect your personal data. GDPR, CCPA, and Australian Privacy Act compliant." />
         <link rel="canonical" href="https://www.1solutions.biz/privacy-policy/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Privacy Policy | 1Solutions" />
+        <meta property="og:description" content="1Solutions Privacy Policy - how we collect, use, and protect your personal data. GDPR, CCPA, and Australian Privacy Act compliant." />
+        <meta property="og:url" content="https://www.1solutions.biz/privacy-policy/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-privacy-policy.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Privacy Policy" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-privacy-policy.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Privacy Policy" />
         <style>{`
           .pp-page { font-family:'Inter',sans-serif; color:#1a1a2e; background:#f8fafc; }
           .pp-hero { background:linear-gradient(135deg,#dbeafe 0%,#ede9fe 30%,#e0f2fe 60%,#fef3c7 100%); padding:80px 24px 60px; position:relative; overflow:hidden; }

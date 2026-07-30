@@ -143,6 +143,15 @@ export default function WriteForUs() {
         <link rel="canonical" href={`${siteUrl}/write-for-us/`} />
         <meta property="og:title" content="Write for Us | 1Solutions Blog" />
         <meta property="og:description" content="Share your expertise with our audience. We publish high-quality guest posts on web development, SEO, digital marketing, AI, and eCommerce." />
+        <meta property="og:url" content={`${siteUrl}/write-for-us/`} />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-write-for-us.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Write For Us" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-write-for-us.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Write For Us" />
         <meta name="robots" content="index, follow" />
         <style>{`
           /* ── Write For Us page - prefix: wfu- ── */

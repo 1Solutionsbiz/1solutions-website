@@ -119,6 +119,18 @@ export default function TermsOfUse() {
         <title>Terms of Use | 1Solutions</title>
         <meta name="description" content="Terms of Use for 1Solutions (www.1solutions.biz) - the rules governing your use of our website and services." />
         <link rel="canonical" href="https://www.1solutions.biz/terms-of-use/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Terms of Use | 1Solutions" />
+        <meta property="og:description" content="Terms of Use for 1Solutions (www.1solutions.biz) - the rules governing your use of our website and services." />
+        <meta property="og:url" content="https://www.1solutions.biz/terms-of-use/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-terms-of-use.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Terms of Use" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-terms-of-use.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Terms of Use" />
         <style>{`
           .tu-page { font-family:'Inter',sans-serif; color:#1a1a2e; background:#f8fafc; }
           .tu-hero { background:linear-gradient(135deg,#dbeafe 0%,#ede9fe 30%,#e0f2fe 60%,#fef3c7 100%); padding:80px 24px 60px; position:relative; overflow:hidden; }

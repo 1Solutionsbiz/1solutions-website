@@ -188,6 +188,18 @@ export default function OpenPositions() {
           content="1Solutions is hiring a Full Stack Developer, Social Media Manager, Business Development Manager, and Digital Marketing Trainee in New Delhi. Apply online today."
         />
         <link rel="canonical" href="https://www.1solutions.biz/open-positions/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Open Positions | We're Hiring at 1Solutions" />
+        <meta property="og:description" content="1Solutions is hiring a Full Stack Developer, Social Media Manager, Business Development Manager, and Digital Marketing Trainee in New Delhi. Apply online today." />
+        <meta property="og:url" content="https://www.1solutions.biz/open-positions/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-open-positions.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Open Positions — We're Hiring" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-open-positions.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Open Positions — We're Hiring" />
         <style>{`
           /* ─── Base ─── */
           .op-page {

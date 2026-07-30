@@ -146,6 +146,18 @@ export default function ContactPage() {
           content="Get in touch with 1Solutions. Tell us about your project and we'll respond within 24 hours with a tailored plan. Serving clients in the US, Canada, and Australia."
         />
         <link rel="canonical" href="https://www.1solutions.biz/contact-us/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Contact Us | 1Solutions" />
+        <meta property="og:description" content="Get in touch with 1Solutions. Tell us about your project and we'll respond within 24 hours with a tailored plan. Serving clients in the US, Canada, and Australia." />
+        <meta property="og:url" content="https://www.1solutions.biz/contact-us/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-contact-us.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Contact Us" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-contact-us.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Contact Us" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([
           {
             '@context': 'https://schema.org',

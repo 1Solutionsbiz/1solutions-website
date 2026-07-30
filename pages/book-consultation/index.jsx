@@ -77,6 +77,18 @@ export default function BookConsultation() {
         <meta name="description" content="Schedule a free 30-minute consultation with our experts. Discuss your project goals, get a custom strategy, and learn how 1Solutions can help your business" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.1solutions.biz/book-consultation" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Book a Free Consultation | 1Solutions" />
+        <meta property="og:description" content="Schedule a free 30-minute consultation with our experts. Discuss your project goals, get a custom strategy, and learn how 1Solutions can help your business" />
+        <meta property="og:url" content="https://www.1solutions.biz/book-consultation" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-book-consultation.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Book a Free Consultation" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-book-consultation.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Book a Free Consultation" />
         <style>{`
           .bc-hero {
             background: linear-gradient(135deg, rgba(254,243,199,0.55) 0%, rgba(219,234,254,0.35) 100%);

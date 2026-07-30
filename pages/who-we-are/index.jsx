@@ -330,6 +330,18 @@ export default function WhoWeAre() {
           content="1Solutions is a New Delhi-based web development and digital marketing agency with 16+ years of experience, 500+ global clients, and a 97% retention rate. Trusted by Verizon, Nuance, Indian Express, and more."
         />
         <link rel="canonical" href="https://www.1solutions.biz/who-we-are/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Who We Are | 1Solutions | 15+ Years of Digital Excellence" />
+        <meta property="og:description" content="1Solutions is a New Delhi-based web development and digital marketing agency with 16+ years of experience, 500+ global clients, and a 97% retention rate. Trusted by Verizon, Nuance, Indian Express, and more." />
+        <meta property="og:url" content="https://www.1solutions.biz/who-we-are/" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-who-we-are.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions — Who We Are" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-who-we-are.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions — Who We Are" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([
           {
             '@context': 'https://schema.org',

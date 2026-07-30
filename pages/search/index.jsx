@@ -47,6 +47,18 @@ export default function SearchPage() {
       <Head>
         <title>{query ? query + ' - Search | 1Solutions' : 'Search | 1Solutions'}</title>
         <meta name="description" content="Search 2,400+ articles on web development, SEO, digital marketing, and more." />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Search | 1Solutions" />
+        <meta property="og:description" content="Search 2,400+ articles on web development, SEO, digital marketing, and more." />
+        <meta property="og:url" content="https://www.1solutions.biz/search" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-search.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Search" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-search.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Search" />
         <meta name="robots" content="noindex" />
         <style>{`
           .search-form {
