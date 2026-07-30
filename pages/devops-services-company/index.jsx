@@ -226,7 +226,14 @@ export default function DevopsServicesCompany() {
         <meta property="og:title" content="DevOps Services Company | 1Solutions" />
         <meta property="og:description" content="DevOps automation services - CI/CD pipelines, Terraform IaC, Kubernetes, cloud DevOps on AWS/Azure/GCP, DevSecOps, monitoring, SRE, and dedicated DevOps engineers." />
         <meta property="og:url" content="https://www.1solutions.biz/devops-services-company/" />
-        <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-devops-services-company.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions DevOps Services" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-devops-services-company.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions DevOps Services" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
         <style>{`
           .dv-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:linear-gradient(135deg,#fffbeb 0%,#fef3c7 20%,#f0f9ff 50%,#fff7ed 75%,#f0fdf4 100%);color:#0F1F40;line-height:1.6;position:relative;overflow-x:hidden}

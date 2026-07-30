@@ -130,7 +130,14 @@ export default function ITOutsourcingServices() {
         <meta property="og:title" content="IT Outsourcing Services | 1Solutions" />
         <meta property="og:description" content="Outsource software development, cloud management, QA, DevOps, AI/ML, and application maintenance. SLA-backed, NDA-protected, 60–70% below US/UK costs." />
         <meta property="og:url" content="https://www.1solutions.biz/it-outsourcing-services/" />
-        <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-it-outsourcing-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions IT Outsourcing Services" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-it-outsourcing-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions IT Outsourcing Services" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
         <style>{`
           .ito-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:linear-gradient(135deg,#fff1f2 0%,#ffe4e6 20%,#fff5f5 50%,#fef3c7 75%,#f0f9ff 100%);color:#3b0018;line-height:1.6;position:relative;overflow-x:hidden}

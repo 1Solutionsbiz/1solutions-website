@@ -130,7 +130,14 @@ export default function OffshoreDevCompany() {
         <meta property="og:title" content="Offshore Development Company | Dedicated Teams | 1Solutions" />
         <meta property="og:description" content="Hire dedicated offshore development teams from India. 60–70% cost savings vs US/UK rates. Senior developers across React, Node.js, Python, Mobile, DevOps, AI/ML." />
         <meta property="og:url" content="https://www.1solutions.biz/offshore-development-company/" />
-        <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-offshore-development-company.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Offshore Development" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-offshore-development-company.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Offshore Development" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
         <style>{`
           .od-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:linear-gradient(135deg,#f0fdff 0%,#cffafe 20%,#ecfeff 50%,#fef3c7 75%,#f0fdf4 100%);color:#0c2340;line-height:1.6;position:relative;overflow-x:hidden}

@@ -248,7 +248,14 @@ export default function MobileAppDevelopment() {
         <meta property="og:title" content="Mobile App Development Company | iOS, Android, Flutter & React Native | 1Solutions" />
         <meta property="og:description" content="Native iOS, Android, Flutter & React Native development. 180+ apps shipped. 15+ years experience. Biweekly device builds. 100% IP ownership." />
         <meta property="og:url" content="https://www.1solutions.biz/mobile-app-development/" />
-        <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-mobile-app-development.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Mobile App Development" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-mobile-app-development.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Mobile App Development" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
         <style>{`
           .mob-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:linear-gradient(135deg,#dbeafe 0%,#dcfce7 25%,#e0f2fe 50%,#fef3c7 75%,#ede9fe 100%);color:#0F1F40;line-height:1.6;position:relative;overflow-x:hidden}

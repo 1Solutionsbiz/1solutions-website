@@ -226,7 +226,14 @@ export default function NextjsDevelopmentServices() {
         <meta property="og:title" content="Next.js Development Services | 1Solutions" />
         <meta property="og:description" content="Next.js App Router development - SaaS platforms, headless eCommerce, full-stack Next.js, React migration, Core Web Vitals optimisation, and dedicated Next.js development teams." />
         <meta property="og:url" content="https://www.1solutions.biz/nextjs-development-services/" />
-        <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-nextjs-development-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Next.js Development Services" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-nextjs-development-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Next.js Development Services" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
         <style>{`
           .nx-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 20%,#f0f9ff 50%,#fef3c7 75%,#f5f3ff 100%);color:#0F1F40;line-height:1.6;position:relative;overflow-x:hidden}

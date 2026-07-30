@@ -268,7 +268,14 @@ export default function AndroidAppDevelopment() {
         <meta property="og:title" content="Android Application Development Company | 1Solutions" />
         <meta property="og:description" content="Native Android development in Kotlin & Jetpack Compose - from MVP to enterprise mobility. 150+ apps shipped, 15+ years experience. Phone, tablet, foldable, TV & Wear OS." />
         <meta property="og:url" content="https://www.1solutions.biz/android-application-development-company/" />
-        <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-android-application-development-company.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Android Application Development" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-android-application-development-company.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Android Application Development" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
         <style>{`
           .an-page { font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; background:linear-gradient(135deg,#dcfce7 0%,#dbeafe 25%,#f0fdf4 50%,#fef9c3 75%,#fce7f3 100%); background-attachment:scroll; color:#0F1F40; line-height:1.6; position:relative; overflow-x:hidden; }

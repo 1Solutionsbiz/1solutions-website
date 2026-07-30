@@ -226,7 +226,14 @@ export default function TibcoDevelopmentServices() {
         <meta property="og:title" content="TIBCO Development Services | 1Solutions" />
         <meta property="og:description" content="TIBCO BusinessWorks integration, EMS messaging, BPM automation, Spotfire analytics, TIBCO Cloud, TIBCO to MuleSoft migration, performance tuning, and ongoing TIBCO administration." />
         <meta property="og:url" content="https://www.1solutions.biz/tibco-development-services/" />
-        <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-tibco-development-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions TIBCO Development Services" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-tibco-development-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions TIBCO Development Services" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
         <style>{`
           .tb-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:linear-gradient(135deg,#fdf2f8 0%,#fce7f3 20%,#f5f3ff 50%,#fef3c7 75%,#f0f9ff 100%);color:#0F1F40;line-height:1.6;position:relative;overflow-x:hidden}

@@ -130,7 +130,14 @@ export default function ITStaffAugmentation() {
         <meta property="og:title" content="IT Staff Augmentation Services | 1Solutions" />
         <meta property="og:description" content="Add pre-vetted offshore developers to your team in 5–7 days. Frontend, backend, mobile, DevOps, QA, AI/ML. 60–70% below local hiring costs." />
         <meta property="og:url" content="https://www.1solutions.biz/it-staff-augmentation-services/" />
-        <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-it-staff-augmentation-services.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions IT Staff Augmentation Services" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-it-staff-augmentation-services.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions IT Staff Augmentation Services" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
         <style>{`
           .isa-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:linear-gradient(135deg,#eef2ff 0%,#e0e7ff 20%,#f5f3ff 50%,#fef3c7 75%,#f0f9ff 100%);color:#1e1b4b;line-height:1.6;position:relative;overflow-x:hidden}

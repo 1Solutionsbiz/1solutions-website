@@ -120,7 +120,14 @@ export default function SaaSDevelopment() {
         <meta property="og:title" content="SaaS Application Development Company | 1Solutions" />
         <meta property="og:description" content="B2B SaaS product development - multi-tenant architecture, Stripe billing, SSO, onboarding, integrations, and SOC 2 compliance. 80+ SaaS products shipped." />
         <meta property="og:url" content="https://www.1solutions.biz/saas-application-development-company/" />
-        <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-saas-application-development-company.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions SaaS Application Development" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-saas-application-development-company.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions SaaS Application Development" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
         <style>{`
           .sas-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 20%,#eff6ff 50%,#fef3c7 75%,#f0fdf4 100%);color:${txt};line-height:1.6;position:relative;overflow-x:hidden}

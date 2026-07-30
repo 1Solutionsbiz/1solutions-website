@@ -130,7 +130,14 @@ export default function SoftwareCostOptimization() {
         <meta property="og:title" content="Software Development Cost Optimization | 1Solutions" />
         <meta property="og:description" content="Reduce software development costs by 40–65%. Offshore transition, cloud cost reduction (20–40% savings), technical debt elimination, and test automation ROI." />
         <meta property="og:url" content="https://www.1solutions.biz/software-development-cost-optimization/" />
-        <meta property="og:image" content="https://www.1solutions.biz/images/banner-1sol.jpg" />
+        <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-software-development-cost-optimization.jpg" />
+        <meta key="og-image-w" property="og:image:width" content="1200" />
+        <meta key="og-image-h" property="og:image:height" content="630" />
+        <meta key="og-image-type" property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="1Solutions Software Development Cost Optimization" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.1solutions.biz/images/og-software-development-cost-optimization.jpg" />
+        <meta name="twitter:image:alt" content="1Solutions Software Development Cost Optimization" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }} />
         <style>{`
           .sco-page{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:linear-gradient(135deg,#f0fdf4 0%,#dcfce7 20%,#f0fdfa 50%,#fef3c7 75%,#f0f9ff 100%);color:#052e16;line-height:1.6;position:relative;overflow-x:hidden}
