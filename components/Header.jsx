@@ -27,6 +27,7 @@ const SERVICES_MENU = [
         title: null,
         links: [
           { label: 'WordPress Development', href: '/wordpress-development-company/' },
+          { label: 'WordPress Support & Maintenance', href: '/wordpress-support-and-maintenance-services/' },
           { label: 'PHP Development', href: '/php-development-services/' },
         ],
       },
