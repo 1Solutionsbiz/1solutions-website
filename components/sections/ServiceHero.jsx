@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const DEFAULT_LOGOS = [
   ['/logo/Indian_Express_Logo_full.png', 'Indian Express'],
@@ -13,6 +14,36 @@ const DEFAULT_LOGOS = [
   ['/logo/PHDCCI-Logo-2024.png', 'PHD Chamber'],
   ['/logo/Wilson-logo.svg.png', 'Wilson'],
 ];
+
+// Intrinsic pixel dimensions of every logo file used across ServiceHero
+// instances (source images are far larger than their ~26px display height —
+// e.g. Zuari-Finserv-logo-new.png is 2675x779, wasting ~480KiB per load
+// across the 200+ pages that render this component). Feeding real aspect
+// ratios to next/image lets it serve a properly downscaled, modern-format
+// version instead of the raw original, and reserves the correct box size
+// up front (fixes the "no explicit width/height" CLS source flagged by
+// PageSpeed Insights on this component).
+const LOGO_DIMS = {
+  '/logo/Indian_Express_Logo_full.png': [5000, 1374],
+  '/logo/Verizon_2015_logo_-vector.svg.png': [1280, 284],
+  '/logo/Uniphore.jpg': [794, 214],
+  '/logo/ICCoLogo.png': [1182, 592],
+  '/logo/Honor_Logo_(2020).svg.png': [960, 185],
+  '/logo/Zuari-Finserv-logo-new.png': [2675, 779],
+  '/logo/amarujala-print-logo_60e03f7d5b4a8.webp': [350, 141],
+  '/logo/Nuance-Symbol-500x281.png': [500, 281],
+  '/logo/PHDCCI-Logo-2024.png': [1584, 1584],
+  '/logo/Wilson-logo.svg.png': [3840, 957],
+  '/logo/977be174b7bcc8708254a2163b534cbe_fgraphic.png': [1024, 500],
+  '/logo/india-madeaismartphone2-1747658691.webp': [600, 338],
+};
+const LOGO_DISPLAY_HEIGHT = 52; // 2x the 26px CSS height, for retina
+const FALLBACK_ASPECT = [120, 32];
+
+function logoBoxSize(src) {
+  const [w, h] = LOGO_DIMS[src] || FALLBACK_ASPECT;
+  return { width: Math.round((w / h) * LOGO_DISPLAY_HEIGHT), height: LOGO_DISPLAY_HEIGHT };
+}
 
 function useCountUp(target, duration = 1800, start = false) {
   const [count, setCount] = useState(0);
@@ -147,10 +178,12 @@ export default function ServiceHero({
             <span className="svh-clients-label">Trusted by Leading Brands</span>
             <div className="svh-clients-logos">
               <div className="svh-logos-track">
-                {logosDoubled.map(([src, alt], i) => (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img key={`${alt}-${i}`} src={src} alt={alt} className="svh-client-logo" />
-                ))}
+                {logosDoubled.map(([src, alt], i) => {
+                  const { width, height } = logoBoxSize(src);
+                  return (
+                    <Image key={`${alt}-${i}`} src={src} alt={alt} width={width} height={height} className="svh-client-logo" loading="lazy" />
+                  );
+                })}
               </div>
             </div>
           </div>
