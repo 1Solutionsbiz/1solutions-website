@@ -657,12 +657,6 @@ export async function getStaticProps({ params }) {
     };
   } catch (err) {
     console.error('SlugPage error:', err);
-    // Rethrow instead of `notFound: true` — the WP backend fails
-    // intermittently (see runtime error logs), and notFound is an
-    // authoritative "this page doesn't exist" signal to Next.js's ISR:
-    // it overwrites the last-known-good cached page with a real 404 on
-    // every transient upstream hiccup. Throwing lets ISR keep serving
-    // the last successful version and retry on the next request instead.
-    throw err;
+    return { notFound: true };
   }
 }
