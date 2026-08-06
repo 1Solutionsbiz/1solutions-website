@@ -83,6 +83,9 @@ export async function getStaticProps({ params }) {
     };
   } catch (err) {
     console.error('Tag archive error:', err);
-    return { notFound: true };
+    // Rethrow instead of `notFound: true` — see pages/[slug].jsx for why:
+    // this preserves the last-known-good cached page across a transient
+    // upstream failure instead of permanently replacing it with a 404.
+    throw err;
   }
 }
