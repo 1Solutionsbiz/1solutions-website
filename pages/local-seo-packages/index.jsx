@@ -199,12 +199,12 @@ export default function LocalSeoPackages() {
   return (
     <>
       <Head>
-        <title>Local SEO Packages & Pricing Plans | 1Solutions</title>
-        <meta name="description" content="Local SEO packages from $349/mo. GBP management, citation building, review management & local link building. No setup fee. Single & multi-location plans." />
-        <meta name="keywords" content="local seo packages, local seo pricing, local seo plans, google business profile management, local seo services pricing, monthly local seo, multi-location seo packages" />
+        <title>Local SEO Service Packages & Pricing Plans | 1Solutions</title>
+        <meta name="description" content="Local SEO service packages from $349/mo. GBP management, citation building, review management & local link building. No setup fee. Single & multi-location plans." />
+        <meta name="keywords" content="local seo packages, local seo service package, local seo pricing, local seo plans, google business profile management, local seo services pricing, monthly local seo, multi-location seo packages" />
         <link rel="canonical" href="https://www.1solutions.biz/local-seo-packages/" />
-        <meta property="og:title" content="Local SEO Packages & Pricing | 1Solutions" />
-        <meta property="og:description" content="Local SEO packages from $349/mo. GBP management, citation building, review management & local link building." />
+        <meta property="og:title" content="Local SEO Service Packages & Pricing | 1Solutions" />
+        <meta property="og:description" content="Local SEO service packages from $349/mo. GBP management, citation building, review management & local link building." />
         <meta property="og:url" content="https://www.1solutions.biz/local-seo-packages/" />
         <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-local-seo-packages.jpg" />
         <meta key="og-image-w" property="og:image:width" content="1200" />
@@ -473,7 +473,7 @@ export default function LocalSeoPackages() {
         {/* ── HERO ── */}
         <ServiceHero
           eyebrow="Google Maps · Google Business Profile · Citation Building · Review Management"
-          title={<>Local SEO Packages That <AuroraText>Rank You in Google Maps</AuroraText> and AI Search</>}
+          title={<>Local SEO Service Packages That <AuroraText>Rank You in Google Maps</AuroraText> and AI Search</>}
           subtext="Transparent local SEO pricing for single and multi-location businesses - Google Business Profile management, citation building, review generation, and local link building. One monthly plan. Real results."
           primaryCta={{ label: 'Get a Free Local SEO Audit', href: '#free-audit' }}
           secondaryCta={{ label: 'See Pricing Plans', href: '#pricing' }}
