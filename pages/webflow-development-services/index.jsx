@@ -6,39 +6,39 @@ import { AuroraText } from '../../components/AuroraText';
 import ServiceHero from '../../components/sections/ServiceHero';
 
 const SERVICES = [
-  { n:'01', title:'Custom Webflow Website Design', desc:'Bespoke, pixel-perfect Webflow websites designed from a Figma prototype — responsive, fast-loading, and crafted to reflect your brand identity.', featured:false },
-  { n:'02', title:'Webflow CMS Development', desc:'Content-managed Webflow sites with structured Collections — empowering your team to publish blogs, case studies, and product pages without touching code.', featured:true },
-  { n:'03', title:'Webflow E-Commerce Development', desc:'Full-featured online stores on Webflow Commerce — custom product pages, cart flows, checkout customisation, and Stripe payment integration.', featured:false },
-  { n:'04', title:'Webflow Membership & Client Portals', desc:'Gated member areas with Memberstack or Outseta — subscription billing, protected content, and custom onboarding flows built inside Webflow.', featured:false },
-  { n:'05', title:'WordPress to Webflow Migration', desc:'Migrate your WordPress site to Webflow cleanly — preserving SEO rankings, redirecting all URLs, and importing CMS content with zero downtime.', featured:false },
+  { n:'01', title:'Custom Webflow Website Design', desc:'Bespoke, pixel-perfect Webflow websites designed from a Figma prototype - responsive, fast-loading, and crafted to reflect your brand identity.', featured:false },
+  { n:'02', title:'Webflow CMS Development', desc:'Content-managed Webflow sites with structured Collections - empowering your team to publish blogs, case studies, and product pages without touching code.', featured:true },
+  { n:'03', title:'Webflow E-Commerce Development', desc:'Full-featured online stores on Webflow Commerce - custom product pages, cart flows, checkout customisation, and Stripe payment integration.', featured:false },
+  { n:'04', title:'Webflow Membership & Client Portals', desc:'Gated member areas with Memberstack or Outseta - subscription billing, protected content, and custom onboarding flows built inside Webflow.', featured:false },
+  { n:'05', title:'WordPress to Webflow Migration', desc:'Migrate your WordPress site to Webflow cleanly - preserving SEO rankings, redirecting all URLs, and importing CMS content with zero downtime.', featured:false },
   { n:'06', title:'Webflow Interactions & Animations', desc:'Cinematic scroll-triggered animations, parallax effects, and micro-interactions using Webflow Interactions and GSAP for a premium user experience.', featured:false },
-  { n:'07', title:'Webflow SEO Optimisation', desc:'Technical SEO built into every Webflow project — semantic HTML, schema markup, Core Web Vitals tuning, canonical tags, and sitemap configuration.', featured:false },
-  { n:'08', title:'Webflow API Integrations', desc:'Connect Webflow to your existing tools — HubSpot, Mailchimp, Zapier, Make, Stripe, Airtable, and custom REST APIs via Webflow Logic or middleware.', featured:false },
-  { n:'09', title:'Webflow Landing Page Development', desc:'High-converting landing pages for campaigns, product launches, and lead generation — A/B-test-ready, fast to iterate, and optimised for conversion.', featured:false },
-  { n:'10', title:'Webflow Redesign & Refresh', desc:'Revamp an existing Webflow site with updated branding, improved layout, better mobile experience, and enhanced page speed — without starting from scratch.', featured:false },
-  { n:'11', title:'Webflow Maintenance & Support', desc:'Ongoing Webflow support plans — content updates, bug fixes, new section builds, plugin upgrades, and monthly performance reviews.', featured:false },
-  { n:'12', title:'Webflow for SaaS & Startups', desc:'Marketing sites and product landing pages purpose-built for SaaS companies — fast to launch, easy for non-technical teams to update, and structured for growth.', featured:false },
+  { n:'07', title:'Webflow SEO Optimisation', desc:'Technical SEO built into every Webflow project - semantic HTML, schema markup, Core Web Vitals tuning, canonical tags, and sitemap configuration.', featured:false },
+  { n:'08', title:'Webflow API Integrations', desc:'Connect Webflow to your existing tools - HubSpot, Mailchimp, Zapier, Make, Stripe, Airtable, and custom REST APIs via Webflow Logic or middleware.', featured:false },
+  { n:'09', title:'Webflow Landing Page Development', desc:'High-converting landing pages for campaigns, product launches, and lead generation - A/B-test-ready, fast to iterate, and optimised for conversion.', featured:false },
+  { n:'10', title:'Webflow Redesign & Refresh', desc:'Revamp an existing Webflow site with updated branding, improved layout, better mobile experience, and enhanced page speed - without starting from scratch.', featured:false },
+  { n:'11', title:'Webflow Maintenance & Support', desc:'Ongoing Webflow support plans - content updates, bug fixes, new section builds, plugin upgrades, and monthly performance reviews.', featured:false },
+  { n:'12', title:'Webflow for SaaS & Startups', desc:'Marketing sites and product landing pages purpose-built for SaaS companies - fast to launch, easy for non-technical teams to update, and structured for growth.', featured:false },
 ];
 
 const FAQS = [
-  { q:'What Webflow development services does 1Solutions offer?', a:'We offer end-to-end Webflow development — custom website design and build, CMS setup and content migration, e-commerce stores, membership portals with Memberstack or Outseta, scroll animations with GSAP, API integrations, SEO optimisation, WordPress-to-Webflow migrations, and ongoing maintenance retainers. Whether you need a single landing page or a fully CMS-powered marketing site, we scope and deliver the right solution.' },
+  { q:'What Webflow development services does 1Solutions offer?', a:'We offer end-to-end Webflow development - custom website design and build, CMS setup and content migration, e-commerce stores, membership portals with Memberstack or Outseta, scroll animations with GSAP, API integrations, SEO optimisation, WordPress-to-Webflow migrations, and ongoing maintenance retainers. Whether you need a single landing page or a fully CMS-powered marketing site, we scope and deliver the right solution.' },
   { q:'How much does a custom Webflow website cost?', a:'A typical Webflow marketing site with 8–15 pages and a blog CMS costs between $4,000 and $12,000. E-commerce builds start from $6,000. Complex membership portals or multi-template CMS projects with animations range from $10,000 to $25,000+. Cost depends on page count, animation complexity, integrations, and content migration requirements. We provide a detailed fixed-price quote after a free scoping call.' },
   { q:'How long does a Webflow project take?', a:'A standard 8–12 page marketing site with CMS typically takes 4–6 weeks from approved Figma designs to launch. E-commerce and membership builds take 6–10 weeks. Landing pages can be turned around in 1–2 weeks. We share a milestone timeline in every proposal and provide weekly demos so you always know where things stand.' },
-  { q:'Can you migrate our WordPress site to Webflow?', a:'Yes — WordPress-to-Webflow migration is one of our most requested services. We export and restructure your CMS content into Webflow Collections, set up 301 redirects for all existing URLs to preserve your SEO rankings, replicate your design, and test every page before cutover. You retain your domain and typically see faster load times after the migration.' },
-  { q:'Will our team be able to update the site after launch?', a:'Absolutely — that is one of Webflow\'s greatest strengths. We build your CMS Collections and page templates so your marketing team can add blog posts, update team members, publish case studies, and edit copy directly in the Webflow Editor — no developer needed. We provide a walkthrough video and documentation as part of every handoff.' },
-  { q:'Do you build Webflow animations and interactions?', a:'Yes. We build scroll-triggered reveals, parallax backgrounds, sticky navigation, hover micro-interactions, and page-load sequences using Webflow\'s native Interactions panel. For more advanced animations — counters, staggered reveals, SVG path animations — we layer in GSAP and Lottie. Every animation is tested for smooth 60fps performance on mobile.' },
-  { q:'Is Webflow good for SEO?', a:'Yes — Webflow gives developers and SEO practitioners full control over title tags, meta descriptions, Open Graph tags, canonical URLs, schema markup, XML sitemaps, and 301 redirects. Unlike WordPress, there are no plugin conflicts or bloated themes slowing things down. We configure all of these correctly on every build and optimise Core Web Vitals (LCP, CLS, FID) during the performance review phase.' },
-  { q:'What makes 1Solutions different from a Webflow freelancer?', a:'Depth, accountability, and continuity. Unlike a solo freelancer, we offer a dedicated team — a Webflow designer, developer, and QA reviewer — so your project never stalls when someone is unavailable. We follow a documented Discover → Design → Build → Launch process, provide comprehensive handoff documentation, and offer monthly support retainers. We are a long-term partner, not a one-off contractor.' },
+  { q:'Can you migrate our WordPress site to Webflow?', a:'Yes - WordPress-to-Webflow migration is one of our most requested services. We export and restructure your CMS content into Webflow Collections, set up 301 redirects for all existing URLs to preserve your SEO rankings, replicate your design, and test every page before cutover. You retain your domain and typically see faster load times after the migration.' },
+  { q:'Will our team be able to update the site after launch?', a:'Absolutely - that is one of Webflow\'s greatest strengths. We build your CMS Collections and page templates so your marketing team can add blog posts, update team members, publish case studies, and edit copy directly in the Webflow Editor - no developer needed. We provide a walkthrough video and documentation as part of every handoff.' },
+  { q:'Do you build Webflow animations and interactions?', a:'Yes. We build scroll-triggered reveals, parallax backgrounds, sticky navigation, hover micro-interactions, and page-load sequences using Webflow\'s native Interactions panel. For more advanced animations - counters, staggered reveals, SVG path animations - we layer in GSAP and Lottie. Every animation is tested for smooth 60fps performance on mobile.' },
+  { q:'Is Webflow good for SEO?', a:'Yes - Webflow gives developers and SEO practitioners full control over title tags, meta descriptions, Open Graph tags, canonical URLs, schema markup, XML sitemaps, and 301 redirects. Unlike WordPress, there are no plugin conflicts or bloated themes slowing things down. We configure all of these correctly on every build and optimise Core Web Vitals (LCP, CLS, FID) during the performance review phase.' },
+  { q:'What makes 1Solutions different from a Webflow freelancer?', a:'Depth, accountability, and continuity. Unlike a solo freelancer, we offer a dedicated team - a Webflow designer, developer, and QA reviewer - so your project never stalls when someone is unavailable. We follow a documented Discover → Design → Build → Launch process, provide comprehensive handoff documentation, and offer monthly support retainers. We are a long-term partner, not a one-off contractor.' },
 ];
 
 const WHY = [
   { icon:<svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>, title:'Certified Webflow Experts', desc:'Our Webflow team holds official Webflow Partner and Expert certifications. We have shipped 200+ Webflow sites across SaaS, e-commerce, healthcare, and professional services.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>, title:'US, Canada & Australia Focused', desc:'We understand the UX expectations, compliance considerations, and conversion standards of western markets — not just generic offshore delivery with poor communication.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>, title:'Figma-to-Webflow in One Team', desc:'We design and build under one roof — your Figma prototype is translated to Webflow with pixel precision, so there are no handoff gaps or fidelity loss between design and code.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>, title:'SEO-First Every Time', desc:'Every site we build includes proper semantic HTML, schema markup, canonical URLs, XML sitemaps, and Core Web Vitals optimisation — not a plugin-dependent afterthought.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>, title:'US, Canada & Australia Focused', desc:'We understand the UX expectations, compliance considerations, and conversion standards of western markets - not just generic offshore delivery with poor communication.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>, title:'Figma-to-Webflow in One Team', desc:'We design and build under one roof - your Figma prototype is translated to Webflow with pixel precision, so there are no handoff gaps or fidelity loss between design and code.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>, title:'SEO-First Every Time', desc:'Every site we build includes proper semantic HTML, schema markup, canonical URLs, XML sitemaps, and Core Web Vitals optimisation - not a plugin-dependent afterthought.' },
   { icon:<svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>, title:'Fast Delivery, Fixed Price', desc:'Our scoped fixed-price process means you know the cost and timeline upfront. Most marketing sites go from approved design to live in 4–6 weeks with weekly demo checkpoints.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>, title:'Client-Editable CMS Handoff', desc:'We build your CMS so your non-technical team can update content, add blog posts, and publish new pages in the Webflow Editor — with a video walkthrough and documentation on handoff.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>, title:'Security & Reliability', desc:'Webflow\'s enterprise hosting includes free SSL, CDN delivery via Fastly, automatic backups, 99.99% uptime SLA, and DDoS protection — all included in the Webflow plan.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>, title:'Client-Editable CMS Handoff', desc:'We build your CMS so your non-technical team can update content, add blog posts, and publish new pages in the Webflow Editor - with a video walkthrough and documentation on handoff.' },
+  { icon:<svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>, title:'Security & Reliability', desc:'Webflow\'s enterprise hosting includes free SSL, CDN delivery via Fastly, automatic backups, 99.99% uptime SLA, and DDoS protection - all included in the Webflow plan.' },
   { icon:<svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>, title:'Long-Term Partnership', desc:'96% client retention rate. We maintain your Webflow site after launch with monthly support retainers, content updates, new section builds, and performance monitoring.' },
 ];
 
@@ -149,7 +149,7 @@ export default function WebflowDevelopmentServices() {
       },
       {
         '@type': 'ProfessionalService',
-        name: '1Solutions — Webflow Development Agency',
+        name: '1Solutions - Webflow Development Agency',
         url: 'https://www.1solutions.biz/webflow-development-services/',
         description: 'Expert Webflow development company delivering custom websites, CMS builds, e-commerce stores, membership portals, and WordPress-to-Webflow migrations.',
         priceRange: '$4,000 - $25,000+',
@@ -529,8 +529,8 @@ export default function WebflowDevelopmentServices() {
         {/* ── HERO ── */}
         <ServiceHero
           eyebrow="Certified Webflow Development Agency"
-          title={<>Webflow Development Services — <AuroraText>Beautiful Sites, Zero Compromise</AuroraText></>}
-          subtext="Custom Webflow websites, CMS builds, e-commerce stores, and pixel-perfect animations — delivered by certified Webflow experts for businesses across the US, Canada, and Australia."
+          title={<>Webflow Development Services - <AuroraText>Beautiful Sites, Zero Compromise</AuroraText></>}
+          subtext="Custom Webflow websites, CMS builds, e-commerce stores, and pixel-perfect animations - delivered by certified Webflow experts for businesses across the US, Canada, and Australia."
           primaryCta={{ label: 'Get a Free Webflow Consultation', href: '#contact' }}
           stats={[
             { label: 'Webflow Sites', value: '200', suffix: '+' },
@@ -545,13 +545,13 @@ export default function WebflowDevelopmentServices() {
           <div className="wf-wic-inner">
             <span className="wf-section-eyebrow">Understanding Webflow</span>
             <h2 className="wf-section-title">What Is Webflow CMS and How Does It Work?</h2>
-            <p className="wf-section-desc">Webflow is a visual, all-in-one web design platform that combines a drag-and-drop designer with a built-in CMS and hosting — no separate theme, plugin stack, or hand-coded front end required. Here&apos;s the one concept worth understanding first, because it&apos;s what decides how fast your site launches and how easily your own team can run it afterward.</p>
+            <p className="wf-section-desc">Webflow is a visual, all-in-one web design platform that combines a drag-and-drop designer with a built-in CMS and hosting - no separate theme, plugin stack, or hand-coded front end required. Here&apos;s the one concept worth understanding first, because it&apos;s what decides how fast your site launches and how easily your own team can run it afterward.</p>
             <div className="wf-wic-box">
-              <p className="wf-wic-intro"><strong>Webflow CMS</strong> is Webflow&apos;s built-in content management system. It lets you define structured, reusable content — blog posts, case studies, team members, products — as &quot;Collections,&quot; design the layout once, and have every entry automatically populate that same design. Unlike WordPress, where the CMS and the visual builder are two separate systems glued together by themes and plugins, Webflow&apos;s CMS and its visual designer are the same tool: you build the layout, bind it to a Collection field, and every future entry — added by your team or synced through an integration — inherits that exact design with zero extra development. For a Webflow website development project built for international clients, this collapses what used to be a two-step &quot;design agency plus separate CMS developer&quot; workflow into one — which is why so many growing brands are moving their WordPress and Wix sites onto Webflow.</p>
+              <p className="wf-wic-intro"><strong>Webflow CMS</strong> is Webflow&apos;s built-in content management system. It lets you define structured, reusable content - blog posts, case studies, team members, products - as &quot;Collections,&quot; design the layout once, and have every entry automatically populate that same design. Unlike WordPress, where the CMS and the visual builder are two separate systems glued together by themes and plugins, Webflow&apos;s CMS and its visual designer are the same tool: you build the layout, bind it to a Collection field, and every future entry - added by your team or synced through an integration - inherits that exact design with zero extra development. For a Webflow website development project built for international clients, this collapses what used to be a two-step &quot;design agency plus separate CMS developer&quot; workflow into one - which is why so many growing brands are moving their WordPress and Wix sites onto Webflow.</p>
               <div className="wf-wic-aspects">
                 {[
-                  { t: "Collections — Webflow's content model", d: 'Every dynamic content type (blog, portfolio, team, locations) is a Collection with its own custom fields — text, images, rich text, and references to other Collections. Edit an entry once and it updates everywhere that Collection is used across the site.' },
-                  { t: 'Design once, populate infinitely', d: 'You design a single dynamic template — a blog post layout, a product page — bound directly to Collection fields inside the Webflow Designer. Every new entry, whether 10 or 10,000, renders through that same template with no extra coding.' },
+                  { t: "Collections - Webflow's content model", d: 'Every dynamic content type (blog, portfolio, team, locations) is a Collection with its own custom fields - text, images, rich text, and references to other Collections. Edit an entry once and it updates everywhere that Collection is used across the site.' },
+                  { t: 'Design once, populate infinitely', d: 'You design a single dynamic template - a blog post layout, a product page - bound directly to Collection fields inside the Webflow Designer. Every new entry, whether 10 or 10,000, renders through that same template with no extra coding.' },
                   { t: 'Why it beats a bolted-on CMS', d: 'WordPress pairs a CMS with a separate theme and plugin layer, so structure and design constantly fight each other. Webflow CMS and design live in one canvas, which is why Webflow sites launch faster and are easier for non-technical teams to maintain after handoff.' },
                 ].map(a => (
                   <div key={a.t} className="wf-wic-aspect">
@@ -570,7 +570,7 @@ export default function WebflowDevelopmentServices() {
             <div className={`wf-section-reveal${visibleSections.has('services') ? ' wf-revealed' : ''}`} ref={el => { sectionRefs.current['services'] = el; }}>
               <span className="wf-section-eyebrow">Our Services</span>
               <h2 className="wf-section-title">Webflow Development Services We Offer</h2>
-              <p className="wf-section-desc">From straightforward marketing sites to complex CMS platforms, e-commerce stores, and membership portals — our Webflow team delivers end-to-end solutions built for speed, beauty, and client editability.</p>
+              <p className="wf-section-desc">From straightforward marketing sites to complex CMS platforms, e-commerce stores, and membership portals - our Webflow team delivers end-to-end solutions built for speed, beauty, and client editability.</p>
             </div>
             <div className="wf-services-grid">
               {visibleServices.map(s => (
@@ -622,7 +622,7 @@ export default function WebflowDevelopmentServices() {
             <div className={`wf-section-reveal${visibleSections.has('process') ? ' wf-revealed' : ''}`} ref={el => { sectionRefs.current['process'] = el; }}>
               <p className="wf-process-eyebrow">HOW WE WORK</p>
               <h2 className="wf-process-main-title">How We Deliver Webflow Projects</h2>
-              <p className="wf-process-main-desc">Our Webflow team follows a four-stage process refined over 200+ projects. You approve design before any development begins — no surprises, no scope creep, and a fully editable site handed to you at launch.</p>
+              <p className="wf-process-main-desc">Our Webflow team follows a four-stage process refined over 200+ projects. You approve design before any development begins - no surprises, no scope creep, and a fully editable site handed to you at launch.</p>
             </div>
             <hr className="wf-process-divider" />
           </div>
@@ -630,8 +630,8 @@ export default function WebflowDevelopmentServices() {
             <div className="wf-process-steps">
               {[
                 ['Discover','We start with a free scoping call to map your goals, target audience, page count, CMS structure, required integrations, and brand guidelines. Our Webflow strategist documents the full site architecture before a single design frame is opened.'],
-                ['Design','We build a pixel-perfect Figma prototype — desktop and mobile — covering every page state and interaction. You review, provide feedback, and sign off before Webflow development begins. Design-approved means no surprises in build.'],
-                ['Build','Our Webflow developers translate the approved Figma into a clean, semantic Webflow project — with CMS Collections configured, animations implemented, integrations wired, and all content migrated. Weekly demo links keep you in the loop.'],
+                ['Design','We build a pixel-perfect Figma prototype - desktop and mobile - covering every page state and interaction. You review, provide feedback, and sign off before Webflow development begins. Design-approved means no surprises in build.'],
+                ['Build','Our Webflow developers translate the approved Figma into a clean, semantic Webflow project - with CMS Collections configured, animations implemented, integrations wired, and all content migrated. Weekly demo links keep you in the loop.'],
                 ['Launch','We run a full QA pass (mobile, cross-browser, forms, CMS, performance), configure SEO settings, set up 301 redirects, connect your domain, and hand over a recorded walkthrough so your team can manage content independently from day one.'],
               ].map(([title, desc], i) => (
                 <div
@@ -653,7 +653,7 @@ export default function WebflowDevelopmentServices() {
             <div className="wf-process-image-col">
               <div className="wf-process-img-wrap">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/office.png" alt="1Solutions Webflow development team" />
+                <img src="/images/webflow-development-company-india.jpg" alt="1Solutions Webflow development team reviewing a project in the Webflow Designer" />
               </div>
             </div>
           </div>
@@ -669,9 +669,9 @@ export default function WebflowDevelopmentServices() {
             </div>
             <div className="wf-testi-grid" ref={testiGridRef}>
               {[
-                { initials:'SR', bg:'#1a4a7a', text:'"1Solutions rebuilt our entire marketing site in Webflow — from a sluggish WordPress install to a 98 PageSpeed score. The CMS handoff was brilliant; our content team updates everything without us. Incredible value."', name:'Sarah Rutherford', role:'VP Marketing, Stackify SaaS — USA', featured:false },
-                { initials:'JM', bg:'#0F3460', text:'"They migrated our 180-page WordPress site to Webflow with zero ranking loss. Every redirect was handled correctly and the new site loads in under 1.5 seconds. Best investment we made this year."', name:'James Mitchell', role:'SEO Director, LegalEdge — Australia', featured:true },
-                { initials:'LC', bg:'#2d5a8e', text:'"The Webflow animations they built for our product launch were stunning. Clients kept mentioning the website on discovery calls. 1Solutions understood our brand better than agencies we\'d paid 5× more."', name:'Laura Chen', role:'Founder, Prism Creative Studio — Canada', featured:false },
+                { initials:'SR', bg:'#1a4a7a', text:'"1Solutions rebuilt our entire marketing site in Webflow - from a sluggish WordPress install to a 98 PageSpeed score. The CMS handoff was brilliant; our content team updates everything without us. Incredible value."', name:'Sarah Rutherford', role:'VP Marketing, Stackify SaaS - USA', featured:false },
+                { initials:'JM', bg:'#0F3460', text:'"They migrated our 180-page WordPress site to Webflow with zero ranking loss. Every redirect was handled correctly and the new site loads in under 1.5 seconds. Best investment we made this year."', name:'James Mitchell', role:'SEO Director, LegalEdge - Australia', featured:true },
+                { initials:'LC', bg:'#2d5a8e', text:'"The Webflow animations they built for our product launch were stunning. Clients kept mentioning the website on discovery calls. 1Solutions understood our brand better than agencies we\'d paid 5× more."', name:'Laura Chen', role:'Founder, Prism Creative Studio - Canada', featured:false },
               ].map((t,i) => (
                 <div className={`wf-tcard${t.featured?' featured':''}${visibleTestiCards.includes(i)?' wf-tcard-visible':''}`} key={t.name}>
                   <div className="wf-tcard-stars">★★★★★</div>
@@ -706,7 +706,7 @@ export default function WebflowDevelopmentServices() {
             <div className={`wf-section-reveal${visibleSections.has('why') ? ' wf-revealed' : ''}`} ref={el => { sectionRefs.current['why'] = el; }} style={{ textAlign:'center',marginBottom:0 }}>
               <span className="wf-section-eyebrow">Why 1Solutions</span>
               <h2 className="wf-section-title">Why Businesses Choose Us for Webflow Development</h2>
-              <p className="wf-section-sub" style={{ maxWidth:680,margin:'0 auto' }}>We don't just build Webflow sites — we build revenue-generating digital platforms. Here's what makes us different from freelancers and generic web agencies.</p>
+              <p className="wf-section-sub" style={{ maxWidth:680,margin:'0 auto' }}>We don't just build Webflow sites - we build revenue-generating digital platforms. Here's what makes us different from freelancers and generic web agencies.</p>
             </div>
             <div className="wf-why-grid" ref={whyGridRef}>
               {WHY.map((w, i) => (
@@ -728,14 +728,14 @@ export default function WebflowDevelopmentServices() {
             <div className="wf-engage-header">
               <span className="wf-section-eyebrow">How We Engage</span>
               <h2 className="wf-engage-title">Flexible Webflow Engagement Models</h2>
-              <p className="wf-engage-desc">Whether you need a one-time build, a WordPress migration, or an ongoing Webflow partner — pick the model that fits your team and budget.</p>
+              <p className="wf-engage-desc">Whether you need a one-time build, a WordPress migration, or an ongoing Webflow partner - pick the model that fits your team and budget.</p>
             </div>
 
             <div className="wf-plans-grid">
               <article className="wf-pcard">
                 <span className="wf-pcard-badge">One-time</span>
                 <span className="wf-pcard-name">Fixed-Price Project</span>
-                <p className="wf-pcard-blurb">Defined scope &amp; budget — ideal for clearly-scoped builds with a fixed timeline and deliverables.</p>
+                <p className="wf-pcard-blurb">Defined scope &amp; budget - ideal for clearly-scoped builds with a fixed timeline and deliverables.</p>
                 <ul className="wf-pcard-features">
                   <li>Shared specialist team</li>
                   <li>Fixed scope &amp; deliverables</li>
@@ -748,7 +748,7 @@ export default function WebflowDevelopmentServices() {
               <article className="wf-pcard">
                 <span className="wf-pcard-badge">Flexible</span>
                 <span className="wf-pcard-name">Time &amp; Materials</span>
-                <p className="wf-pcard-blurb">Scale with evolving requirements — pay for what's delivered, adjust scope any sprint.</p>
+                <p className="wf-pcard-blurb">Scale with evolving requirements - pay for what's delivered, adjust scope any sprint.</p>
                 <ul className="wf-pcard-features">
                   <li>Shared specialist team</li>
                   <li>Flexible, evolving scope</li>
@@ -761,7 +761,7 @@ export default function WebflowDevelopmentServices() {
               <article className="wf-pcard wf-pcard--feat">
                 <span className="wf-pcard-pop">✦ Most Popular</span>
                 <span className="wf-pcard-name">Dedicated Team</span>
-                <p className="wf-pcard-blurb">Your extended team — specialists embedded in your workflow, committed to your long-term growth.</p>
+                <p className="wf-pcard-blurb">Your extended team - specialists embedded in your workflow, committed to your long-term growth.</p>
                 <ul className="wf-pcard-features">
                   <li>Dedicated senior specialists</li>
                   <li>Exclusive monthly retainer</li>
@@ -774,7 +774,7 @@ export default function WebflowDevelopmentServices() {
               <article className="wf-pcard">
                 <span className="wf-pcard-badge">Cost-efficient</span>
                 <span className="wf-pcard-name">Offshore Model</span>
-                <p className="wf-pcard-blurb">Maximum ROI with our expert offshore team — senior-level quality at budget-friendly rates.</p>
+                <p className="wf-pcard-blurb">Maximum ROI with our expert offshore team - senior-level quality at budget-friendly rates.</p>
                 <ul className="wf-pcard-features">
                   <li>Expert offshore team</li>
                   <li>Cost-effective delivery</li>
@@ -796,10 +796,10 @@ export default function WebflowDevelopmentServices() {
               <p className="wf-contact-desc">Tell us about your project and we'll get back to you within one business day with a scoping questionnaire and free consultation slot.</p>
               <div className="wf-merged-box">
                 {[
-                  { label:'Free scoping consultation', desc:'30-minute call to define your goals, timeline, and budget — no obligation.' },
+                  { label:'Free scoping consultation', desc:'30-minute call to define your goals, timeline, and budget - no obligation.' },
                   { label:'Detailed fixed-price quote', desc:'Clear scope, milestones, and deliverables with no hidden costs.' },
                   { label:'Figma prototype before build', desc:'You approve every design detail before a single Webflow element is created.' },
-                  { label:'Full CMS handoff with training', desc:'Your team edits content independently — no developer dependency after launch.' },
+                  { label:'Full CMS handoff with training', desc:'Your team edits content independently - no developer dependency after launch.' },
                 ].map(b => (
                   <div className="wf-benefit-item" key={b.label}>
                     <div className="wf-benefit-icon-wrap">
@@ -808,7 +808,7 @@ export default function WebflowDevelopmentServices() {
                         <polyline points="22 4 12 14.01 9 11.01" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                     </div>
-                    <p><strong>{b.label}</strong> — {b.desc}</p>
+                    <p><strong>{b.label}</strong> - {b.desc}</p>
                   </div>
                 ))}
                 <div className="wf-stats-box">
@@ -899,7 +899,7 @@ export default function WebflowDevelopmentServices() {
         <section className="wf-faq-section">
           <div className="wf-faq-inner">
             <div className={`wf-section-reveal${visibleSections.has('faq') ? ' wf-revealed' : ''}`} ref={el => { sectionRefs.current['faq'] = el; }}>
-              <h2 className="wf-faq-heading">Webflow Development — Frequently Asked Questions</h2>
+              <h2 className="wf-faq-heading">Webflow Development - Frequently Asked Questions</h2>
             </div>
             <div className="wf-faq-list">
               {FAQS.map((f, i) => (
