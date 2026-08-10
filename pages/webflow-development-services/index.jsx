@@ -33,7 +33,7 @@ const FAQS = [
 
 const WHY = [
   { bg:'linear-gradient(165deg,#ede9fe 0%,#ddd6fe 100%)', icon:<svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>, title:'Certified Webflow Experts', desc:'Our Webflow team holds official Webflow Partner and Expert certifications. We have shipped 200+ Webflow sites across SaaS, e-commerce, healthcare, and professional services.' },
-  { bg:'linear-gradient(165deg,#dbeafe 0%,#bfdbfe 100%)', icon:<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>, title:'US, Canada & Australia Focused', desc:'We understand the UX expectations, compliance considerations, and conversion standards of western markets - not just generic offshore delivery with poor communication.' },
+  { bg:'linear-gradient(165deg,#dbeafe 0%,#bfdbfe 100%)', icon:<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>, title:'Built to Global Business Standards', desc:'We understand the UX expectations, compliance considerations, and conversion standards that international clients expect - not generic delivery with poor communication.' },
   { bg:'linear-gradient(165deg,#dcfce7 0%,#bbf7d0 100%)', icon:<svg viewBox="0 0 24 24"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>, title:'Figma-to-Webflow in One Team', desc:'We design and build under one roof - your Figma prototype is translated to Webflow with pixel precision, so there are no handoff gaps or fidelity loss between design and code.' },
   { bg:'linear-gradient(165deg,#fdf3dd 0%,#fbe8b8 100%)', icon:<svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>, title:'SEO-First Every Time', desc:'Every site we build includes proper semantic HTML, schema markup, canonical URLs, XML sitemaps, and Core Web Vitals optimisation - not a plugin-dependent afterthought.' },
   { bg:'linear-gradient(165deg,#fde8dc 0%,#fbd0b5 100%)', icon:<svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>, title:'Fast Delivery, Fixed Price', desc:'Our scoped fixed-price process means you know the cost and timeline upfront. Most marketing sites go from approved design to live in 4–6 weeks with weekly demo checkpoints.' },
@@ -140,7 +140,7 @@ export default function WebflowDevelopmentServices() {
         '@id': 'https://www.1solutions.biz/webflow-development-services/#webpage',
         url: 'https://www.1solutions.biz/webflow-development-services/',
         name: 'Webflow Development Services | Expert Webflow Agency | 1Solutions',
-        description: 'Award-winning Webflow development agency. Custom Webflow websites, CMS, e-commerce, animations & migrations for US, Canada & Australia businesses.',
+        description: 'Award-winning Webflow development agency. Custom Webflow websites, CMS, e-commerce, animations & migrations for businesses worldwide.',
         isPartOf: { '@id': 'https://www.1solutions.biz/#organization' },
         dateModified: '2026-07-18',
         inLanguage: 'en-US',
@@ -151,7 +151,7 @@ export default function WebflowDevelopmentServices() {
         url: 'https://www.1solutions.biz/webflow-development-services/',
         description: 'Expert Webflow development company delivering custom websites, CMS builds, e-commerce stores, membership portals, and WordPress-to-Webflow migrations.',
         priceRange: '$4,000 - $25,000+',
-        areaServed: ['United States', 'Canada', 'Australia', 'United Kingdom'],
+        areaServed: 'Worldwide',
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
           name: 'Webflow Development Services',
@@ -190,11 +190,11 @@ export default function WebflowDevelopmentServices() {
     <>
       <Head>
         <title>Webflow Development Services | Expert Webflow Agency | 1Solutions</title>
-        <meta name="description" content="1Solutions is a certified Webflow development agency with 200+ sites delivered. Custom Webflow design, CMS, e-commerce, animations & WordPress migrations for US, Canada & Australia." />
+        <meta name="description" content="1Solutions is a certified Webflow development agency with 200+ sites delivered. Custom Webflow design, CMS, e-commerce, animations & WordPress migrations for businesses worldwide." />
         <meta name="keywords" content="webflow development services, webflow development company, webflow agency, webflow designer, webflow cms development, webflow ecommerce, wordpress to webflow migration, webflow expert" />
         <link rel="canonical" href="https://www.1solutions.biz/webflow-development-services/" />
         <meta property="og:title" content="Webflow Development Services | Expert Webflow Agency | 1Solutions" />
-        <meta property="og:description" content="Certified Webflow agency delivering custom websites, CMS, e-commerce, and animations for US, Canada & Australia businesses. 200+ Webflow sites delivered." />
+        <meta property="og:description" content="Certified Webflow agency delivering custom websites, CMS, e-commerce, and animations for businesses worldwide. 200+ Webflow sites delivered." />
         <meta property="og:url" content="https://www.1solutions.biz/webflow-development-services/" />
         <meta property="og:type" content="website" />
         <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-webflow-development-services.jpg" />
@@ -205,8 +205,6 @@ export default function WebflowDevelopmentServices() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content="https://www.1solutions.biz/images/og-webflow-development-services.jpg" />
         <meta name="twitter:image:alt" content="1Solutions Webflow Development Services" />
-        <meta name="geo.region" content="US" />
-        <meta name="geo.placename" content="United States" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
@@ -532,14 +530,8 @@ export default function WebflowDevelopmentServices() {
         <ServiceHero
           eyebrow="Certified Webflow Development Agency"
           title={<>Webflow Development Services - <AuroraText>Beautiful Sites, Zero Compromise</AuroraText></>}
-          subtext="Custom Webflow websites, CMS builds, e-commerce stores, and pixel-perfect animations - delivered by certified Webflow experts for businesses across the US, Canada, and Australia."
+          subtext="Custom Webflow websites, CMS builds, e-commerce stores, and pixel-perfect animations - built by certified Webflow experts trusted by growing businesses worldwide."
           primaryCta={{ label: 'Get a Free Webflow Consultation', href: '#contact' }}
-          stats={[
-            { label: 'Webflow Sites', value: '200', suffix: '+' },
-            { label: 'Webflow Experts', value: '20', suffix: '+' },
-            { label: 'Years in Business', value: '15', suffix: '+' },
-            { label: 'Client Retention', value: '96', suffix: '%' },
-          ]}
         />
 
         {/* ── WHAT IS WEBFLOW CMS ── */}
@@ -667,7 +659,7 @@ export default function WebflowDevelopmentServices() {
             <div className={`wf-section-header-center wf-section-reveal${visibleSections.has('testi') ? ' wf-revealed' : ''}`} ref={el => { sectionRefs.current['testi'] = el; }}>
               <span className="wf-section-eyebrow">Client Reviews</span>
               <h2 className="wf-section-title">What Our Clients Say</h2>
-              <p className="wf-section-sub">Trusted by SaaS companies, agencies, and professional services firms across the US, Canada, and Australia.</p>
+              <p className="wf-section-sub">Trusted by SaaS companies, agencies, and professional services firms worldwide.</p>
             </div>
             <div className="wf-testi-marquee-outer">
               <div className="wf-testi-fade wf-testi-fade--l" />
