@@ -236,7 +236,7 @@ export default function WebflowDevelopmentServices() {
           /* Sections shared */
           .wf-section-eyebrow { font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#D97706;margin-bottom:12px;display:block; }
           .wf-section-title { font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;margin-bottom:10px; }
-          .wf-section-desc { font-size:15px;color:#4A6080;line-height:1.7;max-width:680px;margin-bottom:36px; }
+          .wf-section-desc { font-size:15px;color:#4A6080;line-height:1.7;margin-bottom:36px; }
           .wf-section-sub { font-size:16px;color:#4A6080;margin:0; }
 
           /* Services */
@@ -545,7 +545,7 @@ export default function WebflowDevelopmentServices() {
           <div className="wf-wic-inner">
             <span className="wf-section-eyebrow">Understanding Webflow</span>
             <h2 className="wf-section-title">What Is Webflow CMS and How Does It Work?</h2>
-            <p className="wf-section-desc">If you&apos;re comparing a Webflow development company in India against a traditional WordPress agency, this is the one concept worth understanding first — it&apos;s what decides how fast your site launches and how easily your own team can run it afterward.</p>
+            <p className="wf-section-desc">Webflow is a visual, all-in-one web design platform that combines a drag-and-drop designer with a built-in CMS and hosting — no separate theme, plugin stack, or hand-coded front end required. Here&apos;s the one concept worth understanding first, because it&apos;s what decides how fast your site launches and how easily your own team can run it afterward.</p>
             <div className="wf-wic-box">
               <p className="wf-wic-intro"><strong>Webflow CMS</strong> is Webflow&apos;s built-in content management system. It lets you define structured, reusable content — blog posts, case studies, team members, products — as &quot;Collections,&quot; design the layout once, and have every entry automatically populate that same design. Unlike WordPress, where the CMS and the visual builder are two separate systems glued together by themes and plugins, Webflow&apos;s CMS and its visual designer are the same tool: you build the layout, bind it to a Collection field, and every future entry — added by your team or synced through an integration — inherits that exact design with zero extra development. For a Webflow website development project built for international clients, this collapses what used to be a two-step &quot;design agency plus separate CMS developer&quot; workflow into one — which is why so many growing brands are moving their WordPress and Wix sites onto Webflow.</p>
               <div className="wf-wic-aspects">
