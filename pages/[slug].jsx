@@ -124,42 +124,68 @@ function SinglePost({ post, relatedPosts, ogImageUrl }) {
     const content = contentRef.current;
     if (!toc || !content) return;
 
-    const headings = content.querySelectorAll('h2, h3');
-    toc.innerHTML  = '';
+    let scrollCleanup = null;
 
-    headings.forEach((h, i) => {
-      if (!h.id) h.id = `heading-${i}-${h.textContent.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`;
+    const buildToc = () => {
+      const headings = content.querySelectorAll('h2, h3');
+      if (headings.length === 0) return false;
 
-      const a       = document.createElement('a');
-      a.href        = `#${h.id}`;
-      a.textContent = h.textContent;
-      a.className   = h.tagName === 'H3' ? 'toc-h3' : 'toc-h2';
+      toc.innerHTML = '';
 
-      a.addEventListener('click', (e) => {
-        e.preventDefault();
-        const el = document.getElementById(h.id);
-        if (el) {
-          const y = el.getBoundingClientRect().top + window.scrollY - 100;
-          window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+      headings.forEach((h, i) => {
+        if (!h.id) h.id = `heading-${i}-${h.textContent.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`;
+
+        const a       = document.createElement('a');
+        a.href        = `#${h.id}`;
+        a.textContent = h.textContent;
+        a.className   = h.tagName === 'H3' ? 'toc-h3' : 'toc-h2';
+
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          const el = document.getElementById(h.id);
+          if (el) {
+            const y = el.getBoundingClientRect().top + window.scrollY - 100;
+            window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+          }
+        });
+
+        toc.appendChild(a);
+      });
+
+      // Active TOC item on scroll
+      const links = toc.querySelectorAll('a');
+      const HEADER_H = 88;
+      const onScroll = () => {
+        let active = links[0] || null; // default to first item
+        headings.forEach((h, i) => {
+          if (h.getBoundingClientRect().top <= HEADER_H + 16) active = links[i];
+        });
+        links.forEach((l) => l.classList.toggle('toc-active', l === active));
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll(); // set initial active on load
+      scrollCleanup = () => window.removeEventListener('scroll', onScroll);
+      return true;
+    };
+
+    // dangerouslySetInnerHTML content isn't always queryable the instant this
+    // effect fires (observed race on production, cause not fully isolated) -
+    // fall back to watching the DOM until headings actually show up.
+    let observer = null;
+    if (!buildToc()) {
+      observer = new MutationObserver(() => {
+        if (buildToc() && observer) {
+          observer.disconnect();
+          observer = null;
         }
       });
+      observer.observe(content, { childList: true, subtree: true });
+    }
 
-      toc.appendChild(a);
-    });
-
-    // Active TOC item on scroll
-    const links = toc.querySelectorAll('a');
-    const HEADER_H = 88;
-    const onScroll = () => {
-      let active = links[0] || null; // default to first item
-      headings.forEach((h, i) => {
-        if (h.getBoundingClientRect().top <= HEADER_H + 16) active = links[i];
-      });
-      links.forEach((l) => l.classList.toggle('toc-active', l === active));
+    return () => {
+      if (observer) observer.disconnect();
+      if (scrollCleanup) scrollCleanup();
     };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll(); // set initial active on load
-    return () => window.removeEventListener('scroll', onScroll);
   }, [post.slug]);
 
   // Mobile TOC toggle
