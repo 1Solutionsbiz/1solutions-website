@@ -257,6 +257,18 @@ export default function WebflowDevelopmentServices() {
           .wf-btn-show-more { display:inline-block;background:#ffffff;border:1.5px solid rgba(15,52,96,0.20);color:#0F3460;padding:10px 32px;border-radius:20px;font-weight:600;font-size:14px;cursor:pointer;transition:all 0.2s;box-shadow:0 2px 10px rgba(15,52,96,0.08);font-family:inherit; }
           .wf-btn-show-more:hover { background:#0F3460;border-color:#0F3460;color:#ffffff;box-shadow:0 8px 28px rgba(15,52,96,0.20);transform:translateY(-2px); }
 
+          /* What Is Webflow CMS */
+          .wf-wic-section { padding:70px 40px 20px;position:relative;z-index:1; }
+          .wf-wic-inner { max-width:1280px;margin:0 auto; }
+          .wf-wic-box { background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);border-radius:24px;padding:44px 44px 40px;box-shadow:0 8px 40px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,0.95); }
+          .wf-wic-intro { font-size:1rem;color:#374151;line-height:1.8;margin:0 0 28px;padding-bottom:28px;border-bottom:1px solid rgba(15,52,96,0.10); }
+          .wf-wic-intro strong { color:#0F3460; }
+          .wf-wic-aspects { display:grid;grid-template-columns:repeat(3,1fr);gap:20px; }
+          .wf-wic-aspect { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);border:1px solid rgba(15,52,96,0.10);border-radius:16px;padding:22px;transition:border-color 0.2s,transform 0.2s; }
+          .wf-wic-aspect:hover { border-color:rgba(217,119,6,0.40);transform:translateY(-3px); }
+          .wf-wic-t { font-weight:700;color:#0F3460;font-size:14px;margin-bottom:8px; }
+          .wf-wic-d { font-size:13px;color:#4A6080;line-height:1.65; }
+
           /* Tech Stack */
           .wf-tech-section { background:transparent;padding:70px 40px;position:relative;z-index:1; }
           .wf-tech-wrap { max-width:1280px;margin:0 auto;background:rgba(255,255,255,0.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.85);border-radius:24px;padding:44px 44px 50px;box-shadow:0 8px 40px rgba(15,52,96,0.10),inset 0 1px 0 rgba(255,255,255,0.95); }
@@ -450,6 +462,9 @@ export default function WebflowDevelopmentServices() {
           }
           @media (max-width:768px) {
             .wf-page { overflow-x:hidden; }
+            .wf-wic-section { padding:48px 16px 10px; }
+            .wf-wic-box { padding:26px 22px; }
+            .wf-wic-aspects { grid-template-columns:1fr;gap:14px; }
             .wf-services-section { padding:48px 20px 40px; }
             .wf-tech-section { padding:48px 16px; }
             .wf-tech-wrap { padding:24px 20px 32px;border-radius:16px; }
@@ -524,6 +539,30 @@ export default function WebflowDevelopmentServices() {
             { label: 'Client Retention', value: '96', suffix: '%' },
           ]}
         />
+
+        {/* ── WHAT IS WEBFLOW CMS ── */}
+        <section className="wf-wic-section" id="what-is-webflow-cms">
+          <div className="wf-wic-inner">
+            <span className="wf-section-eyebrow">Understanding Webflow</span>
+            <h2 className="wf-section-title">What Is Webflow CMS and How Does It Work?</h2>
+            <p className="wf-section-desc">If you&apos;re comparing a Webflow development company in India against a traditional WordPress agency, this is the one concept worth understanding first — it&apos;s what decides how fast your site launches and how easily your own team can run it afterward.</p>
+            <div className="wf-wic-box">
+              <p className="wf-wic-intro"><strong>Webflow CMS</strong> is Webflow&apos;s built-in content management system. It lets you define structured, reusable content — blog posts, case studies, team members, products — as &quot;Collections,&quot; design the layout once, and have every entry automatically populate that same design. Unlike WordPress, where the CMS and the visual builder are two separate systems glued together by themes and plugins, Webflow&apos;s CMS and its visual designer are the same tool: you build the layout, bind it to a Collection field, and every future entry — added by your team or synced through an integration — inherits that exact design with zero extra development. For a Webflow website development project built for international clients, this collapses what used to be a two-step &quot;design agency plus separate CMS developer&quot; workflow into one — which is why so many growing brands are moving their WordPress and Wix sites onto Webflow.</p>
+              <div className="wf-wic-aspects">
+                {[
+                  { t: "Collections — Webflow's content model", d: 'Every dynamic content type (blog, portfolio, team, locations) is a Collection with its own custom fields — text, images, rich text, and references to other Collections. Edit an entry once and it updates everywhere that Collection is used across the site.' },
+                  { t: 'Design once, populate infinitely', d: 'You design a single dynamic template — a blog post layout, a product page — bound directly to Collection fields inside the Webflow Designer. Every new entry, whether 10 or 10,000, renders through that same template with no extra coding.' },
+                  { t: 'Why it beats a bolted-on CMS', d: 'WordPress pairs a CMS with a separate theme and plugin layer, so structure and design constantly fight each other. Webflow CMS and design live in one canvas, which is why Webflow sites launch faster and are easier for non-technical teams to maintain after handoff.' },
+                ].map(a => (
+                  <div key={a.t} className="wf-wic-aspect">
+                    <div className="wf-wic-t">{a.t}</div>
+                    <div className="wf-wic-d">{a.d}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* ── SERVICES ── */}
         <section className="wf-services-section">
