@@ -325,11 +325,6 @@ export default function WebflowDevelopmentServices() {
           .wf-testi-card-name { font-size:13px;font-weight:700;color:#0F3460; }
           .wf-testi-card-role { font-size:12px;color:#6B7280;margin-top:2px; }
           @media(max-width:600px) { .wf-testi-fade{width:48px;} }
-          .wf-testi-stats { display:flex;align-items:center;justify-content:center;gap:0;background:linear-gradient(135deg,rgba(219,234,254,0.50) 0%,rgba(255,255,255,0.75) 50%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:16px;padding:32px 40px;border:1px solid rgba(255,255,255,0.85);box-shadow:0 4px 20px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
-          .wf-tstat { display:flex;flex-direction:column;align-items:center;gap:4px;flex:1; }
-          .wf-tstat-num { font-size:28px;font-weight:800;color:#0F3460; }
-          .wf-tstat-label { font-size:13px;color:#4A6080;font-weight:500; }
-          .wf-tstat-divider { width:1px;height:40px;background:rgba(15,52,96,0.15); }
 
           /* Why */
           .wf-why-section { padding:80px 40px;background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08);position:relative;z-index:1; }
@@ -494,11 +489,6 @@ export default function WebflowDevelopmentServices() {
             .wf-services-grid { grid-template-columns:1fr 1fr;gap:10px; }
             .wf-testi-card { width:280px;padding:22px; }
             .wf-section-title,.wf-engage-title,.wf-process-main-title,.wf-related-title { font-size:30px; }
-            .wf-testi-stats { flex-wrap:wrap;gap:0;padding:24px 20px; }
-            .wf-tstat { flex:0 0 50%;width:50%;padding:12px 8px;border-bottom:1px solid rgba(15,52,96,0.10); }
-            .wf-tstat:nth-child(odd) { border-right:1px solid rgba(15,52,96,0.10); }
-            .wf-tstat:nth-last-child(-n+2) { border-bottom:none; }
-            .wf-tstat-divider { display:none; }
             .wf-form-row { grid-template-columns:1fr; }
             .wf-stats-grid { grid-template-columns:1fr 1fr 1fr; }
             .wf-stat-number { font-size:28px; }
@@ -690,17 +680,6 @@ export default function WebflowDevelopmentServices() {
                   ))}
                 </div>
               </div>
-            </div>
-            <div className="wf-testi-stats">
-              {[['4.9/5','Average Rating'],['150+','Verified Reviews'],['98%','Client Satisfaction'],['96%','Repeat Clients']].map(([num,label],i,arr) => (
-                <>
-                  <div className="wf-tstat" key={label}>
-                    <span className="wf-tstat-num">{num}</span>
-                    <span className="wf-tstat-label">{label}</span>
-                  </div>
-                  {i < arr.length-1 && <div className="wf-tstat-divider" key={`d${i}`} />}
-                </>
-              ))}
             </div>
           </div>
         </section>
