@@ -32,14 +32,28 @@ const FAQS = [
 ];
 
 const WHY = [
-  { icon:<svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>, title:'Certified Webflow Experts', desc:'Our Webflow team holds official Webflow Partner and Expert certifications. We have shipped 200+ Webflow sites across SaaS, e-commerce, healthcare, and professional services.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>, title:'US, Canada & Australia Focused', desc:'We understand the UX expectations, compliance considerations, and conversion standards of western markets - not just generic offshore delivery with poor communication.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>, title:'Figma-to-Webflow in One Team', desc:'We design and build under one roof - your Figma prototype is translated to Webflow with pixel precision, so there are no handoff gaps or fidelity loss between design and code.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>, title:'SEO-First Every Time', desc:'Every site we build includes proper semantic HTML, schema markup, canonical URLs, XML sitemaps, and Core Web Vitals optimisation - not a plugin-dependent afterthought.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>, title:'Fast Delivery, Fixed Price', desc:'Our scoped fixed-price process means you know the cost and timeline upfront. Most marketing sites go from approved design to live in 4–6 weeks with weekly demo checkpoints.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>, title:'Client-Editable CMS Handoff', desc:'We build your CMS so your non-technical team can update content, add blog posts, and publish new pages in the Webflow Editor - with a video walkthrough and documentation on handoff.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>, title:'Security & Reliability', desc:'Webflow\'s enterprise hosting includes free SSL, CDN delivery via Fastly, automatic backups, 99.99% uptime SLA, and DDoS protection - all included in the Webflow plan.' },
-  { icon:<svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>, title:'Long-Term Partnership', desc:'96% client retention rate. We maintain your Webflow site after launch with monthly support retainers, content updates, new section builds, and performance monitoring.' },
+  { bg:'linear-gradient(165deg,#ede9fe 0%,#ddd6fe 100%)', icon:<svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>, title:'Certified Webflow Experts', desc:'Our Webflow team holds official Webflow Partner and Expert certifications. We have shipped 200+ Webflow sites across SaaS, e-commerce, healthcare, and professional services.' },
+  { bg:'linear-gradient(165deg,#dbeafe 0%,#bfdbfe 100%)', icon:<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>, title:'US, Canada & Australia Focused', desc:'We understand the UX expectations, compliance considerations, and conversion standards of western markets - not just generic offshore delivery with poor communication.' },
+  { bg:'linear-gradient(165deg,#dcfce7 0%,#bbf7d0 100%)', icon:<svg viewBox="0 0 24 24"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>, title:'Figma-to-Webflow in One Team', desc:'We design and build under one roof - your Figma prototype is translated to Webflow with pixel precision, so there are no handoff gaps or fidelity loss between design and code.' },
+  { bg:'linear-gradient(165deg,#fdf3dd 0%,#fbe8b8 100%)', icon:<svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>, title:'SEO-First Every Time', desc:'Every site we build includes proper semantic HTML, schema markup, canonical URLs, XML sitemaps, and Core Web Vitals optimisation - not a plugin-dependent afterthought.' },
+  { bg:'linear-gradient(165deg,#fde8dc 0%,#fbd0b5 100%)', icon:<svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>, title:'Fast Delivery, Fixed Price', desc:'Our scoped fixed-price process means you know the cost and timeline upfront. Most marketing sites go from approved design to live in 4–6 weeks with weekly demo checkpoints.' },
+  { bg:'linear-gradient(165deg,#fce7f3 0%,#fbcfe8 100%)', icon:<svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>, title:'Client-Editable CMS Handoff', desc:'We build your CMS so your non-technical team can update content, add blog posts, and publish new pages in the Webflow Editor - with a video walkthrough and documentation on handoff.' },
+  { bg:'linear-gradient(165deg,#ede9fe 0%,#ddd6fe 100%)', icon:<svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>, title:'Security & Reliability', desc:'Webflow\'s enterprise hosting includes free SSL, CDN delivery via Fastly, automatic backups, 99.99% uptime SLA, and DDoS protection - all included in the Webflow plan.' },
+  { bg:'linear-gradient(165deg,#dbeafe 0%,#bfdbfe 100%)', icon:<svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>, title:'Long-Term Partnership', desc:'96% client retention rate. We maintain your Webflow site after launch with monthly support retainers, content updates, new section builds, and performance monitoring.' },
+];
+
+const WF_TESTIMONIALS = [
+  { name:'Sarah Rutherford', role:'VP Marketing, Stackify SaaS - USA', text:'1Solutions rebuilt our entire marketing site in Webflow - from a sluggish WordPress install to a 98 PageSpeed score. The CMS handoff was brilliant; our content team updates everything without us. Incredible value.' },
+  { name:'James Mitchell', role:'SEO Director, LegalEdge - Australia', text:'They migrated our 180-page WordPress site to Webflow with zero ranking loss. Every redirect was handled correctly and the new site loads in under 1.5 seconds. Best investment we made this year.' },
+  { name:'Laura Chen', role:'Founder, Prism Creative Studio - Canada', text:"The Webflow animations they built for our product launch were stunning. Clients kept mentioning the website on discovery calls. 1Solutions understood our brand better than agencies we'd paid 5x more." },
+];
+
+// Row 2 uses a separate set of reviews (not a reorder of row 1) so the two
+// marquee rows never show identical testimonial content.
+const WF_TESTIMONIALS_ROW2 = [
+  { name:'Daniel Osei', role:'Head of Growth, Northline Logistics - Canada', text:'We needed a Webflow site our marketing team could actually run without filing a ticket every time. 1Solutions built the CMS exactly around how we publish, and onboarding took less than a day.' },
+  { name:'Emily Foster', role:'Marketing Manager, Bright Path Consulting - USA', text:'Our old site took forever to update and looked dated. The Webflow rebuild came in on time, on budget, and our bounce rate dropped noticeably in the first month.' },
+  { name:'Ryan Coleman', role:'Co-Founder, Fernwood Studio - Australia', text:'1Solutions handled our e-commerce migration to Webflow flawlessly. Checkout conversion actually improved after launch, and support since then has been fast and genuinely helpful.' },
 ];
 
 export default function WebflowDevelopmentServices() {
@@ -48,11 +62,9 @@ export default function WebflowDevelopmentServices() {
   const [visibleSteps, setVisibleSteps] = useState([]);
   const [visibleSections, setVisibleSections] = useState(new Set());
   const [visibleWhyCards, setVisibleWhyCards] = useState([]);
-  const [visibleTestiCards, setVisibleTestiCards] = useState([]);
   const stepRefs = useRef([]);
   const sectionRefs = useRef({});
   const whyGridRef = useRef(null);
-  const testiGridRef = useRef(null);
 
   useEffect(() => {
     const observers = stepRefs.current.map((el, i) => {
@@ -89,20 +101,6 @@ export default function WebflowDevelopmentServices() {
     return () => obs.disconnect();
   }, []);
 
-  useEffect(() => {
-    if (!testiGridRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          [0,1,2].forEach(i => setTimeout(() => setVisibleTestiCards(p => p.includes(i)?p:[...p,i]), i * 150));
-          obs.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-    obs.observe(testiGridRef.current);
-    return () => obs.disconnect();
-  }, []);
 
   useEffect(() => {
     const keys = Object.keys(sectionRefs.current);
@@ -311,19 +309,24 @@ export default function WebflowDevelopmentServices() {
           .wf-testi-section { background:#f8fafd;border-top:1px solid rgba(15,52,96,0.08);border-bottom:1px solid rgba(15,52,96,0.08);padding:80px 40px;position:relative;z-index:1; }
           .wf-testi-inner { max-width:1280px;margin:0 auto; }
           .wf-section-header-center { text-align:center;margin-bottom:52px; }
-          .wf-testi-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:52px; }
-          .wf-tcard { background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:32px 28px;box-shadow:0 4px 24px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95);display:flex;flex-direction:column;gap:16px;opacity:0;transform:translateY(44px);transition:opacity 0.6s cubic-bezier(0.22,1,0.36,1),transform 0.6s cubic-bezier(0.22,1,0.36,1),box-shadow 0.3s,border-color 0.3s; }
-          .wf-tcard:hover { transform:translateY(-6px);border-color:rgba(217,119,6,0.40);box-shadow:0 16px 48px rgba(15,52,96,0.14),inset 0 1px 0 rgba(255,255,255,1); }
-          .wf-tcard.featured { background:linear-gradient(135deg,rgba(254,243,199,0.50) 0%,rgba(255,255,255,0.85) 55%,rgba(219,234,254,0.45) 100%);border-color:rgba(217,119,6,0.25);box-shadow:0 6px 32px rgba(217,119,6,0.10),inset 0 1px 0 rgba(255,255,255,1); }
-          .wf-tcard.wf-tcard-visible { opacity:1;transform:translateY(0); }
-          .wf-tcard.wf-tcard-visible:hover { transform:translateY(-6px); }
-          .wf-tcard-stars { font-size:18px;color:#D97706;letter-spacing:2px; }
-          .wf-tcard-text { font-size:15px;line-height:1.75;color:#374151;margin:0;flex:1; }
-          .wf-tcard.featured .wf-tcard-text { color:#1f2937; }
-          .wf-tcard-author { display:flex;align-items:center;gap:12px;margin-top:4px; }
-          .wf-tcard-avatar { width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#ffffff;flex-shrink:0; }
-          .wf-tcard-name { font-size:14px;font-weight:700;color:#0F3460; }
-          .wf-tcard-role { font-size:12px;color:#6b7280; }
+          .wf-testi-marquee-outer { position:relative;margin:44px 0 52px; }
+          .wf-testi-marquee-wrap { overflow:hidden;margin-bottom:20px; }
+          .wf-testi-marquee-wrap:last-child { margin-bottom:0; }
+          .wf-testi-track { display:flex;gap:20px;width:max-content;animation:wfTestiScroll 32s linear infinite; }
+          .wf-testi-track--rev { animation-name:wfTestiScrollRev; }
+          .wf-testi-marquee-wrap:hover .wf-testi-track { animation-play-state:paused; }
+          @keyframes wfTestiScroll { from{transform:translateX(0);} to{transform:translateX(-50%);} }
+          @keyframes wfTestiScrollRev { from{transform:translateX(-50%);} to{transform:translateX(0);} }
+          @media(prefers-reduced-motion:reduce) { .wf-testi-track{animation:none !important;} }
+          .wf-testi-fade { position:absolute;top:0;bottom:0;width:120px;z-index:1;pointer-events:none; }
+          .wf-testi-fade--l { left:0;background:linear-gradient(to right,#f8fafd,transparent); }
+          .wf-testi-fade--r { right:0;background:linear-gradient(to left,#f8fafd,transparent); }
+          .wf-testi-card { width:400px;flex-shrink:0;background:linear-gradient(135deg,rgba(219,234,254,0.55) 0%,rgba(255,255,255,0.80) 60%,rgba(237,233,254,0.40) 100%);border:1px solid rgba(255,255,255,0.85);border-radius:20px;padding:28px;box-shadow:0 4px 24px rgba(15,52,96,0.08);user-select:none; }
+          .wf-testi-card-stars { color:#D97706;font-size:15px;margin-bottom:12px;letter-spacing:1px; }
+          .wf-testi-card-text { font-size:14px;color:#1e293b;line-height:1.75;margin:0 0 18px;font-style:italic; }
+          .wf-testi-card-name { font-size:13px;font-weight:700;color:#0F3460; }
+          .wf-testi-card-role { font-size:12px;color:#6B7280;margin-top:2px; }
+          @media(max-width:600px) { .wf-testi-fade{width:48px;} }
           .wf-testi-stats { display:flex;align-items:center;justify-content:center;gap:0;background:linear-gradient(135deg,rgba(219,234,254,0.50) 0%,rgba(255,255,255,0.75) 50%,rgba(237,233,254,0.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:16px;padding:32px 40px;border:1px solid rgba(255,255,255,0.85);box-shadow:0 4px 20px rgba(15,52,96,0.08),inset 0 1px 0 rgba(255,255,255,0.95); }
           .wf-tstat { display:flex;flex-direction:column;align-items:center;gap:4px;flex:1; }
           .wf-tstat-num { font-size:28px;font-weight:800;color:#0F3460; }
@@ -491,7 +494,7 @@ export default function WebflowDevelopmentServices() {
             .wf-related-tags { gap:8px; }
             .wf-rtag { padding:9px 16px;font-size:13px; }
             .wf-services-grid { grid-template-columns:1fr 1fr;gap:10px; }
-            .wf-testi-grid { grid-template-columns:1fr; }
+            .wf-testi-card { width:280px;padding:22px; }
             .wf-section-title,.wf-engage-title,.wf-process-main-title,.wf-related-title { font-size:30px; }
             .wf-testi-stats { flex-wrap:wrap;gap:0;padding:24px 20px; }
             .wf-tstat { flex:0 0 50%;width:50%;padding:12px 8px;border-bottom:1px solid rgba(15,52,96,0.10); }
@@ -511,7 +514,6 @@ export default function WebflowDevelopmentServices() {
             .wf-pstep-title { font-size:18px; }
             .wf-contact-title { font-size:24px; }
             .wf-engage-title { font-size:26px; }
-            .wf-tcard { padding:24px 20px; }
             .wf-ecard { padding:20px; }
             .wf-ecard-features { grid-template-columns:1fr; }
             .wf-merged-box { padding:18px; }
@@ -667,24 +669,35 @@ export default function WebflowDevelopmentServices() {
               <h2 className="wf-section-title">What Our Clients Say</h2>
               <p className="wf-section-sub">Trusted by SaaS companies, agencies, and professional services firms across the US, Canada, and Australia.</p>
             </div>
-            <div className="wf-testi-grid" ref={testiGridRef}>
-              {[
-                { initials:'SR', bg:'#1a4a7a', text:'"1Solutions rebuilt our entire marketing site in Webflow - from a sluggish WordPress install to a 98 PageSpeed score. The CMS handoff was brilliant; our content team updates everything without us. Incredible value."', name:'Sarah Rutherford', role:'VP Marketing, Stackify SaaS - USA', featured:false },
-                { initials:'JM', bg:'#0F3460', text:'"They migrated our 180-page WordPress site to Webflow with zero ranking loss. Every redirect was handled correctly and the new site loads in under 1.5 seconds. Best investment we made this year."', name:'James Mitchell', role:'SEO Director, LegalEdge - Australia', featured:true },
-                { initials:'LC', bg:'#2d5a8e', text:'"The Webflow animations they built for our product launch were stunning. Clients kept mentioning the website on discovery calls. 1Solutions understood our brand better than agencies we\'d paid 5× more."', name:'Laura Chen', role:'Founder, Prism Creative Studio - Canada', featured:false },
-              ].map((t,i) => (
-                <div className={`wf-tcard${t.featured?' featured':''}${visibleTestiCards.includes(i)?' wf-tcard-visible':''}`} key={t.name}>
-                  <div className="wf-tcard-stars">★★★★★</div>
-                  <p className="wf-tcard-text">{t.text}</p>
-                  <div className="wf-tcard-author">
-                    <div className="wf-tcard-avatar" style={{ background:t.bg }}>{t.initials}</div>
-                    <div>
-                      <div className="wf-tcard-name">{t.name}</div>
-                      <div className="wf-tcard-role">{t.role}</div>
+            <div className="wf-testi-marquee-outer">
+              <div className="wf-testi-fade wf-testi-fade--l" />
+              <div className="wf-testi-fade wf-testi-fade--r" />
+
+              <div className="wf-testi-marquee-wrap">
+                <div className="wf-testi-track">
+                  {[...WF_TESTIMONIALS, ...WF_TESTIMONIALS].map((t, i) => (
+                    <div className="wf-testi-card" key={`row1-${t.name}-${i}`}>
+                      <div className="wf-testi-card-stars">★★★★★</div>
+                      <p className="wf-testi-card-text">&quot;{t.text}&quot;</p>
+                      <div className="wf-testi-card-name">{t.name}</div>
+                      <div className="wf-testi-card-role">{t.role}</div>
                     </div>
-                  </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              <div className="wf-testi-marquee-wrap">
+                <div className="wf-testi-track wf-testi-track--rev">
+                  {[...WF_TESTIMONIALS_ROW2, ...WF_TESTIMONIALS_ROW2].map((t, i) => (
+                    <div className="wf-testi-card" key={`row2-${t.name}-${i}`}>
+                      <div className="wf-testi-card-stars">★★★★★</div>
+                      <p className="wf-testi-card-text">&quot;{t.text}&quot;</p>
+                      <div className="wf-testi-card-name">{t.name}</div>
+                      <div className="wf-testi-card-role">{t.role}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
             <div className="wf-testi-stats">
               {[['4.9/5','Average Rating'],['150+','Verified Reviews'],['98%','Client Satisfaction'],['96%','Repeat Clients']].map(([num,label],i,arr) => (
@@ -710,7 +723,7 @@ export default function WebflowDevelopmentServices() {
             </div>
             <div className="wf-why-grid" ref={whyGridRef}>
               {WHY.map((w, i) => (
-                <div className={`wf-why-card${visibleWhyCards.includes(i) ? ' wf-card-visible' : ''}`} key={w.title} style={{ transitionDelay:`${i * 0.05}s` }}>
+                <div className={`wf-why-card${visibleWhyCards.includes(i) ? ' wf-card-visible' : ''}`} key={w.title} style={{ background:w.bg, transitionDelay:`${i * 0.05}s` }}>
                   <div className="wf-why-card-header">
                     <div className="wf-why-icon">{w.icon}</div>
                     <h3>{w.title}</h3>
