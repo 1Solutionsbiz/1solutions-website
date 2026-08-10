@@ -26,7 +26,7 @@ const SCHEMA = {
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
         logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
-        foundingDate: '2008',
+        foundingDate: '2010',
         areaServed: ['US', 'GB', 'AU', 'CA', 'DE'],
       },
     },
@@ -168,7 +168,7 @@ const TESTIMONIALS = [
 const WHY_CARDS = [
   { title: 'Deep Automotive Domain Expertise', desc: 'Our engineers understand CAN bus, LIN, AUTOSAR, OBD-II, SOME/IP, and automotive Ethernet - not just generic software. We speak the language of automotive engineering.' },
   { title: 'ISO 26262 & ASPICE Experience', desc: 'Functional safety and process maturity are built into our delivery approach, not added after the fact. We document to ASPICE Level 2/3 and conduct systematic HARA for safety-critical modules.' },
-  { title: '15+ Years of Proven Delivery', desc: 'We have been building automotive and embedded software since 2008 - across OEMs, Tier 1 suppliers, fleet operators, EV startups, and dealership groups.' },
+  { title: '15+ Years of Proven Delivery', desc: 'We have been building automotive and embedded software since 2010 - across OEMs, Tier 1 suppliers, fleet operators, EV startups, and dealership groups.' },
   { title: 'Full-Stack Automotive Team', desc: 'Embedded firmware, cloud backend, real-time data pipelines, mobile apps, and web dashboards - your entire automotive software product delivered by a single accountable team.' },
   { title: 'Secure OTA & Connected Vehicle', desc: 'We design OTA update infrastructure following TUF/Uptane standards with cryptographic signing, rollback protection, and delta update support for bandwidth-constrained vehicle environments.' },
   { title: 'EV & ADAS-Ready Engineering', desc: 'From BMS integration and OCPP charging to computer vision pipelines and sensor fusion - our team has hands-on experience with the technology defining the next generation of vehicles.' },

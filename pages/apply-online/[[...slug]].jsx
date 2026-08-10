@@ -835,7 +835,7 @@ export default function ApplyOnline({ initialPositionTitle, slugPath }) {
               {[
                 { icon: '👥', title: '50+ Team Members', sub: 'Collaborative environment' },
                 { icon: '🌏', title: 'Global Projects', sub: 'US, Canada, Australia' },
-                { icon: '📅', title: 'Est. 2008', sub: '15+ years in operation' },
+                { icon: '📅', title: 'Est. 2010', sub: '15+ years in operation' },
                 { icon: '📍', title: 'New Delhi', sub: 'On-site & hybrid roles' },
               ].map((chip) => (
                 <div key={chip.title} className="ap-hero-chip">

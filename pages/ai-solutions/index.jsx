@@ -39,10 +39,10 @@ export default function Page() {
     <>
       <Head>
         <title>{`AI Solutions | Custom AI for Business Growth | 1Solutions`}</title>
-        <meta name="description" content={`Custom AI solutions — AI strategy, development, integration, and deployment for business automation, intelligence, and growth. Serving US, Canada & Australia since 2008.`} />
+        <meta name="description" content={`Custom AI solutions — AI strategy, development, integration, and deployment for business automation, intelligence, and growth. Serving US, Canada & Australia since 2010.`} />
         <link rel="canonical" href="https://www.1solutions.biz/ai-solutions/" />
         <meta property="og:title" content={`AI Solutions | Custom AI for Business Growth | 1Solutions`} />
-        <meta property="og:description" content={`Custom AI solutions — AI strategy, development, integration, and deployment for business automation, intelligence, and growth. Serving US, Canada & Australia since 2008.`} />
+        <meta property="og:description" content={`Custom AI solutions — AI strategy, development, integration, and deployment for business automation, intelligence, and growth. Serving US, Canada & Australia since 2010.`} />
         <meta property="og:url" content="https://www.1solutions.biz/ai-solutions/" />
         <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-ai-solutions.jpg" />
         <meta key="og-image-w" property="og:image:width" content="1200" />

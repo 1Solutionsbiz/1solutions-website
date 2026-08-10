@@ -22,7 +22,7 @@ const WHY = [
   { h: 'Full-Stack Capability',         b: 'Frontend (React, Next.js), backend (Node.js, Laravel), databases (PostgreSQL, MongoDB), and infrastructure (AWS, Docker) - one team, end-to-end delivery.' },
   { h: 'SEO Built Into Every Build',    b: 'Correct heading structure, schema markup, sitemap, robots.txt, Core Web Vitals, and canonical tags are standard - not an afterthought or expensive add-on.' },
   { h: 'Performance-First Development', b: 'Sub-2s load times, optimised images, lazy loading, code splitting, and green Lighthouse scores - because slow websites lose customers.' },
-  { h: '15+ Years of Proven Delivery',  b: 'Since 2008, we\'ve delivered 1,200+ web projects. We know what breaks at scale, what converts at every industry, and how to de-risk complex builds.' },
+  { h: '15+ Years of Proven Delivery',  b: 'Since 2010, we\'ve delivered 1,200+ web projects. We know what breaks at scale, what converts at every industry, and how to de-risk complex builds.' },
   { h: 'On-Time, Fixed-Price Delivery', b: 'Detailed scope, agreed timeline, and fixed price before development starts. No moving goalposts, no surprise invoices.' },
   { h: 'Post-Launch Support',           b: 'Maintenance plans, performance monitoring, security updates, and a dedicated point of contact after go-live - not a support ticket queue.' },
 ];
@@ -67,7 +67,7 @@ export default function WebDevelopmentServices() {
       { '@type': 'Organization', '@id': 'https://www.1solutions.biz/#organization',
         name: '1Solutions', url: 'https://www.1solutions.biz',
         logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
-        foundingDate: '2008',
+        foundingDate: '2010',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '203', bestRating: '5' },
       },
       { '@type': 'ProfessionalService', name: 'Web Development Services', provider: { '@type': 'Organization', name: '1Solutions' },
@@ -164,7 +164,7 @@ export default function WebDevelopmentServices() {
       <section className="wds-sec" ref={whR}>
         <div className="wds-wrap">
           <h2 className="wds-sec-title">Why Choose 1Solutions for Web Development?</h2>
-          <p className="wds-sec-sub">1,200+ projects delivered since 2008 - we know what it takes to build websites that perform.</p>
+          <p className="wds-sec-sub">1,200+ projects delivered since 2010 - we know what it takes to build websites that perform.</p>
           <div className="wds-why-grid">{WHY.map((w, i) => <div key={w.h} className={`wds-why-item${whV ? ' wds-in' : ''}`} style={{ transitionDelay: `${i * 90}ms` }}><h3>{w.h}</h3><p>{w.b}</p></div>)}</div>
         </div>
       </section>

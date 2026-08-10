@@ -64,7 +64,7 @@ const FAQS = [
   },
   {
     q: 'Do you run influencer marketing campaigns for brands in the US, Canada, and Australia?',
-    a: 'Yes - this is our primary focus. We\'ve been working with ecommerce brands across the US, Canada, and Australia since 2008. Our creator networks include US, Canadian, and Australian influencers who genuinely speak to those markets. We handle all time-zone coordination, schedule posts during each market\'s peak engagement windows, and understand the cultural nuances that make content resonate locally. We operate fully remotely and are available during your business hours.',
+    a: 'Yes - this is our primary focus. We\'ve been working with ecommerce brands across the US, Canada, and Australia since 2010. Our creator networks include US, Canadian, and Australian influencers who genuinely speak to those markets. We handle all time-zone coordination, schedule posts during each market\'s peak engagement windows, and understand the cultural nuances that make content resonate locally. We operate fully remotely and are available during your business hours.',
   },
   {
     q: 'How do you measure influencer marketing ROI?',

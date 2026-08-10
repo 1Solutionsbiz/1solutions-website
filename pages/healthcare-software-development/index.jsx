@@ -26,7 +26,7 @@ const SCHEMA = {
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
         logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
-        foundingDate: '2008',
+        foundingDate: '2010',
         areaServed: ['US', 'GB', 'AU', 'CA'],
       },
     },
@@ -657,7 +657,7 @@ export default function HealthcareSoftwareDevelopment() {
               {[
                 ['HIPAA/HITECH Native', 'We don\'t bolt compliance on at the end. Our architecture patterns, development standards, and QA processes are built around HIPAA requirements from day one - audit logging, encryption, access controls, and risk assessment are standard deliverables, not extras.'],
                 ['HL7 FHIR & Interoperability Experts', 'Deep hands-on experience with HL7 FHIR R4, HL7 v2.x, DICOM, CCD/C-CDA, and SMART on FHIR. We have built successful integrations with Epic, Cerner, Athenahealth, AllScripts, and proprietary hospital systems.'],
-                ['15+ Years in Healthcare IT', 'We have been building healthcare software since 2008 - through ICD-10 transitions, Meaningful Use requirements, ACA changes, and ONC/CMS interoperability mandates. We know what changes and what stays the same.'],
+                ['15+ Years in Healthcare IT', 'We have been building healthcare software since 2010 - through ICD-10 transitions, Meaningful Use requirements, ACA changes, and ONC/CMS interoperability mandates. We know what changes and what stays the same.'],
                 ['Clinical Workflow Understanding', 'Our team includes developers with prior healthcare IT experience. We conduct structured workflow discovery with clinicians before writing code - because the right feature built on the wrong workflow creates risk, not value.'],
                 ['Zero Compromise on Security', 'HIPAA penetration testing, OWASP security review, encrypted data at rest and in transit, and detailed audit trails for every data access are standard deliverables on every engagement. We have never had a client experience a PHI breach.'],
                 ['Full-Stack, End-to-End Delivery', 'Discovery, architecture, design, frontend, backend, mobile, QA, DevOps, and post-launch support - all under one roof with a single accountability point. No vendor coordination overhead.'],

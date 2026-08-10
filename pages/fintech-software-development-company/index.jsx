@@ -26,7 +26,7 @@ const SCHEMA = {
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
         logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
-        foundingDate: '2008',
+        foundingDate: '2010',
         areaServed: ['US', 'GB', 'AU', 'CA'],
       },
     },
@@ -168,7 +168,7 @@ const TESTIMONIALS = [
 const WHY_CARDS = [
   { title: 'PCI DSS-Native Development', desc: 'Security is built into the architecture from day one - not bolted on at the end. Every sprint includes a security review against PCI DSS and OWASP ASVS controls.' },
   { title: 'Deep Fintech Domain Expertise', desc: 'Our engineers have shipped digital banking, payment, lending, and investment platforms. We understand regulatory constraints, not just code.' },
-  { title: '15+ Years of Proven Delivery', desc: 'We have been building financial software since 2008 - through PSD2, open banking mandates, GDPR, and multiple technology cycles.' },
+  { title: '15+ Years of Proven Delivery', desc: 'We have been building financial software since 2010 - through PSD2, open banking mandates, GDPR, and multiple technology cycles.' },
   { title: 'Full-Stack Security Engineering', desc: 'Dedicated security engineers on every fintech project - threat modelling, SAST/DAST scanning, penetration testing, and compliance certification support.' },
   { title: 'Zero Payment Breaches', desc: 'Across 100+ fintech clients and 15+ years, we have maintained a zero-breach record on payment and financial data infrastructure we have built and managed.' },
   { title: 'End-to-End Fintech Team', desc: 'PM, architect, frontend, backend, mobile, security, QA, and DevOps - every skill your fintech product needs, in a single accountable team.' },

@@ -173,7 +173,7 @@ export default function HtmlEmailDevelopmentServices() {
         '@id': 'https://www.1solutions.biz/#organization',
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
-        foundingDate: '2008',
+        foundingDate: '2010',
         description: 'HTML email development company delivering hand-coded, responsive email templates tested across 90+ email clients for US, Canada, and Australia.',
         areaServed: [
           { '@type': 'Country', name: 'United States' },
@@ -589,7 +589,7 @@ export default function HtmlEmailDevelopmentServices() {
 
         {/* ── HERO ── */}
         <ServiceHero
-          eyebrow="Professional HTML Email Development · Since 2008"
+          eyebrow="Professional HTML Email Development · Since 2010"
           title={<>HTML Email Development Services — <AuroraText>Pixel-Perfect Emails That Render Everywhere</AuroraText></>}
           subtext="Hand-coded, responsive HTML email templates tested across 90+ email clients. From transactional triggers to full campaign suites — built for Klaviyo, Mailchimp, HubSpot, Salesforce MC, and every major ESP."
           primaryCta={{ label: 'Get a Free Email Template Quote', href: '#contact' }}

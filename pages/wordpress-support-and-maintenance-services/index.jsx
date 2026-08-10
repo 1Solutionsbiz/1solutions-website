@@ -21,7 +21,7 @@ const SCHEMA = {
       name: '1Solutions',
       url: 'https://www.1solutions.biz',
       logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
-      foundingDate: '2008',
+      foundingDate: '2010',
       areaServed: ['US', 'GB', 'AU', 'CA', 'IN'],
       aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '138', bestRating: '5' },
     },
@@ -311,7 +311,7 @@ export default function WordPressMaintenance() {
     <>
       <Head>
         <title>WordPress Support & Maintenance Services | 1Solutions</title>
-        <meta name="description" content="WordPress maintenance & support — staging-first updates, security hardening, malware removal, daily backups & WooCommerce support. 150+ sites since 2008." />
+        <meta name="description" content="WordPress maintenance & support — staging-first updates, security hardening, malware removal, daily backups & WooCommerce support. 150+ sites since 2010." />
         <link rel="canonical" href="https://www.1solutions.biz/wordpress-support-and-maintenance-services/" />
         <link rel="preconnect" href="https://www.google.com" crossOrigin="" />
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />

@@ -39,7 +39,7 @@ const VALUES = [
 
 const TIMELINE = [
   {
-    year: '2008',
+    year: '2010',
     title: 'Founded in New Delhi',
     desc: "Started as a boutique web studio with one clear ambition: deliver Silicon Valley-quality digital development from the heart of India.",
   },
@@ -189,7 +189,7 @@ const WHY = [
   {
     stat: '16+',
     label: 'Years in Operation',
-    desc: "We've navigated every major technology shift since 2008 - and guided our clients through each one without disruption.",
+    desc: "We've navigated every major technology shift since 2010 - and guided our clients through each one without disruption.",
   },
   {
     stat: '97%',
@@ -366,7 +366,7 @@ export default function WhoWeAre() {
             '@id':         'https://www.1solutions.biz/#organization',
             name:          '1Solutions',
             url:           'https://www.1solutions.biz',
-            foundingDate:  '2008',
+            foundingDate:  '2010',
             description:   '1Solutions is a New Delhi-based web development and digital marketing agency with 16+ years of experience, 500+ global clients, and a 97% retention rate. Trusted by Verizon, Nuance, Indian Express, and more.',
             logo:          { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
             address: {
@@ -1115,7 +1115,7 @@ export default function WhoWeAre() {
                 <p className="au-eyebrow">Our Story</p>
                 <h2 className="au-heading">Built on a single principle: great work speaks for itself.</h2>
                 <p>
-                  Founded in 2008, 1Solutions has grown from a small New Delhi startup into a trusted digital
+                  Founded in 2010, 1Solutions has grown from a small New Delhi startup into a trusted digital
                   partner for businesses across the globe. Over the past 15+ years, we have
                   successfully delivered 500+ projects spanning web development, eCommerce, digital marketing,
                   UI/UX design, and cloud solutions.

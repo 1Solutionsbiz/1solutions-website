@@ -386,7 +386,7 @@ const WHYS = [
     bg: 'linear-gradient(165deg,#fdf3dd 0%,#fbe8b8 100%)',
     icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
     title: '15+ Years of Outreach',
-    desc: 'Founded in 2008, our link building team has built over 50,000 backlinks across 1,000+ campaigns in a wide range of niches and markets.',
+    desc: 'Founded in 2010, our link building team has built over 50,000 backlinks across 1,000+ campaigns in a wide range of niches and markets.',
   },
   {
     bg: 'linear-gradient(165deg,#fde8dc 0%,#fbd0b5 100%)',
@@ -546,7 +546,7 @@ export default function LinkBuildingPackages() {
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
         logo: 'https://www.1solutions.biz/images/1solutions-logo.png',
-        foundingDate: '2008',
+        foundingDate: '2010',
         sameAs: ['https://www.linkedin.com/company/1solutions/', 'https://x.com/1solutionsbiz', 'https://www.facebook.com/1solutionsbiz'],
         address: { '@type': 'PostalAddress', addressLocality: 'New Delhi', addressCountry: 'IN' },
       },

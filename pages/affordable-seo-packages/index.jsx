@@ -41,7 +41,7 @@ const SCHEMA = {
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
         logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
-        foundingDate: '2008',
+        foundingDate: '2010',
         numberOfEmployees: { '@type': 'QuantitativeValue', value: 50 },
         areaServed: ['US', 'GB', 'AU', 'CA', 'IN'],
         sameAs: [
@@ -219,7 +219,7 @@ const INCLUDED = [
 ];
 
 const WHY = [
-  { icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z', title: '15+ Years of SEO Experience', desc: 'Founded in 2008, we have navigated every major Google update since Panda. Our strategies are future-proof, not built around loopholes that disappear with the next core update.' },
+  { icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z', title: '15+ Years of SEO Experience', desc: 'Founded in 2010, we have navigated every major Google update since Panda. Our strategies are future-proof, not built around loopholes that disappear with the next core update.' },
   { icon: 'M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z', title: '10,000+ Keywords on Page 1', desc: 'Across 500+ clients and 50+ industries - from local service businesses to SaaS platforms to national eCommerce brands. We know what it takes to rank in each market.' },
   { icon: 'M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z', title: 'Zero Manual Penalties in 15 Years', desc: 'We have never had a client receive a Google manual action because we only use white-hat, Google-compliant techniques. No shortcuts, no PBNs, no paid links.' },
   { icon: 'M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z', title: 'Transparent Monthly Reports', desc: 'You see every keyword rank change, every backlink earned, and every page optimised. No vanity metrics, no hiding behind proprietary dashboards - just clear data you can act on.' },
@@ -233,7 +233,7 @@ const RESULTS = [
   { prefix: '', target: 500,   suffix: '+', decimals: 0, label: 'SEO Projects Delivered',    detail: 'Across US, UK, Canada & Australia' },
   { prefix: '', target: 10000, suffix: '+', decimals: 0, label: 'Keywords Ranked Page 1',    detail: 'Across 50+ industries' },
   { prefix: '', target: 97,    suffix: '%', decimals: 0, label: 'Client Retention Rate',     detail: 'Average client relationship 3+ years' },
-  { prefix: '', target: 15,    suffix: '+', decimals: 0, label: 'Years in SEO',              detail: 'Founded 2008, zero manual penalties' },
+  { prefix: '', target: 15,    suffix: '+', decimals: 0, label: 'Years in SEO',              detail: 'Founded 2010, zero manual penalties' },
 ];
 
 const TESTIMONIALS_ROW1 = [
@@ -270,7 +270,7 @@ const FAQS = [
   { q: 'Do you offer SEO packages for small businesses?', a: 'Yes. The Starter package at $299/month is built for small businesses and local brands. It targets up to 10 high-intent keywords, optimises 10 pages, builds 5–8 quality backlinks monthly, includes 2 blog articles, and covers full local SEO including Google Business Profile management.' },
   { q: 'Can I cancel my SEO package at any time?', a: "Yes. All monthly plans are cancel-anytime with 30 days' notice and no penalties. Annual plans are discounted 20% and paid upfront. We do not use 12-month lock-in contracts because we believe agencies should earn retention through results, not paperwork." },
   { q: 'Do you work with businesses in the US, UK, Canada, and Australia?', a: 'Yes - the majority of our SEO clients are in the US, Australia, and Canada. We have deep familiarity with English-language western search markets, local competitor landscapes, and SERP feature differences by region.' },
-  { q: 'What makes 1Solutions different from other SEO agencies?', a: '15+ years of SEO experience (founded 2008), 500+ clients across 50+ industries, 10,000+ keywords ranked, and 97% client retention. We have navigated every major Google algorithm update without a single client receiving a manual penalty.' },
+  { q: 'What makes 1Solutions different from other SEO agencies?', a: '15+ years of SEO experience (founded 2010), 500+ clients across 50+ industries, 10,000+ keywords ranked, and 97% client retention. We have navigated every major Google algorithm update without a single client receiving a manual penalty.' },
   { q: "What is Google's Helpful Content update and how do your packages address it?", a: "Google's Helpful Content system demotes content written primarily for search engines rather than people. Our content team produces articles that satisfy E-E-A-T - written by humans with domain knowledge, citing real data, and structured to directly answer the reader's question." },
   { q: 'Do you handle AI Overview (SGE) and answer engine optimisation?', a: 'Yes. We optimise content specifically for Google AI Overviews and answer engines - structuring pages to answer specific questions directly, implementing FAQPage and HowTo schema markup, ensuring factual accuracy with cited sources, and targeting featured snippets and People Also Ask results.' },
 ];

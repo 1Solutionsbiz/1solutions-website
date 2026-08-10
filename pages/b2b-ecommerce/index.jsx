@@ -37,7 +37,7 @@ const WHY = [
   { title: 'Integration-First Approach', desc: 'Your B2B portal is only as good as its data. We architect integrations with ERP, CRM, and PIM systems first, so the storefront always reflects accurate inventory, pricing, and customer data.' },
   { title: 'Buyer & Admin UX Focus', desc: 'B2B UX is not B2C UX. We design for repeat professional buyers who need speed, bulk tools, and account visibility - not for impulse shoppers browsing on a phone.' },
   { title: 'Scalable Architecture', desc: 'From 500 SKUs to 500,000. From 10 buyers to 10,000. We build on proven foundations that scale with your business without requiring costly rebuilds.' },
-  { title: '15+ Years of Ecommerce Delivery', desc: 'Since 2008, we\'ve delivered 500+ ecommerce projects. Our experience means we\'ve already solved most of the edge cases you\'ll encounter - and have proven solutions ready.' },
+  { title: '15+ Years of Ecommerce Delivery', desc: 'Since 2010, we\'ve delivered 500+ ecommerce projects. Our experience means we\'ve already solved most of the edge cases you\'ll encounter - and have proven solutions ready.' },
   { title: 'Ongoing Support & Growth', desc: 'Post-launch, we offer dedicated support retainers, quarterly feature roadmap planning, and continuous performance optimisation - not a handoff-and-disappear model.' },
 ];
 

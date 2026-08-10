@@ -25,7 +25,7 @@ const SCHEMA = {
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
         logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
-        foundingDate: '2008',
+        foundingDate: '2010',
         areaServed: ['US', 'GB', 'AU', 'CA', 'IN'],
       },
     },
@@ -157,7 +157,7 @@ const TESTIMONIALS = [
 const WHY_CARDS = [
   { dot: '#1d4ed8', title: '180+ Apps Shipped', body: 'Consumer, enterprise, and e-commerce apps across iOS, Android, Flutter, and React Native - with an average App Store rating of 4.8.' },
   { dot: '#16a34a', title: 'All Four Platforms', body: 'Native Swift, native Kotlin, Flutter, and React Native - in-house experts for each. We recommend the right stack for your app, not the one we prefer.' },
-  { dot: '#D97706', title: '15+ Years Experience', body: 'Founded in 2008, we have built mobile products through every major platform shift: iOS 2 → 18, Android 1.5 → 15, hybrid → cross-platform.' },
+  { dot: '#D97706', title: '15+ Years Experience', body: 'Founded in 2010, we have built mobile products through every major platform shift: iOS 2 → 18, Android 1.5 → 15, hybrid → cross-platform.' },
   { dot: '#7c3aed', title: 'Biweekly Device Builds', body: 'You test on real iPhones and Android devices every two weeks. No 3-month blackbox - you see working screens throughout the entire build.' },
   { dot: '#0ea5e9', title: '100% IP Ownership', body: 'Full source code delivered via GitHub or GitLab from sprint one. NDA before discovery. All IP assigned to you contractually - no ongoing dependency on us.' },
   { dot: '#f97316', title: 'Western Market Expertise', body: 'US, UK, AU, and CA market expectations built-in: App Review compliance, GDPR/CCPA privacy manifests, accessibility (WCAG 2.2), and localisation.' },

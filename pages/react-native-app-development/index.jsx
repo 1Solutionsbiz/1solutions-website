@@ -36,7 +36,7 @@ const WHY = [
   { title: 'Design & Engineering Under One Roof', desc: 'UI/UX design and React Native development both sit within our team. No third-party handoffs, no design-dev translation loss - faster delivery, better results.' },
   { title: 'US, Canada & Australia Focused', desc: 'We know the App Store and Google Play requirements, WCAG accessibility standards, and user expectations of western markets. Not generic global output.' },
   { title: 'Post-Launch Support Included', desc: 'Every app we build includes a 30-day hypercare period post-launch. Bug fixes, monitoring, and minor adjustments - at no extra cost while you stabilise.' },
-  { title: '15+ Years of Product Delivery', desc: 'Since 2008, we\'ve shipped 500+ digital products. Our project management, communication cadence, and quality controls are battle-tested across hundreds of client engagements.' },
+  { title: '15+ Years of Product Delivery', desc: 'Since 2010, we\'ve shipped 500+ digital products. Our project management, communication cadence, and quality controls are battle-tested across hundreds of client engagements.' },
 ];
 
 const FAQS = [

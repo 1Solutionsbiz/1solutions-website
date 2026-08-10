@@ -26,7 +26,7 @@ const SCHEMA = {
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
         logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
-        foundingDate: '2008',
+        foundingDate: '2010',
         areaServed: ['US', 'GB', 'AU', 'CA', 'IN'],
       },
     },
@@ -166,7 +166,7 @@ const TESTIMONIALS = [
 ];
 
 const WHY_CARDS = [
-  { title: '15+ Years CRM & Enterprise App Expertise', desc: 'We have been building CRM systems, sales automation tools, and customer data platforms since 2008 - across B2B SaaS, real estate, financial services, healthcare, retail, and professional services.' },
+  { title: '15+ Years CRM & Enterprise App Expertise', desc: 'We have been building CRM systems, sales automation tools, and customer data platforms since 2010 - across B2B SaaS, real estate, financial services, healthcare, retail, and professional services.' },
   { title: 'Built Around Your Workflow, Not a Template', desc: 'Every CRM we build starts with a deep workflow mapping session. We model your pipeline stages, deal objects, custom fields, team hierarchy, and automation rules from scratch - not from a rigid template.' },
   { title: 'Deep Integration Experience', desc: 'We have built CRM integrations with 50+ third-party platforms - ERP systems, marketing tools, telephony providers, support desks, eCommerce platforms, and accounting software - using REST APIs, webhooks, and event queues.' },
   { title: 'AI & Predictive Analytics Ready', desc: 'We integrate machine learning lead scoring, predictive churn models, NLP-based sentiment analysis on customer interactions, and AI-powered next-best-action recommendations directly into the CRM workflow.' },

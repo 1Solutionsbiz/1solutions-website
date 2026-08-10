@@ -26,7 +26,7 @@ const SCHEMA = {
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
         logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
-        foundingDate: '2008',
+        foundingDate: '2010',
         areaServed: ['US', 'GB', 'AU', 'CA', 'IN'],
       },
     },
@@ -168,7 +168,7 @@ const TESTIMONIALS = [
 const WHY_CARDS = [
   { title: 'Deep eLearning Domain Expertise', desc: 'We understand SCORM, xAPI, LTI, adaptive learning, and instructional design - not just generic web development. We speak the language of learning technologists and L&D teams.' },
   { title: 'SCORM, xAPI & LTI Compliance', desc: 'Our LMS platforms are tested for SCORM 1.2/2004 and xAPI conformance using Rustici SCORM Cloud, and support LTI 1.3 for seamless integration with institutional and third-party tool ecosystems.' },
-  { title: '15+ Years of Platform Delivery', desc: 'We have been building eLearning platforms, LMS solutions, and EdTech products since 2008 - for startups, universities, corporate L&D teams, and online course marketplaces worldwide.' },
+  { title: '15+ Years of Platform Delivery', desc: 'We have been building eLearning platforms, LMS solutions, and EdTech products since 2010 - for startups, universities, corporate L&D teams, and online course marketplaces worldwide.' },
   { title: 'Full-Stack eLearning Team', desc: 'Backend LMS core, SCORM runtime, frontend course player, mobile apps, video streaming, and AI personalisation - your entire eLearning platform delivered by a single accountable team.' },
   { title: 'Scalable Multi-Tenant Architecture', desc: 'We architect eLearning platforms to support thousands of concurrent learners and hundreds of tenants from day one - with per-tenant data isolation, custom branding, and independent billing.' },
   { title: 'AI-Powered Adaptive Learning', desc: 'We integrate adaptive learning engines, NLP-based chatbot tutors, intelligent content recommendations, and auto-grading AI to personalise the learning journey and improve knowledge retention.' },

@@ -26,7 +26,7 @@ const SCHEMA = {
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
         logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
-        foundingDate: '2008',
+        foundingDate: '2010',
         areaServed: ['US', 'GB', 'AU', 'CA', 'IN'],
       },
     },
@@ -166,7 +166,7 @@ const TESTIMONIALS = [
 ];
 
 const WHY_CARDS = [
-  { title: '15+ Years API & Integration Expertise', desc: 'We have been building REST and GraphQL APIs, integration layers, and event-driven architectures since 2008 - across SaaS, fintech, eCommerce, healthcare, and logistics.' },
+  { title: '15+ Years API & Integration Expertise', desc: 'We have been building REST and GraphQL APIs, integration layers, and event-driven architectures since 2010 - across SaaS, fintech, eCommerce, healthcare, and logistics.' },
   { title: 'Contract-First, Not Code-First', desc: 'Every API starts as an OpenAPI specification agreed with your team before backend work begins - so frontend, mobile, and partner teams can build in parallel against a stable, documented contract.' },
   { title: '50+ Third-Party Integrations Delivered', desc: 'We have built production integrations with payment gateways, CRMs, ERPs, marketplaces, and accounting tools - using REST APIs, webhooks, and message queues with proper retry and idempotency handling.' },
   { title: 'Security-First by Default', desc: 'OAuth2/JWT authentication, scoped API keys, rate limiting, input validation, and OWASP API Security Top 10 compliance are built into every API we ship - not bolted on afterward.' },

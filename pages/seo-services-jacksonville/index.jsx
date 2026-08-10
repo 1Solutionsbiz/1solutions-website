@@ -33,7 +33,7 @@ const WHY = [
   { h: 'Google Maps Dominance',           b: 'For most Jacksonville service businesses, the Google Maps 3-pack drives more leads than organic results. We optimise your Google Business Profile, build citations, and generate reviews to put you in the top 3.' },
   { h: 'Transparent Monthly Reporting',   b: 'You receive a monthly report showing keyword rankings, organic traffic, Google Business Profile performance, and leads generated - tied directly to your business metrics, not vanity SEO stats.' },
   { h: 'No Long-Term Contracts',          b: 'We earn your business month by month. Our Jacksonville SEO clients stay because we deliver results - not because they are locked into a 12-month contract.' },
-  { h: '15+ Years of Proven SEO',         b: 'Since 2008, we have ranked businesses in competitive markets across the US, Canada, and Australia. We know what works and what Google penalises.' },
+  { h: '15+ Years of Proven SEO',         b: 'Since 2010, we have ranked businesses in competitive markets across the US, Canada, and Australia. We know what works and what Google penalises.' },
   { h: 'White-Hat Only',                  b: "Every link we build, every piece of content we create, and every technical change we make follows Google's guidelines. No shortcuts that risk a penalty to your Jacksonville business." },
 ];
 const PROCESS = [

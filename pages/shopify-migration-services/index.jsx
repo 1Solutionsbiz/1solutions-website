@@ -22,7 +22,7 @@ const MODELS = [
 const WHY = [
   { h: 'Zero Data Loss Guaranteed',         b: 'We use validated migration tools and manual checks to ensure every product, variant, customer record, and order transfers without corruption or loss.' },
   { h: 'Full SEO Preservation',             b: 'We map every old URL to its Shopify equivalent with 301 redirects, migrate meta titles and descriptions, and preserve your Google rankings.' },
-  { h: '15+ Years of E-Commerce Experience', b: "Since 2008, we've migrated 300+ e-commerce stores. We know what breaks during migrations - and how to prevent it." },
+  { h: '15+ Years of E-Commerce Experience', b: "Since 2010, we've migrated 300+ e-commerce stores. We know what breaks during migrations - and how to prevent it." },
   { h: 'Staging Environment Testing',       b: 'All migrations are tested on a staging store before going live - so your customers never experience downtime or broken pages.' },
   { h: 'Post-Migration Support',            b: 'We provide 30 days of post-migration support to catch edge cases, fix broken links, and ensure your Shopify store performs as expected.' },
   { h: 'NDA & IP Security',                 b: 'Full NDA signed before any access to your existing store data, product catalogue, or customer records.' },

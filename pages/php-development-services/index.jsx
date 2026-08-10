@@ -26,13 +26,13 @@ const FAQS = [
   { q:'How much does custom PHP development cost?', a:'PHP development costs vary significantly based on complexity. A simple web application (5-10 features, basic API) typically costs $5,000-$15,000. A medium-complexity Laravel application with custom APIs, user roles, and integrations runs $15,000-$40,000. Enterprise-grade platforms with complex business logic, multiple integrations, and high scalability requirements range from $40,000-$150,000+. We provide fixed-price quotes after a free discovery session — no surprises, no hidden costs.' },
   { q:'How long does a typical PHP development project take?', a:'A simple custom PHP application typically takes 6-10 weeks. A medium-complexity Laravel project runs 10-18 weeks. Large enterprise PHP platforms can take 4-9 months depending on scope. We share a detailed project timeline in the proposal stage and maintain weekly progress updates throughout. Our sprint-based process means you see working software every 2 weeks — not just progress reports.' },
   { q:'Can you modernise our legacy PHP application?', a:'Yes — legacy PHP migration is one of our most common and impactful engagements. We typically encounter PHP 5.x or early 7.x codebases with mixed procedural and OOP code, no test coverage, and outdated dependencies. Our modernisation approach involves an architecture assessment, incremental refactoring to PHP 8 + Laravel/Symfony, introducing test coverage, and containerising the deployment — resulting in a maintainable, secure, and performant application.' },
-  { q:'Do you work with clients in the US, Canada, and Australia?', a:'Yes — 100% of our PHP development work is delivered remotely to clients across the US, Canada, and Australia. We have been working internationally since 2008. We schedule meetings in your time zone, use Slack, Notion, and Loom for communication, and maintain full transparency with weekly sprint demos and shared project dashboards. Our 97% client retention rate reflects the quality of our remote delivery model.' },
+  { q:'Do you work with clients in the US, Canada, and Australia?', a:'Yes — 100% of our PHP development work is delivered remotely to clients across the US, Canada, and Australia. We have been working internationally since 2010. We schedule meetings in your time zone, use Slack, Notion, and Loom for communication, and maintain full transparency with weekly sprint demos and shared project dashboards. Our 97% client retention rate reflects the quality of our remote delivery model.' },
   { q:'Do you write tests for PHP applications?', a:'Yes — automated testing is part of our standard development process. For Laravel projects, we write PHPUnit and Pest tests covering unit tests for business logic, feature tests for API endpoints, and integration tests for external service interactions. We aim for meaningful test coverage on critical paths rather than arbitrary percentage targets. Test coverage is handed over as part of the project, enabling your team to extend the application confidently.' },
   { q:'What PHP frameworks do you work with?', a:'Our primary framework is Laravel, which we use for the majority of new PHP projects. We also work extensively with Symfony (particularly for enterprise applications and API Platform), CodeIgniter (for simpler projects and legacy modernisation), Yii2 (for existing Yii applications), and CakePHP. For CMS-based projects, we have deep expertise in WordPress (including headless), Drupal, and Joomla. We always recommend the framework best suited to your specific project requirements and team.' },
 ];
 
 const WHY = [
-  { icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>, title:'15+ Years of PHP Expertise', desc:'Since 2008 we have delivered 300+ PHP projects — from simple APIs to multi-tenant SaaS platforms. Our depth of experience means fewer surprises and faster, cleaner delivery.' },
+  { icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>, title:'15+ Years of PHP Expertise', desc:'Since 2010 we have delivered 300+ PHP projects — from simple APIs to multi-tenant SaaS platforms. Our depth of experience means fewer surprises and faster, cleaner delivery.' },
   { icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>, title:'Laravel-First Approach', desc:'Laravel is our framework of choice for complex applications. We follow Laravel best practices — service containers, repository patterns, queue workers, and API resources out of the box.' },
   { icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>, title:'Security-First Development', desc:'Every PHP application includes OWASP-aligned practices: input validation, prepared statements, CSRF protection, rate limiting, and regular dependency audits — security by design.' },
   { icon:<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>, title:'Clean, Documented Code', desc:'We write code your team can understand, extend, and maintain. Full PHPDoc comments, README documentation, API docs via Swagger/OpenAPI, and meaningful commit history.' },
@@ -204,13 +204,13 @@ export default function PhpDevelopmentServices() {
     <>
       <Head>
         <title>PHP Development Services | Laravel & Custom PHP Solutions | 1Solutions</title>
-        <meta name="description" content="Expert PHP development company — custom web apps, Laravel, REST APIs, legacy migration & ecommerce for US, Canada & Australia. 300+ PHP projects delivered since 2008." />
+        <meta name="description" content="Expert PHP development company — custom web apps, Laravel, REST APIs, legacy migration & ecommerce for US, Canada & Australia. 300+ PHP projects delivered since 2010." />
         <meta name="keywords" content="php development services, php development company, laravel development, custom php development, php web application development, php agency, laravel agency" />
         <link rel="canonical" href="https://www.1solutions.biz/php-development-services/" />
         <meta name="robots" content="index, follow" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="PHP Development Services | Laravel & Custom PHP | 1Solutions" />
-        <meta property="og:description" content="Custom PHP & Laravel web application development. Clean code, security-first, fully documented. Serving US, Canada & Australia since 2008." />
+        <meta property="og:description" content="Custom PHP & Laravel web application development. Clean code, security-first, fully documented. Serving US, Canada & Australia since 2010." />
         <meta property="og:url" content="https://www.1solutions.biz/php-development-services/" />
         <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-php-development-services.png" />
         <meta key="og-image-w" property="og:image:width" content="1200" />
@@ -446,7 +446,7 @@ export default function PhpDevelopmentServices() {
       <div>
         {/* ── HERO ── */}
         <ServiceHero
-          eyebrow="PHP Development Since 2008"
+          eyebrow="PHP Development Since 2010"
           title={<>PHP Development Services <AuroraText>Built to Last</AuroraText></>}
           subtext="Custom PHP web applications, Laravel APIs, and legacy modernisation — delivered clean, secure, and fully documented for US, Canada, and Australia."
           primaryCta={{ label: 'Start a PHP Project', href: '#contact' }}

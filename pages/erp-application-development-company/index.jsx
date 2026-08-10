@@ -26,7 +26,7 @@ const SCHEMA = {
         name: '1Solutions',
         url: 'https://www.1solutions.biz',
         logo: { '@type': 'ImageObject', url: 'https://www.1solutions.biz/images/1solutions-logo.png' },
-        foundingDate: '2008',
+        foundingDate: '2010',
         areaServed: ['US', 'GB', 'AU', 'CA', 'IN'],
       },
     },
@@ -166,7 +166,7 @@ const TESTIMONIALS = [
 ];
 
 const WHY_CARDS = [
-  { title: '15+ Years ERP & Enterprise Application Expertise', desc: 'We have been building ERP systems and enterprise business applications since 2008 - across manufacturing, distribution, retail, food and beverage, professional services, and government sectors.' },
+  { title: '15+ Years ERP & Enterprise Application Expertise', desc: 'We have been building ERP systems and enterprise business applications since 2010 - across manufacturing, distribution, retail, food and beverage, professional services, and government sectors.' },
   { title: 'Modular Architecture - Go Live Faster', desc: 'We build ERP systems module by module. Your core finance and inventory modules go live in 20–28 weeks while manufacturing and HR modules are built in parallel - so your team benefits from the new system long before the full platform is complete.' },
   { title: 'No Licensing Fees. Ever.', desc: 'A custom ERP eliminates per-user ERP licensing permanently. For most mid-market businesses, the development investment pays back within 18–24 months versus SAP or Oracle licensing, implementation consultancy, and annual support costs.' },
   { title: 'Deep Integration Expertise', desc: 'We have built ERP integrations with 60+ external systems - CRM, eCommerce, 3PL and logistics, banking APIs, EDI trading partners, customs platforms, tax engines (Avalara, Vertex), and BI tools - with full monitoring and alerting.' },
