@@ -59,6 +59,7 @@ const FAQS = [
 ];
 
 const RELATED = [
+  { href:'/generative-search-optimization-services-geo-delhi/', label:'GEO Services in Delhi', cls:'geo-rtag-green'   },
   { href:'/ai-seo-services/',                     label:'AI SEO Services',              cls:'geo-rtag-indigo'  },
   { href:'/seo-services-company/',                label:'SEO Services',                 cls:'geo-rtag-blue'    },
   { href:'/content-marketing-services/',          label:'Content Marketing',            cls:'geo-rtag-violet'  },

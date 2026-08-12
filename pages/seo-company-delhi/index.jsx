@@ -832,6 +832,7 @@ export default function SeoCompanyDelhi() {
           </div>
           <div className="dsel-related-tags" style={{justifyContent:'center'}}>
             {[
+              ['Generative Search Optimization (GEO) Delhi', 'generative-search-optimization-services-geo-delhi'],
               ['Local SEO Services', 'local-seo-services'],
               ['Technical SEO', 'technical-seo-optimization'],
               ['Link Building Services', 'link-building-services'],

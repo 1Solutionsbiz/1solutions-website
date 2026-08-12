@@ -157,6 +157,7 @@ const STATIC_PAGES = [
   { url: '/voice-search-optimization-services',  priority: '0.7', changefreq: 'monthly' },
   { url: '/answer-engine-optimization-services', priority: '0.7', changefreq: 'monthly' },
   { url: '/generative-engine-optimization-services', priority: '0.8', changefreq: 'monthly' },
+  { url: '/generative-search-optimization-services-geo-delhi', priority: '0.8', changefreq: 'monthly' },
   { url: '/ai-seo-services',                     priority: '0.9', changefreq: 'monthly' },
   { url: '/free-ai-visibility-audit',            priority: '0.8', changefreq: 'monthly' },
   { url: '/ai-search-services',                  priority: '0.8', changefreq: 'monthly' },
