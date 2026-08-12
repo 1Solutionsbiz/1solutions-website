@@ -3,6 +3,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { AuroraText } from '../../components/AuroraText';
 
+const RC_KEY = '6LcOMz8tAAAAAFahNxnljLwn3S8-3Ex-PthvyTRs';
+
 /* ─── Structured Data ──────────────────────────────────────────────── */
 const SCHEMA = {
   '@context': 'https://schema.org',
@@ -322,6 +324,8 @@ function StatCard({ prefix, target, suffix, decimals, label, detail }) {
 export default function AffordableSeoPackages() {
   const [billing, setBilling] = useState('monthly');
   const [openFaq, setOpenFaq] = useState(0);
+  const [formSt, setFormSt] = useState('idle');
+  const rcLoaded = useRef(false);
 
   /* Single IntersectionObserver for all reveal elements */
   useEffect(() => {
@@ -333,6 +337,56 @@ export default function AffordableSeoPackages() {
     els.forEach(el => obs.observe(el));
     return () => obs.disconnect();
   }, []);
+
+  /* Lazy-load reCAPTCHA once the contact section is near the viewport */
+  useEffect(() => {
+    const contact = document.getElementById('asp-contact');
+    if (!contact) return;
+    const rcObs = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && !rcLoaded.current) {
+        const s = document.createElement('script');
+        s.src = `https://www.google.com/recaptcha/api.js?render=${RC_KEY}`;
+        s.async = true;
+        document.head.appendChild(s);
+        rcLoaded.current = true;
+        rcObs.disconnect();
+      }
+    }, { rootMargin: '300px' });
+    rcObs.observe(contact);
+    return () => rcObs.disconnect();
+  }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const fd = new FormData(e.target);
+    const name = (fd.get('asp-name') || '').trim();
+    const email = (fd.get('asp-email') || '').trim();
+    const phone = (fd.get('asp-phone') || '').trim();
+    const website = (fd.get('asp-website') || '').trim();
+    const pkg = (fd.get('asp-package') || '').trim();
+    const msg = (fd.get('asp-msg') || '').trim();
+    const consent = document.getElementById('asp-con')?.checked;
+    if (!name || !email || !phone || !consent) { setFormSt('validation'); return; }
+    setFormSt('loading');
+    try {
+      const token = await new Promise(resolve => {
+        window.grecaptcha.ready(() => { window.grecaptcha.execute(RC_KEY, { action: 'asp_contact' }).then(resolve); });
+      });
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name, email, phone,
+          message: `Website: ${website || 'Not provided'}\n\n${msg || 'No additional details provided.'}`,
+          service: pkg || 'Not sure — send me a recommendation',
+          source: 'Affordable SEO Packages Page',
+          consent: true,
+          recaptchaToken: token,
+        }),
+      });
+      if (res.ok) { setFormSt('success'); e.target.reset(); } else { setFormSt('error'); }
+    } catch { setFormSt('error'); }
+  };
 
   const TCell = ({ v }) => {
     if (v === true)  return <span className="asp-tc-yes" aria-label="Included">✓</span>;
@@ -555,6 +609,8 @@ export default function AffordableSeoPackages() {
           .asp-consent label{font-size:11px;color:#4A6080;line-height:1.5}
           .asp-consent a{color:#0F3460}
           .asp-submit{width:100%;padding:14px;background:rgba(15,52,96,.85);backdrop-filter:blur(16px);border:1.5px solid rgba(255,255,255,.28);color:#fff;border-radius:50px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;transition:all .3s;box-shadow:0 6px 24px rgba(15,52,96,.22)}
+          .asp-submit:disabled{opacity:.6;cursor:not-allowed}
+          .asp-err{font-size:13px;color:#dc2626;margin:0;line-height:1.5}
           .asp-submit:hover{background:#0F3460;transform:translateY(-2px);border-color:rgba(245,158,11,.5)}
           /* ── Related ── */
           .asp-rtags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:28px}
@@ -919,37 +975,50 @@ export default function AffordableSeoPackages() {
               </div>
             </div>
             <div className="asp-form-box asp-reveal">
-              <h3>Request Your Free SEO Audit</h3>
-              <form className="asp-form" onSubmit={e=>e.preventDefault()}>
-                <div className="asp-frow">
-                  <div className="asp-fg"><label>Your Name *</label><input type="text" placeholder="Jane Smith" required/></div>
-                  <div className="asp-fg"><label>Work Email *</label><input type="email" placeholder="jane@company.com" required/></div>
-                </div>
-                <div className="asp-frow">
-                  <div className="asp-fg"><label>Phone *</label><input type="tel" placeholder="+1 (555) 000-0000" required/></div>
-                  <div className="asp-fg"><label>Website URL</label><input type="url" placeholder="https://yoursite.com"/></div>
-                </div>
-                <div className="asp-fg asp-full">
-                  <label>Package Interested In</label>
-                  <select>
-                    <option value="">Select a package…</option>
-                    <option>Starter — $299/month</option>
-                    <option>Professional — $599/month</option>
-                    <option>Enterprise — $999/month</option>
-                    <option>Enterprise AI+ — $1,999/month</option>
-                    <option>Not sure — send me a recommendation</option>
-                  </select>
-                </div>
-                <div className="asp-fg asp-full">
-                  <label>Tell us about your SEO goals</label>
-                  <textarea rows="3" placeholder="e.g. We want to rank for [keywords] in the US market and grow organic leads from X to Y…"/>
-                </div>
-                <div className="asp-consent">
-                  <input type="checkbox" id="asp-con" required/>
-                  <label htmlFor="asp-con">I agree to the <Link href="/privacy-policy/">Privacy Policy</Link> and consent to 1Solutions contacting me about SEO services.</label>
-                </div>
-                <button type="submit" className="asp-submit">Send My Free Audit Request →</button>
-              </form>
+              {formSt === 'success' ? (
+                <>
+                  <h3>Request Received ✓</h3>
+                  <p className="asp-cdesc" style={{margin:0}}>Thanks — we&apos;ll send your free technical SEO audit and package recommendation within 24 hours.</p>
+                </>
+              ) : (
+                <>
+                  <h3>Request Your Free SEO Audit</h3>
+                  <form className="asp-form" onSubmit={handleSubmit}>
+                    <div className="asp-frow">
+                      <div className="asp-fg"><label>Your Name *</label><input type="text" name="asp-name" placeholder="Jane Smith" required/></div>
+                      <div className="asp-fg"><label>Work Email *</label><input type="email" name="asp-email" placeholder="jane@company.com" required/></div>
+                    </div>
+                    <div className="asp-frow">
+                      <div className="asp-fg"><label>Phone *</label><input type="tel" name="asp-phone" placeholder="+1 (555) 000-0000" required/></div>
+                      <div className="asp-fg"><label>Website URL</label><input type="url" name="asp-website" placeholder="https://yoursite.com"/></div>
+                    </div>
+                    <div className="asp-fg asp-full">
+                      <label>Package Interested In</label>
+                      <select name="asp-package">
+                        <option value="">Select a package…</option>
+                        <option>Starter — $299/month</option>
+                        <option>Professional — $599/month</option>
+                        <option>Enterprise — $999/month</option>
+                        <option>Enterprise AI+ — $1,999/month</option>
+                        <option>Not sure — send me a recommendation</option>
+                      </select>
+                    </div>
+                    <div className="asp-fg asp-full">
+                      <label>Tell us about your SEO goals</label>
+                      <textarea rows="3" name="asp-msg" placeholder="e.g. We want to rank for [keywords] in the US market and grow organic leads from X to Y…"/>
+                    </div>
+                    <div className="asp-consent">
+                      <input type="checkbox" id="asp-con" required/>
+                      <label htmlFor="asp-con">I agree to the <Link href="/privacy-policy/">Privacy Policy</Link> and consent to 1Solutions contacting me about SEO services.</label>
+                    </div>
+                    {formSt === 'validation' && <p className="asp-err">Please complete all required fields and accept the privacy policy before submitting.</p>}
+                    {formSt === 'error' && <p className="asp-err">Something went wrong. Please try again or email us at info@1solutions.biz</p>}
+                    <button type="submit" className="asp-submit" disabled={formSt === 'loading'}>
+                      {formSt === 'loading' ? 'Sending…' : 'Send My Free Audit Request →'}
+                    </button>
+                  </form>
+                </>
+              )}
             </div>
           </div>
         </section>
