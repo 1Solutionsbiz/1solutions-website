@@ -61,19 +61,28 @@ const SCHEMA = {
   ],
 };
 
+const SVC_COLORS = [
+  { bg: 'linear-gradient(135deg,#ede9fe 0%,#ddd6fe 100%)', border: 'rgba(139,92,246,.35)' },
+  { bg: 'linear-gradient(135deg,#eff6ff 0%,#bfdbfe 100%)', border: 'rgba(59,130,246,.35)' },
+  { bg: 'linear-gradient(135deg,#ecfdf5 0%,#a7f3d0 100%)', border: 'rgba(16,185,129,.35)' },
+  { bg: 'linear-gradient(135deg,#fefce8 0%,#fde68a 100%)', border: 'rgba(217,119,6,.35)' },
+  { bg: 'linear-gradient(135deg,#fff7ed 0%,#fed7aa 100%)', border: 'rgba(249,115,22,.35)' },
+  { bg: 'linear-gradient(135deg,#fdf2f8 0%,#fbcfe8 100%)', border: 'rgba(236,72,153,.35)' },
+];
+
 const SERVICES = [
-  { n: '01', title: 'Content Updates', desc: 'Ongoing CMS Collection and static page content updates - copy changes, new entries, image replacements, and structural changes as your site grows, all published through a staging review step first.', feat: true },
-  { n: '02', title: 'Design Enhancements', desc: 'Ongoing design refinements within your existing Webflow design system - new sections, landing page layouts, navigation updates, and visual polish, kept consistent with your original brand system.' },
-  { n: '03', title: 'Bug Fixes & Troubleshooting', desc: 'Diagnosis and resolution of Webflow Interactions bugs, layout breaks, broken Collection bindings, and problems introduced by platform updates or custom code - fixed before visitors notice them.' },
-  { n: '04', title: 'SEO Optimization', desc: 'Ongoing monitoring of meta titles, descriptions, canonical tags, XML sitemap accuracy, heading structure, and 301 redirects for renamed or removed pages, keeping your SEO equity intact as the site evolves.' },
-  { n: '05', title: 'CMS Management', desc: 'Hands-on management of your Webflow Collections - new entries, field updates, reference and multi-reference relationships, and content structure changes, without you needing to touch the Webflow Editor yourself.' },
-  { n: '06', title: 'Backup & Recovery', desc: 'Scheduled site and CMS content backups with a documented recovery process, so a bad publish, accidental deletion, or platform incident is never more than a restore away.' },
-  { n: '07', title: '3rd-Party Integrations', desc: 'Monitoring and maintenance of connected tools - HubSpot, Mailchimp, Zapier, Make, Memberstack, Stripe - so a silently broken integration or failed automation gets caught and fixed, not discovered weeks later.' },
-  { n: '08', title: 'Responsive Design', desc: 'Regular checks across desktop, tablet, and mobile breakpoints to catch layout shifts, overlapping elements, or broken Interactions introduced by new content or design changes.' },
-  { n: '09', title: 'Custom Code Maintenance', desc: 'Review of custom code embeds, third-party scripts, and Webflow Interactions after every platform update, catching conflicts or deprecated APIs before they break something on your live site.' },
-  { n: '10', title: 'Browser Compatibility Issues', desc: 'Cross-browser testing and fixes across Chrome, Safari, Firefox, and Edge, catching rendering differences and Interaction bugs that only show up in specific browsers.' },
-  { n: '11', title: 'Webflow Updates & Compatibility', desc: 'Every Webflow platform update is reviewed against your custom code, Interactions, and integrations for compatibility issues before it can affect your live site.' },
-  { n: '12', title: 'Website Performance Monitoring', desc: '24/7 uptime monitoring with instant alerts, plus Core Web Vitals (LCP, INP, CLS) and PageSpeed tracking with monthly benchmarked reports - flagging regressions from new content, embeds, or heavy images.' },
+  { n: '01', title: 'Content Updates', desc: 'Ongoing CMS Collection and static page content updates - copy changes, new entries, image replacements, and structural changes as your site grows, all published through a staging review step first.', icon: 'M12 20h9 M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z' },
+  { n: '02', title: 'Design Enhancements', desc: 'Ongoing design refinements within your existing Webflow design system - new sections, landing page layouts, navigation updates, and visual polish, kept consistent with your original brand system.', icon: 'M12 3l1.5 6L20 12l-6.5 3L12 21l-1.5-6L4 12l6.5-3L12 3z' },
+  { n: '03', title: 'Bug Fixes & Troubleshooting', desc: 'Diagnosis and resolution of Webflow Interactions bugs, layout breaks, broken Collection bindings, and problems introduced by platform updates or custom code - fixed before visitors notice them.', icon: 'M5 13l4 4L19 7' },
+  { n: '04', title: 'SEO Optimization', desc: 'Ongoing monitoring of meta titles, descriptions, canonical tags, XML sitemap accuracy, heading structure, and 301 redirects for renamed or removed pages, keeping your SEO equity intact as the site evolves.', icon: 'M3 17l6-6 4 4 8-8 M15 7h6v6' },
+  { n: '05', title: 'CMS Management', desc: 'Hands-on management of your Webflow Collections - new entries, field updates, reference and multi-reference relationships, and content structure changes, without you needing to touch the Webflow Editor yourself.', icon: 'M12 3l9 5-9 5-9-5 9-5z M3 13l9 5 9-5' },
+  { n: '06', title: 'Backup & Recovery', desc: 'Scheduled site and CMS content backups with a documented recovery process, so a bad publish, accidental deletion, or platform incident is never more than a restore away.', icon: 'M12 3l7 3v6c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z' },
+  { n: '07', title: '3rd-Party Integrations', desc: 'Monitoring and maintenance of connected tools - HubSpot, Mailchimp, Zapier, Make, Memberstack, Stripe - so a silently broken integration or failed automation gets caught and fixed, not discovered weeks later.', icon: 'M9 15l6-6 M8 12a4 4 0 0 1 0-6l2-2a4 4 0 0 1 6 6l-1 1 M16 12a4 4 0 0 1 0 6l-2 2a4 4 0 0 1-6-6l1-1' },
+  { n: '08', title: 'Responsive Design', desc: 'Regular checks across desktop, tablet, and mobile breakpoints to catch layout shifts, overlapping elements, or broken Interactions introduced by new content or design changes.', icon: 'M17 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z M12 18h.01' },
+  { n: '09', title: 'Custom Code Maintenance', desc: 'Review of custom code embeds, third-party scripts, and Webflow Interactions after every platform update, catching conflicts or deprecated APIs before they break something on your live site.', icon: 'M9 8l-4 4 4 4 M15 8l4 4-4 4' },
+  { n: '10', title: 'Browser Compatibility Issues', desc: 'Cross-browser testing and fixes across Chrome, Safari, Firefox, and Edge, catching rendering differences and Interaction bugs that only show up in specific browsers.', icon: 'M3 4h18v16H3V4z M3 9h18' },
+  { n: '11', title: 'Webflow Updates & Compatibility', desc: 'Every Webflow platform update is reviewed against your custom code, Interactions, and integrations for compatibility issues before it can affect your live site.', icon: 'M21 12a9 9 0 1 1-3-6.7 M21 3v6h-6' },
+  { n: '12', title: 'Website Performance Monitoring', desc: '24/7 uptime monitoring with instant alerts, plus Core Web Vitals (LCP, INP, CLS) and PageSpeed tracking with monthly benchmarked reports - flagging regressions from new content, embeds, or heavy images.', icon: 'M22 12h-4l-3 9L9 3l-3 9H2' },
 ];
 
 const TECH_STACK = [
@@ -334,15 +343,13 @@ export default function WebflowMaintenanceServices() {
           .wfm-inner{max-width:1300px;margin:0 auto}
           .wfm-svc-section{background:transparent;padding:72px 40px 60px;position:relative;z-index:1}
           .wfm-svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
-          .wfm-svc-card{background:linear-gradient(135deg,rgba(219,234,254,.50) 0%,rgba(255,255,255,.85) 55%,rgba(253,244,255,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:20px;padding:26px 22px 22px;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95);opacity:0;transform:translateY(36px);transition:opacity .6s cubic-bezier(0.22,1,.36,1),transform .6s cubic-bezier(0.22,1,.36,1),border-color .2s,box-shadow .2s}
+          .wfm-svc-card{border:1px solid transparent;border-radius:18px;padding:26px 24px;position:relative;overflow:hidden;opacity:0;transform:translateY(36px);transition:opacity .6s cubic-bezier(0.22,1,.36,1),transform .6s cubic-bezier(0.22,1,.36,1),box-shadow .25s}
           .wfm-svc-card.wfm-cv{opacity:1;transform:translateY(0)}
-          .wfm-svc-card.wfm-cv:hover{transform:translateY(-6px);border-color:rgba(217,119,6,.45);box-shadow:0 16px 48px rgba(15,52,96,.14)}
-          .wfm-svc-card.feat{border-color:rgba(217,119,6,.22)}
-          .wfm-svc-num{position:absolute;top:8px;right:14px;font-size:72px;font-weight:900;line-height:1;color:#0F3460;opacity:.055;pointer-events:none;letter-spacing:-4px;user-select:none}
-          .wfm-svc-card h3{font-size:16px;font-weight:700;color:#0F1F40;margin:0 0 8px;position:relative;z-index:1}
-          .wfm-svc-card p{font-size:13px;color:#4A6080;line-height:1.65;margin:0;position:relative;z-index:1}
-          .wfm-svc-card::before{content:'';position:absolute;left:0;top:12%;height:76%;width:3px;background:linear-gradient(180deg,#D97706,#f59e0b);border-radius:0 2px 2px 0;transform:scaleY(0);transform-origin:top center;transition:transform .3s cubic-bezier(0.22,1,.36,1)}
-          .wfm-svc-card.wfm-cv:hover::before{transform:scaleY(1)}
+          .wfm-svc-card.wfm-cv:hover{transform:translateY(-5px);box-shadow:0 14px 36px rgba(15,52,96,.14)}
+          .wfm-svc-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+          .wfm-svc-icon{width:22px;height:22px;color:#0F1F40;flex-shrink:0}
+          .wfm-svc-card h3{font-size:16px;font-weight:700;color:#0F1F40;margin:0;position:relative;z-index:1}
+          .wfm-svc-card p{font-size:13px;color:#3A4A66;line-height:1.7;margin:0;position:relative;z-index:1}
           .wfm-svc-more{text-align:center;margin-top:22px}
           .wfm-btn-more{display:inline-block;background:#fff;border:1.5px solid rgba(15,52,96,.18);color:#0F3460;padding:10px 30px;border-radius:20px;font-weight:600;font-size:14px;cursor:pointer;transition:all .2s;font-family:inherit}
           .wfm-btn-more:hover{background:#0F3460;border-color:#0F3460;color:#fff;transform:translateY(-2px)}
@@ -493,7 +500,7 @@ export default function WebflowMaintenanceServices() {
           .wfm-rtag-teal{background:rgba(20,184,166,.09);border-color:rgba(20,184,166,.28);color:#0F766E}
           .wfm-rtag-green{background:rgba(17,65,113,.09);border-color:rgba(17,65,113,.28);color:#114171}
           .wfm-rtag-rose{background:rgba(225,29,72,.09);border-color:rgba(225,29,72,.28);color:#9f1239}
-          .wfm-what-section{padding:76px 40px 20px;position:relative;z-index:1}
+          .wfm-what-section{background:#fff;padding:76px 40px 20px;position:relative;z-index:1}
           .wfm-what-inner{max-width:1300px;margin:0 auto}
           .wfm-what-box{margin-top:36px;background:rgba(255,255,255,.45);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.85);border-radius:24px;padding:44px 44px 40px;box-shadow:0 8px 40px rgba(15,52,96,.10),inset 0 1px 0 rgba(255,255,255,.95)}
           .wfm-what-intro{font-size:16px;color:#374151;line-height:1.8;margin:0 0 28px;padding-bottom:28px;border-bottom:1px solid rgba(15,52,96,.10)}
@@ -572,13 +579,22 @@ export default function WebflowMaintenanceServices() {
               <p className="wfm-s-desc" style={{ maxWidth: 720 }}>From content updates and design enhancements, through CMS management, custom code maintenance, and 3rd-party integrations, to performance monitoring and Webflow platform compatibility.</p>
             </div>
             <div className="wfm-svc-grid" ref={svcGridRef}>
-              {visibleServices.map((s, i) => (
-                <div key={s.n} className={`wfm-svc-card${s.feat ? ' feat' : ''}${visibleSvcCards.includes(i) ? ' wfm-cv' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}>
-                  <span className="wfm-svc-num">{s.n}</span>
-                  <h3>{s.title}</h3>
-                  <p>{s.desc}</p>
-                </div>
-              ))}
+              {visibleServices.map((s, i) => {
+                const c = SVC_COLORS[i % SVC_COLORS.length];
+                return (
+                  <div
+                    key={s.n}
+                    className={`wfm-svc-card${visibleSvcCards.includes(i) ? ' wfm-cv' : ''}`}
+                    style={{ transitionDelay: `${i * 55}ms`, background: c.bg, borderColor: c.border }}
+                  >
+                    <div className="wfm-svc-head">
+                      <svg className="wfm-svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d={s.icon} /></svg>
+                      <h3>{s.title}</h3>
+                    </div>
+                    <p>{s.desc}</p>
+                  </div>
+                );
+              })}
             </div>
             {SERVICES.length > 6 && (
               <div className="wfm-svc-more">
