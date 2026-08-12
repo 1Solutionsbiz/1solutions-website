@@ -2,7 +2,7 @@ const SITE = 'https://www.1solutions.biz';
 
 const STATIC_PAGES = [
   // Company
-  { url: '/',                                    priority: '1.0', changefreq: 'weekly' },
+  { url: '',                                     priority: '1.0', changefreq: 'weekly' },
   { url: '/who-we-are',                          priority: '0.8', changefreq: 'monthly' },
   { url: '/work-culture',                        priority: '0.6', changefreq: 'monthly' },
   { url: '/portfolio',                           priority: '0.8', changefreq: 'monthly' },
