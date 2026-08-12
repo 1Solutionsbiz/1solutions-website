@@ -62,16 +62,18 @@ const SCHEMA = {
 };
 
 const SERVICES = [
-  { n: '01', title: 'CMS Collection Management', desc: 'Ongoing management of your Webflow Collections - new entries, field updates, reference and multi-reference relationships, and content structure changes as your site grows, all published through a staging review step first.', feat: true },
-  { n: '02', title: 'Custom Code & Embed Audits', desc: 'Review of custom code embeds, third-party scripts, and Webflow Interactions after every Webflow platform update, catching conflicts or deprecated APIs before they break something on your live site.' },
-  { n: '03', title: 'Integration & Form Monitoring', desc: 'Monitoring of connected tools - HubSpot, Mailchimp, Zapier, Make, Memberstack, Stripe - and form submissions, so a silently broken integration or failed automation gets caught and fixed, not discovered weeks later.' },
-  { n: '04', title: 'Staging Review Before Publish', desc: 'Every non-trivial change is reviewed on a Webflow staging domain before publishing to production - catching layout breaks, broken Collection bindings, and visual regressions before your visitors ever see them.' },
-  { n: '05', title: 'Content & Design Updates', desc: 'Monthly developer hours for copy changes, new page and section builds, image replacements, navigation updates, landing page tweaks, and minor design adjustments within your existing Webflow design system.' },
-  { n: '06', title: 'Uptime & Performance Monitoring', desc: '24/7 uptime monitoring with instant alerts, plus Core Web Vitals (LCP, INP, CLS) and PageSpeed tracking with monthly benchmarked reports - flagging regressions introduced by new content, embeds, or heavy images.' },
-  { n: '07', title: 'Broken Link & 404 Monitoring', desc: 'Monthly crawls to catch broken internal links, 404s from renamed or deleted CMS entries, redirect chains, and missing meta descriptions - repaired within your monthly developer hours.' },
-  { n: '08', title: 'Webflow Membership & Commerce Upkeep', desc: 'For sites using Memberstack, Outseta, or Webflow Ecommerce - membership access checks, product catalogue integrity, checkout flow testing, and payment gateway verification after any related changes.' },
-  { n: '09', title: 'Bug Fixes & Cross-Browser QA', desc: 'Diagnosis and resolution of Webflow Interactions bugs, responsive layout breaks, cross-browser rendering issues, and problems introduced by Webflow platform updates or new custom code.' },
-  { n: '10', title: 'SEO Health & Redirect Management', desc: 'Ongoing monitoring of meta titles, descriptions, canonical tags, XML sitemap accuracy, and 301 redirects for renamed or removed pages, keeping your SEO equity intact as the site evolves.' },
+  { n: '01', title: 'Content Updates', desc: 'Ongoing CMS Collection and static page content updates - copy changes, new entries, image replacements, and structural changes as your site grows, all published through a staging review step first.', feat: true },
+  { n: '02', title: 'Design Enhancements', desc: 'Ongoing design refinements within your existing Webflow design system - new sections, landing page layouts, navigation updates, and visual polish, kept consistent with your original brand system.' },
+  { n: '03', title: 'Bug Fixes & Troubleshooting', desc: 'Diagnosis and resolution of Webflow Interactions bugs, layout breaks, broken Collection bindings, and problems introduced by platform updates or custom code - fixed before visitors notice them.' },
+  { n: '04', title: 'SEO Optimization', desc: 'Ongoing monitoring of meta titles, descriptions, canonical tags, XML sitemap accuracy, heading structure, and 301 redirects for renamed or removed pages, keeping your SEO equity intact as the site evolves.' },
+  { n: '05', title: 'CMS Management', desc: 'Hands-on management of your Webflow Collections - new entries, field updates, reference and multi-reference relationships, and content structure changes, without you needing to touch the Webflow Editor yourself.' },
+  { n: '06', title: 'Backup & Recovery', desc: 'Scheduled site and CMS content backups with a documented recovery process, so a bad publish, accidental deletion, or platform incident is never more than a restore away.' },
+  { n: '07', title: '3rd-Party Integrations', desc: 'Monitoring and maintenance of connected tools - HubSpot, Mailchimp, Zapier, Make, Memberstack, Stripe - so a silently broken integration or failed automation gets caught and fixed, not discovered weeks later.' },
+  { n: '08', title: 'Responsive Design', desc: 'Regular checks across desktop, tablet, and mobile breakpoints to catch layout shifts, overlapping elements, or broken Interactions introduced by new content or design changes.' },
+  { n: '09', title: 'Custom Code Maintenance', desc: 'Review of custom code embeds, third-party scripts, and Webflow Interactions after every platform update, catching conflicts or deprecated APIs before they break something on your live site.' },
+  { n: '10', title: 'Browser Compatibility Issues', desc: 'Cross-browser testing and fixes across Chrome, Safari, Firefox, and Edge, catching rendering differences and Interaction bugs that only show up in specific browsers.' },
+  { n: '11', title: 'Webflow Updates & Compatibility', desc: 'Every Webflow platform update is reviewed against your custom code, Interactions, and integrations for compatibility issues before it can affect your live site.' },
+  { n: '12', title: 'Website Performance Monitoring', desc: '24/7 uptime monitoring with instant alerts, plus Core Web Vitals (LCP, INP, CLS) and PageSpeed tracking with monthly benchmarked reports - flagging regressions from new content, embeds, or heavy images.' },
 ];
 
 const TECH_STACK = [
@@ -148,14 +150,42 @@ const TESTIMONIALS = [
 ];
 
 const WHY_CARDS = [
-  { title: 'We Also Build Webflow Sites', desc: 'Our maintenance team works from the same Webflow expertise as our development team - we understand Collections, Interactions, and custom code because we build with them, not just patch around them after the fact.' },
-  { title: 'Staging-First - Every Non-Trivial Change', desc: 'Content updates and design changes are reviewed on a staging domain before publishing. Our guarantee: if a change causes a visual or functional regression, you never see it on your live site first.' },
-  { title: 'Integration Monitoring, Not Just Uptime', desc: 'Most Webflow maintenance offers only cover uptime. We specifically monitor your connected integrations - Zapier, HubSpot, Memberstack - because a silently broken automation is often more costly than a few minutes of downtime.' },
-  { title: 'We Understand Webflow ≠ WordPress Maintenance', desc: 'Webflow does not need core or plugin patching - so we do not sell you that. Our plans focus on what a Webflow site actually needs: CMS accuracy, custom code hygiene, and integration health.' },
-  { title: 'Priority Response in Growth & Enterprise', desc: 'Broken forms, failed integrations, and site issues get priority response on our Growth and Enterprise plans, covered within your monthly retainer rather than billed as separate emergency call-out fees.' },
-  { title: 'Multi-Site Management Under One Retainer', desc: 'We maintain portfolios of Webflow sites - 3, 6, 10, or more - under a single retainer with consolidated reporting. One account manager, one invoice, consistent quality across every site.' },
-  { title: 'Transparent Monthly Reporting', desc: 'Your monthly report names every change published, every integration checked, uptime statistics, Core Web Vitals trends, and developer hours used. No vague "maintenance performed" summaries.' },
-  { title: 'No Lock-In - Monthly Rolling', desc: 'Our Webflow maintenance retainers run month-to-month. No 12-month contracts. If you want to pause or leave, 30 days notice and a clean handover document covering CMS structure and current site state.' },
+  {
+    title: 'Simple, Transparent Pricing',
+    desc: 'Enjoy clear, contract-free pricing with our Webflow maintenance plans - pay only for what you need, with the flexibility to cancel anytime.',
+    iconBg: 'linear-gradient(135deg,#a855f7 0%,#7c3aed 100%)',
+    path: 'M21.41 11.41l-8.83-8.83C12.21 2.21 11.7 2 11.17 2H4c-1.1 0-2 .9-2 2v7.17c0 .53.21 1.04.59 1.41l8.83 8.83c.78.78 2.05.78 2.83 0l7.17-7.17c.78-.79.78-2.05-.01-2.83zM6.5 8C5.67 8 5 7.33 5 6.5S5.67 5 6.5 5 8 5.67 8 6.5 7.33 8 6.5 8z',
+  },
+  {
+    title: 'Fast Turnaround',
+    desc: 'Critical fixes and priority requests are handled fast - most Growth and Enterprise tickets are resolved within hours, not days.',
+    iconBg: 'linear-gradient(135deg,#fb7185 0%,#e11d48 100%)',
+    path: 'M7 2v11h3v9l7-12h-4l4-8z',
+  },
+  {
+    title: '3rd-Party Integrations',
+    desc: 'We connect and monitor Zapier, Make, HubSpot, Memberstack, and any other third-party platform your Webflow site depends on.',
+    iconBg: 'linear-gradient(135deg,#60a5fa 0%,#2563eb 100%)',
+    path: 'M17 7h-4v2h4c1.65 0 3 1.35 3 3s-1.35 3-3 3h-4v2h4c2.76 0 5-2.24 5-5s-2.24-5-5-5zM7 13c-1.65 0-3-1.35-3-3s1.35-3 3-3h4V5H7C4.24 5 2 7.24 2 10s2.24 5 5 5h4v-2H7zm1-2h8v2H8v-2z',
+  },
+  {
+    title: 'Staging-First Workflow',
+    desc: 'Every content or design change is reviewed on staging first - regressions get caught before they ever reach your live site.',
+    iconBg: 'linear-gradient(135deg,#f59e0b 0%,#D97706 100%)',
+    path: 'M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z',
+  },
+  {
+    title: 'We Also Build Webflow Sites',
+    desc: 'Our maintenance team works from the same Webflow expertise as our development team - we understand Collections and custom code because we build with them.',
+    iconBg: 'linear-gradient(135deg,#1e3a5f 0%,#0F3460 100%)',
+    path: 'M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z',
+  },
+  {
+    title: 'No Lock-In, Monthly Rolling',
+    desc: 'Our retainers run month-to-month with no 12-month contracts - 30 days notice and a clean handover document if you ever want to leave.',
+    iconBg: 'linear-gradient(135deg,#2dd4bf 0%,#0F766E 100%)',
+    path: 'M12 6V3L8 7l4 4V8c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 16.97 20 15.54 20 14c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 9.74C4.46 11.03 4 12.46 4 14c0 4.42 3.58 8 8 8v3l4-4-4-4v3z',
+  },
 ];
 
 const FAQS = [
@@ -379,13 +409,21 @@ export default function WebflowMaintenanceServices() {
           .wfm-tname{font-size:14px;font-weight:700;color:#0F3460}
           .wfm-trole{font-size:12px;color:#6b7280}
           .wfm-why-section{background:#f8fafd;border-top:1px solid rgba(15,52,96,.08);border-bottom:1px solid rgba(15,52,96,.08);padding:80px 40px;position:relative;z-index:1}
-          .wfm-why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
-          .wfm-wcard{background:linear-gradient(135deg,rgba(219,234,254,.50) 0%,rgba(255,255,255,.85) 55%,rgba(253,244,255,.40) 100%);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:20px;padding:26px 22px;box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95);opacity:0;transform:translateY(32px) scale(.97);transition:opacity .55s cubic-bezier(0.22,1,.36,1),transform .55s cubic-bezier(0.22,1,.36,1),border-color .2s}
+          .wfm-why-badge{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#7c3aed;background:rgba(168,85,247,.10);border:1px solid rgba(168,85,247,.24);border-radius:999px;padding:6px 16px 6px 12px;margin-bottom:20px}
+          .wfm-why-dot{width:8px;height:8px;border-radius:50%;background:#a855f7;flex-shrink:0}
+          .wfm-why-header{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+          .wfm-why-heading{font-size:38px;font-weight:900;line-height:1.15;letter-spacing:-.8px;color:#0F1F40;margin:0}
+          .wfm-why-lede{font-size:17px;color:#374151;line-height:1.6;margin:8px 0 0}
+          .wfm-why-divider{height:1px;background:rgba(15,52,96,.12);margin:40px 0 0}
+          .wfm-why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px 40px;margin-top:44px}
+          .wfm-wcard{background:transparent;border:none;border-radius:0;padding:0;box-shadow:none;opacity:0;transform:translateY(32px) scale(.97);transition:opacity .55s cubic-bezier(0.22,1,.36,1),transform .55s cubic-bezier(0.22,1,.36,1)}
           .wfm-wcard.wfm-wv{opacity:1;transform:translateY(0) scale(1)}
-          .wfm-wcard.wfm-wv:hover{transform:translateY(-5px) scale(1);border-color:rgba(217,119,6,.40);box-shadow:0 14px 40px rgba(15,52,96,.12)}
-          .wfm-wcard-dot{width:10px;height:10px;border-radius:50%;background:#D97706;margin-bottom:12px}
-          .wfm-wcard h3{font-size:14px;font-weight:700;color:#0F1F40;margin:0 0 8px;line-height:1.35}
-          .wfm-wcard p{font-size:13px;color:#4A6080;line-height:1.65;margin:0}
+          .wfm-wcard.wfm-wv:hover .wfm-wcard-icon{transform:translateY(-3px)}
+          .wfm-wcard-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;box-shadow:0 8px 20px rgba(15,52,96,.18);transition:transform .3s cubic-bezier(0.22,1,.36,1)}
+          .wfm-wcard-icon svg{width:24px;height:24px;fill:#fff}
+          .wfm-wcard h3{font-size:17px;font-weight:700;color:#0F1F40;margin:0 0 14px;line-height:1.35}
+          .wfm-wcard-rule{height:1px;background:rgba(15,52,96,.12);margin:0 0 14px}
+          .wfm-wcard p{font-size:14px;color:#4A6080;line-height:1.7;margin:0}
           .wfm-contact{padding:70px 40px;background:linear-gradient(135deg,rgba(254,243,199,.65) 0%,rgba(255,255,255,.60) 40%,rgba(219,234,254,.65) 100%);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.80);position:relative;z-index:1}
           .wfm-contact-grid{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;gap:32px;align-items:start}
           .wfm-ctitle{font-size:42px;font-weight:900;line-height:1.18;margin:0 0 14px;background:linear-gradient(90deg,#0F3460 0%,#D97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -454,9 +492,6 @@ export default function WebflowMaintenanceServices() {
           .wfm-risk-item{display:flex;gap:12px;align-items:flex-start}
           .wfm-risk-icon{width:36px;height:36px;border-radius:8px;background:rgba(217,119,6,.14);display:flex;align-items:center;justify-content:center;flex-shrink:0}
           .wfm-risk-icon svg{width:18px;height:18px;fill:#D97706}
-          .wfm-why-highlight{max-width:1300px;margin:44px auto 0;background:linear-gradient(135deg,rgba(254,243,199,.60) 0%,rgba(255,255,255,.80) 100%);border:1px solid rgba(217,119,6,.22);border-left:4px solid #D97706;border-radius:0 14px 14px 0;padding:28px 36px;backdrop-filter:blur(10px)}
-          .wfm-why-highlight h3{font-size:20px;font-weight:800;color:#0F3460;margin:0 0 10px}
-          .wfm-why-highlight p{font-size:15px;color:#4A6080;line-height:1.75;margin:0}
           .wfm-risk-item p{font-size:13px;color:#4A6080;line-height:1.6;margin:0}
           .wfm-risk-item strong{display:block;font-size:13px;color:#0F1F40;font-weight:600;margin-bottom:2px}
           .wfm-cmp-section{background:transparent;padding:72px 40px;position:relative;z-index:1}
@@ -469,13 +504,13 @@ export default function WebflowMaintenanceServices() {
           .wfm-cmp-table td:first-child{font-weight:600;color:#0F1F40}
           .wfm-cmp-check{color:#114171;font-weight:800}
           .wfm-cmp-dash{color:#9ca3af}
-          @media(max-width:1280px){.wfm-stack-grid{grid-template-columns:repeat(3,1fr)}.wfm-why-grid{grid-template-columns:repeat(3,1fr)}}
-          @media(max-width:1024px){.wfm-page{overflow-x:hidden}.wfm-s-title{font-size:34px;letter-spacing:-.5px}.wfm-faq h2{font-size:34px}.wfm-ctitle{font-size:34px}.wfm-what-text h2{font-size:30px}.wfm-svc-grid{grid-template-columns:repeat(2,1fr)}.wfm-stack-grid{grid-template-columns:repeat(2,1fr)}.wfm-eng-grid{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}.wfm-eng-card.feat{transform:none}.wfm-eng-card.feat.wfm-ev{transform:none}.wfm-eng-card.feat.wfm-ev:hover{transform:translateY(-4px)}.wfm-why-grid{grid-template-columns:repeat(2,1fr)}.wfm-tgrid{grid-template-columns:repeat(2,1fr)}.wfm-contact-grid{grid-template-columns:1fr}.wfm-cmp-table{font-size:13px}}
-          @media(max-width:768px){.wfm-svc-section,.wfm-stack-section,.wfm-eng-section,.wfm-process-section,.wfm-testi,.wfm-why-section,.wfm-faq,.wfm-related,.wfm-what-section,.wfm-cmp-section{padding:52px 20px}.wfm-contact{padding:44px 20px}.wfm-s-title{font-size:26px;letter-spacing:-.4px}.wfm-s-eyebrow{font-size:10px}.wfm-s-desc{font-size:14px}.wfm-ctitle{font-size:26px}.wfm-faq h2{font-size:26px}.wfm-faq-sub{font-size:13px}.wfm-svc-grid{grid-template-columns:1fr}.wfm-stack-grid{grid-template-columns:repeat(2,1fr);gap:12px}.wfm-eng-grid{max-width:100%}.wfm-why-grid{grid-template-columns:repeat(2,1fr);gap:12px}.wfm-tgrid{grid-template-columns:1fr;gap:16px}.wfm-what-inner{grid-template-columns:1fr;gap:28px}.wfm-what-text h2{font-size:24px}.wfm-what-text p{font-size:14px}.wfm-why-highlight{padding:20px 20px 20px 24px;margin-top:28px}.wfm-why-highlight h3{font-size:17px}.wfm-why-highlight p{font-size:14px}.wfm-cmp-section .wfm-inner{overflow-x:auto;-webkit-overflow-scrolling:touch;width:100%}.wfm-cmp-table{min-width:540px;font-size:12px}.wfm-cmp-table th,.wfm-cmp-table td{padding:10px 12px}.wfm-pstep-title{font-size:17px}.wfm-pstep-desc{font-size:14px}.wfm-frow{grid-template-columns:1fr}.wfm-form-box{padding:24px 20px}.wfm-contact-grid{gap:28px}.wfm-fq{padding:16px 16px 16px 50px}.wfm-fq-badge{left:12px;width:24px;height:24px;font-size:10px}.wfm-fq span{font-size:14px}.wfm-fanswer{padding:0 16px 16px 50px;font-size:13px}.wfm-rtag{padding:8px 14px;font-size:13px}}
-          @media(max-width:480px){.wfm-s-title{font-size:20px}.wfm-faq h2{font-size:20px}.wfm-ctitle{font-size:20px}.wfm-what-text h2{font-size:20px}.wfm-stack-grid{grid-template-columns:1fr}.wfm-why-grid{grid-template-columns:1fr}.wfm-svc-card h3{font-size:15px}.wfm-svc-card p{font-size:12px}.wfm-eng-card{padding:24px 20px}.wfm-pstep{grid-template-columns:48px 1fr;gap:0 14px}.wfm-pstep-circle{width:44px;height:44px;font-size:16px}.wfm-pstep-title{font-size:16px}.wfm-pstep-desc{font-size:13px}.wfm-fq{padding:14px 14px 14px 46px}.wfm-fq-badge{left:10px;width:22px;height:22px;font-size:9px}.wfm-fq span{font-size:13px}.wfm-fanswer{padding:0 14px 14px 46px;font-size:12px}.wfm-form-box{padding:18px 14px}.wfm-form-box h3{font-size:18px}.wfm-wcard h3{font-size:13px}.wfm-wcard p{font-size:12px}}
+          @media(max-width:1280px){.wfm-stack-grid{grid-template-columns:repeat(3,1fr)}}
+          @media(max-width:1024px){.wfm-page{overflow-x:hidden}.wfm-s-title{font-size:34px;letter-spacing:-.5px}.wfm-faq h2{font-size:34px}.wfm-ctitle{font-size:34px}.wfm-what-text h2{font-size:30px}.wfm-svc-grid{grid-template-columns:repeat(2,1fr)}.wfm-stack-grid{grid-template-columns:repeat(2,1fr)}.wfm-eng-grid{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}.wfm-eng-card.feat{transform:none}.wfm-eng-card.feat.wfm-ev{transform:none}.wfm-eng-card.feat.wfm-ev:hover{transform:translateY(-4px)}.wfm-why-header{grid-template-columns:1fr;gap:20px}.wfm-why-heading{font-size:30px}.wfm-why-grid{grid-template-columns:repeat(2,1fr)}.wfm-tgrid{grid-template-columns:repeat(2,1fr)}.wfm-contact-grid{grid-template-columns:1fr}.wfm-cmp-table{font-size:13px}}
+          @media(max-width:768px){.wfm-svc-section,.wfm-stack-section,.wfm-eng-section,.wfm-process-section,.wfm-testi,.wfm-why-section,.wfm-faq,.wfm-related,.wfm-what-section,.wfm-cmp-section{padding:52px 20px}.wfm-contact{padding:44px 20px}.wfm-s-title{font-size:26px;letter-spacing:-.4px}.wfm-s-eyebrow{font-size:10px}.wfm-s-desc{font-size:14px}.wfm-ctitle{font-size:26px}.wfm-faq h2{font-size:26px}.wfm-faq-sub{font-size:13px}.wfm-svc-grid{grid-template-columns:1fr}.wfm-stack-grid{grid-template-columns:repeat(2,1fr);gap:12px}.wfm-eng-grid{max-width:100%}.wfm-why-heading{font-size:24px}.wfm-why-lede{font-size:15px}.wfm-why-grid{grid-template-columns:repeat(2,1fr);gap:24px 16px}.wfm-tgrid{grid-template-columns:1fr;gap:16px}.wfm-what-inner{grid-template-columns:1fr;gap:28px}.wfm-what-text h2{font-size:24px}.wfm-what-text p{font-size:14px}.wfm-cmp-section .wfm-inner{overflow-x:auto;-webkit-overflow-scrolling:touch;width:100%}.wfm-cmp-table{min-width:540px;font-size:12px}.wfm-cmp-table th,.wfm-cmp-table td{padding:10px 12px}.wfm-pstep-title{font-size:17px}.wfm-pstep-desc{font-size:14px}.wfm-frow{grid-template-columns:1fr}.wfm-form-box{padding:24px 20px}.wfm-contact-grid{gap:28px}.wfm-fq{padding:16px 16px 16px 50px}.wfm-fq-badge{left:12px;width:24px;height:24px;font-size:10px}.wfm-fq span{font-size:14px}.wfm-fanswer{padding:0 16px 16px 50px;font-size:13px}.wfm-rtag{padding:8px 14px;font-size:13px}}
+          @media(max-width:480px){.wfm-s-title{font-size:20px}.wfm-faq h2{font-size:20px}.wfm-ctitle{font-size:20px}.wfm-what-text h2{font-size:20px}.wfm-stack-grid{grid-template-columns:1fr}.wfm-why-heading{font-size:21px}.wfm-why-grid{grid-template-columns:1fr;gap:24px}.wfm-svc-card h3{font-size:15px}.wfm-svc-card p{font-size:12px}.wfm-eng-card{padding:24px 20px}.wfm-pstep{grid-template-columns:48px 1fr;gap:0 14px}.wfm-pstep-circle{width:44px;height:44px;font-size:16px}.wfm-pstep-title{font-size:16px}.wfm-pstep-desc{font-size:13px}.wfm-fq{padding:14px 14px 14px 46px}.wfm-fq-badge{left:10px;width:22px;height:22px;font-size:9px}.wfm-fq span{font-size:13px}.wfm-fanswer{padding:0 14px 14px 46px;font-size:12px}.wfm-form-box{padding:18px 14px}.wfm-form-box h3{font-size:18px}.wfm-wcard h3{font-size:15px}.wfm-wcard p{font-size:13px}}
           @media(max-width:360px){.wfm-s-title{font-size:18px}.wfm-faq h2{font-size:18px}.wfm-ctitle{font-size:18px}.wfm-pstep{grid-template-columns:44px 1fr;gap:0 10px}.wfm-pstep-circle{width:40px;height:40px;font-size:14px}}
           @media(max-width:1024px){.wfm-orb{display:none}}
-          @media(max-width:1024px){.wfm-svc-card,.wfm-stack-card,.wfm-eng-card,.wfm-pstep-circle,.wfm-tcard,.wfm-wcard,.wfm-contact,.wfm-cbenefits,.wfm-form-box,.wfm-submit,.wfm-fitem,.wfm-related,.wfm-why-highlight{backdrop-filter:none !important;-webkit-backdrop-filter:none !important}}
+          @media(max-width:1024px){.wfm-svc-card,.wfm-stack-card,.wfm-eng-card,.wfm-pstep-circle,.wfm-tcard,.wfm-wcard,.wfm-contact,.wfm-cbenefits,.wfm-form-box,.wfm-submit,.wfm-fitem,.wfm-related{backdrop-filter:none !important;-webkit-backdrop-filter:none !important}}
           @media(max-width:768px){.wfm-page{background:linear-gradient(160deg,#dbeafe 0%,#e8f0fb 100%) !important}.wfm-svc-card,.wfm-stack-card,.wfm-eng-card,.wfm-tcard,.wfm-wcard,.wfm-fitem{background:rgba(255,255,255,.95);box-shadow:0 2px 8px rgba(15,52,96,.08)}.wfm-form-box{background:rgba(255,255,255,.97)}.wfm-cbenefits{background:rgba(255,255,255,.94)}.wfm-s-reveal,.wfm-svc-card,.wfm-stack-card,.wfm-eng-card,.wfm-tcard,.wfm-wcard,.wfm-pstep{opacity:1 !important;transform:none !important;transition:none !important}}
           @media(prefers-reduced-motion:reduce){.wfm-s-reveal,.wfm-svc-card,.wfm-stack-card,.wfm-eng-card,.wfm-tcard,.wfm-wcard,.wfm-pstep{opacity:1 !important;transform:none !important;transition:none !important}}
         `}
@@ -498,6 +533,32 @@ export default function WebflowMaintenanceServices() {
             { label: 'Client Retention', value: '96', suffix: '%' },
           ]}
         />
+
+        <section className="wfm-svc-section" aria-labelledby="wfm-svc-heading">
+          <div className="wfm-inner">
+            <div className={`wfm-s-reveal${visibleSections.has('svc') ? ' wfm-revealed' : ''}`} ref={el => { sectionRefs.current['svc'] = el; }}>
+              <span className="wfm-s-eyebrow">What Do We Do In Webflow Maintenance?</span>
+              <h2 id="wfm-svc-heading" className="wfm-s-title">What Our Webflow Maintenance Covers</h2>
+              <p className="wfm-s-desc" style={{ maxWidth: 720 }}>From content updates and design enhancements, through CMS management, custom code maintenance, and 3rd-party integrations, to performance monitoring and Webflow platform compatibility.</p>
+            </div>
+            <div className="wfm-svc-grid" ref={svcGridRef}>
+              {visibleServices.map((s, i) => (
+                <div key={s.n} className={`wfm-svc-card${s.feat ? ' feat' : ''}${visibleSvcCards.includes(i) ? ' wfm-cv' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}>
+                  <span className="wfm-svc-num">{s.n}</span>
+                  <h3>{s.title}</h3>
+                  <p>{s.desc}</p>
+                </div>
+              ))}
+            </div>
+            {SERVICES.length > 6 && (
+              <div className="wfm-svc-more">
+                <button className="wfm-btn-more" onClick={() => setShowAllSvc(p => !p)}>
+                  {showAllSvc ? 'Show fewer services ↑' : `Show all ${SERVICES.length} services ↓`}
+                </button>
+              </div>
+            )}
+          </div>
+        </section>
 
         <section className="wfm-what-section" aria-labelledby="wfm-what-heading">
           <div className="wfm-what-inner">
@@ -531,36 +592,6 @@ export default function WebflowMaintenanceServices() {
                 </div>
               ))}
             </div>
-          </div>
-          <div className="wfm-why-highlight">
-            <h3>Webflow Maintenance Is Different From WordPress Maintenance</h3>
-            <p>Webflow hosts and secures its own core platform, so there is no plugin-vulnerability or core-patching cycle to manage. That does not mean a Webflow site runs itself indefinitely - CMS content grows, custom code and embeds accumulate, third-party integrations change on their own schedules, and every change carries some risk of a regression reaching your live site without a staging-first process in place.</p>
-          </div>
-        </section>
-
-        <section className="wfm-svc-section" aria-labelledby="wfm-svc-heading">
-          <div className="wfm-inner">
-            <div className={`wfm-s-reveal${visibleSections.has('svc') ? ' wfm-revealed' : ''}`} ref={el => { sectionRefs.current['svc'] = el; }}>
-              <span className="wfm-s-eyebrow">Webflow Maintenance Services</span>
-              <h2 id="wfm-svc-heading" className="wfm-s-title">What Our Webflow Maintenance Covers</h2>
-              <p className="wfm-s-desc" style={{ maxWidth: 720 }}>From CMS Collection management and staging-first publishing, through custom code and integration audits, uptime and performance monitoring, bug fixes, and monthly developer hours.</p>
-            </div>
-            <div className="wfm-svc-grid" ref={svcGridRef}>
-              {visibleServices.map((s, i) => (
-                <div key={s.n} className={`wfm-svc-card${s.feat ? ' feat' : ''}${visibleSvcCards.includes(i) ? ' wfm-cv' : ''}`} style={{ transitionDelay: `${i * 55}ms` }}>
-                  <span className="wfm-svc-num">{s.n}</span>
-                  <h3>{s.title}</h3>
-                  <p>{s.desc}</p>
-                </div>
-              ))}
-            </div>
-            {SERVICES.length > 6 && (
-              <div className="wfm-svc-more">
-                <button className="wfm-btn-more" onClick={() => setShowAllSvc(p => !p)}>
-                  {showAllSvc ? 'Show fewer services ↑' : `Show all ${SERVICES.length} services ↓`}
-                </button>
-              </div>
-            )}
           </div>
         </section>
 
@@ -703,15 +734,21 @@ export default function WebflowMaintenanceServices() {
         <section className="wfm-why-section" aria-labelledby="wfm-wy-heading">
           <div className="wfm-inner">
             <div className={`wfm-s-reveal${visibleSections.has('wy') ? ' wfm-revealed' : ''}`} ref={el => { sectionRefs.current['wy'] = el; }}>
-              <span className="wfm-s-eyebrow">Why 1Solutions</span>
-              <h2 id="wfm-wy-heading" className="wfm-s-title">Why Choose Us for Webflow Maintenance</h2>
-              <p className="wfm-s-desc" style={{ maxWidth: 680 }}>We build Webflow sites, not just patch them - staging-first update workflow, integration monitoring beyond basic uptime, transparent monthly reporting, and rolling monthly contracts with no lock-in.</p>
+              <div className="wfm-why-badge"><span className="wfm-why-dot" />Why Choose Us</div>
+              <div className="wfm-why-header">
+                <h2 id="wfm-wy-heading" className="wfm-why-heading">Why Companies Pick 1Solutions for Webflow Maintenance</h2>
+                <p className="wfm-why-lede">Our Webflow maintenance agency delivers expert support, transparent pricing, and fast turnaround - with experienced developers handling everything from CMS updates to SEO and integrations.</p>
+              </div>
             </div>
+            <div className="wfm-why-divider" />
             <div className="wfm-why-grid" ref={whyGridRef}>
               {WHY_CARDS.map((c, i) => (
                 <div key={i} className={`wfm-wcard${visibleWhyCards.includes(i) ? ' wfm-wv' : ''}`} style={{ transitionDelay: `${i * 60}ms` }}>
-                  <div className="wfm-wcard-dot" />
+                  <div className="wfm-wcard-icon" style={{ background: c.iconBg }}>
+                    <svg viewBox="0 0 24 24"><path d={c.path} /></svg>
+                  </div>
                   <h3>{c.title}</h3>
+                  <div className="wfm-wcard-rule" />
                   <p>{c.desc}</p>
                 </div>
               ))}
