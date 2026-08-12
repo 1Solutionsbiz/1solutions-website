@@ -99,12 +99,10 @@ const PLANS = [
 ];
 
 const PROCESS = [
-  { step: '01', title: 'AI Visibility Audit for Your Delhi Business', desc: 'We test your brand and content across major AI engines for the queries your Delhi customers actually use. You get a written report showing where you appear, where competitors appear instead, and what content types are being cited in your niche.' },
-  { step: '02', title: 'Citation Gap & Competitor Analysis', desc: 'We map your content against the questions and topics where AI engines are citing Delhi competitors - identifying the highest-value gaps to close first, ranked by business impact.' },
-  { step: '03', title: 'Content Optimisation for AI Citation', desc: 'Existing pages are restructured for citation-friendliness - clearer claims, better entity definitions, authoritative sourcing, and the E-E-A-T signals AI models reward.' },
-  { step: '04', title: 'Schema & Technical Implementation', desc: 'FAQ, HowTo, Article, and Organization schema is implemented across priority pages, giving AI crawlers a structured, unambiguous read on your content.' },
-  { step: '05', title: 'Authority & Local Signal Building', desc: 'We build the third-party credibility signals AI engines use to evaluate source authority - editorial coverage, expert citations, and local Delhi NCR signals that reinforce both GEO and local search.' },
-  { step: '06', title: 'Monitor & Report Monthly', desc: 'Ongoing AI visibility reporting - citation frequency across platforms, brand mention tracking, and AI presence compared against your traditional SEO metrics, delivered on your plan\'s reporting cadence.' },
+  { step: '01', title: 'AI Visibility Audit & Citation Gap Analysis', desc: 'We test your brand and content across major AI engines for the queries your Delhi customers actually use, then map your content against the topics where AI engines are citing competitors instead - a written report showing where you appear, where the gaps are, and what content types get cited in your niche.' },
+  { step: '02', title: 'Content Optimisation for AI Citation', desc: 'Existing pages are restructured for citation-friendliness - clearer claims, better entity definitions, authoritative sourcing, and the E-E-A-T signals AI models reward.' },
+  { step: '03', title: 'Schema, Technical & Authority Implementation', desc: 'FAQ, HowTo, Article, and Organization schema is implemented across priority pages, alongside the third-party credibility signals AI engines use to evaluate source authority - editorial coverage, expert citations, and local Delhi NCR signals that reinforce both GEO and local search.' },
+  { step: '04', title: 'Monitor & Report Monthly', desc: 'Ongoing AI visibility reporting - citation frequency across platforms, brand mention tracking, and AI presence compared against your traditional SEO metrics, delivered on your plan\'s reporting cadence.' },
 ];
 
 const TESTIMONIALS = [
@@ -416,8 +414,8 @@ export default function GenerativeSearchOptimizationServicesGeoDelhi() {
 
           /* Process */
           .gsd-process-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-          .gsd-process-image-col{position:sticky;top:100px}
-          .gsd-process-image-col img{width:100%;border-radius:20px;box-shadow:0 24px 72px rgba(79,70,229,.16);display:block}
+          .gsd-process-image-col{position:sticky;top:100px;display:flex;justify-content:center}
+          .gsd-process-image-col img{max-width:100%;width:576px;height:auto;border-radius:20px;box-shadow:0 24px 72px rgba(79,70,229,.16);display:block}
           .gsd-steps{display:flex;flex-direction:column;margin-top:0}
           .gsd-step{display:grid;grid-template-columns:80px 1fr;gap:24px;align-items:flex-start;padding:28px 0;border-bottom:1px solid rgba(79,70,229,0.10);opacity:0;transform:translateX(-20px);transition:opacity .45s ease,transform .45s ease}
           .gsd-step:last-child{border-bottom:none}.gsd-step.vis{opacity:1;transform:translateX(0)}
@@ -682,7 +680,7 @@ export default function GenerativeSearchOptimizationServicesGeoDelhi() {
             </div>
             <div className="gsd-process-image-col">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/generative-search-optimization-services-geo-delhi.jpg" alt="1Solutions Generative Search Optimization (GEO) Services in Delhi NCR" />
+              <img src="/images/generative-search-optimization-services-geo-delhi.jpg" alt="1Solutions Generative Search Optimization (GEO) Services in Delhi NCR" width="576" height="720" />
             </div>
           </div>
         </section>
