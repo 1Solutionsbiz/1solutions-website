@@ -141,12 +141,11 @@ const ENGAGEMENT_MODELS = [
 ];
 
 const PROCESS_STEPS = [
-  { num: '01', title: 'Webflow Site Audit', desc: 'We start with a full audit: CMS Collection structure, custom code and embed inventory, connected integrations, staging setup status, Core Web Vitals baseline, broken link count, and CMS editor access review. You receive a written audit report before the retainer begins.' },
-  { num: '02', title: 'Onboarding & Staging Setup', desc: 'Secure access handover to your Webflow workspace, connected integrations, domain registrar, and analytics. We confirm or set up a staging domain and our monitoring tools (uptime, Core Web Vitals, form testing) - all without touching your live site.' },
-  { num: '03', title: 'Immediate Priority Fixes', desc: 'Critical issues found in the audit are resolved first: broken forms or integrations, orphaned CMS entries causing 404s, missing redirects, and any live-site issues found during the initial review - resolved before the regular monthly cycle begins.' },
-  { num: '04', title: 'Monthly Content & Update Cycle', desc: 'Each month: CMS content updates and design changes are made on staging first, reviewed for visual and functional regressions, then published to production. Webflow platform updates are checked against your custom code and Interactions for compatibility.' },
-  { num: '05', title: 'Incident Response & Support', desc: 'Continuous uptime monitoring means outages are caught immediately. Broken forms, failed integrations, and Collection binding errors are caught on staging before they reach production. When incidents do occur, we respond within your plan SLA and follow up with a written report.' },
-  { num: '06', title: 'Monthly Report & Dev Hour Usage', desc: 'A detailed monthly report covering all changes published, uptime statistics, Core Web Vitals trend, broken links repaired, integration health, developer hours used and remaining, and recommendations. Growth and Enterprise clients also get a monthly account manager call.' },
+  { num: '01', title: 'Onboarding & Staging Setup', desc: 'Secure access handover to your Webflow workspace, connected integrations, domain registrar, and analytics. We confirm or set up a staging domain and our monitoring tools (uptime, Core Web Vitals, form testing) - all without touching your live site.' },
+  { num: '02', title: 'Immediate Priority Fixes', desc: 'Critical issues found in the audit are resolved first: broken forms or integrations, orphaned CMS entries causing 404s, missing redirects, and any live-site issues found during the initial review - resolved before the regular monthly cycle begins.' },
+  { num: '03', title: 'Monthly Content & Update Cycle', desc: 'Each month: CMS content updates and design changes are made on staging first, reviewed for visual and functional regressions, then published to production. Webflow platform updates are checked against your custom code and Interactions for compatibility.' },
+  { num: '04', title: 'Incident Response & Support', desc: 'Continuous uptime monitoring means outages are caught immediately. Broken forms, failed integrations, and Collection binding errors are caught on staging before they reach production. When incidents do occur, we respond within your plan SLA and follow up with a written report.' },
+  { num: '05', title: 'Monthly Report & Dev Hour Usage', desc: 'A detailed monthly report covering all changes published, uptime statistics, Core Web Vitals trend, broken links repaired, integration health, developer hours used and remaining, and recommendations. Growth and Enterprise clients also get a monthly account manager call.' },
 ];
 
 const TESTIMONIALS = [
@@ -708,7 +707,6 @@ export default function WebflowMaintenanceServices() {
               <div className={`wfm-s-reveal${visibleSections.has('proc') ? ' wfm-revealed' : ''}`} ref={el => { sectionRefs.current['proc'] = el; }}>
                 <span className="wfm-s-eyebrow">How We Maintain Your Webflow Site</span>
                 <h2 id="wfm-proc-heading" className="wfm-s-title">Our Webflow Maintenance Process</h2>
-                <p className="wfm-s-desc">Starting with a Webflow site audit, through immediate priority fixes, a structured monthly update cycle with staging review, monitoring, incident response, and a detailed monthly report.</p>
               </div>
               {PROCESS_STEPS.map((step, i) => (
                 <div key={step.num} className={`wfm-pstep${visibleSections.has('proc') ? ' wfm-pv' : ''}`} style={{ transitionDelay: `${i * 100}ms` }}>
