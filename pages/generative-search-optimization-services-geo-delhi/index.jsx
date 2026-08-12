@@ -124,12 +124,42 @@ const TESTIMONIALS = [
 const TESTIMONIALS_ROW2 = [TESTIMONIALS[1], TESTIMONIALS[2], TESTIMONIALS[0]];
 
 const WHY = [
-  { title: 'Delhi + AI-Search Dual Expertise', desc: 'We combine 15+ years of Delhi NCR SEO experience with early, hands-on GEO expertise - most Delhi agencies offer one or the other, not both integrated into a single strategy.' },
-  { title: 'Multi-Platform Approach', desc: 'GEO is not just Google. We optimise for citation across ChatGPT, Perplexity, Gemini, Bing Copilot, and emerging AI search engines simultaneously.' },
-  { title: 'SEO + GEO Combined', desc: 'GEO works best alongside traditional SEO - not instead of it. We integrate both so your content performs across keyword searches and AI-generated answers.' },
-  { title: 'Measurable Metrics', desc: 'We track concrete AI visibility metrics - citation appearances, AI Overview presence, Perplexity source frequency - so progress is measurable, not theoretical.' },
-  { title: 'Content-First Execution', desc: 'GEO requires high-quality, authoritative content, not technical tricks. Our content specialists write citation-worthy material that earns AI mentions through genuine expertise.' },
-  { title: 'Transparent Monthly Reporting', desc: "Every report names the platforms tested, citations found, and competitors still winning - giving you a complete picture of your brand's AI search presence, not a vague summary." },
+  {
+    title: 'Delhi + AI-Search Dual Expertise',
+    desc: 'We combine 15+ years of Delhi NCR SEO experience with early, hands-on GEO expertise - most Delhi agencies offer one or the other, not both integrated into a single strategy.',
+    iconBg: 'linear-gradient(135deg,#a855f7 0%,#7c3aed 100%)',
+    path: 'M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z',
+  },
+  {
+    title: 'Multi-Platform Approach',
+    desc: 'GEO is not just Google. We optimise for citation across ChatGPT, Perplexity, Gemini, Bing Copilot, and emerging AI search engines simultaneously.',
+    iconBg: 'linear-gradient(135deg,#60a5fa 0%,#2563eb 100%)',
+    path: 'M12 3l9 5-9 5-9-5 9-5z M3 13l9 5 9-5',
+  },
+  {
+    title: 'SEO + GEO Combined',
+    desc: 'GEO works best alongside traditional SEO - not instead of it. We integrate both so your content performs across keyword searches and AI-generated answers.',
+    iconBg: 'linear-gradient(135deg,#2dd4bf 0%,#0F766E 100%)',
+    path: 'M3 17l6-6 4 4 8-8 M15 7h6v6',
+  },
+  {
+    title: 'Measurable Metrics',
+    desc: 'We track concrete AI visibility metrics - citation appearances, AI Overview presence, Perplexity source frequency - so progress is measurable, not theoretical.',
+    iconBg: 'linear-gradient(135deg,#f59e0b 0%,#D97706 100%)',
+    path: 'M22 12h-4l-3 9L9 3l-3 9H2',
+  },
+  {
+    title: 'Content-First Execution',
+    desc: 'GEO requires high-quality, authoritative content, not technical tricks. Our content specialists write citation-worthy material that earns AI mentions through genuine expertise.',
+    iconBg: 'linear-gradient(135deg,#1e3a5f 0%,#0F3460 100%)',
+    path: 'M12 20h9 M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z',
+  },
+  {
+    title: 'Transparent Monthly Reporting',
+    desc: "Every report names the platforms tested, citations found, and competitors still winning - giving you a complete picture of your brand's AI search presence, not a vague summary.",
+    iconBg: 'linear-gradient(135deg,#fb7185 0%,#e11d48 100%)',
+    path: 'M12 3l7 3v6c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z',
+  },
 ];
 
 const FAQS = [
@@ -315,12 +345,26 @@ export default function GenerativeSearchOptimizationServicesGeoDelhi() {
 
           .gsd-white{background:#fff;padding:80px 40px}
           .gsd-light{background:#f8fafd;padding:80px 40px}
-          .gsd-indigo{background:linear-gradient(135deg,#eef2ff 0%,#e8eeff 50%,#eef2ff 100%);padding:80px 40px}
+          .gsd-indigo{background:#fff;border-top:1px solid rgba(79,70,229,.06);padding:90px 40px}
           .gsd-sec-in{max-width:1280px;margin:0 auto}
           .gsd-sec-in-sm{max-width:900px;margin:0 auto}
           .gsd-ey2{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#4f46e5;margin-bottom:10px;display:block}
           .gsd-ttl{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-1px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
           .gsd-desc{font-size:15px;color:#4A6080;line-height:1.7;max-width:680px;margin-bottom:44px}
+
+          /* What Is GEO */
+          .gsd-what-section{background:#fff;padding:76px 40px 20px}
+          .gsd-what-inner{max-width:1300px;margin:0 auto}
+          .gsd-what-head{text-align:center;max-width:760px;margin:0 auto}
+          .gsd-what-head .gsd-desc{margin:0 auto}
+          .gsd-what-box{margin-top:36px;background:linear-gradient(135deg,#eef2ff 0%,#fff 60%,#f5f3ff 100%);border:1px solid rgba(79,70,229,.14);border-radius:24px;padding:44px 44px 40px;box-shadow:0 8px 40px rgba(79,70,229,.08)}
+          .gsd-what-intro{font-size:16px;color:#374151;line-height:1.8;margin:0 0 28px;padding-bottom:28px;border-bottom:1px solid rgba(79,70,229,.12)}
+          .gsd-what-intro strong{color:#4f46e5}
+          .gsd-what-aspects{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+          .gsd-what-aspect{background:rgba(255,255,255,.70);border:1px solid rgba(79,70,229,.12);border-radius:16px;padding:22px;transition:border-color .2s,transform .2s}
+          .gsd-what-aspect:hover{border-color:rgba(79,70,229,.35);transform:translateY(-3px)}
+          .gsd-what-aspect-t{font-weight:700;color:#4338CA;font-size:14px;margin-bottom:8px}
+          .gsd-what-aspect-d{font-size:13px;color:#4A6080;line-height:1.65}
 
           /* Services cards */
           .gsd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
@@ -405,12 +449,19 @@ export default function GenerativeSearchOptimizationServicesGeoDelhi() {
           .gsd-trole{font-size:12px;color:#6b7280}
 
           /* Why */
-          .gsd-why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
-          .gsd-wcard{background:linear-gradient(135deg,#eef2ff 0%,#fff 60%,#e0e7ff 100%);border:1px solid rgba(79,70,229,0.10);border-radius:16px;padding:28px;opacity:0;transform:translateY(16px);transition:opacity .4s ease,transform .4s ease}
-          .gsd-wcard.vis{opacity:1;transform:translateY(0)}.gsd-wcard:hover{border-color:rgba(79,70,229,0.22);box-shadow:0 8px 32px rgba(79,70,229,0.07)}
-          .gsd-dot{width:8px;height:8px;border-radius:50%;background:#4f46e5;margin-bottom:16px}
-          .gsd-wcard h3{font-size:1rem;font-weight:800;color:#0F1F40;margin-bottom:10px}
-          .gsd-wcard p{font-size:.88rem;color:#4A6080;line-height:1.7;margin:0}
+          .gsd-why-badge{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#7c3aed;background:rgba(168,85,247,.10);border:1px solid rgba(168,85,247,.24);border-radius:999px;padding:6px 16px 6px 12px;margin-bottom:20px}
+          .gsd-why-dot{width:8px;height:8px;border-radius:50%;background:#a855f7;flex-shrink:0}
+          .gsd-why-header{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+          .gsd-why-divider{height:1px;background:rgba(79,70,229,.12);margin:40px 0 0}
+          .gsd-why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px 40px;margin-top:44px}
+          .gsd-wcard{background:transparent;border:none;padding:0;opacity:0;transform:translateY(16px);transition:opacity .4s ease,transform .4s ease}
+          .gsd-wcard.vis{opacity:1;transform:translateY(0)}
+          .gsd-wcard.vis:hover .gsd-wcard-icon{transform:translateY(-3px)}
+          .gsd-wcard-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;box-shadow:0 8px 20px rgba(79,70,229,.18);transition:transform .3s cubic-bezier(0.22,1,.36,1)}
+          .gsd-wcard-icon svg{width:24px;height:24px;fill:#fff}
+          .gsd-wcard h3{font-size:17px;font-weight:700;color:#0F1F40;margin:0 0 14px;line-height:1.35}
+          .gsd-wcard-rule{height:1px;background:rgba(79,70,229,.12);margin:0 0 14px}
+          .gsd-wcard p{font-size:14px;color:#4A6080;line-height:1.7;margin:0}
 
           /* FAQ */
           .gsd-fitem{border-bottom:1px solid #e5e7eb}
@@ -510,6 +561,35 @@ export default function GenerativeSearchOptimizationServicesGeoDelhi() {
             { label: 'Years SEO Experience', value: '15', suffix: '+' },
           ]}
         />
+
+        {/* What Is GEO */}
+        <section className="gsd-what-section" aria-labelledby="gsd-what-heading">
+          <div className="gsd-what-inner">
+            <div className="gsd-what-head">
+              <span className="gsd-ey2">Understanding Generative Search Optimization</span>
+              <h2 id="gsd-what-heading" className="gsd-ttl">What Is Generative Search Optimization?</h2>
+              <p className="gsd-desc">GEO is the practice of optimising your content so AI engines cite it directly in their answers - a different discipline from ranking a blue link, and increasingly the difference between being found and being invisible.</p>
+            </div>
+            <div className="gsd-what-box">
+              <p className="gsd-what-intro"><strong>Generative Search Optimization (GEO)</strong> is the practice of structuring content so AI answer engines - Google AI Overviews, ChatGPT, Perplexity, Gemini - choose to cite it directly in their generated responses. Unlike traditional SEO, where the goal is a top-10 ranking a user has to click through to, GEO&apos;s goal is to become the source an AI system quotes or references inside its own answer. For a Delhi business, this means the same discipline as SEO - authoritative, well-structured, factually dense content - applied to a new set of engines that read and synthesise rather than just rank and list.</p>
+              <div className="gsd-what-aspects">
+                {[
+                  { t: 'AI Citations vs. Search Rankings', d: 'Being cited inside an AI-generated answer is a different outcome from ranking position 1 - GEO optimises specifically for the former.' },
+                  { t: 'Multi-Platform Coverage', d: 'ChatGPT, Perplexity, Gemini, and Google AI Overviews each weigh sources differently - GEO work has to account for all of them, not just one.' },
+                  { t: 'Structured, Citation-Ready Content', d: 'AI engines favour factually dense, clearly structured content with specific claims and named entities over vague marketing copy.' },
+                  { t: 'Schema & Entity Signals', d: 'FAQ, HowTo, and Organization schema give AI crawlers an unambiguous, structured read on what your content actually says.' },
+                  { t: 'GEO Works With SEO, Not Instead Of It', d: 'The strongest approach layers GEO on top of an existing SEO foundation - the two overlap far more than they compete.' },
+                  { t: 'Delhi-Specific AI Visibility', d: 'Local signals - Google Business Profile, Delhi NCR citations - reinforce AI visibility the same way they reinforce local search rankings.' },
+                ].map(a => (
+                  <div key={a.t} className="gsd-what-aspect">
+                    <div className="gsd-what-aspect-t">{a.t}</div>
+                    <div className="gsd-what-aspect-d">{a.d}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Services */}
         <section className="gsd-light">
@@ -644,14 +724,20 @@ export default function GenerativeSearchOptimizationServicesGeoDelhi() {
         {/* Why Us */}
         <section className="gsd-white">
           <div className="gsd-sec-in">
-            <span className="gsd-ey2">Why 1Solutions</span>
-            <h2 className="gsd-ttl">GEO Experts, Delhi-Based, SEO Foundation Included</h2>
-            <p className="gsd-desc">We integrate GEO with your existing SEO and local search strategy - not as a replacement, but as the natural evolution that keeps your Delhi business visible as search changes.</p>
+            <div className="gsd-why-badge"><span className="gsd-why-dot" />Why Choose Us</div>
+            <div className="gsd-why-header">
+              <h2 className="gsd-ttl" style={{ marginBottom: 0 }}>GEO Experts, Delhi-Based, SEO Foundation Included</h2>
+              <p className="gsd-desc" style={{ marginBottom: 0 }}>We integrate GEO with your existing SEO and local search strategy - not as a replacement, but as the natural evolution that keeps your Delhi business visible as search changes.</p>
+            </div>
+            <div className="gsd-why-divider" />
             <div className="gsd-why-grid" ref={whyRef}>
               {WHY.map((w, i) => (
                 <div key={w.title} className={`gsd-wcard${visWhy.includes(i) ? ' vis' : ''}`}>
-                  <div className="gsd-dot" />
+                  <div className="gsd-wcard-icon" style={{ background: w.iconBg }}>
+                    <svg viewBox="0 0 24 24"><path d={w.path} /></svg>
+                  </div>
                   <h3>{w.title}</h3>
+                  <div className="gsd-wcard-rule" />
                   <p>{w.desc}</p>
                 </div>
               ))}
