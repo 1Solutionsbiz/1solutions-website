@@ -80,6 +80,7 @@ const STATIC_PAGES = [
   { url: '/flutter-app-development-services',    priority: '0.8', changefreq: 'monthly' },
   { url: '/react-native-app-development',        priority: '0.8', changefreq: 'monthly' },
   { url: '/webflow-development-services',        priority: '0.7', changefreq: 'monthly' },
+  { url: '/webflow-maintenance-services',        priority: '0.7', changefreq: 'monthly' },
   { url: '/social-media-app-development-company', priority: '0.7', changefreq: 'monthly' },
   { url: '/erp-application-development-company', priority: '0.7', changefreq: 'monthly' },
   { url: '/crm-application-development-company', priority: '0.7', changefreq: 'monthly' },

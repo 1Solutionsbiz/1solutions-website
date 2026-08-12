@@ -28,6 +28,8 @@ const SERVICES_MENU = [
         links: [
           { label: 'WordPress Development', href: '/wordpress-development-company/' },
           { label: 'WordPress Support & Maintenance', href: '/wordpress-support-and-maintenance-services/' },
+          { label: 'Webflow Development', href: '/webflow-development-services/' },
+          { label: 'Webflow Maintenance', href: '/webflow-maintenance-services/' },
           { label: 'PHP Development', href: '/php-development-services/' },
         ],
       },
