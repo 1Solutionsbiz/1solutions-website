@@ -415,7 +415,10 @@ export default function GenerativeSearchOptimizationServicesGeoDelhi() {
           .gsd-trust svg{color:#16a34a;flex-shrink:0}
 
           /* Process */
-          .gsd-steps{display:flex;flex-direction:column;margin-top:44px}
+          .gsd-process-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+          .gsd-process-image-col{position:sticky;top:100px}
+          .gsd-process-image-col img{width:100%;border-radius:20px;box-shadow:0 24px 72px rgba(79,70,229,.16);display:block}
+          .gsd-steps{display:flex;flex-direction:column;margin-top:0}
           .gsd-step{display:grid;grid-template-columns:80px 1fr;gap:24px;align-items:flex-start;padding:28px 0;border-bottom:1px solid rgba(79,70,229,0.10);opacity:0;transform:translateX(-20px);transition:opacity .45s ease,transform .45s ease}
           .gsd-step:last-child{border-bottom:none}.gsd-step.vis{opacity:1;transform:translateX(0)}
           .gsd-snum{font-size:3rem;font-weight:900;color:rgba(79,70,229,0.15);line-height:1;letter-spacing:-2px}
@@ -529,6 +532,8 @@ export default function GenerativeSearchOptimizationServicesGeoDelhi() {
             .gsd-grid{grid-template-columns:repeat(2,1fr)}
             .gsd-why-grid{grid-template-columns:repeat(2,1fr)}
             .gsd-cg{grid-template-columns:1fr}
+            .gsd-process-inner{grid-template-columns:1fr}
+            .gsd-process-image-col{display:none}
           }
           @media(max-width:768px){
             .gsd-white,.gsd-light,.gsd-indigo,.gsd-plat,.gsd-contact,.gsd-related,.gsd-testi{padding:60px 24px}
@@ -662,18 +667,22 @@ export default function GenerativeSearchOptimizationServicesGeoDelhi() {
         </section>
 
         {/* Process */}
-        <section className="gsd-indigo">
-          <div className="gsd-sec-in-sm">
-            <span className="gsd-ey2">How We Work</span>
-            <h2 className="gsd-ttl">Our GEO Process for Delhi Businesses</h2>
-            <p className="gsd-desc">Audit AI visibility, identify citation gaps, optimise content, build authority - and track progress monthly across all major AI search platforms.</p>
+        <section className="gsd-indigo" id="gsd-process">
+          <div className="gsd-process-inner">
             <div className="gsd-steps">
+              <span className="gsd-ey2">How We Work</span>
+              <h2 className="gsd-ttl">Our GEO Process for Delhi Businesses</h2>
+              <p className="gsd-desc">Audit AI visibility, identify citation gaps, optimise content, build authority - and track progress monthly across all major AI search platforms.</p>
               {PROCESS.map((p, i) => (
                 <div key={p.step} ref={el => { stepRefs.current[i] = el; }} className={`gsd-step${visSteps.includes(i) ? ' vis' : ''}`}>
                   <div className="gsd-snum">{p.step}</div>
                   <div><h3>{p.title}</h3><p>{p.desc}</p></div>
                 </div>
               ))}
+            </div>
+            <div className="gsd-process-image-col">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/generative-search-optimization-services-geo-delhi.jpg" alt="1Solutions Generative Search Optimization (GEO) Services in Delhi NCR" />
             </div>
           </div>
         </section>
