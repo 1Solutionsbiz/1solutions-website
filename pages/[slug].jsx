@@ -44,6 +44,42 @@ const SLUG_META = {
   },
 };
 
+// Contextual service CTA shown after the article body on posts that already pull
+// meaningful organic traffic (Aug 2026 GSC review) but had no path to a service
+// page. Keyed by post slug -> the one service page it's most topically adjacent to.
+const SLUG_RELATED_SERVICE = {
+  'top-50-article-submission-sites-list-for-seo-growth': {
+    heading: 'Article submission is one piece of a link-building campaign',
+    body: 'Our team runs the full outreach, placement, and reporting cycle so you don’t have to do it site by site.',
+    href: '/link-building-packages/',
+    cta: 'See link building packages',
+  },
+  'best-100-ping-submission-sites-list-for-seo-growth': {
+    heading: 'Ping submission only covers indexing, not authority',
+    body: 'If you’d rather have a team handle link building and indexing end-to-end, see what’s included in our packages.',
+    href: '/link-building-packages/',
+    cta: 'See link building packages',
+  },
+  'free-social-bookmarking-sites-for-seo': {
+    heading: 'Bookmarking is one piece of a link-building campaign',
+    body: 'Our link building packages combine bookmarking, outreach, and guest posts into one managed monthly campaign.',
+    href: '/link-building-packages/',
+    cta: 'See link building packages',
+  },
+  '50-most-popular-business-listing-websites-in-canada': {
+    heading: 'Business listings are one part of local SEO',
+    body: 'Citations, Google Business Profile optimization, and local rankings — handled for you end to end.',
+    href: '/local-seo-packages/',
+    cta: 'See local SEO packages',
+  },
+  'top-100-free-business-listing-directories-in-the-usa': {
+    heading: 'Business listings are one part of local SEO',
+    body: 'Citations, Google Business Profile optimization, and local rankings — handled for you end to end.',
+    href: '/local-seo-packages/',
+    cta: 'See local SEO packages',
+  },
+};
+
 // ── CATEGORY PAGE COMPONENT ──────────────────────────────────────────────────
 function CategoryPage({ category, posts, pageInfo, allCategories, currentAfter, totalPosts }) {
   const color   = getCategoryColor(category.slug);
@@ -379,6 +415,19 @@ function SinglePost({ post, relatedPosts, ogImageUrl }) {
               ref={contentRef}
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
+
+            {/* Contextual service CTA */}
+            {SLUG_RELATED_SERVICE[post.slug] && (
+              <div className="inline-service-cta">
+                <div className="inline-service-cta-text">
+                  <h4>{SLUG_RELATED_SERVICE[post.slug].heading}</h4>
+                  <p>{SLUG_RELATED_SERVICE[post.slug].body}</p>
+                </div>
+                <Link href={SLUG_RELATED_SERVICE[post.slug].href} className="inline-service-cta-btn">
+                  {SLUG_RELATED_SERVICE[post.slug].cta} →
+                </Link>
+              </div>
+            )}
 
             {/* Tags */}
             {post.tags?.nodes?.length > 0 && (
