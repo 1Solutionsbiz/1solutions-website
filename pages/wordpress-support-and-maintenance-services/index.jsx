@@ -310,14 +310,14 @@ export default function WordPressMaintenance() {
   return (
     <>
       <Head>
-        <title>WordPress Support & Maintenance Services | 1Solutions</title>
-        <meta name="description" content="WordPress maintenance & support — staging-first updates, security hardening, malware removal, daily backups & WooCommerce support. 150+ sites since 2010." />
+        <title>WordPress Maintenance & Support from $99/mo | 1Solutions</title>
+        <meta name="description" content="WordPress maintenance and support — 48-hour security patches, daily backups, 24/7 monitoring & staging-first updates. Plans from $99/mo, no lock-in." />
         <link rel="canonical" href="https://www.1solutions.biz/wordpress-support-and-maintenance-services/" />
         <link rel="preconnect" href="https://www.google.com" crossOrigin="" />
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
         <link rel="dns-prefetch" href="https://www.google.com" />
-        <meta property="og:title" content="WordPress Maintenance Services | Support, Security & WooCommerce | 1Solutions" />
-        <meta property="og:description" content="Professional WordPress maintenance services - plugin and core updates tested on staging, security hardening, malware removal, WooCommerce support, daily backups, uptime monitoring, and 24/7 emergency support." />
+        <meta property="og:title" content="WordPress Maintenance & Support from $99/mo | 1Solutions" />
+        <meta property="og:description" content="WordPress maintenance and support — 48-hour security patches, daily backups, 24/7 monitoring & staging-first updates. Plans from $99/mo, no lock-in." />
         <meta property="og:url" content="https://www.1solutions.biz/wordpress-support-and-maintenance-services/" />
         <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-wordpress-support-and-maintenance-services.jpg" />
         <meta key="og-image-w" property="og:image:width" content="1200" />

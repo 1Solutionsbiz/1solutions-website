@@ -59,11 +59,11 @@ export default function GooglePenaltyRecoveryServices() {
   return (
     <>
       <Head>
-        <title>Google Penalty Recovery Services | 1Solutions</title>
-        <meta name="description" content="Google penalty recovery services for manual actions and algorithmic penalties. Toxic backlink audit, disavow file preparation, Reconsideration Request" />
+        <title>Google Penalty Recovery — Manual & Algorithmic | 1Solutions</title>
+        <meta name="description" content="Manual action & algorithmic penalty recovery — root-cause diagnosis, disavow prep & Reconsideration Requests. Honest timelines, no false guarantees." />
         <meta name="keywords" content="google penalty recovery services, google manual action recovery, google algorithmic penalty recovery, disavow file service, reconsideration request, google penalty removal" />
         <link rel="canonical" href="https://www.1solutions.biz/google-penalty-recovery-services/" />
-        <meta property="og:title" content="Google Penalty Recovery Services | 1Solutions" />
+        <meta property="og:title" content="Google Penalty Recovery — Manual & Algorithmic | 1Solutions" />
         <meta property="og:url" content="https://www.1solutions.biz/google-penalty-recovery-services/" />
         <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-google-penalty-recovery-services.jpg" />
         <meta key="og-image-w" property="og:image:width" content="1200" />

@@ -628,11 +628,11 @@ export default function LinkBuildingPackages() {
   return (
     <>
       <Head>
-        <title>Link Building Packages 2026 | AI+GEO & SEO Backlinks | 1Solutions</title>
-        <meta name="description" content="White-hat link building packages from $350/month. DR40–DR90 guest posts, niche edits, digital PR and AI+GEO citation building for Google AI Overviews, Perplexity & ChatGPT. Live tracked." />
+        <title>Link Building Packages from $350/mo | 1Solutions</title>
+        <meta name="description" content="White-hat link building packages with DR40–DR90 guest posts, niche edits & digital PR — every placement tracked live in your dashboard. From $350/month." />
         <link rel="canonical" href="https://www.1solutions.biz/link-building-packages/" />
-        <meta property="og:title" content="Link Building Packages 2026 - AI+GEO & SEO Backlinks | 1Solutions" />
-        <meta property="og:description" content="White-hat link building packages from $350/month. DR40–DR90 guest posts, niche edits, digital PR, and AI+GEO citation building. Live link tracker on every plan." />
+        <meta property="og:title" content="Link Building Packages from $350/mo | 1Solutions" />
+        <meta property="og:description" content="White-hat link building packages with DR40–DR90 guest posts, niche edits & digital PR — every placement tracked live in your dashboard. From $350/month." />
         <meta property="og:url" content="https://www.1solutions.biz/link-building-packages/" />
         <meta property="og:type" content="website" />
         <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-link-building-packages.jpg" />

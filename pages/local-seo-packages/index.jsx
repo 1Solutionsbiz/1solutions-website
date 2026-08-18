@@ -199,12 +199,12 @@ export default function LocalSeoPackages() {
   return (
     <>
       <Head>
-        <title>Local SEO Service Packages & Pricing Plans | 1Solutions</title>
-        <meta name="description" content="Local SEO service packages from $349/mo. GBP management, citation building, review management & local link building. No setup fee. Single & multi-location plans." />
+        <title>Local SEO Packages from $349/mo | 1Solutions</title>
+        <meta name="description" content="Local SEO packages with full GBP management, citation building & review management. No setup fee — single & multi-location plans from $349/mo." />
         <meta name="keywords" content="local seo packages, local seo service package, local seo pricing, local seo plans, google business profile management, local seo services pricing, monthly local seo, multi-location seo packages" />
         <link rel="canonical" href="https://www.1solutions.biz/local-seo-packages/" />
-        <meta property="og:title" content="Local SEO Service Packages & Pricing | 1Solutions" />
-        <meta property="og:description" content="Local SEO service packages from $349/mo. GBP management, citation building, review management & local link building." />
+        <meta property="og:title" content="Local SEO Packages from $349/mo | 1Solutions" />
+        <meta property="og:description" content="Local SEO packages with full GBP management, citation building & review management. No setup fee — single & multi-location plans from $349/mo." />
         <meta property="og:url" content="https://www.1solutions.biz/local-seo-packages/" />
         <meta key="og-image" property="og:image" content="https://www.1solutions.biz/images/og-local-seo-packages.jpg" />
         <meta key="og-image-w" property="og:image:width" content="1200" />
