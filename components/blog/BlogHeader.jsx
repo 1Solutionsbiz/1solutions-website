@@ -14,6 +14,7 @@ const SVC_PILLARS = [
         id: 'web-dev', label: 'Web Development',
         services: [
           { name: 'WordPress Development',   desc: 'Custom themes, plugins & CMS',       href: '/wordpress-development-company/' },
+          { name: 'Webflow Development',     desc: 'Visual, no-code Webflow builds',      href: '/webflow-development-services/' },
           { name: 'Laravel Development',     desc: 'Robust PHP Laravel solutions',        href: '/laravel-development-company/' },
           { name: 'Python Development',      desc: 'Django & Flask web applications',     href: '/python-development-services/' },
           { name: 'PHP Development',         desc: 'Bespoke PHP web applications',        href: '/php-development-services/' },
@@ -280,6 +281,7 @@ const SVC_PILLARS = [
         services: [
           { name: 'Website Maintenance',      desc: 'Ongoing support, updates & performance monitoring.',    href: '/website-support-maintenance-services/' },
           { name: 'WordPress Maintenance',    desc: 'Dedicated WordPress support & maintenance plans.',      href: '/wordpress-support-and-maintenance-services/' },
+          { name: 'Webflow Maintenance',      desc: 'Ongoing Webflow site care & updates.',                  href: '/webflow-maintenance-services/' },
         ],
       },
     ],
