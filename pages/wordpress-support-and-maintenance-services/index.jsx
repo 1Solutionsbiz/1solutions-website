@@ -486,23 +486,15 @@ export default function WordPressMaintenance() {
           .wm-rtag-green{background:rgba(17,65,113,.09);border-color:rgba(17,65,113,.28);color:#114171}
           .wm-rtag-rose{background:rgba(225,29,72,.09);border-color:rgba(225,29,72,.28);color:#9f1239}
           .wm-what-section{background:#EEF3FB;border-top:1px solid rgba(17,65,113,.08);border-bottom:1px solid rgba(17,65,113,.08);padding:72px 40px;position:relative;z-index:1}
-          .wm-what-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
-          .wm-what-text h2{font-size:38px;font-weight:900;line-height:1.15;letter-spacing:-.8px;background:linear-gradient(135deg,#4f46e5,#7c3aed,#a855f7,#ec4899,#3b82f6,#06b6d4,#4f46e5);background-size:300% 300%;animation:aurora-text 6s ease infinite;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:0 0 16px}
-          .wm-what-text p{font-size:15px;color:#4A6080;line-height:1.75;margin:0 0 20px}
-          .wm-what-text h3{font-size:20px;font-weight:700;color:#114171;margin:24px 0 12px}
-          .wm-what-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
-          .wm-what-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#374151;line-height:1.6}
-          .wm-what-list li::before{content:'✓';color:#114171;font-weight:800;flex-shrink:0;margin-top:1px}
-          .wm-risk-box{background:rgba(255,255,255,.70);border:1px solid rgba(17,65,113,.12);border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:16px}
-          .wm-risk-box h3{font-size:18px;font-weight:700;color:#114171;margin:0 0 4px}
-          .wm-risk-item{display:flex;gap:12px;align-items:flex-start}
-          .wm-risk-icon{width:36px;height:36px;border-radius:8px;background:rgba(217,119,6,.14);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-          .wm-risk-icon svg{width:18px;height:18px;fill:#D97706}
-          .wm-why-highlight{max-width:1300px;margin:44px auto 0;background:linear-gradient(135deg,rgba(254,243,199,.60) 0%,rgba(255,255,255,.80) 100%);border:1px solid rgba(217,119,6,.22);border-left:4px solid #D97706;border-radius:0 14px 14px 0;padding:28px 36px;backdrop-filter:blur(10px)}
-          .wm-why-highlight h3{font-size:20px;font-weight:800;color:#0F3460;margin:0 0 10px}
-          .wm-why-highlight p{font-size:15px;color:#4A6080;line-height:1.75;margin:0}
-          .wm-risk-item p{font-size:13px;color:#4A6080;line-height:1.6;margin:0}
-          .wm-risk-item strong{display:block;font-size:13px;color:#0F1F40;font-weight:600;margin-bottom:2px}
+          .wm-glass{background:linear-gradient(135deg,rgba(219,234,254,.55) 0%,rgba(255,255,255,.80) 60%,rgba(237,233,254,.40) 100%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.85);border-radius:20px;box-shadow:0 4px 24px rgba(15,52,96,.08),inset 0 1px 0 rgba(255,255,255,.95)}
+          .wm-def-box{padding:36px;max-width:1040px;margin:0 auto}
+          .wm-def-intro{font-size:1.02rem;color:#374151;line-height:1.8;margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid rgba(15,52,96,.08);text-align:left}
+          .wm-def-intro strong{color:#0F3460}
+          .wm-def-aspects{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+          .wm-def-aspect{background:rgba(255,255,255,.55);border:1px solid rgba(15,52,96,.10);border-radius:14px;padding:20px;text-align:left;transition:border-color .2s}
+          .wm-def-aspect:hover{border-color:rgba(217,119,6,.35)}
+          .wm-def-t{font-weight:700;color:#0F3460;font-size:14px;margin-bottom:6px}
+          .wm-def-d{font-size:13px;color:#4A6080;line-height:1.6}
           .wm-cmp-section{background:transparent;padding:72px 40px;position:relative;z-index:1}
           .wm-cmp-table{width:100%;border-collapse:collapse;margin-top:32px;font-size:14px}
           .wm-cmp-table th{background:#114171;color:#fff;padding:14px 18px;text-align:left;font-weight:700;font-size:13px}
@@ -514,12 +506,12 @@ export default function WordPressMaintenance() {
           .wm-cmp-check{color:#114171;font-weight:800}
           .wm-cmp-dash{color:#9ca3af}
           @media(max-width:1280px){.wm-stack-grid{grid-template-columns:repeat(3,1fr)}.wm-why-grid{grid-template-columns:repeat(3,1fr)}}
-          @media(max-width:1024px){.wm-page{overflow-x:hidden}.wm-s-title{font-size:34px;letter-spacing:-.5px}.wm-faq h2{font-size:34px}.wm-ctitle{font-size:34px}.wm-what-text h2{font-size:30px}.wm-svc-grid{grid-template-columns:repeat(2,1fr)}.wm-stack-grid{grid-template-columns:repeat(2,1fr)}.wm-eng-grid{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}.wm-eng-card.feat{transform:none}.wm-eng-card.feat.wm-ev{transform:none}.wm-eng-card.feat.wm-ev:hover{transform:translateY(-4px)}.wm-why-grid{grid-template-columns:repeat(2,1fr)}.wm-tgrid{grid-template-columns:repeat(2,1fr)}.wm-contact-grid{grid-template-columns:1fr}.wm-cmp-table{font-size:13px}}
-          @media(max-width:768px){.wm-svc-section,.wm-stack-section,.wm-eng-section,.wm-process-section,.wm-testi,.wm-why-section,.wm-faq,.wm-related,.wm-what-section,.wm-cmp-section{padding:52px 20px}.wm-contact{padding:44px 20px}.wm-s-title{font-size:26px;letter-spacing:-.4px}.wm-s-eyebrow{font-size:10px}.wm-s-desc{font-size:14px}.wm-ctitle{font-size:26px}.wm-faq h2{font-size:26px}.wm-faq-sub{font-size:13px}.wm-svc-grid{grid-template-columns:1fr}.wm-stack-grid{grid-template-columns:repeat(2,1fr);gap:12px}.wm-eng-grid{max-width:100%}.wm-why-grid{grid-template-columns:repeat(2,1fr);gap:12px}.wm-tgrid{grid-template-columns:1fr;gap:16px}.wm-what-inner{grid-template-columns:1fr;gap:28px}.wm-what-text h2{font-size:24px}.wm-what-text p{font-size:14px}.wm-why-highlight{padding:20px 20px 20px 24px;margin-top:28px}.wm-why-highlight h3{font-size:17px}.wm-why-highlight p{font-size:14px}.wm-cmp-section .wm-inner{overflow-x:auto;-webkit-overflow-scrolling:touch;width:100%}.wm-cmp-table{min-width:540px;font-size:12px}.wm-cmp-table th,.wm-cmp-table td{padding:10px 12px}.wm-pstep-title{font-size:17px}.wm-pstep-desc{font-size:14px}.wm-frow{grid-template-columns:1fr}.wm-form-box{padding:24px 20px}.wm-contact-grid{gap:28px}.wm-fq{padding:16px 16px 16px 50px}.wm-fq-badge{left:12px;width:24px;height:24px;font-size:10px}.wm-fq span{font-size:14px}.wm-fanswer{padding:0 16px 16px 50px;font-size:13px}.wm-rtag{padding:8px 14px;font-size:13px}}
-          @media(max-width:480px){.wm-s-title{font-size:20px}.wm-faq h2{font-size:20px}.wm-ctitle{font-size:20px}.wm-what-text h2{font-size:20px}.wm-stack-grid{grid-template-columns:1fr}.wm-why-grid{grid-template-columns:1fr}.wm-svc-card h3{font-size:15px}.wm-svc-card p{font-size:12px}.wm-eng-card{padding:24px 20px}.wm-pstep{grid-template-columns:48px 1fr;gap:0 14px}.wm-pstep-circle{width:44px;height:44px;font-size:16px}.wm-pstep-title{font-size:16px}.wm-pstep-desc{font-size:13px}.wm-fq{padding:14px 14px 14px 46px}.wm-fq-badge{left:10px;width:22px;height:22px;font-size:9px}.wm-fq span{font-size:13px}.wm-fanswer{padding:0 14px 14px 46px;font-size:12px}.wm-form-box{padding:18px 14px}.wm-form-box h3{font-size:18px}.wm-wcard h3{font-size:13px}.wm-wcard p{font-size:12px}}
+          @media(max-width:1024px){.wm-page{overflow-x:hidden}.wm-s-title{font-size:34px;letter-spacing:-.5px}.wm-faq h2{font-size:34px}.wm-ctitle{font-size:34px}.wm-svc-grid{grid-template-columns:repeat(2,1fr)}.wm-stack-grid{grid-template-columns:repeat(2,1fr)}.wm-eng-grid{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}.wm-eng-card.feat{transform:none}.wm-eng-card.feat.wm-ev{transform:none}.wm-eng-card.feat.wm-ev:hover{transform:translateY(-4px)}.wm-why-grid{grid-template-columns:repeat(2,1fr)}.wm-tgrid{grid-template-columns:repeat(2,1fr)}.wm-contact-grid{grid-template-columns:1fr}.wm-cmp-table{font-size:13px}}
+          @media(max-width:768px){.wm-svc-section,.wm-stack-section,.wm-eng-section,.wm-process-section,.wm-testi,.wm-why-section,.wm-faq,.wm-related,.wm-what-section,.wm-cmp-section{padding:52px 20px}.wm-contact{padding:44px 20px}.wm-s-title{font-size:26px;letter-spacing:-.4px}.wm-s-eyebrow{font-size:10px}.wm-s-desc{font-size:14px}.wm-ctitle{font-size:26px}.wm-faq h2{font-size:26px}.wm-faq-sub{font-size:13px}.wm-svc-grid{grid-template-columns:1fr}.wm-stack-grid{grid-template-columns:repeat(2,1fr);gap:12px}.wm-eng-grid{max-width:100%}.wm-why-grid{grid-template-columns:repeat(2,1fr);gap:12px}.wm-tgrid{grid-template-columns:1fr;gap:16px}.wm-def-aspects{grid-template-columns:1fr}.wm-def-box{padding:24px}.wm-cmp-section .wm-inner{overflow-x:auto;-webkit-overflow-scrolling:touch;width:100%}.wm-cmp-table{min-width:540px;font-size:12px}.wm-cmp-table th,.wm-cmp-table td{padding:10px 12px}.wm-pstep-title{font-size:17px}.wm-pstep-desc{font-size:14px}.wm-frow{grid-template-columns:1fr}.wm-form-box{padding:24px 20px}.wm-contact-grid{gap:28px}.wm-fq{padding:16px 16px 16px 50px}.wm-fq-badge{left:12px;width:24px;height:24px;font-size:10px}.wm-fq span{font-size:14px}.wm-fanswer{padding:0 16px 16px 50px;font-size:13px}.wm-rtag{padding:8px 14px;font-size:13px}}
+          @media(max-width:480px){.wm-s-title{font-size:20px}.wm-faq h2{font-size:20px}.wm-ctitle{font-size:20px}.wm-stack-grid{grid-template-columns:1fr}.wm-why-grid{grid-template-columns:1fr}.wm-svc-card h3{font-size:15px}.wm-svc-card p{font-size:12px}.wm-eng-card{padding:24px 20px}.wm-pstep{grid-template-columns:48px 1fr;gap:0 14px}.wm-pstep-circle{width:44px;height:44px;font-size:16px}.wm-pstep-title{font-size:16px}.wm-pstep-desc{font-size:13px}.wm-fq{padding:14px 14px 14px 46px}.wm-fq-badge{left:10px;width:22px;height:22px;font-size:9px}.wm-fq span{font-size:13px}.wm-fanswer{padding:0 14px 14px 46px;font-size:12px}.wm-form-box{padding:18px 14px}.wm-form-box h3{font-size:18px}.wm-wcard h3{font-size:13px}.wm-wcard p{font-size:12px}}
           @media(max-width:360px){.wm-s-title{font-size:18px}.wm-faq h2{font-size:18px}.wm-ctitle{font-size:18px}.wm-pstep{grid-template-columns:44px 1fr;gap:0 10px}.wm-pstep-circle{width:40px;height:40px;font-size:14px}}
           @media(max-width:1024px){.wm-orb{display:none}}
-          @media(max-width:1024px){.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-pstep-circle,.wm-tcard,.wm-wcard,.wm-contact,.wm-cbenefits,.wm-form-box,.wm-submit,.wm-fitem,.wm-related,.wm-why-highlight{backdrop-filter:none !important;-webkit-backdrop-filter:none !important}}
+          @media(max-width:1024px){.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-pstep-circle,.wm-tcard,.wm-wcard,.wm-contact,.wm-cbenefits,.wm-form-box,.wm-submit,.wm-fitem,.wm-related,.wm-glass{backdrop-filter:none !important;-webkit-backdrop-filter:none !important}}
           @media(max-width:768px){.wm-page{background:linear-gradient(160deg,#dbeafe 0%,#e8f0fb 100%) !important}.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-tcard,.wm-wcard,.wm-fitem{background:rgba(255,255,255,.95);box-shadow:0 2px 8px rgba(15,52,96,.08)}.wm-form-box{background:rgba(255,255,255,.97)}.wm-cbenefits{background:rgba(255,255,255,.94)}.wm-s-reveal,.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-tcard,.wm-wcard,.wm-pstep{opacity:1 !important;transform:none !important;transition:none !important}}
           @media(prefers-reduced-motion:reduce){.wm-s-reveal,.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-tcard,.wm-wcard,.wm-pstep{opacity:1 !important;transform:none !important;transition:none !important}}
         
@@ -548,42 +540,27 @@ export default function WordPressMaintenance() {
         />
 
         <section className="wm-what-section" aria-labelledby="wm-what-heading">
-          <div className="wm-what-inner">
-            <div className="wm-what-text">
-              <h2 id="wm-what-heading">What Is WordPress Website Maintenance?</h2>
-              <p>WordPress website maintenance is the ongoing process of keeping your WordPress site secure, updated, backed up, and performing well. WordPress powers 43% of all websites on the internet - and its popularity makes it the most targeted CMS by attackers. Outdated plugins and themes are responsible for the majority of WordPress hacks.</p>
-              <p>A managed WordPress maintenance service handles every recurring task so your team never has to think about updates, backups, or security scans:</p>
-              <ul className="wm-what-list">
-                <li>WordPress core and plugin security patches applied within 48 hours of disclosure</li>
-                <li>All updates tested on a private staging site before going to your live production site</li>
-                <li>Daily automated backups stored off-site, with monthly restore testing</li>
-                <li>24/7 uptime monitoring with immediate alerts on any downtime</li>
-                <li>Weekly malware scanning and WAF rule updates</li>
-                <li>Core Web Vitals and PageSpeed tracking - Google ranking signals</li>
-                <li>SSL certificate and domain expiry monitoring</li>
-                <li>Monthly developer hours for content updates and minor design changes</li>
-              </ul>
+          <div className="wm-inner" style={{ textAlign: 'center' }}>
+            <div className={`wm-s-reveal${visibleSections.has('def') ? ' wm-revealed' : ''}`} ref={el => { sectionRefs.current['def'] = el; }}>
+              <span className="wm-s-eyebrow">Understanding WordPress Maintenance</span>
+              <h2 id="wm-what-heading" className="wm-s-title">What Is WordPress Website Maintenance?</h2>
+              <p className="wm-s-desc" style={{ margin: '0 auto 32px', maxWidth: 640 }}>A plain-English explanation of what WordPress maintenance covers and why it matters for your site.</p>
             </div>
-            <div className="wm-risk-box">
-              <h3>What Happens Without WordPress Maintenance</h3>
-              {[
-                { title:'Security breaches', desc:'Outdated plugins and themes are the #1 attack vector for WordPress hacks. Malware, SEO spam, and phishing pages get injected into your site.', path:'M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z' },
-                { title:'Plugin conflicts and white screens', desc:'WordPress and PHP version upgrades change the environment. Untested plugin updates frequently cause fatal errors and white screens of death.', path:'M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z' },
-                { title:'SEO ranking drops', desc:'Broken links, declining Core Web Vitals scores, and crawl errors from unmonitored sites compound into measurable organic traffic loss over months.', path:'M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z' },
-                { title:'Data loss risk', desc:'Without daily off-site backups and restore testing, a server failure or post-hack recovery may result in permanent loss of site content and database.', path:'M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z' },
-                { title:'WooCommerce checkout failures', desc:'WooCommerce plugin updates can silently break payment gateways and checkout flows, costing hours of lost revenue before the issue is caught.', path:'M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96C5 16.1 6.1 17 7 17h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63H19c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0 0 23.45 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z' },
-                { title:'Emergency recovery costs', desc:'Ad-hoc emergency developer rates for hacked sites or broken updates cost far more than a monthly maintenance retainer over a year.', path:'M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z' },
-              ].map(({ title, desc, path }) => (
-                <div className="wm-risk-item" key={title}>
-                  <div className="wm-risk-icon"><svg viewBox="0 0 24 24"><path d={path} /></svg></div>
-                  <p><strong>{title}</strong> {desc}</p>
-                </div>
-              ))}
+            <div className="wm-glass wm-def-box">
+              <p className="wm-def-intro"><strong>WordPress website maintenance</strong> is the ongoing process of keeping your WordPress site secure, updated, backed up, and performing well. WordPress powers 43% of all websites on the internet - and its popularity makes it the most targeted CMS by attackers, with outdated plugins and themes responsible for the majority of WordPress hacks. A managed maintenance service handles every recurring task so your team never has to think about updates, backups, or security scans.</p>
+              <div className="wm-def-aspects">
+                {[
+                  { t: 'What a maintenance retainer covers', d: 'Core and plugin updates tested on staging before production, security hardening with WAF and malware monitoring, and daily off-site backups with 24/7 uptime and Core Web Vitals tracking - running continuously, every month.' },
+                  { t: 'How the maintenance cycle works', d: 'A full WordPress audit first, then a monthly cycle: updates tested on staging before going live, security patches applied within 48 hours of disclosure, and a written report covering everything done that month.' },
+                  { t: 'Why it matters', d: 'Outdated plugins and themes are the #1 WordPress attack vector, and unpatched vulnerabilities are often exploited within hours of disclosure. Emergency hack recovery costs far more than a predictable monthly retainer.' },
+                ].map(a => (
+                  <div key={a.t} className="wm-def-aspect">
+                    <div className="wm-def-t">{a.t}</div>
+                    <div className="wm-def-d">{a.d}</div>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-          <div className="wm-why-highlight">
-            <h3>Why WordPress Sites Need Regular Maintenance</h3>
-            <p>According to Sucuri&#39;s annual Hacked Website Report, the vast majority of compromised WordPress sites were running outdated software at the time of the attack. The window between a vulnerability being disclosed and mass exploitation beginning can be as short as a few hours, making prompt patching essential for any business website. Regular WordPress maintenance is not optional - it is the difference between a site that earns trust and one that becomes a liability.</p>
           </div>
         </section>
 
