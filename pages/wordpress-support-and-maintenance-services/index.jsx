@@ -394,21 +394,17 @@ export default function WordPressMaintenance() {
           .wm-eng-cta:hover{background:#D97706;color:#fff;border-color:#D97706}
           .wm-eng-card.feat .wm-eng-cta{background:#D97706;color:#fff;border-color:#D97706}
           .wm-eng-card.feat .wm-eng-cta:hover{background:#b45309;border-color:#b45309}
-          .wm-process-section{background:#f8fafd;border-top:1px solid rgba(15,52,96,.08);border-bottom:1px solid rgba(15,52,96,.08);padding:80px 40px;position:relative;z-index:1}
-          .wm-psteps{display:flex;flex-direction:column;margin-top:52px}
-          .wm-pstep{display:grid;grid-template-columns:56px 1fr;gap:0 20px;opacity:0;transform:translateY(48px);transition:opacity .65s cubic-bezier(0.22,1,.36,1),transform .65s cubic-bezier(0.22,1,.36,1)}
-          .wm-pstep.wm-pv{opacity:1;transform:translateY(0)}
-          .wm-pstep-l{display:flex;flex-direction:column;align-items:center}
-          .wm-pstep-circle{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.65);backdrop-filter:blur(8px);border:2px solid rgba(15,52,96,.18);display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:800;color:#0F3460;flex-shrink:0;transition:background .3s,border-color .3s}
-          .wm-pstep.wm-pv:hover .wm-pstep-circle{background:rgba(217,119,6,.15);border-color:#D97706;color:#D97706}
-          .wm-pstep-connector{flex:1;display:flex;flex-direction:column;align-items:center;padding:6px 0;min-height:42px}
-          .wm-pstep-connector::before{content:'';width:2px;flex:1;background:#0F3460;opacity:.22}
-          .wm-pstep-connector::after{content:'';border-left:6px solid transparent;border-right:6px solid transparent;border-top:8px solid #0F3460;opacity:.40}
-          .wm-pstep:last-child .wm-pstep-connector{display:none}
-          .wm-pstep-r{padding:4px 0 38px}
-          .wm-pstep:last-child .wm-pstep-r{padding-bottom:0}
-          .wm-pstep-title{font-size:20px;font-weight:700;color:#0F3460;margin:0 0 9px}
-          .wm-pstep-desc{font-size:15px;color:#4A6080;line-height:1.75;margin:0}
+          .wm-process-section{background:#fff;border-top:1px solid rgba(15,52,96,.06);padding:90px 40px;position:relative;z-index:1}
+          .wm-process-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+          .wm-process-steps{display:flex;flex-direction:column;gap:0}
+          .wm-pstep{display:grid;grid-template-columns:56px 1fr;gap:20px;align-items:flex-start;padding:28px 0;border-bottom:1px solid rgba(15,52,96,.06);opacity:0;transform:translateX(-20px);transition:opacity .45s ease,transform .45s ease}
+          .wm-pstep:last-child{border-bottom:none}
+          .wm-pstep.wm-pv{opacity:1;transform:translateX(0)}
+          .wm-pstep-num{font-size:2.8rem;font-weight:900;color:rgba(15,52,96,.12);line-height:1;letter-spacing:-2px}
+          .wm-pstep-body h3{font-size:1.05rem;font-weight:800;color:#0F1F40;margin:0 0 6px}
+          .wm-pstep-body p{font-size:.88rem;color:#4A6080;line-height:1.7;margin:0}
+          .wm-process-image-col{position:sticky;top:100px}
+          .wm-process-image-col img{width:100%;border-radius:20px;box-shadow:0 24px 72px rgba(15,52,96,.12)}
           .wm-testi{background:transparent;padding:80px 40px;position:relative;z-index:1}
           .wm-center-head{text-align:center;margin-bottom:48px}
           .wm-tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:44px}
@@ -506,12 +502,12 @@ export default function WordPressMaintenance() {
           .wm-cmp-check{color:#114171;font-weight:800}
           .wm-cmp-dash{color:#9ca3af}
           @media(max-width:1280px){.wm-stack-grid{grid-template-columns:repeat(3,1fr)}.wm-why-grid{grid-template-columns:repeat(3,1fr)}}
-          @media(max-width:1024px){.wm-page{overflow-x:hidden}.wm-s-title{font-size:34px;letter-spacing:-.5px}.wm-faq h2{font-size:34px}.wm-ctitle{font-size:34px}.wm-svc-grid{grid-template-columns:repeat(2,1fr)}.wm-stack-grid{grid-template-columns:repeat(2,1fr)}.wm-eng-grid{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}.wm-eng-card.feat{transform:none}.wm-eng-card.feat.wm-ev{transform:none}.wm-eng-card.feat.wm-ev:hover{transform:translateY(-4px)}.wm-why-grid{grid-template-columns:repeat(2,1fr)}.wm-tgrid{grid-template-columns:repeat(2,1fr)}.wm-contact-grid{grid-template-columns:1fr}.wm-cmp-table{font-size:13px}}
-          @media(max-width:768px){.wm-svc-section,.wm-stack-section,.wm-eng-section,.wm-process-section,.wm-testi,.wm-why-section,.wm-faq,.wm-related,.wm-what-section,.wm-cmp-section{padding:52px 20px}.wm-contact{padding:44px 20px}.wm-s-title{font-size:26px;letter-spacing:-.4px}.wm-s-eyebrow{font-size:10px}.wm-s-desc{font-size:14px}.wm-ctitle{font-size:26px}.wm-faq h2{font-size:26px}.wm-faq-sub{font-size:13px}.wm-svc-grid{grid-template-columns:1fr}.wm-stack-grid{grid-template-columns:repeat(2,1fr);gap:12px}.wm-eng-grid{max-width:100%}.wm-why-grid{grid-template-columns:repeat(2,1fr);gap:12px}.wm-tgrid{grid-template-columns:1fr;gap:16px}.wm-def-aspects{grid-template-columns:1fr}.wm-def-box{padding:24px}.wm-cmp-section .wm-inner{overflow-x:auto;-webkit-overflow-scrolling:touch;width:100%}.wm-cmp-table{min-width:540px;font-size:12px}.wm-cmp-table th,.wm-cmp-table td{padding:10px 12px}.wm-pstep-title{font-size:17px}.wm-pstep-desc{font-size:14px}.wm-frow{grid-template-columns:1fr}.wm-form-box{padding:24px 20px}.wm-contact-grid{gap:28px}.wm-fq{padding:16px 16px 16px 50px}.wm-fq-badge{left:12px;width:24px;height:24px;font-size:10px}.wm-fq span{font-size:14px}.wm-fanswer{padding:0 16px 16px 50px;font-size:13px}.wm-rtag{padding:8px 14px;font-size:13px}}
-          @media(max-width:480px){.wm-s-title{font-size:20px}.wm-faq h2{font-size:20px}.wm-ctitle{font-size:20px}.wm-stack-grid{grid-template-columns:1fr}.wm-why-grid{grid-template-columns:1fr}.wm-svc-card h3{font-size:15px}.wm-svc-card p{font-size:12px}.wm-eng-card{padding:24px 20px}.wm-pstep{grid-template-columns:48px 1fr;gap:0 14px}.wm-pstep-circle{width:44px;height:44px;font-size:16px}.wm-pstep-title{font-size:16px}.wm-pstep-desc{font-size:13px}.wm-fq{padding:14px 14px 14px 46px}.wm-fq-badge{left:10px;width:22px;height:22px;font-size:9px}.wm-fq span{font-size:13px}.wm-fanswer{padding:0 14px 14px 46px;font-size:12px}.wm-form-box{padding:18px 14px}.wm-form-box h3{font-size:18px}.wm-wcard h3{font-size:13px}.wm-wcard p{font-size:12px}}
-          @media(max-width:360px){.wm-s-title{font-size:18px}.wm-faq h2{font-size:18px}.wm-ctitle{font-size:18px}.wm-pstep{grid-template-columns:44px 1fr;gap:0 10px}.wm-pstep-circle{width:40px;height:40px;font-size:14px}}
+          @media(max-width:1024px){.wm-page{overflow-x:hidden}.wm-s-title{font-size:34px;letter-spacing:-.5px}.wm-faq h2{font-size:34px}.wm-ctitle{font-size:34px}.wm-svc-grid{grid-template-columns:repeat(2,1fr)}.wm-stack-grid{grid-template-columns:repeat(2,1fr)}.wm-eng-grid{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}.wm-eng-card.feat{transform:none}.wm-eng-card.feat.wm-ev{transform:none}.wm-eng-card.feat.wm-ev:hover{transform:translateY(-4px)}.wm-why-grid{grid-template-columns:repeat(2,1fr)}.wm-tgrid{grid-template-columns:repeat(2,1fr)}.wm-contact-grid{grid-template-columns:1fr}.wm-cmp-table{font-size:13px}.wm-process-inner{grid-template-columns:1fr}.wm-process-image-col{display:none}}
+          @media(max-width:768px){.wm-svc-section,.wm-stack-section,.wm-eng-section,.wm-process-section,.wm-testi,.wm-why-section,.wm-faq,.wm-related,.wm-what-section,.wm-cmp-section{padding:52px 20px}.wm-contact{padding:44px 20px}.wm-s-title{font-size:26px;letter-spacing:-.4px}.wm-s-eyebrow{font-size:10px}.wm-s-desc{font-size:14px}.wm-ctitle{font-size:26px}.wm-faq h2{font-size:26px}.wm-faq-sub{font-size:13px}.wm-svc-grid{grid-template-columns:1fr}.wm-stack-grid{grid-template-columns:repeat(2,1fr);gap:12px}.wm-eng-grid{max-width:100%}.wm-why-grid{grid-template-columns:repeat(2,1fr);gap:12px}.wm-tgrid{grid-template-columns:1fr;gap:16px}.wm-def-aspects{grid-template-columns:1fr}.wm-def-box{padding:24px}.wm-cmp-section .wm-inner{overflow-x:auto;-webkit-overflow-scrolling:touch;width:100%}.wm-cmp-table{min-width:540px;font-size:12px}.wm-cmp-table th,.wm-cmp-table td{padding:10px 12px}.wm-pstep-body h3{font-size:17px}.wm-pstep-body p{font-size:14px}.wm-frow{grid-template-columns:1fr}.wm-form-box{padding:24px 20px}.wm-contact-grid{gap:28px}.wm-fq{padding:16px 16px 16px 50px}.wm-fq-badge{left:12px;width:24px;height:24px;font-size:10px}.wm-fq span{font-size:14px}.wm-fanswer{padding:0 16px 16px 50px;font-size:13px}.wm-rtag{padding:8px 14px;font-size:13px}}
+          @media(max-width:480px){.wm-s-title{font-size:20px}.wm-faq h2{font-size:20px}.wm-ctitle{font-size:20px}.wm-stack-grid{grid-template-columns:1fr}.wm-why-grid{grid-template-columns:1fr}.wm-svc-card h3{font-size:15px}.wm-svc-card p{font-size:12px}.wm-eng-card{padding:24px 20px}.wm-pstep{grid-template-columns:40px 1fr;gap:0 14px}.wm-pstep-num{font-size:2.2rem}.wm-pstep-body h3{font-size:16px}.wm-pstep-body p{font-size:13px}.wm-fq{padding:14px 14px 14px 46px}.wm-fq-badge{left:10px;width:22px;height:22px;font-size:9px}.wm-fq span{font-size:13px}.wm-fanswer{padding:0 14px 14px 46px;font-size:12px}.wm-form-box{padding:18px 14px}.wm-form-box h3{font-size:18px}.wm-wcard h3{font-size:13px}.wm-wcard p{font-size:12px}}
+          @media(max-width:360px){.wm-s-title{font-size:18px}.wm-faq h2{font-size:18px}.wm-ctitle{font-size:18px}.wm-pstep{grid-template-columns:36px 1fr;gap:0 10px}.wm-pstep-num{font-size:1.8rem}}
           @media(max-width:1024px){.wm-orb{display:none}}
-          @media(max-width:1024px){.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-pstep-circle,.wm-tcard,.wm-wcard,.wm-contact,.wm-cbenefits,.wm-form-box,.wm-submit,.wm-fitem,.wm-related,.wm-glass{backdrop-filter:none !important;-webkit-backdrop-filter:none !important}}
+          @media(max-width:1024px){.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-tcard,.wm-wcard,.wm-contact,.wm-cbenefits,.wm-form-box,.wm-submit,.wm-fitem,.wm-related,.wm-glass{backdrop-filter:none !important;-webkit-backdrop-filter:none !important}}
           @media(max-width:768px){.wm-page{background:linear-gradient(160deg,#dbeafe 0%,#e8f0fb 100%) !important}.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-tcard,.wm-wcard,.wm-fitem{background:rgba(255,255,255,.95);box-shadow:0 2px 8px rgba(15,52,96,.08)}.wm-form-box{background:rgba(255,255,255,.97)}.wm-cbenefits{background:rgba(255,255,255,.94)}.wm-s-reveal,.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-tcard,.wm-wcard,.wm-pstep{opacity:1 !important;transform:none !important;transition:none !important}}
           @media(prefers-reduced-motion:reduce){.wm-s-reveal,.wm-svc-card,.wm-stack-card,.wm-eng-card,.wm-tcard,.wm-wcard,.wm-pstep{opacity:1 !important;transform:none !important;transition:none !important}}
         
@@ -684,26 +680,27 @@ export default function WordPressMaintenance() {
           </div>
         </section>
 
-        <section className="wm-process-section" aria-labelledby="wm-proc-heading">
-          <div className="wm-inner" style={{ maxWidth: 760 }}>
-            <div className={`wm-s-reveal${visibleSections.has('proc') ? ' wm-revealed' : ''}`} ref={el => { sectionRefs.current['proc'] = el; }}>
-              <span className="wm-s-eyebrow">How We Maintain Your WordPress Site</span>
-              <h2 id="wm-proc-heading" className="wm-s-title">Our WordPress Maintenance Process</h2>
-              <p className="wm-s-desc">Starting with a WordPress health audit, through immediate priority fixes, a structured monthly update cycle with staging testing, 24/7 monitoring, incident response, and a detailed monthly report.</p>
-            </div>
-            <div className="wm-psteps">
+        <section className="wm-process-section" id="process" aria-labelledby="wm-proc-heading">
+          <div className="wm-process-inner">
+            <div className="wm-process-steps">
+              <div className={`wm-s-reveal${visibleSections.has('proc') ? ' wm-revealed' : ''}`} ref={el => { sectionRefs.current['proc'] = el; }}>
+                <span className="wm-s-eyebrow">How We Maintain Your WordPress Site</span>
+                <h2 id="wm-proc-heading" className="wm-s-title">Our WordPress Maintenance Process</h2>
+                <p className="wm-s-desc">Starting with a WordPress health audit, through immediate priority fixes, a structured monthly update cycle with staging testing, 24/7 monitoring, incident response, and a detailed monthly report.</p>
+              </div>
               {PROCESS_STEPS.map((step, i) => (
                 <div key={step.num} className={`wm-pstep${visibleSections.has('proc') ? ' wm-pv' : ''}`} style={{ transitionDelay: `${i * 120}ms` }}>
-                  <div className="wm-pstep-l">
-                    <div className="wm-pstep-circle">{step.num}</div>
-                    <div className="wm-pstep-connector" />
-                  </div>
-                  <div className="wm-pstep-r">
-                    <div className="wm-pstep-title">{step.title}</div>
-                    <p className="wm-pstep-desc">{step.desc}</p>
+                  <span className="wm-pstep-num">{step.num}</span>
+                  <div className="wm-pstep-body">
+                    <h3>{step.title}</h3>
+                    <p>{step.desc}</p>
                   </div>
                 </div>
               ))}
+            </div>
+            <div className="wm-process-image-col">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/wordpress-support-and-maintenance-services.jpg" alt="1Solutions WordPress maintenance - security monitoring, updates, backups, and performance optimisation" width={576} height={720} />
             </div>
           </div>
         </section>
