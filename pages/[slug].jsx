@@ -66,6 +66,12 @@ const SLUG_RELATED_SERVICE = {
     href: '/link-building-packages/',
     cta: 'See link building packages',
   },
+  'best-web-2-0-sites-list-for-backlinks-2026': {
+    heading: 'DIY Web 2.0 profiles take real time to do safely',
+    body: 'Our team builds, paces, and diversifies link placements as part of a managed campaign so nothing looks manufactured to Google.',
+    href: '/link-building-packages/',
+    cta: 'See link building packages',
+  },
   '50-most-popular-business-listing-websites-in-canada': {
     heading: 'Business listings are one part of local SEO',
     body: 'Citations, Google Business Profile optimization, and local rankings — handled for you end to end.',
